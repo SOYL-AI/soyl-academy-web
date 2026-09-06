@@ -1,0 +1,335 @@
+@import "tailwindcss";
+
+@theme {
+  /* ============================================
+     BRAND COLOR — brief-accurate values
+     ============================================ */
+  --color-white: #FFFFFF;
+  --color-ink: #171717;
+  --color-ink-light: #6B6B68;
+  --color-ink-lighter: #9A9A96;
+  --color-cobalt: #3155FF;
+  --color-cobalt-dark: #2440CC;
+  --color-cobalt-light: #EDF0FF;
+  --color-teacher-red: #D84A3F;
+  --color-highlighter: #F2D45C;
+  --color-paper: #F4F0E7;
+  --color-paper-dark: #E9E3D6;
+  --color-bone: #FAFAF8;
+  --color-border: rgba(23, 23, 23, 0.09);
+  --color-border-dark: rgba(23, 23, 23, 0.18);
+
+  /* ============================================
+     TYPOGRAPHY
+     One grotesk. One editorial serif, used sparingly.
+     ============================================ */
+  --font-sans: var(--font-instrument-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+
+  /* ============================================
+     RADII — a real scale, not eight arbitrary ones
+     ============================================ */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+
+  /* Containers */
+  --container-narrow: 720px;
+  --container-default: 1180px;
+  --container-wide: 1440px;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --duration-fast: 200ms;
+  --duration-base: 400ms;
+  --duration-slow: 800ms;
+
+  /* Z-index layers */
+  --z-base: 1;
+  --z-sticky: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+}
+
+/* ============================================
+   BASE
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  /* White is the canvas. Paper belongs inside artifacts only. */
+  background-color: var(--color-white);
+  line-height: 1.6;
+  overflow-x: clip;
+  font-synthesis-weight: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* ============================================
+   TYPE SCALE
+   Display type is medium-weight and tightly tracked —
+   institutional confidence, not shouty SaaS bold.
+   ============================================ */
+
+.text-display {
+  font-size: clamp(3.25rem, 9vw, 9.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  font-weight: 500;
+}
+
+.text-hero {
+  font-size: clamp(2.75rem, 6.2vw, 6rem);
+  line-height: 1;
+  letter-spacing: -0.038em;
+  font-weight: 500;
+}
+
+.text-headline {
+  font-size: clamp(2.125rem, 4.2vw, 4rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  font-weight: 500;
+}
+
+.text-subhead {
+  font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+}
+
+.text-lead {
+  font-size: clamp(1.125rem, 1.45vw, 1.4375rem);
+  line-height: 1.5;
+  letter-spacing: -0.014em;
+  font-weight: 400;
+}
+
+.text-body {
+  font-size: clamp(1rem, 1.05vw, 1.0625rem);
+  line-height: 1.65;
+  letter-spacing: -0.006em;
+}
+
+.text-small {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  letter-spacing: -0.004em;
+}
+
+.text-eyebrow {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Loud moments — the manifesto voice. Heavier, tighter, uppercase-ready. */
+.text-manifesto {
+  font-size: clamp(2.75rem, 8.5vw, 8.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.048em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.font-editorial {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+
+.container-narrow { max-width: var(--container-narrow); }
+.container-default { max-width: var(--container-default); }
+.container-wide { max-width: var(--container-wide); }
+
+.container-narrow,
+.container-default,
+.container-wide {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .container-narrow,
+  .container-default,
+  .container-wide {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-narrow,
+  .container-default,
+  .container-wide {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+
+/* ============================================
+   SECTION RHYTHM — generous. Whitespace is the asset.
+   ============================================ */
+
+.section-padding {
+  padding-top: clamp(5.5rem, 11vw, 10rem);
+  padding-bottom: clamp(5.5rem, 11vw, 10rem);
+}
+
+.section-padding-sm {
+  padding-top: clamp(3.5rem, 6vw, 5.5rem);
+  padding-bottom: clamp(3.5rem, 6vw, 5.5rem);
+}
+
+.section-padding-lg {
+  padding-top: clamp(7rem, 15vw, 14rem);
+  padding-bottom: clamp(7rem, 15vw, 14rem);
+}
+
+/* Hairline rule — used instead of card borders to separate quiet sections */
+.rule-top {
+  border-top: 1px solid var(--color-border);
+}
+
+/* ============================================
+   ANNOTATION (Teacher markings)
+   ============================================ */
+
+.annotation-underline {
+  text-decoration: underline;
+  text-decoration-color: var(--color-teacher-red);
+  text-decoration-thickness: 2.5px;
+  text-underline-offset: 6px;
+  text-decoration-style: wavy;
+}
+
+.annotation-strikethrough {
+  text-decoration: line-through;
+  text-decoration-color: var(--color-teacher-red);
+  text-decoration-thickness: 2px;
+}
+
+.highlight-mark {
+  background-color: var(--color-highlighter);
+  padding: 0.06em 0.22em;
+  margin: 0 -0.1em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* ============================================
+   PAPER — artifacts only
+   ============================================ */
+
+.paper-ruled {
+  background-color: var(--color-paper);
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    rgba(23, 23, 23, 0.055) 31px,
+    rgba(23, 23, 23, 0.055) 32px
+  );
+}
+
+.paper-bg-clean {
+  background-color: var(--color-paper);
+}
+
+/* ============================================
+   FOCUS + UTILITIES
+   ============================================ */
+
+:focus-visible {
+  outline: 2px solid var(--color-cobalt);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-cobalt);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0 0 var(--radius-xs) var(--radius-xs);
+  transition: top 0.2s;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* ============================================
+   REDUCED MOTION
+   Motion is never load-bearing: anything a scroll
+   animation would reveal must already be visible.
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background-color: var(--color-cobalt);
+  color: var(--color-white);
+}
+
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border-dark); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-ink-lighter); }
