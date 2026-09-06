@@ -308,6 +308,22 @@ p {
 }
 
 /* ============================================
+   DECORATIVE VIDEO
+   Exactly one of these queries always matches, so the
+   still and the clip never both show. Pairing this with
+   preload="none" means reduced-motion users never fetch
+   the video file at all.
+   ============================================ */
+
+@media (prefers-reduced-motion: no-preference) {
+  .motion-still { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-clip { display: none; }
+}
+
+/* ============================================
    REDUCED MOTION
    Motion is never load-bearing: anything a scroll
    animation would reveal must already be visible.

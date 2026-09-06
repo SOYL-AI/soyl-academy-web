@@ -11,7 +11,7 @@ committed set is ~2MB. `next/image` re-encodes to AVIF/WebP on delivery.
 | `hero_students_collaborating.jpg` | 5:4 | Homepage hero; also read through the closing "soyl" wordmark in the footer |
 | `traditional_classroom.jpg` | 3:2 | Homepage §03 — the "before" world |
 | `teacher_mentoring.jpg` | 2:1 | Homepage §06 For Teachers |
-| `students_building_project.jpg` | 4:3 | Homepage §07 Student Experience |
+| `students_building_project.jpg` | 4:3 | Homepage §07 — poster/reduced-motion still for the video |
 | `students_presenting.jpg` | 16:9 | Homepage §10 Two Paths / For Schools panel |
 | `students_debating.jpg` | 3:2 | Homepage §12 Journal lead; For Students page hero |
 | `student_thinking_portrait.jpg` | 4:5 | Homepage §14 Final CTA |
@@ -62,26 +62,30 @@ Crop notes worth preserving:
 
 ---
 
-## Still outstanding
+## Notes on delivered media
 
-### Video — `/public/video/soyl-loop.mp4` + `soyl-loop-poster.jpg`
+### ~~Video~~ — delivered
 
-8–12 seconds, silent, 16:9, built to loop. Intended home is the Student
-Experience section, replacing the `students_building_project` still.
+`public/video/soyl-loop.mp4` — 1280x720, 16:9, 10.01s, H.264, 2.9MB.
 
-> A cinematic documentary sequence inside a modern Indian school classroom.
-> Begin with a close-up of a printed assignment and handwritten notes. Cut to
-> three students debating around a table. One student sketches a solution.
-> Another works on a simple physical prototype. A teacher crouches beside the
-> group and asks a question instead of giving an answer. End with a student
-> explaining the group's idea at a whiteboard. Natural daylight, subtle handheld
-> camera movement, premium education campaign cinematography, authentic Indian
-> classroom, understated confidence, natural expressions, no obvious acting, no
-> futuristic technology, no logos, 16:9, designed to loop gracefully.
+Placed in the Student Experience section via `components/media/VideoLoop.tsx`,
+which renders it `muted` / `loop` / `playsInline` / `preload="none"` and
+`aria-hidden` (decorative). Reduced motion is handled in CSS — the
+`.motion-still` / `.motion-clip` pair in `globals.css` — so the component stays
+a Server Component with no hydration flash.
 
-On implementation: `muted`, `playsInline`, `loop`, no controls, poster set,
-`preload="none"`, and swapped for the static poster under
-`prefers-reduced-motion`.
+Things to tidy when there is a toolchain for it:
+
+- **Poster is a stand-in.** There is no video decoder on the build machine, so
+  the poster is `students_building_project.jpg` rather than a real frame from
+  the clip. If the opening frame differs much from that still, there will be a
+  visible jump on load. Extract frame 0 with
+  `ffmpeg -i soyl-loop.mp4 -frames:v 1 soyl-loop-poster.jpg` and point the
+  component at it.
+- **The file still carries an AAC audio track.** `muted` means it never plays,
+  but it is dead weight. Strip with
+  `ffmpeg -i soyl-loop.mp4 -c:v copy -an soyl-loop.mp4`.
+- A WebM/AV1 sibling would cut the transfer further for browsers that take it.
 
 ### Resolution ceiling
 

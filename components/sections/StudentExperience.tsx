@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
+import { VideoLoop } from '@/components/media/VideoLoop';
 
 // Indent class drives the composition — the statements step across the grid
 // rather than sitting in a centred stack.
@@ -71,15 +71,13 @@ export function StudentExperience() {
         <ScrollReveal>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             <div className="lg:col-span-7">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg">
-                <Image
-                  src="/images/students_building_project.jpg"
-                  alt="Students assembling a working prototype on a workbench, mid-discussion"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 58vw"
-                />
-              </div>
+              <VideoLoop
+                src="/video/soyl-loop.mp4"
+                poster="/images/students_building_project.jpg"
+                alt="Students assembling a working prototype on a workbench, mid-discussion"
+                sizes="(max-width: 1024px) 100vw, 58vw"
+                className="aspect-video w-full rounded-lg"
+              />
             </div>
             <div className="lg:col-span-5">
               <p className="text-subhead text-ink max-w-[24ch]">
