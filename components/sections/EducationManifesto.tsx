@@ -52,13 +52,13 @@ export function EducationManifesto() {
       className="w-full bg-ink text-white section-padding-lg overflow-hidden"
     >
       <div className="container-default">
-        <div data-fade className="max-w-[16ch]">
+        <div data-fade className="max-w-full md:max-w-[80%]">
           <p className="text-manifesto uppercase">
             School should not prepare students to complete tasks.
           </p>
         </div>
 
-        <div data-fade className="max-w-[14ch] ml-auto text-right mt-20 md:mt-32">
+        <div data-fade className="max-w-full md:max-w-[72%] md:ml-auto md:text-right mt-20 md:mt-32">
           <p className="text-manifesto uppercase text-cobalt-light">
             It should prepare them to face problems.
           </p>
@@ -80,7 +80,7 @@ export function EducationManifesto() {
         </ul>
 
         <div data-fade>
-          <p className="text-display uppercase text-white mb-10 max-w-[12ch]">
+          <p className="text-display uppercase text-white mb-10 max-w-full md:max-w-[70%]">
             Thinking
             <br />
             is the work.

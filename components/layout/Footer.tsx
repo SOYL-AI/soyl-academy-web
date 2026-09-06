@@ -115,14 +115,13 @@ export function Footer() {
             fontSize: 'clamp(6rem, 25vw, 26rem)',
             fontWeight: 700,
             letterSpacing: '-0.06em',
-            lineHeight: 0.75,
+            lineHeight: 1,
             backgroundImage: "url('/images/hero_students_collaborating.jpg')",
             backgroundSize: 'cover',
             backgroundPosition: 'center 30%',
             WebkitBackgroundClip: 'text',
             backgroundClip: 'text',
             color: 'transparent',
-            marginBottom: '-0.06em',
           }}
         >
           soyl

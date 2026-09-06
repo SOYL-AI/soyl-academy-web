@@ -8,7 +8,7 @@ export function TwoPaths() {
       {/* FOR SCHOOLS — the weighted half, full-bleed ink */}
       <div className="lg:col-span-7 bg-ink text-white flex flex-col justify-between">
         <ScrollReveal className="px-6 md:px-14 lg:px-16 pt-20 md:pt-28 pb-14">
-          <div className="max-w-[34ch]">
+          <div className="max-w-[34rem]">
             <p className="text-eyebrow text-highlighter mb-7">For Schools</p>
             <h2 className="text-headline mb-8">Change what homework means.</h2>
             <p className="text-lead text-white/70 mb-12">
@@ -54,7 +54,7 @@ export function TwoPaths() {
       {/* FOR STUDENTS — the lighter half, paper */}
       <div className="lg:col-span-5 bg-paper text-ink flex items-center">
         <ScrollReveal className="px-6 md:px-14 lg:px-14 py-20 md:py-28 w-full">
-          <div className="max-w-[30ch]">
+          <div className="max-w-[26rem]">
             <p className="text-eyebrow text-cobalt mb-7">For Students</p>
             <h2 className="text-headline mb-8">Learn beyond the answer.</h2>
             <p className="text-lead text-ink-light mb-12">

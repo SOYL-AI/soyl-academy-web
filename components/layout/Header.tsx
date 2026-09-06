@@ -78,7 +78,7 @@ export function Header() {
                       'text-[14.5px] tracking-[-0.012em] transition-colors duration-200',
                       pathname === item.href
                         ? 'text-ink font-medium'
-                        : 'text-ink-light hover:text-ink'
+                        : 'text-ink/70 hover:text-ink'
                     )}
                   >
                     {item.label}
@@ -91,13 +91,13 @@ export function Header() {
             <div className="hidden lg:flex items-center gap-2.5 shrink-0">
               <Link
                 href="/students"
-                className="inline-flex items-center h-[38px] px-4 text-[14px] font-medium text-ink bg-bone border border-border rounded-sm transition-colors duration-200 hover:bg-paper hover:border-border-dark"
+                className="inline-flex items-center h-[36px] px-4 text-[14px] font-medium text-ink border border-border-dark rounded-sm transition-colors duration-200 hover:bg-bone"
               >
                 For Students
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center h-[38px] px-4 bg-ink text-white text-[14px] font-medium rounded-sm transition-colors duration-300 hover:bg-cobalt"
+                className="inline-flex items-center h-[36px] px-4 bg-ink text-white text-[14px] font-medium rounded-sm transition-colors duration-300 hover:bg-cobalt"
               >
                 Bring SOYL to your school
               </Link>
