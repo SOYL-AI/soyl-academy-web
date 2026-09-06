@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import { Container } from '@/components/layout/Container';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { Badge } from '@/components/ui/Badge';
@@ -52,7 +53,7 @@ export default function WhatWeTeachPage() {
         <section className="mb-32">
           <ScrollReveal>
             <Badge className="mb-8">What We Teach</Badge>
-            <h1 className="text-5xl md:text-7xl font-editorial tracking-tight leading-tight max-w-4xl mb-8">
+            <h1 className="text-hero max-w-4xl mb-8">
               Some things are better learned together.
             </h1>
           </ScrollReveal>
@@ -65,6 +66,18 @@ export default function WhatWeTeachPage() {
               <p>
                 These intensive sessions are designed to push students beyond their comfort zones, placing them in collaborative environments where they must negotiate, build, and defend their ideas in real-time.
               </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.15}>
+            <div className="relative aspect-[16/10] md:aspect-[12/5] w-full overflow-hidden rounded-lg mt-14 md:mt-20">
+              <Image
+                src="/images/classroom_wide_making.jpg"
+                alt="A workshop-style classroom with several groups building and testing at once"
+                fill
+                className="object-cover"
+                sizes="100vw"
+              />
             </div>
           </ScrollReveal>
         </section>
@@ -86,7 +99,7 @@ export default function WhatWeTeachPage() {
                     )}
                   </div>
                   
-                  <h2 className="text-3xl font-editorial mb-4">{program.title}</h2>
+                  <h2 className="text-subhead mb-4">{program.title}</h2>
                   <p className="text-ink/70 leading-relaxed mb-8 flex-grow">
                     {program.description}
                   </p>
@@ -114,7 +127,7 @@ export default function WhatWeTeachPage() {
         <section>
           <ScrollReveal>
             <div className="bg-highlighter/20 p-12 md:p-20 rounded-3xl text-center max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-5xl font-editorial mb-6">Bring SOYL to your school</h2>
+              <h2 className="text-headline mb-6">Bring SOYL to your school</h2>
               <p className="text-lg text-ink/80 mb-10 max-w-2xl mx-auto">
                 We partner with forward-thinking educational institutions to deliver these programs on-campus. Custom curriculum alignment is available.
               </p>

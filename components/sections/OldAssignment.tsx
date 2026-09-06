@@ -1,21 +1,45 @@
+import Image from 'next/image';
+
 const CHAIN = ['Prompt', 'AI', 'Answer', 'Submit'];
 
 export function OldAssignment() {
   return (
     <section className="w-full bg-bone section-padding overflow-hidden">
       <div className="container-default">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-16 items-center">
-          {/* The artifact — paper, tilted, physical */}
+        {/* The world the assignment was designed for */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-end mb-16 lg:mb-0">
           <div className="lg:col-span-7">
+            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-lg">
+              <Image
+                src="/images/traditional_classroom.jpg"
+                alt="Rows of students copying a worked proof from the board into their notebooks"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 58vw"
+              />
+            </div>
+          </div>
+
+          <div className="lg:col-span-4 lg:col-start-9 lg:pb-6">
+            <p className="text-eyebrow text-ink-light mb-6">The task as it stands</p>
+            <p className="text-lead text-ink-light max-w-[34ch]">
+              A task built for a world where finding the answer was the hard
+              part.
+            </p>
+          </div>
+        </div>
+
+        {/* The artifact itself, overlapping the scene above */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div className="lg:col-span-7 lg:col-start-5 relative z-10 lg:-mt-28">
             <div className="relative mx-auto max-w-[620px] rotate-[-1.2deg]">
-              {/* Sheet behind, for physical depth */}
+              {/* A second sheet behind, for physical depth */}
               <div
                 className="absolute inset-0 translate-x-2 translate-y-3 rotate-[1.6deg] bg-paper-dark/70"
                 aria-hidden="true"
               />
 
-              <article className="relative paper-ruled shadow-[0_18px_50px_-20px_rgba(23,23,23,0.35)] px-7 py-10 md:px-14 md:py-14">
-                {/* Red margin rule */}
+              <article className="relative paper-ruled shadow-[0_24px_60px_-24px_rgba(23,23,23,0.45)] px-7 py-10 md:px-14 md:py-14">
                 <div
                   className="absolute left-9 md:left-16 top-0 bottom-0 w-px bg-teacher-red/35"
                   aria-hidden="true"
@@ -84,7 +108,7 @@ export function OldAssignment() {
                   </p>
                 </div>
 
-                {/* Teacher's grade, in the corner where it always is */}
+                {/* The grade, in the corner where it always is */}
                 <div
                   className="absolute top-6 right-6 md:top-9 md:right-11 rotate-[9deg] select-none"
                   aria-hidden="true"
@@ -96,13 +120,15 @@ export function OldAssignment() {
               </article>
             </div>
           </div>
+        </div>
 
-          {/* The verdict */}
-          <div className="lg:col-span-5 lg:pl-4">
+        {/* The verdict */}
+        <div className="mt-20 md:mt-28 grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div className="lg:col-span-8">
             <p className="text-subhead text-ink-light mb-5">
               Everything looks complete.
             </p>
-            <p className="text-headline text-ink annotation-underline decoration-teacher-red">
+            <p className="text-headline text-ink annotation-underline">
               Except the learning.
             </p>
           </div>

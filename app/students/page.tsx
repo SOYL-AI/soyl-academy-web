@@ -24,13 +24,14 @@ export default function StudentsPage() {
         {/* Hero Section */}
         <section className="mb-24 md:mb-40 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <ScrollReveal>
-            <div className="relative aspect-square md:aspect-[4/5] rounded-2xl overflow-hidden shadow-xl max-w-md mx-auto lg:mx-0">
-              <Image 
-                src="/images/students_building_project.jpg" 
-                alt="Students collaborating and building a physical project" 
+            <div className="relative aspect-[4/3] lg:aspect-[4/5] w-full overflow-hidden rounded-lg">
+              <Image
+                src="/images/students_debating.jpg"
+                alt="Two students disagreeing across a table, one making a case with an open hand while the others listen"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 1024px) 100vw, 48vw"
+                priority
               />
             </div>
           </ScrollReveal>
@@ -38,7 +39,7 @@ export default function StudentsPage() {
           <div>
             <ScrollReveal delay={0.1}>
               <Badge className="mb-8">For Students</Badge>
-              <h1 className="text-5xl md:text-7xl font-editorial tracking-tight leading-tight mb-8">
+              <h1 className="text-hero mb-8">
                 Learn beyond the answer.
               </h1>
             </ScrollReveal>
@@ -63,7 +64,7 @@ export default function StudentsPage() {
               {actions.map((action) => (
                 <span 
                   key={action.word} 
-                  className={`text-5xl md:text-7xl font-editorial font-bold ${action.color} transform transition-transform hover:scale-110 cursor-default`}
+                  className={`text-headline ${action.color} transform transition-transform hover:scale-110 cursor-default`}
                 >
                   {action.word}
                 </span>
@@ -76,7 +77,7 @@ export default function StudentsPage() {
         <section className="mb-32 max-w-4xl mx-auto">
           <ScrollReveal>
             <div className="bg-paper p-10 md:p-16 rounded-3xl text-center">
-              <h2 className="text-3xl md:text-5xl font-editorial mb-6">Use AI to think better, not to skip thinking.</h2>
+              <h2 className="text-headline mb-6">Use AI to think better, not to skip thinking.</h2>
               <p className="text-lg text-ink/80 mb-8 max-w-2xl mx-auto leading-relaxed">
                 We know you have access to powerful AI tools. We expect you to use them. But in a SOYL assignment, you can&apos;t just copy-paste an answer. You have to explain your process, defend your choices, and prove that the ideas are yours. Technology is your co-pilot, but you are flying the plane.
               </p>

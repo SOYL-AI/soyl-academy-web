@@ -26,8 +26,8 @@ export function SoylJournal() {
             <Link href={`/journal/${featured.slug}`} className="group block">
               <div className="relative aspect-[3/2] w-full mb-8 overflow-hidden rounded-md bg-paper">
                 <Image
-                  src={featured.image ?? '/images/journal-featured.jpg'}
-                  alt=""
+                  src={featured.image ?? '/images/students_debating.jpg'}
+                  alt="Students arguing a point across a table, notes and a book open between them"
                   fill
                   className="object-cover transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:scale-[1.03]"
                   sizes="(max-width: 1024px) 100vw, 58vw"

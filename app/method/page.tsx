@@ -75,7 +75,7 @@ export default function MethodPage() {
         <section className="mb-32">
           <ScrollReveal>
             <Badge className="mb-8">The SOYL Method</Badge>
-            <h1 className="text-4xl md:text-6xl font-editorial tracking-tight leading-tight max-w-4xl mb-8">
+            <h1 className="text-hero max-w-4xl mb-8">
               Learning should be demonstrated through what a student can do, not merely through what they can submit.
             </h1>
           </ScrollReveal>
@@ -102,7 +102,7 @@ export default function MethodPage() {
               <ScrollReveal key={pillar.num} delay={0.1 * index}>
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
                   <div className="md:col-span-4">
-                    <span className="text-6xl md:text-8xl font-editorial text-cobalt block mb-4">{pillar.num}</span>
+                    <span className="text-headline text-cobalt block mb-4">{pillar.num}</span>
                     <h2 className="text-3xl font-sans font-medium mb-2">{pillar.name}</h2>
                     <p className="text-lg text-teacher-red font-editorial italic">{pillar.tagline}</p>
                   </div>
@@ -147,7 +147,7 @@ export default function MethodPage() {
           <ScrollReveal>
             <div className="bg-ink text-paper p-12 md:p-24 rounded-2xl">
               <div className="max-w-4xl mx-auto text-center space-y-12">
-                <h2 className="text-3xl md:text-5xl font-editorial leading-tight">
+                <h2 className="text-headline leading-tight">
                   Technology assists teachers. Technology must never visually or philosophically appear to replace educators.
                 </h2>
                 
@@ -173,7 +173,7 @@ export default function MethodPage() {
         {/* CTA */}
         <section className="text-center">
           <ScrollReveal>
-            <h2 className="text-3xl font-editorial mb-8">Ready to change how learning is demonstrated?</h2>
+            <h2 className="text-subhead mb-8">Ready to change how learning is demonstrated?</h2>
             <Link 
               href="/contact" 
               className="inline-flex items-center justify-center bg-cobalt text-white px-8 py-4 rounded-full font-medium hover:bg-cobalt/90 transition-colors"

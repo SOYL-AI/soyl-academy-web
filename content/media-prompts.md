@@ -1,12 +1,40 @@
-# SOYL Academy — Media Requirements
+# SOYL Academy — Media
 
-Every asset below is either missing, or present at a resolution too low for the
-placement it now occupies. Generate at the stated resolution, save to the stated
-path, and the site picks it up with no code change.
+## Delivered
 
-## Master photographic style
+All nine photographs are in `public/images/`, generated to the master style
+below and converted to progressive JPEG (q86). Source PNGs totalled 17MB; the
+committed set is ~2MB. `next/image` re-encodes to AVIF/WebP on delivery.
 
-Prepend this to every image prompt so the set stays visually consistent:
+| File | Ratio | Placement |
+| --- | --- | --- |
+| `hero_students_collaborating.jpg` | 5:4 | Homepage hero; also read through the closing "soyl" wordmark in the footer |
+| `traditional_classroom.jpg` | 3:2 | Homepage §03 — the "before" world |
+| `teacher_mentoring.jpg` | 2:1 | Homepage §06 For Teachers |
+| `students_building_project.jpg` | 4:3 | Homepage §07 Student Experience |
+| `students_presenting.jpg` | 16:9 | Homepage §10 Two Paths / For Schools panel |
+| `students_debating.jpg` | 3:2 | Homepage §12 Journal lead; For Students page hero |
+| `student_thinking_portrait.jpg` | 4:5 | Homepage §14 Final CTA |
+| `classroom_wide_establishing.jpg` | 12:5 | For Schools page — establishing plate |
+| `classroom_wide_making.jpg` | 12:5 | What We Teach page |
+
+The set holds together because it reads as one school across one project — the
+same balsa bridge model recurs from the hero through the teacher and build
+frames, and the whiteboard elevations in the presenting shot match the drawings
+on the table. Keep that continuity if any frame is regenerated.
+
+### Known artifacts
+
+Generated text in these frames is not reliably spelled. `classroom_wide_making.jpg`
+has **"Pototype"** on the whiteboard list (should be "Prototype"), visible on
+large displays. Worth a regeneration or a retouch before launch. Several frames
+carry slogan-style wall text ("Curiosity Creates Better Questions", "Good Ideas
+Solve Real Problems") — plausible as classroom display, but check it reads as
+authentic rather than as SOYL marketing copy.
+
+### If regenerating
+
+Master style, prepend to every prompt:
 
 > Editorial documentary photograph of Indian secondary-school students in a
 > contemporary Indian classroom, genuinely engaged in collaborative hands-on
@@ -22,106 +50,23 @@ Prepend this to every image prompt so the set stays visually consistent:
 Shared negatives: no text or watermarks, no laptops as the focal point, no
 students staring at a screen, no American school settings, no plastic AI faces.
 
----
+Crop notes worth preserving:
 
-## Priority 1 — resolution upgrades
-
-The existing files work compositionally but top out at ~1376px wide. At full-bleed
-sizes on a 2× display they will visibly soften. Regenerate at the sizes below,
-same subject, same framing.
-
-### `hero_students_collaborating.jpg` — 2800 × 2240 (5:4)
-
-Homepage hero, right-hand image bleeding off the viewport edge. Also read
-through the letterforms of the closing "soyl" wordmark in the footer, so it
-needs a legible mid-tone subject that survives being clipped to text.
-
-> …three students around a table mid-discussion, one gesturing at a shared
-> sketch, papers and a half-built model between them, window light from the
-> left, shot slightly off-axis at eye level.
-
-Crop notes: subject weighted to the left third — the right edge is cropped by
-the viewport bleed on wide screens. On mobile the frame becomes 4:3, so keep
-the essential action inside the centre 70%.
-
-### `teacher_mentoring.jpg` — 2800 × 1400 (2:1)
-
-For Teachers section, wide plate. Currently 1264×848 (3:2), so the 2:1 placement
-crops ~25% of the height.
-
-> …a teacher crouched at table height beside a group of seated students, asking
-> a question rather than pointing at an answer, students' attention on their own
-> work rather than the camera, mid-room natural light.
-
-Crop notes: compose for 2:1 directly. Keep faces out of the top 15% and bottom
-15%. Mobile crops to 4:3 centred.
-
-### `students_presenting.jpg` — 2400 × 1350 (16:9)
-
-Two Paths / For Schools panel, sits on an ink-black ground.
-
-> …a student explaining a proposal at a whiteboard covered in her own diagrams,
-> classmates listening and one interjecting, sketched plan visible but not
-> legible as specific text.
-
-Crop notes: darker overall exposure suits the black panel. Avoid a bright white
-wall filling the frame.
-
-### `students_building_project.jpg` — 2400 × 1800 (4:3)
-
-Student Experience section.
-
-> …students assembling a simple physical prototype on a workbench — cardboard,
-> wire, hand tools — hands prominent, mid-task, one student consulting a
-> hand-drawn plan.
-
-### `student_thinking_portrait.jpg` — 1800 × 2250 (4:5)
-
-Final CTA. Currently 1024×1024 square, so the 4:5 placement crops the sides.
-
-> …a single student pausing mid-thought over an open notebook, pen resting, gaze
-> off-camera, quiet and unperformed, shallow depth of field, window light.
-
-Crop notes: compose for a vertical 4:5 frame. Head in the upper third; the
-bottom-right corner carries a red handwritten annotation overlay, so keep that
-area visually calm.
-
-### `journal-featured.jpg` — 2400 × 1600 (3:2)
-
-Journal lead story. Should feel more reportage and less campaign than the hero.
-
-> …an over-the-shoulder view of a student's handwritten working, crossings-out
-> and arrows visible, a phone face-down beside the page.
+- **Hero (5:4)** — subject weighted left; the right edge is cropped by the
+  viewport bleed on wide screens, and it reduces to 4:3 on mobile.
+- **Final CTA (4:5)** — head in the upper third. A red handwritten annotation
+  sits over the lower-right corner, so keep that area visually calm.
+- **Two Paths (16:9)** — sits on an ink-black ground; darker exposure suits it.
+- **Wide plates (12:5)** — no faces in the outer 10% either side; they crop to
+  16:10 on mobile.
 
 ---
 
-## Priority 2 — assets not yet in the repo
+## Still outstanding
 
-### `students_debating.jpg` — 2400 × 1600 (3:2) — NOT YET USED
+### Video — `/public/video/soyl-loop.mp4` + `soyl-loop-poster.jpg`
 
-Intended for the For Students page and as an alternate Journal lead. Currently
-that page runs on typography alone.
-
-> …two students in visible disagreement across a table, one mid-sentence with an
-> open hand, the other listening with a counter-argument ready, other students
-> watching, energetic but not staged.
-
-### `classroom_wide_establishing.jpg` — 3000 × 1250 (12:5) — NOT YET USED
-
-A full-bleed establishing plate for the For Schools page, to give principals a
-sense of the room rather than a close crop.
-
-> …a wide establishing view of a contemporary Indian secondary classroom in use,
-> groups working at different tables on different things, teacher moving between
-> groups, mild lens distortion, daylight from a bank of windows.
-
----
-
-## Video — not yet produced
-
-### `/public/video/soyl-loop.mp4` + `/public/video/soyl-loop-poster.jpg`
-
-8–12 seconds, silent, 16:9, designed to loop. Intended home is the Student
+8–12 seconds, silent, 16:9, built to loop. Intended home is the Student
 Experience section, replacing the `students_building_project` still.
 
 > A cinematic documentary sequence inside a modern Indian school classroom.
@@ -134,20 +79,12 @@ Experience section, replacing the `students_building_project` still.
 > classroom, understated confidence, natural expressions, no obvious acting, no
 > futuristic technology, no logos, 16:9, designed to loop gracefully.
 
-Implementation requirements when the file lands: `muted`, `playsInline`, `loop`,
-no controls, poster frame set, `preload="none"`, and swapped for the static
-poster under `prefers-reduced-motion`.
+On implementation: `muted`, `playsInline`, `loop`, no controls, poster set,
+`preload="none"`, and swapped for the static poster under
+`prefers-reduced-motion`.
 
----
+### Resolution ceiling
 
-## Currently unused
-
-`student_writing_closeup.jpg` is in the repo but no longer referenced. It is a
-good candidate for the Journal lead image or the About page if either grows a
-photographic slot.
-
-## Encoding note
-
-Source JPEGs currently run 700–900KB at ~1300px, which is far heavier than the
-pixel count warrants. `next/image` re-encodes to AVIF/WebP on delivery so this
-does not reach visitors, but exporting at quality ~85 keeps the repo sane.
+The delivered frames run 1122–1942px on the long edge. That is adequate at
+current placements but thin for the two 12:5 full-width plates on a 2× display
+above ~1600px. If they look soft in the wild, regenerate those two larger.

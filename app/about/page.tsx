@@ -16,7 +16,7 @@ export default function AboutPage() {
         <section className="mb-24 md:mb-32">
           <ScrollReveal>
             <div className="max-w-4xl">
-              <h1 className="text-5xl md:text-8xl font-editorial tracking-tight leading-none mb-12">
+              <h1 className="text-display mb-12">
                 Answers changed.<br/>
                 <span className="text-teacher-red">School has to change too.</span>
               </h1>
