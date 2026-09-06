@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Instrument_Sans, Instrument_Serif } from 'next/font/google';
-import { SmoothScrollProvider } from '@/components/motion/SmoothScrollProvider';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import './globals.css';
@@ -62,11 +61,9 @@ export default function RootLayout({
         <a href="#main-content" className="skip-to-content">
           Skip to content
         </a>
-        <SmoothScrollProvider>
-          <Header />
-          <main id="main-content">{children}</main>
-          <Footer />
-        </SmoothScrollProvider>
+        <Header />
+        <main id="main-content">{children}</main>
+        <Footer />
       </body>
     </html>
   );
