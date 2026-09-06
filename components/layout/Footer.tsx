@@ -61,7 +61,7 @@ function LinkColumn({
 export function Footer() {
   return (
     <footer className="w-full bg-white rule-top overflow-hidden" role="contentinfo">
-      <div className="container-wide pt-20 md:pt-28 pb-16">
+      <div className="container-default pt-20 md:pt-28 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-8">
           {/* Identity */}
           <div className="lg:col-span-4">

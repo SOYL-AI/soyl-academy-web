@@ -4,7 +4,7 @@ import Link from 'next/link';
 export function Hero() {
   return (
     <section className="relative w-full bg-white pt-32 md:pt-40 lg:pt-48 pb-16 md:pb-24 lg:pb-28">
-      <div className="container-wide">
+      <div className="container-default">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-end">
           {/* Text — 6 of 12, sits low against the image baseline */}
           <div className="lg:col-span-6 xl:col-span-5">

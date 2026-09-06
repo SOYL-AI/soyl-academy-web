@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { ReactLenis, type LenisRef } from 'lenis/react';
+import { ReactLenis, useLenis } from 'lenis/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -25,41 +25,47 @@ function usePrefersReducedMotion() {
   );
 }
 
-export function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
-  const lenisRef = React.useRef<LenisRef>(null);
-  const isReducedMotion = usePrefersReducedMotion();
+/**
+ * Keeps ScrollTrigger in step with Lenis' smoothed scroll position.
+ *
+ * This has to live *inside* ReactLenis and read the instance through
+ * `useLenis`, not through a ref on the provider. ReactLenis creates its Lenis
+ * instance in an effect and publishes it via state, so a ref held by the parent
+ * is still empty when the parent's own effect runs.
+ */
+function ScrollTriggerBridge() {
+  const lenis = useLenis();
 
   React.useEffect(() => {
-    if (isReducedMotion) return;
-
-    const lenis = lenisRef.current?.lenis;
     if (!lenis) return;
 
-    // Without this, every scrubbed/pinned ScrollTrigger lags behind Lenis'
-    // smoothed scroll position.
     const onScroll = () => ScrollTrigger.update();
     lenis.on('scroll', onScroll);
-
-    // Drive Lenis from GSAP's ticker so both run on a single RAF loop.
-    const update = (time: number) => lenis.raf(time * 1000);
-    gsap.ticker.add(update);
-    gsap.ticker.lagSmoothing(0);
-
     ScrollTrigger.refresh();
 
     return () => {
       lenis.off('scroll', onScroll);
-      gsap.ticker.remove(update);
-      gsap.ticker.lagSmoothing(500, 33);
     };
-  }, [isReducedMotion]);
+  }, [lenis]);
+
+  return null;
+}
+
+export function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
+  const isReducedMotion = usePrefersReducedMotion();
 
   if (isReducedMotion) {
     return <>{children}</>;
   }
 
+  // Lenis drives its own rAF loop. Handing that job to gsap.ticker buys tighter
+  // sync but makes scrolling itself depend on our effect running — and if that
+  // effect is ever skipped, Lenis swallows wheel events while nothing advances
+  // the scroll, so the page cannot move at all. Keeping autoRaf on means the
+  // worst case is slightly looser ScrollTrigger sync instead of a dead page.
   return (
-    <ReactLenis root ref={lenisRef} options={{ autoRaf: false }}>
+    <ReactLenis root>
+      <ScrollTriggerBridge />
       {children}
     </ReactLenis>
   );

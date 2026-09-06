@@ -39,35 +39,33 @@ export function Header() {
       {/* ── Primer-inspired Header ── */}
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-          isScrolled
-            ? 'bg-white/85 backdrop-blur-md shadow-[0_1px_0_0_rgba(0,0,0,0.06)]'
-            : 'bg-transparent',
-          isMobileMenuOpen && 'bg-white'
+          'fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md',
+          'transition-shadow duration-300',
+          isScrolled && 'shadow-[0_1px_0_0_var(--color-border)]'
         )}
       >
-        <div className="mx-auto max-w-[1440px] px-5 md:px-8 lg:px-10">
-          <nav className="flex items-center justify-between h-[60px] lg:h-[68px]" aria-label="Primary">
+        <div className="container-default">
+          <nav className="flex items-center justify-between h-[68px] lg:h-[80px] gap-8" aria-label="Primary">
 
             {/* Logo — Left */}
             <Link href="/" className="relative z-50 flex items-center gap-2 shrink-0" aria-label="SOYL Academy home">
               <Image src="/images/soyl-logo.png" alt="" width={28} height={28} className="w-6 h-6 lg:w-7 lg:h-7" priority />
-              <span className="text-[15px] font-semibold tracking-[-0.01em] text-[var(--color-ink)]">
+              <span className="text-[16px] font-semibold tracking-[-0.02em] text-ink">
                 SOYL Academy
               </span>
             </Link>
 
             {/* Nav Links — Center */}
-            <div className="hidden lg:flex items-center gap-7 absolute left-1/2 -translate-x-1/2">
+            <div className="hidden lg:flex items-center gap-8 mr-auto">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    'text-[13.5px] font-medium tracking-[-0.005em] transition-colors duration-200',
+                    'text-[14.5px] tracking-[-0.01em] transition-colors duration-200',
                     pathname === item.href
-                      ? 'text-[var(--color-ink)]'
-                      : 'text-[var(--color-ink-light)] hover:text-[var(--color-ink)]'
+                      ? 'text-ink font-medium'
+                      : 'text-ink-light hover:text-ink'
                   )}
                 >
                   {item.label}
@@ -76,19 +74,19 @@ export function Header() {
             </div>
 
             {/* Right — CTA + For Students */}
-            <div className="hidden lg:flex items-center gap-5 shrink-0">
+            <div className="hidden lg:flex items-center gap-6 shrink-0">
               <Link
                 href="/students"
-                className="text-[13.5px] font-medium text-[var(--color-ink-light)] hover:text-[var(--color-ink)] transition-colors"
+                className="text-[14.5px] text-ink-light hover:text-ink transition-colors"
               >
                 For Students
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-1.5 px-4 py-2 bg-[var(--color-ink)] text-white text-[13px] font-medium rounded-sm hover:bg-[var(--color-cobalt)] transition-colors duration-300"
+                className="group inline-flex items-center gap-1.5 h-10 px-5 bg-ink text-white text-[14px] font-medium rounded-sm hover:bg-cobalt transition-colors duration-300"
               >
                 Bring SOYL to your school
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" className="ml-0.5">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-0.5">
                   <path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </Link>

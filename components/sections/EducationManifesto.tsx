@@ -51,7 +51,7 @@ export function EducationManifesto() {
       ref={container}
       className="w-full bg-ink text-white section-padding-lg overflow-hidden"
     >
-      <div className="container-wide">
+      <div className="container-default">
         <div data-fade className="max-w-[16ch]">
           <p className="text-manifesto uppercase">
             School should not prepare students to complete tasks.
@@ -64,7 +64,7 @@ export function EducationManifesto() {
           </p>
         </div>
 
-        <ul className="my-28 md:my-40 space-y-8 md:space-y-12 max-w-4xl mx-auto">
+        <ul className="my-28 md:my-40 space-y-8 md:space-y-12 max-w-4xl">
           {LINES.map((line, i) => (
             <li
               key={line}
@@ -79,8 +79,8 @@ export function EducationManifesto() {
           ))}
         </ul>
 
-        <div data-fade className="text-center">
-          <p className="text-display uppercase text-white mb-10">
+        <div data-fade>
+          <p className="text-display uppercase text-white mb-10 max-w-[12ch]">
             Thinking
             <br />
             is the work.
