@@ -99,7 +99,7 @@ export function Footer() {
           </p>
           <p className="text-small text-ink-lighter max-w-md md:text-right">
             732, Chinmaya Mission Hospital Road, Indiranagar Stage 1, Bengaluru,
-            Karnataka 560038
+            Karnataka 560043
           </p>
         </div>
       </div>
