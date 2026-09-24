@@ -22,7 +22,7 @@ export function ForTeachers() {
                 You know your students. SOYL helps you challenge them.
               </h2>
             </div>
-            <div className="lg:col-span-5 lg:pt-16">
+            <div className="lg:col-span-4 lg:col-start-9 lg:pt-6">
               <p className="text-lead text-ink-light max-w-[42ch]">
                 Start with what you&rsquo;re already teaching. Choose the
                 learning outcome you want to see. SOYL helps turn it into an
@@ -51,7 +51,7 @@ export function ForTeachers() {
             {STEPS.map((step) => (
               <li
                 key={step.num}
-                className="border-b border-ink/15 lg:border-b-0 lg:border-r last:border-r-0 py-7 pr-6 lg:pt-8 lg:pb-16"
+                className="border-b border-ink/15 lg:border-b-0 lg:border-r last:border-r-0 py-7 pr-6 lg:pl-6 first:lg:pl-0 lg:pt-8 lg:pb-16"
               >
                 <span className="block text-small font-semibold text-cobalt tabular-nums mb-4">
                   {step.num}
@@ -65,13 +65,13 @@ export function ForTeachers() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.15}>
-          <div className="mt-20 md:mt-28 grid grid-cols-1 lg:grid-cols-12 gap-8">
-            <div className="lg:col-span-6">
+          <div className="mt-20 md:mt-28 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+            <div className="lg:col-span-7">
               <p className="text-headline text-ink">
                 The teacher stays in charge.
               </p>
             </div>
-            <div className="lg:col-span-5 lg:col-start-8 lg:pt-4">
+            <div className="lg:col-span-4 lg:col-start-9 lg:pt-4">
               <p className="text-lead text-ink-light max-w-[38ch]">
                 Technology can help create possibilities. Educational judgement
                 belongs to the educator.

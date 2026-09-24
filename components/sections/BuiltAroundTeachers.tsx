@@ -28,27 +28,27 @@ export function BuiltAroundTeachers() {
           </h2>
         </ScrollReveal>
 
-        <div className="border-t border-ink/15">
+        <ol className="border-t border-ink/15">
           {PRINCIPLES.map((principle, idx) => (
             <ScrollReveal key={principle.num} delay={idx * 0.06}>
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 border-b border-ink/15 py-10 md:py-14">
+              <li className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 border-b border-ink/15 py-10 md:py-14 group">
                 <div className="md:col-span-2">
-                  <span className="text-small font-semibold text-ink-lighter tabular-nums">
+                  <span className="text-subhead text-ink-lighter tabular-nums transition-colors duration-500 group-hover:text-cobalt">
                     {principle.num}
                   </span>
                 </div>
                 <div className="md:col-span-4">
-                  <h3 className="text-subhead text-ink">{principle.title}</h3>
+                  <h3 className="text-headline text-ink">{principle.title}</h3>
                 </div>
-                <div className="md:col-span-6">
+                <div className="md:col-span-6 md:pt-2">
                   <p className="text-lead text-ink-light max-w-[44ch]">
                     {principle.desc}
                   </p>
                 </div>
-              </div>
+              </li>
             </ScrollReveal>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

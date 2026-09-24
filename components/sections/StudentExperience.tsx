@@ -16,7 +16,7 @@ export function StudentExperience() {
     <section className="w-full bg-white section-padding overflow-hidden">
       <div className="container-default">
         <ScrollReveal>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-20 md:mb-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16 md:mb-24">
             <div className="lg:col-span-7">
               <p className="text-eyebrow text-cobalt mb-7">For Students</p>
               <h2 className="text-display text-ink">

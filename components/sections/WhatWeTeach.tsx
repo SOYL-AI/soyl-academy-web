@@ -45,10 +45,10 @@ export function WhatWeTeach() {
         </ScrollReveal>
 
         {/* A ruled index, not a grid of cards */}
-        <div className="border-t border-ink/15">
+        <ul className="border-t border-ink/15">
           {CATEGORIES.map((category, index) => (
             <ScrollReveal key={category.title} delay={index * 0.06}>
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-baseline border-b border-ink/15 py-9 md:py-12">
+              <li className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 items-baseline border-b border-ink/15 py-10 md:py-14">
                 <div className="md:col-span-5">
                   <h3 className="text-subhead text-ink">{category.title}</h3>
                 </div>
@@ -62,10 +62,10 @@ export function WhatWeTeach() {
                     Coming soon
                   </span>
                 </div>
-              </div>
+              </li>
             </ScrollReveal>
           ))}
-        </div>
+        </ul>
 
         <ScrollReveal delay={0.2}>
           <Link
