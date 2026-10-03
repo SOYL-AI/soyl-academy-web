@@ -1,4 +1,4 @@
-# SOYL Academy — Public Website
+# SOYL Academy — Public Website.
 
 **Story Of Your Life**
 
