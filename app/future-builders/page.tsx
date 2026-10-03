@@ -7,7 +7,7 @@ import { StructuredData } from '@/components/seo/StructuredData';
 import { graph, webPageNode } from '@/lib/seo/schema';
 import { getPage } from '@/lib/seo/pages';
 
-export const metadata: Metadata = createMetadata('/future-builders');
+export const metadata: Metadata = createMetadata({ path: '/future-builders' });
 
 export default function FutureBuildersPage() {
   return (
