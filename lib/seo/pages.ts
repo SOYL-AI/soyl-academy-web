@@ -128,6 +128,16 @@ export const PAGES: Record<string, PageEntry> = {
     priority: 0.6,
     changeFrequency: 'yearly',
   },
+  '/future-builders': {
+    path: '/future-builders',
+    title: 'Future Builders Programme | SOYL Academy',
+    label: 'Future Builders',
+    description: 'Enroll in the Future Builders Programme. Your child will build something real. And pitch it.',
+    type: 'WebPage',
+    eyebrow: 'Future Builders',
+    priority: 0.8,
+    changeFrequency: 'monthly',
+  },
 };
 
 export function getPage(path: string): PageEntry {
