@@ -1,16 +1,22 @@
-import { Metadata } from 'next';
 import Image from 'next/image';
 import { Container } from '@/components/layout/Container';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
+import { StructuredData } from '@/components/seo/StructuredData';
+import { ORGANIZATION_ID } from '@/lib/seo/config';
+import { createMetadata } from '@/lib/seo/metadata';
+import { breadcrumbNode, graph, topLevelCrumbs, webPageNode } from '@/lib/seo/schema';
 
-export const metadata: Metadata = {
-  title: 'About | SOYL Academy',
-  description: 'Answers changed. School has to change too. Discover the educational thesis behind SOYL Academy.',
-};
+export const metadata = createMetadata({ path: '/about' });
 
 export default function AboutPage() {
   return (
     <div className="py-24 md:py-32 bg-white text-ink">
+      <StructuredData
+        data={graph(
+          webPageNode({ path: '/about', mainEntityId: ORGANIZATION_ID }),
+          breadcrumbNode('/about', topLevelCrumbs('/about'))
+        )}
+      />
       <Container>
         {/* Hero Section */}
         <section className="mb-24 md:mb-32">

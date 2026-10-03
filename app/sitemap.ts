@@ -1,31 +1,29 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
 import { journalArticles } from '@/content/journal';
+import { absoluteUrl } from '@/lib/seo/config';
+import { CONTENT_LAST_MODIFIED, PAGES } from '@/lib/seo/pages';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://soyl.academy';
-  const lastModified = new Date();
-
-  const staticRoutes = [
-    '',
-    '/method',
-    '/what-we-teach',
-    '/schools',
-    '/students',
-    '/journal',
-    '/about',
-    '/contact',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified,
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
+  const staticRoutes: MetadataRoute.Sitemap = Object.values(PAGES).map((page) => ({
+    url: absoluteUrl(page.path),
+    // Real, deliberate dates — not `new Date()` — so lastmod stays trustworthy.
+    lastModified:
+      page.path === '/journal'
+        ? new Date(
+            [...journalArticles].map((a) => a.date).sort().at(-1) ?? CONTENT_LAST_MODIFIED
+          )
+        : new Date(CONTENT_LAST_MODIFIED),
+    changeFrequency: page.changeFrequency,
+    priority: page.priority,
+    images: [absoluteUrl(`/og?path=${encodeURIComponent(page.path)}`)],
   }));
 
-  const journalRoutes = (journalArticles || []).map((article) => ({
-    url: `${baseUrl}/journal/${article.slug}`,
-    lastModified: new Date(article.date || lastModified),
-    changeFrequency: 'monthly' as const,
+  const journalRoutes: MetadataRoute.Sitemap = journalArticles.map((article) => ({
+    url: absoluteUrl(`/journal/${article.slug}`),
+    lastModified: new Date(article.date),
+    changeFrequency: 'monthly',
     priority: 0.7,
+    images: [absoluteUrl(`/og?path=${encodeURIComponent(`/journal/${article.slug}`)}`)],
   }));
 
   return [...staticRoutes, ...journalRoutes];

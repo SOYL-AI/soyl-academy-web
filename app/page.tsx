@@ -12,23 +12,20 @@ import { WhatWeTeach } from '@/components/sections/WhatWeTeach';
 import { SoylJournal } from '@/components/sections/SoylJournal';
 import { EducationManifesto } from '@/components/sections/EducationManifesto';
 import { FinalCta } from '@/components/sections/FinalCta';
+import { Faq } from '@/components/seo/Faq';
 import { StructuredData } from '@/components/seo/StructuredData';
+import { homeFaqs } from '@/content/faqs';
+import { createMetadata } from '@/lib/seo/metadata';
+import { breadcrumbNode, faqNode, graph, webPageNode } from '@/lib/seo/schema';
+
+export const metadata = createMetadata({ path: '/' });
 
 export default function HomePage() {
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'SOYL Academy',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://soylacademy.com',
-    description:
-      'SOYL Academy helps teachers create outcome-based learning experiences that ask students to think, apply, create, explain and defend — not simply submit.',
-    publisher: {
-      '@type': 'Organization',
-      name: 'SOYL AI Private Limited',
-      url: process.env.NEXT_PUBLIC_SITE_URL || 'https://soylacademy.com',
-    },
-  };
-
+  const structuredData = graph(
+    webPageNode({ path: '/' }),
+    breadcrumbNode('/', [{ name: 'Home', path: '/' }]),
+    faqNode('/', homeFaqs)
+  );
   return (
     <>
       <StructuredData data={structuredData} />
@@ -68,6 +65,9 @@ export default function HomePage() {
 
       {/* 12 — EDITORIAL: Journal preview */}
       <SoylJournal />
+
+      {/* 12b — QUIET: FAQ (answer-first; mirrors FAQPage JSON-LD) */}
+      <Faq faqs={homeFaqs} variant="section" heading="Common questions about SOYL Academy" />
 
       {/* 13 — LOUD: Education manifesto (climax) */}
       <EducationManifesto />

@@ -1,14 +1,22 @@
-import { Metadata } from 'next';
 import Image from 'next/image';
 import { Container } from '@/components/layout/Container';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { Badge } from '@/components/ui/Badge';
+import { Faq } from '@/components/seo/Faq';
+import { StructuredData } from '@/components/seo/StructuredData';
+import { schoolsFaqs } from '@/content/faqs';
+import { createMetadata } from '@/lib/seo/metadata';
+import {
+  breadcrumbNode,
+  faqNode,
+  graph,
+  howToNode,
+  topLevelCrumbs,
+  webPageNode,
+} from '@/lib/seo/schema';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'For Schools | SOYL Academy',
-  description: 'Change what homework means. Discover how SOYL Academy helps schools implement outcome-based learning.',
-};
+export const metadata = createMetadata({ path: '/schools' });
 
 const workflowSteps = [
   { step: 1, title: 'Define Objective', desc: 'Teachers select the core concept and the desired demonstration of learning.' },
@@ -22,6 +30,18 @@ const workflowSteps = [
 export default function SchoolsPage() {
   return (
     <div className="py-24 md:py-32 bg-white text-ink">
+      <StructuredData
+        data={graph(
+          webPageNode({ path: '/schools' }),
+          breadcrumbNode('/schools', topLevelCrumbs('/schools')),
+          howToNode(
+            'The SOYL Academy assignment workflow',
+            'How a teacher designs, assigns and evaluates an outcome-based SOYL challenge in six steps.',
+            workflowSteps
+          ),
+          faqNode('/schools', schoolsFaqs)
+        )}
+      />
       <Container>
         {/* Hero Section */}
         <section className="mb-24 md:mb-40">
@@ -88,7 +108,7 @@ export default function SchoolsPage() {
         </section>
 
         {/* Teacher Workflow */}
-        <section className="mb-32">
+        <section id="workflow" className="mb-32 scroll-mt-24">
           <ScrollReveal>
             <h2 className="text-subhead text-center mb-16">The SOYL Workflow</h2>
           </ScrollReveal>
@@ -140,6 +160,8 @@ export default function SchoolsPage() {
             </ScrollReveal>
           </div>
         </section>
+
+        <Faq faqs={schoolsFaqs} heading="Questions from school leaders" />
 
         {/* Final CTA */}
         <section className="text-center">

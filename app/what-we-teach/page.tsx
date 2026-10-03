@@ -1,14 +1,23 @@
-import { Metadata } from 'next';
 import Image from 'next/image';
 import { Container } from '@/components/layout/Container';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { Badge } from '@/components/ui/Badge';
+import { Faq } from '@/components/seo/Faq';
+import { StructuredData } from '@/components/seo/StructuredData';
+import { whatWeTeachFaqs } from '@/content/faqs';
+import { createMetadata } from '@/lib/seo/metadata';
+import { absoluteUrl } from '@/lib/seo/config';
+import {
+  breadcrumbNode,
+  faqNode,
+  graph,
+  programListNode,
+  topLevelCrumbs,
+  webPageNode,
+} from '@/lib/seo/schema';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'What We Teach | SOYL Academy',
-  description: 'Discover SOYL Academy\'s programs and workshops. Some things are better learned together.',
-};
+export const metadata = createMetadata({ path: '/what-we-teach' });
 
 const programs = [
   {
@@ -48,6 +57,17 @@ const programs = [
 export default function WhatWeTeachPage() {
   return (
     <div className="py-24 md:py-32 bg-white text-ink">
+      <StructuredData
+        data={graph(
+          webPageNode({
+            path: '/what-we-teach',
+            mainEntityId: `${absoluteUrl('/what-we-teach')}#programs`,
+          }),
+          breadcrumbNode('/what-we-teach', topLevelCrumbs('/what-we-teach')),
+          programListNode(programs),
+          faqNode('/what-we-teach', whatWeTeachFaqs)
+        )}
+      />
       <Container>
         {/* Hero Section */}
         <section className="mb-32">
@@ -118,10 +138,9 @@ export default function WhatWeTeachPage() {
               </ScrollReveal>
             ))}
           </div>
-          <div className="mt-8 text-center text-sm text-ink/50 italic">
-            Note: Program offerings are continually updated. Architecture designed for future CMS integration.
-          </div>
         </section>
+
+        <Faq faqs={whatWeTeachFaqs} heading="Questions about our programs" />
 
         {/* CTA */}
         <section>

@@ -1,13 +1,14 @@
-import { Metadata } from 'next';
 import Image from 'next/image';
 import { Container } from '@/components/layout/Container';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { Badge } from '@/components/ui/Badge';
+import { Faq } from '@/components/seo/Faq';
+import { StructuredData } from '@/components/seo/StructuredData';
+import { studentsFaqs } from '@/content/faqs';
+import { createMetadata } from '@/lib/seo/metadata';
+import { breadcrumbNode, faqNode, graph, topLevelCrumbs, webPageNode } from '@/lib/seo/schema';
 
-export const metadata: Metadata = {
-  title: 'For Students | SOYL Academy',
-  description: 'Learn beyond the answer. Solve, build, argue, explain, and reflect.',
-};
+export const metadata = createMetadata({ path: '/students' });
 
 const actions = [
   { word: 'Solve.', color: 'text-cobalt' },
@@ -20,6 +21,13 @@ const actions = [
 export default function StudentsPage() {
   return (
     <div className="py-24 md:py-32 bg-white text-ink">
+      <StructuredData
+        data={graph(
+          webPageNode({ path: '/students' }),
+          breadcrumbNode('/students', topLevelCrumbs('/students')),
+          faqNode('/students', studentsFaqs)
+        )}
+      />
       <Container>
         {/* Hero Section */}
         <section className="mb-24 md:mb-40 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -85,6 +93,8 @@ export default function StudentsPage() {
           </ScrollReveal>
         </section>
 
+        <Faq faqs={studentsFaqs} heading="Questions from students" />
+
         {/* Coming Soon CTA */}
         <section className="text-center max-w-2xl mx-auto">
           <ScrollReveal>
@@ -110,7 +120,6 @@ export default function StudentsPage() {
                   Join Waitlist
                 </button>
               </form>
-              <p className="text-xs text-ink/40 mt-4">(Waitlist placeholder)</p>
             </div>
           </ScrollReveal>
         </section>

@@ -76,3 +76,18 @@ export const journalArticles = articles;
 export function getArticleBySlug(slug: string): JournalArticle | undefined {
   return articles.find((a) => a.slug === slug);
 }
+
+/** "4 min read" — readingTime is stored as a number of minutes. */
+export function formatReadingTime(minutes: number): string {
+  return `${minutes} min read`;
+}
+
+/** "15 October 2023" from an ISO date (UTC, so it never shifts by timezone). */
+export function formatArticleDate(isoDate: string): string {
+  return new Date(isoDate).toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}

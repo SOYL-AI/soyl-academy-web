@@ -1,17 +1,34 @@
 import Link from 'next/link';
-import { Metadata } from 'next';
-import { journalArticles } from '@/content/journal';
+import { StructuredData } from '@/components/seo/StructuredData';
+import { formatArticleDate, formatReadingTime, journalArticles } from '@/content/journal';
+import { createMetadata } from '@/lib/seo/metadata';
+import {
+  breadcrumbNode,
+  graph,
+  journalListNode,
+  topLevelCrumbs,
+  webPageNode,
+} from '@/lib/seo/schema';
+import { absoluteUrl } from '@/lib/seo/config';
 
-export const metadata: Metadata = {
-  title: 'Journal | SOYL Academy',
-  description: 'Ideas about learning, technology and the school that\'s coming next.',
-};
+export const metadata = createMetadata({ path: '/journal' });
 
 export default function JournalPage() {
   const [featured, ...rest] = journalArticles || [];
 
   return (
     <div className="min-h-screen bg-white text-ink pt-24 pb-16">
+      <StructuredData
+        data={graph(
+          webPageNode({
+            path: '/journal',
+            mainEntityId: `${absoluteUrl('/journal')}#list`,
+            dateModified: [...journalArticles].map((a) => a.date).sort().at(-1),
+          }),
+          breadcrumbNode('/journal', topLevelCrumbs('/journal')),
+          journalListNode(journalArticles)
+        )}
+      />
       <div className="container mx-auto px-6 max-w-5xl">
         <header className="mb-16">
           <p className="text-sm font-semibold tracking-wider uppercase text-cobalt mb-4">The SOYL Journal</p>
@@ -29,9 +46,9 @@ export default function JournalPage() {
                 </div>
                 <div>
                   <div className="flex items-center gap-3 text-sm text-ink/60 mb-4">
-                    <time dateTime={featured.date}>{featured.date}</time>
+                    <time dateTime={featured.date}>{formatArticleDate(featured.date)}</time>
                     <span>&middot;</span>
-                    <span>{featured.readingTime}</span>
+                    <span>{formatReadingTime(featured.readingTime)}</span>
                     <span>&middot;</span>
                     <span className="text-cobalt">{featured.category}</span>
                   </div>
@@ -52,9 +69,9 @@ export default function JournalPage() {
             <article key={article.slug} className="group border-t border-ink/10 pt-8">
               <Link href={`/journal/${article.slug}`} className="block">
                 <div className="flex items-center gap-3 text-sm text-ink/60 mb-3">
-                  <time dateTime={article.date}>{article.date}</time>
+                  <time dateTime={article.date}>{formatArticleDate(article.date)}</time>
                   <span>&middot;</span>
-                  <span>{article.readingTime}</span>
+                  <span>{formatReadingTime(article.readingTime)}</span>
                   <span>&middot;</span>
                   <span className="text-cobalt">{article.category}</span>
                 </div>
