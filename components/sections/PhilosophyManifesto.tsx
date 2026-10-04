@@ -24,7 +24,7 @@ function Word({
   return (
     <motion.span
       style={{ opacity }}
-      className={cn('inline-block', mark && 'rounded-sm bg-highlighter px-[0.12em] text-ink')}
+      className={cn('inline-block', mark && 'rounded-sm bg-brand-yellow px-[0.12em] text-brand-black')}
     >
       {word}
     </motion.span>
@@ -58,7 +58,7 @@ function Words({
             {motionOk ? (
               <Word word={w} progress={progress} from={start + i * step} to={start + (i + 1) * step} mark={isMark} />
             ) : (
-              <span className={cn('inline-block', isMark && 'rounded-sm bg-highlighter px-[0.12em] text-ink')}>{w}</span>
+              <span className={cn('inline-block', isMark && 'rounded-sm bg-brand-yellow px-[0.12em] text-brand-black')}>{w}</span>
             )}{' '}
           </React.Fragment>
         );
@@ -87,7 +87,7 @@ export function PhilosophyManifesto() {
     <section
       ref={ref}
       aria-labelledby="manifesto-heading"
-      className={cn('relative w-full bg-ink text-white', ok && 'h-[250svh] md:h-[290svh]')}
+      className={cn('relative w-full bg-brand-blue text-brand-cream', ok && 'h-[250svh] md:h-[290svh]')}
     >
       <div
         className={cn(
@@ -95,7 +95,7 @@ export function PhilosophyManifesto() {
           ok ? 'sticky top-0 flex h-svh flex-col justify-center' : 'section-padding-lg'
         )}
       >
-        <p className="text-eyebrow mb-8 text-white/50 md:mb-10">Our belief</p>
+        <p className="text-eyebrow mb-8 text-brand-cream/70 md:mb-10">Our belief</p>
 
         <h2 id="manifesto-heading" className={cn(STATEMENT, 'mb-8 max-w-[18ch] md:mb-12')}>
           <Words text={manifesto.first} progress={p} start={0.04} end={0.4} motionOk={ok} />
@@ -107,7 +107,7 @@ export function PhilosophyManifesto() {
 
         <motion.p
           style={ok ? { opacity: closingOpacity, y: closingY } : undefined}
-          className="mt-10 font-editorial text-[clamp(1.75rem,3vw,2.5rem)] italic text-highlighter md:mt-14"
+          className="mt-10 font-editorial text-[clamp(1.75rem,3vw,2.5rem)] italic text-brand-yellow md:mt-14"
         >
           {manifesto.closing}
         </motion.p>

@@ -25,13 +25,13 @@ export function Hero() {
   const words = hero.headline;
 
   return (
-    <section className="relative w-full overflow-x-clip bg-white pt-24 pb-10 md:pt-28 md:pb-20 lg:pt-32">
+    <section className="relative w-full overflow-x-clip bg-brand-cream pt-24 pb-10 md:pt-28 md:pb-20 lg:pt-32">
       <div className="container-default">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-6">
-            <p className="text-eyebrow mb-7 text-ink-light md:mb-9">SOYL Academy</p>
+            <p className="text-eyebrow mb-7 text-brand-black/70 md:mb-9">SOYL Academy</p>
 
-            <h1 className="text-hero mb-8 text-ink md:mb-10">
+            <h1 className="text-hero mb-8 text-brand-black md:mb-10">
               {words.map((word, i) => (
                 <span key={word + i}>
                   <span className="word-mask">
@@ -48,7 +48,7 @@ export function Hero() {
               </span>
             </h1>
 
-            <p className="text-lead mb-10 max-w-[36ch] text-ink-light md:mb-12">{hero.support}</p>
+            <p className="text-lead mb-10 max-w-[36ch] text-brand-black/70 md:mb-12">{hero.support}</p>
 
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link
@@ -60,7 +60,7 @@ export function Hero() {
               </Link>
               <Link
                 href="/schools"
-                className="group press inline-flex h-12 items-center justify-center gap-2 rounded-sm border border-border-dark px-6 text-[15px] font-medium text-ink hover:border-ink"
+                className="group press inline-flex h-12 items-center justify-center gap-2 rounded-sm border border-border-dark px-6 text-[15px] font-medium text-brand-black hover:border-ink"
               >
                 For Schools
                 <Arrow />

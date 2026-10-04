@@ -8,14 +8,14 @@ import { DrawnUnderline } from '@/components/motion/DrawnUnderline';
  */
 export function FinalCta() {
   return (
-    <section className="w-full bg-white section-padding-lg">
+    <section className="w-full bg-brand-tan section-padding-lg">
       <div className="container-default">
         <ScrollReveal>
-          <h2 className="text-manifesto mb-14 max-w-[13ch] text-ink md:mb-20">
+          <h2 className="text-manifesto mb-14 max-w-[13ch] text-brand-black md:mb-20">
             Build learning{' '}
             <span className="relative inline-block whitespace-nowrap">
               worth doing.
-              <DrawnUnderline className="pointer-events-none absolute -bottom-[0.12em] left-0 h-[0.14em] w-full text-teacher-red" />
+              <DrawnUnderline className="pointer-events-none absolute -bottom-[0.12em] left-0 h-[0.14em] w-full text-brand-red" />
             </span>
           </h2>
         </ScrollReveal>
@@ -24,7 +24,7 @@ export function FinalCta() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
             <Link
               href={finalCta.primary.href}
-              className="group press inline-flex h-14 items-center justify-center gap-2 rounded-sm bg-ink px-8 text-[17px] font-medium text-white hover:bg-cobalt"
+              className="group press inline-flex h-14 items-center justify-center gap-2 rounded-sm bg-brand-black px-8 text-[17px] font-medium text-brand-cream hover:bg-brand-black/80"
             >
               {finalCta.primary.label}
               <svg
@@ -41,7 +41,7 @@ export function FinalCta() {
 
             <Link
               href={finalCta.secondary.href}
-              className="link-underline press inline-flex h-14 items-center text-[17px] font-medium text-ink"
+              className="link-underline press inline-flex h-14 items-center text-[17px] font-medium text-brand-black"
             >
               {finalCta.secondary.label}
             </Link>

@@ -31,7 +31,7 @@ function Tag({ children }: { children: React.ReactNode }) {
   return (
     <motion.span
       variants={pop}
-      className="shrink-0 rounded-full bg-cobalt-light px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-cobalt"
+      className="shrink-0 rounded-full bg-brand-blue/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-brand-blue"
     >
       {children}
     </motion.span>
@@ -116,7 +116,7 @@ export function AssignmentCard({ mode, compact = false, className }: AssignmentC
         )}
       >
         <motion.div variants={list} initial={false} animate={mode}>
-          <motion.p variants={rise} className="mb-3 text-eyebrow text-cobalt">
+          <motion.p variants={rise} className="mb-3 text-eyebrow text-brand-blue">
             The Energy Challenge
           </motion.p>
 

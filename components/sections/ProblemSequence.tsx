@@ -41,7 +41,7 @@ export function ProblemSequence() {
     <section
       ref={ref}
       id="how-it-works"
-      className={cn('relative w-full bg-bone', ok && 'h-[340svh]')}
+      className={cn('relative w-full bg-brand-tan', ok && 'h-[340svh]')}
     >
       <div
         className={cn(
