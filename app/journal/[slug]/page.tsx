@@ -11,6 +11,7 @@ import {
 import { absoluteUrl } from '@/lib/seo/config';
 import { createMetadata } from '@/lib/seo/metadata';
 import { articleNode, breadcrumbNode, graph, webPageNode } from '@/lib/seo/schema';
+import { Container } from '@/components/layout/Container';
 
 interface Props {
   // Next 16: route params arrive as a Promise and must be awaited.
@@ -59,7 +60,7 @@ export default async function JournalArticlePage({ params }: Props) {
   const related = journalArticles.filter((a) => a.slug !== article.slug).slice(0, 2);
 
   return (
-    <div className="min-h-screen bg-white text-ink pt-24 pb-24">
+    <div className="min-h-screen bg-brand-cream text-brand-black pt-32 pb-32">
       <StructuredData
         data={graph(
           webPageNode({
@@ -80,37 +81,37 @@ export default async function JournalArticlePage({ params }: Props) {
         )}
       />
 
-      <article className="container mx-auto px-6 max-w-[640px]">
-        <nav aria-label="Breadcrumb" className="mb-10 text-sm text-ink/60">
-          <ol className="flex flex-wrap items-center gap-2">
+      <article className="container mx-auto px-6 max-w-3xl">
+        <nav aria-label="Breadcrumb" className="mb-12 text-sm font-bold tracking-widest uppercase text-brand-black/50">
+          <ol className="flex flex-wrap items-center gap-3">
             <li>
-              <Link href="/" className="link-underline">
+              <Link href="/" className="hover:text-brand-black transition-colors">
                 Home
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
-              <Link href="/journal" className="link-underline">
+              <Link href="/journal" className="hover:text-brand-black transition-colors">
                 Journal
               </Link>
             </li>
           </ol>
         </nav>
 
-        <header className="mb-12 text-center">
-          <div className="flex items-center justify-center gap-3 text-sm text-ink/60 mb-6 uppercase tracking-wider">
-            <span className="text-cobalt">{article.category}</span>
+        <header className="mb-16">
+          <div className="flex items-center gap-4 text-sm font-bold tracking-widest uppercase text-brand-black/50 mb-8">
+            <span className="text-brand-blue">{article.category}</span>
             <span>&middot;</span>
             <time dateTime={article.date}>{formatArticleDate(article.date)}</time>
             <span>&middot;</span>
             <span>{formatReadingTime(article.readingTime)}</span>
           </div>
-          <h1 className="text-hero text-ink leading-tight mb-8">{article.title}</h1>
-          <p className="text-xl text-ink/70 leading-relaxed mb-6">{article.excerpt}</p>
-          {article.author && <p className="text-lg text-ink/80">By {article.author}</p>}
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">{article.title}</h1>
+          <p className="text-2xl text-brand-black/70 leading-relaxed mb-8">{article.excerpt}</p>
+          {article.author && <p className="text-lg font-bold text-brand-black">By {article.author}</p>}
         </header>
 
-        <div className="prose prose-lg prose-ink mx-auto font-sans leading-relaxed space-y-6 text-lg text-ink/85">
+        <div className="mx-auto leading-relaxed space-y-8 text-xl text-brand-black/80">
           {paragraphs.length > 0 ? (
             paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)
           ) : (
@@ -119,18 +120,18 @@ export default async function JournalArticlePage({ params }: Props) {
         </div>
 
         {related.length > 0 && (
-          <aside aria-labelledby="keep-reading" className="mt-20 pt-10 border-t border-ink/10">
-            <h2 id="keep-reading" className="text-eyebrow text-ink-lighter mb-6">
+          <aside aria-labelledby="keep-reading" className="mt-24 pt-12 border-t border-brand-black/10">
+            <h2 id="keep-reading" className="text-sm font-bold tracking-widest uppercase text-brand-blue mb-8">
               Keep reading
             </h2>
-            <ul className="space-y-6">
+            <ul className="space-y-12">
               {related.map((item) => (
                 <li key={item.slug}>
                   <Link href={`/journal/${item.slug}`} className="group block">
-                    <p className="text-subhead text-ink transition-colors group-hover:text-cobalt">
+                    <p className="text-3xl font-bold transition-colors group-hover:text-brand-blue mb-3">
                       {item.title}
                     </p>
-                    <p className="text-ink/70 mt-1">{item.excerpt}</p>
+                    <p className="text-xl text-brand-black/70">{item.excerpt}</p>
                   </Link>
                 </li>
               ))}
@@ -138,10 +139,10 @@ export default async function JournalArticlePage({ params }: Props) {
           </aside>
         )}
 
-        <footer className="mt-16 pt-10 border-t border-ink/10">
+        <footer className="mt-24 pt-12 border-t border-brand-black/10">
           <Link
             href="/journal"
-            className="text-cobalt hover:text-ink transition-colors font-medium flex items-center gap-2"
+            className="text-brand-blue hover:text-brand-black transition-colors font-bold flex items-center gap-2"
           >
             &larr; Back to Journal
           </Link>

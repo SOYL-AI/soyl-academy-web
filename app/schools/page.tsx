@@ -1,27 +1,19 @@
 import Image from 'next/image';
 import { Container } from '@/components/layout/Container';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
-import { Badge } from '@/components/ui/Badge';
 import { Faq } from '@/components/seo/Faq';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { schoolsFaqs } from '@/content/faqs';
 import { createMetadata } from '@/lib/seo/metadata';
-import {
-  breadcrumbNode,
-  faqNode,
-  graph,
-  howToNode,
-  topLevelCrumbs,
-  webPageNode,
-} from '@/lib/seo/schema';
+import { breadcrumbNode, faqNode, graph, howToNode, topLevelCrumbs, webPageNode } from '@/lib/seo/schema';
 import Link from 'next/link';
 
 export const metadata = createMetadata({ path: '/schools' });
 
 const workflowSteps = [
-  { step: 1, title: 'Define Objective', desc: 'Teachers select the core concept and the desired demonstration of learning.' },
-  { step: 2, title: 'Generate Context', desc: 'SOYL assists in creating a robust, real-world scenario tailored to the curriculum.' },
-  { step: 3, title: 'Assign Challenge', desc: 'Students receive the scenario and the success criteria, not a rigid set of instructions.' },
+  { step: 1, title: 'Teacher Design', desc: 'Educators frame the learning objective using SOYL\'s challenge structure.' },
+  { step: 2, title: 'Student Context', desc: 'Students are presented with the scenario and constraints.' },
+  { step: 3, title: 'Strategy & Ideation', desc: 'Students map out their approach before jumping to solutions.' },
   { step: 4, title: 'Student Action', desc: 'Students research, build, write, or create their solution, documenting their process.' },
   { step: 5, title: 'Defense & Reflection', desc: 'Students articulate why they made their choices and what they learned.' },
   { step: 6, title: 'Educator Review', desc: 'Teachers evaluate the evidence of thinking, guided by SOYL\'s insight engine.' }
@@ -29,7 +21,7 @@ const workflowSteps = [
 
 export default function SchoolsPage() {
   return (
-    <div className="py-24 md:py-32 bg-white text-ink">
+    <div className="py-32 bg-brand-cream text-brand-black min-h-screen">
       <StructuredData
         data={graph(
           webPageNode({ path: '/schools' }),
@@ -43,46 +35,38 @@ export default function SchoolsPage() {
         )}
       />
       <Container>
-        {/* Hero Section */}
-        <section className="mb-24 md:mb-40">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 mb-14 md:mb-20">
-            <div className="lg:col-span-7">
+        <section className="mb-48">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20 items-end">
+            <div className="lg:col-span-8">
               <ScrollReveal>
-                <Badge className="mb-8">For Schools</Badge>
-                <h1 className="text-hero mb-8 max-w-[16ch]">
+                <h3 className="text-sm font-bold tracking-widest text-brand-blue uppercase mb-8">For Schools</h3>
+                <h1 className="text-5xl md:text-8xl font-bold tracking-tight max-w-[15ch]">
                   Change what homework means.
                 </h1>
               </ScrollReveal>
             </div>
-
-            <div className="lg:col-span-4 lg:col-start-9 lg:pt-20">
+            <div className="lg:col-span-4 pb-4">
               <ScrollReveal delay={0.1}>
-                <p className="text-lead text-ink-light mb-10 max-w-[40ch]">
-                  Traditional assignments no longer reliably demonstrate
-                  learning. Partner with SOYL Academy to build classrooms where
-                  thinking is visible.
+                <p className="text-xl md:text-2xl text-brand-black/70 mb-8 leading-relaxed">
+                  Traditional assignments no longer reliably demonstrate learning. Build classrooms where thinking is visible.
                 </p>
                 <Link
                   href="/contact"
-                  className="group inline-flex items-center gap-2 h-12 px-6 bg-ink text-white text-[15px] font-medium rounded-sm transition-colors duration-300 hover:bg-cobalt"
+                  className="press inline-flex items-center justify-center bg-brand-black text-brand-cream px-8 py-4 text-lg font-bold transition-colors hover:bg-brand-black/90"
                 >
                   Enquire about a pilot
-                  <svg width="13" height="13" viewBox="0 0 12 12" fill="none" aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-0.5">
-                    <path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
                 </Link>
               </ScrollReveal>
             </div>
           </div>
 
-          {/* Establishing plate — the room, not a close crop */}
-          <ScrollReveal delay={0.15}>
-            <div className="relative aspect-[16/10] md:aspect-[12/5] w-full overflow-hidden rounded-lg">
+          <ScrollReveal delay={0.2}>
+            <div className="relative aspect-[16/7] w-full overflow-hidden bg-brand-black/5">
               <Image
                 src="/images/classroom_wide_establishing.jpg"
-                alt="A secondary classroom in use, groups working at separate tables while the teacher moves between them"
+                alt="A secondary classroom in use"
                 fill
-                className="object-cover"
+                className="object-cover grayscale mix-blend-multiply"
                 sizes="100vw"
                 priority
               />
@@ -90,71 +74,68 @@ export default function SchoolsPage() {
           </ScrollReveal>
         </section>
 
-        {/* Problem Statement & Philosophy */}
-        <section className="mb-32">
-          <ScrollReveal>
-            <div className="max-w-4xl mx-auto text-center mb-16">
-              <h2 className="text-headline mb-8">The output is no longer the proof.</h2>
-              <div className="text-lg text-ink/80 space-y-6 text-left md:text-center">
+        <section className="mb-48 border-t border-brand-black/10 pt-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-24">
+            <ScrollReveal>
+              <h2 className="text-4xl md:text-6xl font-bold mb-8">
+                The output is no longer the proof.
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <div className="text-xl md:text-2xl leading-relaxed text-brand-black/80 space-y-8">
                 <p>
-                  When artificial intelligence can produce a B+ essay, solve calculus problems, and write boilerplate code in seconds, the traditional model of education faces an existential crisis. If the artifact alone can be generated without effort, how do we know if learning has occurred?
+                  When AI can produce a B+ essay or solve calculus in seconds, the artifact alone proves nothing. If it can be generated without effort, how do we know learning occurred?
                 </p>
-                <p className="font-medium text-ink">
-                  SOYL Academy believes the solution is not to ban technology, nor to retreat to pen-and-paper exams. The solution is to change the assignment.
+                <p className="font-bold text-brand-black bg-brand-yellow/30 inline-block px-2">
+                  The solution is not to ban technology. The solution is to change the assignment.
                 </p>
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
         </section>
 
         {/* Teacher Workflow */}
-        <section id="workflow" className="mb-32 scroll-mt-24">
+        <section id="workflow" className="mb-48 scroll-mt-32">
           <ScrollReveal>
-            <h2 className="text-subhead text-center mb-16">The SOYL Workflow</h2>
+            <h3 className="text-sm font-bold tracking-widest text-brand-blue uppercase mb-16">The SOYL Workflow</h3>
           </ScrollReveal>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-24 gap-x-12">
             {workflowSteps.map((step, index) => (
               <ScrollReveal key={step.step} delay={index * 0.05}>
-                <div className="bg-white p-8 rounded-xl border border-ink/10 h-full flex flex-col">
-                  <div className="text-subhead text-cobalt mb-6">{`0${step.step}`}</div>
-                  <h3 className="text-xl font-sans font-bold mb-3">{step.title}</h3>
-                  <p className="text-ink/70 leading-relaxed">{step.desc}</p>
+                <div className="border-t-2 border-brand-black pt-6">
+                  <div className="text-4xl font-bold text-brand-black mb-4">0{step.step}</div>
+                  <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
+                  <p className="text-lg text-brand-black/70 leading-relaxed">{step.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
           </div>
         </section>
 
-        {/* Curriculum Alignment & Pilot */}
-        <section className="mb-32">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <section className="mb-48 bg-brand-black text-brand-cream p-16 md:p-32 rounded-[2rem]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
             <ScrollReveal>
-              <h2 className="text-subhead mb-6">Seamless Curriculum Alignment</h2>
-              <p className="text-lg text-ink/80 mb-6">
+              <h2 className="text-4xl md:text-6xl font-bold mb-8">Seamless Curriculum Alignment</h2>
+              <p className="text-xl text-brand-cream/70 mb-8 leading-relaxed">
                 The SOYL Method does not require you to throw away your curriculum. It is a pedagogical overlay that integrates with your existing standards—whether Common Core, IB, IGCSE, or local frameworks.
-              </p>
-              <p className="text-lg text-ink/80">
-                We work with instructional leaders to map SOYL challenges directly to the learning objectives you already need to hit, transforming how they are assessed rather than what is taught.
               </p>
             </ScrollReveal>
             
             <ScrollReveal delay={0.2}>
-              <div className="bg-ink text-paper p-10 rounded-2xl">
-                <h2 className="text-subhead mb-8 text-highlighter">What a Pilot Looks Like</h2>
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="text-lg font-bold mb-2">Phase 1: Introduce (Weeks 1-2)</h3>
-                    <p className="text-paper/70">Professional development for a core cohort of early-adopter teachers. Mapping 2-3 key units to the SOYL framework.</p>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold mb-2">Phase 2: Implement (Weeks 3-8)</h3>
-                    <p className="text-paper/70">Teachers deploy SOYL challenges in the classroom. Ongoing support and refinement based on initial student responses.</p>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold mb-2">Phase 3: Evaluate (Weeks 9-10)</h3>
-                    <p className="text-paper/70">Review of student portfolios, teacher feedback, and assessment of learning depth. Planning for wider rollout.</p>
-                  </div>
+              <h3 className="text-sm font-bold tracking-widest text-brand-yellow uppercase mb-12">What a Pilot Looks Like</h3>
+              <div className="space-y-12">
+                <div className="border-l border-brand-cream/20 pl-6">
+                  <h4 className="text-xl font-bold mb-2">Phase 1: Introduce (Weeks 1-2)</h4>
+                  <p className="text-brand-cream/60">PD for early-adopter teachers. Mapping 2-3 key units.</p>
+                </div>
+                <div className="border-l border-brand-cream/20 pl-6">
+                  <h4 className="text-xl font-bold mb-2">Phase 2: Implement (Weeks 3-8)</h4>
+                  <p className="text-brand-cream/60">Teachers deploy challenges. Ongoing support based on student responses.</p>
+                </div>
+                <div className="border-l border-brand-cream/20 pl-6">
+                  <h4 className="text-xl font-bold mb-2">Phase 3: Evaluate (Weeks 9-10)</h4>
+                  <p className="text-brand-cream/60">Review portfolios, feedback, and assess depth of learning.</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -163,20 +144,6 @@ export default function SchoolsPage() {
 
         <Faq faqs={schoolsFaqs} heading="Questions from school leaders" />
 
-        {/* Final CTA */}
-        <section className="text-center">
-          <ScrollReveal>
-            <div className="py-20 border-t border-ink/10">
-              <h2 className="text-headline mb-8">Ready to bring SOYL to your classrooms?</h2>
-              <Link 
-                href="/contact" 
-                className="inline-flex items-center justify-center bg-cobalt text-white px-10 py-5 rounded-full text-lg font-medium hover:bg-cobalt/90 transition-transform hover:scale-105"
-              >
-                Start the Conversation
-              </Link>
-            </div>
-          </ScrollReveal>
-        </section>
       </Container>
     </div>
   );

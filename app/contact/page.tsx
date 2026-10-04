@@ -38,30 +38,30 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-ink pt-24 pb-24">
+    <div className="min-h-screen bg-brand-cream text-brand-black pt-32 pb-32">
       <div className="container mx-auto px-6 max-w-3xl">
-        <header className="mb-12 text-center">
-          <h1 className="text-headline mb-4">Bring SOYL to your school</h1>
-          <p className="text-xl text-ink/70">
+        <header className="mb-16 text-center">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">Bring SOYL to your school</h1>
+          <p className="text-xl text-brand-black/70">
             Fill out the form below and our team will get in touch.
           </p>
         </header>
 
         {status === 'success' ? (
-          <div className="bg-paper p-8 text-center rounded-none border border-ink/10">
-            <h2 className="text-subhead text-ink mb-2">Thank you</h2>
-            <p className="text-ink/80">{message}</p>
+          <div className="bg-brand-black/5 p-12 text-center rounded-[2rem]">
+            <h2 className="text-3xl font-bold mb-4">Thank you</h2>
+            <p className="text-xl text-brand-black/80">{message}</p>
             <button 
               onClick={() => setStatus('idle')}
-              className="mt-6 bg-cobalt text-white px-6 py-2 rounded-sm font-medium hover:bg-cobalt/90 transition-colors"
+              className="mt-8 bg-brand-black text-brand-cream px-8 py-3 text-lg font-bold transition-colors hover:bg-brand-black/90 press"
             >
               Send another message
             </button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-paper p-8 md:p-12 border border-ink/10 rounded-none">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 bg-brand-black/5 p-8 md:p-16 rounded-[2rem]">
             {status === 'error' && (
-              <div className="bg-teacher-red/10 text-teacher-red p-4 rounded-none text-sm" role="alert">
+              <div className="bg-brand-red/10 text-brand-red p-4 font-medium" role="alert">
                 {message}
               </div>
             )}
@@ -71,50 +71,50 @@ export default function ContactPage() {
               <input type="text" id="botField" {...register('honeypot')} tabIndex={-1} />
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold mb-2">Name *</label>
+                <label htmlFor="name" className="block text-sm font-bold tracking-widest uppercase text-brand-black/60 mb-3">Name *</label>
                 <input
                   id="name"
                   type="text"
                   {...register('name')}
-                  className={`w-full px-4 py-4 bg-white/50 border-0 border-b-2 ${errors.name ? 'border-teacher-red' : 'border-ink/15'} rounded-none focus:outline-none focus:border-ink focus:ring-0 transition-colors`}
+                  className={`w-full px-6 py-4 bg-brand-cream border-2 ${errors.name ? 'border-brand-red' : 'border-brand-black/10'} focus:outline-none focus:border-brand-black font-medium transition-colors`}
                   aria-invalid={errors.name ? 'true' : 'false'}
                 />
-                {errors.name && <p className="mt-1 text-sm text-teacher-red">{errors.name.message}</p>}
+                {errors.name && <p className="mt-2 text-sm text-brand-red font-medium">{errors.name.message}</p>}
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold mb-2">Work email *</label>
+                <label htmlFor="email" className="block text-sm font-bold tracking-widest uppercase text-brand-black/60 mb-3">Work email *</label>
                 <input
                   id="email"
                   type="email"
                   {...register('email')}
-                  className={`w-full px-4 py-4 bg-white/50 border-0 border-b-2 ${errors.email ? 'border-teacher-red' : 'border-ink/15'} rounded-none focus:outline-none focus:border-ink focus:ring-0 transition-colors`}
+                  className={`w-full px-6 py-4 bg-brand-cream border-2 ${errors.email ? 'border-brand-red' : 'border-brand-black/10'} focus:outline-none focus:border-brand-black font-medium transition-colors`}
                   aria-invalid={errors.email ? 'true' : 'false'}
                 />
-                {errors.email && <p className="mt-1 text-sm text-teacher-red">{errors.email.message}</p>}
+                {errors.email && <p className="mt-2 text-sm text-brand-red font-medium">{errors.email.message}</p>}
               </div>
             </div>
 
             <div>
-              <label htmlFor="school" className="block text-sm font-semibold mb-2">School / Organisation *</label>
+              <label htmlFor="school" className="block text-sm font-bold tracking-widest uppercase text-brand-black/60 mb-3">School / Organisation *</label>
               <input
                 id="school"
                 type="text"
                 {...register('school')}
-                className={`w-full px-4 py-4 bg-white/50 border-0 border-b-2 ${errors.school ? 'border-teacher-red' : 'border-ink/15'} rounded-none focus:outline-none focus:border-ink focus:ring-0 transition-colors`}
+                className={`w-full px-6 py-4 bg-brand-cream border-2 ${errors.school ? 'border-brand-red' : 'border-brand-black/10'} focus:outline-none focus:border-brand-black font-medium transition-colors`}
               />
-              {errors.school && <p className="mt-1 text-sm text-teacher-red">{errors.school.message}</p>}
+              {errors.school && <p className="mt-2 text-sm text-brand-red font-medium">{errors.school.message}</p>}
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <label htmlFor="role" className="block text-sm font-semibold mb-2">Role *</label>
+                <label htmlFor="role" className="block text-sm font-bold tracking-widest uppercase text-brand-black/60 mb-3">Role *</label>
                 <select
                   id="role"
                   {...register('role')}
-                  className={`w-full px-4 py-4 bg-white/50 border-0 border-b-2 ${errors.role ? 'border-teacher-red' : 'border-ink/15'} rounded-none focus:outline-none focus:border-ink focus:ring-0 transition-colors appearance-none`}
+                  className={`w-full px-6 py-4 bg-brand-cream border-2 ${errors.role ? 'border-brand-red' : 'border-brand-black/10'} focus:outline-none focus:border-brand-black font-medium transition-colors appearance-none cursor-pointer`}
                 >
                   <option value="">Select a role...</option>
                   <option value="Teacher">Teacher</option>
@@ -125,38 +125,38 @@ export default function ContactPage() {
                   <option value="Student">Student</option>
                   <option value="Other">Other</option>
                 </select>
-                {errors.role && <p className="mt-1 text-sm text-teacher-red">{errors.role.message}</p>}
+                {errors.role && <p className="mt-2 text-sm text-brand-red font-medium">{errors.role.message}</p>}
               </div>
 
               <div>
-                <label htmlFor="city" className="block text-sm font-semibold mb-2">City *</label>
+                <label htmlFor="city" className="block text-sm font-bold tracking-widest uppercase text-brand-black/60 mb-3">City *</label>
                 <input
                   id="city"
                   type="text"
                   {...register('city')}
-                  className={`w-full px-4 py-4 bg-white/50 border-0 border-b-2 ${errors.city ? 'border-teacher-red' : 'border-ink/15'} rounded-none focus:outline-none focus:border-ink focus:ring-0 transition-colors`}
+                  className={`w-full px-6 py-4 bg-brand-cream border-2 ${errors.city ? 'border-brand-red' : 'border-brand-black/10'} focus:outline-none focus:border-brand-black font-medium transition-colors`}
                 />
-                {errors.city && <p className="mt-1 text-sm text-teacher-red">{errors.city.message}</p>}
+                {errors.city && <p className="mt-2 text-sm text-brand-red font-medium">{errors.city.message}</p>}
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <label htmlFor="studentCount" className="block text-sm font-semibold mb-2">Number of students (optional)</label>
+                <label htmlFor="studentCount" className="block text-sm font-bold tracking-widest uppercase text-brand-black/60 mb-3">Students (optional)</label>
                 <input
                   id="studentCount"
                   type="text"
                   {...register('studentCount')}
-                  className="w-full px-4 py-4 bg-white/50 border-0 border-b-2 border-ink/15 rounded-none focus:outline-none focus:border-ink focus:ring-0 transition-colors"
+                  className="w-full px-6 py-4 bg-brand-cream border-2 border-brand-black/10 focus:outline-none focus:border-brand-black font-medium transition-colors"
                 />
               </div>
 
               <div>
-                <label htmlFor="interest" className="block text-sm font-semibold mb-2">What would you like to explore? *</label>
+                <label htmlFor="interest" className="block text-sm font-bold tracking-widest uppercase text-brand-black/60 mb-3">Interest *</label>
                 <select
                   id="interest"
                   {...register('interest')}
-                  className={`w-full px-4 py-4 bg-white/50 border-0 border-b-2 ${errors.interest ? 'border-teacher-red' : 'border-ink/15'} rounded-none focus:outline-none focus:border-ink focus:ring-0 transition-colors appearance-none`}
+                  className={`w-full px-6 py-4 bg-brand-cream border-2 ${errors.interest ? 'border-brand-red' : 'border-brand-black/10'} focus:outline-none focus:border-brand-black font-medium transition-colors appearance-none cursor-pointer`}
                 >
                   <option value="">Select an area...</option>
                   <option value="Outcome-based assignments">Outcome-based assignments</option>
@@ -166,36 +166,36 @@ export default function ContactPage() {
                   <option value="Partnership">Partnership</option>
                   <option value="Other">Other</option>
                 </select>
-                {errors.interest && <p className="mt-1 text-sm text-teacher-red">{errors.interest.message}</p>}
+                {errors.interest && <p className="mt-2 text-sm text-brand-red font-medium">{errors.interest.message}</p>}
               </div>
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-semibold mb-2">Message *</label>
+              <label htmlFor="message" className="block text-sm font-bold tracking-widest uppercase text-brand-black/60 mb-3">Message *</label>
               <textarea
                 id="message"
-                rows={4}
+                rows={5}
                 {...register('message')}
-                className={`w-full px-4 py-4 bg-white/50 border-0 border-b-2 ${errors.message ? 'border-teacher-red' : 'border-ink/15'} rounded-none focus:outline-none focus:border-ink focus:ring-0 transition-colors resize-y`}
+                className={`w-full px-6 py-4 bg-brand-cream border-2 ${errors.message ? 'border-brand-red' : 'border-brand-black/10'} focus:outline-none focus:border-brand-black font-medium transition-colors resize-y`}
               ></textarea>
-              {errors.message && <p className="mt-1 text-sm text-teacher-red">{errors.message.message}</p>}
+              {errors.message && <p className="mt-2 text-sm text-brand-red font-medium">{errors.message.message}</p>}
             </div>
 
             <button
               type="submit"
               disabled={status === 'submitting'}
-              className="group flex w-full items-center justify-center gap-2 h-14 bg-ink text-white text-[17px] font-medium rounded-sm transition-colors duration-300 hover:bg-cobalt disabled:opacity-70 disabled:cursor-not-allowed"
+              className="press group flex w-full items-center justify-center gap-2 h-16 bg-brand-black text-brand-cream text-xl font-bold transition-colors duration-300 hover:bg-brand-black/90 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {status === 'submitting' ? 'Sending...' : 'Send Message'}
               <svg
-                width="13"
-                height="13"
+                width="15"
+                height="15"
                 viewBox="0 0 12 12"
                 fill="none"
                 aria-hidden="true"
-                className="transition-transform duration-300 group-hover:translate-x-0.5"
+                className="transition-transform duration-300 group-hover:translate-x-1"
               >
-                <path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
           </form>

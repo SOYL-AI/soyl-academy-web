@@ -1,6 +1,5 @@
 import { Container } from '@/components/layout/Container';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
-import { Badge } from '@/components/ui/Badge';
 import { Faq } from '@/components/seo/Faq';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { pillars } from '@/content/method';
@@ -21,7 +20,7 @@ export const metadata = createMetadata({ path: '/method' });
 
 export default function MethodPage() {
   return (
-    <div className="py-24 md:py-32 bg-white text-ink">
+    <div className="py-24 md:py-32 bg-brand-cream text-brand-black min-h-screen">
       <StructuredData
         data={graph(
           webPageNode({
@@ -35,67 +34,42 @@ export default function MethodPage() {
       />
       <Container>
         {/* Hero Section */}
-        <section className="mb-32">
+        <section className="mb-48 mt-12">
           <ScrollReveal>
-            <Badge className="mb-8">The SOYL Method</Badge>
-            <h1 className="text-hero max-w-4xl mb-8">
-              Learning should be demonstrated through what a student can do, not merely through what they can submit.
+            <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
+              Learning should be <span className="bg-brand-yellow px-2">demonstrated</span>.
             </h1>
-          </ScrollReveal>
-          
-          <ScrollReveal delay={0.1}>
-            <div className="max-w-3xl text-xl text-ink/80 space-y-6">
-              <p>
-                For decades, educational assignments have been transactional: teachers assign a task, students submit a product, and a grade is returned. This system worked when the production of the artifact itself guaranteed that thinking had occurred.
-              </p>
-              <p>
-                Today, the artifact alone proves nothing. When technology can generate essays, solve equations, and write code in seconds, we can no longer assess learning solely by looking at the final submission. We must assess the process, the reasoning, and the student&apos;s ability to wield knowledge.
-              </p>
-              <p>
-                The SOYL Method is an outcome-based framework designed to make thinking visible. It moves beyond transactional submissions to focus on five fundamental demonstrations of learning.
-              </p>
-            </div>
+            <p className="text-2xl md:text-4xl font-medium leading-tight max-w-4xl">
+              Not merely through what a student can submit, but through what they can do, apply, and defend.
+            </p>
           </ScrollReveal>
         </section>
 
         {/* The 5 Pillars */}
-        <section className="mb-32">
+        <section className="mb-48">
           <div className="space-y-32">
             {pillars.map((pillar, index) => (
-              <ScrollReveal key={pillar.num} delay={0.1 * index}>
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
-                  <div className="md:col-span-4">
-                    <span className="text-headline text-cobalt block mb-4">{pillar.num}</span>
-                    <h2 className="text-3xl font-sans font-medium mb-2">{pillar.name}</h2>
-                    <p className="text-lg text-teacher-red font-editorial italic">{pillar.tagline}</p>
+              <ScrollReveal key={pillar.num} delay={0.1}>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-24 items-start pt-16 border-t border-brand-black/10">
+                  <div className="md:col-span-4 sticky top-32">
+                    <span className="text-sm font-bold tracking-widest text-brand-blue uppercase block mb-4">Pillar {pillar.num}</span>
+                    <h2 className="text-5xl md:text-6xl font-bold mb-4">{pillar.name}</h2>
+                    <p className="text-xl md:text-2xl text-brand-black/50">{pillar.tagline}</p>
                   </div>
                   
-                  <div className="md:col-span-8 space-y-12">
-                    <div className="text-lg text-ink/80 space-y-6">
-                      {pillar.content.map((paragraph, i) => (
-                        <p key={i}>{paragraph}</p>
-                      ))}
+                  <div className="md:col-span-8 space-y-16">
+                    <div className="text-2xl leading-relaxed text-brand-black/90">
+                      <p>{pillar.content[0]}</p>
                     </div>
                     
-                    <div className="bg-white p-8 border border-ink/10 rounded-xl relative overflow-hidden">
-                      <div className="absolute top-0 left-0 w-1 h-full bg-teacher-red"></div>
-                      <h3 className="text-sm font-bold uppercase tracking-wider text-ink/60 mb-6">The Shift</h3>
-                      
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div>
-                          <h4 className="text-sm font-semibold mb-3 flex items-center">
-                            <span className="w-2 h-2 rounded-full bg-ink/30 mr-2"></span>
-                            Traditional Assignment
-                          </h4>
-                          <p className="text-ink/70">{pillar.traditional}</p>
-                        </div>
-                        <div>
-                          <h4 className="text-sm font-semibold mb-3 flex items-center">
-                            <span className="w-2 h-2 rounded-full bg-cobalt mr-2"></span>
-                            SOYL Assignment
-                          </h4>
-                          <p className="font-medium">{pillar.soyl}</p>
-                        </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                      <div className="space-y-4">
+                        <h4 className="text-sm font-bold tracking-widest text-brand-black/40 uppercase">Traditional</h4>
+                        <p className="text-lg line-through decoration-brand-red/50 text-brand-black/60">{pillar.traditional}</p>
+                      </div>
+                      <div className="space-y-4">
+                        <h4 className="text-sm font-bold tracking-widest text-brand-blue uppercase">SOYL Method</h4>
+                        <p className="text-xl font-medium">{pillar.soyl}</p>
                       </div>
                     </div>
                   </div>
@@ -106,25 +80,26 @@ export default function MethodPage() {
         </section>
 
         {/* Teacher Control & Technology */}
-        <section className="mb-32">
+        <section className="mb-48">
           <ScrollReveal>
-            <div className="bg-ink text-paper p-12 md:p-24 rounded-2xl">
-              <div className="max-w-4xl mx-auto text-center space-y-12">
-                <h2 className="text-headline leading-tight">
-                  Technology assists teachers. Technology must never visually or philosophically appear to replace educators.
+            <div className="bg-brand-black text-brand-cream p-16 md:p-32 rounded-[2rem]">
+              <div className="max-w-4xl space-y-16">
+                <h2 className="text-5xl md:text-7xl font-bold leading-tight">
+                  Technology assists teachers.<br />
+                  <span className="text-brand-yellow">It does not replace them.</span>
                 </h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                   <div>
-                    <h3 className="text-xl font-sans font-medium mb-4 text-highlighter">Teacher Control</h3>
-                    <p className="text-paper/80 leading-relaxed">
-                      The SOYL Method places the educator firmly in the driver&apos;s seat. Our tools are designed to amplify a teacher&apos;s reach, handle administrative burden, and provide deeper insights, but the pedagogical decisions, the relationships, and the final assessments remain entirely human.
+                    <h3 className="text-sm font-bold tracking-widest uppercase mb-6 text-brand-cream/50">Teacher Control</h3>
+                    <p className="text-xl leading-relaxed">
+                      Our tools amplify a teacher&apos;s reach and provide deeper insights, but the pedagogical decisions, the relationships, and the final assessments remain entirely human.
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-xl font-sans font-medium mb-4 text-highlighter">Responsible Use</h3>
-                    <p className="text-paper/80 leading-relaxed">
-                      We believe AI is a powerful tool for learning when used as a thought partner, not a shortcut. The SOYL Method teaches students how to use technology responsibly, demanding transparency in their process and holding them accountable for the integrity of their work.
+                    <h3 className="text-sm font-bold tracking-widest uppercase mb-6 text-brand-cream/50">Responsible Use</h3>
+                    <p className="text-xl leading-relaxed">
+                      We believe AI is a powerful tool for learning when used as a thought partner, not a shortcut. We hold students accountable for the integrity of their work.
                     </p>
                   </div>
                 </div>
@@ -137,19 +112,6 @@ export default function MethodPage() {
           faqs={methodFaqs}
           heading="Questions about the SOYL Method"
         />
-
-        {/* CTA */}
-        <section className="text-center">
-          <ScrollReveal>
-            <h2 className="text-subhead mb-8">Ready to change how learning is demonstrated?</h2>
-            <Link 
-              href="/contact" 
-              className="inline-flex items-center justify-center bg-cobalt text-white px-8 py-4 rounded-full font-medium hover:bg-cobalt/90 transition-colors"
-            >
-              Get in touch
-            </Link>
-          </ScrollReveal>
-        </section>
       </Container>
     </div>
   );
