@@ -137,7 +137,7 @@ export function Header() {
                 >
                   <ul>
                     {navItems.map((item) => (
-                      <li key={item.href} className="border-b border-ink/15">
+                      <li key={item.href} className="border-b border-ink/20">
                         <Link
                           href={item.href}
                           onClick={close}
@@ -146,7 +146,7 @@ export function Header() {
                             pathname === item.href ? 'page' : undefined
                           }
                           className={cn(
-                            'block py-3.5 text-[17px] tracking-[-0.015em] transition-colors',
+                            'block py-5 text-3xl font-editorial tracking-tight transition-colors',
                             pathname === item.href
                               ? 'text-cobalt font-medium'
                               : 'text-ink hover:text-cobalt'

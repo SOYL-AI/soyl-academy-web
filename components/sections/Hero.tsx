@@ -11,7 +11,7 @@ export function Hero() {
             <p className="text-eyebrow text-ink-light mb-7 md:mb-9">SOYL Academy</p>
 
             <h1 className="text-hero text-ink mb-8 md:mb-10">
-              Homework was built for a world before AI.
+              Homework was built for a world <span className="text-highlight">before AI.</span>
             </h1>
 
             <p className="text-lead text-ink-light max-w-[34ch] mb-10 md:mb-12">

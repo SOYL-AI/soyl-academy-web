@@ -40,7 +40,7 @@ export default function AboutPage() {
                     src="/images/students_presenting.jpg" 
                     alt="Students presenting their project findings" 
                     fill
-                    className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                    className="object-cover hover:scale-[1.03] transition-transform duration-700"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>

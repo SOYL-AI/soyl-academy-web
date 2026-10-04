@@ -18,17 +18,6 @@ export default function FutureBuildersPage() {
         
         /* Force body background */
         body { background-color: #F7F5EF !important; color: #141414 !important; }
-        
-        /* Custom highlight block */
-        .highlight-yellow {
-          background-color: #F4C93E;
-          padding: 0 0.15em;
-          margin: 0 -0.1em;
-          box-decoration-break: clone;
-          -webkit-box-decoration-break: clone;
-          display: inline-block;
-          line-height: 1;
-        }
 
         .eyebrow-blue {
           color: #2F3E9E;
@@ -79,7 +68,7 @@ export default function FutureBuildersPage() {
         {/* 1. Hero */}
         <section className="px-5 pt-12 pb-16 md:pt-20 md:pb-24 max-w-4xl mx-auto text-center border-b border-[#141414]/10">
           <h1 className="text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight mb-6 text-[#141414]">
-            Your child will build something <span className="highlight-yellow">real.</span><br className="hidden md:block"/> And pitch it.
+            Your child will build something <span className="text-highlight">real.</span><br className="hidden md:block"/> And pitch it.
           </h1>
           <p className="text-lg md:text-xl text-[#141414]/80 mb-10 max-w-2xl mx-auto">
             The Future Builders Programme teaches students to think, build, and explain their ideas in the age of AI.
@@ -102,7 +91,7 @@ export default function FutureBuildersPage() {
         <section className="px-5 py-16 md:py-24 max-w-3xl mx-auto border-b border-[#141414]/10">
           <span className="eyebrow-blue">The Shift</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-            Anyone can get an answer from AI now. The real test is whether a child can <span className="highlight-yellow">build, explain, and defend</span> an idea.
+            Anyone can get an answer from AI now. The real test is whether a child can <span className="text-highlight">build, explain, and defend</span> an idea.
           </h2>
           <p className="text-lg text-[#141414]/80">
             We are moving past the era where submitting a correct worksheet was enough. Future Builders is a 12-week intensive that replaces passive consumption with active creation.

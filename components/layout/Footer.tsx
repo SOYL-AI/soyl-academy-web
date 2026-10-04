@@ -47,7 +47,7 @@ function LinkColumn({
           <li key={link.label}>
             <Link
               href={link.href}
-              className="text-body text-ink-light transition-colors duration-200 hover:text-ink"
+              className="text-body text-ink-light link-underline pb-0.5"
             >
               {link.label}
             </Link>

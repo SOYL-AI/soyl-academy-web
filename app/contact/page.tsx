@@ -48,20 +48,20 @@ export default function ContactPage() {
         </header>
 
         {status === 'success' ? (
-          <div className="bg-paper p-8 text-center rounded-lg border border-ink/10">
+          <div className="bg-paper p-8 text-center rounded-none border border-ink/10">
             <h2 className="text-subhead text-ink mb-2">Thank you</h2>
             <p className="text-ink/80">{message}</p>
             <button 
               onClick={() => setStatus('idle')}
-              className="mt-6 bg-cobalt text-white px-6 py-2 rounded-full font-medium hover:bg-cobalt/90 transition-colors"
+              className="mt-6 bg-cobalt text-white px-6 py-2 rounded-sm font-medium hover:bg-cobalt/90 transition-colors"
             >
               Send another message
             </button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-paper p-8 md:p-12 border border-ink/10 rounded-xl">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-paper p-8 md:p-12 border border-ink/10 rounded-none">
             {status === 'error' && (
-              <div className="bg-teacher-red/10 text-teacher-red p-4 rounded-md text-sm" role="alert">
+              <div className="bg-teacher-red/10 text-teacher-red p-4 rounded-none text-sm" role="alert">
                 {message}
               </div>
             )}
@@ -78,7 +78,7 @@ export default function ContactPage() {
                   id="name"
                   type="text"
                   {...register('name')}
-                  className={`w-full px-4 py-3 bg-white border ${errors.name ? 'border-teacher-red' : 'border-ink/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-cobalt`}
+                  className={`w-full px-4 py-4 bg-white/50 border-0 border-b-2 ${errors.name ? 'border-teacher-red' : 'border-ink/15'} rounded-none focus:outline-none focus:border-ink focus:ring-0 transition-colors`}
                   aria-invalid={errors.name ? 'true' : 'false'}
                 />
                 {errors.name && <p className="mt-1 text-sm text-teacher-red">{errors.name.message}</p>}
@@ -90,7 +90,7 @@ export default function ContactPage() {
                   id="email"
                   type="email"
                   {...register('email')}
-                  className={`w-full px-4 py-3 bg-white border ${errors.email ? 'border-teacher-red' : 'border-ink/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-cobalt`}
+                  className={`w-full px-4 py-4 bg-white/50 border-0 border-b-2 ${errors.email ? 'border-teacher-red' : 'border-ink/15'} rounded-none focus:outline-none focus:border-ink focus:ring-0 transition-colors`}
                   aria-invalid={errors.email ? 'true' : 'false'}
                 />
                 {errors.email && <p className="mt-1 text-sm text-teacher-red">{errors.email.message}</p>}
@@ -103,7 +103,7 @@ export default function ContactPage() {
                 id="school"
                 type="text"
                 {...register('school')}
-                className={`w-full px-4 py-3 bg-white border ${errors.school ? 'border-teacher-red' : 'border-ink/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-cobalt`}
+                className={`w-full px-4 py-4 bg-white/50 border-0 border-b-2 ${errors.school ? 'border-teacher-red' : 'border-ink/15'} rounded-none focus:outline-none focus:border-ink focus:ring-0 transition-colors`}
               />
               {errors.school && <p className="mt-1 text-sm text-teacher-red">{errors.school.message}</p>}
             </div>
@@ -114,7 +114,7 @@ export default function ContactPage() {
                 <select
                   id="role"
                   {...register('role')}
-                  className={`w-full px-4 py-3 bg-white border ${errors.role ? 'border-teacher-red' : 'border-ink/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-cobalt appearance-none`}
+                  className={`w-full px-4 py-4 bg-white/50 border-0 border-b-2 ${errors.role ? 'border-teacher-red' : 'border-ink/15'} rounded-none focus:outline-none focus:border-ink focus:ring-0 transition-colors appearance-none`}
                 >
                   <option value="">Select a role...</option>
                   <option value="Teacher">Teacher</option>
@@ -134,7 +134,7 @@ export default function ContactPage() {
                   id="city"
                   type="text"
                   {...register('city')}
-                  className={`w-full px-4 py-3 bg-white border ${errors.city ? 'border-teacher-red' : 'border-ink/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-cobalt`}
+                  className={`w-full px-4 py-4 bg-white/50 border-0 border-b-2 ${errors.city ? 'border-teacher-red' : 'border-ink/15'} rounded-none focus:outline-none focus:border-ink focus:ring-0 transition-colors`}
                 />
                 {errors.city && <p className="mt-1 text-sm text-teacher-red">{errors.city.message}</p>}
               </div>
@@ -147,7 +147,7 @@ export default function ContactPage() {
                   id="studentCount"
                   type="text"
                   {...register('studentCount')}
-                  className="w-full px-4 py-3 bg-white border border-ink/20 rounded-md focus:outline-none focus:ring-2 focus:ring-cobalt"
+                  className="w-full px-4 py-4 bg-white/50 border-0 border-b-2 border-ink/15 rounded-none focus:outline-none focus:border-ink focus:ring-0 transition-colors"
                 />
               </div>
 
@@ -156,7 +156,7 @@ export default function ContactPage() {
                 <select
                   id="interest"
                   {...register('interest')}
-                  className={`w-full px-4 py-3 bg-white border ${errors.interest ? 'border-teacher-red' : 'border-ink/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-cobalt appearance-none`}
+                  className={`w-full px-4 py-4 bg-white/50 border-0 border-b-2 ${errors.interest ? 'border-teacher-red' : 'border-ink/15'} rounded-none focus:outline-none focus:border-ink focus:ring-0 transition-colors appearance-none`}
                 >
                   <option value="">Select an area...</option>
                   <option value="Outcome-based assignments">Outcome-based assignments</option>
@@ -176,7 +176,7 @@ export default function ContactPage() {
                 id="message"
                 rows={4}
                 {...register('message')}
-                className={`w-full px-4 py-3 bg-white border ${errors.message ? 'border-teacher-red' : 'border-ink/20'} rounded-md focus:outline-none focus:ring-2 focus:ring-cobalt resize-y`}
+                className={`w-full px-4 py-4 bg-white/50 border-0 border-b-2 ${errors.message ? 'border-teacher-red' : 'border-ink/15'} rounded-none focus:outline-none focus:border-ink focus:ring-0 transition-colors resize-y`}
               ></textarea>
               {errors.message && <p className="mt-1 text-sm text-teacher-red">{errors.message.message}</p>}
             </div>
@@ -184,9 +184,19 @@ export default function ContactPage() {
             <button
               type="submit"
               disabled={status === 'submitting'}
-              className="w-full bg-cobalt text-white py-4 px-6 rounded-md font-semibold text-lg hover:bg-cobalt/90 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+              className="group flex w-full items-center justify-center gap-2 h-14 bg-ink text-white text-[17px] font-medium rounded-sm transition-colors duration-300 hover:bg-cobalt disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {status === 'submitting' ? 'Sending...' : 'Send Message'}
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 12 12"
+                fill="none"
+                aria-hidden="true"
+                className="transition-transform duration-300 group-hover:translate-x-0.5"
+              >
+                <path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </button>
           </form>
         )}

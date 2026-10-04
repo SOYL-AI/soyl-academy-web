@@ -84,13 +84,13 @@ export default async function JournalArticlePage({ params }: Props) {
         <nav aria-label="Breadcrumb" className="mb-10 text-sm text-ink/60">
           <ol className="flex flex-wrap items-center gap-2">
             <li>
-              <Link href="/" className="hover:text-cobalt transition-colors">
+              <Link href="/" className="link-underline">
                 Home
               </Link>
             </li>
             <li aria-hidden="true">/</li>
             <li>
-              <Link href="/journal" className="hover:text-cobalt transition-colors">
+              <Link href="/journal" className="link-underline">
                 Journal
               </Link>
             </li>
