@@ -1,90 +1,75 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import { HeroVisual } from '@/components/sections/HeroVisual';
+import { hero } from '@/content/home';
 
-export function Hero() {
+function Arrow() {
   return (
-    <section className="relative w-full bg-white pt-24 md:pt-28 lg:pt-32 pb-16 md:pb-24 lg:pb-28">
-      <div className="container-default">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-end">
-          {/* Text — 6 of 12, sits low against the image baseline */}
-          <div className="lg:col-span-6 xl:col-span-5">
-            <p className="text-eyebrow text-ink-light mb-7 md:mb-9">SOYL Academy</p>
+    <svg
+      width="13"
+      height="13"
+      viewBox="0 0 12 12"
+      fill="none"
+      aria-hidden="true"
+      className="transition-transform duration-300 group-hover:translate-x-0.5"
+    >
+      <path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
-            <h1 className="text-hero text-ink mb-8 md:mb-10">
-              Homework was built for a world <span className="text-highlight">before AI.</span>
+/**
+ * Server Component. The headline is plain HTML with CSS-only word-rise, so the
+ * text is in the first paint (good for LCP/SEO). Only the visual is client-side.
+ */
+export function Hero() {
+  const words = hero.headline;
+
+  return (
+    <section className="relative w-full overflow-x-clip bg-white pt-24 pb-10 md:pt-28 md:pb-20 lg:pt-32">
+      <div className="container-default">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-6">
+            <p className="text-eyebrow mb-7 text-ink-light md:mb-9">SOYL Academy</p>
+
+            <h1 className="text-hero mb-8 text-ink md:mb-10">
+              {words.map((word, i) => (
+                <span key={word + i}>
+                  <span className="word-mask">
+                    <span className="word-rise" style={{ '--i': i } as React.CSSProperties}>
+                      {word}
+                    </span>
+                  </span>{' '}
+                </span>
+              ))}
+              <span className="word-mask is-highlight">
+                <span className="word-rise" style={{ '--i': words.length } as React.CSSProperties}>
+                  {hero.highlight}
+                </span>
+              </span>
             </h1>
 
-            <p className="text-lead text-ink-light max-w-[34ch] mb-10 md:mb-12">
-              SOYL Academy helps teachers create outcome-based learning experiences
-              that ask students to think, apply, create, explain and defend — not
-              simply submit.
-            </p>
+            <p className="text-lead mb-10 max-w-[36ch] text-ink-light md:mb-12">{hero.support}</p>
 
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/method"
-                className="group inline-flex items-center justify-center gap-2 h-12 px-6 bg-ink text-white text-[15px] font-medium rounded-sm transition-colors duration-300 hover:bg-cobalt"
+                href="#how-it-works"
+                className="group press inline-flex h-12 items-center justify-center gap-2 rounded-sm bg-ink px-6 text-[15px] font-medium text-white hover:bg-cobalt"
               >
                 See how SOYL works
-                <svg
-                  width="13"
-                  height="13"
-                  viewBox="0 0 12 12"
-                  fill="none"
-                  aria-hidden="true"
-                  className="transition-transform duration-300 group-hover:translate-x-0.5"
-                >
-                  <path
-                    d="M2.5 6h7M6.5 3l3 3-3 3"
-                    stroke="currentColor"
-                    strokeWidth="1.3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <Arrow />
               </Link>
               <Link
                 href="/schools"
-                className="inline-flex items-center justify-center h-12 px-6 border border-border-dark text-ink text-[15px] font-medium rounded-sm transition-colors duration-300 hover:border-ink hover:bg-ink hover:text-white"
+                className="group press inline-flex h-12 items-center justify-center gap-2 rounded-sm border border-border-dark px-6 text-[15px] font-medium text-ink hover:border-ink"
               >
                 For Schools
+                <Arrow />
               </Link>
             </div>
           </div>
 
-          {/* Image — bleeds off the right edge of the viewport */}
-          <div className="lg:col-span-6 xl:col-span-7 relative">
-            <div className="relative aspect-[4/3] lg:aspect-[5/4] overflow-hidden rounded-lg lg:mr-[calc(50%-50vw)] lg:rounded-r-none">
-              <Image
-                src="/images/hero_students_collaborating.jpg"
-                alt="Secondary-school students working through a problem together at a classroom table"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 60vw"
-                priority
-              />
-            </div>
-
-            {/* Teacher annotation — the one red mark on an otherwise white page */}
-            <div className="hidden md:flex absolute -bottom-9 left-6 lg:-left-10 items-end gap-2.5 pointer-events-none select-none">
-              <svg
-                className="text-teacher-red w-9 h-9 rotate-[168deg] shrink-0"
-                viewBox="0 0 100 100"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M10 80 Q 40 40 80 12 M68 10 L86 8 L82 26"
-                  stroke="currentColor"
-                  strokeWidth="3.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="font-editorial italic text-[19px] leading-none text-teacher-red -rotate-2 pb-1">
-                What did they actually learn?
-              </span>
-            </div>
+          <div className="lg:col-span-6">
+            <HeroVisual />
           </div>
         </div>
       </div>

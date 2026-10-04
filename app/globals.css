@@ -377,3 +377,61 @@ p {
   background-size: 100% 1px;
   color: var(--color-cobalt);
 }
+
+/* ============================================
+   MOTION PRIMITIVES (CSS-only, usable from Server Components)
+   See docs/motion-system.md. The global reduced-motion rule above collapses
+   all of these to their end state.
+   ============================================ */
+
+:root {
+  /* Overshoots slightly then settles: the "spring return" for pressables. */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Pressable: compresses under the finger, springs back on release. */
+.press {
+  transition:
+    transform 420ms var(--ease-spring),
+    background-color 300ms var(--ease-out-quart),
+    color 300ms var(--ease-out-quart),
+    border-color 300ms var(--ease-out-quart);
+}
+.press:active {
+  transform: scale(0.965);
+  transition-duration: 90ms;
+}
+
+/* Headline word-rise: each word slides up out of a mask. Transform-only, so
+   the text is in the first paint and LCP is not delayed by an opacity fade. */
+.word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+.word-mask.is-highlight {
+  background-color: var(--color-highlighter);
+  padding-left: 0.14em;
+  padding-right: 0.14em;
+  margin-left: -0.02em;
+}
+.word-rise {
+  display: inline-block;
+  transform: translateY(108%);
+  animation: word-rise 900ms var(--ease-out-expo) forwards;
+  animation-delay: calc(var(--i, 0) * 70ms + 100ms);
+}
+@keyframes word-rise {
+  to { transform: translateY(0); }
+}
+
+/* Idle drift for small decorative elements. Slow, tiny, never the focus. */
+.float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-8px) rotate(calc(var(--r, 0deg) + 1.2deg)); }
+}

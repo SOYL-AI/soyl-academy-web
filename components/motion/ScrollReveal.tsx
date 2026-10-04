@@ -2,30 +2,36 @@
 
 import * as React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { distance, spring } from '@/lib/motion';
 
 interface ScrollRevealProps {
   children: React.ReactNode;
   /** Seconds. */
   delay?: number;
   direction?: 'up' | 'down' | 'left' | 'right' | 'none';
-  /** Seconds. */
+  /** Kept for API compatibility. Reveals are spring-driven; duration is ignored. */
   duration?: number;
   className?: string;
 }
 
 const OFFSETS = {
-  up: { x: 0, y: 28 },
-  down: { x: 0, y: -28 },
-  left: { x: 28, y: 0 },
-  right: { x: -28, y: 0 },
+  up: { x: 0, y: distance.reveal },
+  down: { x: 0, y: -distance.reveal },
+  left: { x: distance.reveal, y: 0 },
+  right: { x: -distance.reveal, y: 0 },
   none: { x: 0, y: 0 },
 } as const;
 
+/**
+ * The standard "arrive and settle" reveal.
+ *
+ * Content travels a short distance on a spring and comes to rest, rather than
+ * fading up on a timer. Opacity only needs to be quick — the motion carries it.
+ */
 export function ScrollReveal({
   children,
   delay = 0,
   direction = 'up',
-  duration = 0.8,
   className,
 }: ScrollRevealProps) {
   const shouldReduceMotion = useReducedMotion();
@@ -42,7 +48,11 @@ export function ScrollReveal({
       initial={{ opacity: 0, x, y }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{
+        ...spring.settle,
+        delay,
+        opacity: { duration: 0.35, delay },
+      }}
       className={className}
     >
       {children}

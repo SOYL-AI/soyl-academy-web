@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { MotionProvider } from '@/components/motion/MotionProvider';
 import { Instrument_Sans, Instrument_Serif } from 'next/font/google';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -106,7 +107,9 @@ export default function RootLayout({
           Skip to content
         </a>
         <Header />
-        <main id="main-content">{children}</main>
+        <MotionProvider>
+          <main id="main-content">{children}</main>
+        </MotionProvider>
         <Footer />
       </body>
     </html>
