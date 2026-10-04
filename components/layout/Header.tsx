@@ -10,6 +10,7 @@ const navItems = [
   { label: 'What We Teach', href: '/what-we-teach' },
   { label: 'For Schools', href: '/schools' },
   { label: 'For Students', href: '/students' },
+  { label: 'Future Builders', href: '/future-builders', badge: 'Online Cohort Soon' },
   { label: 'Journal', href: '/journal' },
   { label: 'About', href: '/about' },
 ];
@@ -23,11 +24,11 @@ const navItems = [
  */
 const GRID_CELLS = [
   null,
-  'bg-highlighter',
+  'bg-brand-yellow',
   null,
-  'bg-teacher-red',
-  'bg-cobalt',
-  'bg-cobalt',
+  'bg-brand-red',
+  'bg-brand-blue',
+  'bg-brand-blue',
 ];
 
 function GridMotif() {
@@ -40,7 +41,7 @@ function GridMotif() {
         <span
           key={i}
           className={cn(
-            'border-r border-b border-ink/15 last:border-r-0',
+            'border-r border-b border-brand-black/15 last:border-r-0',
             i > 2 && 'border-b-0',
             i % 3 === 2 && 'border-r-0',
             fill
@@ -85,7 +86,7 @@ export function Header() {
           {/* Bordered nav object, top-left */}
           <div
             ref={boxRef}
-            className="pointer-events-auto w-[min(26rem,calc(100vw-2.5rem))] border border-ink bg-white"
+            className="pointer-events-auto w-[min(26rem,calc(100vw-2.5rem))] border-2 border-brand-black bg-brand-cream"
           >
             <div className="flex items-stretch h-[56px] md:h-[60px]">
               <Link
@@ -94,30 +95,30 @@ export function Header() {
                 className="flex items-center px-4 md:px-5 mr-auto"
                 aria-label="SOYL Academy home"
               >
-                <span className="text-[19px] md:text-[21px] font-semibold tracking-[-0.035em] text-ink">
+                <span className="text-[19px] md:text-[21px] font-bold tracking-[-0.035em] text-brand-black">
                   SOYL Academy
                 </span>
               </Link>
 
-              <div className="border-l border-ink self-stretch" />
+              <div className="border-l-2 border-brand-black self-stretch" />
               <GridMotif />
 
               <button
                 onClick={toggle}
                 aria-label={isOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={isOpen}
-                className="border-l border-ink w-[56px] md:w-[60px] shrink-0 flex flex-col items-center justify-center gap-[6px] transition-colors hover:bg-bone"
+                className="border-l-2 border-brand-black w-[56px] md:w-[60px] shrink-0 flex flex-col items-center justify-center gap-[6px] transition-colors hover:bg-brand-black/5"
               >
                 <span
                   className={cn(
-                    'block w-[20px] h-[1.5px] bg-ink transition-transform duration-300 origin-center',
-                    isOpen && 'rotate-45 translate-y-[3.75px]'
+                    'block w-[20px] h-[2px] bg-brand-black transition-transform duration-300 origin-center',
+                    isOpen && 'rotate-45 translate-y-[4px]'
                   )}
                 />
                 <span
                   className={cn(
-                    'block w-[20px] h-[1.5px] bg-ink transition-transform duration-300 origin-center',
-                    isOpen && '-rotate-45 -translate-y-[3.75px]'
+                    'block w-[20px] h-[2px] bg-brand-black transition-transform duration-300 origin-center',
+                    isOpen && '-rotate-45 -translate-y-[4px]'
                   )}
                 />
               </button>
@@ -132,12 +133,12 @@ export function Header() {
             >
               <div className="overflow-hidden">
                 <nav
-                  className="border-t border-ink px-4 md:px-5 pt-2 pb-5"
+                  className="border-t-2 border-brand-black px-4 md:px-5 pt-2 pb-5"
                   aria-label="Primary"
                 >
                   <ul>
                     {navItems.map((item) => (
-                      <li key={item.href} className="border-b border-ink/20">
+                      <li key={item.href} className="border-b border-brand-black/10">
                         <Link
                           href={item.href}
                           onClick={close}
@@ -146,13 +147,18 @@ export function Header() {
                             pathname === item.href ? 'page' : undefined
                           }
                           className={cn(
-                            'block py-5 text-3xl font-editorial tracking-tight transition-colors',
+                            'flex items-center justify-between py-4 text-2xl font-bold tracking-tight transition-colors',
                             pathname === item.href
-                              ? 'text-cobalt font-medium'
-                              : 'text-ink hover:text-cobalt'
+                              ? 'text-brand-blue'
+                              : 'text-brand-black hover:text-brand-blue'
                           )}
                         >
                           {item.label}
+                          {item.badge && (
+                            <span className="text-xs font-bold tracking-widest uppercase bg-brand-yellow text-brand-black px-2 py-1 ml-4 rounded-sm">
+                              {item.badge}
+                            </span>
+                          )}
                         </Link>
                       </li>
                     ))}
@@ -164,7 +170,7 @@ export function Header() {
                       href="/contact"
                       onClick={close}
                       tabIndex={isOpen ? 0 : -1}
-                      className="inline-flex items-center justify-center h-12 px-5 rounded-full bg-ink text-white text-[15px] font-medium transition-colors hover:bg-cobalt"
+                      className="inline-flex items-center justify-center h-12 px-5 rounded-full bg-brand-black text-brand-cream text-[15px] font-bold transition-colors hover:bg-brand-blue"
                     >
                       Bring SOYL to your school
                     </Link>
@@ -172,7 +178,7 @@ export function Header() {
                       href="/students"
                       onClick={close}
                       tabIndex={isOpen ? 0 : -1}
-                      className="inline-flex items-center justify-center h-12 px-5 rounded-full border border-ink text-ink text-[15px] font-medium transition-colors hover:bg-bone"
+                      className="inline-flex items-center justify-center h-12 px-5 rounded-full border-2 border-brand-black text-brand-black text-[15px] font-bold transition-colors hover:bg-brand-black/5"
                     >
                       For Students
                     </Link>
@@ -186,13 +192,13 @@ export function Header() {
           <div className="pointer-events-auto hidden md:flex items-center gap-2.5 shrink-0">
             <Link
               href="/students"
-              className="inline-flex items-center h-[44px] px-5 rounded-full bg-white border border-ink text-ink text-[15px] font-medium transition-colors hover:bg-bone"
+              className="inline-flex items-center h-[44px] px-5 rounded-full bg-brand-cream border-2 border-brand-black text-brand-black text-[15px] font-bold transition-colors hover:bg-brand-black/5"
             >
               For Students
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center h-[44px] px-6 rounded-full bg-ink text-white text-[15px] font-medium transition-colors hover:bg-cobalt"
+              className="inline-flex items-center h-[44px] px-6 rounded-full bg-brand-black text-brand-cream text-[15px] font-bold transition-colors hover:bg-brand-blue"
             >
               Bring SOYL to your school
             </Link>
