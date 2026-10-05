@@ -36,11 +36,11 @@ export function ProductFlow() {
   const current = steps[active];
 
   return (
-    <section className="w-full bg-bone section-padding">
+    <section className="w-full bg-brand-tan section-padding">
       <div className="container-default">
         <ScrollReveal>
-          <p className="text-eyebrow mb-7 text-cobalt">{productFlow.eyebrow}</p>
-          <h2 className="text-headline mb-12 max-w-[14ch] text-ink md:mb-20">{productFlow.headline}</h2>
+          <p className="text-eyebrow mb-7 text-brand-blue">{productFlow.eyebrow}</p>
+          <h2 className="text-headline mb-12 max-w-[14ch] text-brand-black md:mb-20">{productFlow.headline}</h2>
         </ScrollReveal>
 
         <div ref={ref} className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-14">
@@ -61,14 +61,14 @@ export function ProductFlow() {
                       className={cn(
                         'press relative flex w-full items-start gap-4 rounded-full border px-4 py-2.5 text-left lg:rounded-none lg:border-0 lg:px-0 lg:py-5',
                         isActive
-                          ? 'border-ink bg-ink text-white lg:bg-transparent lg:text-ink'
-                          : 'border-border-dark text-ink-light hover:border-ink hover:text-ink lg:border-0'
+                          ? 'border-ink bg-ink text-white lg:bg-transparent lg:text-brand-black'
+                          : 'border-border-dark text-brand-black/70 hover:border-ink hover:text-brand-black lg:border-0'
                       )}
                     >
                       <span
                         className={cn(
                           'text-small font-semibold tabular-nums transition-colors lg:pt-1',
-                          isActive ? 'text-white lg:text-cobalt' : 'text-ink-lighter'
+                          isActive ? 'text-white lg:text-brand-blue' : 'text-brand-black/70er'
                         )}
                       >
                         0{i + 1}
@@ -79,7 +79,7 @@ export function ProductFlow() {
                         </span>
                         <span
                           className={cn(
-                            'mt-1 hidden text-body text-ink-light transition-all duration-500 lg:block',
+                            'mt-1 hidden text-body text-brand-black/70 transition-all duration-500 lg:block',
                             isActive ? 'max-h-12 opacity-100' : 'max-h-0 overflow-hidden opacity-0'
                           )}
                         >
@@ -94,7 +94,7 @@ export function ProductFlow() {
                           initial={{ scaleX: auto ? 0 : 1 }}
                           animate={{ scaleX: 1 }}
                           transition={{ duration: auto ? DEMO_STEP_MS / 1000 : 0, ease: 'linear' }}
-                          className="absolute bottom-0 left-0 hidden h-[2px] w-full origin-left bg-cobalt lg:block"
+                          className="absolute bottom-0 left-0 hidden h-[2px] w-full origin-left bg-brand-blue lg:block"
                           aria-hidden="true"
                         />
                       )}
@@ -105,7 +105,7 @@ export function ProductFlow() {
             </ol>
 
             {/* Mobile caption for the current step (desktop shows it in the rail) */}
-            <p className="text-lead mt-5 text-ink-light lg:hidden" aria-live="polite">
+            <p className="text-lead mt-5 text-brand-black/70 lg:hidden" aria-live="polite">
               {current.line}
             </p>
           </div>

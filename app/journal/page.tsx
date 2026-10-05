@@ -19,7 +19,7 @@ export default function JournalPage() {
   const [featured, ...rest] = journalArticles || [];
 
   return (
-    <div className="min-h-screen bg-brand-cream text-brand-black pt-32 pb-32">
+    <div className="min-h-screen bg-brand-cream text-brand-black pt-16 md:pt-32 pb-16 md:pb-32">
       <StructuredData
         data={graph(
           webPageNode({
@@ -32,7 +32,7 @@ export default function JournalPage() {
         )}
       />
       <Container>
-        <header className="mb-24">
+        <header className="mb-12 md:mb-24">
           <ScrollReveal>
             <p className="text-sm font-bold tracking-widest uppercase text-brand-blue mb-6">The SOYL Journal</p>
             <h1 className="text-5xl md:text-7xl font-bold max-w-4xl tracking-tight leading-tight">
@@ -43,9 +43,9 @@ export default function JournalPage() {
 
         {featured && (
           <ScrollReveal delay={0.1}>
-            <article className="mb-24 pb-24 border-b border-brand-black/10">
+            <article className="mb-12 md:mb-24 pb-12 md:pb-24 border-b border-brand-black/10">
               <Link href={`/journal/${featured.slug}`} className="group block">
-                <div className="grid md:grid-cols-2 gap-16 items-center">
+                <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
                   <div className="aspect-[4/3] bg-brand-black/5 relative overflow-hidden rounded-2xl">
                     <div className="absolute inset-0 bg-brand-black/10 transition-transform duration-700 group-hover:scale-105" />
                   </div>

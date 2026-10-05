@@ -38,7 +38,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-cream text-brand-black pt-32 pb-32">
+    <div className="min-h-screen bg-brand-cream text-brand-black pt-16 md:pt-32 pb-16 md:pb-32">
       <div className="container mx-auto px-6 max-w-3xl">
         <header className="mb-16 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">Bring SOYL to your school</h1>

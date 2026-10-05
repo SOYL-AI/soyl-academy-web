@@ -32,7 +32,7 @@ export function HeroVisual() {
   const shown: AssignmentMode = ok ? mode : 'soyl';
 
   return (
-    <div className="relative pb-24 sm:pb-28 lg:pb-16">
+    <div className="relative pb-12 md:pb-24 sm:pb-28 lg:pb-16">
       <div className="relative aspect-[5/4] w-full overflow-hidden rounded-xl bg-paper lg:ml-auto lg:w-[88%]">
         <Image
           src="/images/hero_students_collaborating.jpg"

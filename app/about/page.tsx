@@ -10,7 +10,7 @@ export const metadata = createMetadata({ path: '/about' });
 
 export default function AboutPage() {
   return (
-    <div className="py-32 bg-brand-cream text-brand-black min-h-screen">
+    <div className="py-16 md:py-32 bg-brand-cream text-brand-black min-h-screen">
       <StructuredData
         data={graph(
           webPageNode({ path: '/about', mainEntityId: ORGANIZATION_ID }),
@@ -18,7 +18,7 @@ export default function AboutPage() {
         )}
       />
       <Container>
-        <section className="mb-48 max-w-5xl">
+        <section className="mb-24 md:mb-48 max-w-5xl">
           <ScrollReveal>
             <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-8">
               Answers are cheap.<br />
@@ -30,8 +30,8 @@ export default function AboutPage() {
           </ScrollReveal>
         </section>
 
-        <section className="mb-48 border-t border-brand-black/10 pt-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <section className="mb-24 md:mb-48 border-t border-brand-black/10 pt-12 md:pt-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <ScrollReveal>
               <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-brand-black/5">
                 <Image 
@@ -62,7 +62,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="mb-48 text-center max-w-4xl mx-auto">
+        <section className="mb-24 md:mb-48 text-center max-w-4xl mx-auto">
           <ScrollReveal>
             <h2 className="text-4xl md:text-7xl font-bold mb-12">
               Educators remain the <br /> irreplaceable core.

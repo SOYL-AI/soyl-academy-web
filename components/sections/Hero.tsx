@@ -25,7 +25,7 @@ export function Hero() {
   const words = hero.headline;
 
   return (
-    <section className="relative w-full overflow-x-clip bg-brand-cream pt-24 pb-10 md:pt-28 md:pb-20 lg:pt-32">
+    <section className="relative w-full overflow-x-clip bg-brand-cream pt-12 md:pt-24 pb-10 md:pt-28 md:pb-20 lg:pt-16 md:pt-32">
       <div className="container-default">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-6">

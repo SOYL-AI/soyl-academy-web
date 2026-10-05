@@ -20,15 +20,15 @@ export function ProofSection() {
   if (!hasAny) return null;
 
   return (
-    <section className="w-full bg-bone section-padding">
+    <section className="w-full bg-brand-cream section-padding">
       <div className="container-default space-y-20 md:space-y-28">
         {learningStats.length > 0 && (
           <ScrollReveal>
-            <dl className="grid grid-cols-2 gap-y-10 border-y border-ink/15 py-10 md:grid-cols-4">
+            <dl className="grid grid-cols-2 gap-y-10 border-y border-brand-black/15 py-10 md:grid-cols-4">
               {learningStats.map((s) => (
-                <div key={s.label} className="md:border-r md:border-ink/15 md:px-6 md:first:pl-0 md:last:border-r-0">
-                  <dd className="text-display text-ink">{s.value}</dd>
-                  <dt className="text-small mt-2 text-ink-light">{s.label}</dt>
+                <div key={s.label} className="md:border-r md:border-brand-black/15 md:px-6 md:first:pl-0 md:last:border-r-0">
+                  <dd className="text-display text-brand-black">{s.value}</dd>
+                  <dt className="text-small mt-2 text-brand-black/70">{s.label}</dt>
                 </div>
               ))}
             </dl>
@@ -41,7 +41,7 @@ export function ProofSection() {
               <li key={t.name + t.school}>
                 <ScrollReveal delay={i * 0.08}>
                   <figure>
-                    <blockquote className="text-subhead mb-6 text-ink">“{t.quote}”</blockquote>
+                    <blockquote className="text-subhead mb-6 text-brand-black">“{t.quote}”</blockquote>
                     <figcaption className="flex items-center gap-4">
                       {t.photo && (
                         <Image
@@ -52,8 +52,8 @@ export function ProofSection() {
                           className="h-12 w-12 rounded-full object-cover"
                         />
                       )}
-                      <span className="text-small text-ink-light">
-                        <span className="block font-semibold text-ink">{t.name}</span>
+                      <span className="text-small text-brand-black/70">
+                        <span className="block font-semibold text-brand-black">{t.name}</span>
                         {t.role}, {t.school}
                       </span>
                     </figcaption>
@@ -73,8 +73,8 @@ export function ProofSection() {
                     <Image src={p.image.src} alt={p.image.alt} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
                   </div>
                   <p className="text-eyebrow mb-2 text-cobalt">{p.subject}</p>
-                  <h3 className="text-subhead mb-2 text-ink">{p.title}</h3>
-                  <p className="text-body text-ink-light">{p.summary}</p>
+                  <h3 className="text-subhead mb-2 text-brand-black">{p.title}</h3>
+                  <p className="text-body text-brand-black/70">{p.summary}</p>
                 </ScrollReveal>
               </li>
             ))}

@@ -34,7 +34,7 @@ export default function MethodPage() {
       />
       <Container>
         {/* Hero Section */}
-        <section className="mb-48 mt-12">
+        <section className="mb-24 md:mb-48 mt-12">
           <ScrollReveal>
             <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8">
               Learning should be <span className="bg-brand-yellow px-2">demonstrated</span>.
@@ -46,7 +46,7 @@ export default function MethodPage() {
         </section>
 
         {/* The 5 Pillars */}
-        <section className="mb-48">
+        <section className="mb-24 md:mb-48">
           <div className="space-y-32">
             {pillars.map((pillar, index) => (
               <ScrollReveal key={pillar.num} delay={0.1}>
@@ -80,16 +80,16 @@ export default function MethodPage() {
         </section>
 
         {/* Teacher Control & Technology */}
-        <section className="mb-48">
+        <section className="mb-24 md:mb-48">
           <ScrollReveal>
-            <div className="bg-brand-black text-brand-cream p-16 md:p-32 rounded-[2rem]">
+            <div className="bg-brand-black text-brand-cream p-8 md:p-32 rounded-[2rem]">
               <div className="max-w-4xl space-y-16">
                 <h2 className="text-5xl md:text-7xl font-bold leading-tight">
                   Technology assists teachers.<br />
                   <span className="text-brand-yellow">It does not replace them.</span>
                 </h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
                   <div>
                     <h3 className="text-sm font-bold tracking-widest uppercase mb-6 text-brand-cream/50">Teacher Control</h3>
                     <p className="text-xl leading-relaxed">

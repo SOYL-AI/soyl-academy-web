@@ -35,7 +35,7 @@ function Check({ on, light }: { on: boolean; light?: boolean }) {
     <span
       className={cn(
         'flex h-5 w-5 shrink-0 items-center justify-center rounded-full border transition-colors duration-300',
-        on ? (light ? 'border-white bg-white' : 'border-cobalt bg-cobalt') : 'border-ink/25 bg-white'
+        on ? (light ? 'border-white bg-brand-cream' : 'border-brand-blue bg-brand-blue') : 'border-brand-black/25 bg-brand-cream'
       )}
     >
       <motion.svg
@@ -46,7 +46,7 @@ function Check({ on, light }: { on: boolean; light?: boolean }) {
         animate={{ scale: on ? 1 : 0, opacity: on ? 1 : 0 }}
         transition={spring.playful}
       >
-        <path d="M2.5 6.2l2.4 2.4 4.6-5" stroke={light ? 'var(--color-cobalt)' : 'white'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M2.5 6.2l2.4 2.4 4.6-5" stroke={light ? 'var(--color-brand-blue)' : 'white'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
       </motion.svg>
     </span>
   );
@@ -75,15 +75,15 @@ function FileRow({ name, meta, delay, progress }: { name: string; meta: string; 
       initial={{ opacity: 0, y: -28, rotate: -3 }}
       animate={{ opacity: 1, y: 0, rotate: 0 }}
       transition={{ ...spring.playful, delay }}
-      className="rounded-lg border border-border-dark bg-white p-4"
+      className="rounded-lg border border-border-dark bg-brand-cream p-4"
     >
       <div className="flex items-center gap-3">
-        <span className="flex h-10 w-8 shrink-0 items-center justify-center rounded-sm bg-paper text-[9px] font-bold text-ink-light">
+        <span className="flex h-10 w-8 shrink-0 items-center justify-center rounded-sm bg-brand-black/5 text-[9px] font-bold text-brand-black-light">
           DOC
         </span>
         <div className="min-w-0 flex-1">
-          <p className="truncate text-[0.95rem] font-medium text-ink">{name}</p>
-          <p className="text-small text-ink-lighter">{meta}</p>
+          <p className="truncate text-[0.95rem] font-medium text-brand-black">{name}</p>
+          <p className="text-small text-brand-black-lighter">{meta}</p>
         </div>
         <Check on={done} />
       </div>
@@ -93,7 +93,7 @@ function FileRow({ name, meta, delay, progress }: { name: string; meta: string; 
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 1.1, delay: delay + 0.2, ease: 'easeInOut' }}
-            className="h-full origin-left rounded-full bg-cobalt"
+            className="h-full origin-left rounded-full bg-brand-blue"
           />
         </div>
       )}
@@ -104,12 +104,12 @@ function FileRow({ name, meta, delay, progress }: { name: string; meta: string; 
 function UploadMock() {
   return (
     <div className="space-y-4">
-      <p className="text-small font-semibold text-ink-light">Add what you’re teaching</p>
-      <div className="space-y-3 rounded-xl border-2 border-dashed border-cobalt/35 bg-cobalt-light/50 p-4">
+      <p className="text-small font-semibold text-brand-black-light">Add what you’re teaching</p>
+      <div className="space-y-3 rounded-xl border-2 border-dashed border-brand-blue/35 bg-brand-blue-light/50 p-4">
         <FileRow name="Energy — Unit 4 notes.pdf" meta="2.1 MB" delay={0.1} progress />
         <FileRow name="Class VIII syllabus.docx" meta="480 KB" delay={0.7} />
       </div>
-      <motion.p {...rise(1.6)} className="text-small text-ink-lighter">
+      <motion.p {...rise(1.6)} className="text-small text-brand-black-lighter">
         SOYL reads your notes so the assignment matches your lessons.
       </motion.p>
     </div>
@@ -132,7 +132,7 @@ function OutcomeChip({ label, at, on: shouldSelect, i }: { label: string; at: nu
       {...rise(0.1 + i * 0.08)}
       className={cn(
         'flex items-center justify-between rounded-lg border px-4 py-3.5 transition-colors duration-300',
-        selected ? 'border-ink bg-ink text-white' : 'border-border-dark bg-white text-ink'
+        selected ? 'border-ink bg-ink text-white' : 'border-border-dark bg-brand-cream text-brand-black'
       )}
     >
       <span className="text-[1rem] font-medium">{label}</span>
@@ -145,10 +145,10 @@ function OutcomeMock() {
   return (
     <div className="space-y-4">
       <div>
-        <p className="text-small text-ink-lighter">Topic</p>
-        <p className="text-subhead text-ink">Energy and sustainability</p>
+        <p className="text-small text-brand-black-lighter">Topic</p>
+        <p className="text-subhead text-brand-black">Energy and sustainability</p>
       </div>
-      <p className="text-small font-semibold text-ink-light">What should students be able to do?</p>
+      <p className="text-small font-semibold text-brand-black-light">What should students be able to do?</p>
       <div className="grid grid-cols-2 gap-3">
         {OUTCOMES.map((o, i) => (
           <OutcomeChip key={o.label} {...o} i={i} />
@@ -165,33 +165,33 @@ function GenerateMock() {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <p className="text-eyebrow text-cobalt">The Energy Challenge</p>
-        <span className="rounded-full bg-highlighter px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-ink">
+        <p className="text-eyebrow text-brand-blue">The Energy Challenge</p>
+        <span className="rounded-full bg-highlighter px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-brand-black">
           Draft
         </span>
       </div>
 
       <div className="min-h-[9.5rem] rounded-xl border border-border-dark p-5">
         {!ready ? (
-          <div className="flex h-[7.5rem] items-center gap-2 text-small text-ink-light">
+          <div className="flex h-[7.5rem] items-center gap-2 text-small text-brand-black-light">
             <span>SOYL is drafting</span>
             {[0, 1, 2].map((d) => (
               <motion.span
                 key={d}
                 animate={{ opacity: [0.2, 1, 0.2] }}
                 transition={{ duration: 1, repeat: Infinity, delay: d * 0.18 }}
-                className="h-1.5 w-1.5 rounded-full bg-cobalt"
+                className="h-1.5 w-1.5 rounded-full bg-brand-blue"
               />
             ))}
           </div>
         ) : (
-          <div className="space-y-2.5 text-ink">
+          <div className="space-y-2.5 text-brand-black">
             <motion.p {...rise(0)} className="text-[1.05rem] leading-snug">
               Your school must cut electricity use by 25%.
             </motion.p>
-            <motion.p {...rise(0.12)} className="text-ink-light">Choose three actions.</motion.p>
-            <motion.p {...rise(0.24)} className="text-ink-light">Explain why they work.</motion.p>
-            <motion.p {...rise(0.36)} className="text-ink-light">Defend one trade-off.</motion.p>
+            <motion.p {...rise(0.12)} className="text-brand-black-light">Choose three actions.</motion.p>
+            <motion.p {...rise(0.24)} className="text-brand-black-light">Explain why they work.</motion.p>
+            <motion.p {...rise(0.36)} className="text-brand-black-light">Defend one trade-off.</motion.p>
           </div>
         )}
       </div>
@@ -200,9 +200,9 @@ function GenerateMock() {
         animate={{ opacity: ready ? 1 : 0.35 }}
         className="flex items-center gap-3"
       >
-        <span className="rounded-sm border border-border-dark px-4 py-2 text-small font-medium text-ink">Edit draft</span>
+        <span className="rounded-sm border border-border-dark px-4 py-2 text-small font-medium text-brand-black">Edit draft</span>
         <span className="rounded-sm bg-ink px-4 py-2 text-small font-medium text-white">Assign</span>
-        <span className="ml-auto text-small text-ink-lighter">You stay in charge</span>
+        <span className="ml-auto text-small text-brand-black-lighter">You stay in charge</span>
       </motion.div>
     </div>
   );
@@ -217,23 +217,23 @@ function AdaptMock() {
   ];
   return (
     <div className="space-y-4">
-      <p className="text-small font-semibold text-ink-light">Same outcome. A context that fits each student.</p>
+      <p className="text-small font-semibold text-brand-black-light">Same outcome. A context that fits each student.</p>
       <div className="grid gap-3 sm:grid-cols-2">
         {variants.map((v, i) => (
           <motion.div key={v.who} {...rise(0.1 + i * 0.25)} className="rounded-xl border border-border-dark p-4">
             <div className="mb-3 flex items-center justify-between">
-              <span className="text-small font-semibold text-ink">{v.who}</span>
-              <span className="rounded-full bg-cobalt-light px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-cobalt">
+              <span className="text-small font-semibold text-brand-black">{v.who}</span>
+              <span className="rounded-full bg-brand-blue-light px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-brand-blue">
                 {v.tag}
               </span>
             </div>
-            <p className="min-h-[4.25rem] text-[0.95rem] leading-snug text-ink">{v.context}</p>
+            <p className="min-h-[4.25rem] text-[0.95rem] leading-snug text-brand-black">{v.context}</p>
           </motion.div>
         ))}
       </div>
       <motion.div
         {...rise(0.8)}
-        className="flex flex-wrap items-center gap-2 rounded-lg bg-paper px-4 py-3 text-small text-ink"
+        className="flex flex-wrap items-center gap-2 rounded-lg bg-brand-black/5 px-4 py-3 text-small text-brand-black"
       >
         <span className="font-semibold">Both must:</span>
         <span>Choose three actions</span>
@@ -260,7 +260,7 @@ function ActionRow({ label, at, i }: { label: string; at: number; i: number }) {
   return (
     <motion.li {...rise(0.05 + i * 0.07)} className="flex items-center gap-3 rounded-lg border border-border-dark px-4 py-2.5">
       <Check on={on} />
-      <span className="text-[0.95rem] text-ink">{label}</span>
+      <span className="text-[0.95rem] text-brand-black">{label}</span>
     </motion.li>
   );
 }
@@ -268,17 +268,17 @@ function ActionRow({ label, at, i }: { label: string; at: number; i: number }) {
 function StudentMock() {
   return (
     <div className="space-y-4">
-      <p className="text-small font-semibold text-ink-light">Choose three actions</p>
+      <p className="text-small font-semibold text-brand-black-light">Choose three actions</p>
       <ul className="space-y-2">
         {ACTIONS.map((a, i) => (
           <ActionRow key={a.label} {...a} i={i} />
         ))}
       </ul>
       <div>
-        <p className="mb-2 text-small font-semibold text-ink-light">Why does it work?</p>
-        <div className="min-h-[4.75rem] rounded-lg border-2 border-cobalt/50 bg-white p-3.5 text-[0.95rem] leading-snug text-ink">
+        <p className="mb-2 text-small font-semibold text-brand-black-light">Why does it work?</p>
+        <div className="min-h-[4.75rem] rounded-lg border-2 border-brand-blue/50 bg-brand-cream p-3.5 text-[0.95rem] leading-snug text-brand-black">
           <Typed text="LED lights cost more at first, but they use far less power every day." delay={2} />
-          <span className="ml-0.5 inline-block h-4 w-px translate-y-0.5 animate-pulse bg-cobalt" aria-hidden="true" />
+          <span className="ml-0.5 inline-block h-4 w-px translate-y-0.5 animate-pulse bg-brand-blue" aria-hidden="true" />
         </div>
       </div>
     </div>
@@ -298,7 +298,7 @@ function EvidenceRow({ label, at, i }: { label: string; at: number; i: number })
   return (
     <motion.li {...rise(0.05 + i * 0.08)} className="flex items-center gap-3">
       <Check on={on} />
-      <span className="text-[0.98rem] text-ink">{label}</span>
+      <span className="text-[0.98rem] text-brand-black">{label}</span>
     </motion.li>
   );
 }
@@ -307,8 +307,8 @@ function EvidenceMock() {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <p className="text-eyebrow text-cobalt">Evidence of understanding</p>
-        <span className="text-small text-ink-lighter">Student A</span>
+        <p className="text-eyebrow text-brand-blue">Evidence of understanding</p>
+        <span className="text-small text-brand-black-lighter">Student A</span>
       </div>
       <ul className="space-y-3 rounded-xl border border-border-dark p-5">
         {EVIDENCE.map((e, i) => (
@@ -317,13 +317,13 @@ function EvidenceMock() {
       </ul>
       <motion.blockquote
         {...rise(1.9)}
-        className="border-l-2 border-cobalt pl-4 text-[0.95rem] leading-snug text-ink-light"
+        className="border-l-2 border-brand-blue pl-4 text-[0.95rem] leading-snug text-brand-black-light"
       >
         “LED lights cost more at first, but they use far less power every day.”
       </motion.blockquote>
       <motion.span
         {...rise(2.2)}
-        className="inline-block rounded-sm border border-border-dark px-4 py-2 text-small font-medium text-ink"
+        className="inline-block rounded-sm border border-border-dark px-4 py-2 text-small font-medium text-brand-black"
       >
         Ask a follow-up
       </motion.span>
@@ -355,7 +355,7 @@ export function MockWindow({ id, step, total }: { id: string; step: number; tota
   return (
     <div
       aria-hidden="true"
-      className="overflow-hidden rounded-xl border border-border-dark bg-white shadow-[0_30px_60px_-34px_rgba(23,23,23,0.4)]"
+      className="overflow-hidden rounded-xl border border-border-dark bg-brand-cream shadow-[0_30px_60px_-34px_rgba(23,23,23,0.4)]"
     >
       <div className="flex items-center justify-between border-b border-border bg-bone px-5 py-3">
         <div className="flex items-center gap-2.5">
@@ -364,18 +364,18 @@ export function MockWindow({ id, step, total }: { id: string; step: number; tota
             <span className="bg-highlighter" />
             <span />
             <span className="bg-teacher-red" />
-            <span className="bg-cobalt" />
-            <span className="bg-cobalt" />
+            <span className="bg-brand-blue" />
+            <span className="bg-brand-blue" />
           </span>
-          <span className="text-small font-semibold text-ink">SOYL</span>
-          <span className="text-small text-ink-lighter">· {ROLE[id]}</span>
+          <span className="text-small font-semibold text-brand-black">SOYL</span>
+          <span className="text-small text-brand-black-lighter">· {ROLE[id]}</span>
         </div>
-        <span className="text-small tabular-nums text-ink-lighter">
+        <span className="text-small tabular-nums text-brand-black-lighter">
           {step}/{total}
         </span>
       </div>
       <div className="min-h-[25.5rem] p-5 md:min-h-[24rem] md:p-7">{Mock && <Mock />}</div>
-      <p className="border-t border-border px-5 py-2.5 text-[11px] text-ink-lighter">
+      <p className="border-t border-border px-5 py-2.5 text-[11px] text-brand-black-lighter">
         Illustration of the intended workflow. Content is invented for demonstration.
       </p>
     </div>

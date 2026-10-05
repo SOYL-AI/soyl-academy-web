@@ -55,7 +55,7 @@ const programs = [
 
 export default function WhatWeTeachPage() {
   return (
-    <div className="py-32 bg-brand-cream text-brand-black min-h-screen">
+    <div className="py-16 md:py-32 bg-brand-cream text-brand-black min-h-screen">
       <StructuredData
         data={graph(
           webPageNode({
@@ -68,8 +68,8 @@ export default function WhatWeTeachPage() {
         )}
       />
       <Container>
-        <section className="mb-48">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-24">
+        <section className="mb-24 md:mb-48">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-12 md:mb-24">
             <ScrollReveal>
               <h3 className="text-sm font-bold tracking-widest text-brand-blue uppercase mb-8">What We Teach</h3>
               <h1 className="text-5xl md:text-8xl font-bold tracking-tight">
@@ -103,8 +103,8 @@ export default function WhatWeTeachPage() {
         </section>
 
         {/* Programs */}
-        <section className="mb-48">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24 border-t border-brand-black/10 pt-24">
+        <section className="mb-24 md:mb-48">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24 border-t border-brand-black/10 pt-12 md:pt-24">
             {programs.map((program, index) => (
               <ScrollReveal key={program.id} delay={index * 0.1}>
                 <div className="flex flex-col h-full">
@@ -144,7 +144,7 @@ export default function WhatWeTeachPage() {
 
         <section className="mt-48 text-center max-w-4xl mx-auto">
           <ScrollReveal>
-            <div className="bg-brand-black text-brand-cream p-16 md:p-32 rounded-[2rem]">
+            <div className="bg-brand-black text-brand-cream p-8 md:p-32 rounded-[2rem]">
               <h2 className="text-4xl md:text-6xl font-bold mb-8">Bring SOYL to your school</h2>
               <p className="text-xl text-brand-cream/70 mb-12 leading-relaxed">
                 We partner with forward-thinking educational institutions to deliver these programs on-campus. Custom curriculum alignment is available.

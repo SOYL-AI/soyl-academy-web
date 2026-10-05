@@ -21,7 +21,7 @@ const workflowSteps = [
 
 export default function SchoolsPage() {
   return (
-    <div className="py-32 bg-brand-cream text-brand-black min-h-screen">
+    <div className="py-16 md:py-32 bg-brand-cream text-brand-black min-h-screen">
       <StructuredData
         data={graph(
           webPageNode({ path: '/schools' }),
@@ -35,7 +35,7 @@ export default function SchoolsPage() {
         )}
       />
       <Container>
-        <section className="mb-48">
+        <section className="mb-24 md:mb-48">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20 items-end">
             <div className="lg:col-span-8">
               <ScrollReveal>
@@ -74,8 +74,8 @@ export default function SchoolsPage() {
           </ScrollReveal>
         </section>
 
-        <section className="mb-48 border-t border-brand-black/10 pt-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-24">
+        <section className="mb-24 md:mb-48 border-t border-brand-black/10 pt-12 md:pt-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
             <ScrollReveal>
               <h2 className="text-4xl md:text-6xl font-bold mb-8">
                 The output is no longer the proof.
@@ -95,7 +95,7 @@ export default function SchoolsPage() {
         </section>
 
         {/* Teacher Workflow */}
-        <section id="workflow" className="mb-48 scroll-mt-32">
+        <section id="workflow" className="mb-24 md:mb-48 scroll-mt-32">
           <ScrollReveal>
             <h3 className="text-sm font-bold tracking-widest text-brand-blue uppercase mb-16">The SOYL Workflow</h3>
           </ScrollReveal>
@@ -113,8 +113,8 @@ export default function SchoolsPage() {
           </div>
         </section>
 
-        <section className="mb-48 bg-brand-black text-brand-cream p-16 md:p-32 rounded-[2rem]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
+        <section className="mb-24 md:mb-48 bg-brand-black text-brand-cream p-8 md:p-32 rounded-[2rem]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24">
             <ScrollReveal>
               <h2 className="text-4xl md:text-6xl font-bold mb-8">Seamless Curriculum Alignment</h2>
               <p className="text-xl text-brand-cream/70 mb-8 leading-relaxed">

@@ -60,7 +60,7 @@ export default async function JournalArticlePage({ params }: Props) {
   const related = journalArticles.filter((a) => a.slug !== article.slug).slice(0, 2);
 
   return (
-    <div className="min-h-screen bg-brand-cream text-brand-black pt-32 pb-32">
+    <div className="min-h-screen bg-brand-cream text-brand-black pt-16 md:pt-32 pb-16 md:pb-32">
       <StructuredData
         data={graph(
           webPageNode({

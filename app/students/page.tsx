@@ -19,7 +19,7 @@ const actions = [
 
 export default function StudentsPage() {
   return (
-    <div className="py-32 bg-brand-cream text-brand-black min-h-screen">
+    <div className="py-16 md:py-32 bg-brand-cream text-brand-black min-h-screen">
       <StructuredData
         data={graph(
           webPageNode({ path: '/students' }),
@@ -28,7 +28,7 @@ export default function StudentsPage() {
         )}
       />
       <Container>
-        <section className="mb-48 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <section className="mb-24 md:mb-48 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
           <ScrollReveal>
             <div className="relative aspect-[4/5] w-full overflow-hidden bg-brand-black/5">
               <Image
@@ -64,7 +64,7 @@ export default function StudentsPage() {
         </section>
 
         {/* Graphic Statements */}
-        <section className="mb-48">
+        <section className="mb-24 md:mb-48">
           <ScrollReveal>
             <div className="flex flex-wrap justify-center gap-x-12 gap-y-8 py-24 border-y border-brand-black/10">
               {actions.map((action) => (
@@ -80,9 +80,9 @@ export default function StudentsPage() {
         </section>
 
         {/* Responsible AI */}
-        <section className="mb-48 max-w-5xl mx-auto">
+        <section className="mb-24 md:mb-48 max-w-5xl mx-auto">
           <ScrollReveal>
-            <div className="bg-brand-black text-brand-cream p-16 md:p-32 rounded-[2rem] text-center">
+            <div className="bg-brand-black text-brand-cream p-8 md:p-32 rounded-[2rem] text-center">
               <h2 className="text-4xl md:text-6xl font-bold mb-12">Use AI to think better, not to skip thinking.</h2>
               <p className="text-xl md:text-2xl text-brand-cream/70 max-w-3xl mx-auto leading-relaxed">
                 We know you have access to powerful AI tools. We expect you to use them. But in a SOYL assignment, you can&apos;t just copy-paste an answer. You have to explain your process, defend your choices, and prove that the ideas are yours. Technology is your co-pilot, but you are flying the plane.

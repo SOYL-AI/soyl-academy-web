@@ -35,7 +35,7 @@ export function StudentExperience() {
           </div>
         </ScrollReveal>
 
-        <div className="space-y-6 md:space-y-10 mb-24 md:mb-32">
+        <div className="space-y-6 md:space-y-10 mb-12 md:mb-32">
           {STATEMENTS.map((statement, i) => (
             <ScrollReveal key={statement.text} delay={i * 0.06}>
               <p className={`text-headline text-ink ${statement.indent}`}>

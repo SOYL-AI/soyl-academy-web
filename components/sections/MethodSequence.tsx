@@ -23,19 +23,19 @@ export function MethodSequence() {
   const current = method.steps[active];
 
   return (
-    <section className="w-full bg-white section-padding">
+    <section className="w-full bg-brand-cream section-padding">
       <div className="container-default">
         <ScrollReveal>
-          <p className="text-eyebrow mb-7 text-cobalt">{method.eyebrow}</p>
-          <h2 className="text-display mb-16 text-ink md:mb-24">{method.headline}</h2>
+          <p className="text-eyebrow mb-7 text-brand-blue">{method.eyebrow}</p>
+          <h2 className="text-display mb-16 text-brand-black md:mb-24">{method.headline}</h2>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8 md:gap-16">
           {/* Sticky stage (desktop only) */}
           <div className="hidden lg:col-span-5 lg:block">
             <div className="sticky top-28">
-              <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-paper">
-                <span className="absolute left-7 top-6 text-subhead tabular-nums text-ink-lighter">
+              <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-brand-black/5">
+                <span className="absolute left-7 top-6 text-subhead tabular-nums text-brand-black-lighter">
                   0{active + 1}
                 </span>
                 <AnimatePresence mode="wait">
@@ -80,7 +80,7 @@ export function MethodSequence() {
                 <span
                   className={cn(
                     'mb-3 text-small font-semibold tabular-nums transition-colors duration-500',
-                    i === active ? 'text-cobalt' : 'text-ink-lighter'
+                    i === active ? 'text-brand-blue' : 'text-brand-black-lighter'
                   )}
                 >
                   0{i + 1}
@@ -88,12 +88,12 @@ export function MethodSequence() {
                 <h3
                   className={cn(
                     'text-display transition-colors duration-500',
-                    i === active ? 'text-ink' : 'text-ink/25 lg:text-ink/20'
+                    i === active ? 'text-brand-black' : 'text-brand-black/25 lg:text-brand-black/20'
                   )}
                 >
                   {step.verb}
                 </h3>
-                <p className="text-lead mt-5 max-w-[26ch] text-ink-light">{step.line}</p>
+                <p className="text-lead mt-5 max-w-[26ch] text-brand-black-light">{step.line}</p>
               </motion.li>
             ))}
           </ol>
