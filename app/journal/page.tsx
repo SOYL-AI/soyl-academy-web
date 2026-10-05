@@ -46,7 +46,7 @@ export default function JournalPage() {
             <article className="mb-12 md:mb-24 pb-12 md:pb-24 border-b border-brand-black/10">
               <Link href={`/journal/${featured.slug}`} className="group block">
                 <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
-                  <div className="aspect-[4/3] bg-brand-black/5 relative overflow-hidden rounded-2xl">`n                    {featured.image ? (`n                      <img src={featured.image} alt={featured.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />`n                    ) : (`n                      <div className="absolute inset-0 bg-brand-black/10 transition-transform duration-700 group-hover:scale-105" />`n                    )}`n                  </div>
+                  <div className="aspect-[4/3] bg-brand-black/5 relative overflow-hidden rounded-2xl">                    {featured.image ? (                      <img src={featured.image} alt={featured.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />                    ) : (                      <div className="absolute inset-0 bg-brand-black/10 transition-transform duration-700 group-hover:scale-105" />                    )}                  </div>
                   <div>
                     <div className="flex items-center gap-4 text-sm font-bold tracking-widest uppercase text-brand-black/40 mb-6">
                       <time dateTime={featured.date}>{formatArticleDate(featured.date)}</time>
