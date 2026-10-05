@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
@@ -14,43 +15,6 @@ const navItems = [
   { label: 'Journal', href: '/journal' },
   { label: 'About', href: '/about' },
 ];
-
-/**
- * The grid motif in the wordmark lockup.
- *
- * Primer sits a small coloured grid beside its wordmark; ours doubles as the
- * notebook-grid device from the brand language. Filled cells use the three
- * accents so the mark carries brand colour without the rest of the bar doing so.
- */
-const GRID_CELLS = [
-  null,
-  'bg-brand-yellow',
-  null,
-  'bg-brand-red',
-  'bg-brand-blue',
-  'bg-brand-blue',
-];
-
-function GridMotif() {
-  return (
-    <div
-      className="grid grid-cols-3 grid-rows-2 w-[54px] shrink-0 self-stretch"
-      aria-hidden="true"
-    >
-      {GRID_CELLS.map((fill, i) => (
-        <span
-          key={i}
-          className={cn(
-            'border-r border-b border-brand-black/15 last:border-r-0',
-            i > 2 && 'border-b-0',
-            i % 3 === 2 && 'border-r-0',
-            fill
-          )}
-        />
-      ))}
-    </div>
-  );
-}
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -101,7 +65,9 @@ export function Header() {
               </Link>
 
               <div className="border-l-2 border-brand-black self-stretch" />
-              <GridMotif />
+              <div className="w-[54px] md:w-[60px] shrink-0 self-stretch flex items-center justify-center p-[8px]">
+                <Image src="/logo.png" alt="SOYL Logo" width={40} height={40} className="object-contain w-full h-full" />
+              </div>
 
               <button
                 onClick={toggle}
