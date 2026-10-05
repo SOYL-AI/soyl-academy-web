@@ -23,7 +23,8 @@ This changes everything about how we structure curriculum. It's an opportunity t
     author: 'SOYL Academy',
     date: '2023-10-15',
     category: 'Technology',
-    readingTime: 4
+    readingTime: 4,
+    image: '/images/students_debating.jpg'
   },
   {
     slug: 'why-outcomes-matter',
@@ -37,7 +38,8 @@ Outcome-based learning transforms the classroom from a place of passive receptio
     author: 'SOYL Academy',
     date: '2023-11-02',
     category: 'Methodology',
-    readingTime: 5
+    readingTime: 5,
+    image: '/images/students_building_project.jpg'
   },
   {
     slug: 'should-schools-ban-ai',
@@ -51,7 +53,8 @@ We need to integrate AI into our teaching methods, teaching students to evaluate
     author: 'SOYL Academy',
     date: '2023-12-10',
     category: 'Technology',
-    readingTime: 6
+    readingTime: 6,
+    image: '/images/student_thinking_portrait.jpg'
   },
   {
     slug: 'learning-to-defend-an-idea',
@@ -65,7 +68,8 @@ When students learn to articulate their reasoning, they deepen their understandi
     author: 'SOYL Academy',
     date: '2024-01-20',
     category: 'Methodology',
-    readingTime: 4
+    readingTime: 4,
+    image: '/images/students_presenting.jpg'
   }
 ];
 
@@ -91,3 +95,4 @@ export function formatArticleDate(isoDate: string): string {
     timeZone: 'UTC',
   });
 }
+

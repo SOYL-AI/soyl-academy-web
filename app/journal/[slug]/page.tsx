@@ -108,7 +108,13 @@ export default async function JournalArticlePage({ params }: Props) {
           </div>
           <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">{article.title}</h1>
           <p className="text-2xl text-brand-black/70 leading-relaxed mb-8">{article.excerpt}</p>
-          {article.author && <p className="text-lg font-bold text-brand-black">By {article.author}</p>}
+          {article.author && <p className="text-lg font-bold text-brand-black mb-12">By {article.author}</p>}
+          
+          {article.image && (
+            <div className="w-full aspect-video md:aspect-[21/9] relative overflow-hidden rounded-2xl border-4 border-brand-black shadow-[8px_8px_0_0_#141414] mt-8 mb-16">
+              <img src={article.image} alt={article.title} className="absolute inset-0 w-full h-full object-cover" />
+            </div>
+          )}
         </header>
 
         <div className="mx-auto leading-relaxed space-y-8 text-xl text-brand-black/80">
@@ -124,14 +130,19 @@ export default async function JournalArticlePage({ params }: Props) {
             <h2 id="keep-reading" className="text-sm font-bold tracking-widest uppercase text-brand-blue mb-8">
               Keep reading
             </h2>
-            <ul className="space-y-12">
+            <ul className="grid md:grid-cols-2 gap-12">
               {related.map((item) => (
                 <li key={item.slug}>
-                  <Link href={`/journal/${item.slug}`} className="group block">
-                    <p className="text-3xl font-bold transition-colors group-hover:text-brand-blue mb-3">
+                  <Link href={`/journal/${item.slug}`} className="group block h-full">
+                    {item.image && (
+                      <div className="aspect-video bg-brand-black/5 relative overflow-hidden rounded-2xl mb-6">
+                        <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                      </div>
+                    )}
+                    <p className="text-2xl font-bold transition-colors group-hover:text-brand-blue mb-3">
                       {item.title}
                     </p>
-                    <p className="text-xl text-brand-black/70">{item.excerpt}</p>
+                    <p className="text-lg text-brand-black/70">{item.excerpt}</p>
                   </Link>
                 </li>
               ))}
