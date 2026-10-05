@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
-import { SITE_NAME } from '@/lib/seo/config';
 import { createMetadata } from '@/lib/seo/metadata';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { graph, webPageNode } from '@/lib/seo/schema';
@@ -8,16 +7,17 @@ import { Container } from '@/components/layout/Container';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { FutureBuildersForm } from '@/components/forms/FutureBuildersForm';
 import { DrawnUnderline } from '@/components/motion/DrawnUnderline';
+import { FutureBuildersCurriculum } from '@/components/sections/FutureBuildersCurriculum';
 
 export const metadata: Metadata = createMetadata({ 
   path: '/future-builders',
   title: 'Future Builders Programme',
-  description: 'A 12-week builder\'s workshop for Grades 6 to 9. Software, AI, IoT and Entrepreneurship.',
+  description: 'A 12-week builder\'s workshop for Grades 8 to 10. Software, AI, IoT and Entrepreneurship.',
 });
 
 export default function FutureBuildersPage() {
   return (
-    <div className="bg-brand-cream text-brand-black min-h-screen pt-32 pb-16 md:py-32">
+    <div className="bg-brand-cream text-brand-black min-h-screen pt-32 pb-16 md:py-32 overflow-x-hidden">
       <StructuredData
         data={graph(
           webPageNode({ path: '/future-builders' })
@@ -26,41 +26,42 @@ export default function FutureBuildersPage() {
 
       <Container>
         {/* Hero Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-24 md:mb-48">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-16 md:mb-24">
           <div className="lg:col-span-7">
             <ScrollReveal>
-              <div className="inline-block bg-brand-yellow px-4 py-2 mb-8 border-2 border-brand-black shadow-[4px_4px_0_0_#141414]">
-                <p className="font-bold tracking-widest uppercase text-brand-black text-sm">Online Cohort ?" Grades 6 to 9</p>
+              <div className="inline-block bg-brand-yellow px-4 py-2 mb-8 border-2 border-brand-black shadow-[4px_4px_0_0_#141414] rounded-xl">
+                <p className="font-bold tracking-widest uppercase text-brand-black text-sm">Offline Weekend Cohort ?" Grades 8 to 10</p>
               </div>
-              <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.05]">
-                The Future<br />
+              <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.05]">
+                Build a<br />
                 <span className="relative inline-block whitespace-nowrap">
-                  Builders
+                  real product.
                   <DrawnUnderline className="absolute -bottom-[0.1em] left-0 h-[0.14em] w-full text-brand-blue" />
-                </span> Programme.
+                </span>
               </h1>
               <p className="text-xl md:text-2xl text-brand-black/80 max-w-2xl leading-relaxed mb-10">
-                A 12-week builder's workshop covering software development, artificial intelligence, IoT robotics, and entrepreneurship. Ending in one working product built by your child.
+                12 weekends. 75 contact hours. One working prototype.<br /> 
+                A hands-on workshop covering Software, AI, IoT, and Entrepreneurship.
               </p>
-              <div className="flex flex-wrap gap-4 md:gap-8 border-t-2 border-brand-black/10 pt-8">
+              <div className="flex flex-wrap gap-6 md:gap-10 border-t-2 border-brand-black/10 pt-8">
                 <div>
-                  <p className="text-3xl font-bold">12 Weeks</p>
-                  <p className="text-sm font-bold uppercase tracking-widest text-brand-black/50">Duration</p>
+                  <p className="text-4xl font-bold">12</p>
+                  <p className="text-sm font-bold uppercase tracking-widest text-brand-black/50 mt-1">Weeks</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-bold text-brand-blue">Oct 20th</p>
-                  <p className="text-sm font-bold uppercase tracking-widest text-brand-black/50">Cohort Starts</p>
+                  <p className="text-4xl font-bold text-brand-blue">Oct 20</p>
+                  <p className="text-sm font-bold uppercase tracking-widest text-brand-black/50 mt-1">Starts</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-bold text-brand-red">4 Builds</p>
-                  <p className="text-sm font-bold uppercase tracking-widest text-brand-black/50">Shipped</p>
+                  <p className="text-4xl font-bold text-brand-red">₹5499</p>
+                  <p className="text-sm font-bold uppercase tracking-widest text-brand-black/50 mt-1">Includes Kit</p>
                 </div>
               </div>
             </ScrollReveal>
           </div>
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 relative">
             <ScrollReveal delay={0.1}>
-              <div className="relative aspect-[4/5] w-full border-2 border-brand-black shadow-[12px_12px_0_0_#141414] overflow-hidden rounded-sm bg-brand-black/5">
+              <div className="relative aspect-[4/5] w-full border-4 border-brand-black shadow-[16px_16px_0_0_#141414] overflow-hidden rounded-2xl bg-brand-black/5 rotate-2 hover:rotate-0 transition-transform duration-500">
                 <Image 
                   src="/images/future-builders/iot_wiring.jpg" 
                   alt="Student wiring an IoT circuit" 
@@ -68,94 +69,47 @@ export default function FutureBuildersPage() {
                   className="object-cover"
                 />
               </div>
+              
+              {/* Floating badges */}
+              <div className="absolute -bottom-6 -left-6 bg-brand-blue text-brand-cream p-4 border-2 border-brand-black rounded-2xl shadow-[6px_6px_0_0_#141414] animate-bounce" style={{ animationDuration: '3s' }}>
+                <p className="font-bold text-lg">ESP32-C3 Kit</p>
+              </div>
+              <div className="absolute top-12 -right-8 bg-brand-yellow text-brand-black p-4 border-2 border-brand-black rounded-2xl shadow-[6px_6px_0_0_#141414] animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>
+                <p className="font-bold text-lg">No prior coding!</p>
+              </div>
             </ScrollReveal>
           </div>
         </div>
 
-        {/* What we teach / Curriculum */}
-        <div className="mb-24 md:mb-48 border-t-2 border-brand-black/10 pt-16 md:pt-32">
-          <ScrollReveal>
-            <h2 className="text-4xl md:text-6xl font-bold mb-16 max-w-2xl">Twelve weeks.<br/>Four builds.</h2>
-          </ScrollReveal>
-
-          <div className="space-y-12">
-            {[
-              {
-                weeks: 'Weeks 1?"3',
-                title: 'Software & Systems',
-                desc: 'Python from scratch, plus how apps, networks and databases actually work.',
-                usedFor: 'Each student writes a working program ?" a quiz, calculator or decision tool ?" and designs the data behind their capstone.',
-                color: 'bg-brand-blue/10 text-brand-blue',
-              },
-              {
-                weeks: 'Weeks 4?"6',
-                title: 'Artificial Intelligence',
-                desc: 'How machines learn, where AI goes wrong, and how to use it with judgement.',
-                usedFor: 'Students train a small classifier, test it, catch its mistakes and add a verified AI feature to their product.',
-                color: 'bg-brand-yellow/30 text-brand-yellow',
-              },
-              {
-                weeks: 'Weeks 7?"9',
-                title: 'IoT & Robotics',
-                desc: 'Safe, low-voltage electronics: sensors, lights, buzzers and automation.',
-                usedFor: 'Each student wires their own kit so their product can sense the real world ?" temperature, light, distance ?" and act on it.',
-                color: 'bg-brand-black/5 text-brand-black',
-              },
-              {
-                weeks: 'Weeks 10?"12',
-                title: 'Entrepreneurship',
-                desc: 'Finding a real problem, talking to users, estimating costs, pitching.',
-                usedFor: 'Teams turn their build into a product and defend it at Demo Day ?" in front of teachers, parents and invited guests.',
-                color: 'bg-brand-red/10 text-brand-red',
-              }
-            ].map((build, i) => (
-              <ScrollReveal key={build.title} delay={i * 0.1}>
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start border-b-2 border-brand-black/10 pb-12">
-                  <div className="md:col-span-3">
-                    <p className="text-sm font-bold tracking-widest uppercase text-brand-blue mb-2">{build.weeks}</p>
-                    <h3 className="text-3xl font-bold">{build.title}</h3>
-                  </div>
-                  <div className="md:col-span-5">
-                    <p className="text-xl text-brand-black/70 leading-relaxed">{build.desc}</p>
-                  </div>
-                  <div className="md:col-span-4">
-                    <div className="bg-brand-tan p-6 border-l-4 border-brand-black">
-                      <p className="text-sm font-bold tracking-widest uppercase mb-2">Used For:</p>
-                      <p className="text-brand-black/80">{build.usedFor}</p>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
+        {/* Interactive Curriculum Section */}
+        <FutureBuildersCurriculum />
 
         {/* Registration Section */}
         <div id="enroll" className="scroll-mt-32">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             <div className="lg:col-span-5">
               <ScrollReveal>
-                <h2 className="text-4xl md:text-6xl font-bold mb-8">Join the October Cohort.</h2>
+                <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">Secure your spot for October.</h2>
                 <p className="text-xl text-brand-black/70 leading-relaxed mb-8">
-                  The programme uses a dual-track model. The <strong>Explorer Track (Grades 6-7)</strong> focuses on understanding concepts and presenting them, while the <strong>Builder Track (Grades 8-9)</strong> dives deep into code.
+                  Cohorts are strictly limited to ensure individual instructor attention. Teams of 3-4 will build and pitch their final product.
                 </p>
                 <div className="space-y-6 border-y-2 border-brand-black/10 py-8 mb-8">
-                  <div className="flex justify-between items-center">
-                    <span className="font-bold">Starts on</span>
-                    <span className="font-bold text-brand-blue">Oct 20, 2026</span>
+                  <div className="flex justify-between items-center text-lg">
+                    <span className="font-bold text-brand-black/60">Starts on</span>
+                    <span className="font-bold text-brand-black">Oct 20, 2026</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="font-bold">Hardware Kit</span>
-                    <span className="font-bold text-brand-black/70">Included (Delivered)</span>
+                  <div className="flex justify-between items-center text-lg">
+                    <span className="font-bold text-brand-black/60">Hardware Kit</span>
+                    <span className="font-bold text-brand-black">Yours to keep</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="font-bold">Format</span>
-                    <span className="font-bold text-brand-black/70">Online Live</span>
+                  <div className="flex justify-between items-center text-lg">
+                    <span className="font-bold text-brand-black/60">Format</span>
+                    <span className="font-bold text-brand-black">Offline Weekends</span>
                   </div>
                 </div>
-                <div className="bg-brand-blue p-8 text-brand-cream border-2 border-brand-black shadow-[8px_8px_0_0_#141414]">
-                  <h4 className="font-bold text-xl mb-2">Hardware Kit Included</h4>
-                  <p className="text-brand-cream/80">Every student receives a physical kit containing an ESP32 microcontroller, breadboard, temperature, humidity and distance sensors, LEDs, and a buzzer.</p>
+                <div className="bg-brand-blue p-8 text-brand-cream border-2 border-brand-black shadow-[8px_8px_0_0_#141414] rounded-2xl hover:-translate-y-2 transition-transform duration-300">
+                  <h4 className="font-bold text-2xl mb-3">ESP32 Hardware Kit</h4>
+                  <p className="text-brand-cream/80 text-lg">Every student receives a personal ₹700 value physical kit: ESP32-C3 microcontroller, breadboard, sensors (temperature, light, distance), LEDs, and a servo motor.</p>
                 </div>
               </ScrollReveal>
             </div>
