@@ -11,7 +11,7 @@ const OUTCOMES = [
   },
   {
     question: "Do they need prior coding experience?",
-    answer: "No. The curriculum is designed for complete beginners in Grades 8 to 10. We teach everything from scratch, starting with basic logic and moving up to advanced AI and hardware."
+    answer: "No. The curriculum is designed for complete beginners in Grades 7 to 10. We teach everything from scratch, starting with basic logic and moving up to advanced AI and hardware."
   },
   {
     question: "How does the hardware kit work for an online cohort?",

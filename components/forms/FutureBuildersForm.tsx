@@ -147,10 +147,10 @@ export function FutureBuildersForm() {
         <label className="block text-sm font-bold tracking-widest uppercase mb-2 text-brand-black/70">Student Grade</label>
         <select required name="grade" value={formData.grade} onChange={handleChange} className="w-full h-14 px-4 bg-brand-cream border-2 border-brand-black focus:outline-none focus:ring-4 focus:ring-brand-yellow focus:border-brand-black transition-all appearance-none cursor-pointer">
           <option value="">Select Grade</option>
-          <option value="6">Grade 6</option>
+          
           <option value="7">Grade 7</option>
           <option value="8">Grade 8</option>
-          <option value="9">Grade 9</option>
+          <option value="9">Grade 9</option>          <option value="10">Grade 10</option>
         </select>
       </div>
 

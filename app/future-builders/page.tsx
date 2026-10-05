@@ -13,7 +13,7 @@ import { FutureBuildersFaq } from '@/components/sections/FutureBuildersFaq';
 export const metadata: Metadata = createMetadata({ 
   path: '/future-builders',
   title: 'Future Builders Programme',
-  description: 'A 12-week builder\'s workshop for Grades 8 to 10. Software, AI, IoT and Entrepreneurship.',
+  description: 'A 12-week builder\'s workshop for Grades 7 to 10. Software, AI, IoT and Entrepreneurship.',
 });
 
 export default function FutureBuildersPage() {
@@ -31,7 +31,7 @@ export default function FutureBuildersPage() {
           <div className="lg:col-span-7">
             <ScrollReveal>
               <div className="inline-block bg-brand-yellow px-4 py-2 mb-8 border-2 border-brand-black shadow-[4px_4px_0_0_#141414] rounded-xl">
-                <p className="font-bold tracking-widest uppercase text-brand-black text-sm">Online Cohort ?" Grades 8 to 10</p>
+                <p className="font-bold tracking-widest uppercase text-brand-black text-sm">Online Cohort ?" Grades 7 to 10</p>
               </div>
               <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.05]">
                 Build a<br />
