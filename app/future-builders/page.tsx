@@ -8,6 +8,7 @@ import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { FutureBuildersForm } from '@/components/forms/FutureBuildersForm';
 import { DrawnUnderline } from '@/components/motion/DrawnUnderline';
 import { FutureBuildersCurriculum } from '@/components/sections/FutureBuildersCurriculum';
+import { FutureBuildersFaq } from '@/components/sections/FutureBuildersFaq';
 
 export const metadata: Metadata = createMetadata({ 
   path: '/future-builders',
@@ -30,7 +31,7 @@ export default function FutureBuildersPage() {
           <div className="lg:col-span-7">
             <ScrollReveal>
               <div className="inline-block bg-brand-yellow px-4 py-2 mb-8 border-2 border-brand-black shadow-[4px_4px_0_0_#141414] rounded-xl">
-                <p className="font-bold tracking-widest uppercase text-brand-black text-sm">Offline Weekend Cohort ?" Grades 8 to 10</p>
+                <p className="font-bold tracking-widest uppercase text-brand-black text-sm">Online Cohort ?" Grades 8 to 10</p>
               </div>
               <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.05]">
                 Build a<br />
@@ -84,7 +85,7 @@ export default function FutureBuildersPage() {
         {/* Interactive Curriculum Section */}
         <FutureBuildersCurriculum />
 
-        {/* Registration Section */}
+        <FutureBuildersFaq />`n`n        {/* Registration Section */}
         <div id="enroll" className="scroll-mt-32">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             <div className="lg:col-span-5">
@@ -104,7 +105,7 @@ export default function FutureBuildersPage() {
                   </div>
                   <div className="flex justify-between items-center text-lg">
                     <span className="font-bold text-brand-black/60">Format</span>
-                    <span className="font-bold text-brand-black">Offline Weekends</span>
+                    <span className="font-bold text-brand-black">Online Live Weekends</span>
                   </div>
                 </div>
                 <div className="bg-brand-blue p-8 text-brand-cream border-2 border-brand-black shadow-[8px_8px_0_0_#141414] rounded-2xl hover:-translate-y-2 transition-transform duration-300">
