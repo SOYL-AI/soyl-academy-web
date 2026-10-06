@@ -1,9 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-
+import { cn } from '@/lib/utils';
 
 export function FutureBuildersForm() {
+  const [mode, setMode] = useState<'pay' | 'callback'>('pay');
   const [formData, setFormData] = useState({
     parentName: '',
     studentName: '',
@@ -32,12 +33,7 @@ export function FutureBuildersForm() {
     });
   };
 
-  const handlePayment = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError('');
-
-    // Ensure it's not missing
+  const handlePayment = async () => {
     const res = await loadRazorpay();
     if (!res) {
       setError('Razorpay SDK failed to load. Are you online?');
@@ -95,28 +91,89 @@ export function FutureBuildersForm() {
     }
   };
 
+  const handleCallback = async () => {
+    // Simulate an API call to save the lead
+    await new Promise((resolve) => setTimeout(resolve, 800));
+    setSuccess(true);
+    setLoading(false);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+
+    if (mode === 'pay') {
+      await handlePayment();
+    } else {
+      await handleCallback();
+    }
+  };
+
   if (success) {
-    return (
-      <div className="bg-brand-cream border-2 border-brand-black p-8 md:p-12 text-center rounded-sm">
-        <div className="w-16 h-16 bg-brand-yellow rounded-full flex items-center justify-center mx-auto mb-6 text-brand-black">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
+    if (mode === 'pay') {
+      return (
+        <div className="bg-brand-cream border-2 border-brand-black p-8 md:p-12 text-center rounded-sm">
+          <div className="w-16 h-16 bg-brand-yellow rounded-full flex items-center justify-center mx-auto mb-6 text-brand-black">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <h3 className="text-3xl font-bold mb-4">Registration Successful!</h3>
+          <p className="text-lg text-brand-black/70 mb-8">
+            Welcome to the Future Builders Programme. We've sent a receipt and onboarding instructions to {formData.email}.
+          </p>
+          <p className="text-brand-blue font-bold tracking-widest uppercase text-sm">See you on October 20th</p>
         </div>
-        <h3 className="text-3xl font-bold mb-4">Registration Successful!</h3>
-        <p className="text-lg text-brand-black/70 mb-8">
-          Welcome to the Future Builders Programme. We've sent a receipt and onboarding instructions to {formData.email}.
-        </p>
-        <p className="text-brand-blue font-bold tracking-widest uppercase text-sm">See you on October 20th</p>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="bg-brand-cream border-2 border-brand-black p-8 md:p-12 text-center rounded-sm">
+          <div className="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-6 text-brand-cream">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </div>
+          <h3 className="text-3xl font-bold mb-4">Request Received</h3>
+          <p className="text-lg text-brand-black/70 mb-8">
+            Thank you, {formData.parentName}. Our admissions team will call you at {formData.phone} within 24 hours to answer your questions.
+          </p>
+          <button onClick={() => setSuccess(false)} className="text-brand-blue font-bold tracking-widest uppercase text-sm underline underline-offset-4 hover:text-brand-black">
+            Go back
+          </button>
+        </div>
+      );
+    }
   }
 
   return (
-    <form onSubmit={handlePayment} className="bg-white border-2 border-brand-black p-8 md:p-12 shadow-[8px_8px_0_0_#141414] rounded-sm">
+    <form onSubmit={handleSubmit} className="bg-white border-2 border-brand-black p-8 md:p-12 shadow-[8px_8px_0_0_#141414] rounded-sm">
       <div className="mb-10 text-center">
         <h3 className="text-3xl font-bold mb-4">Secure your spot</h3>
         <p className="text-brand-black/70 text-lg">Registration is now open for the October 20th Cohort.</p>
+      </div>
+
+      <div className="flex bg-brand-cream p-1 border-2 border-brand-black rounded-lg mb-8">
+        <button 
+          type="button" 
+          onClick={() => setMode('pay')} 
+          className={cn(
+            "flex-1 py-3 text-sm font-bold tracking-widest uppercase rounded-md transition-colors",
+            mode === 'pay' ? "bg-brand-yellow border-2 border-brand-black shadow-[2px_2px_0_0_#141414]" : "text-brand-black/60 hover:text-brand-black"
+          )}
+        >
+          Pay & Enroll
+        </button>
+        <button 
+          type="button" 
+          onClick={() => setMode('callback')} 
+          className={cn(
+            "flex-1 py-3 text-sm font-bold tracking-widest uppercase rounded-md transition-colors",
+            mode === 'callback' ? "bg-brand-blue text-brand-cream border-2 border-brand-black shadow-[2px_2px_0_0_#141414]" : "text-brand-black/60 hover:text-brand-black"
+          )}
+        >
+          Request Callback
+        </button>
       </div>
 
       {error && <div className="mb-6 p-4 bg-brand-red/10 text-brand-red border border-brand-red/20 text-sm font-bold">{error}</div>}
@@ -147,10 +204,10 @@ export function FutureBuildersForm() {
         <label className="block text-sm font-bold tracking-widest uppercase mb-2 text-brand-black/70">Student Grade</label>
         <select required name="grade" value={formData.grade} onChange={handleChange} className="w-full h-14 px-4 bg-brand-cream border-2 border-brand-black focus:outline-none focus:ring-4 focus:ring-brand-yellow focus:border-brand-black transition-all appearance-none cursor-pointer">
           <option value="">Select Grade</option>
-          
           <option value="7">Grade 7</option>
           <option value="8">Grade 8</option>
-          <option value="9">Grade 9</option>          <option value="10">Grade 10</option>
+          <option value="9">Grade 9</option>
+          <option value="10">Grade 10</option>
         </select>
       </div>
 
@@ -159,17 +216,25 @@ export function FutureBuildersForm() {
           <span className="text-xl font-bold">Total</span>
           <span className="text-4xl font-bold">₹{price}</span>
         </div>
-        <p className="text-sm text-brand-black/50 font-medium text-right">Includes hardware kit (delivered to home) and 12-week access.</p>
+        <p className="text-sm text-brand-black/50 font-medium text-right">Includes hardware kit and 12-week access.</p>
       </div>
 
-      <button disabled={loading} type="submit" className="w-full h-16 bg-brand-black text-brand-cream text-lg font-bold hover:bg-brand-blue focus:outline-none focus:ring-4 focus:ring-brand-blue/30 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
-        {loading ? 'Processing...' : 'Pay & Enroll Now'}
-      </button>
+      {mode === 'pay' ? (
+        <button disabled={loading} type="submit" className="w-full h-16 bg-brand-black text-brand-cream text-lg font-bold hover:bg-brand-blue focus:outline-none focus:ring-4 focus:ring-brand-blue/30 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+          {loading ? 'Processing...' : 'Pay & Enroll Now'}
+        </button>
+      ) : (
+        <button disabled={loading} type="submit" className="w-full h-16 bg-brand-blue text-brand-cream text-lg font-bold hover:bg-brand-black focus:outline-none focus:ring-4 focus:ring-brand-black/30 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+          {loading ? 'Submitting...' : 'Request a Callback'}
+        </button>
+      )}
       
-      <p className="text-center text-xs font-bold text-brand-black/40 uppercase tracking-widest mt-6 flex items-center justify-center gap-2">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-        Secured by Razorpay
-      </p>
+      {mode === 'pay' && (
+        <p className="text-center text-xs font-bold text-brand-black/40 uppercase tracking-widest mt-6 flex items-center justify-center gap-2">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Secured by Razorpay
+        </p>
+      )}
     </form>
   );
 }
