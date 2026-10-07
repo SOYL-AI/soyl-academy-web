@@ -61,11 +61,9 @@ export function FutureBuildersForm() {
         name: 'SOYL Academy',
         description: 'Future Builders Programme (Oct Cohort)',
         order_id: orderData.id,
-        handler: function (response: any) {
-          // Success callback
+        handler: async function (response: any) {
           console.log(response.razorpay_payment_id);
-          console.log(response.razorpay_order_id);
-          console.log(response.razorpay_signature);
+          await saveToSheet('pay');
           setSuccess(true);
           setLoading(false);
         },
@@ -91,9 +89,20 @@ export function FutureBuildersForm() {
     }
   };
 
+  const saveToSheet = async (submissionMode: 'pay' | 'callback') => {
+    try {
+      await fetch('/api/enroll', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, mode: submissionMode }),
+      });
+    } catch (e) {
+      console.error('Failed to save', e);
+    }
+  };
+
   const handleCallback = async () => {
-    // Simulate an API call to save the lead
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    await saveToSheet('callback');
     setSuccess(true);
     setLoading(false);
   };
@@ -238,3 +247,5 @@ export function FutureBuildersForm() {
     </form>
   );
 }
+
+
