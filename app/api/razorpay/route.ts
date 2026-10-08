@@ -30,8 +30,8 @@ export async function POST(req: Request) {
 
     const order = await instance.orders.create(options);
     return NextResponse.json(order);
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Razorpay error:", error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: (error as Error).message }, { status: 500 });
   }
 }

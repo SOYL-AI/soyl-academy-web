@@ -17,10 +17,30 @@ export function FutureBuildersForm() {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
 
-  const price = 5499;
+  // Coupon state
+  const [couponCode, setCouponCode] = useState('');
+  const [discount, setDiscount] = useState(0);
+  const [couponMessage, setCouponMessage] = useState('');
+
+  const basePrice = 5499;
+  const price = basePrice - discount;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleApplyCoupon = () => {
+    // Example logic - you can change these codes and amounts
+    if (couponCode.toUpperCase() === 'SOYL500') {
+      setDiscount(500);
+      setCouponMessage('₹500 discount applied!');
+    } else if (couponCode.toUpperCase() === 'BUILDER10') {
+      setDiscount(Math.floor(basePrice * 0.10));
+      setCouponMessage('10% discount applied!');
+    } else {
+      setDiscount(0);
+      setCouponMessage('Invalid coupon code.');
+    }
   };
 
   const loadRazorpay = () => {
@@ -61,8 +81,8 @@ export function FutureBuildersForm() {
         name: 'SOYL Academy',
         description: 'Future Builders Programme (Oct Cohort)',
         order_id: orderData.id,
-        handler: async function (response: any) {
-          console.log(response.razorpay_payment_id);
+        handler: async function (response: unknown) {
+          console.log((response as { razorpay_payment_id: string }).razorpay_payment_id);
           await saveToSheet('pay');
           setSuccess(true);
           setLoading(false);
@@ -77,14 +97,14 @@ export function FutureBuildersForm() {
         },
       };
 
-      const rzp1 = new (window as any).Razorpay(options);
-      rzp1.on('payment.failed', function (response: any) {
-        setError(response.error.description);
+      const rzp1 = new (window as unknown as { Razorpay: new (options: unknown) => { on: (event: string, callback: (response: unknown) => void) => void, open: () => void } }).Razorpay(options);
+      rzp1.on('payment.failed', function (response: unknown) {
+        setError((response as { error: { description: string } }).error.description);
         setLoading(false);
       });
       rzp1.open();
-    } catch (err: any) {
-      setError(err.message || 'Payment initiation failed');
+    } catch (err: unknown) {
+      setError((err as Error).message || 'Payment initiation failed');
       setLoading(false);
     }
   };
@@ -94,7 +114,7 @@ export function FutureBuildersForm() {
       await fetch('/api/enroll', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, mode: submissionMode }),
+        body: JSON.stringify({ ...formData, mode: submissionMode, coupon: discount > 0 ? couponCode : '' }),
       });
     } catch (e) {
       console.error('Failed to save', e);
@@ -130,7 +150,7 @@ export function FutureBuildersForm() {
           </div>
           <h3 className="text-3xl font-bold mb-4">Registration Successful!</h3>
           <p className="text-lg text-brand-black/70 mb-8">
-            Welcome to the Future Builders Programme. We've sent a receipt and onboarding instructions to {formData.email}.
+            Welcome to the Future Builders Programme. We&apos;ve sent a receipt and onboarding instructions to {formData.email}.
           </p>
           <p className="text-brand-blue font-bold tracking-widest uppercase text-sm">See you on October 20th</p>
         </div>
@@ -220,10 +240,43 @@ export function FutureBuildersForm() {
         </select>
       </div>
 
+      {mode === 'pay' && (
+        <div className="mb-8">
+          <label className="block text-sm font-bold tracking-widest uppercase mb-2 text-brand-black/70">Discount Coupon (Optional)</label>
+          <div className="flex gap-2">
+            <input 
+              type="text" 
+              value={couponCode} 
+              onChange={(e) => setCouponCode(e.target.value.toUpperCase())} 
+              placeholder="Enter code" 
+              className="flex-1 h-14 px-4 bg-brand-cream border-2 border-brand-black focus:outline-none focus:ring-4 focus:ring-brand-yellow focus:border-brand-black transition-all uppercase placeholder:normal-case" 
+            />
+            <button 
+              type="button" 
+              onClick={handleApplyCoupon} 
+              className="px-6 h-14 bg-brand-black text-brand-cream font-bold hover:bg-brand-blue transition-colors focus:outline-none focus:ring-4 focus:ring-brand-blue/30"
+            >
+              Apply
+            </button>
+          </div>
+          {couponMessage && (
+            <p className={`mt-2 text-sm font-bold ${discount > 0 ? 'text-green-600' : 'text-brand-red'}`}>
+              {couponMessage}
+            </p>
+          )}
+        </div>
+      )}
+
       <div className="border-t-2 border-brand-black/10 pt-8 mb-8">
+        {discount > 0 && mode === 'pay' && (
+          <div className="flex justify-between items-end mb-2">
+            <span className="text-sm font-bold text-brand-black/70 uppercase tracking-widest">Base Price</span>
+            <span className="text-lg font-bold line-through text-brand-black/50">₹{basePrice}</span>
+          </div>
+        )}
         <div className="flex justify-between items-end mb-4">
           <span className="text-xl font-bold">Total</span>
-          <span className="text-4xl font-bold">₹{price}</span>
+          <span className="text-4xl font-bold">₹{mode === 'pay' ? price : basePrice}</span>
         </div>
         <p className="text-sm text-brand-black/50 font-medium text-right">Includes hardware kit and 12-week access.</p>
       </div>
