@@ -23,7 +23,7 @@ export default function FutureBuildersPage() {
           <div className="lg:col-span-7">
             <ScrollReveal>
               <div className="inline-block bg-brand-yellow px-4 py-2 mb-8 border-2 border-brand-black shadow-[4px_4px_0_0_#141414] rounded-xl">
-                <p className="font-bold tracking-widest uppercase text-brand-black text-sm">Online Cohort ?" Grades 7 to 10</p>
+                <p className="font-bold tracking-widest uppercase text-brand-black text-sm">Online Cohort &bull; Grades 7 to 10</p>
               </div>
               <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.05]">
                 Build a<br />

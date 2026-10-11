@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { cn } from '@/lib/utils';
 
 export function FutureBuildersForm() {
@@ -29,19 +29,38 @@ export function FutureBuildersForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleApplyCoupon = () => {
-    // Example logic - you can change these codes and amounts
-    if (couponCode.toUpperCase() === 'SOYL500') {
+  const applyCouponCode = useCallback((codeToApply: string) => {
+    const code = codeToApply.trim().toUpperCase();
+    if (code === 'SOYL500') {
+      setCouponCode('SOYL500');
       setDiscount(500);
       setCouponMessage('₹500 discount applied!');
-    } else if (couponCode.toUpperCase() === 'BUILDER10') {
+    } else if (code === 'BUILDER10') {
+      setCouponCode('BUILDER10');
       setDiscount(Math.floor(basePrice * 0.10));
-      setCouponMessage('10% discount applied!');
+      setCouponMessage('10% discount applied! (First 10 builders offer)');
     } else {
       setDiscount(0);
       setCouponMessage('Invalid coupon code.');
     }
+  }, [basePrice]);
+
+  const handleApplyCoupon = () => {
+    applyCouponCode(couponCode);
   };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const searchParams = new URLSearchParams(window.location.search);
+      const couponParam = searchParams.get('coupon');
+      if (couponParam) {
+        const timer = setTimeout(() => {
+          applyCouponCode(couponParam);
+        }, 0);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [applyCouponCode]);
 
   const loadRazorpay = () => {
     return new Promise((resolve) => {
@@ -255,7 +274,7 @@ export function FutureBuildersForm() {
             />
             <button 
               type="button" 
-              onClick={handleApplyCoupon} 
+              onClick={() => handleApplyCoupon()} 
               className="px-6 h-14 bg-brand-black text-brand-cream font-bold hover:bg-brand-blue transition-colors focus:outline-none focus:ring-4 focus:ring-brand-blue/30"
             >
               Apply

@@ -4,6 +4,7 @@ import { MotionProvider } from '@/components/motion/MotionProvider';
 import { Instrument_Sans, Instrument_Serif } from 'next/font/google';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { FutureBuildersPromoModal } from '@/components/marketing/FutureBuildersPromoModal';
 import { StructuredData } from '@/components/seo/StructuredData';
 import {
   SITE_DESCRIPTION,
@@ -112,6 +113,7 @@ export default function RootLayout({
           <main id="main-content">{children}</main>
         </MotionProvider>
         <Footer />
+        <FutureBuildersPromoModal />
         <Analytics />
       </body>
     </html>
