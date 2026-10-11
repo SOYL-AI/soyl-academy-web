@@ -9,6 +9,7 @@ import { FutureBuildersForm } from '@/components/forms/FutureBuildersForm';
 import { DrawnUnderline } from '@/components/motion/DrawnUnderline';
 import { FutureBuildersCurriculum } from '@/components/sections/FutureBuildersCurriculum';
 import { FutureBuildersFaq } from '@/components/sections/FutureBuildersFaq';
+import { FutureBuildersWhatsAppButton, FutureBuildersWhatsAppInlineBanner } from '@/components/marketing/FutureBuildersWhatsAppButton';
 
 export const metadata: Metadata = createMetadata({ path: '/future-builders', title: 'Future Builders Programme | SOYL Academy', description: 'Join the Future Builders 12-week online cohort for Grades 7 to 12. Students build real working prototypes across Software, AI, IoT, and Entrepreneurship.', keywords: ['online coding classes for kids', 'robotics for students', 'AI course for teenagers', 'IoT programming for grades 7 to 12', 'entrepreneurship for kids', 'Future Builders SOYL'] });
 
@@ -77,7 +78,10 @@ export default function FutureBuildersPage() {
         {/* Interactive Curriculum Section */}
         <FutureBuildersCurriculum />
 
-        <FutureBuildersFaq />`n`n        {/* Registration Section */}
+        {/* FAQ Section */}
+        <FutureBuildersFaq />
+
+        {/* Registration Section */}
         <div id="enroll" className="scroll-mt-32">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             <div className="lg:col-span-5">
@@ -112,9 +116,17 @@ export default function FutureBuildersPage() {
               </ScrollReveal>
             </div>
           </div>
+
+          {/* Inline WhatsApp Doubts Banner */}
+          <ScrollReveal delay={0.15}>
+            <FutureBuildersWhatsAppInlineBanner />
+          </ScrollReveal>
         </div>
 
       </Container>
+
+      {/* Floating WhatsApp Chat Button */}
+      <FutureBuildersWhatsAppButton />
     </div>
   );
 }
