@@ -66,8 +66,16 @@ export function Footer() {
           {/* Identity */}
           <div className="lg:col-span-4">
             <p className="text-subhead text-ink mb-2">SOYL Academy</p>
-            <p className="font-editorial text-xl text-ink-light mb-10">
+            <p className="font-editorial text-xl text-ink-light mb-4">
               Story Of Your Life
+            </p>
+            <p className="mb-8">
+              <a
+                href="mailto:outreach@soyl.cloud"
+                className="text-body text-ink-light hover:text-ink transition-colors link-underline"
+              >
+                outreach@soyl.cloud
+              </a>
             </p>
 
             <div className="flex items-center gap-5">
@@ -94,12 +102,17 @@ export function Footer() {
         </div>
 
         <div className="mt-20 md:mt-28 pt-8 rule-top flex flex-col md:flex-row md:items-baseline justify-between gap-4">
-          <p className="text-small text-ink-lighter">
-            © 2026 SOYL AI Private Limited
-          </p>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-small text-ink-lighter">
+            <p>© 2026 SOYL AI Private Limited</p>
+            <a
+              href="mailto:outreach@soyl.cloud"
+              className="hover:text-ink transition-colors"
+            >
+              outreach@soyl.cloud
+            </a>
+          </div>
           <p className="text-small text-ink-lighter max-w-md md:text-right">
-            732, Chinmaya Mission Hospital Road, Indiranagar Stage 1, Bengaluru,
-            Karnataka 560043
+            Begakuru 560043
           </p>
         </div>
       </div>

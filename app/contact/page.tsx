@@ -42,8 +42,17 @@ export default function ContactPage() {
       <div className="container mx-auto px-6 max-w-3xl">
         <header className="mb-16 text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">Bring SOYL to your school</h1>
-          <p className="text-xl text-brand-black/70">
+          <p className="text-xl text-brand-black/70 mb-3">
             Fill out the form below and our team will get in touch.
+          </p>
+          <p className="text-base text-brand-black/60">
+            Or reach us directly at{' '}
+            <a
+              href="mailto:outreach@soyl.cloud"
+              className="font-bold text-brand-blue underline underline-offset-4 hover:text-brand-black transition-colors"
+            >
+              outreach@soyl.cloud
+            </a>
           </p>
         </header>
 

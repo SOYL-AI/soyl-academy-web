@@ -31,12 +31,11 @@ export const SITE_KEYWORDS = [
   'project-based learning',
 ];
 
+export const SITE_CONTACT_EMAIL = 'outreach@soyl.cloud';
+
 export const SITE_ADDRESS = {
-  streetAddress: '732, Chinmaya Mission Hospital Road, Indiranagar Stage 1',
-  addressLocality: 'Bengaluru',
-  addressRegion: 'Karnataka',
+  streetAddress: 'Begakuru 560043',
   postalCode: '560043',
-  addressCountry: 'IN',
 } as const;
 
 /**

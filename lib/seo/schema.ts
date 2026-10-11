@@ -10,6 +10,7 @@ import type { JournalArticle } from '@/content/journal';
 import {
   ORGANIZATION_ID,
   SITE_ADDRESS,
+  SITE_CONTACT_EMAIL,
   SITE_DESCRIPTION,
   SITE_EXPANSION,
   SITE_LANGUAGE,
@@ -66,6 +67,7 @@ export function organizationNode(): JsonLdNode {
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'school partnerships',
+      email: SITE_CONTACT_EMAIL,
       url: absoluteUrl('/contact'),
       availableLanguage: ['English'],
     },
