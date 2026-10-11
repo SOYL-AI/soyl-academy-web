@@ -152,7 +152,7 @@ export function FutureBuildersPromoModal() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="inline-block bg-brand-blue text-brand-cream text-[10px] sm:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border border-brand-black mb-1.5">
-                    Grades 7 to 10 • Oct Cohort
+                    Grades 7 to 12 • Oct Cohort
                   </div>
                   <h2
                     id="promo-modal-title"

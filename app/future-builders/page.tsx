@@ -10,12 +10,12 @@ import { DrawnUnderline } from '@/components/motion/DrawnUnderline';
 import { FutureBuildersCurriculum } from '@/components/sections/FutureBuildersCurriculum';
 import { FutureBuildersFaq } from '@/components/sections/FutureBuildersFaq';
 
-export const metadata: Metadata = createMetadata({ path: '/future-builders', title: 'Future Builders Programme | SOYL Academy', description: 'Join the Future Builders 12-week online cohort for Grades 7 to 10. Students build real working prototypes across Software, AI, IoT, and Entrepreneurship.', keywords: ['online coding classes for kids', 'robotics for students', 'AI course for teenagers', 'IoT programming for grades 7 to 10', 'entrepreneurship for kids', 'Future Builders SOYL'] });
+export const metadata: Metadata = createMetadata({ path: '/future-builders', title: 'Future Builders Programme | SOYL Academy', description: 'Join the Future Builders 12-week online cohort for Grades 7 to 12. Students build real working prototypes across Software, AI, IoT, and Entrepreneurship.', keywords: ['online coding classes for kids', 'robotics for students', 'AI course for teenagers', 'IoT programming for grades 7 to 12', 'entrepreneurship for kids', 'Future Builders SOYL'] });
 
 export default function FutureBuildersPage() {
   return (
     <div className="bg-brand-cream text-brand-black min-h-screen pt-32 pb-16 md:py-32 overflow-x-hidden">
-      <StructuredData data={[graph(webPageNode({ path: '/future-builders' })), { "@context": "https://schema.org", "@type": "Course", "name": "Future Builders Programme", "description": "A 12-week builder's workshop for Grades 7 to 10. Learn software development, AI, IoT robotics, and entrepreneurship.", "provider": { "@type": "Organization", "name": "SOYL Academy", "sameAs": "https://soylai.com" }, "educationalCredentialAwarded": "Certificate of Completion", "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "online", "startDate": "2026-10-20", "endDate": "2027-01-12", "offers": { "@type": "Offer", "price": "5499", "priceCurrency": "INR", "category": "Paid" } } }]} />
+      <StructuredData data={[graph(webPageNode({ path: '/future-builders' })), { "@context": "https://schema.org", "@type": "Course", "name": "Future Builders Programme", "description": "A 12-week builder's workshop for Grades 7 to 12. Learn software development, AI, IoT robotics, and entrepreneurship.", "provider": { "@type": "Organization", "name": "SOYL Academy", "sameAs": "https://soylai.com" }, "educationalCredentialAwarded": "Certificate of Completion", "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "online", "startDate": "2026-10-20", "endDate": "2027-01-12", "offers": { "@type": "Offer", "price": "5499", "priceCurrency": "INR", "category": "Paid" } } }]} />
 
       <Container>
         {/* Hero Section */}
@@ -23,7 +23,7 @@ export default function FutureBuildersPage() {
           <div className="lg:col-span-7">
             <ScrollReveal>
               <div className="inline-block bg-brand-yellow px-4 py-2 mb-8 border-2 border-brand-black shadow-[4px_4px_0_0_#141414] rounded-xl">
-                <p className="font-bold tracking-widest uppercase text-brand-black text-sm">Online Cohort &bull; Grades 7 to 10</p>
+                <p className="font-bold tracking-widest uppercase text-brand-black text-sm">Online Cohort &bull; Grades 7 to 12</p>
               </div>
               <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-[1.05]">
                 Build a<br />
