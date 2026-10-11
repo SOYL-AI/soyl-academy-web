@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 
 const siteLinks = [
@@ -13,10 +15,9 @@ const companyLinks = [
   { label: 'Contact', href: '/contact' },
 ];
 
-// Placeholder routes — these pages do not exist yet.
 const legalLinks = [
-  { label: 'Privacy Policy', href: '#' },
-  { label: 'Terms', href: '#' },
+  { label: 'Privacy Policy', href: '/privacy' },
+  { label: 'Terms of Service', href: '/terms' },
 ];
 
 const socials = [
@@ -35,9 +36,11 @@ const socials = [
 function LinkColumn({
   heading,
   links,
+  extra,
 }: {
   heading: string;
   links: { label: string; href: string }[];
+  extra?: React.ReactNode;
 }) {
   return (
     <div>
@@ -53,6 +56,7 @@ function LinkColumn({
             </Link>
           </li>
         ))}
+        {extra && <li>{extra}</li>}
       </ul>
     </div>
   );
@@ -97,7 +101,23 @@ export function Footer() {
           <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-8">
             <LinkColumn heading="Learn" links={siteLinks} />
             <LinkColumn heading="Company" links={companyLinks} />
-            <LinkColumn heading="Legal" links={legalLinks} />
+            <LinkColumn
+              heading="Legal"
+              links={legalLinks}
+              extra={
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (typeof window !== 'undefined') {
+                      window.dispatchEvent(new CustomEvent('soyl:open-cookie-settings'));
+                    }
+                  }}
+                  className="text-body text-ink-light link-underline pb-0.5 hover:text-ink transition-colors cursor-pointer text-left"
+                >
+                  Cookie Preferences
+                </button>
+              }
+            />
           </div>
         </div>
 

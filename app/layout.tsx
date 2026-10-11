@@ -6,6 +6,7 @@ import { Instrument_Sans, Instrument_Serif } from 'next/font/google';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { FutureBuildersPromoModal } from '@/components/marketing/FutureBuildersPromoModal';
+import { CookieConsent } from '@/components/legal/CookieConsent';
 import { StructuredData } from '@/components/seo/StructuredData';
 import {
   SITE_DESCRIPTION,
@@ -115,6 +116,7 @@ export default function RootLayout({
         </MotionProvider>
         <Footer />
         <FutureBuildersPromoModal />
+        <CookieConsent />
         <Analytics />
         <SpeedInsights />
       </body>
