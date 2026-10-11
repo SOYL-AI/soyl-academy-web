@@ -34,7 +34,7 @@ export default function PrivacyPage() {
             <section className="bg-white p-6 sm:p-8 rounded-2xl border-2 border-brand-black shadow-[4px_4px_0_0_#141414]">
               <h2 className="text-2xl font-bold text-brand-black mb-3">1. Who We Are</h2>
               <p className="mb-3">
-                SOYL Academy is operated by <strong>SOYL AI Private Limited</strong> (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;), having its registered office at <strong>Begakuru 560043</strong>, India.
+                SOYL Academy is operated by <strong>SOYL AI Private Limited</strong> (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;), having its registered office at <strong>Bengaluru 560043</strong>, India.
               </p>
               <p>
                 If you have questions regarding this Privacy Policy or your personal data, you can contact our Data Protection Team at{' '}
@@ -129,7 +129,7 @@ export default function PrivacyPage() {
               <div className="p-4 bg-brand-cream rounded-xl border border-brand-black/20 text-sm space-y-2">
                 <p><strong>Entity:</strong> SOYL AI Private Limited</p>
                 <p><strong>Designation:</strong> Data Protection & Grievance Redressal Officer</p>
-                <p><strong>Registered Address:</strong> Begakuru 560043, Karnataka, India</p>
+                <p><strong>Registered Address:</strong> Bengaluru 560043, Karnataka, India</p>
                 <p>
                   <strong>Email:</strong>{' '}
                   <a href="mailto:outreach@soyl.cloud" className="text-brand-blue font-bold underline underline-offset-4">

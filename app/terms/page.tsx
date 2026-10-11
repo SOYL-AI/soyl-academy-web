@@ -34,7 +34,7 @@ export default function TermsPage() {
             <section className="bg-white p-6 sm:p-8 rounded-2xl border-2 border-brand-black shadow-[4px_4px_0_0_#141414]">
               <h2 className="text-2xl font-bold text-brand-black mb-3">1. Agreement to Terms</h2>
               <p>
-                By enrolling in any program offered by <strong>SOYL Academy</strong> (operated by <strong>SOYL AI Private Limited</strong>, Begakuru 560043, India) or accessing our websites, you agree to these Terms of Service.
+                By enrolling in any program offered by <strong>SOYL Academy</strong> (operated by <strong>SOYL AI Private Limited</strong>, Bengaluru 560043, India) or accessing our websites, you agree to these Terms of Service.
               </p>
             </section>
 
@@ -82,7 +82,7 @@ export default function TermsPage() {
               </p>
               <p className="text-sm">
                 <strong>SOYL AI Private Limited</strong><br />
-                Address: Begakuru 560043, India<br />
+                Address: Bengaluru 560043, India<br />
                 Email:{' '}
                 <a href="mailto:outreach@soyl.cloud" className="text-brand-blue font-bold underline">
                   outreach@soyl.cloud

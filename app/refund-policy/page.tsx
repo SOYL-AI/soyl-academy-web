@@ -25,7 +25,7 @@ export default function RefundPolicyPage() {
               Cancellation & Refund Policy
             </h1>
             <p className="text-sm font-bold text-brand-black/60">
-              Last updated: October 2026 • SOYL AI Private Limited (Begakuru 560043)
+              Last updated: October 2026 • SOYL AI Private Limited (Bengaluru 560043)
             </p>
           </div>
 
@@ -117,7 +117,7 @@ export default function RefundPolicyPage() {
                   </a>
                 </p>
                 <p>
-                  <strong>Entity:</strong> SOYL AI Private Limited, Begakuru 560043, India
+                  <strong>Entity:</strong> SOYL AI Private Limited, Bengaluru 560043, India
                 </p>
               </div>
             </section>

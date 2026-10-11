@@ -25,7 +25,7 @@ export default function ShippingPolicyPage() {
               Shipping & Delivery Policy
             </h1>
             <p className="text-sm font-bold text-brand-black/60">
-              Last updated: October 2026 • SOYL AI Private Limited (Begakuru 560043)
+              Last updated: October 2026 • SOYL AI Private Limited (Bengaluru 560043)
             </p>
           </div>
 
@@ -96,7 +96,7 @@ export default function ShippingPolicyPage() {
             <section className="bg-white p-6 sm:p-8 rounded-2xl border-2 border-brand-black shadow-[4px_4px_0_0_#141414]">
               <h2 className="text-2xl font-bold text-brand-black mb-3">6. Shipping Support Contact</h2>
               <div className="p-4 bg-brand-cream rounded-xl border border-brand-black/20 text-sm space-y-2">
-                <p><strong>Dispatch Origin:</strong> Begakuru 560043, India</p>
+                <p><strong>Dispatch Origin:</strong> Bengaluru 560043, India</p>
                 <p><strong>Support Email:</strong> <a href="mailto:outreach@soyl.cloud" className="text-brand-blue font-bold underline">outreach@soyl.cloud</a></p>
                 <p><strong>WhatsApp Support:</strong> <a href="https://wa.me/917022509965" className="text-brand-blue font-bold underline">+91 7022509965</a></p>
               </div>

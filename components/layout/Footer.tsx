@@ -134,7 +134,7 @@ export function Footer() {
             </a>
           </div>
           <p className="text-small text-ink-lighter max-w-md md:text-right">
-            Begakuru 560043
+            Bengaluru 560043
           </p>
         </div>
       </div>

@@ -122,7 +122,7 @@ export const PAGES: Record<string, PageEntry> = {
     title: 'Contact — Bring SOYL to Your School',
     label: 'Contact',
     description:
-      'Get in touch with SOYL Academy at outreach@soyl.cloud to enquire about a school pilot. Based in Begakuru 560043.',
+      'Get in touch with SOYL Academy at outreach@soyl.cloud to enquire about a school pilot. Based in Bengaluru 560043.',
     type: 'ContactPage',
     eyebrow: 'Contact',
     priority: 0.6,

@@ -34,7 +34,7 @@ export const SITE_KEYWORDS = [
 export const SITE_CONTACT_EMAIL = 'outreach@soyl.cloud';
 
 export const SITE_ADDRESS = {
-  streetAddress: 'Begakuru 560043',
+  streetAddress: 'Bengaluru 560043',
   postalCode: '560043',
 } as const;
 
