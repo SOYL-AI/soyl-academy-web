@@ -299,7 +299,13 @@ export function FutureBuildersForm() {
           <span className="text-xl font-bold">Total</span>
           <span className="text-4xl font-bold">₹{mode === 'pay' ? price : basePrice}</span>
         </div>
-        <p className="text-sm text-brand-black/50 font-medium text-right">Includes hardware kit and 12-week access.</p>
+        <p className="text-sm text-brand-black/50 font-medium text-right mb-4">Includes hardware kit and 12-week access.</p>
+        
+        {/* Risk-Free Guarantee Callout */}
+        <div className="p-3 bg-brand-cream border border-brand-black/20 rounded-lg flex items-center gap-2.5 text-xs text-brand-black font-bold">
+          <span className="text-base shrink-0">🛡️</span>
+          <span>100% Session 1 Money-Back Guarantee: Full refund if not thrilled after weekend 1.</span>
+        </div>
       </div>
 
       {mode === 'pay' ? (

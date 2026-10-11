@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { TopAnnouncementBar } from '@/components/marketing/TopAnnouncementBar';
 
 const navItems = [
   { label: 'The SOYL Method', href: '/method' },
@@ -45,8 +46,9 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
+      <TopAnnouncementBar />
       <div className="container-default">
-        <div className="flex items-start justify-between gap-4 pt-4 md:pt-5">
+        <div className="flex items-start justify-between gap-4 pt-3 md:pt-4">
           {/* Bordered nav object, top-left */}
           <div
             ref={boxRef}

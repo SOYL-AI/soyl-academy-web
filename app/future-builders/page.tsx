@@ -8,6 +8,7 @@ import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { FutureBuildersForm } from '@/components/forms/FutureBuildersForm';
 import { DrawnUnderline } from '@/components/motion/DrawnUnderline';
 import { FutureBuildersCurriculum } from '@/components/sections/FutureBuildersCurriculum';
+import { FutureBuildersPortfolioValue } from '@/components/sections/FutureBuildersPortfolioValue';
 import { FutureBuildersFaq } from '@/components/sections/FutureBuildersFaq';
 import { FutureBuildersWhatsAppButton, FutureBuildersWhatsAppInlineBanner } from '@/components/marketing/FutureBuildersWhatsAppButton';
 
@@ -78,6 +79,9 @@ export default function FutureBuildersPage() {
         {/* Interactive Curriculum Section */}
         <FutureBuildersCurriculum />
 
+        {/* College & Portfolio Ready Value Proposition (Grades 10-12) */}
+        <FutureBuildersPortfolioValue />
+
         {/* FAQ Section */}
         <FutureBuildersFaq />
 
@@ -104,9 +108,25 @@ export default function FutureBuildersPage() {
                     <span className="font-bold text-brand-black">Online Live Weekends</span>
                   </div>
                 </div>
-                <div className="bg-brand-blue p-8 text-brand-cream border-2 border-brand-black shadow-[8px_8px_0_0_#141414] rounded-2xl hover:-translate-y-2 transition-transform duration-300">
+                <div className="bg-brand-blue p-8 text-brand-cream border-2 border-brand-black shadow-[8px_8px_0_0_#141414] rounded-2xl hover:-translate-y-2 transition-transform duration-300 mb-6">
                   <h4 className="font-bold text-2xl mb-3">ESP32 Hardware Kit</h4>
                   <p className="text-brand-cream/80 text-lg">Every student receives a personal ₹700 value physical kit: ESP32-C3 microcontroller, breadboard, sensors (temperature, light, distance), LEDs, and a servo motor.</p>
+                </div>
+
+                {/* Session 1 Money-Back Guarantee Card */}
+                <div className="bg-brand-yellow/30 border-2 border-brand-black shadow-[6px_6px_0_0_#141414] rounded-2xl p-6 sm:p-7">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">🛡️</span>
+                    <span className="text-xs font-bold uppercase tracking-widest text-brand-black">
+                      100% Risk-Free Policy
+                    </span>
+                  </div>
+                  <h4 className="font-bold text-xl text-brand-black mb-2">
+                    Session 1 Money-Back Guarantee
+                  </h4>
+                  <p className="text-sm text-brand-black/80 font-medium leading-relaxed">
+                    Attend the first weekend. If your child doesn&apos;t love building their first project, get a 100% full refund, no questions asked. The hardware kit is yours to keep.
+                  </p>
                 </div>
               </ScrollReveal>
             </div>

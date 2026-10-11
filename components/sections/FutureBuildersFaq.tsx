@@ -24,6 +24,14 @@ const OUTCOMES = [
   {
     question: "What is Demo Day?",
     answer: "Week 12 is Capstone Demo Day. After building their integrated software, AI, and hardware prototype, teams pitch their product's business viability to parents, teachers, and guests. It builds crucial presentation and entrepreneurial skills."
+  },
+  {
+    question: "How does this benefit high school students in Grades 10 to 12 applying to universities?",
+    answer: "University admissions (Common App, UC, engineering programs) and scholarship panels look for demonstrated technical initiative beyond standard grades. Future Builders students graduate with a public GitHub code repository, a recorded 3-minute Demo Day pitch, and an official verifiable certificate—providing concrete proof-of-work for college essays, interviews, and STEM internships."
+  },
+  {
+    question: "What is the refund policy or guarantee?",
+    answer: "We offer a 100% Session 1 Money-Back Guarantee. Attend the first weekend. If your child doesn't love building their first project, simply request a refund within 24 hours of Session 1 and get a 100% full refund, no questions asked. The shipped hardware kit is yours to keep."
   }
 ];
 

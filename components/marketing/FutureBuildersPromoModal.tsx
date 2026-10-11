@@ -226,6 +226,12 @@ export function FutureBuildersPromoModal() {
                   </span>
                   <span>First 10 builders only</span>
                 </div>
+
+                {/* Guarantee reassurance */}
+                <div className="mt-2.5 pt-2 border-t border-brand-black/10 flex items-center gap-1.5 text-[11px] font-bold text-brand-black/70">
+                  <span>🛡️</span>
+                  <span>100% Session 1 Money-Back Guarantee included</span>
+                </div>
               </div>
 
               {/* Action Buttons */}
