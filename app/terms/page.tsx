@@ -99,12 +99,26 @@ export default function TermsPage() {
             >
               ← Back to SOYL Academy Home
             </Link>
-            <Link
-              href="/privacy"
-              className="text-sm font-bold text-brand-black/70 hover:text-brand-black underline underline-offset-4"
-            >
-              View Privacy Policy →
-            </Link>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/privacy"
+                className="text-sm font-bold text-brand-black/70 hover:text-brand-black underline underline-offset-4"
+              >
+                Privacy Policy →
+              </Link>
+              <Link
+                href="/refund-policy"
+                className="text-sm font-bold text-brand-black/70 hover:text-brand-black underline underline-offset-4"
+              >
+                Refund Policy →
+              </Link>
+              <Link
+                href="/shipping-policy"
+                className="text-sm font-bold text-brand-black/70 hover:text-brand-black underline underline-offset-4"
+              >
+                Shipping Policy →
+              </Link>
+            </div>
           </div>
         </div>
       </Container>

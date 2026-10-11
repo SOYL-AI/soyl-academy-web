@@ -95,22 +95,57 @@ export default function PrivacyPage() {
             </section>
 
             <section className="bg-white p-6 sm:p-8 rounded-2xl border-2 border-brand-black shadow-[4px_4px_0_0_#141414]">
-              <h2 className="text-2xl font-bold text-brand-black mb-3">5. Your Legal Rights</h2>
+              <h2 className="text-2xl font-bold text-brand-black mb-3">5. Third-Party Service Providers</h2>
+              <p className="mb-4">
+                We only share personal data with trusted sub-processors strictly necessary to deliver our educational services:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-sm">
+                <li><strong>Payment Aggregator:</strong> Razorpay Software Private Limited (PCI-DSS Level 1 compliant tokenized payment processing).</li>
+                <li><strong>Logistics Partners:</strong> Delhivery, BlueDart, DTDC, and India Post for doorstep delivery of hardware kits.</li>
+                <li><strong>Infrastructure & Telemetry:</strong> Vercel Inc. for secure global hosting and privacy-friendly web analytics.</li>
+                <li><strong>Direct Communication:</strong> WhatsApp/Meta for student cohort announcements and support.</li>
+              </ul>
+            </section>
+
+            <section className="bg-white p-6 sm:p-8 rounded-2xl border-2 border-brand-black shadow-[4px_4px_0_0_#141414]">
+              <h2 className="text-2xl font-bold text-brand-black mb-3">6. Your Legal Rights</h2>
               <p className="mb-4">
                 Under the <strong>Digital Personal Data Protection Act, 2023 (India)</strong> and the <strong>GDPR</strong>, you have the right to:
               </p>
-              <ul className="list-disc pl-6 space-y-2 mb-4">
+              <ul className="list-disc pl-6 space-y-2 mb-4 text-sm">
                 <li>Access a summary of the personal data we hold about you or your child.</li>
                 <li>Request correction of inaccurate or incomplete personal data.</li>
                 <li>Request erasure and deletion of your personal data (&quot;Right to be Forgotten&quot;).</li>
                 <li>Withdraw consent at any time without affecting past processing legality.</li>
+                <li>Nominate another individual to exercise rights in case of death or incapacity (under DPDP Act).</li>
               </ul>
-              <p>
-                To exercise any of these rights, please email us at{' '}
-                <a href="mailto:outreach@soyl.cloud" className="text-brand-blue font-bold underline underline-offset-4">
-                  outreach@soyl.cloud
-                </a>.
+            </section>
+
+            <section className="bg-white p-6 sm:p-8 rounded-2xl border-2 border-brand-black shadow-[4px_4px_0_0_#141414]">
+              <h2 className="text-2xl font-bold text-brand-black mb-3">7. Grievance Redressal & Contact Officer</h2>
+              <p className="mb-4 text-sm">
+                In accordance with the Information Technology Act 2000 and the Digital Personal Data Protection Act 2023, the details of our Grievance Officer are provided below:
               </p>
+              <div className="p-4 bg-brand-cream rounded-xl border border-brand-black/20 text-sm space-y-2">
+                <p><strong>Entity:</strong> SOYL AI Private Limited</p>
+                <p><strong>Designation:</strong> Data Protection & Grievance Redressal Officer</p>
+                <p><strong>Registered Address:</strong> Begakuru 560043, Karnataka, India</p>
+                <p>
+                  <strong>Email:</strong>{' '}
+                  <a href="mailto:outreach@soyl.cloud" className="text-brand-blue font-bold underline underline-offset-4">
+                    outreach@soyl.cloud
+                  </a>
+                </p>
+                <p>
+                  <strong>WhatsApp Helpline:</strong>{' '}
+                  <a href="https://wa.me/917022509965" className="text-brand-blue font-bold underline underline-offset-4">
+                    +91 7022509965
+                  </a>
+                </p>
+                <p className="text-xs text-brand-black/70">
+                  Grievances are acknowledged within 24 hours and addressed within 15 working days.
+                </p>
+              </div>
             </section>
           </div>
 
@@ -122,12 +157,26 @@ export default function PrivacyPage() {
             >
               ← Back to SOYL Academy Home
             </Link>
-            <Link
-              href="/terms"
-              className="text-sm font-bold text-brand-black/70 hover:text-brand-black underline underline-offset-4"
-            >
-              View Terms of Service →
-            </Link>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/terms"
+                className="text-sm font-bold text-brand-black/70 hover:text-brand-black underline underline-offset-4"
+              >
+                Terms of Service →
+              </Link>
+              <Link
+                href="/refund-policy"
+                className="text-sm font-bold text-brand-black/70 hover:text-brand-black underline underline-offset-4"
+              >
+                Refund Policy →
+              </Link>
+              <Link
+                href="/shipping-policy"
+                className="text-sm font-bold text-brand-black/70 hover:text-brand-black underline underline-offset-4"
+              >
+                Shipping Policy →
+              </Link>
+            </div>
           </div>
         </div>
       </Container>
