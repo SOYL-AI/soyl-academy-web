@@ -101,7 +101,7 @@ export const studentsFaqs: FaqItem[] = [
   {
     question: 'Can individual students join SOYL Academy?',
     answer:
-      'Not yet. SOYL Academy is currently available only through partner schools. Direct access for individual students is coming soon.',
+      'Yes. Registrations are open for Future Builders, a 12-week live online programme for Grades 7 to 12. Individual students can enroll directly, without a school partnership. Visit the Future Builders page for programme details and registration.',
   },
   {
     question: 'What will I do in a SOYL assignment?',
@@ -114,11 +114,11 @@ export const whatWeTeachFaqs: FaqItem[] = [
   {
     question: 'What does SOYL Academy teach?',
     answer:
-      'SOYL Academy’s programs cover four areas: AI & Technology, Building & Making, Communication & Ideas, and Problem Solving. The four programs — Applied Intelligence, Digital Craftsmanship, The Art of Argument and Systems Thinking — are coming soon.',
+      'Registrations are open for Future Builders, a 12-week programme covering Software, AI, IoT, and Entrepreneurship. Additional programmes in AI & Technology, Building & Making, Communication & Ideas, and Problem Solving are coming soon.',
   },
   {
     question: 'How are SOYL Academy programs delivered?',
     answer:
-      'SOYL Academy delivers programs on partner-school campuses as specialised offline workshops, immersive programs and collaborative experiences, alongside its digital platform for better assignments.',
+      'Future Builders is delivered through live online weekend sessions and is open to individual students in Grades 7 to 12. SOYL Academy also offers workshops and collaborative experiences through partner schools.',
   },
 ];

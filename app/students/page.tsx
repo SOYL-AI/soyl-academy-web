@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { FutureBuildersFeature } from '@/components/marketing/FutureBuildersFeature';
 import { Container } from '@/components/layout/Container';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { Faq } from '@/components/seo/Faq';
@@ -19,7 +20,7 @@ const actions = [
 
 export default function StudentsPage() {
   return (
-    <div className="py-16 md:py-32 bg-brand-cream text-brand-black min-h-screen">
+    <div className="pt-32 pb-16 md:py-32 bg-brand-cream text-brand-black min-h-screen">
       <StructuredData
         data={graph(
           webPageNode({ path: '/students' }),
@@ -28,6 +29,7 @@ export default function StudentsPage() {
         )}
       />
       <Container>
+        <FutureBuildersFeature />
         <section className="mb-24 md:mb-48 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
           <ScrollReveal>
             <div className="relative aspect-[4/5] w-full overflow-hidden bg-brand-black/5">
@@ -93,34 +95,6 @@ export default function StudentsPage() {
 
         <Faq faqs={studentsFaqs} heading="Questions from students" />
 
-        {/* Coming Soon CTA */}
-        <section className="text-center max-w-2xl mx-auto">
-          <ScrollReveal>
-            <div className="p-16 border-2 border-brand-black/20 rounded-[2rem]">
-              <div className="inline-block px-4 py-2 bg-brand-yellow font-bold text-sm uppercase tracking-widest mb-8">Coming Soon</div>
-              <h2 className="text-3xl font-bold mb-6">Individual Access</h2>
-              <p className="text-xl text-brand-black/60 mb-12 leading-relaxed">
-                Currently, SOYL Academy is available exclusively through partner schools. We are working on opening access directly to individual students who want to challenge themselves.
-              </p>
-              
-              <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" action="#">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  className="flex-grow px-6 py-4 border-2 border-brand-black/20 focus:outline-none focus:border-brand-black bg-transparent font-medium"
-                  disabled
-                />
-                <button 
-                  type="button"
-                  className="bg-brand-black/20 text-brand-black px-8 py-4 font-bold cursor-not-allowed"
-                  disabled
-                >
-                  Waitlist
-                </button>
-              </form>
-            </div>
-          </ScrollReveal>
-        </section>
       </Container>
     </div>
   );

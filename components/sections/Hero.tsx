@@ -50,7 +50,14 @@ export function Hero() {
 
             <p className="text-lead mb-10 max-w-[36ch] text-brand-black/70 md:mb-12">{hero.support}</p>
 
-            <div className="flex flex-col gap-3 sm:flex-row">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                href="/future-builders"
+                className="group press inline-flex h-12 items-center justify-center gap-2 rounded-sm bg-brand-yellow px-6 text-[15px] font-bold text-brand-black hover:bg-brand-black hover:text-brand-cream focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue"
+              >
+                Explore Future Builders
+                <Arrow />
+              </Link>
               <Link
                 href="#how-it-works"
                 className="group press inline-flex h-12 items-center justify-center gap-2 rounded-sm bg-ink px-6 text-[15px] font-medium text-white hover:bg-cobalt"

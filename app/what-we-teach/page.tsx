@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { FutureBuildersFeature } from '@/components/marketing/FutureBuildersFeature';
 import { Container } from '@/components/layout/Container';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { Faq } from '@/components/seo/Faq';
@@ -55,7 +56,7 @@ const programs = [
 
 export default function WhatWeTeachPage() {
   return (
-    <div className="py-16 md:py-32 bg-brand-cream text-brand-black min-h-screen">
+    <div className="pt-32 pb-16 md:py-32 bg-brand-cream text-brand-black min-h-screen">
       <StructuredData
         data={graph(
           webPageNode({
@@ -68,6 +69,7 @@ export default function WhatWeTeachPage() {
         )}
       />
       <Container>
+        <FutureBuildersFeature />
         <section className="mb-24 md:mb-48">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end mb-12 md:mb-24">
             <ScrollReveal>
@@ -80,7 +82,7 @@ export default function WhatWeTeachPage() {
             <ScrollReveal delay={0.1}>
               <div className="text-xl md:text-2xl text-brand-black/70 space-y-6">
                 <p>
-                  While our digital platform enables better assignments anywhere, SOYL Academy also hosts specialized offline workshops, immersive programs, and collaborative experiences.
+                  Join Future Builders online as an individual student, or explore our school workshops and collaborative learning experiences.
                 </p>
                 <p>
                   These intensive sessions push students beyond their comfort zones, placing them in environments where they must negotiate, build, and defend ideas in real-time.

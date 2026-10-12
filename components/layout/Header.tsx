@@ -12,7 +12,7 @@ const navItems = [
   { label: 'What We Teach', href: '/what-we-teach' },
   { label: 'For Schools', href: '/schools' },
   { label: 'For Students', href: '/students' },
-  { label: 'Future Builders', href: '/future-builders', badge: 'Online Cohort Soon' },
+  { label: 'Future Builders', href: '/future-builders', badge: 'Registrations open' },
   { label: 'Journal', href: '/journal' },
   { label: 'About', href: '/about' },
 ];

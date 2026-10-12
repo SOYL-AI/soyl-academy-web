@@ -61,7 +61,7 @@ export default function ShippingPolicyPage() {
                 <div className="p-4 bg-brand-cream rounded-xl border border-brand-black/20">
                   <h3 className="font-bold text-lg text-brand-black mb-1">Dispatch Window</h3>
                   <p className="text-sm text-brand-black/75">
-                    Hardware kits are carefully packaged and dispatched within <strong>24 to 48 hours</strong> of enrollment confirmation.
+                    Hardware kits are carefully packaged and sent around <strong>week 3 or 4 of the programme</strong>.
                   </p>
                 </div>
                 <div className="p-4 bg-brand-cream rounded-xl border border-brand-black/20">

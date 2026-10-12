@@ -15,7 +15,7 @@ const OUTCOMES = [
   },
   {
     question: "How does the hardware kit work for an online cohort?",
-    answer: "Before the cohort begins, we ship the complete ESP32-C3 hardware kit directly to your home. It includes the microcontroller, sensors, servo motors, and a breadboard. During the live online sessions, instructors will guide students step-by-step through wiring and programming their physical kits over video."
+    answer: "We send your personal ESP32-C3 hardware kit around week 3 or 4 of the programme. It includes the microcontroller, sensors, servo motors, and a breadboard. During the hardware sessions, instructors guide students step-by-step through wiring and programming their physical kits over video. The kit is yours to keep."
   },
   {
     question: "What happens if they miss a live session?",
