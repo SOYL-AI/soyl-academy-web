@@ -6,7 +6,7 @@ import { createMetadata } from '@/lib/seo/metadata';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { faqNode, graph, webPageNode } from '@/lib/seo/schema';
 import { futureBuildersFaqs } from '@/content/future-builders-faqs';
-import { RegistrationCountdown, SeatCounter } from '@/components/marketing/FutureBuildersUrgency';
+import { DeadlineCounter } from '@/components/marketing/FutureBuildersUrgency';
 import {
   CLASSES_START_DATE,
   FRIEND_CODE,
@@ -57,10 +57,7 @@ export default function FutureBuildersPage() {
                 12 weekends. 75 contact hours. One working prototype.<br /> 
                 A hands-on workshop covering Software, AI, IoT, and Entrepreneurship.
               </p>
-              <div className="mb-8 flex flex-col gap-4 rounded-2xl border-2 border-brand-black bg-white p-5 shadow-[4px_4px_0_0_#141414] max-w-xl">
-                <SeatCounter />
-                <RegistrationCountdown className="text-brand-black" />
-              </div>
+              <DeadlineCounter className="mb-8" />
               <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
                 <Link href="#enroll" className="inline-flex min-h-14 items-center justify-center rounded-xl border-2 border-brand-black bg-brand-yellow px-7 py-3 text-lg font-bold shadow-[4px_4px_0_0_#141414] hover:bg-brand-black hover:text-brand-cream focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue">
                   Enroll now — ₹5,499
@@ -206,10 +203,7 @@ export default function FutureBuildersPage() {
                 <p className="text-xl text-brand-black/70 leading-relaxed mb-6">
                   Only {SEATS_TOTAL} students per cohort, so every project gets individual instructor attention. Teams of 3–4 build and pitch their final product.
                 </p>
-                <div className="mb-8 flex flex-col gap-3">
-                  <SeatCounter />
-                  <RegistrationCountdown />
-                </div>
+                <DeadlineCounter className="mb-8" />
                 <div className="space-y-6 border-y-2 border-brand-black/10 py-8 mb-8">
                   <div className="flex justify-between items-center gap-4 text-lg">
                     <span className="font-bold text-brand-black/60">Orientation</span>

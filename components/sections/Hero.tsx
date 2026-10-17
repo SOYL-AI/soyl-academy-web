@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { HeroVisual } from '@/components/sections/HeroVisual';
 import { hero } from '@/content/home';
-import { STATUS_BADGE, seatsLabel } from '@/content/future-builders';
+import { RegistrationCountdown } from '@/components/marketing/FutureBuildersUrgency';
 
 function Arrow() {
   return (
@@ -75,7 +75,7 @@ export function Hero() {
               </Link>
             </div>
             <p className="mt-5 text-sm font-bold text-brand-black/70">
-              Future Builders, Grades 7–12 · {STATUS_BADGE} · <span className="text-brand-red">{seatsLabel}</span>
+              Future Builders, Grades 7–12 · Registrations open · <RegistrationCountdown className="text-brand-red" />
             </p>
           </div>
 

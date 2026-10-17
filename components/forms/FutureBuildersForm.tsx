@@ -13,7 +13,7 @@ import {
   VALUE_LINE,
   whatsappLink,
 } from '@/content/future-builders';
-import { SeatCounter } from '@/components/marketing/FutureBuildersUrgency';
+import { DeadlineCounter } from '@/components/marketing/FutureBuildersUrgency';
 
 const WHATSAPP_URL = whatsappLink('Hi, I would like to enroll my child in Future Builders. Could you help me?');
 
@@ -225,7 +225,7 @@ export function FutureBuildersForm() {
       <div className="mb-8 text-center">
         <h3 className="text-3xl font-bold mb-3">Secure your spot</h3>
         <p className="text-brand-black/70 text-lg mb-5">Registration closes {REGISTRATION_CLOSES}. Orientation {ORIENTATION_DATE}.</p>
-        <SeatCounter compact className="items-center" />
+        <DeadlineCounter compact className="items-center" />
       </div>
 
       <div className="flex bg-brand-cream p-1 border-2 border-brand-black rounded-lg mb-8">

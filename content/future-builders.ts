@@ -6,9 +6,8 @@
  * from here. Change a value, push, and the whole site updates.
  */
 
-// ── Update by hand as enrolments come in ──────────────────────────────────
-/** Paid enrolments so far. The seat counter shows SEATS_TOTAL - SEATS_FILLED. */
-export const SEATS_FILLED: number = 3;
+// ── Cohort size ───────────────────────────────────────────────────────────
+/** Maximum students per cohort (stated on the page and in the FAQ). */
 export const SEATS_TOTAL: number = 10;
 
 /**
@@ -59,16 +58,6 @@ export function whatsappShareLink(message: string) {
 }
 
 // ── Derived ───────────────────────────────────────────────────────────────
-export const SEATS_LEFT = Math.max(0, SEATS_TOTAL - SEATS_FILLED);
-/** Switches copy to "Last N seats" once 3 or fewer remain. */
-export const LAST_SEATS = SEATS_LEFT > 0 && SEATS_LEFT <= 3;
-
-export const seatsLabel =
-  SEATS_LEFT === 0
-    ? 'Cohort full · join the waitlist'
-    : LAST_SEATS
-      ? `Last ${SEATS_LEFT} seat${SEATS_LEFT === 1 ? '' : 's'} left`
-      : `Seats left: ${SEATS_LEFT} of ${SEATS_TOTAL}`;
 
 export const DATES_LINE = `Orientation ${ORIENTATION_DATE} · Classes from ${CLASSES_START_DATE} · Registration closes ${REGISTRATION_CLOSES}`;
 export const STATUS_BADGE = `Registrations open · closes ${REGISTRATION_CLOSES}`;

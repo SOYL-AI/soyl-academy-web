@@ -11,8 +11,8 @@ import {
   EARLY_BIRD_CODE as COUPON_CODE,
   REGISTRATION_CLOSES,
   SCHEDULE,
-  seatsLabel,
 } from '@/content/future-builders';
+import { RegistrationCountdown } from '@/components/marketing/FutureBuildersUrgency';
 import { findCoupon } from '@/lib/future-builders/pricing';
 
 const STORAGE_KEY = 'soyl_fb_promo_closed';
@@ -129,7 +129,7 @@ export function FutureBuildersPromoModal() {
               <div className="flex items-center gap-2">
                 <span className="inline-block w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
                 <span className="text-[11px] md:text-xs font-bold tracking-widest uppercase text-brand-black">
-                  {seatsLabel} • Closes {REGISTRATION_CLOSES}
+                  Registration closes {REGISTRATION_CLOSES}
                 </span>
               </div>
               <button
@@ -237,10 +237,7 @@ export function FutureBuildersPromoModal() {
 
                 {/* Urgency Badge */}
                 <div className="mt-3 flex items-center justify-between text-[11px] font-bold text-brand-black/70">
-                  <span className="flex items-center gap-1 text-brand-red">
-                    <span>🔥</span> {seatsLabel}
-                  </span>
-                  <span>Registration closes {REGISTRATION_CLOSES}</span>
+                  <RegistrationCountdown className="text-brand-red" />
                 </div>
 
                 {/* Guarantee reassurance */}

@@ -1,10 +1,11 @@
 import Link from 'next/link';
-import { DATES_LINE, SCHEDULE, STATUS_BADGE, VALUE_LINE, seatsLabel } from '@/content/future-builders';
+import { DATES_LINE, SCHEDULE, VALUE_LINE } from '@/content/future-builders';
+import { RegistrationCountdown } from '@/components/marketing/FutureBuildersUrgency';
 
 export function FutureBuildersFeature() {
   return (
     <section aria-label="Future Builders registrations" className="mb-20 border-2 border-brand-black bg-brand-yellow p-6 sm:p-10 rounded-2xl shadow-[6px_6px_0_0_#141414]">
-      <p className="text-sm font-bold mb-4">{STATUS_BADGE} · Online · Grades 7–12 · <span className="text-brand-red">{seatsLabel}</span></p>
+      <p className="text-sm font-bold mb-4">Registrations open · Online · Grades 7–12 · <RegistrationCountdown className="text-brand-red" /></p>
       <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
         <div>
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">Future Builders</h2>
