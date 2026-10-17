@@ -19,6 +19,10 @@ const COUPONS: Record<string, Omit<Coupon, 'code'>> = {
     needsFriendName: true,
   },
   SOYL500: { discount: 500, message: '₹500 discount applied!' },
+  ARNAV15: {
+    discount: Math.floor(BASE_PRICE * 0.15),
+    message: '15% discount applied!',
+  },
 };
 
 export function findCoupon(raw: string | undefined | null): Coupon | null {
