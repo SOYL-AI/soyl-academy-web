@@ -23,6 +23,7 @@ export async function POST(request: Request) {
           phone: body.phone || '',
           grade: body.grade || '',
           coupon: body.coupon || '',
+          referredBy: body.referredBy || '',
         }),
       });
 

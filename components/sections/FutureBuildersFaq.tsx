@@ -1,43 +1,11 @@
-'use client';
-
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { ScrollReveal } from '@/components/motion/ScrollReveal';
+import { futureBuildersFaqs } from '@/content/future-builders-faqs';
 
-const OUTCOMES = [
-  {
-    question: "What will my child actually learn to do?",
-    answer: "By the end of 12 weeks, your child will write and debug Python programs, train small AI models to recognize images, wire physical IoT circuits, and present a final business pitch. They will move from consuming technology to building it."
-  },
-  {
-    question: "Do they need prior coding experience?",
-    answer: "No. The curriculum is designed for complete beginners in Grades 7 to 12. We teach everything from scratch, starting with basic logic and moving up to advanced AI and hardware."
-  },
-  {
-    question: "How does the hardware kit work for an online cohort?",
-    answer: "We send your personal ESP32-C3 hardware kit around week 3 or 4 of the programme. It includes the microcontroller, sensors, servo motors, and a breadboard. During the hardware sessions, instructors guide students step-by-step through wiring and programming their physical kits over video. The kit is yours to keep."
-  },
-  {
-    question: "What happens if they miss a live session?",
-    answer: "All live weekend sessions are recorded and made available to students. If they miss a class, they can watch the recording and catch up on their weekly project."
-  },
-  {
-    question: "What is Demo Day?",
-    answer: "Week 12 is Capstone Demo Day. After building their integrated software, AI, and hardware prototype, teams pitch their product's business viability to parents, teachers, and guests. It builds crucial presentation and entrepreneurial skills."
-  },
-  {
-    question: "How does this benefit high school students in Grades 10 to 12 applying to universities?",
-    answer: "University admissions (Common App, UC, engineering programs) and scholarship panels look for demonstrated technical initiative beyond standard grades. Future Builders students graduate with a public GitHub code repository, a recorded 3-minute Demo Day pitch, and an official verifiable certificate—providing concrete proof-of-work for college essays, interviews, and STEM internships."
-  },
-  {
-    question: "What is the refund policy or guarantee?",
-    answer: "We offer a 100% Session 1 Money-Back Guarantee. Attend the first weekend. If your child doesn't love building their first project, simply request a refund within 24 hours of Session 1 and get a 100% full refund, no questions asked. The shipped hardware kit is yours to keep."
-  }
-];
-
+/**
+ * Native <details> accordion: every answer is in the server-rendered HTML,
+ * so crawlers, link previews and no-JS visitors see full answers.
+ */
 export function FutureBuildersFaq() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-
   return (
     <div className="mb-24 md:mb-48 border-t-2 border-brand-black/10 pt-16 md:pt-32">
       <ScrollReveal>
@@ -48,46 +16,28 @@ export function FutureBuildersFaq() {
               We focus on measurable outcomes. Your child will leave with a working prototype, a code portfolio, and a fundamental understanding of modern technology.
             </p>
           </div>
-          
+
           <div className="lg:col-span-7">
             <div className="space-y-4">
-              {OUTCOMES.map((item, index) => {
-                const isOpen = openIndex === index;
-                
-                return (
-                  <div 
-                    key={index} 
-                    className={`border-2 border-brand-black rounded-xl overflow-hidden transition-colors duration-300 ${isOpen ? 'bg-white shadow-[6px_6px_0_0_#141414]' : 'bg-brand-cream/50 hover:bg-white'}`}
-                  >
-                    <button
-                      onClick={() => setOpenIndex(isOpen ? null : index)}
-                      className="w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none"
-                    >
-                      <span className="font-bold text-xl pr-8">{item.question}</span>
-                      <div className={`w-8 h-8 rounded-full border-2 border-brand-black flex items-center justify-center shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 bg-brand-yellow' : 'bg-transparent'}`}>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                          <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                      </div>
-                    </button>
-                    
-                    <AnimatePresence initial={false}>
-                      {isOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: 'easeInOut' }}
-                        >
-                          <div className="px-6 pb-6 pt-2 text-lg text-brand-black/80 leading-relaxed border-t-2 border-brand-black/5 mx-6">
-                            {item.answer}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+              {futureBuildersFaqs.map((item, index) => (
+                <details
+                  key={item.question}
+                  open={index === 0}
+                  className="group border-2 border-brand-black rounded-xl overflow-hidden bg-brand-cream/50 hover:bg-white open:bg-white open:shadow-[6px_6px_0_0_#141414] transition-colors duration-300"
+                >
+                  <summary className="w-full text-left px-6 py-5 flex items-center justify-between cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <h3 className="font-bold text-xl pr-8">{item.question}</h3>
+                    <span aria-hidden="true" className="w-8 h-8 rounded-full border-2 border-brand-black flex items-center justify-center shrink-0 transition-transform duration-300 group-open:rotate-180 group-open:bg-brand-yellow">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </span>
+                  </summary>
+                  <div className="px-6 pb-6 pt-2 text-lg text-brand-black/80 leading-relaxed border-t-2 border-brand-black/5 mx-6">
+                    {item.answer}
                   </div>
-                );
-              })}
+                </details>
+              ))}
             </div>
           </div>
         </div>

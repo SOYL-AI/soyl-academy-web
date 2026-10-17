@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { HeroVisual } from '@/components/sections/HeroVisual';
 import { hero } from '@/content/home';
+import { STATUS_BADGE, seatsLabel } from '@/content/future-builders';
 
 function Arrow() {
   return (
@@ -73,6 +74,9 @@ export function Hero() {
                 <Arrow />
               </Link>
             </div>
+            <p className="mt-5 text-sm font-bold text-brand-black/70">
+              Future Builders, Grades 7–12 · {STATUS_BADGE} · <span className="text-brand-red">{seatsLabel}</span>
+            </p>
           </div>
 
           <div className="lg:col-span-6">

@@ -2,6 +2,20 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { cn } from '@/lib/utils';
+import { findCoupon, priceFor } from '@/lib/future-builders/pricing';
+import {
+  BASE_PRICE,
+  CALLBACK_PROMISE,
+  FRIEND_CODE,
+  FRIEND_DISCOUNT,
+  ORIENTATION_DATE,
+  REGISTRATION_CLOSES,
+  VALUE_LINE,
+  whatsappLink,
+} from '@/content/future-builders';
+import { SeatCounter } from '@/components/marketing/FutureBuildersUrgency';
+
+const WHATSAPP_URL = whatsappLink('Hi, I would like to enroll my child in Future Builders. Could you help me?');
 
 export function FutureBuildersForm() {
   const [mode, setMode] = useState<'pay' | 'callback'>('pay');
@@ -19,31 +33,32 @@ export function FutureBuildersForm() {
 
   // Coupon state
   const [couponCode, setCouponCode] = useState('');
-  const [discount, setDiscount] = useState(0);
+  const [appliedCode, setAppliedCode] = useState('');
   const [couponMessage, setCouponMessage] = useState('');
+  const [friendName, setFriendName] = useState('');
 
-  const basePrice = 5499;
-  const price = basePrice - discount;
+  const basePrice = BASE_PRICE;
+  const applied = findCoupon(appliedCode);
+  const needsFriendName = !!applied?.needsFriendName;
+  // FRIEND500 only counts once the friend's name is filled in — same rule the payment API applies.
+  const price = priceFor(appliedCode, needsFriendName ? friendName : undefined);
+  const discount = basePrice - price;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const applyCouponCode = useCallback((codeToApply: string) => {
-    const code = codeToApply.trim().toUpperCase();
-    if (code === 'SOYL500') {
-      setCouponCode('SOYL500');
-      setDiscount(500);
-      setCouponMessage('₹500 discount applied!');
-    } else if (code === 'BUILDER10') {
-      setCouponCode('BUILDER10');
-      setDiscount(Math.floor(basePrice * 0.10));
-      setCouponMessage('10% discount applied! (First 10 builders offer)');
+    const coupon = findCoupon(codeToApply);
+    if (coupon) {
+      setCouponCode(coupon.code);
+      setAppliedCode(coupon.code);
+      setCouponMessage(coupon.message);
     } else {
-      setDiscount(0);
+      setAppliedCode('');
       setCouponMessage('Invalid coupon code.');
     }
-  }, [basePrice]);
+  }, []);
 
   const handleApplyCoupon = () => {
     applyCouponCode(couponCode);
@@ -85,7 +100,8 @@ export function FutureBuildersForm() {
       const orderData = await fetch('/api/razorpay', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount: price * 100 }), // amount in paise
+        // The server prices the order from the coupon; the browser never sends an amount.
+        body: JSON.stringify({ coupon: appliedCode, friendName }),
       }).then((t) => t.json());
 
       if (orderData.error) {
@@ -101,8 +117,7 @@ export function FutureBuildersForm() {
         description: 'Future Builders Programme (Oct Cohort)',
         order_id: orderData.id,
         handler: async function (response: unknown) {
-          console.log((response as { razorpay_payment_id: string }).razorpay_payment_id);
-          await saveToSheet('pay');
+          await saveToSheet('pay', (response as { razorpay_payment_id: string }).razorpay_payment_id);
           setSuccess(true);
           setLoading(false);
         },
@@ -128,12 +143,18 @@ export function FutureBuildersForm() {
     }
   };
 
-  const saveToSheet = async (submissionMode: 'pay' | 'callback') => {
+  const saveToSheet = async (submissionMode: 'pay' | 'callback', paymentId = '') => {
     try {
       await fetch('/api/enroll', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, mode: submissionMode, coupon: discount > 0 ? couponCode : '' }),
+        body: JSON.stringify({
+          ...formData,
+          mode: submissionMode,
+          coupon: discount > 0 ? appliedCode : '',
+          referredBy: needsFriendName ? friendName.trim() : '',
+          paymentId,
+        }),
       });
     } catch (e) {
       console.error('Failed to save', e);
@@ -171,7 +192,8 @@ export function FutureBuildersForm() {
           <p className="text-lg text-brand-black/70 mb-8">
             Welcome to the Future Builders Programme. We&apos;ve sent a receipt and onboarding instructions to {formData.email}.
           </p>
-          <p className="text-brand-blue font-bold tracking-widest uppercase text-sm">See you on October 20th</p>
+          <p className="text-brand-black/70 mb-6">Know a friend who&apos;d love this? Share code <strong>{FRIEND_CODE}</strong>. They save ₹{FRIEND_DISCOUNT}, and we&apos;ll send you ₹{FRIEND_DISCOUNT} back when they enroll.</p>
+          <p className="text-brand-blue font-bold tracking-widest uppercase text-sm">See you at orientation on {ORIENTATION_DATE}</p>
         </div>
       );
     } else {
@@ -184,8 +206,12 @@ export function FutureBuildersForm() {
           </div>
           <h3 className="text-3xl font-bold mb-4">Request Received</h3>
           <p className="text-lg text-brand-black/70 mb-8">
-            Thank you, {formData.parentName}. Our admissions team will call you at {formData.phone} within 24 hours to answer your questions.
+            Thank you, {formData.parentName}. Our admissions team will call you at {formData.phone} {CALLBACK_PROMISE}. Can&apos;t wait? Message us on WhatsApp now.
           </p>
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center h-12 px-6 mb-6 rounded-xl border-2 border-brand-black bg-[#25D366] text-white font-bold shadow-[3px_3px_0_0_#141414] hover:bg-[#20ba59]">
+            Chat on WhatsApp
+          </a>
+          <br />
           <button onClick={() => setSuccess(false)} className="text-brand-blue font-bold tracking-widest uppercase text-sm underline underline-offset-4 hover:text-brand-black">
             Go back
           </button>
@@ -196,9 +222,10 @@ export function FutureBuildersForm() {
 
   return (
     <form onSubmit={handleSubmit} className="bg-white border-2 border-brand-black p-8 md:p-12 shadow-[8px_8px_0_0_#141414] rounded-sm">
-      <div className="mb-10 text-center">
-        <h3 className="text-3xl font-bold mb-4">Secure your spot</h3>
-        <p className="text-brand-black/70 text-lg">Registration is now open for the October 20th Cohort.</p>
+      <div className="mb-8 text-center">
+        <h3 className="text-3xl font-bold mb-3">Secure your spot</h3>
+        <p className="text-brand-black/70 text-lg mb-5">Registration closes {REGISTRATION_CLOSES}. Orientation {ORIENTATION_DATE}.</p>
+        <SeatCounter compact className="items-center" />
       </div>
 
       <div className="flex bg-brand-cream p-1 border-2 border-brand-black rounded-lg mb-8">
@@ -281,8 +308,21 @@ export function FutureBuildersForm() {
             </button>
           </div>
           {couponMessage && (
-            <p className={`mt-2 text-sm font-bold ${discount > 0 ? 'text-green-600' : 'text-brand-red'}`}>
+            <p className={`mt-2 text-sm font-bold ${applied ? 'text-green-600' : 'text-brand-red'}`}>
               {couponMessage}
+            </p>
+          )}
+          {needsFriendName && (
+            <div className="mt-4">
+              <label htmlFor="friendName" className="block text-sm font-bold tracking-widest uppercase mb-2 text-brand-black/70">Friend&apos;s name (referred you or enrolling with you)</label>
+              <input id="friendName" required type="text" value={friendName} onChange={(e) => setFriendName(e.target.value)} className="w-full h-14 px-4 bg-brand-cream border-2 border-brand-black focus:outline-none focus:ring-4 focus:ring-brand-yellow focus:border-brand-black transition-all" />
+            </div>
+          )}
+          {!applied && (
+            <p className="mt-3 text-sm text-brand-black/70">
+              Enrolling with a friend, or referred by one? Use{' '}
+              <button type="button" onClick={() => applyCouponCode(FRIEND_CODE)} className="font-bold text-brand-blue underline underline-offset-4">{FRIEND_CODE}</button>
+              . You both save ₹{FRIEND_DISCOUNT}.
             </p>
           )}
         </div>
@@ -299,7 +339,7 @@ export function FutureBuildersForm() {
           <span className="text-xl font-bold">Total</span>
           <span className="text-4xl font-bold">₹{mode === 'pay' ? price : basePrice}</span>
         </div>
-        <p className="text-sm text-brand-black/50 font-medium text-right mb-4">Includes hardware kit and 12-week access.</p>
+        <p className="text-sm text-brand-black/70 font-bold text-right mb-4">{VALUE_LINE}</p>
         
         {/* Risk-Free Guarantee Callout */}
         <div className="p-3 bg-brand-cream border border-brand-black/20 rounded-lg flex items-center gap-2.5 text-xs text-brand-black font-bold">
@@ -310,18 +350,33 @@ export function FutureBuildersForm() {
 
       {mode === 'pay' ? (
         <button disabled={loading} type="submit" className="w-full h-16 bg-brand-black text-brand-cream text-lg font-bold hover:bg-brand-blue focus:outline-none focus:ring-4 focus:ring-brand-blue/30 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
-          {loading ? 'Processing...' : 'Pay & Enroll Now'}
+          {loading ? 'Processing...' : `Pay ₹${price.toLocaleString('en-IN')} & Enroll Now`}
         </button>
       ) : (
-        <button disabled={loading} type="submit" className="w-full h-16 bg-brand-blue text-brand-cream text-lg font-bold hover:bg-brand-black focus:outline-none focus:ring-4 focus:ring-brand-black/30 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
-          {loading ? 'Submitting...' : 'Request a Callback'}
-        </button>
+        <>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button disabled={loading} type="submit" className="w-full h-16 bg-brand-blue text-brand-cream text-lg font-bold hover:bg-brand-black focus:outline-none focus:ring-4 focus:ring-brand-black/30 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+              {loading ? 'Submitting...' : 'Request a Callback'}
+            </button>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="w-full h-16 inline-flex items-center justify-center bg-[#25D366] text-white text-lg font-bold border-2 border-brand-black hover:bg-[#20ba59] focus:outline-none focus:ring-4 focus:ring-brand-black/30 transition-colors">
+              WhatsApp us now
+            </a>
+          </div>
+          <p className="text-center text-sm font-bold text-brand-black/60 mt-4">We call back {CALLBACK_PROMISE}.</p>
+        </>
       )}
       
       {mode === 'pay' && (
         <p className="text-center text-xs font-bold text-brand-black/40 uppercase tracking-widest mt-6 flex items-center justify-center gap-2">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
           Secured by Razorpay
+        </p>
+      )}
+      {mode === 'pay' && (
+        <p className="text-center text-sm text-brand-black/70 mt-3">
+          Questions first?{' '}
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="font-bold text-brand-blue underline underline-offset-4">WhatsApp us</a>
+          {' '}or switch to Request Callback.
         </p>
       )}
     </form>

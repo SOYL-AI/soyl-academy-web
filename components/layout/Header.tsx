@@ -6,13 +6,14 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { TopAnnouncementBar } from '@/components/marketing/TopAnnouncementBar';
+import { STATUS_BADGE } from '@/content/future-builders';
 
 const navItems = [
   { label: 'The SOYL Method', href: '/method' },
   { label: 'What We Teach', href: '/what-we-teach' },
   { label: 'For Schools', href: '/schools' },
   { label: 'For Students', href: '/students' },
-  { label: 'Future Builders', href: '/future-builders', badge: 'Registrations open' },
+  { label: 'Future Builders', href: '/future-builders', badge: STATUS_BADGE },
   { label: 'Journal', href: '/journal' },
   { label: 'About', href: '/about' },
 ];

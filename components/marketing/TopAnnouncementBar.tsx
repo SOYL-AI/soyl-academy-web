@@ -4,8 +4,14 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import {
+  CLASSES_START_DATE,
+  EARLY_BIRD_CODE as COUPON_CODE,
+  REGISTRATION_CLOSES,
+  seatsLabel,
+} from '@/content/future-builders';
+
 const STORAGE_KEY = 'soyl_top_announcement_closed';
-const COUPON_CODE = 'BUILDER10';
 
 export function TopAnnouncementBar() {
   const [isVisible, setIsVisible] = useState(false);
@@ -55,8 +61,10 @@ export function TopAnnouncementBar() {
                 >
                   <span className="flex items-center gap-1.5 shrink-0">
                     <span className="inline-block animate-pulse">⚡</span>
-                    <span>Future Builders Online Cohort (Grades 7–12) starts Oct 20</span>
+                    <span>Future Builders (Grades 7–12) · Classes from {CLASSES_START_DATE} · Registration closes {REGISTRATION_CLOSES}</span>
                   </span>
+                  <span className="hidden md:inline text-brand-black/40">•</span>
+                  <span className="shrink-0 text-brand-red">{seatsLabel}</span>
                   <span className="hidden md:inline text-brand-black/40">•</span>
                   <span className="shrink-0 bg-brand-black text-brand-cream px-1.5 py-0.5 rounded text-[11px] uppercase tracking-wider font-mono">
                     10% Off: {COUPON_CODE}

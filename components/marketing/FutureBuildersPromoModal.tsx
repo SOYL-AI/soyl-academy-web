@@ -5,8 +5,19 @@ import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import {
+  BASE_PRICE,
+  DATES_LINE,
+  EARLY_BIRD_CODE as COUPON_CODE,
+  REGISTRATION_CLOSES,
+  SCHEDULE,
+  seatsLabel,
+} from '@/content/future-builders';
+import { findCoupon } from '@/lib/future-builders/pricing';
+
 const STORAGE_KEY = 'soyl_fb_promo_closed';
-const COUPON_CODE = 'BUILDER10';
+const EARLY_BIRD_DISCOUNT = findCoupon(COUPON_CODE)?.discount ?? 0;
+const inr = (n: number) => `₹${n.toLocaleString('en-IN')}`;
 
 export function FutureBuildersPromoModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -118,7 +129,7 @@ export function FutureBuildersPromoModal() {
               <div className="flex items-center gap-2">
                 <span className="inline-block w-2.5 h-2.5 rounded-full bg-brand-red animate-pulse" />
                 <span className="text-[11px] md:text-xs font-bold tracking-widest uppercase text-brand-black">
-                  Limited Time Cohort Offer • First 10 Registrations Only
+                  {seatsLabel} • Closes {REGISTRATION_CLOSES}
                 </span>
               </div>
               <button
@@ -168,6 +179,11 @@ export function FutureBuildersPromoModal() {
                 12 weekends. 75 contact hours. One working prototype. Learn Software, AI, IoT Robotics, and
                 Entrepreneurship — includes an ESP32-C3 hardware kit shipped to your home!
               </p>
+              <p className="text-xs sm:text-sm font-bold text-brand-black mb-6 -mt-3">
+                {DATES_LINE}
+                <br />
+                Live {SCHEDULE.short}
+              </p>
 
               {/* Discount Ticket Card */}
               <div className="relative bg-white border-2 border-brand-black rounded-xl p-4 sm:p-5 mb-6 shadow-[4px_4px_0_0_#141414]">
@@ -177,11 +193,11 @@ export function FutureBuildersPromoModal() {
                       Exclusive 10% Early Bird Voucher
                     </span>
                     <p className="text-lg sm:text-xl font-bold text-brand-black">
-                      Save ₹550 on Enrollment
+                      Save {inr(EARLY_BIRD_DISCOUNT)} on Enrollment
                     </p>
                   </div>
                   <div className="text-xs font-bold text-brand-black/60 bg-brand-cream px-2.5 py-1 rounded border border-brand-black/20 self-start sm:self-center">
-                    ₹4,949 <span className="line-through text-brand-black/40">₹5,499</span>
+                    {inr(BASE_PRICE - EARLY_BIRD_DISCOUNT)} <span className="line-through text-brand-black/40">{inr(BASE_PRICE)}</span>
                   </div>
                 </div>
 
@@ -222,9 +238,9 @@ export function FutureBuildersPromoModal() {
                 {/* Urgency Badge */}
                 <div className="mt-3 flex items-center justify-between text-[11px] font-bold text-brand-black/70">
                   <span className="flex items-center gap-1 text-brand-red">
-                    <span>🔥</span> Only 4 seats remaining at this price
+                    <span>🔥</span> {seatsLabel}
                   </span>
-                  <span>First 10 builders only</span>
+                  <span>Registration closes {REGISTRATION_CLOSES}</span>
                 </div>
 
                 {/* Guarantee reassurance */}

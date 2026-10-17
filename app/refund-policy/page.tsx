@@ -86,7 +86,7 @@ export default function RefundPolicyPage() {
             <section className="bg-white p-6 sm:p-8 rounded-2xl border-2 border-brand-black shadow-[4px_4px_0_0_#141414]">
               <h2 className="text-2xl font-bold text-brand-black mb-3">4. Mid-Cohort Cancellations</h2>
               <p className="mb-3">
-                Because seats in live mentor cohorts are strictly capped at 20 students to guarantee 1:1 project guidance:
+                Because seats in live mentor cohorts are strictly capped at 10 students to guarantee 1:1 project guidance:
               </p>
               <p className="text-sm">
                 Cancellations requested after the 24-hour window following Session 1 are non-refundable. However, in cases of medical emergency or unavoidable schedule conflicts, we will gladly defer the student&apos;s seat to the next cohort round without extra charge.

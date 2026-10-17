@@ -1,9 +1,15 @@
 import { NextResponse } from 'next/server';
 import Razorpay from 'razorpay';
+import { priceFor } from '@/lib/future-builders/pricing';
 
 export async function POST(req: Request) {
   try {
-    const { amount, currency = 'INR', receipt = 'receipt#1' } = await req.json();
+    const { coupon, friendName } = await req.json();
+
+    // The charge is computed here from the coupon, never taken from the browser.
+    const amount = priceFor(coupon, friendName) * 100; // paise
+    const currency = 'INR';
+    const receipt = `fb_${Date.now()}`;
 
     const key_id = process.env.RAZORPAY_KEY_ID;
     const key_secret = process.env.RAZORPAY_KEY_SECRET;
@@ -22,13 +28,7 @@ export async function POST(req: Request) {
 
     const instance = new Razorpay({ key_id, key_secret });
 
-    const options = {
-      amount: amount, // amount in smallest currency unit (paise)
-      currency,
-      receipt,
-    };
-
-    const order = await instance.orders.create(options);
+    const order = await instance.orders.create({ amount, currency, receipt });
     return NextResponse.json(order);
   } catch (error: unknown) {
     console.error("Razorpay error:", error);

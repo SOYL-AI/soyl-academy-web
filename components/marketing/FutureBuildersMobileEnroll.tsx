@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { seatsLabel } from '@/content/future-builders';
 
 export function FutureBuildersMobileEnroll() {
   const [visible, setVisible] = useState(false);
@@ -33,7 +34,10 @@ export function FutureBuildersMobileEnroll() {
 
   return (
     <a href="#enroll" className="fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] left-4 right-24 z-30 flex min-h-14 items-center justify-center rounded-xl border-2 border-brand-black bg-brand-yellow px-3 py-3 text-sm font-bold text-brand-black shadow-[4px_4px_0_0_#141414] hover:bg-brand-cream focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue md:hidden">
-      Enroll now — ₹5,499
+      <span className="flex flex-col items-center leading-tight">
+        <span>Enroll now — ₹5,499</span>
+        <span className="text-xs text-brand-red">{seatsLabel}</span>
+      </span>
     </a>
   );
 }
