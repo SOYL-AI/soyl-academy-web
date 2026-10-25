@@ -1,0 +1,436 @@
+# ISC Class 11 Accounts (syllabus titled Accountancy, code 858) - ISC 2028 course, CLASS XI year.
+# Source: platform/catalog/sources/cisce.md#isc-2028-accounts. Topic wording is our own summary of the official scope.
+subject_id: isc-11-accounts
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-accounts, isc-2028-regulations, isc-2027-class-xi-specimen-papers]
+exam_notes: >-
+  There is no board examination in Class XI: Class XI is year one of the two-year ISC 2028 course and the school sets the
+  Class XI examination on the Class XI portion. The syllabus prescribes Paper I Theory of 3 hours, 80 marks, and Paper II
+  Project Work, 20 marks; CISCE has published a Class XI specimen question paper for Accountancy (Year 2027) as a guide to
+  the school paper. Published Class XI weightage: Introduction to Accounting 2, Accounting Concepts 4, Journal, Ledger and
+  Trial Balance 12, Bank Reconciliation Statement 10, Depreciation 10, Bills of Exchange 7, Final Accounts 14,
+  Rectification of Errors 8, Not-for-profit Organisations 10, Computerised Accounting System 3 (total 80; the extracted
+  table lists marks in a separate column and SOYL matched them to units in row order). Paper II: two projects of 10 marks
+  each from any theory topic (overall format 1, content 4, findings 2, viva-voce 3), e.g. a sole trader's books from
+  journal to final accounts, NPO accounts, a bank reconciliation, bills of exchange, depreciation or a one-week internship
+  report. Transactions involving GST are excluded throughout (only a theoretical introduction to GST is taught).
+  Final accounts are prepared in horizontal format. CISCE lists units and sub-topics, not chapters: SOYL groups them into
+  16 teachable chapters in syllabus order.
+units:
+  - { name: "1. Introduction to Accounting", marks: 2 }
+  - { name: "2. Accounting Concepts", marks: 4 }
+  - { name: "3. Journal, Ledger and Trial Balance", marks: 12 }
+  - { name: "4. Bank Reconciliation Statement", marks: 10 }
+  - { name: "5. Depreciation", marks: 10 }
+  - { name: "6. Bills of Exchange", marks: 7 }
+  - { name: "7. Final Accounts", marks: 14 }
+  - { name: "8. Rectification of Errors", marks: 8 }
+  - { name: "9. Accounting for Not-for-profit Organisations", marks: 10 }
+  - { name: "10. Computerised Accounting System (CAS)", marks: 3 }
+chapters:
+  - id: isc-11-accounts-ch01
+    number: 1
+    title: "Introduction to Accounting"
+    unit: "1. Introduction to Accounting"
+    topics:
+      - id: isc-11-accounts-ch01-t01
+        title: "A brief history of accounting; book-keeping, accounting and accountancy compared; the accounting cycle"
+        learning_outcomes:
+          - "Outline the development of accounting from early record-keeping to double entry"
+          - "Distinguish book-keeping, accounting and accountancy by scope and purpose"
+          - "Arrange the stages of the accounting cycle in order from transaction to financial statements"
+      - id: isc-11-accounts-ch01-t02
+        title: "Basic terms: event, transaction, voucher, capital, drawings, profit, gain, loss, expense, revenue and income"
+        learning_outcomes:
+          - "Distinguish an event from a transaction and explain the role of a voucher as documentary evidence"
+          - "Differentiate expense from loss and revenue from gain using business examples"
+      - id: isc-11-accounts-ch01-t03
+        title: "Assets (tangible, intangible, fixed, current, liquid, wasting, fictitious) and liabilities (internal, external, current, long-term, contingent)"
+        learning_outcomes:
+          - "Classify a given list of items into the different types of assets and liabilities"
+          - "Explain why a contingent liability is not shown as an actual liability"
+      - id: isc-11-accounts-ch01-t04
+        title: "Trade terms: trade debtors and creditors, purchases, sales, goods, and stock (raw material, work in progress, finished goods)"
+        learning_outcomes:
+          - "Identify trade debtors and trade creditors in a set of business transactions"
+          - "Distinguish the three kinds of stock held by a manufacturing business"
+      - id: isc-11-accounts-ch01-t05
+        title: "Stakeholders who use accounting information; financial, cost and management accounting (introduction)"
+        learning_outcomes:
+          - "Explain what owners, managers, lenders, investors, employees, government and the public each need from accounts"
+          - "Distinguish financial, cost and management accounting by purpose and users"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-accounts-ch02
+    number: 2
+    title: "Accounting Concepts, Basis of Accounting and Standards"
+    unit: "2. Accounting Concepts"
+    topics:
+      - id: isc-11-accounts-ch02-t01
+        title: "GAAP I: going concern, accounting entity, money measurement, accounting period, historical cost, dual aspect, accrual"
+        learning_outcomes:
+          - "Explain each concept and apply it to decide how a given transaction should be recorded"
+          - "Show how the dual aspect concept leads to the accounting equation"
+      - id: isc-11-accounts-ch02-t02
+        title: "GAAP II: revenue recognition, matching, full disclosure, verifiable objectivity, materiality, consistency, prudence, timeliness, industry practice, substance over legal form"
+        learning_outcomes:
+          - "Identify the principle illustrated by a given accounting practice"
+          - "Explain how prudence and matching affect the reported profit of a period"
+      - id: isc-11-accounts-ch02-t03
+        title: "Cash basis and accrual basis of accounting"
+        learning_outcomes:
+          - "Compute profit under both cash and accrual bases from the same data and explain the difference"
+      - id: isc-11-accounts-ch02-t04
+        title: "Accounting Standards: meaning and advantages; IFRS (brief introduction)"
+        learning_outcomes:
+          - "Explain why accounting standards are needed and list their advantages"
+          - "State what IFRS are and why convergence with international standards matters"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-accounts-ch03
+    number: 3
+    title: "Accounting Equation and Journal"
+    unit: "3. Journal, Ledger and Trial Balance"
+    topics:
+      - id: isc-11-accounts-ch03-t01
+        title: "Accounting equation: meaning, usefulness and effect of transactions"
+        learning_outcomes:
+          - "Show the effect of a series of transactions on assets, liabilities and capital in equation form"
+          - "Calculate the missing element of the accounting equation"
+      - id: isc-11-accounts-ch03-t02
+        title: "Double entry system; classification of accounts (traditional and modern) and rules of debit and credit"
+        learning_outcomes:
+          - "Classify accounts as personal, real or nominal and under the modern five-way classification"
+          - "Apply the rules of debit and credit to analyse transactions"
+      - id: isc-11-accounts-ch03-t03
+        title: "Journal: meaning, advantages, format; simple, compound and opening entries with narration"
+        learning_outcomes:
+          - "Record simple and compound journal entries with suitable narrations"
+          - "Pass the opening journal entry from a list of opening balances"
+      - id: isc-11-accounts-ch03-t04
+        title: "Goods and Services Tax (GST): brief theoretical introduction"
+        learning_outcomes:
+          - "Explain what GST is and name CGST, SGST/UTGST and IGST in outline"
+    removed_topics:
+      - "Journal entries for transactions with GST"
+    literature_texts: []
+  - id: isc-11-accounts-ch04
+    number: 4
+    title: "Ledger"
+    unit: "3. Journal, Ledger and Trial Balance"
+    topics:
+      - id: isc-11-accounts-ch04-t01
+        title: "Ledger: meaning, format and mechanics of posting from the journal"
+        learning_outcomes:
+          - "Post journal entries to the respective ledger accounts with correct cross-references"
+      - id: isc-11-accounts-ch04-t02
+        title: "Balancing and closing ledger accounts: nominal accounts to Trading or Profit and Loss Account, real and personal balances carried down"
+        learning_outcomes:
+          - "Balance asset, liability and capital accounts and carry their balances down"
+          - "Close direct expenses to the Trading Account and indirect expenses and revenues to the Profit and Loss Account"
+      - id: isc-11-accounts-ch04-t03
+        title: "Adjusting and closing journal entries"
+        learning_outcomes:
+          - "Pass closing entries that transfer expense and revenue balances at the end of the period"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-accounts-ch05
+    number: 5
+    title: "Cash Book"
+    unit: "3. Journal, Ledger and Trial Balance"
+    topics:
+      - id: isc-11-accounts-ch05-t01
+        title: "Sub-division of the journal: purpose of subsidiary books"
+        learning_outcomes:
+          - "Explain why transactions are recorded in subsidiary books and name the special journals"
+      - id: isc-11-accounts-ch05-t02
+        title: "Simple cash book"
+        learning_outcomes:
+          - "Prepare a simple cash book and post it to the ledger"
+      - id: isc-11-accounts-ch05-t03
+        title: "Triple column cash book (cash, bank and discount); contra entries including a cheque not deposited the same day"
+        learning_outcomes:
+          - "Prepare a triple column cash book and record contra entries correctly"
+          - "Post discount allowed and received totals to the ledger"
+      - id: isc-11-accounts-ch05-t04
+        title: "Maintaining a definite cash balance or availing an overdraft at the end of the period"
+        learning_outcomes:
+          - "Record the deposit or withdrawal needed to keep a fixed cash balance and show an overdraft in the bank column"
+    removed_topics:
+      - "Transactions with GST in the cash book"
+    literature_texts: []
+  - id: isc-11-accounts-ch06
+    number: 6
+    title: "Petty Cash Book and Other Special Purpose Books"
+    unit: "3. Journal, Ledger and Trial Balance"
+    topics:
+      - id: isc-11-accounts-ch06-t01
+        title: "Petty cash book: analytical petty cash book and imprest system"
+        learning_outcomes:
+          - "Prepare an analytical petty cash book under the imprest system and post it to the ledger"
+      - id: isc-11-accounts-ch06-t02
+        title: "Purchases and sales day books: simple and columnar formats"
+        learning_outcomes:
+          - "Record credit purchases and sales of goods in simple and columnar day books"
+          - "Distinguish transactions that belong in day books from those that go to the journal proper"
+      - id: isc-11-accounts-ch06-t03
+        title: "Purchases return and sales return day books; debit and credit notes"
+        learning_outcomes:
+          - "Record returns in the correct return book using debit and credit note numbers"
+      - id: isc-11-accounts-ch06-t04
+        title: "Journal proper and posting from special subsidiary books"
+        learning_outcomes:
+          - "Identify entries that are recorded in the journal proper"
+          - "Post periodic totals and individual items from subsidiary books to the ledger"
+    removed_topics:
+      - "Transactions with GST in the returns books"
+    literature_texts: []
+  - id: isc-11-accounts-ch07
+    number: 7
+    title: "Trial Balance"
+    unit: "3. Journal, Ledger and Trial Balance"
+    topics:
+      - id: isc-11-accounts-ch07-t01
+        title: "Trial balance: meaning, objectives, advantages and limitations"
+        learning_outcomes:
+          - "Explain why agreement of the trial balance does not prove that the accounts are free from errors"
+      - id: isc-11-accounts-ch07-t02
+        title: "Preparing a trial balance by the balance method from ledger balances"
+        learning_outcomes:
+          - "Prepare a trial balance from given ledger balances, placing each balance on the correct side"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-accounts-ch08
+    number: 8
+    title: "Bank Reconciliation Statement"
+    unit: "4. Bank Reconciliation Statement"
+    topics:
+      - id: isc-11-accounts-ch08-t01
+        title: "Need for reconciliation; causes of difference between cash book and pass book balances"
+        learning_outcomes:
+          - "Explain timing differences and errors that cause the two balances to differ"
+      - id: isc-11-accounts-ch08-t02
+        title: "Preparing a BRS from a given cash book or pass book balance or overdraft"
+        learning_outcomes:
+          - "Prepare a bank reconciliation statement starting from a favourable balance or an overdraft in either book"
+      - id: isc-11-accounts-ch08-t03
+        title: "Preparing a BRS from extracts of the cash book and the pass book"
+        learning_outcomes:
+          - "Match entries in the two extracts and identify the unmatched items for reconciliation"
+      - id: isc-11-accounts-ch08-t04
+        title: "Amended (adjusted) cash book followed by a BRS"
+        learning_outcomes:
+          - "Prepare an amended cash book for items not yet recorded in it and reconcile the corrected balance with the pass book"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-accounts-ch09
+    number: 9
+    title: "Depreciation"
+    unit: "5. Depreciation"
+    topics:
+      - id: isc-11-accounts-ch09-t01
+        title: "Depreciation: meaning, need, causes, objectives and characteristics"
+        learning_outcomes:
+          - "Explain the causes of depreciation and why it must be charged before profit is calculated"
+      - id: isc-11-accounts-ch09-t02
+        title: "Straight Line Method and Written Down Value Method: calculation, advantages, limitations and differences"
+        learning_outcomes:
+          - "Calculate annual depreciation under SLM and WDV"
+          - "Compare the two methods and recommend one for a given type of asset"
+      - id: isc-11-accounts-ch09-t03
+        title: "Recording depreciation: charging to the asset account versus provision for depreciation (accumulated depreciation) account"
+        learning_outcomes:
+          - "Prepare the asset account and provision for depreciation account over several years"
+      - id: isc-11-accounts-ch09-t04
+        title: "Purchase and sale of assets, with and without an asset disposal account"
+        learning_outcomes:
+          - "Calculate and record profit or loss on sale of an asset part-way through the year under SLM or WDV"
+          - "Prepare an asset disposal account"
+    removed_topics:
+      - "Questions on change of method from SLM to WDV or vice versa"
+    literature_texts: []
+  - id: isc-11-accounts-ch10
+    number: 10
+    title: "Bills of Exchange"
+    unit: "6. Bills of Exchange"
+    topics:
+      - id: isc-11-accounts-ch10-t01
+        title: "Negotiable instruments: bill of exchange, promissory note (specimens and distinction) and cheque; advantages and disadvantages of bills"
+        learning_outcomes:
+          - "Distinguish a bill of exchange from a promissory note and identify the parties to each"
+          - "State the advantages and disadvantages of using bills of exchange in trade"
+      - id: isc-11-accounts-ch10-t02
+        title: "Basic terms: drawer, drawee, payee, endorser, endorsee, holder; bills on demand, after date and after sight; tenure, days of grace and due date"
+        learning_outcomes:
+          - "Calculate the due date of a bill including days of grace"
+      - id: isc-11-accounts-ch10-t03
+        title: "Treatment of a bill: retained till maturity, discounted, endorsed or sent for collection"
+        learning_outcomes:
+          - "Pass journal entries in the books of the drawer and drawee for each use of a bill"
+      - id: isc-11-accounts-ch10-t04
+        title: "Dishonour of a bill; noting charges and notary public"
+        learning_outcomes:
+          - "Record the dishonour of a bill with noting charges in the books of the drawer, drawee and endorsee"
+      - id: isc-11-accounts-ch10-t05
+        title: "Renewal and retirement of a bill; insolvency of the drawee/acceptor"
+        learning_outcomes:
+          - "Record the renewal of a bill with interest and the retirement of a bill under rebate"
+          - "Record the amount received from an insolvent acceptor's estate and the bad debt written off"
+          - "Prepare ledger accounts such as bills receivable, bills payable and the customer's account"
+    removed_topics:
+      - "Accommodation bills"
+      - "Recording in the books of the bank"
+    literature_texts: []
+  - id: isc-11-accounts-ch11
+    number: 11
+    title: "Capital and Revenue; Provisions and Reserves"
+    unit: "7. Final Accounts"
+    topics:
+      - id: isc-11-accounts-ch11-t01
+        title: "Capital and revenue expenditure; deferred revenue expenditure"
+        learning_outcomes:
+          - "Classify given items of expenditure as capital, revenue or deferred revenue with reasons"
+      - id: isc-11-accounts-ch11-t02
+        title: "Capital and revenue receipts; capital and revenue profits and losses"
+        learning_outcomes:
+          - "Distinguish capital from revenue receipts, profits and losses using examples"
+      - id: isc-11-accounts-ch11-t03
+        title: "Provisions and reserves: meaning, importance and differences"
+        learning_outcomes:
+          - "Distinguish a provision from a reserve with examples"
+      - id: isc-11-accounts-ch11-t04
+        title: "Types of reserves: revenue, capital, general, specific and secret reserves"
+        learning_outcomes:
+          - "Explain each type of reserve and how it is created"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-accounts-ch12
+    number: 12
+    title: "Final Accounts of a Sole Trader without Adjustments"
+    unit: "7. Final Accounts"
+    topics:
+      - id: isc-11-accounts-ch12-t01
+        title: "Financial statements: meaning, objectives and importance"
+        learning_outcomes:
+          - "Explain the purpose of the trading account, profit and loss account and balance sheet"
+      - id: isc-11-accounts-ch12-t02
+        title: "Trading Account: gross profit or gross loss; cost of goods sold and adjusted purchases"
+        learning_outcomes:
+          - "Prepare a trading account from a trial balance and calculate gross profit"
+          - "Calculate cost of goods sold, including when purchases are adjusted for closing stock"
+      - id: isc-11-accounts-ch12-t03
+        title: "Profit and Loss Account: net profit and operating profit"
+        learning_outcomes:
+          - "Prepare a profit and loss account and calculate net profit"
+          - "Calculate operating profit by excluding non-operating items"
+      - id: isc-11-accounts-ch12-t04
+        title: "Balance Sheet (horizontal format) and marshalling: order of permanence and order of liquidity"
+        learning_outcomes:
+          - "Prepare a balance sheet from a trial balance in horizontal form"
+          - "Arrange assets and liabilities in order of liquidity and in order of permanence"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-accounts-ch13
+    number: 13
+    title: "Final Accounts with Adjustments"
+    unit: "7. Final Accounts"
+    topics:
+      - id: isc-11-accounts-ch13-t01
+        title: "Closing stock, outstanding and prepaid expenses, accrued income and income received in advance"
+        learning_outcomes:
+          - "Show the two-way effect of each adjustment in the final accounts"
+          - "Pass the adjusting journal entry for each item"
+      - id: isc-11-accounts-ch13-t02
+        title: "Depreciation, bad debts, provision for doubtful debts and provision for discount on debtors"
+        learning_outcomes:
+          - "Calculate the new provision for doubtful debts and discount on debtors and show their treatment in the final accounts"
+          - "Apply the rule that, when no new rate is given, the same percentage applies to closing debtors"
+      - id: isc-11-accounts-ch13-t03
+        title: "Manager's commission on net profit before and after charging the commission"
+        learning_outcomes:
+          - "Calculate manager's commission on both bases and show it in the final accounts"
+      - id: isc-11-accounts-ch13-t04
+        title: "Goods distributed as free samples, goods taken by the owner and abnormal loss of goods"
+        learning_outcomes:
+          - "Record goods withdrawn, free samples and abnormal loss (insured and uninsured) in the final accounts"
+      - id: isc-11-accounts-ch13-t05
+        title: "Preparing complete final accounts with several adjustments; adjusting, closing and transfer entries"
+        learning_outcomes:
+          - "Prepare the trading account, profit and loss account and balance sheet of a sole trader from a trial balance with five or six adjustments"
+    removed_topics:
+      - "Practical problems on preparing a provision for doubtful debts account"
+    literature_texts: []
+  - id: isc-11-accounts-ch14
+    number: 14
+    title: "Rectification of Errors"
+    unit: "8. Rectification of Errors"
+    topics:
+      - id: isc-11-accounts-ch14-t01
+        title: "Types of errors: omission, commission, principle and compensating errors"
+        learning_outcomes:
+          - "Classify given errors by type and state whether each affects the agreement of the trial balance"
+      - id: isc-11-accounts-ch14-t02
+        title: "Rectification before and after preparing the trial balance; use of the suspense account"
+        learning_outcomes:
+          - "Pass rectifying entries for one-sided and two-sided errors, using a suspense account where needed"
+      - id: isc-11-accounts-ch14-t03
+        title: "Preparing the suspense account"
+        learning_outcomes:
+          - "Prepare a suspense account and find the original difference in the trial balance"
+      - id: isc-11-accounts-ch14-t04
+        title: "Rectification after preparing final accounts through the Profit and Loss Adjustment Account"
+        learning_outcomes:
+          - "Rectify errors in the next period using a profit and loss adjustment account"
+          - "Calculate the effect of errors on the net profit already reported"
+    removed_topics:
+      - "Redrafting the balance sheet after rectification"
+    literature_texts: []
+  - id: isc-11-accounts-ch15
+    number: 15
+    title: "Accounting for Not-for-profit Organisations"
+    unit: "9. Accounting for Not-for-profit Organisations"
+    topics:
+      - id: isc-11-accounts-ch15-t01
+        title: "Not-for-profit organisations: meaning, objectives, need for accounts and books maintained"
+        learning_outcomes:
+          - "Explain how the accounts of a club or society differ in purpose from those of a trading business"
+      - id: isc-11-accounts-ch15-t02
+        title: "Receipts and Payments Account: features and comparison with the cash book; Income and Expenditure Account compared with Profit and Loss Account"
+        learning_outcomes:
+          - "Distinguish a receipts and payments account from an income and expenditure account"
+          - "Compare an income and expenditure account with a profit and loss account"
+      - id: isc-11-accounts-ch15-t03
+        title: "Treatment of specific items: subscriptions, entrance fees, life membership fees, legacies, donations and grants"
+        learning_outcomes:
+          - "Capitalise entrance fees, life membership fees, legacies and special donations and grants as required"
+          - "Calculate subscriptions income for the year, adjusting for amounts outstanding and received in advance"
+      - id: isc-11-accounts-ch15-t04
+        title: "Preparing the Income and Expenditure Account and Balance Sheet from a Receipts and Payments Account and additional information"
+        learning_outcomes:
+          - "Prepare the opening statement of affairs to find the capital fund"
+          - "Prepare an income and expenditure account and closing balance sheet from given information"
+    removed_topics:
+      - "Accounts of incidental activities such as a restaurant"
+      - "Preparing only a Receipts and Payments Account, or an Income and Expenditure Account and Balance Sheet, from incomplete records"
+    literature_texts: []
+  - id: isc-11-accounts-ch16
+    number: 16
+    title: "Computerised Accounting System"
+    unit: "10. Computerised Accounting System (CAS)"
+    topics:
+      - id: isc-11-accounts-ch16-t01
+        title: "Computerised accounting: meaning, components and salient features"
+        learning_outcomes:
+          - "Name the components of a computerised accounting system and describe their roles"
+      - id: isc-11-accounts-ch16-t02
+        title: "Advantages and limitations of CAS"
+        learning_outcomes:
+          - "Compare manual and computerised accounting in terms of speed, accuracy, cost and security"
+      - id: isc-11-accounts-ch16-t03
+        title: "Accounting Information System: meaning and role"
+        learning_outcomes:
+          - "Explain how an accounting information system collects, processes and reports data for decision-making"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

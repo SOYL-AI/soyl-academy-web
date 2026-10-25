@@ -1,0 +1,410 @@
+# ICSE Class 9 Biology (Science Paper 3) - year one of the ICSE 2028 course.
+# Source: platform/catalog/sources/cisce.md#icse-2028-biology (CLASS IX section only). Topic wording is our own summary of the official scope.
+subject_id: icse-9-biology
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2028-biology, icse-2028-regulations]
+exam_notes: >-
+  There is no board examination in Class IX: the Class IX final examination is conducted internally by the school on the
+  Class IX portion (ICSE 2028 Regulations), and promotion to Class X depends on cumulative achievement through the year.
+  The syllabus prescribes one theory paper of 2 hours, 80 marks, plus internal assessment of practical work 20 marks;
+  school examinations usually follow this pattern, and labelled diagrams are central.
+  Practical work (assessed internally, not in the theory chapters): onion peel and human cheek cell under the microscope;
+  parts of a cross-pollinated flower such as Hibiscus; germinating bean seed and maize grain; food tests for sugar, starch,
+  protein and fat; identification of specimens of the non-chordate phyla and the five chordate classes; lung and skin from
+  specimens, models and charts; the bell jar model of the mechanism of breathing compared with human lungs; and visits to
+  local workshops, markets or treatment and composting sites to report on waste disposal.
+  No Class IX specimen paper was released for Biology.
+  CISCE publishes a topic list in seven sections, not textbook chapters: SOYL groups it into 14 teachable chapters in
+  syllabus order. No unit-wise marks weightage is published for ICSE Biology.
+units:
+  - { name: "1. Basic Biology", marks: null }
+  - { name: "2. Flowering Plants", marks: null }
+  - { name: "3. Plant Physiology", marks: null }
+  - { name: "4. Diversity in Animal Kingdom", marks: null }
+  - { name: "5. Economic Importance of Bacteria and Fungi", marks: null }
+  - { name: "6. Human Anatomy and Physiology", marks: null }
+  - { name: "7. Health and Hygiene", marks: null }
+chapters:
+  - id: icse-9-biology-ch01
+    number: 1
+    title: "The Cell: A Unit of Life"
+    unit: "1. Basic Biology"
+    topics:
+      - id: icse-9-biology-ch01-t01
+        title: "The cell as the unit of life; cell theory; protoplasm and cytoplasm"
+        learning_outcomes:
+          - "State the main points of the cell theory"
+          - "Distinguish protoplasm from cytoplasm"
+      - id: icse-9-biology-ch01-t02
+        title: "Cell boundaries: cell wall and cell membrane"
+        learning_outcomes:
+          - "Compare the cell wall and the cell membrane in composition, permeability and function"
+      - id: icse-9-biology-ch01-t03
+        title: "Nucleus and nucleolus; mitochondria, endoplasmic reticulum, ribosomes and Golgi bodies"
+        learning_outcomes:
+          - "State the function of each of these organelles"
+          - "Explain why mitochondria are called the powerhouses of the cell"
+      - id: icse-9-biology-ch01-t04
+        title: "Plastids, lysosomes, centrosome and vacuoles"
+        learning_outcomes:
+          - "Distinguish chloroplasts, chromoplasts and leucoplasts by function"
+          - "State the functions of lysosomes, the centrosome and vacuoles"
+      - id: icse-9-biology-ch01-t05
+        title: "Prokaryotic and eukaryotic cells"
+        learning_outcomes:
+          - "List the major differences between prokaryotic and eukaryotic cells with examples"
+      - id: icse-9-biology-ch01-t06
+        title: "Plant cell versus animal cell: cell wall, centrosome, vacuoles and plastids"
+        learning_outcomes:
+          - "Draw labelled diagrams of a generalised plant cell and animal cell"
+          - "Tabulate the differences between plant and animal cells"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-biology-ch02
+    number: 2
+    title: "Tissues"
+    unit: "1. Basic Biology"
+    topics:
+      - id: icse-9-biology-ch02-t01
+        title: "Plant tissues: meristematic tissues - location, structure and function"
+        learning_outcomes:
+          - "Classify meristems as apical, intercalary and lateral and state where each is found"
+      - id: icse-9-biology-ch02-t02
+        title: "Plant tissues: permanent tissues - simple (parenchyma, collenchyma, sclerenchyma) and complex (xylem, phloem)"
+        learning_outcomes:
+          - "Compare the structure and function of parenchyma, collenchyma and sclerenchyma"
+          - "State the components and functions of xylem and phloem"
+      - id: icse-9-biology-ch02-t03
+        title: "Animal tissues: epithelial and connective tissues"
+        learning_outcomes:
+          - "Identify types of epithelium and connective tissue with their location and function"
+      - id: icse-9-biology-ch02-t04
+        title: "Animal tissues: muscular and nervous tissues"
+        learning_outcomes:
+          - "Compare striated, unstriated and cardiac muscle"
+          - "Draw a labelled diagram of a neuron"
+      - id: icse-9-biology-ch02-t05
+        title: "Role of tissues in physiological processes in plants and animals"
+        learning_outcomes:
+          - "Relate the structure of a tissue to its role in processes such as transport, support and coordination"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-biology-ch03
+    number: 3
+    title: "The Flower"
+    unit: "2. Flowering Plants"
+    topics:
+      - id: icse-9-biology-ch03-t01
+        title: "Structure of a bisexual flower; complete and incomplete flowers"
+        learning_outcomes:
+          - "Draw and label the parts of a bisexual flower"
+          - "Distinguish complete from incomplete flowers"
+      - id: icse-9-biology-ch03-t02
+        title: "Essential whorls (androecium, gynoecium) and non-essential whorls (calyx, corolla): parts and functions"
+        learning_outcomes:
+          - "State the parts of the stamen and the pistil and their functions"
+          - "Explain the roles of sepals and petals"
+      - id: icse-9-biology-ch03-t03
+        title: "Inflorescence and placentation (meaning only)"
+        learning_outcomes:
+          - "Define inflorescence and placentation"
+    removed_topics:
+      - "Types of inflorescence and placentation (meaning only is required)"
+    literature_texts: []
+  - id: icse-9-biology-ch04
+    number: 4
+    title: "Pollination and Fertilisation"
+    unit: "2. Flowering Plants"
+    topics:
+      - id: icse-9-biology-ch04-t01
+        title: "Self-pollination and cross-pollination: explanation, advantages and disadvantages"
+        learning_outcomes:
+          - "Distinguish self-pollination from cross-pollination"
+          - "List advantages and disadvantages of each"
+      - id: icse-9-biology-ch04-t02
+        title: "Agents of pollination; features of flowers pollinated by insects, wind and water"
+        learning_outcomes:
+          - "Compare the features of insect-pollinated and wind-pollinated flowers"
+          - "Describe adaptations of water-pollinated flowers"
+      - id: icse-9-biology-ch04-t03
+        title: "How nature favours cross-pollination"
+        learning_outcomes:
+          - "Explain devices such as unisexuality, dichogamy and self-sterility that favour cross-pollination"
+      - id: icse-9-biology-ch04-t04
+        title: "Events from pollination to fertilisation: growth of the pollen tube and formation of the zygote in the embryo sac"
+        learning_outcomes:
+          - "Describe the sequence of events from germination of pollen to fusion of gametes"
+      - id: icse-9-biology-ch04-t05
+        title: "Double fertilisation and triple fusion; fruit and seed - definition and significance"
+        learning_outcomes:
+          - "Explain double fertilisation and triple fusion"
+          - "State which parts of the flower develop into the fruit and the seed"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-biology-ch05
+    number: 5
+    title: "Seeds: Structure and Germination"
+    unit: "3. Plant Physiology"
+    topics:
+      - id: icse-9-biology-ch05-t01
+        title: "Structure of a dicot seed (bean) and a monocot grain (maize)"
+        learning_outcomes:
+          - "Draw and label the external and internal structure of a bean seed and a maize grain"
+      - id: icse-9-biology-ch05-t02
+        title: "Differences between monocot and dicot seeds"
+        learning_outcomes:
+          - "Tabulate the differences between monocot and dicot seeds"
+      - id: icse-9-biology-ch05-t03
+        title: "Germination of bean and maize; hypogeal and epigeal germination"
+        learning_outcomes:
+          - "Describe the stages of germination of a bean seed and a maize grain"
+          - "Distinguish hypogeal from epigeal germination with examples"
+      - id: icse-9-biology-ch05-t04
+        title: "Conditions for seed germination and experiments to demonstrate them"
+        learning_outcomes:
+          - "Design an experiment to show that water, oxygen and a suitable temperature are needed for germination"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-biology-ch06
+    number: 6
+    title: "Respiration in Plants"
+    unit: "3. Plant Physiology"
+    topics:
+      - id: icse-9-biology-ch06-t01
+        title: "Outline of respiration: glycolysis and Krebs cycle and their significance"
+        learning_outcomes:
+          - "State where glycolysis and the Krebs cycle take place and what each produces"
+      - id: icse-9-biology-ch06-t02
+        title: "Aerobic and anaerobic respiration with chemical equations"
+        learning_outcomes:
+          - "Write equations for aerobic respiration and for anaerobic respiration in plants"
+          - "Compare aerobic and anaerobic respiration in energy released and end products"
+      - id: icse-9-biology-ch06-t03
+        title: "Gaseous exchange in plants and experiments to demonstrate it"
+        learning_outcomes:
+          - "Describe an experiment showing that germinating seeds give out carbon dioxide"
+      - id: icse-9-biology-ch06-t04
+        title: "Experiment showing heat production during respiration"
+        learning_outcomes:
+          - "Describe a thermos-flask experiment with germinating seeds and explain the need for a control"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-biology-ch07
+    number: 7
+    title: "Diversity in the Animal Kingdom"
+    unit: "4. Diversity in Animal Kingdom"
+    topics:
+      - id: icse-9-biology-ch07-t01
+        title: "Kingdom Animalia: non-chordates and chordates and the basis of their grouping"
+        learning_outcomes:
+          - "List the features that distinguish chordates from non-chordates"
+      - id: icse-9-biology-ch07-t02
+        title: "Porifera and Coelenterata: characteristic features and examples"
+        learning_outcomes:
+          - "State the key features of sponges and coelenterates and identify examples"
+      - id: icse-9-biology-ch07-t03
+        title: "Platyhelminthes, Nemathelminthes and Annelida: characteristic features and examples"
+        learning_outcomes:
+          - "Compare flatworms, roundworms and segmented worms by body form and body cavity"
+      - id: icse-9-biology-ch07-t04
+        title: "Arthropoda, Mollusca and Echinodermata: characteristic features and examples"
+        learning_outcomes:
+          - "Classify given animals into Arthropoda, Mollusca or Echinodermata with reasons"
+      - id: icse-9-biology-ch07-t05
+        title: "Chordates: Pisces and Amphibia"
+        learning_outcomes:
+          - "State the distinguishing features of fishes and amphibians with examples"
+      - id: icse-9-biology-ch07-t06
+        title: "Chordates: Reptilia, Aves and Mammalia"
+        learning_outcomes:
+          - "State the distinguishing features of reptiles, birds and mammals with examples"
+          - "Classify a given vertebrate into its class with reasons"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-biology-ch08
+    number: 8
+    title: "Economic Importance of Bacteria and Fungi"
+    unit: "5. Economic Importance of Bacteria and Fungi"
+    topics:
+      - id: icse-9-biology-ch08-t01
+        title: "Useful bacteria in medicine: antibiotics, serums and vaccines"
+        learning_outcomes:
+          - "Explain how bacteria are used to produce antibiotics, serums and vaccines"
+      - id: icse-9-biology-ch08-t02
+        title: "Bacteria in agriculture: nitrogen cycle - nitrogen-fixing, nitrifying and denitrifying bacteria"
+        learning_outcomes:
+          - "Draw and explain the nitrogen cycle showing the role of each group of bacteria"
+      - id: icse-9-biology-ch08-t03
+        title: "Bacteria in industry: curing of tea and tanning of leather"
+        learning_outcomes:
+          - "Describe the role of bacteria in curing tea leaves and tanning leather"
+      - id: icse-9-biology-ch08-t04
+        title: "Harmful bacteria: food spoilage, diseases of plants and animals, bio-weapons"
+        learning_outcomes:
+          - "Give examples of harm caused by bacteria and suggest ways to prevent food spoilage"
+      - id: icse-9-biology-ch08-t05
+        title: "Useful fungi: breweries, bakeries, cheese processing and mushroom cultivation"
+        learning_outcomes:
+          - "Explain the role of yeast in baking and brewing"
+          - "Name other uses of fungi such as cheese making and edible mushrooms"
+    removed_topics:
+      - "Industrial processes of manufacture using fungi"
+    literature_texts: []
+  - id: icse-9-biology-ch09
+    number: 9
+    title: "Nutrition: Food and Balanced Diet"
+    unit: "6. Human Anatomy and Physiology"
+    topics:
+      - id: icse-9-biology-ch09-t01
+        title: "Classes of food: functions of carbohydrates, fats, proteins and water"
+        learning_outcomes:
+          - "State the functions and common sources of carbohydrates, fats and proteins"
+      - id: icse-9-biology-ch09-t02
+        title: "Mineral salts: calcium, iodine, iron and sodium"
+        learning_outcomes:
+          - "State the function of each mineral and the effect of its deficiency"
+      - id: icse-9-biology-ch09-t03
+        title: "Vitamins: sources, functions and deficiency diseases"
+        learning_outcomes:
+          - "Match each vitamin with its source, function and deficiency disease"
+      - id: icse-9-biology-ch09-t04
+        title: "Balanced diet and the role of cellulose (roughage)"
+        learning_outcomes:
+          - "Explain the meaning and importance of a balanced diet"
+          - "Explain why cellulose is useful in the diet though humans cannot digest it"
+      - id: icse-9-biology-ch09-t05
+        title: "Malnutrition: causes, symptoms and prevention of kwashiorkor and marasmus"
+        learning_outcomes:
+          - "Distinguish kwashiorkor from marasmus by cause and symptoms"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-biology-ch10
+    number: 10
+    title: "Teeth and the Digestive System"
+    unit: "6. Human Anatomy and Physiology"
+    topics:
+      - id: icse-9-biology-ch10-t01
+        title: "Structure of a tooth; types of teeth and their functions; dental formula of an adult"
+        learning_outcomes:
+          - "Draw and label the structure of a tooth"
+          - "Write the adult dental formula and state the function of each type of tooth"
+      - id: icse-9-biology-ch10-t02
+        title: "Organs of the alimentary canal and the digestive glands"
+        learning_outcomes:
+          - "Draw and label the human digestive system"
+          - "Name the digestive glands and their secretions"
+      - id: icse-9-biology-ch10-t03
+        title: "Digestive enzymes and their action in the mouth, stomach and small intestine"
+        learning_outcomes:
+          - "Tabulate the enzymes, their substrates and end products at each region"
+      - id: icse-9-biology-ch10-t04
+        title: "Absorption and assimilation of digested food"
+        learning_outcomes:
+          - "Explain how villi are adapted for absorption"
+          - "Describe how absorbed nutrients are assimilated"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-biology-ch11
+    number: 11
+    title: "Skeleton: Movement and Locomotion"
+    unit: "6. Human Anatomy and Physiology"
+    topics:
+      - id: icse-9-biology-ch11-t01
+        title: "Functions of the human skeleton"
+        learning_outcomes:
+          - "List the functions of the human skeleton"
+      - id: icse-9-biology-ch11-t02
+        title: "Axial and appendicular skeleton"
+        learning_outcomes:
+          - "Classify named bones as part of the axial or appendicular skeleton"
+      - id: icse-9-biology-ch11-t03
+        title: "Joints: immovable, slightly movable and freely movable (hinge, ball and socket, gliding, pivot) with locations"
+        learning_outcomes:
+          - "Give the location of each type of joint"
+          - "Compare the movement allowed by hinge, ball and socket, gliding and pivot joints"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-biology-ch12
+    number: 12
+    title: "The Skin"
+    unit: "6. Human Anatomy and Physiology"
+    topics:
+      - id: icse-9-biology-ch12-t01
+        title: "Structure of skin: epidermis and dermis and their parts; functions of skin"
+        learning_outcomes:
+          - "Draw and label a vertical section of human skin"
+          - "List the functions of the skin"
+      - id: icse-9-biology-ch12-t02
+        title: "Derivatives of the skin: sweat glands, sebaceous glands, hair, nails and mammary glands"
+        learning_outcomes:
+          - "State the function of each skin derivative"
+      - id: icse-9-biology-ch12-t03
+        title: "Heat regulation: vasodilation and vasoconstriction"
+        learning_outcomes:
+          - "Explain how the skin helps keep body temperature constant on hot and cold days"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-biology-ch13
+    number: 13
+    title: "Diseases and their Transmission"
+    unit: "7. Health and Hygiene"
+    topics:
+      - id: icse-9-biology-ch13-t01
+        title: "Communicable and non-communicable diseases; endemic, epidemic, pandemic and sporadic diseases"
+        learning_outcomes:
+          - "Classify diseases as communicable or non-communicable"
+          - "Distinguish endemic, epidemic, pandemic and sporadic occurrence with examples"
+      - id: icse-9-biology-ch13-t02
+        title: "Modes of transmission: air, water and vectors (housefly, mosquito, cockroach)"
+        learning_outcomes:
+          - "Explain how diseases spread through air, water and insect vectors"
+      - id: icse-9-biology-ch13-t03
+        title: "Bacterial diseases: cholera, typhoid and tuberculosis"
+        learning_outcomes:
+          - "State the symptoms and control measures of cholera, typhoid and tuberculosis"
+      - id: icse-9-biology-ch13-t04
+        title: "Viral diseases: AIDS, chicken pox and hepatitis"
+        learning_outcomes:
+          - "State the symptoms, mode of spread and control measures of AIDS, chicken pox and hepatitis"
+      - id: icse-9-biology-ch13-t05
+        title: "Protozoan diseases: malaria, amoebic dysentery and sleeping sickness"
+        learning_outcomes:
+          - "State the symptoms and control measures of the prescribed protozoan diseases"
+      - id: icse-9-biology-ch13-t06
+        title: "Helminthic diseases: ascariasis, taeniasis and filariasis"
+        learning_outcomes:
+          - "State the symptoms and control measures of the prescribed helminthic diseases"
+    removed_topics:
+      - "Scientific names of causative agents"
+    literature_texts: []
+  - id: icse-9-biology-ch14
+    number: 14
+    title: "Aids to Health and Health Organisations"
+    unit: "7. Health and Hygiene"
+    topics:
+      - id: icse-9-biology-ch14-t01
+        title: "Vaccination and immunisation"
+        learning_outcomes:
+          - "Explain how a vaccine produces immunity"
+          - "Distinguish vaccination from immunisation"
+      - id: icse-9-biology-ch14-t02
+        title: "Antitoxins, serums and antibiotics"
+        learning_outcomes:
+          - "Explain when an antitoxin or serum is given instead of a vaccine"
+          - "State what antibiotics act against and why they should be used carefully"
+      - id: icse-9-biology-ch14-t03
+        title: "Antiseptics and disinfectants"
+        learning_outcomes:
+          - "Distinguish antiseptics from disinfectants with examples"
+      - id: icse-9-biology-ch14-t04
+        title: "The body's local defence system and its merits"
+        learning_outcomes:
+          - "Describe the first-line defences of the body such as skin, mucus and tears"
+      - id: icse-9-biology-ch14-t05
+        title: "Health organisations: major activities of the Red Cross and WHO"
+        learning_outcomes:
+          - "List the major activities of the Red Cross and the World Health Organization"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

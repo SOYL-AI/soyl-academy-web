@@ -1,0 +1,285 @@
+# ICSE Class 7 Sanskrit (Third Language) - CISCE Sanskrit Curriculum, Classes V-VIII, Class VII part only.
+# Source: platform/catalog/sources/cisce.md#cisce-sanskrit-v-viii (Class VII, Themes 1-2; decoded from Kruti Dev).
+# Topic wording is our own summary of the official learning outcomes and recommended content.
+subject_id: icse-7-sanskrit
+academic_year: "2026-27"
+source_status: verified
+sources: [cisce-sanskrit-v-viii]
+exam_notes: >-
+  No board examination in Class 7. Sanskrit is offered as a third language, and CISCE publishes a separate recommended
+  curriculum for it (Sanskrit, Classes V-VIII, RDCD) with learning outcomes per class; it prescribes no textbooks, no
+  paper pattern and no marks weightage. Schools choose their own textbooks and set their own unit tests and term
+  examinations, with continuous assessment through recitation, conversation, projects and written work. For Class VII it
+  sets out two themes - Listening, Speaking and Reading, and Language and Writing - each with learning outcomes,
+  recommended content, teaching processes and resources; it names no prescribed texts, so this file has no literature
+  texts. SOYL grouped the themes into 10 teachable chapters in curriculum order. The source document is typeset in the
+  legacy Kruti Dev font; SOYL decoded it to Unicode Devanagari before use. Learning outcomes are written in simple
+  Sanskrit. The Class VII learning-outcome list names the i-stem masculine nouns (muni, kapi, hari) as a-stem; the
+  content table correctly lists them as i-stem, and SOYL follows the content table.
+units:
+  - { name: "थीम 1: श्रवणं भाषणं पठनं च (Theme 1: Listening, Speaking and Reading)", marks: null }
+  - { name: "थीम 2: भाषा-लेखनम् (Theme 2: Language and Writing)", marks: null }
+chapters:
+  - id: icse-7-sanskrit-ch01
+    number: 1
+    title: "सुभाषितानि: श्लोकगायनं मूल्यबोधः च"
+    title_en: "Subhashitas: reciting shlokas and understanding their values"
+    unit: "थीम 1: श्रवणं भाषणं पठनं च (Theme 1: Listening, Speaking and Reading)"
+    topics:
+      - id: icse-7-sanskrit-ch01-t01
+        title: "नैतिकमूल्याधारिताः सरलश्लोकाः: सस्वरपठनं गायनं च"
+        title_en: "Simple shlokas on moral values: recitation and singing"
+        learning_outcomes:
+          - "श्लोकं शुद्धोच्चारणेन सस्वरं च पठति"
+      - id: icse-7-sanskrit-ch01-t02
+        title: "श्लोकेषु कठिनशब्दानाम् अर्थः"
+        title_en: "Meanings of difficult words in shlokas"
+        learning_outcomes:
+          - "श्लोकस्य कठिनशब्दानाम् अर्थं वदति"
+          - "श्लोकस्य सरलार्थं मातृभाषया संस्कृतेन वा वदति"
+      - id: icse-7-sanskrit-ch01-t03
+        title: "श्लोकेषु निहितानि मूल्यानि"
+        title_en: "Values contained in the shlokas"
+        learning_outcomes:
+          - "श्लोके निहितं मूल्यं परिचित्य जीवने तस्य उपयोगं वर्णयति"
+      - id: icse-7-sanskrit-ch01-t04
+        title: "श्लोकानां कण्ठस्थीकरणं कक्षायां प्रस्तुतिः च"
+        title_en: "Memorising shlokas and presenting them in class"
+        learning_outcomes:
+          - "कतिपयश्लोकान् कण्ठस्थीकृत्य कक्षायां प्रस्तौति"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-sanskrit-ch02
+    number: 2
+    title: "संस्कृतसम्भाषणम्: सरलवार्तालापः"
+    title_en: "Spoken Sanskrit: simple conversation"
+    unit: "थीम 1: श्रवणं भाषणं पठनं च (Theme 1: Listening, Speaking and Reading)"
+    topics:
+      - id: icse-7-sanskrit-ch02-t01
+        title: "संवादाधारितपाठाः"
+        title_en: "Dialogue-based lessons"
+        learning_outcomes:
+          - "संवादं पठित्वा पात्राणां भूमिकां निर्वहन् वदति"
+      - id: icse-7-sanskrit-ch02-t02
+        title: "कक्षायां सरलसंस्कृतवाक्यानां प्रयोगः"
+        title_en: "Using simple Sanskrit sentences in class"
+        learning_outcomes:
+          - "कक्षायाः दैनिककार्येषु लघुसंस्कृतवाक्यानि प्रयुङ्क्ते"
+      - id: icse-7-sanskrit-ch02-t03
+        title: "प्रश्नोत्तरमाध्यमेन वार्तालापः"
+        title_en: "Conversation through questions and answers"
+        learning_outcomes:
+          - "सरलप्रश्नान् (यथा - किम् सर्वे छात्राः उपस्थिताः?) पृच्छति उत्तरति च"
+      - id: icse-7-sanskrit-ch02-t04
+        title: "आदेशनिर्देशवाक्यानि"
+        title_en: "Sentences giving instructions and commands"
+        learning_outcomes:
+          - "लघुनिर्देशवाक्यानि (यथा - पञ्च छात्राः अत्र आगच्छन्तु) अवगम्य तदनुसारं क्रियां करोति"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-sanskrit-ch03
+    number: 3
+    title: "दैनिकव्यवहारः विषयपरिचर्चा संस्कृतसमाचाराः च"
+    title_en: "Daily-life sentences, topic discussions and Sanskrit news"
+    unit: "थीम 1: श्रवणं भाषणं पठनं च (Theme 1: Listening, Speaking and Reading)"
+    topics:
+      - id: icse-7-sanskrit-ch03-t01
+        title: "दैनिकगतिविधिषु वाक्यरचना (कक्षा, परिवारः, पुस्तकालयः, मेला, जन्मदिनम्, क्रीडाक्षेत्रम्, उद्यानम्, यात्रा)"
+        title_en: "Sentences on daily activities: class, family, library, fair, birthday, playground, garden, travel"
+        learning_outcomes:
+          - "चित्रं दृष्ट्वा दैनिकगतिविधिविषये लघुवाक्यानि रचयति"
+          - "नूतनशब्दान् ज्ञात्वा वाक्येषु प्रयुङ्क्ते"
+      - id: icse-7-sanskrit-ch03-t02
+        title: "विविधविषयाः: पर्वाणि, ऋतवः, विद्यालयः, स्वास्थ्यम्, प्रकृतिः, क्रीडा, मानवीयमूल्यानि, समावेशनम्"
+        title_en: "Topics: festivals, seasons, school, health, nature, sport, human values, inclusion"
+        learning_outcomes:
+          - "परिचितविषये परिचर्चायां लघुवाक्यैः स्वविचारं प्रकटयति"
+      - id: icse-7-sanskrit-ch03-t03
+        title: "दूरदर्शने आकाशवाण्यां च संस्कृतसमाचाराणां श्रवणम्"
+        title_en: "Listening to Sanskrit news on television and radio"
+        learning_outcomes:
+          - "संस्कृतसमाचारं श्रुत्वा मुख्यविषयं वदति"
+      - id: icse-7-sanskrit-ch03-t04
+        title: "संस्कृतपत्रिकाणां सरलपाठानां च पठनम्"
+        title_en: "Reading Sanskrit magazines and simple texts"
+        learning_outcomes:
+          - "सरलसंस्कृतपाठं पठित्वा तस्य सारं गृह्णाति"
+          - "पाठाधारितप्रश्नानाम् उत्तराणि मौखिकरूपेण ददाति"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-sanskrit-ch04
+    number: 4
+    title: "संख्यावाचकशब्दाः (1-50)"
+    title_en: "Number words (1-50)"
+    unit: "थीम 1: श्रवणं भाषणं पठनं च (Theme 1: Listening, Speaking and Reading)"
+    topics:
+      - id: icse-7-sanskrit-ch04-t01
+        title: "संस्कृतसंख्याः 1-25"
+        title_en: "Sanskrit numbers 1-25"
+        learning_outcomes:
+          - "एकतः पञ्चविंशतिपर्यन्तं संख्याः संस्कृतेन वदति लिखति च"
+      - id: icse-7-sanskrit-ch04-t02
+        title: "संस्कृतसंख्याः 26-50"
+        title_en: "Sanskrit numbers 26-50"
+        learning_outcomes:
+          - "षड्विंशतितः पञ्चाशत्पर्यन्तं संख्याः संस्कृतेन वदति लिखति च"
+      - id: icse-7-sanskrit-ch04-t03
+        title: "व्यवहारे संख्यानां प्रयोगः"
+        title_en: "Using numbers in daily life"
+        learning_outcomes:
+          - "वस्तूनि गणयित्वा संख्यां संस्कृतेन वदति (यथा - अत्र कति पुस्तकानि सन्ति?)"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-sanskrit-ch05
+    number: 5
+    title: "कारकाणि विभक्तयः च"
+    title_en: "Cases and case endings"
+    unit: "थीम 2: भाषा-लेखनम् (Theme 2: Language and Writing)"
+    topics:
+      - id: icse-7-sanskrit-ch05-t01
+        title: "कारकपरिचयः: विभक्तिचिह्नानि"
+        title_en: "Introduction to cases and case markers"
+        learning_outcomes:
+          - "सप्त विभक्तीनां नामानि चिह्नानि च वदति"
+      - id: icse-7-sanskrit-ch05-t02
+        title: "मूलशब्दे विभक्तियोजनम्"
+        title_en: "Adding case endings to a base word"
+        learning_outcomes:
+          - "मूलशब्दे विभक्तिं योजयित्वा रूपं लिखति (यथा - नदी, नद्यौ, नद्यः)"
+      - id: icse-7-sanskrit-ch05-t03
+        title: "विभक्त्याधारितवाक्यरचना"
+        title_en: "Sentences using different cases"
+        learning_outcomes:
+          - "चित्राधारेण उचितविभक्तियुक्तं वाक्यं रचयति (यथा - सः कलमेन लिखति)"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-sanskrit-ch06
+    number: 6
+    title: "धातुरूपाणि: लट्लकारः लृट्लकारः च"
+    title_en: "Verb forms: present tense (lat) and future tense (lrit)"
+    unit: "थीम 2: भाषा-लेखनम् (Theme 2: Language and Writing)"
+    topics:
+      - id: icse-7-sanskrit-ch06-t01
+        title: "धातुपरिचयः (पठ्, गम्, चल्, वद्, हस्, नम्, खाद्)"
+        title_en: "Introduction to common verb roots"
+        learning_outcomes:
+          - "सामान्यधातूनाम् अर्थं वदति"
+      - id: icse-7-sanskrit-ch06-t02
+        title: "लट्लकारः (वर्तमानकालः)"
+        title_en: "Present tense (lat lakara)"
+        learning_outcomes:
+          - "लट्लकारे धातुरूपाणि त्रिषु पुरुषेषु त्रिषु वचनेषु च लिखति"
+          - "लट्लकारस्य वाक्यानि रचयति"
+      - id: icse-7-sanskrit-ch06-t03
+        title: "लृट्लकारः (भविष्यत्कालः)"
+        title_en: "Future tense (lrit lakara)"
+        learning_outcomes:
+          - "लृट्लकारे धातुरूपाणि लिखति"
+      - id: icse-7-sanskrit-ch06-t04
+        title: "लट्लकारात् लृट्लकारे परिवर्तनम्"
+        title_en: "Changing present-tense sentences into the future tense"
+        learning_outcomes:
+          - "लट्लकारस्य वाक्यं लृट्लकारे परिवर्तयति (यथा - सः पठति, सः पठिष्यति)"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-sanskrit-ch07
+    number: 7
+    title: "शब्दरूपाणि: इकारान्ताः ईकारान्ताः च"
+    title_en: "Noun forms: i-stem and i-long-stem nouns"
+    unit: "थीम 2: भाषा-लेखनम् (Theme 2: Language and Writing)"
+    topics:
+      - id: icse-7-sanskrit-ch07-t01
+        title: "इकारान्तपुंलिङ्गशब्दाः (मुनि, कपि, हरि)"
+        title_en: "i-stem masculine nouns (muni, kapi, hari)"
+        learning_outcomes:
+          - "मुनि-शब्दस्य सर्वासु विभक्तिषु रूपाणि लिखति"
+          - "कपि-हरि-शब्दयोः रूपाणि वाक्येषु प्रयुङ्क्ते"
+      - id: icse-7-sanskrit-ch07-t02
+        title: "ईकारान्तस्त्रीलिङ्गशब्दः (नदी)"
+        title_en: "i-long-stem feminine noun (nadi)"
+        learning_outcomes:
+          - "नदी-शब्दस्य रूपाणि लिखति वाक्येषु च प्रयुङ्क्ते"
+      - id: icse-7-sanskrit-ch07-t03
+        title: "इकारान्तनपुंसकलिङ्गशब्दः (दधि)"
+        title_en: "i-stem neuter noun (dadhi)"
+        learning_outcomes:
+          - "दधि-शब्दस्य प्रमुखरूपाणि लिखति"
+      - id: icse-7-sanskrit-ch07-t04
+        title: "पूर्वपठितशब्दरूपाणां पुनरावृत्तिः"
+        title_en: "Revision of noun forms learnt earlier"
+        learning_outcomes:
+          - "पूर्वपठितान् अकारान्तशब्दान् लयबद्धं पठति लिखति च"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-sanskrit-ch08
+    number: 8
+    title: "अव्ययानि"
+    title_en: "Indeclinables"
+    unit: "थीम 2: भाषा-लेखनम् (Theme 2: Language and Writing)"
+    topics:
+      - id: icse-7-sanskrit-ch08-t01
+        title: "अव्ययशब्दानां परिचयः (च, कुत्र, अत्र, तत्र, इह, इतः, ततः, अपि)"
+        title_en: "Introduction to indeclinables"
+        learning_outcomes:
+          - "अव्ययानाम् अर्थं वदति"
+      - id: icse-7-sanskrit-ch08-t02
+        title: "वाक्येषु अव्ययप्रयोगः"
+        title_en: "Using indeclinables in sentences"
+        learning_outcomes:
+          - "अव्ययशब्दान् उचितस्थाने प्रयुज्य वाक्यानि रचयति"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-sanskrit-ch09
+    number: 9
+    title: "स्वरसन्धिः: दीर्घसन्धिः गुणसन्धिः च"
+    title_en: "Vowel sandhi: dirgha and guna"
+    unit: "थीम 2: भाषा-लेखनम् (Theme 2: Language and Writing)"
+    topics:
+      - id: icse-7-sanskrit-ch09-t01
+        title: "दीर्घसन्धिः (विद्या + आलयः = विद्यालयः)"
+        title_en: "Dirgha sandhi"
+        learning_outcomes:
+          - "दीर्घसन्धेः नियमं ज्ञात्वा पदानि योजयति"
+          - "सन्धियुक्तपदस्य विच्छेदं करोति"
+      - id: icse-7-sanskrit-ch09-t02
+        title: "गुणसन्धिः (सुर + ईशः = सुरेशः)"
+        title_en: "Guna sandhi"
+        learning_outcomes:
+          - "गुणसन्धेः नियमं ज्ञात्वा पदानि योजयति"
+          - "सन्धियुक्तपदस्य विच्छेदं करोति"
+      - id: icse-7-sanskrit-ch09-t03
+        title: "दीर्घगुणसन्ध्योः भेदः"
+        title_en: "Telling dirgha and guna sandhi apart"
+        learning_outcomes:
+          - "दत्तपदे कः सन्धिः इति निर्दिशति"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-sanskrit-ch10
+    number: 10
+    title: "चित्राधारितवाक्यरचना प्रश्नोत्तरलेखनं च"
+    title_en: "Picture-based sentence writing and written answers"
+    unit: "थीम 2: भाषा-लेखनम् (Theme 2: Language and Writing)"
+    topics:
+      - id: icse-7-sanskrit-ch10-t01
+        title: "मूल्यपरकचित्राधारितवाक्यरचना (उद्यानम्, पुस्तकालयः, विद्यालयः, भोजनालयः)"
+        title_en: "Writing sentences on value-based pictures"
+        learning_outcomes:
+          - "शब्दमञ्जूषायाः सहायतया चित्रविषये पञ्च वाक्यानि लिखति"
+      - id: icse-7-sanskrit-ch10-t02
+        title: "संस्कृतवर्तनी: शुद्धलेखनम्"
+        title_en: "Sanskrit spelling: writing correctly"
+        learning_outcomes:
+          - "संस्कृतशब्दान् शुद्धवर्तन्या लिखति"
+      - id: icse-7-sanskrit-ch10-t03
+        title: "कथायाः घटनाक्रमसंयोजनम्"
+        title_en: "Putting the events of a story in order"
+        learning_outcomes:
+          - "रुचिकरकथां पठित्वा घटनाः क्रमेण योजयति"
+      - id: icse-7-sanskrit-ch10-t04
+        title: "पाठाधारितप्रश्नानाम् उत्तरलेखनम्"
+        title_en: "Writing answers to questions on a lesson"
+        learning_outcomes:
+          - "पाठसम्बद्धप्रश्नानाम् उत्तराणि संस्कृतेन लिखति"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

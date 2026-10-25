@@ -1,0 +1,376 @@
+# ICSE Class 8 Chemistry - CISCE Curriculum for Upper Primary Classes VI-VIII (2016), Class VIII part only.
+# Source: platform/catalog/sources/cisce.md#cisce-upper-primary-curriculum (Chemistry, Class VIII, Themes 1-9);
+# scope sharpened with #cisce-upper-primary-chemistry-resource. Topic wording is our own summary of the official themes.
+subject_id: icse-8-chemistry
+academic_year: "2026-27"
+source_status: verified
+sources: [cisce-upper-primary-curriculum, cisce-upper-primary-chemistry-resource]
+exam_notes: >-
+  No board examination in Class 8. CISCE publishes a recommended theme-based curriculum (Chemistry taught as a separate
+  science from Class VI) with learning outcomes per class; it prescribes no textbooks, no paper pattern and no marks
+  weightage. Schools choose their own textbooks and set their own unit tests, term examinations and practical/activity
+  assessment (laboratory demonstrations and simple experiments such as preparing hydrogen and carbon dioxide).
+  The Class VIII curriculum has nine themes; SOYL grouped them into 15 teachable chapters in curriculum order.
+  Students move from word equations (Class VII) to formulae derived from valency and balanced chemical equations.
+units:
+  - { name: "Theme 1: Matter", marks: null }
+  - { name: "Theme 2: Physical and Chemical Changes", marks: null }
+  - { name: "Theme 3: Elements, Compounds and Mixtures", marks: null }
+  - { name: "Theme 4: Atomic Structure", marks: null }
+  - { name: "Theme 5: Language of Chemistry", marks: null }
+  - { name: "Theme 6: Chemical Reactions", marks: null }
+  - { name: "Theme 7: Hydrogen", marks: null }
+  - { name: "Theme 8: Water", marks: null }
+  - { name: "Theme 9: Carbon and its Compounds", marks: null }
+chapters:
+  - id: icse-8-chemistry-ch01
+    number: 1
+    title: "Matter: Kinetic Theory and Conservation of Mass"
+    unit: "Theme 1: Matter"
+    topics:
+      - id: icse-8-chemistry-ch01-t01
+        title: "Main postulates of the kinetic molecular theory of matter"
+        learning_outcomes:
+          - "State the main postulates of the kinetic theory of matter"
+      - id: icse-8-chemistry-ch01-t02
+        title: "Inter-particle space, inter-particle attraction and collisions in solids, liquids and gases"
+        learning_outcomes:
+          - "Compare solids, liquids and gases by inter-particle space and inter-particle attraction"
+      - id: icse-8-chemistry-ch01-t03
+        title: "Explaining change of state using inter-particle space, attraction and collision"
+        learning_outcomes:
+          - "Explain melting and boiling as the weakening of inter-particle attraction when particles gain energy"
+          - "Explain condensation and freezing when particles lose energy"
+      - id: icse-8-chemistry-ch01-t04
+        title: "Law of conservation of mass: statement and demonstration (barium chloride and sodium sulphate)"
+        learning_outcomes:
+          - "State the law of conservation of mass"
+          - "Describe an experiment showing that total mass stays the same in a chemical change"
+          - "Explain why the mass of atmospheric oxygen must be counted when a substance burns"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-chemistry-ch02
+    number: 2
+    title: "Physical and Chemical Changes"
+    unit: "Theme 2: Physical and Chemical Changes"
+    topics:
+      - id: icse-8-chemistry-ch02-t01
+        title: "Review: physical changes (no new substance) and chemical changes (new substance with new properties)"
+        learning_outcomes:
+          - "Differentiate physical and chemical changes with examples learnt earlier"
+      - id: icse-8-chemistry-ch02-t02
+        title: "Other ways of classifying changes: slow/fast, reversible/irreversible, periodic/non-periodic"
+        learning_outcomes:
+          - "Classify given changes as slow or fast, reversible or irreversible, periodic or non-periodic"
+      - id: icse-8-chemistry-ch02-t03
+        title: "Classifying everyday changes: curd from milk, rotting of eggs, rusting, melting of ice, sublimation of camphor"
+        learning_outcomes:
+          - "Classify a list of everyday changes as physical or chemical and justify each choice"
+          - "Perform simple activities to show well-known physical and chemical changes"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-chemistry-ch03
+    number: 3
+    title: "Elements, Compounds and Mixtures"
+    unit: "Theme 3: Elements, Compounds and Mixtures"
+    topics:
+      - id: icse-8-chemistry-ch03-t01
+        title: "Review of elements, compounds and mixtures"
+        learning_outcomes:
+          - "Classify substances into elements, compounds and mixtures on the basis of their properties"
+      - id: icse-8-chemistry-ch03-t02
+        title: "Separating a solid-solid mixture with one soluble component (calcium carbonate and sodium chloride)"
+        learning_outcomes:
+          - "Separate chalk and common salt by dissolving, filtration and evaporation"
+      - id: icse-8-chemistry-ch03-t03
+        title: "Separating immiscible liquids (kerosene and water)"
+        learning_outcomes:
+          - "Separate kerosene from water with a separating funnel"
+      - id: icse-8-chemistry-ch03-t04
+        title: "Principle behind each separation technique"
+        learning_outcomes:
+          - "Explain the property difference that each separation technique uses"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-chemistry-ch04
+    number: 4
+    title: "Atomic Structure"
+    unit: "Theme 4: Atomic Structure"
+    topics:
+      - id: icse-8-chemistry-ch04-t01
+        title: "Subatomic particles: electrons, protons and neutrons; historical perspective of their discovery"
+        learning_outcomes:
+          - "Describe an atom as made of electrons, protons and neutrons"
+          - "Compare the charge and location of the three subatomic particles"
+      - id: icse-8-chemistry-ch04-t02
+        title: "Nucleus and extra-nuclear part of an atom"
+        learning_outcomes:
+          - "State that protons and neutrons are in the nucleus and electrons are in the extra-nuclear part"
+      - id: icse-8-chemistry-ch04-t03
+        title: "Atomic number (Z) and mass number (A)"
+        learning_outcomes:
+          - "Define atomic number and mass number"
+          - "Calculate the number of protons, electrons and neutrons in an atom from Z and A"
+      - id: icse-8-chemistry-ch04-t04
+        title: "Valency of elements and radicals with respect to hydrogen"
+        learning_outcomes:
+          - "Find the valency of an element from the number of hydrogen atoms that combine with one atom of it"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-chemistry-ch05
+    number: 5
+    title: "Symbols, Valency and Formulae"
+    unit: "Theme 5: Language of Chemistry"
+    topics:
+      - id: icse-8-chemistry-ch05-t01
+        title: "Symbols and valencies of the first twenty elements and common radicals"
+        learning_outcomes:
+          - "Recall the symbols and valencies of the first twenty elements and common radicals"
+      - id: icse-8-chemistry-ch05-t02
+        title: "Writing formulae of compounds from the valencies of elements and radicals"
+        learning_outcomes:
+          - "Derive the formulae of compounds such as aluminium oxide, calcium chloride and sodium sulphate from valencies"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-chemistry-ch06
+    number: 6
+    title: "Chemical Equations"
+    unit: "Theme 5: Language of Chemistry"
+    topics:
+      - id: icse-8-chemistry-ch06-t01
+        title: "From word equations to chemical equations; state symbols (s), (l), (g)"
+        learning_outcomes:
+          - "Convert a word equation into a chemical equation using symbols and formulae"
+          - "Add state symbols to reactants and products"
+      - id: icse-8-chemistry-ch06-t02
+        title: "Balancing simple equations using the law of conservation of mass"
+        learning_outcomes:
+          - "Relate the law of conservation of mass to balancing an equation"
+          - "Balance simple chemical equations"
+      - id: icse-8-chemistry-ch06-t03
+        title: "Information given by a chemical equation"
+        learning_outcomes:
+          - "List the information that a balanced chemical equation gives"
+      - id: icse-8-chemistry-ch06-t04
+        title: "Limitations of a chemical equation (catalyst, conditions, nature of reaction not shown)"
+        learning_outcomes:
+          - "State the limitations of a chemical equation using an example"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-chemistry-ch07
+    number: 7
+    title: "Types of Chemical Reactions"
+    unit: "Theme 6: Chemical Reactions"
+    topics:
+      - id: icse-8-chemistry-ch07-t01
+        title: "Chemical reactions as breaking and forming of bonds with absorption or release of energy"
+        learning_outcomes:
+          - "Explain that energy is absorbed or released, usually as heat or light, during a chemical reaction"
+      - id: icse-8-chemistry-ch07-t02
+        title: "Combination (synthesis) reactions"
+        learning_outcomes:
+          - "Identify combination reactions such as calcium oxide with water and carbon burning in oxygen"
+      - id: icse-8-chemistry-ch07-t03
+        title: "Decomposition reactions (heating calcium carbonate, lead compounds)"
+        learning_outcomes:
+          - "Identify decomposition reactions and write their equations"
+      - id: icse-8-chemistry-ch07-t04
+        title: "Displacement reactions (zinc displacing copper from copper sulphate)"
+        learning_outcomes:
+          - "Explain displacement using zinc and copper sulphate solution"
+      - id: icse-8-chemistry-ch07-t05
+        title: "Double displacement reactions (sodium chloride and silver nitrate)"
+        learning_outcomes:
+          - "Identify double displacement reactions in which ions are exchanged and a precipitate may form"
+      - id: icse-8-chemistry-ch07-t06
+        title: "Exothermic and endothermic reactions; neutralisation of an acid by a base"
+        learning_outcomes:
+          - "Classify neutralisation as exothermic and dissolving ammonium chloride in water as endothermic"
+          - "Identify the type of a given chemical reaction"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-chemistry-ch08
+    number: 8
+    title: "Reactivity Series of Metals"
+    unit: "Theme 6: Chemical Reactions"
+    topics:
+      - id: icse-8-chemistry-ch08-t01
+        title: "Reactivity series: metals arranged in order of reactivity"
+        learning_outcomes:
+          - "Arrange Cu, Ag, Al, Mg and Fe in decreasing order of reactivity using the reactivity series"
+      - id: icse-8-chemistry-ch08-t02
+        title: "A more reactive metal displaces a less reactive metal from its salt solution"
+        learning_outcomes:
+          - "Predict whether a displacement reaction will occur between a given metal and a salt solution"
+          - "Explain the observations of an experiment of a metal placed in a metal salt solution"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-chemistry-ch09
+    number: 9
+    title: "Oxides"
+    unit: "Theme 6: Chemical Reactions"
+    topics:
+      - id: icse-8-chemistry-ch09-t01
+        title: "Formation of oxides by heating elements in air and by decomposing carbonates, nitrates and sulphates"
+        learning_outcomes:
+          - "Describe the formation of calcium oxide by strongly heating limestone and lead oxide by heating lead carbonate"
+          - "Explain the effect of heat on some metal compounds"
+      - id: icse-8-chemistry-ch09-t02
+        title: "Classification of oxides: acidic, basic, amphoteric and neutral"
+        learning_outcomes:
+          - "Classify given oxides as acidic, basic, amphoteric or neutral"
+          - "State that metal oxides are generally basic and non-metal oxides acidic"
+      - id: icse-8-chemistry-ch09-t03
+        title: "Testing oxide solutions with litmus; amphoteric oxides (zinc oxide, lead oxide) react with both acids and bases"
+        learning_outcomes:
+          - "Test the solution of an oxide in water with litmus and conclude its nature"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-chemistry-ch10
+    number: 10
+    title: "Hydrogen"
+    unit: "Theme 7: Hydrogen"
+    topics:
+      - id: icse-8-chemistry-ch10-t01
+        title: "Hydrogen from water by electrolysis; terms electrode, electrolyte and electrolysis"
+        learning_outcomes:
+          - "Describe how hydrogen is obtained by the electrolysis of acidified water"
+          - "Define electrode, electrolyte and electrolysis"
+      - id: icse-8-chemistry-ch10-t02
+        title: "Laboratory preparation of hydrogen from zinc and a dilute acid; collection over water"
+        learning_outcomes:
+          - "Describe the laboratory preparation of hydrogen with a labelled diagram and equation"
+          - "Give reasons for choosing zinc and for not using dilute nitric acid"
+      - id: icse-8-chemistry-ch10-t03
+        title: "Bosch process (industrial preparation of hydrogen)"
+        learning_outcomes:
+          - "Outline the Bosch process for producing hydrogen from water gas and steam"
+      - id: icse-8-chemistry-ch10-t04
+        title: "Properties and uses of hydrogen"
+        learning_outcomes:
+          - "State the physical and chemical properties of hydrogen"
+          - "List uses of hydrogen, including as a fuel"
+      - id: icse-8-chemistry-ch10-t05
+        title: "Oxidation and reduction as addition or removal of oxygen or hydrogen"
+        learning_outcomes:
+          - "Identify the substance oxidised and the substance reduced in a simple reaction"
+    removed_topics:
+      - "Detailed process of electrolysis (only the terms electrode, electrolyte and electrolysis are introduced)"
+    literature_texts: []
+  - id: icse-8-chemistry-ch11
+    number: 11
+    title: "Water as a Solvent: Solutions, Suspensions and Colloids"
+    unit: "Theme 8: Water"
+    topics:
+      - id: icse-8-chemistry-ch11-t01
+        title: "Dissolution of salts in water; water as a universal solvent"
+        learning_outcomes:
+          - "Explain why water is called a universal solvent"
+      - id: icse-8-chemistry-ch11-t02
+        title: "Solutions, suspensions and colloids (by size of solute particles)"
+        learning_outcomes:
+          - "Distinguish a solution, a suspension and a colloid by their properties"
+          - "Classify samples such as salt solution, clay in water and milk"
+      - id: icse-8-chemistry-ch11-t03
+        title: "Unsaturated, saturated and supersaturated solutions"
+        learning_outcomes:
+          - "Differentiate unsaturated, saturated and supersaturated solutions by the quantity of solute dissolved"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-chemistry-ch12
+    number: 12
+    title: "Water of Crystallisation and Reactions of Metals with Water"
+    unit: "Theme 8: Water"
+    topics:
+      - id: icse-8-chemistry-ch12-t01
+        title: "Water of crystallisation; hydrated and anhydrous substances (copper sulphate)"
+        learning_outcomes:
+          - "Describe the change when blue copper sulphate crystals are heated"
+          - "Define water of crystallisation"
+      - id: icse-8-chemistry-ch12-t02
+        title: "Hygroscopic substances (calcium chloride, silica gel)"
+        learning_outcomes:
+          - "Explain why silica gel pouches are kept in bottles and packets"
+      - id: icse-8-chemistry-ch12-t03
+        title: "Reactivity of metals with cold water, hot water and steam, with products formed"
+        learning_outcomes:
+          - "Write the products of sodium, calcium, magnesium and iron reacting with water or steam"
+          - "Compare the reactivity of metals with water"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-chemistry-ch13
+    number: 13
+    title: "Hard and Soft Water"
+    unit: "Theme 8: Water"
+    topics:
+      - id: icse-8-chemistry-ch13-t01
+        title: "Hard and soft water; lather formation with soap"
+        learning_outcomes:
+          - "Distinguish hard water from soft water by an activity with soap solution"
+      - id: icse-8-chemistry-ch13-t02
+        title: "Disadvantages of using hard water"
+        learning_outcomes:
+          - "List disadvantages of hard water at home and in industry"
+      - id: icse-8-chemistry-ch13-t03
+        title: "Softening hard water by boiling or by treating with washing soda"
+        learning_outcomes:
+          - "Describe two methods of removing hardness of water"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-chemistry-ch14
+    number: 14
+    title: "Carbon and its Allotropes"
+    unit: "Theme 9: Carbon and its Compounds"
+    topics:
+      - id: icse-8-chemistry-ch14-t01
+        title: "Carbon in living things and everyday materials; allotropy"
+        learning_outcomes:
+          - "Define allotropy and allotropes with examples"
+      - id: icse-8-chemistry-ch14-t02
+        title: "Crystalline and amorphous allotropes of carbon"
+        learning_outcomes:
+          - "Classify diamond, graphite, coal, coke and soot as crystalline or amorphous"
+      - id: icse-8-chemistry-ch14-t03
+        title: "Diamond and graphite: structure, physical properties and same chemical properties"
+        learning_outcomes:
+          - "Compare diamond and graphite in hardness and electrical and thermal conductivity"
+          - "Explain that their different properties come from different structures"
+      - id: icse-8-chemistry-ch14-t04
+        title: "Uses of diamond, graphite, coke, coal and soot"
+        learning_outcomes:
+          - "Match each form of carbon to its uses and justify by a property"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-chemistry-ch15
+    number: 15
+    title: "Carbon Dioxide and Carbon Monoxide"
+    unit: "Theme 9: Carbon and its Compounds"
+    topics:
+      - id: icse-8-chemistry-ch15-t01
+        title: "Laboratory preparation of carbon dioxide from marble (or sodium carbonate) and dilute hydrochloric acid"
+        learning_outcomes:
+          - "Describe the laboratory preparation of carbon dioxide with a labelled diagram and equation"
+          - "Explain why carbon dioxide is collected by upward displacement of air"
+      - id: icse-8-chemistry-ch15-t02
+        title: "Physical properties of carbon dioxide; fire extinguishing"
+        learning_outcomes:
+          - "State the physical properties of carbon dioxide"
+          - "Explain why carbon dioxide puts out fires"
+      - id: icse-8-chemistry-ch15-t03
+        title: "Chemical properties: acidic nature, reaction with basic oxides, action on lime water and litmus"
+        learning_outcomes:
+          - "Explain why lime water turns milky with carbon dioxide and clears with excess gas"
+          - "Show the acidic nature of carbon dioxide with moist blue litmus"
+      - id: icse-8-chemistry-ch15-t04
+        title: "Uses of carbon dioxide"
+        learning_outcomes:
+          - "List uses of carbon dioxide such as in fire extinguishers, soft drinks and photosynthesis"
+      - id: icse-8-chemistry-ch15-t05
+        title: "Carbon monoxide: formation by incomplete burning, use as a reducing agent in extracting iron, harmful effects (asphyxia)"
+        learning_outcomes:
+          - "Explain how carbon monoxide forms when fuel burns in a poor supply of oxygen"
+          - "Explain why one should not stand behind a running vehicle engine or cook on wood fires in closed rooms"
+          - "State the use of carbon monoxide as a reducing agent in the extraction of iron"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []
