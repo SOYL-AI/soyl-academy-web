@@ -1,9 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { contactSchema, ContactFormData } from '@/lib/validation/contact-schema';
+import { contactSchema, ContactFormData, InterestEnum, RoleEnum } from '@/lib/validation/contact-schema';
+import { Field, describedBy, inputClasses } from '@/components/notebook/Field';
+import { buttonClasses } from '@/components/notebook/Button';
+import { Label } from '@/components/notebook/SectionHeader';
+import { cn } from '@/lib/utils';
 import { submitContact } from './actions';
 
 export default function ContactPage() {
@@ -14,202 +19,143 @@ export default function ContactPage() {
     register,
     handleSubmit,
     formState: { errors },
-    reset
-  } = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema),
-  });
+    reset,
+  } = useForm<ContactFormData>({ resolver: zodResolver(contactSchema), mode: 'onTouched' });
 
   const onSubmit = async (data: ContactFormData) => {
     setStatus('submitting');
     try {
       const result = await submitContact(data);
-      if (result.success) {
-        setStatus('success');
-        setMessage(result.message);
-        reset();
-      } else {
-        setStatus('error');
-        setMessage(result.message);
-      }
+      setStatus(result.success ? 'success' : 'error');
+      setMessage(result.message);
+      if (result.success) reset();
     } catch {
       setStatus('error');
       setMessage('Something went wrong. Please try again.');
     }
   };
 
+  const text = (name: 'name' | 'email' | 'school' | 'city' | 'studentCount', label: string, opts: { type?: string; required?: boolean; autoComplete?: string; span?: boolean } = {}) => (
+    <Field id={`c-${name}`} label={label} required={opts.required ?? true} error={errors[name]?.message} className={opts.span ? 'md:col-span-2' : undefined}>
+      <input
+        id={`c-${name}`}
+        type={opts.type ?? 'text'}
+        autoComplete={opts.autoComplete}
+        className={inputClasses}
+        aria-invalid={!!errors[name]}
+        aria-describedby={describedBy(`c-${name}`, { error: !!errors[name] })}
+        {...register(name)}
+      />
+    </Field>
+  );
+
   return (
-    <div className="min-h-screen bg-brand-cream text-brand-black pt-16 md:pt-32 pb-16 md:pb-32">
-      <div className="container mx-auto px-6 max-w-3xl">
-        <header className="mb-16 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">Bring SOYL to your school</h1>
-          <p className="text-xl text-brand-black/70 mb-3">
-            Fill out the form below and our team will get in touch.
-          </p>
-          <p className="text-base text-brand-black/60">
-            Or reach us directly at{' '}
-            <a
-              href="mailto:outreach@soyl.cloud"
-              className="font-bold text-brand-blue underline underline-offset-4 hover:text-brand-black transition-colors"
-            >
+    <>
+      <section className="rule-b">
+        <div className="page grid-12 items-end gap-y-6 py-12 md:py-16">
+          <div className="col-span-12 lg:col-span-7">
+            <Label className="mb-6">Contact</Label>
+            <h1 className="t-headline max-w-[16ch]">Talk to the SOYL team.</h1>
+            <p className="t-lead mt-6 max-w-[48ch] text-ink">
+              Questions about SOYL, partnerships or anything else. For a product walkthrough,{' '}
+              <Link href="/book-a-demo" className="link">book a demo</Link>.
+            </p>
+          </div>
+          <p className="col-span-12 text-muted lg:col-span-4 lg:col-start-9">
+            Or email{' '}
+            <a href="mailto:outreach@soyl.cloud" className="link">
               outreach@soyl.cloud
             </a>
           </p>
-        </header>
+        </div>
+      </section>
 
-        {status === 'success' ? (
-          <div className="bg-brand-black/5 p-12 text-center rounded-[2rem]">
-            <h2 className="text-3xl font-bold mb-4">Thank you</h2>
-            <p className="text-xl text-brand-black/80">{message}</p>
-            <button 
-              onClick={() => setStatus('idle')}
-              className="mt-8 bg-brand-black text-brand-cream px-8 py-3 text-lg font-bold transition-colors hover:bg-brand-black/90 press"
-            >
-              Send another message
-            </button>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 bg-brand-black/5 p-8 md:p-16 rounded-[2rem]">
-            {status === 'error' && (
-              <div className="bg-brand-red/10 text-brand-red p-4 font-medium" role="alert">
-                {message}
+      <section className="section-tight">
+        <div className="page grid-12">
+          <div className="col-span-12 lg:col-span-8">
+            {status === 'success' ? (
+              <div role="status" className="module border-t-2 border-t-success p-6 md:p-8">
+                <p className="t-label mb-3 text-success">Message sent</p>
+                <h2 className="t-title">Thank you.</h2>
+                <p className="mt-3 text-muted">{message}</p>
+                <button type="button" onClick={() => setStatus('idle')} className="link mt-5 font-medium">
+                  Send another message
+                </button>
               </div>
+            ) : (
+              <form onSubmit={handleSubmit(onSubmit)} noValidate className="module p-5 md:p-8">
+                {status === 'error' && (
+                  <div role="alert" className="t-small mb-6 border-l-2 border-red-pen bg-paper px-3 py-2 text-ink">
+                    {message}
+                  </div>
+                )}
+                <div className="hidden" aria-hidden="true">
+                  <label htmlFor="botField">Leave this empty</label>
+                  <input type="text" id="botField" tabIndex={-1} autoComplete="off" {...register('honeypot')} />
+                </div>
+
+                <div className="grid gap-5 md:grid-cols-2">
+                  {text('name', 'Name', { autoComplete: 'name' })}
+                  {text('email', 'Email', { type: 'email', autoComplete: 'email' })}
+                  {text('school', 'School or organisation', { autoComplete: 'organization', span: true })}
+
+                  <Field id="c-role" label="Role" required error={errors.role?.message}>
+                    <select
+                      id="c-role"
+                      defaultValue=""
+                      className={cn(inputClasses, 'cursor-pointer')}
+                      aria-invalid={!!errors.role}
+                      aria-describedby={describedBy('c-role', { error: !!errors.role })}
+                      {...register('role')}
+                    >
+                      <option value="" disabled>Choose…</option>
+                      {RoleEnum.options.map((r) => (
+                        <option key={r} value={r}>{r}</option>
+                      ))}
+                    </select>
+                  </Field>
+
+                  {text('city', 'City', { autoComplete: 'address-level2' })}
+                  {text('studentCount', 'Number of students', { required: false })}
+
+                  <Field id="c-interest" label="Interested in" required error={errors.interest?.message}>
+                    <select
+                      id="c-interest"
+                      defaultValue=""
+                      className={cn(inputClasses, 'cursor-pointer')}
+                      aria-invalid={!!errors.interest}
+                      aria-describedby={describedBy('c-interest', { error: !!errors.interest })}
+                      {...register('interest')}
+                    >
+                      <option value="" disabled>Choose…</option>
+                      {InterestEnum.options.map((r) => (
+                        <option key={r} value={r}>{r}</option>
+                      ))}
+                    </select>
+                  </Field>
+
+                  <Field id="c-message" label="Message" required error={errors.message?.message} className="md:col-span-2">
+                    <textarea
+                      id="c-message"
+                      rows={5}
+                      className={cn(inputClasses, 'resize-y')}
+                      aria-invalid={!!errors.message}
+                      aria-describedby={describedBy('c-message', { error: !!errors.message })}
+                      {...register('message')}
+                    />
+                  </Field>
+                </div>
+
+                <div className="mt-8 border-t border-rule pt-6">
+                  <button type="submit" disabled={status === 'submitting'} className={buttonClasses('primary', 'lg')}>
+                    {status === 'submitting' ? 'Sending…' : 'Send message'}
+                  </button>
+                </div>
+              </form>
             )}
-            
-            <div className="hidden" aria-hidden="true">
-              <label htmlFor="botField">Don&rsquo;t fill this out if you&rsquo;re human:</label>
-              <input type="text" id="botField" {...register('honeypot')} tabIndex={-1} />
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <label htmlFor="name" className="block text-sm font-bold tracking-widest uppercase text-brand-black/60 mb-3">Name *</label>
-                <input
-                  id="name"
-                  type="text"
-                  {...register('name')}
-                  className={`w-full px-6 py-4 bg-brand-cream border-2 ${errors.name ? 'border-brand-red' : 'border-brand-black/10'} focus:outline-none focus:border-brand-black font-medium transition-colors`}
-                  aria-invalid={errors.name ? 'true' : 'false'}
-                />
-                {errors.name && <p className="mt-2 text-sm text-brand-red font-medium">{errors.name.message}</p>}
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-bold tracking-widest uppercase text-brand-black/60 mb-3">Work email *</label>
-                <input
-                  id="email"
-                  type="email"
-                  {...register('email')}
-                  className={`w-full px-6 py-4 bg-brand-cream border-2 ${errors.email ? 'border-brand-red' : 'border-brand-black/10'} focus:outline-none focus:border-brand-black font-medium transition-colors`}
-                  aria-invalid={errors.email ? 'true' : 'false'}
-                />
-                {errors.email && <p className="mt-2 text-sm text-brand-red font-medium">{errors.email.message}</p>}
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="school" className="block text-sm font-bold tracking-widest uppercase text-brand-black/60 mb-3">School / Organisation *</label>
-              <input
-                id="school"
-                type="text"
-                {...register('school')}
-                className={`w-full px-6 py-4 bg-brand-cream border-2 ${errors.school ? 'border-brand-red' : 'border-brand-black/10'} focus:outline-none focus:border-brand-black font-medium transition-colors`}
-              />
-              {errors.school && <p className="mt-2 text-sm text-brand-red font-medium">{errors.school.message}</p>}
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <label htmlFor="role" className="block text-sm font-bold tracking-widest uppercase text-brand-black/60 mb-3">Role *</label>
-                <select
-                  id="role"
-                  {...register('role')}
-                  className={`w-full px-6 py-4 bg-brand-cream border-2 ${errors.role ? 'border-brand-red' : 'border-brand-black/10'} focus:outline-none focus:border-brand-black font-medium transition-colors appearance-none cursor-pointer`}
-                >
-                  <option value="">Select a role...</option>
-                  <option value="Teacher">Teacher</option>
-                  <option value="Principal">Principal</option>
-                  <option value="School Administrator">School Administrator</option>
-                  <option value="Department Head">Department Head</option>
-                  <option value="Parent">Parent</option>
-                  <option value="Student">Student</option>
-                  <option value="Other">Other</option>
-                </select>
-                {errors.role && <p className="mt-2 text-sm text-brand-red font-medium">{errors.role.message}</p>}
-              </div>
-
-              <div>
-                <label htmlFor="city" className="block text-sm font-bold tracking-widest uppercase text-brand-black/60 mb-3">City *</label>
-                <input
-                  id="city"
-                  type="text"
-                  {...register('city')}
-                  className={`w-full px-6 py-4 bg-brand-cream border-2 ${errors.city ? 'border-brand-red' : 'border-brand-black/10'} focus:outline-none focus:border-brand-black font-medium transition-colors`}
-                />
-                {errors.city && <p className="mt-2 text-sm text-brand-red font-medium">{errors.city.message}</p>}
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <label htmlFor="studentCount" className="block text-sm font-bold tracking-widest uppercase text-brand-black/60 mb-3">Students (optional)</label>
-                <input
-                  id="studentCount"
-                  type="text"
-                  {...register('studentCount')}
-                  className="w-full px-6 py-4 bg-brand-cream border-2 border-brand-black/10 focus:outline-none focus:border-brand-black font-medium transition-colors"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="interest" className="block text-sm font-bold tracking-widest uppercase text-brand-black/60 mb-3">Interest *</label>
-                <select
-                  id="interest"
-                  {...register('interest')}
-                  className={`w-full px-6 py-4 bg-brand-cream border-2 ${errors.interest ? 'border-brand-red' : 'border-brand-black/10'} focus:outline-none focus:border-brand-black font-medium transition-colors appearance-none cursor-pointer`}
-                >
-                  <option value="">Select an area...</option>
-                  <option value="Outcome-based assignments">Outcome-based assignments</option>
-                  <option value="Teacher workshops">Teacher workshops</option>
-                  <option value="School pilot program">School pilot program</option>
-                  <option value="Student programs">Student programs</option>
-                  <option value="Partnership">Partnership</option>
-                  <option value="Other">Other</option>
-                </select>
-                {errors.interest && <p className="mt-2 text-sm text-brand-red font-medium">{errors.interest.message}</p>}
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-bold tracking-widest uppercase text-brand-black/60 mb-3">Message *</label>
-              <textarea
-                id="message"
-                rows={5}
-                {...register('message')}
-                className={`w-full px-6 py-4 bg-brand-cream border-2 ${errors.message ? 'border-brand-red' : 'border-brand-black/10'} focus:outline-none focus:border-brand-black font-medium transition-colors resize-y`}
-              ></textarea>
-              {errors.message && <p className="mt-2 text-sm text-brand-red font-medium">{errors.message.message}</p>}
-            </div>
-
-            <button
-              type="submit"
-              disabled={status === 'submitting'}
-              className="press group flex w-full items-center justify-center gap-2 h-16 bg-brand-black text-brand-cream text-xl font-bold transition-colors duration-300 hover:bg-brand-black/90 disabled:opacity-70 disabled:cursor-not-allowed"
-            >
-              {status === 'submitting' ? 'Sending...' : 'Send Message'}
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 12 12"
-                fill="none"
-                aria-hidden="true"
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              >
-                <path d="M2.5 6h7M6.5 3l3 3-3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-          </form>
-        )}
-      </div>
-    </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

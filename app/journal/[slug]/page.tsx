@@ -1,17 +1,12 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { FinalCta } from '@/components/home/FinalCta';
 import { StructuredData } from '@/components/seo/StructuredData';
-import {
-  formatArticleDate,
-  formatReadingTime,
-  getArticleBySlug,
-  journalArticles,
-} from '@/content/journal';
+import { formatArticleDate, formatReadingTime, getArticleBySlug, journalArticles } from '@/content/journal';
 import { absoluteUrl } from '@/lib/seo/config';
 import { createMetadata } from '@/lib/seo/metadata';
 import { articleNode, breadcrumbNode, graph, webPageNode } from '@/lib/seo/schema';
-import { Container } from '@/components/layout/Container';
 
 interface Props {
   // Next 16: route params arrive as a Promise and must be awaited.
@@ -19,9 +14,7 @@ interface Props {
 }
 
 export function generateStaticParams() {
-  return (journalArticles || []).map((article) => ({
-    slug: article.slug,
-  }));
+  return journalArticles.map((article) => ({ slug: article.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -47,10 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function JournalArticlePage({ params }: Props) {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
-
-  if (!article) {
-    notFound();
-  }
+  if (!article) notFound();
 
   const path = `/journal/${article.slug}`;
   const paragraphs = article.content
@@ -60,7 +50,7 @@ export default async function JournalArticlePage({ params }: Props) {
   const related = journalArticles.filter((a) => a.slug !== article.slug).slice(0, 2);
 
   return (
-    <div className="min-h-screen bg-brand-cream text-brand-black pt-16 md:pt-32 pb-16 md:pb-32">
+    <>
       <StructuredData
         data={graph(
           webPageNode({
@@ -81,84 +71,57 @@ export default async function JournalArticlePage({ params }: Props) {
         )}
       />
 
-      <article className="container mx-auto px-6 max-w-3xl">
-        <nav aria-label="Breadcrumb" className="mb-12 text-sm font-bold tracking-widest uppercase text-brand-black/50">
-          <ol className="flex flex-wrap items-center gap-3">
-            <li>
-              <Link href="/" className="hover:text-brand-black transition-colors">
-                Home
-              </Link>
-            </li>
-            <li aria-hidden="true">/</li>
-            <li>
-              <Link href="/journal" className="hover:text-brand-black transition-colors">
-                Journal
-              </Link>
-            </li>
-          </ol>
-        </nav>
-
-        <header className="mb-16">
-          <div className="flex items-center gap-4 text-sm font-bold tracking-widest uppercase text-brand-black/50 mb-8">
-            <span className="text-brand-blue">{article.category}</span>
-            <span>&middot;</span>
-            <time dateTime={article.date}>{formatArticleDate(article.date)}</time>
-            <span>&middot;</span>
-            <span>{formatReadingTime(article.readingTime)}</span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-8">{article.title}</h1>
-          <p className="text-2xl text-brand-black/70 leading-relaxed mb-8">{article.excerpt}</p>
-          {article.author && <p className="text-lg font-bold text-brand-black mb-12">By {article.author}</p>}
-          
-          {article.image && (
-            <div className="w-full aspect-video md:aspect-[21/9] relative overflow-hidden rounded-2xl border-4 border-brand-black shadow-[8px_8px_0_0_#141414] mt-8 mb-16">
-              <img src={article.image} alt={article.title} className="absolute inset-0 w-full h-full object-cover" />
+      <article>
+        <header className="rule-b">
+          <div className="page grid-12 py-12 md:py-16">
+            <div className="col-span-12 lg:col-span-9">
+              <nav aria-label="Breadcrumb" className="t-label mb-8 text-muted">
+                <ol className="flex flex-wrap items-center gap-2">
+                  <li><Link href="/" className="hover:text-ink hover:underline">Home</Link></li>
+                  <li aria-hidden="true">/</li>
+                  <li><Link href="/journal" className="hover:text-ink hover:underline">Journal</Link></li>
+                </ol>
+              </nav>
+              <p className="t-label flex flex-wrap gap-x-2 text-muted">
+                <span className="text-ink">{article.category}</span>
+                <span aria-hidden="true">·</span>
+                <time dateTime={article.date}>{formatArticleDate(article.date)}</time>
+                <span aria-hidden="true">·</span>
+                <span>{formatReadingTime(article.readingTime)}</span>
+              </p>
+              <h1 className="t-display mt-5 max-w-[18ch]">{article.title}</h1>
+              <p className="t-lead mt-6 max-w-[56ch] text-ink">{article.excerpt}</p>
+              {article.author && <p className="t-small mt-6 text-muted">By {article.author}</p>}
             </div>
-          )}
+          </div>
         </header>
 
-        <div className="mx-auto leading-relaxed space-y-8 text-xl text-brand-black/80">
-          {paragraphs.length > 0 ? (
-            paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)
-          ) : (
-            <p>Article content coming soon.</p>
-          )}
+        <div className="page grid-12 section-tight">
+          <div className="col-span-12 space-y-6 text-[1.125rem] leading-[1.7] md:col-span-8 md:col-start-3 lg:col-span-7 lg:col-start-3">
+            {paragraphs.length > 0 ? paragraphs.map((p, i) => <p key={i}>{p}</p>) : <p>Article coming soon.</p>}
+          </div>
         </div>
+      </article>
 
-        {related.length > 0 && (
-          <aside aria-labelledby="keep-reading" className="mt-24 pt-12 border-t border-brand-black/10">
-            <h2 id="keep-reading" className="text-sm font-bold tracking-widest uppercase text-brand-blue mb-8">
-              Keep reading
-            </h2>
-            <ul className="grid md:grid-cols-2 gap-12">
+      {related.length > 0 && (
+        <aside aria-labelledby="keep-reading" className="section-tight rule-t">
+          <div className="page">
+            <h2 id="keep-reading" className="t-label mb-6 text-muted">Keep reading</h2>
+            <ul className="grid grid-cols-1 gap-px border border-rule bg-rule md:grid-cols-2">
               {related.map((item) => (
-                <li key={item.slug}>
-                  <Link href={`/journal/${item.slug}`} className="group block h-full">
-                    {item.image && (
-                      <div className="aspect-video bg-brand-black/5 relative overflow-hidden rounded-2xl mb-6">
-                        <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                      </div>
-                    )}
-                    <p className="text-2xl font-bold transition-colors group-hover:text-brand-blue mb-3">
-                      {item.title}
-                    </p>
-                    <p className="text-lg text-brand-black/70">{item.excerpt}</p>
+                <li key={item.slug} className="bg-white">
+                  <Link href={`/journal/${item.slug}`} className="group block h-full p-5 md:p-6">
+                    <p className="t-title group-hover:text-cobalt">{item.title}</p>
+                    <p className="mt-2 text-muted">{item.excerpt}</p>
                   </Link>
                 </li>
               ))}
             </ul>
-          </aside>
-        )}
+          </div>
+        </aside>
+      )}
 
-        <footer className="mt-24 pt-12 border-t border-brand-black/10">
-          <Link
-            href="/journal"
-            className="text-brand-blue hover:text-brand-black transition-colors font-bold flex items-center gap-2"
-          >
-            &larr; Back to Journal
-          </Link>
-        </footer>
-      </article>
-    </div>
+      <FinalCta />
+    </>
   );
 }

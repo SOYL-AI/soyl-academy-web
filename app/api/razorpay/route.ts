@@ -1,9 +1,18 @@
 import { NextResponse } from 'next/server';
 import Razorpay from 'razorpay';
 import { priceFor } from '@/lib/future-builders/pricing';
+import { getCohortState } from '@/content/future-builders';
 
 export async function POST(req: Request) {
   try {
+    // Registration closes on the date in content/future-builders.ts, even if a stale page still shows the form.
+    if (getCohortState() === 'waitlist') {
+      return NextResponse.json(
+        { error: 'Registration for this cohort has closed. Please join the waitlist instead.' },
+        { status: 409 }
+      );
+    }
+
     const { coupon, friendName } = await req.json();
 
     // The charge is computed here from the coupon, never taken from the browser.

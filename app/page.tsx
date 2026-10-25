@@ -1,67 +1,58 @@
-import { Hero } from '@/components/sections/Hero';
-import { ProblemSequence } from '@/components/sections/ProblemSequence';
-import { AssignmentTransform } from '@/components/sections/AssignmentTransform';
-import { MethodSequence } from '@/components/sections/MethodSequence';
-import { ProductFlow } from '@/components/sections/ProductFlow';
-import { SubjectExperiences } from '@/components/sections/SubjectExperiences';
-import { AudienceEntryPoints } from '@/components/sections/AudienceEntryPoints';
-import { PhilosophyManifesto } from '@/components/sections/PhilosophyManifesto';
-import { ProofSection } from '@/components/sections/ProofSection';
-import { FinalCta } from '@/components/sections/FinalCta';
+import { Hero } from '@/components/home/Hero';
+import { ProofStrip } from '@/components/home/ProofStrip';
+import { Shift } from '@/components/home/Shift';
+import { MethodModule } from '@/components/home/MethodModule';
+import { HowItWorks } from '@/components/home/HowItWorks';
+import { Subjects } from '@/components/home/Subjects';
+import { Audiences } from '@/components/home/Audiences';
+import { Belief } from '@/components/home/Belief';
+import { FinalCta } from '@/components/home/FinalCta';
+import { FutureBuildersBanner } from '@/components/marketing/FutureBuildersBanner';
 import { Faq } from '@/components/seo/Faq';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { homeFaqs } from '@/content/faqs';
+import { COHORT, formatCohortDate, getCohortState } from '@/content/future-builders';
 import { createMetadata } from '@/lib/seo/metadata';
 import { breadcrumbNode, faqNode, graph, webPageNode } from '@/lib/seo/schema';
 
 export const metadata = createMetadata({ path: '/' });
 
+// The Future Builders banner depends on today's date; re-check hourly.
+export const revalidate = 3600;
+
 /**
- * Homepage — one idea per section, shown more than told.
- * See docs/homepage-redesign.md for the story, copy budget and motion plan.
+ * Homepage, in the order set by the Oct 2026 brief. Every section is fully
+ * visible at rest: no pinned or scroll-driven scenes.
  */
 export default function HomePage() {
-  const structuredData = graph(
-    webPageNode({ path: '/' }),
-    breadcrumbNode('/', [{ name: 'Home', path: '/' }]),
-    faqNode('/', homeFaqs)
-  );
+  const cohortState = getCohortState();
 
   return (
     <>
-      <StructuredData data={structuredData} />
+      <StructuredData
+        data={graph(
+          webPageNode({ path: '/' }),
+          breadcrumbNode('/', [{ name: 'Home', path: '/' }]),
+          faqNode('/', homeFaqs)
+        )}
+      />
 
-      {/* 01 — Hero: headline + a card that turns worksheet into challenge */}
+      {COHORT && cohortState !== 'waitlist' && (
+        <FutureBuildersBanner
+          cohortKey={COHORT.registrationCloses}
+          message={`Weekend cohort for Grades 7–12. Registration ${cohortState === 'closing-soon' ? 'closes' : 'open until'} ${formatCohortDate(COHORT.registrationCloses)}.`}
+        />
+      )}
+
       <Hero />
-
-      {/* 02 — Problem: Prompt → AI → Answer → Submit → A+ (scroll-driven) */}
-      <ProblemSequence />
-
-      {/* 03 — The SOYL version: the same assignment, rebuilt */}
-      <AssignmentTransform />
-
-      {/* 04 — Method: Understand → Apply → Create → Defend → Reflect */}
-      <MethodSequence />
-
-      {/* 05 — Product: notes → outcome → draft → adapt → student → evidence */}
-      <ProductFlow />
-
-      {/* 06 — Subjects: assignments are more than a text box */}
-      <SubjectExperiences />
-
-      {/* 07 — Three doors: teachers / students / schools */}
-      <AudienceEntryPoints />
-
-      {/* 08 — Philosophy: the manifesto moment */}
-      <PhilosophyManifesto />
-
-      {/* 09 — Proof: renders nothing until content/proof.ts has real entries */}
-      <ProofSection />
-
-      {/* Answer-first FAQ. Kept: it mirrors the FAQPage JSON-LD above. */}
-      <Faq faqs={homeFaqs} variant="section" heading="Common questions about SOYL Academy" />
-
-      {/* 10 — Close */}
+      <ProofStrip />
+      <Shift />
+      <MethodModule />
+      <HowItWorks />
+      <Subjects />
+      <Audiences />
+      <Belief />
+      <Faq faqs={homeFaqs} heading="Common questions about SOYL Academy" num="06" />
       <FinalCta />
     </>
   );

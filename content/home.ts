@@ -1,105 +1,121 @@
 /**
- * Homepage copy. Kept in one place so the "less text" budget is auditable:
- * headlines ≤ 8 words, supporting lines ≤ 2 short sentences.
- * Deeper explanation lives on /method, /schools, /students and /what-we-teach.
+ * Homepage copy, in page order. Every claim comes from what the product does
+ * today (see the Oct 2026 brief); nothing here is a statistic or a quote.
  */
 
 export const hero = {
-  headline: ['Homework', 'was', 'built', 'for', 'a', 'world'],
+  label: 'Assignments for Grades 1–10',
+  headline: 'Homework was built for a world',
   highlight: 'before AI.',
-  support: 'AI can generate answers. SOYL creates assignments where students still have to think.',
+  support:
+    'SOYL turns your notes into interactive assignments that students work out for themselves, with hints that never give the answer. You approve every question, and see how each pupil got there.',
+  secondary: { label: 'See how it works', href: '#how-it-works' },
+  caption: 'Unlimited attempts. Every try is kept, so the teacher sees the path, not just the score.',
 } as const;
 
-export const problem = {
-  prompt: 'Write 500 words about renewable energy.',
-  chain: ['Prompt', 'AI', 'Answer', 'Submit', 'A+'],
-  line1: 'Everything looks complete.',
-  line2: 'Except the learning.',
+export const shift = {
+  label: 'The shift',
+  headline: 'Now change the assignment.',
+  intro: 'Same topic, same class. One asks for an answer AI can write in seconds. The other asks students to do the thinking.',
+  old: {
+    subject: 'Science · Class 8',
+    prompt: 'Write 500 words about renewable energy.',
+  },
+  soyl: {
+    eyebrow: 'The energy challenge',
+    prompt: 'Your school must cut its electricity use by 25%.',
+    tasks: [
+      { text: 'Choose three changes and estimate what each saves.', tag: 'Apply' },
+      { text: 'Explain why they work.', tag: 'Understand' },
+      { text: 'Defend one trade-off to the principal.', tag: 'Defend' },
+    ],
+  },
 } as const;
 
 export const method = {
-  eyebrow: 'The SOYL Method',
+  label: 'The SOYL Method',
   headline: 'Learning is a verb.',
+  intro: 'Every SOYL assignment asks for at least one of five things a generated answer can’t fake.',
   steps: [
-    { id: 'understand', verb: 'Understand', line: 'Know more than the answer.' },
-    { id: 'apply', verb: 'Apply', line: 'Use it in a new situation.' },
-    { id: 'create', verb: 'Create', line: 'Make something with it.' },
-    { id: 'defend', verb: 'Defend', line: 'Explain why, not just what.' },
-    { id: 'reflect', verb: 'Reflect', line: 'Look again. Do it better.' },
+    { verb: 'Understand', line: 'Know more than the answer.' },
+    { verb: 'Apply', line: 'Use it in a new situation.' },
+    { verb: 'Create', line: 'Make something with it.' },
+    { verb: 'Defend', line: 'Explain why, not just what.' },
+    { verb: 'Reflect', line: 'Look again. Do it better.' },
   ],
 } as const;
 
-/**
- * The product walkthrough. The interface shown on the site is an
- * *illustration* of the intended workflow (all names and content are invented
- * for demonstration) — see docs/homepage-redesign.md.
- */
-export const productFlow = {
-  eyebrow: 'How it works',
+export const howItWorks = {
+  label: 'How it works',
   headline: 'From notes to evidence.',
+  intro: 'Start from what you already teach. SOYL drafts; you decide; students do the work; you see the thinking.',
   steps: [
-    { id: 'upload', label: 'Upload notes', line: 'Start with what you already teach.' },
-    { id: 'outcome', label: 'Choose the outcome', line: 'Decide what students should be able to do.' },
-    { id: 'generate', label: 'SOYL drafts it', line: 'You review and shape the assignment.' },
-    { id: 'adapt', label: 'It adapts', line: 'Same outcome. Context that fits each student.' },
-    { id: 'student', label: 'Students do the work', line: 'They choose, explain and defend.' },
-    { id: 'evidence', label: 'See understanding', line: 'Evidence of thinking, not just a file.' },
+    {
+      title: 'Upload your notes',
+      line: 'Start from the notes you already teach with. SOYL drafts interactive questions from them.',
+      media: 'uploadNotes',
+    },
+    {
+      title: 'You approve every question',
+      line: 'Edit, reorder or reject. Nothing reaches students until you say so.',
+      media: 'teacherApproves',
+    },
+    {
+      title: 'Students work it out',
+      line: 'Unlimited attempts and step-by-step hints that never give the answer away.',
+      media: 'studentHints',
+    },
+    {
+      title: 'See each pupil’s path',
+      line: 'A class heatmap of attempts and hints shows who struggled, where, and who got there alone.',
+      media: 'teacherHeatmap',
+    },
   ],
 } as const;
 
 export const subjects = {
-  eyebrow: 'Subjects',
+  label: 'Subjects and simulators',
   headline: 'Less busywork. More doing.',
-  support: 'A glimpse of where SOYL assignments are going.',
-  tag: 'Concept preview',
-  items: [
-    { id: 'chemistry', name: 'Chemistry', line: 'Mix compounds. Watch what happens.' },
-    { id: 'physics', name: 'Physics', line: 'Push, swing and test forces.' },
-    { id: 'english', name: 'English', line: 'Speak it. Explain it. Say it better.' },
-    { id: 'biology', name: 'Biology', line: 'Explore living systems from the inside.' },
-    { id: 'maths', name: 'Mathematics', line: 'Move the numbers. See the shape.' },
-  ],
+  intro: 'Simulators for maths, physics and chemistry let students move things and see what happens, not just pick an option.',
 } as const;
 
 export const audiences = {
-  headline: 'Change what homework means.',
+  label: 'Who it’s for',
+  headline: 'One assignment, three people who care.',
   items: [
     {
       id: 'teachers',
-      label: 'For Teachers',
-      line: 'Create better assignments in minutes.',
-      // There is no dedicated teachers page yet; the teacher workflow lives on /schools.
-      href: '/schools',
-      image: '/images/teacher_mentoring.jpg',
-      alt: 'A teacher crouched beside a group of students, asking a question about their work',
-    },
-    {
-      id: 'students',
-      label: 'For Students',
-      line: 'Learn by doing, not submitting.',
-      href: '/students',
-      image: '/images/student_thinking_portrait.jpg',
-      alt: 'A student pausing mid-thought over her notebook',
+      title: 'For teachers',
+      line: 'Assignments from your own notes in minutes, and a clear view of how each pupil worked.',
+      link: { label: 'How SOYL works for teachers', href: '/teachers' },
+      media: 'teachers',
+      kind: 'Photo',
     },
     {
       id: 'schools',
-      label: 'For Schools',
-      line: 'Make thinking visible across classrooms.',
-      href: '/schools',
-      image: '/images/classroom_wide_making.jpg',
-      alt: 'A wide view of a classroom where students are making and building',
+      title: 'For schools',
+      line: 'A ten-week pilot that fits your curriculum, with teachers in control from day one.',
+      link: { label: 'Plan a pilot', href: '/schools' },
+      media: 'schools',
+      kind: 'Photo',
+    },
+    {
+      id: 'parents',
+      title: 'For parents',
+      line: 'See your child’s progress and their teacher’s feedback, not just a mark.',
+      link: { label: 'What parents see', href: '/parents' },
+      media: 'parents',
+      kind: 'Screenshot',
     },
   ],
 } as const;
 
-export const manifesto = {
-  first: "We don't want students to stop using AI.",
+export const belief = {
+  first: 'We don’t want students to stop using AI.',
   second: 'We want learning that still requires them to think.',
-  closing: 'Thinking is the work.',
 } as const;
 
 export const finalCta = {
   headline: 'Build learning worth doing.',
-  primary: { label: 'Bring SOYL to your school', href: '/contact' },
-  secondary: { label: 'Explore SOYL', href: '/method' },
+  line: 'We’ll walk you through SOYL, answer your questions and talk through a pilot for your school.',
 } as const;

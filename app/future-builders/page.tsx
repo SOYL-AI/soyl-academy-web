@@ -1,277 +1,297 @@
-import { Metadata } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
-import { FutureBuildersMobileEnroll } from '@/components/marketing/FutureBuildersMobileEnroll';
-import { createMetadata } from '@/lib/seo/metadata';
+import { FutureBuildersForm } from '@/components/forms/FutureBuildersForm';
+import { WaitlistForm } from '@/components/forms/WaitlistForm';
+import { ButtonLink } from '@/components/notebook/Button';
+import { PageHero } from '@/components/notebook/PageHero';
+import { ProductShot } from '@/components/notebook/ProductShot';
+import { Label, SectionHeader } from '@/components/notebook/SectionHeader';
+import { Faq } from '@/components/seo/Faq';
 import { StructuredData } from '@/components/seo/StructuredData';
-import { faqNode, graph, webPageNode } from '@/lib/seo/schema';
-import { futureBuildersFaqs } from '@/content/future-builders-faqs';
-import { DeadlineCounter } from '@/components/marketing/FutureBuildersUrgency';
+import { getFutureBuildersFaqs } from '@/content/future-builders-faqs';
 import {
-  CLASSES_START_DATE,
+  BASE_PRICE,
+  COHORT as COHORT_DATA,
+  CONTACT_HOURS,
   FRIEND_CODE,
   FRIEND_DISCOUNT,
-  ORIENTATION_DATE,
-  REGISTRATION_CLOSES,
   SCHEDULE,
   SEATS_TOTAL,
-  STATUS_BADGE,
   VALUE_LINE,
+  formatCohortDate,
+  getCohortState,
   whatsappLink,
   whatsappShareLink,
+  type CohortState,
 } from '@/content/future-builders';
-import { SITE_URL } from '@/lib/seo/config';
-import { Container } from '@/components/layout/Container';
-import { ScrollReveal } from '@/components/motion/ScrollReveal';
-import { FutureBuildersForm } from '@/components/forms/FutureBuildersForm';
-import { DrawnUnderline } from '@/components/motion/DrawnUnderline';
-import { FutureBuildersCurriculum } from '@/components/sections/FutureBuildersCurriculum';
-import { FutureBuildersPortfolioValue } from '@/components/sections/FutureBuildersPortfolioValue';
-import { FutureBuildersFaq } from '@/components/sections/FutureBuildersFaq';
-import { FutureBuildersWhatsAppButton, FutureBuildersWhatsAppInlineBanner } from '@/components/marketing/FutureBuildersWhatsAppButton';
+import { media } from '@/content/media';
+import { ORGANIZATION_ID, SITE_URL, absoluteUrl } from '@/lib/seo/config';
+import { createMetadata } from '@/lib/seo/metadata';
+import { breadcrumbNode, faqNode, graph, topLevelCrumbs, webPageNode } from '@/lib/seo/schema';
 
-export const metadata: Metadata = createMetadata({ path: '/future-builders', title: 'Future Builders Programme | SOYL Academy', description: 'Join the Future Builders 12-week online cohort for Grades 7 to 12. Students build real working prototypes across Software, AI, IoT, and Entrepreneurship.', keywords: ['online coding classes for kids', 'robotics for students', 'AI course for teenagers', 'IoT programming for grades 7 to 12', 'entrepreneurship for kids', 'Future Builders SOYL'] });
+export const metadata = createMetadata({
+  path: '/future-builders',
+  keywords: ['online coding classes for kids', 'robotics for students', 'AI course for teenagers', 'IoT for grades 7 to 12', 'entrepreneurship for students', 'Future Builders SOYL'],
+});
 
-export default function FutureBuildersPage() {
+// Registration state comes from today's date; re-check every hour.
+export const revalidate = 3600;
+
+const PRICE = `₹${BASE_PRICE.toLocaleString('en-IN')}`;
+
+const MODULES = [
+  { weeks: 'Weeks 1–4', title: 'Software and computing', desc: 'Python, APIs and SQLite databases. No prior coding needed.', outcome: 'A working Python tool and database backend for the capstone.' },
+  { weeks: 'Weeks 5–6', title: 'AI and automation', desc: 'Machine learning, deep learning, RL agents and image processing.', outcome: 'Train a model and build a smart assistant into the product.' },
+  { weeks: 'Weeks 7–9', title: 'IoT and robotics', desc: 'Low-voltage ESP32 electronics, sensors, servos and networking.', outcome: 'Wire sensors and a servo to give the software a physical body.' },
+  { weeks: 'Weeks 10–12', title: 'Entrepreneurship', desc: 'Market discovery, customer interviews, cost sheets and Demo Day.', outcome: 'Pitch the finished prototype to parents, teachers and guests.' },
+];
+
+const GLANCE = [
+  ['Live online', `12 weeks, ${CONTACT_HOURS} contact hours, live on ${SCHEDULE.days}. Every session is recorded.`],
+  ['Beginners welcome', 'Grades 7–12. No coding experience needed: students start with basic logic.'],
+  ['Built in teams', 'Teams of 3–4 build a working prototype and present it on Demo Day.'],
+  ['Hardware kit', 'A personal ESP32-C3 kit, shipped free across India around week 3 or 4. Theirs to keep.'],
+  ['The fee', `${PRICE} covers all 12 weeks, the recordings and the kit.`],
+  ['Try Session 1', 'Not the right fit? Ask for a full refund within 24 hours of Session 1 and keep the kit.'],
+];
+
+const PORTFOLIO = [
+  { title: 'A public GitHub repository', line: 'Python, APIs and ESP32 firmware, documented with a README.' },
+  { title: 'A recorded Demo Day pitch', line: 'Three minutes explaining the build, the testing and the business case.' },
+  { title: 'A working device', line: 'A physical gadget with live sensor data that the student keeps improving.' },
+  { title: 'A certificate of completion', line: `${CONTACT_HOURS} contact hours across software, AI, IoT and entrepreneurship.` },
+];
+
+function StatusBox({ state }: { state: CohortState }) {
+  const COHORT = COHORT_DATA;
+  if (state === 'waitlist' || !COHORT) {
+    return (
+      <div className="module border-t-2 border-t-ink p-6">
+        <p className="t-label mb-2 text-muted">Registration</p>
+        <p className="t-title">Waitlist open</p>
+        <p className="mt-3 text-muted">
+          {COHORT ? `Registration for the ${COHORT.name} has closed. ` : ''}Dates for the next cohort are being set. Join the waitlist to hear first.
+        </p>
+        <ButtonLink href="#enroll" size="lg" className="mt-6 w-full" arrow>
+          Join the waitlist
+        </ButtonLink>
+        <p className="t-small mt-4 text-muted">{PRICE} · {SEATS_TOTAL} seats per cohort · kit included</p>
+      </div>
+    );
+  }
+
+  const closing = state === 'closing-soon';
   return (
-    <div className="bg-brand-cream text-brand-black min-h-screen pt-32 pb-28 md:py-32 overflow-x-hidden">
-      <StructuredData data={[graph(webPageNode({ path: '/future-builders' }), faqNode('/future-builders', futureBuildersFaqs)), { "@context": "https://schema.org", "@type": "Course", "name": "Future Builders Programme", "description": "A 12-week builder's workshop for Grades 7 to 12. Learn software development, AI, IoT robotics, and entrepreneurship.", "provider": { "@type": "Organization", "name": "SOYL Academy", "sameAs": "https://soylai.com" }, "educationalCredentialAwarded": "Certificate of Completion", "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "online", "courseSchedule": { "@type": "Schedule", "repeatFrequency": "P1W", "byDay": ["https://schema.org/Saturday", "https://schema.org/Sunday"] }, "startDate": "2026-10-20", "endDate": "2027-01-12", "offers": { "@type": "Offer", "price": "5499", "priceCurrency": "INR", "category": "Paid" } } }]} />
-
-      <Container>
-        {/* Hero Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-16 md:mb-24">
-          <div className="lg:col-span-7">
-            <ScrollReveal>
-              <div className="inline-block bg-brand-yellow px-4 py-2 mb-4 border-2 border-brand-black shadow-[4px_4px_0_0_#141414] rounded-xl">
-                <p className="font-bold tracking-widest uppercase text-brand-black text-sm">{STATUS_BADGE}</p>
-              </div>
-              <p className="font-bold text-brand-black/70 mb-8">Live online &bull; Grades 7 to 12 &bull; Only {SEATS_TOTAL} seats</p>
-              <h1 className="text-[clamp(2.75rem,7vw,6rem)] font-bold tracking-tight mb-8 leading-[1.05]">
-                Build a<br />
-                <span className="relative inline-block whitespace-nowrap">
-                  real product.
-                  <DrawnUnderline className="absolute -bottom-[0.1em] left-0 h-[0.14em] w-full text-brand-blue" />
-                </span>
-              </h1>
-              <p className="text-xl md:text-2xl text-brand-black/80 max-w-2xl leading-relaxed mb-10">
-                12 weekends. 75 contact hours. One working prototype.<br /> 
-                A hands-on workshop covering Software, AI, IoT, and Entrepreneurship.
-              </p>
-              <DeadlineCounter className="mb-8" />
-              <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
-                <Link href="#enroll" className="inline-flex min-h-14 items-center justify-center rounded-xl border-2 border-brand-black bg-brand-yellow px-7 py-3 text-lg font-bold shadow-[4px_4px_0_0_#141414] hover:bg-brand-black hover:text-brand-cream focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue">
-                  Enroll now — ₹5,499
-                </Link>
-                <a href={whatsappLink('Hi, I have a question about Future Builders')} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-14 items-center justify-center rounded-xl border-2 border-brand-black bg-[#25D366] px-6 py-3 text-lg font-bold text-white shadow-[4px_4px_0_0_#141414] hover:bg-[#20ba59] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-blue">
-                  Ask on WhatsApp
-                </a>
-              </div>
-              <p className="font-bold mb-3 max-w-lg">{VALUE_LINE}</p>
-              <p className="text-sm leading-relaxed mb-8 max-w-lg">
-                Hardware kit included, yours to keep. Full refund if requested within 24 hours of Session 1.{' '}
-                <Link href="/refund-policy" className="font-bold underline underline-offset-4">Read refund conditions</Link>.
-              </p>
-              <div className="flex flex-wrap gap-6 md:gap-10 border-t-2 border-brand-black/10 pt-8">
-                <div>
-                  <p className="text-4xl font-bold">12</p>
-                  <p className="text-sm font-bold uppercase tracking-widest text-brand-black/50 mt-1">Weeks</p>
-                </div>
-                <div>
-                  <p className="text-4xl font-bold text-brand-blue">{CLASSES_START_DATE}</p>
-                  <p className="text-sm font-bold uppercase tracking-widest text-brand-black/50 mt-1">Classes from</p>
-                </div>
-                <div>
-                  <p className="text-4xl font-bold text-brand-red">₹5499</p>
-                  <p className="text-sm font-bold uppercase tracking-widest text-brand-black/50 mt-1">Includes Kit</p>
-                </div>
-              </div>
-              <p className="mt-6 text-sm font-bold text-brand-black/70">
-                Orientation {ORIENTATION_DATE} &bull; Classes from {CLASSES_START_DATE} &bull; Registration closes {REGISTRATION_CLOSES}
-              </p>
-            </ScrollReveal>
-          </div>
-          <div className="lg:col-span-5 relative">
-            <ScrollReveal delay={0.1}>
-              <div className="relative aspect-[4/5] w-full border-4 border-brand-black shadow-[16px_16px_0_0_#141414] overflow-hidden rounded-2xl bg-brand-black/5 rotate-2 hover:rotate-0 transition-transform duration-500">
-                <Image 
-                  src="/images/future-builders/iot_wiring.jpg" 
-                  alt="Student wiring an IoT circuit" 
-                  fill 
-                  className="object-cover"
-                />
-              </div>
-              
-              {/* Floating badges */}
-              <div className="absolute -bottom-6 -left-6 bg-brand-blue text-brand-cream p-4 border-2 border-brand-black rounded-2xl shadow-[6px_6px_0_0_#141414] animate-bounce" style={{ animationDuration: '3s' }}>
-                <p className="font-bold text-lg">ESP32-C3 Kit</p>
-              </div>
-              <div className="absolute top-12 -right-8 bg-brand-yellow text-brand-black p-4 border-2 border-brand-black rounded-2xl shadow-[6px_6px_0_0_#141414] animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}>
-                <p className="font-bold text-lg">No prior coding!</p>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-
-        <section aria-labelledby="schedule-heading" className="mb-20">
-          <h2 id="schedule-heading" className="text-3xl sm:text-4xl font-bold tracking-tight mb-3">Dates &amp; class times.</h2>
-          <p className="text-lg text-brand-black/70 mb-8 max-w-2xl">Live on video every weekend, built around school. Every session is recorded, so a missed class never means falling behind.</p>
-          <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { date: ORIENTATION_DATE, label: 'Orientation', note: 'Meet the instructors, set up tools, see the plan for 12 weeks.', tone: 'bg-white' },
-              { date: REGISTRATION_CLOSES, label: 'Registration closes', note: `Or earlier, once all ${SEATS_TOTAL} seats are taken.`, tone: 'bg-brand-yellow' },
-              { date: CLASSES_START_DATE, label: 'Classes begin', note: 'Week 1: logic and first Python programs.', tone: 'bg-white' },
-              { date: 'Week 12', label: 'Demo Day', note: 'Teams present their working prototypes to parents and guests.', tone: 'bg-white' },
-            ].map((step) => (
-              <li key={step.label} className={`${step.tone} border-2 border-brand-black rounded-2xl p-5 shadow-[4px_4px_0_0_#141414]`}>
-                <p className="text-3xl font-bold mb-1">{step.date}</p>
-                <p className="text-sm font-bold uppercase tracking-widest text-brand-blue mb-3">{step.label}</p>
-                <p className="text-brand-black/80 leading-relaxed">{step.note}</p>
-              </li>
-            ))}
-          </ol>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <div className="border-2 border-brand-black rounded-2xl p-5 bg-brand-blue text-brand-cream shadow-[4px_4px_0_0_#141414]">
-              <p className="text-sm font-bold uppercase tracking-widest text-brand-cream/70 mb-2">Every weekend</p>
-              <p className="text-2xl font-bold">{SCHEDULE.days}</p>
-              <p className="text-brand-cream/80 mt-1">{SCHEDULE.hours}</p>
-            </div>
-            <div className="border-2 border-brand-black rounded-2xl p-5 bg-white shadow-[4px_4px_0_0_#141414]">
-              <p className="text-sm font-bold uppercase tracking-widest text-brand-black/50 mb-2">Total</p>
-              <p className="text-2xl font-bold">12 weeks · 75 contact hours</p>
-              <p className="text-brand-black/70 mt-1">Exact session timings confirmed at orientation.</p>
-            </div>
-          </div>
-        </section>
-
-        <section aria-labelledby="programme-details" className="mb-20 border-y-2 border-brand-black/10 py-10 sm:py-14">
-          <h2 id="programme-details" className="text-3xl sm:text-4xl font-bold tracking-tight mb-8">The programme at a glance.</h2>
-          <dl className="grid gap-x-12 sm:grid-cols-2">
-            {[
-              ['Live online learning', `12 weeks and 75 contact hours, live on ${SCHEDULE.days}. Recordings are available if a student misses a class.`],
-              ['Beginners welcome', 'For Grades 7–12. No prior coding experience required; students start with basic logic before progressing to software, AI, and hardware.'],
-              ['Build with a team', 'Teams of 3–4 build a working prototype and present their final product on Demo Day.'],
-              ['Your hardware kit', 'The personal ESP32-C3 kit is sent around week 3 or 4 of the programme and is yours to keep.'],
-              ['What the fee covers', `₹5,499 covers the 12-week programme and hardware kit, with free shipping across India. ${VALUE_LINE.split(' · ')[0]}.`],
-              ['Try the first session', 'Attend Session 1. If it is not the right fit, request a full refund within 24 hours of Session 1. You can keep the kit.'],
-            ].map(([title, description]) => (
-              <div key={title} className="border-t border-brand-black/15 py-5">
-                <dt className="font-bold text-lg mb-2">{title}</dt>
-                <dd className="text-brand-black/80 leading-relaxed max-w-prose">{description}</dd>
-              </div>
-            ))}
-          </dl>
-          <p className="mt-5 text-sm text-brand-black/80">Questions about the timetable or what your child needs?{' '}
-            <a href={whatsappLink('Hi, could you share the Future Builders timetable and equipment requirements?')} target="_blank" rel="noopener noreferrer" className="font-bold text-brand-blue underline underline-offset-4">Ask an instructor before enrolling</a>.
-          </p>
-        </section>
-
-        {/* Interactive Curriculum Section */}
-        <FutureBuildersCurriculum />
-
-        {/* College & Portfolio Ready Value Proposition (Grades 10-12) */}
-        <FutureBuildersPortfolioValue />
-
-        {/* Bring-a-friend offer */}
-        <section aria-labelledby="friend-offer" className="mb-24 grid gap-6 lg:grid-cols-12 items-center border-2 border-brand-black rounded-2xl bg-brand-yellow p-6 sm:p-10 shadow-[8px_8px_0_0_#141414]">
-          <div className="lg:col-span-8">
-            <p className="text-sm font-bold uppercase tracking-widest mb-3">Bring a friend · build as a team</p>
-            <h2 id="friend-offer" className="text-3xl sm:text-5xl font-bold tracking-tight mb-4">You both save ₹{FRIEND_DISCOUNT}.</h2>
-            <p className="text-lg leading-relaxed max-w-2xl">
-              Projects are built in teams of 3–4, so it&apos;s better with a friend. Enrol together, or get referred by someone already in, and use code{' '}
-              <strong className="font-mono bg-brand-black text-brand-cream px-2 py-0.5 rounded">{FRIEND_CODE}</strong> at checkout. Your friend gets ₹{FRIEND_DISCOUNT} too: off their fee, or refunded if they&apos;ve already paid.
-            </p>
-          </div>
-          <div className="lg:col-span-4 flex flex-col gap-3">
-            <Link href={`/future-builders?coupon=${FRIEND_CODE}#enroll`} className="inline-flex min-h-14 items-center justify-center rounded-xl border-2 border-brand-black bg-brand-black px-6 py-3 text-lg font-bold text-brand-cream hover:bg-brand-blue">
-              Enrol with {FRIEND_CODE}
-            </Link>
-            <a href={whatsappShareLink(`Check out Future Builders by SOYL Academy: a 12-week online course for Grades 7–12 (software, AI, IoT, with a hardware kit). Use code ${FRIEND_CODE} and we both save ₹${FRIEND_DISCOUNT}: ${SITE_URL}/future-builders?coupon=${FRIEND_CODE}`)}target="_blank" rel="noopener noreferrer" className="inline-flex min-h-14 items-center justify-center rounded-xl border-2 border-brand-black bg-white px-6 py-3 text-lg font-bold hover:bg-brand-cream">
-              Share with a friend on WhatsApp
-            </a>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <FutureBuildersFaq />
-
-        {/* Registration Section */}
-        <div id="enroll" className="scroll-mt-32">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            <div className="lg:col-span-5">
-              <ScrollReveal>
-                <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">Secure your spot for October.</h2>
-                <p className="text-xl text-brand-black/70 leading-relaxed mb-6">
-                  Only {SEATS_TOTAL} students per cohort, so every project gets individual instructor attention. Teams of 3–4 build and pitch their final product.
-                </p>
-                <DeadlineCounter className="mb-8" />
-                <div className="space-y-6 border-y-2 border-brand-black/10 py-8 mb-8">
-                  <div className="flex justify-between items-center gap-4 text-lg">
-                    <span className="font-bold text-brand-black/60">Orientation</span>
-                    <span className="font-bold text-brand-black text-right">{ORIENTATION_DATE}, 2026</span>
-                  </div>
-                  <div className="flex justify-between items-center gap-4 text-lg">
-                    <span className="font-bold text-brand-black/60">Classes from</span>
-                    <span className="font-bold text-brand-black text-right">{CLASSES_START_DATE}, 2026</span>
-                  </div>
-                  <div className="flex justify-between items-center gap-4 text-lg">
-                    <span className="font-bold text-brand-black/60">Class times</span>
-                    <span className="font-bold text-brand-black text-right">{SCHEDULE.short}</span>
-                  </div>
-                  <div className="flex justify-between items-center gap-4 text-lg">
-                    <span className="font-bold text-brand-black/60">Registration closes</span>
-                    <span className="font-bold text-brand-red text-right">{REGISTRATION_CLOSES}</span>
-                  </div>
-                  <div className="flex justify-between items-center text-lg">
-                    <span className="font-bold text-brand-black/60">Hardware Kit</span>
-                    <span className="font-bold text-brand-black">Yours to keep</span>
-                  </div>
-                  <div className="flex justify-between items-center text-lg">
-                    <span className="font-bold text-brand-black/60">Format</span>
-                    <span className="font-bold text-brand-black">Online Live Weekends</span>
-                  </div>
-                </div>
-                <div className="bg-brand-blue p-8 text-brand-cream border-2 border-brand-black shadow-[8px_8px_0_0_#141414] rounded-2xl hover:-translate-y-2 transition-transform duration-300 mb-6">
-                  <h4 className="font-bold text-2xl mb-3">ESP32 Hardware Kit</h4>
-                  <p className="text-brand-cream/80 text-lg">Every student receives a personal ₹700 value physical kit: ESP32-C3 microcontroller, breadboard, sensors (temperature, light, distance), LEDs, and a servo motor.</p>
-                </div>
-
-                {/* Session 1 Money-Back Guarantee Card */}
-                <div className="bg-brand-yellow/30 border-2 border-brand-black shadow-[6px_6px_0_0_#141414] rounded-2xl p-6 sm:p-7">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xl">🛡️</span>
-                    <span className="text-xs font-bold uppercase tracking-widest text-brand-black">
-                      100% Risk-Free Policy
-                    </span>
-                  </div>
-                  <h4 className="font-bold text-xl text-brand-black mb-2">
-                    Session 1 Money-Back Guarantee
-                  </h4>
-                  <p className="text-sm text-brand-black/80 font-medium leading-relaxed">
-                    Attend the first weekend. If your child doesn&apos;t love building their first project, get a 100% full refund, no questions asked. The hardware kit is yours to keep.
-                  </p>
-                </div>
-              </ScrollReveal>
-            </div>
-            <div className="lg:col-span-7">
-              <ScrollReveal delay={0.1}>
-                <FutureBuildersForm />
-              </ScrollReveal>
-            </div>
-          </div>
-
-          {/* Inline WhatsApp Doubts Banner */}
-          <ScrollReveal delay={0.15}>
-            <FutureBuildersWhatsAppInlineBanner />
-          </ScrollReveal>
-        </div>
-
-      </Container>
-
-      {/* Floating WhatsApp Chat Button */}
-      <FutureBuildersMobileEnroll />
-      <FutureBuildersWhatsAppButton />
+    <div className="module border-t-2 border-t-cobalt p-6">
+      <p className="t-label mb-2 text-muted">{COHORT.name}</p>
+      <p className="t-title">
+        {closing ? (
+          <>
+            Registration closes <span className="mark">{formatCohortDate(COHORT.registrationCloses)}</span>
+          </>
+        ) : (
+          <>Registration open until {formatCohortDate(COHORT.registrationCloses)}</>
+        )}
+      </p>
+      <dl className="t-small mt-5 grid grid-cols-2 gap-y-2 border-t border-rule pt-4">
+        <dt className="text-muted">Orientation</dt>
+        <dd className="t-num text-right">{formatCohortDate(COHORT.orientation, true)}</dd>
+        <dt className="text-muted">Classes from</dt>
+        <dd className="t-num text-right">{formatCohortDate(COHORT.classesStart, true)}</dd>
+        <dt className="text-muted">Class times</dt>
+        <dd className="text-right">{SCHEDULE.short}</dd>
+        <dt className="text-muted">Seats</dt>
+        <dd className="t-num text-right">{SEATS_TOTAL} per cohort</dd>
+      </dl>
+      <ButtonLink href="#enroll" size="lg" className="mt-6 w-full" arrow>
+        Enrol now · {PRICE}
+      </ButtonLink>
+      <p className="t-small mt-4 text-muted">{VALUE_LINE}</p>
     </div>
   );
 }
 
+export default function FutureBuildersPage() {
+  const state = getCohortState();
+  const cohort = state !== 'waitlist' ? COHORT_DATA : null;
+  const open = Boolean(cohort);
+  const faqs = getFutureBuildersFaqs(state);
+  const url = absoluteUrl('/future-builders');
 
+  const programmeNode = {
+    '@type': 'EducationalOrganization',
+    '@id': `${url}#programme`,
+    name: 'SOYL Academy Future Builders Programme',
+    url,
+    description: 'A 12-week live online programme for Grades 7 to 12 in software, AI, IoT robotics and entrepreneurship.',
+    parentOrganization: { '@id': ORGANIZATION_ID },
+  };
+  const courseNode = {
+    '@type': 'Course',
+    '@id': `${url}#course`,
+    name: 'Future Builders Programme',
+    description: 'A 12-week builder’s workshop for Grades 7 to 12: software development, AI, IoT robotics and entrepreneurship.',
+    provider: { '@id': `${url}#programme` },
+    educationalCredentialAwarded: 'Certificate of completion',
+    offers: { '@type': 'Offer', price: String(BASE_PRICE), priceCurrency: 'INR', category: 'Paid', url },
+    ...(open
+      ? {
+          hasCourseInstance: {
+            '@type': 'CourseInstance',
+            courseMode: 'online',
+            startDate: cohort!.classesStart,
+            endDate: cohort!.ends,
+            courseSchedule: { '@type': 'Schedule', repeatFrequency: 'P1W', byDay: ['https://schema.org/Saturday', 'https://schema.org/Sunday'] },
+          },
+        }
+      : {}),
+  };
+
+  return (
+    <>
+      <StructuredData
+        data={graph(
+          webPageNode({ path: '/future-builders' }),
+          breadcrumbNode('/future-builders', topLevelCrumbs('/future-builders')),
+          programmeNode,
+          courseNode,
+          faqNode('/future-builders', faqs)
+        )}
+      />
+
+      <PageHero
+        label="Future Builders · Grades 7–12"
+        title="Build a real product."
+        intro={`12 weekends, ${CONTACT_HOURS} contact hours, one working prototype. A live online cohort covering software, AI, IoT robotics and entrepreneurship, with a hardware kit shipped home.`}
+        actions={
+          <a href={whatsappLink('Hi, I have a question about Future Builders')} target="_blank" rel="noopener noreferrer" className="arrow-link">
+            Ask a question on WhatsApp
+          </a>
+        }
+        aside={<StatusBox state={state} />}
+      />
+
+      {/* At a glance */}
+      <section className="section-tight">
+        <div className="page">
+          <dl className="grid grid-cols-1 gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3">
+            {GLANCE.map(([title, line]) => (
+              <div key={title} className="bg-white p-5 md:p-6">
+                <dt className="font-semibold">{title}</dt>
+                <dd className="t-small mt-1.5 text-muted">{line}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      {/* Curriculum */}
+      <section className="section rule-t">
+        <div className="page">
+          <SectionHeader label="Curriculum" title="Four modules, one product." intro={`${CONTACT_HOURS} hours of hands-on building over 12 weekends, from first Python program to a device that senses and acts.`} />
+          <ol className="mt-10 grid grid-cols-1 gap-px border border-rule bg-rule md:mt-14 md:grid-cols-2 lg:grid-cols-4">
+            {MODULES.map((m) => (
+              <li key={m.title} className="flex flex-col bg-white p-5 md:p-6">
+                <p className="t-label t-num text-muted">{m.weeks}</p>
+                <h3 className="t-title mt-3">{m.title}</h3>
+                <p className="mt-2 text-muted">{m.desc}</p>
+                <p className="t-small mt-auto border-t border-rule pt-4 text-ink">
+                  <span className="font-semibold">Outcome: </span>
+                  {m.outcome}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Photos (real cohort photography only) */}
+      <section className="section-tight">
+        <div className="page grid grid-cols-1 gap-4 md:grid-cols-2">
+          <ProductShot slot={media.futureBuildersHero} kind="Photo" sizes="(min-width: 768px) 50vw, 92vw" />
+          <ProductShot slot={media.futureBuildersDemoDay} kind="Photo" sizes="(min-width: 768px) 50vw, 92vw" />
+        </div>
+      </section>
+
+      {/* What students leave with */}
+      <section className="section rule-t">
+        <div className="page grid-12 gap-y-10">
+          <div className="col-span-12 lg:col-span-5">
+            <Label className="mb-5">For Grades 10–12</Label>
+            <h2 className="t-headline">Proof of work, not just marks.</h2>
+            <p className="t-lead mt-5 max-w-[42ch]">
+              Admissions panels and internship recruiters look for what a student has actually built. Every Future Builder leaves with four things to show.
+            </p>
+          </div>
+          <ul className="col-span-12 border-t border-rule lg:col-span-6 lg:col-start-7">
+            {PORTFOLIO.map((p, i) => (
+              <li key={p.title} className="flex gap-5 border-b border-rule py-5">
+                <span className="t-num font-serif text-[1.75rem] leading-none text-cobalt">{i + 1}</span>
+                <div>
+                  <h3 className="font-semibold">{p.title}</h3>
+                  <p className="t-small mt-1 text-muted">{p.line}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Bring a friend — only while there is something to enrol in */}
+      {open && (
+        <section className="section-tight">
+          <div className="page">
+            <div className="grid-12 items-center gap-y-6 border border-ink bg-highlighter p-6 md:p-10">
+              <div className="col-span-12 lg:col-span-8">
+                <p className="t-label mb-3 text-ink">Bring a friend</p>
+                <h2 className="t-headline">You both save ₹{FRIEND_DISCOUNT}.</h2>
+                <p className="mt-4 max-w-[52ch] text-ink">
+                  Projects are built in teams of 3–4, so it’s better with a friend. Use code <strong className="bg-ink px-1.5 py-0.5 font-mono text-[15px] text-white">{FRIEND_CODE}</strong> at checkout; your friend gets ₹{FRIEND_DISCOUNT} too.
+                </p>
+              </div>
+              <div className="col-span-12 flex flex-col gap-3 lg:col-span-4">
+                <ButtonLink href={`/future-builders?coupon=${FRIEND_CODE}#enroll`} size="lg">
+                  Enrol with {FRIEND_CODE}
+                </ButtonLink>
+                <a
+                  href={whatsappShareLink(`Future Builders by SOYL Academy: a 12-week online course for Grades 7–12 (software, AI, IoT, with a hardware kit). Use code ${FRIEND_CODE} and we both save ₹${FRIEND_DISCOUNT}: ${SITE_URL}/future-builders?coupon=${FRIEND_CODE}`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="arrow-link justify-center"
+                >
+                  Share on WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <Faq faqs={faqs} heading="Questions from parents" />
+
+      {/* Enrol or join the waitlist — exactly one state */}
+      <section id="enroll" className="section rule-t scroll-mt-16">
+        <div className="page grid-12 gap-y-10">
+          <div className="col-span-12 lg:col-span-4">
+            <Label className="mb-5">{open ? 'Enrol' : 'Waitlist'}</Label>
+            <h2 className="t-headline">{cohort ? `Join the ${cohort.name}.` : 'Be first in the next cohort.'}</h2>
+            <p className="mt-5 max-w-[38ch] text-muted">
+              {open
+                ? `Only ${SEATS_TOTAL} students per cohort, so every project gets an instructor’s attention.`
+                : `Each cohort has ${SEATS_TOTAL} seats. Waitlisted families hear about new dates before anyone else.`}
+            </p>
+          </div>
+          <div className="col-span-12 lg:col-span-7 lg:col-start-6">
+            {cohort ? (
+              <FutureBuildersForm
+                closesOn={formatCohortDate(cohort.registrationCloses)}
+                orientationOn={formatCohortDate(cohort.orientation)}
+                cohortName={cohort.name}
+              />
+            ) : (
+              <WaitlistForm />
+            )}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

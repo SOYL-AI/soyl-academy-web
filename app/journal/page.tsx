@@ -1,105 +1,78 @@
 import Link from 'next/link';
+import { PageHero } from '@/components/notebook/PageHero';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { formatArticleDate, formatReadingTime, journalArticles } from '@/content/journal';
-import { createMetadata } from '@/lib/seo/metadata';
-import {
-  breadcrumbNode,
-  graph,
-  journalListNode,
-  topLevelCrumbs,
-  webPageNode,
-} from '@/lib/seo/schema';
 import { absoluteUrl } from '@/lib/seo/config';
-import { Container } from '@/components/layout/Container';
-import { ScrollReveal } from '@/components/motion/ScrollReveal';
+import { createMetadata } from '@/lib/seo/metadata';
+import { breadcrumbNode, graph, journalListNode, topLevelCrumbs, webPageNode } from '@/lib/seo/schema';
 
 export const metadata = createMetadata({ path: '/journal' });
 
 export default function JournalPage() {
-  const [featured, ...rest] = journalArticles || [];
+  const articles = [...journalArticles].sort((a, b) => b.date.localeCompare(a.date));
+  const [featured, ...rest] = articles;
 
   return (
-    <div className="min-h-screen bg-brand-cream text-brand-black pt-16 md:pt-32 pb-16 md:pb-32">
+    <>
       <StructuredData
         data={graph(
           webPageNode({
             path: '/journal',
             mainEntityId: `${absoluteUrl('/journal')}#list`,
-            dateModified: [...journalArticles].map((a) => a.date).sort().at(-1),
+            dateModified: articles[0]?.date,
           }),
           breadcrumbNode('/journal', topLevelCrumbs('/journal')),
           journalListNode(journalArticles)
         )}
       />
-      <Container>
-        <header className="mb-12 md:mb-24">
-          <ScrollReveal>
-            <p className="text-sm font-bold tracking-widest uppercase text-brand-blue mb-6">The SOYL Journal</p>
-            <h1 className="text-5xl md:text-7xl font-bold max-w-4xl tracking-tight leading-tight">
-              Ideas about learning, technology and the <span className="bg-brand-yellow px-2">school that&rsquo;s coming next.</span>
-            </h1>
-          </ScrollReveal>
-        </header>
 
-        {featured && (
-          <ScrollReveal delay={0.1}>
-            <article className="mb-12 md:mb-24 pb-12 md:pb-24 border-b border-brand-black/10">
+      <PageHero
+        label="The SOYL Journal"
+        title={
+          <>
+            Ideas about learning, technology and the <span className="mark">school that’s coming next.</span>
+          </>
+        }
+        size="headline"
+      />
+
+      <section className="section-tight">
+        <div className="page">
+          {featured && (
+            <article className="ruled margin-line mb-px border border-rule p-6 pl-14 md:p-10 md:pl-20">
               <Link href={`/journal/${featured.slug}`} className="group block">
-                <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
-                  <div className="aspect-[4/3] bg-brand-black/5 relative overflow-hidden rounded-2xl">                    {featured.image ? (                      <img src={featured.image} alt={featured.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />                    ) : (                      <div className="absolute inset-0 bg-brand-black/10 transition-transform duration-700 group-hover:scale-105" />                    )}                  </div>
-                  <div>
-                    <div className="flex items-center gap-4 text-sm font-bold tracking-widest uppercase text-brand-black/40 mb-6">
-                      <time dateTime={featured.date}>{formatArticleDate(featured.date)}</time>
-                      <span>&middot;</span>
-                      <span>{formatReadingTime(featured.readingTime)}</span>
-                      <span>&middot;</span>
-                      <span className="text-brand-blue">{featured.category}</span>
-                    </div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 transition-colors group-hover:text-brand-blue leading-tight">
-                      {featured.title}
-                    </h2>
-                    <p className="text-xl text-brand-black/70 leading-relaxed">
-                      {featured.excerpt}
-                    </p>
-                  </div>
-                </div>
+                <ArticleMeta date={featured.date} readingTime={featured.readingTime} category={featured.category} />
+                <h2 className="t-headline mt-4 max-w-[20ch] group-hover:text-cobalt">{featured.title}</h2>
+                <p className="t-lead mt-4 max-w-[56ch]">{featured.excerpt}</p>
+                <span className="arrow-link mt-6">Read the essay</span>
               </Link>
             </article>
-          </ScrollReveal>
-        )}
-
-        <div className="grid md:grid-cols-2 gap-x-16 gap-y-24">
-          {rest.map((article, index) => (
-            <ScrollReveal key={article.slug} delay={index * 0.1}>
-              <article className="group h-full">
-                <Link href={`/journal/${article.slug}`} className="block h-full">
-                  <div className="aspect-video bg-brand-black/5 relative overflow-hidden rounded-2xl mb-6">
-                    {article.image ? (
-                      <img src={article.image} alt={article.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                    ) : (
-                      <div className="absolute inset-0 bg-brand-black/10 transition-transform duration-700 group-hover:scale-105" />
-                    )}
-                  </div>
-                  <div className="flex items-center gap-4 text-xs font-bold tracking-widest uppercase text-brand-black/40 mb-4">
-                    <time dateTime={article.date}>{formatArticleDate(article.date)}</time>
-                    <span>&middot;</span>
-                    <span>{formatReadingTime(article.readingTime)}</span>
-                    <span>&middot;</span>
-                    <span className="text-brand-blue">{article.category}</span>
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 transition-colors group-hover:text-brand-blue leading-tight">
-                    {article.title}
-                  </h3>
-                  <p className="text-lg text-brand-black/70 leading-relaxed">
-                    {article.excerpt}
-                  </p>
+          )}
+          <ul className="grid grid-cols-1 gap-px border border-t-0 border-rule bg-rule md:grid-cols-3">
+            {rest.map((a) => (
+              <li key={a.slug} className="bg-white">
+                <Link href={`/journal/${a.slug}`} className="group flex h-full flex-col p-5 md:p-6">
+                  <ArticleMeta date={a.date} readingTime={a.readingTime} category={a.category} />
+                  <h3 className="t-title mt-3 group-hover:text-cobalt">{a.title}</h3>
+                  <p className="mt-2 text-muted">{a.excerpt}</p>
                 </Link>
-              </article>
-            </ScrollReveal>
-          ))}
+              </li>
+            ))}
+          </ul>
         </div>
-      </Container>
-    </div>
+      </section>
+    </>
   );
 }
 
+function ArticleMeta({ date, readingTime, category }: { date: string; readingTime: number; category: string }) {
+  return (
+    <p className="t-label flex flex-wrap items-center gap-x-2 text-muted">
+      <span className="text-ink">{category}</span>
+      <span aria-hidden="true">·</span>
+      <time dateTime={date}>{formatArticleDate(date)}</time>
+      <span aria-hidden="true">·</span>
+      <span>{formatReadingTime(readingTime)}</span>
+    </p>
+  );
+}

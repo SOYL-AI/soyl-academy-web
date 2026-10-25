@@ -1,339 +1,322 @@
 @import "tailwindcss";
 
-@theme {
-  --color-brand-cream: #F7F5EF;
-  --color-brand-black: #141414;
-  --color-brand-yellow: #F4C93E;
-  --color-brand-red: #B4392E;
-  --color-brand-blue: #2F3E9E;
-  --color-brand-tan: #EFE9DA;
-  /* ============================================
-     BRAND COLOR — brief-accurate values
-     ============================================ */
-  --color-white: #FFFFFF;
-  --color-ink: #171717;
-  --color-ink-light: #6B6B68;
-  --color-ink-lighter: #9A9A96;
-  --color-cobalt: #3155FF;
-  --color-cobalt-dark: #2440CC;
-  --color-cobalt-light: #EDF0FF;
-  --color-teacher-red: #D84A3F;
-  --color-highlighter: #F2D45C;
-  --color-paper: #F4F0E7;
-  --color-paper-dark: #E9E3D6;
-  --color-bone: #FAFAF8;
-  --color-border: rgba(23, 23, 23, 0.09);
-  --color-border-dark: rgba(23, 23, 23, 0.18);
+/* ==========================================================================
+   SOYL — "The Working Notebook"
+   Tokens match the product app exactly. See docs/redesign-working-notebook.md.
+   ========================================================================== */
 
-  /* ============================================
-     TYPOGRAPHY
-     One grotesk. One editorial serif, used sparingly.
-     ============================================ */
-  --font-sans: var(--font-instrument-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+@theme {
+  /* ── Colour (exact values from the brief) ─────────────────────────────── */
+  --color-paper: #F4F0E7;        /* page background */
+  --color-white: #FFFFFF;        /* modules */
+  --color-ink: #171717;          /* text */
+  --color-muted: #5E5E59;        /* secondary text — never lighter for body copy */
+  --color-cobalt: #3155FF;       /* the single action colour */
+  --color-cobalt-deep: #2F3E9E;  /* hover + dark blocks */
+  --color-highlighter: #F2D45C;  /* highlights + one block colour */
+  --color-red-pen: #D84A3F;      /* margin lines, underlines, handwritten marks */
+  --color-success: #1E7A4C;      /* success moments only */
+
+  /* Lines. Decorative rules are faint; control borders meet 3:1. */
+  --color-rule: rgba(23, 23, 23, 0.16);
+  --color-rule-strong: rgba(23, 23, 23, 0.32);
+  --color-control: #77776F;
+
+  /* ── Type ─────────────────────────────────────────────────────────────── */
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-serif: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
 
-  /* ============================================
-     RADII — a real scale, not eight arbitrary ones
-     ============================================ */
-  --radius-xs: 4px;
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 18px;
-  --radius-xl: 28px;
+  /* ── Radii: notebook paper is square; controls are barely softened ────── */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
 
-  /* Containers */
-  --container-narrow: 720px;
-  --container-default: 1180px;
-  --container-wide: 1440px;
-
-  /* Motion */
-  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
-  --duration-fast: 200ms;
-  --duration-base: 400ms;
-  --duration-slow: 800ms;
-
-  /* Z-index layers */
-  --z-base: 1;
-  --z-sticky: 100;
-  --z-overlay: 200;
-  --z-modal: 300;
-  --z-toast: 400;
+  /* ── Motion: in-place, under 300 ms ───────────────────────────────────── */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-base: 240ms;
 }
 
-/* ============================================
+/* ==========================================================================
    BASE
-   ============================================ */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+   ========================================================================== */
 
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
+  scroll-padding-top: 5rem;
 }
 
 body {
   font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.55;
   color: var(--color-ink);
-  /* White is the canvas. Paper belongs inside artifacts only. */
-  background-color: var(--color-white);
-  line-height: 1.6;
+  background-color: var(--color-paper);
   overflow-x: clip;
   font-synthesis-weight: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans);
+@media (min-width: 768px) {
+  body { font-size: 1.125rem; }
+}
+
+h1, h2, h3, h4 {
   text-wrap: balance;
 }
 
-p {
-  text-wrap: pretty;
-}
+p { text-wrap: pretty; }
 
-/* ============================================
-   TYPE SCALE
-   Display type is medium-weight and tightly tracked —
-   institutional confidence, not shouty SaaS bold.
-   ============================================ */
+/* ==========================================================================
+   TYPE SCALE — serif for display, Inter for everything else.
+   Three display sizes so sections don't all shout at the same volume.
+   ========================================================================== */
 
-.text-display {
-  font-size: clamp(3.25rem, 8vw, 8rem);
-  line-height: 0.92;
-  letter-spacing: -0.045em;
-  font-weight: 500;
-}
-
-.text-hero {
-  font-size: clamp(2.75rem, 6.2vw, 6rem);
-  line-height: 1;
-  letter-spacing: -0.038em;
-  font-weight: 500;
-}
-
-.text-headline {
-  font-size: clamp(2.125rem, 4.2vw, 4rem);
-  line-height: 1.04;
-  letter-spacing: -0.032em;
-  font-weight: 500;
-}
-
-.text-subhead {
-  font-size: clamp(1.5rem, 2.4vw, 2.25rem);
-  line-height: 1.15;
-  letter-spacing: -0.025em;
-  font-weight: 500;
-}
-
-.text-lead {
-  font-size: clamp(1.125rem, 1.45vw, 1.4375rem);
-  line-height: 1.5;
-  letter-spacing: -0.014em;
-  font-weight: 400;
-}
-
-.text-body {
-  font-size: clamp(1rem, 1.05vw, 1.0625rem);
-  line-height: 1.65;
-  letter-spacing: -0.006em;
-}
-
-.text-small {
-  font-size: 0.875rem;
-  line-height: 1.5;
-  letter-spacing: -0.004em;
-}
-
-.text-eyebrow {
-  font-size: 0.75rem;
-  line-height: 1.4;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-/* Loud moments — the manifesto voice. Heavier, tighter, uppercase-ready. */
-.text-manifesto {
-  font-size: clamp(2.75rem, 7.5vw, 7.5rem);
-  line-height: 0.9;
-  letter-spacing: -0.048em;
-  font-weight: 600;
-  text-wrap: balance;
-}
-
-.font-editorial {
+.t-display {
   font-family: var(--font-serif);
   font-weight: 400;
+  font-size: clamp(2.875rem, 6.4vw, 6rem);
+  line-height: 0.98;
+  letter-spacing: -0.012em;
+}
+
+.t-headline {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2.25rem, 4.2vw, 3.75rem);
+  line-height: 1.02;
   letter-spacing: -0.01em;
 }
 
-/* ============================================
-   LAYOUT
-   ============================================ */
+.t-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.75rem, 2.6vw, 2.375rem);
+  line-height: 1.08;
+}
 
-.container-narrow { max-width: var(--container-narrow); }
-.container-default { max-width: var(--container-default); }
-.container-wide { max-width: var(--container-wide); }
+.t-subtitle {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: clamp(1.125rem, 1.4vw, 1.3125rem);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
 
-.container-narrow,
-.container-default,
-.container-wide {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+.t-lead {
+  font-size: clamp(1.125rem, 1.5vw, 1.3125rem);
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+/* Labels: 13–14 px, weight 500. Never smaller than 13 px anywhere. */
+.t-label {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.t-small {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.t-num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================================================
+   LAYOUT — a visible 12-column grid on a 1240 px page
+   ========================================================================== */
+
+.page {
   width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: 1rem;
 }
 
 @media (min-width: 768px) {
-  .container-narrow,
-  .container-default,
-  .container-wide {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
+  .page { padding-inline: 2rem; }
 }
 
 @media (min-width: 1280px) {
-  .container-narrow,
-  .container-default,
-  .container-wide {
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
-  }
+  .page { padding-inline: 2.5rem; }
 }
 
-/* ============================================
-   SECTION RHYTHM — generous. Whitespace is the asset.
-   ============================================ */
-
-.section-padding {
-  padding-top: clamp(5.5rem, 11vw, 10rem);
-  padding-bottom: clamp(5.5rem, 11vw, 10rem);
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 1.5rem;
 }
 
-.section-padding-sm {
-  padding-top: clamp(3.5rem, 6vw, 5.5rem);
-  padding-bottom: clamp(3.5rem, 6vw, 5.5rem);
+.section {
+  padding-block: clamp(3.5rem, 7vw, 6rem);
 }
 
-.section-padding-lg {
-  padding-top: clamp(7rem, 15vw, 14rem);
-  padding-bottom: clamp(7rem, 15vw, 14rem);
+.section-tight {
+  padding-block: clamp(2.5rem, 4.5vw, 4rem);
 }
 
-/* Hairline rule — used instead of card borders to separate quiet sections */
-.rule-top {
-  border-top: 1px solid var(--color-border);
+/* ==========================================================================
+   NOTEBOOK MOTIF
+   1 px rules, a faint 8 px graph grid (used sparingly), ruled lines,
+   and the teacher's red margin line.
+   ========================================================================== */
+
+.rule-t { border-top: 1px solid var(--color-rule); }
+.rule-b { border-bottom: 1px solid var(--color-rule); }
+
+/* White module with a hairline border — the Primer-style boxed cell. */
+.module {
+  background: var(--color-white);
+  border: 1px solid var(--color-rule);
 }
 
-/* ============================================
-   ANNOTATION (Teacher markings)
-   ============================================ */
-
-.annotation-underline {
-  text-decoration: underline;
-  text-decoration-color: var(--color-teacher-red);
-  text-decoration-thickness: 2.5px;
-  text-underline-offset: 6px;
-  text-decoration-style: wavy;
+.graph-grid {
+  background-color: var(--color-white);
+  background-image:
+    linear-gradient(rgba(49, 85, 255, 0.11) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(49, 85, 255, 0.11) 1px, transparent 1px),
+    linear-gradient(rgba(49, 85, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(49, 85, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px, 40px 40px, 8px 8px, 8px 8px;
+  background-position: -1px -1px;
 }
 
-.annotation-strikethrough {
-  text-decoration: line-through;
-  text-decoration-color: var(--color-teacher-red);
-  text-decoration-thickness: 2px;
+.ruled {
+  background-color: var(--color-white);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 31px,
+    rgba(49, 85, 255, 0.14) 31px,
+    rgba(49, 85, 255, 0.14) 32px
+  );
 }
 
-.highlight-mark {
-  background-color: var(--color-highlighter);
-  padding: 0.06em 0.22em;
-  margin: 0 -0.1em;
+/* Red teacher's-margin line on the left edge of a module. */
+.margin-line {
+  position: relative;
+}
+.margin-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--margin-x, 2.25rem);
+  width: 1px;
+  background: var(--color-red-pen);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Highlighter stroke behind a word. */
+.mark {
+  background: linear-gradient(transparent 12%, var(--color-highlighter) 12%, var(--color-highlighter) 88%, transparent 88%);
+  padding-inline: 0.12em;
+  margin-inline: -0.06em;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
 
-/* ============================================
-   PAPER — artifacts only
-   ============================================ */
-
-.paper-ruled {
-  background-color: var(--color-paper);
-  background-image: repeating-linear-gradient(
-    transparent,
-    transparent 31px,
-    rgba(23, 23, 23, 0.055) 31px,
-    rgba(23, 23, 23, 0.055) 32px
-  );
+/* Red-pen underline, the teacher's mark. */
+.pen-underline {
+  text-decoration: underline;
+  text-decoration-color: var(--color-red-pen);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
 }
 
-.paper-bg-clean {
-  background-color: var(--color-paper);
-}
+/* ==========================================================================
+   LINKS + FOCUS
+   ========================================================================== */
 
-/* ============================================
-   FOCUS + UTILITIES
-   ============================================ */
+.link {
+  color: var(--color-cobalt);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+.link:hover { color: var(--color-cobalt-deep); }
+
+/* Text link with an arrow that nudges on hover. */
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-weight: 600;
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--color-rule-strong);
+  text-underline-offset: 0.25em;
+  transition: color var(--duration-fast) var(--ease-out), text-decoration-color var(--duration-fast) var(--ease-out);
+}
+.arrow-link:hover {
+  color: var(--color-cobalt);
+  text-decoration-color: currentColor;
+}
+.arrow-link svg { transition: transform var(--duration-base) var(--ease-out); }
+.arrow-link:hover svg { transform: translateX(3px); }
 
 :focus-visible {
   outline: 2px solid var(--color-cobalt);
   outline-offset: 3px;
-  border-radius: 2px;
 }
 
-.hide-scrollbar {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
+/* On dark/cobalt blocks the focus ring switches to the highlighter. */
+.on-dark :focus-visible {
+  outline-color: var(--color-highlighter);
 }
 
 .skip-to-content {
   position: absolute;
   top: -100%;
   left: 1rem;
-  z-index: 9999;
-  padding: 0.75rem 1.5rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
   background: var(--color-cobalt);
   color: var(--color-white);
   font-weight: 600;
   font-size: 0.875rem;
-  border-radius: 0 0 var(--radius-xs) var(--radius-xs);
-  transition: top 0.2s;
+}
+.skip-to-content:focus { top: 0.5rem; }
+
+::selection {
+  background-color: var(--color-highlighter);
+  color: var(--color-ink);
 }
 
-.skip-to-content:focus {
-  top: 0;
+/* Pressable: compresses slightly under the pointer. */
+.press {
+  transition:
+    transform var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+.press:active { transform: translateY(1px) scale(0.985); }
+
+/* Cookie bar: hidden before first paint once a choice is stored (see CONSENT_BOOT_SCRIPT),
+   unless the visitor re-opened it from "Cookie preferences". */
+html[data-consent] .cookie-bar:not([data-forced]) {
+  display: none;
 }
 
-/* ============================================
-   DECORATIVE VIDEO
-   Exactly one of these queries always matches, so the
-   still and the clip never both show. Pairing this with
-   preload="none" means reduced-motion users never fetch
-   the video file at all.
-   ============================================ */
-
-@media (prefers-reduced-motion: no-preference) {
-  .motion-still { display: none; }
+/* Success moment: a small settle, no confetti. */
+.sim-pop {
+  animation: sim-pop 240ms var(--ease-out) both;
+}
+@keyframes sim-pop {
+  from { opacity: 0; transform: translateY(4px) scale(0.98); }
+  to { opacity: 1; transform: none; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .motion-clip { display: none; }
-}
-
-/* ============================================
-   REDUCED MOTION
-   Motion is never load-bearing: anything a scroll
-   animation would reveal must already be visible.
-   ============================================ */
+/* ==========================================================================
+   REDUCED MOTION — nothing is load-bearing; every state is already visible.
+   ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -344,100 +327,4 @@ p {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-::selection {
-  background-color: var(--color-cobalt);
-  color: var(--color-white);
-}
-
-::-webkit-scrollbar { width: 9px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--color-border-dark); border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: var(--color-ink-lighter); }
-
-/* ============================================
-   EDITORIAL HIGHLIGHTS & INTERACTIONS
-   ============================================ */
-
-.text-highlight {
-  background-color: var(--color-highlighter);
-  padding: 0 0.15em;
-  margin: 0 -0.1em;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-  display: inline;
-  line-height: inherit;
-}
-
-.link-underline {
-  text-decoration: none;
-  background-image: linear-gradient(var(--color-cobalt), var(--color-cobalt));
-  background-position: 0% 100%;
-  background-repeat: no-repeat;
-  background-size: 0% 1px;
-  transition: background-size 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.link-underline:hover {
-  background-size: 100% 1px;
-  color: var(--color-cobalt);
-}
-
-/* ============================================
-   MOTION PRIMITIVES (CSS-only, usable from Server Components)
-   See docs/motion-system.md. The global reduced-motion rule above collapses
-   all of these to their end state.
-   ============================================ */
-
-:root {
-  /* Overshoots slightly then settles: the "spring return" for pressables. */
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-/* Pressable: compresses under the finger, springs back on release. */
-.press {
-  transition:
-    transform 420ms var(--ease-spring),
-    background-color 300ms var(--ease-out-quart),
-    color 300ms var(--ease-out-quart),
-    border-color 300ms var(--ease-out-quart);
-}
-.press:active {
-  transform: scale(0.965);
-  transition-duration: 90ms;
-}
-
-/* Headline word-rise: each word slides up out of a mask. Transform-only, so
-   the text is in the first paint and LCP is not delayed by an opacity fade. */
-.word-mask {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: top;
-  padding-bottom: 0.12em;
-  margin-bottom: -0.12em;
-}
-.word-mask.is-highlight {
-  background-color: var(--color-highlighter);
-  padding-left: 0.14em;
-  padding-right: 0.14em;
-  margin-left: -0.02em;
-}
-.word-rise {
-  display: inline-block;
-  transform: translateY(108%);
-  animation: word-rise 900ms var(--ease-out-expo) forwards;
-  animation-delay: calc(var(--i, 0) * 70ms + 100ms);
-}
-@keyframes word-rise {
-  to { transform: translateY(0); }
-}
-
-/* Idle drift for small decorative elements. Slow, tiny, never the focus. */
-.float-slow {
-  animation: float-slow 7s ease-in-out infinite;
-}
-@keyframes float-slow {
-  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
-  50% { transform: translateY(-8px) rotate(calc(var(--r, 0deg) + 1.2deg)); }
 }

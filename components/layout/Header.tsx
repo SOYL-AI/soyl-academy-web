@@ -1,178 +1,124 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { TopAnnouncementBar } from '@/components/marketing/TopAnnouncementBar';
-import { STATUS_BADGE } from '@/content/future-builders';
-
-const navItems = [
-  { label: 'The SOYL Method', href: '/method' },
-  { label: 'What We Teach', href: '/what-we-teach' },
-  { label: 'For Schools', href: '/schools' },
-  { label: 'For Students', href: '/students' },
-  { label: 'Future Builders', href: '/future-builders', badge: STATUS_BADGE },
-  { label: 'Journal', href: '/journal' },
-  { label: 'About', href: '/about' },
-];
+import { APP_URL, MAIN_NAV, PRIMARY_CTA } from '@/lib/site';
+import { Logo } from '@/components/notebook/Logo';
+import { buttonClasses } from '@/components/notebook/Button';
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const boxRef = useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
-  const close = useCallback(() => setIsOpen(false), []);
-  const toggle = useCallback(() => setIsOpen((p) => !p), []);
+  // Close the menu on navigation.
+  const [lastPath, setLastPath] = useState(pathname);
+  if (pathname !== lastPath) {
+    setLastPath(pathname);
+    setOpen(false);
+  }
 
-  // Escape closes; so does a click anywhere outside the box.
   useEffect(() => {
-    if (!isOpen) return;
-
+    if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') close();
+      if (e.key === 'Escape') {
+        setOpen(false);
+        toggleRef.current?.focus();
+      }
     };
-    const onPointerDown = (e: MouseEvent) => {
-      if (boxRef.current && !boxRef.current.contains(e.target as Node)) close();
-    };
-
     document.addEventListener('keydown', onKey);
-    document.addEventListener('mousedown', onPointerDown);
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      document.removeEventListener('mousedown', onPointerDown);
-    };
-  }, [isOpen, close]);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [open]);
+
+  const isCurrent = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
-      <TopAnnouncementBar />
-      <div className="container-default">
-        <div className="flex items-start justify-between gap-4 pt-3 md:pt-4">
-          {/* Bordered nav object, top-left */}
-          <div
-            ref={boxRef}
-            className="pointer-events-auto w-[min(26rem,calc(100vw-2.5rem))] border-2 border-brand-black bg-brand-cream"
-          >
-            <div className="flex items-stretch h-[56px] md:h-[60px]">
-              <Link
-                href="/"
-                onClick={close}
-                className="flex items-center px-4 md:px-5 mr-auto"
-                aria-label="SOYL Academy home"
-              >
-                <span className="text-[19px] md:text-[21px] font-bold tracking-[-0.035em] text-brand-black">
-                  SOYL Academy
-                </span>
-              </Link>
+    <header className="sticky top-0 z-40 border-b border-rule bg-paper/95 backdrop-blur-sm">
+      <div className="page flex h-16 items-center gap-6">
+        <Logo size={30} />
 
-              <div className="border-l-2 border-brand-black self-stretch" />
-              <div className="w-[54px] md:w-[60px] shrink-0 self-stretch flex items-center justify-center p-[8px]">
-                <Image src="/logo.png" alt="SOYL Logo" width={40} height={40} className="object-contain w-full h-full" />
-              </div>
-
-              <button
-                onClick={toggle}
-                aria-label={isOpen ? 'Close menu' : 'Open menu'}
-                aria-expanded={isOpen}
-                className="border-l-2 border-brand-black w-[56px] md:w-[60px] shrink-0 flex flex-col items-center justify-center gap-[6px] transition-colors hover:bg-brand-black/5"
-              >
-                <span
+        <nav aria-label="Primary" className="ml-4 hidden lg:block">
+          <ul className="flex items-center gap-1">
+            {MAIN_NAV.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  aria-current={isCurrent(item.href) ? 'page' : undefined}
                   className={cn(
-                    'block w-[20px] h-[2px] bg-brand-black transition-transform duration-300 origin-center',
-                    isOpen && 'rotate-45 translate-y-[4px]'
+                    'relative inline-flex h-16 items-center px-3 text-[15px] font-medium transition-colors duration-150',
+                    isCurrent(item.href) ? 'text-ink' : 'text-muted hover:text-ink'
                   )}
-                />
-                <span
-                  className={cn(
-                    'block w-[20px] h-[2px] bg-brand-black transition-transform duration-300 origin-center',
-                    isOpen && '-rotate-45 -translate-y-[4px]'
-                  )}
-                />
-              </button>
-            </div>
-
-            {/* Panel drops out of the same box */}
-            <div
-              className={cn(
-                'grid transition-[grid-template-rows] duration-[400ms] ease-[var(--ease-out-expo)]',
-                isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-              )}
-            >
-              <div className="overflow-hidden">
-                <nav
-                  className="border-t-2 border-brand-black px-4 md:px-5 pt-2 pb-5"
-                  aria-label="Primary"
                 >
-                  <ul>
-                    {navItems.map((item) => (
-                      <li key={item.href} className="border-b border-brand-black/10">
-                        <Link
-                          href={item.href}
-                          onClick={close}
-                          tabIndex={isOpen ? 0 : -1}
-                          aria-current={
-                            pathname === item.href ? 'page' : undefined
-                          }
-                          className={cn(
-                            'flex items-center justify-between py-4 text-2xl font-bold tracking-tight transition-colors',
-                            pathname === item.href
-                              ? 'text-brand-blue'
-                              : 'text-brand-black hover:text-brand-blue'
-                          )}
-                        >
-                          {item.label}
-                          {item.badge && (
-                            <span className="text-xs font-bold tracking-widest uppercase bg-brand-yellow text-brand-black px-2 py-1 ml-4 rounded-sm">
-                              {item.badge}
-                            </span>
-                          )}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                  {item.label}
+                  {isCurrent(item.href) && (
+                    <span aria-hidden="true" className="absolute inset-x-3 bottom-0 h-0.5 bg-red-pen" />
+                  )}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-                  {/* Both CTAs repeat here, as Primer's panel does */}
-                  <div className="flex flex-col gap-2.5 pt-6">
-                    <Link
-                      href="/contact"
-                      onClick={close}
-                      tabIndex={isOpen ? 0 : -1}
-                      className="inline-flex items-center justify-center h-12 px-5 rounded-full bg-brand-black text-brand-cream text-[15px] font-bold transition-colors hover:bg-brand-blue"
-                    >
-                      Bring SOYL to your school
-                    </Link>
-                    <Link
-                      href="/students"
-                      onClick={close}
-                      tabIndex={isOpen ? 0 : -1}
-                      className="inline-flex items-center justify-center h-12 px-5 rounded-full border-2 border-brand-black text-brand-black text-[15px] font-bold transition-colors hover:bg-brand-black/5"
-                    >
-                      For Students
-                    </Link>
-                  </div>
-                </nav>
-              </div>
-            </div>
-          </div>
-
-          {/* CTAs float free at the right, as Primer's do */}
-          <div className="pointer-events-auto hidden md:flex items-center gap-2.5 shrink-0">
-            <Link
-              href="/students"
-              className="inline-flex items-center h-[44px] px-5 rounded-full bg-brand-cream border-2 border-brand-black text-brand-black text-[15px] font-bold transition-colors hover:bg-brand-black/5"
-            >
-              For Students
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center h-[44px] px-6 rounded-full bg-brand-black text-brand-cream text-[15px] font-bold transition-colors hover:bg-brand-blue"
-            >
-              Bring SOYL to your school
-            </Link>
-          </div>
+        <div className="ml-auto flex items-center gap-2 md:gap-4">
+          <a
+            href={APP_URL}
+            className="hidden text-[15px] font-medium text-ink underline-offset-4 hover:text-cobalt hover:underline sm:inline"
+          >
+            Sign in
+          </a>
+          <Link href={PRIMARY_CTA.href} className={buttonClasses('primary', 'md', 'h-10 px-4')}>
+            {PRIMARY_CTA.label}
+          </Link>
+          <button
+            ref={toggleRef}
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            className="press -mr-2 inline-flex h-11 w-11 items-center justify-center lg:hidden"
+          >
+            <span className="sr-only">{open ? 'Close menu' : 'Open menu'}</span>
+            <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+              {open ? (
+                <path d="M5 5l12 12M17 5L5 17" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+              ) : (
+                <path d="M3 7h16M3 15h16" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+              )}
+            </svg>
+          </button>
         </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        ref={panelRef}
+        hidden={!open}
+        className="border-t border-rule bg-paper lg:hidden"
+      >
+        <nav aria-label="Mobile" className="page pb-6 pt-2">
+          <ul>
+            {MAIN_NAV.map((item) => (
+              <li key={item.href} className="border-b border-rule">
+                <Link
+                  href={item.href}
+                  aria-current={isCurrent(item.href) ? 'page' : undefined}
+                  className="flex min-h-12 items-center justify-between py-3 text-lg font-medium"
+                >
+                  {item.label}
+                  {isCurrent(item.href) && <span aria-hidden="true" className="h-2 w-2 rounded-full bg-red-pen" />}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <a href={APP_URL} className="flex min-h-12 items-center py-3 text-lg font-medium">
+                Sign in
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );

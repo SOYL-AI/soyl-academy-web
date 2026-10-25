@@ -1,21 +1,29 @@
-import Link from 'next/link';
+import { ButtonLink } from '@/components/notebook/Button';
+import { Label } from '@/components/notebook/SectionHeader';
+import { PRIMARY_CTA } from '@/lib/site';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-center">
-      <div className="max-w-md">
-        <h1 className="text-display text-cobalt mb-6">404</h1>
-        <h2 className="text-subhead text-ink mb-4">Page not found</h2>
-        <p className="text-lg text-ink/70 mb-8">
-          The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
-        </p>
-        <Link 
-          href="/" 
-          className="inline-block bg-ink text-white px-8 py-3 rounded-full font-medium hover:bg-cobalt transition-colors"
-        >
-          Return Home
-        </Link>
+    <section className="section">
+      <div className="page grid-12">
+        <div className="ruled margin-line col-span-12 border border-rule p-6 pl-14 md:col-span-8 md:p-10 md:pl-20">
+          <Label className="mb-5">Error 404</Label>
+          <h1 className="t-headline">
+            <span className="line-through decoration-red-pen decoration-2">This page</span> isn’t here.
+          </h1>
+          <p className="t-lead mt-5 max-w-[44ch]">
+            It may have moved, or the link may be wrong. Try the homepage, or book a demo if that’s what you came for.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <ButtonLink href="/" size="lg">
+              Go to the homepage
+            </ButtonLink>
+            <ButtonLink href={PRIMARY_CTA.href} variant="secondary" size="lg">
+              {PRIMARY_CTA.label}
+            </ButtonLink>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

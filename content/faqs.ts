@@ -17,7 +17,17 @@ export const homeFaqs: FaqItem[] = [
   {
     question: 'What is SOYL Academy?',
     answer:
-      'SOYL Academy helps teachers create outcome-based learning experiences that ask students to think, apply, create, explain and defend — not simply submit. It is an initiative of SOYL AI Private Limited, based in Bengaluru, India, and it works with schools through partnership programs.',
+      'SOYL Academy is an assignment platform for Grades 1 to 10. Teachers turn their own notes into interactive assignments, students work them out with unlimited attempts and step-by-step hints, and teachers see how each pupil got there. It is built by SOYL AI Private Limited in Bengaluru, India.',
+  },
+  {
+    question: 'Who writes the questions, the AI or the teacher?',
+    answer:
+      'The teacher decides. SOYL drafts questions from the teacher’s notes, and nothing reaches students until the teacher has reviewed, edited and approved it.',
+  },
+  {
+    question: 'Do the hints just give students the answer?',
+    answer:
+      'No. Hints are step-by-step nudges that never reveal the answer. Students can try as many times as they need, and every attempt and hint is recorded so the teacher can see the process, not just the score.',
   },
   {
     question: 'What is the SOYL Method?',
@@ -42,7 +52,7 @@ export const homeFaqs: FaqItem[] = [
   {
     question: 'How can a school start with SOYL Academy?',
     answer:
-      'Schools begin with a pilot of roughly ten weeks: Introduce (weeks 1–2), Implement (weeks 3–8) and Evaluate (weeks 9–10). To enquire about a pilot, contact the SOYL Academy team through the contact page.',
+      'Schools begin with a pilot of roughly ten weeks: Introduce (weeks 1–2), Implement (weeks 3–8) and Evaluate (weeks 9–10). To start, book a demo and the SOYL team will walk you through the platform and the pilot plan.',
   },
 ];
 
@@ -101,7 +111,7 @@ export const studentsFaqs: FaqItem[] = [
   {
     question: 'Can individual students join SOYL Academy?',
     answer:
-      'Yes. Registrations are open for Future Builders, a 12-week live online programme for Grades 7 to 12. Individual students can enroll directly, without a school partnership. Visit the Future Builders page for programme details and registration.',
+      'Yes. Future Builders is a 12-week live online programme for Grades 7 to 12 that individual students can join directly, without a school partnership. The Future Builders page shows the next cohort’s dates, or a waitlist when registration is closed.',
   },
   {
     question: 'What will I do in a SOYL assignment?',
@@ -114,7 +124,7 @@ export const whatWeTeachFaqs: FaqItem[] = [
   {
     question: 'What does SOYL Academy teach?',
     answer:
-      'Registrations are open for Future Builders, a 12-week programme covering Software, AI, IoT, and Entrepreneurship. Additional programmes in AI & Technology, Building & Making, Communication & Ideas, and Problem Solving are coming soon.',
+      'SOYL Academy runs Future Builders, a 12-week weekend programme for Grades 7 to 12 covering Software, AI, IoT, and Entrepreneurship. Additional programmes in AI & Technology, Building & Making, Communication & Ideas, and Problem Solving are coming soon.',
   },
   {
     question: 'How are SOYL Academy programs delivered?',

@@ -13,7 +13,7 @@ import { journalArticles } from '@/content/journal';
  * sitemap `lastmod` for static pages. Do not replace it with `new Date()`:
  * search engines learn to ignore `lastmod` when it changes on every build.
  */
-export const CONTENT_LAST_MODIFIED = '2026-10-03';
+export const CONTENT_LAST_MODIFIED = '2026-10-25';
 
 export type PageType =
   | 'WebPage'
@@ -37,7 +37,7 @@ export interface PageEntry {
   changeFrequency: 'daily' | 'weekly' | 'monthly' | 'yearly';
 }
 
-export const HOME_TITLE = 'SOYL Academy | Outcome-Based Learning in the Age of AI';
+export const HOME_TITLE = 'SOYL Academy | Interactive Assignments for Grades 1–10';
 
 export const PAGES: Record<string, PageEntry> = {
   '/': {
@@ -45,7 +45,7 @@ export const PAGES: Record<string, PageEntry> = {
     title: HOME_TITLE,
     label: 'Home',
     description:
-      'SOYL Academy helps teachers create outcome-based learning experiences that ask students to think, apply, create, explain and defend — not simply submit.',
+      'SOYL Academy turns teachers’ notes into interactive, teacher-approved assignments for Grades 1–10. Students learn by doing, with hints that never give the answer.',
     type: 'WebPage',
     eyebrow: 'SOYL Academy',
     priority: 1,
@@ -83,6 +83,39 @@ export const PAGES: Record<string, PageEntry> = {
     eyebrow: 'For Schools',
     priority: 0.9,
     changeFrequency: 'monthly',
+  },
+  '/teachers': {
+    path: '/teachers',
+    title: 'For Teachers — Assignments From Your Own Notes',
+    label: 'For Teachers',
+    description:
+      'Turn your notes into interactive assignments for Grades 1–10. You approve every question; students get hints, not answers; you see each pupil’s path.',
+    type: 'WebPage',
+    eyebrow: 'For Teachers',
+    priority: 0.9,
+    changeFrequency: 'monthly',
+  },
+  '/parents': {
+    path: '/parents',
+    title: 'For Parents — See How Your Child Learns',
+    label: 'For Parents',
+    description:
+      'With SOYL, parents see their child’s progress and teacher feedback, not just a mark. Hints guide students without giving answers away.',
+    type: 'WebPage',
+    eyebrow: 'For Parents',
+    priority: 0.7,
+    changeFrequency: 'monthly',
+  },
+  '/book-a-demo': {
+    path: '/book-a-demo',
+    title: 'Book a Demo of SOYL Academy',
+    label: 'Book a demo',
+    description:
+      'Book a demo of SOYL Academy for your school: interactive, teacher-approved assignments for Grades 1–10, and a ten-week pilot plan.',
+    type: 'ContactPage',
+    eyebrow: 'Book a demo',
+    priority: 0.9,
+    changeFrequency: 'yearly',
   },
   '/students': {
     path: '/students',
@@ -130,9 +163,10 @@ export const PAGES: Record<string, PageEntry> = {
   },
   '/future-builders': {
     path: '/future-builders',
-    title: 'Future Builders Programme | SOYL Academy',
+    title: 'Future Builders — Weekend Tech Cohort for Grades 7–12',
     label: 'Future Builders',
-    description: 'Enroll in the Future Builders Programme. Your child will build something real. And pitch it.',
+    description:
+      'A 12-weekend live online cohort for Grades 7–12: software, AI, IoT robotics and entrepreneurship, with a hardware kit. Students build a working prototype and pitch it.',
     type: 'WebPage',
     eyebrow: 'Future Builders',
     priority: 0.8,

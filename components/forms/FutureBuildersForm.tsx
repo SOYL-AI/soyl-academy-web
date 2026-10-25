@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { findCoupon, priceFor } from '@/lib/future-builders/pricing';
 import {
@@ -8,25 +8,41 @@ import {
   CALLBACK_PROMISE,
   FRIEND_CODE,
   FRIEND_DISCOUNT,
-  ORIENTATION_DATE,
-  REGISTRATION_CLOSES,
   VALUE_LINE,
   whatsappLink,
 } from '@/content/future-builders';
-import { DeadlineCounter } from '@/components/marketing/FutureBuildersUrgency';
+import { Field, describedBy, inputClasses } from '@/components/notebook/Field';
+import { buttonClasses } from '@/components/notebook/Button';
 
 const WHATSAPP_URL = whatsappLink('Hi, I would like to enroll my child in Future Builders. Could you help me?');
 
-export function FutureBuildersForm() {
-  const [mode, setMode] = useState<'pay' | 'callback'>('pay');
-  const [formData, setFormData] = useState({
-    parentName: '',
-    studentName: '',
-    email: '',
-    phone: '',
-    grade: '',
-  });
+type FormFields = { parentName: string; studentName: string; email: string; phone: string; grade: string };
+type Errors = Partial<Record<keyof FormFields | 'friendName', string>>;
 
+const GRADES = ['7', '8', '9', '10', '11', '12'];
+
+export function validateFamily(f: FormFields): Errors {
+  const e: Errors = {};
+  if (f.parentName.trim().length < 2) e.parentName = 'Please enter the parent’s name.';
+  if (f.studentName.trim().length < 2) e.studentName = 'Please enter the student’s name.';
+  if (!/^\S+@\S+\.\S+$/.test(f.email.trim())) e.email = 'Please enter a valid email address.';
+  if (!/^[+()\-\s\d]{8,20}$/.test(f.phone.trim())) e.phone = 'Please enter a valid phone number.';
+  if (!f.grade) e.grade = 'Please choose a grade.';
+  return e;
+}
+
+interface FutureBuildersFormProps {
+  /** e.g. "22 Oct" — shown in the form header. */
+  closesOn: string;
+  orientationOn: string;
+  cohortName: string;
+}
+
+/** Enrolment form: Razorpay payment, or a callback request. Only rendered while registration is open. */
+export function FutureBuildersForm({ closesOn, orientationOn, cohortName }: FutureBuildersFormProps) {
+  const [mode, setMode] = useState<'pay' | 'callback'>('pay');
+  const [formData, setFormData] = useState<FormFields>({ parentName: '', studentName: '', email: '', phone: '', grade: '' });
+  const [errors, setErrors] = useState<Errors>({});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
@@ -37,15 +53,24 @@ export function FutureBuildersForm() {
   const [couponMessage, setCouponMessage] = useState('');
   const [friendName, setFriendName] = useState('');
 
-  const basePrice = BASE_PRICE;
   const applied = findCoupon(appliedCode);
   const needsFriendName = !!applied?.needsFriendName;
   // FRIEND500 only counts once the friend's name is filled in — same rule the payment API applies.
   const price = priceFor(appliedCode, needsFriendName ? friendName : undefined);
-  const discount = basePrice - price;
+  const discount = BASE_PRICE - price;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const next = { ...formData, [e.target.name]: e.target.value };
+    setFormData(next);
+    // Re-validate a field that already shows an error, so it clears as soon as it's fixed.
+    if (errors[e.target.name as keyof FormFields]) {
+      setErrors((prev) => ({ ...prev, [e.target.name]: validateFamily(next)[e.target.name as keyof FormFields] }));
+    }
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const name = e.target.name as keyof FormFields;
+    setErrors((prev) => ({ ...prev, [name]: validateFamily(formData)[name] }));
   };
 
   const applyCouponCode = useCallback((codeToApply: string) => {
@@ -56,92 +81,25 @@ export function FutureBuildersForm() {
       setCouponMessage(coupon.message);
     } else {
       setAppliedCode('');
-      setCouponMessage('Invalid coupon code.');
+      setCouponMessage('That code isn’t valid.');
     }
   }, []);
 
-  const handleApplyCoupon = () => {
-    applyCouponCode(couponCode);
-  };
-
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const searchParams = new URLSearchParams(window.location.search);
-      const couponParam = searchParams.get('coupon');
-      if (couponParam) {
-        const timer = setTimeout(() => {
-          applyCouponCode(couponParam);
-        }, 0);
-        return () => clearTimeout(timer);
-      }
-    }
+    const couponParam = new URLSearchParams(window.location.search).get('coupon');
+    if (!couponParam) return;
+    const timer = setTimeout(() => applyCouponCode(couponParam), 0);
+    return () => clearTimeout(timer);
   }, [applyCouponCode]);
 
-  const loadRazorpay = () => {
-    return new Promise((resolve) => {
+  const loadRazorpay = () =>
+    new Promise((resolve) => {
       const script = document.createElement('script');
       script.src = 'https://checkout.razorpay.com/v1/checkout.js';
       script.onload = () => resolve(true);
       script.onerror = () => resolve(false);
       document.body.appendChild(script);
     });
-  };
-
-  const handlePayment = async () => {
-    const res = await loadRazorpay();
-    if (!res) {
-      setError('Razorpay SDK failed to load. Are you online?');
-      setLoading(false);
-      return;
-    }
-
-    try {
-      // 1. Create order
-      const orderData = await fetch('/api/razorpay', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        // The server prices the order from the coupon; the browser never sends an amount.
-        body: JSON.stringify({ coupon: appliedCode, friendName }),
-      }).then((t) => t.json());
-
-      if (orderData.error) {
-        throw new Error(orderData.error);
-      }
-
-      // 2. Open Razorpay Modal
-      const options = {
-        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || 'rzp_test_mock',
-        amount: orderData.amount,
-        currency: orderData.currency,
-        name: 'SOYL Academy',
-        description: 'Future Builders Programme (Oct Cohort)',
-        order_id: orderData.id,
-        handler: async function (response: unknown) {
-          await saveToSheet('pay', (response as { razorpay_payment_id: string }).razorpay_payment_id);
-          setSuccess(true);
-          setLoading(false);
-        },
-        prefill: {
-          name: formData.parentName,
-          email: formData.email,
-          contact: formData.phone,
-        },
-        theme: {
-          color: '#2F3E9E',
-        },
-      };
-
-      const rzp1 = new (window as unknown as { Razorpay: new (options: unknown) => { on: (event: string, callback: (response: unknown) => void) => void, open: () => void } }).Razorpay(options);
-      rzp1.on('payment.failed', function (response: unknown) {
-        setError((response as { error: { description: string } }).error.description);
-        setLoading(false);
-      });
-      rzp1.open();
-    } catch (err: unknown) {
-      setError((err as Error).message || 'Payment initiation failed');
-      setLoading(false);
-    }
-  };
 
   const saveToSheet = async (submissionMode: 'pay' | 'callback', paymentId = '') => {
     try {
@@ -161,226 +119,255 @@ export function FutureBuildersForm() {
     }
   };
 
-  const handleCallback = async () => {
-    await saveToSheet('callback');
-    setSuccess(true);
-    setLoading(false);
+  const handlePayment = async () => {
+    const res = await loadRazorpay();
+    if (!res) {
+      setError('The payment window couldn’t load. Please check your connection and try again.');
+      setLoading(false);
+      return;
+    }
+
+    try {
+      // The server prices the order from the coupon; the browser never sends an amount.
+      const orderData = await fetch('/api/razorpay', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ coupon: appliedCode, friendName }),
+      }).then((t) => t.json());
+
+      if (orderData.error) throw new Error(orderData.error);
+
+      const options = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || 'rzp_test_mock',
+        amount: orderData.amount,
+        currency: orderData.currency,
+        name: 'SOYL Academy',
+        description: `Future Builders Programme (${cohortName})`,
+        order_id: orderData.id,
+        handler: async function (response: unknown) {
+          await saveToSheet('pay', (response as { razorpay_payment_id: string }).razorpay_payment_id);
+          setSuccess(true);
+          setLoading(false);
+        },
+        prefill: { name: formData.parentName, email: formData.email, contact: formData.phone },
+        theme: { color: '#3155FF' },
+      };
+
+      const rzp1 = new (window as unknown as {
+        Razorpay: new (options: unknown) => { on: (event: string, cb: (r: unknown) => void) => void; open: () => void };
+      }).Razorpay(options);
+      rzp1.on('payment.failed', function (response: unknown) {
+        setError((response as { error: { description: string } }).error.description);
+        setLoading(false);
+      });
+      rzp1.open();
+    } catch (err: unknown) {
+      setError((err as Error).message || 'Payment couldn’t start. Please try again.');
+      setLoading(false);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const found = validateFamily(formData);
+    if (needsFriendName && friendName.trim().length < 2) found.friendName = 'Please enter your friend’s name.';
+    setErrors(found);
+    if (Object.keys(found).length) {
+      document.getElementById(`fb-${Object.keys(found)[0]}`)?.focus();
+      return;
+    }
     setLoading(true);
     setError('');
-
-    if (mode === 'pay') {
-      await handlePayment();
-    } else {
-      await handleCallback();
+    if (mode === 'pay') await handlePayment();
+    else {
+      await saveToSheet('callback');
+      setSuccess(true);
+      setLoading(false);
     }
   };
 
   if (success) {
-    if (mode === 'pay') {
-      return (
-        <div className="bg-brand-cream border-2 border-brand-black p-8 md:p-12 text-center rounded-sm">
-          <div className="w-16 h-16 bg-brand-yellow rounded-full flex items-center justify-center mx-auto mb-6 text-brand-black">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-          </div>
-          <h3 className="text-3xl font-bold mb-4">Registration Successful!</h3>
-          <p className="text-lg text-brand-black/70 mb-8">
-            Welcome to the Future Builders Programme. We&apos;ve sent a receipt and onboarding instructions to {formData.email}.
-          </p>
-          <p className="text-brand-black/70 mb-6">Know a friend who&apos;d love this? Share code <strong>{FRIEND_CODE}</strong>. They save ₹{FRIEND_DISCOUNT}, and we&apos;ll send you ₹{FRIEND_DISCOUNT} back when they enroll.</p>
-          <p className="text-brand-blue font-bold tracking-widest uppercase text-sm">See you at orientation on {ORIENTATION_DATE}</p>
-        </div>
-      );
-    } else {
-      return (
-        <div className="bg-brand-cream border-2 border-brand-black p-8 md:p-12 text-center rounded-sm">
-          <div className="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-6 text-brand-cream">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-            </svg>
-          </div>
-          <h3 className="text-3xl font-bold mb-4">Request Received</h3>
-          <p className="text-lg text-brand-black/70 mb-8">
-            Thank you, {formData.parentName}. Our admissions team will call you at {formData.phone} {CALLBACK_PROMISE}. Can&apos;t wait? Message us on WhatsApp now.
-          </p>
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center h-12 px-6 mb-6 rounded-xl border-2 border-brand-black bg-[#25D366] text-white font-bold shadow-[3px_3px_0_0_#141414] hover:bg-[#20ba59]">
-            Chat on WhatsApp
-          </a>
-          <br />
-          <button onClick={() => setSuccess(false)} className="text-brand-blue font-bold tracking-widest uppercase text-sm underline underline-offset-4 hover:text-brand-black">
-            Go back
-          </button>
-        </div>
-      );
-    }
+    return (
+      <div role="status" className="module border-t-2 border-t-success p-6 md:p-8">
+        <p className="t-label mb-3 text-success">{mode === 'pay' ? 'Payment received' : 'Request received'}</p>
+        {mode === 'pay' ? (
+          <>
+            <h3 className="t-title">Welcome to Future Builders.</h3>
+            <p className="mt-3 text-muted">
+              We’ve sent a receipt and onboarding instructions to {formData.email}. See you at orientation on {orientationOn}.
+            </p>
+            <p className="mt-4 text-muted">
+              Know a friend who’d enjoy this? Share code <strong className="text-ink">{FRIEND_CODE}</strong>: they save ₹{FRIEND_DISCOUNT}, and we’ll send you ₹{FRIEND_DISCOUNT} back when they enrol.
+            </p>
+          </>
+        ) : (
+          <>
+            <h3 className="t-title">Thank you, {formData.parentName.split(' ')[0]}.</h3>
+            <p className="mt-3 text-muted">
+              Our team will call you at {formData.phone} {CALLBACK_PROMISE}. Can’t wait?{' '}
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="link">Message us on WhatsApp</a>.
+            </p>
+            <button type="button" onClick={() => setSuccess(false)} className="link mt-4 font-medium">
+              Go back
+            </button>
+          </>
+        )}
+      </div>
+    );
   }
 
+  const field = (name: keyof FormFields, label: string, type = 'text', autoComplete?: string) => (
+    <Field id={`fb-${name}`} label={label} required error={errors[name]}>
+      <input
+        id={`fb-${name}`}
+        name={name}
+        type={type}
+        autoComplete={autoComplete}
+        value={formData[name]}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        className={inputClasses}
+        aria-invalid={!!errors[name]}
+        aria-describedby={describedBy(`fb-${name}`, { error: !!errors[name] })}
+      />
+    </Field>
+  );
+
   return (
-    <form onSubmit={handleSubmit} className="bg-white border-2 border-brand-black p-8 md:p-12 shadow-[8px_8px_0_0_#141414] rounded-sm">
-      <div className="mb-8 text-center">
-        <h3 className="text-3xl font-bold mb-3">Secure your spot</h3>
-        <p className="text-brand-black/70 text-lg mb-5">Registration closes {REGISTRATION_CLOSES}. Orientation {ORIENTATION_DATE}.</p>
-        <DeadlineCounter compact className="items-center" />
+    <form onSubmit={handleSubmit} noValidate className="module p-5 md:p-8">
+      <div className="mb-6 flex flex-wrap items-baseline justify-between gap-2">
+        <h3 className="t-title">Secure a seat</h3>
+        <p className="t-small text-muted">Registration closes {closesOn}</p>
       </div>
 
-      <div className="flex bg-brand-cream p-1 border-2 border-brand-black rounded-lg mb-8">
-        <button 
-          type="button" 
-          onClick={() => setMode('pay')} 
-          className={cn(
-            "flex-1 py-3 text-sm font-bold tracking-widest uppercase rounded-md transition-colors",
-            mode === 'pay' ? "bg-brand-yellow border-2 border-brand-black shadow-[2px_2px_0_0_#141414]" : "text-brand-black/60 hover:text-brand-black"
-          )}
-        >
-          Pay & Enroll
-        </button>
-        <button 
-          type="button" 
-          onClick={() => setMode('callback')} 
-          className={cn(
-            "flex-1 py-3 text-sm font-bold tracking-widest uppercase rounded-md transition-colors",
-            mode === 'callback' ? "bg-brand-blue text-brand-cream border-2 border-brand-black shadow-[2px_2px_0_0_#141414]" : "text-brand-black/60 hover:text-brand-black"
-          )}
-        >
-          Request Callback
-        </button>
+      <div role="group" aria-label="How would you like to enrol?" className="mb-6 grid grid-cols-2 border border-ink p-0.5">
+        {(['pay', 'callback'] as const).map((m) => (
+          <button
+            key={m}
+            type="button"
+            aria-pressed={mode === m}
+            onClick={() => setMode(m)}
+            className={cn('press h-11 text-[15px] font-semibold', mode === m ? 'bg-ink text-white' : 'text-ink hover:bg-paper')}
+          >
+            {m === 'pay' ? 'Pay and enrol' : 'Request a callback'}
+          </button>
+        ))}
       </div>
 
-      {error && <div className="mb-6 p-4 bg-brand-red/10 text-brand-red border border-brand-red/20 text-sm font-bold">{error}</div>}
+      {error && (
+        <div role="alert" className="t-small mb-6 border-l-2 border-red-pen bg-paper px-3 py-2 text-ink">
+          {error}
+        </div>
+      )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div>
-          <label className="block text-sm font-bold tracking-widest uppercase mb-2 text-brand-black/70">Parent Name</label>
-          <input required type="text" name="parentName" value={formData.parentName} onChange={handleChange} className="w-full h-14 px-4 bg-brand-cream border-2 border-brand-black focus:outline-none focus:ring-4 focus:ring-brand-yellow focus:border-brand-black transition-all" />
-        </div>
-        <div>
-          <label className="block text-sm font-bold tracking-widest uppercase mb-2 text-brand-black/70">Student Name</label>
-          <input required type="text" name="studentName" value={formData.studentName} onChange={handleChange} className="w-full h-14 px-4 bg-brand-cream border-2 border-brand-black focus:outline-none focus:ring-4 focus:ring-brand-yellow focus:border-brand-black transition-all" />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div>
-          <label className="block text-sm font-bold tracking-widest uppercase mb-2 text-brand-black/70">Email Address</label>
-          <input required type="email" name="email" value={formData.email} onChange={handleChange} className="w-full h-14 px-4 bg-brand-cream border-2 border-brand-black focus:outline-none focus:ring-4 focus:ring-brand-yellow focus:border-brand-black transition-all" />
-        </div>
-        <div>
-          <label className="block text-sm font-bold tracking-widest uppercase mb-2 text-brand-black/70">Phone Number</label>
-          <input required type="tel" name="phone" value={formData.phone} onChange={handleChange} className="w-full h-14 px-4 bg-brand-cream border-2 border-brand-black focus:outline-none focus:ring-4 focus:ring-brand-yellow focus:border-brand-black transition-all" />
-        </div>
-      </div>
-
-      <div className="mb-8">
-        <label className="block text-sm font-bold tracking-widest uppercase mb-2 text-brand-black/70">Student Grade</label>
-        <select required name="grade" value={formData.grade} onChange={handleChange} className="w-full h-14 px-4 bg-brand-cream border-2 border-brand-black focus:outline-none focus:ring-4 focus:ring-brand-yellow focus:border-brand-black transition-all appearance-none cursor-pointer">
-          <option value="">Select Grade</option>
-          <option value="7">Grade 7</option>
-          <option value="8">Grade 8</option>
-          <option value="9">Grade 9</option>
-          <option value="10">Grade 10</option>
-          <option value="11">Grade 11</option>
-          <option value="12">Grade 12</option>
-        </select>
+      <div className="grid gap-5 md:grid-cols-2">
+        {field('parentName', 'Parent’s name', 'text', 'name')}
+        {field('studentName', 'Student’s name')}
+        {field('email', 'Email', 'email', 'email')}
+        {field('phone', 'Phone', 'tel', 'tel')}
+        <Field id="fb-grade" label="Student’s grade" required error={errors.grade} className="md:col-span-2">
+          <select
+            id="fb-grade"
+            name="grade"
+            value={formData.grade}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={cn(inputClasses, 'cursor-pointer')}
+            aria-invalid={!!errors.grade}
+            aria-describedby={describedBy('fb-grade', { error: !!errors.grade })}
+          >
+            <option value="">Choose a grade…</option>
+            {GRADES.map((g) => (
+              <option key={g} value={g}>Grade {g}</option>
+            ))}
+          </select>
+        </Field>
       </div>
 
       {mode === 'pay' && (
-        <div className="mb-8">
-          <label className="block text-sm font-bold tracking-widest uppercase mb-2 text-brand-black/70">Discount Coupon (Optional)</label>
+        <div className="mt-6">
+          <label htmlFor="fb-coupon" className="t-label mb-1.5 block text-ink">
+            Discount code <span className="font-normal text-muted">(optional)</span>
+          </label>
           <div className="flex gap-2">
-            <input 
-              type="text" 
-              value={couponCode} 
-              onChange={(e) => setCouponCode(e.target.value.toUpperCase())} 
-              placeholder="Enter code" 
-              className="flex-1 h-14 px-4 bg-brand-cream border-2 border-brand-black focus:outline-none focus:ring-4 focus:ring-brand-yellow focus:border-brand-black transition-all uppercase placeholder:normal-case" 
+            <input
+              id="fb-coupon"
+              type="text"
+              value={couponCode}
+              onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
+              className={cn(inputClasses, 'uppercase')}
+              aria-describedby={couponMessage ? 'fb-coupon-msg' : undefined}
             />
-            <button 
-              type="button" 
-              onClick={() => handleApplyCoupon()} 
-              className="px-6 h-14 bg-brand-black text-brand-cream font-bold hover:bg-brand-blue transition-colors focus:outline-none focus:ring-4 focus:ring-brand-blue/30"
-            >
+            <button type="button" onClick={() => applyCouponCode(couponCode)} className={buttonClasses('secondary', 'md', 'h-12')}>
               Apply
             </button>
           </div>
           {couponMessage && (
-            <p className={`mt-2 text-sm font-bold ${applied ? 'text-green-600' : 'text-brand-red'}`}>
+            <p id="fb-coupon-msg" className={cn('t-small mt-1.5 font-medium', applied ? 'text-success' : 'text-ink')}>
               {couponMessage}
             </p>
           )}
           {needsFriendName && (
-            <div className="mt-4">
-              <label htmlFor="friendName" className="block text-sm font-bold tracking-widest uppercase mb-2 text-brand-black/70">Friend&apos;s name (referred you or enrolling with you)</label>
-              <input id="friendName" required type="text" value={friendName} onChange={(e) => setFriendName(e.target.value)} className="w-full h-14 px-4 bg-brand-cream border-2 border-brand-black focus:outline-none focus:ring-4 focus:ring-brand-yellow focus:border-brand-black transition-all" />
-            </div>
+            <Field id="fb-friendName" label="Friend’s name (referred you, or enrolling with you)" required error={errors.friendName} className="mt-4">
+              <input
+                id="fb-friendName"
+                type="text"
+                value={friendName}
+                onChange={(e) => setFriendName(e.target.value)}
+                className={inputClasses}
+                aria-invalid={!!errors.friendName}
+                aria-describedby={describedBy('fb-friendName', { error: !!errors.friendName })}
+              />
+            </Field>
           )}
           {!applied && (
-            <p className="mt-3 text-sm text-brand-black/70">
+            <p className="t-small mt-2 text-muted">
               Enrolling with a friend, or referred by one? Use{' '}
-              <button type="button" onClick={() => applyCouponCode(FRIEND_CODE)} className="font-bold text-brand-blue underline underline-offset-4">{FRIEND_CODE}</button>
+              <button type="button" onClick={() => applyCouponCode(FRIEND_CODE)} className="link font-semibold">
+                {FRIEND_CODE}
+              </button>
               . You both save ₹{FRIEND_DISCOUNT}.
             </p>
           )}
         </div>
       )}
 
-      <div className="border-t-2 border-brand-black/10 pt-8 mb-8">
+      <div className="mt-8 border-t border-rule pt-6">
         {discount > 0 && mode === 'pay' && (
-          <div className="flex justify-between items-end mb-2">
-            <span className="text-sm font-bold text-brand-black/70 uppercase tracking-widest">Base Price</span>
-            <span className="text-lg font-bold line-through text-brand-black/50">₹{basePrice}</span>
-          </div>
+          <p className="t-small flex justify-between text-muted">
+            <span>Full fee</span>
+            <span className="t-num line-through">₹{BASE_PRICE.toLocaleString('en-IN')}</span>
+          </p>
         )}
-        <div className="flex justify-between items-end mb-4">
-          <span className="text-xl font-bold">Total</span>
-          <span className="text-4xl font-bold">₹{mode === 'pay' ? price : basePrice}</span>
-        </div>
-        <p className="text-sm text-brand-black/70 font-bold text-right mb-4">{VALUE_LINE}</p>
-        
-        {/* Risk-Free Guarantee Callout */}
-        <div className="p-3 bg-brand-cream border border-brand-black/20 rounded-lg flex items-center gap-2.5 text-xs text-brand-black font-bold">
-          <span className="text-base shrink-0">🛡️</span>
-          <span>100% Session 1 Money-Back Guarantee: Full refund if not thrilled after weekend 1.</span>
-        </div>
+        <p className="flex items-baseline justify-between">
+          <span className="font-semibold">Total</span>
+          <span className="t-num font-serif text-[2.5rem] leading-none">
+            ₹{(mode === 'pay' ? price : BASE_PRICE).toLocaleString('en-IN')}
+          </span>
+        </p>
+        <p className="t-small mt-2 text-muted">{VALUE_LINE}</p>
+        <p className="t-small mt-1 text-muted">Full refund if requested within 24 hours of Session 1; the kit is yours to keep.</p>
       </div>
 
-      {mode === 'pay' ? (
-        <button disabled={loading} type="submit" className="w-full h-16 bg-brand-black text-brand-cream text-lg font-bold hover:bg-brand-blue focus:outline-none focus:ring-4 focus:ring-brand-blue/30 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
-          {loading ? 'Processing...' : `Pay ₹${price.toLocaleString('en-IN')} & Enroll Now`}
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <button type="submit" disabled={loading} className={buttonClasses('primary', 'lg', 'w-full sm:w-auto')}>
+          {loading
+            ? mode === 'pay'
+              ? 'Opening payment…'
+              : 'Sending…'
+            : mode === 'pay'
+              ? `Pay ₹${price.toLocaleString('en-IN')} and enrol`
+              : 'Request a callback'}
         </button>
+        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="arrow-link">
+          Questions? WhatsApp us
+        </a>
+      </div>
+      {mode === 'pay' ? (
+        <p className="t-small mt-4 text-muted">Payments are processed securely by Razorpay.</p>
       ) : (
-        <>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <button disabled={loading} type="submit" className="w-full h-16 bg-brand-blue text-brand-cream text-lg font-bold hover:bg-brand-black focus:outline-none focus:ring-4 focus:ring-brand-black/30 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
-              {loading ? 'Submitting...' : 'Request a Callback'}
-            </button>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="w-full h-16 inline-flex items-center justify-center bg-[#25D366] text-white text-lg font-bold border-2 border-brand-black hover:bg-[#20ba59] focus:outline-none focus:ring-4 focus:ring-brand-black/30 transition-colors">
-              WhatsApp us now
-            </a>
-          </div>
-          <p className="text-center text-sm font-bold text-brand-black/60 mt-4">We call back {CALLBACK_PROMISE}.</p>
-        </>
-      )}
-      
-      {mode === 'pay' && (
-        <p className="text-center text-xs font-bold text-brand-black/40 uppercase tracking-widest mt-6 flex items-center justify-center gap-2">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-          Secured by Razorpay
-        </p>
-      )}
-      {mode === 'pay' && (
-        <p className="text-center text-sm text-brand-black/70 mt-3">
-          Questions first?{' '}
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="font-bold text-brand-blue underline underline-offset-4">WhatsApp us</a>
-          {' '}or switch to Request Callback.
-        </p>
+        <p className="t-small mt-4 text-muted">We call back {CALLBACK_PROMISE}.</p>
       )}
     </form>
   );
 }
-
-

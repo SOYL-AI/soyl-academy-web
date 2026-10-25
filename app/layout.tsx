@@ -1,12 +1,10 @@
 import type { Metadata, Viewport } from 'next';
-import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { MotionProvider } from '@/components/motion/MotionProvider';
-import { Instrument_Sans, Instrument_Serif } from 'next/font/google';
+import { Inter, Instrument_Serif } from 'next/font/google';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { FutureBuildersPromoModal } from '@/components/marketing/FutureBuildersPromoModal';
 import { CookieConsent } from '@/components/legal/CookieConsent';
+import { CONSENT_BOOT_SCRIPT } from '@/components/legal/consent';
+import { ConsentedAnalytics } from '@/components/legal/ConsentedAnalytics';
 import { StructuredData } from '@/components/seo/StructuredData';
 import {
   SITE_DESCRIPTION,
@@ -21,11 +19,11 @@ import { HOME_TITLE } from '@/lib/seo/pages';
 import { graph, organizationNode, websiteNode } from '@/lib/seo/schema';
 import './globals.css';
 
-const instrumentSans = Instrument_Sans({
+// Same faces as the product app.
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-instrument-sans',
+  variable: '--font-inter',
   display: 'swap',
-  weight: ['400', '500', '600', '700'],
 });
 
 const instrumentSerif = Instrument_Serif({
@@ -33,7 +31,8 @@ const instrumentSerif = Instrument_Serif({
   variable: '--font-instrument-serif',
   display: 'swap',
   weight: '400',
-  style: ['normal', 'italic'],
+  // Normal only: the italic cost an extra preloaded font for two small accents.
+  style: 'normal',
 });
 
 export const metadata: Metadata = {
@@ -72,6 +71,9 @@ export const metadata: Metadata = {
     'max-snippet': -1,
     'max-video-preview': -1,
   },
+  alternates: {
+    types: { 'application/rss+xml': [{ url: '/feed.xml', title: `${SITE_NAME} Journal` }] },
+  },
   // Search Console / Bing Webmaster verification — set the env vars, no code change needed.
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
@@ -84,7 +86,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#FFFFFF',
+  themeColor: '#F4F0E7',
 };
 
 export default function RootLayout({
@@ -93,17 +95,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en-IN"
-      className={`${instrumentSans.variable} ${instrumentSerif.variable}`}
-    >
+    // suppressHydrationWarning: the consent boot script may add data-consent before React hydrates.
+    <html lang="en-IN" className={`${inter.variable} ${instrumentSerif.variable}`} suppressHydrationWarning>
       <head>
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title={`${SITE_NAME} Journal`}
-          href="/feed.xml"
-        />
+        <script dangerouslySetInnerHTML={{ __html: CONSENT_BOOT_SCRIPT }} />
       </head>
       <body className="font-sans antialiased">
         <StructuredData data={graph(organizationNode(), websiteNode())} />
@@ -111,14 +106,10 @@ export default function RootLayout({
           Skip to content
         </a>
         <Header />
-        <MotionProvider>
-          <main id="main-content">{children}</main>
-        </MotionProvider>
+        <main id="main-content">{children}</main>
         <Footer />
-        <FutureBuildersPromoModal />
         <CookieConsent />
-        <Analytics />
-        <SpeedInsights />
+        <ConsentedAnalytics />
       </body>
     </html>
   );

@@ -2,6 +2,7 @@ import { ImageResponse } from 'next/og';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { getOgContent } from '@/lib/seo/pages';
+import { SITE_URL } from '@/lib/seo/config';
 
 /**
  * Branded 1200×630 social card for any indexable page.
@@ -14,7 +15,7 @@ import { getOgContent } from '@/lib/seo/pages';
  * render arbitrary text on the SOYL domain.
  */
 
-const logoData = await readFile(join(process.cwd(), 'public', 'logo.png'), 'base64');
+const logoData = await readFile(join(process.cwd(), 'public', 'brand', 'soyl-mark-128.png'), 'base64');
 const logoSrc = `data:image/png;base64,${logoData}`;
 
 const SIZE = { width: 1200, height: 630 };
@@ -44,19 +45,14 @@ export async function GET(request: Request) {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={logoSrc} width={64} height={64} alt="" style={{ borderRadius: 16 }} />
-            <div style={{ display: 'flex', fontSize: 34, fontWeight: 700, letterSpacing: -1 }}>
-              soyl
-              <span style={{ color: '#3155FF' }}>.</span>
-            </div>
+            <img src={logoSrc} width={64} height={64} alt="" style={{ borderRadius: 32 }} />
+            <div style={{ display: 'flex', fontSize: 34, fontWeight: 600, letterSpacing: -0.5 }}>SOYL Academy</div>
           </div>
           <div
             style={{
               display: 'flex',
-              fontSize: 22,
-              letterSpacing: 4,
-              textTransform: 'uppercase',
-              color: '#6B6B68',
+              fontSize: 24,
+              color: '#5E5E59',
             }}
           >
             {eyebrow}
@@ -82,7 +78,7 @@ export async function GET(request: Request) {
               marginTop: 28,
               fontSize: 30,
               lineHeight: 1.35,
-              color: '#6B6B68',
+              color: '#5E5E59',
               maxWidth: 960,
             }}
           >
@@ -96,7 +92,7 @@ export async function GET(request: Request) {
             <div style={{ width: 56, height: 8, background: '#D84A3F' }} />
             <div style={{ width: 56, height: 8, background: '#F2D45C' }} />
           </div>
-          <div style={{ display: 'flex', fontSize: 24, color: '#6B6B68' }}>SOYL Academy</div>
+          <div style={{ display: 'flex', fontSize: 24, color: '#5E5E59' }}>{new URL(SITE_URL).host.replace(/^www\./, '')}</div>
         </div>
       </div>
     ),

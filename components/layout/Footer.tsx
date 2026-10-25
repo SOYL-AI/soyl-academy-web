@@ -1,163 +1,69 @@
-'use client';
-
 import Link from 'next/link';
-
-const siteLinks = [
-  { label: 'The SOYL Method', href: '/method' },
-  { label: 'What We Teach', href: '/what-we-teach' },
-  { label: 'For Schools', href: '/schools' },
-  { label: 'For Students', href: '/students' },
-];
-
-const companyLinks = [
-  { label: 'Journal', href: '/journal' },
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-];
-
-const legalLinks = [
-  { label: 'Privacy Policy', href: '/privacy' },
-  { label: 'Terms of Service', href: '/terms' },
-  { label: 'Refund Policy', href: '/refund-policy' },
-  { label: 'Shipping Policy', href: '/shipping-policy' },
-];
-
-const socials = [
-  {
-    label: 'Instagram',
-    href: 'https://www.instagram.com/soylacademy/',
-    path: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z',
-  },
-];
-
-function LinkColumn({
-  heading,
-  links,
-  extra,
-}: {
-  heading: string;
-  links: { label: string; href: string }[];
-  extra?: React.ReactNode;
-}) {
-  return (
-    <div>
-      <h2 className="text-eyebrow text-ink-lighter mb-5">{heading}</h2>
-      <ul className="flex flex-col gap-3.5">
-        {links.map((link) => (
-          <li key={link.label}>
-            <Link
-              href={link.href}
-              className="text-body text-ink-light link-underline pb-0.5"
-            >
-              {link.label}
-            </Link>
-          </li>
-        ))}
-        {extra && <li>{extra}</li>}
-      </ul>
-    </div>
-  );
-}
+import { FOOTER_NAV, PRIMARY_CTA, SOCIAL_LINKS } from '@/lib/site';
+import { SITE_CONTACT_EMAIL, SITE_LEGAL_NAME } from '@/lib/seo/config';
+import { Logo } from '@/components/notebook/Logo';
+import { ButtonLink } from '@/components/notebook/Button';
+import { CookieSettingsButton } from '@/components/legal/CookieSettingsButton';
 
 export function Footer() {
   return (
-    <footer className="w-full bg-white rule-top overflow-hidden" role="contentinfo">
-      <div className="container-default pt-20 md:pt-28 pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-8">
-          {/* Identity */}
-          <div className="lg:col-span-4">
-            <p className="text-subhead text-ink mb-2">SOYL Academy</p>
-            <p className="font-editorial text-xl text-ink-light mb-4">
-              Story Of Your Life
-            </p>
-            <p className="mb-8">
-              <a
-                href="mailto:outreach@soyl.cloud"
-                className="text-body text-ink-light hover:text-ink transition-colors link-underline"
-              >
-                outreach@soyl.cloud
-              </a>
-            </p>
-
-            <div className="flex items-center gap-5">
-              {socials.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-ink-lighter transition-colors duration-200 hover:text-ink"
-                >
-                  <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d={social.path} />
-                  </svg>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-8">
-            <LinkColumn heading="Learn" links={siteLinks} />
-            <LinkColumn heading="Company" links={companyLinks} />
-            <LinkColumn
-              heading="Legal"
-              links={legalLinks}
-              extra={
-                <button
-                  type="button"
-                  onClick={() => {
-                    if (typeof window !== 'undefined') {
-                      window.dispatchEvent(new CustomEvent('soyl:open-cookie-settings'));
-                    }
-                  }}
-                  className="text-body text-ink-light link-underline pb-0.5 hover:text-ink transition-colors cursor-pointer text-left"
-                >
-                  Cookie Preferences
-                </button>
-              }
-            />
-          </div>
-        </div>
-
-        <div className="mt-20 md:mt-28 pt-8 rule-top flex flex-col md:flex-row md:items-baseline justify-between gap-4">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-small text-ink-lighter">
-            <p>© 2026 SOYL AI Private Limited</p>
-            <a
-              href="mailto:outreach@soyl.cloud"
-              className="hover:text-ink transition-colors"
-            >
-              outreach@soyl.cloud
-            </a>
-          </div>
-          <p className="text-small text-ink-lighter max-w-md md:text-right">
-            Bengaluru 560043
+    <footer className="border-t border-rule bg-white">
+      <div className="page grid-12 gap-y-12 py-14 md:py-20">
+        <div className="col-span-12 lg:col-span-4">
+          <Logo size={36} />
+          <p className="mt-5 max-w-[34ch] text-muted">
+            Interactive assignments for <span className="whitespace-nowrap">Grades 1–10</span>, written from your notes and approved by you.
           </p>
+          <ButtonLink href={PRIMARY_CTA.href} className="mt-6" arrow>
+            {PRIMARY_CTA.label}
+          </ButtonLink>
         </div>
+
+        <nav aria-label="Footer" className="col-span-12 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4 lg:col-span-8">
+          {FOOTER_NAV.map((col) => (
+            <div key={col.heading}>
+              <h2 className="t-label mb-4 text-ink">{col.heading}</h2>
+              <ul className="space-y-2.5">
+                {col.links.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="t-small text-muted hover:text-ink hover:underline underline-offset-4">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+                {col.heading === 'Legal' && (
+                  <li>
+                    <CookieSettingsButton className="t-small text-left text-muted hover:text-ink hover:underline underline-offset-4" />
+                  </li>
+                )}
+              </ul>
+            </div>
+          ))}
+        </nav>
       </div>
 
-      {/* Closing wordmark — photography read through the letterforms */}
-      <div
-        className="w-full flex items-end justify-center overflow-hidden pointer-events-none select-none"
-        aria-hidden="true"
-      >
-        <p
-          className="w-full text-center font-sans"
-          style={{
-            fontSize: 'clamp(6rem, 25vw, 26rem)',
-            fontWeight: 700,
-            letterSpacing: '-0.06em',
-            lineHeight: 1,
-            backgroundImage: "url('/images/hero_students_collaborating.jpg')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center 30%',
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
-            color: 'transparent',
-          }}
-        >
-          soyl
-        </p>
+      <div className="border-t border-rule">
+        <div className="page t-small flex flex-col gap-3 py-6 text-muted md:flex-row md:items-center md:justify-between">
+          <p>
+            © {new Date().getFullYear()} {SITE_LEGAL_NAME} · Bengaluru 560043
+          </p>
+          <p className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <a href={`mailto:${SITE_CONTACT_EMAIL}`} className="hover:text-ink hover:underline underline-offset-4">
+              {SITE_CONTACT_EMAIL}
+            </a>
+            {SOCIAL_LINKS.map((s) => (
+              <a
+                key={s.href}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-ink hover:underline underline-offset-4"
+              >
+                {s.label}
+              </a>
+            ))}
+          </p>
+        </div>
       </div>
     </footer>
   );

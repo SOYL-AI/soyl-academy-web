@@ -16,7 +16,7 @@ export const SITE_LOCALE = 'en_IN';
 export const SITE_LANGUAGE = 'en-IN';
 
 export const SITE_DESCRIPTION =
-  'SOYL Academy helps teachers create outcome-based learning experiences that ask students to think, apply, create, explain and defend — not simply submit.';
+  'SOYL Academy turns teachers’ notes into interactive, teacher-approved assignments for Grades 1–10. Students learn by doing, with hints that never give the answer, and teachers see each pupil’s process.';
 
 export const SITE_KEYWORDS = [
   'outcome-based learning',
@@ -56,7 +56,7 @@ export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 
 /** Square brand mark used for schema `logo` and PWA icons. */
-export const LOGO_PATH = '/logo.png';
+export const LOGO_PATH = '/brand/soyl-mark-512.png';
 
 export function absoluteUrl(path = ''): string {
   if (/^https?:\/\//i.test(path)) return path;

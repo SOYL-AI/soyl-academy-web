@@ -1,3 +1,5 @@
+> **Superseded (Oct 2026).** The site was rebuilt as "The Working Notebook". See [redesign-working-notebook.md](./redesign-working-notebook.md). Kept for history only.
+
 # SOYL Academy Design System
 
 ## Overview

@@ -1,234 +1,138 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useEffect, useId, useState } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { OPEN_COOKIE_SETTINGS_EVENT, readConsent, writeConsent } from './consent';
 
-const STORAGE_KEY = 'soyl_cookie_consent_v1';
-
-export interface CookiePreferences {
-  necessary: boolean;
-  analytics: boolean;
-  marketing: boolean;
-  timestamp: string;
-}
-
+/**
+ * Cookie notice. A slim, non-blocking bar at the bottom of the page — never a
+ * modal and never covering the hero. It is server-rendered (so it paints with
+ * the page instead of popping in after hydration) and hidden by CSS once a
+ * choice exists. Re-opened from "Cookie preferences" in the footer.
+ */
 export function CookieConsent() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [showPreferences, setShowPreferences] = useState(false);
-  const [analyticsAllowed, setAnalyticsAllowed] = useState(true);
-  const [marketingAllowed, setMarketingAllowed] = useState(true);
+  const [open, setOpen] = useState(true);
+  const [forced, setForced] = useState(false);
+  const [custom, setCustom] = useState(false);
+  const [analytics, setAnalytics] = useState(false);
+  const [marketing, setMarketing] = useState(false);
+  const headingId = useId();
 
-  // Check saved preferences on mount & listen for re-open trigger
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (!saved) {
-        // Delay slightly (1.5s) so page paints first and doesn't flash immediately
-        const timer = setTimeout(() => {
-          setIsOpen(true);
-        }, 1500);
-        return () => clearTimeout(timer);
-      } else {
-        const parsed: CookiePreferences = JSON.parse(saved);
-        const timer = setTimeout(() => {
-          setAnalyticsAllowed(parsed.analytics ?? true);
-          setMarketingAllowed(parsed.marketing ?? true);
-        }, 0);
-        return () => clearTimeout(timer);
-      }
-    } catch {
-      // LocalStorage access fallback
-      const timer = setTimeout(() => setIsOpen(true), 1500);
-      return () => clearTimeout(timer);
+    const saved = readConsent();
+    if (saved) {
+      // Reading localStorage can only happen after mount.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setOpen(false);
+      setAnalytics(saved.analytics);
+      setMarketing(saved.marketing);
     }
-  }, []);
 
-  // Listen for open event from footer or privacy page
-  useEffect(() => {
-    const handleOpen = () => {
-      setShowPreferences(true);
-      setIsOpen(true);
+    const reopen = () => {
+      const current = readConsent();
+      setAnalytics(current?.analytics ?? false);
+      setMarketing(current?.marketing ?? false);
+      setCustom(true);
+      setForced(true);
+      setOpen(true);
     };
-
-    window.addEventListener('soyl:open-cookie-settings', handleOpen);
-    return () => window.removeEventListener('soyl:open-cookie-settings', handleOpen);
+    window.addEventListener(OPEN_COOKIE_SETTINGS_EVENT, reopen);
+    return () => window.removeEventListener(OPEN_COOKIE_SETTINGS_EVENT, reopen);
   }, []);
 
-  const savePreferences = useCallback((prefs: CookiePreferences) => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
-    } catch {
-      // Ignore
-    }
-    setIsOpen(false);
-    setShowPreferences(false);
-  }, []);
-
-  const handleAcceptAll = () => {
-    savePreferences({
-      necessary: true,
-      analytics: true,
-      marketing: true,
-      timestamp: new Date().toISOString(),
-    });
+  const save = (prefs: { analytics: boolean; marketing: boolean }) => {
+    writeConsent(prefs);
+    document.documentElement.dataset.consent = '1';
+    setOpen(false);
+    setCustom(false);
+    setForced(false);
   };
 
-  const handleRejectNonEssential = () => {
-    savePreferences({
-      necessary: true,
-      analytics: false,
-      marketing: false,
-      timestamp: new Date().toISOString(),
-    });
-  };
-
-  const handleSaveCustom = () => {
-    savePreferences({
-      necessary: true,
-      analytics: analyticsAllowed,
-      marketing: marketingAllowed,
-      timestamp: new Date().toISOString(),
-    });
-  };
+  if (!open) return null;
 
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <aside
-          role="region"
-          aria-label="Cookie and Privacy Consent"
-          className="fixed bottom-5 left-5 z-40 max-w-[420px] w-[calc(100vw-2.5rem)]"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 24, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ type: 'spring', damping: 26, stiffness: 320 }}
-            className="bg-white border-2 border-brand-black rounded-2xl shadow-[8px_8px_0_0_#141414] p-5 sm:p-6 overflow-hidden"
-          >
-            {/* Top header */}
-            <div className="flex items-center justify-between gap-3 mb-3">
-              <div className="flex items-center gap-2">
-                <span className="text-xl">🛡️</span>
-                <h3 className="font-bold text-base text-brand-black tracking-tight">
-                  Privacy & Cookie Preferences
-                </h3>
-              </div>
-              <span className="text-[10px] font-bold uppercase tracking-wider bg-brand-yellow px-2 py-0.5 rounded border border-brand-black">
-                DPDP & GDPR
-              </span>
-            </div>
+    <section
+      aria-labelledby={headingId}
+      data-forced={forced || undefined}
+      className="cookie-bar fixed inset-x-0 bottom-0 z-50 border-t border-ink bg-white shadow-[0_-8px_24px_-16px_rgba(23,23,23,0.35)]"
+    >
+      <div className="page flex flex-col gap-3 py-3 md:flex-row md:items-center md:gap-8 md:py-4">
+        <div className="min-w-0 flex-1">
+          <h2 id={headingId} className="t-label text-ink">
+            Cookies
+          </h2>
+          <p className="t-small max-w-[70ch] text-muted">
+            Essential cookies keep the site working. With your OK we also use cookieless analytics.{' '}
+            <Link href="/privacy#cookies" className="link">
+              Cookie policy
+            </Link>
+          </p>
 
-            {/* Content summary */}
-            {!showPreferences ? (
-              <>
-                <p className="text-xs sm:text-[13px] text-brand-black/75 leading-relaxed font-medium mb-4">
-                  We use essential cookies to maintain site security and manage your cohort registration. With your consent, we also use privacy-friendly analytics and preferences to tailor your learning experience.
-                </p>
+          {custom && (
+            <fieldset className="mt-3 flex flex-col gap-2 sm:flex-row sm:gap-6">
+              <legend className="sr-only">Choose cookie categories</legend>
+              <label className="t-small flex items-center gap-2 text-muted">
+                <input type="checkbox" checked disabled className="h-4 w-4 accent-cobalt" />
+                Essential (always on)
+              </label>
+              <label className="t-small flex cursor-pointer items-center gap-2 text-ink">
+                <input
+                  type="checkbox"
+                  checked={analytics}
+                  onChange={(e) => setAnalytics(e.target.checked)}
+                  className="h-4 w-4 accent-cobalt"
+                />
+                Analytics
+              </label>
+              <label className="t-small flex cursor-pointer items-center gap-2 text-ink">
+                <input
+                  type="checkbox"
+                  checked={marketing}
+                  onChange={(e) => setMarketing(e.target.checked)}
+                  className="h-4 w-4 accent-cobalt"
+                />
+                Preferences (remember offers and form details)
+              </label>
+            </fieldset>
+          )}
+        </div>
 
-                <div className="flex flex-col gap-2.5">
-                  <div className="flex items-center gap-2">
-                    <button
-                      type="button"
-                      onClick={handleAcceptAll}
-                      className="flex-1 h-11 bg-brand-black hover:bg-brand-blue text-brand-cream text-xs font-bold uppercase tracking-wider rounded-xl border-2 border-brand-black shadow-[2px_2px_0_0_#141414] transition-all"
-                    >
-                      Accept All
-                    </button>
-                    <button
-                      type="button"
-                      onClick={handleRejectNonEssential}
-                      className="flex-1 h-11 bg-brand-cream hover:bg-white text-brand-black text-xs font-bold uppercase tracking-wider rounded-xl border-2 border-brand-black shadow-[2px_2px_0_0_#141414] transition-all"
-                    >
-                      Necessary Only
-                    </button>
-                  </div>
-
-                  <div className="flex items-center justify-between pt-1 text-[11px] font-bold">
-                    <button
-                      type="button"
-                      onClick={() => setShowPreferences(true)}
-                      className="text-brand-blue hover:text-brand-black underline underline-offset-2 transition-colors"
-                    >
-                      Customize Settings
-                    </button>
-                    <Link
-                      href="/privacy"
-                      className="text-brand-black/60 hover:text-brand-black underline underline-offset-2 transition-colors"
-                    >
-                      Privacy Policy →
-                    </Link>
-                  </div>
-                </div>
-              </>
-            ) : (
-              /* Preferences Toggles View */
-              <div className="space-y-3.5">
-                <p className="text-xs text-brand-black/70 font-medium">
-                  Select which categories of cookies you consent to:
-                </p>
-
-                {/* Necessary (Always Active) */}
-                <div className="p-3 bg-brand-cream border border-brand-black/20 rounded-xl flex items-center justify-between">
-                  <div>
-                    <p className="text-xs font-bold text-brand-black">Strictly Necessary</p>
-                    <p className="text-[11px] text-brand-black/60">Core security, checkout & sessions</p>
-                  </div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider bg-brand-black/10 px-2 py-0.5 rounded text-brand-black/70">
-                    Always Active
-                  </span>
-                </div>
-
-                {/* Analytics & Performance */}
-                <label className="p-3 bg-white border border-brand-black/20 rounded-xl flex items-center justify-between cursor-pointer hover:border-brand-black transition-colors">
-                  <div>
-                    <p className="text-xs font-bold text-brand-black">Analytics & Insights</p>
-                    <p className="text-[11px] text-brand-black/60">Anonymous performance metrics</p>
-                  </div>
-                  <input
-                    type="checkbox"
-                    checked={analyticsAllowed}
-                    onChange={(e) => setAnalyticsAllowed(e.target.checked)}
-                    className="w-4 h-4 accent-brand-black cursor-pointer"
-                  />
-                </label>
-
-                {/* Marketing & Tailoring */}
-                <label className="p-3 bg-white border border-brand-black/20 rounded-xl flex items-center justify-between cursor-pointer hover:border-brand-black transition-colors">
-                  <div>
-                    <p className="text-xs font-bold text-brand-black">Preferences & Cohort Offers</p>
-                    <p className="text-[11px] text-brand-black/60">Discounts and coupon auto-fill</p>
-                  </div>
-                  <input
-                    type="checkbox"
-                    checked={marketingAllowed}
-                    onChange={(e) => setMarketingAllowed(e.target.checked)}
-                    className="w-4 h-4 accent-brand-black cursor-pointer"
-                  />
-                </label>
-
-                <div className="flex items-center gap-2 pt-1">
-                  <button
-                    type="button"
-                    onClick={handleSaveCustom}
-                    className="flex-1 h-10 bg-brand-black hover:bg-brand-blue text-brand-cream text-xs font-bold uppercase tracking-wider rounded-xl border-2 border-brand-black shadow-[2px_2px_0_0_#141414] transition-all"
-                  >
-                    Save Preferences
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setShowPreferences(false)}
-                    className="px-4 h-10 bg-brand-cream hover:bg-white text-brand-black text-xs font-bold uppercase tracking-wider rounded-xl border-2 border-brand-black transition-all"
-                  >
-                    Back
-                  </button>
-                </div>
-              </div>
-            )}
-          </motion.div>
-        </aside>
-      )}
-    </AnimatePresence>
+        <div className="flex shrink-0 flex-wrap items-center gap-2">
+          {custom ? (
+            <button
+              type="button"
+              onClick={() => save({ analytics, marketing })}
+              className="press h-10 rounded-[var(--radius-sm)] bg-cobalt px-4 text-[15px] font-semibold text-white hover:bg-cobalt-deep"
+            >
+              Save choices
+            </button>
+          ) : (
+            <>
+              <button
+                type="button"
+                onClick={() => save({ analytics: true, marketing: true })}
+                className="press h-10 rounded-[var(--radius-sm)] bg-cobalt px-4 text-[15px] font-semibold text-white hover:bg-cobalt-deep"
+              >
+                Accept all
+              </button>
+              <button
+                type="button"
+                onClick={() => save({ analytics: false, marketing: false })}
+                className="press h-10 rounded-[var(--radius-sm)] border border-ink px-4 text-[15px] font-semibold text-ink hover:bg-ink hover:text-white"
+              >
+                Essential only
+              </button>
+              <button
+                type="button"
+                onClick={() => setCustom(true)}
+                className="h-10 px-2 text-[15px] font-medium text-ink underline underline-offset-4 hover:text-cobalt"
+              >
+                Choose
+              </button>
+            </>
+          )}
+        </div>
+      </div>
+    </section>
   );
 }
