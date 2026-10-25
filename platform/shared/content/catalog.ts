@@ -33,6 +33,10 @@ export const Subject = z.object({
   source_status: SourceStatus,
   source: z.string(),
   notes: z.string().nullable().optional(),
+  /** Paper variants sharing this syllabus, e.g. CBSE Maths Standard (041) and Basic (241), or language levels. */
+  variants: z
+    .array(z.object({ code: z.string().nullable(), name: z.string().min(1), notes: z.string().nullable().optional() }))
+    .default([]),
 });
 export type Subject = z.infer<typeof Subject>;
 
@@ -61,6 +65,8 @@ export const Topic = z.object({
   title: z.string().min(1),
   title_en: z.string().optional(),
   learning_outcomes: z.array(z.string().min(1)).default([]),
+  /** False for topics the board marks as internal/formative assessment only; board-pattern papers skip them. */
+  board_assessed: z.boolean().default(true),
 });
 export type Topic = z.infer<typeof Topic>;
 
@@ -79,6 +85,8 @@ export const SyllabusChapter = z.object({
   removed_topics: z.array(z.string()).default([]),
   /** Titles and authors only — never the text itself (CONTEXT §8). */
   literature_texts: z.array(LiteratureText).default([]),
+  /** False when the whole chapter is excluded from the board exam (assessed internally only). */
+  board_assessed: z.boolean().default(true),
 });
 export type SyllabusChapter = z.infer<typeof SyllabusChapter>;
 
