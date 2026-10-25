@@ -1,0 +1,184 @@
+# ISC Class 12 Chinese (Modern Foreign Language elective, code 826) - ISC 2027 examination.
+# CISCE Appendix I lists no prescribed textbooks for Chinese, so Part 4 of the paper is two translation passages.
+# Titles are in English; grammar markers are given in pinyin with simplified characters in brackets.
+subject_id: isc-12-chinese
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-mfl, isc-2027-prescribed-books, isc-2027-regulations]
+exam_notes: >-
+  Paper I Theory: one paper of 3 hours, 80 marks, in four parts: (1) a short composition in Chinese from a choice of subjects;
+  (2) a Chinese passage for unprepared translation into English; (3) an unseen Chinese passage with questions - candidates may be
+  asked to summarise part of it in Chinese, explain individual words, phrases or sentences, and answer comprehension questions
+  (not every question type is set every year); (4) questions on prescribed textbooks - but CISCE Appendix I (ISC 2027) prescribes
+  no textbooks for Chinese, so under the syllabus rule for languages without texts Part 4 consists of (a) one passage for translation
+  from Chinese into English and (b) one passage for translation from English into Chinese. The syllabus asks schools to consult CISCE
+  in time about prescribed textbooks. CISCE does not state whether simplified or traditional characters are used; SOYL teaches
+  Mandarin in simplified characters with Hanyu Pinyin. CISCE does not publish marks per part. Paper II Project Work (20 marks):
+  Listening (5) and Speaking (5) assessed by the subject teacher - an unseen passage or poem read aloud twice with objective questions,
+  and a three-minute individual presentation followed by discussion; Writing (10) assessed by a Visiting Examiner - one assignment of
+  about 250 words on any aspect of the language studied in Class XII. CISCE sets no question paper for project work. CISCE has not
+  bifurcated this syllabus: the ISC 2027 paper is set on the entire Classes XI-XII syllabus, so nothing is removed here. The syllabus
+  does not list grammar items; the two grammar chapters below cover the structures needed for composition and two-way translation -
+  this breakdown is SOYL's, not CISCE's. CISCE lists topics not chapters; SOYL grouped them into teachable chapters in syllabus order.
+units:
+  - { name: "1. Composition", marks: null }
+  - { name: "2. Unprepared translation into English", marks: null }
+  - { name: "3. Unseen passage", marks: null }
+  - { name: "4. Translation (no textbooks prescribed)", marks: null }
+chapters:
+  - id: isc-12-chinese-ch01
+    number: 1
+    title: "Composition"
+    unit: "1. Composition"
+    topics:
+      - id: isc-12-chinese-ch01-t01
+        title: "Planning a short composition: outline, paragraphs and linking words"
+        learning_outcomes:
+          - "Draw up an outline and write a short composition in Chinese with a clear beginning, middle and end"
+          - "Sequence ideas with xian ... ranhou ... zuihou (先……然后……最后) and add points with erqie (而且), lingwai (另外)"
+      - id: isc-12-chinese-ch01-t02
+        title: "Descriptive and narrative compositions"
+        learning_outcomes:
+          - "Describe a person, place or festival using adjectives with hen (很), feichang (非常) and degree complements"
+          - "Narrate a past experience in order, placing time expressions before the verb"
+      - id: isc-12-chinese-ch01-t03
+        title: "Expressing and supporting an opinion"
+        learning_outcomes:
+          - "Give and justify an opinion with wo renwei (我认为) and yi fangmian ... ling yi fangmian (一方面……另一方面)"
+      - id: isc-12-chinese-ch01-t04
+        title: "Subjects from everyday and contemporary life: family, school, festivals, travel, health, environment, technology"
+        learning_outcomes:
+          - "Use topic vocabulary accurately to write on everyday and contemporary subjects, including examples from Indian life"
+      - id: isc-12-chinese-ch01-t05
+        title: "Character accuracy: stroke order, radicals and commonly confused characters (的 / 地 / 得, 在 / 再)"
+        learning_outcomes:
+          - "Write common characters correctly and choose between de (的, 地, 得) and between zai (在, 再) in context"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chinese-ch02
+    number: 2
+    title: "Grammar (1): word order, aspect and questions"
+    unit: null
+    topics:
+      - id: isc-12-chinese-ch02-t01
+        title: "Basic word order: subject - time - place - manner - verb - object"
+        learning_outcomes:
+          - "Arrange subject, time, place and verb phrases in the correct Chinese order"
+      - id: isc-12-chinese-ch02-t02
+        title: "Measure words (ge 个, ben 本, zhang 张, tiao 条, jian 件, bei 杯)"
+        learning_outcomes:
+          - "Choose the right measure word for common nouns after numbers and demonstratives"
+      - id: isc-12-chinese-ch02-t03
+        title: "Aspect particles le (了), guo (过) and zhe (着)"
+        learning_outcomes:
+          - "Use le for completed actions and changed situations, guo for past experience and zhe for continuing states"
+          - "Negate completed actions with mei(you) (没有) and drop le"
+      - id: isc-12-chinese-ch02-t04
+        title: "The shi ... de (是……的) construction for time, place and manner of past events"
+        learning_outcomes:
+          - "Use shi ... de to stress when, where or how a past action happened"
+      - id: isc-12-chinese-ch02-t05
+        title: "Questions: ma (吗), ne (呢), A-not-A, question words; comparison with bi (比), gen ... yiyang (跟……一样), meiyou ... name (没有……那么)"
+        learning_outcomes:
+          - "Turn statements into each type of question"
+          - "Compare two people or things with bi, gen ... yiyang and meiyou ... name"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chinese-ch03
+    number: 3
+    title: "Grammar (2): complements, special constructions and complex sentences"
+    unit: null
+    topics:
+      - id: isc-12-chinese-ch03-t01
+        title: "Resultative and directional complements (kan wan 看完, zou jinlai 走进来)"
+        learning_outcomes:
+          - "Add a resultative or directional complement to show the result or direction of an action"
+      - id: isc-12-chinese-ch03-t02
+        title: "Potential complements (kan de dong 看得懂 / kan bu dong 看不懂) and degree complements with de (得)"
+        learning_outcomes:
+          - "Say whether an action can or cannot be achieved using potential complements"
+          - "Describe how well an action is done with a degree complement"
+      - id: isc-12-chinese-ch03-t03
+        title: "The ba (把) construction"
+        learning_outcomes:
+          - "Rewrite sentences with ba to show what is done to an object, keeping a complement or other element after the verb"
+      - id: isc-12-chinese-ch03-t04
+        title: "The bei (被) passive"
+        learning_outcomes:
+          - "Transform active sentences into bei passive sentences and explain when the passive is used"
+      - id: isc-12-chinese-ch03-t05
+        title: "Complex sentences: suiran ... danshi (虽然……但是), yinwei ... suoyi (因为……所以), ruguo ... jiu (如果……就), budan ... erqie (不但……而且), yi ... jiu (一……就)"
+        learning_outcomes:
+          - "Join two clauses with the paired connective that expresses contrast, cause, condition, addition or sequence"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chinese-ch04
+    number: 4
+    title: "Translation from Chinese into English"
+    unit: "2. Unprepared translation into English"
+    topics:
+      - id: isc-12-chinese-ch04-t01
+        title: "Reading the passage for meaning: word boundaries and sentence structure"
+        learning_outcomes:
+          - "Divide a Chinese sentence into words and identify its subject, verb and object before translating"
+      - id: isc-12-chinese-ch04-t02
+        title: "Supplying English tense, number and articles that Chinese leaves implicit"
+        learning_outcomes:
+          - "Choose the English tense from time words and aspect particles, and add articles and plurals where English needs them"
+      - id: isc-12-chinese-ch04-t03
+        title: "Chengyu, set phrases and culture-specific words"
+        learning_outcomes:
+          - "Render a chengyu or set phrase by its meaning rather than word for word"
+      - id: isc-12-chinese-ch04-t04
+        title: "The second Chinese-to-English passage (Part 4a) and checking a complete version"
+        learning_outcomes:
+          - "Translate a longer passage completely and fluently, then check it sentence by sentence against the original"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chinese-ch05
+    number: 5
+    title: "Unseen passage (comprehension and summary)"
+    unit: "3. Unseen passage"
+    topics:
+      - id: isc-12-chinese-ch05-t01
+        title: "Reading an unseen passage: main idea and key details"
+        learning_outcomes:
+          - "State the main idea of an unseen Chinese passage and locate supporting details"
+      - id: isc-12-chinese-ch05-t02
+        title: "Explaining words, phrases and sentences in context"
+        learning_outcomes:
+          - "Explain a word, phrase or sentence from the passage in simple Chinese, using a synonym or paraphrase"
+      - id: isc-12-chinese-ch05-t03
+        title: "Answering comprehension questions in Chinese"
+        learning_outcomes:
+          - "Answer questions in complete Chinese sentences in one's own words"
+      - id: isc-12-chinese-ch05-t04
+        title: "Summarising part of the passage in Chinese"
+        learning_outcomes:
+          - "Summarise a section of the passage in Chinese within a character limit, keeping only the essential points"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chinese-ch06
+    number: 6
+    title: "Translation from English into Chinese"
+    unit: "4. Translation (no textbooks prescribed)"
+    topics:
+      - id: isc-12-chinese-ch06-t01
+        title: "Restructuring English sentences into Chinese word order"
+        learning_outcomes:
+          - "Translate English sentences into Chinese with time and place phrases before the verb and modifiers before the noun"
+      - id: isc-12-chinese-ch06-t02
+        title: "Expressing English tenses, passives and relative clauses in Chinese"
+        learning_outcomes:
+          - "Use aspect particles and time words for English tenses, bei or other means for passives, and de (的) for relative clauses"
+      - id: isc-12-chinese-ch06-t03
+        title: "Choosing measure words, complements and connectives"
+        learning_outcomes:
+          - "Translate sentences that need measure words, complements or paired connectives accurately"
+      - id: isc-12-chinese-ch06-t04
+        title: "Translating a continuous passage and checking characters"
+        learning_outcomes:
+          - "Translate a short English passage into natural Chinese and proof-read it for wrong or missing characters"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []
