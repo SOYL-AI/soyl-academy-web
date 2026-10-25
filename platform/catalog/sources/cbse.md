@@ -157,6 +157,51 @@ Publisher CBSE, academic year 2026-27, fetched 2026-10-25. Used for units, marks
 - **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Sanskrit_Communiucative_SecP1_2026-27.pdf
 - **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
 
+### `cbse-x-computer-applications-2026-27`
+- **Title:** Computer Applications (165) Class X 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Computer_Applications_SecP1X_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-home-science-2026-27`
+- **Title:** Home Science (064) Class X 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Home_Science_SecP1X_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-ai-417-2026-27`
+- **Title:** Artificial Intelligence (417) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/417-AI-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-it-402-2026-27`
+- **Title:** Information Technology (402) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/402-IT-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-home-science-2026-27`
+- **Title:** Home Science (064) Classes XI-XII 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Home_Science_SecP2_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-entrepreneurship-2026-27`
+- **Title:** Entrepreneurship (066) Classes XI-XII 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Enterprenuership_SecP2_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-legal-studies-2026-27`
+- **Title:** Legal Studies (074) Classes XI-XII 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/LegalStudies_SecP2_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-biotechnology-2026-27`
+- **Title:** Biotechnology (045) Classes XI-XII 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/BioTechnology_SecP2_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-ai-843-2026-27`
+- **Title:** Artificial Intelligence (843) Classes XI-XII 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/843-AI-XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
 ### `cbse-xii-physics-2026-27`
 - **Title:** Physics (042) Classes XI-XII 2026-27 syllabus
 - **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Physics_SecP2_2026-27.pdf
@@ -262,7 +307,6 @@ Publisher CBSE, academic year 2026-27, fetched 2026-10-25. Used for units, marks
 These 272 documents (fetched 2026-10-25, publisher CBSE, 2026-27) were used to confirm each subject's existence, code and marks split in `subjects.yaml`; they will become per-subject anchors when the matching syllabus files are written.
 
 - https://cbseacademic.nic.in/web_material/Curriculum27/Sec/401-RETAIL-X.pdf
-- https://cbseacademic.nic.in/web_material/Curriculum27/Sec/402-IT-X.pdf
 - https://cbseacademic.nic.in/web_material/Curriculum27/Sec/403-SECURITY-X.pdf
 - https://cbseacademic.nic.in/web_material/Curriculum27/Sec/404-AUTOMOTIVE-X.pdf
 - https://cbseacademic.nic.in/web_material/Curriculum27/Sec/405-FMM-X.pdf
@@ -277,7 +321,6 @@ These 272 documents (fetched 2026-10-25, publisher CBSE, 2026-27) were used to c
 - https://cbseacademic.nic.in/web_material/Curriculum27/Sec/414-APPAREL-X.pdf
 - https://cbseacademic.nic.in/web_material/Curriculum27/Sec/415-MULTIMEDIA-X.pdf
 - https://cbseacademic.nic.in/web_material/Curriculum27/Sec/416-MultiSkillFoundationCourse-X.pdf
-- https://cbseacademic.nic.in/web_material/Curriculum27/Sec/417-AI-X.pdf
 - https://cbseacademic.nic.in/web_material/Curriculum27/Sec/418-Physical_Activity_Trainer-X.pdf
 - https://cbseacademic.nic.in/web_material/Curriculum27/Sec/419-DATA_SCIENCE-X.pdf
 - https://cbseacademic.nic.in/web_material/Curriculum27/Sec/420-ELHA-X.pdf
@@ -349,7 +392,6 @@ These 272 documents (fetched 2026-10-25, publisher CBSE, 2026-27) were used to c
 - https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/841-YOGA_XII.pdf
 - https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/842_EARLY_CHILDHOOD_CARE_EDUCATION.pdf
 - https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/843-AI-XI.pdf
-- https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/843-AI-XII.pdf
 - https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/844-DATASCIENCE.pdf
 - https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/845-Physical_Activity_Trainer.pdf
 - https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/846-LandTransportation.pdf
@@ -382,7 +424,6 @@ These 272 documents (fetched 2026-10-25, publisher CBSE, 2026-27) were used to c
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Carnatic_Percussion_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Carnatic_Vocal_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Computer_Applications_SecP1IX_2026-27.pdf
-- https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Computer_Applications_SecP1X_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Curriculum_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Dogri_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Elements_of_BK_Acc_SecP1IX_2026-27.pdf
@@ -400,7 +441,6 @@ These 272 documents (fetched 2026-10-25, publisher CBSE, 2026-27) were used to c
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Hindustani_Music_Percussion_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Hindustani_Music_Vocal_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Home_Science_SecP1IX_2026-27.pdf
-- https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Home_Science_SecP1X_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Japanese_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/KOKBOROK_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/KONKANI_SecP1_2026-27.pdf
@@ -451,7 +491,6 @@ These 272 documents (fetched 2026-10-25, publisher CBSE, 2026-27) were used to c
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Bengali_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Bhoti_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Bhutia_SecP2_2026-27.pdf
-- https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/BioTechnology_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Biology_SrSecXI_2026-27_RM.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Bodo_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Carnatic_Melodic_SecP2_2026-27.pdf
@@ -460,7 +499,6 @@ These 272 documents (fetched 2026-10-25, publisher CBSE, 2026-27) were used to c
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Chemistry_SecP2_2026-27_RM.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Curriculum_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Engineering_Graphics_SecP2_2026-27.pdf
-- https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Enterprenuership_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Fine_Arts_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/French_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/GeneralStudies_SecP2_2026-27.pdf
@@ -471,14 +509,12 @@ These 272 documents (fetched 2026-10-25, publisher CBSE, 2026-27) were used to c
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Hindustani_Melodic_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Hindustani_Percussion_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Hindustani_Vocal_SecP2_2026-27.pdf
-- https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Home_Science_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Indian_Classical_Dances_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Japanese_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/KOKBOROK_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/KTPI_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Kannada_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Kashmiri_SecP2_2026-27.pdf
-- https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/LegalStudies_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Lepcha_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Limboo_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Malyalam_SecP2_2026-27.pdf
