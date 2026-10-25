@@ -7,7 +7,7 @@
 
 | Area | Finding | Source |
 |---|---|---|
-| Framework | **Next.js 16.3.4**, App Router only (no `pages/`), **Turbopack** build (`next build` prints `▲ Next.js 16.3.4 (Turbopack)`) | `package.json`, build log |
+| Framework | **Next.js 16.3.4** on `main` (live site); **16.4.3** on `platform/main` after the security hotfix (D-013, OA-11; regression shows zero visual diffs, see the M0 handoff). App Router only (no `pages/`), **Turbopack** build (`next build` prints `▲ Next.js 16.3.4 (Turbopack)`) | `package.json`, build log |
 | React | 19.2.8 (`react`, `react-dom`) | `package.json` |
 | Language | TypeScript 5 strict, `@/*` → repo root alias, `moduleResolution: bundler` | `tsconfig.json` |
 | Styling | **Tailwind CSS v4** via `@tailwindcss/postcss`; design tokens as CSS custom properties in `app/globals.css` (`@theme`, `--color-*`, `--radius-*`, `--duration-*`); helpers `clsx` + `tailwind-merge` (`lib/utils.ts` `cn`), `class-variance-authority` for buttons | `postcss.config.mjs`, `app/globals.css`, `components/notebook/Button.tsx` |
@@ -102,7 +102,7 @@ The regression checks GET → 405 for both API routes and never POSTs them (they
 
 ## 5. Middleware / proxy
 
-**None.** No `proxy.ts` (Next 16 name) or `middleware.ts` at the root, in `app/` or anywhere else. ADR-001 keeps it that way; if one is ever added its `matcher` must be limited to platform prefixes.
+**None.** No `proxy.ts` (Next 16 name) or `middleware.ts` at the root, in `app/` or anywhere else. ADR-001 keeps it that way by default. The edge-secret requirement (D-016, WEB-2) cannot be met by a `next.config.ts` rewrite (rewrites cannot add request headers); ADR-001 recommends a route-handler BFF at `app/(platform)/api/platform/[...path]/route.ts` (inside the allowed paths, no shared-file change). If ADR-005 picks `proxy.ts` instead, its `matcher` must be limited to platform prefixes.
 
 ## 6. Existing auth, consent and payment code
 
@@ -135,7 +135,7 @@ The regression checks GET → 405 for both API routes and never POSTs them (they
 | `/me` | no | — |
 | `/leaderboard` | no | — |
 | `/admin/*` | no | — |
-| `/api/platform/*` (rewrite) | no | Only `/api/enroll`, `/api/razorpay` exist; `robots.txt` already disallows `/api/` |
+| `/api/platform/*` (BFF route handler or rewrite, ADR-005) | no | Only `/api/enroll`, `/api/razorpay` exist; `robots.txt` already disallows `/api/` |
 
 **No path collisions.** Non-path overlaps to be aware of:
 - `/students` and `/parents` market the existing teacher-assignment product (Grades 1–10; `SITE_DESCRIPTION` says the same), while the platform targets CBSE/CISCE Classes 7–12. Positioning/copy alignment is an owner decision (Q-1), not a code change.
@@ -202,14 +202,14 @@ For infra-azure (M1 workflow): `actions/checkout` with `fetch-depth: 0`; `action
 | `platform/**` | per AGENTS.md roster | free (separate npm workspace root, D-005) |
 | `docs/platform/**` | all agents (own subpaths) | free |
 | `.github/workflows/platform-*.yml` | infra-azure | new files only; never edit marketing workflows (none exist today) |
-| `next.config.ts` | web-platform | **ADR-001 §5 only**: add `rewrites()` for `/api/platform/:path*` when `PLATFORM_API_ORIGIN` is set. Anything else → new ADR |
+| `next.config.ts` | web-platform | **ADR-001 §5 only, and only if ADR-005 chooses a rewrite** (recommended instead: BFF route handler in `app/(platform)/api/platform/[...path]/route.ts`, no shared change): `rewrites()` for `/api/platform/:path*` when `PLATFORM_API_ORIGIN` is set. Anything else → new ADR |
 | `tsconfig.json`, `eslint.config.mjs` | — | **done in Step 0** (`exclude: platform`, ignore `platform/**`); further changes → ADR |
 | `lib/site.ts`, `components/layout/Header.tsx`, `components/layout/Footer.tsx` | web-platform | **ADR-001 §4 only**: platform nav entry points behind `NEXT_PUBLIC_PLATFORM_ENABLED`; flag-off output byte-identical |
 | `components/legal/ConsentedAnalytics.tsx` | web-platform | **ADR-001 §8 only**: no Vercel Analytics/Speed Insights on platform paths |
 | root `package.json` / `package-lock.json` | web-platform | **new ADR per dependency**: additive only, never change an existing version |
 | `app/robots.ts` | web-platform | new ADR: add the platform sitemap URL when the flag is on |
 
-**Forbidden without a new ADR + owner approval:** every other file under `app/`, `components/`, `content/`, `lib/`, `public/`; `app/layout.tsx`; `app/globals.css`; `app/not-found.tsx`; `app/sitemap.ts`; `postcss.config.mjs`; adding `proxy.ts`/`middleware.ts`; adding `vercel.json`. Every PR touching any listed shared file must show a green `marketing:regression` (or `marketing:diff` in CI).
+**Forbidden without a new ADR + owner approval:** every other file under `app/`, `components/`, `content/`, `lib/`, `public/`; `app/layout.tsx`; `app/globals.css`; `app/not-found.tsx`; `app/sitemap.ts`; `postcss.config.mjs`; adding `proxy.ts`/`middleware.ts` (unless ADR-005 chooses it); adding `vercel.json`. Every PR touching any listed shared file must show a green `marketing:regression` (or `marketing:diff` in CI).
 
 ## 11. Baseline numbers (M0)
 
