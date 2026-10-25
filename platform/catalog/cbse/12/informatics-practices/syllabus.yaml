@@ -1,0 +1,143 @@
+# CBSE Class 12 Informatics Practices (065), 2026-27.
+subject_id: cbse-12-informatics-practices
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-informatics-practices-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+  - cbse-sqp-xii-2026-27
+  - cbse-sqp-notification-2026-27
+  - ncert-textbooks-secondary
+exam_notes: >-
+  Theory 70 marks (3 hours) + practical 30 (programs in pandas/matplotlib, SQL queries, practical file, project 5, viva 5). Only one of IP,
+  Computer Science (083) and IT (802). Single board exam (February-March 2027).
+units:
+  - name: "Unit 1: Data Handling using Pandas and Data Visualisation"
+    marks: 25
+  - name: "Unit 2: Database Query using SQL"
+    marks: 25
+  - name: "Unit 3: Introduction to Computer Networks"
+    marks: 10
+  - name: "Unit 4: Societal Impacts"
+    marks: 10
+chapters:
+  - id: cbse-12-informatics-practices-ch01
+    number: 1
+    title: "Data Handling using Pandas: Series"
+    unit: "Unit 1: Data Handling using Pandas and Data Visualisation"
+    topics:
+      - id: cbse-12-informatics-practices-ch01-t01
+        title: "Python libraries: pandas and Matplotlib"
+        learning_outcomes:
+          - State the purpose of pandas and Matplotlib
+      - id: cbse-12-informatics-practices-ch01-t02
+        title: Creating a Series and operations on Series
+        learning_outcomes:
+          - Create a Series from ndarray, dictionary and scalar and perform mathematical operations
+          - Use head(), tail(), indexing, slicing and selection
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-informatics-practices-ch02
+    number: 2
+    title: "Data Handling using Pandas: DataFrames"
+    unit: "Unit 1: Data Handling using Pandas and Data Visualisation"
+    topics:
+      - id: cbse-12-informatics-practices-ch02-t01
+        title: Creating DataFrames
+        learning_outcomes:
+          - Create a DataFrame from a dictionary of Series, a list of dictionaries and CSV files
+      - id: cbse-12-informatics-practices-ch02-t02
+        title: Operations on rows and columns
+        learning_outcomes:
+          - Add, select, delete and rename rows and columns; iterate over a DataFrame
+      - id: cbse-12-informatics-practices-ch02-t03
+        title: Indexing with labels and Boolean indexing
+        learning_outcomes:
+          - Select data using loc, labels and Boolean conditions
+      - id: cbse-12-informatics-practices-ch02-t04
+        title: Importing and exporting CSV data
+        learning_outcomes:
+          - Read from and write to CSV files using pandas
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-informatics-practices-ch03
+    number: 3
+    title: Data Visualisation
+    unit: "Unit 1: Data Handling using Pandas and Data Visualisation"
+    topics:
+      - id: cbse-12-informatics-practices-ch03-t01
+        title: Line plots, bar graphs and histograms with Matplotlib
+        learning_outcomes:
+          - Draw and save line, bar and histogram plots
+      - id: cbse-12-informatics-practices-ch03-t02
+        title: Customising plots
+        learning_outcomes:
+          - Add labels, titles and legends
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-informatics-practices-ch04
+    number: 4
+    title: Database Query using SQL
+    unit: "Unit 2: Database Query using SQL"
+    topics:
+      - id: cbse-12-informatics-practices-ch04-t01
+        title: Math and text functions
+        learning_outcomes:
+          - Use POWER, ROUND, MOD and UPPER, LOWER, SUBSTR, LENGTH, LEFT, RIGHT, INSTR and TRIM functions
+      - id: cbse-12-informatics-practices-ch04-t02
+        title: Date functions
+        learning_outcomes:
+          - Use NOW, DATE, MONTH, MONTHNAME, YEAR, DAY and DAYNAME
+      - id: cbse-12-informatics-practices-ch04-t03
+        title: Aggregate functions; GROUP BY, HAVING, ORDER BY
+        learning_outcomes:
+          - Write grouped and ordered queries using aggregate functions including COUNT(*)
+      - id: cbse-12-informatics-practices-ch04-t04
+        title: Working with two tables using equi-join
+        learning_outcomes:
+          - Write equi-join queries
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-informatics-practices-ch05
+    number: 5
+    title: Introduction to Computer Networks
+    unit: "Unit 3: Introduction to Computer Networks"
+    topics:
+      - id: cbse-12-informatics-practices-ch05-t01
+        title: Types of networks, devices and topologies
+        learning_outcomes:
+          - Compare PAN, LAN, MAN, WAN; star, bus, tree and mesh topologies; and network devices
+      - id: cbse-12-informatics-practices-ch05-t02
+        title: Internet, URL, WWW and applications
+        learning_outcomes:
+          - Explain web, email, chat and VoIP
+      - id: cbse-12-informatics-practices-ch05-t03
+        title: Websites, web servers, hosting and browsers
+        learning_outcomes:
+          - Distinguish static and dynamic pages and explain browser settings, add-ons, plug-ins and cookies
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-informatics-practices-ch06
+    number: 6
+    title: Societal Impacts
+    unit: "Unit 4: Societal Impacts"
+    topics:
+      - id: cbse-12-informatics-practices-ch06-t01
+        title: Digital footprint, netiquette and data protection
+        learning_outcomes:
+          - Explain digital footprints and safe communication etiquette
+      - id: cbse-12-informatics-practices-ch06-t02
+        title: Intellectual property, plagiarism, licensing, copyright and FOSS
+        learning_outcomes:
+          - Distinguish IPR types, licences and open-source software
+      - id: cbse-12-informatics-practices-ch06-t03
+        title: Cybercrime, hacking, phishing, cyberbullying and the Indian IT Act
+        learning_outcomes:
+          - Identify cybercrimes and remedies under the IT Act
+      - id: cbse-12-informatics-practices-ch06-t04
+        title: E-waste and health concerns
+        learning_outcomes:
+          - Explain e-waste hazards and management and health concerns of technology use
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

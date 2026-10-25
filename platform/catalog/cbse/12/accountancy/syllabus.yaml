@@ -1,0 +1,297 @@
+# CBSE Class 12 Accountancy (055), 2026-27. Part A (60) + Part B (20): either Financial Statement Analysis (Units 3-4)
+# or Computerised Accounting (alternative, practical-based). Chapters follow the NCERT Accountancy Part I/II sequence, with the
+# CBSE unit "Accounting for Partnership Firms" split into teachable chapters.
+subject_id: cbse-12-accountancy
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-accountancy-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+  - cbse-sqp-xii-2026-27
+  - cbse-sqp-notification-2026-27
+  - ncert-textbooks-secondary
+exam_notes: >-
+  Theory 80 marks (3 hours) + project 20 (project file 12, viva 8). Part A Partnership 36 + Companies 24 = 60; Part B Analysis of Financial
+  Statements 12 + Cash Flow Statement 8 = 20, OR Computerised Accounting 20 with practical work. Goodwill per AS 26; cash flow per AS 3
+  (indirect method only). Single board exam (February-March 2027).
+units:
+  - name: "Unit 1: Accounting for Partnership Firms"
+    marks: 36
+  - name: "Unit 2: Accounting for Companies"
+    marks: 24
+  - name: "Unit 3: Analysis of Financial Statements"
+    marks: 12
+  - name: "Unit 4: Cash Flow Statement"
+    marks: 8
+  - name: "Part B (alternative): Computerised Accounting"
+    marks: 20
+chapters:
+  - id: cbse-12-accountancy-ch01
+    number: 1
+    title: "Accounting for Partnership: Basic Concepts"
+    unit: "Unit 1: Accounting for Partnership Firms"
+    topics:
+      - id: cbse-12-accountancy-ch01-t01
+        title: Nature of partnership and the partnership deed
+        learning_outcomes:
+          - State features of partnership and contents of a partnership deed
+          - Apply provisions of the Indian Partnership Act 1932 in the absence of a deed
+      - id: cbse-12-accountancy-ch01-t02
+        title: Fixed and fluctuating capital accounts
+        learning_outcomes:
+          - Prepare partners' capital and current accounts under both methods
+      - id: cbse-12-accountancy-ch01-t03
+        title: Profit and Loss Appropriation Account
+        learning_outcomes:
+          - Prepare the P&L Appropriation Account with interest on capital and drawings, salary, commission and division of profit
+      - id: cbse-12-accountancy-ch01-t04
+        title: Guarantee of profit to a partner
+        learning_outcomes:
+          - Account for guarantee of minimum profit by the firm or by specific partners
+      - id: cbse-12-accountancy-ch01-t05
+        title: Past adjustments
+        learning_outcomes:
+          - Rectify omissions of interest, salary or profit-sharing ratio through an adjustment entry
+      - id: cbse-12-accountancy-ch01-t06
+        title: "Goodwill: nature and valuation"
+        learning_outcomes:
+          - Explain factors affecting goodwill and value it by average profit, super profit and capitalisation methods
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-accountancy-ch02
+    number: 2
+    title: Change in Profit-Sharing Ratio among Existing Partners
+    unit: "Unit 1: Accounting for Partnership Firms"
+    topics:
+      - id: cbse-12-accountancy-ch02-t01
+        title: Sacrificing and gaining ratios
+        learning_outcomes:
+          - Calculate sacrificing and gaining ratios
+      - id: cbse-12-accountancy-ch02-t02
+        title: Treatment of goodwill on change in ratio
+        learning_outcomes:
+          - Pass entries for goodwill adjustment through capital/current accounts
+      - id: cbse-12-accountancy-ch02-t03
+        title: Revaluation of assets, reassessment of liabilities and reserves
+        learning_outcomes:
+          - Prepare a revaluation account and distribute reserves and accumulated profits/losses
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-accountancy-ch03
+    number: 3
+    title: Admission of a Partner
+    unit: "Unit 1: Accounting for Partnership Firms"
+    topics:
+      - id: cbse-12-accountancy-ch03-t01
+        title: New profit-sharing ratio and sacrificing ratio
+        learning_outcomes:
+          - Compute the new and sacrificing ratios on admission
+      - id: cbse-12-accountancy-ch03-t02
+        title: Treatment of goodwill on admission (AS 26)
+        learning_outcomes:
+          - Pass entries for premium for goodwill brought in cash or kind and hidden goodwill
+      - id: cbse-12-accountancy-ch03-t03
+        title: Revaluation, reserves and accumulated profits on admission
+        learning_outcomes:
+          - Prepare the revaluation account and adjust reserves
+      - id: cbse-12-accountancy-ch03-t04
+        title: Adjustment of capitals and the new balance sheet
+        learning_outcomes:
+          - Adjust capitals on the basis of the new partner's capital and prepare the balance sheet of the new firm
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-accountancy-ch04
+    number: 4
+    title: Retirement and Death of a Partner
+    unit: "Unit 1: Accounting for Partnership Firms"
+    topics:
+      - id: cbse-12-accountancy-ch04-t01
+        title: New ratio and gaining ratio on retirement/death
+        learning_outcomes:
+          - Calculate new and gaining ratios
+      - id: cbse-12-accountancy-ch04-t02
+        title: Goodwill, revaluation and reserves on retirement/death
+        learning_outcomes:
+          - Pass entries for goodwill and revaluation and distribute reserves
+      - id: cbse-12-accountancy-ch04-t03
+        title: Settlement of a retiring partner and loan account
+        learning_outcomes:
+          - Prepare capital accounts, the retiring partner's loan account and the balance sheet
+      - id: cbse-12-accountancy-ch04-t04
+        title: Deceased partner's share of profit and executor's account
+        learning_outcomes:
+          - Calculate profit share till the date of death by time or turnover basis and prepare the executor's account
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-accountancy-ch05
+    number: 5
+    title: Dissolution of a Partnership Firm
+    unit: "Unit 1: Accounting for Partnership Firms"
+    topics:
+      - id: cbse-12-accountancy-ch05-t01
+        title: Modes of dissolution of a firm
+        learning_outcomes:
+          - Distinguish dissolution of partnership and of the firm and state modes of dissolution
+      - id: cbse-12-accountancy-ch05-t02
+        title: Settlement of accounts and the realisation account
+        learning_outcomes:
+          - >-
+            Prepare realisation account, partners' capital accounts and cash/bank account (excluding piecemeal distribution, sale to a
+            company and insolvency)
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-accountancy-ch06
+    number: 6
+    title: Accounting for Share Capital
+    unit: "Unit 2: Accounting for Companies"
+    topics:
+      - id: cbse-12-accountancy-ch06-t01
+        title: Company, shares and share capital
+        learning_outcomes:
+          - Explain features and types of companies and kinds of share capital and shares
+      - id: cbse-12-accountancy-ch06-t02
+        title: "Issue of shares: at par and at premium; over- and under-subscription"
+        learning_outcomes:
+          - Pass journal entries for application, allotment and calls including pro-rata allotment
+      - id: cbse-12-accountancy-ch06-t03
+        title: Calls in arrears and calls in advance; shares for consideration other than cash
+        learning_outcomes:
+          - Account for calls in arrears/advance (without interest) and shares issued to vendors
+      - id: cbse-12-accountancy-ch06-t04
+        title: Private placement, ESOP and sweat equity
+        learning_outcomes:
+          - Explain the concepts of private placement, ESOP and sweat equity
+      - id: cbse-12-accountancy-ch06-t05
+        title: Forfeiture and re-issue of shares
+        learning_outcomes:
+          - Pass entries for forfeiture and re-issue and transfer the balance to capital reserve
+      - id: cbse-12-accountancy-ch06-t06
+        title: Disclosure of share capital in the balance sheet
+        learning_outcomes:
+          - Present share capital per Schedule III of the Companies Act 2013
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-accountancy-ch07
+    number: 7
+    title: Issue of Debentures
+    unit: "Unit 2: Accounting for Companies"
+    topics:
+      - id: cbse-12-accountancy-ch07-t01
+        title: "Debentures: meaning and types"
+        learning_outcomes:
+          - Distinguish shares and debentures and classify debentures
+      - id: cbse-12-accountancy-ch07-t02
+        title: Issue of debentures at par, premium and discount; with terms of redemption
+        learning_outcomes:
+          - Pass entries for issue including terms of redemption and loss on issue
+      - id: cbse-12-accountancy-ch07-t03
+        title: Debentures for consideration other than cash and as collateral security
+        learning_outcomes:
+          - Account for both situations
+      - id: cbse-12-accountancy-ch07-t04
+        title: Interest on debentures and writing off loss on issue
+        learning_outcomes:
+          - Pass entries for interest (TDS excluded) and write off discount/loss from Securities Premium then Statement of P&L
+    removed_topics:
+      - Redemption of debentures (deleted)
+    literature_texts: []
+  - id: cbse-12-accountancy-ch08
+    number: 8
+    title: Financial Statements of a Company
+    unit: "Unit 3: Analysis of Financial Statements"
+    topics:
+      - id: cbse-12-accountancy-ch08-t01
+        title: Meaning, nature, uses and importance of financial statements
+        learning_outcomes:
+          - Explain the nature and uses of financial statements
+      - id: cbse-12-accountancy-ch08-t02
+        title: Statement of Profit and Loss and Balance Sheet (Schedule III)
+        learning_outcomes:
+          - Classify items under major heads and sub-heads of the balance sheet per Schedule III
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-accountancy-ch09
+    number: 9
+    title: Analysis of Financial Statements
+    unit: "Unit 3: Analysis of Financial Statements"
+    topics:
+      - id: cbse-12-accountancy-ch09-t01
+        title: Meaning, significance, objectives and limitations
+        learning_outcomes:
+          - Explain the purpose and limitations of financial statement analysis
+      - id: cbse-12-accountancy-ch09-t02
+        title: Comparative statements
+        learning_outcomes:
+          - Prepare comparative statements of profit and loss and balance sheets
+      - id: cbse-12-accountancy-ch09-t03
+        title: Common-size statements
+        learning_outcomes:
+          - Prepare common-size statements and interpret them
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-accountancy-ch10
+    number: 10
+    title: Accounting Ratios
+    unit: "Unit 3: Analysis of Financial Statements"
+    topics:
+      - id: cbse-12-accountancy-ch10-t01
+        title: Liquidity ratios
+        learning_outcomes:
+          - Compute and interpret current ratio and quick ratio
+      - id: cbse-12-accountancy-ch10-t02
+        title: Solvency ratios
+        learning_outcomes:
+          - Compute debt-equity, total assets to debt, proprietary and interest coverage ratios
+      - id: cbse-12-accountancy-ch10-t03
+        title: Activity (turnover) ratios
+        learning_outcomes:
+          - Compute inventory, trade receivables, trade payables, fixed asset, net asset and working capital turnover ratios
+      - id: cbse-12-accountancy-ch10-t04
+        title: Profitability ratios
+        learning_outcomes:
+          - Compute gross profit, operating, operating profit, net profit (before and after tax) ratios and return on investment
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-accountancy-ch11
+    number: 11
+    title: Cash Flow Statement
+    unit: "Unit 4: Cash Flow Statement"
+    topics:
+      - id: cbse-12-accountancy-ch11-t01
+        title: Meaning, objectives, cash and cash equivalents
+        learning_outcomes:
+          - Explain the purpose of a cash flow statement and identify cash equivalents
+      - id: cbse-12-accountancy-ch11-t02
+        title: Classification of activities
+        learning_outcomes:
+          - Classify transactions into operating, investing and financing activities
+      - id: cbse-12-accountancy-ch11-t03
+        title: Preparation by the indirect method (AS 3)
+        learning_outcomes:
+          - Prepare a cash flow statement with adjustments for depreciation, sale of assets, dividends and tax
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-accountancy-ch12
+    number: 12
+    title: Computerised Accounting (alternative to Part B)
+    unit: "Part B (alternative): Computerised Accounting"
+    topics:
+      - id: cbse-12-accountancy-ch12-t01
+        title: Overview of computerised accounting systems
+        learning_outcomes:
+          - Explain features and structure of CAS and types of accounting software
+      - id: cbse-12-accountancy-ch12-t02
+        title: Electronic spreadsheets in accounting
+        learning_outcomes:
+          - Use spreadsheet functions for bank reconciliation, asset accounting, loan schedules and ratio analysis
+          - Represent accounting data with charts
+      - id: cbse-12-accountancy-ch12-t03
+        title: Using a computerised accounting system
+        learning_outcomes:
+          - Describe codification and hierarchy of account heads, data entry, validation and generation of final accounts
+    removed_topics: []
+    literature_texts: []
+removed_topics:
+  - Piecemeal distribution, sale of firm to a company, insolvency of partners
+  - Redemption of debentures
+  - Exceptional/extraordinary items and discontinued operations in financial statements

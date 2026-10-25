@@ -1,0 +1,182 @@
+# CBSE Class 12 Computer Science (083), 2026-27. Python-based. Chapters split the three CBSE units into teachable chapters.
+subject_id: cbse-12-computer-science
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-computer-science-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+  - cbse-sqp-xii-2026-27
+  - cbse-sqp-notification-2026-27
+  - ncert-textbooks-secondary
+exam_notes: >-
+  Theory 70 marks (3 hours) + practical 30 (lab test: Python program 8, SQL queries 4; report file, project and viva). Only one of Computer
+  Science, Informatics Practices and Information Technology (802). Single board exam (February-March 2027).
+units:
+  - name: "Unit 1: Computational Thinking and Programming – 2"
+    marks: 40
+  - name: "Unit 2: Computer Networks"
+    marks: 10
+  - name: "Unit 3: Database Management"
+    marks: 20
+chapters:
+  - id: cbse-12-computer-science-ch01
+    number: 1
+    title: Python Revision Tour
+    unit: "Unit 1: Computational Thinking and Programming – 2"
+    topics:
+      - id: cbse-12-computer-science-ch01-t01
+        title: Tokens, data types, operators and expressions
+        learning_outcomes:
+          - Evaluate Python expressions and identify mutable and immutable types
+      - id: cbse-12-computer-science-ch01-t02
+        title: Flow of control
+        learning_outcomes:
+          - Trace and write programs using if, for and while
+      - id: cbse-12-computer-science-ch01-t03
+        title: Strings, lists, tuples and dictionaries
+        learning_outcomes:
+          - Manipulate sequences and dictionaries with built-in methods
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-computer-science-ch02
+    number: 2
+    title: Functions
+    unit: "Unit 1: Computational Thinking and Programming – 2"
+    topics:
+      - id: cbse-12-computer-science-ch02-t01
+        title: Types of functions and defining functions
+        learning_outcomes:
+          - Distinguish built-in, module and user-defined functions and write user-defined functions
+      - id: cbse-12-computer-science-ch02-t02
+        title: Arguments and parameters
+        learning_outcomes:
+          - Use positional and default parameters and return multiple values
+      - id: cbse-12-computer-science-ch02-t03
+        title: Flow of execution and scope
+        learning_outcomes:
+          - Trace flow of execution and distinguish local and global scope
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-computer-science-ch03
+    number: 3
+    title: Exception Handling
+    unit: "Unit 1: Computational Thinking and Programming – 2"
+    topics:
+      - id: cbse-12-computer-science-ch03-t01
+        title: Exceptions and try-except-finally
+        learning_outcomes:
+          - Handle runtime errors using try, except and finally blocks
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-computer-science-ch04
+    number: 4
+    title: File Handling
+    unit: "Unit 1: Computational Thinking and Programming – 2"
+    topics:
+      - id: cbse-12-computer-science-ch04-t01
+        title: Files, paths and file types
+        learning_outcomes:
+          - Distinguish text, binary and CSV files and relative and absolute paths
+      - id: cbse-12-computer-science-ch04-t02
+        title: Text files
+        learning_outcomes:
+          - Open, read, write and append text files using modes, with-clause, read()/readline()/readlines(), seek() and tell()
+      - id: cbse-12-computer-science-ch04-t03
+        title: Binary files with pickle
+        learning_outcomes:
+          - Create, read, search, append and update records in a binary file using dump() and load()
+      - id: cbse-12-computer-science-ch04-t04
+        title: CSV files
+        learning_outcomes:
+          - Read and write CSV files using csv.writer(), writerow(), writerows() and csv.reader()
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-computer-science-ch05
+    number: 5
+    title: "Data Structure: Stack"
+    unit: "Unit 1: Computational Thinking and Programming – 2"
+    topics:
+      - id: cbse-12-computer-science-ch05-t01
+        title: Stack operations and implementation with a list
+        learning_outcomes:
+          - Implement push and pop on a stack using a Python list and trace stack contents
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-computer-science-ch06
+    number: 6
+    title: Computer Networks
+    unit: "Unit 2: Computer Networks"
+    topics:
+      - id: cbse-12-computer-science-ch06-t01
+        title: Evolution of networking and data communication terminology
+        learning_outcomes:
+          - Trace ARPANET to the Internet and define bandwidth, data transfer rate, IP address and switching techniques
+      - id: cbse-12-computer-science-ch06-t02
+        title: Transmission media and network devices
+        learning_outcomes:
+          - Compare wired and wireless media and state the role of modem, hub, switch, router, gateway and repeater
+      - id: cbse-12-computer-science-ch06-t03
+        title: Network types and topologies
+        learning_outcomes:
+          - Compare PAN, LAN, MAN, WAN and bus, star and tree topologies
+      - id: cbse-12-computer-science-ch06-t04
+        title: Network protocols
+        learning_outcomes:
+          - State the use of HTTP, FTP, PPP, SMTP, TCP/IP, POP3, HTTPS, TELNET and VoIP
+      - id: cbse-12-computer-science-ch06-t05
+        title: Web services
+        learning_outcomes:
+          - Explain WWW, HTML, XML, domain names, URL, web browser, web server and hosting
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-computer-science-ch07
+    number: 7
+    title: Database Concepts
+    unit: "Unit 3: Database Management"
+    topics:
+      - id: cbse-12-computer-science-ch07-t01
+        title: Need for databases; relational data model
+        learning_outcomes:
+          - Define relation, attribute, tuple, domain, degree, cardinality and candidate, primary, alternate and foreign keys
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-computer-science-ch08
+    number: 8
+    title: Structured Query Language (SQL)
+    unit: "Unit 3: Database Management"
+    topics:
+      - id: cbse-12-computer-science-ch08-t01
+        title: DDL and DML; data types and constraints
+        learning_outcomes:
+          - Create, alter, describe and drop databases and tables with constraints
+      - id: cbse-12-computer-science-ch08-t02
+        title: "Queries: SELECT with WHERE, IN, BETWEEN, LIKE, ORDER BY, NULL handling"
+        learning_outcomes:
+          - Write SELECT queries with conditions, aliasing, DISTINCT and ordering
+      - id: cbse-12-computer-science-ch08-t03
+        title: Aggregate functions, GROUP BY and HAVING
+        learning_outcomes:
+          - Write grouped queries using aggregate functions
+      - id: cbse-12-computer-science-ch08-t04
+        title: Joins
+        learning_outcomes:
+          - Write Cartesian product, equi-join and natural join queries on two tables
+      - id: cbse-12-computer-science-ch08-t05
+        title: UPDATE and DELETE
+        learning_outcomes:
+          - Modify and delete rows with conditions
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-computer-science-ch09
+    number: 9
+    title: Interface of Python with an SQL Database
+    unit: "Unit 3: Database Management"
+    topics:
+      - id: cbse-12-computer-science-ch09-t01
+        title: Connecting Python with MySQL
+        learning_outcomes:
+          - Use connect(), cursor(), execute(), commit(), fetchone(), fetchall() and rowcount
+          - Use %s placeholders or format() to build parameterised queries
+    removed_topics: []
+    literature_texts: []
+removed_topics: []
