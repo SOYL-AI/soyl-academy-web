@@ -38,21 +38,29 @@ This repository is the **SOYL Academy marketing website**. We are adding the **S
 - Final prices and launch date confirmation.
 
 ## Commands
-Fill these in during M0 (repo-cartographer) and keep them accurate:
+Recorded in M0 by repo-cartographer (tested on Windows 11, Node 24, npm 11); details in `docs/platform/REPO_MAP.md` §9. Keep them accurate.
 ```
-# marketing site
-install:        <discovered>
-dev:            <discovered>
-build:          <discovered>
-test:           <discovered>
-# platform
-api dev:        <to add>
-worker dev:     <to add>
-db migrate:     <to add>
-content CLI:    <to add>   # plan | generate | verify | assemble | tts | publish | coverage
-e2e:            <to add>
-marketing regression: <to add>
-load test:      <to add>
+# marketing site (repo root)
+install:        npm ci
+dev:            npm run dev                 # http://localhost:3000
+build:          npm run build               # next build (Turbopack); also type-checks
+start:          npm run start               # serves the production build
+lint:           npm run lint
+test:           none (no unit tests in the marketing app; use the marketing regression)
+# platform (run from platform/)
+install:        npm ci                      # platform workspace root (own lockfile, D-005)
+browsers:       npm run browsers:install -w @soyl/e2e   # Playwright Chromium, once per machine
+typecheck:      npm run typecheck           # all platform workspaces
+unit tests:     npm test                    # all platform workspaces
+api dev:        <to add in M1>
+worker dev:     <to add in M1>
+db migrate:     <to add in M1>
+content CLI:    <to add in M1>   # npm run content -- plan | generate | verify | assemble | tts | publish | coverage
+e2e:            <to add in M1>   # platform flows, @soyl/e2e
+marketing regression: npm run marketing:regression -w @soyl/e2e   # build + visual + status + Lighthouse vs Windows baseline
+marketing diff (CI/any OS): npm run marketing:diff -w @soyl/e2e  # merge-base(main) build vs HEAD build, zero-diff
+marketing baseline (owner-approved only): npm run marketing:baseline -w @soyl/e2e
+load test:      <to add in M1>
 ```
 
 ## Coding standards

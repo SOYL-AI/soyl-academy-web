@@ -1,0 +1,442 @@
+{
+  "checked": 52,
+  "routes": [
+    {
+      "path": "/",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/about",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/api/enroll",
+      "method": "GET",
+      "expected": 405,
+      "actual": 405,
+      "contentType": "",
+      "ok": true,
+      "note": "POST-only (Future Builders enrolment to the Google Sheets webhook). Not POSTed by the suite: with GOOGLE_SHEETS_WEBHOOK_URL set it would write a row. Expected POST behaviour: 200 {success:true} (simulated when the webhook is unset), 500 on invalid JSON."
+    },
+    {
+      "path": "/api/razorpay",
+      "method": "GET",
+      "expected": 405,
+      "actual": 405,
+      "contentType": "",
+      "ok": true,
+      "note": "POST-only (Future Builders order creation). Not POSTed by the suite: with live keys it would create a Razorpay order. Expected POST behaviour: 409 while the cohort is closed (waitlist), else 200 with an order (mock order when RAZORPAY_KEY_* are unset)."
+    },
+    {
+      "path": "/apple-icon.png",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true
+    },
+    {
+      "path": "/book-a-demo",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/contact",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/favicon.ico",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/x-icon",
+      "ok": true
+    },
+    {
+      "path": "/feed.xml",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "application/rss+xml; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/future-builders",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/icon.png",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true
+    },
+    {
+      "path": "/journal",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/journal/homework-after-chatgpt",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/journal/learning-to-defend-an-idea",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/journal/should-schools-ban-ai",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/journal/why-outcomes-matter",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/llms-full.txt",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/llms.txt",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/manifest.webmanifest",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "application/manifest+json",
+      "ok": true
+    },
+    {
+      "path": "/method",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/og?path=%2F",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true
+    },
+    {
+      "path": "/og?path=%2Fabout",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/og?path=%2Fbook-a-demo",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/og?path=%2Fcontact",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/og?path=%2Ffuture-builders",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/og?path=%2Fjournal",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/og?path=%2Fjournal%2Fhomework-after-chatgpt",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/og?path=%2Fjournal%2Flearning-to-defend-an-idea",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/og?path=%2Fjournal%2Fshould-schools-ban-ai",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/og?path=%2Fjournal%2Fwhy-outcomes-matter",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/og?path=%2Fmethod",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/og?path=%2Fparents",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/og?path=%2Fprivacy",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/og?path=%2Frefund-policy",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/og?path=%2Fschools",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/og?path=%2Fshipping-policy",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/og?path=%2Fstudents",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/og?path=%2Fteachers",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/og?path=%2Fterms",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/og?path=%2Fwhat-we-teach",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "image/png",
+      "ok": true,
+      "note": "from sitemap.xml"
+    },
+    {
+      "path": "/parents",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/privacy",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/refund-policy",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/robots.txt",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/plain",
+      "ok": true
+    },
+    {
+      "path": "/schools",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/shipping-policy",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/sitemap.xml",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "application/xml",
+      "ok": true
+    },
+    {
+      "path": "/students",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/teachers",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/terms",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/this-page-does-not-exist",
+      "method": "GET",
+      "expected": 404,
+      "actual": 404,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    },
+    {
+      "path": "/what-we-teach",
+      "method": "GET",
+      "expected": 200,
+      "actual": 200,
+      "contentType": "text/html; charset=utf-8",
+      "ok": true
+    }
+  ]
+}

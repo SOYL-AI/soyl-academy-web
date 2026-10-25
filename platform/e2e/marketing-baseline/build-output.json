@@ -1,0 +1,180 @@
+{
+  "nextVersion": "16.3.4",
+  "note": "Next.js 16 does not print sizes in the build route table; measured from .next: JS/CSS referenced by each prerendered page (first load), gzip level 9. Dynamic routes (ƒ) have no prerendered HTML and are not listed.",
+  "totals": {
+    "staticBytes": 1136870,
+    "staticJsBytes": 777866,
+    "staticCssBytes": 58189,
+    "staticMediaBytes": 300815
+  },
+  "routes": {
+    "/": {
+      "firstLoadJsFiles": 10,
+      "firstLoadJsBytes": 645792,
+      "firstLoadJsGzipBytes": 199558,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 105954
+    },
+    "/_not-found": {
+      "firstLoadJsFiles": 9,
+      "firstLoadJsBytes": 634634,
+      "firstLoadJsGzipBytes": 195405,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 39235
+    },
+    "/about": {
+      "firstLoadJsFiles": 9,
+      "firstLoadJsBytes": 634634,
+      "firstLoadJsGzipBytes": 195405,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 47910
+    },
+    "/book-a-demo": {
+      "firstLoadJsFiles": 10,
+      "firstLoadJsBytes": 643234,
+      "firstLoadJsGzipBytes": 198802,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 53149
+    },
+    "/contact": {
+      "firstLoadJsFiles": 11,
+      "firstLoadJsBytes": 736091,
+      "firstLoadJsGzipBytes": 224017,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 45816
+    },
+    "/future-builders": {
+      "firstLoadJsFiles": 10,
+      "firstLoadJsBytes": 649007,
+      "firstLoadJsGzipBytes": 200420,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 100682
+    },
+    "/journal": {
+      "firstLoadJsFiles": 9,
+      "firstLoadJsBytes": 634634,
+      "firstLoadJsGzipBytes": 195405,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 47819
+    },
+    "/journal/homework-after-chatgpt": {
+      "firstLoadJsFiles": 9,
+      "firstLoadJsBytes": 634634,
+      "firstLoadJsGzipBytes": 195405,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 49875
+    },
+    "/journal/learning-to-defend-an-idea": {
+      "firstLoadJsFiles": 9,
+      "firstLoadJsBytes": 634634,
+      "firstLoadJsGzipBytes": 195405,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 50190
+    },
+    "/journal/should-schools-ban-ai": {
+      "firstLoadJsFiles": 9,
+      "firstLoadJsBytes": 634634,
+      "firstLoadJsGzipBytes": 195405,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 49840
+    },
+    "/journal/why-outcomes-matter": {
+      "firstLoadJsFiles": 9,
+      "firstLoadJsBytes": 634634,
+      "firstLoadJsGzipBytes": 195405,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 50083
+    },
+    "/method": {
+      "firstLoadJsFiles": 9,
+      "firstLoadJsBytes": 634634,
+      "firstLoadJsGzipBytes": 195405,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 77936
+    },
+    "/parents": {
+      "firstLoadJsFiles": 9,
+      "firstLoadJsBytes": 634634,
+      "firstLoadJsGzipBytes": 195405,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 48987
+    },
+    "/privacy": {
+      "firstLoadJsFiles": 9,
+      "firstLoadJsBytes": 634634,
+      "firstLoadJsGzipBytes": 195405,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 52684
+    },
+    "/refund-policy": {
+      "firstLoadJsFiles": 9,
+      "firstLoadJsBytes": 634634,
+      "firstLoadJsGzipBytes": 195405,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 47289
+    },
+    "/schools": {
+      "firstLoadJsFiles": 9,
+      "firstLoadJsBytes": 634634,
+      "firstLoadJsGzipBytes": 195405,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 73821
+    },
+    "/shipping-policy": {
+      "firstLoadJsFiles": 9,
+      "firstLoadJsBytes": 634634,
+      "firstLoadJsGzipBytes": 195405,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 47794
+    },
+    "/students": {
+      "firstLoadJsFiles": 10,
+      "firstLoadJsBytes": 641856,
+      "firstLoadJsGzipBytes": 198345,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 61957
+    },
+    "/teachers": {
+      "firstLoadJsFiles": 9,
+      "firstLoadJsBytes": 634634,
+      "firstLoadJsGzipBytes": 195405,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 65783
+    },
+    "/terms": {
+      "firstLoadJsFiles": 9,
+      "firstLoadJsBytes": 634634,
+      "firstLoadJsGzipBytes": 195405,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 44985
+    },
+    "/what-we-teach": {
+      "firstLoadJsFiles": 9,
+      "firstLoadJsBytes": 634634,
+      "firstLoadJsGzipBytes": 195405,
+      "cssBytes": 58189,
+      "cssGzipBytes": 11244,
+      "htmlBytes": 65159
+    }
+  }
+}

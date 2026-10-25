@@ -1,0 +1,21 @@
+{
+  "name": "@soyl/e2e",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Playwright suites: marketing-site regression (visual, route status, Lighthouse) now; platform flows from M1. See docs/platform/REPO_MAP.md section 9.",
+  "scripts": {
+    "marketing:baseline": "node scripts/marketing.mjs baseline",
+    "marketing:regression": "node scripts/marketing.mjs regression",
+    "marketing:diff": "node scripts/marketing-diff.mjs",
+    "browsers:install": "playwright install chromium",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.0",
+    "@types/node": "24.19.2",
+    "chrome-launcher": "1.2.2",
+    "lighthouse": "13.5.0",
+    "typescript": "5.9.3"
+  }
+}
