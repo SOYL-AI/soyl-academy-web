@@ -227,6 +227,11 @@ Publisher CBSE, academic year 2026-27, fetched 2026-10-25. Used for units, marks
 - **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Hindi_SecP1IX_2026-27.pdf
 - **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
 
+### `cbse-xii-fine-arts-2026-27`
+- **Title:** Fine Arts (Painting 049, Graphics 050, Sculpture 051, Applied Art 052) Classes XI-XII 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Fine_Arts_SecP2_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
 ### `cbse-xii-physics-2026-27`
 - **Title:** Physics (042) Classes XI-XII 2026-27 syllabus
 - **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Physics_SecP2_2026-27.pdf
@@ -519,7 +524,6 @@ These 272 documents (fetched 2026-10-25, publisher CBSE, 2026-27) were used to c
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Chemistry_SecP2_2026-27_RM.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Curriculum_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Engineering_Graphics_SecP2_2026-27.pdf
-- https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Fine_Arts_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/French_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/GeneralStudies_SecP2_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Geography_SecP2_2026-27_RM.pdf
