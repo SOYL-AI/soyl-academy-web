@@ -1,0 +1,21 @@
+{
+  "name": "@soyl/shared",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "zod schemas, types and config shared by the API, worker, pipeline and the Next.js platform pages. Must only depend on zod (imported as 'zod/v4') so the marketing app can import it with its own dependencies.",
+  "exports": {
+    "./*": "./*.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}

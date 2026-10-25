@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Platform services have their own toolchain (platform/package.json, ADR-001).
+    "platform/**",
   ]),
 ]);
 

@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+.data/
+.azurite/
+test-results/
+playwright-report/
+blob-report/
+*.log
+.env
+.env.*
+!.env.example
+# Generated content lives in Postgres + Blob as releases, not in git (ARCHITECTURE §2)
+content-pipeline/out/
+content-pipeline/.cache/

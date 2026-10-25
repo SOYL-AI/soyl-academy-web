@@ -1,0 +1,18 @@
+{
+  "name": "soyl-platform",
+  "private": true,
+  "description": "SOYL Academy Learning Platform: API, worker, database, content pipeline and tests. Separate from the marketing app's package.json on purpose (see docs/platform/adr/001-repository-integration.md).",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "workspaces": [
+    "*"
+  ],
+  "scripts": {
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present"
+  }
+}
