@@ -1,0 +1,388 @@
+# CBSE Class 12 Physics (042), 2026-27. Chapters as numbered in the CBSE syllabus (= NCERT Physics Part I and II). Units carry combined marks as published.
+subject_id: cbse-12-physics
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-physics-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+  - cbse-sqp-xii-2026-27
+  - cbse-sqp-notification-2026-27
+  - ncert-textbooks-secondary
+exam_notes: >-
+  Theory 70 marks (3 hours) + practical 30 (two experiments 7+7, record 5, activity 3, investigatory project 3, viva 5). Competency mix:
+  remembering/understanding 38%, applying 32%, analysing/evaluating/creating 30%. No change in paper design for 2026-27 (CBSE notification
+  21-09-2026); see the 2026-27 SQP for sections and internal choice. Single board exam (February-March 2027).
+units:
+  - name: "Units I–II: Electrostatics; Current Electricity"
+    marks: 16
+  - name: "Units III–IV: Magnetic Effects of Current and Magnetism; Electromagnetic Induction and Alternating Currents"
+    marks: 17
+  - name: "Units V–VI: Electromagnetic Waves; Optics"
+    marks: 18
+  - name: "Units VII–VIII: Dual Nature of Radiation and Matter; Atoms and Nuclei"
+    marks: 12
+  - name: "Unit IX: Electronic Devices"
+    marks: 7
+chapters:
+  - id: cbse-12-physics-ch01
+    number: 1
+    title: Electric Charges and Fields
+    unit: "Units I–II: Electrostatics; Current Electricity"
+    topics:
+      - id: cbse-12-physics-ch01-t01
+        title: Electric charge, conservation and Coulomb's law
+        learning_outcomes:
+          - State properties of charge and apply Coulomb's law in vector form
+          - Use the superposition principle for forces between multiple charges
+      - id: cbse-12-physics-ch01-t02
+        title: Electric field and field lines
+        learning_outcomes:
+          - Calculate the field of a point charge and a system of charges
+          - Sketch and interpret field-line patterns
+      - id: cbse-12-physics-ch01-t03
+        title: Electric dipole
+        learning_outcomes:
+          - Derive the field of a dipole on its axis and equatorial line
+          - Calculate the torque on a dipole in a uniform field
+      - id: cbse-12-physics-ch01-t04
+        title: Continuous charge distributions
+        learning_outcomes:
+          - Define linear, surface and volume charge density and set up the field of a continuous distribution
+      - id: cbse-12-physics-ch01-t05
+        title: Electric flux and Gauss's law
+        learning_outcomes:
+          - Define electric flux and state Gauss's law
+      - id: cbse-12-physics-ch01-t06
+        title: Applications of Gauss's law
+        learning_outcomes:
+          - >-
+            Derive the field due to an infinitely long straight wire, an infinite plane sheet and a thin spherical shell (inside and
+            outside)
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-physics-ch02
+    number: 2
+    title: Electrostatic Potential and Capacitance
+    unit: "Units I–II: Electrostatics; Current Electricity"
+    topics:
+      - id: cbse-12-physics-ch02-t01
+        title: Electric potential and potential difference
+        learning_outcomes:
+          - Derive the potential due to a point charge, a dipole and a system of charges
+      - id: cbse-12-physics-ch02-t02
+        title: Equipotential surfaces
+        learning_outcomes:
+          - Relate equipotential surfaces to field lines and explain why no work is done along them
+      - id: cbse-12-physics-ch02-t03
+        title: Electrostatic potential energy
+        learning_outcomes:
+          - Calculate the potential energy of a system of two charges and of a dipole in an external field
+      - id: cbse-12-physics-ch02-t04
+        title: Conductors, dielectrics and polarisation
+        learning_outcomes:
+          - Explain electrostatics of conductors and the effect of a dielectric (polarisation)
+      - id: cbse-12-physics-ch02-t05
+        title: Capacitors and capacitance
+        learning_outcomes:
+          - Derive the capacitance of a parallel-plate capacitor with and without a dielectric
+          - Combine capacitors in series and parallel
+      - id: cbse-12-physics-ch02-t06
+        title: Energy stored in a capacitor
+        learning_outcomes:
+          - Use the formula for energy stored in a capacitor (no derivation required)
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-physics-ch03
+    number: 3
+    title: Current Electricity
+    unit: "Units I–II: Electrostatics; Current Electricity"
+    topics:
+      - id: cbse-12-physics-ch03-t01
+        title: Electric current, drift velocity and mobility
+        learning_outcomes:
+          - Derive the relation between current and drift velocity and define mobility
+      - id: cbse-12-physics-ch03-t02
+        title: Ohm's law, resistivity and conductivity
+        learning_outcomes:
+          - Distinguish linear and non-linear V–I characteristics and explain temperature dependence of resistivity
+      - id: cbse-12-physics-ch03-t03
+        title: Electrical energy and power
+        learning_outcomes:
+          - Calculate power dissipated in resistors
+      - id: cbse-12-physics-ch03-t04
+        title: "Cells: EMF, internal resistance and combinations"
+        learning_outcomes:
+          - Relate terminal voltage, EMF and internal resistance
+          - Find equivalent EMF and internal resistance of cells in series and parallel
+      - id: cbse-12-physics-ch03-t05
+        title: Kirchhoff's rules
+        learning_outcomes:
+          - Apply the junction and loop rules to multi-loop circuits
+      - id: cbse-12-physics-ch03-t06
+        title: Wheatstone bridge
+        learning_outcomes:
+          - Derive the balance condition of a Wheatstone bridge and apply it (metre bridge)
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-physics-ch04
+    number: 4
+    title: Moving Charges and Magnetism
+    unit: "Units III–IV: Magnetic Effects of Current and Magnetism; Electromagnetic Induction and Alternating Currents"
+    topics:
+      - id: cbse-12-physics-ch04-t01
+        title: Magnetic force and motion of charges in magnetic and electric fields
+        learning_outcomes:
+          - Apply the Lorentz force and describe motion of a charge in uniform magnetic and crossed fields
+      - id: cbse-12-physics-ch04-t02
+        title: Biot–Savart law and field on the axis of a circular loop
+        learning_outcomes:
+          - Derive the field on the axis of a current-carrying circular loop
+      - id: cbse-12-physics-ch04-t03
+        title: Ampere's circuital law
+        learning_outcomes:
+          - Apply Ampere's law to an infinitely long straight wire; describe a solenoid qualitatively
+      - id: cbse-12-physics-ch04-t04
+        title: Force on a current-carrying conductor; force between parallel currents
+        learning_outcomes:
+          - Derive the force between two parallel currents and define the ampere
+      - id: cbse-12-physics-ch04-t05
+        title: Torque on a current loop; magnetic dipole moment
+        learning_outcomes:
+          - Calculate torque on a current loop and treat it as a magnetic dipole
+      - id: cbse-12-physics-ch04-t06
+        title: Moving coil galvanometer
+        learning_outcomes:
+          - Explain the galvanometer, its current sensitivity, and conversion into an ammeter and a voltmeter
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-physics-ch05
+    number: 5
+    title: Magnetism and Matter
+    unit: "Units III–IV: Magnetic Effects of Current and Magnetism; Electromagnetic Induction and Alternating Currents"
+    topics:
+      - id: cbse-12-physics-ch05-t01
+        title: Bar magnet and magnetic field lines
+        learning_outcomes:
+          - Describe a bar magnet as an equivalent solenoid and its field lines (qualitative)
+      - id: cbse-12-physics-ch05-t02
+        title: Magnetic dipole in a uniform field
+        learning_outcomes:
+          - Describe qualitatively the field of a dipole and torque on it
+      - id: cbse-12-physics-ch05-t03
+        title: Magnetic properties of materials
+        learning_outcomes:
+          - Classify materials as dia-, para- and ferromagnetic with examples and explain magnetisation and the effect of temperature
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-physics-ch06
+    number: 6
+    title: Electromagnetic Induction
+    unit: "Units III–IV: Magnetic Effects of Current and Magnetism; Electromagnetic Induction and Alternating Currents"
+    topics:
+      - id: cbse-12-physics-ch06-t01
+        title: Faraday's laws and induced EMF
+        learning_outcomes:
+          - State Faraday's laws and calculate induced EMF from changing flux
+      - id: cbse-12-physics-ch06-t02
+        title: Lenz's law and conservation of energy
+        learning_outcomes:
+          - Use Lenz's law to find the direction of induced current
+      - id: cbse-12-physics-ch06-t03
+        title: Motional EMF
+        learning_outcomes:
+          - Derive the EMF induced in a rod moving in a magnetic field
+      - id: cbse-12-physics-ch06-t04
+        title: Self-induction and mutual induction
+        learning_outcomes:
+          - Define self and mutual inductance and state the factors they depend on
+    removed_topics:
+      - Eddy currents (deleted in rationalisation)
+    literature_texts: []
+  - id: cbse-12-physics-ch07
+    number: 7
+    title: Alternating Current
+    unit: "Units III–IV: Magnetic Effects of Current and Magnetism; Electromagnetic Induction and Alternating Currents"
+    topics:
+      - id: cbse-12-physics-ch07-t01
+        title: Peak and RMS values
+        learning_outcomes:
+          - Relate peak and RMS current and voltage
+      - id: cbse-12-physics-ch07-t02
+        title: AC through a resistor, inductor and capacitor; reactance
+        learning_outcomes:
+          - Use phasors to show phase relations and calculate inductive and capacitive reactance
+      - id: cbse-12-physics-ch07-t03
+        title: Series LCR circuit, impedance and resonance
+        learning_outcomes:
+          - Calculate impedance, phase angle and resonant frequency using phasor diagrams
+      - id: cbse-12-physics-ch07-t04
+        title: Power in AC circuits; power factor; wattless current
+        learning_outcomes:
+          - Calculate average power and explain power factor and wattless current
+      - id: cbse-12-physics-ch07-t05
+        title: AC generator and transformer
+        learning_outcomes:
+          - Explain the working of an AC generator and a transformer and the role of the turns ratio
+    removed_topics:
+      - LC oscillations (deleted in rationalisation)
+    literature_texts: []
+  - id: cbse-12-physics-ch08
+    number: 8
+    title: Electromagnetic Waves
+    unit: "Units V–VI: Electromagnetic Waves; Optics"
+    topics:
+      - id: cbse-12-physics-ch08-t01
+        title: Displacement current
+        learning_outcomes:
+          - Explain the need for displacement current (basic idea)
+      - id: cbse-12-physics-ch08-t02
+        title: Electromagnetic waves and their characteristics
+        learning_outcomes:
+          - Describe the transverse nature of EM waves qualitatively
+      - id: cbse-12-physics-ch08-t03
+        title: Electromagnetic spectrum
+        learning_outcomes:
+          - Order the EM spectrum and state uses of each band
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-physics-ch09
+    number: 9
+    title: Ray Optics and Optical Instruments
+    unit: "Units V–VI: Electromagnetic Waves; Optics"
+    topics:
+      - id: cbse-12-physics-ch09-t01
+        title: Reflection by spherical mirrors; mirror formula
+        learning_outcomes:
+          - Apply the mirror formula and magnification
+      - id: cbse-12-physics-ch09-t02
+        title: Refraction and total internal reflection; optical fibres
+        learning_outcomes:
+          - Explain total internal reflection, critical angle and optical fibres
+      - id: cbse-12-physics-ch09-t03
+        title: Refraction at spherical surfaces and lenses; lens maker's formula
+        learning_outcomes:
+          - Derive refraction at a spherical surface and the lens maker's formula
+          - Apply the thin lens formula and power of lenses in contact
+      - id: cbse-12-physics-ch09-t04
+        title: Refraction through a prism
+        learning_outcomes:
+          - Derive the relation for angle of minimum deviation
+      - id: cbse-12-physics-ch09-t05
+        title: "Optical instruments: microscopes and telescopes"
+        learning_outcomes:
+          - Derive the magnifying power of simple and compound microscopes and refracting telescopes; describe reflecting telescopes
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-physics-ch10
+    number: 10
+    title: Wave Optics
+    unit: "Units V–VI: Electromagnetic Waves; Optics"
+    topics:
+      - id: cbse-12-physics-ch10-t01
+        title: Wavefronts and Huygens' principle
+        learning_outcomes:
+          - Prove the laws of reflection and refraction using Huygens' principle
+      - id: cbse-12-physics-ch10-t02
+        title: Coherent sources and interference
+        learning_outcomes:
+          - Explain coherent sources and conditions for sustained interference
+      - id: cbse-12-physics-ch10-t03
+        title: Young's double-slit experiment
+        learning_outcomes:
+          - Use the fringe-width expression (no derivation) to solve problems
+      - id: cbse-12-physics-ch10-t04
+        title: Diffraction due to a single slit
+        learning_outcomes:
+          - Describe the single-slit diffraction pattern and width of the central maximum qualitatively
+    removed_topics:
+      - Polarisation (deleted)
+    literature_texts: []
+  - id: cbse-12-physics-ch11
+    number: 11
+    title: Dual Nature of Radiation and Matter
+    unit: "Units VII–VIII: Dual Nature of Radiation and Matter; Atoms and Nuclei"
+    topics:
+      - id: cbse-12-physics-ch11-t01
+        title: "Photoelectric effect: Hertz and Lenard's observations"
+        learning_outcomes:
+          - Describe the experimental observations of the photoelectric effect
+      - id: cbse-12-physics-ch11-t02
+        title: Experimental study of the photoelectric effect
+        learning_outcomes:
+          - Interpret graphs of photocurrent versus intensity, potential and frequency
+      - id: cbse-12-physics-ch11-t03
+        title: Einstein's photoelectric equation
+        learning_outcomes:
+          - Apply Einstein's equation to calculate work function, threshold frequency and stopping potential
+      - id: cbse-12-physics-ch11-t04
+        title: Matter waves and de Broglie relation
+        learning_outcomes:
+          - Calculate de Broglie wavelength of particles
+    removed_topics:
+      - Davisson–Germer experiment (deleted)
+    literature_texts: []
+  - id: cbse-12-physics-ch12
+    number: 12
+    title: Atoms
+    unit: "Units VII–VIII: Dual Nature of Radiation and Matter; Atoms and Nuclei"
+    topics:
+      - id: cbse-12-physics-ch12-t01
+        title: Alpha-particle scattering and Rutherford's model
+        learning_outcomes:
+          - Explain the Geiger–Marsden experiment and the nuclear model
+      - id: cbse-12-physics-ch12-t02
+        title: Bohr model of the hydrogen atom
+        learning_outcomes:
+          - Derive the radius, velocity and energy of the electron in the nth orbit
+      - id: cbse-12-physics-ch12-t03
+        title: Hydrogen line spectra
+        learning_outcomes:
+          - Explain the line spectrum of hydrogen qualitatively using energy levels
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-physics-ch13
+    number: 13
+    title: Nuclei
+    unit: "Units VII–VIII: Dual Nature of Radiation and Matter; Atoms and Nuclei"
+    topics:
+      - id: cbse-12-physics-ch13-t01
+        title: Composition and size of the nucleus; nuclear force
+        learning_outcomes:
+          - Describe nuclear composition, size and properties of the nuclear force
+      - id: cbse-12-physics-ch13-t02
+        title: Mass–energy relation, mass defect and binding energy
+        learning_outcomes:
+          - Calculate mass defect and binding energy and interpret the binding energy per nucleon curve
+      - id: cbse-12-physics-ch13-t03
+        title: Nuclear fission and fusion
+        learning_outcomes:
+          - Explain fission and fusion using the binding-energy curve
+    removed_topics:
+      - Radioactivity (deleted)
+    literature_texts: []
+  - id: cbse-12-physics-ch14
+    number: 14
+    title: "Semiconductor Electronics: Materials, Devices and Simple Circuits"
+    unit: "Unit IX: Electronic Devices"
+    topics:
+      - id: cbse-12-physics-ch14-t01
+        title: Energy bands in conductors, semiconductors and insulators
+        learning_outcomes:
+          - Distinguish materials using band diagrams (qualitative)
+      - id: cbse-12-physics-ch14-t02
+        title: Intrinsic and extrinsic semiconductors
+        learning_outcomes:
+          - Explain n-type and p-type doping
+      - id: cbse-12-physics-ch14-t03
+        title: p-n junction and diode characteristics
+        learning_outcomes:
+          - Explain formation of the depletion layer and the I–V characteristics in forward and reverse bias
+      - id: cbse-12-physics-ch14-t04
+        title: Diode as a rectifier
+        learning_outcomes:
+          - Explain half-wave and full-wave rectification with circuit diagrams and waveforms
+    removed_topics:
+      - Special-purpose diodes, transistors and logic gates (deleted)
+    literature_texts: []
+removed_topics:
+  - NCERT-rationalised deletions as listed per chapter; topics not named in the CBSE 2026-27 syllabus are not assessed

@@ -1,0 +1,310 @@
+# CBSE Class 12 Mathematics (041), 2026-27. Chapter numbers follow NCERT Mathematics Part I and II for Class XII (13 chapters).
+subject_id: cbse-12-mathematics
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-mathematics-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+  - cbse-sqp-xii-2026-27
+  - cbse-sqp-notification-2026-27
+  - ncert-textbooks-secondary
+exam_notes: >-
+  Theory 80 marks (3 hours) + internal assessment 20 (periodic tests, best 2 of 3, 10; mathematics activities 10). Competency mix:
+  remembering/understanding 55%, applying 25%, analysing/evaluating/creating 20%. No chapter-wise weightage within units; no overall choice,
+  about 33% internal choice in all sections. Cannot be taken with Applied Mathematics (241). Single board exam (February-March 2027).
+units:
+  - name: "Unit I: Relations and Functions"
+    marks: 8
+  - name: "Unit II: Algebra"
+    marks: 10
+  - name: "Unit III: Calculus"
+    marks: 35
+  - name: "Unit IV: Vectors and Three-Dimensional Geometry"
+    marks: 14
+  - name: "Unit V: Linear Programming"
+    marks: 5
+  - name: "Unit VI: Probability"
+    marks: 8
+chapters:
+  - id: cbse-12-mathematics-ch01
+    number: 1
+    title: Relations and Functions
+    unit: "Unit I: Relations and Functions"
+    topics:
+      - id: cbse-12-mathematics-ch01-t01
+        title: Types of relations
+        learning_outcomes:
+          - Test a relation for reflexive, symmetric and transitive properties and identify equivalence relations and classes
+      - id: cbse-12-mathematics-ch01-t02
+        title: "Types of functions: one-one and onto"
+        learning_outcomes:
+          - Prove whether a function is injective, surjective or bijective
+    removed_topics:
+      - Composition of functions and invertible functions; binary operations (deleted)
+    literature_texts: []
+  - id: cbse-12-mathematics-ch02
+    number: 2
+    title: Inverse Trigonometric Functions
+    unit: "Unit I: Relations and Functions"
+    topics:
+      - id: cbse-12-mathematics-ch02-t01
+        title: Definition, domain, range and principal value branches
+        learning_outcomes:
+          - State principal value branches and find principal values
+      - id: cbse-12-mathematics-ch02-t02
+        title: Graphs of inverse trigonometric functions
+        learning_outcomes:
+          - Sketch graphs of sin⁻¹x, cos⁻¹x and tan⁻¹x and read domain and range
+    removed_topics:
+      - Elementary properties of inverse trigonometric functions (deleted)
+    literature_texts: []
+  - id: cbse-12-mathematics-ch03
+    number: 3
+    title: Matrices
+    unit: "Unit II: Algebra"
+    topics:
+      - id: cbse-12-mathematics-ch03-t01
+        title: Matrix notation, order, equality and types
+        learning_outcomes:
+          - Identify row, column, square, diagonal, scalar, identity and zero matrices
+      - id: cbse-12-mathematics-ch03-t02
+        title: Operations on matrices
+        learning_outcomes:
+          - Add, multiply and scalar-multiply matrices and verify properties; show non-commutativity with 2×2 examples
+      - id: cbse-12-mathematics-ch03-t03
+        title: Transpose; symmetric and skew-symmetric matrices
+        learning_outcomes:
+          - Express a square matrix as the sum of a symmetric and a skew-symmetric matrix
+      - id: cbse-12-mathematics-ch03-t04
+        title: Invertible matrices
+        learning_outcomes:
+          - Prove the uniqueness of the inverse of a matrix when it exists
+    removed_topics:
+      - Elementary row operations for inverse (deleted)
+    literature_texts: []
+  - id: cbse-12-mathematics-ch04
+    number: 4
+    title: Determinants
+    unit: "Unit II: Algebra"
+    topics:
+      - id: cbse-12-mathematics-ch04-t01
+        title: Determinants of order up to 3
+        learning_outcomes:
+          - Evaluate determinants of order 2 and 3
+      - id: cbse-12-mathematics-ch04-t02
+        title: Area of a triangle using determinants
+        learning_outcomes:
+          - Find areas and test collinearity using determinants
+      - id: cbse-12-mathematics-ch04-t03
+        title: Minors, cofactors, adjoint and inverse
+        learning_outcomes:
+          - Find the adjoint and inverse of a square matrix
+      - id: cbse-12-mathematics-ch04-t04
+        title: Solving systems of linear equations by the matrix method
+        learning_outcomes:
+          - Determine consistency and solve systems in two or three variables using A⁻¹
+    removed_topics:
+      - Properties of determinants (deleted)
+    literature_texts: []
+  - id: cbse-12-mathematics-ch05
+    number: 5
+    title: Continuity and Differentiability
+    unit: "Unit III: Calculus"
+    topics:
+      - id: cbse-12-mathematics-ch05-t01
+        title: Continuity
+        learning_outcomes:
+          - Test continuity of a function at a point and on an interval, including piecewise functions
+      - id: cbse-12-mathematics-ch05-t02
+        title: Differentiability and the chain rule
+        learning_outcomes:
+          - Differentiate composite functions using the chain rule
+      - id: cbse-12-mathematics-ch05-t03
+        title: Derivatives of inverse trigonometric and implicit functions
+        learning_outcomes:
+          - Differentiate sin⁻¹x, cos⁻¹x, tan⁻¹x and implicit functions
+      - id: cbse-12-mathematics-ch05-t04
+        title: Exponential and logarithmic functions; logarithmic differentiation
+        learning_outcomes:
+          - Differentiate exponential and logarithmic functions and use logarithmic differentiation
+      - id: cbse-12-mathematics-ch05-t05
+        title: Parametric differentiation and second-order derivatives
+        learning_outcomes:
+          - Find derivatives of parametric functions and second-order derivatives
+    removed_topics:
+      - Rolle's and Lagrange's mean value theorems (deleted)
+    literature_texts: []
+  - id: cbse-12-mathematics-ch06
+    number: 6
+    title: Application of Derivatives
+    unit: "Unit III: Calculus"
+    topics:
+      - id: cbse-12-mathematics-ch06-t01
+        title: Rate of change of quantities
+        learning_outcomes:
+          - Solve rate-of-change problems from real contexts
+      - id: cbse-12-mathematics-ch06-t02
+        title: Increasing and decreasing functions
+        learning_outcomes:
+          - Find intervals where a function is increasing or decreasing
+      - id: cbse-12-mathematics-ch06-t03
+        title: Maxima and minima
+        learning_outcomes:
+          - Use first- and second-derivative tests to find local and absolute extrema
+          - Solve real-life optimisation problems
+    removed_topics:
+      - Tangents and normals; approximations (deleted)
+    literature_texts: []
+  - id: cbse-12-mathematics-ch07
+    number: 7
+    title: Integrals
+    unit: "Unit III: Calculus"
+    topics:
+      - id: cbse-12-mathematics-ch07-t01
+        title: Integration as the inverse of differentiation; standard integrals
+        learning_outcomes:
+          - Evaluate indefinite integrals using standard formulas
+      - id: cbse-12-mathematics-ch07-t02
+        title: Integration by substitution
+        learning_outcomes:
+          - Integrate using suitable substitutions, including trigonometric forms
+      - id: cbse-12-mathematics-ch07-t03
+        title: Integrals of special forms
+        learning_outcomes:
+          - Evaluate integrals of the forms dx/(x²±a²), dx/√(x²±a²), dx/(ax²+bx+c), (px+q)/(ax²+bx+c) and their square-root variants
+      - id: cbse-12-mathematics-ch07-t04
+        title: Integration by partial fractions
+        learning_outcomes:
+          - Decompose rational functions and integrate
+      - id: cbse-12-mathematics-ch07-t05
+        title: Integration by parts
+        learning_outcomes:
+          - Apply integration by parts including ∫eˣ[f(x)+f′(x)]dx and ∫√(a²±x²)dx forms
+      - id: cbse-12-mathematics-ch07-t06
+        title: Definite integrals and their properties
+        learning_outcomes:
+          - State the fundamental theorem of calculus (without proof) and evaluate definite integrals using properties
+    removed_topics:
+      - Definite integral as the limit of a sum (deleted)
+    literature_texts: []
+  - id: cbse-12-mathematics-ch08
+    number: 8
+    title: Application of Integrals
+    unit: "Unit III: Calculus"
+    topics:
+      - id: cbse-12-mathematics-ch08-t01
+        title: Area under simple curves
+        learning_outcomes:
+          - "Find the area bounded by a curve and lines: lines, circles, parabolas and ellipses in standard form"
+    removed_topics:
+      - Area between two curves (deleted)
+    literature_texts: []
+  - id: cbse-12-mathematics-ch09
+    number: 9
+    title: Differential Equations
+    unit: "Unit III: Calculus"
+    topics:
+      - id: cbse-12-mathematics-ch09-t01
+        title: Order, degree, general and particular solutions
+        learning_outcomes:
+          - Find order and degree and verify solutions of differential equations
+      - id: cbse-12-mathematics-ch09-t02
+        title: Variables separable
+        learning_outcomes:
+          - Solve differential equations by separation of variables
+      - id: cbse-12-mathematics-ch09-t03
+        title: Homogeneous differential equations
+        learning_outcomes:
+          - Solve first-order first-degree homogeneous equations
+      - id: cbse-12-mathematics-ch09-t04
+        title: Linear differential equations
+        learning_outcomes:
+          - Solve dy/dx + Py = Q and dx/dy + Px = Q using an integrating factor
+    removed_topics:
+      - Formation of differential equations (deleted)
+    literature_texts: []
+  - id: cbse-12-mathematics-ch10
+    number: 10
+    title: Vector Algebra
+    unit: "Unit IV: Vectors and Three-Dimensional Geometry"
+    topics:
+      - id: cbse-12-mathematics-ch10-t01
+        title: Vectors and scalars; types of vectors
+        learning_outcomes:
+          - Identify equal, unit, zero, collinear and position vectors and find magnitude and direction cosines
+      - id: cbse-12-mathematics-ch10-t02
+        title: Addition of vectors and scalar multiplication; section formula
+        learning_outcomes:
+          - Add vectors and find the position vector of a point dividing a segment in a given ratio
+      - id: cbse-12-mathematics-ch10-t03
+        title: Scalar (dot) product
+        learning_outcomes:
+          - Use the dot product to find angles and projections
+      - id: cbse-12-mathematics-ch10-t04
+        title: Vector (cross) product
+        learning_outcomes:
+          - Use the cross product to find perpendicular vectors and areas of triangles and parallelograms
+    removed_topics:
+      - Scalar triple product (deleted)
+    literature_texts: []
+  - id: cbse-12-mathematics-ch11
+    number: 11
+    title: Three Dimensional Geometry
+    unit: "Unit IV: Vectors and Three-Dimensional Geometry"
+    topics:
+      - id: cbse-12-mathematics-ch11-t01
+        title: Direction cosines and direction ratios of a line
+        learning_outcomes:
+          - Find direction cosines and ratios of a line through two points
+      - id: cbse-12-mathematics-ch11-t02
+        title: Equation of a line in space
+        learning_outcomes:
+          - Write vector and Cartesian equations of a line
+      - id: cbse-12-mathematics-ch11-t03
+        title: Angle between two lines
+        learning_outcomes:
+          - Find the angle between two lines
+      - id: cbse-12-mathematics-ch11-t04
+        title: Skew lines and shortest distance
+        learning_outcomes:
+          - Find the shortest distance between two skew lines and between parallel lines
+    removed_topics:
+      - The plane (deleted)
+    literature_texts: []
+  - id: cbse-12-mathematics-ch12
+    number: 12
+    title: Linear Programming
+    unit: "Unit V: Linear Programming"
+    topics:
+      - id: cbse-12-mathematics-ch12-t01
+        title: Terminology and formulation
+        learning_outcomes:
+          - Formulate an LPP with constraints and an objective function
+      - id: cbse-12-mathematics-ch12-t02
+        title: Graphical method of solution
+        learning_outcomes:
+          - Solve two-variable LPPs graphically with bounded and unbounded feasible regions and up to three non-trivial constraints
+    removed_topics:
+      - Different types of LPP — manufacturing, diet, transportation (deleted)
+    literature_texts: []
+  - id: cbse-12-mathematics-ch13
+    number: 13
+    title: Probability
+    unit: "Unit VI: Probability"
+    topics:
+      - id: cbse-12-mathematics-ch13-t01
+        title: Conditional probability
+        learning_outcomes:
+          - Calculate conditional probability and use its properties
+      - id: cbse-12-mathematics-ch13-t02
+        title: Multiplication theorem and independent events
+        learning_outcomes:
+          - Apply the multiplication rule and test events for independence
+      - id: cbse-12-mathematics-ch13-t03
+        title: Theorem of total probability and Bayes' theorem
+        learning_outcomes:
+          - Apply total probability and Bayes' theorem to real situations
+    removed_topics:
+      - Random variables, probability distributions and binomial distribution (deleted)
+    literature_texts: []
+removed_topics: []
