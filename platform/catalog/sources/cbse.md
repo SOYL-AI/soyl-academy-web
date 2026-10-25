@@ -202,6 +202,31 @@ Publisher CBSE, academic year 2026-27, fetched 2026-10-25. Used for units, marks
 - **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/843-AI-XII.pdf
 - **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
 
+### `cbse-ix-science-2026-27`
+- **Title:** Science (086) Class IX 2026-27 syllabus (new NCF-SE scheme)
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/ScienceSt_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-mathematics-2026-27`
+- **Title:** Mathematics Class IX 2026-27 syllabus (new NCF-SE scheme)
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Maths_SecP1IX_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-social-science-2026-27`
+- **Title:** Social Science (087) Class IX 2026-27 syllabus (new NCF-SE scheme)
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/SocialScience_SecP1IX_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-english-2026-27`
+- **Title:** English Class IX 2026-27 syllabus (R1/R2, Kaveri)
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/English_LL_SecP1IX_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-hindi-2026-27`
+- **Title:** Hindi Class IX 2026-27 syllabus (R1/R2)
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Hindi_SecP1IX_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
 ### `cbse-xii-physics-2026-27`
 - **Title:** Physics (042) Classes XI-XII 2026-27 syllabus
 - **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Physics_SecP2_2026-27.pdf
@@ -430,13 +455,11 @@ These 272 documents (fetched 2026-10-25, publisher CBSE, 2026-27) were used to c
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Elements_of_BK_Acc_SecP1X_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Elements_of_Business_SecP1IX_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Elements_of_Business_SecP1X_2026-27.pdf
-- https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/English_LL_SecP1IX_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/French_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/German_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Gujarati_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Gurung_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/HPE_SecP1_2026-27.pdf
-- https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Hindi_SecP1IX_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Hindustani_Music_Melodic_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Hindustani_Music_Percussion_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Hindustani_Music_Vocal_SecP1_2026-27.pdf
@@ -454,7 +477,6 @@ These 272 documents (fetched 2026-10-25, publisher CBSE, 2026-27) were used to c
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Manipuri_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Marathi_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/MathsAd_SecP1_2026-27.pdf
-- https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Maths_SecP1IX_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Mizo_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/NCC_SecP1IX_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/NCC_SecP1X_2026-27.pdf
@@ -470,10 +492,8 @@ These 272 documents (fetched 2026-10-25, publisher CBSE, 2026-27) were used to c
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Sanskrit_SecP1IX_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Santhali_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/ScienceAd_SecP1_2026-27.pdf
-- https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/ScienceSt_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Sherpa_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Sindhi_SecP1_2026-27.pdf
-- https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/SocialScience_SecP1IX_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Spanish_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Tamang_SecP1_2026-27.pdf
 - https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Tamil_SecP1_2026-27.pdf
