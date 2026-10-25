@@ -1,0 +1,120 @@
+# CBSE Class 9 Hindi, 2026-27 (R1 level; R2 differences in exam_notes). Paper pattern, grammar and writing items verified from
+# the CBSE 2026-27 syllabus. The new NCF-SE 2023 NCERT textbook is referenced but not named and its chapters are not listed;
+# literature is a placeholder chapter until the textbook contents are supplied.
+subject_id: cbse-9-hindi
+academic_year: "2026-27"
+source_status: unverified
+sources:
+  - cbse-ix-hindi-2026-27
+  - cbse-secondary-curriculum-2026-27
+  - ncert-textbooks-secondary
+exam_notes: >-
+  Class 9 has no board exam: school annual examination 80 marks (3 hours) + internal assessment 20. R1: अपठित बोध 14 (गद्यांश ~200 शब्द 7,
+  काव्यांश 80-100 शब्द 7); व्याकरण 16 (शब्द-निर्माण 4, संज्ञा-सर्वनाम-विशेषण-क्रिया 4, अर्थ के आधार पर वाक्य-भेद 4, शब्दालंकार 4);
+  पाठ्यपुस्तक 30; लेखन 20 (अनुच्छेद ~120 शब्द, अनौपचारिक पत्र ~100, संवाद ~80, सूचना ~80; प्रत्येक 5)। R2: दो अपठित गद्यांश 7+7; व्याकरण —
+  शब्द भंडार (समानार्थी, मुहावरे), उपसर्ग-प्रत्यय, विराम चिह्न, संज्ञा-सर्वनाम-निपात; लेखन — अनुच्छेद ~100, पत्र, संवाद, चित्र आधारित लेखन
+  ~80।
+units:
+  - name: "खंड क: अपठित बोध"
+    marks: 14
+  - name: "खंड ख: व्यावहारिक व्याकरण"
+    marks: 16
+  - name: "खंड ग: पाठ्यपुस्तक"
+    marks: 30
+  - name: "खंड घ: रचनात्मक लेखन"
+    marks: 20
+chapters:
+  - id: cbse-9-hindi-ch01
+    number: 1
+    title: अपठित गद्यांश और काव्यांश
+    title_en: Unseen prose and poetry
+    unit: "खंड क: अपठित बोध"
+    topics:
+      - id: cbse-9-hindi-ch01-t01
+        title: अपठित गद्यांश (लगभग 200 शब्द)
+        title_en: Unseen prose passage
+        learning_outcomes:
+          - गद्यांश पर बोध, चिंतन और विश्लेषणपरक प्रश्नों के उत्तर दे सकेंगे
+      - id: cbse-9-hindi-ch01-t02
+        title: अपठित काव्यांश (80-100 शब्द)
+        title_en: Unseen poem
+        learning_outcomes:
+          - काव्यांश का भाव और सौंदर्य स्पष्ट कर सकेंगे
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-hindi-ch02
+    number: 2
+    title: व्यावहारिक व्याकरण
+    title_en: Applied grammar
+    unit: "खंड ख: व्यावहारिक व्याकरण"
+    topics:
+      - id: cbse-9-hindi-ch02-t01
+        title: "शब्द-निर्माण: उपसर्ग और प्रत्यय"
+        title_en: "Word formation: prefixes and suffixes"
+        learning_outcomes:
+          - उपसर्ग और प्रत्यय पहचानकर नए शब्द बना सकेंगे
+      - id: cbse-9-hindi-ch02-t02
+        title: संज्ञा, सर्वनाम, विशेषण, क्रिया
+        title_en: Parts of speech
+        learning_outcomes:
+          - वाक्य में शब्द-भेद पहचान सकेंगे
+      - id: cbse-9-hindi-ch02-t03
+        title: अर्थ की दृष्टि से वाक्य-भेद
+        title_en: Sentence types by meaning
+        learning_outcomes:
+          - विधानवाचक, निषेधवाचक, प्रश्नवाचक, आज्ञावाचक, इच्छावाचक, संदेहवाचक, संकेतवाचक और विस्मयादिबोधक वाक्य पहचान व रूपांतरित कर सकेंगे
+      - id: cbse-9-hindi-ch02-t04
+        title: "शब्दालंकार: अनुप्रास, यमक, श्लेष"
+        title_en: Figures of sound
+        learning_outcomes:
+          - काव्य-पंक्तियों में शब्दालंकार पहचान सकेंगे
+      - id: cbse-9-hindi-ch02-t05
+        title: (R2) शब्द भंडार, विराम चिह्न और निपात
+        title_en: (R2) Vocabulary, punctuation and particles
+        learning_outcomes:
+          - समानार्थी शब्द, मुहावरे, विराम चिह्नों और निपात का सही प्रयोग कर सकेंगे
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-hindi-ch03
+    number: 3
+    title: "साहित्य: नई पाठ्यपुस्तक (पाठ-सूची लंबित)"
+    title_en: "Literature: new NCERT textbook (chapter list pending)"
+    unit: "खंड ग: पाठ्यपुस्तक"
+    topics:
+      - id: cbse-9-hindi-ch03-t01
+        title: पठित गद्य और काव्य पाठ
+        title_en: Prescribed prose and poetry lessons
+        learning_outcomes:
+          - निर्धारित पाठों के गद्यांश/काव्यांश पर बहुविकल्पी और लघु-उत्तरीय प्रश्नों के उत्तर दे सकेंगे
+          - पाठ के मूल भाव और पात्रों पर अपने विचार लिख सकेंगे
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-hindi-ch04
+    number: 4
+    title: रचनात्मक लेखन
+    title_en: Creative writing
+    unit: "खंड घ: रचनात्मक लेखन"
+    topics:
+      - id: cbse-9-hindi-ch04-t01
+        title: अनुच्छेद लेखन
+        title_en: Paragraph writing
+        learning_outcomes:
+          - संकेत-बिंदुओं पर अनुच्छेद लिख सकेंगे
+      - id: cbse-9-hindi-ch04-t02
+        title: अनौपचारिक पत्र
+        title_en: Informal letter
+        learning_outcomes:
+          - अनौपचारिक पत्र सही प्रारूप में लिख सकेंगे
+      - id: cbse-9-hindi-ch04-t03
+        title: संवाद लेखन
+        title_en: Dialogue writing
+        learning_outcomes:
+          - दिए गए विषय/परिस्थिति पर संवाद लिख सकेंगे
+      - id: cbse-9-hindi-ch04-t04
+        title: सूचना लेखन (R1) / चित्र आधारित लेखन (R2)
+        title_en: Notice writing / picture-based writing
+        learning_outcomes:
+          - सूचना तैयार कर सकेंगे या चित्र देखकर वर्णन लिख सकेंगे
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

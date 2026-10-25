@@ -1,0 +1,511 @@
+# CBSE Class 10 Social Science (087), 2026-27. Four NCERT books, in the CBSE syllabus order:
+# History (India and the Contemporary World – II), Geography (Contemporary India – II),
+# Political Science (Democratic Politics – II), Economics (Understanding Economic Development).
+# Chapters are numbered continuously across the four books (ch01-ch21); `unit` names the book.
+# Parts that CBSE assesses only internally carry `board_assessed: false` (extension field, see handoff).
+subject_id: cbse-10-social-science
+academic_year: "2026-27"
+source_status: verified
+sources: [cbse-x-social-science-2026-27, cbse-secondary-curriculum-2026-27, cbse-two-board-exams-x-2026, cbse-sqp-x-2026-27, ncert-textbooks-secondary]
+exam_notes: >-
+  Theory 80 marks (3 hours) + internal assessment 20 (periodic assessment 5, multiple assessment via
+  interdisciplinary project 5, subject enrichment project on Consumer Rights / Social Issues / Sustainable
+  Development 5, portfolio 5). Board paper: 20 MCQs x1 (incl. assertion-reason), 4 x 2 marks, 5 x 3 marks,
+  3 case-based x 4 marks, 4 x 5 marks, map 5 marks (History 2 + Geography 3). Competency mix: remembering/
+  understanding 30%, applying 13.25%, analysing/evaluating/creating 50%, map skill 6.25%. History "The Making of
+  a Global World" is examined only for subtopics 1-1.3; "The Age of Industrialisation" is periodic assessment only;
+  Geography "Lifelines of National Economy" is examined for map work only; Economics "Globalisation" is examined
+  only for "What is Globalisation?" and "Factors that have enabled Globalisation". Disaster Management
+  (CBSE "Together, towards a safer India – III") is internal only. Two board exams for Class 10: main exam in
+  February (compulsory) and optional second exam in May for improvement; the better score counts.
+units:
+  - name: "History: India and the Contemporary World – II"
+    marks: 20
+  - name: "Geography: Contemporary India – II"
+    marks: 20
+  - name: "Political Science: Democratic Politics – II"
+    marks: 20
+  - name: "Economics: Understanding Economic Development"
+    marks: 20
+chapters:
+  # ---------------- History ----------------
+  - id: cbse-10-social-science-ch01
+    number: 1
+    title: "The Rise of Nationalism in Europe"
+    unit: "History: India and the Contemporary World – II"
+    topics:
+      - id: cbse-10-social-science-ch01-t01
+        title: "The French Revolution and the idea of the nation"
+        learning_outcomes:
+          - "Explain how the French Revolution created a sense of collective identity and how the Napoleonic Code spread these ideas"
+      - id: cbse-10-social-science-ch01-t02
+        title: "The making of nationalism in Europe: liberalism, conservatism and the 1830s-1848 revolutions"
+        learning_outcomes:
+          - "Describe the aims of the liberal middle classes and the conservative order after 1815"
+          - "Explain the significance of the 1848 revolutions and the role of romanticism, language and folk culture"
+      - id: cbse-10-social-science-ch01-t03
+        title: "The making of Germany and Italy; the strange case of Britain"
+        learning_outcomes:
+          - "Sequence the unification of Germany under Prussia and of Italy, naming the key actors"
+          - "Explain how the British nation-state was formed differently"
+      - id: cbse-10-social-science-ch01-t04
+        title: "Visualising the nation; nationalism and imperialism"
+        learning_outcomes:
+          - "Interpret allegories such as Marianne and Germania"
+          - "Analyse how Balkan nationalism and imperial rivalry led towards the First World War"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-social-science-ch02
+    number: 2
+    title: "Nationalism in India"
+    unit: "History: India and the Contemporary World – II"
+    topics:
+      - id: cbse-10-social-science-ch02-t01
+        title: "The First World War, Khilafat and Non-Cooperation"
+        learning_outcomes:
+          - "Explain the effects of the First World War on India and the idea of satyagraha"
+          - "Describe the Rowlatt Act protests, Jallianwala Bagh, and the launch of the Khilafat and Non-Cooperation movements"
+      - id: cbse-10-social-science-ch02-t02
+        title: "Differing strands within the movement"
+        learning_outcomes:
+          - "Compare how towns, peasants, tribal groups and plantation workers understood and joined Non-Cooperation"
+      - id: cbse-10-social-science-ch02-t03
+        title: "Towards Civil Disobedience"
+        learning_outcomes:
+          - "Explain the Simon Commission, the Lahore Congress, the Salt March and the participation and limits of different social groups"
+      - id: cbse-10-social-science-ch02-t04
+        title: "The sense of collective belonging"
+        learning_outcomes:
+          - "Analyse how history, folklore, songs, images and symbols created a sense of nationhood"
+      - id: cbse-10-social-science-ch02-t05
+        title: "Map work: Indian National Movement"
+        learning_outcomes:
+          - "Locate Congress sessions (Calcutta 1920, Nagpur 1920, Madras 1927), Kheda, Champaran, Ahmedabad, Jallianwala Bagh and Dandi on an outline map of India"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-social-science-ch03
+    number: 3
+    title: "The Making of a Global World"
+    unit: "History: India and the Contemporary World – II"
+    topics:
+      - id: cbse-10-social-science-ch03-t01
+        title: "The pre-modern world: silk routes, food travels"
+        learning_outcomes:
+          - "Describe how silk routes and the movement of foods linked distant parts of the world"
+      - id: cbse-10-social-science-ch03-t02
+        title: "Conquest, disease and trade"
+        learning_outcomes:
+          - "Explain how European conquest of the Americas, germs and trade reshaped the world economy"
+      - id: cbse-10-social-science-ch03-t03
+        title: "The nineteenth century (1815-1914), inter-war economy and post-war rebuilding (interdisciplinary project only)"
+        board_assessed: false
+        learning_outcomes:
+          - "Trace global flows of trade, labour and capital to the Bretton Woods era (assessed through the interdisciplinary project)"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-social-science-ch04
+    number: 4
+    title: "The Age of Industrialisation (periodic assessment only)"
+    unit: "History: India and the Contemporary World – II"
+    board_assessed: false
+    topics:
+      - id: cbse-10-social-science-ch04-t01
+        title: "Before the industrial revolution: proto-industrialisation"
+        learning_outcomes:
+          - "Explain proto-industrialisation and the role of merchants and rural producers"
+      - id: cbse-10-social-science-ch04-t02
+        title: "Hand labour and steam power; industrialisation in the colonies"
+        learning_outcomes:
+          - "Explain why hand labour persisted and how British policy affected Indian weavers"
+      - id: cbse-10-social-science-ch04-t03
+        title: "Factories in India and the market for goods"
+        learning_outcomes:
+          - "Describe the growth of Indian industry and the role of advertising in creating markets"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-social-science-ch05
+    number: 5
+    title: "Print Culture and the Modern World"
+    unit: "History: India and the Contemporary World – II"
+    topics:
+      - id: cbse-10-social-science-ch05-t01
+        title: "The first printed books: East Asia and Europe"
+        learning_outcomes:
+          - "Trace print from woodblock printing in China and Japan to Gutenberg's press"
+      - id: cbse-10-social-science-ch05-t02
+        title: "The print revolution and its impact"
+        learning_outcomes:
+          - "Explain how print created a reading public and how it contributed to religious debate and the French Revolution"
+      - id: cbse-10-social-science-ch05-t03
+        title: "The reading mania of the nineteenth century"
+        learning_outcomes:
+          - "Describe how children, women and workers became new readers"
+      - id: cbse-10-social-science-ch05-t04
+        title: "India and the world of print"
+        learning_outcomes:
+          - "Explain the spread of print in India, religious reform debates, new forms of publication, and print and censorship under colonial rule"
+    removed_topics: []
+    literature_texts: []
+  # ---------------- Geography ----------------
+  - id: cbse-10-social-science-ch06
+    number: 6
+    title: "Resources and Development"
+    unit: "Geography: Contemporary India – II"
+    topics:
+      - id: cbse-10-social-science-ch06-t01
+        title: "Types of resources and resource planning"
+        learning_outcomes:
+          - "Classify resources by origin, exhaustibility, ownership and status of development"
+          - "Explain the need for and stages of resource planning in India"
+      - id: cbse-10-social-science-ch06-t02
+        title: "Land resources and land-use pattern in India"
+        learning_outcomes:
+          - "Interpret land-use data and explain land degradation and conservation measures"
+      - id: cbse-10-social-science-ch06-t03
+        title: "Soil as a resource: classification of soils"
+        learning_outcomes:
+          - "Compare alluvial, black, red and yellow, laterite, arid and forest soils by formation, features and distribution"
+          - "Identify major soil types on a map of India"
+      - id: cbse-10-social-science-ch06-t04
+        title: "Soil erosion and soil conservation"
+        learning_outcomes:
+          - "Explain causes of soil erosion and evaluate methods such as contour ploughing, terrace farming and shelter belts"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-social-science-ch07
+    number: 7
+    title: "Forest and Wildlife Resources"
+    unit: "Geography: Contemporary India – II"
+    topics:
+      - id: cbse-10-social-science-ch07-t01
+        title: "Flora and fauna in India and their depletion"
+        learning_outcomes:
+          - "Classify species by IUCN categories and explain factors causing depletion of forests and wildlife"
+      - id: cbse-10-social-science-ch07-t02
+        title: "Conservation of forests and wildlife in India"
+        learning_outcomes:
+          - "Describe the Wildlife Protection Act and projects such as Project Tiger"
+      - id: cbse-10-social-science-ch07-t03
+        title: "Types and distribution of forests and wildlife resources"
+        learning_outcomes:
+          - "Distinguish reserved, protected and unclassed forests"
+      - id: cbse-10-social-science-ch07-t04
+        title: "Community and conservation"
+        learning_outcomes:
+          - "Evaluate community efforts such as Chipko, Beej Bachao Andolan, sacred groves and Joint Forest Management"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-social-science-ch08
+    number: 8
+    title: "Water Resources"
+    unit: "Geography: Contemporary India – II"
+    topics:
+      - id: cbse-10-social-science-ch08-t01
+        title: "Water scarcity and the need for water conservation"
+        learning_outcomes:
+          - "Explain why water scarcity occurs despite abundance and why conservation is needed"
+      - id: cbse-10-social-science-ch08-t02
+        title: "Multi-purpose river projects and integrated water resources management"
+        learning_outcomes:
+          - "Evaluate the benefits and the social and environmental costs of large dams"
+          - "Locate major dams (Salal, Bhakra Nangal, Tehri, Rana Pratap Sagar, Sardar Sarovar, Hirakud, Nagarjuna Sagar, Tungabhadra) on a map"
+      - id: cbse-10-social-science-ch08-t03
+        title: "Rainwater harvesting"
+        learning_outcomes:
+          - "Describe traditional and modern rainwater harvesting methods across India's regions"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-social-science-ch09
+    number: 9
+    title: "Agriculture"
+    unit: "Geography: Contemporary India – II"
+    topics:
+      - id: cbse-10-social-science-ch09-t01
+        title: "Types of farming"
+        learning_outcomes:
+          - "Compare primitive subsistence, intensive subsistence and commercial farming"
+      - id: cbse-10-social-science-ch09-t02
+        title: "Cropping pattern and cropping seasons"
+        learning_outcomes:
+          - "Distinguish rabi, kharif and zaid seasons with crops grown in each"
+      - id: cbse-10-social-science-ch09-t03
+        title: "Major crops: food crops, cash crops and their growing conditions"
+        learning_outcomes:
+          - "State geographical conditions and major producing states for rice, wheat, millets, pulses, sugarcane, oilseeds, tea, coffee, rubber, cotton and jute"
+          - "Identify major rice and wheat areas and leading producers of key cash crops on a map"
+      - id: cbse-10-social-science-ch09-t04
+        title: "Technological and institutional reforms"
+        learning_outcomes:
+          - "Evaluate reforms such as land reforms, Green Revolution, crop insurance and Kisan Credit Card"
+    removed_topics:
+      - "Impact of globalisation on agriculture (deleted in rationalisation)"
+    literature_texts: []
+  - id: cbse-10-social-science-ch10
+    number: 10
+    title: "Minerals and Energy Resources"
+    unit: "Geography: Contemporary India – II"
+    topics:
+      - id: cbse-10-social-science-ch10-t01
+        title: "Minerals and their modes of occurrence"
+        learning_outcomes:
+          - "Explain how minerals occur in igneous, metamorphic and sedimentary rocks, placer deposits and ocean waters"
+      - id: cbse-10-social-science-ch10-t02
+        title: "Ferrous, non-ferrous and non-metallic minerals"
+        learning_outcomes:
+          - "Name major iron-ore, manganese, copper, bauxite and mica belts and their uses"
+          - "Locate iron-ore mines (Mayurbhanj, Durg, Bailadila, Bellary, Kudremukh) on a map"
+      - id: cbse-10-social-science-ch10-t03
+        title: "Conservation of minerals"
+        learning_outcomes:
+          - "Explain why minerals must be conserved and suggest methods"
+      - id: cbse-10-social-science-ch10-t04
+        title: "Conventional sources of energy"
+        learning_outcomes:
+          - "Describe coal, petroleum, natural gas and electricity (thermal and hydel) and locate coal mines, oil fields and power plants"
+      - id: cbse-10-social-science-ch10-t05
+        title: "Non-conventional sources of energy and conservation of energy"
+        learning_outcomes:
+          - "Compare nuclear, solar, wind, biogas, tidal and geothermal energy and suggest ways to conserve energy"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-social-science-ch11
+    number: 11
+    title: "Manufacturing Industries"
+    unit: "Geography: Contemporary India – II"
+    topics:
+      - id: cbse-10-social-science-ch11-t01
+        title: "Importance of manufacturing and industrial location"
+        learning_outcomes:
+          - "Explain the contribution of manufacturing to the economy and the factors influencing industrial location"
+      - id: cbse-10-social-science-ch11-t02
+        title: "Classification of industries"
+        learning_outcomes:
+          - "Classify industries by raw material, role, ownership and capital investment"
+      - id: cbse-10-social-science-ch11-t03
+        title: "Agro-based and mineral-based industries"
+        learning_outcomes:
+          - "Describe the cotton textile, jute, sugar, iron and steel, aluminium, chemical, fertiliser, cement and automobile industries"
+          - "Locate cotton textile centres, iron and steel plants and software technology parks on a map"
+      - id: cbse-10-social-science-ch11-t04
+        title: "Industrial pollution and environmental degradation"
+        learning_outcomes:
+          - "Explain air, water, thermal and noise pollution from industry and evaluate control measures"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-social-science-ch12
+    number: 12
+    title: "Lifelines of National Economy"
+    unit: "Geography: Contemporary India – II"
+    topics:
+      - id: cbse-10-social-science-ch12-t01
+        title: "Map work: major sea ports and international airports"
+        learning_outcomes:
+          - "Locate and label major sea ports (Kandla, Mumbai, Marmagao, New Mangalore, Kochi, Tuticorin, Chennai, Visakhapatnam, Paradip, Haldia) and six international airports on a map of India"
+      - id: cbse-10-social-science-ch12-t02
+        title: "Transport, communication and trade (interdisciplinary project only)"
+        board_assessed: false
+        learning_outcomes:
+          - "Analyse the role of roadways, railways, pipelines, waterways and airways in the national economy (assessed through the interdisciplinary project)"
+    removed_topics: []
+    literature_texts: []
+  # ---------------- Political Science ----------------
+  - id: cbse-10-social-science-ch13
+    number: 13
+    title: "Power-sharing"
+    unit: "Political Science: Democratic Politics – II"
+    topics:
+      - id: cbse-10-social-science-ch13-t01
+        title: "Case studies of Belgium and Sri Lanka"
+        learning_outcomes:
+          - "Compare the accommodation model of Belgium with majoritarianism in Sri Lanka and their outcomes"
+      - id: cbse-10-social-science-ch13-t02
+        title: "Why power-sharing is desirable"
+        learning_outcomes:
+          - "Distinguish prudential and moral reasons for power-sharing"
+      - id: cbse-10-social-science-ch13-t03
+        title: "Forms of power-sharing"
+        learning_outcomes:
+          - "Explain horizontal and vertical distribution of power, sharing among social groups, and among parties and pressure groups"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-social-science-ch14
+    number: 14
+    title: "Federalism"
+    unit: "Political Science: Democratic Politics – II"
+    topics:
+      - id: cbse-10-social-science-ch14-t01
+        title: "What is federalism? Key features"
+        learning_outcomes:
+          - "List the key features of federalism and distinguish coming-together and holding-together federations"
+      - id: cbse-10-social-science-ch14-t02
+        title: "What makes India a federal country"
+        learning_outcomes:
+          - "Explain the Union, State and Concurrent lists and the role of the judiciary"
+      - id: cbse-10-social-science-ch14-t03
+        title: "How federalism is practised: linguistic states, language policy, centre-state relations"
+        learning_outcomes:
+          - "Evaluate how linguistic states, language policy and changing centre-state relations strengthened federalism"
+      - id: cbse-10-social-science-ch14-t04
+        title: "Decentralisation in India"
+        learning_outcomes:
+          - "Describe the 1992 amendment and the structure of rural and urban local government"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-social-science-ch15
+    number: 15
+    title: "Gender, Religion and Caste"
+    unit: "Political Science: Democratic Politics – II"
+    topics:
+      - id: cbse-10-social-science-ch15-t01
+        title: "Gender and politics"
+        learning_outcomes:
+          - "Explain the sexual division of labour, women's political representation and the debate on reservation for women"
+      - id: cbse-10-social-science-ch15-t02
+        title: "Religion, communalism and politics"
+        learning_outcomes:
+          - "Distinguish legitimate expression of religious concerns from communalism and explain India's secular state"
+      - id: cbse-10-social-science-ch15-t03
+        title: "Caste and politics"
+        learning_outcomes:
+          - "Analyse how caste influences politics and how politics influences caste, using data on caste inequality"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-social-science-ch16
+    number: 16
+    title: "Political Parties"
+    unit: "Political Science: Democratic Politics – II"
+    topics:
+      - id: cbse-10-social-science-ch16-t01
+        title: "Why do we need political parties? Functions"
+        learning_outcomes:
+          - "State the functions of political parties in a democracy"
+      - id: cbse-10-social-science-ch16-t02
+        title: "Party systems"
+        learning_outcomes:
+          - "Compare one-party, two-party and multi-party systems and explain coalitions"
+      - id: cbse-10-social-science-ch16-t03
+        title: "National and state parties in India"
+        learning_outcomes:
+          - "State the Election Commission criteria for recognition and describe major national parties"
+      - id: cbse-10-social-science-ch16-t04
+        title: "Challenges to political parties and how they can be reformed"
+        learning_outcomes:
+          - "Evaluate challenges such as lack of internal democracy, dynastic succession, money and muscle power, and suggest reforms"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-social-science-ch17
+    number: 17
+    title: "Outcomes of Democracy"
+    unit: "Political Science: Democratic Politics – II"
+    topics:
+      - id: cbse-10-social-science-ch17-t01
+        title: "Accountable, responsive and legitimate government"
+        learning_outcomes:
+          - "Assess democracy against the outcome of accountable, responsive and legitimate government"
+      - id: cbse-10-social-science-ch17-t02
+        title: "Economic growth and development; reduction of inequality and poverty"
+        learning_outcomes:
+          - "Interpret evidence on economic growth and inequality under democracies and dictatorships"
+      - id: cbse-10-social-science-ch17-t03
+        title: "Accommodation of social diversity; dignity and freedom of citizens"
+        learning_outcomes:
+          - "Evaluate how democracy accommodates diversity and promotes dignity of women and disadvantaged groups"
+    removed_topics: []
+    literature_texts: []
+  # ---------------- Economics ----------------
+  - id: cbse-10-social-science-ch18
+    number: 18
+    title: "Development"
+    unit: "Economics: Understanding Economic Development"
+    topics:
+      - id: cbse-10-social-science-ch18-t01
+        title: "What development promises: different people, different goals"
+        learning_outcomes:
+          - "Explain why different people have different and sometimes conflicting development goals"
+      - id: cbse-10-social-science-ch18-t02
+        title: "Income and other goals; national development"
+        learning_outcomes:
+          - "Explain why non-income goals such as security and freedom matter"
+      - id: cbse-10-social-science-ch18-t03
+        title: "Comparing countries and states: per capita income, public facilities"
+        learning_outcomes:
+          - "Calculate and interpret average (per capita) income and compare states using infant mortality, literacy and attendance data"
+      - id: cbse-10-social-science-ch18-t04
+        title: "Human Development Index and sustainability of development"
+        learning_outcomes:
+          - "Interpret HDI data and explain why sustainable development matters, using groundwater and crude oil examples"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-social-science-ch19
+    number: 19
+    title: "Sectors of the Indian Economy"
+    unit: "Economics: Understanding Economic Development"
+    topics:
+      - id: cbse-10-social-science-ch19-t01
+        title: "Primary, secondary and tertiary sectors"
+        learning_outcomes:
+          - "Classify economic activities into the three sectors and explain their interdependence"
+      - id: cbse-10-social-science-ch19-t02
+        title: "Comparing the sectors: GDP and employment over time"
+        learning_outcomes:
+          - "Interpret data showing the rising share of the tertiary sector and explain disguised unemployment and underemployment"
+      - id: cbse-10-social-science-ch19-t03
+        title: "Creating more employment; MGNREGA"
+        learning_outcomes:
+          - "Suggest ways to create employment and explain the right to work under MGNREGA 2005"
+      - id: cbse-10-social-science-ch19-t04
+        title: "Organised and unorganised sectors"
+        learning_outcomes:
+          - "Compare organised and unorganised sectors and explain how unorganised workers can be protected"
+      - id: cbse-10-social-science-ch19-t05
+        title: "Public and private sectors"
+        learning_outcomes:
+          - "Distinguish public and private sectors by ownership and motive and explain the government's role in providing public goods"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-social-science-ch20
+    number: 20
+    title: "Money and Credit"
+    unit: "Economics: Understanding Economic Development"
+    topics:
+      - id: cbse-10-social-science-ch20-t01
+        title: "Money as a medium of exchange; modern forms of money"
+        learning_outcomes:
+          - "Explain the double coincidence of wants and why currency and deposits are accepted as money"
+      - id: cbse-10-social-science-ch20-t02
+        title: "Loan activities of banks; two credit situations"
+        learning_outcomes:
+          - "Explain how banks use deposits to give loans and how credit can help or trap a borrower"
+      - id: cbse-10-social-science-ch20-t03
+        title: "Terms of credit; formal and informal sources of credit"
+        learning_outcomes:
+          - "Compare formal and informal credit using interest, collateral and documentation, and explain the RBI's role"
+      - id: cbse-10-social-science-ch20-t04
+        title: "Self-help groups for the poor"
+        learning_outcomes:
+          - "Explain how self-help groups give rural women access to credit and empowerment"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-social-science-ch21
+    number: 21
+    title: "Globalisation and the Indian Economy"
+    unit: "Economics: Understanding Economic Development"
+    topics:
+      - id: cbse-10-social-science-ch21-t01
+        title: "What is globalisation?"
+        learning_outcomes:
+          - "Define globalisation as integration of markets through trade, investment, technology and movement of people"
+      - id: cbse-10-social-science-ch21-t02
+        title: "Factors that have enabled globalisation"
+        learning_outcomes:
+          - "Explain the roles of technology, liberalisation of trade and investment policy, and international organisations"
+      - id: cbse-10-social-science-ch21-t03
+        title: "Production across countries, WTO and the struggle for fair globalisation (interdisciplinary project only)"
+        board_assessed: false
+        learning_outcomes:
+          - "Analyse MNCs, foreign trade, the WTO and fair globalisation (assessed through the interdisciplinary project)"
+    removed_topics: []
+    literature_texts: []
+removed_topics:
+  - "Consumer Rights — project work only (not examined in the board paper)"
+  - "History: The Age of Industrialisation — periodic assessment only"

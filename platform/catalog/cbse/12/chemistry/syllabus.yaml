@@ -1,0 +1,375 @@
+# CBSE Class 12 Chemistry (043), 2026-27. Ten examined units with marks; four further topics are taught but assessed only
+# formatively (CBSE Reading Material) and carry board_assessed: false. units[] groups the per-unit marks into branches;
+# per-unit marks are given in exam_notes.
+subject_id: cbse-12-chemistry
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-chemistry-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+  - cbse-sqp-xii-2026-27
+  - cbse-sqp-notification-2026-27
+  - ncert-textbooks-secondary
+exam_notes: >-
+  Theory 70 marks (3 hours) + practical 30 (volumetric analysis 8, salt analysis 8, content-based experiment 6, project 4, record and viva
+  4). Unit marks: Solutions 7, Electrochemistry 9, Chemical Kinetics 7, d- and f-Block 7, Coordination Compounds 7, Haloalkanes and
+  Haloarenes 6, Alcohols Phenols Ethers 6, Aldehydes Ketones Carboxylic Acids 8, Amines 6, Biomolecules 7. Surface Chemistry, Isolation of
+  Elements, Polymers and Chemistry in Everyday Life are formative only. Single board exam (February-March 2027).
+units:
+  - name: Physical Chemistry
+    marks: 23
+  - name: Inorganic Chemistry
+    marks: 14
+  - name: Organic Chemistry
+    marks: 33
+  - name: Formative assessment only
+    marks: null
+chapters:
+  - id: cbse-12-chemistry-ch01
+    number: 1
+    title: Solutions
+    unit: Physical Chemistry
+    topics:
+      - id: cbse-12-chemistry-ch01-t01
+        title: Types of solutions and expressing concentration
+        learning_outcomes:
+          - Calculate mass %, mole fraction, molarity and molality
+      - id: cbse-12-chemistry-ch01-t02
+        title: Solubility of solids and gases; Henry's law
+        learning_outcomes:
+          - Apply Henry's law and explain factors affecting solubility
+      - id: cbse-12-chemistry-ch01-t03
+        title: Vapour pressure and Raoult's law; ideal and non-ideal solutions
+        learning_outcomes:
+          - Apply Raoult's law and explain positive and negative deviations and azeotropes
+      - id: cbse-12-chemistry-ch01-t04
+        title: Colligative properties and molar mass determination
+        learning_outcomes:
+          - Calculate relative lowering of vapour pressure, elevation of boiling point, depression of freezing point and osmotic pressure
+          - Determine molar mass from colligative data
+      - id: cbse-12-chemistry-ch01-t05
+        title: Abnormal molar masses; van't Hoff factor
+        learning_outcomes:
+          - Use the van't Hoff factor for association and dissociation
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-chemistry-ch02
+    number: 2
+    title: Electrochemistry
+    unit: Physical Chemistry
+    topics:
+      - id: cbse-12-chemistry-ch02-t01
+        title: Galvanic cells and electrode potential
+        learning_outcomes:
+          - Represent a cell, identify anode and cathode, and calculate standard EMF from electrode potentials
+      - id: cbse-12-chemistry-ch02-t02
+        title: Nernst equation; Gibbs energy and equilibrium constant
+        learning_outcomes:
+          - Apply the Nernst equation and relate EMF to ΔG° and K
+      - id: cbse-12-chemistry-ch02-t03
+        title: Conductance of electrolytic solutions
+        learning_outcomes:
+          - Define conductivity and molar conductivity and explain their variation with concentration
+          - Apply Kohlrausch's law
+      - id: cbse-12-chemistry-ch02-t04
+        title: Electrolytic cells and electrolysis
+        learning_outcomes:
+          - Apply Faraday's laws and predict products of electrolysis
+      - id: cbse-12-chemistry-ch02-t05
+        title: Batteries and fuel cells
+        learning_outcomes:
+          - Describe primary and secondary batteries and the H2–O2 fuel cell
+      - id: cbse-12-chemistry-ch02-t06
+        title: Corrosion
+        learning_outcomes:
+          - Explain corrosion as an electrochemical process and methods of prevention
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-chemistry-ch03
+    number: 3
+    title: Chemical Kinetics
+    unit: Physical Chemistry
+    topics:
+      - id: cbse-12-chemistry-ch03-t01
+        title: Rate of a reaction and factors affecting it
+        learning_outcomes:
+          - Express average and instantaneous rates and identify factors affecting rate
+      - id: cbse-12-chemistry-ch03-t02
+        title: Rate law, order and molecularity
+        learning_outcomes:
+          - Distinguish order and molecularity and determine order from data; state units of rate constants
+      - id: cbse-12-chemistry-ch03-t03
+        title: Integrated rate equations and half-life
+        learning_outcomes:
+          - Use integrated rate equations for zero- and first-order reactions and half-life
+      - id: cbse-12-chemistry-ch03-t04
+        title: "Temperature dependence: Arrhenius equation"
+        learning_outcomes:
+          - Calculate activation energy using the Arrhenius equation
+      - id: cbse-12-chemistry-ch03-t05
+        title: Collision theory
+        learning_outcomes:
+          - Explain effective collisions and the role of orientation and energy
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-chemistry-ch04
+    number: 4
+    title: The d- and f-Block Elements
+    unit: Inorganic Chemistry
+    topics:
+      - id: cbse-12-chemistry-ch04-t01
+        title: Position and electronic configuration of d-block elements
+        learning_outcomes:
+          - Write electronic configurations of 3d series and explain anomalies
+      - id: cbse-12-chemistry-ch04-t02
+        title: General properties of transition elements
+        learning_outcomes:
+          - >-
+            Explain trends in atomic size, ionisation enthalpy, oxidation states, E° values, magnetic behaviour, colour, catalytic activity,
+            interstitial compounds and alloys
+      - id: cbse-12-chemistry-ch04-t03
+        title: "Important compounds: K2Cr2O7 and KMnO4"
+        learning_outcomes:
+          - Describe the preparation, properties and oxidising action of potassium dichromate and potassium permanganate
+      - id: cbse-12-chemistry-ch04-t04
+        title: Lanthanoids and actinoids
+        learning_outcomes:
+          - Explain lanthanoid contraction and its consequences; compare lanthanoids and actinoids
+      - id: cbse-12-chemistry-ch04-t05
+        title: Applications of d- and f-block elements
+        learning_outcomes:
+          - State important applications
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-chemistry-ch05
+    number: 5
+    title: Coordination Compounds
+    unit: Inorganic Chemistry
+    topics:
+      - id: cbse-12-chemistry-ch05-t01
+        title: Werner's theory and key terms
+        learning_outcomes:
+          - Explain primary and secondary valency and define ligand, coordination number, denticity and chelation
+      - id: cbse-12-chemistry-ch05-t02
+        title: IUPAC nomenclature
+        learning_outcomes:
+          - Name and write formulas of mononuclear coordination compounds
+      - id: cbse-12-chemistry-ch05-t03
+        title: Isomerism in coordination compounds
+        learning_outcomes:
+          - Identify structural and stereoisomerism (geometrical and optical)
+      - id: cbse-12-chemistry-ch05-t04
+        title: "Bonding: valence bond theory and crystal field theory"
+        learning_outcomes:
+          - Predict geometry and magnetic behaviour using VBT
+          - Explain crystal-field splitting in octahedral and tetrahedral fields and the colour of complexes
+      - id: cbse-12-chemistry-ch05-t05
+        title: Metal carbonyls and applications
+        learning_outcomes:
+          - Explain synergic bonding in metal carbonyls and state applications of coordination compounds
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-chemistry-ch06
+    number: 6
+    title: Haloalkanes and Haloarenes
+    unit: Organic Chemistry
+    topics:
+      - id: cbse-12-chemistry-ch06-t01
+        title: Classification, nomenclature and the C–X bond
+        learning_outcomes:
+          - Classify and name halogen derivatives and describe the nature of the C–X bond
+      - id: cbse-12-chemistry-ch06-t02
+        title: Preparation of haloalkanes and haloarenes
+        learning_outcomes:
+          - Write methods of preparation from alcohols, hydrocarbons and by halogen exchange
+      - id: cbse-12-chemistry-ch06-t03
+        title: Physical properties
+        learning_outcomes:
+          - Explain trends in boiling point, density and solubility
+      - id: cbse-12-chemistry-ch06-t04
+        title: "Nucleophilic substitution: SN1 and SN2"
+        learning_outcomes:
+          - Compare SN1 and SN2 mechanisms, stereochemistry and reactivity order
+      - id: cbse-12-chemistry-ch06-t05
+        title: Elimination, reactions with metals and reactions of haloarenes
+        learning_outcomes:
+          - Predict products of elimination (Saytzeff rule), Wurtz/Fittig reactions and electrophilic substitution in haloarenes
+      - id: cbse-12-chemistry-ch06-t06
+        title: Polyhalogen compounds
+        learning_outcomes:
+          - State uses and environmental effects of dichloromethane, chloroform, iodoform, CCl4, freons and DDT
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-chemistry-ch07
+    number: 7
+    title: Alcohols, Phenols and Ethers
+    unit: Organic Chemistry
+    topics:
+      - id: cbse-12-chemistry-ch07-t01
+        title: Classification, nomenclature and structure
+        learning_outcomes:
+          - Classify and name alcohols, phenols and ethers
+      - id: cbse-12-chemistry-ch07-t02
+        title: Preparation of alcohols and phenols
+        learning_outcomes:
+          - Write preparation methods from alkenes, carbonyl compounds, Grignard reagents, cumene and diazonium salts
+      - id: cbse-12-chemistry-ch07-t03
+        title: Physical and chemical properties of alcohols and phenols
+        learning_outcomes:
+          - Compare acidity of alcohols and phenols
+          - Write reactions including esterification, oxidation, dehydration, Kolbe and Reimer–Tiemann reactions
+      - id: cbse-12-chemistry-ch07-t04
+        title: Commercially important alcohols
+        learning_outcomes:
+          - State uses of methanol and ethanol
+      - id: cbse-12-chemistry-ch07-t05
+        title: "Ethers: preparation and properties"
+        learning_outcomes:
+          - Write Williamson synthesis and reactions of ethers with HX and electrophilic substitution in anisole
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-chemistry-ch08
+    number: 8
+    title: Aldehydes, Ketones and Carboxylic Acids
+    unit: Organic Chemistry
+    topics:
+      - id: cbse-12-chemistry-ch08-t01
+        title: Nomenclature and structure of the carbonyl group
+        learning_outcomes:
+          - Name aldehydes and ketones and explain polarity of the C=O group
+      - id: cbse-12-chemistry-ch08-t02
+        title: Preparation of aldehydes and ketones
+        learning_outcomes:
+          - Write preparation methods including Rosenmund, Stephen, Etard and Friedel–Crafts acylation
+      - id: cbse-12-chemistry-ch08-t03
+        title: Reactions of aldehydes and ketones
+        learning_outcomes:
+          - Explain nucleophilic addition, reduction, oxidation (Tollens', Fehling's tests), aldol and Cannizzaro reactions
+      - id: cbse-12-chemistry-ch08-t04
+        title: "Carboxylic acids: preparation"
+        learning_outcomes:
+          - Write preparation of carboxylic acids from alcohols, aldehydes, nitriles, Grignard reagents and alkylbenzenes
+      - id: cbse-12-chemistry-ch08-t05
+        title: "Carboxylic acids: properties, acidity and reactions"
+        learning_outcomes:
+          - Explain the effect of substituents on acidity and write reactions including HVZ and decarboxylation
+          - State uses of carboxylic acids
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-chemistry-ch09
+    number: 9
+    title: Amines
+    unit: Organic Chemistry
+    topics:
+      - id: cbse-12-chemistry-ch09-t01
+        title: Structure, classification and nomenclature
+        learning_outcomes:
+          - Classify and name amines
+      - id: cbse-12-chemistry-ch09-t02
+        title: Preparation of amines
+        learning_outcomes:
+          - Write preparations by reduction, ammonolysis, Gabriel phthalimide synthesis and Hoffmann bromamide degradation
+      - id: cbse-12-chemistry-ch09-t03
+        title: Physical properties and basicity
+        learning_outcomes:
+          - Compare basic strength of aliphatic and aromatic amines
+      - id: cbse-12-chemistry-ch09-t04
+        title: Chemical reactions of amines
+        learning_outcomes:
+          - Write acylation, carbylamine, Hinsberg test and electrophilic substitution reactions of aniline
+      - id: cbse-12-chemistry-ch09-t05
+        title: "Diazonium salts: preparation, reactions and importance"
+        learning_outcomes:
+          - Write diazotisation and Sandmeyer, Gattermann and coupling reactions and explain their use in synthesis
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-chemistry-ch10
+    number: 10
+    title: Biomolecules
+    unit: Organic Chemistry
+    topics:
+      - id: cbse-12-chemistry-ch10-t01
+        title: Carbohydrates
+        learning_outcomes:
+          - Classify carbohydrates and describe glucose, fructose, sucrose, maltose, lactose, starch, cellulose and glycogen
+      - id: cbse-12-chemistry-ch10-t02
+        title: Proteins
+        learning_outcomes:
+          - Explain amino acids, peptide bonds, primary to quaternary structure and denaturation
+      - id: cbse-12-chemistry-ch10-t03
+        title: Enzymes
+        learning_outcomes:
+          - Describe enzymes as biocatalysts
+      - id: cbse-12-chemistry-ch10-t04
+        title: Vitamins
+        learning_outcomes:
+          - Classify vitamins as fat- or water-soluble and link deficiencies to diseases
+      - id: cbse-12-chemistry-ch10-t05
+        title: Nucleic acids
+        learning_outcomes:
+          - Distinguish DNA and RNA in structure and function
+      - id: cbse-12-chemistry-ch10-t06
+        title: Hormones
+        learning_outcomes:
+          - State the role of important hormones (elementary)
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-chemistry-ch11
+    number: 11
+    title: Surface Chemistry (formative assessment only)
+    unit: Formative assessment only
+    board_assessed: false
+    topics:
+      - id: cbse-12-chemistry-ch11-t01
+        title: "Adsorption: physisorption and chemisorption"
+        learning_outcomes:
+          - Distinguish physisorption and chemisorption and factors affecting adsorption of gases on solids
+      - id: cbse-12-chemistry-ch11-t02
+        title: Colloids, emulsions and coagulation
+        learning_outcomes:
+          - Distinguish true solutions, colloids and suspensions; lyophilic and lyophobic sols; types of emulsions
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-chemistry-ch12
+    number: 12
+    title: General Principles and Processes of Isolation of Elements (formative assessment only)
+    unit: Formative assessment only
+    board_assessed: false
+    topics:
+      - id: cbse-12-chemistry-ch12-t01
+        title: Concentration, oxidation, reduction and refining
+        learning_outcomes:
+          - Outline principles of extraction including electrolytic methods and refining
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-chemistry-ch13
+    number: 13
+    title: Polymers (formative assessment only)
+    unit: Formative assessment only
+    board_assessed: false
+    topics:
+      - id: cbse-12-chemistry-ch13-t01
+        title: Polymerisation, homopolymers and copolymers
+        learning_outcomes:
+          - Classify polymers and give examples of homopolymers and copolymers
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-chemistry-ch14
+    number: 14
+    title: Chemistry in Everyday Life (formative assessment only)
+    unit: Formative assessment only
+    board_assessed: false
+    topics:
+      - id: cbse-12-chemistry-ch14-t01
+        title: Chemicals in medicines
+        learning_outcomes:
+          - Classify drugs such as analgesics, tranquilisers, antiseptics, antibiotics, antacids and antihistamines
+      - id: cbse-12-chemistry-ch14-t02
+        title: Chemicals in food
+        learning_outcomes:
+          - Describe preservatives, artificial sweeteners and antioxidants
+    removed_topics: []
+    literature_texts: []
+removed_topics:
+  - Solid State and p-Block Elements (Class 12) — removed from the CBSE syllabus
+  - Topics not named in the CBSE 2026-27 unit descriptions are not assessed

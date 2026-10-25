@@ -1,0 +1,507 @@
+# CBSE Class 10 Science (086), 2026-27.
+# Chapter numbers ch01-ch13 follow the rationalised NCERT textbook "Science – Textbook for Class X".
+# ch14-ch15 are CBSE "Reading Material" topics that are taught and assessed only formatively
+# (internal assessment / portfolio), never in the board theory paper. They carry `board_assessed: false`
+# (an extension field; see the curriculum-cbse handoff). Topic-level formative-only items are flagged the same way.
+subject_id: cbse-10-science
+academic_year: "2026-27"
+source_status: verified
+sources: [cbse-x-science-2026-27, cbse-secondary-curriculum-2026-27, cbse-two-board-exams-x-2026, cbse-sqp-x-2026-27, ncert-textbooks-secondary]
+exam_notes: >-
+  Theory 80 marks (3 hours) + internal assessment 20 (periodic assessment 5, multiple assessment 5,
+  portfolio 5, subject enrichment / practical work 5). Paper competency mix: knowledge and understanding 50%,
+  application 30%, formulate/analyse/evaluate/create 20%. Question types: VSA incl. objective and
+  assertion-reasoning, SA, LA, source/case/passage-based and integrated questions; about 33% internal choice.
+  Two board exams for Class 10 from 2026: main exam in February (compulsory) and an optional second exam
+  in May for improvement; the better score counts. Periodic Classification of Elements, Evolution, and
+  Motor / Electromagnetic Induction / Electric Generator are in the syllabus but assessed only formatively.
+  Information in NCERT text boxes is not assessed in the year-end examination. 14 listed practicals are
+  done alongside theory (assessed internally).
+units:
+  - name: "Unit I: Chemical Substances – Nature and Behaviour"
+    marks: 25
+  - name: "Unit II: World of Living"
+    marks: 25
+  - name: "Unit III: Natural Phenomena"
+    marks: 12
+  - name: "Unit IV: Effects of Current"
+    marks: 13
+  - name: "Unit V: Natural Resources"
+    marks: 5
+chapters:
+  - id: cbse-10-science-ch01
+    number: 1
+    title: "Chemical Reactions and Equations"
+    unit: "Unit I: Chemical Substances – Nature and Behaviour"
+    topics:
+      - id: cbse-10-science-ch01-t01
+        title: "Chemical reactions and their observable signs"
+        learning_outcomes:
+          - "Identify a chemical change from evidence such as gas evolution, colour change, precipitate or temperature change"
+          - "Distinguish a chemical change from a physical change with an everyday example"
+      - id: cbse-10-science-ch01-t02
+        title: "Writing and balancing chemical equations"
+        learning_outcomes:
+          - "Convert a word equation into a skeletal chemical equation"
+          - "Balance a chemical equation by the hit-and-trial method and add state symbols and reaction conditions"
+      - id: cbse-10-science-ch01-t03
+        title: "Combination and decomposition reactions"
+        learning_outcomes:
+          - "Classify a reaction as combination or decomposition from its equation"
+          - "Identify thermal, electrolytic and photolytic decomposition and give one example of each"
+      - id: cbse-10-science-ch01-t04
+        title: "Displacement, double displacement and precipitation reactions"
+        learning_outcomes:
+          - "Predict whether a displacement reaction occurs using relative reactivity of metals"
+          - "Recognise a precipitation reaction and name the insoluble product formed"
+      - id: cbse-10-science-ch01-t05
+        title: "Exothermic and endothermic reactions"
+        learning_outcomes:
+          - "Classify reactions as exothermic or endothermic from energy changes, including respiration and decomposition examples"
+      - id: cbse-10-science-ch01-t06
+        title: "Oxidation and reduction (redox) reactions"
+        learning_outcomes:
+          - "Define oxidation and reduction in terms of gain or loss of oxygen and hydrogen"
+          - "Identify the substance oxidised, the substance reduced, the oxidising agent and the reducing agent in a given reaction"
+      - id: cbse-10-science-ch01-t07
+        title: "Effects of oxidation in everyday life: corrosion and rancidity"
+        learning_outcomes:
+          - "Explain corrosion and rancidity as oxidation processes and suggest ways to prevent each"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-science-ch02
+    number: 2
+    title: "Acids, Bases and Salts"
+    unit: "Unit I: Chemical Substances – Nature and Behaviour"
+    topics:
+      - id: cbse-10-science-ch02-t01
+        title: "Acids and bases: definitions and indicators"
+        learning_outcomes:
+          - "Define acids and bases in terms of furnishing H+ and OH- ions in water"
+          - "Identify acids and bases using litmus, natural indicators and olfactory indicators"
+      - id: cbse-10-science-ch02-t02
+        title: "Chemical properties of acids and bases"
+        learning_outcomes:
+          - "Write equations for reactions of acids and bases with metals, metal carbonates and hydrogencarbonates"
+          - "Explain neutralisation and the reaction of metal oxides and non-metal oxides with acids and bases"
+      - id: cbse-10-science-ch02-t03
+        title: "Acids and bases in water solution; dilution"
+        learning_outcomes:
+          - "Explain why acids conduct electricity in aqueous solution and why dilution must be done by adding acid to water"
+      - id: cbse-10-science-ch02-t04
+        title: "Strength of acids and bases: the pH scale"
+        learning_outcomes:
+          - "Interpret pH values to compare strength of acids and bases (logarithmic definition not required)"
+          - "Use universal indicator results to place solutions on the pH scale"
+      - id: cbse-10-science-ch02-t05
+        title: "Importance of pH in everyday life"
+        learning_outcomes:
+          - "Explain the role of pH in digestion, tooth decay, soil, plants and animals, and self-defence by animals and plants"
+      - id: cbse-10-science-ch02-t06
+        title: "Salts: families, pH of salts and water of crystallisation"
+        learning_outcomes:
+          - "Name the parent acid and base of a salt and predict whether its solution is acidic, basic or neutral"
+          - "Explain water of crystallisation using copper sulphate and gypsum"
+      - id: cbse-10-science-ch02-t07
+        title: "Chemicals from common salt: sodium hydroxide, bleaching powder, baking soda, washing soda, plaster of Paris"
+        learning_outcomes:
+          - "Describe the preparation of sodium hydroxide (chlor-alkali process), bleaching powder, baking soda and washing soda with equations"
+          - "State the uses of each chemical and explain how plaster of Paris sets with water"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-science-ch03
+    number: 3
+    title: "Metals and Non-metals"
+    unit: "Unit I: Chemical Substances – Nature and Behaviour"
+    topics:
+      - id: cbse-10-science-ch03-t01
+        title: "Physical properties of metals and non-metals"
+        learning_outcomes:
+          - "Compare metals and non-metals for lustre, hardness, malleability, ductility, conductivity and sonority, noting exceptions"
+      - id: cbse-10-science-ch03-t02
+        title: "Chemical properties of metals"
+        learning_outcomes:
+          - "Write equations for reactions of metals with oxygen, water, acids and salt solutions"
+          - "Identify amphoteric oxides and explain why some metals react with water only as steam"
+      - id: cbse-10-science-ch03-t03
+        title: "The reactivity series"
+        learning_outcomes:
+          - "Arrange metals in order of reactivity from displacement-reaction evidence"
+      - id: cbse-10-science-ch03-t04
+        title: "Formation and properties of ionic compounds"
+        learning_outcomes:
+          - "Show the formation of ionic compounds such as NaCl and MgCl2 by electron-dot structures"
+          - "Explain the melting point, solubility and conductivity of ionic compounds"
+      - id: cbse-10-science-ch03-t05
+        title: "Basic metallurgical processes"
+        learning_outcomes:
+          - "Outline concentration of ore, roasting, calcination and reduction for metals of low, medium and high reactivity"
+          - "Describe electrolytic refining of copper with a labelled diagram"
+      - id: cbse-10-science-ch03-t06
+        title: "Corrosion and its prevention; alloys"
+        learning_outcomes:
+          - "Explain conditions needed for rusting and describe galvanisation, painting and alloying as prevention methods"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-science-ch04
+    number: 4
+    title: "Carbon and its Compounds"
+    unit: "Unit I: Chemical Substances – Nature and Behaviour"
+    topics:
+      - id: cbse-10-science-ch04-t01
+        title: "Covalent bonding in carbon compounds"
+        learning_outcomes:
+          - "Draw electron-dot structures of simple molecules such as H2, O2, N2, CH4 and CO2"
+          - "Explain the low melting points and poor conductivity of covalent compounds"
+      - id: cbse-10-science-ch04-t02
+        title: "Versatile nature of carbon: catenation and tetravalency"
+        learning_outcomes:
+          - "Explain why carbon forms a very large number of compounds"
+      - id: cbse-10-science-ch04-t03
+        title: "Saturated and unsaturated hydrocarbons; chains, branches and rings"
+        learning_outcomes:
+          - "Distinguish alkanes, alkenes and alkynes and draw structures of straight-chain, branched and cyclic compounds"
+      - id: cbse-10-science-ch04-t04
+        title: "Functional groups, homologous series and nomenclature"
+        learning_outcomes:
+          - "Identify halogen, alcohol, aldehyde, ketone and carboxylic acid functional groups"
+          - "Name carbon compounds with up to six carbon atoms and state the features of a homologous series"
+      - id: cbse-10-science-ch04-t05
+        title: "Chemical properties: combustion, oxidation, addition and substitution"
+        learning_outcomes:
+          - "Write equations for combustion, oxidation of alcohols, hydrogenation and substitution by chlorine"
+      - id: cbse-10-science-ch04-t06
+        title: "Ethanol and ethanoic acid"
+        learning_outcomes:
+          - "State the properties and uses of ethanol and ethanoic acid, including esterification"
+      - id: cbse-10-science-ch04-t07
+        title: "Soaps and detergents"
+        learning_outcomes:
+          - "Explain micelle formation and the cleansing action of soap"
+          - "Compare the action of soaps and detergents in hard water"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-science-ch05
+    number: 5
+    title: "Life Processes"
+    unit: "Unit II: World of Living"
+    topics:
+      - id: cbse-10-science-ch05-t01
+        title: "What are life processes?"
+        learning_outcomes:
+          - "List the basic life processes and explain why they are needed for maintenance of life"
+      - id: cbse-10-science-ch05-t02
+        title: "Nutrition: autotrophic nutrition and photosynthesis"
+        learning_outcomes:
+          - "Describe the events of photosynthesis and the role of chlorophyll and stomata"
+      - id: cbse-10-science-ch05-t03
+        title: "Heterotrophic nutrition and human digestion"
+        learning_outcomes:
+          - "Trace the path of food through the human alimentary canal and state the role of each digestive juice"
+      - id: cbse-10-science-ch05-t04
+        title: "Respiration: aerobic and anaerobic"
+        learning_outcomes:
+          - "Compare aerobic and anaerobic breakdown of glucose in yeast, muscle and mitochondria"
+          - "Describe the human respiratory system and gas exchange in alveoli"
+      - id: cbse-10-science-ch05-t05
+        title: "Transportation in human beings"
+        learning_outcomes:
+          - "Describe the structure of the human heart and double circulation"
+          - "Explain the roles of blood, lymph, blood vessels and platelets"
+      - id: cbse-10-science-ch05-t06
+        title: "Transportation in plants"
+        learning_outcomes:
+          - "Explain transport of water by xylem (transpiration pull) and of food by phloem (translocation)"
+      - id: cbse-10-science-ch05-t07
+        title: "Excretion in human beings and plants"
+        learning_outcomes:
+          - "Describe the structure and function of the nephron and the principle of dialysis"
+          - "List ways in which plants get rid of wastes"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-science-ch06
+    number: 6
+    title: "Control and Coordination"
+    unit: "Unit II: World of Living"
+    topics:
+      - id: cbse-10-science-ch06-t01
+        title: "The nervous system and the neuron"
+        learning_outcomes:
+          - "Draw and label a neuron and describe how a nerve impulse travels across a synapse"
+      - id: cbse-10-science-ch06-t02
+        title: "Reflex action and the reflex arc"
+        learning_outcomes:
+          - "Distinguish voluntary, involuntary and reflex actions and trace a reflex arc"
+      - id: cbse-10-science-ch06-t03
+        title: "The human brain and protection of the nervous system"
+        learning_outcomes:
+          - "State the functions of the forebrain, midbrain, hindbrain and spinal cord"
+      - id: cbse-10-science-ch06-t04
+        title: "Coordination in plants: tropic and nastic movements"
+        learning_outcomes:
+          - "Distinguish growth-dependent tropic movements (photo-, geo-, hydro-, chemo-, thigmotropism) from immediate responses such as in touch-me-not"
+      - id: cbse-10-science-ch06-t05
+        title: "Plant hormones"
+        learning_outcomes:
+          - "State the roles of auxins, gibberellins, cytokinins and abscisic acid"
+      - id: cbse-10-science-ch06-t06
+        title: "Hormones in animals: the endocrine system"
+        learning_outcomes:
+          - "Match endocrine glands with their hormones and functions, including iodine and thyroxine, and insulin and diabetes"
+          - "Explain feedback regulation of hormone secretion"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-science-ch07
+    number: 7
+    title: "How do Organisms Reproduce?"
+    unit: "Unit II: World of Living"
+    topics:
+      - id: cbse-10-science-ch07-t01
+        title: "Importance of variation and DNA copying in reproduction"
+        learning_outcomes:
+          - "Explain why DNA copying is essential and how variation helps species survive"
+      - id: cbse-10-science-ch07-t02
+        title: "Modes of asexual reproduction"
+        learning_outcomes:
+          - "Describe fission, fragmentation, regeneration, budding, vegetative propagation and spore formation with examples"
+      - id: cbse-10-science-ch07-t03
+        title: "Sexual reproduction in flowering plants"
+        learning_outcomes:
+          - "Label the parts of a flower and describe pollination, fertilisation and seed and fruit formation"
+      - id: cbse-10-science-ch07-t04
+        title: "Reproduction in human beings"
+        learning_outcomes:
+          - "Describe the male and female reproductive systems and the events of fertilisation, implantation and nourishment of the embryo"
+      - id: cbse-10-science-ch07-t05
+        title: "Reproductive health, family planning and prevention of sexually transmitted diseases"
+        learning_outcomes:
+          - "Compare barrier, hormonal and surgical methods of contraception"
+          - "Explain how HIV/AIDS and other STDs spread and are prevented, and why female foeticide is harmful"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-science-ch08
+    number: 8
+    title: "Heredity"
+    unit: "Unit II: World of Living"
+    topics:
+      - id: cbse-10-science-ch08-t01
+        title: "Accumulation of variation during reproduction"
+        learning_outcomes:
+          - "Explain why sexual reproduction produces more variation than asexual reproduction"
+      - id: cbse-10-science-ch08-t02
+        title: "Mendel's experiments and the rules of inheritance"
+        learning_outcomes:
+          - "Use a Punnett square to predict monohybrid and dihybrid ratios"
+          - "Distinguish dominant and recessive traits and genotype and phenotype"
+      - id: cbse-10-science-ch08-t03
+        title: "How traits are expressed"
+        learning_outcomes:
+          - "Explain how genes control traits through proteins, using plant height as an example"
+      - id: cbse-10-science-ch08-t04
+        title: "Sex determination"
+        learning_outcomes:
+          - "Explain sex determination in humans using X and Y chromosomes"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-science-ch09
+    number: 9
+    title: "Light – Reflection and Refraction"
+    unit: "Unit III: Natural Phenomena"
+    topics:
+      - id: cbse-10-science-ch09-t01
+        title: "Reflection by spherical mirrors and image formation"
+        learning_outcomes:
+          - "Define pole, centre of curvature, principal axis, principal focus and focal length and relate R = 2f"
+          - "Draw ray diagrams for images formed by concave and convex mirrors for different object positions"
+      - id: cbse-10-science-ch09-t02
+        title: "Sign convention, mirror formula and magnification"
+        learning_outcomes:
+          - "Apply the New Cartesian sign convention and the mirror formula to calculate image distance and magnification (derivation not required)"
+          - "State uses of concave and convex mirrors"
+      - id: cbse-10-science-ch09-t03
+        title: "Refraction of light and laws of refraction"
+        learning_outcomes:
+          - "State the laws of refraction and trace refraction through a rectangular glass slab"
+          - "Calculate absolute and relative refractive index"
+      - id: cbse-10-science-ch09-t04
+        title: "Refraction by spherical lenses and image formation"
+        learning_outcomes:
+          - "Draw ray diagrams for images formed by convex and concave lenses for different object positions"
+      - id: cbse-10-science-ch09-t05
+        title: "Lens formula, magnification and power of a lens"
+        learning_outcomes:
+          - "Use the lens formula and magnification formula to solve numerical problems (derivation not required)"
+          - "Calculate the power of a lens in dioptres and of lenses in contact"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-science-ch10
+    number: 10
+    title: "The Human Eye and the Colourful World"
+    unit: "Unit III: Natural Phenomena"
+    topics:
+      - id: cbse-10-science-ch10-t01
+        title: "Structure and functioning of the human eye; power of accommodation"
+        learning_outcomes:
+          - "Describe the roles of cornea, iris, pupil, lens, ciliary muscles and retina, and explain accommodation"
+      - id: cbse-10-science-ch10-t02
+        title: "Defects of vision and their correction"
+        learning_outcomes:
+          - "Explain myopia, hypermetropia and presbyopia with ray diagrams and identify the corrective lens for each"
+      - id: cbse-10-science-ch10-t03
+        title: "Refraction through a glass prism"
+        learning_outcomes:
+          - "Trace a ray through a triangular prism and identify the angle of deviation"
+      - id: cbse-10-science-ch10-t04
+        title: "Dispersion of white light and the rainbow"
+        learning_outcomes:
+          - "Explain dispersion and recombination of white light and the formation of a rainbow"
+      - id: cbse-10-science-ch10-t05
+        title: "Atmospheric refraction"
+        learning_outcomes:
+          - "Explain twinkling of stars, advance sunrise and delayed sunset using atmospheric refraction"
+      - id: cbse-10-science-ch10-t06
+        title: "Scattering of light"
+        learning_outcomes:
+          - "Explain the Tyndall effect and the blue colour of the clear sky"
+    removed_topics:
+      - "Colour of the Sun at sunrise and sunset (excluded by CBSE 2026-27)"
+    literature_texts: []
+  - id: cbse-10-science-ch11
+    number: 11
+    title: "Electricity"
+    unit: "Unit IV: Effects of Current"
+    topics:
+      - id: cbse-10-science-ch11-t01
+        title: "Electric current, potential difference and circuit diagrams"
+        learning_outcomes:
+          - "Define current, potential difference and their SI units and draw circuit diagrams with standard symbols"
+      - id: cbse-10-science-ch11-t02
+        title: "Ohm's law and resistance"
+        learning_outcomes:
+          - "State Ohm's law and determine resistance from a V–I graph"
+      - id: cbse-10-science-ch11-t03
+        title: "Factors affecting resistance; resistivity"
+        learning_outcomes:
+          - "Relate resistance to length, area of cross-section and material, and calculate resistivity"
+      - id: cbse-10-science-ch11-t04
+        title: "Resistors in series and parallel"
+        learning_outcomes:
+          - "Calculate equivalent resistance, current and potential difference in series, parallel and combined circuits"
+          - "Explain why household appliances are connected in parallel"
+      - id: cbse-10-science-ch11-t05
+        title: "Heating effect of electric current and its applications"
+        learning_outcomes:
+          - "Apply Joule's law of heating H = I²Rt and explain uses such as fuses, heaters and bulbs"
+      - id: cbse-10-science-ch11-t06
+        title: "Electric power and energy"
+        learning_outcomes:
+          - "Use P = VI = I²R = V²/R to solve problems and calculate electricity consumption in kilowatt-hours"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-science-ch12
+    number: 12
+    title: "Magnetic Effects of Electric Current"
+    unit: "Unit IV: Effects of Current"
+    topics:
+      - id: cbse-10-science-ch12-t01
+        title: "Magnetic field and field lines"
+        learning_outcomes:
+          - "Draw field-line patterns around a bar magnet and state properties of magnetic field lines"
+      - id: cbse-10-science-ch12-t02
+        title: "Magnetic field due to a current-carrying straight conductor, loop and solenoid"
+        learning_outcomes:
+          - "Apply the right-hand thumb rule to find field direction around a straight wire and a circular loop"
+          - "Describe the field inside a solenoid and how it is used to make an electromagnet"
+      - id: cbse-10-science-ch12-t03
+        title: "Force on a current-carrying conductor in a magnetic field"
+        learning_outcomes:
+          - "Use Fleming's left-hand rule to predict the direction of force on a conductor"
+      - id: cbse-10-science-ch12-t04
+        title: "Direct and alternating current"
+        learning_outcomes:
+          - "Distinguish DC and AC, state the frequency of AC in India, and give advantages of AC over DC"
+      - id: cbse-10-science-ch12-t05
+        title: "Domestic electric circuits and safety"
+        learning_outcomes:
+          - "Explain live, neutral and earth wires, fuses, overloading and short-circuiting"
+      - id: cbse-10-science-ch12-t06
+        title: "Electric motor, electromagnetic induction and electric generator (formative assessment only)"
+        board_assessed: false
+        learning_outcomes:
+          - "Describe the principle of an electric motor and of electromagnetic induction (portfolio/internal assessment only)"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-science-ch13
+    number: 13
+    title: "Our Environment"
+    unit: "Unit V: Natural Resources"
+    topics:
+      - id: cbse-10-science-ch13-t01
+        title: "Ecosystem and its components"
+        learning_outcomes:
+          - "Identify biotic and abiotic components and producers, consumers and decomposers in an ecosystem"
+      - id: cbse-10-science-ch13-t02
+        title: "Food chains, food webs and trophic levels"
+        learning_outcomes:
+          - "Construct food chains and apply the 10 percent law of energy transfer"
+          - "Explain biological magnification of pesticides"
+      - id: cbse-10-science-ch13-t03
+        title: "Ozone layer and its depletion"
+        learning_outcomes:
+          - "Explain how ozone forms and protects life and how CFCs deplete it"
+      - id: cbse-10-science-ch13-t04
+        title: "Managing garbage: biodegradable and non-biodegradable substances"
+        learning_outcomes:
+          - "Classify waste as biodegradable or non-biodegradable and propose ways to reduce, reuse and recycle"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-science-ch14
+    number: 14
+    title: "Periodic Classification of Elements (formative assessment only)"
+    unit: "Unit I: Chemical Substances – Nature and Behaviour"
+    board_assessed: false
+    topics:
+      - id: cbse-10-science-ch14-t01
+        title: "Early attempts: Döbereiner's triads and Newlands' law of octaves"
+        learning_outcomes:
+          - "Explain Döbereiner's triads and Newlands' octaves and their limitations"
+      - id: cbse-10-science-ch14-t02
+        title: "Mendeléev's periodic table"
+        learning_outcomes:
+          - "Describe the basis of Mendeléev's table, its achievements and limitations"
+      - id: cbse-10-science-ch14-t03
+        title: "The modern periodic table and trends"
+        learning_outcomes:
+          - "Locate an element by atomic number and predict trends in valency, atomic size and metallic character across periods and down groups"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-science-ch15
+    number: 15
+    title: "Evolution (formative assessment only)"
+    unit: "Unit II: World of Living"
+    board_assessed: false
+    topics:
+      - id: cbse-10-science-ch15-t01
+        title: "Acquired and inherited traits"
+        learning_outcomes:
+          - "Distinguish acquired traits from inherited traits with examples"
+      - id: cbse-10-science-ch15-t02
+        title: "Speciation"
+        learning_outcomes:
+          - "Explain how geographical isolation, genetic drift and natural selection lead to new species"
+      - id: cbse-10-science-ch15-t03
+        title: "Evolution and classification: tracing evolutionary relationships"
+        learning_outcomes:
+          - "Distinguish homologous and analogous organs and explain what fossils tell us"
+      - id: cbse-10-science-ch15-t04
+        title: "Evolution by stages and human evolution"
+        learning_outcomes:
+          - "Explain how complex organs evolve in stages and outline the common origin of humans"
+    removed_topics: []
+    literature_texts: []
+removed_topics:
+  - "Sources of Energy (chapter deleted in NCERT rationalisation; not in 2026-27 syllabus)"
+  - "Sustainable Management of Natural Resources (chapter deleted; not in 2026-27 syllabus)"
+  - "Derivation of mirror formula and lens formula"
+  - "Logarithmic definition of pH"
+  - "Content in NCERT text boxes (not assessed in the year-end examination)"
