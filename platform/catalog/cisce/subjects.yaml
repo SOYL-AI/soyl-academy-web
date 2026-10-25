@@ -8,6 +8,8 @@
 #  each Performing Arts / Music option; each language in each group). Shared official codes repeat.
 # tier: core = platform core (compulsory subjects plus the mainstream subjects in the Wave 1 build list);
 #       language = any language subject; elective = everything else. priority 1 = core + Hindi.
+# theory_only: true = SOYL covers only the theory/written component (practical, performance, drawing
+#       and studio work excluded). has_board_exam: true only for ICSE 2027 / ISC 2027 externally examined papers.
 board: cisce
 academic_year: "2026-27"
 subjects:
@@ -3748,7 +3750,7 @@ subjects:
     has_board_exam: false
     source_status: verified
     source: isc-2028-home-science
-    notes: "Theory + practical; platform covers theory."
+    notes: "Theory 70 + practical paper 30; platform covers theory."
   - id: isc-11-fashion-designing
     board: cisce
     exam: isc
@@ -3764,7 +3766,7 @@ subjects:
     has_board_exam: false
     source_status: verified
     source: isc-2028-fashion-designing
-    notes: "Theory + practical; platform covers theory."
+    notes: "Theory 70 + practical paper 30; platform covers theory."
   - id: isc-11-electricity-electronics
     board: cisce
     exam: isc
@@ -3780,7 +3782,7 @@ subjects:
     has_board_exam: false
     source_status: verified
     source: isc-2028-electricity-electronics
-    notes: "Theory + practical; platform covers theory."
+    notes: "Paper 1 theory 80 + project work 20."
   - id: isc-11-engineering-science
     board: cisce
     exam: isc
@@ -3796,7 +3798,7 @@ subjects:
     has_board_exam: false
     source_status: verified
     source: isc-2028-engineering-science
-    notes: "Not combinable with Physics."
+    notes: "Paper 1 theory 80 + project work 20. Not combinable with Physics."
   - id: isc-11-computer-science
     board: cisce
     exam: isc
@@ -4052,7 +4054,7 @@ subjects:
     has_board_exam: false
     source_status: verified
     source: isc-2028-applied-mathematics
-    notes: "For Humanities/Commerce streams. Not combinable with Mathematics."
+    notes: "For Humanities/Commerce streams. Theory 80 + project work 20. Not combinable with Mathematics."
   - id: isc-11-supw-community-service
     board: cisce
     exam: isc
@@ -4822,7 +4824,7 @@ subjects:
     has_board_exam: true
     source_status: verified
     source: isc-2027-home-science
-    notes: "Theory + practical; platform covers theory."
+    notes: "Theory 70 + practical paper 30; platform covers theory."
   - id: isc-12-fashion-designing
     board: cisce
     exam: isc
@@ -4838,7 +4840,7 @@ subjects:
     has_board_exam: true
     source_status: verified
     source: isc-2027-fashion-designing
-    notes: "Theory + practical; platform covers theory."
+    notes: "Theory 70 + practical paper 30; platform covers theory."
   - id: isc-12-electricity-electronics
     board: cisce
     exam: isc
@@ -4854,7 +4856,7 @@ subjects:
     has_board_exam: true
     source_status: verified
     source: isc-2027-electricity-electronics
-    notes: "Theory + practical; platform covers theory."
+    notes: "Paper 1 theory 80 + project work 20."
   - id: isc-12-engineering-science
     board: cisce
     exam: isc
@@ -4870,7 +4872,7 @@ subjects:
     has_board_exam: true
     source_status: verified
     source: isc-2027-engineering-science
-    notes: "Not combinable with Physics."
+    notes: "Paper 1 theory 80 + project work 20. Not combinable with Physics."
   - id: isc-12-computer-science
     board: cisce
     exam: isc
@@ -5126,7 +5128,7 @@ subjects:
     has_board_exam: true
     source_status: verified
     source: isc-2027-applied-mathematics
-    notes: "For Humanities/Commerce streams. Not combinable with Mathematics."
+    notes: "For Humanities/Commerce streams. Theory 80 + project work 20. Not combinable with Mathematics."
   - id: isc-12-supw-community-service
     board: cisce
     exam: isc
