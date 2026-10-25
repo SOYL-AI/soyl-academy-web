@@ -7,3 +7,4 @@ export * from './deck';
 export * from './study';
 export * from './blueprint';
 export * from './release';
+export * from './test';
