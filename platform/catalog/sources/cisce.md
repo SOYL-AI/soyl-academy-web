@@ -1133,6 +1133,14 @@ Published under "Regulations and Syllabus ISC 2027".
 - **Fetched:** 2026-10-25
 - **Use:** Internal assessment scheme.
 
+### `isc-2027-specimen-papers`
+- **Title:** ISC (Class XII) Year 2027 Specimen Question Papers and Answer Keys (Modern English Literature, Elective English, Political Science, Geography, Sociology, Psychology, Economics, Mathematics, Applied Mathematics, Physics/Chemistry/Biology Paper 1, Artificial Intelligence, Robotics)
+- **URL:** https://cisce.org/specimen-question-papers-isc-class-xii-2027/
+- **Publisher:** CISCE
+- **Exam year:** ISC 2027
+- **Fetched:** 2026-10-25
+- **Use:** Pattern and scope only (blueprints). Never copy questions.
+
 ### `isc-2027-prescribed-books`
 - **Title:** ISC 2027 - Appendix I: List of Prescribed Textbooks (revised April 2026)
 - **URL:** https://cisce.org/wp-content/uploads/2026/04/40.-ISC-Appendix-I-List-of-Prescribed-Textbooks.pdf
@@ -1464,6 +1472,14 @@ Two-year course; Class XI examined internally by schools.
 - **Exam year:** ISC 2028
 - **Fetched:** 2026-10-25
 - **Use:** Class XI scheme.
+
+### `isc-2027-class-xi-specimen-papers`
+- **Title:** ISC (Class XI) Year 2027 Specimen Question Papers (Business Studies, Accountancy, Entrepreneurship, Computer Science Paper 1, Environmental Science, Biotechnology)
+- **URL:** https://cisce.org/specimen-question-papers-isc-class-xi-2027/
+- **Publisher:** CISCE
+- **Exam year:** ISC 2028
+- **Fetched:** 2026-10-25
+- **Use:** Class XI school-exam pattern only. Never copy questions.
 
 ### `isc-2028-prescribed-books`
 - **Title:** ISC 2028 - Appendix I: List of Prescribed Textbooks
