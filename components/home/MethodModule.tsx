@@ -8,7 +8,7 @@ export function MethodModule() {
   return (
     <section className="section-tight">
       <div className="page">
-        <div className="grid grid-cols-1 gap-px border border-rule bg-rule sm:grid-cols-2 md:grid-cols-5 xl:grid-cols-[1.7fr_repeat(5,1fr)]">
+        <div className="bleed grid grid-cols-1 gap-px border border-rule bg-rule sm:grid-cols-2 md:grid-cols-5 xl:grid-cols-[1.7fr_repeat(5,1fr)]">
           {/* Yellow block: the one solid colour in this viewport */}
           <div className="flex flex-col justify-between gap-6 bg-highlighter p-6 sm:col-span-2 md:col-span-5 md:p-8 xl:col-span-1">
             <div>

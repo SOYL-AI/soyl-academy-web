@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, ButtonLink } from '@/components/notebook/Button';
 import { PageHero } from '@/components/notebook/PageHero';
-import { ProductShot } from '@/components/notebook/ProductShot';
+import { ProductShot, hasMedia } from '@/components/notebook/ProductShot';
 import { Label, SectionHeader } from '@/components/notebook/SectionHeader';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { media } from '@/content/media';
@@ -33,7 +33,7 @@ export default function ParentsPage() {
             Child already on SOYL? See their homework <ArrowRight />
           </a>
         }
-        aside={<ProductShot slot={media.parents} sizes="(min-width: 1024px) 480px, 92vw" priority />}
+        aside={hasMedia(media.parents) ? <ProductShot slot={media.parents} sizes="(min-width: 1024px) 480px, 92vw" priority /> : undefined}
       />
 
       <section className="section">

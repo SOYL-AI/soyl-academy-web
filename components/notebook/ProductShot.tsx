@@ -4,6 +4,11 @@ import { SHOW_CONTENT_TODOS } from '@/lib/site';
 import { cn } from '@/lib/utils';
 import { TodoSlot } from './TodoSlot';
 
+/** True when the slot will render something (a real file, or a visible TODO frame). */
+export function hasMedia(slot: MediaSlot): boolean {
+  return Boolean(slot.src) || SHOW_CONTENT_TODOS;
+}
+
 interface ProductShotProps {
   slot: MediaSlot;
   kind?: 'Screenshot' | 'Photo';

@@ -2,7 +2,7 @@ import { FutureBuildersForm } from '@/components/forms/FutureBuildersForm';
 import { WaitlistForm } from '@/components/forms/WaitlistForm';
 import { ButtonLink } from '@/components/notebook/Button';
 import { PageHero } from '@/components/notebook/PageHero';
-import { ProductShot } from '@/components/notebook/ProductShot';
+import { ProductShot, hasMedia } from '@/components/notebook/ProductShot';
 import { Label, SectionHeader } from '@/components/notebook/SectionHeader';
 import { Faq } from '@/components/seo/Faq';
 import { StructuredData } from '@/components/seo/StructuredData';
@@ -204,12 +204,14 @@ export default function FutureBuildersPage() {
       </section>
 
       {/* Photos (real cohort photography only) */}
-      <section className="section-tight">
-        <div className="page grid grid-cols-1 gap-4 md:grid-cols-2">
-          <ProductShot slot={media.futureBuildersHero} kind="Photo" sizes="(min-width: 768px) 50vw, 92vw" />
-          <ProductShot slot={media.futureBuildersDemoDay} kind="Photo" sizes="(min-width: 768px) 50vw, 92vw" />
-        </div>
-      </section>
+      {(hasMedia(media.futureBuildersHero) || hasMedia(media.futureBuildersDemoDay)) && (
+        <section className="section-tight">
+          <div className="page grid grid-cols-1 gap-4 md:grid-cols-2">
+            <ProductShot slot={media.futureBuildersHero} kind="Photo" sizes="(min-width: 768px) 50vw, 92vw" />
+            <ProductShot slot={media.futureBuildersDemoDay} kind="Photo" sizes="(min-width: 768px) 50vw, 92vw" />
+          </div>
+        </section>
+      )}
 
       {/* What students leave with */}
       <section className="section rule-t">
@@ -239,7 +241,7 @@ export default function FutureBuildersPage() {
       {open && (
         <section className="section-tight">
           <div className="page">
-            <div className="grid-12 items-center gap-y-6 border border-ink bg-highlighter p-6 md:p-10">
+            <div className="bleed grid-12 items-center gap-y-6 border border-ink bg-highlighter p-6 md:p-10">
               <div className="col-span-12 lg:col-span-8">
                 <p className="t-label mb-3 text-ink">Bring a friend</p>
                 <h2 className="t-headline">You both save ₹{FRIEND_DISCOUNT}.</h2>

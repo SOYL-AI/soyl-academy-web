@@ -67,7 +67,7 @@ footer wordmark, the "Story Of Your Life" footer tagline, GSAP and framer-motion
 
 | Check | Result |
 | --- | --- |
-| Homepage height at 1440 | 7,267 px (was 17,008) |
+| Homepage height at 1440 | 6,020 px on the live build, 7,267 px with TODO frames (was 17,008) |
 | Horizontal scroll at 390 / 768 / 1024 / 1440 | None on any of 17 pages (was: `/method` at 390) |
 | Lighthouse mobile, simulated (default) | Perf 92–96 · A11y 100 · BP 100 · SEO 100 on 14 pages |
 | LCP, Lighthouse with applied throttling | 1.9–2.1 s (home, Future Builders, Book a demo, schools, teachers) |
@@ -83,8 +83,9 @@ Getting the simulated figure under 2.5 s would mean removing client JS from the 
 
 ### Content the SOYL team needs to supply
 
-Every slot below renders as a labelled TODO frame until filled. Set
-`NEXT_PUBLIC_SHOW_CONTENT_TODOS=false` to hide empty slots instead (e.g. before launch).
+Every slot below renders as a labelled TODO frame in development and on Vercel preview
+deploys, and is hidden on the live site (layouts fall back to text-only cells). Override with
+`NEXT_PUBLIC_SHOW_CONTENT_TODOS=true|false`.
 
 **Product screens** → `content/media.ts`, files in `/public/media` (1600×1000 unless noted)
 - Student question screen with attempt trail and a hint (hero, future)
@@ -110,7 +111,10 @@ Every slot below renders as a labelled TODO frame until filled. Set
 - Next Future Builders cohort dates → replace `COHORT` in `content/future-builders.ts` (the site reopens registration automatically)
 - Curriculum list for India (the site keeps the existing "Common Core, IB, IGCSE or local frameworks"; CBSE/ICSE/state boards?)
 - Custom domain for the app → set `NEXT_PUBLIC_APP_URL`
-- `NEXT_PUBLIC_SITE_URL` in production should be `https://www.soylai.com` (code default is `soylacademy.com`)
+- Domain: the site is `https://www.soylai.com`. **SOYL does not own `soylacademy.com`.** Before this
+  change the live site's canonical, Open Graph, sitemap and JSON-LD URLs all pointed there. The code
+  now falls back to `https://www.soylai.com` and ignores any `NEXT_PUBLIC_SITE_URL` on soylacademy.com.
+  Also remove that value from the hosting provider's env settings if it's there.
 - Email delivery: `app/contact/actions.ts` still only simulates Resend; forms reach the Google Sheet only if `GOOGLE_SHEETS_WEBHOOK_URL` is set
 
 ### Previewing cohort states

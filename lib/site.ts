@@ -13,10 +13,14 @@ export const APP_URL = (
 
 /**
  * Content placeholders (missing screenshots, photos, quotes, numbers) render as
- * clearly labelled TODO frames while this is true. Set
- * NEXT_PUBLIC_SHOW_CONTENT_TODOS=false to hide empty slots entirely instead.
+ * clearly labelled TODO frames in development and on Vercel preview deploys, and
+ * are hidden on the live site. NEXT_PUBLIC_SHOW_CONTENT_TODOS=true|false overrides.
  */
-export const SHOW_CONTENT_TODOS = process.env.NEXT_PUBLIC_SHOW_CONTENT_TODOS !== 'false';
+const todoOverride = process.env.NEXT_PUBLIC_SHOW_CONTENT_TODOS;
+export const SHOW_CONTENT_TODOS =
+  todoOverride === 'true' ||
+  (todoOverride !== 'false' &&
+    (process.env.NODE_ENV !== 'production' || process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview'));
 
 export const PRIMARY_CTA = { label: 'Book a demo', href: '/book-a-demo' } as const;
 

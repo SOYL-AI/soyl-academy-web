@@ -17,8 +17,9 @@
   --color-red-pen: #D84A3F;      /* margin lines, underlines, handwritten marks */
   --color-success: #1E7A4C;      /* success moments only */
 
-  /* Lines. Decorative rules are faint; control borders meet 3:1. */
-  --color-rule: rgba(23, 23, 23, 0.16);
+  /* Lines. Structural rules are solid ink, Primer-style: they are the scaffold of the page. */
+  --color-rule: #171717;
+  --color-rule-soft: rgba(23, 23, 23, 0.16);
   --color-rule-strong: rgba(23, 23, 23, 0.32);
   --color-control: #77776F;
 
@@ -153,6 +154,30 @@ p { text-wrap: pretty; }
 
 .section {
   padding-block: clamp(3.5rem, 7vw, 6rem);
+}
+
+/* The page frame: two ink rules at the edges of the 1240 px page, running the
+   full length of the page (desktop only, where there is room outside them). */
+@media (min-width: 1280px) {
+  body {
+    position: relative;
+  }
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1240px;
+    transform: translateX(-50%);
+    border-inline: 1px solid var(--color-rule);
+    pointer-events: none;
+    z-index: 30;
+  }
+  /* Solid colour blocks run right up to the frame. */
+  .bleed {
+    margin-inline: -2.5rem;
+  }
 }
 
 .section-tight {

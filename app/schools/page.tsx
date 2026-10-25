@@ -1,7 +1,7 @@
 import { FinalCta } from '@/components/home/FinalCta';
 import { ButtonLink } from '@/components/notebook/Button';
 import { PageHero } from '@/components/notebook/PageHero';
-import { ProductShot } from '@/components/notebook/ProductShot';
+import { ProductShot, hasMedia } from '@/components/notebook/ProductShot';
 import { Label, SectionHeader } from '@/components/notebook/SectionHeader';
 import { Faq } from '@/components/seo/Faq';
 import { StructuredData } from '@/components/seo/StructuredData';
@@ -53,7 +53,7 @@ export default function SchoolsPage() {
             Plan a pilot
           </ButtonLink>
         }
-        aside={<ProductShot slot={media.schools} kind="Photo" sizes="(min-width: 1024px) 480px, 92vw" priority />}
+        aside={hasMedia(media.schools) ? <ProductShot slot={media.schools} kind="Photo" sizes="(min-width: 1024px) 480px, 92vw" priority /> : undefined}
       />
 
       <section className="section">
@@ -91,7 +91,7 @@ export default function SchoolsPage() {
       {/* Pilot: the cobalt-deep block on this page */}
       <section className="section-tight">
         <div className="page">
-          <div className="on-dark grid-12 gap-y-10 bg-cobalt-deep px-6 py-12 text-white md:px-12 md:py-16">
+          <div className="bleed on-dark grid-12 gap-y-10 bg-cobalt-deep px-6 py-12 text-white md:px-12 md:py-16">
             <div className="col-span-12 lg:col-span-5">
               <p className="t-label mb-5 flex items-center gap-2.5 text-white">
                 <span aria-hidden="true" className="h-px w-5 bg-highlighter" />

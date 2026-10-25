@@ -64,7 +64,7 @@ export default function MethodPage() {
 
       <section className="section-tight">
         <div className="page">
-          <div className="on-dark grid-12 gap-y-8 bg-cobalt-deep px-6 py-12 text-white md:px-12 md:py-16">
+          <div className="bleed on-dark grid-12 gap-y-8 bg-cobalt-deep px-6 py-12 text-white md:px-12 md:py-16">
             <div className="col-span-12 lg:col-span-6">
               <p className="t-label mb-5 flex items-center gap-2.5 text-white">
                 <span aria-hidden="true" className="h-px w-5 bg-highlighter" />

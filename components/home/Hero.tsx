@@ -26,8 +26,14 @@ export function Hero() {
 
         {/* The question screen, live: graph paper behind, red margin line, a real interaction */}
         <div id="try-it" className="col-span-12 scroll-mt-20 lg:col-span-6">
-          <div className="graph-grid margin-line border border-rule p-3 pl-7 [--margin-x:0.875rem] md:p-6 md:pl-16 md:[--margin-x:2.25rem]">
-            <MiniSimulator />
+          <div className="graph-grid margin-line relative border border-rule p-3 pl-7 [--margin-x:0.875rem] md:p-6 md:pl-16 md:pt-[80px] md:[--margin-x:2.25rem]">
+            {/* Filled squares on the graph paper, snapped to its 40 px grid */}
+            <span aria-hidden="true" className="absolute hidden h-[39px] w-[39px] bg-cobalt md:block" style={{ left: 120, top: 0 }} />
+            <span aria-hidden="true" className="absolute hidden h-[39px] w-[39px] bg-highlighter md:block" style={{ left: 240, top: 40 }} />
+            <span aria-hidden="true" className="absolute hidden h-[39px] w-[39px] bg-red-pen md:block" style={{ left: 400, top: 0 }} />
+            <div className="relative">
+              <MiniSimulator />
+            </div>
             <p className="t-small mt-4 max-w-[48ch] text-muted">{hero.caption}</p>
           </div>
         </div>

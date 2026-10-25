@@ -3,7 +3,28 @@
  * Nothing else should hard-code the domain, brand name or address.
  */
 
-const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://soylacademy.com';
+/**
+ * The site lives at www.soylai.com (soylai.com redirects there). SOYL does NOT
+ * own soylacademy.com: an env value pointing there is ignored, so canonical
+ * links, Open Graph URLs, the sitemap and JSON-LD can never point at it.
+ */
+const CANONICAL_ORIGIN = 'https://www.soylai.com';
+const UNOWNED_HOSTS = /(^|\.)soylacademy\.com$/i;
+
+function resolveSiteUrl(raw: string | undefined): string {
+  if (!raw) return CANONICAL_ORIGIN;
+  try {
+    if (UNOWNED_HOSTS.test(new URL(raw).hostname)) {
+      console.warn(`NEXT_PUBLIC_SITE_URL=${raw} points at a domain SOYL does not own; using ${CANONICAL_ORIGIN}.`);
+      return CANONICAL_ORIGIN;
+    }
+    return raw;
+  } catch {
+    return CANONICAL_ORIGIN;
+  }
+}
+
+const rawSiteUrl = resolveSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
 
 /** Canonical origin, without a trailing slash. */
 export const SITE_URL = rawSiteUrl.replace(/\/+$/, '');

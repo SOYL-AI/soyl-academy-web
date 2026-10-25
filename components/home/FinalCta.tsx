@@ -13,7 +13,7 @@ export function FinalCta({ headline = finalCta.headline, line = finalCta.line }:
   return (
     <section className="section-tight">
       <div className="page">
-        <div className="grid-12 items-end gap-y-8 border border-ink bg-highlighter px-6 py-12 md:px-12 md:py-16">
+        <div className="bleed grid-12 items-end gap-y-8 border border-ink bg-highlighter px-6 py-12 md:px-12 md:py-16">
           <h2 className="t-display col-span-12 max-w-[12ch] lg:col-span-7">{headline}</h2>
           <div className="col-span-12 lg:col-span-5">
             <p className="max-w-[40ch] text-ink">{line}</p>
