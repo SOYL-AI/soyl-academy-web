@@ -1,0 +1,142 @@
+# CBSE Class 11 Computer Science (083), 2026-27. Python.
+subject_id: cbse-11-computer-science
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-computer-science-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+  - ncert-textbooks-secondary
+exam_notes: "Class 11 has no board exam: school annual examination. Theory 70 + practical 30. Units: 10, 45, 15."
+units:
+  - name: "Unit 1: Computer Systems and Organisation"
+    marks: 10
+  - name: "Unit 2: Computational Thinking and Programming – 1"
+    marks: 45
+  - name: "Unit 3: Society, Law and Ethics"
+    marks: 15
+chapters:
+  - id: cbse-11-computer-science-ch01
+    number: 1
+    title: Computer Systems and Organisation
+    unit: "Unit 1: Computer Systems and Organisation"
+    topics:
+      - id: cbse-11-computer-science-ch01-t01
+        title: Basic computer organisation; memory units; software types
+        learning_outcomes:
+          - Describe components of a computer and types of memory and software
+      - id: cbse-11-computer-science-ch01-t02
+        title: Boolean logic and logic gates
+        learning_outcomes:
+          - Evaluate Boolean expressions, draw truth tables and apply De Morgan's laws
+      - id: cbse-11-computer-science-ch01-t03
+        title: Number systems and encoding
+        learning_outcomes:
+          - Convert between binary, octal, decimal and hexadecimal and explain ASCII, ISCII and Unicode
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-computer-science-ch02
+    number: 2
+    title: Introduction to Problem Solving
+    unit: "Unit 2: Computational Thinking and Programming – 1"
+    topics:
+      - id: cbse-11-computer-science-ch02-t01
+        title: Steps of problem solving; algorithms, flowcharts and pseudocode
+        learning_outcomes:
+          - Write algorithms and flowcharts and decompose problems
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-computer-science-ch03
+    number: 3
+    title: Python Fundamentals
+    unit: "Unit 2: Computational Thinking and Programming – 1"
+    topics:
+      - id: cbse-11-computer-science-ch03-t01
+        title: Tokens, variables, data types, operators and expressions
+        learning_outcomes:
+          - Write expressions and use mutable and immutable types
+      - id: cbse-11-computer-science-ch03-t02
+        title: Errors and input/output
+        learning_outcomes:
+          - Identify syntax, logical and runtime errors
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-computer-science-ch04
+    number: 4
+    title: Flow of Control
+    unit: "Unit 2: Computational Thinking and Programming – 1"
+    topics:
+      - id: cbse-11-computer-science-ch04-t01
+        title: Conditional statements
+        learning_outcomes:
+          - Write if, if-else and if-elif-else programs
+      - id: cbse-11-computer-science-ch04-t02
+        title: "Loops: for and while; break and continue"
+        learning_outcomes:
+          - Write programs with loops, including nested loops, for patterns and series
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-computer-science-ch05
+    number: 5
+    title: Strings
+    unit: "Unit 2: Computational Thinking and Programming – 1"
+    topics:
+      - id: cbse-11-computer-science-ch05-t01
+        title: String operations and methods
+        learning_outcomes:
+          - Traverse and manipulate strings using built-in methods
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-computer-science-ch06
+    number: 6
+    title: Lists and Tuples
+    unit: "Unit 2: Computational Thinking and Programming – 1"
+    topics:
+      - id: cbse-11-computer-science-ch06-t01
+        title: List operations, methods and nested lists
+        learning_outcomes:
+          - Create and manipulate lists, including searching and finding max/min
+      - id: cbse-11-computer-science-ch06-t02
+        title: Tuples
+        learning_outcomes:
+          - Use tuple operations and built-in functions
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-computer-science-ch07
+    number: 7
+    title: Dictionaries and Python Modules
+    unit: "Unit 2: Computational Thinking and Programming – 1"
+    topics:
+      - id: cbse-11-computer-science-ch07-t01
+        title: Dictionaries
+        learning_outcomes:
+          - Create and manipulate dictionaries and count frequencies
+      - id: cbse-11-computer-science-ch07-t02
+        title: "Modules: math, random, statistics"
+        learning_outcomes:
+          - Import and use functions from standard modules
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-computer-science-ch08
+    number: 8
+    title: Society, Law and Ethics
+    unit: "Unit 3: Society, Law and Ethics"
+    topics:
+      - id: cbse-11-computer-science-ch08-t01
+        title: Digital footprints, netiquette and data protection
+        learning_outcomes:
+          - Explain digital footprints and safe online behaviour
+      - id: cbse-11-computer-science-ch08-t02
+        title: IPR, plagiarism, licensing and open source
+        learning_outcomes:
+          - Distinguish copyright, patents, trademarks and licences
+      - id: cbse-11-computer-science-ch08-t03
+        title: Cybercrime, cyber safety and the IT Act
+        learning_outcomes:
+          - Identify cybercrimes and safety measures
+      - id: cbse-11-computer-science-ch08-t04
+        title: E-waste, health and technology; gender and disability issues
+        learning_outcomes:
+          - Explain e-waste management and inclusive technology use
+    removed_topics: []
+    literature_texts: []
+removed_topics: []
