@@ -1,0 +1,328 @@
+# CBSE Class 11 Physics (042), 2026-27. 14 chapters as numbered in the CBSE syllabus (= NCERT Physics Part I and II, rationalised).
+subject_id: cbse-11-physics
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-physics-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+  - ncert-textbooks-secondary
+exam_notes: >-
+  Class 11 has no board exam: school annual examination on the same pattern as Class 12. Theory 70 (3 hours) + practical 30. Unit-group
+  marks: 23, 17, 20, 10.
+units:
+  - name: "Units I–III: Physical World and Measurement; Kinematics; Laws of Motion"
+    marks: 23
+  - name: "Units IV–VI: Work, Energy and Power; Motion of System of Particles and Rigid Body; Gravitation"
+    marks: 17
+  - name: "Units VII–IX: Properties of Bulk Matter; Thermodynamics; Kinetic Theory of Gases"
+    marks: 20
+  - name: "Unit X: Oscillations and Waves"
+    marks: 10
+chapters:
+  - id: cbse-11-physics-ch01
+    number: 1
+    title: Units and Measurements
+    unit: "Units I–III: Physical World and Measurement; Kinematics; Laws of Motion"
+    topics:
+      - id: cbse-11-physics-ch01-t01
+        title: Systems of units; SI base and derived units
+        learning_outcomes:
+          - Express quantities in SI units and distinguish fundamental and derived units
+      - id: cbse-11-physics-ch01-t02
+        title: Significant figures and uncertainty in results
+        learning_outcomes:
+          - Apply rules of significant figures and estimate errors in measurement
+      - id: cbse-11-physics-ch01-t03
+        title: Dimensions and dimensional analysis
+        learning_outcomes:
+          - Check consistency of equations and derive relations by dimensional analysis
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-physics-ch02
+    number: 2
+    title: Motion in a Straight Line
+    unit: "Units I–III: Physical World and Measurement; Kinematics; Laws of Motion"
+    topics:
+      - id: cbse-11-physics-ch02-t01
+        title: Frame of reference; position, path length and displacement
+        learning_outcomes:
+          - Distinguish distance and displacement
+      - id: cbse-11-physics-ch02-t02
+        title: Average and instantaneous velocity and acceleration
+        learning_outcomes:
+          - Use elementary differentiation and integration to describe motion
+      - id: cbse-11-physics-ch02-t03
+        title: Kinematic equations for uniformly accelerated motion
+        learning_outcomes:
+          - Derive equations of motion graphically and by calculus and apply them
+      - id: cbse-11-physics-ch02-t04
+        title: Position–time and velocity–time graphs
+        learning_outcomes:
+          - Interpret motion graphs
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-physics-ch03
+    number: 3
+    title: Motion in a Plane
+    unit: "Units I–III: Physical World and Measurement; Kinematics; Laws of Motion"
+    topics:
+      - id: cbse-11-physics-ch03-t01
+        title: Scalars and vectors; vector addition and resolution
+        learning_outcomes:
+          - Add, subtract and resolve vectors and use unit vectors
+      - id: cbse-11-physics-ch03-t02
+        title: Scalar and vector products
+        learning_outcomes:
+          - Calculate dot and cross products
+      - id: cbse-11-physics-ch03-t03
+        title: Projectile motion
+        learning_outcomes:
+          - Derive the time of flight, maximum height and range of a projectile
+      - id: cbse-11-physics-ch03-t04
+        title: Uniform circular motion
+        learning_outcomes:
+          - Derive centripetal acceleration
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-physics-ch04
+    number: 4
+    title: Laws of Motion
+    unit: "Units I–III: Physical World and Measurement; Kinematics; Laws of Motion"
+    topics:
+      - id: cbse-11-physics-ch04-t01
+        title: Newton's laws; momentum and impulse
+        learning_outcomes:
+          - Apply Newton's laws and the impulse–momentum relation
+      - id: cbse-11-physics-ch04-t02
+        title: Conservation of linear momentum
+        learning_outcomes:
+          - Apply momentum conservation to recoil and collisions
+      - id: cbse-11-physics-ch04-t03
+        title: Equilibrium of concurrent forces; friction
+        learning_outcomes:
+          - Solve equilibrium problems and apply laws of static, kinetic and rolling friction
+      - id: cbse-11-physics-ch04-t04
+        title: Dynamics of uniform circular motion; banked roads
+        learning_outcomes:
+          - Derive the speed limit on level and banked roads
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-physics-ch05
+    number: 5
+    title: Work, Energy and Power
+    unit: "Units IV–VI: Work, Energy and Power; Motion of System of Particles and Rigid Body; Gravitation"
+    topics:
+      - id: cbse-11-physics-ch05-t01
+        title: Work done by constant and variable forces
+        learning_outcomes:
+          - Calculate work including by integration for variable forces
+      - id: cbse-11-physics-ch05-t02
+        title: Kinetic energy and the work–energy theorem
+        learning_outcomes:
+          - Apply the work–energy theorem
+      - id: cbse-11-physics-ch05-t03
+        title: Potential energy of a spring; conservation of mechanical energy
+        learning_outcomes:
+          - Apply energy conservation including spring potential energy
+      - id: cbse-11-physics-ch05-t04
+        title: Power; collisions in one and two dimensions
+        learning_outcomes:
+          - Calculate power and analyse elastic and inelastic collisions
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-physics-ch06
+    number: 6
+    title: System of Particles and Rotational Motion
+    unit: "Units IV–VI: Work, Energy and Power; Motion of System of Particles and Rigid Body; Gravitation"
+    topics:
+      - id: cbse-11-physics-ch06-t01
+        title: Centre of mass and its motion
+        learning_outcomes:
+          - Locate the centre of mass of simple systems
+      - id: cbse-11-physics-ch06-t02
+        title: Torque and angular momentum
+        learning_outcomes:
+          - Relate torque to angular momentum and apply conservation of angular momentum
+      - id: cbse-11-physics-ch06-t03
+        title: Equilibrium of rigid bodies
+        learning_outcomes:
+          - Solve problems of rotational equilibrium
+      - id: cbse-11-physics-ch06-t04
+        title: Moment of inertia and radius of gyration
+        learning_outcomes:
+          - Use moments of inertia of simple bodies (no derivation of theorems)
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-physics-ch07
+    number: 7
+    title: Gravitation
+    unit: "Units IV–VI: Work, Energy and Power; Motion of System of Particles and Rigid Body; Gravitation"
+    topics:
+      - id: cbse-11-physics-ch07-t01
+        title: Kepler's laws and universal law of gravitation
+        learning_outcomes:
+          - State Kepler's laws and apply Newton's law of gravitation
+      - id: cbse-11-physics-ch07-t02
+        title: Acceleration due to gravity and its variation
+        learning_outcomes:
+          - Derive variation of g with altitude and depth
+      - id: cbse-11-physics-ch07-t03
+        title: Gravitational potential energy and potential
+        learning_outcomes:
+          - Calculate gravitational potential energy
+      - id: cbse-11-physics-ch07-t04
+        title: Escape speed and orbital velocity of satellites
+        learning_outcomes:
+          - Derive escape speed and orbital speed
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-physics-ch08
+    number: 8
+    title: Mechanical Properties of Solids
+    unit: "Units VII–IX: Properties of Bulk Matter; Thermodynamics; Kinetic Theory of Gases"
+    topics:
+      - id: cbse-11-physics-ch08-t01
+        title: Stress, strain and Hooke's law
+        learning_outcomes:
+          - Define types of stress and strain and plot a stress–strain curve
+      - id: cbse-11-physics-ch08-t02
+        title: Elastic moduli
+        learning_outcomes:
+          - Calculate Young's, bulk and shear moduli
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-physics-ch09
+    number: 9
+    title: Mechanical Properties of Fluids
+    unit: "Units VII–IX: Properties of Bulk Matter; Thermodynamics; Kinetic Theory of Gases"
+    topics:
+      - id: cbse-11-physics-ch09-t01
+        title: Pressure and Pascal's law
+        learning_outcomes:
+          - Apply Pascal's law to hydraulic devices
+      - id: cbse-11-physics-ch09-t02
+        title: Streamline flow and Bernoulli's principle
+        learning_outcomes:
+          - Apply the equation of continuity and Bernoulli's principle
+      - id: cbse-11-physics-ch09-t03
+        title: Viscosity and Stokes' law; terminal velocity
+        learning_outcomes:
+          - Derive terminal velocity and explain Reynolds number qualitatively
+      - id: cbse-11-physics-ch09-t04
+        title: Surface tension
+        learning_outcomes:
+          - Explain surface energy, angle of contact, capillary rise and excess pressure in drops and bubbles
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-physics-ch10
+    number: 10
+    title: Thermal Properties of Matter
+    unit: "Units VII–IX: Properties of Bulk Matter; Thermodynamics; Kinetic Theory of Gases"
+    topics:
+      - id: cbse-11-physics-ch10-t01
+        title: Temperature, heat and thermal expansion
+        learning_outcomes:
+          - Calculate linear, area and volume expansion
+      - id: cbse-11-physics-ch10-t02
+        title: Specific heat, calorimetry and change of state
+        learning_outcomes:
+          - Solve calorimetry problems involving latent heat
+      - id: cbse-11-physics-ch10-t03
+        title: "Heat transfer: conduction, convection, radiation"
+        learning_outcomes:
+          - Explain modes of heat transfer and apply thermal conductivity
+      - id: cbse-11-physics-ch10-t04
+        title: Newton's law of cooling
+        learning_outcomes:
+          - Apply Newton's law of cooling qualitatively and quantitatively
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-physics-ch11
+    number: 11
+    title: Thermodynamics
+    unit: "Units VII–IX: Properties of Bulk Matter; Thermodynamics; Kinetic Theory of Gases"
+    topics:
+      - id: cbse-11-physics-ch11-t01
+        title: Thermal equilibrium and the zeroth law
+        learning_outcomes:
+          - State the zeroth law and define temperature
+      - id: cbse-11-physics-ch11-t02
+        title: First law of thermodynamics; internal energy and work
+        learning_outcomes:
+          - Apply the first law to thermodynamic processes
+      - id: cbse-11-physics-ch11-t03
+        title: Thermodynamic processes
+        learning_outcomes:
+          - Analyse isothermal, adiabatic, isobaric and isochoric processes
+      - id: cbse-11-physics-ch11-t04
+        title: Second law; reversible and irreversible processes
+        learning_outcomes:
+          - State the second law and distinguish reversible and irreversible processes
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-physics-ch12
+    number: 12
+    title: Kinetic Theory
+    unit: "Units VII–IX: Properties of Bulk Matter; Thermodynamics; Kinetic Theory of Gases"
+    topics:
+      - id: cbse-11-physics-ch12-t01
+        title: Equation of state of a perfect gas
+        learning_outcomes:
+          - Apply the ideal gas equation
+      - id: cbse-11-physics-ch12-t02
+        title: Kinetic theory and pressure of a gas
+        learning_outcomes:
+          - Derive pressure from kinetic theory and relate kinetic energy to temperature
+      - id: cbse-11-physics-ch12-t03
+        title: Degrees of freedom and equipartition of energy
+        learning_outcomes:
+          - Apply equipartition to find specific heats of gases
+      - id: cbse-11-physics-ch12-t04
+        title: Mean free path and Avogadro's number
+        learning_outcomes:
+          - Explain mean free path qualitatively
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-physics-ch13
+    number: 13
+    title: Oscillations
+    unit: "Unit X: Oscillations and Waves"
+    topics:
+      - id: cbse-11-physics-ch13-t01
+        title: Periodic motion and simple harmonic motion
+        learning_outcomes:
+          - Define SHM and write its displacement equation
+      - id: cbse-11-physics-ch13-t02
+        title: Energy in SHM; spring oscillations
+        learning_outcomes:
+          - Derive the time period of a loaded spring and energy in SHM
+      - id: cbse-11-physics-ch13-t03
+        title: Simple pendulum
+        learning_outcomes:
+          - Derive the time period of a simple pendulum
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-physics-ch14
+    number: 14
+    title: Waves
+    unit: "Unit X: Oscillations and Waves"
+    topics:
+      - id: cbse-11-physics-ch14-t01
+        title: Transverse and longitudinal waves; speed of a travelling wave
+        learning_outcomes:
+          - Distinguish wave types and relate speed to medium properties
+      - id: cbse-11-physics-ch14-t02
+        title: Displacement relation for a progressive wave
+        learning_outcomes:
+          - Write and interpret the equation of a progressive wave
+      - id: cbse-11-physics-ch14-t03
+        title: Superposition, reflection and standing waves
+        learning_outcomes:
+          - Explain standing waves in strings and organ pipes, fundamentals and harmonics
+      - id: cbse-11-physics-ch14-t04
+        title: Beats
+        learning_outcomes:
+          - Calculate beat frequency
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

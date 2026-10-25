@@ -1,0 +1,321 @@
+# CBSE Class 11 Mathematics (041), 2026-27. 14 NCERT chapters; topics CBSE assesses only formatively carry board_assessed: false.
+subject_id: cbse-11-mathematics
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-mathematics-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+  - ncert-textbooks-secondary
+exam_notes: >-
+  Class 11 has no board exam: school annual examination on the same pattern as Class 12. Theory 80 + IA 20. Units: Sets and Functions 23,
+  Algebra 25, Coordinate Geometry 12, Calculus 8, Statistics and Probability 12.
+units:
+  - name: "Unit I: Sets and Functions"
+    marks: 23
+  - name: "Unit II: Algebra"
+    marks: 25
+  - name: "Unit III: Coordinate Geometry"
+    marks: 12
+  - name: "Unit IV: Calculus"
+    marks: 8
+  - name: "Unit V: Statistics and Probability"
+    marks: 12
+chapters:
+  - id: cbse-11-mathematics-ch01
+    number: 1
+    title: Sets
+    unit: "Unit I: Sets and Functions"
+    topics:
+      - id: cbse-11-mathematics-ch01-t01
+        title: Sets and their representations; types of sets
+        learning_outcomes:
+          - Represent sets in roster and set-builder form and classify sets
+      - id: cbse-11-mathematics-ch01-t02
+        title: Subsets, power set, universal set and intervals
+        learning_outcomes:
+          - Find subsets and power sets and write intervals
+      - id: cbse-11-mathematics-ch01-t03
+        title: Venn diagrams and operations on sets
+        learning_outcomes:
+          - Perform union, intersection, difference and complement with properties
+      - id: cbse-11-mathematics-ch01-t04
+        title: Practical problems on union and intersection (formative assessment only)
+        board_assessed: false
+        learning_outcomes:
+          - Solve word problems using n(A∪B) formulas
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-mathematics-ch02
+    number: 2
+    title: Relations and Functions
+    unit: "Unit I: Sets and Functions"
+    topics:
+      - id: cbse-11-mathematics-ch02-t01
+        title: Ordered pairs and Cartesian product
+        learning_outcomes:
+          - Find Cartesian products of sets
+      - id: cbse-11-mathematics-ch02-t02
+        title: "Relations: domain, codomain and range"
+        learning_outcomes:
+          - Represent relations and find domain and range
+      - id: cbse-11-mathematics-ch02-t03
+        title: Functions and their graphs
+        learning_outcomes:
+          - >-
+            Identify and graph constant, identity, polynomial, rational, modulus, signum, exponential, logarithmic and greatest integer
+            functions
+      - id: cbse-11-mathematics-ch02-t04
+        title: Algebra of real functions
+        learning_outcomes:
+          - Add, subtract, multiply and divide functions
+      - id: cbse-11-mathematics-ch02-t05
+        title: Composition of functions (formative assessment only)
+        board_assessed: false
+        learning_outcomes:
+          - Compose two functions
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-mathematics-ch03
+    number: 3
+    title: Trigonometric Functions
+    unit: "Unit I: Sets and Functions"
+    topics:
+      - id: cbse-11-mathematics-ch03-t01
+        title: Angles in radians and degrees
+        learning_outcomes:
+          - Convert between radians and degrees
+      - id: cbse-11-mathematics-ch03-t02
+        title: Trigonometric functions via the unit circle; signs and graphs
+        learning_outcomes:
+          - Define trigonometric functions using the unit circle and sketch their graphs
+      - id: cbse-11-mathematics-ch03-t03
+        title: Sum and difference identities and multiple angles
+        learning_outcomes:
+          - Prove and apply identities for sin(x±y), cos(x±y), tan(x±y) and double/triple angles
+      - id: cbse-11-mathematics-ch03-t04
+        title: General solutions of trigonometric equations (formative assessment only)
+        board_assessed: false
+        learning_outcomes:
+          - Find general solutions of sin y = sin a type equations
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-mathematics-ch04
+    number: 4
+    title: Complex Numbers and Quadratic Equations
+    unit: "Unit II: Algebra"
+    topics:
+      - id: cbse-11-mathematics-ch04-t01
+        title: Need for complex numbers; algebra of complex numbers
+        learning_outcomes:
+          - Perform operations on complex numbers
+      - id: cbse-11-mathematics-ch04-t02
+        title: Argand plane, modulus and conjugate
+        learning_outcomes:
+          - Represent complex numbers on the Argand plane
+      - id: cbse-11-mathematics-ch04-t03
+        title: Polar form; quadratic equations in the complex number system (formative assessment only)
+        board_assessed: false
+        learning_outcomes:
+          - Write the polar form and solve quadratics with complex roots
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-mathematics-ch05
+    number: 5
+    title: Linear Inequalities
+    unit: "Unit II: Algebra"
+    topics:
+      - id: cbse-11-mathematics-ch05-t01
+        title: Linear inequalities in one variable
+        learning_outcomes:
+          - Solve linear inequalities algebraically and represent solutions on the number line
+      - id: cbse-11-mathematics-ch05-t02
+        title: Graphical solution of inequalities in two variables (formative assessment only)
+        board_assessed: false
+        learning_outcomes:
+          - Solve systems of inequalities graphically
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-mathematics-ch06
+    number: 6
+    title: Permutations and Combinations
+    unit: "Unit II: Algebra"
+    topics:
+      - id: cbse-11-mathematics-ch06-t01
+        title: Fundamental principle of counting; factorial
+        learning_outcomes:
+          - Apply the multiplication principle
+      - id: cbse-11-mathematics-ch06-t02
+        title: Permutations
+        learning_outcomes:
+          - Derive and use nPr including with repetition
+      - id: cbse-11-mathematics-ch06-t03
+        title: Combinations
+        learning_outcomes:
+          - Derive and use nCr in selection problems
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-mathematics-ch07
+    number: 7
+    title: Binomial Theorem
+    unit: "Unit II: Algebra"
+    topics:
+      - id: cbse-11-mathematics-ch07-t01
+        title: Binomial theorem for positive integral indices; Pascal's triangle
+        learning_outcomes:
+          - Expand (a+b)ⁿ and use Pascal's triangle
+      - id: cbse-11-mathematics-ch07-t02
+        title: General and middle terms (formative assessment only)
+        board_assessed: false
+        learning_outcomes:
+          - Find general and middle terms
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-mathematics-ch08
+    number: 8
+    title: Sequences and Series
+    unit: "Unit II: Algebra"
+    topics:
+      - id: cbse-11-mathematics-ch08-t01
+        title: Sequences and series; arithmetic progression revision
+        learning_outcomes:
+          - Write terms of sequences
+      - id: cbse-11-mathematics-ch08-t02
+        title: "Geometric progression: nth term, sum, infinite GP"
+        learning_outcomes:
+          - Find the nth term and sum of a GP and the sum of an infinite GP
+      - id: cbse-11-mathematics-ch08-t03
+        title: Arithmetic mean and geometric mean; AM–GM relation
+        learning_outcomes:
+          - Prove and apply AM ≥ GM
+      - id: cbse-11-mathematics-ch08-t04
+        title: Sums of n, n² and n³ (formative assessment only)
+        board_assessed: false
+        learning_outcomes:
+          - Use formulas for Σk, Σk², Σk³
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-mathematics-ch09
+    number: 9
+    title: Straight Lines
+    unit: "Unit III: Coordinate Geometry"
+    topics:
+      - id: cbse-11-mathematics-ch09-t01
+        title: Slope of a line and angle between lines
+        learning_outcomes:
+          - Find slopes and conditions for parallel and perpendicular lines
+      - id: cbse-11-mathematics-ch09-t02
+        title: Forms of the equation of a line
+        learning_outcomes:
+          - Write point-slope, slope-intercept, two-point and intercept forms
+      - id: cbse-11-mathematics-ch09-t03
+        title: Distance of a point from a line; distance between parallel lines
+        learning_outcomes:
+          - Calculate perpendicular distances
+      - id: cbse-11-mathematics-ch09-t04
+        title: Normal form and general equation of a line (formative assessment only)
+        board_assessed: false
+        learning_outcomes:
+          - Convert between general and normal forms
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-mathematics-ch10
+    number: 10
+    title: Conic Sections
+    unit: "Unit III: Coordinate Geometry"
+    topics:
+      - id: cbse-11-mathematics-ch10-t01
+        title: Sections of a cone; circle
+        learning_outcomes:
+          - Write the equation of a circle in standard form
+      - id: cbse-11-mathematics-ch10-t02
+        title: Parabola
+        learning_outcomes:
+          - Find focus, directrix and latus rectum of standard parabolas
+      - id: cbse-11-mathematics-ch10-t03
+        title: Ellipse and hyperbola
+        learning_outcomes:
+          - Find foci, vertices, eccentricity and latus rectum of standard ellipses and hyperbolas
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-mathematics-ch11
+    number: 11
+    title: Introduction to Three-dimensional Geometry
+    unit: "Unit III: Coordinate Geometry"
+    topics:
+      - id: cbse-11-mathematics-ch11-t01
+        title: Coordinate axes and planes; coordinates of a point
+        learning_outcomes:
+          - Locate points in space and identify octants
+      - id: cbse-11-mathematics-ch11-t02
+        title: Distance between two points
+        learning_outcomes:
+          - Calculate distances in 3D
+      - id: cbse-11-mathematics-ch11-t03
+        title: Section formula (formative assessment only)
+        board_assessed: false
+        learning_outcomes:
+          - Use the section formula in 3D
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-mathematics-ch12
+    number: 12
+    title: Limits and Derivatives
+    unit: "Unit IV: Calculus"
+    topics:
+      - id: cbse-11-mathematics-ch12-t01
+        title: Intuitive idea of limits; algebra of limits
+        learning_outcomes:
+          - Evaluate limits of polynomial, rational, trigonometric, exponential and logarithmic functions
+      - id: cbse-11-mathematics-ch12-t02
+        title: Derivative as rate of change and slope; first principles
+        learning_outcomes:
+          - Find derivatives from first principles
+      - id: cbse-11-mathematics-ch12-t03
+        title: Algebra of derivatives
+        learning_outcomes:
+          - Differentiate sums, differences, products and quotients of functions
+      - id: cbse-11-mathematics-ch12-t04
+        title: Derivatives of composite functions (chain rule) (formative assessment only)
+        board_assessed: false
+        learning_outcomes:
+          - Apply the chain rule
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-mathematics-ch13
+    number: 13
+    title: Statistics
+    unit: "Unit V: Statistics and Probability"
+    topics:
+      - id: cbse-11-mathematics-ch13-t01
+        title: "Measures of dispersion: range and mean deviation"
+        learning_outcomes:
+          - Calculate range and mean deviation for grouped and ungrouped data
+      - id: cbse-11-mathematics-ch13-t02
+        title: Variance and standard deviation
+        learning_outcomes:
+          - Calculate variance and standard deviation
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-mathematics-ch14
+    number: 14
+    title: Probability
+    unit: "Unit V: Statistics and Probability"
+    topics:
+      - id: cbse-11-mathematics-ch14-t01
+        title: "Events: types and algebra of events"
+        learning_outcomes:
+          - Classify events as mutually exclusive or exhaustive
+      - id: cbse-11-mathematics-ch14-t02
+        title: Axiomatic approach to probability
+        learning_outcomes:
+          - Apply axiomatic probability and the addition rule
+      - id: cbse-11-mathematics-ch14-t03
+        title: Random experiments, outcomes and sample spaces (formative assessment only)
+        board_assessed: false
+        learning_outcomes:
+          - Write sample spaces in set notation
+    removed_topics: []
+    literature_texts: []
+removed_topics:
+  - Principle of Mathematical Induction — formative assessment only (no separate chapter here)
+  - Mathematical Reasoning (deleted)
