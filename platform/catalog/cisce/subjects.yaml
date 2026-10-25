@@ -1,0 +1,5145 @@
+# CISCE subject catalog - ICSE curriculum Classes 7-10, ISC Classes 11-12 - academic year 2026-27.
+# Generated from official CISCE Regulations and Syllabuses; sources in platform/catalog/sources/cisce.md.
+#   Class 10 -> ICSE 2027 examination   Class 9  -> ICSE 2028 (two-year course, year one)
+#   Class 12 -> ISC 2027 examination    Class 11 -> ISC 2028 (two-year course, year one)
+#   Classes 7-8 -> CISCE Curriculum for Upper Primary Classes (VI-VIII)
+# Modelling: every separately examined paper with its own syllabus is its own subject
+# (English Language / Literature in English; Physics / Chemistry / Biology; History & Civics / Geography;
+#  each Performing Arts / Music option; each language in each group). Shared official codes repeat.
+# tier: core = platform core (compulsory subjects plus the mainstream subjects in the Wave 1 build list);
+#       language = any language subject; elective = everything else. priority 1 = core + Hindi.
+board: cisce
+academic_year: "2026-27"
+subjects:
+
+  # ---- ICSE-7 ----
+  - id: icse-7-english
+    board: cisce
+    exam: icse
+    class: 7
+    code: null
+    name: "English"
+    language: en
+    script: Latn
+    tier: core
+    wave: 3
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers. English as first language (language and literature together; CISCE prescribes no literature texts at this stage)."
+  - id: icse-7-hindi
+    board: cisce
+    exam: icse
+    class: 7
+    code: null
+    name: "Hindi (Second Language)"
+    language: hi
+    script: Deva
+    tier: language
+    wave: 3
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers. Hindi is the second language in the CISCE curriculum; textbooks chosen by schools."
+  - id: icse-7-mathematics
+    board: cisce
+    exam: icse
+    class: 7
+    code: null
+    name: "Mathematics"
+    language: en
+    script: Latn
+    tier: core
+    wave: 3
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers."
+  - id: icse-7-physics
+    board: cisce
+    exam: icse
+    class: 7
+    code: null
+    name: "Physics"
+    language: en
+    script: Latn
+    tier: core
+    wave: 3
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers. Science is taught as Physics, Chemistry and Biology from Class VI."
+  - id: icse-7-chemistry
+    board: cisce
+    exam: icse
+    class: 7
+    code: null
+    name: "Chemistry"
+    language: en
+    script: Latn
+    tier: core
+    wave: 3
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers."
+  - id: icse-7-biology
+    board: cisce
+    exam: icse
+    class: 7
+    code: null
+    name: "Biology"
+    language: en
+    script: Latn
+    tier: core
+    wave: 3
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers."
+  - id: icse-7-history-civics
+    board: cisce
+    exam: icse
+    class: 7
+    code: null
+    name: "History & Civics"
+    language: en
+    script: Latn
+    tier: core
+    wave: 3
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers. Part of History, Civics & Geography."
+  - id: icse-7-geography
+    board: cisce
+    exam: icse
+    class: 7
+    code: null
+    name: "Geography"
+    language: en
+    script: Latn
+    tier: core
+    wave: 3
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers. Part of History, Civics & Geography."
+  - id: icse-7-computer-studies
+    board: cisce
+    exam: icse
+    class: 7
+    code: null
+    name: "Computer Studies"
+    language: en
+    script: Latn
+    tier: core
+    wave: 3
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers."
+  - id: icse-7-sanskrit
+    board: cisce
+    exam: icse
+    class: 7
+    code: null
+    name: "Sanskrit (Third Language)"
+    language: sa
+    script: Deva
+    tier: language
+    wave: 3
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-sanskrit-v-viii
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers. Third language (Classes V-VIII); CISCE publishes a separate Sanskrit curriculum."
+  - id: icse-7-art-education
+    board: cisce
+    exam: icse
+    class: 7
+    code: null
+    name: "Arts Education (Visual Arts)"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 3
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers. Theory and appreciation only."
+  - id: icse-7-performing-arts
+    board: cisce
+    exam: icse
+    class: 7
+    code: null
+    name: "Performing Arts"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 3
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: cisce-performing-arts-vi-viii
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers. Separate CISCE curriculum (music, dance, theatre); theory only."
+  - id: icse-7-physical-education
+    board: cisce
+    exam: icse
+    class: 7
+    code: null
+    name: "Physical Education"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 3
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: cisce-physical-education-vi-viii
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers. Separate CISCE curriculum; theory only."
+
+  # ---- ICSE-8 ----
+  - id: icse-8-english
+    board: cisce
+    exam: icse
+    class: 8
+    code: null
+    name: "English"
+    language: en
+    script: Latn
+    tier: core
+    wave: 3
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers. English as first language (language and literature together; CISCE prescribes no literature texts at this stage)."
+  - id: icse-8-hindi
+    board: cisce
+    exam: icse
+    class: 8
+    code: null
+    name: "Hindi (Second Language)"
+    language: hi
+    script: Deva
+    tier: language
+    wave: 3
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers. Hindi is the second language in the CISCE curriculum; textbooks chosen by schools."
+  - id: icse-8-mathematics
+    board: cisce
+    exam: icse
+    class: 8
+    code: null
+    name: "Mathematics"
+    language: en
+    script: Latn
+    tier: core
+    wave: 3
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers."
+  - id: icse-8-physics
+    board: cisce
+    exam: icse
+    class: 8
+    code: null
+    name: "Physics"
+    language: en
+    script: Latn
+    tier: core
+    wave: 3
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers. Science is taught as Physics, Chemistry and Biology from Class VI."
+  - id: icse-8-chemistry
+    board: cisce
+    exam: icse
+    class: 8
+    code: null
+    name: "Chemistry"
+    language: en
+    script: Latn
+    tier: core
+    wave: 3
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers."
+  - id: icse-8-biology
+    board: cisce
+    exam: icse
+    class: 8
+    code: null
+    name: "Biology"
+    language: en
+    script: Latn
+    tier: core
+    wave: 3
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers."
+  - id: icse-8-history-civics
+    board: cisce
+    exam: icse
+    class: 8
+    code: null
+    name: "History & Civics"
+    language: en
+    script: Latn
+    tier: core
+    wave: 3
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers. Part of History, Civics & Geography."
+  - id: icse-8-geography
+    board: cisce
+    exam: icse
+    class: 8
+    code: null
+    name: "Geography"
+    language: en
+    script: Latn
+    tier: core
+    wave: 3
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers. Part of History, Civics & Geography."
+  - id: icse-8-computer-studies
+    board: cisce
+    exam: icse
+    class: 8
+    code: null
+    name: "Computer Studies"
+    language: en
+    script: Latn
+    tier: core
+    wave: 3
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers."
+  - id: icse-8-sanskrit
+    board: cisce
+    exam: icse
+    class: 8
+    code: null
+    name: "Sanskrit (Third Language)"
+    language: sa
+    script: Deva
+    tier: language
+    wave: 3
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: cisce-sanskrit-v-viii
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers. Third language (Classes V-VIII); CISCE publishes a separate Sanskrit curriculum."
+  - id: icse-8-art-education
+    board: cisce
+    exam: icse
+    class: 8
+    code: null
+    name: "Arts Education (Visual Arts)"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 3
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: cisce-upper-primary-curriculum
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers. Theory and appreciation only."
+  - id: icse-8-performing-arts
+    board: cisce
+    exam: icse
+    class: 8
+    code: null
+    name: "Performing Arts"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 3
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: cisce-performing-arts-vi-viii
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers. Separate CISCE curriculum (music, dance, theatre); theory only."
+  - id: icse-8-physical-education
+    board: cisce
+    exam: icse
+    class: 8
+    code: null
+    name: "Physical Education"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 3
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: cisce-physical-education-vi-viii
+    notes: "CISCE Upper Primary curriculum (Classes VI-VIII). No board examination; schools set their own papers. Separate CISCE curriculum; theory only."
+
+  # ---- ICSE-9 ----
+  - id: icse-9-english-language
+    board: cisce
+    exam: icse
+    class: 9
+    code: "01"
+    name: "English Language (English Paper 1)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-english
+    notes: "Group I (compulsory). ICSE English (01) is examined as two separately set papers; this is Paper 1 (2027 specimen paper code 011). External 80% + internal assessment 20%. Class IX in 2026-27 is year one of the two-year ICSE 2028 course; the syllabus document covers Classes IX and X and the Class IX portion is examined internally by the school."
+  - id: icse-9-literature-in-english
+    board: cisce
+    exam: icse
+    class: 9
+    code: "01"
+    name: "Literature in English (English Paper 2)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-english
+    notes: "Group I (compulsory). Paper 2 of English (01) (2027 specimen paper code 012); prescribed texts in Appendix I. External 80% + internal assessment 20%."
+  - id: icse-9-hindi
+    board: cisce
+    exam: icse
+    class: 9
+    code: "05"
+    name: "Hindi (Second Language)"
+    language: hi
+    script: Deva
+    tier: language
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language. Prescribed texts are bifurcated by class (CISCE Circular 2026-27/33): the Class IX school examination covers only the Class IX portion. External 80% + internal assessment 20%."
+  - id: icse-9-ao-naga
+    board: cisce
+    exam: icse
+    class: 9
+    code: "42"
+    name: "Ao Naga (Second Language)"
+    language: njo
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language)."
+  - id: icse-9-assamese
+    board: cisce
+    exam: icse
+    class: 9
+    code: "02"
+    name: "Assamese (Second Language)"
+    language: as
+    script: Beng
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-9-bengali
+    board: cisce
+    exam: icse
+    class: 9
+    code: "03"
+    name: "Bengali (Bangla) (Second Language)"
+    language: bn
+    script: Beng
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-9-bhutia
+    board: cisce
+    exam: icse
+    class: 9
+    code: "97"
+    name: "Bhutia (Second Language)"
+    language: sip
+    script: Tibt
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33). Bhutia (Sikkimese) is written in Tibetan script."
+  - id: icse-9-dzongkha
+    board: cisce
+    exam: icse
+    class: 9
+    code: "26"
+    name: "Dzongkha (Second Language)"
+    language: dz
+    script: Tibt
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language)."
+  - id: icse-9-garo
+    board: cisce
+    exam: icse
+    class: 9
+    code: "40"
+    name: "Garo (Second Language)"
+    language: grt
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language)."
+  - id: icse-9-gujarati
+    board: cisce
+    exam: icse
+    class: 9
+    code: "04"
+    name: "Gujarati (Second Language)"
+    language: gu
+    script: Gujr
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-9-kannada
+    board: cisce
+    exam: icse
+    class: 9
+    code: "06"
+    name: "Kannada (Second Language)"
+    language: kn
+    script: Knda
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-9-kashmiri
+    board: cisce
+    exam: icse
+    class: 9
+    code: null
+    name: "Kashmiri (Second Language)"
+    language: ks
+    script: Arab
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language). Listed in the regulations as an offered language but no subject code or prescribed texts appear in the syllabus or Appendix I; papers set on request."
+  - id: icse-9-khasi
+    board: cisce
+    exam: icse
+    class: 9
+    code: "07"
+    name: "Khasi (Second Language)"
+    language: kha
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language)."
+  - id: icse-9-kokborok
+    board: cisce
+    exam: icse
+    class: 9
+    code: null
+    name: "Kokborok (Second Language)"
+    language: trp
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language). Listed in the regulations as an offered language but no subject code or prescribed texts appear in the syllabus or Appendix I; papers set on request. Kokborok is taught in Roman script in most schools; confirm."
+  - id: icse-9-lepcha
+    board: cisce
+    exam: icse
+    class: 9
+    code: "20"
+    name: "Lepcha (Second Language)"
+    language: lep
+    script: Lepc
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language)."
+  - id: icse-9-malayalam
+    board: cisce
+    exam: icse
+    class: 9
+    code: "08"
+    name: "Malayalam (Second Language)"
+    language: ml
+    script: Mlym
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-9-manipuri
+    board: cisce
+    exam: icse
+    class: 9
+    code: "18"
+    name: "Manipuri (Second Language)"
+    language: mni
+    script: Mtei
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language). Script set to Meetei Mayek (Mtei); confirm against the prescribed textbook edition."
+  - id: icse-9-marathi
+    board: cisce
+    exam: icse
+    class: 9
+    code: "09"
+    name: "Marathi (Second Language)"
+    language: mr
+    script: Deva
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-9-mizo
+    board: cisce
+    exam: icse
+    class: 9
+    code: "17"
+    name: "Mizo (Second Language)"
+    language: lus
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language)."
+  - id: icse-9-nepali
+    board: cisce
+    exam: icse
+    class: 9
+    code: "10"
+    name: "Nepali (Second Language)"
+    language: ne
+    script: Deva
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-9-odia
+    board: cisce
+    exam: icse
+    class: 9
+    code: "11"
+    name: "Odia (Second Language)"
+    language: or
+    script: Orya
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-9-punjabi
+    board: cisce
+    exam: icse
+    class: 9
+    code: "12"
+    name: "Punjabi (Second Language)"
+    language: pa
+    script: Guru
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-9-sanskrit
+    board: cisce
+    exam: icse
+    class: 9
+    code: "19"
+    name: "Sanskrit (Second Language)"
+    language: sa
+    script: Deva
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language). Not combinable with Sanskrit as a Classical Language (Group II)."
+  - id: icse-9-tamil
+    board: cisce
+    exam: icse
+    class: 9
+    code: "13"
+    name: "Tamil (Second Language)"
+    language: ta
+    script: Taml
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-9-tangkhul
+    board: cisce
+    exam: icse
+    class: 9
+    code: "47"
+    name: "Tangkhul (Second Language)"
+    language: nmf
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language)."
+  - id: icse-9-telugu
+    board: cisce
+    exam: icse
+    class: 9
+    code: "14"
+    name: "Telugu (Second Language)"
+    language: te
+    script: Telu
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-9-tenyidie
+    board: cisce
+    exam: icse
+    class: 9
+    code: "41"
+    name: "Tenyidie (Second Language)"
+    language: njm
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language). Listed in the regulations and Appendix I (prescribed texts) but not in the Second Languages syllabus list of papers."
+  - id: icse-9-urdu
+    board: cisce
+    exam: icse
+    class: 9
+    code: "16"
+    name: "Urdu (Second Language)"
+    language: ur
+    script: Arab
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-9-french-second-language
+    board: cisce
+    exam: icse
+    class: 9
+    code: "27"
+    name: "French (Second Language, Group I)"
+    language: fr
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-mfl-group-1
+    notes: "Modern foreign language offered as the Group I second language. Cannot be combined with the same language in Group II/III."
+  - id: icse-9-german-second-language
+    board: cisce
+    exam: icse
+    class: 9
+    code: "28"
+    name: "German (Second Language, Group I)"
+    language: de
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-mfl-group-1
+    notes: "Modern foreign language offered as the Group I second language. Cannot be combined with the same language in Group II/III."
+  - id: icse-9-spanish-second-language
+    board: cisce
+    exam: icse
+    class: 9
+    code: "36"
+    name: "Spanish (Second Language, Group I)"
+    language: es
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-mfl-group-1
+    notes: "Modern foreign language offered as the Group I second language. Cannot be combined with the same language in Group II/III."
+  - id: icse-9-chinese-second-language
+    board: cisce
+    exam: icse
+    class: 9
+    code: "25"
+    name: "Chinese (Second Language, Group I)"
+    language: zh
+    script: Hans
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-mfl-group-1
+    notes: "Modern foreign language offered as the Group I second language. Cannot be combined with the same language in Group II/III."
+  - id: icse-9-tibetan-second-language
+    board: cisce
+    exam: icse
+    class: 9
+    code: "15"
+    name: "Tibetan (Second Language, Group I)"
+    language: bo
+    script: Tibt
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-mfl-group-1
+    notes: "Modern foreign language offered as the Group I second language. Cannot be combined with the same language in Group II/III."
+  - id: icse-9-modern-armenian-second-language
+    board: cisce
+    exam: icse
+    class: 9
+    code: "23"
+    name: "Modern Armenian (Second Language, Group I)"
+    language: hy
+    script: Armn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-mfl-group-1
+    notes: "Modern foreign language offered as the Group I second language. Cannot be combined with the same language in Group II/III."
+  - id: icse-9-portuguese-second-language
+    board: cisce
+    exam: icse
+    class: 9
+    code: "43"
+    name: "Portuguese (Second Language, Group I)"
+    language: pt
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-mfl-group-1
+    notes: "Modern foreign language offered as the Group I second language. Cannot be combined with the same language in Group II/III."
+  - id: icse-9-thai-second-language
+    board: cisce
+    exam: icse
+    class: 9
+    code: "38"
+    name: "Thai (Second Language, Group I)"
+    language: th
+    script: Thai
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-mfl-group-1
+    notes: "Modern foreign language offered as the Group I second language. Cannot be combined with the same language in Group II/III."
+  - id: icse-9-history-civics
+    board: cisce
+    exam: icse
+    class: 9
+    code: "50"
+    name: "History & Civics (H.C.G. Paper 1)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-history-civics
+    notes: "Group I (compulsory). History, Civics and Geography (50) is examined as two papers; this is Paper 1 (2027 specimen paper code 501). External 80% + internal assessment 20%."
+  - id: icse-9-geography
+    board: cisce
+    exam: icse
+    class: 9
+    code: "50"
+    name: "Geography (H.C.G. Paper 2)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-geography
+    notes: "Group I (compulsory). Paper 2 of History, Civics and Geography (50) (2027 specimen paper code 502). External 80% + internal assessment 20%."
+  - id: icse-9-history-civics-thailand
+    board: cisce
+    exam: icse
+    class: 9
+    code: "58"
+    name: "History & Civics (Thailand) (H.C.G. Thailand Paper 1)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-history-civics-thailand
+    notes: "Group I alternative to History, Civics and Geography, only for candidates from CISCE-affiliated schools in Thailand. Built after the Indian H.C.G. papers."
+  - id: icse-9-geography-thailand
+    board: cisce
+    exam: icse
+    class: 9
+    code: "58"
+    name: "Geography (Thailand) (H.C.G. Thailand Paper 2)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-geography-thailand
+    notes: "Group I alternative, only for affiliated schools in Thailand."
+  - id: icse-9-mathematics
+    board: cisce
+    exam: icse
+    class: 9
+    code: "51"
+    name: "Mathematics"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-mathematics
+    notes: "Group II. External 80% + internal assessment 20%."
+  - id: icse-9-physics
+    board: cisce
+    exam: icse
+    class: 9
+    code: "52"
+    name: "Physics (Science Paper 1)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-physics
+    notes: "Group II. Science (52) is examined as three separate papers - Physics, Chemistry, Biology - each with its own syllabus; this is Paper 1 (2027 specimen paper code 521). Each paper 80 marks (2 h) + 20 practical IA."
+  - id: icse-9-chemistry
+    board: cisce
+    exam: icse
+    class: 9
+    code: "52"
+    name: "Chemistry (Science Paper 2)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-chemistry
+    notes: "Group II. Science (52) Paper 2 (2027 specimen paper code 522). 80 marks (2 h) + 20 practical IA."
+  - id: icse-9-biology
+    board: cisce
+    exam: icse
+    class: 9
+    code: "52"
+    name: "Biology (Science Paper 3)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-biology
+    notes: "Group II. Science (52) Paper 3 (2027 specimen paper code 523). 80 marks (2 h) + 20 practical IA."
+  - id: icse-9-economics
+    board: cisce
+    exam: icse
+    class: 9
+    code: "64"
+    name: "Economics"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-economics
+    notes: "Group II. Not combinable with Economic Applications. External 80% + internal assessment 20%."
+  - id: icse-9-commercial-studies
+    board: cisce
+    exam: icse
+    class: 9
+    code: "63"
+    name: "Commercial Studies"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-commercial-studies
+    notes: "Group II. Not combinable with Commercial Applications. External 80% + internal assessment 20%."
+  - id: icse-9-french-group-2
+    board: cisce
+    exam: icse
+    class: 9
+    code: "77"
+    name: "French (Group II)"
+    language: fr
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-mfl-group-2
+    notes: "Modern foreign language as a Group II elective. External 80% + internal assessment 20%."
+  - id: icse-9-german-group-2
+    board: cisce
+    exam: icse
+    class: 9
+    code: "80"
+    name: "German (Group II)"
+    language: de
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-mfl-group-2
+    notes: "Modern foreign language as a Group II elective. External 80% + internal assessment 20%."
+  - id: icse-9-spanish-group-2
+    board: cisce
+    exam: icse
+    class: 9
+    code: "85"
+    name: "Spanish (Group II)"
+    language: es
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-mfl-group-2
+    notes: "Modern foreign language as a Group II elective. External 80% + internal assessment 20%."
+  - id: icse-9-modern-armenian-group-2
+    board: cisce
+    exam: icse
+    class: 9
+    code: "23"
+    name: "Modern Armenian (Group II)"
+    language: hy
+    script: Armn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-mfl-group-2
+    notes: "Modern foreign language as a Group II elective. External 80% + internal assessment 20%."
+  - id: icse-9-portuguese-group-2
+    board: cisce
+    exam: icse
+    class: 9
+    code: "81"
+    name: "Portuguese (Group II)"
+    language: pt
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-mfl-group-2
+    notes: "Modern foreign language as a Group II elective. External 80% + internal assessment 20%."
+  - id: icse-9-russian-group-2
+    board: cisce
+    exam: icse
+    class: 9
+    code: "79"
+    name: "Russian (Group II)"
+    language: ru
+    script: Cyrl
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-mfl-group-2
+    notes: "Modern foreign language as a Group II elective. External 80% + internal assessment 20%."
+  - id: icse-9-sanskrit-classical
+    board: cisce
+    exam: icse
+    class: 9
+    code: "76"
+    name: "Sanskrit (Classical Language, Group II)"
+    language: sa
+    script: Deva
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-classical-language
+    notes: "Group II Classical Language (76); papers are set in Sanskrit and other classical languages on request. Not combinable with Sanskrit as the Group I second language."
+  - id: icse-9-environmental-science
+    board: cisce
+    exam: icse
+    class: 9
+    code: "82"
+    name: "Environmental Science"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-environmental-science
+    notes: "Group II. Not combinable with Environmental Applications. External 80% + internal assessment 20%."
+  - id: icse-9-computer-applications
+    board: cisce
+    exam: icse
+    class: 9
+    code: "86"
+    name: "Computer Applications"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-computer-applications
+    notes: "Group III Section A. Treated as platform core (most widely taken Group III subject; Wave 1 build list). External 50% + internal assessment 50%."
+  - id: icse-9-economic-applications
+    board: cisce
+    exam: icse
+    class: 9
+    code: "87"
+    name: "Economic Applications"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-economic-applications
+    notes: "Group III Section A. External 50% + internal assessment 50%."
+  - id: icse-9-commercial-applications
+    board: cisce
+    exam: icse
+    class: 9
+    code: "88"
+    name: "Commercial Applications"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-commercial-applications
+    notes: "Group III Section A. External 50% + internal assessment 50%."
+  - id: icse-9-art
+    board: cisce
+    exam: icse
+    class: 9
+    code: "60"
+    name: "Art"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-art
+    notes: "Group III Section A. Examined through practical papers (drawing/painting, applied art); platform covers theory and technique notes only. External 50% + internal assessment 50%."
+  - id: icse-9-hindustani-music
+    board: cisce
+    exam: icse
+    class: 9
+    code: "91"
+    name: "Performing Arts: Hindustani Music"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-performing-arts
+    notes: "Group III Section A. Performing Arts option with its own syllabus and code; theory component only. External 50% + internal assessment 50%."
+  - id: icse-9-carnatic-music
+    board: cisce
+    exam: icse
+    class: 9
+    code: "92"
+    name: "Performing Arts: Carnatic Music"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-performing-arts
+    notes: "Group III Section A. Performing Arts option with its own syllabus and code; theory component only. External 50% + internal assessment 50%."
+  - id: icse-9-western-music
+    board: cisce
+    exam: icse
+    class: 9
+    code: "93"
+    name: "Performing Arts: Western Music"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-performing-arts
+    notes: "Group III Section A. Performing Arts option with its own syllabus and code; theory component only. External 50% + internal assessment 50%."
+  - id: icse-9-indian-dance
+    board: cisce
+    exam: icse
+    class: 9
+    code: "94"
+    name: "Performing Arts: Indian Dance"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-performing-arts
+    notes: "Group III Section A. Performing Arts option with its own syllabus and code; theory component only. External 50% + internal assessment 50%."
+  - id: icse-9-drama
+    board: cisce
+    exam: icse
+    class: 9
+    code: "95"
+    name: "Performing Arts: Drama"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-performing-arts
+    notes: "Group III Section A. Performing Arts option with its own syllabus and code; theory component only. External 50% + internal assessment 50%."
+  - id: icse-9-home-science
+    board: cisce
+    exam: icse
+    class: 9
+    code: "68"
+    name: "Home Science"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-home-science
+    notes: "Group III Section A. Theory paper only; practical work is internally assessed. External 50% + internal assessment 50%."
+  - id: icse-9-cookery
+    board: cisce
+    exam: icse
+    class: 9
+    code: "69"
+    name: "Cookery"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-cookery
+    notes: "Group III Section A. Theory paper only. External 50% + internal assessment 50%."
+  - id: icse-9-fashion-designing
+    board: cisce
+    exam: icse
+    class: 9
+    code: "70"
+    name: "Fashion Designing"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-fashion-designing
+    notes: "Group III Section A. Theory paper only. External 50% + internal assessment 50%."
+  - id: icse-9-physical-education
+    board: cisce
+    exam: icse
+    class: 9
+    code: "72"
+    name: "Physical Education"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-physical-education
+    notes: "Group III Section A. Theory paper only; practical/games are internally assessed. External 50% + internal assessment 50%."
+  - id: icse-9-yoga
+    board: cisce
+    exam: icse
+    class: 9
+    code: "84"
+    name: "Yoga"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-yoga
+    notes: "Group III Section A. Theory paper only. External 50% + internal assessment 50%."
+  - id: icse-9-technical-drawing-applications
+    board: cisce
+    exam: icse
+    class: 9
+    code: "65"
+    name: "Technical Drawing Applications"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-technical-drawing-applications
+    notes: "Group III Section A. Drawing-based paper; platform covers concepts and constructions only. External 50% + internal assessment 50%."
+  - id: icse-9-environmental-applications
+    board: cisce
+    exam: icse
+    class: 9
+    code: "89"
+    name: "Environmental Applications"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-environmental-applications
+    notes: "Group III Section A. External 50% + internal assessment 50%."
+  - id: icse-9-mass-media-communication
+    board: cisce
+    exam: icse
+    class: 9
+    code: "90"
+    name: "Mass Media & Communication"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-mass-media-communication
+    notes: "Group III Section A. External 50% + internal assessment 50%."
+  - id: icse-9-hospitality-management
+    board: cisce
+    exam: icse
+    class: 9
+    code: "73"
+    name: "Hospitality Management"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-hospitality-management
+    notes: "Group III Section A. Theory paper only. External 50% + internal assessment 50%."
+  - id: icse-9-robotics-artificial-intelligence
+    board: cisce
+    exam: icse
+    class: 9
+    code: "66"
+    name: "Robotics and Artificial Intelligence"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-vocational-robotics-ai
+    notes: "Group III Section B (vocational). Written paper 100 marks (2 h) + internal practical assessment 100 marks."
+  - id: icse-9-assistant-beauty-therapist
+    board: cisce
+    exam: icse
+    class: 9
+    code: "59"
+    name: "Assistant Beauty Therapist"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-vocational-beauty-therapist
+    notes: "Group III Section B (vocational). Written paper 100 marks (2 h) + internal practical assessment 100 marks."
+  - id: icse-9-assistant-hair-stylist
+    board: cisce
+    exam: icse
+    class: 9
+    code: "61"
+    name: "Assistant Hair Stylist"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-vocational-hair-stylist
+    notes: "Group III Section B (vocational). Written paper 100 marks (2 h) + internal practical assessment 100 marks."
+  - id: icse-9-basic-data-entry-operator
+    board: cisce
+    exam: icse
+    class: 9
+    code: "67"
+    name: "Basic Data Entry Operator"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-vocational-data-entry-operator
+    notes: "Group III Section B (vocational). Written paper 100 marks (2 h) + internal practical assessment 100 marks."
+  - id: icse-9-dietetic-aide
+    board: cisce
+    exam: icse
+    class: 9
+    code: "71"
+    name: "Dietetic Aide"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-vocational-dietetic-aide
+    notes: "Group III Section B (vocational). Written paper 100 marks (2 h) + internal practical assessment 100 marks."
+  - id: icse-9-cashier
+    board: cisce
+    exam: icse
+    class: 9
+    code: "74"
+    name: "Cashier"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-vocational-cashier
+    notes: "Group III Section B (vocational). Written paper 100 marks (2 h) + internal practical assessment 100 marks."
+  - id: icse-9-early-years-physical-activity-facilitator
+    board: cisce
+    exam: icse
+    class: 9
+    code: "75"
+    name: "Early Years Physical Activity Facilitator"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-vocational-early-years-pa-facilitator
+    notes: "Group III Section B (vocational). Written paper 100 marks (2 h) + internal practical assessment 100 marks."
+  - id: icse-9-auto-service-technician
+    board: cisce
+    exam: icse
+    class: 9
+    code: "96"
+    name: "Auto Service Technician"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-vocational-auto-service-technician
+    notes: "Group III Section B (vocational). Written paper 100 marks (2 h) + internal practical assessment 100 marks."
+  - id: icse-9-supw-community-service
+    board: cisce
+    exam: icse
+    class: 9
+    code: null
+    name: "Socially Useful Productive Work and Community Service (SUPW)"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-supw
+    notes: "Compulsory, assessed internally by the school; a pass grade is required for the certificate. No written board paper."
+  - id: icse-9-health-physical-education
+    board: cisce
+    exam: icse
+    class: 9
+    code: null
+    name: "Health and Physical Education"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2028-health-physical-education
+    notes: "New compulsory internally assessed subject from the ICSE 2028 cohort (CISCE circular, July 2026). Platform covers the health-awareness theory areas only."
+
+  # ---- ICSE-10 ----
+  - id: icse-10-english-language
+    board: cisce
+    exam: icse
+    class: 10
+    code: "01"
+    name: "English Language (English Paper 1)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-english
+    notes: "Group I (compulsory). ICSE English (01) is examined as two separately set papers; this is Paper 1 (2027 specimen paper code 011). External 80% + internal assessment 20%. ICSE 2027 examination (Class X in 2026-27)."
+  - id: icse-10-literature-in-english
+    board: cisce
+    exam: icse
+    class: 10
+    code: "01"
+    name: "Literature in English (English Paper 2)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-english
+    notes: "Group I (compulsory). Paper 2 of English (01) (2027 specimen paper code 012); prescribed texts in Appendix I. External 80% + internal assessment 20%."
+  - id: icse-10-hindi
+    board: cisce
+    exam: icse
+    class: 10
+    code: "05"
+    name: "Hindi (Second Language)"
+    language: hi
+    script: Deva
+    tier: language
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language. Prescribed texts are bifurcated by class (CISCE Circular 2026-27/33): the Class X board paper covers only the Class X portion. External 80% + internal assessment 20%."
+  - id: icse-10-ao-naga
+    board: cisce
+    exam: icse
+    class: 10
+    code: "42"
+    name: "Ao Naga (Second Language)"
+    language: njo
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language)."
+  - id: icse-10-assamese
+    board: cisce
+    exam: icse
+    class: 10
+    code: "02"
+    name: "Assamese (Second Language)"
+    language: as
+    script: Beng
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-10-bengali
+    board: cisce
+    exam: icse
+    class: 10
+    code: "03"
+    name: "Bengali (Bangla) (Second Language)"
+    language: bn
+    script: Beng
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-10-bhutia
+    board: cisce
+    exam: icse
+    class: 10
+    code: "97"
+    name: "Bhutia (Second Language)"
+    language: sip
+    script: Tibt
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33). Bhutia (Sikkimese) is written in Tibetan script."
+  - id: icse-10-dzongkha
+    board: cisce
+    exam: icse
+    class: 10
+    code: "26"
+    name: "Dzongkha (Second Language)"
+    language: dz
+    script: Tibt
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language)."
+  - id: icse-10-garo
+    board: cisce
+    exam: icse
+    class: 10
+    code: "40"
+    name: "Garo (Second Language)"
+    language: grt
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language)."
+  - id: icse-10-gujarati
+    board: cisce
+    exam: icse
+    class: 10
+    code: "04"
+    name: "Gujarati (Second Language)"
+    language: gu
+    script: Gujr
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-10-kannada
+    board: cisce
+    exam: icse
+    class: 10
+    code: "06"
+    name: "Kannada (Second Language)"
+    language: kn
+    script: Knda
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-10-kashmiri
+    board: cisce
+    exam: icse
+    class: 10
+    code: null
+    name: "Kashmiri (Second Language)"
+    language: ks
+    script: Arab
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language). Listed in the regulations as an offered language but no subject code or prescribed texts appear in the syllabus or Appendix I; papers set on request."
+  - id: icse-10-khasi
+    board: cisce
+    exam: icse
+    class: 10
+    code: "07"
+    name: "Khasi (Second Language)"
+    language: kha
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language)."
+  - id: icse-10-kokborok
+    board: cisce
+    exam: icse
+    class: 10
+    code: null
+    name: "Kokborok (Second Language)"
+    language: trp
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language). Listed in the regulations as an offered language but no subject code or prescribed texts appear in the syllabus or Appendix I; papers set on request. Kokborok is taught in Roman script in most schools; confirm."
+  - id: icse-10-lepcha
+    board: cisce
+    exam: icse
+    class: 10
+    code: "20"
+    name: "Lepcha (Second Language)"
+    language: lep
+    script: Lepc
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language)."
+  - id: icse-10-malayalam
+    board: cisce
+    exam: icse
+    class: 10
+    code: "08"
+    name: "Malayalam (Second Language)"
+    language: ml
+    script: Mlym
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-10-manipuri
+    board: cisce
+    exam: icse
+    class: 10
+    code: "18"
+    name: "Manipuri (Second Language)"
+    language: mni
+    script: Mtei
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language). Script set to Meetei Mayek (Mtei); confirm against the prescribed textbook edition."
+  - id: icse-10-marathi
+    board: cisce
+    exam: icse
+    class: 10
+    code: "09"
+    name: "Marathi (Second Language)"
+    language: mr
+    script: Deva
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-10-mizo
+    board: cisce
+    exam: icse
+    class: 10
+    code: "17"
+    name: "Mizo (Second Language)"
+    language: lus
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language)."
+  - id: icse-10-nepali
+    board: cisce
+    exam: icse
+    class: 10
+    code: "10"
+    name: "Nepali (Second Language)"
+    language: ne
+    script: Deva
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-10-odia
+    board: cisce
+    exam: icse
+    class: 10
+    code: "11"
+    name: "Odia (Second Language)"
+    language: or
+    script: Orya
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-10-punjabi
+    board: cisce
+    exam: icse
+    class: 10
+    code: "12"
+    name: "Punjabi (Second Language)"
+    language: pa
+    script: Guru
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-10-sanskrit
+    board: cisce
+    exam: icse
+    class: 10
+    code: "19"
+    name: "Sanskrit (Second Language)"
+    language: sa
+    script: Deva
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language). Not combinable with Sanskrit as a Classical Language (Group II)."
+  - id: icse-10-tamil
+    board: cisce
+    exam: icse
+    class: 10
+    code: "13"
+    name: "Tamil (Second Language)"
+    language: ta
+    script: Taml
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-10-tangkhul
+    board: cisce
+    exam: icse
+    class: 10
+    code: "47"
+    name: "Tangkhul (Second Language)"
+    language: nmf
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language)."
+  - id: icse-10-telugu
+    board: cisce
+    exam: icse
+    class: 10
+    code: "14"
+    name: "Telugu (Second Language)"
+    language: te
+    script: Telu
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-10-tenyidie
+    board: cisce
+    exam: icse
+    class: 10
+    code: "41"
+    name: "Tenyidie (Second Language)"
+    language: njm
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language). Listed in the regulations and Appendix I (prescribed texts) but not in the Second Languages syllabus list of papers."
+  - id: icse-10-urdu
+    board: cisce
+    exam: icse
+    class: 10
+    code: "16"
+    name: "Urdu (Second Language)"
+    language: ur
+    script: Arab
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-second-languages
+    notes: "Group I second language (Indian language). Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: icse-10-french-second-language
+    board: cisce
+    exam: icse
+    class: 10
+    code: "27"
+    name: "French (Second Language, Group I)"
+    language: fr
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-french-group-1
+    notes: "Modern foreign language offered as the Group I second language. Cannot be combined with the same language in Group II/III."
+  - id: icse-10-german-second-language
+    board: cisce
+    exam: icse
+    class: 10
+    code: "28"
+    name: "German (Second Language, Group I)"
+    language: de
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-mfl-group-1
+    notes: "Modern foreign language offered as the Group I second language. Cannot be combined with the same language in Group II/III."
+  - id: icse-10-spanish-second-language
+    board: cisce
+    exam: icse
+    class: 10
+    code: "36"
+    name: "Spanish (Second Language, Group I)"
+    language: es
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-mfl-group-1
+    notes: "Modern foreign language offered as the Group I second language. Cannot be combined with the same language in Group II/III."
+  - id: icse-10-history-civics
+    board: cisce
+    exam: icse
+    class: 10
+    code: "50"
+    name: "History & Civics (H.C.G. Paper 1)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-history-civics
+    notes: "Group I (compulsory). History, Civics and Geography (50) is examined as two papers; this is Paper 1 (2027 specimen paper code 501). External 80% + internal assessment 20%."
+  - id: icse-10-geography
+    board: cisce
+    exam: icse
+    class: 10
+    code: "50"
+    name: "Geography (H.C.G. Paper 2)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-geography
+    notes: "Group I (compulsory). Paper 2 of History, Civics and Geography (50) (2027 specimen paper code 502). External 80% + internal assessment 20%."
+  - id: icse-10-history-civics-thailand
+    board: cisce
+    exam: icse
+    class: 10
+    code: "58"
+    name: "History & Civics (Thailand) (H.C.G. Thailand Paper 1)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-history-civics-thailand
+    notes: "Group I alternative to History, Civics and Geography, only for candidates from CISCE-affiliated schools in Thailand. Built after the Indian H.C.G. papers."
+  - id: icse-10-geography-thailand
+    board: cisce
+    exam: icse
+    class: 10
+    code: "58"
+    name: "Geography (Thailand) (H.C.G. Thailand Paper 2)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-geography-thailand
+    notes: "Group I alternative, only for affiliated schools in Thailand."
+  - id: icse-10-mathematics
+    board: cisce
+    exam: icse
+    class: 10
+    code: "51"
+    name: "Mathematics"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-mathematics
+    notes: "Group II. External 80% + internal assessment 20%."
+  - id: icse-10-physics
+    board: cisce
+    exam: icse
+    class: 10
+    code: "52"
+    name: "Physics (Science Paper 1)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-physics
+    notes: "Group II. Science (52) is examined as three separate papers - Physics, Chemistry, Biology - each with its own syllabus; this is Paper 1 (2027 specimen paper code 521). Each paper 80 marks (2 h) + 20 practical IA."
+  - id: icse-10-chemistry
+    board: cisce
+    exam: icse
+    class: 10
+    code: "52"
+    name: "Chemistry (Science Paper 2)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-chemistry
+    notes: "Group II. Science (52) Paper 2 (2027 specimen paper code 522). 80 marks (2 h) + 20 practical IA."
+  - id: icse-10-biology
+    board: cisce
+    exam: icse
+    class: 10
+    code: "52"
+    name: "Biology (Science Paper 3)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-biology
+    notes: "Group II. Science (52) Paper 3 (2027 specimen paper code 523). 80 marks (2 h) + 20 practical IA."
+  - id: icse-10-economics
+    board: cisce
+    exam: icse
+    class: 10
+    code: "64"
+    name: "Economics"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-economics
+    notes: "Group II. Not combinable with Economic Applications. External 80% + internal assessment 20%."
+  - id: icse-10-commercial-studies
+    board: cisce
+    exam: icse
+    class: 10
+    code: "63"
+    name: "Commercial Studies"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-commercial-studies
+    notes: "Group II. Not combinable with Commercial Applications. External 80% + internal assessment 20%."
+  - id: icse-10-french-group-2
+    board: cisce
+    exam: icse
+    class: 10
+    code: "77"
+    name: "French (Group II)"
+    language: fr
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-mfl-group-2
+    notes: "Modern foreign language as a Group II elective. External 80% + internal assessment 20%."
+  - id: icse-10-german-group-2
+    board: cisce
+    exam: icse
+    class: 10
+    code: "80"
+    name: "German (Group II)"
+    language: de
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-mfl-group-2
+    notes: "Modern foreign language as a Group II elective. External 80% + internal assessment 20%."
+  - id: icse-10-spanish-group-2
+    board: cisce
+    exam: icse
+    class: 10
+    code: "85"
+    name: "Spanish (Group II)"
+    language: es
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-mfl-group-2
+    notes: "Modern foreign language as a Group II elective. External 80% + internal assessment 20%."
+  - id: icse-10-sanskrit-classical
+    board: cisce
+    exam: icse
+    class: 10
+    code: "76"
+    name: "Sanskrit (Classical Language, Group II)"
+    language: sa
+    script: Deva
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-classical-language
+    notes: "Group II Classical Language (76); papers are set in Sanskrit and other classical languages on request. Not combinable with Sanskrit as the Group I second language."
+  - id: icse-10-environmental-science
+    board: cisce
+    exam: icse
+    class: 10
+    code: "82"
+    name: "Environmental Science"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-environmental-science
+    notes: "Group II. Not combinable with Environmental Applications. External 80% + internal assessment 20%."
+  - id: icse-10-computer-applications
+    board: cisce
+    exam: icse
+    class: 10
+    code: "86"
+    name: "Computer Applications"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-computer-applications
+    notes: "Group III Section A. Treated as platform core (most widely taken Group III subject; Wave 1 build list). External 50% + internal assessment 50%."
+  - id: icse-10-economic-applications
+    board: cisce
+    exam: icse
+    class: 10
+    code: "87"
+    name: "Economic Applications"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-economic-applications
+    notes: "Group III Section A. External 50% + internal assessment 50%."
+  - id: icse-10-commercial-applications
+    board: cisce
+    exam: icse
+    class: 10
+    code: "88"
+    name: "Commercial Applications"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-commercial-applications
+    notes: "Group III Section A. External 50% + internal assessment 50%."
+  - id: icse-10-art
+    board: cisce
+    exam: icse
+    class: 10
+    code: "60"
+    name: "Art"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-art
+    notes: "Group III Section A. Examined through practical papers (drawing/painting, applied art); platform covers theory and technique notes only. External 50% + internal assessment 50%."
+  - id: icse-10-hindustani-music
+    board: cisce
+    exam: icse
+    class: 10
+    code: "91"
+    name: "Performing Arts: Hindustani Music"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-performing-arts
+    notes: "Group III Section A. Performing Arts option with its own syllabus and code; theory component only. External 50% + internal assessment 50%."
+  - id: icse-10-carnatic-music
+    board: cisce
+    exam: icse
+    class: 10
+    code: "92"
+    name: "Performing Arts: Carnatic Music"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-performing-arts
+    notes: "Group III Section A. Performing Arts option with its own syllabus and code; theory component only. External 50% + internal assessment 50%."
+  - id: icse-10-western-music
+    board: cisce
+    exam: icse
+    class: 10
+    code: "93"
+    name: "Performing Arts: Western Music"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-performing-arts
+    notes: "Group III Section A. Performing Arts option with its own syllabus and code; theory component only. External 50% + internal assessment 50%."
+  - id: icse-10-indian-dance
+    board: cisce
+    exam: icse
+    class: 10
+    code: "94"
+    name: "Performing Arts: Indian Dance"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-performing-arts
+    notes: "Group III Section A. Performing Arts option with its own syllabus and code; theory component only. External 50% + internal assessment 50%."
+  - id: icse-10-drama
+    board: cisce
+    exam: icse
+    class: 10
+    code: "95"
+    name: "Performing Arts: Drama"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-performing-arts
+    notes: "Group III Section A. Performing Arts option with its own syllabus and code; theory component only. External 50% + internal assessment 50%."
+  - id: icse-10-home-science
+    board: cisce
+    exam: icse
+    class: 10
+    code: "68"
+    name: "Home Science"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-home-science
+    notes: "Group III Section A. Theory paper only; practical work is internally assessed. External 50% + internal assessment 50%."
+  - id: icse-10-cookery
+    board: cisce
+    exam: icse
+    class: 10
+    code: "69"
+    name: "Cookery"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-cookery
+    notes: "Group III Section A. Theory paper only. External 50% + internal assessment 50%."
+  - id: icse-10-fashion-designing
+    board: cisce
+    exam: icse
+    class: 10
+    code: "70"
+    name: "Fashion Designing"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-fashion-designing
+    notes: "Group III Section A. Theory paper only. External 50% + internal assessment 50%."
+  - id: icse-10-physical-education
+    board: cisce
+    exam: icse
+    class: 10
+    code: "72"
+    name: "Physical Education"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-physical-education
+    notes: "Group III Section A. Theory paper only; practical/games are internally assessed. External 50% + internal assessment 50%."
+  - id: icse-10-yoga
+    board: cisce
+    exam: icse
+    class: 10
+    code: "84"
+    name: "Yoga"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-yoga
+    notes: "Group III Section A. Theory paper only. External 50% + internal assessment 50%."
+  - id: icse-10-technical-drawing-applications
+    board: cisce
+    exam: icse
+    class: 10
+    code: "65"
+    name: "Technical Drawing Applications"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-technical-drawing-applications
+    notes: "Group III Section A. Drawing-based paper; platform covers concepts and constructions only. External 50% + internal assessment 50%."
+  - id: icse-10-environmental-applications
+    board: cisce
+    exam: icse
+    class: 10
+    code: "89"
+    name: "Environmental Applications"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-environmental-applications
+    notes: "Group III Section A. External 50% + internal assessment 50%."
+  - id: icse-10-french-group-3
+    board: cisce
+    exam: icse
+    class: 10
+    code: "53"
+    name: "French (Group III)"
+    language: fr
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-mfl-group-3
+    notes: "Group III Section A modern foreign language (ICSE 2027 only; not in the ICSE 2028 Group III list)."
+  - id: icse-10-spanish-group-3
+    board: cisce
+    exam: icse
+    class: 10
+    code: "54"
+    name: "Spanish (Group III)"
+    language: es
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-mfl-group-3
+    notes: "Group III Section A modern foreign language (ICSE 2027 only; not in the ICSE 2028 Group III list)."
+  - id: icse-10-german-group-3
+    board: cisce
+    exam: icse
+    class: 10
+    code: "55"
+    name: "German (Group III)"
+    language: de
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-mfl-group-3
+    notes: "Group III Section A modern foreign language (ICSE 2027 only; not in the ICSE 2028 Group III list)."
+  - id: icse-10-mass-media-communication
+    board: cisce
+    exam: icse
+    class: 10
+    code: "90"
+    name: "Mass Media & Communication"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-mass-media-communication
+    notes: "Group III Section A. External 50% + internal assessment 50%."
+  - id: icse-10-hospitality-management
+    board: cisce
+    exam: icse
+    class: 10
+    code: "73"
+    name: "Hospitality Management"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-hospitality-management
+    notes: "Group III Section A. Theory paper only. External 50% + internal assessment 50%."
+  - id: icse-10-robotics-artificial-intelligence
+    board: cisce
+    exam: icse
+    class: 10
+    code: "66"
+    name: "Robotics and Artificial Intelligence"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-vocational-robotics-ai
+    notes: "Group III Section B (vocational). Written paper 100 marks (2 h) + internal practical assessment 100 marks."
+  - id: icse-10-assistant-beauty-therapist
+    board: cisce
+    exam: icse
+    class: 10
+    code: "59"
+    name: "Assistant Beauty Therapist"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-vocational-beauty-therapist
+    notes: "Group III Section B (vocational). Written paper 100 marks (2 h) + internal practical assessment 100 marks."
+  - id: icse-10-assistant-hair-stylist
+    board: cisce
+    exam: icse
+    class: 10
+    code: "61"
+    name: "Assistant Hair Stylist"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-vocational-hair-stylist
+    notes: "Group III Section B (vocational). Written paper 100 marks (2 h) + internal practical assessment 100 marks."
+  - id: icse-10-basic-data-entry-operator
+    board: cisce
+    exam: icse
+    class: 10
+    code: "67"
+    name: "Basic Data Entry Operator"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-vocational-data-entry-operator
+    notes: "Group III Section B (vocational). Written paper 100 marks (2 h) + internal practical assessment 100 marks."
+  - id: icse-10-dietetic-aide
+    board: cisce
+    exam: icse
+    class: 10
+    code: "71"
+    name: "Dietetic Aide"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-vocational-dietetic-aide
+    notes: "Group III Section B (vocational). Written paper 100 marks (2 h) + internal practical assessment 100 marks."
+  - id: icse-10-cashier
+    board: cisce
+    exam: icse
+    class: 10
+    code: "74"
+    name: "Cashier"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-vocational-cashier
+    notes: "Group III Section B (vocational). Written paper 100 marks (2 h) + internal practical assessment 100 marks."
+  - id: icse-10-early-years-physical-activity-facilitator
+    board: cisce
+    exam: icse
+    class: 10
+    code: "75"
+    name: "Early Years Physical Activity Facilitator"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-vocational-early-years-pa-facilitator
+    notes: "Group III Section B (vocational). Written paper 100 marks (2 h) + internal practical assessment 100 marks."
+  - id: icse-10-auto-service-technician
+    board: cisce
+    exam: icse
+    class: 10
+    code: "96"
+    name: "Auto Service Technician"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: icse-2027-vocational-auto-service-technician
+    notes: "Group III Section B (vocational). Written paper 100 marks (2 h) + internal practical assessment 100 marks."
+  - id: icse-10-supw-community-service
+    board: cisce
+    exam: icse
+    class: 10
+    code: null
+    name: "Socially Useful Productive Work and Community Service (SUPW)"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: icse-2027-supw
+    notes: "Compulsory, assessed internally by the school; a pass grade is required for the certificate. No written board paper."
+
+  # ---- ISC-11 ----
+  - id: isc-11-english-language
+    board: cisce
+    exam: isc
+    class: 11
+    code: "801"
+    name: "English Language (English Paper 1)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-english
+    notes: "Compulsory. ISC English (801) has two components, each a separate 80-mark theory paper + 20-mark project: this is English Language. Class XI in 2026-27 is year one of the two-year ISC 2028 course."
+  - id: isc-11-literature-in-english
+    board: cisce
+    exam: isc
+    class: 11
+    code: "801"
+    name: "Literature in English (English Paper 2)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-english
+    notes: "Compulsory. English (801) component 2: prescribed texts (Appendix I). 80 marks theory + 20 project."
+  - id: isc-11-modern-english-language
+    board: cisce
+    exam: isc
+    class: 11
+    code: "891"
+    name: "Modern English: English Language (Paper 1)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-modern-english
+    notes: "Compulsory alternative to English (cannot be taken with English). Modern English (891) component 1."
+  - id: isc-11-modern-english-literature
+    board: cisce
+    exam: isc
+    class: 11
+    code: "891"
+    name: "Modern English: Literature in English (Paper 2)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-modern-english
+    notes: "Modern English (891) component 2: prescribed texts."
+  - id: isc-11-hindi
+    board: cisce
+    exam: isc
+    class: 11
+    code: "805"
+    name: "Hindi"
+    language: hi
+    script: Deva
+    tier: language
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. Prescribed texts are bifurcated by class (Circular 2026-27/33): the Class XI school examination covers only the Class XI portion. 80 marks theory (3 h) + 20 project."
+  - id: isc-11-assamese
+    board: cisce
+    exam: isc
+    class: 11
+    code: "817"
+    name: "Assamese"
+    language: as
+    script: Beng
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project."
+  - id: isc-11-bengali
+    board: cisce
+    exam: isc
+    class: 11
+    code: "803"
+    name: "Bengali (Bangla)"
+    language: bn
+    script: Beng
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-11-bhutia
+    board: cisce
+    exam: isc
+    class: 11
+    code: "882"
+    name: "Bhutia"
+    language: sip
+    script: Tibt
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33). Bhutia (Sikkimese) is written in Tibetan script."
+  - id: isc-11-dzongkha
+    board: cisce
+    exam: isc
+    class: 11
+    code: "819"
+    name: "Dzongkha"
+    language: dz
+    script: Tibt
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project."
+  - id: isc-11-gujarati
+    board: cisce
+    exam: isc
+    class: 11
+    code: "804"
+    name: "Gujarati"
+    language: gu
+    script: Gujr
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-11-kannada
+    board: cisce
+    exam: isc
+    class: 11
+    code: "806"
+    name: "Kannada"
+    language: kn
+    script: Knda
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-11-khasi
+    board: cisce
+    exam: isc
+    class: 11
+    code: "807"
+    name: "Khasi"
+    language: kha
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project."
+  - id: isc-11-lepcha
+    board: cisce
+    exam: isc
+    class: 11
+    code: "821"
+    name: "Lepcha"
+    language: lep
+    script: Lepc
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project."
+  - id: isc-11-malayalam
+    board: cisce
+    exam: isc
+    class: 11
+    code: "809"
+    name: "Malayalam"
+    language: ml
+    script: Mlym
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-11-manipuri
+    board: cisce
+    exam: isc
+    class: 11
+    code: "818"
+    name: "Manipuri"
+    language: mni
+    script: Mtei
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Script set to Meetei Mayek (Mtei); confirm against the prescribed textbook edition."
+  - id: isc-11-marathi
+    board: cisce
+    exam: isc
+    class: 11
+    code: "810"
+    name: "Marathi"
+    language: mr
+    script: Deva
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project."
+  - id: isc-11-mizo
+    board: cisce
+    exam: isc
+    class: 11
+    code: "808"
+    name: "Mizo"
+    language: lus
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project."
+  - id: isc-11-nepali
+    board: cisce
+    exam: isc
+    class: 11
+    code: "811"
+    name: "Nepali"
+    language: ne
+    script: Deva
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-11-odia
+    board: cisce
+    exam: isc
+    class: 11
+    code: "812"
+    name: "Odia"
+    language: or
+    script: Orya
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-11-punjabi
+    board: cisce
+    exam: isc
+    class: 11
+    code: "813"
+    name: "Punjabi"
+    language: pa
+    script: Guru
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-11-tamil
+    board: cisce
+    exam: isc
+    class: 11
+    code: "814"
+    name: "Tamil"
+    language: ta
+    script: Taml
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-11-telugu
+    board: cisce
+    exam: isc
+    class: 11
+    code: "815"
+    name: "Telugu"
+    language: te
+    script: Telu
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-11-urdu
+    board: cisce
+    exam: isc
+    class: 11
+    code: "816"
+    name: "Urdu"
+    language: ur
+    script: Arab
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-11-chinese
+    board: cisce
+    exam: isc
+    class: 11
+    code: "826"
+    name: "Chinese"
+    language: zh
+    script: Hans
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-mfl
+    notes: "Elective modern foreign language."
+  - id: isc-11-french
+    board: cisce
+    exam: isc
+    class: 11
+    code: "828"
+    name: "French"
+    language: fr
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-mfl
+    notes: "Elective modern foreign language."
+  - id: isc-11-german
+    board: cisce
+    exam: isc
+    class: 11
+    code: "829"
+    name: "German"
+    language: de
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-mfl
+    notes: "Elective modern foreign language."
+  - id: isc-11-tibetan
+    board: cisce
+    exam: isc
+    class: 11
+    code: "835"
+    name: "Tibetan"
+    language: bo
+    script: Tibt
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-mfl
+    notes: "Elective modern foreign language."
+  - id: isc-11-spanish
+    board: cisce
+    exam: isc
+    class: 11
+    code: "836"
+    name: "Spanish"
+    language: es
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-mfl
+    notes: "Elective modern foreign language."
+  - id: isc-11-modern-armenian
+    board: cisce
+    exam: isc
+    class: 11
+    code: "833"
+    name: "Modern Armenian"
+    language: hy
+    script: Armn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-mfl
+    notes: "Elective modern foreign language."
+  - id: isc-11-portuguese
+    board: cisce
+    exam: isc
+    class: 11
+    code: "840"
+    name: "Portuguese"
+    language: pt
+    script: Latn
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-mfl
+    notes: "Elective modern foreign language."
+  - id: isc-11-thai
+    board: cisce
+    exam: isc
+    class: 11
+    code: "830"
+    name: "Thai"
+    language: th
+    script: Thai
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-mfl
+    notes: "Elective modern foreign language."
+  - id: isc-11-arabic-classical
+    board: cisce
+    exam: isc
+    class: 11
+    code: "837"
+    name: "Arabic (Classical)"
+    language: ar
+    script: Arab
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-classical-languages
+    notes: "Elective classical language."
+  - id: isc-11-sanskrit-classical
+    board: cisce
+    exam: isc
+    class: 11
+    code: "838"
+    name: "Sanskrit (Classical)"
+    language: sa
+    script: Deva
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-classical-languages
+    notes: "Elective classical language."
+  - id: isc-11-persian-classical
+    board: cisce
+    exam: isc
+    class: 11
+    code: "839"
+    name: "Persian (Classical)"
+    language: fa
+    script: Arab
+    tier: language
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-classical-languages
+    notes: "Elective classical language."
+  - id: isc-11-elective-english
+    board: cisce
+    exam: isc
+    class: 11
+    code: "850"
+    name: "Elective English"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-elective-english
+    notes: "Elective; literature-focused, distinct from compulsory English."
+  - id: isc-11-history
+    board: cisce
+    exam: isc
+    class: 11
+    code: "851"
+    name: "History"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-history
+    notes: "ISC elective; platform core (Wave 1 build list)."
+  - id: isc-11-political-science
+    board: cisce
+    exam: isc
+    class: 11
+    code: "852"
+    name: "Political Science"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-political-science
+    notes: "ISC elective; platform core."
+  - id: isc-11-geography
+    board: cisce
+    exam: isc
+    class: 11
+    code: "853"
+    name: "Geography"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-geography
+    notes: "ISC elective; platform core. Theory + practical paper."
+  - id: isc-11-sociology
+    board: cisce
+    exam: isc
+    class: 11
+    code: "854"
+    name: "Sociology"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-sociology
+    notes: "ISC elective; platform core."
+  - id: isc-11-psychology
+    board: cisce
+    exam: isc
+    class: 11
+    code: "855"
+    name: "Psychology"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-psychology
+    notes: "ISC elective; platform core."
+  - id: isc-11-economics
+    board: cisce
+    exam: isc
+    class: 11
+    code: "856"
+    name: "Economics"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-economics
+    notes: "ISC elective; platform core."
+  - id: isc-11-business-studies
+    board: cisce
+    exam: isc
+    class: 11
+    code: "857"
+    name: "Business Studies"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-business-studies
+    notes: "ISC 2028 regulations: \"Business Studies (previously known as Commerce)\", code 857. Platform core."
+  - id: isc-11-accounts
+    board: cisce
+    exam: isc
+    class: 11
+    code: "858"
+    name: "Accounts"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-accounts
+    notes: "Syllabus document titled Accountancy (858). Platform core."
+  - id: isc-11-entrepreneurship
+    board: cisce
+    exam: isc
+    class: 11
+    code: "859"
+    name: "Entrepreneurship"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-entrepreneurship
+    notes: "New in ISC 2028 under code 859 (previously Business Studies). Platform core as the successor of ISC Business Studies."
+  - id: isc-11-mathematics
+    board: cisce
+    exam: isc
+    class: 11
+    code: "860"
+    name: "Mathematics"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-mathematics
+    notes: "ISC elective; platform core. Not combinable with Applied Mathematics."
+  - id: isc-11-physics
+    board: cisce
+    exam: isc
+    class: 11
+    code: "861"
+    name: "Physics"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-physics
+    notes: "Paper 1 theory (70) + Paper 2 practical (30, practical 15 + project 10 + practical file 5). Platform covers Paper 1 theory."
+  - id: isc-11-chemistry
+    board: cisce
+    exam: isc
+    class: 11
+    code: "862"
+    name: "Chemistry"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-chemistry
+    notes: "Paper 1 theory (70) + Paper 2 practical (30). Platform covers Paper 1 theory."
+  - id: isc-11-biology
+    board: cisce
+    exam: isc
+    class: 11
+    code: "863"
+    name: "Biology"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-biology
+    notes: "Paper 1 theory (70) + Paper 2 practical (30). Platform covers Paper 1 theory."
+  - id: isc-11-home-science
+    board: cisce
+    exam: isc
+    class: 11
+    code: "864"
+    name: "Home Science"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-home-science
+    notes: "Theory + practical; platform covers theory."
+  - id: isc-11-fashion-designing
+    board: cisce
+    exam: isc
+    class: 11
+    code: "865"
+    name: "Fashion Designing"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-fashion-designing
+    notes: "Theory + practical; platform covers theory."
+  - id: isc-11-electricity-electronics
+    board: cisce
+    exam: isc
+    class: 11
+    code: "866"
+    name: "Electricity and Electronics"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-electricity-electronics
+    notes: "Theory + practical; platform covers theory."
+  - id: isc-11-engineering-science
+    board: cisce
+    exam: isc
+    class: 11
+    code: "867"
+    name: "Engineering Science"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-engineering-science
+    notes: "Not combinable with Physics."
+  - id: isc-11-computer-science
+    board: cisce
+    exam: isc
+    class: 11
+    code: "868"
+    name: "Computer Science"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-computer-science
+    notes: "ISC elective; platform core. Paper 1 theory (70) + Paper 2 practical (30)."
+  - id: isc-11-geometrical-mechanical-drawing
+    board: cisce
+    exam: isc
+    class: 11
+    code: "869"
+    name: "Geometrical and Mechanical Drawing"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-geometrical-mechanical-drawing
+    notes: "Drawing paper; platform covers concepts and constructions only. Not combinable with Geometrical and Building Drawing."
+  - id: isc-11-geometrical-building-drawing
+    board: cisce
+    exam: isc
+    class: 11
+    code: "870"
+    name: "Geometrical and Building Drawing"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-geometrical-building-drawing
+    notes: "Drawing paper; platform covers concepts and constructions only."
+  - id: isc-11-art
+    board: cisce
+    exam: isc
+    class: 11
+    code: "871"
+    name: "Art"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-art
+    notes: "Papers 1 to 6 (practical drawing/painting/crafts and history of art); platform covers theory (history and appreciation of art) only."
+  - id: isc-11-hindustani-music
+    board: cisce
+    exam: isc
+    class: 11
+    code: "872"
+    name: "Music: Indian Music - Hindustani"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-music
+    notes: "Music option; platform covers theory only."
+  - id: isc-11-carnatic-music
+    board: cisce
+    exam: isc
+    class: 11
+    code: "873"
+    name: "Music: Indian Music - Carnatic"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-music
+    notes: "Music option; platform covers theory only."
+  - id: isc-11-western-music
+    board: cisce
+    exam: isc
+    class: 11
+    code: "874"
+    name: "Music: Western Music"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-music
+    notes: "Music option; platform covers theory only."
+  - id: isc-11-physical-education
+    board: cisce
+    exam: isc
+    class: 11
+    code: "875"
+    name: "Physical Education"
+    language: en
+    script: Latn
+    tier: core
+    wave: 2
+    priority: 1
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-physical-education
+    notes: "ISC elective; platform core (Wave 1 build list). Theory paper only; practical internally assessed."
+  - id: isc-11-environmental-science
+    board: cisce
+    exam: isc
+    class: 11
+    code: "877"
+    name: "Environmental Science"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-environmental-science
+    notes: null
+  - id: isc-11-biotechnology
+    board: cisce
+    exam: isc
+    class: 11
+    code: "878"
+    name: "Biotechnology"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-biotechnology
+    notes: "Theory + practical; platform covers theory."
+  - id: isc-11-mass-media-communication
+    board: cisce
+    exam: isc
+    class: 11
+    code: "879"
+    name: "Mass Media & Communication"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-mass-media-communication
+    notes: null
+  - id: isc-11-hospitality-management
+    board: cisce
+    exam: isc
+    class: 11
+    code: "880"
+    name: "Hospitality Management"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-hospitality-management
+    notes: "Theory + practical; platform covers theory."
+  - id: isc-11-legal-studies
+    board: cisce
+    exam: isc
+    class: 11
+    code: "881"
+    name: "Legal Studies"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-legal-studies
+    notes: null
+  - id: isc-11-artificial-intelligence
+    board: cisce
+    exam: isc
+    class: 11
+    code: "883"
+    name: "Artificial Intelligence"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-artificial-intelligence
+    notes: "Not combinable with Robotics."
+  - id: isc-11-robotics
+    board: cisce
+    exam: isc
+    class: 11
+    code: "884"
+    name: "Robotics"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-robotics
+    notes: null
+  - id: isc-11-applied-mathematics
+    board: cisce
+    exam: isc
+    class: 11
+    code: "885"
+    name: "Applied Mathematics"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: false
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-applied-mathematics
+    notes: "For Humanities/Commerce streams. Not combinable with Mathematics."
+  - id: isc-11-supw-community-service
+    board: cisce
+    exam: isc
+    class: 11
+    code: null
+    name: "Socially Useful Productive Work and Community Service (SUPW)"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-supw
+    notes: "Compulsory, assessed internally by the school; no written board paper."
+  - id: isc-11-health-physical-education
+    board: cisce
+    exam: isc
+    class: 11
+    code: null
+    name: "Health and Physical Education"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 2
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: isc-2028-health-physical-education
+    notes: "New compulsory internally assessed subject from the ISC 2028 cohort (CISCE circular, July 2026). Platform covers health-awareness theory only."
+
+  # ---- ISC-12 ----
+  - id: isc-12-english-language
+    board: cisce
+    exam: isc
+    class: 12
+    code: "801"
+    name: "English Language (English Paper 1)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-english
+    notes: "Compulsory. ISC English (801) has two components, each a separate 80-mark theory paper + 20-mark project: this is English Language."
+  - id: isc-12-literature-in-english
+    board: cisce
+    exam: isc
+    class: 12
+    code: "801"
+    name: "Literature in English (English Paper 2)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-english
+    notes: "Compulsory. English (801) component 2: prescribed texts (Appendix I). 80 marks theory + 20 project."
+  - id: isc-12-modern-english-language
+    board: cisce
+    exam: isc
+    class: 12
+    code: "891"
+    name: "Modern English: English Language (Paper 1)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-modern-english
+    notes: "Compulsory alternative to English (cannot be taken with English). Modern English (891) component 1."
+  - id: isc-12-modern-english-literature
+    board: cisce
+    exam: isc
+    class: 12
+    code: "891"
+    name: "Modern English: Literature in English (Paper 2)"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-modern-english
+    notes: "Modern English (891) component 2: prescribed texts."
+  - id: isc-12-hindi
+    board: cisce
+    exam: isc
+    class: 12
+    code: "805"
+    name: "Hindi"
+    language: hi
+    script: Deva
+    tier: language
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. Prescribed texts are bifurcated by class (Circular 2026-27/33): the Class XII board paper covers only the Class XII portion. 80 marks theory (3 h) + 20 project."
+  - id: isc-12-assamese
+    board: cisce
+    exam: isc
+    class: 12
+    code: "817"
+    name: "Assamese"
+    language: as
+    script: Beng
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project."
+  - id: isc-12-bengali
+    board: cisce
+    exam: isc
+    class: 12
+    code: "803"
+    name: "Bengali (Bangla)"
+    language: bn
+    script: Beng
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-12-bhutia
+    board: cisce
+    exam: isc
+    class: 12
+    code: "882"
+    name: "Bhutia"
+    language: sip
+    script: Tibt
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33). Bhutia (Sikkimese) is written in Tibetan script."
+  - id: isc-12-dzongkha
+    board: cisce
+    exam: isc
+    class: 12
+    code: "819"
+    name: "Dzongkha"
+    language: dz
+    script: Tibt
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project."
+  - id: isc-12-gujarati
+    board: cisce
+    exam: isc
+    class: 12
+    code: "804"
+    name: "Gujarati"
+    language: gu
+    script: Gujr
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-12-kannada
+    board: cisce
+    exam: isc
+    class: 12
+    code: "806"
+    name: "Kannada"
+    language: kn
+    script: Knda
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-12-khasi
+    board: cisce
+    exam: isc
+    class: 12
+    code: "807"
+    name: "Khasi"
+    language: kha
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project."
+  - id: isc-12-lepcha
+    board: cisce
+    exam: isc
+    class: 12
+    code: "821"
+    name: "Lepcha"
+    language: lep
+    script: Lepc
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project."
+  - id: isc-12-malayalam
+    board: cisce
+    exam: isc
+    class: 12
+    code: "809"
+    name: "Malayalam"
+    language: ml
+    script: Mlym
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-12-manipuri
+    board: cisce
+    exam: isc
+    class: 12
+    code: "818"
+    name: "Manipuri"
+    language: mni
+    script: Mtei
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Script set to Meetei Mayek (Mtei); confirm against the prescribed textbook edition."
+  - id: isc-12-marathi
+    board: cisce
+    exam: isc
+    class: 12
+    code: "810"
+    name: "Marathi"
+    language: mr
+    script: Deva
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project."
+  - id: isc-12-mizo
+    board: cisce
+    exam: isc
+    class: 12
+    code: "808"
+    name: "Mizo"
+    language: lus
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project."
+  - id: isc-12-nepali
+    board: cisce
+    exam: isc
+    class: 12
+    code: "811"
+    name: "Nepali"
+    language: ne
+    script: Deva
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-12-odia
+    board: cisce
+    exam: isc
+    class: 12
+    code: "812"
+    name: "Odia"
+    language: or
+    script: Orya
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-12-punjabi
+    board: cisce
+    exam: isc
+    class: 12
+    code: "813"
+    name: "Punjabi"
+    language: pa
+    script: Guru
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-12-tamil
+    board: cisce
+    exam: isc
+    class: 12
+    code: "814"
+    name: "Tamil"
+    language: ta
+    script: Taml
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-12-telugu
+    board: cisce
+    exam: isc
+    class: 12
+    code: "815"
+    name: "Telugu"
+    language: te
+    script: Telu
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-12-urdu
+    board: cisce
+    exam: isc
+    class: 12
+    code: "816"
+    name: "Urdu"
+    language: ur
+    script: Arab
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-indian-languages
+    notes: "Elective Indian language. 80 marks theory + 20 project. Prescribed texts bifurcated by class (Circular 2026-27/33)."
+  - id: isc-12-chinese
+    board: cisce
+    exam: isc
+    class: 12
+    code: "826"
+    name: "Chinese"
+    language: zh
+    script: Hans
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-mfl
+    notes: "Elective modern foreign language."
+  - id: isc-12-french
+    board: cisce
+    exam: isc
+    class: 12
+    code: "828"
+    name: "French"
+    language: fr
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-mfl
+    notes: "Elective modern foreign language."
+  - id: isc-12-german
+    board: cisce
+    exam: isc
+    class: 12
+    code: "829"
+    name: "German"
+    language: de
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-mfl
+    notes: "Elective modern foreign language."
+  - id: isc-12-tibetan
+    board: cisce
+    exam: isc
+    class: 12
+    code: "835"
+    name: "Tibetan"
+    language: bo
+    script: Tibt
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-mfl
+    notes: "Elective modern foreign language."
+  - id: isc-12-spanish
+    board: cisce
+    exam: isc
+    class: 12
+    code: "836"
+    name: "Spanish"
+    language: es
+    script: Latn
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-mfl
+    notes: "Elective modern foreign language."
+  - id: isc-12-arabic-classical
+    board: cisce
+    exam: isc
+    class: 12
+    code: "837"
+    name: "Arabic (Classical)"
+    language: ar
+    script: Arab
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-classical-languages
+    notes: "Elective classical language."
+  - id: isc-12-sanskrit-classical
+    board: cisce
+    exam: isc
+    class: 12
+    code: "838"
+    name: "Sanskrit (Classical)"
+    language: sa
+    script: Deva
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-classical-languages
+    notes: "Elective classical language."
+  - id: isc-12-persian-classical
+    board: cisce
+    exam: isc
+    class: 12
+    code: "839"
+    name: "Persian (Classical)"
+    language: fa
+    script: Arab
+    tier: language
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-classical-languages
+    notes: "Elective classical language."
+  - id: isc-12-elective-english
+    board: cisce
+    exam: isc
+    class: 12
+    code: "850"
+    name: "Elective English"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-elective-english
+    notes: "Elective; literature-focused, distinct from compulsory English."
+  - id: isc-12-history
+    board: cisce
+    exam: isc
+    class: 12
+    code: "851"
+    name: "History"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-history
+    notes: "ISC elective; platform core (Wave 1 build list)."
+  - id: isc-12-political-science
+    board: cisce
+    exam: isc
+    class: 12
+    code: "852"
+    name: "Political Science"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-political-science
+    notes: "ISC elective; platform core."
+  - id: isc-12-geography
+    board: cisce
+    exam: isc
+    class: 12
+    code: "853"
+    name: "Geography"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-geography
+    notes: "ISC elective; platform core. Theory + practical paper."
+  - id: isc-12-sociology
+    board: cisce
+    exam: isc
+    class: 12
+    code: "854"
+    name: "Sociology"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-sociology
+    notes: "ISC elective; platform core."
+  - id: isc-12-psychology
+    board: cisce
+    exam: isc
+    class: 12
+    code: "855"
+    name: "Psychology"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-psychology
+    notes: "ISC elective; platform core."
+  - id: isc-12-economics
+    board: cisce
+    exam: isc
+    class: 12
+    code: "856"
+    name: "Economics"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-economics
+    notes: "ISC elective; platform core."
+  - id: isc-12-commerce
+    board: cisce
+    exam: isc
+    class: 12
+    code: "857"
+    name: "Commerce"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-commerce
+    notes: "ISC elective; platform core. From the ISC 2028 cohort this subject is renamed Business Studies (857)."
+  - id: isc-12-accounts
+    board: cisce
+    exam: isc
+    class: 12
+    code: "858"
+    name: "Accounts"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-accounts
+    notes: "ISC elective; platform core. Syllabus document titled Accountancy (858)."
+  - id: isc-12-business-studies
+    board: cisce
+    exam: isc
+    class: 12
+    code: "859"
+    name: "Business Studies"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-business-studies
+    notes: "ISC elective; platform core. From the ISC 2028 cohort code 859 becomes Entrepreneurship."
+  - id: isc-12-mathematics
+    board: cisce
+    exam: isc
+    class: 12
+    code: "860"
+    name: "Mathematics"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-mathematics
+    notes: "ISC elective; platform core. Not combinable with Applied Mathematics."
+  - id: isc-12-physics
+    board: cisce
+    exam: isc
+    class: 12
+    code: "861"
+    name: "Physics"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-physics
+    notes: "Paper 1 theory (70) + Paper 2 practical (30, practical 15 + project 10 + practical file 5). Platform covers Paper 1 theory."
+  - id: isc-12-chemistry
+    board: cisce
+    exam: isc
+    class: 12
+    code: "862"
+    name: "Chemistry"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-chemistry
+    notes: "Paper 1 theory (70) + Paper 2 practical (30). Platform covers Paper 1 theory."
+  - id: isc-12-biology
+    board: cisce
+    exam: isc
+    class: 12
+    code: "863"
+    name: "Biology"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-biology
+    notes: "Paper 1 theory (70) + Paper 2 practical (30). Platform covers Paper 1 theory."
+  - id: isc-12-home-science
+    board: cisce
+    exam: isc
+    class: 12
+    code: "864"
+    name: "Home Science"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-home-science
+    notes: "Theory + practical; platform covers theory."
+  - id: isc-12-fashion-designing
+    board: cisce
+    exam: isc
+    class: 12
+    code: "865"
+    name: "Fashion Designing"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-fashion-designing
+    notes: "Theory + practical; platform covers theory."
+  - id: isc-12-electricity-electronics
+    board: cisce
+    exam: isc
+    class: 12
+    code: "866"
+    name: "Electricity and Electronics"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-electricity-electronics
+    notes: "Theory + practical; platform covers theory."
+  - id: isc-12-engineering-science
+    board: cisce
+    exam: isc
+    class: 12
+    code: "867"
+    name: "Engineering Science"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-engineering-science
+    notes: "Not combinable with Physics."
+  - id: isc-12-computer-science
+    board: cisce
+    exam: isc
+    class: 12
+    code: "868"
+    name: "Computer Science"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-computer-science
+    notes: "ISC elective; platform core. Paper 1 theory (70) + Paper 2 practical (30)."
+  - id: isc-12-geometrical-mechanical-drawing
+    board: cisce
+    exam: isc
+    class: 12
+    code: "869"
+    name: "Geometrical and Mechanical Drawing"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-geometrical-mechanical-drawing
+    notes: "Drawing paper; platform covers concepts and constructions only. Not combinable with Geometrical and Building Drawing."
+  - id: isc-12-geometrical-building-drawing
+    board: cisce
+    exam: isc
+    class: 12
+    code: "870"
+    name: "Geometrical and Building Drawing"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-geometrical-building-drawing
+    notes: "Drawing paper; platform covers concepts and constructions only."
+  - id: isc-12-art
+    board: cisce
+    exam: isc
+    class: 12
+    code: "871"
+    name: "Art"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-art
+    notes: "Papers 1 to 6 (practical drawing/painting/crafts and history of art); platform covers theory (history and appreciation of art) only."
+  - id: isc-12-hindustani-music
+    board: cisce
+    exam: isc
+    class: 12
+    code: "872"
+    name: "Music: Indian Music - Hindustani"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-music
+    notes: "Music option; platform covers theory only."
+  - id: isc-12-carnatic-music
+    board: cisce
+    exam: isc
+    class: 12
+    code: "873"
+    name: "Music: Indian Music - Carnatic"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-music
+    notes: "Music option; platform covers theory only."
+  - id: isc-12-western-music
+    board: cisce
+    exam: isc
+    class: 12
+    code: "874"
+    name: "Music: Western Music"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-music
+    notes: "Music option; platform covers theory only."
+  - id: isc-12-physical-education
+    board: cisce
+    exam: isc
+    class: 12
+    code: "875"
+    name: "Physical Education"
+    language: en
+    script: Latn
+    tier: core
+    wave: 1
+    priority: 1
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-physical-education
+    notes: "ISC elective; platform core (Wave 1 build list). Theory paper only; practical internally assessed."
+  - id: isc-12-environmental-science
+    board: cisce
+    exam: isc
+    class: 12
+    code: "877"
+    name: "Environmental Science"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-environmental-science
+    notes: null
+  - id: isc-12-biotechnology
+    board: cisce
+    exam: isc
+    class: 12
+    code: "878"
+    name: "Biotechnology"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-biotechnology
+    notes: "Theory + practical; platform covers theory."
+  - id: isc-12-mass-media-communication
+    board: cisce
+    exam: isc
+    class: 12
+    code: "879"
+    name: "Mass Media & Communication"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-mass-media-communication
+    notes: null
+  - id: isc-12-hospitality-management
+    board: cisce
+    exam: isc
+    class: 12
+    code: "880"
+    name: "Hospitality Management"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-hospitality-management
+    notes: "Theory + practical; platform covers theory."
+  - id: isc-12-legal-studies
+    board: cisce
+    exam: isc
+    class: 12
+    code: "881"
+    name: "Legal Studies"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-legal-studies
+    notes: null
+  - id: isc-12-artificial-intelligence
+    board: cisce
+    exam: isc
+    class: 12
+    code: "883"
+    name: "Artificial Intelligence"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-artificial-intelligence
+    notes: "Not combinable with Robotics."
+  - id: isc-12-robotics
+    board: cisce
+    exam: isc
+    class: 12
+    code: "884"
+    name: "Robotics"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-robotics
+    notes: null
+  - id: isc-12-applied-mathematics
+    board: cisce
+    exam: isc
+    class: 12
+    code: "885"
+    name: "Applied Mathematics"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: false
+    has_board_exam: true
+    source_status: verified
+    source: isc-2027-applied-mathematics
+    notes: "For Humanities/Commerce streams. Not combinable with Mathematics."
+  - id: isc-12-supw-community-service
+    board: cisce
+    exam: isc
+    class: 12
+    code: null
+    name: "Socially Useful Productive Work and Community Service (SUPW)"
+    language: en
+    script: Latn
+    tier: elective
+    wave: 1
+    priority: 2
+    theory_only: true
+    has_board_exam: false
+    source_status: verified
+    source: isc-2027-supw
+    notes: "Compulsory, assessed internally by the school; no written board paper."
