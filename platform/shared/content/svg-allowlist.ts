@@ -47,4 +47,9 @@ export const SVG_RULES = {
 } as const;
 
 /** Colours diagrams should use, so they read in light and dark mode. Renderers map these to theme tokens. */
-export const DIAGRAM_PALETTE = ['currentColor', 'none', 'var(--diagram-accent)', 'var(--diagram-muted)', 'var(--diagram-fill)'] as const;
+export const DIAGRAM_PALETTE = [
+  'currentColor', 'none',
+  'var(--diagram-accent)', 'var(--diagram-muted)', 'var(--diagram-fill)',
+  // Named colours for things whose colour is the point (blue solution, yellow precipitate); light + dark values ≥ 3:1.
+  'var(--diagram-blue)', 'var(--diagram-green)', 'var(--diagram-yellow)', 'var(--diagram-brown)', 'var(--diagram-red)',
+] as const;

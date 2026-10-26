@@ -1,6 +1,6 @@
 # ADR-009: Platform web dependencies and test tooling
 
-- **Status:** Proposed (design-system, M1); for Lead approval with the branch merge
+- **Status:** Accepted (Lead, 2026-10-26, on merge of `platform/design-system/m1`; evidence: marketing regression zero-diff, byte-identical marketing CSS, 422 component tests)
 - **Date:** 2026-10-26
 - **Author:** design-system
 - **Related:** ADR-001 §7 and §9 (root dependencies must be additive, need an ADR and a green marketing regression); ADR-007 (diagram rendering, pipeline-engineer); ARCHITECTURE §3.2, §16; security requirements WEB-1, WEB-3, WEB-6, WEB-7, GEN-5; threat model AC-19, AC-22; finding F-012; DECISIONS D-012
