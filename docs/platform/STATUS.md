@@ -46,7 +46,7 @@ Single source of truth for progress (AGENTS.md §4.3). Updated by the Lead after
 | M1 | CBSE Wave 1 language syllabi (Class 10 + 12) | curriculum-architect (CBSE-L) | `platform/curriculum-cbse/m1-languages` | language syllabus dirs under `platform/catalog/cbse/{10,12}/` | in progress | — |
 | M1 (wave B) | API: Fastify app, auth (Google, phone OTP, email OTP — mock providers), me, catalog, health, route policy, edge auth, rate limits, OpenAPI; worker skeleton — api 207 tests (95% lines), worker 44 | backend-api | `platform/backend-api/m1` | `platform/api/` except `ai/`, `billing/`; `platform/worker/` | **merged** | real providers: OA-05/06/07/08 |
 | M1 (wave B) | Web: route group, platform layout + flag, proxy route (ADR-005), login (Google, phone OTP, email OTP), guest mode + merge, catalog pages, /me | web-platform | `platform/web-platform/m1` | `app/(platform)/`, `components/platform/` (not `ui/`), `platform/shared/api-client/` | in progress (started on backend contract 551f4ba) | — |
-| M2 (content, early) | CBSE 10 Science ch02–ch05 hand-authored to exemplar standard (D-026) | subject-producer | `platform/subject-producer/cbse-10-science-a` | `platform/content/authored/science/` | in progress | — |
+| M2 (content, early) | CBSE 10 Science ch02–ch05 hand-authored (11 decks, 230 slides, 42 SVG diagrams, 308 Qs, 8 tests; gate 85/85, lint clean) | subject-producer | `platform/subject-producer/cbse-10-science-a` | `platform/content/authored/science/` | **merged** 4d4f1e2 | — |
 
 ## Backlog (found at integration)
 
@@ -74,3 +74,12 @@ Process: after every integration the Lead checks the platform-ci run for the new
 | 2026-10-27 | Worker health port: worker listens on WORKER_HEALTH_PORT (8081) but the worker Dockerfile comment assumes 8080 | deployment agent | open |
 | 2026-10-27 | M2 content | CBSE 10 Maths ch01–ch04 hand-authored (280 Qs, 551/551 numeric re-solves, gate 57/57, lint clean) | subject-producer | `platform/subject-producer/cbse-10-maths-a` | `platform/content/authored/maths/` | **merged** e2e4ffc | — |
 | 2026-10-27 | M2 API | Content (hub, deck, notes, flashcards), practice + server-side grading, progress, reports, XP/streaks, staff TOTP; lesson_progress / practice_answers / user_mfa migrations | backend-api M2 | `platform/backend-api/m2` | `platform/api/`, `platform/db/` (new migrations) | in progress | — |
+| 2026-10-27 | M2 content | CBSE 10 Science ch06–ch09 | subject-producer | `platform/subject-producer/cbse-10-science-b` | `platform/content/authored/science/` | in progress | — |
+
+### Content coverage (hand-authored, gate + lint clean) — 2026-10-27
+| Subject | Chapters done | of | Questions |
+|---|---|---|---|
+| CBSE 10 Science | ch01–ch05 | 13 (+ ch14 formative-only) | 385 |
+| CBSE 10 Mathematics | ch01–ch04, ch06 | 14 | 358 |
+| CBSE 10 Hindi A | ch02, ch10 | 18 | 163 |
+| **Total** | **12 chapters** | | **906** |
