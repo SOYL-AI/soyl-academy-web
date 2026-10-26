@@ -1,0 +1,356 @@
+# ICSE Class 9 Nepali (Second Language, code 10) - ICSE 2028 course, CLASS IX portion only.
+# Literature: titles and authors only (CONTEXT section 8). Students read the texts in their own textbook.
+subject_id: icse-9-nepali
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2028-second-languages, icse-2028-prescribed-books, cisce-circular-2026-27-33-indian-languages, icse-2028-regulations]
+exam_notes: >-
+  Class IX is year one of the two-year ICSE 2028 course: there is no board examination in Class IX. The school conducts the
+  Class IX examination, normally on the ICSE paper pattern: one paper of 3 hours, 80 marks, plus internal assessment 20 marks
+  (two or three assignments in Class IX, of which two are written - one from language and one from literature; suggested Class
+  IX work: creative writing of about 300-400 words from stimuli such as recorded music or sounds, a picture, an opening
+  sentence or a news clipping, a film or book review, an aural (listening) exercise, and literature assignments on
+  character/theme, background and summary; marked 10 by the subject teacher and 10 by an external examiner). Section A Language
+  (40 marks, compulsory): one composition, one letter (choice of two), an unseen comprehension passage of about 250 words, and
+  grammar (vocabulary, syntax and idiom, sentence synthesis, sentences embodying given words or forms). Section B Prescribed
+  Texts (40 marks): answer four questions from ONLY two of the four prescribed books; questions are set and answered in the
+  language. Prescribed texts are bifurcated (Second Languages syllabus and Circular 2026-27/33): the Class IX examination is
+  set ONLY on the Class IX portion listed here (Class X portion is in icse-10-nepali); Section A is not bifurcated. Sahitya
+  Kunj and Ekanki Kunj are published by Gamma Publication, Darjeeling. The author of the play Tika is printed in Appendix I as
+  "Mohan - Pukar". Devanagari spellings of some titles and names are SOYL renderings of the CISCE transliteration (e.g. Mrityu
+  Kai Mukhenji, Mrityu Kamana Kehi Mera, Tekdhoj Jimba); title_en keeps the CISCE form. CISCE describes the grammar component
+  only generically and says it needs no knowledge of grammatical terms; the grammar chapters below break it into item types
+  commonly set in ICSE papers - this breakdown is SOYL's, not CISCE's. CISCE lists topics not chapters; SOYL grouped them into
+  teachable chapters in syllabus order. SOYL covers all four prescribed books so a student can pick any two.
+units:
+  - { name: "खण्ड क - भाषा (Section A: Language)", marks: 40 }
+  - { name: "खण्ड ख - निर्धारित पाठ्यपुस्तकहरू (Section B: Prescribed Texts)", marks: 40 }
+chapters:
+  - id: icse-9-nepali-ch01
+    number: 1
+    title: "निबन्ध / रचना लेखन"
+    title_en: "Composition writing"
+    unit: "खण्ड क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-9-nepali-ch01-t01
+        title: "रचनाको योजना: विषय छनोट, रूपरेखा, भूमिका, विस्तार र उपसंहार"
+        title_en: "Planning a composition: topic, outline, introduction, body and conclusion"
+        learning_outcomes:
+          - "दिइएको विषयमा रूपरेखा बनाएर २५०-३०० शब्दको सुसङ्गठित रचना लेख्नु"
+          - "अनुच्छेदहरूलाई तार्किक क्रममा जोड्नु"
+      - id: icse-9-nepali-ch01-t02
+        title: "वर्णनात्मक र आख्यानात्मक रचना"
+        title_en: "Descriptive and narrative compositions"
+        learning_outcomes:
+          - "कुनै ठाउँ, घटना वा अनुभवको सजीव वर्णन गर्नु"
+          - "घटनाहरूलाई क्रमबद्ध र रोचक ढङ्गले बयान गर्नु"
+      - id: icse-9-nepali-ch01-t03
+        title: "व्याख्यात्मक र विचारात्मक रचना: निर्देशन, प्रक्रिया र तर्क"
+        title_en: "Explanations, directions and reflective or argumentative writing"
+        learning_outcomes:
+          - "कुनै काम वा प्रक्रिया चरणबद्ध रूपमा बुझाउनु"
+          - "सामाजिक विषयमा पक्ष र विपक्षका तर्क दिएर निष्कर्ष लेख्नु"
+      - id: icse-9-nepali-ch01-t04
+        title: "चित्र, वस्तु वा दिइएको वाक्यमा आधारित रचना"
+        title_en: "Composition from a picture, object or given opening line"
+        learning_outcomes:
+          - "दिइएको चित्र वा सुरुको वाक्यबाट मौलिक कथा लेख्नु"
+      - id: icse-9-nepali-ch01-t05
+        title: "भाषिक शुद्धता: हिज्जे, विराम चिह्न र उपयुक्त शब्दचयन"
+        title_en: "Accuracy: spelling, punctuation and apt word choice"
+        learning_outcomes:
+          - "आफ्नो रचनामा हिज्जे र विराम चिह्नका त्रुटि पहिचान गरी सच्याउनु"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-nepali-ch02
+    number: 2
+    title: "चिठी लेखन"
+    title_en: "Letter writing"
+    unit: "खण्ड क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-9-nepali-ch02-t01
+        title: "औपचारिक चिठीको ढाँचा: ठेगाना, मिति, प्रापक, विषय, सम्बोधन र समापन"
+        title_en: "Layout of a formal letter: address, date, addressee, subject, salutation and closing"
+        learning_outcomes:
+          - "औपचारिक चिठीका सबै अङ्ग सही क्रम र ढाँचामा लेख्नु"
+      - id: icse-9-nepali-ch02-t02
+        title: "प्रधानाध्यापक, सम्पादक र अधिकारीलाई चिठी: निवेदन, गुनासो, सुझाव"
+        title_en: "Letters to a principal, editor or official: application, complaint, suggestion"
+        learning_outcomes:
+          - "समस्या छोटकरीमा र नम्रतापूर्वक राखेर उचित माग लेख्नु"
+      - id: icse-9-nepali-ch02-t03
+        title: "अनौपचारिक चिठी: साथी, आमाबुबा वा आफन्तलाई"
+        title_en: "Informal letters to friends, parents or relatives"
+        learning_outcomes:
+          - "उचित सम्बोधन, आत्मीय भाषा र समापन प्रयोग गरी अनौपचारिक चिठी लेख्नु"
+      - id: icse-9-nepali-ch02-t04
+        title: "दिइएका बुँदाका आधारमा चिठीको विस्तार"
+        title_en: "Developing a letter from given points"
+        learning_outcomes:
+          - "प्रश्नमा दिइएका सबै बुँदा चिठीमा समेट्नु"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-nepali-ch03
+    number: 3
+    title: "अपठित गद्यांश"
+    title_en: "Unseen passage (comprehension)"
+    unit: "खण्ड क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-9-nepali-ch03-t01
+        title: "गद्यांश पढ्ने रणनीति: मूल भाव र सहायक विवरण"
+        title_en: "Reading strategy: main idea and supporting details"
+        learning_outcomes:
+          - "लगभग २५० शब्दको गद्यांशको मूल भाव एक-दुई वाक्यमा भन्नु"
+      - id: icse-9-nepali-ch03-t02
+        title: "तथ्यपरक र अनुमानमूलक प्रश्नका उत्तर आफ्नै शब्दमा"
+        title_en: "Answering factual and inferential questions in their own words"
+        learning_outcomes:
+          - "गद्यांशका वाक्य जस्ताको तस्तै नसारी आफ्नै शब्दमा उत्तर लेख्नु"
+          - "गद्यांशका आधारमा कारण र परिणामको अनुमान गर्नु"
+      - id: icse-9-nepali-ch03-t03
+        title: "प्रसङ्गअनुसार शब्दार्थ, शीर्षक र सन्देश"
+        title_en: "Word meanings in context, a title and the message"
+        learning_outcomes:
+          - "प्रसङ्गबाट कठिन शब्दको अर्थ पत्ता लगाउनु"
+          - "गद्यांशका लागि उपयुक्त शीर्षक सुझाई त्यसको औचित्य दिनु"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-nepali-ch04
+    number: 4
+    title: "व्याकरण: शब्दभण्डार"
+    title_en: "Grammar: vocabulary"
+    unit: "खण्ड क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-9-nepali-ch04-t01
+        title: "शब्द निर्माण: उपसर्ग र प्रत्ययबाट भाववाचक नाम र विशेषण"
+        title_en: "Word formation: abstract nouns and adjectives with prefixes and suffixes"
+        learning_outcomes:
+          - "दिइएका शब्दमा प्रत्यय जोडेर भाववाचक नाम वा विशेषण बनाउनु"
+      - id: icse-9-nepali-ch04-t02
+        title: "पर्यायवाची र विपरीतार्थी शब्द"
+        title_en: "Synonyms and antonyms"
+        learning_outcomes:
+          - "चलनचल्तीका शब्दका पर्यायवाची र विपरीतार्थी शब्द लेख्नु"
+      - id: icse-9-nepali-ch04-t03
+        title: "धेरै शब्दका लागि एक शब्द"
+        title_en: "One word for a group of words"
+        learning_outcomes:
+          - "पदावलीका लागि उपयुक्त एक शब्द छानेर वाक्यमा प्रयोग गर्नु"
+      - id: icse-9-nepali-ch04-t04
+        title: "उस्तै सुनिने भिन्नार्थक शब्द र शुद्ध हिज्जे"
+        title_en: "Similar-sounding words with different meanings; correct spelling"
+        learning_outcomes:
+          - "उस्तै सुनिने शब्दहरूको अर्थभिन्नता वाक्यमा प्रयोग गरेर देखाउनु"
+          - "अशुद्ध हिज्जे भएका शब्द शुद्ध पार्नु"
+    removed_topics:
+      - "Knowledge of grammatical terms as such (CISCE: the grammar question does not require it)"
+    literature_texts: []
+  - id: icse-9-nepali-ch05
+    number: 5
+    title: "व्याकरण: वाक्य रचना र टुक्का"
+    title_en: "Grammar: sentence construction and idioms"
+    unit: "खण्ड क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-9-nepali-ch05-t01
+        title: "टुक्का र उखान: अर्थ र वाक्यमा प्रयोग"
+        title_en: "Idioms and proverbs: meaning and use in sentences"
+        learning_outcomes:
+          - "टुक्काको अर्थ लेखेर प्रसङ्गअनुसार वाक्यमा प्रयोग गर्नु"
+      - id: icse-9-nepali-ch05-t02
+        title: "वाक्य शुद्धीकरण: लिङ्ग, वचन, पुरुष, आदर र कालसम्बन्धी त्रुटि"
+        title_en: "Correcting sentences: gender, number, person, honorific and tense errors"
+        learning_outcomes:
+          - "वाक्यमा भएको व्याकरणिक त्रुटि पहिचान गरी शुद्ध वाक्य लेख्नु"
+      - id: icse-9-nepali-ch05-t03
+        title: "निर्देशनअनुसार वाक्य परिवर्तन: काल, वाच्य, सकारात्मक-नकारात्मक, प्रश्नवाचक"
+        title_en: "Transforming sentences as directed: tense, voice, affirmative/negative, question"
+        learning_outcomes:
+          - "अर्थ नबदली निर्देशनअनुसार वाक्यको रूप बदल्नु"
+      - id: icse-9-nepali-ch05-t04
+        title: "वाक्य संश्लेषण: दुई वा बढी वाक्य जोडेर एउटै वाक्य"
+        title_en: "Synthesis: combining sentences into one"
+        learning_outcomes:
+          - "दुई वा बढी सरल वाक्य जोडेर संयुक्त वा मिश्र वाक्य बनाउनु"
+      - id: icse-9-nepali-ch05-t05
+        title: "दिइएका शब्द वा रूप प्रयोग गरी वाक्य रचना"
+        title_en: "Making sentences using given words or forms"
+        learning_outcomes:
+          - "दिइएको शब्द वा रूप प्रयोग गरेर अर्थपूर्ण वाक्य बनाउनु"
+    removed_topics:
+      - "Knowledge of grammatical terms as such (CISCE: the grammar question does not require it)"
+    literature_texts: []
+  - id: icse-9-nepali-ch06
+    number: 6
+    title: "साहित्य कुञ्ज: कथाहरू"
+    title_en: "Sahitya Kunj: short stories (Class IX portion)"
+    unit: "खण्ड ख - निर्धारित पाठ्यपुस्तकहरू (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-9-nepali-ch06-t01
+        title: "औँठी (अच्छा राई 'रसिक'): कथावस्तु, पात्र र सन्देश"
+        title_en: "Aunthi (Achha Rai 'Rashik'): plot, characters and message"
+        learning_outcomes:
+          - "कथाको कथावस्तु आफ्नै शब्दमा सङ्क्षेपमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र-चित्रण कथाका उदाहरणसहित गर्नु"
+          - "कथाको मूल सन्देश र शीर्षकको सार्थकता स्पष्ट पार्नु"
+      - id: icse-9-nepali-ch06-t02
+        title: "चपरासी (इन्द्रबहादुर राई): कथावस्तु, पात्र र सन्देश"
+        title_en: "Chaprasi (Indrabahadur Rai): plot, characters and message"
+        learning_outcomes:
+          - "कथाको कथावस्तु आफ्नै शब्दमा सङ्क्षेपमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र-चित्रण कथाका उदाहरणसहित गर्नु"
+          - "कथाको मूल सन्देश र शीर्षकको सार्थकता स्पष्ट पार्नु"
+      - id: icse-9-nepali-ch06-t03
+        title: "तार चुँडिएको सारङ्गी (जस्योन्जन प्यासी): कथावस्तु, पात्र र शीर्षकको प्रतीक"
+        title_en: "Taar Chudieko Saarangi (Jasyonzon Pyasi): plot, characters and the symbol in the title"
+        learning_outcomes:
+          - "कथाको कथावस्तु आफ्नै शब्दमा सङ्क्षेपमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र-चित्रण कथाका उदाहरणसहित गर्नु"
+          - "तार चुँडिएको सारङ्गीको प्रतीकात्मक अर्थ कथासँग जोडेर स्पष्ट पार्नु"
+      - id: icse-9-nepali-ch06-t04
+        title: "मृत्युकै मुखैनजिक (पर्शुराम रोका): कथावस्तु, पात्र र सन्देश"
+        title_en: "Mrityu Kai Mukhenji (Parsuram Roka): plot, characters and message"
+        learning_outcomes:
+          - "कथाको कथावस्तु आफ्नै शब्दमा सङ्क्षेपमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र-चित्रण कथाका उदाहरणसहित गर्नु"
+          - "कथाको मूल सन्देश र शीर्षकको सार्थकता स्पष्ट पार्नु"
+      - id: icse-9-nepali-ch06-t05
+        title: "सङ्गत (बद्रीनारायण प्रधान): कथावस्तु, पात्र र सन्देश"
+        title_en: "Sangat (Badrinarayan Pradhan): plot, characters and message"
+        learning_outcomes:
+          - "कथाको कथावस्तु आफ्नै शब्दमा सङ्क्षेपमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र-चित्रण कथाका उदाहरणसहित गर्नु"
+          - "कथाको मूल सन्देश र शीर्षकको सार्थकता स्पष्ट पार्नु"
+    removed_topics:
+      - "Class X stories of Sahitya Kunj: Jewdo Lash, Maachako Mol, Jyotibinako Ujyalo, Gadimaan, Jeewan Yatrama (see icse-10-nepali)"
+    literature_texts:
+      - { title: "औँठी", author: "अच्छा राई 'रसिक'", title_en: "Aunthi - Achha Rai 'Rashik'" }
+      - { title: "चपरासी", author: "इन्द्रबहादुर राई", title_en: "Chaprasi - Indrabahadur Rai" }
+      - { title: "तार चुँडिएको सारङ्गी", author: "जस्योन्जन प्यासी", title_en: "Taar Chudieko Saarangi - Jasyonzon Pyasi" }
+      - { title: "मृत्युकै मुखैनजिक", author: "पर्शुराम रोका", title_en: "Mrityu Kai Mukhenji - Parsuram Roka" }
+      - { title: "सङ्गत", author: "बद्रीनारायण प्रधान", title_en: "Sangat - Badrinarayan Pradhan" }
+  - id: icse-9-nepali-ch07
+    number: 7
+    title: "साहित्य कुञ्ज: कविताहरू"
+    title_en: "Sahitya Kunj: poems (Class IX portion)"
+    unit: "खण्ड ख - निर्धारित पाठ्यपुस्तकहरू (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-9-nepali-ch07-t01
+        title: "मृत्युकामना केही मेरा (अगमसिंह गिरी): मूल भाव र बिम्ब"
+        title_en: "Mrityu Kamana Kehi Mera (Agamsing Giri): central idea and imagery"
+        learning_outcomes:
+          - "कविताको मूल भाव आफ्नै शब्दमा लेख्नु"
+          - "कवितामा प्रयुक्त बिम्ब र अलङ्कार पहिचान गरी अर्थ खुलाउनु"
+          - "कविको सन्देश र आजको जीवनमा त्यसको महत्त्व बताउनु"
+      - id: icse-9-nepali-ch07-t02
+        title: "मन (गिर्मी शेर्पा): मूल भाव र बिम्ब"
+        title_en: "Mann (Girmi Sherpa): central idea and imagery"
+        learning_outcomes:
+          - "कविताको मूल भाव आफ्नै शब्दमा लेख्नु"
+          - "कवितामा प्रयुक्त बिम्ब र अलङ्कार पहिचान गरी अर्थ खुलाउनु"
+          - "कविको सन्देश र आजको जीवनमा त्यसको महत्त्व बताउनु"
+      - id: icse-9-nepali-ch07-t03
+        title: "बोली (टेकध्वज जिम्बा): मूल भाव र सन्देश"
+        title_en: "Boli (Tekdhoj Jimba): central idea and message"
+        learning_outcomes:
+          - "कविताको मूल भाव आफ्नै शब्दमा लेख्नु"
+          - "कवितामा प्रयुक्त बिम्ब र अलङ्कार पहिचान गरी अर्थ खुलाउनु"
+          - "कविको सन्देश र आजको जीवनमा त्यसको महत्त्व बताउनु"
+      - id: icse-9-nepali-ch07-t04
+        title: "नत्र बर्बाद भयो (धरणीधर शर्मा): मूल भाव र सन्देश"
+        title_en: "Natra Barbad Bhayo (Dharnidhar Sharma): central idea and message"
+        learning_outcomes:
+          - "कविताको मूल भाव आफ्नै शब्दमा लेख्नु"
+          - "कवितामा प्रयुक्त बिम्ब र अलङ्कार पहिचान गरी अर्थ खुलाउनु"
+          - "कविको सन्देश र आजको जीवनमा त्यसको महत्त्व बताउनु"
+      - id: icse-9-nepali-ch07-t05
+        title: "लक्ष्य (पारसमणि प्रधान): मूल भाव र सन्देश"
+        title_en: "Lakshya (Parashmani Pradhan): central idea and message"
+        learning_outcomes:
+          - "कविताको मूल भाव आफ्नै शब्दमा लेख्नु"
+          - "कवितामा प्रयुक्त बिम्ब र अलङ्कार पहिचान गरी अर्थ खुलाउनु"
+          - "कविको सन्देश र आजको जीवनमा त्यसको महत्त्व बताउनु"
+    removed_topics:
+      - "Class X poems of Sahitya Kunj: Karma, Ram-Bharat Samwat, Kaal Mahimaa, Madan Bhotbata Pharkanda, Utsarga (see icse-10-nepali)"
+    literature_texts:
+      - { title: "मृत्युकामना केही मेरा", author: "अगमसिंह गिरी", title_en: "Mrityu Kamana Kehi Mera - Agamsing Giri" }
+      - { title: "मन", author: "गिर्मी शेर्पा", title_en: "Mann - Girmi Sherpa" }
+      - { title: "बोली", author: "टेकध्वज जिम्बा", title_en: "Boli - Tekdhoj Jimba" }
+      - { title: "नत्र बर्बाद भयो", author: "धरणीधर शर्मा", title_en: "Natra Barbad Bhayo - Dharnidhar Sharma" }
+      - { title: "लक्ष्य", author: "पारसमणि प्रधान", title_en: "Lakshya - Parashmani Pradhan" }
+  - id: icse-9-nepali-ch08
+    number: 8
+    title: "उपन्यास: भ्रमर (प्रथम खण्ड र द्वितीय खण्ड)"
+    title_en: "Novel: Bhrammer (Pratham Khanda and Dwitiya Khanda)"
+    unit: "खण्ड ख - निर्धारित पाठ्यपुस्तकहरू (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-9-nepali-ch08-t01
+        title: "अशुभ समाचार, मायाको मोहभङ्ग, शेखर विमुग्ध हुन्छ: घटनाक्रम"
+        title_en: "Ashubh Samachar, Mayako Mohabhang, Shekhar Bimugdha Huncha: events"
+        learning_outcomes:
+          - "यी परिच्छेदका प्रमुख घटना क्रमबद्ध रूपमा लेख्नु"
+      - id: icse-9-nepali-ch08-t02
+        title: "बीणाको विस्मय, दुर्घटना, सूर्योदय, शेखरको आँखा उघ्रन्छ: प्रथम खण्डको परिणति"
+        title_en: "Binako Bismaya, Durghatna, Suryodaya, Shekhar ko Aankha Ughrangcha: end of the first part"
+        learning_outcomes:
+          - "यी परिच्छेदका प्रमुख घटनाको सारांश लेख्नु"
+          - "शेखरमा आएको परिवर्तन कारणसहित स्पष्ट पार्नु"
+      - id: icse-9-nepali-ch08-t03
+        title: "बनारसको घाटमा माया, मोहन र माया, अनुतप्त हृदय, ललितसिंहको क्रोध: द्वितीय खण्ड"
+        title_en: "Banarasko Ghatma Maya, Mohan Ra Maya, Anutapta Hridaya, Lalit Singh Ko Krodh: the second part"
+        learning_outcomes:
+          - "द्वितीय खण्डका प्रमुख घटना क्रमबद्ध रूपमा लेख्नु"
+          - "पात्रहरूको सम्बन्धमा आएको परिवर्तन स्पष्ट पार्नु"
+      - id: icse-9-nepali-ch08-t04
+        title: "प्रमुख पात्रहरू (शेखर, माया, मोहन) को चरित्र-चित्रण"
+        title_en: "Character sketches: Shekhar, Maya, Mohan"
+        learning_outcomes:
+          - "शेखर वा मायाको चरित्र-चित्रण घटनाका उदाहरणसहित गर्नु"
+      - id: icse-9-nepali-ch08-t05
+        title: "उपन्यासका विषयवस्तु र 'भ्रमर' शीर्षकको सार्थकता"
+        title_en: "Themes and the significance of the title Bhrammer"
+        learning_outcomes:
+          - "निर्धारित खण्डहरूमा उठाइएका मुख्य विषयवस्तु पहिचान गर्नु"
+          - "'भ्रमर' शीर्षकको सार्थकता पुष्टि गर्नु"
+    removed_topics:
+      - "Tritiya Khanda (Class X portion; see icse-10-nepali)"
+    literature_texts:
+      - { title: "भ्रमर (प्रथम खण्ड र द्वितीय खण्ड)", author: "रूपनारायण सिंह", title_en: "Bhrammer (Pratham Khanda and Dwitya Khanda) - Rupnarayan Singh" }
+  - id: icse-9-nepali-ch09
+    number: 9
+    title: "एकाङ्की कुञ्ज"
+    title_en: "Ekanki Kunj: one-act plays (Class IX portion)"
+    unit: "खण्ड ख - निर्धारित पाठ्यपुस्तकहरू (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-9-nepali-ch09-t01
+        title: "वियोग (मनबहादुर मुखिया): कथावस्तु, पात्र र सन्देश"
+        title_en: "Biyog (Manbahadur Mukhia): plot, characters and message"
+        learning_outcomes:
+          - "एकाङ्कीको घटनाक्रम आफ्नै शब्दमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र र उनीहरूबीचको द्वन्द्व स्पष्ट पार्नु"
+          - "एकाङ्कीको मूल सन्देश र शीर्षकको सार्थकता बताउनु"
+      - id: icse-9-nepali-ch09-t02
+        title: "टीका (मोहन पुकार): कथावस्तु, पात्र र सन्देश"
+        title_en: "Tika (Mohan - Pukar): plot, characters and message"
+        learning_outcomes:
+          - "एकाङ्कीको घटनाक्रम आफ्नै शब्दमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र र उनीहरूबीचको द्वन्द्व स्पष्ट पार्नु"
+          - "एकाङ्कीको मूल सन्देश र शीर्षकको सार्थकता बताउनु"
+      - id: icse-9-nepali-ch09-t03
+        title: "म भात खान्न (रामलाल अधिकारी): कथावस्तु, पात्र र सन्देश"
+        title_en: "Ma Bhat Khanna (Ramlal Adhikari): plot, characters and message"
+        learning_outcomes:
+          - "एकाङ्कीको घटनाक्रम आफ्नै शब्दमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र र उनीहरूबीचको द्वन्द्व स्पष्ट पार्नु"
+          - "एकाङ्कीको मूल सन्देश र शीर्षकको सार्थकता बताउनु"
+      - id: icse-9-nepali-ch09-t04
+        title: "एकाङ्कीका तत्त्व: कथावस्तु, संवाद, द्वन्द्व र रङ्गमञ्चीयता"
+        title_en: "Elements of a one-act play: plot, dialogue, conflict, stageability"
+        learning_outcomes:
+          - "संवाद र रङ्गनिर्देशनले पात्र र घटनालाई कसरी अघि बढाउँछन् भनी स्पष्ट पार्नु"
+    removed_topics:
+      - "Class X one-act plays: Maag, Saahinu, Shrinkhala Bandhne Chhanharu (see icse-10-nepali)"
+    literature_texts:
+      - { title: "वियोग", author: "मनबहादुर मुखिया", title_en: "Biyog - Manbahadur Mukhia" }
+      - { title: "टीका", author: "मोहन पुकार", title_en: "Tika - Mohan - Pukar" }
+      - { title: "म भात खान्न", author: "रामलाल अधिकारी", title_en: "Ma Bhat Khanna - Ramlal Adhikari" }
+removed_topics: []
