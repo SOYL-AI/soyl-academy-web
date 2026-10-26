@@ -84,10 +84,18 @@ export async function createHarness(opts: HarnessOptions = {}): Promise<Harness>
       cb();
     },
   });
-  const app = await buildApp(
-    { config, db: t.db, kv, clock, providers: { sms, email, consent }, google: { allowInsecure: true } },
-    { logStream, extraRoutes: opts.extraRoutes },
-  );
+  let app: App;
+  try {
+    app = await buildApp(
+      { config, db: t.db, kv, clock, providers: { sms, email, consent }, google: { allowInsecure: true } },
+      { logStream, extraRoutes: opts.extraRoutes },
+    );
+  } catch (err) {
+    await oidc.stop();
+    await kv.close();
+    if (!opts.t) await t.close();
+    throw err;
+  }
   const h: Harness = {
     app,
     t,

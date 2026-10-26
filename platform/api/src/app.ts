@@ -18,6 +18,7 @@ import {
   hasZodFastifySchemaValidationErrors,
   isResponseSerializationError,
   jsonSchemaTransform,
+  jsonSchemaTransformObject,
   serializerCompiler,
   validatorCompiler,
   type ZodTypeProvider,
@@ -48,12 +49,21 @@ export interface BuildAppOptions {
   extraRoutes?: (app: FastifyInstance, services: Services) => void;
 }
 
+export interface RouteEntry {
+  method: string;
+  url: string;
+  policy: RoutePolicy;
+  hidden: boolean;
+}
+
 export type App = FastifyInstance & { services: Services; deps: AppDeps };
 
 declare module 'fastify' {
   interface FastifyInstance {
     services: Services;
     deps: AppDeps;
+    /** Every registered route and its policy (route-policy test, API-6). */
+    routeTable: RouteEntry[];
   }
 }
 
@@ -87,8 +97,12 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
   app.decorateRequest('auth', null);
 
   // API-6: no route without a valid policy. Throws during registration → the server cannot start.
+  const routeTable: RouteEntry[] = [];
+  app.decorate('routeTable', routeTable);
   app.addHook('onRoute', (route) => {
-    assertPolicy(route.method, route.url, route.config?.policy);
+    const policy = assertPolicy(route.method, route.url, route.config?.policy);
+    for (const method of [route.method].flat())
+      routeTable.push({ method, url: route.url, policy, hidden: Boolean((route.schema as { hide?: boolean } | undefined)?.hide) });
   });
 
   await app.register(swagger, {
@@ -106,6 +120,7 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
       },
     },
     transform: jsonSchemaTransform,
+    transformObject: jsonSchemaTransformObject,
   });
 
   // ---- onRequest #1: flag, edge auth, client IP -------------------------------------------------
