@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`route policy (API-6) > matches the reviewed policy table (snapshot) 1`] = `
+"DELETE /v1/me                                 roles=student|parent|reviewer|admin csrf=true rl=default consent=no fresh
+DELETE /v1/me/sessions                        roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+DELETE /v1/me/sessions/:id                    roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /healthz                               roles=guest|student|parent|reviewer|admin csrf=true rl=none consent=no
+GET    /readyz                                roles=guest|student|parent|reviewer|admin csrf=true rl=none consent=no
+GET    /v1/auth/google/callback               roles=guest|student|parent|reviewer|admin csrf=true rl=default+auth.ip (fail-closed) consent=no
+GET    /v1/auth/google/start                  roles=guest|student|parent|reviewer|admin csrf=true rl=default+auth.ip (fail-closed) consent=no
+GET    /v1/catalog/:board/:class/subjects     roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/catalog/boards                     roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/catalog/subjects/:id/chapters      roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/dev/otp-outbox                     roles=guest|student|parent|reviewer|admin csrf=true rl=default+auth.ip consent=no (dev-only, hidden)
+GET    /v1/me                                 roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/me/sessions                        roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/session                            roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
+PATCH  /v1/me                                 roles=student|parent|reviewer|admin csrf=true rl=default+me.write.user consent=no
+POST   /v1/auth/email/send-otp                roles=guest|student|parent|reviewer|admin csrf=true rl=default+auth.ip (fail-closed) consent=no
+POST   /v1/auth/email/verify                  roles=guest|student|parent|reviewer|admin csrf=true rl=default+auth.ip (fail-closed) consent=no
+POST   /v1/auth/link/email/send-otp           roles=student|parent|reviewer|admin csrf=true rl=default+auth.ip (fail-closed) consent=no fresh
+POST   /v1/auth/link/email/verify             roles=student|parent|reviewer|admin csrf=true rl=default+auth.ip (fail-closed) consent=no fresh
+POST   /v1/auth/link/phone/send-otp           roles=student|parent|reviewer|admin csrf=true rl=default+auth.ip (fail-closed) consent=no fresh
+POST   /v1/auth/link/phone/verify             roles=student|parent|reviewer|admin csrf=true rl=default+auth.ip (fail-closed) consent=no fresh
+POST   /v1/auth/phone/send-otp                roles=guest|student|parent|reviewer|admin csrf=true rl=default+auth.ip (fail-closed) consent=no
+POST   /v1/auth/phone/verify                  roles=guest|student|parent|reviewer|admin csrf=true rl=default+auth.ip (fail-closed) consent=no
+POST   /v1/auth/sign-out                      roles=guest|student|parent|reviewer|admin csrf=true rl=default+auth.ip consent=no
+POST   /v1/auth/unlink                        roles=student|parent|reviewer|admin csrf=true rl=default+auth.ip (fail-closed) consent=no fresh
+POST   /v1/me/consent/start                   roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+POST   /v1/me/merge-guest                     roles=student|parent|reviewer|admin csrf=true rl=default consent=merge_guest"
+`;

@@ -1,0 +1,33 @@
+{
+  "name": "@soyl/worker",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SOYL Academy Learning Platform background worker (pg-boss). See docs/platform/adr/003-queue-pg-boss.md.",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "node scripts/build.mjs",
+    "start": "node dist/index.js",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "migrate": "tsx src/index.ts migrate"
+  },
+  "dependencies": {
+    "@soyl/db": "*",
+    "@soyl/shared": "*",
+    "drizzle-orm": "0.45.4",
+    "pg": "8.23.1",
+    "pg-boss": "12.38.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "@types/pg": "8.23.1",
+    "@vitest/coverage-v8": "5.0.5",
+    "esbuild": "0.28.2",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "5.0.5"
+  }
+}
