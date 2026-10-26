@@ -90,7 +90,6 @@ export function NumericalInput({ draft, onChange, disabled, label, error }: Inpu
         spellCheck={false}
         value={draft.text}
         disabled={disabled}
-        aria-label={`${label}: number only`}
         aria-invalid={error ? true : undefined}
         onChange={(e) => onChange({ kind: 'value', text: e.target.value.slice(0, 40) })}
       />
@@ -240,7 +239,7 @@ export function TextAnswerInput({
   return (
     <div className={s.field} data-input={mono ? 'code-output' : 'text'}>
       <label htmlFor={id} className={s.fieldLabel}>
-        {mono ? 'Exact output' : 'Your answer'}
+        {mono ? 'Your answer: the exact output' : 'Your answer'}
         {limit && !mono && <span className={s.fieldNote}> · answer in {limit.min}–{limit.max} words</span>}
       </label>
       <textarea
@@ -254,7 +253,6 @@ export function TextAnswerInput({
         autoCorrect={mono ? 'off' : undefined}
         wrap={mono ? 'off' : 'soft'}
         rows={mono ? 4 : long ? 10 : 5}
-        aria-label={label}
         aria-describedby={mono ? undefined : `${id}-count`}
         onChange={(e) => onChange({ kind: draft.kind, text: e.target.value.slice(0, 20_000) } as typeof draft)}
       />

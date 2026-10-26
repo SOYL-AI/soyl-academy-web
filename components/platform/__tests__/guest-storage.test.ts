@@ -7,6 +7,8 @@ import {
   GUEST_LIMITS,
   GUEST_STORAGE_KEY,
   hasMergeableProgress,
+  guestAnswersFor,
+  readGuestLessonPosition,
   readGuestProgress,
   recordGuestLessonPosition,
   recordGuestPracticeAnswer,
@@ -28,7 +30,9 @@ describe('guest storage contract (soyl_guest_v1, WEB-5)', () => {
 
   it('every value it produces passes the API zod contract', () => {
     recordGuestPracticeAnswer('cbse-10-science-ch01', 'q_cbse10sci_ch01_001', true, new Date(T));
-    recordGuestLessonPosition('cbse-10-science-ch02', 4, false, new Date(T));
+    recordGuestLessonPosition('cbse-10-science-ch02', { slide: 4, completed: false }, new Date(T));
+    recordGuestLessonPosition('cbse-10-science-ch02', { part: 2, slide: 3, completed: false, mode: 'listen' }, new Date(T));
+    recordGuestLessonPosition('cbse-10-hindi-a-ch02', { part: 0, slide: 1, completed: true, mode: 'read' }, new Date(T));
     rememberGuestBoardClass('cbse', 10);
     const p = readGuestProgress();
     expect(GuestProgressContract.safeParse(p).success).toBe(true);
@@ -125,16 +129,16 @@ describe('merge helpers', () => {
     practice: [{ chapter: 'cbse-10-science-ch01', question: 'q_a', correct: false, answeredAt: T }],
   };
 
-  it('only completed lessons or practice are worth a merge', () => {
+  it('any lesson position or practice answer is worth a merge (API M2 stores positions)', () => {
     expect(hasMergeableProgress(p)).toBe(true);
-    expect(hasMergeableProgress({ v: 1, lessons: [p.lessons[1]!], practice: [] })).toBe(false);
+    expect(hasMergeableProgress({ v: 1, lessons: [p.lessons[1]!], practice: [] })).toBe(true);
     expect(hasMergeableProgress({ v: 1, lessons: [], practice: [] })).toBe(false);
   });
 
-  it('after a merge keeps only incomplete lesson positions', () => {
-    expect(afterMerge(p)).toEqual({ v: 1, lessons: [p.lessons[1]], practice: [] });
+  it('after a merge clears everything (backend-api M2 point 6)', () => {
+    expect(afterMerge(p)).toEqual({ v: 1, lessons: [], practice: [] });
     writeGuestProgress(afterMerge(p));
-    expect(hasMergeableProgress(readGuestProgress())).toBe(false);
+    expect(window.localStorage.getItem(GUEST_STORAGE_KEY)).toBeNull();
   });
 
   it('writing an empty object removes the key', () => {
@@ -145,13 +149,36 @@ describe('merge helpers', () => {
   });
 
   it('a lesson stays completed once completed', () => {
-    recordGuestLessonPosition('cbse-10-science-ch01', 20, true, new Date(T));
-    recordGuestLessonPosition('cbse-10-science-ch01', 2, false, new Date(T));
+    recordGuestLessonPosition('cbse-10-science-ch01', { slide: 20, completed: true }, new Date(T));
+    recordGuestLessonPosition('cbse-10-science-ch01', { slide: 2, completed: false }, new Date(T));
     expect(readGuestProgress().lessons).toEqual([{ chapter: 'cbse-10-science-ch01', slide: 2, completed: true, updatedAt: T }]);
   });
 
+  it('keeps one position per chapter and part, with mode', () => {
+    recordGuestLessonPosition('cbse-10-science-ch01', { part: 1, slide: 5, completed: false, mode: 'read' }, new Date(T));
+    recordGuestLessonPosition('cbse-10-science-ch01', { part: 2, slide: 7, completed: false, mode: 'listen' }, new Date('2026-10-26T11:00:00.000Z'));
+    recordGuestLessonPosition('cbse-10-science-ch01', { part: 1, slide: 6, completed: false, mode: 'read' }, new Date('2026-10-26T12:00:00.000Z'));
+    const g = readGuestProgress();
+    expect(g.lessons).toHaveLength(2);
+    expect(readGuestLessonPosition(g, 'cbse-10-science-ch01', 1)).toMatchObject({ part: 1, slide: 6, mode: 'read' });
+    expect(readGuestLessonPosition(g, 'cbse-10-science-ch01', 2)).toMatchObject({ part: 2, slide: 7, mode: 'listen' });
+    expect(readGuestLessonPosition(g, 'cbse-10-science-ch01', 3)).toBeNull();
+    expect(chapterSummary(g, 'cbse-10-science-ch01')).toMatchObject({ lessonSlide: 6, lessonPart: 1, lessonCompleted: false });
+  });
+
+  it('drops an invalid part or mode but keeps the entry', () => {
+    const clean = sanitizeGuestProgress({ v: 1, lessons: [{ chapter: 'cbse-10-science-ch01', part: 99, mode: 'sing', slide: 1, completed: false, updatedAt: T }], practice: [] })!;
+    expect(clean.lessons).toEqual([{ chapter: 'cbse-10-science-ch01', slide: 1, completed: false, updatedAt: T }]);
+  });
+
+  it('the latest answer per question counts', () => {
+    recordGuestPracticeAnswer('cbse-10-science-ch01', 'q_a', false, new Date(T));
+    recordGuestPracticeAnswer('cbse-10-science-ch01', 'q_a', true, new Date('2026-10-26T11:00:00.000Z'));
+    expect(guestAnswersFor(readGuestProgress(), 'cbse-10-science-ch01').get('q_a')).toBe(true);
+  });
+
   it('summarises a chapter', () => {
-    expect(chapterSummary(p, 'cbse-10-science-ch01')).toEqual({ lessonSlide: 10, lessonCompleted: true, practiceAnswered: 1, practiceCorrect: 0 });
-    expect(chapterSummary(p, 'cbse-10-science-ch09')).toEqual({ lessonSlide: null, lessonCompleted: false, practiceAnswered: 0, practiceCorrect: 0 });
+    expect(chapterSummary(p, 'cbse-10-science-ch01')).toEqual({ lessonSlide: 10, lessonPart: null, lessonCompleted: true, practiceAnswered: 1, practiceCorrect: 0 });
+    expect(chapterSummary(p, 'cbse-10-science-ch09')).toEqual({ lessonSlide: null, lessonPart: null, lessonCompleted: false, practiceAnswered: 0, practiceCorrect: 0 });
   });
 });
