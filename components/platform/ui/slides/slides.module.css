@@ -105,6 +105,10 @@
   gap: var(--p-space-2);
   margin: 0;
   padding-left: 1.3em;
+  list-style: disc; /* preflight removes markers */
+}
+ol.bullets:not(.bullets-steps) {
+  list-style: decimal;
 }
 .bullets li::marker {
   color: var(--p-accent);

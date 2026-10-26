@@ -32,6 +32,8 @@ describe('safeLink', () => {
     'https://www.soylai.com:8443/',
     '//evil.example/x',
     '/\\evil.example',
+    '/%5Cevil.example/x',
+    '/%2F/evil.example',
     'relative/path',
     '#"><script>',
     '',

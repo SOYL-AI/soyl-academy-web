@@ -15,9 +15,19 @@
 .md pre {
   margin: 0 0 var(--p-space-3);
 }
+/* The site's Tailwind preflight removes list markers; content lists need them back. */
 .md ul,
 .md ol {
   padding-left: 1.4em;
+}
+.md ul {
+  list-style: disc;
+}
+.md ol {
+  list-style: decimal;
+}
+.md ul ul {
+  list-style: circle;
 }
 .md li + li {
   margin-top: var(--p-space-1);

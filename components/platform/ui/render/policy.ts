@@ -35,6 +35,9 @@ export function safeLink(raw: unknown, hosts: readonly string[] = DEFAULT_LINK_H
 
   if (url.startsWith('/')) {
     if (url.startsWith('//')) return null; // protocol-relative → another origin
+    // Markdown percent-encodes "\" before we see it: refuse encoded backslashes and leading
+    // encoded slashes too, so "/\evil.example" can never become a host in any parser.
+    if (/%5c/i.test(url) || /^\/%2f/i.test(url)) return null;
     // Resolve against a dummy origin to normalise /./ and /../ and reject anything that escapes it.
     try {
       const parsed = new URL(url, 'https://same-site.invalid');
