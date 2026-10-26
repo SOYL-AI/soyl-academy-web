@@ -102,6 +102,15 @@ describe('few_shot resolution', () => {
 
   it('refuses paths outside content-templates', () => {
     expect(() => loadFewShot(['../catalog/cbse/subjects.yaml'], paths.templatesDir)).toThrow(/outside/);
+    // The authored/ alias is contained too.
+    expect(() => loadFewShot(['authored/../../catalog/cbse/subjects.yaml'], paths.templatesDir)).toThrow(/outside/);
+  });
+
+  it('resolves authored/ to platform/content/authored', () => {
+    const ref = 'authored/science/cbse-10-science-ch02/release.json#decks';
+    const r = loadFewShot([ref], paths.templatesDir, 'deck', 1e9);
+    expect(r.missing).toEqual([]);
+    expect(r.text).toMatch(/Acids|acid/);
   });
 
   it.runIf(hasExemplar)('trims by asset: case passages get only case items, questions a stratified sample', () => {
