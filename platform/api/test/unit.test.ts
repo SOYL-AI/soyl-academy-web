@@ -58,6 +58,29 @@ describe('config', () => {
     expect(c.sms.templateIds).toEqual({ otp: '1107', notice: '1108' });
   });
 
+  it('production never falls back to, or accepts, a DEV_DEFAULTS value (GEN-1, gitleaks placeholders)', () => {
+    const vars: Record<keyof typeof DEV_DEFAULTS, string> = {
+      edgeSecret: 'EDGE_SECRETS',
+      authSecret: 'AUTH_SECRET',
+      otpPepper: 'OTP_PEPPER',
+      googleClientId: 'GOOGLE_CLIENT_ID',
+      googleClientSecret: 'GOOGLE_CLIENT_SECRET',
+      mfaEncryptionKey: 'MFA_ENCRYPTION_KEY',
+    };
+    for (const appEnv of ['dev', 'stg', 'prod'] as const) {
+      const env = { ...prodEnv, APP_ENV: appEnv };
+      const loaded = loadConfig(env);
+      const values = [loaded.edgeSecrets.join(','), loaded.authSecret, loaded.otpPepper, loaded.google.clientId, loaded.google.clientSecret, loaded.mfaEncryptionKey.toString('base64')];
+      for (const dev of Object.values(DEV_DEFAULTS)) expect(values.some((v) => v.includes(dev)), `${appEnv}: ${dev}`).toBe(false);
+      for (const [key, name] of Object.entries(vars) as [keyof typeof DEV_DEFAULTS, string][]) {
+        expect(() => loadConfig({ ...env, [name]: undefined }), `${appEnv} ${name} unset`).toThrow(new RegExp(`${name} is required`));
+        expect(() => loadConfig({ ...env, [name]: DEV_DEFAULTS[key] }), `${appEnv} ${name} = dev default`).toThrow(new RegExp(`${name} uses the public development default`));
+      }
+    }
+    expect(() => loadConfig({ ...prodEnv, MFA_ENCRYPTION_KEY: Buffer.alloc(16).toString('base64') })).toThrow(/MFA_ENCRYPTION_KEY must be 32 bytes/);
+    expect(loadConfig({ APP_ENV: 'local' }).mfaEncryptionKey.length).toBe(32);
+  });
+
   it.each([
     ['missing DATABASE_URL', { DATABASE_URL: undefined }, /DATABASE_URL is required/],
     ['missing REDIS_URL', { REDIS_URL: undefined }, /REDIS_URL is required/],
@@ -193,6 +216,31 @@ async function kvContract(kv: KeyValueStore) {
   expect((await kv.windowHit('w', 1000, 3, now + 1001)).allowed).toBe(true);
   expect(await kv.windowAdd('w2', 1000, now)).toBe(1);
   expect(await kv.windowAdd('w2', 1000, now)).toBe(2);
+  // Expiry follows the caller's clock, not the store's own (fake clocks in tests; the CI Redis failure).
+  await kv.set('ttl', 'v', 10, 0);
+  expect(await kv.get('ttl', 9)).toBe('v');
+  expect(await kv.get('ttl', 10)).toBeNull();
+  await kv.set('lock', 'x', 3_600_000, now);
+  expect(await kv.get('lock', now + 3_600_000 - 1)).toBe('x');
+  expect(await kv.get('lock', now + 3_600_000 + 1000)).toBeNull();
+  await kv.set('s', 'old', 100, now);
+  expect(await kv.setIfAbsent('s', 'new', 100, now + 50)).toBe(false);
+  expect(await kv.setIfAbsent('s', 'new', 100, now + 100)).toBe(true);
+  expect(await kv.get('s', now + 150)).toBe('new');
+  await kv.set('t', 'gone', 100, now);
+  expect(await kv.take('t', now + 100)).toBeNull();
+  expect(await kv.get('t', now)).toBeNull();
+  await kv.set('pipe', 'a|b', 100, now);
+  expect(await kv.get('pipe', now)).toBe('a|b');
+  // Window hits recorded "in the future" (a clock set backwards) do not count.
+  expect((await kv.windowHit('wf', 1000, 1, now + 500)).allowed).toBe(true);
+  expect(await kv.windowCount('wf', 1000, now)).toBe(0);
+  expect((await kv.windowHit('wf', 1000, 1, now)).allowed).toBe(true);
+  expect((await kv.windowHit('wf', 1000, 1, now + 1)).allowed).toBe(false);
+  expect(await kv.windowAdd('wf2', 1000, now + 500)).toBe(1);
+  expect(await kv.windowAdd('wf2', 1000, now)).toBe(1);
+  await kv.del('wf');
+  expect(await kv.windowCount('wf', 1000, now)).toBe(0);
   await kv.ping();
 }
 
@@ -205,6 +253,16 @@ describe('KV stores', () => {
     kv.failing = true;
     await expect(kv.ping()).rejects.toThrow();
     await kv.close();
+  });
+
+  it('redis store meets the same contract on ioredis-mock (Lua scripts included)', async () => {
+    const RedisMock = (await import('ioredis-mock')).default;
+    const kv = new RedisKv('redis://mock', {}, `soyl-mock:${Date.now()}:`, new RedisMock() as never);
+    try {
+      await kvContract(kv);
+    } finally {
+      await kv.close();
+    }
   });
 
   it.runIf(Boolean(process.env.REDIS_URL))('redis store meets the contract (CI redis:7)', async () => {

@@ -73,7 +73,14 @@ export async function createHarness(opts: HarnessOptions = {}): Promise<Harness>
     ...opts.env,
   });
   const clock = new FakeClock(Date.now());
-  const kv: KeyValueStore = process.env.REDIS_URL ? new RedisKv(process.env.REDIS_URL, {}, `soyl-test:${randomBytes(4).toString('hex')}:`) : new MemoryKv();
+  // Every harness gets its own key namespace, so per-IP/global limits never leak between test files or apps.
+  // TEST_KV=redis-mock runs the Redis store (Lua scripts) on ioredis-mock locally, as CI runs it on redis:7.
+  const ns = `soyl-test:${randomBytes(6).toString('hex')}:`;
+  const kv: KeyValueStore = process.env.REDIS_URL
+    ? new RedisKv(process.env.REDIS_URL, {}, ns)
+    : process.env.TEST_KV === 'redis-mock'
+      ? new RedisKv('redis://mock', {}, ns, new (await import('ioredis-mock')).default() as never)
+      : new MemoryKv();
   const sms = new MockSmsSender();
   const email = new MockEmailSender();
   const consent = new MockConsentProvider(opts.consentDefault ?? 'required');
