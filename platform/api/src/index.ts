@@ -12,7 +12,12 @@ import { ConfigError, loadConfig } from './config';
 import { createKv } from './kv';
 import { createProviders } from './providers';
 
-export async function main(env: Record<string, string | undefined> = process.env) {
+export interface MainHooks {
+  /** Local dev only: runs after the embedded database is migrated and seeded, before the server starts (scripts/dev.ts publishes content here). */
+  afterDevDatabase?: (databaseUrl: string) => Promise<void>;
+}
+
+export async function main(env: Record<string, string | undefined> = process.env, hooks: MainHooks = {}) {
   let config;
   try {
     config = loadConfig(env);
@@ -30,6 +35,7 @@ export async function main(env: Record<string, string | undefined> = process.env
     const { startDevDatabase } = await import('./dev/dev-db');
     devDb = await startDevDatabase((m) => console.log(`[dev-db] ${m}`));
     databaseUrl = devDb.url;
+    await hooks.afterDevDatabase?.(databaseUrl);
   }
 
   const { db, close: closeDb } = createDb(databaseUrl);

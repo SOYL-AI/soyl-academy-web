@@ -11,12 +11,16 @@ src/
   policy.ts         route policy framework (API-6)
   auth/             Better Auth instance, sessions, OTP, Google OIDC, identity/linking, senders
   consent/          ConsentProvider interface, mock, cache + gate
-  modules/          routes: auth, session, me, catalog, health, dev (local only)
-  domain/           guest merge, account deletion, display names, profile
+  modules/          routes: auth, session, me, catalog, content, practice, progress, reports, mfa, admin,
+                    health, dev (local only)
+  domain/           content reads (active release, student-safe DTOs), grading, practice, progress,
+                    gamification (XP, IST streaks, badges), reports, guest merge, account deletion, profile
+  auth/mfa.ts       AUTH-11 staff TOTP (ADR-011)
+  http/cache.ts     ETag + Cache-Control for public content reads (ADR-010)
   contract/guest.ts guest-progress schema shared with the web (zod/v4 only)
   kv/               KeyValueStore: memory + ioredis
   dev/              mock OIDC provider, embedded dev database
-scripts/            dev.ts, openapi.ts, build.mjs
+scripts/            dev.ts (+ dev-content.ts: publishes authored content at start), openapi.ts, build.mjs
 test/               vitest suites against real PostgreSQL
 ```
 
@@ -27,7 +31,7 @@ cd platform && npm ci
 npm run dev -w @soyl/api
 ```
 
-This serves `http://localhost:8787` with no external services: embedded PostgreSQL (migrated, full catalog, fixture users), in-memory KV, mock SMS/email/consent, a mock Google OIDC provider on `http://127.0.0.1:8090`, and `GET /v1/dev/otp-outbox?to=<test identifier>`. Every `/v1` call needs `x-soyl-edge-auth: local-dev-edge-secret-not-for-deployment-000000`, which the web proxy adds (ADR-005).
+This serves `http://localhost:8787` with no external services: embedded PostgreSQL (migrated, full catalog, fixture users, and every authored/exemplar chapter published through the pipeline's publish stage — `DEV_CONTENT=off` skips that), in-memory KV, mock SMS/email/consent, a mock Google OIDC provider on `http://127.0.0.1:8090`, and `GET /v1/dev/otp-outbox?to=<test identifier>`. Every `/v1` call needs `x-soyl-edge-auth: local-dev-edge-secret-not-for-deployment-000000`, which the web proxy adds (ADR-005).
 
 ```
 S=local-dev-edge-secret-not-for-deployment-000000
@@ -52,7 +56,7 @@ npm test -w @soyl/api               integration + unit tests on real PostgreSQL
 npx vitest run --coverage           (inside api/) coverage summary
 ```
 
-Tests use `@soyl/db/testing` (one embedded PostgreSQL per run, a fresh database per file). In CI, set `TEST_DATABASE_URL` (Postgres service) and `REDIS_URL` (redis:7). With `REDIS_URL`, the harness and the KV contract test use ioredis.
+Tests use `@soyl/db/testing` (one embedded PostgreSQL per run, a fresh database per file). In CI, set `TEST_DATABASE_URL` (Postgres service) and `REDIS_URL` (redis:7). With `REDIS_URL`, the harness and the KV contract test use ioredis. Locally, `TEST_KV=redis-mock` runs the whole suite on the Redis store over ioredis-mock (each test app gets its own key namespace). Content tests ingest the real authored releases (`test/content-fixture.ts`).
 
 ## Environment
 
@@ -71,6 +75,7 @@ Tests use `@soyl/db/testing` (one embedded PostgreSQL per run, a fresh database 
 | `CLIENT_IP_HEADER` | `x-soyl-client-ip` | API-3; trusted only after edge auth. |
 | `AUTH_SECRET` | dev value in local/test | Signs session and OAuth-state cookies (≥ 32 chars). |
 | `OTP_PEPPER` | dev value in local/test | AUTH-4 HMAC key (≥ 32 chars). |
+| `MFA_ENCRYPTION_KEY` | dev value in local/test | AUTH-11: 32 bytes, base64; encrypts staff TOTP secrets at rest (ADR-011). |
 | `SMS_GLOBAL_HOURLY_CAP` | `1000` | AUTH-5 global phone-OTP cap. |
 | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | dev values in local/test | |
 | `GOOGLE_ISSUER` | `https://accounts.google.com` | Must be Google in prod; the dev script points it at the mock. |
@@ -80,6 +85,7 @@ Tests use `@soyl/db/testing` (one embedded PostgreSQL per run, a fresh database 
 | `CONSENT_PROVIDER`, `MOCK_CONSENT_DEFAULT` | `mock`, `required` | Only the mock exists (OA-08). |
 | `ACADEMIC_YEAR` | `2026-27` | Catalog year served. |
 | `DEV_OTP_OUTBOX` | off | Local/test only. |
+| `DEV_CONTENT` | on | `npm run dev` only: `off` skips publishing authored content at start-up. |
 
 Security numbers (OTP limits, session lifetimes, rate limits, consent-gated features) are in `platform/shared/config/security.ts`.
 
