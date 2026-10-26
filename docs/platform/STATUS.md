@@ -33,7 +33,7 @@ Single source of truth for progress (AGENTS.md §4.3). Updated by the Lead after
 | M0 | Repo map, allowed paths, marketing baseline + regression, ADR-001 | repo-cartographer | `platform/repo-cartographer/m0` | REPO_MAP, `platform/e2e/` | merged | — |
 | M0 | CBSE `subjects.yaml` (448) + 70 syllabus files | curriculum-architect (CBSE) | `platform/curriculum-cbse/m0` | `platform/catalog/cbse/` | merged | OA-16 for unverified files |
 | M0 | Threat model, ASVS L2, M1 requirements | security-reviewer | `platform/security-reviewer/m0` | `docs/platform/security/` | merged | OA-13 (findings.md) |
-| M0→M1 | CISCE `subjects.yaml` + syllabus files | curriculum-architect (CISCE) | `platform/curriculum-cisce/m0` | `platform/catalog/cisce/` | in progress | — |
+| M0→M1 | CISCE `subjects.yaml` (323) + 323 syllabus files (3,627 chapters, 15,637 topics; 319 verified) | curriculum-architect (CISCE) | `platform/curriculum-cisce/m0` | `platform/catalog/cisce/` | **merged** | native-script titles for ~20 regional languages need review |
 | M0 | Next.js security hotfix for the live site | Lead | `hotfix/next-16.4.3` | root `package.json`/lockfile | ready, not merged | **OA-11** |
 | M1 | Bicep (dev/stg/prod), CI/CD workflows, Dockerfiles, local compose, deploy runbook | infra-azure | `platform/infra-azure/m1` | `platform/infra/`, `.github/workflows/platform-*.yml`, Dockerfiles | in progress | OA-01 for real deploys |
 | M1 | Full Drizzle schema, reversible migrations, embedded-Postgres harness, seeds | db-schema | `platform/db-schema/m1` | `platform/db/` | in progress | — |
