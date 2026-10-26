@@ -7,6 +7,7 @@ const ROUTES = [
   '/learn/cbse/10/science',
   '/learn/cbse/10/science/ch01',
   '/learn/cbse/10/science/ch01/lesson',
+  '/learn/sitemap.xml',
   '/me',
   '/dev/ui',
   '/api/platform/v1/session',

@@ -32,13 +32,14 @@ const here = import.meta.dirname;
 const repoRoot = resolve(here, '../../../../..');
 const out = resolve(here, '../../../test-results/platform-web');
 const args = process.argv.slice(2);
-const keep = args.includes('--keep');
+const keep = args.includes('--keep') || args.includes('--reuse');
+const reuse = args.includes('--reuse');
 const git = (...a) => execFileSync('git', a, { cwd: repoRoot, encoding: 'utf8' }).trim();
 const baseRef = args.includes('--base') ? args[args.indexOf('--base') + 1] : git('merge-base', 'HEAD', 'origin/platform/main');
 const log = (m) => console.log(`[flag-off-html] ${m}`);
 
 const TEXT_ENDPOINTS = ['/robots.txt', '/sitemap.xml', '/feed.xml', '/manifest.webmanifest', '/llms.txt', '/llms-full.txt'];
-const PAGES = [...MARKETING_PAGES.map((p) => p.path), '/this-page-does-not-exist'];
+const PAGES = [...new Set([...MARKETING_PAGES.map((p) => p.path), '/this-page-does-not-exist'])];
 
 function startServer(dir, port) {
   return new Promise((resolveStart, reject) => {
@@ -82,8 +83,21 @@ const sha = (s) => createHash('sha256').update(s).digest('hex').slice(0, 16);
 function normaliseHtml(html) {
   return html
     .replace(/<script>self\.__next_f\.push\([\s\S]*?<\/script>/g, '<script>FLIGHT</script>')
-    .replace(/\/_next\/static\/[A-Za-z0-9_\-./~]+?\.(js|css|woff2)/g, '/_next/static/ASSET.$1')
+    .replace(/(?:\/_next\/)?static\/(chunks|css|media)\/[A-Za-z0-9_\-.~]+?\.(js|css|woff2)/g, 'static/$1/ASSET.$2')
     .replace(/\?dpl=[A-Za-z0-9_-]+/g, '');
+}
+
+/**
+ * <head> as an order-free multiset of tags. Next.js decides the position of some head tags (e.g.
+ * <meta name="next-size-adjust">) from build-time prerender scheduling, which shifts when the app gains
+ * ANY route (verified: adding empty dummy routes to the base reproduces it). The <body> is compared
+ * strictly; the head must contain exactly the same tags.
+ */
+function headAsSet(html) {
+  const m = /<head>([\s\S]*?)<\/head>/i.exec(html);
+  if (!m) return html;
+  const tags = m[1].split(/(?=<)/).sort();
+  return html.replace(m[1], tags.join(''));
 }
 
 function stylesheetHrefs(html) {
@@ -138,6 +152,9 @@ let headServer;
 let failed = false;
 try {
   log(`base ${baseRef.slice(0, 12)} vs HEAD ${git('rev-parse', 'HEAD').slice(0, 12)}`);
+  if (reuse && existsSync(join(baseDir, '.next'))) {
+    log('reusing the existing base worktree and both builds (--reuse)');
+  } else {
   if (existsSync(baseDir)) {
     try {
       git('worktree', 'remove', '--force', baseDir);
@@ -152,6 +169,7 @@ try {
   if ((await run('npm', ['run', 'build'], { cwd: baseDir, env: canonicalEnv(), logFile: join(out, 'flag-off-base-build.log'), quiet: true })) !== 0) throw new Error('base build failed');
   log('next build (HEAD, flag off)…');
   if ((await run('npm', ['run', 'build'], { cwd: repoRoot, env: canonicalEnv(), logFile: join(out, 'flag-off-head-build.log'), quiet: true })) !== 0) throw new Error('HEAD build failed');
+  }
 
   baseServer = await startServer(baseDir, 3401);
   headServer = await startServer(repoRoot, 3402);
@@ -167,9 +185,11 @@ try {
     const r = {
       status: `${b.status}/${h.status}`,
       rawIdentical: b.raw === h.raw,
-      htmlIdentical: b.normalised === h.normalised,
+      htmlStrict: b.normalised === h.normalised,
+      htmlIdentical: headAsSet(b.normalised) === headAsSet(h.normalised),
       cssIdentical: JSON.stringify(b.css) === JSON.stringify(h.css),
-      domIdentical: base.dom[path] === head.dom[path],
+      domStrict: base.dom[path] === head.dom[path],
+      domIdentical: headAsSet(base.dom[path]) === headAsSet(head.dom[path]),
       htmlSha: sha(h.normalised),
     };
     if (r.rawIdentical) rawIdentical += 1;
@@ -177,9 +197,11 @@ try {
       failed = true;
       writeFileSync(join(out, `flag-off-diff-${path.replace(/[^a-z0-9]+/gi, '_')}-base.html`), b.normalised);
       writeFileSync(join(out, `flag-off-diff-${path.replace(/[^a-z0-9]+/gi, '_')}-head.html`), h.normalised);
+      writeFileSync(join(out, `flag-off-diff-${path.replace(/[^a-z0-9]+/gi, '_')}-base.dom.html`), base.dom[path]);
+      writeFileSync(join(out, `flag-off-diff-${path.replace(/[^a-z0-9]+/gi, '_')}-head.dom.html`), head.dom[path]);
     }
     report.pages[path] = r;
-    log(`${r.htmlIdentical && r.cssIdentical && r.domIdentical ? 'same' : 'DIFF'}  ${path}  status ${r.status}  html=${r.htmlIdentical} css=${r.cssIdentical} dom=${r.domIdentical} raw=${r.rawIdentical}`);
+    log(`${r.htmlIdentical && r.cssIdentical && r.domIdentical ? 'same' : 'DIFF'}  ${path}  status ${r.status}  html=${r.htmlIdentical} css=${r.cssIdentical} dom=${r.domIdentical} headOrder=${r.htmlStrict && r.domStrict ? 'same' : 'moved'} raw=${r.rawIdentical}`);
   }
   for (const path of TEXT_ENDPOINTS) {
     const same = base.text[path].status === head.text[path].status && base.text[path].body === head.text[path].body;

@@ -129,3 +129,14 @@ test('the marketing header shows the Learn entry point when the flag is on', asy
   await page.getByRole('button', { name: 'Open menu' }).click();
   await expect(page.locator('#mobile-menu').getByRole('link', { name: 'Learn' })).toHaveAttribute('href', '/learn');
 });
+
+test('platform sitemap lists /learn, class and subject pages', async ({ request }) => {
+  const res = await request.get('/learn/sitemap.xml');
+  expect(res.status()).toBe(200);
+  expect(res.headers()['content-type']).toContain('application/xml');
+  const xml = await res.text();
+  expect(xml).toContain('<loc>https://www.soylai.com/learn</loc>');
+  expect(xml).toContain('<loc>https://www.soylai.com/learn/cisce/12</loc>');
+  expect(xml).toContain('<loc>https://www.soylai.com/learn/cbse/10/science</loc>');
+  expect((xml.match(/<loc>/g) ?? []).length).toBeGreaterThan(700);
+});
