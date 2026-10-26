@@ -12,6 +12,7 @@ interface MdNode {
   value?: string;
   children?: MdNode[];
   data?: Record<string, unknown>;
+  position?: { start?: { offset?: number } };
 }
 
 function inlineMath(value: string): MdNode {
@@ -57,16 +58,33 @@ export function splitChem(text: string): MdNode[] {
   return out;
 }
 
-function transform(node: MdNode): void {
+function displayMath(value: string): MdNode {
+  // Same shape mdast-util-math produces for a fenced $$ block.
+  return {
+    type: 'math',
+    value,
+    data: {
+      hName: 'pre',
+      hChildren: [{ type: 'element', tagName: 'code', properties: { className: ['language-math', 'math-display'] }, children: [{ type: 'text', value }] }],
+    },
+  };
+}
+
+function transform(node: MdNode, source: string): void {
   if (!node.children) return;
   const next: MdNode[] = [];
   for (const child of node.children) {
-    if (child.type === 'html') {
+    // A paragraph that is only "$$...$$" on one line is display maths (authors write it that way).
+    const only = child.type === 'paragraph' && child.children?.length === 1 ? child.children[0] : null;
+    const start = only?.position?.start?.offset;
+    if (only && only.type === 'inlineMath' && typeof start === 'number' && source.startsWith('$$', start)) {
+      next.push(displayMath(only.value ?? ''));
+    } else if (child.type === 'html') {
       next.push({ type: 'text', value: child.value ?? '' });
     } else if (child.type === 'text' && child.value && child.value.includes('\\')) {
       next.push(...splitChem(child.value));
     } else {
-      transform(child);
+      transform(child, source);
       next.push(child);
     }
   }
@@ -74,7 +92,7 @@ function transform(node: MdNode): void {
 }
 
 export default function remarkSoyl() {
-  return (tree: MdNode) => {
-    transform(tree);
+  return (tree: MdNode, file: { value?: unknown }) => {
+    transform(tree, typeof file?.value === 'string' ? file.value : String(file?.value ?? ''));
   };
 }

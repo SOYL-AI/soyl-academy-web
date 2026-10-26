@@ -43,7 +43,7 @@ const FORBID_TAGS = [
 ];
 
 export const SVG_PURIFY_CONFIG: Config = {
-  ALLOWED_TAGS: [...SVG_ALLOWED_ELEMENTS],
+  ALLOWED_TAGS: [...SVG_ALLOWED_ELEMENTS, '#text'],
   ALLOWED_ATTR: [...SVG_ALLOWED_ATTRIBUTES],
   FORBID_TAGS,
   FORBID_ATTR: ['style', 'xlink:href', 'formaction', 'action', 'src', 'srcset', 'background', 'ping'],
@@ -135,7 +135,7 @@ export function createSvgSanitizer(purify: DOMPurify): SvgSanitizer {
     prefix = idPrefixFor(trimmed);
     const fragment = purify.sanitize(trimmed, SVG_PURIFY_CONFIG) as unknown as DocumentFragment;
     const removed = [
-      ...purify.removed.map((r) =>
+      ...purify.removed.filter((r) => !('element' in r && (r.element as Node | undefined)?.nodeName === 'BODY')).map((r) =>
         'element' in r ? `element ${describeNode(r.element)}` : `attribute ${r.attribute?.name ?? '?'} on ${describeNode(r.from)}`,
       ),
       ...notes,
