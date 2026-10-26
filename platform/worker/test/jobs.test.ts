@@ -188,7 +188,15 @@ describe('allJobs', () => {
       expect(job.options.policy).toBe('stately');
       expect(job.options.retryLimit).toBeGreaterThan(0);
       const empty =
-        job.name === JOB_NAMES.attemptsAutoSubmit ? { submitted: 0, failed: 0 } : job.name === JOB_NAMES.liveFinalize ? { events: 0, autoSubmitted: 0, ranked: 0 } : { deleted: 0 };
+        job.name === JOB_NAMES.attemptsAutoSubmit
+          ? { submitted: 0, failed: 0 }
+          : job.name === JOB_NAMES.liveFinalize
+            ? { events: 0, autoSubmitted: 0, ranked: 0 }
+            : job.name === JOB_NAMES.billingReconcile
+              ? { skipped: 'no_provider' }
+              : job.name === JOB_NAMES.billingExpire
+                ? { ordersExpired: 0, subscriptionsResynced: 0, entitlementsLapsed: 0, errors: 0 }
+                : { deleted: 0 };
       expect(await job.handler(ctx, null)).toEqual(empty);
     }
   });

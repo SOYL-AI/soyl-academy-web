@@ -8,6 +8,7 @@
  */
 import { z } from 'zod/v4';
 import { CONSENT } from '@soyl/shared/config/security';
+import { loadBillingConfig, type BillingConfig } from '@soyl/api/billing/config';
 
 export const APP_ENVS = ['local', 'test', 'dev', 'stg', 'prod'] as const;
 export type AppEnv = (typeof APP_ENVS)[number];
@@ -67,6 +68,8 @@ export interface WorkerConfig {
   /** Whether the AUTH-15 purge job is registered (see UNCONSENTED_PURGE). */
   unconsentedPurge: boolean;
   shutdownTimeoutMs: number;
+  /** Razorpay settings for the billing jobs (same variables as the API, ADR-014). */
+  billing: BillingConfig;
 }
 
 export class ConfigError extends Error {
@@ -95,6 +98,10 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
   if (migrate && (e.APP_ENV === 'stg' || e.APP_ENV === 'prod'))
     problems.push(`PGBOSS_MIGRATE must be false when APP_ENV=${e.APP_ENV} (DB-1: the migrations job installs the pg-boss schema)`);
 
+  // The worker only talks to the real Razorpay API (billing-jobs.ts); the stub default is not used here.
+  const billing = loadBillingConfig(cleaned, { appEnv: e.APP_ENV, isLocal, isProduction: e.APP_ENV === 'prod' });
+  problems.push(...billing.problems);
+
   if (problems.length) throw new ConfigError(problems);
 
   return {
@@ -109,5 +116,6 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
     unconsentedAccountTtlDays: e.UNCONSENTED_ACCOUNT_TTL_DAYS,
     unconsentedPurge: e.UNCONSENTED_PURGE === 'on' || (e.UNCONSENTED_PURGE === 'auto' && e.CONSENT_PROVIDER !== 'unavailable'),
     shutdownTimeoutMs: e.WORKER_SHUTDOWN_TIMEOUT_MS,
+    billing: billing.config,
   };
 }

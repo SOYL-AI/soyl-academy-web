@@ -21,6 +21,7 @@ import { autoSubmitExpired } from '@soyl/api/engine/finalize';
 import { finalizeLiveEvents, type LiveFinalizeResult } from '@soyl/api/engine/live-finalize';
 import { TEST_ENGINE } from '@soyl/shared/config/tests';
 import { defineJob, type JobContext, type JobDefinition, type JobQueueOptions } from './registry';
+import { BILLING_JOB_NAMES, billingJobs, type BillingJobSettings } from './billing-jobs';
 
 const DAY_MS = 86_400_000;
 
@@ -157,6 +158,8 @@ export const JOB_NAMES = {
   sweepSessions: 'auth.sweep-sessions',
   attemptsAutoSubmit: 'attempts.auto-submit',
   liveFinalize: 'live.finalize',
+  billingReconcile: BILLING_JOB_NAMES.reconcile,
+  billingExpire: BILLING_JOB_NAMES.expire,
 } as const;
 
 /** Test-engine sweeps run often and are short: one run at a time, no pile-up, a few quick retries. */
@@ -181,6 +184,8 @@ export interface JobSettings {
   unconsentedAccountTtlDays?: number;
   /** false: the AUTH-15 purge is not registered (no consent system, CONSENT_PROVIDER=unavailable). */
   unconsentedPurge?: boolean;
+  /** Billing jobs (billing-jobs.ts). Default: no Razorpay provider (reconcile skips, expiry runs). */
+  billing?: BillingJobSettings;
 }
 
 /** Every job the worker runs. */
@@ -228,6 +233,7 @@ export function allJobs(settings: JobSettings = {}): JobDefinition[] {
       options: ENGINE,
       handler: (ctx) => finalizeLive(ctx),
     }),
+    ...billingJobs(settings.billing ?? { razorpay: null }),
   ] as JobDefinition[];
   return settings.unconsentedPurge === false ? jobs.filter((j) => j.name !== JOB_NAMES.accountPurgeUnconsented) : jobs;
 }
