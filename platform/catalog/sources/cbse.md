@@ -726,6 +726,220 @@ Publisher CBSE, academic year 2026-27. Downloaded 2026-10-25 (M0), re-read 2026-
 - **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Mizo_SecP2_2026-27.pdf
 - **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
 
+### Class IX language documents
+
+Class IX anchors cite the Class IX-X document that CBSE prints for the language (or the Class IX-only document for Urdu and Kannada). In 2026-27 Class IX languages are taught at R1/R2/R3 levels under the new scheme (see `cbse-secondary-curriculum-2026-27`).
+
+### `cbse-ix-punjabi-2026-27`
+- **Title:** Punjabi (004) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Punjabi_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-bengali-2026-27`
+- **Title:** Bengali (005) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Bengali_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-tamil-2026-27`
+- **Title:** Tamil (006) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Tamil_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-telugu-ap-2026-27`
+- **Title:** Telugu — Andhra Pradesh (007) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Telugu_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-sindhi-2026-27`
+- **Title:** Sindhi (008) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Sindhi_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-marathi-2026-27`
+- **Title:** Marathi (009) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Marathi_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-gujarati-2026-27`
+- **Title:** Gujarati (010) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Gujarati_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-manipuri-2026-27`
+- **Title:** Manipuri (011) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Manipuri_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-malayalam-2026-27`
+- **Title:** Malayalam (012) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Malyalam_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-odia-2026-27`
+- **Title:** Odia (013) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Odia_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-assamese-2026-27`
+- **Title:** Assamese (014) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Assamese_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-kannada-2026-27`
+- **Title:** Kannada (015) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Kannada_SecP1IX_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-arabic-2026-27`
+- **Title:** Arabic (016) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Arabic_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-tibetan-2026-27`
+- **Title:** Tibetan (017) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Tibetan_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-french-2026-27`
+- **Title:** French (018) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/French_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-german-2026-27`
+- **Title:** German (020) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/German_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-russian-2026-27`
+- **Title:** Russian (021) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Russian_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-persian-2026-27`
+- **Title:** Persian (023) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Persian_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-nepali-2026-27`
+- **Title:** Nepali (024) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Nepali_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-limboo-2026-27`
+- **Title:** Limboo (025) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Limboo_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-lepcha-2026-27`
+- **Title:** Lepcha (026) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Lepcha_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-bhoti-2026-27`
+- **Title:** Bhoti (088) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Bhoti_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-telugu-telangana-2026-27`
+- **Title:** Telugu — Telangana (089) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Telugu_Telangana_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-kokborok-2026-27`
+- **Title:** Kokborok (091) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/KOKBOROK_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-bodo-2026-27`
+- **Title:** Bodo (092) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Bodo_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-tangkhul-2026-27`
+- **Title:** Tangkhul (093) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Tangkhul_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-japanese-2026-27`
+- **Title:** Japanese (094) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Japanese_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-bhutia-2026-27`
+- **Title:** Bhutia (095) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Bhutia_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-spanish-2026-27`
+- **Title:** Spanish (096) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Spanish_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-kashmiri-2026-27`
+- **Title:** Kashmiri (097) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Kashmiri_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-mizo-2026-27`
+- **Title:** Mizo (098) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Mizo_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-bahasa-melayu-2026-27`
+- **Title:** Bahasa Melayu (099) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Bahasa_Melayu_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-rai-2026-27`
+- **Title:** Rai (131) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Rai_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-gurung-2026-27`
+- **Title:** Gurung (132) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Gurung_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-tamang-2026-27`
+- **Title:** Tamang (133) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Tamang_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-sherpa-2026-27`
+- **Title:** Sherpa (134) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Sherpa_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-thai-2026-27`
+- **Title:** Thai (136) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Thai_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-santhali-2026-27`
+- **Title:** Santhali (167) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Santhali_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-konkani-2026-27`
+- **Title:** Konkani (168) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/KONKANI_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-maithili-2026-27`
+- **Title:** Maithili (169) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/MAITHILI_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-dogri-2026-27`
+- **Title:** Dogri (170) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Dogri_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-ix-urdu-2026-27`
+- **Title:** Urdu (Class IX, R1/R2/R3) Class IX 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Urdu_SecP1IX_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
 ## Other subject documents fetched (catalogue evidence)
 
 These 272 documents (fetched 2026-10-25, publisher CBSE, 2026-27) were used to confirm each subject's existence, code and marks split in `subjects.yaml`; they will become per-subject anchors when the matching syllabus files are written.
