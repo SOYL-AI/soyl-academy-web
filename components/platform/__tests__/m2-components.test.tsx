@@ -34,6 +34,7 @@ function slidesFor(n: number) {
   const slides = Array.from({ length: n }, (_, i) => (
     <article key={i} data-testid={`slide-${i}`}>
       <h2>Slide {i + 1}</h2>
+      {/* eslint-disable-next-line @next/next/no-img-element -- test fixture */}
       <img src="https://cdn.example/x.png" alt="" loading="lazy" />
     </article>
   ));

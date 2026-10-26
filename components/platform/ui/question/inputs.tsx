@@ -75,7 +75,7 @@ export function ChoiceInput({ part, slots, draft, onChange, disabled, label, lan
 
 /* ── Numerical ───────────────────────────────────────────────────────────────────────────────────── */
 
-export function NumericalInput({ draft, onChange, disabled, label, error }: InputProps<Extract<Draft, { kind: 'value' }>> & { error?: string | null }) {
+export function NumericalInput({ draft, onChange, disabled, error }: InputProps<Extract<Draft, { kind: 'value' }>> & { error?: string | null }) {
   const id = useId();
   return (
     <div className={s.field} data-input="numerical">
@@ -229,7 +229,6 @@ export function TextAnswerInput({
   draft,
   onChange,
   disabled,
-  label,
   lang,
   mono,
 }: InputProps<Extract<Draft, { kind: 'text' | 'output' }>> & { mono?: boolean }) {
