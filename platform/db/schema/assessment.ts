@@ -4,7 +4,7 @@
  * `deadline_at`; client timestamps are advisory only (AC-12, F-007).
  */
 import { sql } from 'drizzle-orm';
-import { boolean, check, index, integer, jsonb, pgTable, smallint, text, uniqueIndex, uuid } from 'drizzle-orm/pg-core';
+import { bigint, boolean, check, index, integer, jsonb, pgTable, smallint, text, uniqueIndex, uuid } from 'drizzle-orm/pg-core';
 import { PaperType } from '@soyl/shared/content/blueprint';
 import { TestKind } from '@soyl/shared/content/test';
 import { id, marks, oneOf, ratio, timestamps, tstz } from './_shared';
@@ -214,6 +214,18 @@ export const attempts = pgTable(
     tabSwitchCount: integer('tab_switch_count').notNull().default(0),
     /** Per-user question/option shuffle seed. */
     shuffleSeed: text('shuffle_seed'),
+    /**
+     * Auto-graded marks that count (choice-group best-of applied). Ranks and percentiles use only this:
+     * self- and AI-evaluated marks are not verifiable (AC-14). Migration 0007.
+     */
+    autoScore: marks('auto_score'),
+    /** Self-evaluated marks that count (written items, POST /v1/attempts/:id/self-evaluation). */
+    selfScore: marks('self_score'),
+    /** Seconds from start to submission, capped at the test duration (rank tie-break). */
+    timeTakenSec: integer('time_taken_sec'),
+    /** The user's first graded attempt at this test: the only one that feeds percentiles. */
+    countsForStats: boolean('counts_for_stats').notNull().default(false),
+    gradedAt: tstz('graded_at'),
     ...timestamps(),
   },
   (t) => [
@@ -229,6 +241,8 @@ export const attempts = pgTable(
     index('attempts_live_event_id_idx').on(t.liveEventId),
     // Auto-submit sweeper
     index('attempts_deadline_active_idx').on(t.deadlineAt).where(sql`${t.status} = 'in_progress'`),
+    // Test-series listing and "my attempts at this test".
+    index('attempts_user_test_idx').on(t.userId, t.testId),
     oneOf('attempts_status_check', t.status, ATTEMPT_STATUSES),
     check('attempts_started_check', sql`${t.status} = 'created' OR (${t.startedAt} IS NOT NULL AND ${t.deadlineAt} IS NOT NULL)`),
     check('attempts_deadline_check', sql`${t.deadlineAt} IS NULL OR ${t.deadlineAt} > ${t.startedAt}`),
@@ -256,12 +270,18 @@ export const responses = pgTable(
     clientSavedAt: tstz('client_saved_at'),
     /** Server receipt time of the latest save. */
     autosavedAt: tstz('autosaved_at').notNull().defaultNow(),
+    /**
+     * Client sequence number of the stored state (ADR-012). A save applies only when its sequence is
+     * higher, so retried or out-of-order batches never regress an answer. Migration 0007.
+     */
+    clientSeq: bigint('client_seq', { mode: 'number' }).notNull().default(0),
     ...timestamps(),
   },
   (t) => [
     uniqueIndex('responses_attempt_item_unique').on(t.attemptId, t.testItemId),
     index('responses_test_item_id_idx').on(t.testItemId),
     check('responses_time_spent_check', sql`${t.timeSpentSec} >= 0`),
+    check('responses_client_seq_check', sql`${t.clientSeq} >= 0`),
   ],
 );
 
@@ -289,5 +309,29 @@ export const evaluations = pgTable(
     oneOf('evaluations_mode_check', t.mode, EVALUATION_MODES),
     oneOf('evaluations_status_check', t.status, ['pending', 'done', 'failed']),
     check('evaluations_marks_check', sql`${t.marks} IS NULL OR (${t.marks} >= 0 AND ${t.marks} <= ${t.maxMarks})`),
+  ],
+);
+
+/**
+ * Score distribution per test version (percentiles, ARCHITECTURE §9): one row per half-mark bucket
+ * (`bucket` = auto score × 2) counting first graded attempts (`attempts.counts_for_stats`). A
+ * percentile is two sums over at most 2 × total_marks + 1 rows instead of a scan of every attempt.
+ * Aggregate counts only, no user link. Migration 0007.
+ */
+export const testScoreBuckets = pgTable(
+  'test_score_buckets',
+  {
+    id: id(),
+    testId: uuid('test_id')
+      .notNull()
+      .references(() => tests.id, { onDelete: 'cascade' }),
+    bucket: integer('bucket').notNull(),
+    attempts: integer('attempts').notNull().default(0),
+    ...timestamps(),
+  },
+  (t) => [
+    uniqueIndex('test_score_buckets_test_bucket_unique').on(t.testId, t.bucket),
+    check('test_score_buckets_bucket_check', sql`${t.bucket} >= 0`),
+    check('test_score_buckets_attempts_check', sql`${t.attempts} >= 0`),
   ],
 );

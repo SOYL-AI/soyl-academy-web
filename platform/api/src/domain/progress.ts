@@ -9,7 +9,7 @@ import { XP_AWARDS, levelForXp } from '@soyl/shared/config/gamification';
 import type { Clock } from '../clock';
 import { ApiProblem } from '../errors';
 import { deckParts, type ChapterRef } from './content';
-import { awardXp, evaluateBadges, recordActivity, refreshTotals, streakView, type StreakView } from './gamification';
+import { awardXp, ensureBadges, evaluateBadges, recordActivity, refreshTotals, streakView, type StreakView } from './gamification';
 
 export interface LessonProgressInput {
   /** 1-based deck part, or 0 for a single-deck chapter. Omitted = the chapter's first part. */
@@ -46,6 +46,8 @@ export async function saveLessonProgress(db: Database, clock: Clock, year: strin
   if (input.completed && input.slide !== lastSlide) throw new ApiProblem('validation_failed', { errors: [{ path: 'body.completed', message: 'A lesson is completed on its last slide.' }] });
   const completesNow = input.slide === lastSlide;
   const now = new Date(clock.now());
+  // Badge rows are synced before the transaction: a transaction must never wait for a second pooled connection.
+  await ensureBadges(db);
 
   return db.transaction(async (tx) => {
     const [before] = await tx

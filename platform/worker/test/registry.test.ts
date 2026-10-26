@@ -128,13 +128,13 @@ describe('registerJobs (real pg-boss on the test database)', () => {
   it('registers every job, stores UTC schedules, and processes a sent job end-to-end', async () => {
     const log = memoryLogger();
     const registered = await registerJobs(boss, allJobs(), { db: t.db, log, pollingIntervalSeconds: 0.5 });
-    expect(registered).toHaveLength(4);
+    expect(registered).toHaveLength(Object.keys(JOB_NAMES).length);
 
     const queues = await boss.getQueues(Object.values(JOB_NAMES));
     expect(queues.map((q) => q.name).sort()).toEqual(Object.values(JOB_NAMES).sort());
     for (const q of queues) {
       expect(q.policy).toBe('stately');
-      expect(q.retryLimit).toBe(3);
+      expect(q.retryLimit).toBe(q.name === JOB_NAMES.attemptsAutoSubmit || q.name === JOB_NAMES.liveFinalize ? 2 : 3);
     }
     const schedules = await boss.getSchedules();
     expect(schedules.map((s) => [s.name, s.cron, s.timezone]).sort()).toEqual(
@@ -156,6 +156,6 @@ describe('registerJobs (real pg-boss on the test database)', () => {
     expect(left).not.toContain(expired);
 
     // Registering again (another replica, a restart) is harmless.
-    await expect(registerJobs(boss, allJobs(), { db: t.db, log, pollingIntervalSeconds: 0.5 })).resolves.toHaveLength(4);
+    await expect(registerJobs(boss, allJobs(), { db: t.db, log, pollingIntervalSeconds: 0.5 })).resolves.toHaveLength(Object.keys(JOB_NAMES).length);
   });
 });
