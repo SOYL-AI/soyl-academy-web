@@ -588,3 +588,17 @@ CBSE returned "The specified URL is inaccessible at this time" (HTML instead of 
 - Class IX skill syllabus 421-Pharma_BioTechnology_IX (Class X version of the same subject was fetched): https://cbseacademic.nic.in/web_material/Curriculum27/sec/421-Pharma_BioTechnology_IX.pdf
 - Class IX skill syllabus 422-DesignThinking (Class X version of the same subject was fetched): https://cbseacademic.nic.in/web_material/Curriculum27/sec/422-DesignThinking.pdf
 - NCERT textbook portal (all NCERT chapter lists): https://ncert.nic.in/textbook.php
+
+<!-- m1-blueprints:begin -->
+## Sample question papers and marking schemes (M1 blueprints)
+
+Publisher CBSE. Fetched 2026-10-26 by the curriculum-architect (CBSE blueprints). Used only for the **pattern** of the matching
+`blueprints/*.yaml` (sections, question types, marks, internal choice, duration). No question text is copied. Skill-subject SQPs on
+CBSE's skill page are the 2025-26 papers; CBSE notification 132/2026 (`cbse-sqp-notification-2026-27`) says the question-paper design is unchanged for 2026-27.
+
+### `cbse-sqp-x-science-2026-27`
+- **Title:** Science (086) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/Science-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/Science-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+<!-- m1-blueprints:end -->

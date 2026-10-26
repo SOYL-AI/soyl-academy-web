@@ -1,0 +1,65 @@
+id: cbse-10-science-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-science
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.5
+  application: 0.3
+  analysis+evaluation: 0.2
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Biology
+    instructions: >-
+      Questions 1-16. Q1-7 MCQ, Q8-9 assertion-reason, Q10-12 very short answer (2 marks), Q13-14 short answer (3 marks), Q15 case-based (4
+      marks), Q16 long answer (5 marks). Internal choice in one 2-mark, the case-based sub-part and the long answer.
+    items:
+      - {type: mcq, count: 7, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+      - {type: short, count: 2, marks_each: 2}
+      - {type: short, count: 2, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 2, marks_each: 3}
+      - {type: case-based, count: 1, marks_each: 4}
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+  - id: B
+    title: Section B - Chemistry
+    instructions: Questions 17-29. Q17-23 MCQ, Q24 assertion-reason, Q25 very short answer, Q26-27 short answer, Q28 case-based, Q29 long answer.
+    items:
+      - {type: mcq, count: 7, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: short, count: 1, marks_each: 2}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 1, marks_each: 3}
+      - {type: case-based, count: 1, marks_each: 4}
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Physics
+    instructions: Questions 30-39. Q30-31 MCQ, Q32 assertion-reason, Q33-34 very short answer, Q35-37 short answer, Q38 case-based, Q39 long answer.
+    items:
+      - {type: mcq, count: 2, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: short, count: 1, marks_each: 2}
+      - {type: short, count: 2, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 3, marks_each: 3}
+      - {type: case-based, count: 1, marks_each: 4}
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-x-science-2026-27
+notes: >-
+  39 questions in three discipline sections (2026-27 SQP layout: Biology 30, Chemistry 25, Physics 25 marks). Across the paper:
+
+  20 x 1 (16 MCQ + 4 assertion-reason), 6 x 2 (VSA), 7 x 3 (SA), 3 x 4 (case-based, internal choice inside one sub-part), 3 x 5 (LA, all
+  with
+
+  A/B choice). Competency weights from the CBSE 2026-27 question paper design: knowledge and understanding 50%, application 30%,
+
+  formulate/analyse/evaluate/create 20%; ~33% internal choice. Theory 80 + internal assessment 20. Numericals (lens, power, resistance)
+
+  appear inside 2/3/5-mark constructed-response items and are mapped to short/long, not numerical (they need working and step marks).
+
+  Visually impaired candidates get substitute questions for diagram-based items (not modelled).
