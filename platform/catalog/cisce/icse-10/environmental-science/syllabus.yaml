@@ -1,0 +1,440 @@
+# ICSE Class 10 Environmental Science (code 82, Group II) - ICSE 2027 examination, CLASS X portion only.
+# Source: platform/catalog/sources/cisce.md#icse-2027-environmental-science. Topic wording is our own summary of the official scope.
+subject_id: icse-10-environmental-science
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2027-environmental-science, icse-2027-regulations]
+exam_notes: >-
+  One theory paper of 2 hours, 80 marks, plus internal assessment 20 marks (a minimum of three assignments set by the
+  teacher, e.g. a 1500-word field study of human impact on the local environment or a 2000-word original study with a
+  supporting functional model; marked 10 by the subject teacher and 10 by an external examiner). Group II elective;
+  candidates offering Environmental Applications (Group III) may not offer Environmental Science.
+  The syllabus does not print the question-paper pattern; ICSE Group II papers usually open with compulsory short-answer
+  questions across the syllabus followed by a choice of structured long questions (check the latest CISCE specimen paper).
+  Some items are marked "not to be tested, for knowledge and understanding only" (demographic transition, development
+  framework for poverty alleviation, fossil-fuel electricity); they are kept as topics for context and listed under the
+  chapter's removed_topics. The ICSE 2027 paper is set only on the Class X syllabus (Class IX portion is in
+  icse-9-environmental-science). CISCE lists ten numbered topics, not textbook chapters: SOYL groups them into
+  13 teachable chapters in syllabus order. No unit-wise marks weightage is published.
+units:
+  - { name: "1. Controlling Air Pollution", marks: null }
+  - { name: "2. Addressing Population", marks: null }
+  - { name: "3. Managing the Urban Environment", marks: null }
+  - { name: "4. Managing Soil and Land", marks: null }
+  - { name: "5. Food", marks: null }
+  - { name: "6. Biodiversity", marks: null }
+  - { name: "7. Energy", marks: null }
+  - { name: "8. Waste", marks: null }
+  - { name: "9. Environment and Development", marks: null }
+  - { name: "10. Towards a Sustainable Future", marks: null }
+chapters:
+  - id: icse-10-environmental-science-ch01
+    number: 1
+    title: "Controlling Air Pollution"
+    unit: "1. Controlling Air Pollution"
+    topics:
+      - id: icse-10-environmental-science-ch01-t01
+        title: "Reducing pollution from domestic combustion; clean cooking fuels for rural homes"
+        learning_outcomes:
+          - "Explain why indoor smoke from burning wood, dung and crop waste harms health, especially of women and children"
+          - "Compare biomass with cleaner fuels such as kerosene and LPG, and improved stoves, for rural cooking"
+      - id: icse-10-environmental-science-ch01-t02
+        title: "Technological measures against industrial air pollution: energy-efficient devices and clean technologies"
+        learning_outcomes:
+          - "Explain how energy-efficient devices and cleaner production processes reduce industrial emissions"
+      - id: icse-10-environmental-science-ch01-t03
+        title: "Meteorological controls and zoning strategy for industries"
+        learning_outcomes:
+          - "Explain how tall stacks and siting industries with regard to wind direction help disperse pollutants"
+          - "Describe zoning as separating industrial areas from residential areas"
+      - id: icse-10-environmental-science-ch01-t04
+        title: "Penalties and subsidies as tools of pollution control"
+        learning_outcomes:
+          - "Evaluate how penalties on polluters and subsidies for clean technology change industrial behaviour"
+      - id: icse-10-environmental-science-ch01-t05
+        title: "Case study: the Taj Trapezium"
+        learning_outcomes:
+          - "Explain how industrial emissions threatened the Taj Mahal and the measures taken in the Taj Trapezium Zone"
+      - id: icse-10-environmental-science-ch01-t06
+        title: "Vehicle emission control through engine design: catalytic converters and four-stroke engines"
+        learning_outcomes:
+          - "Explain how a catalytic converter reduces harmful exhaust gases"
+          - "State why four-stroke engines pollute less than two-stroke engines"
+      - id: icse-10-environmental-science-ch01-t07
+        title: "Clean fuels, public transport, traffic management and economic policy measures"
+        learning_outcomes:
+          - "Explain how CNG, better public transport and traffic management reduce vehicular pollution in cities"
+          - "Suggest economic measures such as fuel taxes or congestion charges to cut vehicle use"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-environmental-science-ch02
+    number: 2
+    title: "Addressing Population"
+    unit: "2. Addressing Population"
+    topics:
+      - id: icse-10-environmental-science-ch02-t01
+        title: "Growing population and environmental degradation: UN projections for 2050, the climate link and alternative futures"
+        learning_outcomes:
+          - "Explain how population growth increases pressure on land, water, forests and the climate"
+          - "Discuss how different choices today lead to alternative population and environmental futures"
+      - id: icse-10-environmental-science-ch02-t02
+        title: "Growing population in developing countries versus rising consumption in developed countries"
+        learning_outcomes:
+          - "Compare the environmental impact of population growth in developing countries with high per-person consumption in developed countries"
+      - id: icse-10-environmental-science-ch02-t03
+        title: "The demographic transition: stages and examples of developed and developing nations (for understanding)"
+        board_assessed: false
+        learning_outcomes:
+          - "Describe the stages of the demographic transition in terms of birth and death rates"
+          - "Place countries such as India, China, Korea and Malaysia on the transition model"
+      - id: icse-10-environmental-science-ch02-t04
+        title: "Strategies for controlling population growth: family planning, health care, education and economic development"
+        learning_outcomes:
+          - "Explain how family planning, better health care and education help to lower birth rates"
+      - id: icse-10-environmental-science-ch02-t05
+        title: "Women-centred human development"
+        learning_outcomes:
+          - "Explain why the education and empowerment of women is central to slowing population growth"
+      - id: icse-10-environmental-science-ch02-t06
+        title: "Development framework for poverty alleviation: social mobilisation, agriculture, small-scale industry, human development (for understanding)"
+        board_assessed: false
+        learning_outcomes:
+          - "Describe how the four elements of the framework work together to reduce poverty"
+    removed_topics:
+      - "The demographic transition is for knowledge and understanding only and is not tested"
+      - "The development framework for poverty alleviation is for knowledge and understanding only and is not tested"
+    literature_texts: []
+  - id: icse-10-environmental-science-ch03
+    number: 3
+    title: "Managing the Urban Environment"
+    unit: "3. Managing the Urban Environment"
+    topics:
+      - id: icse-10-environmental-science-ch03-t01
+        title: "Urbanisation as a challenge; the need for sustainable cities"
+        learning_outcomes:
+          - "Explain why unplanned urbanisation is a challenge and describe features of a sustainable city"
+      - id: icse-10-environmental-science-ch03-t02
+        title: "Planning environmental improvement: efficient land use, energy, shelter and transport"
+        learning_outcomes:
+          - "Suggest planning measures for land use, energy, housing and transport in a growing Indian city"
+      - id: icse-10-environmental-science-ch03-t03
+        title: "Water supply management, wastewater and sanitary waste management, and construction activities"
+        learning_outcomes:
+          - "Explain how cities can manage water supply, treat wastewater and control dust and debris from construction"
+      - id: icse-10-environmental-science-ch03-t04
+        title: "Rural development and secondary cities to counter migration"
+        learning_outcomes:
+          - "Explain how rural development reduces migration to large cities"
+          - "Explain how developing secondary (smaller) cities eases pressure on metropolitan cities"
+      - id: icse-10-environmental-science-ch03-t05
+        title: "Community participation and the contribution of private enterprises"
+        learning_outcomes:
+          - "Describe ways communities keep their surroundings clean"
+          - "Suggest measures to increase private enterprise participation in city improvement"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-environmental-science-ch04
+    number: 4
+    title: "Conserving Soil"
+    unit: "4. Managing Soil and Land"
+    topics:
+      - id: icse-10-environmental-science-ch04-t01
+        title: "Erosion control techniques: terracing, contour ploughing, dry farming, tree planting"
+        learning_outcomes:
+          - "Explain how terracing and contour ploughing reduce soil erosion on slopes"
+          - "Describe dry farming and tree planting as erosion control methods"
+      - id: icse-10-environmental-science-ch04-t02
+        title: "Bunds, gully control, wind-breaks and organic fertilisers"
+        learning_outcomes:
+          - "Explain how bunds, plugging gullies and wind-breaks check water and wind erosion"
+          - "Explain how organic fertilisers improve soil structure and reduce erosion"
+      - id: icse-10-environmental-science-ch04-t03
+        title: "Soil conservation through land-use management, vegetative and mechanical practices"
+        learning_outcomes:
+          - "Distinguish vegetative from mechanical soil conservation practices with examples"
+          - "Explain how matching land use to land capability conserves soil"
+      - id: icse-10-environmental-science-ch04-t04
+        title: "Conserving soil and water together; appropriate cropping systems (strip cropping, tree crops, foliage crops)"
+        learning_outcomes:
+          - "Explain why soil and water conservation go together"
+          - "Describe strip cropping and the use of tree and foliage crops to protect soil"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-environmental-science-ch05
+    number: 5
+    title: "Land Reforms, Rural Development and Forest Management"
+    unit: "4. Managing Soil and Land"
+    topics:
+      - id: icse-10-environmental-science-ch05-t01
+        title: "Land reforms: meaning and measures in India to give land to the landless"
+        learning_outcomes:
+          - "Explain land reform measures such as abolition of intermediaries, land ceilings and redistribution of surplus land"
+      - id: icse-10-environmental-science-ch05-t02
+        title: "Integrated rural development: objectives; social and community forestry"
+        learning_outcomes:
+          - "State the objectives of integrated rural development"
+          - "Distinguish social forestry from community forestry as self-help schemes"
+      - id: icse-10-environmental-science-ch05-t03
+        title: "Role of women and the community in conservation"
+        learning_outcomes:
+          - "Explain the role of women and village communities in conservation, with an example such as the Chipko movement"
+      - id: icse-10-environmental-science-ch05-t04
+        title: "Combating deforestation: reforestation, energy plantations, non-timber forest products, alternative livelihoods, changed consumption"
+        learning_outcomes:
+          - "Explain how energy plantations and harvesting of non-timber forest products reduce pressure on forests"
+          - "Suggest changes in consumption patterns that reduce deforestation"
+      - id: icse-10-environmental-science-ch05-t05
+        title: "Managing forest grazing: causes and consequences of overgrazing; controlled grazing under the National Forest Policy, 1988"
+        learning_outcomes:
+          - "Explain the causes and consequences of overgrazing in forests"
+          - "Describe controlled grazing as recommended by the National Forest Policy, 1988"
+      - id: icse-10-environmental-science-ch05-t06
+        title: "Alternatives to timber: recycling of timber and paper"
+        learning_outcomes:
+          - "Explain how recycling timber and paper reduces the demand for felling trees"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-environmental-science-ch06
+    number: 6
+    title: "Sustainable Agriculture: Pest Management, New Crops and Cropping Methods"
+    unit: "5. Food"
+    topics:
+      - id: icse-10-environmental-science-ch06-t01
+        title: "Integrated pest management: meaning, aims, advantages and disadvantages"
+        learning_outcomes:
+          - "Explain integrated pest management and how it combines biological, cultural and limited chemical control"
+          - "Evaluate the advantages and disadvantages of IPM"
+      - id: icse-10-environmental-science-ch06-t02
+        title: "Genetically modified organisms: applications in plants and animals and environmental risks"
+        learning_outcomes:
+          - "Give examples of GM applications in crops and animals"
+          - "Evaluate environmental risks of GMOs such as gene flow and effects on non-target organisms"
+      - id: icse-10-environmental-science-ch06-t03
+        title: "New crop strains: high-yielding and hybrid varieties and their viability"
+        learning_outcomes:
+          - "Explain the benefits and limitations of high-yielding and hybrid varieties"
+      - id: icse-10-environmental-science-ch06-t04
+        title: "Mixed cropping: advantages and disadvantages"
+        learning_outcomes:
+          - "Evaluate mixed cropping as a way to reduce risk of crop failure"
+      - id: icse-10-environmental-science-ch06-t05
+        title: "Regenerative farming: intercropping, crop rotation, agroforestry, polyvarietal cultivation and polyculture"
+        learning_outcomes:
+          - "Explain how each regenerative technique maintains soil fertility and controls pests"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-environmental-science-ch07
+    number: 7
+    title: "Sustainable Agriculture: Tillage, Irrigation, Fertilisers, Gene Banks and Food Security"
+    unit: "5. Food"
+    topics:
+      - id: icse-10-environmental-science-ch07-t01
+        title: "Conservation tillage farming: meaning, advantages and disadvantages"
+        learning_outcomes:
+          - "Explain conservation tillage and evaluate its effect on soil erosion and weed control"
+      - id: icse-10-environmental-science-ch07-t02
+        title: "Trickle drip irrigation: need, operation, advantages and disadvantages"
+        learning_outcomes:
+          - "Describe how a drip irrigation system delivers water to plant roots"
+          - "Evaluate drip irrigation for water-scarce regions"
+      - id: icse-10-environmental-science-ch07-t03
+        title: "New organic fertilisers: integrated nutrient supply; bulky organic manures, green manures, biofertilisers and sewage sludge"
+        learning_outcomes:
+          - "Explain the integrated nutrient supply programme"
+          - "Compare bulky organic manures, green manures, biofertilisers and sewage sludge as nutrient sources"
+      - id: icse-10-environmental-science-ch07-t04
+        title: "Gene banks: meaning and objectives"
+        learning_outcomes:
+          - "Explain what a gene bank is and why traditional crop varieties are preserved in gene banks"
+      - id: icse-10-environmental-science-ch07-t05
+        title: "Global food security: food imbalance, distributional inequality and the role of food aid"
+        learning_outcomes:
+          - "Explain why hunger exists even when world food production is sufficient"
+          - "Evaluate the role of food aid in achieving global food security"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-environmental-science-ch08
+    number: 8
+    title: "Biodiversity and Its Conservation"
+    unit: "6. Biodiversity"
+    topics:
+      - id: icse-10-environmental-science-ch08-t01
+        title: "Biodiversity at risk: reasons for loss; humans as super consumers"
+        learning_outcomes:
+          - "Explain human causes of biodiversity loss such as habitat destruction, overexploitation, pollution and invasive species"
+      - id: icse-10-environmental-science-ch08-t02
+        title: "Reasons for concern: economic, ecological and aesthetic value of biodiversity"
+        learning_outcomes:
+          - "Explain the economic, ecological and aesthetic reasons for conserving biodiversity"
+      - id: icse-10-environmental-science-ch08-t03
+        title: "In-situ conservation: wildlife sanctuaries, national parks and biosphere reserves"
+        learning_outcomes:
+          - "Distinguish wildlife sanctuaries, national parks and biosphere reserves with Indian examples"
+      - id: icse-10-environmental-science-ch08-t04
+        title: "Ex-situ conservation: zoological parks, botanical gardens and gene banks; harvesting wildlife for commercial needs"
+        learning_outcomes:
+          - "Distinguish in-situ from ex-situ conservation"
+          - "Explain how wildlife can be harvested sustainably to meet commercial needs"
+      - id: icse-10-environmental-science-ch08-t05
+        title: "National strategies: Wildlife (Protection) Act 1972 and Project Tiger 1973"
+        learning_outcomes:
+          - "State the main aims of the Wildlife (Protection) Act 1972 and Project Tiger"
+      - id: icse-10-environmental-science-ch08-t06
+        title: "International strategies: IUCN, Ramsar Convention (1971), CITES and the Convention on Biological Diversity"
+        learning_outcomes:
+          - "State the purpose of IUCN, the Ramsar Convention, CITES and the Convention on Biological Diversity"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-environmental-science-ch09
+    number: 9
+    title: "Energy"
+    unit: "7. Energy"
+    topics:
+      - id: icse-10-environmental-science-ch09-t01
+        title: "Fossil fuels and electricity; renewable and non-renewable resources (for understanding)"
+        learning_outcomes:
+          - "Distinguish renewable from non-renewable energy resources and explain why fossil fuel supplies are dwindling"
+      - id: icse-10-environmental-science-ch09-t02
+        title: "Nuclear energy: fission, advantages and disadvantages"
+        learning_outcomes:
+          - "Explain nuclear fission in simple terms"
+          - "Evaluate the advantages and disadvantages of nuclear power"
+      - id: icse-10-environmental-science-ch09-t03
+        title: "Nuclear safety concerns: the Chernobyl disaster; nuclear fusion"
+        learning_outcomes:
+          - "Describe the causes and consequences of the Chernobyl disaster"
+          - "Distinguish nuclear fusion from fission"
+      - id: icse-10-environmental-science-ch09-t04
+        title: "Energy conservation"
+        learning_outcomes:
+          - "Suggest practical ways to conserve energy at home, in industry and in transport"
+      - id: icse-10-environmental-science-ch09-t05
+        title: "Alternative energy: solar, wind, hydroelectric and geothermal"
+        learning_outcomes:
+          - "Compare solar, wind, hydroelectric and geothermal energy on availability and environmental impact"
+      - id: icse-10-environmental-science-ch09-t06
+        title: "Biomass and liquid fuels (methanol, ethanol, gasohol), CNG and hydrogen"
+        learning_outcomes:
+          - "Explain how biomass yields fuels such as ethanol and gasohol"
+          - "Evaluate CNG and hydrogen as cleaner fuels"
+    removed_topics:
+      - "Fossil fuels used to produce electricity is for knowledge and understanding only and is not tested"
+    literature_texts: []
+  - id: icse-10-environmental-science-ch10
+    number: 10
+    title: "Solid Waste Management"
+    unit: "8. Waste"
+    topics:
+      - id: icse-10-environmental-science-ch10-t01
+        title: "Solid waste and the throwaway society; biodegradable and non-biodegradable materials"
+        learning_outcomes:
+          - "Classify common household waste as biodegradable or non-biodegradable"
+      - id: icse-10-environmental-science-ch10-t02
+        title: "Where the trash goes: landfills and incinerators"
+        learning_outcomes:
+          - "Evaluate the problems of open dumps, sanitary landfills and incinerators"
+      - id: icse-10-environmental-science-ch10-t03
+        title: "Producing less waste, reusing and recycling"
+        learning_outcomes:
+          - "Explain the waste hierarchy of reduce, reuse and recycle with household examples"
+      - id: icse-10-environmental-science-ch10-t04
+        title: "Composting, vermiculture and biotechnology"
+        learning_outcomes:
+          - "Describe how composting and vermiculture convert organic waste into manure"
+          - "Explain how biotechnology can help break down waste"
+      - id: icse-10-environmental-science-ch10-t05
+        title: "Finding alternatives to materials we use"
+        learning_outcomes:
+          - "Suggest alternatives to single-use plastics and other wasteful materials"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-environmental-science-ch11
+    number: 11
+    title: "Environment and Development"
+    unit: "9. Environment and Development"
+    topics:
+      - id: icse-10-environmental-science-ch11-t01
+        title: "Global environmental pollution: who is responsible? Need for mutual cooperation"
+        learning_outcomes:
+          - "Evaluate the responsibility of developed and developing countries for global pollution"
+          - "Explain why global pollution needs cooperation between nations"
+      - id: icse-10-environmental-science-ch11-t02
+        title: "Economic development and environmental degradation; contrasting views of developed and developing countries"
+        learning_outcomes:
+          - "Compare the views of developed and developing countries on development and the environment"
+      - id: icse-10-environmental-science-ch11-t03
+        title: "The debt trap"
+        learning_outcomes:
+          - "Explain how foreign debt pushes poor countries to overexploit natural resources"
+      - id: icse-10-environmental-science-ch11-t04
+        title: "International trade and environmental deterioration: unfair trade practices"
+        learning_outcomes:
+          - "Explain how unfair trade practices link international trade to environmental damage in developing countries"
+      - id: icse-10-environmental-science-ch11-t05
+        title: "Multinational corporations: definition, contribution to development and debatable contribution to the environment"
+        learning_outcomes:
+          - "Define an MNC and evaluate its contribution to development and to the environment"
+      - id: icse-10-environmental-science-ch11-t06
+        title: "Case study: the Bhopal gas tragedy; measures to regulate MNCs in developing countries"
+        learning_outcomes:
+          - "Describe the Bhopal gas tragedy as an example of corporate environmental failure"
+          - "Suggest measures to regulate MNC activities in developing countries"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-environmental-science-ch12
+    number: 12
+    title: "Towards a Sustainable Future: Interdependence, Cooperation and Sustainable Development"
+    unit: "10. Towards a Sustainable Future"
+    topics:
+      - id: icse-10-environmental-science-ch12-t01
+        title: "Global economic and environmental interdependence; shared responsibility for global environmental health"
+        learning_outcomes:
+          - "Explain economic and environmental interdependence between nations with examples"
+      - id: icse-10-environmental-science-ch12-t02
+        title: "Trade and aid as ways of reducing world inequalities"
+        learning_outcomes:
+          - "Evaluate how fair trade and aid can reduce inequality between rich and poor nations"
+      - id: icse-10-environmental-science-ch12-t03
+        title: "International cooperation: the Montreal Protocol and the Global Environment Facility"
+        learning_outcomes:
+          - "State the aim of the Montreal Protocol and the role of the Global Environment Facility"
+      - id: icse-10-environmental-science-ch12-t04
+        title: "The Earth Summit, the Cairo Conference on Population and Development, and the Kyoto Protocol"
+        learning_outcomes:
+          - "State the main outcomes of the Earth Summit (1992), the Cairo conference (1994) and the Kyoto Protocol (1997)"
+      - id: icse-10-environmental-science-ch12-t05
+        title: "Sustainable development: concept; in developed and in developing countries"
+        learning_outcomes:
+          - "Define sustainable development"
+          - "Compare what sustainable development requires of developed and of developing countries"
+      - id: icse-10-environmental-science-ch12-t06
+        title: "Role of non-governmental organisations"
+        learning_outcomes:
+          - "Explain how NGOs contribute to environmental awareness, advocacy and conservation, with Indian examples"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-environmental-science-ch13
+    number: 13
+    title: "Technology that Sustains"
+    unit: "10. Towards a Sustainable Future"
+    topics:
+      - id: icse-10-environmental-science-ch13-t01
+        title: "Satellite remote sensing for monitoring the global environment: advantages in collecting data"
+        learning_outcomes:
+          - "Explain how satellite remote sensing collects environmental data and its advantages over ground surveys"
+      - id: icse-10-environmental-science-ch13-t02
+        title: "Applying satellite data: deforestation, desertification, land degradation, wastelands, mining, ozone depletion, droughts and floods"
+        learning_outcomes:
+          - "Describe how satellite data is used to monitor environmental damage and to predict droughts and floods"
+      - id: icse-10-environmental-science-ch13-t03
+        title: "Alternate technology for self-sustaining societies"
+        learning_outcomes:
+          - "Explain the concept of alternate (appropriate) technology with examples for developed and developing countries"
+      - id: icse-10-environmental-science-ch13-t04
+        title: "Role of biotechnology in achieving global food security"
+        learning_outcomes:
+          - "Explain how biotechnology can raise crop yields and resistance to pests and drought"
+    removed_topics: []
+    literature_texts: []
+removed_topics:
+  - "Class IX syllabus (Understanding our Environment, ecosystems and how they work, kinds of ecosystems, water, air, atmosphere and climate, soil and land, people, urbanisation, agriculture) is not examined in ICSE 2027; see icse-9-environmental-science"

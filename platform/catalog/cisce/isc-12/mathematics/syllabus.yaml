@@ -1,0 +1,500 @@
+# ISC Class 12 Mathematics (860), Paper I Theory - ISC 2027 examination (Class XII portion only).
+# Source: platform/catalog/sources/cisce.md#isc-2027-mathematics. Topic wording is our own summary of the official scope.
+subject_id: isc-12-mathematics
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-mathematics, isc-2027-regulations, cisce-circular-specimen-papers-2027, isc-2027-specimen-papers]
+exam_notes: >-
+  Paper I Theory: 3 hours, 80 marks. Paper II Project Work: 20 marks - two projects of 10 marks each (format 1,
+  content 4, findings 2, viva-voce 3), assessed by the subject teacher and a locally appointed Visiting Examiner;
+  CISCE sets no question paper for project work. SOYL covers Paper I only. May not be taken with Applied Mathematics.
+  The ISC 2027 syllabus publishes a single list of seven units for Class XII, all compulsory: there is no longer a
+  Section A plus a choice between Section B and Section C as in older ISC papers, and Vectors, Three-dimensional Geometry
+  and Linear Programming are now regular units. The ISC 2027 specimen paper (3 hours plus 15 minutes reading time) has
+  20 compulsory questions in four sections: A - 1-mark questions including MCQs (20), B - 2-mark questions (14),
+  C - 3-mark questions (21), D - 5-mark questions (25), with internal choice in three questions in each of Sections B, C and D;
+  mathematical tables and graph paper are provided. The October 2026 circular sets about 50% of marks on higher-order
+  skills (apply, analyse, evaluate, create).
+  CISCE lists topics under seven units, not textbook chapters: SOYL groups them into 17 teachable chapters in syllabus order.
+units:
+  - { name: "Unit 1: Relations and Functions", marks: 10 }
+  - { name: "Unit 2: Algebra", marks: 10 }
+  - { name: "Unit 3: Calculus", marks: 35 }
+  - { name: "Unit 4: Vector Algebra", marks: 5 }
+  - { name: "Unit 5: Three-Dimensional Geometry", marks: 6 }
+  - { name: "Unit 6: Linear Programming", marks: 5 }
+  - { name: "Unit 7: Probability", marks: 9 }
+chapters:
+  - id: isc-12-mathematics-ch01
+    number: 1
+    title: "Relations and Functions"
+    unit: "Unit 1: Relations and Functions"
+    topics:
+      - id: isc-12-mathematics-ch01-t01
+        title: "Relations on a set: empty, universal and identity relations; reflexive, symmetric, transitive and equivalence relations"
+        learning_outcomes:
+          - "Test whether a given relation on a set is reflexive, symmetric and transitive"
+          - "Prove that a given relation is an equivalence relation and find an equivalence class"
+      - id: isc-12-mathematics-ch01-t02
+        title: "Functions as special relations; real-valued functions, domain and range; one-one, many-one, into and onto functions"
+        learning_outcomes:
+          - "Find the domain and range of a real-valued function"
+          - "Determine whether a function is one-one and/or onto, using algebra or its graph"
+      - id: isc-12-mathematics-ch01-t03
+        title: "Composite functions"
+        learning_outcomes:
+          - "Compute f o g and g o f for given algebraic functions and show that composition is not commutative"
+      - id: isc-12-mathematics-ch01-t04
+        title: "Invertible functions: conditions for invertibility, finding the inverse, sketching a function and its inverse (algebraic functions)"
+        learning_outcomes:
+          - "Show that a bijective function is invertible and find its inverse"
+          - "Sketch the graph of an invertible function and its inverse as reflections in y = x"
+    removed_topics:
+      - "Composite and invertible functions other than algebraic functions"
+    literature_texts: []
+  - id: isc-12-mathematics-ch02
+    number: 2
+    title: "Inverse Trigonometric Functions"
+    unit: "Unit 1: Relations and Functions"
+    topics:
+      - id: isc-12-mathematics-ch02-t01
+        title: "Definition, domain, range and principal value branches of the six inverse trigonometric functions"
+        learning_outcomes:
+          - "State the domain and principal value range of each inverse trigonometric function"
+          - "Find principal values such as sin^-1(-1/2) and cos^-1(-sqrt(3)/2)"
+      - id: isc-12-mathematics-ch02-t02
+        title: "Graphs of inverse trigonometric functions"
+        learning_outcomes:
+          - "Sketch the graphs of sin^-1 x, cos^-1 x and tan^-1 x by reflecting restricted trigonometric graphs in y = x"
+      - id: isc-12-mathematics-ch02-t03
+        title: "Elementary properties: interconversion (e.g. sin^-1 x = cos^-1 sqrt(1 - x^2)), reciprocal relations, sin^-1 x + cos^-1 x = pi/2 and similar results"
+        learning_outcomes:
+          - "Convert an inverse trigonometric expression from one function to another"
+          - "Use complementary-angle identities to simplify expressions"
+      - id: isc-12-mathematics-ch02-t04
+        title: "Sum and difference formulae for sin^-1, cos^-1 and tan^-1 (with conditions such as xy < 1)"
+        learning_outcomes:
+          - "Apply tan^-1 x + tan^-1 y = tan^-1((x + y)/(1 - xy)) with its condition to evaluate expressions"
+          - "Prove identities involving sums of inverse trigonometric functions"
+      - id: isc-12-mathematics-ch02-t05
+        title: "Formulae for 2 sin^-1 x, 2 cos^-1 x, 2 tan^-1 x, 3 tan^-1 x and their applications; solving equations"
+        learning_outcomes:
+          - "Express 2 tan^-1 x in terms of sin^-1, cos^-1 and tan^-1"
+          - "Solve equations involving inverse trigonometric functions"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-mathematics-ch03
+    number: 3
+    title: "Matrices"
+    unit: "Unit 2: Algebra"
+    topics:
+      - id: isc-12-mathematics-ch03-t01
+        title: "Concept, notation, order and equality; types: zero, diagonal, scalar, identity, triangular; transpose"
+        learning_outcomes:
+          - "Identify the type and order of a given matrix"
+          - "Find unknowns from equality of matrices"
+      - id: isc-12-mathematics-ch03-t02
+        title: "Symmetric and skew-symmetric matrices and their properties"
+        learning_outcomes:
+          - "Express a square matrix as the sum of a symmetric and a skew-symmetric matrix"
+      - id: isc-12-mathematics-ch03-t03
+        title: "Addition, subtraction, scalar multiplication and multiplication of matrices; compatibility; non-commutativity; non-zero matrices with zero product"
+        learning_outcomes:
+          - "Multiply compatible matrices of order up to 3"
+          - "Give an example where AB is not equal to BA and one where AB = O with A and B non-zero"
+      - id: isc-12-mathematics-ch03-t04
+        title: "Singular and non-singular matrices; invertible matrices; proof that the inverse is unique"
+        learning_outcomes:
+          - "Prove that the inverse of a square matrix, if it exists, is unique"
+          - "Verify that a given matrix is the inverse of another"
+    removed_topics:
+      - "Matrices of order greater than 3"
+    literature_texts: []
+  - id: isc-12-mathematics-ch04
+    number: 4
+    title: "Determinants and Systems of Linear Equations"
+    unit: "Unit 2: Algebra"
+    topics:
+      - id: isc-12-mathematics-ch04-t01
+        title: "Determinant of a square matrix up to order 3; minors, cofactors and expansion"
+        learning_outcomes:
+          - "Evaluate a 3 x 3 determinant by expansion along any row or column"
+          - "Find minors and cofactors of elements of a matrix"
+      - id: isc-12-mathematics-ch04-t02
+        title: "Properties of determinants and problems based on them"
+        learning_outcomes:
+          - "Use row and column operations to evaluate or prove determinant identities without full expansion"
+      - id: isc-12-mathematics-ch04-t03
+        title: "Area of a triangle and collinearity of three points using determinants"
+        learning_outcomes:
+          - "Find the area of a triangle with given vertices using a determinant"
+          - "Test three points for collinearity"
+      - id: isc-12-mathematics-ch04-t04
+        title: "Adjoint of a matrix and its properties; inverse A^-1 = (adj A)/|A| for 2 x 2 and 3 x 3 matrices; properties of inverse"
+        learning_outcomes:
+          - "Find the adjoint and inverse of a 3 x 3 matrix"
+          - "Verify A(adj A) = (adj A)A = |A| I"
+      - id: isc-12-mathematics-ch04-t05
+        title: "Systems of linear equations: consistency, inconsistency and number of solutions; solving AX = B by X = A^-1 B in two or three variables"
+        learning_outcomes:
+          - "Decide whether a system of linear equations is consistent using matrices"
+          - "Solve a system of three linear equations with a unique solution by the matrix method"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-mathematics-ch05
+    number: 5
+    title: "Continuity and Differentiability"
+    unit: "Unit 3: Calculus"
+    topics:
+      - id: isc-12-mathematics-ch05-t01
+        title: "Continuity of a function at a point and in an interval; algebra of continuous functions"
+        learning_outcomes:
+          - "Test the continuity of a piecewise function at a point using left and right limits"
+          - "Find the value of a constant that makes a function continuous"
+      - id: isc-12-mathematics-ch05-t02
+        title: "Discontinuity; removable discontinuity and its types"
+        learning_outcomes:
+          - "Classify a discontinuity as removable or not and redefine the function to remove it"
+      - id: isc-12-mathematics-ch05-t03
+        title: "Differentiability; relation between continuity and differentiability; examples such as |x| and [x]"
+        learning_outcomes:
+          - "Show that |x| is continuous but not differentiable at x = 0"
+          - "Test the differentiability of a piecewise function at a point"
+      - id: isc-12-mathematics-ch05-t04
+        title: "Derivatives of trigonometric, exponential and logarithmic functions; chain rule for composite functions"
+        learning_outcomes:
+          - "Differentiate composite functions using the chain rule"
+      - id: isc-12-mathematics-ch05-t05
+        title: "Derivatives of inverse trigonometric functions; differentiation by trigonometric substitution"
+        learning_outcomes:
+          - "Simplify inverse trigonometric expressions by substitution before differentiating"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-mathematics-ch06
+    number: 6
+    title: "Methods of Differentiation"
+    unit: "Unit 3: Calculus"
+    topics:
+      - id: isc-12-mathematics-ch06-t01
+        title: "Derivatives of implicit functions"
+        learning_outcomes:
+          - "Find dy/dx for an implicitly defined curve"
+      - id: isc-12-mathematics-ch06-t02
+        title: "Derivatives of functions in parametric form"
+        learning_outcomes:
+          - "Find dy/dx when x and y are given in terms of a parameter"
+      - id: isc-12-mathematics-ch06-t03
+        title: "Differentiation of one function with respect to another"
+        learning_outcomes:
+          - "Differentiate a function such as sin(x^3) with respect to x^3"
+      - id: isc-12-mathematics-ch06-t04
+        title: "Logarithmic differentiation (e.g. y = x^x and towers of powers)"
+        learning_outcomes:
+          - "Use logarithmic differentiation for variable powers and long products or quotients"
+      - id: isc-12-mathematics-ch06-t05
+        title: "Second-order derivatives"
+        learning_outcomes:
+          - "Find d2y/dx2 for explicit, implicit and parametric functions"
+          - "Prove a given relation between y, dy/dx and d2y/dx2"
+    removed_topics:
+      - "Derivatives of order higher than two"
+    literature_texts: []
+  - id: isc-12-mathematics-ch07
+    number: 7
+    title: "Applications of Derivatives"
+    unit: "Unit 3: Calculus"
+    topics:
+      - id: isc-12-mathematics-ch07-t01
+        title: "Rate of change (rate measure) of quantities"
+        learning_outcomes:
+          - "Solve related-rate problems such as the rate of increase of the area of a spreading circular ripple"
+      - id: isc-12-mathematics-ch07-t02
+        title: "Increasing and decreasing functions"
+        learning_outcomes:
+          - "Find the intervals in which a function is strictly increasing or decreasing"
+      - id: isc-12-mathematics-ch07-t03
+        title: "Equations of tangent and normal; angle between two curves"
+        learning_outcomes:
+          - "Find equations of the tangent and normal to a curve at a given point"
+          - "Find the angle between two intersecting curves"
+      - id: isc-12-mathematics-ch07-t04
+        title: "Critical, stationary and turning points; local maxima and minima by first and second derivative tests"
+        learning_outcomes:
+          - "Locate local maxima and minima using the first derivative test"
+          - "Apply the second derivative test and recognise when it fails"
+      - id: isc-12-mathematics-ch07-t05
+        title: "Absolute maxima and minima on a closed interval"
+        learning_outcomes:
+          - "Find the absolute maximum and minimum values of a function on a closed interval"
+      - id: isc-12-mathematics-ch07-t06
+        title: "Application problems on maxima and minima from geometry and real life"
+        learning_outcomes:
+          - "Formulate and solve optimisation problems such as maximum volume of an open box or minimum cost of fencing"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-mathematics-ch08
+    number: 8
+    title: "Indefinite Integrals: Standard Forms and Substitution"
+    unit: "Unit 3: Calculus"
+    topics:
+      - id: isc-12-mathematics-ch08-t01
+        title: "Integration as anti-differentiation; standard integrals of (ax + b)^n, sin x, cos x, sec^2 x, cosec^2 x, 1/x and e^x"
+        learning_outcomes:
+          - "Find anti-derivatives of standard functions and verify by differentiation"
+      - id: isc-12-mathematics-ch08-t02
+        title: "Integrals of powers sin^2 x, sin^3 x, sin^4 x, cos^2 x, cos^3 x, cos^4 x"
+        learning_outcomes:
+          - "Integrate powers of sine and cosine using identities"
+      - id: isc-12-mathematics-ch08-t03
+        title: "Integration by substitution; integrals of the forms f'(x)[f(x)]^n and f'(x)/f(x); integrals of tan x, cot x, sec x and cosec x"
+        learning_outcomes:
+          - "Choose a suitable substitution to evaluate an integral"
+          - "Derive the integrals of tan x and sec x"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-mathematics-ch09
+    number: 9
+    title: "Integration by Parts, Partial Fractions and Special Integrals"
+    unit: "Unit 3: Calculus"
+    topics:
+      - id: isc-12-mathematics-ch09-t01
+        title: "Integration by parts"
+        learning_outcomes:
+          - "Evaluate integrals such as x e^x, x sin x, log x and e^x sin x by parts"
+          - "Use the result for integral of e^x[f(x) + f'(x)]"
+      - id: isc-12-mathematics-ch09-t02
+        title: "Partial fractions for proper rational functions (linear, repeated linear and quadratic factors) and improper ones"
+        learning_outcomes:
+          - "Resolve a rational function into partial fractions and integrate it"
+          - "Divide first when the degree of the numerator is not less than that of the denominator"
+      - id: isc-12-mathematics-ch09-t03
+        title: "Integrals of dx/(x^2 +- a^2), dx/(a^2 - x^2), dx/sqrt(x^2 +- a^2), dx/(ax^2 + bx + c), (px + q)/(ax^2 + bx + c) and their square-root forms"
+        learning_outcomes:
+          - "Complete the square to reduce a quadratic denominator to a standard form"
+          - "Split (px + q) as a multiple of the derivative of the quadratic plus a constant"
+      - id: isc-12-mathematics-ch09-t04
+        title: "Integrals of sqrt(a^2 - x^2), sqrt(x^2 - a^2), sqrt(ax^2 + bx + c) and (px + q) sqrt(ax^2 + bx + c)"
+        learning_outcomes:
+          - "Evaluate integrals of square roots of quadratics using standard results"
+      - id: isc-12-mathematics-ch09-t05
+        title: "Trigonometric forms: dx/(a + b cos x), dx/(a + b sin x), dx/(a cos x + b sin x + c), (c cos x + d sin x)/(a cos x + b sin x), dx/(a cos^2 x + b sin^2 x + c)"
+        learning_outcomes:
+          - "Use the t = tan(x/2) substitution or division by cos^2 x to evaluate trigonometric integrals"
+          - "Express a numerator as a combination of the denominator and its derivative"
+      - id: isc-12-mathematics-ch09-t06
+        title: "Special integrals such as (1 +- x^2)/(1 + x^4), sqrt(tan x) and sqrt(cot x)"
+        learning_outcomes:
+          - "Evaluate integrals of the type (1 + x^2)/(1 + x^4) by dividing by x^2 and substituting"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-mathematics-ch10
+    number: 10
+    title: "Definite Integrals"
+    unit: "Unit 3: Calculus"
+    topics:
+      - id: isc-12-mathematics-ch10-t01
+        title: "Fundamental theorem of calculus (without proof); evaluation of definite integrals including by substitution"
+        learning_outcomes:
+          - "Evaluate definite integrals using anti-derivatives, changing limits when substituting"
+      - id: isc-12-mathematics-ch10-t02
+        title: "Basic properties: dummy variable, reversal of limits, splitting the interval"
+        learning_outcomes:
+          - "Evaluate integrals of modulus and greatest-integer functions by splitting the interval"
+      - id: isc-12-mathematics-ch10-t03
+        title: "Properties f(a + b - x) and f(a - x)"
+        learning_outcomes:
+          - "Use the property of integral of f(a - x) from 0 to a to evaluate integrals such as those of sin x/(sin x + cos x)"
+      - id: isc-12-mathematics-ch10-t04
+        title: "Properties over [0, 2a] and [-a, a]; even and odd functions"
+        learning_outcomes:
+          - "Evaluate integrals over symmetric intervals using even and odd function properties"
+          - "Apply the [0, 2a] property when f(2a - x) = f(x) or -f(x)"
+    removed_topics:
+      - "Proof of the fundamental theorem of calculus"
+    literature_texts: []
+  - id: isc-12-mathematics-ch11
+    number: 11
+    title: "Application of Integrals"
+    unit: "Unit 3: Calculus"
+    topics:
+      - id: isc-12-mathematics-ch11-t01
+        title: "Area bounded by a curve and the coordinate axes or lines: lines, circles, parabolas, ellipses, polynomial, modulus, exponential and logarithmic functions"
+        learning_outcomes:
+          - "Sketch the region and set up a definite integral for the area under a curve"
+          - "Find the area of an ellipse or a circle by integration"
+      - id: isc-12-mathematics-ch11-t02
+        title: "Area enclosed between two curves"
+        learning_outcomes:
+          - "Find points of intersection and compute the area between two curves, such as a parabola and a line"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-mathematics-ch12
+    number: 12
+    title: "Differential Equations"
+    unit: "Unit 3: Calculus"
+    topics:
+      - id: isc-12-mathematics-ch12-t01
+        title: "Definition, order and degree; general and particular solutions"
+        learning_outcomes:
+          - "Find the order and degree of a differential equation"
+          - "Verify that a given function is a solution of a differential equation"
+      - id: isc-12-mathematics-ch12-t02
+        title: "Formation of a differential equation by eliminating arbitrary constants"
+        learning_outcomes:
+          - "Form the differential equation of a family of curves"
+      - id: isc-12-mathematics-ch12-t03
+        title: "Variable separable equations, including those reducible to separable form"
+        learning_outcomes:
+          - "Solve a differential equation by separating variables and find a particular solution from an initial condition"
+      - id: isc-12-mathematics-ch12-t04
+        title: "Homogeneous differential equations of first order and first degree"
+        learning_outcomes:
+          - "Show that an equation is homogeneous and solve it with y = vx"
+      - id: isc-12-mathematics-ch12-t05
+        title: "Linear equations dy/dx + Py = Q and dx/dy + Px = Q"
+        learning_outcomes:
+          - "Solve a linear differential equation using an integrating factor"
+          - "Model growth or decay problems with first-order differential equations"
+    removed_topics:
+      - "Second-order differential equations"
+    literature_texts: []
+  - id: isc-12-mathematics-ch13
+    number: 13
+    title: "Vector Algebra"
+    unit: "Unit 4: Vector Algebra"
+    topics:
+      - id: isc-12-mathematics-ch13-t01
+        title: "Vectors as directed line segments; magnitude and direction; direction cosines and ratios; types: equal, unit, zero, parallel, collinear, negative"
+        learning_outcomes:
+          - "Find the magnitude and direction cosines of a vector"
+          - "Find a unit vector in the direction of a given vector"
+      - id: isc-12-mathematics-ch13-t02
+        title: "Position vector; components along i, j, k in two and three dimensions; sum, difference and scalar multiple of vectors"
+        learning_outcomes:
+          - "Express a vector joining two points in component form and add or scale vectors"
+      - id: isc-12-mathematics-ch13-t03
+        title: "Section formula for a point dividing a segment internally or externally"
+        learning_outcomes:
+          - "Find the position vector of a point dividing a line segment in a given ratio"
+      - id: isc-12-mathematics-ch13-t04
+        title: "Scalar (dot) product: definition, geometrical meaning, properties; scalar and vector projections"
+        learning_outcomes:
+          - "Find the angle between two vectors using the dot product"
+          - "Find the projection of one vector on another"
+      - id: isc-12-mathematics-ch13-t05
+        title: "Vector (cross) product: definition, geometrical meaning, properties; area of triangle and parallelogram; collinear vectors"
+        learning_outcomes:
+          - "Find a unit vector perpendicular to two given vectors"
+          - "Calculate the area of a triangle or parallelogram using the cross product"
+    removed_topics:
+      - "Proofs of geometrical theorems using vector algebra"
+    literature_texts: []
+  - id: isc-12-mathematics-ch14
+    number: 14
+    title: "Three-Dimensional Geometry: Lines"
+    unit: "Unit 5: Three-Dimensional Geometry"
+    topics:
+      - id: isc-12-mathematics-ch14-t01
+        title: "Direction cosines and direction ratios of a line through two points; equations of the coordinate axes and planes"
+        learning_outcomes:
+          - "Find the direction cosines of a line joining two points"
+          - "Write the equations of the coordinate axes and coordinate planes"
+      - id: isc-12-mathematics-ch14-t02
+        title: "Angle between two lines; conditions for lines to be perpendicular or parallel"
+        learning_outcomes:
+          - "Find the angle between two lines from their direction ratios"
+      - id: isc-12-mathematics-ch14-t03
+        title: "Vector and Cartesian equations of a line through a point with given direction and through two points"
+        learning_outcomes:
+          - "Convert the equation of a line between vector and Cartesian forms"
+      - id: isc-12-mathematics-ch14-t04
+        title: "Coplanar and skew lines; condition for two lines to intersect; distance of a point from a line"
+        learning_outcomes:
+          - "Find the point of intersection of two lines or show they do not intersect"
+          - "Find the perpendicular distance of a point from a line"
+      - id: isc-12-mathematics-ch14-t05
+        title: "Shortest distance between two skew lines and between parallel lines"
+        learning_outcomes:
+          - "Calculate the shortest distance between two skew lines in vector and Cartesian form"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-mathematics-ch15
+    number: 15
+    title: "Three-Dimensional Geometry: Planes"
+    unit: "Unit 5: Three-Dimensional Geometry"
+    topics:
+      - id: isc-12-mathematics-ch15-t01
+        title: "Vector and Cartesian equations of a plane; direction ratios of the normal"
+        learning_outcomes:
+          - "Find the equation of a plane through a point with a given normal"
+      - id: isc-12-mathematics-ch15-t02
+        title: "One-point, normal and intercept forms of a plane"
+        learning_outcomes:
+          - "Reduce a plane equation to normal and intercept forms"
+      - id: isc-12-mathematics-ch15-t03
+        title: "Distance of a point from a plane"
+        learning_outcomes:
+          - "Calculate the distance of a point from a plane and between parallel planes"
+      - id: isc-12-mathematics-ch15-t04
+        title: "Intersection of a line and a plane; angle between two planes and between a line and a plane"
+        learning_outcomes:
+          - "Find the point where a line meets a plane"
+          - "Find the angle between two planes and between a line and a plane"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-mathematics-ch16
+    number: 16
+    title: "Linear Programming"
+    unit: "Unit 6: Linear Programming"
+    topics:
+      - id: isc-12-mathematics-ch16-t01
+        title: "Terminology: constraints, objective function, optimisation; advantages, limitations and application areas; types of LP problems"
+        learning_outcomes:
+          - "Identify decision variables, constraints and objective function in a word problem"
+          - "State advantages and limitations of linear programming"
+      - id: isc-12-mathematics-ch16-t02
+        title: "Mathematical formulation of LP problems (manufacturing, diet, transportation-type)"
+        learning_outcomes:
+          - "Formulate an LP problem in two variables from a real-life situation such as a diet or production plan"
+      - id: isc-12-mathematics-ch16-t03
+        title: "Graphical method: feasible and infeasible regions, bounded and unbounded regions (up to three non-trivial constraints)"
+        learning_outcomes:
+          - "Draw the feasible region for a system of linear inequalities"
+      - id: isc-12-mathematics-ch16-t04
+        title: "Feasible, infeasible and optimal feasible solutions; corner point method; cases where no optimum exists"
+        learning_outcomes:
+          - "Find the optimal value of the objective function using corner points"
+          - "Decide whether an optimum exists for an unbounded feasible region"
+    removed_topics:
+      - "LP problems with more than two variables or more than three non-trivial constraints"
+    literature_texts: []
+  - id: isc-12-mathematics-ch17
+    number: 17
+    title: "Probability"
+    unit: "Unit 7: Probability"
+    topics:
+      - id: isc-12-mathematics-ch17-t01
+        title: "Laws of probability; addition theorem; conditional probability"
+        learning_outcomes:
+          - "Calculate P(A|B) from given probabilities or a sample space"
+      - id: isc-12-mathematics-ch17-t02
+        title: "Multiplication theorem; independent and dependent events"
+        learning_outcomes:
+          - "Use the multiplication theorem for successive draws with and without replacement"
+          - "Test whether two events are independent"
+      - id: isc-12-mathematics-ch17-t03
+        title: "Theorem of total probability"
+        learning_outcomes:
+          - "Find the probability of an event that can occur through several mutually exclusive cases"
+      - id: isc-12-mathematics-ch17-t04
+        title: "Bayes' theorem"
+        learning_outcomes:
+          - "Apply Bayes' theorem to find the probability of a cause given an observed outcome"
+      - id: isc-12-mathematics-ch17-t05
+        title: "Random variable, probability distribution and mean (expectation)"
+        learning_outcomes:
+          - "Construct the probability distribution of a discrete random variable"
+          - "Calculate the mean of a random variable"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

@@ -1,0 +1,178 @@
+# ICSE Class 9 Cookery (Group III elective, code 69) - year one of the ICSE 2028 course.
+# Source: platform/catalog/sources/cisce.md#icse-2028-cookery (CLASS IX section only). Topic wording is our own summary of the official scope.
+subject_id: icse-9-cookery
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2028-cookery, icse-2028-regulations]
+exam_notes: >-
+  There is no board examination in Class IX: the Class IX final examination is conducted internally by the school on
+  the Class IX portion (ICSE 2028 Regulations), and promotion to Class X depends on cumulative achievement through the
+  year. The syllabus prescribes one theory paper of 2 hours, 100 marks, plus internal assessment 100 marks; in the
+  ICSE result the external paper and internal assessment each carry 50% (Group III), and school examinations usually
+  follow this pattern. Internal assessment follows the Class X guidelines and is practical work in cookery: at least
+  five practical-oriented assignments set by the teacher in Class IX (e.g. use and care of kitchen equipment, cooking
+  processes such as boiling, frying, steaming, baking, grilling and stewing, meal planning and preparation, baking,
+  salads, pickles, squashes and jams, chapatis and naans, nutritive cooking) plus a final test in which an External
+  Examiner sets the planning and preparation of a meal; marked 50 by the subject teacher and 50 by the External
+  Examiner. Practical work is not covered as chapters here. The Class X theory (seasonal and convenience foods, meal
+  planning, therapeutic diets, preservation, kitchen planning, hygiene and equipment) is in icse-10-cookery.
+  No Class IX specimen paper was released for Cookery.
+  CISCE lists four numbered topics with explanatory notes, not textbook chapters; SOYL splits the first (nutritive
+  value of foods) into three chapters and teaches the others as one chapter each, in syllabus order. No topic-wise
+  marks weightage is published.
+units:
+  - { name: "1. The nutritive value of foods", marks: null }
+  - { name: "2. Basic methods of cookery and principles involved", marks: null }
+  - { name: "3. Preserving nutritive value and improving flavour", marks: null }
+  - { name: "4. Physical changes in food during cooking", marks: null }
+chapters:
+  - id: icse-9-cookery-ch01
+    number: 1
+    title: "Food, Nutrition and Health"
+    unit: "1. The nutritive value of foods"
+    topics:
+      - id: icse-9-cookery-ch01-t01
+        title: "Meaning of food, nutrition, nutrients and health; the relationship between food and health"
+        learning_outcomes:
+          - "Define food, nutrition, nutrient and health"
+          - "Explain how the food a family eats affects its health"
+      - id: icse-9-cookery-ch01-t02
+        title: "Healthy food habits: avoiding food fads and problems of being undernourished, underweight or overweight"
+        learning_outcomes:
+          - "Identify unhealthy food habits and fads common among teenagers and suggest healthier alternatives"
+      - id: icse-9-cookery-ch01-t03
+        title: "Nutrients provided by food and the basic food groups suggested by ICMR"
+        learning_outcomes:
+          - "Name the nutrients supplied by food"
+          - "Classify common Indian foods into the ICMR food groups"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-cookery-ch02
+    number: 2
+    title: "Carbohydrates, Proteins and Fats"
+    unit: "1. The nutritive value of foods"
+    topics:
+      - id: icse-9-cookery-ch02-t01
+        title: "Carbohydrates: chemical structure, classification (monosaccharides, disaccharides, polysaccharides), functions and food sources"
+        learning_outcomes:
+          - "Classify carbohydrates with an example of each class"
+          - "State the functions and good food sources of carbohydrates"
+      - id: icse-9-cookery-ch02-t02
+        title: "Proteins: structure (amino acids), classification by quality, functions and food sources"
+        learning_outcomes:
+          - "Explain that proteins are made of amino acids and distinguish complete from incomplete proteins"
+          - "State the functions and plant and animal sources of protein"
+      - id: icse-9-cookery-ch02-t03
+        title: "Fats and lipids: structure (fatty acids and glycerol), classification, functions and food sources"
+        learning_outcomes:
+          - "Distinguish saturated from unsaturated fats with examples"
+          - "State the functions of fats in the body"
+      - id: icse-9-cookery-ch02-t04
+        title: "Protein-calorie malnutrition and kwashiorkor"
+        learning_outcomes:
+          - "Describe the causes and symptoms of protein-calorie malnutrition and kwashiorkor"
+          - "Suggest low-cost foods to prevent them"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-cookery-ch03
+    number: 3
+    title: "Vitamins and Minerals"
+    unit: "1. The nutritive value of foods"
+    topics:
+      - id: icse-9-cookery-ch03-t01
+        title: "Fat-soluble vitamins A, D, E and K: functions, sources and deficiency (night blindness, rickets, osteomalacia)"
+        learning_outcomes:
+          - "State the functions and food sources of vitamins A, D, E and K"
+          - "Link night blindness, rickets and osteomalacia to their deficient vitamin"
+      - id: icse-9-cookery-ch03-t02
+        title: "Water-soluble vitamins C, thiamine, riboflavin and niacin: functions, sources and deficiency (scurvy, pellagra)"
+        learning_outcomes:
+          - "State the functions and food sources of vitamin C and the B vitamins listed"
+          - "Describe the symptoms of scurvy and pellagra"
+      - id: icse-9-cookery-ch03-t03
+        title: "Minerals: calcium, phosphorus, iron and iodine - functions, sources and effects of deficiency"
+        learning_outcomes:
+          - "State the functions and food sources of each prescribed mineral"
+          - "Plan a dish rich in iron or calcium using local foods"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-cookery-ch04
+    number: 4
+    title: "Basic Methods of Cookery"
+    unit: "2. Basic methods of cookery and principles involved"
+    topics:
+      - id: icse-9-cookery-ch04-t01
+        title: "Need for cooking and principles of cookery; basic cooking terminology"
+        learning_outcomes:
+          - "Explain why food is cooked: digestibility, palatability, safety and presentation"
+          - "Use basic cooking terms correctly"
+      - id: icse-9-cookery-ch04-t02
+        title: "Moist-heat methods: boiling, steaming, pressure cooking and stewing"
+        learning_outcomes:
+          - "Describe each method with its advantages, disadvantages and precautions"
+          - "Choose a suitable moist-heat method for a given food"
+      - id: icse-9-cookery-ch04-t03
+        title: "Dry-heat and fat methods: baking, grilling and frying"
+        learning_outcomes:
+          - "Describe each method with its advantages, disadvantages and precautions"
+          - "Compare shallow and deep frying"
+      - id: icse-9-cookery-ch04-t04
+        title: "Avoiding over- and under-cooking; safety in food handling"
+        learning_outcomes:
+          - "State precautions to avoid over- or under-cooking and to handle food safely"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-cookery-ch05
+    number: 5
+    title: "Cooking to Preserve Nutrients and Improve Flavour"
+    unit: "3. Preserving nutritive value and improving flavour"
+    topics:
+      - id: icse-9-cookery-ch05-t01
+        title: "Guidelines for handling and cooking food to conserve nutrients and improve flavour"
+        learning_outcomes:
+          - "List do's and don'ts while washing, cutting and cooking vegetables to conserve nutrients"
+      - id: icse-9-cookery-ch05-t02
+        title: "Enhancing food value: sprouting and germination, malting, fermentation and parboiling"
+        learning_outcomes:
+          - "Explain how sprouting, malting, fermentation and parboiling increase nutritive value, with Indian examples"
+      - id: icse-9-cookery-ch05-t03
+        title: "Enhancing food value: fortification and combination of foods"
+        learning_outcomes:
+          - "Explain fortification and supplementary food combinations such as cereal with pulse"
+          - "Suggest uses of these methods in food scarcity or for special nutrient needs"
+      - id: icse-9-cookery-ch05-t04
+        title: "Spices, herbs and garnishing; leavening, tenderising and thickening agents"
+        learning_outcomes:
+          - "Give examples of leavening, tenderising and thickening agents and explain their effect on texture"
+          - "Explain the role of spices, herbs and garnishes in flavour and acceptability"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-cookery-ch06
+    number: 6
+    title: "Physical Changes in Food during Cooking"
+    unit: "4. Physical changes in food during cooking"
+    topics:
+      - id: icse-9-cookery-ch06-t01
+        title: "Major food components and their properties: carbohydrates, proteins, fats and minerals"
+        learning_outcomes:
+          - "Explain how the properties of food components guide the choice of cooking method"
+      - id: icse-9-cookery-ch06-t02
+        title: "Effect of heat on cereals (rice and wheat), pulses and sugar"
+        learning_outcomes:
+          - "Describe the changes in starch, gluten and sugar when heated"
+      - id: icse-9-cookery-ch06-t03
+        title: "Effect of heat on meat, egg and milk"
+        learning_outcomes:
+          - "Describe the effect of heat on the proteins in meat, egg and milk"
+          - "Explain how to avoid curdling of milk and toughening of eggs and meat"
+      - id: icse-9-cookery-ch06-t04
+        title: "Effect of heat on fruits and vegetables: texture, colour pigments, flavour and nutrients"
+        learning_outcomes:
+          - "Explain colour changes in green vegetables during cooking and how to preserve colour and nutrients"
+      - id: icse-9-cookery-ch06-t05
+        title: "Role of acids and enzymes in modifying texture, flavour and nutrient content"
+        learning_outcomes:
+          - "Explain with examples how acids and enzymes change food during preparation and cooking"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

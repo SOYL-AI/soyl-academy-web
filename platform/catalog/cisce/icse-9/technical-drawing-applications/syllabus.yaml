@@ -1,0 +1,354 @@
+# ICSE Class 9 Technical Drawing Applications (Group III elective, code 65) - year one of the ICSE 2028 course.
+# Source: platform/catalog/sources/cisce.md#icse-2028-technical-drawing-applications (CLASS IX section only).
+# Topic wording is our own summary of the official scope. Drawing-based subject: chapters teach the construction
+# methods and projection concepts; students practise the drawings with instruments on paper.
+subject_id: icse-9-technical-drawing-applications
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2028-technical-drawing-applications, icse-2028-regulations]
+exam_notes: >-
+  There is no board examination in Class IX: the Class IX final examination is conducted internally by the school on
+  the Class IX portion (ICSE 2028 Regulations), and promotion to Class X depends on cumulative achievement through the
+  year. The syllabus prescribes one written (drawing) paper of 3 hours, 100 marks, plus internal assessment 100 marks;
+  in the ICSE result the external paper and internal assessment each carry 50% (Group III), and school examinations
+  usually follow this pattern. Answers are drawn to scale with instruments (T-square, set squares, compasses).
+  Internal assessment in Class IX is a minimum of fifteen drawing assignments set by the teacher during the year,
+  evaluated by the subject teacher and an External Examiner (50 marks each) under the CISCE guidelines; these
+  practical items are not covered as chapters here. The Class X topics (area constructions, templates, scales,
+  engineering curves, solids, oblique and isometric drawing, sections) are in icse-10-technical-drawing-applications.
+  No Class IX specimen paper was released for Technical Drawing Applications.
+  CISCE lists eight numbered topics, not textbook chapters; SOYL groups them into teachable chapters in syllabus
+  order, splitting the long geometrical-constructions and orthographic-projection topics into several chapters.
+  No topic-wise marks weightage is published.
+units:
+  - { name: "1. Types of lines", marks: null }
+  - { name: "2. Dimensioning", marks: null }
+  - { name: "3. Lettering and numbering", marks: null }
+  - { name: "4. Sheet layout", marks: null }
+  - { name: "5. Geometrical constructions", marks: null }
+  - { name: "6. Orthographic projections", marks: null }
+  - { name: "7. Isometric drawing", marks: null }
+  - { name: "8. Freehand sketching", marks: null }
+chapters:
+  - id: icse-9-technical-drawing-applications-ch01
+    number: 1
+    title: "Types of Lines"
+    unit: "1. Types of lines"
+    topics:
+      - id: icse-9-technical-drawing-applications-ch01-t01
+        title: "Border lines, outlines and dashed (hidden) lines"
+        learning_outcomes:
+          - "Draw border lines, outlines and dashed lines with the correct thickness and shade"
+          - "State where each is used in a drawing"
+      - id: icse-9-technical-drawing-applications-ch01-t02
+        title: "Centre lines, extension (projection) lines, dimension lines and construction lines"
+        learning_outcomes:
+          - "Distinguish thick, thin and chain lines and match each to its use"
+          - "Draw centre, extension and dimension lines correctly on a given view"
+      - id: icse-9-technical-drawing-applications-ch01-t03
+        title: "Cutting-plane lines, section (hatching) lines, short break and long break lines"
+        learning_outcomes:
+          - "Identify cutting-plane, hatching and break lines on a drawing and state the purpose of each"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-technical-drawing-applications-ch02
+    number: 2
+    title: "Dimensioning"
+    unit: "2. Dimensioning"
+    topics:
+      - id: icse-9-technical-drawing-applications-ch02-t01
+        title: "Elements of a dimension: dimension line, extension line, arrowheads, leader line and figures"
+        learning_outcomes:
+          - "Label the elements of a dimension on a simple drawing"
+      - id: icse-9-technical-drawing-applications-ch02-t02
+        title: "Aligned system of dimensioning"
+        learning_outcomes:
+          - "Dimension a given figure using the aligned system so that figures read from the bottom or right-hand side"
+      - id: icse-9-technical-drawing-applications-ch02-t03
+        title: "Unidirectional system of dimensioning"
+        learning_outcomes:
+          - "Dimension a given figure using the unidirectional system"
+          - "Compare the aligned and unidirectional systems"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-technical-drawing-applications-ch03
+    number: 3
+    title: "Lettering and Numbering"
+    unit: "3. Lettering and numbering"
+    topics:
+      - id: icse-9-technical-drawing-applications-ch03-t01
+        title: "Single-stroke upright capital letters between guide lines"
+        learning_outcomes:
+          - "Draw guide lines and write single-stroke upright capitals of uniform height and spacing"
+      - id: icse-9-technical-drawing-applications-ch03-t02
+        title: "Single-stroke lower-case letters and numerals"
+        learning_outcomes:
+          - "Write lower-case letters and numerals freehand in single strokes between the correct guide lines"
+      - id: icse-9-technical-drawing-applications-ch03-t03
+        title: "Spacing of letters and words in titles and notes"
+        learning_outcomes:
+          - "Letter a title and a note on a drawing with even spacing"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-technical-drawing-applications-ch04
+    number: 4
+    title: "Sheet Layout"
+    unit: "4. Sheet layout"
+    topics:
+      - id: icse-9-technical-drawing-applications-ch04-t01
+        title: "Drawing the border lines and margins on a drawing sheet"
+        learning_outcomes:
+          - "Lay out border lines on a drawing sheet with the correct margins"
+      - id: icse-9-technical-drawing-applications-ch04-t02
+        title: "Title block: name, sheet number, title and other details"
+        learning_outcomes:
+          - "Draw and fill in a title block with the required entries"
+      - id: icse-9-technical-drawing-applications-ch04-t03
+        title: "Planning the placement of drawings within the sheet"
+        learning_outcomes:
+          - "Plan the position of views on a sheet so that they are balanced and do not overlap"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-technical-drawing-applications-ch05
+    number: 5
+    title: "Basic Constructions: Lines and Angles"
+    unit: "5. Geometrical constructions"
+    topics:
+      - id: icse-9-technical-drawing-applications-ch05-t01
+        title: "Terms relating to points, lines and angles used in construction"
+        learning_outcomes:
+          - "Define the terms for points, types of lines and types of angles used in constructions"
+      - id: icse-9-technical-drawing-applications-ch05-t02
+        title: "Bisecting a line; perpendicular to a line from a point on, above or beyond the end of the line"
+        learning_outcomes:
+          - "Bisect a given line segment with compasses"
+          - "Draw a perpendicular to a line from a point on it, outside it and near its end"
+      - id: icse-9-technical-drawing-applications-ch05-t03
+        title: "Parallel lines through a given point and at a given distance, using set squares or compasses"
+        learning_outcomes:
+          - "Draw a line parallel to a given line through a given point and at a given distance"
+      - id: icse-9-technical-drawing-applications-ch05-t04
+        title: "Dividing a line into equal or proportional parts; a point equidistant from two points; two lines from two points meeting a given line at equal angles"
+        learning_outcomes:
+          - "Divide a line into a given number of equal or proportional parts"
+          - "Locate a point on a line equidistant from two given points"
+          - "Draw two lines from two given points to meet a given line making equal angles with it"
+      - id: icse-9-technical-drawing-applications-ch05-t05
+        title: "Bisecting an angle; trisecting a right angle or straight angle; copying an angle; finding the centre of an arc"
+        learning_outcomes:
+          - "Bisect a given angle and trisect a right angle using compasses"
+          - "Construct an angle equal to a given angle"
+          - "Find the centre of a given arc"
+      - id: icse-9-technical-drawing-applications-ch05-t06
+        title: "Constructing angles of 90, 60, 45, 30, 120, 135, 105, 75, 67.5, 52.5, 37.5 and 22.5 degrees"
+        learning_outcomes:
+          - "Construct each prescribed angle with compasses only, by bisecting and combining standard angles"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-technical-drawing-applications-ch06
+    number: 6
+    title: "Construction of Triangles"
+    unit: "5. Geometrical constructions"
+    topics:
+      - id: icse-9-technical-drawing-applications-ch06-t01
+        title: "Parts of a triangle; classification by sides and by angles"
+        learning_outcomes:
+          - "Name the parts of a triangle and classify triangles by sides and by angles"
+      - id: icse-9-technical-drawing-applications-ch06-t02
+        title: "Triangles given three sides; base and base angles; base, altitude and one side; base angles and altitude"
+        learning_outcomes:
+          - "Construct a triangle from each of the prescribed sets of data"
+      - id: icse-9-technical-drawing-applications-ch06-t03
+        title: "Triangles given perimeter and ratio of sides; base and ratio of angles; perimeter and base angles"
+        learning_outcomes:
+          - "Construct a triangle when the perimeter and the ratio of its sides are given"
+          - "Construct a triangle when the perimeter and the base angles are given"
+      - id: icse-9-technical-drawing-applications-ch06-t04
+        title: "Isosceles triangles given altitude and base; base and one side; base angle and equal side; altitude and equal side"
+        learning_outcomes:
+          - "Construct an isosceles triangle from each of the prescribed sets of data"
+      - id: icse-9-technical-drawing-applications-ch06-t05
+        title: "Right-angled triangles given hypotenuse and base; hypotenuse and an acute angle; base and height"
+        learning_outcomes:
+          - "Construct a right-angled triangle from each of the prescribed sets of data"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-technical-drawing-applications-ch07
+    number: 7
+    title: "Quadrilaterals and Regular Polygons"
+    unit: "5. Geometrical constructions"
+    topics:
+      - id: icse-9-technical-drawing-applications-ch07-t01
+        title: "Kinds of quadrilaterals: square, rectangle, rhombus and trapezium"
+        learning_outcomes:
+          - "State the properties of each kind of quadrilateral used in construction"
+      - id: icse-9-technical-drawing-applications-ch07-t02
+        title: "Rectangle (diagonal and one side, or two sides) and square (one side or diagonal)"
+        learning_outcomes:
+          - "Construct a rectangle and a square from the prescribed data"
+      - id: icse-9-technical-drawing-applications-ch07-t03
+        title: "Rhombus (one side and one angle, or two diagonals) and trapezium (from the prescribed data)"
+        learning_outcomes:
+          - "Construct a rhombus from a side and an angle and from its diagonals"
+          - "Construct a trapezium given its two parallel sides and the distance between them"
+      - id: icse-9-technical-drawing-applications-ch07-t04
+        title: "Regular and irregular polygons; regular polygons up to six sides with T-square and set squares"
+        learning_outcomes:
+          - "Distinguish regular from irregular polygons and state the interior angle of a regular polygon"
+          - "Construct a regular hexagon of given side using T-square and 30-60 set square"
+      - id: icse-9-technical-drawing-applications-ch07-t05
+        title: "Special methods for regular polygons up to eight sides given the length of a side"
+        learning_outcomes:
+          - "Construct a regular pentagon, heptagon or octagon of given side by a general or special method"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-technical-drawing-applications-ch08
+    number: 8
+    title: "Circles and Tangents"
+    unit: "5. Geometrical constructions"
+    topics:
+      - id: icse-9-technical-drawing-applications-ch08-t01
+        title: "Parts of a circle; finding the centre of a circle; drawing an arc or circle through two or three given points"
+        learning_outcomes:
+          - "Name the parts of a circle: centre, radius, diameter, circumference, arc, chord, sector and segment"
+          - "Find the centre of a given circle and draw a circle through three non-collinear points"
+      - id: icse-9-technical-drawing-applications-ch08-t02
+        title: "Finding the circumference of a circle of given radius and the length of a given arc by construction"
+        learning_outcomes:
+          - "Find graphically the approximate circumference of a circle and the length of an arc"
+      - id: icse-9-technical-drawing-applications-ch08-t03
+        title: "Tangent to a circle or arc from a point on it and from a point outside it"
+        learning_outcomes:
+          - "Draw a tangent at a point on a circle and tangents from an external point"
+      - id: icse-9-technical-drawing-applications-ch08-t04
+        title: "Two tangents at a given inclination to each other; tangent parallel to a given line"
+        learning_outcomes:
+          - "Draw two tangents to a circle inclined at a given angle"
+          - "Draw a tangent to a circle parallel to a given line"
+      - id: icse-9-technical-drawing-applications-ch08-t05
+        title: "Common exterior tangents to two equal or unequal circles that touch, do not touch or cut each other"
+        learning_outcomes:
+          - "Construct the common exterior tangents to two circles of equal and of unequal diameter"
+      - id: icse-9-technical-drawing-applications-ch08-t06
+        title: "Common interior tangents to two equal or unequal circles that touch or do not touch each other"
+        learning_outcomes:
+          - "Construct the common interior tangents to two given circles"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-technical-drawing-applications-ch09
+    number: 9
+    title: "Orthographic Projection of Points and Lines"
+    unit: "6. Orthographic projections"
+    topics:
+      - id: icse-9-technical-drawing-applications-ch09-t01
+        title: "Planes of projection, reference line and quadrants; first-angle and third-angle methods"
+        learning_outcomes:
+          - "Explain the vertical and horizontal planes of projection and the four quadrants"
+          - "Distinguish first-angle from third-angle projection"
+      - id: icse-9-technical-drawing-applications-ch09-t02
+        title: "Projections of points in the first and third quadrants and on a reference plane"
+        learning_outcomes:
+          - "Draw the elevation and plan of a point from its distances from the reference planes"
+      - id: icse-9-technical-drawing-applications-ch09-t03
+        title: "Lines parallel to both planes; parallel to one plane and perpendicular to the other"
+        learning_outcomes:
+          - "Draw the projections of a line in each of these positions"
+      - id: icse-9-technical-drawing-applications-ch09-t04
+        title: "Lines inclined to one plane and parallel to the other; lines inclined to both planes"
+        learning_outcomes:
+          - "Draw the projections of a line inclined to one or both reference planes"
+      - id: icse-9-technical-drawing-applications-ch09-t05
+        title: "Finding the true length of a line from its projections"
+        learning_outcomes:
+          - "Find the true length of a line from given projections by rotation"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-technical-drawing-applications-ch10
+    number: 10
+    title: "Projection of Plane Surfaces"
+    unit: "6. Orthographic projections"
+    topics:
+      - id: icse-9-technical-drawing-applications-ch10-t01
+        title: "Regular polygons and circular lamina perpendicular to both reference planes"
+        learning_outcomes:
+          - "Draw the projections of a plane figure perpendicular to both reference planes"
+      - id: icse-9-technical-drawing-applications-ch10-t02
+        title: "Surfaces perpendicular to one plane and parallel to the other"
+        learning_outcomes:
+          - "Draw the true shape and the edge view of a polygon or circular lamina in this position"
+      - id: icse-9-technical-drawing-applications-ch10-t03
+        title: "Surfaces inclined to one plane and perpendicular to the other"
+        learning_outcomes:
+          - "Draw the projections of an inclined polygon or circular lamina in first-angle and third-angle projection"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-technical-drawing-applications-ch11
+    number: 11
+    title: "Orthographic Views from Pictorial Drawings"
+    unit: "6. Orthographic projections"
+    topics:
+      - id: icse-9-technical-drawing-applications-ch11-t01
+        title: "Viewing an object placed in the first or third quadrant: front elevation, plan and end elevations (left and right)"
+        learning_outcomes:
+          - "Define front elevation, plan and end elevation"
+          - "Identify the direction of viewing for each view of an object"
+      - id: icse-9-technical-drawing-applications-ch11-t02
+        title: "Converting simple isometric or oblique pictorials into orthographic views by the first-angle and third-angle methods"
+        learning_outcomes:
+          - "Draw the elevation, plan and a visible end view of a simple object from its pictorial view"
+          - "Arrange the views correctly for first-angle and for third-angle projection"
+      - id: icse-9-technical-drawing-applications-ch11-t03
+        title: "Completing the views: projection lines, centre lines, leader lines and dimensions"
+        learning_outcomes:
+          - "Add projection lines, centre lines and dimensions to the orthographic views"
+    removed_topics:
+      - "Hidden end elevations are excluded"
+    literature_texts: []
+  - id: icse-9-technical-drawing-applications-ch12
+    number: 12
+    title: "Isometric Drawing"
+    unit: "7. Isometric drawing"
+    topics:
+      - id: icse-9-technical-drawing-applications-ch12-t01
+        title: "Isometric axes, lines and planes; uses of isometric drawing; copying simple isometric figures"
+        learning_outcomes:
+          - "Draw the isometric axes with a 30-60 set square and identify isometric lines and planes"
+          - "Copy a simple given isometric figure to the correct proportions"
+      - id: icse-9-technical-drawing-applications-ch12-t02
+        title: "Isometric projection versus isometric view; the isometric scale"
+        learning_outcomes:
+          - "Distinguish an isometric projection from an isometric view"
+          - "Construct an isometric scale and use it to find isometric lengths"
+      - id: icse-9-technical-drawing-applications-ch12-t03
+        title: "Isometric views of straight-lined objects showing the isometric planes"
+        learning_outcomes:
+          - "Draw the isometric view of a simple block or stepped object from its dimensions"
+      - id: icse-9-technical-drawing-applications-ch12-t04
+        title: "Isometric views of cylindrical objects such as round bars, pipes and washers"
+        learning_outcomes:
+          - "Draw isometric circles (ellipses) on the isometric planes"
+          - "Draw the isometric view of a round bar, pipe or washer"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-technical-drawing-applications-ch13
+    number: 13
+    title: "Freehand Sketching"
+    unit: "8. Freehand sketching"
+    topics:
+      - id: icse-9-technical-drawing-applications-ch13-t01
+        title: "Technique of freehand sketching: straight lines, circles and keeping proportions"
+        learning_outcomes:
+          - "Sketch straight lines, circles and arcs freehand"
+          - "Estimate and keep the proportions of the parts of an object while sketching"
+      - id: icse-9-technical-drawing-applications-ch13-t02
+        title: "Sketching domestic items: cup and saucer, electric bulb, fountain pen, toothbrush, water tap and similar"
+        learning_outcomes:
+          - "Draw a proportionate freehand sketch of a given household item"
+      - id: icse-9-technical-drawing-applications-ch13-t03
+        title: "Sketching tools: hammer, saws, screwdriver, spanner, pliers, chisel, try-square, calipers, scissors, compasses, divider and knife"
+        learning_outcomes:
+          - "Draw a proportionate freehand sketch of a given hand tool"
+          - "Identify each prescribed tool from its sketch and state its use"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

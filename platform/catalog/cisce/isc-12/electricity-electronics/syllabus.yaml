@@ -1,0 +1,453 @@
+# ISC Class 12 Electricity and Electronics (866), Paper I Theory - ISC 2027 examination (Class XII portion only).
+# Source: platform/catalog/sources/cisce.md#isc-2027-electricity-electronics. Topic wording is our own summary of the official scope.
+subject_id: isc-12-electricity-electronics
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-electricity-electronics, isc-2027-regulations]
+exam_notes: >-
+  Paper I Theory: 3 hours, 80 marks. Paper II Project Work: 20 marks - two projects on any theory topics, each
+  marked out of 10 (title and introduction 1, content 3, presentation and originality 2, conclusion 1, viva-voce 3).
+  The teacher and a locally appointed Visiting Examiner each mark the written part out of 7 and the average is
+  taken; the viva is conducted only by the Visiting Examiner. CISCE sets no question paper for the project.
+  Suggested projects include laboratory tools and meters, cable types, reading resistor and capacitor codes, switches
+  and circuit protection, diode and Zener V-I characteristics, rectifiers, DC machines, microphones and loudspeakers,
+  CRO, and working models such as a logic-gate traffic signal, FM receiver, water-level indicator or fire alarm.
+  SOYL covers Paper I only. Simple numerical problems are set on DC machines, rectifiers, Zener regulators, triode
+  parameters and transistor gains. No topic-wise marks weightage is published in the syllabus document, and no
+  ISC 2027 specimen paper is listed for this subject. CISCE lists 14 numbered topics with scope notes, not textbook
+  chapters: SOYL groups them into 15 teachable chapters in syllabus order (DC machines split into generator and motor).
+units:
+  - { name: "1. Distribution of Electric Power", marks: null }
+  - { name: "2. The DC Generator and Motor", marks: null }
+  - { name: "3. The AC Motor", marks: null }
+  - { name: "4. Wires, Cables and Electrical Wiring", marks: null }
+  - { name: "5. Electrical Accessories", marks: null }
+  - { name: "6. Introduction to Electronics", marks: null }
+  - { name: "7. Diodes", marks: null }
+  - { name: "8. Power Supply for Electronic Apparatus", marks: null }
+  - { name: "9. Vacuum Triode", marks: null }
+  - { name: "10. Semiconductor Transistors", marks: null }
+  - { name: "11. Transistor Amplifier", marks: null }
+  - { name: "12. The Amplifier", marks: null }
+  - { name: "13. Apparatus for Reproducing and Recording Sound", marks: null }
+  - { name: "14. Electronic Measuring Instruments", marks: null }
+chapters:
+  - id: isc-12-electricity-electronics-ch01
+    number: 1
+    title: "Distribution of Electric Power"
+    unit: "1. Distribution of Electric Power"
+    topics:
+      - id: isc-12-electricity-electronics-ch01-t01
+        title: "A simple power distribution system from generating station to consumer; the local power system"
+        learning_outcomes:
+          - "Draw a block diagram of a simple distribution system from generation to a household"
+          - "Describe the distribution arrangement in the student's own locality"
+      - id: isc-12-electricity-electronics-ch01-t02
+        title: "Overhead lines and underground cables: advantages and uses"
+        learning_outcomes:
+          - "Compare overhead lines and underground cables in cost, safety, maintenance and reliability"
+      - id: isc-12-electricity-electronics-ch01-t03
+        title: "DC distribution: two-wire and three-wire systems"
+        learning_outcomes:
+          - "Draw two-wire and three-wire DC distribution systems"
+          - "Explain the advantage of the three-wire system in supplying two voltages"
+      - id: isc-12-electricity-electronics-ch01-t04
+        title: "AC distribution: the distribution transformer; three-phase three-wire and three-phase four-wire systems"
+        learning_outcomes:
+          - "Explain why a three-phase four-wire system can supply both single-phase and three-phase loads"
+          - "Calculate phase voltage from a given line voltage in a star-connected supply"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-electricity-electronics-ch02
+    number: 2
+    title: "The DC Generator"
+    unit: "2. The DC Generator and Motor"
+    topics:
+      - id: isc-12-electricity-electronics-ch02-t01
+        title: "Single-loop DC generator and the split-ring commutator; parts of a practical generator"
+        learning_outcomes:
+          - "Draw a single-loop generator and explain how the commutator gives unidirectional output"
+          - "Name the parts of a practical DC generator and state their functions"
+      - id: isc-12-electricity-electronics-ch02-t02
+        title: "Lap and wave windings of the armature; armature reaction, commutation and period of commutation; interpoles"
+        learning_outcomes:
+          - "Distinguish lap and wave windings by number of parallel paths"
+          - "Explain armature reaction and how interpoles improve commutation"
+      - id: isc-12-electricity-electronics-ch02-t03
+        title: "EMF equation Eg = (P x phi x N x Z) / (60 x A) and its use"
+        learning_outcomes:
+          - "Calculate the generated emf of a DC generator using the emf equation"
+      - id: isc-12-electricity-electronics-ch02-t04
+        title: "Excitation: separately excited and self-excited (shunt, series and compound) generators; voltage, current and power equations"
+        learning_outcomes:
+          - "Draw the connection diagrams of shunt, series and compound generators"
+          - "Calculate terminal voltage, armature current and output power for a shunt generator"
+      - id: isc-12-electricity-electronics-ch02-t05
+        title: "No-load and load characteristics; critical field resistance; causes of failure to build up voltage; applications"
+        learning_outcomes:
+          - "Sketch and interpret the no-load and load characteristics of a shunt generator"
+          - "State reasons why a self-excited generator may fail to build up voltage"
+    removed_topics:
+      - "Derivation of the emf equation of a DC generator (not required)"
+    literature_texts: []
+  - id: isc-12-electricity-electronics-ch03
+    number: 3
+    title: "The DC Motor"
+    unit: "2. The DC Generator and Motor"
+    topics:
+      - id: isc-12-electricity-electronics-ch03-t01
+        title: "Working principle of a DC motor; voltage equation V = Eb + Ia Ra; significance of back emf"
+        learning_outcomes:
+          - "Explain how torque is produced in a DC motor"
+          - "Calculate back emf and armature current using the voltage equation"
+      - id: isc-12-electricity-electronics-ch03-t02
+        title: "Shunt, series and compound motors and their characteristics"
+        learning_outcomes:
+          - "Compare the speed and torque characteristics of shunt and series motors"
+          - "Explain why a series motor must never be started without load"
+      - id: isc-12-electricity-electronics-ch03-t03
+        title: "Starting of DC motors: need for a starter; protective devices"
+        learning_outcomes:
+          - "Explain, using back emf, why a large current flows at starting and how a starter limits it"
+      - id: isc-12-electricity-electronics-ch03-t04
+        title: "Power equation of a DC motor; applications and numerical problems"
+        learning_outcomes:
+          - "Calculate mechanical power developed and efficiency of a DC motor"
+          - "Choose a suitable type of DC motor for a given application"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-electricity-electronics-ch04
+    number: 4
+    title: "Single-phase AC Motors"
+    unit: "3. The AC Motor"
+    topics:
+      - id: isc-12-electricity-electronics-ch04-t01
+        title: "The rotating magnetic field and why a single-phase induction motor is not self-starting"
+        learning_outcomes:
+          - "Explain the idea of a rotating magnetic field"
+          - "Explain why a single-phase induction motor needs a starting arrangement"
+      - id: isc-12-electricity-electronics-ch04-t02
+        title: "Split-phase start and capacitor-start single-phase induction motors"
+        learning_outcomes:
+          - "Draw the circuit of a capacitor-start motor and explain how it starts"
+          - "Compare split-phase and capacitor-start motors"
+      - id: isc-12-electricity-electronics-ch04-t03
+        title: "Uses of single-phase AC motors"
+        learning_outcomes:
+          - "Identify single-phase motors used in common household appliances"
+    removed_topics:
+      - "Three-phase AC motors (single-phase only)"
+    literature_texts: []
+  - id: isc-12-electricity-electronics-ch05
+    number: 5
+    title: "Wires, Cables and Domestic Wiring"
+    unit: "4. Wires, Cables and Electrical Wiring"
+    topics:
+      - id: isc-12-electricity-electronics-ch05-t01
+        title: "Construction of cables and flexes: solid and stranded conductors, insulation and protection; VIR, TRS and PVC insulation"
+        learning_outcomes:
+          - "Compare solid and stranded conductors and state where each is used"
+          - "Compare VIR, TRS and PVC insulation"
+      - id: isc-12-electricity-electronics-ch05-t02
+        title: "Selecting cable size: current-carrying capacity and voltage drop calculations"
+        learning_outcomes:
+          - "Calculate the voltage drop along a cable of given resistance and current"
+          - "Select a suitable cable size for a given circuit load"
+      - id: isc-12-electricity-electronics-ch05-t03
+        title: "Wiring systems: types and limitations"
+        learning_outcomes:
+          - "Describe common wiring systems and state their limitations"
+      - id: isc-12-electricity-electronics-ch05-t04
+        title: "Lighting circuits: separation of lighting and power circuits, switch in the phase line, dual (two-way) switching of lamps"
+        learning_outcomes:
+          - "Draw a lighting circuit with switches in the phase line"
+          - "Draw a two-way switching circuit for a staircase lamp"
+      - id: isc-12-electricity-electronics-ch05-t05
+        title: "Power circuits: ring and spur/tree systems"
+        learning_outcomes:
+          - "Compare ring and tree systems of power circuit layout"
+      - id: isc-12-electricity-electronics-ch05-t06
+        title: "Wiring rules and regulations (local and IEE); sequence of equipment; effects of overloading"
+        learning_outcomes:
+          - "State the sequence of equipment from the supply intake to the distribution board"
+          - "Explain the dangers of overloading a circuit"
+      - id: isc-12-electricity-electronics-ch05-t07
+        title: "Protection: fuses and trips, earthing of metalwork, mechanical protection of cables; bathroom regulations; dangerous practices and simple testing"
+        learning_outcomes:
+          - "Explain how a fuse and earthing together protect a person from electric shock"
+          - "Identify unsafe wiring practices and state why they are dangerous"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-electricity-electronics-ch06
+    number: 6
+    title: "Electrical Accessories"
+    unit: "5. Electrical Accessories"
+    topics:
+      - id: isc-12-electricity-electronics-ch06-t01
+        title: "Types of switches: knife, main, metal-clad, air-break, tumbler, piano-key and touch switches"
+        learning_outcomes:
+          - "State where each type of switch is used"
+      - id: isc-12-electricity-electronics-ch06-t02
+        title: "Essential qualities of a switch and its position in circuits"
+        learning_outcomes:
+          - "List the essential qualities of a good switch"
+          - "Explain why a switch must be placed in the phase wire"
+      - id: isc-12-electricity-electronics-ch06-t03
+        title: "Power outlets: plugs and sockets"
+        learning_outcomes:
+          - "Explain why the earth pin of a three-pin plug is longer and thicker"
+      - id: isc-12-electricity-electronics-ch06-t04
+        title: "Lamp holders (bracket, batten, pendant, angle), ceiling roses and junction boxes"
+        learning_outcomes:
+          - "Identify each type of lamp holder and state where it is used"
+          - "State the purpose of a ceiling rose and a junction box"
+    removed_topics:
+      - "Detailed knowledge of the internal structure of accessories (familiarity only)"
+    literature_texts: []
+  - id: isc-12-electricity-electronics-ch07
+    number: 7
+    title: "Passive Components: Resistors, Inductors and Capacitors"
+    unit: "6. Introduction to Electronics"
+    topics:
+      - id: isc-12-electricity-electronics-ch07-t01
+        title: "Concept of electron flow; passive components in electronic circuits"
+        learning_outcomes:
+          - "Distinguish electron flow from conventional current"
+          - "Distinguish passive from active components"
+      - id: isc-12-electricity-electronics-ch07-t02
+        title: "Resistors: wire-wound, carbon composition and variable (potentiometer, rheostat); colour code"
+        learning_outcomes:
+          - "Determine the value and tolerance of a resistor from its colour bands"
+          - "Distinguish a potentiometer from a rheostat"
+      - id: isc-12-electricity-electronics-ch07-t03
+        title: "Inductors: air-core, iron-core and ferrite-core"
+        learning_outcomes:
+          - "Compare air-core, iron-core and ferrite-core inductors and state their uses"
+      - id: isc-12-electricity-electronics-ch07-t04
+        title: "Capacitors: fixed (electrolytic, paper, mica, ceramic) and variable (ganged); structure, voltage equations and uses"
+        learning_outcomes:
+          - "Compare electrolytic and non-electrolytic capacitors"
+          - "Explain the use of a ganged capacitor in a radio tuning circuit"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-electricity-electronics-ch08
+    number: 8
+    title: "Thermionic and Semiconductor Diodes"
+    unit: "7. Diodes"
+    topics:
+      - id: isc-12-electricity-electronics-ch08-t01
+        title: "Vacuum (thermionic) diode: construction and operation; space charge and space-charge-limited region; characteristics; AC and DC plate resistance"
+        learning_outcomes:
+          - "Draw the characteristic of a vacuum diode and identify the space-charge-limited region"
+          - "Calculate AC plate resistance from a given characteristic"
+      - id: isc-12-electricity-electronics-ch08-t02
+        title: "Semiconductors: covalent bonds, crystal structure of germanium and silicon, effect of temperature, hole current"
+        learning_outcomes:
+          - "Explain the formation of electron-hole pairs in silicon"
+          - "Explain why the conductivity of a semiconductor increases with temperature"
+      - id: isc-12-electricity-electronics-ch08-t03
+        title: "Intrinsic and extrinsic semiconductors; doping; n-type and p-type; energy band diagrams; majority and minority carriers"
+        learning_outcomes:
+          - "Explain how doping produces n-type and p-type semiconductors"
+          - "Draw energy band diagrams for intrinsic, n-type and p-type semiconductors"
+      - id: isc-12-electricity-electronics-ch08-t04
+        title: "The p-n junction diode: forward and reverse bias; V-I characteristics"
+        learning_outcomes:
+          - "Draw forward and reverse bias circuits of a p-n junction"
+          - "Sketch and interpret the V-I characteristic of a p-n junction diode"
+      - id: isc-12-electricity-electronics-ch08-t05
+        title: "Diode ratings: breakdown voltage, knee voltage, maximum forward current, peak inverse voltage, maximum power rating"
+        learning_outcomes:
+          - "Define each diode rating and mark knee and breakdown voltages on a characteristic"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-electricity-electronics-ch09
+    number: 9
+    title: "Power Supplies: Rectifiers, Filters and Regulators"
+    unit: "8. Power Supply for Electronic Apparatus"
+    topics:
+      - id: isc-12-electricity-electronics-ch09-t01
+        title: "Mains transformer in a power supply; half-wave rectifier: Idc, Irms, rectification efficiency, ripple factor"
+        learning_outcomes:
+          - "Draw a half-wave rectifier circuit with input and output waveforms"
+          - "Calculate Idc, Irms and efficiency of a half-wave rectifier"
+      - id: isc-12-electricity-electronics-ch09-t02
+        title: "Full-wave centre-tap and bridge rectifiers: working, efficiency, ripple factor, advantages and disadvantages"
+        learning_outcomes:
+          - "Explain the working of a bridge rectifier with waveforms"
+          - "Compare half-wave, full-wave and bridge rectifiers"
+      - id: isc-12-electricity-electronics-ch09-t03
+        title: "Voltage doublers"
+        learning_outcomes:
+          - "Explain how a voltage doubler produces a DC output about twice the peak input"
+      - id: isc-12-electricity-electronics-ch09-t04
+        title: "Filters: RC filter, choke-input filter and pi-section filter; chokes and bleeder resistors"
+        learning_outcomes:
+          - "Draw input and output waveforms of a filtered rectifier"
+          - "State the functions of a choke and a bleeder resistor"
+      - id: isc-12-electricity-electronics-ch09-t05
+        title: "Zener diode voltage stabiliser; role of the series resistor; numerical problems"
+        learning_outcomes:
+          - "Explain how a Zener diode keeps the output voltage constant"
+          - "Calculate the series resistor and Zener current for a given regulator"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-electricity-electronics-ch10
+    number: 10
+    title: "The Vacuum Triode"
+    unit: "9. Vacuum Triode"
+    topics:
+      - id: isc-12-electricity-electronics-ch10-t01
+        title: "Structure of the vacuum triode; action of the control grid; grid cut-off voltage"
+        learning_outcomes:
+          - "Explain how a small change in grid voltage controls the plate current"
+      - id: isc-12-electricity-electronics-ch10-t02
+        title: "Plate and mutual characteristics of a triode"
+        learning_outcomes:
+          - "Sketch the plate and mutual characteristics of a triode"
+      - id: isc-12-electricity-electronics-ch10-t03
+        title: "Triode parameters: plate resistance, mutual conductance, amplification factor; mu = rp x gm; numerical problems"
+        learning_outcomes:
+          - "Define rp, gm and mu"
+          - "Calculate one triode parameter given the other two or given characteristic data"
+      - id: isc-12-electricity-electronics-ch10-t04
+        title: "Triode as a voltage amplifier: bias voltage, cathode resistor and cathode bypass capacitor"
+        learning_outcomes:
+          - "Draw a triode amplifier circuit and explain the purpose of the cathode resistor and bypass capacitor"
+      - id: isc-12-electricity-electronics-ch10-t05
+        title: "Significance of vacuum in tubes; causes of tube failure"
+        learning_outcomes:
+          - "Explain why a high vacuum is needed in a valve and list common causes of tube failure"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-electricity-electronics-ch11
+    number: 11
+    title: "Junction Transistors"
+    unit: "10. Semiconductor Transistors"
+    topics:
+      - id: isc-12-electricity-electronics-ch11-t01
+        title: "PNP and NPN junction transistors: structure and symbols"
+        learning_outcomes:
+          - "Draw the structure and circuit symbols of PNP and NPN transistors"
+          - "Explain the action of a transistor in terms of emitter, base and collector currents"
+      - id: isc-12-electricity-electronics-ch11-t02
+        title: "Methods of transistor construction and their characteristics"
+        learning_outcomes:
+          - "Describe common methods of making junction transistors"
+      - id: isc-12-electricity-electronics-ch11-t03
+        title: "Handling procedures and precautions for transistors"
+        learning_outcomes:
+          - "List precautions to be taken while soldering and handling transistors"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-electricity-electronics-ch12
+    number: 12
+    title: "Transistor Amplifier Configurations"
+    unit: "11. Transistor Amplifier"
+    topics:
+      - id: isc-12-electricity-electronics-ch12-t01
+        title: "Common-base, common-emitter and common-collector connections; IE = IB + IC"
+        learning_outcomes:
+          - "Draw CB, CE and CC circuit configurations"
+          - "Apply IE = IB + IC to find an unknown transistor current"
+      - id: isc-12-electricity-electronics-ch12-t02
+        title: "Current amplification factors alpha, beta and gamma and the relations between them; numerical problems"
+        learning_outcomes:
+          - "Derive beta = alpha / (1 - alpha)"
+          - "Calculate alpha, beta and gamma from given currents"
+      - id: isc-12-electricity-electronics-ch12-t03
+        title: "Input and output characteristics; comparison of voltage, current and power gains and input and output resistances"
+        learning_outcomes:
+          - "Sketch the input and output characteristics of a CE transistor"
+          - "Compare the three configurations in gain and resistance (elementary approach)"
+      - id: isc-12-electricity-electronics-ch12-t04
+        title: "Phase relationship; phase reversal in CE mode"
+        learning_outcomes:
+          - "Explain why the output of a CE amplifier is 180 degrees out of phase with the input"
+      - id: isc-12-electricity-electronics-ch12-t05
+        title: "Bias stabilisation; single-stage RC-coupled CE amplifier with bias circuit and emitter bypass capacitor"
+        learning_outcomes:
+          - "Explain the need for bias stabilisation"
+          - "Draw a single-stage RC-coupled amplifier and state the function of each component"
+    removed_topics:
+      - "Rigorous treatment of input and output resistances (elementary approach only)"
+    literature_texts: []
+  - id: isc-12-electricity-electronics-ch13
+    number: 13
+    title: "Voltage and Power Amplifiers"
+    unit: "12. The Amplifier"
+    topics:
+      - id: isc-12-electricity-electronics-ch13-t01
+        title: "RC-coupled voltage amplifier circuit; frequency response (qualitative)"
+        learning_outcomes:
+          - "Draw an RC-coupled voltage amplifier"
+          - "Sketch its frequency response and explain the fall in gain at low and high frequencies"
+      - id: isc-12-electricity-electronics-ch13-t02
+        title: "Power amplifier; impedance matching of the output stage to a loudspeaker"
+        learning_outcomes:
+          - "Explain why the output stage must be matched to the speaker impedance"
+          - "Distinguish a voltage amplifier from a power amplifier"
+      - id: isc-12-electricity-electronics-ch13-t03
+        title: "Advantages, disadvantages and applications of amplifiers; differences between transistors and tubes"
+        learning_outcomes:
+          - "Compare transistors and vacuum tubes in size, power consumption and reliability"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-electricity-electronics-ch14
+    number: 14
+    title: "Sound Recording and Reproduction"
+    unit: "13. Apparatus for Reproducing and Recording Sound"
+    topics:
+      - id: isc-12-electricity-electronics-ch14-t01
+        title: "Range of hearing; characteristics of microphones"
+        learning_outcomes:
+          - "State the audible frequency range"
+          - "Explain microphone characteristics such as sensitivity, frequency response and directivity"
+      - id: isc-12-electricity-electronics-ch14-t02
+        title: "Carbon and crystal microphones: construction, working, advantages and disadvantages"
+        learning_outcomes:
+          - "Explain the working of a carbon microphone"
+          - "Explain the piezoelectric principle of a crystal microphone"
+      - id: isc-12-electricity-electronics-ch14-t03
+        title: "Moving-coil and ribbon microphones: construction, working, advantages and disadvantages"
+        learning_outcomes:
+          - "Compare moving-coil and ribbon microphones"
+      - id: isc-12-electricity-electronics-ch14-t04
+        title: "Gramophone pick-ups, earphones, crystal devices and magnetic tape recording"
+        learning_outcomes:
+          - "Explain how sound is recorded on and played back from magnetic tape"
+      - id: isc-12-electricity-electronics-ch14-t05
+        title: "Moving-coil loudspeaker with permanent magnet; electrostatic speaker"
+        learning_outcomes:
+          - "Draw and explain the construction of a moving-coil loudspeaker"
+          - "Compare moving-coil and electrostatic speakers"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-electricity-electronics-ch15
+    number: 15
+    title: "Electronic Measuring Instruments"
+    unit: "14. Electronic Measuring Instruments"
+    topics:
+      - id: isc-12-electricity-electronics-ch15-t01
+        title: "Valve voltmeter (VTVM) and transistorised voltmeter: simple circuits, use and care"
+        learning_outcomes:
+          - "Explain why an electronic voltmeter loads a circuit less than a moving-coil voltmeter"
+      - id: isc-12-electricity-electronics-ch15-t02
+        title: "Signal generator: block diagram, use and care"
+        learning_outcomes:
+          - "Draw the block diagram of a signal generator and state its uses"
+      - id: isc-12-electricity-electronics-ch15-t03
+        title: "Cathode-ray oscilloscope: construction of the CRT and block diagram"
+        learning_outcomes:
+          - "Draw the block diagram of a CRO and explain the function of each part"
+      - id: isc-12-electricity-electronics-ch15-t04
+        title: "Using a CRO to measure peak AC voltage, frequency and time interval"
+        learning_outcomes:
+          - "Calculate peak voltage and frequency from a CRO trace with given settings"
+      - id: isc-12-electricity-electronics-ch15-t05
+        title: "Multimeter as voltmeter, ammeter and ohmmeter"
+        learning_outcomes:
+          - "Describe how to use a multimeter to measure voltage, current and resistance safely"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

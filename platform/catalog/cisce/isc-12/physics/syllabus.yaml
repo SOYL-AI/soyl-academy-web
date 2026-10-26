@@ -1,0 +1,714 @@
+# ISC Class 12 Physics (861), Paper I Theory - ISC 2027 examination (Class XII portion only).
+# Source: platform/catalog/sources/cisce.md#isc-2027-physics. Topic wording is our own summary of the official scope.
+subject_id: isc-12-physics
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-physics, isc-2027-regulations, cisce-circular-specimen-papers-2027, isc-2027-specimen-papers]
+exam_notes: >-
+  Paper I Theory: 3 hours, 70 marks. Paper II Practical: 3 hours, 15 marks, plus Project Work 10 marks and
+  Practical File 5 marks, assessed by a locally appointed Visiting Examiner (total 30). Practical experiments come
+  mainly from ray optics (removing parallax, u-v methods for lenses and mirrors) and current electricity (metre bridge,
+  potentiometer, Ohm's law); the practical paper always includes one graph, and short questions test the theory behind
+  each experiment. The project may be theoretical, a working model or investigatory. SOYL covers Paper I only.
+  SI units throughout; numerical problems are set from every topic unless a topic is marked qualitative or excluded.
+  The ISC 2027 specimen paper (Paper I, 3 hours plus 15 minutes reading time) has 20 compulsory questions in four
+  sections: A - 14 one-mark subparts including MCQs (14), B - seven 2-mark questions (14), C - nine 3-mark questions (27),
+  D - three 5-mark questions (15), with internal choice in two questions each in B, C and D; a simple non-programmable
+  scientific calculator is allowed. The October 2026 circular sets about 50% of marks on higher-order skills
+  (apply, analyse, evaluate, create).
+  The official weightage table gives one combined figure for Electrostatics with Current Electricity (14) and for
+  Magnetic Effects with Electromagnetic Induction and AC (16), so those pairs are grouped as single units below.
+  CISCE lists topics under nine units, not textbook chapters: SOYL groups them into 21 teachable chapters in syllabus order.
+units:
+  - { name: "Units 1-2: Electrostatics and Current Electricity", marks: 14 }
+  - { name: "Units 3-4: Magnetic Effects of Current and Magnetism; Electromagnetic Induction and Alternating Currents", marks: 16 }
+  - { name: "Unit 5: Electromagnetic Waves", marks: 2 }
+  - { name: "Unit 6: Optics", marks: 18 }
+  - { name: "Unit 7: Dual Nature of Radiation and Matter", marks: 7 }
+  - { name: "Unit 8: Atoms and Nuclei", marks: 6 }
+  - { name: "Unit 9: Electronic Devices", marks: 7 }
+chapters:
+  - id: isc-12-physics-ch01
+    number: 1
+    title: "Electric Charges and Fields"
+    unit: "Units 1-2: Electrostatics and Current Electricity"
+    topics:
+      - id: isc-12-physics-ch01-t01
+        title: "Frictional electricity; two kinds of charge; conductors and insulators; quantisation and conservation of charge"
+        learning_outcomes:
+          - "Explain charging by friction in terms of transfer of electrons"
+          - "Use q = ne to show that a given charge value is or is not physically possible"
+      - id: isc-12-physics-ch01-t02
+        title: "Coulomb's law in vector form; SI unit of charge; permittivity of free space and of a medium; comparison with Newton's law of gravitation"
+        learning_outcomes:
+          - "Calculate the force between two point charges in vacuum and in a dielectric medium"
+          - "Compare electrostatic and gravitational forces between two protons"
+      - id: isc-12-physics-ch01-t03
+        title: "Superposition principle for forces between several point charges"
+        learning_outcomes:
+          - "Calculate the net force on a charge due to several point charges by vector addition"
+      - id: isc-12-physics-ch01-t04
+        title: "Electric field E = F/q0; field of a point charge and of a group of charges; F = qE; linear, surface and volume charge densities"
+        learning_outcomes:
+          - "Calculate the electric field at a point due to one or more point charges"
+          - "Define linear, surface and volume charge density and state their SI units"
+      - id: isc-12-physics-ch01-t05
+        title: "Electric lines of force: properties; patterns for a point charge, a dipole, two like charges and parallel plates"
+        learning_outcomes:
+          - "State the properties of electric field lines and explain why two lines never intersect"
+          - "Sketch field-line patterns for a dipole, two like charges and oppositely charged parallel plates"
+      - id: isc-12-physics-ch01-t06
+        title: "Electric dipole and dipole moment; field on the axial line and on the equatorial line; short-dipole approximation"
+        learning_outcomes:
+          - "Derive the electric field at axial and equatorial points of a dipole"
+          - "Show that for a short dipole the axial field is twice the equatorial field at the same distance"
+      - id: isc-12-physics-ch01-t07
+        title: "Dipole in a uniform electric field: zero net force; torque tau = p x E"
+        learning_outcomes:
+          - "Derive the expression for the torque on a dipole in a uniform field"
+          - "Explain why a dipole in a uniform field rotates but does not translate"
+    removed_topics:
+      - "Coulomb's law with position-coordinate vectors r1 and r2 (not necessary)"
+    literature_texts: []
+  - id: isc-12-physics-ch02
+    number: 2
+    title: "Electric Flux and Gauss's Theorem"
+    unit: "Units 1-2: Electrostatics and Current Electricity"
+    topics:
+      - id: isc-12-physics-ch02-t01
+        title: "Flux of a vector field; area vector; electric flux for uniform and non-uniform fields; cases theta = 0, 90 and 180 degrees"
+        learning_outcomes:
+          - "Calculate electric flux through a plane surface inclined to a uniform field"
+          - "Explain flux as a surface integral E.dA for a non-uniform field"
+      - id: isc-12-physics-ch02-t02
+        title: "Gauss's theorem: statement; net enclosed charge; properties of a Gaussian surface"
+        learning_outcomes:
+          - "State Gauss's theorem and use it to find the flux through a closed surface around given charges"
+          - "Choose a suitable Gaussian surface for a symmetric charge distribution"
+      - id: isc-12-physics-ch02-t03
+        title: "Field due to an infinitely long straight line of charge"
+        learning_outcomes:
+          - "Derive E = lambda / (2 pi eps0 r) using a cylindrical Gaussian surface"
+      - id: isc-12-physics-ch02-t04
+        title: "Field due to a uniformly charged infinite plane thin sheet"
+        learning_outcomes:
+          - "Derive E = sigma / (2 eps0) for an infinite sheet and show it is independent of distance"
+      - id: isc-12-physics-ch02-t05
+        title: "Field due to a uniformly charged thin spherical shell (inside, on and outside); graph of E against r"
+        learning_outcomes:
+          - "Derive the field inside, on and outside a charged thin spherical shell"
+          - "Draw the graph of E against r for a charged spherical shell"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-physics-ch03
+    number: 3
+    title: "Electrostatic Potential and Potential Energy"
+    unit: "Units 1-2: Electrostatics and Current Electricity"
+    topics:
+      - id: isc-12-physics-ch03-t01
+        title: "Electric potential and potential difference (V = W/q0); equipotential surfaces and their properties"
+        learning_outcomes:
+          - "Define electric potential and potential difference and state their SI unit"
+          - "Explain why equipotential surfaces are perpendicular to field lines and sketch them for a point charge and a uniform field"
+      - id: isc-12-physics-ch03-t02
+        title: "Potential due to a point charge (derivation); graphs of E and V against r"
+        learning_outcomes:
+          - "Derive V = q / (4 pi eps0 r) for a point charge"
+          - "Compare the graphs of E and V against distance from a point charge"
+      - id: isc-12-physics-ch03-t03
+        title: "Potential due to a system of charges and due to a dipole (axial, equatorial and general point for a short dipole)"
+        learning_outcomes:
+          - "Calculate the potential at a point due to several point charges as an algebraic sum"
+          - "Derive the potential of a dipole on its axial and equatorial lines"
+      - id: isc-12-physics-ch03-t04
+        title: "Potential energy of a charge in a field (U = qV); potential energy of systems of two and three point charges"
+        learning_outcomes:
+          - "Calculate the work needed to assemble a system of two or three point charges"
+          - "Interpret the sign of the potential energy of a pair of charges"
+      - id: isc-12-physics-ch03-t05
+        title: "Potential energy of a dipole in a uniform field U = -p.E; special cases at 0, 90 and 180 degrees"
+        learning_outcomes:
+          - "Derive U = -pE cos(theta) for a dipole in a uniform field"
+          - "Identify the positions of stable and unstable equilibrium of a dipole"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-physics-ch04
+    number: 4
+    title: "Capacitance and Dielectrics"
+    unit: "Units 1-2: Electrostatics and Current Electricity"
+    topics:
+      - id: isc-12-physics-ch04-t01
+        title: "Conductors in electrostatics; free and bound charges; capacitance of a conductor C = Q/V"
+        learning_outcomes:
+          - "Explain why the field inside a charged conductor is zero and charge resides on its surface"
+          - "Define capacitance and the farad"
+      - id: isc-12-physics-ch04-t02
+        title: "Parallel-plate capacitor: C = eps0 A / d"
+        learning_outcomes:
+          - "Derive the capacitance of a parallel-plate capacitor with vacuum between the plates"
+      - id: isc-12-physics-ch04-t03
+        title: "Capacitors in series and in parallel"
+        learning_outcomes:
+          - "Derive the equivalent capacitance of series and parallel combinations"
+          - "Find charge and potential difference on each capacitor in a mixed network"
+      - id: isc-12-physics-ch04-t04
+        title: "Energy stored in a capacitor U = (1/2)CV^2 = (1/2)QV = Q^2/(2C); energy density"
+        learning_outcomes:
+          - "Calculate energy stored and energy density for a charged capacitor"
+          - "Calculate the energy lost when two charged capacitors are connected"
+      - id: isc-12-physics-ch04-t05
+        title: "Dielectrics: polarisation (qualitative); dielectric constant K = C'/C = eps_r; effect of a dielectric with battery disconnected and connected"
+        learning_outcomes:
+          - "Explain how induced surface charges on a dielectric reduce the field between the plates"
+          - "Predict changes in Q, V, E and C when a dielectric is inserted with the battery connected or disconnected"
+      - id: isc-12-physics-ch04-t06
+        title: "Capacitor partially filled with a dielectric slab: C' = eps0 A / (d - t + t/K)"
+        learning_outcomes:
+          - "Calculate the capacitance of a parallel-plate capacitor containing a dielectric slab of thickness t"
+    removed_topics:
+      - "Derivation of the energy stored in a capacitor (formulae only)"
+    literature_texts: []
+  - id: isc-12-physics-ch05
+    number: 5
+    title: "Electric Current, Ohm's Law and Resistivity"
+    unit: "Units 1-2: Electrostatics and Current Electricity"
+    topics:
+      - id: isc-12-physics-ch05-t01
+        title: "Free electron theory of conduction; relaxation time; drift velocity; mobility; I = n e A v_d"
+        learning_outcomes:
+          - "Derive I = n e A v_d from the drift of free electrons"
+          - "Explain why drift velocity is tiny although a lamp lights almost instantly"
+      - id: isc-12-physics-ch05-t02
+        title: "Ohm's law; current density J = I/A; J = sigma E; derivation of sigma = n e^2 tau / m and rho = m / (n e^2 tau)"
+        learning_outcomes:
+          - "Derive the expression for resistivity in terms of relaxation time"
+          - "Express Ohm's law in the vector form J = sigma E"
+      - id: isc-12-physics-ch05-t03
+        title: "Resistance, resistivity, conductance and conductivity (R = rho l / A); V-I characteristics of ohmic and non-ohmic conductors"
+        learning_outcomes:
+          - "Calculate the resistance of a wire from its dimensions and resistivity"
+          - "Distinguish ohmic from non-ohmic devices using V-I graphs"
+      - id: isc-12-physics-ch05-t04
+        title: "Temperature dependence of resistance and resistivity of conductors and semiconductors"
+        learning_outcomes:
+          - "Explain using relaxation time and carrier density why metals and semiconductors respond oppositely to heating"
+          - "Sketch resistivity-temperature graphs for a metal and a semiconductor"
+      - id: isc-12-physics-ch05-t05
+        title: "Electrical energy and power (P = VI = V^2/R = I^2 R); commercial unit; electricity consumption and billing"
+        learning_outcomes:
+          - "Calculate power and energy consumed by appliances"
+          - "Compute a household electricity bill in kW h"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-physics-ch06
+    number: 6
+    title: "Cells, Kirchhoff's Laws, Bridges and Potentiometer"
+    unit: "Units 1-2: Electrostatics and Current Electricity"
+    topics:
+      - id: isc-12-physics-ch06-t01
+        title: "EMF as work done per unit charge; internal resistance; terminal potential difference V = E - Ir"
+        learning_outcomes:
+          - "Derive E = I(R + r) from energy conservation"
+          - "Distinguish emf from terminal potential difference while a cell is discharging"
+      - id: isc-12-physics-ch06-t02
+        title: "Combination of identical cells in series, parallel and mixed grouping; cells of unequal emf in parallel (two) and in series (n)"
+        learning_outcomes:
+          - "Derive the current delivered by series, parallel and mixed groupings of identical cells"
+          - "Calculate the equivalent emf and internal resistance of two unequal cells in parallel"
+      - id: isc-12-physics-ch06-t03
+        title: "Kirchhoff's junction and loop laws as conservation of charge and energy; sign conventions; simple circuits"
+        learning_outcomes:
+          - "Apply Kirchhoff's laws to find currents in a two-loop circuit"
+          - "Relate each law to a conservation principle"
+      - id: isc-12-physics-ch06-t04
+        title: "Wheatstone bridge balance condition; metre bridge and measurement of unknown resistance"
+        learning_outcomes:
+          - "Derive the balance condition R1/R2 = R3/R4 for a Wheatstone bridge"
+          - "Calculate an unknown resistance from metre-bridge balancing lengths"
+      - id: isc-12-physics-ch06-t05
+        title: "Potentiometer: principle, potential gradient and sensitivity; use as an ideal voltmeter"
+        learning_outcomes:
+          - "Explain why a potentiometer measures emf without drawing current"
+          - "Calculate potential gradient and suggest how to increase sensitivity"
+      - id: isc-12-physics-ch06-t06
+        title: "Potentiometer applications: comparing emfs of two cells; internal resistance of a cell"
+        learning_outcomes:
+          - "Use balancing lengths to compare emfs of two cells"
+          - "Determine internal resistance of a cell from balancing lengths with and without a shunt resistor"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-physics-ch07
+    number: 7
+    title: "Moving Charges and Magnetic Field"
+    unit: "Units 3-4: Magnetic Effects of Current and Magnetism; Electromagnetic Induction and Alternating Currents"
+    topics:
+      - id: isc-12-physics-ch07-t01
+        title: "Oersted's experiment; magnetic field B defined by F = q(v x B); Biot-Savart law in vector form"
+        learning_outcomes:
+          - "Describe Oersted's observation and its significance"
+          - "State the Biot-Savart law and identify the direction of dB using the right-hand rule"
+      - id: isc-12-physics-ch07-t02
+        title: "Field at the centre of a circular current loop and at a point on its axis"
+        learning_outcomes:
+          - "Derive B at the centre and on the axis of a circular loop"
+          - "Calculate the field of a coil of N turns"
+      - id: isc-12-physics-ch07-t03
+        title: "Ampere's circuital law: field near a long straight wire and inside a long solenoid; formula for a finite straight conductor"
+        learning_outcomes:
+          - "Apply Ampere's circuital law to obtain B near a long straight wire"
+          - "Use B = mu0 n I for a long solenoid"
+      - id: isc-12-physics-ch07-t04
+        title: "Force on a moving charge in magnetic and electric fields; Lorentz force; special cases"
+        learning_outcomes:
+          - "Calculate the magnetic force on a charge moving at an angle to B"
+          - "Explain why a magnetic force does no work on a moving charge"
+      - id: isc-12-physics-ch07-t05
+        title: "Force on a current-carrying conductor F = I(l x B); force between two parallel currents; definition of the ampere and coulomb"
+        learning_outcomes:
+          - "Derive the force per unit length between two long parallel current-carrying wires"
+          - "Define the ampere from the force between parallel conductors"
+    removed_topics:
+      - "Ampere's swimming rule"
+      - "Derivation of the field of a finitely long conductor (formula only)"
+      - "Field inside a solenoid treated qualitatively"
+    literature_texts: []
+  - id: isc-12-physics-ch08
+    number: 8
+    title: "Torque on a Current Loop and the Moving Coil Galvanometer"
+    unit: "Units 3-4: Magnetic Effects of Current and Magnetism; Electromagnetic Induction and Alternating Currents"
+    topics:
+      - id: isc-12-physics-ch08-t01
+        title: "Torque on a current loop in a uniform field: tau = NIAB sin(theta) = m x B; magnetic dipole moment m = NIA"
+        learning_outcomes:
+          - "Derive the torque on a rectangular current loop in a uniform magnetic field"
+          - "Find the direction of the magnetic moment of a loop with the right-hand rule"
+      - id: isc-12-physics-ch08-t02
+        title: "Current loop as a magnetic dipole; orbital magnetic moment of the electron in the Bohr model"
+        learning_outcomes:
+          - "Calculate the magnetic moment of an electron revolving in a Bohr orbit"
+      - id: isc-12-physics-ch08-t03
+        title: "Moving coil galvanometer: radial field, construction, principle, working, I = k theta; current and voltage sensitivity"
+        learning_outcomes:
+          - "Explain the purpose of the radial magnetic field and the soft-iron core"
+          - "Show how current and voltage sensitivity depend on the coil and spring constants"
+      - id: isc-12-physics-ch08-t04
+        title: "Conversion of a galvanometer into an ammeter (shunt) and a voltmeter of given range"
+        learning_outcomes:
+          - "Calculate the shunt resistance needed to convert a galvanometer into an ammeter of given range"
+          - "Calculate the series resistance needed to make a voltmeter of given range"
+    removed_topics:
+      - "Direction rules other than the right-hand rule"
+    literature_texts: []
+  - id: isc-12-physics-ch09
+    number: 9
+    title: "Magnetism and Matter"
+    unit: "Units 3-4: Magnetic Effects of Current and Magnetism; Electromagnetic Induction and Alternating Currents"
+    topics:
+      - id: isc-12-physics-ch09-t01
+        title: "Bar magnet as an equivalent solenoid; magnetic field lines as closed loops (no monopoles) compared with electric field lines"
+        learning_outcomes:
+          - "Compare magnetic field lines of a bar magnet with those of a current-carrying solenoid"
+          - "Explain why magnetic field lines form closed loops while electric field lines do not"
+      - id: isc-12-physics-ch09-t02
+        title: "Field of a magnetic dipole in end-on and broadside-on positions (formulae); torque on a magnetic dipole in a uniform field"
+        learning_outcomes:
+          - "Use the end-on and broadside-on formulae to compare fields of a bar magnet"
+          - "Calculate the torque on a bar magnet in a uniform field"
+      - id: isc-12-physics-ch09-t03
+        title: "Magnetic flux and flux density; weber, tesla and gauss"
+        learning_outcomes:
+          - "Calculate magnetic flux through a surface in a uniform field"
+          - "Convert between tesla and gauss"
+      - id: isc-12-physics-ch09-t04
+        title: "Diamagnetic, paramagnetic and ferromagnetic substances: magnetisation M, intensity H, susceptibility, relative permeability; Curie's law and Curie temperature"
+        learning_outcomes:
+          - "Classify a substance from its susceptibility or relative permeability"
+          - "Predict how a small bar of each type aligns in a uniform field and how field lines change through it"
+          - "Apply Curie's law to predict how paramagnetic susceptibility changes with temperature"
+      - id: isc-12-physics-ch09-t05
+        title: "Electromagnets and factors affecting their strength; choice of materials for permanent magnets, electromagnets and transformer cores; B-H loop, retentivity and coercivity"
+        learning_outcomes:
+          - "Choose a suitable material for a permanent magnet or transformer core using retentivity and coercivity"
+          - "Interpret a hysteresis (B-H) loop qualitatively"
+    removed_topics:
+      - "Derivation of the field of a bar magnet on its axial and equatorial lines (qualitative/formulae only)"
+      - "Defining B by force on a unit pole"
+      - "Quantitative treatment of the B-H loop (qualitative only)"
+    literature_texts: []
+  - id: isc-12-physics-ch10
+    number: 10
+    title: "Electromagnetic Induction"
+    unit: "Units 3-4: Magnetic Effects of Current and Magnetism; Electromagnetic Induction and Alternating Currents"
+    topics:
+      - id: isc-12-physics-ch10-t01
+        title: "Magnetic flux and its rate of change; Faraday's laws of electromagnetic induction"
+        learning_outcomes:
+          - "State Faraday's laws and calculate the induced emf from a changing flux"
+      - id: isc-12-physics-ch10-t02
+        title: "Lenz's law and conservation of energy; motional emf E = Blv and power P = (Blv)^2/R"
+        learning_outcomes:
+          - "Use Lenz's law to find the direction of an induced current"
+          - "Derive the motional emf of a rod moving in a uniform field and the power needed to move it"
+      - id: isc-12-physics-ch10-t03
+        title: "Eddy currents: causes, effects and uses"
+        learning_outcomes:
+          - "Explain how laminated cores reduce eddy-current losses"
+          - "Give applications of eddy currents such as electromagnetic braking and induction furnaces"
+      - id: isc-12-physics-ch10-t04
+        title: "Self-induction: Phi = LI, E = -L dI/dt; the henry; self-inductance of a long solenoid; back emf"
+        learning_outcomes:
+          - "Derive the self-inductance of a long solenoid"
+          - "Explain the back emf produced when current in a coil is switched"
+      - id: isc-12-physics-ch10-t05
+        title: "Mutual induction: Phi2 = M I1, E2 = -M dI1/dt; mutual inductance of two coaxial solenoids"
+        learning_outcomes:
+          - "Derive the mutual inductance of two coaxial solenoids"
+          - "Calculate the emf induced in a secondary coil from the rate of change of primary current"
+      - id: isc-12-physics-ch10-t06
+        title: "Transformer (ideal coupling): principle, working, step-up and step-down, efficiency, energy losses and their reduction; power transmission"
+        learning_outcomes:
+          - "Use turns ratio relations to find secondary voltage and current"
+          - "Explain why power is transmitted at high voltage and list ways to reduce transformer losses"
+    removed_topics:
+      - "Quantitative treatment of eddy currents (qualitative only)"
+    literature_texts: []
+  - id: isc-12-physics-ch11
+    number: 11
+    title: "Alternating Current"
+    unit: "Units 3-4: Magnetic Effects of Current and Magnetism; Electromagnetic Induction and Alternating Currents"
+    topics:
+      - id: isc-12-physics-ch11-t01
+        title: "Sinusoidal alternating voltage and current; period, frequency and phase; mean and RMS values"
+        learning_outcomes:
+          - "Derive the relation between RMS and peak values for sinusoidal current"
+          - "Calculate mean value over a half cycle"
+      - id: isc-12-physics-ch11-t02
+        title: "AC through pure R, pure L and pure C: phase lead and lag, phasor diagrams; reactances X_L = omega L and X_C = 1/(omega C); graphs against frequency"
+        learning_outcomes:
+          - "Draw phasor diagrams for pure resistive, inductive and capacitive circuits"
+          - "Sketch and interpret graphs of X_L and X_C against frequency"
+      - id: isc-12-physics-ch11-t03
+        title: "Series LCR circuit: phasor method, impedance Z, phase angle; RL and RC special cases; graphs of Z and I against frequency"
+        learning_outcomes:
+          - "Derive Z = sqrt(R^2 + (X_L - X_C)^2) and tan(phi) = (X_L - X_C)/R using a phasor diagram"
+          - "Calculate current and voltages across R, L and C in a series circuit"
+      - id: isc-12-physics-ch11-t04
+        title: "Power in AC circuits: average power, power factor cos(phi) = R/Z; wattless current; choke coil"
+        learning_outcomes:
+          - "Calculate the average power and power factor of an LCR circuit"
+          - "Explain why a choke coil controls current with almost no power loss"
+      - id: isc-12-physics-ch11-t05
+        title: "Electrical resonance: f0 = 1/(2 pi sqrt(LC)); bandwidth and Q factor; LC oscillations"
+        learning_outcomes:
+          - "Calculate the resonant frequency of a series LCR circuit and state the conditions at resonance"
+          - "Describe energy exchange in an LC circuit qualitatively"
+      - id: isc-12-physics-ch11-t06
+        title: "AC generator: principle, construction, theory and working; differences between AC and DC"
+        learning_outcomes:
+          - "Derive the sinusoidal emf of a coil rotating in a uniform field"
+          - "List basic differences between AC and DC"
+    removed_topics:
+      - "Derivation of bandwidth and Q factor"
+      - "Quantitative treatment of LC oscillations (qualitative only)"
+    literature_texts: []
+  - id: isc-12-physics-ch12
+    number: 12
+    title: "Electromagnetic Waves"
+    unit: "Unit 5: Electromagnetic Waves"
+    topics:
+      - id: isc-12-physics-ch12-t01
+        title: "Displacement current (basic idea)"
+        learning_outcomes:
+          - "Explain why displacement current is needed for continuity of current in a charging capacitor"
+      - id: isc-12-physics-ch12-t02
+        title: "Characteristics of electromagnetic waves; transverse nature with E and B perpendicular to each other and to the direction of travel"
+        learning_outcomes:
+          - "Sketch an electromagnetic wave showing E, B and direction of propagation"
+          - "State properties common to all electromagnetic waves"
+      - id: isc-12-physics-ch12-t03
+        title: "Electromagnetic spectrum from radio waves to gamma rays: order, approximate ranges, sources, detection and uses"
+        learning_outcomes:
+          - "Arrange the regions of the electromagnetic spectrum in order of frequency or wavelength"
+          - "Give a source, a detector and a use for each region"
+    removed_topics:
+      - "Mathematical treatment of electromagnetic waves (qualitative only)"
+    literature_texts: []
+  - id: isc-12-physics-ch13
+    number: 13
+    title: "Reflection at Spherical Mirrors and Refraction at Plane Surfaces"
+    unit: "Unit 6: Optics"
+    topics:
+      - id: isc-12-physics-ch13-t01
+        title: "Reflection by spherical mirrors; derivation of the mirror formula; R = 2f; magnification"
+        learning_outcomes:
+          - "Derive the mirror formula for a concave mirror"
+          - "Solve numerical problems on image position and magnification for concave and convex mirrors"
+      - id: isc-12-physics-ch13-t02
+        title: "Refraction at a plane interface; Snell's law; relative refractive index across a combination of media (1n2 x 2n3 x 3n1 = 1)"
+        learning_outcomes:
+          - "Apply Snell's law to a ray passing through several parallel media"
+      - id: isc-12-physics-ch13-t03
+        title: "Real and apparent depth; simple applications"
+        learning_outcomes:
+          - "Calculate apparent depth and the apparent shift of an object viewed through a slab or liquid"
+      - id: isc-12-physics-ch13-t04
+        title: "Total internal reflection and critical angle; total reflecting prisms (angles 30, 45, 60, 90 degrees); optical fibres"
+        learning_outcomes:
+          - "Relate critical angle to refractive index"
+          - "Draw ray diagrams for total reflecting prisms and explain light transmission in an optical fibre"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-physics-ch14
+    number: 14
+    title: "Refraction and Dispersion by a Prism"
+    unit: "Unit 6: Optics"
+    topics:
+      - id: isc-12-physics-ch14-t01
+        title: "Refraction through a prism; angle of deviation; i-delta graph"
+        learning_outcomes:
+          - "Trace a ray through a prism and mark the angles of incidence, refraction and deviation"
+          - "Interpret the graph of deviation against angle of incidence"
+      - id: isc-12-physics-ch14-t02
+        title: "Minimum deviation: derivation of n = sin((A + delta_m)/2) / sin(A/2)"
+        learning_outcomes:
+          - "Derive the prism formula at minimum deviation"
+          - "Calculate refractive index from angle of prism and minimum deviation"
+      - id: isc-12-physics-ch14-t03
+        title: "Thin prism: deviation delta = (n - 1)A"
+        learning_outcomes:
+          - "Calculate deviation produced by a thin prism"
+      - id: isc-12-physics-ch14-t04
+        title: "Dispersion; angular dispersion; dispersive power; rainbow (ray diagram)"
+        learning_outcomes:
+          - "Calculate angular dispersion and dispersive power of a prism"
+          - "Draw a ray diagram explaining formation of a primary rainbow"
+    removed_topics:
+      - "Derivation for the rainbow (ray diagram and simple explanation only)"
+    literature_texts: []
+  - id: isc-12-physics-ch15
+    number: 15
+    title: "Refraction at Spherical Surfaces and Thin Lenses"
+    unit: "Unit 6: Optics"
+    topics:
+      - id: isc-12-physics-ch15-t01
+        title: "Refraction at a single spherical surface (convex towards rarer medium, real image): relation between n1, n2, u, v and R"
+        learning_outcomes:
+          - "Derive the refraction formula for a single convex spherical surface"
+      - id: isc-12-physics-ch15-t02
+        title: "Lens maker's formula and thin lens formula (derived for a biconvex lens; extended to biconcave, plano-convex and a lens in a liquid)"
+        learning_outcomes:
+          - "Derive the lens maker's formula and the thin lens formula for a biconvex lens"
+          - "Predict the change in focal length when a lens is immersed in a liquid"
+      - id: isc-12-physics-ch15-t03
+        title: "Magnification by a lens; power of a lens in dioptre"
+        learning_outcomes:
+          - "Calculate magnification and power of a lens with correct signs"
+      - id: isc-12-physics-ch15-t04
+        title: "Thin lenses in contact: 1/F = 1/f1 + 1/f2 and P = P1 + P2"
+        learning_outcomes:
+          - "Derive the combined focal length of two thin lenses in contact"
+      - id: isc-12-physics-ch15-t05
+        title: "Image formation by combinations of thin lenses and of lenses with mirrors"
+        learning_outcomes:
+          - "Locate the final image formed by two separated lenses or a lens-mirror system"
+    removed_topics:
+      - "Silvered lenses"
+      - "Refraction at a spherical surface: only the case convex towards the rarer medium with a real image is derived"
+    literature_texts: []
+  - id: isc-12-physics-ch16
+    number: 16
+    title: "Optical Instruments"
+    unit: "Unit 6: Optics"
+    topics:
+      - id: isc-12-physics-ch16-t01
+        title: "Simple microscope: ray diagram and magnifying power with image at D and at infinity"
+        learning_outcomes:
+          - "Derive the magnifying power of a simple microscope for both image positions"
+      - id: isc-12-physics-ch16-t02
+        title: "Compound microscope: ray diagram and magnifying power with final image at D; expression for image at infinity"
+        learning_outcomes:
+          - "Draw the ray diagram of a compound microscope and derive its magnifying power for the image at D"
+      - id: isc-12-physics-ch16-t03
+        title: "Refracting astronomical telescope: ray diagrams and magnifying power with final image at infinity and at D"
+        learning_outcomes:
+          - "Derive the magnifying power of a refracting telescope in normal adjustment and with the image at D"
+      - id: isc-12-physics-ch16-t04
+        title: "Reflecting telescope (image at infinity); advantages over refracting telescopes"
+        learning_outcomes:
+          - "Draw the ray diagram of a reflecting telescope"
+          - "Give advantages of reflecting telescopes over refracting ones"
+      - id: isc-12-physics-ch16-t05
+        title: "Resolving power of a compound microscope; advantages, disadvantages and uses of optical instruments"
+        learning_outcomes:
+          - "State factors on which the resolving power of a microscope depends and how it can be increased"
+    removed_topics:
+      - "Derivation of the magnifying power of a compound microscope with final image at infinity (expression only)"
+    literature_texts: []
+  - id: isc-12-physics-ch17
+    number: 17
+    title: "Wave Optics: Interference and Diffraction"
+    unit: "Unit 6: Optics"
+    topics:
+      - id: isc-12-physics-ch17-t01
+        title: "Wavefronts (spherical, cylindrical, plane); Huygens' principle"
+        learning_outcomes:
+          - "Draw wavefronts from a point source, a line source and a distant source"
+          - "Use Huygens' principle to construct a new wavefront"
+      - id: isc-12-physics-ch17-t02
+        title: "Proof of the laws of reflection and refraction using Huygens' principle"
+        learning_outcomes:
+          - "Prove Snell's law using Huygens' construction"
+      - id: isc-12-physics-ch17-t03
+        title: "Superposition; path difference and phase difference; coherent and incoherent sources; conditions for sustained interference"
+        learning_outcomes:
+          - "Relate path difference to phase difference"
+          - "Explain why two independent lamps cannot give a sustained interference pattern"
+      - id: isc-12-physics-ch17-t04
+        title: "Young's double slit experiment: path difference d sin(theta); positions of bright and dark fringes; fringe width beta = lambda D / d"
+        learning_outcomes:
+          - "Derive the expression for fringe width in Young's experiment"
+          - "Predict how fringe width changes with wavelength, slit separation, screen distance and medium"
+      - id: isc-12-physics-ch17-t05
+        title: "Intensity distribution in the double-slit pattern"
+        learning_outcomes:
+          - "Sketch the intensity distribution of a double-slit pattern against angular position"
+      - id: isc-12-physics-ch17-t06
+        title: "Fraunhofer diffraction at a single slit: minima a sin(theta) = n lambda, secondary maxima, intensity distribution"
+        learning_outcomes:
+          - "State the conditions for minima and secondary maxima in single-slit diffraction"
+          - "Compare a single-slit diffraction pattern with a double-slit interference pattern"
+      - id: isc-12-physics-ch17-t07
+        title: "Angular width of the central bright fringe"
+        learning_outcomes:
+          - "Calculate the angular and linear width of the central maximum"
+    removed_topics:
+      - "Refraction through a prism and lens using Huygens' theory"
+      - "Mathematical deduction of interference from the equations of two progressive waves"
+      - "Single-slit diffraction beyond an elementary, qualitative treatment"
+    literature_texts: []
+  - id: isc-12-physics-ch18
+    number: 18
+    title: "Dual Nature of Radiation and Matter"
+    unit: "Unit 7: Dual Nature of Radiation and Matter"
+    topics:
+      - id: isc-12-physics-ch18-t01
+        title: "Photoelectric effect: Hertz and Lenard's observations and experimental facts"
+        learning_outcomes:
+          - "Describe how photocurrent depends on intensity, frequency and potential"
+          - "Explain why the wave theory fails to explain the photoelectric effect"
+      - id: isc-12-physics-ch18-t02
+        title: "Quantisation of radiation; Einstein's photoelectric equation E_max = h f - W0; threshold frequency and work function"
+        learning_outcomes:
+          - "Calculate maximum kinetic energy, stopping potential and threshold wavelength"
+      - id: isc-12-physics-ch18-t03
+        title: "Determination of Planck's constant from the stopping potential against frequency graph; photon momentum p = h/lambda"
+        learning_outcomes:
+          - "Find Planck's constant and work function from a stopping potential-frequency graph"
+          - "Calculate the momentum of a photon"
+      - id: isc-12-physics-ch18-t04
+        title: "Wave-particle duality; de Broglie hypothesis lambda = h/p = h/(mv)"
+        learning_outcomes:
+          - "Calculate the de Broglie wavelength of an electron accelerated through a potential difference"
+      - id: isc-12-physics-ch18-t05
+        title: "Electron diffraction and the Davisson-Germer experiment (qualitative)"
+        learning_outcomes:
+          - "Describe the Davisson-Germer experiment and the conclusion drawn from it"
+    removed_topics:
+      - "Quantitative treatment of the Davisson-Germer experiment and electron diffraction (qualitative only)"
+    literature_texts: []
+  - id: isc-12-physics-ch19
+    number: 19
+    title: "Atoms"
+    unit: "Unit 8: Atoms and Nuclei"
+    topics:
+      - id: isc-12-physics-ch19-t01
+        title: "Geiger-Marsden alpha-scattering experiment; Rutherford's nuclear model; distance of closest approach and size of nucleus"
+        learning_outcomes:
+          - "Describe the observations of the alpha-scattering experiment and their conclusions"
+          - "Calculate the distance of closest approach of an alpha particle"
+      - id: isc-12-physics-ch19-t02
+        title: "Bohr's postulates for the hydrogen atom; radius, orbital velocity, kinetic, potential and total energy of the electron"
+        learning_outcomes:
+          - "Derive the radius and total energy of the nth Bohr orbit"
+          - "Explain the significance of negative total energy"
+      - id: isc-12-physics-ch19-t03
+        title: "Energy level diagram; Lyman, Balmer, Paschen, Brackett and Pfund series; Rydberg constant"
+        learning_outcomes:
+          - "Calculate the wavelength (in nm) of a spectral line from an energy-level transition"
+          - "Identify the series and region of the spectrum for a given transition"
+    removed_topics:
+      - "Mathematical theory of alpha-particle scattering"
+    literature_texts: []
+  - id: isc-12-physics-ch20
+    number: 20
+    title: "Nuclei and Nuclear Energy"
+    unit: "Unit 8: Atoms and Nuclei"
+    topics:
+      - id: isc-12-physics-ch20-t01
+        title: "Composition and size of the nucleus; nuclear density; isotopes, isobars and isotones; unified atomic mass unit"
+        learning_outcomes:
+          - "Show that nuclear density is independent of mass number"
+          - "Classify given nuclides as isotopes, isobars or isotones"
+      - id: isc-12-physics-ch20-t02
+        title: "Mass-energy relation E = mc^2; mass defect and binding energy; pair production and annihilation"
+        learning_outcomes:
+          - "Calculate the mass defect and binding energy of a nucleus in MeV"
+      - id: isc-12-physics-ch20-t03
+        title: "Binding energy per nucleon against mass number; stability of middle-order nuclei"
+        learning_outcomes:
+          - "Explain from the BE/A curve why both fission and fusion release energy"
+          - "Estimate the energy released when a heavy nucleus splits into two equal halves"
+      - id: isc-12-physics-ch20-t04
+        title: "Nuclear fission; chain reaction (controlled and uncontrolled); nuclear reactor parts and functions; nuclear bomb"
+        learning_outcomes:
+          - "Write a balanced fission equation"
+          - "State the function of fuel, moderator, control rods, coolant and shielding in a reactor"
+      - id: isc-12-physics-ch20-t05
+        title: "Nuclear fusion; fusion of hydrogen into helium; thermonuclear energy in the sun and stars; hydrogen bomb"
+        learning_outcomes:
+          - "Explain why fusion needs extremely high temperatures"
+          - "Calculate the energy released in a given fusion reaction from masses"
+    removed_topics:
+      - "Details of the chain reaction"
+      - "Quantitative treatment of reactor operation (qualitative only)"
+    literature_texts: []
+  - id: isc-12-physics-ch21
+    number: 21
+    title: "Semiconductor Electronics: Materials, Diodes and Simple Circuits"
+    unit: "Unit 9: Electronic Devices"
+    topics:
+      - id: isc-12-physics-ch21-t01
+        title: "Energy bands in solids; band diagrams of conductors, insulators and semiconductors; band gaps of carbon, Ge and Si"
+        learning_outcomes:
+          - "Explain the formation of energy bands from atomic energy levels"
+          - "Classify a solid as conductor, insulator or semiconductor from its band gap"
+      - id: isc-12-physics-ch21-t02
+        title: "Intrinsic and extrinsic semiconductors; electrons and holes; doping; n-type and p-type; donor and acceptor impurities"
+        learning_outcomes:
+          - "Identify majority and minority carriers in n-type and p-type semiconductors"
+          - "Explain how doping with pentavalent or trivalent atoms changes conductivity"
+      - id: isc-12-physics-ch21-t03
+        title: "p-n junction diode: depletion region, potential barrier, forward and reverse bias, V-I characteristics"
+        learning_outcomes:
+          - "Draw and interpret the forward and reverse V-I characteristics of a junction diode"
+          - "Solve simple numericals on diode circuits"
+      - id: isc-12-physics-ch21-t04
+        title: "Diode as a rectifier: half-wave and full-wave (two-diode) rectifiers"
+        learning_outcomes:
+          - "Draw circuit diagrams and input-output waveforms of half-wave and full-wave rectifiers"
+          - "Explain the function of each component in a rectifier circuit"
+      - id: isc-12-physics-ch21-t05
+        title: "Special diodes: LED, photodiode and solar cell; energy-saving importance of LEDs"
+        learning_outcomes:
+          - "Explain the working principle of an LED, a photodiode and a solar cell"
+          - "Give reasons why LEDs reduce energy use and pollution"
+      - id: isc-12-physics-ch21-t06
+        title: "Zener diode: V-I characteristics; use as a voltage regulator"
+        learning_outcomes:
+          - "Draw the circuit of a Zener voltage regulator and explain how it keeps output voltage constant"
+    removed_topics:
+      - "Crystal structure"
+      - "Bridge rectifier using four diodes"
+      - "Energy bands treated qualitatively only"
+    literature_texts: []
+removed_topics: []

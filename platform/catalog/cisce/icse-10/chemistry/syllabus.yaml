@@ -1,0 +1,561 @@
+# ICSE Class 10 Chemistry (Science Paper 2) - ICSE 2027 examination.
+# Source: platform/catalog/sources/cisce.md#icse-2027-chemistry (CLASS X section only). Topic wording is our own summary of the official scope.
+subject_id: icse-10-chemistry
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2027-chemistry, icse-2027-regulations, icse-2027-specimen-papers, cisce-circular-specimen-papers-2027]
+exam_notes: >-
+  One theory paper of 2 hours, 80 marks, plus internal assessment of practical work 20 marks
+  (10 subject teacher + 10 external examiner). Every reaction is studied with reactants, products, conditions,
+  observations, balanced equations and diagrams. The 2027 specimen paper (code 522) has Section A (40 marks, compulsory;
+  Question 1 is 15 one-mark objective items) and Section B (40 marks, any four of six questions); about 50% of marks target
+  higher-order skills (apply, analyse, evaluate, create) per the October 2026 circular.
+  Practical work (assessed internally, not in the theory chapters): identification of the gases H2, O2, CO2, Cl2, HCl, SO2,
+  H2S, NH3, water vapour and NO2 and of the ions Cu, Fe, Pb, Zn, NH4+, carbonate, chloride, nitrate, sulphide, sulphite and
+  sulphate; minimum exercises are action of heat on copper and zinc carbonates and on zinc, copper and lead nitrates, NaOH /
+  NH4OH tests on solutions of Cu2+, Fe2+, Fe3+, Pb2+, Zn2+ and NH4+, two tests each to tell a dilute acid from an alkali, and
+  warming copper oxide and manganese dioxide with concentrated HCl. No formal scheme of analysis is required.
+  Both old (IA-VIIA, 0) and IUPAC (1-18) group numbering are accepted.
+  CISCE publishes a topic list in nine sections, not textbook chapters: SOYL groups it into 15 teachable chapters in
+  syllabus order. No unit-wise marks weightage is published for ICSE Chemistry.
+units:
+  - { name: "1. Periodic Properties and Variations of Properties", marks: null }
+  - { name: "2. Chemical Bonding", marks: null }
+  - { name: "3. Study of Acids, Bases and Salts", marks: null }
+  - { name: "4. Analytical Chemistry", marks: null }
+  - { name: "5. Mole Concept and Stoichiometry", marks: null }
+  - { name: "6. Electrolysis", marks: null }
+  - { name: "7. Metallurgy", marks: null }
+  - { name: "8. Study of Compounds", marks: null }
+  - { name: "9. Organic Chemistry", marks: null }
+chapters:
+  - id: icse-10-chemistry-ch01
+    number: 1
+    title: "Periodic Table, Periodic Properties and Variations of Properties"
+    unit: "1. Periodic Properties and Variations of Properties"
+    topics:
+      - id: icse-10-chemistry-ch01-t01
+        title: "Modern periodic law; periodicity based on atomic number; groups and periods up to period 4 (calcium)"
+        learning_outcomes:
+          - "State the modern periodic law and explain why atomic number, not atomic mass, is the basis of periodicity"
+          - "Locate an element of atomic number 1 to 20 in the periodic table from its electronic configuration"
+      - id: icse-10-chemistry-ch01-t02
+        title: "Explaining periodic trends with nuclear charge and number of shells"
+        learning_outcomes:
+          - "Explain how increasing nuclear charge across a period and added shells down a group change the pull on valence electrons"
+      - id: icse-10-chemistry-ch01-t03
+        title: "Atomic size: definition and trends in groups and periods"
+        learning_outcomes:
+          - "Predict which of two given elements has the larger atomic radius and justify the answer"
+          - "Explain why noble gas radii are not compared with those of other elements in a period"
+      - id: icse-10-chemistry-ch01-t04
+        title: "Metallic and non-metallic character: trends in groups and periods"
+        learning_outcomes:
+          - "Relate metallic character to the ease of losing electrons and non-metallic character to the ease of gaining them"
+          - "Arrange given elements of period 3 in order of increasing metallic character"
+      - id: icse-10-chemistry-ch01-t05
+        title: "Ionisation potential, electron affinity and electronegativity: definitions and trends"
+        learning_outcomes:
+          - "Define ionisation potential, electron affinity and electronegativity"
+          - "Describe how each property varies across a period and down a group and give the reason"
+          - "Identify the element with the highest ionisation potential or electronegativity in a given set"
+      - id: icse-10-chemistry-ch01-t06
+        title: "Trends in the alkali metal (group 1) and halogen (group 17) families"
+        learning_outcomes:
+          - "Compare the reactivity of lithium, sodium and potassium and explain the trend using atomic size"
+          - "Explain why reactivity of halogens decreases down the group from fluorine to iodine"
+    removed_topics:
+      - "Questions on elements beyond period 4 (calcium); the full table is shown for exposure only"
+      - "Explanation of periodicity in terms of orbitals (shells only)"
+    literature_texts: []
+  - id: icse-10-chemistry-ch02
+    number: 2
+    title: "Chemical Bonding"
+    unit: "2. Chemical Bonding"
+    topics:
+      - id: icse-10-chemistry-ch02-t01
+        title: "Electrovalent (ionic) bonding: electron dot structures of NaCl, MgCl2 and CaO"
+        learning_outcomes:
+          - "Draw electron dot diagrams showing electron transfer in the formation of NaCl, MgCl2 and CaO"
+          - "Explain why electrovalent bonds form between elements of low ionisation potential and high electron affinity"
+      - id: icse-10-chemistry-ch02-t02
+        title: "Properties of electrovalent compounds: state, melting and boiling points, conductivity and dissociation in solution or melt"
+        learning_outcomes:
+          - "Explain why ionic compounds are hard solids with high melting points"
+          - "Explain why ionic compounds conduct electricity when molten or dissolved but not as solids, linking this to electrolysis"
+      - id: icse-10-chemistry-ch02-t03
+        title: "Covalent bonding: duplet and octet; non-polar molecules H2, Cl2, O2, N2, CCl4 and CH4"
+        learning_outcomes:
+          - "Draw electron dot structures showing single, double and triple shared pairs in H2, Cl2, O2 and N2"
+          - "Draw electron dot structures of CH4 and CCl4 and explain why they are non-polar"
+      - id: icse-10-chemistry-ch02-t04
+        title: "Polar covalent molecules HCl, NH3 and H2O: electronegativity difference and structures"
+        learning_outcomes:
+          - "Explain the origin of partial charges in HCl, NH3 and H2O using electronegativity difference"
+          - "Draw the electron dot structures of HCl, NH3 and H2O and identify lone pairs"
+      - id: icse-10-chemistry-ch02-t05
+        title: "Properties of covalent compounds; comparison of electrovalent and covalent compounds"
+        learning_outcomes:
+          - "Tabulate differences between electrovalent and covalent compounds in state, melting point, solubility and conductivity"
+          - "Explain why some polar covalent compounds such as HCl ionise in water"
+      - id: icse-10-chemistry-ch02-t06
+        title: "Coordinate bonding: lone pair; formation of hydronium (H3O+) and ammonium (NH4+) ions"
+        learning_outcomes:
+          - "Define a coordinate bond and a lone pair"
+          - "Draw electron dot diagrams for the formation of H3O+ from water and NH4+ from ammonia"
+          - "Explain how the lone pair on water produces H3O+ and OH- ions in water"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-chemistry-ch03
+    number: 3
+    title: "Acids, Bases and Salts"
+    unit: "3. Study of Acids, Bases and Salts"
+    topics:
+      - id: icse-10-chemistry-ch03-t01
+        title: "Acids, bases and alkalis: definitions in terms of ions; ionisation and dissociation equations"
+        learning_outcomes:
+          - "Define an acid as a substance giving H3O+ as the only positive ion in water and an alkali as one giving OH- as the only negative ion"
+          - "Write ionisation equations for HCl, H2SO4 and HNO3 and dissociation equations for NaOH and KOH"
+      - id: icse-10-chemistry-ch03-t02
+        title: "Indicators (litmus, methyl orange, phenolphthalein), pH scale, pH paper and universal indicator"
+        learning_outcomes:
+          - "State the colours of litmus, methyl orange and phenolphthalein in acidic and alkaline solutions"
+          - "Classify a solution as strongly acidic, weakly acidic, neutral or alkaline from its pH value"
+      - id: icse-10-chemistry-ch03-t03
+        title: "Salts: definition; normal, acid, basic and complex salts"
+        learning_outcomes:
+          - "Explain salt formation as partial or complete replacement of the hydrogen ion of an acid by a metal"
+          - "Classify given salts such as NaHSO4, Na2SO4, Pb(OH)Cl and a complex salt as normal, acid, basic or complex"
+      - id: icse-10-chemistry-ch03-t04
+        title: "Action of dilute acids on carbonates, hydrogen carbonates, sulphites, hydrogen sulphites and sulphides"
+        learning_outcomes:
+          - "Write balanced equations for the reaction of dilute acids with each class of salt and name the gas evolved"
+          - "Describe a test to identify the gas evolved in each case"
+      - id: icse-10-chemistry-ch03-t05
+        title: "Preparation of normal salts: direct combination, displacement and precipitation (double decomposition)"
+        learning_outcomes:
+          - "Choose a suitable method to prepare a given salt based on its solubility"
+          - "Write balanced equations for preparing salts such as iron(III) chloride, zinc sulphate and lead chloride"
+      - id: icse-10-chemistry-ch03-t06
+        title: "Preparation of normal salts: neutralisation of an insoluble base, titration of an alkali, and acids on carbonates and bicarbonates"
+        learning_outcomes:
+          - "Explain why titration is used for preparing sodium or potassium salts but excess insoluble base for copper sulphate"
+          - "Write equations for preparing a salt from an acid and a carbonate or hydrogen carbonate"
+    removed_topics:
+      - "Details of apparatus or procedures for preparing normal salts (method and equations only)"
+    literature_texts: []
+  - id: icse-10-chemistry-ch04
+    number: 4
+    title: "Analytical Chemistry"
+    unit: "4. Analytical Chemistry"
+    topics:
+      - id: icse-10-chemistry-ch04-t01
+        title: "Colours of common salts and their solutions"
+        learning_outcomes:
+          - "State the colours of solid salts and solutions of copper, iron(II), iron(III), zinc and lead"
+      - id: icse-10-chemistry-ch04-t02
+        title: "Adding sodium hydroxide dropwise and in excess to solutions of Fe, Cu, Zn and Pb salts"
+        learning_outcomes:
+          - "Predict the colour of the hydroxide precipitate formed with each cation and write the equation"
+          - "Explain why the precipitates of zinc and lead hydroxide dissolve in excess NaOH"
+      - id: icse-10-chemistry-ch04-t03
+        title: "Adding ammonium hydroxide dropwise and in excess to solutions of Fe, Cu, Zn and Pb salts"
+        learning_outcomes:
+          - "Predict the observations with each cation and use them to distinguish between pairs of salt solutions"
+          - "Describe the special action of excess ammonium hydroxide on copper salts (deep blue solution) and on zinc salts"
+      - id: icse-10-chemistry-ch04-t04
+        title: "Action of sodium hydroxide on ammonium salts"
+        learning_outcomes:
+          - "Write the equation for warming an ammonium salt with NaOH and describe how the ammonia evolved is identified"
+      - id: icse-10-chemistry-ch04-t05
+        title: "Amphoteric nature: action of caustic alkalis on aluminium, zinc and lead and their oxides and hydroxides"
+        learning_outcomes:
+          - "Define an amphoteric substance with examples"
+          - "Write equations for the reactions of NaOH with Al, Zn, Pb and their oxides and hydroxides, naming the products"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-chemistry-ch05
+    number: 5
+    title: "Mole Concept: Gas Laws, Molar Volume and Avogadro's Number"
+    unit: "5. Mole Concept and Stoichiometry"
+    topics:
+      - id: icse-10-chemistry-ch05-t01
+        title: "Gay-Lussac's law of combining volumes: statement, explanation and calculations"
+        learning_outcomes:
+          - "State Gay-Lussac's law and explain it using a reaction such as the formation of ammonia"
+          - "Calculate the volumes of gaseous reactants and products from a balanced equation"
+      - id: icse-10-chemistry-ch05-t02
+        title: "Avogadro's law; atomicity of hydrogen, oxygen, nitrogen and chlorine from the formation of HCl, NH3 and NO"
+        learning_outcomes:
+          - "State Avogadro's law and use it to relate volumes of gases to numbers of molecules"
+          - "Explain why hydrogen and chlorine must be diatomic using the volume ratio in the formation of HCl"
+      - id: icse-10-chemistry-ch05-t03
+        title: "The mole as a counting unit; Avogadro's number; gram atomic mass and gram molecular mass"
+        learning_outcomes:
+          - "Distinguish atomic mass from gram atomic mass and molecular mass from gram molecular mass"
+          - "Calculate the number of moles, atoms or molecules in a given mass of a substance"
+      - id: icse-10-chemistry-ch05-t04
+        title: "Molar volume: 22.4 litres of any gas at STP has a mass equal to its molar mass"
+        learning_outcomes:
+          - "Convert between mass, moles, number of molecules and volume at STP for a gas"
+      - id: icse-10-chemistry-ch05-t05
+        title: "Vapour density and the relation molecular mass = 2 x vapour density"
+        learning_outcomes:
+          - "Calculate relative molecular mass from vapour density and vice versa"
+    removed_topics:
+      - "Formal proof of the molar volume relation (may be taught but is not examined)"
+      - "Proof of atomicity of hydrogen, oxygen, nitrogen and chlorine"
+      - "Formal proof of molecular mass = 2 x vapour density"
+    literature_texts: []
+  - id: icse-10-chemistry-ch06
+    number: 6
+    title: "Stoichiometry: Formulae and Calculations from Equations"
+    unit: "5. Mole Concept and Stoichiometry"
+    topics:
+      - id: icse-10-chemistry-ch06-t01
+        title: "Percentage composition of a compound"
+        learning_outcomes:
+          - "Calculate the percentage by mass of each element, including water of crystallisation, in a compound"
+      - id: icse-10-chemistry-ch06-t02
+        title: "Empirical and molecular formula from percentage composition"
+        learning_outcomes:
+          - "Deduce the empirical formula of a compound from its percentage composition"
+          - "Find the molecular formula from the empirical formula and the vapour density or molar mass"
+      - id: icse-10-chemistry-ch06-t03
+        title: "Empirical formula from the masses of combining elements"
+        learning_outcomes:
+          - "Deduce the empirical formula when the masses of elements that combine are given"
+      - id: icse-10-chemistry-ch06-t04
+        title: "Calculations based on chemical equations: mass-mass, mass-volume and volume-volume"
+        learning_outcomes:
+          - "Calculate the mass or volume of a product formed from a given mass or volume of a reactant"
+          - "Combine molar mass, molar volume and Avogadro's number in multi-step stoichiometry problems"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-chemistry-ch07
+    number: 7
+    title: "Electrolysis"
+    unit: "6. Electrolysis"
+    topics:
+      - id: icse-10-chemistry-ch07-t01
+        title: "Electrolytes and non-electrolytes; strong and weak electrolytes; substances with molecules only, ions only or both"
+        learning_outcomes:
+          - "Classify given substances as strong electrolytes, weak electrolytes or non-electrolytes with reasons"
+          - "Relate the particles present (molecules, ions or both) to the electrical behaviour of a substance"
+      - id: icse-10-chemistry-ch07-t02
+        title: "Terms: electrolysis, electrode, anode, cathode, anion, cation; oxidation and reduction as loss and gain of electrons"
+        learning_outcomes:
+          - "Define the key terms of electrolysis"
+          - "Identify oxidation at the anode and reduction at the cathode from electrode equations"
+      - id: icse-10-chemistry-ch07-t03
+        title: "Migration of ions and selective discharge; activity series (Na, Mg, Fe, Cu)"
+        learning_outcomes:
+          - "Use the activity series and ion concentration to predict which ions are discharged at each electrode"
+      - id: icse-10-chemistry-ch07-t04
+        title: "Electrolysis of molten lead bromide"
+        learning_outcomes:
+          - "Write the ionisation, anode and cathode reactions and state the observations at each electrode"
+          - "Explain why lead bromide must be molten and why a silica crucible is used"
+      - id: icse-10-chemistry-ch07-t05
+        title: "Electrolysis of acidified water with platinum electrodes"
+        learning_outcomes:
+          - "Explain the role of the acid and write electrode equations for the electrolysis of acidified water"
+          - "Explain why the volume of hydrogen collected is twice that of oxygen"
+      - id: icse-10-chemistry-ch07-t06
+        title: "Electrolysis of aqueous copper(II) sulphate with copper electrodes and with platinum electrodes"
+        learning_outcomes:
+          - "Compare the anode reactions and the change in colour of the electrolyte with copper and with platinum anodes"
+          - "Write the electron transfer at each electrode in both cases"
+      - id: icse-10-chemistry-ch07-t07
+        title: "Applications: electroplating with nickel and silver; electrorefining of copper"
+        learning_outcomes:
+          - "Name the electrolyte, anode and cathode for nickel plating, silver plating and refining of copper"
+          - "Write the electrode equations for each process and state the conditions for good electroplating"
+          - "Explain why sodium argentocyanide rather than silver nitrate is used for silver plating"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-chemistry-ch08
+    number: 8
+    title: "Metallurgy"
+    unit: "7. Metallurgy"
+    topics:
+      - id: icse-10-chemistry-ch08-t01
+        title: "Occurrence of metals: minerals and ores; common ores of iron, aluminium and zinc"
+        learning_outcomes:
+          - "Distinguish between a mineral and an ore"
+          - "Name and give formulae of the main ores of iron, aluminium and zinc"
+      - id: icse-10-chemistry-ch08-t02
+        title: "Concentration (dressing) of ores: hydraulic washing, magnetic separation and froth flotation"
+        learning_outcomes:
+          - "Choose a suitable concentration method for a given ore and justify the choice"
+      - id: icse-10-chemistry-ch08-t03
+        title: "Roasting and calcination: conversion of concentrated ore to oxide"
+        learning_outcomes:
+          - "Distinguish roasting from calcination and write one equation for each"
+      - id: icse-10-chemistry-ch08-t04
+        title: "Reduction of metal oxides by hydrogen, carbon and carbon monoxide; electrolytic reduction of active metals"
+        learning_outcomes:
+          - "Write equations with conditions for reducing oxides of copper, lead, iron and zinc"
+          - "Explain why Al2O3 and MgO are not reduced by carbon and why Na, K and Ca are extracted by electrolysis"
+      - id: icse-10-chemistry-ch08-t05
+        title: "Extraction of aluminium: purification of bauxite by Baeyer's process"
+        learning_outcomes:
+          - "Write the equations for purifying bauxite with sodium hydroxide and obtaining pure alumina"
+      - id: icse-10-chemistry-ch08-t06
+        title: "Extraction of aluminium: Hall-Heroult electrolytic process"
+        learning_outcomes:
+          - "Describe the electrolytic cell, the electrolyte and the electrodes and state the purpose of cryolite and fluorspar"
+          - "Write the electrode reactions and explain why the carbon anodes must be replaced periodically"
+      - id: icse-10-chemistry-ch08-t07
+        title: "Alloys and amalgams: composition and uses of stainless steel, magnalium, duralumin, brass, bronze and solder"
+        learning_outcomes:
+          - "State the composition and one use of each listed alloy"
+          - "Explain why alloys are often preferred to pure metals"
+    removed_topics:
+      - "Electrorefining in metallurgy (reference only; refining of copper is studied under electrolysis)"
+      - "Purification of bauxite by methods other than Baeyer's process"
+      - "Electrolytic extraction of aluminium by processes other than Hall-Heroult"
+    literature_texts: []
+  - id: icse-10-chemistry-ch09
+    number: 9
+    title: "Study of Compounds: Hydrogen Chloride"
+    unit: "8. Study of Compounds"
+    topics:
+      - id: icse-10-chemistry-ch09-t01
+        title: "Laboratory preparation of hydrogen chloride from sodium chloride: apparatus, conditions, drying, collection and precautions"
+        learning_outcomes:
+          - "Write the equation and draw a labelled diagram of the laboratory preparation of HCl gas"
+          - "Explain why the gas is collected by upward displacement of air and dried with concentrated sulphuric acid"
+      - id: icse-10-chemistry-ch09-t02
+        title: "Density and solubility of hydrogen chloride; the fountain experiment"
+        learning_outcomes:
+          - "Describe a simple experiment showing HCl is heavier than air"
+          - "Describe the fountain experiment and explain the observations"
+      - id: icse-10-chemistry-ch09-t03
+        title: "Preparing hydrochloric acid by dissolving the gas in water; avoiding back suction"
+        learning_outcomes:
+          - "Explain how the inverted funnel arrangement prevents back suction"
+      - id: icse-10-chemistry-ch09-t04
+        title: "Reactions: with ammonia; acidic properties with metals, oxides, hydroxides, carbonates, hydrogen carbonates, sulphides and sulphites"
+        learning_outcomes:
+          - "Write balanced equations for the reactions of hydrochloric acid with each class of substance"
+          - "Describe the dense white fumes formed when HCl meets ammonia"
+      - id: icse-10-chemistry-ch09-t05
+        title: "Aqua regia; precipitation with silver nitrate and lead nitrate; tests for HCl gas and hydrochloric acid"
+        learning_outcomes:
+          - "State the composition of aqua regia and one use"
+          - "Write equations for the precipitation reactions of HCl with AgNO3 and Pb(NO3)2"
+          - "Describe two tests that identify hydrogen chloride or hydrochloric acid"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-chemistry-ch10
+    number: 10
+    title: "Study of Compounds: Ammonia"
+    unit: "8. Study of Compounds"
+    topics:
+      - id: icse-10-chemistry-ch10-t01
+        title: "Laboratory preparation of ammonia from ammonium chloride: apparatus, drying and collection"
+        learning_outcomes:
+          - "Write the equation and draw a labelled diagram for the laboratory preparation of ammonia"
+          - "Explain why ammonia is dried over quicklime and collected by downward displacement of air"
+      - id: icse-10-chemistry-ch10-t02
+        title: "Ammonia from metal nitrides (Mg3N2, AlN) with warm water and from ammonium salts with alkalis"
+        learning_outcomes:
+          - "Write balanced equations for ammonia formation from nitrides and from ammonium salts"
+      - id: icse-10-chemistry-ch10-t03
+        title: "Manufacture by Haber's process"
+        learning_outcomes:
+          - "State the reactants, ratio, temperature, pressure and catalyst used in Haber's process and write the equation"
+          - "Explain how unreacted gases are separated and recycled"
+      - id: icse-10-chemistry-ch10-t04
+        title: "Density and solubility of ammonia (fountain experiment); burning in oxygen; catalytic oxidation"
+        learning_outcomes:
+          - "Describe the fountain experiment with ammonia and the colour change seen with an indicator"
+          - "Compare the burning of ammonia in oxygen with its catalytic oxidation over platinum, with equations and conditions"
+      - id: icse-10-chemistry-ch10-t05
+        title: "Reducing and other reactions: with hydrogen chloride, hot copper(II) oxide, lead(IV) oxide and chlorine (excess of each)"
+        learning_outcomes:
+          - "Write equations and observations for ammonia reducing hot CuO and PbO2"
+          - "Distinguish the products of ammonia with chlorine when ammonia is in excess and when chlorine is in excess"
+      - id: icse-10-chemistry-ch10-t06
+        title: "Aqueous ammonia: reactions with acids and with solutions of FeCl3, FeSO4, lead nitrate, zinc nitrate and copper sulphate"
+        learning_outcomes:
+          - "Write equations for the neutralisation of sulphuric, nitric and hydrochloric acids by aqueous ammonia"
+          - "Predict the precipitates formed when aqueous ammonia is added to the listed salt solutions"
+      - id: icse-10-chemistry-ch10-t07
+        title: "Uses of ammonia (fertilisers, explosives, nitric acid, refrigerant, cleansing agents); ozone-safe refrigerants; tests for ammonia"
+        learning_outcomes:
+          - "List the main uses of ammonia"
+          - "Explain why CFC refrigerants are being replaced by non-ozone-depleting alternatives"
+          - "Describe two tests for ammonia gas"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-chemistry-ch11
+    number: 11
+    title: "Study of Compounds: Nitric Acid"
+    unit: "8. Study of Compounds"
+    topics:
+      - id: icse-10-chemistry-ch11-t01
+        title: "Laboratory preparation of nitric acid from potassium or sodium nitrate: apparatus and precautions"
+        learning_outcomes:
+          - "Write the equation and draw the all-glass apparatus for the laboratory preparation of nitric acid"
+          - "Explain why the temperature is kept below 200 degrees C and why rubber or cork is avoided"
+      - id: icse-10-chemistry-ch11-t02
+        title: "Manufacture by Ostwald's process (equations and conditions)"
+        learning_outcomes:
+          - "Write the stepwise equations with conditions for the catalytic oxidation of ammonia to nitric acid"
+      - id: icse-10-chemistry-ch11-t03
+        title: "Nitric acid as an oxidising agent: reactions with copper, carbon and sulphur"
+        learning_outcomes:
+          - "Write equations for concentrated and dilute nitric acid with copper and identify the gas evolved"
+          - "Write equations for concentrated nitric acid oxidising carbon and sulphur"
+      - id: icse-10-chemistry-ch11-t04
+        title: "Acidic properties: with magnesium and manganese, oxides, hydroxides, carbonates, hydrogen carbonates, sulphites and hydrogen sulphites"
+        learning_outcomes:
+          - "Explain why only very dilute nitric acid gives hydrogen with magnesium and manganese"
+          - "Write balanced equations for nitric acid with bases and salts"
+      - id: icse-10-chemistry-ch11-t05
+        title: "Test for nitric acid"
+        learning_outcomes:
+          - "Describe a test that identifies nitric acid and state the observations"
+    removed_topics:
+      - "Plant details of Ostwald's process (only equations with conditions)"
+    literature_texts: []
+  - id: icse-10-chemistry-ch12
+    number: 12
+    title: "Study of Compounds: Sulphuric Acid"
+    unit: "8. Study of Compounds"
+    topics:
+      - id: icse-10-chemistry-ch12-t01
+        title: "Manufacture by the Contact process (equations and conditions)"
+        learning_outcomes:
+          - "Write the stepwise equations with catalyst and conditions for the Contact process"
+          - "Explain why sulphur trioxide is dissolved in concentrated sulphuric acid and not directly in water"
+      - id: icse-10-chemistry-ch12-t02
+        title: "Dilute sulphuric acid as a dibasic acid: reactions with metals, oxides, hydroxides, carbonates, hydrogen carbonates, sulphites, hydrogen sulphites and sulphides"
+        learning_outcomes:
+          - "Explain why sulphuric acid is dibasic and forms both normal and acid salts"
+          - "Write balanced equations for dilute sulphuric acid with each class of substance"
+      - id: icse-10-chemistry-ch12-t03
+        title: "Concentrated sulphuric acid as an oxidising agent: oxidation of carbon and sulphur"
+        learning_outcomes:
+          - "Write equations for the oxidation of carbon and sulphur by hot concentrated sulphuric acid"
+      - id: icse-10-chemistry-ch12-t04
+        title: "Concentrated sulphuric acid as a dehydrating agent: sugar and copper(II) sulphate crystals"
+        learning_outcomes:
+          - "Describe and explain the observations when concentrated sulphuric acid is added to sugar and to blue vitriol"
+          - "Distinguish dehydration from drying with examples"
+      - id: icse-10-chemistry-ch12-t05
+        title: "Non-volatile nature: reactions with sodium or potassium chloride and nitrate; tests for sulphuric acid"
+        learning_outcomes:
+          - "Explain how the non-volatile nature of sulphuric acid is used to prepare HCl and HNO3"
+          - "Describe a test that identifies sulphuric acid or a sulphate"
+    removed_topics:
+      - "Plant details of the Contact process (only equations with conditions)"
+    literature_texts: []
+  - id: icse-10-chemistry-ch13
+    number: 13
+    title: "Organic Chemistry: Introduction, Structure, Isomerism and Nomenclature"
+    unit: "9. Organic Chemistry"
+    topics:
+      - id: icse-10-chemistry-ch13-t01
+        title: "Unique nature of carbon: tetravalency and catenation; single, double and triple bonds"
+        learning_outcomes:
+          - "Explain why carbon forms a very large number of compounds"
+          - "Draw structures showing single, double and triple carbon-carbon bonds"
+      - id: icse-10-chemistry-ch13-t02
+        title: "Straight-chain, branched-chain and cyclic compounds (benzene structure only)"
+        learning_outcomes:
+          - "Classify given structures as straight-chain, branched-chain or cyclic"
+          - "Draw the structure of benzene"
+      - id: icse-10-chemistry-ch13-t03
+        title: "Structural formulae of alkanes, alkenes and alkynes up to five carbon atoms"
+        learning_outcomes:
+          - "Draw structural formulae of hydrocarbons with up to five carbon atoms"
+      - id: icse-10-chemistry-ch13-t04
+        title: "Structural isomerism: chain and position isomers"
+        learning_outcomes:
+          - "Draw the chain isomers of butane and pentane and the position isomers of butene"
+          - "Identify whether two given structures are chain isomers, position isomers or the same compound"
+      - id: icse-10-chemistry-ch13-t05
+        title: "Homologous series: characteristics; alkanes, alkenes and alkynes; gradation of properties with molecular mass"
+        learning_outcomes:
+          - "List the characteristics of a homologous series"
+          - "Write the general formula of each series and predict the next member"
+      - id: icse-10-chemistry-ch13-t06
+        title: "Nomenclature: trivial and IUPAC names of compounds with one functional group (halide, alkene, alkyne, alcohol, aldehyde, ketone, carboxylic acid, ether, ester)"
+        learning_outcomes:
+          - "Apply the longest-chain and lowest-number rules to name hydrocarbons and compounds with one functional group"
+          - "Draw the structure of a compound from its IUPAC name"
+    removed_topics:
+      - "Cyclic compounds other than the benzene structure"
+      - "Naming compounds with more than one functional group"
+    literature_texts: []
+  - id: icse-10-chemistry-ch14
+    number: 14
+    title: "Hydrocarbons: Alkanes, Alkenes and Alkynes"
+    unit: "9. Organic Chemistry"
+    topics:
+      - id: icse-10-chemistry-ch14-t01
+        title: "Alkanes: general formula; methane as a greenhouse gas; preparation of methane and ethane from sodium ethanoate, sodium propanoate, iodomethane and bromoethane"
+        learning_outcomes:
+          - "Write equations with conditions for preparing methane and ethane by each listed method"
+          - "Explain why methane is a greenhouse gas of concern"
+      - id: icse-10-chemistry-ch14-t02
+        title: "Reactions of methane and ethane: complete and incomplete combustion; substitution with chlorine"
+        learning_outcomes:
+          - "Write equations for complete and incomplete combustion of methane and ethane"
+          - "Write the stepwise substitution products of methane with chlorine in diffused sunlight"
+      - id: icse-10-chemistry-ch14-t03
+        title: "Alkenes: ethene; preparation by dehydrohalogenation and by dehydration of ethanol"
+        learning_outcomes:
+          - "Write equations with conditions for preparing ethene from bromoethane and from ethanol"
+      - id: icse-10-chemistry-ch14-t04
+        title: "Alkynes: ethyne; preparation from calcium carbide and from 1,2-dibromoethane"
+        learning_outcomes:
+          - "Write equations with conditions for preparing ethyne by both methods"
+      - id: icse-10-chemistry-ch14-t05
+        title: "Addition reactions of ethene and ethyne with hydrogen and halogens (Cl2, Br2, I2); test for unsaturation"
+        learning_outcomes:
+          - "Write the addition products of ethene and ethyne with hydrogen and each halogen"
+          - "Use the decolourisation of bromine solution to distinguish saturated from unsaturated hydrocarbons"
+      - id: icse-10-chemistry-ch14-t06
+        title: "Uses of methane, ethane, ethene and ethyne"
+        learning_outcomes:
+          - "Give at least one use for each of methane, ethane, ethene and ethyne"
+    removed_topics:
+      - "Properties of alkenes and alkynes beyond the main addition reactions with hydrogen and halogens"
+    literature_texts: []
+  - id: icse-10-chemistry-ch15
+    number: 15
+    title: "Alcohols and Carboxylic Acids"
+    unit: "9. Organic Chemistry"
+    topics:
+      - id: icse-10-chemistry-ch15-t01
+        title: "Ethanol: preparation by hydrolysis of an alkyl halide; physical properties"
+        learning_outcomes:
+          - "Write the equation for preparing ethanol from bromoethane with aqueous alkali"
+          - "Describe the nature, solubility, density and boiling point of ethanol"
+      - id: icse-10-chemistry-ch15-t02
+        title: "Chemical properties of ethanol: combustion, reaction with sodium, esterification, dehydration to ethene"
+        learning_outcomes:
+          - "Write equations for each chemical reaction of ethanol with conditions"
+      - id: icse-10-chemistry-ch15-t03
+        title: "Denatured, methylated and spurious alcohol; uses of ethanol"
+        learning_outcomes:
+          - "Explain why ethanol is denatured and why spurious alcohol is dangerous to health"
+          - "List important uses of ethanol"
+      - id: icse-10-chemistry-ch15-t04
+        title: "Acetic (ethanoic) acid: structure; physical properties; glacial acetic acid"
+        learning_outcomes:
+          - "Draw the structure of acetic acid and identify the carboxyl group"
+          - "Explain what glacial acetic acid is and how it forms on cooling"
+      - id: icse-10-chemistry-ch15-t05
+        title: "Chemical properties of acetic acid (litmus, alkalis, alcohol - esterification) and its uses"
+        learning_outcomes:
+          - "Write equations for acetic acid with sodium hydroxide and with ethanol"
+          - "Describe the fruity smell of the ester as evidence of esterification"
+          - "List uses of acetic acid"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

@@ -1,0 +1,458 @@
+# ISC Class 12 Legal Studies (881) - ISC 2027 examination, CLASS XII portion only.
+# Source: platform/catalog/sources/cisce.md#isc-2027-legal-studies (re-uploaded February 2026). Topic wording is our own summary of the official scope.
+subject_id: isc-12-legal-studies
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-legal-studies, isc-2027-regulations]
+exam_notes: >-
+  Paper I Theory: 3 hours, 70 marks, on the nine Class XII topics below. Paper II Project Work: 30 marks - two studies of
+  15 marks each chosen from anywhere in the theory syllabus, synthesising cases, legislation, media and international
+  instruments into a legal argument; each study is marked 5 by the teacher and 10 by a Visiting Examiner appointed locally
+  and approved by CISCE (presentation 2, content 2, analysis 3, viva-voce 3). CISCE suggests studies such as acts that are
+  both civil and criminal wrongs, the move from litigation to arbitration, classic contract cases, electronic contracts,
+  everyday torts, the role of mediators and conciliators, court observation reports, custodial violence and human rights,
+  free speech and contempt of court, the development of mens rea, and the Motor Vehicles Act or the dowry system; this
+  project work is not part of the chapters below and no question paper is set for it. Criminal law is taught under the
+  Bharatiya Nyaya Sanhita (BNS), 2023, using the section numbers given in the syllabus; the case laws listed by CISCE are
+  indicative and are attached to the topics they illustrate. CISCE lists topics with scope notes, not textbook chapters:
+  SOYL groups them into 16 teachable chapters in syllabus order. No unit-wise marks weightage is published for ISC Legal
+  Studies.
+units:
+  - { name: "1. The Bharatiya Nyaya Sanhita (BNS), 2023", marks: null }
+  - { name: "2. Alternate Dispute Resolution (ADR)", marks: null }
+  - { name: "3. Legal Services Authorities Act, 1987", marks: null }
+  - { name: "4. Indian Contract Act, 1872", marks: null }
+  - { name: "5. Law of Torts", marks: null }
+  - { name: "6. Transfer of Property Act, 1882", marks: null }
+  - { name: "7. Fundamental Rights, Duties and Directive Principles of State Policy", marks: null }
+  - { name: "8. Important Laws", marks: null }
+  - { name: "9. Legal Maxims", marks: null }
+chapters:
+  - id: isc-12-legal-studies-ch01
+    number: 1
+    title: "BNS: Elements and Stages of Crime, Punishments and General Defences"
+    unit: "1. The Bharatiya Nyaya Sanhita (BNS), 2023"
+    topics:
+      - id: isc-12-legal-studies-ch01-t01
+        title: "Elements of crime: mens rea and actus reus"
+        learning_outcomes:
+          - "Explain mens rea and actus reus and why both are normally required for criminal liability"
+          - "Identify the guilty act and guilty mind in a given fact situation"
+      - id: isc-12-legal-studies-ch01-t02
+        title: "Stages in crime: intention, preparation, attempt and commission"
+        learning_outcomes:
+          - "Distinguish the four stages of a crime and explain why mere intention and (generally) preparation are not punished"
+          - "Apply the stages to a hypothetical case and identify the stage reached"
+      - id: isc-12-legal-studies-ch01-t03
+        title: "Punishments under Section 4: death, life imprisonment, rigorous and simple imprisonment, forfeiture, fine and community service"
+        learning_outcomes:
+          - "List the kinds of punishment under Section 4 BNS and explain community service as a new addition"
+          - "Explain the 'rarest of rare' guideline for the death sentence with reference to Machhi Singh v. State of Punjab"
+      - id: isc-12-legal-studies-ch01-t04
+        title: "Defences based on justification: private defence, necessity and consent"
+        learning_outcomes:
+          - "Explain the limits of the right of private defence of body and property, with reference to Cherubin Gregory v. State of Bihar"
+          - "Distinguish necessity and consent as justifications with examples"
+      - id: isc-12-legal-studies-ch01-t05
+        title: "Defences based on excuse: duress, intoxication, mistake, infancy and unsoundness of mind"
+        learning_outcomes:
+          - "Explain each excuse and the conditions under which it removes criminal liability"
+          - "Distinguish a justification from an excuse"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-legal-studies-ch02
+    number: 2
+    title: "BNS: Inchoate Crimes and Offences against Women and Children"
+    unit: "1. The Bharatiya Nyaya Sanhita (BNS), 2023"
+    topics:
+      - id: isc-12-legal-studies-ch02-t01
+        title: "Abetment (Section 45): instigation, conspiracy and intentional aid"
+        learning_outcomes:
+          - "State the three ways of abetting an offence and give an example of each"
+          - "Explain the ruling in Gian Kaur v. State of Punjab on abetment of suicide and the right to life"
+      - id: isc-12-legal-studies-ch02-t02
+        title: "Criminal conspiracy (Section 61) and attempt (Section 62)"
+        learning_outcomes:
+          - "Explain the elements of criminal conspiracy, including the agreement between two or more persons"
+          - "Distinguish attempt from preparation and state how attempts are punished"
+      - id: isc-12-legal-studies-ch02-t03
+        title: "Assault or criminal force to outrage a woman's modesty (Section 74) and stalking (Section 78)"
+        learning_outcomes:
+          - "Identify the elements, examples and punishment of each offence"
+      - id: isc-12-legal-studies-ch02-t04
+        title: "Dowry death (Section 80)"
+        learning_outcomes:
+          - "State the conditions for a death to be treated as a dowry death and the presumption that arises"
+          - "Explain the significance of Pawan Kumar v. State of Haryana on cruelty and dowry demands"
+      - id: isc-12-legal-studies-ch02-t05
+        title: "Offences against children: exposure and abandonment of a child under twelve (Sections 91 and 93 as listed)"
+        learning_outcomes:
+          - "Explain the elements and punishment of abandoning or exposing a child under twelve by a parent or carer"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-legal-studies-ch03
+    number: 3
+    title: "BNS: Offences Affecting the Human Body"
+    unit: "1. The Bharatiya Nyaya Sanhita (BNS), 2023"
+    topics:
+      - id: isc-12-legal-studies-ch03-t01
+        title: "Culpable homicide (Section 100) and murder (Sections 101 and 103(1)): elements and distinction"
+        learning_outcomes:
+          - "Distinguish culpable homicide from murder by degree of intention and knowledge"
+          - "Explain the distinction drawn in State of AP v. R. Punnayya and the 'thirdly' test in Virsa Singh v. State of Punjab"
+      - id: isc-12-legal-studies-ch03-t02
+        title: "Exceptions reducing murder to culpable homicide: grave and sudden provocation and sudden fight"
+        learning_outcomes:
+          - "Explain why the provocation plea failed in K.M. Nanavati v. State of Maharashtra"
+          - "Apply the sudden-fight exception with reference to Ghapoo Yadav v. State of MP"
+      - id: isc-12-legal-studies-ch03-t03
+        title: "Causing death by negligence (Section 106) and attempt to murder (Section 109)"
+        learning_outcomes:
+          - "Distinguish death by negligence from culpable homicide with examples such as rash driving"
+          - "Identify the elements of attempt to murder"
+      - id: isc-12-legal-studies-ch03-t04
+        title: "Organised crime (Section 111) and petty organised crime (Section 112)"
+        learning_outcomes:
+          - "Explain what makes a crime 'organised' and how petty organised crime differs"
+      - id: isc-12-legal-studies-ch03-t05
+        title: "Force (Section 128), criminal force (Section 129) and assault (Section 130)"
+        learning_outcomes:
+          - "Distinguish force, criminal force and assault with everyday examples"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-legal-studies-ch04
+    number: 4
+    title: "BNS: Offences against Property"
+    unit: "1. The Bharatiya Nyaya Sanhita (BNS), 2023"
+    topics:
+      - id: isc-12-legal-studies-ch04-t01
+        title: "Movable property (Section 2(21)); theft (Section 303) and snatching (Section 304)"
+        learning_outcomes:
+          - "State the elements of theft, including dishonest intention and moving the property"
+          - "Explain why temporary removal can be theft, with reference to Pyare Lal Bhargava v. State of Rajasthan"
+          - "Distinguish snatching from theft"
+      - id: isc-12-legal-studies-ch04-t02
+        title: "Extortion (Section 308), robbery (Section 309) and dacoity (Section 310)"
+        learning_outcomes:
+          - "Explain when theft or extortion becomes robbery and when robbery becomes dacoity"
+      - id: isc-12-legal-studies-ch04-t03
+        title: "Dishonest misappropriation of property (Section 314) and criminal breach of trust (Section 316)"
+        learning_outcomes:
+          - "Distinguish misappropriation from criminal breach of trust by the element of entrustment"
+          - "Explain the principle in Jaikrishnadas Manohardas Desai v. State of Bombay"
+      - id: isc-12-legal-studies-ch04-t04
+        title: "Cheating (Section 318)"
+        learning_outcomes:
+          - "State the elements of cheating, including deception and dishonest inducement"
+          - "Explain why fraudulent intention must exist at the time of the promise, with reference to Mahadeo Prasad v. State of West Bengal"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-legal-studies-ch05
+    number: 5
+    title: "Alternate Dispute Resolution"
+    unit: "2. Alternate Dispute Resolution (ADR)"
+    topics:
+      - id: isc-12-legal-studies-ch05-t01
+        title: "Judicial and quasi-judicial bodies; tribunals such as the NGT and ITAT"
+        learning_outcomes:
+          - "Distinguish judicial from quasi-judicial bodies"
+          - "Explain the role of tribunals using the National Green Tribunal and the Income Tax Appellate Tribunal as examples"
+      - id: isc-12-legal-studies-ch05-t02
+        title: "Section 89 of the Code of Civil Procedure as a source of ADR; benefits of ADR and disputes it can cover"
+        learning_outcomes:
+          - "Explain how Section 89 CPC enables courts to refer disputes to ADR"
+          - "Evaluate the advantages of ADR over litigation and identify disputes suited to it"
+      - id: isc-12-legal-studies-ch05-t03
+        title: "Arbitration: meaning, arbitration agreement and court referral (Section 8)"
+        learning_outcomes:
+          - "Explain the essentials of an arbitration agreement and when a court must refer parties to arbitration"
+      - id: isc-12-legal-studies-ch05-t04
+        title: "Arbitral award: significance, comparison with a judgement and setting aside"
+        learning_outcomes:
+          - "Compare an arbitral award with a court judgement"
+          - "Outline the grounds on which an award may be set aside"
+      - id: isc-12-legal-studies-ch05-t05
+        title: "Mediation and conciliation: meaning, scope, role of the mediator and conciliator, sanctity of settlements"
+        learning_outcomes:
+          - "Explain the role of a mediator and a conciliator and the binding nature of a settlement reached"
+      - id: isc-12-legal-studies-ch05-t06
+        title: "Differences between arbitration and conciliation, and between mediation and conciliation"
+        learning_outcomes:
+          - "Tabulate the differences between the ADR methods in terms of process, role of neutral and outcome"
+      - id: isc-12-legal-studies-ch05-t07
+        title: "Lok Adalat: organisers, jurisdiction, award and its significance"
+        learning_outcomes:
+          - "Explain who organises Lok Adalats, which cases they handle and why their awards are final"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-legal-studies-ch06
+    number: 6
+    title: "Legal Services Authorities Act, 1987"
+    unit: "3. Legal Services Authorities Act, 1987"
+    topics:
+      - id: isc-12-legal-studies-ch06-t01
+        title: "Article 39A of the Constitution: equal justice and free legal aid"
+        learning_outcomes:
+          - "Explain the spirit of Article 39A and why free legal aid is necessary for access to justice"
+      - id: isc-12-legal-studies-ch06-t02
+        title: "Objectives of the Act and functions of NALSA (Section 4)"
+        learning_outcomes:
+          - "State the objectives of the Act and list the main functions of the National Legal Services Authority"
+      - id: isc-12-legal-studies-ch06-t03
+        title: "Hierarchy of legal services authorities and committees; eligibility for free legal aid"
+        learning_outcomes:
+          - "Draw the hierarchy of legal services bodies from the national to the taluk level"
+          - "Identify the categories of persons entitled to free legal aid"
+      - id: isc-12-legal-studies-ch06-t04
+        title: "Role of educational institutions and para-legal volunteers"
+        learning_outcomes:
+          - "Describe how legal literacy clubs and para-legal volunteers take legal aid to the community"
+    removed_topics:
+      - "Composition and functions of legal services committees at each level (only their hierarchy is required)"
+    literature_texts: []
+  - id: isc-12-legal-studies-ch07
+    number: 7
+    title: "Indian Contract Act: Introduction, Types and Formation of Contracts"
+    unit: "4. Indian Contract Act, 1872"
+    topics:
+      - id: isc-12-legal-studies-ch07-t01
+        title: "Proposal, promise, agreement and contract: definitions"
+        learning_outcomes:
+          - "Trace the steps from proposal to contract using the definitions in the Act"
+      - id: isc-12-legal-studies-ch07-t02
+        title: "Types of contracts: valid, void, voidable, express and implied"
+        learning_outcomes:
+          - "Classify given agreements as valid, void or voidable, express or implied"
+      - id: isc-12-legal-studies-ch07-t03
+        title: "Formation of a contract: offer and acceptance and their communication"
+        learning_outcomes:
+          - "Apply the rules of valid offer and acceptance to fact situations, including general offers"
+      - id: isc-12-legal-studies-ch07-t04
+        title: "Intention to create legal relations and consideration"
+        learning_outcomes:
+          - "Explain why social and domestic agreements are usually not contracts"
+          - "Define consideration and state the rule that an agreement without consideration is void, with exceptions"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-legal-studies-ch08
+    number: 8
+    title: "Indian Contract Act: Capacity, Free Consent, Legality and Void Agreements"
+    unit: "4. Indian Contract Act, 1872"
+    topics:
+      - id: isc-12-legal-studies-ch08-t01
+        title: "Capacity to contract: minors, persons of unsound mind and those disqualified by law"
+        learning_outcomes:
+          - "Explain why a minor's agreement is void and apply this to a fact situation"
+      - id: isc-12-legal-studies-ch08-t02
+        title: "Free consent (Sections 13-22): coercion, undue influence, fraud, misrepresentation and mistake"
+        learning_outcomes:
+          - "Define each factor that vitiates consent and state its effect on the contract"
+      - id: isc-12-legal-studies-ch08-t03
+        title: "Lawful object and consideration; void agreements (Sections 23-30)"
+        learning_outcomes:
+          - "Identify agreements declared void, such as those in restraint of marriage, trade or legal proceedings and wagering agreements"
+      - id: isc-12-legal-studies-ch08-t04
+        title: "Distinctions: coercion and undue influence; fraud and misrepresentation"
+        learning_outcomes:
+          - "Tabulate the differences between coercion and undue influence and between fraud and misrepresentation"
+      - id: isc-12-legal-studies-ch08-t05
+        title: "Distinctions: void and voidable contract; valid contract and void agreement"
+        learning_outcomes:
+          - "Distinguish void, voidable and valid contracts and void agreements with examples"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-legal-studies-ch09
+    number: 9
+    title: "Law of Torts: Nature of Tort, Intentional Torts and Negligence"
+    unit: "5. Law of Torts"
+    topics:
+      - id: isc-12-legal-studies-ch09-t01
+        title: "Definition and essential constituents of a tort; kinds of wrong in tort law"
+        learning_outcomes:
+          - "Explain the essentials of a tort: wrongful act, legal damage and legal remedy"
+          - "Distinguish intentional torts, negligence and strict liability with examples"
+      - id: isc-12-legal-studies-ch09-t02
+        title: "Trespass to the body (assault and battery) and false imprisonment"
+        learning_outcomes:
+          - "Distinguish assault from battery and identify false imprisonment in a fact situation"
+      - id: isc-12-legal-studies-ch09-t03
+        title: "Trespass to property and nuisance"
+        learning_outcomes:
+          - "Distinguish trespass to land from nuisance and give examples of public and private nuisance"
+      - id: isc-12-legal-studies-ch09-t04
+        title: "Defamation"
+        learning_outcomes:
+          - "Explain the elements of defamation and distinguish libel from slander"
+      - id: isc-12-legal-studies-ch09-t05
+        title: "Tort of negligence: meaning and elements (duty, breach, damage)"
+        learning_outcomes:
+          - "Apply the elements of negligence to a given case of injury"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-legal-studies-ch10
+    number: 10
+    title: "Law of Torts: Strict and Absolute Liability, Cyber Torts and Vicarious Liability"
+    unit: "5. Law of Torts"
+    topics:
+      - id: isc-12-legal-studies-ch10-t01
+        title: "Strict (no-fault) liability: the rule in Rylands v. Fletcher and its exceptions"
+        learning_outcomes:
+          - "State the rule in Rylands v. Fletcher and list its exceptions"
+      - id: isc-12-legal-studies-ch10-t02
+        title: "Absolute liability: the rule in the M.C. Mehta (oleum gas leak) case; strict versus absolute liability"
+        learning_outcomes:
+          - "Explain why the Supreme Court developed absolute liability for hazardous industries"
+          - "Tabulate the differences between strict and absolute liability"
+      - id: isc-12-legal-studies-ch10-t03
+        title: "Cyber torts: meaning and examples"
+        learning_outcomes:
+          - "Identify cyber torts such as online defamation and invasion of privacy and explain the remedies available"
+      - id: isc-12-legal-studies-ch10-t04
+        title: "Vicarious liability: meaning, essentials and the maxims qui facit per alium facit per se and respondeat superior"
+        learning_outcomes:
+          - "Explain when an employer is liable for an employee's tort committed in the course of employment"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-legal-studies-ch11
+    number: 11
+    title: "Transfer of Property Act, 1882"
+    unit: "6. Transfer of Property Act, 1882"
+    topics:
+      - id: isc-12-legal-studies-ch11-t01
+        title: "Movable and immovable property: definitions under Section 3 TPA and Section 3(26) General Clauses Act"
+        learning_outcomes:
+          - "Classify given items as movable or immovable property using the statutory definitions"
+      - id: isc-12-legal-studies-ch11-t02
+        title: "Transfer of property (Section 5); what may be transferred (Section 6); persons competent to transfer (Section 7)"
+        learning_outcomes:
+          - "Define transfer of property and identify interests that cannot be transferred"
+          - "State who is competent to transfer property"
+      - id: isc-12-legal-studies-ch11-t03
+        title: "Modes of transfer: sale, mortgage, lease, exchange, gift and actionable claim"
+        learning_outcomes:
+          - "Define each mode of transfer with an illustration"
+          - "Distinguish sale, mortgage and lease"
+      - id: isc-12-legal-studies-ch11-t04
+        title: "Doctrine of election and doctrine of lis pendens"
+        learning_outcomes:
+          - "Explain each doctrine and apply it to a simple fact situation"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-legal-studies-ch12
+    number: 12
+    title: "Fundamental Rights"
+    unit: "7. Fundamental Rights, Duties and Directive Principles of State Policy"
+    topics:
+      - id: isc-12-legal-studies-ch12-t01
+        title: "Right to equality (Articles 14-18)"
+        learning_outcomes:
+          - "Explain equality before law, prohibition of discrimination, equality of opportunity and abolition of untouchability and titles"
+      - id: isc-12-legal-studies-ch12-t02
+        title: "Right to freedom (Articles 19-22) and reasonable restrictions on grounds such as public order, health and morality"
+        learning_outcomes:
+          - "List the freedoms under Article 19 and explain the reasonable restrictions on them"
+          - "Explain the protections in Articles 20-22, including the right to life and personal liberty"
+      - id: isc-12-legal-studies-ch12-t03
+        title: "Right against exploitation (Articles 23-24)"
+        learning_outcomes:
+          - "Explain the prohibition of trafficking, forced labour and hazardous child labour"
+      - id: isc-12-legal-studies-ch12-t04
+        title: "Right to freedom of religion (Articles 25-28) and cultural and educational rights of minorities (Articles 29-30)"
+        learning_outcomes:
+          - "Explain the scope and limits of religious freedom and the rights of minorities to conserve culture and run institutions"
+      - id: isc-12-legal-studies-ch12-t05
+        title: "Right to constitutional remedies (Article 32): the five writs"
+        learning_outcomes:
+          - "Explain habeas corpus, mandamus, prohibition, certiorari and quo warranto and when each is issued"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-legal-studies-ch13
+    number: 13
+    title: "Directive Principles of State Policy and Fundamental Duties"
+    unit: "7. Fundamental Rights, Duties and Directive Principles of State Policy"
+    topics:
+      - id: isc-12-legal-studies-ch13-t01
+        title: "Directive Principles of State Policy: meaning and non-justiciability"
+        learning_outcomes:
+          - "Explain the purpose of the Directive Principles and why they are not enforceable in court"
+      - id: isc-12-legal-studies-ch13-t02
+        title: "Differences between Fundamental Rights and Directive Principles"
+        learning_outcomes:
+          - "Tabulate the differences in nature, enforceability and aim"
+      - id: isc-12-legal-studies-ch13-t03
+        title: "Fundamental Duties: meaning and all enumerated duties (Article 51A)"
+        learning_outcomes:
+          - "List all the Fundamental Duties and explain the importance of any three with examples"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-legal-studies-ch14
+    number: 14
+    title: "Important Laws: Human Rights Protection and the Lokpal"
+    unit: "8. Important Laws"
+    topics:
+      - id: isc-12-legal-studies-ch14-t01
+        title: "Human rights: definition and differences from Fundamental Rights"
+        learning_outcomes:
+          - "Define human rights and distinguish them from Fundamental Rights"
+      - id: isc-12-legal-studies-ch14-t02
+        title: "Protection of Human Rights Act, 1993 (amended 2006): object, composition (Section 3) and functions (Section 12) of the NHRC"
+        learning_outcomes:
+          - "State why the Act was enacted and describe the composition and functions of the National Human Rights Commission"
+      - id: isc-12-legal-studies-ch14-t03
+        title: "Ombudsman: meaning and concept; Lokpal and Lokayukta Act, 2013 - scope, objectives and limitations"
+        learning_outcomes:
+          - "Explain the ombudsman idea and the scope, objectives and limitations of the Lokpal and Lokayukta Act"
+      - id: isc-12-legal-studies-ch14-t04
+        title: "Differences between Lokpal and Lokayukta"
+        learning_outcomes:
+          - "Distinguish the Lokpal from the Lokayukta by level, jurisdiction and appointment"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-legal-studies-ch15
+    number: 15
+    title: "Legal Maxims (1): Crime, Liability and Remedies"
+    unit: "9. Legal Maxims"
+    topics:
+      - id: isc-12-legal-studies-ch15-t01
+        title: "Criminal liability: actus non facit reum nisi mens sit rea, corpus delicti, doli incapax"
+        learning_outcomes:
+          - "State the meaning of each maxim and apply it to a short fact situation"
+      - id: isc-12-legal-studies-ch15-t02
+        title: "Ignorance and mistake: ignorantia facti excusat, ignorantia juris non excusat, ex post facto"
+        learning_outcomes:
+          - "Explain why a mistake of fact may excuse but ignorance of law does not"
+      - id: isc-12-legal-studies-ch15-t03
+        title: "Damage and remedy: damnum sine injuria, injuria sine damno, ubi jus ibi remedium, res ipsa loquitur, de minimis lex non curat"
+        learning_outcomes:
+          - "Distinguish damnum sine injuria from injuria sine damno with examples"
+          - "Explain how res ipsa loquitur helps a plaintiff in a negligence case"
+      - id: isc-12-legal-studies-ch15-t04
+        title: "Contract and property: caveat emptor, assentio mentium, quid pro quo, nemo dat quod non habet, bona fide, bona vacantia"
+        learning_outcomes:
+          - "Explain the meaning of each maxim and apply it to a sale or contract situation"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-legal-studies-ch16
+    number: 16
+    title: "Legal Maxims (2): Courts, Procedure and Interpretation"
+    unit: "9. Legal Maxims"
+    topics:
+      - id: isc-12-legal-studies-ch16-t01
+        title: "Natural justice: audi alteram partem and nemo debet esse judex in propria sua causa"
+        learning_outcomes:
+          - "Explain the two rules of natural justice and identify their breach in a given case"
+      - id: isc-12-legal-studies-ch16-t02
+        title: "Precedent: stare decisis, ratio decidendi, obiter dicta, per incuriam, res judicata pro veritate accipitur"
+        learning_outcomes:
+          - "Distinguish ratio decidendi from obiter dicta and explain stare decisis and per incuriam"
+      - id: isc-12-legal-studies-ch16-t03
+        title: "Interpretation: ejusdem generis, noscitur a sociis, pari materia"
+        learning_outcomes:
+          - "Apply each rule of interpretation to the words of a sample provision"
+      - id: isc-12-legal-studies-ch16-t04
+        title: "Courts and parties: locus standi, amicus curiae, ad valorem, de die in diem, salus populi est suprema lex"
+        learning_outcomes:
+          - "State the meaning of each maxim and give an example of its use in Indian legal practice"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

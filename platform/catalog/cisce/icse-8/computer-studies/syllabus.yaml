@@ -1,0 +1,270 @@
+# ICSE Class 8 Computer Studies - CISCE Curriculum for Upper Primary Classes VI-VIII (2016), Computer Studies, Class VIII part only.
+# Source: platform/catalog/sources/cisce.md#cisce-upper-primary-curriculum (Computer Studies, Class VIII, Topics 1-6).
+# Topic wording is our own summary of the official key concepts and learning outcomes.
+subject_id: icse-8-computer-studies
+academic_year: "2026-27"
+source_status: verified
+sources: [cisce-upper-primary-curriculum]
+exam_notes: >-
+  No board examination in Class 8. CISCE publishes a recommended theme-based curriculum (Curriculum for Upper Primary
+  Classes VI-VIII, RDCD, 2016) with learning outcomes per class; it prescribes no textbooks, no paper pattern and no
+  marks weightage. Schools choose their own textbooks and set their own unit tests and term examinations; the curriculum
+  asks for continuous assessment through oral and written work, projects, activities and portfolios as well as tests.
+  The Class VIII Computer Studies curriculum has six topics (operating systems and GUI, spreadsheet functions and
+  charts, algorithms and flowcharts, program coding, app development, networks), each with learning outcomes and key
+  concepts; SOYL grouped them into 10 teachable chapters in curriculum order. Program coding may be taught in any
+  programming language chosen by the school, and apps may be built with any free app-development tool; schools assess
+  hands-on work through practical tasks, projects, quizzes and worksheets as well as written tests.
+units:
+  - { name: "Topic 1: Operating System and Graphical User Interface - Role and Functions", marks: null }
+  - { name: "Topic 2: Spreadsheet - Functions and Charts", marks: null }
+  - { name: "Topic 3: Algorithms and Flowcharts", marks: null }
+  - { name: "Topic 4: Program Coding", marks: null }
+  - { name: "Topic 5: App Development", marks: null }
+  - { name: "Topic 6: Networks", marks: null }
+chapters:
+  - id: icse-8-computer-studies-ch01
+    number: 1
+    title: "Operating System and User Interface"
+    unit: "Topic 1: Operating System and Graphical User Interface - Role and Functions"
+    topics:
+      - id: icse-8-computer-studies-ch01-t01
+        title: "Operating system: meaning, need and functions"
+        learning_outcomes:
+          - "Define an operating system and explain why a computer needs one"
+          - "Describe functions such as booting, managing devices, memory and the CPU"
+      - id: icse-8-computer-studies-ch01-t02
+        title: "Types of operating system: single-user and multi-user"
+        learning_outcomes:
+          - "Distinguish single-user from multi-user operating systems with examples"
+      - id: icse-8-computer-studies-ch01-t03
+        title: "User interface: character user interface (CUI) and graphical user interface (GUI)"
+        learning_outcomes:
+          - "Differentiate between CUI and GUI, including support for multitasking"
+      - id: icse-8-computer-studies-ch01-t04
+        title: "Features and advantages of a GUI"
+        learning_outcomes:
+          - "List the features of a GUI such as windows, icons, menus and pointer, and explain its advantages"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-computer-studies-ch02
+    number: 2
+    title: "Spreadsheets: Formulae, Ranges and Cell References"
+    unit: "Topic 2: Spreadsheet - Functions and Charts"
+    topics:
+      - id: icse-8-computer-studies-ch02-t01
+        title: "Entering formulae"
+        learning_outcomes:
+          - "Enter formulae using cell addresses and arithmetic operators"
+      - id: icse-8-computer-studies-ch02-t02
+        title: "Cell ranges: selecting and naming a range"
+        learning_outcomes:
+          - "Select a range and give it a name for use in formulae"
+      - id: icse-8-computer-studies-ch02-t03
+        title: "Relative, absolute and mixed cell referencing"
+        learning_outcomes:
+          - "Explain how relative, absolute and mixed references change when a formula is copied"
+          - "Choose the correct type of reference for a given task"
+      - id: icse-8-computer-studies-ch02-t04
+        title: "Managing sheets: naming, renaming and deleting sheets"
+        learning_outcomes:
+          - "Name, rename and delete worksheets using the sheet tab"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-computer-studies-ch03
+    number: 3
+    title: "Spreadsheets: Functions and Charts"
+    unit: "Topic 2: Spreadsheet - Functions and Charts"
+    topics:
+      - id: icse-8-computer-studies-ch03-t01
+        title: "Functions and the rules for entering them"
+        learning_outcomes:
+          - "Explain what a function is and enter a function with correct syntax"
+      - id: icse-8-computer-studies-ch03-t02
+        title: "Common functions: SUM, AVERAGE, MAX, MIN, COUNT"
+        learning_outcomes:
+          - "Use common functions to analyse a set of data"
+      - id: icse-8-computer-studies-ch03-t03
+        title: "Creating charts from data"
+        learning_outcomes:
+          - "Create a chart from survey data and choose a suitable chart type"
+          - "Interpret the information shown in a chart"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-computer-studies-ch04
+    number: 4
+    title: "Algorithms"
+    unit: "Topic 3: Algorithms and Flowcharts"
+    topics:
+      - id: icse-8-computer-studies-ch04-t01
+        title: "What an algorithm is and where algorithms are used"
+        learning_outcomes:
+          - "Define an algorithm and give everyday examples such as making a cup of tea"
+      - id: icse-8-computer-studies-ch04-t02
+        title: "Characteristics of a good algorithm"
+        learning_outcomes:
+          - "List the characteristics of a good algorithm such as clarity, finiteness and definite input and output"
+      - id: icse-8-computer-studies-ch04-t03
+        title: "Analysing a problem: input, process and output"
+        learning_outcomes:
+          - "Identify the input, process and output of a simple problem"
+      - id: icse-8-computer-studies-ch04-t04
+        title: "Writing algorithms step by step"
+        learning_outcomes:
+          - "Write an algorithm for a simple problem, including a decision step"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-computer-studies-ch05
+    number: 5
+    title: "Flowcharts"
+    unit: "Topic 3: Algorithms and Flowcharts"
+    topics:
+      - id: icse-8-computer-studies-ch05-t01
+        title: "What a flowchart is"
+        learning_outcomes:
+          - "Define a flowchart and explain how it represents an algorithm"
+      - id: icse-8-computer-studies-ch05-t02
+        title: "Flowchart symbols"
+        learning_outcomes:
+          - "Identify the terminal, input/output, process, decision and flow-line symbols"
+      - id: icse-8-computer-studies-ch05-t03
+        title: "Drawing flowcharts with decision making"
+        learning_outcomes:
+          - "Draw a flowchart for a problem involving a decision, such as finding the larger of two numbers"
+    removed_topics:
+      - "Loops in algorithms and flowcharts (only up to decision making)"
+    literature_texts: []
+  - id: icse-8-computer-studies-ch06
+    number: 6
+    title: "Program Coding: Basics"
+    unit: "Topic 4: Program Coding"
+    topics:
+      - id: icse-8-computer-studies-ch06-t01
+        title: "Need for programming"
+        learning_outcomes:
+          - "Explain the need for programming with examples of computers used in different fields"
+      - id: icse-8-computer-studies-ch06-t02
+        title: "Components of a program: identifiers and naming rules"
+        learning_outcomes:
+          - "Identify the components of a program and write valid identifiers"
+      - id: icse-8-computer-studies-ch06-t03
+        title: "Literals: integer, real and string"
+        learning_outcomes:
+          - "Distinguish integer, real and string literals"
+      - id: icse-8-computer-studies-ch06-t04
+        title: "Data types (int, char, float) and the need for them"
+        learning_outcomes:
+          - "Choose a suitable data type for a given value and explain why"
+      - id: icse-8-computer-studies-ch06-t05
+        title: "Declaring and initialising variables"
+        learning_outcomes:
+          - "Declare and initialise variables with correct syntax"
+      - id: icse-8-computer-studies-ch06-t06
+        title: "Compiling and executing a program"
+        learning_outcomes:
+          - "Compile and run a simple program and correct syntax errors"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-computer-studies-ch07
+    number: 7
+    title: "Program Coding: Operators and Selection Statements"
+    unit: "Topic 4: Program Coding"
+    topics:
+      - id: icse-8-computer-studies-ch07-t01
+        title: "Arithmetic operators (+, -, *, /, %)"
+        learning_outcomes:
+          - "Use arithmetic operators, including the remainder operator, in expressions"
+      - id: icse-8-computer-studies-ch07-t02
+        title: "Assignment operator"
+        learning_outcomes:
+          - "Use the assignment operator to store and update values in variables"
+      - id: icse-8-computer-studies-ch07-t03
+        title: "Relational and logical operators"
+        learning_outcomes:
+          - "Write conditions using relational and logical operators"
+      - id: icse-8-computer-studies-ch07-t04
+        title: "Selection statements: if and if-else"
+        learning_outcomes:
+          - "Trace the flow of control in if and if-else statements"
+          - "Write a program that makes a decision, such as checking whether a number is even or odd"
+      - id: icse-8-computer-studies-ch07-t05
+        title: "The if-else-if ladder"
+        learning_outcomes:
+          - "Write a program using an if-else-if ladder, such as assigning grades from marks"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-computer-studies-ch08
+    number: 8
+    title: "App Development"
+    unit: "Topic 5: App Development"
+    topics:
+      - id: icse-8-computer-studies-ch08-t01
+        title: "What an app is and how apps work"
+        learning_outcomes:
+          - "Define an app and explain in simple terms how it works on a device"
+      - id: icse-8-computer-studies-ch08-t02
+        title: "Uses of common apps"
+        learning_outcomes:
+          - "List the uses of apps for learning, communication, travel and health"
+      - id: icse-8-computer-studies-ch08-t03
+        title: "Types of apps: web (online) and mobile apps"
+        learning_outcomes:
+          - "Classify apps as web or mobile apps with examples"
+      - id: icse-8-computer-studies-ch08-t04
+        title: "Developing a simple app with a free app-development tool"
+        learning_outcomes:
+          - "Design and build a simple app with a few screens and buttons"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-computer-studies-ch09
+    number: 9
+    title: "Computer Networks"
+    unit: "Topic 6: Networks"
+    topics:
+      - id: icse-8-computer-studies-ch09-t01
+        title: "Network and its components: sender, receiver and medium"
+        learning_outcomes:
+          - "Define a computer network and name its components"
+      - id: icse-8-computer-studies-ch09-t02
+        title: "Types of network: PAN, LAN, CAN, MAN, WAN"
+        learning_outcomes:
+          - "Differentiate between types of network by area covered, with examples"
+      - id: icse-8-computer-studies-ch09-t03
+        title: "How data moves over a network"
+        learning_outcomes:
+          - "Explain the role of the sender, receiver and medium in sending data"
+      - id: icse-8-computer-studies-ch09-t04
+        title: "Network devices: modem, switch, hub, router, gateway"
+        learning_outcomes:
+          - "State the use of a modem, switch, hub, router and gateway"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-computer-studies-ch10
+    number: 10
+    title: "Internet Terms, Protocols and Cloud Computing"
+    unit: "Topic 6: Networks"
+    topics:
+      - id: icse-8-computer-studies-ch10-t01
+        title: "Internet and intranet; ISP, IP address, DNS and URL"
+        learning_outcomes:
+          - "Explain the terms intranet, ISP, IP address, DNS and URL"
+      - id: icse-8-computer-studies-ch10-t02
+        title: "Web page, website, web portal, link, hyperlink, hypertext and bandwidth"
+        learning_outcomes:
+          - "Distinguish a web page, website and web portal"
+          - "Explain hyperlinks, hypertext and bandwidth"
+      - id: icse-8-computer-studies-ch10-t03
+        title: "Protocols: HTTP, FTP, TCP/IP, IMAP and SMTP"
+        learning_outcomes:
+          - "Explain why protocols are needed and state the purpose of each listed protocol"
+      - id: icse-8-computer-studies-ch10-t04
+        title: "Cloud computing: characteristics and advantages"
+        learning_outcomes:
+          - "Summarise the characteristics and advantages of cloud computing"
+      - id: icse-8-computer-studies-ch10-t05
+        title: "Storing and sharing data on the cloud"
+        learning_outcomes:
+          - "Use cloud storage to save, share and present information in a collaborative project"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

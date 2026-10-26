@@ -1,0 +1,312 @@
+# ICSE Class 10 Economic Applications (code 87, Group III) - ICSE 2027 examination, CLASS X portion only.
+# Source: platform/catalog/sources/cisce.md#icse-2027-economic-applications. Topic wording is our own summary of the official scope.
+subject_id: icse-10-economic-applications
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2027-economic-applications, icse-2027-regulations]
+exam_notes: >-
+  Economic Applications (87) is a Group III subject: the external theory paper and the internal assessment each carry
+  50% of the subject result. One theory paper of 2 hours, 100 marks, set only on the Class X syllabus (Class IX portion
+  is not examined in ICSE 2027). Internal assessment 100 marks: a minimum of four assignments during the year (for example
+  analysing demand for a household product, building demand and supply tables for a commodity to find the equilibrium
+  price, classifying goods as price elastic or inelastic, studying a privatised public enterprise, visiting a bank branch,
+  surveying reactions to interest-rate cuts, examining product differentiation in consumer goods, tracing the factors of
+  production used by a company), marked 50 by the subject teacher and 50 by an external examiner on preparation,
+  procedure, observation, inference and presentation. Case studies are suggested on factors of production, banking and
+  inflation. Candidates offering Economics (Group II) may not offer Economic Applications.
+  CISCE lists numbered topics, not textbook chapters: SOYL groups them into 11 teachable chapters in syllabus order.
+  No unit-wise marks weightage is published.
+units:
+  - { name: "1: Demand and Supply", marks: null }
+  - { name: "2: Factors of Production", marks: null }
+  - { name: "3: Alternative Market Structures", marks: null }
+  - { name: "4: The State and Economic Development", marks: null }
+  - { name: "5: Money and Banking", marks: null }
+chapters:
+  - id: icse-10-economic-applications-ch01
+    number: 1
+    title: "Demand and the Law of Demand"
+    unit: "1: Demand and Supply"
+    topics:
+      - id: icse-10-economic-applications-ch01-t01
+        title: "Meaning of demand; joint, derived and composite demand"
+        learning_outcomes:
+          - "Define demand and distinguish it from desire and want"
+          - "Classify given examples as joint, derived or composite demand"
+      - id: icse-10-economic-applications-ch01-t02
+        title: "Law of demand: individual and market demand schedules and curves"
+        learning_outcomes:
+          - "State the law of demand and its assumptions"
+          - "Construct a market demand schedule by adding individual schedules and draw the corresponding curves"
+      - id: icse-10-economic-applications-ch01-t03
+        title: "Determinants of demand"
+        learning_outcomes:
+          - "Explain how price, income, prices of related goods, tastes and expectations affect demand"
+      - id: icse-10-economic-applications-ch01-t04
+        title: "Movement along versus shift of the demand curve"
+        learning_outcomes:
+          - "Distinguish an extension or contraction of demand from an increase or decrease in demand with diagrams"
+          - "Identify whether a given change causes a movement along or a shift of the demand curve"
+      - id: icse-10-economic-applications-ch01-t05
+        title: "Exceptions to the law of demand"
+        learning_outcomes:
+          - "Explain exceptions such as Giffen goods, prestige goods, expected price rise and necessities"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economic-applications-ch02
+    number: 2
+    title: "Supply and the Law of Supply"
+    unit: "1: Demand and Supply"
+    topics:
+      - id: icse-10-economic-applications-ch02-t01
+        title: "Meaning of supply; supply versus stock"
+        learning_outcomes:
+          - "Define supply and distinguish it from stock with an example"
+      - id: icse-10-economic-applications-ch02-t02
+        title: "Law of supply: individual and market supply schedules and curves"
+        learning_outcomes:
+          - "State the law of supply and its assumptions"
+          - "Construct individual and market supply schedules and draw the supply curves"
+      - id: icse-10-economic-applications-ch02-t03
+        title: "Determinants of supply"
+        learning_outcomes:
+          - "Explain how price, cost of inputs, technology, taxes and prices of other goods affect supply"
+      - id: icse-10-economic-applications-ch02-t04
+        title: "Movement along versus shift of the supply curve"
+        learning_outcomes:
+          - "Distinguish an extension or contraction of supply from an increase or decrease in supply with diagrams"
+      - id: icse-10-economic-applications-ch02-t05
+        title: "Market equilibrium from demand and supply schedules"
+        learning_outcomes:
+          - "Find the equilibrium price and quantity from a demand and supply table and show it on a diagram"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economic-applications-ch03
+    number: 3
+    title: "Elasticity of Demand and Supply"
+    unit: "1: Demand and Supply"
+    topics:
+      - id: icse-10-economic-applications-ch03-t01
+        title: "Price elasticity of demand: meaning and types"
+        learning_outcomes:
+          - "Define price elasticity of demand"
+          - "Describe perfectly elastic, perfectly inelastic, unitary, relatively elastic and relatively inelastic demand with curves"
+      - id: icse-10-economic-applications-ch03-t02
+        title: "Percentage method of measuring elasticity of demand"
+        learning_outcomes:
+          - "Calculate price elasticity of demand as (% change in quantity demanded)/(% change in price) in simple numericals"
+          - "Interpret the value obtained as elastic, inelastic or unitary"
+      - id: icse-10-economic-applications-ch03-t03
+        title: "Factors affecting elasticity of demand"
+        learning_outcomes:
+          - "Explain how availability of substitutes, nature of the good, share of income and number of uses affect elasticity"
+      - id: icse-10-economic-applications-ch03-t04
+        title: "Elasticity of supply: meaning, types and percentage method"
+        learning_outcomes:
+          - "Define elasticity of supply and describe its types with curves"
+          - "Calculate elasticity of supply by the percentage method in simple numericals"
+      - id: icse-10-economic-applications-ch03-t05
+        title: "Factors affecting elasticity of supply"
+        learning_outcomes:
+          - "Explain how time period, nature of the good, cost of production and techniques affect elasticity of supply"
+    removed_topics:
+      - "Only the percentage method of measuring elasticity is required; numericals are simple"
+    literature_texts: []
+  - id: icse-10-economic-applications-ch04
+    number: 4
+    title: "Factors of Production and Land"
+    unit: "2: Factors of Production"
+    topics:
+      - id: icse-10-economic-applications-ch04-t01
+        title: "Factors of production: land, labour, capital and entrepreneur"
+        learning_outcomes:
+          - "Identify the four factors of production and the reward earned by each"
+      - id: icse-10-economic-applications-ch04-t02
+        title: "Land: meaning, characteristics and functions"
+        learning_outcomes:
+          - "Explain the characteristics of land such as fixed supply, immobility and free gift of nature"
+          - "Describe the functions of land in production"
+      - id: icse-10-economic-applications-ch04-t03
+        title: "Factors affecting the productivity of land"
+        learning_outcomes:
+          - "Explain natural and man-made factors that influence the productivity of land"
+      - id: icse-10-economic-applications-ch04-t04
+        title: "Destruction of ecosystems through changing land use"
+        learning_outcomes:
+          - "Explain how industrialisation, mining, urbanisation, dams, shifting cultivation, migration and housing damage ecosystems"
+          - "Suggest measures to reduce ecological damage from changing land use"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economic-applications-ch05
+    number: 5
+    title: "Labour"
+    unit: "2: Factors of Production"
+    topics:
+      - id: icse-10-economic-applications-ch05-t01
+        title: "Labour: meaning and characteristics"
+        learning_outcomes:
+          - "Explain characteristics of labour such as perishability and inseparability from the labourer"
+      - id: icse-10-economic-applications-ch05-t02
+        title: "Division of labour: meaning and types"
+        learning_outcomes:
+          - "Define division of labour and distinguish simple, complex and territorial division of labour"
+      - id: icse-10-economic-applications-ch05-t03
+        title: "Advantages and disadvantages of division of labour"
+        learning_outcomes:
+          - "Evaluate the advantages and disadvantages of division of labour for producers, workers and consumers"
+      - id: icse-10-economic-applications-ch05-t04
+        title: "Efficiency of labour and reasons for low efficiency of Indian labour"
+        learning_outcomes:
+          - "Define efficiency of labour"
+          - "Explain reasons for the low efficiency of Indian labour such as poor health, lack of training and working conditions"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economic-applications-ch06
+    number: 6
+    title: "Capital and the Entrepreneur"
+    unit: "2: Factors of Production"
+    topics:
+      - id: icse-10-economic-applications-ch06-t01
+        title: "Capital: meaning, characteristics and types"
+        learning_outcomes:
+          - "Distinguish fixed and working capital, and physical and human capital, with examples"
+          - "Explain characteristics of capital such as being man-made and subject to depreciation"
+      - id: icse-10-economic-applications-ch06-t02
+        title: "Capital formation: meaning and factors affecting it"
+        learning_outcomes:
+          - "Explain capital formation as the process of saving, mobilisation and investment"
+          - "Describe factors affecting capital formation in India such as income level, banking facilities and stability"
+      - id: icse-10-economic-applications-ch06-t03
+        title: "Entrepreneur: meaning and functions"
+        learning_outcomes:
+          - "Describe the functions of an entrepreneur including initiating, organising, risk bearing and innovation"
+      - id: icse-10-economic-applications-ch06-t04
+        title: "Role of entrepreneurs in economic development"
+        learning_outcomes:
+          - "Explain how entrepreneurs contribute to employment, capital formation and balanced regional development"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economic-applications-ch07
+    number: 7
+    title: "Market Structures"
+    unit: "3: Alternative Market Structures"
+    topics:
+      - id: icse-10-economic-applications-ch07-t01
+        title: "Meaning of a market and classification of market structures"
+        learning_outcomes:
+          - "Explain the meaning of a market and classify markets by the number of buyers and sellers and nature of product"
+      - id: icse-10-economic-applications-ch07-t02
+        title: "Perfectly competitive market: features"
+        learning_outcomes:
+          - "Explain the features of perfect competition such as many buyers and sellers, homogeneous product and free entry"
+      - id: icse-10-economic-applications-ch07-t03
+        title: "Monopoly market: features"
+        learning_outcomes:
+          - "Explain the features of monopoly and give present-day examples"
+          - "Compare monopoly with perfect competition"
+      - id: icse-10-economic-applications-ch07-t04
+        title: "Monopolistic competition and product differentiation"
+        learning_outcomes:
+          - "Explain the features of monopolistic competition"
+          - "Describe how firms differentiate products through branding, packaging and quality"
+      - id: icse-10-economic-applications-ch07-t05
+        title: "Monopsony and oligopoly: meaning with examples"
+        learning_outcomes:
+          - "State the meaning of monopsony and of oligopoly and give an example of each"
+    removed_topics:
+      - "Monopsony: only the meaning is required"
+      - "Oligopoly: only the meaning with examples is required"
+    literature_texts: []
+  - id: icse-10-economic-applications-ch08
+    number: 8
+    title: "The State, Fiscal Policy and Taxation"
+    unit: "4: The State and Economic Development"
+    topics:
+      - id: icse-10-economic-applications-ch08-t01
+        title: "Role of the State in promoting economic development in India"
+        learning_outcomes:
+          - "Explain the role of the government in providing infrastructure, regulating markets and reducing inequality"
+      - id: icse-10-economic-applications-ch08-t02
+        title: "Instruments of State intervention: meaning of fiscal policy and monetary policy"
+        learning_outcomes:
+          - "State the meaning of fiscal policy and of monetary policy"
+          - "Distinguish fiscal policy from monetary policy by the authority and instruments used"
+      - id: icse-10-economic-applications-ch08-t03
+        title: "Direct and indirect taxes: meaning, merits and demerits"
+        learning_outcomes:
+          - "Distinguish direct and indirect taxes with Indian examples"
+          - "Evaluate the merits and demerits of each"
+      - id: icse-10-economic-applications-ch08-t04
+        title: "Progressive, regressive, proportional and degressive taxes"
+        learning_outcomes:
+          - "Explain each type of tax with a numerical illustration of tax rate against income"
+    removed_topics:
+      - "Monetary policy: only the meaning is required"
+    literature_texts: []
+  - id: icse-10-economic-applications-ch09
+    number: 9
+    title: "Public Sector Enterprises and Privatisation"
+    unit: "4: The State and Economic Development"
+    topics:
+      - id: icse-10-economic-applications-ch09-t01
+        title: "Public sector enterprises: role in the Indian economy"
+        learning_outcomes:
+          - "Explain the role of public sector enterprises in building infrastructure, generating employment and balanced growth"
+      - id: icse-10-economic-applications-ch09-t02
+        title: "Problems of public sector enterprises"
+        learning_outcomes:
+          - "Describe problems such as low profitability, overstaffing, political interference and delays"
+      - id: icse-10-economic-applications-ch09-t03
+        title: "Privatisation: meaning and reasons"
+        learning_outcomes:
+          - "Explain the meaning of privatisation and give reasons why the government privatises public enterprises"
+          - "Evaluate the pros and cons of privatising a public enterprise"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economic-applications-ch10
+    number: 10
+    title: "Money and Inflation"
+    unit: "5: Money and Banking"
+    topics:
+      - id: icse-10-economic-applications-ch10-t01
+        title: "Money: meaning and functions"
+        learning_outcomes:
+          - "Explain the primary, secondary and contingent functions of money"
+          - "Explain how money overcomes the difficulties of barter"
+      - id: icse-10-economic-applications-ch10-t02
+        title: "Inflation: meaning and types (creeping, walking, running, hyperinflation)"
+        learning_outcomes:
+          - "Define inflation and distinguish its types by the rate of price rise"
+      - id: icse-10-economic-applications-ch10-t03
+        title: "Effects of inflation on debtors, creditors, fixed-income groups and producers"
+        learning_outcomes:
+          - "Explain briefly who gains and who loses from inflation"
+    removed_topics:
+      - "Effects of inflation are required in brief only"
+    literature_texts: []
+  - id: icse-10-economic-applications-ch11
+    number: 11
+    title: "Commercial Banks and the Reserve Bank of India"
+    unit: "5: Money and Banking"
+    topics:
+      - id: icse-10-economic-applications-ch11-t01
+        title: "Functions of commercial banks"
+        learning_outcomes:
+          - "Explain the primary functions of commercial banks: accepting deposits and advancing loans"
+          - "Describe secondary functions such as agency and general utility services"
+      - id: icse-10-economic-applications-ch11-t02
+        title: "Central bank: functions of the RBI"
+        learning_outcomes:
+          - "Explain the RBI's functions as bank of issue, banker to the government, bankers' bank and lender of last resort"
+      - id: icse-10-economic-applications-ch11-t03
+        title: "Quantitative credit control: bank rate, open market operations, reserve ratios"
+        learning_outcomes:
+          - "Explain how the RBI uses bank rate, open market operations, CRR and SLR to control credit"
+      - id: icse-10-economic-applications-ch11-t04
+        title: "Qualitative credit control: margin requirements, credit rationing, moral suasion, direct action"
+        learning_outcomes:
+          - "Explain selective credit control methods and distinguish them from quantitative methods"
+    removed_topics: []
+    literature_texts: []
+removed_topics:
+  - "Class IX syllabus (basic concepts of economics, overview of the Indian economy, infrastructure, consumer awareness, globalisation) is not examined in ICSE 2027"

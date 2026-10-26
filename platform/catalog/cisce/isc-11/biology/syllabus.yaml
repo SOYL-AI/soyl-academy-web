@@ -1,0 +1,629 @@
+# ISC Class 11 Biology (863), Paper I Theory - ISC 2028 syllabus, CLASS XI portion only.
+# Source: platform/catalog/sources/cisce.md#isc-2028-biology. Topic wording is our own summary of the official scope.
+subject_id: isc-11-biology
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-biology, isc-2028-regulations]
+exam_notes: >-
+  Class XI is year one of the two-year ISC 2028 course. There is no board examination in Class XI: the final
+  examination is conducted internally by the school on the Class XI portion, and promotion to Class XII needs at least
+  35% on the cumulative average in five subjects including English, with 75% attendance (ISC 2028 Regulations).
+  The syllabus prescribes, and the school examination usually follows: Paper I Theory, 3 hours, 70 marks; Paper II
+  Practical, 3 hours, 15 marks, plus Project Work 10 marks and Practical File 5 marks (total 30). Practical work covers
+  parts and handling of dissecting and compound microscopes; food tests (starch, glucose, sucrose, proteins, fats);
+  effect of thawing, heat and alcohol on beetroot cell permeability; paper chromatography of leaf pigments; effect of CO2
+  concentration on photosynthesis; plasmolysis and the potato osmoscope; identifying modified roots, stems and leaves;
+  temporary slides of Mucor or Rhizopus, onion peel, mitosis in onion root tip and T.S. of monocot and dicot stems and
+  roots; and timed spotting (three minutes per spot) of slides, specimens and physiological set-ups. Handwritten
+  investigatory projects are preferred. SOYL covers Paper I only. All structures are taught with labelled diagrams;
+  the syllabus also lists scientists and their contributions (e.g. Woese, Whittaker, Mitchell, Singer and Nicolson,
+  Landsteiner) and abbreviations (e.g. RuBisCO, ETS, ANF, GFR) to be learnt, which are folded into the topics below.
+  No Class XI specimen paper is published for Biology. CISCE lists topics under five units, not textbook chapters:
+  SOYL groups them into 21 teachable chapters in syllabus order. The Class XII portion is in isc-12-biology.
+units:
+  - { name: "Unit 1: Diversity of Living Organisms", marks: 9 }
+  - { name: "Unit 2: Structural Organisation in Animals and Plants", marks: 11 }
+  - { name: "Unit 3: Cell: Structure and Function", marks: 15 }
+  - { name: "Unit 4: Plant Physiology", marks: 17 }
+  - { name: "Unit 5: Human Physiology", marks: 18 }
+chapters:
+  - id: isc-11-biology-ch01
+    number: 1
+    title: "The Living World"
+    unit: "Unit 1: Diversity of Living Organisms"
+    topics:
+      - id: isc-11-biology-ch01-t01
+        title: "Need for classification; taxonomy (numerical taxonomy, cytotaxonomy, chemotaxonomy) and systematics"
+        learning_outcomes:
+          - "Explain why living organisms need to be classified"
+          - "Distinguish numerical taxonomy, cytotaxonomy and chemotaxonomy by the data each uses"
+      - id: isc-11-biology-ch01-t02
+        title: "Concept of species (biological species concept); taxonomic hierarchy from species to kingdom with examples of man, housefly, mango and wheat"
+        learning_outcomes:
+          - "Arrange the taxonomic categories in hierarchical order"
+          - "Write the classification of man and of mango from kingdom to species"
+      - id: isc-11-biology-ch01-t03
+        title: "Binomial nomenclature: rules and advantages of scientific names"
+        learning_outcomes:
+          - "Write scientific names correctly following the rules of binomial nomenclature"
+          - "State two advantages of scientific names over common names"
+      - id: isc-11-biology-ch01-t04
+        title: "Artificial, natural and phylogenetic systems of classification"
+        learning_outcomes:
+          - "Compare artificial, natural and phylogenetic systems by the characters each uses"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biology-ch02
+    number: 2
+    title: "Biological Classification: Domains, Kingdoms and Monera"
+    unit: "Unit 1: Diversity of Living Organisms"
+    topics:
+      - id: isc-11-biology-ch02-t01
+        title: "Three domains of life (Archaea, Bacteria, Eukarya); five-kingdom classification and characteristics of each kingdom"
+        learning_outcomes:
+          - "List distinguishing features of the three domains"
+          - "Tabulate the five kingdoms by cell type, body organisation and mode of nutrition"
+      - id: isc-11-biology-ch02-t02
+        title: "Bacteria: structure of a typical cell; classification by shape, nutrition and respiration; Gram-positive and Gram-negative bacteria"
+        learning_outcomes:
+          - "Draw and label a typical bacterial cell"
+          - "Distinguish Gram-positive from Gram-negative bacteria"
+      - id: isc-11-biology-ch02-t03
+        title: "Reproduction in bacteria (fission, conjugation, transduction, transformation - definitions); archaebacteria (methanogens, halophiles, thermoacidophiles); Mycoplasma"
+        learning_outcomes:
+          - "Define the modes of bacterial reproduction and gene transfer"
+          - "Relate each group of archaebacteria to its extreme habitat"
+          - "State three distinctive features of Mycoplasma"
+      - id: isc-11-biology-ch02-t04
+        title: "Economic importance of bacteria: sewage treatment, antibiotics, energy production, curd and cheese"
+        learning_outcomes:
+          - "Explain the role of bacteria in sewage treatment and in making curd"
+    removed_topics:
+      - "Details of fission, conjugation, transduction and transformation (definitions only)"
+    literature_texts: []
+  - id: isc-11-biology-ch03
+    number: 3
+    title: "Protista, Fungi, Lichens and Viruses"
+    unit: "Unit 1: Diversity of Living Organisms"
+    topics:
+      - id: isc-11-biology-ch03-t01
+        title: "Kingdom Protista: chrysophytes, dinoflagellates, euglenoids, slime moulds and protozoans (rhizopods, flagellates, ciliates, sporozoans) with locomotion and examples"
+        learning_outcomes:
+          - "Give two characteristics and two examples of each protist group"
+          - "Compare locomotion in rhizopods, flagellates and ciliates"
+      - id: isc-11-biology-ch03-t02
+        title: "Kingdom Fungi: general characteristics; spores and sexual reproduction (isogamy, anisogamy, oogamy, plasmogamy, karyogamy, dikaryophase)"
+        learning_outcomes:
+          - "Define the stages of sexual reproduction in fungi"
+      - id: isc-11-biology-ch03-t03
+        title: "Classes of fungi: Zygomycetes, Ascomycetes, Basidiomycetes, Deuteromycetes; role in medicine, bakery and decomposition; lichens and mycorrhiza"
+        learning_outcomes:
+          - "Classify a fungus into its class from given characteristics"
+          - "Distinguish ectomycorrhiza from endomycorrhiza and explain the partnership in a lichen"
+      - id: isc-11-biology-ch03-t04
+        title: "Viruses: link between living and non-living; structure of TMV and bacteriophage; contributions of Ivanowsky, Beijerinck and Stanley; viroids and prions (BSE, CJD)"
+        learning_outcomes:
+          - "Draw and label TMV and a bacteriophage"
+          - "Distinguish viruses, viroids and prions"
+    removed_topics:
+      - "Life cycles of fungi"
+    literature_texts: []
+  - id: isc-11-biology-ch04
+    number: 4
+    title: "Plant Kingdom"
+    unit: "Unit 1: Diversity of Living Organisms"
+    topics:
+      - id: isc-11-biology-ch04-t01
+        title: "Algae: Chlorophyceae, Phaeophyceae and Rhodophyceae compared (pigments, stored food, cell wall, flagella, habitat, sexual reproduction); economic importance"
+        learning_outcomes:
+          - "Tabulate the differences between green, brown and red algae"
+          - "List five uses of algae"
+      - id: isc-11-biology-ch04-t02
+        title: "Bryophytes: liverworts and mosses; life cycle of Funaria and alternation of generations; economic importance"
+        learning_outcomes:
+          - "Draw a graphic outline of the life cycle of Funaria showing the dominant gametophyte"
+      - id: isc-11-biology-ch04-t03
+        title: "Pteridophytes: classes Psilopsida, Lycopsida, Sphenopsida, Pteropsida with examples; fern life cycle; homospory and heterospory; economic importance"
+        learning_outcomes:
+          - "Draw a graphic outline of the life cycle of a fern"
+          - "Distinguish homosporous and heterosporous pteridophytes with examples"
+      - id: isc-11-biology-ch04-t04
+        title: "Gymnosperms: characteristics; life cycle of Pinus; economic importance"
+        learning_outcomes:
+          - "Draw a graphic outline of the life cycle of Pinus"
+          - "Compare gymnosperms with pteridophytes"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biology-ch05
+    number: 5
+    title: "Animal Kingdom"
+    unit: "Unit 1: Diversity of Living Organisms"
+    topics:
+      - id: isc-11-biology-ch05-t01
+        title: "Basis of classification: levels of organisation, body plans, symmetry, diploblastic and triploblastic organisation, coelom types, segmentation"
+        learning_outcomes:
+          - "Classify an animal by symmetry, germ layers and type of coelom"
+          - "Distinguish acoelomate, pseudocoelomate, coelomate and haemocoelomate body plans"
+      - id: isc-11-biology-ch05-t02
+        title: "Non-chordates I: Porifera, Cnidaria, Ctenophora, Platyhelminthes, Nematoda (Aschelminthes)"
+        learning_outcomes:
+          - "List five distinguishing features and two examples of each phylum"
+      - id: isc-11-biology-ch05-t03
+        title: "Non-chordates II: Annelida, Mollusca, Arthropoda, Echinodermata, Hemichordata"
+        learning_outcomes:
+          - "List five distinguishing features and two examples of each phylum"
+          - "Assign a given invertebrate to its phylum from its features"
+      - id: isc-11-biology-ch05-t04
+        title: "Chordata: notochord; subphyla Urochordata, Cephalochordata and Vertebrata"
+        learning_outcomes:
+          - "State the fundamental features of chordates and distinguish the three subphyla"
+      - id: isc-11-biology-ch05-t05
+        title: "Vertebrate classes: Cyclostomata, Chondrichthyes, Osteichthyes, Amphibia, Reptilia, Aves, Mammalia"
+        learning_outcomes:
+          - "Give three distinguishing features and two examples of each vertebrate class"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biology-ch06
+    number: 6
+    title: "Morphology of Root, Stem and Leaf"
+    unit: "Unit 2: Structural Organisation in Animals and Plants"
+    topics:
+      - id: isc-11-biology-ch06-t01
+        title: "Roots: tap, fibrous and adventitious; regions; modifications for storage (tuberous, fusiform, conical, napiform), respiration (pneumatophores) and support (stilt, prop)"
+        learning_outcomes:
+          - "Identify the type of root modification in carrot, radish, turnip, sweet potato, mangrove and banyan"
+      - id: isc-11-biology-ch06-t02
+        title: "Stems: nodes, internodes and buds; underground, aerial and sub-aerial modifications"
+        learning_outcomes:
+          - "Classify stem modifications such as tuber, rhizome, corm, tendril, thorn, phylloclade, runner and sucker"
+          - "Explain why a potato is a stem and a sweet potato is a root"
+      - id: isc-11-biology-ch06-t03
+        title: "Leaves: parts of a simple leaf; venation; simple and compound (pinnate, palmate) leaves; phyllotaxy (alternate, opposite, whorled)"
+        learning_outcomes:
+          - "Distinguish a compound leaf from a branch bearing simple leaves"
+          - "Identify the phyllotaxy of a given twig"
+      - id: isc-11-biology-ch06-t04
+        title: "Leaf modifications for support, protection, storage and reproduction; insectivorous plants (pitcher plant, Venus flytrap)"
+        learning_outcomes:
+          - "Relate leaf modifications such as tendrils, spines and fleshy bulb leaves to their functions"
+          - "Explain why insectivorous plants trap insects"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biology-ch07
+    number: 7
+    title: "Morphology of the Flower and Inflorescence"
+    unit: "Unit 2: Structural Organisation in Animals and Plants"
+    topics:
+      - id: isc-11-biology-ch07-t01
+        title: "Structure of a typical flower; bracteate and ebracteate; symmetry (actinomorphic, zygomorphic); merous condition; complete and incomplete flowers"
+        learning_outcomes:
+          - "Draw and label a typical flower"
+          - "Describe a given flower using terms for symmetry, merous condition and completeness"
+      - id: isc-11-biology-ch07-t02
+        title: "Non-essential whorls: calyx and corolla (gamo- and poly- forms), perianth; aestivation (valvate, twisted, imbricate, vexillary)"
+        learning_outcomes:
+          - "Identify types of aestivation from floral diagrams"
+      - id: isc-11-biology-ch07-t03
+        title: "Androecium: cohesion (syngenesious, synandrous, mon-, di- and polyadelphous), adhesion (epipetalous, epiphyllous), monothecous and dithecous anthers"
+        learning_outcomes:
+          - "Name the condition of stamens in given flowers such as pea, hibiscus and sunflower"
+      - id: isc-11-biology-ch07-t04
+        title: "Gynoecium: position of ovary (hypogynous, perigynous, epigynous); apocarpous and syncarpous; locules; placentation (axile, marginal, parietal, free central, basal)"
+        learning_outcomes:
+          - "Identify the position of the ovary and the type of placentation from diagrams"
+      - id: isc-11-biology-ch07-t05
+        title: "Inflorescence: racemose and cymose - definitions, examples and differences"
+        learning_outcomes:
+          - "Distinguish racemose from cymose inflorescence by the order of flower opening"
+    removed_topics:
+      - "Subtypes of racemose and cymose inflorescence"
+    literature_texts: []
+  - id: isc-11-biology-ch08
+    number: 8
+    title: "Anatomy of Flowering Plants"
+    unit: "Unit 2: Structural Organisation in Animals and Plants"
+    topics:
+      - id: isc-11-biology-ch08-t01
+        title: "Meristematic tissues: characteristics; classification by origin and location"
+        learning_outcomes:
+          - "Classify meristems as apical, intercalary and lateral and state their roles"
+      - id: isc-11-biology-ch08-t02
+        title: "Permanent tissues: simple (parenchyma, collenchyma, sclerenchyma) and complex (xylem, phloem) - structure, function and location"
+        learning_outcomes:
+          - "Compare parenchyma, collenchyma and sclerenchyma by cell wall and function"
+          - "Name the elements of xylem and phloem and state their functions"
+      - id: isc-11-biology-ch08-t03
+        title: "Tissue systems: epidermal, ground and vascular"
+        learning_outcomes:
+          - "Describe the components of the three tissue systems"
+      - id: isc-11-biology-ch08-t04
+        title: "Internal structure of dicot and monocot roots and stems (cellular diagrams of T.S.)"
+        learning_outcomes:
+          - "Draw and label cellular diagrams of T.S. of dicot and monocot root and stem"
+          - "List anatomical differences between dicot and monocot roots and stems"
+      - id: isc-11-biology-ch08-t05
+        title: "Internal structure of dicot and monocot leaves (cellular diagrams of V.S.)"
+        learning_outcomes:
+          - "Draw and label V.S. of a dicot (dorsiventral) and a monocot (isobilateral) leaf"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biology-ch09
+    number: 9
+    title: "Structural Organisation in Animals: Frog"
+    unit: "Unit 2: Structural Organisation in Animals and Plants"
+    topics:
+      - id: isc-11-biology-ch09-t01
+        title: "Morphology of the frog"
+        learning_outcomes:
+          - "Describe the external features of a frog and distinguish male from female"
+      - id: isc-11-biology-ch09-t02
+        title: "Digestive, respiratory and circulatory systems of the frog (brief account)"
+        learning_outcomes:
+          - "Trace the path of food through the frog's alimentary canal"
+          - "Explain how a frog respires through skin, buccal cavity and lungs"
+      - id: isc-11-biology-ch09-t03
+        title: "Excretory, nervous and reproductive systems of the frog (brief account)"
+        learning_outcomes:
+          - "Describe the urogenital system of the male and female frog"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biology-ch10
+    number: 10
+    title: "Cell: The Unit of Life"
+    unit: "Unit 3: Cell: Structure and Function"
+    topics:
+      - id: isc-11-biology-ch10-t01
+        title: "Historical aspects and cell theory; size and shape of cells; prokaryotic versus eukaryotic and plant versus animal cells"
+        learning_outcomes:
+          - "State the cell theory and its modification by Virchow"
+          - "Tabulate differences between prokaryotic and eukaryotic cells and between plant and animal cells"
+      - id: isc-11-biology-ch10-t02
+        title: "Cell wall and plasmodesmata; plasma membrane: fluid mosaic model; active and passive transport; facilitated diffusion (uniport, symport, antiport)"
+        learning_outcomes:
+          - "Draw and explain the fluid mosaic model of the plasma membrane"
+          - "Distinguish active transport from facilitated diffusion with one example each"
+      - id: isc-11-biology-ch10-t03
+        title: "Endomembrane system: endoplasmic reticulum, Golgi complex, lysosomes and vacuoles"
+        learning_outcomes:
+          - "Describe the structure and functions of rough and smooth ER and of the Golgi complex"
+          - "Explain how organelles of the endomembrane system coordinate in secretion"
+      - id: isc-11-biology-ch10-t04
+        title: "Mitochondria, plastids (types), ribosomes and microbodies"
+        learning_outcomes:
+          - "Draw and label the ultrastructure of a mitochondrion and a chloroplast"
+          - "Distinguish chloroplasts, chromoplasts and leucoplasts"
+      - id: isc-11-biology-ch10-t05
+        title: "Cytoskeleton (microfilaments, microtubules, intermediate filaments); cilia, flagella and centrioles"
+        learning_outcomes:
+          - "Describe the 9 + 2 arrangement of microtubules in a cilium"
+      - id: isc-11-biology-ch10-t06
+        title: "Nucleus: nuclear membrane, chromatin, nucleolus; types of chromosomes by centromere position; satellite"
+        learning_outcomes:
+          - "Classify chromosomes as metacentric, submetacentric, acrocentric or telocentric"
+          - "State the functions of the nucleolus"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biology-ch11
+    number: 11
+    title: "Biomolecules"
+    unit: "Unit 3: Cell: Structure and Function"
+    topics:
+      - id: isc-11-biology-ch11-t01
+        title: "Carbohydrates: monosaccharides (glucose, ribose, deoxyribose), disaccharides (maltose, lactose, sucrose), polysaccharides (glycogen, starch, cellulose, inulin, chitin)"
+        learning_outcomes:
+          - "Classify given carbohydrates and state one function of each"
+      - id: isc-11-biology-ch11-t02
+        title: "Amino acids: structure of glycine, alanine and serine; zwitterion; acidic, basic, neutral and sulphur-containing; essential and non-essential"
+        learning_outcomes:
+          - "Draw the structures of glycine, alanine and serine"
+          - "Explain why amino acids exist as zwitterions"
+      - id: isc-11-biology-ch11-t03
+        title: "Proteins: primary, secondary, tertiary and quaternary structure; functions"
+        learning_outcomes:
+          - "Describe the four levels of protein structure and the bonds that stabilise each"
+      - id: isc-11-biology-ch11-t04
+        title: "Lipids: classification, structure and functions of fats and oils"
+        learning_outcomes:
+          - "Explain the difference between saturated fats and unsaturated oils"
+      - id: isc-11-biology-ch11-t05
+        title: "Enzymes: properties, nomenclature and classification; cofactors (prosthetic groups, coenzymes, metal ions); effect of temperature, pH and substrate concentration; competitive inhibition"
+        learning_outcomes:
+          - "Classify an enzyme by the type of reaction it catalyses"
+          - "Draw and interpret graphs of enzyme activity against temperature and pH"
+          - "Explain competitive inhibition with an example such as malonate and succinic dehydrogenase"
+      - id: isc-11-biology-ch11-t06
+        title: "Secondary metabolites: definition and examples"
+        learning_outcomes:
+          - "Give examples of secondary metabolites such as alkaloids, pigments and gums"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biology-ch12
+    number: 12
+    title: "Cell Cycle and Cell Division"
+    unit: "Unit 3: Cell: Structure and Function"
+    topics:
+      - id: isc-11-biology-ch12-t01
+        title: "Cell cycle: G0, G1, S, G2 and M phases; C-value"
+        learning_outcomes:
+          - "Describe the events of each phase of the cell cycle"
+          - "Track changes in C-value and chromosome number through the cell cycle"
+      - id: isc-11-biology-ch12-t02
+        title: "Mitosis: stages with diagrams; significance"
+        learning_outcomes:
+          - "Draw and label the stages of mitosis"
+          - "State the significance of mitosis in growth and repair"
+      - id: isc-11-biology-ch12-t03
+        title: "Meiosis: stages including the substages of prophase I; significance"
+        learning_outcomes:
+          - "Describe the substages of prophase I, including synapsis and crossing over"
+          - "Explain how meiosis produces genetic variation"
+      - id: isc-11-biology-ch12-t04
+        title: "Differences between mitosis and meiosis"
+        learning_outcomes:
+          - "Tabulate differences between mitosis and meiosis"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biology-ch13
+    number: 13
+    title: "Photosynthesis in Higher Plants"
+    unit: "Unit 4: Plant Physiology"
+    topics:
+      - id: isc-11-biology-ch13-t01
+        title: "Photosynthesis as autotrophic nutrition; site; pigments (chlorophyll a and b, carotenoids, xanthophylls); absorption and action spectra"
+        learning_outcomes:
+          - "Distinguish absorption spectrum from action spectrum and describe Engelmann's experiment"
+      - id: isc-11-biology-ch13-t02
+        title: "Photochemical phase: photosystems I and II, light-harvesting complex; cyclic and non-cyclic photophosphorylation; chemiosmotic hypothesis"
+        learning_outcomes:
+          - "Draw the Z-scheme of non-cyclic photophosphorylation"
+          - "Compare cyclic and non-cyclic photophosphorylation"
+          - "Explain ATP synthesis in chloroplasts by the chemiosmotic hypothesis"
+      - id: isc-11-biology-ch13-t03
+        title: "Biosynthetic phase: C3 (Calvin) cycle - carboxylation, reduction and regeneration"
+        learning_outcomes:
+          - "Draw a graphic representation of the Calvin cycle in correct sequence"
+          - "Calculate ATP and NADPH needed to make one glucose"
+      - id: isc-11-biology-ch13-t04
+        title: "C4 (Hatch and Slack) pathway and Kranz anatomy; differences between C3 and C4 plants"
+        learning_outcomes:
+          - "Draw a graphic representation of the C4 pathway"
+          - "Explain why C4 plants are more efficient in hot, bright conditions"
+      - id: isc-11-biology-ch13-t05
+        title: "Photorespiration: RuBisCO as oxygenase, pathway in brief and significance"
+        learning_outcomes:
+          - "Explain why photorespiration is wasteful and why it does not occur in C4 plants"
+      - id: isc-11-biology-ch13-t06
+        title: "Blackman's law of limiting factors; effect of light, CO2, temperature and water"
+        learning_outcomes:
+          - "Interpret graphs of rate of photosynthesis against light intensity and CO2 concentration using the law of limiting factors"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biology-ch14
+    number: 14
+    title: "Respiration in Plants"
+    unit: "Unit 4: Plant Physiology"
+    topics:
+      - id: isc-11-biology-ch14-t01
+        title: "Exchange of gases; types of respiration (aerobic and anaerobic); fermentation"
+        learning_outcomes:
+          - "Compare aerobic respiration with alcoholic and lactic acid fermentation"
+      - id: isc-11-biology-ch14-t02
+        title: "Glycolysis and Krebs' (TCA) cycle as flowcharts"
+        learning_outcomes:
+          - "Outline glycolysis and the Krebs' cycle as flowcharts showing ATP, NADH and FADH2 formed"
+      - id: isc-11-biology-ch14-t03
+        title: "Electron transport system and oxidative phosphorylation; number of ATP molecules generated"
+        learning_outcomes:
+          - "Explain how oxidative phosphorylation produces ATP at the inner mitochondrial membrane"
+          - "Calculate the net ATP yield of aerobic respiration of one glucose"
+      - id: isc-11-biology-ch14-t04
+        title: "Amphibolic pathway; respiratory quotient of carbohydrates, proteins and fats"
+        learning_outcomes:
+          - "Explain why respiration is called an amphibolic pathway"
+          - "Calculate RQ from a balanced equation and compare values for different substrates"
+    removed_topics:
+      - "Detailed steps of glycolysis, Krebs' cycle and ETS beyond flowcharts"
+    literature_texts: []
+  - id: isc-11-biology-ch15
+    number: 15
+    title: "Plant Growth and Development"
+    unit: "Unit 4: Plant Physiology"
+    topics:
+      - id: isc-11-biology-ch15-t01
+        title: "Seed germination: hypogeal, epigeal and viviparous, with examples"
+        learning_outcomes:
+          - "Distinguish hypogeal, epigeal and viviparous germination with two examples each"
+      - id: isc-11-biology-ch15-t02
+        title: "Phases of growth in meristems; growth rate; measuring growth directly and with an auxanometer; factors affecting growth"
+        learning_outcomes:
+          - "Describe the phases of growth and sketch a sigmoid growth curve"
+          - "Explain how an auxanometer measures growth"
+      - id: isc-11-biology-ch15-t03
+        title: "Differentiation, dedifferentiation and redifferentiation; sequence of developmental processes"
+        learning_outcomes:
+          - "Distinguish differentiation, dedifferentiation and redifferentiation with examples"
+      - id: isc-11-biology-ch15-t04
+        title: "Plant growth regulators: discovery and four physiological effects each of auxins, gibberellins, cytokinins, ethylene and abscisic acid"
+        learning_outcomes:
+          - "Describe how auxin was discovered (Went's experiments)"
+          - "State four effects of each plant growth regulator"
+      - id: isc-11-biology-ch15-t05
+        title: "Agricultural and horticultural applications of growth regulators"
+        learning_outcomes:
+          - "Suggest a growth regulator for uses such as rooting cuttings, ripening fruit or weed control"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biology-ch16
+    number: 16
+    title: "Breathing and Exchange of Gases"
+    unit: "Unit 5: Human Physiology"
+    topics:
+      - id: isc-11-biology-ch16-t01
+        title: "Respiratory organs in animals (recall); human respiratory system"
+        learning_outcomes:
+          - "Draw and label the human respiratory system"
+      - id: isc-11-biology-ch16-t02
+        title: "Mechanism of breathing: role of diaphragm and intercostal muscles; pulmonary volumes and lung capacities"
+        learning_outcomes:
+          - "Explain inspiration and expiration in terms of pressure changes"
+          - "Define tidal volume, IRV, ERV, residual volume, vital capacity and FRC"
+      - id: isc-11-biology-ch16-t03
+        title: "Pulmonary exchange of gases; transport of oxygen and the oxyhaemoglobin dissociation curve; transport of CO2 and chloride shift"
+        learning_outcomes:
+          - "Interpret the oxyhaemoglobin dissociation curve and factors that shift it"
+          - "Explain the chloride shift in CO2 transport"
+      - id: isc-11-biology-ch16-t04
+        title: "Regulation of breathing; respiratory disorders (asthma, emphysema, occupational disorders)"
+        learning_outcomes:
+          - "Describe the role of the respiratory centres in regulating breathing"
+          - "State the cause and symptoms of asthma, emphysema and occupational lung disorders"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biology-ch17
+    number: 17
+    title: "Body Fluids and Circulation"
+    unit: "Unit 5: Human Physiology"
+    topics:
+      - id: isc-11-biology-ch17-t01
+        title: "Blood: plasma and plasma proteins; blood corpuscles; coagulation (brief)"
+        learning_outcomes:
+          - "State the functions of plasma proteins and of each type of blood corpuscle"
+          - "Outline the cascade of blood clotting"
+      - id: isc-11-biology-ch17-t02
+        title: "ABO blood groups and Rh factor: importance in transfusion and pregnancy"
+        learning_outcomes:
+          - "Predict compatible donors and recipients in the ABO system"
+          - "Explain erythroblastosis foetalis"
+      - id: isc-11-biology-ch17-t03
+        title: "Lymph and the lymphatic system; open and closed circulatory systems"
+        learning_outcomes:
+          - "Compare lymph with blood and state the functions of lymph nodes"
+      - id: isc-11-biology-ch17-t04
+        title: "Human heart: external and internal structure; cardiac cycle (auricular and ventricular systole and diastole, joint diastole); stroke volume and cardiac output"
+        learning_outcomes:
+          - "Draw and label the internal structure of the human heart"
+          - "Describe blood flow during each phase of the cardiac cycle"
+          - "Calculate cardiac output from heart rate and stroke volume"
+      - id: isc-11-biology-ch17-t05
+        title: "Regulation of heart beat; ECG; blood pressure; double circulation; structure of artery, vein and capillary"
+        learning_outcomes:
+          - "Label the P, QRS and T waves of an ECG and state what each represents"
+          - "Compare the structure of an artery, a vein and a capillary"
+      - id: isc-11-biology-ch17-t06
+        title: "Disorders of circulation: hypertension, coronary artery disease, angina pectoris, heart failure"
+        learning_outcomes:
+          - "State the cause and effect of each circulatory disorder"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biology-ch18
+    number: 18
+    title: "Excretory Products and Their Elimination"
+    unit: "Unit 5: Human Physiology"
+    topics:
+      - id: isc-11-biology-ch18-t01
+        title: "Ammonotelism, ureotelism and uricotelism; human excretory system; structure of the kidney (L.S.) and nephron"
+        learning_outcomes:
+          - "Relate the nitrogenous waste of an animal to its habitat"
+          - "Draw and label the L.S. of a kidney and a nephron"
+      - id: isc-11-biology-ch18-t02
+        title: "Urine formation: ultrafiltration, selective reabsorption and tubular secretion; counter-current mechanism"
+        learning_outcomes:
+          - "Explain the three processes of urine formation and the role of GFR"
+          - "Explain how the counter-current mechanism concentrates urine"
+      - id: isc-11-biology-ch18-t03
+        title: "Regulation of kidney function: ADH, renin-angiotensin-aldosterone system, atrial natriuretic factor; erythropoietin; micturition; homeostasis"
+        learning_outcomes:
+          - "Describe how ADH and the RAAS regulate water and salt balance"
+      - id: isc-11-biology-ch18-t04
+        title: "Role of skin, liver and lungs in excretion; disorders (uraemia, renal failure, renal calculi, nephritis); haemodialysis and kidney transplant"
+        learning_outcomes:
+          - "Explain the principle of haemodialysis"
+          - "State the cause of each excretory disorder"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biology-ch19
+    number: 19
+    title: "Locomotion and Movement"
+    unit: "Unit 5: Human Physiology"
+    topics:
+      - id: isc-11-biology-ch19-t01
+        title: "Types of movement: ciliary, flagellar and muscular; general properties of muscles; red and white muscle fibres"
+        learning_outcomes:
+          - "Compare red and white muscle fibres"
+      - id: isc-11-biology-ch19-t02
+        title: "Structure of skeletal muscle and contractile proteins; sliding filament theory; chemical events of contraction; summation, tetanus, rigor mortis"
+        learning_outcomes:
+          - "Draw and label a sarcomere"
+          - "Explain muscle contraction using the sliding filament theory"
+      - id: isc-11-biology-ch19-t03
+        title: "Human skeleton: bones of the axial and appendicular skeleton (numbers and names); functions"
+        learning_outcomes:
+          - "List the bones of the axial and appendicular skeleton with their numbers"
+      - id: isc-11-biology-ch19-t04
+        title: "Joints: types, location and function"
+        learning_outcomes:
+          - "Classify joints as fibrous, cartilaginous or synovial and give an example of each synovial type"
+      - id: isc-11-biology-ch19-t05
+        title: "Disorders: myasthenia gravis, tetany, muscular dystrophy, arthritis, osteoporosis, gout"
+        learning_outcomes:
+          - "State the cause and main symptom of each muscular and skeletal disorder"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biology-ch20
+    number: 20
+    title: "Neural Control and Coordination"
+    unit: "Unit 5: Human Physiology"
+    topics:
+      - id: isc-11-biology-ch20-t01
+        title: "Neurons and nerves; types of neurons (unipolar, bipolar, pseudounipolar, multipolar)"
+        learning_outcomes:
+          - "Draw and label a myelinated neuron"
+          - "Distinguish the types of neurons by their processes"
+      - id: isc-11-biology-ch20-t02
+        title: "Human nervous system: central, peripheral and visceral (autonomic) nervous systems"
+        learning_outcomes:
+          - "Outline the divisions of the human nervous system"
+      - id: isc-11-biology-ch20-t03
+        title: "Structure and functions of the parts of the brain and of the spinal cord"
+        learning_outcomes:
+          - "Relate the main parts of the forebrain, midbrain and hindbrain to their functions"
+          - "Draw and label a T.S. of the spinal cord"
+      - id: isc-11-biology-ch20-t04
+        title: "Generation and conduction of the nerve impulse in non-myelinated and myelinated fibres; transmission across a synapse"
+        learning_outcomes:
+          - "Explain resting and action potentials in terms of ion movements"
+          - "Explain why conduction is faster in myelinated fibres"
+          - "Describe chemical transmission at a synapse"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biology-ch21
+    number: 21
+    title: "Chemical Coordination and Integration"
+    unit: "Unit 5: Human Physiology"
+    topics:
+      - id: isc-11-biology-ch21-t01
+        title: "Human endocrine system: location of glands; hypothalamus and pituitary hormones; feedback control of tropic hormones"
+        learning_outcomes:
+          - "Locate the endocrine glands on a diagram of the human body"
+          - "Explain the negative feedback control of thyroxine secretion"
+      - id: isc-11-biology-ch21-t02
+        title: "Hormones of the pineal, thymus, thyroid and parathyroid glands"
+        learning_outcomes:
+          - "State the functions of thyroxine, calcitonin and parathormone"
+      - id: isc-11-biology-ch21-t03
+        title: "Hormones of the adrenal glands, pancreas, gonads and gastrointestinal tract (gastrin, secretin, GIP, CCK-PZ)"
+        learning_outcomes:
+          - "Explain how insulin and glucagon regulate blood glucose"
+          - "State the roles of adrenaline and the GI-tract hormones"
+      - id: isc-11-biology-ch21-t04
+        title: "Mechanism of hormone action through cAMP (second messenger) and steroid hormones"
+        learning_outcomes:
+          - "Compare the mechanisms of action of protein hormones and steroid hormones"
+      - id: isc-11-biology-ch21-t05
+        title: "Disorders of hypo- and hypersecretion: dwarfism, acromegaly, cretinism, goitre, exophthalmic goitre, Graves' disease, Addison's disease, diabetes mellitus and insipidus"
+        learning_outcomes:
+          - "Match each endocrine disorder to the gland and hormone involved"
+          - "Distinguish diabetes mellitus from diabetes insipidus"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

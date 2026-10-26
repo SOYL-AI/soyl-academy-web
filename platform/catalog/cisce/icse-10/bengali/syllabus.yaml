@@ -1,0 +1,289 @@
+# ICSE Class 10 Bengali (Bangla) (Second Language, code 03) - ICSE 2027 examination.
+# Literature: titles and authors only (CONTEXT section 8). Students read the texts in their own textbook.
+subject_id: icse-10-bengali
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2027-second-languages, icse-2027-prescribed-books, cisce-circular-2026-27-33-indian-languages, icse-2027-regulations]
+exam_notes: >-
+  One paper of 3 hours, 80 marks. Internal assessment 20 marks (marked 10 by the subject teacher and 10 by an external
+  examiner): two or three assignments, one from language and one from literature - Class X suggestions are oral work
+  (prepared speech, debate, elocution, role-play), creative writing of about 300-400 words, and literature assignments
+  on character/theme analysis, background and summary. Section A Language (40 marks, compulsory): one composition from a
+  choice of subjects (short explanations, directions, descriptions or narratives, possibly suggested by pictures or
+  objects), one letter from a choice of two (layout assessed), an unseen passage of about 250 words with questions
+  answered in the language, and grammar (vocabulary, syntax and idioms, synthesis of sentences, sentences using given
+  words or forms; no knowledge of grammatical terms is required). Section B Prescribed Texts (40 marks): four questions
+  from ONLY two of the prescribed books, set and answered in the language. Prescribed texts are bifurcated (Circular
+  2026-27/33): the ICSE 2027 paper is set ONLY on the Class X portion listed here (the Class IX portion is in
+  icse-9-bengali and listed under removed_topics). Short stories and poems are from Sonkolita: A collection of ICSE
+  Short Stories & Poems (Power Publishers, Kolkata). CISCE describes grammar only generically; the two grammar chapters
+  break it into item types commonly set in ICSE language papers - this breakdown is SOYL's, not CISCE's. CISCE lists
+  skills and texts, not chapters; SOYL grouped them into teachable chapters in syllabus order. SOYL covers all four
+  prescribed books so a student can pick any two. Titles are in English / CISCE transliteration; native-script titles to
+  be added in language review.
+units:
+  - { name: "Section A: Language", marks: 40 }
+  - { name: "Section B: Prescribed Texts", marks: 40 }
+chapters:
+  - id: icse-10-bengali-ch01
+    number: 1
+    title: "Composition writing"
+    unit: "Section A: Language"
+    topics:
+      - id: icse-10-bengali-ch01-t01
+        title: "Planning a composition: choosing a topic, outline, introduction, body and conclusion"
+        learning_outcomes:
+          - "Prepare an outline and write a well-organised composition in Bengali on a chosen subject"
+          - "Link paragraphs in a logical order with suitable connecting words"
+      - id: icse-10-bengali-ch01-t02
+        title: "Descriptive and narrative compositions"
+        learning_outcomes:
+          - "Describe a place, person, event or experience vividly in Bengali"
+          - "Narrate a sequence of events with a clear beginning, middle and end"
+      - id: icse-10-bengali-ch01-t03
+        title: "Short explanations, directions and argumentative compositions"
+        learning_outcomes:
+          - "Write clear step-by-step directions or a short explanation of a process"
+          - "Present arguments for and against an issue and reach a reasoned conclusion"
+      - id: icse-10-bengali-ch01-t04
+        title: "Story writing and compositions suggested by a picture or object"
+        learning_outcomes:
+          - "Write an original story from a given opening line, proverb or outline"
+          - "Write a composition based on a given picture or object"
+      - id: icse-10-bengali-ch01-t05
+        title: "Accuracy and style: spelling, punctuation and choice of words"
+        learning_outcomes:
+          - "Find and correct spelling and punctuation errors in their own writing"
+          - "Choose precise and varied vocabulary suited to the subject and reader"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-bengali-ch02
+    number: 2
+    title: "Letter writing"
+    unit: "Section A: Language"
+    topics:
+      - id: icse-10-bengali-ch02-t01
+        title: "Layout of a formal letter: address, date, recipient, subject, salutation, body and closing"
+        learning_outcomes:
+          - "Set out a formal letter in Bengali with every part in the correct order and position"
+      - id: icse-10-bengali-ch02-t02
+        title: "Formal letters to a principal, editor or official (application, complaint, request)"
+        learning_outcomes:
+          - "State a problem briefly and politely and make a suitable request or suggestion"
+      - id: icse-10-bengali-ch02-t03
+        title: "Informal letters to friends and relatives"
+        learning_outcomes:
+          - "Use an apt salutation, a warm personal tone and a suitable closing in an informal letter in Bengali"
+      - id: icse-10-bengali-ch02-t04
+        title: "Developing a letter from the suggestions given in the question"
+        learning_outcomes:
+          - "Include every suggested point in a well-connected letter of appropriate length"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-bengali-ch03
+    number: 3
+    title: "Unseen passage (comprehension)"
+    unit: "Section A: Language"
+    topics:
+      - id: icse-10-bengali-ch03-t01
+        title: "Reading strategy: main idea and supporting details"
+        learning_outcomes:
+          - "State the central idea of an unseen passage of about 250 words in one or two sentences in Bengali"
+      - id: icse-10-bengali-ch03-t02
+        title: "Answering factual and inferential questions in own words"
+        learning_outcomes:
+          - "Answer questions in own words without copying whole lines from the passage"
+          - "Infer causes, consequences and the writer's attitude from the passage"
+      - id: icse-10-bengali-ch03-t03
+        title: "Word meanings in context, a suitable title and the message of the passage"
+        learning_outcomes:
+          - "Work out the meaning of difficult words from their context"
+          - "Suggest a suitable title for the passage and justify it"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-bengali-ch04
+    number: 4
+    title: "Grammar: vocabulary"
+    unit: "Section A: Language"
+    topics:
+      - id: icse-10-bengali-ch04-t01
+        title: "Word formation: forming nouns, adjectives and verbs with prefixes and suffixes"
+        learning_outcomes:
+          - "Form related words from given Bengali words and use them correctly in sentences"
+      - id: icse-10-bengali-ch04-t02
+        title: "Synonyms and antonyms"
+        learning_outcomes:
+          - "Give suitable synonyms and correct antonyms for common words"
+      - id: icse-10-bengali-ch04-t03
+        title: "One word for a group of words"
+        learning_outcomes:
+          - "Replace a phrase with a single suitable word and use it in a sentence"
+      - id: icse-10-bengali-ch04-t04
+        title: "Words often confused and correct spelling"
+        learning_outcomes:
+          - "Show the difference in meaning between similar-looking or similar-sounding words through sentences"
+          - "Correct misspelt words"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-bengali-ch05
+    number: 5
+    title: "Grammar: sentence construction and idioms"
+    unit: "Section A: Language"
+    topics:
+      - id: icse-10-bengali-ch05-t01
+        title: "Idioms and proverbs: meaning and use in sentences"
+        learning_outcomes:
+          - "Explain the meaning of common Bengali idioms and proverbs and use them aptly in sentences"
+      - id: icse-10-bengali-ch05-t02
+        title: "Correcting errors in sentences: agreement, tense, word order and word endings"
+        learning_outcomes:
+          - "Identify the error in a sentence and rewrite it correctly"
+      - id: icse-10-bengali-ch05-t03
+        title: "Synthesis: joining and transforming sentences as directed"
+        learning_outcomes:
+          - "Combine two or more simple sentences into one sentence without changing the meaning"
+          - "Change the form of a sentence as instructed (tense, statement to question, positive to negative)"
+      - id: icse-10-bengali-ch05-t04
+        title: "Making sentences with given words or forms"
+        learning_outcomes:
+          - "Write meaningful sentences that correctly use a given word, phrase or grammatical form"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-bengali-ch06
+    number: 6
+    title: "Sonkolita: short stories (Class X portion)"
+    unit: "Section B: Prescribed Texts"
+    topics:
+      - id: icse-10-bengali-ch06-t01
+        title: "Bama (Bibhutibhushan Bandyopadhyay): plot, characters and message"
+        learning_outcomes:
+          - "Narrate the main events of the story in sequence in Bengali, in own words"
+          - "Describe the main characters with examples from the story"
+          - "State the theme or message and explain the significance of the title"
+      - id: icse-10-bengali-ch06-t02
+        title: "Naam (Narendranath Mitra): plot, characters and message"
+        learning_outcomes:
+          - "Narrate the main events of the story in sequence in Bengali, in own words"
+          - "Describe the main characters with examples from the story"
+          - "State the theme or message and explain the significance of the title"
+      - id: icse-10-bengali-ch06-t03
+        title: "Asohojogee (Manik Bandyopadhyay): plot, characters and message"
+        learning_outcomes:
+          - "Narrate the main events of the story in sequence in Bengali, in own words"
+          - "Describe the main characters with examples from the story"
+          - "State the theme or message and explain the significance of the title"
+      - id: icse-10-bengali-ch06-t04
+        title: "Gandhota Khub Sandehojanok (Shirshendu Mukhopadhyay): plot, characters and message"
+        learning_outcomes:
+          - "Narrate the main events of the story in sequence in Bengali, in own words"
+          - "Describe the main characters with examples from the story"
+          - "State the theme or message and explain the significance of the title"
+      - id: icse-10-bengali-ch06-t05
+        title: "Lokti (Humayun Ahmed): plot, characters and message"
+        learning_outcomes:
+          - "Narrate the main events of the story in sequence in Bengali, in own words"
+          - "Describe the main characters with examples from the story"
+          - "State the theme or message and explain the significance of the title"
+    removed_topics:
+      - "Class IX stories: Ginni (Rabindranath Thakur), Lalu (Sarat Chandra Chattopadhyay), Canvasser (Banaphool), Debotar Janmo (Shibram Chakraborty), Neel Manusher Kahini (Sunil Gangopadhyay) - see icse-9-bengali"
+    literature_texts:
+      - { title: "Bama", author: "Bibhutibhushan Bandyopadhyay" }
+      - { title: "Naam", author: "Narendranath Mitra" }
+      - { title: "Asohojogee", author: "Manik Bandyopadhyay" }
+      - { title: "Gandhota Khub Sandehojanok", author: "Shirshendu Mukhopadhyay" }
+      - { title: "Lokti", author: "Humayun Ahmed" }
+  - id: icse-10-bengali-ch07
+    number: 7
+    title: "Sonkolita: poems (Class X portion)"
+    unit: "Section B: Prescribed Texts"
+    topics:
+      - id: icse-10-bengali-ch07-t01
+        title: "Bangabhoomir Proti (Michael Madhusudan Dutta): love for the motherland and the poet's wish to be remembered"
+        learning_outcomes:
+          - "Explain the poet's plea to his motherland in Bengali, in own words"
+          - "Identify the feelings of love, humility and longing expressed in the poem"
+      - id: icse-10-bengali-ch07-t02
+        title: "Kuli-Mojur (Kazi Nazrul Islam): dignity of labour and protest against exploitation"
+        learning_outcomes:
+          - "Explain how the poem protests against the ill-treatment of labourers"
+          - "Discuss the poet's view that workers build civilisation, with reference to the poem"
+      - id: icse-10-bengali-ch07-t03
+        title: "Aabar Asibo Phire (Jibanananda Das): longing to return to rural Bengal and its nature"
+        learning_outcomes:
+          - "Explain the poet's longing to return to Bengal in Bengali, in own words"
+          - "Pick out images of the Bengal countryside and comment on their effect"
+      - id: icse-10-bengali-ch07-t04
+        title: "Amalkanti (Nirendranath Chakraborty): a childhood friend, dreams and ordinary life"
+        learning_outcomes:
+          - "Explain what the poet's friend Amalkanti wished to become and what became of him"
+          - "Discuss the poem's message about dreams and the ordinary realities of life"
+      - id: icse-10-bengali-ch07-t05
+        title: "Kho-Kho (Amitabha Dasgupta): central idea, feeling and imagery"
+        learning_outcomes:
+          - "Explain the central idea of the poem in Bengali, in own words"
+          - "Identify the poet's feelings, tone and main images with reference to the poem"
+    removed_topics:
+      - "Class IX poems: Sabhyotar Proti (Rabindranath Thakur), Sinri (Sukanta Bhattacharya), Rabindranather Proti (Buddhadeb Basu), Phool Phutuk Na Phutuk (Subhash Mukhopadhyay), Babu Bolen (Sankha Ghosh) - see icse-9-bengali"
+    literature_texts:
+      - { title: "Bangabhoomir Proti", author: "Michael Madhusudan Dutta" }
+      - { title: "Kuli-Mojur", author: "Kazi Nazrul Islam" }
+      - { title: "Aabar Asibo Phire", author: "Jibanananda Das" }
+      - { title: "Amalkanti", author: "Nirendranath Chakraborty" }
+      - { title: "Kho-Kho", author: "Amitabha Dasgupta" }
+  - id: icse-10-bengali-ch08
+    number: 8
+    title: "Novel: Chander Pahar (Chapters 8 to 14)"
+    unit: "Section B: Prescribed Texts"
+    topics:
+      - id: icse-10-bengali-ch08-t01
+        title: "Chapters 8-14: sequence of events in the African adventure"
+        learning_outcomes:
+          - "Narrate the main events of chapters 8 to 14 in sequence in Bengali, in own words"
+      - id: icse-10-bengali-ch08-t02
+        title: "Shankar: courage, curiosity and resourcefulness"
+        learning_outcomes:
+          - "Write a character sketch of Shankar with incidents from the prescribed chapters"
+      - id: icse-10-bengali-ch08-t03
+        title: "Diego Alvarez and the other characters of the adventure"
+        learning_outcomes:
+          - "Describe Diego Alvarez and his relationship with Shankar, with examples"
+      - id: icse-10-bengali-ch08-t04
+        title: "The African landscape, wildlife and dangers as described in the novel"
+        learning_outcomes:
+          - "Explain how the descriptions of nature and danger create suspense and wonder"
+      - id: icse-10-bengali-ch08-t05
+        title: "Themes and style: adventure, the spirit of exploration and the title Chander Pahar"
+        learning_outcomes:
+          - "Discuss the themes of the novel and the significance of the title"
+          - "Comment on Bibhutibhushan's descriptive style with examples"
+    removed_topics:
+      - "Chapters 1 to 7 - Class IX portion; see icse-9-bengali"
+    literature_texts:
+      - { title: "Chander Pahar (Chapters 8 to 14)", author: "Bibhutibhushan Bandyopadhyay" }
+  - id: icse-10-bengali-ch09
+    number: 9
+    title: "Drama: Jumbo (Chapters 2 and 3)"
+    unit: "Section B: Prescribed Texts"
+    topics:
+      - id: icse-10-bengali-ch09-t01
+        title: "Chapter 2: events and dialogue"
+        learning_outcomes:
+          - "Narrate the events of chapter 2 in sequence in Bengali, in own words"
+      - id: icse-10-bengali-ch09-t02
+        title: "Chapter 3: events and resolution"
+        learning_outcomes:
+          - "Narrate the events of chapter 3 and explain how the action is resolved"
+      - id: icse-10-bengali-ch09-t03
+        title: "Characters of the play"
+        learning_outcomes:
+          - "Write character sketches of the main characters using their words and actions"
+      - id: icse-10-bengali-ch09-t04
+        title: "Theme, the title Jumbo and dramatic features"
+        learning_outcomes:
+          - "Explain the central theme of the play and the significance of its title"
+          - "Comment on the use of dialogue and stage situations in the prescribed chapters"
+    removed_topics:
+      - "Chapter 1 - Class IX portion; see icse-9-bengali"
+    literature_texts:
+      - { title: "Jumbo (Chapters 2 and 3)", author: "Mohit Chattopadhyay" }
+removed_topics: []

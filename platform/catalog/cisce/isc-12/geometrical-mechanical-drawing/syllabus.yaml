@@ -1,0 +1,345 @@
+# ISC Class 12 Geometrical and Mechanical Drawing (869) - ISC 2027 examination (Class XII portion only).
+# Source: platform/catalog/sources/cisce.md#isc-2027-geometrical-mechanical-drawing. Topic wording is our own summary.
+# Drawing-based subject: chapters teach the machine-drawing conventions, standard proportions and construction
+# details that working and assembly drawings need; students practise the drawings with instruments on A2 sheets.
+subject_id: isc-12-geometrical-mechanical-drawing
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-geometrical-mechanical-drawing, isc-2027-regulations]
+exam_notes: >-
+  Paper I Theory (Drawing - Engineering): 3 hours, 80 marks; candidates answer all questions, preparing working
+  drawings and assemblies from dimensioned sketches. Drawing board, tee-square and set-squares are required (a
+  parallel-motion board or drafting machine is permitted); A2 paper is used; IS:696-1972 (Code of Practice for
+  General Engineering Drawing) is followed, and candidates must know both First and Third Angle projection.
+  Paper II Project Work, 20 marks, assessed by the subject teacher and a locally appointed Visiting Examiner: three
+  A2 project sheets (at least one from Section A Orthographic Projections - front, top and side views in First or
+  Third Angle - and one from Section B Assembly Drawings - full sectional front view and top view of given machine
+  parts, omitting hidden lines), each 5 marks for size/completeness, line quality, neatness, accuracy and title
+  block (teacher and Visiting Examiner marks averaged, 15), plus a 5-mark viva-voce by the Visiting Examiner on the
+  sheets. The drawing sheets themselves are practical work and are not taught as chapters here.
+  The subject may not be taken with Geometrical and Building Drawing. Class XI plane and solid geometry (scales,
+  engineering curves, projections, sections and developments, isometric and oblique projection) is in
+  isc-11-geometrical-mechanical-drawing and is assumed background. CISCE lists items (a) to (h), not chapters: SOYL
+  opens with drawing-practice chapters and then groups the items into teachable chapters in syllabus order. No
+  item-wise marks weightage is published.
+units:
+  - { name: "Working drawings and assemblies: IS:696 drawing practice", marks: null }
+  - { name: "(a) Fastenings", marks: null }
+  - { name: "(b) Rigid and flexible joints", marks: null }
+  - { name: "(c) Screw threads and spur gears", marks: null }
+  - { name: "(d) Transmission of motion and power", marks: null }
+  - { name: "(e) Pressure transmission in pipes", marks: null }
+  - { name: "(f) Prime movers and simple machine tools", marks: null }
+  - { name: "(g) Datums, machining and surface texture symbols", marks: null }
+  - { name: "(h) Limits, fits and tolerances", marks: null }
+chapters:
+  - id: isc-12-geometrical-mechanical-drawing-ch01
+    number: 1
+    title: "Engineering Drawing Practice (IS:696)"
+    unit: "Working drawings and assemblies: IS:696 drawing practice"
+    topics:
+      - id: isc-12-geometrical-mechanical-drawing-ch01-t01
+        title: "Sheet layout, title block, lettering and the conventional types of line (thick, thin, chain, dashed) and their uses"
+        learning_outcomes:
+          - "Lay out an A2 sheet with border, title block and parts list in standard positions"
+          - "Choose the correct line type for visible edges, hidden edges, centre lines, section lines and dimension lines"
+      - id: isc-12-geometrical-mechanical-drawing-ch01-t02
+        title: "First Angle and Third Angle projection: arrangement of views and the projection symbol"
+        learning_outcomes:
+          - "Arrange the front view, top view and side views correctly in First Angle and in Third Angle projection"
+          - "Identify the method of projection of a given drawing from its symbol or view arrangement"
+      - id: isc-12-geometrical-mechanical-drawing-ch01-t03
+        title: "Sectional views: full and half sections, cutting-plane lines, hatching and hatching of adjacent parts"
+        learning_outcomes:
+          - "Draw a full sectional front view of a simple part with correct hatching"
+          - "Hatch adjacent parts of an assembly in different directions or spacings"
+      - id: isc-12-geometrical-mechanical-drawing-ch01-t04
+        title: "Conventions in sectioning: parts not sectioned along their axis (shafts, bolts, nuts, keys, pins, ribs, webs)"
+        learning_outcomes:
+          - "List the parts that are shown unsectioned when cut lengthwise and explain why"
+      - id: isc-12-geometrical-mechanical-drawing-ch01-t05
+        title: "Dimensioning: aligned and unidirectional systems, arrowheads, leaders, diameters, radii, chamfers and holes"
+        learning_outcomes:
+          - "Dimension a machine part completely without redundant or missing dimensions"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-mechanical-drawing-ch02
+    number: 2
+    title: "Working Drawings and Assembly Drawings"
+    unit: "Working drawings and assemblies: IS:696 drawing practice"
+    topics:
+      - id: isc-12-geometrical-mechanical-drawing-ch02-t01
+        title: "Detail (working) drawings versus assembly drawings; information each must carry"
+        learning_outcomes:
+          - "Compare a detail drawing and an assembly drawing in purpose and content"
+      - id: isc-12-geometrical-mechanical-drawing-ch02-t02
+        title: "Reading a dimensioned sketch of separate parts and working out how the parts fit together"
+        learning_outcomes:
+          - "Determine the assembled position of each part from dimensioned sketches of the details"
+      - id: isc-12-geometrical-mechanical-drawing-ch02-t03
+        title: "Drawing an assembly: choosing the views, sectional front view and top view with hidden lines omitted"
+        learning_outcomes:
+          - "Plan the views and scale for an assembly drawing so that it fits the sheet"
+          - "Draw a full sectional front view of an assembly from its part details"
+      - id: isc-12-geometrical-mechanical-drawing-ch02-t04
+        title: "Parts list (bill of materials), part numbering and materials (cast iron, mild steel, brass, gunmetal)"
+        learning_outcomes:
+          - "Prepare a parts list giving part number, name, material and quantity"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-mechanical-drawing-ch03
+    number: 3
+    title: "Nuts, Bolts, Studs and Screws"
+    unit: "(a) Fastenings"
+    topics:
+      - id: isc-12-geometrical-mechanical-drawing-ch03-t01
+        title: "Hexagonal and square nuts: standard proportions in terms of the nominal diameter d; chamfer arcs"
+        learning_outcomes:
+          - "Draw three views of a hexagonal nut using standard proportions"
+          - "Construct the chamfer arcs on the faces of a hexagonal nut"
+      - id: isc-12-geometrical-mechanical-drawing-ch03-t02
+        title: "Bolts: hexagonal-headed, square-headed, cup-headed, T-headed, eye and hook bolts; bolt with nut and washer"
+        learning_outcomes:
+          - "Draw a hexagonal-headed bolt with nut and washer in assembled position"
+          - "Select a suitable bolt type for a given application"
+      - id: isc-12-geometrical-mechanical-drawing-ch03-t03
+        title: "Studs, set screws, cap screws and machine screws; tapped holes"
+        learning_outcomes:
+          - "Explain when a stud is preferred to a through bolt"
+          - "Draw a stud fitted in a tapped hole with the thread run-out shown correctly"
+      - id: isc-12-geometrical-mechanical-drawing-ch03-t04
+        title: "Washers and foundation bolts"
+        learning_outcomes:
+          - "State the purpose of plain and spring washers"
+          - "Sketch a rag or eye foundation bolt and explain how it is held in the foundation"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-mechanical-drawing-ch04
+    number: 4
+    title: "Locking Devices, Keys, Cotters and Pins"
+    unit: "(a) Fastenings"
+    topics:
+      - id: isc-12-geometrical-mechanical-drawing-ch04-t01
+        title: "Locking devices: lock nut, split pin, castle nut, slotted nut, spring washer, locking plate and set-screw locking"
+        learning_outcomes:
+          - "Explain why nuts loosen under vibration and how each locking device prevents it"
+          - "Draw a castle nut with split pin in position"
+      - id: isc-12-geometrical-mechanical-drawing-ch04-t02
+        title: "Keys: saddle keys, sunk taper key, gib-head key, feather key and Woodruff key; keyways"
+        learning_outcomes:
+          - "Draw a gib-head key fitted between a shaft and a hub with standard proportions"
+          - "Compare a taper key and a feather key in function"
+      - id: isc-12-geometrical-mechanical-drawing-ch04-t03
+        title: "Cotters and their taper; pins (taper pin, parallel pin, split pin) as fastenings"
+        learning_outcomes:
+          - "Explain why a cotter is tapered and how it draws two parts together"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-mechanical-drawing-ch05
+    number: 5
+    title: "Rigid and Flexible Joints"
+    unit: "(b) Rigid and flexible joints"
+    topics:
+      - id: isc-12-geometrical-mechanical-drawing-ch05-t01
+        title: "Cotter joints: socket and spigot joint, sleeve and cotter joint, gib and cotter joint for rods"
+        learning_outcomes:
+          - "Draw the sectional front view of a socket and spigot cotter joint from given proportions"
+          - "Explain the role of the gib in a gib and cotter joint"
+      - id: isc-12-geometrical-mechanical-drawing-ch05-t02
+        title: "Knuckle joint: parts, proportions and use where angular movement is needed"
+        learning_outcomes:
+          - "Draw an assembled knuckle joint showing the eye, fork, pin and collar"
+          - "Distinguish a rigid joint from a flexible joint with examples"
+      - id: isc-12-geometrical-mechanical-drawing-ch05-t03
+        title: "Riveted joints as permanent rigid joints: rivet heads, lap and butt joints, single and double riveting"
+        learning_outcomes:
+          - "Sketch a single-riveted lap joint and a butt joint with cover plate"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-mechanical-drawing-ch06
+    number: 6
+    title: "Screw Threads"
+    unit: "(c) Screw threads and spur gears"
+    topics:
+      - id: isc-12-geometrical-mechanical-drawing-ch06-t01
+        title: "Thread terms: major, minor and pitch diameters, pitch, lead, crest, root, flank, thread angle; right- and left-hand; single- and multi-start"
+        learning_outcomes:
+          - "Define pitch and lead and relate them for a multi-start thread"
+      - id: isc-12-geometrical-mechanical-drawing-ch06-t02
+        title: "Thread profiles and their proportions: ISO metric (V), BSW, square, Acme, buttress and knuckle threads, with uses"
+        learning_outcomes:
+          - "Draw the profiles of V, square and Acme threads to given proportions"
+          - "Match each thread form to a typical use (fastening, power screw, one-way thrust)"
+      - id: isc-12-geometrical-mechanical-drawing-ch06-t03
+        title: "Projection of a thread as a helix and the conventional (simplified) representation of external and internal threads"
+        learning_outcomes:
+          - "Show external and internal threads, in view and in section, by the conventional method"
+      - id: isc-12-geometrical-mechanical-drawing-ch06-t04
+        title: "Thread designation on drawings (for example M20 x 2.5)"
+        learning_outcomes:
+          - "Interpret and write a metric thread designation on a drawing"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-mechanical-drawing-ch07
+    number: 7
+    title: "Spur Gears"
+    unit: "(c) Screw threads and spur gears"
+    topics:
+      - id: isc-12-geometrical-mechanical-drawing-ch07-t01
+        title: "Gear terms: pitch circle, module, circular pitch, addendum, dedendum, clearance, tooth thickness, face width"
+        learning_outcomes:
+          - "Calculate pitch-circle, addendum-circle and root-circle diameters from the module and number of teeth"
+      - id: isc-12-geometrical-mechanical-drawing-ch07-t02
+        title: "Profile of spur gear teeth: involute profile and approximate construction of the tooth outline"
+        learning_outcomes:
+          - "Construct the approximate profile of a spur gear tooth from given data"
+      - id: isc-12-geometrical-mechanical-drawing-ch07-t03
+        title: "Conventional representation of a gear wheel and of a pair of meshing spur gears"
+        learning_outcomes:
+          - "Draw a spur gear wheel by the conventional method in two views"
+          - "Show two spur gears in mesh with correct centre distance"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-mechanical-drawing-ch08
+    number: 8
+    title: "Shafts, Couplings and Clutches"
+    unit: "(d) Transmission of motion and power"
+    topics:
+      - id: isc-12-geometrical-mechanical-drawing-ch08-t01
+        title: "Shafts and power transmission; why couplings are needed"
+        learning_outcomes:
+          - "Explain the difference between a coupling and a clutch"
+      - id: isc-12-geometrical-mechanical-drawing-ch08-t02
+        title: "Rigid couplings: muff (sleeve) coupling, split muff coupling, flanged coupling (unprotected and protected)"
+        learning_outcomes:
+          - "Draw the sectional front view of a protected flanged coupling from proportions"
+      - id: isc-12-geometrical-mechanical-drawing-ch08-t03
+        title: "Flexible couplings: bushed pin type, Oldham's coupling and universal (Hooke's) joint"
+        learning_outcomes:
+          - "Explain how Oldham's coupling connects shafts that are parallel but not in line"
+          - "Draw an assembled universal joint"
+      - id: isc-12-geometrical-mechanical-drawing-ch08-t04
+        title: "Clutches: claw (jaw) clutch and cone friction clutch"
+        learning_outcomes:
+          - "Compare a positive claw clutch with a friction cone clutch in operation"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-mechanical-drawing-ch09
+    number: 9
+    title: "Bearings and Shaft Supports"
+    unit: "(d) Transmission of motion and power"
+    topics:
+      - id: isc-12-geometrical-mechanical-drawing-ch09-t01
+        title: "Journal bearings: solid bearing, bushed bearing and plummer block (pedestal bearing)"
+        learning_outcomes:
+          - "Draw the assembly of a plummer block in sectional front view and top view"
+          - "Explain why a split bearing with brasses is used for heavy shafts"
+      - id: isc-12-geometrical-mechanical-drawing-ch09-t02
+        title: "Foot-step (pivot) bearing for vertical shafts and collar thrust bearing"
+        learning_outcomes:
+          - "Explain how a foot-step bearing carries axial load"
+      - id: isc-12-geometrical-mechanical-drawing-ch09-t03
+        title: "Shaft supports: wall bracket, pillar bracket and hangers"
+        learning_outcomes:
+          - "Select a support suited to a shaft running along a wall or from a ceiling"
+      - id: isc-12-geometrical-mechanical-drawing-ch09-t04
+        title: "Rolling-contact bearings (ball and roller) and their conventional representation; lubrication arrangements"
+        learning_outcomes:
+          - "Compare sliding and rolling-contact bearings"
+          - "Show a ball bearing by its conventional symbol in an assembly"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-mechanical-drawing-ch10
+    number: 10
+    title: "Pipe Joints, Fittings and Pressure Packing"
+    unit: "(e) Pressure transmission in pipes"
+    topics:
+      - id: isc-12-geometrical-mechanical-drawing-ch10-t01
+        title: "Pipes for water, oil, steam and gas; materials and requirements of joints under pressure"
+        learning_outcomes:
+          - "Explain how pressure and temperature of the fluid affect the choice of pipe joint"
+      - id: isc-12-geometrical-mechanical-drawing-ch10-t02
+        title: "Pipe joints: flanged joint, socket and spigot joint, hydraulic (oval-flanged) joint and union joint"
+        learning_outcomes:
+          - "Draw a flanged pipe joint and a union joint in section"
+          - "State where a hydraulic joint is used"
+      - id: isc-12-geometrical-mechanical-drawing-ch10-t03
+        title: "Pipe fittings: tees, bends, elbows, reducers and their conventional symbols"
+        learning_outcomes:
+          - "Identify pipe fittings from their conventional symbols on a layout"
+      - id: isc-12-geometrical-mechanical-drawing-ch10-t04
+        title: "Expansion joints for steam pipes (gland type and corrugated); stuffing box and gland pressure packing"
+        learning_outcomes:
+          - "Explain why steam pipes need expansion joints"
+          - "Draw a stuffing box with gland and packing and explain how it prevents leakage"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-mechanical-drawing-ch11
+    number: 11
+    title: "Prime Movers and Simple Machine Tools"
+    unit: "(f) Prime movers and simple machine tools"
+    topics:
+      - id: isc-12-geometrical-mechanical-drawing-ch11-t01
+        title: "Engine parts: piston, piston rings and gudgeon pin; connecting rod; crank and crankshaft"
+        learning_outcomes:
+          - "Draw the assembly of a piston with gudgeon pin and connecting rod small end"
+          - "Explain the function of each part in converting reciprocating motion to rotation"
+      - id: isc-12-geometrical-mechanical-drawing-ch11-t02
+        title: "Crosshead, eccentric and steam-engine stop valve as constructional details of prime movers"
+        learning_outcomes:
+          - "Explain the purpose of an eccentric and draw its assembly"
+      - id: isc-12-geometrical-mechanical-drawing-ch11-t03
+        title: "Simple machine tool parts: lathe tool post, tailstock and machine vice"
+        learning_outcomes:
+          - "Draw the sectional front view of a lathe tailstock from part details"
+      - id: isc-12-geometrical-mechanical-drawing-ch11-t04
+        title: "Screw jack and similar power-screw devices"
+        learning_outcomes:
+          - "Draw the assembly of a screw jack and identify the thread form used"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-mechanical-drawing-ch12
+    number: 12
+    title: "Datums, Machining and Surface Texture Symbols"
+    unit: "(g) Datums, machining and surface texture symbols"
+    topics:
+      - id: isc-12-geometrical-mechanical-drawing-ch12-t01
+        title: "Reference points and planes (datums) in dimensioning; chain, parallel (datum) and combined dimensioning"
+        learning_outcomes:
+          - "Dimension a part from a datum face and explain why this avoids accumulation of errors"
+      - id: isc-12-geometrical-mechanical-drawing-ch12-t02
+        title: "Machined and unmachined surfaces; machining symbols and machining allowance"
+        learning_outcomes:
+          - "Mark the surfaces to be machined on a casting drawing using the correct symbol"
+      - id: isc-12-geometrical-mechanical-drawing-ch12-t03
+        title: "Surface texture: roughness value (Ra), lay, and the complete surface texture symbol on drawings"
+        learning_outcomes:
+          - "Interpret a surface texture symbol including roughness value and lay direction"
+          - "Select a suitable roughness grade for a bearing surface and a non-mating surface"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-mechanical-drawing-ch13
+    number: 13
+    title: "Limits, Fits and Tolerances"
+    unit: "(h) Limits, fits and tolerances"
+    topics:
+      - id: isc-12-geometrical-mechanical-drawing-ch13-t01
+        title: "Basic size, limits of size, upper and lower deviations, tolerance and allowance; zero line"
+        learning_outcomes:
+          - "Calculate the limits and tolerance of a dimension from its deviations"
+      - id: isc-12-geometrical-mechanical-drawing-ch13-t02
+        title: "Fits: clearance, transition and interference; hole-basis and shaft-basis systems"
+        learning_outcomes:
+          - "Classify a fit from the limits of a hole and a shaft"
+          - "Calculate maximum and minimum clearance or interference"
+      - id: isc-12-geometrical-mechanical-drawing-ch13-t03
+        title: "IS:919 / BS 4500 system: fundamental deviation letters and tolerance grades (for example H7/g6)"
+        learning_outcomes:
+          - "Interpret a fit designation such as 40 H7/g6 using a table of limits"
+      - id: isc-12-geometrical-mechanical-drawing-ch13-t04
+        title: "Writing toleranced dimensions on drawings: limit dimensioning, plus/minus tolerances, unilateral and bilateral"
+        learning_outcomes:
+          - "Write toleranced dimensions on a drawing by two different methods"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

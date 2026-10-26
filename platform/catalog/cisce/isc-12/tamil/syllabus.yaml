@@ -1,0 +1,323 @@
+# ISC Class 12 Tamil (Indian Language elective, code 814) - ISC 2027 examination.
+# Literature: titles and authors only (CONTEXT section 8). Students read the texts in their own textbook.
+subject_id: isc-12-tamil
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-indian-languages, isc-2027-prescribed-books, cisce-circular-2026-27-33-indian-languages, isc-2027-regulations]
+exam_notes: >-
+  Paper I Theory: one paper of 3 hours, 80 marks, in two sections. Section A Language (40 marks, three compulsory
+  questions): a composition of about 400 words in Tamil from a choice of six topics; an unseen passage of about 300
+  words with questions and/or a summary with a heading (testing the ability to summarise and/or expand an idea); and
+  functional grammar (correction of sentences and use of words/idioms in sentences, with correct agreement of number,
+  gender, case, tense and voice). Section B Prescribed Textbooks (40 marks): answer four questions from any three of
+  the prescribed books. Prescribed texts are bifurcated (Circular 2026-27/33): the ISC 2027 paper is set only on the
+  Class XII portion listed here; the Class XI portion (isc-11-tamil) is listed under each chapter's removed_topics.
+  Podhu Tamil is the Tamil Nadu Text Book Corporation Higher Secondary Second Year Part I Tamil (2005 edition); its
+  Class XII sections are split here into three teachable chapters. Paper II Project Work (20 marks): Listening (5) and
+  Speaking (5) assessed by the teacher; Writing (10) assessed by a Visiting Examiner - one assignment of 1000-1500
+  words on a literature text not used in the Class XI project. CISCE lists topics, not chapters: SOYL grouped them
+  into teachable chapters in syllabus order. CISCE does not publish question-wise marks within Section A and describes
+  composition and grammar only generically: the composition types and grammar breakdown below are SOYL's, adapted to
+  the grammar of the language. SOYL covers all four prescribed books so a student can pick any three. Titles are in
+  English / CISCE transliteration; native-script titles to be added in language review.
+units:
+  - { name: "Section A: Language", marks: 40 }
+  - { name: "Section B: Prescribed Textbooks", marks: 40 }
+chapters:
+  - id: isc-12-tamil-ch01
+    number: 1
+    title: "Composition writing (about 400 words)"
+    unit: "Section A: Language"
+    topics:
+      - id: isc-12-tamil-ch01-t01
+        title: "Planning a composition: choosing a topic, outline, introduction, body and conclusion"
+        learning_outcomes:
+          - "Choose a suitable topic from a choice of six and prepare an outline before writing"
+          - "Write a well-organised composition of about 400 words in Tamil, divided into paragraphs"
+      - id: isc-12-tamil-ch01-t02
+        title: "Descriptive and narrative compositions"
+        learning_outcomes:
+          - "Describe an experience, journey, place or event in Tamil vividly and in a logical sequence"
+      - id: isc-12-tamil-ch01-t03
+        title: "Reflective and argumentative compositions: for and against, and conclusion"
+        learning_outcomes:
+          - "Present a point of view on a social or current issue in Tamil, supported by reasons and examples"
+          - "Weigh opposing arguments fairly and write a balanced conclusion"
+      - id: isc-12-tamil-ch01-t04
+        title: "Story writing from a given sentence, proverb or outline"
+        learning_outcomes:
+          - "Write an original story in Tamil that develops a given opening line, proverb or outline to a meaningful end"
+      - id: isc-12-tamil-ch01-t05
+        title: "Language and style: word choice, idioms, spelling and punctuation"
+        learning_outcomes:
+          - "Use vocabulary and idiomatic expressions suited to the topic"
+          - "Proofread a composition and correct its errors of spelling and punctuation in Tamil"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-tamil-ch02
+    number: 2
+    title: "Comprehension: unseen passage (about 300 words) and summary"
+    unit: "Section A: Language"
+    topics:
+      - id: isc-12-tamil-ch02-t01
+        title: "Identifying the main idea and supporting points of a passage"
+        learning_outcomes:
+          - "State the central idea of an unseen Tamil passage of about 300 words in your own words"
+      - id: isc-12-tamil-ch02-t02
+        title: "Answering questions on the passage in your own words"
+        learning_outcomes:
+          - "Answer factual and inferential questions accurately without copying lines from the passage"
+          - "Explain the meaning of difficult words and phrases from their context"
+      - id: isc-12-tamil-ch02-t03
+        title: "Writing a summary with a heading"
+        learning_outcomes:
+          - "Write a summary of the passage in about one-third of its length and give it a suitable heading"
+      - id: isc-12-tamil-ch02-t04
+        title: "Expanding an idea given in the passage"
+        learning_outcomes:
+          - "Expand a statement or idea from the passage into a paragraph with examples"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-tamil-ch03
+    number: 3
+    title: "Grammar: correction of sentences"
+    unit: "Section A: Language"
+    topics:
+      - id: isc-12-tamil-ch03-t01
+        title: "Agreement of subject and verb in thinai, paal and idam (class, gender-number and person)"
+        learning_outcomes:
+          - "Identify and correct verbs that do not agree with the subject's thinai, paal or person"
+          - "Use singular and plural forms of nouns and verbs consistently in a sentence"
+      - id: isc-12-tamil-ch03-t02
+        title: "Vetrumai urubugal: case markers and their correct use"
+        learning_outcomes:
+          - "Identify a wrong case marker or postposition in a sentence and replace it with the correct form"
+      - id: isc-12-tamil-ch03-t03
+        title: "Errors of tense and voice"
+        learning_outcomes:
+          - "Remove inconsistencies of tense within a sentence"
+          - "Rewrite sentences correctly in the active and passive voice"
+      - id: isc-12-tamil-ch03-t04
+        title: "Errors of word order, redundancy, wrong word choice and spelling"
+        learning_outcomes:
+          - "Rewrite a faulty sentence correctly by fixing word order, removing redundant words and correcting spelling"
+      - id: isc-12-tamil-ch03-t05
+        title: "Sandhi in writing: vali migum and vali migaa idangal (doubling of hard consonants)"
+        learning_outcomes:
+          - "Apply the rules for doubling hard consonants to correct written sentences"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-tamil-ch04
+    number: 4
+    title: "Grammar: using words and idioms in sentences"
+    unit: "Section A: Language"
+    topics:
+      - id: isc-12-tamil-ch04-t01
+        title: "Idioms: meaning and use in sentences"
+        learning_outcomes:
+          - "Give the meaning of a Tamil idiom and use it in a sentence that makes the meaning clear"
+      - id: isc-12-tamil-ch04-t02
+        title: "Proverbs: meaning and use"
+        learning_outcomes:
+          - "Distinguish a proverb from an idiom and use a proverb aptly in context"
+      - id: isc-12-tamil-ch04-t03
+        title: "Using given words correctly in sentences: similar-sounding words with different meanings"
+        learning_outcomes:
+          - "Bring out the difference in meaning between similar-sounding words by using each in a sentence"
+          - "Use a given word in a sentence in its correct form"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-tamil-ch05
+    number: 5
+    title: "Podhu Tamil I: Thogai Noolgal and Thirukkural"
+    unit: "Section B: Prescribed Textbooks"
+    topics:
+      - id: isc-12-tamil-ch05-t01
+        title: "Natrinai: prescribed Sangam akam poems"
+        learning_outcomes:
+          - "Explain the situation (thurai) and the speaker of each prescribed poem in your own words"
+          - "Identify the landscape (thinai) and the natural images used to suggest feeling"
+      - id: isc-12-tamil-ch05-t02
+        title: "Kurundhogai: prescribed Sangam akam poems"
+        learning_outcomes:
+          - "Explain the situation (thurai) and the speaker of each prescribed poem in your own words"
+          - "Identify the landscape (thinai) and the natural images used to suggest feeling"
+      - id: isc-12-tamil-ch05-t03
+        title: "Ainkurunooru: prescribed Sangam akam poems"
+        learning_outcomes:
+          - "Explain the situation (thurai) and the speaker of each prescribed poem in your own words"
+          - "Identify the landscape (thinai) and the natural images used to suggest feeling"
+      - id: isc-12-tamil-ch05-t04
+        title: "Thirukkural - Arivudaimai: the possession of wisdom"
+        learning_outcomes:
+          - "Explain the meaning of the prescribed couplets on wisdom in your own words"
+          - "Apply the ideas of selected couplets to situations in daily life"
+      - id: isc-12-tamil-ch05-t05
+        title: "Thirukkural - Vinaithitpam: firmness in action"
+        learning_outcomes:
+          - "Explain the meaning of the prescribed couplets on firmness of mind in action"
+          - "Identify the figures of speech and the venba metre in a couplet"
+    removed_topics:
+      - "Podhu Tamil: Purananooru, Agananooru; Thirukkural Cheinandriyaridhal, Poraiyudaimai (Class XI portion; see isc-11-tamil)"
+    literature_texts:
+      - { title: "Podhu Tamil - Thogai Noolgal: Natrinai, Kurundhogai, Ainkurunooru" }
+      - { title: "Podhu Tamil - Thirukkural: Arivudaimai, Vinaithitpam" }
+  - id: isc-12-tamil-ch06
+    number: 6
+    title: "Podhu Tamil II: Thodarnilaich Cheyyul and Chitrilakkiyangal"
+    unit: "Section B: Prescribed Textbooks"
+    topics:
+      - id: isc-12-tamil-ch06-t01
+        title: "Thembavani (Veeramamunivar): the prescribed episode from the Christian epic"
+        learning_outcomes:
+          - "Narrate the prescribed episode in your own words"
+          - "Comment on the poet's use of Tamil epic conventions and imagery"
+      - id: isc-12-tamil-ch06-t02
+        title: "Pandiyan Parisu (Bharathidasan): the prescribed portion of the narrative poem"
+        learning_outcomes:
+          - "Narrate the events of the prescribed portion in your own words"
+          - "Explain the values and emotions the poet brings out in the prescribed portion"
+      - id: isc-12-tamil-ch06-t03
+        title: "Madhuraik Kalambagam (Kumaraguruparar): the kalambagam form and its devotional verses"
+        learning_outcomes:
+          - "Explain the features of the kalambagam genre with reference to the prescribed verses"
+          - "Explain the meaning of the prescribed verses in your own words"
+      - id: isc-12-tamil-ch06-t04
+        title: "Mukoodar Pallu: the pallu genre and the life of farm workers"
+        learning_outcomes:
+          - "Explain the features of the pallu genre with reference to the prescribed verses"
+          - "Describe the picture of agricultural life and labour in the prescribed verses"
+    removed_topics:
+      - "Podhu Tamil: Silappadhigaram, Kambaramayanam, Rasarasa Chozhanula, Thiruvengadathandhadhi (Class XI portion; see isc-11-tamil)"
+    literature_texts:
+      - { title: "Podhu Tamil - Thodarnilaich Cheyyul: Thembavani, Pandiyan Parisu" }
+      - { title: "Podhu Tamil - Chitrilakkiyangal: Madhuraik Kalambagam, Mukoodar Pallu" }
+  - id: isc-12-tamil-ch07
+    number: 7
+    title: "Podhu Tamil III: Marumalarchi Padalgal (modern poems)"
+    unit: "Section B: Prescribed Textbooks"
+    topics:
+      - id: isc-12-tamil-ch07-t01
+        title: "Manidha Neyam: central idea, imagery and style"
+        learning_outcomes:
+          - "Explain the central idea of the poem in your own words"
+          - "Comment on the poem's imagery and its social message"
+      - id: isc-12-tamil-ch07-t02
+        title: "Velaigallala Velvigale: central idea, imagery and style"
+        learning_outcomes:
+          - "Explain the central idea of the poem in your own words"
+          - "Comment on the poem's imagery and its social message"
+      - id: isc-12-tamil-ch07-t03
+        title: "Theekuchigal: central idea, imagery and style"
+        learning_outcomes:
+          - "Explain the central idea of the poem in your own words"
+          - "Comment on the poem's imagery and its social message"
+    removed_topics:
+      - "Marumalarchi Padalgal: Malaikala Varunanai, Puthaga Salai, Kaadu, Chikkanam (Class XI portion; see isc-11-tamil)"
+    literature_texts:
+      - { title: "Podhu Tamil - Marumalarchi Padalgal: Manidha Neyam, Velaigallala Velvigale, Theekuchigal" }
+  - id: isc-12-tamil-ch08
+    number: 8
+    title: "Kadhai Kovai: short stories for non-detailed study (Class XII portion)"
+    unit: "Section B: Prescribed Textbooks"
+    topics:
+      - id: isc-12-tamil-ch08-t01
+        title: "Kizhisal: short story: plot, characters and theme"
+        learning_outcomes:
+          - "Summarise the story in your own words, bringing out its main events and turning point"
+          - "Describe the main characters and explain the theme or message of the story"
+      - id: isc-12-tamil-ch08-t02
+        title: "Oor Vulasap Payanam: short story: plot, characters and theme"
+        learning_outcomes:
+          - "Summarise the story in your own words, bringing out its main events and turning point"
+          - "Describe the main characters and explain the theme or message of the story"
+      - id: isc-12-tamil-ch08-t03
+        title: "Ovvoru Kallaay: short story: plot, characters and theme"
+        learning_outcomes:
+          - "Summarise the story in your own words, bringing out its main events and turning point"
+          - "Describe the main characters and explain the theme or message of the story"
+      - id: isc-12-tamil-ch08-t04
+        title: "Mann: short story: plot, characters and theme"
+        learning_outcomes:
+          - "Summarise the story in your own words, bringing out its main events and turning point"
+          - "Describe the main characters and explain the theme or message of the story"
+      - id: isc-12-tamil-ch08-t05
+        title: "Pazhikku Pazhi: short story: plot, characters and theme"
+        learning_outcomes:
+          - "Summarise the story in your own words, bringing out its main events and turning point"
+          - "Describe the main characters and explain the theme or message of the story"
+    removed_topics:
+      - "Class XI stories of Kadhai Kovai: Paalvannam Pillai, Mookkapillai Veettu Virundhu, Chattai, Veli, Magan (Class XI portion; see isc-11-tamil)"
+    literature_texts:
+      - { title: "Kizhisal" }
+      - { title: "Oor Vulasap Payanam" }
+      - { title: "Ovvoru Kallaay" }
+      - { title: "Mann" }
+      - { title: "Pazhikku Pazhi" }
+  - id: isc-12-tamil-ch09
+    number: 9
+    title: "Novel: Sinekithi (Akilan), chapters 9-16"
+    unit: "Section B: Prescribed Textbooks"
+    topics:
+      - id: isc-12-tamil-ch09-t01
+        title: "Chapters 9-12: events and development of the story"
+        learning_outcomes:
+          - "Narrate the main events of this part of the novel in sequence in your own words"
+          - "Explain how this part develops the central conflict and the characters"
+      - id: isc-12-tamil-ch09-t02
+        title: "Chapters 13-16: events and development of the story"
+        learning_outcomes:
+          - "Narrate the main events of this part of the novel in sequence in your own words"
+          - "Explain how this part develops the central conflict and the characters"
+      - id: isc-12-tamil-ch09-t03
+        title: "Character sketches of the main characters"
+        learning_outcomes:
+          - "Write a character sketch of a main character, supported by incidents from the prescribed portion"
+          - "Compare two characters and their responses to the central conflict"
+      - id: isc-12-tamil-ch09-t04
+        title: "Themes, setting and message"
+        learning_outcomes:
+          - "Identify the main themes of the prescribed portion and relate them to the setting and social background of the novel"
+      - id: isc-12-tamil-ch09-t05
+        title: "Title, narrative technique and language"
+        learning_outcomes:
+          - "Explain the significance of the title with reference to the prescribed portion"
+          - "Comment on the author's narrative style and use of language with examples"
+    removed_topics:
+      - "Sinekithi chapters 1-8 (Class XI portion; see isc-11-tamil)"
+    literature_texts:
+      - { title: "Sinekithi (chapters 9 to 16)", author: "Akilan" }
+  - id: isc-12-tamil-ch10
+    number: 10
+    title: "Travelogue: Yan Kanda Ilankai (Dr. M. Varadarajan), chapters 3, 4 and 5"
+    unit: "Section B: Prescribed Textbooks"
+    topics:
+      - id: isc-12-tamil-ch10-t01
+        title: "Chapter 3: places, people and experiences described"
+        learning_outcomes:
+          - "Summarise the places, people and experiences described in chapter 3"
+      - id: isc-12-tamil-ch10-t02
+        title: "Chapter 4: places, people and experiences described"
+        learning_outcomes:
+          - "Summarise the places, people and experiences described in chapter 4"
+      - id: isc-12-tamil-ch10-t03
+        title: "Chapter 5: places, people and experiences described"
+        learning_outcomes:
+          - "Summarise the places, people and experiences described in chapter 5"
+      - id: isc-12-tamil-ch10-t04
+        title: "The writer's observations of life and culture in Sri Lanka"
+        learning_outcomes:
+          - "Explain what the writer observes about the life, culture and Tamil community of Sri Lanka in these chapters"
+      - id: isc-12-tamil-ch10-t05
+        title: "Travel writing: purpose, structure and reflection"
+        learning_outcomes:
+          - "Identify the features of travel writing in the prescribed chapters and explain how the writer mixes description with reflection"
+      - id: isc-12-tamil-ch10-t06
+        title: "Dr. M. Varadarajan's language and style"
+        learning_outcomes:
+          - "Comment on the writer's simple, descriptive style with examples"
+    removed_topics:
+      - "Yan Kanda Ilankai chapters 1 and 2 (Class XI portion; see isc-11-tamil)"
+    literature_texts:
+      - { title: "Yan Kanda Ilankai (chapters 3, 4 & 5)", author: "Dr. M. Varadarajan" }
+removed_topics: []

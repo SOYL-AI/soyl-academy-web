@@ -1,0 +1,451 @@
+# ICSE Class 10 Economics (code 64, Group II) - ICSE 2027 examination, CLASS X portion only.
+# Source: platform/catalog/sources/cisce.md#icse-2027-economics. Topic wording is our own summary of the official scope.
+subject_id: icse-10-economics
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2027-economics, icse-2027-regulations]
+exam_notes: >-
+  One theory paper of 2 hours, 80 marks, plus internal assessment 20 marks (at least one project/assignment set by
+  the teacher from the syllabus, e.g. analysing the factors of production in a local unit, a tax survey of 15 neighbours,
+  or the effect of GST on five everyday products; marked 10 by the subject teacher and 10 by an external examiner).
+  Group II elective; candidates offering Economic Applications (Group III) may not offer Economics.
+  The syllabus does not print the question-paper pattern; ICSE Group II papers usually open with compulsory short-answer
+  questions across the syllabus followed by a choice of structured long questions (check the latest CISCE specimen paper).
+  The ICSE 2027 paper is set only on the Class X syllabus (Class IX portion is in icse-9-economics).
+  CISCE lists numbered topics, not textbook chapters: SOYL groups them into 16 teachable chapters in syllabus order,
+  except that elasticity of demand and supply (printed as item 1(ii) inside The Productive Mechanism) is taught after
+  the theory of demand and supply, as in common ICSE texts. No unit-wise marks weightage is published.
+units:
+  - { name: "1. The Productive Mechanism", marks: null }
+  - { name: "2. Theory of Demand and Supply", marks: null }
+  - { name: "3. Market", marks: null }
+  - { name: "4. Banking in India", marks: null }
+  - { name: "5. Inflation", marks: null }
+  - { name: "6. Consumer Awareness", marks: null }
+chapters:
+  - id: icse-10-economics-ch01
+    number: 1
+    title: "Factors of Production and Land"
+    unit: "1. The Productive Mechanism"
+    topics:
+      - id: icse-10-economics-ch01-t01
+        title: "Factors of production: land, labour, capital and entrepreneur and their rewards"
+        learning_outcomes:
+          - "Identify the four factors of production used by a given producer, such as a rice mill or a tailoring unit"
+          - "Explain how the combination of factors available shapes the production structure of an economy"
+      - id: icse-10-economics-ch01-t02
+        title: "Land: meaning and characteristics"
+        learning_outcomes:
+          - "Define land in the economic sense, including natural resources above and below the surface"
+          - "Explain characteristics of land such as fixed supply, immobility, heterogeneity and being a gift of nature"
+      - id: icse-10-economics-ch01-t03
+        title: "Productivity of land: meaning and factors affecting it"
+        learning_outcomes:
+          - "Define productivity of land"
+          - "Explain how fertility, location, irrigation, use of technology and land improvements affect the productivity of land"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economics-ch02
+    number: 2
+    title: "Labour"
+    unit: "1. The Productive Mechanism"
+    topics:
+      - id: icse-10-economics-ch02-t01
+        title: "Labour: meaning and characteristics"
+        learning_outcomes:
+          - "Distinguish labour as a factor of production from non-economic physical or mental effort"
+          - "Explain characteristics of labour such as perishability, inseparability from the labourer and weak bargaining power"
+      - id: icse-10-economics-ch02-t02
+        title: "Division of labour: meaning, types (simple, complex, territorial) and advantages"
+        learning_outcomes:
+          - "Classify a given example as simple, complex or territorial division of labour"
+          - "Explain the advantages of division of labour to producers, workers and consumers"
+      - id: icse-10-economics-ch02-t03
+        title: "Efficiency of labour: meaning and factors"
+        learning_outcomes:
+          - "Define efficiency of labour and explain how health, education, training and working conditions influence it"
+      - id: icse-10-economics-ch02-t04
+        title: "Reasons for low efficiency of Indian labour"
+        learning_outcomes:
+          - "Explain at least five reasons for the low efficiency of labour in India, such as poor health, illiteracy and lack of training"
+          - "Suggest measures to raise the efficiency of Indian workers"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economics-ch03
+    number: 3
+    title: "Capital and Capital Formation"
+    unit: "1. The Productive Mechanism"
+    topics:
+      - id: icse-10-economics-ch03-t01
+        title: "Capital: meaning and characteristics"
+        learning_outcomes:
+          - "Define capital as a man-made means of further production"
+          - "Explain characteristics of capital such as being produced, depreciable and highly mobile"
+      - id: icse-10-economics-ch03-t02
+        title: "Types of capital: physical and financial capital"
+        learning_outcomes:
+          - "Classify given items such as machines, buildings, shares and bank deposits as physical or financial capital"
+      - id: icse-10-economics-ch03-t03
+        title: "Capital formation: meaning and process (saving, mobilisation of savings, investment)"
+        learning_outcomes:
+          - "Define capital formation"
+          - "Describe the three stages of capital formation, giving the role of banks and financial institutions in mobilising savings"
+      - id: icse-10-economics-ch03-t04
+        title: "Need for capital formation in a developing economy like India"
+        learning_outcomes:
+          - "Explain how capital formation raises output, employment and technological progress"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economics-ch04
+    number: 4
+    title: "The Entrepreneur"
+    unit: "1. The Productive Mechanism"
+    topics:
+      - id: icse-10-economics-ch04-t01
+        title: "Entrepreneur: meaning"
+        learning_outcomes:
+          - "Define an entrepreneur and distinguish the entrepreneur from the other three factors of production"
+      - id: icse-10-economics-ch04-t02
+        title: "Functions of an entrepreneur: initiating, coordinating, risk-bearing, innovating"
+        learning_outcomes:
+          - "Describe the main functions of an entrepreneur with an example of a small start-up business"
+      - id: icse-10-economics-ch04-t03
+        title: "Role of the entrepreneur in economic development"
+        learning_outcomes:
+          - "Explain how entrepreneurs contribute to employment, capital formation, balanced regional development and innovation"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economics-ch05
+    number: 5
+    title: "Demand"
+    unit: "2. Theory of Demand and Supply"
+    topics:
+      - id: icse-10-economics-ch05-t01
+        title: "Meaning of demand; desire, want and demand; types of demand"
+        learning_outcomes:
+          - "Explain the three elements of demand: desire, ability to pay and willingness to pay, at a given price and time"
+          - "Distinguish types of demand such as individual and market, direct and derived, joint and composite demand with examples"
+      - id: icse-10-economics-ch05-t02
+        title: "Law of demand: demand schedule and demand curve (individual and market)"
+        learning_outcomes:
+          - "State the law of demand and its assumptions"
+          - "Construct an individual and a market demand schedule and draw the corresponding demand curves"
+          - "Explain why the demand curve slopes downwards"
+      - id: icse-10-economics-ch05-t03
+        title: "Determinants of demand"
+        learning_outcomes:
+          - "Explain how price of related goods, income, tastes, population and expectations affect demand"
+      - id: icse-10-economics-ch05-t04
+        title: "Movement along and shift of the demand curve"
+        learning_outcomes:
+          - "Distinguish an extension or contraction of demand from an increase or decrease in demand"
+          - "Draw diagrams showing a movement along and a shift of the demand curve and name the cause of each"
+      - id: icse-10-economics-ch05-t05
+        title: "Exceptions to the law of demand"
+        learning_outcomes:
+          - "Explain exceptions such as Giffen goods, prestige goods, expectation of price change and ignorance"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economics-ch06
+    number: 6
+    title: "Supply"
+    unit: "2. Theory of Demand and Supply"
+    topics:
+      - id: icse-10-economics-ch06-t01
+        title: "Meaning and concept of supply; supply and stock"
+        learning_outcomes:
+          - "Define supply and distinguish it from stock with an example"
+      - id: icse-10-economics-ch06-t02
+        title: "Law of supply: supply schedule and supply curve (individual and market)"
+        learning_outcomes:
+          - "State the law of supply and its assumptions"
+          - "Construct individual and market supply schedules and draw the corresponding supply curves"
+      - id: icse-10-economics-ch06-t03
+        title: "Determinants of supply"
+        learning_outcomes:
+          - "Explain how cost of production, technology, prices of other goods, government policy and the producer's goals affect supply"
+      - id: icse-10-economics-ch06-t04
+        title: "Movement along and shift of the supply curve"
+        learning_outcomes:
+          - "Distinguish an extension or contraction of supply from an increase or decrease in supply"
+          - "Draw and label diagrams showing each change and its cause"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economics-ch07
+    number: 7
+    title: "Elasticity of Demand and Supply"
+    unit: "2. Theory of Demand and Supply"
+    topics:
+      - id: icse-10-economics-ch07-t01
+        title: "Price elasticity of demand: meaning and types (perfectly elastic to perfectly inelastic)"
+        learning_outcomes:
+          - "Define price elasticity of demand"
+          - "Describe the five degrees of price elasticity of demand and sketch the demand curve for each"
+      - id: icse-10-economics-ch07-t02
+        title: "Percentage method of measuring elasticity of demand"
+        learning_outcomes:
+          - "State Ed = percentage change in quantity demanded / percentage change in price and interpret a value greater than, equal to or less than 1"
+      - id: icse-10-economics-ch07-t03
+        title: "Factors affecting elasticity of demand"
+        learning_outcomes:
+          - "Explain how availability of substitutes, nature of the good, share of income spent, number of uses and time period affect elasticity of demand"
+          - "Predict whether demand for goods such as salt, cars or a particular brand of soap is elastic or inelastic"
+      - id: icse-10-economics-ch07-t04
+        title: "Elasticity of supply: meaning, types and percentage method"
+        learning_outcomes:
+          - "Define elasticity of supply and describe its five degrees with diagrams"
+          - "State Es = percentage change in quantity supplied / percentage change in price"
+      - id: icse-10-economics-ch07-t05
+        title: "Factors affecting elasticity of supply"
+        learning_outcomes:
+          - "Explain how time period, nature of the good, cost of production and production techniques affect elasticity of supply"
+    removed_topics:
+      - "Numerical problems on elasticity of demand and supply are not tested"
+    literature_texts: []
+  - id: icse-10-economics-ch08
+    number: 8
+    title: "Market and Its Types"
+    unit: "3. Market"
+    topics:
+      - id: icse-10-economics-ch08-t01
+        title: "Market: meaning in economics"
+        learning_outcomes:
+          - "Explain why a market in economics need not be a physical place, using online and wholesale market examples"
+      - id: icse-10-economics-ch08-t02
+        title: "Perfect competition: meaning, features and examples"
+        learning_outcomes:
+          - "Explain features such as many buyers and sellers, homogeneous product, free entry and exit and perfect knowledge"
+      - id: icse-10-economics-ch08-t03
+        title: "Monopoly: meaning, features and examples"
+        learning_outcomes:
+          - "Explain features of monopoly such as a single seller, no close substitutes and barriers to entry"
+          - "Give Indian examples of monopoly such as railway services or local electricity distribution"
+      - id: icse-10-economics-ch08-t04
+        title: "Monopolistic competition: meaning, features and examples"
+        learning_outcomes:
+          - "Explain product differentiation and selling costs as features of monopolistic competition"
+      - id: icse-10-economics-ch08-t05
+        title: "Oligopoly: meaning, features and examples"
+        learning_outcomes:
+          - "Explain interdependence among a few large sellers with examples such as telecom or automobile markets"
+      - id: icse-10-economics-ch08-t06
+        title: "Differences between the four forms of market"
+        learning_outcomes:
+          - "Compare perfect competition, monopoly, monopolistic competition and oligopoly on number of sellers, nature of product, entry and control over price"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economics-ch09
+    number: 9
+    title: "Money"
+    unit: "4. Banking in India"
+    topics:
+      - id: icse-10-economics-ch09-t01
+        title: "Barter system and its inconveniences"
+        learning_outcomes:
+          - "Explain difficulties of barter such as lack of double coincidence of wants, lack of a common measure of value and indivisibility"
+      - id: icse-10-economics-ch09-t02
+        title: "Evolution of money and its legal definition"
+        learning_outcomes:
+          - "Trace the evolution of money from commodity money to metallic, paper, bank and digital money"
+          - "State the legal definition of money and explain the idea of legal tender"
+      - id: icse-10-economics-ch09-t03
+        title: "Functions of money: medium of exchange, measure of value, standard of deferred payments, store of value"
+        learning_outcomes:
+          - "Explain the primary and secondary functions of money with examples"
+          - "Show how money overcomes each inconvenience of barter"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economics-ch10
+    number: 10
+    title: "Commercial Banks"
+    unit: "4. Banking in India"
+    topics:
+      - id: icse-10-economics-ch10-t01
+        title: "Commercial banks: meaning"
+        learning_outcomes:
+          - "Define a commercial bank and state its role as a financial intermediary"
+      - id: icse-10-economics-ch10-t02
+        title: "Accepting deposits: savings, current, fixed and recurring deposits"
+        learning_outcomes:
+          - "Compare the four types of deposits on purpose, withdrawal facility and rate of interest"
+      - id: icse-10-economics-ch10-t03
+        title: "Advancing loans: types of loans and methods of lending (overdraft, cash credit, discounting bills, term loans)"
+        learning_outcomes:
+          - "Explain the different methods by which commercial banks advance credit"
+          - "Distinguish secured from unsecured and short-term from long-term loans"
+      - id: icse-10-economics-ch10-t04
+        title: "Credit creation through primary and derivative deposits"
+        learning_outcomes:
+          - "Distinguish primary deposits from derivative deposits"
+          - "Explain, with a simple example and a given reserve ratio, how banks create credit from a primary deposit"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economics-ch11
+    number: 11
+    title: "The Central Bank, Monetary Policy and Demonetisation"
+    unit: "4. Banking in India"
+    topics:
+      - id: icse-10-economics-ch11-t01
+        title: "Central bank: meaning; the Reserve Bank of India"
+        learning_outcomes:
+          - "Define a central bank and name India's central bank"
+      - id: icse-10-economics-ch11-t02
+        title: "Functions of the central bank: note issue, bankers' bank, banker, agent and adviser to the government, custodian of foreign exchange, lender of last resort"
+        learning_outcomes:
+          - "Explain each function of the central bank in brief"
+          - "Explain why the central bank is called the lender of the last resort"
+      - id: icse-10-economics-ch11-t03
+        title: "Quantitative credit control: bank rate, open market operations, CRR and SLR"
+        learning_outcomes:
+          - "Explain how a change in the bank rate, CRR or SLR affects the lending capacity of commercial banks"
+          - "Explain how the central bank uses open market operations to reduce money supply during inflation"
+      - id: icse-10-economics-ch11-t04
+        title: "Qualitative credit control: margin requirements, credit rationing and moral suasion"
+        learning_outcomes:
+          - "Distinguish qualitative from quantitative credit control measures"
+          - "Explain how margin requirements and credit rationing direct credit to selected uses"
+      - id: icse-10-economics-ch11-t05
+        title: "Demonetisation: meaning and objectives (brief)"
+        learning_outcomes:
+          - "Define demonetisation and state its stated aims with reference to India in 2016"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economics-ch12
+    number: 12
+    title: "Public Finance and Public Revenue"
+    unit: "4. Banking in India"
+    topics:
+      - id: icse-10-economics-ch12-t01
+        title: "Public finance: meaning; sources of public revenue"
+        learning_outcomes:
+          - "Define public finance and classify public revenue into tax and non-tax revenue"
+      - id: icse-10-economics-ch12-t02
+        title: "Direct taxes: meaning, merits and demerits"
+        learning_outcomes:
+          - "Define a direct tax with examples such as income tax"
+          - "Evaluate the merits and demerits of direct taxes"
+      - id: icse-10-economics-ch12-t03
+        title: "Indirect taxes: meaning, merits and demerits; difference between direct and indirect taxes"
+        learning_outcomes:
+          - "Explain impact and incidence of a tax and why indirect taxes can be shifted"
+          - "Distinguish direct from indirect taxes on at least four points"
+      - id: icse-10-economics-ch12-t04
+        title: "Goods and Services Tax (GST): meaning and objectives"
+        learning_outcomes:
+          - "Explain what GST replaced and state its main objectives"
+      - id: icse-10-economics-ch12-t05
+        title: "Progressive, proportional, regressive and degressive taxes"
+        learning_outcomes:
+          - "Classify a tax as progressive, proportional, regressive or degressive from a table of incomes and tax rates"
+      - id: icse-10-economics-ch12-t06
+        title: "Non-tax revenue: meaning and examples"
+        learning_outcomes:
+          - "Give examples of non-tax revenue such as fees, fines, license fees, profits of public enterprises and grants"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economics-ch13
+    number: 13
+    title: "Public Expenditure and Public Debt"
+    unit: "4. Banking in India"
+    topics:
+      - id: icse-10-economics-ch13-t01
+        title: "Public expenditure: meaning; revenue and capital expenditure"
+        learning_outcomes:
+          - "Define public expenditure"
+          - "Classify given items such as salaries, interest payments, building a dam or buying shares as revenue or capital expenditure"
+      - id: icse-10-economics-ch13-t02
+        title: "Reasons for the growth of public expenditure in India"
+        learning_outcomes:
+          - "Explain reasons such as defence needs, population growth, welfare schemes, urbanisation and debt servicing"
+      - id: icse-10-economics-ch13-t03
+        title: "Public debt: meaning and types"
+        learning_outcomes:
+          - "Define public debt and explain why governments borrow"
+          - "Distinguish internal and external, productive and unproductive, and short-term and long-term debt"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economics-ch14
+    number: 14
+    title: "Inflation"
+    unit: "5. Inflation"
+    topics:
+      - id: icse-10-economics-ch14-t01
+        title: "Inflation: meaning"
+        learning_outcomes:
+          - "Define inflation as a sustained rise in the general price level and its effect on the value of money"
+      - id: icse-10-economics-ch14-t02
+        title: "Stages of inflation: creeping, walking, running and hyperinflation"
+        learning_outcomes:
+          - "Distinguish the four stages of inflation by the rate of price rise"
+      - id: icse-10-economics-ch14-t03
+        title: "Demand-pull and cost-push inflation: meaning, causes and differences"
+        learning_outcomes:
+          - "Explain the causes of demand-pull inflation and of cost-push inflation"
+          - "Distinguish demand-pull from cost-push inflation"
+      - id: icse-10-economics-ch14-t04
+        title: "Effects of inflation on production"
+        learning_outcomes:
+          - "Explain the negative effects of inflation on production, such as reduced saving, uncertainty and hoarding"
+      - id: icse-10-economics-ch14-t05
+        title: "Effects of inflation on distribution: fixed income group and business income group"
+        learning_outcomes:
+          - "Explain why salaried and pensioned people lose while business people may gain during inflation"
+    removed_topics:
+      - "Diagrams of demand-pull and cost-push inflation are not required"
+    literature_texts: []
+  - id: icse-10-economics-ch15
+    number: 15
+    title: "Consumer Exploitation, Consumer Rights and Duties"
+    unit: "6. Consumer Awareness"
+    topics:
+      - id: icse-10-economics-ch15-t01
+        title: "Consumer exploitation: meaning and forms"
+        learning_outcomes:
+          - "Identify forms of exploitation such as underweighing, adulteration, high prices, poor quality, misleading advertisements and lack of after-sales service"
+      - id: icse-10-economics-ch15-t02
+        title: "Reasons for exploitation of consumers in India; meaning of consumer awareness"
+        learning_outcomes:
+          - "Explain why Indian consumers are exploited, such as illiteracy, limited information, unorganised consumers and limited competition"
+          - "Define consumer awareness"
+      - id: icse-10-economics-ch15-t03
+        title: "Consumer rights and consumer duties"
+        learning_outcomes:
+          - "Explain consumer rights such as the rights to safety, information, choice, be heard, redressal and consumer education"
+          - "State the duties of a responsible consumer, such as asking for a bill and checking standard marks"
+      - id: icse-10-economics-ch15-t04
+        title: "Consumer Protection Act (COPRA) 2019: meaning and features"
+        learning_outcomes:
+          - "Describe the main features of COPRA 2019, including the Central Consumer Protection Authority and the three-tier consumer commissions"
+      - id: icse-10-economics-ch15-t05
+        title: "Right to Information (RTI): meaning and significance"
+        learning_outcomes:
+          - "Explain how RTI helps citizens and consumers obtain information from public authorities"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-economics-ch16
+    number: 16
+    title: "Food Adulteration and Measures for Consumer Protection"
+    unit: "6. Consumer Awareness"
+    topics:
+      - id: icse-10-economics-ch16-t01
+        title: "Food adulteration: meaning and harmful effects"
+        learning_outcomes:
+          - "Define food adulteration with common Indian examples"
+          - "Explain the harmful effects of adulterated food on health"
+      - id: icse-10-economics-ch16-t02
+        title: "Public Distribution System (PDS)"
+        learning_outcomes:
+          - "Explain how PDS protects poor consumers through fair price shops"
+      - id: icse-10-economics-ch16-t03
+        title: "Bureau of Indian Standards (BIS) and the ISI mark"
+        learning_outcomes:
+          - "Explain the role of BIS in standardisation and certification of products"
+      - id: icse-10-economics-ch16-t04
+        title: "AGMARK and ECOMARK"
+        learning_outcomes:
+          - "Identify the kinds of products that carry AGMARK and ECOMARK and explain what each mark assures the consumer"
+          - "Distinguish technical measures from administrative measures of consumer protection"
+    removed_topics: []
+    literature_texts: []
+removed_topics:
+  - "Class IX syllabus (Introduction to Economics, Types of Economies, Problems of an Economy, the Indian Economy sectors, poverty and unemployment, LPG reforms and Smart City) is not examined in ICSE 2027; see icse-9-economics"

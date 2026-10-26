@@ -1,0 +1,702 @@
+# ISC Class 12 Chemistry (862), Paper I Theory - ISC 2027 examination (Class XII portion only).
+# Source: platform/catalog/sources/cisce.md#isc-2027-chemistry. Topic wording is our own summary of the official scope.
+subject_id: isc-12-chemistry
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-chemistry, isc-2027-regulations, cisce-circular-specimen-papers-2027, isc-2027-specimen-papers]
+exam_notes: >-
+  Paper I Theory: 3 hours, 70 marks. Paper II Practical: 3 hours, 15 marks, plus Project Work 10 marks and
+  Practical File 5 marks, assessed by a locally appointed Visiting Examiner (total 30). The practical paper has three
+  questions: volumetric analysis (redox titrations with potassium manganate(VII) against ammonium iron(II) sulphate or
+  oxalic acid, including percentage purity and water of crystallisation); one or more of rate of reaction, identification
+  of functional groups (glycerol, formaldehyde, acetone, benzoic acid, aniline), tests for carbohydrates and proteins,
+  pH experiments and a simple voltaic cell; and qualitative analysis of a single salt (one anion, one cation).
+  SOYL covers Paper I only. The ISC 2027 specimen paper (Paper I, 3 hours plus 15 minutes reading time) has 21 compulsory
+  questions in four sections: A - 14 one-mark subparts including MCQs (14), B - ten 2-mark questions (20), C - seven
+  3-mark questions (21), D - three 5-mark questions (15), with internal choice in two questions each in B, C and D;
+  balanced equations and full working for numericals are expected. The October 2026 circular sets about 50% of marks
+  on higher-order skills (apply, analyse, evaluate, create).
+  The official weightage table groups the ten units into three branches (Physical 25, Inorganic 14, Organic 31), so the
+  units below are those branches. Both old (IA-VIIA, 0) and IUPAC (1-18) group numbering are accepted.
+  CISCE lists topics under ten units, not textbook chapters: SOYL groups them into 22 teachable chapters in syllabus order.
+units:
+  - { name: "Physical Chemistry (Units 1-3: Solutions, Electrochemistry, Chemical Kinetics)", marks: 25 }
+  - { name: "Inorganic Chemistry (Units 4-5: d- and f-Block Elements, Coordination Compounds)", marks: 14 }
+  - { name: "Organic Chemistry (Units 6-10: Haloalkanes and Haloarenes to Biomolecules)", marks: 31 }
+chapters:
+  - id: isc-12-chemistry-ch01
+    number: 1
+    title: "Solutions and Their Concentration"
+    unit: "Physical Chemistry (Units 1-3: Solutions, Electrochemistry, Chemical Kinetics)"
+    topics:
+      - id: isc-12-chemistry-ch01-t01
+        title: "Types of solutions: solids, liquids and gases in liquids; solid solutions"
+        learning_outcomes:
+          - "Classify solutions by the physical states of solute and solvent with examples"
+      - id: isc-12-chemistry-ch01-t02
+        title: "Concentration terms: normality, molarity, molality, mole fraction and ppm"
+        learning_outcomes:
+          - "Calculate molarity, molality, normality, mole fraction and ppm of a given solution"
+          - "Explain why molality, unlike molarity, does not change with temperature"
+      - id: isc-12-chemistry-ch01-t03
+        title: "Solubility of gases in liquids; Henry's law and its applications"
+        learning_outcomes:
+          - "Use Henry's law to calculate the solubility of a gas at a given partial pressure"
+          - "Explain everyday effects of Henry's law such as carbonated drinks and the bends in deep-sea diving"
+      - id: isc-12-chemistry-ch01-t04
+        title: "Raoult's law for volatile and non-volatile solutes; ideal and non-ideal solutions; positive and negative deviations"
+        learning_outcomes:
+          - "Calculate the vapour pressure of a mixture of two volatile liquids using Raoult's law"
+          - "Compare ideal and non-ideal solutions in terms of intermolecular forces, enthalpy and volume of mixing"
+      - id: isc-12-chemistry-ch01-t05
+        title: "Azeotropic mixtures: types, vapour pressure-composition graphs and fractional distillation"
+        learning_outcomes:
+          - "Distinguish minimum-boiling and maximum-boiling azeotropes with examples and graphs"
+          - "Explain why an azeotrope cannot be separated by fractional distillation"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chemistry-ch02
+    number: 2
+    title: "Colligative Properties"
+    unit: "Physical Chemistry (Units 1-3: Solutions, Electrochemistry, Chemical Kinetics)"
+    topics:
+      - id: isc-12-chemistry-ch02-t01
+        title: "Colligative properties; relative lowering of vapour pressure and molar mass determination"
+        learning_outcomes:
+          - "Explain why colligative properties depend on the number, not nature, of solute particles"
+          - "Calculate the molar mass of a solute from relative lowering of vapour pressure"
+      - id: isc-12-chemistry-ch02-t02
+        title: "Elevation of boiling point; ebullioscopic constant (derivation included)"
+        learning_outcomes:
+          - "Derive the expression for elevation of boiling point"
+          - "Calculate molar mass of a solute from boiling point elevation"
+      - id: isc-12-chemistry-ch02-t03
+        title: "Depression of freezing point; cryoscopic constant (derivation included)"
+        learning_outcomes:
+          - "Derive the expression for depression of freezing point"
+          - "Calculate molar mass of a solute from freezing point depression"
+      - id: isc-12-chemistry-ch02-t04
+        title: "Osmosis and osmotic pressure: semipermeable membranes, reverse osmosis, isotonic, hypotonic and hypertonic solutions; van't Hoff-Boyle, Charles and Avogadro laws"
+        learning_outcomes:
+          - "Compare diffusion and osmosis"
+          - "Calculate molar mass of a solute from osmotic pressure"
+          - "Explain desalination of sea water by reverse osmosis"
+      - id: isc-12-chemistry-ch02-t05
+        title: "Abnormal molar masses: association and dissociation; van't Hoff factor; degree of dissociation and association"
+        learning_outcomes:
+          - "Modify colligative property equations using the van't Hoff factor"
+          - "Calculate the degree of dissociation of an electrolyte or degree of association of a solute"
+    removed_topics:
+      - "Experimental details of colligative property measurements"
+    literature_texts: []
+  - id: isc-12-chemistry-ch03
+    number: 3
+    title: "Electrochemical Cells and Electrode Potential"
+    unit: "Physical Chemistry (Units 1-3: Solutions, Electrochemistry, Chemical Kinetics)"
+    topics:
+      - id: isc-12-chemistry-ch03-t01
+        title: "Electrolytic and electrochemical cells; redox reactions in a galvanic cell; how current is produced; cell notation"
+        learning_outcomes:
+          - "Write the cell notation and half-reactions for a Daniell cell"
+          - "Compare an electrolytic cell with a galvanic cell"
+      - id: isc-12-chemistry-ch03-t02
+        title: "Single electrode potential; standard hydrogen electrode (preparation, use, limitations); measuring standard potentials of Zn2+/Zn and Cu2+/Cu"
+        learning_outcomes:
+          - "Describe the standard hydrogen electrode and its limitations"
+          - "Explain how the standard potential of a zinc or copper half-cell is measured against SHE"
+      - id: isc-12-chemistry-ch03-t03
+        title: "Factors affecting electrode potential: temperature, concentration and nature of electrode"
+        learning_outcomes:
+          - "Predict how electrode potential changes with ion concentration and temperature"
+      - id: isc-12-chemistry-ch03-t04
+        title: "Electrochemical series based on standard reduction potentials; predicting feasibility of reactions"
+        learning_outcomes:
+          - "Use the electrochemical series to predict whether a metal displaces another from solution"
+          - "Calculate standard cell emf from standard reduction potentials"
+      - id: isc-12-chemistry-ch03-t05
+        title: "Nernst equation; relation of cell emf to Gibbs energy and equilibrium constant; spontaneity"
+        learning_outcomes:
+          - "Calculate the emf of a cell at non-standard concentrations using the Nernst equation"
+          - "Calculate delta G and the equilibrium constant from standard cell emf"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chemistry-ch04
+    number: 4
+    title: "Electrolytic Conductance, Electrolysis, Batteries and Corrosion"
+    unit: "Physical Chemistry (Units 1-3: Solutions, Electrochemistry, Chemical Kinetics)"
+    topics:
+      - id: isc-12-chemistry-ch04-t01
+        title: "Metallic versus electrolytic conductance; resistance, specific resistance, conductance and specific conductance; cell constant"
+        learning_outcomes:
+          - "Calculate the cell constant and specific conductance from measured resistance"
+      - id: isc-12-chemistry-ch04-t02
+        title: "Equivalent and molar conductance; their relation to specific conductance; variation with concentration for strong and weak electrolytes (graphs)"
+        learning_outcomes:
+          - "Interconvert specific, molar and equivalent conductance with correct units"
+          - "Explain the different shapes of molar conductance versus concentration graphs for strong and weak electrolytes"
+      - id: isc-12-chemistry-ch04-t03
+        title: "Kohlrausch's law of independent migration of ions and its applications"
+        learning_outcomes:
+          - "Calculate limiting molar conductance of a weak electrolyte from those of strong electrolytes"
+          - "Calculate the degree of dissociation of a weak electrolyte from conductance data"
+      - id: isc-12-chemistry-ch04-t04
+        title: "Faraday's first and second laws of electrolysis; F = N_A e"
+        learning_outcomes:
+          - "Calculate the mass of a substance deposited by a given current in a given time"
+          - "Relate the faraday to Avogadro's number and electronic charge"
+      - id: isc-12-chemistry-ch04-t05
+        title: "Primary and secondary cells: Leclanche (dry) cell, mercury cell, lead storage battery and fuel cell"
+        learning_outcomes:
+          - "Write electrode reactions for a dry cell, a mercury cell, a lead storage battery and a hydrogen-oxygen fuel cell"
+          - "Distinguish primary from secondary cells with reasons"
+      - id: isc-12-chemistry-ch04-t06
+        title: "Corrosion: electrochemical mechanism, factors and prevention"
+        learning_outcomes:
+          - "Explain rusting of iron as an electrochemical process with half-reactions"
+          - "Suggest methods to prevent corrosion such as galvanising and sacrificial protection"
+    removed_topics:
+      - "Details of Millikan's oil-drop experiment"
+    literature_texts: []
+  - id: isc-12-chemistry-ch05
+    number: 5
+    title: "Rate of Reaction and Rate Laws"
+    unit: "Physical Chemistry (Units 1-3: Solutions, Electrochemistry, Chemical Kinetics)"
+    topics:
+      - id: isc-12-chemistry-ch05-t01
+        title: "Scope of chemical kinetics; slow and fast reactions explained by bonds; average and instantaneous rate (graphical)"
+        learning_outcomes:
+          - "Express the rate of a reaction in terms of each reactant and product"
+          - "Find instantaneous rate from the tangent to a concentration-time graph"
+      - id: isc-12-chemistry-ch05-t02
+        title: "Factors affecting rate: nature of reactants, surface area, concentration, temperature, catalyst and radiation; law of mass action and active mass"
+        learning_outcomes:
+          - "Explain the effect of each factor on reaction rate with an example"
+          - "State the law of mass action"
+      - id: isc-12-chemistry-ch05-t03
+        title: "Rate law and rate constant; order of reaction as an experimental quantity; units of k"
+        learning_outcomes:
+          - "Deduce the order of a reaction and its rate constant from initial-rate data"
+          - "Derive the units of the rate constant for zero, first and second order reactions"
+      - id: isc-12-chemistry-ch05-t04
+        title: "Zero order reactions: rate equation and units"
+        learning_outcomes:
+          - "Use the integrated rate equation for a zero order reaction and interpret its concentration-time graph"
+      - id: isc-12-chemistry-ch05-t05
+        title: "First order reactions: derivation of the integrated rate equation; half-life; independence of k from initial concentration"
+        learning_outcomes:
+          - "Derive the integrated rate equation and half-life of a first order reaction"
+          - "Solve problems on rate constant, half-life and time for a given fraction to react"
+      - id: isc-12-chemistry-ch05-t06
+        title: "Molecularity; elementary and complex reactions; mechanism and rate-determining step; order versus molecularity"
+        learning_outcomes:
+          - "Distinguish order from molecularity"
+          - "Write the rate law from the slowest step of a given mechanism"
+    removed_topics:
+      - "Integrated rate equations for orders other than zero and first"
+    literature_texts: []
+  - id: isc-12-chemistry-ch06
+    number: 6
+    title: "Activation Energy, Collision Theory and Arrhenius Equation"
+    unit: "Physical Chemistry (Units 1-3: Solutions, Electrochemistry, Chemical Kinetics)"
+    topics:
+      - id: isc-12-chemistry-ch06-t01
+        title: "Energy barrier, threshold energy, activation energy and activated complex; energy profiles of exothermic and endothermic reactions; effect of a catalyst"
+        learning_outcomes:
+          - "Draw and label energy profile diagrams for exothermic and endothermic reactions with and without a catalyst"
+      - id: isc-12-chemistry-ch06-t02
+        title: "Collision theory: effective collisions, energy and orientation (elementary idea)"
+        learning_outcomes:
+          - "Explain why only a fraction of collisions lead to reaction"
+      - id: isc-12-chemistry-ch06-t03
+        title: "Arrhenius equation k = A e^(-Ea/RT): log form, graph of log k against 1/T, evaluation of Ea and A; numericals"
+        learning_outcomes:
+          - "Calculate activation energy from rate constants at two temperatures"
+          - "Find Ea and A from the slope and intercept of an Arrhenius plot"
+    removed_topics:
+      - "Mathematical treatment of collision theory"
+    literature_texts: []
+  - id: isc-12-chemistry-ch07
+    number: 7
+    title: "Transition (d-Block) Elements"
+    unit: "Inorganic Chemistry (Units 4-5: d- and f-Block Elements, Coordination Compounds)"
+    topics:
+      - id: isc-12-chemistry-ch07-t01
+        title: "Position in the periodic table, occurrence and electronic configuration of the 3d, 4d and 5d series"
+        learning_outcomes:
+          - "Write electronic configurations of 3d elements and their ions, including chromium and copper"
+      - id: isc-12-chemistry-ch07-t02
+        title: "Trends in metallic character, atomic and ionic radii and ionisation enthalpy"
+        learning_outcomes:
+          - "Explain the trends in atomic radius and ionisation enthalpy across the 3d series"
+      - id: isc-12-chemistry-ch07-t03
+        title: "Oxidation states and variable valency"
+        learning_outcomes:
+          - "Explain why transition metals show variable oxidation states and identify the most common states in the 3d series"
+      - id: isc-12-chemistry-ch07-t04
+        title: "Coloured ions and magnetic properties (spin-only magnetic moment)"
+        learning_outcomes:
+          - "Relate colour of transition metal ions to d-d transitions"
+          - "Calculate the spin-only magnetic moment from the number of unpaired electrons"
+      - id: isc-12-chemistry-ch07-t05
+        title: "Catalytic property, complex formation, interstitial compounds and alloy formation"
+        learning_outcomes:
+          - "Explain why transition metals and their compounds act as catalysts"
+          - "Give reasons for the formation of interstitial compounds and alloys by transition metals"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chemistry-ch08
+    number: 8
+    title: "Inner Transition (f-Block) Elements: Lanthanoids and Actinoids"
+    unit: "Inorganic Chemistry (Units 4-5: d- and f-Block Elements, Coordination Compounds)"
+    topics:
+      - id: isc-12-chemistry-ch08-t01
+        title: "Lanthanoids: electronic configuration, atomic and ionic radii, oxidation states, colour, complex and alloy formation"
+        learning_outcomes:
+          - "Write the general electronic configuration of the lanthanoids and explain the stability of the +3 state"
+      - id: isc-12-chemistry-ch08-t02
+        title: "Lanthanoid contraction and its consequences"
+        learning_outcomes:
+          - "Explain the cause of lanthanoid contraction"
+          - "Describe its consequences such as the similar radii of zirconium and hafnium"
+      - id: isc-12-chemistry-ch08-t03
+        title: "Chemical reactivity of lanthanoids with oxygen, hydrogen, halogens, sulphur, nitrogen, carbon and water"
+        learning_outcomes:
+          - "Write the products formed when lanthanoids react with common non-metals and water"
+      - id: isc-12-chemistry-ch08-t04
+        title: "Actinoids: oxidation states and comparison with lanthanoids"
+        learning_outcomes:
+          - "Compare the range of oxidation states of actinoids with that of lanthanoids and give reasons"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chemistry-ch09
+    number: 9
+    title: "Potassium Permanganate and Potassium Dichromate"
+    unit: "Inorganic Chemistry (Units 4-5: d- and f-Block Elements, Coordination Compounds)"
+    topics:
+      - id: isc-12-chemistry-ch09-t01
+        title: "Potassium permanganate: structure and shape of the permanganate ion; extraction from pyrolusite"
+        learning_outcomes:
+          - "Write the equations for preparation of KMnO4 from pyrolusite"
+          - "Draw the tetrahedral structure of the permanganate ion"
+      - id: isc-12-chemistry-ch09-t02
+        title: "Oxidising action of KMnO4 in acidic (FeSO4, oxalic acid, KI), basic (KI) and neutral (H2S) media; use in redox titrations"
+        learning_outcomes:
+          - "Write balanced ionic equations for permanganate oxidations in acidic, basic and neutral media"
+          - "Explain why KMnO4 acts as a self-indicator in titrations"
+      - id: isc-12-chemistry-ch09-t03
+        title: "Potassium dichromate: structure and shape of the dichromate ion; extraction from chromite ore"
+        learning_outcomes:
+          - "Write the equations for preparation of K2Cr2O7 from chromite ore"
+          - "Draw the structure of the dichromate ion"
+      - id: isc-12-chemistry-ch09-t04
+        title: "Oxidising action of K2Cr2O7 and its use in titration; interconversion of chromate and dichromate with pH"
+        learning_outcomes:
+          - "Write balanced equations for dichromate oxidations in acidic medium"
+          - "Explain the colour change when the pH of a chromate solution is lowered"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chemistry-ch10
+    number: 10
+    title: "Coordination Compounds: Terms, Nomenclature and Isomerism"
+    unit: "Inorganic Chemistry (Units 4-5: d- and f-Block Elements, Coordination Compounds)"
+    topics:
+      - id: isc-12-chemistry-ch10-t01
+        title: "Coordination compounds versus double salts; Werner's theory"
+        learning_outcomes:
+          - "Distinguish a coordination compound from a double salt using ionisation in water"
+          - "Explain primary and secondary valencies according to Werner's theory"
+      - id: isc-12-chemistry-ch10-t02
+        title: "Ligands (mono- to hexa- and polydentate), chelating ligands; coordination number and oxidation state of the central atom"
+        learning_outcomes:
+          - "Classify ligands by denticity with examples"
+          - "Calculate the coordination number and oxidation state of the metal in a complex"
+      - id: isc-12-chemistry-ch10-t03
+        title: "IUPAC nomenclature of mononuclear coordination compounds"
+        learning_outcomes:
+          - "Write IUPAC names for given complexes and formulae from IUPAC names"
+      - id: isc-12-chemistry-ch10-t04
+        title: "Isomerism: structural (ionisation, linkage, coordination, hydrate) and stereoisomerism (geometrical, optical)"
+        learning_outcomes:
+          - "Identify the type of isomerism shown by a pair of complexes"
+          - "Draw geometrical and optical isomers of simple octahedral and square planar complexes"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chemistry-ch11
+    number: 11
+    title: "Bonding in Coordination Compounds"
+    unit: "Inorganic Chemistry (Units 4-5: d- and f-Block Elements, Coordination Compounds)"
+    topics:
+      - id: isc-12-chemistry-ch11-t01
+        title: "Valence bond theory: inner and outer orbital complexes; octahedral, tetrahedral and square planar shapes; high and low spin; magnetic character"
+        learning_outcomes:
+          - "Predict the hybridisation, shape and magnetic behaviour of a complex using VBT"
+      - id: isc-12-chemistry-ch11-t02
+        title: "Crystal field theory: splitting in octahedral and tetrahedral fields; colour and magnetic properties"
+        learning_outcomes:
+          - "Draw d-orbital splitting diagrams for octahedral and tetrahedral complexes"
+          - "Explain colour and magnetism of complexes using crystal field splitting and ligand strength"
+      - id: isc-12-chemistry-ch11-t03
+        title: "Stability of coordination compounds in terms of the stability constant K"
+        learning_outcomes:
+          - "Compare the stabilities of complexes from their stability constants"
+      - id: isc-12-chemistry-ch11-t04
+        title: "Importance of coordination compounds in qualitative analysis, extraction of metals and biological systems"
+        learning_outcomes:
+          - "Give examples of complexes in metal extraction, qualitative analysis and living systems such as haemoglobin and chlorophyll"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chemistry-ch12
+    number: 12
+    title: "Haloalkanes"
+    unit: "Organic Chemistry (Units 6-10: Haloalkanes and Haloarenes to Biomolecules)"
+    topics:
+      - id: isc-12-chemistry-ch12-t01
+        title: "General formula, classification, common and IUPAC names of mono-, di- and tri-halo derivatives; nature of the C-X bond"
+        learning_outcomes:
+          - "Name haloalkanes by common and IUPAC systems"
+          - "Explain the polarity of the C-X bond"
+      - id: isc-12-chemistry-ch12-t02
+        title: "Preparation from alkanes, alkenes, alcohols (PX3, PCl5, SOCl2), halide exchange (Finkelstein, Swarts) and silver salts of fatty acids (Hunsdiecker)"
+        learning_outcomes:
+          - "Write equations for preparing a given haloalkane by each method"
+          - "Explain why thionyl chloride is preferred for making alkyl chlorides from alcohols"
+      - id: isc-12-chemistry-ch12-t03
+        title: "Physical properties: state, melting and boiling points, solubility"
+        learning_outcomes:
+          - "Explain the trends in boiling points of haloalkanes with chain length, branching and halogen"
+      - id: isc-12-chemistry-ch12-t04
+        title: "Nucleophilic substitution: SN1 and SN2 mechanisms for primary, secondary and tertiary halides; optical rotation"
+        learning_outcomes:
+          - "Draw the SN1 and SN2 mechanisms and explain their stereochemical outcomes"
+          - "Predict which mechanism a given halide will follow"
+      - id: isc-12-chemistry-ch12-t05
+        title: "Substitution reactions with NaOH, water, NaI, ammonia, amines, KCN, AgCN, KNO2, AgNO2, silver salts of fatty acids and LiAlH4"
+        learning_outcomes:
+          - "Write products of a haloalkane with given nucleophiles"
+          - "Explain why KCN gives nitriles but AgCN gives isocyanides"
+      - id: isc-12-chemistry-ch12-t06
+        title: "Beta-elimination and Saytzeff's rule; reactions with sodium (Wurtz) and magnesium (Grignard reagent)"
+        learning_outcomes:
+          - "Predict the major alkene in a dehydrohalogenation using Saytzeff's rule"
+          - "Write equations for the Wurtz reaction and formation of a Grignard reagent"
+      - id: isc-12-chemistry-ch12-t07
+        title: "Chloroform and iodoform (preparation and properties); dichloromethane, tetrachloromethane, freons: structure, uses and environmental effects"
+        learning_outcomes:
+          - "Write the preparation and key reactions of chloroform and iodoform"
+          - "Describe the environmental effects of freons and other polyhalogen compounds"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chemistry-ch13
+    number: 13
+    title: "Haloarenes"
+    unit: "Organic Chemistry (Units 6-10: Haloalkanes and Haloarenes to Biomolecules)"
+    topics:
+      - id: isc-12-chemistry-ch13-t01
+        title: "Nature of the C-X bond in haloarenes; preparation by Sandmeyer and Gattermann reactions and by electrophilic substitution"
+        learning_outcomes:
+          - "Explain why the C-Cl bond in chlorobenzene is shorter and stronger than in chloroalkanes"
+          - "Write equations for preparing chlorobenzene from benzene and from benzenediazonium chloride"
+      - id: isc-12-chemistry-ch13-t02
+        title: "Physical properties of haloarenes"
+        learning_outcomes:
+          - "Explain why para-dichlorobenzene has a higher melting point than its ortho and meta isomers"
+      - id: isc-12-chemistry-ch13-t03
+        title: "Electrophilic substitution (chlorination, nitration, sulphonation) with mechanism; ortho-para directing influence of halogen"
+        learning_outcomes:
+          - "Draw the mechanism of nitration of chlorobenzene"
+          - "Explain why halogens deactivate the ring yet direct ortho and para"
+      - id: isc-12-chemistry-ch13-t04
+        title: "Nucleophilic substitution (replacement of Cl by -OH and -NH2) with mechanism; reduction to benzene"
+        learning_outcomes:
+          - "Explain why haloarenes resist nucleophilic substitution and how nitro groups at ortho/para positions assist it"
+      - id: isc-12-chemistry-ch13-t05
+        title: "Wurtz-Fittig and Fittig reactions; Grignard reagent formation; structure and effects of DDT"
+        learning_outcomes:
+          - "Write equations for Wurtz-Fittig and Fittig reactions"
+          - "Draw the structure of DDT and explain why its use is restricted"
+    removed_topics:
+      - "Directive influence of halogens in polysubstituted haloarenes (monosubstituted only)"
+    literature_texts: []
+  - id: isc-12-chemistry-ch14
+    number: 14
+    title: "Alcohols"
+    unit: "Organic Chemistry (Units 6-10: Haloalkanes and Haloarenes to Biomolecules)"
+    topics:
+      - id: isc-12-chemistry-ch14-t01
+        title: "Classification (monohydric, dihydric, polyhydric; primary, secondary, tertiary), general formula, structure and nomenclature"
+        learning_outcomes:
+          - "Classify and name given alcohols"
+          - "Compare primary, secondary and tertiary alcohols in structure and properties"
+      - id: isc-12-chemistry-ch14-t02
+        title: "Preparation: hydration of alkenes (direct, indirect, hydroboration-oxidation), Grignard reagents, hydrolysis of alkyl halides, reduction of carbonyl compounds, primary amines"
+        learning_outcomes:
+          - "Write equations to prepare a named alcohol by a suitable method"
+          - "Choose a Grignard reagent and carbonyl compound to make a given primary, secondary or tertiary alcohol"
+      - id: isc-12-chemistry-ch14-t03
+        title: "Outline of manufacture of methanol (Bosch process) and ethanol (fermentation)"
+        learning_outcomes:
+          - "Write the chemical equations for industrial manufacture of methanol and ethanol"
+      - id: isc-12-chemistry-ch14-t04
+        title: "Acidic nature; reactions with sodium, hydrogen halides, PCl3, PCl5, SOCl2, acid chlorides and anhydrides; esterification with mechanism"
+        learning_outcomes:
+          - "Explain why alcohols are weaker acids than water"
+          - "Draw the mechanism of acid-catalysed esterification"
+      - id: isc-12-chemistry-ch14-t05
+        title: "Oxidation of alcohols; dehydration with mechanism"
+        learning_outcomes:
+          - "Predict oxidation products of primary, secondary and tertiary alcohols"
+          - "Draw the mechanism of acid-catalysed dehydration of ethanol"
+      - id: isc-12-chemistry-ch14-t06
+        title: "Conversion of one alcohol into another; Lucas test; uses of methanol and ethanol"
+        learning_outcomes:
+          - "Plan a reaction sequence to ascend or descend the alcohol series"
+          - "Distinguish primary, secondary and tertiary alcohols by the Lucas test"
+    removed_topics:
+      - "Details of industrial manufacture of methanol and ethanol (outline and equations only)"
+      - "Chemical properties of secondary and tertiary alcohols beyond identification (primary alcohols only)"
+    literature_texts: []
+  - id: isc-12-chemistry-ch15
+    number: 15
+    title: "Phenols and Ethers"
+    unit: "Organic Chemistry (Units 6-10: Haloalkanes and Haloarenes to Biomolecules)"
+    topics:
+      - id: isc-12-chemistry-ch15-t01
+        title: "Phenols: classification and nomenclature; preparation from diazonium salts, chlorobenzene (Dow's process), benzenesulphonic acid and cumene"
+        learning_outcomes:
+          - "Write equations for preparing phenol by each method"
+      - id: isc-12-chemistry-ch15-t02
+        title: "Physical properties and acidic character of phenol; reactions with NaOH, Na, Zn, acetyl chloride, acetic anhydride and PCl5"
+        learning_outcomes:
+          - "Explain why phenol is more acidic than ethanol using resonance"
+          - "Write products of phenol with the listed reagents"
+      - id: isc-12-chemistry-ch15-t03
+        title: "Electrophilic substitution of phenol (bromination, nitration, sulphonation); Kolbe and Reimer-Tiemann reactions; ferric chloride and azo dye tests; uses"
+        learning_outcomes:
+          - "Predict products of bromination of phenol in water and in a non-polar solvent"
+          - "Write equations for the Kolbe and Reimer-Tiemann reactions"
+          - "Describe tests that distinguish phenol from an alcohol"
+      - id: isc-12-chemistry-ch15-t04
+        title: "Aliphatic ethers: structure of the ether group, nomenclature, Williamson's synthesis; physical properties; reactions with chlorine, oxygen (peroxides), HI and PCl5"
+        learning_outcomes:
+          - "Choose suitable reactants for Williamson's synthesis of a given ether"
+          - "Write products of cleavage of an ether by HI"
+      - id: isc-12-chemistry-ch15-t05
+        title: "Aryl ethers: anisole by Williamson's synthesis; electrophilic substitution (halogenation, nitration, Friedel-Crafts); uses of ethers"
+        learning_outcomes:
+          - "Write equations for halogenation, nitration and Friedel-Crafts reactions of anisole"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chemistry-ch16
+    number: 16
+    title: "Aldehydes and Ketones"
+    unit: "Organic Chemistry (Units 6-10: Haloalkanes and Haloarenes to Biomolecules)"
+    topics:
+      - id: isc-12-chemistry-ch16-t01
+        title: "Nomenclature and structure of the carbonyl group; physical properties"
+        learning_outcomes:
+          - "Name aldehydes and ketones by IUPAC rules"
+          - "Explain the boiling points of carbonyl compounds compared with alcohols and alkanes"
+      - id: isc-12-chemistry-ch16-t02
+        title: "Preparation from alcohols, alkenes (ozonolysis), alkynes (hydration), acid chlorides (Rosenmund, dialkyl cadmium), calcium salts of acids, nitriles (Stephen, Grignard) and esters"
+        learning_outcomes:
+          - "Write equations to prepare a given aldehyde or ketone by a suitable method"
+      - id: isc-12-chemistry-ch16-t03
+        title: "Nucleophilic addition with mechanism: HCN, NaHSO3, Grignard reagents, ammonia and its derivatives"
+        learning_outcomes:
+          - "Draw the mechanism of nucleophilic addition of HCN to a carbonyl compound"
+          - "Explain why aldehydes are more reactive than ketones towards nucleophiles"
+      - id: isc-12-chemistry-ch16-t04
+        title: "Oxidation and the iodoform reaction; reduction to alcohols and alkanes (Clemmensen, Wolff-Kishner, red P and HI)"
+        learning_outcomes:
+          - "Identify compounds that give a positive iodoform test"
+          - "Write equations for Clemmensen and Wolff-Kishner reductions"
+      - id: isc-12-chemistry-ch16-t05
+        title: "Base-catalysed reactions with mechanism: aldol, cross aldol and Cannizzaro reactions; reactivity of alpha-hydrogen"
+        learning_outcomes:
+          - "Predict whether a carbonyl compound undergoes aldol condensation or Cannizzaro reaction"
+          - "Draw the mechanism of aldol condensation"
+      - id: isc-12-chemistry-ch16-t06
+        title: "Tests distinguishing aldehydes from ketones and formaldehyde from acetaldehyde; uses"
+        learning_outcomes:
+          - "Describe Tollens' and Fehling's tests and the iodoform test for distinguishing carbonyl compounds"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chemistry-ch17
+    number: 17
+    title: "Benzaldehyde"
+    unit: "Organic Chemistry (Units 6-10: Haloalkanes and Haloarenes to Biomolecules)"
+    topics:
+      - id: isc-12-chemistry-ch17-t01
+        title: "Laboratory preparation from toluene with chromyl chloride (Etard reaction); physical properties"
+        learning_outcomes:
+          - "Write the equation for the Etard reaction"
+      - id: isc-12-chemistry-ch17-t02
+        title: "Oxidation, reduction, nucleophilic addition (HCN, NaHSO3), reactions with hydroxylamine, hydrazine, phenylhydrazine and PCl5"
+        learning_outcomes:
+          - "Write products of benzaldehyde with the listed reagents"
+      - id: isc-12-chemistry-ch17-t03
+        title: "Cannizzaro reaction, benzoin condensation and Perkin's reaction"
+        learning_outcomes:
+          - "Write equations for the Cannizzaro, benzoin and Perkin reactions of benzaldehyde"
+      - id: isc-12-chemistry-ch17-t04
+        title: "Electrophilic substitution (halogenation, nitration, sulphonation); distinguishing aromatic from aliphatic aldehydes; uses"
+        learning_outcomes:
+          - "Explain why the -CHO group is meta directing"
+          - "Describe a test to distinguish benzaldehyde from acetaldehyde"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chemistry-ch18
+    number: 18
+    title: "Carboxylic Acids"
+    unit: "Organic Chemistry (Units 6-10: Haloalkanes and Haloarenes to Biomolecules)"
+    topics:
+      - id: isc-12-chemistry-ch18-t01
+        title: "Classification of mono- and dicarboxylic acids; general formula, structure of the carboxyl group, nomenclature; physical properties"
+        learning_outcomes:
+          - "Name carboxylic acids by IUPAC rules"
+          - "Explain the high boiling points of carboxylic acids using hydrogen-bonded dimers"
+      - id: isc-12-chemistry-ch18-t02
+        title: "Preparation of aliphatic and aromatic acids from alcohols, aldehydes, nitriles and Grignard reagents"
+        learning_outcomes:
+          - "Write equations to prepare a given carboxylic acid by each method"
+      - id: isc-12-chemistry-ch18-t03
+        title: "Acidic character of aliphatic and aromatic acids; effect of substituents (in detail)"
+        learning_outcomes:
+          - "Arrange given acids in order of acid strength using inductive and resonance effects"
+          - "Explain why chloroacetic acid is stronger than acetic acid"
+      - id: isc-12-chemistry-ch18-t04
+        title: "Reactions with active metals, alkalis, carbonates and bicarbonates; formation of acid derivatives"
+        learning_outcomes:
+          - "Write equations for forming acid chlorides, anhydrides, esters and amides from carboxylic acids"
+      - id: isc-12-chemistry-ch18-t05
+        title: "Decarboxylation (chemical and Kolbe electrolysis); HVZ reaction; ring substitution of benzoic acid (meta directing)"
+        learning_outcomes:
+          - "Write equations for decarboxylation, Kolbe electrolysis and the HVZ reaction"
+          - "Predict the product of nitration of benzoic acid"
+      - id: isc-12-chemistry-ch18-t06
+        title: "Tests for and uses of formic, acetic and benzoic acids"
+        learning_outcomes:
+          - "Describe chemical tests that distinguish formic acid, acetic acid and benzoic acid"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chemistry-ch19
+    number: 19
+    title: "Amines"
+    unit: "Organic Chemistry (Units 6-10: Haloalkanes and Haloarenes to Biomolecules)"
+    topics:
+      - id: isc-12-chemistry-ch19-t01
+        title: "Aliphatic amines: general formula, classification, structure of the amino group and nomenclature"
+        learning_outcomes:
+          - "Classify and name primary, secondary and tertiary amines"
+      - id: isc-12-chemistry-ch19-t02
+        title: "Preparation from alcohols, alkyl halides, cyanides, amides (Hofmann degradation), nitro compounds and by Gabriel phthalimide synthesis"
+        learning_outcomes:
+          - "Write equations for preparing amines by each method"
+          - "Explain why Gabriel synthesis gives only primary amines"
+      - id: isc-12-chemistry-ch19-t03
+        title: "Physical properties: state, solubility and boiling points of primary, secondary and tertiary amines compared with alcohols"
+        learning_outcomes:
+          - "Compare boiling points of isomeric amines and of amines with alcohols using hydrogen bonding"
+      - id: isc-12-chemistry-ch19-t04
+        title: "Basic character of alkyl amines, ammonia and aniline; effect of substituents on basicity of aniline"
+        learning_outcomes:
+          - "Arrange amines in order of basic strength in aqueous solution with reasons"
+          - "Explain why aniline is a weaker base than ammonia"
+      - id: isc-12-chemistry-ch19-t05
+        title: "Alkylation and acylation with mechanism; reaction with nitrous acid; carbylamine reaction; Hinsberg's test"
+        learning_outcomes:
+          - "Distinguish primary, secondary and tertiary amines by Hinsberg's test and nitrous acid"
+      - id: isc-12-chemistry-ch19-t06
+        title: "Aniline: preparation by reduction of nitrobenzene; reactions with acids, acetylation, alkylation, benzoylation, carbylamine, diazotisation and electrophilic substitution; tests and uses"
+        learning_outcomes:
+          - "Write equations for bromination, nitration and sulphonation of aniline"
+          - "Explain why aniline is acetylated before nitration"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chemistry-ch20
+    number: 20
+    title: "Cyanides, Isocyanides and Diazonium Salts"
+    unit: "Organic Chemistry (Units 6-10: Haloalkanes and Haloarenes to Biomolecules)"
+    topics:
+      - id: isc-12-chemistry-ch20-t01
+        title: "Cyanides from alkyl halides and amides; isocyanides from alkyl halides and primary amines"
+        learning_outcomes:
+          - "Write equations for preparing alkyl cyanides and isocyanides"
+      - id: isc-12-chemistry-ch20-t02
+        title: "Diazonium salts: preparation from aniline"
+        learning_outcomes:
+          - "Write the diazotisation equation and state why it is done at 273-278 K"
+      - id: isc-12-chemistry-ch20-t03
+        title: "Replacement reactions: Sandmeyer, Gattermann and Balz-Schiemann; replacement by -H, -OH and -NO2"
+        learning_outcomes:
+          - "Write equations to convert benzenediazonium chloride into halobenzenes, phenol, benzene and nitrobenzene"
+      - id: isc-12-chemistry-ch20-t04
+        title: "Coupling reactions with phenol and aniline; importance of diazonium salts in synthesis"
+        learning_outcomes:
+          - "Write equations for azo coupling and identify the coloured products"
+          - "Plan a synthesis that uses a diazonium salt intermediate"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chemistry-ch21
+    number: 21
+    title: "Carbohydrates"
+    unit: "Organic Chemistry (Units 6-10: Haloalkanes and Haloarenes to Biomolecules)"
+    topics:
+      - id: isc-12-chemistry-ch21-t01
+        title: "Definition and classification: monosaccharides (aldoses, ketoses), oligosaccharides, polysaccharides; reducing and non-reducing sugars; importance"
+        learning_outcomes:
+          - "Classify given carbohydrates and identify reducing sugars"
+      - id: isc-12-chemistry-ch21-t02
+        title: "Glucose: open-chain structure from reactions with HI, hydroxylamine, bromine water, acetic anhydride, nitric acid and phenylhydrazine; cyclic structure; D-L configuration"
+        learning_outcomes:
+          - "Explain how each reaction supports the open-chain structure of glucose"
+          - "Draw the cyclic pyranose structure of glucose and explain anomers"
+      - id: isc-12-chemistry-ch21-t03
+        title: "Fructose: open-chain and cyclic structures; bromine water test to distinguish glucose and fructose"
+        learning_outcomes:
+          - "Write the equation for the bromine water test and use it to distinguish glucose from fructose"
+      - id: isc-12-chemistry-ch21-t04
+        title: "Disaccharides: structures of sucrose, maltose and lactose; glycosidic linkage"
+        learning_outcomes:
+          - "Identify the monosaccharide units and type of glycosidic linkage in sucrose, maltose and lactose"
+      - id: isc-12-chemistry-ch21-t05
+        title: "Polysaccharides: starch, cellulose and glycogen"
+        learning_outcomes:
+          - "Compare the structures and functions of starch, cellulose and glycogen"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-chemistry-ch22
+    number: 22
+    title: "Proteins, Vitamins and Nucleic Acids"
+    unit: "Organic Chemistry (Units 6-10: Haloalkanes and Haloarenes to Biomolecules)"
+    topics:
+      - id: isc-12-chemistry-ch22-t01
+        title: "Amino acids: general structure, classification, zwitter ion and isoelectric point"
+        learning_outcomes:
+          - "Draw the zwitter ion of an amino acid and explain its amphoteric behaviour"
+      - id: isc-12-chemistry-ch22-t02
+        title: "Peptide bond, polypeptides and proteins; fibrous and globular proteins; primary, secondary, tertiary and quaternary structure (definitions)"
+        learning_outcomes:
+          - "Show the formation of a peptide bond between two amino acids"
+          - "Define the four levels of protein structure"
+      - id: isc-12-chemistry-ch22-t03
+        title: "Denaturation of proteins; enzymes and hormones (elementary idea)"
+        learning_outcomes:
+          - "Explain denaturation with an example such as boiling an egg"
+          - "State the role of enzymes and hormones in the body"
+      - id: isc-12-chemistry-ch22-t04
+        title: "Vitamins A, B, C, D, E and K: fat-soluble and water-soluble classification; functions and deficiency diseases"
+        learning_outcomes:
+          - "Classify vitamins as fat-soluble or water-soluble"
+          - "Match each vitamin with its deficiency disease"
+      - id: isc-12-chemistry-ch22-t05
+        title: "Nucleic acids: purine and pyrimidine bases, double helix of DNA, RNA; differences between DNA and RNA"
+        learning_outcomes:
+          - "List the bases present in DNA and RNA"
+          - "Compare DNA and RNA in sugar, bases, structure and function"
+    removed_topics:
+      - "Details and diagrams of protein structures (definitions only)"
+      - "Chemical names and structures of vitamins"
+      - "Chemical structures of DNA and RNA"
+    literature_texts: []
+removed_topics: []

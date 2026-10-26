@@ -1,0 +1,339 @@
+# ISC Class 12 Hindi (Indian Language elective, code 805) - ISC 2027 examination.
+# Literature: titles and authors only (CONTEXT section 8). Students read the texts in their own textbook.
+subject_id: isc-12-hindi
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-indian-languages, isc-2027-prescribed-books, cisce-circular-2026-27-33-indian-languages, isc-2027-regulations]
+exam_notes: >-
+  Paper I Theory: one paper of 3 hours, 80 marks, in two sections. Section A Language (40 marks, three compulsory
+  questions): a composition of about 400 words from a choice of six topics; an unseen passage of about 300 words with
+  questions and/or a summary with a heading (testing the ability to summarise and/or expand an idea); and functional grammar
+  (correction of sentences and use of words/idioms in sentences, with correct agreement of number, gender, case, tense and voice).
+  Section B Prescribed Textbooks (40 marks): answer four questions from any three of the four prescribed books.
+  Prescribed texts are bifurcated (Circular 2026-27/33): the ISC 2027 paper is set only on the Class XII portion listed
+  here (Class XI portion is in isc-11-hindi). Recommended for background work: Vyakaran Manjusha (I.U.P.).
+  Paper II Project Work (20 marks): Listening (5) and Speaking (5) assessed by the teacher; Writing (10) assessed by a
+  Visiting Examiner - one assignment of 1000-1500 words on a literature text not used in the Class XI project.
+  CISCE does not publish question-wise marks within Section A, and describes composition and grammar only generically:
+  the composition types and grammar breakdown below are SOYL's, based on the item types commonly set in ISC Hindi papers.
+  SOYL covers all four prescribed books so a student can pick any three.
+units:
+  - { name: "खंड क - भाषा (Section A: Language)", marks: 40 }
+  - { name: "खंड ख - निर्धारित पाठ्य-पुस्तकें (Section B: Prescribed Textbooks)", marks: 40 }
+chapters:
+  - id: isc-12-hindi-ch01
+    number: 1
+    title: "निबंध / रचना लेखन (लगभग 400 शब्द)"
+    title_en: "Composition writing (about 400 words)"
+    unit: "खंड क - भाषा (Section A: Language)"
+    topics:
+      - id: isc-12-hindi-ch01-t01
+        title: "रचना की योजना: विषय चयन, रूपरेखा, भूमिका, विस्तार और उपसंहार"
+        title_en: "Planning a composition: choosing a topic, outline, introduction, body and conclusion"
+        learning_outcomes:
+          - "छह विषयों में से उपयुक्त विषय चुनकर उसकी रूपरेखा बनाना"
+          - "लगभग 400 शब्दों की सुसंगठित और अनुच्छेदों में बँटी रचना लिखना"
+      - id: isc-12-hindi-ch01-t02
+        title: "वर्णनात्मक और विवरणात्मक निबंध"
+        title_en: "Descriptive and narrative essays"
+        learning_outcomes:
+          - "किसी अनुभव, यात्रा या घटना का क्रमबद्ध और सजीव वर्णन करना"
+      - id: isc-12-hindi-ch01-t03
+        title: "विचारात्मक और विवादात्मक निबंध: पक्ष-विपक्ष और निष्कर्ष"
+        title_en: "Reflective and argumentative essays: for and against, and conclusion"
+        learning_outcomes:
+          - "किसी सामाजिक या समसामयिक विषय पर तर्क और उदाहरण देकर अपना मत स्थापित करना"
+          - "विरोधी तर्कों का संतुलित खंडन करते हुए निष्कर्ष लिखना"
+      - id: isc-12-hindi-ch01-t04
+        title: "कहानी लेखन: दिए गए वाक्य, लोकोक्ति या संकेतों के आधार पर"
+        title_en: "Story writing from a given sentence, proverb or outline"
+        learning_outcomes:
+          - "दी गई पंक्ति या लोकोक्ति को सार्थक करती हुई मौलिक कहानी लिखना"
+      - id: isc-12-hindi-ch01-t05
+        title: "भाषा-शैली: शब्द-चयन, मुहावरों का प्रयोग, वर्तनी और विराम-चिह्न"
+        title_en: "Language and style: word choice, use of idioms, spelling and punctuation"
+        learning_outcomes:
+          - "रचना में विषयानुकूल शब्दावली और मुहावरों का उचित प्रयोग करना"
+          - "अपनी रचना की वर्तनी और विराम-चिह्नों की त्रुटियाँ स्वयं सुधारना"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-hindi-ch02
+    number: 2
+    title: "अपठित गद्यांश और सारांश लेखन"
+    title_en: "Unseen passage (about 300 words) and summary"
+    unit: "खंड क - भाषा (Section A: Language)"
+    topics:
+      - id: isc-12-hindi-ch02-t01
+        title: "गद्यांश का मुख्य विचार और सहायक बिंदु पहचानना"
+        title_en: "Identifying the main idea and supporting points of a passage"
+        learning_outcomes:
+          - "लगभग 300 शब्दों के गद्यांश का केंद्रीय भाव अपने शब्दों में बताना"
+      - id: isc-12-hindi-ch02-t02
+        title: "गद्यांश पर आधारित प्रश्नों के उत्तर अपने शब्दों में"
+        title_en: "Answering questions on the passage in one's own words"
+        learning_outcomes:
+          - "तथ्यात्मक और अनुमान-आधारित प्रश्नों के सटीक उत्तर गद्यांश की पंक्तियाँ उतारे बिना लिखना"
+          - "संदर्भ के आधार पर कठिन शब्दों और वाक्यांशों का अर्थ स्पष्ट करना"
+      - id: isc-12-hindi-ch02-t03
+        title: "शीर्षक सहित सारांश लेखन"
+        title_en: "Writing a summary with a heading"
+        learning_outcomes:
+          - "गद्यांश का लगभग एक-तिहाई शब्दों में सारांश लिखना और उपयुक्त शीर्षक देना"
+      - id: isc-12-hindi-ch02-t04
+        title: "गद्यांश में दिए गए किसी विचार का पल्लवन (विस्तार)"
+        title_en: "Expanding an idea given in the passage"
+        learning_outcomes:
+          - "गद्यांश के किसी कथन या विचार को उदाहरण सहित एक अनुच्छेद में विस्तार से समझाना"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-hindi-ch03
+    number: 3
+    title: "व्याकरण: वाक्य शुद्धि"
+    title_en: "Grammar: correction of sentences"
+    unit: "खंड क - भाषा (Section A: Language)"
+    topics:
+      - id: isc-12-hindi-ch03-t01
+        title: "कर्ता और क्रिया की अन्विति: वचन और लिंग"
+        title_en: "Subject-verb agreement: number and gender"
+        learning_outcomes:
+          - "वचन और लिंग की अशुद्धि वाले वाक्यों को पहचानकर शुद्ध करना"
+          - "'ने' परसर्ग वाले वाक्यों में क्रिया की सही अन्विति करना"
+      - id: isc-12-hindi-ch03-t02
+        title: "कारक और परसर्गों का शुद्ध प्रयोग"
+        title_en: "Correct use of case and postpositions"
+        learning_outcomes:
+          - "वाक्य में गलत परसर्ग (को, से, में, पर, का-की-के) पहचानकर सही परसर्ग लगाना"
+      - id: isc-12-hindi-ch03-t03
+        title: "काल और वाच्य संबंधी अशुद्धियाँ"
+        title_en: "Errors of tense and voice"
+        learning_outcomes:
+          - "वाक्य में काल-संबंधी असंगति दूर करना"
+          - "कर्तृवाच्य, कर्मवाच्य और भाववाच्य के वाक्यों को शुद्ध रूप में लिखना"
+      - id: isc-12-hindi-ch03-t04
+        title: "शब्द-क्रम, पुनरुक्ति और अनुपयुक्त शब्द-प्रयोग की अशुद्धियाँ"
+        title_en: "Errors of word order, redundancy and wrong word choice"
+        learning_outcomes:
+          - "वाक्य से अनावश्यक शब्द हटाकर और शब्द-क्रम सुधारकर शुद्ध वाक्य लिखना"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-hindi-ch04
+    number: 4
+    title: "व्याकरण: शब्दों और मुहावरों का वाक्य में प्रयोग"
+    title_en: "Grammar: using words and idioms in sentences"
+    unit: "खंड क - भाषा (Section A: Language)"
+    topics:
+      - id: isc-12-hindi-ch04-t01
+        title: "मुहावरों का अर्थ और वाक्य में प्रयोग"
+        title_en: "Idioms: meaning and use in sentences"
+        learning_outcomes:
+          - "मुहावरे का अर्थ लिखकर उसे प्रसंगानुकूल वाक्य में प्रयोग करना जिससे अर्थ स्पष्ट हो"
+      - id: isc-12-hindi-ch04-t02
+        title: "लोकोक्तियों का अर्थ और प्रयोग"
+        title_en: "Proverbs: meaning and use"
+        learning_outcomes:
+          - "लोकोक्ति और मुहावरे का अंतर बताना और लोकोक्ति का सार्थक प्रयोग करना"
+      - id: isc-12-hindi-ch04-t03
+        title: "दिए गए शब्दों का वाक्य में शुद्ध प्रयोग: समरूपी और भिन्नार्थक शब्द"
+        title_en: "Using given words correctly in sentences: similar-looking words with different meanings"
+        learning_outcomes:
+          - "मिलते-जुलते शब्दों का अर्थ-भेद वाक्य-प्रयोग से स्पष्ट करना"
+          - "दिए गए शब्द को सही लिंग, वचन और रूप में वाक्य में प्रयोग करना"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-hindi-ch05
+    number: 5
+    title: "उपन्यास: सारा आकाश (उत्तरार्द्ध, अध्याय 1-10)"
+    title_en: "Novel: Saara Aakash (second part, chapters 1-10)"
+    unit: "खंड ख - निर्धारित पाठ्य-पुस्तकें (Section B: Prescribed Textbooks)"
+    topics:
+      - id: isc-12-hindi-ch05-t01
+        title: "उत्तरार्द्ध अध्याय 1-5: घटनाक्रम और कथा का विकास"
+        title_en: "Second part, chapters 1-5: events and development of the story"
+        learning_outcomes:
+          - "इन अध्यायों की प्रमुख घटनाएँ क्रम से अपने शब्दों में लिखना"
+          - "पूर्वार्द्ध की स्थिति से कथा में आए परिवर्तनों को स्पष्ट करना"
+      - id: isc-12-hindi-ch05-t02
+        title: "उत्तरार्द्ध अध्याय 6-10: संघर्ष, तनाव और कथा का अंत"
+        title_en: "Second part, chapters 6-10: struggle, tension and the ending"
+        learning_outcomes:
+          - "उपन्यास के अंतिम अध्यायों की घटनाओं का सार लिखना और अंत पर अपनी प्रतिक्रिया देना"
+      - id: isc-12-hindi-ch05-t03
+        title: "प्रमुख पात्रों का चरित्र-चित्रण: समर, प्रभा और परिवार के अन्य सदस्य"
+        title_en: "Character sketches: Samar, Prabha and other family members"
+        learning_outcomes:
+          - "समर और प्रभा की चारित्रिक विशेषताएँ घटनाओं के उदाहरण सहित लिखना"
+          - "परिवार के बड़े सदस्यों के व्यवहार का पात्रों के जीवन पर प्रभाव स्पष्ट करना"
+      - id: isc-12-hindi-ch05-t04
+        title: "उपन्यास की समस्याएँ: निम्न-मध्यवर्गीय संयुक्त परिवार, बेरोज़गारी और नारी की स्थिति"
+        title_en: "Issues in the novel: the lower-middle-class joint family, unemployment and the position of women"
+        learning_outcomes:
+          - "उपन्यास में चित्रित सामाजिक और आर्थिक समस्याओं का विश्लेषण करना"
+      - id: isc-12-hindi-ch05-t05
+        title: "शीर्षक 'सारा आकाश' की सार्थकता और लेखक की शैली"
+        title_en: "Significance of the title and the author's style"
+        learning_outcomes:
+          - "शीर्षक की सार्थकता तर्क सहित सिद्ध करना"
+          - "उपन्यास की भाषा और वर्णन-शैली की विशेषताएँ बताना"
+    removed_topics:
+      - "Poorvarddh (first part), chapters 1-10 (Class XI portion; see isc-11-hindi)"
+    literature_texts:
+      - { title: "सारा आकाश (उत्तरार्द्ध, अध्याय 1-10)", author: "राजेंद्र यादव", title_en: "Saara Aakash (Uttararddh, chapters 1-10) - Rajendra Yadav" }
+  - id: isc-12-hindi-ch06
+    number: 6
+    title: "नाटक: आषाढ़ का एक दिन (अंक 2)"
+    title_en: "Drama: Aashad Ka Ek Din (Act 2)"
+    unit: "खंड ख - निर्धारित पाठ्य-पुस्तकें (Section B: Prescribed Textbooks)"
+    topics:
+      - id: isc-12-hindi-ch06-t01
+        title: "अंक 2 की कथावस्तु: कालिदास के गाँव लौटने की सूचना और मल्लिका की प्रतीक्षा"
+        title_en: "Act 2 plot: news of Kalidas's return to the village and Mallika's waiting"
+        learning_outcomes:
+          - "अंक 2 की प्रमुख घटनाओं का क्रमबद्ध सार लिखना"
+          - "पहले अंक के बाद बीते समय में पात्रों की परिस्थिति में आए परिवर्तन बताना"
+      - id: isc-12-hindi-ch06-t02
+        title: "प्रियंगुमंजरी और मल्लिका की भेंट: राजसत्ता और प्रेम का द्वंद्व"
+        title_en: "Priyangumanjari meets Mallika: the conflict of royal power and love"
+        learning_outcomes:
+          - "प्रियंगुमंजरी के प्रस्तावों के प्रति मल्लिका की प्रतिक्रिया का विश्लेषण करना"
+          - "दोनों स्त्री-पात्रों के व्यक्तित्व की तुलना करना"
+      - id: isc-12-hindi-ch06-t03
+        title: "अंक 2 के गौण पात्र: विलोम, अनुस्वार-अनुनासिक, रंगिणी-संगिनी और अंबिका"
+        title_en: "Minor characters of Act 2 and the use of satire"
+        learning_outcomes:
+          - "गौण पात्रों के माध्यम से राजकीय दिखावे और व्यवस्था पर किए गए व्यंग्य को स्पष्ट करना"
+      - id: isc-12-hindi-ch06-t04
+        title: "कालिदास का मल्लिका से न मिलना: महत्वाकांक्षा और अपराध-बोध"
+        title_en: "Kalidas avoids Mallika: ambition and guilt"
+        learning_outcomes:
+          - "कालिदास के आचरण के कारणों पर तर्कपूर्ण मत देना"
+    removed_topics:
+      - "Ank 1 (Class XI portion; see isc-11-hindi)"
+    literature_texts:
+      - { title: "आषाढ़ का एक दिन (अंक 2)", author: "मोहन राकेश", title_en: "Aashad Ka Ek Din (Ank 2) - Mohan Rakesh" }
+  - id: isc-12-hindi-ch07
+    number: 7
+    title: "नाटक: आषाढ़ का एक दिन (अंक 3)"
+    title_en: "Drama: Aashad Ka Ek Din (Act 3)"
+    unit: "खंड ख - निर्धारित पाठ्य-पुस्तकें (Section B: Prescribed Textbooks)"
+    topics:
+      - id: isc-12-hindi-ch07-t01
+        title: "अंक 3 की कथावस्तु: वर्षों बाद मल्लिका की बदली हुई परिस्थितियाँ"
+        title_en: "Act 3 plot: Mallika's changed circumstances years later"
+        learning_outcomes:
+          - "अंक 3 की प्रमुख घटनाओं का सार लिखना"
+          - "मल्लिका के जीवन में आए अभावों और परिवर्तनों का वर्णन करना"
+      - id: isc-12-hindi-ch07-t02
+        title: "कालिदास की वापसी, आत्म-स्वीकृति और प्रस्थान"
+        title_en: "Kalidas's return, self-confession and departure"
+        learning_outcomes:
+          - "कालिदास के लंबे कथन के आधार पर उसके अंतर्द्वंद्व का विश्लेषण करना"
+          - "नाटक के अंत की मार्मिकता और प्रतीकात्मकता स्पष्ट करना"
+      - id: isc-12-hindi-ch07-t03
+        title: "प्रमुख पात्रों का चरित्र-चित्रण: मल्लिका, कालिदास, विलोम, अंबिका"
+        title_en: "Character sketches: Mallika, Kalidas, Vilom, Ambika"
+        learning_outcomes:
+          - "मल्लिका के त्याग और प्रेम का उदाहरण सहित मूल्यांकन करना"
+          - "विलोम को खलनायक मानने के पक्ष-विपक्ष में तर्क देना"
+      - id: isc-12-hindi-ch07-t04
+        title: "नाटक के विषय, प्रतीक और शीर्षक: कला बनाम सत्ता, प्रेम और त्याग, आषाढ़ की वर्षा"
+        title_en: "Themes, symbols and title: art versus power, love and sacrifice, the monsoon rain"
+        learning_outcomes:
+          - "नाटक के प्रमुख विषयों और प्रतीकों (मेघ, वर्षा, भोजपत्र) का अर्थ स्पष्ट करना"
+          - "'आषाढ़ का एक दिन' शीर्षक की सार्थकता सिद्ध करना"
+      - id: isc-12-hindi-ch07-t05
+        title: "नाट्य-शिल्प: संवाद, रंग-निर्देश और रंगमंचीयता"
+        title_en: "Dramatic craft: dialogue, stage directions and stageability"
+        learning_outcomes:
+          - "नाटक के संवादों और रंग-निर्देशों की विशेषताएँ उदाहरण सहित बताना"
+    removed_topics: []
+    literature_texts:
+      - { title: "आषाढ़ का एक दिन (अंक 3)", author: "मोहन राकेश", title_en: "Aashad Ka Ek Din (Ank 3) - Mohan Rakesh" }
+  - id: isc-12-hindi-ch08
+    number: 8
+    title: "गद्य संकलन: कहानियाँ और निबंध"
+    title_en: "Gadya Sanklan: short stories and essays (Class XII portion)"
+    unit: "खंड ख - निर्धारित पाठ्य-पुस्तकें (Section B: Prescribed Textbooks)"
+    topics:
+      - id: isc-12-hindi-ch08-t01
+        title: "दासी (जयशंकर प्रसाद): ऐतिहासिक पृष्ठभूमि, स्वाभिमान और त्याग"
+        title_en: "Dasi (Jai Shankar Prasad): historical background, self-respect and sacrifice"
+        learning_outcomes:
+          - "कहानी की ऐतिहासिक पृष्ठभूमि और प्रमुख घटनाओं का वर्णन करना"
+          - "प्रमुख पात्रों की चारित्रिक विशेषताएँ और कहानी का संदेश स्पष्ट करना"
+      - id: isc-12-hindi-ch08-t02
+        title: "क्या निराश हुआ जाए (हजारी प्रसाद द्विवेदी): समाज में ईमानदारी और मानवीय मूल्यों पर आस्था"
+        title_en: "Kya Nirash Hua Jaye (Hazari Prasad Dwivedi): faith in honesty and human values (essay)"
+        learning_outcomes:
+          - "निबंध में लेखक द्वारा दिए गए उदाहरणों के आधार पर उसके आशावादी दृष्टिकोण को स्पष्ट करना"
+          - "आज के समाज के संदर्भ में निबंध की प्रासंगिकता पर अपने विचार लिखना"
+      - id: isc-12-hindi-ch08-t03
+        title: "भक्तिन (महादेवी वर्मा): संस्मरणात्मक रेखाचित्र और भक्तिन का व्यक्तित्व"
+        title_en: "Bhaktin (Mahadevi Verma): a memoir-sketch and Bhaktin's personality"
+        learning_outcomes:
+          - "भक्तिन के जीवन-संघर्ष की प्रमुख घटनाएँ बताना"
+          - "भक्तिन और लेखिका के संबंध तथा भक्तिन की चारित्रिक विशेषताओं का वर्णन करना"
+      - id: isc-12-hindi-ch08-t04
+        title: "संस्कृति क्या है (रामधारी सिंह 'दिनकर'): संस्कृति और सभ्यता का अंतर"
+        title_en: "Sanskriti Kya Hai (Ramdhari Singh 'Dinkar'): culture versus civilisation (essay)"
+        learning_outcomes:
+          - "लेखक के अनुसार संस्कृति और सभ्यता का अंतर उदाहरण सहित समझाना"
+          - "भारतीय संस्कृति की सामासिक प्रकृति पर लेखक के विचार स्पष्ट करना"
+      - id: isc-12-hindi-ch08-t05
+        title: "मजबूरी (मन्नू भंडारी): वृद्धावस्था का अकेलापन और पीढ़ियों की विवशता"
+        title_en: "Majburi (Mannu Bhandari): loneliness of old age and the compulsions of two generations"
+        learning_outcomes:
+          - "कहानी के प्रमुख पात्रों की भावनाओं और विवशताओं का विश्लेषण करना"
+          - "शीर्षक 'मजबूरी' की सार्थकता स्पष्ट करना"
+    removed_topics:
+      - "Class XI pieces of Gadya Sanklan: Putra Prem, Gauri, Sharanagat, Sati, Outsider (see isc-11-hindi)"
+    literature_texts:
+      - { title: "दासी", author: "जयशंकर प्रसाद", title_en: "Dasi - Jai Shankar Prasad" }
+      - { title: "क्या निराश हुआ जाए", author: "हजारी प्रसाद द्विवेदी", title_en: "Kya Nirash Hua Jaye (essay) - Hazari Prasad Dwivedi" }
+      - { title: "भक्तिन", author: "महादेवी वर्मा", title_en: "Bhaktin - Mahadevi Verma" }
+      - { title: "संस्कृति क्या है", author: "रामधारी सिंह 'दिनकर'", title_en: "Sanskriti Kya Hai (essay) - Ramdhari Singh 'Dinkar'" }
+      - { title: "मजबूरी", author: "मन्नू भंडारी", title_en: "Majburi - Mannu Bhandari" }
+  - id: isc-12-hindi-ch09
+    number: 9
+    title: "काव्य मंजरी: कविताएँ"
+    title_en: "Kavya Manjari: poems (Class XII portion)"
+    unit: "खंड ख - निर्धारित पाठ्य-पुस्तकें (Section B: Prescribed Textbooks)"
+    topics:
+      - id: isc-12-hindi-ch09-t01
+        title: "तुलसीदास के पद (तुलसीदास): राम-भक्ति, विनय और दैन्य भाव"
+        title_en: "Tulsi Das Ke Pad (Tulsidas): devotion to Rama, humility and surrender"
+        learning_outcomes:
+          - "पदों का भावार्थ अपने शब्दों में लिखना"
+          - "पदों की भाषा, रस और अलंकारों की पहचान करना"
+      - id: isc-12-hindi-ch09-t02
+        title: "जाग तुझको दूर जाना है (महादेवी वर्मा): जागरण, साधना और बाधाओं पर विजय"
+        title_en: "Jag Tujhko Door Jana Hai (Mahadevi Verma): awakening, perseverance and overcoming obstacles"
+        learning_outcomes:
+          - "कविता में आए प्रलोभनों और बाधाओं के प्रतीकों का अर्थ स्पष्ट करना"
+          - "कविता के केंद्रीय संदेश और छायावादी शैली की विशेषताएँ बताना"
+      - id: isc-12-hindi-ch09-t03
+        title: "उद्यमी नर (रामधारी सिंह 'दिनकर'): परिश्रम और पुरुषार्थ बनाम भाग्य"
+        title_en: "Udyami Nar (Ramdhari Singh 'Dinkar'): effort and enterprise versus fate"
+        learning_outcomes:
+          - "कवि के अनुसार परिश्रम और भाग्य के संबंध को स्पष्ट करना"
+          - "कविता के ओजपूर्ण स्वर और प्रकृति-संबंधी उदाहरणों का विश्लेषण करना"
+      - id: isc-12-hindi-ch09-t04
+        title: "बादल को घिरते देखा है (नागार्जुन): हिमालय का प्राकृतिक सौंदर्य"
+        title_en: "Badal Ko Ghirte Dekha Hai (Nagarjun): the natural beauty of the Himalaya"
+        learning_outcomes:
+          - "कविता में चित्रित प्राकृतिक दृश्यों और बिंबों का वर्णन करना"
+          - "कवि के यथार्थवादी प्रकृति-चित्रण की विशेषताएँ बताना"
+      - id: isc-12-hindi-ch09-t05
+        title: "अँधेरे का दीपक (हरिवंशराय बच्चन): निराशा में आशा और नवनिर्माण"
+        title_en: "Andhere Ka Deepak (Harivansh Rai Bachchan): hope amid despair and rebuilding"
+        learning_outcomes:
+          - "कविता के आशावादी संदेश को जीवन के उदाहरणों से जोड़कर स्पष्ट करना"
+          - "कविता में प्रयुक्त प्रतीकों और टेक (आवृत्त पंक्ति) के प्रभाव की व्याख्या करना"
+    removed_topics:
+      - "Class XI poems of Kavya Manjari: Sakhi, Bal Leela, Ek Phool Ki Chah, Aah Dharati Kitna Deti Hai, Nadi Ke Dweep (see isc-11-hindi)"
+    literature_texts:
+      - { title: "तुलसीदास के पद", author: "तुलसीदास", title_en: "Tulsi Das Ke Pad - Tulsidas" }
+      - { title: "जाग तुझको दूर जाना है", author: "महादेवी वर्मा", title_en: "Jag Tujhko Door Jana Hai - Mahadevi Verma" }
+      - { title: "उद्यमी नर", author: "रामधारी सिंह 'दिनकर'", title_en: "Udyami Nar - Ramdhari Singh 'Dinkar'" }
+      - { title: "बादल को घिरते देखा है", author: "नागार्जुन", title_en: "Badal Ko Ghirte Dekha Hai - Nagarjun" }
+      - { title: "अँधेरे का दीपक", author: "हरिवंशराय बच्चन", title_en: "Andhere Ka Deepak - Harivansh Rai Bachchan" }
+removed_topics: []

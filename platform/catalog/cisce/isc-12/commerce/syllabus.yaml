@@ -1,0 +1,437 @@
+# ISC Class 12 Commerce (code 857) - ISC 2027 examination.
+# Source: platform/catalog/sources/cisce.md#isc-2027-commerce. Topic wording is our own summary of the official scope.
+subject_id: isc-12-commerce
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-commerce, isc-2027-regulations]
+exam_notes: >-
+  Paper I Theory: 3 hours, 80 marks. Published unit weightage for Class XII: Business Environment 7, Financing 20,
+  Management 33, Marketing 20. Paper II Project Work (20 marks): two projects of 10 marks each on any theory topic
+  (overall format 1, content 4, findings 2, viva-voce 3), preferably handwritten, assessed by the teacher and a Visiting
+  Examiner; suggested projects include comparing marketing strategies, consumer court cases, bank account procedures,
+  fixed deposit rates, a simulated share portfolio, NIFTY/SENSEX sector tracking and company recruitment practices.
+  CISCE lists topics under four units, not chapters: SOYL groups them into teachable chapters in syllabus order.
+  From the ISC 2028 cohort this subject is renamed Business Studies (857).
+units:
+  - { name: "1. Business Environment", marks: 7 }
+  - { name: "2. Financing", marks: 20 }
+  - { name: "3. Management", marks: 33 }
+  - { name: "4. Marketing", marks: 20 }
+chapters:
+  - id: isc-12-commerce-ch01
+    number: 1
+    title: "Business Environment"
+    unit: "1. Business Environment"
+    topics:
+      - id: isc-12-commerce-ch01-t01
+        title: "Business environment: meaning, features and importance"
+        learning_outcomes:
+          - "Explain the meaning and features of business environment"
+          - "Discuss how understanding the environment helps a firm spot opportunities and threats early"
+      - id: isc-12-commerce-ch01-t02
+        title: "Environmental scanning: meaning"
+        learning_outcomes:
+          - "Define environmental scanning and explain why firms monitor changes in their environment"
+      - id: isc-12-commerce-ch01-t03
+        title: "Micro environment: internal and external factors"
+        learning_outcomes:
+          - "Identify internal factors (such as resources and policies) and external micro factors (suppliers, customers, competitors, intermediaries, public)"
+      - id: isc-12-commerce-ch01-t04
+        title: "Macro environment: economic, social, technological, political and legal components"
+        learning_outcomes:
+          - "Classify given changes (such as a new tax law or a shift in consumer tastes) into macro dimensions and explain their effect on business"
+      - id: isc-12-commerce-ch01-t05
+        title: "SWOT analysis: basic understanding"
+        learning_outcomes:
+          - "Prepare a simple SWOT analysis for a small Indian business"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-commerce-ch02
+    number: 2
+    title: "Business Finance, Financial Planning and Capital"
+    unit: "2. Financing"
+    topics:
+      - id: isc-12-commerce-ch02-t01
+        title: "Importance of finance; sources of finance for sole traders, partnerships and joint stock companies"
+        learning_outcomes:
+          - "Explain why every business needs finance"
+          - "Compare the sources of finance available to a sole trader, a partnership and a company"
+      - id: isc-12-commerce-ch02-t02
+        title: "Financial planning: meaning, features and importance"
+        learning_outcomes:
+          - "Explain the features of financial planning and how it ensures funds are available when needed"
+      - id: isc-12-commerce-ch02-t03
+        title: "Capital structure: factors affecting it"
+        learning_outcomes:
+          - "Discuss factors (cost, risk, control, cash flow, flexibility) that influence the mix of debt and equity"
+      - id: isc-12-commerce-ch02-t04
+        title: "Fixed capital: meaning and factors affecting fixed capital requirements"
+        learning_outcomes:
+          - "Explain how the nature of business, scale and technology affect fixed capital needs"
+      - id: isc-12-commerce-ch02-t05
+        title: "Working capital: meaning, types and factors affecting it; fixed versus working capital"
+        learning_outcomes:
+          - "Distinguish gross from net and permanent from temporary working capital"
+          - "Compare fixed capital and working capital on purpose, period and sources"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-commerce-ch03
+    number: 3
+    title: "Long-term Sources of Funds for a Joint Stock Company"
+    unit: "2. Financing"
+    topics:
+      - id: isc-12-commerce-ch03-t01
+        title: "Equity shares: features, advantages and disadvantages"
+        learning_outcomes:
+          - "Explain the features of equity shares and evaluate them as a source of finance"
+      - id: isc-12-commerce-ch03-t02
+        title: "Preference shares: features, types, advantages and disadvantages; equity versus preference shares"
+        learning_outcomes:
+          - "Describe types of preference shares (cumulative, redeemable, convertible, participating)"
+          - "Distinguish equity shares from preference shares"
+      - id: isc-12-commerce-ch03-t03
+        title: "Bonus shares, rights issue, ESOP, sweat equity shares and qualified institutional placement"
+        learning_outcomes:
+          - "Explain the meaning of each method of issuing shares"
+          - "Distinguish bonus shares from rights shares"
+      - id: isc-12-commerce-ch03-t04
+        title: "Retained earnings: meaning, merits and demerits"
+        learning_outcomes:
+          - "Evaluate ploughing back of profits as a source of finance"
+      - id: isc-12-commerce-ch03-t05
+        title: "Debentures: meaning, kinds, advantages and disadvantages; shares versus debentures"
+        learning_outcomes:
+          - "Describe kinds of debentures (secured, unsecured, convertible, redeemable, registered, bearer)"
+          - "Distinguish shares from debentures as instruments of ownership and debt"
+      - id: isc-12-commerce-ch03-t06
+        title: "Loans from commercial banks and financial institutions"
+        learning_outcomes:
+          - "State the meaning, advantages and disadvantages of term loans from banks and financial institutions"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-commerce-ch04
+    number: 4
+    title: "Short-term Sources of Funds"
+    unit: "2. Financing"
+    topics:
+      - id: isc-12-commerce-ch04-t01
+        title: "Short-term financial assistance from commercial banks"
+        learning_outcomes:
+          - "Explain overdraft, cash credit, short-term loans and discounting of bills as forms of bank assistance"
+      - id: isc-12-commerce-ch04-t02
+        title: "Public deposits, trade credit and customer advances"
+        learning_outcomes:
+          - "State the meaning, advantages and disadvantages of public deposits, trade credit and customer advances"
+      - id: isc-12-commerce-ch04-t03
+        title: "Factoring, inter-corporate deposits and instalment credit"
+        learning_outcomes:
+          - "Explain how factoring converts receivables into cash and evaluate its merits and demerits"
+          - "Describe inter-corporate deposits and instalment credit"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-commerce-ch05
+    number: 5
+    title: "Banking: Latest Trends"
+    unit: "2. Financing"
+    topics:
+      - id: isc-12-commerce-ch05-t01
+        title: "Online fund transfer: RTGS, NEFT, IMPS and online demand drafts"
+        learning_outcomes:
+          - "Compare RTGS, NEFT and IMPS by speed, timing and typical use"
+      - id: isc-12-commerce-ch05-t02
+        title: "Online payments and e-banking: meaning, features, advantages and disadvantages"
+        learning_outcomes:
+          - "Evaluate e-banking for customers and banks, including security risks"
+      - id: isc-12-commerce-ch05-t03
+        title: "Mobile banking: SMS alerts, fund transfer and payments"
+        learning_outcomes:
+          - "State the advantages and disadvantages of mobile banking"
+      - id: isc-12-commerce-ch05-t04
+        title: "ATM, debit cards and credit cards: features and differences"
+        learning_outcomes:
+          - "Distinguish a debit card from a credit card on source of funds, credit period and charges"
+      - id: isc-12-commerce-ch05-t05
+        title: "Digital banking, UPI and e-wallets (meaning only)"
+        learning_outcomes:
+          - "Explain the meaning of digital banking, UPI and e-wallets"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-commerce-ch06
+    number: 6
+    title: "Nature and Significance of Management"
+    unit: "3. Management"
+    topics:
+      - id: isc-12-commerce-ch06-t01
+        title: "Meaning of management as an activity, a group, a discipline and a process"
+        learning_outcomes:
+          - "Explain the four ways in which the term management is understood"
+      - id: isc-12-commerce-ch06-t02
+        title: "Objectives and characteristics of management"
+        learning_outcomes:
+          - "List the organisational, social and personal objectives of management"
+          - "Describe the characteristics of management (goal-oriented, pervasive, continuous, intangible, group activity)"
+      - id: isc-12-commerce-ch06-t03
+        title: "Management as a science, an art and a profession"
+        learning_outcomes:
+          - "Evaluate how far management fulfils the features of a science, an art and a profession"
+      - id: isc-12-commerce-ch06-t04
+        title: "Importance of management; levels of management and their functions"
+        learning_outcomes:
+          - "Explain the importance of management for an organisation and society"
+          - "Describe the functions of top, middle and lower (supervisory) levels of management"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-commerce-ch07
+    number: 7
+    title: "Principles of Management"
+    unit: "3. Management"
+    topics:
+      - id: isc-12-commerce-ch07-t01
+        title: "Nature of and need for principles of management"
+        learning_outcomes:
+          - "Describe the nature of management principles (universal, flexible, general guidelines)"
+          - "Explain why managers need principles"
+      - id: isc-12-commerce-ch07-t02
+        title: "Taylor's five principles of scientific management"
+        learning_outcomes:
+          - "Explain Taylor's principles of scientific management with workplace examples"
+      - id: isc-12-commerce-ch07-t03
+        title: "Fayol's fourteen principles of management"
+        learning_outcomes:
+          - "Explain each of Fayol's principles and identify which one is violated in a given situation"
+      - id: isc-12-commerce-ch07-t04
+        title: "Comparison of Taylor and Fayol; relevance of principles in today's business"
+        learning_outcomes:
+          - "Compare Taylor's and Fayol's contributions on perspective, focus and applicability"
+          - "Discuss the relevance of these principles in a modern Indian business"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-commerce-ch08
+    number: 8
+    title: "Planning"
+    unit: "3. Management"
+    topics:
+      - id: isc-12-commerce-ch08-t01
+        title: "Functions of management overview; planning: meaning and importance"
+        learning_outcomes:
+          - "Name the functions of management and explain the importance of planning as the primary function"
+      - id: isc-12-commerce-ch08-t02
+        title: "Steps in planning and limitations of planning"
+        learning_outcomes:
+          - "Arrange the steps in the planning process in order and explain each"
+          - "Explain the limitations of planning"
+      - id: isc-12-commerce-ch08-t03
+        title: "Types of plans: objectives, policies, procedures, methods, rules, budgets, programmes and strategies"
+        learning_outcomes:
+          - "Distinguish between types of plans and identify the type from an example"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-commerce-ch09
+    number: 9
+    title: "Organising"
+    unit: "3. Management"
+    topics:
+      - id: isc-12-commerce-ch09-t01
+        title: "Organising: meaning, importance and steps"
+        learning_outcomes:
+          - "Explain the steps of the organising process and its importance"
+      - id: isc-12-commerce-ch09-t02
+        title: "Functional and divisional structures: features, merits, demerits and differences"
+        learning_outcomes:
+          - "Recommend a functional or divisional structure for a given business and justify the choice"
+      - id: isc-12-commerce-ch09-t03
+        title: "Formal and informal organisation: features, merits, demerits and differences"
+        learning_outcomes:
+          - "Distinguish formal from informal organisation and explain how each affects work"
+      - id: isc-12-commerce-ch09-t04
+        title: "Delegation of authority: meaning and importance"
+        learning_outcomes:
+          - "Explain the elements of delegation (authority, responsibility, accountability) and its importance"
+      - id: isc-12-commerce-ch09-t05
+        title: "Centralisation and decentralisation; delegation versus decentralisation"
+        learning_outcomes:
+          - "Compare centralisation and decentralisation and state their merits and demerits"
+          - "Distinguish delegation from decentralisation"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-commerce-ch10
+    number: 10
+    title: "Staffing"
+    unit: "3. Management"
+    topics:
+      - id: isc-12-commerce-ch10-t01
+        title: "Staffing: meaning, steps and importance"
+        learning_outcomes:
+          - "Explain the steps in the staffing process and why staffing matters"
+      - id: isc-12-commerce-ch10-t02
+        title: "Recruitment: meaning and internal and external sources"
+        learning_outcomes:
+          - "Compare internal and external sources of recruitment with their merits and demerits"
+      - id: isc-12-commerce-ch10-t03
+        title: "Selection: meaning and procedure; recruitment versus selection"
+        learning_outcomes:
+          - "Describe the steps of the selection procedure in order"
+          - "Distinguish recruitment from selection"
+      - id: isc-12-commerce-ch10-t04
+        title: "Training and development: meaning, differences, types and methods (on-the-job and off-the-job)"
+        learning_outcomes:
+          - "Distinguish training from development"
+          - "Compare on-the-job methods (such as apprenticeship, internship) with off-the-job methods (such as vestibule training, lectures)"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-commerce-ch11
+    number: 11
+    title: "Directing"
+    unit: "3. Management"
+    topics:
+      - id: isc-12-commerce-ch11-t01
+        title: "Directing: meaning and importance"
+        learning_outcomes:
+          - "Explain why directing is needed to turn plans into action"
+      - id: isc-12-commerce-ch11-t02
+        title: "Supervision: meaning, functions and span of control"
+        learning_outcomes:
+          - "Describe the functions of a supervisor and explain the idea of span of control"
+      - id: isc-12-commerce-ch11-t03
+        title: "Motivation: meaning and Maslow's need hierarchy theory"
+        learning_outcomes:
+          - "Explain Maslow's hierarchy of needs and suggest incentives suited to each level"
+      - id: isc-12-commerce-ch11-t04
+        title: "Leadership: meaning and styles (democratic, autocratic, laissez-faire, bureaucratic - meaning only)"
+        learning_outcomes:
+          - "Identify the leadership style used in a given situation"
+      - id: isc-12-commerce-ch11-t05
+        title: "Communication: meaning, objectives, process, barriers and how to overcome them"
+        learning_outcomes:
+          - "Draw and explain the communication process"
+          - "Identify barriers to communication in a case and suggest ways to overcome them"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-commerce-ch12
+    number: 12
+    title: "Controlling and Coordination"
+    unit: "3. Management"
+    topics:
+      - id: isc-12-commerce-ch12-t01
+        title: "Controlling: meaning, steps and importance"
+        learning_outcomes:
+          - "Explain the steps in the controlling process from setting standards to corrective action"
+      - id: isc-12-commerce-ch12-t02
+        title: "Relationship between planning and controlling; management by exception"
+        learning_outcomes:
+          - "Explain why planning and controlling are inseparable"
+          - "Explain management by exception and its benefits"
+      - id: isc-12-commerce-ch12-t03
+        title: "Coordination: meaning and coordination as the essence of management"
+        learning_outcomes:
+          - "Explain why coordination is called the essence of management"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-commerce-ch13
+    number: 13
+    title: "Marketing: Concept and Functions"
+    unit: "4. Marketing"
+    topics:
+      - id: isc-12-commerce-ch13-t01
+        title: "Market: meaning and types; marketing: meaning and features"
+        learning_outcomes:
+          - "Classify markets by area, time and nature of goods"
+          - "Explain the features of marketing"
+      - id: isc-12-commerce-ch13-t02
+        title: "Traditional and modern concepts of marketing; marketing versus selling"
+        learning_outcomes:
+          - "Contrast the traditional (product/selling) and modern (customer-oriented) concepts of marketing"
+          - "Distinguish marketing from selling"
+      - id: isc-12-commerce-ch13-t03
+        title: "Objectives and importance of marketing"
+        learning_outcomes:
+          - "Explain the objectives of marketing and its importance to firms, consumers and society"
+      - id: isc-12-commerce-ch13-t04
+        title: "Functions of marketing: meaning and features of each function"
+        learning_outcomes:
+          - "Describe the functions of marketing (such as market research, buying, assembling, standardisation, grading, storage, transport, financing, risk bearing, selling)"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-commerce-ch14
+    number: 14
+    title: "Marketing Mix: Product and Price"
+    unit: "4. Marketing"
+    topics:
+      - id: isc-12-commerce-ch14-t01
+        title: "Marketing mix: meaning and the four elements"
+        learning_outcomes:
+          - "Explain the marketing mix and how the four Ps work together"
+      - id: isc-12-commerce-ch14-t02
+        title: "Product mix: goods and services - meaning, features, types of goods; product versus service"
+        learning_outcomes:
+          - "Classify goods into consumer and industrial goods with examples"
+          - "Distinguish products from services on tangibility, perishability and inseparability"
+      - id: isc-12-commerce-ch14-t03
+        title: "Branding, labelling and packaging"
+        learning_outcomes:
+          - "Explain the merits of branding and labelling"
+          - "State the features of good packaging"
+      - id: isc-12-commerce-ch14-t04
+        title: "Price mix: factors determining price"
+        learning_outcomes:
+          - "Explain factors such as cost, demand, competition and government regulation that affect pricing"
+      - id: isc-12-commerce-ch14-t05
+        title: "Pricing strategies: cost-plus, competitive, skimming, penetration and value-based (meaning only)"
+        learning_outcomes:
+          - "Identify the pricing strategy used in a given product launch example"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-commerce-ch15
+    number: 15
+    title: "Marketing Mix: Place and Promotion"
+    unit: "4. Marketing"
+    topics:
+      - id: isc-12-commerce-ch15-t01
+        title: "Place mix: channels of distribution and factors in choosing a channel"
+        learning_outcomes:
+          - "Draw zero-, one- and two-level channels of distribution"
+          - "Explain factors (product, market, company, competition) affecting the choice of channel"
+      - id: isc-12-commerce-ch15-t02
+        title: "Physical distribution and its elements (meaning only)"
+        learning_outcomes:
+          - "Name the elements of physical distribution: order processing, transportation, warehousing and inventory control"
+      - id: isc-12-commerce-ch15-t03
+        title: "Promotion mix: meaning and elements"
+        learning_outcomes:
+          - "Explain the promotion mix and its role in informing and persuading customers"
+      - id: isc-12-commerce-ch15-t04
+        title: "Advertising, sales promotion, personal selling and publicity: meaning, features, objectives and differences"
+        learning_outcomes:
+          - "Compare advertising with personal selling, and sales promotion with publicity"
+          - "Recommend a suitable promotion element for a given product and market"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-commerce-ch16
+    number: 16
+    title: "Consumer Protection"
+    unit: "4. Marketing"
+    topics:
+      - id: isc-12-commerce-ch16-t01
+        title: "Need for consumer protection; methods: self-help, legislation, consumer associations and NGOs"
+        learning_outcomes:
+          - "Explain why consumers need protection and compare the methods of consumer protection"
+      - id: isc-12-commerce-ch16-t02
+        title: "Consumer Protection Act, 2019: who is a consumer; rights and responsibilities of consumers"
+        learning_outcomes:
+          - "Decide whether a person is a consumer under the Act in a given case"
+          - "Identify the consumer right violated in a given situation and state related responsibilities"
+      - id: isc-12-commerce-ch16-t03
+        title: "Consumer Disputes Redressal Commissions (District, State, National) and their revised pecuniary jurisdiction"
+        learning_outcomes:
+          - "Choose the correct commission for a complaint based on the value of goods or services paid for"
+      - id: isc-12-commerce-ch16-t04
+        title: "Misleading advertisements and the latest consumer protection provisions specified in the syllabus"
+        learning_outcomes:
+          - "Explain what makes an advertisement misleading and the action a consumer can take"
+      - id: isc-12-commerce-ch16-t05
+        title: "Consumer Protection Act, 1986 versus Consumer Protection Act, 2019"
+        learning_outcomes:
+          - "List the key differences between the 1986 and 2019 Acts"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

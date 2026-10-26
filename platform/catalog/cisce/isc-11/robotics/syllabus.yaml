@@ -1,0 +1,254 @@
+# ISC Class 11 Robotics (884), Paper I Theory - ISC 2028 syllabus, CLASS XI portion only.
+# Source: platform/catalog/sources/cisce.md#isc-2028-robotics. Topic wording is our own summary of the official scope.
+subject_id: isc-11-robotics
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-robotics, isc-2028-regulations]
+exam_notes: >-
+  Class XI is year one of the two-year ISC 2028 course. There is no board examination in Class XI: the school conducts
+  the Class XI examination on the Class XI portion, and promotion to Class XII needs at least 35% on the cumulative
+  average in five subjects including English, with 75% attendance (ISC 2028 Regulations). The syllabus prescribes, and
+  the school examination usually follows: Paper I Theory, 3 hours, 70 marks; Paper II Practical, 30 marks, evaluated
+  internally by the school. The 3-hour practical has three problem statements of which one is attempted: 90 minutes
+  for an algorithm, circuit or block diagram and handwritten program, then 90 minutes to build, code and run it on the
+  computer and hardware with seen and unseen inputs (15 marks). The rest is continuous evaluation of at least twenty
+  assignments done during the year (execution 4, practical file documentation 6) and one project on any syllabus topic
+  (knowledge 1, functionality 3, presentation 1). The front page of the syllabus splits the 30 marks as Practical 15,
+  Project Work 10 and Practical File 5, which does not match this detailed scheme; schools follow the detailed scheme.
+  Suggested assignments include describing object positions in Cartesian, polar and cylindrical coordinates, building
+  a simple arm and analysing its degrees of freedom, obstacle avoidance with ultrasonic or infrared sensors,
+  programming basic movements on a microcontroller board, wireless control over Bluetooth or Wi-Fi, simulation, and a
+  team robot project. SOYL covers Paper I only. Robotics may be taken with Computer Science but not with Artificial
+  Intelligence (ISC 2028 Regulations). No Class XI specimen paper is published for this subject. The published Class
+  XI unit weightage is used for the units. CISCE lists topics under five weighted units, not textbook chapters: SOYL
+  groups them into 8 teachable chapters in syllabus order. The Class XII portion is in isc-12-robotics.
+units:
+  - { name: "Unit 1: Introduction to Robotics", marks: 10 }
+  - { name: "Unit 2: Mechanical System", marks: 15 }
+  - { name: "Unit 3: Computing Systems", marks: 20 }
+  - { name: "Unit 4: Electrical and Control Systems", marks: 15 }
+  - { name: "Unit 5: Applications of Robotic Systems", marks: 10 }
+chapters:
+  - id: isc-11-robotics-ch01
+    number: 1
+    title: "Introduction to Robotics"
+    unit: "Unit 1: Introduction to Robotics"
+    topics:
+      - id: isc-11-robotics-ch01-t01
+        title: "What is a robot: autonomous and semi-autonomous operation using sensors and AI"
+        learning_outcomes:
+          - "Define a robot and distinguish autonomous from semi-autonomous robots"
+          - "Explain the sense-think-act cycle of a robot"
+      - id: isc-11-robotics-ch01-t02
+        title: "New-age robotic systems: AI and machine learning in smart manufacturing, healthcare and autonomous vehicles"
+        learning_outcomes:
+          - "Describe how AI-enabled robots are used in smart factories, hospitals and self-driving vehicles"
+      - id: isc-11-robotics-ch01-t03
+        title: "Components of robots: sensors, actuators and control units; visualising, designing and creating them with CAD and precision manufacturing"
+        learning_outcomes:
+          - "Identify the sensors, actuators and controller in a given robot"
+          - "Explain the role of CAD modelling and precision manufacturing in building robot parts"
+      - id: isc-11-robotics-ch01-t04
+        title: "Physics in robotics: motion, forces and control"
+        learning_outcomes:
+          - "Apply laws of motion and forces to explain how a robot moves and balances"
+      - id: isc-11-robotics-ch01-t05
+        title: "Matrix operations for rotations and translations of coordinate systems in robotic arms"
+        learning_outcomes:
+          - "Use a 2D rotation matrix to find the new coordinates of a point after rotation"
+      - id: isc-11-robotics-ch01-t06
+        title: "Vectors and vector spaces for direction, force and position"
+        learning_outcomes:
+          - "Represent the position of a robot part and the force on it as vectors and add them"
+      - id: isc-11-robotics-ch01-t07
+        title: "Project management for robotics: planning, execution, monitoring, time, budget and quality"
+        learning_outcomes:
+          - "Prepare a simple project plan for a robot build with milestones, budget and quality checks"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-robotics-ch02
+    number: 2
+    title: "Frames, Degrees of Freedom and Mechanisms"
+    unit: "Unit 2: Mechanical System"
+    topics:
+      - id: isc-11-robotics-ch02-t01
+        title: "Frames: coordinate systems defining position and orientation of robot parts"
+        learning_outcomes:
+          - "Explain what a frame is and why each robot part is given one"
+      - id: isc-11-robotics-ch02-t02
+        title: "Fixed and moving reference frames"
+        learning_outcomes:
+          - "Distinguish fixed frames, such as the base of a robotic arm, from moving frames attached to its links"
+      - id: isc-11-robotics-ch02-t03
+        title: "Degrees of freedom; 3D modelling by moving, scaling and rotating shapes in a browser-based CAD tool"
+        learning_outcomes:
+          - "Count the degrees of freedom of a rigid body and of a simple robotic arm"
+          - "Describe how to design a simple robot structure in a 3D modelling tool"
+      - id: isc-11-robotics-ch02-t04
+        title: "Planar mechanisms with real-life examples"
+        learning_outcomes:
+          - "Identify planar mechanisms such as four-bar linkages and windscreen wipers and describe their motion"
+      - id: isc-11-robotics-ch02-t05
+        title: "Spatial mechanisms with real-life examples (qualitative)"
+        learning_outcomes:
+          - "Distinguish spatial from planar mechanisms using examples such as a robotic wrist"
+    removed_topics:
+      - "Spatial mechanisms: qualitative treatment with pictures only"
+    literature_texts: []
+  - id: isc-11-robotics-ch03
+    number: 3
+    title: "Kinematics, Robot Components and Specifications"
+    unit: "Unit 2: Mechanical System"
+    topics:
+      - id: isc-11-robotics-ch03-t01
+        title: "Robot kinematics: planar open-chain mechanisms; forward kinematics of 2R and RP configurations"
+        learning_outcomes:
+          - "Calculate the end-effector position of a 2R planar arm from its link lengths and joint angles"
+          - "Calculate the end-effector position of an RP arm from its joint angle and extension"
+      - id: isc-11-robotics-ch03-t02
+        title: "Robot frames and materials: MDF, acrylic, aluminium and steel"
+        learning_outcomes:
+          - "Choose a suitable frame material for a given robot and justify the choice by weight, strength and cost"
+      - id: isc-11-robotics-ch03-t03
+        title: "Wheel types: standard, castor, mecanum and omni wheels"
+        learning_outcomes:
+          - "Compare wheel types and state which allow sideways motion"
+      - id: isc-11-robotics-ch03-t04
+        title: "Cartesian, polar and cylindrical coordinates for robot positioning"
+        learning_outcomes:
+          - "Describe a position in Cartesian, polar and cylindrical coordinates and convert between them"
+      - id: isc-11-robotics-ch03-t05
+        title: "Specifications: resolution, accuracy and repeatability"
+        learning_outcomes:
+          - "Define resolution, accuracy and repeatability and distinguish accuracy from repeatability"
+      - id: isc-11-robotics-ch03-t06
+        title: "Current trends: high-resolution encoders, sub-micron resolution, integrated vision, calibration, dynamic error compensation, adaptive control"
+        learning_outcomes:
+          - "Explain how encoders, vision systems and calibration improve precision in tasks such as semiconductor assembly or spot welding"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-robotics-ch04
+    number: 4
+    title: "Boolean Logic and Microcontroller Architecture"
+    unit: "Unit 3: Computing Systems"
+    topics:
+      - id: isc-11-robotics-ch04-t01
+        title: "Boolean operators AND, OR and NOT and their truth tables"
+        learning_outcomes:
+          - "Write truth tables for AND, OR and NOT and combine them in simple expressions"
+      - id: isc-11-robotics-ch04-t02
+        title: "Boolean logic in robot decision making"
+        learning_outcomes:
+          - "Write a Boolean condition for a robot decision, such as stop if obstacle detected AND speed above zero"
+      - id: isc-11-robotics-ch04-t03
+        title: "Microcontroller and single-board computer (SBC) block diagrams and architecture"
+        learning_outcomes:
+          - "Label the CPU, memory, I/O ports, timers and ADC on a microcontroller block diagram"
+          - "Compare a microcontroller with a single-board computer for robot control"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-robotics-ch05
+    number: 5
+    title: "Programming, Debugging and Testing"
+    unit: "Unit 3: Computing Systems"
+    topics:
+      - id: isc-11-robotics-ch05-t01
+        title: "Algorithms, flowcharts and pseudocode"
+        learning_outcomes:
+          - "Write an algorithm, flowchart and pseudocode for a line-following or obstacle-avoiding robot"
+      - id: isc-11-robotics-ch05-t02
+        title: "Programming a microcontroller or SBC: program structure, inputs and outputs"
+        learning_outcomes:
+          - "Describe the setup and loop structure of a microcontroller program that reads a sensor and drives a motor"
+      - id: isc-11-robotics-ch05-t03
+        title: "Basic embedded C: variables, conditions, loops and functions"
+        learning_outcomes:
+          - "Write a basic embedded C program to blink an LED or control a motor"
+      - id: isc-11-robotics-ch05-t04
+        title: "Interrupts and timers"
+        learning_outcomes:
+          - "Explain how an interrupt responds to an event and how timers create precise delays"
+      - id: isc-11-robotics-ch05-t05
+        title: "Debugging and testing for correct and efficient execution"
+        learning_outcomes:
+          - "Locate and correct errors in a robot program using systematic testing"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-robotics-ch06
+    number: 6
+    title: "Motors, Sensors and Batteries"
+    unit: "Unit 4: Electrical and Control Systems"
+    topics:
+      - id: isc-11-robotics-ch06-t01
+        title: "DC motors and servo motors: description, characteristics, applications, advantages and disadvantages"
+        learning_outcomes:
+          - "Compare DC and servo motors and choose one for a given robot task"
+      - id: isc-11-robotics-ch06-t02
+        title: "IR and ultrasonic sensors: working principle and applications"
+        learning_outcomes:
+          - "Explain how IR and ultrasonic sensors measure distance or detect objects"
+          - "Calculate distance from an ultrasonic echo time"
+      - id: isc-11-robotics-ch06-t03
+        title: "LIDAR and touch sensors: working principle, applications, advantages and disadvantages"
+        learning_outcomes:
+          - "Describe how LIDAR maps surroundings and how touch sensors detect contact"
+      - id: isc-11-robotics-ch06-t04
+        title: "Gyroscopes and accelerometers"
+        learning_outcomes:
+          - "Explain how gyroscopes and accelerometers help a robot or drone sense orientation and motion"
+      - id: isc-11-robotics-ch06-t05
+        title: "Batteries for robots: lithium-ion and lead-acid - characteristics, applications and drawbacks"
+        learning_outcomes:
+          - "Compare lithium-ion and lead-acid batteries for a mobile robot"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-robotics-ch07
+    number: 7
+    title: "Communication Protocols, Power and Control Systems"
+    unit: "Unit 4: Electrical and Control Systems"
+    topics:
+      - id: isc-11-robotics-ch07-t01
+        title: "Communication protocols UART, I2C, SPI and CAN: key characteristics and uses"
+        learning_outcomes:
+          - "Describe how each protocol connects devices and give a typical use"
+      - id: isc-11-robotics-ch07-t02
+        title: "Comparing protocols: speed, performance, error detection and reliability"
+        learning_outcomes:
+          - "Choose a suitable protocol for a given robot subsystem and justify the choice"
+      - id: isc-11-robotics-ch07-t03
+        title: "Power requirements of motors, sensors, actuators and microcontrollers"
+        learning_outcomes:
+          - "Estimate the total power and battery capacity a small robot needs"
+      - id: isc-11-robotics-ch07-t04
+        title: "Basics of control systems for accurate, efficient and safe performance"
+        learning_outcomes:
+          - "Distinguish open-loop and closed-loop control with robot examples"
+          - "Explain the role of feedback in keeping a robot on its intended path"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-robotics-ch08
+    number: 8
+    title: "Applications of Robotic Systems"
+    unit: "Unit 5: Applications of Robotic Systems"
+    topics:
+      - id: isc-11-robotics-ch08-t01
+        title: "Manipulators: basic mathematical concepts and control strategies; industrial automation and assembly"
+        learning_outcomes:
+          - "Describe how manipulator arms are controlled to automate industrial and assembly tasks"
+      - id: isc-11-robotics-ch08-t02
+        title: "Autonomous mobile robots: design principles and sensor integration"
+        learning_outcomes:
+          - "Explain how sensors are integrated for navigation in an autonomous mobile robot"
+          - "Describe the role of mobile robots in logistics, transport and search and rescue"
+      - id: isc-11-robotics-ch08-t03
+        title: "Drones: principles of aerial robotics, sensor payloads and regulations"
+        learning_outcomes:
+          - "Explain how a multirotor drone flies and is stabilised"
+          - "State the purpose of drone regulations in India"
+      - id: isc-11-robotics-ch08-t04
+        title: "Drone applications: aerial photography, agriculture and disaster response"
+        learning_outcomes:
+          - "Describe how drones are used for crop spraying and disaster assessment"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

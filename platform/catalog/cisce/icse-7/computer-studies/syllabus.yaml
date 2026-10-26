@@ -1,0 +1,273 @@
+# ICSE Class 7 Computer Studies - CISCE Curriculum for Upper Primary Classes VI-VIII (2016), Computer Studies, Class VII part only.
+# Source: platform/catalog/sources/cisce.md#cisce-upper-primary-curriculum (Computer Studies, Class VII, Topics 1-7).
+# Topic wording is our own summary of the official key concepts and learning outcomes.
+subject_id: icse-7-computer-studies
+academic_year: "2026-27"
+source_status: verified
+sources: [cisce-upper-primary-curriculum]
+exam_notes: >-
+  No board examination in Class 7. CISCE publishes a recommended theme-based curriculum (Curriculum for Upper Primary
+  Classes VI-VIII, RDCD, 2016) with learning outcomes per class; it prescribes no textbooks, no paper pattern and no
+  marks weightage. Schools choose their own textbooks and set their own unit tests and term examinations; the curriculum
+  asks for continuous assessment through oral and written work, projects, activities and portfolios as well as tests.
+  The Class VII Computer Studies curriculum has seven topics (hardware, number systems, computer viruses, ethics and
+  safety, spreadsheets, databases, advanced HTML), each with learning outcomes and key concepts; SOYL grouped them into
+  9 teachable chapters in curriculum order. Much of the work is hands-on in the computer lab (building a worksheet, a
+  database table and a web page); schools assess it through practical tasks, projects, quizzes and worksheets as well as
+  written tests. Software is generic: any spreadsheet, database or HTML editor may be used.
+units:
+  - { name: "Topic 1: Computer - Hardware Components", marks: null }
+  - { name: "Topic 2: Number System - An Introduction", marks: null }
+  - { name: "Topic 3: Computer Virus", marks: null }
+  - { name: "Topic 4: Ethics and Safety Measures in Computing", marks: null }
+  - { name: "Topic 5: Spreadsheets - An Introduction", marks: null }
+  - { name: "Topic 6: Database and DBMS - An Introduction", marks: null }
+  - { name: "Topic 7: HTML - Advanced Features", marks: null }
+chapters:
+  - id: icse-7-computer-studies-ch01
+    number: 1
+    title: "Computer Hardware Components"
+    unit: "Topic 1: Computer - Hardware Components"
+    topics:
+      - id: icse-7-computer-studies-ch01-t01
+        title: "Hardware and software; external and internal hardware"
+        learning_outcomes:
+          - "Differentiate between external and internal hardware and give examples of each"
+      - id: icse-7-computer-studies-ch01-t02
+        title: "Inside the system unit: CPU, motherboard and power supply (SMPS)"
+        learning_outcomes:
+          - "Identify the CPU, motherboard and SMPS and explain the role of each"
+      - id: icse-7-computer-studies-ch01-t03
+        title: "Disk drives, ports and modem"
+        learning_outcomes:
+          - "Explain the use of disk drives, ports and a modem"
+          - "Match common ports to the devices connected to them"
+      - id: icse-7-computer-studies-ch01-t04
+        title: "Peripheral devices: keyboard, mouse, pen drive, scanner, printer"
+        learning_outcomes:
+          - "Classify peripheral devices as input, output or storage devices"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-computer-studies-ch02
+    number: 2
+    title: "Number Systems"
+    unit: "Topic 2: Number System - An Introduction"
+    topics:
+      - id: icse-7-computer-studies-ch02-t01
+        title: "Need for number systems; digits and base"
+        learning_outcomes:
+          - "Explain why computers use the binary number system"
+          - "State the digits and base of a number system"
+      - id: icse-7-computer-studies-ch02-t02
+        title: "Decimal, binary, octal and hexadecimal number systems"
+        learning_outcomes:
+          - "Identify the base and symbols used in the decimal, binary, octal and hexadecimal systems"
+          - "List uses of these number systems in computing"
+      - id: icse-7-computer-studies-ch02-t03
+        title: "Converting decimal numbers to binary"
+        learning_outcomes:
+          - "Convert a decimal number to binary by repeated division by 2"
+      - id: icse-7-computer-studies-ch02-t04
+        title: "Converting binary numbers to decimal"
+        learning_outcomes:
+          - "Convert a binary number to decimal using place values (powers of 2)"
+    removed_topics:
+      - "Conversions involving octal and hexadecimal (only decimal-binary conversion in Class VII)"
+    literature_texts: []
+  - id: icse-7-computer-studies-ch03
+    number: 3
+    title: "Computer Viruses and Protection"
+    unit: "Topic 3: Computer Virus"
+    topics:
+      - id: icse-7-computer-studies-ch03-t01
+        title: "What a computer virus is"
+        learning_outcomes:
+          - "Define a computer virus and explain that it is man-made code that copies itself and damages data"
+      - id: icse-7-computer-studies-ch03-t02
+        title: "Types of virus: boot sector and program file viruses"
+        learning_outcomes:
+          - "Distinguish boot sector viruses from program file viruses"
+      - id: icse-7-computer-studies-ch03-t03
+        title: "Other forms of attack: malware, worm, spyware, Trojan horse"
+        learning_outcomes:
+          - "Describe how worms, spyware and Trojan horses differ from a virus"
+      - id: icse-7-computer-studies-ch03-t04
+        title: "Symptoms and harm caused by a virus"
+        learning_outcomes:
+          - "Identify common symptoms that suggest a computer is infected"
+      - id: icse-7-computer-studies-ch03-t05
+        title: "Antivirus software and preventing infection"
+        learning_outcomes:
+          - "Explain what antivirus software does"
+          - "Follow safe practices such as scanning pen drives, downloading only from secure sites and updating antivirus regularly"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-computer-studies-ch04
+    number: 4
+    title: "Ethics in Computing"
+    unit: "Topic 4: Ethics and Safety Measures in Computing"
+    topics:
+      - id: icse-7-computer-studies-ch04-t01
+        title: "Advantages and disadvantages of using the internet"
+        learning_outcomes:
+          - "List advantages and disadvantages of using the internet"
+      - id: icse-7-computer-studies-ch04-t02
+        title: "What computer ethics means"
+        learning_outcomes:
+          - "Explain the meaning of ethics in computing with examples of ethical behaviour online"
+      - id: icse-7-computer-studies-ch04-t03
+        title: "Plagiarism, software piracy and intellectual property rights"
+        learning_outcomes:
+          - "Explain plagiarism, piracy and intellectual property and how to use others' work ethically"
+          - "Acknowledge sources used in a presentation or project"
+      - id: icse-7-computer-studies-ch04-t04
+        title: "Cyber bullying, hacking, phishing and spamming"
+        learning_outcomes:
+          - "Describe each unethical practice and suggest a preventive measure for it"
+      - id: icse-7-computer-studies-ch04-t05
+        title: "Right to privacy"
+        learning_outcomes:
+          - "Explain why personal information should be protected online"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-computer-studies-ch05
+    number: 5
+    title: "Online Safety and Digital Citizenship"
+    unit: "Topic 4: Ethics and Safety Measures in Computing"
+    topics:
+      - id: icse-7-computer-studies-ch05-t01
+        title: "Safety measures while using the computer and internet"
+        learning_outcomes:
+          - "Follow safety rules such as using age-appropriate websites with parental help and replying only to known senders"
+      - id: icse-7-computer-studies-ch05-t02
+        title: "Passwords"
+        learning_outcomes:
+          - "Create a strong password and explain why passwords must not be shared and should be changed regularly"
+      - id: icse-7-computer-studies-ch05-t03
+        title: "Firewall"
+        learning_outcomes:
+          - "Explain in simple terms how a firewall protects a computer or network"
+      - id: icse-7-computer-studies-ch05-t04
+        title: "Social media: positive and negative uses"
+        learning_outcomes:
+          - "Identify positive and negative uses of social media and online threats"
+      - id: icse-7-computer-studies-ch05-t05
+        title: "Digital footprint and responsible digital citizenship"
+        learning_outcomes:
+          - "Explain how posts, comments and pictures create a lasting digital footprint"
+          - "Describe the behaviour of a responsible digital citizen"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-computer-studies-ch06
+    number: 6
+    title: "Spreadsheets: Introduction"
+    unit: "Topic 5: Spreadsheets - An Introduction"
+    topics:
+      - id: icse-7-computer-studies-ch06-t01
+        title: "What a spreadsheet is; features and advantages"
+        learning_outcomes:
+          - "Define a spreadsheet and list its features and advantages"
+      - id: icse-7-computer-studies-ch06-t02
+        title: "Parts of the spreadsheet window"
+        learning_outcomes:
+          - "Identify the workbook, worksheet, sheet tab, cell, cell address, active cell, formula bar, rows, columns and name box"
+          - "Differentiate between a workbook and a worksheet"
+      - id: icse-7-computer-studies-ch06-t03
+        title: "Types of data: numbers, text (strings) and formulae"
+        learning_outcomes:
+          - "Identify the type of data entered in a cell"
+      - id: icse-7-computer-studies-ch06-t04
+        title: "Creating and saving a workbook"
+        learning_outcomes:
+          - "Create, save and reopen a workbook"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-computer-studies-ch07
+    number: 7
+    title: "Spreadsheets: Working with Data"
+    unit: "Topic 5: Spreadsheets - An Introduction"
+    topics:
+      - id: icse-7-computer-studies-ch07-t01
+        title: "Entering data and simple formulae; performing calculations"
+        learning_outcomes:
+          - "Enter data and simple formulae to perform calculations on a worksheet"
+      - id: icse-7-computer-studies-ch07-t02
+        title: "Selecting cells and changing cell contents; undo and redo"
+        learning_outcomes:
+          - "Select cells and ranges, edit cell contents and use undo and redo"
+      - id: icse-7-computer-studies-ch07-t03
+        title: "Inserting and deleting rows and columns; copying and moving data"
+        learning_outcomes:
+          - "Insert and delete rows and columns"
+          - "Copy and move data within a worksheet"
+      - id: icse-7-computer-studies-ch07-t04
+        title: "Autofill"
+        learning_outcomes:
+          - "Use autofill to extend a series or copy a formula"
+      - id: icse-7-computer-studies-ch07-t05
+        title: "Formatting a worksheet"
+        learning_outcomes:
+          - "Format cells (font, alignment, borders, number format) to make a worksheet readable"
+          - "Build a worksheet from data collected in a class survey"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-computer-studies-ch08
+    number: 8
+    title: "Databases and DBMS"
+    unit: "Topic 6: Database and DBMS - An Introduction"
+    topics:
+      - id: icse-7-computer-studies-ch08-t01
+        title: "Database and DBMS: meaning and real-life examples"
+        learning_outcomes:
+          - "Define a database and a DBMS"
+          - "Give real-life examples of databases such as a telephone directory or student records"
+      - id: icse-7-computer-studies-ch08-t02
+        title: "Designing a table: fields, records and data types"
+        learning_outcomes:
+          - "Design a simple table with suitable fields and data types"
+      - id: icse-7-computer-studies-ch08-t03
+        title: "Primary key"
+        learning_outcomes:
+          - "Define a primary key and choose a suitable primary key for a table"
+      - id: icse-7-computer-studies-ch08-t04
+        title: "Creating, saving and editing a table"
+        learning_outcomes:
+          - "Create and save a table, insert records and edit them"
+      - id: icse-7-computer-studies-ch08-t05
+        title: "Querying a database"
+        learning_outcomes:
+          - "Build a simple query to retrieve records that meet a condition"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-computer-studies-ch09
+    number: 9
+    title: "HTML: Advanced Features"
+    unit: "Topic 7: HTML - Advanced Features"
+    topics:
+      - id: icse-7-computer-studies-ch09-t01
+        title: "Revision of basic HTML structure and tags"
+        learning_outcomes:
+          - "Write the basic structure of an HTML document"
+      - id: icse-7-computer-studies-ch09-t02
+        title: "Ordered and unordered lists (OL, UL)"
+        learning_outcomes:
+          - "Create ordered and unordered lists on a web page"
+      - id: icse-7-computer-studies-ch09-t03
+        title: "Images and hyperlinks (img src, a href)"
+        learning_outcomes:
+          - "Insert an image with the img tag and link pages with the anchor tag"
+      - id: icse-7-computer-studies-ch09-t04
+        title: "Tables (table, tr, td)"
+        learning_outcomes:
+          - "Create a table with rows and cells on a web page"
+      - id: icse-7-computer-studies-ch09-t05
+        title: "Marquee"
+        learning_outcomes:
+          - "Display moving text using the marquee tag"
+      - id: icse-7-computer-studies-ch09-t06
+        title: "Forms (form tag)"
+        learning_outcomes:
+          - "Create a simple form with text boxes and a submit button"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []
