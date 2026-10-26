@@ -8,7 +8,7 @@ import { MARKDOWN_XSS } from '../__fixtures__/xss-corpus';
 import { Markdown } from '../render/Markdown';
 import { UNDERLINE_SOURCE } from '../render/remark-soyl';
 import { KeyDetails } from '../question/AnswerReveal';
-import { formatMapText, parseMapText } from '../question/inputs';
+import { formatMapText, matchLabel, parseMapText } from '../question/inputs';
 import { mapLabelsFromStem } from '../question/map-places';
 import {
   blankCount,
@@ -176,7 +176,10 @@ describe('QuestionCard: objective types', () => {
     check();
     await screen.findByTestId('question-result');
     expect(submit).toHaveBeenCalledWith({ pairs: [{ left_id: '1', right_id: 'q' }, { left_id: '2', right_id: 'q' }] });
-    expect(container.textContent).toContain('Answer: A');
+    expect(container.textContent).toContain('Answer: P');
+    expect(matchLabel('p', 'A')).toBe('P');
+    expect(matchLabel('ii', 'B')).toBe('ii');
+    expect(matchLabel('long-id', 'C')).toBe('C');
   });
 
   it('ordering: buttons and keyboard move items, then the order is sent', async () => {

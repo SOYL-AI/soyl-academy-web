@@ -147,7 +147,8 @@ export function BlanksInput({ part, draft, onChange, disabled, label, lang, blan
 
 export function MatchInput({ part, slots, draft, onChange, disabled, label, lang, correctPairs }: InputProps<Extract<Draft, { kind: 'pairs' }>> & { correctPairs?: Record<string, string> | null }) {
   const base = useId();
-  const rightLabel = new Map(part.match_right.map((r, i) => [r.id, letter(i)]));
+  // Use the content's own short ids (1, 2 … / p, q …) so the solution's "1 → q" lines up; else A, B ….
+  const rightLabel = new Map(part.match_right.map((r, i) => [r.id, matchLabel(r.id, letter(i))]));
   return (
     <fieldset className={s.fieldset} disabled={disabled} data-input="match">
       <legend className="p-visually-hidden">{label}</legend>
@@ -158,16 +159,16 @@ export function MatchInput({ part, slots, draft, onChange, disabled, label, lang
             {part.match_right.map((r, i) => (
               <li key={r.id}>
                 <span className={s.optionLetter} aria-hidden="true">
-                  {letter(i)}
+                  {rightLabel.get(r.id)}
                 </span>
-                <span className="p-visually-hidden">{letter(i)}: </span>
+                <span className="p-visually-hidden">{rightLabel.get(r.id)}: </span>
                 <span>{slots.right[r.id]}</span>
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <p className={s.columnTitle}>Column A — choose the matching letter</p>
+          <p className={s.columnTitle}>Column A — choose the match from Column B</p>
           <ol className={s.matchList}>
             {part.options.map((o, i) => {
               const chosen = draft.pairs[o.id] ?? '';
@@ -176,7 +177,7 @@ export function MatchInput({ part, slots, draft, onChange, disabled, label, lang
               return (
                 <li key={o.id} className={s.matchRow} data-left-id={o.id}>
                   <label htmlFor={`${base}-${o.id}`} className={s.matchLeft}>
-                    <span className={s.optionNumber}>{i + 1}.</span> {slots.options[o.id]}
+                    <span className={s.optionNumber}>{matchLabel(o.id, String(i + 1))}.</span> {slots.options[o.id]}
                   </label>
                   <span className={s.inputRow}>
                     <select
@@ -207,6 +208,11 @@ export function MatchInput({ part, slots, draft, onChange, disabled, label, lang
       </div>
     </fieldset>
   );
+}
+
+/** A short content id ("1", "p", "ii") shown as the item's label; anything longer falls back. */
+export function matchLabel(id: string, fallback: string): string {
+  return /^[A-Za-z0-9]{1,3}$/.test(id) ? (/^[a-z]$/.test(id) ? id.toUpperCase() : id) : fallback;
 }
 
 /* ── Written answers: short, long, writing, code-output ──────────────────────────────────────────── */
