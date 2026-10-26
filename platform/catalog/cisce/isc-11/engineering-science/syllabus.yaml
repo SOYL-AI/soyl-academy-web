@@ -1,0 +1,359 @@
+# ISC Class 11 Engineering Science (867), Paper I Theory - ISC 2028 syllabus, CLASS XI portion only.
+# Source: platform/catalog/sources/cisce.md#isc-2028-engineering-science. Topic wording is our own summary of the official scope.
+subject_id: isc-11-engineering-science
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-engineering-science, isc-2028-regulations]
+exam_notes: >-
+  Class XI is year one of the two-year ISC 2028 course. There is no board examination in Class XI: the school conducts
+  the Class XI examination on the Class XI portion, and promotion to Class XII needs at least 35% on the cumulative
+  average in five subjects including English, with 75% attendance (ISC 2028 Regulations). The syllabus prescribes, and
+  the school examination usually follows: Paper I Theory, 3 hours, 80 marks, with all questions in SI units
+  (abbreviations as in the Indian Standards guide to SI units); examiners look for evidence that principles have been
+  studied practically and may ask to see practical notebooks. Paper II Project Work, 20 marks - two projects on any
+  theory topics, assessed by the subject teacher, each marked out of 10 (title and introduction 1, content 3,
+  presentation and originality 2, conclusion 1, viva-voce 3). Suggested Class XI projects: velocity-time graphs and
+  acceleration for different masses and forces, the range and height of a water jet at different angles of projection,
+  a month of newspaper atmospheric-pressure and humidity data, and a study of an Indian or foreign physicist.
+  SOYL covers Paper I only. Engineering Science may not be taken with Physics (ISC regulations). No topic-wise marks
+  weightage is published, and no Class XI specimen paper is listed for this subject. CISCE lists 12 numbered topics,
+  not textbook chapters: SOYL groups them into 15 teachable chapters in syllabus order (topics 1, 4 and 6 are each
+  split in two). The Class XII portion is in isc-12-engineering-science.
+units:
+  - { name: "1. Velocity, Acceleration and Laws of Motion", marks: null }
+  - { name: "2. Angular Velocity and Angular Acceleration", marks: null }
+  - { name: "3. Composition and Resolution of Velocity; Projectiles", marks: null }
+  - { name: "4. Forces and Equilibrium", marks: null }
+  - { name: "5. Moments and Centre of Gravity", marks: null }
+  - { name: "6. Pressure in Liquids", marks: null }
+  - { name: "7. Air Pressure", marks: null }
+  - { name: "8. Temperature and Temperature Scales", marks: null }
+  - { name: "9. Thermal Expansion", marks: null }
+  - { name: "10. Quantity of Heat", marks: null }
+  - { name: "11. Conduction, Convection and Radiation", marks: null }
+  - { name: "12. Conversion of Heat and Mechanical Energy", marks: null }
+chapters:
+  - id: isc-11-engineering-science-ch01
+    number: 1
+    title: "Velocity and Acceleration"
+    unit: "1. Velocity, Acceleration and Laws of Motion"
+    topics:
+      - id: isc-11-engineering-science-ch01-t01
+        title: "Displacement, velocity and acceleration; equations of uniformly accelerated motion"
+        learning_outcomes:
+          - "Distinguish speed from velocity and define acceleration with SI units"
+          - "Solve problems using v = u + at, s = ut + (1/2)at^2 and v^2 = u^2 + 2as"
+      - id: isc-11-engineering-science-ch01-t02
+        title: "Graphical treatment of motion, including bodies with variable acceleration"
+        learning_outcomes:
+          - "Find acceleration from the slope and displacement from the area of a velocity-time graph"
+          - "Interpret velocity-time graphs for bodies whose acceleration changes"
+      - id: isc-11-engineering-science-ch01-t03
+        title: "Acceleration due to gravity and its measurement"
+        learning_outcomes:
+          - "Solve free-fall problems using g = 9.8 m/s^2"
+          - "Describe an experiment to measure g, such as with a simple pendulum or timed free fall"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-engineering-science-ch02
+    number: 2
+    title: "Force, Mass and the Laws of Motion"
+    unit: "1. Velocity, Acceleration and Laws of Motion"
+    topics:
+      - id: isc-11-engineering-science-ch02-t01
+        title: "Newton's first law and inertia"
+        learning_outcomes:
+          - "State the first law and explain inertia with engineering examples such as seat belts"
+      - id: isc-11-engineering-science-ch02-t02
+        title: "Force, mass and acceleration: F = ma; the newton"
+        learning_outcomes:
+          - "Apply F = ma to find force, mass or acceleration"
+          - "Distinguish mass from weight and calculate weight as W = mg"
+      - id: isc-11-engineering-science-ch02-t03
+        title: "Newton's third law: action and reaction"
+        learning_outcomes:
+          - "Identify action-reaction pairs in situations such as a book on a table or a rocket"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-engineering-science-ch03
+    number: 3
+    title: "Angular Motion"
+    unit: "2. Angular Velocity and Angular Acceleration"
+    topics:
+      - id: isc-11-engineering-science-ch03-t01
+        title: "Angular displacement and angular velocity; radians and rev/min"
+        learning_outcomes:
+          - "Convert angular speeds between rev/min and rad/s"
+          - "Use v = r omega to relate linear and angular velocity"
+      - id: isc-11-engineering-science-ch03-t02
+        title: "Angular acceleration and equations of uniformly accelerated rotation"
+        learning_outcomes:
+          - "Define angular acceleration and relate it to linear acceleration by a = r alpha"
+          - "Solve problems on wheels and shafts speeding up or slowing down uniformly"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-engineering-science-ch04
+    number: 4
+    title: "Relative Velocity and Projectiles"
+    unit: "3. Composition and Resolution of Velocity; Projectiles"
+    topics:
+      - id: isc-11-engineering-science-ch04-t01
+        title: "Composition of velocities: resultant of two velocities"
+        learning_outcomes:
+          - "Find the resultant of two velocities by vector diagram and by calculation"
+          - "Solve problems such as a boat crossing a flowing river"
+      - id: isc-11-engineering-science-ch04-t02
+        title: "Resolution of a velocity into horizontal and vertical components"
+        learning_outcomes:
+          - "Resolve a velocity into components using u cos(theta) and u sin(theta)"
+      - id: isc-11-engineering-science-ch04-t03
+        title: "Simple projectile problems combining horizontal and vertical motion"
+        learning_outcomes:
+          - "Calculate the time of flight, maximum height and horizontal range of a projectile"
+          - "Solve problems on a body projected horizontally from a height"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-engineering-science-ch05
+    number: 5
+    title: "Concurrent Forces in Equilibrium"
+    unit: "4. Forces and Equilibrium"
+    topics:
+      - id: isc-11-engineering-science-ch05-t01
+        title: "Measurement and effects of force"
+        learning_outcomes:
+          - "Describe how a force is measured with a spring balance"
+          - "State the effects a force can have on a body"
+      - id: isc-11-engineering-science-ch05-t02
+        title: "Resultant and equilibrant; reaction"
+        learning_outcomes:
+          - "Distinguish the resultant from the equilibrant of a set of forces"
+          - "Identify reaction forces at supports"
+      - id: isc-11-engineering-science-ch05-t03
+        title: "Parallelogram, triangle and polygon of forces"
+        learning_outcomes:
+          - "Find the resultant of two forces graphically and by calculation using the parallelogram law"
+          - "Apply the triangle and polygon of forces to bodies in equilibrium under three or more forces"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-engineering-science-ch06
+    number: 6
+    title: "Bow's Notation and the Inclined Plane"
+    unit: "4. Forces and Equilibrium"
+    topics:
+      - id: isc-11-engineering-science-ch06-t01
+        title: "Bow's notation for drawing force diagrams"
+        learning_outcomes:
+          - "Label a space diagram with Bow's notation and draw the corresponding force polygon"
+      - id: isc-11-engineering-science-ch06-t02
+        title: "Equilibrium of a body on an inclined plane"
+        learning_outcomes:
+          - "Resolve the weight of a body on an inclined plane into components along and normal to the plane"
+          - "Find the force needed to hold a body at rest on a smooth inclined plane"
+      - id: isc-11-engineering-science-ch06-t03
+        title: "Graphical and mathematical solution of equilibrium problems"
+        learning_outcomes:
+          - "Solve the same equilibrium problem by scale drawing and by resolution, and compare the answers"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-engineering-science-ch07
+    number: 7
+    title: "Moments and Centre of Gravity"
+    unit: "5. Moments and Centre of Gravity"
+    topics:
+      - id: isc-11-engineering-science-ch07-t01
+        title: "Moment of a force; principle of moments applied to parallel forces"
+        learning_outcomes:
+          - "Calculate the moment of a force about a point"
+          - "Find the resultant of parallel forces and its line of action"
+      - id: isc-11-engineering-science-ch07-t02
+        title: "Levers"
+        learning_outcomes:
+          - "Apply the principle of moments to find the effort needed on a lever"
+      - id: isc-11-engineering-science-ch07-t03
+        title: "Vertically loaded rigid beams: support reactions"
+        learning_outcomes:
+          - "Calculate the reactions at the supports of a simply supported beam carrying point loads"
+      - id: isc-11-engineering-science-ch07-t04
+        title: "Centre of gravity: experimental determination and calculation in simple cases; relation to stability"
+        learning_outcomes:
+          - "Calculate the centre of gravity of simple composite shapes"
+          - "Describe the plumb-line method of locating the centre of gravity of a lamina"
+          - "Explain how the position of the centre of gravity affects stability"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-engineering-science-ch08
+    number: 8
+    title: "Liquid Pressure, Archimedes' Principle and Flotation"
+    unit: "6. Pressure in Liquids"
+    topics:
+      - id: isc-11-engineering-science-ch08-t01
+        title: "Pressure in liquids: p = h rho g; transmission of pressure (Pascal's law)"
+        learning_outcomes:
+          - "Calculate the pressure at a given depth in a liquid"
+          - "State Pascal's law of transmission of pressure"
+      - id: isc-11-engineering-science-ch08-t02
+        title: "Density and specific gravity of solids and liquids"
+        learning_outcomes:
+          - "Distinguish density from specific gravity"
+          - "Calculate density or specific gravity from given data"
+      - id: isc-11-engineering-science-ch08-t03
+        title: "Archimedes' principle and flotation"
+        learning_outcomes:
+          - "State Archimedes' principle and calculate the upthrust on an immersed body"
+          - "Use the law of flotation to find the fraction of a floating body that is submerged"
+          - "Determine specific gravity of a solid using Archimedes' principle"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-engineering-science-ch09
+    number: 9
+    title: "Hydraulic Machines, Pumps and the Siphon"
+    unit: "6. Pressure in Liquids"
+    topics:
+      - id: isc-11-engineering-science-ch09-t01
+        title: "Simple hydraulic press and jack"
+        learning_outcomes:
+          - "Explain how a hydraulic jack multiplies force using Pascal's law"
+          - "Calculate the load lifted for a given effort and piston areas"
+      - id: isc-11-engineering-science-ch09-t02
+        title: "Lift pump and force pump"
+        learning_outcomes:
+          - "Describe the strokes of a lift pump and a force pump with the action of their valves"
+          - "Explain why a lift pump cannot raise water more than about 10 m"
+      - id: isc-11-engineering-science-ch09-t03
+        title: "The siphon"
+        learning_outcomes:
+          - "Explain the working of a siphon and state the conditions for it to work"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-engineering-science-ch10
+    number: 10
+    title: "Air Pressure and Gas Laws"
+    unit: "7. Air Pressure"
+    topics:
+      - id: isc-11-engineering-science-ch10-t01
+        title: "Atmospheric pressure; simple mercury barometer and aneroid barometer"
+        learning_outcomes:
+          - "Explain how a mercury barometer measures atmospheric pressure"
+          - "Convert pressure between mm of mercury and pascals"
+      - id: isc-11-engineering-science-ch10-t02
+        title: "Boyle's law"
+        learning_outcomes:
+          - "State Boyle's law and solve problems using p1 V1 = p2 V2"
+          - "Sketch the p-V and p-(1/V) graphs for a fixed mass of gas at constant temperature"
+      - id: isc-11-engineering-science-ch10-t03
+        title: "Manometers and the Bourdon gauge"
+        learning_outcomes:
+          - "Calculate gas pressure from the level difference in a U-tube manometer"
+          - "Describe how a Bourdon gauge indicates pressure"
+      - id: isc-11-engineering-science-ch10-t04
+        title: "The bicycle pump"
+        learning_outcomes:
+          - "Explain the working of a bicycle pump including the action of the valve and washer"
+    removed_topics:
+      - "Details of the Fortin barometer"
+    literature_texts: []
+  - id: isc-11-engineering-science-ch11
+    number: 11
+    title: "Temperature and Temperature Scales"
+    unit: "8. Temperature and Temperature Scales"
+    topics:
+      - id: isc-11-engineering-science-ch11-t01
+        title: "Temperature and its measurement; fixed points"
+        learning_outcomes:
+          - "Distinguish heat from temperature"
+          - "Explain the use of fixed points in calibrating a thermometer"
+      - id: isc-11-engineering-science-ch11-t02
+        title: "Celsius, Fahrenheit and Kelvin scales and conversion between them"
+        learning_outcomes:
+          - "Convert temperatures between the Celsius, Fahrenheit and Kelvin scales"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-engineering-science-ch12
+    number: 12
+    title: "Thermal Expansion"
+    unit: "9. Thermal Expansion"
+    topics:
+      - id: isc-11-engineering-science-ch12-t01
+        title: "Linear expansion of solids; coefficient of linear expansion"
+        learning_outcomes:
+          - "Calculate the change in length of a rod using delta L = alpha L delta T"
+          - "Explain engineering provisions for expansion such as gaps in rails and expansion joints in bridges"
+      - id: isc-11-engineering-science-ch12-t02
+        title: "Cubical expansion of liquids and gases; coefficient of cubical expansion"
+        learning_outcomes:
+          - "Calculate the change in volume of a liquid using the coefficient of cubical expansion"
+      - id: isc-11-engineering-science-ch12-t03
+        title: "Charles' law and absolute temperature"
+        learning_outcomes:
+          - "State Charles' law and use V1/T1 = V2/T2 with temperatures in kelvin"
+          - "Explain how extrapolating a V-T graph leads to absolute zero"
+    removed_topics:
+      - "Apparent coefficients of expansion of liquids"
+    literature_texts: []
+  - id: isc-11-engineering-science-ch13
+    number: 13
+    title: "Quantity of Heat"
+    unit: "10. Quantity of Heat"
+    topics:
+      - id: isc-11-engineering-science-ch13-t01
+        title: "Units of heat: joule and centigrade heat unit; heat as a form of energy"
+        learning_outcomes:
+          - "State the units of heat and explain why heat is a form of energy"
+      - id: isc-11-engineering-science-ch13-t02
+        title: "Specific heat capacity of solids and liquids and its determination"
+        learning_outcomes:
+          - "Calculate heat gained or lost using Q = m c delta T"
+          - "Describe the method of mixtures to find the specific heat capacity of a solid or liquid"
+      - id: isc-11-engineering-science-ch13-t03
+        title: "Change of state; latent heats and their determination"
+        learning_outcomes:
+          - "Calculate the heat needed to melt or vaporise a given mass using Q = mL"
+          - "Describe an experiment to determine the specific latent heat of fusion of ice"
+      - id: isc-11-engineering-science-ch13-t04
+        title: "Melting and boiling points and the effect of pressure on them"
+        learning_outcomes:
+          - "Explain how pressure changes the boiling point, as in a pressure cooker, and the melting point of ice"
+      - id: isc-11-engineering-science-ch13-t05
+        title: "Calorific value of fuels"
+        learning_outcomes:
+          - "Define calorific value and compare common fuels by it"
+    removed_topics:
+      - "Experimental determination of calorific value of fuels"
+    literature_texts: []
+  - id: isc-11-engineering-science-ch14
+    number: 14
+    title: "Transfer of Heat"
+    unit: "11. Conduction, Convection and Radiation"
+    topics:
+      - id: isc-11-engineering-science-ch14-t01
+        title: "Conduction: good and poor conductors; uses"
+        learning_outcomes:
+          - "Explain conduction in solids and give engineering uses of good and poor conductors"
+      - id: isc-11-engineering-science-ch14-t02
+        title: "Convection in liquids and gases"
+        learning_outcomes:
+          - "Explain convection currents and apply them to hot-water systems and room ventilation"
+      - id: isc-11-engineering-science-ch14-t03
+        title: "Radiation: emission and absorption by different surfaces"
+        learning_outcomes:
+          - "Compare dull black and shiny surfaces as emitters and absorbers of radiation"
+          - "Explain how a vacuum flask reduces heat transfer by all three methods"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-engineering-science-ch15
+    number: 15
+    title: "Mechanical Equivalent of Heat"
+    unit: "12. Conversion of Heat and Mechanical Energy"
+    topics:
+      - id: isc-11-engineering-science-ch15-t01
+        title: "Conversion of mechanical energy to heat and of heat to mechanical energy"
+        learning_outcomes:
+          - "Give examples of work converted to heat (friction, braking) and of heat converted to work (heat engines)"
+      - id: isc-11-engineering-science-ch15-t02
+        title: "Mechanical equivalent of heat and one method of determining it"
+        learning_outcomes:
+          - "State the mechanical equivalent of heat and its approximate value"
+          - "Describe one method of determining it and calculate the temperature rise from a given amount of work"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

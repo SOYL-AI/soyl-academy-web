@@ -1,0 +1,271 @@
+# ICSE Class 9 Tamil (Second Language, code 13) - ICSE 2028 course, CLASS IX portion only.
+# Literature: titles and authors only (CONTEXT section 8). Students read the texts in their own textbook.
+subject_id: icse-9-tamil
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2028-second-languages, icse-2028-prescribed-books, cisce-circular-2026-27-33-indian-languages, icse-2028-regulations]
+exam_notes: >-
+  Class IX is year one of the two-year ICSE 2028 course: there is no board examination in Class IX. The school conducts the
+  Class IX examination, normally on the ICSE paper pattern: one paper of 3 hours, 80 marks, plus internal assessment 20 marks
+  (two or three assignments in Class IX, of which two are written - one from language and one from literature; suggested Class
+  IX work: creative writing of about 300-400 words from stimuli such as recorded music or sounds, a picture, an opening
+  sentence or a news clipping, factual and expressive writing, a film or book review, an aural (listening) exercise, and
+  literature assignments on character/theme, background and summary; marked 10 by the subject teacher and 10 by an external
+  examiner). Section A Language (40 marks, compulsory): one composition, one letter (choice of two), an unseen comprehension
+  passage of about 250 words, and grammar (vocabulary, syntax and idiom, sentence synthesis, sentences embodying given words or
+  forms). Section B Prescribed Texts (40 marks): answer four questions from ONLY two of the prescribed books; questions are set
+  and answered in the language. Prescribed texts are bifurcated (Second Languages syllabus and Circular 2026-27/33): the Class
+  IX examination is set ONLY on the Class IX portion listed here (Class X portion is in icse-10-tamil); Section A is not
+  bifurcated. Tamil has three prescribed books (a drama, a novel and historical essays); SOYL covers all three so a student can
+  pick any two. CISCE describes the grammar component only generically and says it needs no knowledge of grammatical terms; the
+  split into two grammar chapters is SOYL's, not CISCE's. Titles are in English / CISCE transliteration; native-script titles
+  to be added in language review. CISCE lists topics not chapters; SOYL grouped them into teachable chapters in syllabus order.
+units:
+  - { name: "Section A: Language", marks: 40 }
+  - { name: "Section B: Prescribed Texts", marks: 40 }
+chapters:
+  - id: icse-9-tamil-ch01
+    number: 1
+    title: "Composition writing in Tamil"
+    unit: "Section A: Language"
+    topics:
+      - id: icse-9-tamil-ch01-t01
+        title: "Planning a composition: choosing a topic, outline, introduction, body and conclusion"
+        learning_outcomes:
+          - "Prepare an outline and write a well-organised composition of about 250-300 words in Tamil"
+          - "Link paragraphs in a logical order using suitable connecting words"
+      - id: icse-9-tamil-ch01-t02
+        title: "Descriptive and narrative compositions"
+        learning_outcomes:
+          - "Describe a place, person, event or experience vividly"
+          - "Narrate a sequence of events with a clear beginning, middle and end"
+      - id: icse-9-tamil-ch01-t03
+        title: "Short explanations, directions and reflective or argumentative essays"
+        learning_outcomes:
+          - "Explain a process or give clear step-by-step directions"
+          - "Present points for and against a social issue and reach a reasoned conclusion"
+      - id: icse-9-tamil-ch01-t04
+        title: "Composition from a picture, object or other stimulus (opening line, proverb)"
+        learning_outcomes:
+          - "Write an original story or essay suggested by a picture, object or given opening line"
+      - id: icse-9-tamil-ch01-t05
+        title: "Accuracy: spelling, punctuation and apt choice of words"
+        learning_outcomes:
+          - "Identify and correct spelling, punctuation and word-choice errors in their own Tamil writing"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-tamil-ch02
+    number: 2
+    title: "Letter writing"
+    unit: "Section A: Language"
+    topics:
+      - id: icse-9-tamil-ch02-t01
+        title: "Layout of a formal letter: sender's address, date, addressee, subject, salutation, body and closing"
+        learning_outcomes:
+          - "Set out a formal letter in Tamil with all its parts in the correct order and format"
+      - id: icse-9-tamil-ch02-t02
+        title: "Formal letters to a principal, editor or official: application, request, complaint, suggestion"
+        learning_outcomes:
+          - "State a problem politely and concisely and make a clear, reasonable request"
+      - id: icse-9-tamil-ch02-t03
+        title: "Informal letters to friends, parents and relatives"
+        learning_outcomes:
+          - "Use a suitable form of address, a warm personal tone and an appropriate closing in an informal letter"
+      - id: icse-9-tamil-ch02-t04
+        title: "Developing a letter from the suggestions given in the question"
+        learning_outcomes:
+          - "Include every point suggested in the question in a coherent, well-paragraphed letter"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-tamil-ch03
+    number: 3
+    title: "Unseen passage (comprehension)"
+    unit: "Section A: Language"
+    topics:
+      - id: icse-9-tamil-ch03-t01
+        title: "Reading strategy: finding the main idea and supporting details"
+        learning_outcomes:
+          - "State the central idea of an unseen Tamil passage of about 250 words in one or two sentences"
+      - id: icse-9-tamil-ch03-t02
+        title: "Answering factual and inferential questions in their own words"
+        learning_outcomes:
+          - "Answer factual questions in their own words without copying lines from the passage"
+          - "Infer causes, consequences and the writer's attitude from the passage"
+      - id: icse-9-tamil-ch03-t03
+        title: "Word meanings from context, a suitable title and the message"
+        learning_outcomes:
+          - "Work out the meaning of unfamiliar words and phrases from the context"
+          - "Suggest a suitable title for the passage and justify it"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-tamil-ch04
+    number: 4
+    title: "Grammar: vocabulary and word formation"
+    unit: "Section A: Language"
+    topics:
+      - id: icse-9-tamil-ch04-t01
+        title: "Forming nouns, adjectives and other word forms from given words"
+        learning_outcomes:
+          - "Form the required noun, adjective or verb from a given Tamil word"
+      - id: icse-9-tamil-ch04-t02
+        title: "Synonyms and antonyms"
+        learning_outcomes:
+          - "Give appropriate synonyms and antonyms of commonly used words"
+      - id: icse-9-tamil-ch04-t03
+        title: "One word for a group of words"
+        learning_outcomes:
+          - "Replace a phrase with a single suitable word and use it in a sentence"
+      - id: icse-9-tamil-ch04-t04
+        title: "Words that sound or look alike but differ in meaning; correct spelling"
+        learning_outcomes:
+          - "Distinguish between commonly confused words by using each in a sentence"
+          - "Correct misspelt words"
+    removed_topics:
+      - "Knowledge of grammatical terms as such (CISCE: the grammar question does not require it)"
+    literature_texts: []
+  - id: icse-9-tamil-ch05
+    number: 5
+    title: "Grammar: idioms, sentence construction and synthesis"
+    unit: "Section A: Language"
+    topics:
+      - id: icse-9-tamil-ch05-t01
+        title: "Idioms and proverbs: meaning and use in sentences"
+        learning_outcomes:
+          - "Explain the meaning of common Tamil idioms and proverbs and use them appropriately in sentences"
+      - id: icse-9-tamil-ch05-t02
+        title: "Correcting errors in sentences (agreement, tense, gender and number, case endings or postpositions)"
+        learning_outcomes:
+          - "Identify the grammatical error in a sentence and rewrite it correctly"
+      - id: icse-9-tamil-ch05-t03
+        title: "Transforming sentences as directed (tense, voice, affirmative/negative, statement/question)"
+        learning_outcomes:
+          - "Rewrite a sentence as directed without changing its meaning"
+      - id: icse-9-tamil-ch05-t04
+        title: "Synthesis: combining two or more sentences into one"
+        learning_outcomes:
+          - "Combine two or more simple sentences into one compound or complex sentence"
+      - id: icse-9-tamil-ch05-t05
+        title: "Making sentences that correctly use given words or forms"
+        learning_outcomes:
+          - "Use a given word, phrase or form correctly in a meaningful sentence"
+    removed_topics:
+      - "Knowledge of grammatical terms as such (CISCE: the grammar question does not require it)"
+    literature_texts: []
+  - id: icse-9-tamil-ch06
+    number: 6
+    title: "Drama: Rajaraja Cholan (Scenes 1 to 20)"
+    unit: "Section B: Prescribed Texts"
+    topics:
+      - id: icse-9-tamil-ch06-t01
+        title: "Scenes 1-7: opening of the play and the main characters"
+        learning_outcomes:
+          - "Narrate the main events of these scenes in order"
+      - id: icse-9-tamil-ch06-t02
+        title: "Scenes 8-14: conflicts and their development"
+        learning_outcomes:
+          - "Explain the main conflicts in these scenes and how they develop"
+      - id: icse-9-tamil-ch06-t03
+        title: "Scenes 15-20: the later events of the Class IX portion"
+        learning_outcomes:
+          - "Summarise how the Class IX portion ends and give a personal response"
+      - id: icse-9-tamil-ch06-t04
+        title: "Rajaraja Chola and other major characters"
+        learning_outcomes:
+          - "Write a character sketch of Rajaraja Chola or another major character with examples from the play"
+      - id: icse-9-tamil-ch06-t05
+        title: "Historical background: the Chola empire as presented in the play"
+        learning_outcomes:
+          - "Relate the play to the history of the Chola empire and Rajaraja Chola I"
+      - id: icse-9-tamil-ch06-t06
+        title: "Dramatic technique: dialogue, stage directions and scene structure"
+        learning_outcomes:
+          - "Comment on how dialogue and stage directions create character and suspense"
+    removed_topics:
+      - "Scenes 21 to 39 (Class X portion; see icse-10-tamil)"
+    literature_texts:
+      - { title: "Rajaraja Cholan (Drama), Scenes 1 to 20", author: "R. Ramanathan" }
+  - id: icse-9-tamil-ch07
+    number: 7
+    title: "Novel: Veerapandiya Kattabhomman (Class IX chapters)"
+    unit: "Section B: Prescribed Texts"
+    topics:
+      - id: icse-9-tamil-ch07-t01
+        title: "Karisal Mannil Karkuviyal: events and significance of the chapter"
+        learning_outcomes:
+          - "Narrate the main events of the chapter in their own words"
+          - "Explain the role of the key characters in the chapter"
+      - id: icse-9-tamil-ch07-t02
+        title: "Veeran Piranthaan: events and significance of the chapter"
+        learning_outcomes:
+          - "Narrate the main events of the chapter in their own words"
+          - "Explain the role of the key characters in the chapter"
+      - id: icse-9-tamil-ch07-t03
+        title: "Magudam Choodinaar: events and significance of the chapter"
+        learning_outcomes:
+          - "Narrate the main events of the chapter in their own words"
+          - "Explain the role of the key characters in the chapter"
+      - id: icse-9-tamil-ch07-t04
+        title: "Vellaiyar Ethirpil Veerapandiya Kattabommanin Munnodigal: events and significance of the chapter"
+        learning_outcomes:
+          - "Narrate the main events of the chapter in their own words"
+          - "Explain the role of the key characters in the chapter"
+      - id: icse-9-tamil-ch07-t05
+        title: "Adipattu Oadinaan Aalandurai: events and significance of the chapter"
+        learning_outcomes:
+          - "Narrate the main events of the chapter in their own words"
+          - "Explain the role of the key characters in the chapter"
+      - id: icse-9-tamil-ch07-t06
+        title: "Jackson Duraiyin Sathiraattam: events and significance of the chapter"
+        learning_outcomes:
+          - "Narrate the main events of the chapter in their own words"
+          - "Explain the role of the key characters in the chapter"
+      - id: icse-9-tamil-ch07-t07
+        title: "Jacksondurai Ponaan Loosington Vanthaan: events and significance of the chapter"
+        learning_outcomes:
+          - "Narrate the main events of the chapter in their own words"
+          - "Explain the role of the key characters in the chapter"
+      - id: icse-9-tamil-ch07-t08
+        title: "Ulavaaliyaana Palayakkaaran: events and significance of the chapter"
+        learning_outcomes:
+          - "Narrate the main events of the chapter in their own words"
+          - "Explain the role of the key characters in the chapter"
+      - id: icse-9-tamil-ch07-t09
+        title: "Kattabomman's rise and early resistance to the East India Company: character, themes and historical context"
+        learning_outcomes:
+          - "Write a character sketch of Veerapandiya Kattabomman with examples from the prescribed chapters"
+          - "Relate the prescribed chapters to the history of the Palayakkarar (poligar) resistance in Tamil Nadu"
+    removed_topics:
+      - "Class X chapters: Baanarman Endroru Paathagan, Vedigundai Veezhthiya Velkambu, Aayutha Kidangai Azhittha Manitha Vedigundu, Nuzhainthaan Pinamaai Vizhunthaan, Naadaanda Mannan Naadodi Mannanaaga, Thookku Kayitraiyum Thurumbena Karuthi, Veerapaandiya Kattabommanin Vaazhvinile (see icse-10-tamil)"
+    literature_texts:
+      - { title: "Veerapandiya Kattabhomman (Novel), Class IX chapters", author: "K. Jeeva Bharathi" }
+  - id: icse-9-tamil-ch08
+    number: 8
+    title: "Charitra Sambavangal: historical essays (Class IX portion)"
+    unit: "Section B: Prescribed Texts"
+    topics:
+      - id: icse-9-tamil-ch08-t01
+        title: "Periya Koyileduttha Chola Perarasar: the Chola emperor who built the Big Temple"
+        learning_outcomes:
+          - "Summarise the events narrated in the essay in their own words"
+          - "Describe the achievements of the Chola emperor as presented by the writer"
+      - id: icse-9-tamil-ch08-t02
+        title: "Maddu Meitha Maamannan: the great king of the essay"
+        learning_outcomes:
+          - "Summarise the events narrated in the essay in their own words"
+          - "Describe the qualities of the king shown in the essay and explain the title"
+      - id: icse-9-tamil-ch08-t03
+        title: "Maharana Prathap: the Rana of Mewar and his struggle"
+        learning_outcomes:
+          - "Summarise the events narrated in the essay in their own words"
+          - "Describe the courage and determination of Maharana Pratap as presented by the writer"
+      - id: icse-9-tamil-ch08-t04
+        title: "The writer's narrative style in presenting history"
+        learning_outcomes:
+          - "Comment on how the writer makes historical events vivid and engaging for young readers"
+    removed_topics:
+      - "Class X essays: Maaveeran Sathrasaal, Jaimallum Puttavum, Raja Thodarmal, Mallan Maarappan (Nedungathai) (see icse-10-tamil)"
+    literature_texts:
+      - { title: "Periya Koyileduttha Chola Perarasar", author: "'Vaandumama' V. Krishnamoorthy" }
+      - { title: "Maddu Meitha Maamannan", author: "'Vaandumama' V. Krishnamoorthy" }
+      - { title: "Maharana Prathap", author: "'Vaandumama' V. Krishnamoorthy" }
+removed_topics: []

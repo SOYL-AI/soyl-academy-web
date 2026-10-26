@@ -1,0 +1,406 @@
+# ISC Class 11 Biotechnology (878), Paper I Theory - ISC 2028 syllabus, CLASS XI portion only.
+# Source: platform/catalog/sources/cisce.md#isc-2028-biotechnology. Topic wording is our own summary of the official scope.
+subject_id: isc-11-biotechnology
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-biotechnology, isc-2028-regulations, isc-2027-class-xi-specimen-papers]
+exam_notes: >-
+  Class XI is year one of the two-year ISC 2028 course. There is no board examination in Class XI: the school conducts
+  the Class XI examination on the Class XI portion, and promotion to Class XII needs at least 35% on the cumulative
+  average in five subjects including English, with 75% attendance (ISC 2028 Regulations). The syllabus prescribes, and
+  the school examination usually follows: Paper I Theory, 3 hours, 70 marks; Paper II Practical, 3 hours, 15 marks,
+  plus Project Work 10 marks and Practical File 5 marks, assessed by the teacher (total 30). CISCE has published a
+  Class XI specimen question paper for Biotechnology (Year 2027) as a guide to the school paper. Class XI experiments:
+  blood grouping with antisera (with safe finger-prick rules), blood smear with Leishman's stain, names, uses and
+  principles of laboratory instruments, pH of tap water with acid and base, onion root-tip mitosis and mitotic index,
+  meiosis from permanent slides, effect of temperature on curdling of milk by Lactobacillus, food tests for
+  carbohydrates, proteins and lipids, milk purity with a lactometer, karyotype preparation, quadrat and transect
+  sampling with pea seeds, and primary and secondary data analysis. The project is one study on any aspect of
+  biotechnology. SOYL covers Paper I only. The syllabus lists 27 abbreviations (CCMB, CdK, COV, DBT, EFB, ELISA, ELSI,
+  GEAC, GMO, HLA, ICGEB, IEF, IPR, IVF, MALDI-MS, MI, NBRC, NBTB, NIPGR, OECD, PBR, PCD, PPV and FR, PKU, RE, Rf, TSG)
+  whose full forms candidates must know; they are folded into the relevant topics below. Published Class XI weightage
+  is used for the units. CISCE lists topics under five units with scope notes, not textbook chapters: SOYL groups them
+  into 14 teachable chapters in syllabus order. The Class XII portion is in isc-12-biotechnology.
+units:
+  - { name: "1. Introduction to Biotechnology", marks: 12 }
+  - { name: "2. Cell Biology", marks: 14 }
+  - { name: "3. Biomolecules, Separation Techniques and Defence Strategies in Organisms", marks: 17 }
+  - { name: "4. Genetics", marks: 12 }
+  - { name: "5. Introduction to Cell Culture Technology", marks: 15 }
+chapters:
+  - id: isc-11-biotechnology-ch01
+    number: 1
+    title: "History of Biotechnology and Fermentation"
+    unit: "1. Introduction to Biotechnology"
+    topics:
+      - id: isc-11-biotechnology-ch01-t01
+        title: "Definitions of biotechnology by OECD and EFB; the kitchen as the first biotechnology laboratory (curd making)"
+        learning_outcomes:
+          - "State the OECD and EFB definitions of biotechnology and expand both abbreviations"
+          - "Explain curd making as a traditional biotechnological process"
+      - id: isc-11-biotechnology-ch01-t02
+        title: "Early discoveries (Hooke, Leeuwenhoek, Mendel) and the modern era (Fleming, Pasteur, Watson and Crick, Arber and Smith, Boyer and Cohen)"
+        learning_outcomes:
+          - "Match each scientist to his contribution, such as restriction enzymes (Arber and Smith) or recombinant DNA (Boyer and Cohen)"
+          - "Arrange key discoveries on a timeline from classical to modern biotechnology"
+      - id: isc-11-biotechnology-ch01-t03
+        title: "Anaerobic respiration: homo-fermentation and hetero-fermentation; lactic acid fermentation in dairy and probiotics"
+        learning_outcomes:
+          - "Distinguish homo-fermentation from hetero-fermentation by their end products"
+          - "Explain the use of lactic acid fermentation in dairy and probiotic industries"
+      - id: isc-11-biotechnology-ch01-t04
+        title: "Alcoholic fermentation in bioethanol and beverages; fermentation in beer production"
+        learning_outcomes:
+          - "Write the overall change in alcoholic fermentation of glucose by yeast"
+          - "Outline the main stages of beer production"
+      - id: isc-11-biotechnology-ch01-t05
+        title: "Good Laboratory Practices and Good Manufacturing Practices: definitions, objectives, principles and examples"
+        learning_outcomes:
+          - "Distinguish GLP from GMP and state the objectives and principles of each"
+          - "Give one example of applying GLP and one of applying GMP"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biotechnology-ch02
+    number: 2
+    title: "Scope of Biotechnology, IPR and ELSI"
+    unit: "1. Introduction to Biotechnology"
+    topics:
+      - id: isc-11-biotechnology-ch02-t01
+        title: "Branches of biotechnology: agricultural, medical, industrial, microbial, environmental, nanobiotechnology and immunology"
+        learning_outcomes:
+          - "Describe each branch with one application"
+      - id: isc-11-biotechnology-ch02-t02
+        title: "Discoveries versus inventions; Intellectual Property Rights: patents and their components, trademarks, trade secrets, copyright and geographical indications"
+        learning_outcomes:
+          - "Distinguish a discovery from an invention"
+          - "Identify the type of IPR that protects a given product, name or process, such as a geographical indication for Darjeeling tea"
+      - id: isc-11-biotechnology-ch02-t03
+        title: "Plant Breeders' Rights and the PPV and FR Act, 2001"
+        learning_outcomes:
+          - "Explain the need for the Protection of Plant Varieties and Farmers' Rights Act, 2001"
+      - id: isc-11-biotechnology-ch02-t04
+        title: "Ethical, legal and social issues (ELSI), e.g. IVF and stem cell therapy; biosafety of GMOs and the role of GEAC"
+        learning_outcomes:
+          - "Discuss ethical, legal and social issues raised by IVF and stem cell therapy"
+          - "Explain the role of GEAC in approving genetically modified organisms"
+      - id: isc-11-biotechnology-ch02-t05
+        title: "Indian and global institutes: NCBI, EMBL, NBTB, CCMB, ICGEB, DBT, CDFD, NIPGR, NBRC and leading Indian biotechnology companies"
+        learning_outcomes:
+          - "Expand the abbreviations of the listed institutes and state the main role of each"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biotechnology-ch03
+    number: 3
+    title: "Biochemical Technology and Biostatistics"
+    unit: "1. Introduction to Biotechnology"
+    topics:
+      - id: isc-11-biotechnology-ch03-t01
+        title: "Lowry-Bronsted theory of acids and bases; concept of pH"
+        learning_outcomes:
+          - "Identify conjugate acid-base pairs using the Lowry-Bronsted theory"
+          - "Calculate pH from hydrogen ion concentration"
+      - id: isc-11-biotechnology-ch03-t02
+        title: "Henderson-Hasselbalch equation"
+        learning_outcomes:
+          - "Use pH = pKa + log([salt]/[acid]) to calculate the pH of a buffer"
+      - id: isc-11-biotechnology-ch03-t03
+        title: "Buffers: definition, properties, types (acetate, phosphate, borate), buffering capacity and use in the biotechnology laboratory"
+        learning_outcomes:
+          - "Explain how a buffer resists changes in pH"
+          - "Choose a suitable buffer for a given pH range and give a laboratory application"
+      - id: isc-11-biotechnology-ch03-t04
+        title: "Probability (theoretical and experimental) and data (primary and secondary)"
+        learning_outcomes:
+          - "Distinguish theoretical from experimental probability with a coin or seed example"
+          - "Classify a data set as primary or secondary"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biotechnology-ch04
+    number: 4
+    title: "The Cell and Its Organisation"
+    unit: "2. Cell Biology"
+    topics:
+      - id: isc-11-biotechnology-ch04-t01
+        title: "Cell as the basic unit of life; prokaryotes versus eukaryotes (nucleus, chromosomes, plasmids, 70S and 80S ribosomes)"
+        learning_outcomes:
+          - "Tabulate differences between prokaryotic and eukaryotic cells"
+      - id: isc-11-biotechnology-ch04-t02
+        title: "Structure of a bacterial cell: cell wall, cell membrane, nucleoid, ribosomes and plasmids"
+        learning_outcomes:
+          - "Draw and label a bacterial cell"
+          - "Explain why plasmids are important tools in biotechnology"
+      - id: isc-11-biotechnology-ch04-t03
+        title: "Gram-positive and Gram-negative bacteria: cell wall composition, flagella, resistance and Gram staining"
+        learning_outcomes:
+          - "Compare Gram-positive and Gram-negative bacteria in cell wall structure and resistance to detergents, dyes and antibiotics"
+          - "Explain how crystal violet staining distinguishes the two groups"
+      - id: isc-11-biotechnology-ch04-t04
+        title: "Cell organelles and their roles: nucleus, mitochondria, chloroplast, ER, Golgi apparatus, ribosomes"
+        learning_outcomes:
+          - "State the function of each organelle and its significance in biotechnology"
+      - id: isc-11-biotechnology-ch04-t05
+        title: "Chromosome organisation in prokaryotes and eukaryotes; chromatids, homologous chromosomes, types by centromere position; chromosome numbers of human, mouse, pea and onion"
+        learning_outcomes:
+          - "Classify chromosomes as metacentric, submetacentric, acrocentric or telocentric"
+          - "State the chromosome numbers of human, mouse, pea and onion"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biotechnology-ch05
+    number: 5
+    title: "Cell Cycle, Cell Division and Signalling"
+    unit: "2. Cell Biology"
+    topics:
+      - id: isc-11-biotechnology-ch05-t01
+        title: "Cell cycle and its regulation by cyclin-CdKs"
+        learning_outcomes:
+          - "Describe the phases of the cell cycle and the role of cyclins and cyclin-dependent kinases"
+      - id: isc-11-biotechnology-ch05-t02
+        title: "Mitosis: process and diagrams; mitotic index; significance"
+        learning_outcomes:
+          - "Draw and describe the stages of mitosis"
+          - "Calculate mitotic index from cell counts"
+      - id: isc-11-biotechnology-ch05-t03
+        title: "Meiosis: prophase I in detail and crossing over; significance of meiosis"
+        learning_outcomes:
+          - "Describe the substages of prophase I with diagrams"
+          - "Explain how crossing over produces genetic variation"
+      - id: isc-11-biotechnology-ch05-t04
+        title: "Stem cells: basics, properties and potency (totipotent and multipotent)"
+        learning_outcomes:
+          - "Distinguish totipotent from multipotent stem cells with examples"
+      - id: isc-11-biotechnology-ch05-t05
+        title: "Signal transduction (direct by steroid hormones, indirect by protein hormones); apoptosis (programmed cell death)"
+        learning_outcomes:
+          - "Compare direct and indirect signal transduction"
+          - "Define apoptosis and explain its significance with the example of DNA degradation"
+      - id: isc-11-biotechnology-ch05-t06
+        title: "Techniques in cytology: light and electron microscopy; karyotyping"
+        learning_outcomes:
+          - "Compare light and electron microscopes in resolution and use"
+          - "Outline the steps in preparing a karyotype and state its uses"
+    removed_topics:
+      - "Diagrams of meiotic stages other than prophase I"
+    literature_texts: []
+  - id: isc-11-biotechnology-ch06
+    number: 6
+    title: "Carbohydrates, Proteins and Lipids"
+    unit: "3. Biomolecules, Separation Techniques and Defence Strategies in Organisms"
+    topics:
+      - id: isc-11-biotechnology-ch06-t01
+        title: "Biomolecules: definition and types; carbohydrates - structure, functions and classification (glucose, fructose, ribose, deoxyribose, maltose, glycogen, cellulose, chitin, peptidoglycan)"
+        learning_outcomes:
+          - "Classify the listed sugars as monosaccharides, disaccharides or polysaccharides"
+          - "State the biological role of glycogen, cellulose, chitin and peptidoglycan"
+      - id: isc-11-biotechnology-ch06-t02
+        title: "Amino acids: general structure, acidic, basic and neutral types, properties; essential (lysine, methionine) and non-essential (glycine, serine, alanine)"
+        learning_outcomes:
+          - "Draw the general structure of an amino acid and of glycine, alanine and serine"
+          - "Distinguish essential from non-essential amino acids"
+      - id: isc-11-biotechnology-ch06-t03
+        title: "Proteins: simple, complex and derived (keratin, glycoproteins, coagulated egg white); primary to quaternary structure"
+        learning_outcomes:
+          - "Classify a given protein as simple, conjugated or derived"
+          - "Describe the four levels of protein structure and the bonds that stabilise them"
+      - id: isc-11-biotechnology-ch06-t04
+        title: "Lipids: fatty acids and glycerol; simple, conjugated and derived lipids (palm oil, phospholipids, cholesterol)"
+        learning_outcomes:
+          - "Explain how a triglyceride forms from glycerol and fatty acids"
+          - "Classify lipids with one example of each type"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biotechnology-ch07
+    number: 7
+    title: "Vitamins and Enzymes"
+    unit: "3. Biomolecules, Separation Techniques and Defence Strategies in Organisms"
+    topics:
+      - id: isc-11-biotechnology-ch07-t01
+        title: "Vitamins: fat-soluble and water-soluble, chemical names, deficiency diseases; coenzymes from water-soluble vitamins"
+        learning_outcomes:
+          - "Give the chemical name and deficiency disease of each vitamin"
+          - "Name coenzymes derived from B-group vitamins"
+      - id: isc-11-biotechnology-ch07-t02
+        title: "Enzymes as biocatalysts; activation energy; lock-and-key and induced-fit models"
+        learning_outcomes:
+          - "Explain how enzymes lower activation energy using an energy diagram"
+          - "Compare the lock-and-key and induced-fit models"
+      - id: isc-11-biotechnology-ch07-t03
+        title: "Enzyme kinetics; factors affecting enzyme action (temperature, pH, substrate concentration)"
+        learning_outcomes:
+          - "Interpret graphs of reaction rate against temperature, pH and substrate concentration"
+      - id: isc-11-biotechnology-ch07-t04
+        title: "Enzyme inhibition: competitive and non-competitive inhibitors"
+        learning_outcomes:
+          - "Distinguish competitive from non-competitive inhibition by mechanism and effect of extra substrate"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biotechnology-ch08
+    number: 8
+    title: "Techniques for Separating Biomolecules"
+    unit: "3. Biomolecules, Separation Techniques and Defence Strategies in Organisms"
+    topics:
+      - id: isc-11-biotechnology-ch08-t01
+        title: "Paper chromatography and Rf value"
+        learning_outcomes:
+          - "Explain the principle of paper chromatography"
+          - "Calculate Rf values and use them to identify components"
+      - id: isc-11-biotechnology-ch08-t02
+        title: "Ion exchange chromatography"
+        learning_outcomes:
+          - "Explain how charged biomolecules are separated on an ion exchange column and state an application"
+      - id: isc-11-biotechnology-ch08-t03
+        title: "Centrifugation"
+        learning_outcomes:
+          - "Explain the principle of centrifugation and its use in separating cell components"
+      - id: isc-11-biotechnology-ch08-t04
+        title: "Isoelectric focusing (IEF)"
+        learning_outcomes:
+          - "Explain how proteins are separated by their isoelectric points"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biotechnology-ch09
+    number: 9
+    title: "Immunity and Defence Strategies"
+    unit: "3. Biomolecules, Separation Techniques and Defence Strategies in Organisms"
+    topics:
+      - id: isc-11-biotechnology-ch09-t01
+        title: "Antigens and antibodies; innate and acquired immunity; humoral and cell-mediated immunity"
+        learning_outcomes:
+          - "Distinguish innate from acquired immunity"
+          - "Compare humoral and cell-mediated immune responses"
+      - id: isc-11-biotechnology-ch09-t02
+        title: "Significance of HLA; major histocompatibility complex (MHC); hypersensitivity"
+        learning_outcomes:
+          - "Explain the role of HLA and MHC in tissue matching for transplants"
+          - "Describe hypersensitivity with an example"
+      - id: isc-11-biotechnology-ch09-t03
+        title: "ELISA: process for diagnosing diseases"
+        learning_outcomes:
+          - "Outline the steps of ELISA and explain how a colour change indicates a positive result"
+      - id: isc-11-biotechnology-ch09-t04
+        title: "Plasmids conferring resistance to antibiotics and chemicals in bacteria"
+        learning_outcomes:
+          - "Explain how resistance plasmids spread antibiotic resistance among bacteria"
+      - id: isc-11-biotechnology-ch09-t05
+        title: "Defence strategies in plants: secondary metabolites - alkaloids, phenolics, phytoalexins and terpenoids"
+        learning_outcomes:
+          - "Classify quinine, nicotine, tannins, curcumin, gossypol, phaseolin and taxol by type of secondary metabolite"
+          - "Explain how secondary metabolites protect plants"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biotechnology-ch10
+    number: 10
+    title: "Laws of Inheritance"
+    unit: "4. Genetics"
+    topics:
+      - id: isc-11-biotechnology-ch10-t01
+        title: "Mendel's experiments on pea plants"
+        learning_outcomes:
+          - "Describe Mendel's monohybrid and dihybrid crosses and their ratios"
+      - id: isc-11-biotechnology-ch10-t02
+        title: "Mendel's laws and types of genetic inheritance"
+        learning_outcomes:
+          - "State the laws of dominance, segregation and independent assortment"
+          - "Solve simple genetic crosses using Punnett squares"
+      - id: isc-11-biotechnology-ch10-t03
+        title: "Trait, gene, allele, phenotype, genotype, homozygosity, heterozygosity and hemizygosity"
+        learning_outcomes:
+          - "Define each term and use it correctly in describing a cross"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biotechnology-ch11
+    number: 11
+    title: "Mutations and Genetic Disorders"
+    unit: "4. Genetics"
+    topics:
+      - id: isc-11-biotechnology-ch11-t01
+        title: "Gene (point) mutations and genomic mutations"
+        learning_outcomes:
+          - "Distinguish a point mutation from a change in chromosome number"
+      - id: isc-11-biotechnology-ch11-t02
+        title: "Chromosomal aberrations: deletion, duplication, inversion and translocation"
+        learning_outcomes:
+          - "Identify each structural aberration from a diagram"
+      - id: isc-11-biotechnology-ch11-t03
+        title: "Euploidy and aneuploidy (monosomy, nullisomy, trisomy, tetrasomy); non-disjunction; polyploidy in plants such as wheat"
+        learning_outcomes:
+          - "Write the chromosome formula for each type of aneuploidy"
+          - "Explain how non-disjunction produces aneuploid gametes"
+      - id: isc-11-biotechnology-ch11-t04
+        title: "Syndromes: Turner, Klinefelter and Down"
+        learning_outcomes:
+          - "State the karyotype and main features of each syndrome"
+      - id: isc-11-biotechnology-ch11-t05
+        title: "Inborn errors of metabolism: albinism, sickle cell anaemia, phenylketonuria (PKU) and alkaptonuria"
+        learning_outcomes:
+          - "Explain the defect underlying each inborn error"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biotechnology-ch12
+    number: 12
+    title: "Gene Mapping and Cancer Genetics"
+    unit: "4. Genetics"
+    topics:
+      - id: isc-11-biotechnology-ch12-t01
+        title: "Linkage and recombination (definitions); crossover value (COV) in gene mapping"
+        learning_outcomes:
+          - "Define linkage and recombination"
+          - "Use crossover values to work out the order and relative distance of genes on a chromosome"
+      - id: isc-11-biotechnology-ch12-t02
+        title: "Cancer genetics: causes; proto-oncogenes, oncogenes and tumour suppressor genes (TSG)"
+        learning_outcomes:
+          - "Distinguish proto-oncogenes, oncogenes and tumour suppressor genes"
+          - "List physical, chemical and biological causes of cancer"
+      - id: isc-11-biotechnology-ch12-t03
+        title: "Diagnosis and treatment of cancer"
+        learning_outcomes:
+          - "Describe common methods of cancer diagnosis and treatment"
+    removed_topics:
+      - "Linkage beyond its definition (only the definition and the use of COV in mapping are required)"
+    literature_texts: []
+  - id: isc-11-biotechnology-ch13
+    number: 13
+    title: "Cell Culture Laboratory: Instruments and Sterilisation"
+    unit: "5. Introduction to Cell Culture Technology"
+    topics:
+      - id: isc-11-biotechnology-ch13-t01
+        title: "Instruments: laminar air flow (LAF), pH meter, autoclave, vortex mixer, hot air oven"
+        learning_outcomes:
+          - "State the principle and use of each instrument in a cell culture laboratory"
+      - id: isc-11-biotechnology-ch13-t02
+        title: "Instruments: haemocytometer, colony counter, magnetic stirrer, micro-filtration unit, incubator, inverted microscope, T-flasks"
+        learning_outcomes:
+          - "State the use of each instrument and match it to a culture task"
+      - id: isc-11-biotechnology-ch13-t03
+        title: "Sterilisation of explants, instruments, glassware, transfer area, media, vitamins and enzymes"
+        learning_outcomes:
+          - "Choose the correct sterilisation method (autoclaving, dry heat, filtration, chemical) for each material"
+          - "Explain why heat-labile vitamins and enzymes are filter-sterilised"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-biotechnology-ch14
+    number: 14
+    title: "Handling Cells, Culture Media and Cryopreservation"
+    unit: "5. Introduction to Cell Culture Technology"
+    topics:
+      - id: isc-11-biotechnology-ch14-t01
+        title: "Cell sorting by FACS; cell counting by haemocytometer; cell viability by trypan blue exclusion"
+        learning_outcomes:
+          - "Explain the principle of fluorescence-activated cell sorting"
+          - "Calculate cell concentration from haemocytometer counts"
+          - "Explain why trypan blue stains only dead cells"
+      - id: isc-11-biotechnology-ch14-t02
+        title: "Nutrient media: LB, MS, White's, RPMI, DMEM and FBS"
+        learning_outcomes:
+          - "Match each medium to the type of cells it is used to grow (bacterial, plant or animal)"
+      - id: isc-11-biotechnology-ch14-t03
+        title: "Preparing culture medium: inorganic and organic nutrients, macro- and micronutrients, antibiotics, antimycotics, auxins and cytokinins"
+        learning_outcomes:
+          - "List the components of a plant tissue culture medium and the role of each"
+          - "Explain the effect of the auxin-to-cytokinin ratio on callus, root and shoot formation"
+      - id: isc-11-biotechnology-ch14-t04
+        title: "Cryopreservation using liquid nitrogen"
+        learning_outcomes:
+          - "Explain how cells are stored in liquid nitrogen and why cryoprotectants are used"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []
