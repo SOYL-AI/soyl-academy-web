@@ -14,7 +14,7 @@ CBSE examines this chapter **only for subtopics 1–1.3** (the pre-modern world;
 
 | Topic | Deck | Items tagged | Board? |
 |---|---|---|---|
-| t01 The pre-modern world: silk routes, food travels | Part 1 | 55 | yes |
+| t01 The pre-modern world: silk routes, food travels | Part 1 | 54 | yes |
 | t02 Conquest, disease and trade | Part 1 | 46 | yes |
 | t03 1815–1914, inter-war economy, post-war rebuilding | Part 2 | 7 | project only |
 
