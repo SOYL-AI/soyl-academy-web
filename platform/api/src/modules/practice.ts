@@ -41,7 +41,7 @@ const PartResponse = z
       'mcq/assertion-reason/true-false/multi-select → option_ids; numerical → value; fill-blank → blanks (in stem order); match → pairs; ordering → order (all ids); code-output → output; short/long/writing/map → text.',
   });
 
-const PracticeResponseSchema = z
+export const PracticeResponseSchema = z
   .union([
     PartResponse,
     z.strictObject({
@@ -63,7 +63,7 @@ const AnswerBody = z
   })
   .meta({ id: 'PracticeAnswerRequest' });
 
-const KeyRevealSchema = z
+export const KeyRevealSchema = z
   .object({
     answer: z.unknown(),
     solution_md: z.string(),
