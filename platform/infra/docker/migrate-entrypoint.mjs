@@ -6,7 +6,8 @@
 //    creates the Entra principals for the api/worker identities, the NOLOGIN roles soyl_migrator and
 //    soyl_app, the grants from platform/db/README.md "Roles" (DB-1), and the `vector` extension.
 // 3. Runs `db migrate up` (or the command given as arguments, e.g. `migrate status`, `seed catalog`)
-//    from @soyl/db with the same environment. Exit code is the CLI's exit code.
+//    with the @soyl/db CLI ($MIGRATE_CLI bundle in the image, tsx from a checkout). Exit code is the
+//    CLI's exit code (0 ok, 1 error, 2 = `migrate status` found a changed migration).
 //
 // Locally / in CI there is no IDENTITY_ENDPOINT: steps 1-2 are skipped and DATABASE_URL is used as is.
 import { spawnSync } from 'node:child_process';
@@ -98,13 +99,20 @@ try {
   process.exit(1);
 }
 
-let tsxCli;
-try {
-  tsxCli = fileURLToPath(import.meta.resolve('tsx/cli'));
-} catch {
-  tsxCli = fileURLToPath(new URL('./node_modules/tsx/dist/cli.mjs', import.meta.url));
-}
-const dbDir = fileURLToPath(new URL('./db/', import.meta.url));
 log(`running: db ${command.join(' ')}`);
-const r = spawnSync(process.execPath, [tsxCli, 'src/cli.ts', ...command], { cwd: dbDir, stdio: 'inherit', env: process.env });
+let r;
+if (process.env.MIGRATE_CLI) {
+  // Container image: the CLI is a single esbuild bundle.
+  r = spawnSync(process.execPath, [process.env.MIGRATE_CLI, ...command], { stdio: 'inherit', env: process.env });
+} else {
+  // From a checkout: run the TypeScript CLI through tsx (platform/db devDependency).
+  let tsxCli;
+  try {
+    tsxCli = fileURLToPath(import.meta.resolve('tsx/cli'));
+  } catch {
+    tsxCli = fileURLToPath(new URL('../../node_modules/tsx/dist/cli.mjs', import.meta.url));
+  }
+  const dbDir = fileURLToPath(new URL('../../db/', import.meta.url));
+  r = spawnSync(process.execPath, [tsxCli, 'src/cli.ts', ...command], { cwd: dbDir, stdio: 'inherit', env: process.env });
+}
 process.exit(r.status ?? 1);

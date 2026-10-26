@@ -361,7 +361,8 @@ jobs:
           user="$(docker image inspect --format '{{.Config.User}}' "soyl-${SERVICE}:ci")"
           echo "image user: ${user:-<root>}"
           if [ -z "$user" ] || [ "$user" = "root" ] || [ "$user" = "0" ]; then echo "::error::image runs as root (INFRA-10)"; exit 1; fi
-          "$RUNNER_TEMP/trivy" image --severity HIGH,CRITICAL --ignore-unfixed --exit-code 1 --no-progress "soyl-${SERVICE}:ci"
+          "$RUNNER_TEMP/trivy" image --severity HIGH,CRITICAL --ignore-unfixed --format json --output trivy.json --no-progress "soyl-${SERVICE}:ci"
+          node platform/infra/scripts/trivy-annotate.mjs trivy.json "$SERVICE"
       - name: CycloneDX SBOM (INFRA-18)
         if: steps.exists.outputs.build == 'true'
         env:

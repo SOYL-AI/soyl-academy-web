@@ -3,7 +3,7 @@
 #
 #   docker build -f platform/infra/docker/migrate.Dockerfile -t soyl-migrate platform/
 #
-# Runs `npm run db -w @soyl/db -- migrate up` equivalent through infra/docker/migrate-entrypoint.mjs,
+# Equivalent of `npm run db -w @soyl/db -- migrate up`, run through infra/docker/migrate-entrypoint.mjs,
 # which first obtains an Entra token with the job's managed identity (INFRA-2) and bootstraps the
 # database roles (DB-1). INFRA-10: base images pinned by digest, non-root, no build tools or secrets
 # in the final stage, NODE_ENV=production.
@@ -16,21 +16,19 @@ FROM node:24-bookworm-slim@sha256:55fb5f5a527ea2c5c4a95f963e48ef90aa38c7b346054f
 ENV CI=true NPM_CONFIG_AUDIT=false NPM_CONFIG_FUND=false NPM_CONFIG_UPDATE_NOTIFIER=false
 WORKDIR /src
 COPY . .
-# tsx runs the TypeScript migrator directly, so @soyl/db's dev dependencies are needed at runtime.
-# The embedded-postgres server binaries (local stand-in only, D-008) are removed.
-RUN test -f db/package.json || (echo "platform/db does not exist yet" && exit 1) \
- && npm ci --workspace @soyl/db --include-workspace-root=false \
- && rm -rf node_modules/@embedded-postgres \
- && mkdir -p /out \
- && cp -a node_modules package.json /out/ \
- && cp -a db /out/db \
- && cp -a shared /out/shared \
- && cp -a catalog /out/catalog \
- && cp infra/docker/migrate-entrypoint.mjs /out/migrate-entrypoint.mjs \
- && rm -rf /out/db/node_modules/.cache /out/db/.data
+# The @soyl/db CLI and the entrypoint are bundled with esbuild (workspace + npm deps inlined), so the
+# final image ships no node_modules at all: no dev tooling, no esbuild/Go binaries, no
+# embedded-postgres server (local stand-in only, D-008). Migration SQL and the catalog are copied
+# next to the bundles and located through SOYL_MIGRATIONS_DIR / SOYL_CATALOG_DIR.
+RUN test -f db/package.json || (echo "platform/db does not exist yet" && exit 1)
+RUN npm ci --workspace @soyl/db --include-workspace-root=false
+RUN sh infra/docker/bundle-migrate.sh /out
 
 FROM gcr.io/distroless/nodejs24-debian12:nonroot@sha256:14d42e2511532589a7c7e01a753667a74fcc96266e137e8125006b87b0c32d0a
-ENV NODE_ENV=production
+ENV NODE_ENV=production \
+    MIGRATE_CLI=/app/migrate-cli.mjs \
+    SOYL_MIGRATIONS_DIR=/app/db/migrations \
+    SOYL_CATALOG_DIR=/app/catalog
 WORKDIR /app
 COPY --from=build --chown=nonroot:nonroot /out/ /app/
 USER nonroot
