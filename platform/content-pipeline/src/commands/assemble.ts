@@ -96,41 +96,63 @@ export function assembleSubject(plan: ReturnType<typeof planSubjectTests>, bank:
   return out;
 }
 
-async function ingestAssembled(p: Pipeline, a: AssembledSubject, academicYear: string): Promise<{ ingested: number; unchanged: number }> {
+export interface TestToIngest {
+  test: TestDefinition;
+  /** Null for chapter tests (no named series). */
+  series: { key: string; title: string; track: 'main' | 'second_exam'; position: number } | null;
+}
+
+/**
+ * Ingests tests into Postgres (status published). Unchanged tests (same sections) are left alone; a
+ * changed one retires the previous version and is stored as version + 1. Series rows are upserted.
+ */
+export async function ingestTests(p: Pipeline, subjectId: string, academicYear: string, list: TestToIngest[]): Promise<{ ingested: number; unchanged: number }> {
   const { db } = await p.dbAccess.get();
   let ingested = 0;
   let unchanged = 0;
-  const [subjectRow] = await db.select({ id: subjectsTable.id }).from(subjectsTable).where(and(eq(subjectsTable.key, a.subject), eq(subjectsTable.academicYear, academicYear)));
-  if (!subjectRow) throw new Error(`subject ${a.subject} (${academicYear}) is not in the database; run "npm run db -w @soyl/db -- seed catalog"`);
+  const [subjectRow] = await db.select({ id: subjectsTable.id }).from(subjectsTable).where(and(eq(subjectsTable.key, subjectId), eq(subjectsTable.academicYear, academicYear)));
+  if (!subjectRow) throw new Error(`subject ${subjectId} (${academicYear}) is not in the database; run "npm run db -w @soyl/db -- seed catalog"`);
   const seriesIds = new Map<string, string>();
-  for (const { test, planned } of a.tests) {
+  for (const { test, series } of list) {
     let seriesId: string | null = null;
-    if (planned.seriesTitle) {
-      const key = `ts_${test.id.replace(/^t_/, '').replace(/_(unit|mock|may|halfyearly|annual|term)(_\d+)?$/, '')}_${planned.series.replace(/[^a-z0-9]+/g, '_')}`;
-      seriesId = seriesIds.get(key) ?? null;
+    if (series) {
+      seriesId = seriesIds.get(series.key) ?? null;
       if (!seriesId) {
         const [row] = await db
           .insert(testSeries)
-          .values({ key, academicYear, subjectId: subjectRow.id, title: planned.seriesTitle, track: planned.track, status: 'published' })
-          .onConflictDoUpdate({ target: [testSeries.key, testSeries.academicYear], set: { title: planned.seriesTitle, track: planned.track, status: 'published' } })
+          .values({ key: series.key, academicYear, subjectId: subjectRow.id, title: series.title, track: series.track, status: 'published' })
+          .onConflictDoUpdate({ target: [testSeries.key, testSeries.academicYear], set: { title: series.title, track: series.track, status: 'published' } })
           .returning({ id: testSeries.id });
         seriesId = row!.id;
-        seriesIds.set(key, seriesId);
+        seriesIds.set(series.key, seriesId);
       }
     }
-    const [latest] = await db.select({ version: testsTable.version, definition: testsTable.definition }).from(testsTable).where(and(eq(testsTable.key, test.id), eq(testsTable.academicYear, academicYear))).orderBy(desc(testsTable.version)).limit(1);
-    const same = latest && JSON.stringify((latest.definition as TestDefinition).sections) === JSON.stringify(test.sections);
-    if (same) {
+    const [latest] = await db.select({ version: testsTable.version, definition: testsTable.definition, status: testsTable.status }).from(testsTable).where(and(eq(testsTable.key, test.id), eq(testsTable.academicYear, academicYear))).orderBy(desc(testsTable.version)).limit(1);
+    if (latest && latest.status === 'published' && JSON.stringify((latest.definition as TestDefinition).sections) === JSON.stringify(test.sections)) {
       unchanged++;
       continue;
     }
     const def = { ...test, version: (latest?.version ?? 0) + 1 };
     const [bp] = await db.select({ id: blueprintsTable.id }).from(blueprintsTable).where(and(eq(blueprintsTable.key, test.blueprint_id ?? ''), eq(blueprintsTable.academicYear, academicYear)));
     if (latest) await db.update(testsTable).set({ status: 'retired' }).where(and(eq(testsTable.key, test.id), eq(testsTable.academicYear, academicYear), eq(testsTable.status, 'published')));
-    await ingestTestDefinition(db, def, { academicYear, status: 'published', seriesId, seriesPosition: planned.seriesTitle ? planned.position : null, blueprintId: bp?.id ?? null });
+    await ingestTestDefinition(db, def, { academicYear, status: 'published', seriesId, seriesPosition: series?.position ?? null, blueprintId: bp?.id ?? null });
     ingested++;
   }
   return { ingested, unchanged };
+}
+
+/** Series row key for a planned paper: ts_<subject abbrev>_<series>. */
+export function seriesKey(test: TestDefinition, planned: PlannedPaper): string {
+  return `ts_${test.id.replace(/^t_/, '').split('_')[0]}_${planned.series.replace(/[^a-z0-9]+/g, '_')}`;
+}
+
+async function ingestAssembled(p: Pipeline, a: AssembledSubject, academicYear: string): Promise<{ ingested: number; unchanged: number }> {
+  return ingestTests(
+    p,
+    a.subject,
+    academicYear,
+    a.tests.map(({ test, planned }) => ({ test, series: planned.seriesTitle ? { key: seriesKey(test, planned), title: planned.seriesTitle, track: planned.track, position: planned.position } : null })),
+  );
 }
 
 export interface AssembleOptions {
