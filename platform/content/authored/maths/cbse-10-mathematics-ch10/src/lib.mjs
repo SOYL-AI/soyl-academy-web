@@ -194,7 +194,7 @@ export class Svg {
   style(o = {}) {
     const fill = o.fill === true ? 'var(--diagram-fill)' : o.fill === 'accent' ? 'var(--diagram-accent)' : o.fill === 'muted' ? 'var(--diagram-muted)' : o.fill ?? 'none';
     const stroke = o.stroke === false ? 'none' : o.accent ? 'var(--diagram-accent)' : o.muted ? 'var(--diagram-muted)' : 'currentColor';
-    return `fill="${fill}"${o.fillOpacity ? ` fill-opacity="${o.fillOpacity}"` : ''} stroke="${stroke}" stroke-width="${o.sw ?? 1.6}"${o.dash ? ' stroke-dasharray="5 4"' : ''}`;
+    return `fill="${fill}"${o.fillOpacity ? ` fill-opacity="${o.fillOpacity}"` : ''}${o.evenodd ? ' fill-rule="evenodd"' : ''} stroke="${stroke}" stroke-width="${o.sw ?? 1.6}"${o.dash ? ' stroke-dasharray="5 4"' : ''}`;
   }
   circle(c, r, o) { this.parts.push(`<circle cx="${this.X(c[0])}" cy="${this.Y(c[1])}" r="${+(r * this.k).toFixed(2)}" ${this.style(o)}/>`); return this; }
   ellipse(c, rx, ry, o) { this.parts.push(`<ellipse cx="${this.X(c[0])}" cy="${this.Y(c[1])}" rx="${+(rx * this.k).toFixed(2)}" ry="${+(ry * this.k).toFixed(2)}" ${this.style(o)}/>`); return this; }
