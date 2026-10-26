@@ -16,6 +16,7 @@ Gallery (dev only): `/dev/ui` with `NEXT_PUBLIC_PLATFORM_ENABLED=true` and `npm 
 | `render/` | **Reviewed renderers** (the only code allowed to inject HTML): `Markdown`, `MathBlock`/`MathInline`, `SvgDiagram`, plus `policy.ts`, `math.ts`, `sanitize-svg.ts`, `remark-soyl.ts`. |
 | `visual/` | `Visual` dispatcher and one renderer per kind in `platform/shared/content/visual.ts`; safe expression parser `expr.ts`; flow layout. |
 | `slides/` | `SlideFrame`, one component per layout, `renderSlide(slide, options)`, `ReadAlong`, narration `segment.ts`. |
+| `question/` | Question renderers for every contract-v2 type (web-platform M2; the M3 test player reuses them): `model.ts` (drafts → `PracticeResponse`), `slots.tsx` (server-rendered content), `QuestionCard`, inputs, `OrderingInput`, `AnswerReveal`, `RichText` (lazy Markdown). |
 | `__fixtures__/` | Sample decks (English, Hindi), XSS corpus. |
 | `__tests__/` | Vitest suites (`npm run test:platform-ui` at the repo root). |
 
@@ -52,7 +53,11 @@ return <SlidePlayer slides={slides} />; // 'use client' player (web-platform, M2
   with `segmentNarration(text)` + `wordAtOffset(sentences, offset)`. Segmentation is deterministic
   (no `Intl.Segmenter`) and splits Hindi sentences on `।`/`॥`. If the player is a client component
   that re-renders slides itself, the slide modules (and KaTeX) join its chunk: lazy-load the player.
-- **Check slides** render `options.renderCheck(questionId)`; the question UI belongs to the player/test engine.
+- **Check slides** render `options.renderCheck(questionId)`; the question UI belongs to the player/test engine
+  (web-platform passes a client `CheckQuestion` with server-built slots).
+- **Underline** `++text++` (contract v2) renders as `<ins>` (underlined): text nodes only, never inside code or
+  maths; `C++` stays text; `++**word**++` works. `UNDERLINE_SOURCE` in `remark-soyl.ts` must equal the shared
+  `UNDERLINE_RE` (a test checks).
 - **Tables** (`visual.kind = 'table'`): every header/cell is **inline Markdown** (`**bold**`, `$…$`,
   `\ce{…}`, no images). Plain Unicode renders unchanged. A cell starting with `1. ` would parse as a
   list: write `1.` as `1\.` or avoid it. The first column is the row header (`<th scope="row">`); an
@@ -87,6 +92,32 @@ return <SlidePlayer slides={slides} />; // 'use client' player (web-platform, M2
   with `<sub>`/`<sup>`.
 - **Flow** uses a deterministic layered layout. Left-to-right flows with more than three steps also
   render a top-to-bottom version; a container query picks it under 480 px of width.
+
+## Questions (`question/`)
+
+```tsx
+// Server Component: content rendered on the server, interaction on the client.
+import { buildQuestionSlots } from '@/components/platform/ui/question/slots';
+import { QuestionCard } from '@/components/platform/ui/question/QuestionCard'; // 'use client'
+<QuestionCard question={q} slots={buildQuestionSlots(q, lang)} submit={(response) => postAnswer(q, response)} />
+```
+
+- **Types:** mcq, multi-select, assertion-reason, true-false (native radios/checkboxes), numerical (number only,
+  Unicode minus and thousands commas accepted), fill-blank (stem blanks `___` numbered, one labelled field each),
+  match (a labelled `<select>` per left item; right column lettered A, B …), ordering (drag handle with pointer
+  events, Move up/down buttons, and Space/↑/↓/Esc on the handle; moves announced), code-output (fenced code in the
+  stem, monospace answer sent verbatim), short/long (word-limit counter), writing (format badge, word counter, rubric
+  after checking), map (list of labelled fields with place suggestions per `map_id` until outline maps exist;
+  `renderMap` slot for an SVG map later), case/source-based (passage, `passage_origin` label, parts, internal choice
+  between a part and its `alternatives`).
+- **F-006:** the card never holds answers. `submit(response)` returns the graded result with the key; the reveal shows
+  verdict, marks, correct answer (where the inputs cannot), solution, marking scheme, model answer, rubric, and a
+  self-mark form for written answers (`selfAssess`, members) or a login prompt (`onLogin`, guests).
+- **Client rendering:** `QuestionCard` and the inputs ship no Markdown/KaTeX. Never value-import `slots.tsx`,
+  `render/Markdown` or `visual/Visual` from a client module (type imports are fine); text that only exists after a
+  client request goes through `RichText` (lazy chunk).
+- **Fixtures** for every type: `__fixtures__/questions.ts`. Tests: `__tests__/question.test.tsx` (every type, model,
+  XSS corpus through stems/options/passages on the server and through revealed keys in `RichText`, underline).
 
 ## Tokens contract
 
