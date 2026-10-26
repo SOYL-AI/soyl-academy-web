@@ -14,7 +14,7 @@
 import { createHash } from 'node:crypto';
 import { and, asc, eq, inArray, isNull, sql, type SQL } from 'drizzle-orm';
 import type { AnyPgColumn } from 'drizzle-orm/pg-core';
-import { boards, chapters, decks, flashcardSets, notes, studentQuestions, subjects, testItems, tests, topics, type Database } from '@soyl/db';
+import { boards, chapters, contentReleaseItems, contentReleases, decks, flashcardSets, notes, studentQuestions, subjects, testItems, tests, topics, type Database } from '@soyl/db';
 import { isObjective, type QuestionType } from '@soyl/shared/content/question';
 import type { Deck, Slide } from '@soyl/shared/content/deck';
 import type { FlashcardSet, Notes } from '@soyl/shared/content/study';
@@ -25,9 +25,42 @@ export const STUDENT_VISIBLE = ['published', 'reviewed'] as const;
 export type ReviewStatus = 'beta' | 'reviewed';
 const reviewStatus = (status: string): ReviewStatus => (status === 'reviewed' ? 'reviewed' : 'beta');
 
-type Visible = { isCurrent: AnyPgColumn; status: AnyPgColumn; academicYear: AnyPgColumn };
-/** Current version, published/reviewed, in the academic year (§7.3). */
-export const visible = (t: Visible, year: string): SQL => and(eq(t.isCurrent, true), inArray(t.status, [...STUDENT_VISIBLE]), eq(t.academicYear, year))!;
+type Visible = { id: AnyPgColumn; isCurrent: AnyPgColumn; status: AnyPgColumn; academicYear: AnyPgColumn };
+export type ReleaseItemType = 'deck' | 'notes' | 'flashcard_set' | 'question';
+
+/**
+ * Which version rows a student sees (ADR-006, ADR-010): the item rows of the chapter's **active**
+ * release (content_release_items), so a rollback serves the older release; when the chapter has no
+ * release at all (rows written outside the publish stage), the `is_current` rows.
+ */
+export const inScope = (t: { id: AnyPgColumn; isCurrent: AnyPgColumn }, type: ReleaseItemType, releaseId: string | null): SQL =>
+  releaseId
+    ? sql`${t.id} IN (SELECT ${contentReleaseItems.itemId} FROM ${contentReleaseItems} WHERE ${contentReleaseItems.releaseId} = ${releaseId} AND ${contentReleaseItems.itemType} = ${type})`
+    : eq(t.isCurrent, true);
+
+/** In the chapter's active release (or current), published/reviewed, in the academic year (§7.3). */
+export const visible = (t: Visible, type: ReleaseItemType, chapter: Pick<ChapterRef, 'activeReleaseId'>, year: string): SQL =>
+  and(inScope(t, type, chapter.activeReleaseId), inArray(t.status, [...STUDENT_VISIBLE]), eq(t.academicYear, year))!;
+
+/** The active release of each chapter (chapters without one are absent). */
+export async function activeReleases(db: Database, chapterIds: string[], year: string): Promise<Map<string, string>> {
+  if (!chapterIds.length) return new Map();
+  const rows = await db
+    .select({ chapterId: contentReleases.chapterId, id: contentReleases.id })
+    .from(contentReleases)
+    .where(and(inArray(contentReleases.chapterId, chapterIds), eq(contentReleases.academicYear, year), eq(contentReleases.status, 'active')));
+  return new Map(rows.map((r) => [r.chapterId, r.id]));
+}
+
+/** Item ids of a type that belong to any of these releases. */
+export async function releaseMembers(db: Database, releaseIds: string[], type: ReleaseItemType): Promise<Set<string>> {
+  if (!releaseIds.length) return new Set();
+  const rows = await db
+    .select({ id: contentReleaseItems.itemId })
+    .from(contentReleaseItems)
+    .where(and(inArray(contentReleaseItems.releaseId, releaseIds), eq(contentReleaseItems.itemType, type)));
+  return new Set(rows.map((r) => r.id));
+}
 
 /* ---------------------------------------------------------------------------------------------- */
 /* Chapter                                                                                         */
@@ -41,6 +74,8 @@ export interface ChapterRef {
   titleEn: string | null;
   unit: string | null;
   boardAssessed: boolean;
+  /** The chapter's active content release (ADR-006), or null when it has none. */
+  activeReleaseId: string | null;
   subject: { id: string; key: string; name: string; board: 'cbse' | 'cisce'; exam: 'cbse' | 'icse' | 'isc'; classLevel: number; language: string; script: string };
 }
 
@@ -53,8 +88,10 @@ export async function loadChapter(db: Database, key: string, year: string): Prom
     .innerJoin(boards, eq(boards.id, subjects.boardId))
     .where(and(eq(chapters.key, key), eq(chapters.academicYear, year)));
   if (!row) throw new ApiProblem('not_found');
+  const active = await activeReleases(db, [row.c.id], year);
   return {
     id: row.c.id,
+    activeReleaseId: active.get(row.c.id) ?? null,
     key: row.c.key,
     number: row.c.number,
     title: row.c.title,
@@ -203,21 +240,21 @@ export const studentQuestionSelect = {
 };
 
 /** Current, visible, practice-pool questions of a chapter (F-006: no test or live items). */
-export function practicePool(chapterId: string, year: string): SQL {
+export function practicePool(chapter: Pick<ChapterRef, 'id' | 'activeReleaseId'>, year: string): SQL {
   return and(
-    eq(studentQuestions.chapterId, chapterId),
+    eq(studentQuestions.chapterId, chapter.id),
     eq(studentQuestions.academicYear, year),
-    eq(studentQuestions.isCurrent, true),
+    inScope(studentQuestions, 'question', chapter.activeReleaseId),
     eq(studentQuestions.pool, 'practice'),
   )!;
 }
 
-export async function practiceQuestionsByKey(db: Database, chapterId: string, year: string, keys: string[]): Promise<Map<string, StudentQuestion>> {
+export async function practiceQuestionsByKey(db: Database, chapter: ChapterRef, year: string, keys: string[]): Promise<Map<string, StudentQuestion>> {
   if (!keys.length) return new Map();
   const rows = await db
     .select(studentQuestionSelect)
     .from(studentQuestions)
-    .where(and(practicePool(chapterId, year), inArray(studentQuestions.key, keys)));
+    .where(and(practicePool(chapter, year), inArray(studentQuestions.key, keys)));
   return new Map(rows.map((r) => [r.key, studentQuestion(r)]));
 }
 
@@ -235,11 +272,11 @@ export interface DeckPartSummary {
   reviewStatus: ReviewStatus;
 }
 
-export async function deckParts(db: Database, chapterId: string, year: string): Promise<(DeckPartSummary & { id: string })[]> {
+export async function deckParts(db: Database, chapter: ChapterRef, year: string): Promise<(DeckPartSummary & { id: string })[]> {
   const rows = await db
     .select({ id: decks.id, part: decks.part, title: decks.title, slideCount: decks.slideCount, version: decks.version, status: decks.status, body: decks.body })
     .from(decks)
-    .where(and(eq(decks.chapterId, chapterId), visible(decks, year)))
+    .where(and(eq(decks.chapterId, chapter.id), visible(decks, 'deck', chapter, year)))
     .orderBy(sql`coalesce(${decks.part}, 0)`);
   return rows.map((r) => ({
     id: r.id,
@@ -269,7 +306,7 @@ function slideDto(s: Slide) {
 }
 
 export async function loadDeck(db: Database, chapter: ChapterRef, year: string, part: number | undefined) {
-  const parts = await deckParts(db, chapter.id, year);
+  const parts = await deckParts(db, chapter, year);
   if (!parts.length) throw new ApiProblem('not_found');
   const chosen = part === undefined ? parts[0]! : parts.find((p) => p.part === part);
   if (!chosen) throw new ApiProblem('not_found');
@@ -280,7 +317,7 @@ export async function loadDeck(db: Database, chapter: ChapterRef, year: string, 
   const deck = row!.body as Deck;
   const slides = (deck.slides ?? []).map(slideDto);
   const checkIds = [...new Set(slides.map((s) => s.check_question_id).filter((x): x is string => !!x))];
-  const checks = await practiceQuestionsByKey(db, chapter.id, year, checkIds);
+  const checks = await practiceQuestionsByKey(db, chapter, year, checkIds);
   return {
     chapterId: chapter.key,
     part: chosen.part,
@@ -300,7 +337,7 @@ export async function loadNotes(db: Database, chapter: ChapterRef, year: string)
   const [row] = await db
     .select({ body: notes.body, version: notes.version, status: notes.status, language: notes.language })
     .from(notes)
-    .where(and(eq(notes.chapterId, chapter.id), visible(notes, year)));
+    .where(and(eq(notes.chapterId, chapter.id), visible(notes, 'notes', chapter, year)));
   if (!row) throw new ApiProblem('not_found');
   const n = row.body as Notes;
   return {
@@ -326,7 +363,7 @@ export async function loadFlashcards(db: Database, chapter: ChapterRef, year: st
   const [row] = await db
     .select({ body: flashcardSets.body, version: flashcardSets.version, status: flashcardSets.status, language: flashcardSets.language })
     .from(flashcardSets)
-    .where(and(eq(flashcardSets.chapterId, chapter.id), visible(flashcardSets, year)));
+    .where(and(eq(flashcardSets.chapterId, chapter.id), visible(flashcardSets, 'flashcard_set', chapter, year)));
   if (!row) throw new ApiProblem('not_found');
   const f = row.body as FlashcardSet;
   return {
@@ -344,19 +381,19 @@ export async function loadFlashcards(db: Database, chapter: ChapterRef, year: st
 
 export async function loadHub(db: Database, chapter: ChapterRef, year: string) {
   const [parts, noteRows, cardRows, practiceRows, topicRows, testRows] = await Promise.all([
-    deckParts(db, chapter.id, year),
+    deckParts(db, chapter, year),
     db
       .select({ title: notes.title, body: notes.body, status: notes.status, version: notes.version })
       .from(notes)
-      .where(and(eq(notes.chapterId, chapter.id), visible(notes, year))),
+      .where(and(eq(notes.chapterId, chapter.id), visible(notes, 'notes', chapter, year))),
     db
       .select({ cardCount: flashcardSets.cardCount, status: flashcardSets.status, version: flashcardSets.version })
       .from(flashcardSets)
-      .where(and(eq(flashcardSets.chapterId, chapter.id), visible(flashcardSets, year))),
+      .where(and(eq(flashcardSets.chapterId, chapter.id), visible(flashcardSets, 'flashcard_set', chapter, year))),
     db
       .select({ type: studentQuestions.type, difficulty: studentQuestions.difficulty, n: sql<number>`count(*)::int` })
       .from(studentQuestions)
-      .where(practicePool(chapter.id, year))
+      .where(practicePool(chapter, year))
       .groupBy(studentQuestions.type, studentQuestions.difficulty),
     db.select({ key: topics.key, title: topics.title, titleEn: topics.titleEn }).from(topics).where(eq(topics.chapterId, chapter.id)).orderBy(asc(topics.position)),
     db

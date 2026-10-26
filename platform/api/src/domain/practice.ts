@@ -13,7 +13,7 @@ import { XP_AWARDS } from '@soyl/shared/config/gamification';
 import type { QuestionType } from '@soyl/shared/content/question';
 import type { Clock } from '../clock';
 import { ApiProblem } from '../errors';
-import { practicePool, studentQuestion, studentQuestionSelect, type ChapterRef, type StudentQuestion } from './content';
+import { activeReleases, practicePool, releaseMembers, studentQuestion, studentQuestionSelect, type ChapterRef, type StudentQuestion } from './content';
 import { awardXp, evaluateBadges, recordActivity, refreshTotals, type StreakView } from './gamification';
 import { gradeQuestion, ResponseMismatchError, type PracticeResponse, type QuestionGrade, type StoredBodyPart } from './grading';
 
@@ -58,7 +58,7 @@ export interface PracticeItem {
  * authored (key) order; guests get authored order.
  */
 export async function listPractice(db: Database, chapter: ChapterRef, year: string, userId: string | null, q: PracticeListQuery) {
-  const conds: SQL[] = [practicePool(chapter.id, year)];
+  const conds: SQL[] = [practicePool(chapter, year)];
   if (q.types?.length) conds.push(inArray(studentQuestions.type, q.types));
   if (q.difficulties?.length) conds.push(inArray(studentQuestions.difficulty, q.difficulties));
   const where = and(...conds)!;
@@ -124,9 +124,13 @@ export interface SubmitAnswerResult extends QuestionGrade {
   streak: StreakView | null;
 }
 
-/** The practice-pool question (exact version when given, else current) with its key. Never test/live items. */
+/**
+ * The practice-pool question with its key. Never test/live items. With `version`: that exact visible
+ * version (the one the student was shown, D-023). Without: the version in the chapter's active
+ * release (ADR-006), or the current row when the chapter has no release.
+ */
 async function questionForAnswer(db: Database, year: string, questionKey: string, version: number | undefined) {
-  const [row] = await db
+  const rows = await db
     .select({ ...studentQuestionSelect, chapterId: studentQuestions.chapterId, isCurrent: studentQuestions.isCurrent })
     .from(studentQuestions)
     .where(
@@ -134,9 +138,15 @@ async function questionForAnswer(db: Database, year: string, questionKey: string
         eq(studentQuestions.key, questionKey),
         eq(studentQuestions.academicYear, year),
         eq(studentQuestions.pool, 'practice'),
-        version === undefined ? eq(studentQuestions.isCurrent, true) : eq(studentQuestions.version, version),
+        ...(version === undefined ? [] : [eq(studentQuestions.version, version)]),
       ),
     );
+  let row = rows[0];
+  if (version === undefined && rows.length) {
+    const releaseId = (await activeReleases(db, [rows[0]!.chapterId], year)).get(rows[0]!.chapterId);
+    const members = releaseId ? await releaseMembers(db, [releaseId], 'question') : null;
+    row = rows.find((r) => (members ? members.has(r.id) : r.isCurrent));
+  }
   if (!row) throw new ApiProblem('not_found');
   const [key] = await db.select().from(questionKeys).where(eq(questionKeys.questionId, row.id));
   if (!key) throw new Error(`question ${row.key}@${row.version} has no key row`);

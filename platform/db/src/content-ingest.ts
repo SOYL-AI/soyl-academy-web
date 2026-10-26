@@ -20,6 +20,7 @@ import type { Database } from './client';
 import { questionRow, splitQuestion } from './student-questions';
 import {
   chapters,
+  contentReleaseItems,
   contentReleases,
   decks,
   flashcardSets,
@@ -30,6 +31,7 @@ import {
   testItems,
   tests,
   type QuestionPool,
+  type ReleaseItemType,
 } from '../schema/index';
 
 type Tx = Parameters<Parameters<Database['transaction']>[0]>[0];
@@ -98,6 +100,37 @@ async function resplitRelease(tx: Tx, release: ChapterRelease): Promise<number> 
   return repaired;
 }
 
+/**
+ * Records which exact item rows the release contains (content_release_items, migration 0006), so the
+ * API can serve a unit through its active release and rollback serves the older versions (ADR-006).
+ * Idempotent. Returns the number of rows the release contains.
+ */
+async function recordMembership(tx: Tx, releaseId: string, release: ChapterRelease): Promise<number> {
+  const year = release.academic_year;
+  const items: { releaseId: string; itemType: ReleaseItemType; itemId: string }[] = [];
+  const add = (itemType: ReleaseItemType, row: { id: string } | undefined, what: string) => {
+    if (!row) throw new Error(`release ${release.unit}@${release.version}: ${what} is not ingested`);
+    items.push({ releaseId, itemType, itemId: row.id });
+  };
+  for (const d of release.decks) {
+    const [row] = await tx
+      .select({ id: decks.id })
+      .from(decks)
+      .where(and(eq(decks.unit, release.unit), eq(decks.academicYear, year), d.part === null ? isNull(decks.part) : eq(decks.part, d.part), eq(decks.version, d.version)));
+    add('deck', row, `deck part ${d.part} v${d.version}`);
+  }
+  const [n] = await tx.select({ id: notes.id }).from(notes).where(and(eq(notes.unit, release.unit), eq(notes.academicYear, year), eq(notes.version, release.notes.version)));
+  add('notes', n, `notes v${release.notes.version}`);
+  const [f] = await tx.select({ id: flashcardSets.id }).from(flashcardSets).where(and(eq(flashcardSets.unit, release.unit), eq(flashcardSets.academicYear, year), eq(flashcardSets.version, release.flashcards.version)));
+  add('flashcard_set', f, `flashcards v${release.flashcards.version}`);
+  for (const q of release.questions) {
+    const [row] = await tx.select({ id: questions.id }).from(questions).where(and(eq(questions.key, q.id), eq(questions.version, q.version)));
+    add('question', row, `question ${q.id} v${q.version}`);
+  }
+  for (let i = 0; i < items.length; i += 500) await tx.insert(contentReleaseItems).values(items.slice(i, i + 500)).onConflictDoNothing();
+  return items.length;
+}
+
 function provenance(p: { origin: string; template_version: string | null; model: string | null } | undefined) {
   return { origin: p?.origin ?? 'pipeline', templateVersion: p?.template_version ?? null, model: p?.model ?? null };
 }
@@ -120,6 +153,7 @@ export async function ingestChapterRelease(db: Database, release: ChapterRelease
       if (existing.sha256 !== sha) throw new Error(`release ${release.unit}@${release.version} already exists with different content (releases are immutable)`);
       // Same payload: nothing new to insert, but existing rows get the current DB-6 split.
       const repaired = await resplitRelease(tx, release);
+      await recordMembership(tx, existing.id, release);
       return { releaseId: existing.id, alreadyIngested: true, inserted: { decks: 0, notes: 0, flashcardSets: 0, questions: 0 }, repaired: { questions: repaired } };
     }
 
@@ -196,6 +230,7 @@ export async function ingestChapterRelease(db: Database, release: ChapterRelease
       inserted.questions++;
     }
 
+    await recordMembership(tx, releaseId, release);
     if (opts.activate ?? true) await activateRelease(tx, releaseId);
     return { releaseId, alreadyIngested: false, inserted, repaired: { questions: repairedQuestions } };
   });

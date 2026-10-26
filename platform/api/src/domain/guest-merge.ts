@@ -4,8 +4,8 @@
  * - Once per account: `profiles.guest_merged_at` is set in the same transaction (row locked), so a
  *   replay or a parallel second call returns `alreadyMerged: true` and changes nothing.
  * - Only ids that exist are kept: chapters in the current academic year, practice questions that are
- *   current, student-visible and in the practice pool (of the chapter they were posted with), deck
- *   parts that are published. Unknown ids are counted, not stored.
+ *   in the chapter's active release (ADR-006; current rows when it has none), student-visible and in
+ *   the practice pool (of the chapter they were posted with), deck parts that are published. Unknown ids are counted, not stored.
  * - M2: lesson positions go to `lesson_progress` (source guest_merge). If the account already has a
  *   position for that chapter part, the further slide and the earlier completion win. Practice
  *   answers go to `practice_answers` (source guest_merge, response null): the latest guest answer per
@@ -19,7 +19,7 @@ import { chapters, decks, istDay, lessonProgress, practiceAnswers, profiles, que
 import { GUEST_MERGE } from '@soyl/shared/config/security';
 import type { Clock } from '../clock';
 import type { GuestProgress, MergeGuestResponse } from '../contract/guest';
-import { STUDENT_VISIBLE } from './content';
+import { activeReleases, releaseMembers, STUDENT_VISIBLE } from './content';
 import { refreshTotals } from './gamification';
 
 export async function mergeGuestProgress(
@@ -57,15 +57,20 @@ export async function mergeGuestProgress(
       : [];
     const chapterId = new Map(chapterRows.map((r) => [r.key, r.id]));
 
-    // Practice questions: current, visible, practice pool, in the chapter the answer was posted with.
+    // Which version rows count: the chapter's active release (ADR-006), else the current rows.
+    const active = await activeReleases(tx as unknown as Database, [...chapterId.values()], academicYear);
+    const inScope = (members: Set<string>, row: { id: string; chapterId: string; isCurrent: boolean }) => (active.has(row.chapterId) ? members.has(row.id) : row.isCurrent);
+
+    // Practice questions: in scope, visible, practice pool, in the chapter the answer was posted with.
     const questionKeys = [...new Set(payload.practice.filter((p) => chapterId.has(p.chapter)).map((p) => p.question))];
     const questionRows = questionKeys.length
       ? await tx
-          .select({ id: questions.id, key: questions.key, version: questions.version, chapterId: questions.chapterId, marks: questions.marks })
+          .select({ id: questions.id, key: questions.key, version: questions.version, chapterId: questions.chapterId, marks: questions.marks, isCurrent: questions.isCurrent })
           .from(questions)
-          .where(and(inArray(questions.key, questionKeys), eq(questions.isCurrent, true), eq(questions.pool, 'practice'), inArray(questions.status, [...STUDENT_VISIBLE])))
+          .where(and(inArray(questions.key, questionKeys), eq(questions.pool, 'practice'), inArray(questions.status, [...STUDENT_VISIBLE])))
       : [];
-    const questionByKey = new Map(questionRows.map((q) => [q.key, q]));
+    const questionMembers = await releaseMembers(tx as unknown as Database, [...active.values()], 'question');
+    const questionByKey = new Map(questionRows.filter((q) => inScope(questionMembers, q)).map((q) => [q.key, q]));
     const knownAnswer = (p: GuestProgress['practice'][number]) => {
       const q = questionByKey.get(p.question);
       return q && q.chapterId === chapterId.get(p.chapter) ? q : null;
@@ -75,12 +80,13 @@ export async function mergeGuestProgress(
     const knownChapterIds = [...new Set(payload.lessons.map((l) => chapterId.get(l.chapter)).filter((x): x is string => !!x))];
     const deckRows = knownChapterIds.length
       ? await tx
-          .select({ chapterId: decks.chapterId, part: sql<number>`coalesce(${decks.part}, 0)::int`, slideCount: decks.slideCount })
+          .select({ id: decks.id, chapterId: decks.chapterId, isCurrent: decks.isCurrent, part: sql<number>`coalesce(${decks.part}, 0)::int`, slideCount: decks.slideCount })
           .from(decks)
-          .where(and(inArray(decks.chapterId, knownChapterIds), eq(decks.isCurrent, true), inArray(decks.status, [...STUDENT_VISIBLE]), eq(decks.academicYear, academicYear)))
+          .where(and(inArray(decks.chapterId, knownChapterIds), inArray(decks.status, [...STUDENT_VISIBLE]), eq(decks.academicYear, academicYear)))
       : [];
+    const deckMembers = await releaseMembers(tx as unknown as Database, [...active.values()], 'deck');
     const partsOf = new Map<string, { part: number; slideCount: number }[]>();
-    for (const d of deckRows) partsOf.set(d.chapterId, [...(partsOf.get(d.chapterId) ?? []), { part: d.part, slideCount: d.slideCount }].sort((a, b) => a.part - b.part));
+    for (const d of deckRows.filter((r) => inScope(deckMembers, r))) partsOf.set(d.chapterId, [...(partsOf.get(d.chapterId) ?? []), { part: d.part, slideCount: d.slideCount }].sort((a, b) => a.part - b.part));
 
     const positions = new Map<string, typeof lessonProgress.$inferInsert>();
     for (const l of payload.lessons) {

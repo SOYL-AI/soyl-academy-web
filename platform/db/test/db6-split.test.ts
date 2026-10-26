@@ -208,3 +208,30 @@ describe.skipIf(!releases.length)('every authored and exemplar release (DB-6 dee
     expect((await t.db.select({ id: questions.id }).from(questions).where(inArray(questions.key, keys))).length).toBe(keys.length);
   });
 });
+
+describe.skipIf(!releases.length)('release membership (content_release_items, migration 0006)', () => {
+  it('records exactly the item rows of each release, also on re-ingest, and keeps them per release for rollback', async () => {
+    const { contentReleaseItems, contentReleases } = await import('../schema/index');
+    const t = await createTestDb();
+    try {
+      await seedCatalog(t.db);
+      const r = releases[0]!;
+      const a = await ingestChapterRelease(t.db, r);
+      const expected = r.decks.length + 2 + r.questions.length;
+      const count = async (releaseId: string) => (await t.db.select().from(contentReleaseItems).where(eq(contentReleaseItems.releaseId, releaseId))).length;
+      expect(await count(a.releaseId)).toBe(expected);
+      await t.db.delete(contentReleaseItems).where(eq(contentReleaseItems.releaseId, a.releaseId));
+      await ingestChapterRelease(t.db, r);
+      expect(await count(a.releaseId)).toBe(expected);
+      // v2 drops one question: v1 keeps its membership, v2 has one fewer.
+      const v2 = { ...r, version: 2, questions: r.questions.slice(1) };
+      const b = await ingestChapterRelease(t.db, v2);
+      expect(await count(b.releaseId)).toBe(expected - 1);
+      expect(await count(a.releaseId)).toBe(expected);
+      const [rel] = await t.db.select().from(contentReleases).where(eq(contentReleases.id, b.releaseId));
+      expect(rel!.status).toBe('active');
+    } finally {
+      await t.close();
+    }
+  });
+});

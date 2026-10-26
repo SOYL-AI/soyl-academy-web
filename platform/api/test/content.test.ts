@@ -145,9 +145,9 @@ describe('deck, notes, flashcards', () => {
     await h.t.db.update(notes).set({ status: 'published' }).where(eq(notes.id, n!.id));
 
     const [d] = await h.t.db.select().from(decks).where(and(eq(decks.unit, 'cbse-10-mathematics-ch02'), eq(decks.part, 2)));
-    await h.t.db.update(decks).set({ isCurrent: false }).where(eq(decks.id, d!.id));
+    await h.t.db.update(decks).set({ status: 'retired' }).where(eq(decks.id, d!.id));
     expect((await h.client().get('/v1/chapters/cbse-10-mathematics-ch02/deck?part=2')).statusCode).toBe(404);
-    await h.t.db.update(decks).set({ isCurrent: true }).where(eq(decks.id, d!.id));
+    await h.t.db.update(decks).set({ status: 'published' }).where(eq(decks.id, d!.id));
   });
 });
 
@@ -227,9 +227,10 @@ describe('DB-6 / F-006 contract: no answers in content or practice GET responses
     const withAlt = maths.questions.find((q) => q.children.some((c) => c.alternatives.length))!;
     let cursor: string | null = null;
     let found: { children: { alternatives: Record<string, unknown>[] }[] } | undefined;
+    type Page = { items: { question: { id: string; children: { alternatives: Record<string, unknown>[] }[] } }[]; nextCursor: string | null };
     do {
-      const page = (await h.client().get(`/v1/chapters/${maths.unit}/practice?limit=25&type=case-based${cursor ? `&cursor=${cursor}` : ''}`)).json();
-      found = page.items.map((i: { question: unknown }) => i.question).find((q: { id: string }) => q.id === withAlt.id) ?? found;
+      const page: Page = (await h.client().get(`/v1/chapters/${maths.unit}/practice?limit=25&type=case-based${cursor ? `&cursor=${cursor}` : ''}`)).json();
+      found = page.items.map((i) => i.question).find((q) => q.id === withAlt.id) ?? found;
       cursor = page.nextCursor;
     } while (cursor);
     const alt = found!.children.flatMap((c) => c.alternatives)[0]!;
@@ -246,5 +247,53 @@ describe('ordering items are never served in answer order', () => {
     expect([...once].map((o) => o.id).sort()).toEqual(['a', 'b', 'c', 'd']);
     for (let i = 0; i < 200; i++) expect(shuffleForOrdering(`q_k_${i}`, items.slice(0, 2)).map((o) => o.id)).toEqual(['b', 'a']);
     expect(shuffleForOrdering('q', [items[0]!])).toEqual([items[0]]);
+  });
+});
+
+describe('reads go through the active release (ADR-006): publish v2, then roll back to v1', () => {
+  it('serves v2 while active and v1 again after rollback, including items v2 removed', async () => {
+    const { activateRelease, ingestChapterRelease, contentReleases } = await import('@soyl/db');
+    const unit = 'cbse-10-mathematics-ch03';
+    const v1 = releases.find((r) => r.release.unit === unit)!.release;
+    const pub = <T extends { status?: string }>(x: T): T => ({ ...x, status: 'published' });
+    const [changed, removed, ...rest] = v1.questions;
+    const v2 = {
+      ...v1,
+      version: 2,
+      decks: v1.decks.map(pub),
+      notes: { ...pub(v1.notes), version: 2, title: `${v1.notes.title} (revised)` },
+      flashcards: pub(v1.flashcards),
+      questions: [{ ...pub(changed!), version: 2, stem_md: `${changed!.stem_md} (revised)` }, ...rest.map(pub)],
+    };
+    const r2 = await ingestChapterRelease(h.t.db, v2);
+    const notesTitle = async () => (await h.client().get(`/v1/chapters/${unit}/notes`)).json().title;
+    const stems = async () => {
+      const out = new Map<string, string>();
+      let cursor: string | null = null;
+      do {
+        const p: { items: { question: { id: string; stem_md: string } }[]; nextCursor: string | null } = (await h.client().get(`/v1/chapters/${unit}/practice?limit=25${cursor ? `&cursor=${cursor}` : ''}`)).json();
+        for (const i of p.items) out.set(i.question.id, i.question.stem_md);
+        cursor = p.nextCursor;
+      } while (cursor);
+      return out;
+    };
+    expect(await notesTitle()).toBe(`${v1.notes.title} (revised)`);
+    let s = await stems();
+    expect(s.get(changed!.id)).toBe(`${changed!.stem_md} (revised)`);
+    expect(s.has(removed!.id)).toBe(false);
+    expect((await h.client().post('/v1/practice/answers', { questionId: removed!.id, response: { text: '' } })).statusCode).toBe(404);
+
+    const [rel1] = await h.t.db.select().from(contentReleases).where(and(eq(contentReleases.unit, unit), eq(contentReleases.version, 1)));
+    await activateRelease(h.t.db, rel1!.id);
+    expect(await notesTitle()).toBe(v1.notes.title);
+    s = await stems();
+    expect(s.get(changed!.id)).toBe(changed!.stem_md);
+    expect(s.has(removed!.id)).toBe(true);
+    const graded = await h.client().post('/v1/practice/answers', { questionId: changed!.id, response: { text: '' } });
+    expect([200, 400]).toContain(graded.statusCode);
+    if (graded.statusCode === 200) expect(graded.json().version).toBe(1);
+
+    await activateRelease(h.t.db, r2.releaseId);
+    expect(await notesTitle()).toBe(`${v1.notes.title} (revised)`);
   });
 });

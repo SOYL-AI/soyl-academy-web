@@ -13,7 +13,7 @@ import { contentReports, flashcardSets, notes, questions, type Database } from '
 import { CONTENT_REPORTS } from '@soyl/shared/config/security';
 import type { Clock } from '../clock';
 import { ApiProblem } from '../errors';
-import { deckParts, visible, type ChapterRef } from './content';
+import { deckParts, visible, type ChapterRef, type ReleaseItemType } from './content';
 
 export const REPORT_CONTENT_TYPES = ['deck', 'notes', 'flashcard_set', 'question'] as const;
 export type ReportContentType = (typeof REPORT_CONTENT_TYPES)[number];
@@ -46,21 +46,22 @@ export interface ReportInput {
 }
 
 async function resolveContentId(db: Database, chapter: ChapterRef, year: string, input: ReportInput): Promise<string> {
-  const vis = (t: { chapterId: AnyPgColumn; isCurrent: AnyPgColumn; status: AnyPgColumn; academicYear: AnyPgColumn }): SQL => and(eq(t.chapterId, chapter.id), visible(t, year))!;
+  const vis = (t: { id: AnyPgColumn; chapterId: AnyPgColumn; isCurrent: AnyPgColumn; status: AnyPgColumn; academicYear: AnyPgColumn }, type: ReleaseItemType): SQL =>
+    and(eq(t.chapterId, chapter.id), visible(t, type, chapter, year))!;
   switch (input.contentType) {
     case 'deck': {
-      const parts = await deckParts(db, chapter.id, year);
+      const parts = await deckParts(db, chapter, year);
       const d = input.part === undefined ? parts[0] : parts.find((p) => p.part === input.part);
       if (d) return d.id;
       break;
     }
     case 'notes': {
-      const [n] = await db.select({ id: notes.id }).from(notes).where(vis(notes));
+      const [n] = await db.select({ id: notes.id }).from(notes).where(vis(notes, 'notes'));
       if (n) return n.id;
       break;
     }
     case 'flashcard_set': {
-      const [f] = await db.select({ id: flashcardSets.id }).from(flashcardSets).where(vis(flashcardSets));
+      const [f] = await db.select({ id: flashcardSets.id }).from(flashcardSets).where(vis(flashcardSets, 'flashcard_set'));
       if (f) return f.id;
       break;
     }
@@ -70,7 +71,7 @@ async function resolveContentId(db: Database, chapter: ChapterRef, year: string,
       const [q] = await db
         .select({ id: questions.id })
         .from(questions)
-        .where(and(vis(questions), eq(questions.key, input.questionId), sql`(${questions.pool} <> 'live_reserved' OR ${questions.embargoUntil} <= now())`));
+        .where(and(vis(questions, 'question'), eq(questions.key, input.questionId), sql`(${questions.pool} <> 'live_reserved' OR ${questions.embargoUntil} <= now())`));
       if (q) return q.id;
       break;
     }

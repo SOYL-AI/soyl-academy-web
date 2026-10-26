@@ -38,7 +38,7 @@ export interface LessonProgressResult {
  * is set once and never cleared, lesson XP is awarded once, and the day counts for the streak.
  */
 export async function saveLessonProgress(db: Database, clock: Clock, year: string, userId: string, chapter: ChapterRef, input: LessonProgressInput): Promise<LessonProgressResult> {
-  const parts = await deckParts(db, chapter.id, year);
+  const parts = await deckParts(db, chapter, year);
   const deck = input.part === undefined ? parts[0] : parts.find((p) => p.part === input.part);
   if (!deck) throw new ApiProblem('not_found');
   const lastSlide = Math.max(0, deck.slideCount - 1);
@@ -192,7 +192,7 @@ export async function progressSummary(db: Database, clock: Clock, userId: string
 /** GET /v1/me/progress/chapters/:id: the hub's private half — per-part positions and practice detail. */
 export async function chapterProgress(db: Database, year: string, userId: string, chapter: ChapterRef) {
   const [parts, rows, [p], answered] = await Promise.all([
-    deckParts(db, chapter.id, year),
+    deckParts(db, chapter, year),
     db.select().from(lessonProgress).where(and(eq(lessonProgress.userId, userId), eq(lessonProgress.chapterId, chapter.id))),
     practiceStats(db, userId, [chapter.id]),
     db
