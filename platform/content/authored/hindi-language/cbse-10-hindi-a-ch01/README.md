@@ -37,7 +37,7 @@ Rebuild from `platform/`: `npx tsx content/authored/hindi-language/cbse-10-hindi
 
 Every MCQ, statement item, AR item and passage part was re-answered from its stem and passage before comparing with the key; each short model answer was checked against the passage and the word limit.
 
-- **Keys:** 112/112 objective keys (62 items + 50 children) agreed on re-solve.
+- **Keys:** 74/74 objective keys agreed on re-solve (44 items + 30 MCQ children). All 28 short answers (8 items + 20 passage parts) were checked against their passage and the 25–30-word limit.
 - **Fixes made in the pass:**
   - 11 short model answers were 34–38 words for a 25–30 limit; all trimmed to 24–31.
   - `g_millet` passage was 214 words (below the ~250 pattern); a sentence about how the grains were once grown and cooked was added (now 236).
