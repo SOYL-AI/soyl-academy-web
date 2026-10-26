@@ -1,0 +1,132 @@
+{
+  "at": "2026-10-26T16:25:44.480Z",
+  "label": "m3-exit",
+  "config": {
+    "base": "http://127.0.0.1:8791",
+    "users": 1000,
+    "test": "t_cbse10math_ch01_short",
+    "minutes": 3,
+    "interval": 10,
+    "ramp": 60,
+    "connections": 256,
+    "setupConcurrency": 40,
+    "result": true,
+    "edgeSecret": "***",
+    "origin": "http://localhost:3000",
+    "label": "m3-exit"
+  },
+  "machine": {
+    "platform": "Windows_NT 10.0.26200",
+    "cpus": 8,
+    "cpuModel": "11th Gen Intel(R) Core(TM) i5-11300H @ 3.10GHz",
+    "memoryGb": 7.8,
+    "node": "v24.15.0"
+  },
+  "durationSec": 249.6,
+  "scenario": {
+    "requests": 19149,
+    "errors": 0,
+    "errorRate": 0,
+    "rps": 76.7
+  },
+  "endpoints": {
+    "autosave": {
+      "requests": 16149,
+      "errors": 0,
+      "errorRate": 0,
+      "p50": 769.4,
+      "p95": 5816.1,
+      "p99": 6706.2,
+      "max": 7118.3,
+      "mean": 1587.5,
+      "statuses": {
+        "200": 16149
+      },
+      "errorKinds": {}
+    },
+    "result": {
+      "requests": 1000,
+      "errors": 0,
+      "errorRate": 0,
+      "p50": 4488.8,
+      "p95": 8845.9,
+      "p99": 9106.8,
+      "max": 9316.3,
+      "mean": 4189.9,
+      "statuses": {
+        "200": 1000
+      },
+      "errorKinds": {}
+    },
+    "setup.outbox": {
+      "requests": 1000,
+      "errors": 0,
+      "errorRate": 0,
+      "p50": 14.2,
+      "p95": 33.3,
+      "p99": 45.3,
+      "max": 82.6,
+      "mean": 16.3,
+      "statuses": {
+        "200": 1000
+      },
+      "errorKinds": {}
+    },
+    "setup.send-otp": {
+      "requests": 1000,
+      "errors": 0,
+      "errorRate": 0,
+      "p50": 104.1,
+      "p95": 212.4,
+      "p99": 701.7,
+      "max": 1260.7,
+      "mean": 131.7,
+      "statuses": {
+        "200": 1000
+      },
+      "errorKinds": {}
+    },
+    "setup.verify": {
+      "requests": 1000,
+      "errors": 0,
+      "errorRate": 0,
+      "p50": 547,
+      "p95": 761.7,
+      "p99": 1154.8,
+      "max": 1188.3,
+      "mean": 568,
+      "statuses": {
+        "200": 1000
+      },
+      "errorKinds": {}
+    },
+    "start": {
+      "requests": 1000,
+      "errors": 0,
+      "errorRate": 0,
+      "p50": 20,
+      "p95": 2783.1,
+      "p99": 2916.4,
+      "max": 2974.9,
+      "mean": 603.1,
+      "statuses": {
+        "201": 1000
+      },
+      "errorKinds": {}
+    },
+    "submit": {
+      "requests": 1000,
+      "errors": 0,
+      "errorRate": 0,
+      "p50": 3987.1,
+      "p95": 7604.8,
+      "p99": 7898.7,
+      "max": 8147.9,
+      "mean": 3719.4,
+      "statuses": {
+        "200": 1000
+      },
+      "errorKinds": {}
+    }
+  }
+}
