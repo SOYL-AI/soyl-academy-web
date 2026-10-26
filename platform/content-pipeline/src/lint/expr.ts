@@ -5,7 +5,7 @@
  *
  *   expr    := sum
  *   sum     := product (('+' | '-') product)*
- *   product := unary (('*' | '/') unary | implicit)*      implicit multiplication: 2x, 2(x+1), (x+1)(x-1), 3sin(x)
+ *   product := unary (('*' | '/') unary | implicit)*      implicit multiplication before a name or "(": 2x, 2(x+1), (x+1)(x-1), 3sin(x); never before a number (x2, e3 are errors)
  *   unary   := ('-' | '+') unary | power
  *   power   := atom ('^' unary)?                          right-associative
  *   atom    := number | 'x' | 'pi' | 'e' | func '(' expr ')' | '(' expr ')'
@@ -110,7 +110,8 @@ export function parseExpr(src: string): Node {
   };
   const startsAtom = () => {
     const t = peek();
-    return !!t && (t.k === 'num' || t.k === 'id' || (t.k === 'op' && t.v === '('));
+    // Implicit multiplication only before a name or "(": 2x, 2(x+1), (x+1)(x-1), 3sin(x). "x2" and "e3" are rejected as ambiguous.
+    return !!t && (t.k === 'id' || (t.k === 'op' && t.v === '('));
   };
   const product = (): Node => {
     let a = unary();

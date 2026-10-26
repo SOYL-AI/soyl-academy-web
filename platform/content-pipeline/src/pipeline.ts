@@ -118,7 +118,7 @@ export async function startRun(p: Pipeline, command: string, scope: Scope): Prom
     };
     await p.store.createRun(run);
   } else {
-    run = await p.store.updateRun(run.id, { status: 'running', finished_at: null, message: null });
+    run = await p.store.updateRun(run.id, { status: 'running', finished_at: null, message: null, budget: { ...run.budget, run_cap_paise: caps.run, total_cap_paise: caps.total } });
   }
   const budget = new BudgetGuard({ runCapPaise: caps.run, totalCapPaise: caps.total, spentRunPaise: run.budget.spent_paise, spentTotalPaise: spentTotal });
   const active: ActiveRun = { run, client: null as unknown as ModelClient, paused: false, counts: {} };
