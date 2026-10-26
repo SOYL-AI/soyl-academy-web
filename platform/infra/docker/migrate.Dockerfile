@@ -2,7 +2,7 @@
 # as a pre-deploy job; DB-8). Build context: platform/  (D-022)
 #
 #   docker build -f platform/infra/docker/migrate.Dockerfile -t soyl-migrate platform/
-#   az acr build -r <acr> -t soyl-migrate:<tag> -f platform/infra/docker/migrate.Dockerfile platform/   (no local Docker)
+#   az acr build -r <acr> -t soyl-migrate:<tag> -f infra/docker/migrate.Dockerfile platform   (no local Docker; -f is relative to the context)
 #
 # No args: `db migrate up` + the pg-boss schema install. `release`: `db seed catalog` + `content publish
 # --authored` (D-026). Other args: `db <args>`. All through infra/docker/migrate-entrypoint.mjs, which
