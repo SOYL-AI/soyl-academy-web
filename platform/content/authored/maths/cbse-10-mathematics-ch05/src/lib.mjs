@@ -11,6 +11,7 @@ import path from 'node:path';
 import katex from 'katex';
 import { parseExpr, evaluate } from '../../../../../content-pipeline/src/lint/expr.ts';
 import { checkVisual } from '../../../../../content-pipeline/src/lint/visual.ts';
+import { ChapterRelease, TestDefinition } from '@soyl/shared/content/index';
 
 export const r = String.raw;
 
@@ -571,6 +572,8 @@ export function build({ dir, release, testsSpec, readmeCheck = true }) {
   const [ts, tl] = tests.map((t) => new Set(t.sections.flatMap((s) => s.items.map((i) => i.question_id))));
   const overlap = [...ts].filter((x) => tl.has(x));
   if (overlap.length) errs.push(`tests share ${overlap}`);
+  // The gate's own schemas: tests (attempted marks = total_marks, blueprint fields) and the release.
+  for (const t of tests) { const p = TestDefinition.safeParse(t); if (!p.success) errs.push(`${t.id}: ${p.error.issues.map((i) => `${i.path.join('.')} ${i.message}`).join('; ')}`); }
   release.build = { run_id: null, checks: release.build?.checks ?? {} };
   release.build.checks = {
     ...release.build.checks,
@@ -581,6 +584,8 @@ export function build({ dir, release, testsSpec, readmeCheck = true }) {
     gate: 'npm test -w @soyl/content-templates and content lint (lintExemplar) run clean on this chapter',
   };
   fs.mkdirSync(dir, { recursive: true });
+  const pr = ChapterRelease.safeParse(release);
+  if (!pr.success) errs.push(...pr.error.issues.slice(0, 10).map((i) => `ChapterRelease ${i.path.join('.')}: ${i.message}`));
   fs.writeFileSync(path.join(dir, 'release.json'), JSON.stringify(release, null, 2) + '\n');
   fs.writeFileSync(path.join(dir, 'tests.json'), JSON.stringify({ tests }, null, 2) + '\n');
   fs.writeFileSync(path.join(dir, 'src', 'resolve.log'), log.map((x) => `${x[0].padEnd(28)} expected ${String(x[1]).slice(0, 40).padEnd(40)} got ${String(x[2]).replace(/\n/g, ' ').slice(0, 50).padEnd(50)} ${x[3] ? 'OK' : 'MISMATCH'}`).join('\n') + '\n');
