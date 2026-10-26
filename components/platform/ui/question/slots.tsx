@@ -13,7 +13,9 @@ import type { Visual as VisualData } from '@/platform/shared/content/visual';
 import type { StudentQuestion } from '@/platform/shared/api-client';
 import { Markdown } from '../render/Markdown';
 import { Visual } from '../visual/Visual';
-import { numberBlanks, type QuestionPart } from './model';
+import { numberBlanks, partKey, type QuestionPart } from './model';
+
+export { partKey };
 
 export interface PartSlots {
   stem: ReactNode;
@@ -25,11 +27,6 @@ export interface PartSlots {
 export interface QuestionSlots {
   passage: ReactNode;
   parts: Record<string, PartSlots>;
-}
-
-export function partKey(childId?: string, altId?: string): string {
-  if (!childId) return '';
-  return altId ? `${childId}/${altId}` : childId;
 }
 
 function partSlots(q: QuestionPart, lang: string | undefined): PartSlots {

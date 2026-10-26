@@ -243,6 +243,12 @@ export function toResponse(draft: Draft): PracticeResponse {
   return r;
 }
 
+/** Slot keys: '' = the question; `<childId>` = a case/source part; `<childId>/<altId>` = an alternative. */
+export function partKey(childId?: string, altId?: string): string {
+  if (!childId) return '';
+  return altId ? `${childId}/${altId}` : childId;
+}
+
 /** Fisher–Yates with an injectable random source (flashcards shuffle; tests pass a seeded one). */
 export function shuffled<T>(items: readonly T[], random: () => number = Math.random): T[] {
   const out = [...items];

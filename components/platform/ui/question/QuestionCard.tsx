@@ -23,6 +23,7 @@ import {
   chosenPart,
   initialDraft,
   isCaseType,
+  partKey,
   PASSAGE_ORIGIN_LABELS,
   QUESTION_TYPE_LABELS,
   roman,
@@ -34,7 +35,8 @@ import {
 } from './model';
 import { OrderingInput } from './OrderingInput';
 import { preloadRichText } from './RichText';
-import { partKey, type PartSlots, type QuestionSlots } from './slots';
+// Types only: slots.tsx imports the Markdown/KaTeX renderers, which must stay out of this client chunk.
+import type { PartSlots, QuestionSlots } from './slots';
 import s from './question.module.css';
 
 type PartResult = PracticeAnswerResult['parts'][number];
