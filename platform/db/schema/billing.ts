@@ -45,6 +45,14 @@ export const subscriptions = pgTable(
       .references(() => plans.id, { onDelete: 'restrict' }),
     interval: text('interval').notNull(),
     razorpaySubscriptionId: text('razorpay_subscription_id').notNull().unique('subscriptions_razorpay_id_unique'),
+    /** The Razorpay plan the subscription was created on (binding check, AC-09; plans are immutable). Migration 0008_billing. */
+    razorpayPlanId: text('razorpay_plan_id'),
+    /** GST-inclusive price per period at creation, paise: every charge must equal it (AC-09). */
+    amountPaise: integer('amount_paise'),
+    /** Razorpay paid_count: successful charges so far. */
+    paidCount: integer('paid_count').notNull().default(0),
+    /** When Razorpay ended the subscription (cancelled/completed/halted→cancelled). */
+    endedAt: tstz('ended_at'),
     status: text('status').notNull().default('created'),
     currentPeriodStart: tstz('current_period_start'),
     currentPeriodEnd: tstz('current_period_end'),
@@ -58,6 +66,7 @@ export const subscriptions = pgTable(
     index('subscriptions_plan_id_idx').on(t.planId),
     oneOf('subscriptions_status_check', t.status, SUBSCRIPTION_STATUSES),
     oneOf('subscriptions_interval_check', t.interval, ['monthly', 'yearly']),
+    check('subscriptions_amount_check', sql`${t.amountPaise} IS NULL OR ${t.amountPaise} > 0`),
   ],
 );
 
@@ -146,6 +155,9 @@ export const entitlements = pgTable(
   ],
 );
 
+export const WEBHOOK_OUTCOMES = ['applied', 'ignored', 'rejected'] as const;
+export type WebhookOutcome = (typeof WEBHOOK_OUTCOMES)[number];
+
 /** DB-1 append-only; DB-2 UNIQUE (provider, event_id) (AC-09). */
 export const webhookEvents = pgTable(
   'webhook_events',
@@ -159,11 +171,21 @@ export const webhookEvents = pgTable(
     /** Entity timestamp from the payload (state precedence). */
     eventCreatedAt: tstz('event_created_at'),
     processedAt: tstz('processed_at').notNull().defaultNow(),
+    /**
+     * What processing did (migration 0008_billing): applied (state written), ignored (not ours / no-op
+     * event type), rejected (failed a binding check: security event). Written with processed_at in the
+     * one INSERT at the end of the processing transaction, because the row is append-only (DB-1).
+     */
+    outcome: text('outcome').notNull().default('applied'),
+    /** The Razorpay entity the event was about (sub_…, order_…, pay_…, rfnd_…): replay and incident lookups. */
+    entityId: text('entity_id'),
     createdAt: createdAt(),
   },
   (t) => [
     uniqueIndex('webhook_events_provider_event_unique').on(t.provider, t.eventId),
     index('webhook_events_type_created_idx').on(t.eventType, t.createdAt),
+    index('webhook_events_entity_idx').on(t.entityId),
+    oneOf('webhook_events_outcome_check', t.outcome, WEBHOOK_OUTCOMES),
   ],
 );
 
