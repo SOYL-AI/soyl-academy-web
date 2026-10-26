@@ -26,7 +26,7 @@ RUN test -f db/package.json || (echo "platform/db does not exist yet" && exit 1)
 # db: migrations CLI; worker: pg-boss schema install; content-pipeline: publish of authored content (D-026).
 RUN npm ci --workspace @soyl/db --workspace @soyl/worker --workspace @soyl/content-pipeline --include-workspace-root=false
 # Strip CRs first: a Windows working tree uploaded by `az acr build` may carry CRLF line endings.
-RUN sed -i "s/$//" infra/docker/bundle-migrate.sh && sh infra/docker/bundle-migrate.sh /out
+RUN sed -i 's/\r$//' infra/docker/bundle-migrate.sh && sh infra/docker/bundle-migrate.sh /out
 
 FROM gcr.io/distroless/nodejs24-debian13:nonroot@sha256:cb606325b7ec4af55462cb0b424a53b452a5b4a894ffe841fcf1048d216fb9f8
 ENV NODE_ENV=production \
