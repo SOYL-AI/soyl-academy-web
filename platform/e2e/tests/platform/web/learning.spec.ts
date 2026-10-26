@@ -133,11 +133,12 @@ test('lesson listen mode: plays the slide narration from the CDN and highlights 
   await expect(page.getByTestId('slide-player')).toHaveAttribute('data-mode', 'listen');
   await page.getByRole('button', { name: 'Play narration' }).click();
   await expect(page.getByRole('button', { name: 'Pause narration' })).toBeVisible();
-  await expect(page.getByTestId('narration').locator('[data-highlight-word]')).toBeAttached({ timeout: 20_000 });
-  const w1 = Number(await page.getByTestId('narration').locator('[data-highlight-word]').getAttribute('data-highlight-word'));
-  await page.waitForTimeout(2500);
-  const w2 = Number(await page.getByTestId('narration').locator('[data-highlight-word]').getAttribute('data-highlight-word'));
-  expect(w2).toBeGreaterThan(w1);
+  // The highlight follows the audio clock: it moves forward word by word while the clip plays.
+  const word = async () => Number((await page.getByTestId('narration').locator('[data-highlight-word]').getAttribute('data-highlight-word')) ?? -1);
+  await expect.poll(word, { timeout: 30_000 }).toBeGreaterThanOrEqual(0);
+  const w1 = await word();
+  await expect.poll(word, { timeout: 30_000 }).toBeGreaterThan(w1 + 2);
+  await expect(page.getByTestId('narration').locator('[data-sentence] [class*="wordActive"]')).toHaveCount(1);
   expect(served[0]).toMatch(/^audio\/cbse-10-science-ch01\/deck\.p1\/s01-/);
   await checkPage(page);
   await shot(page, 'lesson-listen', false);
@@ -179,13 +180,18 @@ test('flashcards: flip, mark known / still learning, shuffle; maths and Hindi re
   await expect(page.getByRole('status').filter({ hasText: 'known' })).toHaveText('1 known · 1 still learning');
   await deck.getByTestId('shuffle').click();
   await expect(deck).toContainText('Card 1 of 32');
-  // Maths/chemistry render somewhere in the deck (server-rendered faces).
+  // Maths renders on both faces (server-rendered KaTeX): CBSE 10 Maths ch01.
+  await page.goto('/learn/cbse/10/mathematics/ch01/flashcards', { waitUntil: 'networkidle' });
   let maths = 0;
   for (let i = 0; i < 32 && maths === 0; i++) {
-    maths = await deck.locator('.katex').count();
-    if (!maths) await page.keyboard.press('ArrowRight');
+    maths = await page.locator('[data-face] .katex').count();
+    if (maths) break;
+    await page.getByTestId('show-answer').click();
+    maths = await page.locator('[data-face] .katex').count();
+    if (!maths) await page.getByRole('navigation', { name: 'Cards' }).getByRole('button', { name: 'Next' }).click();
   }
   expect(maths).toBeGreaterThan(0);
+  await shot(page, 'flashcards-maths');
 
   await page.goto(`${HINDI}/flashcards`, { waitUntil: 'networkidle' });
   await expect(page.locator('[data-face][lang="hi"]')).toHaveText(/[ऀ-ॿ]/);
@@ -280,6 +286,7 @@ for (const type of ['mcq', 'multi-select', 'assertion-reason', 'true-false', 'nu
     const card = await filterType(page, type);
     // F-006: no key text before answering.
     await expect(card.getByTestId('answer-key')).toHaveCount(0);
+    await fill(card, type, null);
     const first = await submit(page, card);
     const key = first.key.answer;
     await card.getByRole('button', { name: 'Try again' }).click();
@@ -300,7 +307,7 @@ test('practice written answer: member self-marks against the marking scheme (PAT
   await signInWithEmail(page, uniqueEmail('selfmark'));
   const card = await filterType(page, 'short');
   await card.getByLabel(/^Your answer/).fill('A new substance forms because the change cannot be reversed easily.');
-  await expect(card.locator('[data-words]')).toHaveAttribute('data-words', '12');
+  await expect(card.locator('[data-words]')).toHaveAttribute('data-words', '11');
   const result = await submit(page, card);
   expect(result.correct).toBeNull();
   await expect(card.getByTestId('answer-key')).toContainText('Model answer');

@@ -19,7 +19,6 @@ const PAGES = [
   { path: '/learn/cbse/10/science', h1: 'Science', shot: 'learn-cbse-10-science' },
   { path: '/learn/cbse/10/hindi-a', h1: 'Hindi Course A', shot: 'learn-cbse-10-hindi-a' },
   { path: '/learn/cbse/10/science/ch01', h1: 'Chemical Reactions and Equations', shot: 'chapter-hub' },
-  { path: '/learn/cbse/10/science/ch01/lesson', h1: 'Visual lesson', shot: 'chapter-lesson-coming-soon' },
 ];
 
 async function axe(page: Page) {
