@@ -363,6 +363,21 @@ export const mockQuestions: MockFixture = ({ input, rng }) => {
   return { questions: slots.map((slot, i) => ({ ...mockQuestion(slot, i, topics, rng, language), unit })) };
 };
 
+/** Marker a test can put in a stem to make the mock verifier report a critical answer-key problem. */
+export const MOCK_FLAG = '[MOCK-FLAG]';
+
+/**
+ * Mock independent solver (stage 5): agrees with everything except stems carrying MOCK_FLAG, so the
+ * flag → regenerate → re-verify loop runs offline. It is not a real check; the deterministic checks are.
+ */
+export const mockVerify: MockFixture = ({ input }) => {
+  const { questions } = input as { questions: { id: string; stem_md: string }[] };
+  const items = questions
+    .filter((q) => q.stem_md.includes(MOCK_FLAG))
+    .map((q) => ({ ref: q.id, severity: 'critical', category: 'answer-key', evidence: '[MOCK] the independent solve disagrees with the key', fix: '[MOCK] regenerate' }));
+  return { verdict: items.length ? 'regenerate' : 'pass', items, summary: { critical: items.length, major: 0, minor: 0 } };
+};
+
 export const MOCK_FIXTURES: Record<string, MockFixture> = {
   outline: mockOutline,
   deck: mockDeck,
@@ -370,4 +385,5 @@ export const MOCK_FIXTURES: Record<string, MockFixture> = {
   flashcards: mockFlashcards,
   questions: mockQuestions,
   'case-passages': mockQuestions,
+  verify: mockVerify,
 };
