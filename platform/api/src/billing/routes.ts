@@ -51,7 +51,8 @@ const SubscriptionRequest = z
   .strictObject({ plan: z.enum(['plus', 'pro']), interval: z.enum(['monthly', 'yearly']) })
   .meta({ id: 'BillingSubscriptionRequest' });
 const OrderRequest = z.strictObject({ plan: z.literal('board_exam_pass') }).meta({ id: 'BillingOrderRequest' });
-const EmptyRequest = z.strictObject({}).optional();
+/** No body, or `{}`. Anything else (e.g. Checkout's razorpay_payment_id/signature) is refused: 400 (API-8, F-020). */
+const EmptyRequest = z.strictObject({}).nullish().meta({ id: 'EmptyRequest' });
 
 const SubscriptionCheckout = z
   .object({
