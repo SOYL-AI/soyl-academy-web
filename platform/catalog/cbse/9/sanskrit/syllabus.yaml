@@ -1,0 +1,249 @@
+# CBSE Class 9 Sanskrit, 2026-27 (new NCF-SE scheme; R1/R2 school annual exam 80 + internal assessment 20).
+# Sections, marks and every grammar item as printed in the CBSE 2026-27 Class IX Sanskrit document. CBSE says the
+# prescribed textbook (NCERT) and the lessons for the exam are "शीघ्रमेव सूचयिष्यन्ते" (to be notified soon), so the
+# textbook chapter is a placeholder until CBSE/NCERT publish them. CBSE asks that applied-grammar items be chosen from
+# the textbook as far as possible. No text is reproduced (CONTEXT §8).
+subject_id: cbse-9-sanskrit
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-ix-sanskrit-2026-27
+  - cbse-secondary-curriculum-2026-27
+exam_notes: >-
+  वार्षिकं मूल्याङ्कनम् 80 अङ्काः (school annual exam; Class IX has no board exam) + आन्तरिकमूल्याङ्कनम् 20 (periodic
+  tests 5 and other school activities). Section A (क) unseen passage 10: one prose passage or simple story of 80-100
+  words with one-word and full-sentence answers (2+4), a title (1) and language tasks (3: subject-verb selection and
+  agreement, adjective-noun, synonym-antonym, noun for pronoun). Section B (ख) creative writing 15: formal or informal
+  letter completed from a word box 5, picture description or paragraph from a word box 5, dialogue or story completion
+  from a word box 5. Section C (ग) applied grammar 25: sandhi 3, karaka/upapada vibhakti 3, noun forms 3, verb forms 3,
+  pratyaya 3, samasa (tatpurusha) 3, numbers 1-100 3, places of articulation 2, avyaya 2. Section D (घ) textbook
+  comprehension 30: prose, verse and drama extracts 5 each, question formation on underlined words 5, anvaya or
+  bhavartha 4, story completion from a word box 3, contextual meaning 3. Paper design: 1-mark and half-mark very short,
+  MCQ (21 marks), short, long and essay-type items as in the CBSE question-paper table.
+units:
+  - name: "क खण्डः: अपठितावबोधनम्"
+    marks: 10
+  - name: "ख खण्डः: रचनात्मककार्यम्"
+    marks: 15
+  - name: "ग खण्डः: अनुप्रयुक्तव्याकरणम्"
+    marks: 25
+  - name: "घ खण्डः: पठितावबोधनम्"
+    marks: 30
+chapters:
+  - id: cbse-9-sanskrit-ch01
+    number: 1
+    title: अपठितावबोधनम्
+    title_en: Unseen passage comprehension
+    unit: "क खण्डः: अपठितावबोधनम्"
+    topics:
+      - id: cbse-9-sanskrit-ch01-t01
+        title: अपठितः गद्यांशः (80-100 शब्दाः) - एकपदेन पूर्णवाक्येन च उत्तराणि
+        title_en: Unseen prose passage or simple story (80-100 words) - one-word and full-sentence answers
+        learning_outcomes:
+          - सरलकथां वर्णनं वा पठित्वा एकपदेन पूर्णवाक्येन च उत्तराणि लेखितुं शक्नुवन्ति
+          - गद्यांशस्य उचितं शीर्षकं लेखितुं शक्नुवन्ति
+      - id: cbse-9-sanskrit-ch01-t02
+        title: अनुच्छेदाधारितं भाषिककार्यम्
+        title_en: Language tasks on the passage
+        learning_outcomes:
+          - कर्तृ-क्रियापदचयनं, कर्तृ-क्रिया-अन्वितिं, विशेषण-विशेष्यचयनं, पर्याय-विलोमपदचयनं, सर्वनामस्थाने संज्ञाप्रयोगं च कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-sanskrit-ch02
+    number: 2
+    title: रचनात्मककार्यम्
+    title_en: Creative writing
+    unit: "ख खण्डः: रचनात्मककार्यम्"
+    topics:
+      - id: cbse-9-sanskrit-ch02-t01
+        title: सङ्केताधारितम् औपचारिकम् अनौपचारिकं वा पत्रलेखनम्
+        title_en: Formal or informal letter completed from a word box
+        learning_outcomes:
+          - मञ्जूषायाः सहायतया रिक्तस्थानपूर्तिमाध्यमेन पूर्णं पत्रं लेखितुं शक्नुवन्ति
+      - id: cbse-9-sanskrit-ch02-t02
+        title: चित्राधारितं वर्णनम् अथवा अनुच्छेदलेखनम्
+        title_en: Picture description or paragraph writing
+        learning_outcomes:
+          - मञ्जूषायाः सहायतया चित्रं वर्णयितुं अनुच्छेदं वा लेखितुं शक्नुवन्ति
+      - id: cbse-9-sanskrit-ch02-t03
+        title: संवादपूर्तिः कथापूर्तिः वा
+        title_en: Dialogue or story completion
+        learning_outcomes:
+          - मञ्जूषायाः सहायतया रिक्तस्थानानि पूरयित्वा पूर्णं संवादं कथां वा लेखितुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-sanskrit-ch03
+    number: 3
+    title: सन्धिकार्यम्
+    title_en: Sandhi
+    unit: "ग खण्डः: अनुप्रयुक्तव्याकरणम्"
+    topics:
+      - id: cbse-9-sanskrit-ch03-t01
+        title: "स्वरसन्धिः: दीर्घः, गुणः, वृद्धिः, यण्, अयादि, पूर्वरूपम्"
+        title_en: "Vowel sandhi: dirgha, guna, vriddhi, yan, ayadi, purvarupa"
+        learning_outcomes:
+          - निर्दिष्टस्वरसन्धीनां सन्धिं विच्छेदं च कर्तुं शक्नुवन्ति
+      - id: cbse-9-sanskrit-ch03-t02
+        title: "व्यञ्जनसन्धिः: जश्त्वसन्धिः, 'म्' स्थाने अनुस्वारः, तुगागमः"
+        title_en: "Consonant sandhi: jashtva, anusvara for m, tuk augment"
+        learning_outcomes:
+          - निर्दिष्टव्यञ्जनसन्धीनां सन्धिं विच्छेदं च कर्तुं शक्नुवन्ति
+      - id: cbse-9-sanskrit-ch03-t03
+        title: "विसर्गसन्धिः: उत्वम्, सत्वम्, शत्वम्, षत्वम्, रत्वम्"
+        title_en: "Visarga sandhi: u, s, sh, ṣ and r replacements"
+        learning_outcomes:
+          - विसर्गस्य उत्व-सत्व-शत्व-षत्व-रत्वपरिवर्तनानि अभिज्ञाय सन्धिं विच्छेदं च कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-sanskrit-ch04
+    number: 4
+    title: कारक-उपपदविभक्तयः
+    title_en: Case and upapada vibhakti
+    unit: "ग खण्डः: अनुप्रयुक्तव्याकरणम्"
+    topics:
+      - id: cbse-9-sanskrit-ch04-t01
+        title: "द्वितीया तृतीया च: उभयतः, धिक्, परितः, समया, निकषा, प्रति, विना; सह, साकम्, समम्, सार्धम्, अलम्, सदृश, हीन"
+        title_en: Accusative and instrumental with upapada words
+        learning_outcomes:
+          - निर्दिष्टोपपदैः सह द्वितीयां तृतीयां च विभक्तिं प्रयोक्तुं शक्नुवन्ति
+      - id: cbse-9-sanskrit-ch04-t02
+        title: "चतुर्थी पञ्चमी च: रुच्, दा, नमः, कुप्, स्वस्ति; विना, बहिः, भी, रक्ष्, ऋते"
+        title_en: Dative and ablative with upapada words
+        learning_outcomes:
+          - निर्दिष्टपदैः सह चतुर्थीं पञ्चमीं च विभक्तिं प्रयोक्तुं शक्नुवन्ति
+      - id: cbse-9-sanskrit-ch04-t03
+        title: "षष्ठी सप्तमी च: उपरि, अधः, पुरतः, पृष्ठतः, निर्धारणे; स्निह्, निपुणः, विश्वस्, पटु"
+        title_en: Genitive and locative with upapada words
+        learning_outcomes:
+          - निर्दिष्टपदैः सह षष्ठीं सप्तमीं च विभक्तिं प्रयोक्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-sanskrit-ch05
+    number: 5
+    title: शब्दरूपाणि
+    title_en: Noun and pronoun declensions
+    unit: "ग खण्डः: अनुप्रयुक्तव्याकरणम्"
+    topics:
+      - id: cbse-9-sanskrit-ch05-t01
+        title: "पुँल्लिङ्गशब्दाः: बालकवत्, कविवत्, साधुवत्, पितृवत्, राजन्, भवत्, विद्वस्, गुणिन्"
+        title_en: Masculine nouns
+        learning_outcomes:
+          - निर्दिष्टपुँल्लिङ्गशब्दानां रूपाणि ज्ञात्वा वाक्येषु प्रयोक्तुं शक्नुवन्ति
+      - id: cbse-9-sanskrit-ch05-t02
+        title: "स्त्रीलिङ्ग-नपुंसकलिङ्गशब्दाः: लतावत्, मतिवत्, नदीवत्, मातृवत्, धेनुवत्; फलवत्, वारि, जगत्, मनस्, चक्षुष्"
+        title_en: Feminine and neuter nouns
+        learning_outcomes:
+          - निर्दिष्टस्त्रीलिङ्ग-नपुंसकलिङ्गशब्दानां रूपाणि प्रयोक्तुं शक्नुवन्ति
+      - id: cbse-9-sanskrit-ch05-t03
+        title: "सर्वनामशब्दाः: तत्, इदम्, किम् (त्रिषु लिङ्गेषु), अस्मद्, युष्मद्"
+        title_en: Pronouns in three genders
+        learning_outcomes:
+          - सर्वनामशब्दानां रूपाणि त्रिषु लिङ्गेषु प्रयोक्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-sanskrit-ch06
+    number: 6
+    title: धातुरूपाणि
+    title_en: Verb conjugations
+    unit: "ग खण्डः: अनुप्रयुक्तव्याकरणम्"
+    topics:
+      - id: cbse-9-sanskrit-ch06-t01
+        title: "परस्मैपदिनः (पञ्चसु लकारेषु): पठ्, गम्, वद्, भू, क्रीड्, नी, दृश्, शक्, ज्ञा, अस्, कृ, दा, क्री, श्रु, पा (पिब्)"
+        title_en: Parasmaipada roots in five tenses and moods
+        learning_outcomes:
+          - निर्दिष्टधातूनां पञ्चसु लकारेषु रूपाणि प्रयोक्तुं शक्नुवन्ति
+      - id: cbse-9-sanskrit-ch06-t02
+        title: "आत्मनेपदिनः (लट्-लृट्-लोट्-लकारेषु): सेव्, लभ्, रुच्, मुद्, वृध्"
+        title_en: Atmanepada roots in present, future and imperative
+        learning_outcomes:
+          - आत्मनेपदिधातूनां लट्-लृट्-लोट्-लकारेषु रूपाणि प्रयोक्तुं शक्नुवन्ति
+      - id: cbse-9-sanskrit-ch06-t03
+        title: "उभयपदिनः (केवलं लट्लकारे): कृ, पच्, नी, कृष्, हृ, भज्"
+        title_en: Ubhayapada roots (present tense only)
+        learning_outcomes:
+          - उभयपदिधातूनां लट्लकारे उभयपदरूपाणि प्रयोक्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-sanskrit-ch07
+    number: 7
+    title: प्रत्ययाः समासश्च
+    title_en: Suffixes and compounds
+    unit: "ग खण्डः: अनुप्रयुक्तव्याकरणम्"
+    topics:
+      - id: cbse-9-sanskrit-ch07-t01
+        title: "प्रत्ययाः: क्त्वा, तुमुन्, ल्यप्, क्त, क्तवतु, शतृ, शानच्"
+        title_en: "Suffixes: ktva, tumun, lyap, kta, ktavatu, shatri, shanach"
+        learning_outcomes:
+          - प्रकृति-प्रत्ययविभागं संयोजनं च कर्तुं शक्नुवन्ति
+      - id: cbse-9-sanskrit-ch07-t02
+        title: "समासः: तत्पुरुषः (विभक्ति-नञ्-उपपद-कर्मधारय)"
+        title_en: "Compounds: tatpurusha (vibhakti, nan, upapada, karmadharaya)"
+        learning_outcomes:
+          - तत्पुरुषसमासस्य विग्रहं समस्तपदनिर्माणं च कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-sanskrit-ch08
+    number: 8
+    title: सङ्ख्या, उच्चारणस्थानानि, अव्ययानि च
+    title_en: Numbers, places of articulation and indeclinables
+    unit: "ग खण्डः: अनुप्रयुक्तव्याकरणम्"
+    topics:
+      - id: cbse-9-sanskrit-ch08-t01
+        title: सङ्ख्या 1-100 (1-4 केवलं प्रथमा-विभक्तौ)
+        title_en: Numbers 1-100 (1-4 in the nominative only)
+        learning_outcomes:
+          - अङ्कानां स्थाने संस्कृतसङ्ख्याशब्दान् लेखितुं शक्नुवन्ति
+      - id: cbse-9-sanskrit-ch08-t02
+        title: उच्चारणस्थानानि
+        title_en: Places of articulation
+        learning_outcomes:
+          - वर्णानां कण्ठ-तालु-मूर्धा-दन्त-ओष्ठादीनि उच्चारणस्थानानि निर्देष्टुं शक्नुवन्ति
+      - id: cbse-9-sanskrit-ch08-t03
+        title: "अव्ययानि: स्थानबोधकानि, कालबोधकानि, प्रश्नबोधकानि, अन्यानि"
+        title_en: "Indeclinables of place, time, question and others"
+        learning_outcomes:
+          - अत्र, यदा-तदा, किमर्थम्, यथा-तथा इत्यादीनि अव्ययानि वाक्येषु प्रयोक्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-sanskrit-ch09
+    number: 9
+    title: पठितावबोधनम् - प्रश्नप्रकाराः
+    title_en: Textbook comprehension - question types
+    unit: "घ खण्डः: पठितावबोधनम्"
+    topics:
+      - id: cbse-9-sanskrit-ch09-t01
+        title: गद्यांश-पद्यांश-नाट्यांशम् अधिकृत्य अवबोधनात्मकं भाषिकं च कार्यम्
+        title_en: Comprehension and language work on prose, verse and drama extracts
+        learning_outcomes:
+          - पठितांशम् अधिकृत्य एकपदेन पूर्णवाक्येन च उत्तराणि लेखितुं भाषिककार्यं च कर्तुं शक्नुवन्ति
+      - id: cbse-9-sanskrit-ch09-t02
+        title: रेखाङ्कितपदानि अधिकृत्य प्रश्ननिर्माणम्
+        title_en: Question formation on underlined words
+        learning_outcomes:
+          - रेखाङ्कितपदानि आधृत्य उचितप्रश्नवाचकपदैः प्रश्ननिर्माणं कर्तुं शक्नुवन्ति
+      - id: cbse-9-sanskrit-ch09-t03
+        title: अन्वयः अथवा भावार्थः
+        title_en: Prose order or meaning of a verse (fill in the blanks)
+        learning_outcomes:
+          - श्लोकस्य अन्वयं भावार्थं वा रिक्तस्थानपूर्त्या लेखितुं शक्नुवन्ति
+      - id: cbse-9-sanskrit-ch09-t04
+        title: पाठाधारित-कथापूर्तिः प्रसङ्गानुकूलम् अर्थचयनं च
+        title_en: Story completion from a word box and contextual meaning
+        learning_outcomes:
+          - मञ्जूषापदसहायतया कथां पूरयितुं प्रसङ्गानुकूलम् अर्थं चेतुं च शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-sanskrit-ch10
+    number: 10
+    title: "निर्धारितपाठ्यपुस्तकम् (रा.शै.अनु.प्र.प.) - शीघ्रमेव सूचयिष्यते"
+    title_en: "Prescribed textbook (NCERT): to be notified by CBSE"
+    unit: "घ खण्डः: पठितावबोधनम्"
+    topics:
+      - id: cbse-9-sanskrit-ch10-t01
+        title: पाठाः (सूची प्रतीक्ष्यते)
+        title_en: Lessons (lesson list pending - CBSE has not yet notified the textbook and lessons)
+        learning_outcomes:
+          - निर्धारितपाठानां गद्य-पद्य-नाट्यांशान् अवगन्तुं तेषां विषये प्रश्नानाम् उत्तराणि लेखितुं च शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

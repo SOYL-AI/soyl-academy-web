@@ -940,6 +940,11 @@ Class IX anchors cite the Class IX-X document that CBSE prints for the language 
 - **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Urdu_SecP1IX_2026-27.pdf
 - **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
 
+### `cbse-ix-sanskrit-2026-27`
+- **Title:** Sanskrit Class IX 2026-27 syllabus (question-paper design; textbook and lessons "to be notified soon")
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Sanskrit_SecP1IX_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
 ## Other subject documents fetched (catalogue evidence)
 
 These 272 documents (fetched 2026-10-25, publisher CBSE, 2026-27) were used to confirm each subject's existence, code and marks split in `subjects.yaml`; they will become per-subject anchors when the matching syllabus files are written.
