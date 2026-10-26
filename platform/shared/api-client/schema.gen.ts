@@ -1453,6 +1453,1068 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/chapters/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Chapter hub: chapter, subject and the published lesson, notes, flashcards, practice and tests with counts */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["ChapterHub"];
+                    };
+                };
+                /** @description Default Response */
+                304: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content?: never;
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/chapters/{id}/deck": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Lesson slides for one deck part (default: the first). Check-slide questions come without answers. */
+        get: {
+            parameters: {
+                query?: {
+                    part?: number;
+                };
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["LessonDeck"];
+                    };
+                };
+                /** @description Default Response */
+                304: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content?: never;
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/chapters/{id}/notes": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Chapter notes */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["ChapterNotes"];
+                    };
+                };
+                /** @description Default Response */
+                304: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content?: never;
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/chapters/{id}/flashcards": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Chapter flashcards */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["ChapterFlashcards"];
+                    };
+                };
+                /** @description Default Response */
+                304: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content?: never;
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/chapters/{id}/practice": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Practice questions of a chapter (stems and options only), paged. Signed in: questions you have not answered come first. */
+        get: {
+            parameters: {
+                query?: {
+                    cursor?: string;
+                    type?: string;
+                    difficulty?: string;
+                    limit?: number;
+                };
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["PracticePage"];
+                    };
+                };
+                /** @description Default Response */
+                304: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content?: never;
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/practice/answers": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Check a practice answer on the server. Returns correctness, the answer, solution and marking scheme. Guests are checked but not stored. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["PracticeAnswerRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["PracticeAnswerResult"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/practice/answers/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        /** Self-assess the written parts of one of your practice answers against the marking scheme */
+        patch: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["PracticeSelfAssessRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["PracticeSelfAssessment"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        trace?: never;
+    };
+    "/v1/me/progress": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Your XP, level, streak and per-chapter lesson and practice progress */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["MyProgress"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/progress/chapters/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Your progress in one chapter (the private half of the chapter hub) */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["MyChapterProgress"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/lesson-progress": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        /** Save your lesson position or completion (idempotent) */
+        put: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["LessonProgressRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["LessonProgress"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/badges": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Badges you can earn and the ones you have */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["MyBadges"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/content-reports": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Report a mistake in a lesson, notes, flashcard or question */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["ContentReportRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                201: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["ContentReportReceipt"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/mfa": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Your two-step verification status (staff) */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["MfaStatus"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/mfa/totp/enroll": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Start setting up an authenticator app (staff; fresh sign-in) */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["MfaEnrollment"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/mfa/totp/confirm": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Confirm the authenticator with a first code; returns one-time recovery codes */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": {
+                        code: string;
+                    };
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["MfaRecoveryCodes"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/mfa/verify": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Verify this session with an authenticator code or a recovery code */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["MfaVerifyRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["MfaVerified"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/mfa/totp/disable": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Turn off the authenticator (fresh, verified session and a current code) */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": {
+                        code: string;
+                    };
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                204: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content?: never;
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/reports": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Content reports queue (staff, two-step verified session) */
+        get: {
+            parameters: {
+                query?: {
+                    status?: "open" | "triaged" | "fixed" | "rejected" | "duplicate";
+                    cursor?: string;
+                    limit?: number;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AdminContentReports"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -1518,7 +2580,10 @@ export interface components {
         };
         GuestLessonInput: {
             chapter: string;
+            part?: number;
             slide: number;
+            /** @enum {string} */
+            mode?: "read" | "listen";
             completed: boolean;
             /** Format: date-time */
             updatedAt: string;
@@ -1550,6 +2615,8 @@ export interface components {
             lessonsCompleted: number;
             practiceCorrect: number;
             xpAwarded: number;
+            lessonsStored: number;
+            practiceStored: number;
             ignored: {
                 unknownChapters: number;
                 unknownQuestions: number;
@@ -1650,6 +2717,511 @@ export interface components {
                 }[];
             }[];
         };
+        /**
+         * @description beta = published after automated checks; reviewed = human-reviewed (CONTEXT §4).
+         * @enum {string}
+         */
+        ReviewStatusInput: "beta" | "reviewed";
+        /** @enum {string} */
+        QuestionTypeInput: "mcq" | "multi-select" | "assertion-reason" | "case-based" | "source-based" | "short" | "long" | "numerical" | "fill-blank" | "match" | "true-false" | "writing" | "map" | "code-output" | "ordering";
+        /** @description platform/shared/content/visual.ts Visual */
+        VisualInput: unknown;
+        StudentQuestionPartInput: {
+            id: string;
+            type: components["schemas"]["QuestionTypeInput"];
+            objective: boolean;
+            stem_md: string;
+            options: {
+                id: string;
+                text_md: string;
+            }[];
+            match_right: {
+                id: string;
+                text_md: string;
+            }[];
+            marks: number;
+            assets: components["schemas"]["VisualInput"][];
+            format?: string;
+            word_limit?: {
+                min: number;
+                max: number;
+            };
+            map_id?: string;
+        };
+        /** @description A question without its answer, solution or marking scheme (DB-6). Check answers with POST /v1/practice/answers. */
+        StudentQuestionInput: {
+            id: string;
+            type: components["schemas"]["QuestionTypeInput"];
+            objective: boolean;
+            stem_md: string;
+            options: {
+                id: string;
+                text_md: string;
+            }[];
+            match_right: {
+                id: string;
+                text_md: string;
+            }[];
+            marks: number;
+            assets: components["schemas"]["VisualInput"][];
+            format?: string;
+            word_limit?: {
+                min: number;
+                max: number;
+            };
+            map_id?: string;
+            version: number;
+            difficulty: number;
+            expected_time_sec: number;
+            topic_ids: string[];
+            passage_md?: string;
+            passage_origin?: string;
+            children: {
+                id: string;
+                type: components["schemas"]["QuestionTypeInput"];
+                objective: boolean;
+                stem_md: string;
+                options: {
+                    id: string;
+                    text_md: string;
+                }[];
+                match_right: {
+                    id: string;
+                    text_md: string;
+                }[];
+                marks: number;
+                assets: components["schemas"]["VisualInput"][];
+                format?: string;
+                word_limit?: {
+                    min: number;
+                    max: number;
+                };
+                map_id?: string;
+                alternatives: components["schemas"]["StudentQuestionPartInput"][];
+            }[];
+        };
+        /** @description Public and cacheable; your own progress is GET /v1/me/progress/chapters/{id}. */
+        ChapterHubInput: {
+            chapter: {
+                id: string;
+                number: number;
+                title: string;
+                titleEn: string | null;
+                unit: string | null;
+                boardAssessed: boolean;
+                topics: {
+                    id: string;
+                    title: string;
+                    titleEn: string | null;
+                }[];
+            };
+            subject: {
+                id: string;
+                name: string;
+                board: components["schemas"]["BoardInput"];
+                /** @enum {string} */
+                exam: "cbse" | "icse" | "isc";
+                classLevel: number;
+                language: string;
+                script: string;
+            };
+            assets: {
+                lesson: {
+                    available: boolean;
+                    parts: {
+                        part: number;
+                        title: string;
+                        slideCount: number;
+                        hasAudio: boolean;
+                        version: number;
+                        reviewStatus: components["schemas"]["ReviewStatusInput"];
+                    }[];
+                    slideCount: number;
+                };
+                notes: {
+                    available: boolean;
+                    sections: number;
+                    reviewStatus: components["schemas"]["ReviewStatusInput"] | null;
+                };
+                flashcards: {
+                    available: boolean;
+                    count: number;
+                    reviewStatus: components["schemas"]["ReviewStatusInput"] | null;
+                };
+                practice: {
+                    available: boolean;
+                    count: number;
+                    byType: {
+                        [key: string]: number;
+                    };
+                    byDifficulty: {
+                        [key: string]: number;
+                    };
+                };
+                tests: {
+                    available: boolean;
+                    count: number;
+                    items: {
+                        id: string;
+                        title: string;
+                        kind: string;
+                        durationMin: number;
+                        totalMarks: number;
+                        questionCount: number;
+                    }[];
+                };
+            };
+        };
+        LessonDeckInput: {
+            chapterId: string;
+            part: number;
+            parts: {
+                part: number;
+                title: string;
+                slideCount: number;
+                hasAudio: boolean;
+                version: number;
+                reviewStatus: components["schemas"]["ReviewStatusInput"];
+            }[];
+            version: number;
+            reviewStatus: components["schemas"]["ReviewStatusInput"];
+            title: string;
+            language: string;
+            goals: string[];
+            slides: {
+                id: string;
+                /** @enum {string} */
+                layout: "title" | "concept" | "two-column" | "diagram" | "example" | "check" | "summary" | "exam-tips";
+                heading: string;
+                body_md: string;
+                bullets: string[];
+                columns?: [
+                    string,
+                    string
+                ];
+                visual: components["schemas"]["VisualInput"] | null;
+                math: string[];
+                narration: string;
+                check_question_id: string | null;
+                audio: {
+                    key: string;
+                    duration_ms: number;
+                } | null;
+            }[];
+            checkQuestions: components["schemas"]["StudentQuestionInput"][];
+        };
+        ChapterNotesInput: {
+            chapterId: string;
+            version: number;
+            reviewStatus: components["schemas"]["ReviewStatusInput"];
+            title: string;
+            language: string;
+            sections: {
+                heading: string;
+                body_md: string;
+                key_terms: {
+                    term: string;
+                    definition_md: string;
+                }[];
+                formulas: {
+                    latex: string;
+                    label?: string;
+                }[];
+                visual: components["schemas"]["VisualInput"] | null;
+                visuals: components["schemas"]["VisualInput"][];
+                topic_ids: string[];
+            }[];
+            exam_tips_md: string;
+        };
+        ChapterFlashcardsInput: {
+            chapterId: string;
+            version: number;
+            reviewStatus: components["schemas"]["ReviewStatusInput"];
+            language: string;
+            cards: {
+                id: string;
+                front_md: string;
+                back_md: string;
+                tag: string;
+                topic_id: string | null;
+            }[];
+        };
+        /** @description IST calendar days; one missed day per week is covered automatically. */
+        StreakInput: {
+            current: number;
+            longest: number;
+            lastActiveDay: string | null;
+            atRisk: boolean;
+            freezeAvailableThisWeek: boolean;
+        };
+        /** @description mcq/assertion-reason/true-false/multi-select → option_ids; numerical → value; fill-blank → blanks (in stem order); match → pairs; ordering → order (all ids); code-output → output; short/long/writing/map → text. */
+        PracticePartResponseInput: {
+            option_ids: string[];
+        } | {
+            value: number;
+        } | {
+            blanks: string[];
+        } | {
+            pairs: {
+                left_id: string;
+                right_id: string;
+            }[];
+        } | {
+            order: string[];
+        } | {
+            output: string;
+        } | {
+            text: string;
+        };
+        /** @description case-based/source-based → parts (one per child; `alternative` picks an internal-choice alternative). */
+        PracticeResponseInput: components["schemas"]["PracticePartResponseInput"] | {
+            parts: {
+                id: string;
+                alternative?: string;
+                response: components["schemas"]["PracticePartResponseInput"];
+            }[];
+        };
+        PracticeAnswerRequestInput: {
+            questionId: string;
+            version?: number;
+            response: components["schemas"]["PracticeResponseInput"];
+        };
+        /** @description Revealed only after answering (F-006). `answer` has the content contract Answer shape. */
+        AnswerKeyInput: {
+            answer: unknown;
+            solution_md: string;
+            marking_scheme: {
+                step: string;
+                marks: number;
+            }[];
+            rubric?: {
+                criterion: string;
+                marks: number;
+                descriptor_md?: string;
+            }[];
+        };
+        PracticeAnswerResultInput: {
+            questionId: string;
+            version: number;
+            /** @enum {string} */
+            type: "mcq" | "multi-select" | "assertion-reason" | "case-based" | "source-based" | "short" | "long" | "numerical" | "fill-blank" | "match" | "true-false" | "writing" | "map" | "code-output" | "ordering";
+            correct: boolean | null;
+            marksAwarded: number | null;
+            maxMarks: number;
+            /** @enum {string} */
+            grading: "auto" | "self";
+            feedback?: {
+                blanksCorrect?: boolean[];
+                pairsCorrect?: number;
+                positionsCorrect?: number;
+            };
+            key: components["schemas"]["AnswerKeyInput"];
+            parts: {
+                id: string;
+                alternative: string | null;
+                /** @enum {string} */
+                type: "mcq" | "multi-select" | "assertion-reason" | "case-based" | "source-based" | "short" | "long" | "numerical" | "fill-blank" | "match" | "true-false" | "writing" | "map" | "code-output" | "ordering";
+                correct: boolean | null;
+                marksAwarded: number | null;
+                maxMarks: number;
+                /** @enum {string} */
+                grading: "auto" | "self";
+                feedback?: {
+                    blanksCorrect?: boolean[];
+                    pairsCorrect?: number;
+                    positionsCorrect?: number;
+                };
+                key: components["schemas"]["AnswerKeyInput"];
+            }[];
+            selfAssessmentPending: boolean;
+            selfMaxMarks: number;
+            stored: boolean;
+            answerId: string | null;
+            xpAwarded: number;
+            badgesAwarded: string[];
+            streak: components["schemas"]["StreakInput"] | null;
+        };
+        PracticePageInput: {
+            chapterId: string;
+            total: number;
+            items: {
+                question: components["schemas"]["StudentQuestionInput"];
+                answered: boolean | null;
+                lastCorrect: boolean | null;
+            }[];
+            nextCursor: string | null;
+        };
+        PracticeSelfAssessmentInput: {
+            /** Format: uuid */
+            answerId: string;
+            marksAwarded: number;
+            maxMarks: number;
+            /** @constant */
+            grading: "self";
+        };
+        MyProgressInput: {
+            totals: {
+                xp: number;
+                level: number;
+                levelStartXp: number;
+                nextLevelXp: number;
+                streak: components["schemas"]["StreakInput"];
+                lessonsCompleted: number;
+                practiceAttempts: number;
+                practiceAccuracy: number | null;
+            };
+            subjects: {
+                subjectId: string;
+                name: string;
+                chapters: {
+                    chapterId: string;
+                    number: number;
+                    title: string;
+                    lessons: {
+                        partsStarted: number;
+                        partsCompleted: number;
+                        lastPart: number | null;
+                        lastSlide: number | null;
+                        lastMode: ("read" | "listen") | null;
+                        updatedAt: string | null;
+                    };
+                    practice: {
+                        attempts: number;
+                        questionsAnswered: number;
+                        questionsCorrect: number;
+                        accuracy: number | null;
+                        lastAnsweredAt: string | null;
+                    };
+                }[];
+            }[];
+        };
+        MyChapterProgressInput: {
+            chapterId: string;
+            lessons: {
+                part: number;
+                slideCount: number;
+                slide: number | null;
+                mode: ("read" | "listen") | null;
+                completedAt: string | null;
+                updatedAt: string | null;
+            }[];
+            practice: {
+                attempts: number;
+                questionsAnswered: number;
+                questionsCorrect: number;
+                accuracy: number | null;
+                answeredQuestionIds: string[];
+                correctQuestionIds: string[];
+            };
+        };
+        LessonProgressRequestInput: {
+            chapterId: string;
+            part?: number;
+            slide: number;
+            /**
+             * @default read
+             * @enum {string}
+             */
+            mode: "read" | "listen";
+            completed?: boolean;
+        };
+        LessonProgressInput: {
+            chapterId: string;
+            part: number;
+            slide: number;
+            slideCount: number;
+            /** @enum {string} */
+            mode: "read" | "listen";
+            completedAt: string | null;
+            /** Format: date-time */
+            updatedAt: string;
+            xpAwarded: number;
+            badgesAwarded: string[];
+            streak: components["schemas"]["StreakInput"] | null;
+        };
+        MyBadgesInput: {
+            badges: {
+                key: string;
+                name: string;
+                description: string;
+                icon: string;
+                awarded: boolean;
+                awardedAt: string | null;
+            }[];
+        };
+        ContentReportRequestInput: {
+            chapterId: string;
+            /** @enum {string} */
+            contentType: "deck" | "notes" | "flashcard_set" | "question";
+            part?: number;
+            questionId?: string;
+            itemRef?: string;
+            /** @enum {string} */
+            reason: "wrong_answer" | "wrong_content" | "typo" | "rendering" | "audio" | "inappropriate" | "other";
+            comment?: string;
+        };
+        ContentReportReceiptInput: {
+            /** Format: uuid */
+            id: string;
+            /** @constant */
+            status: "open";
+            /** Format: date-time */
+            createdAt: string;
+        };
+        MfaStatusInput: {
+            enrolled: boolean;
+            confirmed: boolean;
+            sessionVerified: boolean;
+            recoveryCodesRemaining: number;
+        };
+        /** @description Show the URI as a QR code (and the secret for manual entry). Nothing here is stored in the browser. */
+        MfaEnrollmentInput: {
+            secret: string;
+            otpauthUri: string;
+            digits: number;
+            periodSeconds: number;
+            algorithm: string;
+            expiresInSeconds: number;
+        };
+        /** @description Shown once. Each code works once. */
+        MfaRecoveryCodesInput: {
+            recoveryCodes: string[];
+        };
+        MfaVerifyRequestInput: {
+            code: string;
+        } | {
+            recoveryCode: string;
+        };
+        MfaVerifiedInput: {
+            /** @constant */
+            verified: true;
+            /** @enum {string} */
+            method: "totp" | "recovery_code";
+            recoveryCodesRemaining: number;
+        };
+        AdminContentReportsInput: {
+            reports: {
+                /** Format: uuid */
+                id: string;
+                unit: string;
+                /** @enum {string} */
+                contentType: "deck" | "notes" | "flashcard_set" | "question";
+                /** Format: uuid */
+                contentId: string;
+                itemRef: string | null;
+                reason: string;
+                comment: string | null;
+                status: string;
+                /** @enum {string} */
+                reporter: "member" | "guest";
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+            nextCursor: string | null;
+        };
+        PracticeSelfAssessRequestInput: {
+            marks: number;
+        };
         /** @description RFC 7807 problem details (application/problem+json). */
         Problem: {
             type: string;
@@ -1711,7 +3283,10 @@ export interface components {
         };
         GuestLesson: {
             chapter: string;
+            part?: number;
             slide: number;
+            /** @enum {string} */
+            mode?: "read" | "listen";
             completed: boolean;
             /** Format: date-time */
             updatedAt: string;
@@ -1743,6 +3318,8 @@ export interface components {
             lessonsCompleted: number;
             practiceCorrect: number;
             xpAwarded: number;
+            lessonsStored: number;
+            practiceStored: number;
             ignored: {
                 unknownChapters: number;
                 unknownQuestions: number;
@@ -1842,6 +3419,511 @@ export interface components {
                     boardAssessed: boolean;
                 }[];
             }[];
+        };
+        /**
+         * @description beta = published after automated checks; reviewed = human-reviewed (CONTEXT §4).
+         * @enum {string}
+         */
+        ReviewStatus: "beta" | "reviewed";
+        /** @enum {string} */
+        QuestionType: "mcq" | "multi-select" | "assertion-reason" | "case-based" | "source-based" | "short" | "long" | "numerical" | "fill-blank" | "match" | "true-false" | "writing" | "map" | "code-output" | "ordering";
+        /** @description platform/shared/content/visual.ts Visual */
+        Visual: unknown;
+        StudentQuestionPart: {
+            id: string;
+            type: components["schemas"]["QuestionType"];
+            objective: boolean;
+            stem_md: string;
+            options: {
+                id: string;
+                text_md: string;
+            }[];
+            match_right: {
+                id: string;
+                text_md: string;
+            }[];
+            marks: number;
+            assets: components["schemas"]["Visual"][];
+            format?: string;
+            word_limit?: {
+                min: number;
+                max: number;
+            };
+            map_id?: string;
+        };
+        /** @description A question without its answer, solution or marking scheme (DB-6). Check answers with POST /v1/practice/answers. */
+        StudentQuestion: {
+            id: string;
+            type: components["schemas"]["QuestionType"];
+            objective: boolean;
+            stem_md: string;
+            options: {
+                id: string;
+                text_md: string;
+            }[];
+            match_right: {
+                id: string;
+                text_md: string;
+            }[];
+            marks: number;
+            assets: components["schemas"]["Visual"][];
+            format?: string;
+            word_limit?: {
+                min: number;
+                max: number;
+            };
+            map_id?: string;
+            version: number;
+            difficulty: number;
+            expected_time_sec: number;
+            topic_ids: string[];
+            passage_md?: string;
+            passage_origin?: string;
+            children: {
+                id: string;
+                type: components["schemas"]["QuestionType"];
+                objective: boolean;
+                stem_md: string;
+                options: {
+                    id: string;
+                    text_md: string;
+                }[];
+                match_right: {
+                    id: string;
+                    text_md: string;
+                }[];
+                marks: number;
+                assets: components["schemas"]["Visual"][];
+                format?: string;
+                word_limit?: {
+                    min: number;
+                    max: number;
+                };
+                map_id?: string;
+                alternatives: components["schemas"]["StudentQuestionPart"][];
+            }[];
+        };
+        /** @description Public and cacheable; your own progress is GET /v1/me/progress/chapters/{id}. */
+        ChapterHub: {
+            chapter: {
+                id: string;
+                number: number;
+                title: string;
+                titleEn: string | null;
+                unit: string | null;
+                boardAssessed: boolean;
+                topics: {
+                    id: string;
+                    title: string;
+                    titleEn: string | null;
+                }[];
+            };
+            subject: {
+                id: string;
+                name: string;
+                board: components["schemas"]["Board"];
+                /** @enum {string} */
+                exam: "cbse" | "icse" | "isc";
+                classLevel: number;
+                language: string;
+                script: string;
+            };
+            assets: {
+                lesson: {
+                    available: boolean;
+                    parts: {
+                        part: number;
+                        title: string;
+                        slideCount: number;
+                        hasAudio: boolean;
+                        version: number;
+                        reviewStatus: components["schemas"]["ReviewStatus"];
+                    }[];
+                    slideCount: number;
+                };
+                notes: {
+                    available: boolean;
+                    sections: number;
+                    reviewStatus: components["schemas"]["ReviewStatus"] | null;
+                };
+                flashcards: {
+                    available: boolean;
+                    count: number;
+                    reviewStatus: components["schemas"]["ReviewStatus"] | null;
+                };
+                practice: {
+                    available: boolean;
+                    count: number;
+                    byType: {
+                        [key: string]: number;
+                    };
+                    byDifficulty: {
+                        [key: string]: number;
+                    };
+                };
+                tests: {
+                    available: boolean;
+                    count: number;
+                    items: {
+                        id: string;
+                        title: string;
+                        kind: string;
+                        durationMin: number;
+                        totalMarks: number;
+                        questionCount: number;
+                    }[];
+                };
+            };
+        };
+        LessonDeck: {
+            chapterId: string;
+            part: number;
+            parts: {
+                part: number;
+                title: string;
+                slideCount: number;
+                hasAudio: boolean;
+                version: number;
+                reviewStatus: components["schemas"]["ReviewStatus"];
+            }[];
+            version: number;
+            reviewStatus: components["schemas"]["ReviewStatus"];
+            title: string;
+            language: string;
+            goals: string[];
+            slides: {
+                id: string;
+                /** @enum {string} */
+                layout: "title" | "concept" | "two-column" | "diagram" | "example" | "check" | "summary" | "exam-tips";
+                heading: string;
+                body_md: string;
+                bullets: string[];
+                columns?: [
+                    string,
+                    string
+                ];
+                visual: components["schemas"]["Visual"] | null;
+                math: string[];
+                narration: string;
+                check_question_id: string | null;
+                audio: {
+                    key: string;
+                    duration_ms: number;
+                } | null;
+            }[];
+            checkQuestions: components["schemas"]["StudentQuestion"][];
+        };
+        ChapterNotes: {
+            chapterId: string;
+            version: number;
+            reviewStatus: components["schemas"]["ReviewStatus"];
+            title: string;
+            language: string;
+            sections: {
+                heading: string;
+                body_md: string;
+                key_terms: {
+                    term: string;
+                    definition_md: string;
+                }[];
+                formulas: {
+                    latex: string;
+                    label?: string;
+                }[];
+                visual: components["schemas"]["Visual"] | null;
+                visuals: components["schemas"]["Visual"][];
+                topic_ids: string[];
+            }[];
+            exam_tips_md: string;
+        };
+        ChapterFlashcards: {
+            chapterId: string;
+            version: number;
+            reviewStatus: components["schemas"]["ReviewStatus"];
+            language: string;
+            cards: {
+                id: string;
+                front_md: string;
+                back_md: string;
+                tag: string;
+                topic_id: string | null;
+            }[];
+        };
+        /** @description IST calendar days; one missed day per week is covered automatically. */
+        Streak: {
+            current: number;
+            longest: number;
+            lastActiveDay: string | null;
+            atRisk: boolean;
+            freezeAvailableThisWeek: boolean;
+        };
+        /** @description mcq/assertion-reason/true-false/multi-select → option_ids; numerical → value; fill-blank → blanks (in stem order); match → pairs; ordering → order (all ids); code-output → output; short/long/writing/map → text. */
+        PracticePartResponse: {
+            option_ids: string[];
+        } | {
+            value: number;
+        } | {
+            blanks: string[];
+        } | {
+            pairs: {
+                left_id: string;
+                right_id: string;
+            }[];
+        } | {
+            order: string[];
+        } | {
+            output: string;
+        } | {
+            text: string;
+        };
+        /** @description case-based/source-based → parts (one per child; `alternative` picks an internal-choice alternative). */
+        PracticeResponse: components["schemas"]["PracticePartResponse"] | {
+            parts: {
+                id: string;
+                alternative?: string;
+                response: components["schemas"]["PracticePartResponse"];
+            }[];
+        };
+        PracticeAnswerRequest: {
+            questionId: string;
+            version?: number;
+            response: components["schemas"]["PracticeResponse"];
+        };
+        /** @description Revealed only after answering (F-006). `answer` has the content contract Answer shape. */
+        AnswerKey: {
+            answer: unknown;
+            solution_md: string;
+            marking_scheme: {
+                step: string;
+                marks: number;
+            }[];
+            rubric?: {
+                criterion: string;
+                marks: number;
+                descriptor_md?: string;
+            }[];
+        };
+        PracticeAnswerResult: {
+            questionId: string;
+            version: number;
+            /** @enum {string} */
+            type: "mcq" | "multi-select" | "assertion-reason" | "case-based" | "source-based" | "short" | "long" | "numerical" | "fill-blank" | "match" | "true-false" | "writing" | "map" | "code-output" | "ordering";
+            correct: boolean | null;
+            marksAwarded: number | null;
+            maxMarks: number;
+            /** @enum {string} */
+            grading: "auto" | "self";
+            feedback?: {
+                blanksCorrect?: boolean[];
+                pairsCorrect?: number;
+                positionsCorrect?: number;
+            };
+            key: components["schemas"]["AnswerKey"];
+            parts: {
+                id: string;
+                alternative: string | null;
+                /** @enum {string} */
+                type: "mcq" | "multi-select" | "assertion-reason" | "case-based" | "source-based" | "short" | "long" | "numerical" | "fill-blank" | "match" | "true-false" | "writing" | "map" | "code-output" | "ordering";
+                correct: boolean | null;
+                marksAwarded: number | null;
+                maxMarks: number;
+                /** @enum {string} */
+                grading: "auto" | "self";
+                feedback?: {
+                    blanksCorrect?: boolean[];
+                    pairsCorrect?: number;
+                    positionsCorrect?: number;
+                };
+                key: components["schemas"]["AnswerKey"];
+            }[];
+            selfAssessmentPending: boolean;
+            selfMaxMarks: number;
+            stored: boolean;
+            answerId: string | null;
+            xpAwarded: number;
+            badgesAwarded: string[];
+            streak: components["schemas"]["Streak"] | null;
+        };
+        PracticePage: {
+            chapterId: string;
+            total: number;
+            items: {
+                question: components["schemas"]["StudentQuestion"];
+                answered: boolean | null;
+                lastCorrect: boolean | null;
+            }[];
+            nextCursor: string | null;
+        };
+        PracticeSelfAssessment: {
+            /** Format: uuid */
+            answerId: string;
+            marksAwarded: number;
+            maxMarks: number;
+            /** @constant */
+            grading: "self";
+        };
+        MyProgress: {
+            totals: {
+                xp: number;
+                level: number;
+                levelStartXp: number;
+                nextLevelXp: number;
+                streak: components["schemas"]["Streak"];
+                lessonsCompleted: number;
+                practiceAttempts: number;
+                practiceAccuracy: number | null;
+            };
+            subjects: {
+                subjectId: string;
+                name: string;
+                chapters: {
+                    chapterId: string;
+                    number: number;
+                    title: string;
+                    lessons: {
+                        partsStarted: number;
+                        partsCompleted: number;
+                        lastPart: number | null;
+                        lastSlide: number | null;
+                        lastMode: ("read" | "listen") | null;
+                        updatedAt: string | null;
+                    };
+                    practice: {
+                        attempts: number;
+                        questionsAnswered: number;
+                        questionsCorrect: number;
+                        accuracy: number | null;
+                        lastAnsweredAt: string | null;
+                    };
+                }[];
+            }[];
+        };
+        MyChapterProgress: {
+            chapterId: string;
+            lessons: {
+                part: number;
+                slideCount: number;
+                slide: number | null;
+                mode: ("read" | "listen") | null;
+                completedAt: string | null;
+                updatedAt: string | null;
+            }[];
+            practice: {
+                attempts: number;
+                questionsAnswered: number;
+                questionsCorrect: number;
+                accuracy: number | null;
+                answeredQuestionIds: string[];
+                correctQuestionIds: string[];
+            };
+        };
+        LessonProgressRequest: {
+            chapterId: string;
+            part?: number;
+            slide: number;
+            /**
+             * @default read
+             * @enum {string}
+             */
+            mode: "read" | "listen";
+            completed?: boolean;
+        };
+        LessonProgress: {
+            chapterId: string;
+            part: number;
+            slide: number;
+            slideCount: number;
+            /** @enum {string} */
+            mode: "read" | "listen";
+            completedAt: string | null;
+            /** Format: date-time */
+            updatedAt: string;
+            xpAwarded: number;
+            badgesAwarded: string[];
+            streak: components["schemas"]["Streak"] | null;
+        };
+        MyBadges: {
+            badges: {
+                key: string;
+                name: string;
+                description: string;
+                icon: string;
+                awarded: boolean;
+                awardedAt: string | null;
+            }[];
+        };
+        ContentReportRequest: {
+            chapterId: string;
+            /** @enum {string} */
+            contentType: "deck" | "notes" | "flashcard_set" | "question";
+            part?: number;
+            questionId?: string;
+            itemRef?: string;
+            /** @enum {string} */
+            reason: "wrong_answer" | "wrong_content" | "typo" | "rendering" | "audio" | "inappropriate" | "other";
+            comment?: string;
+        };
+        ContentReportReceipt: {
+            /** Format: uuid */
+            id: string;
+            /** @constant */
+            status: "open";
+            /** Format: date-time */
+            createdAt: string;
+        };
+        MfaStatus: {
+            enrolled: boolean;
+            confirmed: boolean;
+            sessionVerified: boolean;
+            recoveryCodesRemaining: number;
+        };
+        /** @description Show the URI as a QR code (and the secret for manual entry). Nothing here is stored in the browser. */
+        MfaEnrollment: {
+            secret: string;
+            otpauthUri: string;
+            digits: number;
+            periodSeconds: number;
+            algorithm: string;
+            expiresInSeconds: number;
+        };
+        /** @description Shown once. Each code works once. */
+        MfaRecoveryCodes: {
+            recoveryCodes: string[];
+        };
+        MfaVerifyRequest: {
+            code: string;
+        } | {
+            recoveryCode: string;
+        };
+        MfaVerified: {
+            /** @constant */
+            verified: true;
+            /** @enum {string} */
+            method: "totp" | "recovery_code";
+            recoveryCodesRemaining: number;
+        };
+        AdminContentReports: {
+            reports: {
+                /** Format: uuid */
+                id: string;
+                unit: string;
+                /** @enum {string} */
+                contentType: "deck" | "notes" | "flashcard_set" | "question";
+                /** Format: uuid */
+                contentId: string;
+                itemRef: string | null;
+                reason: string;
+                comment: string | null;
+                status: string;
+                /** @enum {string} */
+                reporter: "member" | "guest";
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+            nextCursor: string | null;
+        };
+        PracticeSelfAssessRequest: {
+            marks: number;
         };
     };
     responses: never;
