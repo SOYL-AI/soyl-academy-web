@@ -355,9 +355,10 @@ const T_SHORT = test({
   kind: 'short',
   title: 'अध्याय परीक्षा (लघु) — पद (सूरदास)',
   duration: 40,
+  blueprint: 'cbse-10-hindi-a-chapter-test-short',
   sections: [
     { id: 'A', title: 'खंड क — प्रसंग-आधारित अनुच्छेद (5 अंक)', instr: 'अनुच्छेद पढ़कर सभी प्रश्नों के सही विकल्प चुनिए। (अनुच्छेद SOYL की टिप्पणी है; मूल पद क्षितिज भाग 2 में पढ़ें।)', items: ['src_bhagya'] },
-    { id: 'B', title: 'खंड ख — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_guru', 'a_name', 'b_bitter', 'k_lang', 'b_ar_bhagya'] },
+    { id: 'B', title: 'खंड ख — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_guru', 'a_name', 'b_bitter', 'k_lang', 'a_work'] },
     { id: 'C', title: 'खंड ग — लघु उत्तरीय प्रश्न (2 अंक, 25–30 शब्द)', instr: 'चार में से किन्हीं तीन प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 3, keys: ['b_short_paradox', 'b_short_haaril', 'b_short_raj', 'k_short_braj'] }] },
     { id: 'D', title: 'खंड घ — दीर्घ उत्तरीय प्रश्न (4 अंक, 60–80 शब्द)', instr: 'दो में से कोई एक प्रश्न कीजिए।', items: [{ attempt: 1, keys: ['l_gopi', 'l_beauty'] }] },
   ],
@@ -365,10 +366,11 @@ const T_SHORT = test({
 const T_LONG = test({
   kind: 'long',
   title: 'अध्याय परीक्षा (दीर्घ) — पद (सूरदास)',
-  duration: 90,
+  duration: 80,
+  blueprint: 'cbse-10-hindi-a-chapter-test-long',
   sections: [
     { id: 'A', title: 'खंड क — प्रसंग-आधारित अनुच्छेद (5 अंक प्रत्येक)', instr: 'दोनों अनुच्छेद पढ़कर सभी प्रश्नों के सही विकल्प चुनिए। (अनुच्छेद SOYL की टिप्पणियाँ हैं।)', items: ['src_aas', 'src_rajdharm'] },
-    { id: 'B', title: 'खंड ख — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_life', 'a_dhara', 'b_common', 'b_whom', 'b_maryada', 'k_ras', 'k_punarukti_own', 'b_ar_yog'] },
+    { id: 'B', title: 'खंड ख — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_life', 'a_dhara', 'b_common', 'b_whom', 'b_maryada', 'k_ras', 'b_ar_virah', 'b_ar_yog'] },
     { id: 'C', title: 'खंड ग — लघु उत्तरीय प्रश्न (2 अंक, 25–30 शब्द)', instr: 'छह में से किन्हीं पाँच प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 5, keys: ['b_short_saubhagya', 'b_short_rog', 'b_short_marg', 'b_short_fair', 'k_short_viyog', 'k_short_vaak'] }] },
     { id: 'D', title: 'खंड घ — दीर्घ उत्तरीय प्रश्न (4 अंक, 60–80 शब्द)', instr: 'चार में से किन्हीं तीन प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 3, keys: ['l_gyan_prem', 'l_stage', 'l_letter', 'l_rajdharm_today'] }] },
   ],

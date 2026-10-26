@@ -31,7 +31,7 @@ Rebuild from `platform/`: `npx tsx content/authored/hindi-language/cbse-10-hindi
 - **Tests (no shared questions):**
   - Short (20 marks, 40 min): A one गद्यांश (7) · B one काव्यांश (7) · C six 1-mark objective.
   - Long (40 marks, 90 min): A two गद्यांश (14) · B two काव्यांश (14) · C six 1-mark objective · D short "4 में से 3" × 2.
-  - `blueprint_id` is null: the hindi-a chapter-test blueprints (`chapter-test-short/long.yaml`) are built for literature chapters (source-based 5, short 2/3, long 6–8 marks); the अपठित pattern (7-mark passage items) cannot fill them. Four passages are left out of both tests (`g_dadi`, `g_millet`, `k_neem`, `k_pagdandi`) for practice.
+  - `blueprint_id` is null. The hindi-a chapter-test blueprints (`chapter-test-short/long.yaml`, revised by catalog QA in 47a7185) are built for literature chapters: a 5-mark source-based extract, 1-mark MCQ/AR, 2-mark shorts and 4-mark longs. Their notes say non-literature chapters carry a null `blueprint_id`, and the अपठित pattern (7-mark passage items) cannot fill them. Four passages are left out of both tests (`g_dadi`, `g_millet`, `k_neem`, `k_pagdandi`) for practice.
 
 ## Verifier record (author pass, 2026-10-27; no sub-agents per D-024)
 

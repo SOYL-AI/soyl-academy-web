@@ -315,9 +315,10 @@ const T_SHORT = test({
   kind: 'short',
   title: 'अध्याय परीक्षा (लघु) — नेताजी का चश्मा',
   duration: 40,
+  blueprint: 'cbse-10-hindi-a-chapter-test-short',
   sections: [
     { id: 'A', title: 'खंड क — प्रसंग-आधारित अनुच्छेद (5 अंक)', instr: 'अनुच्छेद पढ़कर सभी प्रश्नों के सही विकल्प चुनिए। (अनुच्छेद SOYL की टिप्पणी है; मूल कहानी क्षितिज भाग 2 में पढ़ें।)', items: ['src_murti'] },
-    { id: 'B', title: 'खंड ख — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_birth', 's_who_changes', 'c_haldar_trait', 'm_ending', 'c_ar_hurt'] },
+    { id: 'B', title: 'खंड ख — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_birth', 's_who_changes', 'c_haldar_trait', 'm_ending', 'm_central'] },
     { id: 'C', title: 'खंड ग — लघु उत्तरीय प्रश्न (2 अंक, 25–30 शब्द)', instr: 'चार में से किन्हीं तीन प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 3, keys: ['s_sculptor', 's_reed_meaning', 'c_haldar_short', 'm_title_short'] }] },
     { id: 'D', title: 'खंड घ — दीर्घ उत्तरीय प्रश्न (4 अंक, 60–80 शब्द)', instr: 'दो में से कोई एक प्रश्न कीजिए।', items: [{ attempt: 1, keys: ['c_captain_long', 'm_patriot_long'] }] },
   ],
@@ -325,7 +326,8 @@ const T_SHORT = test({
 const T_LONG = test({
   kind: 'long',
   title: 'अध्याय परीक्षा (दीर्घ) — नेताजी का चश्मा',
-  duration: 90,
+  duration: 80,
+  blueprint: 'cbse-10-hindi-a-chapter-test-long',
   sections: [
     { id: 'A', title: 'खंड क — प्रसंग-आधारित अनुच्छेद (5 अंक प्रत्येक)', instr: 'दोनों अनुच्छेद पढ़कर सभी प्रश्नों के सही विकल्प चुनिए। (अनुच्छेद SOYL की टिप्पणियाँ हैं।)', items: ['src_captain', 'src_sarkanda'] },
     { id: 'B', title: 'खंड ख — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_study', 'a_theme', 's_lack', 's_why_change', 'c_paan_two', 'm_symbol', 'm_title_ar', 'c_ar_rich'] },

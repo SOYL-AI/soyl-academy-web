@@ -40,7 +40,7 @@ Rebuild from `platform/`: `npx tsx content/authored/hindi-language/cbse-10-hindi
 - **Tests (no shared questions):**
   - Short (20 marks, 40 min): A 5 objective · B अनुच्छेद 1 of 2 (6) · C पत्र 1 of 2 (5) · D विज्ञापन/संदेश 1 of 2 (4).
   - Long (40 marks, 90 min): A 8 objective · B draft letter (4) · C two 2-mark items · D अनुच्छेद 1 of 3 (6) · E पत्र 1 of 2 (5) · F स्ववृत्त/ई-मेल 1 of 2 (5) · G विज्ञापन 1 of 2 (4) · H संदेश 1 of 2 (4).
-  - `blueprint_id` is null: the hindi-a chapter-test blueprints are literature-shaped (5-mark extract, 2/3-mark shorts, 6–8-mark longs, 100–150 words) and do not describe a writing-skills test. These tests mirror खंड घ instead.
+  - `blueprint_id` is null. The hindi-a chapter-test blueprints (revised by catalog QA in 47a7185) are literature-shaped: a 5-mark extract, 1-mark MCQ/AR, 2-mark shorts and 4-mark longs. They do not describe a writing-skills test, and their notes say non-literature chapters carry a null `blueprint_id`. These tests mirror खंड घ instead.
 
 ## Verifier record (author pass, 2026-10-27)
 

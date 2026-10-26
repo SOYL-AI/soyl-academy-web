@@ -67,9 +67,9 @@ Rebuild from `platform/`: `npx tsx content/authored/hindi-literature/cbse-10-hin
 - **Deck:** 21 slides — title, how-to, author table, genre, cast, सार 1–5 by idea, 3 checks, character tables, message, symbol flow, style, word meanings, summary, exam tips. There are 10 visuals (tables and flows). Narration is max 65 words, Devanagari only, with no digits or symbols.
 - **Notes:** 7 sections + exam tips. **Flashcards:** 28.
 - **Tests (no shared questions):**
-  - Short (20 marks, 40 min): A one commentary passage (5) · B 5 objective · C short "4 में से 3" × 2 · D long "2 में से 1" × 4.
-  - Long (40 marks, 90 min): A two passages (10) · B 8 objective · C short "6 में से 5" × 2 · D long "4 में से 3" × 4.
-  - `blueprint_id` is null: the hindi-a chapter-test blueprints use 7-mark (short test) and 6/8-mark (long test) answers of 100–150 words. Hindi A literature is examined with 2-mark (25–30 word) answers and 5-MCQ extracts, so these tests follow the board pattern, as the ch10 exemplar does.
+  - Short (20 marks, 40 min): A one commentary passage (5) · B 5 MCQ · C short "4 में से 3" × 2 · D long "2 में से 1" × 4.
+  - Long (40 marks, 80 min): A two passages (10) · B 6 MCQ + 2 assertion-reason · C short "6 में से 5" × 2 · D long "4 में से 3" × 4.
+  - `blueprint_id` is `cbse-10-hindi-a-chapter-test-short` / `-long`. These are the literature-shaped Hindi A blueprints from catalog QA (47a7185, merged in 0dee08c). A scratch slot-for-slot check (types, marks, counts, internal choice, duration, total) confirms the match; the same check passes on the ch10 exemplar.
 
 ## Verifier record (author pass, 2026-10-27; no sub-agents per D-024)
 
