@@ -1,0 +1,306 @@
+# CBSE Class 9 Science (086), 2026-27 — first year of the new NCF-SE 2023 syllabus and new NCERT textbook.
+# Chapters are listed in textbook order using the chapter numbers printed in the CBSE unit table (book ch. 2-13):
+# ch01=book 2 Cell, ch02=3 Tissues, ch03=4 Motion, ch04=5 Exploring Mixtures, ch05=6 Force and Laws of Motion,
+# ch06=7 Work, Energy and Simple Machines, ch07=8 Structure of an Atom, ch08=9 Atoms and Molecules, ch09=10 Sound,
+# ch10=11 Reproduction, ch11=12 Diversity, ch12=13 Earth as a System. Book chapter 1 is not in the assessment scheme.
+# The mapping of chapter numbers to titles is inferred from unit membership — verify against the NCERT book.
+subject_id: cbse-9-science
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-ix-science-2026-27
+  - cbse-secondary-curriculum-2026-27
+  - ncert-textbooks-secondary
+exam_notes: >-
+  Class 9 has no board exam: school annual examination 80 marks (3 hours) + internal assessment 20. IA: periodic assessment 5, multiple
+  assessment 5, portfolio 5, subject enrichment (practical) 5. Optional Science at Advanced Level paper (25 marks, 1 hour, HOTS) for
+  students who opt for it (separate subject). Unit marks: World of Living 27, Matter 25, Motion/Force/Work/Sound 23, Earth as a System 5.
+units:
+  - name: "Unit I: World of Living"
+    marks: 27
+  - name: "Unit II: Matter – Its Nature and Behaviour"
+    marks: 25
+  - name: "Unit III: Motion, Force, Work and Sound"
+    marks: 23
+  - name: "Unit IV: Earth as a System"
+    marks: 5
+chapters:
+  - id: cbse-9-science-ch01
+    number: 1
+    title: Cell
+    unit: "Unit I: World of Living"
+    topics:
+      - id: cbse-9-science-ch01-t01
+        title: Discovery of the cell; plant and animal cells
+        learning_outcomes:
+          - Describe the discovery of cells and compare plant and animal cells
+      - id: cbse-9-science-ch01-t02
+        title: Prokaryotic and eukaryotic cells
+        learning_outcomes:
+          - Distinguish prokaryotic and eukaryotic cells with examples
+      - id: cbse-9-science-ch01-t03
+        title: "Cell organelles: structure and function"
+        learning_outcomes:
+          - Explain the roles of nucleus, mitochondria, ER, Golgi, vacuoles, chloroplasts and cell wall
+      - id: cbse-9-science-ch01-t04
+        title: Permeability of the cell membrane; diffusion and osmosis
+        learning_outcomes:
+          - Demonstrate and explain osmosis in cells
+      - id: cbse-9-science-ch01-t05
+        title: Cell division and recent advances
+        learning_outcomes:
+          - Outline mitosis and meiosis and give examples of recent advances in cell biology
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-science-ch02
+    number: 2
+    title: Tissues
+    unit: "Unit I: World of Living"
+    topics:
+      - id: cbse-9-science-ch02-t01
+        title: Levels of organisation
+        learning_outcomes:
+          - Describe the levels of organisation in a multicellular organism
+      - id: cbse-9-science-ch02-t02
+        title: "Plant tissues: meristematic and permanent"
+        learning_outcomes:
+          - Relate the structure of plant tissues to their function
+      - id: cbse-9-science-ch02-t03
+        title: "Animal tissues: epithelial, connective, muscular and nervous (overview)"
+        learning_outcomes:
+          - Relate the structure of animal tissues to their function
+      - id: cbse-9-science-ch02-t04
+        title: Joints and care of the musculoskeletal system
+        learning_outcomes:
+          - Identify types of joints and suggest ways to care for bones and muscles
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-science-ch03
+    number: 3
+    title: Motion
+    unit: "Unit III: Motion, Force, Work and Sound"
+    topics:
+      - id: cbse-9-science-ch03-t01
+        title: Displacement, velocity and acceleration
+        learning_outcomes:
+          - Define displacement, velocity and acceleration and express them in SI units
+      - id: cbse-9-science-ch03-t02
+        title: Graphical representation of motion
+        learning_outcomes:
+          - Plot and interpret position–time and velocity–time graphs and find average velocity
+      - id: cbse-9-science-ch03-t03
+        title: Kinematic equations for uniformly accelerated motion
+        learning_outcomes:
+          - Derive and apply the three equations of motion graphically and algebraically
+      - id: cbse-9-science-ch03-t04
+        title: Uniform circular motion
+        learning_outcomes:
+          - Derive the expression for speed in uniform circular motion
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-science-ch04
+    number: 4
+    title: Exploring Mixtures and their Separation
+    unit: "Unit II: Matter – Its Nature and Behaviour"
+    topics:
+      - id: cbse-9-science-ch04-t01
+        title: Homogeneous and heterogeneous mixtures
+        learning_outcomes:
+          - Classify mixtures as homogeneous or heterogeneous
+      - id: cbse-9-science-ch04-t02
+        title: Solutions, suspensions and colloids
+        learning_outcomes:
+          - Distinguish solutions, suspensions and colloids by properties such as the Tyndall effect
+      - id: cbse-9-science-ch04-t03
+        title: Concentration of solutions and solubility
+        learning_outcomes:
+          - Calculate concentration as mass and volume percentage and interpret solubility graphs
+      - id: cbse-9-science-ch04-t04
+        title: Separation techniques
+        learning_outcomes:
+          - >-
+            Explain evaporation, distillation, crystallisation, chromatography and centrifugation and relate them to everyday and Indian
+            traditional practices
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-science-ch05
+    number: 5
+    title: Force and Laws of Motion
+    unit: "Unit III: Motion, Force, Work and Sound"
+    topics:
+      - id: cbse-9-science-ch05-t01
+        title: Balanced and unbalanced forces; friction
+        learning_outcomes:
+          - Identify balanced and unbalanced forces and explain the role of friction
+      - id: cbse-9-science-ch05-t02
+        title: Newton's first law and inertia
+        learning_outcomes:
+          - State and explain the first law with examples
+      - id: cbse-9-science-ch05-t03
+        title: Newton's second law; momentum
+        learning_outcomes:
+          - Apply F = ma and define the newton
+      - id: cbse-9-science-ch05-t04
+        title: Newton's third law
+        learning_outcomes:
+          - Apply the third law to everyday situations
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-science-ch06
+    number: 6
+    title: Work, Energy and Simple Machines
+    unit: "Unit III: Motion, Force, Work and Sound"
+    topics:
+      - id: cbse-9-science-ch06-t01
+        title: Work done by a force
+        learning_outcomes:
+          - Calculate work done and identify positive, negative and zero work
+      - id: cbse-9-science-ch06-t02
+        title: Kinetic and potential energy; work–energy theorem
+        learning_outcomes:
+          - Derive and use expressions for kinetic and potential energy and state the work–energy theorem
+      - id: cbse-9-science-ch06-t03
+        title: Conservation of energy and power
+        learning_outcomes:
+          - Apply conservation of mechanical energy and calculate power
+      - id: cbse-9-science-ch06-t04
+        title: Simple machines and mechanical advantage
+        learning_outcomes:
+          - Calculate mechanical advantage of levers and pulleys
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-science-ch07
+    number: 7
+    title: Structure of an Atom
+    unit: "Unit II: Matter – Its Nature and Behaviour"
+    topics:
+      - id: cbse-9-science-ch07-t01
+        title: Subatomic particles and atomic models
+        learning_outcomes:
+          - Describe Thomson, Rutherford and Bohr models and their limitations
+      - id: cbse-9-science-ch07-t02
+        title: Distribution of electrons; valency
+        learning_outcomes:
+          - Write electron distributions and determine valency of the first 20 elements
+      - id: cbse-9-science-ch07-t03
+        title: Atomic number, mass number, isotopes and isobars
+        learning_outcomes:
+          - Calculate protons, neutrons and electrons and give uses of isotopes
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-science-ch08
+    number: 8
+    title: Atoms and Molecules
+    unit: "Unit II: Matter – Its Nature and Behaviour"
+    topics:
+      - id: cbse-9-science-ch08-t01
+        title: Laws of chemical combination
+        learning_outcomes:
+          - State and verify the laws of conservation of mass and constant proportions
+      - id: cbse-9-science-ch08-t02
+        title: Dalton's atomic theory
+        learning_outcomes:
+          - Explain the postulates of Dalton's theory
+      - id: cbse-9-science-ch08-t03
+        title: Molecules, ions and chemical formulae
+        learning_outcomes:
+          - Write formulae of ionic compounds using valency and polyatomic ions
+      - id: cbse-9-science-ch08-t04
+        title: Molecular mass and formula unit mass
+        learning_outcomes:
+          - Calculate molecular and formula unit masses
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-science-ch09
+    number: 9
+    title: Sound
+    unit: "Unit III: Motion, Force, Work and Sound"
+    topics:
+      - id: cbse-9-science-ch09-t01
+        title: Production and propagation of sound
+        learning_outcomes:
+          - Explain that sound is produced by vibrations and travels as a longitudinal wave needing a medium
+      - id: cbse-9-science-ch09-t02
+        title: Characteristics of sound waves
+        learning_outcomes:
+          - Relate frequency, time period, amplitude and speed and derive v = fλ
+      - id: cbse-9-science-ch09-t03
+        title: Human perception of sound
+        learning_outcomes:
+          - Explain pitch, loudness, audible range, infrasound and ultrasound
+      - id: cbse-9-science-ch09-t04
+        title: Reflection of sound, echo and echolocation
+        learning_outcomes:
+          - Apply reflection of sound to echo and echolocation; mention C. V. Raman's work on musical instruments
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-science-ch10
+    number: 10
+    title: Reproduction
+    unit: "Unit I: World of Living"
+    topics:
+      - id: cbse-9-science-ch10-t01
+        title: Modes of reproduction
+        learning_outcomes:
+          - Distinguish asexual and sexual reproduction with examples
+      - id: cbse-9-science-ch10-t02
+        title: Sexual reproduction in plants
+        learning_outcomes:
+          - Describe pollination and fertilisation and distinguish ovule/seed and ovary/fruit
+      - id: cbse-9-science-ch10-t03
+        title: Sexual reproduction in humans
+        learning_outcomes:
+          - Describe male and female reproductive organs
+      - id: cbse-9-science-ch10-t04
+        title: Reproductive health and adolescence
+        learning_outcomes:
+          - Explain reproductive health and hygiene during adolescence
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-science-ch11
+    number: 11
+    title: Diversity
+    unit: "Unit I: World of Living"
+    topics:
+      - id: cbse-9-science-ch11-t01
+        title: Importance of classification; five-kingdom classification
+        learning_outcomes:
+          - Classify organisms into five kingdoms using cell type, body organisation and nutrition
+      - id: cbse-9-science-ch11-t02
+        title: Major divisions of plants and animals
+        learning_outcomes:
+          - Identify major groups of plants and animals with examples
+      - id: cbse-9-science-ch11-t03
+        title: Binomial nomenclature
+        learning_outcomes:
+          - Apply the rules of binomial nomenclature
+      - id: cbse-9-science-ch11-t04
+        title: "Acellular entities: viruses; ecological roles of organisms"
+        learning_outcomes:
+          - Explain why viruses are not classified in kingdoms and discuss ecological roles
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-science-ch12
+    number: 12
+    title: "Earth as a System: Energy, Matter and Life"
+    unit: "Unit IV: Earth as a System"
+    topics:
+      - id: cbse-9-science-ch12-t01
+        title: Earth as interconnected spheres
+        learning_outcomes:
+          - Identify the atmosphere, hydrosphere, geosphere, cryosphere and biosphere and their interactions
+      - id: cbse-9-science-ch12-t02
+        title: "Solar energy: nature, spectrum and interaction with Earth"
+        learning_outcomes:
+          - Explain how solar radiation warms the Earth and how latitude and tilt affect heating
+      - id: cbse-9-science-ch12-t03
+        title: Biogeochemical cycles
+        learning_outcomes:
+          - Explain carbon, nitrogen and water cycles
+      - id: cbse-9-science-ch12-t04
+        title: Human impact on Earth systems
+        learning_outcomes:
+          - Describe human impacts on cycles and climate
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

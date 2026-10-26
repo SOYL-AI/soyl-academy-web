@@ -1,0 +1,325 @@
+# CBSE Class 10 Mathematics, 2026-27. One syllabus for Mathematics Standard (041) and Mathematics Basic (241);
+# the two differ only in the board paper (question difficulty / competency mix). Chapter numbers follow the
+# rationalised NCERT "Mathematics – Textbook for Class X" (14 chapters).
+subject_id: cbse-10-mathematics
+academic_year: "2026-27"
+source_status: verified
+sources: [cbse-x-mathematics-2026-27, cbse-secondary-curriculum-2026-27, cbse-two-board-exams-x-2026, cbse-sqp-x-2026-27, ncert-textbooks-secondary]
+exam_notes: >-
+  Theory 80 marks (3 hours) + internal assessment 20 (pen-paper test and multiple assessment 5+5, portfolio 5,
+  lab practical 5). Same syllabus for Standard (041) and Basic (241). Standard paper competency mix:
+  remembering/understanding 54%, applying 24%, analysing/evaluating/creating 22%. Basic paper: 75% / 15% / 10%.
+  The 2026-27 Class X cohort may still choose Basic; the Basic/Standard split is discontinued for later cohorts.
+  Two board exams for Class 10 from 2026: main exam in February (compulsory) and optional second exam in May
+  for improvement; the better score counts.
+units:
+  - name: "Unit I: Number Systems"
+    marks: 6
+  - name: "Unit II: Algebra"
+    marks: 20
+  - name: "Unit III: Coordinate Geometry"
+    marks: 6
+  - name: "Unit IV: Geometry"
+    marks: 15
+  - name: "Unit V: Trigonometry"
+    marks: 12
+  - name: "Unit VI: Mensuration"
+    marks: 10
+  - name: "Unit VII: Statistics and Probability"
+    marks: 11
+chapters:
+  - id: cbse-10-mathematics-ch01
+    number: 1
+    title: "Real Numbers"
+    unit: "Unit I: Number Systems"
+    topics:
+      - id: cbse-10-mathematics-ch01-t01
+        title: "Fundamental Theorem of Arithmetic"
+        learning_outcomes:
+          - "Express a composite number as a product of primes and state why the factorisation is unique"
+      - id: cbse-10-mathematics-ch01-t02
+        title: "HCF and LCM using prime factorisation"
+        learning_outcomes:
+          - "Find HCF and LCM of two or three numbers by prime factorisation and verify HCF × LCM = product for two numbers"
+          - "Solve word problems (e.g. bells ringing together, tiling) using HCF and LCM"
+      - id: cbse-10-mathematics-ch01-t03
+        title: "Proofs of irrationality"
+        learning_outcomes:
+          - "Prove by contradiction that √2, √3 and √5 are irrational"
+          - "Prove that expressions such as 3 + 2√5 are irrational"
+    removed_topics:
+      - "Euclid's division lemma and algorithm"
+      - "Decimal expansions of rational numbers (terminating / non-terminating) — deleted in rationalisation"
+    literature_texts: []
+  - id: cbse-10-mathematics-ch02
+    number: 2
+    title: "Polynomials"
+    unit: "Unit II: Algebra"
+    topics:
+      - id: cbse-10-mathematics-ch02-t01
+        title: "Geometrical meaning of the zeroes of a polynomial"
+        learning_outcomes:
+          - "Read the number of zeroes of a polynomial from the graph of y = p(x)"
+      - id: cbse-10-mathematics-ch02-t02
+        title: "Relationship between zeroes and coefficients of a quadratic polynomial"
+        learning_outcomes:
+          - "Find the zeroes of a quadratic polynomial by factorisation and verify sum = -b/a and product = c/a"
+          - "Form a quadratic polynomial given the sum and product of its zeroes"
+    removed_topics:
+      - "Relationship between zeroes and coefficients of cubic polynomials"
+      - "Division algorithm for polynomials"
+    literature_texts: []
+  - id: cbse-10-mathematics-ch03
+    number: 3
+    title: "Pair of Linear Equations in Two Variables"
+    unit: "Unit II: Algebra"
+    topics:
+      - id: cbse-10-mathematics-ch03-t01
+        title: "Graphical method of solution"
+        learning_outcomes:
+          - "Plot a pair of linear equations and read the solution from the intersection point"
+          - "Classify a pair as consistent, inconsistent or dependent from its graph"
+      - id: cbse-10-mathematics-ch03-t02
+        title: "Algebraic conditions for the number of solutions"
+        learning_outcomes:
+          - "Use ratios of coefficients a1/a2, b1/b2, c1/c2 to decide whether a pair has a unique solution, no solution or infinitely many"
+      - id: cbse-10-mathematics-ch03-t03
+        title: "Substitution method"
+        learning_outcomes:
+          - "Solve a pair of linear equations by substitution"
+      - id: cbse-10-mathematics-ch03-t04
+        title: "Elimination method"
+        learning_outcomes:
+          - "Solve a pair of linear equations by elimination"
+      - id: cbse-10-mathematics-ch03-t05
+        title: "Situational problems"
+        learning_outcomes:
+          - "Model age, money, speed and number word problems as a pair of linear equations and interpret the solution"
+    removed_topics:
+      - "Cross-multiplication method"
+      - "Equations reducible to a pair of linear equations"
+    literature_texts: []
+  - id: cbse-10-mathematics-ch04
+    number: 4
+    title: "Quadratic Equations"
+    unit: "Unit II: Algebra"
+    topics:
+      - id: cbse-10-mathematics-ch04-t01
+        title: "Standard form of a quadratic equation"
+        learning_outcomes:
+          - "Identify whether an equation is quadratic and write it in the form ax² + bx + c = 0 (a ≠ 0)"
+      - id: cbse-10-mathematics-ch04-t02
+        title: "Solution by factorisation"
+        learning_outcomes:
+          - "Solve a quadratic equation by splitting the middle term"
+      - id: cbse-10-mathematics-ch04-t03
+        title: "Quadratic formula"
+        learning_outcomes:
+          - "Solve a quadratic equation using the quadratic formula"
+      - id: cbse-10-mathematics-ch04-t04
+        title: "Discriminant and nature of roots"
+        learning_outcomes:
+          - "Use the discriminant b² − 4ac to determine the nature of roots and find unknown coefficients for equal roots"
+      - id: cbse-10-mathematics-ch04-t05
+        title: "Situational problems on quadratic equations"
+        learning_outcomes:
+          - "Formulate and solve real-life problems (area, speed, age, consecutive numbers) leading to quadratic equations and reject inadmissible roots"
+    removed_topics:
+      - "Solution by completing the square"
+    literature_texts: []
+  - id: cbse-10-mathematics-ch05
+    number: 5
+    title: "Arithmetic Progressions"
+    unit: "Unit II: Algebra"
+    topics:
+      - id: cbse-10-mathematics-ch05-t01
+        title: "Identifying arithmetic progressions"
+        learning_outcomes:
+          - "Decide whether a list of numbers is an AP and find its first term and common difference"
+      - id: cbse-10-mathematics-ch05-t02
+        title: "nth term of an AP"
+        learning_outcomes:
+          - "Derive and use aₙ = a + (n − 1)d to find any term, the number of terms, or the term from the end"
+      - id: cbse-10-mathematics-ch05-t03
+        title: "Sum of the first n terms of an AP"
+        learning_outcomes:
+          - "Derive and use Sₙ = n/2 [2a + (n − 1)d] and Sₙ = n/2 (a + l)"
+      - id: cbse-10-mathematics-ch05-t04
+        title: "Applications of AP in daily life"
+        learning_outcomes:
+          - "Solve savings, instalment and arrangement problems using AP formulas"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-mathematics-ch06
+    number: 6
+    title: "Triangles"
+    unit: "Unit IV: Geometry"
+    topics:
+      - id: cbse-10-mathematics-ch06-t01
+        title: "Similar figures"
+        learning_outcomes:
+          - "Distinguish congruent and similar figures with examples and counter-examples"
+      - id: cbse-10-mathematics-ch06-t02
+        title: "Basic Proportionality Theorem and its converse"
+        learning_outcomes:
+          - "Prove the Basic Proportionality (Thales) Theorem"
+          - "Apply the theorem and its converse (statement only) to find lengths and prove lines parallel"
+      - id: cbse-10-mathematics-ch06-t03
+        title: "Criteria for similarity of triangles (AAA/AA, SSS, SAS)"
+        learning_outcomes:
+          - "State the AA, SSS and SAS similarity criteria (without proof) and use them to prove two triangles similar"
+          - "Use similarity to find unknown sides and solve shadow/height problems"
+    removed_topics:
+      - "Areas of similar triangles"
+      - "Pythagoras theorem and its converse (proofs)"
+    literature_texts: []
+  - id: cbse-10-mathematics-ch07
+    number: 7
+    title: "Coordinate Geometry"
+    unit: "Unit III: Coordinate Geometry"
+    topics:
+      - id: cbse-10-mathematics-ch07-t01
+        title: "Distance formula"
+        learning_outcomes:
+          - "Find the distance between two points and use it to test collinearity or classify a triangle/quadrilateral"
+      - id: cbse-10-mathematics-ch07-t02
+        title: "Section formula (internal division)"
+        learning_outcomes:
+          - "Find the coordinates of a point dividing a segment internally in a given ratio, including the midpoint"
+          - "Find the ratio in which a point or an axis divides a given segment"
+    removed_topics:
+      - "Area of a triangle using coordinates"
+    literature_texts: []
+  - id: cbse-10-mathematics-ch08
+    number: 8
+    title: "Introduction to Trigonometry"
+    unit: "Unit V: Trigonometry"
+    topics:
+      - id: cbse-10-mathematics-ch08-t01
+        title: "Trigonometric ratios of an acute angle"
+        learning_outcomes:
+          - "Define sine, cosine, tangent, cosecant, secant and cotangent for an acute angle of a right triangle and justify that they are well defined"
+          - "Find all ratios given one ratio"
+      - id: cbse-10-mathematics-ch08-t02
+        title: "Trigonometric ratios of specific angles (0°, 30°, 45°, 60°, 90°)"
+        learning_outcomes:
+          - "Recall and use the values of trigonometric ratios at standard angles to evaluate expressions"
+      - id: cbse-10-mathematics-ch08-t03
+        title: "Trigonometric identities"
+        learning_outcomes:
+          - "Prove sin²A + cos²A = 1 and derive the related identities with sec/tan and cosec/cot"
+          - "Prove simple identities using these results"
+    removed_topics:
+      - "Trigonometric ratios of complementary angles"
+    literature_texts: []
+  - id: cbse-10-mathematics-ch09
+    number: 9
+    title: "Some Applications of Trigonometry"
+    unit: "Unit V: Trigonometry"
+    topics:
+      - id: cbse-10-mathematics-ch09-t01
+        title: "Angles of elevation and depression"
+        learning_outcomes:
+          - "Identify angles of elevation and depression in a described situation and draw the figure"
+      - id: cbse-10-mathematics-ch09-t02
+        title: "Heights and distances problems"
+        learning_outcomes:
+          - "Solve height-and-distance problems involving at most two right triangles and angles of 30°, 45° and 60°"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-mathematics-ch10
+    number: 10
+    title: "Circles"
+    unit: "Unit IV: Geometry"
+    topics:
+      - id: cbse-10-mathematics-ch10-t01
+        title: "Tangent to a circle"
+        learning_outcomes:
+          - "Distinguish secant and tangent and state the number of tangents from a point inside, on and outside a circle"
+      - id: cbse-10-mathematics-ch10-t02
+        title: "Tangent is perpendicular to the radius at the point of contact"
+        learning_outcomes:
+          - "Prove that the tangent at any point of a circle is perpendicular to the radius through the point of contact"
+      - id: cbse-10-mathematics-ch10-t03
+        title: "Lengths of tangents from an external point"
+        learning_outcomes:
+          - "Prove that tangents drawn from an external point are equal in length"
+          - "Apply both theorems to find lengths and angles, including quadrilaterals circumscribing a circle"
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-mathematics-ch11
+    number: 11
+    title: "Areas Related to Circles"
+    unit: "Unit VI: Mensuration"
+    topics:
+      - id: cbse-10-mathematics-ch11-t01
+        title: "Area and arc length of a sector"
+        learning_outcomes:
+          - "Calculate the area of a sector and the length of an arc for a given central angle"
+      - id: cbse-10-mathematics-ch11-t02
+        title: "Area of a segment of a circle"
+        learning_outcomes:
+          - "Calculate the area of minor and major segments for central angles of 60°, 90° and 120°"
+      - id: cbse-10-mathematics-ch11-t03
+        title: "Problems on areas and perimeters of plane figures with circles"
+        learning_outcomes:
+          - "Solve problems on shaded regions combining sectors, segments, triangles and squares"
+    removed_topics:
+      - "Areas of combinations of plane figures (separate section deleted; simple combinations remain within problems)"
+    literature_texts: []
+  - id: cbse-10-mathematics-ch12
+    number: 12
+    title: "Surface Areas and Volumes"
+    unit: "Unit VI: Mensuration"
+    topics:
+      - id: cbse-10-mathematics-ch12-t01
+        title: "Surface area of a combination of solids"
+        learning_outcomes:
+          - "Visualise and calculate the surface area of a combination of any two of cube, cuboid, sphere, hemisphere, cylinder and cone"
+      - id: cbse-10-mathematics-ch12-t02
+        title: "Volume of a combination of solids"
+        learning_outcomes:
+          - "Calculate the volume of a combination of any two standard solids in real-life objects such as tents, capsules and toys"
+    removed_topics:
+      - "Conversion of solid from one shape to another"
+      - "Frustum of a cone"
+    literature_texts: []
+  - id: cbse-10-mathematics-ch13
+    number: 13
+    title: "Statistics"
+    unit: "Unit VII: Statistics and Probability"
+    topics:
+      - id: cbse-10-mathematics-ch13-t01
+        title: "Mean of grouped data"
+        learning_outcomes:
+          - "Compute the mean of a grouped frequency distribution by direct, assumed-mean and step-deviation methods"
+      - id: cbse-10-mathematics-ch13-t02
+        title: "Mode of grouped data"
+        learning_outcomes:
+          - "Compute the mode of grouped data using the modal-class formula (bimodal cases avoided)"
+      - id: cbse-10-mathematics-ch13-t03
+        title: "Median of grouped data"
+        learning_outcomes:
+          - "Compute the median of grouped data using cumulative frequency and the median formula"
+          - "Find a missing frequency given the mean or median"
+    removed_topics:
+      - "Graphical representation of cumulative frequency distribution (ogives)"
+    literature_texts: []
+  - id: cbse-10-mathematics-ch14
+    number: 14
+    title: "Probability"
+    unit: "Unit VII: Statistics and Probability"
+    topics:
+      - id: cbse-10-mathematics-ch14-t01
+        title: "Classical definition of probability"
+        learning_outcomes:
+          - "Define the theoretical probability of an event and state that 0 ≤ P(E) ≤ 1 and P(E) + P(not E) = 1"
+      - id: cbse-10-mathematics-ch14-t02
+        title: "Simple problems on probability"
+        learning_outcomes:
+          - "Find probabilities for coins, dice, playing cards, numbered discs and bag-of-balls situations"
+    removed_topics: []
+    literature_texts: []
+removed_topics:
+  - "Constructions (chapter deleted)"
+  - "Euclid's division lemma; cross-multiplication; completing the square; area of triangle in coordinate geometry; areas of similar triangles; Pythagoras theorem proofs; complementary-angle ratios; frustum; conversion of solids; ogives"

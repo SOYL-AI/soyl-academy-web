@@ -1,0 +1,102 @@
+# CBSE Class 11 Informatics Practices (065), 2026-27.
+subject_id: cbse-11-informatics-practices
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-informatics-practices-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+  - ncert-textbooks-secondary
+exam_notes: "Class 11 has no board exam: school annual examination. Theory 70 + practical 30. Units: 10, 25, 30, 5."
+units:
+  - name: "Unit 1: Introduction to Computer System"
+    marks: 10
+  - name: "Unit 2: Introduction to Python"
+    marks: 25
+  - name: "Unit 3: Database Concepts and SQL"
+    marks: 30
+  - name: "Unit 4: Introduction to Emerging Trends"
+    marks: 5
+chapters:
+  - id: cbse-11-informatics-practices-ch01
+    number: 1
+    title: Introduction to Computer System
+    unit: "Unit 1: Introduction to Computer System"
+    topics:
+      - id: cbse-11-informatics-practices-ch01-t01
+        title: Evolution and components of computers
+        learning_outcomes:
+          - Describe components and evolution of computing
+      - id: cbse-11-informatics-practices-ch01-t02
+        title: Memory and software
+        learning_outcomes:
+          - Classify memory and software types
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-informatics-practices-ch02
+    number: 2
+    title: Introduction to Python
+    unit: "Unit 2: Introduction to Python"
+    topics:
+      - id: cbse-11-informatics-practices-ch02-t01
+        title: "Python basics: data types, operators, expressions and statements"
+        learning_outcomes:
+          - Write simple Python programs
+      - id: cbse-11-informatics-practices-ch02-t02
+        title: Flow of control
+        learning_outcomes:
+          - Use conditional and looping statements
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-informatics-practices-ch03
+    number: 3
+    title: Lists and Dictionaries in Python
+    unit: "Unit 2: Introduction to Python"
+    topics:
+      - id: cbse-11-informatics-practices-ch03-t01
+        title: Lists
+        learning_outcomes:
+          - Create and manipulate lists
+      - id: cbse-11-informatics-practices-ch03-t02
+        title: Dictionaries
+        learning_outcomes:
+          - Create and manipulate dictionaries
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-informatics-practices-ch04
+    number: 4
+    title: Database Concepts
+    unit: "Unit 3: Database Concepts and SQL"
+    topics:
+      - id: cbse-11-informatics-practices-ch04-t01
+        title: Database concepts and relational model
+        learning_outcomes:
+          - Explain DBMS, relations, keys and constraints
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-informatics-practices-ch05
+    number: 5
+    title: Structured Query Language
+    unit: "Unit 3: Database Concepts and SQL"
+    topics:
+      - id: cbse-11-informatics-practices-ch05-t01
+        title: DDL and DML commands
+        learning_outcomes:
+          - Create tables and insert, update and delete data
+      - id: cbse-11-informatics-practices-ch05-t02
+        title: SELECT queries
+        learning_outcomes:
+          - Write queries with WHERE, ORDER BY, DISTINCT, BETWEEN, IN, LIKE and NULL
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-informatics-practices-ch06
+    number: 6
+    title: Introduction to Emerging Trends
+    unit: "Unit 4: Introduction to Emerging Trends"
+    topics:
+      - id: cbse-11-informatics-practices-ch06-t01
+        title: AI, machine learning, NLP, immersive experiences, robotics, big data, IoT, cloud and blockchain
+        learning_outcomes:
+          - Describe emerging technologies and their applications
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

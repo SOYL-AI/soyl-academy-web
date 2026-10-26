@@ -1,0 +1,207 @@
+# CBSE Class 12 Applied Mathematics (241), 2026-27. Eight units; Unit I marks derived as 80 minus the printed unit marks.
+subject_id: cbse-12-applied-mathematics
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-applied-mathematics-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+  - cbse-sqp-xii-2026-27
+  - cbse-sqp-notification-2026-27
+  - ncert-textbooks-secondary
+exam_notes: >-
+  Theory 80 marks (3 hours) + internal assessment 20. Unit marks: I 11 (derived), II 10, III 15, IV 10, V 5, VI 6, VII 15, VIII 8. Cannot be
+  taken with Mathematics (041). Single board exam (February-March 2027).
+units:
+  - name: "Unit I: Numbers, Quantification and Numerical Applications"
+    marks: 11
+  - name: "Unit II: Algebra"
+    marks: 10
+  - name: "Unit III: Calculus"
+    marks: 15
+  - name: "Unit IV: Probability Distributions"
+    marks: 10
+  - name: "Unit V: Inferential Statistics"
+    marks: 5
+  - name: "Unit VI: Time-based Data"
+    marks: 6
+  - name: "Unit VII: Financial Mathematics"
+    marks: 15
+  - name: "Unit VIII: Linear Programming"
+    marks: 8
+chapters:
+  - id: cbse-12-applied-mathematics-ch01
+    number: 1
+    title: Numbers, Quantification and Numerical Applications
+    unit: "Unit I: Numbers, Quantification and Numerical Applications"
+    topics:
+      - id: cbse-12-applied-mathematics-ch01-t01
+        title: Modulo arithmetic and congruence modulo
+        learning_outcomes:
+          - Compute a mod n and apply congruence to calendar and clock problems
+      - id: cbse-12-applied-mathematics-ch01-t02
+        title: Alligation and mixture
+        learning_outcomes:
+          - Solve mixture problems using the rule of alligation
+      - id: cbse-12-applied-mathematics-ch01-t03
+        title: "Numerical problems: boats and streams, pipes and cisterns, races and games"
+        learning_outcomes:
+          - Model and solve real-life numerical problems
+      - id: cbse-12-applied-mathematics-ch01-t04
+        title: Numerical inequalities
+        learning_outcomes:
+          - Apply AM-GM and other inequalities in numerical contexts
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-applied-mathematics-ch02
+    number: 2
+    title: Matrices and Determinants
+    unit: "Unit II: Algebra"
+    topics:
+      - id: cbse-12-applied-mathematics-ch02-t01
+        title: "Matrices: types, equality and algebra of matrices"
+        learning_outcomes:
+          - Perform matrix operations and identify types of matrices
+      - id: cbse-12-applied-mathematics-ch02-t02
+        title: Determinants and inverse of a matrix
+        learning_outcomes:
+          - Evaluate determinants and find inverses
+      - id: cbse-12-applied-mathematics-ch02-t03
+        title: Solving systems of simultaneous equations
+        learning_outcomes:
+          - Solve systems using the inverse matrix and Cramer's rule in business contexts
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-applied-mathematics-ch03
+    number: 3
+    title: "Calculus: Differentiation and its Applications"
+    unit: "Unit III: Calculus"
+    topics:
+      - id: cbse-12-applied-mathematics-ch03-t01
+        title: Higher-order derivatives
+        learning_outcomes:
+          - Find second-order derivatives
+      - id: cbse-12-applied-mathematics-ch03-t02
+        title: Rate of change; marginal cost and marginal revenue
+        learning_outcomes:
+          - Calculate marginal cost and revenue and interpret them
+      - id: cbse-12-applied-mathematics-ch03-t03
+        title: Increasing and decreasing functions; maxima and minima
+        learning_outcomes:
+          - Optimise cost, revenue and profit functions
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-applied-mathematics-ch04
+    number: 4
+    title: "Calculus: Integration and Differential Equations"
+    unit: "Unit III: Calculus"
+    topics:
+      - id: cbse-12-applied-mathematics-ch04-t01
+        title: Indefinite integrals as a family of curves; definite integrals as area
+        learning_outcomes:
+          - Evaluate integrals by substitution, partial fractions and parts
+      - id: cbse-12-applied-mathematics-ch04-t02
+        title: "Applications: consumer and producer surplus"
+        learning_outcomes:
+          - Calculate consumer and producer surplus
+      - id: cbse-12-applied-mathematics-ch04-t03
+        title: "Differential equations: formulation and solution"
+        learning_outcomes:
+          - Solve variable-separable equations and model growth and decay
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-applied-mathematics-ch05
+    number: 5
+    title: Probability Distributions
+    unit: "Unit IV: Probability Distributions"
+    topics:
+      - id: cbse-12-applied-mathematics-ch05-t01
+        title: Probability distribution, expectation and variance
+        learning_outcomes:
+          - Find the mean and variance of a discrete random variable
+      - id: cbse-12-applied-mathematics-ch05-t02
+        title: Binomial distribution
+        learning_outcomes:
+          - Apply the binomial distribution to Bernoulli trials
+      - id: cbse-12-applied-mathematics-ch05-t03
+        title: Poisson distribution
+        learning_outcomes:
+          - Apply the Poisson distribution to rare events
+      - id: cbse-12-applied-mathematics-ch05-t04
+        title: Normal distribution
+        learning_outcomes:
+          - Use standard normal tables to find probabilities
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-applied-mathematics-ch06
+    number: 6
+    title: Inferential Statistics
+    unit: "Unit V: Inferential Statistics"
+    topics:
+      - id: cbse-12-applied-mathematics-ch06-t01
+        title: Population and sample; parameter and statistic
+        learning_outcomes:
+          - Distinguish population/sample and parameter/statistic and the idea of sampling
+      - id: cbse-12-applied-mathematics-ch06-t02
+        title: "t-test: one sample and two independent groups"
+        learning_outcomes:
+          - Perform and interpret a t-test
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-applied-mathematics-ch07
+    number: 7
+    title: Time-based Data
+    unit: "Unit VI: Time-based Data"
+    topics:
+      - id: cbse-12-applied-mathematics-ch07-t01
+        title: Time series and its components
+        learning_outcomes:
+          - Identify secular trend, seasonal, cyclical and irregular components
+      - id: cbse-12-applied-mathematics-ch07-t02
+        title: "Measuring trends: moving averages and least squares"
+        learning_outcomes:
+          - Fit a trend by moving averages and the method of least squares
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-applied-mathematics-ch08
+    number: 8
+    title: Financial Mathematics
+    unit: "Unit VII: Financial Mathematics"
+    topics:
+      - id: cbse-12-applied-mathematics-ch08-t01
+        title: Perpetuity and sinking funds
+        learning_outcomes:
+          - Calculate present value of perpetuity and sinking fund instalments
+      - id: cbse-12-applied-mathematics-ch08-t02
+        title: Valuation of bonds
+        learning_outcomes:
+          - Calculate the value of a bond
+      - id: cbse-12-applied-mathematics-ch08-t03
+        title: EMI calculation
+        learning_outcomes:
+          - Calculate EMI by the flat-rate and reducing-balance methods
+      - id: cbse-12-applied-mathematics-ch08-t04
+        title: Compound annual growth rate
+        learning_outcomes:
+          - Calculate and interpret CAGR
+      - id: cbse-12-applied-mathematics-ch08-t05
+        title: Linear method of depreciation
+        learning_outcomes:
+          - Calculate depreciation by the linear method
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-applied-mathematics-ch09
+    number: 9
+    title: Linear Programming
+    unit: "Unit VIII: Linear Programming"
+    topics:
+      - id: cbse-12-applied-mathematics-ch09-t01
+        title: Formulation and terminology
+        learning_outcomes:
+          - Formulate LPPs with up to three non-trivial constraints
+      - id: cbse-12-applied-mathematics-ch09-t02
+        title: Graphical method; feasible and infeasible regions and solutions
+        learning_outcomes:
+          - Solve LPPs graphically and interpret bounded and unbounded regions
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

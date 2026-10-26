@@ -1,0 +1,15 @@
+{
+  "name": "@soyl/content-templates",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Prompt templates and hand-authored exemplar chapters. The test validates every exemplar against the shared content schemas and editorial targets.",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@soyl/shared": "*",
+    "js-yaml": "^4.1.0",
+    "vitest": "^5.0.5"
+  }
+}

@@ -213,7 +213,7 @@ Indexes on every foreign key and on hot lookups (`questions(chapter_id,status,di
 
 ```
 catalog/
-  subjects.yaml                       # every board × class × subject, with tier and wave
+  cbse/subjects.yaml, cisce/subjects.yaml   # every board × class × subject, with tier and wave (D-020)
   cbse/10/science/syllabus.yaml       # chapters → topics → learning outcomes (2026-27)
   cbse/10/science/blueprints/board.yaml
   cbse/10/science/blueprints/chapter-test.yaml

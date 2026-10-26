@@ -8,6 +8,7 @@ import {
   Question,
   SubjectsFile,
   SyllabusFile,
+  TestDefinition,
   chapterId,
   examFor,
   parseChapterId,
@@ -202,5 +203,32 @@ describe('Blueprint', () => {
     };
     expect(Blueprint.safeParse(bp).success).toBe(true);
     expect(Blueprint.safeParse({ ...bp, total_marks: 22 }).success).toBe(false);
+  });
+});
+
+describe('TestDefinition', () => {
+  const item = (id: string, marks: number, choice_group: string | null = null) => ({ question_id: id, question_version: 1, marks, choice_group });
+  const test = {
+    id: 't_cbse_10_science_ch01_short',
+    kind: 'chapter',
+    paper_type: 'chapter-test-short',
+    blueprint_id: 'cbse-10-default-chapter-test-short',
+    title: 'Chemical Reactions — short test',
+    subject_id: 'cbse-10-science',
+    chapter_ids: ['cbse-10-science-ch01'],
+    duration_min: 30,
+    total_marks: 7,
+    sections: [
+      { id: 'A', title: 'Objective', items: [item('q1', 1), item('q2', 1), item('q3', 1)] },
+      { id: 'B', title: 'Short', items: [item('q4', 2, 'g1'), item('q5', 2, 'g1'), item('q6', 2, 'g1')], choice_groups: [{ id: 'g1', attempt: 2 }] },
+    ],
+  };
+  it('counts attempted marks with internal choice', () => {
+    expect(TestDefinition.safeParse(test).success).toBe(true);
+    expect(TestDefinition.safeParse({ ...test, total_marks: 9 }).success).toBe(false);
+  });
+  it('rejects repeated questions', () => {
+    const dup = { ...test, sections: [{ ...test.sections[0]!, items: [item('q1', 1), item('q1', 1), item('q3', 1)] }, test.sections[1]!] };
+    expect(TestDefinition.safeParse(dup).success).toBe(false);
   });
 });
