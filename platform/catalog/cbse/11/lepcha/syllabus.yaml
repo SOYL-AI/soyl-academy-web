@@ -1,0 +1,199 @@
+# CBSE Class 11 Lepcha (126), 2026-27. Sections, marks, grammar items and lessons as printed in the CBSE 2026-27 Lepcha
+# Classes XI-XII syllabus (Class XI pages). Reference books (Education Department, Government of Sikkim): Ringmom
+# Chhyogyu (poems), Kongchen Punol (prose), Thongoam Kat Nahan (drama), Mutanchi Ringthyum un Ringchuktoam (grammar).
+# CBSE prints titles in a legacy Lepcha font that does not extract as Unicode, with a Roman transliteration beside each.
+# CBSE prints every Lepcha term and lesson title only in Roman transliteration; titles here keep CBSE's romanisation
+# (the script CBSE actually uses) because SOYL could not verify native-script (Lepcha / Rong) spellings. Native-script titles
+# are to be added in language review (see the M1 languages handoff). Lesson titles only; no text is reproduced (CONTEXT §8).
+subject_id: cbse-11-lepcha
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-lepcha-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+exam_notes: >-
+  Theory 80 marks (3 hours) + internal assessment 20 (periodic assessment 5, multiple assessment 5, portfolio 5, subject
+  enrichment 5). A Unseen comprehension 10: four passages, attempt two (questions on understanding, knowledge and
+  thinking skills). B Grammar 15. C Prose and poetry 25. D-I Drama, Thongoam Kat Nahan scenes I-VII 15. D-II Writing 15:
+  essay writing, expansion of a passage, letter writing (formal/informal). Class XI is examined by the school (no board
+  exam).
+units:
+  - name: A - Unseen comprehension
+    marks: 10
+  - name: B - Grammar (Mutanchi Rong Ringthyum)
+    marks: 15
+  - name: C - Prose and poetry (Kongchen Punol, Ringmom Chhyogyu)
+    marks: 25
+  - name: D-I - Drama (Thongoam Kat Nahan)
+    marks: 15
+  - name: D-II - Writing skills
+    marks: 15
+chapters:
+  - id: cbse-11-lepcha-ch01
+    number: 1
+    title: Unseen comprehension
+    title_en: Unseen comprehension
+    unit: A - Unseen comprehension
+    topics:
+      - id: cbse-11-lepcha-ch01-t01
+        title: Unseen passages
+        title_en: Unseen passages (attempt two of four)
+        learning_outcomes:
+          - Read unseen Lepcha passages and answer questions on understanding, reasoning and higher-order thinking
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-lepcha-ch02
+    number: 2
+    title: Mutanchi Rong Ringthyum
+    title_en: 'Grammar: Parts of speech, Numeration, Syntax, Voice'
+    unit: B - Grammar (Mutanchi Rong Ringthyum)
+    topics:
+      - id: cbse-11-lepcha-ch02-t01
+        title: Parts of speech
+        title_en: Parts of speech
+        learning_outcomes:
+          - Explain and apply parts of speech in Lepcha with examples
+      - id: cbse-11-lepcha-ch02-t02
+        title: Numeration
+        title_en: Numeration
+        learning_outcomes:
+          - Explain and apply numeration in Lepcha with examples
+      - id: cbse-11-lepcha-ch02-t03
+        title: Syntax
+        title_en: Syntax
+        learning_outcomes:
+          - Explain and apply syntax in Lepcha with examples
+      - id: cbse-11-lepcha-ch02-t04
+        title: Voice
+        title_en: Voice
+        learning_outcomes:
+          - Explain and apply voice in Lepcha with examples
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-lepcha-ch03
+    number: 3
+    title: Kongchen Punol / Ringmom Chhyogyu I
+    title_en: Prose and poetry lessons 1-5
+    unit: C - Prose and poetry (Kongchen Punol, Ringmom Chhyogyu)
+    topics:
+      - id: cbse-11-lepcha-ch03-t01
+        title: Vartou Sa Gyou Tong
+        title_en: Vartou Sa Gyou Tong
+        learning_outcomes:
+          - Summarise the lesson "Vartou Sa Gyou Tong" and answer short and long questions on its content and message
+      - id: cbse-11-lepcha-ch03-t02
+        title: Genthingsa sung
+        title_en: Genthingsa sung
+        learning_outcomes:
+          - Summarise the lesson "Genthingsa sung" and answer short and long questions on its content and message
+      - id: cbse-11-lepcha-ch03-t03
+        title: Denrey
+        title_en: Denrey
+        learning_outcomes:
+          - Summarise the lesson "Denrey" and answer short and long questions on its content and message
+      - id: cbse-11-lepcha-ch03-t04
+        title: Takley
+        title_en: Takley
+        learning_outcomes:
+          - Summarise the lesson "Takley" and answer short and long questions on its content and message
+      - id: cbse-11-lepcha-ch03-t05
+        title: Damsang dee Azum thotom sung
+        title_en: Damsang dee Azum thotom sung
+        learning_outcomes:
+          - >-
+            Summarise the lesson "Damsang dee Azum thotom sung" and answer short and long questions on its content and
+            message
+    removed_topics: []
+    literature_texts:
+      - title: Vartou Sa Gyou Tong
+        title_en: Vartou Sa Gyou Tong
+      - title: Genthingsa sung
+        title_en: Genthingsa sung
+      - title: Denrey
+        title_en: Denrey
+      - title: Takley
+        title_en: Takley
+      - title: Damsang dee Azum thotom sung
+        title_en: Damsang dee Azum thotom sung
+  - id: cbse-11-lepcha-ch04
+    number: 4
+    title: Kongchen Punol / Ringmom Chhyogyu II
+    title_en: Prose and poetry lessons 6-9
+    unit: C - Prose and poetry (Kongchen Punol, Ringmom Chhyogyu)
+    topics:
+      - id: cbse-11-lepcha-ch04-t01
+        title: Sohor kat sa ammak
+        title_en: Sohor kat sa ammak
+        learning_outcomes:
+          - Summarise the lesson "Sohor kat sa ammak" and answer short and long questions on its content and message
+      - id: cbse-11-lepcha-ch04-t02
+        title: Surong gongtok sakmagowungni
+        title_en: Surong gongtok sakmagowungni
+        learning_outcomes:
+          - >-
+            Summarise the lesson "Surong gongtok sakmagowungni" and answer short and long questions on its content and
+            message
+      - id: cbse-11-lepcha-ch04-t03
+        title: Kasu migit depka
+        title_en: Kasu migit depka
+        learning_outcomes:
+          - Summarise the lesson "Kasu migit depka" and answer short and long questions on its content and message
+      - id: cbse-11-lepcha-ch04-t04
+        title: Gonun hunmachuk
+        title_en: Gonun hunmachuk
+        learning_outcomes:
+          - Summarise the lesson "Gonun hunmachuk" and answer short and long questions on its content and message
+    removed_topics: []
+    literature_texts:
+      - title: Sohor kat sa ammak
+        title_en: Sohor kat sa ammak
+      - title: Surong gongtok sakmagowungni
+        title_en: Surong gongtok sakmagowungni
+      - title: Kasu migit depka
+        title_en: Kasu migit depka
+      - title: Gonun hunmachuk
+        title_en: Gonun hunmachuk
+  - id: cbse-11-lepcha-ch05
+    number: 5
+    title: Thongoam Kat Nahan (scenes I-VII)
+    title_en: 'Drama: Thongoam Kat Nahan, scenes I-VII'
+    unit: D-I - Drama (Thongoam Kat Nahan)
+    topics:
+      - id: cbse-11-lepcha-ch05-t01
+        title: Plot and scenes
+        title_en: Plot of scenes I-VII
+        learning_outcomes:
+          - Narrate the action of the prescribed scenes in order
+      - id: cbse-11-lepcha-ch05-t02
+        title: Characters and themes
+        title_en: Characters, dialogue and themes
+        learning_outcomes:
+          - Describe the main characters and explain the themes of the drama
+    removed_topics: []
+    literature_texts:
+      - title: Thongoam Kat Nahan
+        title_en: Thongoam Kat Nahan (drama), scenes I-VII
+  - id: cbse-11-lepcha-ch06
+    number: 6
+    title: Writing skills
+    title_en: Writing skills
+    unit: D-II - Writing skills
+    topics:
+      - id: cbse-11-lepcha-ch06-t01
+        title: Essay writing
+        title_en: Essay writing
+        learning_outcomes:
+          - 'Write in Lepcha: essay writing with correct format and organisation'
+      - id: cbse-11-lepcha-ch06-t02
+        title: Expansion of a passage
+        title_en: Expansion of a passage
+        learning_outcomes:
+          - 'Write in Lepcha: expansion of a passage with correct format and organisation'
+      - id: cbse-11-lepcha-ch06-t03
+        title: Letter writing (formal/informal)
+        title_en: Letter writing (formal/informal)
+        learning_outcomes:
+          - 'Write in Lepcha: letter writing (formal/informal) with correct format and organisation'
+    removed_topics: []
+    literature_texts: []
+removed_topics: []
