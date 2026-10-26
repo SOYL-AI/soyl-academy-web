@@ -14,9 +14,14 @@ export interface TextIssue {
   message: string;
 }
 
-/** Removes maths spans and inline code so `<` in `$a<b$` is not read as HTML. */
+/** Removes fenced code blocks (code-output stems): their content is code, not prose or maths. */
+export function stripFences(md: string): string {
+  return md.replace(/(^|\n)[ \t]*(```|~~~)[^\n]*\n[\s\S]*?\n[ \t]*\2[ \t]*(?=\n|$)/g, '$1 ');
+}
+
+/** Removes maths spans, fenced code and inline code so `<` in `$a<b$` is not read as HTML. */
 export function stripMathAndCode(md: string): string {
-  let out = md.replace(/`[^`]*`/g, ' ');
+  let out = stripFences(md).replace(/`[^`]*`/g, ' ');
   const { spans } = extractMath(out);
   for (const s of spans) out = out.replace(s.display ? `$$${s.tex}$$` : `$${s.tex}$`, ' ');
   return out;
@@ -63,7 +68,11 @@ const QUOTE_RE = /“([^”]*)”|"([^"]*)"|‘([^’]*)’|«([^»]*)»/g;
 
 const countWords = (s: string) => (s.trim() ? s.trim().split(/\s+/u).length : 0);
 
-/** Literature reproduction heuristic: long quotations and verse-like runs of short lines. */
+/**
+ * Literature reproduction heuristic: long quotations and verse-like runs of short lines.
+ * Quoted spans of LITERATURE.reviewQuotedWords (8)+ words are listed for a manual reproduction review
+ * (warning, as the Hindi exemplar validator did); over LITERATURE.maxQuotedWords (25) is an error.
+ */
 export function checkLiterature(text: string): TextIssue[] {
   const issues: TextIssue[] = [];
   for (const m of text.matchAll(QUOTE_RE)) {
@@ -71,6 +80,8 @@ export function checkLiterature(text: string): TextIssue[] {
     const n = countWords(inner);
     if (n > LITERATURE.maxQuotedWords)
       issues.push({ rule: 'literature.quote', severity: 'error', message: `quotes ${n} consecutive words (max ${LITERATURE.maxQuotedWords}); summarise instead of reproducing the text` });
+    else if (n >= LITERATURE.reviewQuotedWords)
+      issues.push({ rule: 'literature.quote-review', severity: 'warning', message: `quoted span of ${n} words ("${inner.trim().slice(0, 60)}…"): confirm it is SOYL's own sentence, not the text` });
   }
   const blockquote = text
     .split(/\r?\n/)

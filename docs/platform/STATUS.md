@@ -45,7 +45,7 @@ Single source of truth for progress (AGENTS.md §4.3). Updated by the Lead after
 | M1 | CBSE blueprints: 367 (board for every 10/12 subject bar 4 languages, May second-exam track, class defaults 7–12, family overrides) + 96 syllabus files (non-language Wave 1 complete) | curriculum-architect (CBSE-B) | `platform/curriculum-cbse/m1-blueprints` | `platform/catalog/cbse/` | **merged** | 184 blueprints unverified (defaults + unreadable SQPs) |
 | M1 | CBSE Wave 1 language syllabi (Class 10 + 12) | curriculum-architect (CBSE-L) | `platform/curriculum-cbse/m1-languages` | language syllabus dirs under `platform/catalog/cbse/{10,12}/` | in progress | — |
 | M1 (wave B) | API: Fastify app, auth (Better Auth: Google, phone OTP, email OTP), me, catalog, route policy, OpenAPI; worker skeleton | backend-api | `platform/backend-api/m1` | `platform/api/` except `ai/`, `billing/`; `platform/worker/` | in progress | — |
-| M1 (wave B) | Web: route group, platform layout + flag, login modal, guest mode + merge, API proxy route (ADR-005) | web-platform | `platform/web-platform/m1` | `app/(platform)/`, `components/platform/` (not `ui/`), `platform/shared/api-client/` | waits for backend-api contract | — |
+| M1 (wave B) | Web: route group, platform layout + flag, proxy route (ADR-005), login (Google, phone OTP, email OTP), guest mode + merge, catalog pages, /me | web-platform | `platform/web-platform/m1` | `app/(platform)/`, `components/platform/` (not `ui/`), `platform/shared/api-client/` | in progress (started on backend contract 551f4ba) | — |
 | M2 (content, early) | CBSE 10 Science ch02–ch05 hand-authored to exemplar standard (D-026) | subject-producer | `platform/subject-producer/cbse-10-science-a` | `platform/content/authored/science/` | in progress | — |
 
 ## Backlog (found at integration)
@@ -62,3 +62,11 @@ Single source of truth for progress (AGENTS.md §4.3). Updated by the Lead after
 
 ### Active (D-024 cap 5)
 backend-api (M1) · curriculum-cbse-languages (M1) · producer CBSE 10 Science ch02–05 · producer CBSE 10 Maths ch01–04 · pipeline-engineer M2 (contract v2 + stages 5–9)
+
+### CI evidence (GitHub Actions, real Postgres+pgvector / Redis containers)
+| Date | Commit | Run | Result |
+|---|---|---|---|
+| 2026-10-26 | `f65ca85` | platform-ci | **failure** — `@soyl/content-pipeline` arithmetic test depended on the mock plan's type mix (fixed in d19bf5e) |
+| 2026-10-26 | `d19bf5e` | [platform-ci 40293740542](https://github.com/SOYL-AI/soyl-academy-web/actions/runs/40293740542) | **success** — all 10 jobs (platform tests, web build, marketing differential regression, gitleaks, audit/trivy, bicep, image builds) |
+
+Process: after every integration the Lead checks the platform-ci run for the new `platform/main` head before the next merge.

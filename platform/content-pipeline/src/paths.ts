@@ -14,6 +14,10 @@ export interface PipelinePaths {
   fallbackTemplatesDir: string;
   stateDir: string;
   outDir: string;
+  /** Hand-authored production chapters (D-026): content/authored/<family>/<unit>/. */
+  authoredDir: string;
+  /** Owner-supplied reference texts for the originality stage (gitignored; may not exist). */
+  referenceDir: string;
 }
 
 export function defaultPaths(env: Record<string, string | undefined> = process.env): PipelinePaths {
@@ -23,6 +27,8 @@ export function defaultPaths(env: Record<string, string | undefined> = process.e
     fallbackTemplatesDir: path.join(PACKAGE_DIR, 'templates'),
     stateDir: env.CONTENT_PIPELINE_STATE_DIR ?? path.join(PACKAGE_DIR, '.state'),
     outDir: env.CONTENT_PIPELINE_OUT_DIR ?? path.join(PACKAGE_DIR, 'out'),
+    authoredDir: env.CONTENT_AUTHORED_DIR ?? path.join(PLATFORM_DIR, 'content', 'authored'),
+    referenceDir: env.CONTENT_REFERENCE_DIR ?? path.join(PLATFORM_DIR, 'catalog', 'sources', 'reference'),
   };
 }
 
