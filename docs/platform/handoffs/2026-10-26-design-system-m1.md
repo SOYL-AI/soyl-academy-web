@@ -36,7 +36,44 @@ git diff --stat origin/platform/main -- app/globals.css app/layout.tsx component
 
 Gallery by hand: `NEXT_PUBLIC_PLATFORM_ENABLED=true npm run dev`, open `http://localhost:3000/dev/ui`.
 
-RESULTS_PLACEHOLDER
+## Results (2026-10-26, Windows 11, Node 24.15, this branch)
+
+```
+npm run lint                     → eslint, no output (clean)
+npm run build                    → ✓ Compiled successfully; 34 static pages; ƒ /dev/ui
+npm run test:platform-ui         → Test Files 4 passed (4) · Tests 422 passed (422)
+npm run test:design-system -w @soyl/e2e   → 10 passed (2.2m)
+npm run marketing:regression -w @soyl/e2e → 48 passed (41.0s); Lighthouse mobile/desktop all ≥ baseline − 5
+    (4 suspected mobile drops re-measured: /students 93, /journal 93, /about 94, /contact 93, median of 10)
+    "marketing regression PASSED: no visual diffs, all routes as expected, Lighthouse within 5 points"
+    re-run on the final commit with --skip-lighthouse: 48 passed, PASSED
+git diff --stat origin/platform/main -- app/globals.css app/layout.tsx components/layout components/marketing components/home content lib next.config.ts tsconfig.json
+                                 → (empty)
+root lockfile vs origin/platform/main → { changed: 0, removed: 0, added: 215 }
+npm audit (root)                 → 3 high, all pre-existing (brace-expansion, source-map-js 1.2.1, zod 3.25.76); none in added packages
+npm audit (platform/)            → found 0 vulnerabilities
+```
+
+**Marketing bundles, byte level.** Built the branch with and without the platform UI files (moved aside):
+- marketing CSS (`/`, `/about`, `/contact`, `/students`) is **byte-identical** (md5 `300b26841d34`, 58,777 B).
+  The first comparison found two leaked Tailwind utilities (an important-modifier "display: inline" utility from a JS negation, and a
+  "fill" utility from a kebab-case CSS-module key; Tailwind v4 scans every source file for class-like tokens);
+  both sources were renamed. Rule recorded in the README.
+- marketing JS: identical sizes; two shared chunks differ only because one Turbopack module id is renumbered
+  (`78377` → `52392`) when the app's module graph grows. Any new route causes this; behaviour is unchanged
+  (visual and status suites green). The `/contact` page chunk also differs between two builds of the same
+  commit (non-deterministic in the base too).
+
+**Bundle (production build, measured in Chromium at 360 px):** `/dev/ui` first-load JS **166.9 KB gz**
+(157.4 KB shared with marketing pages + **9.6 KB** platform UI), within the 200 KB route budget although it
+holds every component. Lazy: DOMPurify **11.4 KB gz** (first raw SVG), smiles-drawer + chroma-js **55.1 KB gz**
+(first SMILES), 7.5 KB glue. KaTeX, react-markdown and all server-rendered visuals: **0 KB** client JS
+(chunk scan finds no KaTeX/micromark code). CSS: KaTeX 3.4 KB gz (maths routes only), tokens 3.1 KB gz.
+For comparison, marketing `/` loads 161.5 KB gz and `/contact` 183.8 KB gz in the same measurement.
+
+**Screenshots** (gitignored, regenerate with the e2e command): `platform/e2e/test-results/design-system/screenshots/`
+`gallery-mobile-360-full.png`, `slides-mobile-360.png`, `visuals-mobile-360.png`, `hindi-mobile-360.png`,
+`maths-geometry-mobile-360.png`, `dark-mobile-360.png` (and `*-desktop-1280.png`).
 
 ## Tests added
 

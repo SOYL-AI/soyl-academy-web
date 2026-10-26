@@ -96,6 +96,13 @@ colour-blind students. The sanitiser keeps only `diagram-*` classes; `tokens.css
 after Inter so mixed Hinglish text falls back per glyph; `lang="hi"` (also `mr`, `ne`, `sa`) switches to
 `--p-font-devanagari`, line-height 1.75, no letter-spacing, and turns italics into weight.
 
+**Tailwind leak rule.** Tailwind v4 scans *every* source file (including Markdown docs) for class-like
+tokens and adds matching utilities to the marketing site's global stylesheet. Keep platform UI source and
+docs free of strings that are Tailwind utilities the marketing site does not already use: name CSS-module
+classes in camelCase (`fillGood`), and do not write a negated identifier directly before a utility name
+(write `x === false`). Check: build with and without your files and compare the marketing CSS hash
+(the design-system M1 handoff shows how).
+
 **Global CSS.** Components use CSS Modules, not Tailwind classes. The only global stylesheets are
 `tokens.css` (every selector starts with `.soyl-platform`) and KaTeX's CSS (`.katex*`), imported by the
 modules that need them, so marketing routes never load them. The site's Tailwind preflight still applies
