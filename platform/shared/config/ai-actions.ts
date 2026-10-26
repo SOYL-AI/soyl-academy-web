@@ -289,3 +289,24 @@ export const AI_UPLOADS = {
   containers: { quarantine: 'uploads-quarantine', clean: 'uploads' },
 } as const;
 export type AiUploadContentType = (typeof AI_UPLOADS.contentTypes)[number];
+
+/* ------------------------------------------------------------------------------------------------
+ * Moderation thresholds and fixed messages (AC-15, CONTEXT §12)
+ * ---------------------------------------------------------------------------------------------- */
+
+export const AI_MODERATION = {
+  /**
+   * Block at or above this Content Safety severity (0..7; FourSeverityLevels gives 0/2/4/6).
+   * Minors' audience: sexual and self-harm block at "low" (2); hate and violence at "medium" (4), so
+   * history (wars) and science (explosions) lessons can still be discussed.
+   */
+  blockAtSeverity: { sexual: 2, self_harm: 2, hate: 4, violence: 4 },
+  /** Shown instead of an answer when the student's message shows a self-harm signal (no automatic contact). */
+  selfHarmMessage:
+    'It sounds like you might be going through something really hard. You are not alone, and talking to someone can help. ' +
+    'Please reach out to a parent, teacher or someone you trust. You can also call Tele-MANAS on 14416 (free, 24×7, many Indian languages) ' +
+    'or the KIRAN helpline on 1800-599-0019. If you are in danger right now, call 112.',
+  refusalMessage: 'I can only help with your school subjects, and I can’t help with that request. Try asking about a topic from your syllabus.',
+  offTopicMessage: 'I’m your study helper, so I can only answer questions about your school subjects. What are you studying right now?',
+  outputBlockedMessage: 'I stopped that answer because it didn’t meet our safety rules. Please ask your question in a different way.',
+} as const;

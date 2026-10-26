@@ -15,6 +15,7 @@ import type { ConsentProvider } from './consent/provider';
 import { ConsentService } from './consent/service';
 import { MfaService } from './auth/mfa';
 import { MFA } from '@soyl/shared/config/security';
+import { AiServices, type AiDeps } from './ai/services';
 
 export interface Providers {
   sms: SmsSender;
@@ -30,6 +31,8 @@ export interface AppDeps {
   providers: Providers;
   /** Google OIDC options (tests point fetch at the mock provider). */
   google?: { allowInsecure?: boolean; fetch?: typeof fetch };
+  /** AI gateway runtime (ai/runtime.ts). Omitted: local stand-ins (refused in production). */
+  ai?: AiDeps;
 }
 
 export function createServices(deps: AppDeps) {
@@ -51,7 +54,8 @@ export function createServices(deps: AppDeps) {
   });
   const consent = new ConsentService(db, providers.consent, clock);
   const mfa = new MfaService(db, clock, limiter, { encryptionKey: config.mfaEncryptionKey, pepper: config.otpPepper, issuer: MFA.totp.issuer });
-  return { auth, adapter, limiter, sessions, otp, identity, google, consent, mfa };
+  const ai = new AiServices({ config, db, kv, clock, ai: deps.ai });
+  return { auth, adapter, limiter, sessions, otp, identity, google, consent, mfa, ai };
 }
 
 export type Services = ReturnType<typeof createServices>;

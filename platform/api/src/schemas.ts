@@ -12,6 +12,15 @@ export const Problem = z
     detail: z.string().optional(),
     errors: z.array(z.object({ path: z.string(), message: z.string() })).optional(),
     retryAfterSeconds: z.number().int().optional(),
+    /** credits_exhausted (paywall): today's balance and the credits the action needs. */
+    balance: z.number().int().optional(),
+    required: z.number().int().optional(),
+    /** credits_exhausted: next 00:00 IST (credits reset) and the countdown in seconds. */
+    resetAt: z.iso.datetime().optional(),
+    resetInSeconds: z.number().int().optional(),
+    /** credits_exhausted / plan_required: the student's plan and where to see the plans. */
+    plan: z.string().optional(),
+    plansUrl: z.string().optional(),
   })
   .meta({ id: 'Problem', description: 'RFC 7807 problem details (application/problem+json).' });
 
