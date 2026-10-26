@@ -1,0 +1,261 @@
+/* ==========================================================================
+   SOYL platform tokens (design-system, M1)
+
+   Every rule in this file is scoped under `.soyl-platform`, so importing it can never
+   change a marketing page: marketing markup never carries that class. The file is imported
+   only by components/platform/ui/PlatformRoot.tsx (ADR-001 §7, ADR-009).
+
+   Family resemblance with the marketing "Working Notebook" (app/globals.css): paper and ink,
+   cobalt as the single action colour, highlighter yellow, red-pen for errors, square-ish
+   radii. The platform is a study app, so it is denser, calmer and higher-contrast.
+
+   Contract for other agents:
+   - Put `.soyl-platform` (use <PlatformRoot>) on the outermost platform element.
+   - Fonts: the (platform) layout sets `--font-noto-devanagari` with next/font (see
+     components/platform/ui/fonts.ts). `--font-inter` comes from the root layout.
+   - Theme: light/dark follow prefers-color-scheme; `data-theme="light|dark"` on the root
+     element forces one.
+   - Diagrams use currentColor and --diagram-accent / --diagram-muted / --diagram-fill.
+   ========================================================================== */
+
+.soyl-platform {
+  /* ── Colour: light (default) ───────────────────────────────────────────── */
+  --p-bg: #f4f0e7;            /* paper */
+  --p-surface: #ffffff;       /* cards, sheets, slides */
+  --p-surface-2: #f9f7f1;     /* quiet fill: table stripes, code, skeleton base */
+  --p-surface-3: #ece7db;     /* pressed / selected fill */
+  --p-ink: #171717;
+  --p-ink-muted: #55554f;     /* secondary text, >= 7:1 on surface */
+  --p-ink-subtle: #6b6b64;    /* captions, meta, >= 4.5:1 on surface and bg */
+  --p-border: rgba(23, 23, 23, 0.14);   /* decorative separators */
+  --p-border-strong: #77776f; /* control boundaries (inputs, chips): >= 3:1 (WCAG 1.4.11) */
+  --p-accent: #3155ff;        /* cobalt: actions, links, progress */
+  --p-accent-hover: #2f3e9e;
+  --p-accent-soft: #e8ecff;
+  --p-on-accent: #ffffff;
+  --p-highlight: #f2d45c;     /* highlighter: listen-mode words, key terms */
+  --p-on-highlight: #171717;
+  --p-danger: #b3362c;        /* red-pen, darkened for AA text */
+  --p-danger-soft: #fbe9e7;
+  --p-success: #1b6e44;
+  --p-success-soft: #e3f3ea;
+  --p-warning: #7a5200;
+  --p-warning-soft: #fdf3d3;
+  --p-info: #2f3e9e;
+  --p-info-soft: #e8ecff;
+  --p-focus: #3155ff;
+  --p-scrim: rgba(23, 23, 23, 0.55);
+
+  /* Diagram tokens (svg-allowlist.ts DIAGRAM_PALETTE). */
+  --diagram-accent: #3155ff;
+  --diagram-muted: #6b6b64;
+  --diagram-fill: rgba(49, 85, 255, 0.12);
+  --diagram-paper: #ffffff;   /* label halos */
+  /* Named semantic colours (graphics: >= 3:1 on surface and bg in both themes). Say the colour in the label too. */
+  --diagram-blue: #2f4fd8;
+  --diagram-green: #1b7a4a;
+  --diagram-yellow: #8f6a00;
+  --diagram-brown: #8a5a2b;
+  --diagram-red: #c0392b;
+
+  /* ── Type ──────────────────────────────────────────────────────────────── */
+  --p-font-devanagari: var(--font-noto-devanagari, "Noto Sans Devanagari"), "Nirmala UI", "Mangal", sans-serif;
+  --p-font-sans: var(--font-inter, ui-sans-serif), var(--font-noto-devanagari, "Noto Sans Devanagari"), system-ui,
+    -apple-system, "Segoe UI", "Nirmala UI", sans-serif;
+  --p-font-serif: var(--font-instrument-serif, Georgia), Georgia, "Times New Roman", serif;
+  --p-font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --p-text-xs: 0.8125rem;   /* 13 px floor, same as marketing */
+  --p-text-sm: 0.875rem;
+  --p-text-md: 1rem;
+  --p-text-lg: 1.125rem;
+  --p-text-xl: 1.25rem;
+  --p-text-2xl: 1.5rem;
+  --p-text-3xl: 1.875rem;
+  --p-leading-tight: 1.25;
+  --p-leading-body: 1.55;
+  --p-leading-devanagari: 1.75; /* matras and conjuncts need more room */
+
+  /* ── Space (4 px grid), radii, elevation ───────────────────────────────── */
+  --p-space-1: 0.25rem;
+  --p-space-2: 0.5rem;
+  --p-space-3: 0.75rem;
+  --p-space-4: 1rem;
+  --p-space-5: 1.25rem;
+  --p-space-6: 1.5rem;
+  --p-space-8: 2rem;
+  --p-space-10: 2.5rem;
+  --p-gutter: 1rem;         /* page side gutter at 360 px */
+  --p-radius-sm: 4px;
+  --p-radius-md: 8px;
+  --p-radius-lg: 12px;
+  --p-radius-pill: 999px;
+  --p-shadow-1: 0 1px 2px rgba(23, 23, 23, 0.08);
+  --p-shadow-2: 0 2px 6px rgba(23, 23, 23, 0.1), 0 8px 24px rgba(23, 23, 23, 0.08);
+  --p-shadow-3: 0 12px 40px rgba(23, 23, 23, 0.22);
+
+  /* ── Interaction ───────────────────────────────────────────────────────── */
+  --p-touch: 44px;          /* minimum touch target */
+  --p-focus-ring: 0 0 0 2px var(--p-surface), 0 0 0 4px var(--p-focus);
+  --p-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --p-duration-fast: 120ms;
+  --p-duration-base: 200ms;
+  --p-z-sheet: 60;
+  --p-z-toast: 70;
+
+  /* ── Base for the platform subtree ─────────────────────────────────────── */
+  color: var(--p-ink);
+  background-color: var(--p-bg);
+  font-family: var(--p-font-sans);
+  font-size: var(--p-text-md);
+  line-height: var(--p-leading-body);
+  font-synthesis-weight: none;
+  -webkit-tap-highlight-color: transparent;
+  color-scheme: light;
+}
+
+/* ── Colour: dark ─────────────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  .soyl-platform:not([data-theme="light"]) {
+    --p-bg: #161513;
+    --p-surface: #1f1e1b;
+    --p-surface-2: #272622;
+    --p-surface-3: #34332e;
+    --p-ink: #f1eee6;
+    --p-ink-muted: #c4c1b7;
+    --p-ink-subtle: #aeaba1;
+    --p-border: rgba(241, 238, 230, 0.16);
+    --p-border-strong: #8f8c83;
+    --p-accent: #9db0ff;
+    --p-accent-hover: #c2ceff;
+    --p-accent-soft: #262d4d;
+    --p-on-accent: #10131f;
+    --p-highlight: #f2d45c;
+    --p-on-highlight: #171717;
+    --p-danger: #ff9b8f;
+    --p-danger-soft: #3d1f1b;
+    --p-success: #7fd8a4;
+    --p-success-soft: #18301f;
+    --p-warning: #f2cf6b;
+    --p-warning-soft: #352c12;
+    --p-info: #b3c1ff;
+    --p-info-soft: #232a45;
+    --p-focus: #9db0ff;
+    --p-scrim: rgba(0, 0, 0, 0.66);
+    --diagram-accent: #9db0ff;
+    --diagram-muted: #aeaba1;
+    --diagram-fill: rgba(157, 176, 255, 0.2);
+    --diagram-paper: #1f1e1b;
+    --diagram-blue: #9db0ff;
+    --diagram-green: #7fd8a4;
+    --diagram-yellow: #f2d45c;
+    --diagram-brown: #d9a066;
+    --diagram-red: #ff9b8f;
+    --p-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --p-shadow-2: 0 2px 6px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
+    --p-shadow-3: 0 12px 40px rgba(0, 0, 0, 0.6);
+    color-scheme: dark;
+  }
+}
+
+.soyl-platform[data-theme="dark"] {
+  --p-bg: #161513;
+  --p-surface: #1f1e1b;
+  --p-surface-2: #272622;
+  --p-surface-3: #34332e;
+  --p-ink: #f1eee6;
+  --p-ink-muted: #c4c1b7;
+  --p-ink-subtle: #aeaba1;
+  --p-border: rgba(241, 238, 230, 0.16);
+  --p-border-strong: #8f8c83;
+  --p-accent: #9db0ff;
+  --p-accent-hover: #c2ceff;
+  --p-accent-soft: #262d4d;
+  --p-on-accent: #10131f;
+  --p-highlight: #f2d45c;
+  --p-on-highlight: #171717;
+  --p-danger: #ff9b8f;
+  --p-danger-soft: #3d1f1b;
+  --p-success: #7fd8a4;
+  --p-success-soft: #18301f;
+  --p-warning: #f2cf6b;
+  --p-warning-soft: #352c12;
+  --p-info: #b3c1ff;
+  --p-info-soft: #232a45;
+  --p-focus: #9db0ff;
+  --p-scrim: rgba(0, 0, 0, 0.66);
+  --diagram-accent: #9db0ff;
+  --diagram-muted: #aeaba1;
+  --diagram-fill: rgba(157, 176, 255, 0.2);
+  --diagram-paper: #1f1e1b;
+  --diagram-blue: #9db0ff;
+  --diagram-green: #7fd8a4;
+  --diagram-yellow: #f2d45c;
+  --diagram-brown: #d9a066;
+  --diagram-red: #ff9b8f;
+  --p-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --p-shadow-2: 0 2px 6px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
+  --p-shadow-3: 0 12px 40px rgba(0, 0, 0, 0.6);
+  color-scheme: dark;
+}
+
+/* ── Devanagari (Hindi, Marathi, Nepali, Sanskrit) ───────────────────────── */
+.soyl-platform :is(:lang(hi), :lang(mr), :lang(ne), :lang(sa)),
+.soyl-platform:is(:lang(hi), :lang(mr), :lang(ne), :lang(sa)) {
+  font-family: var(--p-font-devanagari);
+  line-height: var(--p-leading-devanagari);
+  letter-spacing: normal;      /* tracking breaks conjuncts */
+  font-style: normal;          /* no true italics in Devanagari; emphasis uses weight */
+  overflow-wrap: anywhere;
+}
+.soyl-platform :is(:lang(hi), :lang(mr), :lang(ne), :lang(sa)) :is(em, i) {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ── Shared helpers (platform subtree only) ──────────────────────────────── */
+.soyl-platform *,
+.soyl-platform *::before,
+.soyl-platform *::after {
+  box-sizing: border-box;
+}
+
+.soyl-platform :focus-visible {
+  outline: 2px solid var(--p-focus);
+  outline-offset: 2px;
+}
+
+.soyl-platform .p-visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Diagram helper classes: the only classes the SVG sanitiser keeps (render/sanitize-svg.ts). */
+.soyl-platform svg .diagram-accent { stroke: var(--diagram-accent); }
+.soyl-platform svg .diagram-muted { stroke: var(--diagram-muted); }
+.soyl-platform svg .diagram-fill { fill: var(--diagram-fill); }
+.soyl-platform svg .diagram-fill-accent { fill: var(--diagram-accent); }
+.soyl-platform svg .diagram-label { fill: currentColor; stroke: none; font-family: var(--p-font-sans); }
+.soyl-platform svg .diagram-thin { stroke-width: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .soyl-platform {
+    --p-duration-fast: 0ms;
+    --p-duration-base: 0ms;
+  }
+  .soyl-platform *,
+  .soyl-platform *::before,
+  .soyl-platform *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
