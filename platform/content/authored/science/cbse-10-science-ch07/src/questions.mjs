@@ -39,12 +39,6 @@ add('dna-exact-tf', tf({
   sol: 'False. DNA copying is very accurate but not perfect; the small changes produce variation.',
   d: 1, c: 'recall', t: [1],
 }));
-add('dna-fill', fill({
-  stem: 'The information for making proteins is stored in the ___ in the nucleus of a cell.',
-  acc: [['DNA', 'deoxyribonucleic acid']],
-  sol: 'It is stored in the **DNA**, which is copied during reproduction.',
-  d: 1, c: 'recall', t: [1],
-}));
 add('consistency-short', short({
   marks: 2,
   stem: 'Explain why (a) consistency in DNA copying is important for a species, and (b) a small amount of variation is also useful.',
@@ -59,7 +53,7 @@ add('grass-variation-short', short({
   model: '(a) **Field B**.\n\n(b) Plants grown from runners of one plant are genetically almost identical, so if the disease can attack one, it can attack all. Seeds come from sexual reproduction among many plants, so field B has much more **variation**; some plants are likely to resist the disease and survive.\n\n(c) Field A’s plants keep all the good qualities of the parent plant and grow quickly (vegetative propagation).',
   sol: 'Step 1 — Identify the method of reproduction in each field.\n\nStep 2 — Link variation to the chance that some plants resist the disease.\n\nStep 3 — Recall an advantage of vegetative propagation.',
   scheme: [['(a) Field B', 1], ['(b) Field B has more variation; some plants may resist', 1], ['(c) One valid advantage of field A', 1]],
-  d: 4, c: 'analysis', t: [1, 2],
+  d: 5, c: 'analysis', t: [1, 2],
 }));
 
 // ---------------------------------------------------------------- t02 asexual reproduction
@@ -78,11 +72,11 @@ add('plasmodium-mcq', mcq({
   d: 1, c: 'recall', t: [2],
 }));
 add('leishmania-mcq', mcq({
-  stem: 'Binary fission in Leishmania happens in a definite plane, unlike in Amoeba. Why?',
-  right: 'It has a whip-like structure at one end, and division happens in a fixed direction relative to it.',
-  wrong: ['It always forms a cyst before dividing.', 'It divides only after being cut into pieces.', 'It has no nucleus, so the cytoplasm decides the plane.'],
-  sol: 'Leishmania has a whip-like structure at one end of its cell, and fission occurs in a definite orientation relative to it — option (@K).',
-  d: 2, c: 'understanding', t: [2],
+  stem: 'A sample from a kala-azar patient shows Leishmania cells, each with a whip-like structure at one end, about to divide. How will each cell divide?',
+  right: 'Into two cells, along a definite plane related to the whip-like structure',
+  wrong: ['Into two cells, along any plane at random', 'Into many cells at once inside a cyst', 'By forming a small bud that later detaches'],
+  sol: 'Leishmania reproduces by binary fission, and because of the whip-like structure the split happens in a definite orientation — option (@K). Splitting in any plane (@1) describes Amoeba; a cyst with many cells (@2) is multiple fission in Plasmodium; budding (@3) is seen in Hydra and yeast.',
+  d: 3, c: 'application', t: [2],
 }));
 add('spirogyra-mcq', mcq({
   stem: 'A student notices that a mature filament of Spirogyra in a pond has broken into several pieces, and each piece is growing into a new filament. This is:',
@@ -90,13 +84,6 @@ add('spirogyra-mcq', mcq({
   wrong: ['regeneration', 'budding', 'spore formation'],
   sol: 'A simple multicellular organism that breaks into pieces on maturing, each growing into a new individual, shows fragmentation — option (@K). Regeneration (@1) is the rebuilding of a whole body from a cut piece by specialised cells.',
   d: 2, c: 'understanding', t: [2],
-}));
-add('hydra-mcq', mcq({
-  stem: 'A small outgrowth appears on the side of a Hydra, develops tentacles and later separates as a new Hydra. This is:',
-  right: 'budding',
-  wrong: ['binary fission', 'fragmentation', 'multiple fission'],
-  sol: 'An outgrowth formed by repeated cell division at one site that grows and detaches is a bud — option (@K).',
-  d: 1, c: 'recall', t: [2],
 }));
 add('bread-mould-mcq', mcq({
   stem: 'In July, a slice of bread left in a damp kitchen develops fuzzy black patches within three days, but a slice of the same bread kept dry in a sealed box stays clean. What best explains this?',
@@ -113,11 +100,11 @@ add('banana-mcq', mcq({
   d: 2, c: 'understanding', t: [2],
 }));
 add('vegprop-not-mcq', mcq({
-  stem: 'Which of the following is **not** an advantage of vegetative propagation?',
-  right: 'It produces a lot of variation among the offspring.',
-  wrong: ['Plants flower and fruit earlier than plants grown from seeds.', 'Plants that do not produce seeds can be multiplied.', 'The offspring keep the good qualities of the parent.'],
-  sol: 'Vegetative propagation gives offspring that are genetically similar to the parent, so it produces very little variation — option (@K). The other three are real advantages.',
-  d: 2, c: 'understanding', t: [2],
+  stem: 'A new rust disease is damaging wheat in Punjab. Plant breeders want new wheat plants, some of which may resist the disease. Which way of producing plants gives them the best chance?',
+  right: 'Cross-pollinating different varieties and growing the seeds, since this mixes DNA from two parents',
+  wrong: ['Growing many stem cuttings from one healthy plant', 'Grafting shoots of one plant onto many rootstocks', 'Allowing one plant to self-propagate by fragments'],
+  sol: 'Step 1 — Resistance can only be found if the new plants vary.\n\nStep 2 — Sexual reproduction combines DNA from two parents and produces new combinations, giving the most variation — option (@K).\n\nStep 3 — Cuttings, grafts and fragments (@1, @2, @3) are vegetative copies of one plant, so they carry no new variation.',
+  d: 3, c: 'application', t: [1, 3],
 }));
 add('regen-not-repro-mcq', mcq({
   stem: 'Planaria can regrow a whole body from a small piece. Why is regeneration still not counted as the normal way of reproducing for most organisms?',
@@ -146,12 +133,6 @@ add('budding-ar', ar({
   key: 'c',
   sol: 'A is true. R is false: in budding a small outgrowth forms and detaches; splitting into two equal halves is binary fission — option (c).',
   d: 2, c: 'understanding', t: [2],
-}));
-add('regen-tf', tf({
-  stem: 'If a Planaria is cut into three pieces, each piece can grow into a complete worm.',
-  key: 't',
-  sol: 'True. Specialised cells in each piece multiply and form the missing parts, so each piece becomes a complete worm.',
-  d: 1, c: 'recall', t: [2],
 }));
 add('sporangia-fill', fill({
   stem: 'In bread mould, spores are formed inside round structures on stalks called ___.',
@@ -193,11 +174,12 @@ add('potato-short', short({
 }));
 add('fission-compare-short', short({
   marks: 3,
-  stem: 'Compare binary fission in Amoeba, binary fission in Leishmania and multiple fission in Plasmodium, giving one feature of each.',
-  model: '**Amoeba:** one cell splits into two equal halves, and the split can happen in **any plane**.\n\n**Leishmania:** one cell splits into two, but in a **definite plane**, related to the whip-like structure at one end.\n\n**Plasmodium:** one cell divides into **many** daughter cells at the same time, often inside a protective cyst.',
-  sol: 'State the number of daughter cells and the plane of division for each organism.',
-  scheme: [['Amoeba: two cells, any plane', 1], ['Leishmania: two cells, definite plane', 1], ['Plasmodium: many cells at once', 1]],
-  d: 2, c: 'understanding', t: [2],
+  stem: 'A microbiologist looks at three slides. Slide 1: a cell splitting into two, in any direction. Slide 2: a cell with a whip-like structure at one end, splitting into two along a fixed line. Slide 3: a thick-walled cyst bursting to release many small cells. For each slide, name the method of reproduction and a likely organism.',
+  model: '**Slide 1:** binary fission (division in any plane) — **Amoeba**.\n\n**Slide 2:** binary fission in a definite plane — **Leishmania**.\n\n**Slide 3:** multiple fission inside a cyst — **Plasmodium** (malaria parasite).',
+  sol: 'Use the number of daughter cells and the plane of division to identify each method and organism.',
+  scheme: [['Slide 1: binary fission, Amoeba', 1], ['Slide 2: binary fission in a definite plane, Leishmania', 1], ['Slide 3: multiple fission, Plasmodium', 1]],
+  d: 3, c: 'application', t: [2],
+  wl: null,
 }));
 add('rose-cutting-short', short({
   marks: 3,
@@ -224,18 +206,18 @@ add('anther-mcq', mcq({
   d: 1, c: 'recall', t: [3],
 }));
 add('unisexual-mcq', mcq({
-  stem: 'Which of these plants has unisexual flowers?',
-  right: 'Papaya',
-  wrong: ['Hibiscus', 'Mustard', 'Pea'],
-  sol: 'Papaya flowers have either stamens or a pistil, not both — option (@K). Hibiscus, mustard and pea have bisexual flowers.',
-  d: 2, c: 'understanding', t: [3],
+  stem: 'Ajay plants a single watermelon vine. The first flowers that open all have stamens but no pistil. What can he conclude?',
+  right: 'They are male flowers; only flowers with a pistil can develop into fruits.',
+  wrong: ['They will each develop into a watermelon after pollination.', 'They are bisexual flowers that have lost their pistils.', 'The vine can never form fruit, because its flowers are male.'],
+  sol: 'Step 1 — Watermelon has unisexual flowers: male flowers have only stamens, female flowers have a pistil.\n\nStep 2 — A fruit develops from an ovary, which is part of the pistil, so these male flowers cannot become fruits — option (@K).\n\nStep 3 — The same vine also produces female flowers later, so (@3) is wrong; they are not damaged bisexual flowers (@2).',
+  d: 3, c: 'application', t: [3],
 }));
 add('fruit-mcq', mcq({
-  stem: 'After fertilisation, the ovary of a flower develops into the:',
-  right: 'fruit',
-  wrong: ['seed', 'embryo', 'seed coat'],
-  sol: 'The ovary grows and ripens into the fruit — option (@K); the ovules become seeds.',
-  d: 1, c: 'recall', t: [3],
+  stem: 'While eating a tomato, Meena notices the many small seeds inside it. Which statement about the tomato is correct?',
+  right: 'The fleshy part developed from the ovary, and each seed from an ovule.',
+  wrong: ['The fleshy part developed from an ovule, and the seeds from the ovary.', 'The fleshy part developed from the petals, and the seeds from the anthers.', 'The fleshy part developed from the stigma, and the seeds from pollen grains.'],
+  sol: 'After fertilisation the ovary ripens into the fruit (the fleshy part) and the ovules become seeds — option (@K). (@1) swaps the two; petals, anthers and stigma wither (@2, @3).',
+  d: 2, c: 'application', t: [3],
 }));
 add('papaya-glasshouse-mcq', mcq({
   stem: 'A farmer grows only female papaya trees inside a sealed glasshouse that keeps out insects and wind. The trees flower well but bear no fruit, while female trees in an open field near male trees fruit normally. Why?',
@@ -245,11 +227,11 @@ add('papaya-glasshouse-mcq', mcq({
   d: 3, c: 'application', t: [3],
 }));
 add('germ-half-mcq', mcq({
-  stem: 'Why do germ cells contain only half the number of chromosomes present in body cells?',
-  right: 'So that the zygote formed by fusing two germ cells has the normal number of chromosomes',
-  wrong: ['So that germ cells can divide faster than body cells', 'So that each parent passes on only its useful chromosomes', 'So that germ cells can make their own food'],
-  sol: 'Two germ cells fuse to form the zygote; if each has half the set, the zygote has the full set, and the number stays constant over generations — option (@K).',
-  d: 2, c: 'understanding', t: [3],
+  stem: 'The leaf cells of a plant have 14 chromosomes. A student claims that its male and female germ cells also have 14 chromosomes each. If this were true, what would happen?',
+  right: 'The number would double every generation: 28 in the next generation, 56 in the one after, and so on.',
+  wrong: ['The number would stay at 14 in every generation.', 'The number would halve every generation: 7, then 3 or 4.', 'Only the male germ cell’s chromosomes would reach the zygote.'],
+  sol: 'Step 1 — The zygote gets the chromosomes of both germ cells: 14 + 14 = 28, double the parent’s number.\n\nStep 2 — Repeating this each generation doubles the number again: 56, 112 … — option (@K).\n\nStep 3 — This is why germ cells actually carry half the number (7 here), so the zygote has 14.',
+  d: 4, c: 'analysis', t: [3],
 }));
 add('cross-poll-mcq', mcq({
   stem: 'A bee carries pollen from a mustard flower in Harpreet’s field to a mustard flower in her neighbour’s field. This is:',
@@ -259,11 +241,11 @@ add('cross-poll-mcq', mcq({
   d: 2, c: 'application', t: [3],
 }));
 add('pollen-tube-mcq', mcq({
-  stem: 'The pollen tube grows from the pollen grain to:',
-  right: 'carry the male germ cell to the female germ cell in the ovule',
-  wrong: ['carry food from the stigma to the anther', 'carry the egg from the ovary to the stigma', 'carry water to the developing fruit'],
-  sol: 'The pollen tube grows through the style and delivers the male germ cell to the egg in the ovule — option (@K).',
-  d: 2, c: 'understanding', t: [3],
+  stem: 'In an experiment, pollen is placed on the stigmas of several flowers, and an hour later the styles of half the flowers are cut just below the stigma. Only the uncut flowers form seeds. Why?',
+  right: 'In the cut flowers the pollen tubes could not grow down to the ovules, so the male germ cells never reached the eggs.',
+  wrong: ['Cutting the style removed the ovules.', 'Pollination needs the style, so no pollen landed on the cut flowers.', 'Cutting the style stopped the anthers from making pollen.'],
+  sol: 'Step 1 — Pollination had already happened: pollen was on the stigmas.\n\nStep 2 — The pollen tube must grow through the style to deliver the male germ cell to the ovule; cutting the style broke this path, so there was no fertilisation and no seeds — option (@K).\n\nStep 3 — The ovules are in the ovary, which was not cut (@1).',
+  d: 3, c: 'analysis', t: [3],
 }));
 add('cotyledon-shrink-mcq', mcq({
   stem: 'Sameer grows a bean seedling on wet cotton. After ten days, the two thick cotyledons have become thin and shrivelled while the seedling has grown taller. The best explanation is that:',
@@ -285,18 +267,6 @@ add('germ-ar', ar({
   key: 'a',
   sol: 'Both are true, and R gives the reason for A — option (a).',
   d: 2, c: 'understanding', t: [3],
-}));
-add('stigma-tf', tf({
-  stem: 'The stigma is the sticky top of the pistil that receives pollen grains.',
-  key: 't',
-  sol: 'True. Pollen grains stick to the stigma and germinate there.',
-  d: 1, c: 'recall', t: [3],
-}));
-add('zygote-fill', fill({
-  stem: 'The cell formed by the fusion of a male germ cell and a female germ cell is called a ___.',
-  acc: [['zygote']],
-  sol: 'It is the **zygote**, which divides to form the embryo.',
-  d: 1, c: 'recall', t: [3],
 }));
 add('ovary-fill', fill({
   stem: 'After fertilisation, the ___ of the flower grows and ripens to form the fruit.',
@@ -327,11 +297,11 @@ add('flower-match', match({
 }));
 add('poll-types-short', short({
   marks: 2,
-  stem: 'Distinguish between self-pollination and cross-pollination. Name two agents of cross-pollination.',
-  model: 'In **self-pollination**, pollen reaches the stigma of the **same flower** or another flower of the same plant. In **cross-pollination**, pollen is carried to the stigma of a flower on a **different plant** of the same kind. Agents of cross-pollination include **insects** (bees), **wind**, **birds** and **water**.',
-  sol: 'Contrast where the pollen comes from and goes to, then name two agents.',
-  scheme: [['Difference between self- and cross-pollination', 1], ['Two agents (0.5 each)', 1]],
-  d: 2, c: 'understanding', t: [3],
+  stem: 'A farmer near Bharatpur keeps beehives beside his mustard field to get more seeds, but his neighbour’s maize crop gives a good harvest without any bees. Explain this difference in terms of pollination.',
+  model: 'Mustard flowers are bright yellow, with nectar, and are **cross-pollinated by insects**: bees carry pollen between flowers, so more bees mean more pollination and more seeds. Maize is **pollinated by wind**: it releases huge amounts of light pollen that the wind carries to other plants, so it does not need bees.',
+  sol: 'Identify the pollinating agent of each crop and link it to the features of its flowers.',
+  scheme: [['Mustard: insect pollination, so bees increase seed set', 1], ['Maize: wind pollination, so bees are not needed', 1]],
+  d: 3, c: 'application', t: [3],
 }));
 add('seed-parts-short', short({
   marks: 2,
@@ -382,13 +352,6 @@ add('fert-site-mcq', mcq({
   sol: 'The sperm meets the egg in the oviduct — option (@K). The embryo then implants in the uterus.',
   d: 1, c: 'recall', t: [4],
 }));
-add('glands-mcq', mcq({
-  stem: 'Which glands add fluid to sperms to form semen?',
-  right: 'Seminal vesicles and the prostate gland',
-  wrong: ['Thyroid and adrenal glands', 'Salivary glands and the pancreas', 'Pituitary gland and the hypothalamus'],
-  sol: 'The seminal vesicles and prostate gland add secretions so that sperms travel in a fluid — option (@K).',
-  d: 1, c: 'recall', t: [4],
-}));
 add('puberty-common-mcq', mcq({
   stem: 'Which change at puberty happens in both boys and girls?',
   right: 'Thick hair grows in the armpits.',
@@ -411,11 +374,11 @@ add('villi-mcq', mcq({
   d: 2, c: 'understanding', t: [4],
 }));
 add('menstruation-mcq', mcq({
-  stem: 'Menstruation occurs because:',
-  right: 'the egg is not fertilised, so the thickened lining of the uterus breaks down and is shed',
-  wrong: ['the egg is fertilised and the embryo is shed', 'the ovaries break down every month', 'sperms damage the lining of the uterus'],
-  sol: 'When the egg is not fertilised, the thick lining prepared for an embryo is not needed and passes out as blood and mucus — option (@K).',
-  d: 2, c: 'understanding', t: [4],
+  stem: 'A woman who is eight weeks pregnant does not have her monthly period. What is the reason?',
+  right: 'The embryo has implanted, so the thick uterine lining is kept to nourish it instead of being shed.',
+  wrong: ['Her ovaries have stopped working permanently.', 'The placenta blocks the vagina.', 'Pregnancy makes the uterus lining thinner, so there is nothing to shed.'],
+  sol: 'Menstruation is the shedding of the lining when no embryo implants. In pregnancy the lining is needed to support the embryo, so it is not shed — option (@K).',
+  d: 3, c: 'application', t: [4],
 }));
 add('lining-ar', ar({
   a: 'The lining of the uterus becomes thick and spongy every month.',
@@ -483,11 +446,11 @@ add('male-long', long({
 
 // ---------------------------------------------------------------- t05 reproductive health
 add('std-bacterial-mcq', mcq({
-  stem: 'Which pair consists only of sexually transmitted diseases caused by bacteria?',
-  right: 'Gonorrhoea and syphilis',
-  wrong: ['Warts and HIV-AIDS', 'Syphilis and warts', 'Gonorrhoea and HIV-AIDS'],
-  sol: 'Gonorrhoea and syphilis are bacterial — option (@K). Warts and HIV-AIDS are viral.',
-  d: 1, c: 'recall', t: [5],
+  stem: 'A patient with a sexually transmitted disease is cured by a course of antibiotics, medicines that kill bacteria. Which disease could it have been?',
+  right: 'Syphilis',
+  wrong: ['HIV-AIDS', 'Warts', 'Any viral STD'],
+  sol: 'Antibiotics act on bacteria, so the disease must be bacterial: gonorrhoea or syphilis — option (@K). HIV-AIDS and warts are caused by viruses (@1, @2, @3).',
+  d: 3, c: 'application', t: [5],
 }));
 add('condom-mcq', mcq({
   stem: 'Which contraceptive method also reduces the risk of passing on sexually transmitted diseases?',
@@ -495,13 +458,6 @@ add('condom-mcq', mcq({
   wrong: ['Oral contraceptive pills', 'Copper-T', 'Vasectomy'],
   sol: 'A condom is a physical barrier, so it reduces the spread of infections as well as preventing pregnancy — option (@K). Pills, copper-T and surgery give no protection against infections.',
   d: 2, c: 'understanding', t: [5],
-}));
-add('copper-t-mcq', mcq({
-  stem: 'A copper-T is placed in the:',
-  right: 'uterus',
-  wrong: ['oviduct', 'vagina', 'ovary'],
-  sol: 'The copper-T (a loop) is placed in the uterus to prevent pregnancy — option (@K).',
-  d: 1, c: 'recall', t: [5],
 }));
 add('vasectomy-mcq', mcq({
   stem: 'After a vasectomy, a man still produces semen, but it contains no sperms. Why?',
@@ -552,11 +508,11 @@ add('hiv-fill', fill({
 }));
 add('contra-compare-short', short({
   marks: 2,
-  stem: 'Compare barrier methods and hormonal methods of contraception, giving one advantage of each.',
-  model: '**Barrier methods** (condoms) physically stop sperms from reaching the egg; their advantage is that they also **reduce the spread of STDs**. **Hormonal methods** (oral pills) change the hormone balance so that **eggs are not released**; their advantage is that they are effective when taken regularly and are used privately, though they can have side effects.',
-  sol: 'State how each works and one advantage of each.',
-  scheme: [['Barrier method and an advantage', 1], ['Hormonal method and an advantage', 1]],
-  d: 2, c: 'understanding', t: [5],
+  stem: 'Couple A want to delay their first child for two years and also reduce the risk of infections. Couple B want a temporary method for the woman that does not need to be used at the time of intercourse. Suggest a suitable method for each and give a reason.',
+  model: '**Couple A:** **condoms** — a barrier method that prevents sperms from reaching the egg and also reduces the spread of sexually transmitted diseases. **Couple B:** **oral contraceptive pills** (or a copper-T on medical advice) — pills change the hormone balance so that eggs are not released; they are temporary, though they can have side effects.',
+  sol: 'Match each couple’s needs to how the methods work.',
+  scheme: [['Couple A: condom with reason', 1], ['Couple B: pills (or copper-T) with reason', 1]],
+  d: 3, c: 'application', t: [5],
 }));
 add('foeticide-short', short({
   marks: 3,
@@ -790,9 +746,9 @@ add('sexratio-case', mk.case({
       short({
         marks: 2,
         stem: 'Use the data to evaluate whether sealing the clinics and running the campaign helped.',
-        model: 'The ratio rose from 905 in 2011 to 931 in 2021, so the measures **appear to have helped**. However, it is still below the 2001 value of 942 and below 1000, so the problem is not fully solved and the effort needs to continue.',
+        model: 'The ratio rose from 905 in 2011 to 931 in 2021, so the measures **appear to have helped**. However, it is still below the 2001 value of 942, so the problem is not fully solved and the effort needs to continue.',
         sol: 'Compare 2011 with 2021, then with 2001, before concluding.',
-        scheme: [['Uses the rise from 905 to 931 as evidence', 1], ['Notes it is still below 942 or 1000, so more is needed', 1]],
+        scheme: [['Uses the rise from 905 to 931 as evidence', 1], ['Notes it is still below the 2001 level of 942, so more is needed', 1]],
         d: 4, c: 'evaluation', t: [5],
       }),
     ]),

@@ -412,7 +412,7 @@
           "visual": null,
           "math": [],
           "narration": "Quick check. Is the assertion true for the malaria parasite? Is the reason true? Decide each one separately before choosing.",
-          "check_question_id": "q_cbse10sci_ch07_019",
+          "check_question_id": "q_cbse10sci_ch07_017",
           "audio": null
         },
         {
@@ -560,7 +560,7 @@
           "visual": null,
           "math": [],
           "narration": "Your turn. Think about what happens when you bite into a banana. Where are the seeds you would plant?",
-          "check_question_id": "q_cbse10sci_ch07_015",
+          "check_question_id": "q_cbse10sci_ch07_013",
           "audio": null
         },
         {
@@ -955,7 +955,7 @@
           "visual": null,
           "math": [],
           "narration": "Quick check. Recall the two parts of a stamen. Which one is the pollen factory?",
-          "check_question_id": "q_cbse10sci_ch07_030",
+          "check_question_id": "q_cbse10sci_ch07_027",
           "audio": null
         },
         {
@@ -1098,7 +1098,7 @@
           "visual": null,
           "math": [],
           "narration": "Quick check. Both statements are about changes after fertilisation. Are both true? Does one really explain the other?",
-          "check_question_id": "q_cbse10sci_ch07_038",
+          "check_question_id": "q_cbse10sci_ch07_035",
           "audio": null
         },
         {
@@ -1170,7 +1170,7 @@
           "visual": null,
           "math": [],
           "narration": "Quick check. Think of the pea pod again. Which part of the pistil swelled up to become the pod?",
-          "check_question_id": "q_cbse10sci_ch07_042",
+          "check_question_id": "q_cbse10sci_ch07_037",
           "audio": null
         },
         {
@@ -1478,7 +1478,7 @@
           "visual": null,
           "math": [],
           "narration": "Quick check. Think about temperature. What do sperms need that the inside of the abdomen cannot give them?",
-          "check_question_id": "q_cbse10sci_ch07_051",
+          "check_question_id": "q_cbse10sci_ch07_046",
           "audio": null
         },
         {
@@ -1738,7 +1738,7 @@
           "visual": null,
           "math": [],
           "narration": "Quick check. Why does the uterus prepare a thick lining every single month? Decide whether the reason truly explains the assertion.",
-          "check_question_id": "q_cbse10sci_ch07_058",
+          "check_question_id": "q_cbse10sci_ch07_052",
           "audio": null
         },
         {
@@ -1882,7 +1882,7 @@
           "visual": null,
           "math": [],
           "narration": "Quick check. Which method works as a physical barrier between partners?",
-          "check_question_id": "q_cbse10sci_ch07_068",
+          "check_question_id": "q_cbse10sci_ch07_062",
           "audio": null
         },
         {
@@ -2701,31 +2701,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "DNA copying is not perfectly accurate, so small changes creep in."
-        },
-        {
-          "id": "b",
           "text_md": "They receive DNA from two different parents."
         },
         {
-          "id": "c",
+          "id": "b",
           "text_md": "The environment rewrites their DNA every day."
         },
         {
-          "id": "d",
+          "id": "c",
           "text_md": "Cells divide without copying their DNA."
+        },
+        {
+          "id": "d",
+          "text_md": "DNA copying is not perfectly accurate, so small changes creep in."
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "d"
         ]
       },
-      "solution_md": "With a single parent there is no mixing of DNA; the small differences come from slight inaccuracies each time DNA is copied — option (a). (b) describes sexual reproduction; (c) and (d) are not true.",
+      "solution_md": "With a single parent there is no mixing of DNA; the small differences come from slight inaccuracies each time DNA is copied — option (d). (a) describes sexual reproduction; (b) and (c) are not true.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -2758,11 +2758,11 @@
       "options": [
         {
           "id": "a",
-          "text_md": "The heat made all the bacteria produce heat-resistant DNA on purpose."
+          "text_md": "A few bacteria already had variations that let them tolerate heat, and they passed these on."
         },
         {
           "id": "b",
-          "text_md": "A few bacteria already had variations that let them tolerate heat, and they passed these on."
+          "text_md": "The heat made all the bacteria produce heat-resistant DNA on purpose."
         },
         {
           "id": "c",
@@ -2776,13 +2776,13 @@
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "a"
         ]
       },
-      "solution_md": "Step 1 — Copying errors over many generations had already produced slightly different bacteria.\n\nStep 2 — Those that happened to tolerate heat survived and reproduced, passing on the variation — option (b).\n\nStep 3 — Variations are not made to order by the environment (a); size (c) and stopping reproduction (d) do not explain survival and multiplication.",
+      "solution_md": "Step 1 — Copying errors over many generations had already produced slightly different bacteria.\n\nStep 2 — Those that happened to tolerate heat survived and reproduced, passing on the variation — option (a).\n\nStep 3 — Variations are not made to order by the environment (b); size (c) and stopping reproduction (d) do not explain survival and multiplication.",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (a)",
           "marks": 1
         }
       ],
@@ -2916,51 +2916,6 @@
       "id": "q_cbse10sci_ch07_006",
       "unit": "cbse-10-science-ch07",
       "language": "en",
-      "type": "fill-blank",
-      "stem_md": "The information for making proteins is stored in the ___ in the nucleus of a cell.",
-      "options": [],
-      "match_right": [],
-      "answer": {
-        "blanks": [
-          {
-            "accepted": [
-              "DNA",
-              "deoxyribonucleic acid"
-            ]
-          }
-        ]
-      },
-      "solution_md": "It is stored in the **DNA**, which is copied during reproduction.",
-      "marking_scheme": [
-        {
-          "step": "Writes \"DNA\"",
-          "marks": 1
-        }
-      ],
-      "marks": 1,
-      "difficulty": 1,
-      "competency": "recall",
-      "bloom": "remember",
-      "topic_ids": [
-        "cbse-10-science-ch07-t01"
-      ],
-      "expected_time_sec": 45,
-      "assets": [],
-      "children": [],
-      "status": "draft",
-      "version": 1,
-      "provenance": {
-        "origin": "human",
-        "template_version": null,
-        "model": null,
-        "generated_at": "2026-10-26",
-        "author": "claude-opus-5-5 (subject-producer)"
-      }
-    },
-    {
-      "id": "q_cbse10sci_ch07_007",
-      "unit": "cbse-10-science-ch07",
-      "language": "en",
       "type": "short",
       "stem_md": "Explain why (a) consistency in DNA copying is important for a species, and (b) a small amount of variation is also useful.",
       "options": [],
@@ -3004,7 +2959,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_008",
+      "id": "q_cbse10sci_ch07_007",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "short",
@@ -3030,7 +2985,7 @@
         }
       ],
       "marks": 3,
-      "difficulty": 4,
+      "difficulty": 5,
       "competency": "analysis",
       "bloom": "analyze",
       "topic_ids": [
@@ -3055,7 +3010,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_009",
+      "id": "q_cbse10sci_ch07_008",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
@@ -3071,23 +3026,23 @@
         },
         {
           "id": "c",
-          "text_md": "spore formation"
+          "text_md": "binary fission"
         },
         {
           "id": "d",
-          "text_md": "binary fission"
+          "text_md": "spore formation"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "d"
+          "c"
         ]
       },
-      "solution_md": "Amoeba splits into two equal daughter cells: binary fission — option (d).",
+      "solution_md": "Amoeba splits into two equal daughter cells: binary fission — option (c).",
       "marking_scheme": [
         {
-          "step": "Correct option (d)",
+          "step": "Correct option (c)",
           "marks": 1
         }
       ],
@@ -3112,7 +3067,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_010",
+      "id": "q_cbse10sci_ch07_009",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
@@ -3169,39 +3124,96 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_011",
+      "id": "q_cbse10sci_ch07_010",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
-      "stem_md": "Binary fission in Leishmania happens in a definite plane, unlike in Amoeba. Why?",
+      "stem_md": "A sample from a kala-azar patient shows Leishmania cells, each with a whip-like structure at one end, about to divide. How will each cell divide?",
       "options": [
         {
           "id": "a",
-          "text_md": "It has a whip-like structure at one end, and division happens in a fixed direction relative to it."
+          "text_md": "Into two cells, along any plane at random"
         },
         {
           "id": "b",
-          "text_md": "It always forms a cyst before dividing."
+          "text_md": "Into many cells at once inside a cyst"
         },
         {
           "id": "c",
-          "text_md": "It divides only after being cut into pieces."
+          "text_md": "Into two cells, along a definite plane related to the whip-like structure"
         },
         {
           "id": "d",
-          "text_md": "It has no nucleus, so the cytoplasm decides the plane."
+          "text_md": "By forming a small bud that later detaches"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "c"
         ]
       },
-      "solution_md": "Leishmania has a whip-like structure at one end of its cell, and fission occurs in a definite orientation relative to it — option (a).",
+      "solution_md": "Leishmania reproduces by binary fission, and because of the whip-like structure the split happens in a definite orientation — option (c). Splitting in any plane (a) describes Amoeba; a cyst with many cells (b) is multiple fission in Plasmodium; budding (d) is seen in Hydra and yeast.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "cbse-10-science-ch07-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_cbse10sci_ch07_011",
+      "unit": "cbse-10-science-ch07",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A student notices that a mature filament of Spirogyra in a pond has broken into several pieces, and each piece is growing into a new filament. This is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "regeneration"
+        },
+        {
+          "id": "b",
+          "text_md": "budding"
+        },
+        {
+          "id": "c",
+          "text_md": "fragmentation"
+        },
+        {
+          "id": "d",
+          "text_md": "spore formation"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A simple multicellular organism that breaks into pieces on maturing, each growing into a new individual, shows fragmentation — option (c). Regeneration (a) is the rebuilding of a whole body from a cut piece by specialised cells.",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
           "marks": 1
         }
       ],
@@ -3230,120 +3242,6 @@
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
-      "stem_md": "A student notices that a mature filament of Spirogyra in a pond has broken into several pieces, and each piece is growing into a new filament. This is:",
-      "options": [
-        {
-          "id": "a",
-          "text_md": "regeneration"
-        },
-        {
-          "id": "b",
-          "text_md": "fragmentation"
-        },
-        {
-          "id": "c",
-          "text_md": "budding"
-        },
-        {
-          "id": "d",
-          "text_md": "spore formation"
-        }
-      ],
-      "match_right": [],
-      "answer": {
-        "option_ids": [
-          "b"
-        ]
-      },
-      "solution_md": "A simple multicellular organism that breaks into pieces on maturing, each growing into a new individual, shows fragmentation — option (b). Regeneration (a) is the rebuilding of a whole body from a cut piece by specialised cells.",
-      "marking_scheme": [
-        {
-          "step": "Correct option (b)",
-          "marks": 1
-        }
-      ],
-      "marks": 1,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
-      "topic_ids": [
-        "cbse-10-science-ch07-t02"
-      ],
-      "expected_time_sec": 60,
-      "assets": [],
-      "children": [],
-      "status": "draft",
-      "version": 1,
-      "provenance": {
-        "origin": "human",
-        "template_version": null,
-        "model": null,
-        "generated_at": "2026-10-26",
-        "author": "claude-opus-5-5 (subject-producer)"
-      }
-    },
-    {
-      "id": "q_cbse10sci_ch07_013",
-      "unit": "cbse-10-science-ch07",
-      "language": "en",
-      "type": "mcq",
-      "stem_md": "A small outgrowth appears on the side of a Hydra, develops tentacles and later separates as a new Hydra. This is:",
-      "options": [
-        {
-          "id": "a",
-          "text_md": "budding"
-        },
-        {
-          "id": "b",
-          "text_md": "binary fission"
-        },
-        {
-          "id": "c",
-          "text_md": "fragmentation"
-        },
-        {
-          "id": "d",
-          "text_md": "multiple fission"
-        }
-      ],
-      "match_right": [],
-      "answer": {
-        "option_ids": [
-          "a"
-        ]
-      },
-      "solution_md": "An outgrowth formed by repeated cell division at one site that grows and detaches is a bud — option (a).",
-      "marking_scheme": [
-        {
-          "step": "Correct option (a)",
-          "marks": 1
-        }
-      ],
-      "marks": 1,
-      "difficulty": 1,
-      "competency": "recall",
-      "bloom": "remember",
-      "topic_ids": [
-        "cbse-10-science-ch07-t02"
-      ],
-      "expected_time_sec": 60,
-      "assets": [],
-      "children": [],
-      "status": "draft",
-      "version": 1,
-      "provenance": {
-        "origin": "human",
-        "template_version": null,
-        "model": null,
-        "generated_at": "2026-10-26",
-        "author": "claude-opus-5-5 (subject-producer)"
-      }
-    },
-    {
-      "id": "q_cbse10sci_ch07_014",
-      "unit": "cbse-10-science-ch07",
-      "language": "en",
-      "type": "mcq",
       "stem_md": "In July, a slice of bread left in a damp kitchen develops fuzzy black patches within three days, but a slice of the same bread kept dry in a sealed box stays clean. What best explains this?",
       "options": [
         {
@@ -3352,27 +3250,27 @@
         },
         {
           "id": "b",
-          "text_md": "Mould needs light, and the box was dark."
+          "text_md": "Spores of bread mould from the air germinate only on moist surfaces."
         },
         {
           "id": "c",
-          "text_md": "Dry bread contains no food that mould can use."
+          "text_md": "Mould needs light, and the box was dark."
         },
         {
           "id": "d",
-          "text_md": "Spores of bread mould from the air germinate only on moist surfaces."
+          "text_md": "Dry bread contains no food that mould can use."
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "d"
+          "b"
         ]
       },
-      "solution_md": "Step 1 — Mould spores are present in the air; they germinate when they land on a moist surface with food.\n\nStep 2 — The damp slice was moist, the dry slice was not — option (d).\n\nStep 3 — Bread does not turn into mould (a); light is not the deciding factor (b); dry bread still contains food (c).",
+      "solution_md": "Step 1 — Mould spores are present in the air; they germinate when they land on a moist surface with food.\n\nStep 2 — The damp slice was moist, the dry slice was not — option (b).\n\nStep 3 — Bread does not turn into mould (a); light is not the deciding factor (c); dry bread still contains food (d).",
       "marking_scheme": [
         {
-          "step": "Correct option (d)",
+          "step": "Correct option (b)",
           "marks": 1
         }
       ],
@@ -3397,7 +3295,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_015",
+      "id": "q_cbse10sci_ch07_013",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
@@ -3405,19 +3303,134 @@
       "options": [
         {
           "id": "a",
-          "text_md": "Banana seeds are poisonous to the soil."
+          "text_md": "Cultivated bananas do not produce viable seeds."
         },
         {
           "id": "b",
-          "text_md": "Plants grown from seeds give more fruit each year."
+          "text_md": "Banana seeds are poisonous to the soil."
         },
         {
           "id": "c",
-          "text_md": "Suckers produce plants with more variation."
+          "text_md": "Plants grown from seeds give more fruit each year."
         },
         {
           "id": "d",
-          "text_md": "Cultivated bananas do not produce viable seeds."
+          "text_md": "Suckers produce plants with more variation."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Cultivated bananas have lost the capacity to produce seeds, so they are propagated vegetatively — option (a). Vegetative propagation gives less variation, not more (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "cbse-10-science-ch07-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_cbse10sci_ch07_014",
+      "unit": "cbse-10-science-ch07",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A new rust disease is damaging wheat in Punjab. Plant breeders want new wheat plants, some of which may resist the disease. Which way of producing plants gives them the best chance?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Cross-pollinating different varieties and growing the seeds, since this mixes DNA from two parents"
+        },
+        {
+          "id": "b",
+          "text_md": "Growing many stem cuttings from one healthy plant"
+        },
+        {
+          "id": "c",
+          "text_md": "Grafting shoots of one plant onto many rootstocks"
+        },
+        {
+          "id": "d",
+          "text_md": "Allowing one plant to self-propagate by fragments"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Step 1 — Resistance can only be found if the new plants vary.\n\nStep 2 — Sexual reproduction combines DNA from two parents and produces new combinations, giving the most variation — option (a).\n\nStep 3 — Cuttings, grafts and fragments (b, c, d) are vegetative copies of one plant, so they carry no new variation.",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "cbse-10-science-ch07-t01",
+        "cbse-10-science-ch07-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_cbse10sci_ch07_015",
+      "unit": "cbse-10-science-ch07",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Planaria can regrow a whole body from a small piece. Why is regeneration still not counted as the normal way of reproducing for most organisms?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Regenerated worms are not alive."
+        },
+        {
+          "id": "b",
+          "text_md": "Regenerated worms can never reproduce again."
+        },
+        {
+          "id": "c",
+          "text_md": "Regeneration happens only in plants."
+        },
+        {
+          "id": "d",
+          "text_md": "Most organisms do not depend on being cut into pieces in order to reproduce."
         }
       ],
       "match_right": [],
@@ -3426,7 +3439,7 @@
           "d"
         ]
       },
-      "solution_md": "Cultivated bananas have lost the capacity to produce seeds, so they are propagated vegetatively — option (d). Vegetative propagation gives less variation, not more (c).",
+      "solution_md": "Regeneration rebuilds a body from a piece, but organisms do not normally rely on being cut up to make offspring — option (d).",
       "marking_scheme": [
         {
           "step": "Correct option (d)",
@@ -3458,133 +3471,19 @@
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
-      "stem_md": "Which of the following is **not** an advantage of vegetative propagation?",
-      "options": [
-        {
-          "id": "a",
-          "text_md": "Plants flower and fruit earlier than plants grown from seeds."
-        },
-        {
-          "id": "b",
-          "text_md": "It produces a lot of variation among the offspring."
-        },
-        {
-          "id": "c",
-          "text_md": "Plants that do not produce seeds can be multiplied."
-        },
-        {
-          "id": "d",
-          "text_md": "The offspring keep the good qualities of the parent."
-        }
-      ],
-      "match_right": [],
-      "answer": {
-        "option_ids": [
-          "b"
-        ]
-      },
-      "solution_md": "Vegetative propagation gives offspring that are genetically similar to the parent, so it produces very little variation — option (b). The other three are real advantages.",
-      "marking_scheme": [
-        {
-          "step": "Correct option (b)",
-          "marks": 1
-        }
-      ],
-      "marks": 1,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
-      "topic_ids": [
-        "cbse-10-science-ch07-t02"
-      ],
-      "expected_time_sec": 60,
-      "assets": [],
-      "children": [],
-      "status": "draft",
-      "version": 1,
-      "provenance": {
-        "origin": "human",
-        "template_version": null,
-        "model": null,
-        "generated_at": "2026-10-26",
-        "author": "claude-opus-5-5 (subject-producer)"
-      }
-    },
-    {
-      "id": "q_cbse10sci_ch07_017",
-      "unit": "cbse-10-science-ch07",
-      "language": "en",
-      "type": "mcq",
-      "stem_md": "Planaria can regrow a whole body from a small piece. Why is regeneration still not counted as the normal way of reproducing for most organisms?",
-      "options": [
-        {
-          "id": "a",
-          "text_md": "Regenerated worms are not alive."
-        },
-        {
-          "id": "b",
-          "text_md": "Most organisms do not depend on being cut into pieces in order to reproduce."
-        },
-        {
-          "id": "c",
-          "text_md": "Regenerated worms can never reproduce again."
-        },
-        {
-          "id": "d",
-          "text_md": "Regeneration happens only in plants."
-        }
-      ],
-      "match_right": [],
-      "answer": {
-        "option_ids": [
-          "b"
-        ]
-      },
-      "solution_md": "Regeneration rebuilds a body from a piece, but organisms do not normally rely on being cut up to make offspring — option (b).",
-      "marking_scheme": [
-        {
-          "step": "Correct option (b)",
-          "marks": 1
-        }
-      ],
-      "marks": 1,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
-      "topic_ids": [
-        "cbse-10-science-ch07-t02"
-      ],
-      "expected_time_sec": 60,
-      "assets": [],
-      "children": [],
-      "status": "draft",
-      "version": 1,
-      "provenance": {
-        "origin": "human",
-        "template_version": null,
-        "model": null,
-        "generated_at": "2026-10-26",
-        "author": "claude-opus-5-5 (subject-producer)"
-      }
-    },
-    {
-      "id": "q_cbse10sci_ch07_018",
-      "unit": "cbse-10-science-ch07",
-      "language": "en",
-      "type": "mcq",
       "stem_md": "A nursery owner in Ratnagiri wants hundreds of Alphonso mango saplings that will all give fruit of exactly the same taste as his best tree, and bear fruit years sooner than seedlings. Which method should he use?",
       "options": [
         {
           "id": "a",
-          "text_md": "Sowing seeds from the best tree’s fruits"
+          "text_md": "Grafting shoots of the best tree onto young rooted plants"
         },
         {
           "id": "b",
-          "text_md": "Cross-pollinating the best tree with other varieties"
+          "text_md": "Sowing seeds from the best tree’s fruits"
         },
         {
           "id": "c",
-          "text_md": "Grafting shoots of the best tree onto young rooted plants"
+          "text_md": "Cross-pollinating the best tree with other varieties"
         },
         {
           "id": "d",
@@ -3594,13 +3493,13 @@
       "match_right": [],
       "answer": {
         "option_ids": [
-          "c"
+          "a"
         ]
       },
-      "solution_md": "Step 1 — Identical quality and early fruiting point to vegetative propagation.\n\nStep 2 — Mango is propagated by grafting — option (c).\n\nStep 3 — Seeds (a) and cross-pollination (b) involve sexual reproduction and give variation; mango leaves (d) do not grow into new plants.",
+      "solution_md": "Step 1 — Identical quality and early fruiting point to vegetative propagation.\n\nStep 2 — Mango is propagated by grafting — option (a).\n\nStep 3 — Seeds (b) and cross-pollination (c) involve sexual reproduction and give variation; mango leaves (d) do not grow into new plants.",
       "marking_scheme": [
         {
-          "step": "Correct option (c)",
+          "step": "Correct option (a)",
           "marks": 1
         }
       ],
@@ -3625,7 +3524,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_019",
+      "id": "q_cbse10sci_ch07_017",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "assertion-reason",
@@ -3682,7 +3581,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_020",
+      "id": "q_cbse10sci_ch07_018",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "assertion-reason",
@@ -3739,56 +3638,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_021",
-      "unit": "cbse-10-science-ch07",
-      "language": "en",
-      "type": "true-false",
-      "stem_md": "True or false? If a Planaria is cut into three pieces, each piece can grow into a complete worm.",
-      "options": [
-        {
-          "id": "t",
-          "text_md": "True"
-        },
-        {
-          "id": "f",
-          "text_md": "False"
-        }
-      ],
-      "match_right": [],
-      "answer": {
-        "option_ids": [
-          "t"
-        ]
-      },
-      "solution_md": "True. Specialised cells in each piece multiply and form the missing parts, so each piece becomes a complete worm.",
-      "marking_scheme": [
-        {
-          "step": "True",
-          "marks": 1
-        }
-      ],
-      "marks": 1,
-      "difficulty": 1,
-      "competency": "recall",
-      "bloom": "remember",
-      "topic_ids": [
-        "cbse-10-science-ch07-t02"
-      ],
-      "expected_time_sec": 45,
-      "assets": [],
-      "children": [],
-      "status": "draft",
-      "version": 1,
-      "provenance": {
-        "origin": "human",
-        "template_version": null,
-        "model": null,
-        "generated_at": "2026-10-26",
-        "author": "claude-opus-5-5 (subject-producer)"
-      }
-    },
-    {
-      "id": "q_cbse10sci_ch07_022",
+      "id": "q_cbse10sci_ch07_019",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "fill-blank",
@@ -3833,7 +3683,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_023",
+      "id": "q_cbse10sci_ch07_020",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "numerical",
@@ -3873,7 +3723,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_024",
+      "id": "q_cbse10sci_ch07_021",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "match",
@@ -3974,7 +3824,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_025",
+      "id": "q_cbse10sci_ch07_022",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "short",
@@ -4020,7 +3870,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_026",
+      "id": "q_cbse10sci_ch07_023",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "short",
@@ -4066,44 +3916,40 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_027",
+      "id": "q_cbse10sci_ch07_024",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "short",
-      "stem_md": "Compare binary fission in Amoeba, binary fission in Leishmania and multiple fission in Plasmodium, giving one feature of each.",
+      "stem_md": "A microbiologist looks at three slides. Slide 1: a cell splitting into two, in any direction. Slide 2: a cell with a whip-like structure at one end, splitting into two along a fixed line. Slide 3: a thick-walled cyst bursting to release many small cells. For each slide, name the method of reproduction and a likely organism.",
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "**Amoeba:** one cell splits into two equal halves, and the split can happen in **any plane**.\n\n**Leishmania:** one cell splits into two, but in a **definite plane**, related to the whip-like structure at one end.\n\n**Plasmodium:** one cell divides into **many** daughter cells at the same time, often inside a protective cyst."
+        "model_answer_md": "**Slide 1:** binary fission (division in any plane) — **Amoeba**.\n\n**Slide 2:** binary fission in a definite plane — **Leishmania**.\n\n**Slide 3:** multiple fission inside a cyst — **Plasmodium** (malaria parasite)."
       },
-      "solution_md": "State the number of daughter cells and the plane of division for each organism.",
+      "solution_md": "Use the number of daughter cells and the plane of division to identify each method and organism.",
       "marking_scheme": [
         {
-          "step": "Amoeba: two cells, any plane",
+          "step": "Slide 1: binary fission, Amoeba",
           "marks": 1
         },
         {
-          "step": "Leishmania: two cells, definite plane",
+          "step": "Slide 2: binary fission in a definite plane, Leishmania",
           "marks": 1
         },
         {
-          "step": "Plasmodium: many cells at once",
+          "step": "Slide 3: multiple fission, Plasmodium",
           "marks": 1
         }
       ],
       "marks": 3,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "cbse-10-science-ch07-t02"
       ],
       "expected_time_sec": 270,
       "assets": [],
-      "word_limit": {
-        "min": 50,
-        "max": 80
-      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -4116,7 +3962,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_028",
+      "id": "q_cbse10sci_ch07_025",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "short",
@@ -4167,7 +4013,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_029",
+      "id": "q_cbse10sci_ch07_026",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "long",
@@ -4221,7 +4067,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_030",
+      "id": "q_cbse10sci_ch07_027",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
@@ -4233,11 +4079,11 @@
         },
         {
           "id": "b",
-          "text_md": "Anther"
+          "text_md": "Ovary"
         },
         {
           "id": "c",
-          "text_md": "Ovary"
+          "text_md": "Anther"
         },
         {
           "id": "d",
@@ -4247,13 +4093,13 @@
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "c"
         ]
       },
-      "solution_md": "The anther, at the top of the stamen, produces pollen grains — option (b). The filament (d) only holds up the anther.",
+      "solution_md": "The anther, at the top of the stamen, produces pollen grains — option (c). The filament (d) only holds up the anther.",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (c)",
           "marks": 1
         }
       ],
@@ -4261,6 +4107,177 @@
       "difficulty": 1,
       "competency": "recall",
       "bloom": "remember",
+      "topic_ids": [
+        "cbse-10-science-ch07-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_cbse10sci_ch07_028",
+      "unit": "cbse-10-science-ch07",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Ajay plants a single watermelon vine. The first flowers that open all have stamens but no pistil. What can he conclude?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "They will each develop into a watermelon after pollination."
+        },
+        {
+          "id": "b",
+          "text_md": "They are male flowers; only flowers with a pistil can develop into fruits."
+        },
+        {
+          "id": "c",
+          "text_md": "They are bisexual flowers that have lost their pistils."
+        },
+        {
+          "id": "d",
+          "text_md": "The vine can never form fruit, because its flowers are male."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Step 1 — Watermelon has unisexual flowers: male flowers have only stamens, female flowers have a pistil.\n\nStep 2 — A fruit develops from an ovary, which is part of the pistil, so these male flowers cannot become fruits — option (b).\n\nStep 3 — The same vine also produces female flowers later, so (d) is wrong; they are not damaged bisexual flowers (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "cbse-10-science-ch07-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_cbse10sci_ch07_029",
+      "unit": "cbse-10-science-ch07",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "While eating a tomato, Meena notices the many small seeds inside it. Which statement about the tomato is correct?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "The fleshy part developed from an ovule, and the seeds from the ovary."
+        },
+        {
+          "id": "b",
+          "text_md": "The fleshy part developed from the petals, and the seeds from the anthers."
+        },
+        {
+          "id": "c",
+          "text_md": "The fleshy part developed from the stigma, and the seeds from pollen grains."
+        },
+        {
+          "id": "d",
+          "text_md": "The fleshy part developed from the ovary, and each seed from an ovule."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "After fertilisation the ovary ripens into the fruit (the fleshy part) and the ovules become seeds — option (d). (a) swaps the two; petals, anthers and stigma wither (b, c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "cbse-10-science-ch07-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_cbse10sci_ch07_030",
+      "unit": "cbse-10-science-ch07",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A farmer grows only female papaya trees inside a sealed glasshouse that keeps out insects and wind. The trees flower well but bear no fruit, while female trees in an open field near male trees fruit normally. Why?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "No pollen could reach the stigmas of the female flowers, so no fertilisation took place."
+        },
+        {
+          "id": "b",
+          "text_md": "The glasshouse was too warm for the ovaries to form."
+        },
+        {
+          "id": "c",
+          "text_md": "Papaya flowers pollinate themselves, so the glasshouse should not matter."
+        },
+        {
+          "id": "d",
+          "text_md": "Female papaya flowers do not have ovaries."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Step 1 — Papaya flowers are unisexual: female flowers need pollen from male flowers.\n\nStep 2 — With no male trees, insects or wind inside, no pollen reached the stigmas; without pollination and fertilisation the ovaries do not become fruits — option (a).\n\nStep 3 — Unisexual flowers cannot self-pollinate (c), and female flowers do have ovaries (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "cbse-10-science-ch07-t03"
       ],
@@ -4282,23 +4299,23 @@
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
-      "stem_md": "Which of these plants has unisexual flowers?",
+      "stem_md": "The leaf cells of a plant have 14 chromosomes. A student claims that its male and female germ cells also have 14 chromosomes each. If this were true, what would happen?",
       "options": [
         {
           "id": "a",
-          "text_md": "Hibiscus"
+          "text_md": "The number would stay at 14 in every generation."
         },
         {
           "id": "b",
-          "text_md": "Mustard"
+          "text_md": "The number would halve every generation: 7, then 3 or 4."
         },
         {
           "id": "c",
-          "text_md": "Pea"
+          "text_md": "Only the male germ cell’s chromosomes would reach the zygote."
         },
         {
           "id": "d",
-          "text_md": "Papaya"
+          "text_md": "The number would double every generation: 28 in the next generation, 56 in the one after, and so on."
         }
       ],
       "match_right": [],
@@ -4307,7 +4324,7 @@
           "d"
         ]
       },
-      "solution_md": "Papaya flowers have either stamens or a pistil, not both — option (d). Hibiscus, mustard and pea have bisexual flowers.",
+      "solution_md": "Step 1 — The zygote gets the chromosomes of both germ cells: 14 + 14 = 28, double the parent’s number.\n\nStep 2 — Repeating this each generation doubles the number again: 56, 112 … — option (d).\n\nStep 3 — This is why germ cells actually carry half the number (7 here), so the zygote has 14.",
       "marking_scheme": [
         {
           "step": "Correct option (d)",
@@ -4315,9 +4332,9 @@
         }
       ],
       "marks": 1,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
       "topic_ids": [
         "cbse-10-science-ch07-t03"
       ],
@@ -4339,23 +4356,23 @@
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
-      "stem_md": "After fertilisation, the ovary of a flower develops into the:",
+      "stem_md": "A bee carries pollen from a mustard flower in Harpreet’s field to a mustard flower in her neighbour’s field. This is:",
       "options": [
         {
           "id": "a",
-          "text_md": "fruit"
+          "text_md": "cross-pollination"
         },
         {
           "id": "b",
-          "text_md": "seed"
+          "text_md": "self-pollination"
         },
         {
           "id": "c",
-          "text_md": "embryo"
+          "text_md": "fertilisation"
         },
         {
           "id": "d",
-          "text_md": "seed coat"
+          "text_md": "vegetative propagation"
         }
       ],
       "match_right": [],
@@ -4364,7 +4381,7 @@
           "a"
         ]
       },
-      "solution_md": "The ovary grows and ripens into the fruit — option (a); the ovules become seeds.",
+      "solution_md": "Pollen reaching the stigma of a flower on a different plant is cross-pollination — option (a). Fertilisation (c) happens later, when germ cells fuse in the ovule.",
       "marking_scheme": [
         {
           "step": "Correct option (a)",
@@ -4372,9 +4389,9 @@
         }
       ],
       "marks": 1,
-      "difficulty": 1,
-      "competency": "recall",
-      "bloom": "remember",
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "cbse-10-science-ch07-t03"
       ],
@@ -4396,42 +4413,42 @@
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
-      "stem_md": "A farmer grows only female papaya trees inside a sealed glasshouse that keeps out insects and wind. The trees flower well but bear no fruit, while female trees in an open field near male trees fruit normally. Why?",
+      "stem_md": "In an experiment, pollen is placed on the stigmas of several flowers, and an hour later the styles of half the flowers are cut just below the stigma. Only the uncut flowers form seeds. Why?",
       "options": [
         {
           "id": "a",
-          "text_md": "The glasshouse was too warm for the ovaries to form."
+          "text_md": "In the cut flowers the pollen tubes could not grow down to the ovules, so the male germ cells never reached the eggs."
         },
         {
           "id": "b",
-          "text_md": "Papaya flowers pollinate themselves, so the glasshouse should not matter."
+          "text_md": "Cutting the style removed the ovules."
         },
         {
           "id": "c",
-          "text_md": "Female papaya flowers do not have ovaries."
+          "text_md": "Pollination needs the style, so no pollen landed on the cut flowers."
         },
         {
           "id": "d",
-          "text_md": "No pollen could reach the stigmas of the female flowers, so no fertilisation took place."
+          "text_md": "Cutting the style stopped the anthers from making pollen."
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "d"
+          "a"
         ]
       },
-      "solution_md": "Step 1 — Papaya flowers are unisexual: female flowers need pollen from male flowers.\n\nStep 2 — With no male trees, insects or wind inside, no pollen reached the stigmas; without pollination and fertilisation the ovaries do not become fruits — option (d).\n\nStep 3 — Unisexual flowers cannot self-pollinate (b), and female flowers do have ovaries (c).",
+      "solution_md": "Step 1 — Pollination had already happened: pollen was on the stigmas.\n\nStep 2 — The pollen tube must grow through the style to deliver the male germ cell to the ovule; cutting the style broke this path, so there was no fertilisation and no seeds — option (a).\n\nStep 3 — The ovules are in the ovary, which was not cut (b).",
       "marking_scheme": [
         {
-          "step": "Correct option (d)",
+          "step": "Correct option (a)",
           "marks": 1
         }
       ],
       "marks": 1,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "analysis",
+      "bloom": "analyze",
       "topic_ids": [
         "cbse-10-science-ch07-t03"
       ],
@@ -4453,177 +4470,6 @@
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
-      "stem_md": "Why do germ cells contain only half the number of chromosomes present in body cells?",
-      "options": [
-        {
-          "id": "a",
-          "text_md": "So that germ cells can divide faster than body cells"
-        },
-        {
-          "id": "b",
-          "text_md": "So that each parent passes on only its useful chromosomes"
-        },
-        {
-          "id": "c",
-          "text_md": "So that the zygote formed by fusing two germ cells has the normal number of chromosomes"
-        },
-        {
-          "id": "d",
-          "text_md": "So that germ cells can make their own food"
-        }
-      ],
-      "match_right": [],
-      "answer": {
-        "option_ids": [
-          "c"
-        ]
-      },
-      "solution_md": "Two germ cells fuse to form the zygote; if each has half the set, the zygote has the full set, and the number stays constant over generations — option (c).",
-      "marking_scheme": [
-        {
-          "step": "Correct option (c)",
-          "marks": 1
-        }
-      ],
-      "marks": 1,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
-      "topic_ids": [
-        "cbse-10-science-ch07-t03"
-      ],
-      "expected_time_sec": 60,
-      "assets": [],
-      "children": [],
-      "status": "draft",
-      "version": 1,
-      "provenance": {
-        "origin": "human",
-        "template_version": null,
-        "model": null,
-        "generated_at": "2026-10-26",
-        "author": "claude-opus-5-5 (subject-producer)"
-      }
-    },
-    {
-      "id": "q_cbse10sci_ch07_035",
-      "unit": "cbse-10-science-ch07",
-      "language": "en",
-      "type": "mcq",
-      "stem_md": "A bee carries pollen from a mustard flower in Harpreet’s field to a mustard flower in her neighbour’s field. This is:",
-      "options": [
-        {
-          "id": "a",
-          "text_md": "self-pollination"
-        },
-        {
-          "id": "b",
-          "text_md": "fertilisation"
-        },
-        {
-          "id": "c",
-          "text_md": "cross-pollination"
-        },
-        {
-          "id": "d",
-          "text_md": "vegetative propagation"
-        }
-      ],
-      "match_right": [],
-      "answer": {
-        "option_ids": [
-          "c"
-        ]
-      },
-      "solution_md": "Pollen reaching the stigma of a flower on a different plant is cross-pollination — option (c). Fertilisation (b) happens later, when germ cells fuse in the ovule.",
-      "marking_scheme": [
-        {
-          "step": "Correct option (c)",
-          "marks": 1
-        }
-      ],
-      "marks": 1,
-      "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
-      "topic_ids": [
-        "cbse-10-science-ch07-t03"
-      ],
-      "expected_time_sec": 60,
-      "assets": [],
-      "children": [],
-      "status": "draft",
-      "version": 1,
-      "provenance": {
-        "origin": "human",
-        "template_version": null,
-        "model": null,
-        "generated_at": "2026-10-26",
-        "author": "claude-opus-5-5 (subject-producer)"
-      }
-    },
-    {
-      "id": "q_cbse10sci_ch07_036",
-      "unit": "cbse-10-science-ch07",
-      "language": "en",
-      "type": "mcq",
-      "stem_md": "The pollen tube grows from the pollen grain to:",
-      "options": [
-        {
-          "id": "a",
-          "text_md": "carry food from the stigma to the anther"
-        },
-        {
-          "id": "b",
-          "text_md": "carry the egg from the ovary to the stigma"
-        },
-        {
-          "id": "c",
-          "text_md": "carry the male germ cell to the female germ cell in the ovule"
-        },
-        {
-          "id": "d",
-          "text_md": "carry water to the developing fruit"
-        }
-      ],
-      "match_right": [],
-      "answer": {
-        "option_ids": [
-          "c"
-        ]
-      },
-      "solution_md": "The pollen tube grows through the style and delivers the male germ cell to the egg in the ovule — option (c).",
-      "marking_scheme": [
-        {
-          "step": "Correct option (c)",
-          "marks": 1
-        }
-      ],
-      "marks": 1,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
-      "topic_ids": [
-        "cbse-10-science-ch07-t03"
-      ],
-      "expected_time_sec": 60,
-      "assets": [],
-      "children": [],
-      "status": "draft",
-      "version": 1,
-      "provenance": {
-        "origin": "human",
-        "template_version": null,
-        "model": null,
-        "generated_at": "2026-10-26",
-        "author": "claude-opus-5-5 (subject-producer)"
-      }
-    },
-    {
-      "id": "q_cbse10sci_ch07_037",
-      "unit": "cbse-10-science-ch07",
-      "language": "en",
-      "type": "mcq",
       "stem_md": "Sameer grows a bean seedling on wet cotton. After ten days, the two thick cotyledons have become thin and shrivelled while the seedling has grown taller. The best explanation is that:",
       "options": [
         {
@@ -4636,23 +4482,23 @@
         },
         {
           "id": "c",
-          "text_md": "cotyledons always shrivel because they are dead tissue"
+          "text_md": "the food stored in the cotyledons was used by the growing seedling"
         },
         {
           "id": "d",
-          "text_md": "the food stored in the cotyledons was used by the growing seedling"
+          "text_md": "cotyledons always shrivel because they are dead tissue"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "d"
+          "c"
         ]
       },
-      "solution_md": "Cotyledons store food for the young seedling until its leaves can make food; as the stored food is used up, they shrink — option (d).",
+      "solution_md": "Cotyledons store food for the young seedling until its leaves can make food; as the stored food is used up, they shrink — option (c).",
       "marking_scheme": [
         {
-          "step": "Correct option (d)",
+          "step": "Correct option (c)",
           "marks": 1
         }
       ],
@@ -4677,7 +4523,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_038",
+      "id": "q_cbse10sci_ch07_035",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "assertion-reason",
@@ -4734,7 +4580,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_039",
+      "id": "q_cbse10sci_ch07_036",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "assertion-reason",
@@ -4791,100 +4637,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_040",
-      "unit": "cbse-10-science-ch07",
-      "language": "en",
-      "type": "true-false",
-      "stem_md": "True or false? The stigma is the sticky top of the pistil that receives pollen grains.",
-      "options": [
-        {
-          "id": "t",
-          "text_md": "True"
-        },
-        {
-          "id": "f",
-          "text_md": "False"
-        }
-      ],
-      "match_right": [],
-      "answer": {
-        "option_ids": [
-          "t"
-        ]
-      },
-      "solution_md": "True. Pollen grains stick to the stigma and germinate there.",
-      "marking_scheme": [
-        {
-          "step": "True",
-          "marks": 1
-        }
-      ],
-      "marks": 1,
-      "difficulty": 1,
-      "competency": "recall",
-      "bloom": "remember",
-      "topic_ids": [
-        "cbse-10-science-ch07-t03"
-      ],
-      "expected_time_sec": 45,
-      "assets": [],
-      "children": [],
-      "status": "draft",
-      "version": 1,
-      "provenance": {
-        "origin": "human",
-        "template_version": null,
-        "model": null,
-        "generated_at": "2026-10-26",
-        "author": "claude-opus-5-5 (subject-producer)"
-      }
-    },
-    {
-      "id": "q_cbse10sci_ch07_041",
-      "unit": "cbse-10-science-ch07",
-      "language": "en",
-      "type": "fill-blank",
-      "stem_md": "The cell formed by the fusion of a male germ cell and a female germ cell is called a ___.",
-      "options": [],
-      "match_right": [],
-      "answer": {
-        "blanks": [
-          {
-            "accepted": [
-              "zygote"
-            ]
-          }
-        ]
-      },
-      "solution_md": "It is the **zygote**, which divides to form the embryo.",
-      "marking_scheme": [
-        {
-          "step": "Writes \"zygote\"",
-          "marks": 1
-        }
-      ],
-      "marks": 1,
-      "difficulty": 1,
-      "competency": "recall",
-      "bloom": "remember",
-      "topic_ids": [
-        "cbse-10-science-ch07-t03"
-      ],
-      "expected_time_sec": 45,
-      "assets": [],
-      "children": [],
-      "status": "draft",
-      "version": 1,
-      "provenance": {
-        "origin": "human",
-        "template_version": null,
-        "model": null,
-        "generated_at": "2026-10-26",
-        "author": "claude-opus-5-5 (subject-producer)"
-      }
-    },
-    {
-      "id": "q_cbse10sci_ch07_042",
+      "id": "q_cbse10sci_ch07_037",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "fill-blank",
@@ -4928,7 +4681,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_043",
+      "id": "q_cbse10sci_ch07_038",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "numerical",
@@ -4968,7 +4721,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_044",
+      "id": "q_cbse10sci_ch07_039",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "numerical",
@@ -5008,7 +4761,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_045",
+      "id": "q_cbse10sci_ch07_040",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "match",
@@ -5109,31 +4862,31 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_046",
+      "id": "q_cbse10sci_ch07_041",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "short",
-      "stem_md": "Distinguish between self-pollination and cross-pollination. Name two agents of cross-pollination.",
+      "stem_md": "A farmer near Bharatpur keeps beehives beside his mustard field to get more seeds, but his neighbour’s maize crop gives a good harvest without any bees. Explain this difference in terms of pollination.",
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "In **self-pollination**, pollen reaches the stigma of the **same flower** or another flower of the same plant. In **cross-pollination**, pollen is carried to the stigma of a flower on a **different plant** of the same kind. Agents of cross-pollination include **insects** (bees), **wind**, **birds** and **water**."
+        "model_answer_md": "Mustard flowers are bright yellow, with nectar, and are **cross-pollinated by insects**: bees carry pollen between flowers, so more bees mean more pollination and more seeds. Maize is **pollinated by wind**: it releases huge amounts of light pollen that the wind carries to other plants, so it does not need bees."
       },
-      "solution_md": "Contrast where the pollen comes from and goes to, then name two agents.",
+      "solution_md": "Identify the pollinating agent of each crop and link it to the features of its flowers.",
       "marking_scheme": [
         {
-          "step": "Difference between self- and cross-pollination",
+          "step": "Mustard: insect pollination, so bees increase seed set",
           "marks": 1
         },
         {
-          "step": "Two agents (0.5 each)",
+          "step": "Maize: wind pollination, so bees are not needed",
           "marks": 1
         }
       ],
       "marks": 2,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "cbse-10-science-ch07-t03"
       ],
@@ -5155,7 +4908,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_047",
+      "id": "q_cbse10sci_ch07_042",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "short",
@@ -5197,7 +4950,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_048",
+      "id": "q_cbse10sci_ch07_043",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "short",
@@ -5247,7 +5000,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_049",
+      "id": "q_cbse10sci_ch07_044",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "short",
@@ -5298,7 +5051,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_050",
+      "id": "q_cbse10sci_ch07_045",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "long",
@@ -5352,7 +5105,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_051",
+      "id": "q_cbse10sci_ch07_046",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
@@ -5360,11 +5113,11 @@
       "options": [
         {
           "id": "a",
-          "text_md": "There is no space for them inside the abdomen."
+          "text_md": "Sperm formation needs a temperature lower than normal body temperature."
         },
         {
           "id": "b",
-          "text_md": "Sperm formation needs a temperature lower than normal body temperature."
+          "text_md": "There is no space for them inside the abdomen."
         },
         {
           "id": "c",
@@ -5378,13 +5131,13 @@
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "a"
         ]
       },
-      "solution_md": "Sperms are formed best at a temperature slightly below body temperature, which the scrotum provides — option (b).",
+      "solution_md": "Sperms are formed best at a temperature slightly below body temperature, which the scrotum provides — option (a).",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (a)",
           "marks": 1
         }
       ],
@@ -5409,7 +5162,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_052",
+      "id": "q_cbse10sci_ch07_047",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
@@ -5417,11 +5170,11 @@
       "options": [
         {
           "id": "a",
-          "text_md": "oviduct (fallopian tube)"
+          "text_md": "uterus"
         },
         {
           "id": "b",
-          "text_md": "uterus"
+          "text_md": "oviduct (fallopian tube)"
         },
         {
           "id": "c",
@@ -5435,13 +5188,13 @@
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "b"
         ]
       },
-      "solution_md": "The sperm meets the egg in the oviduct — option (a). The embryo then implants in the uterus.",
+      "solution_md": "The sperm meets the egg in the oviduct — option (b). The embryo then implants in the uterus.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (b)",
           "marks": 1
         }
       ],
@@ -5466,27 +5219,27 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_053",
+      "id": "q_cbse10sci_ch07_048",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
-      "stem_md": "Which glands add fluid to sperms to form semen?",
+      "stem_md": "Which change at puberty happens in both boys and girls?",
       "options": [
         {
           "id": "a",
-          "text_md": "Thyroid and adrenal glands"
+          "text_md": "The voice cracks and deepens."
         },
         {
           "id": "b",
-          "text_md": "Salivary glands and the pancreas"
+          "text_md": "Breasts begin to develop."
         },
         {
           "id": "c",
-          "text_md": "Pituitary gland and the hypothalamus"
+          "text_md": "Hair grows on the face and chin."
         },
         {
           "id": "d",
-          "text_md": "Seminal vesicles and the prostate gland"
+          "text_md": "Thick hair grows in the armpits."
         }
       ],
       "match_right": [],
@@ -5495,67 +5248,10 @@
           "d"
         ]
       },
-      "solution_md": "The seminal vesicles and prostate gland add secretions so that sperms travel in a fluid — option (d).",
+      "solution_md": "Hair growth in the armpits and genital area happens in both — option (d). The others are specific to boys (a, c) or girls (b).",
       "marking_scheme": [
         {
           "step": "Correct option (d)",
-          "marks": 1
-        }
-      ],
-      "marks": 1,
-      "difficulty": 1,
-      "competency": "recall",
-      "bloom": "remember",
-      "topic_ids": [
-        "cbse-10-science-ch07-t04"
-      ],
-      "expected_time_sec": 60,
-      "assets": [],
-      "children": [],
-      "status": "draft",
-      "version": 1,
-      "provenance": {
-        "origin": "human",
-        "template_version": null,
-        "model": null,
-        "generated_at": "2026-10-26",
-        "author": "claude-opus-5-5 (subject-producer)"
-      }
-    },
-    {
-      "id": "q_cbse10sci_ch07_054",
-      "unit": "cbse-10-science-ch07",
-      "language": "en",
-      "type": "mcq",
-      "stem_md": "Which change at puberty happens in both boys and girls?",
-      "options": [
-        {
-          "id": "a",
-          "text_md": "Thick hair grows in the armpits."
-        },
-        {
-          "id": "b",
-          "text_md": "The voice cracks and deepens."
-        },
-        {
-          "id": "c",
-          "text_md": "Breasts begin to develop."
-        },
-        {
-          "id": "d",
-          "text_md": "Hair grows on the face and chin."
-        }
-      ],
-      "match_right": [],
-      "answer": {
-        "option_ids": [
-          "a"
-        ]
-      },
-      "solution_md": "Hair growth in the armpits and genital area happens in both — option (a). The others are specific to boys (b, d) or girls (c).",
-      "marking_scheme": [
-        {
-          "step": "Correct option (a)",
           "marks": 1
         }
       ],
@@ -5580,7 +5276,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_055",
+      "id": "q_cbse10sci_ch07_049",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
@@ -5637,7 +5333,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_056",
+      "id": "q_cbse10sci_ch07_050",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
@@ -5694,27 +5390,27 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_057",
+      "id": "q_cbse10sci_ch07_051",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
-      "stem_md": "Menstruation occurs because:",
+      "stem_md": "A woman who is eight weeks pregnant does not have her monthly period. What is the reason?",
       "options": [
         {
           "id": "a",
-          "text_md": "the egg is fertilised and the embryo is shed"
+          "text_md": "Her ovaries have stopped working permanently."
         },
         {
           "id": "b",
-          "text_md": "the ovaries break down every month"
+          "text_md": "The placenta blocks the vagina."
         },
         {
           "id": "c",
-          "text_md": "the egg is not fertilised, so the thickened lining of the uterus breaks down and is shed"
+          "text_md": "The embryo has implanted, so the thick uterine lining is kept to nourish it instead of being shed."
         },
         {
           "id": "d",
-          "text_md": "sperms damage the lining of the uterus"
+          "text_md": "Pregnancy makes the uterus lining thinner, so there is nothing to shed."
         }
       ],
       "match_right": [],
@@ -5723,7 +5419,7 @@
           "c"
         ]
       },
-      "solution_md": "When the egg is not fertilised, the thick lining prepared for an embryo is not needed and passes out as blood and mucus — option (c).",
+      "solution_md": "Menstruation is the shedding of the lining when no embryo implants. In pregnancy the lining is needed to support the embryo, so it is not shed — option (c).",
       "marking_scheme": [
         {
           "step": "Correct option (c)",
@@ -5731,9 +5427,9 @@
         }
       ],
       "marks": 1,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "cbse-10-science-ch07-t04"
       ],
@@ -5751,7 +5447,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_058",
+      "id": "q_cbse10sci_ch07_052",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "assertion-reason",
@@ -5808,7 +5504,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_059",
+      "id": "q_cbse10sci_ch07_053",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "assertion-reason",
@@ -5865,7 +5561,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_060",
+      "id": "q_cbse10sci_ch07_054",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "true-false",
@@ -5914,7 +5610,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_061",
+      "id": "q_cbse10sci_ch07_055",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "fill-blank",
@@ -5958,7 +5654,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_062",
+      "id": "q_cbse10sci_ch07_056",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "numerical",
@@ -5998,7 +5694,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_063",
+      "id": "q_cbse10sci_ch07_057",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "short",
@@ -6044,7 +5740,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_064",
+      "id": "q_cbse10sci_ch07_058",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "short",
@@ -6094,7 +5790,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_065",
+      "id": "q_cbse10sci_ch07_059",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "long",
@@ -6144,7 +5840,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_066",
+      "id": "q_cbse10sci_ch07_060",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "long",
@@ -6198,46 +5894,46 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_067",
+      "id": "q_cbse10sci_ch07_061",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
-      "stem_md": "Which pair consists only of sexually transmitted diseases caused by bacteria?",
+      "stem_md": "A patient with a sexually transmitted disease is cured by a course of antibiotics, medicines that kill bacteria. Which disease could it have been?",
       "options": [
         {
           "id": "a",
-          "text_md": "Gonorrhoea and syphilis"
+          "text_md": "HIV-AIDS"
         },
         {
           "id": "b",
-          "text_md": "Warts and HIV-AIDS"
+          "text_md": "Syphilis"
         },
         {
           "id": "c",
-          "text_md": "Syphilis and warts"
+          "text_md": "Warts"
         },
         {
           "id": "d",
-          "text_md": "Gonorrhoea and HIV-AIDS"
+          "text_md": "Any viral STD"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "b"
         ]
       },
-      "solution_md": "Gonorrhoea and syphilis are bacterial — option (a). Warts and HIV-AIDS are viral.",
+      "solution_md": "Antibiotics act on bacteria, so the disease must be bacterial: gonorrhoea or syphilis — option (b). HIV-AIDS and warts are caused by viruses (a, c, d).",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (b)",
           "marks": 1
         }
       ],
       "marks": 1,
-      "difficulty": 1,
-      "competency": "recall",
-      "bloom": "remember",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "cbse-10-science-ch07-t05"
       ],
@@ -6255,7 +5951,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_068",
+      "id": "q_cbse10sci_ch07_062",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
@@ -6312,64 +6008,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_069",
-      "unit": "cbse-10-science-ch07",
-      "language": "en",
-      "type": "mcq",
-      "stem_md": "A copper-T is placed in the:",
-      "options": [
-        {
-          "id": "a",
-          "text_md": "uterus"
-        },
-        {
-          "id": "b",
-          "text_md": "oviduct"
-        },
-        {
-          "id": "c",
-          "text_md": "vagina"
-        },
-        {
-          "id": "d",
-          "text_md": "ovary"
-        }
-      ],
-      "match_right": [],
-      "answer": {
-        "option_ids": [
-          "a"
-        ]
-      },
-      "solution_md": "The copper-T (a loop) is placed in the uterus to prevent pregnancy — option (a).",
-      "marking_scheme": [
-        {
-          "step": "Correct option (a)",
-          "marks": 1
-        }
-      ],
-      "marks": 1,
-      "difficulty": 1,
-      "competency": "recall",
-      "bloom": "remember",
-      "topic_ids": [
-        "cbse-10-science-ch07-t05"
-      ],
-      "expected_time_sec": 60,
-      "assets": [],
-      "children": [],
-      "status": "draft",
-      "version": 1,
-      "provenance": {
-        "origin": "human",
-        "template_version": null,
-        "model": null,
-        "generated_at": "2026-10-26",
-        "author": "claude-opus-5-5 (subject-producer)"
-      }
-    },
-    {
-      "id": "q_cbse10sci_ch07_070",
+      "id": "q_cbse10sci_ch07_063",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
@@ -6381,27 +6020,27 @@
         },
         {
           "id": "b",
-          "text_md": "The urethra is blocked, so no fluid can leave."
+          "text_md": "The vas deferens is blocked, so sperms cannot reach the urethra."
         },
         {
           "id": "c",
-          "text_md": "The prostate gland is removed."
+          "text_md": "The urethra is blocked, so no fluid can leave."
         },
         {
           "id": "d",
-          "text_md": "The vas deferens is blocked, so sperms cannot reach the urethra."
+          "text_md": "The prostate gland is removed."
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "d"
+          "b"
         ]
       },
-      "solution_md": "In a vasectomy the vas deferens is cut and blocked; the glands still add fluid, but sperms cannot travel past the block — option (d).",
+      "solution_md": "In a vasectomy the vas deferens is cut and blocked; the glands still add fluid, but sperms cannot travel past the block — option (b).",
       "marking_scheme": [
         {
-          "step": "Correct option (d)",
+          "step": "Correct option (b)",
           "marks": 1
         }
       ],
@@ -6426,7 +6065,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_071",
+      "id": "q_cbse10sci_ch07_064",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
@@ -6442,23 +6081,23 @@
         },
         {
           "id": "c",
-          "text_md": "changing the hormone balance so that eggs are not released"
+          "text_md": "forming a barrier over the cervix"
         },
         {
           "id": "d",
-          "text_md": "forming a barrier over the cervix"
+          "text_md": "changing the hormone balance so that eggs are not released"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "c"
+          "d"
         ]
       },
-      "solution_md": "Pills act on the hormonal balance of the body so that eggs are not released — option (c).",
+      "solution_md": "Pills act on the hormonal balance of the body so that eggs are not released — option (d).",
       "marking_scheme": [
         {
-          "step": "Correct option (c)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -6483,7 +6122,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_072",
+      "id": "q_cbse10sci_ch07_065",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "mcq",
@@ -6491,31 +6130,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "Surgical blocking of the vas deferens or the oviducts"
-        },
-        {
-          "id": "b",
           "text_md": "Condoms"
         },
         {
-          "id": "c",
+          "id": "b",
           "text_md": "Oral contraceptive pills"
         },
         {
-          "id": "d",
+          "id": "c",
           "text_md": "Copper-T"
+        },
+        {
+          "id": "d",
+          "text_md": "Surgical blocking of the vas deferens or the oviducts"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "d"
         ]
       },
-      "solution_md": "Vasectomy or tubectomy is a permanent method — option (a). Condoms, pills and the copper-T are temporary methods.",
+      "solution_md": "Vasectomy or tubectomy is a permanent method — option (d). Condoms, pills and the copper-T are temporary methods.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -6540,7 +6179,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_073",
+      "id": "q_cbse10sci_ch07_066",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "assertion-reason",
@@ -6597,7 +6236,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_074",
+      "id": "q_cbse10sci_ch07_067",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "assertion-reason",
@@ -6654,7 +6293,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_075",
+      "id": "q_cbse10sci_ch07_068",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "true-false",
@@ -6703,7 +6342,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_076",
+      "id": "q_cbse10sci_ch07_069",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "fill-blank",
@@ -6749,31 +6388,31 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_077",
+      "id": "q_cbse10sci_ch07_070",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "short",
-      "stem_md": "Compare barrier methods and hormonal methods of contraception, giving one advantage of each.",
+      "stem_md": "Couple A want to delay their first child for two years and also reduce the risk of infections. Couple B want a temporary method for the woman that does not need to be used at the time of intercourse. Suggest a suitable method for each and give a reason.",
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "**Barrier methods** (condoms) physically stop sperms from reaching the egg; their advantage is that they also **reduce the spread of STDs**. **Hormonal methods** (oral pills) change the hormone balance so that **eggs are not released**; their advantage is that they are effective when taken regularly and are used privately, though they can have side effects."
+        "model_answer_md": "**Couple A:** **condoms** — a barrier method that prevents sperms from reaching the egg and also reduces the spread of sexually transmitted diseases. **Couple B:** **oral contraceptive pills** (or a copper-T on medical advice) — pills change the hormone balance so that eggs are not released; they are temporary, though they can have side effects."
       },
-      "solution_md": "State how each works and one advantage of each.",
+      "solution_md": "Match each couple’s needs to how the methods work.",
       "marking_scheme": [
         {
-          "step": "Barrier method and an advantage",
+          "step": "Couple A: condom with reason",
           "marks": 1
         },
         {
-          "step": "Hormonal method and an advantage",
+          "step": "Couple B: pills (or copper-T) with reason",
           "marks": 1
         }
       ],
       "marks": 2,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "cbse-10-science-ch07-t05"
       ],
@@ -6795,7 +6434,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_078",
+      "id": "q_cbse10sci_ch07_071",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "short",
@@ -6845,7 +6484,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_079",
+      "id": "q_cbse10sci_ch07_072",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "long",
@@ -6895,7 +6534,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_080",
+      "id": "q_cbse10sci_ch07_073",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "case-based",
@@ -6905,9 +6544,9 @@
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "**(a)** (a) At 45 °C only a few of the bacteria formed colonies.\n\n**(b)** 11 %\n\n**(c)** (i) The few bacteria that survived on plate R had a **variation** that let them tolerate 45 °C. When they reproduced, their DNA was **copied and passed on**, so nearly all their offspring also tolerated 45 °C. The heat had removed the bacteria without this variation.\n\n**OR** (ii) The population was varied: most bacteria died at 45 °C, but about one in ten survived (24 of 210). If the pond warmed up, these survivors would reproduce and pass on their heat tolerance (plate T: 196 colonies), so the species would **continue** instead of being wiped out."
+        "model_answer_md": "**(a)** (d) At 45 °C only a few of the bacteria formed colonies.\n\n**(b)** 11 %\n\n**(c)** (i) The few bacteria that survived on plate R had a **variation** that let them tolerate 45 °C. When they reproduced, their DNA was **copied and passed on**, so nearly all their offspring also tolerated 45 °C. The heat had removed the bacteria without this variation.\n\n**OR** (ii) The population was varied: most bacteria died at 45 °C, but about one in ten survived (24 of 210). If the pond warmed up, these survivors would reproduce and pass on their heat tolerance (plate T: 196 colonies), so the species would **continue** instead of being wiped out."
       },
-      "solution_md": "**(a)** At 45 °C most bacteria failed but a few grew, so the bacteria were not all alike — option (a).\n\n**(b)** Percentage $= \\dfrac{24}{210} \\times 100 \\approx 11.4$, so about 11%.\n\n**(c)** (i) Link the survivors’ variation to its inheritance through DNA copying.\n\n(ii) Use the 24-out-of-210 survivors and plate T to show that varied individuals keep the species going.",
+      "solution_md": "**(a)** At 45 °C most bacteria failed but a few grew, so the bacteria were not all alike — option (d).\n\n**(b)** Percentage $= \\dfrac{24}{210} \\times 100 \\approx 11.4$, so about 11%.\n\n**(c)** (i) Link the survivors’ variation to its inheritance through DNA copying.\n\n(ii) Use the 24-out-of-210 survivors and plate T to show that varied individuals keep the species going.",
       "marking_scheme": [
         {
           "step": "Part (a)",
@@ -6939,31 +6578,31 @@
           "options": [
             {
               "id": "a",
-              "text_md": "At 45 °C only a few of the bacteria formed colonies."
-            },
-            {
-              "id": "b",
               "text_md": "At 30 °C there were 210 colonies."
             },
             {
-              "id": "c",
+              "id": "b",
               "text_md": "At 50 °C no colonies formed."
             },
             {
-              "id": "d",
+              "id": "c",
               "text_md": "Plates P and Q had similar numbers."
+            },
+            {
+              "id": "d",
+              "text_md": "At 45 °C only a few of the bacteria formed colonies."
             }
           ],
           "match_right": [],
           "answer": {
             "option_ids": [
-              "a"
+              "d"
             ]
           },
-          "solution_md": "At 45 °C most bacteria failed but a few grew, so the bacteria were not all alike — option (a).",
+          "solution_md": "At 45 °C most bacteria failed but a few grew, so the bacteria were not all alike — option (d).",
           "marking_scheme": [
             {
-              "step": "Correct option (a)",
+              "step": "Correct option (d)",
               "marks": 1
             }
           ],
@@ -7089,7 +6728,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_081",
+      "id": "q_cbse10sci_ch07_074",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "case-based",
@@ -7099,9 +6738,9 @@
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "**(a)** (c) Buds in the notches of the leaf margin\n\n**(b)** **Vegetative propagation**; it gives plants identical to a good parent, quickly.\n\n**(c)** (i) The grafted saplings are **genetically similar to the prize-winning tree**, so the fruit has the same taste and quality; seedlings would vary. Grafted plants also **bear fruit years earlier** than plants grown from seed.\n\n**OR** (ii) The plan gives fast, uniform crops with the parent’s good qualities. But all the plants would be **almost identical**, with little variation, so a single disease or pest that attacks one could **destroy the whole crop**. It would be safer to use setts from several good plants or varieties."
+        "model_answer_md": "**(a)** (b) Buds in the notches of the leaf margin\n\n**(b)** **Vegetative propagation**; it gives plants identical to a good parent, quickly.\n\n**(c)** (i) The grafted saplings are **genetically similar to the prize-winning tree**, so the fruit has the same taste and quality; seedlings would vary. Grafted plants also **bear fruit years earlier** than plants grown from seed.\n\n**OR** (ii) The plan gives fast, uniform crops with the parent’s good qualities. But all the plants would be **almost identical**, with little variation, so a single disease or pest that attacks one could **destroy the whole crop**. It would be safer to use setts from several good plants or varieties."
       },
-      "solution_md": "**(a)** Bryophyllum forms buds in the notches along its leaf margin, which grow into new plants — option (c).\n\n**(b)** All grow from stems, leaves or shoots, not seeds.\n\n**(c)** (i) Identical qualities and earlier fruiting.\n\n(ii) Weigh the advantage (uniform, quick) against the risk of no variation.",
+      "solution_md": "**(a)** Bryophyllum forms buds in the notches along its leaf margin, which grow into new plants — option (b).\n\n**(b)** All grow from stems, leaves or shoots, not seeds.\n\n**(c)** (i) Identical qualities and earlier fruiting.\n\n(ii) Weigh the advantage (uniform, quick) against the risk of no variation.",
       "marking_scheme": [
         {
           "step": "Part (a)",
@@ -7137,11 +6776,11 @@
             },
             {
               "id": "b",
-              "text_md": "Spores on the underside of the leaf"
+              "text_md": "Buds in the notches of the leaf margin"
             },
             {
               "id": "c",
-              "text_md": "Buds in the notches of the leaf margin"
+              "text_md": "Spores on the underside of the leaf"
             },
             {
               "id": "d",
@@ -7151,13 +6790,13 @@
           "match_right": [],
           "answer": {
             "option_ids": [
-              "c"
+              "b"
             ]
           },
-          "solution_md": "Bryophyllum forms buds in the notches along its leaf margin, which grow into new plants — option (c).",
+          "solution_md": "Bryophyllum forms buds in the notches along its leaf margin, which grow into new plants — option (b).",
           "marking_scheme": [
             {
-              "step": "Correct option (c)",
+              "step": "Correct option (b)",
               "marks": 1
             }
           ],
@@ -7286,7 +6925,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_082",
+      "id": "q_cbse10sci_ch07_075",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "case-based",
@@ -7482,7 +7121,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_083",
+      "id": "q_cbse10sci_ch07_076",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "case-based",
@@ -7676,7 +7315,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_084",
+      "id": "q_cbse10sci_ch07_077",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "case-based",
@@ -7686,9 +7325,9 @@
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "**(a)** (b) Embedded in the wall of the uterus\n\n**(b)** umbilical\n\n**(c)** (i) The baby cannot eat; all its **food and oxygen come from the mother’s blood** through the placenta. If the mother eats a balanced, iron-rich diet, her blood carries enough nutrients for the baby to grow well; a poor diet means less food reaches the baby.\n\n**OR** (ii) Although the bloods do not mix, substances **pass across** the thin barrier between them in the placenta. Harmful substances from smoking that enter the mother’s blood can cross to the baby along with food and oxygen, and can harm its growth."
+        "model_answer_md": "**(a)** (a) Embedded in the wall of the uterus\n\n**(b)** umbilical\n\n**(c)** (i) The baby cannot eat; all its **food and oxygen come from the mother’s blood** through the placenta. If the mother eats a balanced, iron-rich diet, her blood carries enough nutrients for the baby to grow well; a poor diet means less food reaches the baby.\n\n**OR** (ii) Although the bloods do not mix, substances **pass across** the thin barrier between them in the placenta. Harmful substances from smoking that enter the mother’s blood can cross to the baby along with food and oxygen, and can harm its growth."
       },
-      "solution_md": "**(a)** The placenta is a disc embedded in the uterine wall — option (b).\n\n**(b)** It is the **umbilical** cord.\n\n**(c)** (i) Trace nutrients from the mother’s diet to her blood, across the placenta, to the baby.\n\n(ii) Distinguish mixing of blood from exchange of dissolved substances.",
+      "solution_md": "**(a)** The placenta is a disc embedded in the uterine wall — option (a).\n\n**(b)** It is the **umbilical** cord.\n\n**(c)** (i) Trace nutrients from the mother’s diet to her blood, across the placenta, to the baby.\n\n(ii) Distinguish mixing of blood from exchange of dissolved substances.",
       "marking_scheme": [
         {
           "step": "Part (a)",
@@ -7720,11 +7359,11 @@
           "options": [
             {
               "id": "a",
-              "text_md": "In the oviduct"
+              "text_md": "Embedded in the wall of the uterus"
             },
             {
               "id": "b",
-              "text_md": "Embedded in the wall of the uterus"
+              "text_md": "In the oviduct"
             },
             {
               "id": "c",
@@ -7738,13 +7377,13 @@
           "match_right": [],
           "answer": {
             "option_ids": [
-              "b"
+              "a"
             ]
           },
-          "solution_md": "The placenta is a disc embedded in the uterine wall — option (b).",
+          "solution_md": "The placenta is a disc embedded in the uterine wall — option (a).",
           "marking_scheme": [
             {
-              "step": "Correct option (b)",
+              "step": "Correct option (a)",
               "marks": 1
             }
           ],
@@ -7874,7 +7513,7 @@
       }
     },
     {
-      "id": "q_cbse10sci_ch07_085",
+      "id": "q_cbse10sci_ch07_078",
       "unit": "cbse-10-science-ch07",
       "language": "en",
       "type": "case-based",
@@ -7884,9 +7523,9 @@
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "**(a)** (d) Female foetuses were identified through illegal sex determination and aborted.\n\n**(b)** 95\n\n**(c)** (i) It makes society **unequal**, with fewer girls and women than boys and men, and it reflects a belief that girls are less valuable. In the future there may be fewer women to marry and more pressure on, and mistreatment of, girls and women.\n\n**OR** (ii) The ratio rose from 905 in 2011 to 931 in 2021, so the measures **appear to have helped**. However, it is still below the 2001 value of 942 and below 1000, so the problem is not fully solved and the effort needs to continue."
+        "model_answer_md": "**(a)** (c) Female foetuses were identified through illegal sex determination and aborted.\n\n**(b)** 95\n\n**(c)** (i) It makes society **unequal**, with fewer girls and women than boys and men, and it reflects a belief that girls are less valuable. In the future there may be fewer women to marry and more pressure on, and mistreatment of, girls and women.\n\n**OR** (ii) The ratio rose from 905 in 2011 to 931 in 2021, so the measures **appear to have helped**. However, it is still below the 2001 value of 942, so the problem is not fully solved and the effort needs to continue."
       },
-      "solution_md": "**(a)** The report found illegal sex determination; sex-selective abortion of female foetuses lowers the number of girls born — option (d).\n\n**(b)** $1000 - 905 = 95$ fewer girls per 1000 boys.\n\n**(c)** (i) Give two social consequences of having fewer girls than boys.\n\n(ii) Compare 2011 with 2021, then with 2001, before concluding.",
+      "solution_md": "**(a)** The report found illegal sex determination; sex-selective abortion of female foetuses lowers the number of girls born — option (c).\n\n**(b)** $1000 - 905 = 95$ fewer girls per 1000 boys.\n\n**(c)** (i) Give two social consequences of having fewer girls than boys.\n\n(ii) Compare 2011 with 2021, then with 2001, before concluding.",
       "marking_scheme": [
         {
           "step": "Part (a)",
@@ -7926,23 +7565,23 @@
             },
             {
               "id": "c",
-              "text_md": "The survey counted only boys’ schools."
+              "text_md": "Female foetuses were identified through illegal sex determination and aborted."
             },
             {
               "id": "d",
-              "text_md": "Female foetuses were identified through illegal sex determination and aborted."
+              "text_md": "The survey counted only boys’ schools."
             }
           ],
           "match_right": [],
           "answer": {
             "option_ids": [
-              "d"
+              "c"
             ]
           },
-          "solution_md": "The report found illegal sex determination; sex-selective abortion of female foetuses lowers the number of girls born — option (d).",
+          "solution_md": "The report found illegal sex determination; sex-selective abortion of female foetuses lowers the number of girls born — option (c).",
           "marking_scheme": [
             {
-              "step": "Correct option (d)",
+              "step": "Correct option (c)",
               "marks": 1
             }
           ],
@@ -8027,7 +7666,7 @@
               "options": [],
               "match_right": [],
               "answer": {
-                "model_answer_md": "The ratio rose from 905 in 2011 to 931 in 2021, so the measures **appear to have helped**. However, it is still below the 2001 value of 942 and below 1000, so the problem is not fully solved and the effort needs to continue."
+                "model_answer_md": "The ratio rose from 905 in 2011 to 931 in 2021, so the measures **appear to have helped**. However, it is still below the 2001 value of 942, so the problem is not fully solved and the effort needs to continue."
               },
               "solution_md": "Compare 2011 with 2021, then with 2001, before concluding.",
               "marking_scheme": [
@@ -8036,7 +7675,7 @@
                   "marks": 1
                 },
                 {
-                  "step": "Notes it is still below 942 or 1000, so more is needed",
+                  "step": "Notes it is still below the 2001 level of 942, so more is needed",
                   "marks": 1
                 }
               ],
@@ -8078,7 +7717,7 @@
       "biology_facts": "DNA copying and variation, asexual methods with examples, flower parts, pollination, fertilisation, human reproductive systems, placenta, menstruation, STDs and contraception checked against the 2026-27 syllabus scope (see README \"Verifier pass\")",
       "content_gate": "npm test -w @soyl/content-templates: all 7 checks pass for this chapter",
       "verifier_pass": "2026-10-26: every question, case part and alternative re-solved from its stem by the author; keys, schemes and word limits checked — see README \"Verifier pass\"",
-      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 1 warnings"
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
     }
   }
 }
