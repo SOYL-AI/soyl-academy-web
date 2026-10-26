@@ -26,6 +26,8 @@ const optionalBool = z
 const EnvSchema = z.object({
   APP_ENV: z.enum(APP_ENVS).default('local'),
   DATABASE_URL: z.string().optional(),
+  /** INFRA-2: `entra` = DATABASE_URL has no password; each connection uses a managed-identity token. */
+  DATABASE_AUTH: z.enum(['password', 'entra']).default('password'),
   WORKER_HEALTH_PORT: z.coerce.number().int().min(0).max(65535).default(8081),
   WORKER_HEALTH_HOST: z.string().default('0.0.0.0'),
   PGBOSS_SCHEMA: z.string().regex(PG_IDENTIFIER, 'must be a lower-case PostgreSQL identifier').default('pgboss'),
@@ -36,6 +38,13 @@ const EnvSchema = z.object({
   /** AUTH-15: accounts that never reach consent `granted` are deleted after this many days. */
   UNCONSENTED_ACCOUNT_TTL_DAYS: z.coerce.number().int().min(1).max(3650).default(CONSENT.unconsentedAccountTtlDays),
   /** Graceful shutdown budget for in-flight jobs (ACA sends SIGTERM, then SIGKILL after 30 s by default). */
+  /**
+   * AUTH-15 purge of never-consented student accounts. `auto` (default) = on, except with
+   * CONSENT_PROVIDER=unavailable (no consent system yet, OA-08): nobody can ever reach `granted`, so the
+   * purge would delete every student 30 days after sign-up. `on`/`off` force it.
+   */
+  UNCONSENTED_PURGE: z.enum(['on', 'off', 'auto']).default('auto'),
+  CONSENT_PROVIDER: z.string().optional(),
   WORKER_SHUTDOWN_TIMEOUT_MS: z.coerce.number().int().min(1000).max(120_000).default(20_000),
 });
 
@@ -44,6 +53,7 @@ export interface WorkerConfig {
   /** local or test: the embedded dev database and pg-boss self-migration are allowed. */
   isLocal: boolean;
   databaseUrl: string | undefined;
+  databaseAuth: 'password' | 'entra';
   healthPort: number;
   healthHost: string;
   logLevel: LogLevel;
@@ -54,6 +64,8 @@ export interface WorkerConfig {
     appRole: string;
   };
   unconsentedAccountTtlDays: number;
+  /** Whether the AUTH-15 purge job is registered (see UNCONSENTED_PURGE). */
+  unconsentedPurge: boolean;
   shutdownTimeoutMs: number;
 }
 
@@ -89,11 +101,13 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
     appEnv: e.APP_ENV,
     isLocal,
     databaseUrl: e.DATABASE_URL,
+    databaseAuth: e.DATABASE_AUTH,
     healthPort: e.WORKER_HEALTH_PORT,
     healthHost: e.WORKER_HEALTH_HOST,
     logLevel: e.LOG_LEVEL,
     pgboss: { schema: e.PGBOSS_SCHEMA, migrate, appRole: e.PGBOSS_APP_ROLE },
     unconsentedAccountTtlDays: e.UNCONSENTED_ACCOUNT_TTL_DAYS,
+    unconsentedPurge: e.UNCONSENTED_PURGE === 'on' || (e.UNCONSENTED_PURGE === 'auto' && e.CONSENT_PROVIDER !== 'unavailable'),
     shutdownTimeoutMs: e.WORKER_SHUTDOWN_TIMEOUT_MS,
   };
 }

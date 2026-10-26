@@ -6,7 +6,7 @@
  * database. SIGTERM/SIGINT stop pg-boss gracefully (running jobs get WORKER_SHUTDOWN_TIMEOUT_MS),
  * then close the probe server and the pools.
  */
-import { createDb } from '@soyl/db';
+import { createDb, pgPasswordFromEnv } from '@soyl/db';
 import { ConfigError, loadConfig } from './config';
 import { createLogger, errorFields } from './logger';
 import { installPgBossSchema } from './migrate';
@@ -24,6 +24,8 @@ export async function main(argv: string[] = process.argv.slice(2), env: Record<s
     throw err;
   }
   const log = createLogger(config.logLevel);
+  // INFRA-2: DATABASE_AUTH=entra → managed-identity token per new connection (app pool, pg-boss, migrate).
+  const databasePassword = pgPasswordFromEnv({ DATABASE_AUTH: config.databaseAuth });
   const command = argv[0] ?? 'start';
 
   if (command === 'migrate') {
@@ -33,6 +35,7 @@ export async function main(argv: string[] = process.argv.slice(2), env: Record<s
     }
     const result = await installPgBossSchema({
       connectionString: config.databaseUrl,
+      password: databasePassword,
       schema: config.pgboss.schema,
       appRole: config.pgboss.appRole,
       log,
@@ -52,8 +55,8 @@ export async function main(argv: string[] = process.argv.slice(2), env: Record<s
     databaseUrl = devDb.url;
   }
 
-  const { db, pool } = createDb(databaseUrl, { max: 5, pool: { application_name: 'soyl-worker-app' } });
-  const worker = await startWorker({ config, databaseUrl, db, pool, log });
+  const { db, pool } = createDb(databaseUrl, { max: 5, password: databasePassword, pool: { application_name: 'soyl-worker-app' } });
+  const worker = await startWorker({ config, databaseUrl, databasePassword, db, pool, log });
 
   let closing = false;
   const shutdown = async (signal: string) => {
