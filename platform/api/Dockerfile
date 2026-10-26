@@ -10,11 +10,11 @@
 # (configuration arrives as env vars / Key Vault references at runtime, INFRA-6).
 
 # Base images are pinned by digest (INFRA-10) directly in the FROM lines so Dependabot can bump them:
-#   build:   node:24-bookworm-slim                        (digest resolved 2026-10-26)
-#   runtime: gcr.io/distroless/nodejs24-debian12:nonroot  (digest resolved 2026-10-26)
+#   build:   node:24-trixie-slim                          (digest resolved 2026-10-26)
+#   runtime: gcr.io/distroless/nodejs24-debian13:nonroot  (digest resolved 2026-10-26; debian12 digest shipped libssl3 with open HIGH/CRITICAL fixes)
 
 # ---- build: full workspace install for @soyl/api, then bundle ----
-FROM node:24-bookworm-slim@sha256:55fb5f5a527ea2c5c4a95f963e48ef90aa38c7b346054fdc8ee9957a2b55d205 AS build
+FROM node:24-trixie-slim@sha256:43b9ba1142b8dcf33fa8f922ca1be85714adc444e0586c7cf7726daaeabc1bea AS build
 ENV CI=true NPM_CONFIG_AUDIT=false NPM_CONFIG_FUND=false NPM_CONFIG_UPDATE_NOTIFIER=false
 WORKDIR /src
 COPY . .
@@ -24,7 +24,7 @@ RUN npm ci --workspace @soyl/api --include-workspace-root=false \
 
 # ---- deps: production dependencies only (the externals the bundle still requires) ----
 # Workspace packages are bundled into dist/index.js, so their (dangling) links are dropped.
-FROM node:24-bookworm-slim@sha256:55fb5f5a527ea2c5c4a95f963e48ef90aa38c7b346054fdc8ee9957a2b55d205 AS deps
+FROM node:24-trixie-slim@sha256:43b9ba1142b8dcf33fa8f922ca1be85714adc444e0586c7cf7726daaeabc1bea AS deps
 ENV CI=true NPM_CONFIG_AUDIT=false NPM_CONFIG_FUND=false NPM_CONFIG_UPDATE_NOTIFIER=false
 WORKDIR /src
 COPY . .
@@ -35,7 +35,7 @@ RUN npm ci --omit=dev --workspace @soyl/api --include-workspace-root=false \
  && rm -rf /out/node_modules/@soyl /out/node_modules/.package-lock.json
 
 # ---- runtime ----
-FROM gcr.io/distroless/nodejs24-debian12:nonroot@sha256:14d42e2511532589a7c7e01a753667a74fcc96266e137e8125006b87b0c32d0a
+FROM gcr.io/distroless/nodejs24-debian13:nonroot@sha256:cb606325b7ec4af55462cb0b424a53b452a5b4a894ffe841fcf1048d216fb9f8
 ENV NODE_ENV=production PORT=8080
 WORKDIR /app
 COPY --from=deps --chown=nonroot:nonroot /out/node_modules ./node_modules
