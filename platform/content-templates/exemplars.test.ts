@@ -7,7 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as yaml from 'js-yaml';
 import { describe, expect, it } from 'vitest';
-import { ChapterRelease, SyllabusFile, TestDefinition, parseChapterId } from '@soyl/shared/content/index';
+import { ChapterRelease, SubjectsFile, SyllabusFile, TestDefinition, checkScriptRelease, parseChapterId, scriptForLanguage } from '@soyl/shared/content/index';
 import { CONTENT_TARGETS } from '@soyl/shared/config/content-targets';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -40,6 +40,14 @@ function syllabusFor(subjectId: string) {
       ? path.join(catalogDir, 'cbse', cls!, slug, 'syllabus.yaml')
       : path.join(catalogDir, 'cisce', `${exam}-${cls}`, slug, 'syllabus.yaml');
   return SyllabusFile.parse(yaml.load(fs.readFileSync(file, 'utf8')));
+}
+
+/** Subject id → { language, script } from catalog/<board>/subjects.yaml. */
+const subjectScripts = new Map<string, { language: string; script: string }>();
+for (const board of ['cbse', 'cisce']) {
+  const file = path.join(catalogDir, board, 'subjects.yaml');
+  if (!fs.existsSync(file)) continue;
+  for (const s of SubjectsFile.parse(yaml.load(fs.readFileSync(file, 'utf8'))).subjects) subjectScripts.set(s.id, { language: s.language, script: s.script });
 }
 
 const dirs = exemplarDirs();
@@ -109,10 +117,16 @@ describe('exemplars', () => {
         expect(new Set(release.questions.map((q) => q.type)).size, 'distinct question types').toBeGreaterThanOrEqual(5);
       });
 
-      it('writes language subjects in their own script', () => {
-        if (release.notes.language !== 'hi') return;
-        const devanagari = /[ऀ-ॿ]/;
-        expect(release.decks.every((d) => d.slides.every((s) => devanagari.test(s.heading + s.narration)))).toBe(true);
+      it('writes language subjects in their own script (NFC, well-formed, no Latin runs, TTS-safe narration)', () => {
+        // Generic by script (shared/content/script.ts, ported from the Hindi exemplar validator):
+        // the subject's script from subjects.yaml, else the content language (hi → Deva, ta → Taml…).
+        const subject = subjectScripts.get(subjectId);
+        const script = scriptForLanguage(release.notes.language, subject?.script);
+        if (!script) return;
+        const errors = checkScriptRelease(release, script)
+          .filter((i) => i.severity === 'error')
+          .map((i) => `[${i.rule}] ${i.path}: ${i.message}`);
+        expect(errors.slice(0, 20), `${errors.length} script error(s)`).toEqual([]);
       });
 
       it('has a short and a long chapter test drawn from its own questions', () => {
