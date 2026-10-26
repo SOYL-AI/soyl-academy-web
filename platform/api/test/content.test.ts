@@ -6,7 +6,7 @@
  */
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { and, eq } from 'drizzle-orm';
-import { decks, notes, questionKeys, questions } from '@soyl/db';
+import { chapters, decks, notes, questionKeys, questions } from '@soyl/db';
 import { shuffleForOrdering } from '../src/domain/content';
 import { createHarness, type Harness } from './helpers';
 import { seedRealContent, type ReleaseFile } from './content-fixture';
@@ -90,14 +90,19 @@ describe('chapter hub', () => {
   });
 
   it('a catalog chapter without content says so; unknown or malformed ids are 404/400', async () => {
-    const empty = await h.client().get('/v1/chapters/cbse-10-science-ch13');
+    // Pick a catalog chapter with no authored release, so new content never invalidates this test.
+    const withContent = new Set(releases.map((r) => r.release.unit));
+    const keys = (await h.t.db.select({ key: chapters.key }).from(chapters)).map((r) => r.key);
+    const emptyId = keys.filter((k) => k.startsWith('cbse-10-science-') && !withContent.has(k)).sort()[0]
+      ?? keys.filter((k) => !withContent.has(k)).sort()[0]!;
+    const empty = await h.client().get(`/v1/chapters/${emptyId}`);
     expect(empty.statusCode).toBe(200);
     expect(empty.json().assets).toMatchObject({ lesson: { available: false }, notes: { available: false }, practice: { available: false, count: 0 } });
     expect((await h.client().get('/v1/chapters/cbse-10-science-ch99')).statusCode).toBe(404);
     expect((await h.client().get('/v1/chapters/not-a-chapter')).statusCode).toBe(400);
-    expect((await h.client().get('/v1/chapters/cbse-10-science-ch13/notes')).statusCode).toBe(404);
-    expect((await h.client().get('/v1/chapters/cbse-10-science-ch13/deck')).statusCode).toBe(404);
-    expect((await h.client().get('/v1/chapters/cbse-10-science-ch13/flashcards')).statusCode).toBe(404);
+    expect((await h.client().get(`/v1/chapters/${emptyId}/notes`)).statusCode).toBe(404);
+    expect((await h.client().get(`/v1/chapters/${emptyId}/deck`)).statusCode).toBe(404);
+    expect((await h.client().get(`/v1/chapters/${emptyId}/flashcards`)).statusCode).toBe(404);
   });
 });
 
