@@ -1,12 +1,25 @@
 /**
- * `plot` visual: axes, grid, functions y = f(x) (safe parser, sampled), points and data series,
- * drawn as SVG with currentColor / diagram tokens. Server-renderable, no client JS.
+ * `plot` visual: axes, grid, functions y = f(x) (safe parser, sampled), reference lines x = c / y = c,
+ * points and data series, drawn as SVG with currentColor / diagram tokens. Server-renderable, no client JS.
  */
 import type { ReactNode } from 'react';
 import type { Visual } from '@/platform/shared/content/visual';
+import { Markdown } from '../render/Markdown';
 import { tryParseExpr } from './expr';
-import { fmt, hashId, LABEL_PROPS, niceTicks, round } from './svg-utils';
+import { fmt, hashId, htmlLabel, LABEL_PROPS, niceTicks, round, svgLabel } from './svg-utils';
 import s from './visual.module.css';
+
+/** Legend text: inline Markdown (KaTeX) when the label has $…$ or \ce{…}, else sub/superscript runs. */
+function LegendLabel({ label }: { label: string }) {
+  if (/\$|\\(ce|pu)\{/.test(label)) {
+    return (
+      <Markdown inline allowImages={false} linkHosts={[]}>
+        {label}
+      </Markdown>
+    );
+  }
+  return <>{htmlLabel(label)}</>;
+}
 
 export type PlotSpec = Extract<Visual, { kind: 'plot' }>['spec'];
 
@@ -86,7 +99,38 @@ export function PlotVisual({ spec, alt }: { spec: PlotSpec; alt: string }) {
   const legend: LegendItem[] = [];
   const errors: string[] = [];
   const marks: ReactNode[] = [];
+  const refLabels: ReactNode[] = [];
   let styleIndex = 0;
+
+  // Reference lines x = c and y = c (asymptotes, axes of symmetry): drawn under the curves, only when in
+  // range; labels at the top (vlines) or right (hlines) end, nudged off the axis labels.
+  (spec.vlines ?? []).forEach((vl, i) => {
+    if (!Number.isFinite(vl.x) || vl.x < x.min || vl.x > x.max) return;
+    const px = sx(vl.x);
+    marks.push(<line key={`vl${i}`} data-mark="vline" x1={round(px)} x2={round(px)} y1={M.t} y2={M.t + PH} stroke="var(--diagram-muted)" strokeWidth={1.75} strokeDasharray={vl.dashed ? '6 4' : undefined} />);
+    if (vl.label) {
+      const right = px > M.l + PW - 70;
+      const nearYLabel = Boolean(y.label) && Math.abs(px - axisY) < 60;
+      refLabels.push(
+        <text key={`vll${i}`} {...LABEL_PROPS} x={round(right ? px - 4 : px + 4)} y={M.t + (nearYLabel ? 27 : 11)} textAnchor={right ? 'end' : 'start'}>
+          {svgLabel(vl.label)}
+        </text>,
+      );
+    }
+  });
+  (spec.hlines ?? []).forEach((hl, i) => {
+    if (!Number.isFinite(hl.y) || hl.y < y.min || hl.y > y.max) return;
+    const py = sy(hl.y);
+    marks.push(<line key={`hl${i}`} data-mark="hline" x1={M.l} x2={M.l + PW} y1={round(py)} y2={round(py)} stroke="var(--diagram-muted)" strokeWidth={1.75} strokeDasharray={hl.dashed ? '6 4' : undefined} />);
+    if (hl.label) {
+      const below = py < M.t + 14 || (Boolean(x.label) && Math.abs(py - axisX) < 16);
+      refLabels.push(
+        <text key={`hll${i}`} {...LABEL_PROPS} x={M.l + PW - 4} y={round(below ? py + 15 : py - 5)} textAnchor="end">
+          {svgLabel(hl.label)}
+        </text>,
+      );
+    }
+  });
 
   (spec.functions ?? []).forEach((fn, i) => {
     const compiled = tryParseExpr(fn.expr);
@@ -167,25 +211,28 @@ export function PlotVisual({ spec, alt }: { spec: PlotSpec; alt: string }) {
         </g>
         {x.label && (
           <text {...LABEL_PROPS} x={M.l + PW} y={round(axisX - 6)} textAnchor="end" fontStyle="italic" aria-hidden="true">
-            {x.label}
+            {svgLabel(x.label)}
           </text>
         )}
         {y.label && (
           <text {...LABEL_PROPS} x={round(axisY + 6)} y={M.t + 11} textAnchor="start" fontStyle="italic" aria-hidden="true">
-            {y.label}
+            {svgLabel(y.label)}
           </text>
         )}
         <g clipPath={`url(#${clip})`} aria-hidden="true">
           {marks}
         </g>
         <g aria-hidden="true">
+          {refLabels}
+          {/* `on_curve: false` only tells the linter the point is not on a curve; it renders the same solid
+              dot, because a hollow dot means "excluded endpoint" in school maths. */}
           {(spec.points ?? []).map((p, i) =>
             Number.isFinite(p.at[0]) && Number.isFinite(p.at[1]) ? (
-              <g key={`p${i}`}>
+              <g key={`p${i}`} data-on-curve={p.on_curve === false ? 'false' : undefined}>
                 <circle cx={round(sx(p.at[0]))} cy={round(sy(p.at[1]))} r={4} fill="var(--diagram-accent)" stroke="var(--diagram-paper)" strokeWidth={1.5} />
                 {p.label && (
                   <text {...LABEL_PROPS} x={round(sx(p.at[0]) + 7)} y={round(sy(p.at[1]) - 7)}>
-                    {p.label}
+                    {svgLabel(p.label)}
                   </text>
                 )}
               </g>
@@ -206,7 +253,9 @@ export function PlotVisual({ spec, alt }: { spec: PlotSpec; alt: string }) {
                   <line x1="1" x2="25" y1="6" y2="6" stroke={STYLES[item.style].stroke} strokeDasharray={STYLES[item.style].dash} strokeWidth="2.5" />
                 )}
               </svg>
-              {item.label}
+              <span>
+                <LegendLabel label={item.label} />
+              </span>
             </li>
           ))}
         </ul>

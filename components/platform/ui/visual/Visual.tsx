@@ -40,26 +40,49 @@ function Cell({ text }: { text?: string }) {
   );
 }
 
+const isBlank = (text?: string) => !text || text.trim() === '';
+
+/** Longest visible cell text allowed in a compact grid (raw length, Markdown markers removed). */
+const COMPACT_CELL = 16;
+
+/**
+ * Small grids of short cells (Punnett squares, value tables such as x | 0 | 1 | 2) render compact:
+ * centred, cell borders, no full-width stretch. The top-left corner header is ignored in the check.
+ */
+export function isCompactTable(spec: { headers: string[]; rows: string[][] }): boolean {
+  const headers = spec.headers ?? [];
+  if (headers.length < 2 || headers.length > 6 || (spec.rows ?? []).length > 8) return false;
+  const cells = [...headers.slice(1), ...(spec.rows ?? []).flatMap((row) => row.slice(0, headers.length))];
+  return cells.every((cell) => (cell ?? '').replace(/\*\*|__/g, '').trim().length <= COMPACT_CELL);
+}
+
 export function TableVisual({ spec, alt, caption }: { spec: Extract<VisualData, { kind: 'table' }>['spec']; alt: string; caption?: string }) {
   const headers = spec.headers ?? [];
+  const compact = isCompactTable(spec);
   return (
     <div className={s.tableWrap} role="region" aria-label={alt} tabIndex={0}>
-      <table className={s.table}>
+      <table className={cx(s.table, compact && s.tableCompact)}>
         <caption className={caption ? s.tableCaption : 'p-visually-hidden'}>{caption ?? alt}</caption>
         <thead>
           <tr>
-            {headers.map((h, i) => (
-              <th key={i} scope="col">
-                <Cell text={h} />
-              </th>
-            ))}
+            {/* An empty header (the corner of a Punnett square or a row-label column) is a plain cell:
+                an empty <th> is an unnamed header for screen readers. */}
+            {headers.map((h, i) =>
+              isBlank(h) ? (
+                <td key={i} className={s.tableCorner} />
+              ) : (
+                <th key={i} scope="col">
+                  <Cell text={h} />
+                </th>
+              ),
+            )}
           </tr>
         </thead>
         <tbody>
           {(spec.rows ?? []).map((row, r) => (
             <tr key={r}>
               {headers.map((_, c) =>
-                c === 0 ? (
+                c === 0 && !isBlank(row[c]) ? (
                   <th key={c} scope="row">
                     <Cell text={row[c]} />
                   </th>
