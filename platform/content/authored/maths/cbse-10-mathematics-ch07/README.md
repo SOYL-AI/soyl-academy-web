@@ -37,6 +37,7 @@ Run from `platform/`: `npx tsx content/authored/maths/cbse-10-mathematics-ch07/s
 - **Narration:** 36 slides, max 64 words, mean 48; no symbols or abbreviations.
 - **Labels:** three items relabelled from d1 to d2 after review (q002 sign trap, q023 the 3-4-5 converse, q044 two-part distance and midpoint).
 - **Originality:** avoided NCERT's $(6, 5)$/$(-4, 3)$ point on the $y$-axis, $(3, 6)$/$(-3, 4)$ equidistant relation, $(1, 7), (4, 2), (-1, -1), (-4, 4)$ square, $(-1, -2), (1, 0), (-1, 2), (-3, 0)$ quadrilateral, $(-3, 10)$/$(6, -8)$ divided by $(-1, 6)$ (and its translates), $(5, -6)$/$(-1, -4)$ cut by the $y$-axis, $A(-2, 2)$/$B(2, 8)$ in four parts, $P(4, m)$ on $A(2, 3)$/$B(6, -3)$, the $(1, 2), (4, y), (x, 6), (3, 5)$ parallelogram, the sports-day flags and the classroom desks. Contexts: Chandigarh grid, Lalbagh flower bed, Wardha villages and health centre, Jaipur warehouse, Kolkata metro, Punjab drone, Shimla treasure hunt, Bhopal playground, Nashik irrigation pipe, Kanpur mobile tower, Hyderabad survey drone.
+- **Pipeline stages 5–6 (`verify --authored`, `originality --authored`):** verify 70/70 pass, 0 flags; originality 0 errors after rewording five stems that, with maths stripped, matched or were 75–100% similar to others (q016, q031, q032, q034, q054).
 - **MCQ key balance:** keys rotated after the re-solve to 6/6/6/5 (a/b/c/d), with per-option solution paragraphs re-sorted into a–d order.
 
 ## Gaps / follow-ups

@@ -5577,7 +5577,7 @@
         "tolerance": 0.01,
         "unit": "m"
       },
-      "solution_md": "**Step 1.** Above eye level the tree rises $21.5 - 1.5 = 20$ m. **Step 2.** $\\tan 30^\\circ = \\dfrac{20}{d} \\Rightarrow d = 20\\sqrt3 \\approx 34.64$ m.",
+      "solution_md": "**Step 1.** Above eye level the tree rises $21.5 - 1.5 = 20$ m. **Step 2.** $\\tan 30^\\circ = \\dfrac{20}{d} \\Rightarrow d = 20\\sqrt3 \\approx 20 \\times 1.732 = 34.64$ m.",
       "marking_scheme": [
         {
           "step": "Height above eye level 20 m",
@@ -7656,7 +7656,7 @@
             "tolerance": 0,
             "unit": "m"
           },
-          "solution_md": "$\\tan 45^\\circ = 1$, so the distance equals the height: $20$ m.",
+          "solution_md": "$\\tan 45^\\circ = \\dfrac{20}{d} = 1$, so $d = \\dfrac{20}{1} = 20$ m: the distance equals the height.",
           "marking_scheme": [
             {
               "step": "20 m",
