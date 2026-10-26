@@ -1,0 +1,548 @@
+# CBSE Class 12 Sanskrit Elective (022), 2026-27. Sections, marks, grammar items, metres and figures of speech, the
+# prescribed lessons of Shashwati Part 2 (NCERT) and the chapters of Sanskrit Sahitya Parichay as printed in the CBSE
+# 2026-27 Sanskrit (Aichchhikam) XI-XII syllabus (Class XII pages). Lesson 6 of Shashwati Part 2 is not prescribed. Source
+# attributions of lessons are given only where well established and are informational. No text is reproduced (CONTEXT §8).
+subject_id: cbse-12-sanskrit-elective
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-sanskrit-elective-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+  - ncert-textbooks-secondary
+exam_notes: >-
+  वार्षिकं मूल्याङ्कनम् 80 अङ्काः (3 hours) + आन्तरिकमूल्याङ्कनम् 20 (periodic test 5, multiple assessment 5, portfolio 5,
+  listening-speaking and writing enrichment activities 5). Section A unseen passage 10 (100-120 words). Section B creative writing
+  10 (letter from cues 5; paragraph from cues or translation into Sanskrit 5). Section C applied grammar 15 (sandhi 3, pratyaya 3
+  MCQ, avyaya 3, karaka-upapada vibhakti from read passages 3, analysis of simple compounds from read passages 3 MCQ). Section
+  D(i) textbook comprehension 25 (prose, verse and drama extracts 5 each; question formation on underlined words 4; anvaya of a
+  verse 3; bhavartha or character sketch 3). Section D(ii) history of Sanskrit literature 10 (mahakavya and historical kavya 3;
+  gadyakavya and champu 3; drama 4, MCQ). Section E metres and figures of speech 10 (metres with examples 3, identifying the metre
+  of a verse 2; figures of speech with definitions and examples 3, identifying them in verses 2). Books: Shashwati Part 2 (NCERT),
+  Sanskrit Sahitya Parichay (NCERT); reference: Vyakaranasaurabham, Higher Sanskrit Grammar (M. R. Kale), Rachananuvadakaumudi
+  (Kapildev Dwivedi).
+units:
+  - name: 'क भागः: अपठितावबोधनम्'
+    marks: 10
+  - name: 'ख भागः: रचनात्मककार्यम्'
+    marks: 10
+  - name: 'ग भागः: अनुप्रयुक्तव्याकरणम्'
+    marks: 15
+  - name: 'घ भागः (i): पठितावबोधनम्'
+    marks: 25
+  - name: 'घ भागः (ii): संस्कृत-साहित्येतिहासस्य सामान्यः परिचयः'
+    marks: 10
+  - name: 'ङ भागः: छन्दोऽलङ्कारपरिचयः'
+    marks: 10
+chapters:
+  - id: cbse-12-sanskrit-elective-ch01
+    number: 1
+    title: अपठितावबोधनम्
+    title_en: Unseen passage comprehension
+    unit: 'क भागः: अपठितावबोधनम्'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch01-t01
+        title: अपठितः गद्यांशः (100-120 शब्दाः)
+        title_en: Unseen prose passage (100-120 words)
+        learning_outcomes:
+          - गद्यांशं पठित्वा एकपदेन पूर्णवाक्येन च उत्तराणि लेखितुं शक्नुवन्ति
+          - गद्यांशस्य समुचितं शीर्षकं लेखितुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch01-t02
+        title: अनुच्छेदाधारितं भाषिककार्यम्
+        title_en: Language tasks on the passage
+        learning_outcomes:
+          - कर्तृ-क्रियापदचयनं, विशेषण-विशेष्यचयनं, पर्याय-विलोमपदचयनं, सर्वनामस्थाने संज्ञाप्रयोगं च कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-sanskrit-elective-ch02
+    number: 2
+    title: रचनात्मककार्यम्
+    title_en: Creative writing
+    unit: 'ख भागः: रचनात्मककार्यम्'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch02-t01
+        title: सङ्केताधारितम् औपचारिकम् अनौपचारिकं वा पत्रलेखनम्
+        title_en: Formal or informal letter from cues (full letter)
+        learning_outcomes:
+          - सङ्केतान् आधृत्य पूर्णं पत्रं संस्कृतेन लेखितुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch02-t02
+        title: सङ्केताधारितम् अनुच्छेदलेखनम्
+        title_en: Paragraph writing from cues
+        learning_outcomes:
+          - सङ्केतान् आधृत्य कस्मिंश्चित् विषये अनुच्छेदं लेखितुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch02-t03
+        title: हिन्दी-आङ्ग्लवाक्यानां संस्कृतभाषया अनुवादः
+        title_en: Translating Hindi or English sentences into Sanskrit
+        learning_outcomes:
+          - हिन्दीभाषया आङ्ग्लभाषया वा लिखितानि वाक्यानि शुद्धसंस्कृतेन अनूदितुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-sanskrit-elective-ch03
+    number: 3
+    title: सन्धिः प्रत्ययाः च
+    title_en: Sandhi and suffixes
+    unit: 'ग भागः: अनुप्रयुक्तव्याकरणम्'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch03-t01
+        title: 'स्वरसन्धिः: दीर्घः, गुणः, यण्, अयादि, पूर्वरूपम्'
+        title_en: Vowel sandhi
+        learning_outcomes:
+          - स्वरसन्धीनां सन्धिं विच्छेदं च कर्तुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch03-t02
+        title: व्यञ्जनसन्धिः (श्चुत्वम्, ष्टुत्वम्, मोऽनुस्वारः, परसवर्णः) विसर्गसन्धिः (सत्वम्, उत्वम्, रुत्वम्, लोपः) च
+        title_en: Consonant and visarga sandhi
+        learning_outcomes:
+          - व्यञ्जनविसर्गसन्धीनां सन्धिं विच्छेदं च कर्तुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch03-t03
+        title: >-
+          प्रत्ययाः: कृदन्ताः (क्त, क्तवतु, शतृ, शानच्, यत्, तव्यत्, अनीयर्, तृच्, क्तिन्, अच्), तद्धिताः (णिनि, ठक्, अण्, त्व,
+          मयट्), स्त्रीप्रत्ययौ (टाप्, ङीप्)
+        title_en: 'Suffixes: krit, taddhita and feminine'
+        learning_outcomes:
+          - प्रकृति-प्रत्ययसंयोजनं वियोजनं च कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-sanskrit-elective-ch04
+    number: 4
+    title: अव्ययानि विभक्तिप्रयोगाः समासविग्रहः च
+    title_en: Indeclinables, case usage and compound analysis
+    unit: 'ग भागः: अनुप्रयुक्तव्याकरणम्'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch04-t01
+        title: अव्ययानि
+        title_en: Indeclinables
+        learning_outcomes:
+          - >-
+            उच्चैः, शनैः, अधः, ऋते, युगपत्, अद्य, श्वः, ह्यः, सायम्, चिरम्, तूष्णीम्, सहसा, मिथ्या, पुरा, प्रायः, नूनम्, भूयः, खलु
+            इत्यादीनि अव्ययानि वाक्येषु प्रयोक्तुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch04-t02
+        title: विभक्तिप्रयोगाः (पठितपाठ्यांशेषु उपपद-कारकविभक्तयः)
+        title_en: Case usage in read passages
+        learning_outcomes:
+          - पठितपाठ्यांशेषु प्रयुक्तानां कारक-उपपदविभक्तीनां कारणं वक्तुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch04-t03
+        title: पठितपाठ्यांशेषु सरलसमस्तपदानां विग्रहः
+        title_en: Analysis of simple compounds in read passages
+        learning_outcomes:
+          - पठितांशेषु समस्तपदानां विग्रहं कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-sanskrit-elective-ch05
+    number: 5
+    title: पठितावबोधनकौशलानि
+    title_en: Textbook comprehension skills
+    unit: 'घ भागः (i): पठितावबोधनम्'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch05-t01
+        title: गद्यांश-पद्यांश-नाट्यांशावबोधनम्
+        title_en: Comprehension of prose, verse and drama extracts
+        learning_outcomes:
+          - पठितांशं पठित्वा एकपदेन पूर्णवाक्येन च उत्तराणि लेखितुं शक्नुवन्ति
+          - पठितांशे कर्तृ-क्रियापदचयनं, विशेषण-विशेष्यचयनं, पर्याय-विलोमपदचयनं, सर्वनामस्थाने संज्ञाप्रयोगं च कर्तुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch05-t02
+        title: रेखाङ्कितपदानि अधिकृत्य प्रश्ननिर्माणम्
+        title_en: Question formation on underlined words
+        learning_outcomes:
+          - रेखाङ्कितपदानां स्थाने उचितप्रश्नवाचकपदानि प्रयुज्य प्रश्ननिर्माणं कर्तुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch05-t03
+        title: श्लोकस्य अन्वयः (पूर्णः)
+        title_en: Full prose order (anvaya) of a verse
+        learning_outcomes:
+          - श्लोकस्य पूर्णम् अन्वयं लेखितुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch05-t04
+        title: भावार्थलेखनं चरित्रचित्रणं वा
+        title_en: Writing the meaning or a character sketch
+        learning_outcomes:
+          - पाठ्यांशस्य भावार्थं, पात्रस्य चरित्रचित्रणं वा संस्कृतेन लेखितुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-sanskrit-elective-ch06
+    number: 6
+    title: विद्ययाऽमृतमश्नुते
+    title_en: Vidyaya-mritamashnute (Through knowledge one attains immortality)
+    unit: 'घ भागः (i): पठितावबोधनम्'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch06-t01
+        title: पाठपरिचयः सन्दर्भश्च
+        title_en: Introduction and source
+        learning_outcomes:
+          - पाठस्य स्रोतः (ईशावास्योपनिषद्) विधा च वक्तुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch06-t02
+        title: पाठस्य सारः भावार्थश्च
+        title_en: Summary and meaning
+        learning_outcomes:
+          - पाठस्य कथावस्तु मुख्यभावं च संस्कृतेन स्पष्टीकर्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि व्याख्यातुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch06-t03
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch06-t04
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - पाठगतश्लोकानाम् अन्वयं भावार्थं च लेखितुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: विद्ययाऽमृतमश्नुते
+        author: ईशावास्योपनिषद्
+        title_en: Vidyaya-mritamashnute (Through knowledge one attains immortality)
+  - id: cbse-12-sanskrit-elective-ch07
+    number: 7
+    title: रघुकौत्ससंवादः
+    title_en: Raghu-Kautsa-samvadah (Dialogue of Raghu and Kautsa)
+    unit: 'घ भागः (i): पठितावबोधनम्'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch07-t01
+        title: पाठपरिचयः सन्दर्भश्च
+        title_en: Introduction and source
+        learning_outcomes:
+          - पाठस्य स्रोतः (रघुवंशम् (कालिदासः)) विधा च वक्तुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch07-t02
+        title: पाठस्य सारः भावार्थश्च
+        title_en: Summary and meaning
+        learning_outcomes:
+          - पाठस्य कथावस्तु मुख्यभावं च संस्कृतेन स्पष्टीकर्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि व्याख्यातुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch07-t03
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch07-t04
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - पाठगतश्लोकानाम् अन्वयं भावार्थं च लेखितुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: रघुकौत्ससंवादः
+        author: रघुवंशम् (कालिदासः)
+        title_en: Raghu-Kautsa-samvadah (Dialogue of Raghu and Kautsa)
+  - id: cbse-12-sanskrit-elective-ch08
+    number: 8
+    title: बालकौतुकम्
+    title_en: Balakautukam (A child’s play)
+    unit: 'घ भागः (i): पठितावबोधनम्'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch08-t01
+        title: पाठपरिचयः सन्दर्भश्च
+        title_en: Introduction and source
+        learning_outcomes:
+          - पाठस्य स्रोतः (उत्तररामचरितम् (भवभूतिः)) विधा च वक्तुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch08-t02
+        title: पाठस्य सारः भावार्थश्च
+        title_en: Summary and meaning
+        learning_outcomes:
+          - पाठस्य कथावस्तु मुख्यभावं च संस्कृतेन स्पष्टीकर्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि व्याख्यातुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch08-t03
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch08-t04
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - पाठगतश्लोकानाम् अन्वयं भावार्थं च लेखितुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: बालकौतुकम्
+        author: उत्तररामचरितम् (भवभूतिः)
+        title_en: Balakautukam (A child’s play)
+  - id: cbse-12-sanskrit-elective-ch09
+    number: 9
+    title: कर्मगौरवम्
+    title_en: Karmagauravam (The dignity of action)
+    unit: 'घ भागः (i): पठितावबोधनम्'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch09-t01
+        title: पाठपरिचयः सन्दर्भश्च
+        title_en: Introduction and source
+        learning_outcomes:
+          - पाठस्य स्रोतः (श्रीमद्भगवद्गीता) विधा च वक्तुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch09-t02
+        title: पाठस्य सारः भावार्थश्च
+        title_en: Summary and meaning
+        learning_outcomes:
+          - पाठस्य कथावस्तु मुख्यभावं च संस्कृतेन स्पष्टीकर्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि व्याख्यातुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch09-t03
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch09-t04
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - पाठगतश्लोकानाम् अन्वयं भावार्थं च लेखितुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: कर्मगौरवम्
+        author: श्रीमद्भगवद्गीता
+        title_en: Karmagauravam (The dignity of action)
+  - id: cbse-12-sanskrit-elective-ch10
+    number: 10
+    title: शुकनासोपदेशः
+    title_en: Shukanasopadeshah (Shukanasa’s advice)
+    unit: 'घ भागः (i): पठितावबोधनम्'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch10-t01
+        title: पाठपरिचयः सन्दर्भश्च
+        title_en: Introduction and source
+        learning_outcomes:
+          - पाठस्य स्रोतः (कादम्बरी (बाणभट्टः)) विधा च वक्तुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch10-t02
+        title: पाठस्य सारः भावार्थश्च
+        title_en: Summary and meaning
+        learning_outcomes:
+          - पाठस्य कथावस्तु मुख्यभावं च संस्कृतेन स्पष्टीकर्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि व्याख्यातुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch10-t03
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch10-t04
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - पाठगतश्लोकानाम् अन्वयं भावार्थं च लेखितुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: शुकनासोपदेशः
+        author: कादम्बरी (बाणभट्टः)
+        title_en: Shukanasopadeshah (Shukanasa’s advice)
+  - id: cbse-12-sanskrit-elective-ch11
+    number: 11
+    title: विक्रमस्यौदार्यम्
+    title_en: Vikramasyaudaryam (Vikrama’s generosity)
+    unit: 'घ भागः (i): पठितावबोधनम्'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch11-t01
+        title: पाठपरिचयः सन्दर्भश्च
+        title_en: Introduction and source
+        learning_outcomes:
+          - पाठस्य स्रोतः (सिंहासनद्वात्रिंशिका) विधा च वक्तुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch11-t02
+        title: पाठस्य सारः भावार्थश्च
+        title_en: Summary and meaning
+        learning_outcomes:
+          - पाठस्य कथावस्तु मुख्यभावं च संस्कृतेन स्पष्टीकर्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि व्याख्यातुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch11-t03
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch11-t04
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - पाठगतश्लोकानाम् अन्वयं भावार्थं च लेखितुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: विक्रमस्यौदार्यम्
+        author: सिंहासनद्वात्रिंशिका
+        title_en: Vikramasyaudaryam (Vikrama’s generosity)
+  - id: cbse-12-sanskrit-elective-ch12
+    number: 12
+    title: कार्यं वा साधयेयम्, देहं वा पातयेयम्
+    title_en: Karyam Va Sadhayeyam, Deham Va Patayeyam (I will achieve the task or lay down my body)
+    unit: 'घ भागः (i): पठितावबोधनम्'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch12-t01
+        title: पाठपरिचयः सन्दर्भश्च
+        title_en: Introduction and source
+        learning_outcomes:
+          - पाठस्य विधां (गद्यम्/पद्यम्/नाट्यम्) सन्दर्भं च वक्तुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch12-t02
+        title: पाठस्य सारः भावार्थश्च
+        title_en: Summary and meaning
+        learning_outcomes:
+          - पाठस्य कथावस्तु मुख्यभावं च संस्कृतेन स्पष्टीकर्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि व्याख्यातुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch12-t03
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch12-t04
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - पाठगतश्लोकानाम् अन्वयं भावार्थं च लेखितुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: कार्यं वा साधयेयम्, देहं वा पातयेयम्
+        title_en: Karyam Va Sadhayeyam, Deham Va Patayeyam (I will achieve the task or lay down my body)
+  - id: cbse-12-sanskrit-elective-ch13
+    number: 13
+    title: दीनबन्धुः श्रीनायरः
+    title_en: Dinabandhuh Shrinayarah (Shri Nair, friend of the poor)
+    unit: 'घ भागः (i): पठितावबोधनम्'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch13-t01
+        title: पाठपरिचयः सन्दर्भश्च
+        title_en: Introduction and source
+        learning_outcomes:
+          - पाठस्य विधां (गद्यम्/पद्यम्/नाट्यम्) सन्दर्भं च वक्तुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch13-t02
+        title: पाठस्य सारः भावार्थश्च
+        title_en: Summary and meaning
+        learning_outcomes:
+          - पाठस्य कथावस्तु मुख्यभावं च संस्कृतेन स्पष्टीकर्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि व्याख्यातुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch13-t03
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch13-t04
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - पाठगतश्लोकानाम् अन्वयं भावार्थं च लेखितुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: दीनबन्धुः श्रीनायरः
+        title_en: Dinabandhuh Shrinayarah (Shri Nair, friend of the poor)
+  - id: cbse-12-sanskrit-elective-ch14
+    number: 14
+    title: योगस्य वैशिष्ट्यम्
+    title_en: Yogasya Vaishishtyam (The distinction of yoga)
+    unit: 'घ भागः (i): पठितावबोधनम्'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch14-t01
+        title: पाठपरिचयः सन्दर्भश्च
+        title_en: Introduction and source
+        learning_outcomes:
+          - पाठस्य विधां (गद्यम्/पद्यम्/नाट्यम्) सन्दर्भं च वक्तुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch14-t02
+        title: पाठस्य सारः भावार्थश्च
+        title_en: Summary and meaning
+        learning_outcomes:
+          - पाठस्य कथावस्तु मुख्यभावं च संस्कृतेन स्पष्टीकर्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि व्याख्यातुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch14-t03
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch14-t04
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - पाठगतश्लोकानाम् अन्वयं भावार्थं च लेखितुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: योगस्य वैशिष्ट्यम्
+        title_en: Yogasya Vaishishtyam (The distinction of yoga)
+  - id: cbse-12-sanskrit-elective-ch15
+    number: 15
+    title: महाकाव्यम् ऐतिहासिककाव्यं च
+    title_en: Mahakavya and historical kavya - Sahitya Parichay chapters 4-5
+    unit: 'घ भागः (ii): संस्कृत-साहित्येतिहासस्य सामान्यः परिचयः'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch15-t01
+        title: महाकाव्यस्य लक्षणं प्रमुखमहाकाव्यानि कवयः च
+        title_en: Features of mahakavya, major epics and poets
+        learning_outcomes:
+          - प्रमुखमहाकाव्यानि तेषां कवीन् वर्ण्यविषयं च वक्तुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch15-t02
+        title: ऐतिहासिकमहाकाव्यानि
+        title_en: Historical epics
+        learning_outcomes:
+          - राजतरङ्गिणी, विक्रमाङ्कदेवचरितम् इत्यादीनाम् ऐतिहासिककाव्यानां कवीन् विषयं च वक्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-sanskrit-elective-ch16
+    number: 16
+    title: गद्यकाव्यं चम्पूकाव्यं च
+    title_en: Prose poetry and champu - Sahitya Parichay chapter 7
+    unit: 'घ भागः (ii): संस्कृत-साहित्येतिहासस्य सामान्यः परिचयः'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch16-t01
+        title: गद्यकाव्यस्य परम्परा प्रमुखाः गद्यकवयः च
+        title_en: Tradition of prose kavya and major authors
+        learning_outcomes:
+          - दण्डी, सुबन्धुः, बाणभट्टः, अम्बिकादत्तव्यासः इत्यादीनां रचनाः परिचाययितुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch16-t02
+        title: चम्पूकाव्यस्य लक्षणं प्रमुखचम्पूकाव्यानि च
+        title_en: Features of champu and major champu works
+        learning_outcomes:
+          - चम्पूकाव्यस्य लक्षणं प्रमुखचम्पूग्रन्थान् च वक्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-sanskrit-elective-ch17
+    number: 17
+    title: नाट्यसाहित्यम्
+    title_en: Sanskrit drama - Sahitya Parichay chapter 9
+    unit: 'घ भागः (ii): संस्कृत-साहित्येतिहासस्य सामान्यः परिचयः'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch17-t01
+        title: नाट्यसाहित्यस्य उद्भवः तत्त्वानि च
+        title_en: Origin and elements of Sanskrit drama
+        learning_outcomes:
+          - नाट्यस्य उद्भवं, नान्दी-प्रस्तावना-भरतवाक्यादीनि तत्त्वानि च व्याख्यातुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch17-t02
+        title: प्रमुखनाटककाराः तेषां कृतयः च
+        title_en: Major dramatists and their plays
+        learning_outcomes:
+          - भासः, कालिदासः, शूद्रकः, विशाखदत्तः, भवभूतिः, हर्षः इत्यादीनां नाटकानि निर्देष्टुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-sanskrit-elective-ch18
+    number: 18
+    title: छन्दःपरिचयः
+    title_en: Sanskrit metres
+    unit: 'ङ भागः: छन्दोऽलङ्कारपरिचयः'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch18-t01
+        title: 'छन्दसां सोदाहरणं लक्षणम्: अनुष्टुप्, उपजातिः, वसन्ततिलका, मालिनी, शिखरिणी, मन्दाक्रान्ता'
+        title_en: Metres with definitions and examples
+        learning_outcomes:
+          - निर्दिष्टछन्दसां लक्षणं गणविभाजनम् उदाहरणं च लेखितुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch18-t02
+        title: श्लोकेषु छन्दःसंज्ञानम्
+        title_en: Identifying the metre of a verse
+        learning_outcomes:
+          - प्रदत्तश्लोकेषु छन्दः अभिज्ञातुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-sanskrit-elective-ch19
+    number: 19
+    title: अलङ्कारपरिचयः
+    title_en: Figures of speech
+    unit: 'ङ भागः: छन्दोऽलङ्कारपरिचयः'
+    topics:
+      - id: cbse-12-sanskrit-elective-ch19-t01
+        title: 'शब्दालङ्काराः: अनुप्रासः, यमकः, श्लेषः'
+        title_en: 'Figures of sound: anuprasa, yamaka, shlesha'
+        learning_outcomes:
+          - शब्दालङ्काराणां लक्षणम् उदाहरणं च लेखितुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch19-t02
+        title: 'अर्थालङ्काराः: उपमा, रूपकम्, उत्प्रेक्षा'
+        title_en: 'Figures of sense: upama, rupaka, utpreksha'
+        learning_outcomes:
+          - अर्थालङ्काराणां लक्षणम् उदाहरणं च लेखितुं शक्नुवन्ति
+      - id: cbse-12-sanskrit-elective-ch19-t03
+        title: श्लोकेषु अलङ्कारस्य अभिज्ञानम्
+        title_en: Identifying figures of speech in verses
+        learning_outcomes:
+          - प्रदत्तश्लोकेषु अलङ्कारम् अभिज्ञातुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+removed_topics:
+  - शाश्वती द्वितीयो भागः — षष्ठः पाठः (परीक्षायै न निर्धारितः)

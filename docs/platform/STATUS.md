@@ -43,10 +43,10 @@ Single source of truth for progress (AGENTS.md §4.3). Updated by the Lead after
 | M1 | Exemplar: CBSE 10 Mathematics ch06 Triangles + maths templates — 46 slides, 78 questions, 34 flashcards, 2 tests; gate 15/15 | exemplar-author | `platform/exemplar-author/m1-maths` | `platform/content-templates/{exemplars,prompts}/maths/` | **merged** 0d91b8c | — |
 | M1 | Exemplars: CBSE 10 Hindi A ch02 grammar (95 Qs) + ch10 बालगोबिन भगत (68 Qs; two independent no-reproduction verifier passes) + 14 Hindi templates; gate 29/29 | exemplar-author / hindi-specialist | `platform/exemplar-author/m1-hindi` | `platform/content-templates/{exemplars,prompts}/hindi-*/` | **merged** f65ca85 | hi-a syllabus unverified (OA-16) |
 | M1 | CBSE blueprints: 367 (board for every 10/12 subject bar 4 languages, May second-exam track, class defaults 7–12, family overrides) + 96 syllabus files (non-language Wave 1 complete) | curriculum-architect (CBSE-B) | `platform/curriculum-cbse/m1-blueprints` | `platform/catalog/cbse/` | **merged** | 184 blueprints unverified (defaults + unreadable SQPs) |
-| M1 | CBSE Wave 1 language syllabi (Class 10 + 12) | curriculum-architect (CBSE-L) | `platform/curriculum-cbse/m1-languages` | language syllabus dirs under `platform/catalog/cbse/{10,12}/` | in progress | — |
+| M1 | CBSE language syllabi Classes 9–12: 155 files (2,001 chapters, 4,600 topics); 20 placeholder textbooks (lesson lists not published), 4 Manipuri unverified | curriculum-architect (CBSE-L) | `platform/curriculum-cbse/m1-languages` | language syllabus dirs | **merged** | OA-16: textbook contents + native-speaker review |
 | M1 (wave B) | API: Fastify app, auth (Google, phone OTP, email OTP — mock providers), me, catalog, health, route policy, edge auth, rate limits, OpenAPI; worker skeleton — api 207 tests (95% lines), worker 44 | backend-api | `platform/backend-api/m1` | `platform/api/` except `ai/`, `billing/`; `platform/worker/` | **merged** | real providers: OA-05/06/07/08 |
 | M1 (wave B) | Web: route group, platform layout + flag, proxy route (ADR-005), login (Google, phone OTP, email OTP), guest mode + merge, catalog pages, /me | web-platform | `platform/web-platform/m1` | `app/(platform)/`, `components/platform/` (not `ui/`), `platform/shared/api-client/` | in progress (started on backend contract 551f4ba) | — |
-| M2 (content, early) | CBSE 10 Science ch02–ch05 hand-authored to exemplar standard (D-026) | subject-producer | `platform/subject-producer/cbse-10-science-a` | `platform/content/authored/science/` | in progress | — |
+| M2 (content, early) | CBSE 10 Science ch02–ch05 hand-authored (11 decks, 230 slides, 42 SVG diagrams, 308 Qs, 8 tests; gate 85/85, lint clean) | subject-producer | `platform/subject-producer/cbse-10-science-a` | `platform/content/authored/science/` | **merged** 4d4f1e2 | — |
 
 ## Backlog (found at integration)
 
@@ -58,7 +58,7 @@ Single source of truth for progress (AGENTS.md §4.3). Updated by the Lead after
 | 2026-10-27 | Contract v2 requested by all content agents: question types `writing`, `map`, `code-output`, `ordering`; `word_limit`; `passage_origin`; blueprint `variant`; underline marker; stronger Indic-script gate; literature reproduction lint | pipeline-engineer (M2) | in progress |
 
 ### Catalog totals (platform/main, `npm run content -- catalog`, 2026-10-26)
-771 subjects (CBSE 448, CISCE 323) · 489 syllabus files · 5,439 chapters · 21,854 topics · 337 board blueprints + class defaults · 0 errors
+767 subjects (CBSE 444, CISCE 323) · **644 syllabus files** · 7,440 chapters · 26,454 topics · 329 board blueprints + class defaults · 0 errors (updated 2026-10-27 after language syllabi + D-027 corrections)
 
 ### Active (D-024 cap 5)
 backend-api (M1) · curriculum-cbse-languages (M1) · producer CBSE 10 Science ch02–05 · producer CBSE 10 Maths ch01–04 · pipeline-engineer M2 (contract v2 + stages 5–9)
@@ -74,3 +74,14 @@ Process: after every integration the Lead checks the platform-ci run for the new
 | 2026-10-27 | Worker health port: worker listens on WORKER_HEALTH_PORT (8081) but the worker Dockerfile comment assumes 8080 | deployment agent | open |
 | 2026-10-27 | M2 content | CBSE 10 Maths ch01–ch04 hand-authored (280 Qs, 551/551 numeric re-solves, gate 57/57, lint clean) | subject-producer | `platform/subject-producer/cbse-10-maths-a` | `platform/content/authored/maths/` | **merged** e2e4ffc | — |
 | 2026-10-27 | M2 API | Content (hub, deck, notes, flashcards), practice + server-side grading, progress, reports, XP/streaks, staff TOTP; lesson_progress / practice_answers / user_mfa migrations | backend-api M2 | `platform/backend-api/m2` | `platform/api/`, `platform/db/` (new migrations) | in progress | — |
+| 2026-10-27 | M2 content | CBSE 10 Science ch06–ch09 | subject-producer | `platform/subject-producer/cbse-10-science-b` | `platform/content/authored/science/` | in progress | — |
+
+### Content coverage (hand-authored, gate + lint clean) — 2026-10-27
+| Subject | Chapters done | of | Questions |
+|---|---|---|---|
+| CBSE 10 Science | ch01–ch05 | 13 (+ ch14 formative-only) | 385 |
+| CBSE 10 Mathematics | ch01–ch04, ch06 | 14 | 358 |
+| CBSE 10 Hindi A | ch02, ch10 | 18 | 163 |
+| **Total** | **12 chapters** | | **906** |
+| 2026-10-27 | M2 content | CBSE 10 Science ch10–ch13 | subject-producer | `platform/subject-producer/cbse-10-science-c` | `platform/content/authored/science/` | in progress | — |
+| 2026-10-27 | Security | DB-6/F-006: answers of case-question `alternatives` were left in `questions.body` by `splitQuestion` (API unaffected: whitelisted DTOs) | backend-api M2 | in progress |

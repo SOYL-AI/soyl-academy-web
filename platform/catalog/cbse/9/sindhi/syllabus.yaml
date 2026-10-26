@@ -1,0 +1,409 @@
+# CBSE Class 9 Sindhi (008), 2026-27. Sections, marks, grammar items, writing tasks and every prescribed lesson
+# (titles as printed by CBSE in Devanagari Sindhi) from the CBSE 2026-27 Sindhi syllabus, Class IX. Books: NIOS Secondary
+# Course 238 Sindhi; supplementary Sorahan Sanskar (Pujya Shadani Darbar Tirath, Raipur); grammar: Nutan Sindhi Grammar
+# (Usha Saraswat) and Sindhi Vyakaran (Gangaram Israni). The CBSE document uses Devanagari script, not the Arabic script
+# listed in subjects.yaml. Under the 2026-27 Class IX scheme the language may be taken at R1 or R2 (school exam) or R3
+# (school-based assessment); this file follows the CBSE IX list. Titles only; no text is reproduced (CONTEXT §8).
+subject_id: cbse-9-sindhi
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-ix-sindhi-2026-27
+  - cbse-secondary-curriculum-2026-27
+exam_notes: >-
+  Class 9 has no board exam; school annual examination. Paper 80 marks (3 hours) + internal assessment 20 (as for all Class IX-X languages).
+  Unseen prose passage 5 MCQs; unseen poem 5 MCQs; literature MCQs on prose, poetry and grammar 10; grammar 10; main course book (prose and
+  poetry lessons) 30; supplementary book 6; creative writing 14 - essay of 300 words 6, letter or report 4, dialogue or advertisement 4.
+  Unseen and MCQ items test understanding, reasoning, analysis and higher-order thinking. Class IX grammar: noun, pronoun, gender, antonyms,
+  adjective, verb, number, idioms and proverbs.
+units:
+  - name: अणपढ़ियलु नसुर ऐं नज़्म
+    marks: 10
+  - name: साहित्य (MCQ)
+    marks: 10
+  - name: ग्रामर
+    marks: 10
+  - name: दर्सी किताबु
+    marks: 30
+  - name: पूरक किताबु
+    marks: 6
+  - name: तख़लीक़ी लिखणु
+    marks: 14
+chapters:
+  - id: cbse-9-sindhi-ch01
+    number: 1
+    title: अणपढ़ियलु नसुर जो टुकिरो
+    title_en: Unseen prose passage
+    unit: अणपढ़ियलु नसुर ऐं नज़्म
+    topics:
+      - id: cbse-9-sindhi-ch01-t01
+        title: 'अपठित गद्यांश: MCQ'
+        title_en: 'Unseen prose passage: MCQs'
+        learning_outcomes:
+          - Read an unseen Sindhi passage and answer MCQs testing understanding, reasoning and analysis
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-sindhi-ch02
+    number: 2
+    title: अणपढ़ियल नज़्म
+    title_en: Unseen poem
+    unit: अणपढ़ियलु नसुर ऐं नज़्म
+    topics:
+      - id: cbse-9-sindhi-ch02-t01
+        title: नज़्म ते MCQ
+        title_en: 'Unseen poem: MCQs'
+        learning_outcomes:
+          - Read an unseen Sindhi poem and answer MCQs on meaning, images and message
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-sindhi-ch03
+    number: 3
+    title: साहित्य ऐं ग्रामर ते MCQ
+    title_en: MCQs on prose, poetry and grammar
+    unit: साहित्य (MCQ)
+    topics:
+      - id: cbse-9-sindhi-ch03-t01
+        title: नसुर, नज़्म ऐं ग्रामर जा बहुविकल्पी सुवाल
+        title_en: Multiple-choice questions on textbook prose, poetry and grammar
+        learning_outcomes:
+          - Answer MCQs on the content of the textbook lessons and on applied grammar
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-sindhi-ch04
+    number: 4
+    title: इस्मु, ज़मीर, सिफ़त ऐं फ़इलु
+    title_en: Nouns, pronouns, adjectives and verbs
+    unit: ग्रामर
+    topics:
+      - id: cbse-9-sindhi-ch04-t01
+        title: इस्मु ऐं ज़मीर
+        title_en: Nouns and pronouns
+        learning_outcomes:
+          - Identify nouns and pronouns and their kinds in sentences
+      - id: cbse-9-sindhi-ch04-t02
+        title: सिफ़त ऐं फ़इलु
+        title_en: Adjectives and verbs
+        learning_outcomes:
+          - Identify adjectives and verbs and use them correctly
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-sindhi-ch05
+    number: 5
+    title: जिंस, अददु, ज़िद, इस्तलाह ऐं पहाका
+    title_en: Gender, number, antonyms, idioms and proverbs
+    unit: ग्रामर
+    topics:
+      - id: cbse-9-sindhi-ch05-t01
+        title: जिंस ऐं अददु
+        title_en: Gender and number
+        learning_outcomes:
+          - Change the gender and number of nouns correctly
+      - id: cbse-9-sindhi-ch05-t02
+        title: ज़िद
+        title_en: Antonyms
+        learning_outcomes:
+          - Give antonyms of given words
+      - id: cbse-9-sindhi-ch05-t03
+        title: इस्तलाह ऐं पहाका
+        title_en: Idioms and proverbs
+        learning_outcomes:
+          - Explain idioms and proverbs and use them in sentences
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-sindhi-ch06
+    number: 6
+    title: बेवसि जूं कविताऊं
+    title_en: Bewas Joon Kavitaoon (poem)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-9-sindhi-ch06-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Explain the central idea, mood and message of the poem "Bewas Joon Kavitaoon"
+          - Interpret key images, figures of speech and lines in their own words without reproducing the text
+      - id: cbse-9-sindhi-ch06-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the poem as set in the board paper
+          - Relate the theme of the poem to their own life and values
+    removed_topics: []
+    literature_texts:
+      - title: बेवसि जूं कविताऊं
+        title_en: Bewas Joon Kavitaoon
+  - id: cbse-9-sindhi-ch07
+    number: 7
+    title: गुलनि ऐं पखीअड़नि जो दर्दु
+    title_en: Gulan Ain Pakheeadan Jo Dardu (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-9-sindhi-ch07-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Gulan Ain Pakheeadan Jo Dardu" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-9-sindhi-ch07-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: गुलनि ऐं पखीअड़नि जो दर्दु
+        title_en: Gulan Ain Pakheeadan Jo Dardu
+  - id: cbse-9-sindhi-ch08
+    number: 8
+    title: भारत जूं अहमु सिंधी नारियूं
+    title_en: Bhaarat Joon Aham Sindhi Nariyoon (life sketch)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-9-sindhi-ch08-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the life and achievements described in "Bhaarat Joon Aham Sindhi Nariyoon"
+          - Identify the qualities of the person presented and the events that shaped them
+      - id: cbse-9-sindhi-ch08-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the lesson as set in the board paper
+          - Draw lessons for their own life from the person described
+    removed_topics: []
+    literature_texts:
+      - title: भारत जूं अहमु सिंधी नारियूं
+        title_en: Bhaarat Joon Aham Sindhi Nariyoon
+  - id: cbse-9-sindhi-ch09
+    number: 9
+    title: अमां मां मोटी ईंदुसि
+    title_en: Amaan Maan Moti Endus (story)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-9-sindhi-ch09-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Narrate the plot of the story "Amaan Maan Moti Endus" in their own words
+          - Describe the main characters, the setting and the turning point of the story
+      - id: cbse-9-sindhi-ch09-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the story as set in the board paper
+          - Explain the message or value the story conveys
+    removed_topics: []
+    literature_texts:
+      - title: अमां मां मोटी ईंदुसि
+        title_en: Amaan Maan Moti Endus
+  - id: cbse-9-sindhi-ch10
+    number: 10
+    title: सिंधु जूं सूरमियूं
+    title_en: Sindh Joon Suramiyoon (life sketch)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-9-sindhi-ch10-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the life and achievements described in "Sindh Joon Suramiyoon"
+          - Identify the qualities of the person presented and the events that shaped them
+      - id: cbse-9-sindhi-ch10-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the lesson as set in the board paper
+          - Draw lessons for their own life from the person described
+    removed_topics: []
+    literature_texts:
+      - title: सिंधु जूं सूरमियूं
+        title_en: Sindh Joon Suramiyoon
+  - id: cbse-9-sindhi-ch11
+    number: 11
+    title: साधू वासवाणी
+    title_en: Sadhu Vaswani (life sketch)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-9-sindhi-ch11-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the life and achievements described in "Sadhu Vaswani"
+          - Identify the qualities of the person presented and the events that shaped them
+      - id: cbse-9-sindhi-ch11-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the lesson as set in the board paper
+          - Draw lessons for their own life from the person described
+    removed_topics: []
+    literature_texts:
+      - title: साधू वासवाणी
+        title_en: Sadhu Vaswani
+  - id: cbse-9-sindhi-ch12
+    number: 12
+    title: सिंधी पहाका ऐं चवणियूं
+    title_en: Sindhi Pahaka Ain Chavaniyoon (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-9-sindhi-ch12-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Sindhi Pahaka Ain Chavaniyoon" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-9-sindhi-ch12-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: सिंधी पहाका ऐं चवणियूं
+        title_en: Sindhi Pahaka Ain Chavaniyoon
+  - id: cbse-9-sindhi-ch13
+    number: 13
+    title: सिंधीअ जा फ़नकार
+    title_en: Sindhia Ja Fankar (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-9-sindhi-ch13-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Sindhia Ja Fankar" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-9-sindhi-ch13-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: सिंधीअ जा फ़नकार
+        title_en: Sindhia Ja Fankar
+  - id: cbse-9-sindhi-ch14
+    number: 14
+    title: जन संचार माध्यम ऐं सिंधी
+    title_en: Jan Sanchar Madhyam Ain Sindhi (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-9-sindhi-ch14-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Jan Sanchar Madhyam Ain Sindhi" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-9-sindhi-ch14-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: जन संचार माध्यम ऐं सिंधी
+        title_en: Jan Sanchar Madhyam Ain Sindhi
+  - id: cbse-9-sindhi-ch15
+    number: 15
+    title: मज़मूनु कीअं लिखिजे
+    title_en: Mazmoon Keean Likhije (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-9-sindhi-ch15-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Mazmoon Keean Likhije" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-9-sindhi-ch15-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: मज़मूनु कीअं लिखिजे
+        title_en: Mazmoon Keean Likhije
+  - id: cbse-9-sindhi-ch16
+    number: 16
+    title: सोरहां संस्कार
+    title_en: Sorahan Sanskar (supplementary book) (prose lesson)
+    unit: पूरक किताबु
+    topics:
+      - id: cbse-9-sindhi-ch16-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Sorahan Sanskar (supplementary book)" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-9-sindhi-ch16-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: सोरहां संस्कार
+        title_en: Sorahan Sanskar (supplementary book)
+  - id: cbse-9-sindhi-ch17
+    number: 17
+    title: मज़मून (300 लफ़्ज़नि में)
+    title_en: Essay writing (300 words)
+    unit: तख़लीक़ी लिखणु
+    topics:
+      - id: cbse-9-sindhi-ch17-t01
+        title: मज़मून जी रिथा
+        title_en: Planning an essay
+        learning_outcomes:
+          - Plan an essay with introduction, body and conclusion
+      - id: cbse-9-sindhi-ch17-t02
+        title: मज़मून लिखणु
+        title_en: Writing an essay
+        learning_outcomes:
+          - Write an organised Sindhi essay of about 300 words on a given topic
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-sindhi-ch18
+    number: 18
+    title: ख़तु या रिपोर्ट
+    title_en: Letter or report writing
+    unit: तख़लीक़ी लिखणु
+    topics:
+      - id: cbse-9-sindhi-ch18-t01
+        title: ख़तु
+        title_en: Letter
+        learning_outcomes:
+          - Write a formal or informal letter in the correct format
+      - id: cbse-9-sindhi-ch18-t02
+        title: रिपोर्ट
+        title_en: Report
+        learning_outcomes:
+          - Write a short report of an event with the key facts
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-sindhi-ch19
+    number: 19
+    title: डायलॉग ऐं विज्ञापन
+    title_en: Dialogue or advertisement writing
+    unit: तख़लीक़ी लिखणु
+    topics:
+      - id: cbse-9-sindhi-ch19-t01
+        title: डायलॉग
+        title_en: Dialogue
+        learning_outcomes:
+          - Write a natural dialogue on an everyday situation
+      - id: cbse-9-sindhi-ch19-t02
+        title: विज्ञापन
+        title_en: Advertisement
+        learning_outcomes:
+          - Write a short, persuasive advertisement for a product, service or event
+    removed_topics: []
+    literature_texts: []
+removed_topics: []
