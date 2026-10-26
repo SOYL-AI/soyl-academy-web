@@ -126,7 +126,7 @@ See **Results (final runs)** at the end.
 
 None new.
 
-## Results (final runs, 2026-10-27, Windows 11, Node 24.15, HEAD b61f258 + this note)
+## Results (final runs, 2026-10-27, Windows 11, Node 24.15, HEAD c491b60; flag-off proof base = platform/main 975c19c)
 
 \
 **Lighthouse.** The full regression (with Lighthouse) passed visual and status (48 passed) but flagged mobile
