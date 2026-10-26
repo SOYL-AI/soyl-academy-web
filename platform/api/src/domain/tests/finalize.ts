@@ -187,7 +187,7 @@ export async function autoSubmitExpired(ctx: FinalizeContext, opts: { batchSize?
     const res = await ctx.db.execute<{ id: string }>(sql`
       SELECT id FROM ${attempts}
       WHERE status = 'in_progress'
-        AND deadline_at + make_interval(secs => CASE WHEN live_event_id IS NULL THEN ${TEST_ENGINE.graceSeconds.normal} ELSE ${TEST_ENGINE.graceSeconds.live} END) < ${now}::timestamptz
+        AND deadline_at + (CASE WHEN live_event_id IS NULL THEN ${TEST_ENGINE.graceSeconds.normal}::int ELSE ${TEST_ENGINE.graceSeconds.live}::int END) * interval '1 second' < ${now}::timestamptz
         ${opts.liveEventId ? sql`AND live_event_id = ${opts.liveEventId}` : sql``}
       ORDER BY deadline_at
       LIMIT ${batch}

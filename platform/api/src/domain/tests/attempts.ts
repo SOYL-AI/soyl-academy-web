@@ -99,7 +99,7 @@ export async function attemptState(ctx: EngineContext, a: AttemptRow, test?: Tes
     items: paper?.items ?? [],
     responses: saved.map((r) => ({
       itemId: r.itemId,
-      answer: (r.answer ?? null) as PracticeResponse | null,
+      response: (r.answer ?? null) as PracticeResponse | null,
       markedForReview: r.markedForReview,
       timeSpentSec: r.timeSpentSec,
       seq: r.seq,
@@ -247,8 +247,8 @@ function liveWindowProblem(ev: LiveEventRow, now: number): ApiProblem {
 export interface SaveEntry {
   itemId: string;
   seq: number;
-  /** null clears the answer. */
-  answer: PracticeResponse | null;
+  /** The student's response (PracticeResponse shape); null clears it. */
+  response: PracticeResponse | null;
   markedForReview?: boolean;
   timeSpentSec?: number;
   /** Advisory client time of this change (F-007). */
@@ -280,9 +280,9 @@ function validateEntries(structure: TestStructure, entries: SaveEntry[]) {
     if (!item) return errors.push({ path: `body.items.${i}.itemId`, message: 'Not an item of this test.' });
     if (seen.has(e.itemId) && seen.get(e.itemId)! >= e.seq) return; // duplicates: the highest seq wins below
     seen.set(e.itemId, e.seq);
-    if (e.answer !== null) {
+    if (e.response !== null) {
       const kind = responseKindFor(item.question.type);
-      if (!(kind in e.answer)) errors.push({ path: `body.items.${i}.answer`, message: `A ${item.question.type} question needs an answer with "${kind}".` });
+      if (!(kind in e.response)) errors.push({ path: `body.items.${i}.response`, message: `A ${item.question.type} question needs an answer with "${kind}".` });
     }
   });
   if (errors.length) throw new ApiProblem('validation_failed', { errors: errors.slice(0, 20) });
@@ -320,7 +320,7 @@ export async function saveResponses(ctx: EngineContext, userId: string, attemptI
       const values = toSave.map((e) => ({
         attemptId: a.id,
         testItemId: e.itemId,
-        answer: e.answer === null ? null : (e.answer as unknown),
+        answer: e.response === null ? null : (e.response as unknown),
         markedForReview: e.markedForReview ?? false,
         timeSpentSec: Math.max(0, Math.min(Math.round(e.timeSpentSec ?? 0), 24 * 3600)),
         clientSavedAt: e.changedAt && Number.isFinite(Date.parse(e.changedAt)) ? new Date(e.changedAt) : null,

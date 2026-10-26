@@ -132,7 +132,7 @@ export function registerTestRoutes(appIn: FastifyInstance, deps: AppDeps, servic
       tags: ['tests'],
       summary: 'Create or resume your single active attempt. Starting sets the server deadline and delivers the paper (no answers).',
       params: TestParams,
-      body: StartAttemptRequest.optional(),
+      body: StartAttemptRequest.nullish(),
       response: withProblems({ 200: AttemptStateResponse, 201: AttemptStateResponse }),
     },
     handler: async (request, reply) => {
@@ -178,12 +178,12 @@ export function registerTestRoutes(appIn: FastifyInstance, deps: AppDeps, servic
       tags: ['tests'],
       summary: 'Submit (idempotent). An optional final batch is saved first. Objective items are graded now; written items wait for self-evaluation.',
       params: AttemptParams,
-      body: SaveResponsesRequest.optional(),
+      body: SaveResponsesRequest.nullish(),
       response: withProblems({ 200: SubmitResponse }),
     },
     handler: async (request) => {
       await attemptLimit('attempt.submit', request.params.id);
-      const r = await submitAttempt(ctx, request.auth!.user.id, request.params.id, request.body);
+      const r = await submitAttempt(ctx, request.auth!.user.id, request.params.id, request.body ?? undefined);
       return {
         attemptId: r.attemptId,
         status: r.status,

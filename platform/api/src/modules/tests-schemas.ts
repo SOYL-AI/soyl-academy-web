@@ -203,7 +203,7 @@ export const AttemptStateResponse = z
     responses: z.array(
       z.object({
         itemId: z.uuid(),
-        answer: PracticeResponseSchema.nullable(),
+        response: PracticeResponseSchema.nullable(),
         markedForReview: z.boolean(),
         timeSpentSec: z.number().int(),
         seq: z.number().int(),
@@ -221,7 +221,8 @@ export const SaveResponsesRequest = z
           itemId: z.uuid(),
           /** Strictly increasing per item and device; e.g. Date.now() at the change. Higher wins. */
           seq: z.number().int().min(1).max(TEST_ENGINE.autosave.maxSeq),
-          answer: PracticeResponseSchema.nullable(),
+          /** Same shapes as practice (PracticeResponse); null clears the item. */
+          response: PracticeResponseSchema.nullable(),
           markedForReview: z.boolean().optional(),
           /** Cumulative seconds on this item (the stored value never goes down). */
           timeSpentSec: z.number().int().min(0).max(86_400).optional(),
