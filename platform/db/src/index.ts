@@ -9,7 +9,20 @@ import * as schema from '../schema/index';
 
 export { schema };
 export * from '../schema/index';
-export { createDb, redactUrl, type Database, type DbHandle, type Schema } from './client';
+export {
+  createDb,
+  redactUrl,
+  databaseAuthMode,
+  entraPassword,
+  pgPasswordFromEnv,
+  pgConnectionConfig,
+  ENTRA_MAX_LIFETIME_SECONDS,
+  type Database,
+  type DbHandle,
+  type Schema,
+  type PgPassword,
+  type DatabaseAuthMode,
+} from './client';
 export {
   migrateUp,
   migrateDown,
