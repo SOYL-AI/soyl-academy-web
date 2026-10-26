@@ -13,6 +13,7 @@
  */
 import type { Visual as VisualData } from '@/platform/shared/content/visual';
 import { cx } from '../cx';
+import { Markdown } from '../render/Markdown';
 import { MathBlock } from '../render/MathBlock';
 import { chemToTex } from '../render/math';
 import { SvgDiagram } from '../render/SvgDiagram';
@@ -29,6 +30,16 @@ export interface VisualProps {
   bare?: boolean;
 }
 
+/** Table cells are inline Markdown: **bold**, $…$ maths, \ce{…} chemistry; plain Unicode renders as is. No images. */
+function Cell({ text }: { text?: string }) {
+  if (!text) return null;
+  return (
+    <Markdown inline allowImages={false}>
+      {text}
+    </Markdown>
+  );
+}
+
 export function TableVisual({ spec, alt, caption }: { spec: Extract<VisualData, { kind: 'table' }>['spec']; alt: string; caption?: string }) {
   const headers = spec.headers ?? [];
   return (
@@ -39,7 +50,7 @@ export function TableVisual({ spec, alt, caption }: { spec: Extract<VisualData, 
           <tr>
             {headers.map((h, i) => (
               <th key={i} scope="col">
-                {h}
+                <Cell text={h} />
               </th>
             ))}
           </tr>
@@ -50,10 +61,12 @@ export function TableVisual({ spec, alt, caption }: { spec: Extract<VisualData, 
               {headers.map((_, c) =>
                 c === 0 ? (
                   <th key={c} scope="row">
-                    {row[c] ?? ''}
+                    <Cell text={row[c]} />
                   </th>
                 ) : (
-                  <td key={c}>{row[c] ?? ''}</td>
+                  <td key={c}>
+                    <Cell text={row[c]} />
+                  </td>
                 ),
               )}
             </tr>

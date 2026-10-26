@@ -56,9 +56,9 @@ function QuestionPreview({ q }: { q: QuestionLike }) {
   );
 }
 
-function loadExemplar(): { decks: Deck[]; questions: QuestionLike[] } | null {
+function loadExemplar(path = 'science/cbse-10-science-ch01'): { decks: Deck[]; questions: QuestionLike[] } | null {
   try {
-    const file = join(process.cwd(), 'platform/content-templates/exemplars/science/cbse-10-science-ch01/release.json');
+    const file = join(process.cwd(), 'platform/content-templates/exemplars', path, 'release.json');
     const raw = JSON.parse(readFileSync(file, 'utf8')) as { decks: unknown[]; questions: QuestionLike[] };
     return { decks: raw.decks.map((d) => Deck.parse(d)), questions: raw.questions };
   } catch {
@@ -120,9 +120,12 @@ export default function UiGalleryPage() {
   const deck = Deck.parse(SAMPLE_DECK);
   const deckHi = Deck.parse(SAMPLE_DECK_HI);
   const exemplar = loadExemplar();
+  const maths = loadExemplar('maths/cbse-10-mathematics-ch06');
+  const mathsGeometry = (maths?.decks ?? []).flatMap((d) => d.slides.flatMap((sl) => (sl.visual?.kind === 'geometry' ? [{ id: `p${d.part}-${sl.id}`, visual: sl.visual }] : [])));
+  const mathsTableSlide = maths?.decks[0].slides.find((sl) => sl.visual?.kind === 'table');
   const sampleVisuals = deck.slides.flatMap((sl) => (sl.visual ? [sl.visual] : [])) as VisualData[];
   const renderCheck = (id: string) => {
-    const q = id === SAMPLE_CHECK_QUESTION.id ? SAMPLE_CHECK_QUESTION : exemplar?.questions.find((x) => x.id === id);
+    const q = id === SAMPLE_CHECK_QUESTION.id ? SAMPLE_CHECK_QUESTION : [...(exemplar?.questions ?? []), ...(maths?.questions ?? [])].find((x) => x.id === id);
     return q ? <QuestionPreview q={q} /> : null;
   };
   const slideList = (slides: Slide[], opts: { lang?: string; goals?: string[]; idPrefix: string }) =>
@@ -153,6 +156,7 @@ export default function UiGalleryPage() {
               ['slides', 'Slides'],
               ['hindi', 'Hindi'],
               ['exemplar', 'Science exemplar'],
+              ['maths', 'Maths geometry'],
               ['dark', 'Dark theme'],
               ['hostile', 'Hostile content'],
             ].map(([id, label]) => (
@@ -284,6 +288,19 @@ export default function UiGalleryPage() {
           ) : (
             <p>Exemplar not found.</p>
           )}
+        </Section>
+
+        <Section id="maths" title="Maths exemplar: CBSE 10 Maths ch. 6 (Triangles), every geometry figure">
+          <p className={s.note}>Coordinates use the maths convention (origin bottom-left, y up); the renderer flips y. Labels sit outside each shape.</p>
+          <div className={s.grid}>
+            {mathsGeometry.map(({ id, visual }) => (
+              <div key={id} data-geometry={id}>
+                <p className={s.kind}>{id}</p>
+                <Visual visual={visual} />
+              </div>
+            ))}
+          </div>
+          {mathsTableSlide && <div className={s.slideWrap}>{renderSlide(mathsTableSlide, { idPrefix: 'maths-table' })}</div>}
         </Section>
 
         <Section id="dark" title="Dark theme (forced)">

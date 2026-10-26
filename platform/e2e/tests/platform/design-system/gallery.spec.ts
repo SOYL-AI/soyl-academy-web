@@ -57,6 +57,7 @@ test.describe('design-system gallery', () => {
     await expect(page.locator('#visuals [data-visual="chem-equation"] .katex').first()).toBeVisible();
     await expect(page.locator('#visuals table').first()).toBeVisible();
     await expect(page.locator('#exemplar article[aria-roledescription="slide"]')).toHaveCount(21);
+    await expect(page.locator('#maths svg[data-visual="geometry"]')).toHaveCount(24);
 
     // Hostile content: every payload rendered, nothing ran, nothing was fetched from elsewhere.
     await expect(page.getByTestId('hostile-svg').locator('[role="img"]')).toHaveCount(32);
@@ -121,6 +122,7 @@ test.describe('design-system gallery', () => {
     await page.locator('#slides').screenshot({ path: resolve(SHOTS, `slides-${info.project.name}.png`) });
     await page.locator('#visuals').screenshot({ path: resolve(SHOTS, `visuals-${info.project.name}.png`) });
     await page.locator('#hindi').screenshot({ path: resolve(SHOTS, `hindi-${info.project.name}.png`) });
+    await page.locator('#maths').screenshot({ path: resolve(SHOTS, `maths-geometry-${info.project.name}.png`) });
     await page.locator('#dark').screenshot({ path: resolve(SHOTS, `dark-${info.project.name}.png`) });
   });
 

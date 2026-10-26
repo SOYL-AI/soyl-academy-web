@@ -24,12 +24,57 @@ export function GeometryVisual({ spec, alt }: { spec: GeometrySpec; alt: string 
     if (Number.isFinite(x) && Number.isFinite(y)) pts.set(name, { x: PAD + x * k, y: PAD + (height - y) * k });
   }
   const all = [...pts.values()];
-  const centroid = all.length ? { x: all.reduce((a, p) => a + p.x, 0) / all.length, y: all.reduce((a, p) => a + p.y, 0) / all.length } : { x: vw / 2, y: vh / 2 };
-  const away = (p: P, dist: number): P => {
-    const dx = p.x - centroid.x;
-    const dy = p.y - centroid.y;
+  const mean = (list: P[]): P | null =>
+    list.length ? { x: list.reduce((a, p) => a + p.x, 0) / list.length, y: list.reduce((a, p) => a + p.y, 0) / list.length } : null;
+  const centroid = mean(all) ?? { x: vw / 2, y: vh / 2 };
+
+  // Neighbours (segments and polygon edges) give each label a local "inside" to move away from,
+  // so figures drawn side by side each get their labels outside their own shape.
+  const neighbours = new Map<string, Set<string>>();
+  const link = (a: string, b: string) => {
+    if (a === b) return;
+    if (!neighbours.has(a)) neighbours.set(a, new Set());
+    if (!neighbours.has(b)) neighbours.set(b, new Set());
+    neighbours.get(a)!.add(b);
+    neighbours.get(b)!.add(a);
+  };
+  (spec.segments ?? []).forEach((s) => link(s.from, s.to));
+  (spec.polygons ?? []).forEach((poly) => poly.vertices.forEach((v, i) => link(v, poly.vertices[(i + 1) % poly.vertices.length])));
+  /** Centre of the polygon containing all given points, else of their neighbourhood, else of the figure. */
+  const localCentre = (...names: string[]): P => {
+    const poly = (spec.polygons ?? []).find((pg) => names.every((n) => pg.vertices.includes(n)));
+    if (poly) return mean(poly.vertices.map((v) => pts.get(v)).filter((v): v is P => !!v)) ?? centroid;
+    const near = names.flatMap((n) => [n, ...(neighbours.get(n) ?? [])]);
+    const uniq = [...new Set(near)].map((n) => pts.get(n)).filter((v): v is P => !!v);
+    return uniq.length > names.length ? mean(uniq)! : centroid;
+  };
+  const awayFrom = (p: P, from: P, dist: number): P => {
+    const dx = p.x - from.x;
+    const dy = p.y - from.y;
     const len = Math.hypot(dx, dy);
     return len < 1e-6 ? { x: p.x + dist * 0.7, y: p.y - dist * 0.7 } : { x: p.x + (dx / len) * dist, y: p.y + (dy / len) * dist };
+  };
+  /** Label direction for a vertex: opposite the mean direction to its neighbours. */
+  const labelPos = (name: string, p: P, dist: number): P => {
+    const ns = [...(neighbours.get(name) ?? [])].map((n) => pts.get(n)).filter((v): v is P => !!v);
+    if (ns.length === 0) return awayFrom(p, centroid, dist);
+    let ux = 0;
+    let uy = 0;
+    for (const q of ns) {
+      const len = Math.hypot(q.x - p.x, q.y - p.y) || 1;
+      ux += (q.x - p.x) / len;
+      uy += (q.y - p.y) / len;
+    }
+    const len = Math.hypot(ux, uy);
+    // Collinear neighbours on both sides (a point on a line): put the label above/below the line.
+    if (len < 0.2) {
+      const q = ns[0];
+      const l = Math.hypot(q.x - p.x, q.y - p.y) || 1;
+      const nx = -(q.y - p.y) / l;
+      const ny = (q.x - p.x) / l;
+      return ny <= 0 ? { x: p.x + nx * dist, y: p.y + ny * dist } : { x: p.x - nx * dist, y: p.y - ny * dist };
+    }
+    return { x: p.x - (ux / len) * dist, y: p.y - (uy / len) * dist };
   };
   const anchorFor = (from: P, to: P) => (Math.abs(to.x - from.x) < 3 ? 'middle' : to.x > from.x ? 'start' : 'end');
   const get = (name: string) => pts.get(name);
@@ -66,11 +111,12 @@ export function GeometryVisual({ spec, alt }: { spec: GeometrySpec; alt: string 
     );
     if (seg.label) {
       const mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
-      // Perpendicular offset, on the side away from the figure's centre.
+      // Perpendicular offset, on the side away from the shape this segment belongs to.
+      const inside = localCentre(seg.from, seg.to);
       const len = Math.hypot(b.x - a.x, b.y - a.y) || 1;
       let nx = -(b.y - a.y) / len;
       let ny = (b.x - a.x) / len;
-      if ((mid.x + nx - centroid.x) ** 2 + (mid.y + ny - centroid.y) ** 2 < (mid.x - centroid.x) ** 2 + (mid.y - centroid.y) ** 2) {
+      if ((mid.x + nx - inside.x) ** 2 + (mid.y + ny - inside.y) ** 2 < (mid.x - inside.x) ** 2 + (mid.y - inside.y) ** 2) {
         nx = -nx;
         ny = -ny;
       }
@@ -121,7 +167,7 @@ export function GeometryVisual({ spec, alt }: { spec: GeometrySpec; alt: string 
   });
 
   for (const [name, p] of pts) {
-    const lp = away(p, 14);
+    const lp = labelPos(name, p, 14);
     out.push(
       <g key={`p-${name}`}>
         <circle cx={round(p.x)} cy={round(p.y)} r={3} fill="currentColor" />

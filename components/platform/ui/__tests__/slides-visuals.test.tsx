@@ -152,10 +152,8 @@ describe('visual renderers', () => {
   });
 });
 
-describe('science exemplar (real content) renders inert', () => {
-  const release = JSON.parse(
-    readFileSync(resolve(process.cwd(), 'platform/content-templates/exemplars/science/cbse-10-science-ch01/release.json'), 'utf8'),
-  ) as { decks: unknown[] };
+describe.each(['science/cbse-10-science-ch01', 'maths/cbse-10-mathematics-ch06'])('exemplar %s (real content) renders inert', (path) => {
+  const release = JSON.parse(readFileSync(resolve(process.cwd(), 'platform/content-templates/exemplars', path, 'release.json'), 'utf8')) as { decks: unknown[] };
   const decks = release.decks.map((d) => Deck.parse(d));
   it.each(decks.flatMap((d) => d.slides.map((s) => [`part ${d.part} ${s.id}`, s] as const)))('%s', (_name, slide) => {
     const html = renderToStaticMarkup(<>{renderSlide(slide, { idPrefix: 'ex' })}</>);
