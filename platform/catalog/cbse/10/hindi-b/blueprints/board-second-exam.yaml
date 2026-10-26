@@ -37,11 +37,11 @@ sections:
       प्रश्न 12 अनुच्छेद, तीन में से एक (~120 शब्द, 5); प्रश्न 13 पत्र (5); प्रश्न 14 सूचना (4); प्रश्न 15 विज्ञापन (3); प्रश्न 16 ई-मेल या
       लघुकथा (5) - प्रत्येक में दो में से एक।
     items:
-      - {type: long, count: 3, marks_each: 5, internal_choice: {attempt: 1, of: 3}}
-      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
-      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
-      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
-      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 3, marks_each: 5, internal_choice: {attempt: 1, of: 3}}
+      - {type: writing, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
 source_status: verified
 source: cbse-sqp-x-hindi-b-2026-27
 notes: >-
@@ -54,7 +54,7 @@ notes: >-
   रचना के आधार पर वाक्य रूपांतरण, समास, मुहावरे; 4 of 5 each) -> 1-mark short; पठित गद्यांश/काव्यांश -> source-based; रचनात्मक लेखन
   (अनुच्छेद, पत्र,
 
-  सूचना, विज्ञापन, ई-मेल/लघुकथा) -> long writing tasks. Theory 80 + internal assessment 20. SQP text has legacy-font noise; structure
+  सूचना, विज्ञापन, ई-मेल/लघुकथा) -> 'writing' items (contract v2: format, word_limit and rubric). Theory 80 + internal assessment 20. SQP text has legacy-font noise; structure
   checked
 
   against the marking scheme and the CBSE syllabus.
