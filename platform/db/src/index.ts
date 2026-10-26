@@ -23,8 +23,8 @@ export {
 } from './migrator';
 export { uuidv7, uuidv7Time, istDay } from './ids';
 export { normalizeEmail, normalizePhone } from './normalize';
-export { splitQuestion, joinQuestion, questionRow, studentQuestionColumns, STUDENT_QUESTION_FORBIDDEN_FIELDS } from './student-questions';
+export { splitQuestion, joinQuestion, questionRow, studentQuestionColumns, findKeySideFields, KEY_SIDE_FIELDS, STUDENT_QUESTION_FORBIDDEN_FIELDS } from './student-questions';
 export { seedCatalog, type CatalogSeedReport } from './seed/catalog';
 export { seedTestUsers, TEST_PHONE_PREFIX, TEST_EMAIL_DOMAIN } from './seed/test-users';
 export { bootstrapAdmin } from './seed/admin';
-export { ingestChapterRelease, ingestTestDefinition, activateRelease, sha256Json } from './content-ingest';
+export { ingestChapterRelease, ingestTestDefinition, activateRelease, sha256Json, canonicalJson } from './content-ingest';

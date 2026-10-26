@@ -58,6 +58,8 @@ export const sessions = pgTable(
       .references(() => users.id, { onDelete: 'cascade' }),
     // admin plugin
     impersonatedBy: uuid('impersonated_by').references(() => users.id, { onDelete: 'set null' }),
+    /** AUTH-11 (migration 0005): when this session passed the staff second factor (TOTP or recovery code). */
+    mfaVerifiedAt: tstz('mfa_verified_at'),
     ...timestamps(),
   },
   (t) => [
