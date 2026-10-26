@@ -38,6 +38,8 @@ Run from `platform/`: `npx tsx content/authored/maths/cbse-10-mathematics-ch04/s
 - **Fixes during the pass:** (1) the pipeline arithmetic lint rejected two deliberately false statements written as equations ("$4 = 0$" in q001's solution and "$2 = 0$" in q054's model answer) — reworded as "only the false claim '4 equals 0' is left" and "only the constant $2$ is left"; (2) q001's solution listed its four cases on single lines, which Markdown would merge — split into paragraphs (and the builder now does this for every "(a) … (b) …" stem and answer in all four chapters).
 - **Originality:** avoided NCERT's plot of $528$ m² ("one more than twice the breadth"), the $13$ cm hypotenuse with "7 cm less", the cottage-industry toys ($55 - x$, ₹$750$), the 360 km train, the late aeroplane, the 80 m / 400 m² park and the "sum 15, reciprocals 3/10" numbers. Contexts: Indore–Bhopal van, Shimla cyclist, Kolkata bookseller, Lucknow printers, Kochi hall, Ranchi herb garden against a 25 m wall, Ludhiana calf enclosure on a canal, Khurja potter, Ahmedabad cricket ball, Thiruvananthapuram diver, Diwali rangoli.
 
+- **MCQ key balance:** after the re-solve, the builder rotates each MCQ's options so the keys cycle a → b → c → d (authored drafts had most keys at (a) and almost none at (d)); option letters quoted in solutions, schemes and case model answers are remapped, and the key text is verified unchanged. Final keys per chapter: a 6, b 6, c 6, d 5.
+
 ## Gaps / follow-ups
 - t03 has 7 tagged items (fewer than other topics) because many formula items are tagged under t04/t05 where the formula is used; every deck formula example is mirrored by bank items.
 - Narration audio not generated (TTS stage). `word_limit` not set on maths short/long items (marked by steps).

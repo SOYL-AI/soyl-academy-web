@@ -424,6 +424,38 @@ export function build({ dir, release, testsSpec, readmeCheck = true }) {
   });
   // tests
   const tests = testsSpec(qid, (id) => release.questions.find((q) => q.id === id));
+  // ------------------------------------ balance MCQ keys (after the re-solve, which used the authored order):
+  // rotate each MCQ's options so keys cycle a, b, c, d; remap option letters in its solution and scheme,
+  // and "Option (x)" in a case parent's model answer/solution; then verify the key text is unchanged.
+  let mcqIndex = 0;
+  const L = 'abcd';
+  const remapLetters = (text, map, onlyOption) => text.replace(onlyOption ? /(Option \()([a-d])(\))/g : /((?<![A-Za-z0-9\\_^])\()([a-d])(\))/g, (m, p1, x, p3) => `${p1}${map[x]}${p3}`);
+  const rotate = (node) => {
+    const oldKey = node.answer.option_ids[0];
+    const oldText = node.options.find((o) => o.id === oldKey).text_md;
+    const target = L[mcqIndex++ % 4];
+    const shift = (L.indexOf(target) - L.indexOf(oldKey) + 4) % 4;
+    const map = Object.fromEntries([...L].map((x, j) => [x, L[(j + shift) % 4]]));
+    const texts = Object.fromEntries(node.options.map((o) => [map[o.id], o.text_md]));
+    node.options = [...L].map((x) => ({ id: x, text_md: texts[x] }));
+    node.answer = { option_ids: [map[oldKey]] };
+    node.solution_md = remapLetters(node.solution_md, map, false);
+    node.marking_scheme = node.marking_scheme.map((s) => ({ ...s, step: remapLetters(s.step, map, false) }));
+    if (node.options.find((o) => o.id === node.answer.option_ids[0]).text_md !== oldText) errs.push(`${node.id}: key text changed by rotation`);
+    return map;
+  };
+  for (const q of release.questions) {
+    if (q.type === 'mcq' && q.options.length === 4) rotate(q);
+    for (const c of q.children) {
+      if (c.type !== 'mcq' || c.options.length !== 4) continue;
+      const map = rotate(c);
+      // the parent's model answer / solution names this part's option as "(<part id>) Option (x)"
+      const fix = (t) => t.replace(new RegExp(String.raw`(\(${c.id}\) )(Option \()([a-d])(\))`, 'g'), (m, p0, p1, x, p3) => `${p0}${p1}${map[x]}${p3}`);
+      q.answer.model_answer_md = fix(q.answer.model_answer_md);
+      q.solution_md = fix(q.solution_md);
+    }
+  }
+  stats.mcqKeys = release.questions.flatMap((q) => [q, ...q.children]).filter((n) => n.type === 'mcq').reduce((m, n) => ((m[n.answer.option_ids[0]] = (m[n.answer.option_ids[0]] ?? 0) + 1), m), {});
   // ------------------------------------ KaTeX + lost backslashes + LaTeX outside $
   let mathCount = 0;
   const all = strings(release, '$', []);

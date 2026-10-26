@@ -34,6 +34,8 @@ Run from `platform/`: `npx tsx content/authored/maths/cbse-10-mathematics-ch02/s
 - **Fixes during the pass:** (1) an early numerical item asked for $k$ with sum = product for $kx^2 + 2x + 3k$, whose zeroes are not real for that $k$ — replaced by $x^2 - (k + 2)x + 2k$ (real double zero $2$); (2) the validator caught `\Rightarrow` written without its backslash in that replacement (the exemplar's pitfall 7) — fixed; the pipeline lint does not catch brace-less commands such as `Rightarrow`, so the author validator is still needed; (3) case model answers reworded from "(a) (b) …" to "(a) Option (b): …"; (4) three routine items relabelled d1 → d2 (q003, q006, q046).
 - **Originality:** none of NCERT's exercise polynomials (x² − 2x − 8, 4s² − 4s + 1, 6x² − 3 − 7x, 4u² + 8u, t² − 15, 3x² − x − 4) or sum/product pairs are reused; contexts are new (Brindavan fountain jets, Khurja diya break-even, Thiruvananthapuram garden, a homework table to audit, a polynomial-forming error to evaluate).
 
+- **MCQ key balance:** after the re-solve, the builder rotates each MCQ's options so the keys cycle a → b → c → d (authored drafts had most keys at (a) and almost none at (d)); option letters quoted in solutions, schemes and case model answers are remapped, and the key text is verified unchanged. Final keys per chapter: a 6, b 6, c 6, d 5.
+
 ## Gaps / follow-ups
 - Narration audio not generated (TTS stage).
 - Plot labels for irrational zeroes use KaTeX (`$3 + \sqrt2$`); the renderer must support maths in plot labels.

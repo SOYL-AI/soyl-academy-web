@@ -2489,31 +2489,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$x^2 + \\dfrac{1}{x}$"
-        },
-        {
-          "id": "b",
           "text_md": "$3 - 2x^2$"
         },
         {
-          "id": "c",
+          "id": "b",
           "text_md": "$\\sqrt{x} + 4$"
         },
         {
-          "id": "d",
+          "id": "c",
           "text_md": "$x^3 - 1$"
+        },
+        {
+          "id": "d",
+          "text_md": "$x^2 + \\dfrac{1}{x}$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "a"
         ]
       },
-      "solution_md": "A polynomial has only whole-number powers of $x$. $\\dfrac1x = x^{-1}$ and $\\sqrt x = x^{1/2}$ are not allowed, so (a) and (c) are not polynomials. $x^3 - 1$ has degree $3$ (cubic). $3 - 2x^2$ has degree $2$: quadratic.",
+      "solution_md": "A polynomial has only whole-number powers of $x$. $\\dfrac1x = x^{-1}$ and $\\sqrt x = x^{1/2}$ are not allowed, so (d) and (b) are not polynomials. $x^3 - 1$ has degree $3$ (cubic). $3 - 2x^2$ has degree $2$: quadratic.",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (a)",
           "marks": 1
         }
       ],
@@ -2546,31 +2546,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$-\\dfrac{3}{2}$"
+          "text_md": "$6$"
         },
         {
           "id": "b",
-          "text_md": "$\\dfrac{3}{2}$"
+          "text_md": "$-\\dfrac{3}{2}$"
         },
         {
           "id": "c",
-          "text_md": "$-\\dfrac{2}{3}$"
+          "text_md": "$\\dfrac{3}{2}$"
         },
         {
           "id": "d",
-          "text_md": "$6$"
+          "text_md": "$-\\dfrac{2}{3}$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "b"
         ]
       },
-      "solution_md": "Solve $4x + 6 = 0$: $x = -\\dfrac64 = -\\dfrac32$. In general the zero of $ax + b$ is $-\\dfrac ba$. Option (b) drops the sign; option (c) inverts the fraction.",
+      "solution_md": "Solve $4x + 6 = 0$: $x = -\\dfrac64 = -\\dfrac32$. In general the zero of $ax + b$ is $-\\dfrac ba$. Option (c) drops the sign; option (d) inverts the fraction.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (b)",
           "marks": 1
         }
       ],
@@ -2686,31 +2686,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$0$"
-        },
-        {
-          "id": "b",
-          "text_md": "$1$"
-        },
-        {
-          "id": "c",
           "text_md": "$2$"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "$3$"
+        },
+        {
+          "id": "c",
+          "text_md": "$0$"
+        },
+        {
+          "id": "d",
+          "text_md": "$1$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "d"
         ]
       },
-      "solution_md": "The parabola touches the $x$-axis at exactly one point, $x = 1$, without crossing it. So $p(x)$ has one zero (here $p(x) = -(x - 1)^2$). Option (c) is the most a quadratic can have, not what this graph shows.",
+      "solution_md": "The parabola touches the $x$-axis at exactly one point, $x = 1$, without crossing it. So $p(x)$ has one zero (here $p(x) = -(x - 1)^2$). Option (a) is the most a quadratic can have, not what this graph shows.",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -2769,31 +2769,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$p(x)$ has two zeroes, both negative"
-        },
-        {
-          "id": "b",
-          "text_md": "$p(x)$ has one zero, $x = -1$"
-        },
-        {
-          "id": "c",
           "text_md": "$p(x)$ has no zeroes"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "$p(x)$ has a zero at $y = 2$"
+        },
+        {
+          "id": "c",
+          "text_md": "$p(x)$ has two zeroes, both negative"
+        },
+        {
+          "id": "d",
+          "text_md": "$p(x)$ has one zero, $x = -1$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "c"
+          "a"
         ]
       },
       "solution_md": "The whole curve lies above the $x$-axis (its lowest point is $(-1, 2)$), so it never meets the axis and $p(x)$ has no zeroes. $x = -1$ is where the lowest point is, not a zero, and a zero is an $x$-value, never a $y$-value.",
       "marking_scheme": [
         {
-          "step": "Correct option (c)",
+          "step": "Correct option (a)",
           "marks": 1
         }
       ],
@@ -2966,31 +2966,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$a > 0$"
-        },
-        {
-          "id": "b",
-          "text_md": "$a < 0$"
-        },
-        {
-          "id": "c",
           "text_md": "$c < 0$"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "$b < 0$"
+        },
+        {
+          "id": "c",
+          "text_md": "$a > 0$"
+        },
+        {
+          "id": "d",
+          "text_md": "$a < 0$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "d"
         ]
       },
       "solution_md": "The sign of the leading coefficient decides the shape: $a > 0$ opens upward, $a < 0$ opens downward. The constant $c$ only gives the $y$-intercept, and $b$ shifts the parabola sideways.",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -3137,31 +3137,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$x^2 + x - 12$"
+          "text_md": "$x^2 + 7x + 12$"
         },
         {
           "id": "b",
-          "text_md": "$x^2 - x - 12$"
+          "text_md": "$x^2 + x - 12$"
         },
         {
           "id": "c",
-          "text_md": "$x^2 - 7x + 12$"
+          "text_md": "$x^2 - x - 12$"
         },
         {
           "id": "d",
-          "text_md": "$x^2 + 7x + 12$"
+          "text_md": "$x^2 - 7x + 12$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "c"
         ]
       },
-      "solution_md": "Sum $= -3 + 4 = 1$, product $= -12$. Polynomial: $x^2 - (\\text{sum})x + \\text{product} = x^2 - x - 12$. **Check:** $(x + 3)(x - 4) = x^2 - x - 12$. Option (a) uses $+(\\text{sum})x$.",
+      "solution_md": "Sum $= -3 + 4 = 1$, product $= -12$. Polynomial: $x^2 - (\\text{sum})x + \\text{product} = x^2 - x - 12$. **Check:** $(x + 3)(x - 4) = x^2 - x - 12$. Option (b) uses $+(\\text{sum})x$.",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (c)",
           "marks": 1
         }
       ],
@@ -3194,31 +3194,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$28$"
-        },
-        {
-          "id": "b",
           "text_md": "$36$"
         },
         {
-          "id": "c",
+          "id": "b",
           "text_md": "$44$"
         },
         {
-          "id": "d",
+          "id": "c",
           "text_md": "$20$"
+        },
+        {
+          "id": "d",
+          "text_md": "$28$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "d"
         ]
       },
-      "solution_md": "$\\alpha + \\beta = 6$ and $\\alpha\\beta = 4$. $\\alpha^2 + \\beta^2 = (\\alpha + \\beta)^2 - 2\\alpha\\beta = 36 - 8 = 28$. Option (b) forgets to subtract $2\\alpha\\beta$; option (c) adds it.",
+      "solution_md": "$\\alpha + \\beta = 6$ and $\\alpha\\beta = 4$. $\\alpha^2 + \\beta^2 = (\\alpha + \\beta)^2 - 2\\alpha\\beta = 36 - 8 = 28$. Option (a) forgets to subtract $2\\alpha\\beta$; option (b) adds it.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -3309,31 +3309,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$5$"
+          "text_md": "$-5$"
         },
         {
           "id": "b",
-          "text_md": "$\\dfrac{1}{5}$"
+          "text_md": "$5$"
         },
         {
           "id": "c",
-          "text_md": "$13$"
+          "text_md": "$\\dfrac{1}{5}$"
         },
         {
           "id": "d",
-          "text_md": "$-5$"
+          "text_md": "$13$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "b"
         ]
       },
       "solution_md": "If the zeroes are $\\alpha$ and $\\dfrac1\\alpha$, their product is $1$. So $\\dfrac k5 = 1$, giving $k = 5$. **Check:** $5x^2 + 13x + 5$ has real zeroes (since $169 > 100$) whose product is $\\dfrac55 = 1$.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (b)",
           "marks": 1
         }
       ],
@@ -3366,31 +3366,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$3$"
-        },
-        {
-          "id": "b",
-          "text_md": "$-3$"
-        },
-        {
-          "id": "c",
           "text_md": "$4$"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "$16$"
+        },
+        {
+          "id": "c",
+          "text_md": "$3$"
+        },
+        {
+          "id": "d",
+          "text_md": "$-3$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "c"
         ]
       },
-      "solution_md": "If the zeroes are $\\alpha$ and $-\\alpha$, their sum is $0$. Sum $= -(k - 3) = 0$, so $k = 3$. Then $x^2 - 16$ has zeroes $4$ and $-4$. Option (c) confuses $k$ with a zero.",
+      "solution_md": "If the zeroes are $\\alpha$ and $-\\alpha$, their sum is $0$. Sum $= -(k - 3) = 0$, so $k = 3$. Then $x^2 - 16$ has zeroes $4$ and $-4$. Option (a) confuses $k$ with a zero.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (c)",
           "marks": 1
         }
       ],
@@ -3423,31 +3423,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$\\dfrac{5}{6}$"
-        },
-        {
-          "id": "b",
           "text_md": "$\\dfrac{6}{5}$"
         },
         {
-          "id": "c",
+          "id": "b",
           "text_md": "$-\\dfrac{5}{6}$"
         },
         {
-          "id": "d",
+          "id": "c",
           "text_md": "$\\dfrac{1}{6}$"
+        },
+        {
+          "id": "d",
+          "text_md": "$\\dfrac{5}{6}$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "d"
         ]
       },
-      "solution_md": "$\\dfrac1\\alpha + \\dfrac1\\beta = \\dfrac{\\alpha + \\beta}{\\alpha\\beta} = \\dfrac56$. **Check:** zeroes $2$ and $3$: $\\dfrac12 + \\dfrac13 = \\dfrac56$. Option (b) inverts the fraction.",
+      "solution_md": "$\\dfrac1\\alpha + \\dfrac1\\beta = \\dfrac{\\alpha + \\beta}{\\alpha\\beta} = \\dfrac56$. **Check:** zeroes $2$ and $3$: $\\dfrac12 + \\dfrac13 = \\dfrac56$. Option (a) inverts the fraction.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -3537,31 +3537,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$x^2 + 2px + 4q$"
+          "text_md": "$2x^2 + 2px + 2q$"
         },
         {
           "id": "b",
-          "text_md": "$x^2 + 2px + 2q$"
+          "text_md": "$x^2 + 2px + 4q$"
         },
         {
           "id": "c",
-          "text_md": "$x^2 - 2px + 4q$"
+          "text_md": "$x^2 + 2px + 2q$"
         },
         {
           "id": "d",
-          "text_md": "$2x^2 + 2px + 2q$"
+          "text_md": "$x^2 - 2px + 4q$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "b"
         ]
       },
-      "solution_md": "$\\alpha + \\beta = -p$ and $\\alpha\\beta = q$. New sum $= 2(\\alpha + \\beta) = -2p$; new product $= 4\\alpha\\beta = 4q$. Polynomial: $x^2 - (-2p)x + 4q = x^2 + 2px + 4q$. Option (b) doubles the product instead of multiplying it by $4$; option (d) is $2(x^2 + px + q)$, which has the **same** zeroes as before.",
+      "solution_md": "$\\alpha + \\beta = -p$ and $\\alpha\\beta = q$. New sum $= 2(\\alpha + \\beta) = -2p$; new product $= 4\\alpha\\beta = 4q$. Polynomial: $x^2 - (-2p)x + 4q = x^2 + 2px + 4q$. Option (c) doubles the product instead of multiplying it by $4$; option (a) is $2(x^2 + px + q)$, which has the **same** zeroes as before.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (b)",
           "marks": 1
         }
       ],
@@ -6126,7 +6126,7 @@
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "(a) Option (b): $82$ m. (b) $420$ m². (c) (i) Length $21$ m, breadth $20$ m. Or (ii) Diagonal $= 29$ m."
+        "model_answer_md": "(a) Option (d): $82$ m. (b) $420$ m². (c) (i) Length $21$ m, breadth $20$ m. Or (ii) Diagonal $= 29$ m."
       },
       "solution_md": "(a) Length $+$ breadth $= -\\dfrac{-41}{1} = 41$, perimeter $= 2 \\times 41 = 82$ m. (b) Area $= $ product $= 420$ m². (c) (i) $x^2 - 41x + 420 = (x - 20)(x - 21)$. (ii) Diagonal$^2 = l^2 + b^2 = 41^2 - 2 \\times 420 = 1681 - 840 = 841$, diagonal $= 29$ m.",
       "marking_scheme": [
@@ -6162,31 +6162,31 @@
           "options": [
             {
               "id": "a",
-              "text_md": "41 m"
-            },
-            {
-              "id": "b",
-              "text_md": "82 m"
-            },
-            {
-              "id": "c",
               "text_md": "420 m"
             },
             {
-              "id": "d",
+              "id": "b",
               "text_md": "840 m"
+            },
+            {
+              "id": "c",
+              "text_md": "41 m"
+            },
+            {
+              "id": "d",
+              "text_md": "82 m"
             }
           ],
           "match_right": [],
           "answer": {
             "option_ids": [
-              "b"
+              "d"
             ]
           },
-          "solution_md": "Sum of zeroes $= 41 = l + b$, so perimeter $= 2(l + b) = 82$ m. Option (a) forgets to double.",
+          "solution_md": "Sum of zeroes $= 41 = l + b$, so perimeter $= 2(l + b) = 82$ m. Option (c) forgets to double.",
           "marking_scheme": [
             {
-              "step": "Correct option (b)",
+              "step": "Correct option (d)",
               "marks": 1
             }
           ],

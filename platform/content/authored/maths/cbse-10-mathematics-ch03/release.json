@@ -2438,31 +2438,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "a parabola"
-        },
-        {
-          "id": "b",
           "text_md": "a straight line"
         },
         {
-          "id": "c",
+          "id": "b",
           "text_md": "a circle"
         },
         {
-          "id": "d",
+          "id": "c",
           "text_md": "a single point"
+        },
+        {
+          "id": "d",
+          "text_md": "a parabola"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "a"
         ]
       },
       "solution_md": "Every solution $(x, y)$ of $ax + by = c$ ($a, b$ not both $0$) lies on one straight line, and every point of that line is a solution.",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (a)",
           "marks": 1
         }
       ],
@@ -2495,31 +2495,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$(2, 1)$"
-        },
-        {
-          "id": "b",
           "text_md": "$(-2, 1)$"
         },
         {
-          "id": "c",
+          "id": "b",
           "text_md": "$(2, -1)$"
         },
         {
-          "id": "d",
+          "id": "c",
           "text_md": "$(1, -2)$"
+        },
+        {
+          "id": "d",
+          "text_md": "$(2, 1)$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "c"
+          "b"
         ]
       },
       "solution_md": "Substitute: $(2, -1)$ gives $4 + 3 = 7$ ✓. The others give $1$, $-7$ and $8$.",
       "marking_scheme": [
         {
-          "step": "Correct option (c)",
+          "step": "Correct option (b)",
           "marks": 1
         }
       ],
@@ -2552,31 +2552,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$(2, 3)$"
-        },
-        {
-          "id": "b",
-          "text_md": "$(3, 2)$"
-        },
-        {
-          "id": "c",
           "text_md": "$(5, 0)$"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "$(0, 5)$"
+        },
+        {
+          "id": "c",
+          "text_md": "$(2, 3)$"
+        },
+        {
+          "id": "d",
+          "text_md": "$(3, 2)$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "c"
         ]
       },
-      "solution_md": "The solution is the point where the lines cross: $(2, 3)$. Check with the lines' equations $x + y = 5$ and $2x - y = 1$: $2 + 3 = 5$ ✓ and $4 - 3 = 1$ ✓. Option (b) swaps the coordinates; (c) and (d) are where $\\ell_1$ meets the axes.",
+      "solution_md": "The solution is the point where the lines cross: $(2, 3)$. Check with the lines' equations $x + y = 5$ and $2x - y = 1$: $2 + 3 = 5$ ✓ and $4 - 3 = 1$ ✓. Option (d) swaps the coordinates; (a) and (b) are where $\\ell_1$ meets the axes.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (c)",
           "marks": 1
         }
       ],
@@ -2640,31 +2640,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "a unique solution"
-        },
-        {
-          "id": "b",
-          "text_md": "no solution"
-        },
-        {
-          "id": "c",
           "text_md": "infinitely many solutions"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "exactly two solutions"
+        },
+        {
+          "id": "c",
+          "text_md": "a unique solution"
+        },
+        {
+          "id": "d",
+          "text_md": "no solution"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "d"
         ]
       },
       "solution_md": "Parallel lines never meet, so there is no common point and the pair has no solution (it is inconsistent).",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -2697,31 +2697,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "a unique solution"
-        },
-        {
-          "id": "b",
-          "text_md": "no solution"
-        },
-        {
-          "id": "c",
           "text_md": "infinitely many solutions"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "exactly two solutions"
+        },
+        {
+          "id": "c",
+          "text_md": "a unique solution"
+        },
+        {
+          "id": "d",
+          "text_md": "no solution"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "c"
+          "a"
         ]
       },
       "solution_md": "$\\dfrac{a_1}{a_2} = \\dfrac12$, $\\dfrac{b_1}{b_2} = \\dfrac24 = \\dfrac12$, $\\dfrac{c_1}{c_2} = \\dfrac36 = \\dfrac12$. All three ratios are equal: the lines coincide, so there are infinitely many solutions.",
       "marking_scheme": [
         {
-          "step": "Correct option (c)",
+          "step": "Correct option (a)",
           "marks": 1
         }
       ],
@@ -2811,31 +2811,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$k = 3$"
+          "text_md": "for every value of $k$"
         },
         {
           "id": "b",
-          "text_md": "$k \\ne 3$"
+          "text_md": "$k = 3$"
         },
         {
           "id": "c",
-          "text_md": "$k = 6$"
+          "text_md": "$k \\ne 3$"
         },
         {
           "id": "d",
-          "text_md": "for every value of $k$"
+          "text_md": "$k = 6$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "c"
         ]
       },
       "solution_md": "Unique solution needs $\\dfrac{a_1}{a_2} \\ne \\dfrac{b_1}{b_2}$: $\\dfrac24 \\ne \\dfrac k6$, i.e. $k \\ne 3$. For $k = 3$ the lines are parallel ($\\dfrac{c_1}{c_2} = \\dfrac79 \\ne \\dfrac12$).",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (c)",
           "marks": 1
         }
       ],
@@ -2868,31 +2868,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$3$"
-        },
-        {
-          "id": "b",
           "text_md": "$9$"
         },
         {
-          "id": "c",
+          "id": "b",
           "text_md": "$12$"
         },
         {
-          "id": "d",
+          "id": "c",
           "text_md": "$4$"
+        },
+        {
+          "id": "d",
+          "text_md": "$3$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "d"
         ]
       },
       "solution_md": "Coincident lines need $\\dfrac k9 = \\dfrac{4}{12} = \\dfrac{8}{24}$. Both right-hand ratios are $\\dfrac13$, so $k = 3$.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -2925,31 +2925,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "parallel"
-        },
-        {
-          "id": "b",
-          "text_md": "coincident"
-        },
-        {
-          "id": "c",
           "text_md": "intersecting"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "perpendicular"
+        },
+        {
+          "id": "c",
+          "text_md": "parallel"
+        },
+        {
+          "id": "d",
+          "text_md": "coincident"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "c"
+          "a"
         ]
       },
       "solution_md": "Unequal ratios of the coefficients of x and y mean different slopes, so the lines intersect at exactly one point (they need not be perpendicular).",
       "marking_scheme": [
         {
-          "step": "Correct option (c)",
+          "step": "Correct option (a)",
           "marks": 1
         }
       ],
@@ -2982,31 +2982,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$x = 2,\\ y = 3$"
+          "text_md": "$x = 2,\\ y = -3$"
         },
         {
           "id": "b",
-          "text_md": "$x = 3,\\ y = 5$"
+          "text_md": "$x = 2,\\ y = 3$"
         },
         {
           "id": "c",
-          "text_md": "$x = 1,\\ y = 1$"
+          "text_md": "$x = 3,\\ y = 5$"
         },
         {
           "id": "d",
-          "text_md": "$x = 2,\\ y = -3$"
+          "text_md": "$x = 1,\\ y = 1$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "b"
         ]
       },
-      "solution_md": "Substitute $y = 2x - 1$: $3x + 2x - 1 = 9$, so $5x = 10$, $x = 2$ and $y = 3$. **Check:** $6 + 3 = 9$ ✓. Option (b) satisfies only the first equation.",
+      "solution_md": "Substitute $y = 2x - 1$: $3x + 2x - 1 = 9$, so $5x = 10$, $x = 2$ and $y = 3$. **Check:** $6 + 3 = 9$ ✓. Option (c) satisfies only the first equation.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (b)",
           "marks": 1
         }
       ],
@@ -3039,31 +3039,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$(9, 5)$"
-        },
-        {
-          "id": "b",
-          "text_md": "$(5, 9)$"
-        },
-        {
-          "id": "c",
           "text_md": "$(10, 4)$"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "$(7, 7)$"
+        },
+        {
+          "id": "c",
+          "text_md": "$(9, 5)$"
+        },
+        {
+          "id": "d",
+          "text_md": "$(5, 9)$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "c"
         ]
       },
-      "solution_md": "Add: $2x = 18$, $x = 9$; then $y = 14 - 9 = 5$. **Check:** $9 - 5 = 4$ ✓. Option (b) swaps $x$ and $y$.",
+      "solution_md": "Add: $2x = 18$, $x = 9$; then $y = 14 - 9 = 5$. **Check:** $9 - 5 = 4$ ✓. Option (d) swaps $x$ and $y$.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (c)",
           "marks": 1
         }
       ],
@@ -3096,31 +3096,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$3$ and $2$ respectively, then add"
-        },
-        {
-          "id": "b",
           "text_md": "$3$ and $2$ respectively, then subtract"
         },
         {
-          "id": "c",
+          "id": "b",
           "text_md": "$5$ and $3$ respectively, then add"
         },
         {
-          "id": "d",
+          "id": "c",
           "text_md": "$6$ and $4$ respectively, then subtract"
+        },
+        {
+          "id": "d",
+          "text_md": "$3$ and $2$ respectively, then add"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "d"
         ]
       },
-      "solution_md": "$3 \\times (3x + 4y) = 9x + 12y$ and $2 \\times (5x - 6y) = 10x - 12y$. The $y$-terms are $+12y$ and $-12y$, so **adding** removes $y$: $19x = 38$, $x = 2$. Subtracting would give $24y$; option (c) makes the $x$-terms equal, not the $y$-terms; option (d) gives $24y - (-24y) = 48y$.",
+      "solution_md": "$3 \\times (3x + 4y) = 9x + 12y$ and $2 \\times (5x - 6y) = 10x - 12y$. The $y$-terms are $+12y$ and $-12y$, so **adding** removes $y$: $19x = 38$, $x = 2$. Subtracting would give $24y$; option (b) makes the $x$-terms equal, not the $y$-terms; option (c) gives $24y - (-24y) = 48y$.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -3210,31 +3210,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$\\dfrac{8}{13}$"
+          "text_md": "$\\dfrac{7}{12}$"
         },
         {
           "id": "b",
-          "text_md": "$\\dfrac{13}{8}$"
+          "text_md": "$\\dfrac{8}{13}$"
         },
         {
           "id": "c",
-          "text_md": "$\\dfrac{6}{11}$"
+          "text_md": "$\\dfrac{13}{8}$"
         },
         {
           "id": "d",
-          "text_md": "$\\dfrac{7}{12}$"
+          "text_md": "$\\dfrac{6}{11}$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "b"
         ]
       },
       "solution_md": "Let the fraction be $\\dfrac nd$. $\\dfrac{n + 2}{d + 2} = \\dfrac23 \\Rightarrow 3n - 2d = -2$; $\\dfrac{n - 3}{d - 3} = \\dfrac12 \\Rightarrow 2n - d = 3$. From the second, $d = 2n - 3$; then $3n - 4n + 6 = -2$, so $n = 8$, $d = 13$. **Check:** $\\dfrac{10}{15} = \\dfrac23$ ✓, $\\dfrac{5}{10} = \\dfrac12$ ✓.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (b)",
           "marks": 1
         }
       ],
@@ -3267,31 +3267,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$10$ years"
-        },
-        {
-          "id": "b",
-          "text_md": "$12.5$ years"
-        },
-        {
-          "id": "c",
           "text_md": "$40$ years"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "$8$ years"
+        },
+        {
+          "id": "c",
+          "text_md": "$10$ years"
+        },
+        {
+          "id": "d",
+          "text_md": "$12.5$ years"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "c"
         ]
       },
-      "solution_md": "$f + s = 50$ and $f = 4s$, so $5s = 50$ and $s = 10$ (father $40$). Option (c) is the father's age.",
+      "solution_md": "$f + s = 50$ and $f = 4s$, so $5s = 50$ and $s = 10$ (father $40$). Option (a) is the father's age.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (c)",
           "marks": 1
         }
       ],
@@ -3324,31 +3324,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "no solution"
-        },
-        {
-          "id": "b",
-          "text_md": "at least one solution"
-        },
-        {
-          "id": "c",
           "text_md": "exactly two solutions"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "only the solution (0, 0)"
+        },
+        {
+          "id": "c",
+          "text_md": "no solution"
+        },
+        {
+          "id": "d",
+          "text_md": "at least one solution"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "d"
         ]
       },
       "solution_md": "Consistent means at least one solution: either a unique solution (intersecting lines) or infinitely many (coincident lines). A pair with no solution is inconsistent.",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -3438,31 +3438,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$(1, 2)$"
+          "text_md": "$(-1, 4)$"
         },
         {
           "id": "b",
-          "text_md": "$(2, 1)$"
+          "text_md": "$(1, 2)$"
         },
         {
           "id": "c",
-          "text_md": "$(3, 0)$"
+          "text_md": "$(2, 1)$"
         },
         {
           "id": "d",
-          "text_md": "$(-1, 4)$"
+          "text_md": "$(3, 0)$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "b"
         ]
       },
-      "solution_md": "**Add:** $80x + 80y = 240 \\Rightarrow x + y = 3$. **Subtract** (second minus first): $6x - 6y = -6 \\Rightarrow x - y = -1$. So $x = 1$, $y = 2$. **Check:** $37 + 86 = 123$ ✓, $43 + 74 = 117$ ✓. Option (b) satisfies $x + y = 3$ only.",
+      "solution_md": "**Add:** $80x + 80y = 240 \\Rightarrow x + y = 3$. **Subtract** (second minus first): $6x - 6y = -6 \\Rightarrow x - y = -1$. So $x = 1$, $y = 2$. **Check:** $37 + 86 = 123$ ✓, $43 + 74 = 117$ ✓. Option (c) satisfies $x + y = 3$ only.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (b)",
           "marks": 1
         }
       ],
@@ -5786,7 +5786,7 @@
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "(a) Option (a): $3w + 2t = 240$, $2w + 3t = 210$. (b) $w + t = 90$. (c) (i) $w = 60$, $t = 30$. Or (ii) ₹$390$."
+        "model_answer_md": "(a) Option (c): $3w + 2t = 240$, $2w + 3t = 210$. (b) $w + t = 90$. (c) (i) $w = 60$, $t = 30$. Or (ii) ₹$390$."
       },
       "solution_md": "(a) Ravi: $3w + 2t = 240$; Sita: $2w + 3t = 210$. (b) Adding: $5w + 5t = 450$, so $w + t = 90$. (c) (i) Subtracting: $w - t = 30$; with $w + t = 90$: $w = 60$, $t = 30$. (ii) $4 \\times 60 + 5 \\times 30 = 390$.",
       "marking_scheme": [
@@ -5823,31 +5823,31 @@
           "options": [
             {
               "id": "a",
-              "text_md": "$3w + 2t = 240,\\ 2w + 3t = 210$"
-            },
-            {
-              "id": "b",
-              "text_md": "$3w + 2t = 210,\\ 2w + 3t = 240$"
-            },
-            {
-              "id": "c",
               "text_md": "$2w + 3t = 240,\\ 3w + 2t = 210$"
             },
             {
-              "id": "d",
+              "id": "b",
               "text_md": "$5w + 5t = 450,\\ w - t = 30$"
+            },
+            {
+              "id": "c",
+              "text_md": "$3w + 2t = 240,\\ 2w + 3t = 210$"
+            },
+            {
+              "id": "d",
+              "text_md": "$3w + 2t = 210,\\ 2w + 3t = 240$"
             }
           ],
           "match_right": [],
           "answer": {
             "option_ids": [
-              "a"
+              "c"
             ]
           },
-          "solution_md": "Ravi: 3 wheel + 2 train = 240; Sita: 2 wheel + 3 train = 210. Option (d) is true but derived, not the pair read from the story.",
+          "solution_md": "Ravi: 3 wheel + 2 train = 240; Sita: 2 wheel + 3 train = 210. Option (b) is true but derived, not the pair read from the story.",
           "marking_scheme": [
             {
-              "step": "Correct option (a)",
+              "step": "Correct option (c)",
               "marks": 1
             }
           ],
@@ -5973,7 +5973,7 @@
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "(a) Option (c): the distance at which both charge the same. (b) $4$ km. (c) (i) For $10$ km, A charges ₹$140$ and B ₹$170$, so A is cheaper by ₹$30$. Or (ii) The lines would be parallel ($y = 40 + 10x$ and $y = 20 + 10x$): no solution, the charges are never equal; A always costs ₹$20$ more."
+        "model_answer_md": "(a) Option (d): the distance at which both charge the same. (b) $4$ km. (c) (i) For $10$ km, A charges ₹$140$ and B ₹$170$, so A is cheaper by ₹$30$. Or (ii) The lines would be parallel ($y = 40 + 10x$ and $y = 20 + 10x$): no solution, the charges are never equal; A always costs ₹$20$ more."
       },
       "solution_md": "(b) $40 + 10x = 20 + 15x \\Rightarrow 5x = 20 \\Rightarrow x = 4$ (charge ₹$80$). (c) (i) $40 + 100 = 140$, $20 + 150 = 170$. (ii) Rewritten: $10x - y = -40$ and $10x - y = -20$; ratios $\\dfrac{10}{10} = \\dfrac{-1}{-1} \\ne \\dfrac{-40}{-20}$.",
       "marking_scheme": [
@@ -6050,31 +6050,31 @@
           "options": [
             {
               "id": "a",
-              "text_md": "the fixed charge of each company"
+              "text_md": "the distance at which both charges are zero"
             },
             {
               "id": "b",
-              "text_md": "the charge per km of each company"
+              "text_md": "the fixed charge of each company"
             },
             {
               "id": "c",
-              "text_md": "the distance at which both companies charge the same"
+              "text_md": "the charge per km of each company"
             },
             {
               "id": "d",
-              "text_md": "the distance at which both charges are zero"
+              "text_md": "the distance at which both companies charge the same"
             }
           ],
           "match_right": [],
           "answer": {
             "option_ids": [
-              "c"
+              "d"
             ]
           },
           "solution_md": "At the crossing point both equations hold with the same x and y: same distance, same charge.",
           "marking_scheme": [
             {
-              "step": "Correct option (c)",
+              "step": "Correct option (d)",
               "marks": 1
             }
           ],
@@ -6200,7 +6200,7 @@
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "(a) Option (c): pair R. (b) Infinitely many. (c) (i) $x = 1$, $y = 1$. Or (ii) For example, change $2x - 2y = 7$ to $2x - 3y = 7$: now $\\dfrac21 \\ne \\dfrac{-3}{-1}$, so the pair has a unique solution and is consistent."
+        "model_answer_md": "(a) Option (a): pair R. (b) Infinitely many. (c) (i) $x = 1$, $y = 1$. Or (ii) For example, change $2x - 2y = 7$ to $2x - 3y = 7$: now $\\dfrac21 \\ne \\dfrac{-3}{-1}$, so the pair has a unique solution and is consistent."
       },
       "solution_md": "(a) P: all ratios $\\dfrac12$ (coincident). Q: $\\dfrac12 = \\dfrac12 \\ne \\dfrac37$ (parallel). R: $\\dfrac31 \\ne \\dfrac{1}{-2}$ (unique). (b) Coincident lines. (c) (i) From the second, $x = 2y - 1$; $3(2y - 1) + y = 4 \\Rightarrow 7y = 7$, $y = 1$, $x = 1$. (ii) Any change that makes $\\dfrac{a_1}{a_2} \\ne \\dfrac{b_1}{b_2}$.",
       "marking_scheme": [
@@ -6237,31 +6237,31 @@
           "options": [
             {
               "id": "a",
-              "text_md": "P"
-            },
-            {
-              "id": "b",
-              "text_md": "Q"
-            },
-            {
-              "id": "c",
               "text_md": "R"
             },
             {
-              "id": "d",
+              "id": "b",
               "text_md": "none of them"
+            },
+            {
+              "id": "c",
+              "text_md": "P"
+            },
+            {
+              "id": "d",
+              "text_md": "Q"
             }
           ],
           "match_right": [],
           "answer": {
             "option_ids": [
-              "c"
+              "a"
             ]
           },
           "solution_md": "Only R has $\\dfrac{a_1}{a_2} \\ne \\dfrac{b_1}{b_2}$ ($3 \\ne -\\dfrac12$).",
           "marking_scheme": [
             {
-              "step": "Correct option (c)",
+              "step": "Correct option (a)",
               "marks": 1
             }
           ],
@@ -6579,7 +6579,7 @@
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "(a) Option (a): adding eliminates $y$ at once, because the $y$-coefficients are $+2$ and $-2$. (b) $y = 3$. (c) (i) $(2, 3)$ satisfies both equations; it is where the two lines intersect. Or (ii) Chetan's method works: $15x + 10y = 60$ and $15x - 6y = 12$; subtracting gives $16y = 48$, $y = 3$, the same answer — but it needs more arithmetic than Aisha's."
+        "model_answer_md": "(a) Option (c): adding eliminates $y$ at once, because the $y$-coefficients are $+2$ and $-2$. (b) $y = 3$. (c) (i) $(2, 3)$ satisfies both equations; it is where the two lines intersect. Or (ii) Chetan's method works: $15x + 10y = 60$ and $15x - 6y = 12$; subtracting gives $16y = 48$, $y = 3$, the same answer — but it needs more arithmetic than Aisha's."
       },
       "solution_md": "(a) $8x = 16$, $x = 2$ in one step. (b) $3(2) + 2y = 12 \\Rightarrow y = 3$. (c) (i) $6 + 6 = 12$ ✓, $10 - 6 = 4$ ✓. (ii) as in the model answer.",
       "marking_scheme": [
@@ -6616,31 +6616,31 @@
           "options": [
             {
               "id": "a",
-              "text_md": "Aisha's: the y-coefficients are already opposites"
-            },
-            {
-              "id": "b",
-              "text_md": "Babu's: substitution is always quickest"
-            },
-            {
-              "id": "c",
               "text_md": "Chetan's: x must always be eliminated first"
             },
             {
-              "id": "d",
+              "id": "b",
               "text_md": "All need exactly the same work"
+            },
+            {
+              "id": "c",
+              "text_md": "Aisha's: the y-coefficients are already opposites"
+            },
+            {
+              "id": "d",
+              "text_md": "Babu's: substitution is always quickest"
             }
           ],
           "match_right": [],
           "answer": {
             "option_ids": [
-              "a"
+              "c"
             ]
           },
           "solution_md": "The $y$-terms $+2y$ and $-2y$ cancel on adding: $8x = 16$ immediately.",
           "marking_scheme": [
             {
-              "step": "Correct option (a)",
+              "step": "Correct option (c)",
               "marks": 1
             }
           ],

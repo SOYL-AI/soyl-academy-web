@@ -37,6 +37,8 @@ re-solve check per item), `src/lib.mjs` (builders + validator). Run from `platfo
 - **Fixes during the pass:** competency labels tuned for honesty after the first build (43% → 47% application or higher by relabelling three items whose demand was genuinely above routine: q002 ends-in-0 across four bases, q045 composite by factoring out 9, q027 HCF = a ⇒ LCM = b); no numeric discrepancies were found by the re-solve.
 - **Originality:** no NCERT example or exercise numbers are reused (e.g. NCERT's 3825, 96/404, 510/92, 306/657, 7 × 11 × 13 + 13 and 3 + 2√5 were deliberately avoided); familiar set-ups were re-imagined (three runners with lap counts, poles along three sides, a bangle shop, a "proof" that √4 is irrational to evaluate, all HCF-16/LCM-960 pairs).
 
+- **MCQ key balance:** after the re-solve, the builder rotates each MCQ's options so the keys cycle a → b → c → d (authored drafts had most keys at (a) and almost none at (d)); option letters quoted in solutions, schemes and case model answers are remapped, and the key text is verified unchanged. Final keys per chapter: a 6, b 6, c 6, d 5.
+
 ## Gaps / follow-ups
 - Narration audio not generated (TTS stage).
 - `table` cells use `$…$` maths per the current contract; renderers must support inline KaTeX in cells.

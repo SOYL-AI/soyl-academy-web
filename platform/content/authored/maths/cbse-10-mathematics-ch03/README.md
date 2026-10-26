@@ -39,6 +39,8 @@ e 4$" — the stems may still quote "$0 = 9$" as the claim being tested; (5) the
 e` into a newline in a single-quoted deck string (Part 2 worked example 3) — fixed to `\ne`.
 - **Originality:** NCERT/RS Aggarwal set-ups were deliberately avoided — no "Aftab seven times / three times", no 100 km cars, no taxi or library fixed-charge-plus-rate pairs, no 0.2x + 0.3y = 1.3, no "number is 4 times the sum of its digits". Contexts: Patna stationery, Hyderabad museum, Eden Gardens tickets, Mysuru Dussehra rides, Bhubaneswar couriers, Assam tea blend, a Lucknow grandmother, a wallet of ₹10/₹20 notes, a coin-equation error to evaluate.
 
+- **MCQ key balance:** after the re-solve, the builder rotates each MCQ's options so the keys cycle a → b → c → d (authored drafts had most keys at (a) and almost none at (d)); option letters quoted in solutions, schemes and case model answers are remapped, and the key text is verified unchanged. Final keys per chapter: a 6, b 6, c 6, d 5.
+
 ## Gaps / follow-ups
 - Vertical lines ($x = 3$) cannot be drawn with the `plot` contract (functions of $x$ only); they appear in text only (q-true/false on $x = 3$, $y = 2$). A `lines` primitive in `PlotVisual` would allow them.
 - Narration audio not generated (TTS stage). `word_limit` not set on maths short/long items (marked by steps).

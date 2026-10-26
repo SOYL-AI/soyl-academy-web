@@ -2200,31 +2200,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$(x + 2)^2 = x^2 + 4x$"
-        },
-        {
-          "id": "b",
-          "text_md": "$x(x - 1) = x^2 + 3$"
-        },
-        {
-          "id": "c",
           "text_md": "$(x - 1)^3 = x^3 + 2x$"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "$x^2 + \\dfrac{1}{x^2} = 3$"
+        },
+        {
+          "id": "c",
+          "text_md": "$(x + 2)^2 = x^2 + 4x$"
+        },
+        {
+          "id": "d",
+          "text_md": "$x(x - 1) = x^2 + 3$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "c"
+          "a"
         ]
       },
-      "solution_md": "Simplify each.\n\n(a) $x^2 + 4x + 4 = x^2 + 4x$: every $x$ term cancels and only the false claim \"$4$ equals $0$\" is left, so there is no equation in $x$ at all.\n\n(b) $x^2 - x = x^2 + 3 \\Rightarrow -x - 3 = 0$: linear.\n\n(c) $x^3 - 3x^2 + 3x - 1 = x^3 + 2x \\Rightarrow -3x^2 + x - 1 = 0$, i.e. $3x^2 - x + 1 = 0$: **quadratic** (the cubes cancel).\n\n(d) has $\\dfrac{1}{x^2}$, so it is not a polynomial equation.",
+      "solution_md": "Simplify each.\n\n(c) $x^2 + 4x + 4 = x^2 + 4x$: every $x$ term cancels and only the false claim \"$4$ equals $0$\" is left, so there is no equation in $x$ at all.\n\n(d) $x^2 - x = x^2 + 3 \\Rightarrow -x - 3 = 0$: linear.\n\n(a) $x^3 - 3x^2 + 3x - 1 = x^3 + 2x \\Rightarrow -3x^2 + x - 1 = 0$, i.e. $3x^2 - x + 1 = 0$: **quadratic** (the cubes cancel).\n\n(b) has $\\dfrac{1}{x^2}$, so it is not a polynomial equation.",
       "marking_scheme": [
         {
-          "step": "Correct option (c)",
+          "step": "Correct option (a)",
           "marks": 1
         }
       ],
@@ -2257,31 +2257,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$3$"
+          "text_md": "$-\\dfrac12$"
         },
         {
           "id": "b",
-          "text_md": "$-3$"
+          "text_md": "$3$"
         },
         {
           "id": "c",
-          "text_md": "$2$"
+          "text_md": "$-3$"
         },
         {
           "id": "d",
-          "text_md": "$-\\dfrac12$"
+          "text_md": "$2$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "b"
         ]
       },
       "solution_md": "$x = 3$: $18 - 21 + 3 = 0$ ✓. (The other root is $\\dfrac12$, not $-\\dfrac12$.) $x = -3$ gives $42$ and $x = 2$ gives $-1$.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (b)",
           "marks": 1
         }
       ],
@@ -2314,31 +2314,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$3$"
-        },
-        {
-          "id": "b",
-          "text_md": "$-3$"
-        },
-        {
-          "id": "c",
           "text_md": "$7$"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "$-7$"
+        },
+        {
+          "id": "c",
+          "text_md": "$3$"
+        },
+        {
+          "id": "d",
+          "text_md": "$-3$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "c"
         ]
       },
       "solution_md": "$4 + 2k - 10 = 0 \\Rightarrow k = 3$. **Check:** $x^2 + 3x - 10 = (x + 5)(x - 2)$ has the root $2$.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (c)",
           "marks": 1
         }
       ],
@@ -2371,31 +2371,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$7$ and $-2$"
-        },
-        {
-          "id": "b",
           "text_md": "$-7$ and $2$"
         },
         {
-          "id": "c",
+          "id": "b",
           "text_md": "$7$ and $2$"
         },
         {
-          "id": "d",
+          "id": "c",
           "text_md": "$14$ and $-1$"
+        },
+        {
+          "id": "d",
+          "text_md": "$7$ and $-2$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "d"
         ]
       },
-      "solution_md": "Two numbers with product $-14$ and sum $-5$: $-7$ and $2$. So $(x - 7)(x + 2) = 0$, giving $x = 7$ or $x = -2$. Option (b) uses the signs of the numbers in the split, not of the roots.",
+      "solution_md": "Two numbers with product $-14$ and sum $-5$: $-7$ and $2$. So $(x - 7)(x + 2) = 0$, giving $x = 7$ or $x = -2$. Option (a) uses the signs of the numbers in the split, not of the roots.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -2542,31 +2542,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$2 \\pm \\sqrt3$"
-        },
-        {
-          "id": "b",
-          "text_md": "$-2 \\pm \\sqrt3$"
-        },
-        {
-          "id": "c",
           "text_md": "$4 \\pm \\sqrt3$"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "$2 \\pm \\sqrt5$"
+        },
+        {
+          "id": "c",
+          "text_md": "$2 \\pm \\sqrt3$"
+        },
+        {
+          "id": "d",
+          "text_md": "$-2 \\pm \\sqrt3$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "c"
         ]
       },
-      "solution_md": "$D = 16 - 4 = 12$, so $x = \\dfrac{4 \\pm \\sqrt{12}}{2} = \\dfrac{4 \\pm 2\\sqrt3}{2} = 2 \\pm \\sqrt3$. Option (b) forgets the minus in $-b$; option (c) forgets to divide $4$ by $2$.",
+      "solution_md": "$D = 16 - 4 = 12$, so $x = \\dfrac{4 \\pm \\sqrt{12}}{2} = \\dfrac{4 \\pm 2\\sqrt3}{2} = 2 \\pm \\sqrt3$. Option (d) forgets the minus in $-b$; option (a) forgets to divide $4$ by $2$.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (c)",
           "marks": 1
         }
       ],
@@ -2599,31 +2599,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$a = 5,\\ b = -2,\\ c = -3$"
-        },
-        {
-          "id": "b",
           "text_md": "$a = 5,\\ b = 2,\\ c = -3$"
         },
         {
-          "id": "c",
+          "id": "b",
           "text_md": "$a = 5,\\ b = -3,\\ c = 2$"
         },
         {
-          "id": "d",
+          "id": "c",
           "text_md": "$a = 5,\\ b = -3,\\ c = -2$"
+        },
+        {
+          "id": "d",
+          "text_md": "$a = 5,\\ b = -2,\\ c = -3$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "d"
         ]
       },
-      "solution_md": "First write it in standard form: $5x^2 - 2x - 3 = 0$. So $a = 5$, $b = -2$, $c = -3$. Option (b) forgets that moving $2x$ changes its sign; (c) and (d) read the coefficients in the given order without rearranging.",
+      "solution_md": "First write it in standard form: $5x^2 - 2x - 3 = 0$. So $a = 5$, $b = -2$, $c = -3$. Option (a) forgets that moving $2x$ changes its sign; (b) and (c) read the coefficients in the given order without rearranging.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -2828,31 +2828,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$10$ only"
-        },
-        {
-          "id": "b",
-          "text_md": "$\\pm 10$"
-        },
-        {
-          "id": "c",
           "text_md": "$25$"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "$\\pm 5$"
+        },
+        {
+          "id": "c",
+          "text_md": "$10$ only"
+        },
+        {
+          "id": "d",
+          "text_md": "$\\pm 10$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "d"
         ]
       },
-      "solution_md": "Equal roots: $D = k^2 - 100 = 0$, so $k^2 = 100$ and $k = 10$ or $k = -10$. Option (a) forgets the negative square root. Check: $k = -10$ gives $(x + 5)^2 = 0$.",
+      "solution_md": "Equal roots: $D = k^2 - 100 = 0$, so $k^2 = 100$ and $k = 10$ or $k = -10$. Option (c) forgets the negative square root. Check: $k = -10$ gives $(x + 5)^2 = 0$.",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -2942,31 +2942,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "two distinct real roots"
+          "text_md": "real roots only if b > 0"
         },
         {
           "id": "b",
-          "text_md": "two equal real roots"
+          "text_md": "two distinct real roots"
         },
         {
           "id": "c",
-          "text_md": "no real roots"
+          "text_md": "two equal real roots"
         },
         {
           "id": "d",
-          "text_md": "real roots only if b > 0"
+          "text_md": "no real roots"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "b"
         ]
       },
       "solution_md": "If $a$ and $c$ have opposite signs, $ac < 0$, so $-4ac > 0$ and $D = b^2 - 4ac \\ge -4ac > 0$. Hence two distinct real roots, whatever $b$ is.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (b)",
           "marks": 1
         }
       ],
@@ -2999,31 +2999,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "11 and 12"
-        },
-        {
-          "id": "b",
-          "text_md": "12 and 13"
-        },
-        {
-          "id": "c",
           "text_md": "10 and 11"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "−12 and −11"
+        },
+        {
+          "id": "c",
+          "text_md": "11 and 12"
+        },
+        {
+          "id": "d",
+          "text_md": "12 and 13"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "c"
         ]
       },
       "solution_md": "$n(n + 1) = 132 \\Rightarrow n^2 + n - 132 = 0 \\Rightarrow (n + 12)(n - 11) = 0$. $n = 11$ (the root $-12$ is rejected: the integers are positive). So $11$ and $12$.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (c)",
           "marks": 1
         }
       ],
@@ -3056,31 +3056,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "6 cm"
-        },
-        {
-          "id": "b",
           "text_md": "9 cm"
         },
         {
-          "id": "c",
+          "id": "b",
           "text_md": "3 cm"
         },
         {
-          "id": "d",
+          "id": "c",
           "text_md": "18 cm"
+        },
+        {
+          "id": "d",
+          "text_md": "6 cm"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "d"
         ]
       },
-      "solution_md": "$b(b + 3) = 54 \\Rightarrow b^2 + 3b - 54 = 0 \\Rightarrow (b + 9)(b - 6) = 0$. $b = 6$ cm (reject $-9$). Option (b) is the length.",
+      "solution_md": "$b(b + 3) = 54 \\Rightarrow b^2 + 3b - 54 = 0 \\Rightarrow (b + 9)(b - 6) = 0$. $b = 6$ cm (reject $-9$). Option (a) is the length.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -3170,31 +3170,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$\\dfrac{3 \\pm \\sqrt3}{2}$"
+          "text_md": "$3 \\pm \\sqrt3$"
         },
         {
           "id": "b",
-          "text_md": "$\\dfrac{-3 \\pm \\sqrt3}{2}$"
+          "text_md": "$\\dfrac{3 \\pm \\sqrt3}{2}$"
         },
         {
           "id": "c",
-          "text_md": "$\\dfrac{3 \\pm \\sqrt{15}}{2}$"
+          "text_md": "$\\dfrac{-3 \\pm \\sqrt3}{2}$"
         },
         {
           "id": "d",
-          "text_md": "$3 \\pm \\sqrt3$"
+          "text_md": "$\\dfrac{3 \\pm \\sqrt{15}}{2}$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "b"
         ]
       },
-      "solution_md": "$D = 36 - 24 = 12$. $x = \\dfrac{6 \\pm \\sqrt{12}}{4} = \\dfrac{6 \\pm 2\\sqrt3}{4} = \\dfrac{3 \\pm \\sqrt3}{2}$. Option (c) uses $36 + 24$; option (d) divides by $2$ instead of $2a = 4$.",
+      "solution_md": "$D = 36 - 24 = 12$. $x = \\dfrac{6 \\pm \\sqrt{12}}{4} = \\dfrac{6 \\pm 2\\sqrt3}{4} = \\dfrac{3 \\pm \\sqrt3}{2}$. Option (d) uses $36 + 24$; option (a) divides by $2$ instead of $2a = 4$.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (b)",
           "marks": 1
         }
       ],
@@ -5683,7 +5683,7 @@
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "(a) Option (b): $(x + 1)(x + 3) = 24$. (b) $3$ m. (c) (i) The border's area is $24 - 3 \\times 5 = 9$ m². Or (ii) $x^2 + 4x - 21 = 0$ gives $x = 3$ or $x = -7$; $-7$ is rejected because a width cannot be negative. Check: $(3 + 1)(3 + 3) = 24$ ✓."
+        "model_answer_md": "(a) Option (d): $(x + 1)(x + 3) = 24$. (b) $3$ m. (c) (i) The border's area is $24 - 3 \\times 5 = 9$ m². Or (ii) $x^2 + 4x - 21 = 0$ gives $x = 3$ or $x = -7$; $-7$ is rejected because a width cannot be negative. Check: $(3 + 1)(3 + 3) = 24$ ✓."
       },
       "solution_md": "With width $x$: rangoli $x$ by $x + 2$; with the border, $x + 1$ by $x + 3$. $(x + 1)(x + 3) = 24 \\Rightarrow x^2 + 4x - 21 = 0 \\Rightarrow (x + 7)(x - 3) = 0$.",
       "marking_scheme": [
@@ -5721,31 +5721,31 @@
           "options": [
             {
               "id": "a",
-              "text_md": "$x(x + 2) = 24$"
-            },
-            {
-              "id": "b",
-              "text_md": "$(x + 1)(x + 3) = 24$"
-            },
-            {
-              "id": "c",
               "text_md": "$(x + 0.5)(x + 2.5) = 24$"
             },
             {
-              "id": "d",
+              "id": "b",
               "text_md": "$(x + 2)(x + 4) = 24$"
+            },
+            {
+              "id": "c",
+              "text_md": "$x(x + 2) = 24$"
+            },
+            {
+              "id": "d",
+              "text_md": "$(x + 1)(x + 3) = 24$"
             }
           ],
           "match_right": [],
           "answer": {
             "option_ids": [
-              "b"
+              "d"
             ]
           },
-          "solution_md": "A $0.5$ m border on **both** sides adds $1$ m to each dimension: $(x + 1)$ by $(x + 3)$. Option (c) adds the border on one side only.",
+          "solution_md": "A $0.5$ m border on **both** sides adds $1$ m to each dimension: $(x + 1)$ by $(x + 3)$. Option (a) adds the border on one side only.",
           "marking_scheme": [
             {
-              "step": "Correct option (b)",
+              "step": "Correct option (d)",
               "marks": 1
             }
           ],
@@ -6059,7 +6059,7 @@
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "(a) Option (d): $x(60 - 2x) = 450$. (b) The roots are **equal**. (c) (i) $15$ m by $30$ m (the $30$ m side along the canal). Or (ii) $x^2 - 30x + 250 = 0$ has $D = 900 - 1000 = -100 < 0$, so an area of $500$ m² is impossible."
+        "model_answer_md": "(a) Option (b): $x(60 - 2x) = 450$. (b) The roots are **equal**. (c) (i) $15$ m by $30$ m (the $30$ m side along the canal). Or (ii) $x^2 - 30x + 250 = 0$ has $D = 900 - 1000 = -100 < 0$, so an area of $500$ m² is impossible."
       },
       "solution_md": "$x(60 - 2x) = 450 \\Rightarrow 2x^2 - 60x + 450 = 0 \\Rightarrow x^2 - 30x + 225 = 0$, $D = 900 - 900 = 0$, $x = 15$. For $500$ m²: $x^2 - 30x + 250 = 0$.",
       "marking_scheme": [
@@ -6098,31 +6098,31 @@
           "options": [
             {
               "id": "a",
-              "text_md": "$x(60 - x) = 450$"
-            },
-            {
-              "id": "b",
-              "text_md": "$x(30 - x) = 450$"
-            },
-            {
-              "id": "c",
               "text_md": "$2x(60 - x) = 450$"
             },
             {
-              "id": "d",
+              "id": "b",
               "text_md": "$x(60 - 2x) = 450$"
+            },
+            {
+              "id": "c",
+              "text_md": "$x(60 - x) = 450$"
+            },
+            {
+              "id": "d",
+              "text_md": "$x(30 - x) = 450$"
             }
           ],
           "match_right": [],
           "answer": {
             "option_ids": [
-              "d"
+              "b"
             ]
           },
           "solution_md": "Two sides of $x$ m use $2x$ m of fence, leaving $60 - 2x$ m for the side parallel to the canal. Area $= x(60 - 2x)$.",
           "marking_scheme": [
             {
-              "step": "Correct option (d)",
+              "step": "Correct option (b)",
               "marks": 1
             }
           ],
@@ -6258,7 +6258,7 @@
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "(a) Option (a): $-5t^2 + 5t + 10 = 0$. (b) $2$ s. (c) (i) At $t = 1$ s. Or (ii) No: $-5t^2 + 5t + 10 = 12$ gives $5t^2 - 5t + 2 = 0$ with $D = 25 - 40 = -15 < 0$, so she never reaches $12$ m."
+        "model_answer_md": "(a) Option (c): $-5t^2 + 5t + 10 = 0$. (b) $2$ s. (c) (i) At $t = 1$ s. Or (ii) No: $-5t^2 + 5t + 10 = 12$ gives $5t^2 - 5t + 2 = 0$ with $D = 25 - 40 = -15 < 0$, so she never reaches $12$ m."
       },
       "solution_md": "(b) $-5(t^2 - t - 2) = -5(t - 2)(t + 1) = 0$; $t = 2$ (reject $-1$). (c) (i) $-5t^2 + 5t + 10 = 10 \\Rightarrow -5t(t - 1) = 0$: $t = 0$ (leaving) or $t = 1$. (ii) as in the model answer.",
       "marking_scheme": [
@@ -6326,31 +6326,31 @@
           "options": [
             {
               "id": "a",
-              "text_md": "$-5t^2 + 5t + 10 = 0$"
-            },
-            {
-              "id": "b",
-              "text_md": "$-5t^2 + 5t + 10 = 10$"
-            },
-            {
-              "id": "c",
               "text_md": "$-5t^2 + 5t = 0$"
             },
             {
-              "id": "d",
+              "id": "b",
               "text_md": "$5t^2 + 5t + 10 = 0$"
+            },
+            {
+              "id": "c",
+              "text_md": "$-5t^2 + 5t + 10 = 0$"
+            },
+            {
+              "id": "d",
+              "text_md": "$-5t^2 + 5t + 10 = 10$"
             }
           ],
           "match_right": [],
           "answer": {
             "option_ids": [
-              "a"
+              "c"
             ]
           },
           "solution_md": "She enters the water when her height is 0.",
           "marking_scheme": [
             {
-              "step": "Correct option (a)",
+              "step": "Correct option (c)",
               "marks": 1
             }
           ],

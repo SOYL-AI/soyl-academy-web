@@ -4142,31 +4142,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$6^n$"
-        },
-        {
-          "id": "b",
           "text_md": "$15^n$"
         },
         {
-          "id": "c",
+          "id": "b",
           "text_md": "$20^n$"
         },
         {
-          "id": "d",
+          "id": "c",
           "text_md": "$21^n$"
+        },
+        {
+          "id": "d",
+          "text_md": "$6^n$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "c"
+          "b"
         ]
       },
       "solution_md": "**Step 1.** A number ends with $0$ exactly when it is divisible by $10 = 2 \\times 5$, so its prime factorisation must contain both $2$ and $5$.\n\n**Step 2.** $20^n = 2^{2n} \\times 5^n$ contains both, so it always ends with $0$.\n\n**Step 3.** $6^n = 2^n \\times 3^n$ has no $5$; $15^n = 3^n \\times 5^n$ has no $2$; $21^n = 3^n \\times 7^n$ has neither. By the uniqueness of prime factorisation, no other factor can appear, so none of these can ever end with $0$.",
       "marking_scheme": [
         {
-          "step": "Correct option (c)",
+          "step": "Correct option (b)",
           "marks": 1
         }
       ],
@@ -4256,31 +4256,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$36$"
-        },
-        {
-          "id": "b",
           "text_md": "$72$"
         },
         {
-          "id": "c",
+          "id": "b",
           "text_md": "$6$"
         },
         {
-          "id": "d",
+          "id": "c",
           "text_md": "$7560$"
+        },
+        {
+          "id": "d",
+          "text_md": "$36$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "d"
         ]
       },
-      "solution_md": "**Step 1.** The common primes are $2$ and $3$ ($5$ and $7$ are not common).\n\n**Step 2.** Take the **smaller** power of each: $2^2$ and $3^2$. HCF $= 2^2 \\times 3^2 = 36$.\n\nOption (d) $7560 = 2^3 \\times 3^3 \\times 5 \\times 7$ is the LCM (greater powers of every prime). Option (b) takes $2^3$, the greater power of $2$.",
+      "solution_md": "**Step 1.** The common primes are $2$ and $3$ ($5$ and $7$ are not common).\n\n**Step 2.** Take the **smaller** power of each: $2^2$ and $3^2$. HCF $= 2^2 \\times 3^2 = 36$.\n\nOption (c) $7560 = 2^3 \\times 3^3 \\times 5 \\times 7$ is the LCM (greater powers of every prime). Option (a) takes $2^3$, the greater power of $2$.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -4427,31 +4427,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$180$"
-        },
-        {
-          "id": "b",
-          "text_md": "$6$"
-        },
-        {
-          "id": "c",
           "text_md": "$360$"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "$6480$"
+        },
+        {
+          "id": "c",
+          "text_md": "$180$"
+        },
+        {
+          "id": "d",
+          "text_md": "$6$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "c"
         ]
       },
-      "solution_md": "**Step 1.** $12 = 2^2 \\times 3$, $18 = 2 \\times 3^2$, $30 = 2 \\times 3 \\times 5$.\n\n**Step 2.** LCM takes the greatest power of every prime that appears: $2^2 \\times 3^2 \\times 5 = 180$.\n\nOption (b) is the HCF, option (d) is the product $12 \\times 18 \\times 30$, and (c) is a common multiple but not the least.",
+      "solution_md": "**Step 1.** $12 = 2^2 \\times 3$, $18 = 2 \\times 3^2$, $30 = 2 \\times 3 \\times 5$.\n\n**Step 2.** LCM takes the greatest power of every prime that appears: $2^2 \\times 3^2 \\times 5 = 180$.\n\nOption (d) is the HCF, option (b) is the product $12 \\times 18 \\times 30$, and (a) is a common multiple but not the least.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (c)",
           "marks": 1
         }
       ],
@@ -4484,31 +4484,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$6$ and $72$"
-        },
-        {
-          "id": "b",
-          "text_md": "$12$ and $90$"
-        },
-        {
-          "id": "c",
           "text_md": "$5$ and $125$"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "$9$ and $63$"
+        },
+        {
+          "id": "c",
+          "text_md": "$6$ and $72$"
+        },
+        {
+          "id": "d",
+          "text_md": "$12$ and $90$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "d"
         ]
       },
       "solution_md": "The HCF divides each number, and each number divides the LCM, so the **HCF must divide the LCM**.\n\n$72 \\div 6 = 12$, $125 \\div 5 = 25$ and $63 \\div 9 = 7$ are whole numbers, but $90 \\div 12 = 7.5$ is not. So $12$ and $90$ cannot be an HCF–LCM pair.",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -4598,31 +4598,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "$60$"
+          "text_md": "$20$"
         },
         {
           "id": "b",
-          "text_md": "$120$"
+          "text_md": "$60$"
         },
         {
           "id": "c",
-          "text_md": "$30$"
+          "text_md": "$120$"
         },
         {
           "id": "d",
-          "text_md": "$20$"
+          "text_md": "$30$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "a"
+          "b"
         ]
       },
-      "solution_md": "**Step 1.** Remove the remainders: the number divides $245 - 5 = 240$ and $1029 - 9 = 1020$ exactly.\n\n**Step 2.** $240 = 2^4 \\times 3 \\times 5$ and $1020 = 2^2 \\times 3 \\times 5 \\times 17$, so HCF $= 2^2 \\times 3 \\times 5 = 60$.\n\n**Check:** $245 = 4 \\times 60 + 5$ and $1029 = 17 \\times 60 + 9$. Options (c) and (d) also leave these remainders but are not the largest; $120$ does not divide $1020$.",
+      "solution_md": "**Step 1.** Remove the remainders: the number divides $245 - 5 = 240$ and $1029 - 9 = 1020$ exactly.\n\n**Step 2.** $240 = 2^4 \\times 3 \\times 5$ and $1020 = 2^2 \\times 3 \\times 5 \\times 17$, so HCF $= 2^2 \\times 3 \\times 5 = 60$.\n\n**Check:** $245 = 4 \\times 60 + 5$ and $1029 = 17 \\times 60 + 9$. Options (d) and (a) also leave these remainders but are not the largest; $120$ does not divide $1020$.",
       "marking_scheme": [
         {
-          "step": "Correct option (a)",
+          "step": "Correct option (b)",
           "marks": 1
         }
       ],
@@ -4712,31 +4712,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "an irrational number"
-        },
-        {
-          "id": "b",
-          "text_md": "a rational number equal to $10$"
-        },
-        {
-          "id": "c",
           "text_md": "a rational number equal to $100$"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "an irrational number equal to $2\\sqrt{5}$"
+        },
+        {
+          "id": "c",
+          "text_md": "an irrational number"
+        },
+        {
+          "id": "d",
+          "text_md": "a rational number equal to $10$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "d"
         ]
       },
-      "solution_md": "$\\sqrt5 \\times \\sqrt{20} = \\sqrt{100} = 10$, which is rational. This shows that the product of two irrational numbers **can** be rational. Option (c) forgets the square root.",
+      "solution_md": "$\\sqrt5 \\times \\sqrt{20} = \\sqrt{100} = 10$, which is rational. This shows that the product of two irrational numbers **can** be rational. Option (a) forgets the square root.",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -4769,31 +4769,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "any two integers"
-        },
-        {
-          "id": "b",
           "text_md": "co-prime integers with $b \\ne 0$"
         },
         {
-          "id": "c",
+          "id": "b",
           "text_md": "two prime numbers"
         },
         {
-          "id": "d",
+          "id": "c",
           "text_md": "two even integers"
+        },
+        {
+          "id": "d",
+          "text_md": "any two integers"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "a"
         ]
       },
       "solution_md": "We assume the opposite of what we want to prove: $\\sqrt5$ is rational. Any rational number can be written in lowest terms, so $a$ and $b$ are integers with **no common factor other than 1** (co-prime) and $b \\ne 0$. The contradiction later is that $5$ divides both $a$ and $b$.",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (a)",
           "marks": 1
         }
       ],
@@ -4883,31 +4883,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "irrational"
+          "text_md": "irrational, equal to $4 - \\sqrt{3}$"
         },
         {
           "id": "b",
-          "text_md": "rational, equal to $1$"
+          "text_md": "irrational"
         },
         {
           "id": "c",
-          "text_md": "rational, equal to $7$"
+          "text_md": "rational, equal to $1$"
         },
         {
           "id": "d",
-          "text_md": "irrational, equal to $4 - \\sqrt{3}$"
+          "text_md": "rational, equal to $7$"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "c"
         ]
       },
-      "solution_md": "Use $(x + y)(x - y) = x^2 - y^2$: $(2 + \\sqrt3)(2 - \\sqrt3) = 4 - 3 = 1$, which is rational. Option (c) adds $4 + 3$ instead of subtracting.",
+      "solution_md": "Use $(x + y)(x - y) = x^2 - y^2$: $(2 + \\sqrt3)(2 - \\sqrt3) = 4 - 3 = 1$, which is rational. Option (d) adds $4 + 3$ instead of subtracting.",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (c)",
           "marks": 1
         }
       ],
@@ -4940,31 +4940,31 @@
       "options": [
         {
           "id": "a",
-          "text_md": "always rational"
-        },
-        {
-          "id": "b",
-          "text_md": "always irrational"
-        },
-        {
-          "id": "c",
           "text_md": "sometimes rational, sometimes irrational"
         },
         {
-          "id": "d",
+          "id": "b",
           "text_md": "always an integer"
+        },
+        {
+          "id": "c",
+          "text_md": "always rational"
+        },
+        {
+          "id": "d",
+          "text_md": "always irrational"
         }
       ],
       "match_right": [],
       "answer": {
         "option_ids": [
-          "b"
+          "d"
         ]
       },
       "solution_md": "Suppose $x + y = q$ were rational. Then $y = q - x$ would be a difference of two rationals, which is rational — a contradiction. So $x + y$ is always irrational. (Contrast: the sum of **two irrationals** can be rational, e.g. $\\sqrt2 + (-\\sqrt2) = 0$.)",
       "marking_scheme": [
         {
-          "step": "Correct option (b)",
+          "step": "Correct option (d)",
           "marks": 1
         }
       ],
@@ -7340,7 +7340,7 @@
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "(a) Option (b): LCM. (b) $180$ minutes, that is at 9:00 a.m. (c) (i) Every $180$ minutes after 6:00 a.m. up to 9:00 p.m. ($900$ minutes): $\\dfrac{900}{180} = 5$ times (9 a.m., 12 noon, 3 p.m., 6 p.m., 9 p.m.). Or (ii) $\\text{LCM}(15, 20, 24) = 120$ minutes, so the first common departure after 6:00 a.m. is 8:00 a.m."
+        "model_answer_md": "(a) Option (c): LCM. (b) $180$ minutes, that is at 9:00 a.m. (c) (i) Every $180$ minutes after 6:00 a.m. up to 9:00 p.m. ($900$ minutes): $\\dfrac{900}{180} = 5$ times (9 a.m., 12 noon, 3 p.m., 6 p.m., 9 p.m.). Or (ii) $\\text{LCM}(15, 20, 24) = 120$ minutes, so the first common departure after 6:00 a.m. is 8:00 a.m."
       },
       "solution_md": "(a) Common departures repeat at common multiples of $15$, $20$, $36$; the first is the LCM. (b) $15 = 3 \\times 5$, $20 = 2^2 \\times 5$, $36 = 2^2 \\times 3^2$, so LCM $= 2^2 \\times 3^2 \\times 5 = 180$ min. (c) (i) 6:00 a.m. to 9:00 p.m. is $15$ h $= 900$ min; $900 \\div 180 = 5$. (ii) $24 = 2^3 \\times 3$, LCM $= 2^3 \\times 3 \\times 5 = 120$ min.",
       "marking_scheme": [
@@ -7376,31 +7376,31 @@
           "options": [
             {
               "id": "a",
-              "text_md": "HCF of 15, 20 and 36"
+              "text_md": "Sum 15 + 20 + 36"
             },
             {
               "id": "b",
-              "text_md": "LCM of 15, 20 and 36"
+              "text_md": "HCF of 15, 20 and 36"
             },
             {
               "id": "c",
-              "text_md": "Product 15 × 20 × 36"
+              "text_md": "LCM of 15, 20 and 36"
             },
             {
               "id": "d",
-              "text_md": "Sum 15 + 20 + 36"
+              "text_md": "Product 15 × 20 × 36"
             }
           ],
           "match_right": [],
           "answer": {
             "option_ids": [
-              "b"
+              "c"
             ]
           },
           "solution_md": "Departures of each route are multiples of its interval; a common departure is a common multiple, and the first one is the least common multiple.",
           "marking_scheme": [
             {
-              "step": "Correct option (b)",
+              "step": "Correct option (c)",
               "marks": 1
             }
           ],
@@ -7526,7 +7526,7 @@
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "(a) Option (c): HCF. (b) $144$ bangles per packet. (c) (i) $3 + 4 + 5 = 12$ packets. Or (ii) $9 + 12 + 15 = 36$ packets of $48$; $48$ divides all three counts, but it is not the largest such number."
+        "model_answer_md": "(a) Option (d): HCF. (b) $144$ bangles per packet. (c) (i) $3 + 4 + 5 = 12$ packets. Or (ii) $9 + 12 + 15 = 36$ packets of $48$; $48$ divides all three counts, but it is not the largest such number."
       },
       "solution_md": "(a) Fewest packets means the largest packet size dividing all three counts: the HCF. (b) $432 = 2^4 \\times 3^3$, $576 = 2^6 \\times 3^2$, $720 = 2^4 \\times 3^2 \\times 5$, HCF $= 2^4 \\times 3^2 = 144$. (c) (i) $432 \\div 144 = 3$, $576 \\div 144 = 4$, $720 \\div 144 = 5$. (ii) $432 \\div 48 = 9$, $576 \\div 48 = 12$, $720 \\div 48 = 15$.",
       "marking_scheme": [
@@ -7562,31 +7562,31 @@
           "options": [
             {
               "id": "a",
-              "text_md": "the LCM of 432, 576 and 720"
+              "text_md": "any common factor of the three numbers"
             },
             {
               "id": "b",
-              "text_md": "the product of the three numbers"
+              "text_md": "the LCM of 432, 576 and 720"
             },
             {
               "id": "c",
-              "text_md": "the HCF of 432, 576 and 720"
+              "text_md": "the product of the three numbers"
             },
             {
               "id": "d",
-              "text_md": "any common factor of the three numbers"
+              "text_md": "the HCF of 432, 576 and 720"
             }
           ],
           "match_right": [],
           "answer": {
             "option_ids": [
-              "c"
+              "d"
             ]
           },
           "solution_md": "The packet size must divide all three counts (common factor), and the fewest packets needs the largest such size: the HCF. Any common factor works, but only the HCF gives the fewest packets.",
           "marking_scheme": [
             {
-              "step": "Correct option (c)",
+              "step": "Correct option (d)",
               "marks": 1
             }
           ],
@@ -7712,7 +7712,7 @@
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "(a) Option (b): $4$ distinct primes. (b) $70$. (c) (i) Arjun is wrong: $4$ and $630$ are not primes; breaking them down gives $2^2 \\times 2 \\times 3^2 \\times 5 \\times 7 = 2^3 \\times 3^2 \\times 5 \\times 7$ again — the factorisation is unique. Or (ii) $\\text{LCM}(1, 2, \\dots, 10) = 2^3 \\times 3^2 \\times 5 \\times 7 = 2520$: the highest powers needed are $2^3$ (from $8$), $3^2$ (from $9$), $5$ and $7$."
+        "model_answer_md": "(a) Option (a): $4$ distinct primes. (b) $70$. (c) (i) Arjun is wrong: $4$ and $630$ are not primes; breaking them down gives $2^2 \\times 2 \\times 3^2 \\times 5 \\times 7 = 2^3 \\times 3^2 \\times 5 \\times 7$ again — the factorisation is unique. Or (ii) $\\text{LCM}(1, 2, \\dots, 10) = 2^3 \\times 3^2 \\times 5 \\times 7 = 2520$: the highest powers needed are $2^3$ (from $8$), $3^2$ (from $9$), $5$ and $7$."
       },
       "solution_md": "(a) Primes $2, 3, 5, 7$. (b) $2520k$ is a perfect square when every exponent is even: $2^3 \\to$ needs $2$, $3^2$ fine, $5 \\to$ needs $5$, $7 \\to$ needs $7$; $k = 2 \\times 5 \\times 7 = 70$, and $2520 \\times 70 = 176400 = 420^2$. (c) See model answer.",
       "marking_scheme": [
@@ -7748,31 +7748,31 @@
           "options": [
             {
               "id": "a",
-              "text_md": "3"
-            },
-            {
-              "id": "b",
               "text_md": "4"
             },
             {
-              "id": "c",
+              "id": "b",
               "text_md": "7"
             },
             {
-              "id": "d",
+              "id": "c",
               "text_md": "8"
+            },
+            {
+              "id": "d",
+              "text_md": "3"
             }
           ],
           "match_right": [],
           "answer": {
             "option_ids": [
-              "b"
+              "a"
             ]
           },
-          "solution_md": "The distinct primes are $2, 3, 5, 7$: four. (Counting with repetition gives $3 + 2 + 1 + 1 = 7$, option (c).)",
+          "solution_md": "The distinct primes are $2, 3, 5, 7$: four. (Counting with repetition gives $3 + 2 + 1 + 1 = 7$, option (b).)",
           "marking_scheme": [
             {
-              "step": "Correct option (b)",
+              "step": "Correct option (a)",
               "marks": 1
             }
           ],
@@ -7902,7 +7902,7 @@
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "(a) Option (a): $P + Q = 6$, rational. (b) $PQ = 7$. (c) (i) If $3 + \\sqrt2 = r$ (rational) then $\\sqrt2 = r - 3$ is rational, a contradiction; so $P$ is irrational. Or (ii) Vaigai is wrong: $P$ and $Q$ are irrational but $P + Q = 6$ and $PQ = 7$ are rational."
+        "model_answer_md": "(a) Option (b): $P + Q = 6$, rational. (b) $PQ = 7$. (c) (i) If $3 + \\sqrt2 = r$ (rational) then $\\sqrt2 = r - 3$ is rational, a contradiction; so $P$ is irrational. Or (ii) Vaigai is wrong: $P$ and $Q$ are irrational but $P + Q = 6$ and $PQ = 7$ are rational."
       },
       "solution_md": "(a) $(3 + \\sqrt2) + (3 - \\sqrt2) = 6$. (b) $(3 + \\sqrt2)(3 - \\sqrt2) = 9 - 2 = 7$. (c) as in the model answer.",
       "marking_scheme": [
@@ -7938,31 +7938,31 @@
           "options": [
             {
               "id": "a",
-              "text_md": "$6$, a rational number"
+              "text_md": "$0$"
             },
             {
               "id": "b",
-              "text_md": "$6 + 2\\sqrt2$, an irrational number"
+              "text_md": "$6$, a rational number"
             },
             {
               "id": "c",
-              "text_md": "$2\\sqrt2$, an irrational number"
+              "text_md": "$6 + 2\\sqrt2$, an irrational number"
             },
             {
               "id": "d",
-              "text_md": "$0$"
+              "text_md": "$2\\sqrt2$, an irrational number"
             }
           ],
           "match_right": [],
           "answer": {
             "option_ids": [
-              "a"
+              "b"
             ]
           },
           "solution_md": "The $\\sqrt2$ terms cancel: $3 + \\sqrt2 + 3 - \\sqrt2 = 6$.",
           "marking_scheme": [
             {
-              "step": "Correct option (a)",
+              "step": "Correct option (b)",
               "marks": 1
             }
           ],
@@ -8088,7 +8088,7 @@
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "(a) Option (d): HCF. (b) $36$ m. (c) (i) Total length $= 1512$ m, so $\\dfrac{1512}{36} + 1 = 43$ poles. Or (ii) the spacing must divide $36$; the largest divisor of $36$ below $20$ is $18$ m."
+        "model_answer_md": "(a) Option (c): HCF. (b) $36$ m. (c) (i) Total length $= 1512$ m, so $\\dfrac{1512}{36} + 1 = 43$ poles. Or (ii) the spacing must divide $36$; the largest divisor of $36$ below $20$ is $18$ m."
       },
       "solution_md": "(a) The spacing must divide each side exactly, and be as large as possible. (b) $396 = 2^2 \\times 3^2 \\times 11$, $504 = 2^3 \\times 3^2 \\times 7$, $612 = 2^2 \\times 3^2 \\times 17$, HCF $= 2^2 \\times 3^2 = 36$ m. (c) (i) Gaps: $11 + 14 + 17 = 42$; an open path with $42$ gaps has $43$ poles. (ii) Common divisors of the three sides are the divisors of the HCF $36$: $1, 2, 3, 4, 6, 9, 12, 18, 36$; the largest below $20$ is $18$.",
       "marking_scheme": [
@@ -8124,31 +8124,31 @@
           "options": [
             {
               "id": "a",
-              "text_md": "the LCM of the three sides"
-            },
-            {
-              "id": "b",
               "text_md": "the sum of the three sides divided by 3"
             },
             {
-              "id": "c",
+              "id": "b",
               "text_md": "the smallest side"
             },
             {
-              "id": "d",
+              "id": "c",
               "text_md": "the HCF of the three sides"
+            },
+            {
+              "id": "d",
+              "text_md": "the LCM of the three sides"
             }
           ],
           "match_right": [],
           "answer": {
             "option_ids": [
-              "d"
+              "c"
             ]
           },
           "solution_md": "Each side must be an exact number of gaps, so the gap divides every side; the largest such gap is the HCF.",
           "marking_scheme": [
             {
-              "step": "Correct option (d)",
+              "step": "Correct option (c)",
               "marks": 1
             }
           ],
