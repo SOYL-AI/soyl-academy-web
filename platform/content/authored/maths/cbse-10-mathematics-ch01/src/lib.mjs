@@ -205,6 +205,7 @@ export function caseQ(key, o, check) {
     expected_time_sec: o.time ?? 480,
     assets: o.assets ?? [],
     passage_md: o.passage,
+    passage_origin: 'soyl-original',
     children: o.children,
   };
   registry.push({ key, q, check, qual: null });
@@ -253,6 +254,26 @@ export function solve2(a1, b1, c1, a2, b2, c2) {
   return [(c1 * b2 - c2 * b1) / det, (a1 * c2 - a2 * c1) / det];
 }
 export const f = (expr) => { const ast = parseExpr(expr); return (x) => evaluate(ast, x); };
+/** Coefficients [a, b, c, …] (highest power first) of a·∏(x − r). */
+export function polyFromRoots(roots, a = 1) {
+  let c = [a];
+  for (const r0 of roots) c = [...c, 0].map((v, i) => v - (i ? r0 * c[i - 1] : 0));
+  return c.map((v) => (Math.abs(v - Math.round(v)) < 1e-9 ? Math.round(v) : v));
+}
+/** Real zeros of an expression on [a, b], found numerically (sign changes + touching zeros). */
+export function numRoots(expr, a, b, N = 8000) {
+  const g = f(expr);
+  const out = [];
+  const h = (b - a) / N;
+  for (let k = 0; k <= N; k++) {
+    const x = a + h * k, y = g(x);
+    if (Math.abs(y) < 1e-12) { out.push(x); continue; }
+    const y2 = g(x + h);
+    if (k < N && Math.abs(y2) > 1e-12 && Math.sign(y) !== Math.sign(y2)) { let lo = x, hi = x + h; for (let i = 0; i < 80; i++) { const m = (lo + hi) / 2; if (Math.sign(g(m)) === Math.sign(g(lo))) lo = m; else hi = m; } out.push((lo + hi) / 2); }
+    else if (k > 0 && k < N && Math.abs(y) < 1e-2 && Math.abs(y) <= Math.abs(g(x - h)) && Math.abs(y) <= Math.abs(y2)) { let lo = x - h, hi = x + h; for (let i = 0; i < 100; i++) { const m1 = lo + (hi - lo) / 3, m2 = hi - (hi - lo) / 3; if (Math.abs(g(m1)) < Math.abs(g(m2))) hi = m2; else lo = m1; } const m = (lo + hi) / 2; if (Math.abs(g(m)) < 1e-9) out.push(m); }
+  }
+  return out.filter((z, i) => out.findIndex((w) => Math.abs(w - z) < 1e-5) === i).map((z) => Math.round(z * 1e6) / 1e6);
+}
 
 // ---------------------------------------------------------------- re-solve harness
 function numsIn(text) {
@@ -283,9 +304,18 @@ function makeChecker(entryKey, q, log, errs) {
       if (!ok) errs.push(`${tag(sub)}: re-solve ${fmt(value)}, key ${node.answer.value} (tol ${node.answer.tolerance})`);
       if (!hasNumber(node.solution_md, node.answer.value)) errs.push(`${tag(sub)}: solution never states ${node.answer.value}`);
     },
+    /** Option values typed independently of the text: exactly one equals the re-solved target, and it is the key. */
+    which(values, target) {
+      const eq = (u, v) => (Array.isArray(u) ? u.length === v.length && u.every((x, k) => Math.abs(x - v[k]) < 1e-9) : Math.abs(u - v) < 1e-9);
+      const hits = values.map((v, k) => (eq(v, target) ? 'abcd'[k] : null)).filter(Boolean);
+      const ok = hits.length === 1 && hits[0] === node.answer.option_ids[0];
+      log.push([tag(sub), JSON.stringify(target), `${node.answer.option_ids[0]} (hits ${hits.join('')})`, ok]);
+      if (!ok) errs.push(`${tag(sub)}: re-solve ${JSON.stringify(target)} matches options [${hits}], key ${node.answer.option_ids[0]}`);
+    },
     blank(value, i = 0) {
       const acc = node.answer.blanks[i].accepted;
-      const ok = typeof value === 'number' ? acc.some((a) => (a.includes('/') ? Math.abs(eval(a.replace(/\s/g, '')) - value) < 1e-9 : numsIn(a).length === 1 && Math.abs(numsIn(a)[0] - value) < 1e-9)) : acc.map((a) => a.toLowerCase()).includes(String(value).toLowerCase());
+      const parse = (a) => { const s = a.replace(/\s|\$/g, '').replace(/−/g, '-'); if (/^-?\d+(\.\d+)?$/.test(s)) return Number(s); const m = /^(-?\d+)\/(\d+)$/.exec(s); return m ? Number(m[1]) / Number(m[2]) : NaN; };
+      const ok = typeof value === 'number' ? acc.some((a) => Math.abs(parse(a) - value) < 1e-9) && acc.every((a) => Number.isNaN(parse(a)) || Math.abs(parse(a) - value) < 1e-9) : acc.map((a) => a.toLowerCase()).includes(String(value).toLowerCase());
       log.push([tag(sub), fmt(value), acc.join('|'), ok]);
       if (!ok) errs.push(`${tag(sub)}: re-solve ${fmt(value)} not among accepted ${acc.join('|')}`);
     },

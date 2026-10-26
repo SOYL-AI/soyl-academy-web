@@ -680,7 +680,7 @@ The pairs of numbers are $(16, 960)$, $(48, 320)$, $(64, 240)$ and $(80, 192)$.`
 caseQ('c01', {
   passage: r`At the Esplanade bus depot in Kolkata, three city routes start at 6:00 a.m. Buses on route A leave every $15$ minutes, on route B every $20$ minutes and on route C every $36$ minutes. The depot manager wants to know when buses on all three routes leave at the same time, so she can post an extra inspector at those moments. The depot runs until 9:00 p.m.`,
   d: 3, c: 'application',
-  model: r`(a) (b) LCM. (b) $180$ minutes, that is at 9:00 a.m. (c) (i) Every $180$ minutes after 6:00 a.m. up to 9:00 p.m. ($900$ minutes): $\dfrac{900}{180} = 5$ times (9 a.m., 12 noon, 3 p.m., 6 p.m., 9 p.m.). Or (ii) $\text{LCM}(15, 20, 24) = 120$ minutes, so the first common departure after 6:00 a.m. is 8:00 a.m.`,
+  model: r`(a) Option (b): LCM. (b) $180$ minutes, that is at 9:00 a.m. (c) (i) Every $180$ minutes after 6:00 a.m. up to 9:00 p.m. ($900$ minutes): $\dfrac{900}{180} = 5$ times (9 a.m., 12 noon, 3 p.m., 6 p.m., 9 p.m.). Or (ii) $\text{LCM}(15, 20, 24) = 120$ minutes, so the first common departure after 6:00 a.m. is 8:00 a.m.`,
   sol: r`(a) Common departures repeat at common multiples of $15$, $20$, $36$; the first is the LCM. (b) $15 = 3 \times 5$, $20 = 2^2 \times 5$, $36 = 2^2 \times 3^2$, so LCM $= 2^2 \times 3^2 \times 5 = 180$ min. (c) (i) 6:00 a.m. to 9:00 p.m. is $15$ h $= 900$ min; $900 \div 180 = 5$. (ii) $24 = 2^3 \times 3$, LCM $= 2^3 \times 3 \times 5 = 120$ min.`,
   children: [
     child('a', mk.mcq({ stem: 'Which idea gives the first time after 6:00 a.m. when buses on all three routes leave together?', opts: ['HCF of 15, 20 and 36', 'LCM of 15, 20 and 36', 'Product 15 × 20 × 36', 'Sum 15 + 20 + 36'], key: 'b', sol: 'Departures of each route are multiples of its interval; a common departure is a common multiple, and the first one is the least common multiple.', d: 1, c: 'understanding', t: [2], time: 45 })),
@@ -694,7 +694,7 @@ caseQ('c01', {
 caseQ('c02', {
   passage: r`Farida runs a bangle shop in Jaipur's Johari Bazaar. Before Teej she has $432$ red bangles, $576$ green bangles and $720$ golden bangles. She wants to pack them in identical packets so that every packet has the **same number** of bangles, each packet has bangles of **only one colour**, and she uses the **fewest** packets possible.`,
   d: 3, c: 'application',
-  model: r`(a) (c) HCF. (b) $144$ bangles per packet. (c) (i) $3 + 4 + 5 = 12$ packets. Or (ii) $9 + 12 + 15 = 36$ packets of $48$; $48$ divides all three counts, but it is not the largest such number.`,
+  model: r`(a) Option (c): HCF. (b) $144$ bangles per packet. (c) (i) $3 + 4 + 5 = 12$ packets. Or (ii) $9 + 12 + 15 = 36$ packets of $48$; $48$ divides all three counts, but it is not the largest such number.`,
   sol: r`(a) Fewest packets means the largest packet size dividing all three counts: the HCF. (b) $432 = 2^4 \times 3^3$, $576 = 2^6 \times 3^2$, $720 = 2^4 \times 3^2 \times 5$, HCF $= 2^4 \times 3^2 = 144$. (c) (i) $432 \div 144 = 3$, $576 \div 144 = 4$, $720 \div 144 = 5$. (ii) $432 \div 48 = 9$, $576 \div 48 = 12$, $720 \div 48 = 15$.`,
   children: [
     child('a', mk.mcq({ stem: 'The number of bangles in each packet should be', opts: ['the LCM of 432, 576 and 720', 'the product of the three numbers', 'the HCF of 432, 576 and 720', 'any common factor of the three numbers'], key: 'c', sol: 'The packet size must divide all three counts (common factor), and the fewest packets needs the largest such size: the HCF. Any common factor works, but only the HCF gives the fewest packets.', d: 1, c: 'understanding', t: [2], time: 45 })),
@@ -708,7 +708,7 @@ caseQ('c02', {
 caseQ('c03', {
   passage: r`In a maths club meeting in Lucknow, the teacher writes on the board: $2520 = 2^3 \times 3^2 \times 5 \times 7$. Arjun says, "I have found a different prime factorisation: $2520 = 4 \times 630$." Sana adds that $2520$ is special: it is the smallest number divisible by every whole number from $1$ to $10$.`,
   d: 3, c: 'analysis',
-  model: r`(a) (b) $4$ distinct primes. (b) $70$. (c) (i) Arjun is wrong: $4$ and $630$ are not primes; breaking them down gives $2^2 \times 2 \times 3^2 \times 5 \times 7 = 2^3 \times 3^2 \times 5 \times 7$ again — the factorisation is unique. Or (ii) $\text{LCM}(1, 2, \dots, 10) = 2^3 \times 3^2 \times 5 \times 7 = 2520$: the highest powers needed are $2^3$ (from $8$), $3^2$ (from $9$), $5$ and $7$.`,
+  model: r`(a) Option (b): $4$ distinct primes. (b) $70$. (c) (i) Arjun is wrong: $4$ and $630$ are not primes; breaking them down gives $2^2 \times 2 \times 3^2 \times 5 \times 7 = 2^3 \times 3^2 \times 5 \times 7$ again — the factorisation is unique. Or (ii) $\text{LCM}(1, 2, \dots, 10) = 2^3 \times 3^2 \times 5 \times 7 = 2520$: the highest powers needed are $2^3$ (from $8$), $3^2$ (from $9$), $5$ and $7$.`,
   sol: r`(a) Primes $2, 3, 5, 7$. (b) $2520k$ is a perfect square when every exponent is even: $2^3 \to$ needs $2$, $3^2$ fine, $5 \to$ needs $5$, $7 \to$ needs $7$; $k = 2 \times 5 \times 7 = 70$, and $2520 \times 70 = 176400 = 420^2$. (c) See model answer.`,
   children: [
     child('a', mk.mcq({ stem: 'How many distinct prime factors does 2520 have?', opts: ['3', '4', '7', '8'], key: 'b', sol: r`The distinct primes are $2, 3, 5, 7$: four. (Counting with repetition gives $3 + 2 + 1 + 1 = 7$, option (c).)`, d: 1, c: 'recall', t: [1], time: 40 })),
@@ -722,7 +722,7 @@ caseQ('c03', {
 caseQ('c04', {
   passage: r`At a Ramanujan Day quiz in Chennai, the quizmaster writes two numbers: $P = 3 + \sqrt{2}$ and $Q = 3 - \sqrt{2}$. Team Kaveri says both numbers are irrational. Team Vaigai claims, "The sum and the product of two irrational numbers are always irrational." The teams may use the fact that $\sqrt{2}$ is irrational.`,
   d: 3, c: 'analysis',
-  model: r`(a) (a) $P + Q = 6$, rational. (b) $PQ = 7$. (c) (i) If $3 + \sqrt2 = r$ (rational) then $\sqrt2 = r - 3$ is rational, a contradiction; so $P$ is irrational. Or (ii) Vaigai is wrong: $P$ and $Q$ are irrational but $P + Q = 6$ and $PQ = 7$ are rational.`,
+  model: r`(a) Option (a): $P + Q = 6$, rational. (b) $PQ = 7$. (c) (i) If $3 + \sqrt2 = r$ (rational) then $\sqrt2 = r - 3$ is rational, a contradiction; so $P$ is irrational. Or (ii) Vaigai is wrong: $P$ and $Q$ are irrational but $P + Q = 6$ and $PQ = 7$ are rational.`,
   sol: r`(a) $(3 + \sqrt2) + (3 - \sqrt2) = 6$. (b) $(3 + \sqrt2)(3 - \sqrt2) = 9 - 2 = 7$. (c) as in the model answer.`,
   children: [
     child('a', mk.mcq({ stem: r`$P + Q$ is`, opts: [r`$6$, a rational number`, r`$6 + 2\sqrt2$, an irrational number`, r`$2\sqrt2$, an irrational number`, r`$0$`], key: 'a', sol: r`The $\sqrt2$ terms cancel: $3 + \sqrt2 + 3 - \sqrt2 = 6$.`, d: 1, c: 'understanding', t: [3], time: 45 })),
@@ -737,7 +737,7 @@ caseQ('c05', {
   passage: r`A farmer near Nashik is fencing three sides of his vineyard along a road. The sides measure $396$ m, $504$ m and $612$ m, and they meet end to end at two corners. He wants concrete poles at **equal** distances along all three sides, with a pole at every corner and at both ends, and the distance between poles as **large** as possible (a whole number of metres).`,
   d: 4, c: 'analysis',
   assets: [],
-  model: r`(a) (d) HCF. (b) $36$ m. (c) (i) Total length $= 1512$ m, so $\dfrac{1512}{36} + 1 = 43$ poles. Or (ii) the spacing must divide $36$; the largest divisor of $36$ below $20$ is $18$ m.`,
+  model: r`(a) Option (d): HCF. (b) $36$ m. (c) (i) Total length $= 1512$ m, so $\dfrac{1512}{36} + 1 = 43$ poles. Or (ii) the spacing must divide $36$; the largest divisor of $36$ below $20$ is $18$ m.`,
   sol: r`(a) The spacing must divide each side exactly, and be as large as possible. (b) $396 = 2^2 \times 3^2 \times 11$, $504 = 2^3 \times 3^2 \times 7$, $612 = 2^2 \times 3^2 \times 17$, HCF $= 2^2 \times 3^2 = 36$ m. (c) (i) Gaps: $11 + 14 + 17 = 42$; an open path with $42$ gaps has $43$ poles. (ii) Common divisors of the three sides are the divisors of the HCF $36$: $1, 2, 3, 4, 6, 9, 12, 18, 36$; the largest below $20$ is $18$.`,
   children: [
     child('a', mk.mcq({ stem: 'The largest possible distance between poles is', opts: ['the LCM of the three sides', 'the sum of the three sides divided by 3', 'the smallest side', 'the HCF of the three sides'], key: 'd', sol: 'Each side must be an exact number of gaps, so the gap divides every side; the largest such gap is the HCF.', d: 1, c: 'understanding', t: [2], time: 45 })),
