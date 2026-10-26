@@ -1,0 +1,25 @@
+{
+  // Linter settings for platform/infra. validate.mjs runs `bicep lint` and fails on any error; in --strict mode (CI) it also fails on any warning. Rules raised to error here are ones we never want to regress on.
+  "analyzers": {
+    "core": {
+      "enabled": true,
+      "rules": {
+        "no-hardcoded-env-urls": { "level": "error" },
+        "secure-parameter-default": { "level": "error" },
+        "outputs-should-not-contain-secrets": { "level": "error" },
+        "protect-commandtoexecute-secrets": { "level": "error" },
+        "secure-secrets-in-params": { "level": "error" },
+        "use-secure-value-for-secure-inputs": { "level": "error" },
+        "no-unused-params": { "level": "error" },
+        "no-unused-vars": { "level": "error" },
+        "no-unused-existing-resources": { "level": "error" },
+        "use-resource-symbol-reference": { "level": "warning" },
+        "use-stable-resource-identifiers": { "level": "warning" },
+        "no-unnecessary-dependson": { "level": "warning" },
+        "prefer-unquoted-property-names": { "level": "warning" },
+        "explicit-values-for-loc-params": { "level": "warning" },
+        "use-safe-access": { "level": "warning" }
+      }
+    }
+  }
+}

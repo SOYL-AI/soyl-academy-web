@@ -1,0 +1,57 @@
+id: cbse-10-russian-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-russian
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading Comprehension (10)
+    instructions: Q1 unseen text; answer any 5 of 6 questions (2 each).
+    items:
+      - {type: case-based, count: 1, marks_each: 10}
+  - id: B
+    title: Section B - Composition and Writing (15)
+    instructions: Q2 essay of 100-150 words on one of the topics (10) and a shorter writing task (5).
+    items:
+      - {type: long, count: 1, marks_each: 10}
+      - {type: long, count: 1, marks_each: 5}
+  - id: C
+    title: Section C - Applied Grammar (40)
+    instructions: >-
+      Q3 fill in the blanks from 4 options (15 x 1); Q4 adjective forms, any 5; Q5 "kotoryi" forms, any 5; Q6 verb aspect, any 5; Q7
+      translate into English, any 5; Q8 translate into Russian, any 5 (1 mark each).
+    items:
+      - {type: mcq, count: 15, marks_each: 1}
+      - {type: fill-blank, count: 5, marks_each: 1}
+      - {type: fill-blank, count: 5, marks_each: 1}
+      - {type: fill-blank, count: 5, marks_each: 1}
+      - {type: short, count: 5, marks_each: 1}
+      - {type: short, count: 5, marks_each: 1}
+  - id: D
+    title: Section D - Literature (15)
+    instructions: Q9 answer any 5 of 6 textbook questions (3 each).
+    items:
+      - {type: short, count: 6, marks_each: 3, internal_choice: {attempt: 5, of: 6}}
+source_status: verified
+source: cbse-sqp-x-russian-2026-27
+notes: >-
+  Russian (021) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Sections: A reading 10, B
+  composition and writing 15, C applied grammar 40, D literature 15.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

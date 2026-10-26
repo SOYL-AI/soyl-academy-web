@@ -1,0 +1,54 @@
+id: cbse-12-sindhi-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-sindhi
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Reading (10)
+    instructions: Q1 unseen prose passage (5 x 1); Q2 unseen poem (5 x 1).
+    items:
+      - {type: case-based, count: 2, marks_each: 5}
+  - id: B
+    title: Grammar (10)
+    instructions: Q3 (10 x 1).
+    items:
+      - {type: short, count: 10, marks_each: 1}
+  - id: C
+    title: Textbook (40)
+    instructions: >-
+      Q4 any five short answers (5 x 2); Q5 (5 x 1); Q6 any five in 20-25 words (5 x 2); Q7 explanation with reference (2 x 3); Q8 any three
+      (3 x 3).
+    items:
+      - {type: short, count: 10, marks_each: 2}
+      - {type: short, count: 5, marks_each: 1}
+      - {type: short, count: 5, marks_each: 3}
+  - id: D
+    title: Writing (20)
+    instructions: Q9 letter/report (10); Q10 essay of about 250 words on one topic (10).
+    items:
+      - {type: long, count: 2, marks_each: 10, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 3, marks_each: 10, internal_choice: {attempt: 1, of: 3}}
+source_status: unverified
+source: cbse-sqp-xii-sindhi-2026-27
+notes: >-
+  Sindhi (108) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Q1-Q8 (60 marks) are read
+  from the SQP; the writing questions (Q9-Q10, incl. a 250-word essay) are not legible and are inferred from the 80-mark total (10 each).
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

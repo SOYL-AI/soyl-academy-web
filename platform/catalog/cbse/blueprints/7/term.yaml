@@ -1,0 +1,51 @@
+id: cbse-7-default-term
+board: cbse
+exam: cbse
+class: 7
+subject_id: null
+paper_type: term
+academic_year: "2026-27"
+duration_min: 120
+total_marks: 50
+mark_shares: {}
+scope: half-syllabus
+sections:
+  - id: A
+    title: Section A - Objective (1 mark each)
+    instructions: Multiple-choice and assertion-reason questions.
+    items:
+      - {type: mcq, count: 8, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: Section B - Very short answer (2 marks)
+    instructions: Internal choice in two questions.
+    items:
+      - {type: short, count: 3, marks_each: 2}
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Short answer (3 marks)
+    instructions: Internal choice in two questions.
+    items:
+      - {type: short, count: 2, marks_each: 3}
+      - {type: short, count: 4, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Long answer (5 marks)
+    instructions: Internal choice in both questions.
+    items:
+      - {type: long, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+  - id: E
+    title: Section E - Case-based (4 marks each)
+    instructions: Read each passage/data set and answer all parts; internal choice in one sub-part.
+    items:
+      - {type: case-based, count: 2, marks_each: 4}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default modelled on the CBSE board pattern (CONTEXT section 9: "use a generic blueprint per board and subject, stored as editable
+
+  config"); not an official CBSE paper. Item types and marks follow the 2026-27 CBSE board style (MCQ/assertion-reason 1, short 2-3, long 5,
+
+  case-based 4, about one-third internal choice) so practice transfers to the board paper. Term paper: an end-of-term school exam on the
+  term's portion (about half the syllabus), 50 marks in 2 hours, for schools that run
+
+  two terms; half-yearly.yaml and annual.yaml are the 80-mark papers. Two term-style papers per subject satisfy CONTEXT section 10.

@@ -1,0 +1,48 @@
+id: cbse-10-computer-applications-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-computer-applications
+paper_type: board
+academic_year: "2026-27"
+duration_min: 120
+total_marks: 50
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A (Q1-12)
+    instructions: 1 mark each.
+    items:
+      - {type: mcq, count: 9, marks_each: 1}
+      - {type: true-false, count: 1, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: Section B (Q13-19)
+    instructions: 2 marks each. Internal choice in three questions.
+    items:
+      - {type: short, count: 4, marks_each: 2}
+      - {type: short, count: 6, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C (Q20-23)
+    instructions: 3 marks each. Internal choice in one question.
+    items:
+      - {type: short, count: 3, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D (Q24)
+    instructions: 4 marks, with internal choice.
+    items:
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+  - id: E
+    title: Section E (Q25-26)
+    instructions: Source/case/passage-based, 4 marks each.
+    items:
+      - {type: case-based, count: 2, marks_each: 4}
+source_status: verified
+source: cbse-sqp-x-computer-applications-2026-27
+notes: >-
+  Theory 50 + practical 50. 26 questions in five sections: A 12 x 1 (9 MCQ, 1 true/false, 2 assertion-reason), B 7 x 2 (choice in three), C
+  4 x 3 (choice in one), D 1 x 4 (with choice), E 2 x 4 source/case-based. FORMAT MAPPING: many 2-5 mark items ask the student to write or
+  correct HTML/CSS code (rewrite erroneous statements, write the complete code of a page); modelled as short/long, but they need a
+  code-answer type (and ideally an HTML render check).

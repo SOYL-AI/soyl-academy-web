@@ -1,0 +1,60 @@
+id: cbse-12-history-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-history
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.4875
+  application: 0.3625
+  analysis+evaluation: 0.15
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Multiple choice (1 mark each)
+    instructions: Q1-21. Includes two assertion-reason items.
+    items:
+      - {type: mcq, count: 19, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: Section B - Short answer (3 marks each)
+    instructions: Q22-27, 60-80 words. Internal choice in two questions.
+    items:
+      - {type: short, count: 4, marks_each: 3}
+      - {type: short, count: 4, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Long answer (8 marks each)
+    instructions: Q28-30, 300-350 words, one per book part. Each has an internal choice.
+    items:
+      - {type: long, count: 6, marks_each: 8, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Source based (4 marks each)
+    instructions: Q31-33, one source per book part, three sub-questions each.
+    items:
+      - {type: source-based, count: 3, marks_each: 4}
+  - id: E
+    title: Section E - Map based (5 marks)
+    instructions: "Q34: locate and label three sites (one with an OR alternative) and identify two marked places on the outline map of India."
+    items:
+      - {type: short, count: 4, marks_each: 1}
+      - {type: short, count: 2, marks_each: 1, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-xii-history-2026-27
+notes: >-
+  34 questions: A 21 x 1 (MCQ incl. 2 assertion-reason), B 6 x 3 (60-80 words), C 3 x 8 (300-350 words), D 3 x 4 source-based (one
+
+  per book part, three sub-questions), E map 5. Internal choice in Sections B (two questions), C (all three) and E (one map item). Book
+
+  weightage: Parts I, II, III 25 each + map 5. Competency weights (design table): knowledge 21 + understanding 18 (recall+understanding),
+
+  applying/analysing 24 + map skills 5 (application), formulating/evaluating/creating 12 (analysis+evaluation). FORMAT MAPPING: map work
+
+  (locate-and-label 3 items, one with an OR alternative, plus identify 2 marked places) has no QuestionType; modelled as five 1-mark short
+
+  items in a dedicated map section (assembler must draw them as one map question on a single outline map of India). Visually impaired
+  candidates get substitute questions for items with visual input (not modelled). Visually impaired
+
+  candidates get a recall substitute for the map question.

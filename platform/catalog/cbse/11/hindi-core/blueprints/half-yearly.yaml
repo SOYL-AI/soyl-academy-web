@@ -1,0 +1,49 @@
+id: cbse-11-hindi-core-half-yearly
+board: cbse
+exam: cbse
+class: 11
+subject_id: cbse-11-hindi-core
+paper_type: half-yearly
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: half-syllabus
+sections:
+  - id: A
+    title: खंड क - अपठित बोध (18)
+    instructions: "प्रश्न 1 अपठित गद्यांश (10), प्रश्न 2 अपठित काव्यांश (8): बहुविकल्पी और लघु उत्तरीय उपप्रश्न।"
+    items:
+      - {type: case-based, count: 1, marks_each: 10}
+      - {type: case-based, count: 1, marks_each: 8}
+  - id: B
+    title: खंड ख - अभिव्यक्ति और माध्यम (22)
+    instructions: >-
+      प्रश्न 3 तीन में से एक विषय पर रचनात्मक लेखन (~120 शब्द, 6); प्रश्न 4 पाँच में से कोई चार (~40 शब्द, 2-2); प्रश्न 5 तीन में से कोई दो
+      (~80 शब्द, 4-4)।
+    items:
+      - {type: long, count: 3, marks_each: 6, internal_choice: {attempt: 1, of: 3}}
+      - {type: short, count: 5, marks_each: 2, internal_choice: {attempt: 4, of: 5}}
+      - {type: long, count: 3, marks_each: 4, internal_choice: {attempt: 2, of: 3}}
+  - id: C
+    title: खंड ग - आरोह भाग 2 और वितान भाग 2 (40)
+    instructions: >-
+      प्रश्न 6 काव्यांश (5 बहुविकल्पी), 7 तीन में से दो (3-3), 8 तीन में से दो (2-2); प्रश्न 9 गद्यांश (5 बहुविकल्पी), 10 तीन में से दो
+      (3-3), 11 तीन में से दो (2-2); प्रश्न 12 वितान तीन में से दो (~100 शब्द, 5-5)।
+    items:
+      - {type: source-based, count: 1, marks_each: 5}
+      - {type: short, count: 3, marks_each: 3, internal_choice: {attempt: 2, of: 3}}
+      - {type: short, count: 3, marks_each: 2, internal_choice: {attempt: 2, of: 3}}
+      - {type: source-based, count: 1, marks_each: 5}
+      - {type: short, count: 3, marks_each: 3, internal_choice: {attempt: 2, of: 3}}
+      - {type: short, count: 3, marks_each: 2, internal_choice: {attempt: 2, of: 3}}
+      - {type: long, count: 3, marks_each: 5, internal_choice: {attempt: 2, of: 3}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default modelled on the CBSE board pattern, not an official paper: half-yearly exam on the first half of the syllabus for Class XI
+  hindi-core, using the layout of the Class XII
+
+  board paper of the same subject (cbse-12-hindi-core-board, 80 marks, 180 min), as CBSE schools usually do for Class XI school exams.
+
+  Format-mapping notes of the Class XII blueprint apply.

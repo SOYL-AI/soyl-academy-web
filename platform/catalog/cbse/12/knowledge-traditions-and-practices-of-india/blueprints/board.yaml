@@ -1,0 +1,43 @@
+id: cbse-12-knowledge-traditions-and-practices-of-india-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-knowledge-traditions-and-practices-of-india
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares:
+  recall+understanding: 0.27
+  application: 0.24
+  analysis+evaluation: 0.49
+scope: syllabus
+sections:
+  - id: A
+    title: Section A
+    instructions: Multiple-choice questions, 1 mark each.
+    items:
+      - {type: mcq, count: 16, marks_each: 1}
+  - id: B
+    title: Section B
+    instructions: Short answer questions, 2 marks each.
+    items:
+      - {type: short, count: 7, marks_each: 2}
+  - id: C
+    title: Section C
+    instructions: Case studies, 5 marks each.
+    items:
+      - {type: case-based, count: 4, marks_each: 5}
+  - id: D
+    title: Section D
+    instructions: Descriptive answers, 5 marks each.
+    items:
+      - {type: long, count: 4, marks_each: 5}
+source_status: unverified
+source: cbse-xii-ktpi-2026-27
+notes: >-
+  UNVERIFIED: CBSE publishes no KTPI sample paper in the 2026-27 SQP list, so this follows the assessment scheme in the 2026-27 KTPI
+  syllabus: MCQ 16 x 1, short answer 7 x 2, case studies 4 x 5, descriptive answers 4 x 5 (70 marks); competencies knowledge/understanding
+  19, application 17, analysis/synthesis 19, evaluation 15 marks (mark_shares 0.27/0.24/0.49, analysis+evaluation combined). Duration 3
+  hours and the section order are assumptions; the syllabus states no internal choice, so none is modelled. Only chapters 1, 4, 5, 6 and 8
+  are board-assessed (10/16/17/17/10 marks); chapters 2, 3 and 7 are internal assessment only.

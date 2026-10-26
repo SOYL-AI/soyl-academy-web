@@ -1,0 +1,54 @@
+id: cbse-10-japanese-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-japanese
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: "Part A - Objective: grammar and kanji (40)"
+    instructions: >-
+      Q1 choose the option, any 6; Q2 particles, any 6; Q3 join sentences, any 3; Q4 meaningful sentence, any 5; Q5 kanji for hiragana, any
+      10; Q6 hiragana for kanji, any 10 (1 mark each).
+    items:
+      - {type: mcq, count: 6, marks_each: 1}
+      - {type: fill-blank, count: 6, marks_each: 1}
+      - {type: short, count: 3, marks_each: 1}
+      - {type: mcq, count: 5, marks_each: 1}
+      - {type: mcq, count: 10, marks_each: 1}
+      - {type: mcq, count: 10, marks_each: 1}
+  - id: B
+    title: "Part B - Descriptive: reading and writing (40)"
+    instructions: >-
+      Q7-Q9 three short passages (5 each); Q10 picture-based sentences (5); Q11 match the replies (5); Q12 essay on one topic (5); Q13
+      complete a conversation from a box (5); Q14 social-media post (5).
+    items:
+      - {type: case-based, count: 3, marks_each: 5}
+      - {type: short, count: 5, marks_each: 1}
+      - {type: match, count: 1, marks_each: 5}
+      - {type: long, count: 1, marks_each: 5}
+      - {type: mcq, count: 5, marks_each: 1}
+      - {type: long, count: 1, marks_each: 5}
+source_status: verified
+source: cbse-sqp-x-japanese-2026-27
+notes: >-
+  Japanese (094) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Two parts: A objective
+  (grammar and kanji) 40, B descriptive (unseen passages and creative writing) 40. Syllabus: Minna no Nihongo II lessons 13-20, kanji
+  51-100.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

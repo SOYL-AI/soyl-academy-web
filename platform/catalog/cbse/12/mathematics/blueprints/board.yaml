@@ -1,0 +1,58 @@
+id: cbse-12-mathematics-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-mathematics
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.55
+  application: 0.25
+  analysis+evaluation: 0.2
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Objective (1 mark each)
+    instructions: Q1-18 MCQ, Q19-20 assertion-reason.
+    items:
+      - {type: mcq, count: 18, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: Section B - Very short answer (2 marks each)
+    instructions: Q21-25. Internal choice in two questions.
+    items:
+      - {type: short, count: 3, marks_each: 2}
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Short answer (3 marks each)
+    instructions: Q26-31. Internal choice in three questions.
+    items:
+      - {type: short, count: 3, marks_each: 3}
+      - {type: short, count: 6, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Long answer (5 marks each)
+    instructions: Q32-35. Internal choice in two questions.
+    items:
+      - {type: long, count: 2, marks_each: 5}
+      - {type: long, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+  - id: E
+    title: Section E - Case study based (4 marks each)
+    instructions: Q36-38. Three sub-parts each (1 + 1 + 2); one sub-part in two of them has an internal choice.
+    items:
+      - {type: case-based, count: 3, marks_each: 4}
+source_status: verified
+source: cbse-sqp-xii-mathematics-2026-27
+notes: >-
+  38 questions, five sections: A 18 MCQ + 2 assertion-reason (1 mark), B 5 VSA (2), C 6 SA (3), D 4 LA (5), E 3 case-study (4, three
+
+  sub-parts). Internal choice: 2 questions in B, 3 in C, 2 in D and one sub-part in 2 case studies. Competency weights from the design
+  table:
+
+  remembering/understanding 44 marks (55%), applying 20 (25%), analysing/evaluating/creating 16 (20%). Calculators not allowed. LPP
+
+  (graphical) and area-by-integration items need a drawn graph; mapped to short/long with the graph in the model answer. Visually impaired
+  candidates get substitute questions for items with visual input (not modelled).
+
+  Applied Mathematics (241) is a different paper: see 12/applied-mathematics/blueprints/board.yaml.

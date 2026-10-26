@@ -9,9 +9,11 @@
     "marketing:regression": "node scripts/marketing.mjs regression",
     "marketing:diff": "node scripts/marketing-diff.mjs",
     "browsers:install": "playwright install chromium",
-    "typecheck": "tsc -p tsconfig.json"
+    "typecheck": "tsc -p tsconfig.json",
+    "test:design-system": "playwright test -c tests/platform/design-system/playwright.config.ts"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
     "@playwright/test": "1.64.0",
     "@types/node": "24.19.2",
     "chrome-launcher": "1.2.2",

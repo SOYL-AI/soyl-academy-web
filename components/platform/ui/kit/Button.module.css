@@ -1,0 +1,124 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--p-space-2);
+  min-height: var(--p-touch);
+  min-width: var(--p-touch);
+  padding: 0 var(--p-space-5);
+  border: 1px solid transparent;
+  border-radius: var(--p-radius-md);
+  font: inherit;
+  font-size: var(--p-text-md);
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  transition:
+    background-color var(--p-duration-fast) var(--p-ease),
+    border-color var(--p-duration-fast) var(--p-ease),
+    color var(--p-duration-fast) var(--p-ease),
+    transform var(--p-duration-fast) var(--p-ease);
+}
+.button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.button:disabled,
+.button[aria-disabled='true'] {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.primary {
+  background: var(--p-accent);
+  color: var(--p-on-accent);
+}
+.primary:hover:not(:disabled) {
+  background: var(--p-accent-hover);
+}
+.secondary {
+  background: var(--p-surface);
+  color: var(--p-ink);
+  border-color: var(--p-border-strong);
+}
+.secondary:hover:not(:disabled) {
+  background: var(--p-surface-2);
+  border-color: var(--p-ink);
+}
+.ghost {
+  background: transparent;
+  color: var(--p-accent);
+}
+.ghost:hover:not(:disabled) {
+  background: var(--p-accent-soft);
+}
+.danger {
+  background: var(--p-danger);
+  color: var(--p-surface);
+}
+.danger:hover:not(:disabled) {
+  filter: brightness(0.92);
+}
+
+.sm {
+  min-height: 36px;
+  padding: 0 var(--p-space-3);
+  font-size: var(--p-text-sm);
+}
+/* Small buttons keep a 44 px hit area through an invisible extension. */
+.sm::after {
+  content: '';
+  position: absolute;
+  inset: -4px 0;
+}
+.lg {
+  min-height: 52px;
+  padding: 0 var(--p-space-6);
+  font-size: var(--p-text-lg);
+}
+.block {
+  display: flex;
+  width: 100%;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-2);
+}
+/* opacity, not visibility: the label must stay the accessible name while loading. */
+.loading .label {
+  opacity: 0;
+}
+.spinner {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 1.1em;
+  height: 1.1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.icon {
+  padding: 0;
+  width: var(--p-touch);
+  border-radius: var(--p-radius-pill);
+}
+.icon.sm {
+  width: 36px;
+}
+.icon.sm::after {
+  inset: -4px;
+}

@@ -1,0 +1,60 @@
+id: cbse-12-tamil-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-tamil
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading (10)
+    instructions: Q1-Q2 two unseen passages (MCQ 5, SA 5).
+    items:
+      - {type: case-based, count: 2, marks_each: 5}
+  - id: B
+    title: Section B - Grammar (12)
+    instructions: Q3-Q6 incl. vallinam migum idangal (3 x 1 each, MCQ).
+    items:
+      - {type: mcq, count: 12, marks_each: 1}
+  - id: C
+    title: Section C - Main Course Book (33)
+    instructions: Q7-Q8 textbook passages (5 x 1 each); Q9 (2 x 4); Q10 (3 x 5).
+    items:
+      - {type: source-based, count: 2, marks_each: 5}
+      - {type: long, count: 2, marks_each: 4}
+      - {type: long, count: 3, marks_each: 5}
+  - id: D
+    title: Section D - Non-detail (10)
+    instructions: Q11 one long answer (10).
+    items:
+      - {type: long, count: 1, marks_each: 10}
+  - id: E
+    title: Section E - Creative Writing (15)
+    instructions: Q12 (6); Q13 kavithai or sirukathai (3); Q14 (6).
+    items:
+      - {type: long, count: 1, marks_each: 6}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 1, marks_each: 6}
+source_status: unverified
+source: cbse-xii-tamil-2026-27
+notes: >-
+  Tamil (106) theory paper, 80 marks, 3 hours. CBSE publishes no 2026-27 sample paper for this language, so the pattern is built from the
+  question-paper design / assessment scheme in the CBSE 2026-27 syllabus (unverified: question order and choices are SOYL assumptions).
+  Question-wise design printed in the CBSE syllabus: A two unseen passages 10, B grammar 12 (MCQ), C main course book 33, D non-detail 10, E
+  creative writing 15.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

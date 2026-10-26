@@ -1,0 +1,34 @@
+id: cbse-10-carnatic-music-percussion-instruments-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-carnatic-music-percussion-instruments
+paper_type: board
+academic_year: "2026-27"
+duration_min: 120
+total_marks: 30
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A
+    instructions: Attempt all questions (1 mark each, multiple choice).
+    items:
+      - {type: mcq, count: 8, marks_each: 1}
+  - id: B
+    title: Section B
+    instructions: Attempt all questions (2 marks each). Each question has an internal choice.
+    items:
+      - {type: short, count: 10, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C
+    instructions: Attempt all questions (6 marks each). Each question has an internal choice.
+    items:
+      - {type: long, count: 4, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-x-carnatic-music-percussion-instruments-2026-27
+notes: >-
+  Theory paper only (30 marks, 2 hours); practical 50 and internal assessment 20 are assessed separately. 15 questions: Section A 8 MCQs x
+  1; Section B 5 x 2, every question with an A/B internal choice; Section C 2 x 6, each with an internal choice. FORMAT MAPPING: 6-mark
+  questions often ask the candidate to write a composition or tala in notation (Bhatkhande / Carnatic notation) or describe a raga in full;
+  modelled as long, but a notation-writing answer needs a music-notation answer type and human/AI evaluation.

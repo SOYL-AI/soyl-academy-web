@@ -1,0 +1,56 @@
+id: cbse-12-chemistry-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-chemistry
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares:
+  recall+understanding: 0.4
+  application: 0.3
+  analysis+evaluation: 0.3
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Objective (1 mark each)
+    instructions: Q1-12 MCQ, Q13-16 assertion-reason.
+    items:
+      - {type: mcq, count: 12, marks_each: 1}
+      - {type: assertion-reason, count: 4, marks_each: 1}
+  - id: B
+    title: Section B - Very short answer (2 marks each)
+    instructions: Q17-21. Internal choice in one question.
+    items:
+      - {type: short, count: 4, marks_each: 2}
+      - {type: short, count: 2, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Short answer (3 marks each)
+    instructions: Q22-28. Internal choice in one question.
+    items:
+      - {type: short, count: 6, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Case based (4 marks each)
+    instructions: Q29-30. Passage/data based; internal choice inside a sub-part of each.
+    items:
+      - {type: case-based, count: 2, marks_each: 4}
+  - id: E
+    title: Section E - Long answer (5 marks each)
+    instructions: Q31-33. Each question has an internal choice (A or B).
+    items:
+      - {type: long, count: 6, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-xii-chemistry-2026-27
+notes: >-
+  33 questions, five sections (16 x 1, 5 x 2, 7 x 3, 2 x 4 case-based, 3 x 5). The 2026-27 SQP puts four assertion-reason items
+
+  (Q13-16) inside the 16 objective questions. Internal choice: one Section B question, one Section C question, sub-parts of both case-based
+
+  questions, all three Section E questions (CBSE design: ~33% internal choice in all sections). Competency weights from the design table:
+
+  remembering/understanding 28, applying 21, analysing/evaluating/creating 21. Log tables and calculators not allowed. Reaction-completion,
+
+  name-reaction and conversion items are mapped to short (written equations; no structured chemical-equation answer type exists). Visually
+  impaired candidates get substitute questions for items with visual input (not modelled).

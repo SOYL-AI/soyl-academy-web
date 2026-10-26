@@ -1,0 +1,40 @@
+id: cbse-12-engineering-graphics-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-engineering-graphics
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A
+    instructions: "Q1-14: multiple-choice questions, 1 mark each."
+    items:
+      - {type: mcq, count: 14, marks_each: 1}
+  - id: B
+    title: Section B
+    instructions: "Q15-22: two case-based sets of four 1-mark MCQs. Q23: assembly drawing OR dis-assembly drawing (27 marks)."
+    items:
+      - {type: case-based, count: 2, marks_each: 4}
+      - {type: long, count: 2, marks_each: 27, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C
+    instructions: "Q24: isometric scale and isometric projection (13 marks). Q25: machine-part drawing with internal choice (8 marks)."
+    items:
+      - {type: long, count: 1, marks_each: 13}
+      - {type: long, count: 2, marks_each: 8, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-xii-engineering-graphics-2026-27
+notes: >-
+  Theory (drawing) paper only (70 marks, 3 hours); practical 30 is assessed separately. 25 questions. Section A Q1-14 MCQs x 1. Section B
+  Q15-18 and Q19-22 are two case-based sets of four 1-mark MCQs each (based on an isometric drawing and on a passage about fasteners); Q23
+  is an assembly drawing (A) OR a dis-assembly drawing (B) of 27 marks (views 13+8 or 8+7+3+3, plus 6 for title, scale, projection symbol
+  and dimensions). Section C Q24 isometric scale (4) + isometric projection of a solid or combination of solids (9) = 13; Q25 machine-part
+  drawing (thread profile OR bolt/nut) 8 marks with A/B choice. FORMAT MAPPING: Q23-Q25 are instrument drawings on a drawing sheet
+  (orthographic, sectional and isometric views to scale), not text answers; modelled as long, but they need a drawing-response type
+  (uploaded sheet or CAD file) with a rubric-based marking scheme (views, sectioning, dimensions, title block). Case sets are modelled as
+  case-based items of 4 marks whose children are 1-mark MCQs.

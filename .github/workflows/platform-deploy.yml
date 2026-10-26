@@ -1,0 +1,363 @@
+# SOYL Academy Learning Platform - build, scan and deploy to Azure (ARCHITECTURE 13).
+#
+#   push to platform/main            -> build + scan + push images -> deploy STAGING
+#   workflow_dispatch target=dev     -> build + scan + push images -> deploy DEV
+#   workflow_dispatch target=prod    -> what-if (approval) -> deploy PRODUCTION (approval)
+#
+# Until the owner completes OA-01 (repo variable AZURE_DEPLOY_ENABLED=true + OIDC secrets), the only
+# job that runs is `gate`, which prints "deploy skipped: OA-01" and succeeds.
+# Never touches Vercel or the main branch.
+#
+# Security: OIDC workload-identity federation, no client secrets (INFRA-8). Two app registrations:
+#   - non-prod: federated credential  repo:SOYL-AI/soyl-academy-web:ref:refs/heads/platform/main
+#               (repo secrets AZURE_CLIENT_ID / AZURE_TENANT_ID / AZURE_SUBSCRIPTION_ID)
+#   - prod:     federated credential  repo:SOYL-AI/soyl-academy-web:environment:production
+#               (environment secret AZURE_PROD_CLIENT_ID, only readable by jobs in `production`,
+#               which the owner protects with required reviewers)
+# Images: trivy fails on HIGH/CRITICAL (INFRA-15), CycloneDX SBOM artifact (INFRA-18), non-root
+# check (INFRA-10). Actions pinned by commit SHA, default token read-only (INFRA-17).
+# Runbook: docs/platform/runbooks/deploy-rollback.md · bootstrap: docs/platform/runbooks/azure-bootstrap.md
+name: platform-deploy
+
+on:
+  push:
+    branches:
+      - platform/main
+    paths:
+      - 'platform/**'
+      - '.github/workflows/platform-deploy.yml'
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Environment to deploy'
+        type: choice
+        options:
+          - stg
+          - dev
+          - prod
+        default: stg
+      image_tag:
+        description: 'prod only: git SHA whose images (already pushed by a stg deploy) are promoted. Default: this commit.'
+        type: string
+        required: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: platform-deploy-${{ inputs.target || 'stg' }}
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: '24'
+  TRIVY_VERSION: '0.75.0'
+  TRIVY_SHA256: 'c6e65abddb348e25f10549df887045629cf28cc72453cd1c63acb717316b3f3f'
+  BICEP_VERSION: '0.48.1'
+  BICEP_SHA256: 'b09ec25a9d376c1f8e33ede6ed22b587f915ad68488d5db77a6f9541748c7f6e'
+  SOYL_ACR_NAME: ${{ vars.SOYL_ACR_NAME || 'crsoylplatform' }}
+  SOYL_ALERT_EMAIL: ${{ vars.SOYL_ALERT_EMAIL }}
+  SOYL_STG_WEB_ORIGIN: ${{ vars.SOYL_STG_WEB_ORIGIN }}
+  SOYL_PG_ADMIN_GROUP_ID: ${{ vars.SOYL_PG_ADMIN_GROUP_ID }}
+  SOYL_PG_ADMIN_GROUP_NAME: ${{ vars.SOYL_PG_ADMIN_GROUP_NAME }}
+  SOYL_AOAI_DEPLOY_MODELS: ${{ vars.SOYL_AOAI_DEPLOY_MODELS || 'false' }}
+  SOYL_KV_SECRET_REFS: ${{ vars.SOYL_KV_SECRET_REFS || 'true' }}
+
+jobs:
+  gate:
+    name: gate · credentials present? (OA-01)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    outputs:
+      enabled: ${{ steps.check.outputs.enabled }}
+      target: ${{ steps.check.outputs.target }}
+    steps:
+      - id: check
+        env:
+          DEPLOY_ENABLED: ${{ vars.AZURE_DEPLOY_ENABLED }}
+          HAS_CLIENT: ${{ secrets.AZURE_CLIENT_ID != '' }}
+          HAS_TENANT: ${{ secrets.AZURE_TENANT_ID != '' }}
+          HAS_SUB: ${{ secrets.AZURE_SUBSCRIPTION_ID != '' }}
+          TARGET: ${{ inputs.target || 'stg' }}
+          REF: ${{ github.ref }}
+        run: |
+          echo "target=$TARGET" >> "$GITHUB_OUTPUT"
+          reason=""
+          if [ "$DEPLOY_ENABLED" != "true" ]; then reason="repository variable AZURE_DEPLOY_ENABLED is not 'true'"
+          elif [ "$HAS_CLIENT" != "true" ] || [ "$HAS_TENANT" != "true" ] || [ "$HAS_SUB" != "true" ]; then reason="OIDC secrets AZURE_CLIENT_ID / AZURE_TENANT_ID / AZURE_SUBSCRIPTION_ID are not all set"
+          elif [ "$REF" != "refs/heads/platform/main" ]; then reason="deploys run only from platform/main (got $REF)"
+          fi
+          if [ -n "$reason" ]; then
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=deploy skipped: OA-01::${reason}. Owner action OA-01 (docs/platform/runbooks/azure-bootstrap.md) enables Azure deploys; nothing was deployed."
+            { echo "## deploy skipped: OA-01"; echo; echo "$reason."; echo; echo "See docs/platform/runbooks/azure-bootstrap.md. Nothing was deployed."; } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+            echo "Deploy enabled: target=$TARGET"
+          fi
+
+  shared:
+    name: shared · container registry (Bicep)
+    needs: gate
+    if: vars.AZURE_DEPLOY_ENABLED == 'true' && needs.gate.outputs.enabled == 'true' && needs.gate.outputs.target != 'prod'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install Bicep CLI (checksum-verified) for az
+        run: |
+          mkdir -p "$RUNNER_TEMP/bin"
+          curl -sSfL -o "$RUNNER_TEMP/bin/bicep" "https://github.com/Azure/bicep/releases/download/v${BICEP_VERSION}/bicep-linux-x64"
+          echo "${BICEP_SHA256}  $RUNNER_TEMP/bin/bicep" | sha256sum -c -
+          chmod +x "$RUNNER_TEMP/bin/bicep"
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
+      - uses: azure/login@a641126d1b8aa4d1fa005f4f92df94a3a4c4c906 # v3.1.0
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - name: Deploy shared.bicep -> rg-soyl-platform-shared
+        run: |
+          az config set bicep.use_binary_from_path=true --only-show-errors
+          az deployment group create -g rg-soyl-platform-shared -n "soyl-shared-${GITHUB_RUN_ID}" \
+            -f platform/infra/shared.bicep -p platform/infra/params/shared.bicepparam -o none
+
+  build:
+    name: build · ${{ matrix.service }} image
+    needs: [gate, shared]
+    if: vars.AZURE_DEPLOY_ENABLED == 'true' && needs.gate.outputs.enabled == 'true' && needs.gate.outputs.target != 'prod'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      id-token: write
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - service: api
+            manifest: platform/api/package.json
+            dockerfile: platform/api/Dockerfile
+          - service: worker
+            manifest: platform/worker/package.json
+            dockerfile: platform/worker/Dockerfile
+          - service: migrate
+            manifest: platform/db/package.json
+            dockerfile: platform/infra/docker/migrate.Dockerfile
+    outputs:
+      api: ${{ steps.push.outputs.api }}
+      worker: ${{ steps.push.outputs.worker }}
+      migrate: ${{ steps.push.outputs.migrate }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Does the service exist yet?
+        id: exists
+        env:
+          MANIFEST: ${{ matrix.manifest }}
+          SERVICE: ${{ matrix.service }}
+        run: |
+          if [ -f "$MANIFEST" ]; then echo "build=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "build=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=${SERVICE} image skipped::${MANIFEST} does not exist yet; the environment keeps its current (or placeholder) image."
+          fi
+      - name: docker build
+        if: steps.exists.outputs.build == 'true'
+        env:
+          DOCKERFILE: ${{ matrix.dockerfile }}
+          SERVICE: ${{ matrix.service }}
+        run: |
+          docker build --pull -f "$DOCKERFILE" \
+            --label "org.opencontainers.image.source=https://github.com/${GITHUB_REPOSITORY}" \
+            --label "org.opencontainers.image.revision=${GITHUB_SHA}" \
+            -t "${SOYL_ACR_NAME}.azurecr.io/soyl-${SERVICE}:${GITHUB_SHA}" platform
+      - name: Install trivy (checksum-verified)
+        if: steps.exists.outputs.build == 'true'
+        run: |
+          curl -sSfL -o "$RUNNER_TEMP/trivy.tgz" "https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}/trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz"
+          echo "${TRIVY_SHA256}  $RUNNER_TEMP/trivy.tgz" | sha256sum -c -
+          tar -xzf "$RUNNER_TEMP/trivy.tgz" -C "$RUNNER_TEMP" trivy
+      - name: Scan (non-root INFRA-10, trivy HIGH/CRITICAL INFRA-15) + SBOM (INFRA-18)
+        if: steps.exists.outputs.build == 'true'
+        env:
+          SERVICE: ${{ matrix.service }}
+        run: |
+          set -euo pipefail
+          image="${SOYL_ACR_NAME}.azurecr.io/soyl-${SERVICE}:${GITHUB_SHA}"
+          user="$(docker image inspect --format '{{.Config.User}}' "$image")"
+          if [ -z "$user" ] || [ "$user" = "root" ] || [ "$user" = "0" ]; then echo "::error::image runs as root (INFRA-10)"; exit 1; fi
+          "$RUNNER_TEMP/trivy" image --severity HIGH,CRITICAL --ignore-unfixed --exit-code 1 --no-progress "$image"
+          "$RUNNER_TEMP/trivy" image --format cyclonedx --output "sbom-${SERVICE}.cdx.json" --no-progress "$image"
+      - name: Upload SBOM
+        if: steps.exists.outputs.build == 'true'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: sbom-${{ matrix.service }}-${{ github.sha }}
+          path: sbom-${{ matrix.service }}.cdx.json
+          retention-days: 90
+      - uses: azure/login@a641126d1b8aa4d1fa005f4f92df94a3a4c4c906 # v3.1.0
+        if: steps.exists.outputs.build == 'true'
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - name: Push to ACR (AcrPush via OIDC; output = immutable digest ref)
+        id: push
+        if: steps.exists.outputs.build == 'true'
+        env:
+          SERVICE: ${{ matrix.service }}
+        run: |
+          set -euo pipefail
+          az acr login --name "$SOYL_ACR_NAME"
+          image="${SOYL_ACR_NAME}.azurecr.io/soyl-${SERVICE}:${GITHUB_SHA}"
+          docker push "$image"
+          digest_ref="$(docker image inspect --format '{{index .RepoDigests 0}}' "$image")"
+          echo "${SERVICE}=${digest_ref}" >> "$GITHUB_OUTPUT"
+          echo "- ${SERVICE}: \`${digest_ref}\`" >> "$GITHUB_STEP_SUMMARY"
+
+  deploy:
+    name: deploy · ${{ needs.gate.outputs.target }}
+    needs: [gate, build]
+    if: vars.AZURE_DEPLOY_ENABLED == 'true' && needs.gate.outputs.enabled == 'true' && needs.gate.outputs.target != 'prod'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install Bicep CLI (checksum-verified) for az
+        run: |
+          mkdir -p "$RUNNER_TEMP/bin"
+          curl -sSfL -o "$RUNNER_TEMP/bin/bicep" "https://github.com/Azure/bicep/releases/download/v${BICEP_VERSION}/bicep-linux-x64"
+          echo "${BICEP_SHA256}  $RUNNER_TEMP/bin/bicep" | sha256sum -c -
+          chmod +x "$RUNNER_TEMP/bin/bicep"
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
+      - uses: azure/login@a641126d1b8aa4d1fa005f4f92df94a3a4c4c906 # v3.1.0
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - name: Deploy (Bicep -> migrations job -> roll apps -> smoke /healthz /readyz)
+        env:
+          TARGET: ${{ needs.gate.outputs.target }}
+          NEW_API_IMAGE: ${{ needs.build.outputs.api }}
+          NEW_WORKER_IMAGE: ${{ needs.build.outputs.worker }}
+          NEW_MIGRATE_IMAGE: ${{ needs.build.outputs.migrate }}
+        run: |
+          az config set bicep.use_binary_from_path=true --only-show-errors
+          echo "## Deploy ${TARGET} @ ${GITHUB_SHA}" >> "$GITHUB_STEP_SUMMARY"
+          bash platform/infra/scripts/deploy-env.sh "$TARGET"
+
+  # ---------------- production: promote images already built and deployed to staging -------------
+  prod-whatif:
+    name: prod · what-if (approval 1 of 2)
+    needs: gate
+    if: vars.AZURE_DEPLOY_ENABLED == 'true' && needs.gate.outputs.enabled == 'true' && needs.gate.outputs.target == 'prod'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    environment: production
+    permissions:
+      contents: read
+      id-token: write
+    outputs:
+      api: ${{ steps.images.outputs.api }}
+      worker: ${{ steps.images.outputs.worker }}
+      migrate: ${{ steps.images.outputs.migrate }}
+    steps:
+      - name: Prod credentials present?
+        env:
+          HAS_PROD_CLIENT: ${{ secrets.AZURE_PROD_CLIENT_ID != '' }}
+        run: |
+          if [ "$HAS_PROD_CLIENT" != "true" ]; then
+            echo "::error title=OA-01 (prod)::Environment secret AZURE_PROD_CLIENT_ID is missing in the 'production' environment (docs/platform/runbooks/azure-bootstrap.md)."
+            exit 1
+          fi
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install Bicep CLI (checksum-verified) for az
+        run: |
+          mkdir -p "$RUNNER_TEMP/bin"
+          curl -sSfL -o "$RUNNER_TEMP/bin/bicep" "https://github.com/Azure/bicep/releases/download/v${BICEP_VERSION}/bicep-linux-x64"
+          echo "${BICEP_SHA256}  $RUNNER_TEMP/bin/bicep" | sha256sum -c -
+          chmod +x "$RUNNER_TEMP/bin/bicep"
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
+      - uses: azure/login@a641126d1b8aa4d1fa005f4f92df94a3a4c4c906 # v3.1.0
+        with:
+          client-id: ${{ secrets.AZURE_PROD_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - name: Resolve image digests for the promoted commit
+        id: images
+        env:
+          TAG: ${{ inputs.image_tag || github.sha }}
+        run: |
+          set -euo pipefail
+          for svc in api worker migrate; do
+            digest="$(az acr repository show -n "$SOYL_ACR_NAME" --image "soyl-${svc}:${TAG}" --query digest -o tsv 2>/dev/null || true)"
+            if [ -n "$digest" ]; then
+              echo "${svc}=${SOYL_ACR_NAME}.azurecr.io/soyl-${svc}@${digest}" >> "$GITHUB_OUTPUT"
+              echo "- ${svc}: soyl-${svc}:${TAG} -> ${digest}" >> "$GITHUB_STEP_SUMMARY"
+            else
+              echo "- ${svc}: no image for ${TAG} (service not built yet or not deployed to stg)" >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done
+      - name: Bicep what-if against rg-soyl-platform-prod
+        env:
+          NEW_API_IMAGE: ${{ steps.images.outputs.api }}
+          NEW_WORKER_IMAGE: ${{ steps.images.outputs.worker }}
+          NEW_MIGRATE_IMAGE: ${{ steps.images.outputs.migrate }}
+        run: |
+          az config set bicep.use_binary_from_path=true --only-show-errors
+          bash platform/infra/scripts/deploy-env.sh prod --what-if
+
+  prod-deploy:
+    name: prod · deploy (approval 2 of 2)
+    needs: [gate, prod-whatif]
+    if: vars.AZURE_DEPLOY_ENABLED == 'true' && needs.gate.outputs.enabled == 'true' && needs.gate.outputs.target == 'prod'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    environment: production
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install Bicep CLI (checksum-verified) for az
+        run: |
+          mkdir -p "$RUNNER_TEMP/bin"
+          curl -sSfL -o "$RUNNER_TEMP/bin/bicep" "https://github.com/Azure/bicep/releases/download/v${BICEP_VERSION}/bicep-linux-x64"
+          echo "${BICEP_SHA256}  $RUNNER_TEMP/bin/bicep" | sha256sum -c -
+          chmod +x "$RUNNER_TEMP/bin/bicep"
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
+      - uses: azure/login@a641126d1b8aa4d1fa005f4f92df94a3a4c4c906 # v3.1.0
+        with:
+          client-id: ${{ secrets.AZURE_PROD_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      - name: Deploy production (Bicep -> migrations -> roll apps -> smoke)
+        env:
+          NEW_API_IMAGE: ${{ needs.prod-whatif.outputs.api }}
+          NEW_WORKER_IMAGE: ${{ needs.prod-whatif.outputs.worker }}
+          NEW_MIGRATE_IMAGE: ${{ needs.prod-whatif.outputs.migrate }}
+        run: |
+          az config set bicep.use_binary_from_path=true --only-show-errors
+          echo "## Deploy prod @ ${GITHUB_SHA}" >> "$GITHUB_STEP_SUMMARY"
+          bash platform/infra/scripts/deploy-env.sh prod

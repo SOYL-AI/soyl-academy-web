@@ -1,0 +1,44 @@
+id: cbse-10-sanskrit-chapter-test-long
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-sanskrit
+paper_type: chapter-test-long
+academic_year: "2026-27"
+duration_min: 90
+total_marks: 40
+mark_shares: {}
+scope: chapter
+sections:
+  - id: A
+    title: Section A - Extract-based (2 x 5)
+    instructions: Two extract questions; in each answer one of the two extracts given.
+    items:
+      - {type: source-based, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+  - id: B
+    title: Section B - Short answer
+    instructions: Any five of six 2-mark questions (30-40 words) and any two of three 3-mark questions (40-50 words).
+    items:
+      - {type: short, count: 6, marks_each: 2, internal_choice: {attempt: 5, of: 6}}
+      - {type: short, count: 3, marks_each: 3, internal_choice: {attempt: 2, of: 3}}
+  - id: C
+    title: Section C - Long answer
+    instructions: One of two 6-mark questions and one of two 8-mark questions (100-150 words).
+    items:
+      - {type: long, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 8, internal_choice: {attempt: 1, of: 2}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default modelled on the CBSE board pattern (CONTEXT section 9: "use a generic blueprint per board and subject, stored as editable
+
+  config"); not an official CBSE paper. Item types and marks follow the 2026-27 CBSE board style (MCQ/assertion-reason 1, short 2-3, long 5,
+
+  case-based 4, about one-third internal choice) so practice transfers to the board paper. Subject-family override (languages) of the class
+  default in platform/catalog/cbse/blueprints/<class>/. Built for literature chapters: extract-based (source-based) questions, short answers
+  and a long answer;
+
+  for grammar or writing chapters the assembler substitutes items of the same marks from that chapter (1-mark grammar items for a 5-mark
+  extract
+
+  group, writing tasks for long answers). Answers are written in the subject's language.

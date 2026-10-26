@@ -1,0 +1,41 @@
+id: cbse-12-bodo-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-bodo
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Part A - Objective (25)
+    instructions: Q1 unseen passage (5 x 1); Q2-Q3 objective questions (10 x 1 each).
+    items:
+      - {type: case-based, count: 1, marks_each: 5}
+      - {type: mcq, count: 20, marks_each: 1}
+  - id: B
+    title: Part B - Descriptive (55)
+    instructions: Q4 short answers of 20-25 words (5 x 2); Q5 seven answers of 5 marks; Q6 (5); Q7 summary/central idea of a poem (5).
+    items:
+      - {type: short, count: 5, marks_each: 2}
+      - {type: long, count: 9, marks_each: 5}
+source_status: unverified
+source: cbse-sqp-xii-bodo-2026-27
+notes: >-
+  Bodo (192) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. As Class X: Part A objective
+  25 (Q1 5, Q2 10, Q3 10) and Part B (Q4 5 x 2, Q5 7 x 5, Q7 5) are read from the SQP; Q6 is inferred (5).
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

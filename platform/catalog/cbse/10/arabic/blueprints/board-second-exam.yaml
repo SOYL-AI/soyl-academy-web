@@ -1,0 +1,69 @@
+id: cbse-10-arabic-board-second-exam
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-arabic
+paper_type: board-second-exam
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading (10)
+    instructions: Q1 three unseen passages; attempt any two by filling the blanks (5 x 1 each).
+    items:
+      - {type: case-based, count: 3, marks_each: 5, internal_choice: {attempt: 2, of: 3}}
+  - id: B
+    title: Section B - Writing Skills (10)
+    instructions: >-
+      Q2 paragraph of about 50 words on one topic (4); Q3 sentences with any two words (2 x 1); Q4 fill any two blanks (2 x 1); Q5 correct
+      any two sentences (2 x 1).
+    items:
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 2, marks_each: 1}
+      - {type: fill-blank, count: 2, marks_each: 1}
+      - {type: short, count: 2, marks_each: 1}
+  - id: C
+    title: Section C - Grammar and Translation (20)
+    instructions: >-
+      Q6 define and illustrate one grammar term (5); Q7 choose any five answers (5 x 1); Q8 translate any five into English (5 x 1); Q9
+      translate any five into Arabic (5 x 1).
+    items:
+      - {type: long, count: 1, marks_each: 5}
+      - {type: mcq, count: 5, marks_each: 1}
+      - {type: short, count: 5, marks_each: 1}
+      - {type: short, count: 8, marks_each: 1, internal_choice: {attempt: 5, of: 8}}
+  - id: D
+    title: Section D - Literature (40)
+    instructions: >-
+      Q10 translate any two textbook passages (10); Q11 answer any four questions on a passage (8); Q12 choose the correct answer (4 x 1);
+      Q13 explain any four verses (15); Q14 central idea of one text (3).
+    items:
+      - {type: source-based, count: 2, marks_each: 5}
+      - {type: short, count: 4, marks_each: 2}
+      - {type: mcq, count: 4, marks_each: 1}
+      - {type: long, count: 1, marks_each: 15}
+      - {type: short, count: 1, marks_each: 3}
+source_status: verified
+source: cbse-sqp-x-arabic-2026-27
+notes: >-
+  Second (May) board exam: CBSE has published no separate sample paper or design for the second exam; the 14-02-2026 notification makes it
+  an improvement / compartment exam on the same subject, so this blueprint repeats the February pattern on the full syllabus (assumption,
+  re-check when CBSE publishes a second-exam SQP).
+
+  Arabic (016) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Sections: A reading 10, B
+  writing 10, C grammar and translation 20, D literature 40.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

@@ -1,0 +1,64 @@
+# CodeQL SAST for platform code (INFRA-16): javascript-typescript with the security-extended suite
+# on PRs and platform/** pushes that touch platform paths. Results appear under Security > Code
+# scanning (free for public repositories).
+name: platform-codeql
+
+on:
+  pull_request:
+    paths:
+      - 'platform/**'
+      - 'app/(platform)/**'
+      - 'components/platform/**'
+      - '.github/workflows/platform-codeql.yml'
+  push:
+    branches:
+      - 'platform/**'
+    paths:
+      - 'platform/**'
+      - 'app/(platform)/**'
+      - 'components/platform/**'
+      - '.github/workflows/platform-codeql.yml'
+  schedule:
+    # Weekly re-scan of platform/main with updated queries (Mondays 03:30 UTC = 09:00 IST).
+    - cron: '30 3 * * 1'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: platform-codeql-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    name: CodeQL · javascript-typescript
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      actions: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          ref: ${{ github.event_name == 'schedule' && 'platform/main' || '' }}
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@24c54180a607b1449ed407dd24f251e4e9147c8d # v4.38.3
+        with:
+          languages: javascript-typescript
+          build-mode: none
+          queries: security-extended
+          config: |
+            paths:
+              - platform
+              - app/(platform)
+              - components/platform
+            paths-ignore:
+              - '**/node_modules'
+              - '**/dist'
+              - platform/e2e/marketing-baseline
+      - name: Analyze
+        uses: github/codeql-action/analyze@24c54180a607b1449ed407dd24f251e4e9147c8d # v4.38.3
+        with:
+          category: /language:javascript-typescript

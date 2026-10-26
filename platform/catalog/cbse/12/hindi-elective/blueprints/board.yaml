@@ -1,0 +1,64 @@
+id: cbse-12-hindi-elective-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-hindi-elective
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: खंड क - अपठित बोध (18)
+    instructions: प्रश्न 1 अपठित गद्यांश (10), प्रश्न 2 अपठित काव्यांश (8)।
+    items:
+      - {type: case-based, count: 1, marks_each: 10}
+      - {type: case-based, count: 1, marks_each: 8}
+  - id: B
+    title: खंड ख - अभिव्यक्ति और माध्यम (22)
+    instructions: >-
+      प्रश्न 3 (1+2+2, अनिवार्य); प्रश्न 4 तीन में से दो (3-3); प्रश्न 5 तीन में से एक विषय पर रचनात्मक लेखन (~100 शब्द, 5); प्रश्न 6 तीन
+      में से दो (3-3)।
+    items:
+      - {type: short, count: 1, marks_each: 1}
+      - {type: short, count: 2, marks_each: 2}
+      - {type: short, count: 3, marks_each: 3, internal_choice: {attempt: 2, of: 3}}
+      - {type: long, count: 3, marks_each: 5, internal_choice: {attempt: 1, of: 3}}
+      - {type: short, count: 3, marks_each: 3, internal_choice: {attempt: 2, of: 3}}
+  - id: C
+    title: खंड ग - अंतरा भाग 2 और अंतराल भाग 2 (40)
+    instructions: >-
+      प्रश्न 7 काव्यांश (5 बहुविकल्पी), 8 तीन में से दो (2-2), 9 दो में से एक काव्यांश की सप्रसंग व्याख्या (6); प्रश्न 10 गद्यांश (5
+      बहुविकल्पी), 11 तीन में से दो (2-2), 12 दो में से एक गद्यांश की सप्रसंग व्याख्या (6); प्रश्न 13 अंतराल तीन में से दो (5-5)।
+    items:
+      - {type: source-based, count: 1, marks_each: 5}
+      - {type: short, count: 3, marks_each: 2, internal_choice: {attempt: 2, of: 3}}
+      - {type: long, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+      - {type: source-based, count: 1, marks_each: 5}
+      - {type: short, count: 3, marks_each: 2, internal_choice: {attempt: 2, of: 3}}
+      - {type: long, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 3, marks_each: 5, internal_choice: {attempt: 2, of: 3}}
+source_status: verified
+source: cbse-sqp-xii-hindi-elective-2026-27
+notes: >-
+  13 questions in three sections (खंड): क अपठित बोध 18 (Q1 unseen prose passage 10, Q2 unseen poem 8); ख अभिव्यक्ति और माध्यम 22
+
+  (Q3 three compulsory short answers 1 + 2 + 2; Q4 any 2 of 3, 3 each; Q5 one of three topics, ~100 words, 5; Q6 any 2 of 3, 3 each); ग
+  अंतरा
+
+  भाग 2 + अंतराल भाग 2 = 40 (Q7 poetry extract with 5 MCQs; Q8 any 2 of 3 poetry questions, ~40 words, 2 each; Q9 सप्रसंग व्याख्या of one of
+  two
+
+  poetry extracts, ~100 words, 6; Q10 prose extract with 5 MCQs; Q11 any 2 of 3, 2 each; Q12 सप्रसंग व्याख्या of one of two prose extracts,
+  6;
+
+  Q13 अंतराल any 2 of 3, 5 each). No competency table, so mark_shares is empty. The SQP PDF uses a legacy Devanagari font; the structure was
+
+  read from the marking scheme and checked against the SQP numbering. FORMAT MAPPING: सप्रसंग व्याख्या (reference-to-context explanation
+  with
+
+  a fixed 1+1+3+1 rubric) is mapped to long; रचनात्मक लेखन to long; unseen passages to case-based; textbook extracts with MCQs to
+
+  source-based.

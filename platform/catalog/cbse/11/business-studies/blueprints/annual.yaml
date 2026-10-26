@@ -1,0 +1,48 @@
+id: cbse-11-business-studies-annual
+board: cbse
+exam: cbse
+class: 11
+subject_id: cbse-11-business-studies
+paper_type: annual
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.4
+  application: 0.3
+  analysis+evaluation: 0.3
+scope: syllabus
+sections:
+  - id: A
+    title: Objective questions (1 mark each)
+    instructions: "Q1-20: MCQ; Q10 is assertion-reason."
+    items:
+      - {type: mcq, count: 19, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+  - id: B
+    title: Short answer (3 marks each)
+    instructions: Q21-24, 50-75 words. Internal choice in Q21 and Q23.
+    items:
+      - {type: short, count: 2, marks_each: 3}
+      - {type: short, count: 4, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Short answer (4 marks each)
+    instructions: Q25-30, about 150 words. Internal choice in Q25 and Q28.
+    items:
+      - {type: long, count: 4, marks_each: 4}
+      - {type: long, count: 4, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Long answer (6 marks each)
+    instructions: Q31-34, about 200 words. Internal choice in Q31 and Q34.
+    items:
+      - {type: long, count: 2, marks_each: 6}
+      - {type: long, count: 4, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default modelled on the CBSE board pattern, not an official paper: annual exam on the whole syllabus for Class XI business-studies,
+  using the layout of the Class XII
+
+  board paper of the same subject (cbse-12-business-studies-board, 80 marks, 180 min), as CBSE schools usually do for Class XI school exams.
+
+  Format-mapping notes of the Class XII blueprint apply.

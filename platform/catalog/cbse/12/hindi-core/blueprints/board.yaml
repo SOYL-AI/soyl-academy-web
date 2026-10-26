@@ -1,0 +1,58 @@
+id: cbse-12-hindi-core-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-hindi-core
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: खंड क - अपठित बोध (18)
+    instructions: "प्रश्न 1 अपठित गद्यांश (10), प्रश्न 2 अपठित काव्यांश (8): बहुविकल्पी और लघु उत्तरीय उपप्रश्न।"
+    items:
+      - {type: case-based, count: 1, marks_each: 10}
+      - {type: case-based, count: 1, marks_each: 8}
+  - id: B
+    title: खंड ख - अभिव्यक्ति और माध्यम (22)
+    instructions: >-
+      प्रश्न 3 तीन में से एक विषय पर रचनात्मक लेखन (~120 शब्द, 6); प्रश्न 4 पाँच में से कोई चार (~40 शब्द, 2-2); प्रश्न 5 तीन में से कोई दो
+      (~80 शब्द, 4-4)।
+    items:
+      - {type: long, count: 3, marks_each: 6, internal_choice: {attempt: 1, of: 3}}
+      - {type: short, count: 5, marks_each: 2, internal_choice: {attempt: 4, of: 5}}
+      - {type: long, count: 3, marks_each: 4, internal_choice: {attempt: 2, of: 3}}
+  - id: C
+    title: खंड ग - आरोह भाग 2 और वितान भाग 2 (40)
+    instructions: >-
+      प्रश्न 6 काव्यांश (5 बहुविकल्पी), 7 तीन में से दो (3-3), 8 तीन में से दो (2-2); प्रश्न 9 गद्यांश (5 बहुविकल्पी), 10 तीन में से दो
+      (3-3), 11 तीन में से दो (2-2); प्रश्न 12 वितान तीन में से दो (~100 शब्द, 5-5)।
+    items:
+      - {type: source-based, count: 1, marks_each: 5}
+      - {type: short, count: 3, marks_each: 3, internal_choice: {attempt: 2, of: 3}}
+      - {type: short, count: 3, marks_each: 2, internal_choice: {attempt: 2, of: 3}}
+      - {type: source-based, count: 1, marks_each: 5}
+      - {type: short, count: 3, marks_each: 3, internal_choice: {attempt: 2, of: 3}}
+      - {type: short, count: 3, marks_each: 2, internal_choice: {attempt: 2, of: 3}}
+      - {type: long, count: 3, marks_each: 5, internal_choice: {attempt: 2, of: 3}}
+source_status: verified
+source: cbse-sqp-xii-hindi-core-2026-27
+notes: >-
+  12 questions in three sections (खंड): क अपठित बोध 18 (Q1 unseen prose passage 10: MCQ incl. one assertion-reason, then 1/2-mark
+
+  answers; Q2 unseen poem 8); ख अभिव्यक्ति और माध्यम 22 (Q3 one creative-writing topic of three, ~120 words, 6; Q4 any 4 of 5 short answers,
+
+  ~40 words, 2 each; Q5 any 2 of 3, ~80 words, 4 each); ग आरोह भाग 2 + वितान भाग 2 = 40 (Q6 poetry extract with 5 MCQs; Q7 any 2 of 3 poetry
+
+  questions, ~60 words, 3 each; Q8 any 2 of 3, ~40 words, 2 each; Q9 prose extract with 5 MCQs; Q10 any 2 of 3 prose questions, 3 each; Q11
+
+  any 2 of 3, 2 each; Q12 वितान any 2 of 3, ~100 words, 5 each). The paper has no competency table, so mark_shares is empty. The SQP PDF
+  uses a
+
+  legacy Devanagari font; the structure was read from the marking scheme. FORMAT MAPPING: रचनात्मक लेखन is mapped to long; unseen passages
+  are
+
+  case-based; textbook extracts with MCQs are source-based.

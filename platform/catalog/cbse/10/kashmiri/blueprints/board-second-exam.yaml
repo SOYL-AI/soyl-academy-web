@@ -1,0 +1,59 @@
+id: cbse-10-kashmiri-board-second-exam
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-kashmiri
+paper_type: board-second-exam
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Comprehension (20)
+    instructions: Unseen paragraph (one of four, 5 MCQs) and seen prose and poem passages (5 MCQs each), plus one 5-mark item.
+    items:
+      - {type: case-based, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 4}}
+      - {type: source-based, count: 2, marks_each: 5}
+      - {type: short, count: 1, marks_each: 5}
+  - id: B
+    title: Section B - Grammar (16)
+    instructions: "Affixes, tenses, gender, number: 1-mark items."
+    items:
+      - {type: short, count: 16, marks_each: 1}
+  - id: C
+    title: Section C - Literature (20)
+    instructions: Objective items (5 x 1, 5 x 1) and short answers (5 x 2).
+    items:
+      - {type: mcq, count: 10, marks_each: 1}
+      - {type: short, count: 5, marks_each: 2}
+  - id: D
+    title: Section D - Writing and long answers (24)
+    instructions: Long answers and writing tasks.
+    items:
+      - {type: long, count: 4, marks_each: 6}
+source_status: unverified
+source: cbse-sqp-x-kashmiri-2026-27
+notes: >-
+  Second (May) board exam: CBSE has published no separate sample paper or design for the second exam; the 14-02-2026 notification makes it
+  an improvement / compartment exam on the same subject, so this blueprint repeats the February pattern on the full syllabus (assumption,
+  re-check when CBSE publishes a second-exam SQP).
+
+  Kashmiri (097) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. The SQP is in Perso-Arabic
+  script that extracts one glyph per line, so only the section markers and "n x m" totals are legible: Section A about 20 (unseen
+  comprehension - one of four paragraphs with five MCQs - and seen prose/poem passages), B about 16, C about 20, D about 24. The CBSE design
+  names unseen comprehension, grammar (affixes, tense, gender, number), seen comprehension of the main course book and literature. Item
+  split is a SOYL estimate; re-check against the PDF.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

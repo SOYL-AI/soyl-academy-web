@@ -35,14 +35,38 @@ Single source of truth for progress (AGENTS.md §4.3). Updated by the Lead after
 | M0 | Threat model, ASVS L2, M1 requirements | security-reviewer | `platform/security-reviewer/m0` | `docs/platform/security/` | merged | OA-13 (findings.md) |
 | M0→M1 | CISCE `subjects.yaml` (323) + 323 syllabus files (3,627 chapters, 15,637 topics; 319 verified) | curriculum-architect (CISCE) | `platform/curriculum-cisce/m0` | `platform/catalog/cisce/` | **merged** | native-script titles for ~20 regional languages need review |
 | M0 | Next.js security hotfix for the live site | Lead | `hotfix/next-16.4.3` | root `package.json`/lockfile | ready, not merged | **OA-11** |
-| M1 | Bicep (dev/stg/prod), CI/CD workflows, Dockerfiles, local compose, deploy runbook | infra-azure | `platform/infra-azure/m1` | `platform/infra/`, `.github/workflows/platform-*.yml`, Dockerfiles | in progress | OA-01 for real deploys |
-| M1 | Full Drizzle schema, reversible migrations, embedded-Postgres harness, seeds | db-schema | `platform/db-schema/m1` | `platform/db/` | in progress | — |
-| M1 | Pipeline stages 1–4, CLI, cost estimate/budget, `@soyl/ai-core` (D-021) | pipeline-engineer | `platform/pipeline-engineer/m1` | `platform/content-pipeline/`, `platform/ai-core/`, `platform/shared/content/`, `platform/shared/config/models.ts` | in progress | OA-02 for real generation |
+| M1 | CI (GitHub Actions: real Postgres+pgvector/Redis, marketing diff, gitleaks, audit, Trivy) + CodeQL — **green on GitHub**; Dockerfiles; Bicep + deploy workflow parked for the deployment agent (D-025) | infra-azure | `platform/infra-azure/m1` | `platform/infra/`, `.github/` | **merged** | deployment deferred |
+| M1 | Full Drizzle schema (60 tables, 2 views), reversible migrations, embedded-Postgres harness, seeds — 83 tests; full catalog seeds (4,543 chapters, 18,450 topics) | db-schema | `platform/db-schema/m1` | `platform/db/` | **merged** | pgvector path tested only in CI |
+| M1 | Pipeline stages 1–4, CLI, cost estimate/budget, `@soyl/ai-core` (D-021) — 166 + 26 tests; catalog valid; exemplars lint clean; CBSE 10 Science dry run ₹449 (Batch), full current catalog ≈ ₹1.15 lakh (Batch, placeholder prices) | pipeline-engineer | `platform/pipeline-engineer/m1` | `platform/content-pipeline/`, `platform/ai-core/`, `platform/shared/content/`, `platform/shared/config/models.ts` | **merged** | OA-02 for real generation |
 | M1 | Scoped UI kit, slide layouts, content renderers (KaTeX, SVG sanitiser, visuals), Devanagari | design-system | `platform/design-system/m1` | `components/platform/ui/` | in progress | — |
 | M1 | Exemplar: CBSE 10 Science ch01 + prompt templates (science family) — 2 decks (43 slides, 32 visuals), 77 questions, 32 flashcards, 2 tests; gate 8/8 | exemplar-author | `platform/exemplar-author/m1-science` | `platform/content-templates/{exemplars,prompts}/science/` | **merged** 2b06e13 | — |
-| M1 | Exemplar: CBSE 10 Mathematics (Triangles) + templates (maths family) | exemplar-author | `platform/exemplar-author/m1-maths` | `platform/content-templates/{exemplars,prompts}/maths/` | in progress | — |
-| M1 | Exemplar: CBSE 10 Hindi + templates (Hindi family) | exemplar-author / hindi-specialist | `platform/exemplar-author/m1-hindi` | `platform/content-templates/{exemplars,prompts}/hindi/` | in progress | — |
-| M1 | CBSE blueprints (all paper types, classes 7–12) + remaining Wave 1 electives/skills syllabi | curriculum-architect (CBSE-B) | `platform/curriculum-cbse/m1-blueprints` | `platform/catalog/cbse/**/blueprints/`, `platform/catalog/cbse/blueprints/`, assigned syllabus dirs | in progress | — |
+| M1 | Exemplar: CBSE 10 Mathematics ch06 Triangles + maths templates — 46 slides, 78 questions, 34 flashcards, 2 tests; gate 15/15 | exemplar-author | `platform/exemplar-author/m1-maths` | `platform/content-templates/{exemplars,prompts}/maths/` | **merged** 0d91b8c | — |
+| M1 | Exemplars: CBSE 10 Hindi A ch02 grammar (95 Qs) + ch10 बालगोबिन भगत (68 Qs; two independent no-reproduction verifier passes) + 14 Hindi templates; gate 29/29 | exemplar-author / hindi-specialist | `platform/exemplar-author/m1-hindi` | `platform/content-templates/{exemplars,prompts}/hindi-*/` | **merged** f65ca85 | hi-a syllabus unverified (OA-16) |
+| M1 | CBSE blueprints: 367 (board for every 10/12 subject bar 4 languages, May second-exam track, class defaults 7–12, family overrides) + 96 syllabus files (non-language Wave 1 complete) | curriculum-architect (CBSE-B) | `platform/curriculum-cbse/m1-blueprints` | `platform/catalog/cbse/` | **merged** | 184 blueprints unverified (defaults + unreadable SQPs) |
 | M1 | CBSE Wave 1 language syllabi (Class 10 + 12) | curriculum-architect (CBSE-L) | `platform/curriculum-cbse/m1-languages` | language syllabus dirs under `platform/catalog/cbse/{10,12}/` | in progress | — |
-| M1 (wave B) | API: Fastify app, auth (Better Auth: Google, phone OTP, email OTP), me, catalog, route policy, OpenAPI | backend-api | `platform/backend-api/m1` | `platform/api/` except `ai/`, `billing/` | waits for db-schema | — |
-| M1 (wave B) | Web: route group, platform layout + flag, login modal, guest mode + merge, API proxy route (ADR-005) | web-platform | `platform/web-platform/m1` | `app/(platform)/`, `components/platform/` (not `ui/`), `platform/shared/api-client/` | waits for backend-api contract | — |
+| M1 (wave B) | API: Fastify app, auth (Better Auth: Google, phone OTP, email OTP), me, catalog, route policy, OpenAPI; worker skeleton | backend-api | `platform/backend-api/m1` | `platform/api/` except `ai/`, `billing/`; `platform/worker/` | in progress | — |
+| M1 (wave B) | Web: route group, platform layout + flag, proxy route (ADR-005), login (Google, phone OTP, email OTP), guest mode + merge, catalog pages, /me | web-platform | `platform/web-platform/m1` | `app/(platform)/`, `components/platform/` (not `ui/`), `platform/shared/api-client/` | in progress (started on backend contract 551f4ba) | — |
+| M2 (content, early) | CBSE 10 Science ch02–ch05 hand-authored to exemplar standard (D-026) | subject-producer | `platform/subject-producer/cbse-10-science-a` | `platform/content/authored/science/` | in progress | — |
+
+## Backlog (found at integration)
+
+| Found | Item | Owner | Status |
+|---|---|---|---|
+| 2026-10-26 | Geometry renderer ignores the newer optional spec fields (lines, rays, segment ticks/arrows, angle arcs, polygon highlight). Figures still render correctly without them; the marks just aren't drawn. Point objects/labels are handled (fix b861919+1). | design-system / web-platform | open |
+| 2026-10-26 | Integration lesson: the root `npm run build` must run after every merge that touches `platform/shared`, because the web app compiles shared types (a shared-contract change broke the geometry renderer's typecheck until fixed). | Lead | process |
+| 2026-10-26 | WEB-6 names `components/platform/render/**`; the reviewed renderers are in `components/platform/ui/render/**` — point the `react/no-danger` exception there when it's enabled. | web-platform | open |
+| 2026-10-27 | Contract v2 requested by all content agents: question types `writing`, `map`, `code-output`, `ordering`; `word_limit`; `passage_origin`; blueprint `variant`; underline marker; stronger Indic-script gate; literature reproduction lint | pipeline-engineer (M2) | in progress |
+
+### Catalog totals (platform/main, `npm run content -- catalog`, 2026-10-26)
+771 subjects (CBSE 448, CISCE 323) · 489 syllabus files · 5,439 chapters · 21,854 topics · 337 board blueprints + class defaults · 0 errors
+
+### Active (D-024 cap 5)
+backend-api (M1) · curriculum-cbse-languages (M1) · producer CBSE 10 Science ch02–05 · producer CBSE 10 Maths ch01–04 · pipeline-engineer M2 (contract v2 + stages 5–9)
+
+### CI evidence (GitHub Actions, real Postgres+pgvector / Redis containers)
+| Date | Commit | Run | Result |
+|---|---|---|---|
+| 2026-10-26 | `f65ca85` | platform-ci | **failure** — `@soyl/content-pipeline` arithmetic test depended on the mock plan's type mix (fixed in d19bf5e) |
+| 2026-10-26 | `d19bf5e` | [platform-ci 40293740542](https://github.com/SOYL-AI/soyl-academy-web/actions/runs/40293740542) | **success** — all 10 jobs (platform tests, web build, marketing differential regression, gitleaks, audit/trivy, bicep, image builds) |
+
+Process: after every integration the Lead checks the platform-ci run for the new `platform/main` head before the next merge.

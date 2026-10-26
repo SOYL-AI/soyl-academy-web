@@ -1,0 +1,52 @@
+id: cbse-12-french-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-french
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Compréhension (20)
+    instructions: Two texts with short answers, vocabulary, true/false and MCQ parts (10 each).
+    items:
+      - {type: case-based, count: 2, marks_each: 10}
+  - id: B
+    title: Section B - Expression écrite (20)
+    instructions: Q3 one letter of 80 words (10); Q4 one composition (10).
+    items:
+      - {type: long, count: 2, marks_each: 10, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 10, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Grammaire (25)
+    instructions: "Q5-Q12: verbs, direct/indirect speech, negation, pronouns, relative pronouns, interrogatives, prepositions, word order (5 x 1 each)."
+    items:
+      - {type: short, count: 8, marks_each: 5, internal_choice: {attempt: 5, of: 8}}
+  - id: D
+    title: Section D - Culture et Civilisation (15)
+    instructions: Q13 any five short answers (5 x 2); Q14 complete with given words, any five (5 x 1).
+    items:
+      - {type: short, count: 5, marks_each: 2}
+      - {type: fill-blank, count: 5, marks_each: 1}
+source_status: unverified
+source: cbse-sqp-xii-french-2026-27
+notes: >-
+  French (118) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Sections: A comprehension
+  20, B written expression 20, C grammar 25, D culture and civilisation 15. Section C prints eight 5-mark grammar questions against a
+  25-mark total, so five of eight are modelled as attempted (re-check the choice rule in the SQP).
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

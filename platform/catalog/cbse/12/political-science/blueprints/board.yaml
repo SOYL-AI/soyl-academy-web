@@ -1,0 +1,58 @@
+id: cbse-12-political-science-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-political-science
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.575
+  application: 0.275
+  analysis+evaluation: 0.15
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Objective (1 mark each)
+    instructions: Q1-12. One assertion-reason item.
+    items:
+      - {type: mcq, count: 11, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+  - id: B
+    title: Section B - Short answer (2 marks each)
+    instructions: Q13-18, 50-60 words.
+    items:
+      - {type: short, count: 6, marks_each: 2}
+  - id: C
+    title: Section C - Short answer (4 marks each)
+    instructions: Q19-23, 100-120 words. Internal choice in two questions.
+    items:
+      - {type: long, count: 3, marks_each: 4}
+      - {type: long, count: 4, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Picture, passage and map based (4 marks each)
+    instructions: Q24 cartoon/picture, Q25 passage, Q26 map of India (identify four states).
+    items:
+      - {type: source-based, count: 2, marks_each: 4}
+      - {type: short, count: 4, marks_each: 1}
+  - id: E
+    title: Section E - Long answer (6 marks each)
+    instructions: Q27-30, 170-180 words. Each has an internal choice.
+    items:
+      - {type: long, count: 8, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-xii-political-science-2026-27
+notes: >-
+  30 questions: A 12 x 1 MCQ (one assertion-reason), B 6 x 2 (50-60 words), C 5 x 4 (100-120 words; internal choice in two), D 3 x 4
+
+  (Q24 cartoon/picture-based, Q25 passage-based, Q26 map-based), E 4 x 6 (170-180 words; internal choice in all four). Book weightage
+
+  40 + 40 (Contemporary World Politics; Politics in India since Independence). Competency weights (design table): knowledge 27.5% +
+
+  understanding 30% (recall+understanding), applying 27.5%, analysing/evaluating/creating 15%. FORMAT MAPPING: the cartoon and passage
+
+  questions have MCQ sub-parts and are mapped to source-based (cartoon needs an image asset); the map question (identify four states on an
+
+  outline map of India, 1 mark each) has no QuestionType and is modelled as four 1-mark short items to be drawn together. Visually impaired
+  candidates get substitute questions for items with visual input (not modelled).

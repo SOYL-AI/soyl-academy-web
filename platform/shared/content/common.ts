@@ -21,6 +21,8 @@ export const Provenance = z.object({
   template_version: z.string().nullable().default(null),
   model: z.string().nullable().default(null),
   generated_at: z.string().nullable().default(null),
+  /** Human or agent author of hand-written content (exemplars, reviewer edits); `model` stays for generated items. */
+  author: z.string().nullable().optional(),
 });
 export type Provenance = z.infer<typeof Provenance>;
 

@@ -1,0 +1,377 @@
+# SOYL Academy Learning Platform - continuous integration.
+# Runs on pull requests and on pushes to platform/** branches. Never deploys, never touches main or
+# Vercel. Security gates: INFRA-14 (gitleaks), INFRA-15 (npm audit, trivy fs/image, Checkov),
+# INFRA-17 (read-only token, actions pinned by full commit SHA, no pull_request_target),
+# INFRA-18 (CycloneDX SBOM per image), WEB-11 (no secret-like NEXT_PUBLIC_ names).
+# Real Postgres (pgvector) and Redis service containers are the "real Postgres/Redis" evidence (D-008).
+name: platform-ci
+
+on:
+  pull_request:
+    paths:
+      - 'platform/**'
+      - 'app/(platform)/**'
+      - 'components/platform/**'
+      - '.github/workflows/platform-*.yml'
+      - '.github/dependabot.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'next.config.ts'
+      - 'tsconfig.json'
+      # Marketing paths too: a platform branch that touches them must face the marketing regression
+      # (ARCHITECTURE 17.4).
+      - 'app/**'
+      - 'components/**'
+      - 'lib/**'
+      - 'content/**'
+      - 'public/**'
+      - 'eslint.config.mjs'
+      - 'postcss.config.mjs'
+  push:
+    branches:
+      - 'platform/**'
+    paths:
+      - 'platform/**'
+      - 'app/(platform)/**'
+      - 'components/platform/**'
+      - '.github/workflows/platform-*.yml'
+      - '.github/dependabot.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'next.config.ts'
+      - 'tsconfig.json'
+      # Marketing paths too: a platform branch that touches them must face the marketing regression
+      # (ARCHITECTURE 17.4).
+      - 'app/**'
+      - 'components/**'
+      - 'lib/**'
+      - 'content/**'
+      - 'public/**'
+      - 'eslint.config.mjs'
+      - 'postcss.config.mjs'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: platform-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '24'
+  NEXT_TELEMETRY_DISABLED: '1'
+  NPM_CONFIG_FUND: 'false'
+  NPM_CONFIG_UPDATE_NOTIFIER: 'false'
+  # Pinned tool versions + SHA-256 of the release assets (verified before use).
+  GITLEAKS_VERSION: '8.30.1'
+  GITLEAKS_SHA256: '551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb'
+  TRIVY_VERSION: '0.75.0'
+  TRIVY_SHA256: 'c6e65abddb348e25f10549df887045629cf28cc72453cd1c63acb717316b3f3f'
+  BICEP_VERSION: '0.48.1'
+  BICEP_SHA256: 'b09ec25a9d376c1f8e33ede6ed22b587f915ad68488d5db77a6f9541748c7f6e'
+  # bridgecrew/checkov:3.3.21
+  CHECKOV_IMAGE: 'bridgecrew/checkov@sha256:9aefe56582004ebdac112fe85c3268dc4d3658231a8f023fb714ba9d29539d53'
+
+jobs:
+  # (a) platform workspace: typecheck, lint, unit + integration tests, build ------------------------
+  platform:
+    name: platform · typecheck, lint, test, build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    services:
+      postgres:
+        # pgvector/pgvector:pg17
+        image: pgvector/pgvector@sha256:ac08538c6f8b9904c33c8224c5e5706dbe760aca29db1d096972b4052c22a75d
+        env:
+          # Throwaway credentials of a CI-only service container (GEN-1: not a secret).
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+          TZ: UTC
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 30
+      redis:
+        # redis:7
+        image: redis@sha256:44960b3100c48159a66d28c18b0588c193492e25f7551d60e51dd464fc3eca5b
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 30
+    env:
+      # Test harnesses use these when set, else local stand-ins (D-008). The user is a superuser
+      # because @soyl/db tests CREATE DATABASE / CREATE ROLE (platform/db/README.md).
+      DATABASE_URL: postgres://postgres:postgres@localhost:5432/postgres
+      TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/postgres
+      REDIS_URL: redis://localhost:6379
+      TZ: UTC
+      CI: 'true'
+    defaults:
+      run:
+        working-directory: platform
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: platform/package-lock.json
+      - name: npm ci
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Lint
+        run: npm run lint
+      - name: Test (real Postgres + Redis)
+        run: npm test
+      - name: Build (services produce dist/index.js, D-022)
+        run: npm run build
+
+  # (b) web app (marketing + platform route group): lint and production build ---------------------
+  web:
+    name: web · lint, build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: npm ci
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Build
+        run: npm run build
+
+  # (c) marketing regression, differential mode (REPO_MAP 9.5) ------------------------------------
+  marketing:
+    name: marketing · differential regression vs main
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Ensure origin/main is present (merge-base)
+        run: git rev-parse --verify --quiet origin/main || git fetch --no-tags origin +refs/heads/main:refs/remotes/origin/main
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            platform/package-lock.json
+      - name: npm ci (root)
+        run: npm ci
+      - name: npm ci (platform)
+        working-directory: platform
+        run: npm ci
+      - name: Install Playwright Chromium
+        working-directory: platform/e2e
+        run: npx playwright install --with-deps chromium
+      - name: marketing:diff (merge-base with origin/main vs HEAD, zero tolerance)
+        working-directory: platform
+        run: npm run marketing:diff -w @soyl/e2e
+      - name: Upload regression report
+        if: failure()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: marketing-regression-${{ github.run_id }}
+          path: platform/e2e/test-results/
+          retention-days: 14
+
+  # (d) security: secrets, dependencies, filesystem scan, public env-var names ---------------------
+  secrets:
+    name: security · gitleaks
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install gitleaks (checksum-verified)
+        run: |
+          curl -sSfL -o "$RUNNER_TEMP/gitleaks.tgz" "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          echo "${GITLEAKS_SHA256}  $RUNNER_TEMP/gitleaks.tgz" | sha256sum -c -
+          tar -xzf "$RUNNER_TEMP/gitleaks.tgz" -C "$RUNNER_TEMP" gitleaks
+      - name: gitleaks (INFRA-14)
+        env:
+          EVENT: ${{ github.event_name }}
+          REF: ${{ github.ref }}
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          if [ "$EVENT" = "pull_request" ]; then
+            range="$PR_BASE..$PR_HEAD"; echo "PR diff scan: $range"
+          elif [ "$REF" = "refs/heads/platform/main" ]; then
+            range=""; echo "Full-history scan of platform/main"
+          else
+            git rev-parse --verify --quiet origin/platform/main >/dev/null || git fetch --no-tags origin +refs/heads/platform/main:refs/remotes/origin/platform/main
+            range="$(git merge-base origin/platform/main HEAD)..HEAD"; echo "Branch diff scan: $range"
+          fi
+          if [ -n "$range" ]; then
+            "$RUNNER_TEMP/gitleaks" git --redact --no-banner --exit-code 1 --log-opts="$range" .
+          else
+            "$RUNNER_TEMP/gitleaks" git --redact --no-banner --exit-code 1 .
+          fi
+
+  dependencies:
+    name: security · npm audit, trivy fs, public env names
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: npm audit - platform/package-lock.json (blocking, INFRA-15)
+        working-directory: platform
+        run: npm audit --audit-level=high
+      - name: npm audit - root package-lock.json (report-only until OA-11/OA-12)
+        id: root_audit
+        continue-on-error: true
+        run: npm audit --audit-level=high
+      - name: Annotate root audit result
+        if: steps.root_audit.outcome == 'failure'
+        run: |
+          echo "::warning title=Root npm audit is REPORT-ONLY (OA-11, OA-12)::The marketing app's package-lock.json has known high/critical advisories (F-001 Next.js, F-002 zod). Fixes are owner actions OA-11 (merge hotfix/next-16.4.3) and OA-12 (marketing zod upgrade). This step becomes blocking once they land (docs/platform/runbooks/incident-sla.md)."
+      - name: Install trivy (checksum-verified)
+        run: |
+          curl -sSfL -o "$RUNNER_TEMP/trivy.tgz" "https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}/trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz"
+          echo "${TRIVY_SHA256}  $RUNNER_TEMP/trivy.tgz" | sha256sum -c -
+          tar -xzf "$RUNNER_TEMP/trivy.tgz" -C "$RUNNER_TEMP" trivy
+      - name: trivy fs platform/ (vulnerabilities, secrets, Dockerfile misconfig - INFRA-15)
+        run: |
+          "$RUNNER_TEMP/trivy" fs --scanners vuln,secret,misconfig --severity HIGH,CRITICAL \
+            --ignore-unfixed --exit-code 1 --no-progress \
+            --skip-dirs platform/e2e/marketing-baseline platform
+      - name: No secret-like NEXT_PUBLIC_ names (WEB-11)
+        run: |
+          set -euo pipefail
+          if grep -rEn --include='*.ts' --include='*.tsx' --include='*.js' --include='*.mjs' --include='*.json' --include='.env.example' \
+               'NEXT_PUBLIC_[A-Z0-9_]*(SECRET|TOKEN|PASSWORD|EDGE|KEY_SECRET)' \
+               app components lib platform next.config.ts 2>/dev/null | grep -v node_modules; then
+            echo "::error title=WEB-11::A NEXT_PUBLIC_ variable name looks like a secret. Server-only values must not be public."
+            exit 1
+          fi
+          echo "WEB-11 ok: no secret-like NEXT_PUBLIC_ names"
+
+  # (e) infrastructure: Bicep build/lint/build-params + IaC scan ------------------------------------
+  infra:
+    name: infra · bicep validate, checkov
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install Bicep CLI (checksum-verified)
+        run: |
+          curl -sSfL -o "$RUNNER_TEMP/bicep" "https://github.com/Azure/bicep/releases/download/v${BICEP_VERSION}/bicep-linux-x64"
+          echo "${BICEP_SHA256}  $RUNNER_TEMP/bicep" | sha256sum -c -
+          chmod +x "$RUNNER_TEMP/bicep"
+      - name: bicep build + lint + build-params (strict) and INFRA-9 / GEN-1 checks
+        env:
+          BICEP_BIN: ${{ runner.temp }}/bicep
+        run: node platform/infra/validate.mjs --strict
+      # Report-only for now: Bicep hardening is handed to the deployment agent (D-025). The summary
+      # step annotates every finding; flip continue-on-error off once findings are triaged.
+      - name: Checkov IaC scan (INFRA-15, report-only until the deployment hand-over)
+        continue-on-error: true
+        run: |
+          mkdir -p "$RUNNER_TEMP/checkov"
+          docker run --rm -v "$PWD/platform/infra:/infra:ro" -v "$RUNNER_TEMP/checkov:/out" "$CHECKOV_IMAGE" \
+            --directory /infra --framework bicep --config-file /infra/.checkov.yaml \
+            --output cli --output json --output-file-path /out --soft-fail
+          node platform/infra/scripts/checkov-summary.mjs "$RUNNER_TEMP/checkov/results_json.json"
+
+  # Container images: built (not pushed) whenever a service exists, scanned, SBOM attached ---------
+  images:
+    name: images · build, trivy, SBOM
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - service: api
+            manifest: platform/api/package.json
+            dockerfile: platform/api/Dockerfile
+          - service: worker
+            manifest: platform/worker/package.json
+            dockerfile: platform/worker/Dockerfile
+          - service: migrate
+            manifest: platform/db/package.json
+            dockerfile: platform/infra/docker/migrate.Dockerfile
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Does the service exist yet?
+        id: exists
+        env:
+          MANIFEST: ${{ matrix.manifest }}
+          SERVICE: ${{ matrix.service }}
+        run: |
+          if [ -f "$MANIFEST" ]; then echo "build=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "build=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=${SERVICE} image skipped::${MANIFEST} does not exist yet; the image is built automatically once it does."
+          fi
+      - name: docker build
+        if: steps.exists.outputs.build == 'true'
+        env:
+          DOCKERFILE: ${{ matrix.dockerfile }}
+          SERVICE: ${{ matrix.service }}
+        run: docker build --pull -f "$DOCKERFILE" -t "soyl-${SERVICE}:ci" platform
+      - name: Install trivy (checksum-verified)
+        if: steps.exists.outputs.build == 'true'
+        run: |
+          curl -sSfL -o "$RUNNER_TEMP/trivy.tgz" "https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}/trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz"
+          echo "${TRIVY_SHA256}  $RUNNER_TEMP/trivy.tgz" | sha256sum -c -
+          tar -xzf "$RUNNER_TEMP/trivy.tgz" -C "$RUNNER_TEMP" trivy
+      - name: trivy image (fail on HIGH/CRITICAL, INFRA-15) + non-root check (INFRA-10)
+        if: steps.exists.outputs.build == 'true'
+        env:
+          SERVICE: ${{ matrix.service }}
+        run: |
+          set -euo pipefail
+          user="$(docker image inspect --format '{{.Config.User}}' "soyl-${SERVICE}:ci")"
+          echo "image user: ${user:-<root>}"
+          if [ -z "$user" ] || [ "$user" = "root" ] || [ "$user" = "0" ]; then echo "::error::image runs as root (INFRA-10)"; exit 1; fi
+          "$RUNNER_TEMP/trivy" image --severity HIGH,CRITICAL --ignore-unfixed --format json --output trivy.json --no-progress "soyl-${SERVICE}:ci"
+          node platform/infra/scripts/trivy-annotate.mjs trivy.json "$SERVICE"
+      - name: CycloneDX SBOM (INFRA-18)
+        if: steps.exists.outputs.build == 'true'
+        env:
+          SERVICE: ${{ matrix.service }}
+        run: '"$RUNNER_TEMP/trivy" image --format cyclonedx --output "sbom-${SERVICE}.cdx.json" --no-progress "soyl-${SERVICE}:ci"'
+      - name: Upload SBOM
+        if: steps.exists.outputs.build == 'true'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: sbom-${{ matrix.service }}-${{ github.sha }}
+          path: sbom-${{ matrix.service }}.cdx.json
+          retention-days: 90
