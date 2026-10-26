@@ -174,7 +174,7 @@ export function MatchInput({ part, slots, draft, onChange, disabled, label, lang
               const want = correctPairs?.[o.id];
               const verdict = correctPairs ? (want === chosen ? 'good' : 'bad') : null;
               return (
-                <li key={o.id} className={s.matchRow}>
+                <li key={o.id} className={s.matchRow} data-left-id={o.id}>
                   <label htmlFor={`${base}-${o.id}`} className={s.matchLeft}>
                     <span className={s.optionNumber}>{i + 1}.</span> {slots.options[o.id]}
                   </label>
