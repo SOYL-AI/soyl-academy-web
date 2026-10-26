@@ -88,7 +88,27 @@ npm run dev -w @soyl/api          # http://localhost:8787  (8080 is often taken 
 
 ## How to verify (from `platform/`)
 
-See the final report section in the Lead hand-back for the pasted outputs. Commands: `npm run typecheck`, `npm test -w @soyl/api -w @soyl/worker`, `npx vitest run --coverage` in `api/` and `worker/`, `npm run build -w @soyl/api`, `PORT=8787 node api/dist/index.js` + `curl localhost:8787/healthz`, `npm audit`.
+Run on 2026-10-26 after merging `origin/platform/main` (acc745b):
+
+```
+npm run typecheck                         → api, db, e2e, shared, worker: exit 0
+npm run lint --if-present                 → exit 0 (no platform workspace defines lint yet)
+npm test -w @soyl/api -w @soyl/worker     → api: Test Files 11 passed, Tests 207 passed | 1 skipped (Redis contract, CI only)
+                                            worker: Test Files 6 passed, Tests 44 passed
+api coverage (npx vitest run --coverage)  → Lines 95.47%, Statements 92.61%, Branches 85.3%, Functions 87.74%
+                                            (src/kv/redis.ts is covered only in CI, where REDIS_URL is set)
+worker coverage                           → Lines 98.85%, Statements 95.4%, Branches 92.15%, Functions 86.74%
+npm run build -w @soyl/api                → api/dist/index.js 5.3 MB
+APP_ENV=local PLATFORM_ENABLED=true PORT=8799 node api/dist/index.js
+                                          → embedded PG + catalog seeded, "SOYL API ready";
+                                            curl /healthz → 200 {"status":"ok"}; /readyz → 200 {"status":"ready"};
+                                            /v1/session without edge secret → 403 (server then stopped)
+npm audit                                 → 4 moderate (dev-only drizzle-kit → esbuild), 0 high, 0 critical
+git diff --stat origin/platform/main -- app components content lib public package.json package-lock.json next.config.ts → empty
+```
+(Port 8080, the container default, is held by a Windows service on the build machine, so local runs use 8787/8799.)
+
+Note for infra-azure: the worker's health server listens on `WORKER_HEALTH_PORT` (default **8081**), not `PORT`. Set `WORKER_HEALTH_PORT=8080` in the worker Container App, or point its probes at 8081. `platform/worker/Dockerfile`'s comment assumes 8080.
 
 ## Tests added
 

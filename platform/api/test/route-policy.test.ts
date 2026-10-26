@@ -68,6 +68,17 @@ describe('route policy (API-6)', () => {
       expect(r.policy.csrf, `${r.method} ${r.url}`).toBe(true);
   });
 
+  it('the local-only OTP outbox answers only for reserved test identifiers', async () => {
+    const c = h.client();
+    await c.post('/v1/auth/email/send-otp', { email: 'outbox@example.com' });
+    const ok = await c.get('/v1/dev/otp-outbox?to=outbox@example.com');
+    expect(ok.json().code).toBe(h.email.lastCode('outbox@example.com'));
+    await c.post('/v1/auth/phone/send-otp', { phoneNumber: '+915550009999' });
+    expect((await c.get('/v1/dev/otp-outbox?to=%2B915550009999')).json().code).toBe(h.sms.lastCode('+915550009999'));
+    expect((await c.get('/v1/dev/otp-outbox?to=someone@gmail.com')).statusCode).toBe(404);
+    expect((await c.get('/v1/dev/otp-outbox?to=outbox@example.com', { edge: null })).statusCode).toBe(403);
+  });
+
   it('a route without a policy prevents start-up', async () => {
     await expect(
       createHarness({

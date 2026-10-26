@@ -7,7 +7,7 @@ import type { FastifyInstance } from 'fastify';
 import { BODY_LIMITS } from '@soyl/shared/config/security';
 import { ApiProblem } from '../errors';
 
-export function jsonShapeProblem(value: unknown, maxDepth = BODY_LIMITS.maxJsonDepth, maxArray = BODY_LIMITS.maxJsonArrayLength): string | null {
+export function jsonShapeProblem(value: unknown, maxDepth: number = BODY_LIMITS.maxJsonDepth, maxArray: number = BODY_LIMITS.maxJsonArrayLength): string | null {
   const stack: [unknown, number][] = [[value, 1]];
   while (stack.length) {
     const [v, d] = stack.pop()!;
