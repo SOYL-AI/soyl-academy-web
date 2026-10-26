@@ -156,7 +156,7 @@ export function MatchInput({ part, slots, draft, onChange, disabled, label, lang
         <div>
           <p className={s.columnTitle}>Column B</p>
           <ul className={s.rightList}>
-            {part.match_right.map((r, i) => (
+            {part.match_right.map((r) => (
               <li key={r.id}>
                 <span className={s.optionLetter} aria-hidden="true">
                   {rightLabel.get(r.id)}
