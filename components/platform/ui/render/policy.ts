@@ -24,8 +24,7 @@ export interface SafeLink {
 }
 
 // C0 controls, DEL, whitespace and backslashes never appear in a URL we accept.
-// eslint-disable-next-line no-control-regex
-const UNSAFE_CHARS = /[\u0000- \u007f-\u009f\\]/;
+const UNSAFE_CHARS = /[\x00-\x20\x7f-\x9f\\]/;
 
 export function safeLink(raw: unknown, hosts: readonly string[] = DEFAULT_LINK_HOSTS): SafeLink | null {
   if (typeof raw !== 'string') return null;

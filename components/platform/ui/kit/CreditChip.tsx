@@ -41,9 +41,13 @@ export interface CreditChipProps {
 export function CreditChip({ balance, resetAt, lowAt = 3, className }: CreditChipProps) {
   const [now, setNow] = useState<Date | null>(null);
   useEffect(() => {
-    setNow(new Date());
-    const id = window.setInterval(() => setNow(new Date()), 30_000);
-    return () => window.clearInterval(id);
+    const tick = () => setNow(new Date());
+    const first = window.setTimeout(tick, 0); // after mount: server HTML never contains a time
+    const id = window.setInterval(tick, 30_000);
+    return () => {
+      window.clearTimeout(first);
+      window.clearInterval(id);
+    };
   }, []);
 
   const reset = now ? (resetAt ? new Date(resetAt) : nextIstMidnight(now)) : null;
