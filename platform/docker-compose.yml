@@ -1,0 +1,58 @@
+# Local stand-ins for people who HAVE Docker (D-008). The build machine used by the agents has no
+# Docker; it uses embedded Postgres (npm `embedded-postgres`), Azurite from npm and an in-memory
+# Redis adapter instead (platform/infra/README.md "Local development").
+#
+#   docker compose -f platform/docker-compose.yml up -d
+#   export TEST_DATABASE_URL=postgres://postgres:postgres@localhost:5432/postgres
+#   export DATABASE_URL=$TEST_DATABASE_URL REDIS_URL=redis://localhost:6379
+#   export AZURE_STORAGE_CONNECTION_STRING="UseDevelopmentStorage=true"
+#
+# Same images as CI (platform-ci.yml), pinned by digest. Ports bind to 127.0.0.1 only. The
+# postgres/postgres credentials are the well-known throwaway defaults of a local container (GEN-1:
+# no real secret); never reuse them anywhere else.
+name: soyl-platform-local
+
+services:
+  postgres:
+    # pgvector/pgvector:pg17
+    image: pgvector/pgvector@sha256:ac08538c6f8b9904c33c8224c5e5706dbe760aca29db1d096972b4052c22a75d
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+      TZ: UTC
+      PGTZ: UTC
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  redis:
+    # redis:7 - noeviction mirrors Azure Managed Redis (INFRA-3)
+    image: redis@sha256:44960b3100c48159a66d28c18b0588c193492e25f7551d60e51dd464fc3eca5b
+    command: ["redis-server", "--maxmemory-policy", "noeviction", "--appendonly", "no"]
+    ports:
+      - "127.0.0.1:6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  azurite:
+    # mcr.microsoft.com/azure-storage/azurite:latest (resolved 2026-10-26)
+    image: mcr.microsoft.com/azure-storage/azurite@sha256:830430c1da1a2d537e08f3e6764dd1f5ae00cf0346bcaf625b968ec3f0971fd5
+    command: ["azurite-blob", "--blobHost", "0.0.0.0", "--blobPort", "10000", "--loose", "--skipApiVersionCheck"]
+    ports:
+      - "127.0.0.1:10000:10000"
+    volumes:
+      - azurite:/data
+
+volumes:
+  pgdata:
+  azurite:

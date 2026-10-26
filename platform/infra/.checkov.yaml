@@ -1,0 +1,7 @@
+# Checkov IaC scan of platform/infra (INFRA-15), run by .github/workflows/platform-ci.yml.
+# Every skipped check carries the reason it does not apply; anything else fails CI.
+compact: true
+quiet: true
+framework:
+  - bicep
+skip-check: []
