@@ -116,17 +116,21 @@ export interface ExemplarRef {
   unit: string;
 }
 
+/** Hand-written content: gold-standard exemplars and authored production chapters (D-026). */
 export function exemplarDirs(templatesDir: string): ExemplarRef[] {
-  const root = path.join(templatesDir, 'exemplars');
-  if (!fs.existsSync(root)) return [];
-  return fs.readdirSync(root).flatMap((family) => {
-    const fdir = path.join(root, family);
-    if (!fs.statSync(fdir).isDirectory()) return [];
-    return fs
-      .readdirSync(fdir)
-      .map((unit) => ({ family, dir: path.join(fdir, unit), unit }))
-      .filter((e) => fs.statSync(e.dir).isDirectory() && fs.existsSync(path.join(e.dir, 'release.json')));
-  });
+  const roots = [path.join(templatesDir, 'exemplars'), path.join(templatesDir, '..', 'content', 'authored')];
+  return roots
+    .filter((root) => fs.existsSync(root))
+    .flatMap((root) =>
+      fs.readdirSync(root).flatMap((family) => {
+        const fdir = path.join(root, family);
+        if (!fs.statSync(fdir).isDirectory()) return [];
+        return fs
+          .readdirSync(fdir)
+          .map((unit) => ({ family, dir: path.join(fdir, unit), unit }))
+          .filter((e) => fs.statSync(e.dir).isDirectory() && fs.existsSync(path.join(e.dir, 'release.json')));
+      }),
+    );
 }
 
 export function lintExemplar(p: Pipeline, ex: ExemplarRef): LintReport {
