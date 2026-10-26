@@ -136,7 +136,8 @@ export function loadCatalog(dir: string): Catalog {
       });
     }
 
-    for (const file of files.filter((f) => /[\\/]blueprints[\\/][^\\/]+\.ya?ml$/.test(f))) {
+    // Subject blueprints: <subject>/blueprints/*.yaml; board/class defaults: <board>/blueprints/<class>/*.yaml.
+    for (const file of files.filter((f) => /[\\/]blueprints[\\/](?:\d{1,2}[\\/])?[^\\/]+\.ya?ml$/.test(f))) {
       let parsed;
       try {
         parsed = Blueprint.safeParse(readYaml(file));
