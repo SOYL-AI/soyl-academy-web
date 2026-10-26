@@ -116,3 +116,5 @@ Process: after every integration the Lead checks the platform-ci run for the new
 | main.bicep → prod (Postgres, Redis, Key Vault, ACS, Container Apps, monitoring) | waiting | — |
 | Migrations, catalog seed, content publish, smoke tests | waiting | — |
 | soylai.com DNS records for ACS email (owner adds) | waiting | — |
+| 2026-10-27 | `bebeeff` | [platform-ci 40389356089](https://github.com/SOYL-AI/soyl-academy-web/actions/runs/40389356089) | **failure** — gitleaks: test id `t_cbse10sci_ch02_short` in an M3 test tripped generic-api-key (false positive) |
+| 2026-10-27 | `e75da26` | platform-ci | **success** — `.gitleaks.toml` allowlists only `[tq]_<exam><class><subject>_…` ids (canary confirms real keys still caught) |
