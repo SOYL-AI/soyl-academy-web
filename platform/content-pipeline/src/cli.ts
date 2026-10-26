@@ -29,7 +29,7 @@ commands
   plan                    units in scope, missing stages, dry-run token + INR estimate
   outline                 stage 2: lesson outline + question plan per chapter
   generate                stage 3: decks, notes, flashcards, questions, case passages (runs outline first if needed)
-  lint                    stage 4: deterministic checks (--exemplars: lint content-templates exemplars)
+  lint                    stage 4: deterministic checks (--exemplars: lint hand-written exemplars + content/authored)
   status                  per-unit stage status, runs, spend
   coverage                board × class × subject × asset counts vs targets (launch gate)
   verify | originality | assemble | tts | publish    M2 (not implemented)
@@ -47,7 +47,7 @@ options
   --dry-run               outline/generate: show the plan and estimate, call nothing
   --seed <s>              mock provider seed (default "soyl")
   --poll <seconds>        batch poll interval (default 60)
-  --exemplars             lint: lint platform/content-templates/exemplars instead of out/
+  --exemplars             lint: lint content-templates/exemplars and content/authored instead of out/
   --out <path>            coverage: output file base (default out/coverage/coverage)
   --gate                  coverage: exit 1 unless every subject in scope is complete
   --verbose               show warnings and every finding

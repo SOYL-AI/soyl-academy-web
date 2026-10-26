@@ -11,19 +11,24 @@ import { ChapterRelease, SyllabusFile, TestDefinition, parseChapterId } from '@s
 import { CONTENT_TARGETS } from '@soyl/shared/config/content-targets';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const exemplarsDir = path.join(here, 'exemplars');
+/** Gold-standard exemplars, plus hand-authored production chapters (D-026), held to the same gate. */
+const contentRoots = [path.join(here, 'exemplars'), path.join(here, '..', 'content', 'authored')];
 const catalogDir = path.join(here, '..', 'catalog');
 
 /** Families where "a visual at least every 3 slides" does not apply (CONTEXT §8: "where the subject allows"). */
 const TEXT_FAMILIES = new Set(['hindi-language', 'hindi-literature', 'english-language', 'english-literature']);
 
 function exemplarDirs(): { family: string; dir: string }[] {
-  if (!fs.existsSync(exemplarsDir)) return [];
-  return fs.readdirSync(exemplarsDir).flatMap((family) =>
+  return contentRoots.filter((root) => fs.existsSync(root)).flatMap((root) =>
     fs
-      .readdirSync(path.join(exemplarsDir, family))
-      .map((name) => ({ family, dir: path.join(exemplarsDir, family, name) }))
-      .filter((e) => fs.statSync(e.dir).isDirectory()),
+      .readdirSync(root)
+      .filter((family) => fs.statSync(path.join(root, family)).isDirectory())
+      .flatMap((family) =>
+        fs
+          .readdirSync(path.join(root, family))
+          .map((name) => ({ family, dir: path.join(root, family, name) }))
+          .filter((e) => fs.statSync(e.dir).isDirectory()),
+      ),
   );
 }
 
