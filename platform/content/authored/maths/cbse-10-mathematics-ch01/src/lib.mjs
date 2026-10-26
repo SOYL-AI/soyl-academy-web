@@ -405,6 +405,14 @@ export function build({ dir, release, testsSpec, readmeCheck = true }) {
   const questions = registry.map(({ key, q }, i) => ({ id: PREFIX + String(i + 1).padStart(3, '0'), unit: UNIT, language: 'en', ...q, children: q.children ?? [], status: 'draft', version: 1, provenance: PROV }));
   // reorder keys so id comes first
   release.questions = questions.map(({ id, unit, language, ...rest }) => ({ id, unit, language, ...rest }));
+  // Markdown: question parts "(a) …" on their own line need a blank line before them, or CommonMark joins them.
+  const para = (t) => (typeof t === 'string' ? t.replace(/([^\n])\n(?=\((?:[a-e]|i{1,3}|iv|v)\) )/g, '$1\n\n') : t);
+  for (const q of release.questions) for (const n of [q, ...q.children, ...q.children.flatMap((c) => c.alternatives ?? [])]) {
+    n.stem_md = para(n.stem_md);
+    n.solution_md = para(n.solution_md);
+    if (n.passage_md) n.passage_md = para(n.passage_md);
+    if ('model_answer_md' in n.answer) n.answer.model_answer_md = para(n.answer.model_answer_md);
+  }
   for (const d of release.decks) for (const s of d.slides) if (s.check_question_id && !s.check_question_id.startsWith('q_')) s.check_question_id = qid(s.check_question_id);
   // re-solve
   registry.forEach((e, i) => {
@@ -429,7 +437,10 @@ export function build({ dir, release, testsSpec, readmeCheck = true }) {
       const m = LOST.exec(tex);
       if (m) errs.push(`${p}: "${m[2]}" without backslash in ${tex}`);
       if (/[−×÷√≤≥≠]/.test(tex)) errs.push(`${p}: Unicode maths symbol inside $…$: ${tex}`);
+      if (!display && !raw && /\n/.test(tex)) errs.push(`${p}: line break inside inline maths (an escape such as \\ne may have been eaten): ${JSON.stringify(tex)}`);
     }
+    // eslint-disable-next-line no-control-regex
+    if (/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(s)) errs.push(`${p}: control character (an escape such as \\t or \\f was eaten): ${JSON.stringify(s.slice(0, 60))}`);
     if (!raw) {
       if ((s.match(/(?<!\\)\$/g) || []).length % 2) errs.push(`${p}: odd number of $`);
       const outside = s.replace(/\$\$[^$]+\$\$|\$[^$]+\$/g, '');

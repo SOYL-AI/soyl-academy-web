@@ -35,7 +35,8 @@ Run from `platform/`: `npx tsx content/authored/maths/cbse-10-mathematics-ch03/s
 - **KaTeX:** 1282 math strings parse in strict "error" mode; no lost backslashes; KaTeX's `2{,}45{,}000` Indian grouping is used for lakh amounts.
 - **Narration:** 35 slides, max 67 words, mean 53; no symbols or letter abbreviations.
 - **Fixes during the pass:** (1) the l05 model answer contained a garbled half-sentence ("$60 - 2x$… precisely") — rewritten as a clean substitution; (2) the checker missed ₹$2{,}45{,}000$ in the l03 model answer until it learnt KaTeX's `{,}` grouping (content was right); (3) five routine items were relabelled from d1 to d2 after review (q015, q013, q035, q044, q049), bringing d1 to 17%; (4) the pipeline arithmetic lint rejected deliberately false outcomes written as "$0 = 4$" or "$dfrac21 = dfrac51$" in solutions, so they are now written as "left side $0$, right side $4$, and $0 
-e 4$" — the stems may still quote "$0 = 9$" as the claim being tested.
+e 4$" — the stems may still quote "$0 = 9$" as the claim being tested; (5) the hardened validator (control characters, line breaks inside inline maths) then caught that this very rewrite had turned `
+e` into a newline in a single-quoted deck string (Part 2 worked example 3) — fixed to `\ne`.
 - **Originality:** NCERT/RS Aggarwal set-ups were deliberately avoided — no "Aftab seven times / three times", no 100 km cars, no taxi or library fixed-charge-plus-rate pairs, no 0.2x + 0.3y = 1.3, no "number is 4 times the sum of its digits". Contexts: Patna stationery, Hyderabad museum, Eden Gardens tickets, Mysuru Dussehra rides, Bhubaneswar couriers, Assam tea blend, a Lucknow grandmother, a wallet of ₹10/₹20 notes, a coin-equation error to evaluate.
 
 ## Gaps / follow-ups
