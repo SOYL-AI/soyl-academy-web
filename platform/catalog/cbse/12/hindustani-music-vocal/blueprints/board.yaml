@@ -1,0 +1,35 @@
+id: cbse-12-hindustani-music-vocal-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-hindustani-music-vocal
+paper_type: board
+academic_year: "2026-27"
+duration_min: 120
+total_marks: 30
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A
+    instructions: Attempt all questions (1 mark each, multiple choice).
+    items:
+      - {type: mcq, count: 8, marks_each: 1}
+  - id: B
+    title: Section B
+    instructions: Attempt all questions (2 marks each). Each question has an internal choice.
+    items:
+      - {type: short, count: 10, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C
+    instructions: Attempt all questions (6 marks each). Each question has an internal choice.
+    items:
+      - {type: long, count: 4, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-xii-hindustani-music-vocal-2026-27
+notes: >-
+  Theory paper only (30 marks, 2 hours); practical 70 assessed separately. 15 questions: Section A 8 MCQs x 1 (includes match-the-list and
+  two-statement items); Section B 5 x 2, every question with an A/B internal choice; Section C 2 x 6, each with an A/B internal choice (some
+  split 2+2+2 or 3+3). FORMAT MAPPING: 6-mark questions often ask for a composition, tala or theka written in notation (Carnatic or
+  Bhatkhande notation, layakari in dugun/tigun/chaugun); modelled as long, but notation writing needs a music-notation answer type and
+  human/AI evaluation. Match-the-list items are modelled as mcq (single correct code option).

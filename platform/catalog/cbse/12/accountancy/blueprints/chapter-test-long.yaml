@@ -1,0 +1,51 @@
+id: cbse-12-accountancy-chapter-test-long
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-accountancy
+paper_type: chapter-test-long
+academic_year: "2026-27"
+duration_min: 90
+total_marks: 40
+mark_shares: {}
+scope: chapter
+sections:
+  - id: A
+    title: Section A - Objective (1 mark each)
+    instructions: Multiple-choice and assertion-reason questions.
+    items:
+      - {type: mcq, count: 6, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: Section B - Short answer (3 marks each)
+    instructions: Internal choice in one question.
+    items:
+      - {type: short, count: 3, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Long answer (4 marks each)
+    instructions: Internal choice in one question.
+    items:
+      - {type: long, count: 1, marks_each: 4}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Long answer (6 marks each)
+    instructions: Internal choice in one question.
+    items:
+      - {type: long, count: 1, marks_each: 6}
+      - {type: long, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default modelled on the CBSE board pattern (CONTEXT section 9: "use a generic blueprint per board and subject, stored as editable
+
+  config"); not an official CBSE paper. Item types and marks follow the 2026-27 CBSE board style (MCQ/assertion-reason 1, short 2-3, long 5,
+
+  case-based 4, about one-third internal choice) so practice transfers to the board paper. Subject-family override (commerce) of the class
+  default in platform/catalog/cbse/blueprints/<class>/. Mirrors the 1/3/4/6-mark structure of the CBSE Class XII Accountancy, Business
+  Studies and Economics
+
+  papers. FORMAT MAPPING: journal entries, ledger accounts, statements and computations (Accountancy) and diagrams (Economics) are
+  short/long
+
+  items with step marks; a tabular answer type would fit Accountancy better.

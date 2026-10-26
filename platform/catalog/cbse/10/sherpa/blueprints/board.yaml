@@ -1,0 +1,55 @@
+id: cbse-10-sherpa-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-sherpa
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Part A - Reading and objective (24)
+    instructions: Two passages (5 x 1 each), MCQ (10 x 1) and two 2-mark answers.
+    items:
+      - {type: case-based, count: 2, marks_each: 5}
+      - {type: mcq, count: 10, marks_each: 1}
+      - {type: short, count: 2, marks_each: 2}
+  - id: B
+    title: Part B - Grammar (16)
+    instructions: Grammar items (6 x 1) and short answers (5 x 2).
+    items:
+      - {type: short, count: 6, marks_each: 1}
+      - {type: short, count: 5, marks_each: 2}
+  - id: C
+    title: Part B - Literature (25)
+    instructions: Short answers of 2 and 3 marks.
+    items:
+      - {type: short, count: 5, marks_each: 2}
+      - {type: short, count: 5, marks_each: 3}
+  - id: D
+    title: Part B - Writing (15)
+    instructions: Essay, letter and a short composition (5 each).
+    items:
+      - {type: long, count: 3, marks_each: 5}
+source_status: unverified
+source: cbse-x-sherpa-2026-27
+notes: >-
+  Sherpa (134) theory paper, 80 marks, 3 hours. CBSE publishes no 2026-27 sample paper for this language, so the pattern is built from the
+  question-paper design / assessment scheme in the CBSE 2026-27 syllabus (unverified: question order and choices are SOYL assumptions). CBSE
+  design: reading comprehension 24, writing 15, grammar 16, literature 25 (Part A MCQ + Part B descriptive, as Nepali). The CBSE design
+  gives section totals only; the item split inside each section is a SOYL estimate in the usual CBSE language-paper style.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

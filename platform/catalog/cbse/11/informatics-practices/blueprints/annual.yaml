@@ -1,0 +1,54 @@
+id: cbse-11-informatics-practices-annual
+board: cbse
+exam: cbse
+class: 11
+subject_id: cbse-11-informatics-practices
+paper_type: annual
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - 1 mark each
+    instructions: "Q1-21: MCQ, true/false, fill in the blank, assertion-reason."
+    items:
+      - {type: mcq, count: 15, marks_each: 1}
+      - {type: true-false, count: 2, marks_each: 1}
+      - {type: fill-blank, count: 2, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: Section B - 2 marks each
+    instructions: Q22-28. Internal choice in three questions.
+    items:
+      - {type: short, count: 4, marks_each: 2}
+      - {type: short, count: 6, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - 3 marks each
+    instructions: Q29-32. Internal choice in two questions.
+    items:
+      - {type: short, count: 2, marks_each: 3}
+      - {type: short, count: 4, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - 4 marks each
+    instructions: Q33-34. Internal choice in Q34.
+    items:
+      - {type: long, count: 1, marks_each: 4}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+  - id: E
+    title: Section E - 5 marks each
+    instructions: "Q35-37: case/table based SQL and pandas questions. Internal choice in Q37."
+    items:
+      - {type: case-based, count: 2, marks_each: 5}
+      - {type: case-based, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default modelled on the CBSE board pattern, not an official paper: annual exam on the whole syllabus for Class XI
+  informatics-practices, using the layout of the Class XII
+
+  board paper of the same subject (cbse-12-informatics-practices-board, 70 marks, 180 min), as CBSE schools usually do for Class XI school
+  exams.
+
+  Format-mapping notes of the Class XII blueprint apply.

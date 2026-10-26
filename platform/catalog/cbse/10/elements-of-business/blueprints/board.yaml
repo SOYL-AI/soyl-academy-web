@@ -1,0 +1,45 @@
+id: cbse-10-elements-of-business-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-elements-of-business
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Objective (Q1-18)
+    instructions: Multiple choice, 1 mark each.
+    items:
+      - {type: mcq, count: 12, marks_each: 1}
+      - {type: mcq, count: 4, marks_each: 1, internal_choice: {attempt: 1, of: 2}}
+      - {type: assertion-reason, count: 4, marks_each: 1}
+  - id: B
+    title: 3-mark questions (Q19-22)
+    instructions: Answer in 60-80 words.
+    items:
+      - {type: short, count: 2, marks_each: 3}
+      - {type: case-based, count: 2, marks_each: 3}
+  - id: C
+    title: 4-mark questions (Q23-26)
+    instructions: Answer in 80-100 words.
+    items:
+      - {type: long, count: 3, marks_each: 4}
+      - {type: case-based, count: 1, marks_each: 4}
+  - id: D
+    title: 6-mark questions (Q27-30)
+    instructions: Answer in 100-150 words. Internal choice in two questions.
+    items:
+      - {type: case-based, count: 1, marks_each: 6}
+      - {type: long, count: 1, marks_each: 6}
+      - {type: long, count: 4, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-x-elements-of-business-2026-27
+notes: >-
+  Theory 70 + project 30. 30 questions: Q1-18 MCQ 1 mark (four assertion-reason; internal choice in two), Q19-22 3 marks (60-80 words),
+  Q23-26 4 marks (80-100 words), Q27-30 6 marks (100-150 words; internal choice in two). Text/case-based items (Read the following text...)
+  appear among the 3-, 4- and 6-mark questions and are modelled as case-based. CBSE labels all constructed answers "short answer"; 4- and
+  6-mark items are modelled as long by word limit.

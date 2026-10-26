@@ -1,0 +1,58 @@
+id: cbse-12-persian-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-persian
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading and Comprehension (10)
+    instructions: Q1 unseen passage, answers and title (5 x 2).
+    items:
+      - {type: case-based, count: 1, marks_each: 10}
+  - id: B
+    title: Section B - Writing (20)
+    instructions: >-
+      Q2 letter (5); Q3 paragraph of about 50 words on one topic (5); Q4 summary of one lesson in Urdu/Hindi/English (6); Q5 passage with
+      MCQ (4).
+    items:
+      - {type: long, count: 1, marks_each: 5}
+      - {type: long, count: 1, marks_each: 5}
+      - {type: long, count: 1, marks_each: 6}
+      - {type: source-based, count: 1, marks_each: 4}
+  - id: C
+    title: Section C - Applied Grammar (20)
+    instructions: Q6 change of tense (5 x 1); Q7-Q9 grammar and translation items.
+    items:
+      - {type: short, count: 20, marks_each: 1}
+  - id: D
+    title: Section D - Literature (30)
+    instructions: Q10 translate any two passages (5 each); Q11 MCQ (5 x 1); Q12 translate one passage (5); Q13 explain any five couplets (5 x 2).
+    items:
+      - {type: source-based, count: 3, marks_each: 5, internal_choice: {attempt: 2, of: 3}}
+      - {type: mcq, count: 5, marks_each: 1}
+      - {type: source-based, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 7, marks_each: 2, internal_choice: {attempt: 5, of: 7}}
+source_status: unverified
+source: cbse-sqp-xii-persian-2026-27
+notes: >-
+  Persian (123) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Sections (printed in the
+  SQP): A reading 10, B writing 20, C applied grammar 20, D literature 30. Q7-Q9 marks in Section C are not legible; modelled as 1-mark
+  grammar/translation items.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

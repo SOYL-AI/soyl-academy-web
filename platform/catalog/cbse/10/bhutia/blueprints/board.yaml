@@ -1,0 +1,49 @@
+id: cbse-10-bhutia-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-bhutia
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Part A - Objective (20)
+    instructions: Four sets of five MCQs (reading and textbook).
+    items:
+      - {type: case-based, count: 2, marks_each: 5}
+      - {type: mcq, count: 10, marks_each: 1}
+  - id: B
+    title: Part B - Writing (15)
+    instructions: Two composition tasks (5 each) and translation English to Bhutia (5).
+    items:
+      - {type: long, count: 3, marks_each: 5}
+  - id: C
+    title: Part B - Textbook (45)
+    instructions: Short-answer sets (3 x (5 x 2)), a 5-mark long answer (Tshig chey thamchey) and two sets of 1-mark items (5 x 1).
+    items:
+      - {type: short, count: 15, marks_each: 2}
+      - {type: long, count: 1, marks_each: 5}
+      - {type: short, count: 10, marks_each: 1}
+source_status: unverified
+source: cbse-x-bhutia-2026-27
+notes: >-
+  Bhutia (095) theory paper, 80 marks, 3 hours. CBSE publishes no 2026-27 sample paper for this language, so the pattern is built from the
+  question-paper design / assessment scheme in the CBSE 2026-27 syllabus (unverified: question order and choices are SOYL assumptions).
+  Question-type table printed in the CBSE syllabus: Part A objective 20 (four MCQ sets of 5); Part B descriptive 60 (three 5-mark
+  writing/translation tasks, short-answer sets of 2 x 5, a 5-mark long answer and 1-mark items).
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

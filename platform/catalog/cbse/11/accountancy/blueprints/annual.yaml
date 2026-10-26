@@ -1,0 +1,48 @@
+id: cbse-11-accountancy-annual
+board: cbse
+exam: cbse
+class: 11
+subject_id: cbse-11-accountancy
+paper_type: annual
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.4
+  application: 0.3
+  analysis+evaluation: 0.3
+scope: syllabus
+sections:
+  - id: A
+    title: Part A - Accounting for Partnership Firms and Companies (60)
+    instructions: >-
+      Q1-16 objective (1 mark), Q17-20 3 marks, Q21-22 4 marks, Q23-26 6 marks. Internal choice in one 3-mark, one 4-mark and two 6-mark
+      questions.
+    items:
+      - {type: mcq, count: 15, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: short, count: 3, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 1, marks_each: 4}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 6}
+      - {type: long, count: 4, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+  - id: B
+    title: Part B - Analysis of Financial Statements (20)
+    instructions: Q27-30 objective (1 mark), Q31-32 3 marks, Q33 4 marks, Q34 6 marks (cash flow statement). Internal choice in Q31 and Q33.
+    items:
+      - {type: mcq, count: 3, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: short, count: 1, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 1, marks_each: 6}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default modelled on the CBSE board pattern, not an official paper: annual exam on the whole syllabus for Class XI accountancy, using
+  the layout of the Class XII
+
+  board paper of the same subject (cbse-12-accountancy-board, 80 marks, 180 min), as CBSE schools usually do for Class XI school exams.
+
+  Format-mapping notes of the Class XII blueprint apply.

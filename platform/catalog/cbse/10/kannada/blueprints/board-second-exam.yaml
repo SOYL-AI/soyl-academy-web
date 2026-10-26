@@ -1,0 +1,60 @@
+id: cbse-10-kannada-board-second-exam
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-kannada
+paper_type: board-second-exam
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading and comprehension (20)
+    instructions: Q1-Q2 unseen passages (5 x 1 each); Q3 prose extract and Q4 poem extract from the textbook, one-sentence answers / MCQ (5 x 1 each).
+    items:
+      - {type: case-based, count: 2, marks_each: 5}
+      - {type: source-based, count: 2, marks_each: 5}
+  - id: B
+    title: Section B - Applied grammar and supplementary reader (20)
+    instructions: Q5 choose the correct answer (10 x 1); Q6 as directed (5 x 1); Q7 supplementary reader (5 x 1).
+    items:
+      - {type: mcq, count: 10, marks_each: 1}
+      - {type: short, count: 5, marks_each: 1}
+      - {type: short, count: 5, marks_each: 1}
+  - id: C
+    title: Section C - Writing (12)
+    instructions: Q8 letter, Q9 report, Q10 third writing task (4 each).
+    items:
+      - {type: long, count: 3, marks_each: 4}
+  - id: D
+    title: Section D - Textbook study (28)
+    instructions: >-
+      Q11 answers in two sentences (4 x 2); Q12 answers in 5-6 sentences (2 x 3); Q13 explanation with context (2 x 3); Q14 prose and Q15
+      poetry answers in 8-10 sentences (4 each).
+    items:
+      - {type: short, count: 4, marks_each: 2}
+      - {type: short, count: 4, marks_each: 3}
+      - {type: long, count: 2, marks_each: 4}
+source_status: verified
+source: cbse-sqp-x-kannada-2026-27
+notes: >-
+  Second (May) board exam: CBSE has published no separate sample paper or design for the second exam; the 14-02-2026 notification makes it
+  an improvement / compartment exam on the same subject, so this blueprint repeats the February pattern on the full syllabus (assumption,
+  re-check when CBSE publishes a second-exam SQP).
+
+  Kannada (015) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Part 1 (40): A reading and
+  comprehension 20, B applied grammar and supplementary reading 20. Part 2 (40): C writing 12, D textbook study 28.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

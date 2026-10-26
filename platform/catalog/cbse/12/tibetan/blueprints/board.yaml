@@ -1,0 +1,54 @@
+id: cbse-12-tibetan-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-tibetan
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Applied Grammar (15)
+    instructions: Grammar MCQ and short answers.
+    items:
+      - {type: mcq, count: 10, marks_each: 1}
+      - {type: short, count: 5, marks_each: 1}
+  - id: B
+    title: Section B - Reading Comprehension (10)
+    instructions: Unseen passage.
+    items:
+      - {type: case-based, count: 1, marks_each: 10}
+  - id: C
+    title: Section C - Essay and Letter Writing (20)
+    instructions: Essay on one topic (10); letter (10).
+    items:
+      - {type: long, count: 2, marks_each: 10, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 10, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Literature (35)
+    instructions: Poetry (2 + 2 + 3), prose, story and biography questions with choice.
+    items:
+      - {type: short, count: 8, marks_each: 2}
+      - {type: short, count: 5, marks_each: 3}
+      - {type: long, count: 1, marks_each: 4}
+source_status: unverified
+source: cbse-sqp-xii-tibetan-2026-27
+notes: >-
+  Tibetan (117) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Section totals printed in
+  the SQP: A applied grammar 15, B reading comprehension 10, C essay and letter writing 20, D literature 35 (poetry 2 + 2 + 3, prose,
+  stories, biographies). Question-level split is estimated.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

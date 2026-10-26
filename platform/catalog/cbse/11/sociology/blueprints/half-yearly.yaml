@@ -1,0 +1,50 @@
+id: cbse-11-sociology-half-yearly
+board: cbse
+exam: cbse
+class: 11
+subject_id: cbse-11-sociology
+paper_type: half-yearly
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.375
+  application: 0.4
+  analysis+evaluation: 0.225
+scope: half-syllabus
+sections:
+  - id: A
+    title: Section A - 1 mark each
+    instructions: "Q1-16: MCQ, assertion-reason and two passages (Q11-12, Q13-14)."
+    items:
+      - {type: mcq, count: 6, marks_each: 1}
+      - {type: assertion-reason, count: 6, marks_each: 1}
+      - {type: case-based, count: 2, marks_each: 2}
+  - id: B
+    title: Section B - Very short answer (2 marks each)
+    instructions: Q17-25, 30 words. Internal choice in two questions.
+    items:
+      - {type: short, count: 7, marks_each: 2}
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Short answer (4 marks each)
+    instructions: Q26-32, 80 words. Internal choice in one question.
+    items:
+      - {type: long, count: 6, marks_each: 4}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Long answer (6 marks each)
+    instructions: Q33 data/graphic based, Q34-35 extract based; 200 words.
+    items:
+      - {type: case-based, count: 1, marks_each: 6}
+      - {type: long, count: 1, marks_each: 6}
+      - {type: source-based, count: 1, marks_each: 6}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default modelled on the CBSE board pattern, not an official paper: half-yearly exam on the first half of the syllabus for Class XI
+  sociology, using the layout of the Class XII
+
+  board paper of the same subject (cbse-12-sociology-board, 80 marks, 180 min), as CBSE schools usually do for Class XI school exams.
+
+  Format-mapping notes of the Class XII blueprint apply.

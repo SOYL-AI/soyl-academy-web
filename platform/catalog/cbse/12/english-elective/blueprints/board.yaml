@@ -1,0 +1,52 @@
+id: cbse-12-english-elective-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-english-elective
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading (20)
+    instructions: Q1 unseen passage (12 x 1); Q2 unseen poem (4 x 1); Q3 data/visual-based passage (4 x 1).
+    items:
+      - {type: case-based, count: 1, marks_each: 12}
+      - {type: case-based, count: 2, marks_each: 4}
+  - id: B
+    title: Section B - Applied Grammar and Writing (28)
+    instructions: Q4 transformation, any eight (8 x 1); Q5 any three of four writing tasks in 120-150 words (3 x 5); Q6 one further writing task (5).
+    items:
+      - {type: short, count: 8, marks_each: 1}
+      - {type: long, count: 4, marks_each: 5, internal_choice: {attempt: 3, of: 4}}
+      - {type: long, count: 1, marks_each: 5}
+  - id: C
+    title: Section C - Textbook (32)
+    instructions: >-
+      Q7 (I) and (II) one of two extracts each (6 each); Q8 and Q11 one of two (30-40 words, 2); Q9 and Q12 one of two (40-50 words, 3); Q10
+      and Q13 one of two (120-150 words, 5).
+    items:
+      - {type: source-based, count: 4, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 4, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-xii-english-elective-2026-27
+notes: >-
+  English Elective (001) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Sections: A
+  reading 20, B applied grammar and writing 28, C textbook 32. Every Section C question offers two alternatives (one attempted).
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

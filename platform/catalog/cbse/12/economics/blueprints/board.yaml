@@ -1,0 +1,58 @@
+id: cbse-12-economics-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-economics
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.4
+  application: 0.3
+  analysis+evaluation: 0.3
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Macroeconomics (40)
+    instructions: >-
+      Q1-10 objective (1 mark; one assertion-reason), Q11-12 3 marks (60-80 words), Q13-15 4 marks (80-100 words), Q16-17 6 marks (100-150
+      words). One text/data-based question and internal choice in one 3-, one 4- and one 6-mark question.
+    items:
+      - {type: mcq, count: 9, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: short, count: 1, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 4}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: case-based, count: 1, marks_each: 6}
+      - {type: long, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+  - id: B
+    title: Section B - Indian Economic Development (40)
+    instructions: >-
+      Q18-27 objective (1 mark; one assertion-reason; Q19 match-the-column), Q28-29 3 marks (60-80 words), Q30-32 4 marks (80-100 words),
+      Q33-34 6 marks (100-150 words). One text/data-based question and internal choice in one 3-, one 4- and one 6-mark question.
+    items:
+      - {type: mcq, count: 9, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: case-based, count: 1, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 4}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+      - {type: case-based, count: 1, marks_each: 6}
+source_status: verified
+source: cbse-sqp-xii-economics-2026-27
+notes: >-
+  34 questions in two sections of 40: A Macroeconomics (Q1-17), B Indian Economic Development (Q18-34). Paper-wide: 20 x 1 MCQ,
+
+  4 x 3, 6 x 4, 4 x 6. Internal choice in 2026-27 SQP: Q11, Q13, Q17 (Section A) and Q29, Q32, Q33 (Section B). Text-based items: Q16 (6
+
+  marks, Section A) and Q28 (3 marks) and Q34 (6 marks, Section B) are mapped to case-based. Competency weights (design table):
+
+  remembering/understanding 40%, applying 30%, analysing/evaluating/creating 30%. FORMAT MAPPING: match-the-column (Q19) and
+
+  chronological-ordering items are coded-option MCQs (mcq); diagram/graph-reading items (e.g. Q6) and cartoon-based items (Q12) need image
+
+  assets; national-income/multiplier numericals are mapped to short/long with working. Visually impaired candidates get substitute questions
+  for items with visual input (not modelled).

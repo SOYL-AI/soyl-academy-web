@@ -1,0 +1,58 @@
+id: cbse-11-psychology-annual
+board: cbse
+exam: cbse
+class: 11
+subject_id: cbse-11-psychology
+paper_type: annual
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares:
+  recall+understanding: 0.5
+  application: 0.3571
+  analysis+evaluation: 0.1429
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - 1 mark each
+    instructions: Q1-14, answer as directed. Two assertion-reason items.
+    items:
+      - {type: mcq, count: 12, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: Section B - Very short answer I (2 marks each)
+    instructions: Q15-19, 30 words. Internal choice in one question.
+    items:
+      - {type: short, count: 4, marks_each: 2}
+      - {type: short, count: 2, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Short answer II (3 marks each)
+    instructions: Q20-23, 60 words. Internal choice in one question.
+    items:
+      - {type: short, count: 3, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Long answer I (4 marks each)
+    instructions: Q24-27, 120 words. Internal choice in one question.
+    items:
+      - {type: long, count: 3, marks_each: 4}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+  - id: E
+    title: Section E - Long answer II (6 marks each)
+    instructions: Q28-29, 200 words. Both have an internal choice.
+    items:
+      - {type: long, count: 4, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+  - id: F
+    title: Section F - Case based (3 marks per case)
+    instructions: "Q30-33: two passages, each with a 1-mark (20 words) and a 2-mark (30 words) question."
+    items:
+      - {type: case-based, count: 2, marks_each: 3}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default modelled on the CBSE board pattern, not an official paper: annual exam on the whole syllabus for Class XI psychology, using
+  the layout of the Class XII
+
+  board paper of the same subject (cbse-12-psychology-board, 70 marks, 180 min), as CBSE schools usually do for Class XI school exams.
+
+  Format-mapping notes of the Class XII blueprint apply.

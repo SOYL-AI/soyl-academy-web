@@ -1,0 +1,53 @@
+id: cbse-10-malayalam-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-malayalam
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading Comprehension (15)
+    instructions: Two unseen passages (8 x 1 and 7 x 1).
+    items:
+      - {type: case-based, count: 1, marks_each: 8}
+      - {type: case-based, count: 1, marks_each: 7}
+  - id: B
+    title: Section B - Creative Writing (14)
+    instructions: Two writing tasks of 5 marks (essay of about one and a half pages; letter/report) and one of 4.
+    items:
+      - {type: long, count: 2, marks_each: 5}
+      - {type: long, count: 1, marks_each: 4}
+  - id: C
+    title: Section C - Grammar (15)
+    instructions: Q4 (I)-(IV) sentence analysis, usage change, error correction, usage (2 x 1 each); choose and write the correct form (7 x 1).
+    items:
+      - {type: short, count: 8, marks_each: 1}
+      - {type: mcq, count: 7, marks_each: 1}
+  - id: D
+    title: Section D - Literature (36)
+    instructions: Short answers on textbook lessons (9 x 2) and two groups of 3-mark answers (3 x 3 each).
+    items:
+      - {type: short, count: 9, marks_each: 2}
+      - {type: short, count: 6, marks_each: 3}
+source_status: verified
+source: cbse-sqp-x-malayalam-2026-27
+notes: >-
+  Malayalam (012) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Sections: A reading
+  comprehension 15, B creative writing 14, C grammar 15, D literature 36.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

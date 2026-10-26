@@ -1,0 +1,55 @@
+id: cbse-10-english-communicative-board-second-exam
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-english-communicative
+paper_type: board-second-exam
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading Skills (22)
+    instructions: Q1 unseen passage (12); Q2 unseen passage / non-continuous text (10).
+    items:
+      - {type: case-based, count: 1, marks_each: 12}
+      - {type: case-based, count: 1, marks_each: 10}
+  - id: B
+    title: Section B - Writing Skills (22)
+    instructions: >-
+      Q3 application (~50 words, 3). Q4 factual description (~100 words, 4). Q5 letter, A or B (~120 words, 7). Q6 article or story, A or B
+      (~150 words, 8).
+    items:
+      - {type: short, count: 1, marks_each: 3}
+      - {type: long, count: 1, marks_each: 4}
+      - {type: long, count: 2, marks_each: 7, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 8, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Grammar (10)
+    instructions: Q7 gap filling (3 x 1). Q8 omission editing (4 x 1). Q9 reordering (1) and reported speech (2 x 1).
+    items:
+      - {type: fill-blank, count: 3, marks_each: 1}
+      - {type: fill-blank, count: 4, marks_each: 1}
+      - {type: fill-blank, count: 3, marks_each: 1}
+  - id: D
+    title: Section D - Literature Textbook (26)
+    instructions: Q10 any 2 of 3 extracts (4 each). Q11 any 5 of 6 short answers (30-40 words, 2 each). Q12 one of two long answers (~150 words, 8).
+    items:
+      - {type: source-based, count: 3, marks_each: 4, internal_choice: {attempt: 2, of: 3}}
+      - {type: short, count: 6, marks_each: 2, internal_choice: {attempt: 5, of: 6}}
+      - {type: long, count: 2, marks_each: 8, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-x-english-communicative-2026-27
+notes: >-
+  Second (May) board exam: CBSE has published no separate sample paper or design for the second exam; the 14-02-2026 notification makes it
+  an improvement / compartment exam on the same subject, so this blueprint repeats the February pattern on the full syllabus (assumption,
+  re-check when CBSE publishes a second-exam SQP).
+
+  12 questions in four sections. FORMAT MAPPING: unseen passages -> case-based; literature extracts -> source-based; grammar gap filling,
+
+  omission editing and reordering/reporting -> 1-mark fill-blank; the short application (3 marks) -> short; factual description (4), letter
+  (7) and
+
+  article/story (8) -> long writing tasks (no writing type in the contract). No competency weights are published. Theory 80 + IA 20.

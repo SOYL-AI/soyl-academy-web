@@ -1,0 +1,80 @@
+id: cbse-10-social-science-board-second-exam
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-social-science
+paper_type: board-second-exam
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.3
+  application: 0.195
+  analysis+evaluation: 0.5
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - History (20)
+    instructions: "Q1-4 MCQ; Q5 VSA (2); Q6 SA (3, A/B choice); Q7 LA (5, A/B choice); Q8 case-based (4); Q9 map work (2: identify/locate two places)."
+    items:
+      - {type: mcq, count: 4, marks_each: 1}
+      - {type: short, count: 1, marks_each: 2}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: case-based, count: 1, marks_each: 4}
+      - {type: short, count: 2, marks_each: 1}
+  - id: B
+    title: Section B - Geography (20)
+    instructions: >-
+      Q10-15 MCQ (Q15 assertion-reason); Q16 VSA (2); Q17 LA (5, A/B choice); Q18 case-based (4); Q19 map work (3: locate and label three
+      features).
+    items:
+      - {type: mcq, count: 5, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: short, count: 1, marks_each: 2}
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: case-based, count: 1, marks_each: 4}
+      - {type: short, count: 3, marks_each: 1}
+  - id: C
+    title: Section C - Political Science (20)
+    instructions: Q20 assertion-reason; Q21-23 MCQ (Q23 cartoon-based); Q24-25 VSA (2); Q26 SA (3); Q27 LA (5, A/B choice); Q28 case-based (4).
+    items:
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: mcq, count: 3, marks_each: 1}
+      - {type: short, count: 2, marks_each: 2}
+      - {type: short, count: 1, marks_each: 3}
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: case-based, count: 1, marks_each: 4}
+  - id: D
+    title: Section D - Economics (20)
+    instructions: Q29-34 MCQ (Q34 assertion-reason); Q35-37 SA (3); Q38 LA (5, A/B choice, data/table based).
+    items:
+      - {type: mcq, count: 5, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: short, count: 3, marks_each: 3}
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-x-social-science-2026-27
+notes: >-
+  Second (May) board exam: CBSE has published no separate sample paper or design for the second exam; the 14-02-2026 notification makes it
+  an improvement / compartment exam on the same subject, so this blueprint repeats the February pattern on the full syllabus (assumption,
+  re-check when CBSE publishes a second-exam SQP).
+
+  38 questions in four discipline sections of 20 marks (2026-27 SQP layout). Across the paper: 20 x 1 (MCQ incl. 3 assertion-reason,
+  statement-
+
+  combination and chronology items), 4 x 2 VSA (<= 40 words), 5 x 3 SA (<= 60 words), 3 x 4 case-based (three sub-questions, <= 100 words),
+
+  4 x 5 LA (<= 120 words, each with an A/B choice; SA Q6 also has a choice) and map work 5 (History Q9 = 2, Geography Q19 = 3).
+
+  FORMAT MAPPING: map work has no QuestionType; it is modelled as 1-mark 'short' items (one per place to identify/locate) in the History and
+
+  Geography sections - the assembler must keep them together as one map question on one outline map of India (a 'map' type would fix this).
+
+  Picture/cartoon-based MCQs need image assets. Visually impaired candidates get substitute items (not modelled). Competency weights from
+  the
+
+  CBSE syllabus: remembering/understanding 30%, applying 13.25% + map skill 6.25% (folded into application), analysing/evaluating/creating
+  50%
+
+  (the CBSE table totals 99.5%). Theory 80 + internal assessment 20.

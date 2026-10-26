@@ -1,0 +1,51 @@
+id: cbse-11-biology-annual
+board: cbse
+exam: cbse
+class: 11
+subject_id: cbse-11-biology
+paper_type: annual
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares:
+  recall+understanding: 0.5
+  application: 0.3
+  analysis+evaluation: 0.2
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Objective (1 mark each)
+    instructions: Q1-12 MCQ, Q13-16 assertion-reason.
+    items:
+      - {type: mcq, count: 12, marks_each: 1}
+      - {type: assertion-reason, count: 4, marks_each: 1}
+  - id: B
+    title: Section B - Very short answer (2 marks each)
+    instructions: Q17-21. Internal choice (A or B) in three questions.
+    items:
+      - {type: short, count: 2, marks_each: 2}
+      - {type: short, count: 6, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Short answer (3 marks each)
+    instructions: Q22-28. No internal choice in the 2026-27 SQP.
+    items:
+      - {type: short, count: 7, marks_each: 3}
+  - id: D
+    title: Section D - Case based (4 marks each)
+    instructions: Q29-30. Internal choice between two sub-parts (C or D) in each.
+    items:
+      - {type: case-based, count: 2, marks_each: 4}
+  - id: E
+    title: Section E - Long answer (5 marks each)
+    instructions: Q31-33. Each question has an internal choice (A or B).
+    items:
+      - {type: long, count: 6, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default modelled on the CBSE board pattern, not an official paper: annual exam on the whole syllabus for Class XI biology, using the
+  layout of the Class XII
+
+  board paper of the same subject (cbse-12-biology-board, 70 marks, 180 min), as CBSE schools usually do for Class XI school exams.
+
+  Format-mapping notes of the Class XII blueprint apply.

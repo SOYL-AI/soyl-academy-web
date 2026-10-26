@@ -1,0 +1,44 @@
+id: cbse-12-home-science-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-home-science
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares:
+  recall+understanding: 0.4
+  application: 0.3
+  analysis+evaluation: 0.3
+scope: syllabus
+sections:
+  - id: A
+    title: Section A
+    instructions: "Q1-14: multiple-choice questions, 1 mark each."
+    items:
+      - {type: mcq, count: 12, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: Section B
+    instructions: "Q15-21: 2 marks each; Q22-25: 3 marks each. Internal choice in some questions."
+    items:
+      - {type: short, count: 4, marks_each: 2}
+      - {type: short, count: 6, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 2, marks_each: 3}
+      - {type: short, count: 4, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C
+    instructions: "Q26-30: 4 marks each; Q31-32: 5 marks each. Internal choice in some questions."
+    items:
+      - {type: long, count: 4, marks_each: 4}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 1, marks_each: 5}
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-xii-home-science-2026-27
+notes: >-
+  Theory paper only (70 marks, 3 hours); practical 30 is assessed separately. 32 questions: A Q1-14 MCQs x 1 (Q13-14 assertion-reason); B
+  Q15-21 x 2 (choice in Q16, Q20, Q21) and Q22-25 x 3 (choice in Q24, Q25); C Q26-30 x 4 (choice in Q26) and Q31-32 x 5 (choice in Q31).
+  Competency weights from the CBSE 2026-27 design: remembering/understanding 28 (40%), applying 21 (30%), analysing/evaluating/creating 21
+  (30%).

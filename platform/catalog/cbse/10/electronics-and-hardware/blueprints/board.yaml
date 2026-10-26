@@ -1,0 +1,40 @@
+id: cbse-10-electronics-and-hardware-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-electronics-and-hardware
+paper_type: board
+academic_year: "2026-27"
+duration_min: 120
+total_marks: 50
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Objective type questions (24 marks)
+    instructions: >-
+      Q1: Employability Skills, answer any 4 of 6 (1 mark each). Q2-Q5: subject-specific, four blocks of 6 questions, answer any 5 in each
+      (1 mark each).
+    items:
+      - {type: mcq, count: 6, marks_each: 1, internal_choice: {attempt: 4, of: 6}}
+      - {type: mcq, count: 24, marks_each: 1, internal_choice: {attempt: 5, of: 6}}
+  - id: B
+    title: Section B - Subjective type questions (26 marks)
+    instructions: >-
+      Employability Skills: answer any 3 of 5 (2 marks each). Subject-specific: answer any 4 of 6 in 20-30 words (2 marks each) and any 3 of
+      5 in 50-80 words (4 marks each).
+    items:
+      - {type: short, count: 5, marks_each: 2, internal_choice: {attempt: 3, of: 5}}
+      - {type: short, count: 6, marks_each: 2, internal_choice: {attempt: 4, of: 6}}
+      - {type: long, count: 5, marks_each: 4, internal_choice: {attempt: 3, of: 5}}
+source_status: unverified
+source: cbse-sqp-x-electronics-and-hardware-2026-27
+notes: >-
+  Theory paper only (50 marks, 2 hours); practical 50 is assessed separately. Pattern from the CBSE skill-subject sample paper for 420
+  (blueprint page + paper): Part A Employability Skills 10 (objective any 4 of 6 x 1; short answer any 3 of 5 x 2) and Part B Subject Skills
+  40 (objective: four blocks of 6, attempt any 5 in each = 20 x 1; short answer any 4 of 6 x 2 in 20-30 words; long answer any 3 of 5 x 4 in
+  50-80 words). No negative marking. FORMAT MAPPING: the 1-mark objective blocks mix MCQ, fill-in-the-blank, true/false, one-word and
+  matching items; all are modelled as type mcq (the assembler may substitute fill-blank / true-false / match items of 1 mark). "Any k of n"
+  choice is modelled as internal_choice {attempt: k, of: n} on one item group. UNVERIFIED: the 420 SQP and marking scheme URLs on the CBSE
+  skill SQP page returned "The specified URL is inaccessible" on 2026-10-26 (retried). The pattern is assumed to be the common skill-subject
+  pattern shared by every other Class X skill SQP (401-422), which matches the 420 curriculum marks (Part A 10, Part B 40, 2 hours).

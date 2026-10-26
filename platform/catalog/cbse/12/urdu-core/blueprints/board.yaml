@@ -1,0 +1,56 @@
+id: cbse-12-urdu-core-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-urdu-core
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading (5)
+    instructions: Unseen passage of about 150 words with five questions.
+    items:
+      - {type: case-based, count: 1, marks_each: 5}
+  - id: B
+    title: Section A - Writing (25)
+    instructions: Paragraph (10); letter/application (10); advertisement (5).
+    items:
+      - {type: long, count: 2, marks_each: 10, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 10, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 1, marks_each: 5}
+  - id: C
+    title: Section A - Grammar (15)
+    instructions: Parts of speech and usage (10 x 1); other items (5 x 1).
+    items:
+      - {type: short, count: 15, marks_each: 1}
+  - id: D
+    title: Section B - Literature (35)
+    instructions: Prose 20 (7 x 1, an essay-type answer of 100 words 5, 4 x 2) and poetry 15 (three 5-mark answers incl. an essay-type answer on theme).
+    items:
+      - {type: short, count: 7, marks_each: 1}
+      - {type: long, count: 1, marks_each: 5}
+      - {type: short, count: 4, marks_each: 2}
+      - {type: long, count: 3, marks_each: 5}
+source_status: unverified
+source: cbse-sqp-xii-urdu-core-2026-27
+notes: >-
+  Urdu Core (303) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Structure from the CBSE
+  2026-27 Urdu Core design (A comprehension and writing 45: reading 5, writing 25 - paragraph 10, letter 10, advertisement 5 - grammar 15; B
+  literature 35: prose 20, poetry 15). The SQP Nastaliq text extracts out of order (legible markers: 1 x 10, 1 x 8, 2 x 5, 1 x 5, 2 x 4, 5 x
+  1). The item split inside each section is a SOYL estimate in the usual CBSE language-paper style.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

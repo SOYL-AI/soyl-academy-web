@@ -1,0 +1,224 @@
+# CBSE Class 12 Engineering Graphics (046), 2026-27. Theory (drawing paper) 70 + practical 30; the practical is listed with board_assessed: false.
+subject_id: cbse-12-engineering-graphics
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-engineering-graphics-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+  - cbse-sqp-xii-2026-27
+exam_notes: >-
+  Theory 70 marks (3 hours, a drawing paper; first-angle projection, SP 46:2003) + practical 30 (3 hours). Unit I Isometric projections of
+  solids 25, Unit II Machine drawing 45. Paper (2026-27 SQP): Section A 14 MCQs x 1; Section B two case-based sets of four 1-mark MCQs
+  (Q15-18, Q19-22) and one assembly OR dis-assembly drawing of 27 marks (Q23 A/B: half-sectional front view, top/side view, title, scale,
+  projection symbol and six dimensions); Section C an isometric projection of 13 marks (isometric scale + solid/combination of solids) and a
+  machine-part drawing of 8 marks with A/B choice (thread profile or bolt/nut/washer). Internal choice in Unit II per syllabus (between two
+  machine parts; between assembly and dis-assembly). Single board exam (February-March 2027).
+units:
+  - name: "Unit I: Isometric Projections of Solids"
+    marks: 25
+  - name: "Unit II: Machine Drawing"
+    marks: 45
+  - name: Practical
+    marks: 30
+chapters:
+  - id: cbse-12-engineering-graphics-ch01
+    number: 1
+    title: Isometric Scale and Helping Views
+    unit: "Unit I: Isometric Projections of Solids"
+    topics:
+      - id: cbse-12-engineering-graphics-ch01-t01
+        title: Isometric axes, isometric length and isometric scale
+        learning_outcomes:
+          - Explain why isometric length is shorter than true length (ratio about 0.816)
+      - id: cbse-12-engineering-graphics-ch01-t02
+        title: Constructing an isometric scale with 10 mm and 1 mm divisions
+        learning_outcomes:
+          - Construct an isometric scale showing the leading angles
+      - id: cbse-12-engineering-graphics-ch01-t03
+        title: Isometric projection of plane figures (triangle, square, pentagon, hexagon, circle)
+        learning_outcomes:
+          - Draw helping views of plane figures using the isometric scale
+      - id: cbse-12-engineering-graphics-ch01-t04
+        title: Direction of viewing and conventions (no hidden lines)
+        learning_outcomes:
+          - Indicate the direction of viewing and follow isometric conventions
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-engineering-graphics-ch02
+    number: 2
+    title: Isometric Projection of Single Solids
+    unit: "Unit I: Isometric Projections of Solids"
+    topics:
+      - id: cbse-12-engineering-graphics-ch02-t01
+        title: Cube and right regular prisms (triangular to hexagonal)
+        learning_outcomes:
+          - Draw the isometric projection of a prism with its axis perpendicular or parallel to HP/VP
+      - id: cbse-12-engineering-graphics-ch02-t02
+        title: Right regular pyramids and cone
+        learning_outcomes:
+          - Draw the isometric projection of a pyramid or cone in a given position
+      - id: cbse-12-engineering-graphics-ch02-t03
+        title: Cylinder, sphere and hemisphere
+        learning_outcomes:
+          - Draw the isometric projection of curved solids using the isometric scale
+      - id: cbse-12-engineering-graphics-ch02-t04
+        title: Dimensioning isometric projections
+        learning_outcomes:
+          - Dimension an isometric projection correctly
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-engineering-graphics-ch03
+    number: 3
+    title: Isometric Projection of Combinations of Solids
+    unit: "Unit I: Isometric Projections of Solids"
+    topics:
+      - id: cbse-12-engineering-graphics-ch03-t01
+        title: Two solids placed centrally one above the other
+        learning_outcomes:
+          - Draw the isometric projection of a combination of two solids
+      - id: cbse-12-engineering-graphics-ch03-t02
+        title: Base edges parallel or perpendicular to HP/VP
+        learning_outcomes:
+          - Position the combined solids as specified
+      - id: cbse-12-engineering-graphics-ch03-t03
+        title: "Common errors: scale, centring and axis orientation"
+        learning_outcomes:
+          - Identify and avoid common errors in combined-solid drawings
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-engineering-graphics-ch04
+    number: 4
+    title: Screw Threads and Fasteners
+    unit: "Unit II: Machine Drawing"
+    topics:
+      - id: cbse-12-engineering-graphics-ch04-t01
+        title: "Thread terminology and standard profiles: square, knuckle, BSW and metric"
+        learning_outcomes:
+          - Draw standard thread profiles to scale with proportions
+      - id: cbse-12-engineering-graphics-ch04-t02
+        title: External and internal threads
+        learning_outcomes:
+          - Distinguish external and internal threads
+      - id: cbse-12-engineering-graphics-ch04-t03
+        title: Bolts with square and hexagonal heads
+        learning_outcomes:
+          - Draw views of a hexagonal or square-headed bolt for a given nominal diameter
+      - id: cbse-12-engineering-graphics-ch04-t04
+        title: Square and hexagonal nuts and plain washers
+        learning_outcomes:
+          - Draw views of nuts and washers with standard proportions
+      - id: cbse-12-engineering-graphics-ch04-t05
+        title: Nut-bolt assembly with or without washer
+        learning_outcomes:
+          - Draw a nut-and-bolt assembly joining two parts
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-engineering-graphics-ch05
+    number: 5
+    title: Free-hand Sketches of Machine Parts
+    unit: "Unit II: Machine Drawing"
+    topics:
+      - id: cbse-12-engineering-graphics-ch05-t01
+        title: Conventional representation of external and internal threads
+        learning_outcomes:
+          - Sketch the conventional representation of threads
+      - id: cbse-12-engineering-graphics-ch05-t02
+        title: "Studs: plain, square-neck and collar"
+        learning_outcomes:
+          - Sketch types of studs
+      - id: cbse-12-engineering-graphics-ch05-t03
+        title: "Screws: round-head, cheese-head, countersunk, socket-head and grub screws"
+        learning_outcomes:
+          - Sketch types of machine screws
+      - id: cbse-12-engineering-graphics-ch05-t04
+        title: "Rivets: snap, pan, flat and countersunk heads"
+        learning_outcomes:
+          - Sketch types of rivet heads
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-engineering-graphics-ch06
+    number: 6
+    title: "Assembly and Dis-assembly: Bearings"
+    unit: "Unit II: Machine Drawing"
+    topics:
+      - id: cbse-12-engineering-graphics-ch06-t01
+        title: "Open bearing: parts and function"
+        learning_outcomes:
+          - Identify the parts of an open bearing
+      - id: cbse-12-engineering-graphics-ch06-t02
+        title: "Bush bearing: parts and function"
+        learning_outcomes:
+          - Identify the parts of a bush bearing
+      - id: cbse-12-engineering-graphics-ch06-t03
+        title: Half-sectional front view and plan of a bearing assembly
+        learning_outcomes:
+          - Draw the assembled views of a bearing with section conventions
+      - id: cbse-12-engineering-graphics-ch06-t04
+        title: Dis-assembly drawings of bearing parts
+        learning_outcomes:
+          - Draw two orthographic views of two parts of a bearing
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-engineering-graphics-ch07
+    number: 7
+    title: "Assembly and Dis-assembly: Rod Joints"
+    unit: "Unit II: Machine Drawing"
+    topics:
+      - id: cbse-12-engineering-graphics-ch07-t01
+        title: Sleeve and cotter joint for round rods
+        learning_outcomes:
+          - Draw the assembly of a sleeve and cotter joint
+      - id: cbse-12-engineering-graphics-ch07-t02
+        title: Gib and cotter joint for square rods
+        learning_outcomes:
+          - Draw the assembly of a gib and cotter joint
+      - id: cbse-12-engineering-graphics-ch07-t03
+        title: "Sectioning rules: hidden lines in sectional and full views"
+        learning_outcomes:
+          - Apply hatching and hidden-line conventions
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-engineering-graphics-ch08
+    number: 8
+    title: "Assembly and Dis-assembly: Tie-rod and Pipe Joint"
+    unit: "Unit II: Machine Drawing"
+    topics:
+      - id: cbse-12-engineering-graphics-ch08-t01
+        title: Turnbuckle
+        learning_outcomes:
+          - Draw the assembled and dis-assembled views of a turnbuckle
+      - id: cbse-12-engineering-graphics-ch08-t02
+        title: Flange pipe joint
+        learning_outcomes:
+          - Draw the assembled and dis-assembled views of a flange pipe joint
+      - id: cbse-12-engineering-graphics-ch08-t03
+        title: Title, scale, projection symbol and dimensions
+        learning_outcomes:
+          - Complete a drawing sheet with title block, scale, symbol and key dimensions
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-engineering-graphics-ch09
+    number: 9
+    title: "Practical: Machine Blocks and CAD"
+    unit: Practical
+    board_assessed: false
+    topics:
+      - id: cbse-12-engineering-graphics-ch09-t01
+        title: Copying views and drawing the missing view of a machine block
+        learning_outcomes:
+          - Draw the missing view with hidden lines
+      - id: cbse-12-engineering-graphics-ch09-t02
+        title: Sketching the isometric view and modelling the block in 3D
+        learning_outcomes:
+          - Sketch and model a machine block
+      - id: cbse-12-engineering-graphics-ch09-t03
+        title: CAD project on solids or machine blocks (CollabCAD or equivalent)
+        learning_outcomes:
+          - Prepare a CAD project file
+      - id: cbse-12-engineering-graphics-ch09-t04
+        title: Sessional work and viva-voce
+        learning_outcomes:
+          - Maintain sessional work and answer viva questions
+    removed_topics: []
+    literature_texts: []
+removed_topics: []
