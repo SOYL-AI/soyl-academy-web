@@ -33,6 +33,7 @@ few_shot: [exemplars/science/cbse-10-science-ch01/release.json#decks]
 ```
 
 Placeholders the pipeline fills: `{{board}}`, `{{exam}}`, `{{class}}`, `{{subject_name}}`, `{{language}}`, `{{chapter_id}}`, `{{chapter_title}}`, `{{topics_yaml}}`, `{{learning_outcomes}}`, `{{exam_notes}}`, `{{blueprint_yaml}}`, `{{outline_json}}`, `{{json_schema}}`, `{{few_shot}}`, `{{targets}}`, `{{content_json}}` (the generated content a `verify` template checks), `{{id_prefix}}` (question id prefix derived from the chapter id, e.g. `q_cbse10sci_ch01`).
+`few_shot` paths are relative to `content-templates/`; the prefix `authored/` points into `platform/content/authored/` so hand-authored chapters (D-026) can serve as examples without being copied.
 A template must not hard-code anything a placeholder provides. The pipeline records `id@version` on every item it generates.
 
 ## Gate

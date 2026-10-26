@@ -62,6 +62,9 @@ describe('stage 5 deterministic checks', () => {
     expect(checks(mcq({ solution_md: 'The correct answer is (b) because …' }))).toContain('objective.solution');
     expect(checks(mcq({ solution_md: 'The correct answer is (c) because …' }))).toEqual([]);
     expect(checks(mcq({ options: [...options.slice(0, 3), { id: 'd', text_md: 'choice a' }] }))).toContain('objective.options');
+    // Case-distinct options are different answers (genotypes, chemical symbols).
+    const genotypes = ['TT', 'Tt', 'tt', 'A mixture of TT and tt'].map((text_md, i) => ({ id: 'abcd'[i]!, text_md }));
+    expect(checks(mcq({ options: genotypes, solution_md: 'The correct answer is (c) because …' }))).not.toContain('objective.options');
     expect(checks(q({ type: 'fill-blank', stem_md: 'The gas is ___.', answer: { blanks: [{ accepted: ['oxygen'] }] }, solution_md: 'It is hydrogen.' }))).toContain('objective.blanks');
     const match = q({ type: 'match', options: ['1', '2', '3'].map((id) => ({ id, text_md: id })), match_right: ['p', 'q', 'r'].map((id) => ({ id, text_md: id })), answer: { pairs: [{ left_id: '1', right_id: 'p' }, { left_id: '2', right_id: 'p' }] } });
     expect(checks(match)).toEqual(expect.arrayContaining(['objective.match']));
@@ -257,12 +260,22 @@ describe('stage 7 blueprint engine', () => {
     expect(a.tests.map((t) => t.test.paper_type)).toEqual(['chapter-test-short', 'chapter-test-long']);
     const [short, long] = a.tests.map((t) => new Set(t.test.sections.flatMap((s) => s.items.map((i) => i.question_id))));
     expect([...short!].some((id) => long!.has(id))).toBe(false); // disjoint
+    // With an empty bank every paper of the series becomes a generation request (never a silent gap).
+    const seriesPlan = planSubjectTests(p.catalog, science, { series: true, academicYear: '2026-27' });
+    const starved = assembleSubject(seriesPlan, { ...bankFiles, items: [], chapterTests: new Map() });
+    expect(starved.requests.some((x) => x.paper_id === 't_cbse10sci_mock_1')).toBe(true);
+    // From real files, every mock paper is either assembled or requested, however much content exists today.
     const r = await assembleCommand(p, { board: 'cbse', class: 10, subject: 'science' }, { source: 'files', series: true });
-    expect(r.results[0]!.requests.some((x) => x.paper_id === 't_cbse10sci_mock_1')).toBe(true);
+    const res = r.results[0]!;
+    const assembled = new Set(res.tests.map((t) => t.test.id));
+    const requested = new Set(res.requests.map((x) => x.paper_id));
+    expect(assembled.has('t_cbse10sci_mock_1') || requested.has('t_cbse10sci_mock_1')).toBe(true);
     const file = path.join(p.paths.outDir, 'assemble', 'cbse-10-science', 'generation-requests.json');
-    expect(JSON.parse(fs.readFileSync(file, 'utf8')).requests.length).toBeGreaterThan(0);
-    const stages = await p.store.listUnitStages({ stage: 'assemble' });
-    expect(stages.flatMap((s) => Object.values(s.items)).some((i) => i.status === 'pending' && i.key.startsWith('request:'))).toBe(true);
+    expect(JSON.parse(fs.readFileSync(file, 'utf8')).requests.length).toBe(res.requests.length);
+    if (res.requests.length) {
+      const stages = await p.store.listUnitStages({ stage: 'assemble' });
+      expect(stages.flatMap((s) => Object.values(s.items)).some((i) => i.status === 'pending' && i.key.startsWith('request:'))).toBe(true);
+    }
   }, 120_000);
 });
 
