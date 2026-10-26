@@ -1,0 +1,193 @@
+# ISC Class 11 Thai (Modern Foreign Language elective, code 830) - ISC 2028 course, CLASS XI year.
+# Thai is new in the ISC 2028 Modern Foreign Languages syllabus (common syllabus with Chinese, Tibetan, Modern Armenian, Portuguese).
+# CISCE Appendix I (ISC 2028) lists no prescribed textbooks for Thai, so Part 4 of the paper is two translation passages.
+# CISCE has not bifurcated the syllabus, so this file covers the whole Classes XI-XII syllabus.
+# Titles are in English; grammar words are romanised (RTGS-style) with Thai script in brackets.
+subject_id: isc-11-thai
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-mfl, isc-2028-prescribed-books, isc-2028-regulations]
+exam_notes: >-
+  There is no board examination in Class XI: Class XI is year one of the two-year ISC 2028 course and the school sets the
+  Class XI examination on the portion of the syllabus covered during the year. CISCE has not bifurcated this syllabus (the
+  Class XII ISC paper is set on the entire syllabus), so this file covers the whole Classes XI-XII Thai syllabus and nothing is
+  removed. Paper I Theory (3 hours, 80 marks), which the school examination normally follows, has four parts: (1) a short
+  composition in Thai from a choice of subjects; (2) a Thai passage for unprepared translation into English; (3) an unseen
+  Thai passage with questions - candidates may be asked to summarise part of it in Thai, explain individual words, phrases or
+  sentences, and answer comprehension questions (not every question type is set every year); (4) questions on prescribed
+  textbooks - but CISCE Appendix I (ISC 2028) prescribes no textbooks for Thai, so under the syllabus rule for languages
+  without texts Part 4 consists of (a) one passage for translation from Thai into English and (b) one passage for translation
+  from English into Thai. The syllabus asks schools to consult CISCE in time about prescribed textbooks. CISCE does not publish
+  marks per part. Paper II Project Work for Class XI (20 marks, assessed internally by the school during the year): Listening
+  (6) - an unseen passage of about 500 words, a poem or an audio clip heard twice, with objective questions; Speaking (6) - an
+  individual presentation of about three minutes (extempore, declamation, recitation, debate; e.g. narrating an experience,
+  giving instructions, describing, reporting, giving an opinion or a speech) followed by two or three minutes' discussion with
+  the teacher; Writing (8) - one assignment of about 200 words on any aspect of the language studied in Class XI (e.g.
+  describing a process or an event, a summary, an alternative title with justification). CISCE sets no question paper for
+  project work. The syllabus does not list grammar items; the two grammar chapters below cover the script and the structures
+  needed for composition and two-way translation - this breakdown is SOYL's, not CISCE's. Titles are in English with
+  romanisation; full Thai-script titles to be added in language review. CISCE lists topics not chapters; SOYL grouped them
+  into teachable chapters in syllabus order.
+units:
+  - { name: "1. Composition", marks: null }
+  - { name: "2. Unprepared translation into English", marks: null }
+  - { name: "3. Unseen passage", marks: null }
+  - { name: "4. Translation (no textbooks prescribed)", marks: null }
+chapters:
+  - id: isc-11-thai-ch01
+    number: 1
+    title: "Composition"
+    unit: "1. Composition"
+    topics:
+      - id: isc-11-thai-ch01-t01
+        title: "Planning a short composition: outline, paragraphs and linking words"
+        learning_outcomes:
+          - "Make an outline and write a short composition in Thai with a clear introduction, body and conclusion"
+          - "Link ideas with words such as kon uen (ก่อนอื่น), lae (และ), nok jak ni (นอกจากนี้), tae (แต่)"
+      - id: isc-11-thai-ch01-t02
+        title: "Describing people, places and festivals"
+        learning_outcomes:
+          - "Describe a person, a place or a festival such as Songkran or Loi Krathong, or an Indian festival, with adjectives placed after the noun"
+      - id: isc-11-thai-ch01-t03
+        title: "Narrating a past experience"
+        learning_outcomes:
+          - "Narrate a past experience in order, using time words and laeo (แล้ว), koei (เคย) and mua (เมื่อ) to show when things happened"
+      - id: isc-11-thai-ch01-t04
+        title: "Giving and supporting an opinion"
+        learning_outcomes:
+          - "State an opinion with chan khit wa (ฉันคิดว่า) and support it with phro wa (เพราะว่า) and two reasons"
+      - id: isc-11-thai-ch01-t05
+        title: "Everyday subjects: family, school life, food, travel, festivals, health, environment, technology"
+        learning_outcomes:
+          - "Use topic vocabulary accurately to write about everyday subjects, with examples from Thai and Indian life"
+      - id: isc-11-thai-ch01-t06
+        title: "Accuracy: spelling, tone marks and spacing between sentences"
+        learning_outcomes:
+          - "Proof-read one's composition for spelling and tone-mark errors and leave spaces between clauses and sentences, not between words"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-thai-ch02
+    number: 2
+    title: "Grammar (1): the script, tones and the noun phrase"
+    unit: null
+    topics:
+      - id: isc-11-thai-ch02-t01
+        title: "The Thai script: consonants in three classes (high, middle, low), vowel positions and final consonants"
+        learning_outcomes:
+          - "Sort consonants into their class and read syllables whose vowels are written before, after, above or below the consonant"
+      - id: isc-11-thai-ch02-t02
+        title: "The five tones and the tone marks (mai ek, mai tho, mai tri, mai chattawa); live and dead syllables"
+        learning_outcomes:
+          - "Work out the tone of a written syllable from its consonant class, syllable type and tone mark"
+          - "Spell words with the correct tone mark from dictation"
+      - id: isc-11-thai-ch02-t03
+        title: "Word order: subject - verb - object; modifiers after the noun"
+        learning_outcomes:
+          - "Build sentences in subject-verb-object order with adjectives and possessors after the noun (rot khong phom, รถของผม)"
+      - id: isc-11-thai-ch02-t04
+        title: "Classifiers (laksananam): noun + number + classifier; demonstratives ni, nan, non"
+        learning_outcomes:
+          - "Count and point to things using the right classifier for common nouns (khon, tua, lem, an, khan)"
+      - id: isc-11-thai-ch02-t05
+        title: "Pronouns, polite particles (khrap ครับ / kha ค่ะ) and register"
+        learning_outcomes:
+          - "Choose pronouns and polite particles that suit the speaker's gender and the formality of the situation"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-thai-ch03
+    number: 3
+    title: "Grammar (2): time, questions and complex sentences"
+    unit: null
+    topics:
+      - id: isc-11-thai-ch03-t01
+        title: "Time and aspect markers: ja (จะ), kamlang (กำลัง), laeo (แล้ว), koei (เคย), yang (ยัง)"
+        learning_outcomes:
+          - "Show future, ongoing, completed and experienced actions with the right marker, since Thai verbs do not change form"
+      - id: isc-11-thai-ch03-t02
+        title: "Negation and questions: mai (ไม่), mai chai (ไม่ใช่); mai (ไหม), rue plao (หรือเปล่า), chai mai (ใช่ไหม) and question words"
+        learning_outcomes:
+          - "Make sentences negative and form yes-no and question-word questions, answering them in full"
+      - id: isc-11-thai-ch03-t03
+        title: "Comparison: kwa (กว่า), thi sut (ที่สุด), thao kan (เท่ากัน)"
+        learning_outcomes:
+          - "Compare two or more people or things using kwa, thi sut and thao kan"
+      - id: isc-11-thai-ch03-t04
+        title: "Serial verbs, directional verbs (pai, ma), causative hai (ให้) and the passive with thuk (ถูก)"
+        learning_outcomes:
+          - "Combine verbs in series, show direction with pai and ma, express causing with hai and form passive sentences with thuk"
+      - id: isc-11-thai-ch03-t05
+        title: "Complex sentences: phro (เพราะ), tae (แต่), tha ... ko (ถ้า...ก็), mua (เมื่อ), phuea (เพื่อ), thi (ที่) as a relative"
+        learning_outcomes:
+          - "Join clauses to express cause, contrast, condition, time and purpose, and add a relative clause with thi"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-thai-ch04
+    number: 4
+    title: "Translation from Thai into English"
+    unit: "2. Unprepared translation into English"
+    topics:
+      - id: isc-11-thai-ch04-t01
+        title: "Reading for meaning: finding word boundaries in unspaced Thai text"
+        learning_outcomes:
+          - "Divide a line of Thai into words and clauses and identify the subject, verb and object before translating"
+      - id: isc-11-thai-ch04-t02
+        title: "Supplying English tense, number and articles that Thai leaves implicit"
+        learning_outcomes:
+          - "Choose the English tense from time words and aspect markers, and add articles and plurals where English needs them"
+      - id: isc-11-thai-ch04-t03
+        title: "Idioms, classifiers and culture-specific words"
+        learning_outcomes:
+          - "Translate idioms by their meaning and keep or explain culture-specific words where English has no equivalent"
+      - id: isc-11-thai-ch04-t04
+        title: "The second Thai-to-English passage (Part 4a): producing and checking a complete version"
+        learning_outcomes:
+          - "Translate a longer passage completely and fluently, then check it sentence by sentence against the original"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-thai-ch05
+    number: 5
+    title: "Unseen passage (comprehension and summary)"
+    unit: "3. Unseen passage"
+    topics:
+      - id: isc-11-thai-ch05-t01
+        title: "Reading an unseen passage: main idea and key details"
+        learning_outcomes:
+          - "State the main idea of an unseen Thai passage and locate supporting details"
+      - id: isc-11-thai-ch05-t02
+        title: "Explaining words, phrases and sentences in context"
+        learning_outcomes:
+          - "Explain a word, phrase or sentence from the passage in simple Thai, using a synonym or paraphrase"
+      - id: isc-11-thai-ch05-t03
+        title: "Answering comprehension questions in Thai"
+        learning_outcomes:
+          - "Answer questions in complete Thai sentences in one's own words"
+      - id: isc-11-thai-ch05-t04
+        title: "Summarising part of the passage in Thai"
+        learning_outcomes:
+          - "Summarise a section of the passage in Thai within a length limit, keeping only the essential points"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-thai-ch06
+    number: 6
+    title: "Translation from English into Thai"
+    unit: "4. Translation (no textbooks prescribed)"
+    topics:
+      - id: isc-11-thai-ch06-t01
+        title: "Restructuring English sentences: modifiers after nouns, time words and classifiers"
+        learning_outcomes:
+          - "Translate English sentences into Thai with modifiers after the noun, numbers with classifiers and time words in natural positions"
+      - id: isc-11-thai-ch06-t02
+        title: "Expressing English tenses, passives and relative clauses in Thai"
+        learning_outcomes:
+          - "Use aspect markers for English tenses, thuk mainly for adverse passives, and thi for relative clauses"
+      - id: isc-11-thai-ch06-t03
+        title: "Choosing register: pronouns and polite particles"
+        learning_outcomes:
+          - "Decide from the English context which pronouns and particles are appropriate and use them consistently"
+      - id: isc-11-thai-ch06-t04
+        title: "Translating a continuous passage (Part 4b) and checking spelling and tone marks"
+        learning_outcomes:
+          - "Translate a short English passage into natural Thai and proof-read it for spelling and tone marks"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

@@ -1,0 +1,303 @@
+# ISC Class 11 German (Modern Foreign Language elective, code 829) - ISC 2028 course, CLASS XI year.
+# ISC 2028 has a new German syllabus (CEFR B1+): no prescribed literary texts, only a suggested coursebook.
+# CISCE has not bifurcated the syllabus, so this file covers the whole Classes XI-XII syllabus.
+subject_id: isc-11-german
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-mfl, isc-2028-prescribed-books, isc-2028-regulations]
+exam_notes: >-
+  There is no board examination in Class XI: Class XI is year one of the two-year ISC 2028 course and the school sets the
+  Class XI examination on the portion of the syllabus covered during the year. CISCE has not bifurcated this syllabus (the
+  Class XII ISC paper is set on the entire syllabus), so this file covers the whole Classes XI-XII German syllabus and nothing
+  is removed. The ISC 2028 syllabus aims at intermediate (CEFR B1+) competence in reading, writing, listening and speaking.
+  Paper I Theory (3 hours, 80 marks), which the school examination normally follows: (1) Composition (20) - one composition
+  of 180-200 words in German from a choice of topics: a narrative recounting a past event (Erzählungstext), a descriptive text
+  (Beschreibungstext) or a critique of a book or film; (2) Email and letter writing (20) - one letter or email of 120-150 words,
+  formal (formell) or semi-formal (halb formell), with layout, subject line, introduction and conclusion assessed;
+  (3) Comprehension (30) - two or three reading tasks on informative German texts: practical documents such as brochures,
+  leaflets or prospectuses, and simplified general-interest media articles of about 300-350 words, with multiple-choice,
+  true/false and short written answers; (4) Grammar (10) - short situation-based tasks (fill in the blanks, multiple choice,
+  sentence transformation such as reported speech or joining with a given connector) testing functional use of the listed
+  grammar. Written work is graded with CISCE descriptors for content, coherence and cohesion, creativity (composition) or
+  register (letter), vocabulary and grammar. Paper II Project Work for Class XI (20 marks, assessed internally by the subject
+  teacher in four assessments during the year): Listening (10) - two or three short native-speaker audio clips of 2-3 minutes,
+  each played twice, with objective questions (MCQ, true/false with justification, matching); Speaking (10) - a 12-15 minute
+  test in three tasks: a directed interview about daily life, a problem-solving role play, and a prepared 3-5 minute point of
+  view on a contemporary issue based on a short article (20 minutes' preparation). The Annexe themes (culture; health and
+  well-being; education and future plans; community and society; the planet; science and technology) are to be used across
+  all four skills: SOYL gives them three theme chapters at the end. The syllabus item 'Präsens (present subjunctive) to express
+  feelings and obligations' is ambiguous; SOYL teaches it as present-tense modal verbs and their Konjunktiv II forms (sollte,
+  müsste). Suggested coursebook: Beste Freunde B1.2 (Hueber, published in India by Goyal) for both years; optional reference
+  Deutsch im Einsatz (Cambridge University Press). CISCE lists topics not chapters; SOYL grouped them into teachable chapters
+  in syllabus order.
+units:
+  - { name: "1. Composition", marks: 20 }
+  - { name: "2. Email and letter writing", marks: 20 }
+  - { name: "3. Comprehension", marks: 30 }
+  - { name: "4. Grammar", marks: 10 }
+chapters:
+  - id: isc-11-german-ch01
+    number: 1
+    title: "Composition (Aufsatz)"
+    unit: "1. Composition"
+    topics:
+      - id: isc-11-german-ch01-t01
+        title: "Planning a 180-200 word composition: Einleitung, Hauptteil, Schluss"
+        learning_outcomes:
+          - "Draw up a plan and write a composition in German of 180-200 words with an introduction, a main part and a conclusion"
+          - "Link ideas with zuerst, danach, außerdem, trotzdem, zum Schluss, keeping the verb in second position"
+      - id: isc-11-german-ch01-t02
+        title: "Narrative text (Erzählungstext): recounting a past event"
+        learning_outcomes:
+          - "Narrate a real or imagined past event using the Präteritum and Perfekt, and the Plusquamperfekt for earlier actions"
+          - "Sequence events with als, nachdem, bevor and time adverbs such as plötzlich, am nächsten Tag"
+      - id: isc-11-german-ch01-t03
+        title: "Descriptive text (Beschreibungstext): a person, a place, an event or a picture"
+        learning_outcomes:
+          - "Describe a person, place or festival with adjectives declined correctly after der-, ein- and no article"
+      - id: isc-11-german-ch01-t04
+        title: "Critique of a book or film (Buch- oder Filmkritik)"
+        learning_outcomes:
+          - "Write a critique that presents the work, summarises it briefly and gives a justified personal evaluation"
+          - "Express opinions with meiner Meinung nach, ich finde, dass ..., mir hat gefallen / nicht gefallen, dass ..."
+      - id: isc-11-german-ch01-t05
+        title: "Meeting the grade criteria: originality, range of vocabulary and grammar, self-correction"
+        learning_outcomes:
+          - "Revise a draft to replace memorised or repeated expressions with varied vocabulary and subordinate clauses"
+          - "Find and correct errors of word order, case endings and verb forms in one's own composition"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-german-ch02
+    number: 2
+    title: "Email and letter writing (E-Mail und Brief)"
+    unit: "2. Email and letter writing"
+    topics:
+      - id: isc-11-german-ch02-t01
+        title: "Layout of a formal letter and email: Betreff, Anrede, Grußformel, date and place"
+        learning_outcomes:
+          - "Lay out a letter or email of 120-150 words with a subject line, a correct salutation (Sehr geehrte Damen und Herren) and closing (Mit freundlichen Grüßen)"
+      - id: isc-11-german-ch02-t02
+        title: "Formal letters: application, complaint and request for information"
+        learning_outcomes:
+          - "Write a formal application or complaint that states the purpose, gives details and asks for a specific response"
+          - "Ask for information politely with indirect questions and Konjunktiv II (Könnten Sie mir bitte mitteilen, ob ...)"
+      - id: isc-11-german-ch02-t03
+        title: "Semi-formal emails (halb formell): writing to a teacher, host family or organiser"
+        learning_outcomes:
+          - "Write a semi-formal email to make arrangements, apologise or ask for help, using a friendly but polite tone"
+      - id: isc-11-german-ch02-t04
+        title: "Register: Sie and du, formal and semi-formal expressions"
+        learning_outcomes:
+          - "Choose Sie or du, the matching possessives and fixed expressions to suit the situation without mixing registers"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-german-ch03
+    number: 3
+    title: "Comprehension (Leseverstehen)"
+    unit: "3. Comprehension"
+    topics:
+      - id: isc-11-german-ch03-t01
+        title: "Practical documents: brochures, leaflets, prospectuses and notices"
+        learning_outcomes:
+          - "Locate specific information (dates, prices, conditions, opening hours) in a practical document"
+      - id: isc-11-german-ch03-t02
+        title: "Extracting and comparing information from more than one document"
+        learning_outcomes:
+          - "Compare two offers or documents and choose the one that suits a given person, justifying the choice"
+      - id: isc-11-german-ch03-t03
+        title: "Simplified media articles of 300-350 words: main idea, details and the writer's view"
+        learning_outcomes:
+          - "State the main idea of an article, identify supporting details and recognise the writer's opinion"
+      - id: isc-11-german-ch03-t04
+        title: "Answering question types: multiple choice, richtig / falsch with justification, short written answers"
+        learning_outcomes:
+          - "Answer multiple-choice and true/false questions accurately, justifying true/false answers from the text"
+          - "Write short answers in correct German in one's own words"
+      - id: isc-11-german-ch03-t05
+        title: "Working out meaning from context: compound nouns, word families and connectors"
+        learning_outcomes:
+          - "Break compound nouns into their parts to deduce meaning and use connectors to follow the argument"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-german-ch04
+    number: 4
+    title: "Grammatik (1): Zeiten und Modi"
+    unit: "4. Grammar"
+    topics:
+      - id: isc-11-german-ch04-t01
+        title: "Präteritum of regular and irregular verbs"
+        learning_outcomes:
+          - "Form the Präteritum of regular verbs and of common irregular and mixed verbs (ging, kam, sah, dachte, wusste)"
+          - "Use the Präteritum in written narrative and the Perfekt in conversation"
+      - id: isc-11-german-ch04-t02
+        title: "Plusquamperfekt and past tenses in narrative"
+        learning_outcomes:
+          - "Form the Plusquamperfekt with hatte / war and use it with nachdem to show an earlier action"
+      - id: isc-11-german-ch04-t03
+        title: "Dependent clauses in the future and past tenses"
+        learning_outcomes:
+          - "Put the finite verb at the end of a subordinate clause in the Futur, Perfekt and Präteritum (..., dass er morgen kommen wird / gekommen ist)"
+      - id: isc-11-german-ch04-t04
+        title: "Konjunktiv II: polite requests, wishes, advice, hypotheses and imaginary situations (könntest, würde, wäre, hätte; wenn ich ... wäre)"
+        learning_outcomes:
+          - "Form Konjunktiv II with würde + infinitive and the forms wäre, hätte, könnte"
+          - "Express a polite request, a wish or an imaginary situation (Was würdest du machen, wenn du ein Vogel wärst?)"
+      - id: isc-11-german-ch04-t05
+        title: "Expressing feelings and obligations in the present: modal verbs and sollte / müsste"
+        learning_outcomes:
+          - "Express obligation, advice and feelings with müssen, sollen, dürfen and the softer forms sollte, müsste"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-german-ch05
+    number: 5
+    title: "Grammatik (2): Passiv, Partizip und Deklination"
+    unit: "4. Grammar"
+    topics:
+      - id: isc-11-german-ch05-t01
+        title: "Passiv in four tenses: Präsens, Präteritum, Perfekt and Plusquamperfekt (wird / wurde / ist ... worden / war ... worden)"
+        learning_outcomes:
+          - "Transform active sentences into the passive in all four tenses and back, using von for the agent"
+      - id: isc-11-german-ch05-t02
+        title: "Passiv Präsens with modal verbs (muss repariert werden)"
+        learning_outcomes:
+          - "Write rules and instructions with a modal verb + past participle + werden"
+      - id: isc-11-german-ch05-t03
+        title: "Partizip I as an adjective (ein lachendes Baby, der bellende Hund)"
+        learning_outcomes:
+          - "Form Partizip I from a verb and decline it like an adjective after der- and ein-words"
+      - id: isc-11-german-ch05-t04
+        title: "Nominalisierung der Verben (lesen -> das Lesen)"
+        learning_outcomes:
+          - "Turn verbs into neuter nouns and use them with prepositions (beim Lesen, zum Schwimmen)"
+      - id: isc-11-german-ch05-t05
+        title: "N-Deklination (der Junge - den Jungen - dem Jungen)"
+        learning_outcomes:
+          - "Recognise weak masculine nouns and add -n / -en in the accusative, dative and genitive"
+      - id: isc-11-german-ch05-t06
+        title: "Prepositions with the genitive: während, außerhalb, wegen"
+        learning_outcomes:
+          - "Use während, außerhalb and wegen with correct genitive article and noun endings"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-german-ch06
+    number: 6
+    title: "Grammatik (3): Satzbau und Nebensätze"
+    unit: "4. Grammar"
+    topics:
+      - id: isc-11-german-ch06-t01
+        title: "Indirect questions with ob and W-words (Kannst du mir sagen, ob du morgen kommst?)"
+        learning_outcomes:
+          - "Turn direct questions into indirect questions with ob or a question word and the verb at the end"
+      - id: isc-11-german-ch06-t02
+        title: "Two-part conjunctions: nicht nur ... sondern auch, weder ... noch"
+        learning_outcomes:
+          - "Combine two ideas with nicht nur ... sondern auch and weder ... noch"
+      - id: isc-11-german-ch06-t03
+        title: "Modal clauses: anstatt ... zu, statt ... zu, statt dass"
+        learning_outcomes:
+          - "Express an alternative action with (an)statt ... zu + infinitive or statt dass + clause"
+      - id: isc-11-german-ch06-t04
+        title: "Temporal clauses with seit / seitdem"
+        learning_outcomes:
+          - "Say how long something has been going on with seit / seitdem and the correct tense"
+      - id: isc-11-german-ch06-t05
+        title: "Word order review: main clause, subordinate clause first, and reported statements with dass"
+        learning_outcomes:
+          - "Write complex sentences with correct verb position when the subordinate clause comes first (Wenn ich Zeit habe, komme ich.)"
+          - "Report what someone said with dass and the correct change of pronouns"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-german-ch07
+    number: 7
+    title: "Themen (1): Kultur, Gesundheit und Wohlbefinden"
+    unit: null
+    topics:
+      - id: isc-11-german-ch07-t01
+        title: "Entertainment: cinema, TV and streaming, gaming, the internet; celebrity culture and role models"
+        learning_outcomes:
+          - "Discuss the role of entertainment in young people's lives and the responsibilities of celebrities, using topic vocabulary"
+      - id: isc-11-german-ch07-t02
+        title: "Identity and culture: style, language, groups and fashion; cultural heritage, monuments, festivals and traditions"
+        learning_outcomes:
+          - "Describe how young people express identity and present a heritage site or festival of Germany or India"
+      - id: isc-11-german-ch07-t03
+        title: "The arts: theatre, music, visual arts, dance, literature and film; access, funding, prizes and diversity"
+        learning_outcomes:
+          - "Give and justify an opinion on public funding of the arts or on representation in films"
+      - id: isc-11-german-ch07-t04
+        title: "Health and fitness: sport in society, fair play, physical and mental health, sleep, self-esteem, healthcare"
+        learning_outcomes:
+          - "Compare individual and team sports and give advice on physical and mental health"
+      - id: isc-11-german-ch07-t05
+        title: "Nutrition: diets and eating habits, food production and the environment, organic food, food waste, fair trade, labelling"
+        learning_outcomes:
+          - "Argue for or against a food-related measure such as clearer food labelling, with examples"
+      - id: isc-11-german-ch07-t06
+        title: "Managing well-being: work-life balance, leisure activities, relaxation and recreation"
+        learning_outcomes:
+          - "Describe one's own balance of study and leisure and suggest ways to reduce stress"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-german-ch08
+    number: 8
+    title: "Themen (2): Bildung, Zukunft, Gemeinschaft und Gesellschaft"
+    unit: null
+    topics:
+      - id: isc-11-german-ch08-t01
+        title: "Life at school: education systems, discipline, workload, time management, school as preparation for life"
+        learning_outcomes:
+          - "Compare the German and Indian school systems and discuss student issues such as workload"
+      - id: isc-11-german-ch08-t02
+        title: "Further and higher education: access and barriers, costs and benefits, vocational training, apprenticeships, gap years"
+        learning_outcomes:
+          - "Weigh the costs and benefits of university study against alternatives such as an apprenticeship (Ausbildung)"
+      - id: isc-11-german-ch08-t03
+        title: "Careers and work: career options, workplaces, unemployment, money versus job satisfaction, volunteering"
+        learning_outcomes:
+          - "Present one's future plans and justify a career choice"
+      - id: isc-11-german-ch08-t04
+        title: "Equality and diversity: inclusion, gender equality, social mobility, prejudice, immigration and integration"
+        learning_outcomes:
+          - "Explain a form of prejudice and propose measures that promote inclusion"
+      - id: isc-11-german-ch08-t05
+        title: "Lifestyle: family and friends, the generation gap, urban, rural and coastal life, overcrowding, isolation, lifestyle choices"
+        learning_outcomes:
+          - "Compare life in a city and in a village and discuss changing patterns of family life"
+      - id: isc-11-german-ch08-t06
+        title: "Society: law and order, local and national government, national and global citizenship, rights and responsibilities"
+        learning_outcomes:
+          - "Explain the rights and responsibilities of a citizen with examples from one's own community"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-german-ch09
+    number: 9
+    title: "Themen (3): Umwelt, Wissenschaft und Technik"
+    unit: null
+    topics:
+      - id: isc-11-german-ch09-t01
+        title: "The environment: climate change, pollution and solutions, biodiversity, treatment of animals, population growth"
+        learning_outcomes:
+          - "Describe an environmental problem, its causes and possible solutions by individuals and governments"
+      - id: isc-11-german-ch09-t02
+        title: "Sustainable living: natural resources, recycling, waste, overconsumption, fossil and renewable energy"
+        learning_outcomes:
+          - "Propose everyday actions in housing, food and travel that reduce one's environmental impact"
+      - id: isc-11-german-ch09-t03
+        title: "Protecting our world: sustainable tourism, global cooperation versus national agendas, environmental movements"
+        learning_outcomes:
+          - "Discuss whether individuals or industry and governments can do more to protect the planet"
+      - id: isc-11-german-ch09-t04
+        title: "Scientific innovation: medical advances and the ethics of research"
+        learning_outcomes:
+          - "Present a medical or scientific advance and raise an ethical question about it"
+      - id: isc-11-german-ch09-t05
+        title: "Smart technology, privacy and security, artificial intelligence"
+        learning_outcomes:
+          - "Give the advantages and risks of smart devices and artificial intelligence, with examples"
+      - id: isc-11-german-ch09-t06
+        title: "Social media and technology: digital media, online communities, access to technology, technology in education and work"
+        learning_outcomes:
+          - "Argue for or against the use of social media by teenagers, giving benefits and dangers"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

@@ -1,0 +1,262 @@
+# ISC Class 12 German (Modern Foreign Language elective, code 829) - ISC 2027 examination.
+# Literature: titles and authors only. Students read the texts in their own editions.
+# CISCE Appendix I prints the authors as "Josef Roth", "Carl Zuckmeyer" and "Annette Dorste - Hulshoff" and the reader as
+# "Leseheft Fur Auslander"; the standard spellings are used below.
+subject_id: isc-12-german
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-mfl, isc-2027-prescribed-books, isc-2027-regulations]
+exam_notes: >-
+  Paper I Theory: one paper of 3 hours, 80 marks, in four parts: (1) a short composition in German from a choice of subjects;
+  (2) a German passage for unprepared translation into English; (3) an unseen German passage with questions - candidates may be
+  asked to summarise part of it in German, explain individual words, phrases or sentences, and answer comprehension questions
+  (not every question type is set every year); (4) two questions on one or two of the prescribed textbooks.
+  CISCE does not publish marks per part. Paper II Project Work (20 marks): Listening (5) and Speaking (5) assessed by the subject
+  teacher - an unseen passage or poem read aloud twice with objective questions, and a three-minute individual presentation followed
+  by discussion; Writing (10) assessed by a Visiting Examiner - one assignment of about 250 words on any aspect of the language or
+  literature studied in Class XII. CISCE sets no question paper for project work. CISCE has not bifurcated this syllabus: the ISC 2027
+  paper is set on the entire Classes XI-XII syllabus and all four prescribed books, so nothing is removed here. The syllabus does not
+  list grammar items; the two grammar chapters below cover the structures needed for composition, translation and reading the
+  prescribed texts - this breakdown is SOYL's, not CISCE's. SOYL covers all four prescribed books so a student can choose which to
+  answer on. CISCE lists topics not chapters; SOYL grouped them into teachable chapters in syllabus order.
+units:
+  - { name: "1. Composition", marks: null }
+  - { name: "2. Unprepared translation into English", marks: null }
+  - { name: "3. Unseen passage", marks: null }
+  - { name: "4. Prescribed textbooks", marks: null }
+chapters:
+  - id: isc-12-german-ch01
+    number: 1
+    title: "Composition (Aufsatz)"
+    unit: "1. Composition"
+    topics:
+      - id: isc-12-german-ch01-t01
+        title: "Planning a composition: Gliederung, Einleitung, Hauptteil, Schluss"
+        learning_outcomes:
+          - "Draw up an outline and write a composition in German with an introduction, a developed main part and a conclusion"
+          - "Link ideas with connectors such as zuerst, außerdem, deshalb, trotzdem, zum Schluss"
+      - id: isc-12-german-ch01-t02
+        title: "Descriptive and narrative compositions (Beschreibung, Erzählung)"
+        learning_outcomes:
+          - "Describe a person, place or event with accurate adjective endings"
+          - "Narrate an experience in the Perfekt or Präteritum, keeping the verb in second position and time expressions in order"
+      - id: isc-12-german-ch01-t03
+        title: "Argumentative compositions (Erörterung): pro und contra, Meinung äußern"
+        learning_outcomes:
+          - "Present arguments for and against a statement and reach a reasoned conclusion"
+          - "Express an opinion with ich bin der Meinung, dass ...; meiner Ansicht nach ...; einerseits ... andererseits"
+      - id: isc-12-german-ch01-t04
+        title: "Subjects from contemporary life: environment, technology, education, festivals, travel, youth"
+        learning_outcomes:
+          - "Use topic vocabulary accurately to write on contemporary issues, including examples from Indian life"
+      - id: isc-12-german-ch01-t05
+        title: "Accuracy: gender and case, word order in main and subordinate clauses, spelling and capitalisation"
+        learning_outcomes:
+          - "Find and correct errors of case, verb position and capitalisation of nouns in one's own composition"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-german-ch02
+    number: 2
+    title: "Grammatik (1): Zeiten, Modi und Passiv"
+    unit: null
+    topics:
+      - id: isc-12-german-ch02-t01
+        title: "Präteritum of weak, strong and mixed verbs in written narrative"
+        learning_outcomes:
+          - "Form the Präteritum of common strong and mixed verbs (ging, kam, sah, dachte, brachte) and identify their infinitives"
+          - "Explain why written narrative uses the Präteritum and speech the Perfekt"
+      - id: isc-12-german-ch02-t02
+        title: "Plusquamperfekt, Futur I and Futur II"
+        learning_outcomes:
+          - "Use the Plusquamperfekt with nachdem to show the earlier of two past actions"
+          - "Form Futur I and recognise Futur II for an action completed by a future time or a supposition"
+      - id: isc-12-german-ch02-t03
+        title: "Konjunktiv II: würde-Form, wäre, hätte, modal verbs; irreale Wünsche und Bedingungen"
+        learning_outcomes:
+          - "Form the Konjunktiv II present and past and use it in unreal conditions (wenn ich Zeit hätte, ...) and polite requests"
+      - id: isc-12-german-ch02-t04
+        title: "Konjunktiv I and indirekte Rede"
+        learning_outcomes:
+          - "Recognise Konjunktiv I forms in written texts and convert direct speech into indirect speech"
+      - id: isc-12-german-ch02-t05
+        title: "Passiv: Vorgangspassiv (werden), Zustandspassiv (sein), Passiv mit Modalverben"
+        learning_outcomes:
+          - "Transform active sentences into the passive in different tenses, using von + dative for the agent"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-german-ch03
+    number: 3
+    title: "Grammatik (2): Satzbau und Deklination"
+    unit: null
+    topics:
+      - id: isc-12-german-ch03-t01
+        title: "Nebensätze and word order: dass, weil, obwohl, als, wenn, ob, damit"
+        learning_outcomes:
+          - "Join two sentences with a subordinating conjunction and send the finite verb to the end of the clause"
+          - "Choose correctly between als and wenn and between weil and denn"
+      - id: isc-12-german-ch03-t02
+        title: "Relativsätze, including Präposition + Relativpronomen and wo(r)- compounds"
+        learning_outcomes:
+          - "Join sentences with the relative pronoun in the right gender, number and case"
+      - id: isc-12-german-ch03-t03
+        title: "Infinitivkonstruktionen: zu + Infinitiv, um ... zu, ohne ... zu, statt ... zu"
+        learning_outcomes:
+          - "Rewrite clauses as infinitive constructions where the subject is the same"
+      - id: isc-12-german-ch03-t04
+        title: "Adjektivdeklination and Partizipialattribute"
+        learning_outcomes:
+          - "Add the correct adjective ending after the definite article, indefinite article and no article"
+          - "Unpack an extended participial phrase (die im Wald gefundene Buche) into a relative clause"
+      - id: isc-12-german-ch03-t05
+        title: "Präpositionen mit Akkusativ, Dativ, Wechselpräpositionen, Genitiv; Verben mit Präpositionen"
+        learning_outcomes:
+          - "Use prepositions with the correct case and verbs with their fixed prepositions (warten auf, sich freuen über)"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-german-ch04
+    number: 4
+    title: "Unprepared translation into English (Übersetzung)"
+    unit: "2. Unprepared translation into English"
+    topics:
+      - id: isc-12-german-ch04-t01
+        title: "Reading for meaning: finding the verb, subject and clause boundaries in long German sentences"
+        learning_outcomes:
+          - "Break a long German sentence into its clauses and identify the subject and verb of each before translating"
+      - id: isc-12-german-ch04-t02
+        title: "Rendering German word order, tenses, Konjunktiv and modal particles in natural English"
+        learning_outcomes:
+          - "Reorder German clauses into natural English and choose the right English tense or modal for the German form"
+      - id: isc-12-german-ch04-t03
+        title: "Compound nouns, idioms and false friends"
+        learning_outcomes:
+          - "Translate compound nouns by working from the last element"
+          - "Avoid false friends such as bekommen, Gift, eventuell, Handy"
+      - id: isc-12-german-ch04-t04
+        title: "Producing a complete, fluent English version and checking it"
+        learning_outcomes:
+          - "Write a complete English translation that omits nothing and reads naturally, then check it against the original"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-german-ch05
+    number: 5
+    title: "Unseen passage (Leseverstehen und Zusammenfassung)"
+    unit: "3. Unseen passage"
+    topics:
+      - id: isc-12-german-ch05-t01
+        title: "Reading an unseen passage: main idea, key details and the writer's view"
+        learning_outcomes:
+          - "State the main idea of an unseen German passage and locate supporting details"
+      - id: isc-12-german-ch05-t02
+        title: "Explaining words, phrases and sentences in context"
+        learning_outcomes:
+          - "Explain a word, phrase or sentence from the passage in simple German, using a synonym or paraphrase"
+      - id: isc-12-german-ch05-t03
+        title: "Answering comprehension questions in German in one's own words"
+        learning_outcomes:
+          - "Answer questions in complete German sentences, changing pronouns and verb forms from the passage where needed"
+      - id: isc-12-german-ch05-t04
+        title: "Writing a Zusammenfassung of part of the passage"
+        learning_outcomes:
+          - "Summarise a section of the passage in German within a word limit, keeping only the essential points"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-german-ch06
+    number: 6
+    title: "Die Kapuzinergruft (Joseph Roth)"
+    unit: "4. Prescribed textbooks"
+    topics:
+      - id: isc-12-german-ch06-t01
+        title: "Context: Joseph Roth and the end of the Austro-Hungarian monarchy, the First World War and the 1930s"
+        learning_outcomes:
+          - "Describe the historical period the novel covers and explain the meaning of the title"
+      - id: isc-12-german-ch06-t02
+        title: "Plot and narration: Franz Ferdinand Trotta's first-person account"
+        learning_outcomes:
+          - "Summarise the main stages of the narrator's life in German in the correct order"
+      - id: isc-12-german-ch06-t03
+        title: "Characters: the narrator, his cousin Joseph Branco, his mother and Elisabeth"
+        learning_outcomes:
+          - "Write a character sketch of the narrator, showing how events change him"
+          - "Explain what the relationship with Joseph Branco shows about the many peoples of the old empire"
+      - id: isc-12-german-ch06-t04
+        title: "Themes and mood: nostalgia, loss of a homeland, decline and alienation"
+        learning_outcomes:
+          - "Discuss how the novel presents the end of an era and the narrator's sense of loss, with references to the text"
+    removed_topics: []
+    literature_texts:
+      - { title: "Die Kapuzinergruft", author: "Joseph Roth" }
+  - id: isc-12-german-ch07
+    number: 7
+    title: "Des Teufels General (Carl Zuckmayer)"
+    unit: "4. Prescribed textbooks"
+    topics:
+      - id: isc-12-german-ch07-t01
+        title: "Context: Zuckmayer, exile and a play about the Second World War written in 1945-46"
+        learning_outcomes:
+          - "Explain the historical background of the play and the significance of its title"
+      - id: isc-12-german-ch07-t02
+        title: "Plot: General Harras, the failing aircraft and the investigation, act by act"
+        learning_outcomes:
+          - "Summarise each act in German and explain how tension builds towards the ending"
+      - id: isc-12-german-ch07-t03
+        title: "Characters: Harras, Oderbruch, Schmidt-Lausitz and the people around Harras"
+        learning_outcomes:
+          - "Write a character sketch of Harras, showing both his courage and his compromise"
+          - "Compare Harras and Oderbruch in their response to the regime"
+      - id: isc-12-german-ch07-t04
+        title: "Themes: guilt, responsibility, resistance and conscience under dictatorship"
+        learning_outcomes:
+          - "Discuss whether Harras is guilty, supporting the answer with episodes from the play"
+    removed_topics: []
+    literature_texts:
+      - { title: "Des Teufels General", author: "Carl Zuckmayer" }
+  - id: isc-12-german-ch08
+    number: 8
+    title: "Die Judenbuche (Annette von Droste-Hülshoff)"
+    unit: "4. Prescribed textbooks"
+    topics:
+      - id: isc-12-german-ch08-t01
+        title: "Context: the novella, its Westphalian village setting and its basis in a real case"
+        learning_outcomes:
+          - "Describe the setting and explain why the village community matters to the story"
+      - id: isc-12-german-ch08-t02
+        title: "Plot: Friedrich Mergel's life, the two deaths in the forest and the return"
+        learning_outcomes:
+          - "Summarise the plot in German in the correct order"
+          - "Explain the role of the beech tree in the structure of the story"
+      - id: isc-12-german-ch08-t03
+        title: "Characters: Friedrich Mergel, his mother, his uncle Simon and Johannes Niemand"
+        learning_outcomes:
+          - "Explain how upbringing and environment shape Friedrich's character"
+      - id: isc-12-german-ch08-t04
+        title: "Themes and technique: guilt and justice, prejudice, mystery and the unresolved question"
+        learning_outcomes:
+          - "Discuss how the narrator leaves questions open and the effect this has on the reader"
+    removed_topics: []
+    literature_texts:
+      - { title: "Die Judenbuche", author: "Annette von Droste-Hülshoff" }
+  - id: isc-12-german-ch09
+    number: 9
+    title: "Leseheft für Ausländer (Dora Schulz / Heinz Griesbach)"
+    unit: "4. Prescribed textbooks"
+    topics:
+      - id: isc-12-german-ch09-t01
+        title: "Reading the short texts of the collection: content and main idea"
+        learning_outcomes:
+          - "Summarise each prescribed reading text in German in a few sentences"
+      - id: isc-12-german-ch09-t02
+        title: "People, places and situations in the texts"
+        learning_outcomes:
+          - "Describe the main characters or subject of a text and explain their actions or the writer's point"
+      - id: isc-12-german-ch09-t03
+        title: "Vocabulary and structures met in the texts"
+        learning_outcomes:
+          - "Explain key words and expressions from the texts in German and use them in new sentences"
+      - id: isc-12-german-ch09-t04
+        title: "Answering examination questions on the texts"
+        learning_outcomes:
+          - "Write a well-organised German answer to a question on a text, with precise references"
+    removed_topics: []
+    literature_texts:
+      - { title: "Leseheft für Ausländer", author: "Dora Schulz and Heinz Griesbach" }
+removed_topics: []

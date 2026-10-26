@@ -1,0 +1,277 @@
+# ICSE Class 9 Economics (code 64, Group II) - ICSE 2028 course, CLASS IX portion only.
+# Source: platform/catalog/sources/cisce.md#icse-2028-economics. Topic wording is our own summary of the official scope.
+subject_id: icse-9-economics
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2028-economics, icse-2028-regulations]
+exam_notes: >-
+  Class IX is year one of the two-year ICSE 2028 course: there is no board examination in Class IX. The school conducts
+  the Class IX final examination on the Class IX portion (Regulations). The syllabus prescribes one theory paper of
+  2 hours, 80 marks, plus internal assessment 20 marks (at least one project/assignment set by the teacher from the
+  syllabus, e.g. a case study of industrial pollution, research on the local economy using one parameter such as health
+  or employment, the effect of liberalisation on an industry's output, or a report on a visit to a cottage or small-scale
+  unit; marked 10 by the subject teacher and 10 by an external examiner). Group II elective; candidates offering Economic
+  Applications (Group III) may not offer Economics. The syllabus does not print the question-paper pattern; school papers
+  usually follow the ICSE Group II pattern of compulsory short-answer questions across the syllabus followed by a choice
+  of structured long questions. The case studies of Digital India and Skill India are marked "not to be tested".
+  Class X topics (factors of production, demand and supply, market, banking, public finance, inflation, consumer
+  awareness) are in icse-10-economics. CISCE lists numbered topics, not textbook chapters: SOYL groups them into
+  10 teachable chapters in syllabus order. No unit-wise marks weightage is published.
+units:
+  - { name: "1. Introduction to Economics", marks: null }
+  - { name: "2. Types of Economies", marks: null }
+  - { name: "3. Problems of an Economy", marks: null }
+  - { name: "4. The Indian Economy: A Study", marks: null }
+  - { name: "5. Major Problems of the Indian Economy", marks: null }
+  - { name: "6. Major Reforms and Emerging Trends in the Indian Economy", marks: null }
+chapters:
+  - id: icse-9-economics-ch01
+    number: 1
+    title: "What is Economics?"
+    unit: "1. Introduction to Economics"
+    topics:
+      - id: icse-9-economics-ch01-t01
+        title: "Definitions of economics: Adam Smith (wealth), Robbins (scarcity), Keynes and Samuelson (growth and choice)"
+        learning_outcomes:
+          - "State the central idea of each definition of economics given by Adam Smith, Robbins, Keynes and Samuelson"
+          - "Compare the wealth-centred and scarcity-centred views of economics with an example"
+      - id: icse-9-economics-ch01-t02
+        title: "Microeconomics and macroeconomics: meaning, differences and examples"
+        learning_outcomes:
+          - "Classify given questions, such as the price of onions or India's national income, as micro or macro"
+          - "Distinguish microeconomics from macroeconomics on scope and unit of study"
+      - id: icse-9-economics-ch01-t03
+        title: "Economic and non-economic activities: meaning, examples and differences"
+        learning_outcomes:
+          - "Classify activities such as a doctor treating patients and a mother cooking for the family as economic or non-economic"
+          - "Explain the differences between economic and non-economic activities"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-economics-ch02
+    number: 2
+    title: "Basic Economic Terms and Economic Entities"
+    unit: "1. Introduction to Economics"
+    topics:
+      - id: icse-9-economics-ch02-t01
+        title: "Wants, goods, services and utility"
+        learning_outcomes:
+          - "Define wants, goods, services and utility, giving an Indian example of each"
+          - "Distinguish goods from services"
+      - id: icse-9-economics-ch02-t02
+        title: "Production, consumption, sustainable consumption and factors of production"
+        learning_outcomes:
+          - "Define production and consumption and identify the factors of production used in a given activity"
+          - "Explain sustainable consumption with examples such as saving water and reusing bags"
+      - id: icse-9-economics-ch02-t03
+        title: "Market, price and value"
+        learning_outcomes:
+          - "Define market, price and value in the economic sense"
+          - "Distinguish price from value with an example"
+      - id: icse-9-economics-ch02-t04
+        title: "Income, saving, wealth, welfare and economy"
+        learning_outcomes:
+          - "Define income, saving, wealth, welfare and economy"
+          - "Explain how income and saving relate to the creation of wealth"
+      - id: icse-9-economics-ch02-t05
+        title: "Economic entities: households, firms, government sector and foreign sector"
+        learning_outcomes:
+          - "State the meaning of each economic entity and identify the entity making a given economic decision"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-economics-ch03
+    number: 3
+    title: "Types of Economies"
+    unit: "2. Types of Economies"
+    topics:
+      - id: icse-9-economics-ch03-t01
+        title: "Capitalist and socialist economies: meaning and differences"
+        learning_outcomes:
+          - "Define a capitalist and a socialist economy"
+          - "Compare them on ownership of resources, role of the price mechanism and motive of production"
+      - id: icse-9-economics-ch03-t02
+        title: "Mixed economy with reference to India"
+        learning_outcomes:
+          - "Explain why India is described as a mixed economy, with examples of public and private sector enterprises"
+          - "Distinguish a mixed economy from capitalist and socialist economies"
+      - id: icse-9-economics-ch03-t03
+        title: "Developed and developing economies: meaning and differences"
+        learning_outcomes:
+          - "Distinguish developed from developing economies using indicators such as per capita income, literacy and occupational structure"
+      - id: icse-9-economics-ch03-t04
+        title: "Economic growth and economic development: meaning and differences"
+        learning_outcomes:
+          - "Define economic growth and economic development"
+          - "Explain why growth in output need not mean development, with an example"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-economics-ch04
+    number: 4
+    title: "Scarcity and the Central Problems of an Economy"
+    unit: "3. Problems of an Economy"
+    topics:
+      - id: icse-9-economics-ch04-t01
+        title: "Resources: meaning, types and examples; limited resources"
+        learning_outcomes:
+          - "Classify resources as natural, human and man-made with examples"
+          - "Explain why resources such as land, water and fossil fuels are limited"
+      - id: icse-9-economics-ch04-t02
+        title: "The basic economic problem: unlimited wants, limited resources with alternative uses"
+        learning_outcomes:
+          - "Explain the basic economic problem of scarcity and choice"
+          - "Explain the need for efficient use of resources using an example such as a farmer's choice of crop"
+      - id: icse-9-economics-ch04-t03
+        title: "Central problems of an economy: what to produce, how to produce and for whom to produce"
+        learning_outcomes:
+          - "Explain each central problem with an example"
+          - "Relate the central problems to the scarcity of resources"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-economics-ch05
+    number: 5
+    title: "Primary Sector: Agriculture"
+    unit: "4. The Indian Economy: A Study"
+    topics:
+      - id: icse-9-economics-ch05-t01
+        title: "Agriculture and allied activities; contribution to employment, industry, trade and food self-sufficiency"
+        learning_outcomes:
+          - "Name allied activities such as dairying, poultry and fisheries"
+          - "Explain the contribution of agriculture to employment, industrial raw materials, exports and food self-sufficiency in India"
+      - id: icse-9-economics-ch05-t02
+        title: "Problems of Indian agriculture"
+        learning_outcomes:
+          - "Explain problems such as limited use of technology, fragmented holdings, dependence on monsoon, lack of rural credit and poor storage and marketing"
+      - id: icse-9-economics-ch05-t03
+        title: "Government measures to improve agricultural production"
+        learning_outcomes:
+          - "Describe measures such as high-yielding variety seeds, fertilisers and insecticides, irrigation, technology and agricultural research institutes"
+          - "Explain how rural credit and better storage and marketing facilities help farmers"
+      - id: icse-9-economics-ch05-t04
+        title: "Green Revolution: meaning and positive impacts"
+        learning_outcomes:
+          - "Explain the meaning of the Green Revolution and its positive impacts on food grain output in India"
+      - id: icse-9-economics-ch05-t05
+        title: "Food security and the role of the Food Corporation of India (FCI)"
+        learning_outcomes:
+          - "Define food security"
+          - "Explain how the FCI procures, stores and distributes food grains to support food security"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-economics-ch06
+    number: 6
+    title: "Secondary Sector: Industry"
+    unit: "4. The Indian Economy: A Study"
+    topics:
+      - id: icse-9-economics-ch06-t01
+        title: "Industry: meaning; interdependence of agriculture and industry"
+        learning_outcomes:
+          - "Define industry"
+          - "Explain how agriculture and industry depend on each other, using examples such as cotton and textiles or tractors"
+      - id: icse-9-economics-ch06-t02
+        title: "Large-scale and medium-scale industries: meaning, features and examples"
+        learning_outcomes:
+          - "Identify features of large- and medium-scale industries and give examples of each"
+      - id: icse-9-economics-ch06-t03
+        title: "Cottage and small-scale industries: meaning, features, examples and significance for India"
+        learning_outcomes:
+          - "Distinguish cottage industries from small-scale industries with examples such as handloom weaving"
+          - "Explain the significance of cottage and small-scale industries for employment and rural development in India"
+      - id: icse-9-economics-ch06-t04
+        title: "Adverse impacts of industrialisation (industrial pollution, deforestation) and measures: afforestation, waste management"
+        learning_outcomes:
+          - "Explain how industrial pollution and deforestation harm the environment and people"
+          - "State the meaning of afforestation and waste management as measures to overcome these impacts"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-economics-ch07
+    number: 7
+    title: "Tertiary Sector: Services"
+    unit: "4. The Indian Economy: A Study"
+    topics:
+      - id: icse-9-economics-ch07-t01
+        title: "Education and healthcare in economic development"
+        learning_outcomes:
+          - "Explain how education and healthcare improve the productivity of the workforce, with examples"
+      - id: icse-9-economics-ch07-t02
+        title: "Transportation and communication in economic development"
+        learning_outcomes:
+          - "Explain the role of transport and communication networks in widening markets and linking regions"
+      - id: icse-9-economics-ch07-t03
+        title: "Banking and insurance in economic development"
+        learning_outcomes:
+          - "Explain how banks mobilise savings and provide credit for development"
+          - "Explain how insurance reduces risk for farmers, households and businesses"
+      - id: icse-9-economics-ch07-t04
+        title: "Storage and warehousing in economic development"
+        learning_outcomes:
+          - "Explain how storage and warehousing reduce wastage and stabilise prices"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-economics-ch08
+    number: 8
+    title: "Poverty"
+    unit: "5. Major Problems of the Indian Economy"
+    topics:
+      - id: icse-9-economics-ch08-t01
+        title: "Poverty line: concept based on calorie intake"
+        learning_outcomes:
+          - "Explain how the poverty line is defined in terms of minimum calorie intake for rural and urban areas"
+      - id: icse-9-economics-ch08-t02
+        title: "Relative and absolute poverty: meaning and examples"
+        learning_outcomes:
+          - "Distinguish relative from absolute poverty with examples"
+      - id: icse-9-economics-ch08-t03
+        title: "Causes of poverty in India"
+        learning_outcomes:
+          - "Explain any five causes of poverty, such as rapid population growth, unemployment, low agricultural productivity, inequality and illiteracy"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-economics-ch09
+    number: 9
+    title: "Unemployment and Government Programmes"
+    unit: "5. Major Problems of the Indian Economy"
+    topics:
+      - id: icse-9-economics-ch09-t01
+        title: "Unemployment: meaning; seasonal, structural and technological unemployment"
+        learning_outcomes:
+          - "Define unemployment"
+          - "Identify the type of unemployment in a given situation and give an example of each type"
+      - id: icse-9-economics-ch09-t02
+        title: "Causes of unemployment in India"
+        learning_outcomes:
+          - "Explain any five causes of unemployment in India"
+      - id: icse-9-economics-ch09-t03
+        title: "Government schemes and programmes to remove poverty and unemployment (any two, e.g. MGNREGA, IRDP, JRY, PKVY, HRIDAY)"
+        learning_outcomes:
+          - "State the objectives of any two government programmes for removing poverty and unemployment"
+          - "Evaluate how one programme, such as MGNREGA, provides rural employment"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-economics-ch10
+    number: 10
+    title: "Economic Reforms and Emerging Trends"
+    unit: "6. Major Reforms and Emerging Trends in the Indian Economy"
+    topics:
+      - id: icse-9-economics-ch10-t01
+        title: "Liberalisation, Privatisation and Globalisation (LPG): meaning of each term"
+        learning_outcomes:
+          - "Define liberalisation, privatisation and globalisation"
+      - id: icse-9-economics-ch10-t02
+        title: "Positive impact of the LPG reforms on the Indian economy"
+        learning_outcomes:
+          - "Explain positive impacts of the reforms, such as growth of foreign investment, competition and consumer choice"
+      - id: icse-9-economics-ch10-t03
+        title: "Smart city: concept and a case study"
+        learning_outcomes:
+          - "Explain the concept of a smart city"
+          - "Analyse one Indian smart city's development in infrastructure, employment, poverty alleviation, human resources and industry"
+      - id: icse-9-economics-ch10-t04
+        title: "Digital India and Skill India: aims (case studies for knowledge only)"
+        board_assessed: false
+        learning_outcomes:
+          - "State the aims of the Digital India and Skill India initiatives"
+          - "Explain how digital access and skill training can raise employment, with one example"
+    removed_topics:
+      - "Case studies of Digital India and Skill India are not to be tested"
+    literature_texts: []
+removed_topics:
+  - "Class X syllabus (factors of production, demand and supply, market, banking in India, public finance, inflation, consumer awareness) is examined in ICSE 2028 Class X; see icse-10-economics"

@@ -1,0 +1,41 @@
+{
+  "name": "@soyl/db",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "PostgreSQL schema (Drizzle), reversible migrations, migrator CLI, seeds and the shared test-database harness for the SOYL Academy Learning Platform. See README.md and docs/platform/adr/004-orm-drizzle.md.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./schema": "./schema/index.ts",
+    "./schema/*": "./schema/*.ts",
+    "./testing": "./src/testing.ts",
+    "./normalize": "./src/normalize.ts",
+    "./ids": "./src/ids.ts",
+    "./student-questions": "./src/student-questions.ts",
+    "./testing/global-setup": "./src/testing-global-setup.ts",
+    "./content-ingest": "./src/content-ingest.ts"
+  },
+  "scripts": {
+    "db": "tsx src/cli.ts",
+    "generate": "drizzle-kit generate",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@soyl/shared": "*",
+    "drizzle-orm": "0.45.4",
+    "js-yaml": "4.3.2",
+    "pg": "8.23.1"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "4.0.9",
+    "@types/node": "24.19.2",
+    "@types/pg": "8.23.1",
+    "better-auth": "1.7.13",
+    "drizzle-kit": "0.31.11",
+    "embedded-postgres": "18.4.0-beta.17",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "5.0.5"
+  }
+}

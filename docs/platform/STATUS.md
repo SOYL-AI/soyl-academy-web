@@ -10,6 +10,8 @@ Single source of truth for progress (AGENTS.md §4.3). Updated by the Lead after
 
 ## Current milestone: **M1 — Foundations** (started 2026-10-26)
 
+> 2026-10-26: all agents stopped on the account rate limit and resumed after reset in two batches of 5 (D-024). Batch 1 running: db-schema, pipeline-engineer, curriculum-cisce, exemplar-science, design-system. Batch 2 queued: infra-azure, exemplar-maths, exemplar-hindi, curriculum-cbse-blueprints, curriculum-cbse-languages.
+
 ## Milestones
 
 | Milestone | Status | Exit criteria | Evidence |
@@ -31,16 +33,16 @@ Single source of truth for progress (AGENTS.md §4.3). Updated by the Lead after
 | M0 | Repo map, allowed paths, marketing baseline + regression, ADR-001 | repo-cartographer | `platform/repo-cartographer/m0` | REPO_MAP, `platform/e2e/` | merged | — |
 | M0 | CBSE `subjects.yaml` (448) + 70 syllabus files | curriculum-architect (CBSE) | `platform/curriculum-cbse/m0` | `platform/catalog/cbse/` | merged | OA-16 for unverified files |
 | M0 | Threat model, ASVS L2, M1 requirements | security-reviewer | `platform/security-reviewer/m0` | `docs/platform/security/` | merged | OA-13 (findings.md) |
-| M0→M1 | CISCE `subjects.yaml` + syllabus files | curriculum-architect (CISCE) | `platform/curriculum-cisce/m0` | `platform/catalog/cisce/` | in progress | — |
+| M0→M1 | CISCE `subjects.yaml` (323) + 323 syllabus files (3,627 chapters, 15,637 topics; 319 verified) | curriculum-architect (CISCE) | `platform/curriculum-cisce/m0` | `platform/catalog/cisce/` | **merged** | native-script titles for ~20 regional languages need review |
 | M0 | Next.js security hotfix for the live site | Lead | `hotfix/next-16.4.3` | root `package.json`/lockfile | ready, not merged | **OA-11** |
 | M1 | Bicep (dev/stg/prod), CI/CD workflows, Dockerfiles, local compose, deploy runbook | infra-azure | `platform/infra-azure/m1` | `platform/infra/`, `.github/workflows/platform-*.yml`, Dockerfiles | in progress | OA-01 for real deploys |
-| M1 | Full Drizzle schema, reversible migrations, embedded-Postgres harness, seeds | db-schema | `platform/db-schema/m1` | `platform/db/` | in progress | — |
+| M1 | Full Drizzle schema (60 tables, 2 views), reversible migrations, embedded-Postgres harness, seeds — 83 tests; full catalog seeds (4,543 chapters, 18,450 topics) | db-schema | `platform/db-schema/m1` | `platform/db/` | **merged** | pgvector path tested only in CI |
 | M1 | Pipeline stages 1–4, CLI, cost estimate/budget, `@soyl/ai-core` (D-021) | pipeline-engineer | `platform/pipeline-engineer/m1` | `platform/content-pipeline/`, `platform/ai-core/`, `platform/shared/content/`, `platform/shared/config/models.ts` | in progress | OA-02 for real generation |
 | M1 | Scoped UI kit, slide layouts, content renderers (KaTeX, SVG sanitiser, visuals), Devanagari | design-system | `platform/design-system/m1` | `components/platform/ui/` | in progress | — |
-| M1 | Exemplar: CBSE 10 Science ch01 + prompt templates (science family) | exemplar-author | `platform/exemplar-author/m1-science` | `platform/content-templates/{exemplars,prompts}/science/` | in progress | — |
-| M1 | Exemplar: CBSE 10 Mathematics (Triangles) + templates (maths family) | exemplar-author | `platform/exemplar-author/m1-maths` | `platform/content-templates/{exemplars,prompts}/maths/` | in progress | — |
+| M1 | Exemplar: CBSE 10 Science ch01 + prompt templates (science family) — 2 decks (43 slides, 32 visuals), 77 questions, 32 flashcards, 2 tests; gate 8/8 | exemplar-author | `platform/exemplar-author/m1-science` | `platform/content-templates/{exemplars,prompts}/science/` | **merged** 2b06e13 | — |
+| M1 | Exemplar: CBSE 10 Mathematics ch06 Triangles + maths templates — 46 slides, 78 questions, 34 flashcards, 2 tests; gate 15/15 | exemplar-author | `platform/exemplar-author/m1-maths` | `platform/content-templates/{exemplars,prompts}/maths/` | **merged** 0d91b8c | — |
 | M1 | Exemplar: CBSE 10 Hindi + templates (Hindi family) | exemplar-author / hindi-specialist | `platform/exemplar-author/m1-hindi` | `platform/content-templates/{exemplars,prompts}/hindi/` | in progress | — |
 | M1 | CBSE blueprints (all paper types, classes 7–12) + remaining Wave 1 electives/skills syllabi | curriculum-architect (CBSE-B) | `platform/curriculum-cbse/m1-blueprints` | `platform/catalog/cbse/**/blueprints/`, `platform/catalog/cbse/blueprints/`, assigned syllabus dirs | in progress | — |
 | M1 | CBSE Wave 1 language syllabi (Class 10 + 12) | curriculum-architect (CBSE-L) | `platform/curriculum-cbse/m1-languages` | language syllabus dirs under `platform/catalog/cbse/{10,12}/` | in progress | — |
-| M1 (wave B) | API: Fastify app, auth (Better Auth: Google, phone OTP, email OTP), me, catalog, route policy, OpenAPI | backend-api | `platform/backend-api/m1` | `platform/api/` except `ai/`, `billing/` | waits for db-schema | — |
+| M1 (wave B) | API: Fastify app, auth (Better Auth: Google, phone OTP, email OTP), me, catalog, route policy, OpenAPI; worker skeleton | backend-api | `platform/backend-api/m1` | `platform/api/` except `ai/`, `billing/`; `platform/worker/` | in progress | — |
 | M1 (wave B) | Web: route group, platform layout + flag, login modal, guest mode + merge, API proxy route (ADR-005) | web-platform | `platform/web-platform/m1` | `app/(platform)/`, `components/platform/` (not `ui/`), `platform/shared/api-client/` | waits for backend-api contract | — |

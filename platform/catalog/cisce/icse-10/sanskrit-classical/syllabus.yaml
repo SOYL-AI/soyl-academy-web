@@ -1,0 +1,262 @@
+# ICSE Class 10 Sanskrit (Classical Language, Group II, code 76) - ICSE 2027 examination.
+# No textbooks or literature are prescribed for this paper.
+subject_id: icse-10-sanskrit-classical
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2027-classical-language, icse-2027-second-languages, icse-2027-regulations]
+exam_notes: >-
+  One paper of 2 hours, 80 marks, plus internal assessment 20 marks (two or three assignments in Class X - suggested oral and aural work -
+  marked 10 by the subject teacher and 10 by an external examiner). The paper has three tests: (a) questions on elementary Sanskrit grammar;
+  (b) unprepared translation of short prose sentences from English into Sanskrit; (c) unprepared translation from Sanskrit into English.
+  CISCE does not publish marks per test and prescribes no textbooks. The syllabus is common to Classes IX and X with no class-wise split,
+  so the ICSE 2027 paper may draw on all of it. CISCE does not list the grammar items for this paper; SOYL's grammar chapters follow the
+  grammar scope CISCE publishes for Sanskrit as a Group I second language (sandhi, noun and pronoun declensions, numerals, verb forms in
+  five lakaras, karakas, compounds and suffixes) - this breakdown is SOYL's, not CISCE's. Papers are set in Sanskrit and other classical
+  languages on request. A candidate taking Sanskrit in Group I may not take it here. CISCE lists topics not chapters; SOYL grouped them into teachable chapters in syllabus order.
+units:
+  - { name: "क - प्रारम्भिकं संस्कृतव्याकरणम् (Elementary Sanskrit grammar)", marks: null }
+  - { name: "ख - आङ्ग्लभाषातः संस्कृते अनुवादः (Translation from English into Sanskrit)", marks: null }
+  - { name: "ग - संस्कृततः आङ्ग्लभाषायाम् अनुवादः (Translation from Sanskrit into English)", marks: null }
+chapters:
+  - id: icse-10-sanskrit-classical-ch01
+    number: 1
+    title: "वर्णविचारः सन्धिः च"
+    title_en: "Sounds of Sanskrit and sandhi"
+    unit: "क - प्रारम्भिकं संस्कृतव्याकरणम् (Elementary Sanskrit grammar)"
+    topics:
+      - id: icse-10-sanskrit-classical-ch01-t01
+        title: "स्वराः व्यञ्जनानि च, उच्चारणस्थानानि"
+        title_en: "Vowels and consonants; places of articulation"
+        learning_outcomes:
+          - "स्वराणां व्यञ्जनानां च उच्चारणस्थानानि वदति"
+      - id: icse-10-sanskrit-classical-ch01-t02
+        title: "स्वरसन्धिः - दीर्घः, गुणः, वृद्धिः, यण्, अयादिः"
+        title_en: "Vowel sandhi: dirgha, guna, vriddhi, yan, ayadi"
+        learning_outcomes:
+          - "स्वरसन्धेः नियमान् प्रयुज्य पदानि योजयति"
+          - "सन्धियुक्तस्य पदस्य विच्छेदं कृत्वा सन्धेः नाम वदति"
+      - id: icse-10-sanskrit-classical-ch01-t03
+        title: "व्यञ्जनसन्धिः (हल्सन्धिः) - प्रमुखाः नियमाः"
+        title_en: "Consonant sandhi: the common rules"
+        learning_outcomes:
+          - "व्यञ्जनसन्धेः सामान्यानि उदाहरणानि परिचिनोति विच्छेदं च करोति"
+      - id: icse-10-sanskrit-classical-ch01-t04
+        title: "विसर्गसन्धिः"
+        title_en: "Visarga sandhi"
+        learning_outcomes:
+          - "विसर्गसन्धेः नियमानुसारं पदानि योजयति विच्छेदं च करोति"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-sanskrit-classical-ch02
+    number: 2
+    title: "शब्दरूपाणि"
+    title_en: "Noun declensions (shabda-roopa)"
+    unit: "क - प्रारम्भिकं संस्कृतव्याकरणम् (Elementary Sanskrit grammar)"
+    topics:
+      - id: icse-10-sanskrit-classical-ch02-t01
+        title: "अकारान्तशब्दाः - राम (पुंलिङ्गम्), गृह (नपुंसकलिङ्गम्)"
+        title_en: "a-ending nouns: rama (masculine), griha (neuter)"
+        learning_outcomes:
+          - "रामशब्दस्य गृहशब्दस्य च सर्वासु विभक्तिषु रूपाणि लिखति"
+          - "तादृशानाम् अन्येषां शब्दानां रूपाणि रचयति"
+      - id: icse-10-sanskrit-classical-ch02-t02
+        title: "इकारान्ताः उकारान्ताः ऋकारान्ताः च पुंलिङ्गशब्दाः - हरि, गुरु, पितृ"
+        title_en: "i-, u- and ri-ending masculine nouns: hari, guru, pitri"
+        learning_outcomes:
+          - "हरि-गुरु-पितृशब्दानां रूपाणि विभक्ति-वचनानुसारं लिखति"
+      - id: icse-10-sanskrit-classical-ch02-t03
+        title: "स्त्रीलिङ्गशब्दाः - रमा, नदी, धेनु, वधू, मातृ"
+        title_en: "Feminine nouns: rama, nadi, dhenu, vadhu, matri"
+        learning_outcomes:
+          - "स्त्रीलिङ्गशब्दानां रूपाणि लिखति वाक्येषु च प्रयुङ्क्ते"
+      - id: icse-10-sanskrit-classical-ch02-t04
+        title: "नपुंसकलिङ्गशब्दाः - वारि, दधि, मधु"
+        title_en: "Neuter nouns: vari, dadhi, madhu"
+        learning_outcomes:
+          - "नपुंसकलिङ्गशब्दानां रूपाणि लिखति, प्रथमा-द्वितीययोः समानरूपाणि च परिचिनोति"
+      - id: icse-10-sanskrit-classical-ch02-t05
+        title: "व्यञ्जनान्तशब्दाः - भवत्, राजन्, जगत्, नामन्, मनस्"
+        title_en: "Consonant-ending nouns: bhavat, rajan, jagat, naman, manas"
+        learning_outcomes:
+          - "व्यञ्जनान्तशब्दानां प्रमुखरूपाणि अभिज्ञाय वाक्येषु प्रयुङ्क्ते"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-sanskrit-classical-ch03
+    number: 3
+    title: "सर्वनामशब्दाः संख्यावाचकशब्दाः च"
+    title_en: "Pronouns and numerals"
+    unit: "क - प्रारम्भिकं संस्कृतव्याकरणम् (Elementary Sanskrit grammar)"
+    topics:
+      - id: icse-10-sanskrit-classical-ch03-t01
+        title: "अस्मद्, युष्मद्"
+        title_en: "Personal pronouns asmad (I) and yushmad (you)"
+        learning_outcomes:
+          - "अस्मद्-युष्मद्शब्दयोः रूपाणि लिखति वाक्येषु च प्रयुङ्क्ते"
+      - id: icse-10-sanskrit-classical-ch03-t02
+        title: "सर्व, तद्, यद्, किम् - त्रिषु लिङ्गेषु"
+        title_en: "sarva, tad, yad, kim in the three genders"
+        learning_outcomes:
+          - "सर्वनाम्नः लिङ्गं विभक्तिं वचनं च विशेष्यानुसारं चिनोति"
+      - id: icse-10-sanskrit-classical-ch03-t03
+        title: "संख्यावाचकशब्दाः (एकतः दशपर्यन्तम्) - सर्वेषु लिङ्गेषु"
+        title_en: "Numerals one to ten in all genders"
+        learning_outcomes:
+          - "एकतः दशपर्यन्तं संख्याशब्दान् विशेष्यानुसारं प्रयुङ्क्ते"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-sanskrit-classical-ch04
+    number: 4
+    title: "धातुरूपाणि लकाराः च"
+    title_en: "Verb conjugation in five lakaras (dhatu-roopa)"
+    unit: "क - प्रारम्भिकं संस्कृतव्याकरणम् (Elementary Sanskrit grammar)"
+    topics:
+      - id: icse-10-sanskrit-classical-ch04-t01
+        title: "पुरुषः वचनं च; परस्मैपदम्, आत्मनेपदम्, उभयपदम्"
+        title_en: "Person and number; parasmaipada, atmanepada and ubhayapada"
+        learning_outcomes:
+          - "धातुरूपस्य पदं पुरुषं वचनं च परिचिनोति"
+      - id: icse-10-sanskrit-classical-ch04-t02
+        title: "लट् लकारः (वर्तमानकालः)"
+        title_en: "Lat lakara: present tense"
+        learning_outcomes:
+          - "भू-पठ्-गम्-स्था-पा इत्यादीनां धातूनां लट्लकारे रूपाणि लिखति"
+      - id: icse-10-sanskrit-classical-ch04-t03
+        title: "लृट् लकारः (भविष्यत्कालः)"
+        title_en: "Lrit lakara: future tense"
+        learning_outcomes:
+          - "लृट्लकारे धातुरूपाणि रचयित्वा भविष्यत्कालवाक्यानि लिखति"
+      - id: icse-10-sanskrit-classical-ch04-t04
+        title: "लङ् लकारः (भूतकालः)"
+        title_en: "Lang lakara: past tense"
+        learning_outcomes:
+          - "लङ्लकारे धातुरूपाणि रचयित्वा भूतकालवाक्यानि लिखति"
+      - id: icse-10-sanskrit-classical-ch04-t05
+        title: "लोट् लकारः विधिलिङ् च"
+        title_en: "Lot (imperative) and vidhiling (potential: should, may)"
+        learning_outcomes:
+          - "आज्ञार्थे लोट्लकारस्य विध्यर्थे विधिलिङ्लकारस्य च प्रयोगं करोति"
+      - id: icse-10-sanskrit-classical-ch04-t06
+        title: "आत्मनेपदिधातवः (लभ्, सेव्, वृध्) उभयपदिधातवः (नी, कृ, दा) च"
+        title_en: "Atmanepada verbs (labh, sev, vridh) and ubhayapada verbs (ni, kri, da)"
+        learning_outcomes:
+          - "आत्मनेपदिनाम् उभयपदिनां च धातूनां रूपाणि लिखति"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-sanskrit-classical-ch05
+    number: 5
+    title: "कारकाणि विभक्तयः च"
+    title_en: "Karakas and case endings (vibhakti)"
+    unit: "क - प्रारम्भिकं संस्कृतव्याकरणम् (Elementary Sanskrit grammar)"
+    topics:
+      - id: icse-10-sanskrit-classical-ch05-t01
+        title: "कारकपरिचयः - कर्ता, कर्म, करणम्, सम्प्रदानम्, अपादानम्, अधिकरणम्; सम्बन्धः"
+        title_en: "The karakas and the seven case endings"
+        learning_outcomes:
+          - "वाक्ये प्रत्येकस्य पदस्य कारकं विभक्तिं च निर्दिशति"
+      - id: icse-10-sanskrit-classical-ch05-t02
+        title: "कर्तृ-क्रिया-अन्वितिः"
+        title_en: "Subject-verb agreement in person and number"
+        learning_outcomes:
+          - "कर्तुः पुरुष-वचनानुसारं क्रियापदं चिनोति"
+      - id: icse-10-sanskrit-classical-ch05-t03
+        title: "विशेषण-विशेष्य-अन्वितिः"
+        title_en: "Adjective-noun agreement"
+        learning_outcomes:
+          - "विशेषणं विशेष्यस्य लिङ्ग-विभक्ति-वचनानुसारं प्रयुङ्क्ते"
+      - id: icse-10-sanskrit-classical-ch05-t04
+        title: "उपपदविभक्तयः (सह, विना, नमः, अभितः, परितः)"
+        title_en: "Case governed by particular words (upapada vibhakti)"
+        learning_outcomes:
+          - "उपपदानां योगे उचितां विभक्तिं प्रयुङ्क्ते"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-sanskrit-classical-ch06
+    number: 6
+    title: "अव्ययानि प्रत्ययाः समासाः च"
+    title_en: "Indeclinables, suffixes and compounds"
+    unit: "क - प्रारम्भिकं संस्कृतव्याकरणम् (Elementary Sanskrit grammar)"
+    topics:
+      - id: icse-10-sanskrit-classical-ch06-t01
+        title: "प्रमुखानि अव्ययानि (च, अपि, एव, इति, यदा-तदा, यत्र-तत्र, अद्य, श्वः)"
+        title_en: "Common indeclinables"
+        learning_outcomes:
+          - "अव्ययानि उचितस्थाने प्रयुज्य वाक्यानि रचयति"
+      - id: icse-10-sanskrit-classical-ch06-t02
+        title: "कृत्प्रत्ययाः - क्त्वा, ल्यप्, तुमुन्"
+        title_en: "Suffixes ktva, lyap and tumun (having done, in order to)"
+        learning_outcomes:
+          - "क्त्वा-ल्यप्-तुमुन्-प्रत्ययान्तपदैः वाक्यद्वयं योजयति"
+      - id: icse-10-sanskrit-classical-ch06-t03
+        title: "क्त, क्तवतु, तव्यत्, अनीयर् प्रत्ययाः"
+        title_en: "Suffixes kta, ktavatu, tavyat and aniyar"
+        learning_outcomes:
+          - "प्रत्ययान्तपदस्य मूलधातुं प्रत्ययं च पृथक् करोति"
+      - id: icse-10-sanskrit-classical-ch06-t04
+        title: "समासपरिचयः - द्वन्द्वः, तत्पुरुषः, कर्मधारयः, बहुव्रीहिः, अव्ययीभावः"
+        title_en: "Introduction to compounds: dvandva, tatpurusha, karmadharaya, bahuvrihi, avyayibhava"
+        learning_outcomes:
+          - "सरलस्य समस्तपदस्य विग्रहं कृत्वा समासस्य नाम वदति"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-sanskrit-classical-ch07
+    number: 7
+    title: "आङ्ग्लभाषातः संस्कृते अनुवादः"
+    title_en: "Translation from English into Sanskrit"
+    unit: "ख - आङ्ग्लभाषातः संस्कृते अनुवादः (Translation from English into Sanskrit)"
+    topics:
+      - id: icse-10-sanskrit-classical-ch07-t01
+        title: "सरलवाक्यानि - कर्ता, कर्म, क्रिया (लट् लकारः)"
+        title_en: "Simple sentences: subject, object and verb in the present"
+        learning_outcomes:
+          - "आङ्ग्लभाषायाः सरलवाक्यानि शुद्धसंस्कृतेन अनुवदति"
+      - id: icse-10-sanskrit-classical-ch07-t02
+        title: "भूतकाल-भविष्यत्काल-वाक्यानि; आज्ञा-विध्यर्थ-वाक्यानि"
+        title_en: "Past, future, command and \"should\" sentences"
+        learning_outcomes:
+          - "कालानुसारम् उचितं लकारं चित्वा वाक्यानि अनुवदति"
+      - id: icse-10-sanskrit-classical-ch07-t03
+        title: "कारकयुक्तवाक्यानि - with, from, for, in, of"
+        title_en: "Sentences needing the right case: with, from, for, in, of"
+        learning_outcomes:
+          - "आङ्ग्लपूर्वसर्गाणाम् अर्थानुसारं संस्कृते उचितां विभक्तिं प्रयुङ्क्ते"
+      - id: icse-10-sanskrit-classical-ch07-t04
+        title: "प्रश्नवाक्यानि निषेधवाक्यानि च; अव्यय-प्रत्यय-प्रयोगः"
+        title_en: "Questions and negative sentences; using indeclinables and ktva/tumun"
+        learning_outcomes:
+          - "किम्-कुत्र-कदा-शब्दैः प्रश्नवाक्यानि, न-शब्देन निषेधवाक्यानि च रचयति"
+      - id: icse-10-sanskrit-classical-ch07-t05
+        title: "लघुगद्यखण्डस्य अनुवादः"
+        title_en: "Translating a short connected prose passage"
+        learning_outcomes:
+          - "लघुवाक्यसमूहं क्रमशः शुद्धसंस्कृतेन अनुवदति"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-sanskrit-classical-ch08
+    number: 8
+    title: "संस्कृततः आङ्ग्लभाषायाम् अनुवादः"
+    title_en: "Translation from Sanskrit into English"
+    unit: "ग - संस्कृततः आङ्ग्लभाषायाम् अनुवादः (Translation from Sanskrit into English)"
+    topics:
+      - id: icse-10-sanskrit-classical-ch08-t01
+        title: "वाक्यविश्लेषणम् - क्रियापदस्य कर्तुः कर्मणः च अभिज्ञानम्"
+        title_en: "Analysing a sentence: finding the verb, subject and object"
+        learning_outcomes:
+          - "वाक्ये क्रियापदं कर्तारं कर्म च अभिज्ञाय अर्थं वदति"
+      - id: icse-10-sanskrit-classical-ch08-t02
+        title: "सन्धि-समास-युक्तपदानां विच्छेदः अर्थग्रहणं च"
+        title_en: "Splitting sandhi and compounds to reach the meaning"
+        learning_outcomes:
+          - "सन्धियुक्तानि समस्तानि च पदानि विभज्य वाक्यस्य अर्थम् आङ्ग्लभाषायां लिखति"
+      - id: icse-10-sanskrit-classical-ch08-t03
+        title: "लकाराणां प्रत्ययानां च आङ्ग्लभाषायाम् उचितः अनुवादः"
+        title_en: "Rendering lakaras and participles by the right English forms"
+        learning_outcomes:
+          - "लकारानुसारम् आङ्ग्लभाषायाः उचितं कालरूपं प्रयुङ्क्ते"
+      - id: icse-10-sanskrit-classical-ch08-t04
+        title: "लघुकथायाः गद्यखण्डस्य वा स्वाभाविकः आङ्ग्लानुवादः"
+        title_en: "Translating a short story or passage into natural English"
+        learning_outcomes:
+          - "संस्कृतगद्यखण्डं स्वाभाविकायां शुद्धायां च आङ्ग्लभाषायाम् अनुवदति"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

@@ -1,0 +1,541 @@
+# ICSE Class 10 Geography (H.C.G. Paper 2, code 50) - ICSE 2027 examination, CLASS X portion only.
+# Source: platform/catalog/sources/cisce.md#icse-2027-geography. Topic wording is our own summary of the official scope.
+subject_id: icse-10-geography
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2027-geography, icse-2027-regulations, icse-2027-specimen-papers, cisce-circular-specimen-papers-2027]
+exam_notes: >-
+  History, Civics and Geography (50) is examined as two papers; this is Paper 2 (2027 specimen paper code 502).
+  One theory paper of 2 hours, 80 marks, plus internal assessment 20 marks (one project report, e.g. local land use,
+  transport or a visit to a water/sewage treatment or composting site; 10 marks subject teacher + 10 external examiner).
+  Part I Map Work is compulsory: interpretation of a Survey of India topographical sheet and an outline map of India
+  (6 features to mark and 4 to identify). Part II Geography of India carries a choice of structured questions; see the
+  2027 specimen paper for the exact pattern. Answers are expected to use sketches, diagrams, graphs and charts, and
+  questions may require interpreting photographs. About 50% of marks target higher-order skills per the October 2026 circular.
+  Map reading is an examined written skill, so it is taught here as chapters (chapters 1-5), not as practical work.
+  The ICSE 2027 paper is set only on the Class X syllabus (Class IX Principles of Geography is in icse-9-geography).
+  CISCE lists numbered topics, not textbook chapters: SOYL groups them into 18 teachable chapters in syllabus order.
+  No marks weightage per part is published in the syllabus.
+units:
+  - { name: "Part I: Map Work", marks: null }
+  - { name: "Part II: Geography of India", marks: null }
+chapters:
+  - id: icse-10-geography-ch01
+    number: 1
+    title: "Topographical Maps: Grid References, Contours and Heights"
+    unit: "Part I: Map Work"
+    topics:
+      - id: icse-10-geography-ch01-t01
+        title: "Eastings and northings; locating features with four-figure and six-figure grid references"
+        learning_outcomes:
+          - "Give the four-figure grid reference of a grid square containing a named feature"
+          - "Give the six-figure grid reference of a point feature such as a temple or triangulated height"
+          - "Locate and name the feature at a given grid reference on a topographical sheet"
+      - id: icse-10-geography-ch01-t02
+        title: "Contours and contour interval"
+        learning_outcomes:
+          - "Define a contour and a contour interval and find the contour interval of a given sheet"
+      - id: icse-10-geography-ch01-t03
+        title: "Identifying landforms from contours: steep slope, gentle slope, hill, ridge and escarpment"
+        learning_outcomes:
+          - "Identify steep and gentle slopes from the spacing of contours"
+          - "Recognise a conical hill, ridge and escarpment from contour patterns and draw a simple sketch of each"
+      - id: icse-10-geography-ch01-t04
+        title: "Triangulated height, spot height and relative height/depth"
+        learning_outcomes:
+          - "Distinguish a triangulated height from a spot height by its map symbol and purpose"
+          - "Interpret relative height and relative depth shown on a sheet, such as the height of a cliff or depth of a well"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-geography-ch02
+    number: 2
+    title: "Topographical Maps: Colours, Symbols, Scale, Distance and Direction"
+    unit: "Part I: Map Work"
+    topics:
+      - id: icse-10-geography-ch02-t01
+        title: "Colour tints and conventional symbols on a Survey of India sheet"
+        learning_outcomes:
+          - "State what each colour tint represents (e.g. white, yellow, green, blue, brown, black, red)"
+          - "Identify common conventional symbols such as wells, tanks, huts, perennial and seasonal streams, and survey points"
+      - id: icse-10-geography-ch02-t02
+        title: "Types of scale: statement scale, representative fraction and linear scale"
+        learning_outcomes:
+          - "Identify the three types of scale on a sheet and convert a statement scale to a representative fraction"
+      - id: icse-10-geography-ch02-t03
+        title: "Measuring straight-line distance using the map scale"
+        learning_outcomes:
+          - "Calculate the direct distance in kilometres between two places on the sheet"
+      - id: icse-10-geography-ch02-t04
+        title: "Calculating area from full grid squares"
+        learning_outcomes:
+          - "Calculate the area of a region bounded by full grid squares in square kilometres"
+      - id: icse-10-geography-ch02-t05
+        title: "Directions between locations using the eight cardinal and intercardinal points"
+        learning_outcomes:
+          - "State the direction of one feature from another using the eight points of the compass"
+    removed_topics:
+      - "Only direct (straight-line) distance is measured; area is calculated only for full grid squares"
+    literature_texts: []
+  - id: icse-10-geography-ch03
+    number: 3
+    title: "Topographical Maps: Settlements, Land Use, Transport and Drainage"
+    unit: "Part I: Map Work"
+    topics:
+      - id: icse-10-geography-ch03-t01
+        title: "Sites of prominent villages, towns and settlements and the services available"
+        learning_outcomes:
+          - "Identify a settlement and the services it offers (post office, police station, dispensary) from the map index and symbols"
+          - "Give a reason for the site of a settlement, such as nearness to water or a road"
+      - id: icse-10-geography-ch03-t02
+        title: "Land use and land cover"
+        learning_outcomes:
+          - "Identify cultivated land, open scrub, forest and fallow land on a sheet"
+          - "Infer the main occupation of people in an area from land use evidence"
+      - id: icse-10-geography-ch03-t03
+        title: "Means of transport and communication: metalled and unmetalled roads, cart tracks, pack tracks, footpaths"
+        learning_outcomes:
+          - "Identify types of roads and tracks and the means of communication shown in the sheet index"
+      - id: icse-10-geography-ch03-t04
+        title: "Drainage: direction of flow and patterns (dendritic, trellised, radial)"
+        learning_outcomes:
+          - "Determine the direction of flow of a river from contours, spot heights or the shape of tributary junctions"
+          - "Identify dendritic, trellised and radial drainage patterns on a sheet"
+      - id: icse-10-geography-ch03-t05
+        title: "Settlement patterns: clustered and dispersed"
+        learning_outcomes:
+          - "Distinguish clustered from dispersed settlements and suggest a reason for each pattern in the given area"
+      - id: icse-10-geography-ch03-t06
+        title: "Identifying natural and man-made features"
+        learning_outcomes:
+          - "Classify features on a sheet as natural (e.g. ridge, stream) or man-made (e.g. canal, embankment, dam)"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-geography-ch04
+    number: 4
+    title: "Map of India: Relief, Rivers and Water Bodies"
+    unit: "Part I: Map Work"
+    topics:
+      - id: icse-10-geography-ch04-t01
+        title: "Mountains and peaks: Himalayas, Karakoram, Aravali, Vindhyas, Satpura, Western and Eastern Ghats, Nilgiris, Khasi; K2 and Kanchenjunga"
+        learning_outcomes:
+          - "Mark and name each listed mountain range and peak on an outline map of India"
+      - id: icse-10-geography-ch04-t02
+        title: "Plateaus, plains and desert: Deccan, Chota Nagpur, Gangetic Plains, Konkan, Malabar, Coromandel, Northern Circars, Thar"
+        learning_outcomes:
+          - "Mark and name the listed plateaus, plains, coastal plains and the Thar Desert"
+      - id: icse-10-geography-ch04-t03
+        title: "Rivers to be identified: Himalayan rivers (Indus system, Ganga and its tributaries, Brahmaputra)"
+        learning_outcomes:
+          - "Identify the Indus, Ravi, Beas, Chenab, Jhelum, Satluj, Ganga, Yamuna, Ghaghra, Gomti, Gandak, Kosi and Brahmaputra on a map"
+      - id: icse-10-geography-ch04-t04
+        title: "Rivers to be identified: peninsular rivers (Chambal, Betwa, Narmada, Tapti, Mahanadi, Godavari, Krishna, Cauvery)"
+        learning_outcomes:
+          - "Identify each listed peninsular river and state whether it flows into the Bay of Bengal or the Arabian Sea"
+      - id: icse-10-geography-ch04-t05
+        title: "Water bodies and pass: Gulfs of Kutch, Khambhat and Mannar, Palk Strait, Andaman Sea, Wular Lake; Karakoram Pass"
+        learning_outcomes:
+          - "Mark and name each listed water body and the Karakoram Pass"
+      - id: icse-10-geography-ch04-t06
+        title: "Tropic of Cancer and the Standard Meridian (82 degrees 30 minutes E)"
+        learning_outcomes:
+          - "Identify the Tropic of Cancer and the Indian Standard Meridian and name states they pass through"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-geography-ch05
+    number: 5
+    title: "Map of India: Winds, Minerals, Soils, Cities and Population"
+    unit: "Part I: Map Work"
+    topics:
+      - id: icse-10-geography-ch05-t01
+        title: "Direction of winds: south-west monsoon (Arabian Sea and Bay of Bengal branches), north-east monsoon, western disturbances"
+        learning_outcomes:
+          - "Mark the direction of each wind system with arrows on an outline map"
+      - id: icse-10-geography-ch05-t02
+        title: "Minerals to be identified: Mumbai High and Digboi (oil), Singhbhum (iron), Jharia (coal)"
+        learning_outcomes:
+          - "Identify each mineral location and name the mineral found there"
+      - id: icse-10-geography-ch05-t03
+        title: "Soil distribution: alluvial, black and red soil"
+        learning_outcomes:
+          - "Shade and label the regions of alluvial, black and red soil on an outline map"
+      - id: icse-10-geography-ch05-t04
+        title: "Cities to be identified: Delhi, Mumbai, Kolkata, Chennai, Hyderabad, Bengaluru, Kochi, Allahabad"
+        learning_outcomes:
+          - "Identify each listed city on a map from its position"
+      - id: icse-10-geography-ch05-t05
+        title: "Distribution of population: dense and sparse areas"
+        learning_outcomes:
+          - "Mark a densely populated and a sparsely populated region and give a geographical reason for each"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-geography-ch06
+    number: 6
+    title: "Climate of India"
+    unit: "Part II: Geography of India"
+    topics:
+      - id: icse-10-geography-ch06-t01
+        title: "Factors affecting India's climate: latitude, altitude, distance from the sea, winds, the Himalayas, jet streams and El Nino"
+        learning_outcomes:
+          - "Explain how each factor influences temperature or rainfall in a named part of India"
+          - "Explain why Mumbai has a smaller annual range of temperature than Delhi"
+      - id: icse-10-geography-ch06-t02
+        title: "Distribution of temperature, rainfall and winds in summer and winter"
+        learning_outcomes:
+          - "Describe the pattern of temperature and rainfall across India in summer and in winter"
+      - id: icse-10-geography-ch06-t03
+        title: "The monsoon and its mechanism"
+        learning_outcomes:
+          - "Explain the onset of the south-west monsoon using differential heating and the shift of pressure belts"
+          - "Explain the role of the jet streams and El Nino in the behaviour of the monsoon"
+      - id: icse-10-geography-ch06-t04
+        title: "Seasons: hot weather, south-west monsoon, retreating monsoon and cold weather"
+        learning_outcomes:
+          - "Describe temperature, pressure, winds and rainfall in each season"
+          - "Explain why Tamil Nadu coast gets rain in winter from the retreating/north-east monsoon"
+      - id: icse-10-geography-ch06-t05
+        title: "Local winds and seasonal weather phenomena (loo, mango showers, Kalbaisakhi, western disturbances)"
+        learning_outcomes:
+          - "Name the local winds and storms of the hot season and the regions where they occur"
+          - "Explain how western disturbances bring winter rain to north-west India"
+      - id: icse-10-geography-ch06-t06
+        title: "Interpreting climate data of Indian stations"
+        learning_outcomes:
+          - "Calculate annual range of temperature and total rainfall from a station's monthly data"
+          - "Identify a station's location (coastal/interior, north/south) and season of rainfall from its climate data"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-geography-ch07
+    number: 7
+    title: "Soil Resources"
+    unit: "Part II: Geography of India"
+    topics:
+      - id: icse-10-geography-ch07-t01
+        title: "Alluvial soil: formation, distribution, composition, characteristics and crops"
+        learning_outcomes:
+          - "Distinguish khadar from bhangar and state the crops suited to alluvial soil"
+      - id: icse-10-geography-ch07-t02
+        title: "Black soil: formation, distribution, characteristics and crops"
+        learning_outcomes:
+          - "Explain the formation of black soil from lava and why it retains moisture and suits cotton"
+      - id: icse-10-geography-ch07-t03
+        title: "Red soil and laterite soil: formation, distribution, characteristics and crops"
+        learning_outcomes:
+          - "Explain the red colour of red soil and the process of leaching in laterite formation"
+          - "Compare red and laterite soils by texture, fertility and crops grown"
+      - id: icse-10-geography-ch07-t04
+        title: "Soil erosion: meaning, agents and causes"
+        learning_outcomes:
+          - "Explain sheet erosion, gully erosion and wind erosion"
+          - "Identify human causes of soil erosion such as deforestation and overgrazing"
+      - id: icse-10-geography-ch07-t05
+        title: "Soil conservation: importance and methods"
+        learning_outcomes:
+          - "Describe methods such as terrace farming, contour ploughing, shelter belts and afforestation and say where each is suitable"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-geography-ch08
+    number: 8
+    title: "Natural Vegetation"
+    unit: "Part II: Geography of India"
+    topics:
+      - id: icse-10-geography-ch08-t01
+        title: "Importance of forests"
+        learning_outcomes:
+          - "Explain the ecological and economic importance of forests"
+      - id: icse-10-geography-ch08-t02
+        title: "Tropical evergreen and tropical deciduous forests: distribution, characteristics and trees"
+        learning_outcomes:
+          - "Correlate the features of each forest type with rainfall and temperature"
+          - "Name important trees of each type and their uses"
+      - id: icse-10-geography-ch08-t03
+        title: "Tropical desert, littoral (tidal) and mountain vegetation"
+        learning_outcomes:
+          - "Explain how desert plants and mangroves are adapted to their environment"
+          - "Describe the change in vegetation with altitude in the Himalayas"
+      - id: icse-10-geography-ch08-t04
+        title: "Forest conservation: afforestation, reforestation, social forestry, agroforestry and Van Mahotsav"
+        learning_outcomes:
+          - "Distinguish afforestation from reforestation and social forestry from agroforestry"
+          - "State the aim of Van Mahotsav"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-geography-ch09
+    number: 9
+    title: "Water Resources"
+    unit: "Part II: Geography of India"
+    topics:
+      - id: icse-10-geography-ch09-t01
+        title: "Sources of water: surface water and groundwater; need for conservation"
+        learning_outcomes:
+          - "Distinguish surface water from groundwater with examples"
+          - "Explain why water conservation is needed in India"
+      - id: icse-10-geography-ch09-t02
+        title: "Rainwater harvesting: methods and importance"
+        learning_outcomes:
+          - "Describe rooftop rainwater harvesting and explain how it recharges groundwater"
+      - id: icse-10-geography-ch09-t03
+        title: "Irrigation: importance; wells, tube wells and tanks"
+        learning_outcomes:
+          - "Explain why irrigation is needed in India"
+          - "Explain why tank irrigation is common in peninsular India and tube wells in the northern plains"
+      - id: icse-10-geography-ch09-t04
+        title: "Canal irrigation and modern methods: drip and sprinkler irrigation"
+        learning_outcomes:
+          - "Compare perennial and inundation canals and state disadvantages of canal irrigation"
+          - "Explain how drip and sprinkler irrigation save water"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-geography-ch10
+    number: 10
+    title: "Mineral Resources"
+    unit: "Part II: Geography of India"
+    topics:
+      - id: icse-10-geography-ch10-t01
+        title: "Iron ore: types, uses and distribution (two leading states and mining areas)"
+        learning_outcomes:
+          - "Name the types of iron ore and state uses of iron"
+          - "Name two leading iron-ore producing states and a prominent mining area in each"
+      - id: icse-10-geography-ch10-t02
+        title: "Manganese: uses and distribution"
+        learning_outcomes:
+          - "State the uses of manganese and name two leading states with their mining areas"
+      - id: icse-10-geography-ch10-t03
+        title: "Copper: uses and distribution"
+        learning_outcomes:
+          - "State the uses of copper and name two leading states with their mining areas"
+      - id: icse-10-geography-ch10-t04
+        title: "Bauxite: uses and distribution"
+        learning_outcomes:
+          - "State the uses of bauxite and name two leading states with their mining areas"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-geography-ch11
+    number: 11
+    title: "Energy Resources"
+    unit: "Part II: Geography of India"
+    topics:
+      - id: icse-10-geography-ch11-t01
+        title: "Coal: types, distribution, advantages and disadvantages"
+        learning_outcomes:
+          - "Name the types of coal and the main coalfields of India"
+          - "State advantages and disadvantages of coal as an energy source"
+      - id: icse-10-geography-ch11-t02
+        title: "Petroleum and natural gas: distribution, advantages and disadvantages"
+        learning_outcomes:
+          - "Name the main onshore and offshore oil fields of India"
+          - "Explain why natural gas is considered a cleaner fuel than coal"
+      - id: icse-10-geography-ch11-t03
+        title: "Hydel power: Bhakra Nangal and Hirakud projects and their benefits"
+        learning_outcomes:
+          - "State the river, state and benefits of the Bhakra Nangal and Hirakud projects"
+          - "List advantages of hydroelectricity over thermal power"
+      - id: icse-10-geography-ch11-t04
+        title: "Non-conventional sources: solar, wind and tidal energy"
+        learning_outcomes:
+          - "Name important areas for solar, wind and tidal energy in India and state advantages and disadvantages of each"
+      - id: icse-10-geography-ch11-t05
+        title: "Geothermal, nuclear and biogas energy"
+        learning_outcomes:
+          - "Name important areas for geothermal and nuclear energy in India"
+          - "Explain how biogas is produced and why it benefits rural households"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-geography-ch12
+    number: 12
+    title: "Agriculture in India"
+    unit: "Part II: Geography of India"
+    topics:
+      - id: icse-10-geography-ch12-t01
+        title: "Indian agriculture: importance, problems and benefits"
+        learning_outcomes:
+          - "Explain the importance of agriculture to India's economy"
+          - "Identify problems such as small holdings, dependence on monsoon and soil degradation and suggest remedies"
+      - id: icse-10-geography-ch12-t02
+        title: "Green Revolution: meaning and impact of the first Green Revolution"
+        learning_outcomes:
+          - "Explain the meaning of the Green Revolution and its inputs (HYV seeds, irrigation, fertilisers)"
+          - "Evaluate positive and negative impacts of the first Green Revolution"
+      - id: icse-10-geography-ch12-t03
+        title: "Types of farming: subsistence and commercial; intensive, extensive, plantation and mixed"
+        learning_outcomes:
+          - "Distinguish subsistence from commercial and intensive from extensive farming"
+          - "Describe the features of plantation and mixed farming with Indian examples"
+      - id: icse-10-geography-ch12-t04
+        title: "Agricultural seasons: rabi, kharif and zayad"
+        learning_outcomes:
+          - "State the sowing and harvesting months of each season and name two crops of each"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-geography-ch13
+    number: 13
+    title: "Food Crops: Rice, Wheat, Millets and Pulses"
+    unit: "Part II: Geography of India"
+    topics:
+      - id: icse-10-geography-ch13-t01
+        title: "Rice: climatic and soil requirements, methods of cultivation and producing states"
+        learning_outcomes:
+          - "State the temperature, rainfall and soil needed for rice"
+          - "Describe the transplantation method and name the leading rice-producing states"
+      - id: icse-10-geography-ch13-t02
+        title: "Wheat: climatic and soil requirements, methods of cultivation and producing states"
+        learning_outcomes:
+          - "Explain why wheat is a rabi crop and why winter rain helps it"
+          - "Name the leading wheat-producing states"
+      - id: icse-10-geography-ch13-t03
+        title: "Millets (jowar, bajra, ragi): requirements, cultivation and producing states"
+        learning_outcomes:
+          - "Explain why millets are suited to dry areas and poor soils"
+          - "Name a leading producing state for each millet"
+      - id: icse-10-geography-ch13-t04
+        title: "Pulses: requirements, cultivation and producing states"
+        learning_outcomes:
+          - "Explain why pulses are important in crop rotation and in the Indian diet"
+          - "Name the leading pulse-producing states"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-geography-ch14
+    number: 14
+    title: "Cash Crops: Sugarcane, Oilseeds, Cotton, Jute and Tea"
+    unit: "Part II: Geography of India"
+    topics:
+      - id: icse-10-geography-ch14-t01
+        title: "Sugarcane: requirements, methods of cultivation and producing states"
+        learning_outcomes:
+          - "State the climatic and soil needs of sugarcane and explain ratooning"
+          - "Explain why yields are higher in peninsular India than in the northern plains"
+      - id: icse-10-geography-ch14-t02
+        title: "Oilseeds: groundnut, mustard and soya bean"
+        learning_outcomes:
+          - "State the season, requirements and leading states for groundnut, mustard and soya bean"
+      - id: icse-10-geography-ch14-t03
+        title: "Cotton: requirements, cultivation and producing states"
+        learning_outcomes:
+          - "Explain why black soil and a long frost-free period suit cotton and name the leading states"
+      - id: icse-10-geography-ch14-t04
+        title: "Jute: requirements, cultivation (retting) and producing states"
+        learning_outcomes:
+          - "Describe the retting process and explain why jute is concentrated in the Ganga-Brahmaputra delta"
+      - id: icse-10-geography-ch14-t05
+        title: "Tea: requirements, cultivation and processing; producing states"
+        learning_outcomes:
+          - "Explain why tea is grown on well-drained hill slopes and describe plucking and processing"
+          - "Name the leading tea-producing states"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-geography-ch15
+    number: 15
+    title: "Manufacturing Industries: Classification and Agro-based Industries"
+    unit: "Part II: Geography of India"
+    topics:
+      - id: icse-10-geography-ch15-t01
+        title: "Importance of manufacturing industries"
+        learning_outcomes:
+          - "Explain how industries contribute to employment, exports and self-reliance"
+      - id: icse-10-geography-ch15-t02
+        title: "Classification: large and small scale, mineral-based and agro-based, public and private sector"
+        learning_outcomes:
+          - "Classify given industries by size, raw material and ownership"
+      - id: icse-10-geography-ch15-t03
+        title: "Sugar industry: location factors, distribution and problems"
+        learning_outcomes:
+          - "Explain why sugar mills are located close to sugarcane fields"
+          - "Explain the shift of the sugar industry towards peninsular India"
+      - id: icse-10-geography-ch15-t04
+        title: "Cotton textile industry: location factors, centres and problems"
+        learning_outcomes:
+          - "Explain the factors that favoured the cotton textile industry in Mumbai and Ahmedabad"
+      - id: icse-10-geography-ch15-t05
+        title: "Silk textile industry: types of silk and centres"
+        learning_outcomes:
+          - "Name the types of silk produced in India and the major silk centres"
+          - "Explain why Karnataka leads in mulberry silk"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-geography-ch16
+    number: 16
+    title: "Mineral-based Industries: Iron and Steel, Petrochemicals and Electronics"
+    unit: "Part II: Geography of India"
+    topics:
+      - id: icse-10-geography-ch16-t01
+        title: "Integrated iron and steel plants: raw materials and location factors"
+        learning_outcomes:
+          - "List the raw materials of the iron and steel industry"
+          - "Explain why iron and steel plants are located near coal and iron-ore fields or ports"
+      - id: icse-10-geography-ch16-t02
+        title: "Tata Steel (Jamshedpur), Rourkela and Visakhapatnam steel plants"
+        learning_outcomes:
+          - "State the location, ownership and sources of raw materials of each plant"
+      - id: icse-10-geography-ch16-t03
+        title: "Petrochemical industry: products, key centres and relevance"
+        learning_outcomes:
+          - "Name petrochemical products and key centres of the industry"
+          - "Explain the importance of petrochemicals in modern life"
+      - id: icse-10-geography-ch16-t04
+        title: "Electronics industry: key centres and relevance in the modern world"
+        learning_outcomes:
+          - "Name key electronics centres such as Bengaluru and explain the factors behind their growth"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-geography-ch17
+    number: 17
+    title: "Transport"
+    unit: "Part II: Geography of India"
+    topics:
+      - id: icse-10-geography-ch17-t01
+        title: "Importance and modes of transport"
+        learning_outcomes:
+          - "Explain why an efficient transport network is essential for development"
+      - id: icse-10-geography-ch17-t02
+        title: "Roadways: factors affecting development, advantages and disadvantages"
+        learning_outcomes:
+          - "Explain the factors that affect road development in different terrains"
+          - "List advantages and disadvantages of road transport"
+      - id: icse-10-geography-ch17-t03
+        title: "Expressways, National Highways, the North-South-East-West Corridor and the Golden Quadrilateral"
+        learning_outcomes:
+          - "State the meaning and importance of expressways, National Highways, the NSEW Corridor and the Golden Quadrilateral"
+          - "Name the four metropolitan cities joined by the Golden Quadrilateral"
+      - id: icse-10-geography-ch17-t04
+        title: "Railways: factors affecting development, advantages and disadvantages"
+        learning_outcomes:
+          - "Explain why the rail network is dense in the northern plains and sparse in hilly and desert areas"
+      - id: icse-10-geography-ch17-t05
+        title: "Airways: advantages and disadvantages"
+        learning_outcomes:
+          - "Explain why air transport is important for remote and hilly areas despite its high cost"
+      - id: icse-10-geography-ch17-t06
+        title: "Waterways: inland and coastal; advantages and disadvantages"
+        learning_outcomes:
+          - "Compare inland and coastal waterways and state their advantages and limitations"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-geography-ch18
+    number: 18
+    title: "Waste Management"
+    unit: "Part II: Geography of India"
+    topics:
+      - id: icse-10-geography-ch18-t01
+        title: "Impact of waste accumulation: spoilage of landscape, pollution and health hazards"
+        learning_outcomes:
+          - "Explain three harmful effects of accumulated waste with local examples"
+      - id: icse-10-geography-ch18-t02
+        title: "Need for waste management"
+        learning_outcomes:
+          - "Explain why waste management is essential in growing Indian cities"
+      - id: icse-10-geography-ch18-t03
+        title: "Key terms in brief: global warming, acid rain, eutrophication, biomagnification and thermal pollution"
+        learning_outcomes:
+          - "Define each term and state one cause and one effect"
+      - id: icse-10-geography-ch18-t04
+        title: "Methods of safe disposal: segregation, dumping and composting"
+        learning_outcomes:
+          - "Explain why segregation at source is the first step of waste management"
+          - "Compare landfill dumping with composting"
+      - id: icse-10-geography-ch18-t05
+        title: "Reduce, reuse and recycle: need and methods"
+        learning_outcomes:
+          - "Suggest ways to reduce, reuse and recycle waste at home and school"
+    removed_topics: []
+    literature_texts: []
+removed_topics:
+  - "Class IX Principles of Geography (Our World, structure of the earth, hydrosphere, atmosphere, pollution, natural regions of the world, world map work) is not examined in ICSE 2027; see icse-9-geography"

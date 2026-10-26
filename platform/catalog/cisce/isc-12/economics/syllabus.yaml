@@ -1,0 +1,595 @@
+# ISC Class 12 Economics (856) - ISC 2027 examination, CLASS XII portion only.
+# Source: platform/catalog/sources/cisce.md#isc-2027-economics. Topic wording is our own summary of the official scope.
+subject_id: isc-12-economics
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-economics, isc-2027-regulations, isc-2027-specimen-papers]
+exam_notes: >-
+  Two papers: Paper I Theory of 3 hours, 80 marks, and Paper II Project Work, 20 marks. For Paper II the candidate
+  completes two projects (10 marks each: overall format 1, content 4, findings 2, viva-voce 3) on any theory topic,
+  assessed by the teacher and a Visiting Examiner; viva-voce is conducted only by the Visiting Examiner and CISCE sets
+  no question paper for it. Paper I is split equally: Microeconomic Theory 40 marks and Macroeconomics 40 marks.
+  The published weightage table (as reconstructed from the extracted PDF, where the rows sum to 40 + 40) gives
+  Demand and Elasticity of Demand 16, Supply and Market Mechanism 12, Production, Cost and Revenue and Market Forms 12,
+  Theory of Income and Employment 8, Money and Banking 8, Balance of Payments and Exchange Rate 6, Public Finance 6,
+  National Income 12. CISCE asks for examples from the Indian economy wherever relevant. CISCE lists topics, not
+  chapters: SOYL groups them into 20 teachable chapters in syllabus order. The Class XI portion (Understanding
+  Economics, Indian Economic Development, Statistics) is in isc-11-economics and is not examined in ISC 2027.
+units:
+  - { name: "1. Microeconomic Theory: Demand and Elasticity of Demand", marks: 16 }
+  - { name: "1. Microeconomic Theory: Supply and Market Mechanism", marks: 12 }
+  - { name: "1. Microeconomic Theory: Production, Cost and Revenue, Market Forms", marks: 12 }
+  - { name: "2. Theory of Income and Employment", marks: 8 }
+  - { name: "3. Money and Banking", marks: 8 }
+  - { name: "4. Balance of Payments and Exchange Rate", marks: 6 }
+  - { name: "5. Public Finance", marks: 6 }
+  - { name: "6. National Income", marks: 12 }
+chapters:
+  - id: isc-12-economics-ch01
+    number: 1
+    title: "Theory of Demand"
+    unit: "1. Microeconomic Theory: Demand and Elasticity of Demand"
+    topics:
+      - id: isc-12-economics-ch01-t01
+        title: "Meaning and types of demand (individual, market, joint, composite, derived)"
+        learning_outcomes:
+          - "Define demand and distinguish it from desire and want"
+          - "Classify given examples as joint, composite or derived demand"
+      - id: isc-12-economics-ch01-t02
+        title: "Determinants of demand and the demand function Dx = f(Px, Py, Y, T, ...)"
+        learning_outcomes:
+          - "Write a demand function and explain how each determinant affects quantity demanded"
+          - "Distinguish substitutes from complements and normal goods from inferior goods using Indian examples"
+      - id: isc-12-economics-ch01-t03
+        title: "Law of Demand: assumptions, demand schedule and demand curve; reasons for the downward slope"
+        learning_outcomes:
+          - "Draw a demand curve from a given demand schedule"
+          - "Explain the income effect, substitution effect, law of diminishing marginal utility and new buyers as reasons for the downward slope"
+      - id: isc-12-economics-ch01-t04
+        title: "Derivation of the market demand curve from individual demand curves"
+        learning_outcomes:
+          - "Construct a market demand schedule and curve by horizontal summation of individual schedules"
+      - id: isc-12-economics-ch01-t05
+        title: "Movement along versus shift of the demand curve (extension, contraction, increase, decrease)"
+        learning_outcomes:
+          - "Distinguish a change in quantity demanded from a change in demand with diagrams"
+          - "Predict the direction of shift of the demand curve for a given change in income, tastes or related prices"
+      - id: isc-12-economics-ch01-t06
+        title: "Exceptions to the Law of Demand (Giffen goods, Veblen goods, expectations of price change, emergencies)"
+        learning_outcomes:
+          - "Explain why the demand curve may slope upward for Giffen and prestige goods"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-economics-ch02
+    number: 2
+    title: "Consumer Behaviour: Cardinal Utility Analysis"
+    unit: "1. Microeconomic Theory: Demand and Elasticity of Demand"
+    topics:
+      - id: isc-12-economics-ch02-t01
+        title: "Utility, total utility and marginal utility; relationship between TU and MU"
+        learning_outcomes:
+          - "Calculate MU from a TU schedule"
+          - "Explain with a diagram what happens to TU when MU is positive, zero and negative"
+      - id: isc-12-economics-ch02-t02
+        title: "Law of Diminishing Marginal Utility: statement, assumptions, schedule and diagram"
+        learning_outcomes:
+          - "State the law and its assumptions"
+          - "Illustrate the law with a schedule and a diagram"
+      - id: isc-12-economics-ch02-t03
+        title: "Consumer's equilibrium with one commodity (MUx = Px)"
+        learning_outcomes:
+          - "Identify the equilibrium quantity from a schedule of MU and price"
+          - "Explain why buying more or less than the equilibrium quantity lowers the consumer's total satisfaction"
+      - id: isc-12-economics-ch02-t04
+        title: "Law of Equimarginal Utility and consumer's equilibrium with two commodities (MUx/Px = MUy/Py = MUm)"
+        learning_outcomes:
+          - "State the Law of Equimarginal Utility"
+          - "Determine the equilibrium combination of two goods from a schedule and a given income"
+    removed_topics:
+      - "Criticisms of the Law of Diminishing Marginal Utility (only assumptions are to be taught)"
+    literature_texts: []
+  - id: isc-12-economics-ch03
+    number: 3
+    title: "Consumer Behaviour: Indifference Curve Analysis"
+    unit: "1. Microeconomic Theory: Demand and Elasticity of Demand"
+    topics:
+      - id: isc-12-economics-ch03-t01
+        title: "Ordinal utility; indifference schedule, indifference curve and indifference map"
+        learning_outcomes:
+          - "Distinguish ordinal from cardinal measurement of utility"
+          - "Draw an indifference curve and an indifference map from a schedule"
+      - id: isc-12-economics-ch03-t02
+        title: "Marginal rate of substitution (MRS) and diminishing MRS"
+        learning_outcomes:
+          - "Calculate MRS between two goods from an indifference schedule"
+          - "Explain why diminishing MRS makes indifference curves convex to the origin"
+      - id: isc-12-economics-ch03-t03
+        title: "Properties of indifference curves"
+        learning_outcomes:
+          - "Explain why indifference curves slope downward, are convex and never intersect"
+          - "Explain why a higher indifference curve shows a higher level of satisfaction"
+      - id: isc-12-economics-ch03-t04
+        title: "Budget line (price line): equation, slope and shifts with changes in income and prices"
+        learning_outcomes:
+          - "Draw a budget line for given income and prices and state its slope as -Px/Py"
+          - "Show how the budget line shifts or rotates when income or one price changes"
+      - id: isc-12-economics-ch03-t05
+        title: "Consumer's equilibrium with indifference curves: MRS = Px/Py and convexity"
+        learning_outcomes:
+          - "Identify the equilibrium point on a diagram and state both conditions of equilibrium"
+          - "Explain why points of intersection of the budget line with an indifference curve are not equilibrium points"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-economics-ch04
+    number: 4
+    title: "Elasticity of Demand"
+    unit: "1. Microeconomic Theory: Demand and Elasticity of Demand"
+    topics:
+      - id: isc-12-economics-ch04-t01
+        title: "Meaning of price elasticity of demand and its five degrees"
+        learning_outcomes:
+          - "Define price elasticity of demand"
+          - "Draw and interpret demand curves that are perfectly elastic, perfectly inelastic, unitary elastic, relatively elastic and relatively inelastic"
+      - id: isc-12-economics-ch04-t02
+        title: "Measurement by the percentage (proportionate) method, with numericals"
+        learning_outcomes:
+          - "Calculate price elasticity of demand from given price and quantity data using the percentage method"
+          - "Find an unknown price or quantity when elasticity is given"
+      - id: isc-12-economics-ch04-t03
+        title: "Total expenditure (outlay) method"
+        learning_outcomes:
+          - "Classify demand as elastic, unitary or inelastic from changes in total expenditure"
+      - id: isc-12-economics-ch04-t04
+        title: "Point (geometric) method on linear and non-linear demand curves"
+        learning_outcomes:
+          - "Measure elasticity at a point as lower segment divided by upper segment"
+          - "Show that elasticity differs at different points of a straight-line demand curve"
+      - id: isc-12-economics-ch04-t05
+        title: "Factors affecting price elasticity of demand"
+        learning_outcomes:
+          - "Explain how availability of substitutes, nature of the good, share of income, number of uses and time period affect elasticity"
+      - id: isc-12-economics-ch04-t06
+        title: "Income elasticity and cross elasticity of demand"
+        learning_outcomes:
+          - "Interpret the sign of income elasticity for normal and inferior goods"
+          - "Interpret the sign of cross elasticity for substitutes and complements"
+    removed_topics:
+      - "Numericals on the point, expenditure and geometric methods (numericals are set on the percentage method only)"
+    literature_texts: []
+  - id: isc-12-economics-ch05
+    number: 5
+    title: "Theory of Supply and Elasticity of Supply"
+    unit: "1. Microeconomic Theory: Supply and Market Mechanism"
+    topics:
+      - id: isc-12-economics-ch05-t01
+        title: "Meaning of supply; difference between stock and supply"
+        learning_outcomes:
+          - "Distinguish stock (potential supply) from supply (actual supply) with examples of perishable and durable goods"
+      - id: isc-12-economics-ch05-t02
+        title: "Determinants of supply and the supply function"
+        learning_outcomes:
+          - "Write a supply function and explain how price, input prices, technology, taxes, goals of the firm and prices of related goods affect supply"
+      - id: isc-12-economics-ch05-t03
+        title: "Law of Supply: schedule and curve; market supply curve from individual supply curves; exceptions"
+        learning_outcomes:
+          - "Draw a supply curve from a schedule and derive the market supply curve by horizontal summation"
+          - "Explain exceptions such as the backward-bending supply curve of labour and supply of agricultural goods"
+      - id: isc-12-economics-ch05-t04
+        title: "Movement along versus shift of the supply curve"
+        learning_outcomes:
+          - "Distinguish extension/contraction from increase/decrease of supply with diagrams and causes"
+      - id: isc-12-economics-ch05-t05
+        title: "Elasticity of supply: meaning, degrees, percentage method and geometric method"
+        learning_outcomes:
+          - "Calculate elasticity of supply by the percentage method"
+          - "Identify elastic, unitary and inelastic supply curves by where a straight-line supply curve meets the axes"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-economics-ch06
+    number: 6
+    title: "Market Mechanism: Equilibrium Price and its Applications"
+    unit: "1. Microeconomic Theory: Supply and Market Mechanism"
+    topics:
+      - id: isc-12-economics-ch06-t01
+        title: "Market equilibrium and disequilibrium; excess demand and excess supply"
+        learning_outcomes:
+          - "Find the equilibrium price and quantity from demand and supply schedules or equations"
+          - "Explain how excess demand and excess supply push the price back to equilibrium"
+      - id: isc-12-economics-ch06-t02
+        title: "Effect of changes in demand on equilibrium price and quantity"
+        learning_outcomes:
+          - "Show with a diagram the effect of an increase or decrease in demand when supply is unchanged"
+      - id: isc-12-economics-ch06-t03
+        title: "Effect of changes in supply, and of simultaneous changes in demand and supply"
+        learning_outcomes:
+          - "Show with diagrams the effect of a shift in supply on equilibrium"
+          - "Predict the result when demand and supply change together in the same or opposite directions"
+      - id: isc-12-economics-ch06-t04
+        title: "Price ceiling, rationing and black markets"
+        learning_outcomes:
+          - "Explain with a diagram why a price ceiling below equilibrium creates a shortage and leads to rationing"
+      - id: isc-12-economics-ch06-t05
+        title: "Price floor (minimum support price)"
+        learning_outcomes:
+          - "Explain with a diagram why a floor price above equilibrium creates a surplus, using minimum support prices for crops as an example"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-economics-ch07
+    number: 7
+    title: "Production Function and Law of Variable Proportions"
+    unit: "1. Microeconomic Theory: Production, Cost and Revenue, Market Forms"
+    topics:
+      - id: isc-12-economics-ch07-t01
+        title: "Production function (concept); short-run and long-run production functions"
+        learning_outcomes:
+          - "Distinguish fixed from variable factors and the short run from the long run"
+      - id: isc-12-economics-ch07-t02
+        title: "Total, average and marginal physical product and their relationships"
+        learning_outcomes:
+          - "Calculate AP and MP from a TP schedule"
+          - "Explain the relationship between TP and MP and between AP and MP with diagrams"
+      - id: isc-12-economics-ch07-t03
+        title: "Law of Variable Proportions (returns to a factor): statement, assumptions, diagram and three stages"
+        learning_outcomes:
+          - "Identify the three stages of production on a diagram and explain the causes of each stage"
+          - "Explain why a rational producer operates in the second stage"
+      - id: isc-12-economics-ch07-t04
+        title: "Returns to scale (meaning only)"
+        learning_outcomes:
+          - "Distinguish returns to a factor from returns to scale"
+          - "Define increasing, constant and diminishing returns to scale"
+    removed_topics:
+      - "Schedule of the Law of Variable Proportions is for understanding only and is not tested"
+      - "Returns to scale beyond meaning"
+    literature_texts: []
+  - id: isc-12-economics-ch08
+    number: 8
+    title: "Concepts of Cost"
+    unit: "1. Microeconomic Theory: Production, Cost and Revenue, Market Forms"
+    topics:
+      - id: isc-12-economics-ch08-t01
+        title: "Basic cost concepts: private, social, economic, money, real, explicit and implicit costs"
+        learning_outcomes:
+          - "Distinguish explicit from implicit cost and private from social cost with examples"
+      - id: isc-12-economics-ch08-t02
+        title: "Opportunity cost; accounting cost versus opportunity cost"
+        learning_outcomes:
+          - "Define opportunity cost and compute it in a simple choice situation"
+          - "Explain why economic profit differs from accounting profit"
+      - id: isc-12-economics-ch08-t03
+        title: "Short-run costs: TFC, TVC, TC, AFC, AVC, AC and MC with schedules and diagrams"
+        learning_outcomes:
+          - "Complete a cost schedule by calculating missing cost values"
+          - "Draw the short-run cost curves and explain the shape of each"
+      - id: isc-12-economics-ch08-t04
+        title: "Relationships among average cost, marginal cost and total cost"
+        learning_outcomes:
+          - "Explain why MC cuts AVC and AC at their minimum points"
+          - "Explain why the gap between AC and AVC narrows as output rises"
+      - id: isc-12-economics-ch08-t05
+        title: "Short-run and long-run cost curves (concepts only)"
+        learning_outcomes:
+          - "Describe the long-run average cost curve as an envelope of short-run average cost curves"
+    removed_topics:
+      - "Derivation of long-run and short-run cost curves (concepts only)"
+    literature_texts: []
+  - id: isc-12-economics-ch09
+    number: 9
+    title: "Revenue and Producer's Equilibrium"
+    unit: "1. Microeconomic Theory: Production, Cost and Revenue, Market Forms"
+    topics:
+      - id: isc-12-economics-ch09-t01
+        title: "Total, average and marginal revenue: meaning and calculation"
+        learning_outcomes:
+          - "Calculate AR and MR from a TR schedule and show that AR equals price"
+      - id: isc-12-economics-ch09-t02
+        title: "Revenue curves under perfect competition"
+        learning_outcomes:
+          - "Draw TR, AR and MR curves when price is constant and explain why AR = MR"
+      - id: isc-12-economics-ch09-t03
+        title: "Revenue curves under imperfect competition"
+        learning_outcomes:
+          - "Draw downward-sloping AR and MR curves and explain why MR lies below AR"
+          - "Relate the shape of TR to MR being positive, zero or negative"
+      - id: isc-12-economics-ch09-t04
+        title: "Producer's equilibrium by the TR-TC approach"
+        learning_outcomes:
+          - "Identify profit-maximising output where the gap TR - TC is greatest, from a schedule and a diagram"
+      - id: isc-12-economics-ch09-t05
+        title: "Producer's equilibrium by the MR-MC approach"
+        learning_outcomes:
+          - "State the two conditions MR = MC and MC rising (cutting MR from below)"
+          - "Find equilibrium output from a revenue and cost schedule"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-economics-ch10
+    number: 10
+    title: "Market Forms and Equilibrium of a Firm under Perfect Competition"
+    unit: "1. Microeconomic Theory: Production, Cost and Revenue, Market Forms"
+    topics:
+      - id: isc-12-economics-ch10-t01
+        title: "Perfect competition: features"
+        learning_outcomes:
+          - "Explain each feature of perfect competition and why the firm is a price taker"
+      - id: isc-12-economics-ch10-t02
+        title: "Monopoly and monopolistic competition: features"
+        learning_outcomes:
+          - "Compare monopoly and monopolistic competition in number of sellers, product differentiation, entry and control over price"
+      - id: isc-12-economics-ch10-t03
+        title: "Oligopoly: features; monopsony (meaning only)"
+        learning_outcomes:
+          - "Explain interdependence among firms as the key feature of oligopoly"
+          - "Define monopsony with an example"
+      - id: isc-12-economics-ch10-t04
+        title: "Short-run equilibrium of a perfectly competitive firm: supernormal profit, normal profit and losses; break-even and shut-down points"
+        learning_outcomes:
+          - "Show with diagrams the short-run equilibrium of a firm earning profit, normal profit and loss"
+          - "Identify the break-even point (P = minimum AC) and shut-down point (P = minimum AVC)"
+      - id: isc-12-economics-ch10-t05
+        title: "Long-run equilibrium of a perfectly competitive firm (explanation only)"
+        learning_outcomes:
+          - "Explain why free entry and exit leave firms with only normal profit in the long run"
+    removed_topics:
+      - "Diagram of long-run equilibrium under perfect competition (explanation only)"
+      - "Monopsony beyond its meaning"
+    literature_texts: []
+  - id: isc-12-economics-ch11
+    number: 11
+    title: "Aggregate Demand, Consumption and Saving"
+    unit: "2. Theory of Income and Employment"
+    topics:
+      - id: isc-12-economics-ch11-t01
+        title: "Ex ante (planned) and ex post (realised) demand; effective demand"
+        learning_outcomes:
+          - "Distinguish ex ante from ex post values of saving, investment and demand"
+          - "Explain the meaning of effective demand"
+      - id: isc-12-economics-ch11-t02
+        title: "Aggregate demand and its components (C + I + G + X - M) and aggregate supply"
+        learning_outcomes:
+          - "List the components of aggregate demand in an open economy with government"
+      - id: isc-12-economics-ch11-t03
+        title: "Propensity to consume: APC and MPC; consumption function"
+        learning_outcomes:
+          - "Calculate APC and MPC from income and consumption data"
+          - "Explain why MPC lies between 0 and 1"
+      - id: isc-12-economics-ch11-t04
+        title: "Propensity to save: APS and MPS; APC + APS = 1 and MPC + MPS = 1"
+        learning_outcomes:
+          - "Derive a saving schedule from a consumption schedule"
+          - "Use APC + APS = 1 and MPC + MPS = 1 to find unknown values"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-economics-ch12
+    number: 12
+    title: "Equilibrium Output, Multiplier and Problems of Demand"
+    unit: "2. Theory of Income and Employment"
+    topics:
+      - id: isc-12-economics-ch12-t01
+        title: "Equilibrium level of output: AD = AS approach and saving = investment approach"
+        learning_outcomes:
+          - "Determine equilibrium income with a schedule and a diagram using both approaches"
+          - "Explain how the economy adjusts when planned saving differs from planned investment"
+      - id: isc-12-economics-ch12-t02
+        title: "Investment multiplier: meaning, k = 1/(1 - MPC) = 1/MPS, and its working mechanism"
+        learning_outcomes:
+          - "Calculate the multiplier and the change in income from a given change in investment"
+          - "Explain the rounds of income generation behind the multiplier with a diagram"
+      - id: isc-12-economics-ch12-t03
+        title: "Full employment and involuntary unemployment"
+        learning_outcomes:
+          - "Define full employment and explain why equilibrium may occur below it"
+      - id: isc-12-economics-ch12-t04
+        title: "Excess demand (inflationary gap) and deficient demand (deflationary gap): causes and effects"
+        learning_outcomes:
+          - "Show inflationary and deflationary gaps on a diagram"
+          - "Explain the effects of each on output, employment and prices"
+      - id: isc-12-economics-ch12-t05
+        title: "Measures to correct excess and deficient demand (fiscal and monetary)"
+        learning_outcomes:
+          - "Suggest appropriate fiscal and monetary measures to correct a given gap and justify them"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-economics-ch13
+    number: 13
+    title: "Money and Inflation"
+    unit: "3. Money and Banking"
+    topics:
+      - id: isc-12-economics-ch13-t01
+        title: "Meaning and kinds of money (commodity, metallic, paper, credit, legal tender, fiat, near money)"
+        learning_outcomes:
+          - "Explain how money overcomes the drawbacks of barter"
+          - "Classify given forms of money by kind"
+      - id: isc-12-economics-ch13-t02
+        title: "Functions of money: primary, secondary and contingent"
+        learning_outcomes:
+          - "Explain medium of exchange, measure of value, store of value, standard of deferred payments and contingent functions with examples"
+      - id: isc-12-economics-ch13-t03
+        title: "Supply of money: meaning of M0, M1, M2, M3 and M4"
+        learning_outcomes:
+          - "State the components of each RBI money supply measure and identify narrow and broad money"
+      - id: isc-12-economics-ch13-t04
+        title: "Inflation: meaning; demand-pull and cost-push inflation"
+        learning_outcomes:
+          - "Distinguish demand-pull from cost-push inflation with causes"
+    removed_topics:
+      - "Money supply measures beyond their meaning"
+      - "Diagrams of demand-pull and cost-push inflation"
+    literature_texts: []
+  - id: isc-12-economics-ch14
+    number: 14
+    title: "Commercial Banks and the Central Bank"
+    unit: "3. Money and Banking"
+    topics:
+      - id: isc-12-economics-ch14-t01
+        title: "Functions of commercial banks: primary, secondary and agency/utility functions"
+        learning_outcomes:
+          - "Explain accepting deposits and advancing loans as primary functions, with types of deposits and loans"
+      - id: isc-12-economics-ch14-t02
+        title: "Credit creation by commercial banks and its limitations; high-powered money"
+        learning_outcomes:
+          - "Calculate total deposits created from an initial deposit and a given reserve ratio"
+          - "Explain the limitations on a bank's power to create credit"
+          - "Define high-powered (reserve) money"
+      - id: isc-12-economics-ch14-t03
+        title: "Central Bank (RBI): functions"
+        learning_outcomes:
+          - "Explain the RBI's functions as currency authority, banker to government, banker's bank, lender of last resort and custodian of foreign exchange"
+      - id: isc-12-economics-ch14-t04
+        title: "Quantitative credit control: CRR, SLR, bank rate, repo and reverse repo rates, open market operations"
+        learning_outcomes:
+          - "Explain how each quantitative instrument changes the flow of credit"
+          - "Recommend the direction of change in an instrument to control inflation or deflation"
+      - id: isc-12-economics-ch14-t05
+        title: "Qualitative (selective) credit control: margin requirements, credit rationing, moral suasion, direct action"
+        learning_outcomes:
+          - "Distinguish quantitative from qualitative methods of credit control"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-economics-ch15
+    number: 15
+    title: "Balance of Payments and Foreign Exchange Rate"
+    unit: "4. Balance of Payments and Exchange Rate"
+    topics:
+      - id: isc-12-economics-ch15-t01
+        title: "Balance of payments: meaning; current account and capital account; balance of trade"
+        learning_outcomes:
+          - "Classify given transactions into current account and capital account items"
+          - "Distinguish balance of trade from balance of payments"
+      - id: isc-12-economics-ch15-t02
+        title: "Disequilibrium in the balance of payments: causes and corrective measures"
+        learning_outcomes:
+          - "Explain causes of a BoP deficit and measures such as export promotion, import control and exchange rate adjustment"
+      - id: isc-12-economics-ch15-t03
+        title: "Foreign exchange rate: meaning; fixed and flexible exchange rates"
+        learning_outcomes:
+          - "Compare fixed and flexible exchange rate systems"
+      - id: isc-12-economics-ch15-t04
+        title: "Determination of the exchange rate in a free market (demand for and supply of foreign exchange)"
+        learning_outcomes:
+          - "Explain the sources of demand and supply of foreign exchange"
+          - "Show the equilibrium exchange rate and the effect of a shift in demand or supply on a diagram"
+      - id: isc-12-economics-ch15-t05
+        title: "Depreciation, appreciation, devaluation and revaluation (meaning only)"
+        learning_outcomes:
+          - "Distinguish depreciation from devaluation and appreciation from revaluation"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-economics-ch16
+    number: 16
+    title: "Fiscal Policy"
+    unit: "5. Public Finance"
+    topics:
+      - id: isc-12-economics-ch16-t01
+        title: "Fiscal policy: meaning and instruments"
+        learning_outcomes:
+          - "Name the instruments of fiscal policy and explain how each affects aggregate demand"
+      - id: isc-12-economics-ch16-t02
+        title: "Public revenue; taxes: meaning and types; direct versus indirect taxes"
+        learning_outcomes:
+          - "Distinguish direct from indirect taxes with Indian examples such as income tax and GST"
+          - "Distinguish progressive, proportional and regressive taxes"
+      - id: isc-12-economics-ch16-t03
+        title: "Public expenditure: meaning and importance"
+        learning_outcomes:
+          - "Explain the role of public expenditure in growth, employment and redistribution"
+      - id: isc-12-economics-ch16-t04
+        title: "Public debt: meaning and methods of redemption; deficit financing (meaning)"
+        learning_outcomes:
+          - "Describe methods of redeeming public debt such as a sinking fund, conversion and budget surplus"
+          - "Define deficit financing"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-economics-ch17
+    number: 17
+    title: "Government Budget and Deficits"
+    unit: "5. Public Finance"
+    topics:
+      - id: isc-12-economics-ch17-t01
+        title: "Government budget: meaning; Union and State budgets"
+        learning_outcomes:
+          - "Explain what a government budget is and distinguish the Union budget from State budgets"
+      - id: isc-12-economics-ch17-t02
+        title: "Components of the budget: revenue receipts and expenditure, capital receipts and expenditure"
+        learning_outcomes:
+          - "Classify given receipts and expenditures as revenue or capital"
+      - id: isc-12-economics-ch17-t03
+        title: "Revenue deficit, fiscal deficit and primary deficit: meaning, calculation and implications"
+        learning_outcomes:
+          - "Calculate revenue, fiscal and primary deficits from budget data"
+          - "Explain what each deficit implies for borrowing and future interest burden"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-economics-ch18
+    number: 18
+    title: "Circular Flow of Income"
+    unit: "6. National Income"
+    topics:
+      - id: isc-12-economics-ch18-t01
+        title: "Two-sector model: households and firms; real and money flows"
+        learning_outcomes:
+          - "Draw the two-sector circular flow showing real and money flows"
+      - id: isc-12-economics-ch18-t02
+        title: "Three-sector model with government; four-sector model with the rest of the world"
+        learning_outcomes:
+          - "Add government and foreign sector flows to the circular flow diagram"
+      - id: isc-12-economics-ch18-t03
+        title: "Leakages and injections"
+        learning_outcomes:
+          - "Classify saving, taxes and imports as leakages and investment, government spending and exports as injections"
+          - "Explain the effect of leakages exceeding injections on the level of income"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-economics-ch19
+    number: 19
+    title: "National Income Aggregates"
+    unit: "6. National Income"
+    topics:
+      - id: isc-12-economics-ch19-t01
+        title: "GDP, GNP, NDP, NNP at market prices and at factor cost; net factor income from abroad; depreciation; net indirect taxes"
+        learning_outcomes:
+          - "Convert one aggregate into another by adding or subtracting depreciation, NFIA and net indirect taxes"
+      - id: isc-12-economics-ch19-t02
+        title: "National income (NNP at factor cost) and per capita income"
+        learning_outcomes:
+          - "Calculate per capita income from national income and population"
+      - id: isc-12-economics-ch19-t03
+        title: "Private income, personal income, personal disposable income, national disposable income (gross and net)"
+        learning_outcomes:
+          - "Calculate private income, personal income and personal disposable income from given data"
+          - "Explain the relationship among the income concepts"
+      - id: isc-12-economics-ch19-t04
+        title: "Real GDP and nominal GDP"
+        learning_outcomes:
+          - "Calculate real GDP from nominal GDP using a price index"
+      - id: isc-12-economics-ch19-t05
+        title: "GDP and welfare: limitations of GDP as an index of economic welfare"
+        learning_outcomes:
+          - "Explain why distribution of income, non-monetary exchanges and externalities limit GDP as a welfare measure"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-economics-ch20
+    number: 20
+    title: "Measurement of National Income"
+    unit: "6. National Income"
+    topics:
+      - id: isc-12-economics-ch20-t01
+        title: "Product or value-added method: value of output, intermediate consumption, avoiding double counting"
+        learning_outcomes:
+          - "Calculate GVA and national income by the value-added method"
+          - "Explain the problem of double counting and how the value-added method avoids it"
+      - id: isc-12-economics-ch20-t02
+        title: "Income method: compensation of employees, operating surplus and mixed income"
+        learning_outcomes:
+          - "Calculate national income by the income method from given data"
+      - id: isc-12-economics-ch20-t03
+        title: "Expenditure method: private and government final consumption, gross capital formation, net exports"
+        learning_outcomes:
+          - "Calculate national income by the expenditure method from given data"
+      - id: isc-12-economics-ch20-t04
+        title: "Precautions and difficulties in each method of measuring national income"
+        learning_outcomes:
+          - "State precautions for each method, such as excluding transfer payments and second-hand goods"
+          - "Explain difficulties such as non-monetised output and unreliable data in India"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

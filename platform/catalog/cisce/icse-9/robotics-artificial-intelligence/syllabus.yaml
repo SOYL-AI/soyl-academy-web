@@ -1,0 +1,307 @@
+# ICSE Class 9 Robotics and Artificial Intelligence (code 66, Group III Section B vocational) - year one of the ICSE 2028 course.
+# Source: platform/catalog/sources/cisce.md#icse-2028-vocational-robotics-ai (CLASS IX section only). Topic wording is our own summary.
+subject_id: icse-9-robotics-artificial-intelligence
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2028-vocational-robotics-ai, icse-2028-regulations]
+exam_notes: >-
+  There is no board examination in Class IX: the school sets the Class IX examination on the Class IX portion. The
+  syllabus prescribes one written paper of 2 hours, 100 marks, plus internal assessment 100 marks. Written paper
+  weightage: Part I Robotics 50 marks (Introduction to Robotics 10, Robot as a System 20, Concepts in Robotics 20) and
+  Part II Artificial Intelligence 50 marks (Introduction to AI 10, Role of Data and Information and Evolution of
+  Computing 10, Introduction to Data and Programming with Python 20, AI Concepts and AI Project Framework 10). Internal
+  assessment: at least 15 assignments in the year (3 robotics, 2 AI, 10 Python programming, e.g. prime check, HCF and
+  LCM, Fibonacci series, if-elif discount bills), marked out of 100 by the subject teacher on class design 20, variable
+  description 20, coding and documentation 20, and execution/output 40. Teacher demonstrations (a vibration-motor
+  bristle-bot game and an intelligent robotic waste bin with ultrasonic, temperature, flame sensors and a servo lid) are
+  for familiarisation and are not evaluated. No Class IX specimen paper is listed for this subject. CISCE lists topics,
+  not textbook chapters: SOYL groups them into 11 teachable chapters in syllabus order.
+units:
+  - { name: "Part I, 1. Introduction to Robotics", marks: 10 }
+  - { name: "Part I, 2. Robot as a System", marks: 20 }
+  - { name: "Part I, 3. Concepts in Robotics", marks: 20 }
+  - { name: "Part II, 1. Introduction to Artificial Intelligence (AI)", marks: 10 }
+  - { name: "Part II, 2. Role of Data and Information, Evolution of Computing", marks: 10 }
+  - { name: "Part II, 3. Introduction to Data and Programming with Python", marks: 20 }
+  - { name: "Part II, 4. AI Concepts and AI Project Framework", marks: 10 }
+chapters:
+  - id: icse-9-robotics-artificial-intelligence-ch01
+    number: 1
+    title: "Understanding Robots"
+    unit: "Part I, 1. Introduction to Robotics"
+    topics:
+      - id: icse-9-robotics-artificial-intelligence-ch01-t01
+        title: "What a robot is: definition and characteristics"
+        learning_outcomes:
+          - "Define a robot and list its characteristics"
+          - "Decide whether a given device is a robot using these characteristics"
+      - id: icse-9-robotics-artificial-intelligence-ch01-t02
+        title: "Benefits of robots compared with humans (quality, productivity, efficiency, longer working span, hazardous environments, improved workplace) and limitations of robots"
+        learning_outcomes:
+          - "Explain each benefit of using robots with an example"
+          - "State the limitations of robots"
+      - id: icse-9-robotics-artificial-intelligence-ch01-t03
+        title: "Evolution of robots from the early 1900s to the present"
+        learning_outcomes:
+          - "Arrange major milestones in the development of robots in time order"
+      - id: icse-9-robotics-artificial-intelligence-ch01-t04
+        title: "Definition of robotics; Isaac Asimov's three laws of robotics"
+        learning_outcomes:
+          - "Define robotics"
+          - "State the three laws of robotics in order"
+    removed_topics:
+      - "Asimov's three laws of robotics: statements only"
+    literature_texts: []
+  - id: icse-9-robotics-artificial-intelligence-ch02
+    number: 2
+    title: "Classification and Applications of Robots"
+    unit: "Part I, 1. Introduction to Robotics"
+    topics:
+      - id: icse-9-robotics-artificial-intelligence-ch02-t01
+        title: "Field or terrain-based robots: aerial, ground and underwater"
+        learning_outcomes:
+          - "Classify given robots as aerial, ground or underwater and give an example of each"
+      - id: icse-9-robotics-artificial-intelligence-ch02-t02
+        title: "Control-based robots: manual and automatic"
+        learning_outcomes:
+          - "Distinguish manually controlled robots from automatic robots with examples"
+      - id: icse-9-robotics-artificial-intelligence-ch02-t03
+        title: "Bio-inspired robots: meaning, purpose and examples (humanoids, bird, snake and insect robots)"
+        learning_outcomes:
+          - "Explain why engineers copy designs from living things, with examples"
+      - id: icse-9-robotics-artificial-intelligence-ch02-t04
+        title: "Applications of robots in domestic use, industry, medicine, defence, entertainment and agriculture"
+        learning_outcomes:
+          - "Give one real-world robot application in each field"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-robotics-artificial-intelligence-ch03
+    number: 3
+    title: "The Robot as a System"
+    unit: "Part I, 2. Robot as a System"
+    topics:
+      - id: icse-9-robotics-artificial-intelligence-ch03-t01
+        title: "General block diagram of a robot"
+        learning_outcomes:
+          - "Draw and label a general block diagram of a robot"
+      - id: icse-9-robotics-artificial-intelligence-ch03-t02
+        title: "Mechanical, electronic and computational blocks: function and working principle of each"
+        learning_outcomes:
+          - "Explain the function of the mechanical, electronic and computational blocks"
+          - "Classify given robot parts into the three blocks"
+      - id: icse-9-robotics-artificial-intelligence-ch03-t03
+        title: "Design aspects of humanoid, aerial, underwater and mobile robots"
+        learning_outcomes:
+          - "Compare the design needs of humanoid, aerial, underwater and mobile robots"
+      - id: icse-9-robotics-artificial-intelligence-ch03-t04
+        title: "Identifying robots: industrial robotic arm, humanoid and mobile robot; a robot's mechanical body can take any form"
+        learning_outcomes:
+          - "Identify the blocks of an industrial robotic arm, a humanoid and a mobile robot from pictures"
+          - "Explain why a robot's body need not look human"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-robotics-artificial-intelligence-ch04
+    number: 4
+    title: "Motion, Joints, Links and Degrees of Freedom"
+    unit: "Part I, 3. Concepts in Robotics"
+    topics:
+      - id: icse-9-robotics-artificial-intelligence-ch04-t01
+        title: "Types of motion: linear, angular and circular; motion in one and two dimensions"
+        learning_outcomes:
+          - "Classify the motion of given robot parts as linear, angular or circular"
+          - "Distinguish motion in one dimension from motion in two dimensions"
+      - id: icse-9-robotics-artificial-intelligence-ch04-t02
+        title: "Types of joints (prismatic, revolute, spherical) and links (rigid, soft)"
+        learning_outcomes:
+          - "Identify prismatic, revolute and spherical joints and the motion each allows"
+          - "Distinguish rigid links from soft links with examples"
+      - id: icse-9-robotics-artificial-intelligence-ch04-t03
+        title: "Using links and joints to create specific motion; identifying links and joints in an industrial robot arm"
+        learning_outcomes:
+          - "Identify the links and joints in a diagram of a robot arm"
+          - "Explain how a combination of joints produces a required movement"
+      - id: icse-9-robotics-artificial-intelligence-ch04-t04
+        title: "Degree of freedom of a robot: definition and identification"
+        learning_outcomes:
+          - "Define degree of freedom"
+          - "Count the degrees of freedom of a simple robot arm from an illustration"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-robotics-artificial-intelligence-ch05
+    number: 5
+    title: "Introduction to Artificial Intelligence"
+    unit: "Part II, 1. Introduction to Artificial Intelligence (AI)"
+    topics:
+      - id: icse-9-robotics-artificial-intelligence-ch05-t01
+        title: "Definition of AI and its brief history since John McCarthy coined the term in 1956"
+        learning_outcomes:
+          - "Define artificial intelligence"
+          - "Outline key stages in the history of AI since 1956"
+      - id: icse-9-robotics-artificial-intelligence-ch05-t02
+        title: "The Turing test: its use and importance"
+        learning_outcomes:
+          - "Describe how the Turing test is conducted and what it is meant to show"
+      - id: icse-9-robotics-artificial-intelligence-ch05-t03
+        title: "Applications of AI in commerce, industry, health care, defence, banking, entertainment, transport, security and agriculture; everyday AI applications"
+        learning_outcomes:
+          - "Give an example of AI in each field"
+          - "Identify the AI behind everyday tools such as search engines, chatbots, voice assistants and face recognition"
+      - id: icse-9-robotics-artificial-intelligence-ch05-t04
+        title: "Benefits of AI: automation, smart decisions, assisting humans, remote patient monitoring, research, fewer manual errors, round-the-clock service"
+        learning_outcomes:
+          - "Explain the benefits of AI with examples from daily life"
+      - id: icse-9-robotics-artificial-intelligence-ch05-t05
+        title: "Ethics in AI: bias, prejudice, fairness, accountability, transparency, interpretability and explainability"
+        learning_outcomes:
+          - "Explain how bias in data can make an AI system unfair, with an example"
+          - "Explain why AI decisions should be transparent and explainable"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-robotics-artificial-intelligence-ch06
+    number: 6
+    title: "Data, Information and the Evolution of Computing"
+    unit: "Part II, 2. Role of Data and Information, Evolution of Computing"
+    topics:
+      - id: icse-9-robotics-artificial-intelligence-ch06-t01
+        title: "Types of data (audio, visual, numeric, text); turning data into information"
+        learning_outcomes:
+          - "Classify given data as audio, visual, numeric or text"
+          - "Distinguish data from information with an example"
+      - id: icse-9-robotics-artificial-intelligence-ch06-t02
+        title: "Why data is central to AI: identifying, acquiring and exploring relevant data"
+        learning_outcomes:
+          - "Explain why the quality and relevance of data decide how well an AI system works"
+      - id: icse-9-robotics-artificial-intelligence-ch06-t03
+        title: "Computing before AI: binary logic, conditional gates and deterministic computing for deterministic problems"
+        learning_outcomes:
+          - "Explain deterministic computing and give examples of deterministic problems"
+      - id: icse-9-robotics-artificial-intelligence-ch06-t04
+        title: "Limits of deterministic computing; deterministic versus probabilistic real-life problems; the need for AI and AI discretion"
+        learning_outcomes:
+          - "Compare deterministic and probabilistic problems with examples"
+          - "Explain, using the example of describing temperature, why humans judge on a range while a rule-based machine uses a fixed cut-off"
+          - "Explain why AI is not needed for purely deterministic problems"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-robotics-artificial-intelligence-ch07
+    number: 7
+    title: "Getting Started with Python"
+    unit: "Part II, 3. Introduction to Data and Programming with Python"
+    topics:
+      - id: icse-9-robotics-artificial-intelligence-ch07-t01
+        title: "Python as an object-oriented, high-level, general-purpose language; uses and advantages"
+        learning_outcomes:
+          - "State the features and advantages of Python"
+      - id: icse-9-robotics-artificial-intelligence-ch07-t02
+        title: "Structure of a simple Python program; indentation"
+        learning_outcomes:
+          - "Explain the role of indentation in Python and correct an indentation error"
+      - id: icse-9-robotics-artificial-intelligence-ch07-t03
+        title: "Data types: int, float, bool, tuple, list, string, set and dictionary; choosing a data type"
+        learning_outcomes:
+          - "Identify the data type of given values"
+          - "Choose a suitable data type for a given use, such as a list of marks or a dictionary of student details"
+      - id: icse-9-robotics-artificial-intelligence-ch07-t04
+        title: "Variables and assignment of values"
+        learning_outcomes:
+          - "Write statements that assign and update variables"
+      - id: icse-9-robotics-artificial-intelligence-ch07-t05
+        title: "Operators: arithmetic, logical, assignment, comparison, identity and membership"
+        learning_outcomes:
+          - "Evaluate expressions that use arithmetic, comparison and logical operators"
+          - "Distinguish identity (is) from equality (==) and use the membership operator in"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-robotics-artificial-intelligence-ch08
+    number: 8
+    title: "Conditional Statements in Python"
+    unit: "Part II, 3. Introduction to Data and Programming with Python"
+    topics:
+      - id: icse-9-robotics-artificial-intelligence-ch08-t01
+        title: "Blocks in Python; if and if-else statements"
+        learning_outcomes:
+          - "Write a program to find the larger of two numbers using if-else"
+      - id: icse-9-robotics-artificial-intelligence-ch08-t02
+        title: "Nested if and if-elif-else ladders"
+        learning_outcomes:
+          - "Write an if-elif program to calculate a bill with different discounts for different items"
+          - "Trace the output of a nested if statement"
+      - id: icse-9-robotics-artificial-intelligence-ch08-t03
+        title: "Case and switch style selection (match-case); shorthand conditional statements"
+        learning_outcomes:
+          - "Rewrite a simple if-else as a one-line conditional expression"
+          - "Write a match-case statement to select an action from a menu choice"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-robotics-artificial-intelligence-ch09
+    number: 9
+    title: "Loops in Python"
+    unit: "Part II, 3. Introduction to Data and Programming with Python"
+    topics:
+      - id: icse-9-robotics-artificial-intelligence-ch09-t01
+        title: "Meaning and use of loops; the while loop"
+        learning_outcomes:
+          - "Write a while loop that repeats until a condition becomes false"
+          - "Explain when a while loop is preferred to a for loop"
+      - id: icse-9-robotics-artificial-intelligence-ch09-t02
+        title: "The for loop over lists, tuples, strings and dictionaries"
+        learning_outcomes:
+          - "Write for loops that traverse a list, a string and the keys and values of a dictionary"
+      - id: icse-9-robotics-artificial-intelligence-ch09-t03
+        title: "Nested loops"
+        learning_outcomes:
+          - "Write a nested loop that prints a simple number pattern"
+      - id: icse-9-robotics-artificial-intelligence-ch09-t04
+        title: "break, continue and pass statements"
+        learning_outcomes:
+          - "Predict the output of loops that use break and continue"
+          - "Write a program to check whether a number is prime"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-robotics-artificial-intelligence-ch10
+    number: 10
+    title: "Functions in Python"
+    unit: "Part II, 3. Introduction to Data and Programming with Python"
+    topics:
+      - id: icse-9-robotics-artificial-intelligence-ch10-t01
+        title: "Built-in and user-defined functions; functions for modularity"
+        learning_outcomes:
+          - "Distinguish built-in from user-defined functions"
+          - "Explain how functions reduce repetition and keep a program modular"
+      - id: icse-9-robotics-artificial-intelligence-ch10-t02
+        title: "Arguments: fixed and variable-length arguments; default arguments"
+        learning_outcomes:
+          - "Write a function with a default argument and call it with and without that argument"
+          - "Write a function that accepts a variable number of arguments"
+      - id: icse-9-robotics-artificial-intelligence-ch10-t03
+        title: "Return values of a function"
+        learning_outcomes:
+          - "Write a function that returns the HCF of two numbers and use the result"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-robotics-artificial-intelligence-ch11
+    number: 11
+    title: "AI Concepts and the AI Project Framework"
+    unit: "Part II, 4. AI Concepts and AI Project Framework"
+    topics:
+      - id: icse-9-robotics-artificial-intelligence-ch11-t01
+        title: "Broad and narrow AI; strong and weak AI"
+        learning_outcomes:
+          - "Distinguish narrow AI from broad AI and strong AI from weak AI with examples"
+      - id: icse-9-robotics-artificial-intelligence-ch11-t02
+        title: "Expert systems in AI, for example the early chatbot ELIZA"
+        learning_outcomes:
+          - "Explain what an expert system is and how a rule-based chatbot responds"
+      - id: icse-9-robotics-artificial-intelligence-ch11-t03
+        title: "Computer vision, natural language processing and neural networks"
+        learning_outcomes:
+          - "Give an everyday application of computer vision and of natural language processing"
+          - "Describe a neural network in simple terms"
+      - id: icse-9-robotics-artificial-intelligence-ch11-t04
+        title: "The AI project framework (AI project cycle): problem scoping, data acquisition, data exploration, modelling and evaluation"
+        learning_outcomes:
+          - "Name the stages of the AI project cycle in order and state the purpose of each"
+          - "Apply the stages to plan a simple smart-school AI project"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

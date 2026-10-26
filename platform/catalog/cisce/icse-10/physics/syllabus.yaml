@@ -1,0 +1,401 @@
+# ICSE Class 10 Physics (Science Paper 1) - ICSE 2027 examination.
+# Source: platform/catalog/sources/cisce.md#icse-2027-physics. Topic wording is our own summary of the official scope.
+subject_id: icse-10-physics
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2027-physics, icse-2027-regulations, icse-2027-specimen-papers, cisce-circular-specimen-papers-2027]
+exam_notes: >-
+  One theory paper of 2 hours, 80 marks, plus internal assessment of practical work 20 marks
+  (10 subject teacher + 10 external examiner; about ten experiments). SI units throughout.
+  The 2027 specimen paper (code 521) has Section A (compulsory objective/short) and Section B (choice of long
+  questions); about 50% of marks target higher-order skills (apply, analyse, evaluate, create) per the October 2026 circular.
+  CISCE publishes a topic list in six sections, not textbook chapters: SOYL groups it into 12 teachable chapters in
+  syllabus order (conservation of energy is taught with work and energy, before machines, as in common ICSE texts).
+  No unit-wise marks weightage is published for ICSE Physics.
+units:
+  - { name: "1. Force, Work, Power and Energy", marks: null }
+  - { name: "2. Light", marks: null }
+  - { name: "3. Sound", marks: null }
+  - { name: "4. Electricity and Magnetism", marks: null }
+  - { name: "5. Heat", marks: null }
+  - { name: "6. Modern Physics", marks: null }
+chapters:
+  - id: icse-10-physics-ch01
+    number: 1
+    title: "Force: Turning Effect and Circular Motion"
+    unit: "1. Force, Work, Power and Energy"
+    topics:
+      - id: icse-10-physics-ch01-t01
+        title: "Translational and rotational motion; moment of a force (torque) and its SI and cgs units"
+        learning_outcomes:
+          - "Distinguish translational from rotational motion with everyday examples"
+          - "Calculate the moment of a force about a point as force times perpendicular distance, in N m and dyne cm"
+          - "Explain why door handles and spanners are placed far from the axis of rotation"
+      - id: icse-10-physics-ch01-t02
+        title: "Clockwise and anticlockwise moments; couple"
+        learning_outcomes:
+          - "Identify the sense of rotation produced by a force and assign sign conventions to moments"
+          - "Calculate the resultant moment when several forces act on a rigid body"
+      - id: icse-10-physics-ch01-t03
+        title: "Equilibrium: conditions for translational and rotational equilibrium; principle of moments"
+        learning_outcomes:
+          - "State the two conditions for a body to be in equilibrium"
+          - "Apply the principle of moments to find an unknown force or distance on a balanced metre rule"
+          - "Describe how the principle of moments is verified with a metre rule and spring balances"
+      - id: icse-10-physics-ch01-t04
+        title: "Centre of gravity of regular bodies and irregular laminae (qualitative)"
+        learning_outcomes:
+          - "Locate the centre of gravity of regular shapes such as a rod, ring, disc and triangle"
+          - "Describe the plumb-line method of finding the centre of gravity of an irregular lamina"
+      - id: icse-10-physics-ch01-t05
+        title: "Uniform circular motion; centripetal and centrifugal force"
+        learning_outcomes:
+          - "Explain why uniform circular motion is accelerated even though speed is constant"
+          - "Differentiate centripetal force from centrifugal force with examples"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-physics-ch02
+    number: 2
+    title: "Work, Energy and Power"
+    unit: "1. Force, Work, Power and Energy"
+    topics:
+      - id: icse-10-physics-ch02-t01
+        title: "Work done by a force: W = F s cos(theta); special cases at 0 and 90 degrees; work against gravity W = mgh"
+        learning_outcomes:
+          - "Calculate work done when force and displacement are at a given angle"
+          - "Explain why no work is done when the force is perpendicular to the displacement"
+      - id: icse-10-physics-ch02-t02
+        title: "Energy as capacity to do work; units of work and energy (joule, erg, calorie, kW h, eV) and conversions"
+        learning_outcomes:
+          - "Convert between joule, erg, calorie, kilowatt-hour and electron volt"
+      - id: icse-10-physics-ch02-t03
+        title: "Power: P = W/t; units watt, kW, MW, GW and horsepower"
+        learning_outcomes:
+          - "Calculate power from work and time and convert horsepower to watts"
+          - "Distinguish energy from power using an example such as two people climbing stairs"
+      - id: icse-10-physics-ch02-t04
+        title: "Mechanical energy: gravitational potential energy U = mgh and kinetic energy K = (1/2)mv^2 with derivations"
+        learning_outcomes:
+          - "Derive U = mgh and K = (1/2)mv^2 from the definition of work"
+          - "Solve numerical problems on potential and kinetic energy for translational motion"
+          - "Name the forms of kinetic energy: translational, rotational and vibrational"
+      - id: icse-10-physics-ch02-t05
+        title: "Other forms of energy and energy conversions in daily life"
+        learning_outcomes:
+          - "Identify energy conversions in devices such as a battery, loudspeaker, solar cell and electric heater"
+      - id: icse-10-physics-ch02-t06
+        title: "Principle of conservation of energy; U + K constant for a freely falling body; simple pendulum (qualitative)"
+        learning_outcomes:
+          - "State the principle of conservation of energy"
+          - "Show by calculation that total mechanical energy stays constant at different heights of a freely falling body"
+          - "Describe energy changes during one oscillation of a simple pendulum"
+    removed_topics:
+      - "Numerical problems on kinetic and potential energy for rotational or vibrational motion (only translational motion is examined)"
+    literature_texts: []
+  - id: icse-10-physics-ch03
+    number: 3
+    title: "Machines"
+    unit: "1. Force, Work, Power and Energy"
+    topics:
+      - id: icse-10-physics-ch03-t01
+        title: "Machines as force multipliers; load, effort, mechanical advantage, velocity ratio, input, output and efficiency"
+        learning_outcomes:
+          - "Define mechanical advantage, velocity ratio and efficiency and state their units (if any)"
+          - "Derive the relation efficiency = MA / VR"
+          - "Explain why MA is less than VR and efficiency is less than 1 for every practical machine"
+      - id: icse-10-physics-ch03-t02
+        title: "Levers: principle; first, second and third class levers; MA and VR of each class"
+        learning_outcomes:
+          - "Classify a given lever by the relative positions of fulcrum, load and effort"
+          - "Predict whether a lever's MA is greater than, equal to, or less than 1 from its class"
+      - id: icse-10-physics-ch03-t03
+        title: "Levers in the human body"
+        learning_outcomes:
+          - "Identify the class of lever at the neck, foot (raising heels) and forearm"
+      - id: icse-10-physics-ch03-t04
+        title: "Pulley systems: single fixed, single movable, block and tackle; MA, VR and efficiency"
+        learning_outcomes:
+          - "Calculate MA, VR and efficiency of a block and tackle system, including the effect of the weight of the movable block"
+          - "Explain the practical advantage of a single fixed pulley despite MA = 1"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-physics-ch04
+    number: 4
+    title: "Refraction of Light at Plane Surfaces"
+    unit: "2. Light"
+    topics:
+      - id: icse-10-physics-ch04-t01
+        title: "Partial reflection and refraction; laws of refraction; effect on speed, wavelength and frequency"
+        learning_outcomes:
+          - "State the laws of refraction"
+          - "Explain which of speed, wavelength and frequency change when light enters a denser medium"
+          - "State the conditions under which a ray passes undeviated"
+      - id: icse-10-physics-ch04-t02
+        title: "Refractive index: mu = c/v and v = f x lambda; typical values for water, glass and diamond"
+        learning_outcomes:
+          - "Calculate refractive index from speeds of light"
+          - "Calculate the speed of light in a medium of known refractive index"
+      - id: icse-10-physics-ch04-t03
+        title: "Refraction through a rectangular glass block; lateral displacement; multiple images in a thick mirror"
+        learning_outcomes:
+          - "Draw the path of a ray through a glass block and mark the lateral displacement"
+          - "Explain the formation of multiple images in a thick plane mirror"
+      - id: icse-10-physics-ch04-t04
+        title: "Real and apparent depth; apparent bending of a stick in water"
+        learning_outcomes:
+          - "Use refractive index = real depth / apparent depth in numerical problems"
+          - "Draw a ray diagram explaining why a pool looks shallower than it is"
+      - id: icse-10-physics-ch04-t05
+        title: "Refraction through a triangular prism; deviation"
+        learning_outcomes:
+          - "Trace the path of a ray through a prism and mark the angle of deviation"
+      - id: icse-10-physics-ch04-t06
+        title: "Critical angle and total internal reflection (mu = 1/sin C); conditions; TIR in right-angled prisms; comparison with plane-mirror reflection"
+        learning_outcomes:
+          - "State the two conditions for total internal reflection"
+          - "Calculate the critical angle from the refractive index"
+          - "Draw ray diagrams for right-angled isosceles prisms deviating light through 90 and 180 degrees"
+          - "Give two advantages of a totally reflecting prism over a plane mirror"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-physics-ch05
+    number: 5
+    title: "Refraction through Lenses"
+    unit: "2. Light"
+    topics:
+      - id: icse-10-physics-ch05-t01
+        title: "Convex and concave lenses; lens as a set of prisms; centre of curvature, principal axis, optical centre, foci, focal plane, focal length"
+        learning_outcomes:
+          - "Label the principal axis, optical centre, principal foci and focal length on a lens diagram"
+          - "Explain converging and diverging action using the lens-as-prisms model"
+      - id: icse-10-physics-ch05-t02
+        title: "Principal (construction) rays and images formed by a convex lens for different object positions"
+        learning_outcomes:
+          - "Draw ray diagrams for an object at infinity, beyond 2F, at 2F, between F and 2F, at F and within F"
+          - "State the position, nature and relative size of the image in each case"
+      - id: icse-10-physics-ch05-t03
+        title: "Images formed by a concave lens"
+        learning_outcomes:
+          - "Draw a ray diagram for a concave lens and state why its image is always virtual, erect and diminished"
+      - id: icse-10-physics-ch05-t04
+        title: "Sign convention, lens formula 1/v - 1/u = 1/f and magnification (direct numerical problems)"
+        learning_outcomes:
+          - "Apply the New Cartesian sign convention to object and image distances"
+          - "Solve direct numerical problems using the lens formula and magnification"
+      - id: icse-10-physics-ch05-t05
+        title: "Power of a lens in dioptre; simple microscope (magnifying glass); applications of lenses"
+        learning_outcomes:
+          - "Calculate the power of a lens from its focal length with the correct sign"
+          - "Locate the image in a magnifying glass by ray diagram and state its nature"
+    removed_topics:
+      - "Derivation of the lens formula"
+      - "Scale drawing or graphical determination of images"
+      - "Formula and numerical problems on magnifying power of a simple microscope"
+    literature_texts: []
+  - id: icse-10-physics-ch06
+    number: 6
+    title: "Spectrum"
+    unit: "2. Light"
+    topics:
+      - id: icse-10-physics-ch06-t01
+        title: "Dispersion of white light by a prism; deviation depends on colour (wavelength)"
+        learning_outcomes:
+          - "Explain why violet light deviates most and red least in a prism"
+          - "List the colours of the visible spectrum in order of wavelength"
+      - id: icse-10-physics-ch06-t02
+        title: "Electromagnetic spectrum: names in order of wavelength and common properties"
+        learning_outcomes:
+          - "Arrange the regions of the electromagnetic spectrum in order of increasing wavelength"
+          - "State properties common to all electromagnetic waves"
+      - id: icse-10-physics-ch06-t03
+        title: "Properties and uses of infrared and ultraviolet radiation"
+        learning_outcomes:
+          - "Give two properties and two uses each of infrared and ultraviolet radiation"
+      - id: icse-10-physics-ch06-t04
+        title: "Scattering of light; blue colour of the sky and other applications"
+        learning_outcomes:
+          - "Explain the blue sky and the reddish sun at sunrise using wavelength-dependent scattering"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-physics-ch07
+    number: 7
+    title: "Sound"
+    unit: "3. Sound"
+    topics:
+      - id: icse-10-physics-ch07-t01
+        title: "Reflection of sound; echoes and the conditions for hearing them; numerical problems"
+        learning_outcomes:
+          - "State the minimum distance needed to hear a distinct echo and justify it"
+          - "Calculate speed of sound or distance of a reflector from echo time"
+      - id: icse-10-physics-ch07-t02
+        title: "Uses of echoes: bats, dolphins, fishing, medical imaging and SONAR"
+        learning_outcomes:
+          - "Explain how SONAR measures sea depth"
+      - id: icse-10-physics-ch07-t03
+        title: "Natural, damped and forced vibrations"
+        learning_outcomes:
+          - "Distinguish natural, damped and forced vibrations with one example each"
+      - id: icse-10-physics-ch07-t04
+        title: "Resonance as a special case of forced vibration; applications"
+        learning_outcomes:
+          - "Explain resonance using a demonstration such as two pendulums on a common string"
+          - "Give examples where resonance is useful and where it must be avoided"
+      - id: icse-10-physics-ch07-t05
+        title: "Characteristics of sound: loudness and intensity, pitch and frequency, quality and waveform; decibel; noise pollution"
+        learning_outcomes:
+          - "Relate loudness to amplitude, pitch to frequency and quality to waveform"
+          - "Distinguish subjective (loudness, pitch) from objective (intensity, frequency) quantities"
+          - "Name the decibel as the unit of sound level and suggest ways to reduce noise pollution"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-physics-ch08
+    number: 8
+    title: "Current Electricity"
+    unit: "4. Electricity and Magnetism"
+    topics:
+      - id: icse-10-physics-ch08-t01
+        title: "Charge, current, potential difference and resistance; Ohm's law V = IR and its verification"
+        learning_outcomes:
+          - "State Ohm's law and find resistance from the slope of a V-I graph"
+          - "Distinguish ohmic and non-ohmic conductors from their graphs"
+      - id: icse-10-physics-ch08-t02
+        title: "Factors affecting resistance; specific resistance (resistivity); superconductors"
+        learning_outcomes:
+          - "Predict how resistance changes with length, area of cross-section, material and temperature"
+          - "Calculate resistance using R = rho l / A"
+      - id: icse-10-physics-ch08-t03
+        title: "EMF and internal resistance of a cell; terminal voltage"
+        learning_outcomes:
+          - "Distinguish emf from terminal potential difference"
+          - "Solve problems using E = I(R + r)"
+      - id: icse-10-physics-ch08-t04
+        title: "Resistances in series and parallel: derivations and simple networks"
+        learning_outcomes:
+          - "Derive the equivalent resistance of resistors in series and in parallel"
+          - "Find currents and potential differences in a simple series-parallel network"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-physics-ch09
+    number: 9
+    title: "Electrical Power, Energy and Household Circuits"
+    unit: "4. Electricity and Magnetism"
+    topics:
+      - id: icse-10-physics-ch09-t01
+        title: "Electrical energy W = QV = VIt = I^2Rt = (V^2/R)t and power P = VI = I^2R = V^2/R"
+        learning_outcomes:
+          - "Derive and use the expressions for electrical energy and power"
+          - "Interpret the power rating of an appliance such as 1000 W, 220 V"
+      - id: icse-10-physics-ch09-t02
+        title: "Commercial unit kW h; household consumption and electricity bills"
+        learning_outcomes:
+          - "Calculate monthly energy consumption and cost for a set of household appliances"
+      - id: icse-10-physics-ch09-t03
+        title: "Power distribution and house wiring: live, neutral and earth; ring main system; main switch, fuse and MCB"
+        learning_outcomes:
+          - "Draw and explain a household ring main circuit"
+          - "Explain why switches and fuses are placed in the live wire"
+      - id: icse-10-physics-ch09-t04
+        title: "Two-way (staircase) switch; three-pin plug and socket; earthing; colour coding of wires; safety precautions"
+        learning_outcomes:
+          - "Draw a two-way switch circuit for staircase wiring"
+          - "Explain why the earth pin is thicker and longer than the others"
+          - "State the colour code for live, neutral and earth wires"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-physics-ch10
+    number: 10
+    title: "Electromagnetism"
+    unit: "4. Electricity and Magnetism"
+    topics:
+      - id: icse-10-physics-ch10-t01
+        title: "Oersted's experiment; magnetic field due to a straight wire and a loop; right-hand thumb rule"
+        learning_outcomes:
+          - "Draw field-line patterns around a straight current-carrying wire and a circular loop"
+          - "Use the right-hand thumb rule to find field direction"
+      - id: icse-10-physics-ch10-t02
+        title: "Electromagnets and their uses; comparison with permanent magnets"
+        learning_outcomes:
+          - "List ways to increase the strength of an electromagnet"
+          - "Compare an electromagnet with a permanent magnet"
+      - id: icse-10-physics-ch10-t03
+        title: "Force on a current-carrying conductor; Fleming's left-hand rule; DC motor (parts and energy transfer)"
+        learning_outcomes:
+          - "Apply Fleming's left-hand rule to find the direction of force"
+          - "Label the main parts of a DC motor and state its energy conversion"
+      - id: icse-10-physics-ch10-t04
+        title: "Electromagnetic induction (elementary); Fleming's right-hand rule; AC generator (parts and energy transfer); frequency of household AC"
+        learning_outcomes:
+          - "Describe how moving a magnet near a coil induces a current"
+          - "Apply Fleming's right-hand rule to find the direction of induced current"
+          - "Label the main parts of an AC generator and state its energy conversion"
+      - id: icse-10-physics-ch10-t05
+        title: "Advantages of AC over DC; transformers: step-up and step-down"
+        learning_outcomes:
+          - "Compare primary and secondary coils in step-up and step-down transformers"
+          - "Give two advantages of AC over DC for power distribution"
+    removed_topics:
+      - "Laws of electromagnetism (principles only)"
+      - "Working of the DC motor and AC generator (parts and energy transfer only)"
+    literature_texts: []
+  - id: icse-10-physics-ch11
+    number: 11
+    title: "Calorimetry"
+    unit: "5. Heat"
+    topics:
+      - id: icse-10-physics-ch11-t01
+        title: "Heat and temperature and their units; heat capacity and specific heat capacity and their relation"
+        learning_outcomes:
+          - "Distinguish heat capacity from specific heat capacity and give their SI units"
+          - "Calculate heat absorbed using Q = m c delta T"
+      - id: icse-10-physics-ch11-t02
+        title: "Principle of method of mixtures; numerical problems on heat lost and gained"
+        learning_outcomes:
+          - "State the principle of method of mixtures"
+          - "Solve mixture problems to find a final temperature or a specific heat capacity"
+      - id: icse-10-physics-ch11-t03
+        title: "High specific heat capacity of water: natural phenomena and uses"
+        learning_outcomes:
+          - "Explain land and sea breezes and the use of water as a coolant using its high specific heat capacity"
+      - id: icse-10-physics-ch11-t04
+        title: "Change of state; heating curve of water; specific latent heat of fusion"
+        learning_outcomes:
+          - "Interpret the flat portions of a heating curve of ice to steam"
+          - "Solve numerical problems involving melting of ice (latent heat of fusion only)"
+      - id: icse-10-physics-ch11-t05
+        title: "Everyday phenomena involving latent heat of fusion"
+        learning_outcomes:
+          - "Explain why ice at 0 degrees C cools a drink better than water at 0 degrees C"
+    removed_topics:
+      - "Latent heat of vaporisation numericals (only fusion is examined)"
+    literature_texts: []
+  - id: icse-10-physics-ch12
+    number: 12
+    title: "Radioactivity and Nuclear Energy"
+    unit: "6. Modern Physics"
+    topics:
+      - id: icse-10-physics-ch12-t01
+        title: "Structure of the nucleus; atomic number Z and mass number A; isotopes"
+        learning_outcomes:
+          - "Represent a nuclide with Z and A notation and state the numbers of protons and neutrons"
+      - id: icse-10-physics-ch12-t02
+        title: "Radioactivity as spontaneous disintegration; nature and properties of alpha, beta and gamma radiations"
+        learning_outcomes:
+          - "Compare alpha, beta and gamma radiations in charge, mass, penetrating power and ionising power"
+      - id: icse-10-physics-ch12-t03
+        title: "Changes in the nucleus during alpha and beta decay"
+        learning_outcomes:
+          - "Write balanced decay equations showing changes in Z and A for alpha and beta emission"
+      - id: icse-10-physics-ch12-t04
+        title: "Uses of radioisotopes; harmful effects; background radiation; safety precautions; X-rays and radioactive fallout"
+        learning_outcomes:
+          - "Give uses of radioisotopes in medicine, industry and agriculture"
+          - "List safety precautions when handling radioactive materials"
+          - "Name sources of background radiation"
+      - id: icse-10-physics-ch12-t05
+        title: "Nuclear fission and fusion: basic introduction and equations; safe disposal of nuclear waste"
+        learning_outcomes:
+          - "Distinguish nuclear fission from fusion"
+          - "Explain why safe disposal of nuclear waste is necessary"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

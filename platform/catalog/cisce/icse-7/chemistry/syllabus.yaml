@@ -1,0 +1,335 @@
+# ICSE Class 7 Chemistry - CISCE Curriculum for Upper Primary Classes VI-VIII (2016), Class VII part only.
+# Source: platform/catalog/sources/cisce.md#cisce-upper-primary-curriculum (Chemistry, Class VII, Themes 1-7);
+# scope sharpened with #cisce-upper-primary-chemistry-resource. Topic wording is our own summary of the official themes.
+subject_id: icse-7-chemistry
+academic_year: "2026-27"
+source_status: verified
+sources: [cisce-upper-primary-curriculum, cisce-upper-primary-chemistry-resource]
+exam_notes: >-
+  No board examination in Class 7. CISCE publishes a recommended theme-based curriculum (Chemistry taught as a separate
+  science from Class VI) with learning outcomes per class; it prescribes no textbooks, no paper pattern and no marks
+  weightage. Schools choose their own textbooks and set their own unit tests, term examinations and practical/activity
+  assessment (demonstrations, simple experiments, projects such as a group report on acid rain).
+  The Class VII curriculum has seven themes; SOYL grouped them into 12 teachable chapters in curriculum order.
+  Chemical reactions are written as word equations at this level; balanced symbol equations come in Class VIII.
+units:
+  - { name: "Theme 1: Matter and its Composition", marks: null }
+  - { name: "Theme 2: Physical and Chemical Changes", marks: null }
+  - { name: "Theme 3: Elements, Compounds and Mixtures (Experimental Techniques)", marks: null }
+  - { name: "Theme 4: Atomic Structure", marks: null }
+  - { name: "Theme 5: Language of Chemistry", marks: null }
+  - { name: "Theme 6: Metals and Non-Metals", marks: null }
+  - { name: "Theme 7: Air and Atmosphere", marks: null }
+chapters:
+  - id: icse-7-chemistry-ch01
+    number: 1
+    title: "Matter and its Composition"
+    unit: "Theme 1: Matter and its Composition"
+    topics:
+      - id: icse-7-chemistry-ch01-t01
+        title: "Matter: anything that has mass and occupies space"
+        learning_outcomes:
+          - "Define matter and give examples from the surroundings (stone, water, oil, sugar, air)"
+          - "Show with a balloon that air occupies space and has mass"
+      - id: icse-7-chemistry-ch01-t02
+        title: "Composition of matter: tiny particles (atoms and molecules)"
+        learning_outcomes:
+          - "State that matter is made of tiny particles called atoms and molecules"
+      - id: icse-7-chemistry-ch01-t03
+        title: "Arrangement of particles in solids, liquids and gases; intermolecular attraction"
+        learning_outcomes:
+          - "Describe how particles are packed in solids, liquids and gases"
+          - "Explain that the force of attraction between particles holds matter together and is strongest in solids"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-chemistry-ch02
+    number: 2
+    title: "Physical and Chemical Changes"
+    unit: "Theme 2: Physical and Chemical Changes"
+    topics:
+      - id: icse-7-chemistry-ch02-t01
+        title: "Changes around us: desirable and undesirable changes"
+        learning_outcomes:
+          - "Classify changes such as ripening of fruit, spoiling of food and rusting of iron as desirable or undesirable"
+      - id: icse-7-chemistry-ch02-t02
+        title: "Physical changes: no new substance formed (drying clothes, melting ice, dissolving sugar)"
+        learning_outcomes:
+          - "Define a physical change and give examples"
+      - id: icse-7-chemistry-ch02-t03
+        title: "Chemical changes: a new substance with new properties is formed; signs of a chemical change"
+        learning_outcomes:
+          - "Explain that a chemical change forms a new substance, using the reaction of iron powder and sulphur"
+          - "List signs of chemical change such as change in colour, evolution of gas, heat or light, and change in taste"
+      - id: icse-7-chemistry-ch02-t04
+        title: "Differences between physical and chemical changes; classifying everyday changes"
+        learning_outcomes:
+          - "Differentiate physical and chemical changes in a table"
+          - "Classify respiration, burning of paper, dissolving sugar, boiling an egg and curdling of milk as physical or chemical"
+      - id: icse-7-chemistry-ch02-t05
+        title: "Changes involving a change of state: melting, boiling, sublimation (ammonium chloride, iodine)"
+        learning_outcomes:
+          - "Describe sublimation of ammonium chloride and identify it as a physical change"
+      - id: icse-7-chemistry-ch02-t06
+        title: "Changes involving energy: heat evolved or absorbed (quicklime in water, ammonium chloride in water)"
+        learning_outcomes:
+          - "Distinguish changes that release heat (exothermic) from those that absorb heat (endothermic) with examples"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-chemistry-ch03
+    number: 3
+    title: "Elements, Compounds and Mixtures"
+    unit: "Theme 3: Elements, Compounds and Mixtures (Experimental Techniques)"
+    topics:
+      - id: icse-7-chemistry-ch03-t01
+        title: "Identifying elements and compounds from their symbols and formulae"
+        learning_outcomes:
+          - "Classify a list of substances (iron, aluminium, copper, water, sodium chloride, calcium oxide) as elements or compounds"
+          - "Identify elements and compounds by the type of atoms present in them"
+      - id: icse-7-chemistry-ch03-t02
+        title: "Mixtures versus compounds: proportion of components and chemical composition"
+        learning_outcomes:
+          - "Differentiate a mixture from a compound by composition and properties"
+          - "Explain why heating iron and sulphur in fixed proportions forms the compound iron sulphide"
+      - id: icse-7-chemistry-ch03-t03
+        title: "Homogeneous and heterogeneous mixtures"
+        learning_outcomes:
+          - "Classify sugar solution, alloys, sand in water and kerosene in water as homogeneous or heterogeneous"
+      - id: icse-7-chemistry-ch03-t04
+        title: "Types of mixtures by state: solid-solid, solid-liquid, liquid-liquid"
+        learning_outcomes:
+          - "Give daily-life examples of solid-solid, solid-liquid and liquid-liquid mixtures"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-chemistry-ch04
+    number: 4
+    title: "Separation of Mixtures"
+    unit: "Theme 3: Elements, Compounds and Mixtures (Experimental Techniques)"
+    topics:
+      - id: icse-7-chemistry-ch04-t01
+        title: "Need for separation; evaporation (salt from salt solution)"
+        learning_outcomes:
+          - "Explain why components of mixtures are separated"
+          - "Describe how salt is obtained from salt water by evaporation"
+      - id: icse-7-chemistry-ch04-t02
+        title: "Distillation (pure water from impure water)"
+        learning_outcomes:
+          - "Label a distillation apparatus and state the principle of distillation"
+      - id: icse-7-chemistry-ch04-t03
+        title: "Separating funnel for immiscible liquids (oil or kerosene and water)"
+        learning_outcomes:
+          - "Explain how a separating funnel separates two immiscible liquids"
+      - id: icse-7-chemistry-ch04-t04
+        title: "Sublimation (separating ammonium chloride from a mixture)"
+        learning_outcomes:
+          - "Describe how sublimation separates ammonium chloride from common salt"
+      - id: icse-7-chemistry-ch04-t05
+        title: "Fractional distillation of two miscible liquids (alcohol and water)"
+        learning_outcomes:
+          - "State the principle of fractional distillation based on different boiling points"
+      - id: icse-7-chemistry-ch04-t06
+        title: "Paper chromatography: stationary phase, mobile phase and separating the colours of ink"
+        learning_outcomes:
+          - "Describe the separation of the colours of a marker pen ink by paper chromatography"
+          - "Explain the importance of chromatography"
+      - id: icse-7-chemistry-ch04-t07
+        title: "Choosing techniques and their order for separating two- or three-component mixtures"
+        learning_outcomes:
+          - "Justify the choice and order of techniques to separate a mixture such as sand, salt and ammonium chloride"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-chemistry-ch05
+    number: 5
+    title: "Atoms, Molecules and Radicals"
+    unit: "Theme 4: Atomic Structure"
+    topics:
+      - id: icse-7-chemistry-ch05-t01
+        title: "Atom as the smallest particle of an element; properties of an element depend on its atoms"
+        learning_outcomes:
+          - "Define an atom"
+      - id: icse-7-chemistry-ch05-t02
+        title: "Molecule as the smallest particle capable of independent existence"
+        learning_outcomes:
+          - "Define a molecule and distinguish between an atom and a molecule"
+      - id: icse-7-chemistry-ch05-t03
+        title: "Radicals: an atom or group of atoms behaving as a single charged unit"
+        learning_outcomes:
+          - "Define a radical and give examples such as sulphate, nitrate and ammonium"
+      - id: icse-7-chemistry-ch05-t04
+        title: "Atomicity: monoatomic, diatomic, triatomic and polyatomic"
+        learning_outcomes:
+          - "Classify molecules such as He, O2, O3 and P4 by atomicity"
+      - id: icse-7-chemistry-ch05-t05
+        title: "Names and symbols of the first 20 elements of the periodic table"
+        learning_outcomes:
+          - "Write the names and symbols of the first 20 elements"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-chemistry-ch06
+    number: 6
+    title: "Valency"
+    unit: "Theme 4: Atomic Structure"
+    topics:
+      - id: icse-7-chemistry-ch06-t01
+        title: "Valency as combining capacity: number of hydrogen atoms combined with or replaced by one atom"
+        learning_outcomes:
+          - "Define valency in terms of hydrogen atoms"
+          - "Find the valency of an element from a hydride formula such as HCl, H2O, NH3 or CH4"
+      - id: icse-7-chemistry-ch06-t02
+        title: "Valencies of common elements and radicals (1, 2, 3 and 4)"
+        learning_outcomes:
+          - "List elements and radicals with valency 1, 2, 3 and 4"
+      - id: icse-7-chemistry-ch06-t03
+        title: "Valency and group number in the periodic table; the periodic table as a classification of elements"
+        learning_outcomes:
+          - "Correlate the valency of an element with its group number in the periodic table"
+          - "Explain that the periodic table classifies elements by their physical and chemical properties"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-chemistry-ch07
+    number: 7
+    title: "Language of Chemistry: Chemical Reactions and Word Equations"
+    unit: "Theme 5: Language of Chemistry"
+    topics:
+      - id: icse-7-chemistry-ch07-t01
+        title: "Symbols and formulae as shorthand; chemical reaction when reactants come in contact and energy is transferred"
+        learning_outcomes:
+          - "Explain why chemists use symbols and formulae instead of full names"
+      - id: icse-7-chemistry-ch07-t02
+        title: "Characteristics of a chemical reaction: change of colour, state or smell, gas evolved, precipitate formed, heat released"
+        learning_outcomes:
+          - "Identify the characteristic observed in demonstrations such as sodium carbonate with dilute hydrochloric acid and potassium iodide with lead acetate"
+      - id: icse-7-chemistry-ch07-t03
+        title: "Reactants and products"
+        learning_outcomes:
+          - "Name the reactants and products of a given simple reaction"
+      - id: icse-7-chemistry-ch07-t04
+        title: "Writing word equations; usefulness of word equations"
+        learning_outcomes:
+          - "Write word equations for simple reactions with the arrow pointing to the products"
+          - "State one advantage of writing a word equation"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-chemistry-ch08
+    number: 8
+    title: "Metals, Non-Metals and Metalloids"
+    unit: "Theme 6: Metals and Non-Metals"
+    topics:
+      - id: icse-7-chemistry-ch08-t01
+        title: "Physical properties of metals and non-metals: lustre, conduction of heat and electricity, malleability, ductility, sonority"
+        learning_outcomes:
+          - "Test samples (iron nail, coal, aluminium wire, pencil lead) for malleability, conductivity and sonority"
+      - id: icse-7-chemistry-ch08-t02
+        title: "Further properties: melting point, boiling point, density and strength; classifying elements as metals and non-metals"
+        learning_outcomes:
+          - "Differentiate metals and non-metals in a table of physical properties"
+          - "Classify given elements as metals or non-metals from their properties"
+      - id: icse-7-chemistry-ch08-t03
+        title: "Uses of iron, gold, copper, aluminium, zinc, lead and magnesium; uses of common non-metals"
+        learning_outcomes:
+          - "Match common metals to their uses and justify each use by a property"
+      - id: icse-7-chemistry-ch08-t04
+        title: "Metalloids: elements with properties of both metals and non-metals (silicon, germanium, antimony); uses"
+        learning_outcomes:
+          - "Define metalloids and list some of their properties and uses"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-chemistry-ch09
+    number: 9
+    title: "Corrosion of Metals"
+    unit: "Theme 6: Metals and Non-Metals"
+    topics:
+      - id: icse-7-chemistry-ch09-t01
+        title: "Rusting of iron: air (oxygen) and moisture needed; word equation; basic nature of rust"
+        learning_outcomes:
+          - "Describe the three-test-tube experiment showing that both air and water are needed for rusting"
+          - "Write the word equation for rusting of iron"
+      - id: icse-7-chemistry-ch09-t02
+        title: "Corrosion of other metals: green coating on copper"
+        learning_outcomes:
+          - "Describe the corrosion of copper articles"
+      - id: icse-7-chemistry-ch09-t03
+        title: "Preventing rusting: oiling, greasing, painting, chrome plating, galvanisation and tinning"
+        learning_outcomes:
+          - "Explain how each method prevents rusting by keeping out air and moisture"
+          - "Explain why water pipes and cooler bodies are galvanised"
+      - id: icse-7-chemistry-ch09-t04
+        title: "The iron pillar at the Qutub complex: ancient Indian metallurgy"
+        learning_outcomes:
+          - "Explain why the Delhi iron pillar is an example of ancient Indian achievement in technology"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-chemistry-ch10
+    number: 10
+    title: "Air and its Components"
+    unit: "Theme 7: Air and Atmosphere"
+    topics:
+      - id: icse-7-chemistry-ch10-t01
+        title: "Air as a mixture of gases; composition of air"
+        learning_outcomes:
+          - "Explain why air is a mixture and not a compound"
+          - "Represent the composition of air in a pie chart"
+      - id: icse-7-chemistry-ch10-t02
+        title: "Uses of oxygen, nitrogen and carbon dioxide, including in life processes"
+        learning_outcomes:
+          - "Describe the use of oxygen in respiration and nitrogen in fertilisers"
+      - id: icse-7-chemistry-ch10-t03
+        title: "Oxygen is needed for combustion"
+        learning_outcomes:
+          - "Explain why a candle covered by a glass in a plate of water goes off"
+      - id: icse-7-chemistry-ch10-t04
+        title: "Mass change on burning (magnesium ribbon and candle)"
+        learning_outcomes:
+          - "Explain why magnesium gains mass when it burns in air"
+          - "Write the word equation for burning of magnesium"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-chemistry-ch11
+    number: 11
+    title: "Oxygen"
+    unit: "Theme 7: Air and Atmosphere"
+    topics:
+      - id: icse-7-chemistry-ch11-t01
+        title: "Laboratory preparation of oxygen from potassium chlorate or hydrogen peroxide with manganese dioxide"
+        learning_outcomes:
+          - "Describe the laboratory preparation of oxygen with a labelled diagram"
+          - "Write the word equation for the preparation"
+      - id: icse-7-chemistry-ch11-t02
+        title: "Catalyst: manganese dioxide speeds up the reaction without being used up"
+        learning_outcomes:
+          - "Explain the concept of a catalyst using manganese dioxide"
+      - id: icse-7-chemistry-ch11-t03
+        title: "Physical properties of oxygen (colour, odour)"
+        learning_outcomes:
+          - "State the physical properties of oxygen"
+      - id: icse-7-chemistry-ch11-t04
+        title: "Reactions of metals and non-metals (S, C, P, Na, K, Ca, Mg) with oxygen as word equations"
+        learning_outcomes:
+          - "Write word equations for the burning of sulphur, carbon, phosphorus, sodium, potassium, calcium and magnesium in oxygen"
+      - id: icse-7-chemistry-ch11-t05
+        title: "Respiration versus combustion; combustion versus rusting"
+        learning_outcomes:
+          - "Distinguish respiration from combustion"
+          - "Distinguish combustion from rusting by speed, heat and light produced"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-chemistry-ch12
+    number: 12
+    title: "Acid Rain and Air Quality"
+    unit: "Theme 7: Air and Atmosphere"
+    topics:
+      - id: icse-7-chemistry-ch12-t01
+        title: "Acid rain: acidic oxides (sulphur dioxide, nitrogen oxides, carbon dioxide) dissolving in rain water"
+        learning_outcomes:
+          - "Name the gases that cause acid rain and their sources (factories, vehicles)"
+      - id: icse-7-chemistry-ch12-t02
+        title: "Effects of acid rain on buildings (the Taj Mahal), bridges, machines, aquatic life and agriculture"
+        learning_outcomes:
+          - "Explain why acid rain damages marble (calcium carbonate) monuments such as the Taj Mahal"
+          - "Present a group project on the consequences of acid rain"
+      - id: icse-7-chemistry-ch12-t03
+        title: "Air quality: changes in the composition of air due to human activity"
+        learning_outcomes:
+          - "Suggest ways to improve air quality in a city"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

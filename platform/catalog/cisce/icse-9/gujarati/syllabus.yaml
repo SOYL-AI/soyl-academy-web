@@ -1,0 +1,300 @@
+# ICSE Class 9 Gujarati (Second Language, code 04) - ICSE 2028 course, CLASS IX portion only.
+# Literature: titles and authors only (CONTEXT section 8). Students read the texts in their own textbook.
+subject_id: icse-9-gujarati
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2028-second-languages, icse-2028-prescribed-books, cisce-circular-2026-27-33-indian-languages, icse-2028-regulations]
+exam_notes: >-
+  Class IX is year one of the two-year ICSE 2028 course: there is no board examination in Class IX. The school sets the
+  Class IX examination, normally on the ICSE paper pattern prescribed in the Second Languages syllabus: one paper of 3
+  hours, 80 marks, plus internal assessment 20 marks (marked 10 by the subject teacher and 10 by an external examiner):
+  two or three assignments, two of them written - one from language and one from literature. Class IX suggestions are
+  creative writing of about 300-400 words from a stimulus (recorded music or sounds, a picture, an opening sentence, a
+  news clipping), one factual and one expressive piece, a film or book review, an aural exercise (listening to a talk or
+  conversation and noting the main points), and literature assignments on character/theme analysis, background and
+  summary. Section A Language (40 marks, compulsory): one composition from a choice of subjects (short explanations,
+  directions, descriptions or narratives, possibly suggested by pictures or objects), one letter from a choice of two
+  (layout assessed), an unseen passage of about 250 words with questions answered in the language, and grammar
+  (vocabulary, syntax and idioms, synthesis of sentences, sentences using given words or forms; no knowledge of
+  grammatical terms is required). Section A is the same in Classes IX and X. Section B Prescribed Texts (40 marks): four
+  questions from ONLY two of the prescribed books, set and answered in the language. Prescribed texts are bifurcated
+  (ICSE 2028 Second Languages syllabus and Appendix I; Circular 2026-27/33): the Class IX examination is set ONLY on the
+  Class IX portion listed here (the Class X portion is in icse-10-gujarati and listed under removed_topics). Short
+  stories and poems are from Sahitya Gurjari and the one-act plays from Ekanki Gurjari (Gurjar Granthratna Karyalaya,
+  Ahmedabad). CISCE describes grammar only generically; the two grammar chapters break it into item types commonly set
+  in ICSE language papers - this breakdown is SOYL's, not CISCE's. CISCE lists skills and texts, not chapters; SOYL
+  grouped them into teachable chapters in syllabus order. SOYL covers all four prescribed books so a student can pick
+  any two. Titles are in English / CISCE transliteration; native-script titles to be added in language review.
+units:
+  - { name: "Section A: Language", marks: 40 }
+  - { name: "Section B: Prescribed Texts", marks: 40 }
+chapters:
+  - id: icse-9-gujarati-ch01
+    number: 1
+    title: "Composition writing"
+    unit: "Section A: Language"
+    topics:
+      - id: icse-9-gujarati-ch01-t01
+        title: "Planning a composition: choosing a topic, outline, introduction, body and conclusion"
+        learning_outcomes:
+          - "Prepare an outline and write a well-organised composition in Gujarati on a chosen subject"
+          - "Link paragraphs in a logical order with suitable connecting words"
+      - id: icse-9-gujarati-ch01-t02
+        title: "Descriptive and narrative compositions"
+        learning_outcomes:
+          - "Describe a place, person, event or experience vividly in Gujarati"
+          - "Narrate a sequence of events with a clear beginning, middle and end"
+      - id: icse-9-gujarati-ch01-t03
+        title: "Short explanations, directions and argumentative compositions"
+        learning_outcomes:
+          - "Write clear step-by-step directions or a short explanation of a process"
+          - "Present arguments for and against an issue and reach a reasoned conclusion"
+      - id: icse-9-gujarati-ch01-t04
+        title: "Story writing and compositions suggested by a picture or object"
+        learning_outcomes:
+          - "Write an original story from a given opening line, proverb or outline"
+          - "Write a composition based on a given picture or object"
+      - id: icse-9-gujarati-ch01-t05
+        title: "Accuracy and style: spelling, punctuation and choice of words"
+        learning_outcomes:
+          - "Find and correct spelling and punctuation errors in their own writing"
+          - "Choose precise and varied vocabulary suited to the subject and reader"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-gujarati-ch02
+    number: 2
+    title: "Letter writing"
+    unit: "Section A: Language"
+    topics:
+      - id: icse-9-gujarati-ch02-t01
+        title: "Layout of a formal letter: address, date, recipient, subject, salutation, body and closing"
+        learning_outcomes:
+          - "Set out a formal letter in Gujarati with every part in the correct order and position"
+      - id: icse-9-gujarati-ch02-t02
+        title: "Formal letters to a principal, editor or official (application, complaint, request)"
+        learning_outcomes:
+          - "State a problem briefly and politely and make a suitable request or suggestion"
+      - id: icse-9-gujarati-ch02-t03
+        title: "Informal letters to friends and relatives"
+        learning_outcomes:
+          - "Use an apt salutation, a warm personal tone and a suitable closing in an informal letter in Gujarati"
+      - id: icse-9-gujarati-ch02-t04
+        title: "Developing a letter from the suggestions given in the question"
+        learning_outcomes:
+          - "Include every suggested point in a well-connected letter of appropriate length"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-gujarati-ch03
+    number: 3
+    title: "Unseen passage (comprehension)"
+    unit: "Section A: Language"
+    topics:
+      - id: icse-9-gujarati-ch03-t01
+        title: "Reading strategy: main idea and supporting details"
+        learning_outcomes:
+          - "State the central idea of an unseen passage of about 250 words in one or two sentences in Gujarati"
+      - id: icse-9-gujarati-ch03-t02
+        title: "Answering factual and inferential questions in own words"
+        learning_outcomes:
+          - "Answer questions in own words without copying whole lines from the passage"
+          - "Infer causes, consequences and the writer's attitude from the passage"
+      - id: icse-9-gujarati-ch03-t03
+        title: "Word meanings in context, a suitable title and the message of the passage"
+        learning_outcomes:
+          - "Work out the meaning of difficult words from their context"
+          - "Suggest a suitable title for the passage and justify it"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-gujarati-ch04
+    number: 4
+    title: "Grammar: vocabulary"
+    unit: "Section A: Language"
+    topics:
+      - id: icse-9-gujarati-ch04-t01
+        title: "Word formation: forming nouns, adjectives and verbs with prefixes and suffixes"
+        learning_outcomes:
+          - "Form related words from given Gujarati words and use them correctly in sentences"
+      - id: icse-9-gujarati-ch04-t02
+        title: "Synonyms and antonyms"
+        learning_outcomes:
+          - "Give suitable synonyms and correct antonyms for common words"
+      - id: icse-9-gujarati-ch04-t03
+        title: "One word for a group of words"
+        learning_outcomes:
+          - "Replace a phrase with a single suitable word and use it in a sentence"
+      - id: icse-9-gujarati-ch04-t04
+        title: "Words often confused and correct spelling"
+        learning_outcomes:
+          - "Show the difference in meaning between similar-looking or similar-sounding words through sentences"
+          - "Correct misspelt words"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-gujarati-ch05
+    number: 5
+    title: "Grammar: sentence construction and idioms"
+    unit: "Section A: Language"
+    topics:
+      - id: icse-9-gujarati-ch05-t01
+        title: "Idioms and proverbs: meaning and use in sentences"
+        learning_outcomes:
+          - "Explain the meaning of common Gujarati idioms and proverbs and use them aptly in sentences"
+      - id: icse-9-gujarati-ch05-t02
+        title: "Correcting errors in sentences: agreement, tense, word order and word endings"
+        learning_outcomes:
+          - "Identify the error in a sentence and rewrite it correctly"
+      - id: icse-9-gujarati-ch05-t03
+        title: "Synthesis: joining and transforming sentences as directed"
+        learning_outcomes:
+          - "Combine two or more simple sentences into one sentence without changing the meaning"
+          - "Change the form of a sentence as instructed (tense, statement to question, positive to negative)"
+      - id: icse-9-gujarati-ch05-t04
+        title: "Making sentences with given words or forms"
+        learning_outcomes:
+          - "Write meaningful sentences that correctly use a given word, phrase or grammatical form"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-gujarati-ch06
+    number: 6
+    title: "Sahitya Gurjari: short stories (Class IX portion)"
+    unit: "Section B: Prescribed Texts"
+    topics:
+      - id: icse-9-gujarati-ch06-t01
+        title: "Parivartan (Gaurishankar Joshi (Dhumketu)): plot, characters and message"
+        learning_outcomes:
+          - "Narrate the main events of the story in sequence in Gujarati, in own words"
+          - "Describe the main characters with examples from the story"
+          - "State the theme or message and explain the significance of the title"
+      - id: icse-9-gujarati-ch06-t02
+        title: "Sad Vartyo (Zaverchand Meghani): plot, characters and message"
+        learning_outcomes:
+          - "Narrate the main events of the story in sequence in Gujarati, in own words"
+          - "Describe the main characters with examples from the story"
+          - "State the theme or message and explain the significance of the title"
+      - id: icse-9-gujarati-ch06-t03
+        title: "Maji no pyalo (Gulabdas Broker): plot, characters and message"
+        learning_outcomes:
+          - "Narrate the main events of the story in sequence in Gujarati, in own words"
+          - "Describe the main characters with examples from the story"
+          - "State the theme or message and explain the significance of the title"
+      - id: icse-9-gujarati-ch06-t04
+        title: "Sanskarni Shrimantai (Kundanika Kapadia): plot, characters and message"
+        learning_outcomes:
+          - "Narrate the main events of the story in sequence in Gujarati, in own words"
+          - "Describe the main characters with examples from the story"
+          - "State the theme or message and explain the significance of the title"
+      - id: icse-9-gujarati-ch06-t05
+        title: "Dadano Dallo (Ila Arab Mehta): plot, characters and message"
+        learning_outcomes:
+          - "Narrate the main events of the story in sequence in Gujarati, in own words"
+          - "Describe the main characters with examples from the story"
+          - "State the theme or message and explain the significance of the title"
+    removed_topics:
+      - "Class X stories: Jamunanu Pur (Ramnarayan Vishwanath Pathak), Ladu nu Jaman (Pannalal Patel), Khari Maa (Ramanlal Desai), Anjalpani (Pitambar Patel), Himmat Maro Dost (Mohammad Mankad) - see icse-10-gujarati"
+    literature_texts:
+      - { title: "Parivartan", author: "Gaurishankar Joshi (Dhumketu)" }
+      - { title: "Sad Vartyo", author: "Zaverchand Meghani" }
+      - { title: "Maji no pyalo", author: "Gulabdas Broker" }
+      - { title: "Sanskarni Shrimantai", author: "Kundanika Kapadia" }
+      - { title: "Dadano Dallo", author: "Ila Arab Mehta" }
+  - id: icse-9-gujarati-ch07
+    number: 7
+    title: "Sahitya Gurjari: poems (Class IX portion)"
+    unit: "Section B: Prescribed Texts"
+    topics:
+      - id: icse-9-gujarati-ch07-t01
+        title: "Vaishnavjan (Narsinh Mehta): the qualities of a true devotee: empathy, humility and honesty"
+        learning_outcomes:
+          - "List the qualities of a true Vaishnav described in the poem and explain them in Gujarati, in own words"
+          - "Relate one quality praised in the poem to an everyday situation"
+      - id: icse-9-gujarati-ch07-t02
+        title: "Gramya Mata (Sursingji Gohil \"Kalapi\"): the village mother, the king and the lesson about a ruler's intentions"
+        learning_outcomes:
+          - "Narrate the incident presented in the poem in Gujarati, in own words"
+          - "Explain the lesson the poem teaches about a ruler's thoughts and the welfare of the people"
+      - id: icse-9-gujarati-ch07-t03
+        title: "Ae Nishal Ae Savar (Sundarji Betai): central idea, feeling and imagery"
+        learning_outcomes:
+          - "Explain the central idea of the poem in Gujarati, in own words"
+          - "Identify the poet's feelings, tone and main images with reference to the poem"
+      - id: icse-9-gujarati-ch07-t04
+        title: "Banavati Phoolone (Prahlad Parekh): artificial flowers set against living ones; the value of the natural"
+        learning_outcomes:
+          - "Explain what the poet says to the artificial flowers, in Gujarati, in own words"
+          - "Discuss the contrast between the artificial and the natural that the poem draws"
+      - id: icse-9-gujarati-ch07-t05
+        title: "Panchika Ramti'ti (Mukesh Joshi): central idea, feeling and imagery"
+        learning_outcomes:
+          - "Explain the central idea of the poem in Gujarati, in own words"
+          - "Identify the poet's feelings, tone and main images with reference to the poem"
+    removed_topics:
+      - "Class X poems: Jhaghdo Lochan Manno (Kavi Dayaram), Pranam Mara (Ramnarayan Pathak), Chha Rutuo (Umashankar Joshi), Boliye na Kain (Rajendra Shah), Subhashito - see icse-10-gujarati"
+    literature_texts:
+      - { title: "Vaishnavjan", author: "Narsinh Mehta" }
+      - { title: "Gramya Mata", author: "Sursingji Gohil \"Kalapi\"" }
+      - { title: "Ae Nishal Ae Savar", author: "Sundarji Betai" }
+      - { title: "Banavati Phoolone", author: "Prahlad Parekh" }
+      - { title: "Panchika Ramti'ti", author: "Mukesh Joshi" }
+  - id: icse-9-gujarati-ch08
+    number: 8
+    title: "Novel: Vansano Ankur (pages 1 to 64)"
+    unit: "Section B: Prescribed Texts"
+    topics:
+      - id: icse-9-gujarati-ch08-t01
+        title: "Pages 1-64: sequence of events"
+        learning_outcomes:
+          - "Narrate the main events of the prescribed pages in sequence in Gujarati, in own words"
+      - id: icse-9-gujarati-ch08-t02
+        title: "The main characters as introduced in the opening of the novel"
+        learning_outcomes:
+          - "Write character sketches of the main characters with incidents from the prescribed pages"
+      - id: icse-9-gujarati-ch08-t03
+        title: "Setting, relationships and the conflict that sets the story going"
+        learning_outcomes:
+          - "Describe the setting and the relationships established in the opening portion"
+          - "Identify the central conflict that begins in this portion"
+      - id: icse-9-gujarati-ch08-t04
+        title: "Themes and the meaning of the title Vansano Ankur"
+        learning_outcomes:
+          - "Explain the themes that emerge in the opening portion and relate them to the title"
+      - id: icse-9-gujarati-ch08-t05
+        title: "Dhiruben Patel's narrative style"
+        learning_outcomes:
+          - "Comment on the narration, dialogue and description in the novel with examples"
+    removed_topics:
+      - "Pages 65 to 132 - Class X portion; see icse-10-gujarati"
+    literature_texts:
+      - { title: "Vansano Ankur (pages 1 to 64)", author: "Dhiruben Patel" }
+  - id: icse-9-gujarati-ch09
+    number: 9
+    title: "Ekanki Gurjari: one-act plays (Class IX portion)"
+    unit: "Section B: Prescribed Texts"
+    topics:
+      - id: icse-9-gujarati-ch09-t01
+        title: "Kunti ane Karna (Manubhai Pancholi): Kunti's meeting with Karna before the Kurukshetra war; duty, loyalty and a mother's appeal"
+        learning_outcomes:
+          - "Summarise the action of the play in Gujarati, in own words"
+          - "Write character sketches of Kunti and Karna using their words in the play"
+          - "Explain the conflict between a mother's appeal and Karna's loyalty and sense of duty"
+      - id: icse-9-gujarati-ch09-t02
+        title: "Lagnana Umedwar (Jyotindra Dave): plot, characters and humour"
+        learning_outcomes:
+          - "Summarise the action of the play in Gujarati, in own words"
+          - "Write character sketches of the main characters using incidents from the play"
+          - "Explain the central conflict and the significance of the title"
+      - id: icse-9-gujarati-ch09-t03
+        title: "Deshbhakt Jagdusha (Raman Lal Son): plot, characters and the theme of service to the land"
+        learning_outcomes:
+          - "Summarise the action of the play in Gujarati, in own words"
+          - "Write character sketches of the main characters using incidents from the play"
+          - "Explain the central conflict and the significance of the title"
+      - id: icse-9-gujarati-ch09-t04
+        title: "Elements of a one-act play: plot, dialogue, stage directions and stageability"
+        learning_outcomes:
+          - "Explain the role of dialogue and stage directions in one of the prescribed plays"
+    removed_topics:
+      - "Class X plays: Vruksh (Labhshankar Thakar), Raja Ladu Sinh (Dr Shiv Shankar Joshi), Hukum Malik (Chinu Modi) - see icse-10-gujarati"
+    literature_texts:
+      - { title: "Kunti ane Karna", author: "Manubhai Pancholi" }
+      - { title: "Lagnana Umedwar", author: "Jyotindra Dave" }
+      - { title: "Deshbhakt Jagdusha", author: "Raman Lal Son" }
+removed_topics: []

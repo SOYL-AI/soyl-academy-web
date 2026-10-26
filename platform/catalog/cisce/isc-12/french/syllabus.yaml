@@ -1,0 +1,279 @@
+# ISC Class 12 French (Modern Foreign Language elective, code 828) - ISC 2027 examination.
+# Literature: titles and authors only. Students read the texts in their own editions.
+subject_id: isc-12-french
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-mfl, isc-2027-prescribed-books, isc-2027-regulations]
+exam_notes: >-
+  Paper I Theory: one paper of 3 hours, 80 marks, in four parts: (1) a short composition in French from a choice of subjects;
+  (2) a French passage for unprepared translation into English; (3) an unseen French passage with questions - candidates may be
+  asked to summarise part of it in French, explain individual words, phrases or sentences, and answer comprehension questions
+  (not every question type is set every year); (4) two questions on one or two of the prescribed textbooks.
+  CISCE does not publish marks per part. Paper II Project Work (20 marks): Listening (5) and Speaking (5) assessed by the subject
+  teacher - an unseen passage or poem read aloud twice with objective questions, and a three-minute individual presentation followed
+  by discussion; Writing (10) assessed by a Visiting Examiner - one assignment of about 250 words on any aspect of the language or
+  literature studied in Class XII (e.g. summary, book or film review, alternative ending, theme analysis). CISCE sets no question paper
+  for project work. CISCE has not bifurcated this syllabus: the ISC 2027 paper is set on the entire Classes XI-XII syllabus and all four
+  prescribed books, so nothing is removed here. The syllabus does not list grammar items; the two grammar chapters below cover the
+  structures needed for composition, translation and reading the prescribed nineteenth- and twentieth-century texts - this breakdown is
+  SOYL's, not CISCE's. SOYL covers all four prescribed books so a student can choose which to answer on. CISCE lists topics not
+  chapters; SOYL grouped them into teachable chapters in syllabus order.
+units:
+  - { name: "1. Composition", marks: null }
+  - { name: "2. Unprepared translation into English", marks: null }
+  - { name: "3. Unseen passage", marks: null }
+  - { name: "4. Prescribed textbooks", marks: null }
+chapters:
+  - id: isc-12-french-ch01
+    number: 1
+    title: "Composition (Rédaction)"
+    unit: "1. Composition"
+    topics:
+      - id: isc-12-french-ch01-t01
+        title: "Planning a composition: plan, introduction, développement, conclusion and connecteurs logiques"
+        learning_outcomes:
+          - "Draw up a plan for a given subject and write a composition in French with a clear introduction, developed paragraphs and a conclusion"
+          - "Link ideas with connecteurs such as d'abord, en outre, par contre, pourtant, en effet, bref"
+      - id: isc-12-french-ch01-t02
+        title: "Descriptive and narrative compositions"
+        learning_outcomes:
+          - "Describe a person, place or event vividly using a range of adjectives and the imparfait for background"
+          - "Narrate a real or imagined experience, sequencing events with the passé composé, imparfait and plus-que-parfait"
+      - id: isc-12-french-ch01-t03
+        title: "Argumentative and opinion compositions: pour et contre"
+        learning_outcomes:
+          - "Present arguments for and against a statement and reach a reasoned conclusion"
+          - "Express and justify an opinion with expressions such as à mon avis, il me semble que, je ne pense pas que + subjonctif"
+      - id: isc-12-french-ch01-t04
+        title: "Subjects from contemporary life: environment, technology, education, festivals, travel, youth"
+        learning_outcomes:
+          - "Use topic vocabulary accurately to write on contemporary issues, including examples from Indian life"
+      - id: isc-12-french-ch01-t05
+        title: "Accuracy and style: agreement, accents, register, avoiding anglicisms; revising one's draft"
+        learning_outcomes:
+          - "Find and correct errors of agreement, accents and tense in one's own composition"
+          - "Vary sentence structure and vocabulary to avoid repetition"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-french-ch02
+    number: 2
+    title: "Grammaire avancée (1): les temps et les modes"
+    unit: null
+    topics:
+      - id: isc-12-french-ch02-t01
+        title: "Passé simple: recognising and understanding it in literary narrative"
+        learning_outcomes:
+          - "Identify passé simple forms of regular and common irregular verbs (fut, eut, fit, vint, prit) and give their infinitive and meaning"
+          - "Explain why literary narrative uses the passé simple where speech uses the passé composé"
+      - id: isc-12-french-ch02-t02
+        title: "Plus-que-parfait and futur antérieur"
+        learning_outcomes:
+          - "Form the plus-que-parfait and futur antérieur and use them to show which of two actions came first"
+      - id: isc-12-french-ch02-t03
+        title: "Conditionnel présent et passé; phrases avec si (three patterns)"
+        learning_outcomes:
+          - "Form the conditionnel présent and passé"
+          - "Complete si-clauses with the correct tense sequence for real, unlikely and impossible conditions"
+      - id: isc-12-french-ch02-t04
+        title: "Subjonctif présent: after il faut que, wishes, emotions, doubt and conjunctions (bien que, pour que, avant que)"
+        learning_outcomes:
+          - "Form the subjonctif présent of regular and common irregular verbs (être, avoir, aller, faire, pouvoir, savoir)"
+          - "Decide whether a clause needs the subjonctif or the indicatif and justify the choice"
+      - id: isc-12-french-ch02-t05
+        title: "Participe présent, gérondif (en + -ant) and infinitif passé"
+        learning_outcomes:
+          - "Use the gérondif to express simultaneity, manner or cause"
+          - "Replace a clause with après avoir / après être + past participle"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-french-ch03
+    number: 3
+    title: "Grammaire avancée (2): la phrase complexe"
+    unit: null
+    topics:
+      - id: isc-12-french-ch03-t01
+        title: "Pronoms relatifs: qui, que, dont, où and lequel / auquel / duquel"
+        learning_outcomes:
+          - "Join two sentences with the correct simple or compound relative pronoun, including after a preposition"
+      - id: isc-12-french-ch03-t02
+        title: "Double object pronouns and their order (me le, le lui, lui en, y en)"
+        learning_outcomes:
+          - "Replace two complements with pronouns in the correct order, in statements, negatives and the imperative"
+      - id: isc-12-french-ch03-t03
+        title: "Discours indirect et concordance des temps"
+        learning_outcomes:
+          - "Convert direct speech to reported speech, changing pronouns, tenses and time expressions correctly"
+      - id: isc-12-french-ch03-t04
+        title: "Voix passive (être + participe passé, par / de) and alternatives (on, se faire)"
+        learning_outcomes:
+          - "Transform active sentences into the passive and back, keeping the tense"
+          - "Recognise when French prefers on or a pronominal verb to the passive"
+      - id: isc-12-french-ch03-t05
+        title: "Expressing cause, consequence, purpose and opposition (parce que, puisque, donc, si bien que, afin que, bien que, alors que)"
+        learning_outcomes:
+          - "Join ideas with a connector of cause, consequence, purpose or opposition and the mood it requires"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-french-ch04
+    number: 4
+    title: "Unprepared translation into English (Version)"
+    unit: "2. Unprepared translation into English"
+    topics:
+      - id: isc-12-french-ch04-t01
+        title: "Reading the whole passage for meaning before translating"
+        learning_outcomes:
+          - "State the gist of a French passage and mark difficult words and structures before translating"
+      - id: isc-12-french-ch04-t02
+        title: "Rendering French tenses and moods in English (passé simple, imparfait, subjonctif, conditionnel)"
+        learning_outcomes:
+          - "Choose the English tense or modal that best conveys a French tense or mood in context (e.g. imparfait as 'used to' or 'was ...ing')"
+      - id: isc-12-french-ch04-t03
+        title: "Idioms, set expressions and faux amis"
+        learning_outcomes:
+          - "Translate idioms by their natural English equivalent rather than word for word"
+          - "Avoid false friends such as actuellement, sensible, librairie, assister à"
+      - id: isc-12-french-ch04-t04
+        title: "Producing fluent, accurate English and checking the translation"
+        learning_outcomes:
+          - "Write a complete English version that omits nothing and reads naturally, then check it sentence by sentence against the original"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-french-ch05
+    number: 5
+    title: "Unseen passage (Compréhension écrite et résumé)"
+    unit: "3. Unseen passage"
+    topics:
+      - id: isc-12-french-ch05-t01
+        title: "Reading an unseen passage: main idea, key details and the writer's attitude"
+        learning_outcomes:
+          - "State the main idea of an unseen French passage and locate supporting details"
+      - id: isc-12-french-ch05-t02
+        title: "Explaining words, phrases and sentences in context"
+        learning_outcomes:
+          - "Explain the meaning of a word, phrase or sentence from the passage in simple French, using a synonym or paraphrase"
+      - id: isc-12-french-ch05-t03
+        title: "Answering comprehension questions in French in one's own words"
+        learning_outcomes:
+          - "Answer questions in complete French sentences without copying long stretches of the passage"
+      - id: isc-12-french-ch05-t04
+        title: "Writing a résumé in French of part of the passage"
+        learning_outcomes:
+          - "Summarise a section of the passage in French within a word limit, keeping only the essential points"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-french-ch06
+    number: 6
+    title: "Le Roi des Montagnes (Edmond About)"
+    unit: "4. Prescribed textbooks"
+    topics:
+      - id: isc-12-french-ch06-t01
+        title: "The novel and its context: About, mid-nineteenth-century Greece and brigandage"
+        learning_outcomes:
+          - "Describe the setting of the novel and explain what it satirises about the society of its time"
+      - id: isc-12-french-ch06-t02
+        title: "Plot and narrative frame: the story as told by Hermann Schultz"
+        learning_outcomes:
+          - "Summarise the main events of the novel in French, in the correct order"
+          - "Explain how the first-person narrator shapes the reader's view of events"
+      - id: isc-12-french-ch06-t03
+        title: "Characters: Hermann Schultz, Hadgi-Stavros, Mary-Ann and Mrs Simons"
+        learning_outcomes:
+          - "Write a character sketch of Hadgi-Stavros or Hermann Schultz supported by episodes from the novel"
+          - "Compare the attitudes of the English ladies and the narrator towards their captors"
+      - id: isc-12-french-ch06-t04
+        title: "Themes and style: satire, irony, humour and adventure"
+        learning_outcomes:
+          - "Identify examples of irony and humour and explain their effect"
+          - "Discuss the theme of power and corruption as presented in the novel"
+      - id: isc-12-french-ch06-t05
+        title: "Answering examination questions on the text"
+        learning_outcomes:
+          - "Write a well-organised answer in French to a question on plot, character or theme, using precise references to the text"
+    removed_topics: []
+    literature_texts:
+      - { title: "Le Roi des Montagnes", author: "Edmond About" }
+  - id: isc-12-french-ch07
+    number: 7
+    title: "Le Château de ma mère (Marcel Pagnol)"
+    unit: "4. Prescribed textbooks"
+    topics:
+      - id: isc-12-french-ch07-t01
+        title: "Pagnol's Souvenirs d'enfance: autobiography, Provence and the sequel to La Gloire de mon père"
+        learning_outcomes:
+          - "Explain the autobiographical nature of the book and the importance of the Provençal setting"
+      - id: isc-12-french-ch07-t02
+        title: "Plot: holidays in the hills, the long walk and the shortcut along the canal"
+        learning_outcomes:
+          - "Narrate the main events of the book in French in the right sequence"
+      - id: isc-12-french-ch07-t03
+        title: "Characters: Marcel, Lili, Joseph, Augustine and the people met on the way"
+        learning_outcomes:
+          - "Describe the friendship between Marcel and Lili with examples"
+          - "Write a character sketch of Marcel's mother or father"
+      - id: isc-12-french-ch07-t04
+        title: "Themes: childhood, family love, friendship, fear and authority, memory and loss"
+        learning_outcomes:
+          - "Explain how the ending changes the reader's view of the childhood memories"
+          - "Explain the significance of the title"
+      - id: isc-12-french-ch07-t05
+        title: "Style: humour, tenderness and the adult narrator looking back"
+        learning_outcomes:
+          - "Identify passages of humour and of nostalgia and explain how the narrator's tone creates them"
+    removed_topics: []
+    literature_texts:
+      - { title: "Le Château de ma mère", author: "Marcel Pagnol" }
+  - id: isc-12-french-ch08
+    number: 8
+    title: "Le Voyage de Monsieur Perrichon (Eugène Labiche)"
+    unit: "4. Prescribed textbooks"
+    topics:
+      - id: isc-12-french-ch08-t01
+        title: "The comedy and its context: Labiche and the nineteenth-century bourgeois comedy"
+        learning_outcomes:
+          - "Describe the features of Labiche's comedy and its bourgeois characters"
+      - id: isc-12-french-ch08-t02
+        title: "Plot: the family journey to the Alps and the rivalry of two suitors, act by act"
+        learning_outcomes:
+          - "Summarise each act and explain how the action builds to the dénouement"
+      - id: isc-12-french-ch08-t03
+        title: "Characters: Perrichon, Madame Perrichon, Henriette, Armand and Daniel"
+        learning_outcomes:
+          - "Compare the strategies of Armand and Daniel and explain which succeeds and why"
+          - "Write a character sketch of Perrichon showing his vanity"
+      - id: isc-12-french-ch08-t04
+        title: "Themes: ingratitude, vanity and self-esteem; the play's moral about human nature"
+        learning_outcomes:
+          - "Explain how the play shows that people prefer those they have helped to those who have helped them"
+      - id: isc-12-french-ch08-t05
+        title: "Comic techniques: situation, character, language and dramatic irony"
+        learning_outcomes:
+          - "Identify comic devices in a given scene and explain their effect on the audience"
+    removed_topics: []
+    literature_texts:
+      - { title: "Le Voyage de Monsieur Perrichon", author: "Eugène Labiche" }
+  - id: isc-12-french-ch09
+    number: 9
+    title: "La Poudre aux yeux (Eugène Labiche)"
+    unit: "4. Prescribed textbooks"
+    topics:
+      - id: isc-12-french-ch09-t01
+        title: "The title and premise: two families who pretend to be richer than they are"
+        learning_outcomes:
+          - "Explain the meaning of the expression jeter de la poudre aux yeux and how it fits the play"
+      - id: isc-12-french-ch09-t02
+        title: "Plot: the marriage negotiations and the escalation of pretence"
+        learning_outcomes:
+          - "Summarise the plot in French and identify the turning point and the dénouement"
+      - id: isc-12-french-ch09-t03
+        title: "Characters: the Malingear and Ratinois families and the young couple"
+        learning_outcomes:
+          - "Compare the two families and explain how each feeds the other's pretence"
+      - id: isc-12-french-ch09-t04
+        title: "Themes and comedy: appearances, social ambition, money and marriage"
+        learning_outcomes:
+          - "Discuss what the play satirises about the middle class and whether the satire is still relevant today"
+          - "Identify comic devices such as exaggeration, repetition and quiproquo in a scene"
+    removed_topics: []
+    literature_texts:
+      - { title: "La Poudre aux yeux", author: "Eugène Labiche" }
+removed_topics: []

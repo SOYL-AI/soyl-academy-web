@@ -1,0 +1,362 @@
+# ISC Class 11 Electricity and Electronics (866), Paper I Theory - ISC 2028 syllabus, CLASS XI portion only.
+# Source: platform/catalog/sources/cisce.md#isc-2028-electricity-electronics. Topic wording is our own summary of the official scope.
+subject_id: isc-11-electricity-electronics
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-electricity-electronics, isc-2028-regulations]
+exam_notes: >-
+  Class XI is year one of the two-year ISC 2028 course. There is no board examination in Class XI: the school conducts
+  the Class XI examination on the Class XI portion, and promotion to Class XII needs at least 35% on the cumulative
+  average in five subjects including English, with 75% attendance (ISC 2028 Regulations). The syllabus prescribes, and
+  the school examination usually follows: Paper I Theory, 3 hours, 80 marks; Paper II Project Work, 20 marks - two
+  projects on any theory topics, assessed by the subject teacher, each marked out of 10 (title and introduction 1,
+  content 3, presentation and originality 2, conclusion 1, viva-voce 3). Suggested Class XI projects: assembling a
+  circuit with ammeter, voltmeter and rheostat and modifying it with resistors in series and parallel; a report on
+  rheostats as potential dividers, keys, types of resistance, household versus laboratory wiring and battery
+  eliminators; assembling a household circuit with three bulbs, switches, socket, fuse and main switch (including a
+  two-way staircase point); and a study of an Indian or foreign physicist. SOYL covers Paper I only.
+  No topic-wise marks weightage is published, and no Class XI specimen paper is listed for this subject. CISCE lists
+  12 numbered topics, not textbook chapters: SOYL groups them into 15 teachable chapters in syllabus order (topics 3
+  and 6 are each split in two or three). The Class XII portion is in isc-12-electricity-electronics.
+units:
+  - { name: "1. Introduction to Electricity", marks: null }
+  - { name: "2. Electric Circuit", marks: null }
+  - { name: "3. Equivalence", marks: null }
+  - { name: "4. Work, Power and Energy", marks: null }
+  - { name: "5. Heating Effect of an Electric Current", marks: null }
+  - { name: "6. Chemical Effect of an Electric Current", marks: null }
+  - { name: "7. Electromagnetism", marks: null }
+  - { name: "8. Electromagnetic Induction", marks: null }
+  - { name: "9. Elementary Electrostatics", marks: null }
+  - { name: "10. Alternating Current", marks: null }
+  - { name: "11. Transformer", marks: null }
+  - { name: "12. Lighting", marks: null }
+chapters:
+  - id: isc-11-electricity-electronics-ch01
+    number: 1
+    title: "Introduction to Electricity"
+    unit: "1. Introduction to Electricity"
+    topics:
+      - id: isc-11-electricity-electronics-ch01-t01
+        title: "Structure of the atom: nucleus and electrons; free electrons in conductors"
+        learning_outcomes:
+          - "Describe a simple model of the atom with nucleus and orbiting electrons"
+          - "Explain why metals conduct electricity using the idea of free electrons"
+      - id: isc-11-electricity-electronics-ch01-t02
+        title: "Electric charge and its unit, the coulomb"
+        learning_outcomes:
+          - "State the coulomb as the unit of charge and relate it to the charge on an electron"
+      - id: isc-11-electricity-electronics-ch01-t03
+        title: "Potential difference and electromotive force"
+        learning_outcomes:
+          - "Distinguish potential difference from emf"
+          - "State the volt as the unit of both"
+      - id: isc-11-electricity-electronics-ch01-t04
+        title: "Production of electricity by friction, magnetism and chemical action"
+        learning_outcomes:
+          - "Describe one example each of charge produced by friction, by magnetism and by chemical action"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-electricity-electronics-ch02
+    number: 2
+    title: "The Electric Circuit and Ohm's Law"
+    unit: "2. Electric Circuit"
+    topics:
+      - id: isc-11-electricity-electronics-ch02-t01
+        title: "Electric current I = Q/t; the ampere as rate of flow of charge"
+        learning_outcomes:
+          - "Calculate current from charge and time and vice versa"
+      - id: isc-11-electricity-electronics-ch02-t02
+        title: "Ohm's law for a single resistance, V/I = R"
+        learning_outcomes:
+          - "State Ohm's law and use V = IR to find an unknown quantity"
+          - "Interpret a V-I graph for an ohmic resistor"
+      - id: isc-11-electricity-electronics-ch02-t03
+        title: "Ohm's law for a whole circuit, E/I = total R"
+        learning_outcomes:
+          - "Apply E = I x (total resistance) to a circuit including the internal resistance of the source"
+          - "Calculate terminal voltage and lost volts for a cell delivering current"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-electricity-electronics-ch03
+    number: 3
+    title: "Cell Groupings and Resistances in Combination"
+    unit: "3. Equivalence"
+    topics:
+      - id: isc-11-electricity-electronics-ch03-t01
+        title: "Grouping of cells in series, in parallel and in mixed grouping"
+        learning_outcomes:
+          - "Calculate the total emf, internal resistance and current for cells in series and in parallel"
+          - "Explain when a parallel or mixed grouping of cells is preferred"
+      - id: isc-11-electricity-electronics-ch03-t02
+        title: "Resistances in series and in parallel; equivalent resistance"
+        learning_outcomes:
+          - "Derive and use the formulae for equivalent resistance in series and in parallel"
+          - "Solve for currents and voltages in a simple series-parallel network"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-electricity-electronics-ch04
+    number: 4
+    title: "Resistivity and Temperature Coefficient"
+    unit: "3. Equivalence"
+    topics:
+      - id: isc-11-electricity-electronics-ch04-t01
+        title: "Resistivity: R = rho l / A; calculating the resistance of a wire"
+        learning_outcomes:
+          - "Calculate the resistance of a wire from its resistivity, length and cross-sectional area"
+          - "Predict how resistance changes when a wire is stretched or doubled over"
+      - id: isc-11-electricity-electronics-ch04-t02
+        title: "Temperature coefficient of resistance"
+        learning_outcomes:
+          - "Define the temperature coefficient of resistance"
+          - "Calculate the resistance of a conductor at a new temperature using R_t = R_0(1 + alpha t)"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-electricity-electronics-ch05
+    number: 5
+    title: "Ammeter Shunts, Voltmeter Multipliers and the Ohmmeter"
+    unit: "3. Equivalence"
+    topics:
+      - id: isc-11-electricity-electronics-ch05-t01
+        title: "Converting a moving-coil meter into an ammeter with a shunt"
+        learning_outcomes:
+          - "Calculate the shunt resistance needed to extend the range of an ammeter"
+          - "Explain why an ammeter is connected in series and has low resistance"
+      - id: isc-11-electricity-electronics-ch05-t02
+        title: "Converting a meter into a voltmeter with a series multiplier"
+        learning_outcomes:
+          - "Calculate the multiplier resistance needed for a given voltmeter range"
+          - "Explain why a voltmeter is connected in parallel and has high resistance"
+      - id: isc-11-electricity-electronics-ch05-t03
+        title: "The series ohmmeter"
+        learning_outcomes:
+          - "Draw the circuit of a series ohmmeter and explain why its scale is reversed and non-linear"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-electricity-electronics-ch06
+    number: 6
+    title: "Electrical Work, Power and Energy"
+    unit: "4. Work, Power and Energy"
+    topics:
+      - id: isc-11-electricity-electronics-ch06-t01
+        title: "Work and energy in a circuit: the joule; E = VIt = QV"
+        learning_outcomes:
+          - "Calculate the electrical energy transferred using E = VIt or E = QV"
+      - id: isc-11-electricity-electronics-ch06-t02
+        title: "Units of power and energy: watt, kilowatt, watt-hour and kilowatt-hour"
+        learning_outcomes:
+          - "Calculate power using P = VI, I^2 R and V^2/R"
+          - "Convert between joules and kilowatt-hours"
+      - id: isc-11-electricity-electronics-ch06-t03
+        title: "Measuring power with a wattmeter"
+        learning_outcomes:
+          - "Show how a wattmeter's current and voltage coils are connected in a circuit"
+      - id: isc-11-electricity-electronics-ch06-t04
+        title: "Calculating electrical energy use and cost; the local tariff system"
+        learning_outcomes:
+          - "Calculate a household's monthly consumption and bill from appliance ratings, hours of use and a slab tariff"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-electricity-electronics-ch07
+    number: 7
+    title: "Heating Effect of an Electric Current"
+    unit: "5. Heating Effect of an Electric Current"
+    topics:
+      - id: isc-11-electricity-electronics-ch07-t01
+        title: "Heat produced by a current (H = I^2 R t); heating appliances"
+        learning_outcomes:
+          - "Calculate the heat produced in a resistor in a given time"
+          - "Explain why heating elements use high-resistivity, high-melting-point alloys"
+      - id: isc-11-electricity-electronics-ch07-t02
+        title: "Filament lamps"
+        learning_outcomes:
+          - "Explain how a filament lamp produces light and why its filament is coiled and in an inert gas"
+      - id: isc-11-electricity-electronics-ch07-t03
+        title: "Electric welding and the carbon arc"
+        learning_outcomes:
+          - "Describe how the heating effect is used in electric welding and in the carbon arc"
+      - id: isc-11-electricity-electronics-ch07-t04
+        title: "Fuses: principle and use"
+        learning_outcomes:
+          - "Explain how a fuse protects a circuit and choose a suitable fuse rating for an appliance"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-electricity-electronics-ch08
+    number: 8
+    title: "Electrolysis"
+    unit: "6. Chemical Effect of an Electric Current"
+    topics:
+      - id: isc-11-electricity-electronics-ch08-t01
+        title: "Electrolytes and non-electrolytes"
+        learning_outcomes:
+          - "Classify given liquids as electrolytes or non-electrolytes"
+      - id: isc-11-electricity-electronics-ch08-t02
+        title: "Electrolysis of acidified water and of copper(II) sulphate solution with copper or platinum electrodes"
+        learning_outcomes:
+          - "Describe the products at each electrode in the electrolysis of acidified water"
+          - "Compare the electrolysis of copper(II) sulphate with copper electrodes and with platinum electrodes"
+      - id: isc-11-electricity-electronics-ch08-t03
+        title: "Factors affecting the mass liberated in electrolysis; measuring current with a voltameter (coulometer)"
+        learning_outcomes:
+          - "State that the mass liberated depends on current, time and the substance (m = zIt)"
+          - "Calculate a current from the mass of copper deposited in a copper voltameter"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-electricity-electronics-ch09
+    number: 9
+    title: "Primary Cells and Accumulators"
+    unit: "6. Chemical Effect of an Electric Current"
+    topics:
+      - id: isc-11-electricity-electronics-ch09-t01
+        title: "Primary cells: the Leclanche cell; polarisation and local action"
+        learning_outcomes:
+          - "Describe the construction and working of a Leclanche cell"
+          - "Explain polarisation and local action and how each is reduced"
+      - id: isc-11-electricity-electronics-ch09-t02
+        title: "Accumulators: construction and characteristics of the lead-acid cell"
+        learning_outcomes:
+          - "Describe the plates and electrolyte of a lead-acid cell and the changes during charging and discharging"
+          - "Distinguish a primary cell from a secondary cell"
+      - id: isc-11-electricity-electronics-ch09-t03
+        title: "Testing and charging batteries; care and maintenance"
+        learning_outcomes:
+          - "Explain how the state of charge of a lead-acid battery is tested"
+          - "List care and maintenance practices that extend battery life"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-electricity-electronics-ch10
+    number: 10
+    title: "Electromagnetism"
+    unit: "7. Electromagnetism"
+    topics:
+      - id: isc-11-electricity-electronics-ch10-t01
+        title: "Simple magnetism; ferromagnetic properties of iron and steel"
+        learning_outcomes:
+          - "Compare soft iron and steel as magnetic materials and state their uses"
+      - id: isc-11-electricity-electronics-ch10-t02
+        title: "Magnetic field of a current in a straight wire, a circular coil and a solenoid"
+        learning_outcomes:
+          - "Sketch the field pattern for each current arrangement"
+          - "Find the field direction using the right-hand grip and corkscrew rules"
+      - id: isc-11-electricity-electronics-ch10-t03
+        title: "Force on a current-carrying conductor in a magnetic field"
+        learning_outcomes:
+          - "Predict the direction of force on a conductor in a magnetic field"
+          - "State the factors on which the force depends (F = BIl)"
+      - id: isc-11-electricity-electronics-ch10-t04
+        title: "Magnetic flux density and permeability"
+        learning_outcomes:
+          - "Define magnetic flux density and state its unit, the tesla"
+          - "Explain permeability and why an iron core strengthens a solenoid's field"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-electricity-electronics-ch11
+    number: 11
+    title: "Electromagnetic Induction"
+    unit: "8. Electromagnetic Induction"
+    topics:
+      - id: isc-11-electricity-electronics-ch11-t01
+        title: "Phenomenon of electromagnetic induction; Faraday's law and Lenz's law"
+        learning_outcomes:
+          - "State Faraday's and Lenz's laws"
+          - "Use Lenz's law to predict the direction of an induced current"
+      - id: isc-11-electricity-electronics-ch11-t02
+        title: "Induced emf: E = -d(phi)/dt; straight conductor cutting flux, E = Blv"
+        learning_outcomes:
+          - "Calculate the emf induced in a straight conductor moving through a magnetic field"
+          - "Calculate the average emf from a change of flux linkage in a given time"
+      - id: isc-11-electricity-electronics-ch11-t03
+        title: "Self-inductance: E = -L di/dt"
+        learning_outcomes:
+          - "Explain self-induction and calculate the back emf in a coil from the rate of change of current"
+      - id: isc-11-electricity-electronics-ch11-t04
+        title: "Mutual inductance; the induction coil"
+        learning_outcomes:
+          - "Explain mutual induction between two coils"
+          - "Describe the construction and working of an induction coil"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-electricity-electronics-ch12
+    number: 12
+    title: "Elementary Electrostatics and Capacitors"
+    unit: "9. Elementary Electrostatics"
+    topics:
+      - id: isc-11-electricity-electronics-ch12-t01
+        title: "Electric field between parallel plates: E = V/d"
+        learning_outcomes:
+          - "Calculate the field strength between parallel plates from voltage and separation"
+      - id: isc-11-electricity-electronics-ch12-t02
+        title: "Capacitance and factors affecting it"
+        learning_outcomes:
+          - "Define capacitance and the farad"
+          - "Explain how plate area, separation and dielectric affect capacitance"
+      - id: isc-11-electricity-electronics-ch12-t03
+        title: "Electric flux density D = Q/A and permittivity epsilon = D/E"
+        learning_outcomes:
+          - "Calculate electric flux density and permittivity for a parallel-plate capacitor"
+      - id: isc-11-electricity-electronics-ch12-t04
+        title: "Capacitors in series and parallel; energy stored in charged capacitors"
+        learning_outcomes:
+          - "Calculate the equivalent capacitance of capacitors in series and in parallel"
+          - "Calculate the energy stored using (1/2)CV^2 for single and combined capacitors"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-electricity-electronics-ch13
+    number: 13
+    title: "Alternating Current"
+    unit: "10. Alternating Current"
+    topics:
+      - id: isc-11-electricity-electronics-ch13-t01
+        title: "Generating an alternating emf with a single-loop coil; the sinusoidal waveform"
+        learning_outcomes:
+          - "Explain how a coil rotating in a magnetic field produces a sinusoidal emf"
+          - "Sketch one cycle of the waveform and mark peak value, period and frequency"
+      - id: isc-11-electricity-electronics-ch13-t02
+        title: "Peak and r.m.s. values (ratios only)"
+        learning_outcomes:
+          - "Use the ratio V_rms = V_peak / sqrt(2) to convert between peak and r.m.s. values"
+      - id: isc-11-electricity-electronics-ch13-t03
+        title: "Simple a.c. circuits"
+        learning_outcomes:
+          - "Calculate current and power in a simple resistive a.c. circuit using r.m.s. values"
+    removed_topics:
+      - "Derivation of r.m.s. values (only the ratios are expected)"
+    literature_texts: []
+  - id: isc-11-electricity-electronics-ch14
+    number: 14
+    title: "The Transformer"
+    unit: "11. Transformer"
+    topics:
+      - id: isc-11-electricity-electronics-ch14-t01
+        title: "Principle of the single-phase transformer; turns ratio"
+        learning_outcomes:
+          - "Explain transformer action by mutual induction"
+          - "Use Vs/Vp = Ns/Np to solve step-up and step-down problems"
+      - id: isc-11-electricity-electronics-ch14-t02
+        title: "Iron losses: hysteresis and eddy currents"
+        learning_outcomes:
+          - "Explain hysteresis and eddy-current losses and how laminated soft-iron cores reduce them"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-electricity-electronics-ch15
+    number: 15
+    title: "Lighting and Photometry"
+    unit: "12. Lighting"
+    topics:
+      - id: isc-11-electricity-electronics-ch15-t01
+        title: "Common types of lamps"
+        learning_outcomes:
+          - "Compare filament, gas-filled and fluorescent lamps in efficiency and use"
+      - id: isc-11-electricity-electronics-ch15-t02
+        title: "Illumination and photometry: candela, lumen and lux; the lux meter"
+        learning_outcomes:
+          - "Define the candela, lumen and lux"
+          - "Describe how a lux meter is used to check illumination levels in a room"
+      - id: isc-11-electricity-electronics-ch15-t03
+        title: "Gas-filled lamps and fluorescent lamp circuits: preheat, instant-start and rapid-start"
+        learning_outcomes:
+          - "Draw a preheat fluorescent lamp circuit and explain the roles of the starter and choke"
+          - "Distinguish preheat, instant-start and rapid-start circuits"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

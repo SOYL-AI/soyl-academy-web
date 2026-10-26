@@ -1,0 +1,587 @@
+# ICSE Class 10 Mathematics (51) - ICSE 2027 examination.
+# Source: platform/catalog/sources/cisce.md#icse-2027-mathematics (CLASS X section only). Topic wording is our own summary of the official scope.
+subject_id: icse-10-mathematics
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2027-mathematics, icse-2027-regulations, icse-2027-specimen-papers, cisce-circular-specimen-papers-2027]
+exam_notes: >-
+  One paper of 3 hours, 80 marks, plus internal assessment 20 marks (at least two assignments prescribed by the teacher,
+  10 subject teacher + 10 external examiner). Both the 2027 syllabus and the 2027 specimen paper (code 511) state three hours.
+  Logarithmic and trigonometric tables are provided and may be needed; a question may draw on more than one branch.
+  The specimen paper has Section A (40 marks, compulsory; Question 1 is 15 one-mark objective items) and Section B
+  (40 marks, any four of seven questions); all working must be shown. About 50% of marks target higher-order skills
+  (apply, analyse, evaluate, create) per the October 2026 circular.
+  CISCE publishes a topic list in seven sections, not textbook chapters: SOYL groups it into 24 teachable chapters in
+  syllabus order. No unit-wise marks weightage is published for ICSE Mathematics.
+units:
+  - { name: "1. Commercial Mathematics", marks: null }
+  - { name: "2. Algebra", marks: null }
+  - { name: "3. Geometry", marks: null }
+  - { name: "4. Mensuration", marks: null }
+  - { name: "5. Trigonometry", marks: null }
+  - { name: "6. Statistics", marks: null }
+  - { name: "7. Probability", marks: null }
+chapters:
+  - id: icse-10-mathematics-ch01
+    number: 1
+    title: "Goods and Services Tax (GST)"
+    unit: "1. Commercial Mathematics"
+    topics:
+      - id: icse-10-mathematics-ch01-t01
+        title: "GST on goods and services: rates on different items; equal split into CGST and SGST"
+        learning_outcomes:
+          - "Split the GST on an intra-state sale into equal CGST and SGST components"
+          - "Calculate the GST charged on an article at a given rate"
+      - id: icse-10-mathematics-ch01-t02
+        title: "Price paid by the consumer: list price, discount and GST"
+        learning_outcomes:
+          - "Calculate the amount a consumer pays after a discount on the list price and GST on the reduced price"
+      - id: icse-10-mathematics-ch01-t03
+        title: "GST with profit and loss: basic (cost) price, selling price and tax paid by dealers and consumers"
+        learning_outcomes:
+          - "Solve problems combining GST with profit or loss on the basic or cost price"
+          - "Calculate the tax collected at each sale when goods pass from one dealer to another"
+      - id: icse-10-mathematics-ch01-t04
+        title: "Inverse problems: finding the list price, discount or rate of GST"
+        learning_outcomes:
+          - "Find the original price or the GST rate when the final amount paid is given"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-mathematics-ch02
+    number: 2
+    title: "Banking: Recurring Deposit Accounts"
+    unit: "1. Commercial Mathematics"
+    topics:
+      - id: icse-10-mathematics-ch02-t01
+        title: "Recurring deposit accounts: monthly instalment, period and interest I = P x n(n + 1)/(2 x 12) x r/100"
+        learning_outcomes:
+          - "Explain how a recurring deposit account works"
+          - "Calculate the interest earned on a recurring deposit using the formula"
+      - id: icse-10-mathematics-ch02-t02
+        title: "Maturity value MV = P x n + I"
+        learning_outcomes:
+          - "Calculate the maturity value of a recurring deposit"
+      - id: icse-10-mathematics-ch02-t03
+        title: "Inverse problems: finding the instalment, rate of interest or number of months"
+        learning_outcomes:
+          - "Find the monthly instalment, interest rate or time period when the maturity value is given"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-mathematics-ch03
+    number: 3
+    title: "Shares and Dividends"
+    unit: "1. Commercial Mathematics"
+    topics:
+      - id: icse-10-mathematics-ch03-t01
+        title: "Face (nominal) value, market value, premium, discount, dividend and rate of dividend"
+        learning_outcomes:
+          - "Define each term and state whether a share is at par, at a premium or at a discount"
+      - id: icse-10-mathematics-ch03-t02
+        title: "Investment, number of shares and annual income: income = number of shares x rate of dividend x face value"
+        learning_outcomes:
+          - "Calculate the number of shares bought for a given investment and the annual dividend income"
+      - id: icse-10-mathematics-ch03-t03
+        title: "Rate of return = (income / investment) x 100; comparing investments"
+        learning_outcomes:
+          - "Calculate the percentage return on an investment"
+          - "Decide which of two share investments is better by comparing returns"
+      - id: icse-10-mathematics-ch03-t04
+        title: "Selling and reinvesting shares; change in income"
+        learning_outcomes:
+          - "Solve multi-step problems where shares are sold and the proceeds reinvested in another company"
+    removed_topics:
+      - "Brokerage"
+      - "Fractional shares"
+    literature_texts: []
+  - id: icse-10-mathematics-ch04
+    number: 4
+    title: "Linear Inequations"
+    unit: "2. Algebra"
+    topics:
+      - id: icse-10-mathematics-ch04-t01
+        title: "Linear inequations in one variable; replacement set and solution set for N, W, Z and R"
+        learning_outcomes:
+          - "Find the solution set of a linear inequation for a given replacement set"
+      - id: icse-10-mathematics-ch04-t02
+        title: "Solving linear inequations algebraically; rules for multiplying or dividing by a negative number"
+        learning_outcomes:
+          - "Solve linear and combined (double) inequations and write the solution in set-builder or roster form"
+          - "Explain why the inequality sign reverses when multiplying or dividing by a negative number"
+      - id: icse-10-mathematics-ch04-t03
+        title: "Representing solution sets on the number line"
+        learning_outcomes:
+          - "Represent a solution set on the number line using filled and open circles correctly for integers and real numbers"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-mathematics-ch05
+    number: 5
+    title: "Quadratic Equations in One Variable"
+    unit: "2. Algebra"
+    topics:
+      - id: icse-10-mathematics-ch05-t01
+        title: "Quadratic equations in standard form; nature of roots from the discriminant b^2 - 4ac"
+        learning_outcomes:
+          - "Determine whether the roots of a quadratic are real and distinct, real and equal, or not real"
+          - "Find the value of a parameter k for which a quadratic has equal roots"
+      - id: icse-10-mathematics-ch05-t02
+        title: "Solving quadratic equations by factorisation"
+        learning_outcomes:
+          - "Solve a quadratic equation by splitting the middle term"
+      - id: icse-10-mathematics-ch05-t03
+        title: "Solving quadratic equations by the quadratic formula"
+        learning_outcomes:
+          - "Solve a quadratic equation using the formula and give roots correct to a required number of decimal places"
+      - id: icse-10-mathematics-ch05-t04
+        title: "Word problems leading to quadratic equations"
+        learning_outcomes:
+          - "Form and solve quadratic equations for problems on numbers, ages, speed and time, area and work"
+          - "Reject roots that do not fit the context of the problem"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-mathematics-ch06
+    number: 6
+    title: "Ratio and Proportion"
+    unit: "2. Algebra"
+    topics:
+      - id: icse-10-mathematics-ch06-t01
+        title: "Proportion, continued proportion, mean proportional and third and fourth proportionals"
+        learning_outcomes:
+          - "Find the mean proportional, third proportional and fourth proportional of given numbers"
+          - "Prove that given quantities are in continued proportion"
+      - id: icse-10-mathematics-ch06-t02
+        title: "Properties of proportion: invertendo, alternendo, componendo, dividendo and componendo-dividendo"
+        learning_outcomes:
+          - "State and apply each property of proportion"
+          - "Use componendo and dividendo to solve an equation or prove a relation"
+      - id: icse-10-mathematics-ch06-t03
+        title: "Direct applications of proportion"
+        learning_outcomes:
+          - "Solve simple problems using the properties of proportion"
+    removed_topics:
+      - "Applications of proportion beyond direct simple applications"
+    literature_texts: []
+  - id: icse-10-mathematics-ch07
+    number: 7
+    title: "Factorisation of Polynomials: Remainder and Factor Theorems"
+    unit: "2. Algebra"
+    topics:
+      - id: icse-10-mathematics-ch07-t01
+        title: "Remainder theorem"
+        learning_outcomes:
+          - "Find the remainder when a polynomial is divided by a linear expression without long division"
+          - "Find an unknown coefficient when the remainder is given"
+      - id: icse-10-mathematics-ch07-t02
+        title: "Factor theorem"
+        learning_outcomes:
+          - "Test whether a linear expression is a factor of a polynomial"
+          - "Find unknown coefficients when given expressions are factors"
+      - id: icse-10-mathematics-ch07-t03
+        title: "Factorising a cubic polynomial completely after finding one factor"
+        learning_outcomes:
+          - "Find one factor of a cubic by trial and factorise the polynomial completely"
+    removed_topics:
+      - "Polynomials of degree higher than 3"
+    literature_texts: []
+  - id: icse-10-mathematics-ch08
+    number: 8
+    title: "Matrices"
+    unit: "2. Algebra"
+    topics:
+      - id: icse-10-mathematics-ch08-t01
+        title: "Order of a matrix; row, column, square, null (zero) and identity matrices; equality of matrices"
+        learning_outcomes:
+          - "State the order of a matrix and classify it by type"
+          - "Use equality of matrices to find unknown entries"
+      - id: icse-10-mathematics-ch08-t02
+        title: "Compatibility for addition and multiplication"
+        learning_outcomes:
+          - "Decide whether two matrices can be added or multiplied and state the order of the result"
+      - id: icse-10-mathematics-ch08-t03
+        title: "Addition and subtraction of matrices up to order 2 x 2; multiplication by a non-zero rational number"
+        learning_outcomes:
+          - "Add, subtract and scalar-multiply matrices of order up to 2 x 2"
+          - "Solve matrix equations such as 2A + X = B"
+      - id: icse-10-mathematics-ch08-t04
+        title: "Multiplication of a 2 x 2 matrix by a matrix"
+        learning_outcomes:
+          - "Multiply a 2 x 2 matrix by a compatible matrix"
+          - "Show with an example that matrix multiplication is not commutative, and use AI = IA = A"
+    removed_topics:
+      - "Matrices of order larger than 2 x 2 in addition, subtraction and multiplication"
+    literature_texts: []
+  - id: icse-10-mathematics-ch09
+    number: 9
+    title: "Arithmetic Progression"
+    unit: "2. Algebra"
+    topics:
+      - id: icse-10-mathematics-ch09-t01
+        title: "Arithmetic progression: common difference and general (nth) term"
+        learning_outcomes:
+          - "Identify whether a sequence is an AP and find its common difference"
+          - "Find the nth term of an AP and the number of terms in a finite AP"
+      - id: icse-10-mathematics-ch09-t02
+        title: "Sum of the first n terms of an AP"
+        learning_outcomes:
+          - "Calculate the sum of the first n terms using both forms of the sum formula"
+          - "Find n when the sum is given"
+      - id: icse-10-mathematics-ch09-t03
+        title: "Simple applications of AP"
+        learning_outcomes:
+          - "Solve real-life problems such as savings or instalments that increase by a fixed amount"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-mathematics-ch10
+    number: 10
+    title: "Geometric Progression"
+    unit: "2. Algebra"
+    topics:
+      - id: icse-10-mathematics-ch10-t01
+        title: "Geometric progression: common ratio and general (nth) term"
+        learning_outcomes:
+          - "Identify whether a sequence is a GP and find its common ratio"
+          - "Find the nth term of a GP and a missing term"
+      - id: icse-10-mathematics-ch10-t02
+        title: "Sum of the first n terms of a GP"
+        learning_outcomes:
+          - "Calculate the sum of the first n terms of a GP for r > 1 and r < 1"
+      - id: icse-10-mathematics-ch10-t03
+        title: "Simple applications of GP"
+        learning_outcomes:
+          - "Solve problems such as population growth or depreciation that follow a geometric pattern"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-mathematics-ch11
+    number: 11
+    title: "Reflection"
+    unit: "2. Algebra"
+    topics:
+      - id: icse-10-mathematics-ch11-t01
+        title: "Reflection of a point in the x-axis (y = 0) and the y-axis (x = 0)"
+        learning_outcomes:
+          - "Write the image of a point reflected in either axis"
+      - id: icse-10-mathematics-ch11-t02
+        title: "Reflection in the lines x = a and y = a, and in the origin"
+        learning_outcomes:
+          - "Find the image of a point reflected in a line parallel to an axis or in the origin"
+      - id: icse-10-mathematics-ch11-t03
+        title: "Invariant points; combined reflections and plotting images of figures"
+        learning_outcomes:
+          - "Identify invariant points under a given reflection"
+          - "Plot a figure and its images on graph paper and name the resulting figure"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-mathematics-ch12
+    number: 12
+    title: "Section and Mid-Point Formulae"
+    unit: "2. Algebra"
+    topics:
+      - id: icse-10-mathematics-ch12-t01
+        title: "Section formula for internal division"
+        learning_outcomes:
+          - "Find the point dividing a line segment internally in a given ratio"
+          - "Find the ratio in which a point or an axis divides a segment"
+      - id: icse-10-mathematics-ch12-t02
+        title: "Mid-point formula"
+        learning_outcomes:
+          - "Find the mid-point of a segment and an end point when the mid-point is given"
+      - id: icse-10-mathematics-ch12-t03
+        title: "Centroid of a triangle"
+        learning_outcomes:
+          - "Find the coordinates of the centroid from the vertices of a triangle"
+    removed_topics:
+      - "Section formula for external division"
+    literature_texts: []
+  - id: icse-10-mathematics-ch13
+    number: 13
+    title: "Equation of a Straight Line"
+    unit: "2. Algebra"
+    topics:
+      - id: icse-10-mathematics-ch13-t01
+        title: "Slope (gradient) m = tan(theta); slope from two points"
+        learning_outcomes:
+          - "Interpret slope as the tangent of the inclination of a line with the positive x-axis"
+          - "Calculate the slope of the line through two given points"
+      - id: icse-10-mathematics-ch13-t02
+        title: "Slope-intercept form y = mx + c; y-intercept c"
+        learning_outcomes:
+          - "Write the equation of a line from its slope and y-intercept"
+          - "Read off the slope and y-intercept from a given equation"
+      - id: icse-10-mathematics-ch13-t03
+        title: "Point-slope and two-point forms: y - y1 = m(x - x1)"
+        learning_outcomes:
+          - "Find the equation of a line through a point with a given slope or through two given points"
+      - id: icse-10-mathematics-ch13-t04
+        title: "Conditions for parallel and perpendicular lines"
+        learning_outcomes:
+          - "Use m1 = m2 and m1 x m2 = -1 to test lines and to find equations of parallel or perpendicular lines"
+      - id: icse-10-mathematics-ch13-t05
+        title: "Simple applications combining section formula, slope and equation of a line"
+        learning_outcomes:
+          - "Find the equation of a median, altitude or perpendicular bisector of a triangle"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-mathematics-ch14
+    number: 14
+    title: "Similarity"
+    unit: "3. Geometry"
+    topics:
+      - id: icse-10-mathematics-ch14-t01
+        title: "Similarity as a size transformation; comparison with congruency"
+        learning_outcomes:
+          - "Distinguish similar figures from congruent figures using proportionality of sides"
+      - id: icse-10-mathematics-ch14-t02
+        title: "Conditions for similar triangles: SSS, SAS and AA"
+        learning_outcomes:
+          - "Identify which similarity condition applies to a pair of triangles and write the correspondence correctly"
+      - id: icse-10-mathematics-ch14-t03
+        title: "Basic proportionality theorem and its applications"
+        learning_outcomes:
+          - "Apply the basic proportionality theorem to find unknown lengths"
+      - id: icse-10-mathematics-ch14-t04
+        title: "Areas of similar triangles are proportional to the squares of corresponding sides"
+        learning_outcomes:
+          - "Find the ratio of areas of similar triangles from the ratio of corresponding sides and vice versa"
+      - id: icse-10-mathematics-ch14-t05
+        title: "Applications to maps and models"
+        learning_outcomes:
+          - "Use a scale factor to convert lengths, areas and volumes between a map or model and the real object"
+    removed_topics:
+      - "Proofs of the similarity conditions (simple applications only)"
+    literature_texts: []
+  - id: icse-10-mathematics-ch15
+    number: 15
+    title: "Loci"
+    unit: "3. Geometry"
+    topics:
+      - id: icse-10-mathematics-ch15-t01
+        title: "Meaning of locus; locus of points at a fixed distance from a fixed point"
+        learning_outcomes:
+          - "Describe a locus in words and construct it"
+      - id: icse-10-mathematics-ch15-t02
+        title: "Locus of points equidistant from two given points (perpendicular bisector)"
+        learning_outcomes:
+          - "Construct the perpendicular bisector as a locus and use it to locate points"
+      - id: icse-10-mathematics-ch15-t03
+        title: "Locus of points equidistant from two intersecting lines (angle bisector)"
+        learning_outcomes:
+          - "Construct angle bisectors as loci"
+      - id: icse-10-mathematics-ch15-t04
+        title: "Constructions combining loci"
+        learning_outcomes:
+          - "Locate a point satisfying two locus conditions by construction and measure the required distance"
+    removed_topics:
+      - "Proofs of the locus theorems"
+    literature_texts: []
+  - id: icse-10-mathematics-ch16
+    number: 16
+    title: "Circles: Angle and Cyclic Properties"
+    unit: "3. Geometry"
+    topics:
+      - id: icse-10-mathematics-ch16-t01
+        title: "Angle at the centre is double the angle at the circumference"
+        learning_outcomes:
+          - "Prove the theorem and use it to find unknown angles"
+      - id: icse-10-mathematics-ch16-t02
+        title: "Angles in the same segment are equal; angle in a semicircle is a right angle"
+        learning_outcomes:
+          - "Apply the angle in the same segment and angle in a semicircle properties to find angles"
+          - "Prove that the angle in a semicircle is a right angle"
+      - id: icse-10-mathematics-ch16-t03
+        title: "Cyclic quadrilaterals: opposite angles supplementary; exterior angle equals interior opposite angle"
+        learning_outcomes:
+          - "Prove that opposite angles of a cyclic quadrilateral are supplementary"
+          - "Use cyclic quadrilateral properties to calculate angles and to prove that given points are concyclic"
+    removed_topics:
+      - "Proof that angles in the same segment are equal"
+      - "Proof of the exterior angle property of a cyclic quadrilateral"
+    literature_texts: []
+  - id: icse-10-mathematics-ch17
+    number: 17
+    title: "Circles: Tangents, Secants and Intersecting Chords"
+    unit: "3. Geometry"
+    topics:
+      - id: icse-10-mathematics-ch17-t01
+        title: "Tangent is perpendicular to the radius at the point of contact"
+        learning_outcomes:
+          - "Prove the theorem and use it to calculate lengths with Pythagoras' theorem"
+      - id: icse-10-mathematics-ch17-t02
+        title: "Tangents from an external point are equal; touching circles and the line of centres"
+        learning_outcomes:
+          - "Prove that two tangents from an external point are equal"
+          - "Find distances between centres of circles that touch internally or externally"
+      - id: icse-10-mathematics-ch17-t03
+        title: "Intersecting chords (internally and externally): product of segments"
+        learning_outcomes:
+          - "Prove and apply the intersecting chords theorem"
+      - id: icse-10-mathematics-ch17-t04
+        title: "Chord and tangent meeting externally: product of segments equals square of tangent"
+        learning_outcomes:
+          - "Prove and apply the tangent-secant theorem to find unknown lengths"
+      - id: icse-10-mathematics-ch17-t05
+        title: "Alternate segment theorem"
+        learning_outcomes:
+          - "Prove the alternate segment theorem and use it to find angles"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-mathematics-ch18
+    number: 18
+    title: "Constructions: Tangents and Circles"
+    unit: "3. Geometry"
+    topics:
+      - id: icse-10-mathematics-ch18-t01
+        title: "Constructing tangents to a circle from an external point"
+        learning_outcomes:
+          - "Construct a pair of tangents from an external point and measure their lengths"
+      - id: icse-10-mathematics-ch18-t02
+        title: "Circumscribing and inscribing a circle on a triangle"
+        learning_outcomes:
+          - "Construct the circumcircle and incircle of a given triangle and measure the radius"
+      - id: icse-10-mathematics-ch18-t03
+        title: "Circumscribing and inscribing a circle on a regular hexagon"
+        learning_outcomes:
+          - "Construct a regular hexagon and draw its circumcircle and incircle"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-mathematics-ch19
+    number: 19
+    title: "Mensuration: Cylinder, Cone and Sphere"
+    unit: "4. Mensuration"
+    topics:
+      - id: icse-10-mathematics-ch19-t01
+        title: "Right circular cylinder: curved and total surface area, volume; hollow cylinders"
+        learning_outcomes:
+          - "Calculate the surface areas and volume of solid and hollow cylinders"
+      - id: icse-10-mathematics-ch19-t02
+        title: "Right circular cone: slant height, curved and total surface area, volume"
+        learning_outcomes:
+          - "Calculate the slant height, surface areas and volume of a cone"
+      - id: icse-10-mathematics-ch19-t03
+        title: "Sphere and hemisphere: surface area and volume; spherical shells"
+        learning_outcomes:
+          - "Calculate the surface area and volume of spheres, hemispheres and spherical shells"
+      - id: icse-10-mathematics-ch19-t04
+        title: "Cost problems; inner and outer volume"
+        learning_outcomes:
+          - "Calculate the cost of painting, polishing or filling a solid from its area or volume"
+      - id: icse-10-mathematics-ch19-t05
+        title: "Melting and recasting: conversion of one solid into another"
+        learning_outcomes:
+          - "Find the number or dimensions of new solids formed by melting and recasting, using equality of volume"
+      - id: icse-10-mathematics-ch19-t06
+        title: "Combinations of solids"
+        learning_outcomes:
+          - "Find the surface area and volume of a solid made of a cylinder, cone and hemisphere joined together"
+    removed_topics:
+      - "Frustum of a cone"
+    literature_texts: []
+  - id: icse-10-mathematics-ch20
+    number: 20
+    title: "Trigonometric Identities"
+    unit: "5. Trigonometry"
+    topics:
+      - id: icse-10-mathematics-ch20-t01
+        title: "The identities sin^2 A + cos^2 A = 1, 1 + tan^2 A = sec^2 A and 1 + cot^2 A = cosec^2 A for 0 <= A <= 90 degrees"
+        learning_outcomes:
+          - "Derive the three identities from a right-angled triangle"
+          - "Use an identity to find the other ratios when one is given"
+      - id: icse-10-mathematics-ch20-t02
+        title: "Proving trigonometric identities"
+        learning_outcomes:
+          - "Prove identities by simplifying one side using fundamental identities and algebraic manipulation"
+      - id: icse-10-mathematics-ch20-t03
+        title: "Solving and simplifying algebraic trigonometric expressions using the identities"
+        learning_outcomes:
+          - "Simplify algebraic expressions in sin A, cos A and tan A using the identities"
+          - "Evaluate a trigonometric expression when one ratio of the angle is given"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-mathematics-ch21
+    number: 21
+    title: "Heights and Distances"
+    unit: "5. Trigonometry"
+    topics:
+      - id: icse-10-mathematics-ch21-t01
+        title: "Angles of elevation and depression; using trigonometric tables"
+        learning_outcomes:
+          - "Draw a labelled diagram for a heights and distances problem and identify angles of elevation and depression"
+          - "Read sine, cosine and tangent values from trigonometric tables"
+      - id: icse-10-mathematics-ch21-t02
+        title: "Problems with one right-angled triangle"
+        learning_outcomes:
+          - "Find the height of a tower or the distance to an object using one angle of elevation or depression"
+      - id: icse-10-mathematics-ch21-t03
+        title: "Problems with two right-angled triangles"
+        learning_outcomes:
+          - "Solve two-dimensional problems involving two angles of elevation or depression"
+    removed_topics:
+      - "Problems involving more than two right-angled triangles"
+      - "Three-dimensional problems"
+    literature_texts: []
+  - id: icse-10-mathematics-ch22
+    number: 22
+    title: "Measures of Central Tendency"
+    unit: "6. Statistics"
+    topics:
+      - id: icse-10-mathematics-ch22-t01
+        title: "Mean, median and mode of raw and arrayed (ungrouped) data"
+        learning_outcomes:
+          - "Calculate the mean, median and mode of raw data and of a frequency distribution of single values"
+      - id: icse-10-mathematics-ch22-t02
+        title: "Mean of grouped data: direct method"
+        learning_outcomes:
+          - "Calculate the mean of continuous and discontinuous grouped data using class marks"
+      - id: icse-10-mathematics-ch22-t03
+        title: "Mean of grouped data: short-cut (assumed mean) and step-deviation methods"
+        learning_outcomes:
+          - "Calculate the mean of grouped data by the short-cut and step-deviation methods"
+          - "Find a missing frequency when the mean is given"
+      - id: icse-10-mathematics-ch22-t04
+        title: "Median class and modal class of grouped data"
+        learning_outcomes:
+          - "Identify the median class and the modal class of a grouped frequency distribution"
+    removed_topics:
+      - "Calculating the median or mode of grouped data by formula (only the median class and modal class are identified)"
+    literature_texts: []
+  - id: icse-10-mathematics-ch23
+    number: 23
+    title: "Graphical Representation: Histograms and Ogives"
+    unit: "6. Statistics"
+    topics:
+      - id: icse-10-mathematics-ch23-t01
+        title: "Drawing a histogram and estimating the mode from it"
+        learning_outcomes:
+          - "Draw a histogram for a grouped frequency distribution and estimate the mode graphically"
+      - id: icse-10-mathematics-ch23-t02
+        title: "Cumulative frequency and the less-than ogive"
+        learning_outcomes:
+          - "Construct a cumulative frequency table and draw a less-than ogive"
+      - id: icse-10-mathematics-ch23-t03
+        title: "Median, quartiles and inter-quartile range from the ogive"
+        learning_outcomes:
+          - "Estimate the median, lower quartile and upper quartile from an ogive"
+          - "Calculate the inter-quartile range and read other values such as the number of observations above a mark"
+    removed_topics:
+      - "More-than ogive (only less-than ogive)"
+    literature_texts: []
+  - id: icse-10-mathematics-ch24
+    number: 24
+    title: "Probability"
+    unit: "7. Probability"
+    topics:
+      - id: icse-10-mathematics-ch24-t01
+        title: "Random experiments, outcomes, sample space and events"
+        learning_outcomes:
+          - "List the sample space for experiments such as tossing coins, throwing a die and drawing a card"
+      - id: icse-10-mathematics-ch24-t02
+        title: "Classical definition of probability; impossible and sure events; complementary events"
+        learning_outcomes:
+          - "Calculate the probability of an event as favourable outcomes over total outcomes"
+          - "Use P(E) + P(not E) = 1"
+      - id: icse-10-mathematics-ch24-t03
+        title: "Simple problems on single events: coins, dice, playing cards and drawing balls"
+        learning_outcomes:
+          - "Solve probability problems on single events from coins, dice, a pack of 52 cards and bags of coloured balls"
+    removed_topics:
+      - "Compound events and probability of combined events"
+    literature_texts: []
+removed_topics: []

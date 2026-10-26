@@ -1,0 +1,513 @@
+# ICSE Class 9 Mathematics (51) - year one of the ICSE 2028 course.
+# Source: platform/catalog/sources/cisce.md#icse-2028-mathematics (CLASS IX section only). Topic wording is our own summary of the official scope.
+subject_id: icse-9-mathematics
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2028-mathematics, icse-2028-regulations]
+exam_notes: >-
+  There is no board examination in Class IX: the Class IX final examination is conducted internally by the school on the
+  Class IX portion (ICSE 2028 Regulations), and promotion to Class X depends on cumulative achievement through the year.
+  The syllabus prescribes one paper of 3 hours, 80 marks, plus internal assessment 20 marks (at least two assignments
+  prescribed by the teacher, such as a survey shown graphically, a canteen or loan study, or estimating the area of a
+  circle on graph paper; 10 subject teacher + 10 external examiner); school examinations usually follow this pattern.
+  Logarithmic and trigonometric tables may be needed, and a question may draw on more than one branch.
+  Proofs of the listed theorems are taught unless the syllabus says "without proof" (those are listed under removed_topics).
+  No Class IX specimen paper was released for Mathematics.
+  CISCE publishes a topic list in eight sections, not textbook chapters: SOYL groups it into 21 teachable chapters in
+  syllabus order. No unit-wise marks weightage is published for ICSE Mathematics.
+units:
+  - { name: "1. Pure Arithmetic", marks: null }
+  - { name: "2. Commercial Mathematics", marks: null }
+  - { name: "3. Algebra", marks: null }
+  - { name: "4. Geometry", marks: null }
+  - { name: "5. Statistics", marks: null }
+  - { name: "6. Mensuration", marks: null }
+  - { name: "7. Trigonometry", marks: null }
+  - { name: "8. Coordinate Geometry", marks: null }
+chapters:
+  - id: icse-9-mathematics-ch01
+    number: 1
+    title: "Rational and Irrational Numbers"
+    unit: "1. Pure Arithmetic"
+    topics:
+      - id: icse-9-mathematics-ch01-t01
+        title: "Rational and irrational numbers as real numbers; their place in the number system"
+        learning_outcomes:
+          - "Classify given numbers as natural, whole, integer, rational or irrational"
+          - "Identify rational numbers from terminating or recurring decimal expansions"
+      - id: icse-9-mathematics-ch01-t02
+        title: "Proofs of irrationality of sqrt(2), sqrt(3) and sqrt(5)"
+        learning_outcomes:
+          - "Prove by contradiction that sqrt(2), sqrt(3) and sqrt(5) are irrational"
+      - id: icse-9-mathematics-ch01-t03
+        title: "Representing rational and irrational numbers on the number line"
+        learning_outcomes:
+          - "Locate a given rational number and numbers such as sqrt(2) and sqrt(5) on the number line by construction"
+      - id: icse-9-mathematics-ch01-t04
+        title: "Surds: meaning, order and simplification"
+        learning_outcomes:
+          - "Simplify sums, differences and products of surds"
+      - id: icse-9-mathematics-ch01-t05
+        title: "Rationalising the denominator of an expression"
+        learning_outcomes:
+          - "Find the rationalising factor of a binomial surd"
+          - "Simplify expressions such as 1/(a + b sqrt(c)) by rationalising the denominator"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-mathematics-ch02
+    number: 2
+    title: "Compound Interest"
+    unit: "2. Commercial Mathematics"
+    topics:
+      - id: icse-9-mathematics-ch02-t01
+        title: "Compound interest as repeated simple interest on a growing principal for 2 or 3 years"
+        learning_outcomes:
+          - "Calculate the amount and compound interest year by year without using the formula"
+      - id: icse-9-mathematics-ch02-t02
+        title: "Formula A = P(1 + r/100)^n and CI = A - P; interest compounded half-yearly"
+        learning_outcomes:
+          - "Calculate amount and compound interest using the formula, including half-yearly compounding"
+      - id: icse-9-mathematics-ch02-t03
+        title: "Finding the principal, rate or time given the other quantities"
+        learning_outcomes:
+          - "Find P, r or n from given values of A, CI and the other quantities"
+      - id: icse-9-mathematics-ch02-t04
+        title: "Difference between compound interest and simple interest"
+        learning_outcomes:
+          - "Solve problems based on the difference between CI and SI for the same principal, rate and time"
+      - id: icse-9-mathematics-ch02-t05
+        title: "Rate of growth and depreciation"
+        learning_outcomes:
+          - "Apply the compound interest formula to population growth and depreciation of the value of a machine"
+    removed_topics:
+      - "Repaying a loan in equal instalments given the rate of interest and instalment amount"
+    literature_texts: []
+  - id: icse-9-mathematics-ch03
+    number: 3
+    title: "Expansions"
+    unit: "3. Algebra"
+    topics:
+      - id: icse-9-mathematics-ch03-t01
+        title: "Recall of identities: (a + b)^2, (a - b)^2 and (x + a)(x + b)"
+        learning_outcomes:
+          - "Expand squares of binomials and products of the form (x + a)(x + b)"
+      - id: icse-9-mathematics-ch03-t02
+        title: "Expansion of (a + b + c)^2 and its variants with signs"
+        learning_outcomes:
+          - "Expand (a + b + c)^2 and use it to find a^2 + b^2 + c^2 from a + b + c and ab + bc + ca"
+      - id: icse-9-mathematics-ch03-t03
+        title: "Expansion of (a + b)^3 and (a - b)^3"
+        learning_outcomes:
+          - "Expand cubes of binomials"
+          - "Use the identities to find a^3 + 1/a^3 given a + 1/a"
+      - id: icse-9-mathematics-ch03-t04
+        title: "Using identities to evaluate numerical expressions and special products"
+        learning_outcomes:
+          - "Evaluate expressions such as 103^2 or 98^3 using suitable identities"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-mathematics-ch04
+    number: 4
+    title: "Factorisation"
+    unit: "3. Algebra"
+    topics:
+      - id: icse-9-mathematics-ch04-t01
+        title: "Factorising by taking out common factors and by grouping"
+        learning_outcomes:
+          - "Factorise expressions by taking out common factors and by grouping terms"
+      - id: icse-9-mathematics-ch04-t02
+        title: "Difference of two squares a^2 - b^2"
+        learning_outcomes:
+          - "Factorise expressions of the form a^2 - b^2, including after rearranging terms"
+      - id: icse-9-mathematics-ch04-t03
+        title: "Sum and difference of two cubes a^3 + b^3 and a^3 - b^3"
+        learning_outcomes:
+          - "Factorise sums and differences of cubes"
+      - id: icse-9-mathematics-ch04-t04
+        title: "Quadratic trinomials ax^2 + bx + c by splitting the middle term"
+        learning_outcomes:
+          - "Factorise quadratic trinomials by splitting the middle term"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-mathematics-ch05
+    number: 5
+    title: "Simultaneous Linear Equations"
+    unit: "3. Algebra"
+    topics:
+      - id: icse-9-mathematics-ch05-t01
+        title: "Linear equations in two variables with numerical coefficients; solving by elimination"
+        learning_outcomes:
+          - "Solve a pair of linear equations by the elimination method"
+      - id: icse-9-mathematics-ch05-t02
+        title: "Solving by substitution"
+        learning_outcomes:
+          - "Solve a pair of linear equations by the substitution method"
+      - id: icse-9-mathematics-ch05-t03
+        title: "Solving by cross-multiplication"
+        learning_outcomes:
+          - "Solve a pair of linear equations by cross-multiplication"
+      - id: icse-9-mathematics-ch05-t04
+        title: "Framing equations to solve word problems"
+        learning_outcomes:
+          - "Frame and solve simultaneous equations for problems on numbers, ages, fractions and money"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-mathematics-ch06
+    number: 6
+    title: "Indices (Exponents)"
+    unit: "3. Algebra"
+    topics:
+      - id: icse-9-mathematics-ch06-t01
+        title: "Laws of exponents: a^m x a^n = a^(m+n), a^m / a^n = a^(m-n), (a^m)^n = a^(mn)"
+        learning_outcomes:
+          - "Apply the laws of exponents to simplify expressions"
+      - id: icse-9-mathematics-ch06-t02
+        title: "Zero, negative and fractional indices"
+        learning_outcomes:
+          - "Evaluate expressions with zero, negative and fractional indices"
+      - id: icse-9-mathematics-ch06-t03
+        title: "Simplification and simple exponential equations"
+        learning_outcomes:
+          - "Simplify expressions with several exponents"
+          - "Solve equations such as 2^(x + 1) = 32 by equating powers"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-mathematics-ch07
+    number: 7
+    title: "Logarithms"
+    unit: "3. Algebra"
+    topics:
+      - id: icse-9-mathematics-ch07-t01
+        title: "Logarithmic and exponential forms and converting between them"
+        learning_outcomes:
+          - "Convert a statement from exponential form to logarithmic form and back"
+          - "Evaluate simple logarithms such as log of 8 to base 2"
+      - id: icse-9-mathematics-ch07-t02
+        title: "Laws of logarithms: product, quotient and power laws"
+        learning_outcomes:
+          - "State and apply the product, quotient and power laws of logarithms"
+      - id: icse-9-mathematics-ch07-t03
+        title: "Expanding and simplifying expressions using the laws"
+        learning_outcomes:
+          - "Expand an expression such as log(a^4 b^2 / c^3) as a combination of log a, log b and log c"
+          - "Simplify a combination of logarithms into a single logarithm"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-mathematics-ch08
+    number: 8
+    title: "Triangles: Congruency and Inequalities"
+    unit: "4. Geometry"
+    topics:
+      - id: icse-9-mathematics-ch08-t01
+        title: "Congruency of triangles: SSS, SAS, AAS and RHS"
+        learning_outcomes:
+          - "Identify the congruence condition that applies to a given pair of triangles"
+          - "Use congruent triangles to prove that corresponding sides or angles are equal"
+      - id: icse-9-mathematics-ch08-t02
+        title: "Angles opposite equal sides are equal, and the converse"
+        learning_outcomes:
+          - "Find unknown angles in isosceles triangles"
+      - id: icse-9-mathematics-ch08-t03
+        title: "Greater side opposite greater angle and its converse; sum of two sides greater than the third"
+        learning_outcomes:
+          - "Order the sides of a triangle from its angles, and its angles from its sides"
+          - "Decide whether three given lengths can form a triangle"
+      - id: icse-9-mathematics-ch08-t04
+        title: "The perpendicular is the shortest line from a point to a line"
+        learning_outcomes:
+          - "Apply the shortest-distance property in simple problems"
+    removed_topics:
+      - "Proofs of the triangle inequality results (problems only)"
+    literature_texts: []
+  - id: icse-9-mathematics-ch09
+    number: 9
+    title: "Mid-Point and Intercept Theorems"
+    unit: "4. Geometry"
+    topics:
+      - id: icse-9-mathematics-ch09-t01
+        title: "Mid-point theorem: proof and applications"
+        learning_outcomes:
+          - "Prove the mid-point theorem"
+          - "Use it to find lengths and show lines are parallel"
+      - id: icse-9-mathematics-ch09-t02
+        title: "Converse of the mid-point theorem: proof and applications"
+        learning_outcomes:
+          - "Prove the converse of the mid-point theorem and apply it"
+      - id: icse-9-mathematics-ch09-t03
+        title: "Equal intercept theorem: proof and simple applications"
+        learning_outcomes:
+          - "Prove that parallel lines making equal intercepts on one transversal make equal intercepts on any other"
+          - "Apply the theorem to divide a line segment into equal parts"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-mathematics-ch10
+    number: 10
+    title: "Pythagoras Theorem"
+    unit: "4. Geometry"
+    topics:
+      - id: icse-9-mathematics-ch10-t01
+        title: "Area-based proof of Pythagoras theorem"
+        learning_outcomes:
+          - "Prove Pythagoras theorem using areas"
+      - id: icse-9-mathematics-ch10-t02
+        title: "Converse of Pythagoras theorem"
+        learning_outcomes:
+          - "Test whether a triangle with given sides is right-angled"
+      - id: icse-9-mathematics-ch10-t03
+        title: "Simple applications of Pythagoras theorem"
+        learning_outcomes:
+          - "Solve problems on ladders, diagonals and heights using Pythagoras theorem"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-mathematics-ch11
+    number: 11
+    title: "Rectilinear Figures: Parallelograms"
+    unit: "4. Geometry"
+    topics:
+      - id: icse-9-mathematics-ch11-t01
+        title: "Opposite sides and opposite angles of a parallelogram; one pair of opposite sides equal and parallel"
+        learning_outcomes:
+          - "Prove that the opposite angles of a parallelogram are equal"
+          - "Use the side and angle properties to find unknown sides and angles"
+      - id: icse-9-mathematics-ch11-t02
+        title: "Diagonals of a parallelogram bisect each other and bisect the parallelogram"
+        learning_outcomes:
+          - "Prove that the diagonals of a parallelogram bisect each other"
+      - id: icse-9-mathematics-ch11-t03
+        title: "Rhombus, rectangle and square as special parallelograms: properties of their diagonals"
+        learning_outcomes:
+          - "Prove that the diagonals of a rhombus meet at right angles"
+          - "Use diagonal properties of rectangles and squares in problems"
+    removed_topics:
+      - "Proof that both pairs of opposite sides of a parallelogram are equal"
+      - "Proof that a quadrilateral with one pair of opposite sides equal and parallel is a parallelogram"
+    literature_texts: []
+  - id: icse-9-mathematics-ch12
+    number: 12
+    title: "Construction of Polygons"
+    unit: "4. Geometry"
+    topics:
+      - id: icse-9-mathematics-ch12-t01
+        title: "Constructing quadrilaterals from given sides, angles and diagonals with ruler and compasses"
+        learning_outcomes:
+          - "Construct a quadrilateral from sufficient given measurements and write the steps"
+      - id: icse-9-mathematics-ch12-t02
+        title: "Constructing parallelograms, rectangles, squares and rhombuses"
+        learning_outcomes:
+          - "Construct a parallelogram or rhombus using its properties"
+      - id: icse-9-mathematics-ch12-t03
+        title: "Constructing a regular hexagon"
+        learning_outcomes:
+          - "Construct a regular hexagon of a given side using ruler and compasses only"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-mathematics-ch13
+    number: 13
+    title: "Area Theorems"
+    unit: "4. Geometry"
+    topics:
+      - id: icse-9-mathematics-ch13-t01
+        title: "Parallelograms on the same base and between the same parallels are equal in area"
+        learning_outcomes:
+          - "Prove the theorem and use it to compare areas"
+      - id: icse-9-mathematics-ch13-t02
+        title: "A triangle is half of a parallelogram on the same base and between the same parallels"
+        learning_outcomes:
+          - "Prove the theorem and use it to find areas of triangles"
+      - id: icse-9-mathematics-ch13-t03
+        title: "Triangles on the same base and between the same parallels; triangles of equal area on the same base have equal altitudes"
+        learning_outcomes:
+          - "Use equal-area results to prove that two given triangles have equal areas"
+          - "Prove that triangles with equal areas on the same base have equal corresponding altitudes"
+    removed_topics:
+      - "Proof that triangles on the same base and between the same parallels are equal in area"
+    literature_texts: []
+  - id: icse-9-mathematics-ch14
+    number: 14
+    title: "Circle: Chord and Arc Properties"
+    unit: "4. Geometry"
+    topics:
+      - id: icse-9-mathematics-ch14-t01
+        title: "The line from the centre bisecting a chord is perpendicular to it; the perpendicular from the centre bisects the chord"
+        learning_outcomes:
+          - "Prove that the line joining the centre to the mid-point of a chord is perpendicular to it"
+          - "Find the length of a chord or its distance from the centre using Pythagoras theorem"
+      - id: icse-9-mathematics-ch14-t02
+        title: "Equal chords are equidistant from the centre, and the converse"
+        learning_outcomes:
+          - "Prove that equal chords are equidistant from the centre and apply the converse"
+      - id: icse-9-mathematics-ch14-t03
+        title: "One and only one circle passes through three non-collinear points"
+        learning_outcomes:
+          - "Construct the circle through three given non-collinear points and justify the construction"
+      - id: icse-9-mathematics-ch14-t04
+        title: "Arcs subtending equal angles at the centre are equal; equal chords cut off equal arcs; converses"
+        learning_outcomes:
+          - "Prove that arcs subtending equal angles at the centre are equal, and its converse"
+          - "Apply the relation between equal chords and equal arcs in problems"
+    removed_topics:
+      - "Proof that the perpendicular from the centre to a chord bisects it"
+      - "Proof that chords equidistant from the centre are equal"
+      - "Proof that equal chords cut off equal arcs and its converse"
+    literature_texts: []
+  - id: icse-9-mathematics-ch15
+    number: 15
+    title: "Statistics"
+    unit: "5. Statistics"
+    topics:
+      - id: icse-9-mathematics-ch15-t01
+        title: "Collection of data; raw, arrayed and grouped data; discrete and continuous variables"
+        learning_outcomes:
+          - "Distinguish raw, arrayed and grouped data"
+          - "Classify given variables as discrete or continuous"
+      - id: icse-9-mathematics-ch15-t02
+        title: "Tabulating raw data with tally marks; frequency tables"
+        learning_outcomes:
+          - "Prepare a frequency table from raw data using tally marks"
+      - id: icse-9-mathematics-ch15-t03
+        title: "Grouped frequency distributions: class intervals, limits, boundaries, class size; converting discontinuous intervals to continuous"
+        learning_outcomes:
+          - "Find class limits, class boundaries, class size and class mark"
+          - "Convert an inclusive (discontinuous) distribution into an exclusive (continuous) one"
+      - id: icse-9-mathematics-ch15-t04
+        title: "Mean and median of ungrouped data"
+        learning_outcomes:
+          - "Calculate the mean and median of ungrouped data"
+          - "Find a missing value given the mean"
+      - id: icse-9-mathematics-ch15-t05
+        title: "Graphical representation of data; drawing a frequency polygon"
+        learning_outcomes:
+          - "Draw a frequency polygon for a grouped frequency distribution"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-mathematics-ch16
+    number: 16
+    title: "Area and Perimeter of Plane Figures"
+    unit: "6. Mensuration"
+    topics:
+      - id: icse-9-mathematics-ch16-t01
+        title: "Area and perimeter of triangles, including Heron's formula"
+        learning_outcomes:
+          - "Calculate the area of a triangle using Heron's formula"
+          - "Find the area and perimeter of right-angled, isosceles and equilateral triangles"
+      - id: icse-9-mathematics-ch16-t02
+        title: "Area and perimeter of quadrilaterals: rectangle, square, parallelogram, rhombus, trapezium and general quadrilateral"
+        learning_outcomes:
+          - "Calculate the area of any quadrilateral by splitting it into triangles"
+          - "Apply the formulae for the area of a trapezium and a rhombus"
+      - id: icse-9-mathematics-ch16-t03
+        title: "Circumference and area of a circle; inner and outer areas such as rings and paths"
+        learning_outcomes:
+          - "Calculate the circumference and area of a circle"
+          - "Find the area of a circular ring or path"
+      - id: icse-9-mathematics-ch16-t04
+        title: "Quarter circles and semicircles in composite figures"
+        learning_outcomes:
+          - "Find the area and perimeter of figures made of rectangles, semicircles and quarter circles"
+    removed_topics:
+      - "Areas of sectors other than quarter circles and semicircles"
+    literature_texts: []
+  - id: icse-9-mathematics-ch17
+    number: 17
+    title: "Surface Area and Volume of Cube and Cuboid"
+    unit: "6. Mensuration"
+    topics:
+      - id: icse-9-mathematics-ch17-t01
+        title: "Total and lateral surface area and volume of a cube and a cuboid"
+        learning_outcomes:
+          - "Calculate the surface area and volume of cubes and cuboids"
+      - id: icse-9-mathematics-ch17-t02
+        title: "Volume as area of cross-section x height"
+        learning_outcomes:
+          - "Use area of cross-section x length to find the volume of a prism-shaped solid"
+      - id: icse-9-mathematics-ch17-t03
+        title: "Open and closed boxes; different internal and external dimensions"
+        learning_outcomes:
+          - "Find the volume of material in a box with given internal and external dimensions"
+          - "Find the area of sheet needed for an open box"
+      - id: icse-9-mathematics-ch17-t04
+        title: "Problems on cost of painting, tiling and filling"
+        learning_outcomes:
+          - "Calculate costs from surface areas or volumes at a given rate"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-mathematics-ch18
+    number: 18
+    title: "Trigonometric Ratios"
+    unit: "7. Trigonometry"
+    topics:
+      - id: icse-9-mathematics-ch18-t01
+        title: "Sine, cosine and tangent of an acute angle and their reciprocals"
+        learning_outcomes:
+          - "Write the six trigonometric ratios of an angle in a right-angled triangle"
+      - id: icse-9-mathematics-ch18-t02
+        title: "Finding all ratios given one ratio"
+        learning_outcomes:
+          - "Find the remaining trigonometric ratios when one ratio is given, using Pythagoras theorem"
+      - id: icse-9-mathematics-ch18-t03
+        title: "Simple 2-D problems involving one right-angled triangle"
+        learning_outcomes:
+          - "Find an unknown side or angle of a right-angled triangle using trigonometric ratios"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-mathematics-ch19
+    number: 19
+    title: "Standard Angles and Complementary Angles"
+    unit: "7. Trigonometry"
+    topics:
+      - id: icse-9-mathematics-ch19-t01
+        title: "Trigonometric ratios of 0, 30, 45, 60 and 90 degrees"
+        learning_outcomes:
+          - "Recall the ratios of standard angles and derive those of 30, 45 and 60 degrees geometrically"
+          - "Evaluate expressions involving ratios of standard angles"
+      - id: icse-9-mathematics-ch19-t02
+        title: "Solving simple equations using standard-angle values"
+        learning_outcomes:
+          - "Find an acute angle from a given ratio value such as 2 sin x = 1"
+      - id: icse-9-mathematics-ch19-t03
+        title: "Ratios of complementary angles: sin A = cos(90 - A) and similar relations"
+        learning_outcomes:
+          - "Use complementary-angle relations to evaluate expressions without tables"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-mathematics-ch20
+    number: 20
+    title: "Coordinate Geometry: Graphical Solution of Linear Equations"
+    unit: "8. Coordinate Geometry"
+    topics:
+      - id: icse-9-mathematics-ch20-t01
+        title: "Dependent and independent variables; ordered pairs"
+        learning_outcomes:
+          - "Identify the dependent and independent variable in a relation"
+      - id: icse-9-mathematics-ch20-t02
+        title: "Cartesian system: axes, quadrants and plotting points"
+        learning_outcomes:
+          - "Plot points with given coordinates and state the quadrant of each"
+      - id: icse-9-mathematics-ch20-t03
+        title: "Drawing the graph of a linear equation in two variables"
+        learning_outcomes:
+          - "Draw the straight-line graph of a linear equation from a table of values"
+      - id: icse-9-mathematics-ch20-t04
+        title: "Solving simultaneous linear equations graphically"
+        learning_outcomes:
+          - "Solve a pair of linear equations by reading the point of intersection of their graphs"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-mathematics-ch21
+    number: 21
+    title: "Distance Formula"
+    unit: "8. Coordinate Geometry"
+    topics:
+      - id: icse-9-mathematics-ch21-t01
+        title: "Distance between two points; distance of a point from the origin"
+        learning_outcomes:
+          - "Derive the distance formula using Pythagoras theorem"
+          - "Calculate the distance between two given points"
+      - id: icse-9-mathematics-ch21-t02
+        title: "Applications: finding an unknown coordinate; showing points are collinear or form a given type of triangle or quadrilateral"
+        learning_outcomes:
+          - "Find an unknown coordinate given the distance between two points"
+          - "Use the distance formula to show that given points form an isosceles, right-angled or equilateral triangle"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

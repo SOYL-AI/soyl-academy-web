@@ -1,0 +1,184 @@
+# ISC Class 12 Robotics (884), Paper I Theory - ISC 2027 examination (Class XII portion only).
+# Source: platform/catalog/sources/cisce.md#isc-2027-robotics. Topic wording is our own summary of the official scope.
+subject_id: isc-12-robotics
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-robotics, isc-2027-regulations, isc-2027-specimen-papers, cisce-circular-specimen-papers-2027]
+exam_notes: >-
+  Paper I Theory: 3 hours, 70 marks; key Class XI concepts are a prerequisite. Paper II Practical: 30 marks - a
+  3-hour practical examination (15) in which the candidate attempts one of three problem statements, spending
+  90 minutes on an algorithm or flowchart, circuit or block diagram and handwritten program and 90 minutes building,
+  coding and executing it on the computer and hardware for the Visiting Examiner, plus the Practical File (15:
+  internal evaluation 10, Visiting Examiner 5). About 25 assignments are done during the year (15 programming, 10
+  hands-on case studies), for example building a simple robot from basic materials and sensors, simulating a robot in
+  ROS and Gazebo, designing an agricultural robot, planning Industry 4.0 automation, proposing a space mission, and
+  maze-navigation or obstacle-avoidance challenges. SOYL covers Paper I only. Robotics may not be combined with
+  Artificial Intelligence (ISC regulations).
+  The ISC 2027 specimen paper (3 hours plus 15 minutes reading time) has 12 compulsory questions in three sections:
+  A - fourteen 1-mark subparts including MCQs (14), B - seven 4-mark short-answer questions (28), C - four 7-mark
+  long-answer questions (28), with internal choice in three questions of B and two of C; many questions ask for the
+  working principle, components and advantages of a named robot or for designing a robot for a scenario.
+  The October 2026 circular sets about 50% of marks on higher-order skills (apply, analyse, evaluate, create).
+  CISCE lists topics under five weighted units, not textbook chapters: SOYL groups them into 6 teachable chapters in
+  syllabus order.
+units:
+  - { name: "Unit 1: Introduction", marks: 12 }
+  - { name: "Unit 2: Robotics in Healthcare", marks: 16 }
+  - { name: "Unit 3: Robotics in Agriculture", marks: 16 }
+  - { name: "Unit 4: Smart Manufacturing and Industry 4.0/5.0", marks: 16 }
+  - { name: "Unit 5: Space Robotics", marks: 10 }
+chapters:
+  - id: isc-12-robotics-ch01
+    number: 1
+    title: "Robot Design and Simulation Tools"
+    unit: "Unit 1: Introduction"
+    topics:
+      - id: isc-12-robotics-ch01-t01
+        title: "Design and selection parameters of a robot for an application"
+        learning_outcomes:
+          - "List the parameters (payload, reach, degrees of freedom, accuracy, speed, environment, cost) considered when selecting a robot"
+          - "Recommend a robot type for a given task and justify the choice"
+      - id: isc-12-robotics-ch01-t02
+        title: "Robot Operating System (ROS): purpose and basic concepts"
+        learning_outcomes:
+          - "Explain why ROS is used in robot development"
+      - id: isc-12-robotics-ch01-t03
+        title: "Gazebo simulation environment and how it works with ROS"
+        learning_outcomes:
+          - "Explain how Gazebo and ROS together let a robot be tested virtually before it is built"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-robotics-ch02
+    number: 2
+    title: "Robotics Ethics"
+    unit: "Unit 1: Introduction"
+    topics:
+      - id: isc-12-robotics-ch02-t01
+        title: "Accountability; privacy and surveillance; safety and security"
+        learning_outcomes:
+          - "Discuss who should be held accountable when an autonomous robot causes harm"
+          - "Explain privacy risks of robots equipped with cameras and sensors"
+      - id: isc-12-robotics-ch02-t02
+        title: "Human-robot interaction; autonomy versus human control"
+        learning_outcomes:
+          - "Evaluate how much autonomy a robot should have in a given situation"
+      - id: isc-12-robotics-ch02-t03
+        title: "Impact on employment; social implications; military and defence uses; environmental impact"
+        learning_outcomes:
+          - "Analyse the effect of automation on jobs in an Indian industry"
+          - "Present arguments for and against the use of robots in defence"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-robotics-ch03
+    number: 3
+    title: "Robotics in Healthcare"
+    unit: "Unit 2: Robotics in Healthcare"
+    topics:
+      - id: isc-12-robotics-ch03-t01
+        title: "Role of robotics in surgery, patient care, diagnostics and rehabilitation"
+        learning_outcomes:
+          - "Explain how robotics is transforming medical procedures and patient care"
+      - id: isc-12-robotics-ch03-t02
+        title: "Types of healthcare robots: surgical, assistance, diagnostic, rehabilitation and therapy robots"
+        learning_outcomes:
+          - "Classify given healthcare robots by type with an example of each"
+      - id: isc-12-robotics-ch03-t03
+        title: "da Vinci surgical system: minimally invasive working principle; surgeon console, patient cart, vision system, EndoWrist instruments; advantages"
+        learning_outcomes:
+          - "Explain how surgeon hand movements are translated into micro-movements of instruments"
+          - "State the advantages of robot-assisted minimally invasive surgery"
+      - id: isc-12-robotics-ch03-t04
+        title: "Ultrasound robotic system: working principle, components (arm, control system, probe, display and image processing) and advantages"
+        learning_outcomes:
+          - "Explain how robotic positioning of the probe improves consistency of ultrasound images"
+      - id: isc-12-robotics-ch03-t05
+        title: "Exoskeleton robots: working principle, components (frame, motors and actuators, control system, sensors) and advantages"
+        learning_outcomes:
+          - "Explain how sensors and actuators in an exoskeleton support a patient's movement"
+          - "Draw a block diagram of an exoskeleton control loop"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-robotics-ch04
+    number: 4
+    title: "Robotics in Agriculture"
+    unit: "Unit 3: Robotics in Agriculture"
+    topics:
+      - id: isc-12-robotics-ch04-t01
+        title: "Agricultural robots (agrobots): productivity, cost reduction and sustainable farming"
+        learning_outcomes:
+          - "Explain how robotics and AI support sustainable farming"
+      - id: isc-12-robotics-ch04-t02
+        title: "Types: seeding and spraying robots, ground mobile robots (weeding, harvesting, pruning), monitoring and sensing robots"
+        learning_outcomes:
+          - "Match each type of agricultural robot to the farm task it performs"
+      - id: isc-12-robotics-ch04-t03
+        title: "Seeding and spraying robot: GPS and sensor-based working principle, components (GPS module, sensors, sprayer, seeding mechanism, power source), advantages"
+        learning_outcomes:
+          - "Explain how a seeding robot places seeds at set intervals using GPS coordinates"
+          - "Design the component list for a precision spraying robot"
+      - id: isc-12-robotics-ch04-t04
+        title: "Ground mobile robot: autonomous field navigation, components (mobility system, control unit, GPS, imaging and sensing, communication module), advantages"
+        learning_outcomes:
+          - "Explain how a ground robot collects real-time soil and crop data"
+      - id: isc-12-robotics-ch04-t05
+        title: "Monitoring and sensing robot: crop health, pest and soil-moisture monitoring; components; advantages"
+        learning_outcomes:
+          - "Explain how imaging and environmental sensors detect pest infestation early"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-robotics-ch05
+    number: 5
+    title: "Smart Manufacturing and Industry 4.0/5.0"
+    unit: "Unit 4: Smart Manufacturing and Industry 4.0/5.0"
+    topics:
+      - id: isc-12-robotics-ch05-t01
+        title: "Smart manufacturing: connected machines, data and AI in smart factories; human-centric Industry 5.0"
+        learning_outcomes:
+          - "Distinguish Industry 4.0 from Industry 5.0"
+      - id: isc-12-robotics-ch05-t02
+        title: "Types: industrial robot arms, collaborative robots, automated guided vehicles, 3D printing robots, robotic welding systems"
+        learning_outcomes:
+          - "State a factory use for each type of manufacturing robot"
+      - id: isc-12-robotics-ch05-t03
+        title: "Manipulator: multi-joint arm with servo motors and controllers; components (actuators, controller, end-effector, sensors, power supply); advantages"
+        learning_outcomes:
+          - "Explain how a manipulator follows a programmed path to position a tool"
+      - id: isc-12-robotics-ch05-t04
+        title: "Security and sensing robot: autonomous patrol, anomaly detection, components and advantages"
+        learning_outcomes:
+          - "Explain how a factory patrol robot detects and reports hazards"
+      - id: isc-12-robotics-ch05-t05
+        title: "Collaborative robots (cobots): safe human interaction through sensors and algorithms; components and advantages"
+        learning_outcomes:
+          - "Explain how a cobot detects human presence to work safely alongside people"
+          - "Compare a cobot with a conventional industrial robot arm"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-robotics-ch06
+    number: 6
+    title: "Space Robotics"
+    unit: "Unit 5: Space Robotics"
+    topics:
+      - id: isc-12-robotics-ch06-t01
+        title: "Role of robots in exploring planets, moons and asteroids; tasks too dangerous for humans"
+        learning_outcomes:
+          - "Explain why robots are preferred to humans for many space tasks"
+      - id: isc-12-robotics-ch06-t02
+        title: "Types: planetary rovers, space probes and landers, space-station robotics"
+        learning_outcomes:
+          - "Distinguish rovers, landers and probes by function"
+      - id: isc-12-robotics-ch06-t03
+        title: "Mars rover programme: semi-autonomous operation, components and advantages"
+        learning_outcomes:
+          - "Explain why a Mars rover must operate semi-autonomously given the communication delay"
+      - id: isc-12-robotics-ch06-t04
+        title: "Chandrayaan-2: orbiter, Vikram lander and Pragyan rover; working principle and advantages"
+        learning_outcomes:
+          - "Describe the roles of the orbiter, lander and rover in Chandrayaan-2"
+      - id: isc-12-robotics-ch06-t05
+        title: "Gaganyaan's Vyommitra humanoid: working principle, components (joints and actuators, end effectors, sensors and cameras, power) and advantages"
+        learning_outcomes:
+          - "Explain how Vyommitra responds to commands from mission control and crew"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

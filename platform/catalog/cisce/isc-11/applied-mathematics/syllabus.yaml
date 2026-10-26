@@ -1,0 +1,624 @@
+# ISC Class 11 Applied Mathematics (885), Paper I Theory - ISC 2028 syllabus, CLASS XI portion only.
+# Source: platform/catalog/sources/cisce.md#isc-2028-applied-mathematics. Topic wording is our own summary of the official scope.
+subject_id: isc-11-applied-mathematics
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-applied-mathematics, isc-2028-regulations]
+exam_notes: >-
+  Class XI is year one of the two-year ISC 2028 course. There is no board examination in Class XI: the school conducts
+  the Class XI examination on the Class XI portion, and promotion to Class XII needs at least 35% on the cumulative
+  average in five subjects including English, with 75% attendance (ISC 2028 Regulations). The syllabus prescribes, and
+  the school examination usually follows: Paper I Theory, 3 hours, 80 marks; Paper II Project Work, 20 marks - two
+  projects, each marked out of 10 (overall format 1, content 4, findings 2, viva-voce 3). Suggested Class XI projects
+  include proving that a set of n elements has 2^n subsets, verifying the distributive law with Venn diagrams, graphing
+  sin x, sin 2x, 2 sin x and sin (x/2) on common axes, reading the maximum or minimum of a quadratic from its graph,
+  Pascal's triangle, comparing the consistency of two data sets with the coefficient of variation, finding the median
+  from ogives, truth values of compound statements with series and parallel switches, survey-based correlation
+  studies, and comparing purchase options including GST and hidden costs. SOYL covers Paper I only. Applied
+  Mathematics is meant for Humanities, Commerce, Economics and Bioscience students and may not be combined with
+  Mathematics (ISC 2028 Regulations). No Class XI specimen paper is published for this subject. The published Class XI
+  unit weightage is used for the units. CISCE lists topics under seven weighted units, not textbook chapters: SOYL
+  groups them into 23 teachable chapters in syllabus order. The Class XII portion is in isc-12-applied-mathematics.
+units:
+  - { name: "Unit 1: Sets and Functions", marks: 12 }
+  - { name: "Unit 2: Algebra", marks: 22 }
+  - { name: "Unit 3: Coordinate Geometry", marks: 12 }
+  - { name: "Unit 4: Calculus", marks: 6 }
+  - { name: "Unit 5: Statistical Methods and Probability", marks: 12 }
+  - { name: "Unit 6: Mathematical Reasoning", marks: 4 }
+  - { name: "Unit 7: Financial Mathematics", marks: 12 }
+chapters:
+  - id: isc-11-applied-mathematics-ch01
+    number: 1
+    title: "Sets"
+    unit: "Unit 1: Sets and Functions"
+    topics:
+      - id: isc-11-applied-mathematics-ch01-t01
+        title: "Sets and their representation; empty, finite, infinite and equal sets"
+        learning_outcomes:
+          - "Write a set in roster and set-builder form"
+          - "Classify given sets as empty, finite, infinite or equal"
+      - id: isc-11-applied-mathematics-ch01-t02
+        title: "Subsets, intervals of real numbers, power set and universal set"
+        learning_outcomes:
+          - "Write intervals of real numbers in interval notation and on the number line"
+          - "List the power set of a finite set and state its number of elements"
+      - id: isc-11-applied-mathematics-ch01-t03
+        title: "Venn diagrams; union, intersection, difference, symmetric difference and complement"
+        learning_outcomes:
+          - "Find the union, intersection, difference, symmetric difference and complement of given sets"
+          - "Solve practical counting problems on two or three sets using Venn diagrams"
+      - id: isc-11-applied-mathematics-ch01-t04
+        title: "Algebra of sets: idempotent, identity, boundedness, commutative, associative, distributive and complement laws; De Morgan's laws"
+        learning_outcomes:
+          - "Verify the laws of the algebra of sets using Venn diagrams"
+          - "Simplify set expressions using De Morgan's laws"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch02
+    number: 2
+    title: "Relations and Functions"
+    unit: "Unit 1: Sets and Functions"
+    topics:
+      - id: isc-11-applied-mathematics-ch02-t01
+        title: "Ordered pairs and the Cartesian product of sets; number of elements in A x B; R x R"
+        learning_outcomes:
+          - "Write the Cartesian product of two finite sets and state its number of elements"
+      - id: isc-11-applied-mathematics-ch02-t02
+        title: "Relations: subset of a Cartesian product, arrow diagrams, domain, co-domain and range"
+        learning_outcomes:
+          - "Represent a relation by an arrow diagram and find its domain, co-domain and range"
+          - "Calculate the number of relations from A to B"
+      - id: isc-11-applied-mathematics-ch02-t03
+        title: "Functions as special relations and mappings; y = f(x); domain, co-domain and range"
+        learning_outcomes:
+          - "Decide whether a given relation is a function"
+          - "Find the domain and range of a real valued function"
+      - id: isc-11-applied-mathematics-ch02-t04
+        title: "Standard real functions: constant, identity, polynomial, rational, modulus, signum, exponential, logarithmic and greatest integer - graphs"
+        learning_outcomes:
+          - "Sketch and read the graph of each standard real function"
+          - "State the domain and range of each standard function from its graph"
+      - id: isc-11-applied-mathematics-ch02-t05
+        title: "Algebra of functions: sum, difference, product and quotient"
+        learning_outcomes:
+          - "Find f + g, f - g, fg and f/g with their domains"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch03
+    number: 3
+    title: "Angles and Trigonometric Functions"
+    unit: "Unit 1: Sets and Functions"
+    topics:
+      - id: isc-11-applied-mathematics-ch03-t01
+        title: "Positive and negative angles; degree and radian measure and conversion"
+        learning_outcomes:
+          - "Convert angles between degrees and radians"
+      - id: isc-11-applied-mathematics-ch03-t02
+        title: "Arc length s = r theta and area of a sector"
+        learning_outcomes:
+          - "Calculate arc length and area of a sector of a circle using radian measure"
+      - id: isc-11-applied-mathematics-ch03-t03
+        title: "Trigonometric functions via the unit circle; sin^2 x + cos^2 x = 1; relations between functions; simple identities"
+        learning_outcomes:
+          - "Define the six trigonometric functions using the unit circle"
+          - "Prove simple trigonometric identities"
+      - id: isc-11-applied-mathematics-ch03-t04
+        title: "Signs, domain, range and values of trigonometric functions for all angles"
+        learning_outcomes:
+          - "Determine the sign of a trigonometric function in each quadrant"
+          - "Evaluate trigonometric functions of angles such as 210 degrees or -3pi/4"
+      - id: isc-11-applied-mathematics-ch03-t05
+        title: "Periods and graphs of sin x, cos x, tan x, cosec x, sec x and cot x (sketches)"
+        learning_outcomes:
+          - "Sketch the graphs of the six trigonometric functions and state their periods"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch04
+    number: 4
+    title: "Compound and Multiple Angles"
+    unit: "Unit 1: Sets and Functions"
+    topics:
+      - id: isc-11-applied-mathematics-ch04-t01
+        title: "Addition and subtraction formulae for sin, cos, tan and cot; tan(A + B + C)"
+        learning_outcomes:
+          - "Expand sin(x +/- y), cos(x +/- y), tan(x +/- y) and cot(x +/- y)"
+          - "Use the formulae to find exact values such as sin 75 degrees"
+      - id: isc-11-applied-mathematics-ch04-t02
+        title: "Double, triple, half and one-third angle formulae: sin 2x, cos 2x, tan 2x, sin 3x, cos 3x, tan 3x"
+        learning_outcomes:
+          - "Derive the multiple angle formulae as special cases of the addition formulae"
+          - "Prove identities using double and triple angle formulae"
+      - id: isc-11-applied-mathematics-ch04-t03
+        title: "Sum and difference to product formulae (sin C + sin D and others)"
+        learning_outcomes:
+          - "Convert sums of sines and cosines into products and simplify expressions"
+      - id: isc-11-applied-mathematics-ch04-t04
+        title: "Product to sum or difference formulae (2 sin A cos B and others)"
+        learning_outcomes:
+          - "Express products of sines and cosines as sums or differences and solve simple problems"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch05
+    number: 5
+    title: "Logarithms"
+    unit: "Unit 2: Algebra"
+    topics:
+      - id: isc-11-applied-mathematics-ch05-t01
+        title: "Logarithm and antilogarithm: definition; common and natural logarithms"
+        learning_outcomes:
+          - "Convert between exponential and logarithmic forms"
+          - "Distinguish common (base 10) and natural (base e) logarithms"
+      - id: isc-11-applied-mathematics-ch05-t02
+        title: "Laws of logarithms"
+        learning_outcomes:
+          - "Simplify expressions using the product, quotient, power and change of base laws"
+      - id: isc-11-applied-mathematics-ch05-t03
+        title: "Problems using log and antilog tables"
+        learning_outcomes:
+          - "Evaluate products, quotients and powers of numbers using log and antilog tables"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch06
+    number: 6
+    title: "Complex Numbers"
+    unit: "Unit 2: Algebra"
+    topics:
+      - id: isc-11-applied-mathematics-ch06-t01
+        title: "Complex numbers: the imaginary unit i, powers of i, algebraic properties"
+        learning_outcomes:
+          - "Simplify powers of i"
+          - "Identify the real and imaginary parts of a complex number"
+      - id: isc-11-applied-mathematics-ch06-t02
+        title: "Sum, difference, product and quotient; additive and multiplicative inverses"
+        learning_outcomes:
+          - "Perform the four operations on complex numbers and write the answer in a + ib form"
+          - "Find the additive and multiplicative inverse of a complex number"
+      - id: isc-11-applied-mathematics-ch06-t03
+        title: "Conjugate, modulus and argument and their properties"
+        learning_outcomes:
+          - "Find the conjugate, modulus and argument of a complex number"
+          - "Use properties of conjugate and modulus to simplify expressions"
+      - id: isc-11-applied-mathematics-ch06-t04
+        title: "Argand plane and polar form"
+        learning_outcomes:
+          - "Plot complex numbers on the Argand plane"
+          - "Convert a complex number to polar form"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch07
+    number: 7
+    title: "Quadratic Equations and Quadratic Functions"
+    unit: "Unit 2: Algebra"
+    topics:
+      - id: isc-11-applied-mathematics-ch07-t01
+        title: "Fundamental theorem of algebra (statement); solving quadratics with real coefficients by formula; equations reducible to quadratic form"
+        learning_outcomes:
+          - "Solve quadratic equations, including those with complex roots, using the quadratic formula"
+          - "Solve equations reducible to quadratic form by substitution"
+      - id: isc-11-applied-mathematics-ch07-t02
+        title: "Nature of roots; sum and product of roots; rational, irrational, equal, reciprocal and complex roots"
+        learning_outcomes:
+          - "Determine the nature of roots from the discriminant"
+          - "Find conditions on coefficients for roots to be equal, reciprocal or one the square of the other"
+      - id: isc-11-applied-mathematics-ch07-t03
+        title: "Forming equations with given roots, including roots such as alpha^3 and beta^3; common roots"
+        learning_outcomes:
+          - "Form a quadratic equation whose roots are given functions of the roots of another equation"
+          - "Find the condition for two quadratic equations to have a common root"
+      - id: isc-11-applied-mathematics-ch07-t04
+        title: "Quadratic functions: graph and sign for a > 0 and a < 0 with real, equal or complex roots"
+        learning_outcomes:
+          - "Sketch the graph of a quadratic function for each case of a and the discriminant"
+          - "Determine the sign of a quadratic expression for all real x"
+      - id: isc-11-applied-mathematics-ch07-t05
+        title: "Maximum and minimum value of a quadratic function"
+        learning_outcomes:
+          - "Find the maximum or minimum value of a quadratic function and the value of x at which it occurs"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch08
+    number: 8
+    title: "Linear and Quadratic Inequalities"
+    unit: "Unit 2: Algebra"
+    topics:
+      - id: isc-11-applied-mathematics-ch08-t01
+        title: "Linear inequalities in one variable: algebraic solution and number line representation"
+        learning_outcomes:
+          - "Solve a linear inequality and represent its solution set on the number line"
+      - id: isc-11-applied-mathematics-ch08-t02
+        title: "Quadratic inequalities by the method of intervals"
+        learning_outcomes:
+          - "Solve inequalities such as x^2 + x - 6 < 0 using the sign scheme of intervals"
+      - id: isc-11-applied-mathematics-ch08-t03
+        title: "Inequalities involving perfect squares"
+        learning_outcomes:
+          - "Solve inequalities such as x^2 - 6x + 9 > 0 and explain the special role of the repeated root"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch09
+    number: 9
+    title: "Permutations and Combinations"
+    unit: "Unit 2: Algebra"
+    topics:
+      - id: isc-11-applied-mathematics-ch09-t01
+        title: "Factorial notation; fundamental principle of counting"
+        learning_outcomes:
+          - "Simplify factorial expressions using n! = n(n-1)!"
+          - "Apply the multiplication and addition principles of counting"
+      - id: isc-11-applied-mathematics-ch09-t02
+        title: "Permutations nPr: derivation of the formula; restricted permutations (things always together or never occurring)"
+        learning_outcomes:
+          - "Derive the formula for nPr"
+          - "Count arrangements where certain objects must be together or must not appear"
+      - id: isc-11-applied-mathematics-ch09-t03
+        title: "Forming numbers with digits; word building with and without repeated letters; permutations of alike things"
+        learning_outcomes:
+          - "Count numbers formed from given digits under stated conditions"
+          - "Count arrangements of the letters of a word with repeated letters"
+      - id: isc-11-applied-mathematics-ch09-t04
+        title: "Circular permutations: clockwise and anticlockwise distinguishable or not"
+        learning_outcomes:
+          - "Count circular arrangements of people around a table and beads on a necklace"
+      - id: isc-11-applied-mathematics-ch09-t05
+        title: "Combinations nCr: properties nCr = nC(n-r), nCx = nCy, nCr-1 + nCr = n+1Cr"
+        learning_outcomes:
+          - "Derive nCr and relate it to nPr"
+          - "Use the properties of nCr to solve equations"
+      - id: isc-11-applied-mathematics-ch09-t06
+        title: "Selections of any number of things (all different or not all different); division and distribution into groups; mixed problems"
+        learning_outcomes:
+          - "Count selections taking any number of objects at a time"
+          - "Solve mixed problems on selection followed by arrangement and on dividing objects into groups"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch10
+    number: 10
+    title: "Binomial Theorem"
+    unit: "Unit 2: Algebra"
+    topics:
+      - id: isc-11-applied-mathematics-ch10-t01
+        title: "History and significance of Pascal's triangle"
+        learning_outcomes:
+          - "Construct Pascal's triangle and use it to write binomial coefficients"
+      - id: isc-11-applied-mathematics-ch10-t02
+        title: "Binomial theorem for positive integral indices; binomial coefficients"
+        learning_outcomes:
+          - "Expand (x + y)^n for a positive integer n"
+          - "Use the expansion to evaluate expressions such as (1.02)^5 approximately"
+      - id: isc-11-applied-mathematics-ch10-t03
+        title: "General term and middle term(s); simple applications"
+        learning_outcomes:
+          - "Find the general term, a specified term and the term independent of x"
+          - "Find the middle term or terms of an expansion"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch11
+    number: 11
+    title: "Sequences and Series"
+    unit: "Unit 2: Algebra"
+    topics:
+      - id: isc-11-applied-mathematics-ch11-t01
+        title: "Arithmetic progression: nth term, sum of n terms, arithmetic means; three or four terms in AP"
+        learning_outcomes:
+          - "Find the nth term and the sum of n terms of an AP"
+          - "Insert arithmetic means between two numbers"
+      - id: isc-11-applied-mathematics-ch11-t02
+        title: "Geometric progression: nth term, sum of n terms, sum to infinity"
+        learning_outcomes:
+          - "Find the nth term and the sum of n terms of a GP"
+          - "Find the sum of an infinite GP with |r| < 1"
+      - id: isc-11-applied-mathematics-ch11-t03
+        title: "Geometric means; three or four terms in GP; relation between AM and GM"
+        learning_outcomes:
+          - "Insert geometric means between two numbers"
+          - "Show that AM >= GM for two positive numbers and apply it"
+      - id: isc-11-applied-mathematics-ch11-t04
+        title: "Special sums: sum of n, n^2 and n^3; method of differences"
+        learning_outcomes:
+          - "Use the formulae for sums of n, n^2 and n^3 to sum related series"
+          - "Find the nth term of a sequence by the method of differences"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch12
+    number: 12
+    title: "Points and Straight Lines"
+    unit: "Unit 3: Coordinate Geometry"
+    topics:
+      - id: isc-11-applied-mathematics-ch12-t01
+        title: "Recall of coordinate geometry: section formula (internal and external), incentre, area of a triangle, collinearity; shifting of origin"
+        learning_outcomes:
+          - "Find the point dividing a segment internally or externally in a given ratio"
+          - "Calculate the area of a triangle from its vertices and test three points for collinearity"
+      - id: isc-11-applied-mathematics-ch12-t02
+        title: "Slope of a line; angle between two lines; conditions for parallel and perpendicular lines"
+        learning_outcomes:
+          - "Find the slope of a line and the angle between two lines"
+          - "Use slopes to test whether lines are parallel or perpendicular"
+      - id: isc-11-applied-mathematics-ch12-t03
+        title: "Forms of the equation of a line: parallel to an axis, point-slope, slope-intercept, two-point, intercept and normal forms; general equation"
+        learning_outcomes:
+          - "Write the equation of a line from given data in the appropriate form"
+          - "Convert a general equation into slope-intercept, intercept and normal forms"
+      - id: isc-11-applied-mathematics-ch12-t04
+        title: "Distance of a point from a line; distance between parallel lines"
+        learning_outcomes:
+          - "Calculate the perpendicular distance of a point from a line and between two parallel lines"
+      - id: isc-11-applied-mathematics-ch12-t05
+        title: "Angle bisectors of two lines; family of lines through the intersection of two lines"
+        learning_outcomes:
+          - "Find the equations of the bisectors of the angles between two lines"
+          - "Find a line through the intersection of two given lines satisfying one more condition"
+      - id: isc-11-applied-mathematics-ch12-t06
+        title: "Locus and its equation"
+        learning_outcomes:
+          - "Find the equation of the locus of a point satisfying a given geometric condition"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch13
+    number: 13
+    title: "Circles"
+    unit: "Unit 3: Coordinate Geometry"
+    topics:
+      - id: isc-11-applied-mathematics-ch13-t01
+        title: "Equation of a circle in standard, diameter, general and parametric forms"
+        learning_outcomes:
+          - "Write the equation of a circle in each form from given data"
+      - id: isc-11-applied-mathematics-ch13-t02
+        title: "Finding the centre and radius from the general equation"
+        learning_outcomes:
+          - "Find the centre and radius of a circle given in general form"
+      - id: isc-11-applied-mathematics-ch13-t03
+        title: "Circle through three non-collinear points and from other sufficient conditions"
+        learning_outcomes:
+          - "Find the equation of a circle through three given points"
+          - "Find a circle whose centre lies on a given line and which passes through two given points"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch14
+    number: 14
+    title: "Conic Sections: The Parabola"
+    unit: "Unit 3: Coordinate Geometry"
+    topics:
+      - id: isc-11-applied-mathematics-ch14-t01
+        title: "Conics as sections of a cone; focus, directrix, eccentricity and latus rectum; PS = e PL"
+        learning_outcomes:
+          - "Describe how circles, parabolas, ellipses and hyperbolas arise as sections of a cone"
+          - "Define a conic by the focus-directrix property"
+      - id: isc-11-applied-mathematics-ch14-t02
+        title: "Standard parabolas y^2 = 4ax, x^2 = 4ay, y^2 = -4ax, x^2 = -4ay: sketches, focus, vertex, directrix, axis and latus rectum"
+        learning_outcomes:
+          - "Sketch each standard parabola and state its focus, vertex, directrix, axis and latus rectum length"
+      - id: isc-11-applied-mathematics-ch14-t03
+        title: "Equation of a parabola from its focus and directrix; applications"
+        learning_outcomes:
+          - "Find the equation of a parabola given its focus and directrix"
+          - "Solve applied problems on parabolic arches and reflectors"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch15
+    number: 15
+    title: "Limits and Derivatives"
+    unit: "Unit 4: Calculus"
+    topics:
+      - id: isc-11-applied-mathematics-ch15-t01
+        title: "Intuitive idea of a limit; left-hand and right-hand limits; existence of a limit; fundamental theorems (statement only)"
+        learning_outcomes:
+          - "Find left-hand and right-hand limits and decide whether a limit exists"
+      - id: isc-11-applied-mathematics-ch15-t02
+        title: "Limits of algebraic, trigonometric, exponential and logarithmic functions; indeterminate forms"
+        learning_outcomes:
+          - "Evaluate limits of polynomial and rational functions, including 0/0 forms"
+          - "Use standard limits such as lim (sin x)/x = 1 and lim (e^x - 1)/x = 1"
+      - id: isc-11-applied-mathematics-ch15-t03
+        title: "Derivative as rate of change and as slope of the tangent"
+        learning_outcomes:
+          - "Interpret the derivative as a rate of change and geometrically as the slope of a tangent"
+      - id: isc-11-applied-mathematics-ch15-t04
+        title: "Differentiation from first principles"
+        learning_outcomes:
+          - "Differentiate simple algebraic and trigonometric functions from first principles"
+      - id: isc-11-applied-mathematics-ch15-t05
+        title: "Derivatives of sums, differences, products and quotients; polynomial and trigonometric functions"
+        learning_outcomes:
+          - "Apply the sum, product and quotient rules to differentiate functions"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch16
+    number: 16
+    title: "Measures of Dispersion"
+    unit: "Unit 5: Statistical Methods and Probability"
+    topics:
+      - id: isc-11-applied-mathematics-ch16-t01
+        title: "Mode of grouped and ungrouped data; range"
+        learning_outcomes:
+          - "Calculate the mode of grouped and ungrouped data"
+          - "Calculate the range and its coefficient"
+      - id: isc-11-applied-mathematics-ch16-t02
+        title: "Quartiles, interquartile range, quartile deviation and its coefficient"
+        learning_outcomes:
+          - "Calculate quartiles, quartile deviation and the coefficient of quartile deviation for grouped data"
+      - id: isc-11-applied-mathematics-ch16-t03
+        title: "Mean deviation about mean and median; coefficient of mean deviation"
+        learning_outcomes:
+          - "Calculate the mean deviation about the mean and the median for ungrouped and grouped data"
+      - id: isc-11-applied-mathematics-ch16-t04
+        title: "Variance and standard deviation by direct, short-cut and step-deviation methods; coefficient of variation"
+        learning_outcomes:
+          - "Calculate the standard deviation of grouped data by the step-deviation method"
+          - "Compare the consistency of two data sets using the coefficient of variation"
+      - id: isc-11-applied-mathematics-ch16-t05
+        title: "Combined mean and standard deviation of two groups"
+        learning_outcomes:
+          - "Calculate the combined mean and standard deviation of two groups"
+      - id: isc-11-applied-mathematics-ch16-t06
+        title: "Comparing measures of dispersion and choosing an appropriate one"
+        learning_outcomes:
+          - "Differentiate range, quartile deviation, mean deviation and standard deviation and choose the best measure for a data set"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch17
+    number: 17
+    title: "Skewness and Kurtosis"
+    unit: "Unit 5: Statistical Methods and Probability"
+    topics:
+      - id: isc-11-applied-mathematics-ch17-t01
+        title: "Skewness and kurtosis: meaning and graphical representation; empirical relation between mean, median and mode"
+        learning_outcomes:
+          - "Identify positive, negative and zero skew and the type of kurtosis from a graph of a distribution"
+          - "Use the empirical relation mode = 3 median - 2 mean"
+      - id: isc-11-applied-mathematics-ch17-t02
+        title: "Moments about the mean and an arbitrary point"
+        learning_outcomes:
+          - "Calculate the first four central moments of a distribution"
+      - id: isc-11-applied-mathematics-ch17-t03
+        title: "Absolute and relative measures of skewness: Karl Pearson's, Bowley's and moment (beta and gamma) coefficients"
+        learning_outcomes:
+          - "Calculate Karl Pearson's and Bowley's coefficients of skewness and interpret them"
+          - "Calculate the moment coefficient of skewness"
+      - id: isc-11-applied-mathematics-ch17-t04
+        title: "Karl Pearson's measure of kurtosis"
+        learning_outcomes:
+          - "Calculate beta-2 and classify a distribution as leptokurtic, mesokurtic or platykurtic"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch18
+    number: 18
+    title: "Correlation and Linear Regression"
+    unit: "Unit 5: Statistical Methods and Probability"
+    topics:
+      - id: isc-11-applied-mathematics-ch18-t01
+        title: "Covariance; scatter diagrams; correlation versus causation"
+        learning_outcomes:
+          - "Calculate covariance and describe correlation from a scatter diagram"
+          - "Explain with an example why correlation does not imply causation"
+      - id: isc-11-applied-mathematics-ch18-t02
+        title: "Karl Pearson's coefficient of correlation by actual means, direct values and assumed means"
+        learning_outcomes:
+          - "Calculate Karl Pearson's r choosing the suitable formula for the data"
+      - id: isc-11-applied-mathematics-ch18-t03
+        title: "Spearman's rank correlation, including correction for tied ranks"
+        learning_outcomes:
+          - "Calculate Spearman's rank correlation coefficient with and without repeated ranks"
+      - id: isc-11-applied-mathematics-ch18-t04
+        title: "Method of least squares; regression lines of y on x and x on y; regression coefficients and their properties"
+        learning_outcomes:
+          - "Find both regression lines by least squares"
+          - "Use bxy * byx = r^2 to find r and identify which given line is which regression line"
+      - id: isc-11-applied-mathematics-ch18-t05
+        title: "Estimating one variable from another using the appropriate regression line"
+        learning_outcomes:
+          - "Estimate an unknown value from the correct regression line, for example sales from advertising spend"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch19
+    number: 19
+    title: "Probability"
+    unit: "Unit 5: Statistical Methods and Probability"
+    topics:
+      - id: isc-11-applied-mathematics-ch19-t01
+        title: "Random experiments, outcomes and sample spaces in set notation"
+        learning_outcomes:
+          - "Write the sample space of a random experiment such as tossing coins or rolling dice"
+      - id: isc-11-applied-mathematics-ch19-t02
+        title: "Events: sure, impossible, 'not', 'and', 'or', mutually exclusive and exhaustive events"
+        learning_outcomes:
+          - "Express compound events using set operations"
+          - "Decide whether given events are mutually exclusive or exhaustive"
+      - id: isc-11-applied-mathematics-ch19-t03
+        title: "Axiomatic probability; probability of an event and of 'not', 'and', 'or' events; addition theorem"
+        learning_outcomes:
+          - "Calculate probabilities using the axiomatic approach"
+          - "Apply the addition theorem P(A or B) = P(A) + P(B) - P(A and B)"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch20
+    number: 20
+    title: "Mathematical Reasoning and Logical Problems"
+    unit: "Unit 6: Mathematical Reasoning"
+    topics:
+      - id: isc-11-applied-mathematics-ch20-t01
+        title: "Mathematically acceptable statements; connectives and quantifiers: and, or, implies, if and only if, there exists"
+        learning_outcomes:
+          - "Identify statements and form compound statements using connectives and quantifiers"
+          - "Explain necessary and sufficient conditions with examples"
+      - id: isc-11-applied-mathematics-ch20-t02
+        title: "Validating statements with truth tables; contradiction, converse and contrapositive"
+        learning_outcomes:
+          - "Construct truth tables for compound statements"
+          - "Write the converse and contrapositive of an implication and distinguish them from a contradiction"
+      - id: isc-11-applied-mathematics-ch20-t03
+        title: "Creating data sets from random experiments such as repeated coin tosses"
+        learning_outcomes:
+          - "Record and summarise data from a repeated random experiment"
+      - id: isc-11-applied-mathematics-ch20-t04
+        title: "Logical problems: odd one out, syllogisms, blood relations, coding-decoding"
+        learning_outcomes:
+          - "Solve odd one out, syllogism, blood relation and coding-decoding problems"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch21
+    number: 21
+    title: "Interest and Interest Rates"
+    unit: "Unit 7: Financial Mathematics"
+    topics:
+      - id: isc-11-applied-mathematics-ch21-t01
+        title: "Simple and compound interest; compounding frequency"
+        learning_outcomes:
+          - "Calculate simple and compound interest for annual, half-yearly, quarterly and monthly compounding"
+      - id: isc-11-applied-mathematics-ch21-t02
+        title: "Nominal, effective and real interest rates; equivalent rates"
+        learning_outcomes:
+          - "Convert a nominal rate into an effective rate"
+          - "Calculate the real interest rate after inflation"
+      - id: isc-11-applied-mathematics-ch21-t03
+        title: "Annual percentage rate (APR), annual equivalent rate (AER) and annualised yield"
+        learning_outcomes:
+          - "Compare loan and deposit offers using APR, AER and annualised yield"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch22
+    number: 22
+    title: "Present Value, Net Present Value and Annuities"
+    unit: "Unit 7: Financial Mathematics"
+    topics:
+      - id: isc-11-applied-mathematics-ch22-t01
+        title: "Compounding and discounting; present value and future value"
+        learning_outcomes:
+          - "Calculate the present value and future value of a sum"
+      - id: isc-11-applied-mathematics-ch22-t02
+        title: "Net present value and its use in capital budgeting decisions"
+        learning_outcomes:
+          - "Compute the NPV of a project and decide whether to accept it"
+      - id: isc-11-applied-mathematics-ch22-t03
+        title: "Annuities: immediate (ordinary), annuity due, deferred and general annuities"
+        learning_outcomes:
+          - "Distinguish the types of annuity with real-life examples such as EMIs and recurring deposits"
+      - id: isc-11-applied-mathematics-ch22-t04
+        title: "Future value of an ordinary annuity and an annuity due; applications"
+        learning_outcomes:
+          - "Calculate the future value of a regular annuity and an annuity due"
+          - "Apply annuities to savings and loan problems"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-applied-mathematics-ch23
+    number: 23
+    title: "Taxation and Utility Bills"
+    unit: "Unit 7: Financial Mathematics"
+    topics:
+      - id: isc-11-applied-mathematics-ch23-t01
+        title: "Direct and indirect taxes"
+        learning_outcomes:
+          - "Differentiate direct and indirect taxes with examples"
+      - id: isc-11-applied-mathematics-ch23-t02
+        title: "Goods and Services Tax: CGST, SGST and UTGST rules and calculation"
+        learning_outcomes:
+          - "Calculate GST on intra-state and inter-state supplies and split it into CGST, SGST or UTGST"
+      - id: isc-11-applied-mathematics-ch23-t03
+        title: "Utility bills: tariff rates, fixed charges, surcharges and service charges in electricity, water and other bills"
+        learning_outcomes:
+          - "Interpret and calculate an electricity bill with slab tariffs, fixed charges and surcharges"
+          - "Analyse a water or other supply bill to check its total"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []
