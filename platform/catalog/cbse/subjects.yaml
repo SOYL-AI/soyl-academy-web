@@ -49,6 +49,13 @@ subjects:
       Basic (Secondary Curriculum 2026-27, instruction v.5). Modelled as one subject; blueprints carry two paper variants. Two board exams in 2027: first
       (February) compulsory; optional second exam (May) for improvement in up to three of Science, Mathematics, Social Science and languages (notification of
       14-02-2026).
+    variants:
+      - code: "041"
+        name: Standard
+        notes: The subject's default paper (code 041); blueprints board.yaml and board-second-exam.yaml.
+      - code: "241"
+        name: Basic
+        notes: Available to the 2026-27 Class X cohort only; blueprints board-basic.yaml and board-second-exam-basic.yaml.
   - id: cbse-10-social-science
     board: cbse
     exam: cbse

@@ -2,10 +2,10 @@
  * The AI gateway's external dependencies, chosen by config (ai/config.ts) and injectable (tests,
  * other environments). Every Azure dependency authenticates with one injectable credential — any
  * object with `getToken(scope)` returning `{ token, expiresOnTimestamp }`, e.g. the managed-identity
- * TokenProvider in @soyl/shared/azure/identity (prod-readiness). Without one, @azure/identity's
- * DefaultAzureCredential is loaded lazily on first use.
+ * TokenProvider in @soyl/shared/azure/identity (prod-readiness), which is the default.
  */
 import { createEmbedder, createProvider, MockEmbedder, MockProvider, type Embedder, type ModelProvider, type TokenCredentialLike } from '@soyl/ai-core';
+import { defaultTokenProvider, type TokenProvider } from '@soyl/shared/azure/identity';
 import type { Config } from '../config';
 import { AzureBlobStore, DisabledBlobStore, MemoryBlobStore, type BlobStore } from './blob';
 import type { AiConfig } from './config';
@@ -39,15 +39,15 @@ export function localRuntime(now: () => number = Date.now): AiRuntime {
   };
 }
 
-/** DefaultAzureCredential, imported on first use (optional peer dependency of @soyl/ai-core). */
-export function lazyDefaultCredential(): TokenCredentialLike {
-  let inner: Promise<TokenCredentialLike> | null = null;
+/**
+ * The process's managed-identity TokenProvider (prod-readiness, @soyl/shared/azure/identity), created on
+ * first use so local runs that never touch Azure need no identity. Shares the token cache with
+ * Postgres/Redis/ACS. Production without IDENTITY_ENDPOINT refuses (no developer fallback).
+ */
+export function managedIdentityCredential(provider: () => TokenProvider = defaultTokenProvider): TokenCredentialLike {
   return {
     async getToken(scope) {
-      inner ??= import(/* @vite-ignore */ '@azure/identity' as string).then(
-        (m: { DefaultAzureCredential: new () => TokenCredentialLike }) => new m.DefaultAzureCredential(),
-      );
-      return (await inner).getToken(scope);
+      return provider().getToken(Array.isArray(scope) ? scope[0]! : scope);
     },
   };
 }
@@ -58,7 +58,7 @@ export async function createAiRuntime(
   opts: { credential?: TokenCredentialLike; env?: Record<string, string | undefined>; now?: () => number } = {},
 ): Promise<AiRuntime> {
   const env = opts.env ?? process.env;
-  const credential = opts.credential ?? lazyDefaultCredential();
+  const credential = opts.credential ?? managedIdentityCredential();
   const provider = await createProvider({ provider: ai.provider, env, credential: ai.provider === 'azure' ? credential : undefined });
   registerGatewayFixtures(provider);
   const embedder = await createEmbedder({ provider: ai.embeddings, env, credential: ai.embeddings === 'azure' ? credential : undefined });

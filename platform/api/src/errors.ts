@@ -31,6 +31,7 @@ export const PROBLEMS = {
   staff_sign_in_requires_google: [403, 'Staff accounts sign in with Google.'],
   account_disabled: [403, 'This account cannot sign in.'],
   not_found: [404, 'Not found.'],
+  method_disabled: [404, 'This sign-in method is not available.'],
   conflict: [409, 'This conflicts with the current state.'],
   /** Test engine (ADR-012): the attempt was submitted or its time (deadline + grace) is over. */
   attempt_closed: [409, 'This attempt has ended.'],

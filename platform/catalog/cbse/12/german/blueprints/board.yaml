@@ -20,7 +20,7 @@ sections:
     title: Section B - Writing (Schreiben) (10)
     instructions: Q3 e-mail, A or B (5); Q4 dialogue, A or B (5).
     items:
-      - {type: long, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
   - id: C
     title: Section C - Grammar (Grammatik) (40)
     instructions: >-
@@ -49,9 +49,7 @@ notes: >-
   and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
   true/false);
 
-  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
-  contract
-
-  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail, report, précis) and translation passages -> 'writing' items
+  (contract v2: format, word_limit and a rubric that sums to the marks); sentence-level translation and usage items stay 1-mark short. "Answer any n" choices inside one question are modelled as internal_choice only where the
 
   number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

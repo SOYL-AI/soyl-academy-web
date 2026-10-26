@@ -5,7 +5,7 @@
  * database; without REDIS_URL it uses the in-memory store; providers are mocks unless configured
  * (GEN-3: mocks refuse APP_ENV=prod). SIGTERM/SIGINT close the server, then the pools.
  */
-import { createDb } from '@soyl/db';
+import { createDb, pgPasswordFromEnv } from '@soyl/db';
 import { buildApp } from './app';
 import { systemClock } from './clock';
 import { ConfigError, loadConfig } from './config';
@@ -40,8 +40,9 @@ export async function main(env: Record<string, string | undefined> = process.env
     await hooks.afterDevDatabase?.(databaseUrl);
   }
 
-  const { db, close: closeDb } = createDb(databaseUrl, { max: config.databasePoolMax });
-  const kv = createKv(config);
+  // INFRA-2 / INFRA-3: DATABASE_AUTH=entra and REDIS_AUTH=entra use managed-identity tokens.
+  const { db, close: closeDb } = createDb(databaseUrl, { max: config.databasePoolMax, password: pgPasswordFromEnv({ DATABASE_AUTH: config.databaseAuth }) });
+  const kv = createKv(config, { onRefreshError: (err) => console.error(`redis token refresh failed: ${(err as Error).message}`) });
   const providers = createProviders(config);
   // AI gateway (ADR-013): mock/local stand-ins locally; Azure services by config; 'disabled' fails closed.
   const aiConfig = loadAiConfig(config, env);
@@ -78,7 +79,7 @@ export async function main(env: Record<string, string | undefined> = process.env
     throw err;
   }
   app.log.info(
-    { appEnv: config.appEnv, platformEnabled: config.platformEnabled, kv: kv.kind, sms: providers.sms.name, email: providers.email.name, consent: providers.consent.name, ai: aiConfig.provider, contentSafety: aiConfig.contentSafety.provider, blob: aiConfig.blob.provider },
+    { appEnv: config.appEnv, platformEnabled: config.platformEnabled, kv: kv.kind, authMethods: config.authMethods, databaseAuth: config.databaseAuth, redisAuth: config.redis.auth, sms: providers.sms.name, email: providers.email.name, consent: providers.consent.name, ai: aiConfig.provider, contentSafety: aiConfig.contentSafety.provider, blob: aiConfig.blob.provider },
     'SOYL API ready',
   );
   return app;

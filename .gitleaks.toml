@@ -1,0 +1,11 @@
+# gitleaks configuration: the default rules, plus one narrow allowlist.
+# Content and test identifiers (e.g. t_cbse10sci_ch02_short, q_cbse10math_ch10_058) are high-entropy
+# enough to trip the generic-api-key rule wherever tests reference them. They are public ids, not secrets.
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "SOYL question/test ids: [tq]_<exam><class><subject>_<rest>"
+regexTarget = "secret"
+regexes = ['''^[tq]_(cbse|icse|isc)\d{1,2}[a-z]{2,8}_[a-z0-9_]+$''']

@@ -1,5 +1,6 @@
 /** Stages 5–8 without a database: verify, originality, the blueprint engine and series planner, tts. */
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { TestDefinition, type Blueprint, type Question } from '@soyl/shared/content/index';
@@ -16,6 +17,8 @@ import { ReferenceIndex, nearDuplicates, words } from '../src/originality/ngrams
 import { deterministicChecks, lastNumericResult, runJavaScript } from '../src/verify/checks';
 import { parseOgg } from '../src/tts/ogg-opus';
 import { SCOPE, UNIT, testPipeline } from './helpers';
+import { loadCatalog } from '../src/catalog';
+import { defaultPaths } from '../src/paths';
 
 const unit = 'cbse-10-science-ch01';
 const topic = `${unit}-t01`;
@@ -240,9 +243,33 @@ describe('stage 7 blueprint engine', () => {
     expect(ids.filter((id) => /_basic_mock_\d$/.test(id))).toHaveLength(6);
     expect(ids.filter((id) => /_may_\d$/.test(id)).length).toBeGreaterThanOrEqual(2);
     expect(ids.filter((id) => /_unit_\d$/.test(id))).toHaveLength(3);
+    // The blueprints' `variant` field (not the id-suffix fallback) names the papers: Standard 041 is the
+    // subject's own code, so it stays the default paper (key ''); Basic 241 gets its own series.
+    expect(variantsFor(p.catalog, maths)).toEqual([
+      { key: '', name: 'Standard', code: '041' },
+      { key: 'basic', name: 'Basic', code: '241' },
+    ]);
+    expect(blueprintFor(p.catalog, maths, 'board')!.id).toBe('cbse-10-mathematics-board');
+    expect(blueprintFor(p.catalog, maths, 'board-second-exam', 'basic')!.id).toBe('cbse-10-mathematics-board-second-exam-basic');
+    const byId = new Map(plan.papers.map((x) => [x.spec.id, x]));
+    expect(byId.get(ids.find((id) => /_basic_may_1$/.test(id))!)!.spec.blueprint.variant).toEqual({ code: '241', name: 'Basic' });
+    expect(plan.papers.find((x) => /_mock_1$/.test(x.spec.id) && !x.spec.id.includes('basic'))!.spec.title).toContain('Standard');
+    expect(variantOf({ ...blueprintFor(p.catalog, maths, 'board')!, id: 'x-board-basic' }, maths).key).toBe(''); // field wins over the id suffix
     expect(ids.filter((id) => /_ch\d{2}_(short|long)$/.test(id))).toHaveLength(2 * p.catalog.syllabi.get(maths.id)!.chapters.length);
     const syl = p.catalog.syllabi.get(maths.id)!;
     expect(partition(syl, syl.chapters.map((c) => c.id), 3).flat()).toEqual(syl.chapters.map((c) => c.id));
+  });
+  it('catalog: a blueprint variant must be one of the subject variants', () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'soyl-catalog-variant-'));
+    const real = path.join(defaultPaths().catalogDir, 'cbse');
+    fs.mkdirSync(path.join(dir, 'cbse', '10', 'mathematics', 'blueprints'), { recursive: true });
+    fs.copyFileSync(path.join(real, 'subjects.yaml'), path.join(dir, 'cbse', 'subjects.yaml'));
+    const bpDir = path.join(real, '10', 'mathematics', 'blueprints');
+    fs.copyFileSync(path.join(bpDir, 'board.yaml'), path.join(dir, 'cbse', '10', 'mathematics', 'blueprints', 'board.yaml'));
+    const basic = fs.readFileSync(path.join(bpDir, 'board-basic.yaml'), 'utf8').replace('name: Basic}', 'name: Elementary}');
+    fs.writeFileSync(path.join(dir, 'cbse', '10', 'mathematics', 'blueprints', 'board-basic.yaml'), basic);
+    const errors = loadCatalog(dir).issues.filter((i) => i.severity === 'error').map((i) => `${i.file}: ${i.message}`);
+    expect(errors).toEqual(["cbse/10/mathematics/blueprints/board-basic.yaml: blueprint variant Elementary (241) is not one of cbse-10-mathematics's variants in subjects.yaml"]);
   });
   it('plans term papers for a Class 9 subject', () => {
     const { p } = testPipeline();

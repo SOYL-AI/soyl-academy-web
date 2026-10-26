@@ -354,7 +354,7 @@ describe('retrieval units', () => {
 
 describe('runtime factory and Azure REST adapters', () => {
   it('builds stand-ins locally, Azure adapters by config, and fails closed when disabled', async () => {
-    const { createAiRuntime, lazyDefaultCredential } = await import('../src/ai/runtime');
+    const { createAiRuntime, managedIdentityCredential } = await import('../src/ai/runtime');
     const { AzureContentSafetyProvider: CS, FailingModerationProvider: Failing, LocalRuleModerationProvider: Local } = await import('../src/ai/moderation/providers');
     const { AzureBlobStore: Azure, DisabledBlobStore, MemoryBlobStore: Mem, BlobUnavailableError } = await import('../src/ai/blob');
     const local = await createAiRuntime({ isProduction: false, appEnv: 'test' }, loadAiConfig({ isLocal: true, isProduction: false, appEnv: 'test' }, {}), { env: { APP_ENV: 'test' } });
@@ -373,8 +373,11 @@ describe('runtime factory and Azure REST adapters', () => {
     expect(prod.blob).toBeInstanceOf(DisabledBlobStore);
     await expect(prod.blob.createUploadUrl('c', 'k', { contentType: 'image/png', expiresAt: new Date() })).rejects.toBeInstanceOf(BlobUnavailableError);
     await expect(prod.blob.get('c', 'k', 1)).rejects.toBeInstanceOf(BlobUnavailableError);
-    // Without @azure/identity installed the lazy default credential reports it on first use.
-    await expect(lazyDefaultCredential().getToken('scope')).rejects.toThrow();
+    // The default credential is the shared managed-identity TokenProvider, created on first use.
+    const { StaticTokenProvider } = await import('@soyl/shared/azure/identity');
+    const tp = new StaticTokenProvider(() => ({ token: 'mi-token', expiresOnTimestamp: Date.now() + 3_600_000 }));
+    expect((await managedIdentityCredential(() => tp).getToken('https://cognitiveservices.azure.com/.default'))?.token).toBe('mi-token');
+    await expect(managedIdentityCredential(() => { throw new Error('no identity'); }).getToken('x')).rejects.toThrow('no identity');
   });
 
   it('AzureBlobStore REST: HEAD/GET/PUT/DELETE with bearer auth (keyless) or SAS (Azurite); size cap enforced', async () => {

@@ -310,6 +310,38 @@
           "google"
         ]
       },
+      "AuthMethodsInput": {
+        "type": "object",
+        "properties": {
+          "methods": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "email",
+                "phone",
+                "google"
+              ]
+            },
+            "description": "Enabled sign-in methods, in display order"
+          },
+          "email": {
+            "type": "boolean"
+          },
+          "phone": {
+            "type": "boolean"
+          },
+          "google": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "methods",
+          "email",
+          "phone",
+          "google"
+        ]
+      },
       "GuestLessonInput": {
         "type": "object",
         "properties": {
@@ -7258,6 +7290,39 @@
         ],
         "additionalProperties": false
       },
+      "AuthMethods": {
+        "type": "object",
+        "properties": {
+          "methods": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "email",
+                "phone",
+                "google"
+              ]
+            },
+            "description": "Enabled sign-in methods, in display order"
+          },
+          "email": {
+            "type": "boolean"
+          },
+          "phone": {
+            "type": "boolean"
+          },
+          "google": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "methods",
+          "email",
+          "phone",
+          "google"
+        ],
+        "additionalProperties": false
+      },
       "GuestLesson": {
         "type": "object",
         "properties": {
@@ -14149,6 +14214,46 @@
                     "status"
                   ],
                   "additionalProperties": false
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/auth/methods": {
+      "get": {
+        "summary": "Enabled sign-in methods (the login sheet hides the others)",
+        "tags": [
+          "auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthMethods"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
                 }
               }
             }

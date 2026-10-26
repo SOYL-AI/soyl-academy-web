@@ -20,8 +20,8 @@ sections:
     title: Section B - Creative Writing Skills (18)
     instructions: Q3 notice (4), Q4 invitation/reply (4), Q5 letter (5), Q6 article/report (5). Attempt A or B in each.
     items:
-      - {type: long, count: 4, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
-      - {type: long, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 4, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
   - id: C
     title: Section C - Literature (40)
     instructions: >-
@@ -42,6 +42,6 @@ notes: |-
   120-150 words 5; each A or B), C Literature 40 (Q7 Flamingo poetry extract 6, Q8 Vistas prose extract 4, Q9 Flamingo prose extract 6 -
   each choose one of two extracts; Q10 any 5 of 6 short answers 40-50 words; Q11 any 2 of 3 (Vistas) 40-50 words; Q12 and Q13 one of two
   long answers 120-150 words, Flamingo and Vistas). The design table lists competencies per section without percentages, so mark_shares
-  is empty. FORMAT MAPPING: writing tasks (notice, invitation, letter, article, report) have no QuestionType; mapped to long (4-5 marks,
-  with format/content/expression rubric in the marking scheme). Reading passages are case-based (MCQ, short-answer and vocabulary
+  is empty. FORMAT MAPPING: writing tasks (notice, invitation, letter, article, report) are 'writing' items (contract v2: format, word_limit
+  and the format/content/expression rubric from the marking scheme, 4-5 marks). Reading passages are case-based (MCQ, short-answer and vocabulary
   children); literature extracts are source-based.

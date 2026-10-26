@@ -17,6 +17,7 @@ GET    /v1/attempts/:id/ai-evaluation         roles=student|parent|reviewer|admi
 GET    /v1/attempts/:id/result                roles=student|parent|reviewer|admin csrf=true rl=default+attempt.read.user consent=test_attempts
 GET    /v1/auth/google/callback               roles=guest|student|parent|reviewer|admin csrf=true rl=default+auth.ip (fail-closed) consent=no
 GET    /v1/auth/google/start                  roles=guest|student|parent|reviewer|admin csrf=true rl=default+auth.ip (fail-closed) consent=no
+GET    /v1/auth/methods                       roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/catalog/:board/:class/subjects     roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/catalog/boards                     roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/catalog/subjects/:id/chapters      roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
