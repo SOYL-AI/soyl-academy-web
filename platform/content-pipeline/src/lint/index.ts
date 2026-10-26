@@ -87,6 +87,24 @@ const LOST_BACKSLASH = /(^|[^\\A-Za-z])(ce|frac|dfrac|tfrac|sqrt|text|mathrm|mat
 /** JSON escapes that swallow a LaTeX backslash: \f(rac) → form feed, \b(eta) → backspace, \t(imes|ext|heta) → tab, \r(ightarrow) → CR, \n(eq|u) → newline. */
 const EATEN_ESCAPE = /[\u0008\u000c]|\t(?:imes|ext|heta|au|an|o\b|riangle)|\r(?:ightarrow|ho|m\b)|\n(?:eq|u\b|abla|ewline)/;
 
+/**
+ * Inside maths: command names that appear without their backslash (a lost JSON escape) even when
+ * no brace follows (`Rightarrow`, `times`, `ne` …). Text arguments (\text{…}, \mathrm{…}, \ce{…},
+ * \operatorname{…}) are removed first, so words there are fine.
+ */
+const BARE_COMMAND = /(?<![\\A-Za-z])(Rightarrow|Leftarrow|Leftrightarrow|rightarrow|leftarrow|implies|times|div|cdot|frac|dfrac|tfrac|sqrt|pm|mp|neq|ne|leq|le|geq|ge|approx|equiv|cong|sim|parallel|perp|angle|triangle|therefore|because|infty|alpha|beta|gamma|delta|theta|lambda|sigma|omega|pi|circ)(?![A-Za-z])/;
+const TEXT_ARGS = /\\(?:text|textbf|textit|mathrm|mathbf|mathit|operatorname|mbox|ce|pu)\s*\{(?:[^{}]|\{[^{}]*\})*\}/g;
+/** Control characters inside a maths span (a JSON "\ne" that was not doubled becomes newline + "e"). */
+const MATH_CONTROL = /[\u0000-\u0009\u000b-\u001f]/;
+const DISPLAY_EATEN = /\n(?:e|eq|u|abla|ewline|ot|eg)(?![A-Za-z])/;
+
+/**
+ * Arithmetic opt-out for deliberately false statements ("Riya wrote $2 + 3 = 6$, which is wrong").
+ * Preferred: write a false claim with \ne. Otherwise the text around the span must say so: "wrong",
+ * "incorrect", "mistake", "is false", "not true" (Hindi: गलत, त्रुटि).
+ */
+export const ARITHMETIC_OPT_OUT = /\b(?:wrong(?:ly)?|incorrect(?:ly)?|mistaken(?:ly)?|mistakes?|is false|not true|deliberately false)\b|गलत|त्रुटि/i;
+
 /** Narration is read by TTS: no LaTeX, symbols, arrows or formulae. */
 const NARRATION_SYMBOLS = /[$\\^_=<>→⇌↑↓×÷±√∞≈≠≤≥°Ω₀-₉⁰-⁹]|(?:^|[^A-Za-z])(?:[A-Z][a-z]?\d+(?:[A-Z][a-z]?\d*)*|(?:[A-Z][a-z]?){2,}\d+)(?![A-Za-z])/;
 
@@ -154,10 +172,22 @@ class Collector {
     if (r.error) this.add(item, 'math.katex', 'error', path, `KaTeX: ${r.error} in "${tex.slice(0, 80)}"`);
     for (const w of r.warnings.slice(0, 3)) this.add(item, 'math.katex-strict', 'warning', path, w);
     if (own === '') this.escapes(item, path, tex);
+    const bare = BARE_COMMAND.exec(tex.replace(TEXT_ARGS, ' '));
+    if (bare) this.add(item, 'latex.backslash', 'error', path, `"${bare[1]}" in maths without a backslash: an escape was lost (write \\\\${bare[1]} in JSON)`);
+    if (MATH_CONTROL.test(tex) || (!display && tex.includes('\n')) || (display && DISPLAY_EATEN.test(tex)))
+      this.add(item, 'latex.backslash', 'error', path, `line break or control character inside maths "${tex.slice(0, 40).replace(/[\u0000-\u001f]/g, '␤')}": a JSON escape probably ate a backslash (\\ne, \\nu, \\theta …)`);
     for (const body of ceBodies(tex)) this.balance(item, path, body, opts, own || tex);
-    if (opts.arithmetic)
+    if (opts.arithmetic && !this.arithmeticOptOut(tex, own))
       for (const slip of checkArithmetic(tex))
         this.add(item, 'math.arithmetic', 'error', path, `"${slip.left} = ${slip.right}" does not hold (${+slip.leftValue.toFixed(6)} ≠ ${+slip.rightValue.toFixed(6)}); use \\approx for rounded values`);
+  }
+
+  /** True when the text around a maths span says the statement is deliberately wrong. */
+  private arithmeticOptOut(tex: string, own: string): boolean {
+    if (!own) return false;
+    const at = own.indexOf(tex);
+    const around = at < 0 ? own : own.slice(Math.max(0, at - 120), at + tex.length + 80);
+    return ARITHMETIC_OPT_OUT.test(around);
   }
 
   visual(item: string, path: string, v: Visual | null | undefined, opts: TextOpts = {}) {
@@ -387,6 +417,8 @@ function lintBank(c: Collector, questions: QuestionT[]) {
     if (higher < COMPETENCY_BAND.min || higher > COMPETENCY_BAND.max)
       c.add('questions', 'balance.competency', 'warning', 'questions', `${Math.round(higher * 100)}% of items are application or above (board papers ≈ 50%; band ${COMPETENCY_BAND.min * 100}–${COMPETENCY_BAND.max * 100}%)`);
     if (!questions.some((q) => q.difficulty >= 4)) c.add('questions', 'balance.difficulty', 'warning', 'questions', 'no difficulty 4–5 items');
+    const skew = answerKeySkew(questions);
+    if (skew) c.add('questions', 'balance.answer-keys', 'warning', 'questions', skew);
   }
 }
 
@@ -493,4 +525,24 @@ export function lintBundle(bundle: UnitBundle, ctx: LintContext): LintReport {
     }
   }
   return report;
+}
+
+/** MCQ answer-key balance: with ≥ 8 single-answer MCQs, warn when one letter holds over 45% of keys or a letter is never the key (≥ 12 MCQs). */
+export const ANSWER_KEY_BALANCE = { minItems: 8, maxShare: 0.45, unusedFrom: 12 } as const;
+
+export function answerKeySkew(questions: Pick<QuestionT, 'type' | 'options' | 'answer'>[]): string | null {
+  const mcqs = questions.filter((q) => q.type === 'mcq' && 'option_ids' in q.answer && q.answer.option_ids.length === 1);
+  if (mcqs.length < ANSWER_KEY_BALANCE.minItems) return null;
+  const counts = new Map<number, number>();
+  for (const q of mcqs) {
+    const pos = q.options.findIndex((o) => 'option_ids' in q.answer && o.id === q.answer.option_ids[0]);
+    counts.set(pos, (counts.get(pos) ?? 0) + 1);
+  }
+  const width = Math.max(...mcqs.map((q) => q.options.length));
+  const letters = Array.from({ length: width }, (_, i) => `${String.fromCharCode(97 + i)} ${counts.get(i) ?? 0}`).join(', ');
+  const [topPos, top] = [...counts.entries()].sort((a, b) => b[1] - a[1])[0]!;
+  if (top / mcqs.length > ANSWER_KEY_BALANCE.maxShare)
+    return `MCQ keys are skewed: option ${String.fromCharCode(97 + topPos)} is correct in ${top} of ${mcqs.length} (${letters}); spread the keys`;
+  if (mcqs.length >= ANSWER_KEY_BALANCE.unusedFrom && width === 4 && counts.size < 4) return `MCQ keys never use some positions (${letters}); spread the keys`;
+  return null;
 }

@@ -32,7 +32,16 @@ export const PlotVisual = z.object({
     functions: z
       .array(z.object({ expr: z.string().min(1).max(200), label: z.string().optional(), domain: Point.optional() }))
       .default([]),
-    points: z.array(z.object({ at: Point, label: z.string().optional() })).default([]),
+    /**
+     * Marked points. Lint requires each to lie on one of the functions (or a vline/hline) unless
+     * `on_curve: false`; when any marked point is a zero of a function, every real zero of that
+     * function in view must be marked.
+     */
+    points: z.array(z.object({ at: Point, label: z.string().optional(), on_curve: z.boolean().optional() })).default([]),
+    /** Vertical lines x = c (asymptotes, x = 3, axes of symmetry). Contract v2 (M2). */
+    vlines: z.array(z.object({ x: z.number(), label: z.string().optional(), dashed: z.boolean().optional() })).optional(),
+    /** Horizontal lines y = c. Contract v2 (M2). */
+    hlines: z.array(z.object({ y: z.number(), label: z.string().optional(), dashed: z.boolean().optional() })).optional(),
     series: z
       .array(z.object({ label: z.string(), points: z.array(Point), kind: z.enum(['line', 'bar', 'scatter']).default('line') }))
       .default([]),

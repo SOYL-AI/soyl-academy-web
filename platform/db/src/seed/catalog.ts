@@ -108,7 +108,8 @@ export async function seedCatalog(db: Database, opts: { dir?: string; log?: Log 
     }
     return [{ file: rel(f), data: parsed.data }];
   });
-  const blueprintFiles = walk(dir, (r) => /\/blueprints\/[^/]+\.ya?ml$/.test(r)).flatMap((f) => {
+  // Subject blueprints live in <subject>/blueprints/; class defaults in <board>/blueprints/<class>/.
+  const blueprintFiles = walk(dir, (r) => /\/blueprints\/(?:\d{1,2}\/)?[^/]+\.ya?ml$/.test(r)).flatMap((f) => {
     const parsed = Blueprint.safeParse(readYaml(f));
     if (!parsed.success) {
       report.errors.push(zodMessage(rel(f), parsed.error));

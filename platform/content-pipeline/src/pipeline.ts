@@ -18,6 +18,8 @@ import { loadCatalog, type Catalog, type Scope } from './catalog';
 import { MOCK_FIXTURES } from './mock-fixtures';
 import { defaultPaths, type PipelinePaths } from './paths';
 import type { ItemSpec } from './requests';
+import { DbAccess } from './stores';
+import { blobStoreFromEnv, type BlobStore } from './blob';
 import { FileStateStore, newRunId, type ItemRecord, type ItemStatus, type RunRecord, type Stage, type StateStore } from './state';
 
 export interface PipelineOptions {
@@ -50,11 +52,15 @@ export interface Pipeline {
   opts: PipelineOptions;
   env: Record<string, string | undefined>;
   log: (line: string) => void;
+  /** Postgres for publish/assemble/coverage/rollback and the pg state store (opened on first use). */
+  dbAccess: DbAccess;
+  /** Content releases and narration audio (local out/blob, or Azure Blob when configured). */
+  blob: BlobStore;
 }
 
 export function openPipeline(
   partial: Partial<PipelineOptions> = {},
-  overrides: { paths?: Partial<PipelinePaths>; env?: Record<string, string | undefined>; log?: (l: string) => void; store?: StateStore; catalog?: Catalog } = {},
+  overrides: { paths?: Partial<PipelinePaths>; env?: Record<string, string | undefined>; log?: (l: string) => void; store?: StateStore; catalog?: Catalog; dbAccess?: DbAccess; blob?: BlobStore } = {},
 ): Pipeline {
   const env = overrides.env ?? process.env;
   const paths = { ...defaultPaths(env), ...overrides.paths };
@@ -65,6 +71,8 @@ export function openPipeline(
     opts: { ...DEFAULT_OPTIONS, ...partial },
     env,
     log: overrides.log ?? ((l) => console.log(l)),
+    dbAccess: overrides.dbAccess ?? new DbAccess(env, overrides.log ?? ((l) => console.log(l))),
+    blob: overrides.blob ?? blobStoreFromEnv({ CONTENT_BLOB_DIR: path.join(paths.outDir, 'blob'), ...env }),
   };
 }
 
@@ -123,7 +131,9 @@ export async function startRun(p: Pipeline, command: string, scope: Scope): Prom
   } else {
     run = await p.store.updateRun(run.id, { status: 'running', finished_at: null, message: null, budget: { ...run.budget, run_cap_paise: caps.run, total_cap_paise: caps.total } });
   }
-  const budget = new BudgetGuard({ runCapPaise: caps.run, totalCapPaise: caps.total, spentRunPaise: run.budget.spent_paise, spentTotalPaise: spentTotal });
+  const budget = p.store.budgetFor
+    ? await p.store.budgetFor(run, caps, provider.simulated)
+    : new BudgetGuard({ runCapPaise: caps.run, totalCapPaise: caps.total, spentRunPaise: run.budget.spent_paise, spentTotalPaise: spentTotal });
   const active: ActiveRun = { run, client: null as unknown as ModelClient, paused: false, counts: {} };
   active.client = new ModelClient({
     provider,
@@ -136,7 +146,7 @@ export async function startRun(p: Pipeline, command: string, scope: Scope): Prom
         model: rec.model,
         tier: rec.tier,
         unit: rec.meta?.unit ?? null,
-        stage: rec.meta?.item ? (rec.meta.item === 'outline' ? 'outline' : 'generate') : null,
+        stage: rec.meta?.purpose?.startsWith('stage:') ? (rec.meta.purpose.slice(6) as Stage) : rec.meta?.item ? (rec.meta.item === 'outline' ? 'outline' : 'generate') : null,
         item: rec.meta?.item ?? null,
         usage: rec.usage,
         cost_paise: rec.cost_paise,

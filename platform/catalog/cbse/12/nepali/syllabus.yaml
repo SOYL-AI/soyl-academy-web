@@ -1,0 +1,337 @@
+# CBSE Class 12 Nepali (124), 2026-27. Sections, marks, grammar items, prescribed texts with authors, writers for
+# Prativa Parichaya and writing tasks as printed in the CBSE 2026-27 Nepali Classes XI-XII syllabus (Class XII table). Books:
+# Katha Sangraha, Nibandha Sangraha, Ekanki Sangraha, Prativa Parichaya, Juneli Rekha (Janapaksha Prakashan,
+# Gangtok), Ritu Vichar (Lekhnath Paudyal), Nepali Sahityako Aitihasik Parichaya (Dr. Tara Nath Sharma) and Nepali Madhyamik
+# Vyakaran ra Rachana. CBSE prints titles in Roman transliteration; the Devanagari spellings are ours and title_en keeps
+# CBSE's Roman form for a native-speaker check. No text is reproduced (CONTEXT §8).
+subject_id: cbse-12-nepali
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-nepali-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+exam_notes: >-
+  Total 100 = theory 80 (3 hours) + internal assessment 20. Part A (MCQ): grammar 12 (chhanda - introduction,
+  importance, elements, gana, and the anushtup, totak, shikharini and shlesh metres; alankar - introduction, importance,
+  kinds, upama and atishayokti); Ritu Vichar (Basanta and Hemanta cantos only, seen extract) 8. Part B (short answer):
+  novel Juneli Rekha (seen extract) 10; Prativa Parichaya 6; Katha Sangraha 12; Nibandha Sangraha 8; Ekanki Sangraha 8;
+  history of Nepali literature (introduction to the Nepali language; the Nepali novel) 6; essay 5 and letter 5 (long
+  answer).
+units:
+  - name: 'भाग क: व्याकरण (छन्द र अलङ्कार)'
+    marks: 12
+  - name: 'भाग क: ऋतुविचार (खण्डकाव्य)'
+    marks: 8
+  - name: 'भाग ख: उपन्यास'
+    marks: 10
+  - name: 'भाग ख: प्रतिभा परिचय'
+    marks: 6
+  - name: 'भाग ख: कथा सङ्ग्रह'
+    marks: 12
+  - name: 'भाग ख: निबन्ध सङ्ग्रह'
+    marks: 8
+  - name: 'भाग ख: एकाङ्की सङ्ग्रह'
+    marks: 8
+  - name: 'भाग ख: नेपाली साहित्यको ऐतिहासिक परिचय'
+    marks: 6
+  - name: 'भाग ख: लेखन र रचना'
+    marks: 10
+chapters:
+  - id: cbse-12-nepali-ch01
+    number: 1
+    title: छन्द
+    title_en: Chhanda (prosody)
+    unit: 'भाग क: व्याकरण (छन्द र अलङ्कार)'
+    topics:
+      - id: cbse-12-nepali-ch01-t01
+        title: छन्दको परिचय, महत्त्व र तत्त्व
+        title_en: Introduction, importance and elements of chhanda
+        learning_outcomes:
+          - Explain what chhanda is, why it matters and its elements (yati, gati, charan, matra, varna)
+      - id: cbse-12-nepali-ch01-t02
+        title: गण परिचय
+        title_en: Gana (metrical feet)
+        learning_outcomes:
+          - Identify the eight ganas and mark laghu and guru syllables in a line
+      - id: cbse-12-nepali-ch01-t03
+        title: अनुष्टुप्, तोटक, शिखरिणी र श्लेष
+        title_en: Anushtup, Totak, Shikharini and Shlesh
+        learning_outcomes:
+          - Identify these metres in given lines from their pattern
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-nepali-ch02
+    number: 2
+    title: अलङ्कार
+    title_en: Alankar (figures of speech)
+    unit: 'भाग क: व्याकरण (छन्द र अलङ्कार)'
+    topics:
+      - id: cbse-12-nepali-ch02-t01
+        title: अलङ्कारको परिचय, महत्त्व र प्रकार
+        title_en: Introduction, importance and kinds of alankar
+        learning_outcomes:
+          - Explain the role of alankar in poetry and distinguish shabdalankar from arthalankar
+      - id: cbse-12-nepali-ch02-t02
+        title: उपमा र अतिशयोक्ति
+        title_en: Upama and atishayokti
+        learning_outcomes:
+          - Identify upama and atishayokti in given lines and explain their effect
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-nepali-ch03
+    number: 3
+    title: 'ऋतुविचार: वसन्त र हेमन्त'
+    title_en: 'Ritu Vichar: Basanta and Hemanta (Leknath Paudyal)'
+    unit: 'भाग क: ऋतुविचार (खण्डकाव्य)'
+    topics:
+      - id: cbse-12-nepali-ch03-t01
+        title: वसन्त
+        title_en: Basanta (spring canto)
+        learning_outcomes:
+          - Explain the description of spring, its imagery and message
+      - id: cbse-12-nepali-ch03-t02
+        title: हेमन्त
+        title_en: Hemanta (early-winter canto)
+        learning_outcomes:
+          - Explain the description of hemanta, its imagery and message
+      - id: cbse-12-nepali-ch03-t03
+        title: पठित पद्यांश बोध
+        title_en: Seen extract for comprehension
+        learning_outcomes:
+          - Answer multiple-choice questions on a seen extract from the two cantos
+    removed_topics: []
+    literature_texts:
+      - title: ऋतुविचार
+        author: लेखनाथ पौड्याल
+        title_en: Ritu Vichar
+  - id: cbse-12-nepali-ch04
+    number: 4
+    title: 'उपन्यास: जुनेली रेखा'
+    title_en: 'Novel: Juneli Rekha (Indra Sundas)'
+    unit: 'भाग ख: उपन्यास'
+    topics:
+      - id: cbse-12-nepali-ch04-t01
+        title: कथावस्तु र मूल भाव
+        title_en: Plot and themes
+        learning_outcomes:
+          - Summarise the plot of Juneli Rekha and explain its themes
+      - id: cbse-12-nepali-ch04-t02
+        title: पात्र र परिवेश
+        title_en: Characters and setting
+        learning_outcomes:
+          - Analyse the main characters and the social setting of the novel
+      - id: cbse-12-nepali-ch04-t03
+        title: पठित गद्यांश बोध
+        title_en: Seen extract for comprehension
+        learning_outcomes:
+          - Answer short questions on a seen extract from the novel
+    removed_topics: []
+    literature_texts:
+      - title: जुनेली रेखा
+        author: इन्द्र सुन्दास
+        title_en: Juneli Rekha
+  - id: cbse-12-nepali-ch05
+    number: 5
+    title: प्रतिभा परिचय
+    title_en: 'Prativa Parichaya: introduction to writers'
+    unit: 'भाग ख: प्रतिभा परिचय'
+    topics:
+      - id: cbse-12-nepali-ch05-t01
+        title: लेखनाथ पौड्याल
+        title_en: Leknath Paudyal
+        learning_outcomes:
+          - Write a short introduction to the life, major works and literary contribution of Leknath Paudyal
+      - id: cbse-12-nepali-ch05-t02
+        title: बालकृष्ण सम
+        title_en: Balkrishna Sama
+        learning_outcomes:
+          - Write a short introduction to the life, major works and literary contribution of Balkrishna Sama
+      - id: cbse-12-nepali-ch05-t03
+        title: पारिजात
+        title_en: Parijat
+        learning_outcomes:
+          - Write a short introduction to the life, major works and literary contribution of Parijat
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-nepali-ch06
+    number: 6
+    title: त्यो फेरि फर्केला
+    title_en: Tyo Feri Farkala (Bhawani Bhikshu)
+    unit: 'भाग ख: कथा सङ्ग्रह'
+    topics:
+      - id: cbse-12-nepali-ch06-t01
+        title: 'त्यो फेरि फर्केला: सारांश र मूल भाव'
+        title_en: 'Tyo Feri Farkala: Summary and central idea'
+        learning_outcomes:
+          - Narrate the plot of the story and explain its theme and message
+      - id: cbse-12-nepali-ch06-t02
+        title: 'त्यो फेरि फर्केला: पात्र, शैली र प्रश्नोत्तर'
+        title_en: 'Tyo Feri Farkala: Characters, style and question practice'
+        learning_outcomes:
+          - Analyse the main characters and the ending
+          - Answer short-answer questions on the text in the language, giving reasons from the text
+    removed_topics: []
+    literature_texts:
+      - title: त्यो फेरि फर्केला
+        author: भवानी भिक्षु
+        title_en: Tyo Feri Farkala
+  - id: cbse-12-nepali-ch07
+    number: 7
+    title: रूपको मूल्य
+    title_en: Rupko Mulya (Bal Krishna Sama)
+    unit: 'भाग ख: कथा सङ्ग्रह'
+    topics:
+      - id: cbse-12-nepali-ch07-t01
+        title: 'रूपको मूल्य: सारांश र मूल भाव'
+        title_en: 'Rupko Mulya: Summary and central idea'
+        learning_outcomes:
+          - Narrate the plot of the story and explain its theme and message
+      - id: cbse-12-nepali-ch07-t02
+        title: 'रूपको मूल्य: पात्र, शैली र प्रश्नोत्तर'
+        title_en: 'Rupko Mulya: Characters, style and question practice'
+        learning_outcomes:
+          - Analyse the main characters and the ending
+          - Answer short-answer questions on the text in the language, giving reasons from the text
+    removed_topics: []
+    literature_texts:
+      - title: रूपको मूल्य
+        author: बालकृष्ण सम
+        title_en: Rupko Mulya
+  - id: cbse-12-nepali-ch08
+    number: 8
+    title: उज्यालीको आँसु
+    title_en: Ujyali ko Aansu (Hridaya Chandra Singh Pradhan)
+    unit: 'भाग ख: कथा सङ्ग्रह'
+    topics:
+      - id: cbse-12-nepali-ch08-t01
+        title: 'उज्यालीको आँसु: सारांश र मूल भाव'
+        title_en: 'Ujyali ko Aansu: Summary and central idea'
+        learning_outcomes:
+          - Narrate the plot of the story and explain its theme and message
+      - id: cbse-12-nepali-ch08-t02
+        title: 'उज्यालीको आँसु: पात्र, शैली र प्रश्नोत्तर'
+        title_en: 'Ujyali ko Aansu: Characters, style and question practice'
+        learning_outcomes:
+          - Analyse the main characters and the ending
+          - Answer short-answer questions on the text in the language, giving reasons from the text
+    removed_topics: []
+    literature_texts:
+      - title: उज्यालीको आँसु
+        author: हृदयचन्द्रसिंह प्रधान
+        title_en: Ujyali ko Aansu
+  - id: cbse-12-nepali-ch09
+    number: 9
+    title: हाइ हाइ अङ्ग्रेजी
+    title_en: Hai Hai Angreji (Laxmiprasad Devkota)
+    unit: 'भाग ख: निबन्ध सङ्ग्रह'
+    topics:
+      - id: cbse-12-nepali-ch09-t01
+        title: 'हाइ हाइ अङ्ग्रेजी: सारांश र मूल भाव'
+        title_en: 'Hai Hai Angreji: Summary and central idea'
+        learning_outcomes:
+          - Explain the main argument and ideas of the essay
+      - id: cbse-12-nepali-ch09-t02
+        title: 'हाइ हाइ अङ्ग्रेजी: पात्र, शैली र प्रश्नोत्तर'
+        title_en: 'Hai Hai Angreji: Characters, style and question practice'
+        learning_outcomes:
+          - Comment on the writer's style and point of view
+          - Answer short-answer questions on the text in the language, giving reasons from the text
+    removed_topics: []
+    literature_texts:
+      - title: हाइ हाइ अङ्ग्रेजी
+        author: लक्ष्मीप्रसाद देवकोटा
+        title_en: Hai Hai Angreji
+  - id: cbse-12-nepali-ch10
+    number: 10
+    title: हाम्रो राष्ट्रिय चाड र सयपत्री फूल
+    title_en: Hamro Rastriya Chaad ra Sayapatri Phul (Vishnuram Rai)
+    unit: 'भाग ख: निबन्ध सङ्ग्रह'
+    topics:
+      - id: cbse-12-nepali-ch10-t01
+        title: 'हाम्रो राष्ट्रिय चाड र सयपत्री फूल: सारांश र मूल भाव'
+        title_en: 'Hamro Rastriya Chaad ra Sayapatri Phul: Summary and central idea'
+        learning_outcomes:
+          - Explain the main argument and ideas of the essay
+      - id: cbse-12-nepali-ch10-t02
+        title: 'हाम्रो राष्ट्रिय चाड र सयपत्री फूल: पात्र, शैली र प्रश्नोत्तर'
+        title_en: 'Hamro Rastriya Chaad ra Sayapatri Phul: Characters, style and question practice'
+        learning_outcomes:
+          - Comment on the writer's style and point of view
+          - Answer short-answer questions on the text in the language, giving reasons from the text
+    removed_topics: []
+    literature_texts:
+      - title: हाम्रो राष्ट्रिय चाड र सयपत्री फूल
+        author: विष्णुराम राई
+        title_en: Hamro Rastriya Chaad ra Sayapatri Phul
+  - id: cbse-12-nepali-ch11
+    number: 11
+    title: 'नाटक: साधारण परिचय'
+    title_en: 'Drama: a general introduction'
+    unit: 'भाग ख: एकाङ्की सङ्ग्रह'
+    topics:
+      - id: cbse-12-nepali-ch11-t01
+        title: नाटकको परिभाषा, तत्त्व र प्रकार
+        title_en: Definition, elements and kinds of drama
+        learning_outcomes:
+          - Define drama, explain its elements and distinguish the full-length play from the one-act play
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-nepali-ch12
+    number: 12
+    title: बन्दिनी
+    title_en: Bandini (Indramani Darnal)
+    unit: 'भाग ख: एकाङ्की सङ्ग्रह'
+    topics:
+      - id: cbse-12-nepali-ch12-t01
+        title: 'बन्दिनी: सारांश र मूल भाव'
+        title_en: 'Bandini: Summary and central idea'
+        learning_outcomes:
+          - Summarise the plot of the play and explain its conflict and message
+      - id: cbse-12-nepali-ch12-t02
+        title: 'बन्दिनी: पात्र, शैली र प्रश्नोत्तर'
+        title_en: 'Bandini: Characters, style and question practice'
+        learning_outcomes:
+          - Describe the main characters and the use of dialogue
+          - Answer short-answer questions on the text in the language, giving reasons from the text
+    removed_topics: []
+    literature_texts:
+      - title: बन्दिनी
+        author: इन्द्रमणि दर्नाल
+        title_en: Bandini
+  - id: cbse-12-nepali-ch13
+    number: 13
+    title: नेपाली साहित्यको ऐतिहासिक परिचय
+    title_en: Historical introduction to Nepali literature
+    unit: 'भाग ख: नेपाली साहित्यको ऐतिहासिक परिचय'
+    topics:
+      - id: cbse-12-nepali-ch13-t01
+        title: नेपाली भाषाको परिचय
+        title_en: Introduction to the Nepali language
+        learning_outcomes:
+          - Describe the origin, development and spread of the Nepali language
+      - id: cbse-12-nepali-ch13-t02
+        title: नेपाली उपन्यास
+        title_en: The Nepali novel
+        learning_outcomes:
+          - Trace the development of the Nepali novel and name major novelists and their works
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-nepali-ch14
+    number: 14
+    title: लेखन र रचना
+    title_en: Writing and composition
+    unit: 'भाग ख: लेखन र रचना'
+    topics:
+      - id: cbse-12-nepali-ch14-t01
+        title: निबन्ध लेखन
+        title_en: Essay writing
+        learning_outcomes:
+          - Write a well-organised essay in Nepali on a given social, literary or current topic
+      - id: cbse-12-nepali-ch14-t02
+        title: पत्र लेखन
+        title_en: Letter writing
+        learning_outcomes:
+          - Write a personal letter or a formal application in Nepali with the correct layout and register
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

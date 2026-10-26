@@ -1,0 +1,147 @@
+# CBSE Class 11 Arabic (116), 2026-27. Sections, marks, writing tasks and grammar items as printed in the CBSE 2026-27
+# Arabic Classes XI-XII syllabus (Class XI page). Prescribed book: Minhaj al-Ta'lim al-Thanawi al-'Ali lil-Lughat
+# al-'Arabiyah, Class XI (CBSE, Delhi, 2011). CBSE names lessons only by number (for summaries), so the literature
+# chapter carries placeholder topics until the book contents page is supplied. No text is reproduced (CONTEXT §8).
+subject_id: cbse-11-arabic
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-arabic-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+exam_notes: >-
+  Theory 80 marks (3 hours) + internal assessment 20 (handwriting 4, reading a short passage without diacritics 4,
+  Arabic speaking 4, oral applied grammar 4, project 4). Section A Advanced reading 10: two of three unseen passages of
+  150 words, five MCQs each. Section B Writing 15: letter on a given topic (1 address + 4 content) 5; summary of a
+  textbook lesson in about 50 words (lessons 1, 3, 5, 6, 9, 11, 13, 16, 19, 20) 5; a longer composition (essay, story or
+  incident) of about 100 words 5. Section C Grammar 20: definitions and examples 10 and applied grammar as MCQs 5+5.
+  Section D Literature 35: prose - translation of two of three passages of about 50 words 16, six MCQs on a passage 4,
+  diacritical marking 5; poetry - explanation of five given verses 6, four MCQs on given verses 4. Class XI is examined
+  by the school (no board exam).
+units:
+  - name: 'القسم أ: مهارات القراءة المتقدمة'
+    marks: 10
+  - name: 'القسم ب: مهارات الكتابة الفعالة'
+    marks: 15
+  - name: 'القسم ج: القواعد (النظرية والتطبيق)'
+    marks: 20
+  - name: 'القسم د: الأدب'
+    marks: 35
+chapters:
+  - id: cbse-11-arabic-ch01
+    number: 1
+    title: مهارات القراءة المتقدمة
+    title_en: Advanced reading skills (unseen passages)
+    unit: 'القسم أ: مهارات القراءة المتقدمة'
+    topics:
+      - id: cbse-11-arabic-ch01-t01
+        title: قطع غير مقروءة (١٥٠ كلمة)
+        title_en: Unseen passages of 150 words
+        learning_outcomes:
+          - Read unseen Arabic passages of about 150 words and answer multiple-choice questions on them
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-arabic-ch02
+    number: 2
+    title: مهارات الكتابة الفعالة
+    title_en: Effective writing skills
+    unit: 'القسم ب: مهارات الكتابة الفعالة'
+    topics:
+      - id: cbse-11-arabic-ch02-t01
+        title: كتابة الرسالة
+        title_en: Letter writing on a given topic
+        learning_outcomes:
+          - Write a letter in Arabic with the correct address, format and content
+      - id: cbse-11-arabic-ch02-t02
+        title: تلخيص درس من الكتاب (حوالي 50 كلمة)
+        title_en: Summary of a textbook lesson (about 50 words; lessons 1, 3, 5, 6, 9, 11, 13, 16, 19, 20)
+        learning_outcomes:
+          - Summarise a prescribed lesson in about 50 words of their own Arabic
+      - id: cbse-11-arabic-ch02-t03
+        title: 'الإنشاء: مقالة أو قصة أو حادثة (حوالي ١٠٠ كلمة)'
+        title_en: 'Composition: essay, story or incident (about 100 words)'
+        learning_outcomes:
+          - Write a composition of about 100 words on something read, heard or experienced
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-arabic-ch03
+    number: 3
+    title: الجمل والتوابع والاستثناء
+    title_en: Sentence types, appositives (tawabi') and exception
+    unit: 'القسم ج: القواعد (النظرية والتطبيق)'
+    topics:
+      - id: cbse-11-arabic-ch03-t01
+        title: الجملة الخبرية والإنشائية
+        title_en: Declarative and non-declarative sentences (khabariyya and insha'iyya)
+        learning_outcomes:
+          - Distinguish khabari and insha'i sentences with examples
+      - id: cbse-11-arabic-ch03-t02
+        title: 'التوابع: التأكيد والبدل'
+        title_en: 'Tawabi'': ta''kid and badal'
+        learning_outcomes:
+          - Identify emphasis and substitution and give their case
+      - id: cbse-11-arabic-ch03-t03
+        title: المستثنى والمستثنى منه وحروف الاستثناء
+        title_en: 'Exception: mustathna, mustathna minhu and particles of istithna'''
+        learning_outcomes:
+          - Form sentences of exception and mark the mustathna correctly
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-arabic-ch04
+    number: 4
+    title: المنصوبات وأبواب الفعل
+    title_en: Accusatives; verb forms
+    unit: 'القسم ج: القواعد (النظرية والتطبيق)'
+    topics:
+      - id: cbse-11-arabic-ch04-t01
+        title: الحال وذو الحال والتمييز ولا النافية للجنس
+        title_en: Hal and dhu al-hal, tamyiz, la li-nafy al-jins
+        learning_outcomes:
+          - Identify and use hal, tamyiz and la of absolute negation
+      - id: cbse-11-arabic-ch04-t02
+        title: الثلاثي المجرد (ستة أبواب)
+        title_en: Bare triliteral verb (six patterns only)
+        learning_outcomes:
+          - Conjugate verbs of the six triliteral patterns
+      - id: cbse-11-arabic-ch04-t03
+        title: أبواب الثلاثي المزيد فيه
+        title_en: >-
+          Augmented triliteral forms: if'al, taf'il, mufa'ala, infi'al, istif'al (ifti'al, tafa''ul and tafa'ul not
+          examined)
+        learning_outcomes:
+          - Form and recognise the prescribed derived verb forms
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-arabic-ch05
+    number: 5
+    title: القواعد التطبيقية
+    title_en: Applied grammar (MCQ)
+    unit: 'القسم ج: القواعد (النظرية والتطبيق)'
+    topics:
+      - id: cbse-11-arabic-ch05-t01
+        title: تطبيق القواعد المقررة
+        title_en: Application of the prescribed grammar
+        learning_outcomes:
+          - Answer multiple-choice questions applying the prescribed grammar items
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-arabic-ch06
+    number: 6
+    title: 'الكتاب المقرر: منهاج التعليم الثانوي العالي للغة العربية'
+    title_en: 'Prescribed textbook: Minhaj al-Ta''lim al-Thanawi al-''Ali (prose and poetry)'
+    unit: 'القسم د: الأدب'
+    topics:
+      - id: cbse-11-arabic-ch06-t01
+        title: دروس النثر (قائمة العناوين مطلوبة)
+        title_en: Prose lessons (lesson list pending textbook contents page)
+        learning_outcomes:
+          - Translate prescribed prose passages of about 50 words
+          - Answer MCQs on a passage from a lesson and add diacritical marks to a text
+      - id: cbse-11-arabic-ch06-t02
+        title: القصائد (قائمة العناوين مطلوبة)
+        title_en: Poems (lesson list pending textbook contents page)
+        learning_outcomes:
+          - Explain prescribed verses with reference to the context
+          - Answer MCQs on given verses
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

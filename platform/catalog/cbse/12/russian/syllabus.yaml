@@ -1,0 +1,104 @@
+# CBSE Class 12 Russian (121), 2026-27. Sections and marks as printed in the CBSE 2026-27 Russian Classes XI-XII
+# syllabus (Class XII page). Prescribed book: "Russkii Yazyk" - Russian for Children, a textbook for foreign
+# students by M. N. Vityutnev and others, Book VI, lessons 1-15. CBSE names neither the lesson titles nor the grammar
+# topics (grammar is "based on the lessons"), so the grammar and textbook chapters carry placeholder topics until the
+# book's contents page is supplied. No text is reproduced (CONTEXT §8).
+subject_id: cbse-12-russian
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-russian-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+exam_notes: >-
+  Theory 80 marks (3 hours) + internal assessment 20 (listening and speaking, including interpreting short texts between
+  Russian and English, 10; a small project on Russian culture and civilisation - cinema, climate, sports, songs or
+  poetry - 5; a write-up in Russian or English on their experience of learning Russian 5). Section A Applied grammar 40,
+  based on the lessons of the prescribed book. Section B Reading 10: an unseen passage of 150-200 words with 4-5 short
+  questions answered in Russian. Section C Composition 10: an essay of 150-200 words on everyday life. Section D
+  Textbook 10: questions on the texts of lessons 1-15 answered in Russian. Section E Translation 10: unseen text or
+  sentences from Russian into English and from English into Russian. Board examination in Class XII.
+units:
+  - name: 'Раздел A: Грамматика'
+    marks: 40
+  - name: 'Раздел B: Чтение'
+    marks: 10
+  - name: 'Раздел C: Сочинение'
+    marks: 10
+  - name: 'Раздел D: Тексты учебника'
+    marks: 10
+  - name: 'Раздел E: Перевод'
+    marks: 10
+chapters:
+  - id: cbse-12-russian-ch01
+    number: 1
+    title: Грамматика по урокам учебника
+    title_en: Applied grammar from the lessons of Russkii Yazyk Book VI
+    unit: 'Раздел A: Грамматика'
+    topics:
+      - id: cbse-12-russian-ch01-t01
+        title: Грамматика уроков 1-15 (перечень тем уточняется)
+        title_en: Grammar of lessons 1-15 (topic list pending Russkii Yazyk Book VI contents page)
+        learning_outcomes:
+          - >-
+            Apply the noun, adjective, pronoun and verb forms taught in lessons 1-15 in gap-filling and transformation
+            exercises
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-russian-ch02
+    number: 2
+    title: Чтение и понимание текста
+    title_en: Reading comprehension (unseen passage)
+    unit: 'Раздел B: Чтение'
+    topics:
+      - id: cbse-12-russian-ch02-t01
+        title: Незнакомый текст (150-200 слов)
+        title_en: Unseen passage (150-200 words)
+        learning_outcomes:
+          - Read an unseen Russian text and answer 4-5 questions on it in Russian
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-russian-ch03
+    number: 3
+    title: Сочинение
+    title_en: Essay writing
+    unit: 'Раздел C: Сочинение'
+    topics:
+      - id: cbse-12-russian-ch03-t01
+        title: Сочинение на тему повседневной жизни (150-200 слов)
+        title_en: Essay of 150-200 words on everyday life
+        learning_outcomes:
+          - Write a coherent essay of 150-200 words in Russian on an everyday topic
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-russian-ch04
+    number: 4
+    title: Учебник «Русский язык», книга VI, уроки 1-15
+    title_en: 'Prescribed textbook: Russkii Yazyk Book VI, lessons 1-15'
+    unit: 'Раздел D: Тексты учебника'
+    topics:
+      - id: cbse-12-russian-ch04-t01
+        title: Тексты уроков 1-15 (перечень уточняется)
+        title_en: Lesson texts 1-15 (lesson list pending Russkii Yazyk Book VI contents page)
+        learning_outcomes:
+          - Answer questions in Russian on the texts of lessons 1-15
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-russian-ch05
+    number: 5
+    title: Перевод
+    title_en: Translation
+    unit: 'Раздел E: Перевод'
+    topics:
+      - id: cbse-12-russian-ch05-t01
+        title: Перевод с русского на английский
+        title_en: Translation from Russian into English
+        learning_outcomes:
+          - Translate unseen Russian sentences or a short text into English
+      - id: cbse-12-russian-ch05-t02
+        title: Перевод с английского на русский
+        title_en: Translation from English into Russian
+        learning_outcomes:
+          - Translate unseen English sentences or a short text into Russian with correct case and verb forms
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

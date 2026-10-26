@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Content pipeline CLI (ARCHITECTURE §8): catalog, plan, outline, generate, lint, status, coverage. Run from platform/: npm run content -- <command> ...",
+  "description": "Content pipeline CLI (ARCHITECTURE §8): catalog, plan, outline, generate, lint, verify, originality, assemble, tts, publish, rollback, status, coverage. Run from platform/: npm run content -- <command> ...",
   "exports": {
     "./*": "./src/*.ts"
   },
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@soyl/ai-core": "*",
+    "@soyl/db": "*",
     "@soyl/shared": "*",
     "js-yaml": "^4.1.0",
     "katex": "0.19.0",

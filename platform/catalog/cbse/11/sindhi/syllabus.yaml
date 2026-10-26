@@ -1,0 +1,498 @@
+# CBSE Class 11 Sindhi (108), 2026-27. Sections, marks, grammar items, writing tasks
+# and every prescribed lesson (titles as printed by CBSE in Devanagari Sindhi) from the CBSE 2026-27 Sindhi XI-XII
+# syllabus, Class XI. Books: NIOS Senior Secondary Course 301 Sindhi; Sindhee Din Vaar (Sindhi festivals) section; grammar and usage:
+# Choonda Sindhi Istalah ain Pahaka and Nutan Sindhi Grammar (Usha Saraswat), Sindhi Vyakaran (Gangaram Israni). The CBSE
+# document uses Devanagari script, not the Arabic script listed in subjects.yaml. Titles only; no text is reproduced.
+subject_id: cbse-11-sindhi
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-sindhi-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+exam_notes: >-
+  Class 11 has no board exam; school annual examination 80 marks (3 hours) + internal assessment 20. Unseen prose passage 5 MCQs; unseen
+  poem 5 MCQs; MCQs on prose, poetry and grammar 10; grammar 10; main course book 30; Sindhi festivals 6; creative writing 14 - essay of 500
+  words 6, letter 4, translation from Hindi to Sindhi 4. Grammar: correction and transformation of words and sentences (all grammatical
+  forms), idioms and proverbs.
+units:
+  - name: अणपढ़ियलु नसुर ऐं नज़्म
+    marks: 10
+  - name: साहित्य (MCQ)
+    marks: 10
+  - name: ग्रामर
+    marks: 10
+  - name: दर्सी किताबु
+    marks: 30
+  - name: सिंधी ॾिण वार
+    marks: 6
+  - name: तख़लीक़ी लिखणु
+    marks: 14
+chapters:
+  - id: cbse-11-sindhi-ch01
+    number: 1
+    title: अणपढ़ियलु नसुर जो टुकिरो
+    title_en: Unseen prose passage
+    unit: अणपढ़ियलु नसुर ऐं नज़्म
+    topics:
+      - id: cbse-11-sindhi-ch01-t01
+        title: 'अपठित गद्यांश: MCQ'
+        title_en: 'Unseen prose passage: MCQs'
+        learning_outcomes:
+          - Read an unseen Sindhi passage and answer MCQs testing understanding, reasoning and analysis
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-sindhi-ch02
+    number: 2
+    title: अणपढ़ियल नज़्म
+    title_en: Unseen poem
+    unit: अणपढ़ियलु नसुर ऐं नज़्म
+    topics:
+      - id: cbse-11-sindhi-ch02-t01
+        title: नज़्म ते MCQ
+        title_en: 'Unseen poem: MCQs'
+        learning_outcomes:
+          - Read an unseen Sindhi poem and answer MCQs on meaning, images and message
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-sindhi-ch03
+    number: 3
+    title: साहित्य ऐं ग्रामर ते MCQ
+    title_en: MCQs on prose, poetry and grammar
+    unit: साहित्य (MCQ)
+    topics:
+      - id: cbse-11-sindhi-ch03-t01
+        title: नसुर, नज़्म ऐं ग्रामर जा बहुविकल्पी सुवाल
+        title_en: Multiple-choice questions on textbook prose, poetry and grammar
+        learning_outcomes:
+          - Answer MCQs on the content of the textbook lessons and on applied grammar
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-sindhi-ch04
+    number: 4
+    title: लफ़्ज़नि ऐं जुमिलनि जी बनावट ऐं तब्दीली
+    title_en: Correction and transformation of words and sentences
+    unit: ग्रामर
+    topics:
+      - id: cbse-11-sindhi-ch04-t01
+        title: लफ़्ज़नि जी सुधारी ऐं तब्दीली
+        title_en: Correcting and transforming words
+        learning_outcomes:
+          - Correct and transform words in all grammatical forms
+      - id: cbse-11-sindhi-ch04-t02
+        title: जुमिलनि जी सुधारी ऐं तब्दीली
+        title_en: Correcting and transforming sentences
+        learning_outcomes:
+          - Correct and transform Sindhi sentences as directed
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-sindhi-ch05
+    number: 5
+    title: इस्तलाह ऐं पहाका
+    title_en: Idioms and proverbs
+    unit: ग्रामर
+    topics:
+      - id: cbse-11-sindhi-ch05-t01
+        title: इस्तलाह ऐं पहाका
+        title_en: Idioms and proverbs
+        learning_outcomes:
+          - Explain Sindhi idioms and proverbs and use them in sentences
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-11-sindhi-ch06
+    number: 6
+    title: संत काव्य टेऊंराम
+    title_en: Sant Kavy Teoonram (poem)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-11-sindhi-ch06-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Explain the central idea, mood and message of the poem "Sant Kavy Teoonram"
+          - Interpret key images, figures of speech and lines in their own words without reproducing the text
+      - id: cbse-11-sindhi-ch06-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the poem as set in the board paper
+          - Relate the theme of the poem to their own life and values
+    removed_topics: []
+    literature_texts:
+      - title: संत काव्य टेऊंराम
+        title_en: Sant Kavy Teoonram
+  - id: cbse-11-sindhi-ch07
+    number: 7
+    title: चूंड सिंधी शाइर
+    title_en: Choond Sindhi Shayar (poem)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-11-sindhi-ch07-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Explain the central idea, mood and message of the poem "Choond Sindhi Shayar"
+          - Interpret key images, figures of speech and lines in their own words without reproducing the text
+      - id: cbse-11-sindhi-ch07-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the poem as set in the board paper
+          - Relate the theme of the poem to their own life and values
+    removed_topics: []
+    literature_texts:
+      - title: चूंड सिंधी शाइर
+        title_en: Choond Sindhi Shayar
+  - id: cbse-11-sindhi-ch08
+    number: 8
+    title: सिंधी लोक कला
+    title_en: Sindhi Lok Kala (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-11-sindhi-ch08-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Sindhi Lok Kala" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-11-sindhi-ch08-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: सिंधी लोक कला
+        title_en: Sindhi Lok Kala
+  - id: cbse-11-sindhi-ch09
+    number: 9
+    title: डॉक्टर चोइथराम गिदवाणी
+    title_en: Doctor Choithram Gidwani (life sketch)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-11-sindhi-ch09-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the life and achievements described in "Doctor Choithram Gidwani"
+          - Identify the qualities of the person presented and the events that shaped them
+      - id: cbse-11-sindhi-ch09-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the lesson as set in the board paper
+          - Draw lessons for their own life from the person described
+    removed_topics: []
+    literature_texts:
+      - title: डॉक्टर चोइथराम गिदवाणी
+        title_en: Doctor Choithram Gidwani
+  - id: cbse-11-sindhi-ch10
+    number: 10
+    title: हिंदुस्तान छो अमर आहे?
+    title_en: Hindustan Cho Amar Aahe? (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-11-sindhi-ch10-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Hindustan Cho Amar Aahe?" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-11-sindhi-ch10-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: हिंदुस्तान छो अमर आहे?
+        title_en: Hindustan Cho Amar Aahe?
+  - id: cbse-11-sindhi-ch11
+    number: 11
+    title: मूं शादी छो न कई?
+    title_en: Moon Shaadi Cho Na Kai? (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-11-sindhi-ch11-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Moon Shaadi Cho Na Kai?" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-11-sindhi-ch11-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: मूं शादी छो न कई?
+        title_en: Moon Shaadi Cho Na Kai?
+  - id: cbse-11-sindhi-ch12
+    number: 12
+    title: मुंहिंजी जापान यात्रा (सफ़रनामो)
+    title_en: Munhinji Japan Yatra (travelogue) (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-11-sindhi-ch12-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Munhinji Japan Yatra (travelogue)" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-11-sindhi-ch12-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: मुंहिंजी जापान यात्रा (सफ़रनामो)
+        title_en: Munhinji Japan Yatra (travelogue)
+  - id: cbse-11-sindhi-ch13
+    number: 13
+    title: सिंधी भाषा जूं लिपियूं
+    title_en: Sindhi Bhasha Joon Lipiyoon (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-11-sindhi-ch13-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Sindhi Bhasha Joon Lipiyoon" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-11-sindhi-ch13-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: सिंधी भाषा जूं लिपियूं
+        title_en: Sindhi Bhasha Joon Lipiyoon
+  - id: cbse-11-sindhi-ch14
+    number: 14
+    title: अॼु जा संचारी ज़रीआ
+    title_en: Aju Ja Sancharee Zariya (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-11-sindhi-ch14-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Aju Ja Sancharee Zariya" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-11-sindhi-ch14-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: अॼु जा संचारी ज़रीआ
+        title_en: Aju Ja Sancharee Zariya
+  - id: cbse-11-sindhi-ch15
+    number: 15
+    title: एंकरिंग - मंच संचालन
+    title_en: Enkaring - Manch Sanchalan (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-11-sindhi-ch15-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Enkaring - Manch Sanchalan" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-11-sindhi-ch15-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: एंकरिंग - मंच संचालन
+        title_en: Enkaring - Manch Sanchalan
+  - id: cbse-11-sindhi-ch16
+    number: 16
+    title: तर्जुमो (अनुवाद)
+    title_en: Tarjumo (Anuvaad) (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-11-sindhi-ch16-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Tarjumo (Anuvaad)" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-11-sindhi-ch16-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: तर्जुमो (अनुवाद)
+        title_en: Tarjumo (Anuvaad)
+  - id: cbse-11-sindhi-ch17
+    number: 17
+    title: कम्प्यूटर ऐं सिंधी भाषा
+    title_en: Computer Ain Sindhi Bhasha (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-11-sindhi-ch17-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Computer Ain Sindhi Bhasha" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-11-sindhi-ch17-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: कम्प्यूटर ऐं सिंधी भाषा
+        title_en: Computer Ain Sindhi Bhasha
+  - id: cbse-11-sindhi-ch18
+    number: 18
+    title: चेटीचंॾु
+    title_en: Cheti Chand (Sindhi festival) (prose lesson)
+    unit: सिंधी ॾिण वार
+    topics:
+      - id: cbse-11-sindhi-ch18-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Cheti Chand (Sindhi festival)" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-11-sindhi-ch18-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: चेटीचंॾु
+        title_en: Cheti Chand (Sindhi festival)
+  - id: cbse-11-sindhi-ch19
+    number: 19
+    title: गोगड़ो
+    title_en: Gogdo (Sindhi festival) (prose lesson)
+    unit: सिंधी ॾिण वार
+    topics:
+      - id: cbse-11-sindhi-ch19-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Gogdo (Sindhi festival)" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-11-sindhi-ch19-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: गोगड़ो
+        title_en: Gogdo (Sindhi festival)
+  - id: cbse-11-sindhi-ch20
+    number: 20
+    title: टीजड़ी
+    title_en: Teejadi (Sindhi festival) (prose lesson)
+    unit: सिंधी ॾिण वार
+    topics:
+      - id: cbse-11-sindhi-ch20-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Teejadi (Sindhi festival)" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-11-sindhi-ch20-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: टीजड़ी
+        title_en: Teejadi (Sindhi festival)
+  - id: cbse-11-sindhi-ch21
+    number: 21
+    title: थदड़ी
+    title_en: Thadadi (Sindhi festival) (prose lesson)
+    unit: सिंधी ॾिण वार
+    topics:
+      - id: cbse-11-sindhi-ch21-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Thadadi (Sindhi festival)" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-11-sindhi-ch21-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: थदड़ी
+        title_en: Thadadi (Sindhi festival)
+  - id: cbse-11-sindhi-ch22
+    number: 22
+    title: महालक्ष्मी
+    title_en: Mahalakshmi (Sindhi festival) (prose lesson)
+    unit: सिंधी ॾिण वार
+    topics:
+      - id: cbse-11-sindhi-ch22-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Mahalakshmi (Sindhi festival)" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-11-sindhi-ch22-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: महालक्ष्मी
+        title_en: Mahalakshmi (Sindhi festival)
+  - id: cbse-11-sindhi-ch23
+    number: 23
+    title: मज़मून, ख़तु ऐं तर्जुमो
+    title_en: Essay, letter and translation
+    unit: तख़लीक़ी लिखणु
+    topics:
+      - id: cbse-11-sindhi-ch23-t01
+        title: मज़मून (500 लफ़्ज़नि में)
+        title_en: Essay writing (500 words)
+        learning_outcomes:
+          - Write an organised Sindhi essay of about 500 words
+      - id: cbse-11-sindhi-ch23-t02
+        title: ख़तु
+        title_en: Letter writing
+        learning_outcomes:
+          - Write a formal or informal letter in the correct format
+      - id: cbse-11-sindhi-ch23-t03
+        title: तर्जुमो (हिंदी मां सिंधी)
+        title_en: Translation from Hindi into Sindhi
+        learning_outcomes:
+          - Translate a short Hindi passage into Sindhi
+    removed_topics: []
+    literature_texts: []
+removed_topics: []
