@@ -128,7 +128,7 @@ export class CreditService {
         reserved: sql<number>`coalesce(sum(-${creditLedger.amount}) FILTER (WHERE ${creditLedger.kind} = 'reserve'), 0)::int`,
         returned: sql<number>`coalesce(sum(${creditLedger.amount}) FILTER (WHERE ${creditLedger.kind} IN ('charge', 'refund')), 0)::int`,
         open: sql<number>`coalesce(sum(-${creditLedger.amount}) FILTER (WHERE ${creditLedger.kind} = 'reserve' AND NOT EXISTS (
-          SELECT 1 FROM ${creditLedger} s WHERE s.request_id = ${creditLedger.requestId} AND s.kind IN ('charge', 'refund'))), 0)::int`,
+          SELECT 1 FROM credit_ledger s WHERE s.request_id = "credit_ledger"."request_id" AND s.kind IN ('charge', 'refund'))), 0)::int`,
       })
       .from(creditLedger)
       .where(and(eq(creditLedger.userId, userId), eq(creditLedger.istDay, day)));
@@ -295,7 +295,7 @@ export class CreditService {
           eq(creditLedger.kind, 'reserve'),
           lt(creditLedger.reservationExpiresAt, now),
           sql`${creditLedger.reservationExpiresAt} > ${since.toISOString()}::timestamptz`,
-          sql`NOT EXISTS (SELECT 1 FROM ${creditLedger} s WHERE s.request_id = ${creditLedger.requestId} AND s.kind IN ('charge', 'refund'))`,
+          sql`NOT EXISTS (SELECT 1 FROM credit_ledger s WHERE s.request_id = "credit_ledger"."request_id" AND s.kind IN ('charge', 'refund'))`,
         ),
       )
       .orderBy(creditLedger.reservationExpiresAt)

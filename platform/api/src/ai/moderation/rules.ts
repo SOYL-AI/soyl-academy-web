@@ -78,7 +78,7 @@ export const JAILBREAK_RULES: RegExp[] = [
   /\b(ignore|disregard|forget|override|bypass) (all |any |the |your |previous |prior |above |earlier )*(instructions|rules|prompts?|guidelines|guardrails|restrictions|system message)\b/,
   /\b(system prompt|developer mode|dan mode|jailbreak|do anything now|god mode|unfiltered mode|no restrictions)\b/,
   /\b(reveal|show|print|repeat|tell me) (me )?(your|the) (system |hidden |secret |initial )?(prompt|instructions|rules)\b/,
-  /\b(you are now|from now on you are|pretend (you are|to be)|act as|roleplay as|role-play as|be my) (an? )?(unrestricted|evil|dan|girlfriend|boyfriend|lover|wife|husband|partner|hacker)\b/,
+  /\b(you are now|from now on you are|pretend (you are|to be)|act as|roleplay as|role-play as|be my) (my |an? )?(unrestricted|evil|dan|girlfriend|boyfriend|lover|wife|husband|partner|hacker)\b/,
   /\b(sab (instructions|niyam) bhool jao|niyam todo)\b/,
   /(सारे निर्देश भूल जाओ|निर्देशों को अनदेखा|सिस्टम प्रॉम्प्ट)/,
 ];

@@ -424,12 +424,12 @@ describe('submit, grading and results', () => {
     h.clock.set(Date.now());
   });
 
-  it('AI evaluation is not available yet (501, M4)', async () => {
+  it('AI evaluation (M4) needs a submitted attempt (full flow: ai-evaluation.test.ts)', async () => {
     const { c } = await member();
     const s = await start(c);
     const r = await c.post(`/v1/attempts/${s.attempt.id}/ai-evaluation`);
-    expect(r.statusCode).toBe(501);
-    expect(r.json().code).toBe('not_implemented');
+    expect(r.statusCode).toBe(409);
+    expect(r.json().code).toBe('conflict');
   });
 });
 
