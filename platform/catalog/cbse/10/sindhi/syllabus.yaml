@@ -1,0 +1,435 @@
+# CBSE Class 10 Sindhi (008), 2026-27. Sections, marks, grammar items, writing tasks and every prescribed lesson
+# (titles as printed by CBSE in Devanagari Sindhi) from the CBSE 2026-27 Sindhi syllabus, Class X. Books: NIOS Secondary
+# Course 238 Sindhi; biography Shahidan Jo Sartaj - Bhagat Kanwar Ram (Salamatrai Ochiram Gurbani, Rajasthan Sindhi
+# Academy); grammar: Nutan Sindhi Grammar (Usha Saraswat) and Sindhi Vyakaran (Gangaram Israni). The CBSE document uses
+# Devanagari script, not the Arabic script listed in subjects.yaml. Titles only; no text is reproduced (CONTEXT §8).
+subject_id: cbse-10-sindhi
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-x-sindhi-2026-27
+  - cbse-secondary-curriculum-2026-27
+  - cbse-two-board-exams-x-2026
+exam_notes: >-
+  Paper 80 marks (3 hours) + internal assessment 20 (as for all Class IX-X languages). Unseen prose passage 5 MCQs; unseen poem 5 MCQs;
+  literature MCQs on prose, poetry and grammar 10; grammar 10; main course book (prose and poetry lessons) 30; supplementary book 6;
+  creative writing 14 - essay of 300 words 6, letter or report 4, dialogue or advertisement 4. Unseen and MCQ items test understanding,
+  reasoning, analysis and higher-order thinking. Class X grammar: tense, conjunction, interjection, synonyms, antonyms, punctuation, idioms
+  and proverbs. Two board exams for Class 10: February main (compulsory) and an optional May second exam for improvement in up to three of
+  Science, Mathematics, Social Science and languages.
+units:
+  - name: अणपढ़ियलु नसुर ऐं नज़्म
+    marks: 10
+  - name: साहित्य (MCQ)
+    marks: 10
+  - name: ग्रामर
+    marks: 10
+  - name: दर्सी किताबु
+    marks: 30
+  - name: पूरक किताबु
+    marks: 6
+  - name: तख़लीक़ी लिखणु
+    marks: 14
+chapters:
+  - id: cbse-10-sindhi-ch01
+    number: 1
+    title: अणपढ़ियलु नसुर जो टुकिरो
+    title_en: Unseen prose passage
+    unit: अणपढ़ियलु नसुर ऐं नज़्म
+    topics:
+      - id: cbse-10-sindhi-ch01-t01
+        title: 'अपठित गद्यांश: MCQ'
+        title_en: 'Unseen prose passage: MCQs'
+        learning_outcomes:
+          - Read an unseen Sindhi passage and answer MCQs testing understanding, reasoning and analysis
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-sindhi-ch02
+    number: 2
+    title: अणपढ़ियल नज़्म
+    title_en: Unseen poem
+    unit: अणपढ़ियलु नसुर ऐं नज़्म
+    topics:
+      - id: cbse-10-sindhi-ch02-t01
+        title: नज़्म ते MCQ
+        title_en: 'Unseen poem: MCQs'
+        learning_outcomes:
+          - Read an unseen Sindhi poem and answer MCQs on meaning, images and message
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-sindhi-ch03
+    number: 3
+    title: साहित्य ऐं ग्रामर ते MCQ
+    title_en: MCQs on prose, poetry and grammar
+    unit: साहित्य (MCQ)
+    topics:
+      - id: cbse-10-sindhi-ch03-t01
+        title: नसुर, नज़्म ऐं ग्रामर जा बहुविकल्पी सुवाल
+        title_en: Multiple-choice questions on textbook prose, poetry and grammar
+        learning_outcomes:
+          - Answer MCQs on the content of the textbook lessons and on applied grammar
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-sindhi-ch04
+    number: 4
+    title: ज़मानु, हर्फ़ ऐं लफ़्ज़
+    title_en: Tense, conjunctions and interjections
+    unit: ग्रामर
+    topics:
+      - id: cbse-10-sindhi-ch04-t01
+        title: ज़मानु
+        title_en: Tense
+        learning_outcomes:
+          - Identify and change the tense of Sindhi sentences
+      - id: cbse-10-sindhi-ch04-t02
+        title: हर्फ़ु जुमिलो ऐं हर्फ़ु निदा
+        title_en: Conjunctions and interjections
+        learning_outcomes:
+          - Identify and use conjunctions and interjections correctly
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-sindhi-ch05
+    number: 5
+    title: लफ़्ज़ ऐं बीहक जूं निशानियूं
+    title_en: Vocabulary and punctuation
+    unit: ग्रामर
+    topics:
+      - id: cbse-10-sindhi-ch05-t01
+        title: साॻी माना वारा लफ़्ज़ ऐं ज़िद
+        title_en: Synonyms and antonyms
+        learning_outcomes:
+          - Give synonyms and antonyms of given words
+      - id: cbse-10-sindhi-ch05-t02
+        title: बीहक जूं निशानियूं
+        title_en: Punctuation marks
+        learning_outcomes:
+          - Punctuate Sindhi sentences correctly
+      - id: cbse-10-sindhi-ch05-t03
+        title: इस्तलाह ऐं पहाका
+        title_en: Idioms and proverbs
+        learning_outcomes:
+          - Explain idioms and proverbs and use them in sentences
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-sindhi-ch06
+    number: 6
+    title: आसोपालव वणु
+    title_en: Aasopaalav Vanu (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-10-sindhi-ch06-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Aasopaalav Vanu" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-10-sindhi-ch06-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: आसोपालव वणु
+        title_en: Aasopaalav Vanu
+  - id: cbse-10-sindhi-ch07
+    number: 7
+    title: शाह लतीफ़ जा बैत
+    title_en: Shaah Lateef Ja Bait (poem)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-10-sindhi-ch07-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Explain the central idea, mood and message of the poem "Shaah Lateef Ja Bait"
+          - Interpret key images, figures of speech and lines in their own words without reproducing the text
+      - id: cbse-10-sindhi-ch07-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the poem as set in the board paper
+          - Relate the theme of the poem to their own life and values
+    removed_topics: []
+    literature_texts:
+      - title: शाह लतीफ़ जा बैत
+        title_en: Shaah Lateef Ja Bait
+  - id: cbse-10-sindhi-ch08
+    number: 8
+    title: साफ़ सुथिरो भारत
+    title_en: Saaph Suthiro Bhaarat (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-10-sindhi-ch08-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Saaph Suthiro Bhaarat" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-10-sindhi-ch08-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: साफ़ सुथिरो भारत
+        title_en: Saaph Suthiro Bhaarat
+  - id: cbse-10-sindhi-ch09
+    number: 9
+    title: बुढा आश्रम
+    title_en: Budha Aashram (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-10-sindhi-ch09-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Budha Aashram" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-10-sindhi-ch09-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: बुढा आश्रम
+        title_en: Budha Aashram
+  - id: cbse-10-sindhi-ch10
+    number: 10
+    title: सिन्धु जो इतिहासु
+    title_en: Sindhu Jo Itihas (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-10-sindhi-ch10-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Sindhu Jo Itihas" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-10-sindhi-ch10-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: सिन्धु जो इतिहासु
+        title_en: Sindhu Jo Itihas
+  - id: cbse-10-sindhi-ch11
+    number: 11
+    title: धीअरु बचायो, धीअरु पढ़ायो
+    title_en: Dheear Bachayo, Dheear Padhayo (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-10-sindhi-ch11-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Dheear Bachayo, Dheear Padhayo" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-10-sindhi-ch11-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: धीअरु बचायो, धीअरु पढ़ायो
+        title_en: Dheear Bachayo, Dheear Padhayo
+  - id: cbse-10-sindhi-ch12
+    number: 12
+    title: मिल्कियत
+    title_en: Milkiyat (story)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-10-sindhi-ch12-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Narrate the plot of the story "Milkiyat" in their own words
+          - Describe the main characters, the setting and the turning point of the story
+      - id: cbse-10-sindhi-ch12-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the story as set in the board paper
+          - Explain the message or value the story conveys
+    removed_topics: []
+    literature_texts:
+      - title: मिल्कियत
+        title_en: Milkiyat
+  - id: cbse-10-sindhi-ch13
+    number: 13
+    title: सिंधी संस्कृतीअ जी झलक
+    title_en: Sindhi Sanskrtia Ji Jhalak (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-10-sindhi-ch13-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Sindhi Sanskrtia Ji Jhalak" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-10-sindhi-ch13-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: सिंधी संस्कृतीअ जी झलक
+        title_en: Sindhi Sanskrtia Ji Jhalak
+  - id: cbse-10-sindhi-ch14
+    number: 14
+    title: सिंधी ॿोलीअ जो विकासु
+    title_en: Sindhi Bolia Jo Vikas (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-10-sindhi-ch14-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Sindhi Bolia Jo Vikas" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-10-sindhi-ch14-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: सिंधी ॿोलीअ जो विकासु
+        title_en: Sindhi Bolia Jo Vikas
+  - id: cbse-10-sindhi-ch15
+    number: 15
+    title: ख़तु कीअं लिखिजे
+    title_en: Khat Keian Likhije (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-10-sindhi-ch15-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Khat Keian Likhije" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-10-sindhi-ch15-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: ख़तु कीअं लिखिजे
+        title_en: Khat Keian Likhije
+  - id: cbse-10-sindhi-ch16
+    number: 16
+    title: सारु कीअं लिखिजे
+    title_en: Sar Keian Likhije (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-10-sindhi-ch16-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Sar Keian Likhije" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-10-sindhi-ch16-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: सारु कीअं लिखिजे
+        title_en: Sar Keian Likhije
+  - id: cbse-10-sindhi-ch17
+    number: 17
+    title: शहीदनि जो सरताज - भॻत कंवर राम
+    title_en: Shahidan Jo Sartaj - Bhagat Kanwar Ram (biography) (life sketch, Salamatrai Ochiram Gurbani)
+    unit: पूरक किताबु
+    topics:
+      - id: cbse-10-sindhi-ch17-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - >-
+            Summarise the life and achievements described in "Shahidan Jo Sartaj - Bhagat Kanwar Ram (biography)" by Salamatrai Ochiram
+            Gurbani
+          - Identify the qualities of the person presented and the events that shaped them
+      - id: cbse-10-sindhi-ch17-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the lesson as set in the board paper
+          - Draw lessons for their own life from the person described
+    removed_topics: []
+    literature_texts:
+      - title: शहीदनि जो सरताज - भॻत कंवर राम
+        author: सलामतराइ ओचीराम गुरबाणी
+        title_en: Shahidan Jo Sartaj - Bhagat Kanwar Ram (biography)
+  - id: cbse-10-sindhi-ch18
+    number: 18
+    title: मज़मून (300 लफ़्ज़नि में)
+    title_en: Essay writing (300 words)
+    unit: तख़लीक़ी लिखणु
+    topics:
+      - id: cbse-10-sindhi-ch18-t01
+        title: मज़मून जी रिथा
+        title_en: Planning an essay
+        learning_outcomes:
+          - Plan an essay with introduction, body and conclusion
+      - id: cbse-10-sindhi-ch18-t02
+        title: मज़मून लिखणु
+        title_en: Writing an essay
+        learning_outcomes:
+          - Write an organised Sindhi essay of about 300 words on a given topic
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-sindhi-ch19
+    number: 19
+    title: ख़तु या रिपोर्ट
+    title_en: Letter or report writing
+    unit: तख़लीक़ी लिखणु
+    topics:
+      - id: cbse-10-sindhi-ch19-t01
+        title: ख़तु
+        title_en: Letter
+        learning_outcomes:
+          - Write a formal or informal letter in the correct format
+      - id: cbse-10-sindhi-ch19-t02
+        title: रिपोर्ट
+        title_en: Report
+        learning_outcomes:
+          - Write a short report of an event with the key facts
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-sindhi-ch20
+    number: 20
+    title: डायलॉग ऐं विज्ञापन
+    title_en: Dialogue or advertisement writing
+    unit: तख़लीक़ी लिखणु
+    topics:
+      - id: cbse-10-sindhi-ch20-t01
+        title: डायलॉग
+        title_en: Dialogue
+        learning_outcomes:
+          - Write a natural dialogue on an everyday situation
+      - id: cbse-10-sindhi-ch20-t02
+        title: विज्ञापन
+        title_en: Advertisement
+        learning_outcomes:
+          - Write a short, persuasive advertisement for a product, service or event
+    removed_topics: []
+    literature_texts: []
+removed_topics: []
