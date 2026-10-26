@@ -1,0 +1,57 @@
+id: cbse-10-thai-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-thai
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading Comprehension (10)
+    instructions: "Q1 two passages: questions (10 x 0.5), questions (5 x 0.5), word meanings (5 x 0.5)."
+    items:
+      - {type: case-based, count: 2, marks_each: 5}
+  - id: B
+    title: Section B - Writing Expression (20)
+    instructions: Q2 poem by prosody rules; Q3 essay; Q4 formal letter; Q5 project outline (5 each).
+    items:
+      - {type: long, count: 4, marks_each: 5}
+  - id: C
+    title: Section C - Applied Grammar (30)
+    instructions: >-
+      Q6-Q15: word stress, rearranging words (3 x 1), conjunctions, expressive words, sentence forms, consonant blends, Pali/Sanskrit
+      loanwords, fill in the blanks, idioms, synonyms/antonyms (6 x 0.5 each).
+    items:
+      - {type: short, count: 54, marks_each: 0.5}
+      - {type: short, count: 3, marks_each: 1}
+  - id: D
+    title: Section D - Culture, Civilisation and Literature (20)
+    instructions: >-
+      Q16 paraphrase a poem (3 x 2); Q17-Q18 textbook questions (5 x 0.5 each); Q19 poetry questions (4 x 0.5); Q20 character analysis (2);
+      Q21 describe how to write a poem (5).
+    items:
+      - {type: short, count: 3, marks_each: 2}
+      - {type: short, count: 14, marks_each: 0.5}
+      - {type: short, count: 1, marks_each: 2}
+      - {type: long, count: 1, marks_each: 5}
+source_status: verified
+source: cbse-sqp-x-thai-2026-27
+notes: >-
+  Thai (136) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Sections: A reading 10, B
+  writing 20, C applied grammar 30 (ten 3-mark items of 0.5/1-mark parts), D culture/civilisation/literature 20.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

@@ -1,0 +1,49 @@
+id: cbse-12-japanese-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-japanese
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Part A - Grammar and kanji (40)
+    instructions: >-
+      Q1 hiragana for kanji, any 10; Q2 kanji for hiragana, any 10; Q3 correct form, any 10 (1 x 10 each); Q4 sentences (5 x 1); Q5 match
+      same meaning (5 x 1).
+    items:
+      - {type: mcq, count: 30, marks_each: 1}
+      - {type: short, count: 5, marks_each: 1}
+      - {type: match, count: 1, marks_each: 5}
+  - id: B
+    title: Part B - Reading and writing (40)
+    instructions: >-
+      Q6 (5 x 1); Q7 (6 x 1); Q8 (4 x 1); Q9 fill a text from a word box (10 x 1); Q10 essay on one topic (5); Q11 write in five lines (5);
+      Q12 translate a passage into English (5).
+    items:
+      - {type: case-based, count: 1, marks_each: 5}
+      - {type: short, count: 10, marks_each: 1}
+      - {type: fill-blank, count: 10, marks_each: 1}
+      - {type: long, count: 2, marks_each: 5}
+      - {type: long, count: 1, marks_each: 5}
+source_status: verified
+source: cbse-sqp-xii-japanese-2026-27
+notes: >-
+  Japanese (194) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Part A objective (grammar
+  and kanji) 40, Part B descriptive (creative writing, unseen passage, translation) 40.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

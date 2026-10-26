@@ -1,0 +1,52 @@
+id: cbse-12-russian-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-russian
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Applied Grammar (40)
+    instructions: Q1 fill in from options (15 x 1); Q2 complex sentences, any 5 (5 x 2); Q3 any 5 (5 x 2); Q4 "-nibud" forms, any 5 (5 x 1).
+    items:
+      - {type: mcq, count: 15, marks_each: 1}
+      - {type: short, count: 10, marks_each: 2}
+      - {type: fill-blank, count: 5, marks_each: 1}
+  - id: B
+    title: Section B - Reading Comprehension (10)
+    instructions: Q5 unseen text, any 5 of 6 questions (5 x 2).
+    items:
+      - {type: case-based, count: 1, marks_each: 10}
+  - id: C
+    title: Section C - Composition and Writing (10)
+    instructions: Q6 essay on one topic (10).
+    items:
+      - {type: long, count: 1, marks_each: 10}
+  - id: D
+    title: Section D - Text-based questions (20)
+    instructions: Q7 textbook questions, any 5 (5 x 2); Q8 translate into English, any 5; Q9 translate into Russian, any 5 (5 x 1 each).
+    items:
+      - {type: short, count: 5, marks_each: 2}
+      - {type: short, count: 10, marks_each: 1}
+source_status: verified
+source: cbse-sqp-xii-russian-2026-27
+notes: >-
+  Russian (121) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Sections: A applied grammar
+  40, B reading comprehension 10, C composition 10, D text-based questions and translation 20.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

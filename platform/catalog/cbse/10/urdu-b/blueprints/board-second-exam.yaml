@@ -1,0 +1,59 @@
+id: cbse-10-urdu-b-board-second-exam
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-urdu-b
+paper_type: board-second-exam
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading and Comprehension (20)
+    instructions: Four passages with five 1-mark questions each.
+    items:
+      - {type: case-based, count: 4, marks_each: 5}
+  - id: B
+    title: Section B - Writing Skills (25)
+    instructions: Essay (10), letter (5), a second composition (5) and short items (5 x 1).
+    items:
+      - {type: long, count: 1, marks_each: 10}
+      - {type: long, count: 2, marks_each: 5}
+      - {type: short, count: 5, marks_each: 1}
+  - id: C
+    title: Section C - Functional Grammar (20)
+    instructions: Grammar items (1 mark each).
+    items:
+      - {type: short, count: 20, marks_each: 1}
+  - id: D
+    title: Section D - Literature (15)
+    instructions: "Textbook questions: 3 x 2, 3 x 1, 2 x 3."
+    items:
+      - {type: short, count: 3, marks_each: 2}
+      - {type: short, count: 3, marks_each: 1}
+      - {type: short, count: 2, marks_each: 3}
+source_status: unverified
+source: cbse-sqp-x-urdu-b-2026-27
+notes: >-
+  Second (May) board exam: CBSE has published no separate sample paper or design for the second exam; the 14-02-2026 notification makes it
+  an improvement / compartment exam on the same subject, so this blueprint repeats the February pattern on the full syllabus (assumption,
+  re-check when CBSE publishes a second-exam SQP).
+
+  Urdu Course B (303) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Section totals are
+  printed in the SQP instructions (A reading and comprehension 20, B writing 25, C functional grammar 20, D literature 15); four 5-mark
+  lesson/passage questions are legible in Section A. Remaining question-level split is a SOYL estimate (Nastaliq text extracts out of
+  order).
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

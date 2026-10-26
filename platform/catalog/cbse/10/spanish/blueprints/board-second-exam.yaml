@@ -1,0 +1,64 @@
+id: cbse-10-spanish-board-second-exam
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-spanish
+paper_type: board-second-exam
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Sección A - Reading (15)
+    instructions: Q1 unseen text, questions (5 x 2). Q2 unseen text, true/false (5 x 1).
+    items:
+      - {type: case-based, count: 1, marks_each: 10}
+      - {type: case-based, count: 1, marks_each: 5}
+  - id: B
+    title: Sección B - Writing (15)
+    instructions: "Q3 A or B: opinion essay or blog, 100-120 words (10). Q4 advice using the imperative, 50-60 words (5)."
+    items:
+      - {type: long, count: 2, marks_each: 10, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 1, marks_each: 5}
+  - id: C
+    title: Sección C - Grammar (35)
+    instructions: >-
+      Q5 present indicative (5 x 1); Q6 reorder a dialogue (10 x 0.5); Q7 match (5 x 1); Q8 object pronouns, any five (5 x 1); Q9 word
+      order, any five (5 x 1); Q10 choose the option, any five (5 x 1); Q11 subjunctive, any five (5 x 1).
+    items:
+      - {type: fill-blank, count: 5, marks_each: 1}
+      - {type: short, count: 10, marks_each: 0.5}
+      - {type: match, count: 1, marks_each: 5}
+      - {type: short, count: 5, marks_each: 1}
+      - {type: short, count: 5, marks_each: 1}
+      - {type: mcq, count: 5, marks_each: 1}
+      - {type: fill-blank, count: 5, marks_each: 1}
+  - id: D
+    title: Sección D - Literature and culture (15)
+    instructions: Q12 any five questions on authors/texts, 40-45 words (5 x 2). Q13 any five short questions (5 x 1).
+    items:
+      - {type: short, count: 5, marks_each: 2}
+      - {type: short, count: 5, marks_each: 1}
+source_status: verified
+source: cbse-sqp-x-spanish-2026-27
+notes: >-
+  Second (May) board exam: CBSE has published no separate sample paper or design for the second exam; the 14-02-2026 notification makes it
+  an improvement / compartment exam on the same subject, so this blueprint repeats the February pattern on the full syllabus (assumption,
+  re-check when CBSE publishes a second-exam SQP).
+
+  Spanish (096) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. 13 questions in four
+  sections: A reading 15, B writing 15, C grammar 35, D literature/culture 15.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

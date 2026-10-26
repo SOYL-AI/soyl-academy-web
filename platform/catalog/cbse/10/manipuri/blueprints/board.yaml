@@ -1,0 +1,58 @@
+id: cbse-10-manipuri-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-manipuri
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading (15)
+    instructions: Three unseen passages (5 x 1 each).
+    items:
+      - {type: case-based, count: 3, marks_each: 5}
+  - id: B
+    title: Section B - Writing (25)
+    instructions: Essay (6), letter (5), two 3-mark writing tasks, one 3-mark task and five 1-mark items.
+    items:
+      - {type: long, count: 1, marks_each: 6}
+      - {type: long, count: 1, marks_each: 5}
+      - {type: short, count: 3, marks_each: 3}
+      - {type: short, count: 5, marks_each: 1}
+  - id: C
+    title: Section C - Grammar (20)
+    instructions: "Q12-Q27: grammar items of 1 mark and 2 marks (1 + 1)."
+    items:
+      - {type: short, count: 10, marks_each: 1}
+      - {type: short, count: 5, marks_each: 2}
+  - id: D
+    title: Section D - Literature (20)
+    instructions: "Prose: explanation (5), short answers (2 x 2), one 1-mark item; poetry: explanation (5), one 3-mark answer, two 1-mark items."
+    items:
+      - {type: long, count: 2, marks_each: 5}
+      - {type: short, count: 2, marks_each: 2}
+      - {type: short, count: 1, marks_each: 3}
+      - {type: short, count: 3, marks_each: 1}
+source_status: unverified
+source: cbse-sqp-x-manipuri-2026-27
+notes: >-
+  Manipuri (011) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. The SQP (33 questions) is
+  printed in a legacy Meitei/Bengali-script font that does not extract cleanly; section totals follow the CBSE 2026-27 Manipuri design
+  (reading 15, writing 25, grammar 20, literature 20: prose 10 + poetry 10) and the legible per-question marks; the split of the remaining
+  items is a SOYL estimate.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

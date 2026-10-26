@@ -1,0 +1,61 @@
+id: cbse-10-marathi-board-second-exam
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-marathi
+paper_type: board-second-exam
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Unseen passage and poem (15)
+    instructions: "Q1 prose passage: MCQ (5 x 1) and short answers (3 x 1); Q2 poem: MCQ (4 x 1) and short answers (3 x 1)."
+    items:
+      - {type: case-based, count: 1, marks_each: 8}
+      - {type: case-based, count: 1, marks_each: 7}
+  - id: B
+    title: Grammar (20)
+    instructions: "Q3 (a)-(d) and Q4 (a)-(d): answers as directed (1 mark each, \"any n\" in each part)."
+    items:
+      - {type: short, count: 20, marks_each: 1}
+  - id: C
+    title: Textbook prose, poetry and supplementary reader (30)
+    instructions: >-
+      Q5 prose: one-sentence answers (3 x 1, 3 x 1), one 40-50 word answer (3), matching (5 x 1); Q6 poetry: one-sentence answers (4 x 1, 4
+      x 1), explanation with context of one extract (3); Q7 supplementary reader (5 x 1).
+    items:
+      - {type: short, count: 6, marks_each: 1}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+      - {type: match, count: 1, marks_each: 5}
+      - {type: short, count: 8, marks_each: 1}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 5, marks_each: 1}
+  - id: D
+    title: Writing (15)
+    instructions: Q8 essay or story of 120-150 words (5); letter (5); advertisement (5) - one topic each.
+    items:
+      - {type: long, count: 6, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-x-marathi-2026-27
+notes: >-
+  Second (May) board exam: CBSE has published no separate sample paper or design for the second exam; the 14-02-2026 notification makes it
+  an improvement / compartment exam on the same subject, so this blueprint repeats the February pattern on the full syllabus (assumption,
+  re-check when CBSE publishes a second-exam SQP).
+
+  Marathi (009) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Unseen prose and poem 15,
+  grammar 20, textbook prose 14, poetry 11, supplementary 5, writing 15; "any n" choices throughout; CBSE tags competency-based items (CBQ).
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

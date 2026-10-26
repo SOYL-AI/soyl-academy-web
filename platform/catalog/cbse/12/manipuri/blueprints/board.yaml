@@ -1,0 +1,56 @@
+id: cbse-12-manipuri-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-manipuri
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading (15)
+    instructions: Unseen passages with MCQs.
+    items:
+      - {type: case-based, count: 3, marks_each: 5}
+  - id: B
+    title: Section B - Writing (25)
+    instructions: Essay, letter, report and other compositions.
+    items:
+      - {type: long, count: 3, marks_each: 6}
+      - {type: short, count: 1, marks_each: 3}
+      - {type: short, count: 2, marks_each: 2}
+  - id: C
+    title: Section C - Grammar (20)
+    instructions: Grammar VSA items and short answers.
+    items:
+      - {type: short, count: 16, marks_each: 1}
+      - {type: short, count: 2, marks_each: 2}
+  - id: D
+    title: Section D - Literature (20)
+    instructions: "Prose and poetry: long answers, short answers."
+    items:
+      - {type: long, count: 2, marks_each: 4}
+      - {type: short, count: 2, marks_each: 3}
+      - {type: short, count: 3, marks_each: 2}
+source_status: unverified
+source: cbse-xii-manipuri-2026-27
+notes: >-
+  Manipuri (111) theory paper, 80 marks, 3 hours. CBSE publishes no 2026-27 sample paper for this language, so the pattern is built from the
+  question-paper design / assessment scheme in the CBSE 2026-27 syllabus (unverified: question order and choices are SOYL assumptions). CBSE
+  design: reading 15, writing 25, grammar 20, literature 20 (prose 10 + poetry 10); question-type table: 5 long answers (26 marks), 3 SA-I
+  (9), 7 SA-II (14), 16 VSA (16), 15 MCQ (15).
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

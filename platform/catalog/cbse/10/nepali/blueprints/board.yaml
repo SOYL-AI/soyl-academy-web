@@ -1,0 +1,52 @@
+id: cbse-10-nepali-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-nepali
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Part A - Objective (20)
+    instructions: Q1 prose passage (5 x 1); Q2 poem extract (5 x 1); Q3 MCQ (10 x 1).
+    items:
+      - {type: source-based, count: 2, marks_each: 5}
+      - {type: mcq, count: 10, marks_each: 1}
+  - id: B
+    title: Part B - Grammar and textbooks (46)
+    instructions: >-
+      Q4 grammar (3 x 2); Q5 prose short answers (14, with an OR option); Q6 poetry, any four (4 x 3); Q7 supplementary reader (10); Q8 any
+      two (2 x 2).
+    items:
+      - {type: short, count: 3, marks_each: 2}
+      - {type: short, count: 7, marks_each: 2}
+      - {type: short, count: 4, marks_each: 3}
+      - {type: short, count: 5, marks_each: 2}
+      - {type: short, count: 2, marks_each: 2}
+  - id: C
+    title: Part B - Writing (14)
+    instructions: Q9 essay of about 150 words on one topic; Q10 letter / application.
+    items:
+      - {type: long, count: 2, marks_each: 7}
+source_status: unverified
+source: cbse-sqp-x-nepali-2026-27
+notes: >-
+  Nepali (024) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Part A MCQ 20 and Part B
+  descriptive 60 per the CBSE 2026-27 Nepali design (grammar SA 6, prose SA 14, poetry SA 12, supplementary 10, SA 4, writing LA 14). Q5,
+  Q7, Q9 and Q10 marks are not legible in the SQP text; their split follows the design (writing tasks assumed 7 + 7).
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

@@ -1,0 +1,54 @@
+id: cbse-10-lepcha-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-lepcha
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Comprehension (10)
+    instructions: Two unseen passages (5 x 1 each).
+    items:
+      - {type: case-based, count: 2, marks_each: 5}
+  - id: B
+    title: Section B - Writing (15)
+    instructions: Essay, letter and a short composition (5 each).
+    items:
+      - {type: long, count: 3, marks_each: 5}
+  - id: C
+    title: Section C - Grammar (15)
+    instructions: Grammar items (1 mark each).
+    items:
+      - {type: short, count: 15, marks_each: 1}
+  - id: D
+    title: Section D - Literature (40)
+    instructions: Textbook MCQ (10 x 1), short answers (6 x 2), long answers (3 x 5) and introduction to poets/authors (3 x 1).
+    items:
+      - {type: mcq, count: 10, marks_each: 1}
+      - {type: short, count: 6, marks_each: 2}
+      - {type: long, count: 3, marks_each: 5}
+      - {type: short, count: 3, marks_each: 1}
+source_status: unverified
+source: cbse-x-lepcha-2026-27
+notes: >-
+  Lepcha (026) theory paper, 80 marks, 3 hours. CBSE publishes no 2026-27 sample paper for this language, so the pattern is built from the
+  question-paper design / assessment scheme in the CBSE 2026-27 syllabus (unverified: question order and choices are SOYL assumptions). CBSE
+  design: reading 10, writing 15, grammar 15, literature 40 (including introduction to poets/authors 3). The CBSE design gives section
+  totals only; the item split inside each section is a SOYL estimate in the usual CBSE language-paper style.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

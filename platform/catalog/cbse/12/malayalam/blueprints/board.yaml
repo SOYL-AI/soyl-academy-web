@@ -1,0 +1,47 @@
+id: cbse-12-malayalam-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-malayalam
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading Comprehension (10)
+    instructions: Unseen passage (10 x 1).
+    items:
+      - {type: case-based, count: 1, marks_each: 10}
+  - id: B
+    title: Section B - Creative Writing (18)
+    instructions: Two writing tasks (6 each); paraphrasing (2); usage items (2 x 1, 2 x 1).
+    items:
+      - {type: long, count: 2, marks_each: 6}
+      - {type: short, count: 1, marks_each: 2}
+      - {type: short, count: 4, marks_each: 1}
+  - id: C
+    title: Section C - Literature (52)
+    instructions: Two extract-based questions with short answers (5 x 2 each); Q9-Q10 any four of the questions (4 x 4 each).
+    items:
+      - {type: short, count: 10, marks_each: 2}
+      - {type: long, count: 8, marks_each: 4}
+source_status: verified
+source: cbse-sqp-xii-malayalam-2026-27
+notes: >-
+  Malayalam (112) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Sections: A reading
+  comprehension 10, B creative writing 18, C literature 52.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.
