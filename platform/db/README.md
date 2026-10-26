@@ -37,7 +37,7 @@ so relational queries (`db.query.users.findFirst`) work. Close the pool on shutd
 
 ```ts
 // vitest.config.ts of your package
-export default defineConfig({ test: { globalSetup: ['@soyl/db/testing/global-setup'], hookTimeout: 180_000 } });
+export default defineConfig({ test: { globalSetup: ['@soyl/db/testing/global-setup'], hookTimeout: 180_000, teardownTimeout: 60_000 } });
 
 // a test
 import { createTestDb } from '@soyl/db/testing';

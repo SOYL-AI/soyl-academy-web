@@ -116,17 +116,32 @@ async function startCluster(dir: string, opts: { persistent: boolean; fast: bool
     stop: async () => {
       if (stopped) return;
       stopped = true;
-      await ep.stop();
-      // postgres removes its pid file as the last step of shutdown; wait for it (Windows holds file
-      // handles briefly after the process exits) before deleting the directory.
-      const pidFile = path.join(dir, 'postmaster.pid');
-      for (let i = 0; i < 100 && fs.existsSync(pidFile); i++) await new Promise((r) => setTimeout(r, 100));
+      // embedded-postgres stops with `taskkill /f` on Windows (no clean shutdown, stale pid file,
+      // crash recovery next start). Prefer a clean, fast `pg_ctl stop`; fall back to its kill.
+      if (await pgCtlStop(dir)) (ep as unknown as { process?: unknown }).process = undefined;
+      else await ep.stop();
       if (!opts.persistent) {
-        await new Promise((r) => setTimeout(r, 250));
+        // Windows can hold file handles for a moment after the process exits.
+        await new Promise((r) => setTimeout(r, 200));
         removeDir(dir);
       }
     },
   };
+}
+
+/** `pg_ctl stop -m fast -w` using the binaries embedded-postgres installed. True when it worked. */
+async function pgCtlStop(dir: string): Promise<boolean> {
+  const os = process.platform === 'win32' ? 'windows' : process.platform;
+  try {
+    const { pg_ctl } = (await import(`@embedded-postgres/${os}-${process.arch}`)) as { pg_ctl: string };
+    const { execFile } = await import('node:child_process');
+    await new Promise<void>((resolve, reject) =>
+      execFile(pg_ctl, ['stop', '-D', dir, '-m', 'fast', '-w', '-t', '30'], (err) => (err ? reject(err) : resolve())),
+    );
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 function removeDir(dir: string): void {
