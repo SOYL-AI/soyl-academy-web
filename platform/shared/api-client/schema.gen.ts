@@ -2515,6 +2515,1504 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/test-series": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Test series of a subject: chapter, unit, term, full-mock and second-exam tests, and live mocks. Signed in: your status per test. */
+        get: {
+            parameters: {
+                query: {
+                    board?: components["schemas"]["BoardInput"];
+                    class?: number;
+                    subject: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["TestSeries"];
+                    };
+                };
+                /** @description Default Response */
+                304: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content?: never;
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/tests/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Test metadata: sections, duration, marks, instructions. Questions are only delivered inside an attempt. */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: components["schemas"]["TestIdInput"];
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["TestMeta"];
+                    };
+                };
+                /** @description Default Response */
+                304: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content?: never;
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/tests/custom": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Build a custom test from the practice question bank (free). Then start it with POST /v1/tests/:id/attempts. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["CustomTestRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                201: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CustomTest"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/tests/{id}/attempts": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Create or resume your single active attempt. Starting sets the server deadline and delivers the paper (no answers). */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: components["schemas"]["TestIdInput"];
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["StartAttemptRequestInput"] | null;
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AttemptState"];
+                    };
+                };
+                /** @description Default Response */
+                201: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AttemptState"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/attempts/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Resume an attempt: the paper, your saved responses, server time and deadline. */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AttemptState"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/attempts/{id}/responses": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        /** Autosave a batch of item states. Idempotent per item: a state applies only if its seq is higher than the stored one. */
+        put: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["SaveResponsesRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SaveResponsesResult"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/attempts/{id}/submit": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Submit (idempotent). An optional final batch is saved first. Objective items are graded now; written items wait for self-evaluation. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["SaveResponsesRequestInput"] | null;
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SubmitResult"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/attempts/{id}/result": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Result of a submitted attempt: scores, analysis, every answer with its solution and marking scheme, percentile, live rank. */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AttemptResult"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/attempts/{id}/self-evaluation": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Self-evaluate written answers against the marking scheme (free). Returns the updated result. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["SelfEvaluationRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AttemptResult"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/attempts/{id}/ai-evaluation": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** AI marks of your submitted attempt, per item, with step marks and confidence. Never used for scores, percentiles or ranks. */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiEvaluation"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        /** AI evaluation of written answers (credits: 6 per answer, at most 40 per paper; quote first with GET /v1/ai/quote/evaluate-paper?attemptId=). Body {itemIds?}: one id = evaluate-answer, none/several = evaluate-paper. 202 with a job id; marks never count for scores or ranks. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["AiEvaluationRequestInput"] | null;
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                202: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiJobAccepted"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/attempts": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Your attempts, newest first (cursor = the last id of the previous page). */
+        get: {
+            parameters: {
+                query?: {
+                    cursor?: string;
+                    limit?: number;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["MyAttempts"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/live-events": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** All-India live mocks with their windows and phase. Signed in: your registration and attempt. */
+        get: {
+            parameters: {
+                query?: {
+                    board?: components["schemas"]["BoardInput"];
+                    class?: number;
+                    subject?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["LiveEvents"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/live-events/{id}/register": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Register for a live mock (idempotent). Starting the test also registers you. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["LiveEvent"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/live-events/{id}/leaderboard": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Live mock leaderboard: provisional during the event, final once ranks are published. Needs consent (D-014). */
+        get: {
+            parameters: {
+                query?: {
+                    limit?: number;
+                };
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["LiveLeaderboard"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/credits": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Today’s AI credits: balance, plan, reset time (00:00 IST) and prices. */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Credits"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/credits/ledger": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Credit history, newest first (cursor = last id of the previous page). */
+        get: {
+            parameters: {
+                query?: {
+                    cursor?: string;
+                    limit?: number;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CreditLedger"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ai/quote/{action}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** What an AI action will cost, before the student confirms. Evaluate-paper: pass attemptId to price the actual answers. */
+        get: {
+            parameters: {
+                query?: {
+                    attemptId?: string;
+                    answers?: number;
+                };
+                header?: never;
+                path: {
+                    action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiQuote"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ai/{action}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Run an AI action. Stream actions (quick-doubt, explain-slide, hard-doubt, photo-doubt) answer with Server-Sent Events; job actions (evaluate-answer, evaluate-paper, paper-from-upload) answer 202 with a job id. Optional Idempotency-Key header (retries never charge twice). */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["AiActionRequestInput"];
+                };
+            };
+            responses: {
+                /** @description text/event-stream. Events: `meta` {requestId, conversationId, action, credits, balance, tier, degraded, mode: hint|full|explain, language: english|hinglish|hindi}; `delta` {text} (moderated chunks, Markdown); `refusal` {kind: unsafe|off_topic|self_harm|output_blocked, message, creditsRefunded, balance}; `error` {code: ai_unavailable|ai_failed|ai_interrupted, message, creditsRefunded|creditsCharged, balance}; `done` {status, creditsCharged, balance, sources?}. */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": string;
+                    };
+                };
+                /** @description Default Response */
+                202: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiJobAccepted"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ai/jobs/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Status and result of an AI job (yours only). */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiJob"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ai/uploads": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Get a short-lived, write-only upload URL for one photo (JPEG/PNG/WebP) or sample paper (also PDF), ≤ 10 MB. Uploads are deleted after 30 days. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["AiUploadRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                201: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiUploadTarget"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ai/uploads/{id}/complete": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Tell the server the file is uploaded; it is checked and cleaned (metadata removed) before use. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                202: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiUpload"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ai/uploads/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Upload status. */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiUpload"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ai/conversations": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Your AI conversations, newest first. */
+        get: {
+            parameters: {
+                query?: {
+                    cursor?: string;
+                    limit?: number;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiConversations"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        /** Start a conversation (optional: an action without conversationId starts one). */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["AiConversationCreateInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                201: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": {
+                            conversation: components["schemas"]["AiConversation"];
+                        };
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ai/conversations/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** A conversation’s messages (kept 30 days). */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiConversationDetail"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -2532,6 +4030,13 @@ export interface components {
                 message: string;
             }[];
             retryAfterSeconds?: number;
+            balance?: number;
+            required?: number;
+            /** Format: date-time */
+            resetAt?: string;
+            resetInSeconds?: number;
+            plan?: string;
+            plansUrl?: string;
         };
         /** @enum {string} */
         ConsentStateInput: "required" | "pending" | "granted" | "revoked";
@@ -3219,8 +4724,716 @@ export interface components {
             }[];
             nextCursor: string | null;
         };
+        /** @description Test id (TestDefinition.id), e.g. t_cbse10sci_ch01_short. */
+        TestIdInput: string;
+        /** @description Signed in only (null for guests): your attempts at this test, across its versions. */
+        MyTestStatusInput: {
+            attempts: number;
+            bestScore: number | null;
+            lastScore: number | null;
+            maxScore: number | null;
+            activeAttemptId: string | null;
+            lastAttemptId: string | null;
+        };
+        /**
+         * @description live = you can start (until lateStartUntil); writing = running, no new starts; closed = awaiting final ranks.
+         * @enum {string}
+         */
+        LivePhaseInput: "cancelled" | "upcoming" | "registration_open" | "live" | "writing" | "closed" | "results_published";
+        LiveEventInput: {
+            id: string;
+            title: string;
+            phase: components["schemas"]["LivePhaseInput"];
+            subject: {
+                id: string;
+                name: string;
+            };
+            testId: string;
+            durationMin: number;
+            totalMarks: number;
+            /** Format: date-time */
+            registrationOpensAt: string;
+            /** Format: date-time */
+            startsAt: string;
+            /** Format: date-time */
+            lateStartUntil: string;
+            /** Format: date-time */
+            endsAt: string;
+            resultsPublishedAt: string | null;
+            ranksBeta: boolean;
+            me: {
+                registered: boolean;
+                attemptId: string | null;
+                attemptStatus: string | null;
+            } | null;
+        };
+        TestSeriesInput: {
+            subject: {
+                id: string;
+                name: string;
+                board: string;
+                classLevel: number;
+            };
+            series: {
+                id: string;
+                /** @enum {string} */
+                kind: "chapter" | "unit" | "term" | "full" | "second_exam" | "live";
+                title: string;
+                tests: {
+                    id: string;
+                    version: number;
+                    title: string;
+                    kind: string;
+                    paperType: string;
+                    durationMin: number;
+                    totalMarks: number;
+                    questionCount: number;
+                    chapterIds: string[];
+                    chapter: {
+                        id: string;
+                        number: number;
+                        title: string;
+                    } | null;
+                    position: number | null;
+                    me: components["schemas"]["MyTestStatusInput"] | null;
+                }[];
+            }[];
+            liveEvents: components["schemas"]["LiveEventInput"][];
+        };
+        /** @description Metadata only: questions are delivered inside an attempt. */
+        TestMetaInput: {
+            id: string;
+            version: number;
+            title: string;
+            kind: string;
+            paperType: string;
+            subject: {
+                id: string;
+                name: string;
+                board: string;
+                classLevel: number;
+            };
+            chapterIds: string[];
+            durationMin: number;
+            totalMarks: number;
+            questionCount: number;
+            autoGradedCount: number;
+            custom: boolean;
+            shuffle: boolean;
+            instructions: string[];
+            sections: {
+                id: string;
+                title: string;
+                instructions: string;
+                questionCount: number;
+                maxMarks: number;
+                choiceGroups: {
+                    id: string;
+                    attempt: number;
+                    of: number;
+                }[];
+            }[];
+            live: components["schemas"]["LiveEventInput"] | null;
+            me: components["schemas"]["MyTestStatusInput"] | null;
+        };
+        CustomTestRequestInput: {
+            subjectId: string;
+            chapterIds: string[];
+            types?: ("mcq" | "multi-select" | "assertion-reason" | "case-based" | "source-based" | "short" | "long" | "numerical" | "fill-blank" | "match" | "true-false" | "writing" | "map" | "code-output" | "ordering")[];
+            difficulty?: {
+                min: number;
+                max: number;
+            };
+            questionCount: number;
+            durationMin?: number;
+            title?: string;
+        };
+        /** @description skippedChapters: chosen chapters with no matching questions. */
+        CustomTestInput: {
+            id: string;
+            version: number;
+            title: string;
+            kind: string;
+            paperType: string;
+            subject: {
+                id: string;
+                name: string;
+                board: string;
+                classLevel: number;
+            };
+            chapterIds: string[];
+            durationMin: number;
+            totalMarks: number;
+            questionCount: number;
+            autoGradedCount: number;
+            custom: boolean;
+            shuffle: boolean;
+            instructions: string[];
+            sections: {
+                id: string;
+                title: string;
+                instructions: string;
+                questionCount: number;
+                maxMarks: number;
+                choiceGroups: {
+                    id: string;
+                    attempt: number;
+                    of: number;
+                }[];
+            }[];
+            live: components["schemas"]["LiveEventInput"] | null;
+            me: components["schemas"]["MyTestStatusInput"] | null;
+            skippedChapters: string[];
+        };
+        /** @description start=false creates the attempt without starting the clock (instructions / live waiting room). */
+        StartAttemptRequestInput: {
+            /** @default true */
+            start: boolean;
+        };
+        /** @enum {string} */
+        AttemptStatusInput: "created" | "in_progress" | "submitted" | "auto_submitted";
+        /** @description Questions without answers (DB-6/API-9). serverNow + deadlineAt drive the timer (AC-12). */
+        AttemptStateInput: {
+            attempt: {
+                /** Format: uuid */
+                id: string;
+                status: components["schemas"]["AttemptStatusInput"];
+                testId: string;
+                testVersion: number;
+                liveEventId: string | null;
+                ranked: boolean;
+                startedAt: string | null;
+                deadlineAt: string | null;
+                submittedAt: string | null;
+                /** Format: date-time */
+                serverNow: string;
+                remainingSec: number | null;
+                graceSeconds: number;
+                tabSwitchCount: number;
+            };
+            test: {
+                id: string;
+                version: number;
+                title: string;
+                kind: string;
+                paperType: string;
+                subject: {
+                    id: string;
+                    name: string;
+                    board: string;
+                    classLevel: number;
+                };
+                chapterIds: string[];
+                durationMin: number;
+                totalMarks: number;
+                questionCount: number;
+                shuffle: boolean;
+            };
+            sections: {
+                id: string;
+                title: string;
+                instructions: string;
+                questionCount?: number;
+                maxMarks: number;
+                itemIds: string[];
+                choiceGroups: {
+                    id: string;
+                    attempt: number;
+                    of: number;
+                    itemIds: string[];
+                }[];
+            }[];
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                sectionId: string;
+                number: number;
+                marks: number;
+                choiceGroup: string | null;
+                question: components["schemas"]["StudentQuestionInput"];
+            }[];
+            responses: {
+                /** Format: uuid */
+                itemId: string;
+                response: components["schemas"]["PracticeResponseInput"] | null;
+                markedForReview: boolean;
+                timeSpentSec: number;
+                seq: number;
+                /** Format: date-time */
+                savedAt: string;
+            }[];
+        };
+        SaveResponsesRequestInput: {
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                seq: number;
+                response: components["schemas"]["PracticeResponseInput"] | null;
+                markedForReview?: boolean;
+                timeSpentSec?: number;
+                /** Format: date-time */
+                changedAt?: string;
+            }[];
+            tabSwitchCount?: number;
+        };
+        /** @description Drop queued entries that are applied, stale or rejected; retry only on network/5xx/429. */
+        SaveResponsesResultInput: {
+            status: string;
+            /** Format: date-time */
+            serverNow: string;
+            deadlineAt: string | null;
+            applied: {
+                /** Format: uuid */
+                itemId: string;
+                seq: number;
+            }[];
+            stale: {
+                /** Format: uuid */
+                itemId: string;
+                seq: number;
+                storedSeq: number;
+            }[];
+            rejected: {
+                /** Format: uuid */
+                itemId: string;
+                seq: number;
+                /** @constant */
+                reason: "after_deadline";
+            }[];
+        };
+        SubmitResultInput: {
+            /** Format: uuid */
+            attemptId: string;
+            /** @enum {string} */
+            status: "submitted" | "auto_submitted";
+            alreadySubmitted: boolean;
+            /** Format: date-time */
+            submittedAt: string;
+            score: number;
+            maxScore: number;
+            autoScore: number;
+            pendingSelfEvaluation: {
+                items: number;
+                marks: number;
+            };
+            xpAwarded: number;
+            badgesAwarded: string[];
+            streak: components["schemas"]["StreakInput"] | null;
+        };
+        /** @description After submission only. Percentile and ranks use auto-graded marks (AC-14). */
+        AttemptResultInput: {
+            attempt: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                status: "submitted" | "auto_submitted";
+                /** Format: date-time */
+                startedAt: string;
+                /** Format: date-time */
+                deadlineAt: string;
+                /** Format: date-time */
+                submittedAt: string;
+                timeTakenSec: number;
+                tabSwitchCount: number;
+            };
+            test: {
+                id: string;
+                version: number;
+                title: string;
+                kind: string;
+                paperType: string;
+                subject: {
+                    id: string;
+                    name: string;
+                    board: string;
+                    classLevel: number;
+                };
+                chapterIds: string[];
+                durationMin: number;
+                totalMarks: number;
+                questionCount: number;
+                shuffle: boolean;
+            };
+            score: {
+                total: number;
+                max: number;
+                auto: number;
+                self: number;
+                percentage: number | null;
+                pendingSelfEvaluation: {
+                    items: number;
+                    marks: number;
+                };
+                answered: number;
+                questions: number;
+            };
+            sections: {
+                id: string;
+                title: string;
+                score: number;
+                autoScore: number;
+                maxScore: number;
+            }[];
+            topics: {
+                id: string;
+                title: string;
+                earned: number;
+                max: number;
+                items: number;
+                mastery: number | null;
+            }[];
+            byDifficulty: {
+                difficulty: number;
+                total: number;
+                attempted: number;
+                correct: number;
+                accuracy: number | null;
+            }[];
+            time: {
+                totalSec: number;
+                averagePerQuestionSec: number;
+            };
+            percentile: {
+                value: number | null;
+                attempts: number;
+                minAttempts: number;
+            };
+            live: {
+                eventId: string;
+                /** @enum {string} */
+                status: "provisional" | "final";
+                rank: number | null;
+                total: number;
+                percentile: number | null;
+            } | null;
+            sectionsLayout: {
+                id: string;
+                title: string;
+                itemIds: string[];
+                choiceGroups: {
+                    id: string;
+                    attempt: number;
+                    of: number;
+                    itemIds: string[];
+                }[];
+            }[];
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                sectionId: string;
+                number: number;
+                marks: number;
+                choiceGroup: string | null;
+                counted: boolean;
+                /** @enum {string} */
+                status: "correct" | "partial" | "wrong" | "unanswered" | "pending_self" | "evaluated";
+                autoMarks: number;
+                autoMax: number;
+                selfMarks: number | null;
+                selfMax: number;
+                correct: boolean | null;
+                timeSpentSec: number;
+                markedForReview: boolean;
+                response: components["schemas"]["PracticeResponseInput"] | null;
+                question: components["schemas"]["StudentQuestionInput"];
+                key: components["schemas"]["AnswerKeyInput"] | null;
+                parts: {
+                    id: string;
+                    alternative: string | null;
+                    /** @enum {string} */
+                    type: "mcq" | "multi-select" | "assertion-reason" | "case-based" | "source-based" | "short" | "long" | "numerical" | "fill-blank" | "match" | "true-false" | "writing" | "map" | "code-output" | "ordering";
+                    correct: boolean | null;
+                    marksAwarded: number | null;
+                    maxMarks: number;
+                    /** @enum {string} */
+                    grading: "auto" | "self";
+                    key: components["schemas"]["AnswerKeyInput"];
+                }[];
+            }[];
+        };
+        /** @description Per item exactly one of: marks (total of its written parts), steps (marks per marking-scheme step), parts (case-based: marks per written part). */
+        SelfEvaluationRequestInput: {
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                marks?: number;
+                steps?: number[];
+                parts?: {
+                    id: string;
+                    marks: number;
+                }[];
+            }[];
+        };
+        /** @description Auto-graded marks only; ties on marks are broken by time taken. Ranks are beta. */
+        LiveLeaderboardInput: {
+            event: components["schemas"]["LiveEventInput"];
+            /** @enum {string} */
+            status: "not_started" | "provisional" | "final";
+            maxScore: number;
+            total: number;
+            entries: {
+                rank: number;
+                name: string | null;
+                score: number;
+                isMe: boolean;
+            }[];
+            me: {
+                rank: number;
+                score: number;
+                percentile: number | null;
+            } | null;
+        };
+        MyAttemptsInput: {
+            attempts: {
+                /** Format: uuid */
+                id: string;
+                testId: string;
+                title: string;
+                kind: string;
+                status: components["schemas"]["AttemptStatusInput"];
+                liveEventId: string | null;
+                startedAt: string | null;
+                deadlineAt: string | null;
+                submittedAt: string | null;
+                score: number | null;
+                maxScore: number | null;
+            }[];
+            nextCursor: string | null;
+        };
+        AiActionRequestInput: {
+            message?: string;
+            attempt?: string;
+            reveal?: boolean;
+            /** Format: uuid */
+            conversationId?: string;
+            chapterId?: string;
+            slide?: {
+                part?: number;
+                slideId: string;
+            };
+            /** Format: uuid */
+            uploadId?: string;
+            subjectId?: string;
+            /** Format: uuid */
+            attemptId?: string;
+            itemIds?: string[];
+        };
+        /** @description Poll GET /v1/ai/jobs/:id. */
+        AiJobAcceptedInput: {
+            /** Format: uuid */
+            jobId: string;
+            /** @constant */
+            status: "queued";
+            /** @enum {string} */
+            action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+            credits: number;
+            balance: number;
+            answers?: number;
+            skipped?: {
+                /** Format: uuid */
+                itemId: string;
+                /** @enum {string} */
+                reason: "not_written" | "unanswered" | "already_evaluated";
+            }[];
+        };
+        /** @description evaluation result: {attemptId, evaluated[], notEvaluated[{itemId, reason}], creditsCharged, creditsRefunded, countsForRanks:false}. paper_from_upload result: {blueprint {durationMin, totalMarks, sections[{id, questionType, count, marksEach, internalChoice}], chapterIds}, testId, skippedChapters, creditsCharged}. */
+        AiJobInput: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "evaluation" | "paper_from_upload";
+            action: string | null;
+            /** @enum {string} */
+            status: "queued" | "running" | "succeeded" | "failed";
+            result: {
+                [key: string]: unknown;
+            } | null;
+            error: string | null;
+            /** Format: date-time */
+            createdAt: string;
+            finishedAt: string | null;
+        };
+        /** @description Today’s AI credits (1 credit = ₹0.10 of AI). Resets at 00:00 IST; no rollover. */
+        CreditsInput: {
+            plan: string;
+            planName: string;
+            dailyCredits: number;
+            balance: number;
+            grantedToday: number;
+            reservedNow: number;
+            spentToday: number;
+            day: string;
+            /** Format: date-time */
+            resetAt: string;
+            resetInSeconds: number;
+            plansUrl: string;
+            prices: {
+                /** @enum {string} */
+                action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+                label: string;
+                credits: number;
+                perAnswer: boolean;
+                maxCredits: number;
+                allowedForPlan: boolean;
+            }[];
+        };
+        CreditLedgerInput: {
+            entries: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                kind: "grant" | "reserve" | "charge" | "refund" | "expire";
+                amount: number;
+                action: string;
+                label: string;
+                day: string;
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+            nextCursor: string | null;
+        };
+        /** @description Show the cost before the student confirms (CONTEXT §6). */
+        AiQuoteInput: {
+            /** @enum {string} */
+            action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+            label: string;
+            credits: number;
+            perAnswer: boolean;
+            answers: number | null;
+            maxCredits: number;
+            /** @enum {string} */
+            tier: "small" | "mid" | "verify";
+            /** @enum {string} */
+            mode: "stream" | "job";
+            requiresUpload: boolean;
+            plan: string;
+            allowedForPlan: boolean;
+            balance: number;
+            affordable: boolean;
+            /** @enum {string} */
+            status: "available" | "degraded" | "paused";
+            /** Format: date-time */
+            resetAt: string;
+            resetInSeconds: number;
+            plansUrl: string;
+        };
+        AiUploadRequestInput: {
+            /** @enum {string} */
+            kind: "photo_doubt" | "sample_paper";
+            /** @enum {string} */
+            contentType: "image/jpeg" | "image/png" | "image/webp" | "application/pdf";
+            bytes: number;
+        };
+        /** @description PUT the file to uploadUrl with these headers within uploadExpiresAt, then POST /v1/ai/uploads/:id/complete. */
+        AiUploadTargetInput: {
+            /** Format: uuid */
+            uploadId: string;
+            uploadUrl: string;
+            /** @constant */
+            method: "PUT";
+            headers: {
+                [key: string]: string;
+            };
+            /** Format: date-time */
+            uploadExpiresAt: string;
+            maxBytes: number;
+            /** Format: date-time */
+            expiresAt: string;
+        };
+        AiUploadInput: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "photo_doubt" | "sample_paper" | "answer_sheet";
+            /** @enum {string} */
+            status: "pending_upload" | "uploaded" | "scanning" | "ready" | "rejected";
+            rejectReason: string | null;
+            contentType: string;
+            bytes: number | null;
+            pages: number | null;
+            /** Format: date-time */
+            expiresAt: string;
+            /** Format: date-time */
+            createdAt: string;
+        };
+        AiConversationCreateInput: {
+            /**
+             * @default tutor
+             * @enum {string}
+             */
+            kind: "tutor" | "photo_doubt" | "explain_slide" | "evaluation" | "paper_from_upload";
+            chapterId?: string;
+            title?: string;
+        };
+        AiConversationInput: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "tutor" | "photo_doubt" | "explain_slide" | "evaluation" | "paper_from_upload";
+            chapterId: string | null;
+            title: string | null;
+            lastMessageAt: string | null;
+            /** Format: date-time */
+            createdAt: string;
+        };
+        AiConversationsInput: {
+            conversations: components["schemas"]["AiConversationInput"][];
+            nextCursor: string | null;
+        };
+        /** @description Messages are kept for 30 days. */
+        AiConversationDetailInput: {
+            conversation: components["schemas"]["AiConversationInput"];
+            messages: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                role: "user" | "assistant";
+                content: string;
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+        };
+        AiEvaluationRequestInput: {
+            itemIds?: string[];
+        };
+        AiEvaluationInput: {
+            /** Format: uuid */
+            attemptId: string;
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                marks: number;
+                maxMarks: number;
+                confidence: number;
+                lowConfidence: boolean;
+                label: string;
+                steps: {
+                    part: string | null;
+                    index: number;
+                    step: string;
+                    awarded: number;
+                    max: number;
+                    reason: string;
+                }[];
+                feedback: string;
+                /** Format: date-time */
+                evaluatedAt: string;
+            }[];
+            totalMarks: number;
+            maxMarks: number;
+            /** @constant */
+            countsForRanks: false;
+            job: {
+                /** Format: uuid */
+                id: string;
+                status: string;
+            } | null;
+        };
         PracticeSelfAssessRequestInput: {
             marks: number;
+        };
+        LiveEventsInput: {
+            events: components["schemas"]["LiveEventInput"][];
         };
         /** @description RFC 7807 problem details (application/problem+json). */
         Problem: {
@@ -3235,6 +5448,13 @@ export interface components {
                 message: string;
             }[];
             retryAfterSeconds?: number;
+            balance?: number;
+            required?: number;
+            /** Format: date-time */
+            resetAt?: string;
+            resetInSeconds?: number;
+            plan?: string;
+            plansUrl?: string;
         };
         /** @enum {string} */
         ConsentState: "required" | "pending" | "granted" | "revoked";
@@ -3922,8 +6142,716 @@ export interface components {
             }[];
             nextCursor: string | null;
         };
+        /** @description Test id (TestDefinition.id), e.g. t_cbse10sci_ch01_short. */
+        TestId: string;
+        /** @description Signed in only (null for guests): your attempts at this test, across its versions. */
+        MyTestStatus: {
+            attempts: number;
+            bestScore: number | null;
+            lastScore: number | null;
+            maxScore: number | null;
+            activeAttemptId: string | null;
+            lastAttemptId: string | null;
+        };
+        /**
+         * @description live = you can start (until lateStartUntil); writing = running, no new starts; closed = awaiting final ranks.
+         * @enum {string}
+         */
+        LivePhase: "cancelled" | "upcoming" | "registration_open" | "live" | "writing" | "closed" | "results_published";
+        LiveEvent: {
+            id: string;
+            title: string;
+            phase: components["schemas"]["LivePhase"];
+            subject: {
+                id: string;
+                name: string;
+            };
+            testId: string;
+            durationMin: number;
+            totalMarks: number;
+            /** Format: date-time */
+            registrationOpensAt: string;
+            /** Format: date-time */
+            startsAt: string;
+            /** Format: date-time */
+            lateStartUntil: string;
+            /** Format: date-time */
+            endsAt: string;
+            resultsPublishedAt: string | null;
+            ranksBeta: boolean;
+            me: {
+                registered: boolean;
+                attemptId: string | null;
+                attemptStatus: string | null;
+            } | null;
+        };
+        TestSeries: {
+            subject: {
+                id: string;
+                name: string;
+                board: string;
+                classLevel: number;
+            };
+            series: {
+                id: string;
+                /** @enum {string} */
+                kind: "chapter" | "unit" | "term" | "full" | "second_exam" | "live";
+                title: string;
+                tests: {
+                    id: string;
+                    version: number;
+                    title: string;
+                    kind: string;
+                    paperType: string;
+                    durationMin: number;
+                    totalMarks: number;
+                    questionCount: number;
+                    chapterIds: string[];
+                    chapter: {
+                        id: string;
+                        number: number;
+                        title: string;
+                    } | null;
+                    position: number | null;
+                    me: components["schemas"]["MyTestStatus"] | null;
+                }[];
+            }[];
+            liveEvents: components["schemas"]["LiveEvent"][];
+        };
+        /** @description Metadata only: questions are delivered inside an attempt. */
+        TestMeta: {
+            id: string;
+            version: number;
+            title: string;
+            kind: string;
+            paperType: string;
+            subject: {
+                id: string;
+                name: string;
+                board: string;
+                classLevel: number;
+            };
+            chapterIds: string[];
+            durationMin: number;
+            totalMarks: number;
+            questionCount: number;
+            autoGradedCount: number;
+            custom: boolean;
+            shuffle: boolean;
+            instructions: string[];
+            sections: {
+                id: string;
+                title: string;
+                instructions: string;
+                questionCount: number;
+                maxMarks: number;
+                choiceGroups: {
+                    id: string;
+                    attempt: number;
+                    of: number;
+                }[];
+            }[];
+            live: components["schemas"]["LiveEvent"] | null;
+            me: components["schemas"]["MyTestStatus"] | null;
+        };
+        CustomTestRequest: {
+            subjectId: string;
+            chapterIds: string[];
+            types?: ("mcq" | "multi-select" | "assertion-reason" | "case-based" | "source-based" | "short" | "long" | "numerical" | "fill-blank" | "match" | "true-false" | "writing" | "map" | "code-output" | "ordering")[];
+            difficulty?: {
+                min: number;
+                max: number;
+            };
+            questionCount: number;
+            durationMin?: number;
+            title?: string;
+        };
+        /** @description skippedChapters: chosen chapters with no matching questions. */
+        CustomTest: {
+            id: string;
+            version: number;
+            title: string;
+            kind: string;
+            paperType: string;
+            subject: {
+                id: string;
+                name: string;
+                board: string;
+                classLevel: number;
+            };
+            chapterIds: string[];
+            durationMin: number;
+            totalMarks: number;
+            questionCount: number;
+            autoGradedCount: number;
+            custom: boolean;
+            shuffle: boolean;
+            instructions: string[];
+            sections: {
+                id: string;
+                title: string;
+                instructions: string;
+                questionCount: number;
+                maxMarks: number;
+                choiceGroups: {
+                    id: string;
+                    attempt: number;
+                    of: number;
+                }[];
+            }[];
+            live: components["schemas"]["LiveEvent"] | null;
+            me: components["schemas"]["MyTestStatus"] | null;
+            skippedChapters: string[];
+        };
+        /** @description start=false creates the attempt without starting the clock (instructions / live waiting room). */
+        StartAttemptRequest: {
+            /** @default true */
+            start: boolean;
+        };
+        /** @enum {string} */
+        AttemptStatus: "created" | "in_progress" | "submitted" | "auto_submitted";
+        /** @description Questions without answers (DB-6/API-9). serverNow + deadlineAt drive the timer (AC-12). */
+        AttemptState: {
+            attempt: {
+                /** Format: uuid */
+                id: string;
+                status: components["schemas"]["AttemptStatus"];
+                testId: string;
+                testVersion: number;
+                liveEventId: string | null;
+                ranked: boolean;
+                startedAt: string | null;
+                deadlineAt: string | null;
+                submittedAt: string | null;
+                /** Format: date-time */
+                serverNow: string;
+                remainingSec: number | null;
+                graceSeconds: number;
+                tabSwitchCount: number;
+            };
+            test: {
+                id: string;
+                version: number;
+                title: string;
+                kind: string;
+                paperType: string;
+                subject: {
+                    id: string;
+                    name: string;
+                    board: string;
+                    classLevel: number;
+                };
+                chapterIds: string[];
+                durationMin: number;
+                totalMarks: number;
+                questionCount: number;
+                shuffle: boolean;
+            };
+            sections: {
+                id: string;
+                title: string;
+                instructions: string;
+                questionCount?: number;
+                maxMarks: number;
+                itemIds: string[];
+                choiceGroups: {
+                    id: string;
+                    attempt: number;
+                    of: number;
+                    itemIds: string[];
+                }[];
+            }[];
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                sectionId: string;
+                number: number;
+                marks: number;
+                choiceGroup: string | null;
+                question: components["schemas"]["StudentQuestion"];
+            }[];
+            responses: {
+                /** Format: uuid */
+                itemId: string;
+                response: components["schemas"]["PracticeResponse"] | null;
+                markedForReview: boolean;
+                timeSpentSec: number;
+                seq: number;
+                /** Format: date-time */
+                savedAt: string;
+            }[];
+        };
+        SaveResponsesRequest: {
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                seq: number;
+                response: components["schemas"]["PracticeResponse"] | null;
+                markedForReview?: boolean;
+                timeSpentSec?: number;
+                /** Format: date-time */
+                changedAt?: string;
+            }[];
+            tabSwitchCount?: number;
+        };
+        /** @description Drop queued entries that are applied, stale or rejected; retry only on network/5xx/429. */
+        SaveResponsesResult: {
+            status: string;
+            /** Format: date-time */
+            serverNow: string;
+            deadlineAt: string | null;
+            applied: {
+                /** Format: uuid */
+                itemId: string;
+                seq: number;
+            }[];
+            stale: {
+                /** Format: uuid */
+                itemId: string;
+                seq: number;
+                storedSeq: number;
+            }[];
+            rejected: {
+                /** Format: uuid */
+                itemId: string;
+                seq: number;
+                /** @constant */
+                reason: "after_deadline";
+            }[];
+        };
+        SubmitResult: {
+            /** Format: uuid */
+            attemptId: string;
+            /** @enum {string} */
+            status: "submitted" | "auto_submitted";
+            alreadySubmitted: boolean;
+            /** Format: date-time */
+            submittedAt: string;
+            score: number;
+            maxScore: number;
+            autoScore: number;
+            pendingSelfEvaluation: {
+                items: number;
+                marks: number;
+            };
+            xpAwarded: number;
+            badgesAwarded: string[];
+            streak: components["schemas"]["Streak"] | null;
+        };
+        /** @description After submission only. Percentile and ranks use auto-graded marks (AC-14). */
+        AttemptResult: {
+            attempt: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                status: "submitted" | "auto_submitted";
+                /** Format: date-time */
+                startedAt: string;
+                /** Format: date-time */
+                deadlineAt: string;
+                /** Format: date-time */
+                submittedAt: string;
+                timeTakenSec: number;
+                tabSwitchCount: number;
+            };
+            test: {
+                id: string;
+                version: number;
+                title: string;
+                kind: string;
+                paperType: string;
+                subject: {
+                    id: string;
+                    name: string;
+                    board: string;
+                    classLevel: number;
+                };
+                chapterIds: string[];
+                durationMin: number;
+                totalMarks: number;
+                questionCount: number;
+                shuffle: boolean;
+            };
+            score: {
+                total: number;
+                max: number;
+                auto: number;
+                self: number;
+                percentage: number | null;
+                pendingSelfEvaluation: {
+                    items: number;
+                    marks: number;
+                };
+                answered: number;
+                questions: number;
+            };
+            sections: {
+                id: string;
+                title: string;
+                score: number;
+                autoScore: number;
+                maxScore: number;
+            }[];
+            topics: {
+                id: string;
+                title: string;
+                earned: number;
+                max: number;
+                items: number;
+                mastery: number | null;
+            }[];
+            byDifficulty: {
+                difficulty: number;
+                total: number;
+                attempted: number;
+                correct: number;
+                accuracy: number | null;
+            }[];
+            time: {
+                totalSec: number;
+                averagePerQuestionSec: number;
+            };
+            percentile: {
+                value: number | null;
+                attempts: number;
+                minAttempts: number;
+            };
+            live: {
+                eventId: string;
+                /** @enum {string} */
+                status: "provisional" | "final";
+                rank: number | null;
+                total: number;
+                percentile: number | null;
+            } | null;
+            sectionsLayout: {
+                id: string;
+                title: string;
+                itemIds: string[];
+                choiceGroups: {
+                    id: string;
+                    attempt: number;
+                    of: number;
+                    itemIds: string[];
+                }[];
+            }[];
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                sectionId: string;
+                number: number;
+                marks: number;
+                choiceGroup: string | null;
+                counted: boolean;
+                /** @enum {string} */
+                status: "correct" | "partial" | "wrong" | "unanswered" | "pending_self" | "evaluated";
+                autoMarks: number;
+                autoMax: number;
+                selfMarks: number | null;
+                selfMax: number;
+                correct: boolean | null;
+                timeSpentSec: number;
+                markedForReview: boolean;
+                response: components["schemas"]["PracticeResponse"] | null;
+                question: components["schemas"]["StudentQuestion"];
+                key: components["schemas"]["AnswerKey"] | null;
+                parts: {
+                    id: string;
+                    alternative: string | null;
+                    /** @enum {string} */
+                    type: "mcq" | "multi-select" | "assertion-reason" | "case-based" | "source-based" | "short" | "long" | "numerical" | "fill-blank" | "match" | "true-false" | "writing" | "map" | "code-output" | "ordering";
+                    correct: boolean | null;
+                    marksAwarded: number | null;
+                    maxMarks: number;
+                    /** @enum {string} */
+                    grading: "auto" | "self";
+                    key: components["schemas"]["AnswerKey"];
+                }[];
+            }[];
+        };
+        /** @description Per item exactly one of: marks (total of its written parts), steps (marks per marking-scheme step), parts (case-based: marks per written part). */
+        SelfEvaluationRequest: {
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                marks?: number;
+                steps?: number[];
+                parts?: {
+                    id: string;
+                    marks: number;
+                }[];
+            }[];
+        };
+        /** @description Auto-graded marks only; ties on marks are broken by time taken. Ranks are beta. */
+        LiveLeaderboard: {
+            event: components["schemas"]["LiveEvent"];
+            /** @enum {string} */
+            status: "not_started" | "provisional" | "final";
+            maxScore: number;
+            total: number;
+            entries: {
+                rank: number;
+                name: string | null;
+                score: number;
+                isMe: boolean;
+            }[];
+            me: {
+                rank: number;
+                score: number;
+                percentile: number | null;
+            } | null;
+        };
+        MyAttempts: {
+            attempts: {
+                /** Format: uuid */
+                id: string;
+                testId: string;
+                title: string;
+                kind: string;
+                status: components["schemas"]["AttemptStatus"];
+                liveEventId: string | null;
+                startedAt: string | null;
+                deadlineAt: string | null;
+                submittedAt: string | null;
+                score: number | null;
+                maxScore: number | null;
+            }[];
+            nextCursor: string | null;
+        };
+        AiActionRequest: {
+            message?: string;
+            attempt?: string;
+            reveal?: boolean;
+            /** Format: uuid */
+            conversationId?: string;
+            chapterId?: string;
+            slide?: {
+                part?: number;
+                slideId: string;
+            };
+            /** Format: uuid */
+            uploadId?: string;
+            subjectId?: string;
+            /** Format: uuid */
+            attemptId?: string;
+            itemIds?: string[];
+        };
+        /** @description Poll GET /v1/ai/jobs/:id. */
+        AiJobAccepted: {
+            /** Format: uuid */
+            jobId: string;
+            /** @constant */
+            status: "queued";
+            /** @enum {string} */
+            action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+            credits: number;
+            balance: number;
+            answers?: number;
+            skipped?: {
+                /** Format: uuid */
+                itemId: string;
+                /** @enum {string} */
+                reason: "not_written" | "unanswered" | "already_evaluated";
+            }[];
+        };
+        /** @description evaluation result: {attemptId, evaluated[], notEvaluated[{itemId, reason}], creditsCharged, creditsRefunded, countsForRanks:false}. paper_from_upload result: {blueprint {durationMin, totalMarks, sections[{id, questionType, count, marksEach, internalChoice}], chapterIds}, testId, skippedChapters, creditsCharged}. */
+        AiJob: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "evaluation" | "paper_from_upload";
+            action: string | null;
+            /** @enum {string} */
+            status: "queued" | "running" | "succeeded" | "failed";
+            result: {
+                [key: string]: unknown;
+            } | null;
+            error: string | null;
+            /** Format: date-time */
+            createdAt: string;
+            finishedAt: string | null;
+        };
+        /** @description Today’s AI credits (1 credit = ₹0.10 of AI). Resets at 00:00 IST; no rollover. */
+        Credits: {
+            plan: string;
+            planName: string;
+            dailyCredits: number;
+            balance: number;
+            grantedToday: number;
+            reservedNow: number;
+            spentToday: number;
+            day: string;
+            /** Format: date-time */
+            resetAt: string;
+            resetInSeconds: number;
+            plansUrl: string;
+            prices: {
+                /** @enum {string} */
+                action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+                label: string;
+                credits: number;
+                perAnswer: boolean;
+                maxCredits: number;
+                allowedForPlan: boolean;
+            }[];
+        };
+        CreditLedger: {
+            entries: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                kind: "grant" | "reserve" | "charge" | "refund" | "expire";
+                amount: number;
+                action: string;
+                label: string;
+                day: string;
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+            nextCursor: string | null;
+        };
+        /** @description Show the cost before the student confirms (CONTEXT §6). */
+        AiQuote: {
+            /** @enum {string} */
+            action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+            label: string;
+            credits: number;
+            perAnswer: boolean;
+            answers: number | null;
+            maxCredits: number;
+            /** @enum {string} */
+            tier: "small" | "mid" | "verify";
+            /** @enum {string} */
+            mode: "stream" | "job";
+            requiresUpload: boolean;
+            plan: string;
+            allowedForPlan: boolean;
+            balance: number;
+            affordable: boolean;
+            /** @enum {string} */
+            status: "available" | "degraded" | "paused";
+            /** Format: date-time */
+            resetAt: string;
+            resetInSeconds: number;
+            plansUrl: string;
+        };
+        AiUploadRequest: {
+            /** @enum {string} */
+            kind: "photo_doubt" | "sample_paper";
+            /** @enum {string} */
+            contentType: "image/jpeg" | "image/png" | "image/webp" | "application/pdf";
+            bytes: number;
+        };
+        /** @description PUT the file to uploadUrl with these headers within uploadExpiresAt, then POST /v1/ai/uploads/:id/complete. */
+        AiUploadTarget: {
+            /** Format: uuid */
+            uploadId: string;
+            uploadUrl: string;
+            /** @constant */
+            method: "PUT";
+            headers: {
+                [key: string]: string;
+            };
+            /** Format: date-time */
+            uploadExpiresAt: string;
+            maxBytes: number;
+            /** Format: date-time */
+            expiresAt: string;
+        };
+        AiUpload: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "photo_doubt" | "sample_paper" | "answer_sheet";
+            /** @enum {string} */
+            status: "pending_upload" | "uploaded" | "scanning" | "ready" | "rejected";
+            rejectReason: string | null;
+            contentType: string;
+            bytes: number | null;
+            pages: number | null;
+            /** Format: date-time */
+            expiresAt: string;
+            /** Format: date-time */
+            createdAt: string;
+        };
+        AiConversationCreate: {
+            /**
+             * @default tutor
+             * @enum {string}
+             */
+            kind: "tutor" | "photo_doubt" | "explain_slide" | "evaluation" | "paper_from_upload";
+            chapterId?: string;
+            title?: string;
+        };
+        AiConversation: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "tutor" | "photo_doubt" | "explain_slide" | "evaluation" | "paper_from_upload";
+            chapterId: string | null;
+            title: string | null;
+            lastMessageAt: string | null;
+            /** Format: date-time */
+            createdAt: string;
+        };
+        AiConversations: {
+            conversations: components["schemas"]["AiConversation"][];
+            nextCursor: string | null;
+        };
+        /** @description Messages are kept for 30 days. */
+        AiConversationDetail: {
+            conversation: components["schemas"]["AiConversation"];
+            messages: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                role: "user" | "assistant";
+                content: string;
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+        };
+        AiEvaluationRequest: {
+            itemIds?: string[];
+        };
+        AiEvaluation: {
+            /** Format: uuid */
+            attemptId: string;
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                marks: number;
+                maxMarks: number;
+                confidence: number;
+                lowConfidence: boolean;
+                label: string;
+                steps: {
+                    part: string | null;
+                    index: number;
+                    step: string;
+                    awarded: number;
+                    max: number;
+                    reason: string;
+                }[];
+                feedback: string;
+                /** Format: date-time */
+                evaluatedAt: string;
+            }[];
+            totalMarks: number;
+            maxMarks: number;
+            /** @constant */
+            countsForRanks: false;
+            job: {
+                /** Format: uuid */
+                id: string;
+                status: string;
+            } | null;
+        };
         PracticeSelfAssessRequest: {
             marks: number;
+        };
+        LiveEvents: {
+            events: components["schemas"]["LiveEvent"][];
         };
     };
     responses: never;
