@@ -8,3 +8,11 @@ import { readFlags } from '@/platform/shared/config/flags';
 export function requirePlatform(): void {
   if (!readFlags().platformEnabled) notFound();
 }
+
+/**
+ * For generateMetadata / generateStaticParams, which Next may run before (or without) the layout: return
+ * early (no API call) when the platform is off, so a flag-off request is a clean 404, never a 500.
+ */
+export function platformOn(): boolean {
+  return readFlags().platformEnabled;
+}

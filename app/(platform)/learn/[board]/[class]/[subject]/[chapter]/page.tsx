@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Badge } from '@/components/platform/ui/kit/Display';
-import { requirePlatform } from '@/components/platform/server/gate';
+import { platformOn, requirePlatform } from '@/components/platform/server/gate';
 import { platformMetadata } from '@/components/platform/server/metadata';
 import { getChapters } from '@/components/platform/server/catalog';
 import { PageHeader } from '@/components/platform/shell/PageHeader';
@@ -43,6 +43,7 @@ async function load(params: Promise<Params>) {
 }
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
+  if (!platformOn()) return {};
   const loaded = await load(params);
   if (!loaded) return {};
   const { board, classLevel, subject, chapter } = loaded;

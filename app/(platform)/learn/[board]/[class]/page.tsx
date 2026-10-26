@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Badge } from '@/components/platform/ui/kit/Display';
 import { Icon } from '@/components/platform/ui/kit/Icon';
-import { requirePlatform } from '@/components/platform/server/gate';
+import { platformOn, requirePlatform } from '@/components/platform/server/gate';
 import { platformMetadata } from '@/components/platform/server/metadata';
 import { getSubjects, groupByTier, TIER_HEADINGS } from '@/components/platform/server/catalog';
 import { PageHeader } from '@/components/platform/shell/PageHeader';
@@ -34,6 +34,7 @@ function parse(p: Params) {
 }
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
+  if (!platformOn()) return {};
   const parsed = parse(await params);
   if (!parsed) return {};
   const label = `${examLabel(parsed.board, parsed.classLevel)} Class ${parsed.classLevel}`;

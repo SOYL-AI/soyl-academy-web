@@ -9,7 +9,7 @@ import { notFound } from 'next/navigation';
 import { Badge } from '@/components/platform/ui/kit/Display';
 import { Icon } from '@/components/platform/ui/kit/Icon';
 import type { CatalogChapter } from '@/platform/shared/api-client';
-import { requirePlatform } from '@/components/platform/server/gate';
+import { platformOn, requirePlatform } from '@/components/platform/server/gate';
 import { platformMetadata } from '@/components/platform/server/metadata';
 import { getChapters } from '@/components/platform/server/catalog';
 import { PageHeader } from '@/components/platform/shell/PageHeader';
@@ -46,6 +46,7 @@ async function load(params: Promise<Params>) {
 }
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
+  if (!platformOn()) return {};
   const loaded = await load(params);
   if (!loaded) return {};
   const { board, classLevel, data } = loaded;
