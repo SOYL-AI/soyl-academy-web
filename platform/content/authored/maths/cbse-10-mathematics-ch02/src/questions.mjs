@@ -37,7 +37,7 @@ Q('m03', mk.mcq({
   key: 'c',
   assets: [qPlotCubic],
   sol: r`The zeroes are the $x$-coordinates where the graph meets the $x$-axis. The curve crosses the axis at $x = -1$, $0$ and $2$: three zeroes. (Indeed $p(x) = x^3 - x^2 - 2x = x(x + 1)(x - 2)$.)`,
-  d: 1, c: 'understanding', t: [1], time: 45,
+  d: 2, c: 'understanding', t: [1], time: 45,
 }), (C) => { const z = numRoots('x^3 - x^2 - 2x', -3, 4); C.assert(same(z, [-1, 0, 2]), `zeros ${z}`); C.which([1, 2, 3, 0], z.length); });
 Q('m04', mk.mcq({
   stem: r`The graph of a quadratic polynomial $y = p(x)$ is shown. How many zeroes does $p(x)$ have?`,
@@ -60,7 +60,7 @@ Q('m06', mk.mcq({
   opts: [r`$2$ and $-5$`, r`$-2$ and $5$`, r`$0$ and $5$`, r`$-2$ and $0$`],
   key: 'b',
   sol: r`A zero is the $x$-coordinate of a point where the graph meets the $x$-axis: $-2$ and $5$. Option (a) flips the signs, which happens when students think of the factors $(x + 2)(x - 5)$ instead of the zeroes.`,
-  d: 1, c: 'understanding', t: [1], time: 40,
+  d: 2, c: 'understanding', t: [1], time: 40,
 }), (C) => C.key('b'));
 Q('m07', mk.mcq({
   stem: 'The maximum number of zeroes a cubic polynomial can have is',
@@ -225,7 +225,7 @@ Q('s202', mk.short({ marks: 2, stem: r`Find a quadratic polynomial whose zeroes 
 $2x^2 - 5x - 3 = 2x^2 - 6x + x - 3 = (2x + 1)(x - 3)$, so the zeroes are $3$ and $-\dfrac12$. (Sum $\dfrac52$, product $-\dfrac32$ ✓.)`, sol: r`Use $k[x^2 - (\text{sum})x + \text{product}]$ with $k = 2$ to clear fractions, then factorise.`, scheme: [['2x² − 5x − 3 (any non-zero multiple)', 1], ['Zeroes 3 and −1/2', 1]], d: 2, c: 'understanding', t: [2], time: 150 }), (C) => { const z = zeros(2, -5, -3); C.assert(same(z, [-0.5, 3]) && Math.abs(z[0] + z[1] - 2.5) < 1e-12 && Math.abs(z[0] * z[1] + 1.5) < 1e-12, 'zeros'); C.model(['2x^2 - 5x - 3', 3, '-\\dfrac12']); });
 Q('s203', mk.short({ marks: 2, stem: r`The graph of $y = p(x)$, a quadratic polynomial, is shown. (a) Write the zeroes of $p(x)$. (b) Write the value of $p(0)$.`, assets: [qPlotS3], model: r`(a) The graph meets the $x$-axis at $x = -2$ and $x = 3$, so the zeroes are $-2$ and $3$.
 
-(b) The graph meets the $y$-axis at $6$, so $p(0) = 6$.`, sol: r`Zeroes are read on the $x$-axis; $p(0)$ is the $y$-intercept. (Here $p(x) = -x^2 + x + 6 = -(x + 2)(x - 3)$.)`, scheme: [['Zeroes −2 and 3', 1], ['p(0) = 6', 1]], d: 1, c: 'understanding', t: [1], time: 90 }), (C) => { C.assert(same(numRoots('-x^2 + x + 6', -4, 5), [-2, 3]) && f('-x^2 + x + 6')(0) === 6, 'graph'); C.model([-2, 3, 6]); });
+(b) The graph meets the $y$-axis at $6$, so $p(0) = 6$.`, sol: r`Zeroes are read on the $x$-axis; $p(0)$ is the $y$-intercept. (Here $p(x) = -x^2 + x + 6 = -(x + 2)(x - 3)$.)`, scheme: [['Zeroes −2 and 3', 1], ['p(0) = 6', 1]], d: 2, c: 'understanding', t: [1], time: 90 }), (C) => { C.assert(same(numRoots('-x^2 + x + 6', -4, 5), [-2, 3]) && f('-x^2 + x + 6')(0) === 6, 'graph'); C.model([-2, 3, 6]); });
 Q('s204', mk.short({ marks: 2, stem: r`Find the zeroes of $9t^2 - 16$ and verify the relationship between the zeroes and the coefficients.`, model: r`$9t^2 - 16 = (3t - 4)(3t + 4)$, so the zeroes are $\dfrac43$ and $-\dfrac43$.
 
 Sum $= 0 = -\dfrac{0}{9}$ ✓ (the coefficient of $t$ is $0$). Product $= -\dfrac{16}{9} = \dfrac ca$ ✓.`, sol: r`Difference of squares. Remember $b = 0$ here.`, scheme: [['Zeroes ±4/3', 1], ['Relations verified with b = 0', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), (C) => { const z = zeros(9, 0, -16); C.assert(Math.abs(z[1] - 4 / 3) < 1e-12 && Math.abs(z[0] * z[1] + 16 / 9) < 1e-12, 'zeros'); C.model(['\\dfrac43', '-\\dfrac{16}{9}']); });

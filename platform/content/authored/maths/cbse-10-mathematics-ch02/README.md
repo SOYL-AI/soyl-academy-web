@@ -19,7 +19,7 @@ provenance `origin: "human"`, `model: null`. All items are `status: "draft"` unt
 | Notes | 8 sections, each with key terms, formulas and a visual; exam tips with mark split and 8 common mistakes |
 | Flashcards | 30 (definition 2, fact 4, formula 7, concept 7, example 4, exam-tip 5, diagram 1) |
 | Questions | 70 items, 140 marks: mcq 18 (8 items across the bank carry graph assets), assertion-reason 6 (keys a c d b a c), true-false 5, fill-blank 5, numerical 9, short-2 9, short-3 7, long-5 6, case-based 5 (each 1 + 1 + 2, part (c) either/or via `alternatives`, `passage_origin: soyl-original`) |
-| Difficulty | d1 15, d2 26, d3 23, d4 4, d5 2 |
+| Difficulty | d1 12, d2 29, d3 23, d4 4, d5 2 |
 | Competency | recall 7, understanding 27, application 25, analysis 8, evaluation 3 — application or higher 51% of items, 70% of marks |
 | Tests | `t_cbse10math_ch02_short` (20 marks / 40 min) and `_long` (40 marks / 90 min), matching `cbse-10-default-chapter-test-short/long`; disjoint |
 
@@ -31,7 +31,7 @@ Run from `platform/`: `npx tsx content/authored/maths/cbse-10-mathematics-ch02/s
 - **Plots:** 53 marked points all lie on their curves and match their labels; 59 zeroes were located numerically (sign changes and touching zeroes) and every one is marked whenever a plot marks any zero; graph-reading question assets (unmarked) were re-read numerically (e.g. $x^3 - x^2 - 2x$ → $-1, 0, 2$; $-(x - 1)^2$ → $1$; $x^3 - 3x^2 - x + 3$ → $-1, 1, 3$). Every `expr` parses with the pipeline's pinned grammar.
 - **KaTeX:** 1469 math strings parse in strict "error" mode; no lost backslashes, no LaTeX outside `$…$`.
 - **Narration:** 34 slides, max 68 words, mean 53; no symbols or letter abbreviations ("alpha", "beta", "minus b over a").
-- **Fixes during the pass:** (1) an early numerical item asked for $k$ with sum = product for $kx^2 + 2x + 3k$, whose zeroes are not real for that $k$ — replaced by $x^2 - (k + 2)x + 2k$ (real double zero $2$); (2) the validator caught `\Rightarrow` written without its backslash in that replacement (the exemplar's pitfall 7) — fixed; the pipeline lint does not catch brace-less commands such as `Rightarrow`, so the author validator is still needed; (3) case model answers reworded from "(a) (b) …" to "(a) Option (b): …".
+- **Fixes during the pass:** (1) an early numerical item asked for $k$ with sum = product for $kx^2 + 2x + 3k$, whose zeroes are not real for that $k$ — replaced by $x^2 - (k + 2)x + 2k$ (real double zero $2$); (2) the validator caught `\Rightarrow` written without its backslash in that replacement (the exemplar's pitfall 7) — fixed; the pipeline lint does not catch brace-less commands such as `Rightarrow`, so the author validator is still needed; (3) case model answers reworded from "(a) (b) …" to "(a) Option (b): …"; (4) three routine items relabelled d1 → d2 (q003, q006, q046).
 - **Originality:** none of NCERT's exercise polynomials (x² − 2x − 8, 4s² − 4s + 1, 6x² − 3 − 7x, 4u² + 8u, t² − 15, 3x² − x − 4) or sum/product pairs are reused; contexts are new (Brindavan fountain jets, Khurja diya break-even, Thiruvananthapuram garden, a homework table to audit, a polynomial-forming error to evaluate).
 
 ## Gaps / follow-ups

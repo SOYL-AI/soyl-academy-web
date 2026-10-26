@@ -277,7 +277,7 @@ export function numRoots(expr, a, b, N = 8000) {
 
 // ---------------------------------------------------------------- re-solve harness
 function numsIn(text) {
-  return [...text.replace(/(\d),(?=\d\d)/g, '$1').replace(/\\[dt]?frac\{(-?\d+)\}\{(\d+)\}/g, (m, a, b) => ` ${a / b} ${a} ${b} `).matchAll(/\d+(?:\.\d+)?/g)].map((m) => Number(m[0]));
+  return [...text.replace(/\{,\}/g, '').replace(/(\d),(?=\d\d)/g, '$1').replace(/\\[dt]?frac\{(-?\d+)\}\{(\d+)\}/g, (m, a, b) => ` ${a / b} ${a} ${b} `).matchAll(/\d+(?:\.\d+)?/g)].map((m) => Number(m[0]));
 }
 function hasNumber(text, v) {
   const want = Math.abs(Number(fmt(v)));
@@ -306,7 +306,7 @@ function makeChecker(entryKey, q, log, errs) {
     },
     /** Option values typed independently of the text: exactly one equals the re-solved target, and it is the key. */
     which(values, target) {
-      const eq = (u, v) => (Array.isArray(u) ? u.length === v.length && u.every((x, k) => Math.abs(x - v[k]) < 1e-9) : Math.abs(u - v) < 1e-9);
+      const eq = (u, v) => (typeof u === "string" ? u === v : Array.isArray(u) ? u.length === v.length && u.every((x, k) => Math.abs(x - v[k]) < 1e-9) : Math.abs(u - v) < 1e-9);
       const hits = values.map((v, k) => (eq(v, target) ? 'abcd'[k] : null)).filter(Boolean);
       const ok = hits.length === 1 && hits[0] === node.answer.option_ids[0];
       log.push([tag(sub), JSON.stringify(target), `${node.answer.option_ids[0]} (hits ${hits.join('')})`, ok]);
