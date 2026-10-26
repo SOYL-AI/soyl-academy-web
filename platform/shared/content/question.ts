@@ -2,6 +2,13 @@
  * Questions (ARCHITECTURE §7.2, CONTEXT §8): every question has a correct answer, step-by-step
  * solution, marking scheme with step marks, topic tags, difficulty 1–5, competency, marks and
  * expected time. Case/source-based questions carry a shared passage and child questions.
+ *
+ * Contract v2 (M2, all additions optional and backwards compatible):
+ * - types `writing` (letters, notices, essays… with a format, word limit and rubric), `map`
+ *   (map work: locate/identify named places on an outline map), `code-output` (predict the exact
+ *   output of a fenced code block; auto-graded) and `ordering` (put items in order; auto-graded);
+ * - `word_limit` on writing (required), short and long; `passage_origin` on case/source items;
+ * - the underline marker `++text++` for language items (common.ts).
  */
 import { z } from 'zod/v4';
 import { ChapterId, TopicId } from './ids';
@@ -20,6 +27,11 @@ export const QUESTION_TYPES = [
   'fill-blank',
   'match',
   'true-false',
+  // Contract v2 (M2)
+  'writing',
+  'map',
+  'code-output',
+  'ordering',
 ] as const;
 export const QuestionType = z.enum(QUESTION_TYPES);
 export type QuestionType = z.infer<typeof QuestionType>;
@@ -33,6 +45,8 @@ export const OBJECTIVE_TYPES: readonly QuestionType[] = [
   'fill-blank',
   'match',
   'true-false',
+  'code-output',
+  'ordering',
 ];
 
 export const Competency = z.enum(['recall', 'understanding', 'application', 'analysis', 'evaluation']);
@@ -45,6 +59,72 @@ export const MarkingStep = z.object({
   marks: z.number().positive().multipleOf(0.5),
 });
 
+/** Writing-task formats (CBSE/ICSE English and Hindi writing sections, précis, translation). */
+export const WRITING_FORMATS = [
+  'letter-formal',
+  'letter-informal',
+  'email',
+  'notice',
+  'message',
+  'advertisement',
+  'article',
+  'report',
+  'speech',
+  'essay',
+  'paragraph',
+  'story',
+  'diary',
+  'resume',
+  'precis',
+  'translation',
+  'other',
+] as const;
+export const WritingFormat = z.enum(WRITING_FORMATS);
+export type WritingFormat = z.infer<typeof WritingFormat>;
+
+/** Word limit for a written answer, inclusive ("in 100–120 words" → { min: 100, max: 120 }). */
+export const WordLimit = z
+  .object({ min: z.number().int().nonnegative(), max: z.number().int().positive() })
+  .refine((w) => w.min <= w.max, { message: 'word_limit.min must not exceed word_limit.max' });
+export type WordLimit = z.infer<typeof WordLimit>;
+
+/** One criterion of a writing rubric (e.g. Format 1, Content 2, Expression 2). Criteria sum to the marks. */
+export const RubricCriterion = z.object({
+  criterion: z.string().min(1),
+  marks: z.number().positive().multipleOf(0.5),
+  /** What earns the marks; shown to graders and, after submission, to the student. */
+  descriptor_md: Markdown.optional(),
+});
+export type RubricCriterion = z.infer<typeof RubricCriterion>;
+
+/** Where a case/source passage comes from. Only SOYL-written passages are allowed until licensing exists (CONTEXT §8). */
+export const PassageOrigin = z.enum(['soyl-original', 'soyl-commentary', 'licensed-excerpt']);
+export type PassageOrigin = z.infer<typeof PassageOrigin>;
+
+/** Languages a code-output stem may fence (```python … ```). */
+export const CODE_LANGUAGES = ['python', 'java', 'c', 'cpp', 'javascript', 'sql', 'html', 'css', 'bash', 'pseudocode', 'text'] as const;
+export type CodeLanguage = (typeof CODE_LANGUAGES)[number];
+
+/** Fenced code blocks: ```lang\n…\n``` (or ~~~). Group 1 = info string (language), group 2 = code. */
+export const CODE_FENCE_RE = /(?:^|\n)[ \t]*(```|~~~)[ \t]*([A-Za-z0-9+#-]*)[^\n]*\n([\s\S]*?)\n[ \t]*\1[ \t]*(?=\n|$)/g;
+
+/** The fenced code blocks of a Markdown string. */
+export function codeBlocks(md: string): { language: string; code: string }[] {
+  return [...md.matchAll(CODE_FENCE_RE)].map((m) => ({ language: (m[2] ?? '').toLowerCase(), code: m[3] ?? '' }));
+}
+
+/** One place or feature in a map question's key. */
+export const MapPlace = z.object({
+  /** Label used in the stem ("A", "i", "1"). */
+  id: z.string().min(1),
+  /** The expected place/feature name. */
+  name: z.string().min(1),
+  /** Other accepted names or spellings. */
+  accepted: z.array(z.string().min(1)).default([]),
+  /** Free tag: city, state, river, port, dam, site, mountain-range, soil, crop-area… */
+  kind: z.string().optional(),
+});
+
 export const Answer = z.union([
   /** mcq, assertion-reason, true-false (one id) and multi-select (one or more). */
   z.object({ option_ids: z.array(z.string()).min(1) }),
@@ -52,8 +132,14 @@ export const Answer = z.union([
   /** fill-blank: accepted answers per blank, compared case- and whitespace-insensitively. */
   z.object({ blanks: z.array(z.object({ accepted: z.array(z.string().min(1)).min(1) })).min(1) }),
   z.object({ pairs: z.array(z.object({ left_id: z.string(), right_id: z.string() })).min(2) }),
-  /** short, long, and case/source parents: the model answer students compare against. */
+  /** short, long, writing, and case/source parents: the model answer students compare against. */
   z.object({ model_answer_md: Markdown }),
+  /** ordering: every option id, in the correct order. */
+  z.object({ order: z.array(z.string().min(1)).min(2) }),
+  /** code-output: the exact expected output; graded after whitespace normalisation (grading.ts). */
+  z.object({ output: z.string().min(1) }),
+  /** map: the places/features to be located or identified (self- or AI-evaluated). */
+  z.object({ places: z.array(MapPlace).min(1) }),
 ]);
 export type Answer = z.infer<typeof Answer>;
 
@@ -61,6 +147,7 @@ const QuestionFields = {
   id: z.string().regex(/^q_[a-z0-9_-]+$/),
   type: QuestionType,
   stem_md: Markdown.min(1),
+  /** Choices (mcq…), left-hand items (match), or the items to put in order (ordering). */
   options: z.array(Option).default([]),
   /** For match questions: right-hand column. Left-hand items are `options`. */
   match_right: z.array(Option).default([]),
@@ -74,6 +161,17 @@ const QuestionFields = {
   topic_ids: z.array(TopicId).min(1),
   expected_time_sec: z.number().int().positive(),
   assets: z.array(Visual).default([]),
+  /** writing only (required there). */
+  format: WritingFormat.optional(),
+  /** writing (required), short and long (optional). */
+  word_limit: WordLimit.optional(),
+  /** writing only (required there): criteria whose marks sum to `marks`. */
+  rubric: z.array(RubricCriterion).optional(),
+  /** map only: which outline map to show (e.g. "india-political", "world-physical"); renderer-defined ids. */
+  map_id: z
+    .string()
+    .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)
+    .optional(),
 };
 
 /** One alternative of an internal choice inside a case/source part ("(c) either (i) or (ii)"). */
@@ -96,6 +194,8 @@ export const Question = z
     language: z.string().default('en'),
     /** Case/source-based: the shared passage. The children are the gradable parts. */
     passage_md: Markdown.optional(),
+    /** Case/source-based: who wrote the passage (CONTEXT §8). Lint refuses licensed-excerpt until licensing exists. */
+    passage_origin: PassageOrigin.optional(),
     children: z.array(ChildQuestion).default([]),
     status: ContentStatus.default('draft'),
     version: z.number().int().positive().default(1),
@@ -107,7 +207,13 @@ export type Question = z.infer<typeof Question>;
 type Issue = { code: 'custom'; path: (string | number)[]; message: string };
 type Ctx = { addIssue: (issue: Issue) => void };
 
-function checkQuestion(q: AlternativeQuestion & { passage_md?: string; children?: ChildQuestion[] }, ctx: Ctx, path: (string | number)[]) {
+const WORD_LIMIT_TYPES: readonly QuestionType[] = ['writing', 'short', 'long'];
+
+function checkQuestion(
+  q: AlternativeQuestion & { passage_md?: string; passage_origin?: PassageOrigin; children?: ChildQuestion[] },
+  ctx: Ctx,
+  path: (string | number)[],
+) {
   const add = (message: string, sub: (string | number)[] = []) => ctx.addIssue({ code: 'custom', path: [...path, ...sub], message });
 
   const schemeTotal = q.marking_scheme.reduce((sum, s) => sum + s.marks, 0);
@@ -116,6 +222,15 @@ function checkQuestion(q: AlternativeQuestion & { passage_md?: string; children?
   const optionIds = new Set(q.options.map((o) => o.id));
   if (optionIds.size !== q.options.length) add('duplicate option ids', ['options']);
   const a = q.answer;
+
+  // v2 fields belong to specific types.
+  if (q.type !== 'writing') {
+    if (q.format !== undefined) add('format is only for writing questions', ['format']);
+    if (q.rubric !== undefined) add('rubric is only for writing questions', ['rubric']);
+  }
+  if (q.word_limit !== undefined && !WORD_LIMIT_TYPES.includes(q.type)) add(`word_limit is only for ${WORD_LIMIT_TYPES.join(', ')} questions`, ['word_limit']);
+  if (q.map_id !== undefined && q.type !== 'map') add('map_id is only for map questions', ['map_id']);
+  if (q.passage_origin !== undefined && q.type !== 'case-based' && q.type !== 'source-based') add('passage_origin is only for case/source-based questions', ['passage_origin']);
 
   switch (q.type) {
     case 'mcq':
@@ -151,6 +266,40 @@ function checkQuestion(q: AlternativeQuestion & { passage_md?: string; children?
     case 'long':
       if (!('model_answer_md' in a)) add(`${q.type} answer must have model_answer_md`, ['answer']);
       break;
+    case 'writing': {
+      if (!('model_answer_md' in a)) add('writing answer must have model_answer_md', ['answer']);
+      if (!q.format) add('writing needs a format (letter-formal, notice, essay, …)', ['format']);
+      if (!q.word_limit) add('writing needs word_limit {min, max}', ['word_limit']);
+      if (!q.rubric?.length) add('writing needs a rubric (criteria with marks)', ['rubric']);
+      else {
+        const total = q.rubric.reduce((s, r) => s + r.marks, 0);
+        if (Math.abs(total - q.marks) > 1e-9) add(`rubric totals ${total}, question is worth ${q.marks}`, ['rubric']);
+        const names = new Set(q.rubric.map((r) => r.criterion.trim().toLowerCase()));
+        if (names.size !== q.rubric.length) add('duplicate rubric criteria', ['rubric']);
+      }
+      break;
+    }
+    case 'map':
+      if (!('places' in a)) return add('map answer must have places', ['answer']);
+      if (new Set(a.places.map((p) => p.id)).size !== a.places.length) add('duplicate place ids', ['answer']);
+      break;
+    case 'code-output': {
+      if (!('output' in a)) add('code-output answer must have output', ['answer']);
+      const blocks = codeBlocks(q.stem_md);
+      if (!blocks.length) add('code-output stem needs a fenced code block (```python … ```)', ['stem_md']);
+      for (const b of blocks)
+        if (!(CODE_LANGUAGES as readonly string[]).includes(b.language))
+          add(`code block language "${b.language || '(none)'}" must be one of ${CODE_LANGUAGES.join(', ')}`, ['stem_md']);
+      break;
+    }
+    case 'ordering': {
+      if (q.options.length < 3) add('ordering needs at least 3 items (options)', ['options']);
+      if (!('order' in a)) return add('ordering answer must have order', ['answer']);
+      const order = new Set(a.order);
+      if (order.size !== a.order.length) add('order repeats an item', ['answer']);
+      if (order.size !== optionIds.size || [...optionIds].some((id) => !order.has(id))) add('order must list every option id exactly once', ['answer']);
+      break;
+    }
     case 'case-based':
     case 'source-based': {
       if (!q.passage_md) add(`${q.type} needs passage_md`, ['passage_md']);

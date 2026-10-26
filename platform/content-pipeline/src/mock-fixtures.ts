@@ -212,6 +212,35 @@ export function mockQuestion(slot: QuestionSlot, index: number, topics: TopicRef
     case 'short':
     case 'long':
       return { ...base, answer: { model_answer_md: `${w.mock} Model answer with the key points expected for ${slot.marks} marks.` } };
+    case 'writing': {
+      const content = Math.max(0.5, slot.marks - 1);
+      return {
+        ...base,
+        stem_md: `${w.mock} Write a notice about a placeholder school event on ${topic.title}.`,
+        format: 'notice',
+        word_limit: { min: 8, max: 20 },
+        rubric: [{ criterion: 'Format', marks: slot.marks - content }, { criterion: 'Content and expression', marks: content }],
+        marking_scheme: [{ step: 'Format', marks: slot.marks - content }, { step: 'Content and expression', marks: content }],
+        answer: { model_answer_md: `${w.mock} NOTICE. A placeholder event is announced here for all students of the school.` },
+      };
+    }
+    case 'map':
+      return {
+        ...base,
+        stem_md: `${w.mock} On the outline map, locate and label the placeholder places A and B.`,
+        map_id: 'india-political',
+        marks: 2,
+        marking_scheme: marking(2),
+        answer: { places: [{ id: 'A', name: 'Placeholder city' }, { id: 'B', name: 'Placeholder river' }] },
+      };
+    case 'code-output':
+      return { ...base, stem_md: `${w.mock} What is the output?\n\n\`\`\`python\nprint(6 * 7)\n\`\`\``, answer: { output: '42' } };
+    case 'ordering':
+      return {
+        ...base,
+        options: ['p', 'q', 'r'].map((id) => ({ id, text_md: `${w.mock} step ${id}` })),
+        answer: { order: ['q', 'r', 'p'] },
+      };
     case 'case-based':
     case 'source-based': {
       const childMarks = slot.marks >= 4 ? [1, 1, slot.marks - 2] : [slot.marks / 2, slot.marks / 2];

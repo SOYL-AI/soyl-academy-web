@@ -10,3 +10,5 @@ export * from './release';
 export * from './test';
 export * from './outline';
 export * from './svg-allowlist';
+export * from './grading';
+export * from './script';

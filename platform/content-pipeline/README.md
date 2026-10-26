@@ -136,14 +136,21 @@ Errors block a unit; warnings are reported. Rule ids appear in `lint.json`.
 | `svg.allowlist`, `svg.style`, `svg.ids` | ADR-007: strict XML parse; allow-listed elements/attributes only; no scripts, handlers, style, external refs, DOCTYPE/entities; fragment-only href/url(); theme classes only; ≤ 60 KB; viewBox. Warnings: hard-coded colours, no `<title>`, ids reused across diagrams. |
 | `visual.plot`, `visual.geometry`, `visual.flow`, `visual.table`, `visual.chem` | Specs compile: safe expression grammar (ADR-007), sampled finite; references resolve; tables rectangular; SMILES alphabet. |
 | `banned.url`, `banned.html`, `banned.contact`, `banned.profanity` | Student-visible text: no external links or URLs (incl. markdown links/images, `javascript:`), no raw HTML, no emails or phone numbers, nothing on the profanity list (`config/pipeline.ts`, extendable with a newline-separated file named in `CONTENT_PROFANITY_LIST`). |
-| `literature.quote`, `literature.verse` | Literature chapters only: quoted or block-quoted runs over 25 words, or more than 4 consecutive short lines (verse). |
+| `literature.quote`, `literature.verse`, `literature.quote-review` | Literature chapters only: quoted or block-quoted runs over 25 words, or more than 4 consecutive short lines (verse) — errors. Quoted spans of 8–25 words are listed as warnings for a manual reproduction review. |
+| `passage.licensed`, `passage.origin` | `passage_origin: licensed-excerpt` is an error until licensed texts exist (`LITERATURE.allowLicensedExcerpts`); literature passages without `passage_origin` get a warning. |
+| `answer.word-limit`, `writing.word-limit` | Model answer word count outside 80–120% of `word_limit` (writing, short, long) is a warning; a writing limit over 1,000 words is an error. |
+| `code.output`, `code.length`, `code.input` | code-output: expected output ≤ 2,000 characters (error); code > 40 lines, or code that reads input when the stem supplies none (warnings). Fenced code is never parsed as maths or HTML. |
+| `ordering.shuffled`, `map.id`, `map.marks` | Warnings: ordering items listed in the correct order; a map item without `map_id`; places ≠ marks. |
+| `markdown.underline` | `++word++` underline markers must close on the same line; `<u>` is refused with a pointer to the marker. |
+| `script.*` | Language subjects in a non-Latin script (subjects.yaml `script`, else the language): NFC, well-formed Brahmic text, no ≥ 3-word Latin runs, narration without Latin/digits/symbols, majority-script stems/notes/cards (`platform/shared/content/script.ts`, the same rules as the content gate). |
+| `language.spelling`, `language.nukta` | Hindi warnings: non-standard spellings (`config/pipeline.ts` `HINDI_ORTHOGRAPHY`) and the same word with and without nukta. |
 | `narration.symbols` | Narration is read by TTS: no LaTeX, symbols, arrows or formulae (`H2O`, `$`, `\`, `→`, `°`…). Length ≤ 90 words is a schema rule. |
 | `math.arithmetic`, `solution.answer` | In solutions, model answers and worked-example slides, every pair of adjacent purely numeric sides of an `=` chain is recomputed with the safe parser and must agree within 1% (`\dfrac{3}{5} \times 12 = 7.2`; use `\approx` for rounded values; sides with variables or units are skipped). Warning when a numerical question's solution never states its answer. Stage 5 (M2) re-solves every item independently. |
 | `visual.geometry` (sanity) | Points inside the canvas (origin bottom-left, y up), circles on the canvas, right-angle marks ≈ 90°, degree labels match the drawn angle, numeric length labels on one scale — unless `not_to_scale` or the caption says "not to scale". |
 | `topics.unknown`, `outline.coverage` | Topic ids exist in the chapter's syllabus; every topic is in some outline part (warning). |
 | `refs.check-question`, `refs.unit` | Check slides point to an existing **objective** question; every item belongs to the unit. |
 | `balance.competency`, `balance.difficulty` | Warnings: share of application-or-higher items outside 45–65% (board papers ≈ 50%); no difficulty 4–5 items. |
-| `language.script` | Hindi content is written in Devanagari. |
+| `language.script` | Language-subject content (Hindi, Tamil, Urdu …) is written in its own script. |
 | `provenance.missing`, `provenance.mock` | Pipeline items record template id@version and model; mock output is flagged (warning) and never counts for coverage. |
 | `unit.incomplete` | A unit whose generate stage has not finished. |
 
