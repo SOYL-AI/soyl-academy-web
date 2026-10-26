@@ -1,0 +1,35 @@
+import { expect, test } from '@playwright/test';
+
+/** GEN-4 with the production default (flag off): the platform does not exist. */
+const ROUTES = [
+  '/learn',
+  '/learn/cbse/10',
+  '/learn/cbse/10/science',
+  '/learn/cbse/10/science/ch01',
+  '/learn/cbse/10/science/ch01/lesson',
+  '/me',
+  '/dev/ui',
+  '/api/platform/v1/session',
+  '/api/platform/v1/catalog/boards',
+  '/api/platform/v1/auth/google/start',
+];
+
+for (const path of ROUTES) {
+  test(`${path} → 404`, async ({ request }) => {
+    const res = await request.get(path, { maxRedirects: 0 });
+    expect(res.status()).toBe(404);
+    // proxy.ts is inert: no platform security headers when the flag is off.
+    expect(res.headers()['content-security-policy']).toBeUndefined();
+  });
+}
+
+test('POSTs to the proxy and CSP endpoint → 404', async ({ request }) => {
+  expect((await request.post('/api/platform/v1/auth/email/send-otp', { data: { email: 'a@example.com' } })).status()).toBe(404);
+  expect((await request.post('/api/platform/csp-report', { headers: { 'content-type': 'application/csp-report' }, data: '{}' })).status()).toBe(404);
+});
+
+test('the marketing header has no Learn link', async ({ page }) => {
+  await page.goto('/');
+  await expect(page.getByRole('link', { name: 'Learn', exact: true })).toHaveCount(0);
+  expect(await page.content()).not.toContain('href="/learn"');
+});

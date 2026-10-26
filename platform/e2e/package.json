@@ -10,7 +10,8 @@
     "marketing:diff": "node scripts/marketing-diff.mjs",
     "browsers:install": "playwright install chromium",
     "typecheck": "tsc -p tsconfig.json",
-    "test:design-system": "playwright test -c tests/platform/design-system/playwright.config.ts"
+    "test:design-system": "playwright test -c tests/platform/design-system/playwright.config.ts",
+    "test:platform-web": "node tests/platform/web/run.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",
