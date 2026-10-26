@@ -1,0 +1,657 @@
+# CBSE Class 9 Santhali (167), 2026-27. Sections, marks, grammar items, writing tasks and every prescribed lesson as printed
+# in the CBSE 2026-27 Santhali Class IX syllabus. CBSE prints Santali titles in DEVANAGARI (not Ol Chiki as subjects.yaml
+# assumes), so this file follows CBSE. Books: Santali Literature (Prose and Poetry) - Santali Sahitya (Kathni ar Gathni),
+# BSTPC Patna; Pe Pawa Chawle by Bal Kishor Baski "Arman". Reference: Bhenta Katha (proverbs), Santali Grammar, Sanatari
+# Parsi Unurum (Dr Krishna Chandra Tudu). Titles are transcribed from the PDF (nukta/halant marks need a Santali reviewer;
+# song 10 is printed "लागड़ें सेरेञ प" with a stray letter); section and topic labels are SOYL’s. English glosses in
+# title_en are given only where well known. CBSE publishes no Class X Santhali syllabus for 2026-27. No text is reproduced.
+subject_id: cbse-9-santhali
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-ix-santhali-2026-27
+  - cbse-secondary-curriculum-2026-27
+exam_notes: >-
+  Class 9 has no board exam; school annual examination 80 marks (3 hours) + internal assessment 20 (pen-and-paper tests 5,
+  multiple assessment 5, portfolio 5, listening and speaking skills 2.5 + 2.5). A Reading 10: two unseen passages (one prose, one
+  poetry). B Writing 15 (essay, letter) and Grammar 25 (noun, pronoun, adjective, change of gender, tenses, case (karak), proverbs
+  and their use in sentences, translation of a passage from English into Santhali). C Main textbook 30 (prose, poetry, story).
+  Under the 2026-27 Class IX scheme the language may be taken at R1, R2 or R3 (R3: school-based assessment only); this file
+  follows the CBSE Class IX syllabus. CBSE publishes no Class X syllabus for this language for 2026-27 (the subject enters with
+  the 2026-27 Class IX cohort).
+units:
+  - name: 'क. पठन: अपठित गद्यांश आर पद्यांश'
+    marks: 10
+  - name: ख. लेखन
+    marks: 15
+  - name: ख. व्याकरण
+    marks: 25
+  - name: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    marks: 30
+chapters:
+  - id: cbse-9-santhali-ch01
+    number: 1
+    title: अपठित गद्यांश आर पद्यांश
+    title_en: Unseen prose and poetry passages
+    unit: 'क. पठन: अपठित गद्यांश आर पद्यांश'
+    topics:
+      - id: cbse-9-santhali-ch01-t01
+        title: अपठित गद्यांश
+        title_en: Unseen prose passage
+        learning_outcomes:
+          - Read an unseen Santali prose passage and answer questions on it
+      - id: cbse-9-santhali-ch01-t02
+        title: अपठित पद्यांश
+        title_en: Unseen poem
+        learning_outcomes:
+          - Read an unseen Santali poem and answer questions on its meaning
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-santhali-ch02
+    number: 2
+    title: 'लेखन: निबंध आर चिठी'
+    title_en: 'Writing: essay and letter'
+    unit: ख. लेखन
+    topics:
+      - id: cbse-9-santhali-ch02-t01
+        title: निबंध लेखन
+        title_en: Essay writing
+        learning_outcomes:
+          - Write an organised essay in Santali on a given topic
+      - id: cbse-9-santhali-ch02-t02
+        title: चिठी लेखन
+        title_en: Letter writing
+        learning_outcomes:
+          - Write formal and informal letters in Santali in the correct format
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-santhali-ch03
+    number: 3
+    title: 'व्याकरण: संज्ञा, सर्वनाम, विशेषण आर लिंग'
+    title_en: 'Grammar: noun, pronoun, adjective and gender'
+    unit: ख. व्याकरण
+    topics:
+      - id: cbse-9-santhali-ch03-t01
+        title: संज्ञा आर वचन
+        title_en: Nouns and number
+        learning_outcomes:
+          - Identify nouns and their number (singular, dual, plural) in Santali
+      - id: cbse-9-santhali-ch03-t02
+        title: सर्वनाम
+        title_en: Pronouns
+        learning_outcomes:
+          - Identify Santali pronouns and use them correctly
+      - id: cbse-9-santhali-ch03-t03
+        title: विशेषण
+        title_en: Adjectives
+        learning_outcomes:
+          - Identify adjectives and use them correctly
+      - id: cbse-9-santhali-ch03-t04
+        title: लिंग बदल
+        title_en: Change of gender
+        learning_outcomes:
+          - Change the gender of nouns in sentences
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-santhali-ch04
+    number: 4
+    title: 'व्याकरण: काल, कारक, कहावत आर अनुवाद'
+    title_en: 'Grammar: tense, case, proverbs and translation'
+    unit: ख. व्याकरण
+    topics:
+      - id: cbse-9-santhali-ch04-t01
+        title: काल
+        title_en: Tenses
+        learning_outcomes:
+          - Identify and change the tense of Santali sentences
+      - id: cbse-9-santhali-ch04-t02
+        title: कारक
+        title_en: Case (karak)
+        learning_outcomes:
+          - Identify case relations and their markers in Santali sentences
+      - id: cbse-9-santhali-ch04-t03
+        title: कहावत आर वाक्य में प्रयोग
+        title_en: Proverbs and their use in sentences
+        learning_outcomes:
+          - Explain Santali proverbs (bhenta katha) and use them in sentences
+      - id: cbse-9-santhali-ch04-t04
+        title: अंग्रेजी से संताली अनुवाद
+        title_en: Translation from English into Santali
+        learning_outcomes:
+          - Translate a short English passage into Santali
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-santhali-ch05
+    number: 5
+    title: आगिल हापाड़ामको रेयाक् काथा
+    title_en: Agil Hapaḍamko Reyak Katha (Story of the ancestors)
+    unit: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    topics:
+      - id: cbse-9-santhali-ch05-t01
+        title: सारांश आर विषयवस्तु
+        title_en: Summary and theme
+        learning_outcomes:
+          - Summarise the lesson in Santali and state its main idea
+      - id: cbse-9-santhali-ch05-t02
+        title: भाषा आर शब्दार्थ
+        title_en: Language and word meanings
+        learning_outcomes:
+          - Explain new words and expressions from the lesson and use them in sentences
+      - id: cbse-9-santhali-ch05-t03
+        title: प्रश्नोत्तर
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the content and message of the lesson
+    removed_topics: []
+    literature_texts:
+      - title: आगिल हापाड़ामको रेयाक् काथा
+        title_en: Agil Hapaḍamko Reyak Katha (Story of the ancestors)
+  - id: cbse-9-santhali-ch06
+    number: 6
+    title: संताली भाषा आर साहित्य
+    title_en: Santali Bhasha ar Sahitya (Santali language and literature)
+    unit: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    topics:
+      - id: cbse-9-santhali-ch06-t01
+        title: सारांश आर विषयवस्तु
+        title_en: Summary and theme
+        learning_outcomes:
+          - Summarise the lesson in Santali and state its main idea
+      - id: cbse-9-santhali-ch06-t02
+        title: भाषा आर शब्दार्थ
+        title_en: Language and word meanings
+        learning_outcomes:
+          - Explain new words and expressions from the lesson and use them in sentences
+      - id: cbse-9-santhali-ch06-t03
+        title: प्रश्नोत्तर
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the content and message of the lesson
+    removed_topics: []
+    literature_texts:
+      - title: संताली भाषा आर साहित्य
+        title_en: Santali Bhasha ar Sahitya (Santali language and literature)
+  - id: cbse-9-santhali-ch07
+    number: 7
+    title: पोनया गाते
+    title_en: Ponaya Gate
+    unit: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    topics:
+      - id: cbse-9-santhali-ch07-t01
+        title: सारांश आर विषयवस्तु
+        title_en: Summary and theme
+        learning_outcomes:
+          - Summarise the lesson in Santali and state its main idea
+      - id: cbse-9-santhali-ch07-t02
+        title: भाषा आर शब्दार्थ
+        title_en: Language and word meanings
+        learning_outcomes:
+          - Explain new words and expressions from the lesson and use them in sentences
+      - id: cbse-9-santhali-ch07-t03
+        title: प्रश्नोत्तर
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the content and message of the lesson
+    removed_topics: []
+    literature_texts:
+      - title: पोनया गाते
+        title_en: Ponaya Gate
+  - id: cbse-9-santhali-ch08
+    number: 8
+    title: सोहराय
+    title_en: Sohray (the Sohrai festival)
+    unit: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    topics:
+      - id: cbse-9-santhali-ch08-t01
+        title: सारांश आर विषयवस्तु
+        title_en: Summary and theme
+        learning_outcomes:
+          - Summarise the lesson in Santali and state its main idea
+      - id: cbse-9-santhali-ch08-t02
+        title: भाषा आर शब्दार्थ
+        title_en: Language and word meanings
+        learning_outcomes:
+          - Explain new words and expressions from the lesson and use them in sentences
+      - id: cbse-9-santhali-ch08-t03
+        title: प्रश्नोत्तर
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the content and message of the lesson
+    removed_topics: []
+    literature_texts:
+      - title: सोहराय
+        title_en: Sohray (the Sohrai festival)
+  - id: cbse-9-santhali-ch09
+    number: 9
+    title: आतो बैसी
+    title_en: Ato Baisi (the village council)
+    unit: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    topics:
+      - id: cbse-9-santhali-ch09-t01
+        title: सारांश आर विषयवस्तु
+        title_en: Summary and theme
+        learning_outcomes:
+          - Summarise the lesson in Santali and state its main idea
+      - id: cbse-9-santhali-ch09-t02
+        title: भाषा आर शब्दार्थ
+        title_en: Language and word meanings
+        learning_outcomes:
+          - Explain new words and expressions from the lesson and use them in sentences
+      - id: cbse-9-santhali-ch09-t03
+        title: प्रश्नोत्तर
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the content and message of the lesson
+    removed_topics: []
+    literature_texts:
+      - title: आतो बैसी
+        title_en: Ato Baisi (the village council)
+  - id: cbse-9-santhali-ch10
+    number: 10
+    title: सिदो-कान्हु
+    title_en: Sido-Kanhu
+    unit: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    topics:
+      - id: cbse-9-santhali-ch10-t01
+        title: सारांश आर विषयवस्तु
+        title_en: Summary and theme
+        learning_outcomes:
+          - Summarise the lesson in Santali and state its main idea
+      - id: cbse-9-santhali-ch10-t02
+        title: भाषा आर शब्दार्थ
+        title_en: Language and word meanings
+        learning_outcomes:
+          - Explain new words and expressions from the lesson and use them in sentences
+      - id: cbse-9-santhali-ch10-t03
+        title: प्रश्नोत्तर
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the content and message of the lesson
+    removed_topics: []
+    literature_texts:
+      - title: सिदो-कान्हु
+        title_en: Sido-Kanhu
+  - id: cbse-9-santhali-ch11
+    number: 11
+    title: ‘कविता’
+    title_en: Kavita
+    unit: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    topics:
+      - id: cbse-9-santhali-ch11-t01
+        title: सारांश आर विषयवस्तु
+        title_en: Summary and theme
+        learning_outcomes:
+          - Summarise the lesson in Santali and state its main idea
+      - id: cbse-9-santhali-ch11-t02
+        title: भाषा आर शब्दार्थ
+        title_en: Language and word meanings
+        learning_outcomes:
+          - Explain new words and expressions from the lesson and use them in sentences
+      - id: cbse-9-santhali-ch11-t03
+        title: प्रश्नोत्तर
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the content and message of the lesson
+    removed_topics: []
+    literature_texts:
+      - title: ‘कविता’
+        title_en: Kavita
+  - id: cbse-9-santhali-ch12
+    number: 12
+    title: 'ग़ाथनी: सेरेञ 1-6'
+    title_en: 'Poetry (gathni): songs 1-6'
+    unit: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    topics:
+      - id: cbse-9-santhali-ch12-t01
+        title: संताली गायनी (सेरेन आर ओनोड़)
+        title_en: Santali Gayani (songs and verse)
+        learning_outcomes:
+          - Explain the meaning, occasion and feeling of the song Santali Gayani and answer questions on it
+      - id: cbse-9-santhali-ch12-t02
+        title: सोहराय सेरेज
+        title_en: Sohray Serej (Sohrai song)
+        learning_outcomes:
+          - Explain the meaning, occasion and feeling of the song Sohray Serej and answer questions on it
+      - id: cbse-9-santhali-ch12-t03
+        title: गाय जागाय सेरेज
+        title_en: Gay Jagay Serej
+        learning_outcomes:
+          - Explain the meaning, occasion and feeling of the song Gay Jagay Serej and answer questions on it
+      - id: cbse-9-santhali-ch12-t04
+        title: गाय चुमा उड़ा
+        title_en: Gay Chuma Uda
+        learning_outcomes:
+          - Explain the meaning, occasion and feeling of the song Gay Chuma Uda and answer questions on it
+      - id: cbse-9-santhali-ch12-t05
+        title: डाहार सेरे
+        title_en: Dahar Sere
+        learning_outcomes:
+          - Explain the meaning, occasion and feeling of the song Dahar Sere and answer questions on it
+      - id: cbse-9-santhali-ch12-t06
+        title: धुरुमजाक् सेरेञ
+        title_en: Dhurumjak Seren
+        learning_outcomes:
+          - Explain the meaning, occasion and feeling of the song Dhurumjak Seren and answer questions on it
+    removed_topics: []
+    literature_texts:
+      - title: संताली गायनी (सेरेन आर ओनोड़)
+        title_en: Santali Gayani (songs and verse)
+      - title: सोहराय सेरेज
+        title_en: Sohray Serej (Sohrai song)
+      - title: गाय जागाय सेरेज
+        title_en: Gay Jagay Serej
+      - title: गाय चुमा उड़ा
+        title_en: Gay Chuma Uda
+      - title: डाहार सेरे
+        title_en: Dahar Sere
+      - title: धुरुमजाक् सेरेञ
+        title_en: Dhurumjak Seren
+  - id: cbse-9-santhali-ch13
+    number: 13
+    title: 'ग़ाथनी: सेरेञ 7-12'
+    title_en: 'Poetry (gathni): songs 7-12'
+    unit: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    topics:
+      - id: cbse-9-santhali-ch13-t01
+        title: बाहा सेरेञ
+        title_en: Baha Seren (Baha festival song)
+        learning_outcomes:
+          - Explain the meaning, occasion and feeling of the song Baha Seren and answer questions on it
+      - id: cbse-9-santhali-ch13-t02
+        title: भिनसार सेरेञ
+        title_en: Bhinsar Seren (dawn song)
+        learning_outcomes:
+          - Explain the meaning, occasion and feeling of the song Bhinsar Seren and answer questions on it
+      - id: cbse-9-santhali-ch13-t03
+        title: द़ोङ सेरेञ
+        title_en: Dong Seren (Dong song)
+        learning_outcomes:
+          - Explain the meaning, occasion and feeling of the song Dong Seren and answer questions on it
+      - id: cbse-9-santhali-ch13-t04
+        title: लागड़ें सेरेञ
+        title_en: Lagden Seren (Lagde song)
+        learning_outcomes:
+          - Explain the meaning, occasion and feeling of the song Lagden Seren and answer questions on it
+      - id: cbse-9-santhali-ch13-t05
+        title: ह़ोड़ रोहोय सेरेन
+        title_en: Hor Rohoy Seren (transplanting song)
+        learning_outcomes:
+          - Explain the meaning, occasion and feeling of the song Hor Rohoy Seren and answer questions on it
+      - id: cbse-9-santhali-ch13-t06
+        title: दासाय सेरेज
+        title_en: Dasay Serej (Dasay song)
+        learning_outcomes:
+          - Explain the meaning, occasion and feeling of the song Dasay Serej and answer questions on it
+    removed_topics: []
+    literature_texts:
+      - title: बाहा सेरेञ
+        title_en: Baha Seren (Baha festival song)
+      - title: भिनसार सेरेञ
+        title_en: Bhinsar Seren (dawn song)
+      - title: द़ोङ सेरेञ
+        title_en: Dong Seren (Dong song)
+      - title: लागड़ें सेरेञ
+        title_en: Lagden Seren (Lagde song)
+      - title: ह़ोड़ रोहोय सेरेन
+        title_en: Hor Rohoy Seren (transplanting song)
+      - title: दासाय सेरेज
+        title_en: Dasay Serej (Dasay song)
+  - id: cbse-9-santhali-ch14
+    number: 14
+    title: 'ग़ाथनी: सेरेञ 13-18'
+    title_en: 'Poetry (gathni): songs 13-18'
+    unit: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    topics:
+      - id: cbse-9-santhali-ch14-t01
+        title: आरजी
+        title_en: Arji
+        learning_outcomes:
+          - Explain the meaning, occasion and feeling of the song Arji and answer questions on it
+      - id: cbse-9-santhali-ch14-t02
+        title: नालोम रूवाड़
+        title_en: Nalom Ruwad
+        learning_outcomes:
+          - Explain the meaning, occasion and feeling of the song Nalom Ruwad and answer questions on it
+      - id: cbse-9-santhali-ch14-t03
+        title: आम गे
+        title_en: Am Ge
+        learning_outcomes:
+          - Explain the meaning, occasion and feeling of the song Am Ge and answer questions on it
+      - id: cbse-9-santhali-ch14-t04
+        title: आँगा इपिल
+        title_en: Anga Ipil (morning star)
+        learning_outcomes:
+          - Explain the meaning, occasion and feeling of the song Anga Ipil and answer questions on it
+      - id: cbse-9-santhali-ch14-t05
+        title: दुक
+        title_en: Duk
+        learning_outcomes:
+          - Explain the meaning, occasion and feeling of the song Duk and answer questions on it
+      - id: cbse-9-santhali-ch14-t06
+        title: बाडेम हुडिजा
+        title_en: Badem Hudija
+        learning_outcomes:
+          - Explain the meaning, occasion and feeling of the song Badem Hudija and answer questions on it
+    removed_topics: []
+    literature_texts:
+      - title: आरजी
+        title_en: Arji
+      - title: नालोम रूवाड़
+        title_en: Nalom Ruwad
+      - title: आम गे
+        title_en: Am Ge
+      - title: आँगा इपिल
+        title_en: Anga Ipil (morning star)
+      - title: दुक
+        title_en: Duk
+      - title: बाडेम हुडिजा
+        title_en: Badem Hudija
+  - id: cbse-9-santhali-ch15
+    number: 15
+    title: बाले गिदरा पुसी ऐंगात आर मानवाँ होपोन
+    title_en: Bale Gidra Pusi Engat ar Manwan Hopon
+    unit: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    topics:
+      - id: cbse-9-santhali-ch15-t01
+        title: सारांश आर विषयवस्तु
+        title_en: Summary and theme
+        learning_outcomes:
+          - Summarise the lesson in Santali and state its main idea
+      - id: cbse-9-santhali-ch15-t02
+        title: भाषा आर शब्दार्थ
+        title_en: Language and word meanings
+        learning_outcomes:
+          - Explain new words and expressions from the lesson and use them in sentences
+      - id: cbse-9-santhali-ch15-t03
+        title: प्रश्नोत्तर
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the content and message of the lesson
+    removed_topics: []
+    literature_texts:
+      - title: बाले गिदरा पुसी ऐंगात आर मानवाँ होपोन
+        author: Bal Kishor Baski "Arman"
+        title_en: Bale Gidra Pusi Engat ar Manwan Hopon
+  - id: cbse-9-santhali-ch16
+    number: 16
+    title: झिझिरी झाली
+    title_en: Jhijhiri Jhali
+    unit: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    topics:
+      - id: cbse-9-santhali-ch16-t01
+        title: सारांश आर विषयवस्तु
+        title_en: Summary and theme
+        learning_outcomes:
+          - Summarise the lesson in Santali and state its main idea
+      - id: cbse-9-santhali-ch16-t02
+        title: भाषा आर शब्दार्थ
+        title_en: Language and word meanings
+        learning_outcomes:
+          - Explain new words and expressions from the lesson and use them in sentences
+      - id: cbse-9-santhali-ch16-t03
+        title: प्रश्नोत्तर
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the content and message of the lesson
+    removed_topics: []
+    literature_texts:
+      - title: झिझिरी झाली
+        author: Bal Kishor Baski "Arman"
+        title_en: Jhijhiri Jhali
+  - id: cbse-9-santhali-ch17
+    number: 17
+    title: मित् टिका सिन्दुर
+    title_en: Mit Tika Sindur
+    unit: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    topics:
+      - id: cbse-9-santhali-ch17-t01
+        title: सारांश आर विषयवस्तु
+        title_en: Summary and theme
+        learning_outcomes:
+          - Summarise the lesson in Santali and state its main idea
+      - id: cbse-9-santhali-ch17-t02
+        title: भाषा आर शब्दार्थ
+        title_en: Language and word meanings
+        learning_outcomes:
+          - Explain new words and expressions from the lesson and use them in sentences
+      - id: cbse-9-santhali-ch17-t03
+        title: प्रश्नोत्तर
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the content and message of the lesson
+    removed_topics: []
+    literature_texts:
+      - title: मित् टिका सिन्दुर
+        author: Bal Kishor Baski "Arman"
+        title_en: Mit Tika Sindur
+  - id: cbse-9-santhali-ch18
+    number: 18
+    title: सागाई
+    title_en: Sagai
+    unit: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    topics:
+      - id: cbse-9-santhali-ch18-t01
+        title: सारांश आर विषयवस्तु
+        title_en: Summary and theme
+        learning_outcomes:
+          - Summarise the lesson in Santali and state its main idea
+      - id: cbse-9-santhali-ch18-t02
+        title: भाषा आर शब्दार्थ
+        title_en: Language and word meanings
+        learning_outcomes:
+          - Explain new words and expressions from the lesson and use them in sentences
+      - id: cbse-9-santhali-ch18-t03
+        title: प्रश्नोत्तर
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the content and message of the lesson
+    removed_topics: []
+    literature_texts:
+      - title: सागाई
+        author: Bal Kishor Baski "Arman"
+        title_en: Sagai
+  - id: cbse-9-santhali-ch19
+    number: 19
+    title: सुण्डी साल
+    title_en: Sundi Sal
+    unit: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    topics:
+      - id: cbse-9-santhali-ch19-t01
+        title: सारांश आर विषयवस्तु
+        title_en: Summary and theme
+        learning_outcomes:
+          - Summarise the lesson in Santali and state its main idea
+      - id: cbse-9-santhali-ch19-t02
+        title: भाषा आर शब्दार्थ
+        title_en: Language and word meanings
+        learning_outcomes:
+          - Explain new words and expressions from the lesson and use them in sentences
+      - id: cbse-9-santhali-ch19-t03
+        title: प्रश्नोत्तर
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the content and message of the lesson
+    removed_topics: []
+    literature_texts:
+      - title: सुण्डी साल
+        author: Bal Kishor Baski "Arman"
+        title_en: Sundi Sal
+  - id: cbse-9-santhali-ch20
+    number: 20
+    title: कामी रे धुराउमे
+    title_en: Kami Re Dhuraume
+    unit: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    topics:
+      - id: cbse-9-santhali-ch20-t01
+        title: सारांश आर विषयवस्तु
+        title_en: Summary and theme
+        learning_outcomes:
+          - Summarise the lesson in Santali and state its main idea
+      - id: cbse-9-santhali-ch20-t02
+        title: भाषा आर शब्दार्थ
+        title_en: Language and word meanings
+        learning_outcomes:
+          - Explain new words and expressions from the lesson and use them in sentences
+      - id: cbse-9-santhali-ch20-t03
+        title: प्रश्नोत्तर
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the content and message of the lesson
+    removed_topics: []
+    literature_texts:
+      - title: कामी रे धुराउमे
+        author: Bal Kishor Baski "Arman"
+        title_en: Kami Re Dhuraume
+  - id: cbse-9-santhali-ch21
+    number: 21
+    title: मातकोम लाठे, बाजड़ा पिठ आर कान्या आड़ाकू
+    title_en: Matkom Lathe, Bajra Pith ar Kanya Adaku
+    unit: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    topics:
+      - id: cbse-9-santhali-ch21-t01
+        title: सारांश आर विषयवस्तु
+        title_en: Summary and theme
+        learning_outcomes:
+          - Summarise the lesson in Santali and state its main idea
+      - id: cbse-9-santhali-ch21-t02
+        title: भाषा आर शब्दार्थ
+        title_en: Language and word meanings
+        learning_outcomes:
+          - Explain new words and expressions from the lesson and use them in sentences
+      - id: cbse-9-santhali-ch21-t03
+        title: प्रश्नोत्तर
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the content and message of the lesson
+    removed_topics: []
+    literature_texts:
+      - title: मातकोम लाठे, बाजड़ा पिठ आर कान्या आड़ाकू
+        author: Bal Kishor Baski "Arman"
+        title_en: Matkom Lathe, Bajra Pith ar Kanya Adaku
+  - id: cbse-9-santhali-ch22
+    number: 22
+    title: मोसोत बाहा
+    title_en: Mosot Baha
+    unit: ग. पाठ्यपुस्तक (गद्य-पद्य संग्रह)
+    topics:
+      - id: cbse-9-santhali-ch22-t01
+        title: सारांश आर विषयवस्तु
+        title_en: Summary and theme
+        learning_outcomes:
+          - Summarise the lesson in Santali and state its main idea
+      - id: cbse-9-santhali-ch22-t02
+        title: भाषा आर शब्दार्थ
+        title_en: Language and word meanings
+        learning_outcomes:
+          - Explain new words and expressions from the lesson and use them in sentences
+      - id: cbse-9-santhali-ch22-t03
+        title: प्रश्नोत्तर
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the content and message of the lesson
+    removed_topics: []
+    literature_texts:
+      - title: मोसोत बाहा
+        author: Bal Kishor Baski "Arman"
+        title_en: Mosot Baha
+removed_topics: []
