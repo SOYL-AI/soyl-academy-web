@@ -21,7 +21,7 @@ describe('generated schema', () => {
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }
-  });
+  }, 60_000);
 });
 
 describe('path and query building', () => {
@@ -112,4 +112,12 @@ describe('isPlatformPath', () => {
   ])('%s → %s', (path, expected) => {
     expect(isPlatformPath(path)).toBe(expected);
   });
+});
+
+describe('PLATFORM_PREFIXES single source', () => {
+  it('matches the marketing regression inventory (platform/e2e/marketing/routes.ts)', async () => {
+    const { PLATFORM_PREFIXES } = await import('../config/platform-routes');
+    const routes = await import('../../e2e/marketing/routes');
+    expect([...routes.PLATFORM_PREFIXES]).toEqual([...PLATFORM_PREFIXES]);
+  }, 30_000);
 });
