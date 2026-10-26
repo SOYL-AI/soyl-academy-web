@@ -7,7 +7,7 @@ decisions: `docs/platform/adr/004-orm-drizzle.md`; personal data: [PII.md](PII.m
 ```
 platform/db/
   schema/          Drizzle tables by group: identity, catalog, content, assessment, gamification,
-                   ai-credits, billing, ops, pipeline, progress, views  (64 tables, 2 views)
+                   ai-credits, billing, ops, pipeline, progress, views  (65 tables, 2 views)
   migrations/      NNNN_name.sql (drizzle-kit, up) + NNNN_name.down.sql (hand-written) + meta/
   src/             client, migrator, CLI, seeds, test harness, normalisers, DB-6 helpers
   test/            vitest suites against real PostgreSQL
@@ -96,7 +96,8 @@ Current migrations: `0000_foundations` (roles, uuid v7, normalisers, conventions
 `student_questions` and `content_budget` views, first grants), `0003_contract_v2` (question types, rubric),
 `0004_pipeline_state` (pipeline-engineer), `0005_learning_progress` (backend-api M2: `lesson_progress`,
 `practice_answers`, `user_mfa`, `sessions.mfa_verified_at`), `0006_release_items` (release membership: the API reads
-a unit through its active release, so rollback serves the older versions).
+a unit through its active release, so rollback serves the older versions), `0007_test_engine` (backend-api M3,
+ADR-012: `responses.client_seq`, attempt score split and percentile flag, `test_score_buckets`).
 
 ## Roles (DB-1) and Azure mapping
 

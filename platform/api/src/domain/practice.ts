@@ -14,7 +14,7 @@ import type { QuestionType } from '@soyl/shared/content/question';
 import type { Clock } from '../clock';
 import { ApiProblem } from '../errors';
 import { activeReleases, practicePool, releaseMembers, studentQuestion, studentQuestionSelect, type ChapterRef, type StudentQuestion } from './content';
-import { awardXp, evaluateBadges, recordActivity, refreshTotals, type StreakView } from './gamification';
+import { awardXp, ensureBadges, evaluateBadges, recordActivity, refreshTotals, type StreakView } from './gamification';
 import { gradeQuestion, ResponseMismatchError, type PracticeResponse, type QuestionGrade, type StoredBodyPart } from './grading';
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -182,6 +182,8 @@ export async function submitAnswer(db: Database, clock: Clock, year: string, use
   if (!userId) return { ...base, stored: false, answerId: null, xpAwarded: 0, badgesAwarded: [], streak: null };
 
   const now = new Date(clock.now());
+  // Badge rows are synced before the transaction: a transaction must never wait for a second pooled connection.
+  await ensureBadges(db);
   return db.transaction(async (tx) => {
     const [saved] = await tx
       .insert(practiceAnswers)
