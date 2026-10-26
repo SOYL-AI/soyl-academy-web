@@ -15,6 +15,7 @@ import { createHash, randomBytes } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { HttpError, ProviderConfigError, withRetry, type Env, type RetryOptions, type TokenCredentialLike } from '@soyl/ai-core';
+import { ManagedIdentityTokenProvider } from '@soyl/shared/azure/identity';
 import { PACKAGE_DIR } from './paths';
 
 export const STORAGE_SCOPE = 'https://storage.azure.com/.default';
@@ -167,7 +168,13 @@ export class LocalBlobStore implements BlobStore {
  * DefaultAzureCredential from the optional peer @azure/identity, loaded lazily (same convention as
  * @soyl/ai-core's factory). Shared by the blob store and the speech provider.
  */
-export async function defaultAzureCredential(): Promise<TokenCredentialLike> {
+export async function defaultAzureCredential(env: Env = process.env): Promise<TokenCredentialLike> {
+  // In Azure Container Apps (e.g. the content-release job) use the managed-identity endpoint directly,
+  // without @azure/identity (not shipped in the images; prod-readiness handoff 2026-10-27).
+  if (env.IDENTITY_ENDPOINT && env.IDENTITY_HEADER) {
+    const mi = new ManagedIdentityTokenProvider({ endpoint: env.IDENTITY_ENDPOINT, header: env.IDENTITY_HEADER, clientId: env.AZURE_CLIENT_ID || undefined });
+    return { getToken: (scope: string | string[]) => mi.getToken(Array.isArray(scope) ? scope[0]! : scope) };
+  }
   const moduleName = '@azure/identity';
   try {
     const identity = (await import(/* @vite-ignore */ moduleName)) as { DefaultAzureCredential: new () => TokenCredentialLike };
