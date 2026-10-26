@@ -1,0 +1,167 @@
+/* Markdown */
+.md {
+  overflow-wrap: break-word;
+}
+.md > :first-child {
+  margin-top: 0;
+}
+.md > :last-child {
+  margin-bottom: 0;
+}
+.md p,
+.md ul,
+.md ol,
+.md blockquote,
+.md pre {
+  margin: 0 0 var(--p-space-3);
+}
+.md ul,
+.md ol {
+  padding-left: 1.4em;
+}
+.md li + li {
+  margin-top: var(--p-space-1);
+}
+.md li::marker {
+  color: var(--p-ink-subtle);
+}
+.md strong {
+  font-weight: 650;
+}
+.md blockquote {
+  padding: var(--p-space-2) var(--p-space-3);
+  border-left: 3px solid var(--p-highlight);
+  background: var(--p-surface-2);
+  border-radius: 0 var(--p-radius-sm) var(--p-radius-sm) 0;
+}
+.md hr {
+  border: 0;
+  border-top: 1px solid var(--p-border);
+  margin: var(--p-space-4) 0;
+}
+.mdInline {
+  overflow-wrap: break-word;
+}
+.mdHeading {
+  margin: var(--p-space-4) 0 var(--p-space-2);
+  font-size: var(--p-text-lg);
+  font-weight: 650;
+  line-height: var(--p-leading-tight);
+}
+.mdLink {
+  color: var(--p-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.mdLink:hover {
+  text-decoration-thickness: 2px;
+}
+.mdBlockedLink {
+  text-decoration: none;
+}
+.mdBlockedImage {
+  color: var(--p-ink-subtle);
+  font-style: italic;
+}
+.mdImage {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--p-radius-sm);
+}
+.mdCode {
+  padding: 0.1em 0.35em;
+  border-radius: var(--p-radius-sm);
+  background: var(--p-surface-2);
+  font-family: var(--p-font-mono);
+  font-size: 0.9em;
+}
+.mdPre {
+  padding: var(--p-space-3);
+  border-radius: var(--p-radius-md);
+  background: var(--p-surface-2);
+  overflow-x: auto;
+  font-size: var(--p-text-sm);
+}
+.mdPre .mdCode {
+  padding: 0;
+  background: none;
+}
+.mdTableWrap {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 0 0 var(--p-space-3);
+}
+.mdTable {
+  border-collapse: collapse;
+  font-size: var(--p-text-sm);
+  min-width: 100%;
+}
+.mdTable th,
+.mdTable td {
+  padding: var(--p-space-2) var(--p-space-3);
+  border-bottom: 1px solid var(--p-border);
+  text-align: left;
+  vertical-align: top;
+}
+.mdTable th {
+  font-weight: 650;
+  background: var(--p-surface-2);
+}
+
+/* Maths */
+.mathBlock {
+  max-width: 100%;
+  margin: var(--p-space-3) 0;
+  padding: var(--p-space-1) 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-align: center;
+  border-radius: var(--p-radius-sm);
+}
+.mathBlock :global(.katex-display) {
+  margin: 0;
+}
+.mathInline :global(.katex),
+.mathBlock :global(.katex) {
+  font-size: 1.1em;
+}
+.mathInline {
+  white-space: nowrap;
+}
+.mathBlock :global(.katex-error),
+.mathInline :global(.katex-error) {
+  color: var(--p-danger) !important;
+  font-family: var(--p-font-mono);
+  font-size: 0.9em;
+  white-space: pre-wrap;
+}
+
+/* Raw SVG diagrams */
+.svgHost {
+  color: var(--p-ink);
+  line-height: 0;
+}
+.svgHost svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  overflow: visible;
+}
+.svgPlaceholder {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: 70vh;
+  border-radius: var(--p-radius-md);
+  background: var(--p-surface-2);
+}
+.svgRefused {
+  padding: var(--p-space-4);
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+  text-align: center;
+}

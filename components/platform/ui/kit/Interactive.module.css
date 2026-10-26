@@ -1,0 +1,224 @@
+/* Tabs */
+.tablist {
+  display: flex;
+  gap: var(--p-space-1);
+  border-bottom: 1px solid var(--p-border);
+  overflow-x: auto;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+.tablist::-webkit-scrollbar {
+  display: none;
+}
+.tab {
+  position: relative;
+  flex: none;
+  min-height: var(--p-touch);
+  padding: 0 var(--p-space-3);
+  border: 0;
+  background: transparent;
+  color: var(--p-ink-muted);
+  font: inherit;
+  font-size: var(--p-text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.tab:hover {
+  color: var(--p-ink);
+}
+.tab[aria-selected='true'] {
+  color: var(--p-ink);
+}
+.tab[aria-selected='true']::after {
+  content: '';
+  position: absolute;
+  left: var(--p-space-2);
+  right: var(--p-space-2);
+  bottom: -1px;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: var(--p-accent);
+}
+.tab:focus-visible {
+  outline-offset: -2px;
+}
+.panel {
+  padding-top: var(--p-space-4);
+}
+
+/* Toasts */
+.toastRegion {
+  position: fixed;
+  z-index: var(--p-z-toast);
+  left: var(--p-gutter);
+  right: var(--p-gutter);
+  bottom: calc(var(--p-space-4) + env(safe-area-inset-bottom, 0px));
+  display: grid;
+  gap: var(--p-space-2);
+  justify-items: center;
+  pointer-events: none;
+}
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--p-space-2);
+  width: min(100%, 480px);
+  padding: var(--p-space-2) var(--p-space-2) var(--p-space-2) var(--p-space-4);
+  border-radius: var(--p-radius-md);
+  background: var(--p-ink);
+  color: var(--p-surface);
+  box-shadow: var(--p-shadow-2);
+  animation: toastIn var(--p-duration-base) var(--p-ease);
+}
+.toastText {
+  flex: 1;
+  min-width: 0;
+  padding: var(--p-space-2) 0;
+  font-size: var(--p-text-sm);
+}
+.toastTitle {
+  display: block;
+  font-weight: 650;
+}
+.toastIcon {
+  margin-top: 10px;
+  flex: none;
+}
+.toast-success .toastIcon { color: var(--p-success-soft); }
+.toast-danger .toastIcon { color: var(--p-danger-soft); }
+.toast .toastClose {
+  color: inherit;
+}
+.toast .toastClose:hover {
+  background: rgba(127, 127, 127, 0.25);
+}
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+/* Field */
+.field {
+  display: grid;
+  gap: var(--p-space-1);
+}
+.label {
+  font-size: var(--p-text-sm);
+  font-weight: 600;
+  color: var(--p-ink);
+}
+.required {
+  color: var(--p-danger);
+  margin-left: 2px;
+}
+.hint {
+  margin: 0;
+  font-size: var(--p-text-sm);
+  color: var(--p-ink-subtle);
+}
+.error {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--p-space-1);
+  margin: 0;
+  font-size: var(--p-text-sm);
+  font-weight: 500;
+  color: var(--p-danger);
+}
+.input {
+  width: 100%;
+  min-height: var(--p-touch);
+  padding: 0 var(--p-space-3);
+  border: 1px solid var(--p-border-strong);
+  border-radius: var(--p-radius-md);
+  background: var(--p-surface);
+  color: var(--p-ink);
+  font: inherit;
+  font-size: max(16px, var(--p-text-md)); /* 16 px stops iOS zoom-on-focus */
+}
+.input::placeholder {
+  color: var(--p-ink-subtle);
+}
+.input:focus-visible {
+  outline: 2px solid var(--p-focus);
+  outline-offset: 1px;
+  border-color: var(--p-focus);
+}
+.input[aria-invalid='true'] {
+  border-color: var(--p-danger);
+}
+.input:disabled {
+  opacity: 0.55;
+}
+
+/* OTP */
+.otp {
+  position: relative;
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: var(--p-space-2);
+  max-width: 100%;
+}
+.otpBox {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 52px;
+  border: 1px solid var(--p-border-strong);
+  border-radius: var(--p-radius-md);
+  background: var(--p-surface);
+  font-size: var(--p-text-xl);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.otpBoxActive {
+  border-color: var(--p-focus);
+  box-shadow: 0 0 0 1px var(--p-focus);
+}
+.otpBoxError {
+  border-color: var(--p-danger);
+}
+.otpCaret {
+  width: 2px;
+  height: 1.2em;
+  background: var(--p-ink);
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.otpInput {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  color: transparent;
+  background: transparent;
+  caret-color: transparent;
+  letter-spacing: 2em;
+  cursor: text;
+}
+.otp:focus-within {
+  outline: 2px solid var(--p-focus);
+  outline-offset: 4px;
+  border-radius: var(--p-radius-md);
+}
+@media (max-width: 359px) {
+  .otp {
+    gap: var(--p-space-1);
+  }
+  .otpBox {
+    width: 40px;
+  }
+}

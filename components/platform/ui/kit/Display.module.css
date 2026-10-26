@@ -1,0 +1,215 @@
+/* Card */
+.card {
+  background: var(--p-surface);
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-lg);
+  padding: var(--p-space-4);
+  color: var(--p-ink);
+}
+.cardElevated {
+  box-shadow: var(--p-shadow-2);
+  border-color: transparent;
+}
+.cardFlush {
+  padding: 0;
+  overflow: hidden;
+}
+.cardTitle {
+  margin: 0 0 var(--p-space-1);
+  font-size: var(--p-text-lg);
+  font-weight: 650;
+  line-height: var(--p-leading-tight);
+}
+.cardMeta {
+  margin: 0;
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-sm);
+}
+@media (min-width: 640px) {
+  .card {
+    padding: var(--p-space-5);
+  }
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-1);
+  padding: 2px var(--p-space-2);
+  border-radius: var(--p-radius-sm);
+  font-size: var(--p-text-xs);
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+  background: var(--p-surface-2);
+  color: var(--p-ink-muted);
+  border: 1px solid var(--p-border);
+}
+.tone-accent { background: var(--p-accent-soft); color: var(--p-info); border-color: transparent; }
+.tone-success { background: var(--p-success-soft); color: var(--p-success); border-color: transparent; }
+.tone-warning { background: var(--p-warning-soft); color: var(--p-warning); border-color: transparent; }
+.tone-danger { background: var(--p-danger-soft); color: var(--p-danger); border-color: transparent; }
+.tone-highlight { background: var(--p-highlight); color: var(--p-on-highlight); border-color: transparent; }
+
+/* Chip */
+.chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-1);
+  min-height: 36px;
+  padding: 0 var(--p-space-3);
+  border: 1px solid var(--p-border-strong);
+  border-radius: var(--p-radius-pill);
+  background: var(--p-surface);
+  color: var(--p-ink);
+  font: inherit;
+  font-size: var(--p-text-sm);
+  font-weight: 500;
+  white-space: nowrap;
+}
+button.chip {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+button.chip::after {
+  content: '';
+  position: absolute;
+  inset: -4px 0;
+}
+button.chip:hover {
+  background: var(--p-surface-2);
+}
+.chip[aria-pressed='true'] {
+  background: var(--p-ink);
+  border-color: var(--p-ink);
+  color: var(--p-surface);
+}
+
+/* ProgressBar */
+.progress {
+  display: grid;
+  gap: var(--p-space-1);
+}
+.progressLabel {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--p-space-2);
+  font-size: var(--p-text-sm);
+  color: var(--p-ink-muted);
+}
+.track {
+  position: relative;
+  height: 8px;
+  border-radius: var(--p-radius-pill);
+  background: var(--p-surface-3);
+  overflow: hidden;
+}
+.trackThin {
+  height: 4px;
+}
+.fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: inherit;
+  background: var(--p-accent);
+  transition: width var(--p-duration-base) var(--p-ease);
+}
+.fill-success {
+  background: var(--p-success);
+}
+
+/* Skeleton */
+.skeleton {
+  display: block;
+  border-radius: var(--p-radius-sm);
+  background: linear-gradient(90deg, var(--p-surface-2) 25%, var(--p-surface-3) 50%, var(--p-surface-2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+.skeletonText {
+  height: 0.9em;
+  margin: 0.35em 0;
+}
+.skeletonCircle {
+  border-radius: 50%;
+}
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+/* EmptyState */
+.empty {
+  display: grid;
+  justify-items: center;
+  gap: var(--p-space-2);
+  padding: var(--p-space-8) var(--p-space-4);
+  text-align: center;
+  color: var(--p-ink-muted);
+}
+.emptyIcon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--p-surface-2);
+  color: var(--p-ink-muted);
+}
+.emptyTitle {
+  margin: 0;
+  color: var(--p-ink);
+  font-size: var(--p-text-lg);
+  font-weight: 650;
+}
+.emptyBody {
+  margin: 0;
+  max-width: 34ch;
+}
+
+/* Avatar */
+.avatar {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  border-radius: 50%;
+  font-weight: 650;
+  line-height: 1;
+  color: #171717;
+  user-select: none;
+}
+
+/* Credit chip */
+.credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-2);
+  min-height: var(--p-touch);
+  padding: 0 var(--p-space-3);
+  border-radius: var(--p-radius-pill);
+  background: var(--p-surface);
+  border: 1px solid var(--p-border-strong);
+  color: var(--p-ink);
+  font-size: var(--p-text-sm);
+  white-space: nowrap;
+}
+.creditBalance {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.creditIcon {
+  color: var(--p-accent);
+}
+.creditReset {
+  color: var(--p-ink-subtle);
+  font-variant-numeric: tabular-nums;
+}
+.creditLow {
+  border-color: var(--p-warning);
+}

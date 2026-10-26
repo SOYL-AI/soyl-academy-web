@@ -1,0 +1,98 @@
+.dialog {
+  width: min(560px, calc(100vw - 2 * var(--p-gutter)));
+  max-width: none;
+  max-height: min(85dvh, 720px);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: var(--p-radius-lg);
+  background: var(--p-surface);
+  color: var(--p-ink);
+  box-shadow: var(--p-shadow-3);
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+.dialog[open] {
+  display: flex;
+  flex-direction: column;
+  animation: pop var(--p-duration-base) var(--p-ease);
+}
+.dialog::backdrop {
+  background: var(--p-scrim, rgba(23, 23, 23, 0.55));
+}
+
+.sheet {
+  width: 100%;
+  max-width: 640px;
+  max-height: 88dvh;
+  margin: auto auto 0;
+  border-radius: var(--p-radius-lg) var(--p-radius-lg) 0 0;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+.sheet[open] {
+  animation: rise var(--p-duration-base) var(--p-ease);
+}
+.handle {
+  width: 40px;
+  height: 4px;
+  margin: var(--p-space-2) auto 0;
+  border-radius: var(--p-radius-pill);
+  background: var(--p-border-strong);
+  flex: none;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--p-space-2);
+  padding: var(--p-space-4) var(--p-space-2) var(--p-space-2) var(--p-space-4);
+  flex: none;
+}
+.titles {
+  flex: 1;
+  min-width: 0;
+  padding-top: var(--p-space-2);
+}
+.title {
+  margin: 0;
+  font-size: var(--p-text-xl);
+  font-weight: 650;
+  line-height: var(--p-leading-tight);
+}
+.description {
+  margin: var(--p-space-1) 0 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.body {
+  padding: var(--p-space-2) var(--p-space-4) var(--p-space-4);
+  overflow-y: auto;
+  flex: 1 1 auto;
+}
+.footer {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: flex-end;
+  gap: var(--p-space-2);
+  padding: var(--p-space-3) var(--p-space-4) var(--p-space-4);
+  border-top: 1px solid var(--p-border);
+  flex: none;
+}
+@media (max-width: 479px) {
+  .footer > * {
+    flex: 1 1 100%;
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+@keyframes rise {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+}
