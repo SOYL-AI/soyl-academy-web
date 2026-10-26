@@ -11,7 +11,8 @@ import {
   type ProxyConfig,
 } from '../server/api-proxy';
 
-const SECRET = 'test-edge-secret-0123456789abcdef0123456789';
+// Generated per run so no secret-shaped literal lives in git (gitleaks).
+const SECRET = `test-${crypto.randomUUID()}`;
 const cfg: ProxyConfig = { origin: 'http://api.test', edgeSecret: SECRET, timeoutMs: 1000, maxBodyBytes: 1024 };
 
 describe('readProxyConfig (ADR-005 item 1, GEN-4)', () => {

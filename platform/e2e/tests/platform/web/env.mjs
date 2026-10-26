@@ -12,7 +12,7 @@ export const WEB_ORIGIN = `http://localhost:${WEB_PORT}`;
 export const API_ORIGIN = `http://127.0.0.1:${API_PORT}`;
 
 /** Public development secret, accepted only by an API with APP_ENV=local (ADR-005 "Local development"). */
-export const LOCAL_EDGE_SECRET = 'local-dev-edge-secret-not-for-deployment-000000';
+export const LOCAL_EDGE_SECRET = 'local-dev-edge-secret-not-for-deployment-000000'; // gitleaks:allow (public local-only value, ADR-005)
 
 export const WEB_ENV_ON = {
   NEXT_PUBLIC_PLATFORM_ENABLED: 'true',
