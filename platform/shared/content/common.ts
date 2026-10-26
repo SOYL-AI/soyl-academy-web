@@ -33,3 +33,29 @@ export function wordCount(text: string): number {
   const trimmed = text.trim();
   return trimmed ? trimmed.split(/\s+/u).length : 0;
 }
+
+/**
+ * Underline marker for language items ("रेखांकित पद", "the underlined word"): `++text++`.
+ *
+ * Raw HTML such as `<u>` is forbidden in content Markdown (lint `banned.html`), and `__text__` is
+ * already strong emphasis (bold) in CommonMark, so it cannot mean underline. `++text++` is plain
+ * text to a CommonMark parser and is the markdown-it-ins convention (rendered as `<ins>`, which
+ * the platform styles as an underline). Rules, mirrored by the renderer:
+ * - the span is on one line, at most 80 characters, and does not start or end with whitespace;
+ * - it is not recognised inside code spans/blocks or maths (`$…$`);
+ * - a `++` that is not part of a span (e.g. "C++") is left as text.
+ * Renderers: replace UNDERLINE_RE matches with an underlined inline element whose content is the
+ * captured text rendered as inline Markdown.
+ */
+export const UNDERLINE_RE = /\+\+([^\s+](?:[^\n]{0,78}?[^\s+])?)\+\+/g;
+
+/** The underlined spans of a Markdown string (outside code and maths is the caller's concern). */
+export function underlineSpans(md: string): string[] {
+  return [...md.matchAll(UNDERLINE_RE)].map((m) => m[1]!);
+}
+
+/** `++` openers with no closing marker on the same line (an underline span that will not render). */
+export function unmatchedUnderline(md: string): string[] {
+  const rest = md.replace(UNDERLINE_RE, ' ');
+  return [...rest.matchAll(/(?:^|\s)\+\+(?=[^\s+])(\S{0,20})/g)].map((m) => m[0].trim());
+}

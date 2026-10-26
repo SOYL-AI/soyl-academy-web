@@ -13,7 +13,7 @@
 import type { Question } from '@soyl/shared/content/question';
 import { questions, type QuestionPool } from '../schema/index';
 
-const KEY_FIELDS = ['answer', 'solution_md', 'marking_scheme'] as const;
+const KEY_FIELDS = ['answer', 'solution_md', 'marking_scheme', 'rubric'] as const;
 
 /** Student-safe projection stored in questions.body. */
 export interface QuestionBody {
@@ -23,13 +23,20 @@ export interface QuestionBody {
   match_right: { id: string; text_md: string }[];
   assets: Question['assets'];
   children: Omit<Question['children'][number], (typeof KEY_FIELDS)[number]>[];
+  /** Contract v2, student-facing: writing format, word limit, map id, passage origin (present only when set). */
+  format?: Question['format'];
+  word_limit?: Question['word_limit'];
+  map_id?: Question['map_id'];
+  passage_origin?: Question['passage_origin'];
 }
 
 export interface QuestionKeyValues {
   answer: Question['answer'];
   solutionMd: string;
   markingScheme: Question['marking_scheme'];
-  childKeys: { id: string; answer: Question['answer']; solution_md: string; marking_scheme: Question['marking_scheme'] }[];
+  childKeys: { id: string; answer: Question['answer']; solution_md: string; marking_scheme: Question['marking_scheme']; rubric?: Question['rubric'] }[];
+  /** Contract v2 writing rubric (key side: graders, and the student after submission). */
+  rubric: Question['rubric'] | null;
 }
 
 export function splitQuestion(q: Question): { body: QuestionBody; key: QuestionKeyValues } {
@@ -39,7 +46,11 @@ export function splitQuestion(q: Question): { body: QuestionBody; key: QuestionK
     options: q.options,
     match_right: q.match_right,
     assets: q.assets,
-    children: q.children.map(({ answer: _a, solution_md: _s, marking_scheme: _m, ...rest }) => rest),
+    children: q.children.map(({ answer: _a, solution_md: _s, marking_scheme: _m, rubric: _r, ...rest }) => rest),
+    ...(q.format !== undefined ? { format: q.format } : {}),
+    ...(q.word_limit !== undefined ? { word_limit: q.word_limit } : {}),
+    ...(q.map_id !== undefined ? { map_id: q.map_id } : {}),
+    ...(q.passage_origin !== undefined ? { passage_origin: q.passage_origin } : {}),
   };
   return {
     body,
@@ -47,7 +58,8 @@ export function splitQuestion(q: Question): { body: QuestionBody; key: QuestionK
       answer: q.answer,
       solutionMd: q.solution_md,
       markingScheme: q.marking_scheme,
-      childKeys: q.children.map((c) => ({ id: c.id, answer: c.answer, solution_md: c.solution_md, marking_scheme: c.marking_scheme })),
+      childKeys: q.children.map((c) => ({ id: c.id, answer: c.answer, solution_md: c.solution_md, marking_scheme: c.marking_scheme, ...(c.rubric !== undefined ? { rubric: c.rubric } : {}) })),
+      rubric: q.rubric ?? null,
     },
   };
 }
@@ -98,12 +110,12 @@ export const studentQuestionColumns = {
   body: questions.body,
 } as const;
 
-export const STUDENT_QUESTION_FORBIDDEN_FIELDS = ['answer', 'solution_md', 'solutionMd', 'marking_scheme', 'markingScheme', 'childKeys'] as const;
+export const STUDENT_QUESTION_FORBIDDEN_FIELDS = ['answer', 'solution_md', 'solutionMd', 'marking_scheme', 'markingScheme', 'childKeys', 'rubric'] as const;
 
 /** Rebuilds the contract Question from a questions row and its key. */
 export function joinQuestion(
   row: { key: string; version: number; unit: string; type: string; status: string; language: string; difficulty: number; competency: string; bloom: string; marks: number; expectedTimeSec: number; topicKeys: string[]; body: unknown },
-  key: { answer: unknown; solutionMd: string; markingScheme: unknown; childKeys: unknown },
+  key: { answer: unknown; solutionMd: string; markingScheme: unknown; childKeys: unknown; rubric?: unknown },
 ): Question {
   const body = row.body as QuestionBody;
   const childKeys = new Map((key.childKeys as QuestionKeyValues['childKeys']).map((c) => [c.id, c]));
@@ -125,10 +137,15 @@ export function joinQuestion(
     topic_ids: row.topicKeys,
     expected_time_sec: row.expectedTimeSec,
     assets: body.assets,
+    ...(body.format !== undefined ? { format: body.format } : {}),
+    ...(body.word_limit !== undefined ? { word_limit: body.word_limit } : {}),
+    ...(body.map_id !== undefined ? { map_id: body.map_id } : {}),
+    ...(body.passage_origin !== undefined ? { passage_origin: body.passage_origin } : {}),
+    ...(key.rubric !== undefined && key.rubric !== null ? { rubric: key.rubric as Question['rubric'] } : {}),
     language: row.language,
     children: body.children.map((c) => {
       const k = childKeys.get(c.id)!;
-      return { ...c, answer: k.answer, solution_md: k.solution_md, marking_scheme: k.marking_scheme } as Question['children'][number];
+      return { ...c, answer: k.answer, solution_md: k.solution_md, marking_scheme: k.marking_scheme, ...(k.rubric !== undefined ? { rubric: k.rubric } : {}) } as Question['children'][number];
     }),
     status: row.status as Question['status'],
     version: row.version,

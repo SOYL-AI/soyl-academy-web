@@ -306,13 +306,12 @@ describe('arithmetic inside solutions', () => {
 
   it('flags a wrong number inside a worked solution, not only the key', async () => {
     const { bundle, ctx } = await mockBundle();
-    const questions = (bundle.questions as Record<string, any>).questions as Record<string, any>[];
-    // The mock question plan follows the chapter's blueprints, which may not ask for numericals;
-    // turn an objective item into one so this test doesn't depend on catalog data.
-    let q = questions.find((x) => x.type === 'numerical');
+    const qs = (bundle.questions as Record<string, any>).questions as Record<string, any>[];
+    // Board blueprints map numericals to short/long (they need working), so the plan may have none: make one.
+    let q = qs.find((x) => x.type === 'numerical');
     if (!q) {
-      q = questions.find((x) => x.type === 'mcq')!;
-      Object.assign(q, { type: 'numerical', options: [], answer: { value: 24, tolerance: 0, unit: null } });
+      q = qs.find((x) => x.type === 'short' && x.marks <= 3)!;
+      Object.assign(q, { type: 'numerical', answer: { value: 24, tolerance: 0, unit: null } });
     }
     q.solution_md = String.raw`Step 1: new value $= 12 \times 2 = 26$. Step 2: answer 24.`;
     expect(lintBundle(bundle, ctx).findings.some((f) => f.rule === 'math.arithmetic')).toBe(true);

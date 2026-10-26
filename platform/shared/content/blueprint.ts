@@ -45,6 +45,12 @@ export const Blueprint = z
     /** Null for a board/class default that applies to any subject without its own. */
     subject_id: SubjectId.nullable(),
     paper_type: PaperType,
+    /**
+     * Paper variant when one subject has several papers on the same syllabus (CBSE Maths Standard 041 /
+     * Basic 241, a language level, an NCC wing). Matches Subject.variants[].code/name in subjects.yaml.
+     * Null/absent = the subject's only (or default) paper. The assembler builds one series per variant.
+     */
+    variant: z.object({ code: z.string().nullable(), name: z.string().min(1) }).nullable().optional(),
     academic_year: z.string(),
     duration_min: z.number().int().positive(),
     total_marks: z.number().positive(),

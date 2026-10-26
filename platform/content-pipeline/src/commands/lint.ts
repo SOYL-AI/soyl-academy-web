@@ -19,6 +19,7 @@ export function lintContextFor(ref: ChapterRef, requirePipelineProvenance: boole
     family: familyForChapter(ref.subject, ref.chapter),
     classLevel: ref.subject.class,
     language: ref.subject.language,
+    script: ref.subject.script,
     literature: isLiteratureChapter(ref.subject, ref.chapter),
     topicIds: new Set(ref.chapter.topics.map((t) => t.id)),
     requirePipelineProvenance,
@@ -116,21 +117,21 @@ export interface ExemplarRef {
   unit: string;
 }
 
-/** Hand-written content: gold-standard exemplars and authored production chapters (D-026). */
 export function exemplarDirs(templatesDir: string): ExemplarRef[] {
-  const roots = [path.join(templatesDir, 'exemplars'), path.join(templatesDir, '..', 'content', 'authored')];
-  return roots
-    .filter((root) => fs.existsSync(root))
-    .flatMap((root) =>
-      fs.readdirSync(root).flatMap((family) => {
-        const fdir = path.join(root, family);
-        if (!fs.statSync(fdir).isDirectory()) return [];
-        return fs
-          .readdirSync(fdir)
-          .map((unit) => ({ family, dir: path.join(fdir, unit), unit }))
-          .filter((e) => fs.statSync(e.dir).isDirectory() && fs.existsSync(path.join(e.dir, 'release.json')));
-      }),
-    );
+  return contentDirs(path.join(templatesDir, 'exemplars'));
+}
+
+/** <root>/<family>/<unit>/release.json — exemplars and hand-authored chapters share this layout (D-026). */
+export function contentDirs(root: string): ExemplarRef[] {
+  if (!fs.existsSync(root)) return [];
+  return fs.readdirSync(root).flatMap((family) => {
+    const fdir = path.join(root, family);
+    if (!fs.statSync(fdir).isDirectory()) return [];
+    return fs
+      .readdirSync(fdir)
+      .map((unit) => ({ family, dir: path.join(fdir, unit), unit }))
+      .filter((e) => fs.statSync(e.dir).isDirectory() && fs.existsSync(path.join(e.dir, 'release.json')));
+  });
 }
 
 export function lintExemplar(p: Pipeline, ex: ExemplarRef): LintReport {
@@ -142,7 +143,7 @@ export function lintExemplar(p: Pipeline, ex: ExemplarRef): LintReport {
         unit: ex.unit,
         family: ((FAMILIES as readonly string[]).includes(ex.family) ? ex.family : 'other') as Family,
         classLevel: Number(ex.unit.split('-')[1]),
-        language: 'en',
+        language: typeof release?.notes?.language === 'string' ? release.notes.language : 'en',
         literature: /literature/.test(ex.family),
         topicIds: null,
         requirePipelineProvenance: false,
@@ -151,7 +152,7 @@ export function lintExemplar(p: Pipeline, ex: ExemplarRef): LintReport {
 }
 
 export async function lintExemplarsCommand(p: Pipeline, opts: { verbose?: boolean } = {}): Promise<LintSummary> {
-  const list = exemplarDirs(p.paths.templatesDir);
+  const list = [...exemplarDirs(p.paths.templatesDir), ...contentDirs(p.paths.authoredDir)];
   if (!list.length) {
     p.log(`no exemplars found in ${path.join(p.paths.templatesDir, 'exemplars')}`);
     return { reports: [], exitCode: 0 };

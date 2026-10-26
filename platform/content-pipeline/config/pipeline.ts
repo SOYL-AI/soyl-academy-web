@@ -129,7 +129,22 @@ export const BANNED = {
 /** Literature reproduction heuristic (CONTEXT §8: never reproduce poems, stories or play text). */
 export const LITERATURE = {
   maxQuotedWords: 25,
+  /** Quoted spans of this many words or more are listed for a manual reproduction review (warning). */
+  reviewQuotedWords: 8,
+  /** passage_origin "licensed-excerpt" is refused until licensed source texts exist (CONTEXT §8). */
+  allowLicensedExcerpts: false,
   /** More than this many consecutive short lines looks like reproduced verse. */
   maxVerseLines: 4,
   verseLineMaxWords: 9,
 } as const;
+
+/**
+ * Hindi orthography (warnings): NCERT/CBSE standard spellings (गए, चाहिए, लिए, कर्तृवाच्य …), from the
+ * Hindi exemplar validator. Extend as reviewers find more.
+ */
+export const HINDI_ORTHOGRAPHY = {
+  nonStandard: ['गये', 'गयी', 'चाहिये', 'लिये', 'हुये', 'जायेगा', 'जायेंगे', 'आयेगा', 'आयेंगे', 'कर्त्तावाच्य', 'कर्त्ता', 'उत्प्रेच्छा', 'अतिश्योक्ति', 'मानविकरण', 'अलन्कार', 'सम्बन्ध', 'हिन्दी'],
+} as const;
+
+/** Model answers outside this band around word_limit are flagged (warning `answer.word-limit`). */
+export const WORD_LIMIT_SLACK = { below: 0.8, above: 1.2 } as const;
