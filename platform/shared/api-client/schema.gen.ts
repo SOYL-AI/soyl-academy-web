@@ -94,6 +94,60 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/auth/methods": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Enabled sign-in methods (the login sheet hides the others) */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AuthMethods"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/v1/auth/phone/send-otp": {
         parameters: {
             query?: never;
@@ -2578,6 +2632,13 @@ export interface components {
             email: string | null;
             google: boolean;
         };
+        AuthMethodsInput: {
+            /** @description Enabled sign-in methods, in display order */
+            methods: ("email" | "phone" | "google")[];
+            email: boolean;
+            phone: boolean;
+            google: boolean;
+        };
         GuestLessonInput: {
             chapter: string;
             part?: number;
@@ -3279,6 +3340,13 @@ export interface components {
         SignInMethods: {
             phone: string | null;
             email: string | null;
+            google: boolean;
+        };
+        AuthMethods: {
+            /** @description Enabled sign-in methods, in display order */
+            methods: ("email" | "phone" | "google")[];
+            email: boolean;
+            phone: boolean;
             google: boolean;
         };
         GuestLesson: {
