@@ -8,8 +8,9 @@ in-memory store with SAS checks. No Azure OpenAI, Content Safety or Storage reso
 shapes, not against live resources. Nothing was deployed.
 
 Branch: `platform/ai-gateway/m4` (worktree `C:/Users/Prabhu/soyl-wt/ai-gateway-m4`), from
-`origin/platform/main` plus the backend-api M3 merge (8f2b77e, taken from the local `platform/main`
-before it was pushed — the Lead's own merge commit, unchanged).
+`origin/platform/main` plus the backend-api M3 merge (8f2b77e), then `origin/platform/main` 0dee08c
+(prod-readiness, catalog QA) merged at 861833d. Conflicts resolved in `api/src/index.ts` (start-up log
+fields), `worker/src/jobs.ts` (`JobSettings`), and the generated client (regenerated).
 
 ## What changed
 
@@ -115,9 +116,8 @@ Errors before the stream (paywall, plan, consent, breaker, validation) are norma
 | Alerting | Application Insights log alert on traces with `customDimensions.alert == true` (kinds `spend_threshold`, `cost_guardrail`, `invariant`, `self_harm_signal`) → owner email/SMS | — |
 
 Also confirm the token prices in `models.ts` (still `unverified`) once the models are deployed.
-Credentials: pass the prod-readiness managed-identity `TokenProvider` into `createAiRuntime(…, { credential })`
-in `src/index.ts` and the worker once that branch is merged (it satisfies `TokenCredentialLike`);
-otherwise `@azure/identity` would be loaded lazily, which is not installed (vulnerable msal pin).
+Credentials: the AI runtime uses the prod-readiness managed-identity `TokenProvider` (`defaultTokenProvider()`,
+merged here) by default for Azure OpenAI, Content Safety and Blob: no keys, no `@azure/identity`.
 
 ## Decisions and findings for the Lead (proposed DECISIONS entries)
 
@@ -130,16 +130,39 @@ otherwise `@azure/identity` would be loaded lazily, which is not installed (vuln
 ## How to verify (from `platform/`, 2026-10-27)
 
 ```
-RESULTS_PLACEHOLDER
+(after merging origin/platform/main 0dee08c — prod-readiness + catalog QA — at 861833d)
+npm run typecheck                          → ai-core, api, content-pipeline, db, e2e, shared, worker: exit 0
+npm test -w @soyl/ai-core -w @soyl/worker -w @soyl/db -w @soyl/shared
+  ai-core Test Files 2 passed (2)   · Tests 36 passed
+  worker  Test Files 9 passed (9)   · Tests 57 passed
+  db      Test Files 14 passed (14) · Tests 109 passed | 1 skipped (pgvector column check, CI only)
+  shared  Test Files 7 passed (7)   · Tests 79 passed
+api: npx vitest run --coverage             → Test Files 26 passed, Tests 401 passed | 1 skipped; one file
+                                             (custom-tests.test.ts) hit the known Windows vitest worker crash
+                                             0xC0000409 (M2 handoff); rerun alone: 12/12 passed
+  coverage (all of src)                    → Lines 95.39 %, Statements 92.42 %, Branches 81.71 %, Functions 92.47 %
+  src/ai                                   → Lines 92.51 % (credits 100, runtime 100, prompts 100, gateway 95.1,
+                                             jobs 96.4, blob 96.0, evaluation 95.6, spend 93.2, routes 93.2,
+                                             uploads 90.2, media 90.4, retrieval 83.9; worker.ts and the retention
+                                             half of maintenance.ts are covered by the worker suite)
+  src/ai/moderation                        → Lines 98.94 %
+TEST_KV=redis-mock npx vitest run (api/)   → Test Files 27 passed (27) · Tests 413 passed | 1 skipped
+npm run db -w @soyl/db -- migrate up / status / down --to 8 / status / up / status (SOYL_DEV_PG_PORT=54351)
+                                           → 0008_ai_gateway rolled back and re-applied; "9 applied, 0 pending"
+                                             (db/test/migrations.test.ts also asserts an identical schema after up→down 0→up)
+npm run openapi -w @soyl/api; npm run generate:api-client -w @soyl/shared → regenerated (+13 routes, AI schemas)
+route-policy snapshot                      → reviewed: 13 new routes; POST /v1/attempts/:id/ai-evaluation now fail-closed
+npm run build -w @soyl/api -w @soyl/worker → api/dist/index.js 5.8 MB, worker/dist/index.js 3.4 MB; the API bundle loads
+npm audit                                  → 4 moderate (dev-only drizzle-kit → esbuild), 0 high, 0 critical
 ```
 
 ## Tests added
 
-- **API `ai-unit`** (30): moderation rules incl. syllabus exceptions (sexual reproduction, STDs, Hiroshima…), Hindi/Hinglish, leetspeak; jailbreak/document-attack/off-topic; moderator policy and self-harm message; fail closed; Azure Content Safety request shapes, slicing, errors; language detection; hint-first; stable prompt prefix and delimiter neutralising; mark clamping; upload corpus (sniff, SVG/HEIC refused, EXIF/GPS and polyglot removal for JPEG/PNG/WebP, 40 MP bomb, PDF pages/JS/encrypt/launch, size); SAS strings and signatures, Azure Blob keyless/Azurite URLs and REST ops; memory SAS enforcement; IST time; config (GEN-3); idempotency ids; prices; FTS query sanitising; chunking; mock embeddings; runtime factory; log alert sink.
+- **API `ai-unit`** (31): moderation rules incl. syllabus exceptions (sexual reproduction, STDs, Hiroshima…), Hindi/Hinglish, leetspeak; jailbreak/document-attack/off-topic; moderator policy and self-harm message; fail closed; Azure Content Safety request shapes, slicing, errors; language detection; hint-first; stable prompt prefix and delimiter neutralising; mark clamping; upload corpus (sniff, SVG/HEIC refused, EXIF/GPS and polyglot removal for JPEG/PNG/WebP, 40 MP bomb, PDF pages/JS/encrypt/launch, size); SAS strings and signatures, Azure Blob keyless/Azurite URLs and REST ops; memory SAS enforcement; IST time; config (GEN-3); idempotency ids; prices; FTS query sanitising; chunking; mock embeddings; runtime factory; log alert sink.
 - **API `ai-credits`** (9): first-touch 25 credits and reset time; one grant under 10 concurrent first requests; Plus/Pro/Board Exam Pass grants and mid-day top-up, no claw-back; reserve/charge/refund exactly once incl. partial per-answer charge; **20 parallel reserves on 25 credits → exactly 2**; sweeper refunds expired reservations and races a charge with exactly one resolution; **00:00 IST reset, no rollover**, a pre-midnight reservation settles on its own day; ledger paging/labels; **quote before the action; 402 paywall with countdown and plans link; non-AI keeps working**.
 - **API `ai-gateway`** (15): index (types, no keys, idempotent, FTS, scope); **consent gate**; SSE grounded hint → full solution, metering, spend, conversation, IDOR; Hinglish/Hindi; explain-slide; **moderation in** (unsafe, self-harm with helplines, jailbreak, off-topic → refunded); **moderation unavailable → fail closed, refunded**; **unsafe output never shown, refunded**; **provider failure before output → refunded, after output → charged**; **disconnect after output → charged, before → refunded**; Idempotency-Key; validation and 16 KB limit; plan_required; concurrent-stream limit; **KV down → 503**; live-test block.
 - **API `ai-spend`** (6): alerts once at 50/80/100 % (concurrent increments); **free sub-budget pauses free while paid continue**; degraded → small tier, vision paused; **trip at 100 % and recover at 00:00 IST / cap raise**; zero cap; 7-day guardrail.
-- **API `ai-uploads`** (9): SAS shape/TTL/expiry/IDOR; type/size/PDF-photo refusals, consent, rate limit; expired/forged SAS; cleaning (EXIF/GPS, polyglot); malicious corpus via the real pipeline; photo doubt sends a cleaned `data:` image; paper-from-upload builds a paper from our bank without storing school questions, 60 credits, Plus cannot afford; failed blueprint refunded; 30-day expiry.
+- **API `ai-uploads`** (11, incl. image moderation: unsafe image refused; moderation outage → upload never usable, then `processing_failed`): SAS shape/TTL/expiry/IDOR; type/size/PDF-photo refusals, consent, rate limit; expired/forged SAS; cleaning (EXIF/GPS, polyglot); malicious corpus via the real pipeline; photo doubt sends a cleaned `data:` image; paper-from-upload builds a paper from our bank without storing school questions, 60 credits, Plus cannot afford; failed blueprint refunded; 30-day expiry.
 - **API `ai-evaluation`** (5): quote per answer, job, clamped steps, confidence/label, **scores/percentiles/ranks unchanged**, free-tier paywall, IDOR; single answer 6 credits; **prompt-injection fixtures: an obedient model's 99 marks are clamped, confidence capped ≤ 0.3**; unsafe answers not sent or charged; provider failure refunds all; refunded reservation → no model call; worker sweep runs queued jobs once.
 - **API `ai-retrieval-vector`** (1): pgvector path with mock embeddings where the extension exists (CI), FTS fallback otherwise.
 - **ai-core `gateway-support`** (10), **shared `ai-actions`** (3), **worker `ai-jobs`** (6), **db** schema counts.
