@@ -1,0 +1,323 @@
+# ICSE Class 10 Hindi (Second Language, code 05) - ICSE 2027 examination.
+# Literature: titles and authors only (CONTEXT section 8). Students read the texts in their own textbook.
+subject_id: icse-10-hindi
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2027-second-languages, icse-2027-prescribed-books, cisce-circular-2026-27-33-indian-languages, icse-2027-regulations]
+exam_notes: >-
+  One paper of 3 hours, 80 marks, plus internal assessment 20 marks (two or three assignments: one language, one literature).
+  Section A Language (40 marks, compulsory): composition, letter, unseen comprehension (about 250 words) and grammar.
+  Section B Prescribed Texts (40 marks): answer four questions from ONLY two of the four prescribed books.
+  Prescribed texts are bifurcated (Circular 2026-27/33): the ICSE 2027 paper is set only on the Class X portion listed here
+  (Class IX portion is in icse-9-hindi). Recommended for background work: Saras Hindi Vyakaran (Evergreen Publications).
+  CISCE describes the grammar component only generically (vocabulary, syntax, idioms, sentence synthesis); the grammar
+  chapters below break it into the item types commonly set in ICSE Hindi papers - this breakdown is SOYL's, not CISCE's.
+  SOYL covers all four prescribed books so a student can pick any two.
+units:
+  - { name: "खंड क - भाषा (Section A: Language)", marks: 40 }
+  - { name: "खंड ख - निर्धारित पाठ्य-पुस्तकें (Section B: Prescribed Texts)", marks: 40 }
+chapters:
+  - id: icse-10-hindi-ch01
+    number: 1
+    title: "निबंध / रचना लेखन"
+    title_en: "Composition writing"
+    unit: "खंड क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-hindi-ch01-t01
+        title: "रचना की योजना: विषय चयन, रूपरेखा, भूमिका, विस्तार और उपसंहार"
+        title_en: "Planning a composition: choosing a topic, outline, introduction, body and conclusion"
+        learning_outcomes:
+          - "दिए गए विषय की रूपरेखा बनाकर 250-300 शब्दों की सुसंगठित रचना लिखना"
+          - "अनुच्छेदों को तार्किक क्रम में जोड़ना"
+      - id: icse-10-hindi-ch01-t02
+        title: "वर्णनात्मक और विचारात्मक निबंध"
+        title_en: "Descriptive and argumentative essays"
+        learning_outcomes:
+          - "किसी स्थान, घटना या अनुभव का सजीव वर्णन करना"
+          - "किसी सामाजिक विषय पर पक्ष-विपक्ष के तर्क देकर निष्कर्ष लिखना"
+      - id: icse-10-hindi-ch01-t03
+        title: "कहानी लेखन: दिए गए वाक्य, कहावत या संकेत के आधार पर"
+        title_en: "Story writing from a given opening line, proverb or outline"
+        learning_outcomes:
+          - "दी गई पंक्ति से आरंभ या अंत होने वाली मौलिक कहानी लिखना"
+          - "कहानी में पात्र, संवाद और शिक्षा को स्वाभाविक रूप से जोड़ना"
+      - id: icse-10-hindi-ch01-t04
+        title: "चित्र-आधारित रचना"
+        title_en: "Picture-based composition"
+        learning_outcomes:
+          - "चित्र का निरीक्षण कर उससे जुड़ी कहानी या लेख लिखना"
+      - id: icse-10-hindi-ch01-t05
+        title: "भाषा की शुद्धता: वर्तनी, विराम-चिह्न और उपयुक्त शब्द-चयन"
+        title_en: "Accuracy: spelling, punctuation and apt word choice"
+        learning_outcomes:
+          - "अपनी रचना में वर्तनी और विराम-चिह्नों की त्रुटियाँ पहचानकर सुधारना"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-hindi-ch02
+    number: 2
+    title: "पत्र लेखन"
+    title_en: "Letter writing"
+    unit: "खंड क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-hindi-ch02-t01
+        title: "औपचारिक पत्र का प्रारूप: प्रेषक, दिनांक, प्राप्तकर्ता, विषय, संबोधन, समापन"
+        title_en: "Format of a formal letter"
+        learning_outcomes:
+          - "औपचारिक पत्र के सभी अंगों को सही क्रम और प्रारूप में लिखना"
+      - id: icse-10-hindi-ch02-t02
+        title: "प्रधानाचार्य, संपादक और अधिकारियों को पत्र (प्रार्थना-पत्र, शिकायती पत्र, सुझाव पत्र)"
+        title_en: "Letters to a principal, editor or official (application, complaint, suggestion)"
+        learning_outcomes:
+          - "समस्या को संक्षेप और विनम्रता से प्रस्तुत करते हुए उचित माँग लिखना"
+      - id: icse-10-hindi-ch02-t03
+        title: "अनौपचारिक पत्र: मित्र, माता-पिता या संबंधियों को"
+        title_en: "Informal letters to friends and relatives"
+        learning_outcomes:
+          - "अनौपचारिक पत्र में उचित संबोधन, आत्मीय भाषा और अभिवादन का प्रयोग करना"
+      - id: icse-10-hindi-ch02-t04
+        title: "दिए गए सुझावों/बिंदुओं के आधार पर पत्र का विस्तार"
+        title_en: "Expanding a letter from given points"
+        learning_outcomes:
+          - "प्रश्न में दिए गए सभी बिंदुओं को पत्र में शामिल करना"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-hindi-ch03
+    number: 3
+    title: "अपठित गद्यांश"
+    title_en: "Unseen passage (comprehension)"
+    unit: "खंड क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-hindi-ch03-t01
+        title: "गद्यांश पढ़ने की रणनीति: मुख्य विचार और सहायक विवरण पहचानना"
+        title_en: "Reading strategy: main idea and supporting details"
+        learning_outcomes:
+          - "लगभग 250 शब्दों के गद्यांश का केंद्रीय भाव एक-दो वाक्यों में बताना"
+      - id: icse-10-hindi-ch03-t02
+        title: "तथ्यात्मक और अनुमान-आधारित प्रश्नों के उत्तर अपने शब्दों में"
+        title_en: "Answering factual and inferential questions in one's own words"
+        learning_outcomes:
+          - "गद्यांश की पंक्तियाँ ज्यों-की-त्यों उतारे बिना अपने शब्दों में उत्तर लिखना"
+          - "गद्यांश के आधार पर कारण और परिणाम का अनुमान लगाना"
+      - id: icse-10-hindi-ch03-t03
+        title: "शब्दार्थ, शीर्षक और गद्यांश से संदेश"
+        title_en: "Word meanings in context, giving a title and the message"
+        learning_outcomes:
+          - "संदर्भ से कठिन शब्दों का अर्थ निकालना"
+          - "गद्यांश के लिए उपयुक्त शीर्षक सुझाना और उसका औचित्य बताना"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-hindi-ch04
+    number: 4
+    title: "व्याकरण: शब्द-भंडार"
+    title_en: "Grammar: vocabulary"
+    unit: "खंड क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-hindi-ch04-t01
+        title: "भाववाचक संज्ञा और विशेषण बनाना"
+        title_en: "Forming abstract nouns and adjectives"
+        learning_outcomes:
+          - "दिए गए शब्दों से प्रत्यय लगाकर भाववाचक संज्ञा या विशेषण बनाना"
+      - id: icse-10-hindi-ch04-t02
+        title: "पर्यायवाची और विलोम शब्द"
+        title_en: "Synonyms and antonyms"
+        learning_outcomes:
+          - "प्रचलित शब्दों के दो-दो पर्यायवाची और सही विलोम लिखना"
+      - id: icse-10-hindi-ch04-t03
+        title: "अनेक शब्दों के लिए एक शब्द"
+        title_en: "One word for a phrase"
+        learning_outcomes:
+          - "वाक्यांश के लिए उपयुक्त एक शब्द चुनना और वाक्य में प्रयोग करना"
+      - id: icse-10-hindi-ch04-t04
+        title: "समरूपी भिन्नार्थक शब्द और शब्द-शुद्धि"
+        title_en: "Similar-sounding words with different meanings; correct spellings"
+        learning_outcomes:
+          - "मिलते-जुलते शब्दों के अर्थ का अंतर वाक्य-प्रयोग से स्पष्ट करना"
+          - "अशुद्ध वर्तनी वाले शब्दों को शुद्ध करना"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-hindi-ch05
+    number: 5
+    title: "व्याकरण: वाक्य-रचना और मुहावरे"
+    title_en: "Grammar: sentence construction and idioms"
+    unit: "खंड क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-hindi-ch05-t01
+        title: "मुहावरों का अर्थ और वाक्य में प्रयोग"
+        title_en: "Idioms: meaning and use in sentences"
+        learning_outcomes:
+          - "मुहावरे का अर्थ लिखकर उसका प्रसंगानुकूल वाक्य में प्रयोग करना"
+      - id: icse-10-hindi-ch05-t02
+        title: "वाक्य शुद्धि: लिंग, वचन, कारक और क्रिया-संबंधी त्रुटियाँ"
+        title_en: "Correcting sentences: gender, number, case and verb errors"
+        learning_outcomes:
+          - "वाक्य में व्याकरणिक त्रुटि पहचानकर शुद्ध वाक्य लिखना"
+      - id: icse-10-hindi-ch05-t03
+        title: "निर्देशानुसार वाक्य परिवर्तन: काल, वाच्य, सरल-संयुक्त-मिश्र वाक्य"
+        title_en: "Transforming sentences as directed: tense, voice, simple/compound/complex"
+        learning_outcomes:
+          - "दिए गए निर्देश के अनुसार वाक्य का रूप बदलना, अर्थ बदले बिना"
+          - "दो सरल वाक्यों को जोड़कर संयुक्त या मिश्र वाक्य बनाना"
+      - id: icse-10-hindi-ch05-t04
+        title: "दिए गए शब्दों/रूपों से शुद्ध वाक्य बनाना"
+        title_en: "Making correct sentences using given words or forms"
+        learning_outcomes:
+          - "निर्दिष्ट शब्द या पदबंध को अर्थपूर्ण वाक्य में प्रयोग करना"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-hindi-ch06
+    number: 6
+    title: "साहित्य सागर: कहानियाँ"
+    title_en: "Sahitya Sagar: short stories (Class X portion)"
+    unit: "खंड ख - निर्धारित पाठ्य-पुस्तकें (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-10-hindi-ch06-t01
+        title: "बड़े घर की बेटी (प्रेमचंद): कथावस्तु, पात्र और संयुक्त परिवार का संदेश"
+        title_en: "Bade Ghar Ki Beti (Premchand): plot, characters, message about the joint family"
+        learning_outcomes:
+          - "कहानी की प्रमुख घटनाओं का क्रम अपने शब्दों में बताना"
+          - "आनंदी के चरित्र की विशेषताएँ उदाहरण सहित लिखना"
+          - "शीर्षक की सार्थकता पर अपना मत देना"
+      - id: icse-10-hindi-ch06-t02
+        title: "संदेह (जयशंकर प्रसाद): मनोवैज्ञानिक द्वंद्व और पात्र"
+        title_en: "Sandeh (Jaishankar Prasad): psychological conflict and characters"
+        learning_outcomes:
+          - "कहानी में संदेह की भावना कैसे विकसित होती है, यह स्पष्ट करना"
+          - "मुख्य पात्रों के मनोभावों का विश्लेषण करना"
+      - id: icse-10-hindi-ch06-t03
+        title: "भीड़ में खोया आदमी (लीलाधर शर्मा पर्वतीय): जनसंख्या-वृद्धि की समस्या"
+        title_en: "Bheed Mein Khoya Aadmi (Leeladhar Sharma Parvatiya): the problem of population growth"
+        learning_outcomes:
+          - "कहानी में उठाई गई सामाजिक समस्या और उसके कारण बताना"
+          - "समस्या के समाधान के लिए अपने सुझाव देना"
+      - id: icse-10-hindi-ch06-t04
+        title: "भेड़ें और भेड़िए (हरिशंकर परसाई): राजनीतिक व्यंग्य और प्रतीक"
+        title_en: "Bheden Aur Bhediye (Harishankar Parsai): political satire and symbolism"
+        learning_outcomes:
+          - "कहानी में भेड़ों और भेड़ियों के प्रतीकार्थ स्पष्ट करना"
+          - "व्यंग्य की विशेषताएँ उदाहरण सहित बताना"
+      - id: icse-10-hindi-ch06-t05
+        title: "दो कलाकार (मन्नू भंडारी): कला और मानव-सेवा"
+        title_en: "Do Kalakaar (Mannu Bhandari): art and service to humanity"
+        learning_outcomes:
+          - "अरुणा और चित्रा के जीवन-दृष्टिकोण की तुलना करना"
+          - "'सच्चा कलाकार कौन' प्रश्न पर तर्कपूर्ण उत्तर लिखना"
+    removed_topics:
+      - "Class IX stories of Sahitya Sagar (examined in Class IX only; see icse-9-hindi)"
+    literature_texts:
+      - { title: "बड़े घर की बेटी", author: "प्रेमचंद", title_en: "Bade Ghar Ki Beti - Premchand" }
+      - { title: "संदेह", author: "जयशंकर प्रसाद", title_en: "Sandeh - Jaishankar Prasad" }
+      - { title: "भीड़ में खोया आदमी", author: "लीलाधर शर्मा पर्वतीय", title_en: "Bheed Mein Khoya Aadmi - Leeladhar Sharma Parvatiya" }
+      - { title: "भेड़ें और भेड़िए", author: "हरिशंकर परसाई", title_en: "Bheden Aur Bhediye - Harishankar Parsai" }
+      - { title: "दो कलाकार", author: "मन्नू भंडारी", title_en: "Do Kalakaar - Mannu Bhandari" }
+  - id: icse-10-hindi-ch07
+    number: 7
+    title: "साहित्य सागर: कविताएँ"
+    title_en: "Sahitya Sagar: poems (Class X portion)"
+    unit: "खंड ख - निर्धारित पाठ्य-पुस्तकें (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-10-hindi-ch07-t01
+        title: "सूर के पद (सूरदास): वात्सल्य और भक्ति भाव, ब्रजभाषा"
+        title_en: "Sur Ke Pad (Surdas): parental love and devotion; Braj Bhasha"
+        learning_outcomes:
+          - "पदों का भावार्थ अपने शब्दों में लिखना"
+          - "पदों में निहित रस और भाषा-शैली की विशेषताएँ बताना"
+      - id: icse-10-hindi-ch07-t02
+        title: "विनय के पद (तुलसीदास): दास्य भक्ति और राम के प्रति समर्पण"
+        title_en: "Vinay Ke Pad (Tulsidas): devotion and surrender to Rama"
+        learning_outcomes:
+          - "कवि के भक्ति-भाव और आत्म-निवेदन को स्पष्ट करना"
+      - id: icse-10-hindi-ch07-t03
+        title: "भिक्षुक (सूर्यकांत त्रिपाठी 'निराला'): करुणा और सामाजिक विषमता"
+        title_en: "Bhikshuk (Suryakant Tripathi 'Nirala'): compassion and social inequality"
+        learning_outcomes:
+          - "कविता में भिक्षुक के चित्रण के माध्यम से कवि की संवेदना स्पष्ट करना"
+      - id: icse-10-hindi-ch07-t04
+        title: "चलना हमारा काम है (शिवमंगल सिंह 'सुमन'): कर्मठता और आशावाद"
+        title_en: "Chalna Hamara Kaam Hai (Shivmangal Singh 'Suman'): perseverance and optimism"
+        learning_outcomes:
+          - "कविता का केंद्रीय भाव और उसका जीवन में महत्त्व बताना"
+      - id: icse-10-hindi-ch07-t05
+        title: "मातृ मंदिर की ओर (सुभद्रा कुमारी चौहान): देशभक्ति और समर्पण"
+        title_en: "Matri Mandir Ki Or (Subhadra Kumari Chauhan): patriotism and dedication"
+        learning_outcomes:
+          - "कविता में व्यक्त देश-प्रेम और कवयित्री की व्याकुलता का विश्लेषण करना"
+          - "प्रमुख अलंकारों और प्रतीकों की पहचान करना"
+    removed_topics:
+      - "Class IX poems of Sahitya Sagar (see icse-9-hindi)"
+    literature_texts:
+      - { title: "सूर के पद", author: "सूरदास", title_en: "Sur Ke Pad - Surdas" }
+      - { title: "विनय के पद", author: "तुलसीदास", title_en: "Vinay Ke Pad - Tulsidas" }
+      - { title: "भिक्षुक", author: "सूर्यकांत त्रिपाठी 'निराला'", title_en: "Bhikshuk - Suryakant Tripathi 'Nirala'" }
+      - { title: "चलना हमारा काम है", author: "शिवमंगल सिंह 'सुमन'", title_en: "Chalna Hamara Kaam Hai - Shivmangal Singh 'Suman'" }
+      - { title: "मातृ मंदिर की ओर", author: "सुभद्रा कुमारी चौहान", title_en: "Matri Mandir Ki Or - Subhadra Kumari Chauhan" }
+  - id: icse-10-hindi-ch08
+    number: 8
+    title: "उपन्यास: नया रास्ता (सर्ग 14 से 26)"
+    title_en: "Novel: Naya Raasta (Sarg 14 to 26)"
+    unit: "खंड ख - निर्धारित पाठ्य-पुस्तकें (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-10-hindi-ch08-t01
+        title: "सर्ग 14-17: घटनाक्रम और कथा का विकास"
+        title_en: "Sarg 14-17: events and development of the story"
+        learning_outcomes:
+          - "इन सर्गों की प्रमुख घटनाएँ क्रम से बताना"
+      - id: icse-10-hindi-ch08-t02
+        title: "सर्ग 18-21: पात्रों के बदलते संबंध"
+        title_en: "Sarg 18-21: changing relationships between characters"
+        learning_outcomes:
+          - "प्रमुख पात्रों के व्यवहार में आए परिवर्तनों के कारण स्पष्ट करना"
+      - id: icse-10-hindi-ch08-t03
+        title: "सर्ग 22-26: कथा का चरम और समापन"
+        title_en: "Sarg 22-26: climax and resolution"
+        learning_outcomes:
+          - "उपन्यास के अंत का सार लिखना और उस पर अपनी प्रतिक्रिया देना"
+      - id: icse-10-hindi-ch08-t04
+        title: "प्रमुख पात्रों का चरित्र-चित्रण"
+        title_en: "Character sketches of the main characters"
+        learning_outcomes:
+          - "मीनू और अन्य प्रमुख पात्रों की चारित्रिक विशेषताएँ घटनाओं के उदाहरण सहित लिखना"
+      - id: icse-10-hindi-ch08-t05
+        title: "उपन्यास के विषय: दहेज, नारी-स्वावलंबन और 'नया रास्ता' शीर्षक की सार्थकता"
+        title_en: "Themes: dowry, women's self-reliance and the significance of the title"
+        learning_outcomes:
+          - "उपन्यास में उठाई गई सामाजिक समस्याओं का विश्लेषण करना"
+          - "शीर्षक 'नया रास्ता' की सार्थकता सिद्ध करना"
+    removed_topics:
+      - "Sarg 1 to 13 (Class IX portion)"
+    literature_texts:
+      - { title: "नया रास्ता (सर्ग 14-26)", author: "सुषमा अग्रवाल", title_en: "Naya Raasta (Sarg 14-26) - Sushma Agarwal" }
+  - id: icse-10-hindi-ch09
+    number: 9
+    title: "एकांकी संचय"
+    title_en: "Ekanki Sanchay: one-act plays (Class X portion)"
+    unit: "खंड ख - निर्धारित पाठ्य-पुस्तकें (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-10-hindi-ch09-t01
+        title: "सूखी डाली (उपेंद्रनाथ 'अश्क'): संयुक्त परिवार और पीढ़ियों का टकराव"
+        title_en: "Sookhi Daali (Upendranath 'Ashk'): joint family and generational conflict"
+        learning_outcomes:
+          - "दादा मूलराज और बेला के दृष्टिकोण की तुलना करना"
+          - "एकांकी के शीर्षक का प्रतीकार्थ स्पष्ट करना"
+      - id: icse-10-hindi-ch09-t02
+        title: "महाभारत की एक साँझ (भारत भूषण अग्रवाल): युद्ध का उत्तरदायित्व"
+        title_en: "Mahabharat Ki Ek Saanjh (Bharat Bhushan Agrawal): responsibility for war"
+        learning_outcomes:
+          - "दुर्योधन और युधिष्ठिर के संवादों के आधार पर उनके तर्कों का विश्लेषण करना"
+      - id: icse-10-hindi-ch09-t03
+        title: "दीपदान (रामकुमार वर्मा): पन्ना धाय का त्याग और कर्तव्य"
+        title_en: "Deepdaan (Ramkumar Verma): Panna Dhai's sacrifice and duty"
+        learning_outcomes:
+          - "पन्ना धाय के चरित्र की विशेषताएँ घटनाओं के आधार पर लिखना"
+          - "'दीपदान' शीर्षक की सार्थकता स्पष्ट करना"
+      - id: icse-10-hindi-ch09-t04
+        title: "एकांकी के तत्त्व: कथावस्तु, संवाद, रंगमंचीयता"
+        title_en: "Elements of a one-act play: plot, dialogue, stageability"
+        learning_outcomes:
+          - "किसी एकांकी के संवादों और मंच-निर्देशों की भूमिका बताना"
+    removed_topics:
+      - "Class IX one-act plays (see icse-9-hindi)"
+    literature_texts:
+      - { title: "सूखी डाली", author: "उपेंद्रनाथ 'अश्क'", title_en: "Sookhi Daali - Upendranath 'Ashk'" }
+      - { title: "महाभारत की एक साँझ", author: "भारत भूषण अग्रवाल", title_en: "Mahabharat Ki Ek Saanjh - Bharat Bhushan Agrawal" }
+      - { title: "दीपदान", author: "रामकुमार वर्मा", title_en: "Deepdaan - Ramkumar Verma" }
+removed_topics: []

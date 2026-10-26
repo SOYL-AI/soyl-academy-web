@@ -1,0 +1,391 @@
+# ICSE Class 9 Chemistry (Science Paper 2) - year one of the ICSE 2028 course.
+# Source: platform/catalog/sources/cisce.md#icse-2028-chemistry (CLASS IX section only). Topic wording is our own summary of the official scope.
+subject_id: icse-9-chemistry
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2028-chemistry, icse-2028-regulations]
+exam_notes: >-
+  There is no board examination in Class IX: the Class IX final examination is conducted internally by the school on the
+  Class IX portion (ICSE 2028 Regulations), and promotion to Class X depends on cumulative achievement through the year.
+  The syllabus prescribes one theory paper of 2 hours, 80 marks, plus internal assessment of practical work 20 marks;
+  school examinations usually follow this pattern. Every reaction is studied with reactants, products, conditions,
+  observations, balanced equations and diagrams.
+  Practical work (assessed internally, not in the theory chapters): recognition of the gases H2, O2, CO2, Cl2, HCl, SO2,
+  H2S, NH3, water vapour and NO2; action of heat on copper and zinc carbonates, washing soda, copper sulphate crystals,
+  zinc, copper and lead nitrates, ammonium chloride, iodine and ammonium dichromate; flame tests for sodium, potassium,
+  calcium and copper salts; simple experiments on hard and soft water; the three prescribed double displacement
+  reactions; and a local survey of sources of water pollution with suggested preventive steps.
+  No Class IX specimen paper was released for Chemistry.
+  CISCE publishes a topic list in eight sections, not textbook chapters: SOYL groups it into 13 teachable chapters in
+  syllabus order. No unit-wise marks weightage is published for ICSE Chemistry.
+units:
+  - { name: "1. The Language of Chemistry", marks: null }
+  - { name: "2. Chemical Changes and Reactions", marks: null }
+  - { name: "3. Water", marks: null }
+  - { name: "4. Atomic Structure and Chemical Bonding", marks: null }
+  - { name: "5. The Periodic Table", marks: null }
+  - { name: "6. Study of the First Element - Hydrogen", marks: null }
+  - { name: "7. Study of Gas Laws", marks: null }
+  - { name: "8. Atmospheric and Environmental Chemistry", marks: null }
+chapters:
+  - id: icse-9-chemistry-ch01
+    number: 1
+    title: "Symbols, Valency, Radicals and Formulae"
+    unit: "1. The Language of Chemistry"
+    topics:
+      - id: icse-9-chemistry-ch01-t01
+        title: "Symbols of elements: definition and the symbols of commonly used elements"
+        learning_outcomes:
+          - "Write the symbols of common elements, including those derived from Latin names"
+          - "Explain what a symbol represents qualitatively and quantitatively"
+      - id: icse-9-chemistry-ch01-t02
+        title: "Valency: definition; combining with hydrogen; valence electrons of metals and non-metals; mono-, di-, tri- and tetravalent elements"
+        learning_outcomes:
+          - "Deduce the valency of an element from its hydride or from its valence electrons"
+          - "Classify given elements as monovalent, divalent, trivalent or tetravalent"
+      - id: icse-9-chemistry-ch01-t03
+        title: "Radicals: definition, valencies of common acidic and basic radicals"
+        learning_outcomes:
+          - "Name common positive and negative radicals and state their valencies"
+          - "Distinguish a simple radical from a compound radical"
+      - id: icse-9-chemistry-ch01-t04
+        title: "Radicals in the atmosphere: their effects on living organisms and ways of reducing them"
+        learning_outcomes:
+          - "Explain how reactive radicals present in polluted air can harm living organisms"
+          - "Suggest ways to reduce the formation of harmful radicals in the atmosphere"
+      - id: icse-9-chemistry-ch01-t05
+        title: "Writing names and formulae of compounds using valencies"
+        learning_outcomes:
+          - "Write the formula of a compound by exchanging valencies of its radicals"
+          - "Name a compound from its formula"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-chemistry-ch02
+    number: 2
+    title: "Chemical Equations and Relative Masses"
+    unit: "1. The Language of Chemistry"
+    topics:
+      - id: icse-9-chemistry-ch02-t01
+        title: "Chemical equations: definition; equations with different numbers of reactants and products"
+        learning_outcomes:
+          - "Write word and formula equations for reactions with one reactant and two or three products, two reactants and one product, and two reactants and several products"
+          - "State the information a balanced chemical equation conveys"
+      - id: icse-9-chemistry-ch02-t02
+        title: "Balancing chemical equations by the hit-and-trial method"
+        learning_outcomes:
+          - "Balance simple chemical equations by hit and trial"
+      - id: icse-9-chemistry-ch02-t03
+        title: "Relative atomic mass and relative molecular mass: standards based on the hydrogen atom or 1/12 of a carbon-12 atom"
+        learning_outcomes:
+          - "Define relative atomic mass and relative molecular mass"
+          - "Calculate the relative molecular mass of a compound from atomic masses"
+      - id: icse-9-chemistry-ch02-t04
+        title: "Percentage composition of a compound"
+        learning_outcomes:
+          - "Calculate the percentage by mass of each element in a compound, including water of crystallisation"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-chemistry-ch03
+    number: 3
+    title: "Chemical Changes and Reactions"
+    unit: "2. Chemical Changes and Reactions"
+    topics:
+      - id: icse-9-chemistry-ch03-t01
+        title: "Direct combination reactions"
+        learning_outcomes:
+          - "Identify direct combination reactions and write balanced equations for examples"
+      - id: icse-9-chemistry-ch03-t02
+        title: "Decomposition reactions brought about by heat, light and electricity"
+        learning_outcomes:
+          - "Write balanced equations for thermal, photo and electrolytic decomposition reactions"
+      - id: icse-9-chemistry-ch03-t03
+        title: "Displacement reactions and the role of reactivity"
+        learning_outcomes:
+          - "Predict whether a metal will displace another metal from its salt solution"
+      - id: icse-9-chemistry-ch03-t04
+        title: "Double decomposition (double displacement): sodium sulphate with barium chloride, silver nitrate with sodium chloride, lead nitrate with potassium iodide"
+        learning_outcomes:
+          - "Write balanced equations for the three prescribed double displacement reactions"
+          - "Describe the colour of the precipitate formed in each reaction"
+      - id: icse-9-chemistry-ch03-t05
+        title: "Energy changes: exothermic and endothermic reactions involving heat, light and electricity"
+        learning_outcomes:
+          - "Classify reactions as exothermic or endothermic with examples"
+          - "Give examples of reactions that evolve or absorb light and electricity"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-chemistry-ch04
+    number: 4
+    title: "Water as a Universal Solvent: Solutions and Solubility"
+    unit: "3. Water"
+    topics:
+      - id: icse-9-chemistry-ch04-t01
+        title: "Water as a universal solvent; mixtures, solutions, colloids and suspensions"
+        learning_outcomes:
+          - "Explain why water is called a universal solvent"
+          - "Compare solutions, colloids and suspensions in particle size, stability and visibility"
+      - id: icse-9-chemistry-ch04-t02
+        title: "Solutions of solids in water: saturated, unsaturated and supersaturated solutions"
+        learning_outcomes:
+          - "Distinguish saturated, unsaturated and supersaturated solutions and describe how to test a solution"
+      - id: icse-9-chemistry-ch04-t03
+        title: "Effect of temperature on solubility; solubility curves of calcium sulphate, potassium nitrate and sodium chloride"
+        learning_outcomes:
+          - "Interpret solubility curves to compare how solubility changes with temperature"
+          - "Explain why potassium nitrate crystallises out when a hot saturated solution is cooled"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-chemistry-ch05
+    number: 5
+    title: "Water of Crystallisation, Efflorescence, Deliquescence and Drying Agents"
+    unit: "3. Water"
+    topics:
+      - id: icse-9-chemistry-ch05-t01
+        title: "Water of crystallisation (definition); hydrated and anhydrous substances with examples"
+        learning_outcomes:
+          - "Write the formulae of hydrated salts such as CuSO4.5H2O, FeSO4.7H2O, Na2CO3.10H2O and Na2SO4.10H2O"
+          - "Name examples of anhydrous salts such as NaNO3, KCl, PbCl2 and K2SO4"
+      - id: icse-9-chemistry-ch05-t02
+        title: "Efflorescence, deliquescence and hygroscopy: definitions and examples"
+        learning_outcomes:
+          - "Distinguish efflorescent, deliquescent and hygroscopic substances with examples such as washing soda, ferric chloride, quicklime and concentrated sulphuric acid"
+      - id: icse-9-chemistry-ch05-t03
+        title: "Drying agents and dehydrating agents"
+        learning_outcomes:
+          - "Distinguish a drying agent from a dehydrating agent using quicklime and concentrated sulphuric acid as examples"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-chemistry-ch06
+    number: 6
+    title: "Hard and Soft Water; Making Water Potable"
+    unit: "3. Water"
+    topics:
+      - id: icse-9-chemistry-ch06-t01
+        title: "Soft and hard water in terms of the action of soap; advantages and disadvantages of each"
+        learning_outcomes:
+          - "Distinguish hard and soft water by their action with soap"
+          - "List advantages and disadvantages of hard and soft water"
+      - id: icse-9-chemistry-ch06-t02
+        title: "Temporary and permanent hardness: types and causes"
+        learning_outcomes:
+          - "Name the salts responsible for temporary and permanent hardness"
+      - id: icse-9-chemistry-ch06-t03
+        title: "Removal of hardness by boiling and by adding washing soda"
+        learning_outcomes:
+          - "Write balanced equations for removal of temporary hardness by boiling"
+          - "Write balanced equations for removal of hardness using washing soda"
+      - id: icse-9-chemistry-ch06-t04
+        title: "Making water potable: filtration, chlorination, defluoridation and the role of alum"
+        learning_outcomes:
+          - "Describe the steps used to make water safe to drink and the purpose of each"
+          - "Explain how alum helps suspended particles settle"
+      - id: icse-9-chemistry-ch06-t05
+        title: "Diseases caused by polluted water"
+        learning_outcomes:
+          - "Name water-borne diseases such as diarrhoea, typhoid, cholera, dysentery, hepatitis A and polio and suggest preventive measures"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-chemistry-ch07
+    number: 7
+    title: "Atomic Structure"
+    unit: "4. Atomic Structure and Chemical Bonding"
+    topics:
+      - id: icse-9-chemistry-ch07-t01
+        title: "The atom and its constituents: protons and neutrons in the nucleus with electrons around it; atomic number and mass number"
+        learning_outcomes:
+          - "Compare the charge, mass and location of protons, neutrons and electrons"
+          - "Calculate the numbers of protons, neutrons and electrons from atomic number and mass number"
+      - id: icse-9-chemistry-ch07-t02
+        title: "Discovery of the nucleus: Rutherford's gold foil experiment, conclusions, merits and demerits"
+        learning_outcomes:
+          - "Describe Rutherford's gold foil experiment and the conclusions drawn from it"
+          - "State a limitation of Rutherford's model"
+      - id: icse-9-chemistry-ch07-t03
+        title: "Bohr's model of the atom (simplified form)"
+        learning_outcomes:
+          - "State the main postulates of Bohr's model and explain how it overcomes Rutherford's limitation"
+      - id: icse-9-chemistry-ch07-t04
+        title: "Distribution of electrons in orbits: the 2n^2 rule and octet rule; reason for chemical activity"
+        learning_outcomes:
+          - "Write the electronic configuration of the first 20 elements"
+          - "Explain chemical reactivity in terms of the tendency to complete a duplet or octet"
+      - id: icse-9-chemistry-ch07-t05
+        title: "Isotopes of hydrogen, carbon and chlorine"
+        learning_outcomes:
+          - "Define isotopes and represent the isotopes of hydrogen, carbon and chlorine"
+    removed_topics:
+      - "Mathematical expressions of Bohr's model"
+    literature_texts: []
+  - id: icse-9-chemistry-ch08
+    number: 8
+    title: "Chemical Bonding"
+    unit: "4. Atomic Structure and Chemical Bonding"
+    topics:
+      - id: icse-9-chemistry-ch08-t01
+        title: "Electrovalent bond: definition and ion formation"
+        learning_outcomes:
+          - "Explain the formation of cations and anions by loss and gain of electrons"
+      - id: icse-9-chemistry-ch08-t02
+        title: "Orbit structures for the formation of electrovalent compounds NaCl, MgCl2 and CaO"
+        learning_outcomes:
+          - "Draw orbit structure diagrams showing electron transfer in NaCl, MgCl2 and CaO"
+      - id: icse-9-chemistry-ch08-t03
+        title: "Covalent bond: definition; duplet and octet in single, double and triple bonds"
+        learning_outcomes:
+          - "Explain covalent bonding as sharing of electron pairs to complete a duplet or octet"
+      - id: icse-9-chemistry-ch08-t04
+        title: "Orbit structures of covalent molecules: H2, Cl2, O2, N2, HCl, H2O, NH3, CCl4 and CH4"
+        learning_outcomes:
+          - "Draw orbit structure diagrams for the prescribed covalent molecules showing shared pairs"
+      - id: icse-9-chemistry-ch08-t05
+        title: "Formation of radicals when a covalent bond breaks"
+        learning_outcomes:
+          - "Explain how breaking a covalent bond with one electron going to each atom forms radicals"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-chemistry-ch09
+    number: 9
+    title: "The Periodic Table"
+    unit: "5. The Periodic Table"
+    topics:
+      - id: icse-9-chemistry-ch09-t01
+        title: "Early classifications: Dobereiner's triads and Newlands' law of octaves"
+        learning_outcomes:
+          - "Show that a given set of elements forms a Dobereiner triad"
+          - "State Newlands' law of octaves and one limitation of it"
+      - id: icse-9-chemistry-ch09-t02
+        title: "Mendeleev's periodic law: principle, examples, merits and limitations"
+        learning_outcomes:
+          - "State Mendeleev's periodic law"
+          - "List merits and limitations of Mendeleev's table"
+      - id: icse-9-chemistry-ch09-t03
+        title: "Discovery of atomic number and the modern periodic law"
+        learning_outcomes:
+          - "Explain how using atomic number removed the anomalies of Mendeleev's table"
+      - id: icse-9-chemistry-ch09-t04
+        title: "Modern periodic table: groups 1 to 18 and periods 1 to 7; placement of transition and inner transition elements"
+        learning_outcomes:
+          - "Locate an element's group and period from its electronic configuration"
+          - "Identify the positions of transition and inner transition elements in the table"
+      - id: icse-9-chemistry-ch09-t05
+        title: "Alkali metals (group 1), alkaline earth metals (group 2), halogens (group 17) and noble gases (group 18)"
+        learning_outcomes:
+          - "Relate the common properties of each group to its number of valence electrons"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-chemistry-ch10
+    number: 10
+    title: "Hydrogen: Position, Sources and Preparation"
+    unit: "6. Study of the First Element - Hydrogen"
+    topics:
+      - id: icse-9-chemistry-ch10-t01
+        title: "Position of hydrogen in the periodic table: resemblance with alkali metals and halogens"
+        learning_outcomes:
+          - "Justify the position of hydrogen by comparing its valence electrons, burning and ion formation with group 1 and group 17"
+      - id: icse-9-chemistry-ch10-t02
+        title: "Hydrogen from water: cold water on Na, K, Ca; hot water on Mg; steam on Al, Zn, red-hot Fe (reversible) and on carbon; activity series"
+        learning_outcomes:
+          - "Write balanced equations for the action of water or steam on the prescribed metals and carbon"
+          - "Relate the vigour of each reaction to the position of the metal in the activity series"
+      - id: icse-9-chemistry-ch10-t03
+        title: "Hydrogen from dilute acids and alkalis: Mg, Al, Zn, Fe with dilute HCl or H2SO4; NaOH or KOH with Al, Zn and Pb"
+        learning_outcomes:
+          - "Write equations for displacement of hydrogen from dilute acids and from alkalis"
+          - "Explain why dilute nitric acid and very reactive or unreactive metals are not used"
+      - id: icse-9-chemistry-ch10-t04
+        title: "Laboratory preparation and collection of hydrogen; why zinc is used; removing impurities; precautions"
+        learning_outcomes:
+          - "Draw and label the laboratory set-up for preparing hydrogen from zinc and dilute acid"
+          - "Explain the method of collection and the precautions needed"
+      - id: icse-9-chemistry-ch10-t05
+        title: "Industrial manufacture of hydrogen by the Bosch process; separation of CO2 and CO"
+        learning_outcomes:
+          - "Write the main reactions and conditions of the Bosch process"
+          - "Explain how carbon dioxide and carbon monoxide are removed from the product"
+    removed_topics:
+      - "Preparation of hydrogen by electrolysis as the standard laboratory method"
+    literature_texts: []
+  - id: icse-9-chemistry-ch11
+    number: 11
+    title: "Oxidation and Reduction"
+    unit: "6. Study of the First Element - Hydrogen"
+    topics:
+      - id: icse-9-chemistry-ch11-t01
+        title: "Oxidation and reduction as addition or removal of oxygen or hydrogen"
+        learning_outcomes:
+          - "Identify the substance oxidised and the substance reduced in a reaction using oxygen and hydrogen transfer"
+      - id: icse-9-chemistry-ch11-t02
+        title: "Electronic concept: oxidation as loss and reduction as gain of electrons"
+        learning_outcomes:
+          - "Write ionic half-changes showing loss and gain of electrons"
+      - id: icse-9-chemistry-ch11-t03
+        title: "Oxidising agents, reducing agents and redox reactions"
+        learning_outcomes:
+          - "Identify the oxidising and reducing agents in a given redox reaction"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-chemistry-ch12
+    number: 12
+    title: "Study of Gas Laws"
+    unit: "7. Study of Gas Laws"
+    topics:
+      - id: icse-9-chemistry-ch12-t01
+        title: "Behaviour of gases under changes of temperature and pressure explained by molecular motion"
+        learning_outcomes:
+          - "Explain gas pressure and expansion on heating using the motion of molecules"
+      - id: icse-9-chemistry-ch12-t02
+        title: "Boyle's law: statement, mathematical form, derivation, graphs and simple calculations"
+        learning_outcomes:
+          - "State Boyle's law and sketch P versus V and P versus 1/V graphs"
+          - "Solve problems using P1V1 = P2V2"
+      - id: icse-9-chemistry-ch12-t03
+        title: "Charles's law: statement, mathematical form, derivation, graphs and simple calculations; absolute zero"
+        learning_outcomes:
+          - "State Charles's law and sketch the V versus T graph"
+          - "Explain absolute zero by extrapolating the volume-temperature graph"
+          - "Solve problems using V1/T1 = V2/T2"
+      - id: icse-9-chemistry-ch12-t04
+        title: "Kelvin and Celsius scales: conversion; standard temperature and pressure"
+        learning_outcomes:
+          - "Convert temperatures between degrees Celsius and kelvin"
+          - "State the values of standard temperature and pressure"
+      - id: icse-9-chemistry-ch12-t05
+        title: "Gas equation P1V1/T1 = P2V2/T2 and simple calculations, including reduction to STP"
+        learning_outcomes:
+          - "Derive the combined gas equation from Boyle's and Charles's laws"
+          - "Calculate the volume of a gas at STP from its volume under other conditions"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-chemistry-ch13
+    number: 13
+    title: "Atmospheric and Environmental Chemistry"
+    unit: "8. Atmospheric and Environmental Chemistry"
+    topics:
+      - id: icse-9-chemistry-ch13-t01
+        title: "Acid rain: oxides of sulphur from fossil fuels and oxides of nitrogen from furnaces and engines; equations; effects on soil and water bodies"
+        learning_outcomes:
+          - "Write equations showing how oxides of sulphur and nitrogen form acids in rainwater"
+          - "Describe the effects of acid rain on soil chemistry and aquatic life"
+      - id: icse-9-chemistry-ch13-t02
+        title: "Global warming: greenhouse gases (water vapour, CO2, methane, oxides of nitrogen), their sources and ways to reduce them"
+        learning_outcomes:
+          - "Name the major greenhouse gases and their sources"
+          - "Suggest measures to reduce greenhouse gas emissions"
+      - id: icse-9-chemistry-ch13-t03
+        title: "Ozone layer: formation of ozone (equations), its function, and depletion by named chemicals"
+        learning_outcomes:
+          - "Write equations for the formation of ozone in the upper atmosphere"
+          - "Explain the protective role of the ozone layer and name chemicals that deplete it"
+      - id: icse-9-chemistry-ch13-t04
+        title: "Water composition: beneficial substances such as dissolved oxygen and essential minerals"
+        learning_outcomes:
+          - "Explain why dissolved oxygen and minerals in water are essential for life"
+      - id: icse-9-chemistry-ch13-t05
+        title: "Harmful substances in water: toxic heavy metals (Minamata disease), plastics, sewage and pesticides"
+        learning_outcomes:
+          - "Explain how heavy-metal contamination caused Minamata disease"
+          - "Describe the effects of plastics, sewage and pesticides on water bodies"
+    removed_topics:
+      - "Reactions of ozone-depleting chemicals (only names are required)"
+    literature_texts: []
+removed_topics: []

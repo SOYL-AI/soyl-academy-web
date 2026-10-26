@@ -1,0 +1,424 @@
+# ISC Class 12 Computer Science (868) - ISC 2027 examination, CLASS XII portion only.
+# Source: platform/catalog/sources/cisce.md#isc-2027-computer-science. Topic wording is our own summary of the official scope.
+subject_id: isc-12-computer-science
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-computer-science, isc-2027-regulations]
+exam_notes: >-
+  Paper I Theory: 3 hours, 70 marks, in three sections - A (Boolean algebra and computer hardware),
+  B (programming in Java) and C (inheritance, interfaces, polymorphism, data structures and computational complexity).
+  Paper II Practical: 3 hours, 30 marks, evaluated by a Visiting Examiner appointed locally and approved by CISCE.
+  The candidate attempts one of three programming problems: a 90-minute planning session (algorithm in pseudo code
+  plus a hand-written Java program) followed by a 90-minute examination session (key in, run on seen and unseen inputs,
+  attach a printout). Marks: programming assignments through the year 10 (internal) + 5 (Visiting Examiner);
+  terminal solution on the computer 15 (algorithm 3, documented Java program 7, printout 2, output 3).
+  At least twenty-five programming assignments are expected during the year; this lab work (syllabus item 3,
+  implementing algorithms in Java) is practical and is reflected here only through the programming chapters.
+  Java 5.0 or later; BlueJ is recommended. Item 4 of the Class XII syllabus is a review of Class XI Sections B and C:
+  SOYL teaches the items that Class XII lists again (objects, types, expressions, statements, methods, arrays, strings,
+  recursion); Class XI-only items such as exceptions, data file handling, packages and trends/ethics in computing
+  belong to the Class XI year of the ISC 2027 course (note: isc-11-computer-science follows the revised ISC 2028 course,
+  which adds Python, so it is not this cohort's Class XI). CISCE lists topics, not textbook chapters: SOYL groups them into 13 teachable
+  chapters in syllabus order. No section-wise marks weightage is published in the syllabus document.
+units:
+  - { name: "Section A: Boolean Algebra and Computer Hardware", marks: null }
+  - { name: "Section B: Programming in Java", marks: null }
+  - { name: "Section C: Inheritance, Interfaces, Polymorphism, Data Structures and Complexity", marks: null }
+chapters:
+  - id: isc-12-computer-science-ch01
+    number: 1
+    title: "Propositional Logic"
+    unit: "Section A: Boolean Algebra and Computer Hardware"
+    topics:
+      - id: isc-12-computer-science-ch01-t01
+        title: "Propositions, propositional variables and connectives (negation, conjunction, disjunction, implication, biconditional)"
+        learning_outcomes:
+          - "Identify propositions and write compound statements using the five logical connectives"
+          - "Translate a simple word problem into a well-formed formula (wff)"
+      - id: isc-12-computer-science-ch01-t02
+        title: "Well-formed formulae, truth values, interpretation and truth tables"
+        learning_outcomes:
+          - "Decide whether a given string of symbols is a well-formed formula"
+          - "Construct the truth table of a wff with up to three variables"
+      - id: isc-12-computer-science-ch01-t03
+        title: "Satisfiable, unsatisfiable and valid formulae; tautology, contradiction and contingency"
+        learning_outcomes:
+          - "Classify a formula as a tautology, contradiction or contingency from its truth table"
+          - "Distinguish satisfiable, unsatisfiable and valid formulae with examples"
+      - id: isc-12-computer-science-ch01-t04
+        title: "Equivalence laws: commutative, associative, distributive, De Morgan, implication, biconditional, identity, negation, excluded middle, contradiction"
+        learning_outcomes:
+          - "State each equivalence law and verify it with a truth table"
+          - "Simplify a wff step by step, naming the law used at each step"
+      - id: isc-12-computer-science-ch01-t05
+        title: "Converse, inverse and contrapositive; chain rule and modus ponens"
+        learning_outcomes:
+          - "Write the converse, inverse and contrapositive of an implication and state which is equivalent to it"
+          - "Apply modus ponens and the chain rule to draw a valid conclusion from given premises"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-computer-science-ch02
+    number: 2
+    title: "Boolean Algebra and Simplification"
+    unit: "Section A: Boolean Algebra and Computer Hardware"
+    topics:
+      - id: isc-12-computer-science-ch02-t01
+        title: "Binary valued quantities; postulates of Boolean algebra; AND, OR and NOT with truth tables"
+        learning_outcomes:
+          - "State the basic postulates of Boolean algebra"
+          - "Evaluate a Boolean expression for given input values using truth tables"
+      - id: isc-12-computer-science-ch02-t02
+        title: "Basic theorems: duality, idempotence, commutativity, associativity, distributivity, operations with 0 and 1, complements, absorption, involution"
+        learning_outcomes:
+          - "Write the dual of a Boolean expression"
+          - "Prove a Boolean identity algebraically and verify it with a truth table"
+      - id: isc-12-computer-science-ch02-t03
+        title: "De Morgan's theorem and its applications"
+        learning_outcomes:
+          - "Apply De Morgan's theorem to find the complement of a Boolean expression"
+      - id: isc-12-computer-science-ch02-t04
+        title: "Sum of products and product of sums; minterms and maxterms; canonical and cardinal forms"
+        learning_outcomes:
+          - "Write the canonical SOP and POS forms of a function from its truth table"
+          - "Convert between canonical form and cardinal (decimal-index) notation"
+      - id: isc-12-computer-science-ch02-t05
+        title: "Reducing Boolean expressions algebraically"
+        learning_outcomes:
+          - "Reduce a Boolean expression to its simplest form using the laws and theorems of Boolean algebra"
+      - id: isc-12-computer-science-ch02-t06
+        title: "Karnaugh maps for two, three and four variables (SOP and POS reduction)"
+        learning_outcomes:
+          - "Map a function onto a Karnaugh map and form pairs, quads and octets including wrap-around groups"
+          - "Derive the minimal SOP or POS expression of a four-variable function using a K-map"
+    removed_topics:
+      - "Karnaugh maps with more than four variables"
+    literature_texts: []
+  - id: isc-12-computer-science-ch03
+    number: 3
+    title: "Logic Gates and Combinational Circuits"
+    unit: "Section A: Boolean Algebra and Computer Hardware"
+    topics:
+      - id: isc-12-computer-science-ch03-t01
+        title: "Elementary logic gates NOT, AND, OR, NAND, NOR, XOR, XNOR: symbols and truth tables"
+        learning_outcomes:
+          - "Draw the symbol and write the truth table of each elementary gate"
+          - "Draw a logic circuit for a given Boolean expression and write the expression for a given circuit"
+      - id: isc-12-computer-science-ch03-t02
+        title: "NAND and NOR as universal gates"
+        learning_outcomes:
+          - "Construct NOT, AND and OR gates using only NAND gates and only NOR gates"
+          - "Convert a simplified circuit into an equivalent all-NAND or all-NOR circuit"
+      - id: isc-12-computer-science-ch03-t03
+        title: "Half adder, full adder and majority circuit"
+        learning_outcomes:
+          - "Derive the sum and carry expressions of half and full adders and draw their circuits"
+          - "Design a three-input majority circuit from its truth table"
+      - id: isc-12-computer-science-ch03-t04
+        title: "Encoders and decoders"
+        learning_outcomes:
+          - "Explain the function of an encoder (for example octal to binary) and a decoder (for example 3-to-8)"
+          - "Draw the logic diagram of a simple encoder or decoder"
+      - id: isc-12-computer-science-ch03-t05
+        title: "Multiplexers"
+        learning_outcomes:
+          - "Explain how select lines route one of several inputs to the output of a multiplexer"
+          - "Draw the circuit of a 4-to-1 multiplexer and write its expression"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-computer-science-ch04
+    number: 4
+    title: "Objects, Classes and Basic Input/Output"
+    unit: "Section B: Programming in Java"
+    topics:
+      - id: isc-12-computer-science-ch04-t01
+        title: "Objects as data plus behaviour; object as an instance of a class; constructors"
+        learning_outcomes:
+          - "Distinguish a class from an object with an example"
+          - "Write a class with instance variables, a parameterised constructor and methods"
+      - id: isc-12-computer-science-ch04-t02
+        title: "Modelling real-world problems in terms of objects and classes"
+        learning_outcomes:
+          - "Identify the attributes and methods needed to model an entity such as a date, bank account or number"
+      - id: isc-12-computer-science-ch04-t03
+        title: "Basic input with Scanner and output with print methods; input/output exceptions"
+        learning_outcomes:
+          - "Read int, double, char and String values from the keyboard using Scanner"
+          - "Explain why an input/output exception may occur and how it is reported"
+      - id: isc-12-computer-science-ch04-t04
+        title: "Tokens, whitespace and delimiters; StringTokenizer"
+        learning_outcomes:
+          - "Define a token and a delimiter with an example sentence"
+          - "Use StringTokenizer to split a string into words with default and user-defined delimiters"
+      - id: isc-12-computer-science-ch04-t05
+        title: "Algorithmic problem solving: algorithm in pseudo code, coding, testing and debugging"
+        learning_outcomes:
+          - "Write a step-by-step algorithm for a problem before coding it in Java"
+          - "Test a program on known and boundary inputs and locate logical errors"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-computer-science-ch05
+    number: 5
+    title: "Data Types, Expressions and Control Statements"
+    unit: "Section B: Programming in Java"
+    topics:
+      - id: isc-12-computer-science-ch05-t01
+        title: "Primitive types (byte, short, int, long, float, double, char, boolean) and their wrapper classes; class as a user-defined type"
+        learning_outcomes:
+          - "State the size and range category of each primitive type and name its wrapper class"
+          - "Use wrapper class methods such as parseInt and valueOf to convert between strings and numbers"
+      - id: isc-12-computer-science-ch05-t02
+        title: "Type conversion: automatic coercion and explicit casting"
+        learning_outcomes:
+          - "Predict the type and value of a mixed-type expression"
+          - "Explain when explicit casting is needed and why it can lose information"
+      - id: isc-12-computer-science-ch05-t03
+        title: "Variables, final constants, operators, precedence and associativity; assignment (LHS vs RHS)"
+        learning_outcomes:
+          - "Evaluate arithmetic, relational and logical expressions using precedence and associativity rules"
+          - "Explain the different meaning of a variable on the left and right of the assignment operator, as in i = i + 2"
+          - "Distinguish variables holding primitive values from variables holding object references"
+      - id: isc-12-computer-science-ch05-t04
+        title: "Conditional statements: if, if-else, if-else-if, switch-case, ternary operator"
+        learning_outcomes:
+          - "Write programs that choose between alternatives using if-else-if and switch"
+          - "Rewrite a simple if-else as a ternary expression"
+      - id: isc-12-computer-science-ch05-t05
+        title: "Loops: for, while, do-while; break and continue; nested loops"
+        learning_outcomes:
+          - "Trace the output of loops and nested loops, including the effect of break and continue"
+          - "Choose an appropriate loop for counter-controlled and condition-controlled problems"
+      - id: isc-12-computer-science-ch05-t06
+        title: "Blocks, scope and visibility of variables (block, method and class scope)"
+        learning_outcomes:
+          - "Determine which variable is visible at a point in a program with nested blocks"
+          - "Explain shadowing when a local variable has the same name as an instance variable"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-computer-science-ch06
+    number: 6
+    title: "Methods"
+    unit: "Section B: Programming in Java"
+    topics:
+      - id: isc-12-computer-science-ch06-t01
+        title: "Methods as abstractions; method header, return type, formal and actual arguments"
+        learning_outcomes:
+          - "Write methods that accept arguments and return values"
+          - "Distinguish formal and actual arguments in a method call"
+      - id: isc-12-computer-science-ch06-t02
+        title: "Passing primitive values versus object references to methods"
+        learning_outcomes:
+          - "Predict whether a change made inside a method is visible to the caller for primitive and object arguments"
+      - id: isc-12-computer-science-ch06-t03
+        title: "Static methods and variables; the this keyword"
+        learning_outcomes:
+          - "Explain the difference between class (static) and instance members"
+          - "Use this to refer to the current object's members"
+      - id: isc-12-computer-science-ch06-t04
+        title: "Problem solving with methods: number problems and finding roots of equations"
+        learning_outcomes:
+          - "Design a class with several methods to test number properties such as prime, palindrome or perfect numbers"
+          - "Write a method to find the real roots of a quadratic equation"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-computer-science-ch07
+    number: 7
+    title: "Arrays"
+    unit: "Section B: Programming in Java"
+    topics:
+      - id: isc-12-computer-science-ch07-t01
+        title: "Single and multidimensional arrays: declaration, creation, input and traversal"
+        learning_outcomes:
+          - "Write code to input, store and display elements of one- and two-dimensional arrays"
+          - "Explain why access to an array element takes constant time"
+      - id: isc-12-computer-science-ch07-t02
+        title: "Address calculation in row-major and column-major order"
+        learning_outcomes:
+          - "Calculate the address of an element of a 2D array stored in row-major or column-major order"
+      - id: isc-12-computer-science-ch07-t03
+        title: "Searching and finding maximum/minimum: linear search and binary search"
+        learning_outcomes:
+          - "Implement linear and binary search and state the precondition for binary search"
+          - "Find the largest and smallest elements of an array in one pass"
+      - id: isc-12-computer-science-ch07-t04
+        title: "Sorting: bubble, selection and insertion sort"
+        learning_outcomes:
+          - "Show the state of an array after each pass of bubble, selection and insertion sort"
+          - "Implement each sorting technique in Java"
+      - id: isc-12-computer-science-ch07-t05
+        title: "Matrix algorithms with 2D arrays, including solving systems of linear equations"
+        learning_outcomes:
+          - "Write programs for matrix operations such as transpose, sum of diagonals and multiplication"
+          - "Solve a small system of linear equations stored as a matrix"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-computer-science-ch08
+    number: 8
+    title: "Strings and StringBuffer"
+    unit: "Section B: Programming in Java"
+    topics:
+      - id: isc-12-computer-science-ch08-t01
+        title: "The String class: length, charAt, substring, concatenation, replace and indexOf operations"
+        learning_outcomes:
+          - "Predict the output of statements using common String methods"
+          - "Explain that String objects are immutable"
+      - id: isc-12-computer-science-ch08-t02
+        title: "String-processing algorithms: words, characters and patterns"
+        learning_outcomes:
+          - "Write programs to count vowels or words, reverse words and check palindromes"
+          - "Sort words of a sentence alphabetically using compareTo"
+      - id: isc-12-computer-science-ch08-t03
+        title: "StringBuffer for heavy string manipulation"
+        learning_outcomes:
+          - "Use StringBuffer methods such as append, insert, reverse and setCharAt"
+          - "Explain when StringBuffer is preferred over String"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-computer-science-ch09
+    number: 9
+    title: "Recursion"
+    unit: "Section B: Programming in Java"
+    topics:
+      - id: isc-12-computer-science-ch09-t01
+        title: "Concept of recursion; recursive definitions; base case and recursive case"
+        learning_outcomes:
+          - "Identify the base case and recursive case in a recursive definition"
+          - "Explain why a recursive method without a base case does not terminate"
+      - id: isc-12-computer-science-ch09-t02
+        title: "Tracing recursive calls with the call stack"
+        learning_outcomes:
+          - "Trace a recursive method for a given input and state its output and number of calls"
+      - id: isc-12-computer-science-ch09-t03
+        title: "Simple recursive methods: factorial, GCD, binary search and base conversion"
+        learning_outcomes:
+          - "Write recursive methods for factorial, GCD and binary search"
+          - "Write a recursive method to convert a decimal number to another base"
+      - id: isc-12-computer-science-ch09-t04
+        title: "Tower of Hanoi"
+        learning_outcomes:
+          - "Explain the recursive solution of the Tower of Hanoi and list the moves for three discs"
+          - "Compare the recursive solution with the difficulty of a non-recursive one"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-computer-science-ch10
+    number: 10
+    title: "Inheritance, Interfaces and Polymorphism"
+    unit: "Section C: Inheritance, Interfaces, Polymorphism, Data Structures and Complexity"
+    topics:
+      - id: isc-12-computer-science-ch10-t01
+        title: "Inheritance: superclass and derived class; extends and super; when to use inheritance"
+        learning_outcomes:
+          - "Write a subclass that extends a superclass and calls its constructor using super"
+          - "Justify inheritance only where a genuine specialisation (is-a) relationship exists"
+      - id: isc-12-computer-science-ch10-t02
+        title: "Member access in derived classes; protected visibility"
+        learning_outcomes:
+          - "Determine which members of a superclass are accessible in a subclass for private, protected and public access"
+      - id: isc-12-computer-science-ch10-t03
+        title: "Redefining variables and methods in subclasses (overriding)"
+        learning_outcomes:
+          - "Override a superclass method and predict which version is called"
+      - id: isc-12-computer-science-ch10-t04
+        title: "Abstract classes and the class Object"
+        learning_outcomes:
+          - "Write an abstract class with abstract methods and a concrete subclass"
+          - "State that every class inherits from Object and name methods such as toString and equals"
+      - id: isc-12-computer-science-ch10-t05
+        title: "Subclass polymorphism and dynamic binding"
+        learning_outcomes:
+          - "Explain how a superclass reference can refer to subclass objects and how the method called is decided at run time"
+      - id: isc-12-computer-science-ch10-t06
+        title: "Interfaces: declaring, implementing through a class, and user-defined behaviour"
+        learning_outcomes:
+          - "Declare an interface and implement it in a class"
+          - "Explain how an interface lets the user of a reusable class supply behaviour, such as the comparison used for sorting"
+          - "Distinguish the Java interface construct from the general sense of a class's interface"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-computer-science-ch11
+    number: 11
+    title: "Stacks and Queues"
+    unit: "Section C: Inheritance, Interfaces, Polymorphism, Data Structures and Complexity"
+    topics:
+      - id: isc-12-computer-science-ch11-t01
+        title: "Data structures as abstract data types; definition through an interface with multiple implementations"
+        learning_outcomes:
+          - "Define an abstract data type and write a Java interface for a stack or queue"
+      - id: isc-12-computer-science-ch11-t02
+        title: "Stack: push, pop, peek, overflow and underflow; array implementation"
+        learning_outcomes:
+          - "Implement a stack class using an array with push and pop"
+          - "Show the contents of a stack after a sequence of operations"
+      - id: isc-12-computer-science-ch11-t03
+        title: "Queue and circular queue: insertion, deletion, front and rear"
+        learning_outcomes:
+          - "Implement a linear queue and a circular queue using arrays"
+          - "Explain how a circular queue avoids wasted space in a linear queue"
+      - id: isc-12-computer-science-ch11-t04
+        title: "Double-ended queue (dequeue)"
+        learning_outcomes:
+          - "Implement insertion and deletion at both ends of a dequeue"
+      - id: isc-12-computer-science-ch11-t05
+        title: "Infix, prefix and postfix notation; conversion of infix to prefix and postfix"
+        learning_outcomes:
+          - "Convert an infix expression to postfix and prefix form showing each step"
+          - "Explain the role of a stack in expression conversion"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-computer-science-ch12
+    number: 12
+    title: "Linked Lists and Binary Trees"
+    unit: "Section C: Inheritance, Interfaces, Polymorphism, Data Structures and Complexity"
+    topics:
+      - id: isc-12-computer-science-ch12-t01
+        title: "Singly linked list: node structure, creation, traversal and checking emptiness"
+        learning_outcomes:
+          - "Write a Node class with data and a link field and traverse a linked list"
+      - id: isc-12-computer-science-ch12-t02
+        title: "Linked list insertion and deletion"
+        learning_outcomes:
+          - "Write the algorithm and method to insert or delete a node at the beginning, end or a given position"
+      - id: isc-12-computer-science-ch12-t03
+        title: "Reversing a linked list; extracting an element or a sublist"
+        learning_outcomes:
+          - "Write an algorithm to reverse a singly linked list"
+          - "Write a method that returns a sublist between two positions"
+      - id: isc-12-computer-science-ch12-t04
+        title: "Binary tree terminology: root, internal and external nodes, height, depth, level, size, degree, siblings, subtree, completeness, balancing"
+        learning_outcomes:
+          - "Identify the root, leaves, internal nodes, siblings and subtrees of a given binary tree"
+          - "Find the height, depth, level, size and degree of nodes in a given tree"
+          - "Decide whether a given binary tree is complete or balanced"
+      - id: isc-12-computer-science-ch12-t05
+        title: "Binary tree traversals: preorder, inorder and postorder"
+        learning_outcomes:
+          - "Write the preorder, inorder and postorder traversal sequences of a given binary tree"
+    removed_topics:
+      - "Binary trees and traversals are conceptual only; programs on binary trees are not required"
+    literature_texts: []
+  - id: isc-12-computer-science-ch13
+    number: 13
+    title: "Computational Complexity and Big O Notation"
+    unit: "Section C: Inheritance, Interfaces, Polymorphism, Data Structures and Complexity"
+    topics:
+      - id: isc-12-computer-science-ch13-t01
+        title: "Concrete computational complexity; input size; estimating complexity in terms of methods"
+        learning_outcomes:
+          - "Count the basic operations performed by a code fragment as a function of input size n"
+      - id: isc-12-computer-science-ch13-t02
+        title: "Dominant term and constants; best, average and worst case"
+        learning_outcomes:
+          - "Explain why only the dominant term matters for large inputs"
+          - "Describe the best, average and worst case of linear search"
+      - id: isc-12-computer-science-ch13-t03
+        title: "Big O notation and common complexity classes"
+        learning_outcomes:
+          - "Express the complexity of loops and nested loops in Big O notation"
+          - "Order O(1), O(log n), O(n), O(n log n) and O(n^2) by growth rate"
+      - id: isc-12-computer-science-ch13-t04
+        title: "Complexity of searching, sorting and solving linear equations"
+        learning_outcomes:
+          - "State and justify the Big O complexity of linear search, binary search, bubble, selection and insertion sort"
+          - "Compare two algorithms for the same task using their complexity"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

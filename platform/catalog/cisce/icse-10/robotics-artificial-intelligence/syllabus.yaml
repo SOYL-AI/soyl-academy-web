@@ -1,0 +1,311 @@
+# ICSE Class 10 Robotics and Artificial Intelligence (code 66, Group III Section B vocational) - ICSE 2027 examination.
+# Source: platform/catalog/sources/cisce.md#icse-2027-vocational-robotics-ai (Class X portion). Topic wording is our own summary.
+subject_id: icse-10-robotics-artificial-intelligence
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2027-vocational-robotics-ai, icse-2027-specimen-papers, icse-2027-regulations]
+exam_notes: >-
+  One written paper of 2 hours, 100 marks, plus internal assessment 100 marks. Written paper weightage: Part I Robotics
+  50 marks (New Age Robotic Systems 12, Components of Robots as a System 15, Visualization, Design and Creation of
+  Components 15, Integrating Robots as a System 8) and Part II Artificial Intelligence 50 marks (Decision Making in
+  Machines 8, Machine Intelligence and Cybersecurity 8, Components of AI Project Framework 14, Data and Programming
+  with Python 20). The 2027 specimen paper (code 661) has Section A (40 marks, compulsory) and Section B (60 marks,
+  any four of six questions).
+  Internal assessment: at least 20 assignments in the year (3 robotics, 2 AI, 15 Python programming, e.g. NumPy arrays,
+  reading CSV/JSON into Pandas, Matplotlib plots), marked 50 by the subject teacher and 50 by an external examiner on
+  class design, variable description, coding and documentation, and execution/output. Teacher demonstrations of
+  line-follower, obstacle-avoidance and edge-detection mobile robots are for familiarisation and are not evaluated.
+  Class IX key concepts are a stated prerequisite but the Class X paper is set on the Class X syllabus only.
+  CISCE lists topics, not textbook chapters: SOYL groups them into 11 teachable chapters in syllabus order (the 3D
+  design work is described generically; the syllabus names Tinkercad as the tool).
+units:
+  - { name: "Part I, 1. New Age Robotic Systems", marks: 12 }
+  - { name: "Part I, 2. Components of Robots as a System", marks: 15 }
+  - { name: "Part I, 3. Visualization, Design and Creation of Components", marks: 15 }
+  - { name: "Part I, 4. Integrating Robots as a System", marks: 8 }
+  - { name: "Part II, 1. Decision Making in Machines/Computers", marks: 8 }
+  - { name: "Part II, 2. Machine Intelligence and Cybersecurity in Computing", marks: 8 }
+  - { name: "Part II, 3. Components of AI Project Framework", marks: 14 }
+  - { name: "Part II, 4. Introduction to Data and Programming with Python", marks: 20 }
+chapters:
+  - id: icse-10-robotics-artificial-intelligence-ch01
+    number: 1
+    title: "New Age Robotic Systems"
+    unit: "Part I, 1. New Age Robotic Systems"
+    topics:
+      - id: icse-10-robotics-artificial-intelligence-ch01-t01
+        title: "Types of new age robotic systems: warehouse and assistant robots, smart homes and schools, smart mobility, autonomous and driver-assisted cars, drones, medical and healthcare robots"
+        learning_outcomes:
+          - "Give one real-world example of each type of new age robotic system and the task it performs"
+          - "Explain why new age robotic systems have become relevant and possible today"
+      - id: icse-10-robotics-artificial-intelligence-ch01-t02
+        title: "Everyday robotic systems such as the elevator"
+        learning_outcomes:
+          - "Identify the sensing, control and action parts of an elevator viewed as a robotic system"
+      - id: icse-10-robotics-artificial-intelligence-ch01-t03
+        title: "Difference between a machine and a robot"
+        learning_outcomes:
+          - "Explain why a robot must continuously sense, regulate its action and perform a programmed task"
+          - "Classify given devices as machines or robots and justify the choice"
+      - id: icse-10-robotics-artificial-intelligence-ch01-t04
+        title: "Cobots: meaning, human in the loop, multi-robot systems; difference from robots; importance and progress from robots to cobots"
+        learning_outcomes:
+          - "Define a cobot and distinguish it from a conventional industrial robot"
+          - "Explain the importance of human interaction in collaborative robot systems"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-robotics-artificial-intelligence-ch02
+    number: 2
+    title: "Gears and Sensors in Robotics"
+    unit: "Part I, 2. Components of Robots as a System"
+    topics:
+      - id: icse-10-robotics-artificial-intelligence-ch02-t01
+        title: "Gears in robots: transmission and amplification of force; principle and types of gears"
+        learning_outcomes:
+          - "Explain how gears transmit motion and trade speed for torque"
+          - "Identify spur, bevel, worm and rack-and-pinion gears and give a use of each"
+      - id: icse-10-robotics-artificial-intelligence-ch02-t02
+        title: "Gear ratio"
+        learning_outcomes:
+          - "Calculate the gear ratio and output speed for a simple two-gear train"
+      - id: icse-10-robotics-artificial-intelligence-ch02-t03
+        title: "Types of sensors by application: vision, tactile, temperature, range and proximity, motion, navigation, speech recognition"
+        learning_outcomes:
+          - "Match each type of sensor to a robot application"
+      - id: icse-10-robotics-artificial-intelligence-ch02-t04
+        title: "Internal sensors (position, velocity, acceleration, force) and external sensors (contact, non-contact); functions of sensors"
+        learning_outcomes:
+          - "Classify a given sensor as internal or external and as contact or non-contact"
+          - "State the functions of sensors in a robotic system"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-robotics-artificial-intelligence-ch03
+    number: 3
+    title: "Actuators, Controllers and Their Integration"
+    unit: "Part I, 2. Components of Robots as a System"
+    topics:
+      - id: icse-10-robotics-artificial-intelligence-ch03-t01
+        title: "Actuators: meaning, applications; linear and rotary actuators (joints and wheels)"
+        learning_outcomes:
+          - "Distinguish linear from rotary actuators with examples"
+      - id: icse-10-robotics-artificial-intelligence-ch03-t02
+        title: "Control systems in daily life: fan regulator, refrigerator, air conditioner"
+        learning_outcomes:
+          - "Identify the input, controller and output in a refrigerator or air conditioner"
+      - id: icse-10-robotics-artificial-intelligence-ch03-t03
+        title: "Control systems in robotics: meaning, functions and working; manual versus automatic control; input-controller-robot-feedback block diagram"
+        learning_outcomes:
+          - "Draw and explain a block diagram of a closed-loop robot control system with feedback"
+          - "Compare manual and automatic control systems"
+      - id: icse-10-robotics-artificial-intelligence-ch03-t04
+        title: "Integrating sensors, actuators and controller: controlling the angular position of a robotic-arm joint"
+        learning_outcomes:
+          - "Explain how a position sensor and motor work with a controller to move a revolute joint to a target angle"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-robotics-artificial-intelligence-ch04
+    number: 4
+    title: "Visualization, Design and Creation of Robot Components"
+    unit: "Part I, 3. Visualization, Design and Creation of Components"
+    topics:
+      - id: icse-10-robotics-artificial-intelligence-ch04-t01
+        title: "The mechanical block of a robot: visualising, designing and creating components with a 3D design tool"
+        learning_outcomes:
+          - "Describe the steps to design a simple robot part in a browser-based 3D design tool"
+      - id: icse-10-robotics-artificial-intelligence-ch04-t02
+        title: "Revolute and prismatic joints in design"
+        learning_outcomes:
+          - "Distinguish revolute and prismatic joints by the motion they allow"
+      - id: icse-10-robotics-artificial-intelligence-ch04-t03
+        title: "RR (revolute-revolute) mechanism"
+        learning_outcomes:
+          - "Sketch an RR mechanism and describe the region its end point can reach"
+      - id: icse-10-robotics-artificial-intelligence-ch04-t04
+        title: "Visualising the motion of designed components"
+        learning_outcomes:
+          - "Explain how simulating motion helps check a design before it is built"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-robotics-artificial-intelligence-ch05
+    number: 5
+    title: "Integrating Robots as a System"
+    unit: "Part I, 4. Integrating Robots as a System"
+    topics:
+      - id: icse-10-robotics-artificial-intelligence-ch05-t01
+        title: "Building simple robotic systems in a simulator, for example an RR mechanism"
+        learning_outcomes:
+          - "Describe how components, joints and motors are combined into a working mechanism in a simulator"
+      - id: icse-10-robotics-artificial-intelligence-ch05-t02
+        title: "Wheeled mobile robots up to four wheels"
+        learning_outcomes:
+          - "Identify the components of a four-wheeled mobile robot and their roles"
+          - "Explain how differential wheel speeds make a mobile robot turn"
+      - id: icse-10-robotics-artificial-intelligence-ch05-t03
+        title: "Coding a single board computer to control a robot"
+        learning_outcomes:
+          - "Explain the role of a single board computer or microcontroller in reading sensors and driving motors"
+          - "Write the logic (pseudocode) for a simple sensor-driven behaviour such as stopping at an obstacle"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-robotics-artificial-intelligence-ch06
+    number: 6
+    title: "Decision Making in Machines"
+    unit: "Part II, 1. Decision Making in Machines/Computers"
+    topics:
+      - id: icse-10-robotics-artificial-intelligence-ch06-t01
+        title: "Automated versus autonomous systems for deterministic and probabilistic problems"
+        learning_outcomes:
+          - "Distinguish automated from autonomous systems with examples"
+          - "Relate automated systems to deterministic problems and autonomous systems to probabilistic ones"
+      - id: icse-10-robotics-artificial-intelligence-ch06-t02
+        title: "Human and machine decision making (subjective and objective); object classification by humans and machines"
+        learning_outcomes:
+          - "Compare how a human and a machine classify the same object"
+      - id: icse-10-robotics-artificial-intelligence-ch06-t03
+        title: "Machine learning: meaning, role of data and information, steps in machine learning"
+        learning_outcomes:
+          - "Define machine learning and list its main steps"
+          - "Explain why data quality matters for a learning system"
+      - id: icse-10-robotics-artificial-intelligence-ch06-t04
+        title: "Programs and algorithms that teach machines subjective decisions: example of fruit sorting"
+        learning_outcomes:
+          - "Describe how a fruit-sorting system could learn to grade fruit from labelled examples"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-robotics-artificial-intelligence-ch07
+    number: 7
+    title: "Machine Intelligence and Cybersecurity"
+    unit: "Part II, 2. Machine Intelligence and Cybersecurity in Computing"
+    topics:
+      - id: icse-10-robotics-artificial-intelligence-ch07-t01
+        title: "Human intelligence versus machine intelligence and the link between them"
+        learning_outcomes:
+          - "Compare human and machine intelligence in learning, reasoning and adaptability"
+      - id: icse-10-robotics-artificial-intelligence-ch07-t02
+        title: "The Turing test and its role in AI (brief)"
+        learning_outcomes:
+          - "Describe the set-up of the Turing test and what passing it would show"
+      - id: icse-10-robotics-artificial-intelligence-ch07-t03
+        title: "Security and ethical issues: unauthorised use of hardware, software theft, disputed rights to products, computer fraud"
+        learning_outcomes:
+          - "Explain each issue with an example and suggest one safeguard"
+      - id: icse-10-robotics-artificial-intelligence-ch07-t04
+        title: "Hacking, data theft and viruses; reliability of output, false claims for computers and degradation of work"
+        learning_outcomes:
+          - "Distinguish hacking, data theft and virus attacks"
+          - "Discuss who is responsible when a computer system produces wrong output"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-robotics-artificial-intelligence-ch08
+    number: 8
+    title: "Components of the AI Project Framework"
+    unit: "Part II, 3. Components of AI Project Framework"
+    topics:
+      - id: icse-10-robotics-artificial-intelligence-ch08-t01
+        title: "Problem scoping: factors affecting the problem, goal, the 4Ws (who, what, where, why) and the problem statement"
+        learning_outcomes:
+          - "Complete a 4Ws canvas for a given school problem"
+          - "Write a clear problem statement from a 4Ws analysis"
+      - id: icse-10-robotics-artificial-intelligence-ch08-t02
+        title: "Data acquisition: types of data, data features, sources, training and testing data, system maps"
+        learning_outcomes:
+          - "Identify relevant data features and reliable sources for a given AI project"
+          - "Explain why data is split into training and testing sets"
+          - "Draw a simple system map showing the factors affecting a problem"
+      - id: icse-10-robotics-artificial-intelligence-ch08-t03
+        title: "Sources of datasets for AI, including public dataset platforms"
+        learning_outcomes:
+          - "Explain why datasets must come from reliable sources and name public dataset platforms"
+      - id: icse-10-robotics-artificial-intelligence-ch08-t04
+        title: "Data exploration: bar graphs, histograms, line graphs, scatter plots and pie charts"
+        learning_outcomes:
+          - "Choose a suitable graph for a given kind of data and justify the choice"
+          - "Interpret a scatter plot to describe a trend"
+      - id: icse-10-robotics-artificial-intelligence-ch08-t05
+        title: "Modelling: rule-based and learning-based approaches; supervised and unsupervised learning"
+        learning_outcomes:
+          - "Distinguish rule-based from learning-based models"
+          - "Classify a task as supervised or unsupervised learning"
+      - id: icse-10-robotics-artificial-intelligence-ch08-t06
+        title: "Prediction with linear regression; evaluation of a model"
+        learning_outcomes:
+          - "Explain how a straight-line fit is used to predict a value"
+          - "Explain why a model is evaluated on testing data"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-robotics-artificial-intelligence-ch09
+    number: 9
+    title: "Python Modules and Packages"
+    unit: "Part II, 4. Introduction to Data and Programming with Python"
+    topics:
+      - id: icse-10-robotics-artificial-intelligence-ch09-t01
+        title: "Modules, packages and libraries: meaning, scope and why we need them"
+        learning_outcomes:
+          - "Distinguish a module, a package and a library"
+          - "Explain how libraries avoid rewriting common code"
+      - id: icse-10-robotics-artificial-intelligence-ch09-t02
+        title: "Importing libraries: import, import as, from ... import"
+        learning_outcomes:
+          - "Write the import statements for a module using each syntax"
+      - id: icse-10-robotics-artificial-intelligence-ch09-t03
+        title: "NumPy and SciPy: uses and simple programs"
+        learning_outcomes:
+          - "Create a NumPy array and compute its mean, median and shape"
+          - "State a use of SciPy in scientific computing"
+      - id: icse-10-robotics-artificial-intelligence-ch09-t04
+        title: "Pandas and Matplotlib: uses and simple programs"
+        learning_outcomes:
+          - "Read tabular data into a Pandas DataFrame and display its first rows"
+          - "Plot a line graph and a bar graph with labelled axes using Matplotlib"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-robotics-artificial-intelligence-ch10
+    number: 10
+    title: "Python Lists and Tuples"
+    unit: "Part II, 4. Introduction to Data and Programming with Python"
+    topics:
+      - id: icse-10-robotics-artificial-intelligence-ch10-t01
+        title: "Lists: creating lists and accessing elements by index and slicing"
+        learning_outcomes:
+          - "Create a list and access elements using positive and negative indices"
+      - id: icse-10-robotics-artificial-intelligence-ch10-t02
+        title: "List operations: append, insert, extend, sort and search"
+        learning_outcomes:
+          - "Predict the result of a sequence of list operations"
+          - "Write a program to sort a list of names and search for a given name"
+      - id: icse-10-robotics-artificial-intelligence-ch10-t03
+        title: "Tuples: creating, accessing and deleting a tuple; immutability"
+        learning_outcomes:
+          - "Explain why a tuple cannot be changed after creation and when this is useful"
+      - id: icse-10-robotics-artificial-intelligence-ch10-t04
+        title: "Converting a list to a tuple and a tuple to a list"
+        learning_outcomes:
+          - "Use list() and tuple() to convert between the two types"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-robotics-artificial-intelligence-ch11
+    number: 11
+    title: "Python Strings"
+    unit: "Part II, 4. Introduction to Data and Programming with Python"
+    topics:
+      - id: icse-10-robotics-artificial-intelligence-ch11-t01
+        title: "Creating strings; multiline strings; escape sequences; traversing a string"
+        learning_outcomes:
+          - "Create single-line and multiline strings and use escape sequences such as \\n and \\t"
+          - "Traverse a string with a for loop to count given characters"
+      - id: icse-10-robotics-artificial-intelligence-ch11-t02
+        title: "String operators: concatenation, repetition, membership; slicing with string[start:end:step]"
+        learning_outcomes:
+          - "Predict the output of slicing expressions including negative steps"
+      - id: icse-10-robotics-artificial-intelligence-ch11-t03
+        title: "Case and test functions: upper(), lower(), islower(), isalpha(), isdigit(), isalnum(), startswith(), endswith()"
+        learning_outcomes:
+          - "State the return type and value of each function for a given string"
+      - id: icse-10-robotics-artificial-intelligence-ch11-t04
+        title: "Search and edit functions: len(), find(), count(), replace(), join()"
+        learning_outcomes:
+          - "Write a program that checks whether a word is present in a sentence and reports the result"
+          - "Use replace() and join() to transform a string"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

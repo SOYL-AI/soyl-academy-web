@@ -1,0 +1,596 @@
+# ISC Class 12 Biology (863), Paper I Theory - ISC 2027 examination (Class XII portion only).
+# Source: platform/catalog/sources/cisce.md#isc-2027-biology. Topic wording is our own summary of the official scope.
+subject_id: isc-12-biology
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-biology, isc-2027-regulations, cisce-circular-specimen-papers-2027, isc-2027-specimen-papers]
+exam_notes: >-
+  Paper I Theory: 3 hours, 70 marks. Paper II Practical: 3 hours, 15 marks, plus Project Work 10 marks and
+  Practical File 5 marks, assessed by a locally appointed Visiting Examiner (total 30). Practical work covers floral
+  dissection, floral formula and floral diagram of one of seven families (Malvaceae, Papilionaceae, Solanaceae,
+  Liliaceae/Amaryllidaceae, Cruciferae, Compositae, Gramineae), simple physiological experiments (stomata, soil comparison,
+  amylase action at different temperatures and pH, DNA isolation from plant material), slide preparation and timed
+  spotting. SOYL covers Paper I only. All structures are taught with labelled diagrams, and diagrams are drawn in pencil.
+  The ISC 2027 specimen paper (Paper I, 3 hours plus 15 minutes reading time) has 18 compulsory questions in four
+  sections: A - one-mark objective subparts including MCQs (20), B - seven 2-mark questions (14), C - seven 3-mark
+  questions (21), D - three 5-mark questions (15), with internal choice in two questions each in B, C and D.
+  The October 2026 circular sets about 50% of marks on higher-order skills (apply, analyse, evaluate, create).
+  CISCE lists topics under five units, not textbook chapters: SOYL groups them into 18 teachable chapters in syllabus order.
+units:
+  - { name: "Unit 1: Reproduction", marks: 16 }
+  - { name: "Unit 2: Genetics and Evolution", marks: 15 }
+  - { name: "Unit 3: Biology and Human Welfare", marks: 14 }
+  - { name: "Unit 4: Biotechnology and its Applications", marks: 10 }
+  - { name: "Unit 5: Ecology and Environment", marks: 15 }
+chapters:
+  - id: isc-12-biology-ch01
+    number: 1
+    title: "Sexual Reproduction in Flowering Plants: Pre-fertilisation"
+    unit: "Unit 1: Reproduction"
+    topics:
+      - id: isc-12-biology-ch01-t01
+        title: "Flower structure; microsporangium and T.S. of anther; microsporogenesis; structure and development of the pollen grain; pollen viability and economic importance"
+        learning_outcomes:
+          - "Draw and label the T.S. of a mature anther and a two-celled pollen grain"
+          - "Describe the stages of microsporogenesis"
+      - id: isc-12-biology-ch01-t02
+        title: "Pistil; megasporangium (L.S. of anatropous ovule); megasporogenesis; development and structure of the female gametophyte"
+        learning_outcomes:
+          - "Draw and label the L.S. of an anatropous ovule"
+          - "Describe the development of a seven-celled, eight-nucleate embryo sac"
+      - id: isc-12-biology-ch01-t03
+        title: "Pollination types (autogamy, chasmogamy, cleistogamy, geitonogamy, xenogamy); agencies and floral adaptations for wind, water and insect pollination; advantages of self- and cross-pollination"
+        learning_outcomes:
+          - "Distinguish the types of pollination with examples"
+          - "Identify the pollinating agent of a flower from its adaptations"
+      - id: isc-12-biology-ch01-t04
+        title: "Outbreeding devices (contrivances against self-pollination); pollen-pistil interaction, compatibility and incompatibility"
+        learning_outcomes:
+          - "Explain devices such as dichogamy, herkogamy and self-incompatibility that prevent self-pollination"
+          - "Describe the events of pollen-pistil interaction leading to pollen tube growth"
+      - id: isc-12-biology-ch01-t05
+        title: "Artificial hybridisation: emasculation and bagging; significance in plant breeding"
+        learning_outcomes:
+          - "Outline the steps of artificial hybridisation and explain why emasculation and bagging are needed"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biology-ch02
+    number: 2
+    title: "Fertilisation, Seed and Fruit in Flowering Plants"
+    unit: "Unit 1: Reproduction"
+    topics:
+      - id: isc-12-biology-ch02-t01
+        title: "Events leading to fertilisation; double fertilisation and triple fusion and their significance"
+        learning_outcomes:
+          - "Explain double fertilisation and state the ploidy of the zygote and primary endosperm nucleus"
+      - id: isc-12-biology-ch02-t02
+        title: "Post-fertilisation events: endosperm types (cellular, nuclear, helobial); perisperm; embryo development in dicots and monocots"
+        learning_outcomes:
+          - "Compare cellular, nuclear and helobial endosperm"
+          - "Describe stages of embryo development in a dicot"
+      - id: isc-12-biology-ch02-t03
+        title: "Seeds: internal structure of dicot (bean) and monocot (maize) seeds; albuminous and non-albuminous seeds"
+        learning_outcomes:
+          - "Draw and label the L.S. of a bean seed and a maize grain"
+          - "Distinguish albuminous from non-albuminous seeds with examples"
+      - id: isc-12-biology-ch02-t04
+        title: "Fruits: true and false fruits; L.S. of mango and coconut; significance of seed and fruit formation and seed dispersal"
+        learning_outcomes:
+          - "Classify fruits as true or false with reasons"
+          - "Explain the adaptive significance of seeds, fruits and seed dispersal"
+      - id: isc-12-biology-ch02-t05
+        title: "Special modes: apomixis, polyembryony and parthenocarpy"
+        learning_outcomes:
+          - "Define apomixis, polyembryony and parthenocarpy and give one example of each"
+          - "Explain the value of apomixis for hybrid seed production"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biology-ch03
+    number: 3
+    title: "Human Reproduction"
+    unit: "Unit 1: Reproduction"
+    topics:
+      - id: isc-12-biology-ch03-t01
+        title: "Male reproductive system: organs and functions; microscopic structure of the testis"
+        learning_outcomes:
+          - "Draw and label the male reproductive system and the T.S. of a seminiferous tubule"
+      - id: isc-12-biology-ch03-t02
+        title: "Female reproductive system: organs and functions; microscopic structure of the ovary"
+        learning_outcomes:
+          - "Draw and label the female reproductive system and the T.S. of an ovary"
+      - id: isc-12-biology-ch03-t03
+        title: "Gametogenesis: spermatogenesis (with spermiogenesis and spermiation), oogenesis and their hormonal control; structure of sperm and mature ovum"
+        learning_outcomes:
+          - "Compare spermatogenesis with oogenesis in timing, products and number of gametes"
+          - "Explain the roles of GnRH, LH, FSH and androgens in gametogenesis"
+      - id: isc-12-biology-ch03-t04
+        title: "Menstrual cycle: phases and hormone action; menarche and menopause; oestrous versus menstrual cycle"
+        learning_outcomes:
+          - "Relate changes in ovarian and uterine phases to hormone levels during the menstrual cycle"
+      - id: isc-12-biology-ch03-t05
+        title: "Fertilisation (physico-chemical events), cleavage, blastocyst formation and implantation"
+        learning_outcomes:
+          - "Describe the events of fertilisation and development up to implantation of the blastocyst"
+      - id: isc-12-biology-ch03-t06
+        title: "Key milestones of human embryonic development; placenta and its functions"
+        learning_outcomes:
+          - "State when the heart, limbs, digits and first foetal movements appear"
+          - "List the functions of the placenta, including its endocrine role"
+      - id: isc-12-biology-ch03-t07
+        title: "Parturition and lactation: hormonal control and importance"
+        learning_outcomes:
+          - "Explain the foetal ejection reflex and the role of oxytocin in parturition"
+          - "State the importance of colostrum"
+    removed_topics:
+      - "Structure and types of placenta"
+    literature_texts: []
+  - id: isc-12-biology-ch04
+    number: 4
+    title: "Reproductive Health"
+    unit: "Unit 1: Reproduction"
+    topics:
+      - id: isc-12-biology-ch04-t01
+        title: "Reproductive health: definition, programmes (family planning, RCH); population explosion and the role of government"
+        learning_outcomes:
+          - "Explain the aims of India's reproductive and child health programmes"
+          - "Give causes and consequences of population explosion"
+      - id: isc-12-biology-ch04-t02
+        title: "Contraception: natural methods, barriers, IUDs, oral pills, spermicides, implants and surgical methods; mode of action"
+        learning_outcomes:
+          - "Classify contraceptive methods and explain how each prevents pregnancy"
+      - id: isc-12-biology-ch04-t03
+        title: "Medical termination of pregnancy (MTP) and its reasons; amniocentesis in detecting genetic defects"
+        learning_outcomes:
+          - "State reasons for MTP and why its regulation is needed"
+          - "Explain the use and misuse of amniocentesis"
+      - id: isc-12-biology-ch04-t04
+        title: "Infertility and assisted reproductive technologies: IVF, ZIFT, GIFT, IUT, ICSI, AI and IUI"
+        learning_outcomes:
+          - "Name causes of infertility"
+          - "Define each assisted reproductive technology and state when it is used"
+      - id: isc-12-biology-ch04-t05
+        title: "Sexually transmitted diseases: causes, symptoms and prevention (genital warts, herpes, hepatitis B, AIDS, gonorrhoea, syphilis, chlamydiasis, trichomoniasis)"
+        learning_outcomes:
+          - "Name the causative agent of common STDs and suggest preventive measures"
+    removed_topics:
+      - "Details of assisted reproductive technologies (definition and application only)"
+    literature_texts: []
+  - id: isc-12-biology-ch05
+    number: 5
+    title: "Principles of Inheritance"
+    unit: "Unit 2: Genetics and Evolution"
+    topics:
+      - id: isc-12-biology-ch05-t01
+        title: "Heredity and variation; genetic terms (homologous chromosomes, autosomes, sex chromosomes, alleles, genotype, phenotype); Mendel's principles, reasons for his success"
+        learning_outcomes:
+          - "Define key genetic terms with examples"
+          - "State Mendel's laws of dominance, segregation and independent assortment"
+      - id: isc-12-biology-ch05-t02
+        title: "Monohybrid and dihybrid crosses; back cross and test cross using Punnett squares"
+        learning_outcomes:
+          - "Work out phenotypic and genotypic ratios of monohybrid and dihybrid crosses"
+          - "Use a test cross to find the genotype of a dominant phenotype"
+      - id: isc-12-biology-ch05-t03
+        title: "Deviations from Mendelism: incomplete dominance (snapdragon), codominance and multiple alleles (ABO blood groups)"
+        learning_outcomes:
+          - "Predict blood groups of children from parents' genotypes"
+          - "Explain the 1:2:1 phenotypic ratio in snapdragon"
+      - id: isc-12-biology-ch05-t04
+        title: "Polygenic inheritance (human skin colour); pleiotropy (phenylketonuria, starch synthesis in pea)"
+        learning_outcomes:
+          - "Explain continuous variation in skin colour using polygenes"
+          - "Explain pleiotropy using phenylketonuria"
+      - id: isc-12-biology-ch05-t05
+        title: "Pedigree analysis in human genetics"
+        learning_outcomes:
+          - "Construct a pedigree chart and infer whether a trait is dominant or recessive, autosomal or sex-linked"
+      - id: isc-12-biology-ch05-t06
+        title: "Chromosomal theory of inheritance; linkage and crossing over"
+        learning_outcomes:
+          - "Relate Mendel's factors to chromosome behaviour in meiosis"
+          - "Explain the significance of linkage and crossing over"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biology-ch06
+    number: 6
+    title: "Sex Determination, Mutation and Genetic Disorders"
+    unit: "Unit 2: Genetics and Evolution"
+    topics:
+      - id: isc-12-biology-ch06-t01
+        title: "Sex determination in humans, birds, honey bees and grasshoppers"
+        learning_outcomes:
+          - "Compare XX-XY, ZW-ZZ, XX-XO and haplodiploid mechanisms of sex determination"
+      - id: isc-12-biology-ch06-t02
+        title: "Sex-linked inheritance: body and eye colour in Drosophila; haemophilia and colour blindness in humans"
+        learning_outcomes:
+          - "Predict offspring of a carrier mother and normal father for an X-linked recessive trait"
+      - id: isc-12-biology-ch06-t03
+        title: "Mutation: spontaneous and induced; gene (point) mutations - transition, transversion and frameshift"
+        learning_outcomes:
+          - "Distinguish transition, transversion and frameshift mutations with their effects"
+      - id: isc-12-biology-ch06-t04
+        title: "Mendelian disorders: phenylketonuria, thalassaemia, colour blindness and sickle cell anaemia"
+        learning_outcomes:
+          - "Explain the genetic basis and inheritance pattern of each Mendelian disorder"
+      - id: isc-12-biology-ch06-t05
+        title: "Chromosomal disorders: Down's, Klinefelter's and Turner's syndromes"
+        learning_outcomes:
+          - "Give the karyotype and main features of each chromosomal disorder"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biology-ch07
+    number: 7
+    title: "Molecular Basis of Inheritance: DNA and Replication"
+    unit: "Unit 2: Genetics and Evolution"
+    topics:
+      - id: isc-12-biology-ch07-t01
+        title: "Properties of genetic material; search for the genetic material: Griffith, Avery-MacLeod-McCarty and Hershey-Chase experiments"
+        learning_outcomes:
+          - "Explain how the Hershey-Chase experiment proved DNA is the genetic material"
+          - "List properties that make DNA a better genetic material than RNA"
+      - id: isc-12-biology-ch07-t02
+        title: "Double helix model of DNA and contributions of Miescher, Chargaff, Wilkins, Franklin, Watson and Crick; DNA versus RNA; types of RNA"
+        learning_outcomes:
+          - "Describe the salient features of the double helix and apply Chargaff's rule"
+          - "Compare DNA and RNA and state the roles of mRNA, tRNA, rRNA, snRNA and hnRNA"
+      - id: isc-12-biology-ch07-t03
+        title: "Eukaryotic chromosome structure and DNA packaging (nucleosome)"
+        learning_outcomes:
+          - "Describe how DNA is packaged into nucleosomes and chromatin"
+      - id: isc-12-biology-ch07-t04
+        title: "Central dogma and reverse transcription (basic idea)"
+        learning_outcomes:
+          - "State the central dogma and explain how retroviruses reverse it"
+      - id: isc-12-biology-ch07-t05
+        title: "Semi-conservative DNA replication: roles of DNA polymerase and ligase; Meselson-Stahl and Taylor's experiments"
+        learning_outcomes:
+          - "Explain continuous and discontinuous synthesis at a replication fork"
+          - "Interpret the results of the Meselson-Stahl experiment"
+    removed_topics:
+      - "Detailed mechanism of reverse transcription (basic idea only)"
+    literature_texts: []
+  - id: isc-12-biology-ch08
+    number: 8
+    title: "Gene Expression, Human Genome Project and DNA Fingerprinting"
+    unit: "Unit 2: Genetics and Evolution"
+    topics:
+      - id: isc-12-biology-ch08-t01
+        title: "Transcription; post-transcriptional processing in eukaryotes (splicing, capping, tailing); terms intron, exon, cistron, recon, muton, monocistronic and polycistronic units"
+        learning_outcomes:
+          - "Describe transcription and the processing of hnRNA into mRNA"
+          - "Define intron, exon, cistron, recon and muton"
+      - id: isc-12-biology-ch08-t02
+        title: "Genetic code: discovery, codon and essential features"
+        learning_outcomes:
+          - "State the features of the genetic code such as triplet, degenerate, universal and non-overlapping"
+      - id: isc-12-biology-ch08-t03
+        title: "Translation (protein synthesis) in prokaryotes"
+        learning_outcomes:
+          - "Explain initiation, elongation and termination of translation with the roles of tRNA and ribosomes"
+      - id: isc-12-biology-ch08-t04
+        title: "Regulation of gene expression: lac operon in E. coli"
+        learning_outcomes:
+          - "Explain how lactose switches on the lac operon"
+      - id: isc-12-biology-ch08-t05
+        title: "Human Genome Project: goals, methodologies (ESTs, sequence annotation), salient features and applications"
+        learning_outcomes:
+          - "State the goals and key findings of the Human Genome Project"
+      - id: isc-12-biology-ch08-t06
+        title: "DNA fingerprinting: technique, applications and ethical issues"
+        learning_outcomes:
+          - "Outline the steps of DNA fingerprinting and its use in forensic and paternity cases"
+          - "Discuss ethical concerns about genetic data"
+    removed_topics:
+      - "Detail beyond definitions for intron, exon, cistron, recon, muton and transcription units"
+    literature_texts: []
+  - id: isc-12-biology-ch09
+    number: 9
+    title: "Evolution: Origin of Life and Evidences"
+    unit: "Unit 2: Genetics and Evolution"
+    topics:
+      - id: isc-12-biology-ch09-t01
+        title: "Origin of life: abiogenesis, biogenesis, panspermia; Oparin-Haldane theory, protobionts and coacervates; need for a reducing atmosphere"
+        learning_outcomes:
+          - "Explain why a reducing atmosphere was essential for abiotic synthesis"
+          - "Distinguish protobionts from coacervates"
+      - id: isc-12-biology-ch09-t02
+        title: "Miller and Urey experiment"
+        learning_outcomes:
+          - "Describe the Miller-Urey apparatus and its conclusions"
+      - id: isc-12-biology-ch09-t03
+        title: "Morphological evidences: homologous and analogous organs, divergent and convergent evolution, vestigial organs"
+        learning_outcomes:
+          - "Distinguish homologous and analogous organs with two plant and two animal examples each"
+      - id: isc-12-biology-ch09-t04
+        title: "Embryological evidence (recapitulation; ontogeny and phylogeny); palaeontological evidence (fossils, radiocarbon dating, geological time scale)"
+        learning_outcomes:
+          - "Explain how radiocarbon dating estimates the age of fossils"
+          - "Relate eras of the geological time scale to their dominant flora and fauna"
+      - id: isc-12-biology-ch09-t05
+        title: "Biogeographical and molecular evidences; adaptive radiation (Darwin's finches, Australian marsupials)"
+        learning_outcomes:
+          - "Explain adaptive radiation using Darwin's finches"
+          - "Use the universal genetic code and genome similarity as evidence of common descent"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biology-ch10
+    number: 10
+    title: "Mechanism of Evolution and Human Evolution"
+    unit: "Unit 2: Genetics and Evolution"
+    topics:
+      - id: isc-12-biology-ch10-t01
+        title: "Darwinism and Malthus's influence; examples of natural selection (giraffe, industrial melanism, DDT and antibiotic resistance); Lederberg's replica plating; criticism of Darwinism"
+        learning_outcomes:
+          - "State the main postulates of Darwinism"
+          - "Explain industrial melanism as natural selection in action"
+      - id: isc-12-biology-ch10-t02
+        title: "De Vries' mutation theory; modern synthetic theory: mutation, recombination, gene flow, genetic drift (founder and bottleneck effects)"
+        learning_outcomes:
+          - "Compare Darwinism with the modern synthetic theory"
+          - "Distinguish the founder effect from the bottleneck effect"
+      - id: isc-12-biology-ch10-t03
+        title: "Variation and its causes; types of natural selection: directional, stabilising and disruptive"
+        learning_outcomes:
+          - "Sketch and interpret graphs of the three types of natural selection"
+      - id: isc-12-biology-ch10-t04
+        title: "Hardy-Weinberg principle; factors disturbing equilibrium; numerical problems"
+        learning_outcomes:
+          - "Calculate allele and genotype frequencies using p^2 + 2pq + q^2 = 1"
+          - "List factors that disturb Hardy-Weinberg equilibrium"
+      - id: isc-12-biology-ch10-t05
+        title: "Human evolution: features of Dryopithecus, Ramapithecus, Australopithecus, Homo habilis, H. erectus, H. neanderthalensis, Cro-Magnon and modern man"
+        learning_outcomes:
+          - "Give three features (such as cranial capacity, posture, dentition) of each human ancestor in sequence"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biology-ch11
+    number: 11
+    title: "Human Health and Disease: Infections, Cancer and Allergies"
+    unit: "Unit 3: Biology and Human Welfare"
+    topics:
+      - id: isc-12-biology-ch11-t01
+        title: "Viral (common cold, chikungunya, dengue) and bacterial (typhoid and Widal test, pneumonia, diphtheria, plague) diseases: agents, transmission, symptoms, prevention"
+        learning_outcomes:
+          - "Tabulate the causative agent, mode of transmission, symptoms and prevention of each disease"
+      - id: isc-12-biology-ch11-t02
+        title: "Protozoan (amoebiasis, malaria and life cycle of Plasmodium), helminthic (ascariasis, filariasis) and fungal (ringworm) diseases"
+        learning_outcomes:
+          - "Draw a labelled outline of the life cycle of Plasmodium in humans and mosquitoes"
+          - "Suggest public-health measures to control vector-borne diseases"
+      - id: isc-12-biology-ch11-t03
+        title: "Cancer: benign and malignant tumours, properties of cancer cells (loss of contact inhibition, metastasis), causes, diagnosis and treatment"
+        learning_outcomes:
+          - "Distinguish benign from malignant tumours"
+          - "Describe methods of cancer detection and treatment"
+      - id: isc-12-biology-ch11-t04
+        title: "Allergies and allergens: definition and general symptoms"
+        learning_outcomes:
+          - "Explain the role of IgE, histamine and mast cells in an allergic response"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biology-ch12
+    number: 12
+    title: "Immunity, AIDS and Substance Abuse"
+    unit: "Unit 3: Biology and Human Welfare"
+    topics:
+      - id: isc-12-biology-ch12-t01
+        title: "Innate immunity: physical, physiological, cellular and cytokine barriers; interferons"
+        learning_outcomes:
+          - "Give examples of each type of innate barrier"
+          - "State the source and function of interferons"
+      - id: isc-12-biology-ch12-t02
+        title: "Acquired immunity: active and passive, humoral and cell-mediated; primary and secondary lymphoid organs"
+        learning_outcomes:
+          - "Compare active and passive immunity and humoral and cell-mediated immunity"
+          - "Name primary and secondary lymphoid organs and their roles"
+      - id: isc-12-biology-ch12-t03
+        title: "Antibody structure; IgG, IgA, IgM, IgD and IgE (functions and occurrence); vaccination, immunisation and autoimmunity"
+        learning_outcomes:
+          - "Draw and label a typical antibody molecule"
+          - "Explain how vaccination produces immunological memory"
+      - id: isc-12-biology-ch12-t04
+        title: "AIDS: HIV, transmission, diagnosis by ELISA, symptoms, replication of the retrovirus in a host cell, prevention"
+        learning_outcomes:
+          - "Draw and explain the replication cycle of HIV in a helper T-cell"
+          - "State measures to prevent the spread of HIV"
+      - id: isc-12-biology-ch12-t05
+        title: "Alcohol, smoking and drugs (opioids, cannabinoids, cocaine, barbiturates): sources, effects, reasons for addiction, prevention and control"
+        learning_outcomes:
+          - "Describe effects of alcohol, tobacco and named drugs on health"
+          - "Suggest measures to prevent drug and alcohol abuse among adolescents"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biology-ch13
+    number: 13
+    title: "Microbes in Human Welfare"
+    unit: "Unit 3: Biology and Human Welfare"
+    topics:
+      - id: isc-12-biology-ch13-t01
+        title: "Microbes in household products: Lactobacillus (curd), Saccharomyces (bread), Propionibacterium (Swiss cheese)"
+        learning_outcomes:
+          - "Explain the role of microbes in making curd, bread and cheese"
+      - id: isc-12-biology-ch13-t02
+        title: "Industrial products: beverages, antibiotics (penicillin), organic acids, alcohols, enzymes (lipase, pectinase, protease, streptokinase), cyclosporin A and statins"
+        learning_outcomes:
+          - "Match industrial products with the microbes that produce them and their uses"
+          - "Narrate the discovery of penicillin"
+      - id: isc-12-biology-ch13-t03
+        title: "Sewage treatment: primary and secondary treatment"
+        learning_outcomes:
+          - "Explain the role of flocs and activated sludge in secondary treatment"
+      - id: isc-12-biology-ch13-t04
+        title: "Biogas: methanogens, composition, biogas plant and process"
+        learning_outcomes:
+          - "Describe the working of a biogas plant and the composition of biogas"
+      - id: isc-12-biology-ch13-t05
+        title: "Biocontrol agents (ladybird, dragonfly, Bt, Trichoderma, baculoviruses); integrated pest management; harmful effects of chemical pesticides"
+        learning_outcomes:
+          - "Explain the advantages of biocontrol and IPM over chemical pesticides"
+      - id: isc-12-biology-ch13-t06
+        title: "Biofertilisers: Rhizobium, Azospirillum, Azotobacter, Glomus (mycorrhiza), cyanobacteria"
+        learning_outcomes:
+          - "Explain how named biofertilisers improve soil fertility"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biology-ch14
+    number: 14
+    title: "Biotechnology: Principles and Processes"
+    unit: "Unit 4: Biotechnology and its Applications"
+    topics:
+      - id: isc-12-biology-ch14-t01
+        title: "Definition and principles of biotechnology; isolation of genomic DNA by cell lysis; isolation of the gene of interest by gel electrophoresis"
+        learning_outcomes:
+          - "Explain why different enzymes are used to lyse bacterial, plant and fungal cells"
+          - "Describe separation of DNA fragments by agarose gel electrophoresis"
+      - id: isc-12-biology-ch14-t02
+        title: "Restriction enzymes: discovery, nomenclature, features (EcoRI, HindII); role of ligase; steps in making recombinant DNA"
+        learning_outcomes:
+          - "Decode the name EcoRI and explain palindromic sites and sticky ends"
+          - "List the steps of recombinant DNA technology in order"
+      - id: isc-12-biology-ch14-t03
+        title: "Cloning vectors: features of a good vector; pBR322, Agrobacterium, retroviruses, BAC and YAC"
+        learning_outcomes:
+          - "Explain the roles of ori, selectable markers and cloning sites in a vector such as pBR322"
+      - id: isc-12-biology-ch14-t04
+        title: "Transfer of rDNA into competent hosts (heat shock, microinjection, gene gun); selection of recombinants (antibiotic resistance, insertional inactivation, blue-white selection)"
+        learning_outcomes:
+          - "Explain how blue-white selection distinguishes recombinant from non-recombinant colonies"
+      - id: isc-12-biology-ch14-t05
+        title: "Gene amplification in vivo and by PCR"
+        learning_outcomes:
+          - "Describe the three steps of a PCR cycle and the role of Taq polymerase"
+      - id: isc-12-biology-ch14-t06
+        title: "Bioreactors (stirred-tank and sparged-tank) and downstream processing"
+        learning_outcomes:
+          - "Compare stirred-tank and sparged-tank bioreactors"
+          - "Explain why downstream processing and quality control are needed"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biology-ch15
+    number: 15
+    title: "Biotechnology and its Applications"
+    unit: "Unit 4: Biotechnology and its Applications"
+    topics:
+      - id: isc-12-biology-ch15-t01
+        title: "Agriculture: micropropagation and somatic hybridisation; GM crops tolerant to cold, drought, salt and heat"
+        learning_outcomes:
+          - "Explain how micropropagation and somatic hybridisation help crop improvement"
+      - id: isc-12-biology-ch15-t02
+        title: "Pest-resistant crops (Bt crops; RNAi against Meloidogyne incognita); nutritionally enhanced crops (golden rice)"
+        learning_outcomes:
+          - "Explain how Bt toxin kills insect larvae but not the plant"
+          - "Explain how RNA interference protects tobacco from nematodes"
+      - id: isc-12-biology-ch15-t03
+        title: "Medicine: genetically engineered insulin, vaccine production, stem cells and their applications"
+        learning_outcomes:
+          - "Describe how human insulin is produced in bacteria"
+          - "Define stem cells and give applications of stem cell technology"
+      - id: isc-12-biology-ch15-t04
+        title: "Gene therapy (SCID); molecular diagnosis by PCR, ELISA and DNA/RNA probes"
+        learning_outcomes:
+          - "Outline gene therapy for adenosine deaminase deficiency"
+          - "Explain why PCR allows early detection of infections"
+      - id: isc-12-biology-ch15-t05
+        title: "Transgenic animals: bioactive products (alpha-1-antitrypsin, alpha-lactalbumin), vaccine and chemical safety testing, study of diseases"
+        learning_outcomes:
+          - "Give uses of transgenic animals with examples"
+      - id: isc-12-biology-ch15-t06
+        title: "Biosafety and ethics: role of GEAC; biopiracy (basmati, turmeric) and biopatents"
+        learning_outcomes:
+          - "Explain the role of GEAC"
+          - "Discuss biopiracy using the basmati and turmeric cases"
+    removed_topics:
+      - "Technical details of ELISA"
+    literature_texts: []
+  - id: isc-12-biology-ch16
+    number: 16
+    title: "Organisms and Populations"
+    unit: "Unit 5: Ecology and Environment"
+    topics:
+      - id: isc-12-biology-ch16-t01
+        title: "Population attributes: density and its measurement, natality, mortality, immigration, emigration, sex ratio, age pyramids, carrying capacity"
+        learning_outcomes:
+          - "Calculate birth and death rates from population data"
+          - "Interpret expanding, stable and declining age pyramids"
+      - id: isc-12-biology-ch16-t02
+        title: "Population growth: exponential and logistic models with equations and graphs"
+        learning_outcomes:
+          - "Compare J-shaped and S-shaped growth curves and their equations"
+          - "Explain the role of carrying capacity in logistic growth"
+      - id: isc-12-biology-ch16-t03
+        title: "Life history variation and reproductive fitness"
+        learning_outcomes:
+          - "Explain with examples how organisms balance number and size of offspring"
+      - id: isc-12-biology-ch16-t04
+        title: "Mutualism and competition (interspecific, interference, competitive release, Gause's competitive exclusion principle)"
+        learning_outcomes:
+          - "State Gause's principle and explain resource partitioning"
+      - id: isc-12-biology-ch16-t05
+        title: "Predation and anti-predator adaptations; parasitism (ecto-, endo- and brood parasites); commensalism; amensalism"
+        learning_outcomes:
+          - "Classify an interaction from the effect on each species (+, - or 0)"
+          - "Give examples of adaptations of prey to avoid predators"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biology-ch17
+    number: 17
+    title: "Ecosystem"
+    unit: "Unit 5: Ecology and Environment"
+    topics:
+      - id: isc-12-biology-ch17-t01
+        title: "Definition and types of ecosystems; biotic and abiotic components; structure and function of a pond ecosystem"
+        learning_outcomes:
+          - "Describe the components of a pond ecosystem and their roles"
+      - id: isc-12-biology-ch17-t02
+        title: "Productivity: GPP, NPP and secondary productivity; PAR; standing crop and standing state"
+        learning_outcomes:
+          - "Calculate NPP from GPP and respiration losses"
+          - "Distinguish standing crop from standing state"
+      - id: isc-12-biology-ch17-t03
+        title: "Decomposition: fragmentation, leaching, catabolism, humification and mineralisation; factors affecting rate"
+        learning_outcomes:
+          - "Describe the steps of decomposition and predict how temperature and moisture affect its rate"
+      - id: isc-12-biology-ch17-t04
+        title: "Energy flow: grazing and detritus food chains, food webs, trophic levels, 10% law"
+        learning_outcomes:
+          - "Apply the 10% law to calculate energy at successive trophic levels"
+      - id: isc-12-biology-ch17-t05
+        title: "Ecological pyramids of number, biomass and energy"
+        learning_outcomes:
+          - "Draw upright and inverted pyramids with examples and explain why the energy pyramid is always upright"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biology-ch18
+    number: 18
+    title: "Biodiversity and its Conservation"
+    unit: "Unit 5: Ecology and Environment"
+    topics:
+      - id: isc-12-biology-ch18-t01
+        title: "Biodiversity: genetic, species and ecosystem diversity; global biodiversity and proportions of major taxa"
+        learning_outcomes:
+          - "Give an example of each level of biodiversity, including Indian examples"
+      - id: isc-12-biology-ch18-t02
+        title: "Patterns: latitudinal gradients, species-area relationship (graph and equation); rivet popper hypothesis; importance of biodiversity (narrowly utilitarian, broadly utilitarian, ethical)"
+        learning_outcomes:
+          - "Interpret the species-area curve and the meaning of the slope z"
+          - "Explain why the tropics have greater biodiversity"
+      - id: isc-12-biology-ch18-t03
+        title: "Loss of biodiversity: recent extinctions (dodo, quagga, Steller's sea cow, thylacine, three tiger subspecies); causes - habitat loss, over-exploitation, alien species, coextinction"
+        learning_outcomes:
+          - "Explain the four major causes of biodiversity loss with examples"
+      - id: isc-12-biology-ch18-t04
+        title: "In-situ conservation: biosphere reserves, national parks, sanctuaries, sacred groves; hotspots, Ramsar sites, Red Data Book"
+        learning_outcomes:
+          - "Distinguish biosphere reserves, national parks and sanctuaries"
+          - "Explain the purpose of the Red Data Book and biodiversity hotspots"
+      - id: isc-12-biology-ch18-t05
+        title: "Ex-situ conservation: captive breeding, zoos, botanical gardens, wildlife safaris, seed banks, cryopreservation, tissue culture"
+        learning_outcomes:
+          - "Compare in-situ and ex-situ conservation with examples"
+      - id: isc-12-biology-ch18-t06
+        title: "International conventions: the Earth Summit and the World Summit (place, year, agenda)"
+        learning_outcomes:
+          - "State the place, year and main agenda of the Earth Summit and the World Summit"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

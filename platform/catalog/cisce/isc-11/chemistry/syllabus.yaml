@@ -1,0 +1,699 @@
+# ISC Class 11 Chemistry (862), Paper I Theory - ISC 2028 syllabus, CLASS XI portion only.
+# Source: platform/catalog/sources/cisce.md#isc-2028-chemistry. Topic wording is our own summary of the official scope.
+subject_id: isc-11-chemistry
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-chemistry, isc-2028-regulations]
+exam_notes: >-
+  Class XI is year one of the two-year ISC 2028 course. There is no board examination in Class XI: the final
+  examination is conducted internally by the school on the Class XI portion, and promotion to Class XII needs at least
+  35% on the cumulative average in five subjects including English, with 75% attendance (ISC 2028 Regulations).
+  The syllabus prescribes, and the school examination usually follows: Paper I Theory, 3 hours, 70 marks; Paper II
+  Practical, 3 hours, 15 marks, plus Project Work 10 marks and Practical File 5 marks (total 30). Practical work:
+  basic laboratory techniques (cutting and bending a glass tube, drawing a jet, boring a cork); acid-base titrations
+  (sodium carbonate, NaOH or KOH against dilute H2SO4 or HCl with methyl orange; calculations of molarity to four
+  decimal places, concentration, water of crystallisation and percentage purity; concordant titre values, table in ink);
+  qualitative analysis of a single salt (one anion, one cation); preparation of potash alum or Mohr's salt and of
+  crystalline FeSO4 or CuSO4; and paper chromatography with Rf values. SOYL covers Paper I only.
+  Both old (IA-VIIA, 0) and IUPAC (1-18) group numbering are accepted. No Class XI specimen paper is published for
+  Chemistry. The official weightage table gives only branch totals (Physical 41, Inorganic 6, Organic 23) without marking
+  which units fall in each branch: SOYL places Classification of Elements and Periodicity (Unit 3) under Inorganic,
+  Units 1-2 and 4-7 under Physical, and Units 8-9 under Organic. CISCE lists topics under nine units, not textbook
+  chapters: SOYL groups them into 24 teachable chapters in syllabus order. The Class XII portion is in isc-12-chemistry.
+units:
+  - { name: "Physical Chemistry (Units 1-2 and 4-7: Basic Concepts, Atomic Structure, Bonding, Thermodynamics, Equilibrium, Redox)", marks: 41 }
+  - { name: "Inorganic Chemistry (Unit 3: Classification of Elements and Periodicity in Properties)", marks: 6 }
+  - { name: "Organic Chemistry (Units 8-9: Basic Principles and Techniques, Hydrocarbons)", marks: 23 }
+chapters:
+  - id: isc-11-chemistry-ch01
+    number: 1
+    title: "Some Basic Concepts: Measurement, Laws of Chemical Combination and Atomic Theory"
+    unit: "Physical Chemistry (Units 1-2 and 4-7: Basic Concepts, Atomic Structure, Bonding, Thermodynamics, Equilibrium, Redox)"
+    topics:
+      - id: isc-11-chemistry-ch01-t01
+        title: "Importance and scope of chemistry; matter and its study"
+        learning_outcomes:
+          - "Give examples of the role of chemistry in medicine, agriculture, industry and the environment"
+      - id: isc-11-chemistry-ch01-t02
+        title: "Precision and accuracy; significant figures; SI units"
+        learning_outcomes:
+          - "Distinguish precision from accuracy using sets of repeated measurements"
+          - "Report calculated results with the correct number of significant figures"
+      - id: isc-11-chemistry-ch01-t03
+        title: "Dimensional analysis: conversion of units and its applications"
+        learning_outcomes:
+          - "Convert quantities between units using conversion factors, e.g. L to m^3 and atm to Pa"
+      - id: isc-11-chemistry-ch01-t04
+        title: "Laws of chemical combination: conservation of mass, definite, multiple and reciprocal proportions; Gay-Lussac's law of gaseous volumes"
+        learning_outcomes:
+          - "State each law of chemical combination and verify it from given experimental data"
+          - "Solve simple problems on Gay-Lussac's law of combining volumes"
+      - id: isc-11-chemistry-ch01-t05
+        title: "Dalton's atomic theory: postulates and limitations; atoms and molecules"
+        learning_outcomes:
+          - "Explain how Dalton's theory accounts for the laws of chemical combination"
+          - "State the limitations of Dalton's atomic theory in the light of later discoveries"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch02
+    number: 2
+    title: "Mole Concept, Concentration and Stoichiometry"
+    unit: "Physical Chemistry (Units 1-2 and 4-7: Basic Concepts, Atomic Structure, Bonding, Thermodynamics, Equilibrium, Redox)"
+    topics:
+      - id: isc-11-chemistry-ch02-t01
+        title: "Atomic (isotopic) and molecular masses; atomic mass unit as 1/12 of the mass of carbon-12; mole, Avogadro's number and gram molecular volume"
+        learning_outcomes:
+          - "Calculate the number of moles, molecules and atoms in a given mass of a substance"
+          - "Use the molar volume of a gas at STP in mole calculations"
+      - id: isc-11-chemistry-ch02-t02
+        title: "Percentage composition; empirical and molecular formulae"
+        learning_outcomes:
+          - "Determine the empirical and molecular formula of a compound from percentage composition and molar mass"
+      - id: isc-11-chemistry-ch02-t03
+        title: "Chemical equivalents: equivalent weight, variable equivalent weight, gram equivalent; relation with molar mass and valency; equivalent weights of acids, bases, salts, oxidising and reducing agents"
+        learning_outcomes:
+          - "Calculate the equivalent weight of an acid, a base, a salt and an oxidising agent"
+          - "Relate gram equivalent weight, gram molecular mass and valency"
+      - id: isc-11-chemistry-ch02-t04
+        title: "Concentration terms: percentage (w/w, w/v), normality, molarity, molality, mole fraction; normality and molarity equations"
+        learning_outcomes:
+          - "Convert between molarity, molality and mole fraction for a given solution"
+          - "Use N1V1 = N2V2 and M1V1 = M2V2 in dilution and volumetric calculations"
+      - id: isc-11-chemistry-ch02-t05
+        title: "Stoichiometric calculations: mass-mass, mass-volume and volume-volume relationships; limiting reagent"
+        learning_outcomes:
+          - "Calculate the mass or volume of product formed from a balanced equation"
+          - "Identify the limiting reagent and calculate the amount of excess reagent left"
+    removed_topics:
+      - "Experimental details of determining equivalent weights"
+    literature_texts: []
+  - id: isc-11-chemistry-ch03
+    number: 3
+    title: "Subatomic Particles and Early Atomic Models"
+    unit: "Physical Chemistry (Units 1-2 and 4-7: Basic Concepts, Atomic Structure, Bonding, Thermodynamics, Equilibrium, Redox)"
+    topics:
+      - id: isc-11-chemistry-ch03-t01
+        title: "Discovery of the electron, proton and neutron: production and properties of cathode rays and anode rays; Chadwick's experiment"
+        learning_outcomes:
+          - "Describe how cathode rays and anode rays are produced and list their properties"
+          - "Compare the charge and mass of the electron, proton and neutron"
+      - id: isc-11-chemistry-ch03-t02
+        title: "Atomic number, mass number, isotopes and isobars"
+        learning_outcomes:
+          - "Calculate the numbers of protons, neutrons and electrons in an atom or ion"
+          - "Distinguish isotopes from isobars with examples"
+      - id: isc-11-chemistry-ch03-t03
+        title: "Thomson's model; Rutherford's alpha-scattering experiment and nuclear model; their limitations"
+        learning_outcomes:
+          - "Explain the observations of the alpha-scattering experiment and the conclusions drawn"
+          - "State why Rutherford's model could not explain the stability of the atom"
+      - id: isc-11-chemistry-ch03-t04
+        title: "Limitations of electromagnetic wave theory: black body radiation and the photoelectric effect; Planck's quantum theory"
+        learning_outcomes:
+          - "Calculate the energy of a photon from its wavelength or frequency using E = h nu"
+          - "Explain why the photoelectric effect supports the particle nature of light"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch04
+    number: 4
+    title: "Bohr's Model, Atomic Spectra and Dual Nature"
+    unit: "Physical Chemistry (Units 1-2 and 4-7: Basic Concepts, Atomic Structure, Bonding, Thermodynamics, Equilibrium, Redox)"
+    topics:
+      - id: isc-11-chemistry-ch04-t01
+        title: "Emission and absorption spectra; line and band spectra"
+        learning_outcomes:
+          - "Distinguish emission from absorption spectra and line from band spectra"
+      - id: isc-11-chemistry-ch04-t02
+        title: "Postulates and merits of Bohr's model; radii, velocity and energy of orbits (numericals, no derivation)"
+        learning_outcomes:
+          - "State Bohr's postulates"
+          - "Calculate the radius and energy of the nth orbit of hydrogen and hydrogen-like ions"
+      - id: isc-11-chemistry-ch04-t03
+        title: "Hydrogen spectrum and Rydberg's formula; defects of Bohr's model"
+        learning_outcomes:
+          - "Calculate the wavelength of a line in the Lyman or Balmer series using the Rydberg formula"
+          - "List the defects of Bohr's model"
+      - id: isc-11-chemistry-ch04-t04
+        title: "Dual nature of matter and light: de Broglie's equation; Heisenberg's uncertainty principle (with numericals)"
+        learning_outcomes:
+          - "Calculate the de Broglie wavelength of an electron or a moving ball"
+          - "Use the uncertainty principle to estimate the uncertainty in velocity of an electron"
+    removed_topics:
+      - "Derivation of expressions for Bohr radius, velocity and energy of orbits"
+    literature_texts: []
+  - id: isc-11-chemistry-ch05
+    number: 5
+    title: "Quantum Mechanical Model and Electronic Configuration"
+    unit: "Physical Chemistry (Units 1-2 and 4-7: Basic Concepts, Atomic Structure, Bonding, Thermodynamics, Equilibrium, Redox)"
+    topics:
+      - id: isc-11-chemistry-ch05-t01
+        title: "Quantum mechanical model: Schrodinger wave equation and the physical significance of psi and psi^2 (no derivation)"
+        learning_outcomes:
+          - "Explain the meaning of psi^2 as probability density and the idea of an orbital"
+      - id: isc-11-chemistry-ch05-t02
+        title: "Quantum numbers; shells, subshells and orbitals; information they give about distance, energy and number of electrons"
+        learning_outcomes:
+          - "Write the set of four quantum numbers for a given electron"
+          - "Calculate the maximum number of electrons in a shell, subshell and orbital"
+      - id: isc-11-chemistry-ch05-t03
+        title: "Shapes, size and orientation of s, p and d orbitals; nodes, nodal planes and radial probability curves"
+        learning_outcomes:
+          - "Sketch the shapes of s, p and d orbitals"
+          - "Calculate the numbers of radial and angular nodes for an orbital"
+      - id: isc-11-chemistry-ch05-t04
+        title: "Aufbau principle and (n + l) rule; Pauli's exclusion principle; Hund's rule of maximum multiplicity"
+        learning_outcomes:
+          - "Arrange orbitals in order of energy using the (n + l) rule"
+          - "Apply Pauli's principle and Hund's rule to fill orbital diagrams"
+      - id: isc-11-chemistry-ch05-t05
+        title: "Electronic configuration of elements and ions; stability of half-filled and completely filled orbitals"
+        learning_outcomes:
+          - "Write the electronic configurations of elements up to Z = 30 and of their common ions"
+          - "Explain the configurations of chromium and copper using extra stability of half-filled and filled subshells"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch06
+    number: 6
+    title: "Classification of Elements and Periodicity in Properties"
+    unit: "Inorganic Chemistry (Unit 3: Classification of Elements and Periodicity in Properties)"
+    topics:
+      - id: isc-11-chemistry-ch06-t01
+        title: "Need for classification; Mendeleev's periodic law and table: merits and defects; modern periodic law"
+        learning_outcomes:
+          - "Explain how Mendeleev's table predicted undiscovered elements"
+          - "State defects of Mendeleev's table that the modern periodic law removes"
+      - id: isc-11-chemistry-ch06-t02
+        title: "Long form of the periodic table: groups and periods; s, p, d and f blocks; IUPAC numbering of groups 1-18; IUPAC names for elements with Z > 100"
+        learning_outcomes:
+          - "Locate the block, period and group of an element from its electronic configuration"
+          - "Write the IUPAC temporary name and symbol of an element with atomic number above 100"
+      - id: isc-11-chemistry-ch06-t03
+        title: "Periodic trends in atomic and ionic radii and valence electrons; factors such as nuclear charge and shielding (screening)"
+        learning_outcomes:
+          - "Explain the variation of atomic radius across a period and down a group"
+          - "Compare the sizes of isoelectronic ions"
+      - id: isc-11-chemistry-ch06-t04
+        title: "Ionisation enthalpy, electron gain enthalpy and electronegativity: trends in groups and periods; metallic and non-metallic character"
+        learning_outcomes:
+          - "Explain irregularities in first ionisation enthalpies, e.g. of N and O"
+          - "Predict the more electronegative or more metallic element from periodic position"
+      - id: isc-11-chemistry-ch06-t05
+        title: "Periodicity of valence and oxidation states; anomalous properties of second-period elements; diagonal relationship; acidic and basic nature of oxides"
+        learning_outcomes:
+          - "Explain the diagonal relationship between Li and Mg, or Be and Al"
+          - "Classify oxides of period 3 elements as basic, amphoteric or acidic"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch07
+    number: 7
+    title: "Ionic Bonding"
+    unit: "Physical Chemistry (Units 1-2 and 4-7: Basic Concepts, Atomic Structure, Bonding, Thermodynamics, Equilibrium, Redox)"
+    topics:
+      - id: isc-11-chemistry-ch07-t01
+        title: "Valence electrons; Kossel-Lewis approach; octet rule applied to electrovalent and covalent bonds"
+        learning_outcomes:
+          - "Explain chemical bonding as atoms attaining stable configurations"
+      - id: isc-11-chemistry-ch07-t02
+        title: "Ionic bond: Lewis structures of NaCl, Li2O, MgO, CaO, MgF2 and Na2S; conditions for formation (ionisation enthalpy, electron gain enthalpy, lattice energy, electronegativity difference)"
+        learning_outcomes:
+          - "Draw Lewis (electron-dot) structures for simple ionic compounds"
+          - "Explain the factors that favour formation of an ionic bond"
+      - id: isc-11-chemistry-ch07-t03
+        title: "Formation of cations and anions; variable electrovalency due to inert pair effect and unstable core"
+        learning_outcomes:
+          - "Explain why lead shows +2 and +4 states and why iron forms Fe2+ and Fe3+"
+      - id: isc-11-chemistry-ch07-t04
+        title: "Lattice enthalpy and the Born-Haber cycle; characteristics of electrovalent compounds"
+        learning_outcomes:
+          - "Calculate the lattice enthalpy of NaCl using a Born-Haber cycle"
+          - "Relate properties of ionic compounds such as high melting point and conductivity in melt to their structure"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch08
+    number: 8
+    title: "Covalent Bonding, VSEPR and Hybridisation"
+    unit: "Physical Chemistry (Units 1-2 and 4-7: Basic Concepts, Atomic Structure, Bonding, Thermodynamics, Equilibrium, Redox)"
+    topics:
+      - id: isc-11-chemistry-ch08-t01
+        title: "Covalent bond: conditions, single, double and triple bonds; sigma and pi bonds (H2, O2, N2); Lewis structures of CH4, NH3, H2O, ethane, ethene, ethyne and CO2"
+        learning_outcomes:
+          - "Draw Lewis structures of simple covalent molecules"
+          - "Count sigma and pi bonds in a given molecule"
+      - id: isc-11-chemistry-ch08-t02
+        title: "Bond parameters; polar and non-polar covalent bonds; dipole moment; characteristics of covalent compounds compared with ionic ones"
+        learning_outcomes:
+          - "Predict whether a molecule is polar from bond polarity and shape, e.g. CO2 versus H2O"
+          - "Compare properties of ionic and covalent compounds"
+      - id: isc-11-chemistry-ch08-t03
+        title: "Variable covalency (P, S, Cl); formal charge; deviations from the octet rule (incomplete and expanded octets)"
+        learning_outcomes:
+          - "Calculate formal charges on atoms in a Lewis structure"
+          - "Give examples of molecules with incomplete and expanded octets"
+      - id: isc-11-chemistry-ch08-t04
+        title: "Fajan's rules: polarisation and covalent character of ionic bonds"
+        learning_outcomes:
+          - "Use Fajan's rules to predict which of two compounds is more covalent, e.g. LiCl versus NaCl"
+      - id: isc-11-chemistry-ch08-t05
+        title: "VSEPR theory and shapes of molecules"
+        learning_outcomes:
+          - "Predict the shape and approximate bond angle of molecules such as NH3, H2O, SF4 and XeF2 using VSEPR"
+      - id: isc-11-chemistry-ch08-t06
+        title: "Hybridisation involving s, p and d orbitals and molecular shapes"
+        learning_outcomes:
+          - "Identify the hybridisation of the central atom in molecules such as BeCl2, BF3, CH4, PCl5 and SF6"
+          - "Relate type of hybridisation to molecular geometry"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch09
+    number: 9
+    title: "Molecular Orbital Theory, Coordinate Bonds, Resonance and Hydrogen Bonding"
+    unit: "Physical Chemistry (Units 1-2 and 4-7: Basic Concepts, Atomic Structure, Bonding, Thermodynamics, Equilibrium, Redox)"
+    topics:
+      - id: isc-11-chemistry-ch09-t01
+        title: "Molecular orbital theory (qualitative) for homonuclear diatomic molecules from H2 to Ne2: bonding and antibonding orbitals, energy level diagrams, bond order"
+        learning_outcomes:
+          - "Draw the MO energy level diagram for N2 and O2"
+          - "Calculate bond order and predict the stability of a diatomic molecule"
+      - id: isc-11-chemistry-ch09-t02
+        title: "Paramagnetism of O2; relative stabilities of O2, O2-, O2 2-, O2+ and of N2, N2+, N2-, N2 2-"
+        learning_outcomes:
+          - "Explain the paramagnetism of O2 using MO theory"
+          - "Arrange oxygen and nitrogen species in order of bond order and stability"
+      - id: isc-11-chemistry-ch09-t03
+        title: "Coordinate (dative) bond: ammonium and hydronium ions, oxyacids of chlorine, nitric acid, ozone"
+        learning_outcomes:
+          - "Show the coordinate bonds in NH4+, H3O+ and the oxyacids of chlorine"
+      - id: isc-11-chemistry-ch09-t04
+        title: "Resonance in ozone, carbon dioxide, carbonate ion and nitrate ion"
+        learning_outcomes:
+          - "Draw resonance structures of the carbonate and nitrate ions"
+          - "Explain why all C-O bonds in the carbonate ion are equal in length"
+      - id: isc-11-chemistry-ch09-t05
+        title: "Hydrogen bonding: conditions, intermolecular (HF, water and ice, ethanol) and intramolecular"
+        learning_outcomes:
+          - "Explain the high boiling point of water and the lower density of ice using hydrogen bonding"
+          - "Distinguish intermolecular from intramolecular hydrogen bonding with examples"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch10
+    number: 10
+    title: "Thermodynamics: Systems and the First Law"
+    unit: "Physical Chemistry (Units 1-2 and 4-7: Basic Concepts, Atomic Structure, Bonding, Thermodynamics, Equilibrium, Redox)"
+    topics:
+      - id: isc-11-chemistry-ch10-t01
+        title: "System and surroundings; isolated, closed and open systems; intensive and extensive properties; state of a system and state functions"
+        learning_outcomes:
+          - "Classify given systems as open, closed or isolated"
+          - "Classify properties as intensive or extensive, and as state or path functions"
+      - id: isc-11-chemistry-ch10-t02
+        title: "Thermodynamic processes: reversible, irreversible, adiabatic, isothermal, isobaric, isochoric, cyclic; thermodynamic equilibrium"
+        learning_outcomes:
+          - "Identify the type of process from the variable held constant"
+      - id: isc-11-chemistry-ch10-t03
+        title: "First law: internal energy, heat and work; sign conventions; mathematical statement and significance; cyclic and isolated systems"
+        learning_outcomes:
+          - "Apply delta U = q + w with correct signs to calculate internal energy change"
+          - "Explain why delta U = 0 for a cyclic process"
+      - id: isc-11-chemistry-ch10-t04
+        title: "Reversible and irreversible work of expansion; graphical comparison"
+        learning_outcomes:
+          - "Calculate work done in isothermal reversible and irreversible expansion of an ideal gas"
+          - "Show on a P-V graph why reversible expansion does maximum work"
+      - id: isc-11-chemistry-ch10-t05
+        title: "Enthalpy as a state function; heat capacity and specific heat; Cv and delta U; Cp - Cv = R"
+        learning_outcomes:
+          - "Relate delta H and delta U using delta H = delta U + delta n_g RT"
+          - "Derive Cp - Cv = R for an ideal gas"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch11
+    number: 11
+    title: "Thermochemistry"
+    unit: "Physical Chemistry (Units 1-2 and 4-7: Basic Concepts, Atomic Structure, Bonding, Thermodynamics, Equilibrium, Redox)"
+    topics:
+      - id: isc-11-chemistry-ch11-t01
+        title: "Heat of reaction: standard heat of formation, combustion, solution, dilution and neutralisation; calorific value of a fuel"
+        learning_outcomes:
+          - "Define each type of heat of reaction and write a thermochemical equation for it"
+          - "Calculate the calorific value of a fuel from its heat of combustion"
+      - id: isc-11-chemistry-ch11-t02
+        title: "Constancy of heat of neutralisation for strong acids and strong bases"
+        learning_outcomes:
+          - "Explain why the heat of neutralisation of any strong acid by a strong base is nearly constant"
+          - "Explain why it is lower for weak acids or weak bases"
+      - id: isc-11-chemistry-ch11-t03
+        title: "Enthalpies of bond dissociation, atomisation, sublimation, phase transition and ionisation"
+        learning_outcomes:
+          - "Estimate the enthalpy of a reaction from bond enthalpies"
+      - id: isc-11-chemistry-ch11-t04
+        title: "Hess's law of constant heat summation and its applications"
+        learning_outcomes:
+          - "State Hess's law and use it to find an enthalpy of formation that cannot be measured directly"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch12
+    number: 12
+    title: "Entropy, Free Energy and Spontaneity"
+    unit: "Physical Chemistry (Units 1-2 and 4-7: Basic Concepts, Atomic Structure, Bonding, Thermodynamics, Equilibrium, Redox)"
+    topics:
+      - id: isc-11-chemistry-ch12-t01
+        title: "Inadequacy of the first law; spontaneous and non-spontaneous processes; second law of thermodynamics"
+        learning_outcomes:
+          - "Explain with examples why a negative delta H alone cannot predict spontaneity"
+      - id: isc-11-chemistry-ch12-t02
+        title: "Entropy: physical significance, state function; second law in terms of entropy; entropy change of the universe; thermal death"
+        learning_outcomes:
+          - "Predict the sign of delta S for processes such as melting, dissolving and gas-forming reactions"
+          - "Calculate entropy change for a reversible isothermal process as q_rev/T"
+      - id: isc-11-chemistry-ch12-t03
+        title: "Gibbs and Helmholtz free energy and their relationship; criteria for spontaneity using delta G = delta H - T delta S"
+        learning_outcomes:
+          - "Use delta G = delta H - T delta S to find the temperature above which a reaction becomes spontaneous"
+      - id: isc-11-chemistry-ch12-t04
+        title: "Relation between standard free energy change and equilibrium constant; third law of thermodynamics (statement)"
+        learning_outcomes:
+          - "Calculate K from delta G standard using delta G = -2.303 RT log K"
+          - "State the third law of thermodynamics"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch13
+    number: 13
+    title: "Chemical Equilibrium"
+    unit: "Physical Chemistry (Units 1-2 and 4-7: Basic Concepts, Atomic Structure, Bonding, Thermodynamics, Equilibrium, Redox)"
+    topics:
+      - id: isc-11-chemistry-ch13-t01
+        title: "Reversible and irreversible reactions; physical equilibria (solid-liquid, liquid-vapour, solid-vapour); dynamic nature and characteristics of equilibrium"
+        learning_outcomes:
+          - "Explain why equilibrium is dynamic using an example such as a liquid in a closed vessel"
+      - id: isc-11-chemistry-ch13-t02
+        title: "Law of mass action; equilibrium constants Kc and Kp; relation Kp = Kc(RT)^delta n (derivation); units and characteristics of K"
+        learning_outcomes:
+          - "Write Kc and Kp expressions for homogeneous gaseous reactions"
+          - "Derive the relation between Kp and Kc"
+          - "Calculate equilibrium constants and equilibrium concentrations from given data"
+      - id: isc-11-chemistry-ch13-t03
+        title: "Le Chatelier's principle: effect of concentration, temperature, pressure, catalyst and inert gas"
+        learning_outcomes:
+          - "Predict the shift in equilibrium position when conditions change"
+          - "Explain why a catalyst does not change the equilibrium constant"
+      - id: isc-11-chemistry-ch13-t04
+        title: "Conditions for maximum yield: Haber process, dissociation of N2O4, hydrolysis of esters, contact process"
+        learning_outcomes:
+          - "Justify the temperature and pressure chosen in the Haber and contact processes"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch14
+    number: 14
+    title: "Ionic Equilibrium: Acids, Bases and pH"
+    unit: "Physical Chemistry (Units 1-2 and 4-7: Basic Concepts, Atomic Structure, Bonding, Thermodynamics, Equilibrium, Redox)"
+    topics:
+      - id: isc-11-chemistry-ch14-t01
+        title: "Strong and weak electrolytes; non-electrolytes; ionisation and degree of ionisation"
+        learning_outcomes:
+          - "Classify substances as strong, weak or non-electrolytes"
+      - id: isc-11-chemistry-ch14-t02
+        title: "Arrhenius, Bronsted-Lowry and Lewis concepts of acids and bases; conjugate pairs"
+        learning_outcomes:
+          - "Identify conjugate acid-base pairs in a reaction"
+          - "Classify species such as BF3 and NH3 as Lewis acids or bases"
+      - id: isc-11-chemistry-ch14-t03
+        title: "Ostwald's dilution law (derivation); dissociation constants and acid strength; multistage ionisation of polybasic acids"
+        learning_outcomes:
+          - "Derive Ostwald's dilution law and calculate the degree of dissociation of a weak acid"
+          - "Write the stepwise ionisation of a polybasic acid such as H3PO4"
+      - id: isc-11-chemistry-ch14-t04
+        title: "Ionic product of water; pH, pOH and pKw"
+        learning_outcomes:
+          - "Calculate the pH and pOH of solutions of strong and weak acids and bases"
+      - id: isc-11-chemistry-ch14-t05
+        title: "Acid-base indicators and their choice in titrations"
+        learning_outcomes:
+          - "Choose a suitable indicator for strong acid-weak base and weak acid-strong base titrations"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch15
+    number: 15
+    title: "Common Ion Effect, Salt Hydrolysis, Buffers and Solubility Product"
+    unit: "Physical Chemistry (Units 1-2 and 4-7: Basic Concepts, Atomic Structure, Bonding, Thermodynamics, Equilibrium, Redox)"
+    topics:
+      - id: isc-11-chemistry-ch15-t01
+        title: "Common ion effect: acetic acid with sodium acetate, ammonium hydroxide with ammonium chloride; use in salt analysis"
+        learning_outcomes:
+          - "Explain how adding sodium acetate suppresses the ionisation of acetic acid"
+      - id: isc-11-chemistry-ch15-t02
+        title: "Hydrolysis of salts of strong acid-weak base, weak acid-strong base and weak acid-weak base; pH of their solutions"
+        learning_outcomes:
+          - "Predict whether a salt solution is acidic, basic or neutral"
+          - "Calculate the pH of a salt solution using the appropriate formula"
+      - id: isc-11-chemistry-ch15-t03
+        title: "Buffer solutions: types, action and explanation by Le Chatelier's principle; Henderson equation"
+        learning_outcomes:
+          - "Explain how an acidic buffer resists a change in pH on adding acid or base"
+          - "Calculate the pH of a buffer using the Henderson equation"
+      - id: isc-11-chemistry-ch15-t04
+        title: "Solubility and solubility product; application in qualitative analysis of group II, III and IV cations"
+        learning_outcomes:
+          - "Calculate solubility from Ksp and Ksp from solubility"
+          - "Explain why group II sulphides are precipitated in acidic medium and group IV sulphides in basic medium"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch16
+    number: 16
+    title: "Redox Reactions"
+    unit: "Physical Chemistry (Units 1-2 and 4-7: Basic Concepts, Atomic Structure, Bonding, Thermodynamics, Equilibrium, Redox)"
+    topics:
+      - id: isc-11-chemistry-ch16-t01
+        title: "Oxidation and reduction in terms of oxygen, hydrogen and electrons; examples of redox reactions"
+        learning_outcomes:
+          - "Identify the oxidising and reducing agents in a redox reaction"
+      - id: isc-11-chemistry-ch16-t02
+        title: "Oxidation number: rules and calculation in molecules and ions such as K2Cr2O7 and S2O3 2-; redox as change in oxidation number"
+        learning_outcomes:
+          - "Calculate the oxidation number of an element in a compound or ion"
+          - "Identify a redox reaction from changes in oxidation number"
+      - id: isc-11-chemistry-ch16-t03
+        title: "Balancing redox equations in acidic and basic media by the oxidation number method and the ion-electron method"
+        learning_outcomes:
+          - "Balance a redox equation such as permanganate with iron(II) in acidic medium by both methods"
+      - id: isc-11-chemistry-ch16-t04
+        title: "Applications of redox in different types of chemical reactions"
+        learning_outcomes:
+          - "Classify redox reactions as combination, decomposition, displacement or disproportionation"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch17
+    number: 17
+    title: "Introduction, Classification and IUPAC Nomenclature of Organic Compounds"
+    unit: "Organic Chemistry (Units 8-9: Basic Principles and Techniques, Hydrocarbons)"
+    topics:
+      - id: isc-11-chemistry-ch17-t01
+        title: "Vital force theory and its fall; importance of organic chemistry; tetravalency of carbon; catenation, isomerism and multiple bonding as reasons for the large number of compounds"
+        learning_outcomes:
+          - "Explain why carbon forms a very large number of compounds"
+      - id: isc-11-chemistry-ch17-t02
+        title: "Classification: open chain, closed chain, homocyclic, heterocyclic, aromatic and alicyclic compounds; homologous series; functional groups"
+        learning_outcomes:
+          - "Classify a given structure as acyclic, alicyclic, aromatic or heterocyclic"
+          - "State the characteristics of a homologous series and identify functional groups"
+      - id: isc-11-chemistry-ch17-t03
+        title: "IUPAC rules for naming aliphatic, alicyclic and aromatic compounds"
+        learning_outcomes:
+          - "Write the IUPAC name of a compound from its structure and the structure from its name"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch18
+    number: 18
+    title: "Isomerism"
+    unit: "Organic Chemistry (Units 8-9: Basic Principles and Techniques, Hydrocarbons)"
+    topics:
+      - id: isc-11-chemistry-ch18-t01
+        title: "Structural isomerism: chain, position, functional, metamerism and tautomerism"
+        learning_outcomes:
+          - "Draw and name the structural isomers of a given molecular formula such as C4H10O"
+          - "Identify the type of structural isomerism between two compounds"
+      - id: isc-11-chemistry-ch18-t02
+        title: "Geometrical isomerism: conditions; cis-trans and syn-anti forms"
+        learning_outcomes:
+          - "State the conditions for geometrical isomerism and draw cis and trans isomers of but-2-ene"
+      - id: isc-11-chemistry-ch18-t03
+        title: "Optical isomerism: plane-polarised light, Nicol prism, polarimeter, specific rotation; conditions for optical activity"
+        learning_outcomes:
+          - "Describe how a polarimeter measures the angle of rotation"
+          - "Identify chiral carbon atoms in a structure"
+      - id: isc-11-chemistry-ch18-t04
+        title: "d and l forms; racemic mixture and meso form; external and internal compensation; lactic acid and tartaric acid"
+        learning_outcomes:
+          - "Explain why meso-tartaric acid is optically inactive although it has chiral centres"
+          - "Distinguish external from internal compensation"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch19
+    number: 19
+    title: "Purification and Analysis of Organic Compounds"
+    unit: "Organic Chemistry (Units 8-9: Basic Principles and Techniques, Hydrocarbons)"
+    topics:
+      - id: isc-11-chemistry-ch19-t01
+        title: "Methods of purification of organic compounds (overview)"
+        learning_outcomes:
+          - "Choose a suitable purification method for a given mixture, such as crystallisation or distillation"
+      - id: isc-11-chemistry-ch19-t02
+        title: "Qualitative analysis: detection of carbon, hydrogen, nitrogen, halogens and sulphur; Lassaigne's test and its reactions"
+        learning_outcomes:
+          - "Write the reactions involved in Lassaigne's test for nitrogen, sulphur and halogens"
+      - id: isc-11-chemistry-ch19-t03
+        title: "Estimation of carbon and hydrogen (Liebig's method) and nitrogen (Kjeldahl's method), with experimental details"
+        learning_outcomes:
+          - "Calculate the percentage of carbon and hydrogen from masses of CO2 and H2O formed"
+          - "Calculate the percentage of nitrogen by Kjeldahl's method"
+      - id: isc-11-chemistry-ch19-t04
+        title: "Estimation of halogens, sulphur and phosphorus (Carius method)"
+        learning_outcomes:
+          - "Calculate the percentage of a halogen from the mass of silver halide formed"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch20
+    number: 20
+    title: "Basic Concepts of Organic Reaction Mechanisms"
+    unit: "Organic Chemistry (Units 8-9: Basic Principles and Techniques, Hydrocarbons)"
+    topics:
+      - id: isc-11-chemistry-ch20-t01
+        title: "Types of reactions: substitution, addition and elimination"
+        learning_outcomes:
+          - "Classify a given organic reaction as substitution, addition or elimination"
+      - id: isc-11-chemistry-ch20-t02
+        title: "Homolytic and heterolytic fission; free radicals, carbocations and carbanions and their relative stabilities"
+        learning_outcomes:
+          - "Arrange primary, secondary and tertiary carbocations and free radicals in order of stability"
+      - id: isc-11-chemistry-ch20-t03
+        title: "Electrophiles and nucleophiles, including neutral ones"
+        learning_outcomes:
+          - "Classify reagents such as NO2+, BF3, OH-, NH3 and H2O as electrophiles or nucleophiles"
+      - id: isc-11-chemistry-ch20-t04
+        title: "Electron displacement effects: inductive, electromeric, mesomeric (resonance) effects and hyperconjugation"
+        learning_outcomes:
+          - "Use the inductive effect to compare the acid strengths of chloroacetic acids"
+          - "Explain the stability of tertiary carbocations using hyperconjugation"
+      - id: isc-11-chemistry-ch20-t05
+        title: "Free radical and polar mechanisms: SN1, SN2, E1 and E2 with conditions and examples"
+        learning_outcomes:
+          - "Draw the mechanisms of SN1 and SN2 reactions and compare their kinetics and stereochemistry"
+          - "Distinguish E1 from E2 eliminations"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch21
+    number: 21
+    title: "Alkanes"
+    unit: "Organic Chemistry (Units 8-9: Basic Principles and Techniques, Hydrocarbons)"
+    topics:
+      - id: isc-11-chemistry-ch21-t01
+        title: "Classification of hydrocarbons; alkanes: nomenclature, isomerism and occurrence"
+        learning_outcomes:
+          - "Name and draw the isomers of pentane"
+      - id: isc-11-chemistry-ch21-t02
+        title: "Conformations of methane and ethane: Sawhorse and Newman projections"
+        learning_outcomes:
+          - "Draw staggered and eclipsed conformations of ethane in Sawhorse and Newman projections"
+          - "Explain why the staggered conformation is more stable"
+      - id: isc-11-chemistry-ch21-t03
+        title: "Preparation: decarboxylation and Kolbe's electrolysis of carboxylate salts; Wurtz reaction; Corey-House synthesis; from aldehydes and Grignard reagents"
+        learning_outcomes:
+          - "Write equations for preparing a named alkane by the Wurtz reaction and by decarboxylation"
+          - "Explain why the Wurtz reaction is unsuitable for alkanes with an odd number of carbons"
+      - id: isc-11-chemistry-ch21-t04
+        title: "Physical properties of alkanes and their trends"
+        learning_outcomes:
+          - "Explain the trend in boiling points of alkanes and the effect of branching"
+      - id: isc-11-chemistry-ch21-t05
+        title: "Chemical properties: combustion, free-radical halogenation (mechanism), catalytic oxidation, cyclisation, aromatisation, isomerisation, pyrolysis; uses"
+        learning_outcomes:
+          - "Write the free-radical mechanism of chlorination of methane"
+          - "Write equations for aromatisation of hexane and pyrolysis of an alkane"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch22
+    number: 22
+    title: "Alkenes"
+    unit: "Organic Chemistry (Units 8-9: Basic Principles and Techniques, Hydrocarbons)"
+    topics:
+      - id: isc-11-chemistry-ch22-t01
+        title: "Nomenclature, structure of the double bond (ethene) and isomerism"
+        learning_outcomes:
+          - "Describe the sigma-pi structure of the C=C bond in ethene"
+      - id: isc-11-chemistry-ch22-t02
+        title: "Preparation: dehydration of alcohols, dehydrohalogenation of alkyl halides, from vicinal dihalides, Kolbe's method, from alkynes; Saytzeff's rule"
+        learning_outcomes:
+          - "Predict the major alkene formed in an elimination using Saytzeff's rule"
+      - id: isc-11-chemistry-ch22-t03
+        title: "Physical properties of alkenes"
+        learning_outcomes:
+          - "Compare the boiling points and dipole moments of cis and trans isomers"
+      - id: isc-11-chemistry-ch22-t04
+        title: "Addition of hydrogen, halogens, hydrogen halides, sulphuric acid and water; mechanism of electrophilic addition; Markownikoff's rule and peroxide (anti-Markownikoff) effect"
+        learning_outcomes:
+          - "Write the mechanism of electrophilic addition of HBr to propene"
+          - "Predict products of HBr addition with and without peroxide"
+      - id: isc-11-chemistry-ch22-t05
+        title: "Oxidation (combustion, cold and hot alkaline KMnO4, ozonolysis); polymerisation; uses"
+        learning_outcomes:
+          - "Deduce the structure of an alkene from its ozonolysis products"
+          - "Write the equation for polymerisation of ethene"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch23
+    number: 23
+    title: "Alkynes"
+    unit: "Organic Chemistry (Units 8-9: Basic Principles and Techniques, Hydrocarbons)"
+    topics:
+      - id: isc-11-chemistry-ch23-t01
+        title: "Nomenclature and structure of the triple bond (ethyne)"
+        learning_outcomes:
+          - "Describe the bonding in ethyne in terms of sp hybridisation"
+      - id: isc-11-chemistry-ch23-t02
+        title: "Preparation: ethyne from calcium carbide and natural gas; dehydrohalogenation; Kolbe's method; physical properties"
+        learning_outcomes:
+          - "Write equations for the manufacture of ethyne from calcium carbide"
+      - id: isc-11-chemistry-ch23-t03
+        title: "Acidic character of terminal alkynes and formation of acetylides"
+        learning_outcomes:
+          - "Explain why ethyne is acidic using the s-character of the carbon orbital"
+      - id: isc-11-chemistry-ch23-t04
+        title: "Addition of hydrogen, halogens, hydrogen halides and water; oxidation and ozonolysis; polymerisation; uses"
+        learning_outcomes:
+          - "Write the products of hydration of ethyne and propyne"
+          - "Write the equation for cyclic polymerisation of ethyne to benzene"
+      - id: isc-11-chemistry-ch23-t05
+        title: "Distinguishing tests between alkanes, alkenes and alkynes"
+        learning_outcomes:
+          - "Plan chemical tests to distinguish ethane, ethene and ethyne"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-chemistry-ch24
+    number: 24
+    title: "Aromatic Hydrocarbons: Benzene"
+    unit: "Organic Chemistry (Units 8-9: Basic Principles and Techniques, Hydrocarbons)"
+    topics:
+      - id: isc-11-chemistry-ch24-t01
+        title: "Aromatic compounds: IUPAC nomenclature; structure of benzene, Kekule resonance structures; aromaticity"
+        learning_outcomes:
+          - "Apply Huckel's rule to decide whether a ring compound is aromatic"
+          - "Explain the stability of benzene using resonance"
+      - id: isc-11-chemistry-ch24-t02
+        title: "Preparation of benzene from sodium benzoate and from phenol; physical properties"
+        learning_outcomes:
+          - "Write equations for preparing benzene from sodium benzoate and from phenol"
+      - id: isc-11-chemistry-ch24-t03
+        title: "Electrophilic substitution with mechanism: halogenation, nitration, sulphonation, Friedel-Crafts alkylation and acylation"
+        learning_outcomes:
+          - "Write the mechanism of nitration of benzene, showing the electrophile and the arenium ion"
+      - id: isc-11-chemistry-ch24-t04
+        title: "Directive influence of substituents in monosubstituted benzene (ortho/para and meta directors)"
+        learning_outcomes:
+          - "Predict the products of nitration of toluene and of nitrobenzene"
+      - id: isc-11-chemistry-ch24-t05
+        title: "Oxidation, reaction with ozone, addition of hydrogen, chlorine and bromine; pyrolysis to biphenyl; carcinogenicity, toxicity and uses"
+        learning_outcomes:
+          - "Write equations for addition reactions of benzene"
+          - "State health hazards of benzene and precautions in handling it"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

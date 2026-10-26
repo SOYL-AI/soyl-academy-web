@@ -1,0 +1,540 @@
+# ISC Class 11 Computer Science (868) - ISC 2028 course, CLASS XI portion only.
+# Source: platform/catalog/sources/cisce.md#isc-2028-computer-science. Topic wording is our own summary of the official scope.
+subject_id: isc-11-computer-science
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-computer-science, isc-2028-regulations, isc-2027-class-xi-specimen-papers]
+exam_notes: >-
+  Class XI is year one of the two-year ISC 2028 course: there is no CISCE board examination in Class XI, and the
+  school sets the Class XI examination on the Class XI portion, normally following the paper pattern below.
+  Paper I Theory: 3 hours, 70 marks, in three sections - A Hardware (number systems, encodings, propositional logic
+  and gates) 25 marks, B Java 30 marks, C Python and conceptual aspects 15 marks. CISCE has released a Class XI
+  specimen paper for Computer Science Paper 1, which shows the school-exam pattern.
+  Paper II Practical: 3 hours, 30 marks, evaluated internally by the school. The candidate attempts one of three
+  Java programming problems: a 90-minute planning session (algorithm plus hand-written Java program) followed by a
+  90-minute examination session (key in, run on seen and unseen inputs, attach a printout of listing and output).
+  Marks: programming assignments through the year 10, one project 5, terminal Java solution on the computer 15.
+  At least twenty assignments are expected (15 Java - conditional/iterative, 1-D arrays, 2-D arrays, strings, file
+  handling, all class-based; 5 Python - sequential, conditional/iterative, nested iteration) plus ONE project on
+  trends in computing (presentation, model or console application, for example an expert system or a cipher program).
+  This lab work is practical and is reflected here only through the programming chapters. Java 6.0 or later and
+  Python 3.13 or later; any editor or IDE. Topics 5 to 11 (Java) are meant to be introduced almost together with
+  classes. CISCE lists topics, not textbook chapters: SOYL groups them into 19 teachable chapters in syllabus order.
+units:
+  - { name: "Section A: Hardware", marks: 25 }
+  - { name: "Section B: Java", marks: 30 }
+  - { name: "Section C: Python and Conceptual Aspects", marks: 15 }
+chapters:
+  - id: isc-11-computer-science-ch01
+    number: 1
+    title: "Number Systems"
+    unit: "Section A: Hardware"
+    topics:
+      - id: isc-11-computer-science-ch01-t01
+        title: "Positional number systems and the concept of a base (binary, octal, decimal, hexadecimal)"
+        learning_outcomes:
+          - "Explain the place value of each digit in a number written in base 2, 8, 10 or 16"
+          - "Identify the valid digits of a given base and the base of a given numeral"
+      - id: isc-11-computer-science-ch01-t02
+        title: "Interconversion between binary, octal, decimal and hexadecimal"
+        learning_outcomes:
+          - "Convert a whole number from decimal to binary, octal and hexadecimal by repeated division"
+          - "Convert between binary, octal and hexadecimal by grouping bits in threes and fours"
+          - "Write the conversion steps as an algorithm in English or pseudo code"
+      - id: isc-11-computer-science-ch01-t03
+        title: "Addition in different bases and the role of the carry"
+        learning_outcomes:
+          - "Add two numbers in binary, octal or hexadecimal, showing every carry"
+          - "Relate carrying in binary addition to carrying in decimal addition"
+      - id: isc-11-computer-science-ch01-t04
+        title: "Subtraction in different bases; 1's complement and 2's complement methods"
+        learning_outcomes:
+          - "Find the 1's and 2's complement of a binary number"
+          - "Subtract binary numbers using the 1's complement (end-around carry) and 2's complement methods"
+      - id: isc-11-computer-science-ch01-t05
+        title: "Multiplication of whole numbers in different bases"
+        learning_outcomes:
+          - "Multiply two whole numbers in binary, octal or hexadecimal using partial products"
+    removed_topics:
+      - "Arithmetic on numbers with fractional (decimal) parts in other bases is not included"
+    literature_texts: []
+  - id: isc-11-computer-science-ch02
+    number: 2
+    title: "Character Encodings"
+    unit: "Section A: Hardware"
+    topics:
+      - id: isc-11-computer-science-ch02-t01
+        title: "Characters and their numeric codes; the ASCII code and its limitations"
+        learning_outcomes:
+          - "Explain why characters must be stored as numeric codes in a computer"
+          - "Look up the ASCII codes of letters and digits and explain why 7/8-bit ASCII cannot represent Indian scripts"
+      - id: isc-11-computer-science-ch02-t02
+        title: "ISCII and Unicode; representing Indian-language characters"
+        learning_outcomes:
+          - "Compare ASCII, ISCII and Unicode in purpose and range of characters covered"
+          - "Locate the Unicode block for a local Indian language such as Devanagari or Tamil"
+      - id: isc-11-computer-science-ch02-t03
+        title: "Unicode in Java: local-language strings and simple table look-up"
+        learning_outcomes:
+          - "State that Java char and String values use Unicode"
+          - "Outline a table look-up that maps English words to their local-language equivalents"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-computer-science-ch03
+    number: 3
+    title: "Propositional Logic"
+    unit: "Section A: Hardware"
+    topics:
+      - id: isc-11-computer-science-ch03-t01
+        title: "Propositions, propositional variables and the connectives negation, conjunction, disjunction, implication and equivalence"
+        learning_outcomes:
+          - "Identify propositions and combine them using the five logical connectives"
+          - "Write the symbol and meaning of each connective"
+      - id: isc-11-computer-science-ch03-t02
+        title: "Well-formed formulae and representing simple word problems as wffs"
+        learning_outcomes:
+          - "Decide whether a given string of symbols is a well-formed formula"
+          - "Translate a simple English statement into a wff"
+      - id: isc-11-computer-science-ch03-t03
+        title: "Truth values, interpretation of a wff and truth tables"
+        learning_outcomes:
+          - "Construct the truth table of a compound proposition with up to three variables"
+          - "Evaluate a wff for a given assignment of truth values"
+      - id: isc-11-computer-science-ch03-t04
+        title: "Satisfiable, unsatisfiable and valid formulae"
+        learning_outcomes:
+          - "Classify a formula as valid (tautology), satisfiable or unsatisfiable from its truth table"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-computer-science-ch04
+    number: 4
+    title: "Logic Gates and Binary Adders"
+    unit: "Section A: Hardware"
+    topics:
+      - id: isc-11-computer-science-ch04-t01
+        title: "Realising logic in hardware: basic gates AND, OR and NOT"
+        learning_outcomes:
+          - "Draw the symbol and write the truth table of the AND, OR and NOT gates"
+          - "Relate each basic gate to the corresponding logical connective"
+      - id: isc-11-computer-science-ch04-t02
+        title: "Other gates: NAND, NOR, XOR and XNOR"
+        learning_outcomes:
+          - "Draw the symbol, write the expression and truth table of NAND, NOR, XOR and XNOR"
+          - "Draw a gate circuit for a given simple logical expression"
+      - id: isc-11-computer-science-ch04-t03
+        title: "Universality of gates: building other gates from basic or NAND/NOR gates"
+        learning_outcomes:
+          - "Explain what makes a set of gates universal"
+          - "Construct NOT, AND and OR using only NAND gates or only NOR gates"
+      - id: isc-11-computer-science-ch04-t04
+        title: "Half adder and full adder; link with binary addition"
+        learning_outcomes:
+          - "Derive the sum and carry expressions of a half adder and a full adder from their truth tables"
+          - "Draw the gate circuits of a half adder and a full adder"
+          - "Explain how full adders implement the carry used in binary addition"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-computer-science-ch05
+    number: 5
+    title: "Introduction to Object-Oriented Programming: Objects and Classes"
+    unit: "Section B: Java"
+    topics:
+      - id: isc-11-computer-science-ch05-t01
+        title: "Algorithmic problem solving and the object-oriented approach in Java"
+        learning_outcomes:
+          - "Write an algorithm in pseudo code before coding a solution"
+          - "Explain how object-oriented programming models a problem as interacting objects"
+      - id: isc-11-computer-science-ch05-t02
+        title: "Objects as data (attributes) plus behaviour (methods); object as an instance of a class"
+        learning_outcomes:
+          - "Differentiate between a class and an object with examples"
+          - "Identify the attributes and methods of a given class"
+      - id: isc-11-computer-science-ch05-t03
+        title: "Modelling real-world entities (calculator, date, number) as objects; interface as access to behaviour"
+        learning_outcomes:
+          - "Design a simple class with attributes and methods for an everyday entity such as a date"
+          - "Explain how the public methods of a class form its interface"
+      - id: isc-11-computer-science-ch05-t04
+        title: "Changing behaviour by adding, deleting or modifying methods"
+        learning_outcomes:
+          - "Predict how an object's behaviour changes when a method is added, removed or rewritten"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-computer-science-ch06
+    number: 6
+    title: "The Java Virtual Machine, Errors and Exceptions"
+    unit: "Section B: Java"
+    topics:
+      - id: isc-11-computer-science-ch06-t01
+        title: "Virtual machines and the JVM; compiling with javac and running with java; bytecode portability"
+        learning_outcomes:
+          - "Explain why the JVM is called a virtual machine"
+          - "Describe the path from .java source to .class bytecode to execution by the JVM"
+          - "Explain why Java bytecode is portable across machines"
+      - id: isc-11-computer-science-ch06-t02
+        title: "Compile-time and run-time errors"
+        learning_outcomes:
+          - "Classify given errors as syntax (compile-time), run-time or logical errors"
+          - "Explain why an unhandled run-time error crashes a program"
+      - id: isc-11-computer-science-ch06-t03
+        title: "Exceptions: the Exception class, try, catch and finally"
+        learning_outcomes:
+          - "Write a try-catch-finally block that recovers from a run-time error such as division by zero"
+          - "State when the finally block executes"
+      - id: isc-11-computer-science-ch06-t04
+        title: "throw and throws; how an exception propagates up the call chain"
+        learning_outcomes:
+          - "Use throw to raise an exception and throws to declare it in a method header"
+          - "Trace how an exception object passes up nested method calls until a matching catch is found"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-computer-science-ch07
+    number: 7
+    title: "Primitive Types, Wrapper Classes and Type Casting"
+    unit: "Section B: Java"
+    topics:
+      - id: isc-11-computer-science-ch07-t01
+        title: "Primitive types: byte, short, int, long, float, double, boolean and char"
+        learning_outcomes:
+          - "State the size and range of each primitive type"
+          - "Choose a suitable primitive type for a given quantity"
+      - id: isc-11-computer-science-ch07-t02
+        title: "Wrapper classes for each primitive type"
+        learning_outcomes:
+          - "Name the wrapper class of each primitive type"
+          - "Use wrapper class methods such as Integer.parseInt to convert between strings and numbers"
+      - id: isc-11-computer-science-ch07-t03
+        title: "Class as the type of an object; classes as user-defined types"
+        learning_outcomes:
+          - "Explain why primitive types exist alongside classes for efficiency"
+          - "Declare variables whose type is a user-defined class"
+      - id: isc-11-computer-science-ch07-t04
+        title: "Automatic type coercion and explicit casting in mixed expressions"
+        learning_outcomes:
+          - "Predict the type and value of a mixed-type expression after implicit promotion"
+          - "Apply explicit casting and explain the loss of information it can cause"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-computer-science-ch08
+    number: 8
+    title: "Variables and Expressions"
+    unit: "Section B: Java"
+    topics:
+      - id: isc-11-computer-science-ch08-t01
+        title: "Variables as names for values; attributes as variables; named constants with final"
+        learning_outcomes:
+          - "Declare and initialise variables and final constants"
+          - "Explain how a variable's type constrains the values it can hold"
+      - id: isc-11-computer-science-ch08-t02
+        title: "Primitive variables versus reference variables for objects"
+        learning_outcomes:
+          - "Explain that a variable of class type stores a reference to an object"
+          - "Predict the effect of assigning one object reference to another"
+      - id: isc-11-computer-science-ch08-t03
+        title: "Arithmetic and logical expressions; operator precedence and associativity"
+        learning_outcomes:
+          - "Evaluate expressions using Java precedence and associativity rules"
+          - "Write Java expressions for given mathematical formulae, using Math library methods where needed"
+      - id: isc-11-computer-science-ch08-t04
+        title: "The assignment operation; left-hand side versus right-hand side"
+        learning_outcomes:
+          - "Distinguish the variable on the left of an assignment from the value computed on the right"
+          - "Trace the values of variables through a sequence of assignments, including compound and increment operators"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-computer-science-ch09
+    number: 9
+    title: "Statements, Control Flow and Scope"
+    unit: "Section B: Java"
+    topics:
+      - id: isc-11-computer-science-ch09-t01
+        title: "Conditional statements: if, if-else, if-else-if ladder, switch-case and the ternary operator"
+        learning_outcomes:
+          - "Write conditional statements that select among several cases"
+          - "Convert an if-else construct to a ternary expression or a switch-case where suitable"
+      - id: isc-11-computer-science-ch09-t02
+        title: "Looping statements: for, while and do-while"
+        learning_outcomes:
+          - "Write loops to generate series, patterns and digit-based number logic"
+          - "Compare entry-controlled and exit-controlled loops"
+      - id: isc-11-computer-science-ch09-t03
+        title: "Jump statements break and continue; nested loops"
+        learning_outcomes:
+          - "Trace the output of nested loops containing break and continue"
+      - id: isc-11-computer-science-ch09-t04
+        title: "Blocks, scope and visibility of variables (block, method and class scope)"
+        learning_outcomes:
+          - "Identify the scope of each variable in a given program"
+          - "Explain which variable is visible when the same name is declared in different scopes"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-computer-science-ch10
+    number: 10
+    title: "Methods and Constructors"
+    unit: "Section B: Java"
+    topics:
+      - id: isc-11-computer-science-ch10-t01
+        title: "Methods as abstractions of operations on objects; return values and side effects"
+        learning_outcomes:
+          - "Define and call methods that return a value and methods that change object state"
+          - "Explain the difference between returning a value and producing a side effect"
+      - id: isc-11-computer-science-ch10-t02
+        title: "Formal and actual arguments; behaviour of primitive arguments"
+        learning_outcomes:
+          - "Distinguish formal parameters from actual arguments"
+          - "Show that changes to a primitive parameter inside a method do not affect the caller"
+      - id: isc-11-computer-science-ch10-t03
+        title: "Static variables and methods; the main method; the this keyword"
+        learning_outcomes:
+          - "Explain why static members are shared by all instances of a class"
+          - "Use this to refer to the current object's attributes"
+      - id: isc-11-computer-science-ch10-t04
+        title: "Constructors, the new operator and multiple constructors"
+        learning_outcomes:
+          - "Write default and parameterised constructors for a class"
+          - "Explain that new creates an object and returns a reference to it"
+      - id: isc-11-computer-science-ch10-t05
+        title: "Problem solving with methods: number problems and roots of algebraic equations"
+        learning_outcomes:
+          - "Write a class whose methods test number properties such as prime, perfect or palindrome"
+          - "Write a method that finds the real roots of a quadratic equation"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-computer-science-ch11
+    number: 11
+    title: "Arrays"
+    unit: "Section B: Java"
+    topics:
+      - id: isc-11-computer-science-ch11-t01
+        title: "Single-dimensional arrays: declaration, creation, constant-time access and traversal"
+        learning_outcomes:
+          - "Declare, create and traverse a one-dimensional array"
+          - "Explain why access to an array element takes constant time"
+      - id: isc-11-computer-science-ch11-t02
+        title: "Searching and finding maximum and minimum in an array"
+        learning_outcomes:
+          - "Implement linear search and binary search on an array"
+          - "Find the largest and smallest elements and their positions"
+      - id: isc-11-computer-science-ch11-t03
+        title: "Sorting techniques: bubble, selection and insertion sort"
+        learning_outcomes:
+          - "Implement bubble, selection and insertion sort in Java"
+          - "Trace the state of an array after each pass of a sorting algorithm"
+      - id: isc-11-computer-science-ch11-t04
+        title: "Two-dimensional (multi-dimensional) arrays and matrix operations"
+        learning_outcomes:
+          - "Write programs that read, display and process a matrix row-wise and column-wise"
+          - "Compute row and column sums, diagonals and the transpose of a matrix"
+      - id: isc-11-computer-science-ch11-t05
+        title: "Solving systems of linear equations using arrays"
+        learning_outcomes:
+          - "Write a program that solves a system of two or three linear equations stored in an array"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-computer-science-ch12
+    number: 12
+    title: "Strings"
+    unit: "Section B: Java"
+    topics:
+      - id: isc-11-computer-science-ch12-t01
+        title: "The String class as a structured type; length and access to individual characters"
+        learning_outcomes:
+          - "Use length() and charAt() to traverse a string"
+          - "Count vowels, words or a given character in a sentence"
+      - id: isc-11-computer-science-ch12-t02
+        title: "Substring, concatenation and index-of operations"
+        learning_outcomes:
+          - "Extract words and parts of a string using substring and indexOf"
+          - "Build a new string by concatenation inside a loop"
+      - id: isc-11-computer-science-ch12-t03
+        title: "Replacement, comparison and case conversion of strings"
+        learning_outcomes:
+          - "Use replace, equals, compareTo and case-conversion methods to process text"
+          - "Write programs to reverse words, check palindromes and sort names alphabetically"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-computer-science-ch13
+    number: 13
+    title: "Input/Output and Text File Handling"
+    unit: "Section B: Java"
+    topics:
+      - id: isc-11-computer-science-ch13-t01
+        title: "Console input with the Scanner class; input/output exceptions"
+        learning_outcomes:
+          - "Read int, double, String and char values from standard input with Scanner"
+          - "Handle an input/output exception with try-catch"
+      - id: isc-11-computer-science-ch13-t02
+        title: "Tokens, whitespace and user-defined delimiters; the StringTokenizer class"
+        learning_outcomes:
+          - "Explain tokens and delimiters with an example sentence"
+          - "Extract tokens from a string using StringTokenizer with custom delimiters"
+      - id: isc-11-computer-science-ch13-t03
+        title: "Need for data files; input and output streams; character streams FileReader and FileWriter"
+        learning_outcomes:
+          - "Explain why data files are needed for permanent storage"
+          - "Distinguish input streams from output streams and character streams"
+      - id: isc-11-computer-science-ch13-t04
+        title: "Text file operations: creating, writing, reading, appending and searching"
+        learning_outcomes:
+          - "Write a program that creates a text file and writes records to it"
+          - "Write programs that append to a file and search a file for a given word or record"
+    removed_topics:
+      - "Only text (character) files are included; binary files are not part of Class XI"
+    literature_texts: []
+  - id: isc-11-computer-science-ch14
+    number: 14
+    title: "Getting Started with Python"
+    unit: "Section C: Python and Conceptual Aspects"
+    topics:
+      - id: isc-11-computer-science-ch14-t01
+        title: "Installing Python and choosing an IDE (IDLE, PyCharm, VS Code, Spyder, Jupyter)"
+        learning_outcomes:
+          - "Describe how to install Python and open a program in an IDE"
+      - id: isc-11-computer-science-ch14-t02
+        title: "Features of Python: simple syntax, open source, large library, dynamic typing, portable, interpreted"
+        learning_outcomes:
+          - "Explain four features of Python and contrast dynamic typing with Java's static typing"
+      - id: isc-11-computer-science-ch14-t03
+        title: "Interactive mode and script mode"
+        learning_outcomes:
+          - "Run statements in interactive mode and a saved program in script mode"
+          - "State one use of each execution mode"
+      - id: isc-11-computer-science-ch14-t04
+        title: "Character set, tokens (keywords, identifiers, literals, operators, punctuators), variables, l-value and r-value, comments"
+        learning_outcomes:
+          - "Classify the tokens in a Python statement"
+          - "Identify valid identifiers and explain l-value and r-value in an assignment"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-computer-science-ch15
+    number: 15
+    title: "Python Data Types, Input/Output and Errors"
+    unit: "Section C: Python and Conceptual Aspects"
+    topics:
+      - id: isc-11-computer-science-ch15-t01
+        title: "Data types: numbers (int, float, complex), bool, sequences (str, list, tuple), None and dict"
+        learning_outcomes:
+          - "Identify the data type of a given literal using type()"
+          - "Give an example of each sequence and mapping type"
+      - id: isc-11-computer-science-ch15-t02
+        title: "Mutable and immutable data types"
+        learning_outcomes:
+          - "Classify Python types as mutable or immutable"
+          - "Explain what happens when an attempt is made to change an immutable object"
+      - id: isc-11-computer-science-ch15-t03
+        title: "Accepting input from the console and displaying output"
+        learning_outcomes:
+          - "Use input() with type conversion and print() with separators to process data"
+      - id: isc-11-computer-science-ch15-t04
+        title: "Syntax errors, logical errors and run-time errors"
+        learning_outcomes:
+          - "Classify a given faulty program's error as syntax, logical or run-time"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-computer-science-ch16
+    number: 16
+    title: "Python Operators and Expressions"
+    unit: "Section C: Python and Conceptual Aspects"
+    topics:
+      - id: isc-11-computer-science-ch16-t01
+        title: "Unary, binary and ternary forms; arithmetic operators including **, // and %"
+        learning_outcomes:
+          - "Evaluate expressions using /, //, % and ** and explain the difference between / and //"
+      - id: isc-11-computer-science-ch16-t02
+        title: "Relational and logical operators"
+        learning_outcomes:
+          - "Write conditions using relational operators combined with and, or, not"
+      - id: isc-11-computer-science-ch16-t03
+        title: "Assignment, augmented assignment, identity (is, is not) and membership (in, not in) operators"
+        learning_outcomes:
+          - "Use augmented assignment operators to update variables"
+          - "Distinguish == from is, and use in to test membership in a string or list"
+      - id: isc-11-computer-science-ch16-t04
+        title: "Expressions and statements; operator precedence; implicit and explicit type conversion"
+        learning_outcomes:
+          - "Evaluate mixed expressions using Python precedence rules"
+          - "Distinguish implicit from explicit type conversion with examples"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-computer-science-ch17
+    number: 17
+    title: "Python Flow of Control"
+    unit: "Section C: Python and Conceptual Aspects"
+    topics:
+      - id: isc-11-computer-science-ch17-t01
+        title: "Programming constructs: sequential, conditional and iterative flow; use of indentation"
+        learning_outcomes:
+          - "Explain how indentation defines blocks in Python"
+          - "Draw a flowchart for sequential, conditional and iterative flow"
+      - id: isc-11-computer-science-ch17-t02
+        title: "Conditional statements: if, if-else and if-elif-else"
+        learning_outcomes:
+          - "Write programs that classify input using if-elif-else"
+      - id: isc-11-computer-science-ch17-t03
+        title: "Iteration with for and range(), and with while"
+        learning_outcomes:
+          - "Write for and while loops to compute sums, factorials and series"
+          - "Predict the sequence generated by range() with one, two or three arguments"
+      - id: isc-11-computer-science-ch17-t04
+        title: "break, continue and nested loops"
+        learning_outcomes:
+          - "Write nested loops to print number and star patterns"
+          - "Trace a loop containing break or continue"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-computer-science-ch18
+    number: 18
+    title: "Emerging Trends and Cyber Safety"
+    unit: "Section C: Python and Conceptual Aspects"
+    topics:
+      - id: isc-11-computer-science-ch18-t01
+        title: "Artificial Intelligence and the Internet of Things"
+        learning_outcomes:
+          - "Explain what AI and IoT are, with one application of each in Indian daily life"
+          - "Discuss one benefit and one concern raised by AI"
+      - id: isc-11-computer-science-ch18-t02
+        title: "Virtual Reality and Augmented Reality"
+        learning_outcomes:
+          - "Distinguish VR from AR with examples from education, gaming or health care"
+      - id: isc-11-computer-science-ch18-t03
+        title: "Cyber security and privacy; netiquette"
+        learning_outcomes:
+          - "Describe practices that protect personal data and accounts"
+          - "List rules of respectful online behaviour"
+      - id: isc-11-computer-science-ch18-t04
+        title: "Spam, phishing and digital arrest scams"
+        learning_outcomes:
+          - "Identify warning signs of spam and phishing messages"
+          - "Explain what a digital arrest scam is and how to respond and report it"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-computer-science-ch19
+    number: 19
+    title: "Intellectual Property and Software Licensing"
+    unit: "Section C: Python and Conceptual Aspects"
+    topics:
+      - id: isc-11-computer-science-ch19-t01
+        title: "Intellectual property and its laws and rights; software as intellectual property"
+        learning_outcomes:
+          - "Explain why software is treated as intellectual property"
+      - id: isc-11-computer-science-ch19-t02
+        title: "Copyright, patents and trademarks for software"
+        learning_outcomes:
+          - "Differentiate between a software copyright and a software patent"
+          - "Give an example of what a trademark protects"
+      - id: isc-11-computer-science-ch19-t03
+        title: "Software licensing and piracy"
+        learning_outcomes:
+          - "Explain what a software licence permits and why piracy is illegal and unethical"
+      - id: isc-11-computer-science-ch19-t04
+        title: "The Free Software Foundation, open source software and licences such as GPL and BSD"
+        learning_outcomes:
+          - "Compare free software, open source and proprietary software"
+          - "Contrast the GPL and BSD licences on redistribution of modified code"
+      - id: isc-11-computer-science-ch19-t05
+        title: "Social impact and ethical debates in computing"
+        learning_outcomes:
+          - "Argue more than one point of view on an ethical issue in computing, such as software patents"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

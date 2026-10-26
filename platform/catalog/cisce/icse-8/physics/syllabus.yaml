@@ -1,0 +1,330 @@
+# ICSE Class 8 Physics - CISCE Curriculum for Upper Primary Classes VI-VIII (2016), Class VIII part only.
+# Source: platform/catalog/sources/cisce.md#cisce-upper-primary-curriculum (Physics, Class VIII, Themes 1-8);
+# scope sharpened with #cisce-upper-primary-physics-resource. Topic wording is our own summary of the official themes.
+subject_id: icse-8-physics
+academic_year: "2026-27"
+source_status: verified
+sources: [cisce-upper-primary-curriculum, cisce-upper-primary-physics-resource]
+exam_notes: >-
+  No board examination in Class 8. CISCE publishes a recommended theme-based curriculum (Physics taught as a separate
+  science from Class VI) with learning outcomes per class; it prescribes no textbooks, no paper pattern and no marks
+  weightage. Schools choose their own textbooks and set their own unit tests, term examinations and practical/activity
+  assessment. The Class VIII curriculum has eight themes; SOYL grouped them into 11 teachable chapters in curriculum order.
+  Numericals are simple (work, kinetic and potential energy with g = 10 m/s^2, moment of force, pressure, density);
+  the CISCE resource module stresses qualitative understanding, correct units and symbols, and hands-on investigation.
+units:
+  - { name: "Theme 1: Matter", marks: null }
+  - { name: "Theme 2: Physical Quantities and Measurement", marks: null }
+  - { name: "Theme 3: Force and Pressure", marks: null }
+  - { name: "Theme 4: Energy", marks: null }
+  - { name: "Theme 5: Light Energy", marks: null }
+  - { name: "Theme 6: Heat Transfer", marks: null }
+  - { name: "Theme 7: Sound", marks: null }
+  - { name: "Theme 8: Electricity", marks: null }
+chapters:
+  - id: icse-8-physics-ch01
+    number: 1
+    title: "Matter and the Kinetic Theory"
+    unit: "Theme 1: Matter"
+    topics:
+      - id: icse-8-physics-ch01-t01
+        title: "Kinetic theory of matter: matter made of tiny particles in constant motion"
+        learning_outcomes:
+          - "State the main idea of the kinetic theory of matter"
+          - "Explain how heating and cooling change the energy of particles"
+      - id: icse-8-physics-ch01-t02
+        title: "Solids, liquids and gases in terms of movement and energy of particles"
+        learning_outcomes:
+          - "Distinguish the three states of matter by how freely their particles move"
+          - "Relate the energy content of particles to the state of matter"
+          - "Prepare a comparison table of the three states by shape, texture and volume"
+      - id: icse-8-physics-ch01-t03
+        title: "Change of state on heating: melting (fusion), boiling, vaporisation and evaporation"
+        learning_outcomes:
+          - "Explain melting and boiling using the kinetic theory"
+          - "Show by an activity that a pure substance melts or boils at a fixed temperature"
+      - id: icse-8-physics-ch01-t04
+        title: "Change of state on cooling: condensation, freezing and deposition"
+        learning_outcomes:
+          - "Explain condensation and freezing using the kinetic theory with everyday examples"
+      - id: icse-8-physics-ch01-t05
+        title: "Sublimation and deposition; change of state diagrams"
+        learning_outcomes:
+          - "Describe sublimation using naphthalene balls or camphor as examples"
+          - "Draw a change of state diagram linking solid, liquid and gas with correctly named arrows"
+      - id: icse-8-physics-ch01-t06
+        title: "Investigating change of state: recording observations and results in tables"
+        learning_outcomes:
+          - "Record temperatures while heating ice to boiling water in a table and draw conclusions from the data"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-physics-ch02
+    number: 2
+    title: "Density and Floatation"
+    unit: "Theme 2: Physical Quantities and Measurement"
+    topics:
+      - id: icse-8-physics-ch02-t01
+        title: "Density of an irregular solid using a eureka (overflow) can and a measuring cylinder"
+        learning_outcomes:
+          - "Describe how to find the volume of an irregular solid with a eureka can and measuring cylinder"
+          - "Calculate the density of the solid from its mass and measured volume"
+      - id: icse-8-physics-ch02-t02
+        title: "Density of a liquid"
+        learning_outcomes:
+          - "Find the density of a liquid from the mass of a known volume measured in a graduated cylinder"
+      - id: icse-8-physics-ch02-t03
+        title: "Floating and sinking related to the relative densities of solid and liquid"
+        learning_outcomes:
+          - "Predict whether a solid will float or sink in a liquid from their densities"
+          - "Explain why a glass bowl floats on water although glass is denser than water"
+      - id: icse-8-physics-ch02-t04
+        title: "Comparing densities of solids, liquids and gases; simple numericals on density"
+        learning_outcomes:
+          - "Compare the densities of matter in the three states using the kinetic theory"
+          - "Solve simple numerical problems on density with proper units and symbols"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-physics-ch03
+    number: 3
+    title: "Turning Effect of Force"
+    unit: "Theme 3: Force and Pressure"
+    topics:
+      - id: icse-8-physics-ch03-t01
+        title: "Force as a push or pull; turning effect of a force about a pivot"
+        learning_outcomes:
+          - "Explain the turning effect of a force using a door, a spanner and a see-saw"
+      - id: icse-8-physics-ch03-t02
+        title: "Moment of force = force x perpendicular distance from the pivot; unit newton metre"
+        learning_outcomes:
+          - "Define moment of force and express it in N m"
+          - "State the factors on which the turning effect of a force depends"
+      - id: icse-8-physics-ch03-t03
+        title: "Simple numerical problems on moment of force"
+        learning_outcomes:
+          - "Calculate the moment of a force from given force and distance"
+          - "Explain why a long spanner makes it easier to open a tight nut"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-physics-ch04
+    number: 4
+    title: "Pressure"
+    unit: "Theme 3: Force and Pressure"
+    topics:
+      - id: icse-8-physics-ch04-t01
+        title: "Pressure as force per unit area; unit pascal (N/m^2)"
+        learning_outcomes:
+          - "Define pressure and express it in proper units"
+          - "Solve simple numerical problems using pressure = force / area"
+      - id: icse-8-physics-ch04-t02
+        title: "Dependence of pressure on area: sharp and blunt objects, flat shoes and pointed heels"
+        learning_outcomes:
+          - "Explain why it is easier to hammer a sharp nail than a blunt one"
+          - "Explain why school bags have broad straps"
+      - id: icse-8-physics-ch04-t03
+        title: "Pressure exerted by liquids (qualitative)"
+        learning_outcomes:
+          - "Demonstrate with a bottle having holes that liquids exert pressure that increases with depth"
+          - "Explain why dam walls are thicker at the bottom"
+      - id: icse-8-physics-ch04-t04
+        title: "Pressure exerted by gases; atmospheric pressure (qualitative)"
+        learning_outcomes:
+          - "Demonstrate with a balloon that gases exert pressure"
+          - "Explain how a rubber sucker sticks to a smooth surface using atmospheric pressure"
+    removed_topics:
+      - "Liquid pressure and atmospheric pressure are qualitative only (no formula or numericals)"
+    literature_texts: []
+  - id: icse-8-physics-ch05
+    number: 5
+    title: "Work, Energy and Power"
+    unit: "Theme 4: Energy"
+    topics:
+      - id: icse-8-physics-ch05-t01
+        title: "Work done = force x distance moved in the direction of the force; unit joule"
+        learning_outcomes:
+          - "Define work and state when work is said to be done"
+          - "Calculate work done in simple cases such as lifting a bag"
+      - id: icse-8-physics-ch05-t02
+        title: "Kinetic energy: energy due to motion; KE = (1/2)mv^2"
+        learning_outcomes:
+          - "Define kinetic energy and express it in joule"
+          - "Solve simple problems on kinetic energy from given mass and speed"
+      - id: icse-8-physics-ch05-t03
+        title: "Potential energy and gravitational potential energy; PE = mgh with g = 10 m/s^2"
+        learning_outcomes:
+          - "Define potential energy and gravitational potential energy"
+          - "Calculate gravitational potential energy from given mass and height"
+      - id: icse-8-physics-ch05-t04
+        title: "Energy transformation in a simple pendulum and in daily-life situations; conservation of energy"
+        learning_outcomes:
+          - "Describe the energy changes of a pendulum bob between its extreme and mean positions"
+          - "Draw energy conversion diagrams for a roller coaster or hydroelectric plant and deduce that energy is conserved"
+      - id: icse-8-physics-ch05-t05
+        title: "Power as the rate of doing work; difference between energy and power"
+        learning_outcomes:
+          - "Distinguish between energy and power with their units"
+          - "Explain why an electricity bill charges for energy consumed and not for power"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-physics-ch06
+    number: 6
+    title: "Refraction and Dispersion of Light"
+    unit: "Theme 5: Light Energy"
+    topics:
+      - id: icse-8-physics-ch06-t01
+        title: "Refraction: bending of light when it passes obliquely from one medium to another"
+        learning_outcomes:
+          - "Define refraction"
+          - "Trace a ray of light through a glass slab and show its bending at each surface"
+      - id: icse-8-physics-ch06-t02
+        title: "Examples of refraction: a bent pencil in water, apparent depth, mirage, early sunrise and delayed sunset"
+        learning_outcomes:
+          - "Explain why a coin in a tumbler of water appears raised"
+          - "Explain the mirage and the advanced sunrise and delayed sunset using refraction"
+      - id: icse-8-physics-ch06-t03
+        title: "Dispersion of white light into its constituent colours by a prism"
+        learning_outcomes:
+          - "Describe the dispersion of white light by a glass prism and name the colours of the spectrum"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-physics-ch07
+    number: 7
+    title: "Spherical Mirrors"
+    unit: "Theme 5: Light Energy"
+    topics:
+      - id: icse-8-physics-ch07-t01
+        title: "Concave and convex mirrors; reflecting surface of each; uses of curved mirrors"
+        learning_outcomes:
+          - "Distinguish a concave from a convex mirror by its reflecting surface"
+          - "State uses of concave mirrors (shaving mirror, torch reflector) and convex mirrors (rear-view mirror)"
+      - id: icse-8-physics-ch07-t02
+        title: "Terms: pole, principal axis, centre of curvature, radius of curvature, focus and focal length"
+        learning_outcomes:
+          - "Label the principal axis, centre of curvature, focus and focal length on a mirror diagram"
+      - id: icse-8-physics-ch07-t03
+        title: "Real and virtual images"
+        learning_outcomes:
+          - "Distinguish real images from virtual images by whether they can be obtained on a screen"
+      - id: icse-8-physics-ch07-t04
+        title: "Rules for drawing ray diagrams for spherical mirrors"
+        learning_outcomes:
+          - "State the paths of rays parallel to the principal axis, through the focus and through the centre of curvature after reflection"
+      - id: icse-8-physics-ch07-t05
+        title: "Ray diagrams for real images formed by a concave mirror and their characteristics"
+        learning_outcomes:
+          - "Draw ray diagrams for an object beyond C, at C and between C and F of a concave mirror"
+          - "Describe the position, nature and size of the real image in each case"
+    removed_topics:
+      - "Ray diagrams for virtual images formed by curved mirrors (only cases forming real images are drawn)"
+    literature_texts: []
+  - id: icse-8-physics-ch08
+    number: 8
+    title: "Boiling, Evaporation and Thermal Expansion"
+    unit: "Theme 6: Heat Transfer"
+    topics:
+      - id: icse-8-physics-ch08-t01
+        title: "Boiling and evaporation compared using the kinetic theory"
+        learning_outcomes:
+          - "Compare boiling and evaporation in terms of temperature, place in the liquid and speed"
+          - "Explain why evaporation happens at all temperatures but boiling happens at a fixed temperature"
+      - id: icse-8-physics-ch08-t02
+        title: "Thermal expansion of matter on heating"
+        learning_outcomes:
+          - "Describe thermal expansion and contraction with simple experiments"
+      - id: icse-8-physics-ch08-t03
+        title: "Linear, superficial (area) and volume expansion"
+        learning_outcomes:
+          - "Distinguish linear, superficial and volume expansion with one example each"
+      - id: icse-8-physics-ch08-t04
+        title: "Expansion in solids, liquids and gases compared; real-world applications"
+        learning_outcomes:
+          - "Compare expansivity of solids, liquids and gases"
+          - "Explain applications such as gaps in railway tracks, loosely hung electric wires and opening a tight metal lid with hot water"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-physics-ch09
+    number: 9
+    title: "Pitch and Loudness of Sound"
+    unit: "Theme 7: Sound"
+    topics:
+      - id: icse-8-physics-ch09-t01
+        title: "Pitch and frequency: high frequency gives high pitch (shrill sound)"
+        learning_outcomes:
+          - "Relate pitch to frequency"
+          - "Compare the pitch of a child's voice with that of an adult man's voice"
+      - id: icse-8-physics-ch09-t02
+        title: "Pitch in wind, membrane and string instruments"
+        learning_outcomes:
+          - "Explain how pitch is changed in a flute, a tabla and a sitar or guitar"
+          - "Design a simple musical toy and explain how it changes pitch"
+      - id: icse-8-physics-ch09-t03
+        title: "Monotone"
+        learning_outcomes:
+          - "Explain what a monotone is with an example"
+      - id: icse-8-physics-ch09-t04
+        title: "Loudness and amplitude; decibel as the unit of loudness"
+        learning_outcomes:
+          - "Relate loudness to amplitude"
+          - "State the decibel (dB) as the unit of loudness"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-physics-ch10
+    number: 10
+    title: "Electricity at Home and Electrical Safety"
+    unit: "Theme 8: Electricity"
+    topics:
+      - id: icse-8-physics-ch10-t01
+        title: "Household consumption of electrical energy; kilowatt hour; power rating of appliances"
+        learning_outcomes:
+          - "Calculate energy consumed in kW h from the power rating and time of use of appliances"
+          - "Estimate monthly consumption and cost from a household electricity bill"
+      - id: icse-8-physics-ch10-t02
+        title: "Live, neutral and earth wires: their energy and the path current takes"
+        learning_outcomes:
+          - "Identify live, neutral and earth wires and describe the role of each"
+      - id: icse-8-physics-ch10-t03
+        title: "Safety components: fuses, circuit breakers and earthing (qualitative)"
+        learning_outcomes:
+          - "Describe how a fuse and a circuit breaker protect a circuit"
+          - "Explain why metal-bodied appliances are earthed"
+      - id: icse-8-physics-ch10-t04
+        title: "Battery as cells connected in series"
+        learning_outcomes:
+          - "Explain how connecting cells in series in a battery gives a higher voltage"
+      - id: icse-8-physics-ch10-t05
+        title: "Dangers of electricity and safety precautions"
+        learning_outcomes:
+          - "List dangers of electricity such as shocks and fires"
+          - "Suggest safety precautions when using electrical appliances at home"
+    removed_topics:
+      - "Fuses and circuit breakers are treated qualitatively only"
+    literature_texts: []
+  - id: icse-8-physics-ch11
+    number: 11
+    title: "Static Electricity"
+    unit: "Theme 8: Electricity"
+    topics:
+      - id: icse-8-physics-ch11-t01
+        title: "Static electricity: charging by rubbing; like charges repel, unlike charges attract"
+        learning_outcomes:
+          - "Describe the charging of a balloon by rubbing and its effect on small bits of paper"
+      - id: icse-8-physics-ch11-t02
+        title: "Conservation of charge"
+        learning_outcomes:
+          - "Explain that rubbing transfers charge and does not create it, using the conservation of charge"
+      - id: icse-8-physics-ch11-t03
+        title: "Charging by conduction and by induction"
+        learning_outcomes:
+          - "Distinguish charging by conduction from charging by induction"
+      - id: icse-8-physics-ch11-t04
+        title: "Gold leaf electroscope: construction and working"
+        learning_outcomes:
+          - "Label the parts of a gold leaf electroscope"
+          - "Explain how the leaves diverge when a charged object touches or is brought near the cap"
+      - id: icse-8-physics-ch11-t05
+        title: "Lightning and the lightning conductor"
+        learning_outcomes:
+          - "Explain lightning as an electric discharge between clouds and the earth"
+          - "Describe how a lightning conductor protects a tall building"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

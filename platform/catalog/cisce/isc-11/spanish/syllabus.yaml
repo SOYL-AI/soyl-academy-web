@@ -1,0 +1,389 @@
+# ISC Class 11 Spanish (Modern Foreign Language elective, code 836) - ISC 2028 course, CLASS XI year.
+# ISC 2028 has a new Spanish syllabus (CEFR B1+): no prescribed literary texts, only suggested coursebooks.
+# CISCE has not bifurcated the syllabus, so this file covers the whole Classes XI-XII syllabus.
+subject_id: isc-11-spanish
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-mfl, isc-2028-prescribed-books, isc-2028-regulations]
+exam_notes: >-
+  There is no board examination in Class XI: Class XI is year one of the two-year ISC 2028 course and the school sets the
+  Class XI examination on the portion of the syllabus covered during the year. CISCE has not bifurcated this syllabus (the
+  Class XII ISC paper is set on the entire syllabus), so this file covers the whole Classes XI-XII Spanish syllabus and nothing
+  is removed; the grammar list itself marks some items B1.1 and B1.2, and SOYL keeps them in that order. The ISC 2028 syllabus
+  aims at intermediate (CEFR B1+) competence in reading, writing, listening and speaking. Paper I Theory (3 hours, 80 marks),
+  which the school examination normally follows: (1) Composition (20) - one composition of 180-200 words in Spanish from a
+  choice of topics: a narrative recounting a past event, a descriptive text describing a picture, or an opinion text such as a
+  critique of a book or film, a point of view, plans or advice; (2) Email and letter writing (20) - one letter or email of
+  120-150 words, formal or semi-formal, with layout, subject line, introduction and conclusion assessed; (3) Comprehension
+  (30) - two or three reading tasks on informative Spanish texts: practical documents such as brochures, leaflets or
+  prospectuses, and simplified general-interest media articles of about 300-350 words, with multiple-choice, true/false and
+  short written answers; (4) Grammar (10) - short situation-based tasks (fill in the blanks, multiple choice, sentence
+  transformation such as reported speech or joining with a given connector) testing functional use of the listed grammar.
+  Written work is graded with CISCE descriptors for content, coherence and cohesion, creativity (composition) or register
+  (letter), vocabulary and grammar. Paper II Project Work for Class XI (20 marks, assessed internally by the subject teacher in
+  four assessments during the year): Listening (10) - two or three short native-speaker audio clips of 2-3 minutes, each played
+  twice, with objective questions (MCQ, true/false with justification, matching); Speaking (10) - a 12-15 minute test in three
+  tasks: a directed interview about daily life, a problem-solving role play, and a prepared 3-5 minute point of view on a
+  contemporary issue based on a short article (20 minutes' preparation). The Annexe themes (culture; health and well-being;
+  education and future plans; community and society; the planet; science and technology) are to be used across all four
+  skills: SOYL gives them three theme chapters at the end. Suggested coursebooks (reference only): Nuevo Español Sin Fronteras
+  2 and 3, Aula Internacional 3 (B1), ELE Actual B1 and B2, Nuevo Ven 2 and 3, Nuevo Sueña B1 and B2, Método de Español 3 and
+  4, Nuevo Prisma B1 and B2. CISCE lists topics not chapters; SOYL grouped them into teachable chapters in syllabus order.
+units:
+  - { name: "1. Composition", marks: 20 }
+  - { name: "2. Email and letter writing", marks: 20 }
+  - { name: "3. Comprehension", marks: 30 }
+  - { name: "4. Grammar", marks: 10 }
+chapters:
+  - id: isc-11-spanish-ch01
+    number: 1
+    title: "Composition (Redacción)"
+    unit: "1. Composition"
+    topics:
+      - id: isc-11-spanish-ch01-t01
+        title: "Planning a 180-200 word composition: introducción, desarrollo, conclusión"
+        learning_outcomes:
+          - "Draw up a plan and write a composition in Spanish of 180-200 words with an introduction, developed paragraphs and a conclusion"
+          - "Link paragraphs with primero, además, sin embargo, por eso, en conclusión"
+      - id: isc-11-spanish-ch01-t02
+        title: "Narrative text: recounting a past event"
+        learning_outcomes:
+          - "Narrate a real or imagined past event with the pretérito indefinido for actions, the imperfecto for background and the pluscuamperfecto for earlier actions"
+      - id: isc-11-spanish-ch01-t03
+        title: "Descriptive text: describing a picture, a person or a place"
+        learning_outcomes:
+          - "Describe a picture systematically (en primer plano, al fondo, a la izquierda) using ser, estar and hay correctly"
+      - id: isc-11-spanish-ch01-t04
+        title: "Opinion text: a critique of a book or film, a point of view, plans or advice"
+        learning_outcomes:
+          - "Write a critique of a book or film with a short summary and a justified personal evaluation"
+          - "Give a point of view, describe plans or give advice with creo que, en mi opinión, te recomiendo que + subjuntivo"
+      - id: isc-11-spanish-ch01-t05
+        title: "Meeting the grade criteria: originality, range of vocabulary and grammar, self-correction"
+        learning_outcomes:
+          - "Revise a draft to replace memorised or repeated expressions with varied vocabulary and complex sentences"
+          - "Find and correct errors of agreement, accents and verb forms in one's own composition"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-spanish-ch02
+    number: 2
+    title: "Email and letter writing (Correo electrónico y carta)"
+    unit: "2. Email and letter writing"
+    topics:
+      - id: isc-11-spanish-ch02-t01
+        title: "Layout of a formal or semi-formal letter and email: asunto, saludo, despedida, date and place"
+        learning_outcomes:
+          - "Lay out a letter or email of 120-150 words with a subject line, a suitable greeting (Estimado/a señor/a) and closing (Atentamente, Un saludo)"
+      - id: isc-11-spanish-ch02-t02
+        title: "Formal letters: application, complaint (queja, reclamación) and request for information"
+        learning_outcomes:
+          - "Write a formal complaint or application that states the purpose, gives details and asks for a specific response"
+          - "Use courteous formulas such as Me gustaría ..., Le ruego que ..., Quisiera saber si ..."
+      - id: isc-11-spanish-ch02-t03
+        title: "Semi-formal emails: writing to a teacher, host family or organiser"
+        learning_outcomes:
+          - "Write a semi-formal email to make arrangements, apologise or ask for help in a friendly but polite tone"
+      - id: isc-11-spanish-ch02-t04
+        title: "Register: usted and tú, formal and semi-formal expressions"
+        learning_outcomes:
+          - "Choose usted or tú with the matching verb forms and possessives, keeping the register consistent"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-spanish-ch03
+    number: 3
+    title: "Comprehension (Comprensión lectora)"
+    unit: "3. Comprehension"
+    topics:
+      - id: isc-11-spanish-ch03-t01
+        title: "Practical documents: brochures, leaflets, prospectuses and notices"
+        learning_outcomes:
+          - "Locate specific information (dates, prices, conditions, timetables) in a practical document"
+      - id: isc-11-spanish-ch03-t02
+        title: "Extracting and comparing information from more than one document"
+        learning_outcomes:
+          - "Compare two offers or documents and choose the one that suits a given person, justifying the choice"
+      - id: isc-11-spanish-ch03-t03
+        title: "Simplified media articles of 300-350 words: main idea, details and the writer's view"
+        learning_outcomes:
+          - "State the main idea of an article, identify supporting details and recognise the writer's opinion"
+      - id: isc-11-spanish-ch03-t04
+        title: "Answering question types: multiple choice, verdadero / falso with justification, short written answers"
+        learning_outcomes:
+          - "Answer multiple-choice and true/false questions accurately, justifying true/false answers from the text"
+          - "Write short answers in correct Spanish in one's own words"
+      - id: isc-11-spanish-ch03-t05
+        title: "Working out meaning from context: synonyms, word families and false friends"
+        learning_outcomes:
+          - "Deduce the meaning of unfamiliar words from context and avoid false friends such as embarazada, éxito, librería"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-spanish-ch04
+    number: 4
+    title: "Gramática (1): sustantivos, adjetivos, adverbios y determinantes"
+    unit: "4. Grammar"
+    topics:
+      - id: isc-11-spanish-ch04-t01
+        title: "Gender and number: irregular forms and exceptions (el problema, la mano, el agua)"
+        learning_outcomes:
+          - "Give the correct article and plural for nouns with irregular gender or number"
+      - id: isc-11-spanish-ch04-t02
+        title: "Nominalisation with lo + adjective or adverb (Lo importante es participar)"
+        learning_outcomes:
+          - "Use lo + adjective to express an abstract idea in sentences such as Lo bueno de viajar es ..."
+      - id: isc-11-spanish-ch04-t03
+        title: "Adjectives: agreement, position and change of meaning (un gran hombre / un hombre grande)"
+        learning_outcomes:
+          - "Make adjectives agree in gender and number and explain how meaning changes with position"
+      - id: isc-11-spanish-ch04-t04
+        title: "Comparatives and superlatives, regular and irregular (mejor, peor, mayor, menor; el más ... de)"
+        learning_outcomes:
+          - "Compare people and things with regular and irregular comparative and superlative forms"
+      - id: isc-11-spanish-ch04-t05
+        title: "Forming adverbs with -mente (rápido -> rápidamente)"
+        learning_outcomes:
+          - "Form adverbs from adjectives with -mente, using the feminine form and keeping the written accent"
+      - id: isc-11-spanish-ch04-t06
+        title: "Determiners: possessive, demonstrative, numeral and indefinite (mi coche, esta casa, varios libros, ningún problema)"
+        learning_outcomes:
+          - "Choose and agree the right determiner, including the shortened forms ningún and algún"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-spanish-ch05
+    number: 5
+    title: "Gramática (2): pronombres"
+    unit: "4. Grammar"
+    topics:
+      - id: isc-11-spanish-ch05-t01
+        title: "Direct and indirect object pronouns (lo, la, los, las; le, les)"
+        learning_outcomes:
+          - "Replace direct and indirect objects with the correct pronoun (Lo veo todos los días / Le di un regalo)"
+      - id: isc-11-spanish-ch05-t02
+        title: "Combining two object pronouns (me lo, te la, se lo) and their position with infinitives, gerunds and imperatives"
+        learning_outcomes:
+          - "Combine indirect and direct object pronouns, changing le / les to se before lo / la"
+          - "Place pronouns before a conjugated verb or attach them to an infinitive, gerund or affirmative imperative"
+      - id: isc-11-spanish-ch05-t03
+        title: "The relative pronoun que (El libro que leí es interesante)"
+        learning_outcomes:
+          - "Join two sentences with que to describe a person or thing"
+      - id: isc-11-spanish-ch05-t04
+        title: "Relative pronouns with prepositions (La casa en la que vivo; la persona con quien hablé)"
+        learning_outcomes:
+          - "Use a preposition + article + que, or quien, to join sentences correctly"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-spanish-ch06
+    number: 6
+    title: "Gramática (3): tiempos del indicativo y perífrasis verbales"
+    unit: "4. Grammar"
+    topics:
+      - id: isc-11-spanish-ch06-t01
+        title: "Past tenses in contrast: pretérito indefinido, pretérito perfecto and pretérito imperfecto"
+        learning_outcomes:
+          - "Choose the indefinido, perfecto or imperfecto according to time markers and the type of past action, and justify the choice"
+      - id: isc-11-spanish-ch06-t02
+        title: "Pretérito pluscuamperfecto (había hablado)"
+        learning_outcomes:
+          - "Form the pluscuamperfecto and use it for an action that happened before another past action"
+      - id: isc-11-spanish-ch06-t03
+        title: "Condicional simple (hablaría): courtesy, hypothesis and advice"
+        learning_outcomes:
+          - "Form the condicional simple, including irregular stems (tendría, haría, podría, diría)"
+          - "Use it to make polite requests, give advice (Deberías ...) and express hypotheses"
+      - id: isc-11-spanish-ch06-t04
+        title: "Verbal periphrases (B1.1 review): ir a, estar + gerundio, acabar de, dejar de, volver a + infinitivo"
+        learning_outcomes:
+          - "Use these periphrases to express plans, ongoing actions, recently completed, stopped and repeated actions"
+      - id: isc-11-spanish-ch06-t05
+        title: "Verbal periphrases (B1.2): seguir + gerundio, llevar + gerundio, estar a punto de, tener + participio, ir + gerundio"
+        learning_outcomes:
+          - "Express duration, continuation and imminent action (Llevo viviendo aquí cinco años / Estoy a punto de salir)"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-spanish-ch07
+    number: 7
+    title: "Gramática (4): el subjuntivo y las oraciones condicionales"
+    unit: "4. Grammar"
+    topics:
+      - id: isc-11-spanish-ch07-t01
+        title: "Presente de subjuntivo: forms; expressing wishes (ojalá) and emotions (me alegra que)"
+        learning_outcomes:
+          - "Form the present subjunctive of regular, stem-changing and common irregular verbs (ser, ir, tener, hacer, haber)"
+          - "Express wishes and emotions with ojalá (que), espero que, me alegra que + subjuntivo"
+      - id: isc-11-spanish-ch07-t02
+        title: "Presente de subjuntivo: doubt and probability; recommendations and advice"
+        learning_outcomes:
+          - "Use the subjunctive after dudo que, es probable que, no creo que and te recomiendo que"
+          - "Explain why creo que takes the indicative but no creo que takes the subjunctive"
+      - id: isc-11-spanish-ch07-t03
+        title: "Pretérito perfecto de subjuntivo (Espero que no le haya pasado nada)"
+        learning_outcomes:
+          - "Form the perfect subjunctive and use it for wishes and doubts about completed actions"
+      - id: isc-11-spanish-ch07-t04
+        title: "Conditional sentences type I: si + presente + futuro / presente"
+        learning_outcomes:
+          - "Write real or possible conditions with si + present and a future or present main clause"
+      - id: isc-11-spanish-ch07-t05
+        title: "Introduction to the pretérito imperfecto de subjuntivo; conditional sentences type II (Si tuviera tiempo, viajaría más)"
+        learning_outcomes:
+          - "Form the imperfect subjunctive from the third person plural of the indefinido"
+          - "Write hypothetical conditions with si + imperfecto de subjuntivo + condicional simple"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-spanish-ch08
+    number: 8
+    title: "Gramática (5): pasiva, estilo indirecto y oraciones compuestas"
+    unit: "4. Grammar"
+    topics:
+      - id: isc-11-spanish-ch08-t01
+        title: "Periphrastic passive: ser + participio (El edificio fue construido en 1900)"
+        learning_outcomes:
+          - "Transform active sentences into the passive with ser + agreeing past participle and por for the agent"
+      - id: isc-11-spanish-ch08-t02
+        title: "Reported speech: verbs of communication and tense shifts (presente -> imperfecto, perfecto -> pluscuamperfecto, futuro -> condicional)"
+        learning_outcomes:
+          - "Report statements and questions with decir, contar, preguntar and explicar, changing tenses correctly"
+      - id: isc-11-spanish-ch08-t03
+        title: "Reported speech: changes in pronouns and time expressions (mañana -> al día siguiente)"
+        learning_outcomes:
+          - "Change pronouns, possessives and expressions of time and place when reporting what someone said"
+      - id: isc-11-spanish-ch08-t04
+        title: "Coordinated sentences: y, o, pero, sino, sin embargo"
+        learning_outcomes:
+          - "Join clauses with the right coordinating conjunction and distinguish pero from sino"
+      - id: isc-11-spanish-ch08-t05
+        title: "Subordinate clauses of cause (porque, ya que, puesto que), purpose (para que + subjuntivo) and time (cuando, mientras, antes de que, después de que)"
+        learning_outcomes:
+          - "Write causal, final and temporal clauses, using the subjunctive after para que and after cuando for future actions"
+      - id: isc-11-spanish-ch08-t06
+        title: "Concessive (aunque, a pesar de que, si bien) and consecutive clauses (tan ... que, tanto ... que); phrases of cause and consequence (a causa de, con el fin de, por eso)"
+        learning_outcomes:
+          - "Express concession and consequence in complex sentences (Aunque llueva, iremos / Estudió tanto que aprobó)"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-spanish-ch09
+    number: 9
+    title: "Gramática (6): preposiciones, conectores, adverbios y funciones comunicativas"
+    unit: "4. Grammar"
+    topics:
+      - id: isc-11-spanish-ch09-t01
+        title: "Prepositions review (a, de, en, entre, con, sin) and por versus para"
+        learning_outcomes:
+          - "Choose por or para according to cause, purpose, recipient, means or deadline, and justify the choice"
+      - id: isc-11-spanish-ch09-t02
+        title: "Fixed prepositional expressions (soñar con, depender de, insistir en, pensar en) and phrases of cause, purpose and condition"
+        learning_outcomes:
+          - "Use verbs with the preposition they require in sentences"
+      - id: isc-11-spanish-ch09-t03
+        title: "Connectors of addition, contrast, cause, consequence, time, condition and summary (además, no obstante, debido a que, así que, siempre que, en resumen)"
+        learning_outcomes:
+          - "Organise a paragraph with connectors from each group and use the subjunctive after en caso de que"
+      - id: isc-11-spanish-ch09-t04
+        title: "Adverbs and adverbial phrases of place, time, manner, quantity, doubt and probability (todavía, poco a poco, bastante, quizás, tal vez)"
+        learning_outcomes:
+          - "Use adverbs of each type accurately, including quizás and tal vez with the indicative or subjunctive"
+      - id: isc-11-spanish-ch09-t05
+        title: "Communicative functions: agreeing and disagreeing, giving opinions and evaluations, expressing hypotheses and possibility"
+        learning_outcomes:
+          - "Agree or disagree and give opinions (Estoy de acuerdo contigo / Es importante que participes)"
+          - "Express possibility with puede que and es posible que + subjuntivo"
+      - id: isc-11-spanish-ch09-t06
+        title: "Communicative functions: giving advice and suggestions, expressing wishes and emotions, making complaints"
+        learning_outcomes:
+          - "Give advice, express a wish or an emotion and make a polite complaint in a role play or a letter"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-spanish-ch10
+    number: 10
+    title: "Temas (1): cultura, salud y bienestar"
+    unit: null
+    topics:
+      - id: isc-11-spanish-ch10-t01
+        title: "Entertainment: cinema, TV and streaming, gaming, the internet; celebrity culture and role models"
+        learning_outcomes:
+          - "Discuss the role of entertainment in young people's lives and the responsibilities of celebrities, using topic vocabulary"
+      - id: isc-11-spanish-ch10-t02
+        title: "Identity and culture: style, language, groups and fashion; cultural heritage, monuments, festivals and traditions"
+        learning_outcomes:
+          - "Describe how young people express identity and present a heritage site or festival of Spain, Latin America or India"
+      - id: isc-11-spanish-ch10-t03
+        title: "The arts: theatre, music, visual arts, dance, literature and film; access, funding, prizes and diversity"
+        learning_outcomes:
+          - "Give and justify an opinion on public funding of the arts or on representation in films"
+      - id: isc-11-spanish-ch10-t04
+        title: "Health and fitness: sport in society, fair play, physical and mental health, sleep, self-esteem, healthcare"
+        learning_outcomes:
+          - "Compare individual and team sports and give advice on physical and mental health"
+      - id: isc-11-spanish-ch10-t05
+        title: "Nutrition: diets and eating habits, food production and the environment, organic food, food waste, fair trade, labelling"
+        learning_outcomes:
+          - "Argue for or against a food-related measure such as clearer food labelling, with examples"
+      - id: isc-11-spanish-ch10-t06
+        title: "Managing well-being: work-life balance, leisure activities, relaxation and recreation"
+        learning_outcomes:
+          - "Describe one's own balance of study and leisure and suggest ways to reduce stress"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-spanish-ch11
+    number: 11
+    title: "Temas (2): educación, futuro, comunidad y sociedad"
+    unit: null
+    topics:
+      - id: isc-11-spanish-ch11-t01
+        title: "Life at school: education systems, discipline, workload, time management, school as preparation for life"
+        learning_outcomes:
+          - "Compare the Spanish and Indian school systems and discuss student issues such as workload"
+      - id: isc-11-spanish-ch11-t02
+        title: "Further and higher education: access and barriers, costs and benefits, vocational training, apprenticeships, gap years"
+        learning_outcomes:
+          - "Weigh the costs and benefits of higher education against alternatives such as vocational training"
+      - id: isc-11-spanish-ch11-t03
+        title: "Careers and work: career options, workplaces, unemployment, money versus job satisfaction, volunteering"
+        learning_outcomes:
+          - "Present one's future plans and justify a career choice"
+      - id: isc-11-spanish-ch11-t04
+        title: "Equality and diversity: inclusion, gender equality, social mobility, prejudice, immigration and integration"
+        learning_outcomes:
+          - "Explain a form of prejudice and propose measures that promote inclusion"
+      - id: isc-11-spanish-ch11-t05
+        title: "Lifestyle: family and friends, the generation gap, urban, rural and coastal life, overcrowding, isolation, lifestyle choices"
+        learning_outcomes:
+          - "Compare life in a city and in a village and discuss changing patterns of family life"
+      - id: isc-11-spanish-ch11-t06
+        title: "Society: law and order, local and national government, national and global citizenship, rights and responsibilities"
+        learning_outcomes:
+          - "Explain the rights and responsibilities of a citizen with examples from one's own community"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-spanish-ch12
+    number: 12
+    title: "Temas (3): el planeta, la ciencia y la tecnología"
+    unit: null
+    topics:
+      - id: isc-11-spanish-ch12-t01
+        title: "The environment: climate change, pollution and solutions, biodiversity, treatment of animals, population growth"
+        learning_outcomes:
+          - "Describe an environmental problem, its causes and possible solutions by individuals and governments"
+      - id: isc-11-spanish-ch12-t02
+        title: "Sustainable living: natural resources, recycling, waste, overconsumption, fossil and renewable energy"
+        learning_outcomes:
+          - "Propose everyday actions in housing, food and travel that reduce one's environmental impact"
+      - id: isc-11-spanish-ch12-t03
+        title: "Protecting our world: sustainable tourism, global cooperation versus national agendas, environmental movements"
+        learning_outcomes:
+          - "Discuss whether individuals or industry and governments can do more to protect the planet"
+      - id: isc-11-spanish-ch12-t04
+        title: "Scientific innovation: medical advances and the ethics of research"
+        learning_outcomes:
+          - "Present a medical or scientific advance and raise an ethical question about it"
+      - id: isc-11-spanish-ch12-t05
+        title: "Smart technology, privacy and security, artificial intelligence"
+        learning_outcomes:
+          - "Give the advantages and risks of smart devices and artificial intelligence, with examples"
+      - id: isc-11-spanish-ch12-t06
+        title: "Social media and technology: digital media, online communities, access to technology, technology in education and work"
+        learning_outcomes:
+          - "Argue for or against the use of social media by teenagers, giving benefits and dangers"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

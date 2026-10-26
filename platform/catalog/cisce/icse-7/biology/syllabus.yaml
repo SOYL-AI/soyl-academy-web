@@ -1,0 +1,300 @@
+# ICSE Class 7 Biology - CISCE Curriculum for Upper Primary Classes VI-VIII (2016), Class VII part only.
+# Source: platform/catalog/sources/cisce.md#cisce-upper-primary-curriculum (Biology, Class VII, Themes 1-5);
+# scope sharpened with #cisce-upper-primary-biology-resource. Topic wording is our own summary of the official themes.
+subject_id: icse-7-biology
+academic_year: "2026-27"
+source_status: verified
+sources: [cisce-upper-primary-curriculum, cisce-upper-primary-biology-resource]
+exam_notes: >-
+  No board examination in Class 7. CISCE publishes a recommended theme-based curriculum (Biology taught as a separate
+  science from Class VI) with learning outcomes per class; it prescribes no textbooks, no paper pattern and no marks
+  weightage. Schools choose their own textbooks and set their own unit tests, term examinations and practical/activity
+  assessment (labelled diagrams, slide observation, simple experiments, charts and models, nature walks).
+  The Class VII curriculum has five themes (Tissue, Kingdom Classification, Plant Life, Human Body, Health and Hygiene);
+  SOYL grouped them into 10 teachable chapters in curriculum order. Only basic structure and functions are expected.
+units:
+  - { name: "Theme 1: Tissue", marks: null }
+  - { name: "Theme 2: Kingdom Classification", marks: null }
+  - { name: "Theme 3: Plant Life", marks: null }
+  - { name: "Theme 4: Human Body", marks: null }
+  - { name: "Theme 5: Health and Hygiene", marks: null }
+chapters:
+  - id: icse-7-biology-ch01
+    number: 1
+    title: "Plant Tissues"
+    unit: "Theme 1: Tissue"
+    topics:
+      - id: icse-7-biology-ch01-t01
+        title: "Tissue: a group of similar cells doing a common function; cell, tissue, organ, organ system, organism"
+        learning_outcomes:
+          - "Define a tissue"
+          - "Arrange cell, tissue, organ, organ system and organism in order of organisation"
+      - id: icse-7-biology-ch01-t02
+        title: "Classification of plant tissues: meristematic and permanent (simple and complex)"
+        learning_outcomes:
+          - "Draw a flow chart classifying plant tissues"
+      - id: icse-7-biology-ch01-t03
+        title: "Meristematic tissue: characteristics, simple structure, location and function"
+        learning_outcomes:
+          - "State two characteristics of meristematic tissue and where it is found"
+          - "Explain the differences between meristematic and permanent tissues with examples"
+      - id: icse-7-biology-ch01-t04
+        title: "Simple permanent tissues: parenchyma, collenchyma and sclerenchyma"
+        learning_outcomes:
+          - "Relate the structure, location and function of parenchyma, collenchyma and sclerenchyma"
+          - "Draw and label simple diagrams of the three simple permanent tissues"
+      - id: icse-7-biology-ch01-t05
+        title: "Complex permanent tissues: xylem and phloem (nature of cells and function)"
+        learning_outcomes:
+          - "State the functions of xylem and phloem"
+          - "Explain the coloured-water experiment with a white-flowered twig as evidence of water conduction"
+    removed_topics:
+      - "Elements of xylem and phloem are not to be mentioned"
+    literature_texts: []
+  - id: icse-7-biology-ch02
+    number: 2
+    title: "Animal Tissues"
+    unit: "Theme 1: Tissue"
+    topics:
+      - id: icse-7-biology-ch02-t01
+        title: "Epithelial tissue: simple location and function"
+        learning_outcomes:
+          - "State where epithelial tissue is found and its protective function"
+      - id: icse-7-biology-ch02-t02
+        title: "Connective tissue: areolar, adipose, bone, cartilage, blood, ligament and tendon (location and function)"
+        learning_outcomes:
+          - "Match each connective tissue to its location and function"
+          - "Distinguish a ligament from a tendon"
+      - id: icse-7-biology-ch02-t03
+        title: "Muscular tissue: striated (voluntary), unstriated (involuntary) and cardiac muscle"
+        learning_outcomes:
+          - "State the location and one function of each type of muscle"
+          - "Draw and label simple diagrams of the three types of muscle"
+      - id: icse-7-biology-ch02-t04
+        title: "Nerve tissue: parts of a neuron (cell body, dendron, axon)"
+        learning_outcomes:
+          - "Draw and label a neuron showing the cell body, dendrons and axon"
+          - "State the function of nerve tissue"
+    removed_topics:
+      - "Types of epithelial tissue are not to be mentioned"
+      - "Only basic structure and basic functions of animal tissues are studied"
+    literature_texts: []
+  - id: icse-7-biology-ch03
+    number: 3
+    title: "Classification of Living Organisms"
+    unit: "Theme 2: Kingdom Classification"
+    topics:
+      - id: icse-7-biology-ch03-t01
+        title: "Meaning, need and advantages of classification"
+        learning_outcomes:
+          - "Explain the purpose and advantages of classifying living organisms"
+          - "Group plants and animals seen on a nature walk using criteria of their own"
+      - id: icse-7-biology-ch03-t02
+        title: "Two-kingdom classification and its limitations; five-kingdom classification (1969)"
+        learning_outcomes:
+          - "Explain why the two-kingdom system was found inadequate for bacteria and fungi"
+          - "Name the five kingdoms and state the basis of the five-kingdom classification"
+      - id: icse-7-biology-ch03-t03
+        title: "From simple to complex organisms: an idea of the evolution of life"
+        learning_outcomes:
+          - "Infer from the five kingdoms that complex organisms evolved from simple organisms"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-biology-ch04
+    number: 4
+    title: "Monera, Protista and Fungi"
+    unit: "Theme 2: Kingdom Classification"
+    topics:
+      - id: icse-7-biology-ch04-t01
+        title: "Monera: bacteria and their shapes"
+        learning_outcomes:
+          - "Identify bacteria by shape (rod, spherical, spiral, comma) from diagrams"
+      - id: icse-7-biology-ch04-t02
+        title: "Useful and harmful bacteria in daily life"
+        learning_outcomes:
+          - "List uses of bacteria (curd, nitrogen fixation) and diseases or spoilage caused by bacteria"
+      - id: icse-7-biology-ch04-t03
+        title: "Protista: Amoeba - basic structure and life processes (nutrition, locomotion, respiration, excretion, binary and multiple fission)"
+        learning_outcomes:
+          - "Draw and label a diagram of Amoeba"
+          - "Describe how Amoeba feeds, moves and reproduces"
+      - id: icse-7-biology-ch04-t04
+        title: "Fungi: basic structure of bread mould; nutrition and respiration in mould"
+        learning_outcomes:
+          - "Describe the basic structure of a mould"
+          - "Explain how a mould obtains its food"
+      - id: icse-7-biology-ch04-t05
+        title: "Useful and harmful fungi"
+        learning_outcomes:
+          - "List useful fungi (yeast, mushrooms, penicillin source) and harmful fungi (food spoilage, ringworm, plant diseases)"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-biology-ch05
+    number: 5
+    title: "Kingdoms Plantae and Animalia"
+    unit: "Theme 2: Kingdom Classification"
+    topics:
+      - id: icse-7-biology-ch05-t01
+        title: "Kingdom Plantae: characteristics and examples"
+        learning_outcomes:
+          - "State the main characteristics of plants with examples"
+      - id: icse-7-biology-ch05-t02
+        title: "Kingdom Animalia: vertebrates and invertebrates"
+        learning_outcomes:
+          - "Distinguish vertebrates from invertebrates with examples"
+      - id: icse-7-biology-ch05-t03
+        title: "Porifera and Cnidaria (Coelenterata): characteristics and examples"
+        learning_outcomes:
+          - "Give two characteristics and two examples each of sponges and cnidarians"
+      - id: icse-7-biology-ch05-t04
+        title: "Platyhelminthes and Nematoda: characteristics and examples"
+        learning_outcomes:
+          - "Give two characteristics and two examples each of flatworms and roundworms"
+      - id: icse-7-biology-ch05-t05
+        title: "Annelida and Arthropoda: characteristics and examples"
+        learning_outcomes:
+          - "Give two characteristics and two examples each of annelids and arthropods"
+      - id: icse-7-biology-ch05-t06
+        title: "Mollusca and Echinodermata: characteristics and examples"
+        learning_outcomes:
+          - "Give two characteristics and two examples each of molluscs and echinoderms"
+          - "Classify a given animal (earthworm, starfish, snail, cockroach) into its phylum"
+    removed_topics:
+      - "Classification within Kingdom Plantae is not to be discussed"
+    literature_texts: []
+  - id: icse-7-biology-ch06
+    number: 6
+    title: "Photosynthesis"
+    unit: "Theme 3: Plant Life"
+    topics:
+      - id: icse-7-biology-ch06-t01
+        title: "Life processes common to all organisms; photosynthesis as food making in leaves"
+        learning_outcomes:
+          - "Define photosynthesis and write its word equation"
+      - id: icse-7-biology-ch06-t02
+        title: "Stomata and chloroplasts; leaf colour"
+        learning_outcomes:
+          - "Draw and label stomata and a chloroplast as seen under a microscope"
+          - "Explain why leaves of some plants (croton, Rhoeo) are red or yellow but still photosynthesise"
+      - id: icse-7-biology-ch06-t03
+        title: "Factors affecting photosynthesis: light, carbon dioxide, water and chlorophyll"
+        learning_outcomes:
+          - "List the factors needed for photosynthesis"
+          - "Describe an experiment to show that light is needed for photosynthesis"
+      - id: icse-7-biology-ch06-t04
+        title: "Experiment to show oxygen is released in photosynthesis (Hydrilla)"
+        learning_outcomes:
+          - "Describe the Hydrilla experiment and explain the gas bubbles seen"
+      - id: icse-7-biology-ch06-t05
+        title: "Significance of photosynthesis"
+        learning_outcomes:
+          - "Explain why photosynthesis is important for all living organisms"
+    removed_topics:
+      - "Chemical (symbol) equation of photosynthesis (word equation only)"
+    literature_texts: []
+  - id: icse-7-biology-ch07
+    number: 7
+    title: "Respiration in Plants"
+    unit: "Theme 3: Plant Life"
+    topics:
+      - id: icse-7-biology-ch07-t01
+        title: "Respiration as a process that releases energy from food; word equation"
+        learning_outcomes:
+          - "Write the word equation for respiration"
+          - "Explain that energy released in respiration is used for life-sustaining activities"
+      - id: icse-7-biology-ch07-t02
+        title: "Aerobic and anaerobic respiration: basic concept, word equations and examples (yeast)"
+        learning_outcomes:
+          - "Differentiate aerobic and anaerobic respiration with their word equations"
+          - "Give examples of organisms that respire anaerobically"
+      - id: icse-7-biology-ch07-t03
+        title: "Photosynthesis and respiration compared; balance of oxygen and carbon dioxide in the atmosphere"
+        learning_outcomes:
+          - "Tabulate the differences between photosynthesis and respiration"
+          - "Explain how the two processes help maintain the balance of carbon dioxide and oxygen"
+      - id: icse-7-biology-ch07-t04
+        title: "Need for growing more plants"
+        learning_outcomes:
+          - "Argue for planting more trees using what they know about photosynthesis and respiration"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-biology-ch08
+    number: 8
+    title: "Excretory System"
+    unit: "Theme 4: Human Body"
+    topics:
+      - id: icse-7-biology-ch08-t01
+        title: "Excretion: definition and need"
+        learning_outcomes:
+          - "Define excretion and explain why it is necessary"
+      - id: icse-7-biology-ch08-t02
+        title: "Excretory organs and their products: kidneys, skin (sweat glands) and lungs"
+        learning_outcomes:
+          - "Match each excretory organ to its excretory product"
+          - "Mark the kidneys, skin, sweat glands and lungs on an outline of the human body"
+      - id: icse-7-biology-ch08-t03
+        title: "Urinary system: kidneys, ureters, urinary bladder and urethra (location and function)"
+        learning_outcomes:
+          - "Draw and label the human urinary system"
+          - "State the function of each organ of the urinary system"
+      - id: icse-7-biology-ch08-t04
+        title: "Kidneys filter blood through millions of nephrons"
+        learning_outcomes:
+          - "Explain why the kidneys are vital for filtering blood"
+      - id: icse-7-biology-ch08-t05
+        title: "Common disorders of the urinary system: urinary tract infection, kidney stones"
+        learning_outcomes:
+          - "Name two common urinary disorders and suggest habits that help prevent them"
+    removed_topics:
+      - "Structure of the nephron and details of filtration are not to be discussed"
+    literature_texts: []
+  - id: icse-7-biology-ch09
+    number: 9
+    title: "Nervous System"
+    unit: "Theme 4: Human Body"
+    topics:
+      - id: icse-7-biology-ch09-t01
+        title: "Main parts of the nervous system: brain, spinal cord and nerves"
+        learning_outcomes:
+          - "Identify the brain, spinal cord and nerves on a diagram of the nervous system"
+      - id: icse-7-biology-ch09-t02
+        title: "Brain: cerebrum, cerebellum and medulla oblongata (location and function)"
+        learning_outcomes:
+          - "State the location and one function of the cerebrum, cerebellum and medulla oblongata"
+      - id: icse-7-biology-ch09-t03
+        title: "Spinal cord: location and function"
+        learning_outcomes:
+          - "Describe the location of the spinal cord and its role in carrying messages"
+      - id: icse-7-biology-ch09-t04
+        title: "Nerves and their general function; activities controlled by the nervous system"
+        learning_outcomes:
+          - "Explain that nerves connect all parts of the body to the brain and spinal cord"
+          - "List activities controlled by the nervous system"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-biology-ch10
+    number: 10
+    title: "Allergy"
+    unit: "Theme 5: Health and Hygiene"
+    topics:
+      - id: icse-7-biology-ch10-t01
+        title: "Allergy and allergens: common allergens (dust, pollen, mites, strong sunlight, certain foods)"
+        learning_outcomes:
+          - "Define allergy and allergen and differentiate between them"
+          - "Name common allergens in the home and outdoors"
+      - id: icse-7-biology-ch10-t02
+        title: "Entry routes of allergens (mouth, nose, skin) and symptoms of allergic reactions"
+        learning_outcomes:
+          - "Identify the route of entry of a given allergen"
+          - "List symptoms of allergic reactions such as sneezing, rashes and watery eyes"
+      - id: icse-7-biology-ch10-t03
+        title: "Seasonal and perennial allergies"
+        learning_outcomes:
+          - "Distinguish seasonal from perennial allergies with examples"
+      - id: icse-7-biology-ch10-t04
+        title: "Precautions and care for people prone to allergies"
+        learning_outcomes:
+          - "Suggest precautions for a person allergic to dust or pollen"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

@@ -1,0 +1,412 @@
+# ICSE Class 10 Technical Drawing Applications (Group III elective, code 65) - ICSE 2027 examination.
+# Source: platform/catalog/sources/cisce.md#icse-2027-technical-drawing-applications. Class X portion only.
+# Topic wording is our own summary of the official scope. Drawing-based subject: chapters teach the construction
+# methods and projection concepts; students practise the drawings with instruments on paper.
+subject_id: icse-10-technical-drawing-applications
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2027-technical-drawing-applications, icse-2027-regulations]
+exam_notes: >-
+  One written (drawing) paper of 3 hours, 100 marks, plus internal assessment 100 marks; the external paper and
+  internal assessment each carry 50% of the subject result (Group III). The paper has Section A (plane geometry,
+  area constructions, templates, scales, engineering curves, solids, oblique drawing) and Section B (sections of
+  solids, isometric drawing, sectional orthographic views); answers are drawn to scale with instruments.
+  Internal assessment (50 subject teacher + 50 External Examiner): a file of at least 15 drawing assignments covering
+  the whole Class X syllabus on half-imperial sheets, a cartridge-paper model using the development of a prism or
+  pyramid, and a thermocol model showing the true shape of a section of a truncated solid. These practical items are
+  not covered as chapters here. Class IX basics (lines, dimensioning, lettering, sheet layout, basic constructions,
+  projections of points, lines and planes, freehand sketching) are in icse-9-technical-drawing-applications and are
+  assumed. CISCE lists ten numbered topics, not textbook chapters; SOYL groups them into teachable chapters in syllabus
+  order. No topic-wise marks weightage is published.
+units:
+  - { name: "1. Geometrical constructions based on plane geometry", marks: null }
+  - { name: "2. Area constructions", marks: null }
+  - { name: "3. Templates", marks: null }
+  - { name: "4. Scales", marks: null }
+  - { name: "5. Engineering curves", marks: null }
+  - { name: "6. Solids", marks: null }
+  - { name: "7. Oblique drawing", marks: null }
+  - { name: "8. Sections of right solids", marks: null }
+  - { name: "9. Isometric drawing", marks: null }
+  - { name: "10. Sectional orthographic views", marks: null }
+chapters:
+  - id: icse-10-technical-drawing-applications-ch01
+    number: 1
+    title: "Division of Lines and Circles; Arcs through Given Points"
+    unit: "1. Geometrical constructions based on plane geometry"
+    topics:
+      - id: icse-10-technical-drawing-applications-ch01-t01
+        title: "Dividing a line into equal or proportional parts; triangle or quadrilateral from perimeter and ratio of sides"
+        learning_outcomes:
+          - "Divide a line into a given number of equal or proportional parts by the parallel-line method"
+          - "Construct a triangle or quadrilateral when its perimeter and the ratio of its sides are given"
+      - id: icse-10-technical-drawing-applications-ch01-t02
+        title: "Dividing a circle into 4, 6, 8 and 12 equal parts with set squares or compasses"
+        learning_outcomes:
+          - "Divide a circle into 4, 6, 8 or 12 equal parts using set squares or compasses"
+      - id: icse-10-technical-drawing-applications-ch01-t03
+        title: "Finding the length of an arc and the circumference of a circle by construction"
+        learning_outcomes:
+          - "Find graphically the approximate length of a given arc and the circumference of a circle"
+      - id: icse-10-technical-drawing-applications-ch01-t04
+        title: "Circle touching the arms of an angle; circle of given radius through two given points"
+        learning_outcomes:
+          - "Locate the centre of a circle touching both arms of an angle using the angle bisector"
+          - "Draw a circle of a given radius passing through two given points"
+      - id: icse-10-technical-drawing-applications-ch01-t05
+        title: "Arc through three non-collinear points; continuous arc through up to five non-collinear points"
+        learning_outcomes:
+          - "Draw an arc through three non-collinear points using perpendicular bisectors"
+          - "Draw a continuous curve of arcs through four or five given points"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-technical-drawing-applications-ch02
+    number: 2
+    title: "Regular Polygons and Inscribed and Circumscribed Circles"
+    unit: "1. Geometrical constructions based on plane geometry"
+    topics:
+      - id: icse-10-technical-drawing-applications-ch02-t01
+        title: "Regular polygons of 3 to 6 sides by special methods, side given"
+        learning_outcomes:
+          - "Construct a regular triangle, square, pentagon or hexagon of given side by a special method"
+      - id: icse-10-technical-drawing-applications-ch02-t02
+        title: "Regular octagon in a square (side of square = distance between parallel sides of the octagon)"
+        learning_outcomes:
+          - "Construct a regular octagon within a given square"
+      - id: icse-10-technical-drawing-applications-ch02-t03
+        title: "Several polygons (3 to 8 sides) on a common base, on the same or opposite sides"
+        learning_outcomes:
+          - "Construct polygons of 3 to 8 sides on a common base using the common-centre method"
+      - id: icse-10-technical-drawing-applications-ch02-t04
+        title: "Inscribing and circumscribing a circle on a regular polygon of 3 to 6 sides"
+        learning_outcomes:
+          - "Inscribe a circle in, and circumscribe a circle about, a given regular polygon"
+      - id: icse-10-technical-drawing-applications-ch02-t05
+        title: "Regular polygon (up to 6 sides) inscribed in or circumscribed about a circle of given radius"
+        learning_outcomes:
+          - "Construct a regular polygon inside or around a circle of a given radius"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-technical-drawing-applications-ch03
+    number: 3
+    title: "Tangential Circles and Tangents"
+    unit: "1. Geometrical constructions based on plane geometry"
+    topics:
+      - id: icse-10-technical-drawing-applications-ch03-t01
+        title: "Equal circles inside a regular polygon, each touching one or two sides and its neighbours"
+        learning_outcomes:
+          - "Construct within a regular polygon as many equal circles as it has sides, each touching the sides and adjacent circles as required"
+      - id: icse-10-technical-drawing-applications-ch03-t02
+        title: "Equal circles outside a regular polygon, each touching one side and two neighbouring circles"
+        learning_outcomes:
+          - "Construct equal circles around the outside of a regular polygon touching its sides and each other"
+      - id: icse-10-technical-drawing-applications-ch03-t03
+        title: "Three equal circles inside a regular hexagon; 3 to 6 equal circles inside a circle"
+        learning_outcomes:
+          - "Construct three equal circles in a hexagon touching its sides and each other"
+          - "Construct 3, 4, 5 or 6 equal circles inside a given circle, touching it internally and each other externally"
+      - id: icse-10-technical-drawing-applications-ch03-t04
+        title: "Tangent to a circle at a point on its circumference"
+        learning_outcomes:
+          - "Draw a tangent at a given point on a circle"
+      - id: icse-10-technical-drawing-applications-ch03-t05
+        title: "Direct and transverse common tangents to two equal or unequal circles; measuring their lengths"
+        learning_outcomes:
+          - "Construct direct and transverse common tangents to two circles and mark the points of contact"
+          - "Measure and record the lengths of the tangents"
+      - id: icse-10-technical-drawing-applications-ch03-t06
+        title: "Up to three circles touching each other and two converging lines (one radius given)"
+        learning_outcomes:
+          - "Construct a series of circles inscribed between two converging lines, each touching the next"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-technical-drawing-applications-ch04
+    number: 4
+    title: "Area Constructions"
+    unit: "2. Area constructions"
+    topics:
+      - id: icse-10-technical-drawing-applications-ch04-t01
+        title: "Area theorems: triangles and parallelograms on the same base and between the same parallels"
+        learning_outcomes:
+          - "Explain the area theorem used to reduce a polygon to a triangle of equal area"
+      - id: icse-10-technical-drawing-applications-ch04-t02
+        title: "Reducing a quadrilateral or regular pentagon/hexagon to a triangle of equal, half or double area"
+        learning_outcomes:
+          - "Construct a scalene, isosceles or right-angled triangle equal in area, half or twice the area of a given quadrilateral"
+          - "Construct a triangle equal in area to a given regular pentagon or hexagon"
+      - id: icse-10-technical-drawing-applications-ch04-t03
+        title: "Combining two or three triangles into one triangle of equal total area"
+        learning_outcomes:
+          - "Construct one triangle equal in area to the sum of two or three given triangles"
+      - id: icse-10-technical-drawing-applications-ch04-t04
+        title: "Triangle of given base or altitude equal in area to a given triangle; half or double area"
+        learning_outcomes:
+          - "Construct a triangle on a given base or with a given altitude equal in area to another triangle"
+          - "Construct a triangle with half or twice the area of a given triangle"
+      - id: icse-10-technical-drawing-applications-ch04-t05
+        title: "Parallelogram equal in area to a triangle"
+        learning_outcomes:
+          - "Construct a parallelogram equal in area to a given triangle"
+      - id: icse-10-technical-drawing-applications-ch04-t06
+        title: "Square equal in area to a parallelogram, triangle, rectangle or regular pentagon/hexagon (mean proportional)"
+        learning_outcomes:
+          - "Construct a square equal in area to a given rectangle using the mean proportional method"
+          - "Reduce a parallelogram, triangle or regular polygon to a rectangle and then to a square of equal area"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-technical-drawing-applications-ch05
+    number: 5
+    title: "Templates: Tangential Arcs"
+    unit: "3. Templates"
+    topics:
+      - id: icse-10-technical-drawing-applications-ch05-t01
+        title: "Arc of given radius touching a line and passing through a point"
+        learning_outcomes:
+          - "Locate the centre and draw an arc of given radius touching a line and passing through a given point"
+      - id: icse-10-technical-drawing-applications-ch05-t02
+        title: "Arc of given radius touching two intersecting lines"
+        learning_outcomes:
+          - "Draw a fillet arc of given radius joining two intersecting lines and mark the tangent points"
+      - id: icse-10-technical-drawing-applications-ch05-t03
+        title: "Arc of given radius touching an arc and a straight line"
+        learning_outcomes:
+          - "Construct an arc of given radius tangential to a given arc and a line"
+      - id: icse-10-technical-drawing-applications-ch05-t04
+        title: "Arc of given radius touching two arcs externally or internally"
+        learning_outcomes:
+          - "Find the centre of an arc touching two given arcs externally or internally"
+      - id: icse-10-technical-drawing-applications-ch05-t05
+        title: "Redrawing and dimensioning templates using tangential constructions"
+        learning_outcomes:
+          - "Redraw a given template to scale using the correct tangential constructions"
+          - "Dimension the finished template correctly"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-technical-drawing-applications-ch06
+    number: 6
+    title: "Scales"
+    unit: "4. Scales"
+    topics:
+      - id: icse-10-technical-drawing-applications-ch06-t01
+        title: "Representative fraction (R.F.) and length of scale from given data"
+        learning_outcomes:
+          - "Calculate the R.F. and the length of the scale from given data, showing working"
+      - id: icse-10-technical-drawing-applications-ch06-t02
+        title: "Plain scale: construction, marking and numbering"
+        learning_outcomes:
+          - "Construct a plain scale to read two units (e.g. km and hm) and mark a given distance on it"
+      - id: icse-10-technical-drawing-applications-ch06-t03
+        title: "Diagonal scale: principle, construction and reading three units"
+        learning_outcomes:
+          - "Explain the principle of the diagonal scale"
+          - "Construct a diagonal scale and mark a distance to the third unit"
+      - id: icse-10-technical-drawing-applications-ch06-t04
+        title: "Using a constructed scale for field drawings and other scaled drawings"
+        learning_outcomes:
+          - "Prepare a scaled field diagram from given measurements using a constructed scale"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-technical-drawing-applications-ch07
+    number: 7
+    title: "Engineering Curves: Ellipse and Parabola"
+    unit: "5. Engineering curves"
+    topics:
+      - id: icse-10-technical-drawing-applications-ch07-t01
+        title: "Uses of the ellipse and parabola in manhole covers, arches, dams and monuments"
+        learning_outcomes:
+          - "Identify engineering structures and objects that use elliptical and parabolic shapes"
+      - id: icse-10-technical-drawing-applications-ch07-t02
+        title: "Ellipse by the arcs of circles method (major and minor axes given)"
+        learning_outcomes:
+          - "Construct an ellipse by the arcs of circles method using the foci"
+      - id: icse-10-technical-drawing-applications-ch07-t03
+        title: "Ellipse by the concentric circles method and the oblong (rectangle) method"
+        learning_outcomes:
+          - "Construct an ellipse by the concentric circles method"
+          - "Construct an ellipse by the oblong method"
+      - id: icse-10-technical-drawing-applications-ch07-t04
+        title: "Parabola by the rectangle method and the tangent method (base and axis given)"
+        learning_outcomes:
+          - "Construct a parabola by the rectangle method"
+          - "Construct a parabola by the tangent method"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-technical-drawing-applications-ch08
+    number: 8
+    title: "Orthographic Projections of Solids"
+    unit: "6. Solids"
+    topics:
+      - id: icse-10-technical-drawing-applications-ch08-t01
+        title: "Right solids: prisms and pyramids with regular bases up to six sides, cylinder and cone; terms"
+        learning_outcomes:
+          - "Name the parts of right prisms, pyramids, cylinders and cones (axis, base, apex, slant edge, generator)"
+      - id: icse-10-technical-drawing-applications-ch08-t02
+        title: "Solids with axis perpendicular to one reference plane and parallel to the other"
+        learning_outcomes:
+          - "Draw the front view, top view and side view of a right solid with its axis perpendicular to the H.P. or V.P."
+      - id: icse-10-technical-drawing-applications-ch08-t03
+        title: "Prisms and cylinders with axis parallel to both reference planes"
+        learning_outcomes:
+          - "Draw the projections of a prism or cylinder lying with its axis parallel to both the H.P. and V.P."
+      - id: icse-10-technical-drawing-applications-ch08-t04
+        title: "Solids with axis inclined to one plane and parallel to the other"
+        learning_outcomes:
+          - "Draw the projections of a solid whose axis is inclined to one reference plane by the change-of-position method"
+      - id: icse-10-technical-drawing-applications-ch08-t05
+        title: "Auxiliary elevation and auxiliary plan of right solids"
+        learning_outcomes:
+          - "Project an auxiliary elevation of a solid with axis parallel to H.P. and inclined to V.P."
+          - "Project an auxiliary plan of a solid with axis inclined to H.P. and parallel to V.P."
+      - id: icse-10-technical-drawing-applications-ch08-t06
+        title: "Solving word problems on projections of solids"
+        learning_outcomes:
+          - "Interpret a word problem to fix the position of a solid and draw its required views"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-technical-drawing-applications-ch09
+    number: 9
+    title: "Development of Surfaces and True Length"
+    unit: "6. Solids"
+    topics:
+      - id: icse-10-technical-drawing-applications-ch09-t01
+        title: "Development: meaning, uses in sheet-metal work; parallel line and radial line methods"
+        learning_outcomes:
+          - "Distinguish the parallel line and radial line methods of development and the solids each suits"
+      - id: icse-10-technical-drawing-applications-ch09-t02
+        title: "Parallel development of lateral surfaces of prisms and cylinders"
+        learning_outcomes:
+          - "Draw the development of the lateral surface of a right prism or cylinder with axis perpendicular to H.P."
+      - id: icse-10-technical-drawing-applications-ch09-t03
+        title: "Radial development of lateral surfaces of pyramids and cones"
+        learning_outcomes:
+          - "Draw the development of the lateral surface of a right pyramid or cone, calculating the sector angle for a cone"
+      - id: icse-10-technical-drawing-applications-ch09-t04
+        title: "True length of a line inclined to both reference planes, e.g. the slant edge of a pyramid"
+        learning_outcomes:
+          - "Find the true length of a slant edge of a pyramid by rotating it parallel to a reference plane"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-technical-drawing-applications-ch10
+    number: 10
+    title: "Oblique Drawing"
+    unit: "7. Oblique drawing"
+    topics:
+      - id: icse-10-technical-drawing-applications-ch10-t01
+        title: "Oblique drawing: oblique axes, receding axis and its angle of inclination"
+        learning_outcomes:
+          - "Explain the difference between oblique and isometric pictorial views"
+          - "Set out oblique axes at a given angle for the receding axis"
+      - id: icse-10-technical-drawing-applications-ch10-t02
+        title: "Converting orthographic views of straight-edged objects into an oblique view"
+        learning_outcomes:
+          - "Draw the oblique view of an object from its given orthographic views"
+      - id: icse-10-technical-drawing-applications-ch10-t03
+        title: "Objects with circular features in the front or side view only"
+        learning_outcomes:
+          - "Place circular features in the true-shape face of an oblique drawing"
+    removed_topics:
+      - "Circular features in the top view in oblique drawing"
+      - "Circular parts in more than one view"
+    literature_texts: []
+  - id: icse-10-technical-drawing-applications-ch11
+    number: 11
+    title: "Sections of Right Solids and True Shape"
+    unit: "8. Sections of right solids"
+    topics:
+      - id: icse-10-technical-drawing-applications-ch11-t01
+        title: "Cutting planes and their traces (V.T. and H.T.); section planes parallel or inclined to H.P. or V.P."
+        learning_outcomes:
+          - "Identify the trace of a cutting plane given in a figure and the type of section it produces"
+      - id: icse-10-technical-drawing-applications-ch11-t02
+        title: "Sectional views of cut prisms, pyramids, cylinders and cones with axis perpendicular to H.P. and parallel to V.P."
+        learning_outcomes:
+          - "Draw the sectional top view and side view of a cut solid from the given V.T. of the cutting plane"
+      - id: icse-10-technical-drawing-applications-ch11-t03
+        title: "Sections of prisms and cylinders with axis parallel to both reference planes"
+        learning_outcomes:
+          - "Draw sectional views of a prism or cylinder lying parallel to both planes and cut by a given plane"
+      - id: icse-10-technical-drawing-applications-ch11-t04
+        title: "True shape of a section"
+        learning_outcomes:
+          - "Project the true shape of the cut surface of a truncated solid"
+      - id: icse-10-technical-drawing-applications-ch11-t05
+        title: "Auxiliary front and top views of cut solids: auxiliary plane parallel to the cutting plane or inclined to H.P."
+        learning_outcomes:
+          - "Draw an auxiliary view of a cut solid on an auxiliary plane parallel to the cutting plane"
+          - "Draw an auxiliary view on a plane inclined to H.P. at a given angle"
+    removed_topics:
+      - "Word problems on sections of solids (the cutting plane is always shown in the figure)"
+      - "More than one cutting plane on a solid in sectional views"
+    literature_texts: []
+  - id: icse-10-technical-drawing-applications-ch12
+    number: 12
+    title: "Development of Cut Solids and Pipe Joints"
+    unit: "8. Sections of right solids"
+    topics:
+      - id: icse-10-technical-drawing-applications-ch12-t01
+        title: "Development of lateral surfaces of cut or truncated prisms and cylinders (parallel method)"
+        learning_outcomes:
+          - "Draw the development of a truncated prism or cylinder from its sectioned views"
+      - id: icse-10-technical-drawing-applications-ch12-t02
+        title: "Development of lateral surfaces of cut or truncated pyramids and cones (radial method)"
+        learning_outcomes:
+          - "Draw the development of a truncated pyramid or cone, transferring true lengths of cut edges"
+      - id: icse-10-technical-drawing-applications-ch12-t03
+        title: "Development of cylindrical pipe joints: elbows, exhaust pipes, chimneys and ventilators"
+        learning_outcomes:
+          - "Develop the pieces of a two-piece or multi-piece cylindrical elbow"
+          - "Apply development to sheet-metal objects such as chimneys and ventilators"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-technical-drawing-applications-ch13
+    number: 13
+    title: "Isometric Drawing and Isometric Projection"
+    unit: "9. Isometric drawing"
+    topics:
+      - id: icse-10-technical-drawing-applications-ch13-t01
+        title: "Copying a given isometric figure; isometric axes and lines"
+        learning_outcomes:
+          - "Redraw a given isometric figure accurately using isometric axes"
+      - id: icse-10-technical-drawing-applications-ch13-t02
+        title: "Isometric view from given orthographic views; isometric circles and arcs"
+        learning_outcomes:
+          - "Visualise an object from its orthographic views and draw its isometric view"
+          - "Draw isometric circles and arcs by the four-centre method"
+      - id: icse-10-technical-drawing-applications-ch13-t03
+        title: "Isometric scale and isometric projection"
+        learning_outcomes:
+          - "Construct an isometric scale and explain why isometric lengths are about 0.816 of true lengths"
+          - "Draw the isometric projection of an object using the isometric scale"
+      - id: icse-10-technical-drawing-applications-ch13-t04
+        title: "Isometric drawing to scale (full size, 2:1 or 1:2)"
+        learning_outcomes:
+          - "Draw an isometric view at full size, enlarged 2:1 or reduced 1:2"
+    removed_topics:
+      - "Scales other than full size, 2:1 or 1:2 for isometric drawing"
+    literature_texts: []
+  - id: icse-10-technical-drawing-applications-ch14
+    number: 14
+    title: "Sectional Orthographic Views"
+    unit: "10. Sectional orthographic views"
+    topics:
+      - id: icse-10-technical-drawing-applications-ch14-t01
+        title: "Full and half sections; cutting plane line, section lines (hatching) and naming views"
+        learning_outcomes:
+          - "Explain when a full section and when a half section is used"
+          - "Draw a cutting plane line and hatch a cut surface correctly"
+      - id: icse-10-technical-drawing-applications-ch14-t02
+        title: "Sectional orthographic views from a pictorial (isometric or oblique) view, first and third angle"
+        learning_outcomes:
+          - "Draw full or half sectional front views and other views of an object from its pictorial view in first or third angle projection"
+      - id: icse-10-technical-drawing-applications-ch14-t03
+        title: "Converting given orthographic views into sectional views and adding the missing view"
+        learning_outcomes:
+          - "Convert a given view into a full or half sectional view along a marked cutting plane"
+          - "Add the missing view of an object from two given views"
+      - id: icse-10-technical-drawing-applications-ch14-t04
+        title: "Dimensioning sectional orthographic views"
+        learning_outcomes:
+          - "Dimension sectional views correctly and show the cutting plane and view names"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

@@ -1,0 +1,356 @@
+# ICSE Class 10 Computer Applications (86) - ICSE 2027 examination.
+# Source: platform/catalog/sources/cisce.md#icse-2027-computer-applications (CLASS X section only). Topic wording is our own summary of the official scope.
+subject_id: icse-10-computer-applications
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2027-computer-applications, icse-2027-regulations, cisce-circular-specimen-papers-2027]
+exam_notes: >-
+  Group III subject, weighted 50% external examination and 50% internal assessment (Regulations).
+  One written theory paper of 2 hours, 100 marks, plus internal assessment of 100 marks: at least 20 programming
+  assignments in Java during the year, marked 50 by the subject teacher and 50 by an external examiner on class design,
+  variable description, coding and documentation, and execution/output. Programs are written in Java using BlueJ or any
+  IDE with a JDK. No 2027 specimen paper was released for Class X Computer Applications (the October 2026 circular lists
+  it only for Class IX), so the 2026 paper format continues: a compulsory short-answer and output-based Section A and a
+  Section B of programs with a choice of questions.
+  The Class X syllabus begins with a revision of the Class IX topics, which are examined in the Class X paper; SOYL groups
+  that revision into five chapters, then follows the seven new Class X sections in order (13 chapters in all).
+  No unit-wise marks weightage is published.
+units:
+  - { name: "1. Revision of Class IX Syllabus", marks: null }
+  - { name: "2. Class as the Basis of all Computation", marks: null }
+  - { name: "3. User-defined Methods", marks: null }
+  - { name: "4. Constructors", marks: null }
+  - { name: "5. Library Classes", marks: null }
+  - { name: "6. Encapsulation", marks: null }
+  - { name: "7. Arrays", marks: null }
+  - { name: "8. String Handling", marks: null }
+chapters:
+  - id: icse-10-computer-applications-ch01
+    number: 1
+    title: "Revision: Object-Oriented Programming, Java, Objects and Classes"
+    unit: "1. Revision of Class IX Syllabus"
+    topics:
+      - id: icse-10-computer-applications-ch01-t01
+        title: "Procedure-oriented versus object-oriented programming"
+        learning_outcomes:
+          - "Compare procedure-oriented and object-oriented programming with examples"
+      - id: icse-10-computer-applications-ch01-t02
+        title: "Principles of OOP: data abstraction, encapsulation, inheritance and polymorphism"
+        learning_outcomes:
+          - "Define each OOP principle and illustrate it with a real-life example"
+      - id: icse-10-computer-applications-ch01-t03
+        title: "Introduction to Java: applets and applications; source code, bytecode, object code and the JVM; features of Java"
+        learning_outcomes:
+          - "Describe the steps of Java compilation from source code to bytecode run on the JVM"
+          - "Explain why Java is called platform independent"
+      - id: icse-10-computer-applications-ch01-t04
+        title: "Objects and classes: state and behaviour, class as blueprint and object factory, message passing"
+        learning_outcomes:
+          - "Identify the attributes and methods of a real-world entity modelled as an object"
+          - "Explain a class as a user-defined data type and an object as its instance"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-computer-applications-ch02
+    number: 2
+    title: "Revision: Values, Data Types and Operators"
+    unit: "1. Revision of Class IX Syllabus"
+    topics:
+      - id: icse-10-computer-applications-ch02-t01
+        title: "Character set, ASCII and Unicode; escape sequences"
+        learning_outcomes:
+          - "Predict the output of print statements containing escape sequences such as \\n, \\t, \\\\ and \\\""
+          - "State the ASCII codes of common characters such as 'A', 'a' and '0'"
+      - id: icse-10-computer-applications-ch02-t02
+        title: "Tokens: keywords, identifiers, literals, punctuators and operators; constants and variables"
+        learning_outcomes:
+          - "Classify given tokens and identify valid and invalid identifiers"
+      - id: icse-10-computer-applications-ch02-t03
+        title: "Primitive and non-primitive data types; sizes in bits and bytes; implicit and explicit type conversion"
+        learning_outcomes:
+          - "State the size and default value of each primitive type"
+          - "Predict the data type and value of a mixed expression and of an explicit cast"
+      - id: icse-10-computer-applications-ch02-t04
+        title: "Operators: unary, binary and ternary; arithmetic, relational, logical, assignment, increment/decrement and shorthand"
+        learning_outcomes:
+          - "Evaluate expressions with prefix and postfix increment and decrement operators"
+          - "Rewrite an if-else statement using the ternary operator"
+      - id: icse-10-computer-applications-ch02-t05
+        title: "Precedence and associativity; counters and accumulators; the new and dot operators; print and println"
+        learning_outcomes:
+          - "Evaluate a compound expression using operator precedence and associativity"
+          - "Distinguish System.out.print from System.out.println in output"
+    removed_topics:
+      - "Bitwise and shift operators"
+    literature_texts: []
+  - id: icse-10-computer-applications-ch03
+    number: 3
+    title: "Revision: Input in Java and Mathematical Library Methods"
+    unit: "1. Revision of Class IX Syllabus"
+    topics:
+      - id: icse-10-computer-applications-ch03-t01
+        title: "Ways of input: initialisation, parameters and the Scanner class (nextInt, nextDouble, next, nextLine and related methods)"
+        learning_outcomes:
+          - "Write a program that accepts values of different types with Scanner methods"
+          - "Read a single character with next().charAt(0)"
+      - id: icse-10-computer-applications-ch03-t02
+        title: "Packages; types of errors (syntax, runtime, logical); single-line and multi-line comments"
+        learning_outcomes:
+          - "Classify a given error as syntax, runtime or logical"
+      - id: icse-10-computer-applications-ch03-t03
+        title: "Math class methods: pow, sqrt, cbrt, ceil, floor, round, abs, max, min and random"
+        learning_outcomes:
+          - "Predict the value and return type of Math method calls"
+          - "Write Java expressions for given mathematical formulae using Math methods"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-computer-applications-ch04
+    number: 4
+    title: "Revision: Conditional Constructs"
+    unit: "1. Revision of Class IX Syllabus"
+    topics:
+      - id: icse-10-computer-applications-ch04-t01
+        title: "if, if-else, if-else-if ladder and nested if"
+        learning_outcomes:
+          - "Write programs on slab-based calculations such as discounts, bills or tax using an if-else-if ladder"
+      - id: icse-10-computer-applications-ch04-t02
+        title: "switch-case, default and break; fall-through"
+        learning_outcomes:
+          - "Predict the output of a switch statement with and without break"
+          - "Convert between switch-case and if-else-if constructs where possible"
+      - id: icse-10-computer-applications-ch04-t03
+        title: "Menu-driven programs; terminating with System.exit(0)"
+        learning_outcomes:
+          - "Write a menu-driven program using switch-case"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-computer-applications-ch05
+    number: 5
+    title: "Revision: Iterative Constructs and Nested Loops"
+    unit: "1. Revision of Class IX Syllabus"
+    topics:
+      - id: icse-10-computer-applications-ch05-t01
+        title: "Entry-controlled (for, while) and exit-controlled (do-while) loops; inter-conversion"
+        learning_outcomes:
+          - "Rewrite a given for loop as a while loop and as a do-while loop"
+          - "Count the number of times a loop body executes"
+      - id: icse-10-computer-applications-ch05-t02
+        title: "Variations: finite and infinite loops, delay loops, multiple counter variables; break and continue"
+        learning_outcomes:
+          - "Predict the output of loops containing break and continue"
+      - id: icse-10-computer-applications-ch05-t03
+        title: "Number programs with loops: prime, perfect, Armstrong, palindrome, Fibonacci, HCF and LCM"
+        learning_outcomes:
+          - "Write loop-based programs to test number properties and extract digits"
+      - id: icse-10-computer-applications-ch05-t04
+        title: "Nested for loops: rectangular and right-angled triangular patterns; series in one variable"
+        learning_outcomes:
+          - "Write nested for loops to print number and symbol patterns"
+          - "Write programs to find the sum of a series involving one variable"
+    removed_topics:
+      - "Nested while and nested do-while loops"
+      - "Patterns other than rectangular and right-angled triangular"
+    literature_texts: []
+  - id: icse-10-computer-applications-ch06
+    number: 6
+    title: "Class as the Basis of all Computation"
+    unit: "2. Class as the Basis of all Computation"
+    topics:
+      - id: icse-10-computer-applications-ch06-t01
+        title: "Objects encapsulate state and behaviour: member variables (attributes) and member methods"
+        learning_outcomes:
+          - "Identify instance variables and member methods in a given class definition"
+      - id: icse-10-computer-applications-ch06-t02
+        title: "Class as an abstraction for a set of objects and as an object factory; objects as instances"
+        learning_outcomes:
+          - "Write a class for a real-life entity and create objects of it with the new operator"
+      - id: icse-10-computer-applications-ch06-t03
+        title: "Primitive and composite data types: variable declarations and differences"
+        learning_outcomes:
+          - "Distinguish primitive data types from composite (class) types with examples"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-computer-applications-ch07
+    number: 7
+    title: "User-defined Methods"
+    unit: "3. User-defined Methods"
+    topics:
+      - id: icse-10-computer-applications-ch07-t01
+        title: "Need for methods; method header, prototype and signature; defining and calling a method"
+        learning_outcomes:
+          - "Write the prototype of a method from its description"
+          - "Explain how methods support modular programming"
+      - id: icse-10-computer-applications-ch07-t02
+        title: "Actual and formal parameters; return statement and returning values"
+        learning_outcomes:
+          - "Distinguish actual from formal parameters in a program"
+          - "Write methods that return values of different types"
+      - id: icse-10-computer-applications-ch07-t03
+        title: "Pass (call) by value with programs; pass by reference (definition and example only)"
+        learning_outcomes:
+          - "Predict the output of a program in which a method changes a primitive parameter"
+          - "Define pass by reference with one example"
+      - id: icse-10-computer-applications-ch07-t04
+        title: "Static and non-static methods; invoking methods through objects"
+        learning_outcomes:
+          - "Distinguish static and non-static methods and call each correctly"
+          - "Write a class with data members and several member methods invoked through an object"
+      - id: icse-10-computer-applications-ch07-t05
+        title: "Pure and impure methods"
+        learning_outcomes:
+          - "Classify a given method as pure or impure with a reason"
+      - id: icse-10-computer-applications-ch07-t06
+        title: "Method overloading (polymorphism)"
+        learning_outcomes:
+          - "Write overloaded methods that differ in number or type of parameters"
+          - "Identify which overloaded version is called for a given argument list"
+    removed_topics:
+      - "Programs using pass by reference (definition with an example only)"
+    literature_texts: []
+  - id: icse-10-computer-applications-ch08
+    number: 8
+    title: "Constructors"
+    unit: "4. Constructors"
+    topics:
+      - id: icse-10-computer-applications-ch08-t01
+        title: "Definition, characteristics and use of a constructor"
+        learning_outcomes:
+          - "State the characteristics of a constructor and when it is invoked"
+      - id: icse-10-computer-applications-ch08-t02
+        title: "Default and parameterised constructors"
+        learning_outcomes:
+          - "Write a class with a default and a parameterised constructor to initialise data members"
+      - id: icse-10-computer-applications-ch08-t03
+        title: "Constructor overloading"
+        learning_outcomes:
+          - "Write overloaded constructors and predict which is called when an object is created"
+      - id: icse-10-computer-applications-ch08-t04
+        title: "Differences between a constructor and a method"
+        learning_outcomes:
+          - "Tabulate the differences between constructors and methods"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-computer-applications-ch09
+    number: 9
+    title: "Library Classes: Wrapper Classes"
+    unit: "5. Library Classes"
+    topics:
+      - id: icse-10-computer-applications-ch09-t01
+        title: "Class as a composite type; primitive versus composite types; wrapper classes for each primitive type"
+        learning_outcomes:
+          - "Name the wrapper class for each primitive data type"
+          - "Explain how classes allow user-defined types in programs"
+      - id: icse-10-computer-applications-ch09-t02
+        title: "Autoboxing and unboxing"
+        learning_outcomes:
+          - "Define autoboxing and unboxing and identify them in code"
+      - id: icse-10-computer-applications-ch09-t03
+        title: "Conversion methods: parseInt, parseLong, parseFloat and parseDouble"
+        learning_outcomes:
+          - "Convert numeric strings to numbers with the parse methods and predict the results"
+      - id: icse-10-computer-applications-ch09-t04
+        title: "Character methods: isDigit, isLetter, isLetterOrDigit, isLowerCase, isUpperCase, isWhitespace, toLowerCase and toUpperCase"
+        learning_outcomes:
+          - "Predict the output of Character method calls"
+          - "Write a program that classifies characters as upper case, lower case, digit or other"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-computer-applications-ch10
+    number: 10
+    title: "Encapsulation"
+    unit: "6. Encapsulation"
+    topics:
+      - id: icse-10-computer-applications-ch10-t01
+        title: "Access specifiers private, protected and public; visibility rules"
+        learning_outcomes:
+          - "State where a member with each access specifier can be accessed"
+          - "Explain how private data with public methods achieves encapsulation"
+      - id: icse-10-computer-applications-ch10-t02
+        title: "Scope of variables: class (static) variables, instance variables, argument variables and local variables"
+        learning_outcomes:
+          - "Identify the type and scope of each variable in a given program"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-computer-applications-ch11
+    number: 11
+    title: "Single-dimensional Arrays: Searching and Sorting"
+    unit: "7. Arrays"
+    topics:
+      - id: icse-10-computer-applications-ch11-t01
+        title: "Arrays: definition, types, declaration, initialisation, input and access; length; array as a composite type"
+        learning_outcomes:
+          - "Declare, initialise and fill a single-dimensional array from user input"
+          - "Use the length property to process all elements of an array"
+      - id: icse-10-computer-applications-ch11-t02
+        title: "Linear search"
+        learning_outcomes:
+          - "Write a program to search an array for a value using linear search"
+      - id: icse-10-computer-applications-ch11-t03
+        title: "Binary search"
+        learning_outcomes:
+          - "Write a binary search program on a sorted array"
+          - "Compare linear and binary search"
+      - id: icse-10-computer-applications-ch11-t04
+        title: "Selection sort"
+        learning_outcomes:
+          - "Write a program to sort an array in ascending or descending order using selection sort"
+          - "Show the array after each pass of selection sort"
+      - id: icse-10-computer-applications-ch11-t05
+        title: "Bubble sort"
+        learning_outcomes:
+          - "Write a program to sort an array using bubble sort"
+          - "Show the array after each pass of bubble sort"
+    removed_topics:
+      - "Sorting and searching in double-dimensional arrays (single-dimensional arrays only)"
+    literature_texts: []
+  - id: icse-10-computer-applications-ch12
+    number: 12
+    title: "Double-dimensional Arrays"
+    unit: "7. Arrays"
+    topics:
+      - id: icse-10-computer-applications-ch12-t01
+        title: "Declaration, initialisation and input of a double-dimensional array; display in matrix format"
+        learning_outcomes:
+          - "Accept the elements of a 2D array and print them in rows and columns"
+      - id: icse-10-computer-applications-ch12-t02
+        title: "Sum of elements of each row and each column"
+        learning_outcomes:
+          - "Write a program to find the sum of each row and each column of a 2D array"
+      - id: icse-10-computer-applications-ch12-t03
+        title: "Sum of left and right diagonal elements of a square matrix"
+        learning_outcomes:
+          - "Write a program to find the sums of the left and right diagonals"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-computer-applications-ch13
+    number: 13
+    title: "String Handling"
+    unit: "8. String Handling"
+    topics:
+      - id: icse-10-computer-applications-ch13-t01
+        title: "The String class; length, charAt, indexOf, lastIndexOf, trim, toLowerCase, toUpperCase and concat"
+        learning_outcomes:
+          - "Predict the output of expressions using these String methods"
+          - "Traverse a string character by character using length and charAt"
+      - id: icse-10-computer-applications-ch13-t02
+        title: "Comparison methods: equals, equalsIgnoreCase, compareTo, compareToIgnoreCase, startsWith and endsWith"
+        learning_outcomes:
+          - "Predict the value returned by compareTo for two given strings"
+          - "Distinguish equals from compareTo and from the == operator"
+      - id: icse-10-computer-applications-ch13-t03
+        title: "Extraction and conversion: substring (both forms), replace and valueOf"
+        learning_outcomes:
+          - "Extract parts of a string with substring and predict the result"
+          - "Convert values of other types to strings with valueOf"
+      - id: icse-10-computer-applications-ch13-t04
+        title: "Programs that extract and modify characters: palindrome strings, pig Latin, counting and changing case"
+        learning_outcomes:
+          - "Write programs that build a new string by processing each character of a given string"
+      - id: icse-10-computer-applications-ch13-t05
+        title: "String arrays: alphabetical sorting by bubble and selection sort; linear search for a string"
+        learning_outcomes:
+          - "Sort an array of names alphabetically using compareTo with bubble or selection sort"
+          - "Search an array of strings for a given word using linear search"
+    removed_topics: []
+    literature_texts: []
+removed_topics:
+  - "Computing and Ethics (Class IX section 10) is not in the Class X revision list"

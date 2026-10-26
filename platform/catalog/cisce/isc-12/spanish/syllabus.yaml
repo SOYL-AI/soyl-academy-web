@@ -1,0 +1,186 @@
+# ISC Class 12 Spanish (Modern Foreign Language elective, code 836) - ISC 2027 examination.
+# CISCE Appendix I lists no prescribed textbooks for Spanish, so Part 4 of the paper is two translation passages.
+subject_id: isc-12-spanish
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-mfl, isc-2027-prescribed-books, isc-2027-regulations]
+exam_notes: >-
+  Paper I Theory: one paper of 3 hours, 80 marks, in four parts: (1) a short composition in Spanish from a choice of subjects;
+  (2) a Spanish passage for unprepared translation into English; (3) an unseen Spanish passage with questions - candidates may be
+  asked to summarise part of it in Spanish, explain individual words, phrases or sentences, and answer comprehension questions
+  (not every question type is set every year); (4) questions on prescribed textbooks - but CISCE Appendix I (ISC 2027) prescribes
+  no textbooks for Spanish, so under the syllabus rule for languages without texts Part 4 consists of (a) one passage for translation
+  from Spanish into English and (b) one passage for translation from English into Spanish. The syllabus asks schools to consult CISCE
+  in time about prescribed textbooks; if CISCE prescribes any, a literature chapter will be added. CISCE does not publish marks per
+  part. Paper II Project Work (20 marks): Listening (5) and Speaking (5) assessed by the subject teacher - an unseen passage or poem
+  read aloud twice with objective questions, and a three-minute individual presentation followed by discussion; Writing (10) assessed
+  by a Visiting Examiner - one assignment of about 250 words on any aspect of the language studied in Class XII. CISCE sets no question
+  paper for project work. CISCE has not bifurcated this syllabus: the ISC 2027 paper is set on the entire Classes XI-XII syllabus,
+  so nothing is removed here. The syllabus does not list grammar items; the two grammar chapters below cover the structures needed for
+  composition and two-way translation - this breakdown is SOYL's, not CISCE's. CISCE lists topics not chapters; SOYL grouped them into
+  teachable chapters in syllabus order.
+units:
+  - { name: "1. Composition", marks: null }
+  - { name: "2. Unprepared translation into English", marks: null }
+  - { name: "3. Unseen passage", marks: null }
+  - { name: "4. Translation (no textbooks prescribed)", marks: null }
+chapters:
+  - id: isc-12-spanish-ch01
+    number: 1
+    title: "Composition (Redacción)"
+    unit: "1. Composition"
+    topics:
+      - id: isc-12-spanish-ch01-t01
+        title: "Planning a composition: esquema, introducción, desarrollo, conclusión and conectores"
+        learning_outcomes:
+          - "Draw up an outline and write a composition in Spanish with an introduction, developed paragraphs and a conclusion"
+          - "Link ideas with conectores such as en primer lugar, además, sin embargo, por lo tanto, en conclusión"
+      - id: isc-12-spanish-ch01-t02
+        title: "Descriptive and narrative compositions"
+        learning_outcomes:
+          - "Describe a person, place or festival with adjectives that agree in gender and number"
+          - "Narrate an experience using the pretérito indefinido for events and the imperfecto for background"
+      - id: isc-12-spanish-ch01-t03
+        title: "Opinion and argument: expresar la opinión, a favor y en contra"
+        learning_outcomes:
+          - "Present arguments for and against a statement and reach a reasoned conclusion"
+          - "Express opinions with creo que + indicativo and no creo que + subjuntivo"
+      - id: isc-12-spanish-ch01-t04
+        title: "Subjects from contemporary life: environment, technology, education, festivals, travel, youth"
+        learning_outcomes:
+          - "Use topic vocabulary accurately to write on contemporary issues, including examples from Indian life"
+      - id: isc-12-spanish-ch01-t05
+        title: "Accuracy: agreement, accents (tildes), punctuation (¿ ¡) and revising one's draft"
+        learning_outcomes:
+          - "Find and correct errors of agreement, accentuation and opening question and exclamation marks in one's own writing"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-spanish-ch02
+    number: 2
+    title: "Gramática (1): tiempos y modos"
+    unit: null
+    topics:
+      - id: isc-12-spanish-ch02-t01
+        title: "Pretérito indefinido and pretérito imperfecto: forms and contrast"
+        learning_outcomes:
+          - "Form the indefinido of regular and common irregular verbs (ser, ir, tener, hacer, estar, decir)"
+          - "Choose between the indefinido and the imperfecto in a past narrative and justify the choice"
+      - id: isc-12-spanish-ch02-t02
+        title: "Pretérito perfecto and pluscuamperfecto; futuro and condicional"
+        learning_outcomes:
+          - "Use the compound past tenses to relate actions in time"
+          - "Form the futuro and condicional, including irregular stems (tendr-, har-, dir-, podr-)"
+      - id: isc-12-spanish-ch02-t03
+        title: "Presente de subjuntivo: deseo, duda, emoción, influencia and cuando + subjuntivo"
+        learning_outcomes:
+          - "Form the present subjunctive and use it after expressions of wish, doubt, emotion and influence"
+          - "Use cuando, en cuanto and antes de que with the subjunctive for future actions"
+      - id: isc-12-spanish-ch02-t04
+        title: "Imperfecto de subjuntivo and oraciones condicionales con si"
+        learning_outcomes:
+          - "Form the imperfect subjunctive and use it in unlikely conditions (si tuviera tiempo, viajaría)"
+      - id: isc-12-spanish-ch02-t05
+        title: "Imperativo afirmativo y negativo, with object pronouns attached or placed before"
+        learning_outcomes:
+          - "Give affirmative and negative commands in the tú, usted and ustedes forms, placing pronouns correctly"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-spanish-ch03
+    number: 3
+    title: "Gramática (2): la oración"
+    unit: null
+    topics:
+      - id: isc-12-spanish-ch03-t01
+        title: "Ser y estar; hay"
+        learning_outcomes:
+          - "Choose between ser, estar and hay and explain the change in meaning with adjectives such as listo, aburrido"
+      - id: isc-12-spanish-ch03-t02
+        title: "Por y para; common prepositions with verbs"
+        learning_outcomes:
+          - "Use por and para correctly for cause, purpose, means, duration, destination and deadline"
+      - id: isc-12-spanish-ch03-t03
+        title: "Pronombres de objeto directo e indirecto; combined pronouns (se lo, me la)"
+        learning_outcomes:
+          - "Replace direct and indirect objects with pronouns, changing le/les to se before lo/la/los/las"
+      - id: isc-12-spanish-ch03-t04
+        title: "Pronombres relativos: que, quien, el que, el cual, lo que, cuyo"
+        learning_outcomes:
+          - "Join sentences with the correct relative pronoun, including after a preposition"
+      - id: isc-12-spanish-ch03-t05
+        title: "Voz pasiva (ser + participio), pasiva refleja con se, and estilo indirecto"
+        learning_outcomes:
+          - "Transform active sentences into the passive and the pasiva refleja"
+          - "Convert direct speech into reported speech, changing tenses and pronouns"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-spanish-ch04
+    number: 4
+    title: "Translation from Spanish into English"
+    unit: "2. Unprepared translation into English"
+    topics:
+      - id: isc-12-spanish-ch04-t01
+        title: "Reading the passage for meaning before translating"
+        learning_outcomes:
+          - "State the gist of a Spanish passage and mark difficult words and structures before translating"
+      - id: isc-12-spanish-ch04-t02
+        title: "Rendering Spanish tenses, the subjunctive and reflexive constructions in natural English"
+        learning_outcomes:
+          - "Choose the English tense or modal that conveys a Spanish tense or subjunctive in context"
+          - "Translate se constructions (se dice, se venden) by natural English equivalents"
+      - id: isc-12-spanish-ch04-t03
+        title: "Idioms and false friends (embarazada, actual, librería, éxito)"
+        learning_outcomes:
+          - "Translate idioms by their natural English equivalent and avoid false friends"
+      - id: isc-12-spanish-ch04-t04
+        title: "The second Spanish-to-English passage (Part 4a) and checking a complete version"
+        learning_outcomes:
+          - "Translate a longer passage completely and fluently, then check it sentence by sentence against the original"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-spanish-ch05
+    number: 5
+    title: "Unseen passage (Comprensión de lectura y resumen)"
+    unit: "3. Unseen passage"
+    topics:
+      - id: isc-12-spanish-ch05-t01
+        title: "Reading an unseen passage: main idea, key details and the writer's view"
+        learning_outcomes:
+          - "State the main idea of an unseen Spanish passage and locate supporting details"
+      - id: isc-12-spanish-ch05-t02
+        title: "Explaining words, phrases and sentences in context"
+        learning_outcomes:
+          - "Explain a word, phrase or sentence from the passage in simple Spanish using a synonym or paraphrase"
+      - id: isc-12-spanish-ch05-t03
+        title: "Answering comprehension questions in Spanish in one's own words"
+        learning_outcomes:
+          - "Answer questions in complete Spanish sentences, changing pronouns and verb forms from the passage where needed"
+      - id: isc-12-spanish-ch05-t04
+        title: "Writing a resumen of part of the passage"
+        learning_outcomes:
+          - "Summarise a section of the passage in Spanish within a word limit, keeping only the essential points"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-spanish-ch06
+    number: 6
+    title: "Translation from English into Spanish"
+    unit: "4. Translation (no textbooks prescribed)"
+    topics:
+      - id: isc-12-spanish-ch06-t01
+        title: "Building accurate sentences: articles, gender, agreement and word order"
+        learning_outcomes:
+          - "Translate English sentences into Spanish with correct articles, gender and agreement"
+      - id: isc-12-spanish-ch06-t02
+        title: "Choosing tense and mood: past tenses, subjunctive, conditional"
+        learning_outcomes:
+          - "Select the Spanish tense and mood that the English sentence requires, including the subjunctive after wishes and conditions"
+      - id: isc-12-spanish-ch06-t03
+        title: "Problem structures: ser/estar, por/para, gustar-type verbs, object pronouns"
+        learning_outcomes:
+          - "Translate sentences with 'like', 'to be' and 'for' using the correct Spanish construction"
+      - id: isc-12-spanish-ch06-t04
+        title: "Translating a continuous passage and checking accents and spelling"
+        learning_outcomes:
+          - "Translate a short English passage into natural Spanish and proof-read it for accents, agreement and tense"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []
