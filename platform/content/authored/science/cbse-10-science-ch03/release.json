@@ -3330,6 +3330,10 @@
       ],
       "expected_time_sec": 240,
       "assets": [],
+      "word_limit": {
+        "min": 50,
+        "max": 80
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -3384,6 +3388,10 @@
       ],
       "expected_time_sec": 570,
       "assets": [],
+      "word_limit": {
+        "min": 80,
+        "max": 120
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -3645,6 +3653,10 @@
       ],
       "expected_time_sec": 240,
       "assets": [],
+      "word_limit": {
+        "min": 50,
+        "max": 80
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -4105,6 +4117,10 @@
       ],
       "expected_time_sec": 150,
       "assets": [],
+      "word_limit": {
+        "min": 30,
+        "max": 50
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -4151,6 +4167,10 @@
       ],
       "expected_time_sec": 240,
       "assets": [],
+      "word_limit": {
+        "min": 50,
+        "max": 80
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -4201,6 +4221,10 @@
       ],
       "expected_time_sec": 570,
       "assets": [],
+      "word_limit": {
+        "min": 80,
+        "max": 120
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -4927,6 +4951,10 @@
       ],
       "expected_time_sec": 570,
       "assets": [],
+      "word_limit": {
+        "min": 80,
+        "max": 120
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -5389,6 +5417,10 @@
       ],
       "expected_time_sec": 150,
       "assets": [],
+      "word_limit": {
+        "min": 30,
+        "max": 50
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -5435,6 +5467,10 @@
       ],
       "expected_time_sec": 240,
       "assets": [],
+      "word_limit": {
+        "min": 50,
+        "max": 80
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -5485,6 +5521,10 @@
       ],
       "expected_time_sec": 570,
       "assets": [],
+      "word_limit": {
+        "min": 80,
+        "max": 120
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -5503,6 +5543,7 @@
       "type": "case-based",
       "stem_md": "Read the passage and answer the questions that follow.",
       "passage_md": "Students in a school laboratory in Kochi studied four metals, P, Q, R and S, under their teacher's supervision.\n\n| Metal | Cold water | Steam | Dilute hydrochloric acid |\n|---|---|---|---|\n| P | no reaction | reacts; black oxide and hydrogen form | slow bubbling |\n| Q | reacts steadily; the metal floats | — | very fast bubbling |\n| R | no reaction | no reaction | no reaction |\n| S | no reaction | reacts | steady bubbling |\n\nMetal S also gave hydrogen when warmed with sodium hydroxide solution.",
+      "passage_origin": "soyl-original",
       "options": [],
       "match_right": [],
       "answer": {
@@ -5607,6 +5648,10 @@
           ],
           "expected_time_sec": 60,
           "assets": [],
+          "word_limit": {
+            "min": 5,
+            "max": 30
+          },
           "alternatives": []
         },
         {
@@ -5639,6 +5684,10 @@
           ],
           "expected_time_sec": 150,
           "assets": [],
+          "word_limit": {
+            "min": 30,
+            "max": 50
+          },
           "alternatives": [
             {
               "id": "c-ii",
@@ -5669,7 +5718,11 @@
                 "cbse-10-science-ch03-t03"
               ],
               "expected_time_sec": 150,
-              "assets": []
+              "assets": [],
+              "word_limit": {
+                "min": 30,
+                "max": 50
+              }
             }
           ]
         }
@@ -5691,6 +5744,7 @@
       "type": "case-based",
       "stem_md": "Read the passage and answer the questions that follow.",
       "passage_md": "Arnav set up four test tubes and left them for an hour:\n\n| Tube | Solution (colour) | Metal added | Observation after one hour |\n|---|---|---|---|\n| 1 | Iron(II) sulphate (pale green) | Zinc granule | Solution colourless; grey deposit on zinc |\n| 2 | Copper sulphate (blue) | Iron nail | Solution pale green; reddish-brown coating on nail |\n| 3 | Zinc sulphate (colourless) | Copper turning | No change |\n| 4 | Silver nitrate (colourless) | Copper turning | Solution turns blue; shiny greyish-white crystals on copper |",
+      "passage_origin": "soyl-original",
       "options": [],
       "match_right": [],
       "answer": {
@@ -5859,7 +5913,11 @@
                 "cbse-10-science-ch03-t03"
               ],
               "expected_time_sec": 150,
-              "assets": []
+              "assets": [],
+              "word_limit": {
+                "min": 30,
+                "max": 50
+              }
             }
           ]
         }
@@ -5881,6 +5939,7 @@
       "type": "case-based",
       "stem_md": "Read the passage and answer the questions that follow.",
       "passage_md": "A student collected the following data from a reference book:\n\n| Substance | Melting point (K) | Conducts electricity when molten? |\n|---|---|---|\n| Sodium chloride | 1074 | Yes |\n| Calcium oxide | about 2900 | Yes |\n| Glucose | about 420 | No |\n| Naphthalene | 353 | No |\n\nSodium chloride is made of $\\ce{Na+}$ and $\\ce{Cl-}$ ions; calcium oxide is made of $\\ce{Ca^2+}$ and $\\ce{O^2-}$ ions.",
+      "passage_origin": "soyl-original",
       "options": [],
       "match_right": [],
       "answer": {
@@ -5982,6 +6041,10 @@
           ],
           "expected_time_sec": 60,
           "assets": [],
+          "word_limit": {
+            "min": 5,
+            "max": 30
+          },
           "alternatives": []
         },
         {
@@ -6013,6 +6076,10 @@
           ],
           "expected_time_sec": 150,
           "assets": [],
+          "word_limit": {
+            "min": 30,
+            "max": 50
+          },
           "alternatives": [
             {
               "id": "c-ii",
@@ -6042,7 +6109,11 @@
                 "cbse-10-science-ch03-t04"
               ],
               "expected_time_sec": 150,
-              "assets": []
+              "assets": [],
+              "word_limit": {
+                "min": 30,
+                "max": 50
+              }
             }
           ]
         }
@@ -6064,6 +6135,7 @@
       "type": "case-based",
       "stem_md": "Read the passage and answer the questions that follow.",
       "passage_md": "Near Udaipur in Rajasthan, zinc is produced from zinc blende, a sulphide ore mined in the region. After the ore is concentrated, it is heated strongly in a plentiful supply of air. The zinc oxide formed is then heated with coke in a furnace, and zinc vapour is collected and condensed. The sulphur dioxide released in the first step is not allowed to escape into the air; the plant uses it to make sulphuric acid.",
+      "passage_origin": "soyl-original",
       "options": [],
       "match_right": [],
       "answer": {
@@ -6165,6 +6237,10 @@
           ],
           "expected_time_sec": 60,
           "assets": [],
+          "word_limit": {
+            "min": 5,
+            "max": 30
+          },
           "alternatives": []
         },
         {
@@ -6225,7 +6301,11 @@
                 "cbse-10-science-ch03-t05"
               ],
               "expected_time_sec": 150,
-              "assets": []
+              "assets": [],
+              "word_limit": {
+                "min": 30,
+                "max": 50
+              }
             }
           ]
         }
@@ -6247,6 +6327,7 @@
       "type": "case-based",
       "stem_md": "Read the passage and answer the questions that follow.",
       "passage_md": "On a busy line in Madhya Pradesh, a crack in a rail had to be repaired at night. Workers placed a mould around the gap between the rail ends and set a crucible above it. The crucible contained a mixture of iron(III) oxide and aluminium powder. When the mixture was lit with a special fuse, it burned with a blinding glow for a few seconds, and white-hot liquid iron poured into the mould. After cooling, the rough joint was ground smooth.",
+      "passage_origin": "soyl-original",
       "options": [],
       "match_right": [],
       "answer": {
@@ -6351,6 +6432,10 @@
           ],
           "expected_time_sec": 60,
           "assets": [],
+          "word_limit": {
+            "min": 5,
+            "max": 30
+          },
           "alternatives": []
         },
         {
@@ -6413,7 +6498,11 @@
                 "cbse-10-science-ch03-t05"
               ],
               "expected_time_sec": 150,
-              "assets": []
+              "assets": [],
+              "word_limit": {
+                "min": 30,
+                "max": 50
+              }
             }
           ]
         }
@@ -6435,6 +6524,7 @@
       "type": "case-based",
       "stem_md": "Read the passage and answer the questions that follow.",
       "passage_md": "A science club in Chennai kept five identical iron nails in different conditions for seven days:\n\n| Tube | Condition | Rust after 7 days |\n|---|---|---|\n| A | Tap water, tube open to air | Heavy |\n| B | Boiled water with a layer of oil, tube corked | None |\n| C | Dry air with anhydrous calcium chloride, tube corked | None |\n| D | Salt water, tube open to air | Very heavy |\n| E | Galvanised nail in tap water, tube open to air | None |",
+      "passage_origin": "soyl-original",
       "options": [],
       "match_right": [],
       "answer": {
@@ -6536,6 +6626,10 @@
           ],
           "expected_time_sec": 60,
           "assets": [],
+          "word_limit": {
+            "min": 5,
+            "max": 30
+          },
           "alternatives": []
         },
         {
@@ -6567,6 +6661,10 @@
           ],
           "expected_time_sec": 150,
           "assets": [],
+          "word_limit": {
+            "min": 30,
+            "max": 50
+          },
           "alternatives": [
             {
               "id": "c-ii",
@@ -6596,7 +6694,11 @@
                 "cbse-10-science-ch03-t06"
               ],
               "expected_time_sec": 150,
-              "assets": []
+              "assets": [],
+              "word_limit": {
+                "min": 30,
+                "max": 50
+              }
             }
           ]
         }

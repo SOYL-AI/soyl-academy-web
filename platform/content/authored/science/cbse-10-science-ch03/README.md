@@ -34,6 +34,7 @@ All items are `status: "draft"` until a reviewer approves them.
 | long | 5 | 5 |
 | case-based | 6 | 4 (1 + 1 + 2), part (c) either/or modelled with `alternatives` (`c-ii`) |
 
+- **Contract v2:** every case passage has `passage_origin: "soyl-original"`; `word_limit` (CBSE guidance: 1 mark 5–30, 2 marks 30–50, 3 marks 50–80, 5 marks 80–120 words) is set on the 24 of 34 short/long items whose model answers are prose, and left out where the answer is an equation, a structure or a diagram.
 - **Difficulty:** d1 8 · d2 30 · d3 24 · d4 6 · d5 1.
 - **Competency:** recall 8 · understanding 28 · application 20 · analysis 10 · evaluation 3. Application or higher is **48% of items (61% of marks)**.
 - **Topic tags:** t01 6 · t02 19 · t03 11 · t04 11 · t05 16 · t06 11.

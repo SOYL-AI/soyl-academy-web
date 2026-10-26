@@ -3916,6 +3916,10 @@
       ],
       "expected_time_sec": 240,
       "assets": [],
+      "word_limit": {
+        "min": 50,
+        "max": 80
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -3962,6 +3966,10 @@
       ],
       "expected_time_sec": 240,
       "assets": [],
+      "word_limit": {
+        "min": 50,
+        "max": 80
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -4016,6 +4024,10 @@
       ],
       "expected_time_sec": 570,
       "assets": [],
+      "word_limit": {
+        "min": 80,
+        "max": 120
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -4481,6 +4493,10 @@
       ],
       "expected_time_sec": 570,
       "assets": [],
+      "word_limit": {
+        "min": 80,
+        "max": 120
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -4958,6 +4974,10 @@
       ],
       "expected_time_sec": 150,
       "assets": [],
+      "word_limit": {
+        "min": 30,
+        "max": 50
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -5004,6 +5024,10 @@
       ],
       "expected_time_sec": 240,
       "assets": [],
+      "word_limit": {
+        "min": 50,
+        "max": 80
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -5388,6 +5412,10 @@
       ],
       "expected_time_sec": 150,
       "assets": [],
+      "word_limit": {
+        "min": 30,
+        "max": 50
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -5488,6 +5516,10 @@
       ],
       "expected_time_sec": 570,
       "assets": [],
+      "word_limit": {
+        "min": 80,
+        "max": 120
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -5903,6 +5935,10 @@
       ],
       "expected_time_sec": 150,
       "assets": [],
+      "word_limit": {
+        "min": 30,
+        "max": 50
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -5949,6 +5985,10 @@
       ],
       "expected_time_sec": 240,
       "assets": [],
+      "word_limit": {
+        "min": 50,
+        "max": 80
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -6630,6 +6670,10 @@
       ],
       "expected_time_sec": 150,
       "assets": [],
+      "word_limit": {
+        "min": 30,
+        "max": 50
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -6676,6 +6720,10 @@
       ],
       "expected_time_sec": 240,
       "assets": [],
+      "word_limit": {
+        "min": 50,
+        "max": 80
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -6772,6 +6820,10 @@
       ],
       "expected_time_sec": 570,
       "assets": [],
+      "word_limit": {
+        "min": 80,
+        "max": 120
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -6827,6 +6879,10 @@
       ],
       "expected_time_sec": 570,
       "assets": [],
+      "word_limit": {
+        "min": 80,
+        "max": 120
+      },
       "children": [],
       "status": "draft",
       "version": 1,
@@ -6845,6 +6901,7 @@
       "type": "case-based",
       "stem_md": "Read the passage and answer the questions that follow.",
       "passage_md": "The science club of a school in Jaipur tested five household liquids, A to E, with blue litmus, red litmus and universal indicator. Their results:\n\n| Liquid | Blue litmus | Red litmus | Universal indicator |\n|---|---|---|---|\n| A | turns red | no change | red |\n| B | no change | no change | green |\n| C | no change | turns blue | blue |\n| D | turns red | no change | yellow |\n| E | no change | turns blue | violet |\n\nThe liquids were lemon juice, sugar solution, baking soda solution, buttermilk and a drain cleaner containing sodium hydroxide, but the labels had come off.",
+      "passage_origin": "soyl-original",
       "options": [],
       "match_right": [],
       "answer": {
@@ -6948,6 +7005,10 @@
           ],
           "expected_time_sec": 60,
           "assets": [],
+          "word_limit": {
+            "min": 5,
+            "max": 30
+          },
           "alternatives": []
         },
         {
@@ -7008,7 +7069,11 @@
                 "cbse-10-science-ch02-t04"
               ],
               "expected_time_sec": 150,
-              "assets": []
+              "assets": [],
+              "word_limit": {
+                "min": 30,
+                "max": 50
+              }
             }
           ]
         }
@@ -7030,6 +7095,7 @@
       "type": "case-based",
       "stem_md": "Read the passage and answer the questions that follow.",
       "passage_md": "In a lab activity, Neha placed equal masses of marble chips in two conical flasks. To flask 1 she added 20 mL of dilute hydrochloric acid; to flask 2, 20 mL of acetic acid of the same concentration. Each flask was closed with a cork and a delivery tube that dipped into a test tube of lime water.\n\nFlask 1 fizzed vigorously, and its lime water turned milky within half a minute. Flask 2 fizzed slowly, and its lime water took about four minutes to turn milky. When Neha kept bubbling the gas from flask 1 through its lime water for a long time, the lime water became clear again.",
+      "passage_origin": "soyl-original",
       "options": [],
       "match_right": [],
       "answer": {
@@ -7132,6 +7198,10 @@
           ],
           "expected_time_sec": 60,
           "assets": [],
+          "word_limit": {
+            "min": 5,
+            "max": 30
+          },
           "alternatives": []
         },
         {
@@ -7214,6 +7284,7 @@
       "type": "case-based",
       "stem_md": "Read the passage and answer the questions that follow.",
       "passage_md": "A dentist in Pune measured the pH on the tooth surface of a volunteer after she ate a sweet laddoo. The readings were:\n\n| Time after eating (min) | 0 | 5 | 10 | 15 | 20 | 25 | 30 | 45 | 60 |\n|---|---|---|---|---|---|---|---|---|---|\n| pH | 6.9 | 5.6 | 5.1 | 5.0 | 5.3 | 5.6 | 5.9 | 6.4 | 6.8 |\n\nOn another day the volunteer ate the same laddoo but rinsed her mouth thoroughly and brushed with toothpaste straight afterwards. This time the pH on her teeth never fell below 6.2.",
+      "passage_origin": "soyl-original",
       "options": [],
       "match_right": [],
       "answer": {
@@ -7315,6 +7386,10 @@
           ],
           "expected_time_sec": 60,
           "assets": [],
+          "word_limit": {
+            "min": 5,
+            "max": 30
+          },
           "alternatives": []
         },
         {
@@ -7346,6 +7421,10 @@
           ],
           "expected_time_sec": 150,
           "assets": [],
+          "word_limit": {
+            "min": 30,
+            "max": 50
+          },
           "alternatives": [
             {
               "id": "c-ii",
@@ -7397,6 +7476,7 @@
       "type": "case-based",
       "stem_md": "Read the passage and answer the questions that follow.",
       "passage_md": "A chlor-alkali plant near Bharuch in Gujarat electrolyses brine every day. Part of the chlorine produced is passed over dry slaked lime to make a white powder that is sent to municipal water works. Some of the hydrogen is burnt in chlorine to make hydrogen chloride gas, which is dissolved in water and sold. The sodium hydroxide solution is sold to soap and paper factories.",
+      "passage_origin": "soyl-original",
       "options": [],
       "match_right": [],
       "answer": {
@@ -7498,6 +7578,10 @@
           ],
           "expected_time_sec": 60,
           "assets": [],
+          "word_limit": {
+            "min": 5,
+            "max": 30
+          },
           "alternatives": []
         },
         {
@@ -7580,6 +7664,7 @@
       "type": "case-based",
       "stem_md": "Read the passage and answer the questions that follow.",
       "passage_md": "In a practical class in Bhopal, Rohit weighed an empty crucible, then the crucible with some blue copper sulphate crystals. He heated the crystals strongly until their colour stopped changing, let the crucible cool in a dry place, and weighed it again.\n\n| Measurement | Mass (g) |\n|---|---|\n| Empty crucible | 20.00 |\n| Crucible + blue crystals | 25.00 |\n| Crucible + residue after heating | 23.20 |",
+      "passage_origin": "soyl-original",
       "options": [],
       "match_right": [],
       "answer": {
@@ -7714,6 +7799,10 @@
           ],
           "expected_time_sec": 150,
           "assets": [],
+          "word_limit": {
+            "min": 30,
+            "max": 50
+          },
           "alternatives": [
             {
               "id": "c-ii",
@@ -7765,6 +7854,7 @@
       "type": "case-based",
       "stem_md": "Read the passage and answer the questions that follow.",
       "passage_md": "Shreya used a pH meter to measure the pH of hydrochloric acid and acetic acid. For each acid she started with a solution of the same concentration (solution 1), then diluted it 10 times (solution 2) and 100 times (solution 3).\n\n| Solution | pH of hydrochloric acid | pH of acetic acid |\n|---|---|---|\n| 1 | 1.0 | 2.9 |\n| 2 | 2.0 | 3.4 |\n| 3 | 3.0 | 3.9 |",
+      "passage_origin": "soyl-original",
       "options": [],
       "match_right": [],
       "answer": {
@@ -7869,6 +7959,10 @@
           ],
           "expected_time_sec": 60,
           "assets": [],
+          "word_limit": {
+            "min": 5,
+            "max": 30
+          },
           "alternatives": []
         },
         {
@@ -7901,6 +7995,10 @@
           ],
           "expected_time_sec": 150,
           "assets": [],
+          "word_limit": {
+            "min": 30,
+            "max": 50
+          },
           "alternatives": [
             {
               "id": "c-ii",
@@ -7931,7 +8029,11 @@
                 "cbse-10-science-ch02-t04"
               ],
               "expected_time_sec": 150,
-              "assets": []
+              "assets": [],
+              "word_limit": {
+                "min": 30,
+                "max": 50
+              }
             }
           ]
         }
