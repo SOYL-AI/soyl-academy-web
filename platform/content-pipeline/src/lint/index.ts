@@ -527,8 +527,8 @@ export function lintBundle(bundle: UnitBundle, ctx: LintContext): LintReport {
   return report;
 }
 
-/** MCQ answer-key balance: with ≥ 8 single-answer MCQs, warn when one letter holds over 40% of keys or a letter is never the key (≥ 12 MCQs). */
-export const ANSWER_KEY_BALANCE = { minItems: 8, maxShare: 0.4, unusedFrom: 12 } as const;
+/** MCQ answer-key balance: with ≥ 8 single-answer MCQs, warn when one letter holds over 45% of keys or a letter is never the key (≥ 12 MCQs). */
+export const ANSWER_KEY_BALANCE = { minItems: 8, maxShare: 0.45, unusedFrom: 12 } as const;
 
 export function answerKeySkew(questions: Pick<QuestionT, 'type' | 'options' | 'answer'>[]): string | null {
   const mcqs = questions.filter((q) => q.type === 'mcq' && 'option_ids' in q.answer && q.answer.option_ids.length === 1);

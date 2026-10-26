@@ -128,7 +128,7 @@ export async function ingestTests(p: Pipeline, subjectId: string, academicYear: 
       }
     }
     const [latest] = await db.select({ version: testsTable.version, definition: testsTable.definition, status: testsTable.status }).from(testsTable).where(and(eq(testsTable.key, test.id), eq(testsTable.academicYear, academicYear))).orderBy(desc(testsTable.version)).limit(1);
-    if (latest && latest.status === 'published' && JSON.stringify((latest.definition as TestDefinition).sections) === JSON.stringify(test.sections)) {
+    if (latest && latest.status === 'published' && canonicalJson((latest.definition as TestDefinition).sections) === canonicalJson(test.sections)) {
       unchanged++;
       continue;
     }
@@ -202,4 +202,9 @@ export async function assembleCommand(p: Pipeline, scope: Scope, opts: AssembleO
   }
   const requests = results.reduce((n, r) => n + r.requests.length, 0);
   return { results, exitCode: opts.strict && requests ? 2 : 0 };
+}
+
+/** JSON with object keys sorted (jsonb does not keep key order), for content comparison. */
+export function canonicalJson(v: unknown): string {
+  return JSON.stringify(v, (_k, val) => (val && typeof val === 'object' && !Array.isArray(val) ? Object.fromEntries(Object.entries(val).sort(([a], [b]) => a.localeCompare(b))) : val));
 }

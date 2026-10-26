@@ -173,7 +173,8 @@ export function mockQuestion(slot: QuestionSlot, index: number, topics: TopicRef
     expected_time_sec: Math.max(45, Math.round(slot.marks * 90)),
   };
   const four = ['a', 'b', 'c', 'd'].map((id) => ({ id, text_md: `${w.mock} option ${id.toUpperCase()}` }));
-  const correct = rng.pick(['a', 'b', 'c', 'd']);
+  // Keys rotate with a little seeded jitter, so a mock bank never trips the key-skew warning.
+  const correct = ['a', 'b', 'c', 'd'][(index + rng.int(0, 1)) % 4]!;
   switch (slot.type) {
     case 'mcq':
       return { ...base, options: four, answer: { option_ids: [correct] } };
@@ -360,7 +361,13 @@ export const mockFlashcards: MockFixture = ({ input }) => {
 
 export const mockQuestions: MockFixture = ({ input, rng }) => {
   const { unit, slots, topics, language } = input as QuestionsInput;
-  return { questions: slots.map((slot, i) => ({ ...mockQuestion(slot, i, topics, rng, language), unit })) };
+  // A per-request tag keeps stems distinct across batches (stage 6 flags duplicate stems in the bank).
+  return {
+    questions: slots.map((slot, i) => {
+      const q = mockQuestion(slot, i, topics, rng, language);
+      return { ...q, stem_md: `${q.stem_md as string} [${rng.int(10000, 99999)}]`, unit };
+    }),
+  };
 };
 
 /** Marker a test can put in a stem to make the mock verifier report a critical answer-key problem. */
