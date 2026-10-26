@@ -2515,6 +2515,829 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/test-series": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Test series of a subject: chapter, unit, term, full-mock and second-exam tests, and live mocks. Signed in: your status per test. */
+        get: {
+            parameters: {
+                query: {
+                    board?: components["schemas"]["BoardInput"];
+                    class?: number;
+                    subject: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["TestSeries"];
+                    };
+                };
+                /** @description Default Response */
+                304: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content?: never;
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/tests/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Test metadata: sections, duration, marks, instructions. Questions are only delivered inside an attempt. */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: components["schemas"]["TestIdInput"];
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["TestMeta"];
+                    };
+                };
+                /** @description Default Response */
+                304: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content?: never;
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/tests/custom": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Build a custom test from the practice question bank (free). Then start it with POST /v1/tests/:id/attempts. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["CustomTestRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                201: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CustomTest"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/tests/{id}/attempts": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Create or resume your single active attempt. Starting sets the server deadline and delivers the paper (no answers). */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: components["schemas"]["TestIdInput"];
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["StartAttemptRequestInput"] | null;
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AttemptState"];
+                    };
+                };
+                /** @description Default Response */
+                201: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AttemptState"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/attempts/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Resume an attempt: the paper, your saved responses, server time and deadline. */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AttemptState"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/attempts/{id}/responses": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        /** Autosave a batch of item states. Idempotent per item: a state applies only if its seq is higher than the stored one. */
+        put: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["SaveResponsesRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SaveResponsesResult"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/attempts/{id}/submit": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Submit (idempotent). An optional final batch is saved first. Objective items are graded now; written items wait for self-evaluation. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["SaveResponsesRequestInput"] | null;
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SubmitResult"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/attempts/{id}/result": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Result of a submitted attempt: scores, analysis, every answer with its solution and marking scheme, percentile, live rank. */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AttemptResult"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/attempts/{id}/self-evaluation": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Self-evaluate written answers against the marking scheme (free). Returns the updated result. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["SelfEvaluationRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AttemptResult"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/attempts/{id}/ai-evaluation": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** AI evaluation of written answers (credits). Arrives with the AI gateway (M4): 501 until then. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/attempts": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Your attempts, newest first (cursor = the last id of the previous page). */
+        get: {
+            parameters: {
+                query?: {
+                    cursor?: string;
+                    limit?: number;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["MyAttempts"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/live-events": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** All-India live mocks with their windows and phase. Signed in: your registration and attempt. */
+        get: {
+            parameters: {
+                query?: {
+                    board?: components["schemas"]["BoardInput"];
+                    class?: number;
+                    subject?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["LiveEvents"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/live-events/{id}/register": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Register for a live mock (idempotent). Starting the test also registers you. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["LiveEvent"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/live-events/{id}/leaderboard": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Live mock leaderboard: provisional during the event, final once ranks are published. Needs consent (D-014). */
+        get: {
+            parameters: {
+                query?: {
+                    limit?: number;
+                };
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["LiveLeaderboard"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -3219,8 +4042,487 @@ export interface components {
             }[];
             nextCursor: string | null;
         };
+        /** @description Test id (TestDefinition.id), e.g. t_cbse10sci_ch01_short. */
+        TestIdInput: string;
+        /** @description Signed in only (null for guests): your attempts at this test, across its versions. */
+        MyTestStatusInput: {
+            attempts: number;
+            bestScore: number | null;
+            lastScore: number | null;
+            maxScore: number | null;
+            activeAttemptId: string | null;
+            lastAttemptId: string | null;
+        };
+        /**
+         * @description live = you can start (until lateStartUntil); writing = running, no new starts; closed = awaiting final ranks.
+         * @enum {string}
+         */
+        LivePhaseInput: "cancelled" | "upcoming" | "registration_open" | "live" | "writing" | "closed" | "results_published";
+        LiveEventInput: {
+            id: string;
+            title: string;
+            phase: components["schemas"]["LivePhaseInput"];
+            subject: {
+                id: string;
+                name: string;
+            };
+            testId: string;
+            durationMin: number;
+            totalMarks: number;
+            /** Format: date-time */
+            registrationOpensAt: string;
+            /** Format: date-time */
+            startsAt: string;
+            /** Format: date-time */
+            lateStartUntil: string;
+            /** Format: date-time */
+            endsAt: string;
+            resultsPublishedAt: string | null;
+            ranksBeta: boolean;
+            me: {
+                registered: boolean;
+                attemptId: string | null;
+                attemptStatus: string | null;
+            } | null;
+        };
+        TestSeriesInput: {
+            subject: {
+                id: string;
+                name: string;
+                board: string;
+                classLevel: number;
+            };
+            series: {
+                id: string;
+                /** @enum {string} */
+                kind: "chapter" | "unit" | "term" | "full" | "second_exam" | "live";
+                title: string;
+                tests: {
+                    id: string;
+                    version: number;
+                    title: string;
+                    kind: string;
+                    paperType: string;
+                    durationMin: number;
+                    totalMarks: number;
+                    questionCount: number;
+                    chapterIds: string[];
+                    chapter: {
+                        id: string;
+                        number: number;
+                        title: string;
+                    } | null;
+                    position: number | null;
+                    me: components["schemas"]["MyTestStatusInput"] | null;
+                }[];
+            }[];
+            liveEvents: components["schemas"]["LiveEventInput"][];
+        };
+        /** @description Metadata only: questions are delivered inside an attempt. */
+        TestMetaInput: {
+            id: string;
+            version: number;
+            title: string;
+            kind: string;
+            paperType: string;
+            subject: {
+                id: string;
+                name: string;
+                board: string;
+                classLevel: number;
+            };
+            chapterIds: string[];
+            durationMin: number;
+            totalMarks: number;
+            questionCount: number;
+            autoGradedCount: number;
+            custom: boolean;
+            shuffle: boolean;
+            instructions: string[];
+            sections: {
+                id: string;
+                title: string;
+                instructions: string;
+                questionCount: number;
+                maxMarks: number;
+                choiceGroups: {
+                    id: string;
+                    attempt: number;
+                    of: number;
+                }[];
+            }[];
+            live: components["schemas"]["LiveEventInput"] | null;
+            me: components["schemas"]["MyTestStatusInput"] | null;
+        };
+        CustomTestRequestInput: {
+            subjectId: string;
+            chapterIds: string[];
+            types?: ("mcq" | "multi-select" | "assertion-reason" | "case-based" | "source-based" | "short" | "long" | "numerical" | "fill-blank" | "match" | "true-false" | "writing" | "map" | "code-output" | "ordering")[];
+            difficulty?: {
+                min: number;
+                max: number;
+            };
+            questionCount: number;
+            durationMin?: number;
+            title?: string;
+        };
+        /** @description skippedChapters: chosen chapters with no matching questions. */
+        CustomTestInput: {
+            id: string;
+            version: number;
+            title: string;
+            kind: string;
+            paperType: string;
+            subject: {
+                id: string;
+                name: string;
+                board: string;
+                classLevel: number;
+            };
+            chapterIds: string[];
+            durationMin: number;
+            totalMarks: number;
+            questionCount: number;
+            autoGradedCount: number;
+            custom: boolean;
+            shuffle: boolean;
+            instructions: string[];
+            sections: {
+                id: string;
+                title: string;
+                instructions: string;
+                questionCount: number;
+                maxMarks: number;
+                choiceGroups: {
+                    id: string;
+                    attempt: number;
+                    of: number;
+                }[];
+            }[];
+            live: components["schemas"]["LiveEventInput"] | null;
+            me: components["schemas"]["MyTestStatusInput"] | null;
+            skippedChapters: string[];
+        };
+        /** @description start=false creates the attempt without starting the clock (instructions / live waiting room). */
+        StartAttemptRequestInput: {
+            /** @default true */
+            start: boolean;
+        };
+        /** @enum {string} */
+        AttemptStatusInput: "created" | "in_progress" | "submitted" | "auto_submitted";
+        /** @description Questions without answers (DB-6/API-9). serverNow + deadlineAt drive the timer (AC-12). */
+        AttemptStateInput: {
+            attempt: {
+                /** Format: uuid */
+                id: string;
+                status: components["schemas"]["AttemptStatusInput"];
+                testId: string;
+                testVersion: number;
+                liveEventId: string | null;
+                ranked: boolean;
+                startedAt: string | null;
+                deadlineAt: string | null;
+                submittedAt: string | null;
+                /** Format: date-time */
+                serverNow: string;
+                remainingSec: number | null;
+                graceSeconds: number;
+                tabSwitchCount: number;
+            };
+            test: {
+                id: string;
+                version: number;
+                title: string;
+                kind: string;
+                paperType: string;
+                subject: {
+                    id: string;
+                    name: string;
+                    board: string;
+                    classLevel: number;
+                };
+                chapterIds: string[];
+                durationMin: number;
+                totalMarks: number;
+                questionCount: number;
+                shuffle: boolean;
+            };
+            sections: {
+                id: string;
+                title: string;
+                instructions: string;
+                questionCount?: number;
+                maxMarks: number;
+                itemIds: string[];
+                choiceGroups: {
+                    id: string;
+                    attempt: number;
+                    of: number;
+                    itemIds: string[];
+                }[];
+            }[];
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                sectionId: string;
+                number: number;
+                marks: number;
+                choiceGroup: string | null;
+                question: components["schemas"]["StudentQuestionInput"];
+            }[];
+            responses: {
+                /** Format: uuid */
+                itemId: string;
+                response: components["schemas"]["PracticeResponseInput"] | null;
+                markedForReview: boolean;
+                timeSpentSec: number;
+                seq: number;
+                /** Format: date-time */
+                savedAt: string;
+            }[];
+        };
+        SaveResponsesRequestInput: {
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                seq: number;
+                response: components["schemas"]["PracticeResponseInput"] | null;
+                markedForReview?: boolean;
+                timeSpentSec?: number;
+                /** Format: date-time */
+                changedAt?: string;
+            }[];
+            tabSwitchCount?: number;
+        };
+        /** @description Drop queued entries that are applied, stale or rejected; retry only on network/5xx/429. */
+        SaveResponsesResultInput: {
+            status: string;
+            /** Format: date-time */
+            serverNow: string;
+            deadlineAt: string | null;
+            applied: {
+                /** Format: uuid */
+                itemId: string;
+                seq: number;
+            }[];
+            stale: {
+                /** Format: uuid */
+                itemId: string;
+                seq: number;
+                storedSeq: number;
+            }[];
+            rejected: {
+                /** Format: uuid */
+                itemId: string;
+                seq: number;
+                /** @constant */
+                reason: "after_deadline";
+            }[];
+        };
+        SubmitResultInput: {
+            /** Format: uuid */
+            attemptId: string;
+            /** @enum {string} */
+            status: "submitted" | "auto_submitted";
+            alreadySubmitted: boolean;
+            /** Format: date-time */
+            submittedAt: string;
+            score: number;
+            maxScore: number;
+            autoScore: number;
+            pendingSelfEvaluation: {
+                items: number;
+                marks: number;
+            };
+            xpAwarded: number;
+            badgesAwarded: string[];
+            streak: components["schemas"]["StreakInput"] | null;
+        };
+        /** @description After submission only. Percentile and ranks use auto-graded marks (AC-14). */
+        AttemptResultInput: {
+            attempt: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                status: "submitted" | "auto_submitted";
+                /** Format: date-time */
+                startedAt: string;
+                /** Format: date-time */
+                deadlineAt: string;
+                /** Format: date-time */
+                submittedAt: string;
+                timeTakenSec: number;
+                tabSwitchCount: number;
+            };
+            test: {
+                id: string;
+                version: number;
+                title: string;
+                kind: string;
+                paperType: string;
+                subject: {
+                    id: string;
+                    name: string;
+                    board: string;
+                    classLevel: number;
+                };
+                chapterIds: string[];
+                durationMin: number;
+                totalMarks: number;
+                questionCount: number;
+                shuffle: boolean;
+            };
+            score: {
+                total: number;
+                max: number;
+                auto: number;
+                self: number;
+                percentage: number | null;
+                pendingSelfEvaluation: {
+                    items: number;
+                    marks: number;
+                };
+                answered: number;
+                questions: number;
+            };
+            sections: {
+                id: string;
+                title: string;
+                score: number;
+                autoScore: number;
+                maxScore: number;
+            }[];
+            topics: {
+                id: string;
+                title: string;
+                earned: number;
+                max: number;
+                items: number;
+                mastery: number | null;
+            }[];
+            byDifficulty: {
+                difficulty: number;
+                total: number;
+                attempted: number;
+                correct: number;
+                accuracy: number | null;
+            }[];
+            time: {
+                totalSec: number;
+                averagePerQuestionSec: number;
+            };
+            percentile: {
+                value: number | null;
+                attempts: number;
+                minAttempts: number;
+            };
+            live: {
+                eventId: string;
+                /** @enum {string} */
+                status: "provisional" | "final";
+                rank: number | null;
+                total: number;
+                percentile: number | null;
+            } | null;
+            sectionsLayout: {
+                id: string;
+                title: string;
+                itemIds: string[];
+                choiceGroups: {
+                    id: string;
+                    attempt: number;
+                    of: number;
+                    itemIds: string[];
+                }[];
+            }[];
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                sectionId: string;
+                number: number;
+                marks: number;
+                choiceGroup: string | null;
+                counted: boolean;
+                /** @enum {string} */
+                status: "correct" | "partial" | "wrong" | "unanswered" | "pending_self" | "evaluated";
+                autoMarks: number;
+                autoMax: number;
+                selfMarks: number | null;
+                selfMax: number;
+                correct: boolean | null;
+                timeSpentSec: number;
+                markedForReview: boolean;
+                response: components["schemas"]["PracticeResponseInput"] | null;
+                question: components["schemas"]["StudentQuestionInput"];
+                key: components["schemas"]["AnswerKeyInput"] | null;
+                parts: {
+                    id: string;
+                    alternative: string | null;
+                    /** @enum {string} */
+                    type: "mcq" | "multi-select" | "assertion-reason" | "case-based" | "source-based" | "short" | "long" | "numerical" | "fill-blank" | "match" | "true-false" | "writing" | "map" | "code-output" | "ordering";
+                    correct: boolean | null;
+                    marksAwarded: number | null;
+                    maxMarks: number;
+                    /** @enum {string} */
+                    grading: "auto" | "self";
+                    key: components["schemas"]["AnswerKeyInput"];
+                }[];
+            }[];
+        };
+        /** @description Per item exactly one of: marks (total of its written parts), steps (marks per marking-scheme step), parts (case-based: marks per written part). */
+        SelfEvaluationRequestInput: {
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                marks?: number;
+                steps?: number[];
+                parts?: {
+                    id: string;
+                    marks: number;
+                }[];
+            }[];
+        };
+        /** @description Auto-graded marks only; ties on marks are broken by time taken. Ranks are beta. */
+        LiveLeaderboardInput: {
+            event: components["schemas"]["LiveEventInput"];
+            /** @enum {string} */
+            status: "not_started" | "provisional" | "final";
+            maxScore: number;
+            total: number;
+            entries: {
+                rank: number;
+                name: string | null;
+                score: number;
+                isMe: boolean;
+            }[];
+            me: {
+                rank: number;
+                score: number;
+                percentile: number | null;
+            } | null;
+        };
+        MyAttemptsInput: {
+            attempts: {
+                /** Format: uuid */
+                id: string;
+                testId: string;
+                title: string;
+                kind: string;
+                status: components["schemas"]["AttemptStatusInput"];
+                liveEventId: string | null;
+                startedAt: string | null;
+                deadlineAt: string | null;
+                submittedAt: string | null;
+                score: number | null;
+                maxScore: number | null;
+            }[];
+            nextCursor: string | null;
+        };
         PracticeSelfAssessRequestInput: {
             marks: number;
+        };
+        LiveEventsInput: {
+            events: components["schemas"]["LiveEventInput"][];
         };
         /** @description RFC 7807 problem details (application/problem+json). */
         Problem: {
@@ -3922,8 +5224,487 @@ export interface components {
             }[];
             nextCursor: string | null;
         };
+        /** @description Test id (TestDefinition.id), e.g. t_cbse10sci_ch01_short. */
+        TestId: string;
+        /** @description Signed in only (null for guests): your attempts at this test, across its versions. */
+        MyTestStatus: {
+            attempts: number;
+            bestScore: number | null;
+            lastScore: number | null;
+            maxScore: number | null;
+            activeAttemptId: string | null;
+            lastAttemptId: string | null;
+        };
+        /**
+         * @description live = you can start (until lateStartUntil); writing = running, no new starts; closed = awaiting final ranks.
+         * @enum {string}
+         */
+        LivePhase: "cancelled" | "upcoming" | "registration_open" | "live" | "writing" | "closed" | "results_published";
+        LiveEvent: {
+            id: string;
+            title: string;
+            phase: components["schemas"]["LivePhase"];
+            subject: {
+                id: string;
+                name: string;
+            };
+            testId: string;
+            durationMin: number;
+            totalMarks: number;
+            /** Format: date-time */
+            registrationOpensAt: string;
+            /** Format: date-time */
+            startsAt: string;
+            /** Format: date-time */
+            lateStartUntil: string;
+            /** Format: date-time */
+            endsAt: string;
+            resultsPublishedAt: string | null;
+            ranksBeta: boolean;
+            me: {
+                registered: boolean;
+                attemptId: string | null;
+                attemptStatus: string | null;
+            } | null;
+        };
+        TestSeries: {
+            subject: {
+                id: string;
+                name: string;
+                board: string;
+                classLevel: number;
+            };
+            series: {
+                id: string;
+                /** @enum {string} */
+                kind: "chapter" | "unit" | "term" | "full" | "second_exam" | "live";
+                title: string;
+                tests: {
+                    id: string;
+                    version: number;
+                    title: string;
+                    kind: string;
+                    paperType: string;
+                    durationMin: number;
+                    totalMarks: number;
+                    questionCount: number;
+                    chapterIds: string[];
+                    chapter: {
+                        id: string;
+                        number: number;
+                        title: string;
+                    } | null;
+                    position: number | null;
+                    me: components["schemas"]["MyTestStatus"] | null;
+                }[];
+            }[];
+            liveEvents: components["schemas"]["LiveEvent"][];
+        };
+        /** @description Metadata only: questions are delivered inside an attempt. */
+        TestMeta: {
+            id: string;
+            version: number;
+            title: string;
+            kind: string;
+            paperType: string;
+            subject: {
+                id: string;
+                name: string;
+                board: string;
+                classLevel: number;
+            };
+            chapterIds: string[];
+            durationMin: number;
+            totalMarks: number;
+            questionCount: number;
+            autoGradedCount: number;
+            custom: boolean;
+            shuffle: boolean;
+            instructions: string[];
+            sections: {
+                id: string;
+                title: string;
+                instructions: string;
+                questionCount: number;
+                maxMarks: number;
+                choiceGroups: {
+                    id: string;
+                    attempt: number;
+                    of: number;
+                }[];
+            }[];
+            live: components["schemas"]["LiveEvent"] | null;
+            me: components["schemas"]["MyTestStatus"] | null;
+        };
+        CustomTestRequest: {
+            subjectId: string;
+            chapterIds: string[];
+            types?: ("mcq" | "multi-select" | "assertion-reason" | "case-based" | "source-based" | "short" | "long" | "numerical" | "fill-blank" | "match" | "true-false" | "writing" | "map" | "code-output" | "ordering")[];
+            difficulty?: {
+                min: number;
+                max: number;
+            };
+            questionCount: number;
+            durationMin?: number;
+            title?: string;
+        };
+        /** @description skippedChapters: chosen chapters with no matching questions. */
+        CustomTest: {
+            id: string;
+            version: number;
+            title: string;
+            kind: string;
+            paperType: string;
+            subject: {
+                id: string;
+                name: string;
+                board: string;
+                classLevel: number;
+            };
+            chapterIds: string[];
+            durationMin: number;
+            totalMarks: number;
+            questionCount: number;
+            autoGradedCount: number;
+            custom: boolean;
+            shuffle: boolean;
+            instructions: string[];
+            sections: {
+                id: string;
+                title: string;
+                instructions: string;
+                questionCount: number;
+                maxMarks: number;
+                choiceGroups: {
+                    id: string;
+                    attempt: number;
+                    of: number;
+                }[];
+            }[];
+            live: components["schemas"]["LiveEvent"] | null;
+            me: components["schemas"]["MyTestStatus"] | null;
+            skippedChapters: string[];
+        };
+        /** @description start=false creates the attempt without starting the clock (instructions / live waiting room). */
+        StartAttemptRequest: {
+            /** @default true */
+            start: boolean;
+        };
+        /** @enum {string} */
+        AttemptStatus: "created" | "in_progress" | "submitted" | "auto_submitted";
+        /** @description Questions without answers (DB-6/API-9). serverNow + deadlineAt drive the timer (AC-12). */
+        AttemptState: {
+            attempt: {
+                /** Format: uuid */
+                id: string;
+                status: components["schemas"]["AttemptStatus"];
+                testId: string;
+                testVersion: number;
+                liveEventId: string | null;
+                ranked: boolean;
+                startedAt: string | null;
+                deadlineAt: string | null;
+                submittedAt: string | null;
+                /** Format: date-time */
+                serverNow: string;
+                remainingSec: number | null;
+                graceSeconds: number;
+                tabSwitchCount: number;
+            };
+            test: {
+                id: string;
+                version: number;
+                title: string;
+                kind: string;
+                paperType: string;
+                subject: {
+                    id: string;
+                    name: string;
+                    board: string;
+                    classLevel: number;
+                };
+                chapterIds: string[];
+                durationMin: number;
+                totalMarks: number;
+                questionCount: number;
+                shuffle: boolean;
+            };
+            sections: {
+                id: string;
+                title: string;
+                instructions: string;
+                questionCount?: number;
+                maxMarks: number;
+                itemIds: string[];
+                choiceGroups: {
+                    id: string;
+                    attempt: number;
+                    of: number;
+                    itemIds: string[];
+                }[];
+            }[];
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                sectionId: string;
+                number: number;
+                marks: number;
+                choiceGroup: string | null;
+                question: components["schemas"]["StudentQuestion"];
+            }[];
+            responses: {
+                /** Format: uuid */
+                itemId: string;
+                response: components["schemas"]["PracticeResponse"] | null;
+                markedForReview: boolean;
+                timeSpentSec: number;
+                seq: number;
+                /** Format: date-time */
+                savedAt: string;
+            }[];
+        };
+        SaveResponsesRequest: {
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                seq: number;
+                response: components["schemas"]["PracticeResponse"] | null;
+                markedForReview?: boolean;
+                timeSpentSec?: number;
+                /** Format: date-time */
+                changedAt?: string;
+            }[];
+            tabSwitchCount?: number;
+        };
+        /** @description Drop queued entries that are applied, stale or rejected; retry only on network/5xx/429. */
+        SaveResponsesResult: {
+            status: string;
+            /** Format: date-time */
+            serverNow: string;
+            deadlineAt: string | null;
+            applied: {
+                /** Format: uuid */
+                itemId: string;
+                seq: number;
+            }[];
+            stale: {
+                /** Format: uuid */
+                itemId: string;
+                seq: number;
+                storedSeq: number;
+            }[];
+            rejected: {
+                /** Format: uuid */
+                itemId: string;
+                seq: number;
+                /** @constant */
+                reason: "after_deadline";
+            }[];
+        };
+        SubmitResult: {
+            /** Format: uuid */
+            attemptId: string;
+            /** @enum {string} */
+            status: "submitted" | "auto_submitted";
+            alreadySubmitted: boolean;
+            /** Format: date-time */
+            submittedAt: string;
+            score: number;
+            maxScore: number;
+            autoScore: number;
+            pendingSelfEvaluation: {
+                items: number;
+                marks: number;
+            };
+            xpAwarded: number;
+            badgesAwarded: string[];
+            streak: components["schemas"]["Streak"] | null;
+        };
+        /** @description After submission only. Percentile and ranks use auto-graded marks (AC-14). */
+        AttemptResult: {
+            attempt: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                status: "submitted" | "auto_submitted";
+                /** Format: date-time */
+                startedAt: string;
+                /** Format: date-time */
+                deadlineAt: string;
+                /** Format: date-time */
+                submittedAt: string;
+                timeTakenSec: number;
+                tabSwitchCount: number;
+            };
+            test: {
+                id: string;
+                version: number;
+                title: string;
+                kind: string;
+                paperType: string;
+                subject: {
+                    id: string;
+                    name: string;
+                    board: string;
+                    classLevel: number;
+                };
+                chapterIds: string[];
+                durationMin: number;
+                totalMarks: number;
+                questionCount: number;
+                shuffle: boolean;
+            };
+            score: {
+                total: number;
+                max: number;
+                auto: number;
+                self: number;
+                percentage: number | null;
+                pendingSelfEvaluation: {
+                    items: number;
+                    marks: number;
+                };
+                answered: number;
+                questions: number;
+            };
+            sections: {
+                id: string;
+                title: string;
+                score: number;
+                autoScore: number;
+                maxScore: number;
+            }[];
+            topics: {
+                id: string;
+                title: string;
+                earned: number;
+                max: number;
+                items: number;
+                mastery: number | null;
+            }[];
+            byDifficulty: {
+                difficulty: number;
+                total: number;
+                attempted: number;
+                correct: number;
+                accuracy: number | null;
+            }[];
+            time: {
+                totalSec: number;
+                averagePerQuestionSec: number;
+            };
+            percentile: {
+                value: number | null;
+                attempts: number;
+                minAttempts: number;
+            };
+            live: {
+                eventId: string;
+                /** @enum {string} */
+                status: "provisional" | "final";
+                rank: number | null;
+                total: number;
+                percentile: number | null;
+            } | null;
+            sectionsLayout: {
+                id: string;
+                title: string;
+                itemIds: string[];
+                choiceGroups: {
+                    id: string;
+                    attempt: number;
+                    of: number;
+                    itemIds: string[];
+                }[];
+            }[];
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                sectionId: string;
+                number: number;
+                marks: number;
+                choiceGroup: string | null;
+                counted: boolean;
+                /** @enum {string} */
+                status: "correct" | "partial" | "wrong" | "unanswered" | "pending_self" | "evaluated";
+                autoMarks: number;
+                autoMax: number;
+                selfMarks: number | null;
+                selfMax: number;
+                correct: boolean | null;
+                timeSpentSec: number;
+                markedForReview: boolean;
+                response: components["schemas"]["PracticeResponse"] | null;
+                question: components["schemas"]["StudentQuestion"];
+                key: components["schemas"]["AnswerKey"] | null;
+                parts: {
+                    id: string;
+                    alternative: string | null;
+                    /** @enum {string} */
+                    type: "mcq" | "multi-select" | "assertion-reason" | "case-based" | "source-based" | "short" | "long" | "numerical" | "fill-blank" | "match" | "true-false" | "writing" | "map" | "code-output" | "ordering";
+                    correct: boolean | null;
+                    marksAwarded: number | null;
+                    maxMarks: number;
+                    /** @enum {string} */
+                    grading: "auto" | "self";
+                    key: components["schemas"]["AnswerKey"];
+                }[];
+            }[];
+        };
+        /** @description Per item exactly one of: marks (total of its written parts), steps (marks per marking-scheme step), parts (case-based: marks per written part). */
+        SelfEvaluationRequest: {
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                marks?: number;
+                steps?: number[];
+                parts?: {
+                    id: string;
+                    marks: number;
+                }[];
+            }[];
+        };
+        /** @description Auto-graded marks only; ties on marks are broken by time taken. Ranks are beta. */
+        LiveLeaderboard: {
+            event: components["schemas"]["LiveEvent"];
+            /** @enum {string} */
+            status: "not_started" | "provisional" | "final";
+            maxScore: number;
+            total: number;
+            entries: {
+                rank: number;
+                name: string | null;
+                score: number;
+                isMe: boolean;
+            }[];
+            me: {
+                rank: number;
+                score: number;
+                percentile: number | null;
+            } | null;
+        };
+        MyAttempts: {
+            attempts: {
+                /** Format: uuid */
+                id: string;
+                testId: string;
+                title: string;
+                kind: string;
+                status: components["schemas"]["AttemptStatus"];
+                liveEventId: string | null;
+                startedAt: string | null;
+                deadlineAt: string | null;
+                submittedAt: string | null;
+                score: number | null;
+                maxScore: number | null;
+            }[];
+            nextCursor: string | null;
+        };
         PracticeSelfAssessRequest: {
             marks: number;
+        };
+        LiveEvents: {
+            events: components["schemas"]["LiveEvent"][];
         };
     };
     responses: never;

@@ -5,12 +5,12 @@
  *
  * - XP is idempotent per (user, kind, source) — `xp_events_idempotency_unique` — so retries and
  *   replays never double-award. `streaks.total_xp`/`level` are recomputed from xp_events.
- * - A streak day is an IST calendar day with learning activity (a saved practice answer or a lesson
+ * - A streak day is an IST calendar day with learning activity (a saved practice answer, a graded test or a lesson
  *   completion). One missed day per IST week (Monday–Sunday) is covered by the automatic freeze.
  * - Leaderboards/leagues are M3+ and consent-gated (D-014); nothing here is shown to other users.
  */
 import { and, eq, inArray, sql } from 'drizzle-orm';
-import { badges, istDay, lessonProgress, practiceAnswers, streaks, userBadges, xpEvents, type Database } from '@soyl/db';
+import { attempts, badges, istDay, lessonProgress, practiceAnswers, streaks, userBadges, xpEvents, type Database } from '@soyl/db';
 import { BADGES, STREAK, levelForXp, type BadgeDefinition } from '@soyl/shared/config/gamification';
 
 type Tx = Parameters<Parameters<Database['transaction']>[0]>[0];
@@ -151,6 +151,21 @@ async function learnerStats(tx: Db, userId: string) {
   return r!;
 }
 
+/** Test badges (M3): different tests graded, perfect papers, longest run of IST days with a graded test. */
+async function testStats(tx: Db, userId: string) {
+  const [r] = await tx.select({
+    tests: sql<number>`(SELECT count(DISTINCT ${attempts.testId})::int FROM ${attempts} WHERE ${attempts.userId} = ${userId} AND ${attempts.gradedAt} IS NOT NULL)`,
+    perfect: sql<number>`(SELECT count(*)::int FROM ${xpEvents} WHERE ${xpEvents.userId} = ${userId} AND ${xpEvents.sourceType} = 'test_perfect')`,
+    dayStreak: sql<number>`(SELECT coalesce(max(n), 0)::int FROM (
+      SELECT count(*) AS n FROM (
+        SELECT d, d - (row_number() OVER (ORDER BY d))::int AS grp FROM (
+          SELECT DISTINCT (${attempts.submittedAt} AT TIME ZONE 'Asia/Kolkata')::date AS d FROM ${attempts}
+          WHERE ${attempts.userId} = ${userId} AND ${attempts.gradedAt} IS NOT NULL) days) runs
+      GROUP BY grp) streaks)`,
+  }).from(sql`(SELECT 1) AS one`);
+  return r!;
+}
+
 async function chaptersMastered(tx: Db, userId: string, c: Extract<BadgeDefinition['criteria'], { kind: 'chapters_mastered' }>): Promise<number> {
   const rows = await tx
     .select({ chapterId: practiceAnswers.chapterId })
@@ -168,6 +183,8 @@ export async function evaluateBadges(db: Database, tx: Db, userId: string, now: 
   const pending = BADGES.filter((b) => ids.has(b.key) && !have.has(ids.get(b.key)!));
   if (!pending.length) return [];
   const stats = await learnerStats(tx, userId);
+  const needsTests = pending.some((b) => b.criteria.kind === 'tests_submitted' || b.criteria.kind === 'perfect_scores' || b.criteria.kind === 'test_day_streak');
+  const tests = needsTests ? await testStats(tx, userId) : { tests: 0, perfect: 0, dayStreak: 0 };
   const earned: string[] = [];
   for (const b of pending) {
     const c = b.criteria;
@@ -175,6 +192,9 @@ export async function evaluateBadges(db: Database, tx: Db, userId: string, now: 
       c.kind === 'lessons_completed' ? stats.lessons >= c.count
       : c.kind === 'practice_correct' ? stats.correct >= c.count
       : c.kind === 'streak_days' ? stats.longest >= c.count
+      : c.kind === 'tests_submitted' ? tests.tests >= c.count
+      : c.kind === 'perfect_scores' ? tests.perfect >= c.count
+      : c.kind === 'test_day_streak' ? tests.dayStreak >= c.count
       : (await chaptersMastered(tx, userId, c)) >= c.count;
     if (ok) earned.push(b.key);
   }

@@ -7,12 +7,19 @@
  *                              `granted` within UNCONSENTED_ACCOUNT_TTL_DAYS. Students only, see ADR-003.
  * - auth.sweep-verifications   PII.md: expired OTP/verification rows.
  * - auth.sweep-sessions        expired sessions (Better Auth also ignores them; this removes the rows).
+ * - attempts.auto-submit       test engine (ADR-012): every minute, auto-submit and grade in-progress
+ *                              attempts whose deadline + grace has passed (the API also does this lazily).
+ * - live.finalize              every 5 minutes: after a live mock's window, auto-submit what is left, write
+ *                              final ranks to live_registrations and publish the results.
  *
  * Cron expressions are UTC (GEN-6): 20:30 UTC = 02:00 IST, the quietest hour.
  */
 import { sql, type SQL } from 'drizzle-orm';
 import type { ConsentState, Database, Role } from '@soyl/db';
 import { ACCOUNT, CONSENT } from '@soyl/shared/config/security';
+import { autoSubmitExpired } from '@soyl/api/engine/finalize';
+import { finalizeLiveEvents, type LiveFinalizeResult } from '@soyl/api/engine/live-finalize';
+import { TEST_ENGINE } from '@soyl/shared/config/tests';
 import { defineJob, type JobContext, type JobDefinition, type JobQueueOptions } from './registry';
 
 const DAY_MS = 86_400_000;
@@ -148,7 +155,27 @@ export const JOB_NAMES = {
   accountPurgeUnconsented: 'account.purge-unconsented',
   sweepVerifications: 'auth.sweep-verifications',
   sweepSessions: 'auth.sweep-sessions',
+  attemptsAutoSubmit: 'attempts.auto-submit',
+  liveFinalize: 'live.finalize',
 } as const;
+
+/** Test-engine sweeps run often and are short: one run at a time, no pile-up, a few quick retries. */
+const ENGINE: JobQueueOptions = {
+  policy: 'stately',
+  retryLimit: 2,
+  retryDelay: 15,
+  retryBackoff: false,
+  expireInSeconds: 5 * 60,
+  deleteAfterSeconds: 86_400,
+};
+
+export async function autoSubmitAttempts(ctx: JobContext): Promise<{ submitted: number; failed: number }> {
+  return autoSubmitExpired({ db: ctx.db, now: ctx.now }, { batchSize: TEST_ENGINE.autoSubmit.batchSize });
+}
+
+export async function finalizeLive(ctx: JobContext): Promise<LiveFinalizeResult> {
+  return finalizeLiveEvents({ db: ctx.db, now: ctx.now });
+}
 
 export interface JobSettings {
   unconsentedAccountTtlDays?: number;
@@ -184,6 +211,20 @@ export function allJobs(settings: JobSettings = {}): JobDefinition[] {
       cron: '0 21 * * *',
       options: MAINTENANCE,
       handler: (ctx) => sweepExpiredSessions(ctx),
+    }),
+    defineJob<unknown, { submitted: number; failed: number }>({
+      name: JOB_NAMES.attemptsAutoSubmit,
+      description: 'Auto-submit and grade test attempts past deadline + grace (ADR-012)',
+      cron: TEST_ENGINE.autoSubmit.cron,
+      options: ENGINE,
+      handler: (ctx) => autoSubmitAttempts(ctx),
+    }),
+    defineJob<unknown, LiveFinalizeResult>({
+      name: JOB_NAMES.liveFinalize,
+      description: 'Final ranks of live mocks after their window; publish results (ADR-012)',
+      cron: '*/5 * * * *',
+      options: ENGINE,
+      handler: (ctx) => finalizeLive(ctx),
     }),
   ] as JobDefinition[];
 }

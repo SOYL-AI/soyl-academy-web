@@ -13,7 +13,20 @@ export const XP_AWARDS = {
   lessonCompleted: 10,
   /** First correct auto-graded answer to a practice question (per question, ever). */
   practiceFirstCorrect: 2,
+  /**
+   * First graded submission of a test (per test, ever), when at least `testMinAnsweredShare` of the
+   * items were answered (an empty paper earns nothing). Custom tests earn less: they can be built at will.
+   */
+  testSubmitted: 20,
+  customTestSubmitted: 5,
+  /** Live All-India mock participation (per event). */
+  liveTestSubmitted: 40,
+  /** Every auto-graded item fully correct, with at least `perfectMinAutoMarks` auto-graded marks (per test, ever). */
+  testPerfectBonus: 20,
 } as const;
+
+/** Share of a test's items that must be answered for test XP; minimum auto-graded marks for "perfect". */
+export const TEST_XP_RULES = { testMinAnsweredShare: 0.5, perfectMinAutoMarks: 10 } as const;
 
 /**
  * Level thresholds: level n (1-based) starts at LEVEL_THRESHOLDS[n - 1] total XP. Past the last
@@ -42,7 +55,13 @@ export type BadgeCriterion =
   | { kind: 'lessons_completed'; count: number }
   | { kind: 'practice_correct'; count: number }
   | { kind: 'streak_days'; count: number }
-  | { kind: 'chapters_mastered'; count: number; accuracy: number; minAnswered: number };
+  | { kind: 'chapters_mastered'; count: number; accuracy: number; minAnswered: number }
+  /** Different tests submitted and graded (M3). */
+  | { kind: 'tests_submitted'; count: number }
+  /** Tests with every auto-graded item correct (TEST_XP_RULES.perfectMinAutoMarks or more auto marks). */
+  | { kind: 'perfect_scores'; count: number }
+  /** Consecutive IST days with a submitted test. */
+  | { kind: 'test_day_streak'; count: number };
 
 export interface BadgeDefinition {
   key: string;
@@ -53,7 +72,7 @@ export interface BadgeDefinition {
   criteria: BadgeCriterion;
 }
 
-/** Evaluated by the API after XP-earning events (M2); the worker takes over with more badge types later. */
+/** Evaluated after XP-earning events: by the API, and by the worker for attempts it auto-submits (M3). */
 export const BADGES: readonly BadgeDefinition[] = [
   { key: 'first-lesson', name: 'First lesson', description: 'Finish your first lesson.', icon: 'book-open', criteria: { kind: 'lessons_completed', count: 1 } },
   { key: 'lessons-10', name: 'Bookworm', description: 'Finish 10 lessons.', icon: 'books', criteria: { kind: 'lessons_completed', count: 10 } },
@@ -69,4 +88,8 @@ export const BADGES: readonly BadgeDefinition[] = [
     icon: 'star',
     criteria: { kind: 'chapters_mastered', count: 1, accuracy: 0.8, minAnswered: 20 },
   },
+  { key: 'first-test', name: 'Test taker', description: 'Submit your first test.', icon: 'clipboard-check', criteria: { kind: 'tests_submitted', count: 1 } },
+  { key: 'tests-10', name: 'Exam ready', description: 'Submit 10 different tests.', icon: 'clipboard-list', criteria: { kind: 'tests_submitted', count: 10 } },
+  { key: 'perfect-score', name: 'Perfect paper', description: 'Get every auto-marked question in a test right.', icon: 'medal', criteria: { kind: 'perfect_scores', count: 1 } },
+  { key: 'test-streak-3', name: 'Test streak', description: 'Submit a test on 3 days in a row.', icon: 'calendar-check', criteria: { kind: 'test_day_streak', count: 3 } },
 ];
