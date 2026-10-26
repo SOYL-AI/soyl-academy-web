@@ -71,7 +71,8 @@ export function loggerOptions(level: string, stream?: DestinationStream): Logger
         ip: (req as { clientIp?: string }).clientIp ?? req.ip,
         uaHash: hashUserAgent(req.headers?.['user-agent']),
       }),
-      res: (res: FastifyReply) => ({ statusCode: res.statusCode }),
+      // `edge`: which edge secret matched (0 current, 1 next) — verifies rotation and WEB-2 without logging the secret.
+      res: (res: FastifyReply) => ({ statusCode: res.statusCode, edge: (res.request as { edgeSecretIndex?: number | null } | undefined)?.edgeSecretIndex ?? undefined }),
       err: (err: Error & { code?: unknown; statusCode?: number }) => ({
         type: err.name,
         // Library messages can carry SQL or provider bodies: keep them out of info-level fields but
