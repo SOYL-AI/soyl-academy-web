@@ -2,7 +2,7 @@
 
 **Status:** done locally (code, Bicep and runbook). Nothing was deployed by this agent; the Lead runs the deployment with [`docs/platform/runbooks/prod-first-deploy.md`](../runbooks/prod-first-deploy.md).
 
-**Branch:** `platform/backend-api/prod-auth` (worktree `C:/Users/Prabhu/soyl-wt/prod-auth`). It includes `origin/platform/main` with backend-api M3 merged; the conflicts are resolved and the results are under "Verification".
+**Branch:** `platform/backend-api/prod-auth` (worktree `C:/Users/Prabhu/soyl-wt/prod-auth`). It includes `origin/platform/main` with backend-api M3 merged (commit `071fe09`). The conflicts were in `api/src/config.ts`, `index.ts`, `kv/redis.ts` and the README; they are resolved, and the results are under "Verification".
 
 ## Decisions
 
@@ -174,7 +174,77 @@ Header comment and runbook §13: "scale to GP + zone-redundant HA before launch"
 
 ## Verification
 
-See "Acceptance output" at the end, which is filled in after the final run on the merged branch.
+All output below is real. It was taken on Windows 11 / Node 24 on the merged branch (`071fe09` + docs), using embedded Postgres and the in-memory KV.
+
+From `platform/`:
+
+```
+npm run typecheck   -> TYPECHECK_EXIT=0   (api, content-pipeline, db, e2e, shared, worker)
+npm run lint        -> LINT_EXIT=0
+npm test -w @soyl/api -w @soyl/worker -w @soyl/db -w @soyl/shared
+> @soyl/api@0.0.0 test      Test Files  20 passed (20)   Tests  335 passed | 1 skipped (336)
+> @soyl/worker@0.0.0 test   Test Files  8 passed (8)     Tests  51 passed (51)
+> @soyl/db@0.0.0 test       Test Files  14 passed (14)   Tests  109 passed | 1 skipped (110)
+> @soyl/shared@0.0.0 test   Test Files  6 passed (6)     Tests  76 passed (76)
+TEST_EXIT=0
+```
+
+The new tests:
+
+| Test file | Count | What it covers |
+|---|---|---|
+| `shared/azure/identity.test.ts` | 10 | Request shape (api-version, resource, client_id, header); cache plus the 5-minute refresh; single-flight; retry and backoff on network, 404, 429 and 503; no retry on 400, and the response body is not leaked; prod refuses the CLI fallback. |
+| `db/test/entra-auth.test.ts` | 5 | Embedded Postgres with password auth enforced (`password auth enforced by this server: true`). A LOGIN role stands in for the managed identity, and rotating its password emulates token expiry. |
+| `worker/test/prod-auth.test.ts` | 4 | pg-boss options with the token function; the purge guard. |
+| `api/test/prod-auth.test.ts` | 21 | See below. |
+
+`db/test/entra-auth.test.ts` proves four things:
+1. Tokens have the postgres audience.
+2. A held connection survives a token rotation.
+3. A new connection fetches a new token inside the refresh window.
+4. A wrong token is refused, and the URL parsing keeps the password function.
+
+`api/test/prod-auth.test.ts` covers:
+- the production config loads with email only and no Google or SMS settings;
+- edge current and previous secrets are de-duplicated;
+- GEN-3 applies only to enabled methods;
+- ACS sends with the bearer token for `communication.azure.com` (fake fetch), and phone is disabled;
+- the OTP email has text and HTML, with no links or images, and escapes the code;
+- Redis Entra auth: username and password, re-AUTH before expiry, retry after a failed refresh, fail-closed and recovery when the first token fails (ioredis-mock, fake timers);
+- the app with `AUTH_METHODS=email` + `CONSENT_PROVIDER=unavailable`:
+  - `/v1/auth/methods`;
+  - 404 `method_disabled` on phone, Google and link-phone (even with an invalid body), after the edge, Origin and CSRF checks;
+  - email sign-in works, consent stays `pending`, and `consent/start` stays pending;
+  - AI-like and leaderboard routes, and PATCH `schoolId`, return 403 `consent_required` ("A parent or guardian needs to give consent first.");
+  - a `test_attempts` route returns 200.
+
+Bicep (Bicep 0.48.1):
+
+```
+node platform/infra/validate.mjs --strict   (BICEP_BIN=C:/Users/Prabhu/soyl-wt/_tools/bicep.exe)
+| build | main.bicep | 0 | 0 |
+| lint | main.bicep | 0 | 0 |
+| build | shared.bicep | 0 | 0 |
+| lint | shared.bicep | 0 | 0 |
+| build-params | params/dev.bicepparam | 0 | 0 |
+| build-params | params/prod.bicepparam | 0 | 0 |
+| build-params | params/shared.bicepparam | 0 | 0 |
+| build-params | params/stg.bicepparam | 0 | 0 |
+Total: 0 error(s), 0 warning(s) (strict: warnings fail)
+```
+
+Migrations image, without Docker. The bundles from `sh infra/docker/bundle-migrate.sh <out>` ran against a fresh embedded database through `migrate-entrypoint.mjs`:
+
+```
+running: db migrate up                      -> 8 migration(s) applied
+running: release pgboss-migrate             -> pg-boss schema ready {schemaVersion: 46, granted: true, role: soyl_app}
+== step "default" exit 0 in 5s
+running: db seed catalog                    -> "errors": []
+running: release content publish --authored -> publish: 41 published, 0 unchanged, 0 refused/failed
+== step "release" exit 0 in 94s
+```
+
+Root marketing files: `git diff --stat origin/platform/main -- app components content lib public package.json package-lock.json next.config.ts vercel.json` is empty.
 
 ## Risks / open items
 
