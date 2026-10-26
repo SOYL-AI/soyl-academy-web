@@ -596,9 +596,848 @@ Publisher CBSE. Fetched 2026-10-26 by the curriculum-architect (CBSE blueprints)
 `blueprints/*.yaml` (sections, question types, marks, internal choice, duration). No question text is copied. Skill-subject SQPs on
 CBSE's skill page are the 2025-26 papers; CBSE notification 132/2026 (`cbse-sqp-notification-2026-27`) says the question-paper design is unchanged for 2026-27.
 
+### `cbse-sqp-x-agriculture-2026-27`
+- **Title:** Agriculture (408) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/408_AGRICULTURE_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/408_AGRICULTURE_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-apparel-2026-27`
+- **Title:** Apparel (414) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/414_Apparel_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/414_Apparel_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-artificial-intelligence-2026-27`
+- **Title:** Artificial Intelligence (417) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/417_AI_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/417_AI_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-automotive-2026-27`
+- **Title:** Automotive (404) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/404_AUTOMOTIVE_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/404_AUTOMOTIVE_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-banking-and-insurance-2026-27`
+- **Title:** Banking and Insurance (411) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/411_BANKING_INSURANCE_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/411_BANKING_INSURANCE_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-beauty-and-wellness-2026-27`
+- **Title:** Beauty and Wellness (407) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/407_Beauty_and_Wellness_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/407_Beauty_wellness_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-carnatic-music-melodic-instruments-2026-27`
+- **Title:** Carnatic Music (Melodic Instruments) (032) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/CarnaticMelodicInstrument-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/CarnaticMelodicInstrument-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-carnatic-music-percussion-instruments-2026-27`
+- **Title:** Carnatic Music (Percussion Instruments) (033) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/CarnaticMusicPercussion-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/CarnaticMusicPercussion-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-carnatic-music-vocal-2026-27`
+- **Title:** Carnatic Music (Vocal) (031) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/CarnaticMusicVocal-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/CarnaticMusicVocal-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-computer-applications-2026-27`
+- **Title:** Computer Applications (165) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/ComputerApplication-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/ComputerApplication-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-data-science-2026-27`
+- **Title:** Data Science (419) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/419_DataSceince_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/419_DataSceince_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-design-thinking-2026-27`
+- **Title:** Design Thinking and Innovation (422) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/422_DTI_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/422_DTI_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-elements-of-book-keeping-and-accountancy-2026-27`
+- **Title:** Elements of Book Keeping and Accountancy (254) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/ElementsBookKeepingAccountancy-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/ElementsBookKeepingAccountancy-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-elements-of-business-2026-27`
+- **Title:** Elements of Business (154) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/ElementsBusiness-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/ElementsBusiness-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-food-production-2026-27`
+- **Title:** Food Production (409) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/409_FOOD_PRODUCTION_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/409_FOOD_PRODUCTION_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-foundation-skills-for-sciences-2026-27`
+- **Title:** Foundation Skills for Sciences (Pharmaceutical and Biotechnology) (421) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/421-BioTechnology_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/421-BioTechnology_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-front-office-operations-2026-27`
+- **Title:** Front Office Operations (410) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/410_FRONT_OFFICE_OPERATIONS_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/410_FRONT_OFFICE_OPERATIONS_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-health-care-2026-27`
+- **Title:** Health Care (413) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/413_HEALTH_CARE_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/413_HEALTH_CARE_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-hindustani-music-melodic-instruments-2026-27`
+- **Title:** Hindustani Music (Melodic Instruments) (035) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/HindustaniMelodic-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/HindustaniMelodic-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-hindustani-music-percussion-instruments-2026-27`
+- **Title:** Hindustani Music (Percussion Instruments) (036) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/HindustaniMusicPercussion-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/HindustaniMusicPercussion-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-hindustani-music-vocal-2026-27`
+- **Title:** Hindustani Music (Vocal) (034) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/HindustaniVocal-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/HindustaniVocal-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-home-science-2026-27`
+- **Title:** Home Science (064) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/HomeScience-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/HomeScience-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-information-technology-2026-27`
+- **Title:** Information Technology (402) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/402_Information_Tech_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/402_Information_Tech_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-introduction-to-financial-markets-2026-27`
+- **Title:** Introduction to Financial Markets (405) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/405_FFM_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/405_FFM_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-introduction-to-tourism-2026-27`
+- **Title:** Introduction to Tourism (406) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/406_INTRODUCTION_TOURISM_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/406_INTRODUCTION_TOURISM_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-marketing-and-sales-2026-27`
+- **Title:** Marketing and Sales (412) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/412_Marketing_Sales_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/412_Marketing_Sales_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-multi-media-2026-27`
+- **Title:** Multi Media (415) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/415_MEDIA_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/415_MEDIA_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-multi-skill-foundation-course-2026-27`
+- **Title:** Multi Skill Foundation Course (416) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/416_MULTI_SKILL_FOUNDATION_COURSE_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/416_MULTI_SKILL_FOUNDATION_COURSE_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-ncc-2026-27`
+- **Title:** NCC (076) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/NCC-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/NCC-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-painting-2026-27`
+- **Title:** Painting (049) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/Painting-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/Painting-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-physical-activity-trainer-2026-27`
+- **Title:** Physical Activity Trainer (418) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/418_PAT_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/418_PAT_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-retail-2026-27`
+- **Title:** Retail (401) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/401_RETAIL_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/401_RETAIL_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
 ### `cbse-sqp-x-science-2026-27`
 - **Title:** Science (086) Class X Sample Question Paper and Marking Scheme 2026-27
 - **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/Science-SQP.pdf
 - **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/Science-MS.pdf
 - **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-security-2026-27`
+- **Title:** Security (403) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/403_SECURITY_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/403_SECURITY_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-agriculture-2026-27`
+- **Title:** Agriculture (808) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/808_AGRICULTURE_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/808_AGRICULTURE_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-air-conditioning-and-refrigeration-2026-27`
+- **Title:** Air-Conditioning and Refrigeration (827) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/827_AIR_CON_REFRI_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/827_AIR_CON_REFRI_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-artificial-intelligence-2026-27`
+- **Title:** Artificial Intelligence (843) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/843_AI_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/843_AI_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-automotive-2026-27`
+- **Title:** Automotive (804) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/804_AUTOMOTIVE_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/804_AUTOMOTIVE_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-banking-2026-27`
+- **Title:** Banking (811) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/811_BANKING_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/811_BANKING_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-beauty-and-wellness-2026-27`
+- **Title:** Beauty and Wellness (807) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/807_BEAUTY_WELLNESS_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/807_BEAUTY_WELLNESS_SQP_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-business-administration-2026-27`
+- **Title:** Business Administration (833) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/833_BUSINESS_ADMINISTRATION_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/833_BUSINESS_ADMINISTRATION_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-cost-accounting-2026-27`
+- **Title:** Cost Accounting (823) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/823_COST_ACCOUNTING_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/823_COST_ACCOUNTING_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-data-science-2026-27`
+- **Title:** Data Science (844) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/844_DataScience_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/844_DataScience_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-design-2026-27`
+- **Title:** Design (830) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/830_DESIGN_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/830_DESIGN_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-design-thinking-and-innovation-2026-27`
+- **Title:** Design Thinking and Innovation (848) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/848_DTI_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/848_DTI_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-early-childhood-care-and-education-2026-27`
+- **Title:** Early Childhood Care and Education (842) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/842_ECCE_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/842_ECCE_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-electrical-technology-2026-27`
+- **Title:** Electrical Technology (819) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/819_ELECTRICAL_TECHNOLOGY_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/819_ELECTRICAL_TECHNOLOGY_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-electronics-and-hardware-2026-27`
+- **Title:** Electronics and Hardware (847) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/847_ELHA_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/847_ELHA_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-electronics-technology-2026-27`
+- **Title:** Electronics Technology (820) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/820_ELECTRONICS_TECHNOLOGY_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/820_ELECTRONICS_TECHNOLOGY_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-fashion-studies-2026-27`
+- **Title:** Fashion Studies (837) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/837_FASHION_STUDIES_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/837_FASHION_STUDIES_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-financial-markets-management-2026-27`
+- **Title:** Financial Markets Management (805) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/805_FINANCIAL_MARKET_MANAGEMENT_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/805_FINANCIAL_MARKET_MANAGEMENT_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-food-nutrition-and-dietetics-2026-27`
+- **Title:** Food Nutrition and Dietetics (834) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/834_FOOD_NUTRITION_DIETETICS_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/834_FOOD_NUTRITION_DIETETICS_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-food-production-2026-27`
+- **Title:** Food Production (809) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/809_FOOD_PRODUCTION_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/809_FOOD_PRODUCTION_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-front-office-operations-2026-27`
+- **Title:** Front Office Operations (810) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/810_FRONT_OFFICE_OPERATIONS_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/810_FRONT_OFFICE_OPERATIONS_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-geospatial-technology-2026-27`
+- **Title:** Geospatial Technology (818) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/818_GEOSPATIAL_TECHNOLOGY_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/818_GEOSPATIAL_TECHNOLOGY_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-health-care-2026-27`
+- **Title:** Health Care (813) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/813_HEALTH_CARE_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/813_HEALTH_CARE_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-horticulture-2026-27`
+- **Title:** Horticulture (816) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/816_HORTICULTURE_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/816_HORTICULTURE_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-information-technology-2026-27`
+- **Title:** Information Technology (802) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/802_INFORMATION_TECHNOLOGY_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/802_INFORMATION_TECHNOLOGY_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-insurance-2026-27`
+- **Title:** Insurance (814) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/814_INSURANCE_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/814_INSURANCE_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-library-and-information-science-2026-27`
+- **Title:** Library and Information Science (836) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/836_LIBRARY_INFORMATION_SCIENCE_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/836_LIBRARY_INFORMATION_SCIENCE_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-marketing-2026-27`
+- **Title:** Marketing (812) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/812_MARKETING_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/812_MARKETING_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-mass-media-studies-2026-27`
+- **Title:** Mass Media Studies (835) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/835_MASS_MEDIA_STUDIES_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/835_MASS_MEDIA_STUDIES_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-medical-diagnostics-2026-27`
+- **Title:** Medical Diagnostics (828) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/828_MEDICAL_DIAGNOSITCS_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/828_MEDICAL_DIAGNOSITCS_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-multi-media-2026-27`
+- **Title:** Multi-Media (821) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/821_MEDIA_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/821_MEDIA_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-office-procedures-and-practices-2026-27`
+- **Title:** Office Procedures and Practices (824) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/824_OfficeProc_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/824_OfficeProc_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-physical-activity-trainer-2026-27`
+- **Title:** Physical Activity Trainer (845) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/845_PAT_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/845_PAT_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-retail-2026-27`
+- **Title:** Retail (801) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/801_RETAIL_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/801_RETAIL_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-salesmanship-2026-27`
+- **Title:** Salesmanship (831) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/831_SALESMANSHIP_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/831_SALESMANSHIP_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-shorthand-english-2026-27`
+- **Title:** Shorthand (English) (825) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/825_Shorthand_Engish_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/825_Shorthand_Engish_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-shorthand-hindi-2026-27`
+- **Title:** Shorthand (Hindi) (826) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/826_Shorthand_Hindi_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/826_Shorthand_Hindi_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-taxation-2026-27`
+- **Title:** Taxation (822) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/822_TAXATION_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/822_TAXATION_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-textile-design-2026-27`
+- **Title:** Textile Design (829) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/829_TEXTILE_DESIGN_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/829_TEXTILE_DESIGN_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-tourism-2026-27`
+- **Title:** Tourism (806) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/806_TOURISM_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/806_TOURISM_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-typography-and-computer-application-2026-27`
+- **Title:** Typography and Computer Application (817) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/817_Typography_Comp_Appl_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/817_Typography_Comp_Appl_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-web-application-2026-27`
+- **Title:** Web Application (803) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/803_WEB_APPLICATION_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/803_WEB_APPLICATION_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-xii-yoga-2026-27`
+- **Title:** Yoga (841) Class XII Sample Question Paper and Marking Scheme (2025-26 paper; design unchanged for 2026-27)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/841_Yoga_SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_XII/841_Yoga_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+## Subject syllabus documents added in M1
+
+Publisher CBSE, academic year 2026-27, fetched 2026-10-25 (M0 download) or 2026-10-26. Used for units, marks, chapter/topic scope and question-paper design of the matching syllabus file.
+
+### `cbse-sqp-x-electronics-and-hardware-2026-27`
+- **Title:** Electronics and Hardware (420) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26) — NOT FETCHED
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/420-ELHA_SQP.pdf (marking scheme: .../420-ELHA_MS.pdf)
+- **Publisher:** CBSE · **Fetched:** not fetched — "The specified URL is inaccessible at this time" on 2026-10-26 after retries; blueprint built from the common skill-subject pattern and marked unverified.
+
+### `cbse-x-agriculture-408-2026-27`
+- **Title:** Agriculture (408) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/408-Agriculture-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-apparel-414-2026-27`
+- **Title:** Apparel (414) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/414-APPAREL-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-art-education-2026-27`
+- **Title:** Art Education (502), Classes IX-X 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Art_Education_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-automotive-404-2026-27`
+- **Title:** Automotive (404) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/404-AUTOMOTIVE-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-banking-insurance-411-2026-27`
+- **Title:** Banking and Insurance (411) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/411-BANKING_INSURANCE-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-beauty-wellness-407-2026-27`
+- **Title:** Beauty and Wellness (407) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/407-BEAUTY_AND_WELLNESS-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-carnatic-melodic-2026-27`
+- **Title:** Carnatic Music Melodic Instruments (032) Class X 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Carnatic_Melodic_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-carnatic-percussion-2026-27`
+- **Title:** Carnatic Music Percussion Instruments (033) Class X 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Carnatic_Percussion_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-carnatic-vocal-2026-27`
+- **Title:** Carnatic Music Vocal (031) Class X 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Carnatic_Vocal_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-data-science-419-2026-27`
+- **Title:** Data Science (419) Class X 2026-27 skill syllabus (unit names and marks only)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/419-DATA_SCIENCE-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-dti-422-2026-27`
+- **Title:** Design Thinking and Innovation (422) Class X 2026-27 skill syllabus (unit names and marks only)
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/422-DesignThinking-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-ebka-2026-27`
+- **Title:** Elements of Book Keeping and Accountancy (254) Class X 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Elements_of_BK_Acc_SecP1X_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-elements-of-business-2026-27`
+- **Title:** Elements of Business (154) Class X 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Elements_of_Business_SecP1X_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-elha-420-2026-27`
+- **Title:** Electronics and Hardware (420) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/420-ELHA-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-employability-skills-2026-27`
+- **Title:** Employability Skills (Part A of every skill subject) Class X 2026-27 curriculum
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/EmployabilitySkills-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-foo-410-2026-27`
+- **Title:** Front Office Operations (410) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/410-FRONT_OFFICE_OPERATIONS-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-food-production-409-2026-27`
+- **Title:** Food Production (409) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/409-FOOD_PRODUCTION-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-fss-421-2026-27`
+- **Title:** Foundation Skills for Sciences (Pharmaceutical and Biotechnology) (421) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/421-Pharma_BioTechnology-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-health-care-413-2026-27`
+- **Title:** Health Care (413) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/413-HEALTHCARE-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-hindustani-melodic-2026-27`
+- **Title:** Hindustani Music Melodic Instruments (035) Class X 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Hindustani_Music_Melodic_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-hindustani-percussion-2026-27`
+- **Title:** Hindustani Music Percussion Instruments (036) Class X 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Hindustani_Music_Percussion_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-hindustani-vocal-2026-27`
+- **Title:** Hindustani Music Vocal (034) Class X 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Hindustani_Music_Vocal_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-hpe-2026-27`
+- **Title:** Health and Physical Education, Classes IX-X 2026-27 guidelines
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/HPE_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-ifm-405-2026-27`
+- **Title:** Introduction to Financial Markets (405) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/405-FMM-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-marketing-sales-412-2026-27`
+- **Title:** Marketing and Sales (412) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/412-MARKETING_SALES-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-msfc-416-2026-27`
+- **Title:** Multi Skill Foundation Course (416) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/416-MultiSkillFoundationCourse-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-multimedia-415-2026-27`
+- **Title:** Multi Media (415) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/415-MULTIMEDIA-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-ncc-2026-27`
+- **Title:** National Cadet Corps (076) Class X 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/NCC_SecP1X_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-painting-2026-27`
+- **Title:** Painting (049) Class X 2026-27 syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Painting_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-pat-418-2026-27`
+- **Title:** Physical Activity Trainer (418) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/418-Physical_Activity_Trainer-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-retail-401-2026-27`
+- **Title:** Retail (401) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/401-RETAIL-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-security-403-2026-27`
+- **Title:** Security (403) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/403-SECURITY-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-tourism-406-2026-27`
+- **Title:** Introduction to Tourism (406) Class X 2026-27 skill syllabus
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/Sec/406-INTRODUCTION_TOURISM-X.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-x-work-experience-2026-27`
+- **Title:** Work Experience / SEWA (Social Empowerment through Work Education and Action), Classes IX-X 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/Work_Experience_SecP1_2026-27.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-ac-refrigeration-827-2026-27`
+- **Title:** Air-Conditioning and Refrigeration (827) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/827-AIR_CONDITIONING_REF-XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-agriculture-808-2026-27`
+- **Title:** Agriculture (808) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/808-AGRICULTURE-XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-automotive-804-2026-27`
+- **Title:** Automotive (804) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/804-AUTOMOTIVE.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-banking-811-2026-27`
+- **Title:** Banking (811) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/811-Banking.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-beauty-wellness-807-2026-27`
+- **Title:** Beauty and Wellness (807) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/807-BEAUTY-WELLNESS_XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-business-administration-833-2026-27`
+- **Title:** Business Administration (833) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/833-BUSINESS_ADMINISTRATION.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-cost-accounting-823-2026-27`
+- **Title:** Cost Accounting (823) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/823-CostAccounting.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-data-science-844-2026-27`
+- **Title:** Data Science (844) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/844-DATASCIENCE.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-design-830-2026-27`
+- **Title:** Design (830) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/830-DESIGN.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-dti-848-2026-27`
+- **Title:** Design Thinking and Innovation (848) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/848-DesignThinking_Innovation.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-ecce-842-2026-27`
+- **Title:** Early Childhood Care and Education (842) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/842_EARLY_CHILDHOOD_CARE_EDUCATION.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-electrical-819-2026-27`
+- **Title:** Electrical Technology (819) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/819-ELECTRICAL_TECHNOLOGY-XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-electronics-820-2026-27`
+- **Title:** Electronics Technology (820) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/820-ELECTRONICS_TECHNOLOGY-XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-elha-847-2026-27`
+- **Title:** Electronics and Hardware (847) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/847-ELHA.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-fashion-studies-837-2026-27`
+- **Title:** Fashion Studies (837) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/837-FASHION_STUDIES-XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-fmm-805-2026-27`
+- **Title:** Financial Markets Management (805) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/805-FMM.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-fnd-834-2026-27`
+- **Title:** Food Nutrition and Dietetics (834) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/834-FOOD_NUTRITION_DIETETICS_XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-food-production-809-2026-27`
+- **Title:** Food Production (809) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/809-FOOD_PRODUCTION-XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-front-office-810-2026-27`
+- **Title:** Front Office Operations (810) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/810-FRONT_OFFICE_OPERATIONS-XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-geospatial-818-2026-27`
+- **Title:** Geospatial Technology (818) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/818-GEOSPATIAL_TECHNOLOGY_XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-health-care-813-2026-27`
+- **Title:** Health Care (813) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/813-HealthCare_XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-horticulture-816-2026-27`
+- **Title:** Horticulture (816) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/816-HORTICULTURE-XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-insurance-814-2026-27`
+- **Title:** Insurance (814) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/814-Insurance.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-it-802-2026-27`
+- **Title:** Information Technology (802) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/802-IT.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-lis-836-2026-27`
+- **Title:** Library and Information Science (836) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/836-Library_InformationSciences-XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-lta-846-2026-27`
+- **Title:** Land Transportation Associate (846) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/846-LandTransportation.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-marketing-812-2026-27`
+- **Title:** Marketing (812) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/812-MARKETING_XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-mass-media-835-2026-27`
+- **Title:** Mass Media Studies (835) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/835-MASS_MEDIA_STUDIES.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-medical-diagnostics-828-2026-27`
+- **Title:** Medical Diagnostics (828) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/828-MEDICAL_DIAGNOSTICS-XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-multimedia-821-2026-27`
+- **Title:** Multi-Media (821) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/821-MULTIMEDIA-XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-office-procedures-824-2026-27`
+- **Title:** Office Procedures and Practices (824) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/824-OFFICE_PROCEDURES-XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-pat-845-2026-27`
+- **Title:** Physical Activity Trainer (845) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/845-Physical_Activity_Trainer.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-retail-801-2026-27`
+- **Title:** Retail (801) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/801-RETAIL_XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-salesmanship-831-2026-27`
+- **Title:** Salesmanship (831) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/831-SALESMANSHIP_XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-shorthand-english-825-2026-27`
+- **Title:** Shorthand (English) (825) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/825-SHORTHAND-ENGLISH-XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-shorthand-hindi-826-2026-27`
+- **Title:** Shorthand (Hindi) (826) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/826-SHORTHAND-HINDI-XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-taxation-822-2026-27`
+- **Title:** Taxation (822) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/822-TAXATION.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-textile-design-829-2026-27`
+- **Title:** Textile Design (829) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/829-TEXTILE_DESIGN-XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-tourism-806-2026-27`
+- **Title:** Tourism (806) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/806-Tourism.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-typography-817-2026-27`
+- **Title:** Typography and Computer Application (817) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/817-TYPOGRAPHY-COMPUTER-APPLICATIONS_XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-web-application-803-2026-27`
+- **Title:** Web Application (803) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/803-WebApplication_XII_updated.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
+
+### `cbse-xii-yoga-841-2026-27`
+- **Title:** Yoga (841) Class XII skill syllabus 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/Curriculum27/SrSec/841-YOGA_XII.pdf
+- **Publisher:** CBSE · **Academic year:** 2026-27 · **Fetched:** 2026-10-25
 <!-- m1-blueprints:end -->

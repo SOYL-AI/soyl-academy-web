@@ -1,0 +1,45 @@
+id: cbse-10-home-science-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-home-science
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares:
+  recall+understanding: 0.4
+  application: 0.3
+  analysis+evaluation: 0.3
+scope: syllabus
+sections:
+  - id: A
+    title: Section A (Q1-14)
+    instructions: Multiple choice, 1 mark each.
+    items:
+      - {type: mcq, count: 11, marks_each: 1}
+      - {type: match, count: 1, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: Section B (Q15-25)
+    instructions: Q15-21 2 marks each; Q22-25 3 marks each. Internal choice in some questions.
+    items:
+      - {type: short, count: 4, marks_each: 2}
+      - {type: short, count: 6, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 2, marks_each: 3}
+      - {type: short, count: 4, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C (Q26-32)
+    instructions: Q26-30 4 marks each; Q31-32 5 marks each. Internal choice in one of each.
+    items:
+      - {type: long, count: 4, marks_each: 4}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 1, marks_each: 5}
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-x-home-science-2026-27
+notes: >-
+  Theory 70 + practical 30. 32 questions: Section A Q1-14 1 mark (11 MCQ, 1 match-the-lists, 2 assertion-reason); Section B Q15-21 2 marks
+  (choice in three) and Q22-25 3 marks (choice in two); Section C Q26-30 4 marks (choice in one) and Q31-32 5 marks (choice in one).
+  Competency weights from the CBSE 2026-27 question paper design: knowledge and understanding 40%, application 30%, higher order 30%; ~30%
+  internal choice; difficulty easy 20 / average 60 / difficult 20.
