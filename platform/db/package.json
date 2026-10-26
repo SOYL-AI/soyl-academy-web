@@ -11,7 +11,8 @@
     "./testing": "./src/testing.ts",
     "./normalize": "./src/normalize.ts",
     "./ids": "./src/ids.ts",
-    "./student-questions": "./src/student-questions.ts"
+    "./student-questions": "./src/student-questions.ts",
+    "./testing/global-setup": "./src/testing-global-setup.ts"
   },
   "scripts": {
     "db": "tsx src/cli.ts",
