@@ -47,6 +47,8 @@ export const SVG_PURIFY_CONFIG: Config = {
   ALLOWED_ATTR: [...SVG_ALLOWED_ATTRIBUTES],
   FORBID_TAGS,
   FORBID_ATTR: ['style', 'xlink:href', 'formaction', 'action', 'src', 'srcset', 'background', 'ping'],
+  // Text attributes: DOMPurify otherwise treats "water: two tubes" as a URI with scheme "water:".
+  ADD_URI_SAFE_ATTR: ['aria-label'],
   ALLOW_DATA_ATTR: false,
   ALLOW_ARIA_ATTR: false,
   ALLOW_UNKNOWN_PROTOCOLS: false,

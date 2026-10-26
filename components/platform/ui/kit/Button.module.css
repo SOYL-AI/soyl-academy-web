@@ -90,8 +90,9 @@
   align-items: center;
   gap: var(--p-space-2);
 }
+/* opacity, not visibility: the label must stay the accessible name while loading. */
 .loading .label {
-  visibility: hidden;
+  opacity: 0;
 }
 .spinner {
   position: absolute;

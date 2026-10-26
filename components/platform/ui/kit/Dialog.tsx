@@ -51,6 +51,11 @@ export function Dialog({
     onCloseRef.current = onClose;
   });
   const titleId = useId();
+  const restoreFocus = useCallback(() => {
+    const el = returnFocus.current;
+    returnFocus.current = null;
+    if (el && el.isConnected) el.focus();
+  }, []);
   const descId = useId();
 
   useEffect(() => {
@@ -72,19 +77,16 @@ export function Dialog({
     if (!open && dialog.open) {
       if (typeof dialog.close === 'function') dialog.close();
       else dialog.removeAttribute('open');
+      restoreFocus();
     }
     return undefined;
-  }, [open, initialFocus]);
+  }, [open, initialFocus, restoreFocus]);
 
   // Restore focus whenever the dialog closes (prop change or native close).
   useEffect(() => {
     const dialog = ref.current;
     if (!dialog) return;
-    const handleClose = () => {
-      const el = returnFocus.current;
-      returnFocus.current = null;
-      if (el && el.isConnected) el.focus();
-    };
+    const handleClose = () => restoreFocus();
     const handleCancel = (e: Event) => {
       e.preventDefault(); // controlled: the parent decides
       onCloseRef.current();
@@ -95,7 +97,7 @@ export function Dialog({
       dialog.removeEventListener('close', handleClose);
       dialog.removeEventListener('cancel', handleCancel);
     };
-  }, []);
+  }, [restoreFocus]);
 
   const onKeyDown = useCallback((e: KeyboardEvent<HTMLDialogElement>) => {
     if (e.key === 'Escape') {
