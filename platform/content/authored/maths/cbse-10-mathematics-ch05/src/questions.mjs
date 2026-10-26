@@ -224,7 +224,7 @@ caseQ('c01', {
 Days $11$ to $20$: $S_{20} - S_{10} = \dfrac{20}{2}(240 + 285) - 1875 = 5250 - 1875 = 3375$ kites.`, sol: 'Subtract the first ten days from the first twenty.', scheme: [['aₙ = 105 + 15n', 1], ['3375', 1]], d: 3, c: 'analysis', t: [2, 3], time: 150 }),
     ]),
   ],
-}, (C) => { C.child('a').which([255, 270, 240, 135], T(120, 15, 10)); C.child('b').val(firstN((n) => T(120, 15, n) === 345)); C.child('c').model([S(120, 15, 10)]); C.child('cii').assert([1, 7, 20].every((n) => T(120, 15, n) === 105 + 15 * n), 'general term'); C.child('cii').model([S(120, 15, 20), S(120, 15, 20) - S(120, 15, 10)]); });
+}, (C) => { C.child('a').which([255, 270, 240, 135], T(120, 15, 10)); C.child('b').val(firstN((n) => T(120, 15, n) === 345)); C.child('c').model([S(120, 15, 10)]); C.child('cii').assert([1, 7, 20].every((n) => T(120, 15, n) === 105 + 15 * n), 'general term'); C.child('cii').model([S(120, 15, 20), S(120, 15, 20) - S(120, 15, 10)]);  C.model([255, 16, 1875, 3375]); });
 
 caseQ('c02', {
   passage: 'Sneha is training for a half marathon in Kochi. She runs 2 km on day 1 and increases her distance by 0.5 km every day. The graph shows her distance for the first five days.',
@@ -240,7 +240,7 @@ caseQ('c02', {
 Total $= \dfrac{21}{2}(2 + 12) = 21 \times 7 = 147$ km.`, sol: 'Find n first, then the sum.', scheme: [['Day 21', 1], ['147 km', 1]], d: 3, c: 'application', t: [2, 3], time: 150 }),
     ]),
   ],
-}, (C) => { C.child('a').which([2, 2.5, 0.5, 1], 2.5 - 2); C.child('b').val(T(2, 0.5, 15)); C.child('c').model([S(2, 0.5, 15)]); const n = firstN((k) => T(2, 0.5, k) === 12); C.child('cii').model([n, S(2, 0.5, n)]); });
+}, (C) => { C.child('a').which([2, 2.5, 0.5, 1], 2.5 - 2); C.child('b').val(T(2, 0.5, 15)); C.child('c').model([S(2, 0.5, 15)]); const n = firstN((k) => T(2, 0.5, k) === 12); C.child('cii').model([n, S(2, 0.5, n)]);  C.model([0.5, 9, 82.5, 21, 147]); });
 
 caseQ('c03', {
   passage: 'At a railway station in Nagpur, local trains to Wardha leave every 12 minutes. The first train of the day leaves at 5:40 am, the second at 5:52 am, the third at 6:04 am, and so on. Their departure times, in minutes after midnight, form an AP.',
@@ -258,7 +258,7 @@ $17$ trains leave before $9{:}00$ am (the last of them at $8{:}52$ am).`, sol: '
 $340 + 12(n - 1) = 1396 \Rightarrow 12(n - 1) = 1056 \Rightarrow n - 1 = 88 \Rightarrow n = 89$ trains.`, sol: 'Convert to minutes, then find n.', scheme: [['1396 minutes and equation', 1], ['89 trains', 1]], d: 3, c: 'application', t: [2, 4], time: 150 }),
     ]),
   ],
-}, (C) => { const times = seq(340, 12, 120); C.child('a').key('b'); C.child('b').assert(times[9] === 7 * 60 + 28, '7:28'); C.child('b').blank('7:28'); C.child('c').model([times.filter((t) => t < 540).length, 540]); C.child('c').assert(times[16] === 8 * 60 + 52, '8:52'); C.child('cii').model([1396, times.indexOf(23 * 60 + 16) + 1, 1056]); });
+}, (C) => { const times = seq(340, 12, 120); C.child('a').key('b'); C.child('b').assert(times[9] === 7 * 60 + 28, '7:28'); C.child('b').blank('7:28'); C.child('c').model([times.filter((t) => t < 540).length, 540]); C.child('c').assert(times[16] === 8 * 60 + 52, '8:52'); C.child('cii').model([1396, times.indexOf(23 * 60 + 16) + 1, 1056]);  C.model(['7{:}28', 17, 89]); });
 
 caseQ('c04', {
   passage: r`In a maths quiz in Shillong, the quizmaster announces: "The sum of the first $n$ terms of a certain AP is $S_n = 5n^2 - 3n$." Teams must find facts about the AP from this rule alone.`,
@@ -274,7 +274,7 @@ caseQ('c04', {
       mk.short({ marks: 2, stem: '**(ii)** Which term of the AP is 192?', model: r`$a_n = 10n - 8 = 192 \Rightarrow 10n = 200 \Rightarrow n = 20$. So $192$ is the $20$th term.`, sol: r`**Check:** $S_{20} - S_{19} = 1940 - 1748 = 192$.`, scheme: [['10n − 8 = 192', 1], ['20th term', 1]], d: 3, c: 'application', t: [2], time: 120 }),
     ]),
   ],
-}, (C) => { const Sn = (n) => 5 * n * n - 3 * n; const an = (n) => Sn(n) - Sn(n - 1); C.child('a').which([5, 14, -3, 2], Sn(1)); C.child('b').blank(an(2) - an(1)); C.child('c').assert([1, 2, 7, 20].every((n) => an(n) === 10 * n - 8), 'an'); C.child('c').model(['10n - 8']); C.child('cii').model([firstN((n) => an(n) === 192)]); C.child('cii').sol([Sn(20), Sn(19)]); });
+}, (C) => { const Sn = (n) => 5 * n * n - 3 * n; const an = (n) => Sn(n) - Sn(n - 1); C.child('a').which([5, 14, -3, 2], Sn(1)); C.child('b').blank(an(2) - an(1)); C.child('c').assert([1, 2, 7, 20].every((n) => an(n) === 10 * n - 8), 'an'); C.child('c').model(['10n - 8']); C.child('cii').model([firstN((n) => an(n) === 192)]); C.child('cii').sol([Sn(20), Sn(19)]);  C.model([2, 10, '10n - 8', 20]); });
 
 caseQ('c05', {
   passage: 'The overhead tank of a housing society in Jodhpur holds 9600 litres of water at 6 am. A pump then draws out 550 litres every hour, so the amounts left at 6 am, 7 am, 8 am, … form an AP.',
@@ -292,4 +292,4 @@ So $500$ litres is **not** one of the readings (after $16$ hours $800$ litres ar
 $S_8 = \dfrac82[1100 + 7 \times 50] = 4 \times 1450 = 5800$ litres drawn; $9600 - 5800 = 3800$ litres left.`, sol: 'The amounts drawn, not the amounts left, form this AP.', scheme: [['S₈ = 5800', 1], ['3800 left', 1]], d: 3, c: 'application', t: [3, 4], time: 150 }),
     ]),
   ],
-}, (C) => { const left = (k) => 9600 - 550 * k; C.child('a').which([7400, 6300, 6850, 2750], left(5)); C.child('b').val(firstN((k) => left(k) === 1350)); C.child('c').assert(!Array.from({ length: 20 }, (_, k) => left(k)).includes(500) && left(16) === 800 && left(17) === 250, '500 never'); C.child('c').model([9100, 800, 250]); C.child('cii').model([S(550, 50, 8), 9600 - S(550, 50, 8), 1450]); });
+}, (C) => { const left = (k) => 9600 - 550 * k; C.child('a').which([7400, 6300, 6850, 2750], left(5)); C.child('b').val(firstN((k) => left(k) === 1350)); C.child('c').assert(!Array.from({ length: 20 }, (_, k) => left(k)).includes(500) && left(16) === 800 && left(17) === 250, '500 never'); C.child('c').model([9100, 800, 250]); C.child('cii').model([S(550, 50, 8), 9600 - S(550, 50, 8), 1450]);  C.model([6850, 15, 5800, 3800]); });

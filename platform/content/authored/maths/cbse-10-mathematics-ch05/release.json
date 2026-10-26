@@ -7361,7 +7361,7 @@
       "syllabus": "topics t01–t04 only; the chapter has no removed topics for 2026-27",
       "katex": "1455 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "7 deck plots + 6 notes/question plots: 52 marked points all on their curves and matching their labels; 0 zeros located numerically and all marked; 0 intersection points lie on both lines",
-      "re_solve": "153/153 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
+      "re_solve": "158/158 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "narration": "35 slides, max 66 words, mean 53; no symbols, LaTeX or letter abbreviations",
       "gate": "npm test -w @soyl/content-templates and content lint (lintExemplar) run clean on this chapter"
     }
