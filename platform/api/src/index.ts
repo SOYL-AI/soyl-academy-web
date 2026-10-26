@@ -56,7 +56,16 @@ export async function main(env: Record<string, string | undefined> = process.env
   process.on('SIGTERM', () => void shutdown('SIGTERM'));
   process.on('SIGINT', () => void shutdown('SIGINT'));
 
-  await app.listen({ port: config.port, host: config.host });
+  try {
+    await app.listen({ port: config.port, host: config.host });
+  } catch (err) {
+    // Do not leave the embedded dev database running when the port is taken.
+    await app.close().catch(() => {});
+    await kv.close().catch(() => {});
+    await closeDb().catch(() => {});
+    await devDb?.close().catch(() => {});
+    throw err;
+  }
   app.log.info(
     { appEnv: config.appEnv, platformEnabled: config.platformEnabled, kv: kv.kind, sms: providers.sms.name, email: providers.email.name, consent: providers.consent.name },
     'SOYL API ready',

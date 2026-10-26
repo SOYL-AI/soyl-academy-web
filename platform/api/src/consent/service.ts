@@ -38,6 +38,13 @@ export class ConsentService {
       throw err instanceof ConsentUnavailableError ? err : new ConsentUnavailableError(err);
     }
     const now = new Date(this.clock.now());
+    if (s.authoritative === false) {
+      const row = await this.cached(userId);
+      if (row && row.provider !== 'pending-first-check') {
+        await this.db.update(consentStatus).set({ fetchedAt: now }).where(eq(consentStatus.userId, userId));
+        return row.status as ConsentState;
+      }
+    }
     await this.db
       .insert(consentStatus)
       .values({

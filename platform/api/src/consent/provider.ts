@@ -12,6 +12,11 @@ export interface ConsentStatus {
   providerRef?: string | null;
   grantedAt?: Date | null;
   revokedAt?: Date | null;
+  /**
+   * False when the provider has no record and returned a default (the mock does this). The cache then
+   * keeps an existing value instead of overwriting it, so seeded fixture states survive sign-in.
+   */
+  authoritative?: boolean;
 }
 
 export interface ConsentFlow {

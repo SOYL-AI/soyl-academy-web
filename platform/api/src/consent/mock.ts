@@ -26,8 +26,9 @@ export class MockConsentProvider implements ConsentProvider {
   async getStatus(userId: string): Promise<ConsentStatus> {
     this.calls.getStatus++;
     if (this.failing) throw new ConsentUnavailableError(new Error('mock consent outage'));
-    const status = this.states.get(userId) ?? this.defaultStatus;
-    return { status, providerRef: `mock-${userId}`, grantedAt: status === 'granted' ? new Date() : null };
+    const known = this.states.get(userId);
+    const status = known ?? this.defaultStatus;
+    return { status, authoritative: known !== undefined, providerRef: `mock-${userId}`, grantedAt: status === 'granted' ? new Date() : null };
   }
 
   async startFlow(userId: string): Promise<ConsentFlow> {
