@@ -106,7 +106,7 @@ export function Markdown({
       const classes = classesOf(cls);
       if (classes.includes('language-math')) {
         const tex = textOf(c);
-        return classes.includes('math-display') && !inline ? <MathBlock tex={tex} /> : <MathInline tex={tex} />;
+        return classes.includes('math-display') && inline === false ? <MathBlock tex={tex} /> : <MathInline tex={tex} />;
       }
       return <code className={s.mdCode}>{c}</code>;
     },

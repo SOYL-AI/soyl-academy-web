@@ -97,7 +97,7 @@ export function ProgressBar({ value, max = 100, label, valueText, hideLabel, thi
         aria-valuetext={text}
         className={cx(s.track, thin && s.trackThin)}
       >
-        <div className={cx(s.fill, tone === 'success' && s['fill-success'])} style={{ width: `${pct}%` }} />
+        <div className={cx(s.fill, tone === 'success' && s.fillGood)} style={{ width: `${pct}%` }} />
       </div>
     </div>
   );
