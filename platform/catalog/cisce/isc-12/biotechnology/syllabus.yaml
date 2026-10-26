@@ -1,0 +1,426 @@
+# ISC Class 12 Biotechnology (878), Paper I Theory - ISC 2027 examination (Class XII portion only).
+# Source: platform/catalog/sources/cisce.md#isc-2027-biotechnology. Topic wording is our own summary of the official scope.
+subject_id: isc-12-biotechnology
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-biotechnology, isc-2027-regulations]
+exam_notes: >-
+  Paper I Theory: 3 hours, 70 marks. Paper II Practical: 3 hours, 15 marks, plus Project Work 10 marks and Practical
+  File 5 marks, assessed by a locally appointed Visiting Examiner (total 30). Prescribed experiments include paper
+  chromatography of leaf pigments, preparing phosphate, acetate and borate buffers, preparing and sterilising LB and
+  plant tissue culture media, plates and slants, inoculating Lactobacillus, Gram staining, effect of temperature and
+  substrate concentration on salivary amylase (Km by graph), isolating DNA from banana, DNA estimation by the DPA
+  method, Bradford protein assay, Evans blue viability test, isolating casein from milk, detecting metanil yellow in
+  turmeric, haemocytometer counting and saponification. The project is one study on an aspect of biotechnology (for
+  example effluent analysis, vaccine development, ELISA diagnosis, DNA fingerprinting, stem cells, bioinformatics,
+  ELSI of GMOs or biopiracy). SOYL covers Paper I only. The syllabus also lists 37 abbreviations (BAC, BLAST, CTAB,
+  ddNTP, EST, FACS, HGP, PCR, RFLP, SNP, STS, VNTR, YAC and others) whose full forms candidates must know; they are
+  folded into the relevant topics below. No unit-wise marks weightage is published, and no ISC 2027 specimen paper is
+  listed for this subject. CISCE lists topics under four units with scope notes, not textbook chapters: SOYL groups
+  them into 15 teachable chapters in syllabus order.
+units:
+  - { name: "1. Molecular Biology", marks: null }
+  - { name: "2. Genetic Engineering", marks: null }
+  - { name: "3. Cell Culture Technology", marks: null }
+  - { name: "4. Bioinformatics", marks: null }
+chapters:
+  - id: isc-12-biotechnology-ch01
+    number: 1
+    title: "Nucleic Acids: Structure and Estimation"
+    unit: "1. Molecular Biology"
+    topics:
+      - id: isc-12-biotechnology-ch01-t01
+        title: "DNA as the genetic material: the Hershey-Chase experiment"
+        learning_outcomes:
+          - "Explain how the Hershey-Chase experiment showed that DNA, not protein, is the genetic material"
+      - id: isc-12-biotechnology-ch01-t02
+        title: "Nucleotides and nucleosides; physical and chemical structure of B-DNA; Watson-Crick double helix; Chargaff's rules"
+        learning_outcomes:
+          - "Distinguish a nucleoside from a nucleotide"
+          - "Describe the double-helical model of B-DNA with its dimensions"
+          - "Use Chargaff's rules to calculate base percentages in a DNA sample"
+      - id: isc-12-biotechnology-ch01-t03
+        title: "RNA: types (mRNA, tRNA, rRNA), structure and functions; clover-leaf model of tRNA and brief L-shaped model"
+        learning_outcomes:
+          - "Draw and label the clover-leaf model of tRNA"
+          - "Compare the structure and function of mRNA, tRNA and rRNA"
+      - id: isc-12-biotechnology-ch01-t04
+        title: "Estimation of nucleic acids: colorimetry and UV-visible spectrophotometry"
+        learning_outcomes:
+          - "Explain the principle of estimating DNA by UV absorbance at 260 nm"
+          - "Describe how a standard curve is used in colorimetric estimation"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biotechnology-ch02
+    number: 2
+    title: "DNA Replication"
+    unit: "1. Molecular Biology"
+    topics:
+      - id: isc-12-biotechnology-ch02-t01
+        title: "Semi-conservative replication: Meselson-Stahl experiment and Taylor's experiment on Vicia faba with radiolabelled thymidine"
+        learning_outcomes:
+          - "Predict the band pattern of DNA after one and two generations in the Meselson-Stahl experiment"
+          - "Explain how Taylor's experiment supports semi-conservative replication in eukaryotes"
+      - id: isc-12-biotechnology-ch02-t02
+        title: "Replication enzymes in prokaryotes and eukaryotes: topoisomerases, helicase, SSBs, DNA polymerases, primase, ligase"
+        learning_outcomes:
+          - "State the role of each enzyme at the replication fork"
+      - id: isc-12-biotechnology-ch02-t03
+        title: "Semi-discontinuous replication: leading and lagging strands; Okazaki fragments"
+        learning_outcomes:
+          - "Explain why the lagging strand is synthesised as Okazaki fragments"
+          - "Draw a labelled replication fork"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biotechnology-ch03
+    number: 3
+    title: "Transcription and the Genetic Code"
+    unit: "1. Molecular Biology"
+    topics:
+      - id: isc-12-biotechnology-ch03-t01
+        title: "Central dogma; reverse transcription"
+        learning_outcomes:
+          - "State the central dogma and explain how reverse transcription is an exception to it"
+      - id: isc-12-biotechnology-ch03-t02
+        title: "Transcription unit: promoter, structural gene and terminator; split genes (introns and exons); monocistronic and polycistronic RNA; hnRNA"
+        learning_outcomes:
+          - "Draw a labelled transcription unit"
+          - "Distinguish monocistronic and polycistronic mRNA with examples"
+      - id: isc-12-biotechnology-ch03-t03
+        title: "Process of transcription and the enzymes involved"
+        learning_outcomes:
+          - "Describe initiation, elongation and termination of transcription"
+          - "Name the RNA polymerases involved in prokaryotes and eukaryotes"
+      - id: isc-12-biotechnology-ch03-t04
+        title: "Post-transcriptional processing in eukaryotes: capping, polyadenylation and splicing"
+        learning_outcomes:
+          - "Explain how hnRNA is processed into mature mRNA and the significance of each step"
+      - id: isc-12-biotechnology-ch03-t05
+        title: "Genetic code: properties, start and stop codons, anticodons"
+        learning_outcomes:
+          - "List the properties of the genetic code"
+          - "Write the anticodon for a given codon"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biotechnology-ch04
+    number: 4
+    title: "Translation and Gene Regulation"
+    unit: "1. Molecular Biology"
+    topics:
+      - id: isc-12-biotechnology-ch04-t01
+        title: "Translation: charging of tRNA; initiation, elongation and termination; roles of mRNA, tRNA and rRNA"
+        learning_outcomes:
+          - "Describe the steps of polypeptide synthesis on a ribosome"
+          - "Explain the role of each type of RNA in protein synthesis"
+      - id: isc-12-biotechnology-ch04-t02
+        title: "Gene regulation in prokaryotes: the operon concept and the lac operon"
+        learning_outcomes:
+          - "Explain how the lac operon is switched on by lactose"
+      - id: isc-12-biotechnology-ch04-t03
+        title: "The trp operon as a repressible system"
+        learning_outcomes:
+          - "Compare the inducible lac operon with the repressible trp operon"
+    removed_topics:
+      - "Post-translational modifications"
+    literature_texts: []
+  - id: isc-12-biotechnology-ch05
+    number: 5
+    title: "Tools of Recombinant DNA Technology"
+    unit: "2. Genetic Engineering"
+    topics:
+      - id: isc-12-biotechnology-ch05-t01
+        title: "Concept of gene cloning and genetic engineering; restriction endonucleases (types) and other enzymes used in cloning"
+        learning_outcomes:
+          - "Explain how restriction enzymes produce sticky and blunt ends"
+          - "State the role of DNA ligase, alkaline phosphatase and polymerase in gene cloning"
+      - id: isc-12-biotechnology-ch05-t02
+        title: "Extraction and purification of DNA from bacterial, plant and animal cells"
+        learning_outcomes:
+          - "Outline the steps of isolating DNA from plant and bacterial cells"
+      - id: isc-12-biotechnology-ch05-t03
+        title: "Selection of prokaryotic and eukaryotic host cells"
+        learning_outcomes:
+          - "Compare E. coli and yeast as hosts for recombinant DNA"
+      - id: isc-12-biotechnology-ch05-t04
+        title: "Vectors: characteristics; plasmids pBR322 (two antibiotic-resistance genes) and pUC (lacZ gene)"
+        learning_outcomes:
+          - "List the features of a good cloning vector"
+          - "Draw a simplified map of pBR322 showing ori, ampR and tetR"
+      - id: isc-12-biotechnology-ch05-t05
+        title: "Cosmids, phages (M13 and lambda), YACs and BACs - stability and carrying capacity; viral vectors CaMV, retrovirus, SV40 (names only)"
+        learning_outcomes:
+          - "Compare plasmids, cosmids, BACs and YACs by insert size"
+    removed_topics:
+      - "Details of plant and animal viral vectors (names only)"
+    literature_texts: []
+  - id: isc-12-biotechnology-ch06
+    number: 6
+    title: "Gene Transfer, Selection of Recombinants and DNA Libraries"
+    unit: "2. Genetic Engineering"
+    topics:
+      - id: isc-12-biotechnology-ch06-t01
+        title: "Vectorless gene transfer: transformation, transfection, electroporation, liposome-mediated transfer, microinjection, biolistics"
+        learning_outcomes:
+          - "Explain the principle of electroporation and the gene gun"
+          - "Choose a suitable gene-transfer method for animal or plant cells"
+      - id: isc-12-biotechnology-ch06-t02
+        title: "Vector-mediated transfer: Agrobacterium tumefaciens and the Ti plasmid"
+        learning_outcomes:
+          - "Explain how Agrobacterium is used to transfer genes into plants"
+      - id: isc-12-biotechnology-ch06-t03
+        title: "Identifying recombinants: direct selection (green fluorescent protein) and insertional inactivation (blue-white selection, antibiotic resistance)"
+        learning_outcomes:
+          - "Explain why recombinant colonies are white in blue-white screening"
+          - "Explain insertional inactivation using the tetracycline gene of pBR322"
+      - id: isc-12-biotechnology-ch06-t04
+        title: "Construction of a recombinant DNA molecule; genomic and cDNA libraries"
+        learning_outcomes:
+          - "Outline the steps in making a recombinant DNA molecule"
+          - "Distinguish a genomic library from a cDNA library"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biotechnology-ch07
+    number: 7
+    title: "Innovations in Biotechnology"
+    unit: "2. Genetic Engineering"
+    topics:
+      - id: isc-12-biotechnology-ch07-t01
+        title: "Plants: Flavr Savr tomato, Bt crops and Golden rice"
+        learning_outcomes:
+          - "Explain the genetic modification behind Bt cotton and Golden rice and the benefit of each"
+      - id: isc-12-biotechnology-ch07-t02
+        title: "Healthcare: recombinant hepatitis-B vaccine, Humulin, interferon and edible vaccines"
+        learning_outcomes:
+          - "Describe how recombinant human insulin is produced"
+          - "Explain the advantages of edible vaccines"
+      - id: isc-12-biotechnology-ch07-t03
+        title: "Animals: Dolly the cloned sheep; stem cells - sources, characteristics and applications"
+        learning_outcomes:
+          - "Outline the steps used to clone Dolly"
+          - "Compare embryonic and adult stem cells and their uses"
+      - id: isc-12-biotechnology-ch07-t04
+        title: "Environmental biotechnology: bioremediation with oil-eating bacteria"
+        learning_outcomes:
+          - "Explain how engineered bacteria help clean up oil spills"
+      - id: isc-12-biotechnology-ch07-t05
+        title: "Industrial enzymes: rennet, subtilisin, amylase and papain"
+        learning_outcomes:
+          - "State the industrial use of each enzyme"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biotechnology-ch08
+    number: 8
+    title: "Gene Analysis Techniques"
+    unit: "2. Genetic Engineering"
+    topics:
+      - id: isc-12-biotechnology-ch08-t01
+        title: "DNA probes; gel electrophoresis"
+        learning_outcomes:
+          - "Explain why DNA fragments separate by size in agarose gel electrophoresis"
+          - "Define a DNA probe and state its use"
+      - id: isc-12-biotechnology-ch08-t02
+        title: "Southern blotting (in detail); Northern and Western blotting (brief idea and uses)"
+        learning_outcomes:
+          - "Describe the steps of Southern blotting"
+          - "Match Southern, Northern and Western blotting to DNA, RNA and protein"
+      - id: isc-12-biotechnology-ch08-t03
+        title: "DNA sequencing by chain termination; automated sequencing"
+        learning_outcomes:
+          - "Explain the role of ddNTPs in Sanger sequencing"
+          - "Read a DNA sequence from a sequencing gel"
+      - id: isc-12-biotechnology-ch08-t04
+        title: "Site-directed mutagenesis"
+        learning_outcomes:
+          - "Explain the purpose of site-directed mutagenesis in protein engineering"
+      - id: isc-12-biotechnology-ch08-t05
+        title: "Polymerase chain reaction: steps and applications"
+        learning_outcomes:
+          - "Describe denaturation, annealing and extension in PCR"
+          - "Calculate the number of DNA copies after n cycles"
+      - id: isc-12-biotechnology-ch08-t06
+        title: "DNA profiling (fingerprinting): steps and applications"
+        learning_outcomes:
+          - "Outline the steps of DNA fingerprinting using VNTRs"
+          - "Interpret a DNA fingerprint in a paternity or forensic case"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biotechnology-ch09
+    number: 9
+    title: "Tools and Techniques of Cell Culture"
+    unit: "3. Cell Culture Technology"
+    topics:
+      - id: isc-12-biotechnology-ch09-t01
+        title: "Uses of laboratory instruments: centrifuge, laminar air flow hood, biosafety cabinet, pH meter, autoclave, vortex mixer, hot air oven, magnetic stirrer, balance, micro-filtration unit, incubators, inverted microscope, T-flasks"
+        learning_outcomes:
+          - "State the use of each instrument in a cell culture laboratory"
+      - id: isc-12-biotechnology-ch09-t02
+        title: "Bioreactor: diagram, components and functions; stirred-tank and sparged types (brief)"
+        learning_outcomes:
+          - "Draw and label a stirred-tank bioreactor"
+          - "Compare stirred-tank and sparged bioreactors"
+      - id: isc-12-biotechnology-ch09-t03
+        title: "Sterilisation of the culture room, apparatus, transfer area, media, vitamins and living material"
+        learning_outcomes:
+          - "Choose a suitable sterilisation method for glassware, heat-labile vitamins and explants"
+      - id: isc-12-biotechnology-ch09-t04
+        title: "Cryopreservation; cell counting by haemocytometer; viability by Evans blue; cell sorting by FACS"
+        learning_outcomes:
+          - "Outline the steps of cryopreservation and explain why it is needed"
+          - "Calculate cell concentration from haemocytometer counts"
+      - id: isc-12-biotechnology-ch09-t05
+        title: "Types of media (synthetic, semi-synthetic, natural); LB agar and broth, MS and White's media, RPMI, DMEM and FBS; nutrients, antibiotics, auxins and cytokinins; pH and solidifying agents"
+        learning_outcomes:
+          - "Classify media as defined, semi-synthetic or complex"
+          - "Explain the role of auxins, cytokinins and agar in plant tissue culture media"
+    removed_topics:
+      - "Working details of instruments (uses only)"
+      - "Detailed composition of animal media (brief idea only)"
+    literature_texts: []
+  - id: isc-12-biotechnology-ch10
+    number: 10
+    title: "Microbial Culture and Its Applications"
+    unit: "3. Cell Culture Technology"
+    topics:
+      - id: isc-12-biotechnology-ch10-t01
+        title: "Fermentation and growth kinetics: batch, fed-batch and continuous culture (with graphs)"
+        learning_outcomes:
+          - "Sketch and label the phases of a batch growth curve"
+          - "Compare batch, fed-batch and continuous culture"
+      - id: isc-12-biotechnology-ch10-t02
+        title: "Turbidostat and chemostat"
+        learning_outcomes:
+          - "Distinguish a turbidostat from a chemostat"
+      - id: isc-12-biotechnology-ch10-t03
+        title: "Products: single cell protein; the industrial enzyme subtilisin (source and use)"
+        learning_outcomes:
+          - "Define single cell protein and state its advantages as food or feed"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biotechnology-ch11
+    number: 11
+    title: "Plant Tissue Culture and Its Applications"
+    unit: "3. Cell Culture Technology"
+    topics:
+      - id: isc-12-biotechnology-ch11-t01
+        title: "Isolation of single cells (mechanical and enzymatic); synchronisation by starvation, inhibition and mitotic arrest"
+        learning_outcomes:
+          - "Compare mechanical and enzymatic isolation of plant cells"
+      - id: isc-12-biotechnology-ch11-t02
+        title: "Cellular totipotency; differentiation, de-differentiation and re-differentiation"
+        learning_outcomes:
+          - "Define totipotency and explain its importance in tissue culture"
+      - id: isc-12-biotechnology-ch11-t03
+        title: "Haploid production (androgenesis, gynogenesis) and triploid production for seedless crops"
+        learning_outcomes:
+          - "Explain the significance of haploid plants in plant breeding"
+          - "Explain why triploid plants are seedless"
+      - id: isc-12-biotechnology-ch11-t04
+        title: "In-vitro pollination; zygotic embryo culture and embryo rescue"
+        learning_outcomes:
+          - "Explain how embryo rescue helps produce wide hybrids"
+      - id: isc-12-biotechnology-ch11-t05
+        title: "Somatic hybridisation by protoplast fusion (pomato)"
+        learning_outcomes:
+          - "Outline the steps of producing a somatic hybrid such as the pomato"
+      - id: isc-12-biotechnology-ch11-t06
+        title: "Micropropagation; virus-free plants; synthetic seeds; biodegradable plastics (PHB)"
+        learning_outcomes:
+          - "Explain why meristem culture yields virus-free plants"
+          - "State the advantages of micropropagation and synthetic seeds"
+    removed_topics:
+      - "Methodology of plant cell culture applications (brief idea only)"
+    literature_texts: []
+  - id: isc-12-biotechnology-ch12
+    number: 12
+    title: "Animal Cell Culture and Its Applications"
+    unit: "3. Cell Culture Technology"
+    topics:
+      - id: isc-12-biotechnology-ch12-t01
+        title: "Primary cell culture: mechanical and enzymatic disaggregation and their drawbacks"
+        learning_outcomes:
+          - "Compare mechanical and enzymatic disaggregation of tissue"
+      - id: isc-12-biotechnology-ch12-t02
+        title: "Cell lines: finite and continuous; adherent and suspension"
+        learning_outcomes:
+          - "Distinguish finite from continuous cell lines"
+      - id: isc-12-biotechnology-ch12-t03
+        title: "Scale-up of monolayer cultures in roller bottles"
+        learning_outcomes:
+          - "Explain why roller bottles increase the yield of adherent cells"
+      - id: isc-12-biotechnology-ch12-t04
+        title: "Applications: tissue culture, hybridoma technology for monoclonal antibodies, tissue engineering (definition)"
+        learning_outcomes:
+          - "Outline the steps of hybridoma technology"
+          - "Define tissue engineering"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biotechnology-ch13
+    number: 13
+    title: "Introduction to Bioinformatics and Databases"
+    unit: "4. Bioinformatics"
+    topics:
+      - id: isc-12-biotechnology-ch13-t01
+        title: "Bioinformatics: definition and need"
+        learning_outcomes:
+          - "Explain why bioinformatics is needed to handle biological data"
+      - id: isc-12-biotechnology-ch13-t02
+        title: "Global nucleotide and protein databases: EMBL, NCBI, DDBJ, GenBank, SWISS-PROT; GENSCAN"
+        learning_outcomes:
+          - "Classify given databases as nucleotide or protein databases"
+          - "State the full forms of EMBL, NCBI and DDBJ"
+      - id: isc-12-biotechnology-ch13-t03
+        title: "Data retrieval tools: Entrez and the Taxonomy Browser"
+        learning_outcomes:
+          - "Describe how Entrez is used to retrieve a gene sequence"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biotechnology-ch14
+    number: 14
+    title: "Genomics"
+    unit: "4. Bioinformatics"
+    topics:
+      - id: isc-12-biotechnology-ch14-t01
+        title: "Genomics: definition; structural and functional genomics; criteria for selecting an organism for genome sequencing"
+        learning_outcomes:
+          - "Distinguish structural from functional genomics"
+          - "List criteria for choosing an organism for genome sequencing"
+      - id: isc-12-biotechnology-ch14-t02
+        title: "Types of sequences: cDNA, genomic DNA, ESTs and STSs; gene-finding software"
+        learning_outcomes:
+          - "Distinguish ESTs from STSs and state the use of each"
+      - id: isc-12-biotechnology-ch14-t03
+        title: "Sequence analysis with BLAST and FASTA: global, local, pairwise and multiple alignment"
+        learning_outcomes:
+          - "Distinguish global and local alignment"
+          - "State when a pairwise or a multiple alignment is used"
+      - id: isc-12-biotechnology-ch14-t04
+        title: "Human Genome Project: objectives, participating countries, achievements and significance"
+        learning_outcomes:
+          - "State the objectives and key findings of the Human Genome Project"
+      - id: isc-12-biotechnology-ch14-t05
+        title: "DNA microarray technology (definition and application); single nucleotide polymorphisms"
+        learning_outcomes:
+          - "Explain how a DNA microarray detects gene expression"
+          - "Define an SNP and state its importance in medicine"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-biotechnology-ch15
+    number: 15
+    title: "Proteomics"
+    unit: "4. Bioinformatics"
+    topics:
+      - id: isc-12-biotechnology-ch15-t01
+        title: "Proteomics: definition and introduction"
+        learning_outcomes:
+          - "Define proteomics and explain how it complements genomics"
+      - id: isc-12-biotechnology-ch15-t02
+        title: "Types of proteomics: structural, functional and expression"
+        learning_outcomes:
+          - "Distinguish structural, functional and expression proteomics"
+      - id: isc-12-biotechnology-ch15-t03
+        title: "Public protein databases: PDB and PIR"
+        learning_outcomes:
+          - "State the type of information stored in PDB and PIR"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

@@ -1,0 +1,332 @@
+# ISC Class 12 Engineering Science (867), Paper I Theory - ISC 2027 examination (Class XII portion only).
+# Source: platform/catalog/sources/cisce.md#isc-2027-engineering-science. Topic wording is our own summary of the official scope.
+subject_id: isc-12-engineering-science
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-engineering-science, isc-2027-regulations]
+exam_notes: >-
+  Paper I Theory: 3 hours, 80 marks. All questions are set in SI units (abbreviations as in the BIS guide to SI
+  units), and examiners look for evidence that principles have been studied practically. Engineering Science may not
+  be taken with Physics. Paper II Project Work: 20 marks - two projects on any theory topics, each marked out of 10
+  (title and introduction 1, content 3, presentation and originality 2, conclusion 1, viva-voce 3); the teacher and a
+  locally appointed Visiting Examiner each mark the written part out of 7 and the average is taken, and the viva is
+  conducted only by the Visiting Examiner. CISCE sets no question paper for projects. Suggested projects include energy
+  of a simple pendulum, work by constant and varying forces, stress-strain curves, friction of household surfaces,
+  identifying simple machines at home, analysing a year of electricity bills, a local transformer and power
+  distribution, and assembling a household circuit with bulbs, switches and a fuse. SOYL covers Paper I only.
+  No topic-wise marks weightage is published, and no ISC 2027 specimen paper is listed for this subject.
+  CISCE lists 13 numbered topics, not textbook chapters: SOYL groups them into 12 teachable chapters in syllabus order
+  (topics 2 and 3 on friction form one chapter).
+units:
+  - { name: "1. Strength of Materials", marks: null }
+  - { name: "2-3. Friction and Limiting Friction", marks: null }
+  - { name: "4. Work, Energy and Torque", marks: null }
+  - { name: "5. Machines", marks: null }
+  - { name: "6. Power", marks: null }
+  - { name: "7. Momentum", marks: null }
+  - { name: "8. Magnetism", marks: null }
+  - { name: "9. The Simple Circuit", marks: null }
+  - { name: "10. Heating Effect of Current", marks: null }
+  - { name: "11. Chemical Effect of Current", marks: null }
+  - { name: "12. Current-carrying Conductor in a Magnetic Field", marks: null }
+  - { name: "13. Electromagnetic Induction", marks: null }
+chapters:
+  - id: isc-12-engineering-science-ch01
+    number: 1
+    title: "Strength of Materials"
+    unit: "1. Strength of Materials"
+    topics:
+      - id: isc-12-engineering-science-ch01-t01
+        title: "Stress and strain in tension and compression"
+        learning_outcomes:
+          - "Calculate tensile stress and strain in a loaded rod or wire"
+          - "Distinguish tensile and compressive stress with engineering examples"
+      - id: isc-12-engineering-science-ch01-t02
+        title: "Hooke's law and Young's modulus"
+        learning_outcomes:
+          - "State Hooke's law"
+          - "Calculate Young's modulus from load-extension data"
+      - id: isc-12-engineering-science-ch01-t03
+        title: "Elastic limit, ultimate strength and factor of safety"
+        learning_outcomes:
+          - "Mark the elastic limit and ultimate strength on a stress-strain graph"
+          - "Calculate the safe working load of a member using a factor of safety"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-engineering-science-ch02
+    number: 2
+    title: "Friction"
+    unit: "2-3. Friction and Limiting Friction"
+    topics:
+      - id: isc-12-engineering-science-ch02-t01
+        title: "Friction and the conditions affecting it: type of materials, surface finish, wetness or dryness"
+        learning_outcomes:
+          - "Explain how surface finish and wetness change the friction between two surfaces"
+      - id: isc-12-engineering-science-ch02-t02
+        title: "Lubrication: purpose and methods"
+        learning_outcomes:
+          - "Explain how lubrication reduces friction and wear in machines"
+      - id: isc-12-engineering-science-ch02-t03
+        title: "Limiting friction"
+        learning_outcomes:
+          - "Define limiting friction and explain how friction grows with applied force up to this limit"
+          - "Sketch the graph of friction force against applied force"
+      - id: isc-12-engineering-science-ch02-t04
+        title: "Coefficients of static and kinetic friction"
+        learning_outcomes:
+          - "Define the coefficients of static and kinetic friction"
+          - "Calculate the force needed to start and to maintain motion of a body on a horizontal surface"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-engineering-science-ch03
+    number: 3
+    title: "Work, Energy and Torque"
+    unit: "4. Work, Energy and Torque"
+    topics:
+      - id: isc-12-engineering-science-ch03-t01
+        title: "Work done by a constant force"
+        learning_outcomes:
+          - "Calculate work done by a constant force acting at an angle to the displacement"
+      - id: isc-12-engineering-science-ch03-t02
+        title: "Work done by a varying force: graphical representation and calculation from area"
+        learning_outcomes:
+          - "Calculate work done from the area under a force-displacement graph"
+      - id: isc-12-engineering-science-ch03-t03
+        title: "Potential and kinetic energy; conservation of energy and its conversion into work"
+        learning_outcomes:
+          - "Apply conservation of energy to find the speed of a falling or sliding body"
+      - id: isc-12-engineering-science-ch03-t04
+        title: "Torque and work done in rotation"
+        learning_outcomes:
+          - "Calculate the work done by a constant torque turning through a given angle"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-engineering-science-ch04
+    number: 4
+    title: "Machines"
+    unit: "5. Machines"
+    topics:
+      - id: isc-12-engineering-science-ch04-t01
+        title: "Velocity ratio, mechanical advantage and efficiency of a machine"
+        learning_outcomes:
+          - "Define VR, MA and efficiency and show that efficiency = MA / VR"
+      - id: isc-12-engineering-science-ch04-t02
+        title: "Simple single-string pulley systems"
+        learning_outcomes:
+          - "Find the velocity ratio of a single-string pulley system"
+          - "Calculate effort needed for a given load and efficiency"
+      - id: isc-12-engineering-science-ch04-t03
+        title: "Simple and differential wheel and axle; Weston differential pulley block"
+        learning_outcomes:
+          - "Derive the velocity ratio of a differential wheel and axle"
+          - "Calculate the velocity ratio of a Weston pulley block"
+      - id: isc-12-engineering-science-ch04-t04
+        title: "Screw jack; worm (single-start thread) and wheel"
+        learning_outcomes:
+          - "Derive the velocity ratio of a screw jack in terms of handle radius and pitch"
+          - "Calculate the velocity ratio of a worm and wheel"
+      - id: isc-12-engineering-science-ch04-t05
+        title: "Gear drives and belt drives"
+        learning_outcomes:
+          - "Calculate the speed ratio of a gear train or belt drive"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-engineering-science-ch05
+    number: 5
+    title: "Power and Heat Engines"
+    unit: "6. Power"
+    topics:
+      - id: isc-12-engineering-science-ch05-t01
+        title: "Simple treatment of the steam engine and of two-stroke and four-stroke internal combustion engines"
+        learning_outcomes:
+          - "Describe the working cycle of a four-stroke and a two-stroke engine"
+      - id: isc-12-engineering-science-ch05-t02
+        title: "Indicator diagrams; indicated mean effective pressure; indicated power"
+        learning_outcomes:
+          - "Calculate indicated mean effective pressure from an indicator diagram"
+          - "Calculate indicated power of an engine"
+      - id: isc-12-engineering-science-ch05-t03
+        title: "Brake power: rope brake and Prony brake; mechanical efficiency"
+        learning_outcomes:
+          - "Calculate brake power from rope brake readings"
+          - "Calculate the mechanical efficiency of an engine"
+      - id: isc-12-engineering-science-ch05-t04
+        title: "Relation between rev/min and working strokes per minute in double-acting steam engines and two- and four-stroke engines"
+        learning_outcomes:
+          - "Find working strokes per minute for a given engine type and speed"
+      - id: isc-12-engineering-science-ch05-t05
+        title: "Hydraulic power as pressure x rate of change of volume"
+        learning_outcomes:
+          - "Calculate the power delivered by a pump working at constant pressure"
+    removed_topics:
+      - "Oscillating cylinder steam engine"
+    literature_texts: []
+  - id: isc-12-engineering-science-ch06
+    number: 6
+    title: "Momentum"
+    unit: "7. Momentum"
+    topics:
+      - id: isc-12-engineering-science-ch06-t01
+        title: "Momentum; force as rate of change of momentum; relation with mass and acceleration"
+        learning_outcomes:
+          - "Show that F = ma follows from force as rate of change of momentum"
+          - "Calculate the average force from a change in momentum over a time interval"
+      - id: isc-12-engineering-science-ch06-t02
+        title: "Conservation of momentum"
+        learning_outcomes:
+          - "Apply conservation of momentum to collisions and recoil problems"
+    removed_topics:
+      - "Coefficient of restitution"
+    literature_texts: []
+  - id: isc-12-engineering-science-ch07
+    number: 7
+    title: "Magnetism and Electromagnets"
+    unit: "8. Magnetism"
+    topics:
+      - id: isc-12-engineering-science-ch07-t01
+        title: "Magnetic properties of iron and steel; the compass needle"
+        learning_outcomes:
+          - "Explain why soft iron is used for temporary magnets and steel for permanent magnets"
+      - id: isc-12-engineering-science-ch07-t02
+        title: "The magnetic circuit (qualitative) with examples from transformers and machines"
+        learning_outcomes:
+          - "Describe the magnetic circuit of a transformer core qualitatively"
+      - id: isc-12-engineering-science-ch07-t03
+        title: "Magnetic effect of current in a straight wire, a single-turn coil and a solenoid (qualitative); direction rules"
+        learning_outcomes:
+          - "Sketch the field patterns of a straight wire, a coil and a solenoid"
+          - "Use a direction rule to relate current direction to field direction"
+      - id: isc-12-engineering-science-ch07-t04
+        title: "Electromagnets and their applications: electric trembler bell and relay"
+        learning_outcomes:
+          - "Explain the working of an electric bell and a relay"
+    removed_topics:
+      - "Quantitative treatment of the magnetic circuit and of fields due to currents (qualitative only)"
+    literature_texts: []
+  - id: isc-12-engineering-science-ch08
+    number: 8
+    title: "The Simple Circuit"
+    unit: "9. The Simple Circuit"
+    topics:
+      - id: isc-12-engineering-science-ch08-t01
+        title: "Conductors and insulators; emf, potential difference, current, quantity and resistance; volt, ampere, coulomb, ampere-hour and ohm"
+        learning_outcomes:
+          - "Distinguish emf from potential difference"
+          - "Convert a battery capacity in ampere-hours to coulombs"
+      - id: isc-12-engineering-science-ch08-t02
+        title: "Ohm's law and resistivity"
+        learning_outcomes:
+          - "Apply Ohm's law to simple circuits"
+          - "Calculate resistance from resistivity, length and area"
+      - id: isc-12-engineering-science-ch08-t03
+        title: "Resistors in series and in parallel"
+        learning_outcomes:
+          - "Calculate equivalent resistance, currents and voltages in series-parallel networks"
+      - id: isc-12-engineering-science-ch08-t04
+        title: "Measurement of resistance, including the Wheatstone bridge"
+        learning_outcomes:
+          - "State the balance condition of a Wheatstone bridge and use it to find an unknown resistance"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-engineering-science-ch09
+    number: 9
+    title: "Heating Effect of Current"
+    unit: "10. Heating Effect of Current"
+    topics:
+      - id: isc-12-engineering-science-ch09-t01
+        title: "Electrical energy and power; joule, watt and kilowatt-hour"
+        learning_outcomes:
+          - "Calculate electrical energy used and its cost in kWh"
+      - id: isc-12-engineering-science-ch09-t02
+        title: "Conversion of electrical energy to mechanical energy and vice versa"
+        learning_outcomes:
+          - "Calculate the efficiency of a motor lifting a load"
+      - id: isc-12-engineering-science-ch09-t03
+        title: "Applications of the heating effect: domestic heating appliances and filament lamps"
+        learning_outcomes:
+          - "Explain the choice of element material in heaters and filament lamps"
+      - id: isc-12-engineering-science-ch09-t04
+        title: "Effect of temperature on resistance; temperature coefficient of resistance"
+        learning_outcomes:
+          - "Calculate the resistance of a conductor at a new temperature using the temperature coefficient"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-engineering-science-ch10
+    number: 10
+    title: "Chemical Effect of Current and Cells"
+    unit: "11. Chemical Effect of Current"
+    topics:
+      - id: isc-12-engineering-science-ch10-t01
+        title: "Electrolytes and electrolysis; electrochemical equivalent"
+        learning_outcomes:
+          - "Calculate the mass deposited in electrolysis using m = zIt"
+      - id: isc-12-engineering-science-ch10-t02
+        title: "Production of current by chemical action: the simple voltaic cell; polarisation and its prevention and removal"
+        learning_outcomes:
+          - "Explain polarisation in a simple cell and how it is prevented"
+      - id: isc-12-engineering-science-ch10-t03
+        title: "Primary and secondary cells"
+        learning_outcomes:
+          - "Compare primary and secondary cells with examples"
+      - id: isc-12-engineering-science-ch10-t04
+        title: "Cells in series and in parallel"
+        learning_outcomes:
+          - "Calculate the current from a combination of identical cells with internal resistance"
+    removed_topics:
+      - "Chemical equations for electrolysis and cells"
+    literature_texts: []
+  - id: isc-12-engineering-science-ch11
+    number: 11
+    title: "Motor Effect, DC Motors and Meters"
+    unit: "12. Current-carrying Conductor in a Magnetic Field"
+    topics:
+      - id: isc-12-engineering-science-ch11-t01
+        title: "Force on a current-carrying conductor in a magnetic field; direction rule"
+        learning_outcomes:
+          - "Predict the direction of force on a conductor using Fleming's left-hand rule"
+      - id: isc-12-engineering-science-ch11-t02
+        title: "The DC motor with series and shunt windings; multipolar DC motors (qualitative)"
+        learning_outcomes:
+          - "Explain the working of a DC motor and the role of the commutator"
+          - "Compare series-wound and shunt-wound motors"
+      - id: isc-12-engineering-science-ch11-t03
+        title: "Moving-coil galvanometer"
+        learning_outcomes:
+          - "Explain the working of a moving-coil galvanometer"
+      - id: isc-12-engineering-science-ch11-t04
+        title: "Ammeters and voltmeters: shunts and multipliers"
+        learning_outcomes:
+          - "Calculate the shunt needed to convert a galvanometer into an ammeter of given range"
+          - "Calculate the series resistance needed to convert it into a voltmeter"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-engineering-science-ch12
+    number: 12
+    title: "Electromagnetic Induction"
+    unit: "13. Electromagnetic Induction"
+    topics:
+      - id: isc-12-engineering-science-ch12-t01
+        title: "Laws of electromagnetic induction; direction of induced current (field, motion and current)"
+        learning_outcomes:
+          - "State Faraday's and Lenz's laws"
+          - "Use Fleming's right-hand rule to find the direction of induced current"
+      - id: isc-12-engineering-science-ch12-t02
+        title: "Back emf of a motor; starting resistance for a DC motor"
+        learning_outcomes:
+          - "Explain why a starting resistance is needed for a DC motor"
+      - id: isc-12-engineering-science-ch12-t03
+        title: "Simple AC and DC generators; multipolar DC generators (qualitative)"
+        learning_outcomes:
+          - "Compare the construction and output of simple AC and DC generators"
+      - id: isc-12-engineering-science-ch12-t04
+        title: "Eddy currents; transformers"
+        learning_outcomes:
+          - "Explain how laminating the core reduces eddy-current losses"
+          - "Calculate secondary voltage and current of an ideal transformer"
+      - id: isc-12-engineering-science-ch12-t05
+        title: "The induction coil and the coil ignition system"
+        learning_outcomes:
+          - "Explain how a coil ignition system produces a high-voltage spark in a petrol engine"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

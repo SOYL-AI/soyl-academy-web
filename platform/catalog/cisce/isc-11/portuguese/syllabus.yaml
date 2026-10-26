@@ -1,0 +1,200 @@
+# ISC Class 11 Portuguese (Modern Foreign Language elective, code 840) - ISC 2028 course, CLASS XI year.
+# Portuguese is new in the ISC 2028 Modern Foreign Languages syllabus (common syllabus with Chinese, Tibetan, Modern Armenian, Thai).
+# CISCE Appendix I (ISC 2028) lists no prescribed textbooks for Portuguese, so Part 4 of the paper is two translation passages.
+# CISCE has not bifurcated the syllabus, so this file covers the whole Classes XI-XII syllabus.
+subject_id: isc-11-portuguese
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-mfl, isc-2028-prescribed-books, isc-2028-regulations]
+exam_notes: >-
+  There is no board examination in Class XI: Class XI is year one of the two-year ISC 2028 course and the school sets the
+  Class XI examination on the portion of the syllabus covered during the year. CISCE has not bifurcated this syllabus (the
+  Class XII ISC paper is set on the entire syllabus), so this file covers the whole Classes XI-XII Portuguese syllabus and
+  nothing is removed. Paper I Theory (3 hours, 80 marks), which the school examination normally follows, has four parts:
+  (1) a short composition in Portuguese from a choice of subjects; (2) a Portuguese passage for unprepared translation into
+  English; (3) an unseen Portuguese passage with questions - candidates may be asked to summarise part of it in Portuguese,
+  explain individual words, phrases or sentences, and answer comprehension questions (not every question type is set every
+  year); (4) questions on prescribed textbooks - but CISCE Appendix I (ISC 2028) prescribes no textbooks for Portuguese, so
+  under the syllabus rule for languages without texts Part 4 consists of (a) one passage for translation from Portuguese into
+  English and (b) one passage for translation from English into Portuguese. The syllabus asks schools to consult CISCE in time
+  about prescribed textbooks. CISCE does not publish marks per part and does not say whether European or Brazilian Portuguese
+  is expected; SOYL teaches European Portuguese (the variety historically used in Goa) and notes the main Brazilian
+  differences (pronoun placement, tu / você, spelling) where they matter. Paper II Project Work for Class XI (20 marks, assessed
+  internally by the school during the year): Listening (6) - an unseen passage of about 500 words, a poem or an audio clip
+  heard twice, with objective questions; Speaking (6) - an individual presentation of about three minutes (extempore,
+  declamation, recitation, debate; e.g. narrating an experience, giving instructions, describing, reporting, giving an opinion
+  or a speech) followed by two or three minutes' discussion with the teacher; Writing (8) - one assignment of about 200 words on
+  any aspect of the language studied in Class XI (e.g. describing a process or an event, a summary, an alternative title with
+  justification). CISCE sets no question paper for project work. The syllabus does not list grammar items; the two grammar
+  chapters below cover the structures needed for composition and two-way translation - this breakdown is SOYL's, not CISCE's.
+  CISCE lists topics not chapters; SOYL grouped them into teachable chapters in syllabus order.
+units:
+  - { name: "1. Composition", marks: null }
+  - { name: "2. Unprepared translation into English", marks: null }
+  - { name: "3. Unseen passage", marks: null }
+  - { name: "4. Translation (no textbooks prescribed)", marks: null }
+chapters:
+  - id: isc-11-portuguese-ch01
+    number: 1
+    title: "Composition (Redação / Composição)"
+    unit: "1. Composition"
+    topics:
+      - id: isc-11-portuguese-ch01-t01
+        title: "Planning a short composition: introdução, desenvolvimento, conclusão"
+        learning_outcomes:
+          - "Make an outline and write a short composition in Portuguese with a clear introduction, developed paragraphs and a conclusion"
+          - "Link ideas with primeiro, depois, além disso, no entanto, por isso, finalmente"
+      - id: isc-11-portuguese-ch01-t02
+        title: "Describing people, places and festivals"
+        learning_outcomes:
+          - "Describe a person, a town or a festival, for example in Goa or Portugal, with adjectives that agree in gender and number"
+      - id: isc-11-portuguese-ch01-t03
+        title: "Narrating a past experience"
+        learning_outcomes:
+          - "Narrate a past experience using the pretérito perfeito for completed actions and the pretérito imperfeito for background"
+      - id: isc-11-portuguese-ch01-t04
+        title: "Giving and supporting an opinion"
+        learning_outcomes:
+          - "Express an opinion with acho que, na minha opinião, não acho que + conjuntivo and support it with reasons and examples"
+      - id: isc-11-portuguese-ch01-t05
+        title: "Everyday subjects: family, school, hobbies, food, travel, festivals, health, environment, technology"
+        learning_outcomes:
+          - "Use topic vocabulary accurately to write about everyday subjects, with examples from Indian life"
+      - id: isc-11-portuguese-ch01-t06
+        title: "Accuracy: accents (agudo, circunflexo, til, grave), agreement and spelling"
+        learning_outcomes:
+          - "Proof-read one's composition for missing accents, agreement errors and spelling mistakes"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-portuguese-ch02
+    number: 2
+    title: "Gramática (1): o nome, os pronomes e o presente"
+    unit: null
+    topics:
+      - id: isc-11-portuguese-ch02-t01
+        title: "Nouns and adjectives: gender, plural (-ões, -ães, -ãos, -is) and agreement"
+        learning_outcomes:
+          - "Form the feminine and plural of nouns and adjectives, including the irregular plurals in -ão and -l"
+      - id: isc-11-portuguese-ch02-t02
+        title: "Articles and contractions with prepositions (do, na, ao, pelo, num, deste)"
+        learning_outcomes:
+          - "Contract prepositions with articles and demonstratives correctly in sentences"
+      - id: isc-11-portuguese-ch02-t03
+        title: "Ser, estar and ficar; haver and ter"
+        learning_outcomes:
+          - "Choose between ser, estar and ficar for permanent qualities, states and location, and use há for existence"
+      - id: isc-11-portuguese-ch02-t04
+        title: "Present indicative of regular and common irregular verbs; estar a + infinitive"
+        learning_outcomes:
+          - "Conjugate regular -ar, -er, -ir verbs and common irregular verbs (ir, fazer, ter, poder, dizer, ver, vir) in the present"
+          - "Describe actions in progress with estar a + infinitivo (European) and recognise estar + gerúndio (Brazilian)"
+      - id: isc-11-portuguese-ch02-t05
+        title: "Possessives, demonstratives and comparison (mais ... do que, melhor, pior, o mais ...)"
+        learning_outcomes:
+          - "Use possessives and demonstratives with agreement, and compare people and things with regular and irregular forms"
+      - id: isc-11-portuguese-ch02-t06
+        title: "Object pronouns and their position (Vejo-o / Não o vejo; lho, lha)"
+        learning_outcomes:
+          - "Replace direct and indirect objects with pronouns and place them after the verb or before it after negatives, questions and certain words"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-portuguese-ch03
+    number: 3
+    title: "Gramática (2): tempos, modos e a frase complexa"
+    unit: null
+    topics:
+      - id: isc-11-portuguese-ch03-t01
+        title: "Pretérito perfeito simples versus pretérito imperfeito; pretérito mais-que-perfeito composto (tinha feito)"
+        learning_outcomes:
+          - "Choose the perfeito or imperfeito in a narrative and justify the choice"
+          - "Use tinha + particípio for an action before another past action"
+      - id: isc-11-portuguese-ch03-t02
+        title: "Future (ir + infinitive and futuro simples) and conditional (condicional)"
+        learning_outcomes:
+          - "Talk about plans with ir + infinitivo and the futuro simples, and make polite requests and hypotheses with the condicional"
+      - id: isc-11-portuguese-ch03-t03
+        title: "Imperative and present subjunctive (presente do conjuntivo): wishes, doubt, advice, emotions"
+        learning_outcomes:
+          - "Form the presente do conjuntivo and use it after espero que, talvez, é importante que, duvido que"
+          - "Give instructions and advice with the imperative"
+      - id: isc-11-portuguese-ch03-t04
+        title: "Conditional sentences (se + presente / futuro; se + imperfeito do conjuntivo + condicional) and the personal infinitive (infinitivo pessoal)"
+        learning_outcomes:
+          - "Write likely and hypothetical conditions with the correct tense sequence"
+          - "Use the personal infinitive after prepositions (para fazermos, antes de saírem)"
+      - id: isc-11-portuguese-ch03-t05
+        title: "The passive (ser + particípio; passive with se) and reported speech"
+        learning_outcomes:
+          - "Transform active sentences into the passive and report statements and questions with the correct tense changes"
+      - id: isc-11-portuguese-ch03-t06
+        title: "Por and para; relative pronouns (que, quem, onde, o qual); connectors of cause, contrast, purpose and concession (porque, mas, embora + conjuntivo)"
+        learning_outcomes:
+          - "Choose por or para correctly and join sentences with relative pronouns and connectors, using the subjunctive after embora and para que"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-portuguese-ch04
+    number: 4
+    title: "Translation from Portuguese into English"
+    unit: "2. Unprepared translation into English"
+    topics:
+      - id: isc-11-portuguese-ch04-t01
+        title: "Reading the whole passage for meaning before translating"
+        learning_outcomes:
+          - "State the gist of a Portuguese passage and mark difficult words and structures before translating"
+      - id: isc-11-portuguese-ch04-t02
+        title: "Rendering Portuguese tenses and moods in English (imperfeito, conjuntivo, personal infinitive)"
+        learning_outcomes:
+          - "Choose the English tense or modal that best conveys a Portuguese tense or mood in context"
+      - id: isc-11-portuguese-ch04-t03
+        title: "Idioms and false friends (pretender, puxar, constipado, livraria)"
+        learning_outcomes:
+          - "Translate idioms by their natural English equivalent and avoid false friends"
+      - id: isc-11-portuguese-ch04-t04
+        title: "The second Portuguese-to-English passage (Part 4a): producing and checking a complete version"
+        learning_outcomes:
+          - "Translate a longer passage completely and fluently, then check it sentence by sentence against the original"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-portuguese-ch05
+    number: 5
+    title: "Unseen passage (Compreensão e resumo)"
+    unit: "3. Unseen passage"
+    topics:
+      - id: isc-11-portuguese-ch05-t01
+        title: "Reading an unseen passage: main idea, key details and the writer's attitude"
+        learning_outcomes:
+          - "State the main idea of an unseen Portuguese passage and locate supporting details"
+      - id: isc-11-portuguese-ch05-t02
+        title: "Explaining words, phrases and sentences in context"
+        learning_outcomes:
+          - "Explain a word, phrase or sentence from the passage in simple Portuguese, using a synonym or paraphrase"
+      - id: isc-11-portuguese-ch05-t03
+        title: "Answering comprehension questions in Portuguese in one's own words"
+        learning_outcomes:
+          - "Answer questions in complete Portuguese sentences without copying long stretches of the passage"
+      - id: isc-11-portuguese-ch05-t04
+        title: "Writing a summary (resumo) in Portuguese of part of the passage"
+        learning_outcomes:
+          - "Summarise a section of the passage in Portuguese within a word limit, keeping only the essential points"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-portuguese-ch06
+    number: 6
+    title: "Translation from English into Portuguese"
+    unit: "4. Translation (no textbooks prescribed)"
+    topics:
+      - id: isc-11-portuguese-ch06-t01
+        title: "Translating short sentences: agreement, contractions and pronoun position"
+        learning_outcomes:
+          - "Translate English sentences into Portuguese with correct agreement, contractions and object-pronoun position"
+      - id: isc-11-portuguese-ch06-t02
+        title: "Expressing English tenses, 'to be', passives and relative clauses in Portuguese"
+        learning_outcomes:
+          - "Choose ser or estar, the perfeito or imperfeito, and a suitable passive or relative construction for each English sentence"
+      - id: isc-11-portuguese-ch06-t03
+        title: "Translating a continuous passage (Part 4b) and checking accents"
+        learning_outcomes:
+          - "Translate a short English passage into natural Portuguese and proof-read it for accents and agreement"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

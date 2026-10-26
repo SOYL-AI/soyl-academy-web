@@ -1,0 +1,419 @@
+# ICSE Class 7 Mathematics - CISCE Curriculum for Upper Primary Classes VI-VIII (2016), Mathematics, Class VII part only.
+# Source: platform/catalog/sources/cisce.md#cisce-upper-primary-curriculum (Mathematics, Class VII, Themes 1-6).
+# Topic wording is our own summary of the official key concepts and learning outcomes.
+subject_id: icse-7-mathematics
+academic_year: "2026-27"
+source_status: verified
+sources: [cisce-upper-primary-curriculum]
+exam_notes: >-
+  No board examination in Class 7. CISCE publishes a recommended theme-based curriculum (Curriculum for Upper Primary
+  Classes VI-VIII, RDCD, 2016) with learning outcomes per class; it prescribes no textbooks, no paper pattern and no
+  marks weightage. Schools choose their own textbooks and set their own unit tests and term examinations; the curriculum
+  asks for continuous assessment through oral and written work, projects, activities and portfolios as well as tests.
+  The Class VII curriculum has six themes (Number System, Ratio and Proportion, Algebra, Geometry, Mensuration, Data
+  Handling), each with learning outcomes and key concepts; SOYL grouped them into 16 teachable chapters in curriculum
+  order. The curriculum stresses discovering rules through patterns, paper folding and hands-on work with a maths kit
+  and geoboard. The Theme 1 introduction also mentions LCM and HCF, which are revised alongside divisibility.
+units:
+  - { name: "Theme 1: Number System", marks: null }
+  - { name: "Theme 2: Ratio and Proportion", marks: null }
+  - { name: "Theme 3: Algebra", marks: null }
+  - { name: "Theme 4: Geometry", marks: null }
+  - { name: "Theme 5: Mensuration", marks: null }
+  - { name: "Theme 6: Data Handling", marks: null }
+chapters:
+  - id: icse-7-mathematics-ch01
+    number: 1
+    title: "Integers and Divisibility"
+    unit: "Theme 1: Number System"
+    topics:
+      - id: icse-7-mathematics-ch01-t01
+        title: "Multiplication of integers using patterns"
+        learning_outcomes:
+          - "Multiply a positive and a negative integer and two negative integers, using number patterns to justify the sign rules"
+          - "Explain why the product of two negative integers is positive"
+      - id: icse-7-mathematics-ch01-t02
+        title: "Division of integers"
+        learning_outcomes:
+          - "Divide integers by finding the number that multiplies the divisor to give the dividend"
+          - "State and apply the sign rules for division of integers"
+      - id: icse-7-mathematics-ch01-t03
+        title: "Properties of operations on integers"
+        learning_outcomes:
+          - "Verify commutativity, associativity, identity, inverse and distributivity for integers with examples"
+          - "Use the properties to simplify calculations"
+      - id: icse-7-mathematics-ch01-t04
+        title: "Word problems on integers (all operations)"
+        learning_outcomes:
+          - "Solve daily-life problems involving temperature, money, heights and depths using integers"
+      - id: icse-7-mathematics-ch01-t05
+        title: "Divisibility rules from patterns in multiplication tables; factors, multiples, HCF and LCM"
+        learning_outcomes:
+          - "Form and apply divisibility rules for 2, 3, 4, 5, 6, 9 and 10 by observing patterns in tables"
+          - "Find the HCF and LCM of given numbers and use them in simple problems"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-mathematics-ch02
+    number: 2
+    title: "Fractions"
+    unit: "Theme 1: Number System"
+    topics:
+      - id: icse-7-mathematics-ch02-t01
+        title: "Fraction as an operator ('of')"
+        learning_outcomes:
+          - "Find a fraction of a quantity, for example 2/3 of 45"
+          - "Show multiplication of fractions by paper folding or shading"
+      - id: icse-7-mathematics-ch02-t02
+        title: "Multiplication of fractions"
+        learning_outcomes:
+          - "Multiply proper, improper and mixed fractions and simplify the result"
+      - id: icse-7-mathematics-ch02-t03
+        title: "Reciprocal of a fraction"
+        learning_outcomes:
+          - "Find the reciprocal of a fraction and of a mixed number"
+      - id: icse-7-mathematics-ch02-t04
+        title: "Division of fractions"
+        learning_outcomes:
+          - "Divide a fraction by another fraction by multiplying by the reciprocal of the divisor"
+          - "Explain with a picture how many one-fourths are in one-half"
+      - id: icse-7-mathematics-ch02-t05
+        title: "Word problems on mixed fractions"
+        learning_outcomes:
+          - "Solve multi-step word problems involving operations on mixed fractions"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-mathematics-ch03
+    number: 3
+    title: "Rational Numbers and Decimals"
+    unit: "Theme 1: Number System"
+    topics:
+      - id: icse-7-mathematics-ch03-t01
+        title: "Need for rational numbers; representation on the number line"
+        learning_outcomes:
+          - "Explain why numbers like -3/4 are needed and represent rational numbers on a number line"
+          - "Relate fractions and integers to rational numbers"
+      - id: icse-7-mathematics-ch03-t02
+        title: "Operations on rational numbers"
+        learning_outcomes:
+          - "Add, subtract, multiply and divide rational numbers"
+      - id: icse-7-mathematics-ch03-t03
+        title: "Word problems on rational numbers"
+        learning_outcomes:
+          - "Solve daily-life problems involving rational numbers (all operations)"
+      - id: icse-7-mathematics-ch03-t04
+        title: "Decimal representation of rational numbers"
+        learning_outcomes:
+          - "Convert a rational number to a decimal and a terminating decimal to a fraction"
+      - id: icse-7-mathematics-ch03-t05
+        title: "Multiplication and division of decimal fractions"
+        learning_outcomes:
+          - "Multiply and divide decimals, including by 10, 100 and 1000"
+          - "Solve word problems involving decimals"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-mathematics-ch04
+    number: 4
+    title: "Exponents"
+    unit: "Theme 1: Number System"
+    topics:
+      - id: icse-7-mathematics-ch04-t01
+        title: "Exponential notation for repeated multiplication"
+        learning_outcomes:
+          - "Write repeated multiplication in exponential form and identify base and exponent"
+          - "Express large numbers using powers of 10"
+      - id: icse-7-mathematics-ch04-t02
+        title: "Laws of exponents (natural-number exponents) through patterns"
+        learning_outcomes:
+          - "Discover and state the laws for product, quotient and power of powers from patterns"
+          - "Simplify expressions using the laws of exponents"
+      - id: icse-7-mathematics-ch04-t03
+        title: "Applications of exponents in daily life"
+        learning_outcomes:
+          - "Solve simple problems such as doubling and repeated growth using exponents"
+    removed_topics:
+      - "Negative and zero integral exponents (Class VIII; only natural-number exponents in Class VII)"
+    literature_texts: []
+  - id: icse-7-mathematics-ch05
+    number: 5
+    title: "Sets"
+    unit: "Theme 1: Number System"
+    topics:
+      - id: icse-7-mathematics-ch05-t01
+        title: "Revision of sets: notation and representation"
+        learning_outcomes:
+          - "Represent a set in roster and set-builder form"
+          - "Identify members of a set"
+      - id: icse-7-mathematics-ch05-t02
+        title: "Equal, equivalent and universal sets"
+        learning_outcomes:
+          - "Distinguish equal sets from equivalent sets with examples"
+          - "Identify a suitable universal set for given sets"
+      - id: icse-7-mathematics-ch05-t03
+        title: "Cardinal number of a finite set"
+        learning_outcomes:
+          - "Find the cardinal number of a finite set and use it to compare sets"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-mathematics-ch06
+    number: 6
+    title: "Ratio, Proportion and Unitary Method"
+    unit: "Theme 2: Ratio and Proportion"
+    topics:
+      - id: icse-7-mathematics-ch06-t01
+        title: "Ratio and proportion (revision)"
+        learning_outcomes:
+          - "Express a comparison of two quantities as a ratio in simplest form"
+          - "Check whether four quantities are in proportion"
+      - id: icse-7-mathematics-ch06-t02
+        title: "Unitary method and its general expression"
+        learning_outcomes:
+          - "Solve problems by first finding the value of one unit"
+      - id: icse-7-mathematics-ch06-t03
+        title: "Problems on ratio and proportion in daily life"
+        learning_outcomes:
+          - "Divide a quantity in a given ratio"
+          - "Solve problems on recipes, maps and sharing using proportion"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-mathematics-ch07
+    number: 7
+    title: "Percentage and its Applications"
+    unit: "Theme 2: Ratio and Proportion"
+    topics:
+      - id: icse-7-mathematics-ch07-t01
+        title: "Percentage as a fraction with denominator 100"
+        learning_outcomes:
+          - "Explain the meaning of percentage and express a quantity as a percentage of another"
+      - id: icse-7-mathematics-ch07-t02
+        title: "Converting fractions and decimals to percentages and back"
+        learning_outcomes:
+          - "Convert between fractions, decimals and percentages"
+      - id: icse-7-mathematics-ch07-t03
+        title: "Profit and loss (single transaction)"
+        learning_outcomes:
+          - "Calculate profit, loss and profit or loss per cent for a single transaction"
+          - "Find the selling price or cost price given the profit or loss per cent"
+      - id: icse-7-mathematics-ch07-t04
+        title: "Simple interest (time in complete years)"
+        learning_outcomes:
+          - "Calculate simple interest and amount for a time period in complete years"
+          - "Find the principal, rate or time when the other quantities are given"
+    removed_topics:
+      - "Profit and loss over more than one transaction"
+      - "Simple interest for parts of a year (time only in complete years)"
+    literature_texts: []
+  - id: icse-7-mathematics-ch08
+    number: 8
+    title: "Speed, Distance and Time"
+    unit: "Theme 2: Ratio and Proportion"
+    topics:
+      - id: icse-7-mathematics-ch08-t01
+        title: "Speed as distance covered per unit time"
+        learning_outcomes:
+          - "Calculate speed, distance or time when the other two are given"
+      - id: icse-7-mathematics-ch08-t02
+        title: "Units of speed: km/h and m/s"
+        learning_outcomes:
+          - "Convert speeds between km/h and m/s"
+      - id: icse-7-mathematics-ch08-t03
+        title: "Word problems on speed, distance and time"
+        learning_outcomes:
+          - "Solve daily-life problems on journeys, including average speed for a simple journey"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-mathematics-ch09
+    number: 9
+    title: "Algebraic Expressions"
+    unit: "Theme 3: Algebra"
+    topics:
+      - id: icse-7-mathematics-ch09-t01
+        title: "Terms: constants, variables, terms and coefficients"
+        learning_outcomes:
+          - "Identify the constants, variables, terms and coefficients in an algebraic expression"
+      - id: icse-7-mathematics-ch09-t02
+        title: "Like and unlike terms"
+        learning_outcomes:
+          - "Classify terms as like or unlike and explain why only like terms can be combined"
+      - id: icse-7-mathematics-ch09-t03
+        title: "Forming algebraic expressions from situations"
+        learning_outcomes:
+          - "Write an algebraic expression in one or two variables for a described situation"
+      - id: icse-7-mathematics-ch09-t04
+        title: "Addition and subtraction of algebraic expressions"
+        learning_outcomes:
+          - "Add and subtract algebraic expressions with integral coefficients"
+    removed_topics:
+      - "Multiplication and division of algebraic expressions (Class VIII)"
+    literature_texts: []
+  - id: icse-7-mathematics-ch10
+    number: 10
+    title: "Linear Equations and Inequalities"
+    unit: "Theme 3: Algebra"
+    topics:
+      - id: icse-7-mathematics-ch10-t01
+        title: "Simple linear equations in one variable"
+        learning_outcomes:
+          - "Solve linear equations in one variable that need up to two operations"
+          - "Check a solution by substitution"
+      - id: icse-7-mathematics-ch10-t02
+        title: "Forming equations from word problems"
+        learning_outcomes:
+          - "Translate a daily-life situation into a linear equation and solve it"
+      - id: icse-7-mathematics-ch10-t03
+        title: "Simple inequalities in one variable (< and >)"
+        learning_outcomes:
+          - "Solve simple inequalities in one variable and represent the solution on a number line"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-mathematics-ch11
+    number: 11
+    title: "Lines and Angles"
+    unit: "Theme 4: Geometry"
+    topics:
+      - id: icse-7-mathematics-ch11-t01
+        title: "Pairs of angles: linear pair, supplementary, complementary, adjacent, vertically opposite"
+        learning_outcomes:
+          - "Identify pairs of angles in a figure"
+          - "Find an angle when the other angle of the pair is given"
+      - id: icse-7-mathematics-ch11-t02
+        title: "Parallel lines cut by a transversal"
+        learning_outcomes:
+          - "Name corresponding, alternate, interior and exterior angles formed by a transversal"
+          - "Use the properties of parallel lines to find unknown angles"
+      - id: icse-7-mathematics-ch11-t03
+        title: "Constructing a line parallel to a given line through an external point"
+        learning_outcomes:
+          - "Construct a parallel line using ruler and compasses"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-mathematics-ch12
+    number: 12
+    title: "Triangles and their Properties"
+    unit: "Theme 4: Geometry"
+    topics:
+      - id: icse-7-mathematics-ch12-t01
+        title: "Angle sum property of a triangle"
+        learning_outcomes:
+          - "Verify the angle sum property by activity and use it to find unknown angles"
+      - id: icse-7-mathematics-ch12-t02
+        title: "Exterior angle property"
+        learning_outcomes:
+          - "State and apply the exterior angle property to find unknown angles"
+      - id: icse-7-mathematics-ch12-t03
+        title: "Pythagoras theorem (verification only)"
+        learning_outcomes:
+          - "Verify the Pythagoras relation by measuring the sides of right-angled triangles"
+          - "Use the relation to find the third side of a right-angled triangle"
+      - id: icse-7-mathematics-ch12-t04
+        title: "Construction of simple triangles"
+        learning_outcomes:
+          - "Construct a triangle given three sides, two sides and the included angle, or two angles and a side"
+    removed_topics:
+      - "Formal proof of the Pythagoras theorem (verification only)"
+    literature_texts: []
+  - id: icse-7-mathematics-ch13
+    number: 13
+    title: "Congruence"
+    unit: "Theme 4: Geometry"
+    topics:
+      - id: icse-7-mathematics-ch13-t01
+        title: "Congruence through superimposition"
+        learning_outcomes:
+          - "Decide whether two figures are congruent by tracing and superimposing"
+      - id: icse-7-mathematics-ch13-t02
+        title: "Congruence of line segments, angles, circles and triangles"
+        learning_outcomes:
+          - "State the conditions for two line segments, angles or circles to be congruent"
+      - id: icse-7-mathematics-ch13-t03
+        title: "Criteria for congruence of triangles (SSS, SAS, ASA, RHS)"
+        learning_outcomes:
+          - "Identify the criterion under which two triangles are congruent"
+          - "Write the corresponding parts of congruent triangles"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-mathematics-ch14
+    number: 14
+    title: "Symmetry and Visualising Solid Shapes"
+    unit: "Theme 4: Geometry"
+    topics:
+      - id: icse-7-mathematics-ch14-t01
+        title: "Reflection symmetry (recall)"
+        learning_outcomes:
+          - "Draw the lines of symmetry of common 2-D shapes"
+      - id: icse-7-mathematics-ch14-t02
+        title: "Rotational symmetry: order and angle (90, 120, 180 degrees)"
+        learning_outcomes:
+          - "Find the order and angle of rotational symmetry of 2-D shapes"
+      - id: icse-7-mathematics-ch14-t03
+        title: "Faces, edges and vertices of 3-D shapes"
+        learning_outcomes:
+          - "Count the faces, edges and vertices of cubes, cuboids, cylinders and cones"
+      - id: icse-7-mathematics-ch14-t04
+        title: "Nets of cubes, cuboids, cylinders and cones"
+        learning_outcomes:
+          - "Draw a net of a cube or cuboid and identify the solid made from a given net"
+      - id: icse-7-mathematics-ch14-t05
+        title: "Mapping the space around us"
+        learning_outcomes:
+          - "Draw a simple map, for example from home to school, using visual estimation of distances and directions"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-mathematics-ch15
+    number: 15
+    title: "Perimeter and Area"
+    unit: "Theme 5: Mensuration"
+    topics:
+      - id: icse-7-mathematics-ch15-t01
+        title: "Perimeter (revision) and circumference of a circle"
+        learning_outcomes:
+          - "Find the perimeter of rectilinear figures"
+          - "Calculate the circumference of a circle"
+      - id: icse-7-mathematics-ch15-t02
+        title: "Area as the number of unit squares; area on a square grid"
+        learning_outcomes:
+          - "Estimate the area of regular and irregular shapes by counting squares on a grid"
+      - id: icse-7-mathematics-ch15-t03
+        title: "Area of squares and rectangles"
+        learning_outcomes:
+          - "Form and use the formulae for the area of a square and a rectangle"
+      - id: icse-7-mathematics-ch15-t04
+        title: "Area of triangles and parallelograms"
+        learning_outcomes:
+          - "Calculate the area of a triangle and a parallelogram from base and height"
+      - id: icse-7-mathematics-ch15-t05
+        title: "Area of a circle and of rings"
+        learning_outcomes:
+          - "Calculate the area of a circle and of a circular ring (path)"
+      - id: icse-7-mathematics-ch15-t06
+        title: "Area of combined figures"
+        learning_outcomes:
+          - "Find the area of a figure made of rectangles, triangles and circles"
+          - "Convert area between smaller and larger units"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-mathematics-ch16
+    number: 16
+    title: "Data Handling"
+    unit: "Theme 6: Data Handling"
+    topics:
+      - id: icse-7-mathematics-ch16-t01
+        title: "Collecting and organising data to test a hypothesis"
+        learning_outcomes:
+          - "Choose what data to collect for a question and organise it in a table"
+      - id: icse-7-mathematics-ch16-t02
+        title: "Mean, median and mode of ungrouped data"
+        learning_outcomes:
+          - "Calculate the mean, median and mode of up to 15 observations"
+          - "Explain what each average represents"
+      - id: icse-7-mathematics-ch16-t03
+        title: "Constructing and interpreting bar graphs"
+        learning_outcomes:
+          - "Draw a bar graph with a suitable scale and answer questions from it"
+      - id: icse-7-mathematics-ch16-t04
+        title: "Chance and probability through experiments"
+        learning_outcomes:
+          - "Record the outcomes of tossing a coin or throwing a die many times in a table"
+          - "Describe events as more likely, less likely or equally likely using the results"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

@@ -1,0 +1,497 @@
+# ISC Class 11 Mathematics (860), Paper I Theory - ISC 2028 syllabus, CLASS XI portion only.
+# Source: platform/catalog/sources/cisce.md#isc-2028-mathematics. Topic wording is our own summary of the official scope.
+subject_id: isc-11-mathematics
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-mathematics, isc-2028-regulations]
+exam_notes: >-
+  Class XI is year one of the two-year ISC 2028 course. There is no board examination in Class XI: the final
+  examination is conducted internally by the school on the Class XI portion, and promotion to Class XII needs at least
+  35% on the cumulative average in five subjects including English, with 75% attendance (ISC 2028 Regulations).
+  The syllabus prescribes, and the school examination usually follows: Paper I Theory, 3 hours, 80 marks, on five
+  compulsory units (Sets and Functions 18, Algebra 26, Coordinate Geometry 20, Calculus 8, Statistics and Probability 8);
+  Paper II Project Work, 20 marks - two projects of 10 marks each (overall format 1, content 4, findings 2, viva-voce 3).
+  Suggested projects include proving that a set of n elements has 2^n subsets, verifying set laws with Venn diagrams,
+  comparing graphs of sin(theta), sin(2 theta) and 2 sin(theta), powers of i on the Argand plane, Pascal's triangle,
+  sums of squares and cubes, coefficient of variation of two data sets, and modelling conics with a double cone or
+  their focal properties; project work is not built as chapters. SOYL covers Paper I only. Mathematics may not be
+  taken with Applied Mathematics. No Class XI specimen paper is published for Mathematics. CISCE lists topics under
+  five units, not textbook chapters: SOYL groups them into 19 teachable chapters in syllabus order. The Class XII
+  portion is in isc-12-mathematics.
+units:
+  - { name: "Unit 1: Sets and Functions", marks: 18 }
+  - { name: "Unit 2: Algebra", marks: 26 }
+  - { name: "Unit 3: Coordinate Geometry", marks: 20 }
+  - { name: "Unit 4: Calculus", marks: 8 }
+  - { name: "Unit 5: Statistics and Probability", marks: 8 }
+chapters:
+  - id: isc-11-mathematics-ch01
+    number: 1
+    title: "Sets"
+    unit: "Unit 1: Sets and Functions"
+    topics:
+      - id: isc-11-mathematics-ch01-t01
+        title: "Sets and their representation (roster and set-builder); empty, finite, infinite and equal sets"
+        learning_outcomes:
+          - "Write a set in roster and in set-builder form"
+          - "Classify given sets as empty, finite or infinite and decide whether two sets are equal"
+      - id: isc-11-mathematics-ch01-t02
+        title: "Subsets; subsets of the real numbers and interval notation; power set; universal set"
+        learning_outcomes:
+          - "List all subsets of a given set and find the number of elements in its power set"
+          - "Write subsets of R in open, closed and half-open interval notation"
+      - id: isc-11-mathematics-ch01-t03
+        title: "Venn diagrams; union, intersection and difference of sets; complement and its properties"
+        learning_outcomes:
+          - "Represent union, intersection, difference and complement on Venn diagrams"
+          - "Verify De Morgan's laws and other properties of complements for given sets"
+          - "Solve word problems on the numbers of elements in unions and intersections of two or three sets"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-mathematics-ch02
+    number: 2
+    title: "Relations and Functions"
+    unit: "Unit 1: Sets and Functions"
+    topics:
+      - id: isc-11-mathematics-ch02-t01
+        title: "Ordered pairs; Cartesian product of sets; number of elements in A x B; R x R and R x R x R"
+        learning_outcomes:
+          - "Find A x B for given finite sets and state n(A x B)"
+          - "Find the number of relations from A to B"
+      - id: isc-11-mathematics-ch02-t02
+        title: "Relations: definition as a subset of a Cartesian product; arrow diagrams; domain, co-domain and range"
+        learning_outcomes:
+          - "Represent a relation by an arrow diagram and state its domain, co-domain and range"
+      - id: isc-11-mathematics-ch02-t03
+        title: "Functions as special relations and mappings; y = f(x); domain, co-domain and range of a function"
+        learning_outcomes:
+          - "Decide whether a given relation is a function and justify the answer"
+          - "Find the domain and range of real functions such as f(x) = 1/(x - 2) and f(x) = sqrt(9 - x^2)"
+      - id: isc-11-mathematics-ch02-t04
+        title: "Standard real functions and their graphs: constant, identity, polynomial, rational, modulus, signum, exponential, logarithmic and greatest integer functions"
+        learning_outcomes:
+          - "Sketch the graphs of the modulus, signum and greatest integer functions"
+          - "State the domain and range of each standard function from its graph"
+      - id: isc-11-mathematics-ch02-t05
+        title: "Algebra of real functions: sum, difference, product and quotient"
+        learning_outcomes:
+          - "Find f + g, f - g, fg and f/g with their domains for given functions"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-mathematics-ch03
+    number: 3
+    title: "Angles and Trigonometric Functions"
+    unit: "Unit 1: Sets and Functions"
+    topics:
+      - id: isc-11-mathematics-ch03-t01
+        title: "Positive and negative angles; degree and radian (circular) measure and conversion; arc length s = r theta; area of a sector"
+        learning_outcomes:
+          - "Convert angles between degrees and radians"
+          - "Calculate arc length and area of a sector of a circle"
+      - id: isc-11-mathematics-ch03-t02
+        title: "Trigonometric functions defined using the unit circle; identity sin^2 x + cos^2 x = 1; relations between the functions; signs in the four quadrants"
+        learning_outcomes:
+          - "Find the values of all trigonometric functions from one given value and the quadrant"
+          - "Prove simple trigonometric identities"
+      - id: isc-11-mathematics-ch03-t03
+        title: "Trigonometric functions of any angle; allied angles"
+        learning_outcomes:
+          - "Evaluate trigonometric functions of angles such as 210 degrees and -11pi/3 using allied-angle results"
+      - id: isc-11-mathematics-ch03-t04
+        title: "Domain, range and period of trigonometric functions; sketches of the graphs of sin x, cos x, tan x, cosec x, sec x and cot x"
+        learning_outcomes:
+          - "State the domain, range and period of each trigonometric function"
+          - "Sketch the graphs of the six trigonometric functions"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-mathematics-ch04
+    number: 4
+    title: "Compound, Multiple and Sub-multiple Angles"
+    unit: "Unit 1: Sets and Functions"
+    topics:
+      - id: isc-11-mathematics-ch04-t01
+        title: "Addition and subtraction formulae: sin(A +- B), cos(A +- B), tan(A +- B), cot(A +- B), tan(A + B + C)"
+        learning_outcomes:
+          - "Derive tan(A + B) from the sine and cosine addition formulae"
+          - "Evaluate values such as sin 75 degrees and tan 15 degrees exactly"
+      - id: isc-11-mathematics-ch04-t02
+        title: "Double, triple, half and one-third angle formulae: sin 2x, cos 2x, tan 2x, sin 3x, cos 3x, tan 3x"
+        learning_outcomes:
+          - "Express sin 3x and cos 3x in terms of sin x and cos x"
+          - "Use half-angle formulae to find values such as cos 22.5 degrees"
+      - id: isc-11-mathematics-ch04-t03
+        title: "Sum and difference to product formulae (sin C + sin D etc.)"
+        learning_outcomes:
+          - "Convert sums of sines or cosines into products to prove identities"
+      - id: isc-11-mathematics-ch04-t04
+        title: "Product to sum or difference formulae (2 sin A cos B etc.)"
+        learning_outcomes:
+          - "Express products of trigonometric functions as sums and simplify expressions"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-mathematics-ch05
+    number: 5
+    title: "Complex Numbers"
+    unit: "Unit 2: Algebra"
+    topics:
+      - id: isc-11-mathematics-ch05-t01
+        title: "Need for complex numbers; powers of i; algebraic operations (sum, difference, product, quotient); additive and multiplicative inverse"
+        learning_outcomes:
+          - "Simplify powers of i and express a quotient of complex numbers in the form a + ib"
+      - id: isc-11-mathematics-ch05-t02
+        title: "Conjugate, modulus and argument and their properties"
+        learning_outcomes:
+          - "Find the conjugate, modulus and argument of a complex number"
+          - "Use properties such as |z1 z2| = |z1||z2| to simplify expressions"
+      - id: isc-11-mathematics-ch05-t03
+        title: "Argand plane and polar representation of complex numbers"
+        learning_outcomes:
+          - "Plot complex numbers on the Argand plane"
+          - "Convert a complex number into polar form"
+      - id: isc-11-mathematics-ch05-t04
+        title: "Square root of a complex number"
+        learning_outcomes:
+          - "Find the square roots of a complex number such as -5 + 12i"
+      - id: isc-11-mathematics-ch05-t05
+        title: "Cube roots of unity and their properties"
+        learning_outcomes:
+          - "Use 1 + omega + omega^2 = 0 and omega^3 = 1 to simplify expressions"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-mathematics-ch06
+    number: 6
+    title: "Quadratic Equations"
+    unit: "Unit 2: Algebra"
+    topics:
+      - id: isc-11-mathematics-ch06-t01
+        title: "Fundamental theorem of algebra (statement); solving quadratic equations with real coefficients by the formula, including complex roots"
+        learning_outcomes:
+          - "Solve quadratic equations with real or complex roots using the quadratic formula"
+      - id: isc-11-mathematics-ch06-t02
+        title: "Equations reducible to quadratic form"
+        learning_outcomes:
+          - "Solve equations such as x^4 - 5x^2 + 4 = 0 and those with substitution like y = x + 1/x"
+      - id: isc-11-mathematics-ch06-t03
+        title: "Nature of roots; sum and product of roots; roots that are rational, irrational, equal, reciprocal or one the square of the other"
+        learning_outcomes:
+          - "Use the discriminant to determine the nature of the roots"
+          - "Find a condition on coefficients for the roots to be reciprocal or one to be the square of the other"
+      - id: isc-11-mathematics-ch06-t04
+        title: "Forming quadratic equations with given roots; equations whose roots are functions of given roots (e.g. alpha^3, beta^3); common roots"
+        learning_outcomes:
+          - "Form the equation whose roots are alpha^3 and beta^3 given the original equation"
+          - "Find the condition for two quadratic equations to have a common root"
+      - id: isc-11-mathematics-ch06-t05
+        title: "Quadratic functions: sign of ax^2 + bx + c for a > 0 and a < 0; graph; maximum or minimum value"
+        learning_outcomes:
+          - "Sketch the graph of a quadratic function for real, equal and complex roots"
+          - "Find the maximum or minimum value of a quadratic function and where it occurs"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-mathematics-ch07
+    number: 7
+    title: "Linear and Quadratic Inequalities"
+    unit: "Unit 2: Algebra"
+    topics:
+      - id: isc-11-mathematics-ch07-t01
+        title: "Algebraic solution of linear inequalities in one variable and representation on the number line"
+        learning_outcomes:
+          - "Solve a linear inequality and show the solution set on the number line"
+      - id: isc-11-mathematics-ch07-t02
+        title: "Quadratic inequalities by the method of intervals, including perfect squares"
+        learning_outcomes:
+          - "Solve inequalities such as x^2 + x - 6 >= 0 using sign charts"
+      - id: isc-11-mathematics-ch07-t03
+        title: "Inequalities involving rational expressions of the form f(x)/g(x) compared with a constant"
+        learning_outcomes:
+          - "Solve rational inequalities, excluding values that make the denominator zero"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-mathematics-ch08
+    number: 8
+    title: "Permutations and Combinations"
+    unit: "Unit 2: Algebra"
+    topics:
+      - id: isc-11-mathematics-ch08-t01
+        title: "Fundamental principle of counting; factorial notation n! = n(n - 1)!"
+        learning_outcomes:
+          - "Apply the multiplication and addition principles to count outcomes"
+      - id: isc-11-mathematics-ch08-t02
+        title: "Permutations nPr (derivation); restricted permutations: items always together or never together; forming numbers from digits"
+        learning_outcomes:
+          - "Derive the formula for nPr"
+          - "Count arrangements in which given items are always together or never together"
+      - id: isc-11-mathematics-ch08-t03
+        title: "Word building with and without repeated letters; permutations of alike and repeated things; circular permutations"
+        learning_outcomes:
+          - "Count the arrangements of the letters of a word with repeated letters"
+          - "Count circular arrangements with and without distinguishing clockwise and anticlockwise order"
+      - id: isc-11-mathematics-ch08-t04
+        title: "Combinations nCr (derivation) and properties: nCr = nC(n - r), (n+1)Cr = nC(r-1) + nCr; selections of different and of alike things"
+        learning_outcomes:
+          - "Derive nCr and its relation with nPr"
+          - "Use the properties of nCr to solve equations such as nC8 = nC6"
+      - id: isc-11-mathematics-ch08-t05
+        title: "Mixed problems on permutations and combinations"
+        learning_outcomes:
+          - "Solve problems needing both selection and arrangement, such as forming committees and words"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-mathematics-ch09
+    number: 9
+    title: "Binomial Theorem"
+    unit: "Unit 2: Algebra"
+    topics:
+      - id: isc-11-mathematics-ch09-t01
+        title: "History and significance of Pascal's triangle; binomial theorem for positive integral indices: statement and proof"
+        learning_outcomes:
+          - "Construct Pascal's triangle and use it to expand (a + b)^n for small n"
+          - "Prove the binomial theorem for a positive integral index"
+      - id: isc-11-mathematics-ch09-t02
+        title: "General term and middle term(s) of a binomial expansion; term independent of x"
+        learning_outcomes:
+          - "Find a specified term, the middle term(s) and the term independent of x in an expansion"
+      - id: isc-11-mathematics-ch09-t03
+        title: "Binomial coefficients and applications"
+        learning_outcomes:
+          - "Use binomial coefficients to find sums such as nC0 + nC1 + ... + nCn"
+          - "Use the binomial theorem to approximate or compare numbers such as (1.01)^10"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-mathematics-ch10
+    number: 10
+    title: "Sequences and Series"
+    unit: "Unit 2: Algebra"
+    topics:
+      - id: isc-11-mathematics-ch10-t01
+        title: "Arithmetic progression: nth term, sum of n terms; arithmetic mean; inserting arithmetic means; choosing three or four terms in AP"
+        learning_outcomes:
+          - "Find the nth term and the sum of n terms of an AP"
+          - "Insert a given number of arithmetic means between two numbers"
+      - id: isc-11-mathematics-ch10-t02
+        title: "Geometric progression: nth term, sum of n terms, infinite GP and its sum; geometric mean; inserting geometric means"
+        learning_outcomes:
+          - "Find the sum of n terms and of an infinite GP with |r| < 1"
+          - "Insert a given number of geometric means between two numbers"
+      - id: isc-11-mathematics-ch10-t03
+        title: "Relation between arithmetic mean and geometric mean"
+        learning_outcomes:
+          - "Prove that AM >= GM for two positive numbers and use it to find numbers from their AM and GM"
+      - id: isc-11-mathematics-ch10-t04
+        title: "Special sums of n, n^2 and n^3; summing related series; nth term by the method of differences"
+        learning_outcomes:
+          - "Use formulae for sum of n, n^2 and n^3 to sum series such as 1.2 + 2.3 + 3.4 + ..."
+          - "Find the nth term of a sequence by the method of differences"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-mathematics-ch11
+    number: 11
+    title: "Straight Lines"
+    unit: "Unit 3: Coordinate Geometry"
+    topics:
+      - id: isc-11-mathematics-ch11-t01
+        title: "Recall of two-dimensional geometry: section formula (internal and external), incentre, area of a triangle, collinearity; shifting of origin"
+        learning_outcomes:
+          - "Find the point dividing a segment in a given ratio internally and externally"
+          - "Find the incentre and area of a triangle from its vertices and test three points for collinearity"
+      - id: isc-11-mathematics-ch11-t02
+        title: "Slope of a line; angle between two lines; conditions for parallel and perpendicular lines"
+        learning_outcomes:
+          - "Find the angle between two lines from their slopes"
+          - "Use slopes to test whether lines are parallel or perpendicular"
+      - id: isc-11-mathematics-ch11-t03
+        title: "Forms of the equation of a line: parallel to an axis, point-slope, slope-intercept, two-point, intercept and normal forms; general equation"
+        learning_outcomes:
+          - "Write the equation of a line in the form suited to the given data"
+          - "Convert a general equation into slope-intercept, intercept and normal forms"
+      - id: isc-11-mathematics-ch11-t04
+        title: "Distance of a point from a line; distance between parallel lines; equations of angle bisectors"
+        learning_outcomes:
+          - "Calculate the perpendicular distance from a point to a line and between two parallel lines"
+          - "Find the equations of the bisectors of the angles between two lines"
+      - id: isc-11-mathematics-ch11-t05
+        title: "Family of lines through the intersection of two lines; locus and its equation"
+        learning_outcomes:
+          - "Find a line through the intersection of two lines satisfying a further condition"
+          - "Find the equation of the locus of a point satisfying a given geometric condition"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-mathematics-ch12
+    number: 12
+    title: "Circles"
+    unit: "Unit 3: Coordinate Geometry"
+    topics:
+      - id: isc-11-mathematics-ch12-t01
+        title: "Equations of a circle in standard, diameter, general and parametric forms; centre and radius from the general equation"
+        learning_outcomes:
+          - "Write the equation of a circle from its centre and radius or from the ends of a diameter"
+          - "Find the centre and radius of a circle given in general form"
+      - id: isc-11-mathematics-ch12-t02
+        title: "Finding the equation of a circle through three non-collinear points or from other sufficient data"
+        learning_outcomes:
+          - "Find the circle through three given points"
+          - "Find a circle whose centre lies on a given line and which passes through two given points"
+      - id: isc-11-mathematics-ch12-t03
+        title: "Intercepts made by a circle on the axes; relative positions of two circles; circles touching externally and internally"
+        learning_outcomes:
+          - "Calculate the intercepts a circle makes on the coordinate axes"
+          - "Decide whether two circles intersect, touch or lie apart from their centres and radii"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-mathematics-ch13
+    number: 13
+    title: "Conic Sections: Introduction and Parabola"
+    unit: "Unit 3: Coordinate Geometry"
+    topics:
+      - id: isc-11-mathematics-ch13-t01
+        title: "Conics as sections of a cone; degenerate cases (point, line, pair of lines); focus, directrix, eccentricity and latus rectum (PS = e PL)"
+        learning_outcomes:
+          - "Identify the conic produced by different plane sections of a double cone"
+          - "Use the focus-directrix property to find the equation of a conic with given focus, directrix and eccentricity"
+      - id: isc-11-mathematics-ch13-t02
+        title: "Parabola: standard forms y^2 = +-4ax and x^2 = +-4ay; rough sketches; focus, vertex, directrix, axis and latus rectum"
+        learning_outcomes:
+          - "Sketch each standard parabola and state its focus, directrix, axis and length of latus rectum"
+      - id: isc-11-mathematics-ch13-t03
+        title: "Finding the equation of a parabola from its focus and directrix; application problems"
+        learning_outcomes:
+          - "Find the equation of a parabola from given focus and directrix"
+          - "Solve applied problems such as the shape of a parabolic reflector or arch"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-mathematics-ch14
+    number: 14
+    title: "Ellipse and Hyperbola"
+    unit: "Unit 3: Coordinate Geometry"
+    topics:
+      - id: isc-11-mathematics-ch14-t01
+        title: "Ellipse x^2/a^2 + y^2/b^2 = 1, e < 1, b^2 = a^2(1 - e^2); cases a > b and a < b; rough sketches"
+        learning_outcomes:
+          - "Sketch an ellipse and find its axes, vertices, foci, directrices, eccentricity and latus rectum"
+      - id: isc-11-mathematics-ch14-t02
+        title: "Equation of an ellipse from focus and directrix; focal property SP + S'P = 2a"
+        learning_outcomes:
+          - "Find the equation of an ellipse from given focus, directrix and eccentricity"
+          - "Use the focal property to solve problems on ellipses"
+      - id: isc-11-mathematics-ch14-t03
+        title: "Hyperbola x^2/a^2 - y^2/b^2 = 1, e > 1, b^2 = a^2(e^2 - 1); conjugate form; rough sketches"
+        learning_outcomes:
+          - "Sketch a hyperbola and find its transverse and conjugate axes, vertices, foci, directrices and latus rectum"
+      - id: isc-11-mathematics-ch14-t04
+        title: "Focal property of the hyperbola |SP - S'P| = 2a"
+        learning_outcomes:
+          - "Use the focal property to find the locus of a point whose distances from two fixed points differ by a constant"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-mathematics-ch15
+    number: 15
+    title: "Introduction to Three-Dimensional Geometry"
+    unit: "Unit 3: Coordinate Geometry"
+    topics:
+      - id: isc-11-mathematics-ch15-t01
+        title: "Coordinate axes and coordinate planes in three dimensions; coordinates of a point; octants"
+        learning_outcomes:
+          - "Locate a point in space from its coordinates and name its octant"
+      - id: isc-11-mathematics-ch15-t02
+        title: "Distance between two points in space"
+        learning_outcomes:
+          - "Calculate the distance between two points in space and the distance of a point from an axis"
+      - id: isc-11-mathematics-ch15-t03
+        title: "Section formula and midpoint formula in three dimensions"
+        learning_outcomes:
+          - "Find the point dividing the join of two points in a given ratio and test collinearity in space"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-mathematics-ch16
+    number: 16
+    title: "Limits"
+    unit: "Unit 4: Calculus"
+    topics:
+      - id: isc-11-mathematics-ch16-t01
+        title: "Intuitive idea and meaning of a limit; left-hand and right-hand limits; existence of a limit"
+        learning_outcomes:
+          - "Find left-hand and right-hand limits of a function at a point and decide whether the limit exists"
+      - id: isc-11-mathematics-ch16-t02
+        title: "Fundamental theorems on limits (statements); indeterminate forms"
+        learning_outcomes:
+          - "Apply the algebra of limits and recognise indeterminate forms such as 0/0"
+      - id: isc-11-mathematics-ch16-t03
+        title: "Limits of polynomial and rational functions"
+        learning_outcomes:
+          - "Evaluate limits of rational functions by factorisation and rationalisation"
+          - "Use lim (x^n - a^n)/(x - a) = n a^(n-1)"
+      - id: isc-11-mathematics-ch16-t04
+        title: "Limits of trigonometric, exponential and logarithmic functions"
+        learning_outcomes:
+          - "Use lim sin x / x = 1 as x tends to 0 to evaluate trigonometric limits"
+          - "Evaluate limits using lim (e^x - 1)/x = 1 and lim ln(1 + x)/x = 1"
+    removed_topics:
+      - "Proofs of the fundamental theorems on limits (statements only)"
+    literature_texts: []
+  - id: isc-11-mathematics-ch17
+    number: 17
+    title: "Derivatives"
+    unit: "Unit 4: Calculus"
+    topics:
+      - id: isc-11-mathematics-ch17-t01
+        title: "Derivative as rate of change (distance function) and geometrically as slope of the tangent"
+        learning_outcomes:
+          - "Interpret the derivative as instantaneous rate of change and as the slope of a tangent"
+      - id: isc-11-mathematics-ch17-t02
+        title: "Differentiation from first principles"
+        learning_outcomes:
+          - "Find the derivatives of x^n, sin x and cos x from first principles"
+      - id: isc-11-mathematics-ch17-t03
+        title: "Derivatives of sums, differences, products and quotients of functions"
+        learning_outcomes:
+          - "Differentiate products and quotients of functions using the product and quotient rules"
+      - id: isc-11-mathematics-ch17-t04
+        title: "Derivatives of polynomial and trigonometric functions"
+        learning_outcomes:
+          - "Differentiate polynomial and trigonometric functions using standard formulae"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-mathematics-ch18
+    number: 18
+    title: "Statistics: Measures of Dispersion"
+    unit: "Unit 5: Statistics and Probability"
+    topics:
+      - id: isc-11-mathematics-ch18-t01
+        title: "Range; mean deviation about the mean for ungrouped and grouped data"
+        learning_outcomes:
+          - "Calculate the range and the mean deviation about the mean for discrete and grouped data"
+      - id: isc-11-mathematics-ch18-t02
+        title: "Variance and standard deviation by the direct, short-cut and step-deviation methods"
+        learning_outcomes:
+          - "Calculate the standard deviation of grouped data by the step-deviation method"
+      - id: isc-11-mathematics-ch18-t03
+        title: "Combined mean and standard deviation of two groups"
+        learning_outcomes:
+          - "Find the combined mean and standard deviation of two groups from their sizes, means and standard deviations"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-mathematics-ch19
+    number: 19
+    title: "Probability"
+    unit: "Unit 5: Statistics and Probability"
+    topics:
+      - id: isc-11-mathematics-ch19-t01
+        title: "Random experiments; outcomes and sample spaces in set notation"
+        learning_outcomes:
+          - "Write the sample space of experiments such as tossing coins and throwing dice"
+      - id: isc-11-mathematics-ch19-t02
+        title: "Events: sure, impossible, mutually exclusive and exhaustive events; 'not', 'and' and 'or' events"
+        learning_outcomes:
+          - "Represent compound events as complements, intersections and unions of sets"
+          - "Decide whether given events are mutually exclusive or exhaustive"
+      - id: isc-11-mathematics-ch19-t03
+        title: "Axiomatic (set-theoretic) probability and its link with classical probability"
+        learning_outcomes:
+          - "Calculate the probability of an event in a finite sample space with equally likely outcomes"
+      - id: isc-11-mathematics-ch19-t04
+        title: "Probability of 'not', 'and' and 'or' events; addition theorem"
+        learning_outcomes:
+          - "Use P(A or B) = P(A) + P(B) - P(A and B) and P(not A) = 1 - P(A) to solve problems"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

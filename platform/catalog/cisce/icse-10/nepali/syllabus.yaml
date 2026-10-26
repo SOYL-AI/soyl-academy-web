@@ -1,0 +1,349 @@
+# ICSE Class 10 Nepali (Second Language, code 10) - ICSE 2027 examination.
+# Literature: titles and authors only (CONTEXT section 8). Students read the texts in their own textbook.
+subject_id: icse-10-nepali
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2027-second-languages, icse-2027-prescribed-books, cisce-circular-2026-27-33-indian-languages, icse-2027-regulations]
+exam_notes: >-
+  One paper of 3 hours, 80 marks, plus internal assessment 20 marks (two or three assignments in Class X, at least one written
+  assignment from language and one from literature; marked 10 by the subject teacher and 10 by an external examiner). Section A
+  Language (40 marks, compulsory): one composition, one letter (choice of two), an unseen comprehension passage of about 250
+  words, and grammar (vocabulary, syntax and idiom, sentence synthesis, sentences embodying given words or forms). Section B
+  Prescribed Texts (40 marks): answer four questions from ONLY two of the four prescribed books; questions are set and answered
+  in the language. Prescribed texts are bifurcated (Circular 2026-27/33): the ICSE 2027 paper is set ONLY on the Class X
+  portion listed here (Class IX portion is in icse-9-nepali). Sahitya Kunj and Ekanki Kunj are published by Gamma Publication,
+  Darjeeling. Devanagari spellings of some titles are SOYL renderings of the CISCE transliteration (e.g. Shrinkhala Bandhne
+  Chhanharu); title_en keeps the CISCE form. CISCE describes the grammar component only generically and says it needs no
+  knowledge of grammatical terms; the grammar chapters below break it into item types commonly set in ICSE papers - this
+  breakdown is SOYL's, not CISCE's. CISCE lists topics not chapters; SOYL grouped them into teachable chapters in syllabus
+  order. SOYL covers all four prescribed books so a student can pick any two.
+units:
+  - { name: "खण्ड क - भाषा (Section A: Language)", marks: 40 }
+  - { name: "खण्ड ख - निर्धारित पाठ्यपुस्तकहरू (Section B: Prescribed Texts)", marks: 40 }
+chapters:
+  - id: icse-10-nepali-ch01
+    number: 1
+    title: "निबन्ध / रचना लेखन"
+    title_en: "Composition writing"
+    unit: "खण्ड क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-nepali-ch01-t01
+        title: "रचनाको योजना: विषय छनोट, रूपरेखा, भूमिका, विस्तार र उपसंहार"
+        title_en: "Planning a composition: topic, outline, introduction, body and conclusion"
+        learning_outcomes:
+          - "दिइएको विषयमा रूपरेखा बनाएर २५०-३०० शब्दको सुसङ्गठित रचना लेख्नु"
+          - "अनुच्छेदहरूलाई तार्किक क्रममा जोड्नु"
+      - id: icse-10-nepali-ch01-t02
+        title: "वर्णनात्मक र आख्यानात्मक रचना"
+        title_en: "Descriptive and narrative compositions"
+        learning_outcomes:
+          - "कुनै ठाउँ, घटना वा अनुभवको सजीव वर्णन गर्नु"
+          - "घटनाहरूलाई क्रमबद्ध र रोचक ढङ्गले बयान गर्नु"
+      - id: icse-10-nepali-ch01-t03
+        title: "व्याख्यात्मक र विचारात्मक रचना: निर्देशन, प्रक्रिया र तर्क"
+        title_en: "Explanations, directions and reflective or argumentative writing"
+        learning_outcomes:
+          - "कुनै काम वा प्रक्रिया चरणबद्ध रूपमा बुझाउनु"
+          - "सामाजिक विषयमा पक्ष र विपक्षका तर्क दिएर निष्कर्ष लेख्नु"
+      - id: icse-10-nepali-ch01-t04
+        title: "चित्र, वस्तु वा दिइएको वाक्यमा आधारित रचना"
+        title_en: "Composition from a picture, object or given opening line"
+        learning_outcomes:
+          - "दिइएको चित्र वा सुरुको वाक्यबाट मौलिक कथा लेख्नु"
+      - id: icse-10-nepali-ch01-t05
+        title: "भाषिक शुद्धता: हिज्जे, विराम चिह्न र उपयुक्त शब्दचयन"
+        title_en: "Accuracy: spelling, punctuation and apt word choice"
+        learning_outcomes:
+          - "आफ्नो रचनामा हिज्जे र विराम चिह्नका त्रुटि पहिचान गरी सच्याउनु"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-nepali-ch02
+    number: 2
+    title: "चिठी लेखन"
+    title_en: "Letter writing"
+    unit: "खण्ड क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-nepali-ch02-t01
+        title: "औपचारिक चिठीको ढाँचा: ठेगाना, मिति, प्रापक, विषय, सम्बोधन र समापन"
+        title_en: "Layout of a formal letter: address, date, addressee, subject, salutation and closing"
+        learning_outcomes:
+          - "औपचारिक चिठीका सबै अङ्ग सही क्रम र ढाँचामा लेख्नु"
+      - id: icse-10-nepali-ch02-t02
+        title: "प्रधानाध्यापक, सम्पादक र अधिकारीलाई चिठी: निवेदन, गुनासो, सुझाव"
+        title_en: "Letters to a principal, editor or official: application, complaint, suggestion"
+        learning_outcomes:
+          - "समस्या छोटकरीमा र नम्रतापूर्वक राखेर उचित माग लेख्नु"
+      - id: icse-10-nepali-ch02-t03
+        title: "अनौपचारिक चिठी: साथी, आमाबुबा वा आफन्तलाई"
+        title_en: "Informal letters to friends, parents or relatives"
+        learning_outcomes:
+          - "उचित सम्बोधन, आत्मीय भाषा र समापन प्रयोग गरी अनौपचारिक चिठी लेख्नु"
+      - id: icse-10-nepali-ch02-t04
+        title: "दिइएका बुँदाका आधारमा चिठीको विस्तार"
+        title_en: "Developing a letter from given points"
+        learning_outcomes:
+          - "प्रश्नमा दिइएका सबै बुँदा चिठीमा समेट्नु"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-nepali-ch03
+    number: 3
+    title: "अपठित गद्यांश"
+    title_en: "Unseen passage (comprehension)"
+    unit: "खण्ड क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-nepali-ch03-t01
+        title: "गद्यांश पढ्ने रणनीति: मूल भाव र सहायक विवरण"
+        title_en: "Reading strategy: main idea and supporting details"
+        learning_outcomes:
+          - "लगभग २५० शब्दको गद्यांशको मूल भाव एक-दुई वाक्यमा भन्नु"
+      - id: icse-10-nepali-ch03-t02
+        title: "तथ्यपरक र अनुमानमूलक प्रश्नका उत्तर आफ्नै शब्दमा"
+        title_en: "Answering factual and inferential questions in their own words"
+        learning_outcomes:
+          - "गद्यांशका वाक्य जस्ताको तस्तै नसारी आफ्नै शब्दमा उत्तर लेख्नु"
+          - "गद्यांशका आधारमा कारण र परिणामको अनुमान गर्नु"
+      - id: icse-10-nepali-ch03-t03
+        title: "प्रसङ्गअनुसार शब्दार्थ, शीर्षक र सन्देश"
+        title_en: "Word meanings in context, a title and the message"
+        learning_outcomes:
+          - "प्रसङ्गबाट कठिन शब्दको अर्थ पत्ता लगाउनु"
+          - "गद्यांशका लागि उपयुक्त शीर्षक सुझाई त्यसको औचित्य दिनु"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-nepali-ch04
+    number: 4
+    title: "व्याकरण: शब्दभण्डार"
+    title_en: "Grammar: vocabulary"
+    unit: "खण्ड क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-nepali-ch04-t01
+        title: "शब्द निर्माण: उपसर्ग र प्रत्ययबाट भाववाचक नाम र विशेषण"
+        title_en: "Word formation: abstract nouns and adjectives with prefixes and suffixes"
+        learning_outcomes:
+          - "दिइएका शब्दमा प्रत्यय जोडेर भाववाचक नाम वा विशेषण बनाउनु"
+      - id: icse-10-nepali-ch04-t02
+        title: "पर्यायवाची र विपरीतार्थी शब्द"
+        title_en: "Synonyms and antonyms"
+        learning_outcomes:
+          - "चलनचल्तीका शब्दका पर्यायवाची र विपरीतार्थी शब्द लेख्नु"
+      - id: icse-10-nepali-ch04-t03
+        title: "धेरै शब्दका लागि एक शब्द"
+        title_en: "One word for a group of words"
+        learning_outcomes:
+          - "पदावलीका लागि उपयुक्त एक शब्द छानेर वाक्यमा प्रयोग गर्नु"
+      - id: icse-10-nepali-ch04-t04
+        title: "उस्तै सुनिने भिन्नार्थक शब्द र शुद्ध हिज्जे"
+        title_en: "Similar-sounding words with different meanings; correct spelling"
+        learning_outcomes:
+          - "उस्तै सुनिने शब्दहरूको अर्थभिन्नता वाक्यमा प्रयोग गरेर देखाउनु"
+          - "अशुद्ध हिज्जे भएका शब्द शुद्ध पार्नु"
+    removed_topics:
+      - "Knowledge of grammatical terms as such (CISCE: the grammar question does not require it)"
+    literature_texts: []
+  - id: icse-10-nepali-ch05
+    number: 5
+    title: "व्याकरण: वाक्य रचना र टुक्का"
+    title_en: "Grammar: sentence construction and idioms"
+    unit: "खण्ड क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-nepali-ch05-t01
+        title: "टुक्का र उखान: अर्थ र वाक्यमा प्रयोग"
+        title_en: "Idioms and proverbs: meaning and use in sentences"
+        learning_outcomes:
+          - "टुक्काको अर्थ लेखेर प्रसङ्गअनुसार वाक्यमा प्रयोग गर्नु"
+      - id: icse-10-nepali-ch05-t02
+        title: "वाक्य शुद्धीकरण: लिङ्ग, वचन, पुरुष, आदर र कालसम्बन्धी त्रुटि"
+        title_en: "Correcting sentences: gender, number, person, honorific and tense errors"
+        learning_outcomes:
+          - "वाक्यमा भएको व्याकरणिक त्रुटि पहिचान गरी शुद्ध वाक्य लेख्नु"
+      - id: icse-10-nepali-ch05-t03
+        title: "निर्देशनअनुसार वाक्य परिवर्तन: काल, वाच्य, सकारात्मक-नकारात्मक, प्रश्नवाचक"
+        title_en: "Transforming sentences as directed: tense, voice, affirmative/negative, question"
+        learning_outcomes:
+          - "अर्थ नबदली निर्देशनअनुसार वाक्यको रूप बदल्नु"
+      - id: icse-10-nepali-ch05-t04
+        title: "वाक्य संश्लेषण: दुई वा बढी वाक्य जोडेर एउटै वाक्य"
+        title_en: "Synthesis: combining sentences into one"
+        learning_outcomes:
+          - "दुई वा बढी सरल वाक्य जोडेर संयुक्त वा मिश्र वाक्य बनाउनु"
+      - id: icse-10-nepali-ch05-t05
+        title: "दिइएका शब्द वा रूप प्रयोग गरी वाक्य रचना"
+        title_en: "Making sentences using given words or forms"
+        learning_outcomes:
+          - "दिइएको शब्द वा रूप प्रयोग गरेर अर्थपूर्ण वाक्य बनाउनु"
+    removed_topics:
+      - "Knowledge of grammatical terms as such (CISCE: the grammar question does not require it)"
+    literature_texts: []
+  - id: icse-10-nepali-ch06
+    number: 6
+    title: "साहित्य कुञ्ज: कथाहरू"
+    title_en: "Sahitya Kunj: short stories (Class X portion)"
+    unit: "खण्ड ख - निर्धारित पाठ्यपुस्तकहरू (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-10-nepali-ch06-t01
+        title: "ज्यूँदो लास (मटिल्डा राई): कथावस्तु, पात्र र सन्देश"
+        title_en: "Jewdo Lash (Matilda Rai): plot, characters and message"
+        learning_outcomes:
+          - "कथाको कथावस्तु आफ्नै शब्दमा सङ्क्षेपमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र-चित्रण कथाका उदाहरणसहित गर्नु"
+          - "कथाको मूल सन्देश र शीर्षकको सार्थकता स्पष्ट पार्नु"
+      - id: icse-10-nepali-ch06-t02
+        title: "माछाको मोल (शिवकुमार राई): कथावस्तु, पात्र र सन्देश"
+        title_en: "Maachako Mol (Shiva Kumar Rai): plot, characters and message"
+        learning_outcomes:
+          - "कथाको कथावस्तु आफ्नै शब्दमा सङ्क्षेपमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र-चित्रण कथाका उदाहरणसहित गर्नु"
+          - "कथाको मूल सन्देश र शीर्षकको सार्थकता स्पष्ट पार्नु"
+      - id: icse-10-nepali-ch06-t03
+        title: "ज्योतिबिनाको उज्यालो (सानु लामा): कथावस्तु, पात्र र सन्देश"
+        title_en: "Jyotibinako Ujyalo (Sanu Lama): plot, characters and message"
+        learning_outcomes:
+          - "कथाको कथावस्तु आफ्नै शब्दमा सङ्क्षेपमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र-चित्रण कथाका उदाहरणसहित गर्नु"
+          - "कथाको मूल सन्देश र शीर्षकको सार्थकता स्पष्ट पार्नु"
+      - id: icse-10-nepali-ch06-t04
+        title: "गडिमान (इन्द्र सुन्दास): कथावस्तु, पात्र र सन्देश"
+        title_en: "Gadimaan (Indra Sundas): plot, characters and message"
+        learning_outcomes:
+          - "कथाको कथावस्तु आफ्नै शब्दमा सङ्क्षेपमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र-चित्रण कथाका उदाहरणसहित गर्नु"
+          - "कथाको मूल सन्देश र शीर्षकको सार्थकता स्पष्ट पार्नु"
+      - id: icse-10-nepali-ch06-t05
+        title: "जीवनयात्रामा (एम. एम. गुरुङ): कथावस्तु, पात्र र सन्देश"
+        title_en: "Jeewan Yatrama (M.M. Gurung): plot, characters and message"
+        learning_outcomes:
+          - "कथाको कथावस्तु आफ्नै शब्दमा सङ्क्षेपमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र-चित्रण कथाका उदाहरणसहित गर्नु"
+          - "कथाको मूल सन्देश र शीर्षकको सार्थकता स्पष्ट पार्नु"
+    removed_topics:
+      - "Class IX stories of Sahitya Kunj: Aunthi, Chaprasi, Taar Chudieko Saarangi, Mrityu Kai Mukhenji, Sangat (see icse-9-nepali)"
+    literature_texts:
+      - { title: "ज्यूँदो लास", author: "मटिल्डा राई", title_en: "Jewdo Lash - Matilda Rai" }
+      - { title: "माछाको मोल", author: "शिवकुमार राई", title_en: "Maachako Mol - Shiva Kumar Rai" }
+      - { title: "ज्योतिबिनाको उज्यालो", author: "सानु लामा", title_en: "Jyotibinako Ujyalo - Sanu Lama" }
+      - { title: "गडिमान", author: "इन्द्र सुन्दास", title_en: "Gadimaan - Indra Sundas" }
+      - { title: "जीवनयात्रामा", author: "एम. एम. गुरुङ", title_en: "Jeewan Yatrama - M.M. Gurung" }
+  - id: icse-10-nepali-ch07
+    number: 7
+    title: "साहित्य कुञ्ज: कविताहरू"
+    title_en: "Sahitya Kunj: poems (Class X portion)"
+    unit: "खण्ड ख - निर्धारित पाठ्यपुस्तकहरू (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-10-nepali-ch07-t01
+        title: "कर्म (बालकृष्ण सम): कर्मको महत्त्व"
+        title_en: "Karma (Balkrishna Sam): the value of action and duty"
+        learning_outcomes:
+          - "कविताको मूल भाव आफ्नै शब्दमा लेख्नु"
+          - "कवितामा प्रयुक्त बिम्ब र अलङ्कार पहिचान गरी अर्थ खुलाउनु"
+          - "कविको सन्देश र आजको जीवनमा त्यसको महत्त्व बताउनु"
+      - id: icse-10-nepali-ch07-t02
+        title: "राम-भरत संवाद (भानुभक्त आचार्य): भ्रातृप्रेम र कर्तव्य"
+        title_en: "Ram-Bharat Samwat (Bhanubhakta Acharya): brotherly love and duty"
+        learning_outcomes:
+          - "राम र भरतबीचको संवादको प्रसङ्ग आफ्नै शब्दमा लेख्नु"
+          - "राम र भरतका चरित्रमा देखिने भ्रातृप्रेम र कर्तव्यनिष्ठा स्पष्ट पार्नु"
+          - "भानुभक्तको सरल र लयात्मक भाषाशैलीका विशेषता बताउनु"
+      - id: icse-10-nepali-ch07-t03
+        title: "काल महिमा (लेखनाथ पौड्याल): समयको शक्ति र परिवर्तनशीलता"
+        title_en: "Kaal Mahimaa (Lekhnath Poudyal): the power of time and change"
+        learning_outcomes:
+          - "कविताको मूल भाव आफ्नै शब्दमा लेख्नु"
+          - "कवितामा प्रयुक्त बिम्ब र अलङ्कार पहिचान गरी अर्थ खुलाउनु"
+          - "कविको सन्देश र आजको जीवनमा त्यसको महत्त्व बताउनु"
+      - id: icse-10-nepali-ch07-t04
+        title: "मदन भोटबाट फर्कंदा (लक्ष्मीप्रसाद देवकोटा): मानवता र जातभन्दा माथिको दया"
+        title_en: "Madan Bhotbata Pharkanda (Laxmiprasad Deokota): humanity and kindness beyond caste"
+        learning_outcomes:
+          - "मदन भोटबाट फर्कंदाको प्रसङ्ग आफ्नै शब्दमा लेख्नु"
+          - "कवितामा व्यक्त मानवतावादी सन्देश स्पष्ट पार्नु"
+          - "लोकलयमा आधारित देवकोटाको भाषाशैलीका विशेषता बताउनु"
+      - id: icse-10-nepali-ch07-t05
+        title: "उत्सर्ग (लखीदेवी सुन्दास): त्याग र समर्पण"
+        title_en: "Utsarga (Lakhi Devi Sundas): sacrifice and dedication"
+        learning_outcomes:
+          - "कविताको मूल भाव आफ्नै शब्दमा लेख्नु"
+          - "कवितामा प्रयुक्त बिम्ब र अलङ्कार पहिचान गरी अर्थ खुलाउनु"
+          - "कविको सन्देश र आजको जीवनमा त्यसको महत्त्व बताउनु"
+    removed_topics:
+      - "Class IX poems of Sahitya Kunj: Mrityu Kamana Kehi Mera, Mann, Boli, Natra Barbad Bhayo, Lakshya (see icse-9-nepali)"
+    literature_texts:
+      - { title: "कर्म", author: "बालकृष्ण सम", title_en: "Karma - Balkrishna Sam" }
+      - { title: "राम-भरत संवाद", author: "भानुभक्त आचार्य", title_en: "Ram-Bharat Samwat - Bhanubhakta Acharya" }
+      - { title: "काल महिमा", author: "लेखनाथ पौड्याल", title_en: "Kaal Mahimaa - Lekhnath Poudyal" }
+      - { title: "मदन भोटबाट फर्कंदा", author: "लक्ष्मीप्रसाद देवकोटा", title_en: "Madan Bhotbata Pharkanda - Laxmiprasad Deokota" }
+      - { title: "उत्सर्ग", author: "लखीदेवी सुन्दास", title_en: "Utsarga - Lakhi Devi Sundas" }
+  - id: icse-10-nepali-ch08
+    number: 8
+    title: "उपन्यास: भ्रमर (तृतीय खण्ड)"
+    title_en: "Novel: Bhrammer (Tritiya Khanda)"
+    unit: "खण्ड ख - निर्धारित पाठ्यपुस्तकहरू (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-10-nepali-ch08-t01
+        title: "जहाजमा, प्रोम यात्रा: घटनाक्रम"
+        title_en: "Jahajma and Prome Yatra: events"
+        learning_outcomes:
+          - "यी परिच्छेदका प्रमुख घटना क्रमबद्ध रूपमा लेख्नु"
+      - id: icse-10-nepali-ch08-t02
+        title: "शेखर र गौरी, विसर्जन, विजया: घटनाक्रम र पात्रहरूको सम्बन्ध"
+        title_en: "Shekhar Ra Gauri, Bisarjan, Bijaya: events and relationships"
+        learning_outcomes:
+          - "यी परिच्छेदमा पात्रहरूको सम्बन्धमा आएको परिवर्तन कारणसहित स्पष्ट पार्नु"
+      - id: icse-10-nepali-ch08-t03
+        title: "कालीघाटको मन्दिरमा, मोहनको अनुरोध, अस्पतालमा, परिशिष्ट: कथाको परिणति"
+        title_en: "Kalighat Ko Mandir Ma, Mohan Ko Anurodh, Aspatal Ma, Parisistha: resolution"
+        learning_outcomes:
+          - "उपन्यासको अन्त्यको सारांश लेखी त्यसमाथि आफ्नो प्रतिक्रिया दिनु"
+      - id: icse-10-nepali-ch08-t04
+        title: "प्रमुख पात्रहरू (शेखर, गौरी, मोहन) को चरित्र-चित्रण"
+        title_en: "Character sketches: Shekhar, Gauri, Mohan"
+        learning_outcomes:
+          - "शेखर वा गौरीको चरित्र-चित्रण घटनाका उदाहरणसहित गर्नु"
+      - id: icse-10-nepali-ch08-t05
+        title: "उपन्यासका विषयवस्तु र 'भ्रमर' शीर्षकको सार्थकता"
+        title_en: "Themes and the significance of the title Bhrammer"
+        learning_outcomes:
+          - "उपन्यासमा उठाइएका मुख्य विषयवस्तु पहिचान गर्नु"
+          - "'भ्रमर' शीर्षकको सार्थकता पुष्टि गर्नु"
+    removed_topics:
+      - "Pratham Khanda and Dwitiya Khanda (chapters 1 to 11, Class IX portion)"
+    literature_texts:
+      - { title: "भ्रमर (तृतीय खण्ड)", author: "रूपनारायण सिंह", title_en: "Bhrammer (Tritiya Khanda) - Rupnarayan Singh" }
+  - id: icse-10-nepali-ch09
+    number: 9
+    title: "एकाङ्की कुञ्ज"
+    title_en: "Ekanki Kunj: one-act plays (Class X portion)"
+    unit: "खण्ड ख - निर्धारित पाठ्यपुस्तकहरू (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-10-nepali-ch09-t01
+        title: "माग (लीलबहादुर क्षत्री): कथावस्तु, पात्र र सन्देश"
+        title_en: "Maag (Leela Bahadur Chettri): plot, characters and message"
+        learning_outcomes:
+          - "एकाङ्कीको घटनाक्रम आफ्नै शब्दमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र र उनीहरूबीचको द्वन्द्व स्पष्ट पार्नु"
+          - "एकाङ्कीको मूल सन्देश र शीर्षकको सार्थकता बताउनु"
+      - id: icse-10-nepali-ch09-t02
+        title: "साहिनु (सानुभाइ शर्मा): कथावस्तु, पात्र र सन्देश"
+        title_en: "Saahinu (Sanu Bhai Sharma): plot, characters and message"
+        learning_outcomes:
+          - "एकाङ्कीको घटनाक्रम आफ्नै शब्दमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र र उनीहरूबीचको द्वन्द्व स्पष्ट पार्नु"
+          - "एकाङ्कीको मूल सन्देश र शीर्षकको सार्थकता बताउनु"
+      - id: icse-10-nepali-ch09-t03
+        title: "शृङ्खला बाँध्ने छन्हरू (लक्ष्मण श्रीमल): कथावस्तु, पात्र र सन्देश"
+        title_en: "Shrinkhala Bandhne Chhanharu (Laxman Shreemal): plot, characters and message"
+        learning_outcomes:
+          - "एकाङ्कीको घटनाक्रम आफ्नै शब्दमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र र उनीहरूबीचको द्वन्द्व स्पष्ट पार्नु"
+          - "एकाङ्कीको मूल सन्देश र शीर्षकको सार्थकता बताउनु"
+      - id: icse-10-nepali-ch09-t04
+        title: "एकाङ्कीका तत्त्व: कथावस्तु, संवाद, द्वन्द्व र रङ्गमञ्चीयता"
+        title_en: "Elements of a one-act play: plot, dialogue, conflict, stageability"
+        learning_outcomes:
+          - "संवाद र रङ्गनिर्देशनले पात्र र घटनालाई कसरी अघि बढाउँछन् भनी स्पष्ट पार्नु"
+    removed_topics:
+      - "Class IX one-act plays: Biyog, Tika, Ma Bhat Khanna (see icse-9-nepali)"
+    literature_texts:
+      - { title: "माग", author: "लीलबहादुर क्षत्री", title_en: "Maag - Leela Bahadur Chettri" }
+      - { title: "साहिनु", author: "सानुभाइ शर्मा", title_en: "Saahinu - Sanu Bhai Sharma" }
+      - { title: "शृङ्खला बाँध्ने छन्हरू", author: "लक्ष्मण श्रीमल", title_en: "Shrinkhala Bandhne Chhanharu - Laxman Shreemal" }
+removed_topics: []

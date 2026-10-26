@@ -1,0 +1,527 @@
+# ICSE Class 10 Biology (Science Paper 3) - ICSE 2027 examination.
+# Source: platform/catalog/sources/cisce.md#icse-2027-biology (CLASS X section only). Topic wording is our own summary of the official scope.
+subject_id: icse-10-biology
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2027-biology, icse-2027-regulations, icse-2027-specimen-papers, cisce-circular-specimen-papers-2027]
+exam_notes: >-
+  One theory paper of 2 hours, 80 marks, plus internal assessment of practical work 20 marks
+  (10 subject teacher + 10 external examiner, graded on preparation, procedure, observation, inference and presentation).
+  The 2027 specimen paper (code 523) has Section A (40 marks, compulsory; Question 1 is 15 one-mark objective items) and
+  Section B (40 marks, any four of six questions); labelled diagrams are central. About 50% of marks target higher-order
+  skills (apply, analyse, evaluate, create) per the October 2026 circular.
+  Practical work (assessed internally): permanent slides of mitosis; diffusion with potassium permanganate; osmosis with a
+  thistle funnel and a potato osmoscope; absorption by a herbaceous plant; transpiration with a bell jar, cobalt chloride paper
+  and Ganong's potometer; photosynthesis experiments (light, CO2, chlorophyll, O2 release with hydrilla); identification of
+  blood cells, and of the heart, kidney, urinary system, brain, eye, ear and endocrine glands from models and charts. The
+  experiments also appear as topics below because the theory paper asks about them.
+  CISCE publishes a topic list in six sections, not textbook chapters: SOYL groups it into 16 teachable chapters in
+  syllabus order. No unit-wise marks weightage is published for ICSE Biology.
+units:
+  - { name: "1. Basic Biology", marks: null }
+  - { name: "2. Plant Physiology", marks: null }
+  - { name: "3. Human Anatomy and Physiology", marks: null }
+  - { name: "4. Population", marks: null }
+  - { name: "5. Human Evolution", marks: null }
+  - { name: "6. Pollution", marks: null }
+chapters:
+  - id: icse-10-biology-ch01
+    number: 1
+    title: "Cell Cycle, Cell Division and Structure of Chromosomes"
+    unit: "1. Basic Biology"
+    topics:
+      - id: icse-10-biology-ch01-t01
+        title: "The cell cycle: interphase (G1, S, G2) and mitotic phase"
+        learning_outcomes:
+          - "Describe the events of the G1, S and G2 phases of interphase"
+          - "Draw a labelled diagram of the cell cycle"
+      - id: icse-10-biology-ch01-t02
+        title: "Mitosis and its stages (prophase, metaphase, anaphase, telophase); cytokinesis in plant and animal cells"
+        learning_outcomes:
+          - "Identify the stage of mitosis from a diagram or slide and describe what happens to the chromosomes"
+          - "Distinguish cytokinesis in plant cells (cell plate) from animal cells (furrowing)"
+      - id: icse-10-biology-ch01-t03
+        title: "Meiosis as a reduction division; homologous chromosomes and crossing over as a source of variation"
+        learning_outcomes:
+          - "Explain why meiosis halves the chromosome number and why this is necessary in gamete formation"
+          - "Explain how crossing over between homologous chromosomes produces variation"
+      - id: icse-10-biology-ch01-t04
+        title: "Significance of mitosis and meiosis; differences between them"
+        learning_outcomes:
+          - "Tabulate the differences between mitosis and meiosis"
+          - "State the significance of each type of division"
+      - id: icse-10-biology-ch01-t05
+        title: "Structure of a chromosome: chromatin, chromatids, centromere, genes and DNA"
+        learning_outcomes:
+          - "Draw and label a chromosome showing chromatids and centromere"
+          - "Explain the relationship between DNA, genes, chromatin and chromosomes"
+    removed_topics:
+      - "Stages of meiosis"
+    literature_texts: []
+  - id: icse-10-biology-ch02
+    number: 2
+    title: "Genetics"
+    unit: "1. Basic Biology"
+    topics:
+      - id: icse-10-biology-ch02-t01
+        title: "Terms in genetics: gene, allele, dominant, recessive, homozygous, heterozygous, phenotype, genotype, mutation and variation"
+        learning_outcomes:
+          - "Define each genetic term and use it correctly in describing a cross"
+      - id: icse-10-biology-ch02-t02
+        title: "Mendel's experiments with garden peas; the laws of dominance, segregation and independent assortment"
+        learning_outcomes:
+          - "State Mendel's three laws of inheritance"
+          - "Explain why Mendel chose the garden pea for his experiments"
+      - id: icse-10-biology-ch02-t03
+        title: "Monohybrid cross: phenotypic and genotypic ratios"
+        learning_outcomes:
+          - "Work out a monohybrid cross to the F2 generation using a Punnett square"
+          - "Derive the 3:1 phenotypic and 1:2:1 genotypic ratios"
+      - id: icse-10-biology-ch02-t04
+        title: "Dihybrid cross: phenotypic ratio only"
+        learning_outcomes:
+          - "Work out the F2 phenotypes of a dihybrid cross and obtain the 9:3:3:1 ratio"
+          - "Explain how the dihybrid cross illustrates the law of independent assortment"
+      - id: icse-10-biology-ch02-t05
+        title: "Sex determination in human beings"
+        learning_outcomes:
+          - "Explain with a cross why the father's gamete determines the sex of the child"
+      - id: icse-10-biology-ch02-t06
+        title: "X-linked inheritance: haemophilia and colour blindness"
+        learning_outcomes:
+          - "Work out crosses showing how a carrier mother can pass haemophilia or colour blindness to her sons"
+          - "Explain why X-linked disorders are more common in males"
+    removed_topics:
+      - "Genotypic ratio of a dihybrid cross (phenotype only)"
+      - "Sex-linked disorders other than X-linked haemophilia and colour blindness"
+    literature_texts: []
+  - id: icse-10-biology-ch03
+    number: 3
+    title: "Absorption by Roots and the Ascent of Sap"
+    unit: "2. Plant Physiology"
+    topics:
+      - id: icse-10-biology-ch03-t01
+        title: "Imbibition, diffusion and osmosis; osmotic pressure"
+        learning_outcomes:
+          - "Distinguish imbibition, diffusion and osmosis with examples"
+          - "Describe the potassium permanganate diffusion demonstration and the thistle funnel and potato osmoscope experiments"
+      - id: icse-10-biology-ch03-t02
+        title: "Turgidity and flaccidity; plasmolysis and deplasmolysis"
+        learning_outcomes:
+          - "Explain turgidity, flaccidity and plasmolysis in terms of water movement across the cell membrane"
+          - "Predict what happens to plant cells placed in hypotonic, isotonic and hypertonic solutions"
+      - id: icse-10-biology-ch03-t03
+        title: "Structure of a root hair and adaptations of roots for absorbing water"
+        learning_outcomes:
+          - "Draw and label a single full-grown root hair"
+          - "List features of roots that make them suited for water absorption"
+      - id: icse-10-biology-ch03-t04
+        title: "Absorption of water and minerals; active and passive transport (in brief)"
+        learning_outcomes:
+          - "Trace the path of water from the soil through the root hair and cortex to the xylem"
+          - "Distinguish active from passive transport of minerals"
+      - id: icse-10-biology-ch03-t05
+        title: "Ascent of sap: root pressure, cohesion, adhesion and transpirational pull; experiments on conduction through xylem"
+        learning_outcomes:
+          - "Explain how root pressure and transpirational pull, aided by cohesion and adhesion, raise water in the xylem"
+          - "Describe an experiment using a coloured solution to show that water is conducted through the xylem"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-biology-ch04
+    number: 4
+    title: "Transpiration"
+    unit: "2. Plant Physiology"
+    topics:
+      - id: icse-10-biology-ch04-t01
+        title: "Transpiration: the process and its importance to plants"
+        learning_outcomes:
+          - "Define transpiration and identify the stomata as the main route of water loss"
+          - "Explain the importance of transpiration in cooling, water and mineral transport"
+      - id: icse-10-biology-ch04-t02
+        title: "Mechanism of stomatal opening and closing: potassium ion exchange theory"
+        learning_outcomes:
+          - "Explain how movement of potassium ions into and out of guard cells opens and closes stomata"
+      - id: icse-10-biology-ch04-t03
+        title: "Experiments: loss of weight of a potted plant or leafy shoot; bell jar; cobalt chloride paper on a dorsiventral leaf"
+        learning_outcomes:
+          - "Describe the set-up, observation and conclusion of each transpiration experiment"
+          - "Explain why the lower surface of a dorsiventral leaf turns cobalt chloride paper pink faster"
+      - id: icse-10-biology-ch04-t04
+        title: "Ganong's potometer: measuring water uptake and its limitations"
+        learning_outcomes:
+          - "Explain how a potometer measures the rate of water uptake and why this approximates the transpiration rate"
+          - "State the limitations of the potometer"
+      - id: icse-10-biology-ch04-t05
+        title: "Factors affecting the rate of transpiration; adaptations to reduce it"
+        learning_outcomes:
+          - "Predict the effect of light, temperature, humidity and wind on transpiration rate"
+          - "Describe structural adaptations of desert plants that reduce water loss"
+      - id: icse-10-biology-ch04-t06
+        title: "Guttation and bleeding"
+        learning_outcomes:
+          - "Distinguish guttation from transpiration and from bleeding"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-biology-ch05
+    number: 5
+    title: "Photosynthesis"
+    unit: "2. Plant Physiology"
+    topics:
+      - id: icse-10-biology-ch05-t01
+        title: "Photosynthesis: definition, overall balanced equation and significance for life"
+        learning_outcomes:
+          - "Write the overall balanced equation for photosynthesis"
+          - "Explain the importance of photosynthesis for food and oxygen on Earth"
+      - id: icse-10-biology-ch05-t02
+        title: "Chloroplast structure as the site of light and dark reactions; stomata opening and closing"
+        learning_outcomes:
+          - "Draw and label a chloroplast and locate the grana and stroma as sites of the two phases"
+          - "Relate the opening of stomata by potassium ion exchange to the supply of carbon dioxide for photosynthesis"
+      - id: icse-10-biology-ch05-t03
+        title: "Light (photochemical) phase: activation of chlorophyll, photolysis of water, release of oxygen, ATP and NADPH formation"
+        learning_outcomes:
+          - "Describe the sequence of events in the light phase and name its products"
+          - "Explain that the oxygen released comes from water"
+      - id: icse-10-biology-ch05-t04
+        title: "Dark (biosynthetic) phase: combination of hydrogen from NADPH with CO2 to form glucose"
+        learning_outcomes:
+          - "Describe in outline how carbon dioxide is fixed into glucose using products of the light phase"
+          - "Compare the light and dark phases in site, requirements and products"
+      - id: icse-10-biology-ch05-t05
+        title: "Adaptations of leaves for photosynthesis"
+        learning_outcomes:
+          - "Relate features of a leaf such as large surface area, thinness and stomata to efficient photosynthesis"
+      - id: icse-10-biology-ch05-t06
+        title: "Experiments: destarching, starch test, necessity of light, CO2 and chlorophyll; release of oxygen by hydrilla"
+        learning_outcomes:
+          - "List the steps of the starch test and explain the purpose of each"
+          - "Design a controlled experiment to show that light, carbon dioxide or chlorophyll is necessary for photosynthesis"
+      - id: icse-10-biology-ch05-t07
+        title: "The carbon cycle"
+        learning_outcomes:
+          - "Draw a diagram of the carbon cycle showing photosynthesis, respiration, decomposition and combustion"
+    removed_topics:
+      - "Detailed equations of the dark reaction"
+    literature_texts: []
+  - id: icse-10-biology-ch06
+    number: 6
+    title: "Chemical Coordination in Plants"
+    unit: "2. Plant Physiology"
+    topics:
+      - id: icse-10-biology-ch06-t01
+        title: "Plant growth regulators: auxins, gibberellins, cytokinins, abscisic acid and ethylene"
+        learning_outcomes:
+          - "State one physiological effect of each plant growth regulator"
+          - "Distinguish growth promoters from growth inhibitors"
+      - id: icse-10-biology-ch06-t02
+        title: "Tropic movements: phototropism, geotropism, hydrotropism, thigmotropism and chemotropism"
+        learning_outcomes:
+          - "Identify the type of tropism from an example and state whether it is positive or negative"
+          - "Explain phototropism of a shoot in terms of unequal auxin distribution"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-biology-ch07
+    number: 7
+    title: "Circulatory System: Blood and Lymph"
+    unit: "3. Human Anatomy and Physiology"
+    topics:
+      - id: icse-10-biology-ch07-t01
+        title: "Composition of blood: plasma; structure and functions of RBCs, WBCs and platelets"
+        learning_outcomes:
+          - "State the functions of plasma, red blood cells, white blood cells and platelets"
+          - "Identify the types of blood cells from diagrams or microscope slides"
+      - id: icse-10-biology-ch07-t02
+        title: "Efficiency of mammalian red blood cells due to absence of nucleus and mitochondria"
+        learning_outcomes:
+          - "Explain how the absence of a nucleus and mitochondria and the biconcave shape increase oxygen-carrying efficiency"
+      - id: icse-10-biology-ch07-t03
+        title: "Blood coagulation (brief)"
+        learning_outcomes:
+          - "Outline the sequence of steps from injury to clot formation"
+      - id: icse-10-biology-ch07-t04
+        title: "Tissue fluid and lymph; lymphatic system; spleen and tonsils"
+        learning_outcomes:
+          - "Explain how tissue fluid forms and how it becomes lymph"
+          - "State the functions of the lymphatic system, spleen and tonsils"
+      - id: icse-10-biology-ch07-t05
+        title: "ABO blood groups and the Rh factor"
+        learning_outcomes:
+          - "Identify universal donor and universal recipient groups and explain why"
+          - "Explain the risk of Rh incompatibility"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-biology-ch08
+    number: 8
+    title: "Circulatory System: Heart, Blood Vessels and Circulation"
+    unit: "3. Human Anatomy and Physiology"
+    topics:
+      - id: icse-10-biology-ch08-t01
+        title: "Structure of the human heart: chambers, valves and main blood vessels entering and leaving it"
+        learning_outcomes:
+          - "Draw and label the internal structure of the heart with its valves and main vessels"
+      - id: icse-10-biology-ch08-t02
+        title: "Working of the heart: cardiac cycle, systole and diastole"
+        learning_outcomes:
+          - "Describe the flow of blood through the heart during one cardiac cycle"
+          - "Relate the opening and closing of valves to systole and diastole"
+      - id: icse-10-biology-ch08-t03
+        title: "Double circulation: pulmonary and systemic circuits"
+        learning_outcomes:
+          - "Explain double circulation and its advantage in mammals"
+      - id: icse-10-biology-ch08-t04
+        title: "Arteries, veins and capillaries: structure related to function"
+        learning_outcomes:
+          - "Compare arteries, veins and capillaries in wall thickness, lumen, valves and direction of flow"
+          - "Draw labelled cross-sections of an artery and a vein"
+      - id: icse-10-biology-ch08-t05
+        title: "Pulse and blood pressure (brief)"
+        learning_outcomes:
+          - "Explain what the pulse is and where it can be felt"
+          - "Interpret a blood pressure reading such as 120/80 mm Hg"
+      - id: icse-10-biology-ch08-t06
+        title: "Blood vessels of the liver and kidney; significance of the hepatic portal system"
+        learning_outcomes:
+          - "Name the main blood vessels entering and leaving the liver and kidney"
+          - "Explain why blood from the intestine passes to the liver before reaching the heart"
+    removed_topics:
+      - "Names of blood vessels other than the main vessels entering and leaving the heart, liver and kidney"
+    literature_texts: []
+  - id: icse-10-biology-ch09
+    number: 9
+    title: "Excretory System"
+    unit: "3. Human Anatomy and Physiology"
+    topics:
+      - id: icse-10-biology-ch09-t01
+        title: "Excretion and the excretory organs of the human body"
+        learning_outcomes:
+          - "Name the excretory organs and the waste each removes"
+      - id: icse-10-biology-ch09-t02
+        title: "The urinary system: kidneys, ureters, urinary bladder, urethra and renal blood vessels"
+        learning_outcomes:
+          - "Draw and label the urinary system with the renal artery and renal vein"
+          - "State the function of each part of the urinary system"
+      - id: icse-10-biology-ch09-t03
+        title: "External and internal structure of the kidney"
+        learning_outcomes:
+          - "Draw and label a longitudinal section of the kidney showing cortex, medulla, pyramids and pelvis"
+      - id: icse-10-biology-ch09-t04
+        title: "Structure of a nephron (kidney tubule) and the Malpighian capsule"
+        learning_outcomes:
+          - "Draw and label a nephron with its blood supply"
+          - "Draw the Malpighian capsule and relate its structure to ultrafiltration"
+      - id: icse-10-biology-ch09-t05
+        title: "Urine formation: ultrafiltration, selective reabsorption and tubular secretion"
+        learning_outcomes:
+          - "Describe the three stages of urine formation and where each occurs in the nephron"
+          - "Compare the composition of blood plasma, glomerular filtrate and urine"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-biology-ch10
+    number: 10
+    title: "Nervous System"
+    unit: "3. Human Anatomy and Physiology"
+    topics:
+      - id: icse-10-biology-ch10-t01
+        title: "Structure of a neuron; central, peripheral and autonomic nervous systems (brief)"
+        learning_outcomes:
+          - "Draw and label a neuron"
+          - "Distinguish the central, peripheral and autonomic nervous systems in their role in regulating body activities"
+      - id: icse-10-biology-ch10-t02
+        title: "The brain: cerebrum, cerebellum, thalamus, hypothalamus, pons and medulla oblongata and their functions"
+        learning_outcomes:
+          - "Label the external structure of the brain and state one function of each part"
+          - "Predict the effect of damage to a named part of the brain"
+      - id: icse-10-biology-ch10-t03
+        title: "Spinal cord; distribution of white and grey matter in brain and spinal cord"
+        learning_outcomes:
+          - "Describe how the arrangement of white and grey matter differs between brain and spinal cord"
+      - id: icse-10-biology-ch10-t04
+        title: "Voluntary and involuntary actions; reflex action and the reflex arc"
+        learning_outcomes:
+          - "Distinguish voluntary, involuntary and reflex actions with examples"
+          - "Draw a reflex arc showing the pathway from receptor to effector"
+      - id: icse-10-biology-ch10-t05
+        title: "Natural (unconditioned) and acquired (conditioned) reflexes"
+        learning_outcomes:
+          - "Differentiate natural and acquired reflexes with one example of each"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-biology-ch11
+    number: 11
+    title: "Sense Organs: Eye and Ear"
+    unit: "3. Human Anatomy and Physiology"
+    topics:
+      - id: icse-10-biology-ch11-t01
+        title: "External and internal structure of the eye and functions of its parts"
+        learning_outcomes:
+          - "Draw and label a vertical section of the human eye"
+          - "State the function of the cornea, iris, lens, ciliary body, retina, blind spot and yellow spot"
+      - id: icse-10-biology-ch11-t02
+        title: "Stereoscopic vision, adaptation to light and dark, and accommodation"
+        learning_outcomes:
+          - "Explain how the ciliary muscles change the lens for near and distant vision"
+          - "Explain the advantage of stereoscopic vision"
+      - id: icse-10-biology-ch11-t03
+        title: "Defects of the eye: myopia, hypermetropia, presbyopia, astigmatism and cataract; corrective measures"
+        learning_outcomes:
+          - "State the cause and correction of each eye defect"
+          - "Draw ray diagrams for myopia and hypermetropia and their correction with lenses"
+      - id: icse-10-biology-ch11-t04
+        title: "Structure of the ear: external, middle and inner ear and functions of their parts"
+        learning_outcomes:
+          - "Draw and label the internal structure of the human ear"
+      - id: icse-10-biology-ch11-t05
+        title: "Perception of sound and the role of the ear in balance"
+        learning_outcomes:
+          - "Trace the path of sound waves from the pinna to the auditory nerve"
+          - "Explain how the semicircular canals and vestibule help maintain balance"
+    removed_topics:
+      - "Ray diagrams for eye defects other than myopia and hypermetropia"
+    literature_texts: []
+  - id: icse-10-biology-ch12
+    number: 12
+    title: "Endocrine System"
+    unit: "3. Human Anatomy and Physiology"
+    topics:
+      - id: icse-10-biology-ch12-t01
+        title: "Endocrine and exocrine glands; location and shape of adrenal, pancreas, thyroid and pituitary glands"
+        learning_outcomes:
+          - "Differentiate endocrine glands from exocrine glands"
+          - "Locate the four listed endocrine glands on a diagram of the human body"
+      - id: icse-10-biology-ch12-t02
+        title: "Pancreas (insulin, glucagon) and thyroid (thyroxine)"
+        learning_outcomes:
+          - "Explain how insulin and glucagon regulate blood sugar"
+          - "State the effects of hyposecretion and hypersecretion of insulin and thyroxine"
+      - id: icse-10-biology-ch12-t03
+        title: "Adrenal gland: cortical hormones and adrenaline"
+        learning_outcomes:
+          - "Describe the emergency (fight-or-flight) effects of adrenaline"
+          - "State the general role of the cortical hormones"
+      - id: icse-10-biology-ch12-t04
+        title: "Pituitary gland: growth hormone, tropic hormones, ADH and oxytocin"
+        learning_outcomes:
+          - "Explain why the pituitary is called the master gland"
+          - "State the effects of hyposecretion and hypersecretion of growth hormone and ADH"
+      - id: icse-10-biology-ch12-t05
+        title: "Feedback mechanism with reference to TSH and thyroxine"
+        learning_outcomes:
+          - "Explain with a flow diagram how thyroxine levels control TSH secretion"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-biology-ch13
+    number: 13
+    title: "Reproductive System"
+    unit: "3. Human Anatomy and Physiology"
+    topics:
+      - id: icse-10-biology-ch13-t01
+        title: "Male and female reproductive organs and male accessory glands; secondary sexual characters"
+        learning_outcomes:
+          - "Draw and label the male and female reproductive systems and state the function of each part"
+          - "List secondary sexual characters in males and females"
+      - id: icse-10-biology-ch13-t02
+        title: "Structure and functions of the sperm and the egg"
+        learning_outcomes:
+          - "Draw and label a human sperm and relate its parts to their functions"
+      - id: icse-10-biology-ch13-t03
+        title: "Fertilisation, implantation, gestation and parturition"
+        learning_outcomes:
+          - "Define each term and arrange the events in sequence"
+      - id: icse-10-biology-ch13-t04
+        title: "Placenta (nutrition, respiration, excretion and endocrine function); foetal membranes and amniotic fluid"
+        learning_outcomes:
+          - "Explain the functions of the placenta for the developing embryo"
+          - "State the role of the amnion and amniotic fluid"
+      - id: icse-10-biology-ch13-t05
+        title: "Outline of the menstrual cycle; role of testosterone, oestrogen and progesterone"
+        learning_outcomes:
+          - "Outline the phases of the menstrual cycle"
+          - "State the role of each sex hormone in reproduction"
+      - id: icse-10-biology-ch13-t06
+        title: "Identical and fraternal twins"
+        learning_outcomes:
+          - "Distinguish identical from fraternal twins in their origin"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-biology-ch14
+    number: 14
+    title: "Population"
+    unit: "4. Population"
+    topics:
+      - id: icse-10-biology-ch14-t01
+        title: "Population explosion in India and the world: main reasons for rapid growth"
+        learning_outcomes:
+          - "Explain the main reasons for the sharp rise in human population"
+      - id: icse-10-biology-ch14-t02
+        title: "Demography, population density, birth rate, death rate and growth rate"
+        learning_outcomes:
+          - "Define each demographic term and calculate growth rate from birth and death rates"
+      - id: icse-10-biology-ch14-t03
+        title: "Problems caused by population explosion"
+        learning_outcomes:
+          - "Explain how population explosion leads to unemployment, resource over-exploitation, low per capita income, price rise, pollution and unequal wealth"
+      - id: icse-10-biology-ch14-t04
+        title: "Need for population control; surgical methods: vasectomy and tubectomy"
+        learning_outcomes:
+          - "Describe vasectomy and tubectomy and explain how each prevents conception"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-biology-ch15
+    number: 15
+    title: "Human Evolution"
+    unit: "5. Human Evolution"
+    topics:
+      - id: icse-10-biology-ch15-t01
+        title: "Human ancestors: Australopithecus, Homo habilis, Homo erectus, Neanderthals, Cro-Magnon and modern Homo sapiens sapiens"
+        learning_outcomes:
+          - "Arrange the human ancestors in evolutionary sequence"
+          - "Compare them in bipedalism, cranial capacity, canine size, brow ridges, chin, body hair, height and posture"
+      - id: icse-10-biology-ch15-t02
+        title: "Lamarck's theory of inheritance of acquired characters: use and disuse of organs"
+        learning_outcomes:
+          - "Explain Lamarck's theory using the giraffe's neck and human vestigial organs"
+          - "State one criticism of Lamarckism"
+      - id: icse-10-biology-ch15-t03
+        title: "Darwin's theory of natural selection: survival of the fittest; peppered moth example"
+        learning_outcomes:
+          - "Explain the main points of Darwin's theory"
+          - "Explain the change in peppered moth populations during industrialisation using natural selection"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-biology-ch16
+    number: 16
+    title: "Pollution"
+    unit: "6. Pollution"
+    topics:
+      - id: icse-10-biology-ch16-t01
+        title: "Air pollution: sources (vehicles, industry, burning garbage, brick kilns) and major pollutants"
+        learning_outcomes:
+          - "Name the main air pollutants and their sources"
+      - id: icse-10-biology-ch16-t02
+        title: "Water, thermal and soil pollution: sources and pollutants"
+        learning_outcomes:
+          - "Explain how detergents, sewage, industrial waste and oil spills pollute water"
+          - "Explain thermal pollution and its effect on aquatic life"
+          - "Name sources of soil pollution including fertilisers and urban waste"
+      - id: icse-10-biology-ch16-t03
+        title: "Biomedical waste, radiation and noise pollution"
+        learning_outcomes:
+          - "Explain why biomedical waste must be segregated and safely disposed of"
+          - "Name sources of radiation and noise pollution and their effects on health"
+      - id: icse-10-biology-ch16-t04
+        title: "Biodegradable and non-biodegradable wastes; persistence of pesticides such as DDT"
+        learning_outcomes:
+          - "Classify given wastes as biodegradable or non-biodegradable"
+          - "Explain why non-biodegradable pesticides are harmful in food chains"
+      - id: icse-10-biology-ch16-t05
+        title: "Effects of pollution: greenhouse effect and global warming, acid rain, ozone layer depletion"
+        learning_outcomes:
+          - "Explain the causes and effects of global warming, acid rain and ozone depletion"
+      - id: icse-10-biology-ch16-t06
+        title: "Pollution control measures and the Swachh Bharat Abhiyan"
+        learning_outcomes:
+          - "Suggest control measures such as CNG, switching off engines at signals, social forestry, sewage treatment, plastic bans, organic farming and Bharat Stage emission norms"
+          - "Describe the aims of the Swachh Bharat Abhiyan"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

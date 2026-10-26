@@ -1,0 +1,251 @@
+# ISC Class 11 Music: Western Music (874), Paper 1 Theory - ISC 2028 course, year one (Class XI).
+# Source: platform/catalog/sources/cisce.md#isc-2028-music. The ISC 2028 Western Music syllabus is printed for
+# Classes XI and XII together (no class split), so all of it is covered. Theory paper only; the aural practical is
+# described in exam_notes. Topic wording is our own summary.
+subject_id: isc-11-western-music
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-music, isc-2028-regulations]
+exam_notes: >-
+  Class XI is year one of the two-year ISC 2028 course: there is no CISCE board examination in Class XI, and the
+  school sets the Class XI examination, normally following the pattern below; in Class XI the practical is evaluated
+  by the internal examiner, not a Visiting Practical Examiner. Prerequisite: Grade 5 Theory and Grade 6 Practical of the Associated Board of the Royal Schools of Music, Trinity
+  College of Music or London College of Music. Paper 1 Theory: 3 hours, 70 marks, in two sections - A Harmony and
+  melody (four-part harmony, harmonisation, figured and unfigured bass, melody writing, analysis) and B Prescribed
+  Works (Beethoven's Symphony No. 2 and one of three optional works). Paper 2 Practical: 30 marks (practical
+  examination 20, Visiting Practical Examiner's evaluation of aural skills, written presentation and confidence 5,
+  teacher's evaluation of the year's work 5): six aural tests - rhythm dictation on a monotone (simple time only),
+  melodic dictation in a major or minor key, naming two diatonic intervals, recognising perfect, imperfect, plagal
+  and interrupted cadences, recognising primary chords in root position and first and second inversion, and naming
+  modulations to the dominant, subdominant or relative key. The aural tests are not taught as chapters here, though
+  the harmony chapters cover the same theory. The subject may not be taken with Hindustani or Carnatic Music. The
+  syllabus is printed for Classes XI and XII together with no class split, so all of it is covered here;
+  the document does not divide it between Classes XI and XII. The source prints the Beethoven symphony as 'No. 2 in major op 36' (the key is D major) and
+  misspells Erlkoenig and Franck. CISCE lists content by section, not chapters: SOYL groups it into teachable chapters
+  in syllabus order. No section-wise marks weightage is published.
+units:
+  - { name: "Section A: Harmony and Melody", marks: null }
+  - { name: "Section B: Prescribed Works", marks: null }
+chapters:
+  - id: isc-11-western-music-ch01
+    number: 1
+    title: "Four-Part Chords on All Degrees of the Scale"
+    unit: "Section A: Harmony and Melody"
+    topics:
+      - id: isc-11-western-music-ch01-t01
+        title: "SATB writing: voice ranges, spacing, doubling and part-crossing"
+        learning_outcomes:
+          - "Write a chord in four parts with correct ranges, spacing and doubling"
+      - id: isc-11-western-music-ch01-t02
+        title: "Triads on every degree of major and minor (harmonic minor) scales; primary and secondary triads"
+        learning_outcomes:
+          - "Name and write the triads on each degree of a given major or minor key with Roman numerals"
+      - id: isc-11-western-music-ch01-t03
+        title: "Voice leading: common notes, contrary motion, avoiding consecutive fifths and octaves"
+        learning_outcomes:
+          - "Connect two root-position chords smoothly without consecutive fifths or octaves"
+          - "Identify voice-leading faults in a given progression"
+      - id: isc-11-western-music-ch01-t04
+        title: "Treatment of the leading note and the augmented second in minor keys"
+        learning_outcomes:
+          - "Resolve the leading note correctly and avoid the augmented second between the sixth and seventh degrees"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-western-music-ch02
+    number: 2
+    title: "Inversions and the Dominant Seventh"
+    unit: "Section A: Harmony and Melody"
+    topics:
+      - id: isc-11-western-music-ch02-t01
+        title: "First inversion chords: uses and doubling"
+        learning_outcomes:
+          - "Use first inversion chords to give a smoother bass line"
+      - id: isc-11-western-music-ch02-t02
+        title: "Second inversion chords: cadential, passing and pedal 6-4"
+        learning_outcomes:
+          - "Write a cadential 6-4 correctly approached and resolved"
+          - "Distinguish cadential, passing and pedal 6-4 chords"
+      - id: isc-11-western-music-ch02-t03
+        title: "The dominant seventh chord in root position and its three inversions; resolution"
+        learning_outcomes:
+          - "Write and resolve a dominant seventh chord and each of its inversions"
+      - id: isc-11-western-music-ch02-t04
+        title: "Figured bass symbols for triads, inversions and the dominant seventh"
+        learning_outcomes:
+          - "Realise a figured bass with 6, 6-4, 7, 6-5, 4-3 and 4-2 figures"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-western-music-ch03
+    number: 3
+    title: "Cadences, Modulation and Unessential Notes"
+    unit: "Section A: Harmony and Melody"
+    topics:
+      - id: isc-11-western-music-ch03-t01
+        title: "Cadences: perfect, imperfect, plagal and interrupted"
+        learning_outcomes:
+          - "Write and name each type of cadence in major and minor keys"
+      - id: isc-11-western-music-ch03-t02
+        title: "Related keys and modulation by pivot chord to the dominant, subdominant and relative keys"
+        learning_outcomes:
+          - "List the related keys of a given key"
+          - "Modulate from a given key to a related key using a pivot chord and confirming cadence"
+      - id: isc-11-western-music-ch03-t03
+        title: "Simple unessential notes: passing notes, auxiliary notes, suspensions and anticipations"
+        learning_outcomes:
+          - "Add passing and auxiliary notes to a four-part progression without creating faults"
+          - "Identify unessential notes in a given passage"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-western-music-ch04
+    number: 4
+    title: "Harmonisation and Bass Working"
+    unit: "Section A: Harmony and Melody"
+    topics:
+      - id: isc-11-western-music-ch04-t01
+        title: "Harmonising a melody in four vocal parts: choosing cadences first, then the bass"
+        learning_outcomes:
+          - "Harmonise a short melody in four vocal parts with suitable cadences"
+      - id: isc-11-western-music-ch04-t02
+        title: "Harmonising in simple pianoforte style"
+        learning_outcomes:
+          - "Set a melody with a simple keyboard accompaniment texture"
+      - id: isc-11-western-music-ch04-t03
+        title: "Working a figured or unfigured bass in four parts"
+        learning_outcomes:
+          - "Add upper parts to an unfigured bass, choosing appropriate chords"
+      - id: isc-11-western-music-ch04-t04
+        title: "Constructing a phrase on a given harmonic basis"
+        learning_outcomes:
+          - "Compose a phrase that follows a given chord progression"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-western-music-ch05
+    number: 5
+    title: "Melody Writing"
+    unit: "Section A: Harmony and Melody"
+    topics:
+      - id: isc-11-western-music-ch05-t01
+        title: "Phrase and sentence structure; question-and-answer phrases; melodic shape and climax"
+        learning_outcomes:
+          - "Describe the phrase structure of a given melody"
+      - id: isc-11-western-music-ch05-t02
+        title: "Completing a melody from a given opening"
+        learning_outcomes:
+          - "Complete a melody so that it balances the opening and ends with a cadence"
+      - id: isc-11-western-music-ch05-t03
+        title: "Adding a melody above or below a given melody"
+        learning_outcomes:
+          - "Write a counter-melody that moves independently and fits the implied harmony"
+      - id: isc-11-western-music-ch05-t04
+        title: "Setting words to melody: syllables, verbal accents and rhythm"
+        learning_outcomes:
+          - "Write a melody to given words with stressed syllables on strong beats"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-western-music-ch06
+    number: 6
+    title: "Analysis of Melody and Harmony"
+    unit: "Section A: Harmony and Melody"
+    topics:
+      - id: isc-11-western-music-ch06-t01
+        title: "Analysing the rhythmic structure and phrasing of a melody"
+        learning_outcomes:
+          - "Mark the phrases and rhythmic patterns of a given melody"
+      - id: isc-11-western-music-ch06-t02
+        title: "Analysing harmonic progressions with Roman numerals and inversions"
+        learning_outcomes:
+          - "Label the chords and cadences in a straightforward passage"
+      - id: isc-11-western-music-ch06-t03
+        title: "Recognising modulations in a passage"
+        learning_outcomes:
+          - "Identify the new key and the pivot chord of a modulation in a given passage"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-western-music-ch07
+    number: 7
+    title: "Beethoven: Symphony No. 2 in D major, Op. 36"
+    unit: "Section B: Prescribed Works"
+    topics:
+      - id: isc-11-western-music-ch07-t01
+        title: "Context: Beethoven's early period, composition around 1802, the orchestra used"
+        learning_outcomes:
+          - "Place the symphony in Beethoven's life and career"
+          - "List the instruments of the orchestra used"
+      - id: isc-11-western-music-ch07-t02
+        title: "First movement: slow introduction and sonata form (Adagio molto - Allegro con brio)"
+        learning_outcomes:
+          - "Outline the sonata-form structure of the first movement with its key areas"
+      - id: isc-11-western-music-ch07-t03
+        title: "Second movement: Larghetto - form, themes and orchestration"
+        learning_outcomes:
+          - "Describe the form and melodic character of the slow movement"
+      - id: isc-11-western-music-ch07-t04
+        title: "Third movement: Scherzo and Trio"
+        learning_outcomes:
+          - "Explain how the scherzo differs from a classical minuet"
+      - id: isc-11-western-music-ch07-t05
+        title: "Finale: Allegro molto - form, themes and Beethoven's use of surprise and contrast"
+        learning_outcomes:
+          - "Identify features of the finale that show Beethoven extending the Classical style"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-western-music-ch08
+    number: 8
+    title: "Optional Work (a): Bach, Prelude and Fugue No. 16 in G minor, Book I"
+    unit: "Section B: Prescribed Works"
+    topics:
+      - id: isc-11-western-music-ch08-t01
+        title: "Context: The Well-Tempered Clavier and equal temperament"
+        learning_outcomes:
+          - "Explain the purpose of The Well-Tempered Clavier"
+      - id: isc-11-western-music-ch08-t02
+        title: "The prelude: texture, motifs and harmonic plan"
+        learning_outcomes:
+          - "Describe the texture and main motifs of the prelude"
+      - id: isc-11-western-music-ch08-t03
+        title: "The fugue: subject, answer (real or tonal), countersubject, exposition, episodes and entries"
+        learning_outcomes:
+          - "Label the subject, answer and countersubject in the exposition of the fugue"
+          - "Trace the keys of the middle entries"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-western-music-ch09
+    number: 9
+    title: "Optional Work (b): Schubert, Erlkoenig (The Erl King)"
+    unit: "Section B: Prescribed Works"
+    topics:
+      - id: isc-11-western-music-ch09-t01
+        title: "Context: Schubert and the Lied; Goethe's ballad"
+        learning_outcomes:
+          - "Explain what a Lied is and outline the story of the ballad"
+      - id: isc-11-western-music-ch09-t02
+        title: "Characterisation of narrator, father, son and Erl King by one singer"
+        learning_outcomes:
+          - "Describe how register, key and melody distinguish the four characters"
+      - id: isc-11-western-music-ch09-t03
+        title: "The piano part: galloping triplets, bass motif and dramatic tension; through-composed form"
+        learning_outcomes:
+          - "Explain how the accompaniment depicts the ride and builds tension"
+          - "Explain why the song is through-composed rather than strophic"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-western-music-ch10
+    number: 10
+    title: "Optional Work (c): Franck, Violin Sonata in A major - Last Movement"
+    unit: "Section B: Prescribed Works"
+    topics:
+      - id: isc-11-western-music-ch10-t01
+        title: "Context: Franck and the late Romantic sonata; cyclic form across the sonata"
+        learning_outcomes:
+          - "Explain cyclic form and how earlier themes return in the finale"
+      - id: isc-11-western-music-ch10-t02
+        title: "Canon between violin and piano in the main theme"
+        learning_outcomes:
+          - "Describe how the main theme is treated in canon between the two instruments"
+      - id: isc-11-western-music-ch10-t03
+        title: "Form (rondo-like), keys and the partnership of violin and piano"
+        learning_outcomes:
+          - "Outline the structure and key scheme of the movement"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

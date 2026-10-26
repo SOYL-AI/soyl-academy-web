@@ -1,0 +1,392 @@
+# ICSE Class 9 Physics (Science Paper 1) - year one of the ICSE 2028 course.
+# Source: platform/catalog/sources/cisce.md#icse-2028-physics (CLASS IX section only). Topic wording is our own summary of the official scope.
+subject_id: icse-9-physics
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2028-physics, icse-2028-regulations]
+exam_notes: >-
+  There is no board examination in Class IX: the Class IX final examination is conducted internally by the school on the
+  Class IX portion (ICSE 2028 Regulations), and promotion to Class X depends on cumulative achievement through the year.
+  The syllabus prescribes one theory paper of 2 hours, 80 marks, plus internal assessment of practical work 20 marks
+  (10 subject teacher + 10 external examiner); school examinations usually follow this pattern. SI units throughout.
+  Practical work (assessed internally, not in the theory chapters): a set of 6 to 10 experiments such as least count and
+  readings of Vernier callipers and screw gauge, density of a glass block, volume of a pendulum bob by displacement,
+  l versus T^2 graph of a simple pendulum to find g, Celsius-Fahrenheit thermometer graph, laws of reflection and image
+  position in a plane mirror, focal length of a concave mirror, bulbs in series and parallel, plotting magnetic field lines
+  and neutral points, and verifying Archimedes' principle with a spring balance.
+  No Class IX specimen paper was released for Physics.
+  CISCE publishes a topic list in eight sections, not textbook chapters: SOYL groups it into 12 teachable chapters in
+  syllabus order. No unit-wise marks weightage is published for ICSE Physics.
+units:
+  - { name: "1. Measurements and Experimentation", marks: null }
+  - { name: "2. Motion in One Dimension", marks: null }
+  - { name: "3. Laws of Motion", marks: null }
+  - { name: "4. Fluids", marks: null }
+  - { name: "5. Heat and Energy", marks: null }
+  - { name: "6. Light", marks: null }
+  - { name: "7. Sound", marks: null }
+  - { name: "8. Electricity and Magnetism", marks: null }
+chapters:
+  - id: icse-9-physics-ch01
+    number: 1
+    title: "Measurements and Experimentation"
+    unit: "1. Measurements and Experimentation"
+    topics:
+      - id: icse-9-physics-ch01-t01
+        title: "International System of Units: fundamental and derived SI units with correct symbols; fps and cgs systems"
+        learning_outcomes:
+          - "Name the seven fundamental SI quantities with their units and symbols"
+          - "Express a derived unit such as density or momentum in terms of fundamental units"
+          - "Convert a quantity between SI, cgs and fps units"
+      - id: icse-9-physics-ch01-t02
+        title: "Least count of common instruments; smaller least count gives greater accuracy"
+        learning_outcomes:
+          - "Determine the least count of a metre rule, measuring cylinder and stopwatch"
+          - "Explain why an instrument with a smaller least count measures more accurately"
+      - id: icse-9-physics-ch01-t03
+        title: "Vernier callipers: main and vernier scales, least count, zero error (basic idea), reading a measurement"
+        learning_outcomes:
+          - "Calculate the least count of a Vernier callipers from its scale divisions"
+          - "Read the length or diameter shown in a diagram of a Vernier callipers, correcting for zero error"
+      - id: icse-9-physics-ch01-t04
+        title: "Micrometre screw gauge: pitch, least count (pitch 1 mm, LC 0.01 mm), zero error, reading a measurement"
+        learning_outcomes:
+          - "Calculate the pitch and least count of a screw gauge"
+          - "Read the diameter of a wire from a pictorial screw gauge reading, applying zero-error correction"
+      - id: icse-9-physics-ch01-t05
+        title: "Simple pendulum: time period and frequency; T = 2 pi sqrt(l/g) without derivation; l versus T^2 graph and its slope"
+        learning_outcomes:
+          - "Define the time period and frequency of a simple pendulum and relate them"
+          - "Use T = 2 pi sqrt(l/g) to solve simple numerical problems"
+          - "Interpret the slope of an l versus T^2 graph and use it to find g"
+    removed_topics:
+      - "Derivation of the formula for the time period of a simple pendulum"
+      - "Non-pictorial numerical problems on Vernier callipers and screw gauge (only pictorial numericals are included)"
+    literature_texts: []
+  - id: icse-9-physics-ch02
+    number: 2
+    title: "Motion in One Dimension"
+    unit: "2. Motion in One Dimension"
+    topics:
+      - id: icse-9-physics-ch02-t01
+        title: "Scalar and vector quantities; rest and motion; distance and displacement"
+        learning_outcomes:
+          - "Classify given physical quantities as scalars or vectors"
+          - "Distinguish distance from displacement for a body moving along a straight line and back"
+      - id: icse-9-physics-ch02-t02
+        title: "Speed and velocity; uniform and variable motion; acceleration and retardation"
+        learning_outcomes:
+          - "Calculate average speed, average velocity and acceleration from given data"
+          - "Explain the meaning of a negative acceleration (retardation)"
+      - id: icse-9-physics-ch02-t03
+        title: "Distance-time and velocity-time graphs and the information derived from them"
+        learning_outcomes:
+          - "Find speed from the slope of a distance-time graph"
+          - "Find acceleration from the slope and displacement from the area of a velocity-time graph"
+          - "Sketch the graphs for a body at rest, in uniform motion and in uniformly accelerated motion"
+      - id: icse-9-physics-ch02-t04
+        title: "Equations of uniformly accelerated motion derived graphically: v = u + at, S = ut + (1/2)at^2, S = (1/2)(u + v)t, v^2 = u^2 + 2aS"
+        learning_outcomes:
+          - "Derive the four equations of motion from a velocity-time graph"
+          - "Solve simple numerical problems using the equations of motion"
+      - id: icse-9-physics-ch02-t05
+        title: "Motion under gravity: free fall with acceleration g"
+        learning_outcomes:
+          - "Apply the equations of motion with a = g to a body dropped or thrown vertically upward"
+    removed_topics:
+      - "Motion with non-uniform acceleration"
+    literature_texts: []
+  - id: icse-9-physics-ch03
+    number: 3
+    title: "Force and Newton's Laws of Motion"
+    unit: "3. Laws of Motion"
+    topics:
+      - id: icse-9-physics-ch03-t01
+        title: "Contact forces (friction, normal reaction, tension) and non-contact forces (gravitational, electric, magnetic); inverse square relation"
+        learning_outcomes:
+          - "Classify forces as contact or non-contact with everyday examples"
+          - "State general properties of non-contact forces, including the inverse square dependence on distance"
+      - id: icse-9-physics-ch03-t02
+        title: "Units of force: newton and dyne; gravitational units kgf and gf and their relation to absolute units"
+        learning_outcomes:
+          - "Convert between newton, dyne, kgf and gf"
+      - id: icse-9-physics-ch03-t03
+        title: "Newton's first law: inertia, static and dynamic inertia; definition of force from the first law"
+        learning_outcomes:
+          - "State Newton's first law and explain how it defines inertia and force"
+          - "Explain everyday examples of inertia of rest and inertia of motion"
+      - id: icse-9-physics-ch03-t04
+        title: "Linear momentum p = mv; rate of change of momentum; Newton's second law F = ma"
+        learning_outcomes:
+          - "Show that the rate of change of momentum equals ma for a body of constant mass"
+          - "Solve simple numerical problems combining F = ma with the equations of motion"
+          - "Explain applications of the second law, such as a fielder drawing back the hands while catching a ball"
+      - id: icse-9-physics-ch03-t05
+        title: "Newton's third law: action-reaction pairs act on different bodies"
+        learning_outcomes:
+          - "Identify the action-reaction pair in situations such as walking, rowing and a rocket"
+          - "Explain why action and reaction do not cancel each other"
+    removed_topics:
+      - "Inertial mass"
+      - "Units of force other than cgs and SI in second-law numericals"
+    literature_texts: []
+  - id: icse-9-physics-ch04
+    number: 4
+    title: "Gravitation"
+    unit: "3. Laws of Motion"
+    topics:
+      - id: icse-9-physics-ch04-t01
+        title: "Universal law of gravitation: statement, equation F = G m1 m2 / r^2, importance and applications"
+        learning_outcomes:
+          - "State the universal law of gravitation and write its equation"
+          - "Predict how the gravitational force changes when masses or separation change"
+      - id: icse-9-physics-ch04-t02
+        title: "Gravity, acceleration due to gravity and free fall"
+        learning_outcomes:
+          - "Explain why all bodies fall with the same acceleration in the absence of air resistance"
+      - id: icse-9-physics-ch04-t03
+        title: "Mass and weight: weight as the force of gravity; comparison; simple numerical problems"
+        learning_outcomes:
+          - "Compare mass and weight in terms of definition, unit, nature and measuring instrument"
+          - "Calculate the weight of a body from its mass, in newton and kgf"
+    removed_topics:
+      - "Problems on variation of g"
+    literature_texts: []
+  - id: icse-9-physics-ch05
+    number: 5
+    title: "Pressure in Fluids"
+    unit: "4. Fluids"
+    topics:
+      - id: icse-9-physics-ch05-t01
+        title: "Thrust and pressure and their units; everyday examples"
+        learning_outcomes:
+          - "Distinguish thrust from pressure and calculate pressure as thrust per unit area"
+          - "Explain why sharp knives cut better and why heavy vehicles have broad tyres"
+      - id: icse-9-physics-ch05-t02
+        title: "Pressure exerted by a liquid column p = h rho g; factors affecting pressure in a stationary fluid"
+        learning_outcomes:
+          - "Calculate liquid pressure at a given depth using p = h rho g"
+          - "Explain why a dam is broader at the base and why a diver needs a special suit"
+      - id: icse-9-physics-ch05-t03
+        title: "Transmission of pressure in liquids; Pascal's law and simple numerical problems"
+        learning_outcomes:
+          - "State Pascal's law and give examples of transmission of pressure"
+          - "Solve simple problems on force and pressure transmitted through a liquid"
+    removed_topics:
+      - "Working of hydraulic machines"
+    literature_texts: []
+  - id: icse-9-physics-ch06
+    number: 6
+    title: "Upthrust and Archimedes' Principle"
+    unit: "4. Fluids"
+    topics:
+      - id: icse-9-physics-ch06-t01
+        title: "Buoyancy and upthrust: definition and characteristic properties"
+        learning_outcomes:
+          - "Explain why a body seems lighter in a liquid"
+          - "State the factors on which upthrust depends"
+      - id: icse-9-physics-ch06-t02
+        title: "Archimedes' principle; apparent weight when upthrust is less than the weight of the body"
+        learning_outcomes:
+          - "State Archimedes' principle"
+          - "Calculate upthrust and apparent weight of a body immersed in a liquid"
+      - id: icse-9-physics-ch06-t03
+        title: "Relative density; experimental determination of RD of a solid denser than water and of a liquid"
+        learning_outcomes:
+          - "Distinguish density from relative density"
+          - "Calculate relative density from weights in air and in water"
+      - id: icse-9-physics-ch06-t04
+        title: "Floatation: upthrust equal to or greater than weight; law of floatation; fraction of volume immersed"
+        learning_outcomes:
+          - "State the conditions for a body to sink, float or rise in a liquid by comparing densities"
+          - "Use V(immersed)/V(total) = density of body / density of liquid in numerical problems"
+      - id: icse-9-physics-ch06-t05
+        title: "Applications: ships, submarines, icebergs and balloons; numerical problems on all three cases"
+        learning_outcomes:
+          - "Explain how a submarine dives and surfaces and why an iron ship floats"
+          - "Explain why only a small part of an iceberg is seen above water"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-physics-ch07
+    number: 7
+    title: "Heat and Energy"
+    unit: "5. Heat and Energy"
+    topics:
+      - id: icse-9-physics-ch07-t01
+        title: "Heat and temperature; heat as energy; joule; 1 cal = 4.186 J"
+        learning_outcomes:
+          - "Distinguish heat from temperature"
+          - "Convert heat quantities between calorie and joule"
+      - id: icse-9-physics-ch07-t02
+        title: "Anomalous expansion of water; volume-temperature and density-temperature graphs from 0 to 10 degrees C"
+        learning_outcomes:
+          - "Sketch and interpret graphs of volume and density of water between 0 and 10 degrees C"
+          - "State the temperature at which water has maximum density"
+      - id: icse-9-physics-ch07-t03
+        title: "Hope's experiment and consequences of anomalous expansion"
+        learning_outcomes:
+          - "Describe Hope's experiment and interpret its thermometer readings"
+          - "Explain how aquatic life survives when a pond freezes and why water pipes burst in winter"
+      - id: icse-9-physics-ch07-t04
+        title: "Greenhouse effect and global warming: meaning, causes and impact on life on earth"
+        learning_outcomes:
+          - "Explain the greenhouse effect and name the main greenhouse gases"
+          - "Describe the consequences of global warming and suggest ways to reduce it"
+      - id: icse-9-physics-ch07-t05
+        title: "Energy degradation: meaning and examples"
+        learning_outcomes:
+          - "Explain energy degradation with examples such as heat lost in a vehicle engine"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-physics-ch08
+    number: 8
+    title: "Reflection of Light at Plane Mirrors"
+    unit: "6. Light"
+    topics:
+      - id: icse-9-physics-ch08-t01
+        title: "Laws of reflection and their experimental verification"
+        learning_outcomes:
+          - "State the laws of reflection"
+          - "Describe a pin experiment to verify that the angle of incidence equals the angle of reflection"
+      - id: icse-9-physics-ch08-t02
+        title: "Characteristics of the image in a plane mirror; uses of plane mirrors"
+        learning_outcomes:
+          - "List the characteristics of an image formed by a plane mirror, including lateral inversion"
+          - "Draw a ray diagram locating the image of a point object in a plane mirror"
+      - id: icse-9-physics-ch08-t03
+        title: "Images in a pair of mirrors; multiple images with two parallel plane mirrors"
+        learning_outcomes:
+          - "Explain the formation of multiple images when two plane mirrors are parallel"
+          - "Describe how the brightness of successive images changes and explain why"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-physics-ch09
+    number: 9
+    title: "Spherical Mirrors"
+    unit: "6. Light"
+    topics:
+      - id: icse-9-physics-ch09-t01
+        title: "Concave and convex mirrors: pole, centre and radius of curvature, principal axis, focus, focal length; f = R/2"
+        learning_outcomes:
+          - "Label the pole, centre of curvature, focus and principal axis on mirror diagrams"
+          - "Use f = R/2 to relate focal length and radius of curvature"
+      - id: icse-9-physics-ch09-t02
+        title: "Paths of specific rays: parallel to the axis, through the focus, through the centre of curvature, parallel rays meeting on the focal plane"
+        learning_outcomes:
+          - "Draw the reflected ray for each type of incident ray on concave and convex mirrors"
+      - id: icse-9-physics-ch09-t03
+        title: "Images formed by a concave mirror for different object positions (simple ray diagrams)"
+        learning_outcomes:
+          - "Draw ray diagrams for an object at infinity, beyond C, at C, between C and F, at F and within F"
+          - "State the position, nature and size of the image in each case"
+      - id: icse-9-physics-ch09-t04
+        title: "Image formed by a convex mirror; uses of concave and convex mirrors"
+        learning_outcomes:
+          - "Explain why a convex mirror always forms a virtual, erect, diminished image"
+          - "Justify the use of a convex mirror as a rear-view mirror and a concave mirror as a shaving mirror"
+      - id: icse-9-physics-ch09-t05
+        title: "Cartesian sign convention; mirror formula 1/v + 1/u = 1/f and magnification (direct numerical problems)"
+        learning_outcomes:
+          - "Apply the Cartesian sign convention to object and image distances"
+          - "Solve direct numerical problems using the mirror formula and magnification"
+    removed_topics:
+      - "Derivation of the mirror formula and f = R/2"
+      - "Scale drawing or graphical representation of ray diagrams"
+    literature_texts: []
+  - id: icse-9-physics-ch10
+    number: 10
+    title: "Sound and Wave Motion"
+    unit: "7. Sound"
+    topics:
+      - id: icse-9-physics-ch10-t01
+        title: "Wave motion; transverse and longitudinal mechanical waves and their comparison; nature of sound waves"
+        learning_outcomes:
+          - "Compare transverse and longitudinal waves with examples"
+          - "Explain why sound waves in air are longitudinal"
+      - id: icse-9-physics-ch10-t02
+        title: "Sound needs a medium; propagation and speed of sound in solids, liquids and gases; factors affecting speed"
+        learning_outcomes:
+          - "Describe an experiment showing that sound cannot travel through a vacuum"
+          - "Explain how temperature and humidity affect the speed of sound in air"
+      - id: icse-9-physics-ch10-t03
+        title: "Frequency, wavelength, time period and speed; V = f x lambda"
+        learning_outcomes:
+          - "Solve simple numerical problems using V = f x lambda and T = 1/f"
+      - id: icse-9-physics-ch10-t04
+        title: "Speed of sound compared with speed of light; thunder and lightning"
+        learning_outcomes:
+          - "Estimate the distance of a lightning strike from the time gap before thunder is heard"
+      - id: icse-9-physics-ch10-t05
+        title: "Infrasonic, audible and ultrasonic frequencies and their applications; ultrasonic versus supersonic, infrasonic versus subsonic"
+        learning_outcomes:
+          - "State the audible range for humans and classify given frequencies"
+          - "Give simple applications of ultrasound"
+          - "Distinguish ultrasonic from supersonic and infrasonic from subsonic"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-physics-ch11
+    number: 11
+    title: "Current Electricity"
+    unit: "8. Electricity and Magnetism"
+    topics:
+      - id: icse-9-physics-ch11-t01
+        title: "Free electrons; good and bad conductors, semiconductors and superconductors; electric charge, its SI unit and quantisation"
+        learning_outcomes:
+          - "Explain conduction in metals in terms of free electrons"
+          - "Classify materials as good conductors, bad conductors (insulators), semiconductors or superconductors"
+      - id: icse-9-physics-ch11-t02
+        title: "Electric current as rate of flow of charge; conventional current and electron flow"
+        learning_outcomes:
+          - "Calculate current from charge and time using I = Q/t"
+          - "Show the directions of conventional current and electron flow in a circuit"
+      - id: icse-9-physics-ch11-t03
+        title: "Potential difference V = W/q and its SI unit; resistance and its SI unit"
+        learning_outcomes:
+          - "Calculate the work done in moving a charge through a potential difference"
+          - "Define resistance and the ohm"
+      - id: icse-9-physics-ch11-t04
+        title: "Simple circuits: cell, key, bulb, resistance wire, rheostat; open and closed circuits; circuit symbols; detecting current with a galvanometer or ammeter"
+        learning_outcomes:
+          - "Draw circuit diagrams with standard symbols for a cell, key, bulb, resistor, rheostat and ammeter"
+          - "Distinguish open and closed circuits"
+      - id: icse-9-physics-ch11-t05
+        title: "Sources of direct current: cells and accumulators (brief introduction)"
+        learning_outcomes:
+          - "Name common sources of direct current and give one use of each"
+      - id: icse-9-physics-ch11-t06
+        title: "Ohm's law and simple numerical problems"
+        learning_outcomes:
+          - "State Ohm's law"
+          - "Solve simple problems using V = IR"
+    removed_topics:
+      - "Derivation of V = W/q"
+      - "Functioning of galvanometers and ammeters"
+      - "Construction, working and equations of cells and accumulators"
+    literature_texts: []
+  - id: icse-9-physics-ch12
+    number: 12
+    title: "Magnetism"
+    unit: "8. Electricity and Magnetism"
+    topics:
+      - id: icse-9-physics-ch12-t01
+        title: "Induced magnetism in magnetic materials; induction precedes attraction"
+        learning_outcomes:
+          - "Explain why a bar magnet first induces magnetism in a piece of iron and then attracts it"
+      - id: icse-9-physics-ch12-t02
+        title: "Magnetic field lines and their properties"
+        learning_outcomes:
+          - "Draw the field-line pattern around a bar magnet"
+          - "State the properties of magnetic field lines"
+      - id: icse-9-physics-ch12-t03
+        title: "Earth's magnetic field: evidence; magnetic compass; uniform field of the earth"
+        learning_outcomes:
+          - "Give evidence for the existence of the earth's magnetic field"
+          - "Explain how a magnetic compass shows direction"
+      - id: icse-9-physics-ch12-t04
+        title: "Combined field of a bar magnet and the earth; neutral points"
+        learning_outcomes:
+          - "Locate the neutral points for a bar magnet placed with its north pole pointing north and with its north pole pointing south"
+          - "Explain why the net magnetic field is zero at a neutral point"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

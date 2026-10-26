@@ -1,0 +1,353 @@
+# ISC Class 11 Geometrical and Mechanical Drawing (869) - ISC 2028 syllabus, CLASS XI portion only.
+# Source: platform/catalog/sources/cisce.md#isc-2028-geometrical-mechanical-drawing. Topic wording is our own summary.
+# Drawing-based subject: chapters teach the geometrical constructions and projection methods as concepts and
+# step-by-step procedures; students practise the drawings with instruments on A2 sheets.
+subject_id: isc-11-geometrical-mechanical-drawing
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-geometrical-mechanical-drawing, isc-2028-regulations]
+exam_notes: >-
+  Class XI is year one of the two-year ISC 2028 course. There is no board examination in Class XI: the school conducts
+  the Class XI examination on the Class XI portion, and promotion to Class XII needs at least 35% on the cumulative
+  average in five subjects including English, with 75% attendance (ISC 2028 Regulations). The syllabus prescribes, and
+  the school examination usually follows: Paper I Theory (drawing), 3 hours, 80 marks, in Section A Plane Geometry and
+  Section B Solid Geometry; candidates must reach a minimum standard in the subject as a whole. Drawing board,
+  tee-square and set-squares are required (a parallel-motion board or drafting machine is permitted), A2 paper is used,
+  and IS:696-1972 (Code of Practice for General Engineering Drawing) is followed. Question diagrams may be printed in
+  First or Third Angle projection (the one used is stated) and answers in either are accepted. Paper II Project Work,
+  20 marks, assessed by the subject teacher: one drawing (A or B) from each of three A2 project sheets - orthographic
+  front, top and left side views of an object in First or Third Angle, copying a template with six dimensions, and an
+  isometric view - each marked out of 5 (size/completeness, line quality, neatness, accuracy, title block; 15), plus a
+  5-mark viva-voce by the teacher. The project sheets are practical work and are not taught as chapters here. SOYL
+  covers the concepts and construction procedures of Paper I. The subject may not be taken with Geometrical and
+  Building Drawing (ISC 2028 Regulations). No Class XI specimen paper and no section-wise marks weightage are
+  published. CISCE lists topics under two sections, not textbook chapters: SOYL opens with a drawing-practice chapter
+  and then groups the topics into teachable chapters in syllabus order, 14 in all. The Class XII portion is in
+  isc-12-geometrical-mechanical-drawing.
+units:
+  - { name: "Drawing practice: instruments and IS:696 conventions", marks: null }
+  - { name: "Section A: Plane Geometry", marks: null }
+  - { name: "Section B: Solid Geometry", marks: null }
+chapters:
+  - id: isc-11-geometrical-mechanical-drawing-ch01
+    number: 1
+    title: "Drawing Instruments and Engineering Drawing Conventions (IS:696)"
+    unit: "Drawing practice: instruments and IS:696 conventions"
+    topics:
+      - id: isc-11-geometrical-mechanical-drawing-ch01-t01
+        title: "Use of drawing board, tee-square, set-squares, compasses, dividers and drafting machine"
+        learning_outcomes:
+          - "Draw parallel, perpendicular and 15-degree-multiple lines using a tee-square and set-squares"
+      - id: isc-11-geometrical-mechanical-drawing-ch01-t02
+        title: "A2 sheet layout, border and title block"
+        learning_outcomes:
+          - "Lay out an A2 sheet with border and title block in the standard position"
+      - id: isc-11-geometrical-mechanical-drawing-ch01-t03
+        title: "Types of line and their uses; lettering"
+        learning_outcomes:
+          - "Choose the correct line type for visible edges, hidden edges, centre lines, construction lines and dimension lines"
+          - "Letter titles and notes in standard single-stroke capitals"
+      - id: isc-11-geometrical-mechanical-drawing-ch01-t04
+        title: "Dimensioning: aligned and unidirectional systems, arrowheads, leaders"
+        learning_outcomes:
+          - "Dimension a simple drawing correctly using one consistent system"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-geometrical-mechanical-drawing-ch02
+    number: 2
+    title: "Scales"
+    unit: "Section A: Plane Geometry"
+    topics:
+      - id: isc-11-geometrical-mechanical-drawing-ch02-t01
+        title: "Representative fraction; reducing, enlarging and full-size scales"
+        learning_outcomes:
+          - "Calculate the representative fraction of a scale and the length of scale needed"
+      - id: isc-11-geometrical-mechanical-drawing-ch02-t02
+        title: "Construction and use of plain scales"
+        learning_outcomes:
+          - "Construct a plain scale for a given RF and measure a stated distance on it"
+      - id: isc-11-geometrical-mechanical-drawing-ch02-t03
+        title: "Construction and use of diagonal scales"
+        learning_outcomes:
+          - "Explain the principle of the diagonal scale"
+          - "Construct a diagonal scale reading to three units and show a given length on it"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-geometrical-mechanical-drawing-ch03
+    number: 3
+    title: "Plane Figures: Triangles, Quadrilaterals and Polygons"
+    unit: "Section A: Plane Geometry"
+    topics:
+      - id: isc-11-geometrical-mechanical-drawing-ch03-t01
+        title: "Enlargement and reduction of irregular plane figures"
+        learning_outcomes:
+          - "Enlarge or reduce an irregular figure in a given ratio by the radial-line or grid method"
+      - id: isc-11-geometrical-mechanical-drawing-ch03-t02
+        title: "Construction of triangles from given data"
+        learning_outcomes:
+          - "Construct a triangle given combinations of sides, angles, altitude or perimeter"
+      - id: isc-11-geometrical-mechanical-drawing-ch03-t03
+        title: "Construction of quadrilaterals"
+        learning_outcomes:
+          - "Construct squares, rectangles, rhombuses, parallelograms and trapeziums from given data"
+      - id: isc-11-geometrical-mechanical-drawing-ch03-t04
+        title: "Regular polygons: general methods on a given side and in or about a circle"
+        learning_outcomes:
+          - "Construct a regular pentagon, hexagon or octagon on a given side by a general method"
+          - "Inscribe and circumscribe regular polygons in and about a circle"
+      - id: isc-11-geometrical-mechanical-drawing-ch03-t05
+        title: "Similar plane figures"
+        learning_outcomes:
+          - "Construct a figure similar to a given figure with sides in a given ratio or with a given area ratio"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-geometrical-mechanical-drawing-ch04
+    number: 4
+    title: "Circles, Tangents and Normals"
+    unit: "Section A: Plane Geometry"
+    topics:
+      - id: isc-11-geometrical-mechanical-drawing-ch04-t01
+        title: "Problems on circles: circles through points, inscribed and escribed circles, circles touching lines and circles"
+        learning_outcomes:
+          - "Construct a circle through three points and the inscribed circle of a triangle"
+          - "Draw a circle of given radius touching two given lines or a line and a circle"
+      - id: isc-11-geometrical-mechanical-drawing-ch04-t02
+        title: "Tangents to a circle from a point; external and internal (direct and transverse) common tangents"
+        learning_outcomes:
+          - "Construct the tangents from an external point to a circle"
+          - "Construct the direct and transverse common tangents to two circles"
+      - id: isc-11-geometrical-mechanical-drawing-ch04-t03
+        title: "Normals to a circle; joining lines and arcs with tangent arcs (blending)"
+        learning_outcomes:
+          - "Draw a normal to a circle at a point"
+          - "Join two lines or a line and an arc smoothly with an arc of given radius, locating centres and tangent points"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-geometrical-mechanical-drawing-ch05
+    number: 5
+    title: "Loci of Points in Mechanisms"
+    unit: "Section A: Plane Geometry"
+    topics:
+      - id: isc-11-geometrical-mechanical-drawing-ch05-t01
+        title: "Locus: meaning and basic loci"
+        learning_outcomes:
+          - "Define a locus and plot the locus of a point satisfying a simple condition"
+      - id: isc-11-geometrical-mechanical-drawing-ch05-t02
+        title: "Locus of a point on a slider-crank mechanism"
+        learning_outcomes:
+          - "Plot the path of a point on the connecting rod of a slider-crank mechanism over one revolution"
+      - id: isc-11-geometrical-mechanical-drawing-ch05-t03
+        title: "Locus of a point on a four-bar link mechanism and other simple linkages"
+        learning_outcomes:
+          - "Plot the path of a point on the coupler of a four-bar mechanism"
+          - "Plot the locus of a point on a ladder or rod sliding between a wall and the floor"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-geometrical-mechanical-drawing-ch06
+    number: 6
+    title: "Conic Sections: Ellipse, Parabola and Rectangular Hyperbola"
+    unit: "Section A: Plane Geometry"
+    topics:
+      - id: isc-11-geometrical-mechanical-drawing-ch06-t01
+        title: "Conics as sections of a cone; focus, directrix and eccentricity"
+        learning_outcomes:
+          - "Identify the conic produced by a cutting plane at a given angle to a cone"
+          - "Construct a conic by the focus-directrix (eccentricity) method"
+      - id: isc-11-geometrical-mechanical-drawing-ch06-t02
+        title: "Ellipse: concentric-circle, rectangle (oblong) and arcs-of-circles methods"
+        learning_outcomes:
+          - "Construct an ellipse from its major and minor axes by the concentric-circle and rectangle methods"
+      - id: isc-11-geometrical-mechanical-drawing-ch06-t03
+        title: "Elementary properties of the ellipse: foci, sum of focal distances, tangent and normal"
+        learning_outcomes:
+          - "Locate the foci of an ellipse and use the constant sum of focal distances"
+          - "Draw a tangent and normal at a point on an ellipse"
+      - id: isc-11-geometrical-mechanical-drawing-ch06-t04
+        title: "Parabola: rectangle, tangent and focus-directrix methods"
+        learning_outcomes:
+          - "Construct a parabola given its base and axis height"
+      - id: isc-11-geometrical-mechanical-drawing-ch06-t05
+        title: "Rectangular hyperbola from its asymptotes and a point"
+        learning_outcomes:
+          - "Construct a rectangular hyperbola given its asymptotes and one point on the curve"
+          - "Relate the rectangular hyperbola to Boyle's law (PV = constant)"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-geometrical-mechanical-drawing-ch07
+    number: 7
+    title: "Cycloidal and Involute Curves"
+    unit: "Section A: Plane Geometry"
+    topics:
+      - id: isc-11-geometrical-mechanical-drawing-ch07-t01
+        title: "Cycloid"
+        learning_outcomes:
+          - "Construct a cycloid traced by a point on a circle rolling along a straight line"
+      - id: isc-11-geometrical-mechanical-drawing-ch07-t02
+        title: "Epicycloid and hypocycloid"
+        learning_outcomes:
+          - "Construct epicycloids and hypocycloids for a circle rolling outside or inside a base circle"
+      - id: isc-11-geometrical-mechanical-drawing-ch07-t03
+        title: "Involute of a circle and of a polygon"
+        learning_outcomes:
+          - "Construct the involute of a circle and of a square or triangle"
+          - "State why involute curves are used for gear tooth profiles"
+      - id: isc-11-geometrical-mechanical-drawing-ch07-t04
+        title: "Tangents and normals to cycloidal and involute curves"
+        learning_outcomes:
+          - "Draw the normal and tangent at a point on a cycloid or involute"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-geometrical-mechanical-drawing-ch08
+    number: 8
+    title: "Orthographic Projection"
+    unit: "Section B: Solid Geometry"
+    topics:
+      - id: isc-11-geometrical-mechanical-drawing-ch08-t01
+        title: "Principles of orthographic projection; principal planes and views"
+        learning_outcomes:
+          - "Explain how front, top and side views are obtained by projecting onto principal planes"
+      - id: isc-11-geometrical-mechanical-drawing-ch08-t02
+        title: "First Angle and Third Angle projection: arrangement of views and symbols"
+        learning_outcomes:
+          - "Arrange views correctly in First and in Third Angle projection"
+          - "Identify the method of projection from its symbol"
+      - id: isc-11-geometrical-mechanical-drawing-ch08-t03
+        title: "Drawing views of simple objects from pictorial drawings; hidden lines and centre lines"
+        learning_outcomes:
+          - "Draw the front view, top view and left side view of a block from its pictorial drawing"
+      - id: isc-11-geometrical-mechanical-drawing-ch08-t04
+        title: "Projections of simple solids: prisms, pyramids, cylinders, cones and spheres in simple positions"
+        learning_outcomes:
+          - "Draw the projections of a solid resting on its base or with its axis inclined to one plane"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-geometrical-mechanical-drawing-ch09
+    number: 9
+    title: "Auxiliary Projection"
+    unit: "Section B: Solid Geometry"
+    topics:
+      - id: isc-11-geometrical-mechanical-drawing-ch09-t01
+        title: "Auxiliary planes: auxiliary vertical and auxiliary inclined planes"
+        learning_outcomes:
+          - "Explain why auxiliary planes are needed to show inclined surfaces in true shape"
+      - id: isc-11-geometrical-mechanical-drawing-ch09-t02
+        title: "Auxiliary elevations and auxiliary plans"
+        learning_outcomes:
+          - "Project an auxiliary elevation or plan of a simple object on a given reference line"
+      - id: isc-11-geometrical-mechanical-drawing-ch09-t03
+        title: "True shape of inclined surfaces"
+        learning_outcomes:
+          - "Draw the true shape of an inclined face using an auxiliary view"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-geometrical-mechanical-drawing-ch10
+    number: 10
+    title: "Intersection of Solids"
+    unit: "Section B: Solid Geometry"
+    topics:
+      - id: isc-11-geometrical-mechanical-drawing-ch10-t01
+        title: "Lines and curves of intersection: line method and cutting-plane method"
+        learning_outcomes:
+          - "Explain the line method and the cutting-plane method for finding intersection curves"
+      - id: isc-11-geometrical-mechanical-drawing-ch10-t02
+        title: "Intersection of prisms with prisms and pyramids"
+        learning_outcomes:
+          - "Draw the line of intersection of two square prisms with axes at right angles"
+      - id: isc-11-geometrical-mechanical-drawing-ch10-t03
+        title: "Intersection of cylinders with cylinders and prisms"
+        learning_outcomes:
+          - "Draw the curve of intersection of two cylinders of equal or unequal diameter"
+      - id: isc-11-geometrical-mechanical-drawing-ch10-t04
+        title: "Intersection of cones and spheres with cylinders and prisms"
+        learning_outcomes:
+          - "Draw the curve of intersection of a cylinder penetrating a right circular cone"
+          - "Draw the intersection of a sphere with a cylinder or prism"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-geometrical-mechanical-drawing-ch11
+    number: 11
+    title: "True Length of Lines and Sections of Solids"
+    unit: "Section B: Solid Geometry"
+    topics:
+      - id: isc-11-geometrical-mechanical-drawing-ch11-t01
+        title: "True length of a line in space by rotation and by auxiliary projection"
+        learning_outcomes:
+          - "Find the true length and true inclinations of a line from its projections"
+      - id: isc-11-geometrical-mechanical-drawing-ch11-t02
+        title: "Section planes and sectional views; hatching"
+        learning_outcomes:
+          - "Draw the sectional view of a solid cut by a plane perpendicular to one principal plane"
+      - id: isc-11-geometrical-mechanical-drawing-ch11-t03
+        title: "Sections of prisms and pyramids; true shape of the section"
+        learning_outcomes:
+          - "Draw the sectional views and the true shape of the section of a prism or pyramid"
+      - id: isc-11-geometrical-mechanical-drawing-ch11-t04
+        title: "Sections of cylinders and right circular cones; true shape of the section"
+        learning_outcomes:
+          - "Draw the true shape of a section of a cone and identify it as an ellipse, parabola or hyperbola"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-geometrical-mechanical-drawing-ch12
+    number: 12
+    title: "Development of Surfaces"
+    unit: "Section B: Solid Geometry"
+    topics:
+      - id: isc-11-geometrical-mechanical-drawing-ch12-t01
+        title: "Development: meaning and uses in sheet-metal work; parallel-line and radial-line methods"
+        learning_outcomes:
+          - "Explain the purpose of surface development and choose the method for a given solid"
+      - id: isc-11-geometrical-mechanical-drawing-ch12-t02
+        title: "Development of prisms and cylinders, whole and cut"
+        learning_outcomes:
+          - "Draw the development of the lateral surface of a cut prism or cylinder"
+      - id: isc-11-geometrical-mechanical-drawing-ch12-t03
+        title: "Development of pyramids and right circular cones, whole and cut"
+        learning_outcomes:
+          - "Draw the development of a truncated pyramid or cone using true lengths of slant edges"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-geometrical-mechanical-drawing-ch13
+    number: 13
+    title: "The Helix"
+    unit: "Section B: Solid Geometry"
+    topics:
+      - id: isc-11-geometrical-mechanical-drawing-ch13-t01
+        title: "Helix as a locus: pitch, lead and hand of a helix"
+        learning_outcomes:
+          - "Define a helix as the locus of a point moving around and along a cylinder at uniform rates"
+      - id: isc-11-geometrical-mechanical-drawing-ch13-t02
+        title: "Projection of a cylindrical helix"
+        learning_outcomes:
+          - "Draw the projections of a helix of given diameter and pitch"
+      - id: isc-11-geometrical-mechanical-drawing-ch13-t03
+        title: "Applications of helices: springs and screw threads"
+        learning_outcomes:
+          - "Draw the projections of a helical spring of square or circular section"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-geometrical-mechanical-drawing-ch14
+    number: 14
+    title: "Isometric and Oblique Projection"
+    unit: "Section B: Solid Geometry"
+    topics:
+      - id: isc-11-geometrical-mechanical-drawing-ch14-t01
+        title: "Isometric projection: isometric axes and the isometric view using true lengths"
+        learning_outcomes:
+          - "Draw the isometric view of a block from its orthographic views using true lengths"
+      - id: isc-11-geometrical-mechanical-drawing-ch14-t02
+        title: "Non-isometric lines and the box method"
+        learning_outcomes:
+          - "Draw inclined edges in an isometric view by locating their end points"
+      - id: isc-11-geometrical-mechanical-drawing-ch14-t03
+        title: "Circles and arcs in isometric: the four-centre method"
+        learning_outcomes:
+          - "Draw isometric circles on the three faces of a cube using the four-centre method"
+      - id: isc-11-geometrical-mechanical-drawing-ch14-t04
+        title: "Oblique projection: cavalier and cabinet; choosing the front face"
+        learning_outcomes:
+          - "Draw an oblique view of a simple object with receding lines at 45 degrees"
+          - "Distinguish cavalier from cabinet oblique projection"
+    removed_topics:
+      - "Isometric views are drawn without an isometric scale"
+    literature_texts: []
+removed_topics: []

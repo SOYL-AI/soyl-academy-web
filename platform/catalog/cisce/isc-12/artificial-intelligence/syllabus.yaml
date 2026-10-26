@@ -1,0 +1,223 @@
+# ISC Class 12 Artificial Intelligence (883), Paper I Theory - ISC 2027 examination (Class XII portion only).
+# Source: platform/catalog/sources/cisce.md#isc-2027-artificial-intelligence. Topic wording is our own summary of the official scope.
+subject_id: isc-12-artificial-intelligence
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-artificial-intelligence, isc-2027-regulations, isc-2027-specimen-papers, cisce-circular-specimen-papers-2027]
+exam_notes: >-
+  Paper I Theory: 3 hours, 70 marks; key Class XI concepts are a prerequisite. Paper II Practical: 30 marks -
+  a 3-hour practical examination (15) in which the candidate attempts one of three problem statements, spending
+  90 minutes writing an algorithm and handwritten program and 90 minutes coding and executing it (algorithm 3,
+  documented Python program 7, printout 2, output 3), plus the Practical File (15: internal evaluation 10, Visiting
+  Examiner 5). About 25 assignments are done during the year (15 programming, 10 hands-on case studies), for example
+  tokenisation and NER with NLTK or spaCy, probability distributions and hypothesis tests, linear regression with
+  NumPy, a neural network with forward and backward propagation, and an attendance system with OpenCV. Tools named
+  are Python, NumPy, Pandas, Matplotlib, Scikit-learn, TensorFlow/Keras or PyTorch, OpenCV and NLTK/spaCy.
+  SOYL covers Paper I only. AI may not be combined with Robotics (ISC regulations).
+  The ISC 2027 specimen paper (3 hours plus 15 minutes reading time) has 12 compulsory questions in three sections:
+  A - fourteen 1-mark subparts including MCQs (14), B - seven 4-mark short-answer questions (28), C - four 7-mark
+  long-answer questions (28), with internal choice in three questions of B and two of C; many questions are
+  scenario-based. The October 2026 circular sets about 50% of marks on higher-order skills (apply, analyse,
+  evaluate, create). CISCE lists topics under five weighted units, not textbook chapters: SOYL groups them into
+  7 teachable chapters in syllabus order.
+units:
+  - { name: "Unit 1: Applications of AI", marks: 10 }
+  - { name: "Unit 2: Different Paradigms of AI - Neural Networks, Machine Learning, Deep Learning", marks: 15 }
+  - { name: "Unit 3: Practical Implications of ANN", marks: 15 }
+  - { name: "Unit 4: Practical Implications of Machine Learning", marks: 20 }
+  - { name: "Unit 5: Introduction to Computer Vision", marks: 10 }
+chapters:
+  - id: isc-12-artificial-intelligence-ch01
+    number: 1
+    title: "Natural Language Processing Applications"
+    unit: "Unit 1: Applications of AI"
+    topics:
+      - id: isc-12-artificial-intelligence-ch01-t01
+        title: "Named Entity Recognition: identifying and classifying people, organisations and locations in text"
+        learning_outcomes:
+          - "Identify and label the named entities in a given news paragraph"
+          - "Explain how NER helps in extracting information from documents"
+      - id: isc-12-artificial-intelligence-ch01-t02
+        title: "Extractive text summarisation: selecting the most important sentences or phrases"
+        learning_outcomes:
+          - "Explain how sentences can be scored by word frequency to build an extractive summary"
+          - "Distinguish extractive from abstractive summarisation"
+      - id: isc-12-artificial-intelligence-ch01-t03
+        title: "Spam email detection using machine learning on content and features"
+        learning_outcomes:
+          - "Identify features that help classify an email as spam or not spam"
+          - "Describe the steps of building and testing a spam classifier"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-artificial-intelligence-ch02
+    number: 2
+    title: "Statistics, Probability and Hypothesis Testing for AI"
+    unit: "Unit 1: Applications of AI"
+    topics:
+      - id: isc-12-artificial-intelligence-ch02-t01
+        title: "Describing data trends: mean, median, mode, range, variance and standard deviation"
+        learning_outcomes:
+          - "Calculate mean, median, mode, variance and standard deviation of a small data set"
+          - "Interpret what a large standard deviation says about a feature in a data set"
+      - id: isc-12-artificial-intelligence-ch02-t02
+        title: "Probability as a measure of uncertainty; uniform, normal and binomial distributions"
+        learning_outcomes:
+          - "Calculate simple probabilities and binomial probabilities"
+          - "Sketch and compare uniform and normal distributions"
+      - id: isc-12-artificial-intelligence-ch02-t03
+        title: "Hypothesis testing: null and alternative hypotheses; Type I and Type II errors in AI experiments"
+        learning_outcomes:
+          - "Frame null and alternative hypotheses for comparing two AI models"
+          - "Explain the consequences of Type I and Type II errors in a medical or spam-filter setting"
+      - id: isc-12-artificial-intelligence-ch02-t04
+        title: "Simple linear regression for prediction; correlation coefficient"
+        learning_outcomes:
+          - "Fit a simple regression line to small data and use it to predict a value"
+          - "Interpret the sign and size of a correlation coefficient"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-artificial-intelligence-ch03
+    number: 3
+    title: "Artificial Neural Networks"
+    unit: "Unit 2: Different Paradigms of AI - Neural Networks, Machine Learning, Deep Learning"
+    topics:
+      - id: isc-12-artificial-intelligence-ch03-t01
+        title: "Artificial neurons (nodes); input, hidden and output layers; the ANN model"
+        learning_outcomes:
+          - "Draw a labelled diagram of a neural network with input, hidden and output layers"
+          - "Calculate the output of a single neuron from given inputs, weights, bias and activation"
+      - id: isc-12-artificial-intelligence-ch03-t02
+        title: "Forward propagation and backward propagation"
+        learning_outcomes:
+          - "Explain how forward propagation produces a prediction"
+          - "Explain how backpropagation uses the error to update weights"
+      - id: isc-12-artificial-intelligence-ch03-t03
+        title: "Multi-layer perceptron; example of recognising handwritten digits"
+        learning_outcomes:
+          - "Explain how an MLP classifies handwritten digits from pixel inputs"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-artificial-intelligence-ch04
+    number: 4
+    title: "Machine Learning and Deep Learning Paradigms"
+    unit: "Unit 2: Different Paradigms of AI - Neural Networks, Machine Learning, Deep Learning"
+    topics:
+      - id: isc-12-artificial-intelligence-ch04-t01
+        title: "Machine learning: learning from data to predict or decide without explicit programming"
+        learning_outcomes:
+          - "Distinguish machine learning from rule-based programming with an example"
+      - id: isc-12-artificial-intelligence-ch04-t02
+        title: "Decision tree example: predicting house prices from size, location and number of bedrooms"
+        learning_outcomes:
+          - "Trace a prediction through a given decision tree"
+          - "Explain how a decision tree splits data on features"
+      - id: isc-12-artificial-intelligence-ch04-t03
+        title: "Deep learning: deep neural networks for image and pattern recognition"
+        learning_outcomes:
+          - "Explain what makes a network deep and why depth helps with complex patterns"
+      - id: isc-12-artificial-intelligence-ch04-t04
+        title: "Convolutional neural networks for classifying images (e.g. cat, dog, bird)"
+        learning_outcomes:
+          - "Describe the roles of convolution, pooling and fully connected layers in a CNN"
+          - "Compare ANN, ML and DL paradigms for a given task"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-artificial-intelligence-ch05
+    number: 5
+    title: "Building and Training a Neural Network in Practice"
+    unit: "Unit 3: Practical Implications of ANN"
+    topics:
+      - id: isc-12-artificial-intelligence-ch05-t01
+        title: "Data preparation with NumPy and Pandas"
+        learning_outcomes:
+          - "Explain the roles of NumPy arrays and Pandas data frames in preparing data"
+          - "Identify missing or inconsistent values in a data set"
+      - id: isc-12-artificial-intelligence-ch05-t02
+        title: "Preprocessing with Scikit-learn: scaling, encoding categorical variables, train-test split"
+        learning_outcomes:
+          - "Explain why features are scaled before training"
+          - "Explain why data is split into training and testing sets"
+      - id: isc-12-artificial-intelligence-ch05-t03
+        title: "Building the network with Keras on TensorFlow"
+        learning_outcomes:
+          - "Describe the layers, activation functions and output layer chosen for a given problem"
+      - id: isc-12-artificial-intelligence-ch05-t04
+        title: "Training with fit(): epochs and batch size"
+        learning_outcomes:
+          - "Explain the meaning of epoch and batch size"
+          - "Calculate the number of weight updates per epoch for a given data size and batch size"
+      - id: isc-12-artificial-intelligence-ch05-t05
+        title: "Model evaluation: accuracy, precision and recall; visualising metrics with Matplotlib"
+        learning_outcomes:
+          - "Calculate accuracy, precision and recall from a confusion matrix"
+          - "Interpret a training-versus-validation accuracy plot"
+      - id: isc-12-artificial-intelligence-ch05-t06
+        title: "Hyperparameter tuning: grid search and random search over learning rate, batch size, hidden layers and neurons"
+        learning_outcomes:
+          - "Compare grid search and random search"
+          - "Suggest hyperparameter changes for an under-performing model"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-artificial-intelligence-ch06
+    number: 6
+    title: "Machine Learning in the Real World"
+    unit: "Unit 4: Practical Implications of Machine Learning"
+    topics:
+      - id: isc-12-artificial-intelligence-ch06-t01
+        title: "Predictive maintenance: using historical machine data to predict failures and schedule maintenance"
+        learning_outcomes:
+          - "Identify the data and features needed to predict equipment failure"
+          - "Explain how predictive maintenance reduces downtime and cost compared with fixed schedules"
+      - id: isc-12-artificial-intelligence-ch06-t02
+        title: "Fraud detection: spotting credit card fraud from transaction patterns"
+        learning_outcomes:
+          - "Explain how an ML model flags an unusual card transaction"
+          - "Explain why recall matters when fraud cases are rare"
+      - id: isc-12-artificial-intelligence-ch06-t03
+        title: "Fraud detection: identity theft and proactive measures by financial institutions"
+        learning_outcomes:
+          - "Describe signals an ML system could use to detect identity theft"
+      - id: isc-12-artificial-intelligence-ch06-t04
+        title: "Medical diagnosis from medical images"
+        learning_outcomes:
+          - "Explain how a CNN can assist doctors in reading X-rays or scans"
+      - id: isc-12-artificial-intelligence-ch06-t05
+        title: "Medical diagnosis from genetic information and patient records; benefits and limits of AI in healthcare"
+        learning_outcomes:
+          - "Describe how patient records can be used to predict disease risk"
+          - "Evaluate the benefits and risks of relying on AI for diagnosis"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-artificial-intelligence-ch07
+    number: 7
+    title: "Introduction to Computer Vision"
+    unit: "Unit 5: Introduction to Computer Vision"
+    topics:
+      - id: isc-12-artificial-intelligence-ch07-t01
+        title: "Computer vision and real-world applications of OpenCV"
+        learning_outcomes:
+          - "Explain what computer vision is and list real-world applications of OpenCV"
+      - id: isc-12-artificial-intelligence-ch07-t02
+        title: "Image classification: a simple classifier for categories such as cats vs dogs or fruits vs vegetables"
+        learning_outcomes:
+          - "Outline the steps of building a simple image classifier"
+      - id: isc-12-artificial-intelligence-ch07-t03
+        title: "Object detection: identifying and localising objects such as cars or faces"
+        learning_outcomes:
+          - "Distinguish object detection from image classification"
+      - id: isc-12-artificial-intelligence-ch07-t04
+        title: "Facial recognition in images and video"
+        learning_outcomes:
+          - "Explain the stages of a facial recognition system from detection to identification"
+          - "Discuss privacy concerns of facial recognition"
+      - id: isc-12-artificial-intelligence-ch07-t05
+        title: "Colour detection: sorting objects or detecting ripe fruit by colour"
+        learning_outcomes:
+          - "Explain how colour thresholds can be used to detect objects of a given colour"
+      - id: isc-12-artificial-intelligence-ch07-t06
+        title: "Object tracking across video frames, e.g. a ball in sports footage or vehicles in traffic"
+        learning_outcomes:
+          - "Explain how an object is tracked over successive frames of a video"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

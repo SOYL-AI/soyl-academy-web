@@ -1,0 +1,407 @@
+# ICSE Class 9 Marathi (Second Language, code 09) - ICSE 2028 course, CLASS IX portion only.
+# Literature: titles and authors only (CONTEXT section 8). Students read the texts in their own textbook.
+subject_id: icse-9-marathi
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2028-second-languages, icse-2028-prescribed-books, cisce-circular-2026-27-33-indian-languages, icse-2028-regulations]
+exam_notes: >-
+  Class IX is year one of the two-year ICSE 2028 course: there is no board examination in Class IX. The school conducts the
+  Class IX examination, normally on the ICSE paper pattern: one paper of 3 hours, 80 marks, plus internal assessment 20 marks
+  (two or three assignments in Class IX, of which two are written - one from language and one from literature; suggested Class
+  IX work: creative writing of about 300-400 words from stimuli such as recorded music or sounds, a picture, an opening
+  sentence or a news clipping, a film or book review, an aural (listening) exercise, and literature assignments on
+  character/theme, background and summary; marked 10 by the subject teacher and 10 by an external examiner). Section A Language
+  (40 marks, compulsory): one composition, one letter (choice of two), an unseen comprehension passage of about 250 words, and
+  grammar (vocabulary, syntax and idiom, sentence synthesis, sentences embodying given words or forms). Section B Prescribed
+  Texts (40 marks): answer four questions from ONLY two of the four prescribed books; questions are set and answered in the
+  language. Prescribed texts are bifurcated (Second Languages syllabus and Circular 2026-27/33): the Class IX examination is
+  set ONLY on the Class IX portion listed here (Class X portion is in icse-10-marathi); Section A is not bifurcated. All four
+  books are published by Saraswati House, New Delhi. Appendix I does not name the author of the novel Karunashtak (printed
+  Karunastak for Class IX); it is Vyankatesh Madgulkar. The play authors appear in Appendix I as R G Gadkari, A. Kanekar, P L
+  Deshpande and P. Darvekar (Ram Ganesh Gadkari, Anant Kanekar, Pu. La. Deshpande, Purushottam Darvhekar). In Santawani, the
+  Bharud by Sant Eknath has been cancelled by CISCE. Devanagari spellings of some titles are SOYL renderings of the CISCE
+  transliteration; title_en keeps the CISCE form. CISCE describes the grammar component only generically and says it needs no
+  knowledge of grammatical terms; the grammar chapters below break it into item types commonly set in ICSE papers - this
+  breakdown is SOYL's, not CISCE's. CISCE lists topics not chapters; SOYL grouped them into teachable chapters in syllabus
+  order. SOYL covers all four prescribed books so a student can pick any two.
+units:
+  - { name: "विभाग अ - भाषा (Section A: Language)", marks: 40 }
+  - { name: "विभाग ब - नेमलेली पाठ्यपुस्तके (Section B: Prescribed Texts)", marks: 40 }
+chapters:
+  - id: icse-9-marathi-ch01
+    number: 1
+    title: "निबंध लेखन"
+    title_en: "Composition writing"
+    unit: "विभाग अ - भाषा (Section A: Language)"
+    topics:
+      - id: icse-9-marathi-ch01-t01
+        title: "निबंधाची आखणी: विषयनिवड, मुद्दे, प्रस्तावना, विस्तार आणि समारोप"
+        title_en: "Planning a composition: topic, points, introduction, body and conclusion"
+        learning_outcomes:
+          - "दिलेल्या विषयावर मुद्दे काढून २५०-३०० शब्दांचा सुसंघटित निबंध लिहिणे"
+          - "परिच्छेदांची तर्कशुद्ध आणि सुसंगत मांडणी करणे"
+      - id: icse-9-marathi-ch01-t02
+        title: "वर्णनात्मक आणि कथनात्मक निबंध"
+        title_en: "Descriptive and narrative compositions"
+        learning_outcomes:
+          - "एखादे स्थळ, प्रसंग किंवा अनुभव यांचे जिवंत वर्णन करणे"
+          - "घटनांचे क्रमवार आणि रंजक कथन करणे"
+      - id: icse-9-marathi-ch01-t03
+        title: "स्पष्टीकरणात्मक आणि वैचारिक लेखन: सूचना, कृतीचे टप्पे, मतप्रदर्शन"
+        title_en: "Explanations, directions and reflective or argumentative writing"
+        learning_outcomes:
+          - "एखादी कृती किंवा प्रक्रिया टप्प्याटप्प्याने स्पष्ट करणे"
+          - "सामाजिक विषयावर बाजूचे व विरोधी मुद्दे मांडून निष्कर्ष काढणे"
+      - id: icse-9-marathi-ch01-t04
+        title: "चित्र, वस्तू किंवा दिलेल्या वाक्यावरून कथा/निबंध लेखन"
+        title_en: "Composition from a picture, object or given opening line"
+        learning_outcomes:
+          - "दिलेल्या चित्रावरून किंवा सुरुवातीच्या वाक्यावरून स्वतंत्र कथा लिहिणे"
+      - id: icse-9-marathi-ch01-t05
+        title: "भाषेची शुद्धता: शुद्धलेखन, विरामचिन्हे आणि समर्पक शब्दनिवड"
+        title_en: "Accuracy: spelling, punctuation and apt word choice"
+        learning_outcomes:
+          - "स्वतःच्या लेखनातील शुद्धलेखन आणि विरामचिन्हांच्या चुका ओळखून दुरुस्त करणे"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-marathi-ch02
+    number: 2
+    title: "पत्रलेखन"
+    title_en: "Letter writing"
+    unit: "विभाग अ - भाषा (Section A: Language)"
+    topics:
+      - id: icse-9-marathi-ch02-t01
+        title: "औपचारिक पत्राचा आराखडा: पत्ता, दिनांक, प्रति, विषय, मायना आणि समारोप"
+        title_en: "Layout of a formal letter: address, date, addressee, subject, salutation and closing"
+        learning_outcomes:
+          - "औपचारिक पत्राचे सर्व घटक योग्य क्रमाने आणि आराखड्यात लिहिणे"
+      - id: icse-9-marathi-ch02-t02
+        title: "मुख्याध्यापक, संपादक व अधिकाऱ्यांना पत्र: विनंती, तक्रार, सूचना"
+        title_en: "Letters to a principal, editor or official: request, complaint, suggestion"
+        learning_outcomes:
+          - "समस्या थोडक्यात आणि नम्रपणे मांडून योग्य मागणी करणे"
+      - id: icse-9-marathi-ch02-t03
+        title: "अनौपचारिक पत्र: मित्र, आई-वडील किंवा नातेवाईकांना"
+        title_en: "Informal letters to friends, parents or relatives"
+        learning_outcomes:
+          - "अनौपचारिक पत्रात योग्य मायना, आपुलकीची भाषा आणि समारोप वापरणे"
+      - id: icse-9-marathi-ch02-t04
+        title: "दिलेल्या मुद्द्यांच्या आधारे पत्राचा विस्तार"
+        title_en: "Developing a letter from given points"
+        learning_outcomes:
+          - "प्रश्नात दिलेले सर्व मुद्दे पत्रात समाविष्ट करणे"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-marathi-ch03
+    number: 3
+    title: "अपठित उतारा"
+    title_en: "Unseen passage (comprehension)"
+    unit: "विभाग अ - भाषा (Section A: Language)"
+    topics:
+      - id: icse-9-marathi-ch03-t01
+        title: "उतारा वाचण्याचे तंत्र: मध्यवर्ती कल्पना आणि पूरक तपशील"
+        title_en: "Reading strategy: main idea and supporting details"
+        learning_outcomes:
+          - "सुमारे २५० शब्दांच्या उताऱ्याची मध्यवर्ती कल्पना एक-दोन वाक्यांत सांगणे"
+      - id: icse-9-marathi-ch03-t02
+        title: "तथ्यात्मक आणि अनुमानात्मक प्रश्नांची स्वतःच्या शब्दांत उत्तरे"
+        title_en: "Answering factual and inferential questions in their own words"
+        learning_outcomes:
+          - "उताऱ्यातील वाक्ये जशीच्या तशी न उतरवता स्वतःच्या शब्दांत उत्तरे लिहिणे"
+          - "उताऱ्याच्या आधारे कारण आणि परिणाम यांचा अंदाज बांधणे"
+      - id: icse-9-marathi-ch03-t03
+        title: "संदर्भानुसार शब्दार्थ, शीर्षक आणि संदेश"
+        title_en: "Word meanings in context, a title and the message"
+        learning_outcomes:
+          - "संदर्भावरून कठीण शब्दांचे अर्थ ओळखणे"
+          - "उताऱ्याला समर्पक शीर्षक सुचवून त्याचे समर्थन करणे"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-marathi-ch04
+    number: 4
+    title: "व्याकरण: शब्दसंपत्ती"
+    title_en: "Grammar: vocabulary"
+    unit: "विभाग अ - भाषा (Section A: Language)"
+    topics:
+      - id: icse-9-marathi-ch04-t01
+        title: "शब्दसिद्धी: भाववाचक नामे आणि विशेषणे तयार करणे"
+        title_en: "Forming abstract nouns and adjectives"
+        learning_outcomes:
+          - "दिलेल्या शब्दांना प्रत्यय लावून भाववाचक नाम किंवा विशेषण तयार करणे"
+      - id: icse-9-marathi-ch04-t02
+        title: "समानार्थी आणि विरुद्धार्थी शब्द"
+        title_en: "Synonyms and antonyms"
+        learning_outcomes:
+          - "प्रचलित शब्दांचे समानार्थी आणि विरुद्धार्थी शब्द लिहिणे"
+      - id: icse-9-marathi-ch04-t03
+        title: "शब्दसमूहाबद्दल एक शब्द"
+        title_en: "One word for a group of words"
+        learning_outcomes:
+          - "शब्दसमूहासाठी योग्य एक शब्द निवडून वाक्यात वापरणे"
+      - id: icse-9-marathi-ch04-t04
+        title: "जवळच्या उच्चाराचे भिन्नार्थी शब्द आणि शुद्धलेखन"
+        title_en: "Similar-sounding words with different meanings; correct spelling"
+        learning_outcomes:
+          - "जवळच्या उच्चाराच्या शब्दांतील अर्थभेद वाक्यात उपयोग करून स्पष्ट करणे"
+          - "अशुद्ध शब्द शुद्ध करून लिहिणे"
+    removed_topics:
+      - "Knowledge of grammatical terms as such (CISCE: the grammar question does not require it)"
+    literature_texts: []
+  - id: icse-9-marathi-ch05
+    number: 5
+    title: "व्याकरण: वाक्यरचना आणि वाक्प्रचार"
+    title_en: "Grammar: sentence construction and idioms"
+    unit: "विभाग अ - भाषा (Section A: Language)"
+    topics:
+      - id: icse-9-marathi-ch05-t01
+        title: "वाक्प्रचार आणि म्हणी: अर्थ आणि वाक्यात उपयोग"
+        title_en: "Idioms and proverbs: meaning and use in sentences"
+        learning_outcomes:
+          - "वाक्प्रचाराचा अर्थ सांगून त्याचा प्रसंगानुरूप वाक्यात उपयोग करणे"
+      - id: icse-9-marathi-ch05-t02
+        title: "वाक्यशुद्धी: लिंग, वचन, विभक्ती आणि क्रियापदाच्या चुका"
+        title_en: "Correcting sentences: gender, number, case and verb errors"
+        learning_outcomes:
+          - "वाक्यातील व्याकरणिक चूक ओळखून शुद्ध वाक्य लिहिणे"
+      - id: icse-9-marathi-ch05-t03
+        title: "सूचनेनुसार वाक्यबदल: काळ, प्रयोग, होकारार्थी-नकारार्थी, प्रश्नार्थी"
+        title_en: "Transforming sentences as directed: tense, voice, affirmative/negative, question"
+        learning_outcomes:
+          - "दिलेल्या सूचनेनुसार अर्थ न बदलता वाक्याचे रूपांतर करणे"
+      - id: icse-9-marathi-ch05-t04
+        title: "वाक्यसंश्लेषण: दोन किंवा अधिक वाक्ये जोडून एक वाक्य"
+        title_en: "Synthesis: combining sentences into one"
+        learning_outcomes:
+          - "दोन किंवा अधिक साधी वाक्ये जोडून संयुक्त किंवा मिश्र वाक्य तयार करणे"
+      - id: icse-9-marathi-ch05-t05
+        title: "दिलेले शब्द किंवा रूपे वापरून वाक्यरचना"
+        title_en: "Making sentences using given words or forms"
+        learning_outcomes:
+          - "दिलेला शब्द किंवा रूप वापरून अर्थपूर्ण वाक्य तयार करणे"
+    removed_topics:
+      - "Knowledge of grammatical terms as such (CISCE: the grammar question does not require it)"
+    literature_texts: []
+  - id: icse-9-marathi-ch06
+    number: 6
+    title: "कथाकुंज (कथासंकलन)"
+    title_en: "Kathakunj: short stories (Class IX portion)"
+    unit: "विभाग ब - नेमलेली पाठ्यपुस्तके (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-9-marathi-ch06-t01
+        title: "दोन मेघ (वि. स. खांडेकर): कथानक, पात्रे आणि प्रतीकार्थ"
+        title_en: "Don Megh (V.S. Khandekar): plot, characters and symbolism"
+        learning_outcomes:
+          - "कथेतील प्रमुख घटनांचा क्रम स्वतःच्या शब्दांत सांगणे"
+          - "प्रमुख पात्रांची स्वभाववैशिष्ट्ये कथेतील उदाहरणांसह लिहिणे"
+          - "'दोन मेघ' या शीर्षकातील प्रतीकार्थ आणि कथेचा आशय स्पष्ट करणे"
+      - id: icse-9-marathi-ch06-t02
+        title: "दुधावरची साय (य. गो. जोशी): कथानक, पात्रे आणि शीर्षकातील म्हण"
+        title_en: "Dudhaverchi Sai (Y.G. Joshi): plot, characters and the saying in the title"
+        learning_outcomes:
+          - "कथेतील प्रमुख घटनांचा क्रम स्वतःच्या शब्दांत सांगणे"
+          - "प्रमुख पात्रांमधील नातेसंबंध उदाहरणांसह स्पष्ट करणे"
+          - "'दुधावरची साय' या शब्दप्रयोगाचा अर्थ सांगून कथेशी त्याचा संबंध स्पष्ट करणे"
+      - id: icse-9-marathi-ch06-t03
+        title: "बेघर (ज्योत्स्ना देवधर): कथानक, पात्रे आणि आशय"
+        title_en: "Beghar (Jyotsana Devdhar): plot, characters and theme"
+        learning_outcomes:
+          - "कथेतील प्रमुख घटनांचा क्रम स्वतःच्या शब्दांत सांगणे"
+          - "प्रमुख पात्रांची स्वभाववैशिष्ट्ये कथेतील उदाहरणांसह लिहिणे"
+          - "कथेचा आशय आणि शीर्षकाची समर्पकता स्पष्ट करणे"
+      - id: icse-9-marathi-ch06-t04
+        title: "शाळा (व्यंकटेश माडगूळकर): कथानक, पात्रे आणि आशय"
+        title_en: "Shala (Vyankatesh Madgulkar): plot, characters and theme"
+        learning_outcomes:
+          - "कथेतील प्रमुख घटनांचा क्रम स्वतःच्या शब्दांत सांगणे"
+          - "प्रमुख पात्रांची स्वभाववैशिष्ट्ये कथेतील उदाहरणांसह लिहिणे"
+          - "कथेचा आशय आणि शीर्षकाची समर्पकता स्पष्ट करणे"
+      - id: icse-9-marathi-ch06-t05
+        title: "चोरी (मधु मंगेश कर्णिक): कथानक, पात्रे आणि आशय"
+        title_en: "Chori (Madhu Mangesh Karnik): plot, characters and theme"
+        learning_outcomes:
+          - "कथेतील प्रमुख घटनांचा क्रम स्वतःच्या शब्दांत सांगणे"
+          - "प्रमुख पात्रांची स्वभाववैशिष्ट्ये कथेतील उदाहरणांसह लिहिणे"
+          - "कथेचा आशय आणि शीर्षकाची समर्पकता स्पष्ट करणे"
+    removed_topics:
+      - "Class X stories of Kathakunj: Veg, Rusava, Pauus Aala Motha, Punnya, Parambya (see icse-10-marathi)"
+    literature_texts:
+      - { title: "दोन मेघ", author: "वि. स. खांडेकर", title_en: "Don Megh - V.S. Khandekar" }
+      - { title: "दुधावरची साय", author: "य. गो. जोशी", title_en: "Dudhaverchi Sai - Y.G. Joshi" }
+      - { title: "बेघर", author: "ज्योत्स्ना देवधर", title_en: "Beghar - Jyotsana Devdhar" }
+      - { title: "शाळा", author: "व्यंकटेश माडगूळकर", title_en: "Shala - Vyankatesh Madgulkar" }
+      - { title: "चोरी", author: "मधु मंगेश कर्णिक", title_en: "Chori - Madhu Mangesh Karnik" }
+  - id: icse-9-marathi-ch07
+    number: 7
+    title: "काव्यांगण: संतवाणी"
+    title_en: "Kavyangan: Santawani (saint poetry, Class IX portion)"
+    unit: "विभाग ब - नेमलेली पाठ्यपुस्तके (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-9-marathi-ch07-t01
+        title: "सुखाचे हे सुख (संत नामदेव): भावार्थ आणि भक्तिभाव"
+        title_en: "Sukhanche He Sukh (Sant Namdev): meaning and devotion"
+        learning_outcomes:
+          - "अभंगाचा भावार्थ स्वतःच्या शब्दांत लिहिणे"
+          - "संतांनी दिलेला संदेश आणि त्याचे आजच्या जीवनातील महत्त्व स्पष्ट करणे"
+      - id: icse-9-marathi-ch07-t02
+        title: "कांदा मुळा भाजी (संत सावता माळी): कर्मातच ईश्वर"
+        title_en: "Kanda Mula Bhaji (Sant Sawata Mali): finding God in daily work"
+        learning_outcomes:
+          - "अभंगाचा भावार्थ स्वतःच्या शब्दांत लिहिणे"
+          - "रोजच्या कामातच ईश्वर पाहण्याचा संतांचा विचार उदाहरणांसह स्पष्ट करणे"
+      - id: icse-9-marathi-ch07-t03
+        title: "नको देवराया (संत कान्होपात्रा): ईश्वराला केलेली आर्त विनवणी"
+        title_en: "Nako Devraya (Sant Kanhopatra): an earnest plea to God"
+        learning_outcomes:
+          - "अभंगाचा भावार्थ स्वतःच्या शब्दांत लिहिणे"
+          - "अभंगात व्यक्त झालेली आर्तता आणि शरणागतीची भावना स्पष्ट करणे"
+      - id: icse-9-marathi-ch07-t04
+        title: "देह देवाचे मंदिर (संत तुकाराम): देहातच देवाचा वास"
+        title_en: "Deh Devache Mandir (Sant Tukaram): the body as the temple of God"
+        learning_outcomes:
+          - "अभंगाचा भावार्थ स्वतःच्या शब्दांत लिहिणे"
+          - "'देह देवाचे मंदिर' या कल्पनेचा अर्थ आणि तिचा संदेश स्पष्ट करणे"
+      - id: icse-9-marathi-ch07-t05
+        title: "ऐसे केले या गोपाळे (संत शेख महंमद): भावार्थ आणि संदेश"
+        title_en: "Eaise KeleYa Gopale (Sant Shekh Manamad): meaning and message"
+        learning_outcomes:
+          - "अभंगाचा भावार्थ स्वतःच्या शब्दांत लिहिणे"
+          - "संतांनी दिलेला संदेश आणि त्याचे आजच्या जीवनातील महत्त्व स्पष्ट करणे"
+      - id: icse-9-marathi-ch07-t06
+        title: "संतसाहित्य: वारकरी परंपरा आणि अभंग रचनेची वैशिष्ट्ये"
+        title_en: "Saint literature: the Varkari tradition and features of the abhang"
+        learning_outcomes:
+          - "वारकरी संतपरंपरेची थोडक्यात ओळख करून देणे"
+          - "अभंगाची रचना, भाषा आणि गेयता यांची वैशिष्ट्ये उदाहरणांसह सांगणे"
+    removed_topics:
+      - "Santawani: Bharud by Sant Eknath (cancelled by CISCE)"
+      - "Class X poems of Kavyangan: Kana, Gheta, Paithani, Palkhiche Bhoee, Maza Marathicha Bol (see icse-10-marathi)"
+    literature_texts:
+      - { title: "सुखाचे हे सुख", author: "संत नामदेव", title_en: "Sukhanche He Sukh - Sant Namdev" }
+      - { title: "कांदा मुळा भाजी", author: "संत सावता माळी", title_en: "Kanda Mula Bhaji - Sant Sawata Mali" }
+      - { title: "नको देवराया", author: "संत कान्होपात्रा", title_en: "Nako Devraya - Sant Kanhopatra" }
+      - { title: "देह देवाचे मंदिर", author: "संत तुकाराम", title_en: "Deh Devache Mandir - Sant Tukaram" }
+      - { title: "ऐसे केले या गोपाळे", author: "संत शेख महंमद", title_en: "Eaise KeleYa Gopale - Sant Shekh Manamad" }
+  - id: icse-9-marathi-ch08
+    number: 8
+    title: "काव्यांगण: कविता"
+    title_en: "Kavyangan: poems (Class IX portion)"
+    unit: "विभाग ब - नेमलेली पाठ्यपुस्तके (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-9-marathi-ch08-t01
+        title: "मन (बहिणाबाई चौधरी): चंचल मनाचे वर्णन"
+        title_en: "Man (Bahinabai Chaudhari): the restless human mind"
+        learning_outcomes:
+          - "मनाच्या चंचलतेचे कवयित्रीने केलेले वर्णन स्वतःच्या शब्दांत लिहिणे"
+          - "ग्रामीण जीवनातील दृष्टान्त आणि उपमा ओळखून त्यांचा अर्थ स्पष्ट करणे"
+          - "बहिणाबाईंच्या बोलीभाषेतील काव्याचे सौंदर्य सांगणे"
+      - id: icse-9-marathi-ch08-t02
+        title: "श्रावणमास (बालकवी): श्रावणातील निसर्गसौंदर्य"
+        title_en: "Shravanmas (Balkavi): the beauty of nature in Shravan"
+        learning_outcomes:
+          - "कवितेत वर्णन केलेले श्रावणातील निसर्गचित्र स्वतःच्या शब्दांत लिहिणे"
+          - "कवितेतील प्रतिमा, नादमाधुर्य आणि आनंदी भाव स्पष्ट करणे"
+      - id: icse-9-marathi-ch08-t03
+        title: "प्रेमाचा गुलकंद (केशवकुमार): विनोद आणि विडंबन"
+        title_en: "Premacha Gulkand (Keshavkumar): humour and parody"
+        learning_outcomes:
+          - "कवितेत घडणारा प्रसंग स्वतःच्या शब्दांत सांगणे"
+          - "कवितेतील विनोद आणि विडंबनाचे स्वरूप उदाहरणांसह स्पष्ट करणे"
+      - id: icse-9-marathi-ch08-t04
+        title: "कितीतरी दिवसांत (बा. सी. मर्ढेकर): आधुनिक जीवन आणि हरवलेला आनंद"
+        title_en: "Kititari Divasant (B.S. Mardhekar): modern life and lost simple joys"
+        learning_outcomes:
+          - "कवितेचा मध्यवर्ती भाव स्वतःच्या शब्दांत लिहिणे"
+          - "यांत्रिक शहरी जीवनात हरवलेल्या साध्या आनंदांविषयी कवीची खंत स्पष्ट करणे"
+          - "कवितेतील नवकाव्याची वैशिष्ट्ये ओळखणे"
+    removed_topics:
+      - "Class X poems of Kavyangan (see icse-10-marathi)"
+    literature_texts:
+      - { title: "मन", author: "बहिणाबाई चौधरी", title_en: "Man - Bahinabai Chaudhari" }
+      - { title: "श्रावणमास", author: "बालकवी", title_en: "Shravanmas - Balkavi" }
+      - { title: "प्रेमाचा गुलकंद", author: "केशवकुमार", title_en: "Premacha Gulkand - Keshavkumar" }
+      - { title: "कितीतरी दिवसांत", author: "बा. सी. मर्ढेकर", title_en: "Kititari Divasant - B.S. Mardhekar" }
+  - id: icse-9-marathi-ch09
+    number: 9
+    title: "करुणाष्टक (कादंबरी): भाग १ ते ६"
+    title_en: "Karunashtak (novel): Bhag 1 to 6"
+    unit: "विभाग ब - नेमलेली पाठ्यपुस्तके (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-9-marathi-ch09-t01
+        title: "भाग १ ते ३: कथेची सुरुवात, कुटुंब आणि वातावरण"
+        title_en: "Bhag 1 to 3: opening of the story, the family and its world"
+        learning_outcomes:
+          - "या भागांतील प्रमुख घटना क्रमाने सांगणे"
+          - "कादंबरीतील कुटुंब आणि त्याचे वातावरण यांचे वर्णन करणे"
+      - id: icse-9-marathi-ch09-t02
+        title: "भाग ४ ते ६: घटनाक्रम आणि कथानकाचा विकास"
+        title_en: "Bhag 4 to 6: events and development of the story"
+        learning_outcomes:
+          - "या भागांतील प्रमुख घटनांचा सारांश लिहिणे"
+          - "या भागांतील प्रसंगांवर स्वतःची प्रतिक्रिया लिहिणे"
+      - id: icse-9-marathi-ch09-t03
+        title: "प्रमुख पात्रांचे स्वभावचित्रण"
+        title_en: "Character sketches of the main characters"
+        learning_outcomes:
+          - "प्रमुख पात्राचे स्वभावचित्रण कादंबरीतील प्रसंगांच्या आधारे लिहिणे"
+      - id: icse-9-marathi-ch09-t04
+        title: "कादंबरीचा आशय आणि 'करुणाष्टक' शीर्षकाची समर्पकता"
+        title_en: "Themes and the significance of the title Karunashtak"
+        learning_outcomes:
+          - "नेमलेल्या भागांतील कौटुंबिक जीवन आणि संघर्षाचे चित्रण स्पष्ट करणे"
+          - "शीर्षकाची समर्पकता उदाहरणांसह स्पष्ट करणे"
+      - id: icse-9-marathi-ch09-t05
+        title: "निवेदनशैली आणि भाषा"
+        title_en: "Narrative style and language"
+        learning_outcomes:
+          - "लेखकाच्या निवेदनशैलीची वैशिष्ट्ये उदाहरणांसह सांगणे"
+    removed_topics:
+      - "Bhag 7 to Bhag 11 (Class X portion; see icse-10-marathi)"
+    literature_texts:
+      - { title: "करुणाष्टक (भाग १ ते ६)", author: "व्यंकटेश माडगूळकर", title_en: "Karunastak / Karunashtak (Bhag 1 to 6) - Vyankatesh Madgulkar" }
+  - id: icse-9-marathi-ch10
+    number: 10
+    title: "रंगस्पर्श (एकांकिका संकलन)"
+    title_en: "Rangasparsha: one-act plays (Class IX portion)"
+    unit: "विभाग ब - नेमलेली पाठ्यपुस्तके (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-9-marathi-ch10-t01
+        title: "सकाळचा अभ्यास (राम गणेश गडकरी): कथानक, पात्रे आणि विनोद"
+        title_en: "Sakalcha Abhyas (R G Gadkari): plot, characters and humour"
+        learning_outcomes:
+          - "एकांकिकेतील घटनाक्रम स्वतःच्या शब्दांत सांगणे"
+          - "प्रमुख पात्रांचे स्वभावचित्रण संवादांच्या आधारे करणे"
+          - "एकांकिकेतील विनोदनिर्मितीचे मार्ग उदाहरणांसह स्पष्ट करणे"
+      - id: icse-9-marathi-ch10-t02
+        title: "घर (अनंत काणेकर): कथानक, पात्रे आणि आशय"
+        title_en: "Ghar (A. Kanekar): plot, characters and theme"
+        learning_outcomes:
+          - "एकांकिकेतील घटनाक्रम स्वतःच्या शब्दांत सांगणे"
+          - "प्रमुख पात्रांचे स्वभावचित्रण संवादांच्या आधारे करणे"
+          - "एकांकिकेचा आशय आणि शीर्षकाची समर्पकता स्पष्ट करणे"
+      - id: icse-9-marathi-ch10-t03
+        title: "विठ्ठल तो आला आला (पु. ल. देशपांडे): कथानक, पात्रे आणि विनोद"
+        title_en: "Vitthal to aala aala (P L Deshpande): plot, characters and humour"
+        learning_outcomes:
+          - "एकांकिकेतील घटनाक्रम स्वतःच्या शब्दांत सांगणे"
+          - "प्रमुख पात्रांचे स्वभावचित्रण संवादांच्या आधारे करणे"
+          - "पु. ल. देशपांडे यांच्या विनोदशैलीची वैशिष्ट्ये उदाहरणांसह सांगणे"
+      - id: icse-9-marathi-ch10-t04
+        title: "अबोल झाली सतार (पुरुषोत्तम दारव्हेकर): कथानक, पात्रे आणि आशय"
+        title_en: "Abol Zali Satar (P. Darvekar): plot, characters and theme"
+        learning_outcomes:
+          - "एकांकिकेतील घटनाक्रम स्वतःच्या शब्दांत सांगणे"
+          - "प्रमुख पात्रांचे स्वभावचित्रण संवादांच्या आधारे करणे"
+          - "एकांकिकेचा आशय आणि शीर्षकाची समर्पकता स्पष्ट करणे"
+      - id: icse-9-marathi-ch10-t05
+        title: "एकांकिकेची तत्त्वे: संवाद, संघर्ष, रंगसूचना आणि रंगमंचीयता"
+        title_en: "Elements of a one-act play: dialogue, conflict, stage directions, stageability"
+        learning_outcomes:
+          - "संवाद आणि रंगसूचनांमुळे पात्रे व प्रसंग कसे उलगडतात हे स्पष्ट करणे"
+    removed_topics:
+      - "Class X one-act plays: Chori Zalich Nahi, Char Divas (see icse-10-marathi)"
+    literature_texts:
+      - { title: "सकाळचा अभ्यास", author: "राम गणेश गडकरी", title_en: "Sakalcha Abhyas - R G Gadkari" }
+      - { title: "घर", author: "अनंत काणेकर", title_en: "Ghar - A. Kanekar" }
+      - { title: "विठ्ठल तो आला आला", author: "पु. ल. देशपांडे", title_en: "Vitthal to aala aala - P L Deshpande" }
+      - { title: "अबोल झाली सतार", author: "पुरुषोत्तम दारव्हेकर", title_en: "Abol Zali Satar - P. Darvekar" }
+removed_topics: []

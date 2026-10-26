@@ -1,0 +1,424 @@
+# ICSE Class 8 Mathematics - CISCE Curriculum for Upper Primary Classes VI-VIII (2016), Mathematics, Class VIII part only.
+# Source: platform/catalog/sources/cisce.md#cisce-upper-primary-curriculum (Mathematics, Class VIII, Themes 1-6).
+# Topic wording is our own summary of the official key concepts and learning outcomes.
+subject_id: icse-8-mathematics
+academic_year: "2026-27"
+source_status: verified
+sources: [cisce-upper-primary-curriculum]
+exam_notes: >-
+  No board examination in Class 8. CISCE publishes a recommended theme-based curriculum (Curriculum for Upper Primary
+  Classes VI-VIII, RDCD, 2016) with learning outcomes per class; it prescribes no textbooks, no paper pattern and no
+  marks weightage. Schools choose their own textbooks and set their own unit tests and term examinations; the curriculum
+  asks for continuous assessment through oral and written work, projects, activities and portfolios as well as tests.
+  The Class VIII curriculum has six themes (Number System, Ratio and Proportion, Algebra, Geometry, Mensuration, Data
+  Handling), each with learning outcomes and key concepts; SOYL grouped them into 16 teachable chapters in curriculum
+  order. The Geometry learning outcomes add the Cartesian plane and reading linear graphs, included here as a chapter.
+  The Algebra introduction also mentions systems of two linear equations, but these are not in the Class VIII key
+  concepts or learning outcomes, so SOYL does not include them.
+units:
+  - { name: "Theme 1: Number System", marks: null }
+  - { name: "Theme 2: Ratio and Proportion", marks: null }
+  - { name: "Theme 3: Algebra", marks: null }
+  - { name: "Theme 4: Geometry", marks: null }
+  - { name: "Theme 5: Mensuration", marks: null }
+  - { name: "Theme 6: Data Handling", marks: null }
+chapters:
+  - id: icse-8-mathematics-ch01
+    number: 1
+    title: "Rational Numbers"
+    unit: "Theme 1: Number System"
+    topics:
+      - id: icse-8-mathematics-ch01-t01
+        title: "Properties of rational numbers in general form: closure, commutativity, associativity, distributivity"
+        learning_outcomes:
+          - "State and verify the properties of operations on rational numbers using general forms such as a/b + c/d"
+          - "Use the properties to simplify calculations"
+      - id: icse-8-mathematics-ch01-t02
+        title: "Identity and inverse elements for rational numbers"
+        learning_outcomes:
+          - "Identify the additive and multiplicative identity and inverse of a rational number"
+      - id: icse-8-mathematics-ch01-t03
+        title: "Representing rational numbers on the number line"
+        learning_outcomes:
+          - "Mark rational numbers accurately on a number line"
+      - id: icse-8-mathematics-ch01-t04
+        title: "Rational numbers between two rational numbers"
+        learning_outcomes:
+          - "Find rational numbers between two given rational numbers, for example by taking their mean"
+          - "Explain why there are infinitely many rational numbers between any two rational numbers"
+      - id: icse-8-mathematics-ch01-t05
+        title: "Word problems on rational numbers"
+        learning_outcomes:
+          - "Solve multi-step word problems, including problems on area, using rational numbers"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-mathematics-ch02
+    number: 2
+    title: "Exponents and Powers"
+    unit: "Theme 1: Number System"
+    topics:
+      - id: icse-8-mathematics-ch02-t01
+        title: "Integers as exponents: writing repeated multiplication and division"
+        learning_outcomes:
+          - "Write repeated multiplication and division using integral (including zero and negative) exponents"
+          - "Evaluate powers with zero and negative exponents"
+      - id: icse-8-mathematics-ch02-t02
+        title: "Laws of exponents with integral powers"
+        learning_outcomes:
+          - "Describe and verify the laws of exponents with integral powers using patterns"
+      - id: icse-8-mathematics-ch02-t03
+        title: "Simplifying expressions using the laws of exponents"
+        learning_outcomes:
+          - "Simplify and evaluate numerical expressions involving integral powers"
+          - "Solve simple equations such as 2^x = 1/8 by comparing powers"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-mathematics-ch03
+    number: 3
+    title: "Squares, Square Roots, Cubes and Cube Roots"
+    unit: "Theme 1: Number System"
+    topics:
+      - id: icse-8-mathematics-ch03-t01
+        title: "Square numbers and their patterns"
+        learning_outcomes:
+          - "Find squares of numbers and identify perfect squares from their properties and patterns"
+      - id: icse-8-mathematics-ch03-t02
+        title: "Square roots by prime factorisation"
+        learning_outcomes:
+          - "Find the square root of a perfect square by prime factorisation"
+      - id: icse-8-mathematics-ch03-t03
+        title: "Square roots by the division method (up to 4 digits, up to 2 decimal places)"
+        learning_outcomes:
+          - "Find square roots of whole numbers and decimals by the long-division method"
+      - id: icse-8-mathematics-ch03-t04
+        title: "Estimating square roots"
+        learning_outcomes:
+          - "Estimate the square root of a non-perfect square to the nearest whole number"
+      - id: icse-8-mathematics-ch03-t05
+        title: "Cubes and cube roots by prime factorisation (numbers up to 3 digits)"
+        learning_outcomes:
+          - "Find cubes of numbers and identify perfect cubes"
+          - "Find the cube root of a perfect cube by prime factorisation"
+      - id: icse-8-mathematics-ch03-t06
+        title: "Estimating cube roots"
+        learning_outcomes:
+          - "Estimate the cube root of a number by locating it between consecutive perfect cubes"
+    removed_topics:
+      - "Square roots of numbers with more than 4 digits or more than 2 decimal places"
+      - "Cube roots by any method other than prime factorisation; numbers above 3 digits"
+    literature_texts: []
+  - id: icse-8-mathematics-ch04
+    number: 4
+    title: "Playing with Numbers"
+    unit: "Theme 1: Number System"
+    topics:
+      - id: icse-8-mathematics-ch04-t01
+        title: "Generalised form of 2-digit and 3-digit numbers (10a + b, 100a + 10b + c)"
+        learning_outcomes:
+          - "Write a 2-digit or 3-digit number in generalised form"
+          - "Use the generalised form to explain number tricks such as reversing digits"
+      - id: icse-8-mathematics-ch04-t02
+        title: "Letter puzzles with the four operations"
+        learning_outcomes:
+          - "Find the digits represented by letters in a sum or product puzzle"
+          - "Create a simple number puzzle of their own"
+      - id: icse-8-mathematics-ch04-t03
+        title: "Deducing divisibility tests for 2, 3, 5, 9 and 10"
+        learning_outcomes:
+          - "Prove the divisibility tests for 2, 3, 5, 9 and 10 using the generalised form of a number"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-mathematics-ch05
+    number: 5
+    title: "Sets"
+    unit: "Theme 1: Number System"
+    topics:
+      - id: icse-8-mathematics-ch05-t01
+        title: "Union and intersection of sets"
+        learning_outcomes:
+          - "Find the union and intersection of two sets"
+          - "Represent union and intersection using Venn diagrams"
+      - id: icse-8-mathematics-ch05-t02
+        title: "Disjoint sets"
+        learning_outcomes:
+          - "Identify disjoint sets from their elements or a Venn diagram"
+      - id: icse-8-mathematics-ch05-t03
+        title: "Complement of a set"
+        learning_outcomes:
+          - "Find the complement of a set with respect to a universal set"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-mathematics-ch06
+    number: 6
+    title: "Percentage, Profit and Loss, Discount and Tax"
+    unit: "Theme 2: Ratio and Proportion"
+    topics:
+      - id: icse-8-mathematics-ch06-t01
+        title: "Applications of percentage (advanced problems)"
+        learning_outcomes:
+          - "Solve problems on percentage increase and decrease"
+      - id: icse-8-mathematics-ch06-t02
+        title: "Profit and loss including overhead expenses"
+        learning_outcomes:
+          - "Calculate cost price including overhead expenses and the resulting profit or loss per cent"
+      - id: icse-8-mathematics-ch06-t03
+        title: "Discount: marked price and selling price"
+        learning_outcomes:
+          - "Calculate discount, discount per cent and selling price from the marked price"
+      - id: icse-8-mathematics-ch06-t04
+        title: "Tax on purchases"
+        learning_outcomes:
+          - "Calculate the tax added to a bill and the total amount paid"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-mathematics-ch07
+    number: 7
+    title: "Simple and Compound Interest"
+    unit: "Theme 2: Ratio and Proportion"
+    topics:
+      - id: icse-8-mathematics-ch07-t01
+        title: "Simple interest (revision)"
+        learning_outcomes:
+          - "Calculate simple interest and amount for a given principal, rate and time"
+      - id: icse-8-mathematics-ch07-t02
+        title: "Compound interest by repeated calculation"
+        learning_outcomes:
+          - "Calculate compound interest year by year and compare it with simple interest for the same principal, rate and time"
+      - id: icse-8-mathematics-ch07-t03
+        title: "Formula for compound interest from patterns (yearly up to 3 years, half-yearly up to 3 steps)"
+        learning_outcomes:
+          - "Derive the compound-amount formula from the year-by-year pattern"
+          - "Use the formula for interest compounded yearly or half-yearly"
+    removed_topics:
+      - "Compound interest for more than 3 years (yearly) or more than 3 half-yearly steps"
+    literature_texts: []
+  - id: icse-8-mathematics-ch08
+    number: 8
+    title: "Direct and Inverse Variation; Time and Work"
+    unit: "Theme 2: Ratio and Proportion"
+    topics:
+      - id: icse-8-mathematics-ch08-t01
+        title: "Direct variation"
+        learning_outcomes:
+          - "Identify quantities in direct variation and solve simple word problems on them"
+      - id: icse-8-mathematics-ch08-t02
+        title: "Inverse variation"
+        learning_outcomes:
+          - "Identify quantities in inverse variation and solve simple word problems on them"
+      - id: icse-8-mathematics-ch08-t03
+        title: "Time and work"
+        learning_outcomes:
+          - "Solve simple, direct problems on time and work using the unitary method"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-mathematics-ch09
+    number: 9
+    title: "Algebraic Expressions, Identities and Factorisation"
+    unit: "Theme 3: Algebra"
+    topics:
+      - id: icse-8-mathematics-ch09-t01
+        title: "Multiplication of algebraic expressions (integral coefficients)"
+        learning_outcomes:
+          - "Multiply monomials, binomials and polynomials using the distributive property"
+      - id: icse-8-mathematics-ch09-t02
+        title: "Division of algebraic expressions"
+        learning_outcomes:
+          - "Divide a polynomial by a monomial"
+      - id: icse-8-mathematics-ch09-t03
+        title: "Common errors in algebra"
+        learning_outcomes:
+          - "Explain why 2 + x is not 2x and 7x + y is not 7xy, and correct such errors"
+      - id: icse-8-mathematics-ch09-t04
+        title: "Identities: (a + b)^2, (a - b)^2 and a^2 - b^2 = (a + b)(a - b)"
+        learning_outcomes:
+          - "Derive the identities by multiplying expressions"
+          - "Use the identities to expand expressions and to calculate products such as 102^2 or 98 x 102"
+      - id: icse-8-mathematics-ch09-t05
+        title: "Factorisation by common factors and by identities"
+        learning_outcomes:
+          - "Factorise expressions of the forms a(x + y), (x + y)^2, (x - y)^2 and a^2 - b^2"
+      - id: icse-8-mathematics-ch09-t06
+        title: "Factorisation of the form (x + a)(x + b)"
+        learning_outcomes:
+          - "Factorise trinomials of the form x^2 + (a + b)x + ab"
+    removed_topics:
+      - "Factorisation beyond the simple cases listed"
+    literature_texts: []
+  - id: icse-8-mathematics-ch10
+    number: 10
+    title: "Linear Equations and Inequalities"
+    unit: "Theme 3: Algebra"
+    topics:
+      - id: icse-8-mathematics-ch10-t01
+        title: "Linear equations in one variable with simple rational coefficients"
+        learning_outcomes:
+          - "Solve linear equations in one variable involving multiplication and division"
+      - id: icse-8-mathematics-ch10-t02
+        title: "Word problems leading to linear equations"
+        learning_outcomes:
+          - "Form and solve linear equations from contextual word problems"
+      - id: icse-8-mathematics-ch10-t03
+        title: "Properties of inequalities"
+        learning_outcomes:
+          - "State how an inequality changes when both sides are multiplied or divided by a negative number"
+      - id: icse-8-mathematics-ch10-t04
+        title: "Solving inequalities in one variable"
+        learning_outcomes:
+          - "Solve linear inequalities in one variable and show the solution on a number line"
+    removed_topics:
+      - "Equations with complex coefficients"
+    literature_texts: []
+  - id: icse-8-mathematics-ch11
+    number: 11
+    title: "Quadrilaterals: Properties and Construction"
+    unit: "Theme 4: Geometry"
+    topics:
+      - id: icse-8-mathematics-ch11-t01
+        title: "Angle sum property of a quadrilateral"
+        learning_outcomes:
+          - "Verify that the angles of a quadrilateral add up to 360 degrees and use this to find unknown angles"
+      - id: icse-8-mathematics-ch11-t02
+        title: "Properties of a parallelogram (by verification)"
+        learning_outcomes:
+          - "Verify that opposite sides and opposite angles of a parallelogram are equal and its diagonals bisect each other"
+      - id: icse-8-mathematics-ch11-t03
+        title: "Diagonals of a rectangle, rhombus and square"
+        learning_outcomes:
+          - "State the properties of the diagonals of a rectangle, rhombus and square"
+          - "Explain how these properties follow from the properties of a parallelogram"
+      - id: icse-8-mathematics-ch11-t04
+        title: "Constructing quadrilaterals: four sides and one diagonal; three sides and two diagonals"
+        learning_outcomes:
+          - "Construct a quadrilateral from the given measurements using ruler and compasses"
+      - id: icse-8-mathematics-ch11-t05
+        title: "Constructing quadrilaterals: three sides and two included angles; two adjacent sides and three angles"
+        learning_outcomes:
+          - "Construct a quadrilateral from the given measurements"
+          - "Give a reason for each step of a construction"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-mathematics-ch12
+    number: 12
+    title: "Visualising Solid Shapes"
+    unit: "Theme 4: Geometry"
+    topics:
+      - id: icse-8-mathematics-ch12-t01
+        title: "Matching pictures with objects, including nested and joined shapes"
+        learning_outcomes:
+          - "Identify a solid or a combination of two solids from its picture"
+      - id: icse-8-mathematics-ch12-t02
+        title: "Drawing 2-D representations of 3-D objects"
+        learning_outcomes:
+          - "Draw a 3-D object such as a box on a flat surface"
+      - id: icse-8-mathematics-ch12-t03
+        title: "Faces, edges, vertices and Euler's relation"
+        learning_outcomes:
+          - "Count faces, edges and vertices of cubes, cuboids, tetrahedrons, prisms and pyramids and verify F + V - E = 2"
+      - id: icse-8-mathematics-ch12-t04
+        title: "Nets of prisms and pyramids"
+        learning_outcomes:
+          - "Draw the net of a prism or pyramid and make the solid from it"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-mathematics-ch13
+    number: 13
+    title: "Circles and Symmetry"
+    unit: "Theme 4: Geometry"
+    topics:
+      - id: icse-8-mathematics-ch13-t01
+        title: "Parts of a circle: centre, radius, diameter, arc, chord, sector and segment"
+        learning_outcomes:
+          - "Define and identify the parts of a circle in a diagram"
+          - "Distinguish a sector from a segment"
+      - id: icse-8-mathematics-ch13-t02
+        title: "Reflection symmetry and symmetrical shapes"
+        learning_outcomes:
+          - "Find lines of symmetry of shapes by paper folding"
+          - "Complete a figure given its line of symmetry"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-mathematics-ch14
+    number: 14
+    title: "Introduction to Graphs"
+    unit: "Theme 4: Geometry"
+    topics:
+      - id: icse-8-mathematics-ch14-t01
+        title: "Axes and the Cartesian plane"
+        learning_outcomes:
+          - "Describe the x-axis, y-axis and origin and choose equal units on both axes"
+      - id: icse-8-mathematics-ch14-t02
+        title: "Plotting points as ordered pairs"
+        learning_outcomes:
+          - "Plot and read the coordinates of points in the first quadrant"
+      - id: icse-8-mathematics-ch14-t03
+        title: "Drawing and reading linear graphs from situations"
+        learning_outcomes:
+          - "Draw graphs such as perimeter against side of a square or simple interest against years"
+          - "Read values from a linear graph and describe the relationship it shows"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-mathematics-ch15
+    number: 15
+    title: "Mensuration"
+    unit: "Theme 5: Mensuration"
+    topics:
+      - id: icse-8-mathematics-ch15-t01
+        title: "Area of a trapezium"
+        learning_outcomes:
+          - "Derive the area of a trapezium by converting it into known shapes and use the formula"
+      - id: icse-8-mathematics-ch15-t02
+        title: "Area of polygons and semicircles"
+        learning_outcomes:
+          - "Find the area of a polygon by dividing it into triangles and trapeziums"
+          - "Calculate the area of a semicircle"
+      - id: icse-8-mathematics-ch15-t03
+        title: "Surface area of a cube and a cuboid using nets"
+        learning_outcomes:
+          - "Find the total surface area of a cube and a cuboid"
+          - "Solve problems such as the area of four walls of a room"
+      - id: icse-8-mathematics-ch15-t04
+        title: "Curved and total surface area of a cylinder"
+        learning_outcomes:
+          - "Calculate the curved and total surface area of a cylinder"
+      - id: icse-8-mathematics-ch15-t05
+        title: "Volume using unit cubes; volume of a cube, cuboid and cylinder"
+        learning_outcomes:
+          - "Form the volume formula of a cuboid by counting unit cubes"
+          - "Calculate the volume of a cube, cuboid and cylinder"
+      - id: icse-8-mathematics-ch15-t06
+        title: "Volume and capacity"
+        learning_outcomes:
+          - "Convert between units of volume and capacity (cubic centimetres, litres)"
+          - "Find the capacity of cuboidal and cylindrical containers"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-8-mathematics-ch16
+    number: 16
+    title: "Data Handling"
+    unit: "Theme 6: Data Handling"
+    topics:
+      - id: icse-8-mathematics-ch16-t01
+        title: "Grouping data and frequency tables"
+        learning_outcomes:
+          - "Organise ungrouped data into class intervals with a frequency table"
+      - id: icse-8-mathematics-ch16-t02
+        title: "Bar graphs of grouped data"
+        learning_outcomes:
+          - "Draw and interpret bar graphs (histograms) of grouped data"
+      - id: icse-8-mathematics-ch16-t03
+        title: "Pie charts"
+        learning_outcomes:
+          - "Interpret simple pie charts and calculate the quantity each sector represents"
+          - "Draw a pie chart for simple data"
+      - id: icse-8-mathematics-ch16-t04
+        title: "Chance and probability as a number between 0 and 1"
+        learning_outcomes:
+          - "Describe events as unlikely, equally likely or likely using probabilities near 0, one-half or 1"
+          - "Calculate the experimental probability of an event from repeated trials with coins or dice"
+      - id: icse-8-mathematics-ch16-t05
+        title: "Predicting from data and randomness"
+        learning_outcomes:
+          - "Use data from many repeated trials to predict the chance of a future event"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

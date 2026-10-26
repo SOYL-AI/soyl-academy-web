@@ -1,0 +1,380 @@
+# ICSE Class 10 Basic Data Entry Operator (code 67, Group III Section B vocational) - ICSE 2027 examination.
+# Source: platform/catalog/sources/cisce.md#icse-2027-vocational-data-entry-operator (Class X portion). Topic wording is our own summary.
+subject_id: icse-10-basic-data-entry-operator
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2027-vocational-data-entry-operator, icse-2027-regulations]
+exam_notes: >-
+  One written paper of 2 hours, 100 marks: Part I-A Employability Skills 30 marks (Units 1-5) and Part I-B Vocational
+  Skills 70 marks (Units 6-9); no further unit-wise weightage is published. Internal assessment of practical work 100 marks,
+  marked 50 by the subject teacher and 50 by an external examiner nominated by the Head of School: Practical Work 70
+  (practical examination 40 - any two practicals from different units chosen by the external examiner; practical file 10;
+  viva voce 20) and Project Work 30 (field visit or project report 10, student portfolio 10, viva voce 10).
+  The syllabus pairs each theory list with practical activities (demonstrations, role plays, charts, field visits); these
+  are assessed internally and are not listed as chapters here. The document has separate Class IX and Class X unit lists:
+  this file covers the Class X list only, which is the content of the Class X written paper.
+  The syllabus is written around an open-source office suite (Writer word processor, Calc spreadsheet, Base database);
+  SOYL describes the features generically so they transfer to any office suite. No 2027 specimen paper is listed for this subject.
+  CISCE lists learning outcomes unit by unit, not textbook chapters: SOYL groups them into 14 teachable chapters in
+  syllabus order (chapters 1-5 = Units 1-5; Unit 6 = chapters 6-7; Unit 7 = chapters 8-10; Unit 8 = chapters 11-13;
+  Unit 9 = chapter 14).
+units:
+  - { name: "Part I-A: Employability Skills", marks: 30 }
+  - { name: "Part I-B: Vocational Skills", marks: 70 }
+chapters:
+  - id: icse-10-basic-data-entry-operator-ch01
+    number: 1
+    title: "Communication Skills - II"
+    unit: "Part I-A: Employability Skills"
+    topics:
+      - id: icse-10-basic-data-entry-operator-ch01-t01
+        title: "Methods of communication: verbal, non-verbal and visual"
+        learning_outcomes:
+          - "Compare verbal, non-verbal and visual communication with one workplace example of each"
+          - "List the advantages and limitations of written, spoken and non-verbal messages"
+          - "Identify common body-language mistakes and suggest how to avoid them"
+      - id: icse-10-basic-data-entry-operator-ch01-t02
+        title: "Communication cycle and feedback: meaning and importance; descriptive feedback; specific and non-specific feedback"
+        learning_outcomes:
+          - "Explain the role of feedback in completing the communication cycle"
+          - "Distinguish specific from non-specific feedback using examples"
+          - "Write descriptive, specific feedback on a given piece of work"
+      - id: icse-10-basic-data-entry-operator-ch01-t03
+        title: "Barriers to effective communication: types, causes and measures to overcome them"
+        learning_outcomes:
+          - "Classify barriers to communication (physical, linguistic, emotional, cultural, organisational) in a given situation"
+          - "Suggest suitable measures to overcome each barrier identified"
+      - id: icse-10-basic-data-entry-operator-ch01-t04
+        title: "Principles of effective communication and the 7Cs"
+        learning_outcomes:
+          - "State the 7Cs of effective communication (clear, concise, concrete, correct, coherent, complete, courteous)"
+          - "Rewrite a poorly worded message so that it satisfies the 7Cs"
+      - id: icse-10-basic-data-entry-operator-ch01-t05
+        title: "Basic writing skills: sentence, phrase, kinds and parts of a sentence, parts of speech, articles and paragraph construction"
+        learning_outcomes:
+          - "Identify the kind of a sentence and its subject and predicate"
+          - "Use parts of speech and articles correctly in sentences"
+          - "Write a well-organised paragraph on a topic related to the job role"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-basic-data-entry-operator-ch02
+    number: 2
+    title: "Self-management Skills - II"
+    unit: "Part I-A: Employability Skills"
+    topics:
+      - id: icse-10-basic-data-entry-operator-ch02-t01
+        title: "Stress management: meaning and importance"
+        learning_outcomes:
+          - "Explain what stress is and why managing it matters for health and work performance"
+          - "Identify common sources of stress for a student or a worker"
+      - id: icse-10-basic-data-entry-operator-ch02-t02
+        title: "Stress management techniques: physical exercise, yoga, meditation, holidays with family and friends, nature walks"
+        learning_outcomes:
+          - "Describe how each technique helps to reduce stress"
+          - "Plan a weekly routine that includes at least two stress management techniques"
+      - id: icse-10-basic-data-entry-operator-ch02-t03
+        title: "Working independently: importance; types of self-awareness; self-motivation and self-regulation"
+        learning_outcomes:
+          - "Explain why the ability to work independently is valued at the workplace"
+          - "Describe the types of self-awareness and the meaning of self-motivation and self-regulation"
+          - "Plan and schedule a task to be completed without external direction"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-basic-data-entry-operator-ch03
+    number: 3
+    title: "Information and Communication Technology Skills - II"
+    unit: "Part I-A: Employability Skills"
+    topics:
+      - id: icse-10-basic-data-entry-operator-ch03-t01
+        title: "Classes of operating systems; desktop elements: menu, icons and taskbar"
+        learning_outcomes:
+          - "Distinguish between the main classes of operating systems with an example of each"
+          - "Identify and state the purpose of the menu, icons and taskbar on a desktop"
+      - id: icse-10-basic-data-entry-operator-ch03-t02
+        title: "Files and folders: file concept, file operations, file organisation, directory and file-system structures"
+        learning_outcomes:
+          - "Explain the terms file, folder, directory and file extension"
+          - "Describe the steps to create, rename, delete, move and restore files and folders"
+          - "Draw a directory tree for a given set of folders and sub-folders"
+      - id: icse-10-basic-data-entry-operator-ch03-t03
+        title: "Care and maintenance of a computer: need, cleaning components and preparing a maintenance schedule"
+        learning_outcomes:
+          - "Explain why regular care and maintenance of a computer is necessary"
+          - "Prepare a daily, weekly and monthly maintenance schedule for a computer"
+      - id: icse-10-basic-data-entry-operator-ch03-t04
+        title: "Protecting a computer against viruses; scanning and removing viruses, spam and temporary files"
+        learning_outcomes:
+          - "List the ways in which viruses spread and the signs of an infected computer"
+          - "Describe preventive measures, including antivirus scanning and deleting spam and temporary files"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-basic-data-entry-operator-ch04
+    number: 4
+    title: "Entrepreneurial Skills - II"
+    unit: "Part I-A: Employability Skills"
+    topics:
+      - id: icse-10-basic-data-entry-operator-ch04-t01
+        title: "Entrepreneurship and society"
+        learning_outcomes:
+          - "Explain how entrepreneurs contribute to society through jobs, products and local development"
+      - id: icse-10-basic-data-entry-operator-ch04-t02
+        title: "Qualities, functions, role and importance of an entrepreneur"
+        learning_outcomes:
+          - "List the qualities of a successful entrepreneur and relate them to a local success story"
+          - "Describe the main functions of an entrepreneur"
+      - id: icse-10-basic-data-entry-operator-ch04-t03
+        title: "Myths about entrepreneurship; entrepreneurship as a career option"
+        learning_outcomes:
+          - "Identify common myths about entrepreneurship and explain why they are misleading"
+          - "Compare entrepreneurship with wage employment as a career option"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-basic-data-entry-operator-ch05
+    number: 5
+    title: "Green Skills - II"
+    unit: "Part I-A: Employability Skills"
+    topics:
+      - id: icse-10-basic-data-entry-operator-ch05-t01
+        title: "Sustainable development: definition and importance"
+        learning_outcomes:
+          - "Define sustainable development"
+          - "Explain why development must meet present needs without harming future generations"
+      - id: icse-10-basic-data-entry-operator-ch05-t02
+        title: "Problems related to sustainable development and possible solutions"
+        learning_outcomes:
+          - "Identify problems in the local community that hinder sustainable development"
+          - "Suggest practical solutions such as rainwater harvesting, drip irrigation, composting and solar energy"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-basic-data-entry-operator-ch06
+    number: 6
+    title: "Digital Documentation: Styles and Templates"
+    unit: "Part I-B: Vocational Skills"
+    topics:
+      - id: icse-10-basic-data-entry-operator-ch06-t01
+        title: "Style categories (paragraph, character, frame, page, list) and the Styles window; Fill Format mode"
+        learning_outcomes:
+          - "Name the style categories in a word processor and state what each controls"
+          - "Explain how Fill Format applies one style quickly to many parts of a document"
+      - id: icse-10-basic-data-entry-operator-ch06-t02
+        title: "Creating and updating styles from a selection, by drag-and-drop, and loading styles from a template or another document"
+        learning_outcomes:
+          - "Describe three ways of creating a new style"
+          - "Explain how updating a style changes all text formatted with it"
+      - id: icse-10-basic-data-entry-operator-ch06-t03
+        title: "Templates: predefined templates, creating a template and setting a custom default template"
+        learning_outcomes:
+          - "Explain the purpose of a template and how it differs from an ordinary document"
+          - "Describe the steps to create a template and set it as the default"
+      - id: icse-10-basic-data-entry-operator-ch06-t04
+        title: "Using templates: updating a document from its template and changing to a different template"
+        learning_outcomes:
+          - "Describe how a document picks up changes made to its template"
+          - "Explain how to apply a different template to an existing document"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-basic-data-entry-operator-ch07
+    number: 7
+    title: "Digital Documentation: Images, Drawing Objects and Table of Contents"
+    unit: "Part I-B: Vocational Skills"
+    topics:
+      - id: icse-10-basic-data-entry-operator-ch07-t01
+        title: "Inserting images from various sources; modifying, resizing, cropping and deleting images"
+        learning_outcomes:
+          - "List the sources from which an image can be inserted into a document"
+          - "Distinguish cropping from resizing an image"
+      - id: icse-10-basic-data-entry-operator-ch07-t02
+        title: "Drawing objects: creating them, setting properties, resizing and grouping"
+        learning_outcomes:
+          - "Describe how to draw a shape and change its line and fill properties"
+          - "Explain why drawing objects are grouped"
+      - id: icse-10-basic-data-entry-operator-ch07-t03
+        title: "Positioning images in text: anchoring, alignment and text wrapping"
+        learning_outcomes:
+          - "Choose a suitable wrap and anchor setting for an image in a given layout"
+      - id: icse-10-basic-data-entry-operator-ch07-t04
+        title: "Table of contents: heading hierarchy, creating, customising and maintaining a table of contents; character styles"
+        learning_outcomes:
+          - "Explain how heading styles define the levels of a table of contents"
+          - "Describe how to customise and update a table of contents after editing a document"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-basic-data-entry-operator-ch08
+    number: 8
+    title: "Electronic Spreadsheet: Data Analysis Tools"
+    unit: "Part I-B: Vocational Skills"
+    topics:
+      - id: icse-10-basic-data-entry-operator-ch08-t01
+        title: "Consolidating data from several ranges or sheets"
+        learning_outcomes:
+          - "Explain the purpose of the Consolidate tool and describe how to use it"
+      - id: icse-10-basic-data-entry-operator-ch08-t02
+        title: "Creating subtotals"
+        learning_outcomes:
+          - "Describe how to create subtotals for grouped data and interpret the outline that results"
+      - id: icse-10-basic-data-entry-operator-ch08-t03
+        title: "What-if analysis: scenarios and what-if (multiple operations) tools"
+        learning_outcomes:
+          - "Create and compare scenarios for a simple budget"
+          - "Explain how a what-if tool shows the effect of changing an input value"
+      - id: icse-10-basic-data-entry-operator-ch08-t04
+        title: "Goal Seek and Solver"
+        learning_outcomes:
+          - "Use Goal Seek to find the input needed for a target result"
+          - "Distinguish Goal Seek from Solver"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-basic-data-entry-operator-ch09
+    number: 9
+    title: "Electronic Spreadsheet: Linking, Sharing and Reviewing"
+    unit: "Part I-B: Vocational Skills"
+    topics:
+      - id: icse-10-basic-data-entry-operator-ch09-t01
+        title: "Setting up multiple sheets; references to other sheets and to other documents"
+        learning_outcomes:
+          - "Write a cell reference to a cell on another sheet and in another file"
+      - id: icse-10-basic-data-entry-operator-ch09-t02
+        title: "Hyperlinks (relative and absolute) to sheets; linking to external data and registered data sources"
+        learning_outcomes:
+          - "Distinguish relative and absolute hyperlinks"
+          - "Explain why a spreadsheet may be linked to external data or a registered data source"
+      - id: icse-10-basic-data-entry-operator-ch09-t03
+        title: "Sharing a spreadsheet: setting up, opening and saving a shared file"
+        learning_outcomes:
+          - "Describe how to share a spreadsheet so that several users can edit it"
+      - id: icse-10-basic-data-entry-operator-ch09-t04
+        title: "Reviewing: recording changes, comments, accepting or rejecting changes, merging and comparing documents"
+        learning_outcomes:
+          - "Explain how tracked changes are viewed, accepted or rejected"
+          - "Distinguish merging documents from comparing documents"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-basic-data-entry-operator-ch10
+    number: 10
+    title: "Electronic Spreadsheet: Macros"
+    unit: "Part I-B: Vocational Skills"
+    topics:
+      - id: icse-10-basic-data-entry-operator-ch10-t01
+        title: "Recording a macro with the macro recorder; creating a simple macro"
+        learning_outcomes:
+          - "Explain what a macro is and why it is useful"
+          - "Describe the steps to record, save and run a macro"
+      - id: icse-10-basic-data-entry-operator-ch10-t02
+        title: "Using a macro as a function; passing arguments and values; macros that work like built-in functions"
+        learning_outcomes:
+          - "Explain how arguments are passed to a macro used as a function"
+      - id: icse-10-basic-data-entry-operator-ch10-t03
+        title: "Accessing cells directly from a macro; sorting columns with a macro"
+        learning_outcomes:
+          - "Describe how a macro can read or write cell values and sort a column"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-basic-data-entry-operator-ch11
+    number: 11
+    title: "Database Concepts"
+    unit: "Part I-B: Vocational Skills"
+    topics:
+      - id: icse-10-basic-data-entry-operator-ch11-t01
+        title: "Data and information; concept, advantages and features of a database"
+        learning_outcomes:
+          - "Distinguish data from information with examples"
+          - "List the advantages of storing data in a database rather than in files"
+      - id: icse-10-basic-data-entry-operator-ch11-t02
+        title: "Relational databases; field, record, table and database"
+        learning_outcomes:
+          - "Identify fields, records and tables in a given relational database"
+      - id: icse-10-basic-data-entry-operator-ch11-t03
+        title: "Keys: primary key, composite primary key and foreign key"
+        learning_outcomes:
+          - "Choose a suitable primary key for a table and justify it"
+          - "Explain how a foreign key links two tables"
+      - id: icse-10-basic-data-entry-operator-ch11-t04
+        title: "Database management system (DBMS) software"
+        learning_outcomes:
+          - "State the functions of a DBMS and name examples of DBMS software"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-basic-data-entry-operator-ch12
+    number: 12
+    title: "Database Tables and Relationships"
+    unit: "Part I-B: Vocational Skills"
+    topics:
+      - id: icse-10-basic-data-entry-operator-ch12-t01
+        title: "The database application window; database objects: tables, queries, forms and reports"
+        learning_outcomes:
+          - "State the purpose of each database object"
+      - id: icse-10-basic-data-entry-operator-ch12-t02
+        title: "Creating a table with the Table Wizard; data types; setting a primary key; Table Data View"
+        learning_outcomes:
+          - "Choose an appropriate data type for each field of a given table"
+          - "Describe the steps to create a table with the wizard and set a primary key"
+      - id: icse-10-basic-data-entry-operator-ch12-t03
+        title: "Table operations: inserting, editing, deleting and sorting records; field properties"
+        learning_outcomes:
+          - "Describe how records are added, edited, deleted and sorted"
+          - "Explain the use of field properties such as length, default value and required"
+      - id: icse-10-basic-data-entry-operator-ch12-t04
+        title: "Relationships (one-to-one, one-to-many, many-to-many) and referential integrity"
+        learning_outcomes:
+          - "Identify the type of relationship between two given tables"
+          - "Explain how referential integrity prevents inconsistent data"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-basic-data-entry-operator-ch13
+    number: 13
+    title: "Database Queries, Forms and Reports"
+    unit: "Part I-B: Vocational Skills"
+    topics:
+      - id: icse-10-basic-data-entry-operator-ch13-t01
+        title: "Queries: meaning; creating with the wizard and in Design View; editing a query"
+        learning_outcomes:
+          - "Explain the purpose of a query"
+          - "Describe how to create a query in Design View"
+      - id: icse-10-basic-data-entry-operator-ch13-t02
+        title: "Query criteria on single and multiple fields and with wildcards; calculations and grouping"
+        learning_outcomes:
+          - "Write criteria to retrieve records that match given conditions, including wildcard patterns"
+          - "Use a calculated field and grouping to summarise data"
+      - id: icse-10-basic-data-entry-operator-ch13-t03
+        title: "Structured Query Language (SQL): basic commands"
+        learning_outcomes:
+          - "Write simple SQL SELECT statements with WHERE and ORDER BY clauses"
+      - id: icse-10-basic-data-entry-operator-ch13-t04
+        title: "Forms: creating with the Form Wizard; entering, searching, inserting and deleting records; modifying labels and background"
+        learning_outcomes:
+          - "Explain why forms are used for data entry"
+          - "Describe how to create and modify a form with the wizard"
+      - id: icse-10-basic-data-entry-operator-ch13-t05
+        title: "Reports: concept and creating a report with the Report Wizard"
+        learning_outcomes:
+          - "Distinguish a report from a form"
+          - "Describe the steps of the Report Wizard"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-basic-data-entry-operator-ch14
+    number: 14
+    title: "Maintaining Health, Safety and a Secure Working Environment"
+    unit: "Part I-B: Vocational Skills"
+    topics:
+      - id: icse-10-basic-data-entry-operator-ch14-t01
+        title: "Basic workplace safety rules: fire safety, falls and slips, electrical safety and first aid; case studies of hazardous situations"
+        learning_outcomes:
+          - "List safety rules that prevent fires, falls and electric shocks in an office"
+          - "Analyse a case of a workplace hazard and suggest preventive steps"
+      - id: icse-10-basic-data-entry-operator-ch14-t02
+        title: "Accidents and emergencies: types and handling"
+        learning_outcomes:
+          - "Classify workplace accidents and emergencies by type"
+          - "Describe the immediate response to a given accident"
+      - id: icse-10-basic-data-entry-operator-ch14-t03
+        title: "Hazards and their sources; general evacuation procedures"
+        learning_outcomes:
+          - "Identify hazards in a computer workplace and their sources"
+          - "Describe the steps of a general evacuation procedure"
+      - id: icse-10-basic-data-entry-operator-ch14-t04
+        title: "Healthy living for computer workers"
+        learning_outcomes:
+          - "Suggest healthy habits such as correct posture, screen breaks and exercise for data entry work"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

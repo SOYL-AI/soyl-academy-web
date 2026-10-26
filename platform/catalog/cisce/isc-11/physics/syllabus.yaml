@@ -1,0 +1,711 @@
+# ISC Class 11 Physics (861), Paper I Theory - ISC 2028 syllabus, CLASS XI portion only.
+# Source: platform/catalog/sources/cisce.md#isc-2028-physics. Topic wording is our own summary of the official scope.
+subject_id: isc-11-physics
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-physics, isc-2028-regulations]
+exam_notes: >-
+  Class XI is year one of the two-year ISC 2028 course. There is no board examination in Class XI: the final
+  examination is conducted internally by the school on the Class XI portion, and promotion to Class XII needs at least
+  35% on the cumulative average in five subjects including English, with 75% attendance (ISC 2028 Regulations).
+  The syllabus prescribes, and the school examination usually follows: Paper I Theory, 3 hours, 70 marks; Paper II
+  Practical, 3 hours, 15 marks, plus Project Work 10 marks and Practical File 5 marks (total 30). Required experiments:
+  Vernier calipers (volume of a sphere with significant figures), screw gauge (percentage error in area), spherometer,
+  parallelogram law of forces, force on a roller on an inclined plane, limiting friction and coefficient of friction,
+  g from a simple pendulum (T^2 vs L, seconds pendulum), force constant of a spring, Boyle's law, cooling curve and
+  Newton's law of cooling, resonance column (speed of sound), sonometer frequency and specific heat capacity of a solid;
+  teacher demonstrations of Searle's method (Young's modulus), capillary rise (surface tension) and terminal-velocity
+  viscosity. Observations are tabulated with units and every experiment ends with a graph and calculation. The project
+  is a technical report (abstract, theory, set-up, data, analysis, conclusion). SOYL covers Paper I only.
+  SI units throughout; every quantity is introduced with its unit and dimensions; numerical problems are set from all
+  topics unless a topic is marked qualitative or excluded. No Class XI specimen paper is published for Physics.
+  The official weightage table gives combined marks for groups of units (Units 1-3: 23, Units 4-6: 17, Units 7-9: 20,
+  Unit 10: 10), so those groups are the units below. CISCE lists topics under ten units, not textbook chapters: SOYL
+  groups them into 23 teachable chapters in syllabus order. The Class XII portion is in isc-12-physics.
+units:
+  - { name: "Units 1-3: Physical World and Measurement; Kinematics; Laws of Motion", marks: 23 }
+  - { name: "Units 4-6: Work, Energy and Power; Motion of System of Particles and Rigid Body; Gravitation", marks: 17 }
+  - { name: "Units 7-9: Properties of Bulk Matter; Heat and Thermodynamics; Kinetic Theory of Gases", marks: 20 }
+  - { name: "Unit 10: Oscillations and Waves", marks: 10 }
+chapters:
+  - id: isc-11-physics-ch01
+    number: 1
+    title: "Units and Measurement"
+    unit: "Units 1-3: Physical World and Measurement; Kinematics; Laws of Motion"
+    topics:
+      - id: isc-11-physics-ch01-t01
+        title: "Physics as a science of measurement; unit as a reference standard; systems of units (CGS, FPS, MKS, MKSA, SI)"
+        learning_outcomes:
+          - "Explain why a unit must be well defined, reproducible and invariable"
+          - "Compare the CGS, FPS, MKS and SI systems for length, mass and time"
+      - id: isc-11-physics-ch01-t02
+        title: "The seven SI base units, supplementary and derived units; rules for writing unit names and symbols; prefixes from atto to tera"
+        learning_outcomes:
+          - "List the seven SI base quantities with their units and symbols"
+          - "Express a derived unit such as the newton or joule in terms of base units"
+          - "Correct errors in unit symbols and prefixes written against SI rules"
+      - id: isc-11-physics-ch01-t03
+        title: "Other common units: fermi, angstrom, light year, astronomical unit, parsec, unified atomic mass unit (u); measuring length, mass and time"
+        learning_outcomes:
+          - "Convert astronomical and atomic distances between light years, AU, parsecs, fermi and metres"
+          - "Choose a suitable unit and method to measure very large and very small lengths, masses and times"
+      - id: isc-11-physics-ch01-t04
+        title: "Errors in measurement; significant figures; rules for counting and for arithmetic operations; rounding off; order of magnitude"
+        learning_outcomes:
+          - "Count the significant figures in a measured value"
+          - "Report the result of an addition or multiplication with the correct number of significant figures"
+          - "Estimate the order of magnitude of quantities such as the size of an atom or the age of the universe"
+      - id: isc-11-physics-ch01-t05
+        title: "Dimensions and dimensional formulae of physical quantities and constants; principle of homogeneity"
+        learning_outcomes:
+          - "Write the dimensional formula of a quantity such as force, pressure or the gravitational constant, e.g. [F] = [MLT^-2]"
+          - "State the principle of homogeneity of dimensions"
+      - id: isc-11-physics-ch01-t06
+        title: "Uses of dimensional analysis: checking equations, finding dimensions of constants, converting units; limitations"
+        learning_outcomes:
+          - "Check the dimensional correctness of an equation such as v^2 = u^2 + 2as"
+          - "Convert a quantity such as 1 newton into dynes using dimensions"
+          - "State three limitations of dimensional analysis"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-physics-ch02
+    number: 2
+    title: "Motion in a Straight Line"
+    unit: "Units 1-3: Physical World and Measurement; Kinematics; Laws of Motion"
+    topics:
+      - id: isc-11-physics-ch02-t01
+        title: "Frame of reference; point mass; rest and motion; distance and displacement; speed and velocity (average and instantaneous)"
+        learning_outcomes:
+          - "Distinguish distance from displacement and average speed from average velocity for a given path"
+          - "Explain instantaneous velocity as the limit of average velocity over a shrinking time interval"
+      - id: isc-11-physics-ch02-t02
+        title: "Elementary calculus for physics: differentiation as rate of change; derivatives of x^n, sin x, cos x, e^x and ln x; integration of x^n (definite and indefinite)"
+        learning_outcomes:
+          - "Find velocity and acceleration by differentiating a position-time function such as x = 3t^2 + 2t"
+          - "Integrate x^n to find displacement from a velocity function between two limits"
+      - id: isc-11-physics-ch02-t03
+        title: "Uniform and non-uniform motion; acceleration and instantaneous acceleration; s-t, v-t and a-t graphs"
+        learning_outcomes:
+          - "Sketch s-t, v-t and a-t graphs for uniform velocity and uniform acceleration"
+          - "Find displacement from the area under a v-t graph and acceleration from its slope"
+      - id: isc-11-physics-ch02-t04
+        title: "Equations of uniformly accelerated motion derived by graphical, calculus and analytical methods"
+        learning_outcomes:
+          - "Derive v = u + at, s = ut + (1/2)at^2 and v^2 = u^2 + 2as by the graphical and the calculus method"
+          - "Solve numerical problems on uniformly accelerated rectilinear motion"
+      - id: isc-11-physics-ch02-t05
+        title: "Motion under gravity in one dimension"
+        learning_outcomes:
+          - "Solve problems on bodies thrown vertically up or dropped, including maximum height and time of flight"
+          - "Draw the v-t graph of a ball thrown vertically upward and returning to the hand"
+    removed_topics:
+      - "Evaluation of integrals beyond the simple idea of integrating x^n"
+    literature_texts: []
+  - id: isc-11-physics-ch03
+    number: 3
+    title: "Vectors"
+    unit: "Units 1-3: Physical World and Measurement; Kinematics; Laws of Motion"
+    topics:
+      - id: isc-11-physics-ch03-t01
+        title: "Scalars and vectors; position and displacement vectors; equality of vectors; null and coplanar vectors"
+        learning_outcomes:
+          - "Classify physical quantities as scalars or vectors with reasons"
+          - "Represent a displacement as a vector in one, two and three dimensions"
+      - id: isc-11-physics-ch03-t02
+        title: "Unit vectors i, j, k; vectors written as a i + b j + c k; multiplication of a vector by a real number"
+        learning_outcomes:
+          - "Write a vector in terms of i, j and k and find its magnitude"
+          - "Find the unit vector in the direction of a given vector"
+      - id: isc-11-physics-ch03-t03
+        title: "Addition and subtraction: triangle and parallelogram laws; magnitude and direction of the resultant; special cases"
+        learning_outcomes:
+          - "Derive the magnitude and direction of the resultant of two vectors using the parallelogram law"
+          - "Show that the two diagonals of a parallelogram give the sum and the difference of two vectors"
+          - "Add and subtract vectors given in unit-vector form"
+      - id: isc-11-physics-ch03-t04
+        title: "Resolution of a vector; rectangular components and their relation to the resultant"
+        learning_outcomes:
+          - "Resolve a force into rectangular components along given axes"
+          - "Find the resultant and its angle from its rectangular components"
+      - id: isc-11-physics-ch03-t05
+        title: "Scalar (dot) product a.b = ab cos(theta), e.g. work W = F.S; vector (cross) product a x b = ab sin(theta) n, e.g. torque = r x F"
+        learning_outcomes:
+          - "Calculate dot and cross products of vectors given in i, j, k form"
+          - "Use the dot product to find the angle between two vectors"
+          - "State the special cases of dot and cross products for angles of 0, 90 and 180 degrees"
+    removed_topics:
+      - "Proof of the commutative and associative properties of vector addition"
+    literature_texts: []
+  - id: isc-11-physics-ch04
+    number: 4
+    title: "Projectile Motion"
+    unit: "Units 1-3: Physical World and Measurement; Kinematics; Laws of Motion"
+    topics:
+      - id: isc-11-physics-ch04-t01
+        title: "Projectile motion as two independent motions; terms used (angle of projection, time of flight, maximum height, range)"
+        learning_outcomes:
+          - "Explain why the horizontal velocity of a projectile stays constant while the vertical velocity changes"
+          - "Give everyday examples of projectile motion such as a thrown cricket ball"
+      - id: isc-11-physics-ch04-t02
+        title: "Equation of trajectory; expressions for time of flight, maximum height and horizontal range; maximum range at 45 degrees"
+        learning_outcomes:
+          - "Derive the equation of the trajectory and show that it is a parabola"
+          - "Derive and use the expressions for time of flight, maximum height and range"
+      - id: isc-11-physics-ch04-t03
+        title: "Instantaneous velocity of a projectile; horizontally launched projectiles"
+        learning_outcomes:
+          - "Calculate the magnitude and direction of a projectile's velocity at any instant"
+          - "Solve problems on a body projected horizontally from a height"
+    removed_topics:
+      - "Projectile motion on an inclined plane"
+    literature_texts: []
+  - id: isc-11-physics-ch05
+    number: 5
+    title: "Newton's Laws of Motion"
+    unit: "Units 1-3: Physical World and Measurement; Kinematics; Laws of Motion"
+    topics:
+      - id: isc-11-physics-ch05-t01
+        title: "Force and inertia; Newton's first law (law of inertia)"
+        learning_outcomes:
+          - "State Newton's first law and relate inertia to mass"
+          - "Explain everyday situations such as passengers lurching forward when a bus brakes"
+      - id: isc-11-physics-ch05-t02
+        title: "Momentum and Newton's second law F = dp/dt; F = ma as the classical special case; variation of mass at speeds near c (idea only)"
+        learning_outcomes:
+          - "Derive F = ma from F = dp/dt for constant mass and define the newton"
+          - "Resolve F = ma into component equations to solve problems"
+      - id: isc-11-physics-ch05-t03
+        title: "Impulse; principle of conservation of linear momentum; Newton's third law obtained from momentum conservation"
+        learning_outcomes:
+          - "Calculate impulse as change in momentum, e.g. in catching a ball"
+          - "Derive the law of conservation of linear momentum and apply it to recoil of a gun"
+          - "Show that Newton's third law follows from conservation of momentum"
+      - id: isc-11-physics-ch05-t04
+        title: "Solving mechanics problems: free-body diagrams, tension and normal reaction; connected bodies"
+        learning_outcomes:
+          - "Draw a free-body diagram showing all forces on an isolated part of a system"
+          - "Find acceleration and tension for two bodies connected by a string over a single pulley"
+      - id: isc-11-physics-ch05-t05
+        title: "Equilibrium of concurrent forces: triangle law, parallelogram law and resolution; three coplanar forces on a rigid body; ladder problem"
+        learning_outcomes:
+          - "State the conditions for equilibrium of three coplanar forces"
+          - "Solve for the forces on a ladder resting against a smooth wall"
+    removed_topics:
+      - "Connected-body problems involving two pulleys"
+    literature_texts: []
+  - id: isc-11-physics-ch06
+    number: 6
+    title: "Friction"
+    unit: "Units 1-3: Physical World and Measurement; Kinematics; Laws of Motion"
+    topics:
+      - id: isc-11-physics-ch06-t01
+        title: "Classical and modern views of friction; static friction as a self-adjusting force; limiting friction; kinetic and rolling friction"
+        learning_outcomes:
+          - "Explain why static friction adjusts itself up to a limiting value"
+          - "Compare static, kinetic and rolling friction with examples"
+      - id: isc-11-physics-ch06-t02
+        title: "Laws of static and kinetic friction; coefficients mu_s = f_s(max)/N and mu_k = f_k/N; friction-force graph; friction as a non-conservative force"
+        learning_outcomes:
+          - "State the laws of static and kinetic friction"
+          - "Draw and interpret the graph of friction force against applied force"
+      - id: isc-11-physics-ch06-t03
+        title: "Motion on a rough inclined plane (up and down); pulling versus pushing a roller"
+        learning_outcomes:
+          - "Calculate the force needed to move a block up and down a rough incline"
+          - "Explain why pulling a roller is easier than pushing it"
+      - id: isc-11-physics-ch06-t04
+        title: "Angle of friction and angle of repose; reducing friction by lubrication, bearings and streamlining"
+        learning_outcomes:
+          - "Show that the tangent of the angle of repose equals the coefficient of static friction"
+          - "Describe methods of reducing friction in machines and vehicles"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-physics-ch07
+    number: 7
+    title: "Circular Motion"
+    unit: "Units 1-3: Physical World and Measurement; Kinematics; Laws of Motion"
+    topics:
+      - id: isc-11-physics-ch07-t01
+        title: "Angular displacement, angular velocity and angular acceleration and their relations with linear quantities"
+        learning_outcomes:
+          - "Use v = r omega and a = r alpha to convert between angular and linear quantities"
+      - id: isc-11-physics-ch07-t02
+        title: "Centripetal acceleration (expression derived from change in velocity); centripetal force as the name of a direction, not a new force"
+        learning_outcomes:
+          - "Derive a = v^2/r for uniform circular motion"
+          - "Identify the force that provides the centripetal force in examples such as a satellite or a stone on a string"
+      - id: isc-11-physics-ch07-t03
+        title: "Vehicle on a level circular road; banking of roads and railway tracks"
+        learning_outcomes:
+          - "Find the maximum safe speed of a car on a level curve using friction"
+          - "Derive the angle of banking for a given speed and radius"
+      - id: isc-11-physics-ch07-t04
+        title: "Motion in a vertical circle"
+        learning_outcomes:
+          - "Find the minimum speed at the top of a vertical circle for a body on a string"
+          - "Calculate the tension at the top and bottom of the circle"
+    removed_topics:
+      - "Conical pendulum"
+    literature_texts: []
+  - id: isc-11-physics-ch08
+    number: 8
+    title: "Work, Energy and Power"
+    unit: "Units 4-6: Work, Energy and Power; Motion of System of Particles and Rigid Body; Gravitation"
+    topics:
+      - id: isc-11-physics-ch08-t01
+        title: "Work done by a constant force W = F.S = FS cos(theta); work by a variable force as the area under an F-S graph"
+        learning_outcomes:
+          - "Calculate work done by a force at an angle to the displacement"
+          - "Find work done by a variable force from the area under a force-displacement graph"
+      - id: isc-11-physics-ch08-t02
+        title: "Kinetic energy and the work-energy theorem"
+        learning_outcomes:
+          - "Derive the work-energy theorem for a constant force"
+          - "Apply the work-energy theorem to find the stopping distance of a vehicle"
+      - id: isc-11-physics-ch08-t03
+        title: "Potential energy; work done in stretching a spring and spring potential energy U = (1/2)kx^2; conservative and non-conservative forces"
+        learning_outcomes:
+          - "Derive U = (1/2)kx^2 by integrating the spring force"
+          - "Distinguish conservative from non-conservative forces with examples"
+      - id: isc-11-physics-ch08-t04
+        title: "Conservation of mechanical energy; energy of an oscillating spring (U + K = E); energy graphs and transformations; E = mc^2 (statement)"
+        learning_outcomes:
+          - "Show that U + K remains constant for a mass on an oscillating spring"
+          - "Draw graphs of potential, kinetic and total energy against displacement"
+          - "Use E = mc^2 to calculate the energy equivalent of a small mass"
+      - id: isc-11-physics-ch08-t05
+        title: "Power P = W/t and P = F.v"
+        learning_outcomes:
+          - "Calculate the power of a motor lifting a load or of a vehicle moving at constant speed"
+    removed_topics:
+      - "Derivation of E = mc^2"
+    literature_texts: []
+  - id: isc-11-physics-ch09
+    number: 9
+    title: "Collisions"
+    unit: "Units 4-6: Work, Energy and Power; Motion of System of Particles and Rigid Body; Gravitation"
+    topics:
+      - id: isc-11-physics-ch09-t01
+        title: "Elastic and inelastic collisions; conservation of momentum and of kinetic energy"
+        learning_outcomes:
+          - "Distinguish elastic, inelastic and perfectly inelastic collisions"
+          - "Calculate the loss of kinetic energy in a perfectly inelastic collision"
+      - id: isc-11-physics-ch09-t02
+        title: "Elastic collision in one dimension with a stationary target: derivation of final velocities; special cases m1 = m2, m1 >> m2, m1 << m2"
+        learning_outcomes:
+          - "Derive the final velocities of two bodies after a one-dimensional elastic collision"
+          - "Predict the outcome when a ball hits an identical ball, a very heavy ball or a very light ball"
+      - id: isc-11-physics-ch09-t03
+        title: "Oblique collisions (collisions in two dimensions)"
+        learning_outcomes:
+          - "Apply momentum conservation along two perpendicular axes to solve a two-dimensional collision"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-physics-ch10
+    number: 10
+    title: "Centre of Mass and Equilibrium of Rigid Bodies"
+    unit: "Units 4-6: Work, Energy and Power; Motion of System of Particles and Rigid Body; Gravitation"
+    topics:
+      - id: isc-11-physics-ch10-t01
+        title: "Centre of mass of a two-particle system m1x1 + m2x2 = Mx_cm; velocity and acceleration of the centre of mass; N-particle system"
+        learning_outcomes:
+          - "Locate the centre of mass of two point masses on a line"
+          - "Derive v_cm and a_cm by differentiating the position of the centre of mass"
+      - id: isc-11-physics-ch10-t02
+        title: "Momentum conservation and motion of the centre of mass; centre of mass of a uniform rod"
+        learning_outcomes:
+          - "Explain why the centre of mass of an exploding shell continues on the original path"
+          - "Locate the centre of mass of a uniform rod"
+      - id: isc-11-physics-ch10-t03
+        title: "Rigid bodies; centre of gravity; principle of moments; equilibrium of rigid bodies; ladder problem"
+        learning_outcomes:
+          - "State the conditions for translational and rotational equilibrium of a rigid body"
+          - "Apply the principle of moments to beams and ladders"
+    removed_topics:
+      - "Detailed treatment of many-particle systems beyond the general equation for the centre of mass"
+    literature_texts: []
+  - id: isc-11-physics-ch11
+    number: 11
+    title: "Rotational Motion"
+    unit: "Units 4-6: Work, Energy and Power; Motion of System of Particles and Rigid Body; Gravitation"
+    topics:
+      - id: isc-11-physics-ch11-t01
+        title: "Kinetic energy of a rotating rigid body; moment of inertia and radius of gyration; units, dimensions and physical significance"
+        learning_outcomes:
+          - "Derive K = (1/2)I omega^2 from the kinetic energies of the particles of a rotating body"
+          - "Explain moment of inertia as rotational inertia depending on mass distribution and axis"
+      - id: isc-11-physics-ch11-t02
+        title: "Moments of inertia (formulae only) of a ring, solid and hollow cylinder, thin rod, solid and hollow sphere and disc"
+        learning_outcomes:
+          - "Use standard formulae to calculate the moment of inertia of common bodies about their symmetry axes"
+          - "Calculate the radius of gyration of a disc or a sphere"
+      - id: isc-11-physics-ch11-t03
+        title: "Parallel and perpendicular axes theorems (statements) with simple examples of change of axis"
+        learning_outcomes:
+          - "Find the moment of inertia of a rod about an axis through one end using the parallel axes theorem"
+          - "Find the moment of inertia of a ring about a diameter using the perpendicular axes theorem"
+      - id: isc-11-physics-ch11-t04
+        title: "Torque tau = r x F and angular momentum L = r x p; dL/dt = tau; tau = I alpha and L = I omega"
+        learning_outcomes:
+          - "Calculate torque and angular momentum for a particle"
+          - "Use tau = I alpha to find the angular acceleration of a wheel"
+      - id: isc-11-physics-ch11-t05
+        title: "Conservation of angular momentum and its applications; equations of rotational motion; comparison of linear and rotational motion"
+        learning_outcomes:
+          - "Explain why an ice skater spins faster on pulling in the arms"
+          - "Solve problems with the equations of uniformly accelerated rotational motion"
+          - "Tabulate rotational analogues of mass, force, momentum and kinetic energy"
+    removed_topics:
+      - "Derivations of moment of inertia formulae for simple geometrical bodies"
+      - "Derivations of the parallel and perpendicular axes theorems"
+      - "Derivations of tau = r x F and L = r x p for a particle; vector form of tau = I alpha (scalar equation only)"
+    literature_texts: []
+  - id: isc-11-physics-ch12
+    number: 12
+    title: "Gravitation"
+    unit: "Units 4-6: Work, Energy and Power; Motion of System of Particles and Rigid Body; Gravitation"
+    topics:
+      - id: isc-11-physics-ch12-t01
+        title: "Newton's law of universal gravitation; unit and dimensions of G; acceleration due to gravity and weight W = mg"
+        learning_outcomes:
+          - "State the law of gravitation and write the dimensional formula of G"
+          - "Calculate the gravitational force between two masses"
+      - id: isc-11-physics-ch12-t02
+        title: "Relation g = GM/R^2; variation of g with height and depth (derivations); variation with latitude and rotation (qualitative)"
+        learning_outcomes:
+          - "Derive the expressions for g at a height h and at a depth d"
+          - "Sketch the graph of g against distance from the centre of the earth"
+          - "Explain why g is greater at the poles than at the equator"
+      - id: isc-11-physics-ch12-t03
+        title: "Gravitational field intensity and potential; potential V(r) = -GM/r derived by integration; gravitational potential energy U = -GMm/r; U = mgh for h << R"
+        learning_outcomes:
+          - "Derive the gravitational potential at a distance r from the earth's centre"
+          - "Show that the change in potential energy reduces to mgh near the surface"
+          - "Relate gravitational field intensity to acceleration due to gravity"
+      - id: isc-11-physics-ch12-t04
+        title: "Escape velocity from energy considerations; why the moon has no atmosphere"
+        learning_outcomes:
+          - "Derive the escape velocity and calculate it for the earth"
+          - "Explain the absence of an atmosphere on the moon using escape velocity"
+      - id: isc-11-physics-ch12-t05
+        title: "Satellites: orbital velocity and time period; weightlessness; geostationary satellites and the parking orbit; polar satellites and their uses"
+        learning_outcomes:
+          - "Derive the orbital velocity and period of a satellite at height h"
+          - "Calculate the height of a geostationary (parking) orbit and state the conditions for a satellite to be geostationary"
+          - "Compare uses of geostationary and polar satellites, e.g. communication and remote sensing"
+      - id: isc-11-physics-ch12-t06
+        title: "Kepler's three laws of planetary motion; proof of the third law for circular orbits"
+        learning_outcomes:
+          - "State and illustrate Kepler's laws with diagrams"
+          - "Derive T^2 proportional to r^3 for a planet in a circular orbit"
+    removed_topics:
+      - "Cavendish experiment"
+      - "Derivation of the variation of g with latitude and rotation of the earth"
+    literature_texts: []
+  - id: isc-11-physics-ch13
+    number: 13
+    title: "Mechanical Properties of Solids"
+    unit: "Units 7-9: Properties of Bulk Matter; Heat and Thermodynamics; Kinetic Theory of Gases"
+    topics:
+      - id: isc-11-physics-ch13-t01
+        title: "Elastic behaviour of solids; stress and strain; Hooke's law; stress-strain curve"
+        learning_outcomes:
+          - "Define stress and strain and state Hooke's law"
+          - "Identify the elastic limit, yield point and breaking point on a stress-strain curve"
+      - id: isc-11-physics-ch13-t02
+        title: "Young's modulus and its determination (Searle's method); bulk modulus; modulus of rigidity; Poisson's ratio"
+        learning_outcomes:
+          - "Calculate Young's modulus from the extension of a loaded wire"
+          - "Distinguish Young's, bulk and shear moduli by the type of strain produced"
+          - "Define Poisson's ratio"
+      - id: isc-11-physics-ch13-t03
+        title: "Work done in stretching a wire; elastic (strain) energy"
+        learning_outcomes:
+          - "Show that the energy stored per unit volume of a stretched wire is (1/2) x stress x strain"
+          - "Explain qualitatively why elastic energy matters in designing springs and cables"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-physics-ch14
+    number: 14
+    title: "Fluid Pressure and Buoyancy"
+    unit: "Units 7-9: Properties of Bulk Matter; Heat and Thermodynamics; Kinetic Theory of Gases"
+    topics:
+      - id: isc-11-physics-ch14-t01
+        title: "Pressure in a fluid; pressure due to a fluid column and the effect of gravity"
+        learning_outcomes:
+          - "Derive P = P0 + h rho g for a point in a liquid"
+          - "Explain why dams are thicker at the base"
+      - id: isc-11-physics-ch14-t02
+        title: "Pascal's law and its applications: hydraulic lift and hydraulic brakes"
+        learning_outcomes:
+          - "State Pascal's law and calculate the force multiplication in a hydraulic lift"
+      - id: isc-11-physics-ch14-t03
+        title: "Buoyancy and Archimedes' principle"
+        learning_outcomes:
+          - "Apply Archimedes' principle to find the apparent weight of an immersed body"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-physics-ch15
+    number: 15
+    title: "Fluid Flow and Viscosity"
+    unit: "Units 7-9: Properties of Bulk Matter; Heat and Thermodynamics; Kinetic Theory of Gases"
+    topics:
+      - id: isc-11-physics-ch15-t01
+        title: "Streamline and turbulent flow; tubes of flow; equation of continuity v1a1 = v2a2; critical velocity; Reynolds number (significance)"
+        learning_outcomes:
+          - "Use the equation of continuity to explain why water speeds up at a hose nozzle"
+          - "Explain why streamlines never intersect and what the Reynolds number indicates"
+      - id: isc-11-physics-ch15-t02
+        title: "Bernoulli's theorem: assumptions for an ideal liquid and derivation"
+        learning_outcomes:
+          - "Derive Bernoulli's equation from the work-energy theorem"
+          - "State the assumptions of an ideal liquid in Bernoulli's theorem"
+      - id: isc-11-physics-ch15-t03
+        title: "Applications of Bernoulli's theorem: atomiser, dynamic lift, Venturimeter, Magnus effect"
+        learning_outcomes:
+          - "Explain dynamic lift on an aircraft wing and the swing of a spinning ball"
+          - "Calculate flow speed using a Venturimeter"
+      - id: isc-11-physics-ch15-t04
+        title: "Viscosity: laminar flow and viscous drag; velocity gradient; Newton's formula F = eta A dv/dx; coefficient of viscosity and units (poise); Poiseuille's formula"
+        learning_outcomes:
+          - "Define the coefficient of viscosity and convert between poise and N s m^-2"
+          - "Solve numerical problems with Poiseuille's formula for flow through a tube"
+      - id: isc-11-physics-ch15-t05
+        title: "Stokes' law; terminal velocity of a sphere in a fluid; rising bubbles and parachutes"
+        learning_outcomes:
+          - "Derive the expression for terminal velocity of a sphere falling through a viscous liquid"
+          - "Draw and explain the velocity-time graph of a falling sphere"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-physics-ch16
+    number: 16
+    title: "Surface Tension"
+    unit: "Units 7-9: Properties of Bulk Matter; Heat and Thermodynamics; Kinetic Theory of Gases"
+    topics:
+      - id: isc-11-physics-ch16-t01
+        title: "Molecular theory of surface tension; surface energy and work done in stretching a surface"
+        learning_outcomes:
+          - "Explain surface tension in terms of unbalanced molecular forces at the surface"
+          - "Calculate the work done in blowing a soap bubble of given radius"
+      - id: isc-11-physics-ch16-t02
+        title: "Angle of contact; drops and bubbles; excess pressure across a curved surface"
+        learning_outcomes:
+          - "Derive the excess pressure inside a liquid drop and a soap bubble"
+          - "Relate the angle of contact to wetting and non-wetting liquids"
+      - id: isc-11-physics-ch16-t03
+        title: "Capillary rise and measurement of surface tension by the capillary-rise method"
+        learning_outcomes:
+          - "Derive the expression for capillary rise in a tube of uniform bore"
+          - "Explain everyday effects such as the rise of oil in a lamp wick"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-physics-ch17
+    number: 17
+    title: "Thermal Properties of Matter"
+    unit: "Units 7-9: Properties of Bulk Matter; Heat and Thermodynamics; Kinetic Theory of Gases"
+    topics:
+      - id: isc-11-physics-ch17-t01
+        title: "Heat and temperature; temperature scales and conversion; ideal gas equation and absolute temperature"
+        learning_outcomes:
+          - "Convert temperatures between Celsius, Fahrenheit and Kelvin scales"
+          - "Explain how the ideal gas equation defines an absolute temperature scale"
+      - id: isc-11-physics-ch17-t02
+        title: "Thermal expansion of solids, liquids and gases; anomalous expansion of water"
+        learning_outcomes:
+          - "Calculate the change in length or volume of a heated body"
+          - "Explain how the anomalous expansion of water helps aquatic life survive in winter"
+      - id: isc-11-physics-ch17-t03
+        title: "Specific heat capacity; calorimetry; change of state and specific latent heat"
+        learning_outcomes:
+          - "Solve method-of-mixtures problems involving specific and latent heats"
+      - id: isc-11-physics-ch17-t04
+        title: "Conduction: steady state, temperature gradient, coefficient of thermal conductivity; Searle's experiment; uses of good and poor conductors"
+        learning_outcomes:
+          - "Calculate the rate of heat flow through a slab of known conductivity"
+          - "Describe Searle's method for the thermal conductivity of a good conductor"
+      - id: isc-11-physics-ch17-t05
+        title: "Convection with examples"
+        learning_outcomes:
+          - "Explain sea breezes and room heating in terms of convection currents"
+    removed_topics:
+      - "Lee's disc method"
+    literature_texts: []
+  - id: isc-11-physics-ch18
+    number: 18
+    title: "Thermal Radiation"
+    unit: "Units 7-9: Properties of Bulk Matter; Heat and Thermodynamics; Kinetic Theory of Gases"
+    topics:
+      - id: isc-11-physics-ch18-t01
+        title: "Ideal (cavity) radiator; radiant intensity; Stefan-Boltzmann law I = sigma T^4 and emissivity"
+        learning_outcomes:
+          - "State the Stefan-Boltzmann law and give the SI unit and dimensions of sigma"
+          - "Calculate the power radiated by a body of given area, temperature and emissivity"
+      - id: isc-11-physics-ch18-t02
+        title: "Spectral radiancy curves at different temperatures; Wien's displacement law"
+        learning_outcomes:
+          - "Sketch spectral radiancy against wavelength for two temperatures and interpret the area under each curve"
+          - "Use Wien's law to estimate the surface temperature of a star from its peak wavelength"
+      - id: isc-11-physics-ch18-t03
+        title: "Newton's law of cooling"
+        learning_outcomes:
+          - "State Newton's law of cooling and interpret a cooling curve"
+    removed_topics:
+      - "Deductions from Stefan's law"
+    literature_texts: []
+  - id: isc-11-physics-ch19
+    number: 19
+    title: "Thermodynamics"
+    unit: "Units 7-9: Properties of Bulk Matter; Heat and Thermodynamics; Kinetic Theory of Gases"
+    topics:
+      - id: isc-11-physics-ch19-t01
+        title: "Thermal equilibrium and the zeroth law; heat, internal energy (state property) and work"
+        learning_outcomes:
+          - "State the zeroth law and explain how it defines temperature"
+          - "Distinguish heat (energy in transfer) from internal energy (stored energy)"
+      - id: isc-11-physics-ch19-t02
+        title: "First law Q = delta U + W; sign convention; W = integral of p dV; isothermal, adiabatic and isochoric special cases"
+        learning_outcomes:
+          - "Apply the first law with correct signs to heating a gas at constant volume and at constant pressure"
+          - "Identify which of Q, delta U and W is zero in isothermal, adiabatic and isochoric processes"
+      - id: isc-11-physics-ch19-t03
+        title: "Isothermal and adiabatic changes on PV graphs: PV = constant and PV^gamma = constant; 1 cal = 4.186 J"
+        learning_outcomes:
+          - "Compare isothermal and adiabatic curves on a PV diagram"
+          - "Solve problems on adiabatic compression using PV^gamma = constant"
+      - id: isc-11-physics-ch19-t04
+        title: "Work done in isothermal and adiabatic processes (derivations); work as area under a PV graph; principal and molar heat capacities; Cp - Cv = R"
+        learning_outcomes:
+          - "Derive the work done by an ideal gas in isothermal and in adiabatic expansion"
+          - "Derive Mayer's relation Cp - Cv = R"
+      - id: isc-11-physics-ch19-t05
+        title: "Second law (Kelvin and Clausius statements); reversible and irreversible processes; heat engine; Carnot cycle and efficiency 1 - T2/T1"
+        learning_outcomes:
+          - "State the second law in the Kelvin and Clausius forms"
+          - "Describe the four stages of a Carnot cycle on a pV diagram"
+          - "Calculate the efficiency of a Carnot engine working between two temperatures"
+    removed_topics:
+      - "Derivation of PV^gamma = constant"
+      - "Derivation of the efficiency of a Carnot engine (expression and numericals only)"
+      - "Using J (mechanical equivalent of heat) as a factor in equations"
+    literature_texts: []
+  - id: isc-11-physics-ch20
+    number: 20
+    title: "Kinetic Theory of Gases"
+    unit: "Units 7-9: Properties of Bulk Matter; Heat and Thermodynamics; Kinetic Theory of Gases"
+    topics:
+      - id: isc-11-physics-ch20-t01
+        title: "Equation of state of a perfect gas; work done in compressing a gas; assumptions of kinetic theory"
+        learning_outcomes:
+          - "List the assumptions of the kinetic theory of an ideal gas"
+          - "Explain why pV = nRT is an experimental result and not derived from kinetic theory"
+      - id: isc-11-physics-ch20-t02
+        title: "Pressure of an ideal gas p = (1/3) rho c^2 (derivation); rms speed c_rms = sqrt(3p/rho); effect of temperature and pressure"
+        learning_outcomes:
+          - "Derive p = (1/3) rho c^2 using Newton's laws"
+          - "Calculate rms speeds of hydrogen and air molecules and compare them with everyday speeds"
+      - id: isc-11-physics-ch20-t03
+        title: "Kinetic interpretation of temperature: K = (3/2)RT per mole and (3/2)kT per molecule; Boltzmann's constant"
+        learning_outcomes:
+          - "Combine p = (1/3) rho c^2 with pV = RT to show that average kinetic energy is proportional to T"
+      - id: isc-11-physics-ch20-t04
+        title: "Degrees of freedom; law of equipartition of energy (statement); specific heat capacities of monatomic, diatomic and polyatomic gases"
+        learning_outcomes:
+          - "Count the degrees of freedom of monatomic and diatomic molecules"
+          - "Calculate Cv, Cp and gamma for different gases using equipartition"
+      - id: isc-11-physics-ch20-t05
+        title: "Mean free path and Avogadro's number"
+        learning_outcomes:
+          - "Explain the meaning of mean free path and the factors it depends on"
+    removed_topics:
+      - "Derivation of the law of equipartition of energy"
+    literature_texts: []
+  - id: isc-11-physics-ch21
+    number: 21
+    title: "Oscillations"
+    unit: "Unit 10: Oscillations and Waves"
+    topics:
+      - id: isc-11-physics-ch21-t01
+        title: "Periodic motion; time period and frequency; SHM as the projection of uniform circular motion on a diameter"
+        learning_outcomes:
+          - "Distinguish periodic, oscillatory and simple harmonic motion"
+          - "Show that the projection of uniform circular motion on a diameter is SHM"
+      - id: isc-11-physics-ch21-t02
+        title: "Displacement, amplitude, phase and epoch; differential equation d^2y/dt^2 + omega^2 y = 0 from F = -ky; solution y = A sin(omega t + phi)"
+        learning_outcomes:
+          - "Write the equation of an SHM from given amplitude, period and initial phase"
+          - "Derive expressions for velocity, acceleration, period and frequency from y = A sin(omega t + phi)"
+      - id: isc-11-physics-ch21-t03
+        title: "Graphs of displacement, velocity and acceleration in SHM"
+        learning_outcomes:
+          - "Sketch displacement, velocity and acceleration against time and state their phase relations"
+      - id: isc-11-physics-ch21-t04
+        title: "Time period of a simple pendulum and of a mass on a spring (horizontal and vertical) - derivations"
+        learning_outcomes:
+          - "Derive T = 2 pi sqrt(l/g) for a simple pendulum"
+          - "Derive T = 2 pi sqrt(m/k) for a mass on a spring"
+      - id: isc-11-physics-ch21-t05
+        title: "Kinetic and potential energy in SHM; conservation of total energy; graphs of U, K and E against displacement"
+        learning_outcomes:
+          - "Calculate kinetic and potential energy at any displacement in SHM"
+          - "Draw graphs of U, K and E against displacement"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-physics-ch22
+    number: 22
+    title: "Wave Motion and Sound"
+    unit: "Unit 10: Oscillations and Waves"
+    topics:
+      - id: isc-11-physics-ch22-t01
+        title: "Transverse and longitudinal waves; displacement, amplitude, period, frequency, wavelength; v = f lambda"
+        learning_outcomes:
+          - "Distinguish transverse from longitudinal waves with examples"
+          - "Derive v = f lambda and use it in numerical problems"
+      - id: isc-11-physics-ch22-t02
+        title: "Graphical representation of a harmonic wave; equation of a progressive wave y = A sin(kx - omega t)"
+        learning_outcomes:
+          - "Label wavelength, amplitude and period on displacement-position and displacement-time graphs"
+          - "Find amplitude, wavelength, frequency and speed from a given wave equation"
+      - id: isc-11-physics-ch22-t03
+        title: "Sound as a mechanical wave; Newton's formula for speed of sound in air and Laplace's correction"
+        learning_outcomes:
+          - "Explain why Newton's formula underestimates the speed of sound and how Laplace corrected it"
+      - id: isc-11-physics-ch22-t04
+        title: "Effect of pressure, density, humidity and temperature on speed of sound; sound in liquids and solids; supersonic and ultrasonic waves"
+        learning_outcomes:
+          - "Predict how the speed of sound in air changes with temperature and humidity"
+          - "Distinguish supersonic speeds from ultrasonic frequencies"
+    removed_topics:
+      - "Derivation of the general formula for the speed of sound"
+    literature_texts: []
+  - id: isc-11-physics-ch23
+    number: 23
+    title: "Superposition, Stationary Waves and Beats"
+    unit: "Unit 10: Oscillations and Waves"
+    topics:
+      - id: isc-11-physics-ch23-t01
+        title: "Principle of superposition; interference and dependence on relative phase (qualitative)"
+        learning_outcomes:
+          - "Sketch the resultant of two waves in phase and in antiphase"
+      - id: isc-11-physics-ch23-t02
+        title: "Beats (qualitative); beat frequency equals the difference of frequencies"
+        learning_outcomes:
+          - "Calculate the unknown frequency of a tuning fork from the number of beats per second"
+      - id: isc-11-physics-ch23-t03
+        title: "Stationary waves: formation from two opposite progressive waves; y = 2y_m sin(kx) cos(omega t); nodes and antinodes; comparison with progressive waves"
+        learning_outcomes:
+          - "Derive the equation of a stationary wave and locate nodes and antinodes"
+          - "Compare stationary and progressive waves in amplitude, energy transfer and phase"
+      - id: isc-11-physics-ch23-t04
+        title: "Laws of vibration of a stretched string; fundamental frequency f0 = (1/2l) sqrt(T/m); sonometer"
+        learning_outcomes:
+          - "State the laws of transverse vibration of strings"
+          - "Calculate the fundamental frequency of a stretched wire of given tension and mass per unit length"
+      - id: isc-11-physics-ch23-t05
+        title: "Modes of vibration of strings and of closed and open organ pipes; harmonics, overtones and resonance with a tuning fork"
+        learning_outcomes:
+          - "Sketch the first three modes of an open pipe and a closed pipe"
+          - "Show that a closed pipe produces only odd harmonics"
+    removed_topics:
+      - "Quantitative treatment of interference and beats (qualitative only, apart from beat frequency)"
+    literature_texts: []
+removed_topics: []

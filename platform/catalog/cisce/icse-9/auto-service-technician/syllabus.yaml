@@ -1,0 +1,323 @@
+# ICSE Class 9 Auto Service Technician (code 96, Group III Section B vocational) - year one of the ICSE 2028 course.
+# Source: platform/catalog/sources/cisce.md#icse-2028-vocational-auto-service-technician (Class IX section only). Topic wording is our own summary.
+subject_id: icse-9-auto-service-technician
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2028-vocational-auto-service-technician, icse-2028-regulations]
+exam_notes: >-
+  There is no board examination in Class IX: the school sets the Class IX examination on the Class IX portion. The
+  syllabus prescribes one written paper of 2 hours, 100 marks: Part I-A Employability Skills 30 marks (Units 1-5) and
+  Part I-B Vocational Skills 70 marks (Units 6-12); no further unit-wise weightage is published. Internal assessment of
+  practical work 100 marks, assessed by the school on the Class X guidelines (subject teacher 50 and an external
+  examiner nominated by the Head of School 50): Practical Work 70 (practical examination 40 - two practicals from
+  different units; practical file 10; viva voce 20) and Project Work 30 (field visit or project report 10, student
+  portfolio 10, viva voce 10). The syllabus pairs each theory list with practical activities (demonstrations, role
+  plays, charts, field visits); these are assessed internally and are not listed as chapters here. The document has
+  separate Class IX and Class X unit lists: this file covers the Class IX list only. The Class IX vocational units are
+  listed briefly (Unit 12 has a single item); SOYL topics stay at the level of an introductory automobile course. No
+  Class IX specimen paper is listed for this subject. CISCE lists learning outcomes unit by unit, not textbook chapters:
+  SOYL groups them into 12 teachable chapters in syllabus order (chapters 1-5 = Units 1-5; Unit 6 = chapter 6; Unit 7 =
+  chapter 7; Unit 8 = chapters 8-9; Unit 9 = chapter 10; Unit 10 = chapter 11; Units 11-12 = chapter 12).
+units:
+  - { name: "Part I-A: Employability Skills", marks: 30 }
+  - { name: "Part I-B: Vocational Skills", marks: 70 }
+chapters:
+  - id: icse-9-auto-service-technician-ch01
+    number: 1
+    title: "Communication Skills - I"
+    unit: "Part I-A: Employability Skills"
+    topics:
+      - id: icse-9-auto-service-technician-ch01-t01
+        title: "Methods of communication: verbal, non-verbal and visual"
+        learning_outcomes:
+          - "Compare verbal, non-verbal and visual communication with one example of each"
+          - "List the advantages and disadvantages of written, spoken and non-verbal communication"
+          - "State dos and don'ts for avoiding common body-language mistakes"
+      - id: icse-9-auto-service-technician-ch01-t02
+        title: "Meaning and importance of communication; elements of the communication cycle: sender, ideas, encoding, channel, receiver, decoding, feedback"
+        learning_outcomes:
+          - "Explain why good communication skills matter at school and at work"
+          - "Draw and label the communication cycle and explain the role of each element"
+          - "Trace the communication cycle in a simple exchange between a service technician and a customer or colleague"
+      - id: icse-9-auto-service-technician-ch01-t03
+        title: "Perspectives in communication and the factors that affect them: visual perception, language, past experience, prejudices, feelings, environment"
+        learning_outcomes:
+          - "Explain how each factor can change the way a message is understood"
+          - "Suggest ways to reduce misunderstanding caused by differing perspectives at the workplace"
+      - id: icse-9-auto-service-technician-ch01-t04
+        title: "Basic writing skills: phrases, kinds of sentences, parts of a sentence, parts of speech, use of articles, paragraph construction"
+        learning_outcomes:
+          - "Classify sentences by kind and identify the subject and predicate"
+          - "Use parts of speech and articles correctly"
+          - "Write a well-organised paragraph on a topic related to the subject"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-auto-service-technician-ch02
+    number: 2
+    title: "Self-management Skills - I"
+    unit: "Part I-A: Employability Skills"
+    topics:
+      - id: icse-9-auto-service-technician-ch02-t01
+        title: "Meaning of self-management, its positive results and the main self-management skills"
+        learning_outcomes:
+          - "Define self-management and list its positive results"
+          - "Identify own strengths and weaknesses through a simple self-analysis"
+      - id: icse-9-auto-service-technician-ch02-t02
+        title: "Factors that help build self-confidence: social, cultural and physical"
+        learning_outcomes:
+          - "Explain how social, cultural and physical factors affect self-confidence, with examples"
+      - id: icse-9-auto-service-technician-ch02-t03
+        title: "Tips for building self-confidence: dropping negative thoughts, thinking positively, enjoying small things, staying clean and well groomed, keeping positive company"
+        learning_outcomes:
+          - "Suggest practical self-confidence building steps for a given situation"
+          - "Rewrite negative self-talk as positive statements"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-auto-service-technician-ch03
+    number: 3
+    title: "Information and Communication Technology Skills - I"
+    unit: "Part I-A: Employability Skills"
+    topics:
+      - id: icse-9-auto-service-technician-ch03-t01
+        title: "Introduction to ICT; role and importance of ICT in personal life and at the workplace; ICT tools such as mobile phone, tablet, radio, TV and email"
+        learning_outcomes:
+          - "Define ICT and give examples of its use in daily life and at work"
+          - "Match common ICT tools to the tasks they support"
+      - id: icse-9-auto-service-technician-ch03-t02
+        title: "The computer system: CPU, memory, motherboard and storage devices; hardware and software"
+        learning_outcomes:
+          - "Identify the main components of a computer system and state the function of each"
+          - "Distinguish hardware from software with examples"
+      - id: icse-9-auto-service-technician-ch03-t03
+        title: "Role and functions of RAM, ROM and the CPU; starting and shutting down a computer"
+        learning_outcomes:
+          - "Compare RAM and ROM in terms of volatility and use"
+          - "Describe the correct procedure for starting and shutting down a computer"
+      - id: icse-9-auto-service-technician-ch03-t04
+        title: "Peripheral devices and their uses: mouse, keyboard, scanner, webcam, printer"
+        learning_outcomes:
+          - "Classify peripheral devices as input or output devices and state the use of each"
+          - "Draw and label a diagram of a computer system with its peripherals"
+      - id: icse-9-auto-service-technician-ch03-t05
+        title: "Primary operations of a computer: input, process, storage, output, communication and networking"
+        learning_outcomes:
+          - "Explain the input-process-output-storage cycle with an everyday example"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-auto-service-technician-ch04
+    number: 4
+    title: "Entrepreneurial Skills - I"
+    unit: "Part I-A: Employability Skills"
+    topics:
+      - id: icse-9-auto-service-technician-ch04-t01
+        title: "Types of business: service, manufacturing and hybrid"
+        learning_outcomes:
+          - "Classify given businesses as service, manufacturing or hybrid and justify the choice"
+      - id: icse-9-auto-service-technician-ch04-t02
+        title: "Businesses and business activities in our community"
+        learning_outcomes:
+          - "List local businesses that provide goods and services in exchange for money"
+          - "Describe the activities commonly carried out by a small local business"
+      - id: icse-9-auto-service-technician-ch04-t03
+        title: "Meaning of entrepreneurship development; distinguishing characteristics of entrepreneurship"
+        learning_outcomes:
+          - "Explain what entrepreneurship development means"
+          - "Identify the characteristics and core skills of successful entrepreneurs"
+      - id: icse-9-auto-service-technician-ch04-t04
+        title: "Role and rewards of entrepreneurship"
+        learning_outcomes:
+          - "Describe the role of entrepreneurship in creating jobs and meeting needs"
+          - "Compare the rewards of entrepreneurship with those of wage employment"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-auto-service-technician-ch05
+    number: 5
+    title: "Green Skills - I"
+    unit: "Part I-A: Employability Skills"
+    topics:
+      - id: icse-9-auto-service-technician-ch05-t01
+        title: "Introduction to the environment; relationship between society and environment; ecosystems and factors that cause imbalance"
+        learning_outcomes:
+          - "Explain how human activities affect the balance of an ecosystem"
+          - "Identify factors that are degrading the local environment"
+      - id: icse-9-auto-service-technician-ch05-t02
+        title: "Natural resource conservation; environment protection and conservation"
+        learning_outcomes:
+          - "Suggest measures for conserving water, soil, forests and energy"
+          - "Explain the difference between environment protection and conservation"
+      - id: icse-9-auto-service-technician-ch05-t03
+        title: "Green economy: definition and importance; benefits of green skills"
+        learning_outcomes:
+          - "Define a green economy and explain its importance"
+          - "Give examples of green skills and green jobs"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-auto-service-technician-ch06
+    number: 6
+    title: "History and Evolution of Automobiles"
+    unit: "Part I-B: Vocational Skills"
+    topics:
+      - id: icse-9-auto-service-technician-ch06-t01
+        title: "Invention of the wheel, the wheel cart and the animal-powered cart"
+        learning_outcomes:
+          - "Describe how the invention of the wheel led to carts drawn by animals"
+      - id: icse-9-auto-service-technician-ch06-t02
+        title: "The horse cart and the idea of horsepower"
+        learning_outcomes:
+          - "Explain the origin and meaning of horsepower as a unit of power"
+      - id: icse-9-auto-service-technician-ch06-t03
+        title: "Invention of the automobile and its development to the mid-twentieth century"
+        learning_outcomes:
+          - "Arrange key milestones in the early history of the automobile in order"
+      - id: icse-9-auto-service-technician-ch06-t04
+        title: "Evolution of the automobile after World War II to the present day"
+        learning_outcomes:
+          - "Describe major changes in automobiles after World War II, such as mass production and safety features"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-auto-service-technician-ch07
+    number: 7
+    title: "Types of Automobiles"
+    unit: "Part I-B: Vocational Skills"
+    topics:
+      - id: icse-9-auto-service-technician-ch07-t01
+        title: "Two-wheelers, three-wheelers and passenger vehicles"
+        learning_outcomes:
+          - "Identify and sketch two-wheelers, three-wheelers and passenger vehicles and state their uses"
+      - id: icse-9-auto-service-technician-ch07-t02
+        title: "Commercial, agricultural and construction equipment vehicles"
+        learning_outcomes:
+          - "Classify given vehicles as commercial, agricultural or construction equipment"
+      - id: icse-9-auto-service-technician-ch07-t03
+        title: "Special vehicles: make, model and specifications; their parts and components"
+        learning_outcomes:
+          - "Give examples of special vehicles and explain what make, model and specifications mean"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-auto-service-technician-ch08
+    number: 8
+    title: "Chassis, Body, Engine and Engine Support Systems"
+    unit: "Part I-B: Vocational Skills"
+    topics:
+      - id: icse-9-auto-service-technician-ch08-t01
+        title: "Chassis and auto body"
+        learning_outcomes:
+          - "Distinguish the chassis from the auto body and state the function of each"
+      - id: icse-9-auto-service-technician-ch08-t02
+        title: "The engine and its main components"
+        learning_outcomes:
+          - "Name the main components of an engine and state their functions"
+      - id: icse-9-auto-service-technician-ch08-t03
+        title: "Lubrication system"
+        learning_outcomes:
+          - "Explain why an engine needs lubrication and trace the path of oil in the system"
+      - id: icse-9-auto-service-technician-ch08-t04
+        title: "Cooling system"
+        learning_outcomes:
+          - "Explain the need for engine cooling and name the parts of a cooling system"
+      - id: icse-9-auto-service-technician-ch08-t05
+        title: "Fuel supply system"
+        learning_outcomes:
+          - "Trace the flow of fuel from the tank to the engine"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-auto-service-technician-ch09
+    number: 9
+    title: "Transmission, Running Gear and Vehicle Systems"
+    unit: "Part I-B: Vocational Skills"
+    topics:
+      - id: icse-9-auto-service-technician-ch09-t01
+        title: "Transmission system"
+        learning_outcomes:
+          - "Explain the role of the clutch, gearbox and drive line in transmitting power to the wheels"
+      - id: icse-9-auto-service-technician-ch09-t02
+        title: "Front and rear axles; steering"
+        learning_outcomes:
+          - "State the functions of the front axle, rear axle and steering system"
+      - id: icse-9-auto-service-technician-ch09-t03
+        title: "Suspension system; wheels and tyres"
+        learning_outcomes:
+          - "Explain how the suspension system improves comfort and control"
+          - "Identify the main parts of a wheel and tyre"
+      - id: icse-9-auto-service-technician-ch09-t04
+        title: "Brakes"
+        learning_outcomes:
+          - "Explain the purpose of brakes and name the common types"
+      - id: icse-9-auto-service-technician-ch09-t05
+        title: "Electrical and electronic systems; air conditioning system"
+        learning_outcomes:
+          - "List the main electrical and electronic systems in a vehicle"
+          - "State the purpose of a vehicle air conditioning system"
+      - id: icse-9-auto-service-technician-ch09-t06
+        title: "Active and passive safety"
+        learning_outcomes:
+          - "Distinguish active safety features from passive safety features with examples"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-auto-service-technician-ch10
+    number: 10
+    title: "Road Safety"
+    unit: "Part I-B: Vocational Skills"
+    topics:
+      - id: icse-9-auto-service-technician-ch10-t01
+        title: "Importance of road safety rules; safe and responsible driving practices"
+        learning_outcomes:
+          - "List road safety rules for drivers, riders and pedestrians"
+          - "Explain how safe and responsible driving prevents accidents"
+      - id: icse-9-auto-service-technician-ch10-t02
+        title: "Road signs, traffic signals and traffic rules"
+        learning_outcomes:
+          - "Classify road signs as mandatory, cautionary or informatory and state the meaning of common signs"
+      - id: icse-9-auto-service-technician-ch10-t03
+        title: "Driving rules and registration of a vehicle"
+        learning_outcomes:
+          - "Describe the process and documents for registering a vehicle"
+      - id: icse-9-auto-service-technician-ch10-t04
+        title: "Driving licence rules and forms"
+        learning_outcomes:
+          - "Describe the steps and eligibility for obtaining a learner's licence and a driving licence"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-auto-service-technician-ch11
+    number: 11
+    title: "Automobiles and Our Environment"
+    unit: "Part I-B: Vocational Skills"
+    topics:
+      - id: icse-9-auto-service-technician-ch11-t01
+        title: "Air pollution and its norms; the contribution of automobiles to air pollution"
+        learning_outcomes:
+          - "Name the main pollutants in vehicle exhaust and their effects on health"
+      - id: icse-9-auto-service-technician-ch11-t02
+        title: "Auto emissions and emission standards (Euro and Bharat Stage norms)"
+        learning_outcomes:
+          - "Explain the purpose of Bharat Stage emission standards and how they relate to Euro norms"
+      - id: icse-9-auto-service-technician-ch11-t03
+        title: "Pollution Under Control (PUC) certification"
+        learning_outcomes:
+          - "Describe the purpose of a PUC certificate and how it is obtained"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-auto-service-technician-ch12
+    number: 12
+    title: "Vehicle Maintenance, Servicing and Innovation"
+    unit: "Part I-B: Vocational Skills"
+    topics:
+      - id: icse-9-auto-service-technician-ch12-t01
+        title: "Importance of vehicle maintenance and servicing"
+        learning_outcomes:
+          - "Explain how regular maintenance improves safety, efficiency and vehicle life"
+      - id: icse-9-auto-service-technician-ch12-t02
+        title: "Tips to extend the life of a vehicle"
+        learning_outcomes:
+          - "List simple checks and habits that extend the life of a vehicle"
+      - id: icse-9-auto-service-technician-ch12-t03
+        title: "Procedures carried out during vehicle servicing"
+        learning_outcomes:
+          - "Arrange the main steps of a routine vehicle service in order"
+      - id: icse-9-auto-service-technician-ch12-t04
+        title: "Importance of innovation and development in automobiles"
+        learning_outcomes:
+          - "Give examples of recent innovations in automobiles and explain why they matter"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

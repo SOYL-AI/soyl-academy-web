@@ -1,0 +1,468 @@
+# ISC Class 12 Accounts (syllabus titled Accountancy, code 858) - ISC 2027 examination.
+# Source: platform/catalog/sources/cisce.md#isc-2027-accounts. Topic wording is our own summary of the official scope.
+subject_id: isc-12-accounts
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-accounts, isc-2027-regulations]
+exam_notes: >-
+  Paper I Theory: 3 hours, 80 marks, in three sections. Section A (60 marks, compulsory): Partnership Accounts and Joint
+  Stock Company Accounts. Candidates then attempt EITHER Section B Management Accounting (20 marks) OR Section C
+  Computerised Accounting (20 marks). Published weightage table: Section A - Partnership Accounts 11 + 15 + 8 (8 for
+  Dissolution; 11 and 15 shared across Fundamentals, Goodwill, Admission and Retirement/Death), Issue of Shares 11, Issue
+  and Redemption of Debentures 8, Final Accounts of Companies 7; Section B - Financial Statement Analysis 4, Cash Flow
+  Statement 8, Ratio Analysis 8; Section C - Electronic Spreadsheet 10, DBMS 10. The table uses merged rows and the
+  extracted text does not show the row spans of the 11- and 15-mark partnership rows unambiguously (most likely
+  Fundamentals + Goodwill = 11 and Admission + Retirement/Death = 15), so SOYL records unit 1 as one unit of 34 marks. Paper II Project Work (20 marks): two projects of 10 marks each from any theory topic (format 1, content 4,
+  findings 2, viva-voce 3), assessed by the teacher and a Visiting Examiner. CISCE lists units and sub-topics, not
+  chapters: SOYL groups them into teachable chapters in syllabus order. Balance sheets on reconstitution are prepared in
+  horizontal format; company balance sheets follow Schedule III Part I of the Companies Act, 2013.
+units:
+  - { name: "1. Partnership Accounts", marks: 34 }
+  - { name: "2. Joint Stock Company Accounts", marks: 26 }
+  - { name: "3. Financial Statement Analysis (Section B)", marks: 4 }
+  - { name: "4. Cash Flow Statement (Section B)", marks: 8 }
+  - { name: "5. Ratio Analysis (Section B)", marks: 8 }
+  - { name: "6. Accounting Application of Electronic Spreadsheet (Section C)", marks: 10 }
+  - { name: "7. Database Management System (Section C)", marks: 10 }
+chapters:
+  - id: isc-12-accounts-ch01
+    number: 1
+    title: "Fundamentals of Partnership"
+    unit: "1. Partnership Accounts"
+    topics:
+      - id: isc-12-accounts-ch01-t01
+        title: "Partnership: definition, meaning and features; Indian Partnership Act, 1932 provisions on books of account"
+        learning_outcomes:
+          - "State the essential features of a partnership with reference to the Indian Partnership Act, 1932"
+      - id: isc-12-accounts-ch01-t02
+        title: "Partnership deed: meaning, importance and rules applicable in its absence"
+        learning_outcomes:
+          - "List the usual contents of a partnership deed and explain why it is important"
+          - "Apply the Act's rules on profit sharing, interest on capital, drawings and loans when the deed is silent"
+      - id: isc-12-accounts-ch01-t03
+        title: "Partners' capital accounts (fixed and fluctuating) and current accounts"
+        learning_outcomes:
+          - "Prepare partners' capital accounts under the fixed and fluctuating capital methods"
+          - "Prepare partners' current accounts with interest on current account balances (debit and credit)"
+      - id: isc-12-accounts-ch01-t04
+        title: "Profit and Loss Appropriation Account: interest on capital, salary, commission, transfer to reserve and division of profit"
+        learning_outcomes:
+          - "Prepare a Profit and Loss Appropriation Account from given terms of the partnership deed"
+          - "Calculate a partner's or manager's commission on correct trading profit, before or after charging the commission"
+      - id: isc-12-accounts-ch01-t05
+        title: "Interest on drawings; charges against profit (interest on partner's loan, rent to a partner)"
+        learning_outcomes:
+          - "Calculate interest on drawings by the product method and the average-period method"
+          - "Distinguish charges against profit (interest on loan, rent to a partner) from appropriations and record them correctly"
+      - id: isc-12-accounts-ch01-t06
+        title: "Guarantee of profits to a partner"
+        learning_outcomes:
+          - "Record the deficiency in a guaranteed minimum profit borne by one or more partners in an agreed ratio"
+      - id: isc-12-accounts-ch01-t07
+        title: "Past adjustments: interest on capital, interest on drawings, salary and profit-sharing ratio"
+        learning_outcomes:
+          - "Pass a single adjustment journal entry to rectify past omissions or errors using a working table"
+          - "Prepare partners' adjusted capital or current accounts after past adjustments"
+    removed_topics:
+      - "Admission of a manager as a partner is excluded from past adjustments and guarantee of profits"
+    literature_texts: []
+  - id: isc-12-accounts-ch02
+    number: 2
+    title: "Goodwill: Nature and Valuation"
+    unit: "1. Partnership Accounts"
+    topics:
+      - id: isc-12-accounts-ch02-t01
+        title: "Goodwill: meaning, nature and features; factors affecting its value"
+        learning_outcomes:
+          - "Explain goodwill as an intangible asset and list the factors that increase or decrease its value"
+      - id: isc-12-accounts-ch02-t02
+        title: "Average profit method: simple and weighted average"
+        learning_outcomes:
+          - "Value goodwill as a number of years' purchase of simple average profit after normalising past profits"
+          - "Calculate weighted average profit when later years carry greater weights"
+      - id: isc-12-accounts-ch02-t03
+        title: "Super profit method"
+        learning_outcomes:
+          - "Calculate normal profit from capital employed and the normal rate of return, and find super profit"
+          - "Value goodwill as a number of years' purchase of super profit"
+      - id: isc-12-accounts-ch02-t04
+        title: "Capitalisation method: capitalisation of average profit and of super profit"
+        learning_outcomes:
+          - "Value goodwill by capitalising average profit and deducting actual capital employed"
+          - "Value goodwill by capitalising super profit at the normal rate of return"
+      - id: isc-12-accounts-ch02-t05
+        title: "Capital employed (net assets) for goodwill valuation"
+        learning_outcomes:
+          - "Compute capital employed as total assets (excluding purchased goodwill, non-trade investments and fictitious assets) less outside liabilities"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-accounts-ch03
+    number: 3
+    title: "Reconstitution of Partnership: Admission of a Partner"
+    unit: "1. Partnership Accounts"
+    topics:
+      - id: isc-12-accounts-ch03-t01
+        title: "New profit-sharing ratio, sacrificing ratio and gaining ratio on admission"
+        learning_outcomes:
+          - "Calculate the new profit-sharing ratio and sacrificing ratio when a new partner is admitted"
+      - id: isc-12-accounts-ch03-t02
+        title: "Treatment of goodwill on admission (AS-26): premium paid privately, retained, withdrawn, or not brought in cash"
+        learning_outcomes:
+          - "Pass journal entries for premium for goodwill brought in cash or kind, retained or withdrawn by old partners"
+          - "Adjust the incoming partner's share of goodwill through his current account when he cannot bring it in cash"
+      - id: isc-12-accounts-ch03-t03
+        title: "Hidden goodwill and goodwill already appearing in the books"
+        learning_outcomes:
+          - "Calculate hidden goodwill from the incoming partner's capital and share of profit"
+          - "Write off existing goodwill among old partners in the old ratio"
+      - id: isc-12-accounts-ch03-t04
+        title: "Revaluation Account on admission"
+        learning_outcomes:
+          - "Prepare a Revaluation Account and distribute the profit or loss among old partners"
+      - id: isc-12-accounts-ch03-t05
+        title: "Accumulated profits, reserves and losses on admission (including a single adjustment entry)"
+        learning_outcomes:
+          - "Distribute general reserve, workmen compensation reserve, investment fluctuation reserve, contingency reserve, P&L balance and deferred revenue expenditure among old partners"
+          - "Record the transfer through a single gaining-sacrificing adjustment entry when reserves are to be left undisturbed"
+      - id: isc-12-accounts-ch03-t06
+        title: "Adjustment of capitals on admission and the new Balance Sheet (horizontal format)"
+        learning_outcomes:
+          - "Adjust old partners' capitals on the basis of the new partner's capital, and vice versa"
+          - "Prepare partners' capital accounts and the Balance Sheet of the reconstituted firm"
+      - id: isc-12-accounts-ch03-t07
+        title: "Change in profit-sharing ratio among existing partners"
+        learning_outcomes:
+          - "Pass adjustment entries for goodwill, revaluation and accumulated profits when existing partners change their ratio"
+    removed_topics:
+      - "Memorandum revaluation account"
+      - "Joint life policy and individual life policies"
+      - "Admission of a partner during an accounting year"
+    literature_texts: []
+  - id: isc-12-accounts-ch04
+    number: 4
+    title: "Reconstitution of Partnership: Retirement and Death of a Partner"
+    unit: "1. Partnership Accounts"
+    topics:
+      - id: isc-12-accounts-ch04-t01
+        title: "New profit-sharing ratio and gaining ratio on retirement or death"
+        learning_outcomes:
+          - "Calculate gaining ratio and new ratio of continuing partners"
+      - id: isc-12-accounts-ch04-t02
+        title: "Treatment of goodwill (including hidden goodwill), revaluation and accumulated profits/losses"
+        learning_outcomes:
+          - "Adjust the retiring or deceased partner's share of goodwill through the gaining partners' accounts"
+          - "Prepare a Revaluation Account and distribute reserves and accumulated losses on retirement or death"
+      - id: isc-12-accounts-ch04-t03
+        title: "Deceased partner's share of profit till the date of death (time or turnover basis)"
+        learning_outcomes:
+          - "Calculate the share of profit up to death on a time or turnover basis"
+          - "Record it through Profit and Loss Suspense Account or the gaining partners' accounts as appropriate"
+      - id: isc-12-accounts-ch04-t04
+        title: "Adjustment of capitals of continuing partners and payment by bringing in cash"
+        learning_outcomes:
+          - "Readjust continuing partners' capitals to the new ratio or to a given total capital"
+      - id: isc-12-accounts-ch04-t05
+        title: "Amount due to retiring partner; retiring partner's loan account and deceased partner's executor's account"
+        learning_outcomes:
+          - "Calculate the amount payable to a retiring partner or a deceased partner's executor"
+          - "Prepare a loan account with instalments and interest accrued and due or accrued but not due"
+      - id: isc-12-accounts-ch04-t06
+        title: "Balance Sheet of the reconstituted firm after retirement or death (horizontal format)"
+        learning_outcomes:
+          - "Prepare the capital accounts and Balance Sheet of the firm after retirement or death"
+    removed_topics:
+      - "Memorandum revaluation account"
+      - "Joint life policy and individual life policies"
+    literature_texts: []
+  - id: isc-12-accounts-ch05
+    number: 5
+    title: "Dissolution of a Partnership Firm"
+    unit: "1. Partnership Accounts"
+    topics:
+      - id: isc-12-accounts-ch05-t01
+        title: "Dissolution: meaning, and settlement of accounts under Section 48 of the Indian Partnership Act, 1932"
+        learning_outcomes:
+          - "Distinguish dissolution of partnership from dissolution of the firm"
+          - "State the order of settlement of accounts under Section 48"
+      - id: isc-12-accounts-ch05-t02
+        title: "Realisation Account: transfer of assets, liabilities and related reserves; realisation of assets and payment of liabilities"
+        learning_outcomes:
+          - "Prepare a Realisation Account including assets taken over by partners and liabilities settled in cash or kind"
+          - "Apply the syllabus assumptions when realised values or payments are not stated"
+      - id: isc-12-accounts-ch05-t03
+        title: "Realisation expenses and their treatment in different cases"
+        learning_outcomes:
+          - "Record realisation expenses paid by the firm, paid or borne by a partner, or met with a firm's asset"
+      - id: isc-12-accounts-ch05-t04
+        title: "Memorandum Balance Sheet, partners' loan accounts, capital accounts and cash/bank account on dissolution"
+        learning_outcomes:
+          - "Complete partners' capital accounts and the cash/bank account to close the books of the firm"
+          - "Treat bank overdraft, bank loan, loans from and to partners and current account balances as the syllabus specifies"
+    removed_topics:
+      - "Admission-cum-retirement, amalgamation of firms and conversion or sale to a company"
+      - "Piecemeal distribution and insolvency of partners"
+    literature_texts: []
+  - id: isc-12-accounts-ch06
+    number: 6
+    title: "Issue and Forfeiture of Shares"
+    unit: "2. Joint Stock Company Accounts"
+    topics:
+      - id: isc-12-accounts-ch06-t01
+        title: "Issue of shares at par and at premium under the Companies Act, 2013"
+        learning_outcomes:
+          - "Pass journal entries (journal proper and cash book) for application, allotment and calls on shares issued at par or premium"
+          - "Prepare share capital and related ledger accounts"
+      - id: isc-12-accounts-ch06-t02
+        title: "Issue of shares for consideration other than cash: to promoters, underwriters and vendors"
+        learning_outcomes:
+          - "Record shares issued to promoters through goodwill or incorporation costs, and to underwriters and vendors"
+      - id: isc-12-accounts-ch06-t03
+        title: "Calls in arrears and calls in advance with interest"
+        learning_outcomes:
+          - "Record calls in arrears and calls in advance using separate accounts and calculate interest as per the Articles"
+      - id: isc-12-accounts-ch06-t04
+        title: "Over-subscription and under-subscription; pro-rata allotment"
+        learning_outcomes:
+          - "Record refund, rejection and pro-rata allotment, adjusting excess application money first against share capital and then premium"
+      - id: isc-12-accounts-ch06-t05
+        title: "Forfeiture of shares and reissue at par, premium or discount"
+        learning_outcomes:
+          - "Pass entries for forfeiture of shares issued at par or premium"
+          - "Pass entries for reissue and transfer the balance of forfeited shares to capital reserve"
+      - id: isc-12-accounts-ch06-t06
+        title: "Disclosure of share capital in the company's Balance Sheet"
+        learning_outcomes:
+          - "Show authorised, issued, subscribed and paid-up capital, calls in arrears and forfeited shares in notes to accounts"
+    removed_topics:
+      - "Bonus shares, rights shares, private placement, sweat equity shares and employee stock option schemes"
+      - "Reservations for small individual participants and minimum tradable lots"
+    literature_texts: []
+  - id: isc-12-accounts-ch07
+    number: 7
+    title: "Issue of Debentures"
+    unit: "2. Joint Stock Company Accounts"
+    topics:
+      - id: isc-12-accounts-ch07-t01
+        title: "Issue of debentures at par, premium and discount under the Companies Act, 2013"
+        learning_outcomes:
+          - "Pass entries for issue of debentures at par, premium and discount payable in lump sum or instalments"
+      - id: isc-12-accounts-ch07-t02
+        title: "Debentures redeemable at par or at premium: loss on issue and writing off capital losses"
+        learning_outcomes:
+          - "Record the six standard issue-redemption combinations and the loss on issue of debentures"
+          - "Write off capital losses first from securities premium, then from the Statement of Profit and Loss, then capital reserve"
+      - id: isc-12-accounts-ch07-t03
+        title: "Debentures issued as collateral security and for consideration other than cash"
+        learning_outcomes:
+          - "Show debentures issued as collateral security with or without a journal entry"
+          - "Record debentures issued to promoters, underwriters and vendors"
+      - id: isc-12-accounts-ch07-t04
+        title: "Calls in arrears and in advance on debentures; interest on debentures with TDS"
+        learning_outcomes:
+          - "Calculate and record interest on debentures, tax deducted at source and its payment to the government"
+      - id: isc-12-accounts-ch07-t05
+        title: "Disclosure of debentures in the company's Balance Sheet"
+        learning_outcomes:
+          - "Present debentures and current maturities of long-term borrowings correctly in the Balance Sheet and notes"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-accounts-ch08
+    number: 8
+    title: "Redemption of Debentures"
+    unit: "2. Joint Stock Company Accounts"
+    topics:
+      - id: isc-12-accounts-ch08-t01
+        title: "Debenture Redemption Reserve: when it is required and the 10% rule"
+        learning_outcomes:
+          - "Decide whether a company must create a DRR based on whether it is listed, unlisted, an NBFC or an HFC"
+          - "Calculate the DRR required for unlisted companies as 10% of outstanding debentures"
+      - id: isc-12-accounts-ch08-t02
+        title: "Debenture Redemption Investment: 15% deposit or investment rules and exemptions"
+        learning_outcomes:
+          - "Calculate and record the investment of at least 15% of debentures maturing during the year"
+          - "Identify companies exempt from both DRR and DRI"
+      - id: isc-12-accounts-ch08-t03
+        title: "Redemption out of profits and out of capital"
+        learning_outcomes:
+          - "Distinguish redemption out of profits from redemption out of capital and pass the related entries"
+      - id: isc-12-accounts-ch08-t04
+        title: "Redemption in a lump sum"
+        learning_outcomes:
+          - "Pass journal entries for redemption of debentures at par or premium in one lump sum at maturity"
+          - "Transfer DRR to general reserve after redemption"
+      - id: isc-12-accounts-ch08-t05
+        title: "Redemption in annual instalments by draw of lots (concepts only)"
+        learning_outcomes:
+          - "Explain how debentures are redeemed in instalments by draw of lots and how DRI is maintained at 15% of the next instalment"
+    removed_topics:
+      - "Calculation of ex-interest and cum-interest prices"
+      - "Numerical problems on redemption by draw of lots (theoretical concepts only)"
+    literature_texts: []
+  - id: isc-12-accounts-ch09
+    number: 9
+    title: "Final Accounts of Companies"
+    unit: "2. Joint Stock Company Accounts"
+    topics:
+      - id: isc-12-accounts-ch09-t01
+        title: "Balance Sheet as per Schedule III Part I of the Companies Act, 2013: major heads and sub-heads"
+        learning_outcomes:
+          - "Classify items under equity and liabilities and assets, with the correct heads and sub-heads"
+      - id: isc-12-accounts-ch09-t02
+        title: "Notes to accounts: share capital, reserves and surplus, borrowings, property plant and equipment"
+        learning_outcomes:
+          - "Prepare notes to accounts that support the figures shown in the Balance Sheet"
+      - id: isc-12-accounts-ch09-t03
+        title: "Recent amendments: proposed dividend as a contingent liability, PPE and intangible assets, current maturities, securities premium"
+        learning_outcomes:
+          - "Apply the amended Schedule III terms and show proposed dividend under contingent liabilities"
+          - "Show current maturities of long-term borrowings under short-term borrowings"
+    removed_topics:
+      - "Statement of Profit and Loss as per Schedule III Part II (not required for final accounts)"
+    literature_texts: []
+  - id: isc-12-accounts-ch10
+    number: 10
+    title: "Financial Statement Analysis: Comparative and Common Size Statements"
+    unit: "3. Financial Statement Analysis (Section B)"
+    topics:
+      - id: isc-12-accounts-ch10-t01
+        title: "Comparative and common size statements: meaning, significance and limitations"
+        learning_outcomes:
+          - "Explain the purpose and limitations of comparative and common size statements as tools of analysis"
+      - id: isc-12-accounts-ch10-t02
+        title: "Comparative Balance Sheet and comparative Statement of Profit and Loss (intra-firm and inter-firm)"
+        learning_outcomes:
+          - "Prepare comparative statements showing absolute change and percentage change"
+      - id: isc-12-accounts-ch10-t03
+        title: "Common size Balance Sheet and common size Statement of Profit and Loss"
+        learning_outcomes:
+          - "Prepare a common size Balance Sheet as a percentage of total assets/liabilities"
+          - "Prepare a common size Statement of Profit and Loss as a percentage of revenue from operations"
+    removed_topics:
+      - "Statements are prepared without notes to accounts"
+    literature_texts: []
+  - id: isc-12-accounts-ch11
+    number: 11
+    title: "Cash Flow Statement"
+    unit: "4. Cash Flow Statement (Section B)"
+    topics:
+      - id: isc-12-accounts-ch11-t01
+        title: "Cash Flow Statement (AS-3 revised): meaning, importance; cash and cash equivalents"
+        learning_outcomes:
+          - "Explain the purpose of a Cash Flow Statement and identify cash equivalents"
+          - "Classify transactions into operating, investing and financing activities"
+      - id: isc-12-accounts-ch11-t02
+        title: "Cash flow from operating activities by the indirect method"
+        learning_outcomes:
+          - "Calculate net profit before tax as a working note and adjust for non-cash and non-operating items"
+          - "Adjust for changes in working capital to find net cash from operating activities"
+      - id: isc-12-accounts-ch11-t03
+        title: "Cash flow from investing activities"
+        learning_outcomes:
+          - "Compute cash from purchase and sale of PPE, intangibles and investments, loans given and interest/dividend received"
+      - id: isc-12-accounts-ch11-t04
+        title: "Cash flow from financing activities"
+        learning_outcomes:
+          - "Compute cash from issue and redemption of shares and debentures, borrowings, interest and dividends paid and issue expenses"
+      - id: isc-12-accounts-ch11-t05
+        title: "Adjustments: provision for tax, proposed and interim dividend, depreciation and sale of assets, amortisation, provision for doubtful debts"
+        learning_outcomes:
+          - "Prepare a complete Cash Flow Statement from two Balance Sheets with additional information"
+          - "Treat previous year's proposed dividend as an outflow and current year's proposed dividend as having no effect"
+    removed_topics:
+      - "Extraordinary items and refund of tax"
+      - "Transactions relating to capital reserve"
+      - "Adjusted Profit and Loss Account method for operating activities"
+      - "Direct method of operating cash flow"
+    literature_texts: []
+  - id: isc-12-accounts-ch12
+    number: 12
+    title: "Ratio Analysis"
+    unit: "5. Ratio Analysis (Section B)"
+    topics:
+      - id: isc-12-accounts-ch12-t01
+        title: "Liquidity ratios: current ratio and quick (liquid/acid-test) ratio"
+        learning_outcomes:
+          - "Calculate current and quick ratios using the syllabus definitions of current assets and liabilities"
+      - id: isc-12-accounts-ch12-t02
+        title: "Solvency ratios: debt to equity, proprietary, debt to total assets, interest coverage"
+        learning_outcomes:
+          - "Calculate solvency ratios and interpret what they show about long-term financial position"
+      - id: isc-12-accounts-ch12-t03
+        title: "Activity ratios: trade receivables, trade payables, inventory and working capital turnover"
+        learning_outcomes:
+          - "Calculate turnover ratios using average balances and credit revenue from operations"
+          - "Find cost of revenue from operations and average inventory from given data"
+      - id: isc-12-accounts-ch12-t04
+        title: "Profitability ratios: gross profit, net profit, operating, operating profit ratio, EPS, P/E ratio, return on investment"
+        learning_outcomes:
+          - "Calculate profitability ratios, separating operating from non-operating items"
+          - "Compute capital employed and return on investment"
+      - id: isc-12-accounts-ch12-t05
+        title: "Effect of transactions on current, quick and debt-equity ratios"
+        learning_outcomes:
+          - "Determine whether a given transaction increases, decreases or leaves unchanged the current, quick or debt-equity ratio"
+    removed_topics:
+      - "Effect-of-transaction problems on ratios other than current, quick and debt-equity"
+    literature_texts: []
+  - id: isc-12-accounts-ch13
+    number: 13
+    title: "Accounting Application of Electronic Spreadsheet"
+    unit: "6. Accounting Application of Electronic Spreadsheet (Section C)"
+    topics:
+      - id: isc-12-accounts-ch13-t01
+        title: "Electronic spreadsheet: meaning, utility, merits and demerits"
+        learning_outcomes:
+          - "Explain why spreadsheets are used in accounting and list their advantages and limitations"
+      - id: isc-12-accounts-ch13-t02
+        title: "Working with worksheets and workbooks: entering data, saving, navigating, copying and moving sheets"
+        learning_outcomes:
+          - "Create, rename, copy, move and delete worksheets and move data between workbooks"
+      - id: isc-12-accounts-ch13-t03
+        title: "Formatting, previewing and printing worksheets"
+        learning_outcomes:
+          - "Format cells (alignment, styles, column width, date formats, borders, colours) and set up pages for printing"
+      - id: isc-12-accounts-ch13-t04
+        title: "Formulas and functions: arithmetic, average, percentage, date, IF; freezing panes"
+        learning_outcomes:
+          - "Write formulas with cell references for totals, averages and percentages"
+          - "Use the IF function to apply a condition, such as a commission slab or a pass/fail result"
+      - id: isc-12-accounts-ch13-t05
+        title: "Accounting applications: payroll, sales and salesmen's commission, student marks, journal"
+        learning_outcomes:
+          - "Design a payroll sheet computing basic pay, DA, HRA, TA, CCA, PF and income tax deductions and net pay"
+          - "Prepare a sales sheet computing profit on sales and salesmen's commission"
+      - id: isc-12-accounts-ch13-t06
+        title: "Data presentation: charts and graphs; database creation, sorting, querying and filtering"
+        learning_outcomes:
+          - "Create and format a suitable chart from accounting data"
+          - "Sort and filter a list of records to answer a query"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-accounts-ch14
+    number: 14
+    title: "Database Management System (DBMS)"
+    unit: "7. Database Management System (Section C)"
+    topics:
+      - id: isc-12-accounts-ch14-t01
+        title: "DBMS: concept, types and features"
+        learning_outcomes:
+          - "Explain what a DBMS is and describe its main features and types"
+      - id: isc-12-accounts-ch14-t02
+        title: "SQL basics: SELECT, WHERE, AND, OR, UPDATE, DELETE"
+        learning_outcomes:
+          - "Write simple SQL queries to retrieve, update and delete records that meet given conditions"
+      - id: isc-12-accounts-ch14-t03
+        title: "SQL aggregate functions: AVG, COUNT, MAX, MIN, SUM"
+        learning_outcomes:
+          - "Use aggregate functions to summarise accounting data such as total sales or the highest balance"
+      - id: isc-12-accounts-ch14-t04
+        title: "Database design: tables, fields, relationships, forms, reports and indexing"
+        learning_outcomes:
+          - "Design tables with suitable fields and keys and relate them for a business application"
+      - id: isc-12-accounts-ch14-t05
+        title: "DBMS in business: accounting information, debtors and creditors, bank reconciliation, asset accounting"
+        learning_outcomes:
+          - "Describe how a database supports debtor/creditor records, bank reconciliation and an asset register"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

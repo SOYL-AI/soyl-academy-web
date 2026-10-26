@@ -1,0 +1,394 @@
+# ICSE Class 10 Sanskrit (Second Language, code 19) - ICSE 2027 examination.
+# Literature: titles and authors only (CONTEXT section 8). Students read the texts in their own textbook.
+subject_id: icse-10-sanskrit
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2027-second-languages, icse-2027-prescribed-books, icse-2027-regulations]
+exam_notes: >-
+  One paper of 3 hours, 80 marks, plus internal assessment 20 marks (work set and marked by the teacher over the two years; 10
+  marks subject teacher, 10 marks external examiner). Section A Language (40 marks, compulsory): one short composition, one
+  letter (choice of two), an unseen Sanskrit passage with questions answered in Sanskrit, and grammar - the listed grammar
+  topics plus grammar arising from the prescribed textbooks, tested through vocabulary, syntax and idiom, sentence synthesis
+  and sentences embodying given words or forms. Section B Prescribed Texts (40 marks): four questions from ONLY two prescribed
+  textbooks, set and answered in Sanskrit. Prescribed books: Sanskrit Vani Book 4 (for Class IX) and Book 5 (for Class X) by
+  H.D. Vijayshri and Mrs. S. Bolar (Orient Longman). Sanskrit is NOT in the bifurcation circular, and since only these two
+  books are listed while four questions must come from two books, SOYL covers both books (Book 5 first); confirm with the
+  school or the specimen paper. The grammar list in the syllabus is printed in two parts (I and II; SOYL reads them as the
+  Class IX and Class X parts); as the syllabus is not bifurcated, SOYL covers both, with part I serving as revision. The
+  grammar list in the source file is in legacy Kruti Dev encoding and was decoded by SOYL. Candidates offering Sanskrit as a
+  Group II classical language (icse-10-sanskrit-classical) may not also offer it here. CISCE lists topics not chapters; SOYL
+  grouped them into teachable chapters in syllabus order.
+units:
+  - { name: "खण्डः क - भाषा (Section A: Language)", marks: 40 }
+  - { name: "खण्डः ख - निर्धारितपाठ्यपुस्तकानि (Section B: Prescribed Texts)", marks: 40 }
+chapters:
+  - id: icse-10-sanskrit-ch01
+    number: 1
+    title: "रचना (लघुनिबन्धः अनुच्छेदलेखनं च)"
+    title_en: "Composition (short essay and paragraph writing)"
+    unit: "खण्डः क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-sanskrit-ch01-t01
+        title: "रचनायाः योजना: विषयचयनं, रूपरेखा, सरलवाक्यानि"
+        title_en: "Planning a short composition: topic, outline, simple sentences"
+        learning_outcomes:
+          - "दत्तविषये सरलैः शुद्धैः च संस्कृतवाक्यैः लघुरचनां लिखति"
+          - "वाक्यानि तार्किकक्रमेण योजयति"
+      - id: icse-10-sanskrit-ch01-t02
+        title: "वर्णनात्मिका कथात्मिका च रचना"
+        title_en: "Descriptive and narrative compositions"
+        learning_outcomes:
+          - "स्थानस्य, उत्सवस्य, घटनायाः वा वर्णनं संस्कृतेन करोति"
+          - "घटनाः क्रमशः कथारूपेण लिखति"
+      - id: icse-10-sanskrit-ch01-t03
+        title: "चित्रवर्णनं, निर्देशाः, लघुव्याख्यानानि च"
+        title_en: "Picture description, directions and short explanations"
+        learning_outcomes:
+          - "दत्तं चित्रं दृष्ट्वा तस्य वर्णनं संस्कृतवाक्यैः करोति"
+          - "कस्यचित् कार्यस्य क्रमं सरलनिर्देशैः वदति"
+      - id: icse-10-sanskrit-ch01-t04
+        title: "शुद्धता: वर्तनी, लिङ्ग-वचन-विभक्तीनाम् अन्वयः"
+        title_en: "Accuracy: spelling and agreement of gender, number and case"
+        learning_outcomes:
+          - "स्वरचनायां वर्तनीदोषान् विभक्तिदोषान् च परिचित्य संशोधयति"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-sanskrit-ch02
+    number: 2
+    title: "पत्रलेखनम्"
+    title_en: "Letter writing"
+    unit: "खण्डः क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-sanskrit-ch02-t01
+        title: "पत्रस्य प्रारूपम्: स्थानं, दिनाङ्कः, सम्बोधनं, कुशलप्रश्नः, विषयः, समापनम्"
+        title_en: "Layout of a letter: place, date, salutation, greeting, body and closing"
+        learning_outcomes:
+          - "पत्रस्य सर्वाणि अङ्गानि उचितक्रमेण लिखति"
+      - id: icse-10-sanskrit-ch02-t02
+        title: "मित्राय, पित्रे, मात्रे वा पत्रम्"
+        title_en: "Letters to a friend or parent"
+        learning_outcomes:
+          - "आत्मीयैः सम्बोधनैः अभिवादनैः च पत्रं लिखति"
+      - id: icse-10-sanskrit-ch02-t03
+        title: "प्रधानाचार्याय प्रार्थनापत्रम्"
+        title_en: "Applications to the principal"
+        learning_outcomes:
+          - "विनम्रभाषया प्रयोजनं स्पष्टीकृत्य प्रार्थनापत्रं लिखति"
+      - id: icse-10-sanskrit-ch02-t04
+        title: "दत्तसङ्केतानाम् आधारेण पत्रलेखनम्"
+        title_en: "Writing a letter from given suggestions"
+        learning_outcomes:
+          - "प्रश्ने दत्तान् सर्वान् सङ्केतान् पत्रे समावेशयति"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-sanskrit-ch03
+    number: 3
+    title: "अपठितगद्यांशः"
+    title_en: "Unseen passage (comprehension)"
+    unit: "खण्डः क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-sanskrit-ch03-t01
+        title: "गद्यांशस्य मुख्यभावः विवरणानि च"
+        title_en: "Main idea and details of the passage"
+        learning_outcomes:
+          - "अपठितगद्यांशस्य मुख्यं भावं वदति"
+      - id: icse-10-sanskrit-ch03-t02
+        title: "प्रश्नानाम् उत्तराणि संस्कृतेन: एकपदेन पूर्णवाक्येन च"
+        title_en: "Answering in Sanskrit: in one word and in full sentences"
+        learning_outcomes:
+          - "गद्यांशाधारितानां प्रश्नानाम् उत्तराणि पूर्णवाक्येन संस्कृतेन लिखति"
+          - "गद्यांशात् उचितानि पदानि चित्वा एकपदेन उत्तरं ददाति"
+      - id: icse-10-sanskrit-ch03-t03
+        title: "शब्दार्थाः, शीर्षकं, पदपरिचयः च"
+        title_en: "Word meanings, a title and identifying word forms"
+        learning_outcomes:
+          - "प्रसङ्गात् शब्दानाम् अर्थान् निर्धारयति"
+          - "गद्यांशस्य उचितं शीर्षकं सूचयति"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-sanskrit-ch04
+    number: 4
+    title: "वर्णविचारः सन्धिः च"
+    title_en: "Sounds, places of articulation and sandhi"
+    unit: "खण्डः क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-sanskrit-ch04-t01
+        title: "स्वराः व्यञ्जनानि च, तेषाम् उच्चारणस्थानानि"
+        title_en: "Vowels and consonants and their places of articulation"
+        learning_outcomes:
+          - "स्वराणां व्यञ्जनानां च उच्चारणस्थानानि (कण्ठः, तालु, मूर्धा, दन्ताः, ओष्ठौ, नासिका) वदति"
+      - id: icse-10-sanskrit-ch04-t02
+        title: "स्वरसन्धिः: दीर्घः, गुणः, वृद्धिः, यण्, अयादिः"
+        title_en: "Vowel sandhi: dirgha, guna, vriddhi, yan, ayadi"
+        learning_outcomes:
+          - "स्वरसन्धेः नियमान् प्रयुज्य पदानि योजयति"
+          - "सन्धियुक्तपदस्य विच्छेदं कृत्वा सन्धेः नाम वदति"
+      - id: icse-10-sanskrit-ch04-t03
+        title: "हल्सन्धिः (व्यञ्जनसन्धिः)"
+        title_en: "Consonant sandhi (hal sandhi)"
+        learning_outcomes:
+          - "व्यञ्जनसन्धेः सामान्यनियमानुसारं सन्धिं विच्छेदं च करोति"
+      - id: icse-10-sanskrit-ch04-t04
+        title: "विसर्गसन्धिः"
+        title_en: "Visarga sandhi"
+        learning_outcomes:
+          - "विसर्गसन्धेः नियमान् उदाहरणैः सह स्पष्टीकरोति"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-sanskrit-ch05
+    number: 5
+    title: "शब्दरूपाणि"
+    title_en: "Noun, pronoun and numeral declensions"
+    unit: "खण्डः क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-sanskrit-ch05-t01
+        title: "पुंलिङ्गशब्दाः: राम, हरि, गुरु, पितृ, गो"
+        title_en: "Masculine nouns: rama, hari, guru, pitri, go"
+        learning_outcomes:
+          - "एतेषां शब्दानां सर्वासु विभक्तिषु वचनेषु च रूपाणि लिखति"
+      - id: icse-10-sanskrit-ch05-t02
+        title: "व्यञ्जनान्तपुंलिङ्गशब्दाः: भवत्, विद्वस्, राजन्, करिन्"
+        title_en: "Consonant-ending masculine nouns: bhavat, vidvas, rajan, karin"
+        learning_outcomes:
+          - "व्यञ्जनान्तपुंलिङ्गशब्दानां रूपाणि लिखति वाक्येषु च प्रयुङ्क्ते"
+      - id: icse-10-sanskrit-ch05-t03
+        title: "स्त्रीलिङ्गशब्दाः: रमा, नदी, धेनु, वधू, वाच्, सरित्, मातृ"
+        title_en: "Feminine nouns: rama, nadi, dhenu, vadhu, vach, sarit, matri"
+        learning_outcomes:
+          - "स्त्रीलिङ्गशब्दानां रूपाणि विभक्ति-वचनानुसारं लिखति"
+      - id: icse-10-sanskrit-ch05-t04
+        title: "नपुंसकलिङ्गशब्दाः: गृह, वारि, दधि, मधु, जगत्, नामन्, मनस्"
+        title_en: "Neuter nouns: griha, vari, dadhi, madhu, jagat, naman, manas"
+        learning_outcomes:
+          - "नपुंसकलिङ्गशब्दानां रूपाणि लिखति"
+          - "प्रथमाद्वितीययोः विभक्त्योः समानरूपाणि परिचिनोति"
+      - id: icse-10-sanskrit-ch05-t05
+        title: "सर्वनामशब्दाः: सर्व, तद्, यद्, किम्, युष्मद्, अस्मद्"
+        title_en: "Pronouns: sarva, tad, yad, kim, yushmad, asmad"
+        learning_outcomes:
+          - "सर्वनामशब्दानां त्रिषु लिङ्गेषु रूपाणि लिखति वाक्येषु च प्रयुङ्क्ते"
+      - id: icse-10-sanskrit-ch05-t06
+        title: "संख्यावाचकशब्दाः: एकतः दशपर्यन्तं सर्वेषु लिङ्गेषु"
+        title_en: "Numerals one to ten in all genders"
+        learning_outcomes:
+          - "एकतः दशपर्यन्तं संख्याशब्दानां लिङ्गानुसारं रूपाणि प्रयुङ्क्ते"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-sanskrit-ch06
+    number: 6
+    title: "धातुरूपाणि"
+    title_en: "Verb conjugations"
+    unit: "खण्डः क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-sanskrit-ch06-t01
+        title: "निर्धारिताः लकाराः: लट्, लृट्, लङ्, लोट्, विधिलिङ्"
+        title_en: "The prescribed lakaras: lat, lrit, lang, lot, vidhiling"
+        learning_outcomes:
+          - "पञ्चानां लकाराणां कालार्थं प्रयोगं च स्पष्टीकरोति"
+      - id: icse-10-sanskrit-ch06-t02
+        title: "परस्मैपदिधातवः: भू, पठ्, पा, गम्, हस्, स्था, जि, नश्, अस्, जीव्, शक्, इष्, प्रच्छ्"
+        title_en: "Parasmaipada roots: bhu, path, pa, gam, has, stha, ji, nash, as, jiv, shak, ish, prachchh"
+        learning_outcomes:
+          - "एतेषां धातूनां पञ्चसु लकारेषु रूपाणि लिखति"
+          - "प्रसङ्गानुसारम् उचितं धातुरूपं वाक्ये प्रयुङ्क्ते"
+      - id: icse-10-sanskrit-ch06-t03
+        title: "आत्मनेपदिधातवः: लभ्, वृध्, जन्, याच्, सेव्"
+        title_en: "Atmanepada roots: labh, vridh, jan, yach, sev"
+        learning_outcomes:
+          - "आत्मनेपदिधातूनां पञ्चसु लकारेषु रूपाणि लिखति"
+      - id: icse-10-sanskrit-ch06-t04
+        title: "उभयपदिधातवः: नी, दा, ग्रह्, ज्ञा, कृ"
+        title_en: "Ubhayapada roots: ni, da, grah, jna, kri"
+        learning_outcomes:
+          - "उभयपदिधातूनां परस्मैपदे आत्मनेपदे च रूपाणि लिखति"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-sanskrit-ch07
+    number: 7
+    title: "कारकाणि उपपदविभक्तयः च"
+    title_en: "Karakas and upapada vibhaktis"
+    unit: "खण्डः क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-sanskrit-ch07-t01
+        title: "कारकाणां सामान्यज्ञानम्: कर्ता, कर्म, करणं, सम्प्रदानम्, अपादानम्, अधिकरणम्"
+        title_en: "The six karakas: karta, karma, karana, sampradana, apadana, adhikarana"
+        learning_outcomes:
+          - "वाक्ये कारकं परिचित्य उचितां विभक्तिं प्रयुङ्क्ते"
+      - id: icse-10-sanskrit-ch07-t02
+        title: "उपपदविभक्तयः: विशिष्टपदानां योगे विभक्तिः"
+        title_en: "Upapada vibhaktis: case governed by particular words"
+        learning_outcomes:
+          - "सह, विना, नमः, परितः इत्यादीनां पदानां योगे उचितां विभक्तिं प्रयुङ्क्ते"
+      - id: icse-10-sanskrit-ch07-t03
+        title: "कारक-विभक्ति-आधारितं वाक्यसंशोधनम्"
+        title_en: "Correcting case errors in sentences"
+        learning_outcomes:
+          - "विभक्तिदोषयुक्तानि वाक्यानि संशोधयति"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-sanskrit-ch08
+    number: 8
+    title: "समासाः"
+    title_en: "Compounds (samasa)"
+    unit: "खण्डः क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-sanskrit-ch08-t01
+        title: "अव्ययीभावसमासः"
+        title_en: "Avyayibhava samasa"
+        learning_outcomes:
+          - "अव्ययीभावसमासस्य विग्रहं समस्तपदं च लिखति"
+      - id: icse-10-sanskrit-ch08-t02
+        title: "तत्पुरुषसमासः"
+        title_en: "Tatpurusha samasa"
+        learning_outcomes:
+          - "तत्पुरुषसमासस्य विभक्त्यनुसारं विग्रहं करोति"
+      - id: icse-10-sanskrit-ch08-t03
+        title: "कर्मधारयसमासः"
+        title_en: "Karmadharaya samasa"
+        learning_outcomes:
+          - "विशेषण-विशेष्यभावं परिचित्य कर्मधारयसमासस्य विग्रहं करोति"
+      - id: icse-10-sanskrit-ch08-t04
+        title: "द्वन्द्वसमासः"
+        title_en: "Dvandva samasa"
+        learning_outcomes:
+          - "द्वन्द्वसमासस्य विग्रहं समासं च करोति"
+      - id: icse-10-sanskrit-ch08-t05
+        title: "बहुव्रीहिसमासः"
+        title_en: "Bahuvrihi samasa"
+        learning_outcomes:
+          - "बहुव्रीहिसमासे अन्यपदार्थं स्पष्टीकृत्य विग्रहं करोति"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-sanskrit-ch09
+    number: 9
+    title: "प्रत्ययाः"
+    title_en: "Suffixes (pratyaya)"
+    unit: "खण्डः क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-sanskrit-ch09-t01
+        title: "कृदन्तप्रत्ययौ: क्त्वा, तुमुन्"
+        title_en: "Krit suffixes ktva and tumun"
+        learning_outcomes:
+          - "क्त्वा-तुमुन्-प्रत्ययान्तपदानि रचयति वाक्ये च प्रयुङ्क्ते"
+      - id: icse-10-sanskrit-ch09-t02
+        title: "कृदन्तप्रत्ययौ: क्त, क्तवतु"
+        title_en: "Krit suffixes kta and ktavatu"
+        learning_outcomes:
+          - "क्त-क्तवतु-प्रत्ययान्तानि पदानि लिङ्गानुसारं वाक्ये प्रयुङ्क्ते"
+      - id: icse-10-sanskrit-ch09-t03
+        title: "कृदन्तप्रत्ययौ: तव्यत्, अनीयर्"
+        title_en: "Krit suffixes tavyat and aniyar"
+        learning_outcomes:
+          - "तव्यत्-अनीयर्-प्रत्ययान्तपदानि रचयति तेषां प्रयोगं च करोति"
+      - id: icse-10-sanskrit-ch09-t04
+        title: "तद्धितप्रत्ययाः: मतुप्, इक, त्व, तल्"
+        title_en: "Taddhita suffixes: matup, ika, tva, tal"
+        learning_outcomes:
+          - "तद्धितप्रत्ययैः नूतनपदानि रचयति प्रकृति-प्रत्यय-विभागं च करोति"
+      - id: icse-10-sanskrit-ch09-t05
+        title: "स्त्रीप्रत्ययौ: टाप्, ङीप्"
+        title_en: "Feminine suffixes: tap and ngip"
+        learning_outcomes:
+          - "टाप्-ङीप्-प्रत्ययाभ्यां स्त्रीलिङ्गपदानि रचयति"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-sanskrit-ch10
+    number: 10
+    title: "शब्दभण्डारः वाक्यरचना च"
+    title_en: "Vocabulary, syntax and sentence construction"
+    unit: "खण्डः क - भाषा (Section A: Language)"
+    topics:
+      - id: icse-10-sanskrit-ch10-t01
+        title: "पर्यायवाचिनः विलोमशब्दाः च"
+        title_en: "Synonyms and antonyms"
+        learning_outcomes:
+          - "प्रचलितानां शब्दानां पर्यायान् विलोमान् च लिखति"
+      - id: icse-10-sanskrit-ch10-t02
+        title: "वाक्यसंयोजनम्: द्वयोः वाक्ययोः एकवाक्ये संयोजनम्"
+        title_en: "Synthesis: combining two sentences into one"
+        learning_outcomes:
+          - "क्त्वाप्रत्ययेन यदा-तदा इत्यादिभिः वा द्वे वाक्ये एकस्मिन् वाक्ये योजयति"
+      - id: icse-10-sanskrit-ch10-t03
+        title: "दत्तपदैः रूपैः च वाक्यनिर्माणम्"
+        title_en: "Making sentences from given words or forms"
+        learning_outcomes:
+          - "दत्तानि पदानि रूपाणि वा प्रयुज्य शुद्धानि वाक्यानि रचयति"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-10-sanskrit-ch11
+    number: 11
+    title: "संस्कृतवाणी - पञ्चमः भागः"
+    title_en: "Sanskrit Vani Book 5 (Class X textbook)"
+    unit: "खण्डः ख - निर्धारितपाठ्यपुस्तकानि (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-10-sanskrit-ch11-t01
+        title: "गद्यपाठाः: विषयवस्तु सारांशः च"
+        title_en: "Prose lessons: content and summary"
+        learning_outcomes:
+          - "पाठस्य सारांशं सरलसंस्कृतेन लिखति"
+          - "पाठाधारितानां प्रश्नानाम् उत्तराणि संस्कृतेन ददाति"
+      - id: icse-10-sanskrit-ch11-t02
+        title: "पद्यपाठाः: श्लोकानाम् अन्वयः भावार्थः च"
+        title_en: "Verse lessons: prose order (anvaya) and meaning of verses"
+        learning_outcomes:
+          - "श्लोकस्य अन्वयं लिखति"
+          - "श्लोकस्य भावार्थं स्वशब्दैः लिखति"
+      - id: icse-10-sanskrit-ch11-t03
+        title: "कथाः नाट्यांशाः च: पात्राणि सन्देशः च"
+        title_en: "Stories and dramatic passages: characters and message"
+        learning_outcomes:
+          - "पात्राणां स्वभावम् उदाहरणैः सह वर्णयति"
+          - "पाठस्य नैतिकं सन्देशं वदति"
+      - id: icse-10-sanskrit-ch11-t04
+        title: "सन्दर्भसहिता व्याख्या शब्दार्थाः च"
+        title_en: "Explaining extracts in context; word meanings"
+        learning_outcomes:
+          - "दत्तस्य अंशस्य सन्दर्भं निर्दिश्य व्याख्यां करोति"
+          - "कठिनशब्दानाम् अर्थान् लिखति"
+      - id: icse-10-sanskrit-ch11-t05
+        title: "पाठ्यपुस्तकस्थं व्याकरणम्"
+        title_en: "Grammar arising from the textbook lessons"
+        learning_outcomes:
+          - "पाठेषु प्रयुक्तानां पदानां सन्धिं समासं प्रत्ययं च परिचिनोति"
+    removed_topics: []
+    literature_texts:
+      - { title: "संस्कृतवाणी - पञ्चमः भागः", author: "एच्. डी. विजयश्री, श्रीमती एस्. बोलार", title_en: "Sanskrit Vani Book 5 - H.D. Vijayshri and Mrs. S. Bolar (Orient Longman)" }
+  - id: icse-10-sanskrit-ch12
+    number: 12
+    title: "संस्कृतवाणी - चतुर्थः भागः"
+    title_en: "Sanskrit Vani Book 4 (Class IX textbook)"
+    unit: "खण्डः ख - निर्धारितपाठ्यपुस्तकानि (Section B: Prescribed Texts)"
+    topics:
+      - id: icse-10-sanskrit-ch12-t01
+        title: "गद्यपाठाः: विषयवस्तु सारांशः च"
+        title_en: "Prose lessons: content and summary"
+        learning_outcomes:
+          - "पाठस्य सारांशं सरलसंस्कृतेन लिखति"
+          - "पाठाधारितानां प्रश्नानाम् उत्तराणि संस्कृतेन ददाति"
+      - id: icse-10-sanskrit-ch12-t02
+        title: "पद्यपाठाः: श्लोकानाम् अन्वयः भावार्थः च"
+        title_en: "Verse lessons: prose order (anvaya) and meaning of verses"
+        learning_outcomes:
+          - "श्लोकस्य अन्वयं लिखति"
+          - "श्लोकस्य भावार्थं स्वशब्दैः लिखति"
+      - id: icse-10-sanskrit-ch12-t03
+        title: "कथाः नाट्यांशाः च: पात्राणि सन्देशः च"
+        title_en: "Stories and dramatic passages: characters and message"
+        learning_outcomes:
+          - "पात्राणां स्वभावम् उदाहरणैः सह वर्णयति"
+          - "पाठस्य नैतिकं सन्देशं वदति"
+      - id: icse-10-sanskrit-ch12-t04
+        title: "सन्दर्भसहिता व्याख्या शब्दार्थाः च"
+        title_en: "Explaining extracts in context; word meanings"
+        learning_outcomes:
+          - "दत्तस्य अंशस्य सन्दर्भं निर्दिश्य व्याख्यां करोति"
+          - "कठिनशब्दानाम् अर्थान् लिखति"
+      - id: icse-10-sanskrit-ch12-t05
+        title: "पाठ्यपुस्तकस्थं व्याकरणम्"
+        title_en: "Grammar arising from the textbook lessons"
+        learning_outcomes:
+          - "पाठेषु प्रयुक्तानां पदानां सन्धिं समासं प्रत्ययं च परिचिनोति"
+    removed_topics: []
+    literature_texts:
+      - { title: "संस्कृतवाणी - चतुर्थः भागः", author: "एच्. डी. विजयश्री, श्रीमती एस्. बोलार", title_en: "Sanskrit Vani Book 4 - H.D. Vijayshri and Mrs. S. Bolar (Orient Longman)" }
+removed_topics: []

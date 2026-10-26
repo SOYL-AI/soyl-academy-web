@@ -1,0 +1,305 @@
+# ISC Class 11 Artificial Intelligence (883), Paper I Theory - ISC 2028 syllabus, CLASS XI portion only.
+# Source: platform/catalog/sources/cisce.md#isc-2028-artificial-intelligence. Topic wording is our own summary of the official scope.
+subject_id: isc-11-artificial-intelligence
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-artificial-intelligence, isc-2028-regulations]
+exam_notes: >-
+  Class XI is year one of the two-year ISC 2028 course. There is no board examination in Class XI: the school conducts
+  the Class XI examination on the Class XI portion, and promotion to Class XII needs at least 35% on the cumulative
+  average in five subjects including English, with 75% attendance (ISC 2028 Regulations). The syllabus prescribes, and
+  the school examination usually follows: Paper I Theory, 3 hours, 70 marks; Paper II Practical, 30 marks, evaluated
+  internally by the school. The 3-hour practical has three problem statements of which one is attempted: 90 minutes
+  for a written algorithm and handwritten program, then 90 minutes to code, execute and print it (15 marks). The rest
+  is continuous evaluation of at least twenty programming assignments done during the year (execution 4, practical
+  file documentation 6) and one project on any syllabus topic (knowledge 1, functionality 3, presentation 1). The
+  front page of the syllabus splits the 30 marks as Practical 15, Project Work 10 and Practical File 5, which does not
+  match this detailed scheme; schools follow the detailed scheme. Suggested assignments use Python with Matplotlib,
+  Seaborn, NumPy and Pandas: line, bar, scatter, box and pair plots, outlier handling, simulating coin flips, sampling a
+  normal distribution, building a DataFrame from a Kaggle dataset, and a simple hypothesis test. SOYL covers Paper I
+  only. AI may be taken with Computer Science but not with Robotics (ISC 2028 Regulations). No Class XI specimen paper
+  is published for this subject. The published Class XI unit weightage is used for the units. CISCE lists topics under
+  seven weighted units, not textbook chapters: SOYL groups them into 11 teachable chapters in syllabus order. The Class
+  XII portion is in isc-12-artificial-intelligence.
+units:
+  - { name: "Unit 1: Basic Concepts of Artificial Intelligence", marks: 8 }
+  - { name: "Unit 2: Introduction and State of Art of AI, NLP and Potential Use of AI", marks: 8 }
+  - { name: "Unit 3: Mathematics for AI", marks: 12 }
+  - { name: "Unit 4: Data Visualization", marks: 16 }
+  - { name: "Unit 5: Theoretical and Practical Aspects of Data Processing", marks: 8 }
+  - { name: "Unit 6: Data Modelling, Simple Linear Regression", marks: 12 }
+  - { name: "Unit 7: Ethical Practices in AI", marks: 6 }
+chapters:
+  - id: isc-11-artificial-intelligence-ch01
+    number: 1
+    title: "Introduction to AI and the Role of Data"
+    unit: "Unit 1: Basic Concepts of Artificial Intelligence"
+    topics:
+      - id: isc-11-artificial-intelligence-ch01-t01
+        title: "Artificial intelligence: definition and evolution"
+        learning_outcomes:
+          - "Define artificial intelligence and outline key milestones in its evolution"
+      - id: isc-11-artificial-intelligence-ch01-t02
+        title: "Applications of AI in different fields and benefits: decision making, remote patient monitoring, data analysis, solving complex problems"
+        learning_outcomes:
+          - "Describe commonly used AI applications and the benefit each provides"
+      - id: isc-11-artificial-intelligence-ch01-t03
+        title: "Data and information: types of data; identifying, acquiring and exploring data"
+        learning_outcomes:
+          - "Distinguish data from information"
+          - "Classify data as structured or unstructured, numerical or categorical, and suggest how to acquire it"
+      - id: isc-11-artificial-intelligence-ch01-t04
+        title: "Binary logic and logic gates in computing"
+        learning_outcomes:
+          - "Write truth tables for AND, OR and NOT gates and explain how binary logic supports computation"
+      - id: isc-11-artificial-intelligence-ch01-t05
+        title: "Deterministic and probabilistic real-life problems"
+        learning_outcomes:
+          - "Classify real-life problems as deterministic or probabilistic with justification"
+      - id: isc-11-artificial-intelligence-ch01-t06
+        title: "Decision making in machines; cyber security in computing and machine intelligence"
+        learning_outcomes:
+          - "Explain how a machine makes decisions from data and rules"
+          - "Identify cyber security risks to AI systems and basic safeguards"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-artificial-intelligence-ch02
+    number: 2
+    title: "AI Project Framework and Python Basics"
+    unit: "Unit 1: Basic Concepts of Artificial Intelligence"
+    topics:
+      - id: isc-11-artificial-intelligence-ch02-t01
+        title: "AI project framework: problem scoping, data acquisition, data exploration, modelling and evaluation"
+        learning_outcomes:
+          - "Describe each stage of the AI project framework"
+          - "Apply the framework to plan a simple AI project such as predicting crop yield"
+      - id: isc-11-artificial-intelligence-ch02-t02
+        title: "Python data types, variables and operators"
+        learning_outcomes:
+          - "Identify Python data types and evaluate expressions using arithmetic, relational and logical operators"
+      - id: isc-11-artificial-intelligence-ch02-t03
+        title: "Conditional and control statements in Python"
+        learning_outcomes:
+          - "Write Python programs using if-elif-else, for and while statements"
+      - id: isc-11-artificial-intelligence-ch02-t04
+        title: "Functions in Python"
+        learning_outcomes:
+          - "Define and call Python functions with parameters and return values"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-artificial-intelligence-ch03
+    number: 3
+    title: "History of AI, Machine Learning and NLP"
+    unit: "Unit 2: Introduction and State of Art of AI, NLP and Potential Use of AI"
+    topics:
+      - id: isc-11-artificial-intelligence-ch03-t01
+        title: "Brief history and primary elements of AI"
+        learning_outcomes:
+          - "Outline the history of AI and name its primary elements"
+      - id: isc-11-artificial-intelligence-ch03-t02
+        title: "Machine learning and deep learning (neural networks): definitions"
+        learning_outcomes:
+          - "Define machine learning and deep learning and explain how they relate to AI"
+      - id: isc-11-artificial-intelligence-ch03-t03
+        title: "Applications of ML and DL: image recognition and computer vision, speech recognition, information retrieval by search engines"
+        learning_outcomes:
+          - "Explain how ML and DL are used in image recognition, speech recognition and search"
+      - id: isc-11-artificial-intelligence-ch03-t04
+        title: "Natural language processing: text understanding, text generation, translation, question answering chatbots and voice-based dialogue systems"
+        learning_outcomes:
+          - "Describe the main tasks in the NLP domain with an example of each"
+      - id: isc-11-artificial-intelligence-ch03-t05
+        title: "Types of internet search: navigational, informational, transactional, investigative and voice searches"
+        learning_outcomes:
+          - "Classify a given search query by type"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-artificial-intelligence-ch04
+    number: 4
+    title: "Potential Uses of AI and AI in Society"
+    unit: "Unit 2: Introduction and State of Art of AI, NLP and Potential Use of AI"
+    topics:
+      - id: isc-11-artificial-intelligence-ch04-t01
+        title: "AI in everyday systems: word processors, smartphones, online auction sites, scanners, e-commerce and social networking"
+        learning_outcomes:
+          - "Explain briefly how AI is used in each of these systems"
+      - id: isc-11-artificial-intelligence-ch04-t02
+        title: "AI in healthcare: diagnosis, treatment planning and patient care"
+        learning_outcomes:
+          - "Describe how AI improves diagnosis and patient care"
+      - id: isc-11-artificial-intelligence-ch04-t03
+        title: "AI in transportation: autonomous vehicles and transport management"
+        learning_outcomes:
+          - "Explain the role of AI in autonomous vehicles and traffic management"
+      - id: isc-11-artificial-intelligence-ch04-t04
+        title: "AI in disaster prediction and agriculture: early warning, precision farming, crop monitoring, yield prediction"
+        learning_outcomes:
+          - "Describe how AI supports early warning systems and precision farming in India"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-artificial-intelligence-ch05
+    number: 5
+    title: "Matrices and Vectors for AI"
+    unit: "Unit 3: Mathematics for AI"
+    topics:
+      - id: isc-11-artificial-intelligence-ch05-t01
+        title: "Matrices: introduction and types"
+        learning_outcomes:
+          - "Identify row, column, square, diagonal, identity and zero matrices and state the order of a matrix"
+      - id: isc-11-artificial-intelligence-ch05-t02
+        title: "Matrix operations: addition, subtraction, multiplication and transpose"
+        learning_outcomes:
+          - "Add, subtract, multiply and transpose matrices and state when multiplication is defined"
+          - "Explain how images and data tables are stored as matrices"
+      - id: isc-11-artificial-intelligence-ch05-t03
+        title: "Vectors and vector arithmetic and their applications"
+        learning_outcomes:
+          - "Add, subtract and scale vectors and find their dot product"
+          - "Represent a data record as a feature vector"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-artificial-intelligence-ch06
+    number: 6
+    title: "Set Theory and Statistics for AI"
+    unit: "Unit 3: Mathematics for AI"
+    topics:
+      - id: isc-11-artificial-intelligence-ch06-t01
+        title: "Set theory and set operations"
+        learning_outcomes:
+          - "Perform union, intersection, difference and complement on sets of records"
+      - id: isc-11-artificial-intelligence-ch06-t02
+        title: "Relational algebra and data table joins"
+        learning_outcomes:
+          - "Relate inner, left, right and full joins of data tables to set operations"
+      - id: isc-11-artificial-intelligence-ch06-t03
+        title: "Measures of central tendency: mean, median and mode"
+        learning_outcomes:
+          - "Calculate the mean, median and mode of a data set and choose the suitable one"
+      - id: isc-11-artificial-intelligence-ch06-t04
+        title: "Variance and standard deviation"
+        learning_outcomes:
+          - "Calculate the variance and standard deviation of a data set and interpret its spread"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-artificial-intelligence-ch07
+    number: 7
+    title: "Statistical Graphs and Plotting in Python"
+    unit: "Unit 4: Data Visualization"
+    topics:
+      - id: isc-11-artificial-intelligence-ch07-t01
+        title: "Why visualise data; plotting with Matplotlib and Seaborn"
+        learning_outcomes:
+          - "Write Python code to draw line and bar plots with Matplotlib"
+          - "Create scatter and box plots with Seaborn"
+      - id: isc-11-artificial-intelligence-ch07-t02
+        title: "Charts in spreadsheet software"
+        learning_outcomes:
+          - "Create and format a chart from spreadsheet data"
+      - id: isc-11-artificial-intelligence-ch07-t03
+        title: "Types of statistical graphs: bar graph, histogram, scatter plot and pie chart"
+        learning_outcomes:
+          - "Choose the appropriate graph type for a given data set and question"
+          - "Distinguish a bar graph from a histogram"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-artificial-intelligence-ch08
+    number: 8
+    title: "Preparing Data for Visualisation and Multi-dimensional Data"
+    unit: "Unit 4: Data Visualization"
+    topics:
+      - id: isc-11-artificial-intelligence-ch08-t01
+        title: "Handling missing values with Pandas and spreadsheet data-cleaning features"
+        learning_outcomes:
+          - "Detect missing values and fill or drop them using Pandas"
+      - id: isc-11-artificial-intelligence-ch08-t02
+        title: "Detecting and handling outliers and inconsistencies"
+        learning_outcomes:
+          - "Identify outliers using a box plot or the interquartile range rule and decide how to treat them"
+      - id: isc-11-artificial-intelligence-ch08-t03
+        title: "Dimensionality of data"
+        learning_outcomes:
+          - "Explain what the dimensions or features of a data set are"
+      - id: isc-11-artificial-intelligence-ch08-t04
+        title: "Representing and visualising multi-dimensional data"
+        learning_outcomes:
+          - "Visualise relationships among several variables using pair plots, colour or size encodings"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-artificial-intelligence-ch09
+    number: 9
+    title: "Data Cleaning and Transformation"
+    unit: "Unit 5: Theoretical and Practical Aspects of Data Processing"
+    topics:
+      - id: isc-11-artificial-intelligence-ch09-t01
+        title: "Introduction to data cleaning"
+        learning_outcomes:
+          - "Explain why raw data must be cleaned before analysis"
+      - id: isc-11-artificial-intelligence-ch09-t02
+        title: "Cleaning with Pandas: removing duplicates and fixing inconsistent data"
+        learning_outcomes:
+          - "Remove duplicate rows and standardise inconsistent entries in a DataFrame"
+      - id: isc-11-artificial-intelligence-ch09-t03
+        title: "Exploring open online datasets: creating and manipulating DataFrames"
+        learning_outcomes:
+          - "Load a public dataset into a Pandas DataFrame and select, filter and sort its rows and columns"
+      - id: isc-11-artificial-intelligence-ch09-t04
+        title: "Data transformation and standardisation"
+        learning_outcomes:
+          - "Apply min-max normalisation and z-score standardisation to a numeric column"
+          - "Explain why standardisation helps compare features measured in different units"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-artificial-intelligence-ch10
+    number: 10
+    title: "Data Modelling and Simple Linear Regression"
+    unit: "Unit 6: Data Modelling, Simple Linear Regression"
+    topics:
+      - id: isc-11-artificial-intelligence-ch10-t01
+        title: "Data modelling: dimensional, relational and entity-relationship models"
+        learning_outcomes:
+          - "Distinguish dimensional, relational and entity-relationship data models"
+          - "Draw a simple entity-relationship diagram for a school database"
+      - id: isc-11-artificial-intelligence-ch10-t02
+        title: "Regression analysis: dependent and independent variables; types of regression"
+        learning_outcomes:
+          - "Identify the dependent and independent variables in a prediction problem"
+          - "Name the main types of regression"
+      - id: isc-11-artificial-intelligence-ch10-t03
+        title: "Linear regression equation: least squares regression line and regression coefficient"
+        learning_outcomes:
+          - "Calculate the least squares line y = a + bx for a small data set"
+          - "Use the regression line to make a prediction"
+      - id: isc-11-artificial-intelligence-ch10-t04
+        title: "Properties and types of linear regression"
+        learning_outcomes:
+          - "State the properties of the regression line and distinguish simple from multiple linear regression"
+      - id: isc-11-artificial-intelligence-ch10-t05
+        title: "Solving linear equations and their applications"
+        learning_outcomes:
+          - "Solve linear equations and apply them to problems such as cost and pricing"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-artificial-intelligence-ch11
+    number: 11
+    title: "Ethical Practices in AI"
+    unit: "Unit 7: Ethical Practices in AI"
+    topics:
+      - id: isc-11-artificial-intelligence-ch11-t01
+        title: "AI code of ethics: avoiding bias"
+        learning_outcomes:
+          - "Explain how bias enters AI systems through data and design and suggest ways to reduce it"
+      - id: isc-11-artificial-intelligence-ch11-t02
+        title: "Privacy of users and their data"
+        learning_outcomes:
+          - "Describe practices that protect user privacy in AI applications"
+      - id: isc-11-artificial-intelligence-ch11-t03
+        title: "Mitigating environmental impact of AI"
+        learning_outcomes:
+          - "Explain the energy and resource costs of training AI models and ways to reduce them"
+      - id: isc-11-artificial-intelligence-ch11-t04
+        title: "Importance of AI ethics; effects of designing technology to replicate human life"
+        learning_outcomes:
+          - "Evaluate the risks of technology designed to imitate humans, such as deepfakes or human-like chatbots"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

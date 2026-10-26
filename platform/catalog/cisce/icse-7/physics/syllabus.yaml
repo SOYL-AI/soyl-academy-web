@@ -1,0 +1,354 @@
+# ICSE Class 7 Physics - CISCE Curriculum for Upper Primary Classes VI-VIII (2016), Class VII part only.
+# Source: platform/catalog/sources/cisce.md#cisce-upper-primary-curriculum (Physics, Class VII, Themes 1-7);
+# scope sharpened with #cisce-upper-primary-physics-resource. Topic wording is our own summary of the official themes.
+subject_id: icse-7-physics
+academic_year: "2026-27"
+source_status: verified
+sources: [cisce-upper-primary-curriculum, cisce-upper-primary-physics-resource]
+exam_notes: >-
+  No board examination in Class 7. CISCE publishes a recommended theme-based curriculum (Physics taught as a separate
+  science from Class VI) with learning outcomes per class; it prescribes no textbooks, no paper pattern and no marks
+  weightage. Schools choose their own textbooks and set their own unit tests, term examinations and practical/activity
+  assessment. The Class VII curriculum has seven themes; SOYL grouped them into 12 teachable chapters in curriculum order.
+  The CISCE resource module stresses qualitative understanding, correct units and symbols (g, s, not gm, sec) and
+  hands-on activities rather than mathematical rigour; numericals are simple, one-step applications of a formula.
+units:
+  - { name: "Theme 1: Physical Quantities and Measurement", marks: null }
+  - { name: "Theme 2: Force and Pressure - Motion", marks: null }
+  - { name: "Theme 3: Energy", marks: null }
+  - { name: "Theme 4: Light Energy", marks: null }
+  - { name: "Theme 5: Heat", marks: null }
+  - { name: "Theme 6: Sound", marks: null }
+  - { name: "Theme 7: Electricity and Magnetism", marks: null }
+chapters:
+  - id: icse-7-physics-ch01
+    number: 1
+    title: "Measuring Volume and Area"
+    unit: "Theme 1: Physical Quantities and Measurement"
+    topics:
+      - id: icse-7-physics-ch01-t01
+        title: "Volume as space occupied; unit volume (cubic centimetre, cubic metre); litre and millilitre"
+        learning_outcomes:
+          - "Define volume and express it in a proper unit with the correct symbol (cm^3, m^3, L, mL)"
+          - "Find the volume of a cuboid by counting unit cubes and by length x breadth x height"
+      - id: icse-7-physics-ch01-t02
+        title: "Measuring the volume of a liquid with a graduated cylinder and a graduated beaker"
+        learning_outcomes:
+          - "Read the volume of a liquid in a graduated cylinder correctly at the bottom of the meniscus"
+          - "Find the least count of a graduated cylinder from its markings"
+      - id: icse-7-physics-ch01-t03
+        title: "Volume of an irregular solid by displacement of water in a graduated cylinder or beaker"
+        learning_outcomes:
+          - "Measure the volume of a small stone from the rise in the water level of a graduated cylinder"
+          - "Explain why the solid must be fully immersed and must not dissolve in or absorb water"
+      - id: icse-7-physics-ch01-t04
+        title: "Estimating the area of an irregular shape using graph paper"
+        learning_outcomes:
+          - "Estimate the area of a leaf traced on graph paper by counting full squares and half-or-more squares"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-physics-ch02
+    number: 2
+    title: "Density and Speed"
+    unit: "Theme 1: Physical Quantities and Measurement"
+    topics:
+      - id: icse-7-physics-ch02-t01
+        title: "Density as mass per unit volume; formula density = mass / volume; units g/cm^3 and kg/m^3"
+        learning_outcomes:
+          - "Define density and write its formula"
+          - "Express density in a proper unit with the correct symbol"
+      - id: icse-7-physics-ch02-t02
+        title: "Measuring the density of a regular solid (mass by balance, volume from dimensions)"
+        learning_outcomes:
+          - "Find the density of a wooden or metal block from its measured mass and dimensions"
+          - "Compare two materials as lighter or heavier for the same volume using their densities"
+      - id: icse-7-physics-ch02-t03
+        title: "Simple numerical problems on density"
+        learning_outcomes:
+          - "Calculate density, mass or volume when the other two quantities are given"
+      - id: icse-7-physics-ch02-t04
+        title: "Speed as distance covered per unit time; formula speed = distance / time; units m/s and km/h"
+        learning_outcomes:
+          - "Define speed and write its formula"
+          - "Solve simple problems to find speed, distance or time for objects such as a cyclist or a train"
+    removed_topics:
+      - "SI units are not insisted on in density and speed numericals at this level (simple numericals only)"
+    literature_texts: []
+  - id: icse-7-physics-ch03
+    number: 3
+    title: "Motion, Speed and Weight"
+    unit: "Theme 2: Force and Pressure - Motion"
+    topics:
+      - id: icse-7-physics-ch03-t01
+        title: "Rest and motion: motion as change in position of an object with time"
+        learning_outcomes:
+          - "Define motion and identify objects at rest and in motion around them"
+      - id: icse-7-physics-ch03-t02
+        title: "Types of motion: translatory, circular (circulatory), oscillatory and random"
+        learning_outcomes:
+          - "Classify given examples (a falling ball, a merry-go-round, a swing, a flying bee) by type of motion"
+          - "Tabulate everyday objects according to the type of motion they show"
+      - id: icse-7-physics-ch03-t03
+        title: "Periodic (repetitive) and non-periodic motion; the simple pendulum as periodic motion"
+        learning_outcomes:
+          - "Distinguish periodic from non-periodic motion with examples"
+          - "Describe the motion of a pendulum bob as periodic and oscillatory"
+      - id: icse-7-physics-ch03-t04
+        title: "Uniform and non-uniform motion; distance travelled"
+        learning_outcomes:
+          - "Distinguish uniform from non-uniform motion using distance covered in equal intervals of time"
+          - "Give daily-life examples of uniform and non-uniform motion"
+      - id: icse-7-physics-ch03-t05
+        title: "Average speed: total distance / total time; numerical problems from daily life"
+        learning_outcomes:
+          - "Calculate the average speed of a bus or a runner from given distance and time data"
+      - id: icse-7-physics-ch03-t06
+        title: "Weight as the force of gravity on an object; difference between mass and weight"
+        learning_outcomes:
+          - "Define weight and relate it to mass"
+          - "List differences between mass and weight (meaning, unit, measuring device, whether it changes with place)"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-physics-ch04
+    number: 4
+    title: "Energy and its Forms"
+    unit: "Theme 3: Energy"
+    topics:
+      - id: icse-7-physics-ch04-t01
+        title: "Energy as the capacity to do work; units joule (J) and calorie (cal)"
+        learning_outcomes:
+          - "Define energy and relate it to the ability to do work"
+          - "Express energy in joule and calorie with correct symbols"
+      - id: icse-7-physics-ch04-t02
+        title: "Forms of energy: kinetic, potential, heat, light, sound, chemical and electrical"
+        learning_outcomes:
+          - "Identify the form of energy possessed by a moving ball, a stretched bow, a lit bulb and a cell"
+      - id: icse-7-physics-ch04-t03
+        title: "Inter-conversion (transformation) of energy in everyday devices and situations"
+        learning_outcomes:
+          - "Describe the energy conversion in a torch, an electric fan, a solar cell and a swinging pendulum"
+          - "Draw an energy conversion diagram for a given device"
+      - id: icse-7-physics-ch04-t04
+        title: "Law of conservation of energy with real-world examples (roller coaster, hydroelectric power)"
+        learning_outcomes:
+          - "State the law of conservation of energy"
+          - "Trace energy changes in a hydroelectric power station and show that energy is conserved"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-physics-ch05
+    number: 5
+    title: "Reflection of Light"
+    unit: "Theme 4: Light Energy"
+    topics:
+      - id: icse-7-physics-ch05-t01
+        title: "Light travels in straight lines; reflection of light and reflecting surfaces"
+        learning_outcomes:
+          - "Explain reflection of light with examples such as seeing a face in a mirror"
+      - id: icse-7-physics-ch05-t02
+        title: "Terms: plane surface, normal, point of incidence, incident and reflected ray, angle of incidence, angle of reflection"
+        learning_outcomes:
+          - "Label the incident ray, reflected ray, normal and angles on a reflection diagram"
+      - id: icse-7-physics-ch05-t03
+        title: "Laws of reflection"
+        learning_outcomes:
+          - "State the two laws of reflection"
+          - "Verify that the angle of incidence equals the angle of reflection using a plane mirror and a ray of light"
+      - id: icse-7-physics-ch05-t04
+        title: "Image in a plane mirror: ray diagram and characteristics (lateral inversion, same size, same distance behind the mirror)"
+        learning_outcomes:
+          - "Draw a ray diagram using the laws of reflection to locate the image of a point object in a plane mirror"
+          - "Describe the characteristics of the image formed by a plane mirror"
+          - "Explain why AMBULANCE is written in reverse on the front of an ambulance"
+      - id: icse-7-physics-ch05-t05
+        title: "Uses of plane mirrors; speed of light (3 x 10^8 m/s) and its slowing in glass and water"
+        learning_outcomes:
+          - "List uses of plane mirrors such as periscopes and dressing mirrors"
+          - "State the speed of light in air and that it is lower in glass and water"
+    removed_topics:
+      - "Virtual image is not named in plane-mirror ray diagrams at this level"
+    literature_texts: []
+  - id: icse-7-physics-ch06
+    number: 6
+    title: "Colours of Light and Objects"
+    unit: "Theme 4: Light Energy"
+    topics:
+      - id: icse-7-physics-ch06-t01
+        title: "White light made of seven colours; formation of a rainbow"
+        learning_outcomes:
+          - "Name the seven colours of sunlight in order"
+          - "Describe how a rainbow is formed by sunlight passing through raindrops"
+      - id: icse-7-physics-ch06-t02
+        title: "Primary colours of light (red, green, blue) and secondary colours by colour addition"
+        learning_outcomes:
+          - "State the three primary colours of light"
+          - "Predict the colour produced by adding two or three primary colours of light (yellow, cyan, magenta, white)"
+          - "Relate colours on a TV or computer screen to the mixing of primary colours"
+      - id: icse-7-physics-ch06-t03
+        title: "Colour of an object explained by reflection and absorption of colours"
+        learning_outcomes:
+          - "Explain why a leaf looks green and a black shirt looks black in white light"
+          - "Predict the colour of a red object seen in green light"
+      - id: icse-7-physics-ch06-t04
+        title: "Colour subtraction using colour filters"
+        learning_outcomes:
+          - "Explain how a colour filter transmits some colours and absorbs others"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-physics-ch07
+    number: 7
+    title: "Heat and Temperature"
+    unit: "Theme 5: Heat"
+    topics:
+      - id: icse-7-physics-ch07-t01
+        title: "Heat as a form of energy; units joule (J) and calorie (cal)"
+        learning_outcomes:
+          - "Define heat as energy that flows from a hot object to a cold object"
+          - "Express heat in joule and calorie"
+      - id: icse-7-physics-ch07-t02
+        title: "Temperature scales: degree Celsius, degree Fahrenheit and kelvin"
+        learning_outcomes:
+          - "State the freezing and boiling points of water on the Celsius, Fahrenheit and Kelvin scales"
+          - "Read the temperature of water on a thermometer marked in degrees Fahrenheit"
+      - id: icse-7-physics-ch07-t03
+        title: "Effects of heat: change in temperature, change in size (expansion and contraction), change in state"
+        learning_outcomes:
+          - "Describe the three effects of heat on an object with one example each"
+          - "Explain why gaps are left between railway lines using expansion"
+      - id: icse-7-physics-ch07-t04
+        title: "Good and bad conductors of heat; choosing conductors and insulators in daily life"
+        learning_outcomes:
+          - "Classify materials such as aluminium, copper, wood and plastic as good or bad conductors of heat"
+          - "Justify why cooking pans are made of metal but have wooden or plastic handles"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-physics-ch08
+    number: 8
+    title: "Transfer of Heat"
+    unit: "Theme 5: Heat"
+    topics:
+      - id: icse-7-physics-ch08-t01
+        title: "Conduction: heat transfer through solids"
+        learning_outcomes:
+          - "Describe an activity with wax-fixed pins on a metal rod showing conduction"
+      - id: icse-7-physics-ch08-t02
+        title: "Convection: heat transfer in liquids and gases by convection currents"
+        learning_outcomes:
+          - "Describe the movement of potassium permanganate crystals in heated water as evidence of convection"
+          - "Explain land and sea breezes as convection currents in air"
+      - id: icse-7-physics-ch08-t03
+        title: "Radiation: heat transfer without a medium"
+        learning_outcomes:
+          - "Explain how heat from the Sun reaches the Earth"
+          - "Identify where conduction, convection and radiation take place in a given real-world situation"
+      - id: icse-7-physics-ch08-t04
+        title: "Thermos flask: construction and working as an application of heat transfer"
+        learning_outcomes:
+          - "Label the parts of a thermos flask"
+          - "Explain how each part reduces heat transfer by conduction, convection or radiation"
+          - "Design a simple cooling pack using thermocol and other insulating materials"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-physics-ch09
+    number: 9
+    title: "Sound"
+    unit: "Theme 6: Sound"
+    topics:
+      - id: icse-7-physics-ch09-t01
+        title: "Sources of sound; sound produced by vibration; the human voice box (larynx)"
+        learning_outcomes:
+          - "Identify the vibrating part in sources such as a drum, a guitar string and the human throat"
+      - id: icse-7-physics-ch09-t02
+        title: "Sound as a longitudinal wave; amplitude (related to loudness) and frequency"
+        learning_outcomes:
+          - "Describe sound as a longitudinal wave"
+          - "Define amplitude and frequency and relate larger amplitude to louder sound"
+      - id: icse-7-physics-ch09-t03
+        title: "Sound needs a medium to travel; no sound in vacuum"
+        learning_outcomes:
+          - "Demonstrate with an activity that sound needs a medium to travel"
+          - "Explain why astronauts on the Moon talk using radio sets"
+      - id: icse-7-physics-ch09-t04
+        title: "Reflection and absorption of sound; sound-absorbing materials"
+        learning_outcomes:
+          - "List examples of reflection of sound and of sound-absorbing materials"
+          - "Explain why the walls of an auditorium are lined with soft materials"
+          - "Design a simple sound-proof box from classroom materials"
+      - id: icse-7-physics-ch09-t05
+        title: "Relative speed of sound in solids, liquids and gases"
+        learning_outcomes:
+          - "Arrange solids, liquids and gases in order of the speed of sound in them"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-physics-ch10
+    number: 10
+    title: "Magnetism and Electromagnets"
+    unit: "Theme 7: Electricity and Magnetism"
+    topics:
+      - id: icse-7-physics-ch10-t01
+        title: "Law of magnetism: like poles repel, unlike poles attract"
+        learning_outcomes:
+          - "State the law of magnetism"
+          - "Predict whether two given bar magnet poles will attract or repel"
+      - id: icse-7-physics-ch10-t02
+        title: "Test for a magnet: repulsion as the sure test"
+        learning_outcomes:
+          - "Explain why repulsion, not attraction, confirms that an object is a magnet"
+      - id: icse-7-physics-ch10-t03
+        title: "Electromagnetism: a current-carrying coil behaves like a magnet; making an electromagnet with an iron core"
+        learning_outcomes:
+          - "Describe how to make a simple electromagnet with an iron nail, a coil of wire and a cell"
+          - "State two ways of increasing the strength of an electromagnet"
+      - id: icse-7-physics-ch10-t04
+        title: "Uses of electromagnets; construction and working of an electric bell"
+        learning_outcomes:
+          - "List devices that use electromagnets, such as cranes, motors and loudspeakers"
+          - "Explain the working of an electric bell using a labelled diagram"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-physics-ch11
+    number: 11
+    title: "Electric Current and Circuits"
+    unit: "Theme 7: Electricity and Magnetism"
+    topics:
+      - id: icse-7-physics-ch11-t01
+        title: "Electric current as a flow of charges; the electric cell as a source of electricity"
+        learning_outcomes:
+          - "Relate electric current to the flow of charges"
+          - "Recognise the electric cell as a source of electricity in torches, watches and calculators"
+      - id: icse-7-physics-ch11-t02
+        title: "Resistors as components that oppose the flow of current"
+        learning_outcomes:
+          - "Define a resistor as a component that opposes the flow of current"
+      - id: icse-7-physics-ch11-t03
+        title: "Standard symbols for cell, battery, key, bulb, connecting wire and resistor; role of the key"
+        learning_outcomes:
+          - "Draw circuit diagrams using standard symbols"
+          - "Explain the role of a key (switch) and the precautions before switching on a circuit"
+      - id: icse-7-physics-ch11-t04
+        title: "Simple series and parallel circuits"
+        learning_outcomes:
+          - "Connect bulbs in series and in parallel and compare what happens when one bulb is removed"
+          - "Draw circuit diagrams of simple series and parallel arrangements"
+      - id: icse-7-physics-ch11-t05
+        title: "Battery as cells connected in series"
+        learning_outcomes:
+          - "Recognise a battery as a series combination of cells and draw its symbol"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-7-physics-ch12
+    number: 12
+    title: "Conductors and Insulators of Electricity"
+    unit: "Theme 7: Electricity and Magnetism"
+    topics:
+      - id: icse-7-physics-ch12-t01
+        title: "Good conductors (conductors) and bad conductors (insulators) of electricity"
+        learning_outcomes:
+          - "Define conductors and insulators of electricity with examples"
+      - id: icse-7-physics-ch12-t02
+        title: "Testing materials with a simple circuit tester"
+        learning_outcomes:
+          - "Design and carry out a test to find whether a given object conducts electricity"
+          - "Explain why electric wires are covered with plastic and electricians use rubber gloves"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

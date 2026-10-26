@@ -1,0 +1,361 @@
+# ICSE Class 9 Computer Applications (86) - year one of the ICSE 2028 course.
+# Source: platform/catalog/sources/cisce.md#icse-2028-computer-applications (CLASS IX section only). Topic wording is our own summary of the official scope.
+subject_id: icse-9-computer-applications
+academic_year: "2026-27"
+source_status: verified
+sources: [icse-2028-computer-applications, icse-2028-regulations, icse-2027-class-ix-specimen-papers]
+exam_notes: >-
+  There is no board examination in Class IX: the Class IX final examination is conducted internally by the school on the
+  Class IX portion (ICSE 2028 Regulations), and promotion to Class X depends on cumulative achievement through the year.
+  Group III subject, weighted 50% external examination and 50% internal assessment (Regulations).
+  The syllabus prescribes one written theory paper of 2 hours, 100 marks, plus internal assessment of 100 marks: at least
+  15 Java programming assignments during the year (80 marks: class design, variable description, coding and documentation,
+  and execution or output, 20 each) and a written project on Ethical Computing (20 marks: introduction, content,
+  presentation, conclusion), marked by the subject teacher. Programs are written in Java with OpenJDK and an IDE such as
+  BlueJ, DrJava or NetBeans; the keywords public, static and String args[] are treated as default in the prescribed
+  program structure. CISCE released a 2027 Class IX specimen paper for Computer Applications (anchor
+  icse-2027-class-ix-specimen-papers) that schools can use as the model for the school examination.
+  Ethical Computing is listed in the theory syllabus but the syllabus marks it for a project counted in internal assessment.
+  CISCE publishes a topic list in eleven sections, not textbook chapters: SOYL groups it into 13 teachable chapters in
+  syllabus order. No unit-wise marks weightage is published.
+units:
+  - { name: "1. Introduction to Object Oriented Programming Concepts", marks: null }
+  - { name: "2. Elementary Concept of Objects and Classes", marks: null }
+  - { name: "3. Identifiers and Literals", marks: null }
+  - { name: "4. Operators in Java", marks: null }
+  - { name: "5. Basic Structure of a Class in Java", marks: null }
+  - { name: "6. Data Processing in Java", marks: null }
+  - { name: "7. Mathematical Library Methods", marks: null }
+  - { name: "8. Conditional Statements in Java", marks: null }
+  - { name: "9. Looping / Iterative Statements in Java", marks: null }
+  - { name: "10. Nested for Loops", marks: null }
+  - { name: "11. Ethical Computing", marks: null }
+chapters:
+  - id: icse-9-computer-applications-ch01
+    number: 1
+    title: "Principles of Object-Oriented Programming"
+    unit: "1. Introduction to Object Oriented Programming Concepts"
+    topics:
+      - id: icse-9-computer-applications-ch01-t01
+        title: "Procedure-oriented versus object-oriented programming"
+        learning_outcomes:
+          - "Compare procedure-oriented and object-oriented programming in how data and functions are organised"
+      - id: icse-9-computer-applications-ch01-t02
+        title: "Data abstraction and encapsulation with real-life examples"
+        learning_outcomes:
+          - "Define data abstraction and encapsulation and illustrate each with an everyday example such as a car or an ATM"
+      - id: icse-9-computer-applications-ch01-t03
+        title: "Inheritance and polymorphism with real-life examples"
+        learning_outcomes:
+          - "Define inheritance and polymorphism and illustrate each with a real-life example"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-computer-applications-ch02
+    number: 2
+    title: "Introduction to Java"
+    unit: "1. Introduction to Object Oriented Programming Concepts"
+    topics:
+      - id: icse-9-computer-applications-ch02-t01
+        title: "Open source software; IDEs; Java versions; hardware and software requirements; OpenJDK and IDEs such as BlueJ, DrJava and NetBeans"
+        learning_outcomes:
+          - "Explain what open source software and an integrated development environment are"
+          - "List the software needed to write and run a Java program"
+      - id: icse-9-computer-applications-ch02-t02
+        title: "Types of Java programs: applets and applications"
+        learning_outcomes:
+          - "Distinguish Java applets from Java applications with examples"
+      - id: icse-9-computer-applications-ch02-t03
+        title: "Java compilation process: source code, byte code, object code and the Java Virtual Machine"
+        learning_outcomes:
+          - "Describe the steps from source code to execution in Java"
+          - "Explain how byte code and the JVM make Java platform independent"
+      - id: icse-9-computer-applications-ch02-t04
+        title: "Features of Java: simple, robust, secure, object-oriented, platform independent"
+        learning_outcomes:
+          - "Explain any four features of Java"
+      - id: icse-9-computer-applications-ch02-t05
+        title: "Real-world applications built with Java (exposure only)"
+        learning_outcomes:
+          - "Give examples of mobile, desktop, web, gaming, education and chatbot applications developed with Java"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-computer-applications-ch03
+    number: 3
+    title: "Elementary Concept of Objects and Classes"
+    unit: "2. Elementary Concept of Objects and Classes"
+    topics:
+      - id: icse-9-computer-applications-ch03-t01
+        title: "Modelling real-world entities as objects with state (attributes) and behaviour (methods)"
+        learning_outcomes:
+          - "Identify the attributes and behaviours of a given real-world object such as a student or a bank account"
+      - id: icse-9-computer-applications-ch03-t02
+        title: "Class as a blueprint and an object factory; class as a user-defined data type"
+        learning_outcomes:
+          - "Explain why a class is called a blueprint, an object factory and a user-defined data type"
+          - "Distinguish a class from an object with examples"
+      - id: icse-9-computer-applications-ch03-t03
+        title: "Computation as message passing through method calls between objects"
+        learning_outcomes:
+          - "Describe how objects interact by calling each other's methods"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-computer-applications-ch04
+    number: 4
+    title: "Character Set, Escape Sequences and Tokens"
+    unit: "3. Identifiers and Literals"
+    topics:
+      - id: icse-9-computer-applications-ch04-t01
+        title: "Java character set; ASCII codes of A-Z, a-z, 0-9 and the space character"
+        learning_outcomes:
+          - "Recall the ASCII code ranges for uppercase letters, lowercase letters and digits"
+      - id: icse-9-computer-applications-ch04-t02
+        title: "Unicode and why Java uses it"
+        learning_outcomes:
+          - "Explain how Unicode supports text in many writing systems, including Indian scripts"
+      - id: icse-9-computer-applications-ch04-t03
+        title: "Escape sequences: \\n, \\t, \\\\, \\\" and \\'"
+        learning_outcomes:
+          - "Predict the output of print statements containing escape sequences"
+      - id: icse-9-computer-applications-ch04-t04
+        title: "Tokens: keywords, identifiers, literals, punctuators and operators; rules for naming identifiers"
+        learning_outcomes:
+          - "Classify the tokens in a Java statement"
+          - "Decide whether a given name is a valid identifier and justify"
+      - id: icse-9-computer-applications-ch04-t05
+        title: "Constants and variables; types of literals"
+        learning_outcomes:
+          - "Distinguish a variable from a constant and give examples of integer, real, character, boolean and string literals"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-computer-applications-ch05
+    number: 5
+    title: "Data Types and Type Conversion"
+    unit: "3. Identifiers and Literals"
+    topics:
+      - id: icse-9-computer-applications-ch05-t01
+        title: "Primitive data types with sizes in bits and bytes"
+        learning_outcomes:
+          - "State the size and default use of byte, short, int, long, float, double, char and boolean"
+      - id: icse-9-computer-applications-ch05-t02
+        title: "Non-primitive (reference) data types with examples"
+        learning_outcomes:
+          - "Distinguish primitive from non-primitive data types with examples such as String, arrays and classes"
+      - id: icse-9-computer-applications-ch05-t03
+        title: "Implicit (widening) and explicit (narrowing) type conversion"
+        learning_outcomes:
+          - "Predict the result type of a mixed-type expression"
+          - "Write a type cast and explain possible loss of data"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-computer-applications-ch06
+    number: 6
+    title: "Operators in Java"
+    unit: "4. Operators in Java"
+    topics:
+      - id: icse-9-computer-applications-ch06-t01
+        title: "Forms of operators: unary, binary and ternary"
+        learning_outcomes:
+          - "Classify operators by the number of operands"
+          - "Use the ternary operator to choose between two values"
+      - id: icse-9-computer-applications-ch06-t02
+        title: "Arithmetic, relational, logical and assignment operators; shorthand operators"
+        learning_outcomes:
+          - "Evaluate expressions using arithmetic, relational and logical operators, including integer division and modulus"
+      - id: icse-9-computer-applications-ch06-t03
+        title: "Increment and decrement operators: prefix and postfix forms"
+        learning_outcomes:
+          - "Trace the value of variables in expressions using prefix and postfix increment and decrement"
+      - id: icse-9-computer-applications-ch06-t04
+        title: "Precedence and associativity of operators"
+        learning_outcomes:
+          - "Evaluate a compound expression step by step using precedence and associativity"
+      - id: icse-9-computer-applications-ch06-t05
+        title: "Counters and accumulators"
+        learning_outcomes:
+          - "Use a counter and an accumulator variable to count and total values"
+      - id: icse-9-computer-applications-ch06-t06
+        title: "The new operator for dynamic memory, the dot operator for members, and System.out.print / println for output"
+        learning_outcomes:
+          - "Create an object with new and call its method with the dot operator"
+          - "Distinguish print() from println() by predicting output"
+    removed_topics:
+      - "Bitwise and shift operators"
+    literature_texts: []
+  - id: icse-9-computer-applications-ch07
+    number: 7
+    title: "Basic Structure of a Java Program"
+    unit: "5. Basic Structure of a Class in Java"
+    topics:
+      - id: icse-9-computer-applications-ch07-t01
+        title: "Structure of a class with a main method; comments; default keywords public, static and String args[]"
+        learning_outcomes:
+          - "Write a complete Java class with a main method that prints output"
+          - "Identify the parts of a given program's structure"
+      - id: icse-9-computer-applications-ch07-t02
+        title: "Program structure using the Scanner class: import java.util.*, declaring variables, creating a Scanner object, accepting input"
+        learning_outcomes:
+          - "Write a program that imports java.util, creates a Scanner object and reads input values"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-computer-applications-ch08
+    number: 8
+    title: "Data Processing: Input, Errors and Comments"
+    unit: "6. Data Processing in Java"
+    topics:
+      - id: icse-9-computer-applications-ch08-t01
+        title: "Three ways of supplying data: initialisation, parameters and input during execution"
+        learning_outcomes:
+          - "Write the same program using initialisation, method parameters and Scanner input"
+      - id: icse-9-computer-applications-ch08-t02
+        title: "Introduction to packages"
+        learning_outcomes:
+          - "Explain what a package is and name the packages java.lang and java.util"
+      - id: icse-9-computer-applications-ch08-t03
+        title: "Scanner methods: nextShort, nextInt, nextLong, nextFloat, nextDouble, next, nextLine and next().charAt(0)"
+        learning_outcomes:
+          - "Choose the correct Scanner method for each data type and read a character with next().charAt(0)"
+      - id: icse-9-computer-applications-ch08-t04
+        title: "Types of errors: syntax, runtime and logical"
+        learning_outcomes:
+          - "Classify a given error as syntax, runtime or logical and suggest a fix"
+      - id: icse-9-computer-applications-ch08-t05
+        title: "Single-line and multi-line comments"
+        learning_outcomes:
+          - "Document a program using single-line and multi-line comments"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-computer-applications-ch09
+    number: 9
+    title: "Mathematical Library Methods"
+    unit: "7. Mathematical Library Methods"
+    topics:
+      - id: icse-9-computer-applications-ch09-t01
+        title: "The default package java.lang and the Math class"
+        learning_outcomes:
+          - "Explain why Math methods can be used without an import statement"
+      - id: icse-9-computer-applications-ch09-t02
+        title: "Math.pow, sqrt, cbrt, abs, max, min and hypot"
+        learning_outcomes:
+          - "Predict the return value and return type of each method for given arguments"
+      - id: icse-9-computer-applications-ch09-t03
+        title: "Rounding methods: ceil, floor, round and rint"
+        learning_outcomes:
+          - "Compare the results of ceil, floor, round and rint for positive and negative arguments"
+      - id: icse-9-computer-applications-ch09-t04
+        title: "Math.random and generating numbers in a range; addExact, subtractExact and multiplyExact"
+        learning_outcomes:
+          - "Write an expression that generates a random integer in a given range"
+          - "Explain how the exact methods signal overflow"
+      - id: icse-9-computer-applications-ch09-t05
+        title: "Writing Java expressions for mathematical formulae using operators and Math methods"
+        learning_outcomes:
+          - "Convert a mathematical formula into a correct Java expression"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-computer-applications-ch10
+    number: 10
+    title: "Conditional Statements"
+    unit: "8. Conditional Statements in Java"
+    topics:
+      - id: icse-9-computer-applications-ch10-t01
+        title: "if and if-else statements"
+        learning_outcomes:
+          - "Write programs using if and if-else, such as checking odd or even or eligibility to vote"
+      - id: icse-9-computer-applications-ch10-t02
+        title: "if-else-if ladder and nested if"
+        learning_outcomes:
+          - "Write slab-based programs such as an electricity bill or discount calculation using an if-else-if ladder"
+          - "Trace the output of a nested if construct"
+      - id: icse-9-computer-applications-ch10-t03
+        title: "switch-case with default and break; fall-through"
+        learning_outcomes:
+          - "Write a switch-case program such as day of the week or a calculator"
+          - "Predict the output when break is omitted (fall-through)"
+      - id: icse-9-computer-applications-ch10-t04
+        title: "Menu-driven programs; terminating with System.exit(0)"
+        learning_outcomes:
+          - "Write a menu-driven program using switch-case and System.exit(0)"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-computer-applications-ch11
+    number: 11
+    title: "Iterative Statements (Loops)"
+    unit: "9. Looping / Iterative Statements in Java"
+    topics:
+      - id: icse-9-computer-applications-ch11-t01
+        title: "Need for loops; entry-controlled loops: for and while"
+        learning_outcomes:
+          - "Explain why loops are needed with an example"
+          - "Write programs using for and while loops"
+      - id: icse-9-computer-applications-ch11-t02
+        title: "Exit-controlled loop: do-while; comparison with entry-controlled loops"
+        learning_outcomes:
+          - "Distinguish entry-controlled and exit-controlled loops and predict how often each body runs"
+      - id: icse-9-computer-applications-ch11-t03
+        title: "Converting between for, while and do-while"
+        learning_outcomes:
+          - "Rewrite a given loop in the other two forms"
+      - id: icse-9-computer-applications-ch11-t04
+        title: "Loop variations: finite and infinite loops, delay loops, multiple counter variables"
+        learning_outcomes:
+          - "Identify infinite and delay loops and trace loops with multiple initialisations and updates"
+      - id: icse-9-computer-applications-ch11-t05
+        title: "Jump statements break and continue"
+        learning_outcomes:
+          - "Trace the effect of break and continue inside a loop"
+      - id: icse-9-computer-applications-ch11-t06
+        title: "Loop programs: series sums, factorial, prime, perfect, Armstrong, palindrome and similar number checks, HCF and LCM"
+        learning_outcomes:
+          - "Write loop programs that extract digits of a number and test it for a given property"
+          - "Write programs to find the sum of a simple series and the HCF and LCM of two numbers"
+    removed_topics: []
+    literature_texts: []
+  - id: icse-9-computer-applications-ch12
+    number: 12
+    title: "Nested for Loops"
+    unit: "10. Nested for Loops"
+    topics:
+      - id: icse-9-computer-applications-ch12-t01
+        title: "How nested for loops execute; break and continue in nested loops"
+        learning_outcomes:
+          - "Trace the number of iterations of inner and outer loops"
+          - "Predict the effect of break and continue in an inner loop"
+      - id: icse-9-computer-applications-ch12-t02
+        title: "Square and rectangular patterns of numbers and characters"
+        learning_outcomes:
+          - "Write nested loops to print square and rectangular patterns"
+      - id: icse-9-computer-applications-ch12-t03
+        title: "Right-angled triangle patterns of numbers and characters"
+        learning_outcomes:
+          - "Write nested loops to print right-angled triangle patterns"
+      - id: icse-9-computer-applications-ch12-t04
+        title: "Series calculation and display using nested loops"
+        learning_outcomes:
+          - "Write a program using nested loops to compute a series involving factorials or powers"
+    removed_topics:
+      - "Nested while and nested do-while loops"
+      - "Patterns other than square, rectangular and right-angled triangles"
+    literature_texts: []
+  - id: icse-9-computer-applications-ch13
+    number: 13
+    title: "Ethical Computing"
+    unit: "11. Ethical Computing"
+    topics:
+      - id: icse-9-computer-applications-ch13-t01
+        title: "Intellectual property rights: copyright and patents; software piracy"
+        learning_outcomes:
+          - "Distinguish copyright from a patent"
+          - "Explain why software piracy is unethical and illegal"
+      - id: icse-9-computer-applications-ch13-t02
+        title: "Privacy and data protection on the internet; protection against spam"
+        learning_outcomes:
+          - "List safety measures to protect personal data online"
+          - "Describe ways to recognise and avoid spam"
+      - id: icse-9-computer-applications-ch13-t03
+        title: "Cyber ethics, online safety, digital etiquette and responsible social media use"
+        learning_outcomes:
+          - "Explain rules of digital etiquette and responsible social media behaviour"
+          - "Plan a short project report on an ethical computing issue"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

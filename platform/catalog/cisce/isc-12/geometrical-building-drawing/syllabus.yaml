@@ -1,0 +1,278 @@
+# ISC Class 12 Geometrical and Building Drawing (870) - ISC 2027 examination (Class XII portion only).
+# Source: platform/catalog/sources/cisce.md#isc-2027-geometrical-building-drawing. Topic wording is our own summary.
+# Drawing-based subject: chapters teach building construction details, drawing conventions and sketching knowledge;
+# students practise the drawings with instruments and free-hand on A2 paper.
+subject_id: isc-12-geometrical-building-drawing
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-geometrical-building-drawing, isc-2027-regulations]
+exam_notes: >-
+  Paper I Theory (Building Drawing): 3 hours, 80 marks; candidates answer all questions. The course is based on the
+  form and construction of simple buildings and their parts - small single- and two-storey dwelling houses, garages,
+  sheds and green houses - drawn in First or Third Angle orthographic projection with sectional views, plus simple
+  working drawings from free-hand sketches and free-hand orthographic and pictorial sketches of building details and
+  tools. Drawing board, tee-square and set-squares are required (parallel-motion board or drafting machine permitted);
+  A2 paper is used (folded drawing paper is provided); IS:962-1972 (Code of Practice for Architectural and Building
+  Drawings) is followed, and the use of models is encouraged.
+  Paper II Project Work, 20 marks, assessed by the subject teacher and a locally appointed Visiting Examiner: two
+  projects on topics covered in theory, each 10 marks (teacher and Visiting Examiner marks out of 7 averaged, plus a
+  3-mark viva by the Visiting Examiner). Suggested projects: a scale study model (small residence, staircase, roof
+  types), a market survey of building materials, a site or desktop study, ten free-hand sketches of buildings and
+  details, two manual working drawings with line weights, a research study (contemporary, sustainable, traditional,
+  Art Deco or Brutalist architecture) or a precedent study of an Indian architect. Criteria differ for theory-based,
+  model-based and sketching-based projects. Project work is practical and is not taught as chapters here.
+  The subject may not be taken with Geometrical and Mechanical Drawing. Class XI plane and solid geometry is in
+  isc-11-geometrical-building-drawing and is assumed background. CISCE gives a short descriptive scope, not chapters:
+  SOYL groups it into teachable chapters in syllabus order. No topic-wise marks weightage is published.
+units:
+  - { name: "Building drawing practice and orthographic projection of buildings", marks: null }
+  - { name: "Building details", marks: null }
+  - { name: "Working drawings of simple buildings", marks: null }
+  - { name: "Free-hand sketching of building details and tools", marks: null }
+chapters:
+  - id: isc-12-geometrical-building-drawing-ch01
+    number: 1
+    title: "Building Drawing Practice (IS:962)"
+    unit: "Building drawing practice and orthographic projection of buildings"
+    topics:
+      - id: isc-12-geometrical-building-drawing-ch01-t01
+        title: "Scales used for building plans and details (for example 1:50, 1:100, 1:10); sheet layout and title block"
+        learning_outcomes:
+          - "Choose a suitable scale for a house plan and for a construction detail"
+      - id: isc-12-geometrical-building-drawing-ch01-t02
+        title: "Line types and line weights in building drawings: cut lines, outlines, hidden and centre lines"
+        learning_outcomes:
+          - "Use heavier line weights for walls cut by the section plane and lighter ones for elements seen beyond"
+      - id: isc-12-geometrical-building-drawing-ch01-t03
+        title: "Conventional symbols for materials in section: brickwork, stone, concrete, reinforced concrete, timber, earth, glass"
+        learning_outcomes:
+          - "Identify and draw the hatching or symbol for common building materials"
+      - id: isc-12-geometrical-building-drawing-ch01-t04
+        title: "Conventional symbols for doors, windows, ventilators and stairs in plan; north point; lettering and dimensioning of buildings"
+        learning_outcomes:
+          - "Show a door, a window and a stair correctly in a floor plan with dimensions"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-building-drawing-ch02
+    number: 2
+    title: "Orthographic Projection of Buildings"
+    unit: "Building drawing practice and orthographic projection of buildings"
+    topics:
+      - id: isc-12-geometrical-building-drawing-ch02-t01
+        title: "Plan as a horizontal section taken above sill level; elevations (front, rear, side)"
+        learning_outcomes:
+          - "Explain where the cutting plane for a floor plan is taken and what it shows"
+          - "Project a front elevation from a given plan"
+      - id: isc-12-geometrical-building-drawing-ch02-t02
+        title: "Sectional elevations of buildings: placing the section line through openings and stairs"
+        learning_outcomes:
+          - "Draw a sectional elevation of a single-room building through a door and a window"
+      - id: isc-12-geometrical-building-drawing-ch02-t03
+        title: "First and Third Angle arrangement of plan, elevation and section; relating heights (plinth, sill, lintel, roof) across views"
+        learning_outcomes:
+          - "Transfer heights between elevation and section consistently"
+      - id: isc-12-geometrical-building-drawing-ch02-t04
+        title: "Site plan and orientation of a small building"
+        learning_outcomes:
+          - "Read a site plan showing boundaries, building position and north direction"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-building-drawing-ch03
+    number: 3
+    title: "Foundations"
+    unit: "Building details"
+    topics:
+      - id: isc-12-geometrical-building-drawing-ch03-t01
+        title: "Purpose of foundations; bearing capacity of soil; depth and width of foundation"
+        learning_outcomes:
+          - "Explain why a wall foundation is wider than the wall it supports"
+      - id: isc-12-geometrical-building-drawing-ch03-t02
+        title: "Strip (wall) footing with stepped brick footing and concrete bed; isolated column footing"
+        learning_outcomes:
+          - "Draw a section through a stepped brick wall foundation with concrete bed"
+      - id: isc-12-geometrical-building-drawing-ch03-t03
+        title: "Plinth, plinth beam, damp-proof course (DPC) and filling under the floor"
+        learning_outcomes:
+          - "Show the position of the DPC in a wall section and explain its purpose"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-building-drawing-ch04
+    number: 4
+    title: "Walls and Masonry Bonds"
+    unit: "Building details"
+    topics:
+      - id: isc-12-geometrical-building-drawing-ch04-t01
+        title: "Bricks: standard and modular sizes; terms - header, stretcher, bed, perpend, lap, bat and closers (queen closer, king closer)"
+        learning_outcomes:
+          - "Name the parts of a brick wall and the cut bricks used in bonding"
+      - id: isc-12-geometrical-building-drawing-ch04-t02
+        title: "English bond and Flemish bond in one-brick and one-and-a-half-brick walls: plans of alternate courses and elevation"
+        learning_outcomes:
+          - "Draw the plans of alternate courses of a one-brick wall in English bond"
+          - "Compare English and Flemish bond in strength and appearance"
+      - id: isc-12-geometrical-building-drawing-ch04-t03
+        title: "Stone masonry (random rubble and ashlar) and cavity walls"
+        learning_outcomes:
+          - "Explain the advantage of a cavity wall for damp and heat insulation"
+      - id: isc-12-geometrical-building-drawing-ch04-t04
+        title: "Load-bearing and partition walls; openings in walls and their effect on the wall"
+        learning_outcomes:
+          - "Distinguish a load-bearing wall from a partition wall"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-building-drawing-ch05
+    number: 5
+    title: "Openings: Jambs, Sills, Lintels and Arches"
+    unit: "Building details"
+    topics:
+      - id: isc-12-geometrical-building-drawing-ch05-t01
+        title: "Jambs: plain, splayed and rebated (recessed) jambs; reveals"
+        learning_outcomes:
+          - "Draw plans of plain, splayed and rebated jambs"
+      - id: isc-12-geometrical-building-drawing-ch05-t02
+        title: "Sills: brick-on-edge, stone and concrete sills; weathering and throating"
+        learning_outcomes:
+          - "Draw a section through a window sill showing slope and drip groove"
+      - id: isc-12-geometrical-building-drawing-ch05-t03
+        title: "Lintels: timber, stone, steel and reinforced concrete lintels; bearing on walls; chajja (sunshade)"
+        learning_outcomes:
+          - "Draw a section through an RCC lintel with chajja over a window"
+      - id: isc-12-geometrical-building-drawing-ch05-t04
+        title: "Arches: terms (springing, voussoir, keystone, intrados, extrados, span, rise, skewback) and types (flat, segmental, semicircular, relieving)"
+        learning_outcomes:
+          - "Label the parts of an arch on a drawing"
+          - "Construct the outline of a segmental and a semicircular arch for a given span"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-building-drawing-ch06
+    number: 6
+    title: "Floors"
+    unit: "Building details"
+    topics:
+      - id: isc-12-geometrical-building-drawing-ch06-t01
+        title: "Ground floors: concrete floor on consolidated filling and hardcore; floor finishes (tiles, terrazzo, stone, cement concrete)"
+        learning_outcomes:
+          - "Draw a section through a ground floor showing the layers from soil to finish"
+      - id: isc-12-geometrical-building-drawing-ch06-t02
+        title: "Upper floors: timber joist floor and reinforced concrete slab floor"
+        learning_outcomes:
+          - "Compare a timber joist floor with an RCC slab in construction and fire resistance"
+      - id: isc-12-geometrical-building-drawing-ch06-t03
+        title: "Skirting and the junction of floor and wall"
+        learning_outcomes:
+          - "Show the floor-wall junction with skirting in a section"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-building-drawing-ch07
+    number: 7
+    title: "Roofs"
+    unit: "Building details"
+    topics:
+      - id: isc-12-geometrical-building-drawing-ch07-t01
+        title: "Flat roofs: RCC slab with weathering course, parapet and rainwater outlet"
+        learning_outcomes:
+          - "Draw a section through a flat RCC roof showing slope for drainage and parapet"
+      - id: isc-12-geometrical-building-drawing-ch07-t02
+        title: "Pitched roof terms: ridge, eaves, hip, valley, gable, rafter, purlin, wall plate, battens, pitch"
+        learning_outcomes:
+          - "Label the members and parts of a pitched roof on a drawing"
+      - id: isc-12-geometrical-building-drawing-ch07-t03
+        title: "Lean-to roof, couple roof, couple-close and collar roofs; king post truss for wider spans"
+        learning_outcomes:
+          - "Select a suitable roof type for a garage, a shed or a small house according to span"
+          - "Draw the elevation of a king post truss and name its members"
+      - id: isc-12-geometrical-building-drawing-ch07-t04
+        title: "Roof coverings: clay tiles, sheet roofing and glazing for green houses"
+        learning_outcomes:
+          - "Explain why a green house roof uses glazing and how it is supported"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-building-drawing-ch08
+    number: 8
+    title: "Doors and Windows"
+    unit: "Building details"
+    topics:
+      - id: isc-12-geometrical-building-drawing-ch08-t01
+        title: "Door terms: frame (head, jambs, holdfasts), shutter (stiles, rails, panels), rebate, architrave"
+        learning_outcomes:
+          - "Label the frame and shutter members of a door"
+      - id: isc-12-geometrical-building-drawing-ch08-t02
+        title: "Types of doors: ledged, ledged and braced, ledged braced and battened, framed and panelled, glazed and flush doors"
+        learning_outcomes:
+          - "Draw the elevation and horizontal section of a framed and panelled door"
+          - "Explain why braces slope upwards away from the hinged edge"
+      - id: isc-12-geometrical-building-drawing-ch08-t03
+        title: "Windows: casement and glazed windows, fanlights and ventilators; window frame details"
+        learning_outcomes:
+          - "Draw the elevation and vertical section of a casement window"
+      - id: isc-12-geometrical-building-drawing-ch08-t04
+        title: "Door and window fittings (hinges, bolts, handles) and schedules of doors and windows"
+        learning_outcomes:
+          - "Prepare a simple door and window schedule for a house plan"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-building-drawing-ch09
+    number: 9
+    title: "Simple Stairs"
+    unit: "Building details"
+    topics:
+      - id: isc-12-geometrical-building-drawing-ch09-t01
+        title: "Stair terms: tread, riser, going, rise, nosing, flight, landing, stringer, baluster, handrail, headroom"
+        learning_outcomes:
+          - "Label the parts of a stair in plan and section"
+      - id: isc-12-geometrical-building-drawing-ch09-t02
+        title: "Types of simple stairs: straight flight, quarter-turn, dog-legged and open-well stairs"
+        learning_outcomes:
+          - "Compare a dog-legged stair and an open-well stair in space use"
+      - id: isc-12-geometrical-building-drawing-ch09-t03
+        title: "Planning a stair: rules relating rise and tread (for example 2R + T), number of steps for a floor height, landing width"
+        learning_outcomes:
+          - "Calculate the number of risers and treads for a given floor-to-floor height"
+          - "Draw the plan and section of a dog-legged stair for a two-storey house"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-building-drawing-ch10
+    number: 10
+    title: "Working Drawings of Simple Buildings"
+    unit: "Working drawings of simple buildings"
+    topics:
+      - id: isc-12-geometrical-building-drawing-ch10-t01
+        title: "What a working drawing set contains: plans, elevations, sections and construction details with line weights"
+        learning_outcomes:
+          - "List the drawings needed to build a small house and the purpose of each"
+      - id: isc-12-geometrical-building-drawing-ch10-t02
+        title: "Preparing a plan, elevation and section from a dimensioned free-hand line sketch"
+        learning_outcomes:
+          - "Convert a free-hand line plan with dimensions into a scaled plan with wall thicknesses and openings"
+      - id: isc-12-geometrical-building-drawing-ch10-t03
+        title: "Single-storey and two-storey dwelling houses: room planning, wall thickness, openings, stair position"
+        learning_outcomes:
+          - "Draw the plan and front elevation of a two-room single-storey house from a sketch"
+          - "Show how the stair links the two floors of a two-storey house in plan and section"
+      - id: isc-12-geometrical-building-drawing-ch10-t04
+        title: "Garages, sheds and green houses: form, structure and drawing"
+        learning_outcomes:
+          - "Draw the plan and sectional elevation of a garage or shed with a lean-to roof"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-geometrical-building-drawing-ch11
+    number: 11
+    title: "Free-hand Sketching of Building Details and Tools"
+    unit: "Free-hand sketching of building details and tools"
+    topics:
+      - id: isc-12-geometrical-building-drawing-ch11-t01
+        title: "Free-hand sketching technique: proportion by eye, straight lines, circles and curves"
+        learning_outcomes:
+          - "Sketch a building detail in good proportion without instruments"
+      - id: isc-12-geometrical-building-drawing-ch11-t02
+        title: "Orthographic and pictorial (isometric and oblique) free-hand sketches of building details"
+        learning_outcomes:
+          - "Produce an isometric free-hand sketch of a brick bond corner or a window sill"
+      - id: isc-12-geometrical-building-drawing-ch11-t03
+        title: "Tools of building crafts and school workshops: hammer, mallet, try-square, plane, chisel, trowel, screwdriver and similar tools - parts and uses"
+        learning_outcomes:
+          - "Sketch a tool in two orthographic views and one pictorial view with its parts labelled"
+          - "State the use of each common building-craft tool"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

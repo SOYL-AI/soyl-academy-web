@@ -1,0 +1,416 @@
+# ISC Class 12 Applied Mathematics (885), Paper I Theory - ISC 2027 examination (Class XII portion only).
+# Source: platform/catalog/sources/cisce.md#isc-2027-applied-mathematics. Topic wording is our own summary of the official scope.
+subject_id: isc-12-applied-mathematics
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2027-applied-mathematics, isc-2027-regulations, isc-2027-specimen-papers, cisce-circular-specimen-papers-2027]
+exam_notes: >-
+  Paper I Theory: 3 hours, 80 marks. Paper II Project Work: 20 marks - two projects, each marked out of 10 (overall
+  format 1, content 4, findings 2, viva-voce 3), assessed by the subject teacher and a locally appointed Visiting
+  Examiner; CISCE sets no question paper. Suggested projects include graphing one-one, onto and inverse functions,
+  inverse trigonometric graphs as mirror images about y = x, consistency of linear systems shown graphically, and
+  illustrating increasing and decreasing functions, points of inflexion and local maxima and minima. SOYL covers
+  Paper I only. Applied Mathematics is meant for Humanities, Commerce, Economics and Bioscience students and may not
+  be combined with Mathematics (ISC regulations).
+  The ISC 2027 specimen paper (3 hours plus 15 minutes reading time) has 20 compulsory questions in four sections:
+  A - twenty 1-mark subparts including MCQs (20), B - seven 2-mark questions (14), C - seven 3-mark questions (21),
+  D - five 5-mark questions (25), with internal choice in three questions each of B, C and D; mathematical tables and
+  graph paper are provided, many questions use business and everyday Indian contexts, and the published unit
+  weightage is strictly followed. The October 2026 circular sets about 50% of marks on higher-order skills (apply,
+  analyse, evaluate, create). CISCE lists topics under seven weighted units, not textbook chapters: SOYL groups them
+  into 15 teachable chapters in syllabus order.
+units:
+  - { name: "Unit 1: Relations and Functions", marks: 6 }
+  - { name: "Unit 2: Algebra", marks: 10 }
+  - { name: "Unit 3: Calculus", marks: 25 }
+  - { name: "Unit 4: Probability", marks: 14 }
+  - { name: "Unit 5: Linear Programming", marks: 5 }
+  - { name: "Unit 6: Financial Mathematics", marks: 14 }
+  - { name: "Unit 7: Index Numbers and Moving Averages", marks: 6 }
+chapters:
+  - id: isc-12-applied-mathematics-ch01
+    number: 1
+    title: "Relations and Functions"
+    unit: "Unit 1: Relations and Functions"
+    topics:
+      - id: isc-12-applied-mathematics-ch01-t01
+        title: "Relations on a set: identity, empty and universal relations; reflexive, symmetric, transitive and equivalence relations"
+        learning_outcomes:
+          - "Test whether a given relation is reflexive, symmetric or transitive"
+          - "Prove that a given relation is an equivalence relation"
+      - id: isc-12-applied-mathematics-ch01-t02
+        title: "Functions as special relations; y = f(x); real-valued functions; domain and range"
+        learning_outcomes:
+          - "Find the domain and range of a given real-valued function"
+      - id: isc-12-applied-mathematics-ch01-t03
+        title: "Types of functions: one-one, many-one, into and onto"
+        learning_outcomes:
+          - "Determine whether a function is one-one and whether it is onto"
+      - id: isc-12-applied-mathematics-ch01-t04
+        title: "Composite functions; conditions for invertibility; inverse of an algebraic function and its graph"
+        learning_outcomes:
+          - "Find f o g and g o f for given algebraic functions"
+          - "Find the inverse of an invertible function and sketch both graphs about y = x"
+    removed_topics:
+      - "Composite and inverse functions beyond algebraic functions"
+    literature_texts: []
+  - id: isc-12-applied-mathematics-ch02
+    number: 2
+    title: "Inverse Trigonometric Functions"
+    unit: "Unit 1: Relations and Functions"
+    topics:
+      - id: isc-12-applied-mathematics-ch02-t01
+        title: "Definition, domain, range and principal value branches of sin^-1 x, cos^-1 x, tan^-1 x and the others"
+        learning_outcomes:
+          - "Find the principal value of a given inverse trigonometric expression"
+      - id: isc-12-applied-mathematics-ch02-t02
+        title: "Graphs of inverse trigonometric functions"
+        learning_outcomes:
+          - "Sketch the graph of sin^-1 x or tan^-1 x by reflecting the restricted trigonometric graph in y = x"
+      - id: isc-12-applied-mathematics-ch02-t03
+        title: "Elementary properties: conversions such as sin^-1 x = cos^-1 sqrt(1 - x^2); sin^-1 x = cosec^-1 (1/x); sin^-1 x + cos^-1 x = pi/2 and similar relations"
+        learning_outcomes:
+          - "Convert one inverse trigonometric function into another"
+          - "Simplify expressions using sin^-1 x + cos^-1 x = pi/2 and related identities"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-applied-mathematics-ch03
+    number: 3
+    title: "Matrices"
+    unit: "Unit 2: Algebra"
+    topics:
+      - id: isc-12-applied-mathematics-ch03-t01
+        title: "Concept, notation and order; equality; types - zero, identity, diagonal, scalar, triangular"
+        learning_outcomes:
+          - "Identify the type and order of a given matrix"
+      - id: isc-12-applied-mathematics-ch03-t02
+        title: "Addition, subtraction, scalar multiplication and multiplication of matrices; compatibility; properties"
+        learning_outcomes:
+          - "Multiply compatible matrices up to order 3"
+          - "Show by example that AB need not equal BA and that AB = O is possible with A, B non-zero"
+      - id: isc-12-applied-mathematics-ch03-t03
+        title: "Transpose; symmetric and skew-symmetric matrices and their properties"
+        learning_outcomes:
+          - "Express a square matrix as the sum of a symmetric and a skew-symmetric matrix"
+      - id: isc-12-applied-mathematics-ch03-t04
+        title: "Singular and non-singular matrices; invertible matrices and uniqueness of the inverse"
+        learning_outcomes:
+          - "Prove that the inverse of a matrix, if it exists, is unique"
+    removed_topics:
+      - "Matrices of order greater than 3"
+    literature_texts: []
+  - id: isc-12-applied-mathematics-ch04
+    number: 4
+    title: "Determinants and Systems of Linear Equations"
+    unit: "Unit 2: Algebra"
+    topics:
+      - id: isc-12-applied-mathematics-ch04-t01
+        title: "Determinant of a square matrix up to 3 x 3; minors, cofactors and expansion"
+        learning_outcomes:
+          - "Evaluate a 3 x 3 determinant by expansion along any row or column"
+      - id: isc-12-applied-mathematics-ch04-t02
+        title: "Applications: area of a triangle and collinearity of three points"
+        learning_outcomes:
+          - "Find the area of a triangular plot from the coordinates of its vertices"
+          - "Test three points for collinearity using a determinant"
+      - id: isc-12-applied-mathematics-ch04-t03
+        title: "Adjoint and inverse of a square matrix (2 x 2 and 3 x 3); properties of the adjoint and inverse"
+        learning_outcomes:
+          - "Find A^-1 = adj A / |A| for a 3 x 3 matrix"
+      - id: isc-12-applied-mathematics-ch04-t04
+        title: "Solving linear equations in two or three variables by the matrix method X = A^-1 B"
+        learning_outcomes:
+          - "Model a business situation as AX = B and solve it using the inverse matrix"
+      - id: isc-12-applied-mathematics-ch04-t05
+        title: "Cramer's rule; consistency, inconsistency and number of solutions"
+        learning_outcomes:
+          - "Solve a system of three equations by Cramer's rule"
+          - "Decide whether a system is consistent and whether its solution is unique"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-applied-mathematics-ch05
+    number: 5
+    title: "Differentiation"
+    unit: "Unit 3: Calculus"
+    topics:
+      - id: isc-12-applied-mathematics-ch05-t01
+        title: "Derivatives of trigonometric and inverse trigonometric functions; chain rule for composite functions"
+        learning_outcomes:
+          - "Differentiate composite functions using the chain rule"
+          - "Differentiate inverse trigonometric functions"
+      - id: isc-12-applied-mathematics-ch05-t02
+        title: "Exponential and logarithmic functions and their derivatives"
+        learning_outcomes:
+          - "Differentiate functions involving e^x and log x"
+      - id: isc-12-applied-mathematics-ch05-t03
+        title: "Derivatives of implicit and parametric functions"
+        learning_outcomes:
+          - "Find dy/dx for an implicit relation"
+          - "Find dy/dx when x and y are given in terms of a parameter"
+      - id: isc-12-applied-mathematics-ch05-t04
+        title: "Logarithmic differentiation (e.g. y = x^x); differentiating one function with respect to another"
+        learning_outcomes:
+          - "Use logarithmic differentiation to differentiate x^x and products of powers"
+          - "Differentiate sin(x^3) with respect to x^3"
+      - id: isc-12-applied-mathematics-ch05-t05
+        title: "Second-order derivatives"
+        learning_outcomes:
+          - "Find d2y/dx2 and verify a given relation between y, dy/dx and d2y/dx2"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-applied-mathematics-ch06
+    number: 6
+    title: "Applications of Derivatives"
+    unit: "Unit 3: Calculus"
+    topics:
+      - id: isc-12-applied-mathematics-ch06-t01
+        title: "Rate measure: derivative as rate of change"
+        learning_outcomes:
+          - "Find the rate of change of one quantity with respect to another in a practical situation"
+      - id: isc-12-applied-mathematics-ch06-t02
+        title: "Increasing and decreasing functions"
+        learning_outcomes:
+          - "Find the intervals in which a function is increasing or decreasing"
+      - id: isc-12-applied-mathematics-ch06-t03
+        title: "Maxima and minima: stationary/turning points; first and second derivative tests"
+        learning_outcomes:
+          - "Find local maxima and minima using the first and second derivative tests"
+          - "Solve a word problem on maximising area, revenue or minimising cost"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-applied-mathematics-ch07
+    number: 7
+    title: "Indefinite Integrals"
+    unit: "Unit 3: Calculus"
+    topics:
+      - id: isc-12-applied-mathematics-ch07-t01
+        title: "Integration as anti-differentiation; standard integrals including (ax + b)^n, trigonometric functions, 1/x and e^x"
+        learning_outcomes:
+          - "Integrate standard algebraic, trigonometric, exponential and reciprocal functions"
+      - id: isc-12-applied-mathematics-ch07-t02
+        title: "Integrals of sin^2 x, sin^3 x, sin^4 x, cos^2 x, cos^3 x, cos^4 x"
+        learning_outcomes:
+          - "Integrate powers of sin x and cos x using trigonometric identities"
+      - id: isc-12-applied-mathematics-ch07-t03
+        title: "Integration by substitution; f'(x)[f(x)]^n and f'(x)/f(x) types; integrals of tan x, cot x, sec x, cosec x"
+        learning_outcomes:
+          - "Choose a suitable substitution and evaluate the integral"
+      - id: isc-12-applied-mathematics-ch07-t04
+        title: "Integration by parts"
+        learning_outcomes:
+          - "Integrate products such as x e^x and x log x by parts"
+      - id: isc-12-applied-mathematics-ch07-t05
+        title: "Integration using partial fractions: distinct linear, repeated linear and quadratic factors; improper fractions"
+        learning_outcomes:
+          - "Resolve a rational function into partial fractions and integrate it"
+      - id: isc-12-applied-mathematics-ch07-t06
+        title: "Special integrals: dx/(x^2 +/- a^2), dx/sqrt(x^2 +/- a^2), dx/(ax^2 + bx + c), (px + q)/(ax^2 + bx + c) and related forms"
+        learning_outcomes:
+          - "Evaluate integrals of quadratic type by completing the square"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-applied-mathematics-ch08
+    number: 8
+    title: "Definite Integrals"
+    unit: "Unit 3: Calculus"
+    topics:
+      - id: isc-12-applied-mathematics-ch08-t01
+        title: "Fundamental theorem of calculus (without proof); evaluation of definite integrals"
+        learning_outcomes:
+          - "Evaluate definite integrals using the fundamental theorem"
+      - id: isc-12-applied-mathematics-ch08-t02
+        title: "Properties: change of variable, reversing limits, splitting the interval, f(x) -> f(a + b - x), f(x) -> f(a - x)"
+        learning_outcomes:
+          - "Use the property f(x) -> f(a + b - x) to evaluate an integral that cannot be done directly"
+      - id: isc-12-applied-mathematics-ch08-t03
+        title: "Properties for 0 to 2a and -a to a; even and odd functions"
+        learning_outcomes:
+          - "Evaluate integrals over -a to a using even and odd function properties"
+    removed_topics:
+      - "Proof of the fundamental theorem of calculus"
+    literature_texts: []
+  - id: isc-12-applied-mathematics-ch09
+    number: 9
+    title: "Calculus in Commerce and Economics"
+    unit: "Unit 3: Calculus"
+    topics:
+      - id: isc-12-applied-mathematics-ch09-t01
+        title: "Cost function, average cost and marginal cost and their interpretation"
+        learning_outcomes:
+          - "Find average and marginal cost from a cost function and interpret the marginal cost"
+      - id: isc-12-applied-mathematics-ch09-t02
+        title: "Demand function, revenue function and marginal revenue"
+        learning_outcomes:
+          - "Find total and marginal revenue from a demand function"
+          - "Find the output at which total revenue is maximum"
+      - id: isc-12-applied-mathematics-ch09-t03
+        title: "Profit function and break-even point; profit maximisation"
+        learning_outcomes:
+          - "Find the break-even points and the output for maximum profit"
+      - id: isc-12-applied-mathematics-ch09-t04
+        title: "Rough sketches of AR, MR, R, C, AC and MC curves and their interpretation using increasing/decreasing functions and maxima/minima"
+        learning_outcomes:
+          - "Sketch and interpret AR and MR curves for a linear demand function"
+          - "Show that average cost is minimum where AC = MC"
+      - id: isc-12-applied-mathematics-ch09-t05
+        title: "Total cost from marginal cost and total revenue from marginal revenue by integration"
+        learning_outcomes:
+          - "Find the total cost function given marginal cost and fixed cost"
+      - id: isc-12-applied-mathematics-ch09-t06
+        title: "Equilibrium price and quantity; consumer surplus and producer surplus by definite integration"
+        learning_outcomes:
+          - "Find equilibrium price and quantity from demand and supply functions"
+          - "Calculate and shade consumer and producer surplus"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-applied-mathematics-ch10
+    number: 10
+    title: "Differential Equations"
+    unit: "Unit 3: Calculus"
+    topics:
+      - id: isc-12-applied-mathematics-ch10-t01
+        title: "Definition, order and degree; general and particular solutions; formation by eliminating arbitrary constants"
+        learning_outcomes:
+          - "State the order and degree of a differential equation"
+          - "Form a differential equation by eliminating arbitrary constants"
+      - id: isc-12-applied-mathematics-ch10-t02
+        title: "Variable separable equations, including equations reducible to separable form"
+        learning_outcomes:
+          - "Solve a differential equation by separating variables and find a particular solution"
+      - id: isc-12-applied-mathematics-ch10-t03
+        title: "Homogeneous differential equations"
+        learning_outcomes:
+          - "Solve a homogeneous equation using the substitution y = vx"
+      - id: isc-12-applied-mathematics-ch10-t04
+        title: "Linear equations dy/dx + Py = Q (and dx/dy + Px = Q)"
+        learning_outcomes:
+          - "Solve a linear differential equation using an integrating factor"
+          - "Model a growth or decay situation with a differential equation and solve it"
+    removed_topics:
+      - "Second-order differential equations"
+    literature_texts: []
+  - id: isc-12-applied-mathematics-ch11
+    number: 11
+    title: "Conditional Probability and Random Variables"
+    unit: "Unit 4: Probability"
+    topics:
+      - id: isc-12-applied-mathematics-ch11-t01
+        title: "Laws of probability: addition and multiplication theorems; conditional probability; independent and dependent events"
+        learning_outcomes:
+          - "Calculate a conditional probability from given data"
+          - "Test whether two events are independent"
+      - id: isc-12-applied-mathematics-ch11-t02
+        title: "Theorem of total probability and Bayes' theorem"
+        learning_outcomes:
+          - "Apply Bayes' theorem to find the probability of a cause given an observed outcome"
+      - id: isc-12-applied-mathematics-ch11-t03
+        title: "Random variables and probability distributions; mean and variance of a random variable"
+        learning_outcomes:
+          - "Construct the probability distribution of a discrete random variable"
+          - "Calculate its mean and variance"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-applied-mathematics-ch12
+    number: 12
+    title: "Binomial, Poisson and Normal Distributions"
+    unit: "Unit 4: Probability"
+    topics:
+      - id: isc-12-applied-mathematics-ch12-t01
+        title: "Bernoulli trials and the binomial distribution; mean and variance"
+        learning_outcomes:
+          - "Calculate binomial probabilities for a real-life situation"
+          - "Find the mean and variance of a binomial distribution"
+      - id: isc-12-applied-mathematics-ch12-t02
+        title: "Poisson distribution: definition, characteristics, mean and variance"
+        learning_outcomes:
+          - "Calculate Poisson probabilities for rare events such as defects or arrivals"
+      - id: isc-12-applied-mathematics-ch12-t03
+        title: "Normal distribution as a continuous distribution; standard normal variate; mean, standard deviation and area under the curve"
+        learning_outcomes:
+          - "Convert a normal variable to a standard normal variate and use tables to find probabilities"
+          - "State the proportion of area within one, two and three standard deviations of the mean"
+      - id: isc-12-applied-mathematics-ch12-t04
+        title: "Real-life applications, advantages and disadvantages of each distribution"
+        learning_outcomes:
+          - "Choose a suitable distribution for a given situation and justify the choice"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-applied-mathematics-ch13
+    number: 13
+    title: "Linear Programming"
+    unit: "Unit 5: Linear Programming"
+    topics:
+      - id: isc-12-applied-mathematics-ch13-t01
+        title: "Terminology: constraints, objective function, optimisation; advantages, limitations and application areas of LP"
+        learning_outcomes:
+          - "Identify the decision variables, constraints and objective function in a word problem"
+          - "State the limitations of linear programming"
+      - id: isc-12-applied-mathematics-ch13-t02
+        title: "Types of LP problems and their mathematical formulation"
+        learning_outcomes:
+          - "Formulate a manufacturing or diet problem as an LP problem"
+      - id: isc-12-applied-mathematics-ch13-t03
+        title: "Graphical method for two variables: feasible and infeasible regions (bounded and unbounded), feasible and optimal solutions (up to three non-trivial constraints)"
+        learning_outcomes:
+          - "Solve an LP problem graphically using corner points"
+          - "Decide whether an optimal solution exists for an unbounded feasible region"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-applied-mathematics-ch14
+    number: 14
+    title: "Financial Mathematics"
+    unit: "Unit 6: Financial Mathematics"
+    topics:
+      - id: isc-12-applied-mathematics-ch14-t01
+        title: "Perpetuity: meaning and present value"
+        learning_outcomes:
+          - "Calculate the present value of a perpetuity"
+      - id: isc-12-applied-mathematics-ch14-t02
+        title: "Sinking fund: meaning, real-life examples, advantages; sinking fund versus savings account"
+        learning_outcomes:
+          - "Calculate the periodic deposit needed to build a sinking fund"
+          - "Compare a sinking fund with a savings account"
+      - id: isc-12-applied-mathematics-ch14-t03
+        title: "EMI by the flat-rate method and the reducing-balance method; EMIs for loans and asset purchases"
+        learning_outcomes:
+          - "Calculate EMI by both methods for a vehicle or home loan"
+          - "Explain why interest falls with each instalment in the reducing-balance method"
+      - id: isc-12-applied-mathematics-ch14-t04
+        title: "Rate of return and nominal rate of return: meaning, use and formulae"
+        learning_outcomes:
+          - "Calculate the rate of return on an investment"
+      - id: isc-12-applied-mathematics-ch14-t05
+        title: "Compound annual growth rate (CAGR): meaning, use and formula"
+        learning_outcomes:
+          - "Calculate the CAGR of an investment or a company's sales"
+      - id: isc-12-applied-mathematics-ch14-t06
+        title: "Linear (straight-line) method of depreciation: formula, advantages and disadvantages"
+        learning_outcomes:
+          - "Calculate annual depreciation and book value of an asset by the linear method"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-12-applied-mathematics-ch15
+    number: 15
+    title: "Index Numbers and Moving Averages"
+    unit: "Unit 7: Index Numbers and Moving Averages"
+    topics:
+      - id: isc-12-applied-mathematics-ch15-t01
+        title: "Price index and price relatives; simple average of price relatives"
+        learning_outcomes:
+          - "Calculate price relatives and an index by the simple average of relatives"
+      - id: isc-12-applied-mathematics-ch15-t02
+        title: "Weighted average of price relatives: cost of living index and consumer price index"
+        learning_outcomes:
+          - "Construct a cost of living index from weights and price relatives"
+      - id: isc-12-applied-mathematics-ch15-t03
+        title: "Simple aggregate method; weighted aggregate index numbers (Laspeyres, Paasche, Fisher and others) and their merits"
+        learning_outcomes:
+          - "Calculate Laspeyres, Paasche and Fisher index numbers from given data"
+          - "Compare the methods with reference to real-life use"
+      - id: isc-12-applied-mathematics-ch15-t04
+        title: "Moving averages: meaning, purpose, calculation for a given period and plotting; centred moving averages for even periods"
+        learning_outcomes:
+          - "Calculate 3-yearly or 4-yearly (centred) moving averages and plot them with the original data"
+    removed_topics: []
+    literature_texts: []
+removed_topics: []
