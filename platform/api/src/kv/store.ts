@@ -13,6 +13,11 @@ export interface WindowResult {
   retryAfterMs: number;
 }
 
+export interface ZEntry {
+  member: string;
+  score: number;
+}
+
 export interface KeyValueStore {
   readonly kind: 'memory' | 'redis';
   get(key: string, now: number): Promise<string | null>;
@@ -31,6 +36,20 @@ export interface KeyValueStore {
   windowCount(key: string, windowMs: number, now: number): Promise<number>;
   /** Records a hit unconditionally; returns the count in the window after it. */
   windowAdd(key: string, windowMs: number, now: number): Promise<number>;
+  /*
+   * Sorted sets (live-mock provisional ranks, ARCHITECTURE §9). Higher score ranks first. Ties are
+   * ordered by member, descending (Redis ZREVRANGE order). `ttlMs` is for cleanup only: reads never
+   * expire members against a clock, in either store, so fake-clock tests behave the same on both.
+   */
+  /** Adds or updates a member's score; (re)sets the key's cleanup TTL. */
+  zAdd(key: string, member: string, score: number, ttlMs: number): Promise<void>;
+  zRem(key: string, member: string): Promise<void>;
+  zScore(key: string, member: string): Promise<number | null>;
+  zCard(key: string): Promise<number>;
+  /** Members with a strictly higher score: a member's competition rank is this + 1 (ties share a rank). */
+  zCountAbove(key: string, score: number): Promise<number>;
+  /** Members by descending score, positions `start`..`stop` inclusive (0-based). */
+  zRevRange(key: string, start: number, stop: number): Promise<ZEntry[]>;
   ping(): Promise<void>;
   close(): Promise<void>;
 }
