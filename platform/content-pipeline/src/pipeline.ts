@@ -52,12 +52,15 @@ export interface Pipeline {
   log: (line: string) => void;
 }
 
-export function openPipeline(partial: Partial<PipelineOptions> = {}, overrides: { paths?: Partial<PipelinePaths>; env?: Record<string, string | undefined>; log?: (l: string) => void; store?: StateStore } = {}): Pipeline {
+export function openPipeline(
+  partial: Partial<PipelineOptions> = {},
+  overrides: { paths?: Partial<PipelinePaths>; env?: Record<string, string | undefined>; log?: (l: string) => void; store?: StateStore; catalog?: Catalog } = {},
+): Pipeline {
   const env = overrides.env ?? process.env;
   const paths = { ...defaultPaths(env), ...overrides.paths };
   return {
     paths,
-    catalog: loadCatalog(paths.catalogDir),
+    catalog: overrides.catalog ?? loadCatalog(paths.catalogDir),
     store: overrides.store ?? new FileStateStore(paths.stateDir),
     opts: { ...DEFAULT_OPTIONS, ...partial },
     env,

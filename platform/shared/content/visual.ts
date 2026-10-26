@@ -22,8 +22,15 @@ export const PlotVisual = z.object({
   spec: z.object({
     x: z.object({ min: z.number(), max: z.number(), label: z.string().optional() }),
     y: z.object({ min: z.number(), max: z.number(), label: z.string().optional() }),
+    /**
+     * `expr` is a function of x in this grammar only (checked at pipeline stage 4, parsed without eval
+     * by the renderer; ADR-007): numbers, x, pi, e; + - * / and ^ (right-associative), unary minus,
+     * parentheses; sin cos tan asin acos atan sqrt abs ln log exp floor ceil (log = log10, ln = natural);
+     * implicit multiplication only before a name or "(" (2x, 2(x+1), (x+1)(x-1), 3sin(x)), never before a
+     * number (x2, e3 are errors; no 1e3 notation). Example: "x^2 - 2x + 1".
+     */
     functions: z
-      .array(z.object({ expr: z.string(), label: z.string().optional(), domain: Point.optional() }))
+      .array(z.object({ expr: z.string().min(1).max(200), label: z.string().optional(), domain: Point.optional() }))
       .default([]),
     points: z.array(z.object({ at: Point, label: z.string().optional() })).default([]),
     series: z
@@ -37,16 +44,88 @@ export const PlotVisual = z.object({
   caption: z.string().optional(),
 });
 
+export const LABEL_POSITIONS = ['n', 'ne', 'e', 'se', 's', 'sw', 'w', 'nw'] as const;
+
+/**
+ * A geometry point: a bare [x, y], or an object with label options. `label: false` hides the label
+ * (helper points such as ray ends); a string replaces the point name as the label; `label_position`
+ * is a compass hint for crowded vertices.
+ */
+export const GeometryPoint = z.union([
+  Point,
+  z.object({ at: Point, label: z.union([z.string(), z.literal(false)]).optional(), label_position: z.enum(LABEL_POSITIONS).optional() }),
+]);
+export type GeometryPoint = z.infer<typeof GeometryPoint>;
+
+/** Coordinates of a geometry point in either form. */
+export function pointAt(p: GeometryPoint): [number, number] {
+  return Array.isArray(p) ? p : p.at;
+}
+
+const Mark = z.union([z.literal(1), z.literal(2), z.literal(3)]);
+
+/**
+ * Geometry figures drawn from computed coordinates.
+ *
+ * Coordinate system: origin at the BOTTOM-LEFT of the canvas, x to the right, **y up** (maths
+ * convention; the renderer flips for the screen). Every point lies in [0, width] × [0, height] and
+ * one drawing unit is the same length on both axes. Numeric length labels share one scale unless
+ * `not_to_scale` is set; `scale` states it explicitly (drawing units per real unit). Stage 4 checks
+ * that referenced points exist, points and circles stay on the canvas, right-angle marks measure 90°,
+ * degree labels match the drawn angle, and length labels agree with the scale.
+ */
 export const GeometryVisual = z.object({
   kind: z.literal('geometry'),
   spec: z.object({
     width: z.number().positive().default(10),
     height: z.number().positive().default(10),
-    points: z.record(z.string(), Point),
-    segments: z.array(z.object({ from: z.string(), to: z.string(), label: z.string().optional(), dashed: z.boolean().optional() })).default([]),
+    points: z.record(z.string(), GeometryPoint),
+    segments: z
+      .array(
+        z.object({
+          from: z.string(),
+          to: z.string(),
+          label: z.string().optional(),
+          dashed: z.boolean().optional(),
+          /** Equal-length tick marks (1–3 ticks; same count = equal sides). */
+          ticks: Mark.optional(),
+          /** Parallel marks (1–3 arrowheads; same count = parallel). */
+          arrows: Mark.optional(),
+        }),
+      )
+      .default([]),
+    /** Infinite lines through two points. */
+    lines: z.array(z.object({ through: z.tuple([z.string(), z.string()]), label: z.string().optional(), dashed: z.boolean().optional() })).default([]),
+    /** Half-lines from a point through another. */
+    rays: z.array(z.object({ from: z.string(), through: z.string(), label: z.string().optional(), dashed: z.boolean().optional() })).default([]),
     circles: z.array(z.object({ center: z.string(), radius: z.number().positive(), label: z.string().optional() })).default([]),
-    angles: z.array(z.object({ at: z.string(), from: z.string(), to: z.string(), label: z.string().optional(), right: z.boolean().optional() })).default([]),
-    polygons: z.array(z.object({ vertices: z.array(z.string()).min(3), fill: z.boolean().optional() })).default([]),
+    angles: z
+      .array(
+        z.object({
+          at: z.string(),
+          from: z.string(),
+          to: z.string(),
+          label: z.string().optional(),
+          right: z.boolean().optional(),
+          /** Arc count for equal-angle marks (1–3). */
+          arcs: Mark.optional(),
+        }),
+      )
+      .default([]),
+    polygons: z
+      .array(
+        z.object({
+          vertices: z.array(z.string()).min(3),
+          fill: z.boolean().optional(),
+          /** Visual emphasis, e.g. to tell two triangles apart in a proof step. */
+          highlight: z.enum(['shade', 'outline', 'accent']).optional(),
+        }),
+      )
+      .default([]),
+    /** Drawing units per real unit, e.g. { unit: 'cm', per_unit: 0.5 }. */
+    scale: z.object({ unit: z.enum(['mm', 'cm', 'm', 'km']), per_unit: z.number().positive() }).optional(),
+    /** The figure is deliberately not drawn to scale (say so in the caption); length checks are skipped. */
+    not_to_scale: z.boolean().optional(),
   }),
   alt: z.string().min(5),
   caption: z.string().optional(),
@@ -65,6 +144,7 @@ export const ChemVisual = z.object({
 
 export const TableVisual = z.object({
   kind: z.literal('table'),
+  /** Header and body cells are inline Markdown with $…$ maths (no block elements, no HTML, no links). */
   spec: z.object({
     headers: z.array(z.string()).min(1),
     rows: z.array(z.array(z.string())).min(1),
@@ -84,10 +164,7 @@ export const FlowVisual = z.object({
   caption: z.string().optional(),
 });
 
-/**
- * Geometry convention: the y axis points up (maths convention); coordinates lie in [0,width] × [0,height].
- * Flow: the renderer may switch LR to TB in narrow containers.
- */
+/** Flow: the renderer may switch LR to TB in narrow containers. Geometry conventions: see GeometryVisual. */
 export const Visual = z.discriminatedUnion('kind', [
   SvgVisual,
   PlotVisual,

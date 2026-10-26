@@ -21,6 +21,7 @@ import {
   type Visual,
 } from '@soyl/shared/content/index';
 import { TEXT_FAMILIES, type Family } from '../../config/families';
+import { checkArithmetic } from './arith';
 import { SKELETAL_CONTEXT, ceBodies, checkBalance } from './chem';
 import { checkTex, extractMath } from './math';
 import { checkLiterature, checkText } from './text';
@@ -83,6 +84,8 @@ interface TextOpts {
   context?: string;
   /** Skip the balance check (wrong options of objective questions). */
   exemptBalance?: boolean;
+  /** Recompute numeric = chains (solutions, model answers, worked examples). */
+  arithmetic?: boolean;
 }
 
 class Collector {
@@ -132,6 +135,9 @@ class Collector {
     for (const w of r.warnings.slice(0, 3)) this.add(item, 'math.katex-strict', 'warning', path, w);
     if (own === '') this.escapes(item, path, tex);
     for (const body of ceBodies(tex)) this.balance(item, path, body, opts, own || tex);
+    if (opts.arithmetic)
+      for (const slip of checkArithmetic(tex))
+        this.add(item, 'math.arithmetic', 'error', path, `"${slip.left} = ${slip.right}" does not hold (${+slip.leftValue.toFixed(6)} ≠ ${+slip.rightValue.toFixed(6)}); use \\approx for rounded values`);
   }
 
   visual(item: string, path: string, v: Visual | null | undefined, opts: TextOpts = {}) {
@@ -187,9 +193,15 @@ function lintQuestion(c: Collector, item: string, path: string, q: QuestionLike,
   c.text(item, `${path}.passage_md`, q.passage_md, 'md', { context });
   q.options.forEach((o, i) => c.text(item, `${path}.options[${i}]`, o.text_md, 'md', { context, exemptBalance: objectiveOptions && !correct.has(o.id) }));
   q.match_right.forEach((o, i) => c.text(item, `${path}.match_right[${i}]`, o.text_md, 'md', { context }));
-  c.text(item, `${path}.solution_md`, q.solution_md, 'md', { context: `${context} ${q.solution_md}` });
+  c.text(item, `${path}.solution_md`, q.solution_md, 'md', { context: `${context} ${q.solution_md}`, arithmetic: true });
+  if (q.type === 'numerical' && 'value' in q.answer) {
+    const want = q.answer.value;
+    const tol = Math.max(q.answer.tolerance, 1e-9, Math.abs(want) * 0.005);
+    const numbers = [...q.solution_md.replace(/(\d),(?=\d)/g, '$1').matchAll(/-?\d+(?:\.\d+)?/g)].map((m) => Number(m[0]));
+    if (!numbers.some((n) => Math.abs(n - want) <= tol)) c.add(item, 'solution.answer', 'warning', `${path}.solution_md`, `the solution never states the answer ${want}`);
+  }
   q.marking_scheme.forEach((s, i) => c.text(item, `${path}.marking_scheme[${i}]`, s.step, 'md', { context }));
-  if ('model_answer_md' in q.answer) c.text(item, `${path}.answer`, q.answer.model_answer_md, 'md', { context });
+  if ('model_answer_md' in q.answer) c.text(item, `${path}.answer`, q.answer.model_answer_md, 'md', { context, arithmetic: true });
   if ('blanks' in q.answer) q.answer.blanks.forEach((b, i) => b.accepted.forEach((a) => c.text(item, `${path}.answer.blanks[${i}]`, a, 'plain')));
   q.assets.forEach((v, i) => c.visual(item, `${path}.assets[${i}]`, v, { context }));
   c.topics(item, `${path}.topic_ids`, q.topic_ids);
@@ -206,11 +218,12 @@ function lintDeck(c: Collector, item: string, deck: DeckT) {
   deck.slides.forEach((s, i) => {
     const p = `slides[${i}]`;
     const context = [s.heading, s.body_md, ...s.bullets, ...(s.columns ?? [])].join(' ');
+    const arithmetic = s.layout === 'example';
     c.text(item, `${p}.heading`, s.heading, 'md', { context });
-    c.text(item, `${p}.body_md`, s.body_md, 'md', { context });
-    s.bullets.forEach((b, k) => c.text(item, `${p}.bullets[${k}]`, b, 'md', { context }));
-    s.columns?.forEach((col, k) => c.text(item, `${p}.columns[${k}]`, col, 'md', { context }));
-    s.math.forEach((m, k) => c.tex(item, `${p}.math[${k}]`, m, true, { context }));
+    c.text(item, `${p}.body_md`, s.body_md, 'md', { context, arithmetic });
+    s.bullets.forEach((b, k) => c.text(item, `${p}.bullets[${k}]`, b, 'md', { context, arithmetic }));
+    s.columns?.forEach((col, k) => c.text(item, `${p}.columns[${k}]`, col, 'md', { context, arithmetic }));
+    s.math.forEach((m, k) => c.tex(item, `${p}.math[${k}]`, m, true, { context, arithmetic }));
     c.text(item, `${p}.narration`, s.narration, 'spoken');
     c.visual(item, `${p}.visual`, s.visual, { context });
     c.script(item, `${p}.heading`, s.heading + s.narration);

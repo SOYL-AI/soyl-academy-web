@@ -102,6 +102,8 @@ export function mockVisual(kind: string, label: string): Visual {
             { from: 'A', to: 'C', label: '5' },
             { from: 'B', to: 'C' },
           ],
+          lines: [],
+          rays: [],
           circles: [],
           angles: [{ at: 'A', from: 'B', to: 'C', right: true }],
           polygons: [{ vertices: ['A', 'B', 'C'], fill: true }],
@@ -192,7 +194,12 @@ export function mockQuestion(slot: QuestionSlot, index: number, topics: TopicRef
     case 'true-false':
       return { ...base, options: [{ id: 't', text_md: 'True' }, { id: 'f', text_md: 'False' }], answer: { option_ids: [rng.pick(['t', 'f'])] } };
     case 'numerical':
-      return { ...base, stem_md: `${w.mock} A placeholder quantity doubles from 12 units. What is the new value?`, answer: { value: 24, tolerance: 0, unit: 'units' } };
+      return {
+        ...base,
+        stem_md: `${w.mock} A placeholder quantity doubles from 12 units. What is the new value?`,
+        solution_md: `${w.mock} Step 1: double the value, $12 \\times 2 = 24$. Step 2: the new value is 24 units.`,
+        answer: { value: 24, tolerance: 0, unit: 'units' },
+      };
     case 'fill-blank':
       return { ...base, stem_md: `${w.mock} The placeholder term is ___.`, answer: { blanks: [{ accepted: ['placeholder'] }] } };
     case 'match':

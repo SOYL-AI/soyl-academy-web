@@ -4,11 +4,18 @@ import path from 'node:path';
 import { openPipeline, type Pipeline, type PipelineOptions } from '../src/pipeline';
 import { generateCommand } from '../src/commands/generate';
 import { readUnitBundle, lintContextFor } from '../src/commands/lint';
-import { findChapter } from '../src/catalog';
+import { findChapter, loadCatalog, type Catalog } from '../src/catalog';
+import { defaultPaths } from '../src/paths';
 import type { LintContext, UnitBundle } from '../src/lint/index';
 
 export function tempDir(prefix = 'soyl-pipeline-'): string {
   return fs.mkdtempSync(path.join(os.tmpdir(), prefix));
+}
+
+let catalog: Catalog | null = null;
+/** The real catalog, loaded once per test file (771 subjects, ~400 syllabus files). */
+export function sharedCatalog(): Catalog {
+  return (catalog ??= loadCatalog(defaultPaths().catalogDir));
 }
 
 export function testPipeline(opts: Partial<PipelineOptions> = {}, env: Record<string, string | undefined> = {}): { p: Pipeline; logs: string[]; dir: string } {
@@ -20,6 +27,7 @@ export function testPipeline(opts: Partial<PipelineOptions> = {}, env: Record<st
       paths: { stateDir: path.join(dir, 'state'), outDir: path.join(dir, 'out') },
       env: { NODE_ENV: 'test', ...env },
       log: (l) => logs.push(l),
+      catalog: sharedCatalog(),
     },
   );
   return { p, logs, dir };

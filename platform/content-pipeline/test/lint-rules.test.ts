@@ -166,7 +166,7 @@ describe('visual spec checks', () => {
     expect(r.issues.map((i) => i.message).join()).toMatch(/never finite/);
   });
   it('geometry: unknown points are errors', () => {
-    const r = checkVisual({ kind: 'geometry', spec: { width: 10, height: 10, points: { A: [1, 1] }, segments: [{ from: 'A', to: 'B' }], circles: [], angles: [], polygons: [] }, alt: 'segment AB' });
+    const r = checkVisual({ kind: 'geometry', spec: { width: 10, height: 10, points: { A: [1, 1] }, segments: [{ from: 'A', to: 'B' }], lines: [], rays: [], circles: [], angles: [], polygons: [] }, alt: 'segment AB' });
     expect(r.issues.map((i) => i.message).join()).toMatch(/unknown point "B"/);
   });
   it('flow: edges must reference nodes', () => {
@@ -283,5 +283,61 @@ describe('lint engine on a unit', () => {
   it('requires Devanagari for Hindi content', async () => {
     const { bundle, ctx } = await mockBundle();
     expect(rules(lintBundle(bundle, { ...ctx, language: 'hi' }).findings)).toContain('language.script');
+  });
+});
+
+describe('arithmetic inside solutions', () => {
+  it('checks numeric = chains and skips variables, units and approximations', async () => {
+    const { checkArithmetic, numericValue } = await import('../src/lint/arith');
+    const r = String.raw;
+    expect(checkArithmetic(r`\dfrac{3}{5} \times 12 = 7.2`)).toEqual([]);
+    expect(checkArithmetic(r`\dfrac{3}{5} \times 12 = 7.5`)).toHaveLength(1);
+    expect(checkArithmetic(r`x = 2 \times 3 = 6`)).toEqual([]);
+    expect(checkArithmetic(r`x = 2 \times 3 = 7`)).toHaveLength(1);
+    expect(checkArithmetic('2.4 + 1.6 = 4.0')).toEqual([]);
+    expect(checkArithmetic(r`\dfrac{10}{3} \approx 3.3`)).toEqual([]);
+    expect(checkArithmetic(r`AB = 4.5, \; BC = 6`)).toEqual([]);
+    expect(checkArithmetic(r`\sqrt{16} + 2^3 = 12`)).toEqual([]);
+    expect(checkArithmetic(r`1,20,000 \div 4 = 30,000`)).toEqual([]);
+    expect(numericValue(r`12\text{ cm}`)).toBeNull();
+    expect(numericValue(r`40^\circ`)).toBeNull();
+    expect(numericValue('(2)(3)')).toBe(6);
+  });
+
+  it('flags a wrong number inside a worked solution, not only the key', async () => {
+    const { bundle, ctx } = await mockBundle();
+    const q = ((bundle.questions as Record<string, any>).questions as Record<string, any>[]).find((x) => x.type === 'numerical')!;
+    q.solution_md = String.raw`Step 1: new value $= 12 \times 2 = 26$. Step 2: answer 24.`;
+    expect(lintBundle(bundle, ctx).findings.some((f) => f.rule === 'math.arithmetic')).toBe(true);
+    q.solution_md = 'Step 1: double it. Step 2: done.';
+    expect(lintBundle(bundle, ctx).findings.some((f) => f.rule === 'solution.answer' && f.severity === 'warning')).toBe(true);
+  });
+});
+
+describe('geometry sanity', () => {
+  const geo = (spec: Record<string, unknown>, caption?: string) =>
+    checkVisual({ kind: 'geometry', spec: { width: 10, height: 10, segments: [], lines: [], rays: [], circles: [], angles: [], polygons: [], ...spec } as never, alt: 'a geometry figure', caption }).issues.map((i) => i.message);
+  const tri = { A: [1, 1], B: [7, 1], C: [1, 9] } as const;
+
+  it('accepts a correct right triangle with labels on one scale, and object-form points', () => {
+    expect(geo({ points: { ...tri, X: { at: [5, 5], label: false, label_position: 'ne' } }, segments: [{ from: 'A', to: 'B', label: '6 cm' }, { from: 'A', to: 'C', label: '$8$ cm' }, { from: 'B', to: 'C', label: '10 cm', ticks: 1 }], angles: [{ at: 'A', from: 'B', to: 'C', right: true, arcs: 1 }], rays: [{ from: 'A', through: 'X' }] })).toEqual([]);
+  });
+  it('flags a right-angle mark that is not 90°', () => {
+    expect(geo({ points: { A: [1, 1], B: [7, 1], C: [3, 9] }, angles: [{ at: 'A', from: 'B', to: 'C', right: true }] }).join()).toMatch(/marked right but measures/);
+  });
+  it('flags a degree label that does not match the drawing', () => {
+    expect(geo({ points: tri, angles: [{ at: 'A', from: 'B', to: 'C', label: String.raw`$60^\circ$` }] }).join()).toMatch(/labelled 60° but measures 90/);
+  });
+  it('flags length labels off one scale, unless not to scale', () => {
+    const spec = { points: tri, segments: [{ from: 'A', to: 'B', label: '6' }, { from: 'A', to: 'C', label: '5' }] };
+    expect(geo(spec).join()).toMatch(/off the scale/);
+    expect(geo({ ...spec, not_to_scale: true })).toEqual([]);
+    expect(geo(spec, 'Not drawn to scale.')).toEqual([]);
+    expect(geo({ ...spec, scale: { unit: 'cm', per_unit: 1 } }).join()).toMatch(/AC is labelled 5/);
+  });
+  it('flags points and circles outside the canvas and unknown references', () => {
+    expect(geo({ points: { A: [11, 1] } }).join()).toMatch(/outside the canvas/);
+    expect(geo({ points: { A: [1, 1] }, circles: [{ center: 'A', radius: 2 }] }).join()).toMatch(/leaves the canvas/);
+    expect(geo({ points: tri, lines: [{ through: ['A', 'Z'] }] }).join()).toMatch(/unknown point "Z"/);
   });
 });

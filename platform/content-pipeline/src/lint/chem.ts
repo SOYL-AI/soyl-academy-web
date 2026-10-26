@@ -88,7 +88,8 @@ function side(s: string): Counts {
   return total;
 }
 
-const ARROW = /\s*(?:<=>>|<<=>|<=>|<->|->|<-|=)\s*(?:\[[^\]]*\]){0,2}\s*/;
+/** mhchem reaction arrows (with optional [above][below] text). `=` is a double bond in mhchem, not an arrow. */
+const ARROW = /\s*(?:<=>>|<<=>|<=>|<->|->|<-)\s*(?:\[[^\]]*\]){0,2}\s*/;
 
 export type BalanceResult = { kind: 'balanced' } | { kind: 'unbalanced'; elements: string[] } | { kind: 'skipped'; reason: string };
 
