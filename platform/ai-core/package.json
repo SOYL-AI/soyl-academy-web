@@ -1,0 +1,32 @@
+{
+  "name": "@soyl/ai-core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "The single metered model client (D-021): provider interface, Azure OpenAI provider (keyless, retries, Batch), deterministic mock provider, token-to-INR metering and budget guard. Owned by pipeline-engineer in M1, ai-gateway from M4.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@soyl/shared": "*",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.5"
+  },
+  "peerDependencies": {
+    "@azure/identity": "^4.13.3"
+  },
+  "peerDependenciesMeta": {
+    "@azure/identity": {
+      "optional": true
+    }
+  }
+}
