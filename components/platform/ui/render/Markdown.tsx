@@ -25,11 +25,11 @@ export const MAX_MARKDOWN_LENGTH = 50_000;
 
 const ALLOWED_ELEMENTS = [
   'p', 'br', 'strong', 'em', 'del', 'code', 'pre', 'blockquote', 'hr',
-  'ul', 'ol', 'li', 'a', 'img', 'sup', 'sub',
+  'ul', 'ol', 'li', 'a', 'img', 'sup', 'sub', 'ins',
   'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
   'table', 'thead', 'tbody', 'tr', 'th', 'td',
 ];
-const INLINE_ELEMENTS = ['p', 'br', 'strong', 'em', 'del', 'code', 'a', 'img', 'sup', 'sub'];
+const INLINE_ELEMENTS = ['p', 'br', 'strong', 'em', 'del', 'code', 'a', 'img', 'sup', 'sub', 'ins'];
 
 export interface MarkdownProps {
   children: string;

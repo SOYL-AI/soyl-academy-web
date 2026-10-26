@@ -35,6 +35,36 @@ export type CatalogSubject = Schemas['CatalogSubject'];
 export type CatalogChapters = Schemas['CatalogChapters'];
 export type CatalogChapter = CatalogChapters['chapters'][number];
 export type Problem = Schemas['Problem'];
+// M2 learning core (backend-api M2 handoff)
+export type ChapterHub = Schemas['ChapterHub'];
+export type LessonDeck = Schemas['LessonDeck'];
+export type DeckSlide = LessonDeck['slides'][number];
+export type ChapterNotes = Schemas['ChapterNotes'];
+export type ChapterFlashcards = Schemas['ChapterFlashcards'];
+export type Flashcard = ChapterFlashcards['cards'][number];
+export type StudentQuestion = Schemas['StudentQuestion'];
+export type StudentQuestionPart = Schemas['StudentQuestionPart'];
+export type QuestionType = Schemas['QuestionType'];
+export type ReviewStatus = Schemas['ReviewStatus'];
+export type PracticePage = Schemas['PracticePage'];
+export type PracticeResponse = Schemas['PracticeResponse'];
+export type PracticePartResponse = Schemas['PracticePartResponse'];
+export type PracticeAnswerRequest = Schemas['PracticeAnswerRequest'];
+export type PracticeAnswerResult = Schemas['PracticeAnswerResult'];
+export type AnswerKey = Schemas['AnswerKey'];
+export type PracticeSelfAssessment = Schemas['PracticeSelfAssessment'];
+export type LessonProgressRequest = Schemas['LessonProgressRequest'];
+export type LessonProgress = Schemas['LessonProgress'];
+export type MyProgress = Schemas['MyProgress'];
+export type MyChapterProgress = Schemas['MyChapterProgress'];
+export type Streak = Schemas['Streak'];
+export type ContentReportRequest = Schemas['ContentReportRequest'];
+export type ContentReportReceipt = Schemas['ContentReportReceipt'];
+export type MfaStatus = Schemas['MfaStatus'];
+export type MfaEnrollment = Schemas['MfaEnrollment'];
+export type MfaRecoveryCodes = Schemas['MfaRecoveryCodes'];
+export type MfaVerified = Schemas['MfaVerified'];
+export type AdminContentReports = Schemas['AdminContentReports'];
 
 /** Browser base path of the same-origin proxy (ADR-005). */
 export const API_BROWSER_BASE = '/api/platform';
@@ -56,12 +86,14 @@ type ParamGroup<O, K extends 'path' | 'query'> = O extends { parameters: infer P
 
 type BodyOf<O> = O extends { requestBody: { content: { 'application/json': infer B } } } ? B : never;
 
-/** The JSON body of the 200 response, `null` for 204, `unknown` otherwise (e.g. a 302 redirect). */
+/** The JSON body of the 200 (or 201) response, `null` for 204, `unknown` otherwise (e.g. a 302 redirect). */
 export type ResponseOf<O> = O extends { responses: { 200: { content: { 'application/json': infer R } } } }
   ? R
-  : O extends { responses: { 204: unknown } }
-    ? null
-    : unknown;
+  : O extends { responses: { 201: { content: { 'application/json': infer R } } } }
+    ? R
+    : O extends { responses: { 204: unknown } }
+      ? null
+      : unknown;
 
 type IfNever<T, A, B> = [T] extends [never] ? A : B;
 
@@ -135,6 +167,7 @@ export interface ApiClientOptions {
 export interface ApiClient {
   get<P extends PathsWith<'get'>>(path: P, ...opts: OptionalArgs<Op<P, 'get'>>): Promise<ResponseOf<Op<P, 'get'>>>;
   post<P extends PathsWith<'post'>>(path: P, ...opts: OptionalArgs<Op<P, 'post'>>): Promise<ResponseOf<Op<P, 'post'>>>;
+  put<P extends PathsWith<'put'>>(path: P, ...opts: OptionalArgs<Op<P, 'put'>>): Promise<ResponseOf<Op<P, 'put'>>>;
   patch<P extends PathsWith<'patch'>>(path: P, ...opts: OptionalArgs<Op<P, 'patch'>>): Promise<ResponseOf<Op<P, 'patch'>>>;
   delete<P extends PathsWith<'delete'>>(path: P, ...opts: OptionalArgs<Op<P, 'delete'>>): Promise<ResponseOf<Op<P, 'delete'>>>;
 }
@@ -184,6 +217,7 @@ export function createApiClient(options: ApiClientOptions = {}): ApiClient {
   return {
     get: (path, ...opts) => request('get', path, opts[0] as RequestOptions<unknown>) as never,
     post: (path, ...opts) => request('post', path, opts[0] as RequestOptions<unknown>) as never,
+    put: (path, ...opts) => request('put', path, opts[0] as RequestOptions<unknown>) as never,
     patch: (path, ...opts) => request('patch', path, opts[0] as RequestOptions<unknown>) as never,
     delete: (path, ...opts) => request('delete', path, opts[0] as RequestOptions<unknown>) as never,
   };
