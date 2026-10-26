@@ -134,7 +134,8 @@ describe('registerJobs (real pg-boss on the test database)', () => {
     expect(queues.map((q) => q.name).sort()).toEqual(Object.values(JOB_NAMES).sort());
     for (const q of queues) {
       expect(q.policy).toBe('stately');
-      expect(q.retryLimit).toBe(q.name === JOB_NAMES.attemptsAutoSubmit || q.name === JOB_NAMES.liveFinalize ? 2 : 3);
+      const sweeps: string[] = [JOB_NAMES.attemptsAutoSubmit, JOB_NAMES.liveFinalize, JOB_NAMES.aiJobs, JOB_NAMES.creditsSweepReservations];
+      expect(q.retryLimit).toBe(sweeps.includes(q.name) ? 2 : 3);
     }
     const schedules = await boss.getSchedules();
     expect(schedules.map((s) => [s.name, s.cron, s.timezone]).sort()).toEqual(
