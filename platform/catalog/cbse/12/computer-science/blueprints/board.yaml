@@ -1,0 +1,58 @@
+id: cbse-12-computer-science-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-computer-science
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - 1 mark each
+    instructions: "Q1-21: MCQ, write-the-output items and two assertion-reason items."
+    items:
+      - {type: mcq, count: 15, marks_each: 1}
+      - {type: short, count: 4, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: Section B - 2 marks each
+    instructions: Q22-28. Internal choice in five questions.
+    items:
+      - {type: short, count: 2, marks_each: 2}
+      - {type: short, count: 10, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - 3 marks each
+    instructions: Q29-31. Internal choice in two questions.
+    items:
+      - {type: short, count: 1, marks_each: 3}
+      - {type: short, count: 4, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - 4 marks each
+    instructions: "Q32-35: SQL on given tables, file handling, programs. Internal choice in two questions."
+    items:
+      - {type: long, count: 2, marks_each: 4}
+      - {type: long, count: 4, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+  - id: E
+    title: Section E - 5 marks each
+    instructions: "Q36-37: case-style programming/network-design questions. Internal choice in Q37."
+    items:
+      - {type: case-based, count: 1, marks_each: 5}
+      - {type: case-based, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-xii-computer-science-2026-27
+notes: >-
+  37 questions: A 21 x 1, B 7 x 2, C 3 x 3, D 4 x 4, E 2 x 5. Section A in the 2026-27 SQP: 15 MCQ, 4 write-the-output items (Q1, Q10,
+
+  Q14, Q18) and 2 assertion-reason (Q20-21). Internal choice: five Section B questions (Q22, Q24, Q25, Q27, Q28), two in C (Q29, Q31), two
+  in
+
+  D (Q32, Q34), one in E (Q37). Programming answers must be in Python. The syllabus document prints no competency table. FORMAT MAPPING:
+
+  write-the-output (1 mark) items are mapped to short (a code-output type with exact-match grading would make them auto-gradable);
+
+  code-writing (Python functions, file handling, stack operations), SQL query-writing and query-output items and the network-design case
+
+  (Section E) are mapped to short/long/case-based by marks - the contract has no code answer type and no table-output type.

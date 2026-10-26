@@ -1,0 +1,44 @@
+id: cbse-12-legal-studies-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-legal-studies
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A
+    instructions: "Q1-20: multiple-choice questions, 1 mark each."
+    items:
+      - {type: mcq, count: 17, marks_each: 1}
+      - {type: assertion-reason, count: 3, marks_each: 1}
+  - id: B
+    title: Section B
+    instructions: "Q21-28: 2 marks each (not more than 40 words). Internal choice in some questions."
+    items:
+      - {type: short, count: 6, marks_each: 2}
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C
+    instructions: "Q29-36: 3 marks each (not more than 100 words). Internal choice in some questions."
+    items:
+      - {type: short, count: 5, marks_each: 3}
+      - {type: short, count: 6, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D
+    instructions: "Q37-40: 5 marks each (not more than 140 words). Q38-39 case-based; Q37 and Q40 with internal choice."
+    items:
+      - {type: case-based, count: 2, marks_each: 5}
+      - {type: long, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-xii-legal-studies-2026-27
+notes: >-
+  Theory paper only (80 marks, 3 hours); project 20 is assessed separately. 40 questions: A Q1-20 MCQs x 1 (Q2, Q6 and Q16 assertion-reason;
+  many are short legal situations); B Q21-28 x 2 (max 40 words; choice in Q21, Q23); C Q29-36 x 3 (max 100 words; choice in Q29, Q31, Q33);
+  D Q37-40 x 5 (max 140 words; Q37 and Q40 have A/B choice, Q38-39 are fact-situation (case) questions). The syllabus gives no competency
+  table, so mark_shares is empty. FORMAT MAPPING: most constructed answers apply legal principles to a hypothetical fact situation; only
+  Q38-39 are modelled as case-based, the rest as short/long.

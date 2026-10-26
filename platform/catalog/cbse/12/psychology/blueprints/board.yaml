@@ -1,0 +1,62 @@
+id: cbse-12-psychology-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-psychology
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares:
+  recall+understanding: 0.5
+  application: 0.3571
+  analysis+evaluation: 0.1429
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - 1 mark each
+    instructions: Q1-14, answer as directed. Two assertion-reason items.
+    items:
+      - {type: mcq, count: 12, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: Section B - Very short answer I (2 marks each)
+    instructions: Q15-19, 30 words. Internal choice in one question.
+    items:
+      - {type: short, count: 4, marks_each: 2}
+      - {type: short, count: 2, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Short answer II (3 marks each)
+    instructions: Q20-23, 60 words. Internal choice in one question.
+    items:
+      - {type: short, count: 3, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Long answer I (4 marks each)
+    instructions: Q24-27, 120 words. Internal choice in one question.
+    items:
+      - {type: long, count: 3, marks_each: 4}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+  - id: E
+    title: Section E - Long answer II (6 marks each)
+    instructions: Q28-29, 200 words. Both have an internal choice.
+    items:
+      - {type: long, count: 4, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+  - id: F
+    title: Section F - Case based (3 marks per case)
+    instructions: "Q30-33: two passages, each with a 1-mark (20 words) and a 2-mark (30 words) question."
+    items:
+      - {type: case-based, count: 2, marks_each: 3}
+source_status: verified
+source: cbse-sqp-xii-psychology-2026-27
+notes: >-
+  33 questions: A 14 x 1 (MCQ incl. 2 assertion-reason), B 5 x 2 (30 words), C 4 x 3 (60 words), D 4 x 4 (120 words), E 2 x 6 (200
+
+  words), F two cases of 3 marks (Q30-31 and Q32-33: one 1-mark and one 2-mark question per passage, 20 and 30 words). Internal choice in
+  one
+
+  question each in B, C and D and both E questions. Competency weights (design table): remembering/understanding 35 marks (50%), applying 25
+
+  (35%), formulating/analysing/evaluating/creating 10 (15%) - the table's own percentages are rounded; mark_shares uses marks/70. The two
+
+  case passages are modelled as case-based items of 3 marks (children 1 + 2 marks).

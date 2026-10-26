@@ -1,0 +1,59 @@
+id: cbse-12-geography-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-geography
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares:
+  recall+understanding: 0.41
+  application: 0.37
+  analysis+evaluation: 0.22
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Multiple choice (1 mark each)
+    instructions: Q1-17. Includes one assertion-reason and one match-the-column item.
+    items:
+      - {type: mcq, count: 16, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+  - id: B
+    title: Section B - Source based (3 marks each)
+    instructions: "Q18-19: map/graph/text sources with sub-questions."
+    items:
+      - {type: source-based, count: 2, marks_each: 3}
+  - id: C
+    title: Section C - Short answer (3 marks each)
+    instructions: Q20-23, 80-100 words. Internal choice in one question.
+    items:
+      - {type: short, count: 3, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Long answer (5 marks each)
+    instructions: Q24-28, 120-150 words. Internal choice in four questions.
+    items:
+      - {type: long, count: 1, marks_each: 5}
+      - {type: long, count: 8, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+  - id: E
+    title: Section E - Map based (5 marks each)
+    instructions: "Q29 world map: identify any five of seven marked features. Q30 India map: locate and label any five of seven."
+    items:
+      - {type: short, count: 7, marks_each: 1, internal_choice: {attempt: 5, of: 7}}
+      - {type: short, count: 7, marks_each: 1, internal_choice: {attempt: 5, of: 7}}
+source_status: verified
+source: cbse-sqp-xii-geography-2026-27
+notes: >-
+  30 questions: A 17 x 1 MCQ (one assertion-reason, one match-the-column coded MCQ), B 2 x 3 source-based (map/graph/text source),
+
+  C 4 x 3 SA (80-100 words; one internal choice), D 5 x 5 LA (120-150 words; internal choice in four), E 2 x 5 map (world map Q29, India
+
+  map Q30; each "any five of seven" features, 1 mark each). Book weightage 35 + 35 (each includes its 5-mark map). Competency weights
+
+  (design table): remembering/understanding 41%, application 37%, analysing/evaluating/creating 22%. FORMAT MAPPING: map questions have no
+
+  QuestionType; each is modelled as 7 one-mark short items with choice 5 of 7 (assembler must draw them as one map question on one outline
+
+  map). Source-based items using a map or graph need an image asset. Visually impaired candidates get substitute questions for items with
+  visual input (not modelled).

@@ -1,0 +1,54 @@
+id: cbse-12-sociology-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-sociology
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.375
+  application: 0.4
+  analysis+evaluation: 0.225
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - 1 mark each
+    instructions: "Q1-16: MCQ, assertion-reason and two passages (Q11-12, Q13-14)."
+    items:
+      - {type: mcq, count: 6, marks_each: 1}
+      - {type: assertion-reason, count: 6, marks_each: 1}
+      - {type: case-based, count: 2, marks_each: 2}
+  - id: B
+    title: Section B - Very short answer (2 marks each)
+    instructions: Q17-25, 30 words. Internal choice in two questions.
+    items:
+      - {type: short, count: 7, marks_each: 2}
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Short answer (4 marks each)
+    instructions: Q26-32, 80 words. Internal choice in one question.
+    items:
+      - {type: long, count: 6, marks_each: 4}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Long answer (6 marks each)
+    instructions: Q33 data/graphic based, Q34-35 extract based; 200 words.
+    items:
+      - {type: case-based, count: 1, marks_each: 6}
+      - {type: long, count: 1, marks_each: 6}
+      - {type: source-based, count: 1, marks_each: 6}
+source_status: verified
+source: cbse-sqp-xii-sociology-2026-27
+notes: >-
+  35 questions in four sections: A 16 x 1 (6 assertion-reason, 6 MCQ and two passages with two MCQs each, Q11-14), B 9 x 2 (30 words;
+
+  internal choice in two), C 7 x 4 (80 words; internal choice in one), D 3 x 6 (200 words; Q33 data/graphic based, Q34 and Q35 extract
+  based;
+
+  no internal choice in the 2026-27 SQP). Book weightage 40 + 40. Competency weights (design table): knowledge/understanding 37.5%,
+
+  application 40%, formulate/analyse/evaluate/create 22.5%. The two Section A passages are modelled as 2-mark case-based items with two MCQ
+
+  children each. Units 1 and 7 (introductory) are non-evaluative.

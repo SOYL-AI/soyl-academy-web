@@ -1,0 +1,45 @@
+id: cbse-12-physical-education-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-physical-education
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Multiple choice (1 mark each)
+    instructions: Q1-18. Includes assertion-reason items.
+    items:
+      - {type: mcq, count: 16, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: Section B - Very short answer (2 marks each)
+    instructions: Q19-24, attempt any 5.
+    items:
+      - {type: short, count: 6, marks_each: 2, internal_choice: {attempt: 5, of: 6}}
+  - id: C
+    title: Section C - Short answer (3 marks each)
+    instructions: Q25-30, attempt any 5.
+    items:
+      - {type: short, count: 6, marks_each: 3, internal_choice: {attempt: 5, of: 6}}
+  - id: D
+    title: Section D - Case studies (4 marks each)
+    instructions: Q31-33; internal choice inside sub-parts.
+    items:
+      - {type: case-based, count: 3, marks_each: 4}
+  - id: E
+    title: Section E - Long answer (5 marks each)
+    instructions: Q34-37, attempt any 3.
+    items:
+      - {type: long, count: 4, marks_each: 5, internal_choice: {attempt: 3, of: 4}}
+source_status: verified
+source: cbse-sqp-xii-physical-education-2026-27
+notes: |-
+  37 questions: A 18 x 1 MCQ (incl. 2 assertion-reason), B 6 x 2 attempt any 5 (60-90 words), C 6 x 3 attempt any 5 (100-150 words),
+  D 3 x 4 case studies (internal choice inside sub-parts), E 4 x 5 attempt any 3 (200-300 words). Theory 70 + practical 30 (not covered).
+  The syllabus document prints no competency table. FORMAT MAPPING: fixture-drawing (knock-out/league tournaments) and labelled-diagram
+  answers are mapped to short/long; case studies are MCQ-child case-based items.

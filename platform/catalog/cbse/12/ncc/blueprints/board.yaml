@@ -1,0 +1,63 @@
+id: cbse-12-ncc-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-ncc
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Part I - Section A
+    instructions: "Q1: 11 objective items, 1 mark each."
+    items:
+      - {type: mcq, count: 9, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: match, count: 1, marks_each: 1}
+  - id: B
+    title: Part I - Section B
+    instructions: "Q2-Q8: 2 marks each (not more than 35 words); Q9-Q12: 4 marks each (not more than 80 words). Internal choice in some questions."
+    items:
+      - {type: short, count: 4, marks_each: 2}
+      - {type: short, count: 6, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 4}
+      - {type: long, count: 4, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Part I - Section C
+    instructions: "Q13: passage-based (2 marks). Q14: passage-based (6 marks, 2+2+2)."
+    items:
+      - {type: case-based, count: 1, marks_each: 2}
+      - {type: case-based, count: 1, marks_each: 6}
+  - id: D
+    title: Part II (chosen wing) - Section D
+    instructions: "Q15: five objective items, 1 mark each."
+    items:
+      - {type: mcq, count: 4, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+  - id: E
+    title: Part II (chosen wing) - Section E
+    instructions: "Q16-Q19: 2 marks each; Q20: 4 marks. Internal choice in some questions."
+    items:
+      - {type: short, count: 2, marks_each: 2}
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+  - id: F
+    title: Part II (chosen wing) - Section F
+    instructions: "Q21: passage-based, 4 marks."
+    items:
+      - {type: case-based, count: 1, marks_each: 4}
+source_status: verified
+source: cbse-sqp-xii-ncc-2026-27
+notes: >-
+  Theory paper only (70 marks, 3 hours); practical 30 is assessed separately. Part I Common Subjects 49 (Sections A-C, compulsory) and Part
+  II Specialised Subjects 21 (Sections D-F) for the candidate's wing; the SQP prints Army, Navy and Air Force versions and the candidate
+  attempts one. Word limits: 2 marks 35 words, 4 marks 80 words, 6 marks 150 words. Section A: 11 one-mark items (9 MCQ, 1 assertion-reason,
+  1 match). Section B: Q2-Q8 2 marks (choice in Q3, Q6, Q8); Q9-Q12 4 marks (choice in Q10, Q12). Section C: Q13 passage-based 2 marks; Q14
+  passage-based 6 marks (2+2+2). Part II (Army version): Section D five 1-mark items (one assertion-reason); Section E 2-mark Q16-Q19
+  (choice in Q16, Q19) and 4-mark Q20 (with choice); Section F Q21 passage-based 4 marks. FORMAT MAPPING: wing selection is not expressible
+  in the Blueprint schema; sections D-F apply to whichever wing the student chose and the assembler must restrict them to that wing's
+  chapters. The number of internal choices in Section E differs slightly by wing; the Army version is modelled. Match item modelled as type
+  match.

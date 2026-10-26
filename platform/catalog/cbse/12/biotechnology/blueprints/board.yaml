@@ -1,0 +1,50 @@
+id: cbse-12-biotechnology-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-biotechnology
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares:
+  recall+understanding: 0.5
+  application: 0.3
+  analysis+evaluation: 0.2
+scope: syllabus
+sections:
+  - id: A
+    title: Section A
+    instructions: "Q1-16: multiple-choice (Q13-16 assertion-reason), 1 mark each."
+    items:
+      - {type: mcq, count: 12, marks_each: 1}
+      - {type: assertion-reason, count: 4, marks_each: 1}
+  - id: B
+    title: Section B
+    instructions: "Q17-21: short answer, 2 marks each. One question has an internal choice."
+    items:
+      - {type: short, count: 4, marks_each: 2}
+      - {type: short, count: 2, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C
+    instructions: "Q22-28: short answer, 3 marks each. One question has an internal choice."
+    items:
+      - {type: short, count: 6, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D
+    instructions: "Q29-30: case-based, 4 marks each (internal choice in a sub-part)."
+    items:
+      - {type: case-based, count: 2, marks_each: 4}
+  - id: E
+    title: Section E
+    instructions: "Q31-33: long answer, 5 marks each, each with an internal choice."
+    items:
+      - {type: long, count: 6, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-xii-biotechnology-2026-27
+notes: >-
+  Theory paper only (70 marks, 3 hours); practical 30 is assessed separately. 33 questions in five sections: A 16 x 1 (12 MCQ + 4
+  assertion-reason); B 5 x 2 (one with internal choice); C 7 x 3 (one with internal choice); D 2 case-based x 4 (internal choice inside
+  sub-parts); E 3 x 5, each with an A/B internal choice. Competency weights from the CBSE 2026-27 design: knowledge and understanding 50%,
+  application 30%, analyse/evaluate/create 20%; about 33% internal choice.

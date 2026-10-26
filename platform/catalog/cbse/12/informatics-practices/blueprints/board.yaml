@@ -1,0 +1,52 @@
+id: cbse-12-informatics-practices-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-informatics-practices
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - 1 mark each
+    instructions: "Q1-21: MCQ, true/false, fill in the blank, assertion-reason."
+    items:
+      - {type: mcq, count: 15, marks_each: 1}
+      - {type: true-false, count: 2, marks_each: 1}
+      - {type: fill-blank, count: 2, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: Section B - 2 marks each
+    instructions: Q22-28. Internal choice in three questions.
+    items:
+      - {type: short, count: 4, marks_each: 2}
+      - {type: short, count: 6, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - 3 marks each
+    instructions: Q29-32. Internal choice in two questions.
+    items:
+      - {type: short, count: 2, marks_each: 3}
+      - {type: short, count: 4, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - 4 marks each
+    instructions: Q33-34. Internal choice in Q34.
+    items:
+      - {type: long, count: 1, marks_each: 4}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+  - id: E
+    title: Section E - 5 marks each
+    instructions: "Q35-37: case/table based SQL and pandas questions. Internal choice in Q37."
+    items:
+      - {type: case-based, count: 2, marks_each: 5}
+      - {type: case-based, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-xii-informatics-practices-2026-27
+notes: |-
+  37 questions: A 21 x 1, B 7 x 2, C 4 x 3, D 2 x 4, E 3 x 5. Section A in the 2026-27 SQP: 15 MCQ, 2 true/false (Q1, Q19), 2
+  fill-in-the-blank (Q9, Q16), 2 assertion-reason (Q20-21). Internal choice: Q22, Q25, Q28 (B), Q30, Q32 (C), Q34 (D), Q37 (E). Programming
+  answers in Python (pandas, Matplotlib). The syllabus document prints no competency table. FORMAT MAPPING: pandas/Matplotlib code-writing,
+  SQL query-writing and query-output items (tables given in the stem) are mapped to short/long/case-based by marks - no code or table-output
+  answer type exists; plotting questions need the program, not a drawn graph.

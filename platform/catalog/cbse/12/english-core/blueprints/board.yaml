@@ -1,0 +1,47 @@
+id: cbse-12-english-core-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-english-core
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading Skills (22)
+    instructions: Q1 passage (12), Q2 factual passage with visual input (10); MCQ, very short and short answer sub-parts.
+    items:
+      - {type: case-based, count: 1, marks_each: 12}
+      - {type: case-based, count: 1, marks_each: 10}
+  - id: B
+    title: Section B - Creative Writing Skills (18)
+    instructions: Q3 notice (4), Q4 invitation/reply (4), Q5 letter (5), Q6 article/report (5). Attempt A or B in each.
+    items:
+      - {type: long, count: 4, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Literature (40)
+    instructions: >-
+      Q7-9 extract-based (choose one of two extracts each; 6, 4, 6). Q10 any 5 of 6 (2 marks), Q11 any 2 of 3 (2 marks), Q12-13 one of two
+      long answers (5 marks).
+    items:
+      - {type: source-based, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+      - {type: source-based, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: source-based, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 6, marks_each: 2, internal_choice: {attempt: 5, of: 6}}
+      - {type: short, count: 3, marks_each: 2, internal_choice: {attempt: 2, of: 3}}
+      - {type: long, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-xii-english-core-2026-27
+notes: |-
+  13 questions in three sections: A Reading 22 (Q1 unseen discursive passage 12, Q2 factual/data passage with visual input 10),
+  B Creative Writing 18 (Q3 notice up to 50 words 4, Q4 formal/informal invitation or reply 4, Q5 letter 120-150 words 5, Q6 article/report
+  120-150 words 5; each A or B), C Literature 40 (Q7 Flamingo poetry extract 6, Q8 Vistas prose extract 4, Q9 Flamingo prose extract 6 -
+  each choose one of two extracts; Q10 any 5 of 6 short answers 40-50 words; Q11 any 2 of 3 (Vistas) 40-50 words; Q12 and Q13 one of two
+  long answers 120-150 words, Flamingo and Vistas). The design table lists competencies per section without percentages, so mark_shares
+  is empty. FORMAT MAPPING: writing tasks (notice, invitation, letter, article, report) have no QuestionType; mapped to long (4-5 marks,
+  with format/content/expression rubric in the marking scheme). Reading passages are case-based (MCQ, short-answer and vocabulary
+  children); literature extracts are source-based.
