@@ -482,7 +482,8 @@ export function build({ dir, release, testsSpec, readmeCheck = true }) {
     for (const [tex, display] of spans) {
       mathCount++;
       try { katex.renderToString(tex, { throwOnError: true, displayMode: display, strict: 'error', trust: false }); } catch (x) { errs.push(`${p}: KaTeX ${x.message}`); }
-      const m = LOST.exec(tex);
+      // Words inside \text{…} / \operatorname{…} are prose, not commands (as in the pipeline's BARE_COMMAND rule).
+      const m = LOST.exec(tex.replace(/\\(?:text|textbf|mathrm|operatorname)\s*\{(?:[^{}]|\{[^{}]*\})*\}/g, ' '));
       if (m) errs.push(`${p}: "${m[2]}" without backslash in ${tex}`);
       if (/[−×÷√≤≥≠]/.test(tex)) errs.push(`${p}: Unicode maths symbol inside $…$: ${tex}`);
       if (!display && !raw && /\n/.test(tex)) errs.push(`${p}: line break inside inline maths (an escape such as \\ne may have been eaten): ${JSON.stringify(tex)}`);
