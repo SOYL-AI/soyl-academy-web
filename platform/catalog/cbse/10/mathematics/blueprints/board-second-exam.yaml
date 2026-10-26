@@ -1,0 +1,65 @@
+id: cbse-10-mathematics-board-second-exam
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-mathematics
+paper_type: board-second-exam
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.54
+  application: 0.24
+  analysis+evaluation: 0.22
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Objective (20 x 1)
+    instructions: Questions 1-18 MCQ and 19-20 assertion-reason, 1 mark each.
+    items:
+      - {type: mcq, count: 18, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: Section B - Very short answer (5 x 2)
+    instructions: Questions 21-25, 2 marks each. Internal choice in 2 questions.
+    items:
+      - {type: short, count: 3, marks_each: 2}
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Short answer (6 x 3)
+    instructions: Questions 26-31, 3 marks each. Internal choice in 2 questions.
+    items:
+      - {type: short, count: 4, marks_each: 3}
+      - {type: short, count: 4, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Long answer (4 x 5)
+    instructions: Questions 32-35, 5 marks each. Internal choice in 2 questions.
+    items:
+      - {type: long, count: 2, marks_each: 5}
+      - {type: long, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+  - id: E
+    title: Section E - Case study (3 x 4)
+    instructions: Questions 36-38, case-study based, sub-parts of 1, 1 and 2 marks; internal choice in the 2-mark sub-part of each.
+    items:
+      - {type: case-based, count: 3, marks_each: 4}
+source_status: verified
+source: cbse-sqp-x-mathematics-standard-2026-27
+notes: >-
+  Second (May) board exam: CBSE has published no separate sample paper or design for the second exam; the 14-02-2026 notification makes it
+  an improvement / compartment exam on the same subject, so this blueprint repeats the February pattern on the full syllabus (assumption,
+  re-check when CBSE publishes a second-exam SQP).
+
+  Mathematics Standard (041) paper. 38 questions, 5 sections, no overall choice. Theory 80 + internal assessment 20 (pen-paper test and
+  multiple assessment 10, portfolio 5, lab practical 5).
+
+  Numerical problems are constructed-response items with step marks, mapped to short/long (not the auto-graded numerical type).
+  Constructions and
+
+  graph work are not set in the 2026-27 SQP. Visually impaired candidates get substitute items (not modelled). Standard (041) and Basic
+  (241) share
+
+  one syllabus (subject cbse-10-mathematics); the blueprint contract has no variant field, so the two papers are separate files (board.yaml
+  = Standard,
+
+  board-basic.yaml = Basic). CBSE: Basic remains available to the 2026-27 Class X cohort only. Competency weights from the CBSE design
+  table: remembering/understanding 43 marks (54%), applying 19 (24%), analysing/evaluating/creating 18 (22%).

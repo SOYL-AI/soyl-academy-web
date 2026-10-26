@@ -1,0 +1,50 @@
+id: cbse-10-english-language-and-literature-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-english-language-and-literature
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading Skills (20)
+    instructions: Q1 discursive passage (10); Q2 case-based factual passage with visual input (10).
+    items:
+      - {type: case-based, count: 2, marks_each: 10}
+  - id: B
+    title: Section B - Grammar and Creative Writing Skills (20)
+    instructions: >-
+      Q3 grammar: complete any 10 of 12 tasks (1 mark each). Q4 formal letter (A/B, ~120 words, 5). Q5 analytical paragraph (A/B, ~120
+      words, 5).
+    items:
+      - {type: fill-blank, count: 12, marks_each: 1, internal_choice: {attempt: 10, of: 12}}
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Literature Textbooks (40)
+    instructions: >-
+      Q6 and Q7 reference-to-context extracts, answer one of A/B in each (5 each). Q8 any 4 of 5 (First Flight, 40-50 words, 3 each). Q9 any
+      2 of 3 (Footprints, 40-50 words, 3 each). Q10 and Q11 one of two (100-120 words, 6 each).
+    items:
+      - {type: source-based, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 5, marks_each: 3, internal_choice: {attempt: 4, of: 5}}
+      - {type: short, count: 3, marks_each: 3, internal_choice: {attempt: 2, of: 3}}
+      - {type: long, count: 4, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-x-english-language-and-literature-2026-27
+notes: >-
+  11 questions in three sections. FORMAT MAPPING: unseen reading passages are modelled as case-based (one passage, ~10 objective and
+
+  short sub-questions); textbook extracts as source-based; the 10-of-12 grammar tasks (gap filling, editing, transformation, some with
+  options)
+
+  as 1-mark fill-blank; the formal letter and the analytical paragraph (on a chart/graph/cue - needs an image asset) as 5-mark 'long'
+  writing
+
+  tasks. There is no writing-task QuestionType; a 'writing' type with a rubric (format, content, organisation, accuracy) would fit better.
+
+  No competency weights are published for English. Theory 80 + internal assessment 20 (incl. listening and speaking).

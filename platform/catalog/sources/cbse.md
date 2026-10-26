@@ -680,6 +680,18 @@ CBSE's skill page are the 2025-26 papers; CBSE notification 132/2026 (`cbse-sqp-
 - **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/ElementsBusiness-MS.pdf
 - **Publisher:** CBSE · **Fetched:** 2026-10-26
 
+### `cbse-sqp-x-english-communicative-2026-27`
+- **Title:** English Communicative (101) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/EnglishComm-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/EnglishComm-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-english-language-and-literature-2026-27`
+- **Title:** English Language and Literature (184) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/EnglishL-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/EnglishL-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
 ### `cbse-sqp-x-food-production-2026-27`
 - **Title:** Food Production (409) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
 - **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/409_FOOD_PRODUCTION_SQP.pdf
@@ -702,6 +714,18 @@ CBSE's skill page are the 2025-26 papers; CBSE notification 132/2026 (`cbse-sqp-
 - **Title:** Health Care (413) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
 - **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/413_HEALTH_CARE_SQP.pdf
 - **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/413_HEALTH_CARE_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-hindi-a-2026-27`
+- **Title:** Hindi Course A (002) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/HindiCourseA-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/HindiCourseA-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-hindi-b-2026-27`
+- **Title:** Hindi Course B (085) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/HindiCourseB-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/HindiCourseB-MS.pdf
 - **Publisher:** CBSE · **Fetched:** 2026-10-26
 
 ### `cbse-sqp-x-hindustani-music-melodic-instruments-2026-27`
@@ -752,6 +776,18 @@ CBSE's skill page are the 2025-26 papers; CBSE notification 132/2026 (`cbse-sqp-
 - **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/412_Marketing_Sales_MS.pdf
 - **Publisher:** CBSE · **Fetched:** 2026-10-26
 
+### `cbse-sqp-x-mathematics-basic-2026-27`
+- **Title:** Mathematics Basic (241) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/MathsBasic-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/MathsBasic-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-mathematics-standard-2026-27`
+- **Title:** Mathematics Standard (041) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/MathsStandard-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/MathsStandard-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
 ### `cbse-sqp-x-multi-media-2026-27`
 - **Title:** Multi Media (415) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
 - **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/415_MEDIA_SQP.pdf
@@ -788,6 +824,12 @@ CBSE's skill page are the 2025-26 papers; CBSE notification 132/2026 (`cbse-sqp-
 - **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/401_RETAIL_MS.pdf
 - **Publisher:** CBSE · **Fetched:** 2026-10-26
 
+### `cbse-sqp-x-sanskrit-2026-27`
+- **Title:** Sanskrit (122) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/Sanskrit-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/Sanskrit-MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
 ### `cbse-sqp-x-science-2026-27`
 - **Title:** Science (086) Class X Sample Question Paper and Marking Scheme 2026-27
 - **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/Science-SQP.pdf
@@ -798,6 +840,12 @@ CBSE's skill page are the 2025-26 papers; CBSE notification 132/2026 (`cbse-sqp-
 - **Title:** Security (403) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
 - **URL:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/403_SECURITY_SQP.pdf
 - **Marking scheme:** https://cbseacademic.nic.in/web_material/Curriculum26/SQP_MS_X/403_SECURITY_MS.pdf
+- **Publisher:** CBSE · **Fetched:** 2026-10-26
+
+### `cbse-sqp-x-social-science-2026-27`
+- **Title:** Social Science (087) Class X Sample Question Paper and Marking Scheme 2026-27
+- **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/SocialScience-SQP.pdf
+- **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/SocialScience-MS.pdf
 - **Publisher:** CBSE · **Fetched:** 2026-10-26
 
 ### `cbse-sqp-xii-accountancy-2026-27`
