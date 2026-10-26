@@ -32,6 +32,7 @@ const prodEnv = {
   EDGE_SECRETS: S('a'),
   AUTH_SECRET: S('b'),
   OTP_PEPPER: S('c'),
+  MFA_ENCRYPTION_KEY: Buffer.alloc(32, 7).toString('base64'),
   GOOGLE_CLIENT_ID: 'id',
   GOOGLE_CLIENT_SECRET: 'secret',
   SMS_PROVIDER: 'msg91',

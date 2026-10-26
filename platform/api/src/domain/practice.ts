@@ -67,14 +67,14 @@ export async function listPractice(db: Database, chapter: ChapterRef, year: stri
   const answeredExpr = userId
     ? sql<number>`(CASE WHEN EXISTS (SELECT 1 FROM ${practiceAnswers} pa WHERE pa.user_id = ${userId} AND pa.question_key = ${studentQuestions.key}) THEN 1 ELSE 0 END)`
     : sql<number>`0`;
-  const after = cursor ? sql`(${answeredExpr}, ${studentQuestions.key}) > (${cursor.a}, ${cursor.k})` : undefined;
+  const after = !cursor ? undefined : userId ? sql`(${answeredExpr}, ${studentQuestions.key}) > (${cursor.a}, ${cursor.k})` : sql`${studentQuestions.key} > ${cursor.k}`;
 
   const [rows, [count]] = await Promise.all([
     db
       .select({ ...studentQuestionSelect, answered: answeredExpr })
       .from(studentQuestions)
       .where(after ? and(where, after) : where)
-      .orderBy(answeredExpr, asc(studentQuestions.key))
+      .orderBy(...(userId ? [answeredExpr, asc(studentQuestions.key)] : [asc(studentQuestions.key)]))
       .limit(q.limit + 1),
     db.select({ n: sql<number>`count(*)::int` }).from(studentQuestions).where(where),
   ]);
