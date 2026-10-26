@@ -311,52 +311,39 @@ export async function saveResponses(ctx: EngineContext, userId: string, attemptI
   }
 
   const at = new Date(now);
-  const result = await ctx.db.transaction(async (tx) => {
-    // FOR SHARE: a concurrent submit (FOR UPDATE) waits for this save, or this save sees the final state.
-    const [cur] = await tx.select({ status: attempts.status, tabs: attempts.tabSwitchCount }).from(attempts).where(eq(attempts.id, a.id)).for('share');
-    if (cur?.status !== 'in_progress') throw new ApiProblem('attempt_closed', { detail: 'This attempt has been submitted.' });
-    let applied: { itemId: string; seq: number }[] = [];
-    if (toSave.length) {
-      const values = toSave.map((e) => ({
-        attemptId: a.id,
-        testItemId: e.itemId,
-        answer: e.response === null ? null : (e.response as unknown),
-        markedForReview: e.markedForReview ?? false,
-        timeSpentSec: Math.max(0, Math.min(Math.round(e.timeSpentSec ?? 0), 24 * 3600)),
-        clientSavedAt: e.changedAt && Number.isFinite(Date.parse(e.changedAt)) ? new Date(e.changedAt) : null,
-        autosavedAt: at,
-        clientSeq: e.seq,
-        createdAt: at,
-        updatedAt: at,
-      }));
-      const rows = await tx
-        .insert(responses)
-        .values(values)
-        .onConflictDoUpdate({
-          target: [responses.attemptId, responses.testItemId],
-          set: {
-            answer: sql`excluded.answer`,
-            markedForReview: sql`excluded.marked_for_review`,
-            timeSpentSec: sql`GREATEST(${responses.timeSpentSec}, excluded.time_spent_sec)`,
-            clientSavedAt: sql`excluded.client_saved_at`,
-            autosavedAt: sql`excluded.autosaved_at`,
-            clientSeq: sql`excluded.client_seq`,
-            updatedAt: sql`excluded.updated_at`,
-          },
-          setWhere: sql`${responses.clientSeq} < excluded.client_seq`,
-        })
-        .returning({ itemId: responses.testItemId, seq: responses.clientSeq });
-      applied = rows.map((r) => ({ itemId: r.itemId, seq: Number(r.seq) }));
-    }
-    if (batch.tabSwitchCount !== undefined && batch.tabSwitchCount > (cur.tabs ?? 0))
-      await tx.update(attempts).set({ tabSwitchCount: Math.min(batch.tabSwitchCount, 10_000), updatedAt: at }).where(eq(attempts.id, a.id));
-    return applied;
-  });
-
-  const appliedIds = new Set(result.map((r) => r.itemId));
+  // One statement, no explicit transaction (the hot path under load, §16): the CTE takes FOR SHARE on
+  // the attempt row, so a concurrent submit (FOR UPDATE) waits for this save, or this save finds the
+  // attempt closed and inserts nothing. Only a higher sequence replaces a stored state.
+  let applied: { itemId: string; seq: number }[] = [];
+  if (toSave.length) {
+    const rows = toSave.map(
+      (e) =>
+        sql`(${e.itemId}::uuid, ${e.response === null ? null : JSON.stringify(e.response)}::jsonb, ${e.markedForReview ?? false}::boolean, ${Math.max(0, Math.min(Math.round(e.timeSpentSec ?? 0), 24 * 3600))}::int, ${e.changedAt && Number.isFinite(Date.parse(e.changedAt)) ? new Date(e.changedAt).toISOString() : null}::timestamptz, ${e.seq}::bigint)`,
+    );
+    const res = await ctx.db.execute<{ test_item_id: string; client_seq: string | number }>(sql`
+      WITH open AS (SELECT id FROM ${attempts} WHERE id = ${a.id} AND status = 'in_progress' FOR SHARE)
+      INSERT INTO ${responses} (attempt_id, test_item_id, answer, marked_for_review, time_spent_sec, client_saved_at, autosaved_at, client_seq, created_at, updated_at)
+      SELECT open.id, v.item, v.answer, v.mfr, v.tss, v.csa, ${at.toISOString()}::timestamptz, v.seq, ${at.toISOString()}::timestamptz, ${at.toISOString()}::timestamptz
+      FROM open, (VALUES ${sql.join(rows, sql`, `)}) AS v(item, answer, mfr, tss, csa, seq)
+      ON CONFLICT (attempt_id, test_item_id) DO UPDATE SET
+        answer = excluded.answer,
+        marked_for_review = excluded.marked_for_review,
+        time_spent_sec = GREATEST(responses.time_spent_sec, excluded.time_spent_sec),
+        client_saved_at = excluded.client_saved_at,
+        autosaved_at = excluded.autosaved_at,
+        client_seq = excluded.client_seq,
+        updated_at = excluded.updated_at
+      WHERE responses.client_seq < excluded.client_seq
+      RETURNING test_item_id, client_seq`);
+    applied = res.rows.map((r) => ({ itemId: r.test_item_id, seq: Number(r.client_seq) }));
+  }
+  const appliedIds = new Set(applied.map((r) => r.itemId));
   const staleEntries = toSave.filter((e) => !appliedIds.has(e.itemId));
   let stale: SaveResult['stale'] = [];
   if (staleEntries.length) {
+    // Nothing applied for these: either a newer state is stored, or the attempt closed meanwhile.
+    const [cur] = await ctx.db.select({ status: attempts.status }).from(attempts).where(eq(attempts.id, a.id));
+    if (cur?.status !== 'in_progress') throw new ApiProblem('attempt_closed', { detail: 'This attempt has been submitted.' });
     const stored = await ctx.db
       .select({ itemId: responses.testItemId, seq: responses.clientSeq })
       .from(responses)
@@ -364,7 +351,12 @@ export async function saveResponses(ctx: EngineContext, userId: string, attemptI
     const by = new Map(stored.map((s) => [s.itemId, Number(s.seq)]));
     stale = staleEntries.map((e) => ({ itemId: e.itemId, seq: e.seq, storedSeq: by.get(e.itemId) ?? 0 }));
   }
-  return { status: 'in_progress', serverNow: at.toISOString(), deadlineAt: a.deadlineAt!.toISOString(), applied: result, stale, rejected };
+  if (batch.tabSwitchCount !== undefined && batch.tabSwitchCount > a.tabSwitchCount)
+    await ctx.db
+      .update(attempts)
+      .set({ tabSwitchCount: Math.min(batch.tabSwitchCount, 10_000), updatedAt: at })
+      .where(and(eq(attempts.id, a.id), eq(attempts.status, 'in_progress'), sql`${attempts.tabSwitchCount} < ${Math.min(batch.tabSwitchCount, 10_000)}`));
+  return { status: 'in_progress', serverNow: at.toISOString(), deadlineAt: a.deadlineAt!.toISOString(), applied, stale, rejected };
 }
 
 /* ---------------------------------------------------------------------------------------------- */

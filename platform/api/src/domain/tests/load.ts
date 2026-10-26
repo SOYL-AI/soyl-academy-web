@@ -105,6 +105,7 @@ class Lru<V> {
 }
 
 const structures = new WeakMap<object, Lru<TestStructure>>();
+const testRows = new WeakMap<object, Lru<TestRow | null>>();
 const keyCaches = new WeakMap<object, Lru<Map<string, QuestionKeyRow>>>();
 const cacheFor = <V>(m: WeakMap<object, Lru<V>>, db: Database): Lru<V> => {
   let c = m.get(db);
@@ -115,6 +116,7 @@ const cacheFor = <V>(m: WeakMap<object, Lru<V>>, db: Database): Lru<V> => {
 /** Test helper: forget cached structures (a test that edits rows in place). */
 export function clearTestCaches(db: Database): void {
   structures.get(db)?.clear();
+  testRows.get(db)?.clear();
   keyCaches.get(db)?.clear();
 }
 
@@ -180,9 +182,12 @@ export async function publishedTestByKey(db: Database, key: string, year: string
   return row ? toTestRow(row) : null;
 }
 
-export async function testById(db: Database, id: string): Promise<TestRow | null> {
-  const [row] = await testQuery(db).where(eq(tests.id, id));
-  return row ? toTestRow(row) : null;
+/** A test version by row id (cached: a version's content never changes; only its status, which attempts do not read). */
+export function testById(db: Database, id: string): Promise<TestRow | null> {
+  return cacheFor(testRows, db).get(id, async () => {
+    const [row] = await testQuery(db).where(eq(tests.id, id));
+    return row ? toTestRow(row) : null;
+  });
 }
 
 /** Items, sections and student-safe question columns of a test version (cached; the rows are immutable). */
