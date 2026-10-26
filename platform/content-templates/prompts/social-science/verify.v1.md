@@ -6,7 +6,7 @@ version: 1
 model_tier: verify
 max_output_tokens: 8000
 temperature: 0
-few_shot: [exemplars/social-science/cbse-10-social-science-ch01/README.md, exemplars/social-science/cbse-10-social-science-ch06/README.md]
+few_shot: [authored/social-science/cbse-10-social-science-ch01/README.md, authored/social-science/cbse-10-social-science-ch06/README.md]
 ---
 ## System
 

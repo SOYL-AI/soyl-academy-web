@@ -6,7 +6,7 @@ version: 1
 model_tier: small
 max_output_tokens: 4000
 temperature: 0.3
-few_shot: [exemplars/social-science/cbse-10-social-science-ch13/release.json#flashcards, exemplars/social-science/cbse-10-social-science-ch01/release.json#flashcards]
+few_shot: [authored/social-science/cbse-10-social-science-ch13/release.json#flashcards, authored/social-science/cbse-10-social-science-ch01/release.json#flashcards]
 ---
 ## System
 
