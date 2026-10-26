@@ -387,6 +387,9 @@ export class AiGateway {
     if (cost > 0) await this.d.breaker.record(cost, p.plan === 'free', now);
     if (r.messages.length) {
       const [req] = await db.select({ id: aiRequests.id }).from(aiRequests).where(eq(aiRequests.requestId, p.requestId));
+      // Strictly increasing timestamps within a conversation keep turns in order even when clocks tie.
+      const [last] = await db.select({ at: aiMessages.createdAt }).from(aiMessages).where(eq(aiMessages.conversationId, p.conversationId)).orderBy(desc(aiMessages.createdAt)).limit(1);
+      const base = Math.max(now.getTime(), (last?.at.getTime() ?? 0) + 1);
       await db.insert(aiMessages).values(
         r.messages.map((m, i) => ({
           conversationId: p.conversationId,
@@ -394,7 +397,7 @@ export class AiGateway {
           content: m.content,
           aiRequestId: m.role === 'assistant' ? (req?.id ?? null) : null,
           moderationFlags: m.flags ?? {},
-          createdAt: new Date(now.getTime() + i),
+          createdAt: new Date(base + i),
           updatedAt: now,
         })),
       );

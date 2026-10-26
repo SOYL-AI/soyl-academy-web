@@ -167,28 +167,18 @@ export async function indexChapter(db: Database, chapterKey: string, year: strin
       unchangedItems++;
       continue;
     }
-    const rows = await db
-      .insert(contentChunks)
-      .values(
-        items.map((c) => ({
-          contentType: c.contentType,
-          contentId: c.contentId,
-          unit: chapter.key,
-          chapterId: chapter.id,
-          academicYear: year,
-          exam: subject!.exam,
-          classLevel: subject!.classLevel,
-          subjectKey: subject!.key,
-          chunkIndex: c.chunkIndex,
-          text: `${c.title}\n${c.text}`,
-          tokens: estimateTokens(c.text),
-          contentHash: h,
-        })),
-      )
-      .onConflictDoNothing()
-      .returning({ id: contentChunks.id, text: contentChunks.text });
-    inserted += rows.length;
-    fresh.push(...rows);
+    // Explicit columns: `embedding` exists only where pgvector does, so the ORM's full-row insert cannot be used.
+    const values = items.map(
+      (c) =>
+        sql`(${c.contentType}, ${c.contentId}::uuid, ${chapter.key}, ${chapter.id}::uuid, ${year}, ${subject!.exam}, ${subject!.classLevel}, ${subject!.key}, ${c.chunkIndex}, ${`${c.title}\n${c.text}`}, ${estimateTokens(c.text)}, ${h})`,
+    );
+    const res = await db.execute<{ id: string; text: string }>(sql`
+      INSERT INTO content_chunks (content_type, content_id, unit, chapter_id, academic_year, exam, class_level, subject_key, chunk_index, text, tokens, content_hash)
+      VALUES ${sql.join(values, sql`, `)}
+      ON CONFLICT DO NOTHING
+      RETURNING id, text`);
+    inserted += res.rows.length;
+    fresh.push(...res.rows);
   }
   let embedded = 0;
   let embeddingCostPaise = 0;
