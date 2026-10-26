@@ -47,3 +47,11 @@ Single source of truth for progress (AGENTS.md §4.3). Updated by the Lead after
 | M1 (wave B) | API: Fastify app, auth (Better Auth: Google, phone OTP, email OTP), me, catalog, route policy, OpenAPI; worker skeleton | backend-api | `platform/backend-api/m1` | `platform/api/` except `ai/`, `billing/`; `platform/worker/` | in progress | — |
 | M1 (wave B) | Web: route group, platform layout + flag, login modal, guest mode + merge, API proxy route (ADR-005) | web-platform | `platform/web-platform/m1` | `app/(platform)/`, `components/platform/` (not `ui/`), `platform/shared/api-client/` | waits for backend-api contract | — |
 | M2 (content, early) | CBSE 10 Science ch02–ch05 hand-authored to exemplar standard (D-026) | subject-producer | `platform/subject-producer/cbse-10-science-a` | `platform/content/authored/science/` | in progress | — |
+
+## Backlog (found at integration)
+
+| Found | Item | Owner | Status |
+|---|---|---|---|
+| 2026-10-26 | Geometry renderer ignores the newer optional spec fields (lines, rays, segment ticks/arrows, angle arcs, polygon highlight). Figures still render correctly without them; the marks just aren't drawn. Point objects/labels are handled (fix b861919+1). | design-system / web-platform | open |
+| 2026-10-26 | Integration lesson: the root `npm run build` must run after every merge that touches `platform/shared`, because the web app compiles shared types (a shared-contract change broke the geometry renderer's typecheck until fixed). | Lead | process |
+| 2026-10-26 | WEB-6 names `components/platform/render/**`; the reviewed renderers are in `components/platform/ui/render/**` — point the `react/no-danger` exception there when it's enabled. | web-platform | open |

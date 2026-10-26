@@ -3,7 +3,7 @@
  * from named coordinates. Maths convention: origin bottom-left, y up. Server-renderable SVG.
  */
 import type { ReactNode } from 'react';
-import type { Visual } from '@/platform/shared/content/visual';
+import { pointAt, type GeometryPoint, type Visual } from '@/platform/shared/content/visual';
 import { LABEL_PROPS, round } from './svg-utils';
 import s from './visual.module.css';
 
@@ -20,8 +20,12 @@ export function GeometryVisual({ spec, alt }: { spec: GeometrySpec; alt: string 
   const vw = width * k + 2 * PAD;
   const vh = height * k + 2 * PAD;
   const pts = new Map<string, P>();
-  for (const [name, [x, y]] of Object.entries(spec.points ?? {})) {
-    if (Number.isFinite(x) && Number.isFinite(y)) pts.set(name, { x: PAD + x * k, y: PAD + (height - y) * k });
+  const labels = new Map<string, { text: string | false; position?: string }>();
+  for (const [name, raw] of Object.entries(spec.points ?? {}) as [string, GeometryPoint][]) {
+    const [x, y] = pointAt(raw);
+    if (!Number.isFinite(x) || !Number.isFinite(y)) continue;
+    pts.set(name, { x: PAD + x * k, y: PAD + (height - y) * k });
+    if (!Array.isArray(raw)) labels.set(name, { text: raw.label ?? name, position: raw.label_position });
   }
   const all = [...pts.values()];
   const mean = (list: P[]): P | null =>
@@ -167,13 +171,18 @@ export function GeometryVisual({ spec, alt }: { spec: GeometrySpec; alt: string 
   });
 
   for (const [name, p] of pts) {
-    const lp = labelPos(name, p, 14);
+    const opts = labels.get(name);
+    const text = opts ? opts.text : name;
+    // label_position is a compass hint; y is already in screen space here.
+    const lp = opts?.position ? compass(p, opts.position, 14) : labelPos(name, p, 14);
     out.push(
       <g key={`p-${name}`}>
         <circle cx={round(p.x)} cy={round(p.y)} r={3} fill="currentColor" />
-        <text {...LABEL_PROPS} x={round(lp.x)} y={round(lp.y + 4)} textAnchor={anchorFor(p, lp)} fontWeight={600}>
-          {name}
-        </text>
+        {text !== false && (
+          <text {...LABEL_PROPS} x={round(lp.x)} y={round(lp.y + 4)} textAnchor={anchorFor(p, lp)} fontWeight={600}>
+            {text}
+          </text>
+        )}
       </g>,
     );
   }
@@ -183,6 +192,16 @@ export function GeometryVisual({ spec, alt }: { spec: GeometrySpec; alt: string 
       <g aria-hidden="true">{out}</g>
     </svg>
   );
+}
+
+const COMPASS: Record<string, [number, number]> = {
+  n: [0, -1], ne: [Math.SQRT1_2, -Math.SQRT1_2], e: [1, 0], se: [Math.SQRT1_2, Math.SQRT1_2],
+  s: [0, 1], sw: [-Math.SQRT1_2, Math.SQRT1_2], w: [-1, 0], nw: [-Math.SQRT1_2, -Math.SQRT1_2],
+};
+
+function compass(p: P, position: string, dist: number): P {
+  const [dx, dy] = COMPASS[position] ?? [0, -1];
+  return { x: p.x + dx * dist, y: p.y + dy * dist };
 }
 
 function norm(p: P): P | null {
