@@ -29,7 +29,16 @@ export interface NavLink {
   href: string;
 }
 
+/**
+ * Learning platform entry point (D-019, ADR-001 §4): only when NEXT_PUBLIC_PLATFORM_ENABLED is 'true'
+ * (inlined at build time). With the flag off MAIN_NAV is exactly the list below, so the rendered
+ * header is byte-identical to the site without the platform.
+ */
+const PLATFORM_NAV: NavLink[] =
+  process.env.NEXT_PUBLIC_PLATFORM_ENABLED === 'true' ? [{ label: 'Learn', href: '/learn' }] : [];
+
 export const MAIN_NAV: NavLink[] = [
+  ...PLATFORM_NAV,
   { label: 'For schools', href: '/schools' },
   { label: 'For teachers', href: '/teachers' },
   { label: 'For parents', href: '/parents' },

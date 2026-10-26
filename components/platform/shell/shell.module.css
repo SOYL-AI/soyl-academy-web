@@ -1,0 +1,129 @@
+/* Platform shell: bar under the marketing header, page container, breadcrumbs. */
+.root {
+  min-height: 60vh;
+  background: var(--p-bg);
+  color: var(--p-ink);
+  font-family: var(--p-font-sans);
+  line-height: var(--p-leading-body);
+}
+
+.bar {
+  border-bottom: 1px solid var(--p-border);
+  background: var(--p-surface);
+}
+.barInner {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-3);
+  max-width: 1120px;
+  min-height: 56px;
+  margin: 0 auto;
+  padding: 0 var(--p-gutter);
+}
+.home {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-2);
+  min-height: var(--p-touch);
+  color: var(--p-ink);
+  font-weight: 650;
+  text-decoration: none;
+}
+.home:focus-visible,
+.profile:focus-visible,
+.crumbLink:focus-visible {
+  outline: none;
+  box-shadow: var(--p-focus-ring);
+  border-radius: var(--p-radius-sm);
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-2);
+  margin-left: auto;
+  min-width: 0;
+}
+.placeholder {
+  display: inline-block;
+  width: 72px;
+  height: 36px;
+}
+.credits {
+  flex: none;
+}
+.profile {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-2);
+  min-height: var(--p-touch);
+  min-width: 0;
+  color: var(--p-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+.profileName {
+  max-width: 9rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@media (max-width: 399px) {
+  .profileName {
+    display: none;
+  }
+}
+
+.page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: var(--p-space-5) var(--p-gutter) var(--p-space-10);
+}
+
+.crumbs {
+  margin: 0 0 var(--p-space-3);
+  font-size: var(--p-text-sm);
+  color: var(--p-ink-muted);
+}
+.crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--p-space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.crumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-1);
+}
+.crumbs li + li::before {
+  content: '/';
+  color: var(--p-ink-subtle);
+}
+.crumbLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  color: var(--p-ink-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--p-text-2xl);
+  line-height: var(--p-leading-tight);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+.lead {
+  margin: var(--p-space-2) 0 0;
+  color: var(--p-ink-muted);
+  max-width: 60ch;
+}
+@media (min-width: 640px) {
+  .title {
+    font-size: var(--p-text-3xl);
+  }
+}

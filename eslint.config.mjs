@@ -15,6 +15,16 @@ const eslintConfig = defineConfig([
     // Platform services have their own toolchain (platform/package.json, ADR-001).
     "platform/**",
   ]),
+  // WEB-6 (ADR-011): platform code never injects HTML, except the reviewed, sanitising renderers.
+  // Scoped to platform paths only; marketing files are unaffected.
+  {
+    files: ["app/(platform)/**", "components/platform/**", "proxy.ts"],
+    rules: { "react/no-danger": "error" },
+  },
+  {
+    files: ["components/platform/ui/render/**"],
+    rules: { "react/no-danger": "off" },
+  },
 ]);
 
 export default eslintConfig;
