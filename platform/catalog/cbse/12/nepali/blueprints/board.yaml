@@ -1,0 +1,50 @@
+id: cbse-12-nepali-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-nepali
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Part A - Objective (20)
+    instructions: Q1 MCQ (12 x 1); Q2 seen paragraph, MCQ (8 x 1).
+    items:
+      - {type: mcq, count: 12, marks_each: 1}
+      - {type: source-based, count: 1, marks_each: 8}
+  - id: B
+    title: Part B - Textbooks and grammar (50)
+    instructions: Q3 novel, seen paragraph (2 x 5); Q4 grammar (2 x 3); prose and poetry short answers (4 x 3, 4 x 2, 4 x 2); novel (2 x 3).
+    items:
+      - {type: short, count: 2, marks_each: 5}
+      - {type: short, count: 2, marks_each: 3}
+      - {type: short, count: 4, marks_each: 3}
+      - {type: short, count: 8, marks_each: 2}
+      - {type: short, count: 2, marks_each: 3}
+  - id: C
+    title: Part B - Writing (10)
+    instructions: Essay on one topic (5); letter (5).
+    items:
+      - {type: long, count: 2, marks_each: 5}
+source_status: verified
+source: cbse-sqp-xii-nepali-2026-27
+notes: >-
+  Nepali (124) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Part A MCQ 20 (12 + seen
+  paragraph 8) and Part B 60 (novel 10, grammar 6, prose/poetry 12 + 8 + 8, novel 6, essay 5, letter 5), per the CBSE 2026-27 design and the
+  SQP.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

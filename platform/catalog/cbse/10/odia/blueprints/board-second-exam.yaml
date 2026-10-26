@@ -1,0 +1,61 @@
+id: cbse-10-odia-board-second-exam
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-odia
+paper_type: board-second-exam
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading (10)
+    instructions: Q1 unseen passage (5 x 2).
+    items:
+      - {type: case-based, count: 1, marks_each: 10}
+  - id: B
+    title: Section B - Writing (12)
+    instructions: Q2 essay on one topic (6); Q3 letter to a newspaper editor (6).
+    items:
+      - {type: long, count: 2, marks_each: 6}
+  - id: C
+    title: Section C - Grammar (10)
+    instructions: >-
+      Q4 explain one metre with definition and example (4); Q5 sentence transformation, any 2; Q6 idioms in sentences, any 2; Q7 correct
+      usage, any 2 (2 x 1 each).
+    items:
+      - {type: long, count: 1, marks_each: 4}
+      - {type: short, count: 6, marks_each: 1}
+  - id: D
+    title: Section D - Literature (48)
+    instructions: >-
+      Q8 and Q11 explanation with context, any one (5 each); Q9 and Q12 short answers, any three (3 x 2 each); Q10 and Q13 MCQ (10 x 1
+      each); Q14 short answers, any six (6 x 1).
+    items:
+      - {type: source-based, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 6, marks_each: 2}
+      - {type: mcq, count: 20, marks_each: 1}
+      - {type: short, count: 6, marks_each: 1}
+source_status: verified
+source: cbse-sqp-x-odia-2026-27
+notes: >-
+  Second (May) board exam: CBSE has published no separate sample paper or design for the second exam; the 14-02-2026 notification makes it
+  an improvement / compartment exam on the same subject, so this blueprint repeats the February pattern on the full syllabus (assumption,
+  re-check when CBSE publishes a second-exam SQP).
+
+  Odia (013) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. 14 questions: A reading 10
+  (Q1), B writing 12 (Q2-3), C grammar 10 (Q4-7), D literature 48 (Q8-14).
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

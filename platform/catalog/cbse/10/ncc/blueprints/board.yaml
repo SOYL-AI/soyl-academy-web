@@ -1,0 +1,61 @@
+id: cbse-10-ncc-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-ncc
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Part I - Section A
+    instructions: "Q1: 11 objective questions, 1 mark each (MCQ, one assertion-reason, one match-the-columns)."
+    items:
+      - {type: mcq, count: 9, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: match, count: 1, marks_each: 1}
+  - id: B
+    title: Part I - Section B
+    instructions: >-
+      Q2-Q8: 2 marks each (not more than 35 words); Q9-Q12: 4 marks each (not more than 80 words). Internal choice in Q2, Q3, Q7, Q8, Q10
+      and Q11.
+    items:
+      - {type: short, count: 3, marks_each: 2}
+      - {type: short, count: 8, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 4}
+      - {type: long, count: 4, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Part I - Section C
+    instructions: "Q13: extract-based (2 marks). Q14: source-based, six 1-mark parts (6 marks)."
+    items:
+      - {type: case-based, count: 1, marks_each: 2}
+      - {type: source-based, count: 1, marks_each: 6}
+  - id: D
+    title: Part II (chosen wing) - Section D
+    instructions: "Q15: 5 multiple-choice questions, 1 mark each."
+    items:
+      - {type: mcq, count: 5, marks_each: 1}
+  - id: E
+    title: Part II (chosen wing) - Section E
+    instructions: "Q16-Q19: 2 marks each; Q20: 4 marks. Internal choice in some questions."
+    items:
+      - {type: short, count: 2, marks_each: 2}
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 1, marks_each: 4}
+  - id: F
+    title: Part II (chosen wing) - Section F
+    instructions: "Q21: case-based, four 1-mark parts."
+    items:
+      - {type: case-based, count: 1, marks_each: 4}
+source_status: verified
+source: cbse-sqp-x-ncc-2026-27
+notes: >-
+  Theory paper only (70 marks, 3 hours); practical 30 separately. Part I Common Subjects 49 (compulsory) and Part II Special Subjects 21 for
+  the chosen wing (Army, Navy or Air; the SQP prints all three, the candidate attempts one). Word limits: 2 marks 35 words, 4 marks 80
+  words, 6 marks 150 words. Section C has a 2-mark extract-based question and a 6-mark source-based question made of six 1-mark MCQs. Part
+  II Section E: the number of internal choices differs by wing (Army 2, Navy 3, Air 2); modelled as one choice pair. FORMAT MAPPING: wing
+  selection is not expressible in the Blueprint schema -- sections D-F apply to whichever wing the student chose; the test assembler must
+  filter Part II questions by the wing chapters (Army / Navy / Air units in the syllabus). The paper is bilingual (English/Hindi).

@@ -1,0 +1,64 @@
+id: cbse-10-french-board-second-exam
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-french
+paper_type: board-second-exam
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Compréhension (10)
+    instructions: "Q1 unseen text with visual: short answers (2 of 3 x 2), true/false (6 x 0.5), find in the text (3 of 6 x 1)."
+    items:
+      - {type: case-based, count: 1, marks_each: 10}
+  - id: B
+    title: Section B - Expression écrite (20)
+    instructions: Q2 one letter of 80 words (one of two, 10). Q3 two of the given writing tasks (5 each).
+    items:
+      - {type: long, count: 2, marks_each: 10, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 5}
+  - id: C
+    title: Section C - Grammaire (30)
+    instructions: >-
+      Q4 verbs (5 x 1); Q5 A or B (question formation / negation, 5 x 1); Q6 direct/indirect speech (5 x 1); Q7 A or B (demonstratives /
+      possessives); Q8 A or B (relative / personal pronouns); Q9 subjunctive (5 x 1).
+    items:
+      - {type: fill-blank, count: 5, marks_each: 1}
+      - {type: short, count: 10, marks_each: 1, internal_choice: {attempt: 5, of: 10}}
+      - {type: short, count: 5, marks_each: 1}
+      - {type: fill-blank, count: 10, marks_each: 1, internal_choice: {attempt: 5, of: 10}}
+      - {type: short, count: 10, marks_each: 1, internal_choice: {attempt: 5, of: 10}}
+      - {type: fill-blank, count: 5, marks_each: 1}
+  - id: D
+    title: Section D - Culture et Civilisation (20)
+    instructions: Q10 any 5 short answers (20-30 words, 2 each); Q11 complete with given words (5 x 1); Q12 A match the columns or B true/false (5 x 1).
+    items:
+      - {type: short, count: 5, marks_each: 2}
+      - {type: fill-blank, count: 5, marks_each: 1}
+      - {type: match, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-x-french-2026-27
+notes: >-
+  Second (May) board exam: CBSE has published no separate sample paper or design for the second exam; the 14-02-2026 notification makes it
+  an improvement / compartment exam on the same subject, so this blueprint repeats the February pattern on the full syllabus (assumption,
+  re-check when CBSE publishes a second-exam SQP).
+
+  French (018) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Sections: A comprehension
+  10, B written expression 20, C grammar 30, D culture and civilisation 20. In C, Q5, Q7 and Q8 each offer parts A and B; one is attempted
+  (the alternative is modelled as a choice pair).
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

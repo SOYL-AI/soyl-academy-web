@@ -1,0 +1,49 @@
+id: cbse-10-hindi-a-unit-test
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-hindi-a
+paper_type: unit-test
+academic_year: "2026-27"
+duration_min: 120
+total_marks: 50
+mark_shares: {}
+scope: unit
+sections:
+  - id: A
+    title: Section A - Reading (10)
+    instructions: One unseen passage with objective and short sub-questions.
+    items:
+      - {type: case-based, count: 1, marks_each: 10}
+  - id: B
+    title: Section B - Extract-based (2 x 5)
+    instructions: Two extract questions; in each answer one of the two extracts given.
+    items:
+      - {type: source-based, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Short answer
+    instructions: Any five of six 2-mark questions and any two of three 3-mark questions.
+    items:
+      - {type: short, count: 6, marks_each: 2, internal_choice: {attempt: 5, of: 6}}
+      - {type: short, count: 3, marks_each: 3, internal_choice: {attempt: 2, of: 3}}
+  - id: D
+    title: Section D - Long answer / writing
+    instructions: One of two 6-mark and one of two 8-mark questions (literature long answer or writing task).
+    items:
+      - {type: long, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 8, internal_choice: {attempt: 1, of: 2}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default modelled on the CBSE board pattern (CONTEXT section 9: "use a generic blueprint per board and subject, stored as editable
+
+  config"); not an official CBSE paper. Item types and marks follow the 2026-27 CBSE board style (MCQ/assertion-reason 1, short 2-3, long 5,
+
+  case-based 4, about one-third internal choice) so practice transfers to the board paper. Subject-family override (languages) of the class
+  default in platform/catalog/cbse/blueprints/<class>/. Built for literature chapters: extract-based (source-based) questions, short answers
+  and a long answer;
+
+  for grammar or writing chapters the assembler substitutes items of the same marks from that chapter (1-mark grammar items for a 5-mark
+  extract
+
+  group, writing tasks for long answers). Answers are written in the subject's language.

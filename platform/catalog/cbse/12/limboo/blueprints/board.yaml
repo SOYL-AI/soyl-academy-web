@@ -1,0 +1,50 @@
+id: cbse-12-limboo-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-limboo
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Objective (20)
+    instructions: Q1-Q5 passages and text-based MCQ (5 + 4 + 4 + 4 + 3).
+    items:
+      - {type: case-based, count: 1, marks_each: 5}
+      - {type: mcq, count: 15, marks_each: 1}
+  - id: B
+    title: Section B - Descriptive (45)
+    instructions: Q6 (15); Q7 (5 x 1); Q8 (3 x 2); Q9 (6); Q10 (2 x 1); Q11 (2 x 2); Q12 (3 x 1); Q13 (2 x 2).
+    items:
+      - {type: long, count: 1, marks_each: 15}
+      - {type: short, count: 10, marks_each: 1}
+      - {type: short, count: 10, marks_each: 2}
+  - id: C
+    title: Section C - Composition (15)
+    instructions: Letter/essay and translation tasks (including 2 x 2).
+    items:
+      - {type: long, count: 1, marks_each: 6}
+      - {type: long, count: 1, marks_each: 5}
+      - {type: short, count: 2, marks_each: 2}
+source_status: unverified
+source: cbse-sqp-xii-limboo-2026-27
+notes: >-
+  Limboo (125) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Sections: A MCQ 20 (26
+  printed, 20 attempted), B descriptive 45, C composition 15. Q9 and part of Section C are not legible; their marks are inferred from the
+  section totals.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

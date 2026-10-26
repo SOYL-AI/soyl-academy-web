@@ -1,0 +1,56 @@
+id: cbse-12-physics-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-physics
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares:
+  recall+understanding: 0.3857
+  application: 0.3143
+  analysis+evaluation: 0.3
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Objective (1 mark each)
+    instructions: Q1-12 MCQ, Q13-16 assertion-reason.
+    items:
+      - {type: mcq, count: 12, marks_each: 1}
+      - {type: assertion-reason, count: 4, marks_each: 1}
+  - id: B
+    title: Section B - Very short answer (2 marks each)
+    instructions: Q17-21. Internal choice in two questions.
+    items:
+      - {type: short, count: 3, marks_each: 2}
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Short answer (3 marks each)
+    instructions: Q22-28. Internal choice in one question.
+    items:
+      - {type: short, count: 6, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Case study based (4 marks each)
+    instructions: Q29-30. Read the case and answer the sub-parts; one sub-part of each has an internal choice.
+    items:
+      - {type: case-based, count: 2, marks_each: 4}
+  - id: E
+    title: Section E - Long answer (5 marks each)
+    instructions: Q31-33. Each question has an internal choice (A or B).
+    items:
+      - {type: long, count: 6, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-xii-physics-2026-27
+notes: >-
+  33 questions, five sections (16 x 1, 5 x 2, 7 x 3, 2 x 4 case-based, 3 x 5). Internal choice in two Section B questions, one Section C
+
+  question, all three Section E questions, and inside sub-parts of the case-based questions. Competency weights from the 2026-27 design
+
+  table: remembering/understanding 27 marks, applying 22, analysing/evaluating/creating 21. Calculators not allowed; constants are given.
+
+  Numericals sit inside 2/3/5-mark items and are mapped to short/long (they need working and step marks), not numerical. Visually impaired
+  candidates get substitute questions for items with visual input (not modelled).
+
+  Practical 30 is outside this paper.

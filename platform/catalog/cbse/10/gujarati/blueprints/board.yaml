@@ -1,0 +1,59 @@
+id: cbse-10-gujarati-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-gujarati
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Part A - Objective and very short (34)
+    instructions: >-
+      Q1-Q2 unseen prose passages, MCQ (5 x 1 each); Q3-Q4 one-sentence answers, any four (4 x 1 each); Q5 idioms, Q6 one word for a phrase,
+      Q7-Q8 grammar as directed, any four each (4 x 1).
+    items:
+      - {type: case-based, count: 2, marks_each: 5}
+      - {type: short, count: 8, marks_each: 1}
+      - {type: mcq, count: 4, marks_each: 1}
+      - {type: short, count: 12, marks_each: 1}
+  - id: B
+    title: Part B - Textbook (28)
+    instructions: >-
+      Q9 poem extract, any five (5 x 1); Q10 any two in 2-3 sentences (2 x 2); Q11 any one in detail (3); Q12 prose extract, any six (6 x
+      1); Q13 any three (3 x 2); Q14 any two in detail (2 x 3).
+    items:
+      - {type: source-based, count: 1, marks_each: 5}
+      - {type: short, count: 2, marks_each: 2}
+      - {type: short, count: 1, marks_each: 3}
+      - {type: source-based, count: 1, marks_each: 6}
+      - {type: short, count: 3, marks_each: 2}
+      - {type: short, count: 2, marks_each: 3}
+  - id: C
+    title: Part B - Writing (18)
+    instructions: Q15 paragraph of about 120 words (5); Q16 news report with headline (6); Q17 letter or advertisement (5).
+    items:
+      - {type: long, count: 1, marks_each: 5}
+      - {type: long, count: 1, marks_each: 6}
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-x-gujarati-2026-27
+notes: >-
+  Gujarati (010) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Part A 34 (reading,
+  one-line answers, idioms, one-word substitution, grammar; all 1-mark, "any four" choices) and Part B 46 (textbook poetry and prose,
+  writing).
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

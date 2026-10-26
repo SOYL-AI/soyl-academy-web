@@ -1,0 +1,62 @@
+id: cbse-10-sanskrit-communicative-board-second-exam
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-sanskrit-communicative
+paper_type: board-second-exam
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: "'क' खण्डः - अपठितावबोधनम् (10)"
+    instructions: "Unseen passage: one-word answers (2 x 1), full-sentence answers (2 x 2), language tasks (3 x 1), title (1)."
+    items:
+      - {type: case-based, count: 1, marks_each: 10}
+  - id: B
+    title: "'ख' खण्डः - रचनात्मककार्यम् (15)"
+    instructions: Letter from a मञ्जूषा (10 x 1/2); picture description or paragraph (5); translation into Sanskrit (5 x 1).
+    items:
+      - {type: long, count: 1, marks_each: 5}
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 5, marks_each: 1}
+  - id: C
+    title: "'ग' खण्डः - अनुप्रयुक्तव्याकरणम् (25)"
+    instructions: Seven grammar questions of 4, 4, 4, 3, 3, 4 and 3 marks (1 mark per item).
+    items:
+      - {type: short, count: 25, marks_each: 1}
+  - id: D
+    title: "'घ' खण्डः - पठितावबोधनम् (30)"
+    instructions: >-
+      Prose, verse and drama extracts (1/2 + 1 + 1 + 1 + 1 marks; 5 each); question formation / textual items (5); 4 x 1/2; anvaya or
+      bhavartha (4 x 1); story sequencing (8 x 1/2).
+    items:
+      - {type: source-based, count: 3, marks_each: 5}
+      - {type: short, count: 5, marks_each: 1}
+      - {type: short, count: 4, marks_each: 0.5}
+      - {type: fill-blank, count: 1, marks_each: 4}
+      - {type: short, count: 1, marks_each: 4}
+source_status: unverified
+source: cbse-sqp-x-sanskrit-communicative-2026-27
+notes: >-
+  Second (May) board exam: CBSE has published no separate sample paper or design for the second exam; the 14-02-2026 notification makes it
+  an improvement / compartment exam on the same subject, so this blueprint repeats the February pattern on the full syllabus (assumption,
+  re-check when CBSE publishes a second-exam SQP).
+
+  Sanskrit Communicative (119) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Layout as
+  Sanskrit (122): A unseen passage 10, B creative writing 15, C applied grammar 25, D textbook comprehension 30. Per-item marks are read
+  from the SQP digits (legacy Devanagari font); which items carry an अथवा choice is inferred (letter OR paragraph-type tasks).
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

@@ -1,0 +1,60 @@
+id: cbse-12-accountancy-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-accountancy
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.4
+  application: 0.3
+  analysis+evaluation: 0.3
+scope: syllabus
+sections:
+  - id: A
+    title: Part A - Accounting for Partnership Firms and Companies (60)
+    instructions: >-
+      Q1-16 objective (1 mark), Q17-20 3 marks, Q21-22 4 marks, Q23-26 6 marks. Internal choice in one 3-mark, one 4-mark and two 6-mark
+      questions.
+    items:
+      - {type: mcq, count: 15, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: short, count: 3, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 1, marks_each: 4}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 6}
+      - {type: long, count: 4, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+  - id: B
+    title: Part B - Analysis of Financial Statements (20)
+    instructions: Q27-30 objective (1 mark), Q31-32 3 marks, Q33 4 marks, Q34 6 marks (cash flow statement). Internal choice in Q31 and Q33.
+    items:
+      - {type: mcq, count: 3, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: short, count: 1, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 1, marks_each: 6}
+source_status: verified
+source: cbse-sqp-xii-accountancy-2026-27
+notes: >-
+  34 questions. Part A (Partnership Firms and Companies, 60) is compulsory; Part B (20) has two options: (i) Analysis of Financial
+
+  Statements and (ii) Computerised Accounting - the Computerised Accounting option still exists in 2026-27 (SQP Q27-34 alternative set).
+  This
+
+  blueprint models Part B = Analysis of Financial Statements (the option SOYL covers first); a Computerised Accounting variant has the same
+
+  mark layout (4 x 1, 2 x 3, 1 x 4, 1 x 6) and needs its own blueprint once that option is catalogued. Marks: Q1-16 and Q27-30 one mark,
+
+  Q17-20, Q31-32 three marks, Q21-22, Q33 four marks, Q23-26, Q34 six marks. Internal choice: two 3-mark (Q17, Q31), two 4-mark (Q21/22,
+
+  Q33) and two 6-mark (Part A) questions. Competency weights (design table): remembering/understanding 40%, applying 30%,
+
+  analysing/evaluating/creating 30%. FORMAT MAPPING: journal entries, ledger/capital/revaluation accounts, share-forfeiture entries,
+
+  comparative/common-size statements, ratios and the cash flow statement (AS 3, indirect method) are mapped to short (3 marks) and long
+
+  (4-6 marks) with the format in the model answer; the contract has no tabular/journal answer type with row-level step marks.

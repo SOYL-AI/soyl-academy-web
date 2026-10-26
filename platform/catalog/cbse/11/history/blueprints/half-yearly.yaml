@@ -1,0 +1,52 @@
+id: cbse-11-history-half-yearly
+board: cbse
+exam: cbse
+class: 11
+subject_id: cbse-11-history
+paper_type: half-yearly
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.4875
+  application: 0.3625
+  analysis+evaluation: 0.15
+scope: half-syllabus
+sections:
+  - id: A
+    title: Section A - Multiple choice (1 mark each)
+    instructions: Q1-21. Includes two assertion-reason items.
+    items:
+      - {type: mcq, count: 19, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: Section B - Short answer (3 marks each)
+    instructions: Q22-27, 60-80 words. Internal choice in two questions.
+    items:
+      - {type: short, count: 4, marks_each: 3}
+      - {type: short, count: 4, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Long answer (8 marks each)
+    instructions: Q28-30, 300-350 words, one per book part. Each has an internal choice.
+    items:
+      - {type: long, count: 6, marks_each: 8, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Source based (4 marks each)
+    instructions: Q31-33, one source per book part, three sub-questions each.
+    items:
+      - {type: source-based, count: 3, marks_each: 4}
+  - id: E
+    title: Section E - Map based (5 marks)
+    instructions: "Q34: locate and label three sites (one with an OR alternative) and identify two marked places on the outline map of India."
+    items:
+      - {type: short, count: 4, marks_each: 1}
+      - {type: short, count: 2, marks_each: 1, internal_choice: {attempt: 1, of: 2}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default modelled on the CBSE board pattern, not an official paper: half-yearly exam on the first half of the syllabus for Class XI
+  history, using the layout of the Class XII
+
+  board paper of the same subject (cbse-12-history-board, 80 marks, 180 min), as CBSE schools usually do for Class XI school exams.
+
+  Format-mapping notes of the Class XII blueprint apply.

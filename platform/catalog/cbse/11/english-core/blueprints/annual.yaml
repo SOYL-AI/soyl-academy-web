@@ -1,0 +1,45 @@
+id: cbse-11-english-core-annual
+board: cbse
+exam: cbse
+class: 11
+subject_id: cbse-11-english-core
+paper_type: annual
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading Skills (22)
+    instructions: Q1 passage (12), Q2 factual passage with visual input (10); MCQ, very short and short answer sub-parts.
+    items:
+      - {type: case-based, count: 1, marks_each: 12}
+      - {type: case-based, count: 1, marks_each: 10}
+  - id: B
+    title: Section B - Creative Writing Skills (18)
+    instructions: Q3 notice (4), Q4 invitation/reply (4), Q5 letter (5), Q6 article/report (5). Attempt A or B in each.
+    items:
+      - {type: long, count: 4, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Literature (40)
+    instructions: >-
+      Q7-9 extract-based (choose one of two extracts each; 6, 4, 6). Q10 any 5 of 6 (2 marks), Q11 any 2 of 3 (2 marks), Q12-13 one of two
+      long answers (5 marks).
+    items:
+      - {type: source-based, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+      - {type: source-based, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: source-based, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 6, marks_each: 2, internal_choice: {attempt: 5, of: 6}}
+      - {type: short, count: 3, marks_each: 2, internal_choice: {attempt: 2, of: 3}}
+      - {type: long, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default modelled on the CBSE board pattern, not an official paper: annual exam on the whole syllabus for Class XI english-core, using
+  the layout of the Class XII
+
+  board paper of the same subject (cbse-12-english-core-board, 80 marks, 180 min), as CBSE schools usually do for Class XI school exams.
+
+  Format-mapping notes of the Class XII blueprint apply.

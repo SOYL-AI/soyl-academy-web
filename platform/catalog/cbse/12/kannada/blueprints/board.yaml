@@ -1,0 +1,57 @@
+id: cbse-12-kannada-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-kannada
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading (10)
+    instructions: Q1-Q2 unseen passages (5 x 1 each).
+    items:
+      - {type: case-based, count: 2, marks_each: 5}
+  - id: B
+    title: Section B - Grammar (16)
+    instructions: Q3 grammar MCQ (10 x 1); Q4 grammar items (6 x 1).
+    items:
+      - {type: mcq, count: 10, marks_each: 1}
+      - {type: short, count: 6, marks_each: 1}
+  - id: C
+    title: Section C - Textbook passages (14)
+    instructions: Q5 poem extract (5 x 1); Q6 prose extract (5 x 1); Q7 prose extract (4 x 1).
+    items:
+      - {type: source-based, count: 2, marks_each: 5}
+      - {type: source-based, count: 1, marks_each: 4}
+  - id: D
+    title: Section D - Textbook and writing (40)
+    instructions: >-
+      Q8 answers in 2-3 sentences (3 x 2); Q9 explanation with context (3 x 3); Q10 about one poet/author (3); Q11 answers in 8-10 sentences
+      (3 x 4); Q12 essay (5); Q13 letter to a newspaper editor (5).
+    items:
+      - {type: short, count: 3, marks_each: 2}
+      - {type: short, count: 4, marks_each: 3}
+      - {type: long, count: 3, marks_each: 4}
+      - {type: long, count: 2, marks_each: 5}
+source_status: unverified
+source: cbse-sqp-xii-kannada-2026-27
+notes: >-
+  Kannada (115) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Part A 40 (A reading 10, B
+  grammar 16, C textbook passages 14) and Part B 40 (D textbook answers and writing). Q4 marks are not legible and are inferred from the
+  Part A total (6).
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

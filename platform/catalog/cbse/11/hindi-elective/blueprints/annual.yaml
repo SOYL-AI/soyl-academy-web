@@ -1,0 +1,51 @@
+id: cbse-11-hindi-elective-annual
+board: cbse
+exam: cbse
+class: 11
+subject_id: cbse-11-hindi-elective
+paper_type: annual
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: खंड क - अपठित बोध (18)
+    instructions: प्रश्न 1 अपठित गद्यांश (10), प्रश्न 2 अपठित काव्यांश (8)।
+    items:
+      - {type: case-based, count: 1, marks_each: 10}
+      - {type: case-based, count: 1, marks_each: 8}
+  - id: B
+    title: खंड ख - अभिव्यक्ति और माध्यम (22)
+    instructions: >-
+      प्रश्न 3 (1+2+2, अनिवार्य); प्रश्न 4 तीन में से दो (3-3); प्रश्न 5 तीन में से एक विषय पर रचनात्मक लेखन (~100 शब्द, 5); प्रश्न 6 तीन
+      में से दो (3-3)।
+    items:
+      - {type: short, count: 1, marks_each: 1}
+      - {type: short, count: 2, marks_each: 2}
+      - {type: short, count: 3, marks_each: 3, internal_choice: {attempt: 2, of: 3}}
+      - {type: long, count: 3, marks_each: 5, internal_choice: {attempt: 1, of: 3}}
+      - {type: short, count: 3, marks_each: 3, internal_choice: {attempt: 2, of: 3}}
+  - id: C
+    title: खंड ग - अंतरा भाग 2 और अंतराल भाग 2 (40)
+    instructions: >-
+      प्रश्न 7 काव्यांश (5 बहुविकल्पी), 8 तीन में से दो (2-2), 9 दो में से एक काव्यांश की सप्रसंग व्याख्या (6); प्रश्न 10 गद्यांश (5
+      बहुविकल्पी), 11 तीन में से दो (2-2), 12 दो में से एक गद्यांश की सप्रसंग व्याख्या (6); प्रश्न 13 अंतराल तीन में से दो (5-5)।
+    items:
+      - {type: source-based, count: 1, marks_each: 5}
+      - {type: short, count: 3, marks_each: 2, internal_choice: {attempt: 2, of: 3}}
+      - {type: long, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+      - {type: source-based, count: 1, marks_each: 5}
+      - {type: short, count: 3, marks_each: 2, internal_choice: {attempt: 2, of: 3}}
+      - {type: long, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 3, marks_each: 5, internal_choice: {attempt: 2, of: 3}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default modelled on the CBSE board pattern, not an official paper: annual exam on the whole syllabus for Class XI hindi-elective,
+  using the layout of the Class XII
+
+  board paper of the same subject (cbse-12-hindi-elective-board, 80 marks, 180 min), as CBSE schools usually do for Class XI school exams.
+
+  Format-mapping notes of the Class XII blueprint apply.

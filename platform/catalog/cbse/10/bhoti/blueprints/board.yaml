@@ -1,0 +1,57 @@
+id: cbse-10-bhoti-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-bhoti
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading Comprehension (10)
+    instructions: Q1 unseen passage (5 x 1); Q2-Q5 unseen verse questions (5).
+    items:
+      - {type: case-based, count: 2, marks_each: 5}
+  - id: B
+    title: Section B - Creative Writing (10)
+    instructions: Q6 letter/essay (5); Q7 composition of up to 200 words on one topic (5).
+    items:
+      - {type: long, count: 2, marks_each: 5}
+  - id: C
+    title: Section C - Grammar (25)
+    instructions: Q8 (10 x 1); Q9-Q14 grammar questions of 2-3 marks.
+    items:
+      - {type: short, count: 10, marks_each: 1}
+      - {type: short, count: 3, marks_each: 3}
+      - {type: short, count: 3, marks_each: 2}
+  - id: D
+    title: Section D - Literature (35)
+    instructions: >-
+      Q15 and Q20 objective items (3 x 1, 4 x 1); Q16-Q19 and Q21-Q23 short answers (2 each); Q24 commentary on one verse (3); Q25 synonyms
+      (4 x 2); Q26 explanations (3 x 1).
+    items:
+      - {type: short, count: 7, marks_each: 1}
+      - {type: short, count: 7, marks_each: 2}
+      - {type: short, count: 1, marks_each: 3}
+      - {type: short, count: 4, marks_each: 2}
+      - {type: short, count: 3, marks_each: 1}
+source_status: verified
+source: cbse-sqp-x-bhoti-2026-27
+notes: >-
+  Bhoti (088) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Sections: A reading 10, B
+  creative writing 10, C grammar 25, D literature 35.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

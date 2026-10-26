@@ -1,0 +1,52 @@
+id: cbse-11-economics-half-yearly
+board: cbse
+exam: cbse
+class: 11
+subject_id: cbse-11-economics
+paper_type: half-yearly
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.4
+  application: 0.3
+  analysis+evaluation: 0.3
+scope: half-syllabus
+sections:
+  - id: A
+    title: Section A - Macroeconomics (40)
+    instructions: >-
+      Q1-10 objective (1 mark; one assertion-reason), Q11-12 3 marks (60-80 words), Q13-15 4 marks (80-100 words), Q16-17 6 marks (100-150
+      words). One text/data-based question and internal choice in one 3-, one 4- and one 6-mark question.
+    items:
+      - {type: mcq, count: 9, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: short, count: 1, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 4}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: case-based, count: 1, marks_each: 6}
+      - {type: long, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+  - id: B
+    title: Section B - Indian Economic Development (40)
+    instructions: >-
+      Q18-27 objective (1 mark; one assertion-reason; Q19 match-the-column), Q28-29 3 marks (60-80 words), Q30-32 4 marks (80-100 words),
+      Q33-34 6 marks (100-150 words). One text/data-based question and internal choice in one 3-, one 4- and one 6-mark question.
+    items:
+      - {type: mcq, count: 9, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: case-based, count: 1, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 4}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+      - {type: case-based, count: 1, marks_each: 6}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default modelled on the CBSE board pattern, not an official paper: half-yearly exam on the first half of the syllabus for Class XI
+  economics, using the layout of the Class XII
+
+  board paper of the same subject (cbse-12-economics-board, 80 marks, 180 min), as CBSE schools usually do for Class XI school exams.
+
+  Format-mapping notes of the Class XII blueprint apply.

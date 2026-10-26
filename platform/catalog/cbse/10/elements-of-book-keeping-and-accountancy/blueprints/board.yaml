@@ -1,0 +1,45 @@
+id: cbse-10-elements-of-book-keeping-and-accountancy-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-elements-of-book-keeping-and-accountancy
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Objective (Q1-18)
+    instructions: Multiple choice, 1 mark each. Internal choice in six questions.
+    items:
+      - {type: mcq, count: 10, marks_each: 1}
+      - {type: mcq, count: 12, marks_each: 1, internal_choice: {attempt: 1, of: 2}}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: 3-mark questions (Q19-22)
+    instructions: Answer in 60-80 words or in the required accounting format.
+    items:
+      - {type: short, count: 3, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: 4-mark questions (Q23-26)
+    instructions: Answer in 80-100 words or in the required accounting format.
+    items:
+      - {type: long, count: 3, marks_each: 4}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: 6-mark questions (Q27-30)
+    instructions: Answer in 100-150 words or in the required accounting format.
+    items:
+      - {type: long, count: 3, marks_each: 6}
+      - {type: long, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-x-elements-of-book-keeping-and-accountancy-2026-27
+notes: >-
+  Theory 70 + project 30. 30 questions: Q1-18 objective 1 mark (two assertion-reason; internal choice in six), Q19-22 3 marks (choice in
+  one), Q23-26 4 marks (choice in one), Q27-30 6 marks (choice in one). FORMAT MAPPING: most constructed answers are accounting formats --
+  journal entries, asset accounts, bank reconciliation statements, trading and P&L accounts, balance sheets and statements of affairs --
+  modelled as short/long; they need a tabular (ledger/statement) answer type with row-level step marks. Some 1-mark items are computational
+  MCQs (depreciation, book value).

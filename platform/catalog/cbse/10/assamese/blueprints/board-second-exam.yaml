@@ -1,0 +1,58 @@
+id: cbse-10-assamese-board-second-exam
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-assamese
+paper_type: board-second-exam
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Comprehension (15)
+    instructions: "Q1 unseen passage: objective items (9 x 1) and short answers (3 x 2)."
+    items:
+      - {type: case-based, count: 1, marks_each: 15}
+  - id: B
+    title: Section B - Writing (25)
+    instructions: Q2 story from cues or essay (a/b); Q3 report; Q4 expansion of an idea; Q5 letter (5 each); Q6 sentences from phrases (5 x 1).
+    items:
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 3, marks_each: 5}
+      - {type: short, count: 5, marks_each: 1}
+  - id: C
+    title: Section C - Grammar (20)
+    instructions: "Q7-Q14: sandhi, upasarga/anusarga, synonyms, antonyms, dhatu, kal and other items (1 mark each)."
+    items:
+      - {type: short, count: 20, marks_each: 1}
+  - id: D
+    title: Section D - Prose and Poetry (20)
+    instructions: "Q15-Q20, prose and poetry: a 4-mark answer (one of two), a 2-mark short answer (one of two) and objective items (4 x 1) for each."
+    items:
+      - {type: long, count: 4, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+      - {type: mcq, count: 8, marks_each: 1}
+source_status: verified
+source: cbse-sqp-x-assamese-2026-27
+notes: >-
+  Second (May) board exam: CBSE has published no separate sample paper or design for the second exam; the 14-02-2026 notification makes it
+  an improvement / compartment exam on the same subject, so this blueprint repeats the February pattern on the full syllabus (assumption,
+  re-check when CBSE publishes a second-exam SQP).
+
+  Assamese (014) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Sections: A comprehension
+  15, B writing 25, C grammar (byakaran) 20, D prose and poetry 20. Section B layout cross-checked with the CBSE design (four 5-mark long
+  answers + 5 x 1).
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

@@ -1,0 +1,55 @@
+id: cbse-10-gurung-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-gurung
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Reading (10)
+    instructions: Two unseen passages (5 x 1 each).
+    items:
+      - {type: case-based, count: 2, marks_each: 5}
+  - id: B
+    title: Section B - Grammar (16)
+    instructions: Two MCQ sets (5 x 1 each) and three 2-mark items.
+    items:
+      - {type: mcq, count: 10, marks_each: 1}
+      - {type: short, count: 3, marks_each: 2}
+  - id: C
+    title: Section C - Prose and poetry (39)
+    instructions: "Prose: 3 x 2, 3 x 3, 2 x 4, 1 x 5; poetry: 4 x 2, 1 x 3."
+    items:
+      - {type: short, count: 7, marks_each: 2}
+      - {type: short, count: 4, marks_each: 3}
+      - {type: long, count: 2, marks_each: 4}
+      - {type: long, count: 1, marks_each: 5}
+  - id: D
+    title: Section D - Writing (15)
+    instructions: Essay of 110-115 words (one topic, 5); letter (one of two, 5); translation English to Gurung (5).
+    items:
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 1, marks_each: 5}
+source_status: verified
+source: cbse-sqp-x-gurung-2026-27
+notes: >-
+  Gurung (132) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Part A objective 20 (reading
+  10, grammar MCQ 10); Part B 60 (grammar 6, prose 28, poetry 11, writing 15), matching the CBSE 2026-27 Gurung design.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

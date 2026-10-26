@@ -1,0 +1,35 @@
+id: cbse-10-painting-board
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-painting
+paper_type: board
+academic_year: "2026-27"
+duration_min: 120
+total_marks: 30
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A
+    instructions: Multiple-choice questions, 1 mark each.
+    items:
+      - {type: mcq, count: 8, marks_each: 1}
+  - id: B
+    title: Section B
+    instructions: Short answer questions, 2 marks each (about 100 words). Each question has an internal choice.
+    items:
+      - {type: short, count: 10, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C
+    instructions: Long answer questions, 6 marks each (about 200 words). Attempt any two of three.
+    items:
+      - {type: long, count: 3, marks_each: 6, internal_choice: {attempt: 2, of: 3}}
+source_status: verified
+source: cbse-sqp-x-painting-2026-27
+notes: >-
+  Theory paper only (30 marks, 2 hours); practical 50 (painting composition, 3 hours) and internal assessment 20 are assessed separately. 9
+  questions: Section A one question with 8 MCQ parts x 1; Section B 5 short answers x 2 (about 100 words), each with an internal choice;
+  Section C 3 long answers x 6 (about 200 words), attempt any 2. FORMAT MAPPING: several questions are based on an image of a painting,
+  sculpture or monument (picture-based appreciation); the question needs an image asset of a public-domain artwork. No drawing is asked in
+  the theory paper.

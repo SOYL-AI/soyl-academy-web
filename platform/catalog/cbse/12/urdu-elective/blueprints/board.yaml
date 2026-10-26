@@ -1,0 +1,49 @@
+id: cbse-12-urdu-elective-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-urdu-elective
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Textbook and Supplementary Reader (50)
+    instructions: Passage/verse-based questions (5 each), long answers (3 x 5) and 1-mark items.
+    items:
+      - {type: source-based, count: 6, marks_each: 5}
+      - {type: long, count: 3, marks_each: 5}
+      - {type: short, count: 5, marks_each: 1}
+  - id: B
+    title: Section B - History of Urdu Literature (20)
+    instructions: Objective items (4 x 1), short answers (3 x 2) and long answers (2 x 5).
+    items:
+      - {type: short, count: 4, marks_each: 1}
+      - {type: short, count: 3, marks_each: 2}
+      - {type: long, count: 2, marks_each: 5}
+  - id: C
+    title: Section C - Sanaye o Badaye (10)
+    instructions: Figures of speech (5 x 2).
+    items:
+      - {type: short, count: 5, marks_each: 2}
+source_status: unverified
+source: cbse-sqp-xii-urdu-elective-2026-27
+notes: >-
+  Urdu Elective (003) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. 13 questions in three
+  sections (printed in the SQP): A textbook and supplementary reader 50, B history of Urdu literature 20, C sanaye o badaye (rhetoric) 10.
+  Nastaliq text extracts out of order, so the split inside A and B is estimated from the legible markers.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

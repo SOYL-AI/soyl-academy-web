@@ -1,0 +1,61 @@
+id: cbse-12-sanskrit-core-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-sanskrit-core
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: "'क' भागः - अपठितावबोधनम् (10)"
+    instructions: "Unseen passage: one-word answers, full-sentence answers, title and language tasks."
+    items:
+      - {type: case-based, count: 1, marks_each: 10}
+  - id: B
+    title: "'ख' भागः - रचनात्मककार्यम् (15)"
+    instructions: Letter from a मञ्जूषा (10 x 1/2); essay or story completion (5); translation into Sanskrit (5 x 1).
+    items:
+      - {type: long, count: 1, marks_each: 5}
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 5, marks_each: 1}
+  - id: C
+    title: "'ग' भागः - अनुप्रयुक्तव्याकरणम् (20)"
+    instructions: Sandhi, pratyaya, shabdarupa, dhaturupa and other items (1 mark each).
+    items:
+      - {type: short, count: 4, marks_each: 1}
+      - {type: mcq, count: 16, marks_each: 1}
+  - id: D
+    title: "'घ' भागः - पठितावबोधनम् (25)"
+    instructions: Prose, verse and drama extracts (1/2 + 1 + 1 + 1 + 1; 5 each); anvaya (3 x 1); further textual items (4 x 1) and (3 x 1).
+    items:
+      - {type: source-based, count: 3, marks_each: 5}
+      - {type: fill-blank, count: 1, marks_each: 3}
+      - {type: short, count: 7, marks_each: 1}
+  - id: E
+    title: "'घ' भागः - संस्कृतसाहित्यपरिचयः (10)"
+    instructions: Short answers on Sanskrit literature and authors.
+    items:
+      - {type: short, count: 5, marks_each: 2}
+source_status: unverified
+source: cbse-sqp-xii-sanskrit-core-2026-27
+notes: >-
+  Sanskrit Core (322) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Section totals from
+  the SQP and the CBSE 2026-27 design: क अपठितावबोधनम् 10, ख रचनात्मककार्यम् 15 (letter 10 x 1/2, essay/story completion, translation 5 x
+  1), ग अनुप्रयुक्तव्याकरणम् 20, घ पठितावबोधनम् 25 + संस्कृतसाहित्यपरिचयः 10. The SQP uses a legacy Devanagari font, so choices other than
+  the printed अथवा could not be confirmed. The item split inside each section is a SOYL estimate in the usual CBSE language-paper style.
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

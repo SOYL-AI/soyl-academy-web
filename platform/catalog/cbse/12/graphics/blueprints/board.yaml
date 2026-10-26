@@ -1,0 +1,36 @@
+id: cbse-12-graphics-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-graphics
+paper_type: board
+academic_year: "2026-27"
+duration_min: 120
+total_marks: 30
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A
+    instructions: Multiple-choice questions, 1 mark each.
+    items:
+      - {type: mcq, count: 6, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: Section B
+    instructions: Short answer questions, 2 marks each (about 100 words). Each question has an internal choice.
+    items:
+      - {type: short, count: 10, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C
+    instructions: Long answer questions, 6 marks each (about 200 words). Attempt any two of three.
+    items:
+      - {type: long, count: 3, marks_each: 6, internal_choice: {attempt: 2, of: 3}}
+source_status: verified
+source: cbse-sqp-xii-graphics-2026-27
+notes: >-
+  Theory paper only (30 marks, 2 hours; History of Indian Art, same syllabus for Painting, Graphics, Sculpture and Applied Art); practical
+  70 is assessed separately. Section A 8 x 1 (6 MCQ + 2 assertion-reason); Section B 5 x 2 (about 100 words), each with an A/B internal
+  choice; Section C 3 x 6 (about 200 words), attempt any two. FORMAT MAPPING: many items show a reproduction of a prescribed artwork and ask
+  the candidate to identify, describe or appreciate it; these need an image asset (licensed reproduction or original description) and are
+  modelled as mcq/short/long.

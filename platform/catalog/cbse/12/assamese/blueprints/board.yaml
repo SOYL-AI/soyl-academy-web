@@ -1,0 +1,56 @@
+id: cbse-12-assamese-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-assamese
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Comprehension (15)
+    instructions: Q1 unseen passage, short answers (6 x 2); Q2 choose the correct answer (3 x 1).
+    items:
+      - {type: case-based, count: 1, marks_each: 12}
+      - {type: mcq, count: 3, marks_each: 1}
+  - id: B
+    title: Section B - Writing (25)
+    instructions: >-
+      Q3 story from cues or essay (a/b, 5); Q4-Q6 report, expansion of an idea, bhav samprasaran (5 each); Q7 sentences from phrases, any
+      five (5 x 1).
+    items:
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 3, marks_each: 5}
+      - {type: short, count: 5, marks_each: 1}
+  - id: C
+    title: Section C - Grammar (20)
+    instructions: "Q8-Q12: homophones, synonyms, rule-based words, suffixes and other items (4 x 1 each)."
+    items:
+      - {type: mcq, count: 20, marks_each: 1}
+  - id: D
+    title: Section D - Literature (20)
+    instructions: "Q13-Q18, prose and poetry: a 4-mark answer (one of two), a 2-mark short answer (one of two) and objective items (4 x 1) for each."
+    items:
+      - {type: long, count: 4, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+      - {type: mcq, count: 8, marks_each: 1}
+source_status: verified
+source: cbse-sqp-xii-assamese-2026-27
+notes: >-
+  Assamese (114) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Sections: A comprehension
+  15, B writing 25, C grammar 20, D literature 20 (same layout as Class X; Q3 a/b treated as alternatives to reach the 25-mark section).
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

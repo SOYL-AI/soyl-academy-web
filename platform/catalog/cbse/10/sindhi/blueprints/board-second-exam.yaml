@@ -1,0 +1,61 @@
+id: cbse-10-sindhi-board-second-exam
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-sindhi
+paper_type: board-second-exam
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Reading (10)
+    instructions: Q1 unseen prose passage (5 x 1); Q2 unseen poem (5 x 1).
+    items:
+      - {type: case-based, count: 2, marks_each: 5}
+  - id: B
+    title: Grammar (10)
+    instructions: Q3 grammar as directed (10 x 1).
+    items:
+      - {type: short, count: 10, marks_each: 1}
+  - id: C
+    title: Textbook (46)
+    instructions: >-
+      Q4 objective questions on the textbook (10 x 1); Q5-Q6 any four in 20-25 words (4 x 3 each); Q7 explanation with reference (2 x 3); Q8
+      life-sketch / long answer (6).
+    items:
+      - {type: mcq, count: 10, marks_each: 1}
+      - {type: short, count: 8, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3}
+      - {type: long, count: 1, marks_each: 6}
+  - id: D
+    title: Writing (14)
+    instructions: Q9 essay on one of two topics (6); Q10 letter or report (4); Q11 dialogue or advertisement (4).
+    items:
+      - {type: long, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+source_status: unverified
+source: cbse-sqp-x-sindhi-2026-27
+notes: >-
+  Second (May) board exam: CBSE has published no separate sample paper or design for the second exam; the 14-02-2026 notification makes it
+  an improvement / compartment exam on the same subject, so this blueprint repeats the February pattern on the full syllabus (assumption,
+  re-check when CBSE publishes a second-exam SQP).
+
+  Sindhi (008) theory paper, 80 marks, 3 hours, from the CBSE 2026-27 sample question paper and marking scheme. Q1-Q9 marks read from the
+  SQP; the marks of Q10 (letter/report) and Q11 (dialogue/advertisement) are not printed legibly and are inferred from the 80-mark total (4
+  each).
+
+  FORMAT MAPPING (languages): unseen passages -> case-based; textbook extracts/passages -> source-based; 1-mark grammar
+
+  and vocabulary items -> short (fill-blank, mcq, match or true-false where the paper clearly uses gap-fill, options, matching or
+  true/false);
+
+  writing tasks (letter, essay, paragraph, notice, dialogue, story, e-mail) and translation passages -> long or short by marks - the
+  contract
+
+  has no writing/translation type with a rubric. "Answer any n" choices inside one question are modelled as internal_choice only where the
+
+  number offered is printed; otherwise only the attempted items are listed. Visually impaired substitute items are not modelled.

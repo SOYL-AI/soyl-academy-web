@@ -1,0 +1,48 @@
+id: cbse-12-geospatial-technology-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-geospatial-technology
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 60
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A-ES
+    title: "Section A - Objective type: Employability Skills"
+    instructions: "Q1: answer any 4 of the 6 one-mark questions on Employability Skills."
+    items:
+      - {type: mcq, count: 6, marks_each: 1, internal_choice: {attempt: 4, of: 6}}
+  - id: A
+    title: "Section A - Objective type: Subject-specific skills"
+    instructions: "Q2: any 5 of 7; Q3: any 6 of 7; Q4-Q6: any 5 of 6 each (1 mark each)."
+    items:
+      - {type: mcq, count: 7, marks_each: 1, internal_choice: {attempt: 5, of: 7}}
+      - {type: mcq, count: 7, marks_each: 1, internal_choice: {attempt: 6, of: 7}}
+      - {type: mcq, count: 18, marks_each: 1, internal_choice: {attempt: 5, of: 6}}
+  - id: B-ES
+    title: "Section B - Subjective type: Employability Skills"
+    instructions: Answer any 3 of 5 questions in 20-30 words (2 marks each).
+    items:
+      - {type: short, count: 5, marks_each: 2, internal_choice: {attempt: 3, of: 5}}
+  - id: B
+    title: "Section B - Subjective type: Subject-specific skills"
+    instructions: Answer any 3 of 5 in 20-30 words (2 marks), any 2 of 3 in 30-50 words (3 marks) and any 3 of 5 in 50-80 words (4 marks).
+    items:
+      - {type: short, count: 5, marks_each: 2, internal_choice: {attempt: 3, of: 5}}
+      - {type: short, count: 3, marks_each: 3, internal_choice: {attempt: 2, of: 3}}
+      - {type: long, count: 5, marks_each: 4, internal_choice: {attempt: 3, of: 5}}
+source_status: unverified
+source: cbse-sqp-xii-geospatial-technology-2026-27
+notes: >-
+  SQP not fetched: cbseacademic.nic.in returned "URL inaccessible" for
+  web_material/Curriculum26/SQP_MS_XII/818_GEOSPATIAL_TECHNOLOGY_SQP.pdf on 2026-10-26. Pattern assumed to be the standard CBSE Class XII
+  skill-subject 60-mark paper used by every other 60-mark skill SQP; theory 60 marks per the 2026-27 syllabus; practical 40 not modelled.
+  Re-check when the SQP is available.
+
+  Employability Skills questions (sections A-ES, B-ES) are drawn only from Part A chapters; sections A and B only from Part B chapters.
+
+  Section A objective parts mix MCQ, fill-in-the-blank, true/false, one-word and match items within one "answer any n of m" question; all
+  are mapped to mcq (the dominant form) - the assembler may substitute fill-blank/true-false/match at 1 mark.

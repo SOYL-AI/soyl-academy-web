@@ -1,0 +1,71 @@
+id: cbse-10-sanskrit-board-second-exam
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-sanskrit
+paper_type: board-second-exam
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: "'क' खण्डः - अपठितावबोधनम् (10)"
+    instructions: "प्रश्नः 1: एकः गद्यांशः (80-100 शब्दाः) - अतिलघूत्तरात्मकौ, पूर्णवाक्यात्मकौ, शीर्षकम्, भाषिककार्यम्।"
+    items:
+      - {type: case-based, count: 1, marks_each: 10}
+  - id: B
+    title: "'ख' खण्डः - रचनात्मककार्यम् (15)"
+    instructions: >-
+      प्रश्नः 2: औपचारिकम् अथवा अनौपचारिकं पत्रम् (मञ्जूषासहायतया, 5); प्रश्नः 3: चित्रवर्णनम् अथवा अनुच्छेदलेखनम् (5); प्रश्नः 4:
+      हिन्दी/आङ्ग्लभाषातः संस्कृतेन अनुवादः (5 x 1)।
+    items:
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 5, marks_each: 1}
+  - id: C
+    title: "'ग' खण्डः - अनुप्रयुक्तव्याकरणम् (25)"
+    instructions: "प्रश्नाः 5-11: सन्धिः (4), समासः (4), प्रत्ययाः (4), वाच्यपरिवर्तनम् (3), समयः (4), अव्ययपदानि (3), संशोधनकार्यम् (3)।"
+    items:
+      - {type: short, count: 4, marks_each: 1}
+      - {type: mcq, count: 4, marks_each: 1}
+      - {type: mcq, count: 4, marks_each: 1}
+      - {type: mcq, count: 3, marks_each: 1}
+      - {type: short, count: 4, marks_each: 1}
+      - {type: mcq, count: 3, marks_each: 1}
+      - {type: mcq, count: 3, marks_each: 1}
+  - id: D
+    title: "'घ' खण्डः - पठितावबोधनम् (30)"
+    instructions: >-
+      प्रश्नाः 12-14: गद्यांशः, पद्यांशः, नाट्यांशः (5 each); 15: प्रश्ननिर्माणम् (4 x 1); 16: अन्वयः अथवा भावार्थः (4); 17: घटनाक्रमानुसारं
+      वाक्यलेखनम् (8 x 1/2); 18: प्रसङ्गानुकूलम् अर्थलेखनम् (3 x 1)।
+    items:
+      - {type: source-based, count: 3, marks_each: 5}
+      - {type: short, count: 4, marks_each: 1}
+      - {type: fill-blank, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 1, marks_each: 4}
+      - {type: short, count: 3, marks_each: 1}
+source_status: verified
+source: cbse-sqp-x-sanskrit-2026-27
+notes: >-
+  Second (May) board exam: CBSE has published no separate sample paper or design for the second exam; the 14-02-2026 notification makes it
+  an improvement / compartment exam on the same subject, so this blueprint repeats the February pattern on the full syllabus (assumption,
+  re-check when CBSE publishes a second-exam SQP).
+
+  18 questions in four sections (क अपठितावबोधनम् 10, ख रचनात्मककार्यम् 15, ग अनुप्रयुक्तव्याकरणम् 25, घ पठितावबोधनम् 30). Marks per question
+  are
+
+  from the CBSE 2026-27 Sanskrit question-paper design table (blueprint in the syllabus PDF); the SQP PDF uses a legacy Devanagari font that
+  does
+
+  not extract, so internal choices other than the printed अथवा in Q2 (formal/informal letter) and Q3 (picture description/paragraph) and Q16
+
+  (अन्वय/भावार्थ) could not be confirmed. FORMAT MAPPING: unseen passage -> case-based; letter completed from a मञ्जूषा (10 x 1/2) -> 5-mark
+
+  long writing task; translation -> 1-mark short; grammar items typed बहुविकल्पात्मक in CBSE's design -> mcq, लघूत्तरात्मक -> short;
+
+  textbook prose/verse/drama extracts -> source-based; story sequencing (8 x 1/2) has no ordering type and is modelled as one 4-mark short
+  item
+
+  (an 'ordering' type would make it auto-gradable). All answers are written in Sanskrit. Theory 80 + internal assessment 20.

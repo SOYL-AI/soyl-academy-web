@@ -1,0 +1,47 @@
+id: cbse-12-entrepreneurship-board
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-entrepreneurship
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 70
+mark_shares:
+  recall+understanding: 0.285
+  application: 0.43
+  analysis+evaluation: 0.285
+scope: syllabus
+sections:
+  - id: A
+    title: Section A
+    instructions: "Q1-18: multiple-choice questions, 1 mark each."
+    items:
+      - {type: mcq, count: 16, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: Section B
+    instructions: "Q19-24: short answer type I, 2 marks each. Internal choice in some questions."
+    items:
+      - {type: short, count: 3, marks_each: 2}
+      - {type: short, count: 6, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C
+    instructions: "Q25-29: short answer type II, 3 marks each. Internal choice in some questions."
+    items:
+      - {type: short, count: 3, marks_each: 3}
+      - {type: short, count: 4, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D
+    instructions: "Q30-34: long answer, 5 marks each. Q30-32 are case-based; Q33-34 have an internal choice."
+    items:
+      - {type: case-based, count: 3, marks_each: 5}
+      - {type: long, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: verified
+source: cbse-sqp-xii-entrepreneurship-2026-27
+notes: >-
+  Theory paper only (70 marks, 3 hours); project 30 is assessed separately. 34 questions: A Q1-18 MCQs x 1 (most are short business
+  situations; Q5 and Q11 are assertion-reason); B Q19-24 short answer I x 2 (choice in three); C Q25-29 short answer II x 3 (choice in two);
+  D Q30-34 long answer x 5 (Q30-32 are built on a business case passage; choice in Q33 and Q34). Competency weights from the CBSE 2026-27
+  design: remembering/understanding 20 marks (28.5%), applying 30 (43%), analysing/evaluating/creating 20 (28.5%). FORMAT MAPPING:
+  situation-based MCQs are plain mcq with a short stem; the passage-based 5-mark questions are modelled as case-based.
