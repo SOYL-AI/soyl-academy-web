@@ -1,0 +1,109 @@
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-2);
+  margin: var(--p-space-1) 0 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.toc {
+  margin: var(--p-space-4) 0;
+  padding: var(--p-space-3) var(--p-space-4);
+  border-radius: var(--p-radius-lg);
+  background: var(--p-surface-2);
+}
+.tocTitle {
+  margin: 0 0 var(--p-space-2);
+  font-size: var(--p-text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--p-ink-muted);
+}
+.toc ol {
+  margin: 0;
+  padding-left: 1.2em;
+  list-style: decimal;
+  display: grid;
+  gap: var(--p-space-1);
+}
+.toc ol li::marker {
+  color: var(--p-ink-subtle);
+}
+.toc a {
+  display: inline-block;
+  padding: 4px 0;
+  color: var(--p-accent);
+  text-underline-offset: 3px;
+}
+.toc a:focus-visible {
+  outline: 2px solid var(--p-focus);
+  outline-offset: 2px;
+}
+.notes {
+  display: grid;
+  gap: var(--p-space-6);
+  min-width: 0;
+}
+.section {
+  display: grid;
+  gap: var(--p-space-3);
+  min-width: 0;
+  scroll-margin-top: var(--p-space-6);
+}
+.heading {
+  margin: 0;
+  font-size: var(--p-text-xl);
+  line-height: var(--p-leading-tight);
+}
+.subheading {
+  margin: 0 0 var(--p-space-2);
+  font-size: var(--p-text-md);
+  font-weight: 700;
+}
+.formulas ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--p-space-2);
+}
+.formulaLabel {
+  display: block;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.terms dl {
+  margin: 0;
+  display: grid;
+  gap: var(--p-space-2);
+}
+.term {
+  padding: var(--p-space-2) var(--p-space-3);
+  border-left: 3px solid var(--p-accent);
+  background: var(--p-surface-2);
+  border-radius: 0 var(--p-radius-sm) var(--p-radius-sm) 0;
+}
+.term dt {
+  font-weight: 700;
+}
+.term dd {
+  margin: var(--p-space-1) 0 0;
+}
+.tips {
+  padding: var(--p-space-4);
+  border-radius: var(--p-radius-lg);
+  background: var(--p-warning-soft);
+}
+.sectionFooter {
+  display: flex;
+  justify-content: flex-end;
+}
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--p-space-6);
+  padding-top: var(--p-space-3);
+  border-top: 1px solid var(--p-border);
+}
