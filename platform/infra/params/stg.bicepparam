@@ -56,9 +56,11 @@ param appSecrets = [
   { secretName: 'edge-secret-previous', envName: 'EDGE_SECRET_PREVIOUS', apps: ['api'] }
   { secretName: 'otp-pepper', envName: 'OTP_PEPPER', apps: ['api'] }
   { secretName: 'auth-secret', envName: 'AUTH_SECRET', apps: ['api'] }
+  { secretName: 'mfa-encryption-key', envName: 'MFA_ENCRYPTION_KEY', apps: ['api'] }
 ]
 
 // AI services reachable only through private endpoints (INFRA-5); the pipeline runs as a job in the VNet.
+param deployAi = true
 param aiPublicNetworkAccess = 'Disabled'
 param aiAllowedIps = empty(readEnvironmentVariable('SOYL_AI_ALLOWED_IP', '')) ? [] : [readEnvironmentVariable('SOYL_AI_ALLOWED_IP', '')]
 // OA-02: flip to true once model names/versions/quota are confirmed (ADR-008).
@@ -69,6 +71,18 @@ param aoaiDeployments = [
   { tier: 'verify', name: 'verify', model: 'gpt-6-astra', version: 'OA-02', skuName: 'Standard', capacity: 10 }
   { tier: 'batch', name: 'mid-batch', model: 'gpt-6.1-sol', version: 'OA-02', skuName: 'GlobalBatch', capacity: 100 }
 ]
+
+param deployFrontDoor = true
+
+// Email (D-031): a free Azure-managed domain (DoNotReply@<guid>.azurecomm.net) outside production.
+param emailDomainManagement = 'AzureManaged'
+param emailDomain = 'soylai.com'
+param emailSenderUsername = 'noreply'
+param emailSenderDisplayName = 'SOYL Academy (stg)'
+param acsDataLocation = 'India'
+// Contributor on the ACS resource only, unless the "Communication and Email Service Owner" GUID is given.
+param acsSenderRoleId = readEnvironmentVariable('SOYL_ACS_SENDER_ROLE_ID', 'b24988ac-6181-4c74-a15b-b2e1ee7d7cc3')
+param acsLinkDomain = true
 
 param logRetentionDays = 180
 param logDailyCapGb = 2
@@ -88,5 +102,6 @@ param appSettings = {
   BILLING_ENABLED: 'false'
   AI_DAILY_SPEND_CAP_INR: '300'
   CONTENT_BUDGET_INR: '0'
+  EMAIL_PROVIDER: 'acs'
   WEB_ORIGIN: readEnvironmentVariable('SOYL_STG_WEB_ORIGIN', '')
 }

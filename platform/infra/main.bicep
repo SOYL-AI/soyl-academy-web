@@ -96,11 +96,36 @@ param kvSecretRefs bool
 param appSecrets array
 
 // ---------- AI (ADR-008) ----------
+@description('Create the Azure OpenAI / Speech / Content Safety accounts (and their private endpoints). false = AI off (M4); the AZURE_* env vars are then empty.')
+param deployAi bool
 param aiPublicNetworkAccess string
 @description('Operator IPs allowed to reach the AI accounts while publicNetworkAccess is Disabled (content pipeline runs). Empty = none.')
 param aiAllowedIps array
 param aoaiDeployModels bool
 param aoaiDeployments array
+
+// ---------- CDN ----------
+@description('Create Front Door for the public-assets container (diagrams/audio). Not needed until public assets are published.')
+param deployFrontDoor bool
+
+// ---------- email (D-031: Azure Communication Services Email, email OTP only) ----------
+@description('CustomerManaged (prod, soylai.com) or AzureManaged (dev/stg: free azurecomm.net domain, sender DoNotReply).')
+@allowed([
+  'CustomerManaged'
+  'AzureManaged'
+])
+param emailDomainManagement string
+@description('Customer-managed sending domain (the owner adds the DNS records from the emailDnsRecords output).')
+param emailDomain string
+@description('Sender local part: <emailSenderUsername>@<emailDomain>.')
+param emailSenderUsername string
+param emailSenderDisplayName string
+@description('ACS data location (data at rest).')
+param acsDataLocation string
+@description('Role definition GUID that lets the API identity send email (see modules/communication.bicep).')
+param acsSenderRoleId string
+@description('Link the verified domain to the Communication Services resource (second deploy, after DNS verification).')
+param acsLinkDomain bool
 
 // ---------- monitoring / alerts ----------
 @minValue(180)
@@ -196,6 +221,7 @@ module storage 'modules/storage.bicep' = {
     peSubnetId: network.outputs.peSubnetId
     privateDnsZoneId: network.outputs.zoneIds.blob
     workspaceId: monitoring.outputs.workspaceId
+    migratorPrincipalId: ids.outputs.migrator.principalId
     skuName: storageSku
     uploadRetentionDays: 30
     uploadCorsOrigins: uploadCorsOrigins
@@ -247,7 +273,7 @@ module redis 'modules/redis.bicep' = {
   }
 }
 
-module ai 'modules/ai.bicep' = {
+module ai 'modules/ai.bicep' = if (deployAi) {
   name: 'ai'
   params: {
     env: env
@@ -273,7 +299,7 @@ module ai 'modules/ai.bicep' = {
   }
 }
 
-module frontDoor 'modules/frontdoor.bicep' = {
+module frontDoor 'modules/frontdoor.bicep' = if (deployFrontDoor) {
   name: 'frontdoor'
   params: {
     env: env
@@ -281,6 +307,24 @@ module frontDoor 'modules/frontdoor.bicep' = {
     identityId: ids.outputs.frontdoor.id
     blobHost: storage.outputs.blobHost
     workspaceId: monitoring.outputs.workspaceId
+  }
+}
+
+module communication 'modules/communication.bicep' = {
+  name: 'communication'
+  params: {
+    env: env
+    tags: tags
+    domainManagement: emailDomainManagement
+    domainName: emailDomain
+    senderUsername: emailSenderUsername
+    senderDisplayName: emailSenderDisplayName
+    dataLocation: acsDataLocation
+    senderPrincipalIds: [
+      ids.outputs.api.principalId
+    ]
+    senderRoleDefinitionId: acsSenderRoleId
+    linkDomain: acsLinkDomain
   }
 }
 
@@ -336,7 +380,7 @@ var commonEnv = concat(
     }
     {
       name: 'PGSSLMODE'
-      value: 'require'
+      value: 'verify-full'
     }
     {
       name: 'REDIS_URL'
@@ -352,7 +396,7 @@ var commonEnv = concat(
     }
     {
       name: 'CDN_BASE_URL'
-      value: 'https://${frontDoor.outputs.hostName}'
+      value: deployFrontDoor ? 'https://${frontDoor!.outputs.hostName}' : ''
     }
     {
       name: 'AZURE_KEY_VAULT_URL'
@@ -360,7 +404,7 @@ var commonEnv = concat(
     }
     {
       name: 'AZURE_OPENAI_ENDPOINT'
-      value: ai.outputs.openAiEndpoint
+      value: deployAi ? ai!.outputs.openAiEndpoint : ''
     }
     {
       name: 'AZURE_OPENAI_DEPLOYMENT_SMALL'
@@ -380,23 +424,23 @@ var commonEnv = concat(
     }
     {
       name: 'AZURE_OPENAI_MODELS_DEPLOYED'
-      value: string(aoaiDeployModels)
+      value: string(deployAi && aoaiDeployModels)
     }
     {
       name: 'AZURE_SPEECH_REGION'
-      value: ai.outputs.aiLocation
+      value: deployAi ? ai!.outputs.aiLocation : ''
     }
     {
       name: 'AZURE_SPEECH_ENDPOINT'
-      value: ai.outputs.speechEndpoint
+      value: deployAi ? ai!.outputs.speechEndpoint : ''
     }
     {
       name: 'AZURE_SPEECH_RESOURCE_ID'
-      value: ai.outputs.speechId
+      value: deployAi ? ai!.outputs.speechId : ''
     }
     {
       name: 'AZURE_CONTENT_SAFETY_ENDPOINT'
-      value: ai.outputs.contentSafetyEndpoint
+      value: deployAi ? ai!.outputs.contentSafetyEndpoint : ''
     }
   ],
   map(items(appSettings), s => {
@@ -436,6 +480,19 @@ module apps 'modules/containerApps.bicep' = {
     workerActiveWindow: workerActiveWindow
     pgHost: postgres.outputs.host
     pgDatabase: databaseName
+    blobAccountUrl: storage.outputs.blobEndpoint
+    apiExtraEnv: [
+      {
+        // D-031: the API sends sign-in codes through ACS Email with its managed identity.
+        name: 'ACS_ENDPOINT'
+        value: communication.outputs.endpoint
+      }
+      {
+        // The ACS sender username of the verified domain (noreply@soylai.com).
+        name: 'EMAIL_FROM'
+        value: communication.outputs.senderAddress
+      }
+    ]
   }
 }
 
@@ -467,7 +524,7 @@ module budget 'modules/budget.bicep' = {
   }
 }
 
-module aiBudget 'modules/budget.bicep' = {
+module aiBudget 'modules/budget.bicep' = if (deployAi) {
   name: 'budget-ai'
   params: {
     name: 'budget-soyl-platform-${env}-openai'
@@ -476,7 +533,7 @@ module aiBudget 'modules/budget.bicep' = {
     actionGroupId: monitoring.outputs.actionGroupId
     contactEmails: empty(alertEmail) ? [] : [alertEmail]
     resourceIdFilter: [
-      ai.outputs.openAiId
+      ai!.outputs.openAiId
     ]
   }
 }
@@ -486,10 +543,18 @@ output apiAppName string = apps.outputs.apiName
 output apiFqdn string = apps.outputs.apiFqdn
 output workerAppName string = apps.outputs.workerName
 output migrateJobName string = apps.outputs.migrateJobName
+output releaseJobName string = apps.outputs.releaseJobName
 output keyVaultName string = kv.outputs.name
 output keyVaultUri string = kv.outputs.uri
 output storageAccountName string = storage.outputs.name
-output cdnHostName string = frontDoor.outputs.hostName
+output cdnHostName string = deployFrontDoor ? frontDoor!.outputs.hostName : ''
 output postgresHost string = postgres.outputs.host
-output openAiEndpoint string = ai.outputs.openAiEndpoint
+output openAiEndpoint string = deployAi ? ai!.outputs.openAiEndpoint : ''
+output acsName string = communication.outputs.acsName
+output acsEndpoint string = communication.outputs.endpoint
+output emailServiceName string = communication.outputs.emailServiceName
+output emailSenderAddress string = communication.outputs.senderAddress
+@description('DNS records for the owner (Domain TXT, SPF TXT, DKIM + DKIM2 CNAME; DMARC is advisory).')
+output emailDnsRecords object = communication.outputs.dnsRecords
+output emailDomainVerification object = communication.outputs.domainVerificationStates
 output logAnalyticsWorkspaceName string = monitoring.outputs.workspaceName
