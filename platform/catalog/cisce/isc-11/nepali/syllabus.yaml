@@ -1,0 +1,312 @@
+# ISC Class 11 Nepali (Indian Language elective, code 811) - ISC 2028 course, CLASS XI year.
+# Literature: titles and authors only (CONTEXT section 8). Students read the texts in their own textbook.
+subject_id: isc-11-nepali
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-indian-languages, isc-2028-prescribed-books, cisce-circular-2026-27-33-indian-languages, isc-2028-regulations]
+exam_notes: >-
+  There is no board examination in Class XI: Class XI is year one of the two-year ISC 2028 course and the school sets
+  the Class XI examination, which CISCE says is conducted only on the portion prescribed for Class XI. The ISC paper
+  pattern (normally followed by the school): Paper I Theory, one paper of 3 hours, 80 marks, in two sections. Section
+  A Language (40 marks, three compulsory questions): a composition of about 400 words in Nepali from a choice of six
+  topics; an unseen passage of about 300 words with questions and/or a summary with a heading (testing the ability to
+  summarise and/or expand an idea); and functional grammar (correction of sentences and use of words/idioms in
+  sentences, with correct agreement of number, gender, case, tense and voice). Section B Prescribed Textbooks (40
+  marks): answer four questions from any three of the prescribed books. Prescribed texts are bifurcated (Circular
+  2026-27/33; ISC 2028 Indian Languages syllabus): only the Class XI portion is listed here, the Class XII portion
+  (isc-12-nepali) is in each chapter's removed_topics. The Language section (Section A) is not bifurcated. Paper II
+  Project Work for Class XI (20 marks, assessed internally by the school): Listening (6) - an unseen passage of about
+  500 words, a poem or an audio clip with objective questions; Speaking (6) - a presentation of about three minutes
+  (extempore, declamation, recitation, debate and similar) with discussion; Writing (8) - a piece of 600-800 words on
+  language or the Class XI literature portion. CISCE lists topics, not chapters: SOYL grouped them into teachable
+  chapters in syllabus order. CISCE does not publish question-wise marks within Section A and describes composition
+  and grammar only generically: the composition types and grammar breakdown below are SOYL's, adapted to the grammar
+  of the language. SOYL covers all four prescribed books so a student can pick any three.
+units:
+  - { name: "खण्ड क - भाषा (Section A: Language)", marks: 40 }
+  - { name: "खण्ड ख - निर्धारित पाठ्यपुस्तकहरू (Section B: Prescribed Textbooks)", marks: 40 }
+chapters:
+  - id: isc-11-nepali-ch01
+    number: 1
+    title: "निबन्ध / रचना लेखन (लगभग ४०० शब्द)"
+    title_en: "Composition writing (about 400 words)"
+    unit: "खण्ड क - भाषा (Section A: Language)"
+    topics:
+      - id: isc-11-nepali-ch01-t01
+        title: "रचनाको योजना: विषय छनोट, रूपरेखा, भूमिका, विस्तार र उपसंहार"
+        title_en: "Planning a composition: choosing a topic, outline, introduction, body and conclusion"
+        learning_outcomes:
+          - "छवटा विषयमध्ये उपयुक्त विषय छानेर त्यसको रूपरेखा तयार पार्नु"
+          - "लगभग ४०० शब्दको अनुच्छेदमा विभाजित सुसङ्गठित रचना लेख्नु"
+      - id: isc-11-nepali-ch01-t02
+        title: "वर्णनात्मक र विवरणात्मक निबन्ध"
+        title_en: "Descriptive and narrative essays"
+        learning_outcomes:
+          - "कुनै अनुभव, यात्रा वा घटनाको क्रमबद्ध र सजीव वर्णन गर्नु"
+      - id: isc-11-nepali-ch01-t03
+        title: "विचारात्मक र तर्कप्रधान निबन्ध: पक्ष-विपक्ष र निष्कर्ष"
+        title_en: "Reflective and argumentative essays: for and against, and conclusion"
+        learning_outcomes:
+          - "कुनै सामाजिक वा समसामयिक विषयमा तर्क र उदाहरण दिएर आफ्नो मत प्रस्तुत गर्नु"
+          - "विपक्षी तर्कहरूको सन्तुलित विचार गरी निष्कर्ष लेख्नु"
+      - id: isc-11-nepali-ch01-t04
+        title: "कथा लेखन: दिइएको वाक्य, उखान वा सङ्केतका आधारमा"
+        title_en: "Story writing from a given sentence, proverb or outline"
+        learning_outcomes:
+          - "दिइएको पङ्क्ति वा उखानलाई सार्थक तुल्याउने मौलिक कथा लेख्नु"
+      - id: isc-11-nepali-ch01-t05
+        title: "भाषाशैली: शब्द चयन, टुक्काको प्रयोग, वर्णविन्यास र विराम चिह्न"
+        title_en: "Language and style: word choice, idioms, spelling and punctuation"
+        learning_outcomes:
+          - "रचनामा विषयअनुकूल शब्द र टुक्काहरूको उचित प्रयोग गर्नु"
+          - "आफ्नो रचनाका वर्णविन्यास र विराम चिह्नका त्रुटि आफैँ सुधार्नु"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-nepali-ch02
+    number: 2
+    title: "अपठित गद्यांश र सारांश लेखन"
+    title_en: "Unseen passage (about 300 words) and summary"
+    unit: "खण्ड क - भाषा (Section A: Language)"
+    topics:
+      - id: isc-11-nepali-ch02-t01
+        title: "गद्यांशको मूल विचार र सहायक बुँदाहरूको पहिचान"
+        title_en: "Identifying the main idea and supporting points of a passage"
+        learning_outcomes:
+          - "लगभग ३०० शब्दको गद्यांशको मूल भाव आफ्नै शब्दमा बताउनु"
+      - id: isc-11-nepali-ch02-t02
+        title: "गद्यांशमा आधारित प्रश्नहरूको उत्तर आफ्नै शब्दमा"
+        title_en: "Answering questions on the passage in one's own words"
+        learning_outcomes:
+          - "तथ्यगत र अनुमानमा आधारित प्रश्नहरूको सही उत्तर गद्यांशका पङ्क्ति नसारी लेख्नु"
+          - "सन्दर्भका आधारमा कठिन शब्द र पदावलीको अर्थ स्पष्ट पार्नु"
+      - id: isc-11-nepali-ch02-t03
+        title: "शीर्षकसहित सारांश लेखन"
+        title_en: "Writing a summary with a heading"
+        learning_outcomes:
+          - "गद्यांशको लगभग एक तिहाइ शब्दमा सारांश लेखी उपयुक्त शीर्षक दिनु"
+      - id: isc-11-nepali-ch02-t04
+        title: "गद्यांशमा दिइएको कुनै विचारको विस्तार"
+        title_en: "Expanding an idea given in the passage"
+        learning_outcomes:
+          - "गद्यांशको कुनै कथन वा विचारलाई उदाहरणसहित एक अनुच्छेदमा विस्तारपूर्वक बुझाउनु"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-nepali-ch03
+    number: 3
+    title: "व्याकरण: वाक्य शुद्धीकरण"
+    title_en: "Grammar: correction of sentences"
+    unit: "खण्ड क - भाषा (Section A: Language)"
+    topics:
+      - id: isc-11-nepali-ch03-t01
+        title: "कर्ता र क्रियाको सङ्गति: पुरुष, वचन, लिङ्ग र आदरार्थी रूप"
+        title_en: "Subject-verb agreement: person, number, gender and honorific forms"
+        learning_outcomes:
+          - "पुरुष, वचन, लिङ्ग र आदरका तहअनुसार क्रियापदका अशुद्ध रूप पहिचान गरी शुद्ध पार्नु"
+      - id: isc-11-nepali-ch03-t02
+        title: "विभक्ति र नामयोगीको शुद्ध प्रयोग ('ले' सहित)"
+        title_en: "Correct use of case markers and postpositions (including 'le')"
+        learning_outcomes:
+          - "भूतकालका सकर्मक वाक्यमा कर्तासँग 'ले' विभक्तिको सही प्रयोग गर्नु"
+          - "वाक्यमा गलत विभक्ति वा नामयोगी पहिचान गरी सही रूप राख्नु"
+      - id: isc-11-nepali-ch03-t03
+        title: "काल, पक्ष र वाच्यसम्बन्धी अशुद्धि"
+        title_en: "Errors of tense, aspect and voice"
+        learning_outcomes:
+          - "वाक्यमा कालसम्बन्धी असङ्गति हटाउनु"
+          - "कर्तृवाच्य, कर्मवाच्य र भाववाच्यका वाक्यहरू शुद्ध रूपमा लेख्नु"
+      - id: isc-11-nepali-ch03-t04
+        title: "पदक्रम, पुनरुक्ति र अनुपयुक्त शब्दप्रयोगका अशुद्धि"
+        title_en: "Errors of word order, redundancy and wrong word choice"
+        learning_outcomes:
+          - "अनावश्यक शब्द हटाई र पदक्रम सुधारी शुद्ध वाक्य लेख्नु"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-nepali-ch04
+    number: 4
+    title: "व्याकरण: शब्द र टुक्काको वाक्यमा प्रयोग"
+    title_en: "Grammar: using words and idioms in sentences"
+    unit: "खण्ड क - भाषा (Section A: Language)"
+    topics:
+      - id: isc-11-nepali-ch04-t01
+        title: "टुक्काको अर्थ र वाक्यमा प्रयोग"
+        title_en: "Idioms: meaning and use in sentences"
+        learning_outcomes:
+          - "टुक्काको अर्थ लेखी अर्थ स्पष्ट हुने गरी प्रसङ्गअनुकूल वाक्यमा प्रयोग गर्नु"
+      - id: isc-11-nepali-ch04-t02
+        title: "उखानको अर्थ र प्रयोग"
+        title_en: "Proverbs: meaning and use"
+        learning_outcomes:
+          - "उखान र टुक्काबीचको भिन्नता बताई उखानको सार्थक प्रयोग गर्नु"
+      - id: isc-11-nepali-ch04-t03
+        title: "दिइएका शब्दको वाक्यमा शुद्ध प्रयोग: उस्तै सुनिने तर फरक अर्थ भएका शब्द"
+        title_en: "Using given words correctly in sentences: similar-sounding words with different meanings"
+        learning_outcomes:
+          - "उस्तै सुनिने शब्दहरूको अर्थभेद वाक्यप्रयोगद्वारा स्पष्ट पार्नु"
+          - "दिइएको शब्दलाई सही लिङ्ग, वचन र रूपमा वाक्यमा प्रयोग गर्नु"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-nepali-ch05
+    number: 5
+    title: "उपन्यास: जुनेली रेखा (अध्याय १-७)"
+    title_en: "Novel: Juneli Rekha (chapters 1-7)"
+    unit: "खण्ड ख - निर्धारित पाठ्यपुस्तकहरू (Section B: Prescribed Textbooks)"
+    topics:
+      - id: isc-11-nepali-ch05-t01
+        title: "अध्याय १-३: परिवेश, परिस्थिति र प्रमुख पात्रहरूको परिचय"
+        title_en: "Chapters 1-3: setting, situation and introduction of the main characters"
+        learning_outcomes:
+          - "यी अध्यायका मुख्य घटनाहरू क्रमबद्ध रूपमा आफ्नै शब्दमा लेख्नु"
+          - "उपन्यासको परिवेश र प्रमुख पात्रहरूको परिचय दिनु"
+      - id: isc-11-nepali-ch05-t02
+        title: "अध्याय ४-७: घटनाक्रम र कथाको विकास"
+        title_en: "Chapters 4-7: events and development of the story"
+        learning_outcomes:
+          - "यी अध्यायका मुख्य घटनाहरूको सार लेख्नु"
+          - "यी अध्यायमा कथानकको द्वन्द्व कसरी विकसित हुन्छ स्पष्ट पार्नु"
+      - id: isc-11-nepali-ch05-t03
+        title: "प्रमुख पात्रहरूको चरित्र-चित्रण"
+        title_en: "Character sketches of the main characters"
+        learning_outcomes:
+          - "प्रमुख पात्रहरूको चारित्रिक विशेषता घटनाका उदाहरणसहित लेख्नु"
+          - "दुई पात्रको तुलना गरी केन्द्रीय द्वन्द्वप्रति तिनको प्रतिक्रिया बताउनु"
+      - id: isc-11-nepali-ch05-t04
+        title: "विषयवस्तु, सामाजिक परिवेश र सन्देश"
+        title_en: "Themes, social setting and message"
+        learning_outcomes:
+          - "निर्धारित अध्यायहरूका मुख्य विषयवस्तुलाई उपन्यासको सामाजिक परिवेशसँग जोडेर व्याख्या गर्नु"
+      - id: isc-11-nepali-ch05-t05
+        title: "शीर्षकको सार्थकता र भाषाशैली"
+        title_en: "Significance of the title, and language and style"
+        learning_outcomes:
+          - "निर्धारित अध्यायहरूका आधारमा 'जुनेली रेखा' शीर्षकको सार्थकता स्पष्ट पार्नु"
+          - "लेखकको वर्णनशैली र भाषाका विशेषता उदाहरणसहित बताउनु"
+    removed_topics:
+      - "Juneli Rekha chapters 8-14 (Class XII portion; see isc-12-nepali)"
+    literature_texts:
+      - { title: "जुनेली रेखा (अध्याय १-७)", author: "इन्द्र सुन्दास", title_en: "Juneli Rekha (chapters 1 to 7) - Indra Sundas" }
+  - id: isc-11-nepali-ch06
+    number: 6
+    title: "नाटक: अनि देउराली रुन्छ (अध्याय १ र २)"
+    title_en: "Drama: Ani Dewrali Runcha (chapters 1 & 2)"
+    unit: "खण्ड ख - निर्धारित पाठ्यपुस्तकहरू (Section B: Prescribed Textbooks)"
+    topics:
+      - id: isc-11-nepali-ch06-t01
+        title: "अध्याय १ को कथावस्तु: परिवेश, पात्र र परिस्थिति"
+        title_en: "Chapter 1 plot: setting, characters and situation"
+        learning_outcomes:
+          - "अध्याय १ का मुख्य घटनाहरूको क्रमबद्ध सार लेख्नु"
+          - "नाटकको द्वन्द्व कुन परिस्थितिबाट सुरु हुन्छ पहिचान गर्नु"
+      - id: isc-11-nepali-ch06-t02
+        title: "अध्याय २ को कथावस्तु: घटनाक्रम र बढ्दो द्वन्द्व"
+        title_en: "Chapter 2 plot: events and rising conflict"
+        learning_outcomes:
+          - "अध्याय २ का मुख्य घटनाहरूको क्रमबद्ध सार लेख्नु"
+          - "यस अध्यायमा नाटकको द्वन्द्व कसरी बढ्छ स्पष्ट पार्नु"
+      - id: isc-11-nepali-ch06-t03
+        title: "प्रमुख पात्रहरूको चरित्र-चित्रण"
+        title_en: "Character sketches of the main characters"
+        learning_outcomes:
+          - "प्रमुख पात्रहरूको चारित्रिक विशेषता संवाद र घटनाका आधारमा लेख्नु"
+      - id: isc-11-nepali-ch06-t04
+        title: "विषयवस्तु र शीर्षक 'अनि देउराली रुन्छ' को सार्थकता"
+        title_en: "Themes and the significance of the title 'Ani Dewrali Runcha'"
+        learning_outcomes:
+          - "निर्धारित अध्यायहरूका मुख्य विषयवस्तु पहिचान गरी शीर्षकको सार्थकता स्पष्ट पार्नु"
+      - id: isc-11-nepali-ch06-t05
+        title: "नाट्य-शिल्प: संवाद, रङ्गनिर्देश र मञ्चनयोग्यता"
+        title_en: "Dramatic craft: dialogue, stage directions and stageability"
+        learning_outcomes:
+          - "नाटकका संवाद र रङ्गनिर्देशका विशेषता उदाहरणसहित बताउनु"
+    removed_topics:
+      - "Ani Dewrali Runcha chapter 3 (Class XII portion; see isc-12-nepali)"
+    literature_texts:
+      - { title: "अनि देउराली रुन्छ (अध्याय १ र २)", author: "मनबहादुर मुखिया", title_en: "Ani Dewrali Runcha (chapters 1 & 2) - Man Bahadur Mukhia" }
+  - id: isc-11-nepali-ch07
+    number: 7
+    title: "गद्य कुञ्ज: कथाहरू"
+    title_en: "Gadya Kunj: short stories (Class XI portion)"
+    unit: "खण्ड ख - निर्धारित पाठ्यपुस्तकहरू (Section B: Prescribed Textbooks)"
+    topics:
+      - id: isc-11-nepali-ch07-t01
+        title: "परालको आगो (गुरुप्रसाद मैनाली): दाम्पत्य जीवनको झगडा र मेलमिलाप"
+        title_en: "Paralko Aago (Guruprasad Mainali): a quarrel and reconciliation in married life"
+        learning_outcomes:
+          - "पति-पत्नीबीचको झगडा, बिछोड र मेलमिलापका घटना आफ्नै शब्दमा लेख्नु"
+          - "'परालको आगो' शीर्षकको प्रतीकात्मक अर्थ र कथाको सन्देश स्पष्ट पार्नु"
+      - id: isc-11-nepali-ch07-t02
+        title: "बितेका कुरा (रूपनारायण सिंह): कथावस्तु, पात्र र सन्देश"
+        title_en: "Biteka Kura (Rupnarayana Singh): plot, characters and message"
+        learning_outcomes:
+          - "कथाका मुख्य घटनाहरू आफ्नै शब्दमा क्रमबद्ध रूपमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र-चित्रण गरी कथाको मूल सन्देश स्पष्ट पार्नु"
+      - id: isc-11-nepali-ch07-t03
+        title: "ज्यानमारा (शिवकुमार राई): कथावस्तु, पात्र र सन्देश"
+        title_en: "Jyanmara (Shiv Kumar Rai): plot, characters and message"
+        learning_outcomes:
+          - "कथाका मुख्य घटनाहरू आफ्नै शब्दमा क्रमबद्ध रूपमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र-चित्रण गरी कथाको मूल सन्देश स्पष्ट पार्नु"
+      - id: isc-11-nepali-ch07-t04
+        title: "तेस्रो घर (लक्खीदेवी सुन्दास): कथावस्तु, पात्र र सन्देश"
+        title_en: "Tesro Ghar (Dr Lakhidevi Sundas): plot, characters and message"
+        learning_outcomes:
+          - "कथाका मुख्य घटनाहरू आफ्नै शब्दमा क्रमबद्ध रूपमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र-चित्रण गरी कथाको मूल सन्देश स्पष्ट पार्नु"
+      - id: isc-11-nepali-ch07-t05
+        title: "टोटलाको फूल (मटिल्डा राई): कथावस्तु, पात्र र सन्देश"
+        title_en: "Totolako Phool (Matilda Rai): plot, characters and message"
+        learning_outcomes:
+          - "कथाका मुख्य घटनाहरू आफ्नै शब्दमा क्रमबद्ध रूपमा लेख्नु"
+          - "प्रमुख पात्रहरूको चरित्र-चित्रण गरी कथाको मूल सन्देश स्पष्ट पार्नु"
+    removed_topics:
+      - "Class XII pieces of Gadya Kunj: Biha, Jayamaya Aafumatra Likhapani Aaipugi, Lahuri Bhainshi, Nepali Sahityama Ukhanko Esthan, Ewta Aaitabar Yesari Bityo (see isc-12-nepali)"
+    literature_texts:
+      - { title: "परालको आगो", author: "गुरुप्रसाद मैनाली", title_en: "Paralko Aago - Guruprasad Mainali" }
+      - { title: "बितेका कुरा", author: "रूपनारायण सिंह", title_en: "Biteka Kura - Rupnarayana Singh" }
+      - { title: "ज्यानमारा", author: "शिवकुमार राई", title_en: "Jyanmara - ShivKumar Rai" }
+      - { title: "तेस्रो घर", author: "लक्खीदेवी सुन्दास", title_en: "Tesro Ghar - Dr Lakhidevi Sundas" }
+      - { title: "टोटलाको फूल", author: "मटिल्डा राई", title_en: "Totolako Phool - Matilda Rai" }
+  - id: isc-11-nepali-ch08
+    number: 8
+    title: "कविता कुञ्ज: कविताहरू"
+    title_en: "Kavita Kunj: poems (Class XI portion)"
+    unit: "खण्ड ख - निर्धारित पाठ्यपुस्तकहरू (Section B: Prescribed Textbooks)"
+    topics:
+      - id: isc-11-nepali-ch08-t01
+        title: "केही फुटकर कविता (भानुभक्त आचार्य): मूल भाव, उपदेश र शैली"
+        title_en: "Kehi Phutkar Kavita (Bhanubhakta Acharya): central ideas, teachings and style"
+        learning_outcomes:
+          - "निर्धारित फुटकर कविताहरूको मूल भाव आफ्नै शब्दमा लेख्नु"
+          - "भानुभक्तको सरल, लयात्मक र सहज भाषाशैलीका विशेषता उदाहरणसहित बताउनु"
+      - id: isc-11-nepali-ch08-t02
+        title: "जीवन चङ्गा (लेखनाथ पौड्याल): मूल भाव, बिम्ब र शैली"
+        title_en: "Jiwan Changa (Lekhnath Paudyal): central idea, imagery and style"
+        learning_outcomes:
+          - "कविताको मूल भाव आफ्नै शब्दमा लेख्नु"
+          - "कवितामा प्रयुक्त बिम्ब, प्रतीक र अलङ्कारको पहिचान गरी तिनको प्रभाव बताउनु"
+      - id: isc-11-nepali-ch08-t03
+        title: "निम्तो (बालकृष्ण सम): मूल भाव, बिम्ब र शैली"
+        title_en: "Nimto (Bal Krishna Sam): central idea, imagery and style"
+        learning_outcomes:
+          - "कविताको मूल भाव आफ्नै शब्दमा लेख्नु"
+          - "कवितामा प्रयुक्त बिम्ब, प्रतीक र अलङ्कारको पहिचान गरी तिनको प्रभाव बताउनु"
+      - id: isc-11-nepali-ch08-t04
+        title: "गाइने (लक्ष्मीप्रसाद देवकोटा): गाइनेको जीवन र कविको संवेदना"
+        title_en: "Gaine (Laxmi Prasad Devkota): the life of the wandering minstrel and the poet's sympathy"
+        learning_outcomes:
+          - "कवितामा चित्रित गाइनेको जीवन र परिस्थितिको वर्णन गर्नु"
+          - "कविताको मूल भाव र बिम्बको प्रभाव बताउनु"
+      - id: isc-11-nepali-ch08-t05
+        title: "सुख-दुःख (गोपालसिंह नेपाली): जीवनमा सुख र दुःखको स्थान"
+        title_en: "Sukha-Dukha (Gopal Singh Nepali): the place of joy and sorrow in life"
+        learning_outcomes:
+          - "जीवनमा सुख र दुःखबारे कविको विचार आफ्नै शब्दमा लेख्नु"
+          - "कवितामा प्रयुक्त बिम्ब र अलङ्कारको प्रभाव बताउनु"
+    removed_topics:
+      - "Class XII poems of Kavita Kunj: Nachinine Bhayechaw, Aakash Ko Tara K Tara, Shahidharuko Samjhanama, Asarko Pandhra, Mela (see isc-12-nepali)"
+    literature_texts:
+      - { title: "केही फुटकर कविता", author: "भानुभक्त आचार्य", title_en: "Kehi Phutkar Kavita - Bhanubhakta Acharya" }
+      - { title: "जीवन चङ्गा", author: "लेखनाथ पौड्याल", title_en: "Jiwan Changa - Lekhnath Paudyal" }
+      - { title: "निम्तो", author: "बालकृष्ण सम", title_en: "Nimto - Bal Krishna Sam" }
+      - { title: "गाइने", author: "लक्ष्मीप्रसाद देवकोटा", title_en: "Gaine - Laxmi Prasad Devkota" }
+      - { title: "सुख-दुःख", author: "गोपालसिंह नेपाली", title_en: "Sukha - Dukha - Gopal Singh Nepali" }
+removed_topics: []

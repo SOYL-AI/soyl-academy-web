@@ -1,0 +1,302 @@
+# ISC Class 11 Sanskrit (Classical Language elective, code 838) - ISC 2028 course, CLASS XI year.
+# CISCE has not bifurcated the syllabus, so this file covers the whole Classes XI-XII syllabus and both prescribed books.
+# Prescribed books: titles and authors only. Students read the texts in their own editions.
+subject_id: isc-11-sanskrit-classical
+academic_year: "2026-27"
+source_status: verified
+sources: [isc-2028-classical-languages, isc-2028-prescribed-books, isc-2028-regulations]
+exam_notes: >-
+  There is no board examination in Class XI: Class XI is year one of the two-year ISC 2028 course and the school sets the
+  Class XI examination on the portion of the syllabus covered during the year. CISCE has not bifurcated this syllabus (the
+  Class XII ISC paper is set on the entire syllabus), so this file covers the whole Classes XI-XII Sanskrit syllabus and both
+  prescribed books; nothing is removed. Paper I Theory (3 hours, 80 marks), which the school examination normally follows:
+  (a) questions on grammar; (b) unseen translation from English into Sanskrit of short prose sentences and a continuous prose
+  passage; (c) translation from the prescribed books, with no choice of passages; (d) short-answer questions on the subject
+  matter of the prescribed books. CISCE does not publish marks per part. Prescribed books (Appendix I, ISC 2028): Chandrapid
+  Katha by Pandit V. Anantacharya (Ram Narayana Lal Beni Madhava, Allahabad) - a prose retelling of the story of Chandrapida
+  from Banabhatta's Kadambari; and Raghuvamsa of Kalidasa, Canto I (text with English translation and notes by M.R. Kale,
+  Motilal Banarsidass). Paper II Project Work for Class XI (20 marks, assessed internally by the school during the year):
+  Listening (6) - an unseen passage of about 500 words, a poem or an audio clip heard twice, with objective questions;
+  Speaking (6) - an individual presentation of about three minutes (extempore, declamation, recitation, debate; the suggested
+  tasks include reading out, after correcting, a grammatically incorrect passage of 150-200 words based on the grammar
+  syllabus) followed by discussion with the teacher; Writing (8) - one assignment of about 200 words on any aspect of the
+  language or literature studied in Class XI (e.g. describing an event, a book review, a summary of a text, an alternative
+  title with justification). CISCE sets no question paper for project work. CISCE does not list the grammar items for this
+  paper; SOYL's grammar chapters (declensions, verb forms including the lit forms common in Raghuvamsa, sandhi, karaka and
+  voice, compounds and suffixes) are SOYL's breakdown, ordered from foundations for the first year. Titles are in Sanskrit with
+  an English title_en; learning outcomes are in Sanskrit. CISCE lists topics not chapters; SOYL grouped them into teachable
+  chapters in syllabus order.
+units:
+  - { name: "(क) व्याकरणम् (Grammar)", marks: null }
+  - { name: "(ख) आङ्ग्लभाषातः संस्कृते अदृष्टानुवादः (Unseen translation from English into Sanskrit)", marks: null }
+  - { name: "(ग)-(घ) निर्धारितपुस्तकानि - अनुवादः लघूत्तरप्रश्नाः च (Prescribed books: translation and short-answer questions)", marks: null }
+chapters:
+  - id: isc-11-sanskrit-classical-ch01
+    number: 1
+    title: "शब्दरूपाणि सर्वनामानि संख्याः च"
+    title_en: "Noun and pronoun declensions and numerals"
+    unit: "(क) व्याकरणम् (Grammar)"
+    topics:
+      - id: isc-11-sanskrit-classical-ch01-t01
+        title: "अजन्तपुंलिङ्गशब्दाः - राम, हरि, गुरु, पितृ"
+        title_en: "Vowel-ending masculine nouns: rama, hari, guru, pitri"
+        learning_outcomes:
+          - "अजन्तपुंलिङ्गशब्दानां सर्वासु विभक्तिषु त्रिषु वचनेषु च रूपाणि लिखति"
+      - id: isc-11-sanskrit-classical-ch01-t02
+        title: "अजन्तस्त्रीलिङ्गनपुंसकलिङ्गशब्दाः - रमा, मति, नदी, धेनु, मातृ; फल, वारि, मधु"
+        title_en: "Vowel-ending feminine and neuter nouns: rama, mati, nadi, dhenu, matri; phala, vari, madhu"
+        learning_outcomes:
+          - "स्त्रीलिङ्गनपुंसकलिङ्गशब्दानां रूपाणि लिखति वाक्येषु च प्रयुङ्क्ते"
+      - id: isc-11-sanskrit-classical-ch01-t03
+        title: "हलन्तशब्दाः - राजन्, आत्मन्, भवत्, गच्छत्, वाच्, मनस्, जगत्"
+        title_en: "Consonant-ending nouns: rajan, atman, bhavat, gacchat, vach, manas, jagat"
+        learning_outcomes:
+          - "हलन्तशब्दानां प्रमुखरूपाणि लिखति पाठ्यपुस्तकयोः च परिचिनोति"
+      - id: isc-11-sanskrit-classical-ch01-t04
+        title: "सर्वनामशब्दाः - अस्मद्, युष्मद्, तद्, एतद्, यद्, किम्, इदम्"
+        title_en: "Pronouns: asmad, yushmad, tad, etad, yad, kim, idam"
+        learning_outcomes:
+          - "सर्वनाम्नां रूपाणि त्रिषु लिङ्गेषु लिखति"
+          - "सर्वनाम विशेष्यस्य लिङ्ग-विभक्ति-वचनानुसारं प्रयुङ्क्ते"
+      - id: isc-11-sanskrit-classical-ch01-t05
+        title: "संख्यावाचकशब्दाः - एकतः दशपर्यन्तम्, शतम्, सहस्रम्; पूरणसंख्याः"
+        title_en: "Numerals: one to ten, hundred and thousand; ordinals"
+        learning_outcomes:
+          - "संख्याशब्दान् पूरणसंख्याशब्दान् च विशेष्यानुसारं प्रयुङ्क्ते"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-sanskrit-classical-ch02
+    number: 2
+    title: "धातुरूपाणि लकाराः च"
+    title_en: "Verb forms and lakaras"
+    unit: "(क) व्याकरणम् (Grammar)"
+    topics:
+      - id: isc-11-sanskrit-classical-ch02-t01
+        title: "परस्मैपदम् आत्मनेपदम् उभयपदं च; प्रमुखगणाः"
+        title_en: "Parasmaipada, atmanepada and ubhayapada; the principal verb classes (ganas)"
+        learning_outcomes:
+          - "धातोः पदं गणं च निर्दिश्य तस्य रूपाणि रचयति"
+      - id: isc-11-sanskrit-classical-ch02-t02
+        title: "लट्, लृट्, लङ् लकाराः"
+        title_en: "Lat, lrit and lang: present, future and past"
+        learning_outcomes:
+          - "प्रमुखधातूनां लट्-लृट्-लङ्-लकारेषु रूपाणि लिखति वाक्येषु च प्रयुङ्क्ते"
+      - id: isc-11-sanskrit-classical-ch02-t03
+        title: "लोट् लकारः विधिलिङ् च"
+        title_en: "Lot (imperative) and vidhiling (potential)"
+        learning_outcomes:
+          - "आज्ञा-प्रार्थना-विधि-अर्थेषु लोट्-विधिलिङ्-रूपाणि प्रयुङ्क्ते"
+      - id: isc-11-sanskrit-classical-ch02-t04
+        title: "लिट् लकारः (परोक्षभूतकालः) - रघुवंशे प्रयुक्तानि रूपाणि"
+        title_en: "Lit lakara (remote past): forms used in the Raghuvamsa"
+        learning_outcomes:
+          - "लिट्लकारस्य रूपाणि (यथा बभूव, उवाच, जगाम) परिचित्य मूलधातुं लकारं च वदति"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-sanskrit-classical-ch03
+    number: 3
+    title: "सन्धिः"
+    title_en: "Sandhi"
+    unit: "(क) व्याकरणम् (Grammar)"
+    topics:
+      - id: isc-11-sanskrit-classical-ch03-t01
+        title: "स्वरसन्धिः - दीर्घः, गुणः, वृद्धिः, यण्, अयादिः, पूर्वरूपम्"
+        title_en: "Vowel sandhi: dirgha, guna, vriddhi, yan, ayadi, purvarupa"
+        learning_outcomes:
+          - "स्वरसन्धेः नियमान् प्रयुज्य पदानि योजयति विच्छेदं च करोति"
+          - "सन्धियुक्ते पदे सन्धेः नाम निर्दिशति"
+      - id: isc-11-sanskrit-classical-ch03-t02
+        title: "व्यञ्जनसन्धिः - जश्त्वम्, श्चुत्वम्, ष्टुत्वम्, अनुस्वारः, अनुनासिकः, छत्वम्"
+        title_en: "Consonant sandhi: jashtva, shchutva, shtutva, anusvara, anunasika, chhatva"
+        learning_outcomes:
+          - "व्यञ्जनसन्धेः प्रमुखनियमान् उदाहरणैः स्पष्टीकरोति"
+      - id: isc-11-sanskrit-classical-ch03-t03
+        title: "विसर्गसन्धिः - सत्वम्, उत्वम्, रुत्वम्, विसर्गलोपः"
+        title_en: "Visarga sandhi: change to s, o and r, and loss of visarga"
+        learning_outcomes:
+          - "विसर्गसन्धियुक्तानि पदानि योजयति विभजति च"
+      - id: isc-11-sanskrit-classical-ch03-t04
+        title: "पाठ्यपुस्तकस्थानां पदानां सन्धिविच्छेदः"
+        title_en: "Splitting sandhi in words from the prescribed texts"
+        learning_outcomes:
+          - "चन्द्रापीडकथायाः रघुवंशस्य च पदानां सन्धिविच्छेदं कृत्वा सन्धेः नाम लिखति"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-sanskrit-classical-ch04
+    number: 4
+    title: "कारकम् उपपदविभक्तिः वाच्यं च"
+    title_en: "Karaka, upapada vibhakti and voice"
+    unit: "(क) व्याकरणम् (Grammar)"
+    topics:
+      - id: isc-11-sanskrit-classical-ch04-t01
+        title: "कारकाणि विभक्तयः च - कर्ता, कर्म, करणम्, सम्प्रदानम्, अपादानम्, अधिकरणम्; सम्बन्धः"
+        title_en: "The karakas and the case endings"
+        learning_outcomes:
+          - "वाक्ये प्रत्येकस्य पदस्य कारकं विभक्तिं च सकारणं निर्दिशति"
+      - id: isc-11-sanskrit-classical-ch04-t02
+        title: "उपपदविभक्तयः - सह, विना, नमः, स्वस्ति, अलम्, परितः, उभयतः, रुच्, क्रुध्"
+        title_en: "Upapada vibhakti: cases governed by particular words"
+        learning_outcomes:
+          - "उपपदानां योगे उचितां विभक्तिं प्रयुङ्क्ते"
+      - id: isc-11-sanskrit-classical-ch04-t03
+        title: "वाच्यम् - कर्तृवाच्यम्, कर्मवाच्यम्, भाववाच्यम्"
+        title_en: "Voice: active, passive and impersonal"
+        learning_outcomes:
+          - "कर्तृवाच्यवाक्यं कर्मवाच्ये भाववाच्ये च परिवर्तयति"
+      - id: isc-11-sanskrit-classical-ch04-t04
+        title: "अन्वितिः - कर्तृक्रियान्वितिः विशेषणविशेष्यान्वितिः च"
+        title_en: "Agreement: subject and verb, adjective and noun"
+        learning_outcomes:
+          - "कर्तुः अनुसारं क्रियापदं विशेष्यस्य अनुसारं च विशेषणं चिनोति"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-sanskrit-classical-ch05
+    number: 5
+    title: "समासाः प्रत्ययाः च"
+    title_en: "Compounds and suffixes"
+    unit: "(क) व्याकरणम् (Grammar)"
+    topics:
+      - id: isc-11-sanskrit-classical-ch05-t01
+        title: "समासाः - अव्ययीभावः, तत्पुरुषः, कर्मधारयः, द्विगुः, द्वन्द्वः, बहुव्रीहिः"
+        title_en: "Compounds: avyayibhava, tatpurusha, karmadharaya, dvigu, dvandva, bahuvrihi"
+        learning_outcomes:
+          - "समस्तपदस्य विग्रहं कृत्वा समासस्य नाम लिखति"
+          - "विग्रहवाक्यात् समस्तपदं रचयति"
+      - id: isc-11-sanskrit-classical-ch05-t02
+        title: "कृत्प्रत्ययाः - क्त्वा, ल्यप्, तुमुन्, क्त, क्तवतु, शतृ, शानच्, तव्यत्, अनीयर्"
+        title_en: "Krit suffixes: ktva, lyap, tumun, kta, ktavatu, shatri, shanach, tavyat, aniyar"
+        learning_outcomes:
+          - "प्रत्ययान्तपदस्य प्रकृतिं प्रत्ययं च पृथक् करोति"
+          - "क्त्वा-ल्यप्-तुमुन्-प्रत्ययान्तपदैः वाक्यानि रचयति"
+      - id: isc-11-sanskrit-classical-ch05-t03
+        title: "तद्धितप्रत्ययाः - मतुप्, इनि, त्व, तल्, ठक्"
+        title_en: "Taddhita suffixes: matup, ini, tva, tal, thak"
+        learning_outcomes:
+          - "तद्धितप्रत्ययान्तानि पदानि रचयति तेषाम् अर्थं च वदति"
+      - id: isc-11-sanskrit-classical-ch05-t04
+        title: "स्त्रीप्रत्ययौ - टाप्, ङीप्"
+        title_en: "Feminine suffixes: tap and nip"
+        learning_outcomes:
+          - "पुंलिङ्गशब्देभ्यः टाप्-ङीप्-प्रत्ययाभ्यां स्त्रीलिङ्गरूपाणि रचयति"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-sanskrit-classical-ch06
+    number: 6
+    title: "आङ्ग्लभाषातः संस्कृते अनुवादः"
+    title_en: "Unseen translation from English into Sanskrit"
+    unit: "(ख) आङ्ग्लभाषातः संस्कृते अदृष्टानुवादः (Unseen translation from English into Sanskrit)"
+    topics:
+      - id: isc-11-sanskrit-classical-ch06-t01
+        title: "लघुवाक्यानाम् अनुवादः - कर्ता, कर्म, क्रिया, लकाराः"
+        title_en: "Short sentences: subject, object, verb and tense"
+        learning_outcomes:
+          - "आङ्ग्लभाषायाः लघुवाक्यानि उचितलकारेण शुद्धसंस्कृते अनुवदति"
+      - id: isc-11-sanskrit-classical-ch06-t02
+        title: "अनुवादे कारक-उपपद-विभक्तीनां प्रयोगः"
+        title_en: "Choosing the right case in translation"
+        learning_outcomes:
+          - "आङ्ग्लपूर्वसर्गाणाम् अर्थानुसारं संस्कृते उचितां विभक्तिं प्रयुङ्क्ते"
+      - id: isc-11-sanskrit-classical-ch06-t03
+        title: "कृदन्त-अव्यय-प्रयोगेण वाक्ययोजनम्; कर्मवाच्ये अनुवादः"
+        title_en: "Joining sentences with participles and indeclinables; translating passive sentences"
+        learning_outcomes:
+          - "क्त्वा-ल्यप्-तुमुन्-शतृ-प्रत्ययैः वाक्यद्वयम् एकीकृत्य अनुवदति"
+          - "आङ्ग्लभाषायाः कर्मवाच्यवाक्यानि संस्कृते कर्मवाच्येन अनुवदति"
+      - id: isc-11-sanskrit-classical-ch06-t04
+        title: "निरन्तरगद्यखण्डस्य अनुवादः"
+        title_en: "Translating a continuous prose passage"
+        learning_outcomes:
+          - "लघुं निरन्तरं गद्यखण्डं शुद्धेन सरलेन च संस्कृतेन अनुवदति"
+    removed_topics: []
+    literature_texts: []
+  - id: isc-11-sanskrit-classical-ch07
+    number: 7
+    title: "चन्द्रापीडकथा"
+    title_en: "Chandrapid Katha"
+    unit: "(ग)-(घ) निर्धारितपुस्तकानि - अनुवादः लघूत्तरप्रश्नाः च (Prescribed books: translation and short-answer questions)"
+    topics:
+      - id: isc-11-sanskrit-classical-ch07-t01
+        title: "कथायाः पृष्ठभूमिः - बाणभट्टस्य कादम्बरी, तस्याः सरलं गद्यरूपं च"
+        title_en: "Background: Banabhatta's Kadambari and this simplified prose retelling"
+        learning_outcomes:
+          - "बाणभट्टस्य कादम्बर्याः चन्द्रापीडकथायाः च सम्बन्धं स्पष्टीकरोति"
+      - id: isc-11-sanskrit-classical-ch07-t02
+        title: "कथासारः - प्रमुखघटनाः क्रमशः"
+        title_en: "Summary of the story: the main events in order"
+        learning_outcomes:
+          - "कथायाः प्रमुखघटनाः क्रमशः स्वशब्दैः संस्कृतेन लिखति"
+      - id: isc-11-sanskrit-classical-ch07-t03
+        title: "पात्राणां चरित्रचित्रणम् - चन्द्रापीडः अन्यानि प्रमुखपात्राणि च"
+        title_en: "Character sketches: Chandrapida and the other main characters"
+        learning_outcomes:
+          - "चन्द्रापीडस्य चरित्रस्य वैशिष्ट्यानि कथायाः घटनाभिः सह लिखति"
+          - "अन्येषां प्रमुखपात्राणां कथायां भूमिकां वर्णयति"
+      - id: isc-11-sanskrit-classical-ch07-t04
+        title: "कथायां निहितानि जीवनमूल्यानि सन्देशः च"
+        title_en: "Values and message of the story"
+        learning_outcomes:
+          - "कथायाः सन्देशं स्वशब्दैः स्पष्टीकरोति"
+      - id: isc-11-sanskrit-classical-ch07-t05
+        title: "गद्यशैली - वर्णनानि, समासबहुला भाषा, अलङ्काराः"
+        title_en: "Prose style: descriptions, compound-rich language and figures of speech"
+        learning_outcomes:
+          - "गद्यांशे प्रयुक्तान् दीर्घसमासान् विगृह्य अर्थं वदति"
+      - id: isc-11-sanskrit-classical-ch07-t06
+        title: "गद्यांशानाम् आङ्ग्लानुवादः लघूत्तरप्रश्नाः च"
+        title_en: "Translating passages into English and answering short questions"
+        learning_outcomes:
+          - "निर्धारितं गद्यांशं शुद्धायां स्वाभाविकायां च आङ्ग्लभाषायाम् अनुवदति"
+          - "कथाविषयकाणां लघुप्रश्नानाम् उत्तराणि संक्षेपेण लिखति"
+    removed_topics: []
+    literature_texts:
+      - { title: "चन्द्रापीडकथा", author: "पं. वी. अनन्ताचार्यः", title_en: "Chandrapid Katha - Pandit V. Anantacharya" }
+  - id: isc-11-sanskrit-classical-ch08
+    number: 8
+    title: "रघुवंशम् - प्रथमः सर्गः"
+    title_en: "Raghuvamsa, Canto I"
+    unit: "(ग)-(घ) निर्धारितपुस्तकानि - अनुवादः लघूत्तरप्रश्नाः च (Prescribed books: translation and short-answer questions)"
+    topics:
+      - id: isc-11-sanskrit-classical-ch08-t01
+        title: "कालिदासः रघुवंशमहाकाव्यं च - परिचयः"
+        title_en: "Kalidasa and the Raghuvamsa as a mahakavya: introduction"
+        learning_outcomes:
+          - "कालिदासस्य कृतीनां रघुवंशस्य च संक्षिप्तं परिचयं लिखति"
+          - "महाकाव्यस्य लक्षणानि रघुवंशे परिचिनोति"
+      - id: isc-11-sanskrit-classical-ch08-t02
+        title: "मङ्गलाचरणं कवेः विनयः च"
+        title_en: "The invocation and the poet's humility"
+        learning_outcomes:
+          - "मङ्गलश्लोकस्य अर्थं तत्र प्रयुक्ताम् उपमां च स्पष्टीकरोति"
+          - "कविः स्वविनयं कथं प्रकटयति इति उदाहरणैः लिखति"
+      - id: isc-11-sanskrit-classical-ch08-t03
+        title: "रघुवंशीयराज्ञां गुणाः"
+        title_en: "The virtues of the kings of the Raghu line"
+        learning_outcomes:
+          - "रघुकुलराज्ञां गुणान् श्लोकाधारेण वर्णयति"
+      - id: isc-11-sanskrit-classical-ch08-t04
+        title: "दिलीपस्य वर्णनं तस्य शासनं च"
+        title_en: "Description of King Dilipa and his rule"
+        learning_outcomes:
+          - "दिलीपस्य शारीरिकान् नैतिकान् च गुणान् प्रजापालनं च वर्णयति"
+      - id: isc-11-sanskrit-classical-ch08-t05
+        title: "सन्तानचिन्ता वसिष्ठाश्रमं प्रति यात्रा च"
+        title_en: "Dilipa and Sudakshina's wish for a son and their journey to Vasishtha's hermitage"
+        learning_outcomes:
+          - "दिलीपसुदक्षिणयोः यात्रायाः मार्गस्य आश्रमस्य च वर्णनं स्वशब्दैः लिखति"
+      - id: isc-11-sanskrit-classical-ch08-t06
+        title: "वसिष्ठस्य उपदेशः - सुरभेः शापः नन्दिन्याः सेवा च"
+        title_en: "Vasishtha's counsel: Surabhi's curse and the service of Nandini"
+        learning_outcomes:
+          - "सुरभिः दिलीपं कस्मात् कारणात् शशाप इति स्पष्टीकरोति"
+          - "वसिष्ठेन निर्दिष्टं शापनिवारणस्य उपायं लिखति"
+      - id: isc-11-sanskrit-classical-ch08-t07
+        title: "अन्वयः, आङ्ग्लानुवादः, छन्दः अलङ्काराः च"
+        title_en: "Prose order (anvaya), English translation, metre and figures of speech"
+        learning_outcomes:
+          - "निर्धारितस्य श्लोकस्य अन्वयं कृत्वा आङ्ग्लभाषायाम् अनुवदति"
+          - "अनुष्टुप्छन्दसः लक्षणं श्लोकेषु उपमादीन् अलङ्कारान् च परिचिनोति"
+    removed_topics:
+      - "Only Canto I of the Raghuvamsa is prescribed; other cantos are not examined"
+    literature_texts:
+      - { title: "रघुवंशम् (प्रथमः सर्गः)", author: "कालिदासः", title_en: "Raghuvamsa, Canto I - Kalidasa (text with English translation and notes by M.R. Kale)" }
+removed_topics: []
