@@ -1,0 +1,462 @@
+# CBSE Class 10 Sanskrit Communicative (119), 2026-27. Sections, marks, grammar items and the eleven prescribed lessons as
+# printed in the CBSE 2026-27 Sanskrit (Sampreshanatmakam) syllabus. Textbooks: Manika Part 2 (textbook) and Manika
+# Abhyasapustakam Part 2 (workbook), both published by CBSE. Lessons 10 and 11 are for internal assessment only
+# (board_assessed: false). CBSE names lessons only, not their sources or authors. No text is reproduced (CONTEXT §8).
+subject_id: cbse-10-sanskrit-communicative
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-x-sanskrit-communicative-2026-27
+  - cbse-secondary-curriculum-2026-27
+  - cbse-two-board-exams-x-2026
+exam_notes: >-
+  वार्षिकं मूल्याङ्कनम् 80 अङ्काः (3 hours) + आन्तरिकमूल्याङ्कनम् 20 (periodic test 5, multiple assessment 5, portfolio 5,
+  language enrichment activities - listening/speaking and writing - 5). Section A unseen passage 10 (one prose passage of 80-100
+  words: one-word answers 2x1, full-sentence answers 2x2, title 1, language tasks 3x1 MCQ). Section B creative writing 15 (formal
+  or informal letter by filling blanks from a word box 10x1/2; picture description or paragraph 5x1; dialogue or story completion
+  from a word box 10x1/2). Section C applied grammar 25 (sandhi 4, samasa 4, pratyaya 4, vachya in lat lakara 3, time in words 3,
+  avyaya 4, error correction 3). Section D textbook comprehension 30 (prose, verse and drama extracts 5 each, question formation
+  5, anvaya or bhavartha with blanks 2, contextual meaning MCQ 4, lesson-based story completion 4). Grammar items should be chosen
+  from Manika Part 2 where possible, otherwise from the Manika workbook. Two board exams for Class 10: February main (compulsory)
+  and an optional May second exam for improvement in up to three of Science, Mathematics, Social Science and languages.
+units:
+  - name: 'क भागः: अपठितावबोधनम्'
+    marks: 10
+  - name: 'ख भागः: रचनात्मककार्यम्'
+    marks: 15
+  - name: 'ग भागः: अनुप्रयुक्तव्याकरणम्'
+    marks: 25
+  - name: 'घ भागः: पठितावबोधनम् (मणिका भाग 2)'
+    marks: 30
+chapters:
+  - id: cbse-10-sanskrit-communicative-ch01
+    number: 1
+    title: अपठितावबोधनम्
+    title_en: Unseen passage comprehension
+    unit: 'क भागः: अपठितावबोधनम्'
+    topics:
+      - id: cbse-10-sanskrit-communicative-ch01-t01
+        title: अपठितः गद्यांशः (80-100 शब्दाः, सरलकथा)
+        title_en: Unseen prose passage (80-100 words, simple story)
+        learning_outcomes:
+          - सरलकथां पठित्वा एकपदेन पूर्णवाक्येन च उत्तराणि लेखितुं शक्नुवन्ति
+          - गद्यांशस्य उचितं शीर्षकं लेखितुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch01-t02
+        title: गद्यांशाधारितं भाषिककार्यम्
+        title_en: Language tasks on the passage
+        learning_outcomes:
+          - वाक्ये कर्तृ-क्रियापदचयनं, विशेषण-विशेष्यचयनं, पर्याय-विलोमपदचयनं च कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-sanskrit-communicative-ch02
+    number: 2
+    title: रचनात्मककार्यम्
+    title_en: Creative writing
+    unit: 'ख भागः: रचनात्मककार्यम्'
+    topics:
+      - id: cbse-10-sanskrit-communicative-ch02-t01
+        title: सङ्केताधारितम् औपचारिकम् अनौपचारिकं वा पत्रलेखनम्
+        title_en: Formal or informal letter from cues (fill in the blanks)
+        learning_outcomes:
+          - मञ्जूषायाः सहायतया रिक्तस्थानपूर्तिमाध्यमेन पूर्णं पत्रं लेखितुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch02-t02
+        title: चित्राधारितं वर्णनम् अथवा अनुच्छेदलेखनम्
+        title_en: Picture description or paragraph writing
+        learning_outcomes:
+          - मञ्जूषायाः सहायतया चित्रं पञ्चभिः वाक्यैः वर्णयितुं अनुच्छेदं वा लेखितुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch02-t03
+        title: संवादपूर्तिः कथापूर्तिः वा
+        title_en: Dialogue or story completion
+        learning_outcomes:
+          - मञ्जूषायाः सहायतया रिक्तस्थानानि पूरयित्वा संवादं कथां वा पूर्णं कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-sanskrit-communicative-ch03
+    number: 3
+    title: सन्धिः समासः प्रत्ययाः च
+    title_en: Sandhi, compounds and suffixes
+    unit: 'ग भागः: अनुप्रयुक्तव्याकरणम्'
+    topics:
+      - id: cbse-10-sanskrit-communicative-ch03-t01
+        title: 'सन्धिः: स्वरसन्धिः (वृद्धिः, यण्, अयादिः, पूर्वरूपम्), व्यञ्जनसन्धिः, विसर्गसन्धिः'
+        title_en: 'Sandhi: vowel, consonant and visarga'
+        learning_outcomes:
+          - वृद्धि-यण्-अयादि-पूर्वरूपसन्धीनां सन्धिं विच्छेदं च कर्तुं शक्नुवन्ति
+          - >-
+            परसवर्णं, तुगागमं, वर्गीयप्रथमवर्णस्य तृतीयवर्णे परिवर्तनं, विसर्गस्य उत्व-रत्व-लोप-स्/श्/ष् परिवर्तनं च अवगन्तुं
+            शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch03-t02
+        title: 'समासः: तत्पुरुषः (विभक्तिः, नञ्, उपपदः), द्वन्द्वः, अव्ययीभावः (अनु, उप, सह, निर्, प्रति, यथा)'
+        title_en: 'Compounds: tatpurusha, dvandva, avyayibhava'
+        learning_outcomes:
+          - वाक्येषु समस्तपदानां विग्रहं विग्रहपदानां समासं च कर्तुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch03-t03
+        title: 'प्रत्ययाः: कृत् (तव्यत्, अनीयर्), तद्धित (मतुप्, ठक्, त्व, तल्), स्त्री (टाप्, ङीप्)'
+        title_en: 'Suffixes: krit, taddhita and feminine'
+        learning_outcomes:
+          - प्रकृति-प्रत्ययविभागं संयोजनं च कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-sanskrit-communicative-ch04
+    number: 4
+    title: वाच्यं समयः अव्ययानि अशुद्धिसंशोधनं च
+    title_en: Voice, time, indeclinables and error correction
+    unit: 'ग भागः: अनुप्रयुक्तव्याकरणम्'
+    topics:
+      - id: cbse-10-sanskrit-communicative-ch04-t01
+        title: वाच्यपरिवर्तनम् (केवलं लट्लकारे कर्तृ-कर्म-क्रिया)
+        title_en: Change of voice (present tense only)
+        learning_outcomes:
+          - लट्लकारे कर्तृवाच्यात् कर्मवाच्ये भाववाच्ये च परिवर्तनं कर्तुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch04-t02
+        title: समयलेखनम् (सामान्य-सपाद-सार्ध-पादोन)
+        title_en: Telling time in words
+        learning_outcomes:
+          - अङ्कानां स्थाने संस्कृतशब्दैः समयं लेखितुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch04-t03
+        title: अव्ययपदानि
+        title_en: Indeclinables (avyaya)
+        learning_outcomes:
+          - >-
+            इव, उच्चैः, एव, नूनम्, इतस्ततः, विना, सहसा, वृथा, शनैः, यावत्-तावत्, यथा-तथा, यदि-तर्हि इत्यादीनि अव्ययानि वाक्येषु
+            प्रयोक्तुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch04-t04
+        title: अशुद्धिसंशोधनम् (वचन-लिङ्ग-पुरुष-लकारदृष्ट्या)
+        title_en: Error correction
+        learning_outcomes:
+          - वाक्येषु वचन-लिङ्ग-पुरुष-लकारसम्बद्धाः अशुद्धीः अभिज्ञाय संशोधयितुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-sanskrit-communicative-ch05
+    number: 5
+    title: पठितावबोधनकौशलानि
+    title_en: Textbook comprehension skills
+    unit: 'घ भागः: पठितावबोधनम् (मणिका भाग 2)'
+    topics:
+      - id: cbse-10-sanskrit-communicative-ch05-t01
+        title: गद्यांश-पद्यांश-नाट्यांशावबोधनम्
+        title_en: Comprehension of prose, verse and drama extracts
+        learning_outcomes:
+          - पठितांशं पठित्वा एकपदेन पूर्णवाक्येन च उत्तराणि लेखितुं, भाषिककार्यं च कर्तुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch05-t02
+        title: रेखाङ्कितपदानि अधिकृत्य प्रश्ननिर्माणम्
+        title_en: Question formation on underlined words
+        learning_outcomes:
+          - रेखाङ्कितपदानां स्थाने उचितप्रश्नवाचकपदानि प्रयुज्य प्रश्ननिर्माणं कर्तुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch05-t03
+        title: श्लोकस्य अन्वयः अथवा भावार्थः
+        title_en: Prose order (anvaya) or meaning of a verse
+        learning_outcomes:
+          - मञ्जूषायाः सहायतया श्लोकस्य अन्वयं भावार्थं वा पूरयितुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch05-t04
+        title: प्रसङ्गानुसारम् अर्थचयनम्
+        title_en: Choosing contextual meanings
+        learning_outcomes:
+          - पाठम् आधृत्य पदानां प्रसङ्गानुसारम् अर्थं चेतुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch05-t05
+        title: पाठाधारित-कथापूर्तिः
+        title_en: Lesson-based story completion
+        learning_outcomes:
+          - मञ्जूषापदसहायतया पाठाधारितां कथां पूरयितुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-sanskrit-communicative-ch06
+    number: 6
+    title: वाङ्मयं तपः
+    title_en: Vangmayam Tapah (Speech as austerity)
+    unit: 'घ भागः: पठितावबोधनम् (मणिका भाग 2)'
+    topics:
+      - id: cbse-10-sanskrit-communicative-ch06-t01
+        title: पाठपरिचयः सारः च
+        title_en: Introduction and summary
+        learning_outcomes:
+          - पाठस्य विषयवस्तु मुख्यभावं च संस्कृतेन सरलवाक्यैः वक्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि स्पष्टीकर्तुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch06-t02
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch06-t03
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: वाङ्मयं तपः
+        title_en: Vangmayam Tapah (Speech as austerity)
+  - id: cbse-10-sanskrit-communicative-ch07
+    number: 7
+    title: नास्ति त्यागसमं सुखम्
+    title_en: Nasti Tyagasamam Sukham (No joy equals renunciation)
+    unit: 'घ भागः: पठितावबोधनम् (मणिका भाग 2)'
+    topics:
+      - id: cbse-10-sanskrit-communicative-ch07-t01
+        title: पाठपरिचयः सारः च
+        title_en: Introduction and summary
+        learning_outcomes:
+          - पाठस्य विषयवस्तु मुख्यभावं च संस्कृतेन सरलवाक्यैः वक्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि स्पष्टीकर्तुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch07-t02
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch07-t03
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: नास्ति त्यागसमं सुखम्
+        title_en: Nasti Tyagasamam Sukham (No joy equals renunciation)
+  - id: cbse-10-sanskrit-communicative-ch08
+    number: 8
+    title: रमणीया हि सृष्टिः एषा
+    title_en: Ramaniya Hi Srishtih Esha (This creation is lovely)
+    unit: 'घ भागः: पठितावबोधनम् (मणिका भाग 2)'
+    topics:
+      - id: cbse-10-sanskrit-communicative-ch08-t01
+        title: पाठपरिचयः सारः च
+        title_en: Introduction and summary
+        learning_outcomes:
+          - पाठस्य विषयवस्तु मुख्यभावं च संस्कृतेन सरलवाक्यैः वक्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि स्पष्टीकर्तुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch08-t02
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch08-t03
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: रमणीया हि सृष्टिः एषा
+        title_en: Ramaniya Hi Srishtih Esha (This creation is lovely)
+  - id: cbse-10-sanskrit-communicative-ch09
+    number: 9
+    title: आज्ञा गुरूणां हि अविचारणीया
+    title_en: Ajna Gurunam Hi Avicharaniya (The command of elders is beyond question)
+    unit: 'घ भागः: पठितावबोधनम् (मणिका भाग 2)'
+    topics:
+      - id: cbse-10-sanskrit-communicative-ch09-t01
+        title: पाठपरिचयः सारः च
+        title_en: Introduction and summary
+        learning_outcomes:
+          - पाठस्य विषयवस्तु मुख्यभावं च संस्कृतेन सरलवाक्यैः वक्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि स्पष्टीकर्तुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch09-t02
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch09-t03
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: आज्ञा गुरूणां हि अविचारणीया
+        title_en: Ajna Gurunam Hi Avicharaniya (The command of elders is beyond question)
+  - id: cbse-10-sanskrit-communicative-ch10
+    number: 10
+    title: अभ्यासवशगं मनः
+    title_en: Abhyasavashagam Manah (The mind is mastered by practice)
+    unit: 'घ भागः: पठितावबोधनम् (मणिका भाग 2)'
+    topics:
+      - id: cbse-10-sanskrit-communicative-ch10-t01
+        title: पाठपरिचयः सारः च
+        title_en: Introduction and summary
+        learning_outcomes:
+          - पाठस्य विषयवस्तु मुख्यभावं च संस्कृतेन सरलवाक्यैः वक्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि स्पष्टीकर्तुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch10-t02
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch10-t03
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: अभ्यासवशगं मनः
+        title_en: Abhyasavashagam Manah (The mind is mastered by practice)
+  - id: cbse-10-sanskrit-communicative-ch11
+    number: 11
+    title: राष्ट्रं संरक्ष्यमेव हि
+    title_en: Rashtram Samrakshyameva Hi (The nation must be protected)
+    unit: 'घ भागः: पठितावबोधनम् (मणिका भाग 2)'
+    topics:
+      - id: cbse-10-sanskrit-communicative-ch11-t01
+        title: पाठपरिचयः सारः च
+        title_en: Introduction and summary
+        learning_outcomes:
+          - पाठस्य विषयवस्तु मुख्यभावं च संस्कृतेन सरलवाक्यैः वक्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि स्पष्टीकर्तुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch11-t02
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch11-t03
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: राष्ट्रं संरक्ष्यमेव हि
+        title_en: Rashtram Samrakshyameva Hi (The nation must be protected)
+  - id: cbse-10-sanskrit-communicative-ch12
+    number: 12
+    title: साधुवृत्तिं समाचरेत्
+    title_en: Sadhuvrittim Samacharet (Practise good conduct)
+    unit: 'घ भागः: पठितावबोधनम् (मणिका भाग 2)'
+    topics:
+      - id: cbse-10-sanskrit-communicative-ch12-t01
+        title: पाठपरिचयः सारः च
+        title_en: Introduction and summary
+        learning_outcomes:
+          - पाठस्य विषयवस्तु मुख्यभावं च संस्कृतेन सरलवाक्यैः वक्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि स्पष्टीकर्तुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch12-t02
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch12-t03
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: साधुवृत्तिं समाचरेत्
+        title_en: Sadhuvrittim Samacharet (Practise good conduct)
+  - id: cbse-10-sanskrit-communicative-ch13
+    number: 13
+    title: तिरुक्कुरल्-सूक्ति-सौरभम्
+    title_en: Tirukkural-Sukti-Saurabham (Fragrance of Tirukkural maxims)
+    unit: 'घ भागः: पठितावबोधनम् (मणिका भाग 2)'
+    topics:
+      - id: cbse-10-sanskrit-communicative-ch13-t01
+        title: पाठपरिचयः सारः च
+        title_en: Introduction and summary
+        learning_outcomes:
+          - पाठस्य विषयवस्तु मुख्यभावं च संस्कृतेन सरलवाक्यैः वक्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि स्पष्टीकर्तुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch13-t02
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch13-t03
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: तिरुक्कुरल्-सूक्ति-सौरभम्
+        title_en: Tirukkural-Sukti-Saurabham (Fragrance of Tirukkural maxims)
+  - id: cbse-10-sanskrit-communicative-ch14
+    number: 14
+    title: सुस्वागतं भो! अरुणाचलेऽस्मिन्
+    title_en: Susvagatam Bho! Arunachale-smin (Welcome to Arunachal)
+    unit: 'घ भागः: पठितावबोधनम् (मणिका भाग 2)'
+    topics:
+      - id: cbse-10-sanskrit-communicative-ch14-t01
+        title: पाठपरिचयः सारः च
+        title_en: Introduction and summary
+        learning_outcomes:
+          - पाठस्य विषयवस्तु मुख्यभावं च संस्कृतेन सरलवाक्यैः वक्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि स्पष्टीकर्तुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch14-t02
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch14-t03
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: सुस्वागतं भो! अरुणाचलेऽस्मिन्
+        title_en: Susvagatam Bho! Arunachale-smin (Welcome to Arunachal)
+  - id: cbse-10-sanskrit-communicative-ch15
+    number: 15
+    title: कालोऽहम्
+    title_en: Kalo-ham (I am Time)
+    unit: 'घ भागः: पठितावबोधनम् (मणिका भाग 2)'
+    topics:
+      - id: cbse-10-sanskrit-communicative-ch15-t01
+        title: पाठपरिचयः सारः च
+        title_en: Introduction and summary
+        learning_outcomes:
+          - पाठस्य विषयवस्तु मुख्यभावं च संस्कृतेन सरलवाक्यैः वक्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि स्पष्टीकर्तुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch15-t02
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch15-t03
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: कालोऽहम्
+        title_en: Kalo-ham (I am Time)
+    board_assessed: false
+  - id: cbse-10-sanskrit-communicative-ch16
+    number: 16
+    title: किं किम् उपादेयम्
+    title_en: Kim Kim Upadeyam (What is worth adopting)
+    unit: 'घ भागः: पठितावबोधनम् (मणिका भाग 2)'
+    topics:
+      - id: cbse-10-sanskrit-communicative-ch16-t01
+        title: पाठपरिचयः सारः च
+        title_en: Introduction and summary
+        learning_outcomes:
+          - पाठस्य विषयवस्तु मुख्यभावं च संस्कृतेन सरलवाक्यैः वक्तुं शक्नुवन्ति
+          - पाठस्य सन्देशं हिन्दीभाषायाम् आङ्ग्लभाषायां वा अपि स्पष्टीकर्तुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch16-t02
+        title: भाषिककार्यम्
+        title_en: Language work on the lesson
+        learning_outcomes:
+          - पाठात् कर्तृ-क्रियापदानि, विशेषण-विशेष्यौ, पर्याय-विलोमपदानि च चेतुं शक्नुवन्ति
+      - id: cbse-10-sanskrit-communicative-ch16-t03
+        title: प्रश्नोत्तराणि अभ्यासश्च
+        title_en: Question practice
+        learning_outcomes:
+          - एकपदेन पूर्णवाक्येन च प्रश्नानाम् उत्तराणि संस्कृतेन लेखितुं शक्नुवन्ति
+          - रेखाङ्कितपदानि आधृत्य प्रश्ननिर्माणं कर्तुं शक्नुवन्ति
+    removed_topics: []
+    literature_texts:
+      - title: किं किम् उपादेयम्
+        title_en: Kim Kim Upadeyam (What is worth adopting)
+    board_assessed: false
+removed_topics: []

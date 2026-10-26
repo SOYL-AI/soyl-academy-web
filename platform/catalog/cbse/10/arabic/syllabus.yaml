@@ -1,0 +1,210 @@
+# CBSE Class 10 Arabic (016), 2026-27. Sections, marks, writing tasks, grammar items and the prescribed lesson numbers as
+# printed in the CBSE 2026-27 Arabic Class IX-X syllabus (Class X page and examination structure). Prescribed textbook:
+# Minhaj al-Ta'lim al-Thanawi (Class X), CBSE / Shiksha Kendra. CBSE lists the prescribed lessons by NUMBER only (prose
+# 1-3, 5-7, 9-13, 15-17, 19-20; poems 4, 8, 14, 18), so the two textbook chapters carry placeholder topics until the book's
+# contents page is supplied (see the M1 languages handoff). No text is reproduced (CONTEXT §8).
+subject_id: cbse-10-arabic
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-x-arabic-2026-27
+  - cbse-secondary-curriculum-2026-27
+  - cbse-two-board-exams-x-2026
+exam_notes: >-
+  Theory 80 marks (3 hours) + internal assessment 20 (handwriting 5, reading a short passage without diacritical marks 5,
+  Arabic speaking 5, oral applied grammar 5). Section A Reading 10: three unseen passages of simple Arabic (about 80 words),
+  attempt any two, ten 1-mark MCQs. Section B Writing 10: a short paragraph of about 50 words on a given topic or a letter
+  in Arabic 4; use of words in sentences 2 (2 of 4); fill in the blanks 2 (2 of 4); correction of sentences 2 (2 of 4).
+  Section C Grammar and translation 20: define and illustrate a grammar topic 5 (1 of 3); choose the correct answer 5 (5 of
+  8); translate Arabic sentences into English, Hindi or Urdu 5 (5 of 8); translate English sentences into Arabic 5 (5 of
+  8). Section D Literature 40: prose - translation of passages of about 50 words 2x5 (2 of 3), questions on a given passage
+  4x2 (4 of 6), MCQs 4x1 (4 of 6); poetry - explanation of four given verses with reference to the context 15, central idea
+  of one poem 3 (1 of 3). Two board exams for Class 10: February main (compulsory) and an optional May second exam for
+  improvement in up to three of Science, Mathematics, Social Science and languages.
+units:
+  - name: "القسم أ: القراءة"
+    marks: 10
+  - name: "القسم ب: الكتابة"
+    marks: 10
+  - name: "القسم ج: القواعد والترجمة"
+    marks: 20
+  - name: "القسم د: الأدب (النثر والشعر)"
+    marks: 40
+chapters:
+  - id: cbse-10-arabic-ch01
+    number: 1
+    title: فهم المقروء
+    title_en: Reading comprehension (unseen passages)
+    unit: "القسم أ: القراءة"
+    topics:
+      - id: cbse-10-arabic-ch01-t01
+        title: قطعة غير مقروءة باللغة العربية البسيطة (حوالي ٨٠ كلمة)
+        title_en: Unseen passage in simple Arabic (about 80 words)
+        learning_outcomes:
+          - Read a short unseen Arabic passage and answer multiple-choice questions on its content
+          - Work out the meaning of unfamiliar words from context
+      - id: cbse-10-arabic-ch01-t02
+        title: الفكرة الرئيسية والتفاصيل
+        title_en: Main idea and specific details
+        learning_outcomes:
+          - Identify the main idea of a passage and locate specific information in it
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-arabic-ch02
+    number: 2
+    title: الكتابة
+    title_en: Writing
+    unit: "القسم ب: الكتابة"
+    topics:
+      - id: cbse-10-arabic-ch02-t01
+        title: فقرة قصيرة أو طلب أو رسالة (حوالي ٥٠ كلمة)
+        title_en: Short paragraph (about 50 words), application or letter
+        learning_outcomes:
+          - Write a short paragraph of about 50 words in Arabic on a familiar topic
+          - Write a simple application or letter in Arabic using the correct format
+      - id: cbse-10-arabic-ch02-t02
+        title: استعمال الكلمات في الجمل
+        title_en: Use of words in sentences
+        learning_outcomes:
+          - Use given Arabic words correctly in meaningful sentences
+      - id: cbse-10-arabic-ch02-t03
+        title: ملء الفراغات
+        title_en: Fill in the blanks
+        learning_outcomes:
+          - Complete sentences with the correct word form
+      - id: cbse-10-arabic-ch02-t04
+        title: تصحيح الجمل
+        title_en: Correction of sentences
+        learning_outcomes:
+          - Find and correct grammatical errors in Arabic sentences
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-arabic-ch03
+    number: 3
+    title: الفعل والفاعل والمفعول به، والمرفوعات
+    title_en: Verb, subject and object; the nominative cases (marfu'at)
+    unit: "القسم ج: القواعد والترجمة"
+    topics:
+      - id: cbse-10-arabic-ch03-t01
+        title: الفعل والفاعل والمفعول به
+        title_en: Fi'l, fa'il and maf'ul bihi
+        learning_outcomes:
+          - Identify the verb, its subject and its object in a sentence and give their case endings
+      - id: cbse-10-arabic-ch03-t02
+        title: "المرفوعات: المبتدأ، الخبر، الفاعل، نائب الفاعل"
+        title_en: "Nominatives: mubtada, khabar, fa'il, na'ib al-fa'il"
+        learning_outcomes:
+          - Define and illustrate the nominative positions and mark them correctly
+      - id: cbse-10-arabic-ch03-t03
+        title: اسم كان وأخواتها وخبر إنّ وأخواتها
+        title_en: Subject of kana and its sisters; predicate of inna and its sisters
+        learning_outcomes:
+          - Explain the effect of kana and inna (and their sisters) on the nominal sentence
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-arabic-ch04
+    number: 4
+    title: المنصوبات
+    title_en: The accusative cases (mansubat)
+    unit: "القسم ج: القواعد والترجمة"
+    topics:
+      - id: cbse-10-arabic-ch04-t01
+        title: المفعول والحال
+        title_en: Object and circumstantial accusative (hal)
+        learning_outcomes:
+          - Identify maf'ul and hal in sentences and give the accusative ending
+      - id: cbse-10-arabic-ch04-t02
+        title: خبر كان وأخواتها واسم إنّ وأخواتها
+        title_en: Predicate of kana and its sisters; subject of inna and its sisters
+        learning_outcomes:
+          - Mark the predicate of kana and the subject of inna correctly in the accusative
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-arabic-ch05
+    number: 5
+    title: الضمائر والمثنى والجموع
+    title_en: Pronouns, the dual and plurals
+    unit: "القسم ج: القواعد والترجمة"
+    topics:
+      - id: cbse-10-arabic-ch05-t01
+        title: الضمائر المتصلة والمنفصلة
+        title_en: Attached and detached pronouns
+        learning_outcomes:
+          - Use attached and detached pronouns correctly for person, number and gender
+      - id: cbse-10-arabic-ch05-t02
+        title: المثنى
+        title_en: The dual
+        learning_outcomes:
+          - Form the dual of nouns in the nominative, accusative and genitive
+      - id: cbse-10-arabic-ch05-t03
+        title: جمع السالم وجمع المكسّر
+        title_en: Sound and broken plurals
+        learning_outcomes:
+          - Form sound masculine and feminine plurals and recognise common broken plurals
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-arabic-ch06
+    number: 6
+    title: حروف النواصب والجوازم والعدد
+    title_en: Particles of nasb and jazm; numbers 1-10
+    unit: "القسم ج: القواعد والترجمة"
+    topics:
+      - id: cbse-10-arabic-ch06-t01
+        title: حروف النواصب أو الجوازم
+        title_en: Particles that put the verb in the subjunctive or jussive
+        learning_outcomes:
+          - Identify nawasib and jawazim and show their effect on the imperfect verb
+      - id: cbse-10-arabic-ch06-t02
+        title: الأعداد من ١ إلى ١٠ مع المعدود
+        title_en: Numbers 1-10 with the counted noun
+        learning_outcomes:
+          - Use the numbers one to ten with the counted noun, applying gender agreement rules
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-arabic-ch07
+    number: 7
+    title: الترجمة
+    title_en: Translation
+    unit: "القسم ج: القواعد والترجمة"
+    topics:
+      - id: cbse-10-arabic-ch07-t01
+        title: الترجمة من العربية إلى الإنجليزية أو الهندية أو الأردية
+        title_en: Translating Arabic sentences into English, Hindi or Urdu
+        learning_outcomes:
+          - Translate simple Arabic sentences accurately into English, Hindi or Urdu
+      - id: cbse-10-arabic-ch07-t02
+        title: الترجمة من الإنجليزية إلى العربية
+        title_en: Translating English sentences into Arabic
+        learning_outcomes:
+          - Translate simple English sentences into grammatically correct Arabic
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-arabic-ch08
+    number: 8
+    title: "الكتاب المقرر: منهاج التعليم الثانوي (النثر)"
+    title_en: "Prescribed textbook: Minhaj al-Ta'lim al-Thanawi, Class X - prose"
+    unit: "القسم د: الأدب (النثر والشعر)"
+    topics:
+      - id: cbse-10-arabic-ch08-t01
+        title: "دروس النثر ١-٣، ٥-٧، ٩-١٣، ١٥-١٧، ١٩-٢٠ (قائمة العناوين مطلوبة)"
+        title_en: "Prose lessons 1-3, 5-7, 9-13, 15-17 and 19-20 (lesson list pending textbook contents page)"
+        learning_outcomes:
+          - Translate prose passages of about 50 words from the prescribed lessons
+          - Answer comprehension and multiple-choice questions on the prescribed prose lessons
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-arabic-ch09
+    number: 9
+    title: "الكتاب المقرر: منهاج التعليم الثانوي (الشعر)"
+    title_en: "Prescribed textbook: Minhaj al-Ta'lim al-Thanawi, Class X - poetry"
+    unit: "القسم د: الأدب (النثر والشعر)"
+    topics:
+      - id: cbse-10-arabic-ch09-t01
+        title: "القصائد ٤، ٨، ١٤، ١٨ (قائمة العناوين مطلوبة)"
+        title_en: "Poems 4, 8, 14 and 18 (lesson list pending textbook contents page)"
+        learning_outcomes:
+          - Explain prescribed verses with reference to the context
+          - State the central idea of a prescribed poem
+    removed_topics: []
+    literature_texts: []
+removed_topics: []

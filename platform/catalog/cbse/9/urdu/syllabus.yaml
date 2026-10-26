@@ -1,0 +1,301 @@
+# CBSE Class 9 Urdu, 2026-27 (new NCF-SE scheme; one subject covering Urdu as R1 and as R2). Learning standards, marks and
+# question design as printed in the CBSE 2026-27 Urdu Grade 9 document (20 pages, Urdu): "Urdu as R1" (pp. 9-16) and "Urdu as
+# R2" (pp. 17-20). Both levels use the NCERT textbook Jamna, with Urdu Qawaid aur Insha (NCERT) as the suggested grammar book.
+# CBSE does not list the lessons of Jamna, so the textbook chapter carries placeholder topics until the NCERT contents page is
+# supplied. Topics that apply to only one level say so in title_en. Literature: titles and authors only (CONTEXT §8).
+subject_id: cbse-9-urdu
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-ix-urdu-2026-27
+  - cbse-secondary-curriculum-2026-27
+  - ncert-textbooks-secondary
+exam_notes: >-
+  School annual exam (no board exam in Class 9): 80 marks (3 hours) + internal assessment 20, for both R1 and R2.
+  Section A Reading 20: unseen prose passage (R1 150-200 words, R2 100-125 words) 5x1, unseen poetic extract (R1 two
+  stanzas or five to seven couplets, R2 two stanzas or five couplets) 5x1, seen prose extract 5x1 and seen poetic
+  extract 5x1 from Jamna, each with MCQ, one-word and one-sentence items. Section B Writing 25: essay 8 (R1 150-200
+  words, one of three topics; R2 100-150 words, one of four); application or letter 5; R1 advertisement (50-60 words) or
+  eyewitness account (80-100 words) 4, R2 interview questions (eight) or a notice/announcement (about 50 words) 4; notes
+  of about 100 words on prose lessons and their writers 4 and on poems and poets 4. Section C Grammar 20: R1 - nouns,
+  pronouns and adjectives 6, verbs 4, figures of speech 6, idioms and sayings 4; R2 - number, gender, synonyms and
+  antonyms, prefixes and suffixes 6, parts of speech and tenses 6, simile, allusion and antithesis 4, idioms and sayings
+  4. Section D Literature 15: prose 6 and poetry 6 (short answers with choice; may be value based) and literary genres 3
+  (R1 afsana, maktoob, mazmoon, ghazal, nazm, masnavi, qita; R2 afsana, ghazal, nazm). R3 Urdu is school-assessed only.
+units:
+  - name: 'حصہ الف: عبارت فہمی اور شعر فہمی'
+    marks: 20
+  - name: 'حصہ ب: تحریری مہارت'
+    marks: 25
+  - name: 'حصہ ج: عملی قواعد'
+    marks: 20
+  - name: 'حصہ د: ادب'
+    marks: 15
+chapters:
+  - id: cbse-9-urdu-ch01
+    number: 1
+    title: غیر درسی اقتباسات
+    title_en: Unseen passages (prose and poetry)
+    unit: 'حصہ الف: عبارت فہمی اور شعر فہمی'
+    topics:
+      - id: cbse-9-urdu-ch01-t01
+        title: غیر درسی نثری اقتباس
+        title_en: Unseen prose passage (R1 150-200 words; R2 100-125 words)
+        learning_outcomes:
+          - Read an unseen Urdu prose passage and answer multiple-choice, one-word and one-sentence questions on it
+          - Identify the central idea of the passage and the meaning of words in context
+      - id: cbse-9-urdu-ch01-t02
+        title: غیر درسی شعری اقتباس
+        title_en: Unseen poetic extract (two stanzas or five to seven couplets)
+        learning_outcomes:
+          - Explain the meaning and message of unseen verse and answer one-word and one-sentence questions on it
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-urdu-ch02
+    number: 2
+    title: درسی اقتباسات
+    title_en: Seen passages from the textbook
+    unit: 'حصہ الف: عبارت فہمی اور شعر فہمی'
+    topics:
+      - id: cbse-9-urdu-ch02-t01
+        title: درسی نثری اقتباس
+        title_en: Seen prose extract from Jamna
+        learning_outcomes:
+          - Locate a prose extract in its lesson and answer questions on its content, vocabulary and context
+      - id: cbse-9-urdu-ch02-t02
+        title: درسی شعری اقتباس
+        title_en: Seen poetic extract from Jamna
+        learning_outcomes:
+          - Explain couplets or stanzas from a prescribed poem with reference to the poem and the poet
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-urdu-ch03
+    number: 3
+    title: مضمون نگاری
+    title_en: Essay writing
+    unit: 'حصہ ب: تحریری مہارت'
+    topics:
+      - id: cbse-9-urdu-ch03-t01
+        title: مضمون کی ترتیب اور خاکہ
+        title_en: Planning an essay
+        learning_outcomes:
+          - Plan an essay with an introduction, logically ordered body paragraphs and a conclusion
+      - id: cbse-9-urdu-ch03-t02
+        title: سماجی اور عصری موضوعات پر مضمون
+        title_en: Essays on social and current topics
+        learning_outcomes:
+          - >-
+            Write an essay on topics such as the environment, unemployment, computers and the internet, artificial
+            intelligence, women's education, population growth or national unity, giving reasons and examples
+      - id: cbse-9-urdu-ch03-t03
+        title: بیانیہ اور شخصی موضوعات پر مضمون
+        title_en: Essays on festivals, personalities, travel and heritage
+        learning_outcomes:
+          - >-
+            Write an essay on a festival, a favourite personality, a school picnic, a journey, Indian culture or a
+            historic building
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-urdu-ch04
+    number: 4
+    title: 'مکتوب: درخواست اور خط'
+    title_en: Applications and letters
+    unit: 'حصہ ب: تحریری مہارت'
+    topics:
+      - id: cbse-9-urdu-ch04-t01
+        title: 'درخواست: شکایت نامہ، دعوت نامہ، اجازت نامہ، فیس معافی، چھٹی'
+        title_en: 'Applications: complaint, invitation, permission, fee concession, leave, school leaving certificate'
+        learning_outcomes:
+          - Write an application in the correct format with subject, salutation, request and closing
+      - id: cbse-9-urdu-ch04-t02
+        title: 'خط: ذاتی، دفتری، کاروباری (رسمی اور غیر رسمی)'
+        title_en: 'Letters: personal, official and business (formal and informal)'
+        learning_outcomes:
+          - Write formal and informal letters to relatives, friends and offices with a suitable tone and layout
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-urdu-ch05
+    number: 5
+    title: اشتہار، آنکھوں دیکھا حال، انٹرویو اور اعلان
+    title_en: Advertisement, eyewitness account, interview and notice
+    unit: 'حصہ ب: تحریری مہارت'
+    topics:
+      - id: cbse-9-urdu-ch05-t01
+        title: اشتہار نویسی
+        title_en: Advertisement writing, 50-60 words (R1)
+        learning_outcomes:
+          - Prepare an advertisement for a sale, a lost item or person, social awareness or an event
+      - id: cbse-9-urdu-ch05-t02
+        title: آنکھوں دیکھا حال
+        title_en: Eyewitness account, 80-100 words (R1)
+        learning_outcomes:
+          - Write an eyewitness account of a programme or incident in vivid, ordered detail
+      - id: cbse-9-urdu-ch05-t03
+        title: انٹرویو کے سوالات
+        title_en: Interview questions (R2)
+        learning_outcomes:
+          - Prepare eight relevant questions to interview a personality
+      - id: cbse-9-urdu-ch05-t04
+        title: اطلاع یا اعلان
+        title_en: Notice or announcement, about 50 words (R2)
+        learning_outcomes:
+          - Write a notice announcing an educational or cultural programme with date, time and place
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-urdu-ch06
+    number: 6
+    title: درسی اسباق سے متعلق نوٹ
+    title_en: Notes on textbook lessons, writers and poets
+    unit: 'حصہ ب: تحریری مہارت'
+    topics:
+      - id: cbse-9-urdu-ch06-t01
+        title: نثری اسباق اور مصنفین پر نوٹ
+        title_en: Notes on prose lessons and their writers
+        learning_outcomes:
+          - Write a note of about 100 words on a prose lesson's summary, central idea, purpose, message or characters
+          - Write a note on a writer's life, literary service and style
+      - id: cbse-9-urdu-ch06-t02
+        title: شعری اسباق اور شعرا پر نوٹ
+        title_en: Notes on poems and poets
+        learning_outcomes:
+          - Write a note of about 100 words on a poem's summary, central idea, message or explanation
+          - Write a note on a poet's life, poetry and style of expression
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-urdu-ch07
+    number: 7
+    title: اسم، ضمیر اور صفت
+    title_en: Nouns, pronouns and adjectives
+    unit: 'حصہ ج: عملی قواعد'
+    topics:
+      - id: cbse-9-urdu-ch07-t01
+        title: 'اسم خاص: لقب، خطاب، کنیت'
+        title_en: 'Proper nouns: laqab, khitab, kunyat (R1)'
+        learning_outcomes:
+          - Identify and explain the kinds of proper noun with examples
+      - id: cbse-9-urdu-ch07-t02
+        title: 'اسم عام: اسم مکبر، اسم مصغر، اسم آلہ، اسم صوت، اسم ظرف'
+        title_en: 'Common nouns: augmentative, diminutive, instrument, sound and place/time nouns (R1)'
+        learning_outcomes:
+          - Identify and classify common nouns by kind
+      - id: cbse-9-urdu-ch07-t03
+        title: 'صفت: ذاتی، نسبتی، عددی، مقداری'
+        title_en: 'Adjectives: qualitative, relational, numeral, quantitative'
+        learning_outcomes:
+          - Identify and classify adjectives in sentences
+      - id: cbse-9-urdu-ch07-t04
+        title: 'ضمیر: متکلم، حاضر، غائب'
+        title_en: 'Pronouns: first, second and third person'
+        learning_outcomes:
+          - Identify personal pronouns by person and use them correctly
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-urdu-ch08
+    number: 8
+    title: فعل کی تعریف اور اقسام
+    title_en: Verbs and their kinds
+    unit: 'حصہ ج: عملی قواعد'
+    topics:
+      - id: cbse-9-urdu-ch08-t01
+        title: فعل حال، فعل ماضی، فعل مستقبل
+        title_en: Present, past and future tense
+        learning_outcomes:
+          - Identify the tense of verbs and rewrite sentences in another tense
+      - id: cbse-9-urdu-ch08-t02
+        title: فعل معروف اور فعل مجہول
+        title_en: Active and passive verbs (R1)
+        learning_outcomes:
+          - Distinguish active from passive verbs and convert sentences
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-urdu-ch09
+    number: 9
+    title: واحد جمع، مذکر مونث اور الفاظ کی ساخت
+    title_en: Number, gender and word formation (R2)
+    unit: 'حصہ ج: عملی قواعد'
+    topics:
+      - id: cbse-9-urdu-ch09-t01
+        title: واحد، جمع اور مذکر، مونث
+        title_en: Singular and plural; masculine and feminine
+        learning_outcomes:
+          - Change the number and gender of words correctly
+      - id: cbse-9-urdu-ch09-t02
+        title: متضاد اور مترادف الفاظ
+        title_en: Antonyms and synonyms
+        learning_outcomes:
+          - Give antonyms and synonyms of common words
+      - id: cbse-9-urdu-ch09-t03
+        title: سابقہ اور لاحقہ
+        title_en: Prefixes and suffixes
+        learning_outcomes:
+          - Form new words with prefixes and suffixes and explain their meaning
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-urdu-ch10
+    number: 10
+    title: علم بیان اور بدیع
+    title_en: Figures of speech
+    unit: 'حصہ ج: عملی قواعد'
+    topics:
+      - id: cbse-9-urdu-ch10-t01
+        title: تشبیہ، تلمیح، صنعت تضاد
+        title_en: Simile, allusion and antithesis
+        learning_outcomes:
+          - Define tashbeeh, talmeeh and tazaad and identify them in couplets
+      - id: cbse-9-urdu-ch10-t02
+        title: رعایت لفظی، صنعت تکرار، صنعت تجسیم، صنعت مراعات النظیر
+        title_en: Wordplay, repetition, personification and congruity (R1)
+        learning_outcomes:
+          - Define these figures of speech and identify them in verse
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-urdu-ch11
+    number: 11
+    title: محاورے اور کہاوتیں
+    title_en: Idioms and sayings
+    unit: 'حصہ ج: عملی قواعد'
+    topics:
+      - id: cbse-9-urdu-ch11-t01
+        title: محاوروں اور کہاوتوں کا جملوں میں استعمال
+        title_en: Using idioms and sayings in sentences
+        learning_outcomes:
+          - Explain the meaning of common Urdu idioms and sayings and use four of six given ones in sentences
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-urdu-ch12
+    number: 12
+    title: 'درسی کتاب: جمنا'
+    title_en: 'Prescribed textbook: Jamna (NCERT)'
+    unit: 'حصہ د: ادب'
+    topics:
+      - id: cbse-9-urdu-ch12-t01
+        title: نثری حصہ (اسباق کی فہرست درکار)
+        title_en: Prose section (lesson list pending NCERT contents page)
+        learning_outcomes:
+          - Answer short questions on the content, characters and values of the prescribed prose lessons
+      - id: cbse-9-urdu-ch12-t02
+        title: شعری حصہ (اسباق کی فہرست درکار)
+        title_en: Poetry section (lesson list pending NCERT contents page)
+        learning_outcomes:
+          - Answer short questions on the theme, imagery and message of the prescribed poems
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-9-urdu-ch13
+    number: 13
+    title: اصناف ادب
+    title_en: Literary genres
+    unit: 'حصہ د: ادب'
+    topics:
+      - id: cbse-9-urdu-ch13-t01
+        title: 'نثری اصناف: افسانہ، مکتوب، مضمون'
+        title_en: 'Prose genres: short story, letter, essay'
+        learning_outcomes:
+          - Explain the definition and main features of a prose genre with an example
+      - id: cbse-9-urdu-ch13-t02
+        title: 'شعری اصناف: غزل، نظم، مثنوی، قطعہ'
+        title_en: 'Poetic genres: ghazal, nazm, masnavi, qita (masnavi and qita R1 only)'
+        learning_outcomes:
+          - Explain the form and features of a poetic genre and distinguish it from the others
+    removed_topics: []
+    literature_texts: []
+removed_topics: []
