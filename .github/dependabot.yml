@@ -1,0 +1,57 @@
+# Dependabot for the platform (INFRA-17). Scope: platform/ npm workspace, GitHub Actions (SHA pins)
+# and the platform Dockerfiles (digest pins). PRs target the integration branch platform/main.
+# The marketing app's root package.json is deliberately NOT included (owner-controlled, OA-12).
+# Note: GitHub reads this file from the default branch (main), so it takes effect once
+# platform/main is merged into main (OA-10).
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /platform
+    target-branch: platform/main
+    schedule:
+      interval: weekly
+      day: monday
+      time: '09:00'
+      timezone: Asia/Kolkata
+    open-pull-requests-limit: 10
+    labels:
+      - platform
+      - dependencies
+    commit-message:
+      prefix: 'chore(platform-deps)'
+    groups:
+      platform-minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: github-actions
+    directory: /
+    target-branch: platform/main
+    schedule:
+      interval: weekly
+      day: monday
+      time: '09:00'
+      timezone: Asia/Kolkata
+    labels:
+      - platform
+      - ci
+    commit-message:
+      prefix: 'chore(platform-ci)'
+
+  - package-ecosystem: docker
+    directories:
+      - /platform/api
+      - /platform/worker
+      - /platform/infra/docker
+    target-branch: platform/main
+    schedule:
+      interval: weekly
+      day: monday
+      time: '09:00'
+      timezone: Asia/Kolkata
+    labels:
+      - platform
+      - docker
+    commit-message:
+      prefix: 'chore(platform-infra)'

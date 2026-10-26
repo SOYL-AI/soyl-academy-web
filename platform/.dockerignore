@@ -1,0 +1,25 @@
+# Build context for platform/api/Dockerfile, platform/worker/Dockerfile and
+# platform/infra/docker/migrate.Dockerfile is platform/ (D-022).
+# Workspace package.json files must stay in the context (npm ci checks them against the lockfile),
+# so only heavy or sensitive sub-paths are excluded, never whole workspaces.
+**/node_modules
+**/dist
+**/coverage
+**/test-results
+**/.data
+**/.cache
+**/*.log
+**/.DS_Store
+# GEN-1: never send local env files or keys into an image build
+**/.env
+**/.env.*
+!**/.env.example
+**/*.pem
+**/*.key
+# large and not needed at runtime
+e2e/marketing-baseline
+e2e/playwright-report
+catalog/sources
+# infrastructure code is not shipped, except the migrations entrypoint
+infra/*
+!infra/docker
