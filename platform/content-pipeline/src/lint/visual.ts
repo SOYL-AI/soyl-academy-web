@@ -68,10 +68,19 @@ export function checkVisual(v: Visual): VisualCheck {
           err('visual.plot', `expression "${f.expr}": ${e instanceof ExprError ? e.message : (e as Error).message}`);
         }
       }
+      for (const l of v.spec.vlines ?? []) {
+        if (l.label) texts.push({ text: l.label, kind: 'md' });
+        if (!(l.x >= x.min && l.x <= x.max)) err('visual.plot', `vertical line x = ${l.x} is outside the x range ${x.min}..${x.max}`);
+      }
+      for (const l of v.spec.hlines ?? []) {
+        if (l.label) texts.push({ text: l.label, kind: 'md' });
+        if (!(l.y >= y.min && l.y <= y.max)) err('visual.plot', `horizontal line y = ${l.y} is outside the y range ${y.min}..${y.max}`);
+      }
       for (const p of points) {
         if (p.label) texts.push({ text: p.label, kind: 'md' });
         if (!p.at.every(Number.isFinite)) err('visual.plot', 'point with non-finite coordinates');
       }
+      for (const issue of checkPlotPoints(v.spec)) err('visual.plot-points', issue);
       for (const s of series) {
         texts.push({ text: s.label, kind: 'plain' });
         if (!s.points.length) err('visual.plot', `series "${s.label}" has no points`);
@@ -201,4 +210,73 @@ export function lengthLabel(label: string): { value: number; unit: string | null
 export function degreeLabel(label: string): number | null {
   const m = /^(\d+(?:\.\d+)?)\s*(?:°|\^\s*\\circ|\^\s*\{\s*\\circ\s*\})$/.exec(label.replace(/\$/g, '').trim());
   return m ? Number(m[1]) : null;
+}
+
+type PlotSpec = Extract<Visual, { kind: 'plot' }>['spec'];
+
+/**
+ * Plot point sanity (maths producer feedback): every marked point lies on one of the functions (or a
+ * vline/hline) unless it sets `on_curve: false`; and when a marked point is a zero of a function,
+ * every real zero of that function inside the view is marked too. Tolerances: 2% of the y range
+ * for "on the curve", 1.5% of the x range for "the same zero".
+ */
+export function checkPlotPoints(spec: PlotSpec): string[] {
+  const issues: string[] = [];
+  const { x, y } = spec;
+  const yTol = Math.max(1e-9, 0.02 * (y.max - y.min));
+  const xTol = Math.max(1e-9, 0.015 * (x.max - x.min));
+  const fns = spec.functions.flatMap((f) => {
+    try {
+      const ast = parseExpr(f.expr);
+      const [from, to] = f.domain ?? [x.min, x.max];
+      return [{ expr: f.expr, f: (t: number) => evaluate(ast, t), from: Math.max(from, x.min), to: Math.min(to, x.max) }];
+    } catch {
+      return [];
+    }
+  });
+  if (!fns.length) return issues;
+  const onFn = (p: readonly number[], fn: (typeof fns)[number]) => p[0]! >= fn.from - xTol && p[0]! <= fn.to + xTol && Math.abs(fn.f(p[0]!) - p[1]!) <= yTol;
+  for (const p of spec.points) {
+    if (p.on_curve === false || !p.at.every(Number.isFinite)) continue;
+    const onLine = (spec.vlines ?? []).some((l) => Math.abs(l.x - p.at[0]) <= xTol) || (spec.hlines ?? []).some((l) => Math.abs(l.y - p.at[1]) <= yTol);
+    if (!onLine && !fns.some((fn) => onFn(p.at, fn)))
+      issues.push(`point (${p.at.join(', ')})${p.label ? ` "${p.label}"` : ''} is not on any plotted curve (set on_curve: false if that is intended)`);
+  }
+  for (const fn of fns) {
+    const markedZeros = spec.points.filter((p) => Math.abs(p.at[1]) <= yTol && onFn(p.at, fn));
+    if (!markedZeros.length) continue;
+    for (const z of realZeros(fn.f, fn.from, fn.to, yTol))
+      if (!markedZeros.some((p) => Math.abs(p.at[0] - z) <= xTol))
+        issues.push(`"${fn.expr}" has a zero at x ≈ ${+z.toFixed(3)} that is not marked (its other zeros are)`);
+  }
+  return issues;
+}
+
+/** Real zeros of f on [a, b]: sign changes refined by bisection, plus touching zeros (local |f| minima ≈ 0). */
+export function realZeros(f: (x: number) => number, a: number, b: number, tol: number): number[] {
+  const n = 2000;
+  const xs = Array.from({ length: n + 1 }, (_, i) => a + ((b - a) * i) / n);
+  const ys = xs.map((t) => f(t));
+  const zeros: number[] = [];
+  const push = (z: number) => {
+    if (!zeros.some((q) => Math.abs(q - z) <= (b - a) / 200)) zeros.push(z);
+  };
+  for (let i = 0; i < n; i++) {
+    const [y0, y1] = [ys[i]!, ys[i + 1]!];
+    if (!Number.isFinite(y0) || !Number.isFinite(y1)) continue;
+    if (y0 === 0) push(xs[i]!);
+    else if (y0 * y1 < 0) {
+      // A sign change across a pole is not a zero: require small values on both sides.
+      if (Math.min(Math.abs(y0), Math.abs(y1)) > 50 * tol) continue;
+      let [lo, hi] = [xs[i]!, xs[i + 1]!];
+      for (let k = 0; k < 60; k++) {
+        const mid = (lo + hi) / 2;
+        if (f(lo) * f(mid) <= 0) hi = mid;
+        else lo = mid;
+      }
+      push((lo + hi) / 2);
+    } else if (i > 0 && Math.abs(y0) <= Math.abs(ys[i - 1]!) && Math.abs(y0) <= Math.abs(y1) && Math.abs(y0) < tol / 10) push(xs[i]!);
+  }
+  if (Number.isFinite(ys[n]!) && ys[n] === 0) push(xs[n]!);
+  return zeros.sort((p, q) => p - q);
 }

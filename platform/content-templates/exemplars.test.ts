@@ -27,7 +27,8 @@ function exemplarDirs(): { family: string; dir: string }[] {
         fs
           .readdirSync(path.join(root, family))
           .map((name) => ({ family, dir: path.join(root, family, name) }))
-          .filter((e) => fs.statSync(e.dir).isDirectory()),
+          // A chapter is a directory with release.json; helper folders (build scripts, drafts) are ignored.
+          .filter((e) => fs.statSync(e.dir).isDirectory() && fs.existsSync(path.join(e.dir, 'release.json'))),
       ),
   );
 }

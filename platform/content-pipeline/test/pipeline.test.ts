@@ -11,6 +11,7 @@ import { generateCommand, outlineCommand } from '../src/commands/generate';
 import { exemplarDirs, lintCommand, lintExemplar } from '../src/commands/lint';
 import { planCommand } from '../src/commands/plan';
 import { main } from '../src/cli';
+import { loadAuthoredUnits } from '../src/sources';
 import { MOCK_FIXTURES } from '../src/mock-fixtures';
 import { FileStateStore, aggregateStatus } from '../src/state';
 import { SCOPE, UNIT, tempDir, testPipeline } from './helpers';
@@ -74,7 +75,8 @@ describe('end to end (mock provider): plan → outline → generate → lint', (
 
     // Mock output never counts toward coverage: ch01's deck counts once, from the exemplar, not from out/.
     const cov = await coverageCommand(p, SCOPE, { source: 'files' });
-    expect(cov.report.subjects[0]!.have.deck).toBe(1);
+    const handWritten = loadAuthoredUnits(p).filter((u) => u.unit.startsWith('cbse-10-science-ch')).length;
+    expect(cov.report.subjects[0]!.have.deck).toBe(handWritten);
     expect(cov.report.subjects[0]!.mock_units).toBe(0);
     const other = await coverageCommand(p, { board: 'cbse', class: 10, subject: 'science' }, { source: 'files' });
     expect(other.report.subjects[0]!.have.deck).toBeLessThanOrEqual(other.report.subjects[0]!.chapters);
