@@ -32,7 +32,7 @@ few_shot: [exemplars/science/cbse-10-science-ch01/release.json#decks]
 (system and user instructions; placeholders in double braces)
 ```
 
-Placeholders the pipeline fills: `{{board}}`, `{{exam}}`, `{{class}}`, `{{subject_name}}`, `{{language}}`, `{{chapter_id}}`, `{{chapter_title}}`, `{{topics_yaml}}`, `{{learning_outcomes}}`, `{{exam_notes}}`, `{{blueprint_yaml}}`, `{{outline_json}}`, `{{json_schema}}`, `{{few_shot}}`, `{{targets}}`.
+Placeholders the pipeline fills: `{{board}}`, `{{exam}}`, `{{class}}`, `{{subject_name}}`, `{{language}}`, `{{chapter_id}}`, `{{chapter_title}}`, `{{topics_yaml}}`, `{{learning_outcomes}}`, `{{exam_notes}}`, `{{blueprint_yaml}}`, `{{outline_json}}`, `{{json_schema}}`, `{{few_shot}}`, `{{targets}}`, `{{content_json}}` (the generated content a `verify` template checks), `{{id_prefix}}` (question id prefix derived from the chapter id, e.g. `q_cbse10sci_ch01`).
 A template must not hard-code anything a placeholder provides. The pipeline records `id@version` on every item it generates.
 
 ## Gate
