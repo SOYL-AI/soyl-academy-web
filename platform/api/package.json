@@ -1,0 +1,42 @@
+{
+  "name": "@soyl/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "SOYL Academy Learning Platform API (Fastify). See README.md and docs/platform/adr/002-auth-better-auth.md.",
+  "exports": {
+    "./contract/*": "./src/contract/*.ts"
+  },
+  "scripts": {
+    "dev": "tsx scripts/dev.ts",
+    "build": "node scripts/build.mjs",
+    "start": "node dist/index.js",
+    "openapi": "tsx scripts/openapi.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@fastify/swagger": "9.9.2",
+    "@soyl/db": "*",
+    "@soyl/shared": "*",
+    "better-auth": "1.7.13",
+    "drizzle-orm": "0.45.4",
+    "fastify": "5.12.7",
+    "fastify-type-provider-zod": "7.0.0",
+    "ioredis": "5.11.1",
+    "openid-client": "6.8.8",
+    "pg": "8.23.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "@types/pg": "8.23.1",
+    "@vitest/coverage-v8": "5.0.5",
+    "esbuild": "0.28.2",
+    "jose": "6.2.13",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "5.0.5"
+  }
+}
