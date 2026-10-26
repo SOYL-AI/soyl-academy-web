@@ -85,3 +85,7 @@ Process: after every integration the Lead checks the platform-ci run for the new
 | **Total** | **12 chapters** | | **906** |
 | 2026-10-27 | M2 content | CBSE 10 Science ch10–ch13 | subject-producer | `platform/subject-producer/cbse-10-science-c` | `platform/content/authored/science/` | in progress | — |
 | 2026-10-27 | Security | DB-6/F-006: answers of case-question `alternatives` were left in `questions.body` by `splitQuestion` (API unaffected: whitelisted DTOs) | backend-api M2 | in progress |
+| 2026-10-27 | M2 pipeline | Stages 5–9 (verify, originality, assemble incl. test series, TTS, publish/rollback), Postgres state + shared budget ledger, contract v2 extras, ADR-006; 12 authored chapters publish into Postgres with 24 tests; 233 pipeline tests | pipeline-engineer M2 | `platform/pipeline-engineer/m2` | `platform/content-pipeline/`, `platform/ai-core/`, `platform/shared/content/` | **merged** | real model/speech: OA-02/OA-03 |
+| 2026-10-27 | Fix | Catalog seed now loads the 30 class-default blueprints (359 total) | Lead | `platform/main` | `platform/db/src/seed/` | done 053d4ef | — |
+| 2026-10-27 | Content QA | MCQ answer-key skew: Hindi A ch10 17/22 keys = (b); Science ch01 11/24 = (b) → rebalance | content producers | open |
+| 2026-10-27 | Content QA | CBSE 10 Hindi chapter-test blueprint overrides use 7/6/8-mark long items that don't match the Hindi exemplar marks; Maths Basic blueprints should set `variant` | curriculum | open |
