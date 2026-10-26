@@ -62,3 +62,11 @@ Single source of truth for progress (AGENTS.md §4.3). Updated by the Lead after
 
 ### Active (D-024 cap 5)
 backend-api (M1) · curriculum-cbse-languages (M1) · producer CBSE 10 Science ch02–05 · producer CBSE 10 Maths ch01–04 · pipeline-engineer M2 (contract v2 + stages 5–9)
+
+### CI evidence (GitHub Actions, real Postgres+pgvector / Redis containers)
+| Date | Commit | Run | Result |
+|---|---|---|---|
+| 2026-10-26 | `f65ca85` | platform-ci | **failure** — `@soyl/content-pipeline` arithmetic test depended on the mock plan's type mix (fixed in d19bf5e) |
+| 2026-10-26 | `d19bf5e` | [platform-ci 40293740542](https://github.com/SOYL-AI/soyl-academy-web/actions/runs/40293740542) | **success** — all 10 jobs (platform tests, web build, marketing differential regression, gitleaks, audit/trivy, bicep, image builds) |
+
+Process: after every integration the Lead checks the platform-ci run for the new `platform/main` head before the next merge.
