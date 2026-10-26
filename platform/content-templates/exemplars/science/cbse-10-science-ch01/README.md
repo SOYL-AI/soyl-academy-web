@@ -47,7 +47,7 @@ The notes add 5 SVGs and 2 tables, so every notes section has a visual.
 ### 4. Question bank: 77 items, all original
 | Type | Count | Marks each | Why |
 |---|---|---|---|
-| mcq | 24 | 1 | Section A of the board paper; 7 are reused as deck checks |
+| mcq | 24 | 1 | Section A of the board paper; 7 are reused as deck checks; keys a 6 · b 6 · c 6 · d 6 (rebalanced 2026-10-27, see below) |
 | assertion-reason | 6 | 1 | Board VSA format; answer keys spread across a, a, b, a, c, d so "a" is not a reflex |
 | true-false | 4 | 1 | Fast misconception probes for practice mode |
 | fill-blank | 4 | 1 | Recall of key words, auto-graded with accepted variants |
@@ -130,3 +130,4 @@ Findings fixed:
 - Deck 2, s16: the narration said silver blackens "for similar reasons". It now says silver reacts with substances in moist air. (The black layer is silver sulphide, not an oxide.)
 - Competency relabelled from application to understanding on 9 items: q006, q010, q031, q040, q041, q058, q062, q066 and q070. q063 was raised to difficulty 5.
 - SVG layout: the electrolysis label overlapped the electrodes, the ferrous sulphate label used a "→" glyph that the fallback font could not draw, and the hydrogen row of the reactivity series was crowded. All were fixed after a raster preview.
+- **Answer-key rebalance (catalog QA, 2026-10-27).** The 24 MCQ keys were a 8 · b 11 · c 4 · d 1 (lint `balance.answer-keys`). Seven items had the key option swapped with another option: q002 and q004 b→c; q006, q017 and q021 b→d; q011 and q022 a→d. Option letters in their solutions and marking schemes were remapped with the swap. Stems, option texts and the correct option text are unchanged.
