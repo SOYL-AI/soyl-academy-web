@@ -47,6 +47,7 @@ import { registerReportRoutes } from './modules/reports';
 import { registerMfaRoutes } from './modules/mfa';
 import { registerAdminRoutes } from './modules/admin';
 import { registerTestRoutes } from './modules/tests';
+import { registerBillingRoutes } from './billing/routes';
 
 export const HEALTH_PATHS = new Set(['/healthz', '/readyz']);
 const STATE_CHANGING = new Set(['POST', 'PUT', 'PATCH', 'DELETE']);
@@ -99,6 +100,7 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
 
   const services = createServices(deps);
   app.decorate('services', services);
+  services.billing.useLog(app.log);
   app.decorate('deps', deps);
   app.decorateRequest('clientIp', '');
   app.decorateRequest('edgeSecretIndex', null);
@@ -285,6 +287,7 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
   registerMfaRoutes(app, services);
   registerAdminRoutes(app, deps);
   registerTestRoutes(app, deps, services);
+  registerBillingRoutes(app, services.billing);
   if (config.devOtpOutbox) registerDevRoutes(app, deps);
   opts.extraRoutes?.(app, services);
 

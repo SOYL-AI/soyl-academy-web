@@ -6,6 +6,7 @@
  */
 import { z } from 'zod/v4';
 import { OAUTH, OTP } from '@soyl/shared/config/security';
+import { loadBillingConfig, type BillingConfig } from './billing/config';
 
 export const APP_ENVS = ['local', 'test', 'dev', 'stg', 'prod'] as const;
 export type AppEnv = (typeof APP_ENVS)[number];
@@ -166,6 +167,8 @@ export interface Config {
   consent: { provider: 'mock' | 'unavailable'; mockDefault: 'required' | 'pending' | 'granted' | 'revoked' };
   academicYear: string;
   devOtpOutbox: boolean;
+  /** Razorpay billing (billing/config.ts, ADR-014). */
+  billing: BillingConfig;
 }
 
 export class ConfigError extends Error {
@@ -283,6 +286,9 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
   const devOtpOutbox = e.DEV_OTP_OUTBOX && isLocal;
   if (e.DEV_OTP_OUTBOX && !isLocal) problems.push('DEV_OTP_OUTBOX is only allowed when APP_ENV is local or test');
 
+  const billing = loadBillingConfig(env, { appEnv: e.APP_ENV, isLocal, isProduction });
+  problems.push(...billing.problems);
+
   if (problems.length) throw new ConfigError(problems);
 
   return {
@@ -330,6 +336,7 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
     consent: { provider: e.CONSENT_PROVIDER, mockDefault: e.MOCK_CONSENT_DEFAULT },
     academicYear: e.ACADEMIC_YEAR,
     devOtpOutbox,
+    billing: billing.config,
   };
 }
 
