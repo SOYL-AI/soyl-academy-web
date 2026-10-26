@@ -1,0 +1,190 @@
+/**
+ * Typed client for the platform API (ARCHITECTURE §3.2, web-platform M1).
+ *
+ * - `schema.gen.ts` is generated from `platform/api/openapi.json` by openapi-typescript
+ *   (`npm run generate:api-client -w @soyl/shared`); a test in `api-client.test.ts` fails when it is stale.
+ * - This file is a dependency-free fetch wrapper typed by that schema (ADR-001: anything the Next.js pages
+ *   import from platform/shared must not add runtime dependencies to the marketing app).
+ * - Browser calls go to the same-origin proxy `/api/platform` (ADR-005), with `credentials: 'same-origin'`
+ *   so the HttpOnly session cookie travels and nothing else does (WEB-5). The API's CSRF check (AUTH-12)
+ *   relies on the browser's own `Origin` header, which a same-origin fetch always sends on POST/PATCH/DELETE.
+ * - Errors are RFC 7807 problem+json; they surface as `ApiError` with the stable `code`.
+ */
+import type { components, paths } from './schema.gen';
+
+export type { components, paths };
+export type Schemas = components['schemas'];
+
+export type SessionResponse = Schemas['SessionResponse'];
+export type SessionUser = Schemas['SessionUser'];
+export type ConsentState = Schemas['ConsentState'];
+export type Board = Schemas['Board'];
+export type SignInResponse = Schemas['SignInResponse'];
+export type OtpSentResponse = Schemas['OtpSentResponse'];
+export type Me = Schemas['Me'];
+export type PatchMe = Schemas['PatchMeInput'];
+export type DeleteMeResponse = Schemas['DeleteMeResponse'];
+export type ConsentStartResponse = Schemas['ConsentStartResponse'];
+export type GuestProgress = Schemas['GuestProgressInput'];
+export type GuestLesson = Schemas['GuestLessonInput'];
+export type GuestPracticeAnswer = Schemas['GuestPracticeAnswerInput'];
+export type MergeGuestResponse = Schemas['MergeGuestResponse'];
+export type CatalogBoards = Schemas['CatalogBoards'];
+export type CatalogSubjects = Schemas['CatalogSubjects'];
+export type CatalogSubject = Schemas['CatalogSubject'];
+export type CatalogChapters = Schemas['CatalogChapters'];
+export type CatalogChapter = CatalogChapters['chapters'][number];
+export type Problem = Schemas['Problem'];
+
+/** Browser base path of the same-origin proxy (ADR-005). */
+export const API_BROWSER_BASE = '/api/platform';
+
+export type HttpMethod = 'get' | 'post' | 'put' | 'patch' | 'delete';
+
+/** Paths that support method M. */
+export type PathsWith<M extends HttpMethod> = {
+  [P in keyof paths]: paths[P][M] extends { responses: unknown } ? P : never;
+}[keyof paths];
+
+type Op<P extends keyof paths, M extends HttpMethod> = NonNullable<paths[P][M]>;
+
+type ParamGroup<O, K extends 'path' | 'query'> = O extends { parameters: infer PS }
+  ? PS extends Record<string, unknown>
+    ? NonNullable<PS[K]>
+    : never
+  : never;
+
+type BodyOf<O> = O extends { requestBody: { content: { 'application/json': infer B } } } ? B : never;
+
+/** The JSON body of the 200 response, `null` for 204, `unknown` otherwise (e.g. a 302 redirect). */
+export type ResponseOf<O> = O extends { responses: { 200: { content: { 'application/json': infer R } } } }
+  ? R
+  : O extends { responses: { 204: unknown } }
+    ? null
+    : unknown;
+
+type IfNever<T, A, B> = [T] extends [never] ? A : B;
+
+export type RequestOptions<O> = IfNever<ParamGroup<O, 'path'>, { params?: undefined }, { params: ParamGroup<O, 'path'> }> &
+  IfNever<ParamGroup<O, 'query'>, { query?: undefined }, { query?: ParamGroup<O, 'query'> }> &
+  IfNever<BodyOf<O>, { body?: undefined }, { body: BodyOf<O> }> & {
+    signal?: AbortSignal;
+    /** Extra request headers (e.g. `if-none-match`). Never put personal data in a query string (WEB-12). */
+    headers?: Record<string, string>;
+  };
+
+/** A failed API call. `code` is the problem's stable machine code (backend handoff list). */
+export class ApiError extends Error {
+  readonly status: number;
+  readonly code: string;
+  readonly problem: Problem | null;
+  constructor(status: number, code: string, problem: Problem | null, message?: string) {
+    super(message ?? problem?.title ?? `API error ${status} (${code})`);
+    this.name = 'ApiError';
+    this.status = status;
+    this.code = code;
+    this.problem = problem;
+  }
+  /** Seconds the server asked us to wait (OTP lockouts, rate limits), if any. */
+  get retryAfterSeconds(): number | undefined {
+    return typeof this.problem?.retryAfterSeconds === 'number' ? this.problem.retryAfterSeconds : undefined;
+  }
+}
+
+export function isApiError(err: unknown, code?: string): err is ApiError {
+  return err instanceof ApiError && (code === undefined || err.code === code);
+}
+
+/** Fills `{name}` placeholders. Values are encoded so a param can never add a path segment. */
+export function buildPath(template: string, params?: Record<string, unknown>): string {
+  return template.replace(/\{([A-Za-z0-9_]+)\}/g, (_, name: string) => {
+    const value = params?.[name];
+    if (value === undefined || value === null || value === '') throw new Error(`Missing path parameter "${name}"`);
+    return encodeURIComponent(String(value));
+  });
+}
+
+export function buildQuery(query?: Record<string, unknown>): string {
+  if (!query) return '';
+  const qs = new URLSearchParams();
+  for (const [key, value] of Object.entries(query)) {
+    if (value === undefined || value === null) continue;
+    qs.set(key, String(value));
+  }
+  const s = qs.toString();
+  return s ? `?${s}` : '';
+}
+
+function looksLikeProblem(value: unknown): value is Problem {
+  return (
+    typeof value === 'object' &&
+    value !== null &&
+    typeof (value as { code?: unknown }).code === 'string' &&
+    typeof (value as { status?: unknown }).status === 'number'
+  );
+}
+
+export interface ApiClientOptions {
+  /** Default `/api/platform` (browser, same origin). Server code passes the API origin. */
+  baseUrl?: string;
+  fetch?: typeof fetch;
+  /** Headers added to every request (server-side: the edge secret). */
+  headers?: Record<string, string>;
+}
+
+export interface ApiClient {
+  get<P extends PathsWith<'get'>>(path: P, ...opts: OptionalArgs<Op<P, 'get'>>): Promise<ResponseOf<Op<P, 'get'>>>;
+  post<P extends PathsWith<'post'>>(path: P, ...opts: OptionalArgs<Op<P, 'post'>>): Promise<ResponseOf<Op<P, 'post'>>>;
+  patch<P extends PathsWith<'patch'>>(path: P, ...opts: OptionalArgs<Op<P, 'patch'>>): Promise<ResponseOf<Op<P, 'patch'>>>;
+  delete<P extends PathsWith<'delete'>>(path: P, ...opts: OptionalArgs<Op<P, 'delete'>>): Promise<ResponseOf<Op<P, 'delete'>>>;
+}
+
+/** The options argument is optional when the operation needs no path params and no body. */
+type OptionalArgs<O> = IfNever<ParamGroup<O, 'path'>, IfNever<BodyOf<O>, [opts?: RequestOptions<O>], [opts: RequestOptions<O>]>, [opts: RequestOptions<O>]>;
+
+export function createApiClient(options: ApiClientOptions = {}): ApiClient {
+  const base = (options.baseUrl ?? API_BROWSER_BASE).replace(/\/+$/, '');
+  const doFetch = options.fetch ?? ((input: RequestInfo | URL, init?: RequestInit) => globalThis.fetch(input, init));
+
+  async function request(method: HttpMethod, path: string, opts: RequestOptions<unknown> | undefined): Promise<unknown> {
+    const o = (opts ?? {}) as { params?: Record<string, unknown>; query?: Record<string, unknown>; body?: unknown; signal?: AbortSignal; headers?: Record<string, string> };
+    const url = `${base}${buildPath(path, o.params)}${buildQuery(o.query)}`;
+    const headers: Record<string, string> = { accept: 'application/json', ...options.headers, ...o.headers };
+    const init: RequestInit = { method: method.toUpperCase(), headers, credentials: 'same-origin', cache: 'no-store', signal: o.signal };
+    if (o.body !== undefined) {
+      headers['content-type'] = 'application/json';
+      init.body = JSON.stringify(o.body);
+    }
+    let res: Response;
+    try {
+      res = await doFetch(url, init);
+    } catch (err) {
+      if ((err as { name?: string })?.name === 'AbortError') throw err;
+      throw new ApiError(0, 'network_error', null, 'Network error: could not reach the server');
+    }
+    const type = res.headers.get('content-type') ?? '';
+    const isJson = /\bjson\b/i.test(type);
+    if (res.ok) {
+      if (res.status === 204 || !isJson) return null;
+      return res.json();
+    }
+    let problem: Problem | null = null;
+    if (isJson) {
+      try {
+        const body: unknown = await res.json();
+        if (looksLikeProblem(body)) problem = body;
+      } catch {
+        // fall through to a generic error
+      }
+    }
+    const fallbackCode = res.status === 401 ? 'unauthenticated' : res.status === 404 ? 'not_found' : res.status >= 500 ? 'service_unavailable' : 'http_error';
+    throw new ApiError(res.status, problem?.code ?? fallbackCode, problem);
+  }
+
+  return {
+    get: (path, ...opts) => request('get', path, opts[0] as RequestOptions<unknown>) as never,
+    post: (path, ...opts) => request('post', path, opts[0] as RequestOptions<unknown>) as never,
+    patch: (path, ...opts) => request('patch', path, opts[0] as RequestOptions<unknown>) as never,
+    delete: (path, ...opts) => request('delete', path, opts[0] as RequestOptions<unknown>) as never,
+  };
+}
