@@ -5,7 +5,7 @@
  * "papers like my school's" building a paper from OUR bank by blueprint (paid plans), 30-day expiry.
  */
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
-import { count, eq } from 'drizzle-orm';
+import { count, eq, sql } from 'drizzle-orm';
 import { aiJobs, questions, uploads } from '@soyl/db';
 import { MockProvider, type ProviderRequest } from '@soyl/ai-core';
 import { AI_UPLOADS } from '@soyl/shared/config/ai-actions';
@@ -201,5 +201,36 @@ describe('retention', () => {
     const [after] = await h.t.db.select().from(uploads).where(eq(uploads.id, up.id));
     expect(after).toMatchObject({ status: 'expired', processedKey: null });
     expect((await c.get(`/v1/ai/uploads/${up.id}`)).statusCode).toBe(404);
+  });
+});
+
+describe('image moderation at upload (AC-15, F-027)', () => {
+  it('refuses unsafe images before any model sees them', async () => {
+    const { c } = await h.member();
+    const { LOCAL_UNSAFE_IMAGE_MARKER } = await import('../src/ai/moderation/providers');
+    const v = await uploadFile(h, c, 'photo_doubt', 'image/png', png(400, 300, { idat: Buffer.from(LOCAL_UNSAFE_IMAGE_MARKER) }));
+    expect(v).toMatchObject({ status: 'rejected', rejectReason: 'unsafe_content' });
+    expect((await c.post('/v1/ai/photo-doubt', { uploadId: v.id })).statusCode).toBe(422);
+  });
+
+  it('fails closed when image moderation is down: the upload is never usable; after the retries it is refused', async () => {
+    const { c } = await h.member();
+    const { LocalRuleModerationProvider } = await import('../src/ai/moderation/providers');
+    const down = new LocalRuleModerationProvider();
+    down.failing = true;
+    h.services.ai.runtime.moderation = down;
+    try {
+      const v = await uploadFile(h, c, 'photo_doubt', 'image/png', png());
+      expect(v.status).toBe('scanning');
+      expect((await c.post('/v1/ai/photo-doubt', { uploadId: v.id })).statusCode).toBe(409);
+      const [job] = await h.t.db.select().from(aiJobs).where(sql`${aiJobs.payload}->>'uploadId' = ${v.id}`);
+      expect(job).toMatchObject({ status: 'queued', attempts: 1, errorCode: 'retrying' });
+      await h.services.ai.jobs.runJob(job!.id);
+      await h.services.ai.jobs.runJob(job!.id);
+      const after = (await c.get(`/v1/ai/uploads/${v.id}`)).json();
+      expect(after).toMatchObject({ status: 'rejected', rejectReason: 'processing_failed' });
+    } finally {
+      h.services.ai.runtime.moderation = new LocalRuleModerationProvider();
+    }
   });
 });

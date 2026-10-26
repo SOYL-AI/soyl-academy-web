@@ -51,6 +51,13 @@ export class Moderator {
     return { blocked: reasons.length > 0, reasons, severities: analysed.severities, selfHarm: false, provider: this.provider.name };
   }
 
+  /** An uploaded image, before any model sees it (photo doubts, sample papers). */
+  async checkImage(image: Buffer): Promise<ModerationVerdict> {
+    const analysed = await this.provider.analyzeImage(image);
+    const reasons = this.harmReasons(analysed.severities);
+    return { blocked: reasons.length > 0, reasons, severities: analysed.severities, selfHarm: analysed.severities.self_harm >= AI_MODERATION.blockAtSeverity.self_harm, provider: this.provider.name };
+  }
+
   /** The message shown instead of an answer for a blocked input. */
   static refusalFor(verdict: ModerationVerdict): { message: string; kind: 'self_harm' | 'off_topic' | 'unsafe' } {
     if (verdict.selfHarm) return { message: AI_MODERATION.selfHarmMessage, kind: 'self_harm' };

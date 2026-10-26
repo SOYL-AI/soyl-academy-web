@@ -28,6 +28,8 @@ export interface ModerationProvider {
   readonly name: string;
   readonly isStandIn: boolean;
   analyzeText(text: string): Promise<TextAnalysis>;
+  /** Uploaded images (photo doubts, sample papers) before any model sees them. */
+  analyzeImage(image: Buffer): Promise<TextAnalysis>;
   shieldPrompt(userPrompt: string, documents: string[]): Promise<ShieldResult>;
 }
 

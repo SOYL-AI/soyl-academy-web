@@ -114,7 +114,7 @@ const chunk = (type: string, data: Buffer) => {
   return Buffer.concat([len, Buffer.from(type, 'latin1'), data, Buffer.alloc(4)]);
 };
 
-export function png(width = 800, height = 600, opts: { text?: boolean; trailer?: string } = {}): Buffer {
+export function png(width = 800, height = 600, opts: { text?: boolean; trailer?: string; idat?: Buffer } = {}): Buffer {
   const ihdr = Buffer.alloc(13);
   ihdr.writeUInt32BE(width, 0);
   ihdr.writeUInt32BE(height, 4);
@@ -124,7 +124,7 @@ export function png(width = 800, height = 600, opts: { text?: boolean; trailer?:
     Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]),
     chunk('IHDR', ihdr),
     ...(opts.text === false ? [] : [chunk('tEXt', Buffer.from('Comment\0taken at home, Sector 21', 'latin1')), chunk('eXIf', Buffer.from('MM\0*GPS', 'latin1'))]),
-    chunk('IDAT', Buffer.alloc(32, 7)),
+    chunk('IDAT', opts.idat ?? Buffer.alloc(32, 7)),
     chunk('IEND', Buffer.alloc(0)),
     Buffer.from(opts.trailer ?? '', 'latin1'),
   ]);

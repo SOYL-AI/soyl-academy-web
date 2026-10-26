@@ -38,7 +38,23 @@ export class LocalRuleModerationProvider implements ModerationProvider {
     if (this.failing) throw new ModerationUnavailableError(new Error('local moderation: injected failure'));
     return { userAttack: userPrompt ? isJailbreak(userPrompt) : false, documentAttack: documents.some((d) => isDocumentAttack(d)) };
   }
+
+  /**
+   * The stand-in cannot see pictures. It flags only images carrying the test marker
+   * LOCAL_UNSAFE_IMAGE_MARKER (fixtures); real image classification is Content Safety's.
+   */
+  async analyzeImage(image: Buffer): Promise<TextAnalysis> {
+    if (this.failing) throw new ModerationUnavailableError(new Error('local moderation: injected failure'));
+    const flagged = image.includes(LOCAL_UNSAFE_IMAGE_MARKER);
+    return { severities: { hate: 0, sexual: flagged ? 6 : 0, self_harm: 0, violence: 0 } };
+  }
 }
+
+/** Test fixtures embed this in an image to simulate an unsafe picture for the local stand-in. */
+export const LOCAL_UNSAFE_IMAGE_MARKER = 'SOYL-TEST-UNSAFE-IMAGE';
+
+/** Content Safety analyses images up to 4 MB; larger photos are refused (the web compresses first). */
+export const CONTENT_SAFETY_IMAGE_MAX_BYTES = 4 * 1024 * 1024;
 
 export class FailingModerationProvider implements ModerationProvider {
   readonly name = 'disabled';
@@ -47,6 +63,9 @@ export class FailingModerationProvider implements ModerationProvider {
     throw new ModerationUnavailableError(new Error('content safety is not configured'));
   }
   async shieldPrompt(): Promise<ShieldResult> {
+    throw new ModerationUnavailableError(new Error('content safety is not configured'));
+  }
+  async analyzeImage(): Promise<TextAnalysis> {
     throw new ModerationUnavailableError(new Error('content safety is not configured'));
   }
 }
@@ -102,6 +121,21 @@ export class AzureContentSafetyProvider implements ModerationProvider {
         const k = CATEGORY[c.category];
         if (k) severities[k] = Math.max(severities[k], c.severity ?? 0);
       }
+    }
+    return { severities };
+  }
+
+  async analyzeImage(image: Buffer): Promise<TextAnalysis> {
+    if (image.length > CONTENT_SAFETY_IMAGE_MAX_BYTES) throw new ModerationUnavailableError(new Error('image larger than Content Safety accepts'));
+    const r = await this.post<{ categoriesAnalysis?: { category: string; severity?: number }[] }>('image:analyze', {
+      image: { content: image.toString('base64') },
+      categories: ['Hate', 'SelfHarm', 'Sexual', 'Violence'],
+      outputType: 'FourSeverityLevels',
+    });
+    const severities: Record<HarmCategory, number> = { hate: 0, sexual: 0, self_harm: 0, violence: 0 };
+    for (const c of r.categoriesAnalysis ?? []) {
+      const k = CATEGORY[c.category];
+      if (k) severities[k] = Math.max(severities[k], c.severity ?? 0);
     }
     return { severities };
   }

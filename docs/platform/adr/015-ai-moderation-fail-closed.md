@@ -12,11 +12,12 @@ stand-in. A moderation outage must never let unchecked text through (F-027).
 
 ## Decision
 
-1. **One interface** (`ModerationProvider`): `analyzeText(text)` → severities for hate, sexual,
-   self-harm and violence (0..7); `shieldPrompt(userPrompt, documents)` → user-attack and
+1. **One interface** (`ModerationProvider`): `analyzeText(text)` and `analyzeImage(bytes)` → severities for
+   hate, sexual, self-harm and violence (0..7); `shieldPrompt(userPrompt, documents)` → user-attack and
    document-attack flags.
    - `AzureContentSafetyProvider`: `text:analyze` (FourSeverityLevels, 10,000-character slices) and
-     `text:shieldPrompt` (Prompt Shields), API version 2024-09-01, keyless bearer token, 5 s timeout.
+     `text:shieldPrompt` (Prompt Shields) and `image:analyze` (images ≤ 4 MB; larger ones are refused,
+     the web compresses first), API version 2024-09-01, keyless bearer token, 5 s timeout.
    - `LocalRuleModerationProvider`: deterministic English/Hindi/Hinglish rule lists (rules.ts), with
      syllabus phrases removed first so "sexual reproduction", "sex chromosomes", "sexually
      transmitted diseases", Hiroshima and Durkheim are never refused. Refused in production (GEN-3).
@@ -30,14 +31,18 @@ stand-in. A moderation outage must never let unchecked text through (F-027).
    moderated` (or `refused` for off-topic). A self-harm signal gets a supportive message with
    Tele-MANAS 14416, KIRAN 1800-599-0019 and 112, and a structured `self_harm_signal` alert log for
    the review queue; nobody is contacted automatically (owner policy decision pending).
-4. **Output**: streamed text is moderated in chunks of about 400 characters, cut at sentence ends,
+4. **Images**: every uploaded image is analysed during upload processing, before any model sees it;
+   an unsafe image is rejected (`unsafe_content`); an outage leaves the upload unusable and, after the
+   job's retries, rejected (`processing_failed`). PDFs are not image-analysed yet (needs page rendering);
+   their only use is blueprint extraction with structured, bounded output.
+5. **Output**: streamed text is moderated in chunks of about 400 characters, cut at sentence ends,
    before each chunk is sent. A blocked chunk stops the model, is never shown, and the request is
    refunded. Evaluation feedback is moderated before it is stored.
-5. **Fail closed** (F-027, API-16): any provider error, timeout or missing token raises
+6. **Fail closed** (F-027, API-16): any provider error, timeout or missing token raises
    `ModerationUnavailableError`; the gateway sends `ai_unavailable`, refunds and makes no (further)
    model call. The same holds for the KV store (rate limits and stream slots fail closed on AI
    routes), blob storage and the model provider. Learning content is unaffected.
-6. **Defence in depth**: prompts declare tagged text to be data and neutralise tag sequences;
+7. **Defence in depth**: prompts declare tagged text to be data and neutralise tag sequences;
    structured outputs are validated and clamped; the model has no tools; Azure OpenAI's own content
    filters stay on (INFRA-5).
 

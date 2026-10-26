@@ -392,7 +392,7 @@ describe('runtime factory and Azure REST adapters', () => {
       const b = blobs.get(key);
       if (!b) return new Response(null, { status: 404 });
       if (init.method === 'HEAD') return new Response(null, { status: 200, headers: { 'content-length': String(b.length), 'content-type': 'image/png' } });
-      return new Response(b, { status: 200 });
+      return new Response(new Uint8Array(b), { status: 200 });
     }) as unknown as typeof globalThis.fetch;
     const store = new AzureBlobStore({ accountUrl: 'https://acct.blob.core.windows.net', credential: { getToken: async () => ({ token: 'mi', expiresOnTimestamp: Date.now() + 3_600_000 }) }, fetch });
     await store.put('uploads', 'u/a.png', Buffer.from('12345'), 'image/png');
@@ -425,5 +425,25 @@ describe('runtime factory and Azure REST adapters', () => {
       ['warn', { alert: true, alertKind: 'spend_threshold', severity: 'warning', scope: 'all' }, 'm1'],
       ['error', { alert: true, alertKind: 'spend_threshold', severity: 'critical', scope: 'all' }, 'm2'],
     ]);
+  });
+});
+
+describe('image moderation providers', () => {
+  it('Azure: image:analyze with base64 content; refuses images over 4 MB (fail closed)', async () => {
+    const credential = { getToken: async () => ({ token: 'tok', expiresOnTimestamp: Date.now() + 3_600_000 }) };
+    const seen: { url: string; body: { image?: { content: string }; outputType?: string } }[] = [];
+    const fetch = (async (url: string, init: RequestInit) => {
+      seen.push({ url, body: JSON.parse(String(init.body)) });
+      return new Response(JSON.stringify({ categoriesAnalysis: [{ category: 'Sexual', severity: 6 }, { category: 'Violence', severity: 2 }] }));
+    }) as unknown as typeof globalThis.fetch;
+    const p = new AzureContentSafetyProvider({ endpoint: 'https://cs.example.com', credential, fetch });
+    const r = await p.analyzeImage(Buffer.from('img'));
+    expect(r.severities).toMatchObject({ sexual: 6, violence: 2 });
+    expect(seen[0]!.url).toBe('https://cs.example.com/contentsafety/image:analyze?api-version=2024-09-01');
+    expect(seen[0]!.body).toMatchObject({ image: { content: Buffer.from('img').toString('base64') }, outputType: 'FourSeverityLevels' });
+    await expect(p.analyzeImage(Buffer.alloc(4 * 1024 * 1024 + 1))).rejects.toBeInstanceOf(ModerationUnavailableError);
+    const verdict = await new Moderator(p).checkImage(Buffer.from('img'));
+    expect(verdict).toMatchObject({ blocked: true, reasons: ['sexual'] });
+    await expect(new FailingModerationProvider().analyzeImage()).rejects.toBeInstanceOf(ModerationUnavailableError);
   });
 });

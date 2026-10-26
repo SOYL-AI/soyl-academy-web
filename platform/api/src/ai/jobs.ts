@@ -30,6 +30,7 @@ import { FIXTURE, type BlueprintFixtureInput } from './fixtures';
 import type { Caller, Preflight } from './gateway';
 import { EXTENSION, UploadRejectedError, validateAndClean } from './media';
 import { Moderator } from './moderation/moderator';
+import { CONTENT_SAFETY_IMAGE_MAX_BYTES } from './moderation/providers';
 import { systemRules } from './prompts';
 import type { AiRuntime } from './runtime';
 import type { SpendBreaker } from './spend';
@@ -221,6 +222,14 @@ export class AiJobRunner {
       await this.d.credits.refund(job.userId, job.requestId, code).catch(() => {});
       await this.d.db.update(aiRequests).set({ status: 'failed', errorCode: code, creditsCharged: 0, updatedAt: this.now() }).where(eq(aiRequests.requestId, job.requestId));
     }
+    if (job.kind === 'upload_process') {
+      // Out of retries (e.g. moderation unavailable for too long): the upload is refused, never used unchecked.
+      const { uploadId } = job.payload as { uploadId: string };
+      await this.d.db
+        .update(uploads)
+        .set({ status: 'rejected', rejectReason: 'processing_failed', updatedAt: this.now() })
+        .where(and(eq(uploads.id, uploadId), sql`${uploads.status} NOT IN ('ready', 'rejected', 'expired', 'deleted')`));
+    }
     const now = this.now();
     const [row] = await this.d.db.update(aiJobs).set({ status: 'failed', errorCode: code, result, lockedUntil: null, finishedAt: now, updatedAt: now }).where(eq(aiJobs.id, job.id)).returning();
     return row!;
@@ -395,6 +404,17 @@ export class AiJobRunner {
     } catch (e) {
       if (e instanceof UploadRejectedError) return reject(e.reason);
       throw e;
+    }
+    if (cleaned.type !== 'application/pdf') {
+      // Image moderation before any model sees it (AC-15). A Content Safety outage throws: the job is
+      // retried and the upload stays unusable (fail closed, F-027).
+      const moderation = this.d.runtime().moderation;
+      if (!moderation.isStandIn && cleaned.bytes > CONTENT_SAFETY_IMAGE_MAX_BYTES) return reject('image_too_large_to_check');
+      const verdict = await new Moderator(moderation).checkImage(cleaned.data);
+      if (verdict.blocked) {
+        this.d.log().warn({ alert: verdict.selfHarm, alertKind: verdict.selfHarm ? 'self_harm_signal' : undefined, userId: u.userId, uploadId: u.id, reasons: verdict.reasons }, 'upload refused by image moderation');
+        return reject('unsafe_content');
+      }
     }
     const processedKey = `${u.userId}/${u.id}.${EXTENSION[cleaned.type]}`;
     await blob.put(AI_UPLOADS.containers.clean, processedKey, cleaned.data, cleaned.type);
