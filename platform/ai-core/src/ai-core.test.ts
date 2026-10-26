@@ -99,13 +99,14 @@ describe('BudgetGuard', () => {
     let calls = 0;
     // Each call returns ~10k output tokens (≈176 paise on small) and reserves max_output_tokens (16k ≈ 282 paise).
     const provider = new MockProvider({ seed: 1, failOnCall: () => (calls++, null), fixtures: { long: () => 'x'.repeat(40_000) } });
-    const client = new ModelClient({ provider, budget: new BudgetGuard({ runCapPaise: 600, totalCapPaise: 1e9 }) });
+    const guard = new BudgetGuard({ runCapPaise: 600, totalCapPaise: 1e9 });
+    const client = new ModelClient({ provider, budget: guard });
     const req = { tier: 'small' as const, messages: [{ role: 'user' as const, content: 'hi' }], mock: { fixture: 'long' } };
     await client.chat(req);
     await client.chat(req);
     await expect(client.chat(req)).rejects.toBeInstanceOf(BudgetExceededError);
     expect(calls).toBe(2);
-    expect(client.budget.snapshot().spentRunPaise).toBeGreaterThan(0);
+    expect(guard.snapshot().spentRunPaise).toBeGreaterThan(0);
   });
 });
 

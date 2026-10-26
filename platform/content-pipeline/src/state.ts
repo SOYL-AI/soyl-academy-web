@@ -12,6 +12,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import type { BudgetLedger } from '@soyl/ai-core';
 import type { TokenUsage } from '@soyl/shared/config/models';
 
 export const STAGES = ['outline', 'generate', 'lint', 'verify', 'originality', 'assemble', 'tts', 'publish'] as const;
@@ -81,6 +82,8 @@ export interface SpendEntry {
 }
 
 export interface StateStore {
+  /** 'file' (offline, .state/) or 'pg' (pipeline_* tables). */
+  readonly kind?: 'file' | 'pg';
   createRun(run: RunRecord): Promise<void>;
   getRun(id: string): Promise<RunRecord | null>;
   updateRun(id: string, patch: Partial<RunRecord>): Promise<RunRecord>;
@@ -91,6 +94,8 @@ export interface StateStore {
   recordSpend(entry: SpendEntry): Promise<void>;
   /** Sum of spend in paise matching the filter. */
   spentPaise(filter?: { provider?: string; simulated?: boolean; runId?: string }): Promise<number>;
+  /** A shared, persistent budget for a run (Postgres: row-locked reservations). Absent → in-process BudgetGuard. */
+  budgetFor?(run: RunRecord, caps: { run: number; total: number }, simulated: boolean): Promise<BudgetLedger>;
 }
 
 /** Aggregate status of a unit stage from its items. */
@@ -129,6 +134,7 @@ function safeName(name: string): string {
 }
 
 export class FileStateStore implements StateStore {
+  readonly kind = 'file' as const;
   /** Serialises writes per file inside this process. */
   private chains = new Map<string, Promise<unknown>>();
 

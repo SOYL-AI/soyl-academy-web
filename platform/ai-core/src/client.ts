@@ -7,7 +7,7 @@
  */
 import type { z } from 'zod/v4';
 import { MODELS, costPaise, type ModelTier, type TokenUsage } from '@soyl/shared/config/models';
-import { BudgetGuard } from './budget';
+import { BudgetGuard, type BudgetLedger } from './budget';
 import { parseJsonOutput, toJsonSchema } from './json-schema';
 import { estimateMessagesTokens } from './tokens';
 import type {
@@ -36,7 +36,7 @@ export class StructuredOutputError extends Error {
 
 export interface ModelClientOptions {
   provider: ModelProvider;
-  budget?: BudgetGuard;
+  budget?: BudgetLedger;
   /** Receives every usage record (write it to the ledger / ai_requests). */
   onUsage?: (record: UsageRecord) => void | Promise<void>;
   /** Repair round-trips allowed when structured output fails validation. */
@@ -63,7 +63,7 @@ function issuesOf(error: z.ZodError): string[] {
 
 export class ModelClient {
   readonly provider: ModelProvider;
-  readonly budget: BudgetGuard;
+  readonly budget: BudgetLedger;
   private readonly batchReservations = new Map<string, { id: number; paise: number }>();
 
   constructor(private readonly opts: ModelClientOptions) {
@@ -102,17 +102,17 @@ export class ModelClient {
   }
 
   private async call(req: ProviderRequest, extraInputTokens = 0): Promise<{ raw: RawCompletion; usage: UsageRecord }> {
-    const reservation = this.budget.reserve(this.estimateCostPaise(req, { extraInputTokens }));
+    const reservation = await this.budget.reserve(this.estimateCostPaise(req, { extraInputTokens }));
     const started = performance.now();
     let raw: RawCompletion;
     try {
       raw = await this.provider.complete(req);
     } catch (error) {
-      this.budget.release(reservation);
+      await this.budget.release(reservation);
       throw error;
     }
     const usage = this.record(req.tier, raw, Math.round(performance.now() - started), false, req.meta);
-    this.budget.settle(reservation, usage.cost_paise);
+    await this.budget.settle(reservation, usage.cost_paise);
     await this.emit(usage);
     return { raw, usage };
   }
@@ -128,17 +128,17 @@ export class ModelClient {
       onDelta(result.text);
       return result;
     }
-    const reservation = this.budget.reserve(this.estimateCostPaise(req));
+    const reservation = await this.budget.reserve(this.estimateCostPaise(req));
     const started = performance.now();
     let raw: RawCompletion;
     try {
       raw = await this.provider.stream(req, onDelta);
     } catch (error) {
-      this.budget.release(reservation);
+      await this.budget.release(reservation);
       throw error;
     }
     const usage = this.record(req.tier, raw, Math.round(performance.now() - started), false, req.meta);
-    this.budget.settle(reservation, usage.cost_paise);
+    await this.budget.settle(reservation, usage.cost_paise);
     await this.emit(usage);
     return { text: raw.text, finishReason: raw.finishReason, usage };
   }
@@ -195,12 +195,12 @@ export class ModelClient {
     if (!batch) throw new Error(`provider ${this.provider.name} does not support Batch`);
     const requests = items.map((it) => ({ customId: it.customId, request: this.providerRequest(it.request) }));
     const estimate = requests.reduce((sum, r) => sum + this.estimateCostPaise(r.request, { batch: true }), 0);
-    const reservation = this.budget.reserve(estimate);
+    const reservation = await this.budget.reserve(estimate);
     let jobId: string;
     try {
       ({ jobId } = await batch.submit(requests));
     } catch (error) {
-      this.budget.release(reservation);
+      await this.budget.release(reservation);
       throw error;
     }
     this.batchReservations.set(jobId, reservation);
@@ -245,9 +245,9 @@ export class ModelClient {
     const reservation = this.batchReservations.get(jobId);
     if (reservation) {
       this.batchReservations.delete(jobId);
-      this.budget.settle(reservation, spent);
+      await this.budget.settle(reservation, spent);
     } else {
-      this.budget.record(spent);
+      await this.budget.record(spent);
     }
     return out;
   }
