@@ -1,0 +1,54 @@
+id: cbse-8-default-half-yearly
+board: cbse
+exam: cbse
+class: 8
+subject_id: null
+paper_type: half-yearly
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: half-syllabus
+sections:
+  - id: A
+    title: Section A - Objective (20 x 1)
+    instructions: Multiple-choice and assertion-reason questions.
+    items:
+      - {type: mcq, count: 16, marks_each: 1}
+      - {type: assertion-reason, count: 4, marks_each: 1}
+  - id: B
+    title: Section B - Very short answer (6 x 2)
+    instructions: Internal choice in two questions.
+    items:
+      - {type: short, count: 4, marks_each: 2}
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Short answer (7 x 3)
+    instructions: Internal choice in two questions.
+    items:
+      - {type: short, count: 5, marks_each: 3}
+      - {type: short, count: 4, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Long answer (3 x 5)
+    instructions: Internal choice in every question.
+    items:
+      - {type: long, count: 6, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+  - id: E
+    title: Section E - Case-based (3 x 4)
+    instructions: Three case/source-based questions with sub-parts; internal choice in one sub-part of each.
+    items:
+      - {type: case-based, count: 3, marks_each: 4}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default modelled on the CBSE board pattern (CONTEXT section 9: "use a generic blueprint per board and subject, stored as editable
+
+  config"); not an official CBSE paper. Item types and marks follow the 2026-27 CBSE board style (MCQ/assertion-reason 1, short 2-3, long 5,
+
+  case-based 4, about one-third internal choice) so practice transfers to the board paper. Half-yearly exam on the first half of the
+  syllabus: 80 marks in 3 hours (+ 20 internal assessment in the CBSE scheme), the same layout as the CBSE Class X board
+
+  paper family (20 x 1, 6 x 2, 7 x 3, 3 x 4 case-based, 3 x 5). Subjects whose theory paper is 70 marks (Class 11 sciences etc.) have their
+  own
+
+  override where one exists; otherwise the assembler scales this pattern.

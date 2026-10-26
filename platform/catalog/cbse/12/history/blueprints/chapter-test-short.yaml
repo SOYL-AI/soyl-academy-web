@@ -1,0 +1,47 @@
+id: cbse-12-history-chapter-test-short
+board: cbse
+exam: cbse
+class: 12
+subject_id: cbse-12-history
+paper_type: chapter-test-short
+academic_year: "2026-27"
+duration_min: 40
+total_marks: 20
+mark_shares: {}
+scope: chapter
+sections:
+  - id: A
+    title: Section A - Objective (1 mark each)
+    instructions: Multiple-choice and assertion-reason questions.
+    items:
+      - {type: mcq, count: 3, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+  - id: B
+    title: Section B - Short answer (2 and 3 marks)
+    instructions: About 30-50 words for 2-mark and 50-80 words for 3-mark answers.
+    items:
+      - {type: short, count: 2, marks_each: 2}
+      - {type: short, count: 1, marks_each: 3}
+  - id: C
+    title: Section C - Long answer (5 marks)
+    instructions: Answer any one of the two questions (80-120 words).
+    items:
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Source-based (4 marks)
+    instructions: Read the source and answer all parts; one sub-part has an internal choice.
+    items:
+      - {type: source-based, count: 1, marks_each: 4}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default modelled on the CBSE board pattern (CONTEXT section 9: "use a generic blueprint per board and subject, stored as editable
+
+  config"); not an official CBSE paper. Item types and marks follow the 2026-27 CBSE board style (MCQ/assertion-reason 1, short 2-3, long 5,
+
+  case-based 4, about one-third internal choice) so practice transfers to the board paper. Subject-family override (humanities) of the class
+  default in platform/catalog/cbse/blueprints/<class>/. Source-based questions replace case-based ones, as in the CBSE board papers for
+  these subjects. Map work
+
+  (SST, History, Geography) is set only in chapters with map items: the assembler may replace a 2-mark short answer with two 1-mark map
+  items.
