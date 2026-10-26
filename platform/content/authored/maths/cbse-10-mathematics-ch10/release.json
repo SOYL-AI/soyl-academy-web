@@ -6766,7 +6766,7 @@
       "answer": {
         "model_answer_md": "$OM = 5$ cm and the line is perpendicular to $OA$ at $M$. Its distance from $O$ is $5$ cm $< 10$ cm, so it cuts the circle. The points where it meets the circle are at distance $\\sqrt{10^2 - 5^2} = \\sqrt{75} = 5\\sqrt3 \\approx 8.66$ cm from $M$ on either side: two points, so the line is a **secant**, not a tangent.\n\n**Correct result:** the line perpendicular to a radius **at its endpoint on the circle** is a tangent (its distance from the centre equals the radius)."
       },
-      "solution_md": "Compare the distance of the line from the centre with the radius.",
+      "solution_md": "Step 1: the line is perpendicular to $OA$ at $M$, so its distance from $O$ is $OM = 5$ cm. Step 2: $5$ cm is less than the radius $10$ cm, so the line meets the circle twice and is a secant. Step 3: a line perpendicular to a radius is a tangent only when it passes through the end of the radius on the circle.",
       "marking_scheme": [
         {
           "step": "Distance 5 cm < radius",
@@ -8521,7 +8521,7 @@
     "run_id": null,
     "checks": {
       "syllabus": "topics t01–t03 only (tangent; tangent ⟂ radius; equal tangents from an external point, incl. circumscribed quadrilaterals and triangles); no removed topics in this chapter. Constructions (deleted chapter) are not used: figures are given, never constructed by the student.",
-      "katex": "1635 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "1641 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "0 deck plots + 0 notes/question plots: 0 marked points all on their curves and matching their labels; 0 zeros located numerically and all marked; 0 intersection points lie on both lines",
       "re_solve": "142/142 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "geometry": "19 geometry figures, 157 exact checks (points on circles, right angles, equal lengths, collinearity, labelled angles and lengths to scale), 0 failures",
