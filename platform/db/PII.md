@@ -63,6 +63,9 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `consent_status.provider_ref` | Id in the owner's consent system | life of account | delete |
 | `consent_status.status` | Consent state | life of account | delete |
 | `attempts.*`, `responses.answer`, `evaluations.feedback` | Test attempts, answers, marks | life of account | cascade |
+| `attempts.auto_score`, `attempts.self_score`, `attempts.time_taken_sec`, `attempts.counts_for_stats`, `attempts.graded_at`, `attempts.tab_switch_count`, `responses.client_seq`, `responses.client_saved_at`, `responses.time_spent_sec` | Attempt marks split (auto/self), time taken, percentile flag, tab switches, autosave sequence and advisory client times (0007, ADR-012) | life of account | cascade |
+| `test_score_buckets.*` | Per-test score distribution: counts per half-mark bucket, no user link | life of test | retain (aggregate, not personal) |
+| KV `lb:live:<event>` sorted sets | Live-mock provisional ranks: user id → auto score (no names) | until the event's results are published + 30 days (key TTL) | delete (`DELETE /v1/me` removes the member) |
 | `live_registrations.*` | Live-mock registration, rank, score | life of account | cascade |
 | `xp_events.*`, `streaks.*`, `user_badges.*`, `league_memberships.*` | Progress and gamification | life of account | cascade |
 | `lesson_progress.*` | Lesson position per chapter/deck part, read/listen mode, first completion time | life of account | cascade |

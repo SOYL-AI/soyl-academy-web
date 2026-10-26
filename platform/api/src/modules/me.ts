@@ -27,6 +27,7 @@ import { validateDisplayName } from '../domain/display-name';
 import { loadProfile } from '../domain/profile';
 import { mergeGuestProgress } from '../domain/guest-merge';
 import { deleteAccount } from '../domain/account-deletion';
+import { removeFromLiveBoards } from '../domain/tests/live';
 
 const MeResponse = z
   .object({
@@ -140,6 +141,8 @@ export function registerMeRoutes(appIn: FastifyInstance, services: Services, dep
     handler: async (request, reply) => {
       const user = request.auth!.user;
       const result = await deleteAccount(db, clock, services.otp, user, { purgeAfterDays: ACCOUNT.purgeAfterDays, requestId: String(request.id) });
+      // PII.md: provisional live-mock ranks are KV entries keyed by user id. Best effort: the rows go with the purge anyway.
+      await removeFromLiveBoards(db, deps.kv, user.id).catch((err) => request.log.warn({ err }, 'live leaderboard cleanup failed'));
       services.sessions.clear(reply);
       reply.header('clear-site-data', '"cookies"');
       authEvent(request.log, 'account_deleted', { outcome: 'success', userId: user.id, ip: request.clientIp, userAgent: request.headers['user-agent'] });

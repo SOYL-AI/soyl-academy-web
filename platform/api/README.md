@@ -33,6 +33,8 @@ npm run dev -w @soyl/api
 
 This serves `http://localhost:8787` with no external services: embedded PostgreSQL (migrated, full catalog, fixture users, and every authored/exemplar chapter published through the pipeline's publish stage — `DEV_CONTENT=off` skips that), in-memory KV, mock SMS/email/consent, a mock Google OIDC provider on `http://127.0.0.1:8090`, and `GET /v1/dev/otp-outbox?to=<test identifier>`. Every `/v1` call needs `x-soyl-edge-auth: local-dev-edge-secret-not-for-deployment-000000`, which the web proxy adds (ADR-005).
 
+Tests (M3, ADR-012): start-up also runs the pipeline's `assemble --series` for CBSE 10 Science and Maths (the unit/mock papers the bank allows) and schedules the live mocks: the two Wave 1 sittings and a "Dev live mock" starting `DEV_LIVE_IN` minutes after start-up (default 10, `off` to skip), with papers filled from the practice pool (local only). `MOCK_OIDC_PORT` moves the mock Google provider when 8090 is taken.
+
 ```
 S=local-dev-edge-secret-not-for-deployment-000000
 curl localhost:8787/healthz
@@ -51,6 +53,8 @@ Without `DATABASE_URL` and with `APP_ENV=local` it starts the embedded database 
 npm run dev -w @soyl/api            local server (above)
 npm run build -w @soyl/api          esbuild bundle → api/dist/index.js
 npm run openapi -w @soyl/api        regenerate api/openapi.json (a test fails when it is stale)
+npm run live -w @soyl/api -- schedule|list    live mocks (Wave 1 sittings; see scripts/live.ts, ADR-012)
+npm run attempts -w @soyl/load -- …  test-engine load harness (platform/load/README.md)
 npm run typecheck -w @soyl/api
 npm test -w @soyl/api               integration + unit tests on real PostgreSQL
 npx vitest run --coverage           (inside api/) coverage summary
@@ -71,6 +75,7 @@ Tests use `@soyl/db/testing` (one embedded PostgreSQL per run, a fresh database 
 | `ALLOWED_ORIGINS` | origin of `PUBLIC_BASE_URL` | AUTH-12 exact Origin allowlist (comma-separated, no wildcards). |
 | `DATABASE_URL` | — | Required outside local/test. |
 | `DATABASE_AUTH` | `password` | `entra`: the URL has no password; each new connection uses a managed-identity token for `https://ossrdbms-aad.database.windows.net` (INFRA-2). |
+| `DATABASE_POOL_MAX` | 10 | Connections per API replica (§16 capacity; replicas × pool ≤ the server's limit). |
 | `REDIS_URL` | — | Required in `stg`/`prod`; memory store otherwise. |
 | `REDIS_AUTH`, `REDIS_USERNAME` | `none` | `entra`: Azure Managed Redis; username = managed identity object id, password = token for `https://redis.azure.com`, re-AUTH before expiry; `rediss://` required (INFRA-3). |
 | `AZURE_CLIENT_ID` (+ `IDENTITY_ENDPOINT`, `IDENTITY_HEADER` set by Container Apps) | — | User-assigned managed identity for all tokens (`@soyl/shared/azure/identity`). Without the endpoint, local dev uses `az account get-access-token`; never in prod. |

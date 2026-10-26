@@ -21,7 +21,7 @@
 import { randomBytes } from 'node:crypto';
 import { Redis, type RedisOptions } from 'ioredis';
 import { AZURE_RESOURCES, REFRESH_MARGIN_MS, type TokenProvider } from '@soyl/shared/azure/identity';
-import { KvUnavailableError, type KeyValueStore, type WindowResult } from './store';
+import { KvUnavailableError, type KeyValueStore, type WindowResult, type ZEntry } from './store';
 
 const WINDOW_HIT = `
 local key = KEYS[1]
@@ -231,6 +231,35 @@ export class RedisKv implements KeyValueStore {
 
   async windowAdd(key: string, windowMs: number, now: number) {
     return Number(await this.run(() => this.redis.eval(WINDOW_ADD, 1, this.k(key), now, windowMs, this.member(now))));
+  }
+
+  async zAdd(key: string, member: string, score: number, ttlMs: number) {
+    const k = this.k(key);
+    await this.run(() => this.redis.multi().zadd(k, score, member).pexpire(k, ttl(ttlMs)).exec());
+  }
+
+  async zRem(key: string, member: string) {
+    await this.run(() => this.redis.zrem(this.k(key), member));
+  }
+
+  async zScore(key: string, member: string) {
+    const v = await this.run(() => this.redis.zscore(this.k(key), member));
+    return v === null || v === undefined ? null : Number(v);
+  }
+
+  async zCard(key: string) {
+    return Number(await this.run(() => this.redis.zcard(this.k(key))));
+  }
+
+  async zCountAbove(key: string, score: number) {
+    return Number(await this.run(() => this.redis.zcount(this.k(key), `(${score}`, '+inf')));
+  }
+
+  async zRevRange(key: string, start: number, stop: number): Promise<ZEntry[]> {
+    const flat = await this.run(() => this.redis.zrevrange(this.k(key), start, stop, 'WITHSCORES'));
+    const out: ZEntry[] = [];
+    for (let i = 0; i + 1 < flat.length; i += 2) out.push({ member: flat[i]!, score: Number(flat[i + 1]) });
+    return out;
   }
 
   async ping() {

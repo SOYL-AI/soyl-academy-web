@@ -63,6 +63,8 @@ const EnvSchema = z.object({
   DATABASE_URL: z.string().optional(),
   /** INFRA-2: `entra` = DATABASE_URL has no password; each new connection uses a managed-identity token. */
   DATABASE_AUTH: z.enum(['password', 'entra']).default('password'),
+  /** API connection pool size (§16 capacity; one API replica). */
+  DATABASE_POOL_MAX: z.coerce.number().int().min(1).max(200).default(10),
   REDIS_URL: z.string().optional(),
   /** INFRA-3: `entra` = Azure Managed Redis with a managed-identity token as the AUTH password. */
   REDIS_AUTH: z.enum(['none', 'entra']).default('none'),
@@ -140,6 +142,7 @@ export interface Config {
   secureCookies: boolean;
   databaseUrl: string | undefined;
   databaseAuth: 'password' | 'entra';
+  databasePoolMax: number;
   redisUrl: string | undefined;
   redis: { auth: 'none' | 'entra'; username?: string };
   /** AUTH-1: enabled sign-in methods. */
@@ -298,6 +301,7 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
     secureCookies,
     databaseUrl: e.DATABASE_URL,
     databaseAuth: e.DATABASE_AUTH,
+    databasePoolMax: e.DATABASE_POOL_MAX,
     redisUrl: e.REDIS_URL,
     redis: { auth: e.REDIS_AUTH, username: e.REDIS_USERNAME },
     authMethods,

@@ -163,8 +163,20 @@ export const RATE_LIMITS = {
   'uploads.user.hour': { key: 'user', limit: 5, windowSeconds: 3600 },
   'uploads.user.day': { key: 'user', limit: 20, windowSeconds: 86400 },
   'attempt.start.user': { key: 'user', limit: 30, windowSeconds: 3600 },
-  'attempt.autosave': { key: 'attempt', limit: 3, windowSeconds: 15 },
+  /**
+   * Autosave per attempt (M3, ADR-012): the player saves every 10 s plus page-hide flushes and offline
+   * replays, and two tabs may save the same attempt, so 8 per 15 s leaves room without allowing floods.
+   */
+  'attempt.autosave': { key: 'attempt', limit: 8, windowSeconds: 15 },
   'attempt.submit': { key: 'attempt', limit: 5, windowSeconds: 60 },
+  /** Attempt reads (resume, result) per user: a reload storm must not reach the database unbounded. */
+  'attempt.read.user': { key: 'user', limit: 120, windowSeconds: 60 },
+  /** Self-evaluation saves per user. */
+  'attempt.evaluate.user': { key: 'user', limit: 60, windowSeconds: 60 },
+  /** Custom test builds per user (each build assembles a paper). */
+  'tests.custom.user': { key: 'user', limit: 20, windowSeconds: 3600 },
+  /** Live-mock registrations per user. */
+  'live.register.user': { key: 'user', limit: 30, windowSeconds: 3600 },
   'reports.user': { key: 'user', limit: 20, windowSeconds: 86400 },
   'reports.ip': { key: 'ip', limit: 50, windowSeconds: 86400 },
   'account.create.ip': { key: 'ip', limit: 20, windowSeconds: 86400, soft: true },

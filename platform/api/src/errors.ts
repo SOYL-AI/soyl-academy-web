@@ -31,6 +31,14 @@ export const PROBLEMS = {
   not_found: [404, 'Not found.'],
   method_disabled: [404, 'This sign-in method is not available.'],
   conflict: [409, 'This conflicts with the current state.'],
+  /** Test engine (ADR-012): the attempt was submitted or its time (deadline + grace) is over. */
+  attempt_closed: [409, 'This attempt has ended.'],
+  /** Live mocks: outside the registration/start window (detail says which). */
+  live_not_open: [409, 'This live test is not open right now.'],
+  /** A test whose questions cannot be served yet (embargoed items) or are no longer available. */
+  test_unavailable: [409, 'This test is not available right now.'],
+  /** Custom test builder: not enough questions match the choices. */
+  bank_too_small: [422, 'Not enough questions match your choices.'],
   identifier_unavailable: [409, 'This cannot be linked to your account.'],
   last_sign_in_method: [409, 'You cannot remove your only way to sign in.'],
   payload_too_large: [413, 'The request is too large.'],
@@ -43,6 +51,7 @@ export const PROBLEMS = {
   service_unavailable: [503, 'This is temporarily unavailable. Please try again shortly.'],
   consent_unavailable: [503, 'We could not check consent right now. Please try again shortly.'],
   internal: [500, 'Something went wrong on our side.'],
+  not_implemented: [501, 'This is not available yet.'],
 } as const satisfies Record<string, readonly [number, string]>;
 
 export type ProblemCode = keyof typeof PROBLEMS;

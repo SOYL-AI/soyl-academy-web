@@ -39,7 +39,7 @@ export async function main(env: Record<string, string | undefined> = process.env
   }
 
   // INFRA-2 / INFRA-3: DATABASE_AUTH=entra and REDIS_AUTH=entra use managed-identity tokens.
-  const { db, close: closeDb } = createDb(databaseUrl, { password: pgPasswordFromEnv({ DATABASE_AUTH: config.databaseAuth }) });
+  const { db, close: closeDb } = createDb(databaseUrl, { max: config.databasePoolMax, password: pgPasswordFromEnv({ DATABASE_AUTH: config.databaseAuth }) });
   const kv = createKv(config, { onRefreshError: (err) => console.error(`redis token refresh failed: ${(err as Error).message}`) });
   const providers = createProviders(config);
   const app = await buildApp({ config, db, kv, clock: systemClock, providers });

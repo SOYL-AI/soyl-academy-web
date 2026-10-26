@@ -103,3 +103,18 @@ Process: after every integration the Lead checks the platform-ci run for the new
 | 2026-10-27 | M2 content | CBSE 10 English: Grammar, Writing Skills, A Letter to God, Dust of Snow + English language/literature templates | subject-producer | `platform/subject-producer/cbse-10-english-a` | `platform/content/authored/english-*/` | in progress | — |
 | 2026-10-27 | `02ead5c` | [platform-ci 40344593528](https://github.com/SOYL-AI/soyl-academy-web/actions/runs/40344593528) | **failure** — verify flagged genotype options TT/Tt/tt as duplicates (case-insensitive check: false positive); assembler test assumed missing questions; WEB-11 grep hit a negative test |
 | 2026-10-27 | `edbbcbd` | platform-ci | **success** — all jobs green (fixes above) |
+
+## Production deployment (D-031) — started 2026-10-27
+| Step | State | Evidence |
+|---|---|---|
+| Owner signs in (device code), Owner role on the subscription, providers registered | done | `az account show`, `az role assignment list`, `az provider show` |
+| Central India availability: Postgres Flexible (Burstable/GP/MO), Container Apps, Azure Managed Redis | confirmed | `az postgres flexible-server list-skus -l centralindia`, provider locations |
+| Resource groups `rg-soyl-platform-shared`, `rg-soyl-platform-prod` (centralindia) | created | `az group create` |
+| Shared container registry `crsoylplatform` (+ budget, action group → outreach@soyl.cloud) | **deployed** | deployment `soyl-shared-1` Succeeded (what-if: 3 creates) |
+| Code + Bicep for keyless MI auth, email-only OTP via ACS (soylai.com), consent fail-safe, prod params | in progress | prod-readiness agent, branch `platform/backend-api/prod-auth` |
+| Images (api, worker, migrate) via `az acr build` | waiting on readiness | — |
+| main.bicep → prod (Postgres, Redis, Key Vault, ACS, Container Apps, monitoring) | waiting | — |
+| Migrations, catalog seed, content publish, smoke tests | waiting | — |
+| soylai.com DNS records for ACS email (owner adds) | waiting | — |
+| 2026-10-27 | `bebeeff` | [platform-ci 40389356089](https://github.com/SOYL-AI/soyl-academy-web/actions/runs/40389356089) | **failure** — gitleaks: test id `t_cbse10sci_ch02_short` in an M3 test tripped generic-api-key (false positive) |
+| 2026-10-27 | `e75da26` | platform-ci | **success** — `.gitleaks.toml` allowlists only `[tq]_<exam><class><subject>_…` ids (canary confirms real keys still caught) |

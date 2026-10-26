@@ -1,0 +1,13 @@
+{
+  "name": "@soyl/load",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Load tests for the test engine (ARCHITECTURE §16): an undici harness that runs here against a local API, and k6 scripts for staging. See README.md.",
+  "scripts": {
+    "attempts": "node src/attempts.mjs"
+  },
+  "dependencies": {
+    "undici": "8.12.3"
+  }
+}
