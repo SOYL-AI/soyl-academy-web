@@ -95,6 +95,17 @@ function baseVars(ctx: UnitContext): Omit<TemplateVars, 'outline_json' | 'json_s
   };
 }
 
+/** The JSON Schema text per schema name: generation schemas differ per unit only in normalisation, not shape. */
+const schemaTextCache = new Map<string, string>();
+function jsonSchemaText(name: string, schema: z.ZodType<unknown>): string {
+  let text = schemaTextCache.get(name);
+  if (text === undefined) {
+    text = JSON.stringify(toJsonSchema(schema));
+    schemaTextCache.set(name, text);
+  }
+  return text;
+}
+
 function build(
   ctx: UnitContext,
   dirs: TemplateDirs,
@@ -108,7 +119,7 @@ function build(
 ): ItemSpec {
   const template = resolveTemplate(ctx.family, asset, dirs);
   const fewShot = loadFewShot(template.few_shot, dirs.templatesDir, asset);
-  const vars: TemplateVars = { ...baseVars(ctx), content_json: '(not applicable at this stage)', ...extra, json_schema: JSON.stringify(toJsonSchema(schema)), few_shot: fewShot.text };
+  const vars: TemplateVars = { ...baseVars(ctx), content_json: '(not applicable at this stage)', ...extra, json_schema: jsonSchemaText(schemaName, schema), few_shot: fewShot.text };
   const { system, user } = renderTemplate(template, vars);
   return {
     key,

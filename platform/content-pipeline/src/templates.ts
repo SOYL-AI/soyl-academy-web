@@ -161,7 +161,29 @@ export function templateSearchDirs(family: Family, templatesDir: string): string
   return [...new Set(names)].map((n) => path.join(templatesDir, 'prompts', n));
 }
 
+const templateCache = new Map<string, PromptTemplate>();
+const fileCache = new Map<string, string>();
+
+/** Templates and exemplar files are read once per process (a full-catalog plan renders ~40k prompts). */
+function readCached(file: string): string {
+  let text = fileCache.get(file);
+  if (text === undefined) {
+    text = fs.readFileSync(file, 'utf8');
+    fileCache.set(file, text);
+  }
+  return text;
+}
+
 export function resolveTemplate(family: Family, asset: TemplateAsset, dirs: { templatesDir: string; fallbackTemplatesDir: string }): PromptTemplate {
+  const key = `${family}|${asset}|${dirs.templatesDir}|${dirs.fallbackTemplatesDir}`;
+  const hit = templateCache.get(key);
+  if (hit) return hit;
+  const tpl = resolveTemplateUncached(family, asset, dirs);
+  templateCache.set(key, tpl);
+  return tpl;
+}
+
+function resolveTemplateUncached(family: Family, asset: TemplateAsset, dirs: { templatesDir: string; fallbackTemplatesDir: string }): PromptTemplate {
   for (const dir of templateSearchDirs(family, dirs.templatesDir)) {
     const best = versionsIn(dir, asset)[0];
     if (best) return parseTemplate(fs.readFileSync(best.file, 'utf8'), best.file, false);
@@ -198,6 +220,17 @@ export function loadFewShot(
   asset: TemplateAsset | null = null,
   maxChars: number = GENERATION.fewShotMaxChars,
 ): { text: string; missing: string[] } {
+  const cacheKey = JSON.stringify([refs, templatesDir, asset, maxChars]);
+  const cached = fewShotCache.get(cacheKey);
+  if (cached) return cached;
+  const result = loadFewShotUncached(refs, templatesDir, asset, maxChars);
+  fewShotCache.set(cacheKey, result);
+  return result;
+}
+
+const fewShotCache = new Map<string, { text: string; missing: string[] }>();
+
+function loadFewShotUncached(refs: string[], templatesDir: string, asset: TemplateAsset | null, maxChars: number): { text: string; missing: string[] } {
   const parts: string[] = [];
   const missing: string[] = [];
   const root = path.resolve(templatesDir);
@@ -210,7 +243,7 @@ export function loadFewShot(
       missing.push(ref);
       continue;
     }
-    const raw = fs.readFileSync(file, 'utf8');
+    const raw = readCached(file);
     if (!file.endsWith('.json')) {
       parts.push(`Example (${ref}):\n${raw.slice(0, 3000)}${raw.length > 3000 ? '\n…' : ''}`);
       continue;

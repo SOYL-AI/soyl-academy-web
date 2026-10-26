@@ -22,8 +22,11 @@ export interface ItemEstimate {
   batchPaise: number;
 }
 
+const schemaTokenCache = new Map<string, number>();
+
 export function estimateItem(spec: ItemSpec): ItemEstimate {
-  const schemaTokens = Math.ceil(JSON.stringify(spec.request.schema ? toJsonSchema(spec.request.schema) : {}).length / 4);
+  const schemaTokens = schemaTokenCache.get(spec.request.schemaName) ?? Math.ceil(JSON.stringify(toJsonSchema(spec.request.schema)).length / 4);
+  schemaTokenCache.set(spec.request.schemaName, schemaTokens);
   const inputTokens = estimateMessagesTokens(spec.request.messages) + schemaTokens;
   const outputTokens = Math.min(spec.expectedOutputTokens, spec.request.maxOutputTokens ?? MODELS[spec.request.tier].max_output_tokens);
   const usage = { input_tokens: inputTokens, cached_input_tokens: 0, output_tokens: outputTokens };
