@@ -134,3 +134,21 @@ export function questionBatchSchema(unit: string, batchKey: string, slots: Quest
 }
 
 export const OutlineGeneration = LessonOutline;
+
+/** Stage 5 verify report (the verify templates' output contract). */
+export const VerifyReport = z.object({
+  verdict: z.enum(['pass', 'fix', 'regenerate']),
+  items: z
+    .array(
+      z.object({
+        ref: z.string(),
+        severity: z.enum(['critical', 'major', 'minor']),
+        category: z.string().default('other'),
+        evidence: z.string().default(''),
+        fix: z.string().default(''),
+      }),
+    )
+    .default([]),
+  summary: z.record(z.string(), z.number()).default({}),
+});
+export type VerifyReport = z.infer<typeof VerifyReport>;

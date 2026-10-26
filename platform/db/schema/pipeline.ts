@@ -13,7 +13,7 @@ import { boolean, check, index, integer, jsonb, pgTable, text, uniqueIndex } fro
 import { createdAt, id, meteredPaise, oneOf, timestamps, tstz } from './_shared';
 
 export const PIPELINE_STAGES = ['outline', 'generate', 'lint', 'verify', 'originality', 'assemble', 'tts', 'publish'] as const;
-export const PIPELINE_RUN_STATUSES = ['running', 'done', 'failed', 'paused_budget'] as const;
+export const PIPELINE_RUN_STATUSES = ['running', 'done', 'partial', 'failed', 'paused_budget'] as const;
 export const PIPELINE_ITEM_STATUSES = ['pending', 'running', 'done', 'failed', 'paused', 'needs_review'] as const;
 export const PIPELINE_PROVIDERS = ['mock', 'azure'] as const;
 
@@ -29,6 +29,10 @@ export const pipelineRuns = pgTable(
     status: text('status').notNull().default('running'),
     budgetCapPaise: meteredPaise('budget_cap_paise'),
     spentPaise: meteredPaise('spent_paise').notNull().default(0),
+    /** Outstanding worst-case reservations of in-flight model calls (migration 0004). Reservations are made under a row lock on the running runs, so parallel runs share one cap. */
+    reservedPaise: meteredPaise('reserved_paise').notNull().default(0),
+    /** Pipeline run record extras: total cap, simulated flag, Batch items, counts, message (migration 0004). */
+    detail: jsonb('detail').notNull().default(sql`'{}'::jsonb`),
     batchJobId: text('batch_job_id'),
     startedAt: tstz('started_at').notNull().defaultNow(),
     finishedAt: tstz('finished_at'),
@@ -84,6 +88,8 @@ export const pipelineItems = pgTable(
     costPaise: meteredPaise('cost_paise').notNull().default(0),
     /** Blob key or path of the stage output. */
     outputRef: text('output_ref'),
+    /** Stage-specific detail, e.g. lint finding counts, verify flags (migration 0004). */
+    detail: jsonb('detail').notNull().default(sql`'{}'::jsonb`),
     error: text('error'),
     lastRunId: text('last_run_id').references(() => pipelineRuns.id, { onDelete: 'set null' }),
     ...timestamps(),

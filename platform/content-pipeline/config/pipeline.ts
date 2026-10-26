@@ -148,3 +148,21 @@ export const HINDI_ORTHOGRAPHY = {
 
 /** Model answers outside this band around word_limit are flagged (warning `answer.word-limit`). */
 export const WORD_LIMIT_SLACK = { below: 0.8, above: 1.2 } as const;
+
+/**
+ * Stage 6 originality (CONTEXT §8). Reference texts are owner-supplied plain text in
+ * platform/catalog/sources/reference/ (gitignored); without them only the bank checks run.
+ */
+export const ORIGINALITY = {
+  /** Word n-gram size for reference overlap. */
+  n: 6,
+  /** A field fails when it shares a run of this many consecutive words with a reference text… */
+  maxRunWords: 12,
+  /** …or when this share of its n-grams appears in the references. */
+  maxRatio: 0.2,
+  /** Literature chapters: any shared run this long fails (exemplar-hindi recommendation 5). */
+  literatureMaxRunWords: 6,
+  /** Near-duplicate questions in our own bank: Jaccard of word 5-grams over stem + passage. */
+  duplicate: { n: 5, threshold: 0.7, minWords: 10 },
+  referenceExtensions: ['.txt', '.md'],
+} as const;

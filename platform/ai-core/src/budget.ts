@@ -42,6 +42,20 @@ export interface Reservation {
   readonly paise: number;
 }
 
+/**
+ * What ModelClient needs from a budget. BudgetGuard (in-process) implements it synchronously; the
+ * content pipeline's Postgres budget implements it with row-locked reservations so parallel runs
+ * share one cap. Every method may return a promise; the client awaits them.
+ */
+export interface BudgetLedger {
+  /** Reserves a call's worst case or throws BudgetExceededError (the call is then never made). */
+  reserve(paise: number): Reservation | Promise<Reservation>;
+  settle(reservation: Reservation, actualPaise: number): void | Promise<void>;
+  release(reservation: Reservation): void | Promise<void>;
+  /** Spend that was never reserved (a Batch job fetched by another process). */
+  record(paise: number): void | Promise<void>;
+}
+
 export interface BudgetSnapshot {
   runCapPaise: number;
   totalCapPaise: number;
@@ -50,7 +64,7 @@ export interface BudgetSnapshot {
   reservedPaise: number;
 }
 
-export class BudgetGuard {
+export class BudgetGuard implements BudgetLedger {
   private spentRun: number;
   private spentTotal: number;
   private readonly reservations = new Map<number, number>();
