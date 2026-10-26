@@ -351,3 +351,79 @@ describe('retrieval units', () => {
     expect((await e.embed(['same'])).vectors[0]).toEqual((await e.embed(['same'])).vectors[0]);
   });
 });
+
+describe('runtime factory and Azure REST adapters', () => {
+  it('builds stand-ins locally, Azure adapters by config, and fails closed when disabled', async () => {
+    const { createAiRuntime, lazyDefaultCredential } = await import('../src/ai/runtime');
+    const { AzureContentSafetyProvider: CS, FailingModerationProvider: Failing, LocalRuleModerationProvider: Local } = await import('../src/ai/moderation/providers');
+    const { AzureBlobStore: Azure, DisabledBlobStore, MemoryBlobStore: Mem, BlobUnavailableError } = await import('../src/ai/blob');
+    const local = await createAiRuntime({ isProduction: false, appEnv: 'test' }, loadAiConfig({ isLocal: true, isProduction: false, appEnv: 'test' }, {}), { env: { APP_ENV: 'test' } });
+    expect([local.provider.name, local.moderation.name, local.blob.name, local.embedder?.name]).toEqual(['mock', 'local-rules', 'memory', 'mock']);
+    expect(local.moderation).toBeInstanceOf(Local);
+    expect(local.blob).toBeInstanceOf(Mem);
+    const credential = { getToken: async () => ({ token: 't', expiresOnTimestamp: Date.now() + 3_600_000 }) };
+    const env = { APP_ENV: 'stg', AI_PROVIDER: 'azure', AZURE_OPENAI_ENDPOINT: 'https://aoai.example.com', AZURE_OPENAI_DEPLOYMENT_SMALL: 'luna', AZURE_OPENAI_DEPLOYMENT_MID: 'sol', AZURE_OPENAI_DEPLOYMENT_VERIFY: 'astra', AZURE_OPENAI_DEPLOYMENT_EMBEDDING: 'emb', CONTENT_SAFETY_PROVIDER: 'azure', AZURE_CONTENT_SAFETY_ENDPOINT: 'https://cs.example.com', BLOB_PROVIDER: 'azure', BLOB_ACCOUNT_URL: 'https://acct.blob.core.windows.net' };
+    const azure = await createAiRuntime({ isProduction: false, appEnv: 'stg' }, loadAiConfig({ isLocal: false, isProduction: false, appEnv: 'stg' }, env), { env, credential });
+    expect([azure.provider.name, azure.embedder?.name]).toEqual(['azure', 'azure']);
+    expect(azure.moderation).toBeInstanceOf(CS);
+    expect(azure.blob).toBeInstanceOf(Azure);
+    const prod = await createAiRuntime({ isProduction: true, appEnv: 'prod' }, loadAiConfig({ isLocal: false, isProduction: true, appEnv: 'prod' }, {}), { env: { APP_ENV: 'prod' } });
+    expect([prod.provider.name, prod.embedder]).toEqual(['disabled', null]);
+    expect(prod.moderation).toBeInstanceOf(Failing);
+    expect(prod.blob).toBeInstanceOf(DisabledBlobStore);
+    await expect(prod.blob.createUploadUrl('c', 'k', { contentType: 'image/png', expiresAt: new Date() })).rejects.toBeInstanceOf(BlobUnavailableError);
+    await expect(prod.blob.get('c', 'k', 1)).rejects.toBeInstanceOf(BlobUnavailableError);
+    // Without @azure/identity installed the lazy default credential reports it on first use.
+    await expect(lazyDefaultCredential().getToken('scope')).rejects.toThrow();
+  });
+
+  it('AzureBlobStore REST: HEAD/GET/PUT/DELETE with bearer auth (keyless) or SAS (Azurite); size cap enforced', async () => {
+    const calls: { method: string; url: string; auth: string | null; range: string | null }[] = [];
+    const blobs = new Map<string, Buffer>();
+    const fetch = (async (url: string, init: RequestInit) => {
+      const h = new Headers(init.headers);
+      calls.push({ method: init.method ?? 'GET', url, auth: h.get('authorization'), range: h.get('x-ms-range') });
+      const key = new URL(url).pathname;
+      if (init.method === 'PUT') {
+        blobs.set(key, Buffer.from(init.body as Buffer));
+        return new Response(null, { status: 201 });
+      }
+      if (init.method === 'DELETE') return new Response(null, { status: blobs.delete(key) ? 202 : 404 });
+      const b = blobs.get(key);
+      if (!b) return new Response(null, { status: 404 });
+      if (init.method === 'HEAD') return new Response(null, { status: 200, headers: { 'content-length': String(b.length), 'content-type': 'image/png' } });
+      return new Response(b, { status: 200 });
+    }) as unknown as typeof globalThis.fetch;
+    const store = new AzureBlobStore({ accountUrl: 'https://acct.blob.core.windows.net', credential: { getToken: async () => ({ token: 'mi', expiresOnTimestamp: Date.now() + 3_600_000 }) }, fetch });
+    await store.put('uploads', 'u/a.png', Buffer.from('12345'), 'image/png');
+    expect(await store.head('uploads', 'u/a.png')).toEqual({ bytes: 5, contentType: 'image/png' });
+    expect((await store.get('uploads', 'u/a.png', 10)).toString()).toBe('12345');
+    await expect(store.get('uploads', 'u/a.png', 3)).rejects.toThrow(/larger than 3/);
+    expect(await store.head('uploads', 'missing')).toBeNull();
+    await store.delete('uploads', 'u/a.png');
+    await store.delete('uploads', 'u/a.png'); // 404 is fine
+    expect(calls.every((c) => c.auth === 'Bearer mi')).toBe(true);
+    expect(calls.find((c) => c.method === 'GET')!.range).toBe('bytes=0-10');
+    const azurite = new AzureBlobStore({ accountUrl: 'http://127.0.0.1:10000/devstoreaccount1', accountKey: Buffer.from('k').toString('base64'), fetch });
+    await azurite.put('c', 'k.png', Buffer.from('x'), 'image/png');
+    const put = calls.at(-1)!;
+    expect(put.auth).toBeNull();
+    expect(new URL(put.url).searchParams.get('sp')).toBe('cw');
+    const failing = new AzureBlobStore({ accountUrl: 'https://acct.blob.core.windows.net', accountKey: 'a2V5', fetch: (async () => new Response(null, { status: 500 })) as unknown as typeof globalThis.fetch });
+    await expect(failing.put('c', 'k', Buffer.from('x'), 'image/png')).rejects.toThrow(/blob storage unavailable/);
+    await expect(failing.head('c', 'k')).rejects.toThrow(/blob storage unavailable/);
+  });
+
+  it('LogAlertSink writes structured alert lines (Azure Monitor hook)', async () => {
+    const { LogAlertSink } = await import('../src/ai/spend');
+    const lines: [string, object, string | undefined][] = [];
+    const sink = new LogAlertSink();
+    sink.attach({ info: () => {}, warn: (o, m) => lines.push(['warn', o, m]), error: (o, m) => lines.push(['error', o, m]) });
+    sink.emit({ kind: 'spend_threshold', severity: 'warning', message: 'm1', data: { scope: 'all' } });
+    sink.emit({ kind: 'spend_threshold', severity: 'critical', message: 'm2', data: { scope: 'all' } });
+    expect(lines).toEqual([
+      ['warn', { alert: true, alertKind: 'spend_threshold', severity: 'warning', scope: 'all' }, 'm1'],
+      ['error', { alert: true, alertKind: 'spend_threshold', severity: 'critical', scope: 'all' }, 'm2'],
+    ]);
+  });
+});
