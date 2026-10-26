@@ -18,11 +18,17 @@ export interface VisualCheck {
   issues: VisualIssue[];
   /** Student-visible strings inside the spec (labels, cells, SVG text) for the text rules. */
   texts: { text: string; kind: 'md' | 'plain' }[];
+  /** ids defined by a raw SVG. */
+  svgIds: string[];
+  /** mhchem equation of a chem visual (for the balance check). */
+  equation: string | null;
 }
 
 export function checkVisual(v: Visual): VisualCheck {
   const issues: VisualIssue[] = [];
   const texts: VisualCheck['texts'] = [{ text: v.alt, kind: 'plain' }];
+  let svgIds: string[] = [];
+  let equation: string | null = null;
   if (v.caption) texts.push({ text: v.caption, kind: 'md' });
   const err = (rule: string, message: string) => issues.push({ rule, severity: 'error', message });
   const warn = (rule: string, message: string) => issues.push({ rule, severity: 'warning', message });
@@ -33,6 +39,7 @@ export function checkVisual(v: Visual): VisualCheck {
       r.errors.forEach((m) => err('svg.allowlist', m));
       r.warnings.forEach((m) => warn('svg.style', m));
       r.texts.forEach((t) => texts.push({ text: t, kind: 'plain' }));
+      svgIds = r.ids;
       break;
     }
     case 'plot': {
@@ -103,6 +110,7 @@ export function checkVisual(v: Visual): VisualCheck {
     }
     case 'chem': {
       if ('equation' in v.spec) {
+        equation = v.spec.equation;
         const r = checkMhchem(v.spec.equation);
         if (r.error) err('visual.chem', `mhchem equation does not parse: ${r.error}`);
       } else {
@@ -135,5 +143,5 @@ export function checkVisual(v: Visual): VisualCheck {
       break;
     }
   }
-  return { issues, texts };
+  return { issues, texts, svgIds, equation };
 }

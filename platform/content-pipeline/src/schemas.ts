@@ -16,14 +16,15 @@ import {
   type Deck as DeckT,
   type Question as QuestionT,
 } from '@soyl/shared/content/index';
+import { questionIdPrefix } from './ids';
 import type { QuestionSlot } from './planning';
 
 type Obj = Record<string, unknown>;
 const isObj = (v: unknown): v is Obj => typeof v === 'object' && v !== null && !Array.isArray(v);
 
-/** q_cbse_10_science_ch01 */
+/** Item-level ids use the chapter prefix (q_cbse10sci_ch01); assembly renumbers them <prefix>_NNN. */
 export function questionIdBase(unit: string): string {
-  return `q_${unit.replace(/-/g, '_')}`;
+  return questionIdPrefix(unit);
 }
 
 const pad = (n: number, w = 2) => String(n).padStart(w, '0');
@@ -33,7 +34,11 @@ function normalizeQuestion(q: unknown, unit: string, id: string): unknown {
   const out: Obj = { ...q, id, unit, status: 'draft', version: 1 };
   delete out.provenance;
   if (Array.isArray(q.children))
-    out.children = q.children.map((c, i) => (isObj(c) ? { ...c, id: String.fromCharCode(97 + i) } : c));
+    out.children = q.children.map((c, i) =>
+      isObj(c)
+        ? { ...c, id: String.fromCharCode(97 + i), ...(Array.isArray(c.alternatives) ? { alternatives: c.alternatives.map((a, k) => (isObj(a) ? { ...a, id: `${String.fromCharCode(97 + i)}${k + 2}` } : a)) } : {}) }
+        : c,
+    );
   return out;
 }
 
@@ -112,8 +117,10 @@ export function questionBatchSchema(unit: string, batchKey: string, slots: Quest
   const prefix = `${questionIdBase(unit)}_${batchKey.replace(/^questions\./, '').replace(/\./g, '_')}`;
   return z
     .preprocess((raw) => {
-      if (!isObj(raw)) return raw;
-      return { questions: normalizeQuestions(raw.questions, unit, prefix).questions };
+      // Templates may ask for a bare JSON array of questions; accept both shapes.
+      const list = Array.isArray(raw) ? raw : isObj(raw) ? raw.questions : undefined;
+      if (list === undefined) return raw;
+      return { questions: normalizeQuestions(list, unit, prefix).questions };
     }, QuestionList)
     .superRefine((list, ctx) => {
       const want = new Map<string, number>();

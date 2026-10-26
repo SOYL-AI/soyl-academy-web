@@ -14,6 +14,7 @@ import path from 'node:path';
 import { createLimiter } from '@soyl/ai-core';
 import type { ChapterOutline, LessonOutline, Provenance, Question } from '@soyl/shared/content/index';
 import { unitsInScope, type ChapterRef, type Scope } from '../catalog';
+import { questionId, questionIdPrefix } from '../ids';
 import { readJsonIf, writeJson } from '../io';
 import { unitOutDir } from '../paths';
 import { executeBatch, executeItem, finishRun, startRun, type ActiveRun, type BatchEntry, type ItemWriter, type Pipeline } from '../pipeline';
@@ -66,15 +67,25 @@ export function assembleUnit(p: Pipeline, ctx: UnitContext, specs: ItemSpec[]): 
   const items = new Map(specs.map((s) => [s.key, readJsonIf<Record<string, unknown>>(itemFile(p.paths.outDir, ctx.unit, s.key))]));
   if ([...items.values()].some((v) => v === undefined)) return false;
   for (const f of fs.existsSync(dir) ? fs.readdirSync(dir) : []) if (/^deck\.p\d+\.json$/.test(f)) fs.rmSync(path.join(dir, f));
+  // Final question ids: <id_prefix>_NNN in assembly order (deck checks, practice, case/source).
+  const prefix = questionIdPrefix(ctx.unit);
+  const idMap = new Map<string, string>();
   const questions: Question[] = [];
-  for (const s of specs.filter((x) => x.asset === 'deck')) {
-    const g = items.get(s.key) as unknown as DeckGeneration;
-    writeJson(path.join(dir, `${s.key}.json`), g.deck);
-    questions.push(...g.check_questions);
-  }
+  const take = (q: Question) => {
+    const id = questionId(prefix, questions.length + 1);
+    idMap.set(q.id, id);
+    questions.push({ ...q, id });
+  };
+  const decks = specs.filter((x) => x.asset === 'deck').map((s) => ({ key: s.key, g: items.get(s.key) as unknown as DeckGeneration }));
+  for (const { g } of decks) g.check_questions.forEach(take);
+  for (const s of specs.filter((x) => x.asset === 'questions' || x.asset === 'case-passages')) (items.get(s.key) as unknown as QuestionList).questions.forEach(take);
+  for (const { key, g } of decks)
+    writeJson(path.join(dir, `${key}.json`), {
+      ...g.deck,
+      slides: g.deck.slides.map((sl) => (sl.check_question_id ? { ...sl, check_question_id: idMap.get(sl.check_question_id) ?? sl.check_question_id } : sl)),
+    });
   writeJson(path.join(dir, 'notes.json'), items.get('notes'));
   writeJson(path.join(dir, 'flashcards.json'), items.get('flashcards'));
-  for (const s of specs.filter((x) => x.asset === 'questions' || x.asset === 'case-passages')) questions.push(...(items.get(s.key) as unknown as QuestionList).questions);
   writeJson(path.join(dir, 'questions.json'), { unit: ctx.unit, questions });
   return true;
 }

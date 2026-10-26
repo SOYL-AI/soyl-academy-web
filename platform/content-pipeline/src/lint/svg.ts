@@ -18,6 +18,8 @@ export interface SvgCheck {
   warnings: string[];
   /** Text content of <text>/<tspan>/<title>/<desc>, for the banned-content checks. */
   texts: string[];
+  /** Every id defined in the SVG (for the cross-diagram uniqueness check). */
+  ids: string[];
 }
 
 const ELEMENTS = new Set<string>(SVG_ALLOWED_ELEMENTS);
@@ -53,7 +55,9 @@ export function checkSvg(svg: string): SvgCheck {
   if (bytes > SVG_RULES.maxBytes) errors.push(`SVG is ${bytes} bytes (max ${SVG_RULES.maxBytes})`);
 
   const ids = new Set<string>();
+  const idList: string[] = [];
   const refs: string[] = [];
+  let hasTitle = false;
   const stack: string[] = [];
   let sawRoot = false;
   let parseError: string | null = null;
@@ -73,6 +77,7 @@ export function checkSvg(svg: string): SvgCheck {
     const node = tag as SaxesTagNS;
     const local = node.local;
     stack.push(local);
+    if (local === 'title') hasTitle = true;
     if (!sawRoot) {
       sawRoot = true;
       if (local !== 'svg' || node.uri !== SVG_NS) errors.push(`root element must be <svg xmlns="${SVG_NS}">`);
@@ -82,6 +87,10 @@ export function checkSvg(svg: string): SvgCheck {
     else if (!ELEMENTS.has(local)) errors.push(`<${local}> is not allowed${WHY_ELEMENT[local] ? ` (${WHY_ELEMENT[local]})` : local.startsWith('animate') ? ' (animation is not allowed)' : ''}`);
 
     for (const attr of Object.values(node.attributes) as SaxesAttributeNS[]) {
+      if (attr.local === 'id' && !attr.prefix) {
+        if (ids.has(attr.value)) errors.push(`id "${attr.value}" is used twice in this SVG`);
+        idList.push(attr.value);
+      }
       checkAttribute(local, attr, errors, warnings, ids, refs);
     }
   });
@@ -97,7 +106,8 @@ export function checkSvg(svg: string): SvgCheck {
   if (parseError) errors.push(`not well-formed XML: ${String(parseError).split('\n')[0]}`);
   if (!sawRoot && !parseError) errors.push('no root element');
   for (const ref of refs) if (!ids.has(ref)) warnings.push(`reference #${ref} has no matching id`);
-  return { errors: [...new Set(errors)], warnings: [...new Set(warnings)], texts };
+  if (sawRoot && !hasTitle) warnings.push('no <title> element (screen readers use it with the alt text)');
+  return { errors: [...new Set(errors)], warnings: [...new Set(warnings)], texts, ids: idList };
 }
 
 function checkAttribute(element: string, attr: SaxesAttributeNS, errors: string[], warnings: string[], ids: Set<string>, refs: string[]): void {

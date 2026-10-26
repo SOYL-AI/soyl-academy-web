@@ -4,7 +4,7 @@
  * ("[MOCK] …"); items carry provenance model "mock" and the lint stage warns on them, and
  * publish (M2) refuses them. Never present this as real content.
  */
-import type { MockFixture, Rng } from '@soyl/ai-core';
+import { hashString, type MockFixture, type Rng } from '@soyl/ai-core';
 import type { OutlinePart, Visual } from '@soyl/shared/content/index';
 import type { Family } from '../config/families';
 import { skeletonOutline, type QuestionSlot } from './planning';
@@ -62,12 +62,12 @@ function words(language: string) {
   };
 }
 
-const SVG_SAMPLE = (label: string) =>
+const SVG_SAMPLE = (label: string, id: string) =>
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120" role="img" aria-label="${label.replace(/[<>&"]/g, '')}">` +
   `<title>Placeholder diagram</title>` +
-  `<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>` +
+  `<defs><marker id="${id}-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>` +
   `<rect x="10" y="30" width="80" height="50" rx="6" fill="none" stroke="currentColor" stroke-width="2"/>` +
-  `<line x1="90" y1="55" x2="150" y2="55" stroke="currentColor" stroke-width="2" marker-end="url(#arrow)"/>` +
+  `<line x1="90" y1="55" x2="150" y2="55" stroke="currentColor" stroke-width="2" marker-end="url(#${id}-arrow)"/>` +
   `<circle cx="190" cy="55" r="30" class="diagram-fill" stroke="var(--diagram-accent)" stroke-width="2"/>` +
   `<text x="50" y="60" font-size="12" text-anchor="middle" fill="currentColor">MOCK</text>` +
   `</svg>`;
@@ -76,7 +76,7 @@ export function mockVisual(kind: string, label: string): Visual {
   const alt = `Placeholder ${kind} diagram for ${label} (mock provider)`;
   switch (kind) {
     case 'svg':
-      return { kind: 'svg', spec: SVG_SAMPLE(label), alt };
+      return { kind: 'svg', spec: SVG_SAMPLE(label, `m${hashString(label + alt).toString(36)}`), alt };
     case 'plot':
       return {
         kind: 'plot',

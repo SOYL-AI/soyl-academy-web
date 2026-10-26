@@ -2,6 +2,7 @@
  * Stage 4 lint engine: deterministic checks over a unit's artefacts. Each finding names the item
  * (outline, deck.p1, notes, flashcards, questions), the rule, a JSON path and a message.
  * Errors block the unit (auto_verified needs zero errors); warnings are reported.
+ * Rule catalogue: README "Lint rules".
  */
 import { CONTENT_TARGETS } from '@soyl/shared/config/content-targets';
 import {
@@ -9,6 +10,7 @@ import {
   Deck,
   FlashcardSet,
   Notes,
+  OBJECTIVE_TYPES,
   Question,
   QuestionBank,
   type Deck as DeckT,
@@ -19,6 +21,7 @@ import {
   type Visual,
 } from '@soyl/shared/content/index';
 import { TEXT_FAMILIES, type Family } from '../../config/families';
+import { SKELETAL_CONTEXT, ceBodies, checkBalance } from './chem';
 import { checkTex, extractMath } from './math';
 import { checkLiterature, checkText } from './text';
 import { checkVisual } from './visual';
@@ -63,38 +66,86 @@ export interface LintReport {
   findings: Finding[];
 }
 
+/** Share of items at application or above that CBSE papers target (~50%); outside this band is a warning. */
+export const COMPETENCY_BAND = { min: 0.45, max: 0.65 } as const;
+
+/** LaTeX commands that take a brace argument; seen without a backslash they mean an escape was lost. */
+const LOST_BACKSLASH = /(^|[^\\A-Za-z])(ce|frac|dfrac|tfrac|sqrt|text|mathrm|mathbf|xrightarrow|overline|underline|vec|hat|operatorname|pu)\{/;
+/** JSON escapes that swallow a LaTeX backslash: \f(rac) → form feed, \b(eta) → backspace, \t(imes|ext|heta) → tab, \r(ightarrow) → CR, \n(eq|u) → newline. */
+const EATEN_ESCAPE = /[\u0008\u000c]|\t(?:imes|ext|heta|au|an|o\b|riangle)|\r(?:ightarrow|ho|m\b)|\n(?:eq|u\b|abla|ewline)/;
+
+/** Narration is read by TTS: no LaTeX, symbols, arrows or formulae. */
+const NARRATION_SYMBOLS = /[$\\^_=<>→⇌↑↓×÷±√∞≈≠≤≥°Ω₀-₉⁰-⁹]|(?:^|[^A-Za-z])(?:[A-Z][a-z]?\d+(?:[A-Z][a-z]?\d*)*|(?:[A-Z][a-z]?){2,}\d+)(?![A-Za-z])/;
+
+type TextKind = 'md' | 'plain' | 'spoken';
+interface TextOpts {
+  /** Text that marks deliberately unbalanced equations (slide, stem, card). */
+  context?: string;
+  /** Skip the balance check (wrong options of objective questions). */
+  exemptBalance?: boolean;
+}
+
 class Collector {
   readonly findings: Finding[] = [];
+  private readonly svgIds = new Map<string, string>();
+  private readonly mockWarned = new Set<string>();
   constructor(readonly ctx: LintContext) {}
 
   add(item: string, rule: string, severity: Severity, path: string, message: string) {
     this.findings.push({ item, rule, severity, path, message });
   }
 
-  /** Text, links, contact details, profanity, literature, and maths in a markdown/plain field. */
-  text(item: string, path: string, value: string | undefined | null, kind: 'md' | 'plain' | 'spoken') {
+  private escapes(item: string, path: string, value: string) {
+    const lost = LOST_BACKSLASH.exec(value);
+    if (lost) this.add(item, 'latex.backslash', 'error', path, `"${lost[2]}{" without a backslash: an escape was lost (write \\\\${lost[2]} in JSON)`);
+    if (EATEN_ESCAPE.test(value)) this.add(item, 'latex.backslash', 'error', path, 'contains a control character where a LaTeX command was (JSON "\\frac"/"\\times"/"\\rightarrow" need a double backslash)');
+  }
+
+  private balance(item: string, path: string, body: string, opts: TextOpts, own: string) {
+    if (opts.exemptBalance) return;
+    const r = checkBalance(body);
+    if (r.kind !== 'unbalanced') return;
+    if (SKELETAL_CONTEXT.test(opts.context ?? '') || SKELETAL_CONTEXT.test(own)) return;
+    this.add(item, 'chem.balance', 'error', path, `equation "${body.slice(0, 80)}" is not balanced (${r.elements.join(', ')}); if it is deliberately skeletal, say so in the text ("skeletal", "unbalanced", "Balance …")`);
+  }
+
+  /** Text, links, contact details, profanity, literature, maths and chemistry in one field. */
+  text(item: string, path: string, value: string | undefined | null, kind: TextKind, opts: TextOpts = {}) {
     if (!value) return;
     for (const i of checkText(value, kind === 'md' ? 'md' : 'plain')) this.add(item, i.rule, i.severity, path, i.message);
     if (this.ctx.literature) for (const i of checkLiterature(value)) this.add(item, i.rule, i.severity, path, i.message);
+    this.escapes(item, path, value);
     if (kind === 'md') {
       const { spans, error } = extractMath(value);
       if (error) this.add(item, 'math.katex', 'error', path, error);
-      for (const s of spans) this.tex(item, path, s.tex, s.display);
+      for (const s of spans) this.tex(item, path, s.tex, s.display, opts, value);
     }
-    if (kind === 'spoken' && /\$|\\[a-zA-Z]+\{/.test(value)) this.add(item, 'narration.markup', 'warning', path, 'narration contains maths markup; it is read aloud, so write it as words');
+    if (kind === 'spoken') {
+      const m = NARRATION_SYMBOLS.exec(value);
+      if (m) this.add(item, 'narration.symbols', 'error', path, `narration is read aloud: no formulae, symbols or LaTeX ("${m[0].trim()}"); write it as words`);
+    }
   }
 
-  tex(item: string, path: string, tex: string, display: boolean) {
+  tex(item: string, path: string, tex: string, display: boolean, opts: TextOpts = {}, own = '') {
     const r = checkTex(tex, display);
     if (r.error) this.add(item, 'math.katex', 'error', path, `KaTeX: ${r.error} in "${tex.slice(0, 80)}"`);
     for (const w of r.warnings.slice(0, 3)) this.add(item, 'math.katex-strict', 'warning', path, w);
+    if (own === '') this.escapes(item, path, tex);
+    for (const body of ceBodies(tex)) this.balance(item, path, body, opts, own || tex);
   }
 
-  visual(item: string, path: string, v: Visual | null | undefined) {
+  visual(item: string, path: string, v: Visual | null | undefined, opts: TextOpts = {}) {
     if (!v) return;
     const r = checkVisual(v);
     for (const i of r.issues) this.add(item, i.rule, i.severity, path, i.message);
-    r.texts.forEach((t, k) => this.text(item, `${path}.text[${k}]`, t.text, t.kind));
+    r.texts.forEach((t, k) => this.text(item, `${path}.text[${k}]`, t.text, t.kind, opts));
+    if (r.equation) this.balance(item, `${path}.spec.equation`, r.equation, opts, v.caption ?? '');
+    for (const id of r.svgIds) {
+      const key = `${item}|${id}`;
+      const prev = this.svgIds.get(key);
+      if (prev && prev !== path) this.add(item, 'svg.ids', 'warning', path, `id "${id}" is also used by the diagram at ${prev}; prefix ids per diagram`);
+      else this.svgIds.set(key, path);
+    }
   }
 
   topics(item: string, path: string, ids: readonly (string | null)[]) {
@@ -103,7 +154,7 @@ class Collector {
   }
 
   provenance(item: string, p: Provenance | undefined) {
-    if (p?.model === 'mock') this.add(item, 'provenance.mock', 'warning', 'provenance', 'placeholder content from the mock provider: never publish');
+    if (p?.model === 'mock' && !this.mockWarned.has(item) && this.mockWarned.add(item)) this.add(item, 'provenance.mock', 'warning', 'provenance', 'placeholder content from the mock provider: never publish');
     if (!this.ctx.requirePipelineProvenance) return;
     if (!p) return this.add(item, 'provenance.missing', 'error', 'provenance', 'no provenance recorded');
     if (p.origin === 'pipeline' && (!p.template_version || !p.model))
@@ -111,7 +162,7 @@ class Collector {
   }
 
   script(item: string, path: string, text: string) {
-    if (this.ctx.language === 'hi' && text && !/[ऀ-ॿ]/.test(text)) this.add(item, 'language.script', 'error', path, 'Hindi content must be written in Devanagari');
+    if (this.ctx.language === 'hi' && text && !/[\u0900-\u097F]/.test(text)) this.add(item, 'language.script', 'error', path, 'Hindi content must be written in Devanagari');
   }
 }
 
@@ -122,18 +173,30 @@ function schema<T>(c: Collector, item: string, s: { safeParse(v: unknown): { suc
   return null;
 }
 
-function lintQuestion(c: Collector, item: string, path: string, q: Omit<QuestionT, 'unit' | 'status' | 'version' | 'language' | 'children' | 'provenance'> & { passage_md?: string; children?: QuestionT['children'] }) {
-  c.text(item, `${path}.stem_md`, q.stem_md, 'md');
-  c.text(item, `${path}.passage_md`, q.passage_md, 'md');
-  q.options.forEach((o, i) => c.text(item, `${path}.options[${i}]`, o.text_md, 'md'));
-  q.match_right.forEach((o, i) => c.text(item, `${path}.match_right[${i}]`, o.text_md, 'md'));
-  c.text(item, `${path}.solution_md`, q.solution_md, 'md');
-  q.marking_scheme.forEach((s, i) => c.text(item, `${path}.marking_scheme[${i}]`, s.step, 'md'));
-  if ('model_answer_md' in q.answer) c.text(item, `${path}.answer`, q.answer.model_answer_md, 'md');
+type QuestionLike = Pick<QuestionT, 'type' | 'stem_md' | 'options' | 'match_right' | 'answer' | 'solution_md' | 'marking_scheme' | 'assets' | 'topic_ids'> & {
+  passage_md?: string;
+  children?: (QuestionLike & { alternatives?: QuestionLike[] })[];
+  alternatives?: QuestionLike[];
+};
+
+function lintQuestion(c: Collector, item: string, path: string, q: QuestionLike, parentContext = '') {
+  const context = `${parentContext} ${q.passage_md ?? ''} ${q.stem_md}`;
+  const correct = new Set('option_ids' in q.answer ? q.answer.option_ids : []);
+  const objectiveOptions = ['mcq', 'multi-select', 'assertion-reason', 'true-false'].includes(q.type);
+  c.text(item, `${path}.stem_md`, q.stem_md, 'md', { context });
+  c.text(item, `${path}.passage_md`, q.passage_md, 'md', { context });
+  q.options.forEach((o, i) => c.text(item, `${path}.options[${i}]`, o.text_md, 'md', { context, exemptBalance: objectiveOptions && !correct.has(o.id) }));
+  q.match_right.forEach((o, i) => c.text(item, `${path}.match_right[${i}]`, o.text_md, 'md', { context }));
+  c.text(item, `${path}.solution_md`, q.solution_md, 'md', { context: `${context} ${q.solution_md}` });
+  q.marking_scheme.forEach((s, i) => c.text(item, `${path}.marking_scheme[${i}]`, s.step, 'md', { context }));
+  if ('model_answer_md' in q.answer) c.text(item, `${path}.answer`, q.answer.model_answer_md, 'md', { context });
   if ('blanks' in q.answer) q.answer.blanks.forEach((b, i) => b.accepted.forEach((a) => c.text(item, `${path}.answer.blanks[${i}]`, a, 'plain')));
-  q.assets.forEach((v, i) => c.visual(item, `${path}.assets[${i}]`, v));
+  q.assets.forEach((v, i) => c.visual(item, `${path}.assets[${i}]`, v, { context }));
   c.topics(item, `${path}.topic_ids`, q.topic_ids);
-  (q.children ?? []).forEach((ch, i) => lintQuestion(c, item, `${path}.children[${i}]`, ch));
+  (q.children ?? []).forEach((ch, i) => {
+    lintQuestion(c, item, `${path}.children[${i}]`, ch, context);
+    (ch.alternatives ?? []).forEach((alt, k) => lintQuestion(c, item, `${path}.children[${i}].alternatives[${k}]`, alt, context));
+  });
 }
 
 function lintDeck(c: Collector, item: string, deck: DeckT) {
@@ -142,13 +205,14 @@ function lintDeck(c: Collector, item: string, deck: DeckT) {
   deck.goals.forEach((g, i) => c.text(item, `goals[${i}]`, g, 'md'));
   deck.slides.forEach((s, i) => {
     const p = `slides[${i}]`;
-    c.text(item, `${p}.heading`, s.heading, 'md');
-    c.text(item, `${p}.body_md`, s.body_md, 'md');
-    s.bullets.forEach((b, k) => c.text(item, `${p}.bullets[${k}]`, b, 'md'));
-    s.columns?.forEach((col, k) => c.text(item, `${p}.columns[${k}]`, col, 'md'));
-    s.math.forEach((m, k) => c.tex(item, `${p}.math[${k}]`, m, true));
+    const context = [s.heading, s.body_md, ...s.bullets, ...(s.columns ?? [])].join(' ');
+    c.text(item, `${p}.heading`, s.heading, 'md', { context });
+    c.text(item, `${p}.body_md`, s.body_md, 'md', { context });
+    s.bullets.forEach((b, k) => c.text(item, `${p}.bullets[${k}]`, b, 'md', { context }));
+    s.columns?.forEach((col, k) => c.text(item, `${p}.columns[${k}]`, col, 'md', { context }));
+    s.math.forEach((m, k) => c.tex(item, `${p}.math[${k}]`, m, true, { context }));
     c.text(item, `${p}.narration`, s.narration, 'spoken');
-    c.visual(item, `${p}.visual`, s.visual);
+    c.visual(item, `${p}.visual`, s.visual, { context });
     c.script(item, `${p}.heading`, s.heading + s.narration);
   });
   c.provenance(item, deck.provenance);
@@ -177,14 +241,16 @@ function lintNotes(c: Collector, item: string, notes: NotesT) {
   c.text(item, 'title', notes.title, 'plain');
   notes.sections.forEach((s, i) => {
     const p = `sections[${i}]`;
-    c.text(item, `${p}.heading`, s.heading, 'md');
-    c.text(item, `${p}.body_md`, s.body_md, 'md');
+    const context = [s.heading, s.body_md, ...s.key_terms.map((k) => k.definition_md)].join(' ');
+    c.text(item, `${p}.heading`, s.heading, 'md', { context });
+    c.text(item, `${p}.body_md`, s.body_md, 'md', { context });
     s.key_terms.forEach((k, j) => {
-      c.text(item, `${p}.key_terms[${j}].term`, k.term, 'md');
-      c.text(item, `${p}.key_terms[${j}].definition_md`, k.definition_md, 'md');
+      c.text(item, `${p}.key_terms[${j}].term`, k.term, 'md', { context });
+      c.text(item, `${p}.key_terms[${j}].definition_md`, k.definition_md, 'md', { context });
     });
-    s.formulas.forEach((f, j) => c.tex(item, `${p}.formulas[${j}]`, f.latex, true));
-    c.visual(item, `${p}.visual`, s.visual);
+    s.formulas.forEach((f, j) => c.tex(item, `${p}.formulas[${j}]`, f.latex, true, { context }));
+    c.visual(item, `${p}.visual`, s.visual, { context });
+    s.visuals.forEach((v, j) => c.visual(item, `${p}.visuals[${j}]`, v, { context }));
     c.topics(item, `${p}.topic_ids`, s.topic_ids);
     c.script(item, `${p}.heading`, s.heading + s.body_md);
   });
@@ -194,14 +260,35 @@ function lintNotes(c: Collector, item: string, notes: NotesT) {
 
 function lintFlashcards(c: Collector, item: string, set: FlashcardSetT) {
   set.cards.forEach((card, i) => {
-    c.text(item, `cards[${i}].front_md`, card.front_md, 'md');
-    c.text(item, `cards[${i}].back_md`, card.back_md, 'md');
+    const context = `${card.front_md} ${card.back_md}`;
+    c.text(item, `cards[${i}].front_md`, card.front_md, 'md', { context });
+    c.text(item, `cards[${i}].back_md`, card.back_md, 'md', { context });
     c.topics(item, `cards[${i}].topic_id`, [card.topic_id]);
   });
   const n = set.cards.length;
   const t = CONTENT_TARGETS;
   if (n < t.flashcardsMin || n > t.flashcardsMax) c.add(item, 'editorial.flashcards', 'error', 'cards', `${n} flashcards (target ${t.flashcardsMin}–${t.flashcardsMax})`);
   c.provenance(item, set.provenance);
+}
+
+function lintBank(c: Collector, questions: QuestionT[]) {
+  const { ctx } = c;
+  questions.forEach((q, i) => {
+    if (q.unit !== ctx.unit) c.add('questions', 'refs.unit', 'error', `questions[${i}].unit`, `question ${q.id} is for ${q.unit}`);
+    lintQuestion(c, 'questions', `questions[${i}]`, q);
+    c.provenance('questions', q.provenance);
+    c.script('questions', `questions[${i}].stem_md`, q.stem_md);
+  });
+  const min = CONTENT_TARGETS.practiceQuestionsMin[ctx.classLevel] ?? 40;
+  if (questions.length < min) c.add('questions', 'editorial.practice', 'error', 'questions', `${questions.length} practice questions (min ${min} for class ${ctx.classLevel})`);
+  const types = new Set(questions.map((q) => q.type));
+  if (types.size < 5) c.add('questions', 'editorial.question-types', 'error', 'questions', `${types.size} question types (min 5): ${[...types].join(', ')}`);
+  if (questions.length) {
+    const higher = questions.filter((q) => ['application', 'analysis', 'evaluation'].includes(q.competency)).length / questions.length;
+    if (higher < COMPETENCY_BAND.min || higher > COMPETENCY_BAND.max)
+      c.add('questions', 'balance.competency', 'warning', 'questions', `${Math.round(higher * 100)}% of items are application or above (board papers ≈ 50%; band ${COMPETENCY_BAND.min * 100}–${COMPETENCY_BAND.max * 100}%)`);
+    if (!questions.some((q) => q.difficulty >= 4)) c.add('questions', 'balance.difficulty', 'warning', 'questions', 'no difficulty 4–5 items');
+  }
 }
 
 export function lintBundle(bundle: UnitBundle, ctx: LintContext): LintReport {
@@ -224,19 +311,17 @@ export function lintBundle(bundle: UnitBundle, ctx: LintContext): LintReport {
     }
   }
 
-  const decks: DeckT[] = [];
+  const decks: (DeckT | null)[] = [];
   for (const { key, data } of bundle.decks) {
     items.push(key);
     const d = schema(c, key, Deck, data);
+    decks.push(d);
     if (!d) continue;
     if (d.unit !== ctx.unit) c.add(key, 'refs.unit', 'error', 'unit', `deck is for ${d.unit}`);
-    decks.push(d);
     lintDeck(c, key, d);
   }
-  if (bundle.decks.length > 1) {
-    const parts = decks.map((d) => d.part);
-    if (parts.some((p) => p === null)) c.add('decks', 'editorial.parts', 'error', 'part', 'a chapter split into several decks needs a part number on each');
-  }
+  if (bundle.decks.length > 1 && decks.some((d) => d && d.part === null))
+    c.add('decks', 'editorial.parts', 'error', 'part', 'a chapter split into several decks needs a part number on each');
 
   if (bundle.notes !== undefined) {
     items.push('notes');
@@ -260,41 +345,34 @@ export function lintBundle(bundle: UnitBundle, ctx: LintContext): LintReport {
   if (bundle.questions !== undefined) {
     items.push('questions');
     if (Array.isArray(bundle.questions)) {
-      const parsed = bundle.questions.map((q, i) => {
-        const r = Question.safeParse(q);
-        if (!r.success) for (const issue of r.error.issues.slice(0, 10)) c.add('questions', 'schema', 'error', `questions[${i}].${issue.path.map(String).join('.')}`, issue.message);
-        return r.success ? r.data : null;
-      });
-      questions = parsed.filter((q): q is QuestionT => q !== null);
+      questions = [];
       const ids = new Set<string>();
-      questions.forEach((q, i) => {
-        if (ids.has(q.id)) c.add('questions', 'schema', 'error', `questions[${i}].id`, `duplicate question id ${q.id}`);
-        ids.add(q.id);
+      bundle.questions.forEach((raw, i) => {
+        const r = Question.safeParse(raw);
+        if (!r.success) {
+          for (const issue of r.error.issues.slice(0, 10)) c.add('questions', 'schema', 'error', `questions[${i}].${issue.path.map(String).join('.')}`, issue.message);
+          return;
+        }
+        if (ids.has(r.data.id)) c.add('questions', 'schema', 'error', `questions[${i}].id`, `duplicate question id ${r.data.id}`);
+        ids.add(r.data.id);
+        questions!.push(r.data);
       });
     } else {
       questions = schema(c, 'questions', QuestionBank, bundle.questions)?.questions ?? null;
     }
-    if (questions) {
-      questions.forEach((q, i) => {
-        if (q.unit !== ctx.unit) c.add('questions', 'refs.unit', 'error', `questions[${i}].unit`, `question ${q.id} is for ${q.unit}`);
-        lintQuestion(c, 'questions', `questions[${i}]`, q);
-        c.provenance('questions', q.provenance);
-        c.script('questions', `questions[${i}].stem_md`, q.stem_md);
-      });
-      const min = CONTENT_TARGETS.practiceQuestionsMin[ctx.classLevel] ?? 40;
-      if (questions.length < min) c.add('questions', 'editorial.practice', 'error', 'questions', `${questions.length} practice questions (min ${min} for class ${ctx.classLevel})`);
-      const types = new Set(questions.map((q) => q.type));
-      if (types.size < 5) c.add('questions', 'editorial.question-types', 'error', 'questions', `${types.size} question types (min 5): ${[...types].join(', ')}`);
-    }
+    if (questions) lintBank(c, questions);
   }
 
-  // Cross-item references: every check slide resolves to a question in the bank.
+  // Cross-item references: every check slide resolves to an objective question in the bank.
   if (questions) {
-    const ids = new Set(questions.map((q) => q.id));
+    const byId = new Map(questions.map((q) => [q.id, q]));
     bundle.decks.forEach(({ key }, di) => {
       decks[di]?.slides.forEach((s, i) => {
-        if (s.check_question_id && !ids.has(s.check_question_id))
-          c.add(key, 'refs.check-question', 'error', `slides[${i}].check_question_id`, `unknown question ${s.check_question_id}`);
+        if (!s.check_question_id) return;
+        const q = byId.get(s.check_question_id);
+        if (!q) c.add(key, 'refs.check-question', 'error', `slides[${i}].check_question_id`, `unknown question ${s.check_question_id}`);
+        else if (!OBJECTIVE_TYPES.includes(q.type))
+          c.add(key, 'refs.check-question', 'error', `slides[${i}].check_question_id`, `check slide points to a ${q.type} question; check slides need an objective type (${OBJECTIVE_TYPES.join(', ')})`);
       });
     });
   }

@@ -33,7 +33,7 @@ export const GENERATION = {
   /** Concept/diagram slides per topic. */
   slidesPerTopic: 2,
   /** Few-shot JSON included in a prompt is truncated to this many characters. */
-  fewShotMaxChars: 24_000,
+  fewShotMaxChars: 40_000,
 } as const;
 
 /**

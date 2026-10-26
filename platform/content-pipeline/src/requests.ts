@@ -10,6 +10,7 @@ import { CONTENT_TARGETS } from '@soyl/shared/config/content-targets';
 import type { Blueprint, ChapterOutline, LessonOutline } from '@soyl/shared/content/index';
 import { TEXT_FAMILIES, familyForChapter, type Family } from '../config/families';
 import { OUTPUT_TOKENS } from '../config/pipeline';
+import { questionIdPrefix } from './ids';
 import { blueprintsFor, type Catalog, type ChapterRef } from './catalog';
 import type { DeckInput, FlashcardsInput, NotesInput, OutlineInput, QuestionsInput, TopicRef } from './mock-fixtures';
 import { planSlots, questionBatches, questionPlan, skeletonOutline } from './planning';
@@ -70,7 +71,7 @@ export function targetsText(ctx: UnitContext): string {
   return lines.join('\n');
 }
 
-function baseVars(ctx: UnitContext): Omit<TemplateVars, 'outline_json' | 'json_schema' | 'few_shot' | 'task'> {
+function baseVars(ctx: UnitContext): Omit<TemplateVars, 'outline_json' | 'json_schema' | 'few_shot' | 'task' | 'content_json'> {
   const { subject, syllabus, chapter } = ctx.ref;
   return {
     board: subject.board.toUpperCase(),
@@ -90,6 +91,7 @@ function baseVars(ctx: UnitContext): Omit<TemplateVars, 'outline_json' | 'json_s
       ? yaml.dump(ctx.blueprints.map((b) => ({ id: b.id, paper_type: b.paper_type, total_marks: b.total_marks, sections: b.sections })), { lineWidth: 120 })
       : '(no blueprint yet for this subject: follow the question plan below)',
     targets: targetsText(ctx),
+    id_prefix: questionIdPrefix(ctx.unit),
   };
 }
 
@@ -105,8 +107,8 @@ function build(
   expectedOutputTokens: number,
 ): ItemSpec {
   const template = resolveTemplate(ctx.family, asset, dirs);
-  const fewShot = loadFewShot(template.few_shot, dirs.templatesDir);
-  const vars: TemplateVars = { ...baseVars(ctx), ...extra, json_schema: JSON.stringify(toJsonSchema(schema)), few_shot: fewShot.text };
+  const fewShot = loadFewShot(template.few_shot, dirs.templatesDir, asset);
+  const vars: TemplateVars = { ...baseVars(ctx), content_json: '(not applicable at this stage)', ...extra, json_schema: JSON.stringify(toJsonSchema(schema)), few_shot: fewShot.text };
   const { system, user } = renderTemplate(template, vars);
   return {
     key,

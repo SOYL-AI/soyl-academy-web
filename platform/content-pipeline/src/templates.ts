@@ -39,7 +39,14 @@ export const PLACEHOLDERS = [
   'json_schema',
   'few_shot',
   'targets',
-  /** Pipeline extension: the specific instructions for this item (part, counts, ids). */
+  /** The generated content a `verify` template checks (stage 5, M2). */
+  'content_json',
+  /** Question id prefix derived from the chapter id, e.g. q_cbse10sci_ch01 (src/ids.ts). */
+  'id_prefix',
+  /**
+   * The specific instructions for this call (which deck part, exact question counts, ids). When a
+   * template does not use {{task}}, the pipeline appends it to the end of the user message.
+   */
   'task',
 ] as const;
 export type Placeholder = (typeof PLACEHOLDERS)[number];
@@ -116,7 +123,10 @@ export function renderString(template: string, vars: Partial<TemplateVars>, file
 }
 
 export function renderTemplate(tpl: PromptTemplate, vars: Partial<TemplateVars>): { system: string; user: string } {
-  return { system: renderString(tpl.system, vars, tpl.file), user: renderString(tpl.user, vars, tpl.file) };
+  let user = renderString(tpl.user, vars, tpl.file);
+  const usesTask = /\{\{\s*task\s*\}\}/.test(tpl.user) || /\{\{\s*task\s*\}\}/.test(tpl.system);
+  if (!usesTask && vars.task) user = `${user}\n\n## Instructions for this call\n${vars.task}`;
+  return { system: renderString(tpl.system, vars, tpl.file), user };
 }
 
 /** Template id@version, recorded on every generated item's provenance. */
@@ -162,28 +172,127 @@ export function resolveTemplate(family: Family, asset: TemplateAsset, dirs: { te
 }
 
 /**
- * Resolves few_shot references such as `exemplars/science/cbse-10-science-ch01/release.json#decks`
- * relative to content-templates/. Fragments: `#key`, `#a/0/b` (JSON pointer), `#questions[0:8]` (slice).
+ * few_shot references (paths relative to content-templates/):
+ *
+ *   exemplars/science/cbse-10-science-ch01/release.json#decks
+ *   <file>.json#<fragment>[?<query>]       <file>.md (included as text, first 3,000 characters)
+ *
+ * fragment  `key`, a JSON pointer `a/0/b`, each segment optionally sliced `questions[0:8]`.
+ * query     `type=case-based,source-based` keeps array items of those types;
+ *           `sample=N` keeps N items stratified by `type` (one per type first, in file order).
+ *
+ * Default trimming (applied when the reference has no slice and no query), to save tokens:
+ *   #decks      → the first deck, at most 12 slides: the first slide of each layout, then in order
+ *   #questions  → asset questions: one item per non-case type, at most 12;
+ *                 asset case-passages: only case-based/source-based items, at most 2;
+ *                 any other asset: at most 6, stratified by type
+ *   #notes      → the first 3 sections        #flashcards → the first 12 cards
+ *   #tests      → the first test
+ * The rendered examples are capped at GENERATION.fewShotMaxChars: whole examples are dropped from
+ * the end first; a single example over the cap is cut with a marker.
  * Missing files are reported, not fatal: exemplars land in parallel with the pipeline.
  */
-export function loadFewShot(refs: string[], templatesDir: string, maxChars: number = GENERATION.fewShotMaxChars): { text: string; missing: string[] } {
+export function loadFewShot(
+  refs: string[],
+  templatesDir: string,
+  asset: TemplateAsset | null = null,
+  maxChars: number = GENERATION.fewShotMaxChars,
+): { text: string; missing: string[] } {
   const parts: string[] = [];
   const missing: string[] = [];
+  const root = path.resolve(templatesDir);
   for (const ref of refs) {
-    const [rel, fragment = ''] = ref.split('#');
+    const [relAndFragment, query = ''] = ref.split('?');
+    const [rel, fragment = ''] = relAndFragment!.split('#');
     const file = path.resolve(templatesDir, rel!);
-    if (!file.startsWith(path.resolve(templatesDir))) throw new TemplateError(`few_shot ${ref} points outside content-templates`);
+    if (file !== root && !file.startsWith(root + path.sep)) throw new TemplateError(`few_shot ${ref} points outside content-templates`);
     if (!fs.existsSync(file)) {
       missing.push(ref);
       continue;
     }
-    let value: unknown = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const raw = fs.readFileSync(file, 'utf8');
+    if (!file.endsWith('.json')) {
+      parts.push(`Example (${ref}):\n${raw.slice(0, 3000)}${raw.length > 3000 ? '\n…' : ''}`);
+      continue;
+    }
+    let value: unknown = JSON.parse(raw);
     if (fragment) value = selectFragment(value, fragment, ref);
+    const explicit = !!query || /\[\d*:\d*\]/.test(fragment);
+    if (query) value = applyQuery(value, query, ref);
+    else if (!explicit) value = trimDefault(value, fragment.split('/').pop() ?? '', asset);
     parts.push(`Example (${ref}):\n${JSON.stringify(value, null, 1)}`);
   }
-  let text = parts.join('\n\n');
-  if (text.length > maxChars) text = `${text.slice(0, maxChars)}\n… (example truncated)`;
+  let text = '';
+  for (const part of parts) {
+    if (!text) text = part.length > maxChars ? `${part.slice(0, maxChars)}\n… (example truncated)` : part;
+    else if (text.length + part.length + 2 <= maxChars) text += `\n\n${part}`;
+  }
   return { text: text || '(no worked example available for this family yet)', missing };
+}
+
+type Item = Record<string, unknown>;
+const CASE = new Set(['case-based', 'source-based']);
+
+/** One item per distinct `type` first (file order), then the rest in order, up to n. */
+export function stratifiedSample<T>(items: T[], n: number): T[] {
+  const seen = new Set<unknown>();
+  const first: T[] = [];
+  const rest: T[] = [];
+  for (const it of items) {
+    const t = (it as Item)?.type;
+    if (!seen.has(t)) {
+      seen.add(t);
+      first.push(it);
+    } else rest.push(it);
+  }
+  const chosen = new Set([...first, ...rest].slice(0, n));
+  return items.filter((it) => chosen.has(it));
+}
+
+function applyQuery(value: unknown, query: string, ref: string): unknown {
+  if (!Array.isArray(value)) throw new TemplateError(`few_shot ${ref}: query on a non-array`);
+  let out = value as Item[];
+  for (const pair of query.split('&')) {
+    const [k, v = ''] = pair.split('=');
+    if (k === 'type') {
+      const types = new Set(v.split(','));
+      out = out.filter((it) => types.has(String(it?.type)));
+    } else if (k === 'sample') out = stratifiedSample(out, Number(v));
+    else throw new TemplateError(`few_shot ${ref}: unknown query "${k}"`);
+  }
+  return out;
+}
+
+function trimDeck(deck: Item): Item {
+  const slides = Array.isArray(deck.slides) ? (deck.slides as Item[]) : [];
+  const firstOfLayout = new Set<Item>();
+  const layouts = new Set<unknown>();
+  for (const s of slides) if (!layouts.has(s.layout)) (layouts.add(s.layout), firstOfLayout.add(s));
+  const chosen = new Set([...firstOfLayout, ...slides].slice(0, 12));
+  return { ...deck, slides: slides.filter((s) => chosen.has(s)) };
+}
+
+function trimDefault(value: unknown, key: string, asset: TemplateAsset | null): unknown {
+  if (!Array.isArray(value)) {
+    if (key === 'notes' && value && typeof value === 'object' && Array.isArray((value as Item).sections))
+      return { ...(value as Item), sections: ((value as Item).sections as unknown[]).slice(0, 3) };
+    if (key === 'flashcards' && value && typeof value === 'object' && Array.isArray((value as Item).cards))
+      return { ...(value as Item), cards: ((value as Item).cards as unknown[]).slice(0, 12) };
+    return value;
+  }
+  const items = value as Item[];
+  switch (key) {
+    case 'decks':
+      return items.slice(0, 1).map(trimDeck);
+    case 'questions':
+      if (asset === 'case-passages') return items.filter((q) => CASE.has(String(q.type))).slice(0, 2);
+      if (asset === 'questions') return stratifiedSample(items.filter((q) => !CASE.has(String(q.type))), 12);
+      return stratifiedSample(items, 6);
+    case 'tests':
+      return items.slice(0, 1);
+    default:
+      return value;
+  }
 }
 
 export function selectFragment(value: unknown, fragment: string, ref = fragment): unknown {
