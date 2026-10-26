@@ -5,7 +5,7 @@
  * (`slots`) was rendered on the server; only the interaction is client code. The result survives the
  * slide leaving the DOM (the player keeps only nearby slides mounted) through CheckResultsContext.
  */
-import { createContext, useContext, useRef, type ReactNode } from 'react';
+import { createContext, useContext, useState, type ReactNode } from 'react';
 import type { PracticeAnswerResult, StudentQuestion } from '@/platform/shared/api-client';
 import { QuestionCard } from '@/components/platform/ui/question/QuestionCard';
 import type { QuestionSlots } from '@/components/platform/ui/question/slots';
@@ -16,8 +16,9 @@ type Results = Map<string, PracticeAnswerResult>;
 const CheckResultsContext = createContext<Results | null>(null);
 
 export function CheckResultsProvider({ children }: { children: ReactNode }) {
-  const results = useRef<Results>(new Map());
-  return <CheckResultsContext.Provider value={results.current}>{children}</CheckResultsContext.Provider>;
+  // One mutable map for the player's lifetime (results are written after answering, never read for rendering of the provider).
+  const [results] = useState<Results>(() => new Map());
+  return <CheckResultsContext.Provider value={results}>{children}</CheckResultsContext.Provider>;
 }
 
 export function CheckQuestion({ chapterId, question, slots, lang }: { chapterId: string; question: StudentQuestion; slots: QuestionSlots; lang?: string }) {

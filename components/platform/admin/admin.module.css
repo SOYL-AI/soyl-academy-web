@@ -1,0 +1,115 @@
+.admin {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--p-space-4);
+  max-width: 48rem;
+}
+.title {
+  margin: 0;
+  font-size: var(--p-text-2xl);
+}
+.subtitle {
+  margin: 0;
+  font-size: var(--p-text-lg);
+}
+.section {
+  display: grid;
+  gap: var(--p-space-3);
+}
+.sectionHead {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--p-space-2);
+}
+.filter {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-2);
+  font-size: var(--p-text-sm);
+  font-weight: 600;
+}
+.select {
+  min-height: var(--p-touch);
+  padding: 0 var(--p-space-2);
+  border: 1px solid var(--p-border-strong);
+  border-radius: var(--p-radius-md);
+  background: var(--p-surface);
+  color: var(--p-ink);
+  font: inherit;
+}
+.card {
+  display: grid;
+  gap: var(--p-space-3);
+  padding: var(--p-space-4);
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-lg);
+  background: var(--p-surface);
+}
+.card p {
+  margin: 0;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--p-space-2);
+  margin-top: var(--p-space-2);
+}
+.error {
+  display: flex;
+  gap: var(--p-space-1);
+  align-items: center;
+  margin: 0;
+  color: var(--p-danger);
+  font-weight: 600;
+}
+.muted {
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.secret {
+  font-family: var(--p-font-mono);
+  overflow-wrap: anywhere;
+}
+.codes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--p-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--p-font-mono);
+}
+.reports {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--p-space-2);
+}
+.report {
+  display: grid;
+  gap: var(--p-space-1);
+  padding: var(--p-space-3);
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-md);
+  background: var(--p-surface);
+  min-width: 0;
+}
+.reportHead {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--p-space-2);
+  align-items: center;
+}
+.reportWhere {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: var(--p-text-sm);
+}
+.comment {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}

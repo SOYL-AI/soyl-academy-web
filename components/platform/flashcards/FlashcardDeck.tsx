@@ -112,7 +112,6 @@ export function FlashcardDeck({ cards, chapterId, lang }: { cards: DeckCard[]; c
       <ProgressBar value={known} max={cards.length} label="Cards you know" valueText={`${known} of ${cards.length} known`} thin />
 
       {/* Tapping the card flips it; keyboard users have the buttons below and Space/Enter. */}
-      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions -- pointer shortcut; keyboard paths exist */}
       <div className={cx(s.card, flipped && s.cardFlipped)} onClick={(e) => !(e.target as Element).closest('a, button') && setFlipped((f) => !f)} data-testid="flashcard">
         <div className={s.side}>
           <span className={s.sideLabel}>{flipped ? 'Answer' : 'Question'}</span>
