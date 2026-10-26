@@ -3,6 +3,7 @@
  * admin bootstrap follows DB-7.
  */
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import * as yaml from 'js-yaml';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
@@ -96,7 +97,7 @@ describe('seed catalog', () => {
   });
 
   it('fails without writing anything when a catalog file is invalid', async () => {
-    const dir = fs.mkdtempSync(path.join(import.meta.dirname, '..', '.data', 'bad-catalog-'));
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'soyl-bad-catalog-'));
     try {
       fs.mkdirSync(path.join(dir, 'cbse', '10', 'x'), { recursive: true });
       fs.writeFileSync(
