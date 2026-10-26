@@ -119,7 +119,11 @@ export type AuthEventName =
   | 'unlink'
   | 'account_created'
   | 'account_deleted'
-  | 'role_change';
+  | 'role_change'
+  | 'mfa_enroll'
+  | 'mfa_confirm'
+  | 'mfa_verify'
+  | 'mfa_disable';
 
 export interface AuthEventFields {
   outcome: 'success' | 'failure' | 'refused';

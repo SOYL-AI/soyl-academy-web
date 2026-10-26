@@ -17,8 +17,12 @@ export const GuestLesson = z
   .strictObject({
     /** Chapter (unit) id, e.g. cbse-10-science-ch06. */
     chapter: ChapterId,
+    /** Deck part (1-based; 0 = single-deck chapter). Optional (M2); omitted = the chapter's first part. */
+    part: z.number().int().min(0).max(20).optional(),
     /** Index of the last slide viewed (0-based). */
     slide: z.number().int().min(0).max(1000),
+    /** Optional (M2): how the lesson was taken. Default read. */
+    mode: z.enum(['read', 'listen']).optional(),
     completed: z.boolean(),
     updatedAt: z.iso.datetime(),
   })
@@ -55,10 +59,14 @@ export const MergeGuestResponse = z
     lessonsCompleted: z.number().int(),
     practiceCorrect: z.number().int(),
     xpAwarded: z.number().int(),
+    /** M2: lesson positions saved to your account (lesson_progress), including unfinished ones. */
+    lessonsStored: z.number().int(),
+    /** M2: practice answers saved to your account (one per question; the latest guest answer wins). */
+    practiceStored: z.number().int(),
     ignored: z.object({
       unknownChapters: z.number().int(),
       unknownQuestions: z.number().int(),
-      /** Lesson positions without completion; stored once lesson_progress exists (handoff: schema request). */
+      /** Deprecated (M2): always 0 now that lesson positions are stored. Kept for M1 clients. */
       positionsNotStored: z.number().int(),
     }),
     /** Board/class applied to the profile (only when the profile had none). */

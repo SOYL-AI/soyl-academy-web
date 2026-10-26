@@ -8,4 +8,6 @@ export * from './ai-credits';
 export * from './billing';
 export * from './ops';
 export * from './pipeline';
+export * from './progress';
+export * from './release-items';
 export * from './views';

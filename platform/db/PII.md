@@ -11,7 +11,7 @@ sign-off (F-015)**; payment-record retention is a legal question (OA-14).
 Two steps, implemented by backend-api:
 
 1. **Immediately (anonymise + revoke):** delete the user's `sessions`, `accounts` and `verifications`
-   (by identifier = their email/phone), `consent_status`, `guardian_links` (both directions),
+   (by identifier = their email/phone), `consent_status`, `guardian_links` (both directions), `user_mfa`,
    `ai_conversations` (cascades `ai_messages`), `uploads` (and the blobs). Overwrite the `users` row:
    `name = 'Deleted user'`, `email = 'deleted+<id>@deleted.soyl.invalid'`, `phone_number = NULL`,
    `image = NULL`, `ban_reason = NULL`, `deleted_at = now()`; null the personal `profiles` fields.
@@ -44,6 +44,7 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `sessions.ip_address` | Client IP at sign-in | session lifetime | delete |
 | `sessions.user_agent` | Browser user agent | session lifetime | delete |
 | `sessions.impersonated_by` | Admin who impersonated | session lifetime | delete |
+| `sessions.mfa_verified_at` | When the session passed the staff second factor (AUTH-11) | session lifetime | delete |
 | `accounts.account_id` | Provider subject id (e.g. Google `sub`) | life of account | delete |
 | `accounts.access_token` | OAuth access token | until refreshed/revoked | delete |
 | `accounts.refresh_token` | OAuth refresh token | until revoked | delete |
@@ -51,7 +52,7 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `accounts.access_token_expires_at` | Token expiry | with token | delete |
 | `accounts.refresh_token_expires_at` | Token expiry | with token | delete |
 | `accounts.password` | Unused (no passwords); Better Auth core column | — | delete |
-| `verifications.identifier` | Email or phone an OTP was sent to | until expiry (minutes); swept daily | delete |
+| `verifications.identifier` | `otp:<purpose>:<channel>:<HMAC(identifier)>` — a keyed hash of the email/phone, not the raw value (AUTH-4) | until expiry (minutes); swept daily | delete |
 | `verifications.value` | OTP (hashed, DB-4 / AUTH-4) | until expiry | delete |
 | `profiles.display_name` | Name shown in the app; leaderboards use first name + last initial | life of account | anonymise |
 | `profiles.board`, `profiles.class_level` | Board and class | life of account | anonymise |
@@ -64,6 +65,10 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `attempts.*`, `responses.answer`, `evaluations.feedback` | Test attempts, answers, marks | life of account | cascade |
 | `live_registrations.*` | Live-mock registration, rank, score | life of account | cascade |
 | `xp_events.*`, `streaks.*`, `user_badges.*`, `league_memberships.*` | Progress and gamification | life of account | cascade |
+| `lesson_progress.*` | Lesson position per chapter/deck part, read/listen mode, first completion time | life of account | cascade |
+| `practice_answers.*`, `practice_answers.response` | Practice answers: the response (may include the student's own written text), outcome, marks, time | life of account | cascade |
+| `user_mfa.totp_secret_enc` | Staff TOTP secret, AES-256-GCM encrypted (key in Key Vault, not in the database) | while enrolled | delete |
+| `user_mfa.recovery_code_hashes`, `user_mfa.last_used_step`, `user_mfa.confirmed_at` | HMACs of unused staff recovery codes; last accepted TOTP step | while enrolled | delete |
 | `leaderboard_snapshots.entries` | First name + last initial, XP, rank (opaque handles) | 1 year | retain (no ids; names age out) |
 | `credit_ledger.*` | AI credit grants and spend | life of account | cascade |
 | `ai_requests.*` | AI usage metering (no prompt text) | 30 days per user, then aggregates only | cascade |

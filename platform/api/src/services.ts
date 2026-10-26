@@ -13,6 +13,8 @@ import type { EmailSender } from './auth/senders/email';
 import type { SmsSender } from './auth/senders/sms';
 import type { ConsentProvider } from './consent/provider';
 import { ConsentService } from './consent/service';
+import { MfaService } from './auth/mfa';
+import { MFA } from '@soyl/shared/config/security';
 
 export interface Providers {
   sms: SmsSender;
@@ -48,7 +50,8 @@ export function createServices(deps: AppDeps) {
     fetch: deps.google?.fetch,
   });
   const consent = new ConsentService(db, providers.consent, clock);
-  return { auth, adapter, limiter, sessions, otp, identity, google, consent };
+  const mfa = new MfaService(db, clock, limiter, { encryptionKey: config.mfaEncryptionKey, pepper: config.otpPepper, issuer: MFA.totp.issuer });
+  return { auth, adapter, limiter, sessions, otp, identity, google, consent, mfa };
 }
 
 export type Services = ReturnType<typeof createServices>;

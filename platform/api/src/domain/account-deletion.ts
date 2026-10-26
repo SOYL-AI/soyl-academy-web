@@ -1,7 +1,7 @@
 /**
  * DELETE /v1/me — step 1 of platform/db/PII.md "Account deletion" (AC-25 erasure, AC-26):
  * in one transaction delete sessions, accounts, pending OTP rows, consent_status, guardian links
- * (both directions), AI conversations (messages cascade) and uploads rows; anonymise `users` and the
+ * (both directions), AI conversations (messages cascade), uploads rows and the staff TOTP enrolment; anonymise `users` and the
  * personal `profiles` fields; write an audit row (ids only). Step 2 — the hard delete ≤ 30 days later
  * — is the worker's `account.purge` job (`users.deleted_at < now() - 30 days`).
  *
@@ -18,6 +18,7 @@ import {
   profiles,
   sessions,
   uploads,
+  userMfa,
   users,
   type Database,
 } from '@soyl/db';
@@ -50,6 +51,7 @@ export async function deleteAccount(
     await tx.delete(guardianLinks).where(or(eq(guardianLinks.parentUserId, user.id), eq(guardianLinks.studentUserId, user.id)));
     await tx.delete(aiConversations).where(eq(aiConversations.userId, user.id));
     await tx.delete(uploads).where(eq(uploads.userId, user.id));
+    await tx.delete(userMfa).where(eq(userMfa.userId, user.id));
     await tx
       .update(users)
       .set({

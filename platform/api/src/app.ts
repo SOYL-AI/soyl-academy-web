@@ -38,7 +38,14 @@ import { registerSessionRoutes } from './modules/session';
 import { registerMeRoutes } from './modules/me';
 import { registerCatalogRoutes } from './modules/catalog';
 import { registerHealthRoutes } from './modules/health';
+import { CONTENT_PRIVATE_CACHE_CONTROL } from './http/cache';
 import { registerDevRoutes } from './modules/dev';
+import { registerContentRoutes } from './modules/content';
+import { registerPracticeRoutes } from './modules/practice';
+import { registerProgressRoutes } from './modules/progress';
+import { registerReportRoutes } from './modules/reports';
+import { registerMfaRoutes } from './modules/mfa';
+import { registerAdminRoutes } from './modules/admin';
 
 export const HEALTH_PATHS = new Set(['/healthz', '/readyz']);
 const STATE_CHANGING = new Set(['POST', 'PUT', 'PATCH', 'DELETE']);
@@ -196,8 +203,8 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
       securityEvent(request.log, 'authz_denied', { userId: auth.user.id, role: auth.user.role, route: request.routeOptions.url });
       throw new ApiProblem('forbidden');
     }
-    // AUTH-11: staff routes need a second factor. M1 has no TOTP storage (ADR-002 gap), so they fail closed.
-    if (policy.mfa) {
+    // AUTH-11 (ADR-011): staff routes need a confirmed TOTP enrolment and a session that passed it.
+    if (policy.mfa && !(await services.mfa.sessionVerified(auth.user.id, auth.session.id))) {
       securityEvent(request.log, 'authz_denied', { userId: auth.user.id, reason: 'mfa_required', route: request.routeOptions.url });
       throw new ApiProblem('mfa_required');
     }
@@ -220,8 +227,13 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
     reply.header('content-security-policy', "default-src 'none'; frame-ancestors 'none'");
     reply.header('cross-origin-resource-policy', 'same-origin');
     reply.header('x-trace-id', String(request.id));
-    // API-4: personal and error responses are never stored; only explicitly public reads (catalog) are cacheable.
-    if (request.auth || !reply.hasHeader('cache-control') || (reply.statusCode >= 300 && reply.statusCode !== 304)) reply.header('cache-control', 'no-store');
+    // API-4: personal and error responses are never stored; only explicitly public reads (catalog, content) are cacheable.
+    // Content reads are identical for everyone (ADR-010), so a signed-in reader may keep a private copy — unless
+    // this response also refreshes the session cookie.
+    const okStatus = reply.statusCode < 300 || reply.statusCode === 304;
+    if (request.auth && okStatus && request.routeOptions.config?.cache === 'content' && reply.hasHeader('cache-control') && !reply.hasHeader('set-cookie'))
+      reply.header('cache-control', CONTENT_PRIVATE_CACHE_CONTROL);
+    else if (request.auth || !reply.hasHeader('cache-control') || !okStatus) reply.header('cache-control', 'no-store');
     return payload;
   });
 
@@ -265,6 +277,12 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
   registerSessionRoutes(app, services);
   registerMeRoutes(app, services, deps);
   registerCatalogRoutes(app, deps);
+  registerContentRoutes(app, deps);
+  registerPracticeRoutes(app, deps);
+  registerProgressRoutes(app, deps);
+  registerReportRoutes(app, deps);
+  registerMfaRoutes(app, services);
+  registerAdminRoutes(app, deps);
   if (config.devOtpOutbox) registerDevRoutes(app, deps);
   opts.extraRoutes?.(app, services);
 

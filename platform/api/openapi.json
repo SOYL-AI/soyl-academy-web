@@ -291,10 +291,22 @@
             "type": "string",
             "pattern": "^(?:cbse|icse|isc)-(?:7|8|9|10|11|12)-[a-z0-9]+(?:-[a-z0-9]+)*-ch\\d{2}$"
           },
+          "part": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 20
+          },
           "slide": {
             "type": "integer",
             "minimum": 0,
             "maximum": 1000
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "read",
+              "listen"
+            ]
           },
           "completed": {
             "type": "boolean"
@@ -413,6 +425,16 @@
             "minimum": -9007199254740991,
             "maximum": 9007199254740991
           },
+          "lessonsStored": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "practiceStored": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
           "ignored": {
             "type": "object",
             "properties": {
@@ -449,6 +471,8 @@
           "lessonsCompleted",
           "practiceCorrect",
           "xpAwarded",
+          "lessonsStored",
+          "practiceStored",
           "ignored",
           "profileUpdated"
         ]
@@ -915,6 +939,2539 @@
           "chapters"
         ]
       },
+      "ReviewStatusInput": {
+        "type": "string",
+        "enum": [
+          "beta",
+          "reviewed"
+        ],
+        "description": "beta = published after automated checks; reviewed = human-reviewed (CONTEXT §4)."
+      },
+      "QuestionTypeInput": {
+        "type": "string",
+        "enum": [
+          "mcq",
+          "multi-select",
+          "assertion-reason",
+          "case-based",
+          "source-based",
+          "short",
+          "long",
+          "numerical",
+          "fill-blank",
+          "match",
+          "true-false",
+          "writing",
+          "map",
+          "code-output",
+          "ordering"
+        ]
+      },
+      "VisualInput": {
+        "description": "platform/shared/content/visual.ts Visual"
+      },
+      "StudentQuestionPartInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/QuestionTypeInput"
+          },
+          "objective": {
+            "type": "boolean"
+          },
+          "stem_md": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "text_md": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "text_md"
+              ]
+            }
+          },
+          "match_right": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "text_md": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "text_md"
+              ]
+            }
+          },
+          "marks": {
+            "type": "number"
+          },
+          "assets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VisualInput"
+            }
+          },
+          "format": {
+            "type": "string"
+          },
+          "word_limit": {
+            "type": "object",
+            "properties": {
+              "min": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "max": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "min",
+              "max"
+            ]
+          },
+          "map_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "objective",
+          "stem_md",
+          "options",
+          "match_right",
+          "marks",
+          "assets"
+        ]
+      },
+      "StudentQuestionInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/QuestionTypeInput"
+          },
+          "objective": {
+            "type": "boolean"
+          },
+          "stem_md": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "text_md": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "text_md"
+              ]
+            }
+          },
+          "match_right": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "text_md": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "text_md"
+              ]
+            }
+          },
+          "marks": {
+            "type": "number"
+          },
+          "assets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VisualInput"
+            }
+          },
+          "format": {
+            "type": "string"
+          },
+          "word_limit": {
+            "type": "object",
+            "properties": {
+              "min": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "max": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "min",
+              "max"
+            ]
+          },
+          "map_id": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "difficulty": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "expected_time_sec": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "topic_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "passage_md": {
+            "type": "string"
+          },
+          "passage_origin": {
+            "type": "string"
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "$ref": "#/components/schemas/QuestionTypeInput"
+                },
+                "objective": {
+                  "type": "boolean"
+                },
+                "stem_md": {
+                  "type": "string"
+                },
+                "options": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "text_md": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "text_md"
+                    ]
+                  }
+                },
+                "match_right": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "text_md": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "text_md"
+                    ]
+                  }
+                },
+                "marks": {
+                  "type": "number"
+                },
+                "assets": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/VisualInput"
+                  }
+                },
+                "format": {
+                  "type": "string"
+                },
+                "word_limit": {
+                  "type": "object",
+                  "properties": {
+                    "min": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "max": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    }
+                  },
+                  "required": [
+                    "min",
+                    "max"
+                  ]
+                },
+                "map_id": {
+                  "type": "string"
+                },
+                "alternatives": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StudentQuestionPartInput"
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "type",
+                "objective",
+                "stem_md",
+                "options",
+                "match_right",
+                "marks",
+                "assets",
+                "alternatives"
+              ]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "objective",
+          "stem_md",
+          "options",
+          "match_right",
+          "marks",
+          "assets",
+          "version",
+          "difficulty",
+          "expected_time_sec",
+          "topic_ids",
+          "children"
+        ],
+        "description": "A question without its answer, solution or marking scheme (DB-6). Check answers with POST /v1/practice/answers."
+      },
+      "ChapterHubInput": {
+        "type": "object",
+        "properties": {
+          "chapter": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "number": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "title": {
+                "type": "string"
+              },
+              "titleEn": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "unit": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "boardAssessed": {
+                "type": "boolean"
+              },
+              "topics": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "titleEn": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "titleEn"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "id",
+              "number",
+              "title",
+              "titleEn",
+              "unit",
+              "boardAssessed",
+              "topics"
+            ]
+          },
+          "subject": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "board": {
+                "$ref": "#/components/schemas/BoardInput"
+              },
+              "exam": {
+                "type": "string",
+                "enum": [
+                  "cbse",
+                  "icse",
+                  "isc"
+                ]
+              },
+              "classLevel": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "language": {
+                "type": "string"
+              },
+              "script": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "board",
+              "exam",
+              "classLevel",
+              "language",
+              "script"
+            ]
+          },
+          "assets": {
+            "type": "object",
+            "properties": {
+              "lesson": {
+                "type": "object",
+                "properties": {
+                  "available": {
+                    "type": "boolean"
+                  },
+                  "parts": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "part": {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "slideCount": {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        "hasAudio": {
+                          "type": "boolean"
+                        },
+                        "version": {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        "reviewStatus": {
+                          "$ref": "#/components/schemas/ReviewStatusInput"
+                        }
+                      },
+                      "required": [
+                        "part",
+                        "title",
+                        "slideCount",
+                        "hasAudio",
+                        "version",
+                        "reviewStatus"
+                      ]
+                    }
+                  },
+                  "slideCount": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  }
+                },
+                "required": [
+                  "available",
+                  "parts",
+                  "slideCount"
+                ]
+              },
+              "notes": {
+                "type": "object",
+                "properties": {
+                  "available": {
+                    "type": "boolean"
+                  },
+                  "sections": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "reviewStatus": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/ReviewStatusInput"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "available",
+                  "sections",
+                  "reviewStatus"
+                ]
+              },
+              "flashcards": {
+                "type": "object",
+                "properties": {
+                  "available": {
+                    "type": "boolean"
+                  },
+                  "count": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "reviewStatus": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/ReviewStatusInput"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "available",
+                  "count",
+                  "reviewStatus"
+                ]
+              },
+              "practice": {
+                "type": "object",
+                "properties": {
+                  "available": {
+                    "type": "boolean"
+                  },
+                  "count": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "byType": {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    }
+                  },
+                  "byDifficulty": {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    }
+                  }
+                },
+                "required": [
+                  "available",
+                  "count",
+                  "byType",
+                  "byDifficulty"
+                ]
+              },
+              "tests": {
+                "type": "object",
+                "properties": {
+                  "available": {
+                    "type": "boolean"
+                  },
+                  "count": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "kind": {
+                          "type": "string"
+                        },
+                        "durationMin": {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        "totalMarks": {
+                          "type": "number"
+                        },
+                        "questionCount": {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "title",
+                        "kind",
+                        "durationMin",
+                        "totalMarks",
+                        "questionCount"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "available",
+                  "count",
+                  "items"
+                ]
+              }
+            },
+            "required": [
+              "lesson",
+              "notes",
+              "flashcards",
+              "practice",
+              "tests"
+            ]
+          }
+        },
+        "required": [
+          "chapter",
+          "subject",
+          "assets"
+        ],
+        "description": "Public and cacheable; your own progress is GET /v1/me/progress/chapters/{id}."
+      },
+      "LessonDeckInput": {
+        "type": "object",
+        "properties": {
+          "chapterId": {
+            "type": "string"
+          },
+          "part": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "parts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "part": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "title": {
+                  "type": "string"
+                },
+                "slideCount": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "hasAudio": {
+                  "type": "boolean"
+                },
+                "version": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "reviewStatus": {
+                  "$ref": "#/components/schemas/ReviewStatusInput"
+                }
+              },
+              "required": [
+                "part",
+                "title",
+                "slideCount",
+                "hasAudio",
+                "version",
+                "reviewStatus"
+              ]
+            }
+          },
+          "version": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "reviewStatus": {
+            "$ref": "#/components/schemas/ReviewStatusInput"
+          },
+          "title": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "goals": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "slides": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "layout": {
+                  "type": "string",
+                  "enum": [
+                    "title",
+                    "concept",
+                    "two-column",
+                    "diagram",
+                    "example",
+                    "check",
+                    "summary",
+                    "exam-tips"
+                  ]
+                },
+                "heading": {
+                  "type": "string"
+                },
+                "body_md": {
+                  "type": "string"
+                },
+                "bullets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "columns": {
+                  "type": "array",
+                  "prefixItems": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ],
+                  "items": false,
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "visual": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/VisualInput"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "math": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "narration": {
+                  "type": "string"
+                },
+                "check_question_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "audio": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "duration_ms": {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "duration_ms"
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "layout",
+                "heading",
+                "body_md",
+                "bullets",
+                "visual",
+                "math",
+                "narration",
+                "check_question_id",
+                "audio"
+              ]
+            }
+          },
+          "checkQuestions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StudentQuestionInput"
+            }
+          }
+        },
+        "required": [
+          "chapterId",
+          "part",
+          "parts",
+          "version",
+          "reviewStatus",
+          "title",
+          "language",
+          "goals",
+          "slides",
+          "checkQuestions"
+        ]
+      },
+      "ChapterNotesInput": {
+        "type": "object",
+        "properties": {
+          "chapterId": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "reviewStatus": {
+            "$ref": "#/components/schemas/ReviewStatusInput"
+          },
+          "title": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "heading": {
+                  "type": "string"
+                },
+                "body_md": {
+                  "type": "string"
+                },
+                "key_terms": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "term": {
+                        "type": "string"
+                      },
+                      "definition_md": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "term",
+                      "definition_md"
+                    ]
+                  }
+                },
+                "formulas": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "latex": {
+                        "type": "string"
+                      },
+                      "label": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "latex"
+                    ]
+                  }
+                },
+                "visual": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/VisualInput"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "visuals": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/VisualInput"
+                  }
+                },
+                "topic_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "heading",
+                "body_md",
+                "key_terms",
+                "formulas",
+                "visual",
+                "visuals",
+                "topic_ids"
+              ]
+            }
+          },
+          "exam_tips_md": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "chapterId",
+          "version",
+          "reviewStatus",
+          "title",
+          "language",
+          "sections",
+          "exam_tips_md"
+        ]
+      },
+      "ChapterFlashcardsInput": {
+        "type": "object",
+        "properties": {
+          "chapterId": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "reviewStatus": {
+            "$ref": "#/components/schemas/ReviewStatusInput"
+          },
+          "language": {
+            "type": "string"
+          },
+          "cards": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "front_md": {
+                  "type": "string"
+                },
+                "back_md": {
+                  "type": "string"
+                },
+                "tag": {
+                  "type": "string"
+                },
+                "topic_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "front_md",
+                "back_md",
+                "tag",
+                "topic_id"
+              ]
+            }
+          }
+        },
+        "required": [
+          "chapterId",
+          "version",
+          "reviewStatus",
+          "language",
+          "cards"
+        ]
+      },
+      "StreakInput": {
+        "type": "object",
+        "properties": {
+          "current": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "longest": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "lastActiveDay": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "atRisk": {
+            "type": "boolean"
+          },
+          "freezeAvailableThisWeek": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "current",
+          "longest",
+          "lastActiveDay",
+          "atRisk",
+          "freezeAvailableThisWeek"
+        ],
+        "description": "IST calendar days; one missed day per week is covered automatically."
+      },
+      "PracticePartResponseInput": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "option_ids": {
+                "minItems": 1,
+                "maxItems": 20,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              }
+            },
+            "required": [
+              "option_ids"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "blanks": {
+                "minItems": 1,
+                "maxItems": 20,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "maxLength": 200
+                }
+              }
+            },
+            "required": [
+              "blanks"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "pairs": {
+                "minItems": 1,
+                "maxItems": 30,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "left_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 64,
+                      "pattern": "^[A-Za-z0-9_-]+$"
+                    },
+                    "right_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 64,
+                      "pattern": "^[A-Za-z0-9_-]+$"
+                    }
+                  },
+                  "required": [
+                    "left_id",
+                    "right_id"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "pairs"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "order": {
+                "minItems": 2,
+                "maxItems": 30,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              }
+            },
+            "required": [
+              "order"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "output": {
+                "type": "string",
+                "maxLength": 4000
+              }
+            },
+            "required": [
+              "output"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string",
+                "maxLength": 6000
+              }
+            },
+            "required": [
+              "text"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "mcq/assertion-reason/true-false/multi-select → option_ids; numerical → value; fill-blank → blanks (in stem order); match → pairs; ordering → order (all ids); code-output → output; short/long/writing/map → text."
+      },
+      "PracticeResponseInput": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PracticePartResponseInput"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "parts": {
+                "minItems": 1,
+                "maxItems": 20,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 64,
+                      "pattern": "^[A-Za-z0-9_-]+$"
+                    },
+                    "alternative": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 64,
+                      "pattern": "^[A-Za-z0-9_-]+$"
+                    },
+                    "response": {
+                      "$ref": "#/components/schemas/PracticePartResponseInput"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "response"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "parts"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "case-based/source-based → parts (one per child; `alternative` picks an internal-choice alternative)."
+      },
+      "PracticeAnswerRequestInput": {
+        "type": "object",
+        "properties": {
+          "questionId": {
+            "type": "string",
+            "maxLength": 120,
+            "pattern": "^q_[a-z0-9_-]+$"
+          },
+          "version": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "response": {
+            "$ref": "#/components/schemas/PracticeResponseInput"
+          }
+        },
+        "required": [
+          "questionId",
+          "response"
+        ],
+        "additionalProperties": false
+      },
+      "AnswerKeyInput": {
+        "type": "object",
+        "properties": {
+          "answer": {},
+          "solution_md": {
+            "type": "string"
+          },
+          "marking_scheme": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "step": {
+                  "type": "string"
+                },
+                "marks": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "step",
+                "marks"
+              ]
+            }
+          },
+          "rubric": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "criterion": {
+                  "type": "string"
+                },
+                "marks": {
+                  "type": "number"
+                },
+                "descriptor_md": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "criterion",
+                "marks"
+              ]
+            }
+          }
+        },
+        "required": [
+          "answer",
+          "solution_md",
+          "marking_scheme"
+        ],
+        "description": "Revealed only after answering (F-006). `answer` has the content contract Answer shape."
+      },
+      "PracticeAnswerResultInput": {
+        "type": "object",
+        "properties": {
+          "questionId": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "mcq",
+              "multi-select",
+              "assertion-reason",
+              "case-based",
+              "source-based",
+              "short",
+              "long",
+              "numerical",
+              "fill-blank",
+              "match",
+              "true-false",
+              "writing",
+              "map",
+              "code-output",
+              "ordering"
+            ]
+          },
+          "correct": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "marksAwarded": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "maxMarks": {
+            "type": "number"
+          },
+          "grading": {
+            "type": "string",
+            "enum": [
+              "auto",
+              "self"
+            ]
+          },
+          "feedback": {
+            "type": "object",
+            "properties": {
+              "blanksCorrect": {
+                "type": "array",
+                "items": {
+                  "type": "boolean"
+                }
+              },
+              "pairsCorrect": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "positionsCorrect": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            }
+          },
+          "key": {
+            "$ref": "#/components/schemas/AnswerKeyInput"
+          },
+          "parts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "alternative": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "mcq",
+                    "multi-select",
+                    "assertion-reason",
+                    "case-based",
+                    "source-based",
+                    "short",
+                    "long",
+                    "numerical",
+                    "fill-blank",
+                    "match",
+                    "true-false",
+                    "writing",
+                    "map",
+                    "code-output",
+                    "ordering"
+                  ]
+                },
+                "correct": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
+                },
+                "marksAwarded": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "maxMarks": {
+                  "type": "number"
+                },
+                "grading": {
+                  "type": "string",
+                  "enum": [
+                    "auto",
+                    "self"
+                  ]
+                },
+                "feedback": {
+                  "type": "object",
+                  "properties": {
+                    "blanksCorrect": {
+                      "type": "array",
+                      "items": {
+                        "type": "boolean"
+                      }
+                    },
+                    "pairsCorrect": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "positionsCorrect": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    }
+                  }
+                },
+                "key": {
+                  "$ref": "#/components/schemas/AnswerKeyInput"
+                }
+              },
+              "required": [
+                "id",
+                "alternative",
+                "type",
+                "correct",
+                "marksAwarded",
+                "maxMarks",
+                "grading",
+                "key"
+              ]
+            }
+          },
+          "selfAssessmentPending": {
+            "type": "boolean"
+          },
+          "selfMaxMarks": {
+            "type": "number"
+          },
+          "stored": {
+            "type": "boolean"
+          },
+          "answerId": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid",
+                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "xpAwarded": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "badgesAwarded": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "streak": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/StreakInput"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "questionId",
+          "version",
+          "type",
+          "correct",
+          "marksAwarded",
+          "maxMarks",
+          "grading",
+          "key",
+          "parts",
+          "selfAssessmentPending",
+          "selfMaxMarks",
+          "stored",
+          "answerId",
+          "xpAwarded",
+          "badgesAwarded",
+          "streak"
+        ]
+      },
+      "PracticePageInput": {
+        "type": "object",
+        "properties": {
+          "chapterId": {
+            "type": "string"
+          },
+          "total": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "question": {
+                  "$ref": "#/components/schemas/StudentQuestionInput"
+                },
+                "answered": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
+                },
+                "lastCorrect": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "question",
+                "answered",
+                "lastCorrect"
+              ]
+            }
+          },
+          "nextCursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "chapterId",
+          "total",
+          "items",
+          "nextCursor"
+        ]
+      },
+      "PracticeSelfAssessmentInput": {
+        "type": "object",
+        "properties": {
+          "answerId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "marksAwarded": {
+            "type": "number"
+          },
+          "maxMarks": {
+            "type": "number"
+          },
+          "grading": {
+            "type": "string",
+            "const": "self"
+          }
+        },
+        "required": [
+          "answerId",
+          "marksAwarded",
+          "maxMarks",
+          "grading"
+        ]
+      },
+      "MyProgressInput": {
+        "type": "object",
+        "properties": {
+          "totals": {
+            "type": "object",
+            "properties": {
+              "xp": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "level": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "levelStartXp": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "nextLevelXp": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "streak": {
+                "$ref": "#/components/schemas/StreakInput"
+              },
+              "lessonsCompleted": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "practiceAttempts": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "practiceAccuracy": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "xp",
+              "level",
+              "levelStartXp",
+              "nextLevelXp",
+              "streak",
+              "lessonsCompleted",
+              "practiceAttempts",
+              "practiceAccuracy"
+            ]
+          },
+          "subjects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "subjectId": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "chapters": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "chapterId": {
+                        "type": "string"
+                      },
+                      "number": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "lessons": {
+                        "type": "object",
+                        "properties": {
+                          "partsStarted": {
+                            "type": "integer",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          },
+                          "partsCompleted": {
+                            "type": "integer",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          },
+                          "lastPart": {
+                            "anyOf": [
+                              {
+                                "type": "integer",
+                                "minimum": -9007199254740991,
+                                "maximum": 9007199254740991
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "lastSlide": {
+                            "anyOf": [
+                              {
+                                "type": "integer",
+                                "minimum": -9007199254740991,
+                                "maximum": 9007199254740991
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "lastMode": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "enum": [
+                                  "read",
+                                  "listen"
+                                ]
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "updatedAt": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "format": "date-time",
+                                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "partsStarted",
+                          "partsCompleted",
+                          "lastPart",
+                          "lastSlide",
+                          "lastMode",
+                          "updatedAt"
+                        ]
+                      },
+                      "practice": {
+                        "type": "object",
+                        "properties": {
+                          "attempts": {
+                            "type": "integer",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          },
+                          "questionsAnswered": {
+                            "type": "integer",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          },
+                          "questionsCorrect": {
+                            "type": "integer",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          },
+                          "accuracy": {
+                            "type": [
+                              "number",
+                              "null"
+                            ]
+                          },
+                          "lastAnsweredAt": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "format": "date-time",
+                                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "attempts",
+                          "questionsAnswered",
+                          "questionsCorrect",
+                          "accuracy",
+                          "lastAnsweredAt"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "chapterId",
+                      "number",
+                      "title",
+                      "lessons",
+                      "practice"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "subjectId",
+                "name",
+                "chapters"
+              ]
+            }
+          }
+        },
+        "required": [
+          "totals",
+          "subjects"
+        ]
+      },
+      "MyChapterProgressInput": {
+        "type": "object",
+        "properties": {
+          "chapterId": {
+            "type": "string"
+          },
+          "lessons": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "part": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "slideCount": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "slide": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "mode": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "read",
+                        "listen"
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "completedAt": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "date-time",
+                      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "updatedAt": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "date-time",
+                      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "part",
+                "slideCount",
+                "slide",
+                "mode",
+                "completedAt",
+                "updatedAt"
+              ]
+            }
+          },
+          "practice": {
+            "type": "object",
+            "properties": {
+              "attempts": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "questionsAnswered": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "questionsCorrect": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "accuracy": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "answeredQuestionIds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "correctQuestionIds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "attempts",
+              "questionsAnswered",
+              "questionsCorrect",
+              "accuracy",
+              "answeredQuestionIds",
+              "correctQuestionIds"
+            ]
+          }
+        },
+        "required": [
+          "chapterId",
+          "lessons",
+          "practice"
+        ]
+      },
+      "LessonProgressRequestInput": {
+        "type": "object",
+        "properties": {
+          "chapterId": {
+            "type": "string",
+            "pattern": "^(?:cbse|icse|isc)-(?:7|8|9|10|11|12)-[a-z0-9]+(?:-[a-z0-9]+)*-ch\\d{2}$"
+          },
+          "part": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 20
+          },
+          "slide": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000
+          },
+          "mode": {
+            "default": "read",
+            "type": "string",
+            "enum": [
+              "read",
+              "listen"
+            ]
+          },
+          "completed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "chapterId",
+          "slide"
+        ],
+        "additionalProperties": false
+      },
+      "LessonProgressInput": {
+        "type": "object",
+        "properties": {
+          "chapterId": {
+            "type": "string"
+          },
+          "part": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "slide": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "slideCount": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "read",
+              "listen"
+            ]
+          },
+          "completedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "xpAwarded": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "badgesAwarded": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "streak": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/StreakInput"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "chapterId",
+          "part",
+          "slide",
+          "slideCount",
+          "mode",
+          "completedAt",
+          "updatedAt",
+          "xpAwarded",
+          "badgesAwarded",
+          "streak"
+        ]
+      },
+      "MyBadgesInput": {
+        "type": "object",
+        "properties": {
+          "badges": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                },
+                "awarded": {
+                  "type": "boolean"
+                },
+                "awardedAt": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "date-time",
+                      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "key",
+                "name",
+                "description",
+                "icon",
+                "awarded",
+                "awardedAt"
+              ]
+            }
+          }
+        },
+        "required": [
+          "badges"
+        ]
+      },
+      "ContentReportRequestInput": {
+        "type": "object",
+        "properties": {
+          "chapterId": {
+            "type": "string",
+            "pattern": "^(?:cbse|icse|isc)-(?:7|8|9|10|11|12)-[a-z0-9]+(?:-[a-z0-9]+)*-ch\\d{2}$"
+          },
+          "contentType": {
+            "type": "string",
+            "enum": [
+              "deck",
+              "notes",
+              "flashcard_set",
+              "question"
+            ]
+          },
+          "part": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 20
+          },
+          "questionId": {
+            "type": "string",
+            "maxLength": 120,
+            "pattern": "^q_[a-z0-9_-]+$"
+          },
+          "itemRef": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64,
+            "pattern": "^[A-Za-z0-9_.:-]+$"
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "wrong_answer",
+              "wrong_content",
+              "typo",
+              "rendering",
+              "audio",
+              "inappropriate",
+              "other"
+            ]
+          },
+          "comment": {
+            "type": "string",
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "chapterId",
+          "contentType",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "ContentReportReceiptInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "status": {
+            "type": "string",
+            "const": "open"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "createdAt"
+        ]
+      },
+      "MfaStatusInput": {
+        "type": "object",
+        "properties": {
+          "enrolled": {
+            "type": "boolean"
+          },
+          "confirmed": {
+            "type": "boolean"
+          },
+          "sessionVerified": {
+            "type": "boolean"
+          },
+          "recoveryCodesRemaining": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "enrolled",
+          "confirmed",
+          "sessionVerified",
+          "recoveryCodesRemaining"
+        ]
+      },
+      "MfaEnrollmentInput": {
+        "type": "object",
+        "properties": {
+          "secret": {
+            "type": "string"
+          },
+          "otpauthUri": {
+            "type": "string"
+          },
+          "digits": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "periodSeconds": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "algorithm": {
+            "type": "string"
+          },
+          "expiresInSeconds": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "secret",
+          "otpauthUri",
+          "digits",
+          "periodSeconds",
+          "algorithm",
+          "expiresInSeconds"
+        ],
+        "description": "Show the URI as a QR code (and the secret for manual entry). Nothing here is stored in the browser."
+      },
+      "MfaRecoveryCodesInput": {
+        "type": "object",
+        "properties": {
+          "recoveryCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "recoveryCodes"
+        ],
+        "description": "Shown once. Each code works once."
+      },
+      "MfaVerifyRequestInput": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "^\\d{6}$"
+              }
+            },
+            "required": [
+              "code"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "recoveryCode": {
+                "type": "string",
+                "minLength": 10,
+                "maxLength": 20,
+                "pattern": "^[A-Za-z0-9-]+$"
+              }
+            },
+            "required": [
+              "recoveryCode"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "MfaVerifiedInput": {
+        "type": "object",
+        "properties": {
+          "verified": {
+            "type": "boolean",
+            "const": true
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "totp",
+              "recovery_code"
+            ]
+          },
+          "recoveryCodesRemaining": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "verified",
+          "method",
+          "recoveryCodesRemaining"
+        ]
+      },
+      "AdminContentReportsInput": {
+        "type": "object",
+        "properties": {
+          "reports": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "unit": {
+                  "type": "string"
+                },
+                "contentType": {
+                  "type": "string",
+                  "enum": [
+                    "deck",
+                    "notes",
+                    "flashcard_set",
+                    "question"
+                  ]
+                },
+                "contentId": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "itemRef": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "reason": {
+                  "type": "string"
+                },
+                "comment": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "status": {
+                  "type": "string"
+                },
+                "reporter": {
+                  "type": "string",
+                  "enum": [
+                    "member",
+                    "guest"
+                  ]
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                }
+              },
+              "required": [
+                "id",
+                "unit",
+                "contentType",
+                "contentId",
+                "itemRef",
+                "reason",
+                "comment",
+                "status",
+                "reporter",
+                "createdAt"
+              ]
+            }
+          },
+          "nextCursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "reports",
+          "nextCursor"
+        ]
+      },
+      "PracticeSelfAssessRequestInput": {
+        "type": "object",
+        "properties": {
+          "marks": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "multipleOf": 0.5
+          }
+        },
+        "required": [
+          "marks"
+        ],
+        "additionalProperties": false
+      },
       "Problem": {
         "type": "object",
         "properties": {
@@ -1200,10 +3757,22 @@
             "type": "string",
             "pattern": "^(?:cbse|icse|isc)-(?:7|8|9|10|11|12)-[a-z0-9]+(?:-[a-z0-9]+)*-ch\\d{2}$"
           },
+          "part": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 20
+          },
           "slide": {
             "type": "integer",
             "minimum": 0,
             "maximum": 1000
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "read",
+              "listen"
+            ]
           },
           "completed": {
             "type": "boolean"
@@ -1324,6 +3893,16 @@
             "minimum": -9007199254740991,
             "maximum": 9007199254740991
           },
+          "lessonsStored": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "practiceStored": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
           "ignored": {
             "type": "object",
             "properties": {
@@ -1361,6 +3940,8 @@
           "lessonsCompleted",
           "practiceCorrect",
           "xpAwarded",
+          "lessonsStored",
+          "practiceStored",
           "ignored",
           "profileUpdated"
         ],
@@ -1838,6 +4419,2604 @@
           "academicYear",
           "subject",
           "chapters"
+        ],
+        "additionalProperties": false
+      },
+      "ReviewStatus": {
+        "type": "string",
+        "enum": [
+          "beta",
+          "reviewed"
+        ],
+        "description": "beta = published after automated checks; reviewed = human-reviewed (CONTEXT §4)."
+      },
+      "QuestionType": {
+        "type": "string",
+        "enum": [
+          "mcq",
+          "multi-select",
+          "assertion-reason",
+          "case-based",
+          "source-based",
+          "short",
+          "long",
+          "numerical",
+          "fill-blank",
+          "match",
+          "true-false",
+          "writing",
+          "map",
+          "code-output",
+          "ordering"
+        ]
+      },
+      "Visual": {
+        "description": "platform/shared/content/visual.ts Visual"
+      },
+      "StudentQuestionPart": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/QuestionType"
+          },
+          "objective": {
+            "type": "boolean"
+          },
+          "stem_md": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "text_md": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "text_md"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "match_right": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "text_md": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "text_md"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "marks": {
+            "type": "number"
+          },
+          "assets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Visual"
+            }
+          },
+          "format": {
+            "type": "string"
+          },
+          "word_limit": {
+            "type": "object",
+            "properties": {
+              "min": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "max": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "min",
+              "max"
+            ],
+            "additionalProperties": false
+          },
+          "map_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "objective",
+          "stem_md",
+          "options",
+          "match_right",
+          "marks",
+          "assets"
+        ],
+        "additionalProperties": false
+      },
+      "StudentQuestion": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/QuestionType"
+          },
+          "objective": {
+            "type": "boolean"
+          },
+          "stem_md": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "text_md": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "text_md"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "match_right": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "text_md": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "text_md"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "marks": {
+            "type": "number"
+          },
+          "assets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Visual"
+            }
+          },
+          "format": {
+            "type": "string"
+          },
+          "word_limit": {
+            "type": "object",
+            "properties": {
+              "min": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "max": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "min",
+              "max"
+            ],
+            "additionalProperties": false
+          },
+          "map_id": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "difficulty": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "expected_time_sec": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "topic_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "passage_md": {
+            "type": "string"
+          },
+          "passage_origin": {
+            "type": "string"
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "$ref": "#/components/schemas/QuestionType"
+                },
+                "objective": {
+                  "type": "boolean"
+                },
+                "stem_md": {
+                  "type": "string"
+                },
+                "options": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "text_md": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "text_md"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "match_right": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "text_md": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "text_md"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "marks": {
+                  "type": "number"
+                },
+                "assets": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Visual"
+                  }
+                },
+                "format": {
+                  "type": "string"
+                },
+                "word_limit": {
+                  "type": "object",
+                  "properties": {
+                    "min": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "max": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    }
+                  },
+                  "required": [
+                    "min",
+                    "max"
+                  ],
+                  "additionalProperties": false
+                },
+                "map_id": {
+                  "type": "string"
+                },
+                "alternatives": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/StudentQuestionPart"
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "type",
+                "objective",
+                "stem_md",
+                "options",
+                "match_right",
+                "marks",
+                "assets",
+                "alternatives"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "objective",
+          "stem_md",
+          "options",
+          "match_right",
+          "marks",
+          "assets",
+          "version",
+          "difficulty",
+          "expected_time_sec",
+          "topic_ids",
+          "children"
+        ],
+        "additionalProperties": false,
+        "description": "A question without its answer, solution or marking scheme (DB-6). Check answers with POST /v1/practice/answers."
+      },
+      "ChapterHub": {
+        "type": "object",
+        "properties": {
+          "chapter": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "number": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "title": {
+                "type": "string"
+              },
+              "titleEn": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "unit": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "boardAssessed": {
+                "type": "boolean"
+              },
+              "topics": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "titleEn": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "titleEn"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "id",
+              "number",
+              "title",
+              "titleEn",
+              "unit",
+              "boardAssessed",
+              "topics"
+            ],
+            "additionalProperties": false
+          },
+          "subject": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "board": {
+                "$ref": "#/components/schemas/Board"
+              },
+              "exam": {
+                "type": "string",
+                "enum": [
+                  "cbse",
+                  "icse",
+                  "isc"
+                ]
+              },
+              "classLevel": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "language": {
+                "type": "string"
+              },
+              "script": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "board",
+              "exam",
+              "classLevel",
+              "language",
+              "script"
+            ],
+            "additionalProperties": false
+          },
+          "assets": {
+            "type": "object",
+            "properties": {
+              "lesson": {
+                "type": "object",
+                "properties": {
+                  "available": {
+                    "type": "boolean"
+                  },
+                  "parts": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "part": {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "slideCount": {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        "hasAudio": {
+                          "type": "boolean"
+                        },
+                        "version": {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        "reviewStatus": {
+                          "$ref": "#/components/schemas/ReviewStatus"
+                        }
+                      },
+                      "required": [
+                        "part",
+                        "title",
+                        "slideCount",
+                        "hasAudio",
+                        "version",
+                        "reviewStatus"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "slideCount": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  }
+                },
+                "required": [
+                  "available",
+                  "parts",
+                  "slideCount"
+                ],
+                "additionalProperties": false
+              },
+              "notes": {
+                "type": "object",
+                "properties": {
+                  "available": {
+                    "type": "boolean"
+                  },
+                  "sections": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "reviewStatus": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/ReviewStatus"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "available",
+                  "sections",
+                  "reviewStatus"
+                ],
+                "additionalProperties": false
+              },
+              "flashcards": {
+                "type": "object",
+                "properties": {
+                  "available": {
+                    "type": "boolean"
+                  },
+                  "count": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "reviewStatus": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/ReviewStatus"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "available",
+                  "count",
+                  "reviewStatus"
+                ],
+                "additionalProperties": false
+              },
+              "practice": {
+                "type": "object",
+                "properties": {
+                  "available": {
+                    "type": "boolean"
+                  },
+                  "count": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "byType": {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    }
+                  },
+                  "byDifficulty": {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string"
+                    },
+                    "additionalProperties": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    }
+                  }
+                },
+                "required": [
+                  "available",
+                  "count",
+                  "byType",
+                  "byDifficulty"
+                ],
+                "additionalProperties": false
+              },
+              "tests": {
+                "type": "object",
+                "properties": {
+                  "available": {
+                    "type": "boolean"
+                  },
+                  "count": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "kind": {
+                          "type": "string"
+                        },
+                        "durationMin": {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        },
+                        "totalMarks": {
+                          "type": "number"
+                        },
+                        "questionCount": {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "title",
+                        "kind",
+                        "durationMin",
+                        "totalMarks",
+                        "questionCount"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "available",
+                  "count",
+                  "items"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "lesson",
+              "notes",
+              "flashcards",
+              "practice",
+              "tests"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "chapter",
+          "subject",
+          "assets"
+        ],
+        "additionalProperties": false,
+        "description": "Public and cacheable; your own progress is GET /v1/me/progress/chapters/{id}."
+      },
+      "LessonDeck": {
+        "type": "object",
+        "properties": {
+          "chapterId": {
+            "type": "string"
+          },
+          "part": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "parts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "part": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "title": {
+                  "type": "string"
+                },
+                "slideCount": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "hasAudio": {
+                  "type": "boolean"
+                },
+                "version": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "reviewStatus": {
+                  "$ref": "#/components/schemas/ReviewStatus"
+                }
+              },
+              "required": [
+                "part",
+                "title",
+                "slideCount",
+                "hasAudio",
+                "version",
+                "reviewStatus"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "version": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "reviewStatus": {
+            "$ref": "#/components/schemas/ReviewStatus"
+          },
+          "title": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "goals": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "slides": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "layout": {
+                  "type": "string",
+                  "enum": [
+                    "title",
+                    "concept",
+                    "two-column",
+                    "diagram",
+                    "example",
+                    "check",
+                    "summary",
+                    "exam-tips"
+                  ]
+                },
+                "heading": {
+                  "type": "string"
+                },
+                "body_md": {
+                  "type": "string"
+                },
+                "bullets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "columns": {
+                  "type": "array",
+                  "prefixItems": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ],
+                  "items": false,
+                  "minItems": 2,
+                  "maxItems": 2
+                },
+                "visual": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Visual"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "math": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "narration": {
+                  "type": "string"
+                },
+                "check_question_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "audio": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "duration_ms": {
+                          "type": "integer",
+                          "minimum": -9007199254740991,
+                          "maximum": 9007199254740991
+                        }
+                      },
+                      "required": [
+                        "key",
+                        "duration_ms"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "layout",
+                "heading",
+                "body_md",
+                "bullets",
+                "visual",
+                "math",
+                "narration",
+                "check_question_id",
+                "audio"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "checkQuestions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StudentQuestion"
+            }
+          }
+        },
+        "required": [
+          "chapterId",
+          "part",
+          "parts",
+          "version",
+          "reviewStatus",
+          "title",
+          "language",
+          "goals",
+          "slides",
+          "checkQuestions"
+        ],
+        "additionalProperties": false
+      },
+      "ChapterNotes": {
+        "type": "object",
+        "properties": {
+          "chapterId": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "reviewStatus": {
+            "$ref": "#/components/schemas/ReviewStatus"
+          },
+          "title": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "heading": {
+                  "type": "string"
+                },
+                "body_md": {
+                  "type": "string"
+                },
+                "key_terms": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "term": {
+                        "type": "string"
+                      },
+                      "definition_md": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "term",
+                      "definition_md"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "formulas": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "latex": {
+                        "type": "string"
+                      },
+                      "label": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "latex"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "visual": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/Visual"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "visuals": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Visual"
+                  }
+                },
+                "topic_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "heading",
+                "body_md",
+                "key_terms",
+                "formulas",
+                "visual",
+                "visuals",
+                "topic_ids"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "exam_tips_md": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "chapterId",
+          "version",
+          "reviewStatus",
+          "title",
+          "language",
+          "sections",
+          "exam_tips_md"
+        ],
+        "additionalProperties": false
+      },
+      "ChapterFlashcards": {
+        "type": "object",
+        "properties": {
+          "chapterId": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "reviewStatus": {
+            "$ref": "#/components/schemas/ReviewStatus"
+          },
+          "language": {
+            "type": "string"
+          },
+          "cards": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "front_md": {
+                  "type": "string"
+                },
+                "back_md": {
+                  "type": "string"
+                },
+                "tag": {
+                  "type": "string"
+                },
+                "topic_id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "front_md",
+                "back_md",
+                "tag",
+                "topic_id"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "chapterId",
+          "version",
+          "reviewStatus",
+          "language",
+          "cards"
+        ],
+        "additionalProperties": false
+      },
+      "Streak": {
+        "type": "object",
+        "properties": {
+          "current": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "longest": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "lastActiveDay": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "atRisk": {
+            "type": "boolean"
+          },
+          "freezeAvailableThisWeek": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "current",
+          "longest",
+          "lastActiveDay",
+          "atRisk",
+          "freezeAvailableThisWeek"
+        ],
+        "additionalProperties": false,
+        "description": "IST calendar days; one missed day per week is covered automatically."
+      },
+      "PracticePartResponse": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "option_ids": {
+                "minItems": 1,
+                "maxItems": 20,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              }
+            },
+            "required": [
+              "option_ids"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "blanks": {
+                "minItems": 1,
+                "maxItems": 20,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "maxLength": 200
+                }
+              }
+            },
+            "required": [
+              "blanks"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "pairs": {
+                "minItems": 1,
+                "maxItems": 30,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "left_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 64,
+                      "pattern": "^[A-Za-z0-9_-]+$"
+                    },
+                    "right_id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 64,
+                      "pattern": "^[A-Za-z0-9_-]+$"
+                    }
+                  },
+                  "required": [
+                    "left_id",
+                    "right_id"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "pairs"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "order": {
+                "minItems": 2,
+                "maxItems": 30,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64,
+                  "pattern": "^[A-Za-z0-9_-]+$"
+                }
+              }
+            },
+            "required": [
+              "order"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "output": {
+                "type": "string",
+                "maxLength": 4000
+              }
+            },
+            "required": [
+              "output"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string",
+                "maxLength": 6000
+              }
+            },
+            "required": [
+              "text"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "mcq/assertion-reason/true-false/multi-select → option_ids; numerical → value; fill-blank → blanks (in stem order); match → pairs; ordering → order (all ids); code-output → output; short/long/writing/map → text."
+      },
+      "PracticeResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PracticePartResponse"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "parts": {
+                "minItems": 1,
+                "maxItems": 20,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 64,
+                      "pattern": "^[A-Za-z0-9_-]+$"
+                    },
+                    "alternative": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 64,
+                      "pattern": "^[A-Za-z0-9_-]+$"
+                    },
+                    "response": {
+                      "$ref": "#/components/schemas/PracticePartResponse"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "response"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "parts"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "case-based/source-based → parts (one per child; `alternative` picks an internal-choice alternative)."
+      },
+      "PracticeAnswerRequest": {
+        "type": "object",
+        "properties": {
+          "questionId": {
+            "type": "string",
+            "maxLength": 120,
+            "pattern": "^q_[a-z0-9_-]+$"
+          },
+          "version": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "response": {
+            "$ref": "#/components/schemas/PracticeResponse"
+          }
+        },
+        "required": [
+          "questionId",
+          "response"
+        ],
+        "additionalProperties": false
+      },
+      "AnswerKey": {
+        "type": "object",
+        "properties": {
+          "answer": {},
+          "solution_md": {
+            "type": "string"
+          },
+          "marking_scheme": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "step": {
+                  "type": "string"
+                },
+                "marks": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "step",
+                "marks"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "rubric": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "criterion": {
+                  "type": "string"
+                },
+                "marks": {
+                  "type": "number"
+                },
+                "descriptor_md": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "criterion",
+                "marks"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "answer",
+          "solution_md",
+          "marking_scheme"
+        ],
+        "additionalProperties": false,
+        "description": "Revealed only after answering (F-006). `answer` has the content contract Answer shape."
+      },
+      "PracticeAnswerResult": {
+        "type": "object",
+        "properties": {
+          "questionId": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "mcq",
+              "multi-select",
+              "assertion-reason",
+              "case-based",
+              "source-based",
+              "short",
+              "long",
+              "numerical",
+              "fill-blank",
+              "match",
+              "true-false",
+              "writing",
+              "map",
+              "code-output",
+              "ordering"
+            ]
+          },
+          "correct": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "marksAwarded": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "maxMarks": {
+            "type": "number"
+          },
+          "grading": {
+            "type": "string",
+            "enum": [
+              "auto",
+              "self"
+            ]
+          },
+          "feedback": {
+            "type": "object",
+            "properties": {
+              "blanksCorrect": {
+                "type": "array",
+                "items": {
+                  "type": "boolean"
+                }
+              },
+              "pairsCorrect": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "positionsCorrect": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "additionalProperties": false
+          },
+          "key": {
+            "$ref": "#/components/schemas/AnswerKey"
+          },
+          "parts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "alternative": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "mcq",
+                    "multi-select",
+                    "assertion-reason",
+                    "case-based",
+                    "source-based",
+                    "short",
+                    "long",
+                    "numerical",
+                    "fill-blank",
+                    "match",
+                    "true-false",
+                    "writing",
+                    "map",
+                    "code-output",
+                    "ordering"
+                  ]
+                },
+                "correct": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
+                },
+                "marksAwarded": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "maxMarks": {
+                  "type": "number"
+                },
+                "grading": {
+                  "type": "string",
+                  "enum": [
+                    "auto",
+                    "self"
+                  ]
+                },
+                "feedback": {
+                  "type": "object",
+                  "properties": {
+                    "blanksCorrect": {
+                      "type": "array",
+                      "items": {
+                        "type": "boolean"
+                      }
+                    },
+                    "pairsCorrect": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "positionsCorrect": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "key": {
+                  "$ref": "#/components/schemas/AnswerKey"
+                }
+              },
+              "required": [
+                "id",
+                "alternative",
+                "type",
+                "correct",
+                "marksAwarded",
+                "maxMarks",
+                "grading",
+                "key"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "selfAssessmentPending": {
+            "type": "boolean"
+          },
+          "selfMaxMarks": {
+            "type": "number"
+          },
+          "stored": {
+            "type": "boolean"
+          },
+          "answerId": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid",
+                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "xpAwarded": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "badgesAwarded": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "streak": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Streak"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "questionId",
+          "version",
+          "type",
+          "correct",
+          "marksAwarded",
+          "maxMarks",
+          "grading",
+          "key",
+          "parts",
+          "selfAssessmentPending",
+          "selfMaxMarks",
+          "stored",
+          "answerId",
+          "xpAwarded",
+          "badgesAwarded",
+          "streak"
+        ],
+        "additionalProperties": false
+      },
+      "PracticePage": {
+        "type": "object",
+        "properties": {
+          "chapterId": {
+            "type": "string"
+          },
+          "total": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "question": {
+                  "$ref": "#/components/schemas/StudentQuestion"
+                },
+                "answered": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
+                },
+                "lastCorrect": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "question",
+                "answered",
+                "lastCorrect"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "nextCursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "chapterId",
+          "total",
+          "items",
+          "nextCursor"
+        ],
+        "additionalProperties": false
+      },
+      "PracticeSelfAssessment": {
+        "type": "object",
+        "properties": {
+          "answerId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "marksAwarded": {
+            "type": "number"
+          },
+          "maxMarks": {
+            "type": "number"
+          },
+          "grading": {
+            "type": "string",
+            "const": "self"
+          }
+        },
+        "required": [
+          "answerId",
+          "marksAwarded",
+          "maxMarks",
+          "grading"
+        ],
+        "additionalProperties": false
+      },
+      "MyProgress": {
+        "type": "object",
+        "properties": {
+          "totals": {
+            "type": "object",
+            "properties": {
+              "xp": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "level": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "levelStartXp": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "nextLevelXp": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "streak": {
+                "$ref": "#/components/schemas/Streak"
+              },
+              "lessonsCompleted": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "practiceAttempts": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "practiceAccuracy": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "xp",
+              "level",
+              "levelStartXp",
+              "nextLevelXp",
+              "streak",
+              "lessonsCompleted",
+              "practiceAttempts",
+              "practiceAccuracy"
+            ],
+            "additionalProperties": false
+          },
+          "subjects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "subjectId": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "chapters": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "chapterId": {
+                        "type": "string"
+                      },
+                      "number": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "lessons": {
+                        "type": "object",
+                        "properties": {
+                          "partsStarted": {
+                            "type": "integer",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          },
+                          "partsCompleted": {
+                            "type": "integer",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          },
+                          "lastPart": {
+                            "anyOf": [
+                              {
+                                "type": "integer",
+                                "minimum": -9007199254740991,
+                                "maximum": 9007199254740991
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "lastSlide": {
+                            "anyOf": [
+                              {
+                                "type": "integer",
+                                "minimum": -9007199254740991,
+                                "maximum": 9007199254740991
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "lastMode": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "enum": [
+                                  "read",
+                                  "listen"
+                                ]
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          },
+                          "updatedAt": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "format": "date-time",
+                                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "partsStarted",
+                          "partsCompleted",
+                          "lastPart",
+                          "lastSlide",
+                          "lastMode",
+                          "updatedAt"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "practice": {
+                        "type": "object",
+                        "properties": {
+                          "attempts": {
+                            "type": "integer",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          },
+                          "questionsAnswered": {
+                            "type": "integer",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          },
+                          "questionsCorrect": {
+                            "type": "integer",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          },
+                          "accuracy": {
+                            "type": [
+                              "number",
+                              "null"
+                            ]
+                          },
+                          "lastAnsweredAt": {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "format": "date-time",
+                                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "attempts",
+                          "questionsAnswered",
+                          "questionsCorrect",
+                          "accuracy",
+                          "lastAnsweredAt"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "chapterId",
+                      "number",
+                      "title",
+                      "lessons",
+                      "practice"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "subjectId",
+                "name",
+                "chapters"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "totals",
+          "subjects"
+        ],
+        "additionalProperties": false
+      },
+      "MyChapterProgress": {
+        "type": "object",
+        "properties": {
+          "chapterId": {
+            "type": "string"
+          },
+          "lessons": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "part": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "slideCount": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "slide": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "mode": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "read",
+                        "listen"
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "completedAt": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "date-time",
+                      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "updatedAt": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "date-time",
+                      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "part",
+                "slideCount",
+                "slide",
+                "mode",
+                "completedAt",
+                "updatedAt"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "practice": {
+            "type": "object",
+            "properties": {
+              "attempts": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "questionsAnswered": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "questionsCorrect": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "accuracy": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "answeredQuestionIds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "correctQuestionIds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "attempts",
+              "questionsAnswered",
+              "questionsCorrect",
+              "accuracy",
+              "answeredQuestionIds",
+              "correctQuestionIds"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "chapterId",
+          "lessons",
+          "practice"
+        ],
+        "additionalProperties": false
+      },
+      "LessonProgressRequest": {
+        "type": "object",
+        "properties": {
+          "chapterId": {
+            "type": "string",
+            "pattern": "^(?:cbse|icse|isc)-(?:7|8|9|10|11|12)-[a-z0-9]+(?:-[a-z0-9]+)*-ch\\d{2}$"
+          },
+          "part": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 20
+          },
+          "slide": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000
+          },
+          "mode": {
+            "default": "read",
+            "type": "string",
+            "enum": [
+              "read",
+              "listen"
+            ]
+          },
+          "completed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "chapterId",
+          "slide",
+          "mode"
+        ],
+        "additionalProperties": false
+      },
+      "LessonProgress": {
+        "type": "object",
+        "properties": {
+          "chapterId": {
+            "type": "string"
+          },
+          "part": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "slide": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "slideCount": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "read",
+              "listen"
+            ]
+          },
+          "completedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "xpAwarded": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "badgesAwarded": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "streak": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Streak"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "chapterId",
+          "part",
+          "slide",
+          "slideCount",
+          "mode",
+          "completedAt",
+          "updatedAt",
+          "xpAwarded",
+          "badgesAwarded",
+          "streak"
+        ],
+        "additionalProperties": false
+      },
+      "MyBadges": {
+        "type": "object",
+        "properties": {
+          "badges": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                },
+                "awarded": {
+                  "type": "boolean"
+                },
+                "awardedAt": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "date-time",
+                      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "key",
+                "name",
+                "description",
+                "icon",
+                "awarded",
+                "awardedAt"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "badges"
+        ],
+        "additionalProperties": false
+      },
+      "ContentReportRequest": {
+        "type": "object",
+        "properties": {
+          "chapterId": {
+            "type": "string",
+            "pattern": "^(?:cbse|icse|isc)-(?:7|8|9|10|11|12)-[a-z0-9]+(?:-[a-z0-9]+)*-ch\\d{2}$"
+          },
+          "contentType": {
+            "type": "string",
+            "enum": [
+              "deck",
+              "notes",
+              "flashcard_set",
+              "question"
+            ]
+          },
+          "part": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 20
+          },
+          "questionId": {
+            "type": "string",
+            "maxLength": 120,
+            "pattern": "^q_[a-z0-9_-]+$"
+          },
+          "itemRef": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64,
+            "pattern": "^[A-Za-z0-9_.:-]+$"
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "wrong_answer",
+              "wrong_content",
+              "typo",
+              "rendering",
+              "audio",
+              "inappropriate",
+              "other"
+            ]
+          },
+          "comment": {
+            "type": "string",
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "chapterId",
+          "contentType",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "ContentReportReceipt": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "status": {
+            "type": "string",
+            "const": "open"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "createdAt"
+        ],
+        "additionalProperties": false
+      },
+      "MfaStatus": {
+        "type": "object",
+        "properties": {
+          "enrolled": {
+            "type": "boolean"
+          },
+          "confirmed": {
+            "type": "boolean"
+          },
+          "sessionVerified": {
+            "type": "boolean"
+          },
+          "recoveryCodesRemaining": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "enrolled",
+          "confirmed",
+          "sessionVerified",
+          "recoveryCodesRemaining"
+        ],
+        "additionalProperties": false
+      },
+      "MfaEnrollment": {
+        "type": "object",
+        "properties": {
+          "secret": {
+            "type": "string"
+          },
+          "otpauthUri": {
+            "type": "string"
+          },
+          "digits": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "periodSeconds": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "algorithm": {
+            "type": "string"
+          },
+          "expiresInSeconds": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "secret",
+          "otpauthUri",
+          "digits",
+          "periodSeconds",
+          "algorithm",
+          "expiresInSeconds"
+        ],
+        "additionalProperties": false,
+        "description": "Show the URI as a QR code (and the secret for manual entry). Nothing here is stored in the browser."
+      },
+      "MfaRecoveryCodes": {
+        "type": "object",
+        "properties": {
+          "recoveryCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "recoveryCodes"
+        ],
+        "additionalProperties": false,
+        "description": "Shown once. Each code works once."
+      },
+      "MfaVerifyRequest": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "pattern": "^\\d{6}$"
+              }
+            },
+            "required": [
+              "code"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "recoveryCode": {
+                "type": "string",
+                "minLength": 10,
+                "maxLength": 20,
+                "pattern": "^[A-Za-z0-9-]+$"
+              }
+            },
+            "required": [
+              "recoveryCode"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "MfaVerified": {
+        "type": "object",
+        "properties": {
+          "verified": {
+            "type": "boolean",
+            "const": true
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "totp",
+              "recovery_code"
+            ]
+          },
+          "recoveryCodesRemaining": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "verified",
+          "method",
+          "recoveryCodesRemaining"
+        ],
+        "additionalProperties": false
+      },
+      "AdminContentReports": {
+        "type": "object",
+        "properties": {
+          "reports": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "unit": {
+                  "type": "string"
+                },
+                "contentType": {
+                  "type": "string",
+                  "enum": [
+                    "deck",
+                    "notes",
+                    "flashcard_set",
+                    "question"
+                  ]
+                },
+                "contentId": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "itemRef": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "reason": {
+                  "type": "string"
+                },
+                "comment": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "status": {
+                  "type": "string"
+                },
+                "reporter": {
+                  "type": "string",
+                  "enum": [
+                    "member",
+                    "guest"
+                  ]
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                }
+              },
+              "required": [
+                "id",
+                "unit",
+                "contentType",
+                "contentId",
+                "itemRef",
+                "reason",
+                "comment",
+                "status",
+                "reporter",
+                "createdAt"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "nextCursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "reports",
+          "nextCursor"
+        ],
+        "additionalProperties": false
+      },
+      "PracticeSelfAssessRequest": {
+        "type": "object",
+        "properties": {
+          "marks": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "multipleOf": 0.5
+          }
+        },
+        "required": [
+          "marks"
         ],
         "additionalProperties": false
       }
@@ -3246,6 +8425,988 @@
           },
           "304": {
             "description": "Default Response"
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/chapters/{id}": {
+      "get": {
+        "summary": "Chapter hub: chapter, subject and the published lesson, notes, flashcards, practice and tests with counts",
+        "tags": [
+          "content"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:cbse|icse|isc)-(?:7|8|9|10|11|12)-[a-z0-9]+(?:-[a-z0-9]+)*-ch\\d{2}$"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChapterHub"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Default Response"
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/chapters/{id}/deck": {
+      "get": {
+        "summary": "Lesson slides for one deck part (default: the first). Check-slide questions come without answers.",
+        "tags": [
+          "content"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 20
+            },
+            "in": "query",
+            "name": "part",
+            "required": false
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:cbse|icse|isc)-(?:7|8|9|10|11|12)-[a-z0-9]+(?:-[a-z0-9]+)*-ch\\d{2}$"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LessonDeck"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Default Response"
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/chapters/{id}/notes": {
+      "get": {
+        "summary": "Chapter notes",
+        "tags": [
+          "content"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:cbse|icse|isc)-(?:7|8|9|10|11|12)-[a-z0-9]+(?:-[a-z0-9]+)*-ch\\d{2}$"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChapterNotes"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Default Response"
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/chapters/{id}/flashcards": {
+      "get": {
+        "summary": "Chapter flashcards",
+        "tags": [
+          "content"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:cbse|icse|isc)-(?:7|8|9|10|11|12)-[a-z0-9]+(?:-[a-z0-9]+)*-ch\\d{2}$"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChapterFlashcards"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Default Response"
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/chapters/{id}/practice": {
+      "get": {
+        "summary": "Practice questions of a chapter (stems and options only), paged. Signed in: questions you have not answered come first.",
+        "tags": [
+          "practice"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "maxLength": 400
+            },
+            "in": "query",
+            "name": "cursor",
+            "required": false
+          },
+          {
+            "schema": {
+              "type": "string",
+              "maxLength": 300
+            },
+            "in": "query",
+            "name": "type",
+            "required": false
+          },
+          {
+            "schema": {
+              "type": "string",
+              "maxLength": 300
+            },
+            "in": "query",
+            "name": "difficulty",
+            "required": false
+          },
+          {
+            "schema": {
+              "default": 10,
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 25
+            },
+            "in": "query",
+            "name": "limit",
+            "required": false
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:cbse|icse|isc)-(?:7|8|9|10|11|12)-[a-z0-9]+(?:-[a-z0-9]+)*-ch\\d{2}$"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PracticePage"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Default Response"
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/practice/answers": {
+      "post": {
+        "summary": "Check a practice answer on the server. Returns correctness, the answer, solution and marking scheme. Guests are checked but not stored.",
+        "tags": [
+          "practice"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PracticeAnswerRequestInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PracticeAnswerResult"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/practice/answers/{id}": {
+      "patch": {
+        "summary": "Self-assess the written parts of one of your practice answers against the marking scheme",
+        "tags": [
+          "practice"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PracticeSelfAssessRequestInput"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PracticeSelfAssessment"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/progress": {
+      "get": {
+        "summary": "Your XP, level, streak and per-chapter lesson and practice progress",
+        "tags": [
+          "progress"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MyProgress"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/progress/chapters/{id}": {
+      "get": {
+        "summary": "Your progress in one chapter (the private half of the chapter hub)",
+        "tags": [
+          "progress"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:cbse|icse|isc)-(?:7|8|9|10|11|12)-[a-z0-9]+(?:-[a-z0-9]+)*-ch\\d{2}$"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MyChapterProgress"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/lesson-progress": {
+      "put": {
+        "summary": "Save your lesson position or completion (idempotent)",
+        "tags": [
+          "progress"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LessonProgressRequestInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LessonProgress"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/badges": {
+      "get": {
+        "summary": "Badges you can earn and the ones you have",
+        "tags": [
+          "progress"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MyBadges"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/content-reports": {
+      "post": {
+        "summary": "Report a mistake in a lesson, notes, flashcard or question",
+        "tags": [
+          "reports"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContentReportRequestInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentReportReceipt"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/mfa": {
+      "get": {
+        "summary": "Your two-step verification status (staff)",
+        "tags": [
+          "mfa"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MfaStatus"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/mfa/totp/enroll": {
+      "post": {
+        "summary": "Start setting up an authenticator app (staff; fresh sign-in)",
+        "tags": [
+          "mfa"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MfaEnrollment"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/mfa/totp/confirm": {
+      "post": {
+        "summary": "Confirm the authenticator with a first code; returns one-time recovery codes",
+        "tags": [
+          "mfa"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string",
+                    "pattern": "^\\d{6}$"
+                  }
+                },
+                "required": [
+                  "code"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MfaRecoveryCodes"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/mfa/verify": {
+      "post": {
+        "summary": "Verify this session with an authenticator code or a recovery code",
+        "tags": [
+          "mfa"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MfaVerifyRequestInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MfaVerified"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/mfa/totp/disable": {
+      "post": {
+        "summary": "Turn off the authenticator (fresh, verified session and a current code)",
+        "tags": [
+          "mfa"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string",
+                    "pattern": "^\\d{6}$"
+                  }
+                },
+                "required": [
+                  "code"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Default Response"
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/reports": {
+      "get": {
+        "summary": "Content reports queue (staff, two-step verified session)",
+        "tags": [
+          "admin"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "default": "open",
+              "type": "string",
+              "enum": [
+                "open",
+                "triaged",
+                "fixed",
+                "rejected",
+                "duplicate"
+              ]
+            },
+            "in": "query",
+            "name": "status",
+            "required": false
+          },
+          {
+            "schema": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "in": "query",
+            "name": "cursor",
+            "required": false
+          },
+          {
+            "schema": {
+              "default": 50,
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            },
+            "in": "query",
+            "name": "limit",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminContentReports"
+                }
+              }
+            }
           },
           "4XX": {
             "description": "Default Response",

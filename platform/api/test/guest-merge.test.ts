@@ -75,7 +75,10 @@ describe('merge-guest', () => {
       lessonsCompleted: 1,
       practiceCorrect: 1,
       xpAwarded: GUEST_MERGE.xpPerLessonCompleted + GUEST_MERGE.xpPerPracticeCorrect,
-      ignored: { unknownChapters: 1, unknownQuestions: 3, positionsNotStored: 1 },
+      // Mini catalog has no decks, so no lesson position can be stored; 0001 and 0002 are stored as answers.
+      lessonsStored: 0,
+      practiceStored: 2,
+      ignored: { unknownChapters: 1, unknownQuestions: 3, positionsNotStored: 0 },
       profileUpdated: true,
     });
     const xp = await h.t.db.select().from(xpEvents).where(eq(xpEvents.userId, user.id));

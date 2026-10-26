@@ -5,8 +5,9 @@
  *
  * - A release (`unit@version`) is immutable: ingesting the same release twice is a no-op; a different
  *   payload under an existing version is rejected.
- * - Items whose (unit, part, version) or (question key, version) already exist are left untouched (the
- *   release re-uses them); new versions become `is_current` and the previous version is un-flagged.
+ * - Items whose (unit, part, version) or (question key, version) already exist are re-used; for existing
+ *   questions the DB-6 split (body vs question_keys) is re-applied, so re-ingesting repairs rows stored
+ *   by an older splitQuestion. New versions become `is_current` and the previous version is un-flagged.
  * - Test definitions reference exact question version rows (D-023).
  */
 import { createHash } from 'node:crypto';
@@ -19,6 +20,7 @@ import type { Database } from './client';
 import { questionRow, splitQuestion } from './student-questions';
 import {
   chapters,
+  contentReleaseItems,
   contentReleases,
   decks,
   flashcardSets,
@@ -29,11 +31,24 @@ import {
   testItems,
   tests,
   type QuestionPool,
+  type ReleaseItemType,
 } from '../schema/index';
 
 type Tx = Parameters<Parameters<Database['transaction']>[0]>[0];
 
 export const sha256Json = (v: unknown) => createHash('sha256').update(JSON.stringify(v)).digest('hex');
+
+/** JSON with object keys sorted at every level: jsonb does not keep key order, so compare stored values with this. */
+export function canonicalJson(v: unknown): string {
+  if (Array.isArray(v)) return `[${v.map(canonicalJson).join(',')}]`;
+  if (v && typeof v === 'object')
+    return `{${Object.keys(v)
+      .filter((k) => (v as Record<string, unknown>)[k] !== undefined)
+      .sort()
+      .map((k) => `${JSON.stringify(k)}:${canonicalJson((v as Record<string, unknown>)[k])}`)
+      .join(',')}}`;
+  return JSON.stringify(v ?? null);
+}
 
 export interface IngestReleaseOptions {
   /** Blob key of the release JSON (default content/releases/{unit}/{version}.json). */
@@ -52,6 +67,68 @@ export interface IngestReleaseResult {
   releaseId: string;
   alreadyIngested: boolean;
   inserted: { decks: number; notes: number; flashcardSets: number; questions: number };
+  /** Existing question versions whose stored DB-6 split differed from splitQuestion() and were rewritten. */
+  repaired: { questions: number };
+}
+
+/**
+ * Re-applies the DB-6 split to an existing (key, version) row: rewrites `questions.body` and the
+ * `question_keys` row when they differ from `splitQuestion(q)`. The question's content is unchanged
+ * (same release payload); only where its fields are stored is corrected — e.g. rows ingested before
+ * internal-choice alternatives were split out of the body. Returns true when it rewrote anything.
+ */
+async function resplitQuestion(tx: Tx, questionId: string, storedBody: unknown, q: Question): Promise<boolean> {
+  const { body, key } = splitQuestion(q);
+  const [k] = await tx.select().from(questionKeys).where(eq(questionKeys.questionId, questionId));
+  const keyValues = { answer: key.answer, solutionMd: key.solutionMd, markingScheme: key.markingScheme, childKeys: key.childKeys, rubric: key.rubric };
+  const storedKey = k ? { answer: k.answer, solutionMd: k.solutionMd, markingScheme: k.markingScheme, childKeys: k.childKeys, rubric: k.rubric } : null;
+  const bodySame = canonicalJson(storedBody) === canonicalJson(body);
+  const keySame = storedKey !== null && canonicalJson(storedKey) === canonicalJson(keyValues);
+  if (bodySame && keySame) return false;
+  if (!bodySame) await tx.update(questions).set({ body }).where(eq(questions.id, questionId));
+  if (!storedKey) await tx.insert(questionKeys).values({ questionId, ...keyValues });
+  else if (!keySame) await tx.update(questionKeys).set(keyValues).where(eq(questionKeys.questionId, questionId));
+  return true;
+}
+
+async function resplitRelease(tx: Tx, release: ChapterRelease): Promise<number> {
+  let repaired = 0;
+  for (const q of release.questions) {
+    const [row] = await tx.select({ id: questions.id, body: questions.body }).from(questions).where(and(eq(questions.key, q.id), eq(questions.version, q.version)));
+    if (row && (await resplitQuestion(tx, row.id, row.body, q))) repaired++;
+  }
+  return repaired;
+}
+
+/**
+ * Records which exact item rows the release contains (content_release_items, migration 0006), so the
+ * API can serve a unit through its active release and rollback serves the older versions (ADR-006).
+ * Idempotent. Returns the number of rows the release contains.
+ */
+async function recordMembership(tx: Tx, releaseId: string, release: ChapterRelease): Promise<number> {
+  const year = release.academic_year;
+  const items: { releaseId: string; itemType: ReleaseItemType; itemId: string }[] = [];
+  const add = (itemType: ReleaseItemType, row: { id: string } | undefined, what: string) => {
+    if (!row) throw new Error(`release ${release.unit}@${release.version}: ${what} is not ingested`);
+    items.push({ releaseId, itemType, itemId: row.id });
+  };
+  for (const d of release.decks) {
+    const [row] = await tx
+      .select({ id: decks.id })
+      .from(decks)
+      .where(and(eq(decks.unit, release.unit), eq(decks.academicYear, year), d.part === null ? isNull(decks.part) : eq(decks.part, d.part), eq(decks.version, d.version)));
+    add('deck', row, `deck part ${d.part} v${d.version}`);
+  }
+  const [n] = await tx.select({ id: notes.id }).from(notes).where(and(eq(notes.unit, release.unit), eq(notes.academicYear, year), eq(notes.version, release.notes.version)));
+  add('notes', n, `notes v${release.notes.version}`);
+  const [f] = await tx.select({ id: flashcardSets.id }).from(flashcardSets).where(and(eq(flashcardSets.unit, release.unit), eq(flashcardSets.academicYear, year), eq(flashcardSets.version, release.flashcards.version)));
+  add('flashcard_set', f, `flashcards v${release.flashcards.version}`);
+  for (const q of release.questions) {
+    const [row] = await tx.select({ id: questions.id }).from(questions).where(and(eq(questions.key, q.id), eq(questions.version, q.version)));
+    add('question', row, `question ${q.id} v${q.version}`);
+  }
+  for (let i = 0; i < items.length; i += 500) await tx.insert(contentReleaseItems).values(items.slice(i, i + 500)).onConflictDoNothing();
+  return items.length;
 }
 
 function provenance(p: { origin: string; template_version: string | null; model: string | null } | undefined) {
@@ -74,7 +151,10 @@ export async function ingestChapterRelease(db: Database, release: ChapterRelease
       .where(and(eq(contentReleases.unit, release.unit), eq(contentReleases.academicYear, year), eq(contentReleases.version, release.version)));
     if (existing) {
       if (existing.sha256 !== sha) throw new Error(`release ${release.unit}@${release.version} already exists with different content (releases are immutable)`);
-      return { releaseId: existing.id, alreadyIngested: true, inserted: { decks: 0, notes: 0, flashcardSets: 0, questions: 0 } };
+      // Same payload: nothing new to insert, but existing rows get the current DB-6 split.
+      const repaired = await resplitRelease(tx, release);
+      await recordMembership(tx, existing.id, release);
+      return { releaseId: existing.id, alreadyIngested: true, inserted: { decks: 0, notes: 0, flashcardSets: 0, questions: 0 }, repaired: { questions: repaired } };
     }
 
     const [rel] = await tx
@@ -93,6 +173,7 @@ export async function ingestChapterRelease(db: Database, release: ChapterRelease
     const releaseId = rel!.id;
     const base = { unit: release.unit, chapterId: chapter.id, academicYear: year, releaseId };
     const inserted = { decks: 0, notes: 0, flashcardSets: 0, questions: 0 };
+    let repairedQuestions = 0;
 
     for (const d of release.decks) {
       const partCond = d.part === null ? isNull(decks.part) : eq(decks.part, d.part);
@@ -131,7 +212,11 @@ export async function ingestChapterRelease(db: Database, release: ChapterRelease
     }
 
     for (const q of release.questions) {
-      if ((await tx.select({ id: questions.id }).from(questions).where(and(eq(questions.key, q.id), eq(questions.version, q.version)))).length) continue;
+      const [have] = await tx.select({ id: questions.id, body: questions.body }).from(questions).where(and(eq(questions.key, q.id), eq(questions.version, q.version)));
+      if (have) {
+        if (await resplitQuestion(tx, have.id, have.body, q)) repairedQuestions++;
+        continue;
+      }
       await tx.update(questions).set({ isCurrent: false }).where(and(eq(questions.key, q.id), eq(questions.isCurrent, true)));
       const [row] = await tx
         .insert(questions)
@@ -145,8 +230,9 @@ export async function ingestChapterRelease(db: Database, release: ChapterRelease
       inserted.questions++;
     }
 
+    await recordMembership(tx, releaseId, release);
     if (opts.activate ?? true) await activateRelease(tx, releaseId);
-    return { releaseId, alreadyIngested: false, inserted };
+    return { releaseId, alreadyIngested: false, inserted, repaired: { questions: repairedQuestions } };
   });
 }
 
