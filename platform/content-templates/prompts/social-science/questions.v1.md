@@ -6,7 +6,7 @@ version: 1
 model_tier: mid
 max_output_tokens: 24000
 temperature: 0.5
-few_shot: [exemplars/social-science/cbse-10-social-science-ch01/release.json#questions, "exemplars/social-science/cbse-10-social-science-ch06/release.json#questions?type=map&sample=2", "exemplars/social-science/cbse-10-social-science-ch18/release.json#questions?type=numerical&sample=1", exemplars/social-science/cbse-10-social-science-ch06/tests.json#tests]
+few_shot: [authored/social-science/cbse-10-social-science-ch01/release.json#questions, "authored/social-science/cbse-10-social-science-ch06/release.json#questions?type=map&sample=2", "authored/social-science/cbse-10-social-science-ch18/release.json#questions?type=numerical&sample=1", authored/social-science/cbse-10-social-science-ch06/tests.json#tests]
 ---
 ## System
 

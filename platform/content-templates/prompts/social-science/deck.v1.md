@@ -6,7 +6,7 @@ version: 1
 model_tier: mid
 max_output_tokens: 16000
 temperature: 0.4
-few_shot: [exemplars/social-science/cbse-10-social-science-ch01/release.json#decks, exemplars/social-science/cbse-10-social-science-ch18/release.json#decks]
+few_shot: [authored/social-science/cbse-10-social-science-ch01/release.json#decks, authored/social-science/cbse-10-social-science-ch18/release.json#decks]
 ---
 ## System
 

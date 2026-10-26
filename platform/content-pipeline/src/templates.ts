@@ -237,8 +237,11 @@ function loadFewShotUncached(refs: string[], templatesDir: string, asset: Templa
   for (const ref of refs) {
     const [relAndFragment, query = ''] = ref.split('?');
     const [rel, fragment = ''] = relAndFragment!.split('#');
-    const file = path.resolve(templatesDir, rel!);
-    if (file !== root && !file.startsWith(root + path.sep)) throw new TemplateError(`few_shot ${ref} points outside content-templates`);
+    // `authored/...` resolves to platform/content/authored/ (hand-authored chapters used as examples, D-026).
+    const authored = rel!.startsWith('authored/');
+    const base = authored ? path.resolve(templatesDir, '..', 'content', 'authored') : root;
+    const file = path.resolve(base, authored ? rel!.slice('authored/'.length) : rel!);
+    if (file !== base && !file.startsWith(base + path.sep)) throw new TemplateError(`few_shot ${ref} points outside content-templates or content/authored`);
     if (!fs.existsSync(file)) {
       missing.push(ref);
       continue;
