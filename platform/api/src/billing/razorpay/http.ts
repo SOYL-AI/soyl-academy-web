@@ -97,11 +97,11 @@ export class RazorpayHttpClient implements RazorpayClient {
     return this.call('POST', '/subscriptions', RzpSubscription, input);
   }
 
-  fetchSubscription(id: string) {
+  async fetchSubscription(id: string) {
     return this.call('GET', `/subscriptions/${this.id(id)}`, RzpSubscription);
   }
 
-  cancelSubscription(id: string, opts: { atCycleEnd: boolean }) {
+  async cancelSubscription(id: string, opts: { atCycleEnd: boolean }) {
     return this.call('POST', `/subscriptions/${this.id(id)}/cancel`, RzpSubscription, { cancel_at_cycle_end: opts.atCycleEnd ? 1 : 0 });
   }
 
@@ -109,7 +109,7 @@ export class RazorpayHttpClient implements RazorpayClient {
     return this.call('POST', '/orders', RzpOrder, input);
   }
 
-  fetchOrder(id: string) {
+  async fetchOrder(id: string) {
     return this.call('GET', `/orders/${this.id(id)}`, RzpOrder);
   }
 
@@ -117,11 +117,11 @@ export class RazorpayHttpClient implements RazorpayClient {
     return (await this.call('GET', `/orders/${this.id(id)}/payments`, Collection(RzpPayment))).items;
   }
 
-  fetchPayment(id: string) {
+  async fetchPayment(id: string) {
     return this.call('GET', `/payments/${this.id(id)}`, RzpPayment);
   }
 
-  fetchInvoice(id: string) {
+  async fetchInvoice(id: string) {
     return this.call('GET', `/invoices/${this.id(id)}`, RzpInvoice);
   }
 }
