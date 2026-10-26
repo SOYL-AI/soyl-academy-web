@@ -4,6 +4,7 @@
  *
  *   expr    := term (('+' | '-') term)*
  *   term    := unary (('*' | '/') unary | <implicit ×> power)*      2x, 2(x+1), (x+1)(x-1), 3sin(x)
+ *              implicit × only before a name or "(": x2, e3, (x+1)2 and 1e3 are errors
  *   unary   := ('-' | '+') unary | power
  *   power   := primary ('^' unary)?                                  right-associative; -x^2 = -(x^2)
  *   primary := number | 'x' | 'pi' | 'π' | 'e' | func '(' expr ')' | '(' expr ')'
@@ -53,9 +54,9 @@ function tokenize(src: string): Token[] {
     if (c === ' ' || c === '\t') {
       i++;
     } else if (/[0-9.]/.test(c)) {
-      const m = /^(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?/.exec(src.slice(i));
+      const m = /^(?:\d+\.?\d*|\.\d+)/.exec(src.slice(i));
       if (!m) throw new ExprError(`bad number at ${i}`);
-      // "2e" would swallow Euler's e as an exponent marker only when digits follow, so "2e" = 2·e.
+      // No scientific notation: "1e3" is 1·e followed by 3, which is rejected in term().
       out.push({ k: 'num', v: Number(m[0]) });
       i += m[0].length;
     } else if (/[A-Za-z]/.test(c)) {
@@ -123,7 +124,7 @@ export function parseExpr(source: string): CompiledExpr {
 
   function startsPrimary(): boolean {
     const t = peek();
-    return !!t && (t.k === 'num' || t.k === 'id' || (t.k === 'op' && t.v === '('));
+    return !!t && (t.k === 'id' || (t.k === 'op' && t.v === '('));
   }
 
   function term(): Node {
@@ -132,6 +133,8 @@ export function parseExpr(source: string): CompiledExpr {
       if (isOp('*') || isOp('/')) {
         const op = (tokens[pos++] as { v: '*' | '/' }).v;
         left = make({ t: 'bin', op, a: left, b: unary() });
+      } else if (peek()?.k === 'num') {
+        throw new ExprError('a number cannot follow a name or bracket: write 2x, not x2');
       } else if (startsPrimary()) {
         left = make({ t: 'bin', op: '*', a: left, b: power() });
       } else {

@@ -15,7 +15,8 @@ const H = 240;
 const M = { l: 34, r: 14, t: 14, b: 28 };
 const PW = W - M.l - M.r;
 const PH = H - M.t - M.b;
-export const PLOT_SAMPLES = 240;
+/** Default samples per function; spec.samples (10..2000, ADR-007) overrides. */
+export const PLOT_SAMPLES = 200;
 
 const STYLES = [
   { stroke: 'var(--diagram-accent)', dash: undefined },
@@ -79,6 +80,9 @@ export function PlotVisual({ spec, alt }: { spec: PlotSpec; alt: string }) {
   const axisX = y.min <= 0 && y.max >= 0 ? sy(0) : sy(y.min);
   const axisY = x.min <= 0 && x.max >= 0 ? sx(0) : sx(x.min);
 
+  // spec.samples arrives with the ADR-007 contract update; read it defensively until then.
+  const requested = (spec as { samples?: number }).samples;
+  const samples = Number.isInteger(requested) ? Math.min(2000, Math.max(10, requested as number)) : PLOT_SAMPLES;
   const legend: LegendItem[] = [];
   const errors: string[] = [];
   const marks: ReactNode[] = [];
@@ -94,7 +98,7 @@ export function PlotVisual({ spec, alt }: { spec: PlotSpec; alt: string }) {
     const a = Math.max(x.min, fn.domain?.[0] ?? x.min);
     const b = Math.min(x.max, fn.domain?.[1] ?? x.max);
     if (!(b > a)) return;
-    const d = samplePath(compiled, a, b, sx, sy, y.min, y.max);
+    const d = samplePath(compiled, a, b, sx, sy, y.min, y.max, samples);
     marks.push(<path key={`f${i}`} d={d} fill="none" stroke={STYLES[st].stroke} strokeDasharray={STYLES[st].dash} strokeWidth={2.25} strokeLinejoin="round" strokeLinecap="round" />);
     if (fn.label) legend.push({ label: fn.label, style: st, kind: 'line' });
   });
