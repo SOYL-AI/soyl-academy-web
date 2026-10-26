@@ -187,6 +187,8 @@ export const questionKeys = pgTable('question_keys', {
   markingScheme: jsonb('marking_scheme').notNull(),
   /** Case/source-based: [{ id, answer, solution_md, marking_scheme }] for each child. */
   childKeys: jsonb('child_keys').notNull().default(sql`'[]'::jsonb`),
+  /** Contract v2 `writing`: rubric criteria [{ criterion, marks, descriptor_md? }] (migration 0003). */
+  rubric: jsonb('rubric'),
   ...timestamps(),
 });
 

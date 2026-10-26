@@ -19,12 +19,22 @@ import {
   type Provenance,
   type Question as QuestionT,
   type Visual,
+  type ScriptInfo,
+  checkMajority,
+  checkNarration,
+  checkScriptText,
+  codeBlocks,
+  letterCounts,
+  scriptForLanguage,
+  unmatchedUnderline,
+  wordCount,
 } from '@soyl/shared/content/index';
 import { TEXT_FAMILIES, type Family } from '../../config/families';
+import { HINDI_ORTHOGRAPHY, LITERATURE, WORD_LIMIT_SLACK } from '../../config/pipeline';
 import { checkArithmetic } from './arith';
 import { SKELETAL_CONTEXT, ceBodies, checkBalance } from './chem';
 import { checkTex, extractMath } from './math';
-import { checkLiterature, checkText } from './text';
+import { checkLiterature, checkText, stripFences, stripMathAndCode } from './text';
 import { checkVisual } from './visual';
 
 export type Severity = 'error' | 'warning';
@@ -42,6 +52,8 @@ export interface LintContext {
   family: Family;
   classLevel: number;
   language: string;
+  /** ISO 15924 script of the subject (subjects.yaml); null/undefined → derived from `language`. */
+  script?: string | null;
   /** Literature chapter: apply the reproduction heuristic. */
   literature: boolean;
   /** Topic ids of the chapter in the syllabus; null when the syllabus is unknown. */
@@ -92,7 +104,11 @@ class Collector {
   readonly findings: Finding[] = [];
   private readonly svgIds = new Map<string, string>();
   private readonly mockWarned = new Set<string>();
-  constructor(readonly ctx: LintContext) {}
+  /** Non-Latin script of a language subject (Devanagari for Hindi…); null for English-medium content. */
+  readonly scriptInfo: ScriptInfo | null;
+  constructor(readonly ctx: LintContext) {
+    this.scriptInfo = scriptForLanguage(ctx.language, ctx.script);
+  }
 
   add(item: string, rule: string, severity: Severity, path: string, message: string) {
     this.findings.push({ item, rule, severity, path, message });
@@ -119,7 +135,11 @@ class Collector {
     if (this.ctx.literature) for (const i of checkLiterature(value)) this.add(item, i.rule, i.severity, path, i.message);
     this.escapes(item, path, value);
     if (kind === 'md') {
-      const { spans, error } = extractMath(value);
+      const prose = stripMathAndCode(value);
+      for (const u of unmatchedUnderline(prose))
+        this.add(item, 'markdown.underline', 'error', path, `underline marker "${u}" is not closed: write ++word++ on one line`);
+      if (/<u>/i.test(prose)) this.add(item, 'markdown.underline', 'error', path, 'use the underline marker ++word++ instead of <u>');
+      const { spans, error } = extractMath(stripFences(value));
       if (error) this.add(item, 'math.katex', 'error', path, error);
       for (const s of spans) this.tex(item, path, s.tex, s.display, opts, value);
     }
@@ -168,7 +188,27 @@ class Collector {
   }
 
   script(item: string, path: string, text: string) {
-    if (this.ctx.language === 'hi' && text && !/[\u0900-\u097F]/.test(text)) this.add(item, 'language.script', 'error', path, 'Hindi content must be written in Devanagari');
+    const s = this.scriptInfo;
+    if (s && text && letterCounts(text, s).script === 0) this.add(item, 'language.script', 'error', path, `${this.ctx.language} content must be written in ${s.name}`);
+  }
+
+  /**
+   * Script rules for a whole item (shared/content/script.ts: NFC, well-formedness, Latin runs) plus
+   * Hindi orthography warnings (non-standard spellings, nukta consistency).
+   */
+  scriptItem(item: string, data: unknown) {
+    const s = this.scriptInfo;
+    if (!s) return;
+    for (const i of checkScriptText(data, s, { root: item })) this.add(item, i.rule, i.severity, i.path, i.message);
+    if (s.code !== 'Deva' || this.ctx.language !== 'hi') return;
+    const text = JSON.stringify(data);
+    for (const w of HINDI_ORTHOGRAPHY.nonStandard) if (text.includes(w)) this.add(item, 'language.spelling', 'warning', item, `non-standard spelling "${w}" (NCERT/CBSE standard: \u0917\u090F, \u091A\u093E\u0939\u093F\u090F, \u0932\u093F\u090F, \u0915\u0930\u094D\u0924\u0943\u0935\u093E\u091A\u094D\u092F \u2026)`);
+    const words = new Set(text.match(/[\u0900-\u097F]+/gu) ?? []);
+    for (const w of words) if (w.includes('\u093C') && words.has(w.replace(/\u093C/g, ''))) this.add(item, 'language.nukta', 'warning', item, `both "${w}" and "${w.replace(/\u093C/g, '')}" are used`);
+  }
+
+  scriptIssues(item: string, issues: { rule: string; severity: Severity; path: string; message: string }[]) {
+    for (const i of issues) this.add(item, i.rule, i.severity, i.path, i.message);
   }
 }
 
@@ -179,8 +219,12 @@ function schema<T>(c: Collector, item: string, s: { safeParse(v: unknown): { suc
   return null;
 }
 
-type QuestionLike = Pick<QuestionT, 'type' | 'stem_md' | 'options' | 'match_right' | 'answer' | 'solution_md' | 'marking_scheme' | 'assets' | 'topic_ids'> & {
+type QuestionLike = Pick<
+  QuestionT,
+  'type' | 'stem_md' | 'options' | 'match_right' | 'answer' | 'solution_md' | 'marking_scheme' | 'assets' | 'topic_ids' | 'marks' | 'word_limit' | 'rubric' | 'map_id' | 'format'
+> & {
   passage_md?: string;
+  passage_origin?: QuestionT['passage_origin'];
   children?: (QuestionLike & { alternatives?: QuestionLike[] })[];
   alternatives?: QuestionLike[];
 };
@@ -205,10 +249,49 @@ function lintQuestion(c: Collector, item: string, path: string, q: QuestionLike,
   if ('blanks' in q.answer) q.answer.blanks.forEach((b, i) => b.accepted.forEach((a) => c.text(item, `${path}.answer.blanks[${i}]`, a, 'plain')));
   q.assets.forEach((v, i) => c.visual(item, `${path}.assets[${i}]`, v, { context }));
   c.topics(item, `${path}.topic_ids`, q.topic_ids);
+  lintQuestionV2(c, item, path, q, context);
   (q.children ?? []).forEach((ch, i) => {
     lintQuestion(c, item, `${path}.children[${i}]`, ch, context);
     (ch.alternatives ?? []).forEach((alt, k) => lintQuestion(c, item, `${path}.children[${i}].alternatives[${k}]`, alt, context));
   });
+}
+
+/** Contract v2 rules: word limits, writing rubric text, code-output, ordering, map, passage origin. */
+function lintQuestionV2(c: Collector, item: string, path: string, q: QuestionLike, context: string) {
+  const a = q.answer;
+  if (q.word_limit && 'model_answer_md' in a) {
+    const n = wordCount(stripMathAndCode(a.model_answer_md));
+    const { min, max } = q.word_limit;
+    if (n < Math.floor(min * WORD_LIMIT_SLACK.below) || n > Math.ceil(max * WORD_LIMIT_SLACK.above))
+      c.add(item, 'answer.word-limit', 'warning', `${path}.answer`, `model answer is ${n} words; the question asks for ${min}–${max}`);
+  }
+  q.rubric?.forEach((r, i) => {
+    c.text(item, `${path}.rubric[${i}].criterion`, r.criterion, 'plain');
+    c.text(item, `${path}.rubric[${i}].descriptor_md`, r.descriptor_md, 'md', { context });
+  });
+  if (q.type === 'writing' && q.word_limit && q.word_limit.max > 1000)
+    c.add(item, 'writing.word-limit', 'error', `${path}.word_limit`, `word limit ${q.word_limit.max} is not a school writing task (max 1000)`);
+  if (q.type === 'code-output' && 'output' in a) {
+    if (a.output.length > 2000) c.add(item, 'code.output', 'error', `${path}.answer.output`, `expected output is ${a.output.length} characters (max 2000)`);
+    for (const b of codeBlocks(q.stem_md)) {
+      if (b.code.split('\n').length > 40) c.add(item, 'code.length', 'warning', `${path}.stem_md`, `code block has ${b.code.split('\n').length} lines; board items are short (≤ 40)`);
+      if (/\binput\s*\(|Scanner\s*\(|scanf\s*\(|readline\s*\(/.test(b.code) && !/input|enter|type/i.test(q.stem_md.replace(b.code, '')))
+        c.add(item, 'code.input', 'warning', `${path}.stem_md`, 'the code reads input but the stem gives none; the output is not determined');
+    }
+  }
+  if (q.type === 'ordering' && 'order' in a && a.order.every((id, i) => q.options[i]?.id === id))
+    c.add(item, 'ordering.shuffled', 'warning', `${path}.options`, 'items are listed in the correct order; list them shuffled (the key is guessable on paper)');
+  if (q.type === 'map' && 'places' in a) {
+    if (!q.map_id) c.add(item, 'map.id', 'warning', `${path}.map_id`, 'no map_id: the renderer cannot choose an outline map');
+    if (Math.abs(a.places.length - q.marks) > 1e-9) c.add(item, 'map.marks', 'warning', `${path}.marks`, `${a.places.length} place(s) for ${q.marks} mark(s); board map items are 1 mark per place`);
+    a.places.forEach((p, i) => [p.name, ...p.accepted].forEach((n) => c.text(item, `${path}.answer.places[${i}]`, n, 'plain')));
+  }
+  if (q.type === 'case-based' || q.type === 'source-based') {
+    if (q.passage_origin === 'licensed-excerpt' && !LITERATURE.allowLicensedExcerpts)
+      c.add(item, 'passage.licensed', 'error', `${path}.passage_origin`, 'licensed excerpts are refused until licensed source texts exist (CONTEXT §8); write a SOYL passage or commentary');
+    if (c.ctx.literature && !q.passage_origin)
+      c.add(item, 'passage.origin', 'warning', `${path}.passage_origin`, 'literature passage without passage_origin (soyl-original | soyl-commentary)');
+  }
 }
 
 function lintDeck(c: Collector, item: string, deck: DeckT) {
@@ -225,6 +308,7 @@ function lintDeck(c: Collector, item: string, deck: DeckT) {
     s.columns?.forEach((col, k) => c.text(item, `${p}.columns[${k}]`, col, 'md', { context, arithmetic }));
     s.math.forEach((m, k) => c.tex(item, `${p}.math[${k}]`, m, true, { context, arithmetic }));
     c.text(item, `${p}.narration`, s.narration, 'spoken');
+    if (c.scriptInfo) c.scriptIssues(item, checkNarration(s.narration, c.scriptInfo, `${p}.narration`));
     c.visual(item, `${p}.visual`, s.visual, { context });
     c.script(item, `${p}.heading`, s.heading + s.narration);
   });
@@ -291,7 +375,9 @@ function lintBank(c: Collector, questions: QuestionT[]) {
     lintQuestion(c, 'questions', `questions[${i}]`, q);
     c.provenance('questions', q.provenance);
     c.script('questions', `questions[${i}].stem_md`, q.stem_md);
+    if (c.scriptInfo) c.scriptIssues('questions', checkMajority(q.stem_md, c.scriptInfo, `questions[${i}].stem_md`));
   });
+  c.scriptItem('questions', questions);
   const min = CONTENT_TARGETS.practiceQuestionsMin[ctx.classLevel] ?? 40;
   if (questions.length < min) c.add('questions', 'editorial.practice', 'error', 'questions', `${questions.length} practice questions (min ${min} for class ${ctx.classLevel})`);
   const types = new Set(questions.map((q) => q.type));
@@ -332,6 +418,7 @@ export function lintBundle(bundle: UnitBundle, ctx: LintContext): LintReport {
     if (!d) continue;
     if (d.unit !== ctx.unit) c.add(key, 'refs.unit', 'error', 'unit', `deck is for ${d.unit}`);
     lintDeck(c, key, d);
+    c.scriptItem(key, d);
   }
   if (bundle.decks.length > 1 && decks.some((d) => d && d.part === null))
     c.add('decks', 'editorial.parts', 'error', 'part', 'a chapter split into several decks needs a part number on each');
@@ -342,6 +429,8 @@ export function lintBundle(bundle: UnitBundle, ctx: LintContext): LintReport {
     if (n) {
       if (n.unit !== ctx.unit) c.add('notes', 'refs.unit', 'error', 'unit', `notes are for ${n.unit}`);
       lintNotes(c, 'notes', n);
+      c.scriptItem('notes', n);
+      if (c.scriptInfo) n.sections.forEach((s, i) => c.scriptIssues('notes', checkMajority(s.body_md, c.scriptInfo!, `sections[${i}].body_md`)));
     }
   }
 
@@ -351,6 +440,7 @@ export function lintBundle(bundle: UnitBundle, ctx: LintContext): LintReport {
     if (f) {
       if (f.unit !== ctx.unit) c.add('flashcards', 'refs.unit', 'error', 'unit', `flashcards are for ${f.unit}`);
       lintFlashcards(c, 'flashcards', f);
+      c.scriptItem('flashcards', f);
     }
   }
 
