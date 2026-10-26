@@ -17,6 +17,8 @@ export const DEV_DEFAULTS = {
   otpPepper: 'local-dev-otp-pepper-not-for-deployment-0000000',
   googleClientId: 'soyl-local-mock-client',
   googleClientSecret: 'soyl-local-mock-client-secret',
+  /** 32 bytes, base64url. AUTH-11 TOTP secret encryption key (development only). */
+  mfaEncryptionKey: 'bG9jYWwtZGV2LW1mYS1rZXktbm90LWZvci1kZXBsb3k',
 } as const;
 
 const csv = z
@@ -64,6 +66,8 @@ const EnvSchema = z.object({
 
   AUTH_SECRET: z.string().optional(),
   OTP_PEPPER: z.string().optional(),
+  /** AUTH-11: 32-byte key (base64 or base64url) that encrypts staff TOTP secrets at rest (Key Vault). */
+  MFA_ENCRYPTION_KEY: z.string().optional(),
   SMS_GLOBAL_HOURLY_CAP: z.coerce.number().int().min(0).default(OTP.send.phone.globalHourlyCap),
 
   GOOGLE_CLIENT_ID: z.string().optional(),
@@ -115,6 +119,8 @@ export interface Config {
   clientIpHeader: string;
   authSecret: string;
   otpPepper: string;
+  /** AUTH-11: AES-256-GCM key for user_mfa.totp_secret_enc. */
+  mfaEncryptionKey: Buffer;
   smsGlobalHourlyCap: number;
   google: {
     clientId: string;
@@ -168,11 +174,15 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
   const otpPepper = need('OTP_PEPPER', e.OTP_PEPPER, DEV_DEFAULTS.otpPepper);
   if (authSecret && !secret(32).safeParse(authSecret).success) problems.push('AUTH_SECRET must be at least 32 characters');
   if (otpPepper && !secret(32).safeParse(otpPepper).success) problems.push('OTP_PEPPER must be at least 32 characters');
+  const mfaKeyRaw = need('MFA_ENCRYPTION_KEY', e.MFA_ENCRYPTION_KEY, DEV_DEFAULTS.mfaEncryptionKey);
+  const mfaEncryptionKey = Buffer.from(mfaKeyRaw.replace(/-/g, '+').replace(/_/g, '/'), 'base64');
+  if (mfaKeyRaw && mfaEncryptionKey.length !== 32) problems.push('MFA_ENCRYPTION_KEY must be 32 bytes, base64-encoded');
   if (!isLocal) {
     for (const [name, value, dev] of [
       ['EDGE_SECRETS', edgeSecrets.join(','), DEV_DEFAULTS.edgeSecret],
       ['AUTH_SECRET', authSecret, DEV_DEFAULTS.authSecret],
       ['OTP_PEPPER', otpPepper, DEV_DEFAULTS.otpPepper],
+      ['MFA_ENCRYPTION_KEY', mfaKeyRaw, DEV_DEFAULTS.mfaEncryptionKey],
     ] as const)
       if (value.includes(dev)) problems.push(`${name} uses the public development default; set a real secret`);
   }
@@ -234,6 +244,7 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
     clientIpHeader: e.CLIENT_IP_HEADER.toLowerCase(),
     authSecret,
     otpPepper,
+    mfaEncryptionKey,
     smsGlobalHourlyCap: e.SMS_GLOBAL_HOURLY_CAP,
     google: {
       clientId: googleClientId,

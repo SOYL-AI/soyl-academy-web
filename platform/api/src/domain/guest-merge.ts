@@ -4,18 +4,23 @@
  * - Once per account: `profiles.guest_merged_at` is set in the same transaction (row locked), so a
  *   replay or a parallel second call returns `alreadyMerged: true` and changes nothing.
  * - Only ids that exist are kept: chapters in the current academic year, practice questions that are
- *   current, student-visible and in the practice pool. Unknown ids are counted, not stored.
- * - Completion state is stored as `xp_events` (idempotent per user/kind/source): completed lessons
- *   (`lesson_completed`, source `guest:chapter`) and correctly answered practice questions
- *   (`practice`, source `guest:question`). AC-23: small XP per item and a hard total cap.
- * - Positions of unfinished lessons have no table yet (schema request in the handoff); they are counted
- *   in `ignored.positionsNotStored` so the web keeps them locally until that lands.
+ *   current, student-visible and in the practice pool (of the chapter they were posted with), deck
+ *   parts that are published. Unknown ids are counted, not stored.
+ * - M2: lesson positions go to `lesson_progress` (source guest_merge). If the account already has a
+ *   position for that chapter part, the further slide and the earlier completion win. Practice
+ *   answers go to `practice_answers` (source guest_merge, response null): the latest guest answer per
+ *   question, at most one per user and question (unique index), so the merge is idempotent even
+ *   without the once-per-account flag.
+ * - XP (AC-23): completed lessons (`lesson_completed`, source `guest:chapter`) and correctly answered
+ *   practice questions (`practice`, source `guest:question`), small amounts with a hard total cap.
  */
-import { and, eq, inArray } from 'drizzle-orm';
-import { chapters, istDay, profiles, questions, xpEvents, type Database } from '@soyl/db';
+import { and, eq, inArray, sql } from 'drizzle-orm';
+import { chapters, decks, istDay, lessonProgress, practiceAnswers, profiles, questions, xpEvents, type Database } from '@soyl/db';
 import { GUEST_MERGE } from '@soyl/shared/config/security';
 import type { Clock } from '../clock';
 import type { GuestProgress, MergeGuestResponse } from '../contract/guest';
+import { STUDENT_VISIBLE } from './content';
+import { refreshTotals } from './gamification';
 
 export async function mergeGuestProgress(
   db: Database,
@@ -35,6 +40,8 @@ export async function mergeGuestProgress(
         lessonsCompleted: 0,
         practiceCorrect: 0,
         xpAwarded: 0,
+        lessonsStored: 0,
+        practiceStored: 0,
         ignored: { unknownChapters: 0, unknownQuestions: 0, positionsNotStored: 0 },
         profileUpdated: false,
       };
@@ -42,43 +49,128 @@ export async function mergeGuestProgress(
 
     const now = new Date(clock.now());
     const day = istDay(now);
+    const notFuture = (iso: string) => new Date(Math.min(new Date(iso).getTime(), now.getTime()));
 
     const chapterKeys = [...new Set([...payload.lessons.map((l) => l.chapter), ...payload.practice.map((p) => p.chapter)])];
-    const knownChapters = new Set(
-      chapterKeys.length
-        ? (await tx.select({ key: chapters.key }).from(chapters).where(and(inArray(chapters.key, chapterKeys), eq(chapters.academicYear, academicYear)))).map((r) => r.key)
-        : [],
-    );
+    const chapterRows = chapterKeys.length
+      ? await tx.select({ id: chapters.id, key: chapters.key }).from(chapters).where(and(inArray(chapters.key, chapterKeys), eq(chapters.academicYear, academicYear)))
+      : [];
+    const chapterId = new Map(chapterRows.map((r) => [r.key, r.id]));
 
-    const correctKeys = [...new Set(payload.practice.filter((p) => p.correct && knownChapters.has(p.chapter)).map((p) => p.question))];
-    const knownQuestions = new Set(
-      correctKeys.length
-        ? (
-            await tx
-              .select({ key: questions.key })
-              .from(questions)
-              .where(
-                and(
-                  inArray(questions.key, correctKeys),
-                  eq(questions.isCurrent, true),
-                  eq(questions.pool, 'practice'),
-                  inArray(questions.status, ['published', 'reviewed']),
-                ),
-              )
-          ).map((r) => r.key)
-        : [],
-    );
+    // Practice questions: current, visible, practice pool, in the chapter the answer was posted with.
+    const questionKeys = [...new Set(payload.practice.filter((p) => chapterId.has(p.chapter)).map((p) => p.question))];
+    const questionRows = questionKeys.length
+      ? await tx
+          .select({ id: questions.id, key: questions.key, version: questions.version, chapterId: questions.chapterId, marks: questions.marks })
+          .from(questions)
+          .where(and(inArray(questions.key, questionKeys), eq(questions.isCurrent, true), eq(questions.pool, 'practice'), inArray(questions.status, [...STUDENT_VISIBLE])))
+      : [];
+    const questionByKey = new Map(questionRows.map((q) => [q.key, q]));
+    const knownAnswer = (p: GuestProgress['practice'][number]) => {
+      const q = questionByKey.get(p.question);
+      return q && q.chapterId === chapterId.get(p.chapter) ? q : null;
+    };
 
+    // ---- lesson positions → lesson_progress -----------------------------------------------------
+    const knownChapterIds = [...new Set(payload.lessons.map((l) => chapterId.get(l.chapter)).filter((x): x is string => !!x))];
+    const deckRows = knownChapterIds.length
+      ? await tx
+          .select({ chapterId: decks.chapterId, part: sql<number>`coalesce(${decks.part}, 0)::int`, slideCount: decks.slideCount })
+          .from(decks)
+          .where(and(inArray(decks.chapterId, knownChapterIds), eq(decks.isCurrent, true), inArray(decks.status, [...STUDENT_VISIBLE]), eq(decks.academicYear, academicYear)))
+      : [];
+    const partsOf = new Map<string, { part: number; slideCount: number }[]>();
+    for (const d of deckRows) partsOf.set(d.chapterId, [...(partsOf.get(d.chapterId) ?? []), { part: d.part, slideCount: d.slideCount }].sort((a, b) => a.part - b.part));
+
+    const positions = new Map<string, typeof lessonProgress.$inferInsert>();
+    for (const l of payload.lessons) {
+      const cid = chapterId.get(l.chapter);
+      const parts = cid ? partsOf.get(cid) : undefined;
+      if (!cid || !parts?.length) continue;
+      const deck = l.part === undefined ? parts[0] : parts.find((p) => p.part === l.part);
+      if (!deck) continue;
+      const slide = Math.min(l.slide, Math.max(0, deck.slideCount - 1));
+      const key = `${cid}:${deck.part}`;
+      const prev = positions.get(key);
+      const completedAt = l.completed ? notFuture(l.updatedAt) : null;
+      positions.set(key, {
+        userId,
+        chapterId: cid,
+        unit: l.chapter,
+        part: deck.part,
+        slidePosition: Math.max(slide, prev?.slidePosition ?? 0),
+        mode: l.mode ?? prev?.mode ?? 'read',
+        completedAt: prev?.completedAt && completedAt ? new Date(Math.min(prev.completedAt.getTime(), completedAt.getTime())) : (prev?.completedAt ?? completedAt),
+        source: 'guest_merge',
+        createdAt: now,
+        updatedAt: now,
+      });
+    }
+    let lessonsStored = 0;
+    if (positions.size) {
+      const stored = await tx
+        .insert(lessonProgress)
+        .values([...positions.values()])
+        .onConflictDoUpdate({
+          target: [lessonProgress.userId, lessonProgress.chapterId, lessonProgress.part],
+          set: {
+            slidePosition: sql`greatest(${lessonProgress.slidePosition}, excluded.slide_position)`,
+            completedAt: sql`least(${lessonProgress.completedAt}, excluded.completed_at)`,
+            updatedAt: now,
+          },
+        })
+        .returning({ id: lessonProgress.id });
+      lessonsStored = stored.length;
+    }
+
+    // ---- practice answers → practice_answers (latest guest answer per question) -----------------
+    const latest = new Map<string, GuestProgress['practice'][number]>();
+    for (const p of payload.practice) {
+      if (!knownAnswer(p)) continue;
+      const prev = latest.get(p.question);
+      if (!prev || p.answeredAt >= prev.answeredAt) latest.set(p.question, p);
+    }
+    let practiceStored = 0;
+    if (latest.size) {
+      const stored = await tx
+        .insert(practiceAnswers)
+        .values(
+          [...latest.values()].map((p) => {
+            const q = knownAnswer(p)!;
+            return {
+              userId,
+              questionId: q.id,
+              questionKey: q.key,
+              questionVersion: q.version,
+              chapterId: q.chapterId,
+              response: null,
+              correct: p.correct,
+              marksAwarded: p.correct ? Number(q.marks) : 0,
+              maxMarks: Number(q.marks),
+              grading: 'auto' as const,
+              answeredAt: notFuture(p.answeredAt),
+              source: 'guest_merge' as const,
+              createdAt: now,
+              updatedAt: now,
+            };
+          }),
+        )
+        .onConflictDoNothing()
+        .returning({ id: practiceAnswers.id });
+      practiceStored = stored.length;
+    }
+
+    // ---- XP (AC-23, capped) -----------------------------------------------------------------------
     let xpLeft: number = GUEST_MERGE.maxTotalXp;
     const rows: (typeof xpEvents.$inferInsert)[] = [];
-    const completed = [...new Set(payload.lessons.filter((l) => l.completed && knownChapters.has(l.chapter)).map((l) => l.chapter))];
+    const completed = [...new Set(payload.lessons.filter((l) => l.completed && chapterId.has(l.chapter)).map((l) => l.chapter))];
     for (const chapter of completed) {
       const amount = Math.min(GUEST_MERGE.xpPerLessonCompleted, xpLeft);
       if (amount <= 0) break;
       xpLeft -= amount;
       rows.push({ userId, kind: 'lesson_completed', amount, sourceType: 'guest:chapter', sourceId: chapter, istDay: day, createdAt: now, updatedAt: now });
     }
-    const correct = correctKeys.filter((k) => knownQuestions.has(k));
+    const correct = [...new Set(payload.practice.filter((p) => p.correct && knownAnswer(p)).map((p) => p.question))];
     for (const question of correct) {
       const amount = Math.min(GUEST_MERGE.xpPerPracticeCorrect, xpLeft);
       if (amount <= 0) break;
@@ -86,8 +178,8 @@ export async function mergeGuestProgress(
       rows.push({ userId, kind: 'practice', amount, sourceType: 'guest:question', sourceId: question, istDay: day, createdAt: now, updatedAt: now });
     }
     let inserted: { amount: number; kind: string }[] = [];
-    if (rows.length)
-      inserted = await tx.insert(xpEvents).values(rows).onConflictDoNothing().returning({ amount: xpEvents.amount, kind: xpEvents.kind });
+    if (rows.length) inserted = await tx.insert(xpEvents).values(rows).onConflictDoNothing().returning({ amount: xpEvents.amount, kind: xpEvents.kind });
+    if (inserted.length) await refreshTotals(tx, userId);
 
     let profileUpdated = false;
     const set: Partial<typeof profiles.$inferInsert> = { guestMergedAt: now };
@@ -101,7 +193,8 @@ export async function mergeGuestProgress(
     }
     await tx.update(profiles).set(set).where(eq(profiles.userId, userId));
 
-    const uniqueQuestionsAll = new Set(payload.practice.filter((p) => p.correct).map((p) => p.question));
+    const allQuestionKeys = new Set(payload.practice.map((p) => p.question));
+    const knownKeys = new Set(payload.practice.filter((p) => knownAnswer(p)).map((p) => p.question));
     return {
       merged: true,
       alreadyMerged: false,
@@ -109,13 +202,14 @@ export async function mergeGuestProgress(
       lessonsCompleted: inserted.filter((r) => r.kind === 'lesson_completed').length,
       practiceCorrect: inserted.filter((r) => r.kind === 'practice').length,
       xpAwarded: inserted.reduce((s, r) => s + r.amount, 0),
+      lessonsStored,
+      practiceStored,
       ignored: {
-        unknownChapters: chapterKeys.filter((k) => !knownChapters.has(k)).length,
-        unknownQuestions: [...uniqueQuestionsAll].filter((k) => !knownQuestions.has(k)).length,
-        positionsNotStored: payload.lessons.filter((l) => !l.completed).length,
+        unknownChapters: chapterKeys.filter((k) => !chapterId.has(k)).length,
+        unknownQuestions: [...allQuestionKeys].filter((k) => !knownKeys.has(k)).length,
+        positionsNotStored: 0,
       },
       profileUpdated,
     };
   });
 }
-
