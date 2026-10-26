@@ -51,6 +51,12 @@
   --diagram-muted: #6b6b64;
   --diagram-fill: rgba(49, 85, 255, 0.12);
   --diagram-paper: #ffffff;   /* label halos */
+  /* Named semantic colours (graphics: >= 3:1 on surface and bg in both themes). Say the colour in the label too. */
+  --diagram-blue: #2f4fd8;
+  --diagram-green: #1b7a4a;
+  --diagram-yellow: #8f6a00;
+  --diagram-brown: #8a5a2b;
+  --diagram-red: #c0392b;
 
   /* ── Type ──────────────────────────────────────────────────────────────── */
   --p-font-devanagari: var(--font-noto-devanagari, "Noto Sans Devanagari"), "Nirmala UI", "Mangal", sans-serif;
@@ -140,6 +146,11 @@
     --diagram-muted: #aeaba1;
     --diagram-fill: rgba(157, 176, 255, 0.2);
     --diagram-paper: #1f1e1b;
+    --diagram-blue: #9db0ff;
+    --diagram-green: #7fd8a4;
+    --diagram-yellow: #f2d45c;
+    --diagram-brown: #d9a066;
+    --diagram-red: #ff9b8f;
     --p-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
     --p-shadow-2: 0 2px 6px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
     --p-shadow-3: 0 12px 40px rgba(0, 0, 0, 0.6);
@@ -177,6 +188,11 @@
   --diagram-muted: #aeaba1;
   --diagram-fill: rgba(157, 176, 255, 0.2);
   --diagram-paper: #1f1e1b;
+  --diagram-blue: #9db0ff;
+  --diagram-green: #7fd8a4;
+  --diagram-yellow: #f2d45c;
+  --diagram-brown: #d9a066;
+  --diagram-red: #ff9b8f;
   --p-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
   --p-shadow-2: 0 2px 6px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
   --p-shadow-3: 0 12px 40px rgba(0, 0, 0, 0.6);

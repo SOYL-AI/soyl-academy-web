@@ -1,0 +1,132 @@
+.figure {
+  margin: 0;
+  padding: var(--p-space-3);
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-md);
+  background: var(--p-surface);
+  color: var(--p-ink);
+  --diagram-paper: var(--p-surface);
+}
+.bare {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.caption {
+  margin-top: var(--p-space-2);
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+  text-align: center;
+}
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-inline: auto;
+  max-height: 70vh;
+  overflow: visible;
+  font-family: var(--p-font-sans);
+}
+.plot .svg {
+  max-width: 520px;
+}
+.error {
+  margin: 0;
+  padding: var(--p-space-3);
+  color: var(--p-danger);
+  font-size: var(--p-text-sm);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--p-space-1) var(--p-space-4);
+  margin: var(--p-space-2) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--p-text-sm);
+}
+.legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-1);
+}
+
+.flow {
+  container-type: inline-size;
+}
+.flowNarrow {
+  display: none;
+}
+@container (max-width: 479px) {
+  .flowWide {
+    display: none;
+  }
+  .flowNarrow {
+    display: block;
+  }
+}
+
+.tableWrap {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--p-text-sm);
+  font-variant-numeric: tabular-nums;
+}
+.table th,
+.table td {
+  padding: var(--p-space-2) var(--p-space-3);
+  border-bottom: 1px solid var(--p-border);
+  text-align: left;
+  vertical-align: top;
+}
+.table thead th {
+  background: var(--p-surface-2);
+  font-weight: 650;
+  border-bottom-color: var(--p-border-strong);
+}
+.table tbody th {
+  font-weight: 600;
+}
+.tableCaption {
+  caption-side: bottom;
+  padding-top: var(--p-space-2);
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+  text-align: center;
+}
+
+.chemEquation {
+  font-size: 1.05em;
+}
+
+.smiles {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  min-height: 160px;
+}
+.smilesSvg {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  aspect-ratio: 320 / 220;
+}
+.smilesName {
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.smilesError {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
