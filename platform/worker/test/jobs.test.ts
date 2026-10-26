@@ -187,7 +187,9 @@ describe('allJobs', () => {
       expect(job.cron?.split(' ')).toHaveLength(5);
       expect(job.options.policy).toBe('stately');
       expect(job.options.retryLimit).toBeGreaterThan(0);
-      expect(await job.handler(ctx, null)).toEqual({ deleted: 0 });
+      const empty =
+        job.name === JOB_NAMES.attemptsAutoSubmit ? { submitted: 0, failed: 0 } : job.name === JOB_NAMES.liveFinalize ? { events: 0, autoSubmitted: 0, ranked: 0 } : { deleted: 0 };
+      expect(await job.handler(ctx, null)).toEqual(empty);
     }
   });
 
