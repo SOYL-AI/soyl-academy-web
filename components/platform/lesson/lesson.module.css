@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: var(--p-space-2) var(--p-space-3);
-  margin: calc(-1 * var(--p-space-2)) 0 var(--p-space-3);
+  margin: var(--p-space-2) 0 var(--p-space-3);
   color: var(--p-ink-muted);
   font-size: var(--p-text-sm);
 }
@@ -43,6 +43,7 @@
 }
 .player {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--p-space-3);
   min-width: 0;
 }
@@ -139,6 +140,7 @@
 }
 .listen {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--p-space-2);
   padding: var(--p-space-3);
   border-radius: var(--p-radius-lg);
@@ -184,6 +186,7 @@
 }
 .done {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--p-space-2);
   padding: var(--p-space-4);
   border-radius: var(--p-radius-lg);

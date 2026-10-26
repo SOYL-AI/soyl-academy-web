@@ -43,11 +43,13 @@
 }
 .notes {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--p-space-6);
   min-width: 0;
 }
 .section {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--p-space-3);
   min-width: 0;
   scroll-margin-top: var(--p-space-6);
@@ -67,6 +69,7 @@
   margin: 0;
   padding: 0;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--p-space-2);
 }
 .formulaLabel {
@@ -77,6 +80,7 @@
 .terms dl {
   margin: 0;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--p-space-2);
 }
 .term {

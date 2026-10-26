@@ -370,13 +370,13 @@ export function SlidePlayer({ chapterId, part, firstPart, slides, meta, lang, li
         />
 
         <nav className={s.nav} aria-label="Slide navigation">
-          <Button variant="secondary" icon="chevronLeft" onClick={() => go('prev')} disabled={index === 0} aria-label="Previous slide">
-            Back
+          <Button variant="secondary" icon="chevronLeft" onClick={() => go('prev')} disabled={index === 0} data-testid="prev-slide">
+            Previous
           </Button>
           <span className={s.counter} aria-hidden="true">
             {index + 1} / {total}
           </span>
-          <Button onClick={() => go('next')} disabled={index === last} aria-label="Next slide" data-testid="next-slide">
+          <Button onClick={() => go('next')} disabled={index === last} data-testid="next-slide">
             Next <Icon name="chevronRight" size={18} />
           </Button>
         </nav>

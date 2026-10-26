@@ -1,6 +1,7 @@
 /* Chapter hub (M2). */
 .card {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   align-content: start;
   gap: var(--p-space-2);
   padding: var(--p-space-4);
@@ -14,6 +15,7 @@
 }
 .cardLink {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--p-space-2);
   padding: var(--p-space-4);
   border-radius: var(--p-radius-lg);
