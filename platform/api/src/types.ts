@@ -32,6 +32,8 @@ export interface AuthContext {
 declare module 'fastify' {
   interface FastifyContextConfig {
     policy?: RoutePolicy;
+    /** 'content': a public content read whose body is the same for every caller (ADR-010). */
+    cache?: 'content';
   }
   interface FastifyRequest {
     /** API-3: client IP — from the trusted edge header after edge auth, else the socket. */

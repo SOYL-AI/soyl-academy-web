@@ -2,12 +2,15 @@
  * `npm run dev -w @soyl/api` — the API on http://localhost:8787 with everything local:
  * embedded PostgreSQL (migrated + catalog + fixture users), in-memory KV, mock SMS/email/consent
  * (consent flow auto-grants), a mock Google OIDC provider on http://127.0.0.1:8090, and the dev OTP
- * outbox (GET /v1/dev/otp-outbox?to=<test identifier>). Env vars you set win over these defaults.
+ * outbox (GET /v1/dev/otp-outbox?to=<test identifier>), and every authored/exemplar chapter published
+ * through the pipeline's publish stage (scripts/dev-content.ts; DEV_CONTENT=off skips it).
+ * Env vars you set win over these defaults.
  * Nothing here can run in production (APP_ENV=local; config refuses dev defaults elsewhere).
  */
 import { DEV_DEFAULTS } from '../src/config';
 import { MockOidcServer } from '../src/dev/mock-oidc';
 import { main } from '../src/index';
+import { publishDevContent } from './dev-content';
 
 const publicBase = process.env.PUBLIC_BASE_URL ?? 'http://localhost:3000';
 const apiPath = process.env.API_PUBLIC_PATH ?? '/api/platform';
@@ -39,4 +42,4 @@ if (!process.env.GOOGLE_ISSUER) env.GOOGLE_ISSUER = issuer;
 
 // main() owns shutdown (SIGINT/SIGTERM close the server, pools and the embedded database); the
 // mock OIDC server ends with the process.
-await main(env);
+await main(env, { afterDevDatabase: (url) => publishDevContent(url) });

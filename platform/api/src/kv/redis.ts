@@ -1,7 +1,14 @@
 /**
  * ioredis KeyValueStore (CI redis:7, Azure Managed Redis with `noeviction`, INFRA-3).
- * Sliding windows are sorted sets scored by hit time; check-and-add is one Lua script so parallel
- * requests cannot all pass (AC-01). Members are `now:random` so equal timestamps stay distinct.
+ *
+ * Semantics match the memory store exactly, including the caller's clock (`now`), so tests with a
+ * fake clock behave the same on both (the CI failure behind this: lockouts kept by Redis's own TTL
+ * after the test clock had moved past them):
+ * - Values are stored as `<expiresAtMs>|<value>` and are expired against `now`; the Redis TTL is only
+ *   for cleanup.
+ * - Sliding windows are sorted sets scored by hit time; only hits in (now − window, now] count.
+ *   Check-and-add is one Lua script so parallel requests cannot all pass (AC-01). Members are
+ *   `now:random` so equal timestamps stay distinct.
  * Every failure surfaces as KvUnavailableError so callers can fail closed (API-16).
  */
 import { randomBytes } from 'node:crypto';
@@ -14,15 +21,16 @@ local now = tonumber(ARGV[1])
 local window = tonumber(ARGV[2])
 local limit = tonumber(ARGV[3])
 redis.call('ZREMRANGEBYSCORE', key, '-inf', now - window)
-local count = redis.call('ZCARD', key)
+local count = redis.call('ZCOUNT', key, '(' .. (now - window), now)
 if count >= limit then
-  local oldest = redis.call('ZRANGE', key, 0, 0, 'WITHSCORES')
+  local oldest = redis.call('ZRANGEBYSCORE', key, '(' .. (now - window), now, 'WITHSCORES', 'LIMIT', 0, 1)
   local retry = window
   if oldest[2] then retry = tonumber(oldest[2]) + window - now end
   return {0, count, retry}
 end
 redis.call('ZADD', key, now, ARGV[4])
-redis.call('PEXPIRE', key, window)
+local ttl = redis.call('PTTL', key)
+if ttl < window then redis.call('PEXPIRE', key, window) end
 return {1, count + 1, 0}
 `;
 
@@ -32,8 +40,20 @@ local now = tonumber(ARGV[1])
 local window = tonumber(ARGV[2])
 redis.call('ZREMRANGEBYSCORE', key, '-inf', now - window)
 redis.call('ZADD', key, now, ARGV[3])
-redis.call('PEXPIRE', key, window)
-return redis.call('ZCARD', key)
+local ttl = redis.call('PTTL', key)
+if ttl < window then redis.call('PEXPIRE', key, window) end
+return redis.call('ZCOUNT', key, '(' .. (now - window), now)
+`;
+
+/** Sets only if there is no live value (expired against the caller's clock). */
+const SET_IF_ABSENT = `
+local v = redis.call('GET', KEYS[1])
+if v then
+  local exp = tonumber(string.match(v, '^(%d+)|'))
+  if exp and exp > tonumber(ARGV[1]) then return 0 end
+end
+redis.call('SET', KEYS[1], ARGV[2], 'PX', ARGV[3])
+return 1
 `;
 
 const TAKE = `
@@ -41,6 +61,18 @@ local v = redis.call('GET', KEYS[1])
 if v then redis.call('DEL', KEYS[1]) end
 return v
 `;
+
+/** `<expiresAt>|<value>` → value if still live at `now`. */
+export function decodeValue(raw: unknown, now: number): string | null {
+  // Lua nil comes back as null from Redis (false from some clients/mocks).
+  if (typeof raw !== 'string') return null;
+  const bar = raw.indexOf('|');
+  if (bar < 1) return null;
+  const exp = Number(raw.slice(0, bar));
+  return Number.isFinite(exp) && exp > now ? raw.slice(bar + 1) : null;
+}
+
+const ttl = (ms: number) => Math.max(1, Math.ceil(ms));
 
 export class RedisKv implements KeyValueStore {
   readonly kind = 'redis' as const;
@@ -50,15 +82,19 @@ export class RedisKv implements KeyValueStore {
     url: string,
     opts: RedisOptions = {},
     private readonly prefix = 'soyl:',
+    /** Tests inject a client (ioredis-mock); production builds one from the URL. */
+    client?: Redis,
   ) {
-    this.redis = new Redis(url, {
-      // Fail fast instead of queueing: callers fail closed (API-16).
-      maxRetriesPerRequest: 1,
-      enableOfflineQueue: true,
-      connectTimeout: 2000,
-      commandTimeout: 2000,
-      ...opts,
-    });
+    this.redis =
+      client ??
+      new Redis(url, {
+        // Fail fast instead of queueing: callers fail closed (API-16).
+        maxRetriesPerRequest: 1,
+        enableOfflineQueue: true,
+        connectTimeout: 2000,
+        commandTimeout: 2000,
+        ...opts,
+      });
     this.redis.on('error', () => {
       /* surfaced per command; avoid unhandled 'error' events */
     });
@@ -76,21 +112,24 @@ export class RedisKv implements KeyValueStore {
     }
   }
 
-  get(key: string) {
-    return this.run(() => this.redis.get(this.k(key)));
+  async get(key: string, now: number) {
+    const raw = await this.run(() => this.redis.get(this.k(key)));
+    const v = decodeValue(raw, now);
+    if (raw !== null && v === null) await this.run(() => this.redis.del(this.k(key)));
+    return v;
   }
 
-  async set(key: string, value: string, ttlMs: number) {
-    await this.run(() => this.redis.set(this.k(key), value, 'PX', Math.max(1, Math.ceil(ttlMs))));
+  async set(key: string, value: string, ttlMs: number, now: number) {
+    await this.run(() => this.redis.set(this.k(key), `${now + ttlMs}|${value}`, 'PX', ttl(ttlMs)));
   }
 
-  async setIfAbsent(key: string, value: string, ttlMs: number) {
-    const r = await this.run(() => this.redis.set(this.k(key), value, 'PX', Math.max(1, Math.ceil(ttlMs)), 'NX'));
-    return r === 'OK';
+  async setIfAbsent(key: string, value: string, ttlMs: number, now: number) {
+    const r = await this.run(() => this.redis.eval(SET_IF_ABSENT, 1, this.k(key), now, `${now + ttlMs}|${value}`, ttl(ttlMs)));
+    return Number(r) === 1;
   }
 
-  async take(key: string) {
-    return (await this.run(() => this.redis.eval(TAKE, 1, this.k(key)))) as string | null;
+  async take(key: string, now: number) {
+    return decodeValue(await this.run(() => this.redis.eval(TAKE, 1, this.k(key))), now);
   }
 
   async del(key: string) {
@@ -102,10 +141,8 @@ export class RedisKv implements KeyValueStore {
   }
 
   async windowHit(key: string, windowMs: number, limit: number, now: number): Promise<WindowResult> {
-    const [ok, count, retry] = (await this.run(() =>
-      this.redis.eval(WINDOW_HIT, 1, this.k(key), now, windowMs, limit, this.member(now)),
-    )) as [number, number, number];
-    return { allowed: ok === 1, count, retryAfterMs: ok === 1 ? 0 : Math.max(1, retry) };
+    const [ok, count, retry] = (await this.run(() => this.redis.eval(WINDOW_HIT, 1, this.k(key), now, windowMs, limit, this.member(now)))) as [number, number, number];
+    return { allowed: Number(ok) === 1, count: Number(count), retryAfterMs: Number(ok) === 1 ? 0 : Math.max(1, Number(retry)) };
   }
 
   async windowCount(key: string, windowMs: number, now: number) {
@@ -113,7 +150,7 @@ export class RedisKv implements KeyValueStore {
   }
 
   async windowAdd(key: string, windowMs: number, now: number) {
-    return (await this.run(() => this.redis.eval(WINDOW_ADD, 1, this.k(key), now, windowMs, this.member(now)))) as number;
+    return Number(await this.run(() => this.redis.eval(WINDOW_ADD, 1, this.k(key), now, windowMs, this.member(now))));
   }
 
   async ping() {

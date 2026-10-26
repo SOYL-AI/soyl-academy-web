@@ -229,7 +229,9 @@ jobs:
           if [ -n "$range" ]; then
             "$RUNNER_TEMP/gitleaks" git --redact --no-banner --exit-code 1 --log-opts="$range" .
           else
-            "$RUNNER_TEMP/gitleaks" git --redact --no-banner --exit-code 1 .
+            # Only this ref's own history: gitleaks defaults to --all, which would also scan every
+            # other (unmerged) branch fetched by the checkout. Those branches get their own diff scans.
+            "$RUNNER_TEMP/gitleaks" git --redact --no-banner --exit-code 1 --log-opts="--full-history HEAD" .
           fi
 
   dependencies:
