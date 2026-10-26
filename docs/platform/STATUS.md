@@ -10,6 +10,8 @@ Single source of truth for progress (AGENTS.md §4.3). Updated by the Lead after
 
 ## Current milestone: **M1 — Foundations** (started 2026-10-26)
 
+> 2026-10-26: all agents stopped on the account rate limit and resumed after reset in two batches of 5 (D-024). Batch 1 running: db-schema, pipeline-engineer, curriculum-cisce, exemplar-science, design-system. Batch 2 queued: infra-azure, exemplar-maths, exemplar-hindi, curriculum-cbse-blueprints, curriculum-cbse-languages.
+
 ## Milestones
 
 | Milestone | Status | Exit criteria | Evidence |
