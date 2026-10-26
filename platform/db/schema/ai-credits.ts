@@ -22,7 +22,7 @@
  *   (trigger `soyl_credit_ledger_settlement_check`, migration 0002).
  */
 import { sql } from 'drizzle-orm';
-import { check, date, index, integer, jsonb, pgTable, text, uniqueIndex, uuid } from 'drizzle-orm/pg-core';
+import { boolean, check, date, index, integer, jsonb, pgTable, text, uniqueIndex, uuid } from 'drizzle-orm/pg-core';
 import { createdAt, id, meteredPaise, oneOf, timestamps, tstz } from './_shared';
 import { chapters } from './catalog';
 import { users } from './identity';
@@ -126,6 +126,9 @@ export const uploads = pgTable(
     status: text('status').notNull().default('pending_upload'),
     rejectReason: text('reject_reason'),
     expiresAt: tstz('expires_at').notNull(),
+    /** Migration 0008: the cleaned derivative (re-encoded, metadata stripped) in the `uploads` container. */
+    processedKey: text('processed_key'),
+    processedContentType: text('processed_content_type'),
     ...timestamps(),
   },
   (t) => [
@@ -163,6 +166,12 @@ export const aiRequests = pgTable(
     /** Content Safety results for input and output: { input: {...}, output: {...} }. */
     moderationFlags: jsonb('moderation_flags').notNull().default(sql`'{}'::jsonb`),
     errorCode: text('error_code'),
+    /** Migration 0008 (ai-gateway M4): the student's plan when the request ran (free-tier spend budget, D-015). */
+    planId: text('plan_id'),
+    /** 0008: the spend breaker moved this request to a smaller tier. */
+    degraded: boolean('degraded').notNull().default(false),
+    /** 0008: the mock provider answered (cost is what the call would have cost). */
+    simulated: boolean('simulated').notNull().default(false),
     ...timestamps(),
   },
   (t) => [

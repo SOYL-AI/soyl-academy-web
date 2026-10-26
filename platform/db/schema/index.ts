@@ -5,6 +5,7 @@ export * from './content';
 export * from './assessment';
 export * from './gamification';
 export * from './ai-credits';
+export * from './ai-gateway';
 export * from './billing';
 export * from './ops';
 export * from './pipeline';
