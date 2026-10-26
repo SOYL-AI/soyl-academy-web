@@ -27,3 +27,4 @@ export { splitQuestion, joinQuestion, questionRow, studentQuestionColumns, STUDE
 export { seedCatalog, type CatalogSeedReport } from './seed/catalog';
 export { seedTestUsers, TEST_PHONE_PREFIX, TEST_EMAIL_DOMAIN } from './seed/test-users';
 export { bootstrapAdmin } from './seed/admin';
+export { ingestChapterRelease, ingestTestDefinition, activateRelease, sha256Json } from './content-ingest';

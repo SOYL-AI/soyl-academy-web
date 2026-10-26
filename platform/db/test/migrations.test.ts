@@ -22,7 +22,9 @@ async function snapshot(c: pg.ClientBase) {
     columns: await q(`SELECT table_name, column_name, data_type, is_nullable, coalesce(column_default, ''), coalesce(generation_expression, '') FROM information_schema.columns WHERE table_schema = 'public' AND table_name <> '${MIGRATIONS_TABLE}'`),
     indexes: await q(`SELECT indexname, indexdef FROM pg_indexes WHERE schemaname = 'public' AND tablename <> '${MIGRATIONS_TABLE}'`),
     constraints: await q(`SELECT conname, pg_get_constraintdef(oid) FROM pg_constraint WHERE connamespace = 'public'::regnamespace`),
-    functions: await q(`SELECT p.proname FROM pg_proc p WHERE p.pronamespace = 'public'::regnamespace AND p.prokind = 'f' AND p.proname NOT LIKE 'vector%' AND p.proname NOT LIKE '%halfvec%' AND p.proname NOT LIKE '%sparsevec%'`),
+    // Extension-owned functions (pgvector in CI) stay installed across down/up; only ours count.
+    functions: await q(`SELECT p.proname FROM pg_proc p WHERE p.pronamespace = 'public'::regnamespace
+      AND NOT EXISTS (SELECT 1 FROM pg_depend d WHERE d.classid = 'pg_proc'::regclass AND d.objid = p.oid AND d.deptype = 'e')`),
     triggers: await q(`SELECT tgname, tgrelid::regclass::text FROM pg_trigger WHERE NOT tgisinternal`),
     views: await q(`SELECT viewname FROM pg_views WHERE schemaname = 'public'`),
     grants: await q(`SELECT table_name, privilege_type FROM information_schema.role_table_grants WHERE grantee = 'soyl_app'`),
