@@ -76,7 +76,17 @@ const QuestionFields = {
   assets: z.array(Visual).default([]),
 };
 
-export const ChildQuestion = z.object(QuestionFields).omit({ id: true }).extend({ id: z.string().min(1) });
+/** One alternative of an internal choice inside a case/source part ("(c) either (i) or (ii)"). */
+export const AlternativeQuestion = z.object(QuestionFields).omit({ id: true }).extend({ id: z.string().min(1) });
+export type AlternativeQuestion = z.infer<typeof AlternativeQuestion>;
+
+export const ChildQuestion = AlternativeQuestion.extend({
+  /**
+   * Internal choice within this part: the student answers this part OR one of the alternatives.
+   * Graded as one choice; every alternative carries the same marks as the part.
+   */
+  alternatives: z.array(AlternativeQuestion).default([]),
+});
 export type ChildQuestion = z.infer<typeof ChildQuestion>;
 
 export const Question = z
@@ -97,7 +107,7 @@ export type Question = z.infer<typeof Question>;
 type Issue = { code: 'custom'; path: (string | number)[]; message: string };
 type Ctx = { addIssue: (issue: Issue) => void };
 
-function checkQuestion(q: z.infer<typeof ChildQuestion> & { passage_md?: string; children?: ChildQuestion[] }, ctx: Ctx, path: (string | number)[]) {
+function checkQuestion(q: AlternativeQuestion & { passage_md?: string; children?: ChildQuestion[] }, ctx: Ctx, path: (string | number)[]) {
   const add = (message: string, sub: (string | number)[] = []) => ctx.addIssue({ code: 'custom', path: [...path, ...sub], message });
 
   const schemeTotal = q.marking_scheme.reduce((sum, s) => sum + s.marks, 0);
@@ -151,6 +161,11 @@ function checkQuestion(q: z.infer<typeof ChildQuestion> & { passage_md?: string;
       children.forEach((c, i) => {
         if (c.type === 'case-based' || c.type === 'source-based') add('children cannot nest passages', ['children', i, 'type']);
         checkQuestion(c, ctx, [...path, 'children', i]);
+        (c.alternatives ?? []).forEach((alt, k) => {
+          if (Math.abs(alt.marks - c.marks) > 1e-9) add(`alternative ${alt.id} is worth ${alt.marks}, the part is worth ${c.marks}`, ['children', i, 'alternatives', k, 'marks']);
+          if (alt.type === 'case-based' || alt.type === 'source-based') add('alternatives cannot nest passages', ['children', i, 'alternatives', k, 'type']);
+          checkQuestion(alt, ctx, [...path, 'children', i, 'alternatives', k]);
+        });
       });
       break;
     }

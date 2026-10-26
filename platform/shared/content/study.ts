@@ -11,6 +11,8 @@ export const NotesSection = z.object({
   /** Display formulas in LaTeX. */
   formulas: z.array(z.object({ latex: z.string().min(1), label: z.string().optional() })).default([]),
   visual: Visual.nullable().default(null),
+  /** Additional visuals (e.g. an apparatus diagram and a table). `visual`, when set, is shown first. */
+  visuals: z.array(Visual).default([]),
   topic_ids: z.array(TopicId).default([]),
 });
 

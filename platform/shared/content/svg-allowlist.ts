@@ -36,6 +36,14 @@ export const SVG_RULES = {
   /** No inline style attributes (CSS can carry url() and expressions). */
   forbidStyleAttribute: true,
   maxBytes: 60_000,
+  /**
+   * class values must match this (theme classes styled by the renderer: diagram-accent, diagram-muted,
+   * diagram-fill, diagram-label, diagram-thin). Other classes could hit page CSS (UI redress, e.g.
+   * class="fixed inset-0"), so the pipeline rejects them and the renderer drops them.
+   */
+  classPattern: '^diagram-[a-z0-9-]+$',
+  /** The root <svg> must carry a viewBox so it scales to the slide. */
+  requireViewBox: true,
 } as const;
 
 /** Colours diagrams should use, so they read in light and dark mode. Renderers map these to theme tokens. */
