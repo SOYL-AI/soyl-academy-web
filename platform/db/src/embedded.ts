@@ -102,7 +102,8 @@ async function startCluster(dir: string, opts: { persistent: boolean; fast: bool
     user: LOCAL_USER,
     password: LOCAL_PASSWORD,
     port,
-    persistent: opts.persistent,
+    // Directory removal is done below with retries (Windows keeps files locked briefly after exit).
+    persistent: true,
     postgresFlags: flags(opts.fast),
     ...quiet,
   });
@@ -116,13 +117,47 @@ async function startCluster(dir: string, opts: { persistent: boolean; fast: bool
       if (stopped) return;
       stopped = true;
       await ep.stop();
-      if (!opts.persistent) fs.rmSync(dir, { recursive: true, force: true });
+      // postgres removes its pid file as the last step of shutdown; wait for it (Windows holds file
+      // handles briefly after the process exits) before deleting the directory.
+      const pidFile = path.join(dir, 'postmaster.pid');
+      for (let i = 0; i < 100 && fs.existsSync(pidFile); i++) await new Promise((r) => setTimeout(r, 100));
+      if (!opts.persistent) {
+        await new Promise((r) => setTimeout(r, 250));
+        removeDir(dir);
+      }
     },
   };
 }
 
+function removeDir(dir: string): void {
+  try {
+    fs.rmSync(dir, { recursive: true, force: true, maxRetries: 20, retryDelay: 250 });
+  } catch (err) {
+    console.warn(`could not remove ${dir} (${(err as Error).message}); it is removed by the next test run`);
+  }
+}
+
+function pidAlive(pid: number): boolean {
+  try {
+    process.kill(pid, 0);
+    return true;
+  } catch (err) {
+    return (err as { code?: string }).code === 'EPERM';
+  }
+}
+
+/** Removes test-<pid>-* directories left by runs whose process is gone (crash, Ctrl-C, EBUSY). */
+function sweepStaleRuns(): void {
+  if (!fs.existsSync(DATA_DIR)) return;
+  for (const name of fs.readdirSync(DATA_DIR)) {
+    const m = /^(?:test|pristine-tmp)-(\d+)-/.exec(name);
+    if (m && !pidAlive(Number(m[1]))) removeDir(path.join(DATA_DIR, name));
+  }
+}
+
 /** A throwaway server for one test run: copy of the pristine cluster, random port, removed on stop. */
 export async function startTestServer(): Promise<EmbeddedServer> {
+  sweepStaleRuns();
   const pristine = await pristineCluster();
   const dir = path.join(DATA_DIR, `test-${process.pid}-${Math.random().toString(36).slice(2, 8)}`);
   fs.cpSync(pristine, dir, { recursive: true });
