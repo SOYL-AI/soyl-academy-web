@@ -22,23 +22,12 @@ RUN npm ci --workspace @soyl/worker --include-workspace-root=false \
  && npm run build --workspace @soyl/worker \
  && test -f worker/dist/index.js
 
-# ---- deps: production dependencies only (the externals the bundle still requires) ----
-# Workspace packages are bundled into dist/index.js, so their (dangling) links are dropped.
-FROM node:24-trixie-slim@sha256:43b9ba1142b8dcf33fa8f922ca1be85714adc444e0586c7cf7726daaeabc1bea AS deps
-ENV CI=true NPM_CONFIG_AUDIT=false NPM_CONFIG_FUND=false NPM_CONFIG_UPDATE_NOTIFIER=false
-WORKDIR /src
-COPY . .
-RUN npm ci --omit=dev --workspace @soyl/worker --include-workspace-root=false \
- && mkdir -p /out/node_modules \
- && cp -a node_modules/. /out/node_modules/ \
- && if [ -d worker/node_modules ]; then cp -a worker/node_modules/. /out/node_modules/; fi \
- && rm -rf /out/node_modules/@soyl /out/node_modules/.package-lock.json
-
 # ---- runtime ----
+# No node_modules: dist/index.js bundles every runtime dependency (D-022). Shipping node_modules
+# pulled in dev tooling of linked workspaces (drizzle-kit's old esbuild binary: HIGH/CRITICAL in trivy).
 FROM gcr.io/distroless/nodejs24-debian13:nonroot@sha256:cb606325b7ec4af55462cb0b424a53b452a5b4a894ffe841fcf1048d216fb9f8
 ENV NODE_ENV=production PORT=8080
 WORKDIR /app
-COPY --from=deps --chown=nonroot:nonroot /out/node_modules ./node_modules
 COPY --from=build --chown=nonroot:nonroot /src/worker/package.json ./package.json
 COPY --from=build --chown=nonroot:nonroot /src/worker/dist ./dist
 USER nonroot
