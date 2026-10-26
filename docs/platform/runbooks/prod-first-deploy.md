@@ -4,6 +4,8 @@ Owner decisions D-031 (2026-10-27): production only, **dark** (`PLATFORM_ENABLED
 
 What "dark" means here: the API and worker run in Azure with a migrated, seeded database and published content. Every API route except `/healthz` and `/readyz` answers 404 (GEN-4). The live site (Vercel) keeps `PLATFORM_ENABLED` unset, so no visitor can reach the platform.
 
+Progress already recorded in STATUS.md (2026-10-27): owner sign-in, providers registered, both resource groups created, and `crsoylplatform` deployed (`soyl-shared-1`). Steps 0 (variables and extensions only), 1 and 2 can be skipped up to that point.
+
 Everything below is run by the operator (the Lead) from `C:/Users/Prabhu/soyl-wt/prod-auth` (or any checkout of the branch) in **Git Bash**. Nothing needs Docker: images are built in Azure with `az acr build`.
 
 **Rights legend** (who can run a step):
@@ -38,7 +40,8 @@ export TAG=$(git rev-parse --short=12 HEAD)
 Look up the ACS sender role. The **Communication and Email Service Owner** built-in role is the documented role for sending with Microsoft Entra ID. If the lookup returns nothing, leave the variable unset: the params fall back to **Contributor**, scoped to the single ACS resource.
 
 ```bash
-export SOYL_ACS_SENDER_ROLE_ID=$(az role definition list --name "Communication and Email Service Owner" --query "[0].name" -o tsv)
+ROLE=$(az role definition list --name "Communication and Email Service Owner" --query "[0].name" -o tsv)
+[ -n "$ROLE" ] && export SOYL_ACS_SENDER_ROLE_ID=$ROLE
 echo "ACS sender role: ${SOYL_ACS_SENDER_ROLE_ID:-<not found: Contributor fallback>}"
 ```
 

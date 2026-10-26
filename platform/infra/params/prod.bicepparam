@@ -110,7 +110,7 @@ param emailSenderDisplayName = 'SOYL Academy'
 param acsDataLocation = 'India'
 // GUID of the built-in "Communication and Email Service Owner" role (runbook step 0 looks it up);
 // default Contributor, scoped to the one Communication Services resource.
-param acsSenderRoleId = readEnvironmentVariable('SOYL_ACS_SENDER_ROLE_ID', 'b24988ac-6181-4c74-a15b-b2e1ee7d7cc3')
+param acsSenderRoleId = empty(readEnvironmentVariable('SOYL_ACS_SENDER_ROLE_ID', '')) ? 'b24988ac-6181-4c74-a15b-b2e1ee7d7cc3' : readEnvironmentVariable('SOYL_ACS_SENDER_ROLE_ID', '')
 param acsLinkDomain = bool(readEnvironmentVariable('SOYL_ACS_LINK_DOMAIN', 'false'))
 
 param logRetentionDays = 180

@@ -86,7 +86,7 @@ param emailSenderUsername = 'noreply'
 param emailSenderDisplayName = 'SOYL Academy (dev)'
 param acsDataLocation = 'India'
 // Contributor on the ACS resource only, unless the "Communication and Email Service Owner" GUID is given.
-param acsSenderRoleId = readEnvironmentVariable('SOYL_ACS_SENDER_ROLE_ID', 'b24988ac-6181-4c74-a15b-b2e1ee7d7cc3')
+param acsSenderRoleId = empty(readEnvironmentVariable('SOYL_ACS_SENDER_ROLE_ID', '')) ? 'b24988ac-6181-4c74-a15b-b2e1ee7d7cc3' : readEnvironmentVariable('SOYL_ACS_SENDER_ROLE_ID', '')
 param acsLinkDomain = true
 
 param logRetentionDays = 180
