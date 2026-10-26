@@ -1,0 +1,30 @@
+{
+  "name": "@soyl/content-pipeline",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Content pipeline CLI (ARCHITECTURE §8): catalog, plan, outline, generate, lint, status, coverage. Run from platform/: npm run content -- <command> ...",
+  "exports": {
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "content": "tsx src/cli.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@soyl/ai-core": "*",
+    "@soyl/shared": "*",
+    "js-yaml": "^4.1.0",
+    "katex": "0.19.0",
+    "saxes": "6.0.0",
+    "tsx": "4.23.15",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^24.19.2",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.5"
+  }
+}

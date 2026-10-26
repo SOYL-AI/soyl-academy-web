@@ -30,6 +30,8 @@ export const PlotVisual = z.object({
       .array(z.object({ label: z.string(), points: z.array(Point), kind: z.enum(['line', 'bar', 'scatter']).default('line') }))
       .default([]),
     grid: z.boolean().default(true),
+    /** Points sampled per function by the renderer (default 200). */
+    samples: z.number().int().min(10).max(2000).optional(),
   }),
   alt: z.string().min(5),
   caption: z.string().optional(),
@@ -82,6 +84,10 @@ export const FlowVisual = z.object({
   caption: z.string().optional(),
 });
 
+/**
+ * Geometry convention: the y axis points up (maths convention); coordinates lie in [0,width] × [0,height].
+ * Flow: the renderer may switch LR to TB in narrow containers.
+ */
 export const Visual = z.discriminatedUnion('kind', [
   SvgVisual,
   PlotVisual,

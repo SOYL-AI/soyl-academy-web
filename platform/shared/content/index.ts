@@ -8,3 +8,5 @@ export * from './study';
 export * from './blueprint';
 export * from './release';
 export * from './test';
+export * from './outline';
+export * from './svg-allowlist';
