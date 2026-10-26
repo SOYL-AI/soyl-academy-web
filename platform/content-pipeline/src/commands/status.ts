@@ -6,7 +6,7 @@ import type { Stage } from '../state';
 
 export async function statusCommand(p: Pipeline, scope: Scope): Promise<{ exitCode: number }> {
   const refs = unitsInScope(p.catalog, scope);
-  const stages: Stage[] = ['outline', 'generate', 'lint'];
+  const stages: Stage[] = ['outline', 'generate', 'lint', 'verify', 'originality', 'tts', 'publish'];
   const rows: (string | number)[][] = [];
   let needsReview = 0;
   for (const ref of refs) {
@@ -22,7 +22,7 @@ export async function statusCommand(p: Pipeline, scope: Scope): Promise<{ exitCo
     const cost = recs.reduce((n, r) => n + Object.values(r?.items ?? {}).reduce((m, i) => m + i.cost_paise, 0), 0);
     rows.push([ref.chapter.id, ...cells, inr(cost)]);
   }
-  if (rows.length) p.log(table(['unit', ...stages, 'cost'], rows, ['l', 'l', 'l', 'l', 'r']));
+  if (rows.length) p.log(table(['unit', ...stages, 'cost'], rows, ['l', ...stages.map(() => 'l' as const), 'r']));
   else p.log('no pipeline state for units in scope yet.');
   if (needsReview) p.log(`${needsReview} item(s) need review (re-run with --retry-review after fixing templates)`);
 

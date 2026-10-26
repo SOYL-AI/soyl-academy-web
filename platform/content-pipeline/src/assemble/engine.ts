@@ -121,6 +121,10 @@ export function assemblePaper(spec: PaperSpec, bank: readonly BankItem[]): Paper
   const requests: GenerationRequest[] = [];
   const base = { paper_id: spec.id, blueprint_id: bp.id };
 
+  if (!pool.length) {
+    requests.push({ ...base, section: null, type: '*', marks: null, competency: null, difficulty: null, chapters: spec.chapters, missing: bp.sections.reduce((n, s) => n + s.items.reduce((m, it) => m + it.count, 0), 0), reason: 'no published questions in scope yet: generate and publish the chapter first' });
+    return { ok: false, requests };
+  }
   if (spec.chapters.length > 1) {
     const empty = spec.chapters.filter((c) => !pool.some((q) => q.unit === c));
     if (empty.length) {
