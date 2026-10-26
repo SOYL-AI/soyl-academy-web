@@ -85,8 +85,8 @@ param edgeAuthFailuresPer15MinThreshold = 50
 param queueBacklogThreshold = 500
 
 // dev + stg + shared <= INR 50,000/month (owner budget; COSTS.md).
-param budgetAmount = 17000
-param aiBudgetAmount = 3000
+param budgetAmount = 18000
+param aiBudgetAmount = 2000
 
 param appSettings = {
   PLATFORM_ENABLED: 'true'

@@ -98,7 +98,7 @@ jobs:
   shared:
     name: shared · container registry (Bicep)
     needs: gate
-    if: needs.gate.outputs.enabled == 'true' && needs.gate.outputs.target != 'prod'
+    if: vars.AZURE_DEPLOY_ENABLED == 'true' && needs.gate.outputs.enabled == 'true' && needs.gate.outputs.target != 'prod'
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     permissions:
@@ -129,7 +129,7 @@ jobs:
   build:
     name: build · ${{ matrix.service }} image
     needs: [gate, shared]
-    if: needs.gate.outputs.enabled == 'true' && needs.gate.outputs.target != 'prod'
+    if: vars.AZURE_DEPLOY_ENABLED == 'true' && needs.gate.outputs.enabled == 'true' && needs.gate.outputs.target != 'prod'
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     permissions:
@@ -224,7 +224,7 @@ jobs:
   deploy:
     name: deploy · ${{ needs.gate.outputs.target }}
     needs: [gate, build]
-    if: needs.gate.outputs.enabled == 'true' && needs.gate.outputs.target != 'prod'
+    if: vars.AZURE_DEPLOY_ENABLED == 'true' && needs.gate.outputs.enabled == 'true' && needs.gate.outputs.target != 'prod'
     runs-on: ubuntu-24.04
     timeout-minutes: 60
     permissions:
@@ -264,7 +264,7 @@ jobs:
   prod-whatif:
     name: prod · what-if (approval 1 of 2)
     needs: gate
-    if: needs.gate.outputs.enabled == 'true' && needs.gate.outputs.target == 'prod'
+    if: vars.AZURE_DEPLOY_ENABLED == 'true' && needs.gate.outputs.enabled == 'true' && needs.gate.outputs.target == 'prod'
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     environment: production
@@ -326,7 +326,7 @@ jobs:
   prod-deploy:
     name: prod · deploy (approval 2 of 2)
     needs: [gate, prod-whatif]
-    if: needs.gate.outputs.enabled == 'true' && needs.gate.outputs.target == 'prod'
+    if: vars.AZURE_DEPLOY_ENABLED == 'true' && needs.gate.outputs.enabled == 'true' && needs.gate.outputs.target == 'prod'
     runs-on: ubuntu-24.04
     timeout-minutes: 60
     environment: production
