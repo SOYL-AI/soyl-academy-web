@@ -57,6 +57,8 @@ const EnvSchema = z.object({
   ALLOWED_ORIGINS: csv,
 
   DATABASE_URL: z.string().optional(),
+  /** API connection pool size (§16 capacity; one API replica). */
+  DATABASE_POOL_MAX: z.coerce.number().int().min(1).max(200).default(10),
   REDIS_URL: z.string().optional(),
 
   /** API-2 / D-016: one or two current edge secrets (comma-separated, rotation). */
@@ -114,6 +116,7 @@ export interface Config {
   allowedOrigins: string[];
   secureCookies: boolean;
   databaseUrl: string | undefined;
+  databasePoolMax: number;
   redisUrl: string | undefined;
   edgeSecrets: string[];
   clientIpHeader: string;
@@ -242,6 +245,7 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
     allowedOrigins,
     secureCookies,
     databaseUrl: e.DATABASE_URL,
+    databasePoolMax: e.DATABASE_POOL_MAX,
     redisUrl: e.REDIS_URL,
     edgeSecrets,
     clientIpHeader: e.CLIENT_IP_HEADER.toLowerCase(),

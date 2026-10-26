@@ -14,7 +14,8 @@ import { XP_AWARDS } from '@soyl/shared/config/gamification';
 import { createHarness, type Client, type Harness } from './helpers';
 import { seedRealContent } from './content-fixture';
 import { forbiddenKeys, isObjective, itemKeys, responseFor, type ItemKey } from './tests-fixture';
-import { autoSubmitExpired } from '../src/domain/tests/finalize';
+import { autoSubmitExpired, finalizeAttempt } from '../src/domain/tests/finalize';
+import { createDb } from '@soyl/db';
 import { percentileFor } from '../src/domain/tests/results';
 
 let h: Harness;
@@ -470,6 +471,26 @@ describe('auto-submit', () => {
     const r = (await c.post(`/v1/attempts/${s.attempt.id}/submit`)).json() as { status: string };
     expect(r.status).toBe('auto_submitted');
     h.clock.set(Date.now());
+  });
+});
+
+describe('pool safety', () => {
+  it('concurrent submits never wait for a second pooled connection inside a transaction (load-test regression)', async () => {
+    const started = await Promise.all(Array.from({ length: 6 }, async () => {
+      const { c } = await member();
+      return (await start(c, LONG)).attempt.id;
+    }));
+    // A fresh client (cold caches) with a pool of 2: before the fix, two transactions each held a
+    // connection and waited for another one forever.
+    const small = createDb(h.t.url, { max: 2 });
+    try {
+      const all = Promise.all(started.map((id) => finalizeAttempt({ db: small.db, now: new Date(h.clock.now()) }, id, 'submit')));
+      const timeout = new Promise((_, reject) => setTimeout(() => reject(new Error('pool starvation: submits did not finish')), 20_000));
+      const results = (await Promise.race([all, timeout])) as { status: string }[];
+      expect(results.map((r) => r.status)).toEqual(Array(6).fill('submitted'));
+    } finally {
+      await small.close();
+    }
   });
 });
 

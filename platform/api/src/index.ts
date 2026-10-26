@@ -38,7 +38,7 @@ export async function main(env: Record<string, string | undefined> = process.env
     await hooks.afterDevDatabase?.(databaseUrl);
   }
 
-  const { db, close: closeDb } = createDb(databaseUrl);
+  const { db, close: closeDb } = createDb(databaseUrl, { max: config.databasePoolMax });
   const kv = createKv(config);
   const providers = createProviders(config);
   const app = await buildApp({ config, db, kv, clock: systemClock, providers });

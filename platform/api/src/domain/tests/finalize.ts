@@ -15,8 +15,8 @@ import { and, eq, inArray, ne, sql } from 'drizzle-orm';
 import { attempts, evaluations, responses, testScoreBuckets, type Database } from '@soyl/db';
 import { TEST_XP_RULES, XP_AWARDS } from '@soyl/shared/config/gamification';
 import { TEST_ENGINE } from '@soyl/shared/config/tests';
-import { awardXp, evaluateBadges, recordActivity, refreshTotals, type StreakView } from '../gamification';
-import { loadKeys, loadStructure, testById, type TestStructure } from './load';
+import { awardXp, ensureBadges, evaluateBadges, recordActivity, refreshTotals, type StreakView } from '../gamification';
+import { loadKeys, loadStructure, testById, type QuestionKeyRow, type TestStructure } from './load';
 import { aggregate, gradeItem, scoreBucket, type Aggregate, type ItemOutcome } from './score';
 
 type Tx = Parameters<Parameters<Database['transaction']>[0]>[0];
@@ -50,9 +50,12 @@ export interface FinalizeResult {
   streak: StreakView | null;
 }
 
-/** Grades every item of an attempt from its stored responses and self-evaluations. */
-export async function gradeAttempt(db: Database | Tx, structure: TestStructure, keysDb: Database, attemptId: string): Promise<{ outcomes: Map<string, ItemOutcome>; agg: Aggregate; responseIds: Map<string, string> }> {
-  const keys = await loadKeys(keysDb, structure);
+/**
+ * Grades every item of an attempt from its stored responses and self-evaluations. `db` may be a
+ * transaction: everything else it needs (structure, keys) is passed in, so a transaction never waits
+ * for a second pooled connection (that starved the pool under load: 10 concurrent submits, pool of 10).
+ */
+export async function gradeAttempt(db: Database | Tx, structure: TestStructure, keys: Map<string, QuestionKeyRow>, attemptId: string): Promise<{ outcomes: Map<string, ItemOutcome>; agg: Aggregate; responseIds: Map<string, string> }> {
   const rows = await db.select({ id: responses.id, itemId: responses.testItemId, answer: responses.answer }).from(responses).where(eq(responses.attemptId, attemptId));
   const self = rows.length
     ? await db
@@ -73,6 +76,14 @@ export async function gradeAttempt(db: Database | Tx, structure: TestStructure, 
 export async function finalizeAttempt(ctx: FinalizeContext, attemptId: string, mode: 'submit' | 'auto'): Promise<FinalizeResult> {
   const { db, now } = ctx;
   let live: { eventId: string; userId: string; autoScore: number; timeTakenSec: number } | null = null;
+  // Everything read from the pool happens before the transaction (see gradeAttempt).
+  const [peek] = await db.select({ testId: attempts.testId, status: attempts.status }).from(attempts).where(eq(attempts.id, attemptId));
+  if (!peek) throw new Error(`attempt ${attemptId} not found`);
+  const test = await testById(db, peek.testId);
+  if (!test) throw new Error(`test ${peek.testId} not found`);
+  const structure = await loadStructure(db, test);
+  const keys = await loadKeys(db, structure);
+  await ensureBadges(db);
   const result = await db.transaction(async (tx) => {
     const [a] = await tx.select().from(attempts).where(eq(attempts.id, attemptId)).for('update');
     if (!a) throw new Error(`attempt ${attemptId} not found`);
@@ -82,10 +93,7 @@ export async function finalizeAttempt(ctx: FinalizeContext, attemptId: string, m
     const late = pastGrace(a, now.getTime());
     const status = mode === 'submit' && !late ? 'submitted' : 'auto_submitted';
     const submittedAt = status === 'submitted' ? now : a.deadlineAt;
-    const test = await testById(db, a.testId);
-    if (!test) throw new Error(`test ${a.testId} not found`);
-    const structure = await loadStructure(db, test);
-    const { outcomes, agg, responseIds } = await gradeAttempt(tx, structure, db, a.id);
+    const { outcomes, agg, responseIds } = await gradeAttempt(tx, structure, keys, a.id);
 
     // Auto evaluations for answered items with an auto-graded part (idempotent per response and mode).
     const autoRows = [...outcomes.values()]

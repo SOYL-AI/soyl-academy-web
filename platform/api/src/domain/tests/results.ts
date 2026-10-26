@@ -59,7 +59,7 @@ export async function attemptResult(ctx: EngineContext, userId: string, attemptI
   if (!isFinal(a.status)) throw new ApiProblem('conflict', { detail: 'Results are available after you submit.' });
   const test = await testById(ctx.db, a.testId);
   const structure = await loadStructure(ctx.db, test!);
-  const { outcomes, agg } = await gradeAttempt(ctx.db, structure, ctx.db, a.id);
+  const { outcomes, agg } = await gradeAttempt(ctx.db, structure, await loadKeys(ctx.db, structure), a.id);
   const saved = await ctx.db
     .select({ itemId: responses.testItemId, answer: responses.answer, timeSpentSec: responses.timeSpentSec, markedForReview: responses.markedForReview })
     .from(responses)
@@ -226,7 +226,7 @@ export async function selfEvaluate(ctx: EngineContext, userId: string, attemptId
   const test = await testById(ctx.db, a.testId);
   const structure = await loadStructure(ctx.db, test!);
   const keys = await loadKeys(ctx.db, structure);
-  const { outcomes, responseIds } = await gradeAttempt(ctx.db, structure, ctx.db, a.id);
+  const { outcomes, responseIds } = await gradeAttempt(ctx.db, structure, keys, a.id);
   const now = new Date(ctx.clock.now());
   const rows = entries.map((e, i) => {
     const o = outcomes.get(e.itemId);
@@ -242,7 +242,7 @@ export async function selfEvaluate(ctx: EngineContext, userId: string, attemptId
       .insert(evaluations)
       .values(rows)
       .onConflictDoUpdate({ target: [evaluations.responseId, evaluations.mode], set: { marks: sql`excluded.marks`, maxMarks: sql`excluded.max_marks`, feedback: sql`excluded.feedback`, status: 'done', updatedAt: now } });
-    const { agg } = await gradeAttempt(tx, structure, ctx.db, a.id);
+    const { agg } = await gradeAttempt(tx, structure, keys, a.id);
     // The auto score (ranks, percentile) never changes here (AC-14).
     await tx.update(attempts).set({ score: agg.score, selfScore: agg.selfScore, sectionScores: agg.sections, updatedAt: now }).where(eq(attempts.id, a.id));
   });
