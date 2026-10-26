@@ -114,3 +114,38 @@ describe('script rules for Hindi (and other Indic languages)', () => {
     expect(rules(lint([ta], { language: 'ta' }))).toContain('language.script');
   });
 });
+
+describe('maths producer feedback (M2)', () => {
+  const r = String.raw;
+  it('flags command names that lost their backslash without a brace, and control characters in maths', () => {
+    expect(rules(lint([q({ solution_md: r`So $x Rightarrow y$.` })]), 'error')).toContain('latex.backslash');
+    expect(rules(lint([q({ solution_md: r`Then $a ne b$ and $3 times 4$.` })]), 'error')).toContain('latex.backslash');
+    expect(rules(lint([q({ solution_md: 'Then $a \ne b$.' })]), 'error')).toContain('latex.backslash'); // "\n" + "e" inside inline maths
+    expect(rules(lint([q({ solution_md: r`$x \Rightarrow y$, $a \ne b$, $3 \times 4 = 12$, $\text{times table}$, $F_{net}$` })]))).not.toContain('latex.backslash');
+  });
+  it('lets deliberately false statements opt out of the arithmetic rule', () => {
+    expect(rules(lint([q({ solution_md: r`Step 1: $2 + 3 = 6$.` })]), 'error')).toContain('math.arithmetic');
+    expect(rules(lint([q({ solution_md: r`Riya wrote $2 + 3 = 6$, which is wrong; the sum is $5$.` })]))).not.toContain('math.arithmetic');
+    expect(rules(lint([q({ solution_md: r`Note that $2 + 3 \ne 6$.` })]))).not.toContain('math.arithmetic');
+  });
+  it('warns when MCQ keys are skewed to one letter', () => {
+    const opts = ['a', 'b', 'c', 'd'].map((id) => ({ id, text_md: `option ${id}` }));
+    const mcq = (i: number, key: string) => q({ id: `q_x_${100 + i}`, type: 'mcq', marks: 1, marking_scheme: [{ step: 'c', marks: 1 }], options: opts, answer: { option_ids: [key] } });
+    const skewed = Array.from({ length: 10 }, (_, i) => mcq(i, i < 7 ? 'b' : 'a'));
+    expect(rules(lint(skewed), 'warning')).toContain('balance.answer-keys');
+    const spread = Array.from({ length: 12 }, (_, i) => mcq(i, 'abcd'[i % 4]!));
+    expect(rules(lint(spread), 'warning')).not.toContain('balance.answer-keys');
+  });
+  it('checks marked plot points and zeros, and accepts vlines/hlines', async () => {
+    const { checkVisual } = await import('../src/lint/visual');
+    const plot = (spec: Record<string, unknown>) =>
+      checkVisual({ kind: 'plot', spec: { x: { min: -5, max: 5 }, y: { min: -10, max: 10 }, functions: [{ expr: 'x^2 - 4' }], points: [], series: [], grid: true, ...spec } as never, alt: 'a parabola plot' }).issues.map((i) => `${i.rule}: ${i.message}`);
+    expect(plot({ points: [{ at: [-2, 0] }, { at: [2, 0] }, { at: [0, -4] }] })).toEqual([]);
+    expect(plot({ points: [{ at: [1, 1] }] }).join()).toMatch(/not on any plotted curve/);
+    expect(plot({ points: [{ at: [1, 1], on_curve: false }] })).toEqual([]);
+    expect(plot({ points: [{ at: [2, 0] }] }).join()).toMatch(/zero at x ≈ -2/);
+    expect(plot({ vlines: [{ x: 3, label: '$x = 3$', dashed: true }], points: [{ at: [3, 7] }] }).join()).not.toMatch(/not on any/);
+    expect(plot({ vlines: [{ x: 9 }] }).join()).toMatch(/outside the x range/);
+    expect(plot({ functions: [{ expr: '(x-1)^2' }], points: [{ at: [1, 0] }] })).toEqual([]);
+  });
+});

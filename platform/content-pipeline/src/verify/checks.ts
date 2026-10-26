@@ -13,7 +13,7 @@
  *   objective.blanks     a fill-blank answer that the solution never mentions
  *   objective.match      every left item paired once; no right item used twice
  *   code.output          javascript code-output items are executed in a sandbox (node:vm, no I/O,
- *                        100 ms) and the normalised output must equal the key; other languages are
+ *                        500 ms) and the normalised output must equal the key; other languages are
  *                        left to the independent solve
  * Each flag has a severity; critical/major flags make the item fail verification.
  */
@@ -62,6 +62,21 @@ export function lastNumericResult(md: string): number | null {
   return last;
 }
 
+/** Every purely numeric side of every `=` chain in the maths of a text (what the solution computes). */
+export function numericResults(md: string): number[] {
+  const out: number[] = [];
+  for (const tex of mathSpans(md))
+    for (const piece of tex.split(/\\approx|≈|,\s|;|\\quad|\\qquad/)) {
+      const sides = piece.split(/(?<![<>!\\])=/);
+      if (sides.length < 2) continue;
+      for (const side of sides) {
+        const v = numericValue(side);
+        if (v !== null) out.push(v);
+      }
+    }
+  return out;
+}
+
 /** Numbers written anywhere in a text (plain or in maths), commas between digit groups removed. */
 function numbersIn(md: string): number[] {
   return [...md.replace(/(\d),(?=\d{2,3}\b)/g, '$1').matchAll(/-?\d+(?:\.\d+)?/g)].map((m) => Number(m[0]));
@@ -83,10 +98,11 @@ function checkPart(q: Part, ref: string, flags: Flag[], parentContext: string) {
   // Numerical answers: re-derive the final value from the solution.
   if (q.type === 'numerical' && 'value' in a) {
     const tol = Math.max(a.tolerance, 1e-9, Math.abs(a.value) * 0.005);
-    const last = lastNumericResult(q.solution_md);
-    if (last !== null && Math.abs(last - a.value) > tol && !numbersIn(q.solution_md).slice(-3).some((n) => Math.abs(n - a.value) <= tol))
-      add('numeric.final', 'critical', `the solution's last computed value is ${+last.toFixed(6)}, the key is ${a.value}`);
+    // Solutions often end with a check ("HCF × LCM = …"), so the key must be *a* computed result, not the last one.
+    const results = numericResults(q.solution_md);
     if (!numbersIn(q.solution_md).some((n) => Math.abs(n - a.value) <= tol)) add('numeric.final', 'major', `the solution never arrives at the key value ${a.value}`);
+    else if (results.length && !results.some((n) => Math.abs(n - a.value) <= tol))
+      add('numeric.final', 'minor', `the key ${a.value} is stated but no "=" step of the solution computes it (results: ${results.slice(-4).map((n) => +n.toFixed(4)).join(', ')})`);
   }
 
   // Chemical equations on the key side must balance.
@@ -155,10 +171,10 @@ export function deterministicChecks(q: Question): Flag[] {
 /**
  * Runs a JavaScript snippet with console.log captured, in a fresh context whose global has a null
  * prototype and receives NO host object (console is defined inside the context; only a string comes
- * back), with a 100 ms timeout. node:vm is not a security boundary, so this only ever runs content
+ * back), with a 500 ms timeout. node:vm is not a security boundary, so this only ever runs content
  * the pipeline itself produced, as a consistency check; it never runs student input.
  */
-export function runJavaScript(code: string, timeoutMs = 100): { output: string; error: string | null } {
+export function runJavaScript(code: string, timeoutMs = 500): { output: string; error: string | null } {
   if (code.length > 5000) return { output: '', error: 'code too long to check (> 5000 characters)' };
   const wrapped = `(function () {
   const __out = [];

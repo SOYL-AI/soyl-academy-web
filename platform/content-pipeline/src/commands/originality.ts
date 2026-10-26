@@ -100,8 +100,11 @@ export function originalityFlags(p: Pipeline, units: ContentUnit[], bank: Conten
   }
   // Bank duplicates: compare in-scope questions with every question we hold.
   const candidates: DupCandidate[] = bank.flatMap((u) => u.questions.map((q) => ({ id: q.id, unit: u.unit, text: `${q.passage_md ?? ''}\n${q.stem_md}` })));
+  // Mock placeholder stems are templated by design (and never publishable): mock-vs-mock pairs are not duplicates.
+  const mockIds = new Set(bank.flatMap((u) => u.questions.filter((q) => q.provenance?.model === 'mock').map((q) => `${u.unit}|${q.id}`)));
   const seen = new Set<string>();
   const report = (a: DupCandidate, b: DupCandidate, message: string) => {
+    if (mockIds.has(`${a.unit}|${a.id}`) && mockIds.has(`${b.unit}|${b.id}`)) return;
     for (const [x, y] of [[a, b], [b, a]] as const) {
       if (!inScope.has(x.unit) || seen.has(`${x.id}|${y.id}`)) continue;
       seen.add(`${x.id}|${y.id}`);

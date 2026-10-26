@@ -190,12 +190,11 @@ export async function main(argv: string[], env: Record<string, string | undefine
 const isEntry = process.argv[1] && /cli\.ts$/.test(process.argv[1]);
 if (isEntry) {
   main(process.argv.slice(2)).then(
-    (code) => {
-      process.exitCode = code;
-    },
+    // Explicit exit: the embedded Postgres helper's shutdown hooks otherwise reset the exit code to 0.
+    (code) => process.exit(code),
     (error) => {
       console.error(error instanceof ProviderConfigError ? error.message : (error as Error).stack ?? String(error));
-      process.exitCode = 1;
+      process.exit(1);
     },
   );
 }
