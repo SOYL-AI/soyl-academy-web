@@ -11,8 +11,9 @@
  */
 import { MODELS, MODEL_TIERS, type ModelTier, type TokenUsage } from '@soyl/shared/config/models';
 import { createLimiter, type Limiter } from '../limiter';
+import { CallerAbortedError, StreamInterruptedError } from '../errors';
 import { HttpError, withRetry, type RetryOptions } from '../retry';
-import type { BatchCapability, BatchItemResult, BatchState, ModelProvider, ProviderRequest, RawCompletion } from '../types';
+import type { BatchCapability, BatchItemResult, BatchState, ChatMessage, ModelProvider, ProviderRequest, RawCompletion } from '../types';
 
 export const COGNITIVE_SERVICES_SCOPE = 'https://cognitiveservices.azure.com/.default';
 
@@ -44,6 +45,25 @@ interface ChatCompletionResponse {
   model?: string;
   choices?: { message?: { content?: string | null; refusal?: string | null }; finish_reason?: string }[];
   usage?: { prompt_tokens?: number; completion_tokens?: number; prompt_tokens_details?: { cached_tokens?: number } };
+}
+
+/**
+ * Chat Completions wire format. Plain text messages stay strings (unchanged prompts keep their cache
+ * prefix); a message with images/files becomes content parts. Only `data:` URLs are sent: the model
+ * never fetches a URL a student chose (AC-16).
+ */
+export function toWireMessage(m: ChatMessage): Record<string, unknown> {
+  if (!m.images?.length && !m.files?.length) return { role: m.role, content: m.content };
+  const parts: Record<string, unknown>[] = [{ type: 'text', text: m.content }];
+  for (const img of m.images ?? []) {
+    if (!img.dataUrl.startsWith('data:image/')) throw new Error('image inputs must be data: URLs');
+    parts.push({ type: 'image_url', image_url: { url: img.dataUrl, detail: img.detail ?? 'high' } });
+  }
+  for (const f of m.files ?? []) {
+    if (!f.dataUrl.startsWith('data:application/pdf')) throw new Error('file inputs must be PDF data: URLs');
+    parts.push({ type: 'file', file: { filename: f.filename, file_data: f.dataUrl } });
+  }
+  return { role: m.role, content: parts };
 }
 
 function usageFrom(body: ChatCompletionResponse): TokenUsage {
@@ -88,7 +108,7 @@ export class AzureOpenAIProvider implements ModelProvider {
   body(req: ProviderRequest, opts: { batch?: boolean; stream?: boolean } = {}): Record<string, unknown> {
     const body: Record<string, unknown> = {
       model: this.deployment(req.tier, opts.batch),
-      messages: req.messages,
+      messages: req.messages.map(toWireMessage),
       max_completion_tokens: req.maxOutputTokens ?? MODELS[req.tier].max_output_tokens,
     };
     if (req.reasoningEffort) body.reasoning_effort = req.reasoningEffort;
@@ -102,9 +122,11 @@ export class AzureOpenAIProvider implements ModelProvider {
     return body;
   }
 
-  private async request(path: string, init: RequestInit & { json?: unknown } = {}): Promise<Response> {
+  private async request(path: string, init: RequestInit & { json?: unknown; caller?: AbortSignal } = {}): Promise<Response> {
     return this.limit(() =>
       withRetry(async () => {
+        // A caller abort (client disconnect, stream cap) is final: never retried.
+        if (init.caller?.aborted) throw new CallerAbortedError();
         const headers = new Headers(init.headers);
         headers.set('authorization', await this.authHeader());
         headers.set('x-ms-client-request-id', crypto.randomUUID());
@@ -117,7 +139,10 @@ export class AzureOpenAIProvider implements ModelProvider {
           method: init.method ?? (body ? 'POST' : 'GET'),
           headers,
           body,
-          signal: AbortSignal.timeout(this.config.timeoutMs ?? 600_000),
+          signal: init.caller ? AbortSignal.any([AbortSignal.timeout(this.config.timeoutMs ?? 600_000), init.caller]) : AbortSignal.timeout(this.config.timeoutMs ?? 600_000),
+        }).catch((error: unknown) => {
+          if (init.caller?.aborted) throw new CallerAbortedError();
+          throw error;
         });
         if (!res.ok) {
           const text = await res.text().catch(() => '');
@@ -129,7 +154,7 @@ export class AzureOpenAIProvider implements ModelProvider {
   }
 
   async complete(req: ProviderRequest): Promise<RawCompletion> {
-    const res = await this.request('/chat/completions', { method: 'POST', json: this.body(req) });
+    const res = await this.request('/chat/completions', { method: 'POST', json: this.body(req), caller: req.signal });
     const body = (await res.json()) as ChatCompletionResponse;
     return this.toCompletion(body, res.headers.get('apim-request-id') ?? res.headers.get('x-request-id') ?? body.id ?? null);
   }
@@ -147,7 +172,7 @@ export class AzureOpenAIProvider implements ModelProvider {
   }
 
   async stream(req: ProviderRequest, onDelta: (text: string) => void): Promise<RawCompletion> {
-    const res = await this.request('/chat/completions', { method: 'POST', json: this.body(req, { stream: true }) });
+    const res = await this.request('/chat/completions', { method: 'POST', json: this.body(req, { stream: true }), caller: req.signal });
     if (!res.body) throw new Error('stream: empty body');
     const decoder = new TextDecoder();
     let buffer = '';
@@ -155,26 +180,31 @@ export class AzureOpenAIProvider implements ModelProvider {
     let finishReason = 'unknown';
     let model = 'unknown';
     let usage: TokenUsage = { input_tokens: 0, cached_input_tokens: 0, output_tokens: 0 };
-    for await (const chunk of res.body as unknown as AsyncIterable<Uint8Array>) {
-      buffer += decoder.decode(chunk, { stream: true });
-      let nl: number;
-      while ((nl = buffer.indexOf('\n')) >= 0) {
-        const line = buffer.slice(0, nl).trim();
-        buffer = buffer.slice(nl + 1);
-        if (!line.startsWith('data:')) continue;
-        const data = line.slice(5).trim();
-        if (data === '[DONE]') continue;
-        const event = JSON.parse(data) as ChatCompletionResponse & { choices?: { delta?: { content?: string }; finish_reason?: string }[] };
-        if (event.model) model = event.model;
-        if (event.usage) usage = usageFrom(event);
-        const choice = event.choices?.[0];
-        const delta = choice?.delta?.content;
-        if (delta) {
-          text += delta;
-          onDelta(delta);
+    try {
+      for await (const chunk of res.body as unknown as AsyncIterable<Uint8Array>) {
+        buffer += decoder.decode(chunk, { stream: true });
+        let nl: number;
+        while ((nl = buffer.indexOf('\n')) >= 0) {
+          const line = buffer.slice(0, nl).trim();
+          buffer = buffer.slice(nl + 1);
+          if (!line.startsWith('data:')) continue;
+          const data = line.slice(5).trim();
+          if (data === '[DONE]') continue;
+          const event = JSON.parse(data) as ChatCompletionResponse & { choices?: { delta?: { content?: string }; finish_reason?: string }[] };
+          if (event.model) model = event.model;
+          if (event.usage) usage = usageFrom(event);
+          const choice = event.choices?.[0];
+          const delta = choice?.delta?.content;
+          if (delta) {
+            text += delta;
+            onDelta(delta);
+          }
+          if (choice?.finish_reason) finishReason = choice.finish_reason;
         }
-        if (choice?.finish_reason) finishReason = choice.finish_reason;
       }
+    } catch (error) {
+      // Mid-stream failure: the caller meters what was produced (F-008: output started = charged).
+      throw new StreamInterruptedError(text, req.signal?.aborted ?? false, error);
     }
     return { text, finishReason, usage, model, requestId: res.headers.get('apim-request-id') };
   }

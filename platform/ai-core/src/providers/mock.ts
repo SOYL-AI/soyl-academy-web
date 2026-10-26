@@ -11,12 +11,18 @@
  * production unless `unsafeAllowInProduction` is passed (tests only).
  */
 import { assertMockAllowed, type Env } from '../env';
+import { CallerAbortedError, StreamInterruptedError } from '../errors';
 import { sampleFromJsonSchema } from '../json-schema';
 import { createRng, hashString, type Rng } from '../rng';
 import { estimateMessagesTokens, estimateTokens } from '../tokens';
 import type { BatchCapability, BatchItemResult, ModelProvider, ProviderRequest, RawCompletion } from '../types';
 
 export const MOCK_MODEL = 'mock';
+
+/** A fixture result sent as plain text (chat answers) instead of JSON. */
+export class MockText {
+  constructor(readonly text: string) {}
+}
 
 export interface MockFixtureContext {
   input: unknown;
@@ -34,6 +40,10 @@ export interface MockProviderOptions {
   unsafeAllowInProduction?: boolean;
   /** Simulated failures for tests: return an error for the n-th call (0-based) by message. */
   failOnCall?: (callIndex: number, req: ProviderRequest) => Error | null;
+  /** Streams only: fail after this many characters were delivered (null = no failure). */
+  failMidStream?: (callIndex: number, req: ProviderRequest) => number | null;
+  /** Streams only: delay before each 64-character chunk (exercise cancellation and time caps). */
+  streamDelayMs?: number;
 }
 
 function requestKey(req: ProviderRequest): string {
@@ -67,7 +77,8 @@ export class MockProvider implements ModelProvider {
     if (req.mock?.fixture) {
       const fixture = this.fixtures.get(req.mock.fixture);
       if (!fixture) throw new Error(`MockProvider: no fixture registered for "${req.mock.fixture}"`);
-      return JSON.stringify(fixture({ input: req.mock.input, rng, seed: this.seed, request: req }));
+      const out = fixture({ input: req.mock.input, rng, seed: this.seed, request: req });
+      return out instanceof MockText ? out.text : JSON.stringify(out);
     }
     if (req.responseFormat) return JSON.stringify(sampleFromJsonSchema(req.responseFormat.schema, rng));
     return `[MOCK] Placeholder response from the mock provider (seed ${this.seed}). Not real content.`;
@@ -88,8 +99,18 @@ export class MockProvider implements ModelProvider {
   }
 
   async stream(req: ProviderRequest, onDelta: (text: string) => void): Promise<RawCompletion> {
+    if (req.signal?.aborted) throw new CallerAbortedError();
     const result = await this.complete(req);
-    for (let i = 0; i < result.text.length; i += 64) onDelta(result.text.slice(i, i + 64));
+    const failAt = this.opts.failMidStream?.(this.calls - 1, req) ?? null;
+    let sent = '';
+    for (let i = 0; i < result.text.length; i += 64) {
+      if (this.opts.streamDelayMs) await new Promise((r) => setTimeout(r, this.opts.streamDelayMs));
+      if (req.signal?.aborted) throw new StreamInterruptedError(sent, true);
+      if (failAt !== null && i >= failAt) throw new StreamInterruptedError(sent, false, new Error('mock: stream failed'));
+      const chunk = result.text.slice(i, i + 64);
+      sent += chunk;
+      onDelta(chunk);
+    }
     return result;
   }
 

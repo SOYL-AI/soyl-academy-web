@@ -10,3 +10,5 @@ export * from './rng';
 export * from './tokens';
 export * from './providers/azure';
 export * from './providers/mock';
+export * from './errors';
+export * from './embeddings';
