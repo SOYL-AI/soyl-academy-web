@@ -43,9 +43,15 @@ export interface PaperVariant {
 /**
  * The variant a blueprint belongs to: its `variant` field (contract v2), else the id suffix after the
  * paper type (cbse-10-mathematics-board-basic → "basic"), else the default paper.
+ * A `variant` whose code is the subject's own code (Maths Standard 041 on cbse-10-mathematics, code
+ * 041) is the subject's default paper: key '' (test ids, series keys and callers asking for the
+ * default paper are unchanged); its name still goes into titles. Pass the subject to apply this.
  */
-export function variantOf(bp: Blueprint): PaperVariant {
-  if (bp.variant) return { key: slug(bp.variant.name).replace(/-/g, ''), name: bp.variant.name, code: bp.variant.code };
+export function variantOf(bp: Blueprint, subject?: Pick<Subject, 'code'>): PaperVariant {
+  if (bp.variant) {
+    const isDefault = subject?.code != null && bp.variant.code === subject.code;
+    return { key: isDefault ? '' : slug(bp.variant.name).replace(/-/g, ''), name: bp.variant.name, code: bp.variant.code };
+  }
   const suffix = bp.subject_id ? bp.id.slice(`${bp.subject_id}-${bp.paper_type}`.length).replace(/^-/, '') : '';
   return suffix && bp.id.startsWith(`${bp.subject_id}-${bp.paper_type}`) ? { key: suffix.replace(/-/g, ''), name: suffix.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase()), code: null } : { key: '', name: null, code: null };
 }
@@ -53,7 +59,7 @@ export function variantOf(bp: Blueprint): PaperVariant {
 /** The blueprint for one paper type and variant: the subject's own, else the board/class default (default variant only). */
 export function blueprintFor(catalog: Catalog, subject: Subject, paper: PaperType, variantKey = ''): Blueprint | null {
   const own = catalog.blueprints.filter((b) => b.subject_id === subject.id && b.paper_type === paper);
-  const match = own.find((b) => variantOf(b).key === variantKey);
+  const match = own.find((b) => variantOf(b, subject).key === variantKey);
   if (match) return match;
   if (variantKey) return null;
   return catalog.blueprints.find((b) => b.subject_id === null && b.board === subject.board && b.class === subject.class && b.exam === subject.exam && b.paper_type === paper) ?? null;
@@ -61,7 +67,7 @@ export function blueprintFor(catalog: Catalog, subject: Subject, paper: PaperTyp
 
 /** Paper variants with their own board blueprint (Maths Standard / Basic …); [default] when none. */
 export function variantsFor(catalog: Catalog, subject: Subject): PaperVariant[] {
-  const own = catalog.blueprints.filter((b) => b.subject_id === subject.id && b.paper_type === 'board').map(variantOf);
+  const own = catalog.blueprints.filter((b) => b.subject_id === subject.id && b.paper_type === 'board').map((b) => variantOf(b, subject));
   const unique = new Map(own.map((v) => [v.key, v]));
   return unique.size ? [...unique.values()].sort((a, b) => a.key.localeCompare(b.key)) : [{ key: '', name: null, code: null }];
 }
