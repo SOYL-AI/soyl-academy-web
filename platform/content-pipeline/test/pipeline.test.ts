@@ -11,9 +11,10 @@ import { generateCommand, outlineCommand } from '../src/commands/generate';
 import { exemplarDirs, lintCommand, lintExemplar } from '../src/commands/lint';
 import { planCommand } from '../src/commands/plan';
 import { main } from '../src/cli';
+import { loadAuthoredUnits } from '../src/sources';
 import { MOCK_FIXTURES } from '../src/mock-fixtures';
 import { FileStateStore, aggregateStatus } from '../src/state';
-import { SCOPE, UNIT, testPipeline } from './helpers';
+import { SCOPE, UNIT, tempDir, testPipeline } from './helpers';
 
 describe('FileStateStore', () => {
   it('upserts items, aggregates unit status and sums the ledger', async () => {
@@ -72,10 +73,13 @@ describe('end to end (mock provider): plan → outline → generate → lint', (
     const after = await planCommand(p, SCOPE);
     expect(after.result.units[0]!.remaining).toHaveLength(0);
 
-    // Mock output never counts toward coverage.
-    const cov = coverageCommand(p, SCOPE);
-    expect(cov.report.subjects[0]!.have.deck).toBe(0);
-    expect(cov.report.totals.mock_units).toBe(1);
+    // Mock output never counts toward coverage: ch01's deck counts once, from the exemplar, not from out/.
+    const cov = await coverageCommand(p, SCOPE, { source: 'files' });
+    const handWritten = loadAuthoredUnits(p).filter((u) => u.unit.startsWith('cbse-10-science-ch')).length;
+    expect(cov.report.subjects[0]!.have.deck).toBe(handWritten);
+    expect(cov.report.subjects[0]!.mock_units).toBe(0);
+    const other = await coverageCommand(p, { board: 'cbse', class: 10, subject: 'science' }, { source: 'files' });
+    expect(other.report.subjects[0]!.have.deck).toBeLessThanOrEqual(other.report.subjects[0]!.chapters);
   }, 60_000);
 
   it('is deterministic for a seed', async () => {
@@ -161,9 +165,14 @@ describe('resume, retries and budget', () => {
 });
 
 describe('CLI', () => {
-  it('stubs stages 5–9 with "not implemented (M2)" and a non-zero exit', async () => {
-    for (const cmd of ['verify', 'originality', 'assemble', 'tts', 'publish']) expect(await main([cmd])).toBe(2);
-  });
+  it('runs stages 5–9 and says when there is nothing to do', async () => {
+    const dir = tempDir();
+    const env = { NODE_ENV: 'test', CONTENT_PIPELINE_OUT_DIR: path.join(dir, 'out'), CONTENT_PIPELINE_STATE_DIR: path.join(dir, 'state'), CONTENT_AUTHORED_DIR: path.join(dir, 'authored') };
+    for (const cmd of ['verify', 'originality', 'tts', 'publish']) expect(await main([cmd, '--board', 'cbse', '--class', '7', '--subject', 'science'], env)).toBe(1);
+    expect(await main(['assemble'], env)).toBe(1);
+    expect(await main(['rollback'], env)).toBe(1);
+    expect(await main(['publish', '--allow-mock'], { ...env, NODE_ENV: 'production' })).toBe(1);
+  }, 240_000); // every main() loads the whole catalog
 
   it('refuses the mock provider in production (GEN-3)', async () => {
     const { p } = testPipeline({}, { NODE_ENV: 'production' });

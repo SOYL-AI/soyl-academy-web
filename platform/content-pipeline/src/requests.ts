@@ -7,14 +7,14 @@ import * as yaml from 'js-yaml';
 import type { z } from 'zod/v4';
 import { toJsonSchema, type StructuredRequest } from '@soyl/ai-core';
 import { CONTENT_TARGETS } from '@soyl/shared/config/content-targets';
-import type { Blueprint, ChapterOutline, LessonOutline } from '@soyl/shared/content/index';
+import type { Blueprint, ChapterOutline, LessonOutline, Question } from '@soyl/shared/content/index';
 import { TEXT_FAMILIES, familyForChapter, type Family } from '../config/families';
 import { OUTPUT_TOKENS } from '../config/pipeline';
 import { questionIdPrefix } from './ids';
 import { blueprintsFor, type Catalog, type ChapterRef } from './catalog';
 import type { DeckInput, FlashcardsInput, NotesInput, OutlineInput, QuestionsInput, TopicRef } from './mock-fixtures';
-import { planSlots, questionBatches, questionPlan, skeletonOutline } from './planning';
-import { OutlineGeneration, deckGenerationSchema, flashcardsSchema, notesSchema, questionBatchSchema } from './schemas';
+import { planSlots, questionBatches, questionPlan, skeletonOutline, type QuestionSlot } from './planning';
+import { OutlineGeneration, VerifyReport, deckGenerationSchema, flashcardsSchema, notesSchema, questionBatchSchema } from './schemas';
 import { loadFewShot, renderTemplate, resolveTemplate, templateRef, type PromptTemplate, type TemplateAsset, type TemplateVars } from './templates';
 
 export interface TemplateDirs {
@@ -113,7 +113,7 @@ function build(
   key: string,
   schema: z.ZodType<unknown>,
   schemaName: string,
-  extra: { outline_json: string; task: string },
+  extra: { outline_json: string; task: string; content_json?: string },
   mockInput: unknown,
   expectedOutputTokens: number,
 ): ItemSpec {
@@ -213,4 +213,29 @@ export function generateItems(ctx: UnitContext, outline: Omit<ChapterOutline, 'p
     items.push(build(ctx, dirs, batch.asset, batch.key, questionBatchSchema(ctx.unit, batch.key, batch.slots) as z.ZodType<unknown>, 'question_batch', { outline_json: outlineJson, task }, input, out));
   }
   return items;
+}
+
+/** Stage 5: one independent-solve call (verify tier) over a batch of questions. */
+export function verifyItem(ctx: UnitContext, dirs: TemplateDirs, questions: Question[], key: string): ItemSpec {
+  const content = JSON.stringify(questions.map(({ provenance: _p, ...q }) => q), null, 1);
+  const task = `Verify these ${questions.length} question(s). Use each question's id as "ref". Report only real problems.`;
+  const input = { questions: questions.map((q) => ({ id: q.id, stem_md: q.stem_md })) };
+  const spec = build(ctx, dirs, 'verify', key, VerifyReport as z.ZodType<unknown>, 'verify_report', { outline_json: '(not needed)', task, content_json: content }, input, 120 + questions.length * 140);
+  spec.request.meta = { ...spec.request.meta, purpose: 'stage:verify' };
+  return spec;
+}
+
+/** Stages 5–6: regenerate one flagged question with the same slot (type, marks, difficulty, competency, topic). */
+export function regenerateQuestionItem(ctx: UnitContext, dirs: TemplateDirs, q: Question, key: string, reasons: string[], stage: 'verify' | 'originality' = 'verify'): ItemSpec {
+  const slot: QuestionSlot = { type: q.type, marks: q.marks, difficulty: q.difficulty, competency: q.competency, topic_id: q.topic_ids[0]! };
+  const asset = q.type === 'case-based' || q.type === 'source-based' ? 'case-passages' : 'questions';
+  const input: QuestionsInput = { unit: ctx.unit, slots: [slot], topics: ctx.topics, language: ctx.language };
+  const task = [
+    `Write exactly 1 question: ${slot.type}, ${slot.marks} mark(s), difficulty ${slot.difficulty}, competency ${slot.competency}, topic ${slot.topic_id}.`,
+    'It replaces an earlier question that failed automated checks. Do not repeat its problems:',
+    ...reasons.slice(0, 8).map((r) => `- ${r}`),
+  ].join('\n');
+  const spec = build(ctx, dirs, asset, key, questionBatchSchema(ctx.unit, key, [slot]) as z.ZodType<unknown>, 'question_batch', { outline_json: '(see the task)', task }, input, OUTPUT_TOKENS.question[slot.type] ?? OUTPUT_TOKENS.question.default!);
+  spec.request.meta = { ...spec.request.meta, purpose: `stage:${stage}` };
+  return spec;
 }
