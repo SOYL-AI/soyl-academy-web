@@ -12,6 +12,7 @@
  *   `email_verified` is true (enforced in IdentityService).
  */
 import { createHmac, randomBytes, timingSafeEqual } from 'node:crypto';
+import { createRemoteJWKSet, jwtVerify } from 'jose';
 import * as oidc from 'openid-client';
 import { OAUTH } from '@soyl/shared/config/security';
 import type { Clock } from '../clock';
@@ -44,6 +45,7 @@ export interface GoogleAuthOptions {
 
 export class GoogleAuth {
   private configuration: Promise<oidc.Configuration> | null = null;
+  private jwks: ReturnType<typeof createRemoteJWKSet> | null = null;
 
   constructor(
     private readonly config: Pick<Config, 'google' | 'authSecret' | 'secureCookies'>,
@@ -140,6 +142,12 @@ export class GoogleAuth {
         idTokenExpected: true,
       });
       claims = tokens.claims();
+      // openid-client follows OIDC Core 3.1.3.7 and may skip the JWS check for ID tokens received
+      // directly from the token endpoint over TLS. AUTH-6 asks for it anyway: verify against the JWKS.
+      if (!tokens.id_token) throw new Error('no id_token');
+      const meta = configuration.serverMetadata();
+      this.jwks ??= createRemoteJWKSet(new URL(String(meta.jwks_uri)));
+      await jwtVerify(tokens.id_token, this.jwks, { issuer: meta.issuer, audience: this.config.google.clientId, algorithms: ['RS256'] });
     } catch {
       throw new OAuthFlowError('token_invalid');
     }
