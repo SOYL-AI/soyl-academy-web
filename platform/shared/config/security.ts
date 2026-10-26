@@ -171,12 +171,44 @@ export const RATE_LIMITS = {
   'account.create.device': { key: 'device', limit: 3, windowSeconds: 86400 },
   /** Profile writes per user (abuse of display-name moderation). */
   'me.write.user': { key: 'user', limit: 30, windowSeconds: 3600 },
+  /** Practice answer checks (M2). Per IP is generous because schools share one address. */
+  'practice.answer.user': { key: 'user', limit: 60, windowSeconds: 60 },
+  'practice.answer.ip': { key: 'ip', limit: 300, windowSeconds: 60 },
+  /** Lesson-position saves (M2): the player saves on slide changes, debounced. */
+  'progress.write.user': { key: 'user', limit: 120, windowSeconds: 60 },
+  /** AUTH-11: TOTP enrol/confirm/verify/disable calls per user (wrong codes also lock, see MFA.failures). */
+  'mfa.user': { key: 'user', limit: 20, windowSeconds: 15 * 60 },
 } as const satisfies Record<string, RateLimitBucket>;
 
 export type RateLimitBucketName = keyof typeof RATE_LIMITS;
 
 /** API-RL-2: maximum concurrent AI streams per user (ai-gateway, M4). */
 export const AI_MAX_CONCURRENT_STREAMS = 2;
+
+/* ------------------------------------------------------------------------------------------------
+ * Staff second factor (AUTH-11)
+ * ---------------------------------------------------------------------------------------------- */
+
+export const MFA = {
+  /** RFC 6238 TOTP: SHA-1, 6 digits, 30 s steps (what authenticator apps support). */
+  totp: { digits: 6, periodSeconds: 30, algorithm: 'SHA1', secretBytes: 20, issuer: 'SOYL Academy' },
+  /** Accept the previous and next step as well (clock drift); a step is never accepted twice. */
+  driftSteps: 1,
+  /** Wrong codes per user within the window before verification locks (until the window frees up). */
+  failures: { limit: 5, windowSeconds: 15 * 60 },
+  /** One-time recovery codes issued when enrolment is confirmed (shown once). */
+  recoveryCodes: 10,
+  /** An unconfirmed enrolment expires; enrolling again issues a new secret. */
+  pendingEnrolmentSeconds: 15 * 60,
+} as const;
+
+/* ------------------------------------------------------------------------------------------------
+ * Content reports (CONTEXT §4 "Report a mistake")
+ * ---------------------------------------------------------------------------------------------- */
+
+export const CONTENT_REPORTS = {
+  maxCommentChars: 1000,
+} as const;
 
 /* ------------------------------------------------------------------------------------------------
  * Request bodies (API-5)

@@ -1,0 +1,7 @@
+# Reviewed false positives (historical commits only; the current lines carry `gitleaks:allow`).
+# Each entry is a fingerprint from `gitleaks git -v`. Add only after confirming the value is a placeholder.
+# 2026-10-27, Lead: development-only MFA key placeholder in DEV_DEFAULTS ("local-dev-mfa-key-not-for-deploy"),
+# refused outside local/test by platform/api config tests.
+6638cecdf4f2bc161a24bbdd3cc2e20be0141b87:platform/api/src/config.ts:generic-api-key:21
+# 2026-10-27, Lead: unit-test constant for the API proxy edge secret (web-platform branch).
+7e632d668f63d6a8f78b96a94b1a4ab9fb81152e:components/platform/__tests__/api-proxy.test.ts:generic-api-key:14

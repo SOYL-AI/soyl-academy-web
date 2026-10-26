@@ -12,11 +12,13 @@ export type AppEnv = (typeof APP_ENVS)[number];
 
 /** Development-only secrets. Public on purpose (this repo is public); rejected outside local/test. */
 export const DEV_DEFAULTS = {
-  edgeSecret: 'local-dev-edge-secret-not-for-deployment-000000',
-  authSecret: 'local-dev-auth-secret-not-for-deployment-000000',
-  otpPepper: 'local-dev-otp-pepper-not-for-deployment-0000000',
-  googleClientId: 'soyl-local-mock-client',
-  googleClientSecret: 'soyl-local-mock-client-secret',
+  edgeSecret: 'local-dev-edge-secret-not-for-deployment-000000', // gitleaks:allow (public dev placeholder, refused outside local/test)
+  authSecret: 'local-dev-auth-secret-not-for-deployment-000000', // gitleaks:allow (public dev placeholder, refused outside local/test)
+  otpPepper: 'local-dev-otp-pepper-not-for-deployment-0000000', // gitleaks:allow (public dev placeholder, refused outside local/test)
+  googleClientId: 'soyl-local-mock-client', // gitleaks:allow (mock OIDC client id, refused outside local/test)
+  googleClientSecret: 'soyl-local-mock-client-secret', // gitleaks:allow (mock OIDC client secret, refused outside local/test)
+  /** 32 bytes, base64url of "local-dev-mfa-key-not-for-deploy". AUTH-11 TOTP secret encryption key (development only). */
+  mfaEncryptionKey: 'bG9jYWwtZGV2LW1mYS1rZXktbm90LWZvci1kZXBsb3k', // gitleaks:allow (public dev placeholder, refused outside local/test)
 } as const;
 
 const csv = z
@@ -64,6 +66,8 @@ const EnvSchema = z.object({
 
   AUTH_SECRET: z.string().optional(),
   OTP_PEPPER: z.string().optional(),
+  /** AUTH-11: 32-byte key (base64 or base64url) that encrypts staff TOTP secrets at rest (Key Vault). */
+  MFA_ENCRYPTION_KEY: z.string().optional(),
   SMS_GLOBAL_HOURLY_CAP: z.coerce.number().int().min(0).default(OTP.send.phone.globalHourlyCap),
 
   GOOGLE_CLIENT_ID: z.string().optional(),
@@ -115,6 +119,8 @@ export interface Config {
   clientIpHeader: string;
   authSecret: string;
   otpPepper: string;
+  /** AUTH-11: AES-256-GCM key for user_mfa.totp_secret_enc. */
+  mfaEncryptionKey: Buffer;
   smsGlobalHourlyCap: number;
   google: {
     clientId: string;
@@ -168,11 +174,20 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
   const otpPepper = need('OTP_PEPPER', e.OTP_PEPPER, DEV_DEFAULTS.otpPepper);
   if (authSecret && !secret(32).safeParse(authSecret).success) problems.push('AUTH_SECRET must be at least 32 characters');
   if (otpPepper && !secret(32).safeParse(otpPepper).success) problems.push('OTP_PEPPER must be at least 32 characters');
+  const mfaKeyRaw = need('MFA_ENCRYPTION_KEY', e.MFA_ENCRYPTION_KEY, DEV_DEFAULTS.mfaEncryptionKey);
+  const mfaEncryptionKey = Buffer.from(mfaKeyRaw.replace(/-/g, '+').replace(/_/g, '/'), 'base64');
+  if (mfaKeyRaw && mfaEncryptionKey.length !== 32) problems.push('MFA_ENCRYPTION_KEY must be 32 bytes, base64-encoded');
+  const googleClientId = need('GOOGLE_CLIENT_ID', e.GOOGLE_CLIENT_ID, DEV_DEFAULTS.googleClientId);
+  const googleClientSecret = need('GOOGLE_CLIENT_SECRET', e.GOOGLE_CLIENT_SECRET, DEV_DEFAULTS.googleClientSecret);
+  // GEN-1/GEN-3: outside local/test no value may be (or contain) a public development default.
   if (!isLocal) {
     for (const [name, value, dev] of [
       ['EDGE_SECRETS', edgeSecrets.join(','), DEV_DEFAULTS.edgeSecret],
       ['AUTH_SECRET', authSecret, DEV_DEFAULTS.authSecret],
       ['OTP_PEPPER', otpPepper, DEV_DEFAULTS.otpPepper],
+      ['MFA_ENCRYPTION_KEY', mfaKeyRaw, DEV_DEFAULTS.mfaEncryptionKey],
+      ['GOOGLE_CLIENT_ID', googleClientId, DEV_DEFAULTS.googleClientId],
+      ['GOOGLE_CLIENT_SECRET', googleClientSecret, DEV_DEFAULTS.googleClientSecret],
     ] as const)
       if (value.includes(dev)) problems.push(`${name} uses the public development default; set a real secret`);
   }
@@ -203,8 +218,6 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
     if (o.includes('*') || o !== safeOrigin(o)) problems.push(`ALLOWED_ORIGINS entry "${o}" must be an exact origin like https://www.soylai.com`);
   }
 
-  const googleClientId = need('GOOGLE_CLIENT_ID', e.GOOGLE_CLIENT_ID, DEV_DEFAULTS.googleClientId);
-  const googleClientSecret = need('GOOGLE_CLIENT_SECRET', e.GOOGLE_CLIENT_SECRET, DEV_DEFAULTS.googleClientSecret);
   if (isProduction && e.GOOGLE_ISSUER !== OAUTH.googleIssuer)
     problems.push(`GOOGLE_ISSUER must be ${OAUTH.googleIssuer} in production (GEN-3: no mock OAuth)`);
   if (!isLocal && !e.GOOGLE_ISSUER.startsWith('https://')) problems.push('GOOGLE_ISSUER must be https outside local/test');
@@ -234,6 +247,7 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
     clientIpHeader: e.CLIENT_IP_HEADER.toLowerCase(),
     authSecret,
     otpPepper,
+    mfaEncryptionKey,
     smsGlobalHourlyCap: e.SMS_GLOBAL_HOURLY_CAP,
     google: {
       clientId: googleClientId,

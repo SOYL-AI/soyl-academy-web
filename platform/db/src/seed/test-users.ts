@@ -4,16 +4,17 @@
  * - Emails are on example.com only (RFC 2606 reserved).
  * - Phone numbers come from TEST_PHONE_PREFIX: +91 555 000 xxxx. Indian mobile numbers start with
  *   6–9, so a +91 number beginning 5 is never a reachable subscriber; the seed sends no OTPs anyway.
- *   This prefix should move to platform/shared/config/security.ts with the OTP test allowlist (GEN-3).
+ *   The prefix is defined in platform/shared/config/security.ts (shared with the OTP test allowlist, GEN-3).
  * - No admin, no passwords (DB-7). Refuses to run when NODE_ENV=production or APP_ENV=prod.
  * - Idempotent: upserts by email.
  */
 import { and, eq, sql } from 'drizzle-orm';
 import type { Database } from '../client';
 import { consentStatus, guardianLinks, profiles, users, type ConsentState, type Role } from '../../schema/index';
+import { TEST_EMAIL_DOMAIN, TEST_PHONE_PREFIX } from '@soyl/shared/config/security';
 
-export const TEST_EMAIL_DOMAIN = 'example.com';
-export const TEST_PHONE_PREFIX = '+91555000';
+/** Re-exported from platform/shared/config/security.ts (GEN-2/GEN-3: one definition shared with the API's OTP allowlist). */
+export { TEST_EMAIL_DOMAIN, TEST_PHONE_PREFIX };
 
 interface Fixture {
   key: string;
