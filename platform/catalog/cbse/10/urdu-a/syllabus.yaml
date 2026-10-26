@@ -1,0 +1,277 @@
+# CBSE Class 10 Urdu Course A (003), 2026-27. Sections, marks, writing tasks, grammar items, named authors/poets and
+# excluded lessons as printed in the CBSE 2026-27 Urdu Course A syllabus (3 pages, Urdu). Textbooks: Nawa-e-Urdu (Class X),
+# supplementary reader Gulzar-e-Urdu (Class X) and Urdu Qawaid aur Insha. CBSE lists only the EXCLUDED lessons, not the
+# full contents of either book, so the two textbook chapters carry placeholder topics until the NCERT contents pages are
+# supplied (see the M1 languages handoff). Literature: titles and authors only; no text is reproduced (CONTEXT §8).
+subject_id: cbse-10-urdu-a
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-x-urdu-a-2026-27
+  - cbse-secondary-curriculum-2026-27
+  - cbse-two-board-exams-x-2026
+  - ncert-textbooks-secondary
+exam_notes: >-
+  Theory 80 marks (3 hours) + internal assessment 20 (periodic tests, multiple assessment, portfolio, subject enrichment,
+  5 each, as for all Class X languages). Section A Reading and comprehension 20: one unseen prose passage (100-150 words)
+  and one unseen poetic extract (two stanzas or five couplets), 5 marks each (one-mark items, one-sentence answers, with
+  internal choice); one seen prose and one seen poetic extract from the textbook, 5 marks each. Section B Writing 25:
+  essay of 250-300 words on a social issue 10; application (complaint, invitation, permission) or letter (personal,
+  business) 4; notes of about 100 words on the textbook prose lessons and their writers 4x1, on the textbook poems and
+  poets 3x1, and on the supplementary-reader poems 4x1. Section C Grammar 20: verbs and their kinds 5, figures of speech
+  (ilm-e-bayan and ilm-e-badi) 5, idioms and proverbs 5, punctuation 2, poetic terms 3. Section D Literature 15:
+  short-answer questions on textbook prose 2x2, textbook poetry 2x2 and supplementary reader 2x2 (may be value based),
+  and a note on one of three literary genres 3. Two board exams for Class 10: February main (compulsory) and an optional
+  May second exam for improvement in up to three of Science, Mathematics, Social Science and languages.
+units:
+  - name: "حصہ الف: عبارت فہمی اور شعر فہمی"
+    marks: 20
+  - name: "حصہ ب: تحریری مہارت"
+    marks: 25
+  - name: "حصہ ج: عملی قواعد"
+    marks: 20
+  - name: "حصہ د: ادب"
+    marks: 15
+chapters:
+  - id: cbse-10-urdu-a-ch01
+    number: 1
+    title: غیر درسی اقتباسات
+    title_en: Unseen passages (prose and poetry)
+    unit: "حصہ الف: عبارت فہمی اور شعر فہمی"
+    topics:
+      - id: cbse-10-urdu-a-ch01-t01
+        title: غیر درسی نثری اقتباس (100 سے 150 الفاظ)
+        title_en: Unseen prose passage (100-150 words)
+        learning_outcomes:
+          - Read an unseen Urdu prose passage and answer factual and inferential questions in one word or one sentence
+          - Identify the central idea of the passage and suggest a suitable title
+      - id: cbse-10-urdu-a-ch01-t02
+        title: غیر درسی شعری اقتباس (دو بند یا پانچ اشعار)
+        title_en: Unseen poetic extract (two stanzas or five couplets)
+        learning_outcomes:
+          - Explain the meaning and mood of unseen couplets or stanzas in simple Urdu prose
+          - Answer one-mark questions on words, images and the poet's message in an unseen extract
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-urdu-a-ch02
+    number: 2
+    title: درسی اقتباسات
+    title_en: Seen passages from the textbook
+    unit: "حصہ الف: عبارت فہمی اور شعر فہمی"
+    topics:
+      - id: cbse-10-urdu-a-ch02-t01
+        title: درسی نثری اقتباس
+        title_en: Seen prose extract (100-150 words)
+        learning_outcomes:
+          - Locate an extract in the textbook lesson and answer questions on its content, vocabulary and context
+      - id: cbse-10-urdu-a-ch02-t02
+        title: درسی شعری اقتباس
+        title_en: Seen poetic extract
+        learning_outcomes:
+          - Explain textbook couplets or stanzas with reference to the poem and the poet
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-urdu-a-ch03
+    number: 3
+    title: مضمون نگاری
+    title_en: Essay writing
+    unit: "حصہ ب: تحریری مہارت"
+    topics:
+      - id: cbse-10-urdu-a-ch03-t01
+        title: مضمون کی ترتیب اور خاکہ
+        title_en: Planning an essay (outline, introduction, body, conclusion)
+        learning_outcomes:
+          - Prepare an outline and organise an essay of 250-300 words into well-linked paragraphs
+      - id: cbse-10-urdu-a-ch03-t02
+        title: سماجی اور عصری موضوعات پر مضمون
+        title_en: Essays on social and current issues
+        learning_outcomes:
+          - Write an essay on issues such as unemployment, pollution, the media, population growth, national unity, global warming or terrorism
+          - Present causes, effects and solutions with examples, in correct and idiomatic Urdu
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-urdu-a-ch04
+    number: 4
+    title: درخواست اور خطوط نگاری
+    title_en: Applications and letter writing
+    unit: "حصہ ب: تحریری مہارت"
+    topics:
+      - id: cbse-10-urdu-a-ch04-t01
+        title: "درخواست: شکایت نامہ، دعوت نامہ، اجازت نامہ"
+        title_en: "Applications: complaint, invitation, permission"
+        learning_outcomes:
+          - Write an application in the correct format with address, date, subject, salutation and closing
+      - id: cbse-10-urdu-a-ch04-t02
+        title: "خط: ذاتی، کاروباری"
+        title_en: "Letters: personal and business"
+        learning_outcomes:
+          - Write personal and business letters with an appropriate tone, layout and forms of address
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-urdu-a-ch05
+    number: 5
+    title: درسی اسباق سے متعلق نوٹ
+    title_en: Notes on textbook lessons, writers and poets
+    unit: "حصہ ب: تحریری مہارت"
+    topics:
+      - id: cbse-10-urdu-a-ch05-t01
+        title: نثری اسباق اور مصنفین پر نوٹ
+        title_en: Notes on prose lessons and their writers
+        learning_outcomes:
+          - Write a note of about 100 words on a prose lesson's summary, central idea, purpose, message, style or characters
+          - Write a note on the life and writing of Rajinder Singh Bedi, Syed Abid Husain or Maulvi Abdul Haq
+      - id: cbse-10-urdu-a-ch05-t02
+        title: شعری اسباق اور شعرا پر نوٹ
+        title_en: Notes on poems and poets
+        learning_outcomes:
+          - Write a note of about 100 words on a poem's summary, central idea or message
+          - Write a note on the life and poetry of Sheikh Muhammad Ibrahim Zauq, Fani Badayuni or Muhammad Iqbal
+      - id: cbse-10-urdu-a-ch05-t03
+        title: معاون درسی کتاب کے شعری اسباق پر نوٹ
+        title_en: Notes on poems of the supplementary reader
+        learning_outcomes:
+          - Write a note of about 100 words on a supplementary-reader poem, its message and the poet's life
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-urdu-a-ch06
+    number: 6
+    title: فعل اور فعل کی اقسام
+    title_en: Verbs and their kinds
+    unit: "حصہ ج: عملی قواعد"
+    topics:
+      - id: cbse-10-urdu-a-ch06-t01
+        title: فعل لازم، فعل متعدی، فعل مرکب، فعل ناقص
+        title_en: Intransitive, transitive, compound and incomplete verbs
+        learning_outcomes:
+          - Identify and classify verbs in sentences as intransitive, transitive, compound or incomplete
+      - id: cbse-10-urdu-a-ch06-t02
+        title: فعل معروف اور فعل مجہول
+        title_en: Active and passive verbs
+        learning_outcomes:
+          - Distinguish active from passive verbs and change sentences from one to the other
+      - id: cbse-10-urdu-a-ch06-t03
+        title: فعل ماضی، فعل حال، فعل مستقبل
+        title_en: Past, present and future tense
+        learning_outcomes:
+          - Identify the tense of a verb and rewrite sentences in another tense
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-urdu-a-ch07
+    number: 7
+    title: علم بیان اور علم بدیع
+    title_en: Figures of speech (ilm-e-bayan and ilm-e-badi)
+    unit: "حصہ ج: عملی قواعد"
+    topics:
+      - id: cbse-10-urdu-a-ch07-t01
+        title: تشبیہ (تشبیہ مفرد، تشبیہ مرکب) اور استعارہ
+        title_en: Simile (simple and compound) and metaphor
+        learning_outcomes:
+          - Define tashbeeh and isti'ara and identify them in given couplets
+      - id: cbse-10-urdu-a-ch07-t02
+        title: کنایہ اور تلمیح
+        title_en: Metonymy (kinaya) and allusion (talmeeh)
+        learning_outcomes:
+          - Identify kinaya and talmeeh in verse and explain the reference or implied meaning
+      - id: cbse-10-urdu-a-ch07-t03
+        title: صنعت تضاد اور حسن تعلیل
+        title_en: Antithesis (tazaad) and poetic aetiology (husn-e-ta'leel)
+        learning_outcomes:
+          - Recognise antithesis and husn-e-ta'leel in couplets and explain their effect
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-urdu-a-ch08
+    number: 8
+    title: محاورے، ضرب الامثال اور کہاوتیں
+    title_en: Idioms, proverbs and sayings
+    unit: "حصہ ج: عملی قواعد"
+    topics:
+      - id: cbse-10-urdu-a-ch08-t01
+        title: محاورے کی تعریف، معنی اور جملوں میں استعمال
+        title_en: Idioms - definition, meaning and use in sentences
+        learning_outcomes:
+          - Give the meaning of common Urdu idioms and use them correctly in sentences
+      - id: cbse-10-urdu-a-ch08-t02
+        title: ضرب الامثال اور کہاوتیں
+        title_en: Proverbs and sayings
+        learning_outcomes:
+          - Explain the meaning of proverbs and sayings and use them in a suitable context
+          - Distinguish an idiom from a proverb
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-urdu-a-ch09
+    number: 9
+    title: رموز اوقاف اور شعری اصطلاحات
+    title_en: Punctuation and poetic terms
+    unit: "حصہ ج: عملی قواعد"
+    topics:
+      - id: cbse-10-urdu-a-ch09-t01
+        title: "رموز اوقاف: ختمہ، سکتہ، رابطہ، سوالیہ، فجائیہ"
+        title_en: "Punctuation: full stop, comma, colon, question mark, exclamation mark"
+        learning_outcomes:
+          - Punctuate an unpunctuated Urdu passage correctly
+      - id: cbse-10-urdu-a-ch09-t02
+        title: "شعری اصطلاحات: مصرع، شعر، بند، قافیہ، ردیف، مقطع، مطلع، حسن مطلع"
+        title_en: "Poetic terms: misra, sher, band, qafiya, radeef, maqta, matla, husn-e-matla"
+        learning_outcomes:
+          - Define each poetic term and identify qafiya, radeef, matla and maqta in a given ghazal
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-10-urdu-a-ch10
+    number: 10
+    title: "درسی کتاب: نوائے اردو"
+    title_en: "Prescribed textbook: Nawa-e-Urdu (Class X)"
+    unit: "حصہ د: ادب"
+    topics:
+      - id: cbse-10-urdu-a-ch10-t01
+        title: نثری حصہ (اسباق کی فہرست درکار)
+        title_en: Prose section (lesson list pending NCERT contents page)
+        learning_outcomes:
+          - Answer short questions (2 marks, about 30-40 words) on the content, characters and values of the prescribed prose lessons
+      - id: cbse-10-urdu-a-ch10-t02
+        title: شعری حصہ (اسباق کی فہرست درکار)
+        title_en: Poetry section (lesson list pending NCERT contents page)
+        learning_outcomes:
+          - Answer short questions (2 marks) on the theme, imagery and message of the prescribed poems
+    removed_topics:
+      - چوری اور اس کا کفارہ (آپ بیتی)
+      - چکبست لکھنوی (مضمون) - آل احمد سرور
+      - اشتہار ضرورت نہیں ہے کے - ابن انشا
+      - آندھی (نظم) - کیفی اعظمی
+      - رباعی - فراق
+    literature_texts: []
+  - id: cbse-10-urdu-a-ch11
+    number: 11
+    title: "معاون درسی کتاب: گلزار اردو"
+    title_en: "Supplementary reader: Gulzar-e-Urdu (Class X)"
+    unit: "حصہ د: ادب"
+    topics:
+      - id: cbse-10-urdu-a-ch11-t01
+        title: معاون درسی کتاب کے اسباق (فہرست درکار)
+        title_en: Supplementary reader lessons (lesson list pending NCERT contents page)
+        learning_outcomes:
+          - Answer short questions (2 marks) on the stories, sketches and poems of the supplementary reader
+    removed_topics:
+      - سخی (افسانہ)
+      - من کا طوطا (افسانہ)
+      - دوشالہ (افسانہ)
+      - مرزا چپاتی (خاکہ)
+    literature_texts: []
+  - id: cbse-10-urdu-a-ch12
+    number: 12
+    title: اصناف ادب
+    title_en: Literary genres
+    unit: "حصہ د: ادب"
+    topics:
+      - id: cbse-10-urdu-a-ch12-t01
+        title: "نثری اصناف: افسانہ، سوانح، ڈراما، آپ بیتی"
+        title_en: "Prose genres: short story, biography, drama, autobiography"
+        learning_outcomes:
+          - Write a short note on the definition, features and an example writer of a prose genre
+      - id: cbse-10-urdu-a-ch12-t02
+        title: "شعری اصناف: غزل، نظم"
+        title_en: "Poetic genres: ghazal and nazm"
+        learning_outcomes:
+          - Explain the form and features of the ghazal and the nazm and distinguish between them
+    removed_topics: []
+    literature_texts: []
+removed_topics: []
