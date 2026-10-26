@@ -24,8 +24,8 @@ describe('FileStateStore', () => {
     const rec = await store.putItem({ ...base, key: 'flashcards', status: 'failed' });
     expect(rec.status).toBe('failed');
     expect(Object.keys(rec.items)).toEqual(['notes', 'flashcards']);
-    await store.recordSpend({ at: 'x', run_id: 'r1', provider: 'mock', model: 'mock', tier: 'mid', unit: UNIT, item: 'notes', usage: { input_tokens: 1, cached_input_tokens: 0, output_tokens: 1 }, cost_paise: 2.5, batch: false, simulated: true });
-    await store.recordSpend({ at: 'x', run_id: 'r2', provider: 'azure', model: 'sol', tier: 'mid', unit: UNIT, item: 'notes', usage: { input_tokens: 1, cached_input_tokens: 0, output_tokens: 1 }, cost_paise: 10, batch: false, simulated: false });
+    await store.recordSpend({ at: 'x', run_id: 'r1', provider: 'mock', model: 'mock', tier: 'mid', unit: UNIT, stage: 'generate', item: 'notes', usage: { input_tokens: 1, cached_input_tokens: 0, output_tokens: 1 }, cost_paise: 2.5, batch: false, simulated: true });
+    await store.recordSpend({ at: 'x', run_id: 'r2', provider: 'azure', model: 'sol', tier: 'mid', unit: UNIT, stage: 'generate', item: 'notes', usage: { input_tokens: 1, cached_input_tokens: 0, output_tokens: 1 }, cost_paise: 10, batch: false, simulated: false });
     expect(await store.spentPaise({ simulated: false })).toBe(10);
     expect(await store.spentPaise({ simulated: true })).toBe(2.5);
     expect(await store.spentPaise({ runId: 'r1' })).toBe(2.5);

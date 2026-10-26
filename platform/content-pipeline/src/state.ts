@@ -72,6 +72,7 @@ export interface SpendEntry {
   model: string;
   tier: string;
   unit: string | null;
+  stage: Stage | null;
   item: string | null;
   usage: TokenUsage;
   cost_paise: number;

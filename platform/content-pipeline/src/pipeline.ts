@@ -133,6 +133,7 @@ export async function startRun(p: Pipeline, command: string, scope: Scope): Prom
         model: rec.model,
         tier: rec.tier,
         unit: rec.meta?.unit ?? null,
+        stage: rec.meta?.item ? (rec.meta.item === 'outline' ? 'outline' : 'generate') : null,
         item: rec.meta?.item ?? null,
         usage: rec.usage,
         cost_paise: rec.cost_paise,
