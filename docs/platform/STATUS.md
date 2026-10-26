@@ -99,3 +99,7 @@ Process: after every integration the Lead checks the platform-ci run for the new
 | 2026-10-27 | M2 content | CBSE 10 Maths ch10–ch14 | subject-producer | `platform/subject-producer/cbse-10-maths-c` | `platform/content/authored/maths/` | in progress | — |
 | 2026-10-27 | Ops | Stray local API dev server (PID 3200, :8787) left by web M1 agent; its stop was denied by the permission system — owner to stop it. Locks `C:/Users/Prabhu/soyl-wt/web-platform-m1`. | owner | open |
 | 2026-10-27 | Tests | Intermittent native vitest worker crash (0xC0000409) on Windows under heavy parallel load (db suite); reruns green; Linux CI unaffected | — | watch |
+| 2026-10-27 | M2 content | CBSE 10 Maths ch05, ch07–ch09 (280 Qs; verify + originality clean) → Maths at 10/14 | subject-producer | `platform/subject-producer/cbse-10-maths-b` | `platform/content/authored/maths/` | **merged** d64cbf6 | — |
+| 2026-10-27 | M2 content | CBSE 10 English: Grammar, Writing Skills, A Letter to God, Dust of Snow + English language/literature templates | subject-producer | `platform/subject-producer/cbse-10-english-a` | `platform/content/authored/english-*/` | in progress | — |
+| 2026-10-27 | `02ead5c` | [platform-ci 40344593528](https://github.com/SOYL-AI/soyl-academy-web/actions/runs/40344593528) | **failure** — verify flagged genotype options TT/Tt/tt as duplicates (case-insensitive check: false positive); assembler test assumed missing questions; WEB-11 grep hit a negative test |
+| 2026-10-27 | `edbbcbd` | platform-ci | **success** — all jobs green (fixes above) |
