@@ -43,7 +43,7 @@ Narration: max 72 words, mean 57. Visuals on 16 of 35 slides.
 ## Chapter tests (`tests.json`)
 - **Short (20 marks, 40 min):** A letter, 1 of 2 · B analytical paragraph, 1 of 2 · C 10 one-mark objective items.
 - **Long (40 marks, 90 min):** A two letters (one from each pair) · B two analytical paragraphs (one from each pair) · C 5 of 6 two-mark short answers · D draft-letter case (5) · E 5 objective items.
-- The two tests share no questions. `blueprint_id` is null: the subject's chapter-test blueprints are built for literature chapters; their notes say writing chapters substitute writing tasks for long answers, which these tests do, using the board's 5-mark writing format.
+- The two tests share no questions. `blueprint_id` is null: the subject's chapter-test blueprints describe literature chapters (5-mark extracts, 3-mark shorts, 6-mark longs), and these tests use the board's 5-mark `writing` items (letter, analytical paragraph) instead, so they cannot match item for item.
 
 ## Pitfalls for generated writing content
 1. **"data:" in prose** (e.g. "stay inside the data: no opinions") is read by the lint as a `data:` URL scheme (`banned.url`). Rephrase with a dash or "the figures".

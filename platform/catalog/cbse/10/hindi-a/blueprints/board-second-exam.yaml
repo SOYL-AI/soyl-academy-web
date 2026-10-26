@@ -37,10 +37,10 @@ sections:
       प्रश्न 12 अनुच्छेद, तीन विषयों में से एक (~120 शब्द, 6); प्रश्न 13 पत्र, A/B (~100 शब्द, 5); प्रश्न 14 स्ववृत्त या ई-मेल, A/B (5);
       प्रश्न 15 विज्ञापन या संदेश, A/B (~40 शब्द, 4)।
     items:
-      - {type: long, count: 3, marks_each: 6, internal_choice: {attempt: 1, of: 3}}
-      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
-      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
-      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 3, marks_each: 6, internal_choice: {attempt: 1, of: 3}}
+      - {type: writing, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
 source_status: verified
 source: cbse-sqp-x-hindi-a-2026-27
 notes: >-
@@ -53,10 +53,8 @@ notes: >-
 
   वाक्य भेद, वाच्य, पद परिचय, अलंकार; 4 of 5 each) -> 1-mark short (answers are transformations/identifications, not reliably exact-match);
 
-  पठित गद्यांश/काव्यांश with 5 MCQs -> source-based; रचनात्मक लेखन (अनुच्छेद, पत्र, स्ववृत्त/ई-मेल, विज्ञापन/संदेश) -> long writing tasks
-  (no writing
-
-  type in the contract). Section ids are A-D for खंड क-घ. Theory 80 + internal assessment 20. SQP extracted with legacy-font noise;
+  पठित गद्यांश/काव्यांश with 5 MCQs -> source-based; रचनात्मक लेखन (अनुच्छेद, पत्र, स्ववृत्त/ई-मेल, विज्ञापन/संदेश) -> 'writing' items
+  (contract v2: format, word_limit and rubric). Section ids are A-D for खंड क-घ. Theory 80 + internal assessment 20. SQP extracted with legacy-font noise;
   structure
 
   cross-checked with the marking scheme and the CBSE syllabus.

@@ -18,12 +18,13 @@ sections:
   - id: B
     title: Section B - Grammar and Creative Writing Skills (20)
     instructions: >-
-      Q3 grammar: complete any 10 of 12 tasks (1 mark each). Q4 formal letter (A/B, ~120 words, 5). Q5 analytical paragraph (A/B, ~120
-      words, 5).
+      Q3 grammar: complete any 10 of 12 tasks (1 mark each). Q4 formal letter, A or B (writing, format letter-formal, about 120 words, 5;
+      marking scheme: Format 1, Content 2, Organisation of ideas 1, Accuracy 1). Q5 analytical paragraph on a cue (chart, table, notes or
+      product details), A or B (writing, format paragraph, 100-120 words, 5; marking scheme: Content 2, Organisation of ideas 2, Accuracy 1).
     items:
       - {type: fill-blank, count: 12, marks_each: 1, internal_choice: {attempt: 10, of: 12}}
-      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
-      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
   - id: C
     title: Section C - Literature Textbooks (40)
     instructions: >-
@@ -46,9 +47,8 @@ notes: >-
   short sub-questions); textbook extracts as source-based; the 10-of-12 grammar tasks (gap filling, editing, transformation, some with
   options)
 
-  as 1-mark fill-blank; the formal letter and the analytical paragraph (on a chart/graph/cue - needs an image asset) as 5-mark 'long'
-  writing
-
-  tasks. There is no writing-task QuestionType; a 'writing' type with a rubric (format, content, organisation, accuracy) would fit better.
+  as 1-mark fill-blank; the formal letter (Q4) and the analytical paragraph (Q5, on a chart/graph/cue - needs an image asset or a table)
+  as 5-mark 'writing' items (contract v2: format, word_limit and a rubric that sums to the marks). The rubric splits in the section
+  instructions are from the 2026-27 marking scheme.
 
   No competency weights are published for English. Theory 80 + internal assessment 20 (incl. listening and speaking).

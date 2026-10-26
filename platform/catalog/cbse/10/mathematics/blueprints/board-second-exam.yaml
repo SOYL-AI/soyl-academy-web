@@ -4,6 +4,7 @@ exam: cbse
 class: 10
 subject_id: cbse-10-mathematics
 paper_type: board-second-exam
+variant: {code: "041", name: Standard}
 academic_year: "2026-27"
 duration_min: 180
 total_marks: 80
@@ -58,8 +59,6 @@ notes: >-
   graph work are not set in the 2026-27 SQP. Visually impaired candidates get substitute items (not modelled). Standard (041) and Basic
   (241) share
 
-  one syllabus (subject cbse-10-mathematics); the blueprint contract has no variant field, so the two papers are separate files (board.yaml
-  = Standard,
-
-  board-basic.yaml = Basic). CBSE: Basic remains available to the 2026-27 Class X cohort only. Competency weights from the CBSE design
+  one syllabus (subject cbse-10-mathematics); the two papers are separate files with a
+  'variant' (board*.yaml = Standard 041, board*-basic.yaml = Basic 241; Subject.variants in subjects.yaml). CBSE: Basic remains available to the 2026-27 Class X cohort only. Competency weights from the CBSE design
   table: remembering/understanding 43 marks (54%), applying 19 (24%), analysing/evaluating/creating 18 (22%).

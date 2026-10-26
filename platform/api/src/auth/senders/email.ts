@@ -116,11 +116,50 @@ export class AcsEmailSender implements EmailSender {
   }
 }
 
+/** Escapes text for HTML element content and attribute values. */
+function escapeHtml(s: string): string {
+  return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+}
+
+/** SOYL brand colours (app/globals.css): paper, ink, muted, cobalt. */
+const BRAND = { paper: '#F4F0E7', white: '#FFFFFF', ink: '#171717', muted: '#5E5E59', cobalt: '#3155FF', line: '#E4DED1' } as const;
+
+/**
+ * The sign-in code email: plain text plus a simple HTML part. No images, no links, no tracking pixels
+ * (ACS engagement tracking is disabled per message too), no personal data beyond the address it goes
+ * to. The code appears once in the text part before any other 6-digit number (the mock outbox and
+ * tests read it from there).
+ */
 export function otpEmail(to: string, code: string, minutes: number): EmailMessage {
-  return {
-    to,
-    tag: 'otp',
-    subject: `${code} is your SOYL Academy sign-in code`,
-    text: `Your SOYL Academy sign-in code is ${code}. It expires in ${minutes} minutes.\n\nIf you did not ask for this code, you can ignore this email. Never share this code with anyone.`,
-  };
+  const c = escapeHtml(code);
+  const m = escapeHtml(String(minutes));
+  const text = [
+    `Your SOYL Academy sign-in code is ${code}`,
+    '',
+    `This code expires in ${minutes} minutes. Enter it on the sign-in screen to continue.`,
+    '',
+    'Never share this code with anyone. SOYL Academy staff will never ask you for it.',
+    'If you did not try to sign in, you can ignore this email: nobody can sign in without the code.',
+    '',
+    'SOYL Academy',
+  ].join('\n');
+  const html = `<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Your SOYL Academy sign-in code</title></head>
+<body style="margin:0;padding:0;background:${BRAND.paper};">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:${BRAND.paper};">
+<tr><td align="center" style="padding:32px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:480px;background:${BRAND.white};border:1px solid ${BRAND.line};border-radius:12px;">
+<tr><td style="padding:28px 28px 8px 28px;font-family:Arial,Helvetica,sans-serif;font-size:18px;font-weight:bold;color:${BRAND.ink};">SOYL <span style="color:${BRAND.cobalt};">Academy</span></td></tr>
+<tr><td style="padding:8px 28px 0 28px;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:24px;color:${BRAND.ink};">Your sign-in code is</td></tr>
+<tr><td style="padding:12px 28px;"><div style="font-family:'Courier New',Courier,monospace;font-size:32px;line-height:40px;font-weight:bold;letter-spacing:8px;color:${BRAND.ink};background:${BRAND.paper};border-radius:8px;padding:12px 16px;text-align:center;">${c}</div></td></tr>
+<tr><td style="padding:4px 28px 0 28px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:${BRAND.ink};">This code expires in <strong>${m} minutes</strong>. Enter it on the sign-in screen to continue.</td></tr>
+<tr><td style="padding:16px 28px 0 28px;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:22px;color:${BRAND.ink};"><strong>Never share this code with anyone.</strong> SOYL Academy staff will never ask you for it.</td></tr>
+<tr><td style="padding:16px 28px 28px 28px;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:20px;color:${BRAND.muted};">If you did not try to sign in, you can ignore this email: nobody can sign in without the code.</td></tr>
+</table>
+</td></tr>
+</table>
+</body>
+</html>`;
+  return { to, tag: 'otp', subject: `${code} is your SOYL Academy sign-in code`, text, html };
 }

@@ -5,9 +5,12 @@
 // 2. Bootstrap (idempotent, every run): as the server's Entra administrator (the migrator identity),
 //    creates the Entra principals for the api/worker identities, the NOLOGIN roles soyl_migrator and
 //    soyl_app, the grants from platform/db/README.md "Roles" (DB-1), and the `vector` extension.
-// 3. Runs `db migrate up` (or the command given as arguments, e.g. `migrate status`, `seed catalog`)
-//    with the @soyl/db CLI ($MIGRATE_CLI bundle in the image, tsx from a checkout). Exit code is the
-//    CLI's exit code (0 ok, 1 error, 2 = `migrate status` found a changed migration).
+// 3. Runs the steps (each a separate process; the first failure stops the run, exit code = its code):
+//      (no args)  db migrate up  ->  pg-boss schema install + soyl_app grants (worker `migrate`, DB-1)
+//      release    db seed catalog  ->  content publish --authored (D-026: hand-authored chapters + exemplars)
+//      <args>     db <args>, e.g. `migrate status`, `seed catalog`, `admin bootstrap --email E`
+//    The @soyl/db CLI is $MIGRATE_CLI and the pg-boss/content CLI is $RELEASE_CLI (esbuild bundles in
+//    the image); from a checkout both run through tsx. Exit 2 from `migrate status` = a changed migration.
 //
 // Locally / in CI there is no IDENTITY_ENDPOINT: steps 1-2 are skipped and DATABASE_URL is used as is.
 import { spawnSync } from 'node:child_process';
@@ -83,7 +86,12 @@ async function bootstrap() {
 }
 
 const args = process.argv.slice(2);
-const command = args.length ? args : ['migrate', 'up'];
+const steps =
+  args.length === 0
+    ? [['db', 'migrate', 'up'], ['release', 'pgboss-migrate']]
+    : args[0] === 'release'
+      ? [['db', 'seed', 'catalog'], ['release', 'content', 'publish', '--authored', ...args.slice(1)]]
+      : [['db', ...args]];
 
 try {
   const token = await managedIdentityToken();
@@ -99,20 +107,36 @@ try {
   process.exit(1);
 }
 
-log(`running: db ${command.join(' ')}`);
-let r;
-if (process.env.MIGRATE_CLI) {
-  // Container image: the CLI is a single esbuild bundle.
-  r = spawnSync(process.execPath, [process.env.MIGRATE_CLI, ...command], { stdio: 'inherit', env: process.env });
-} else {
-  // From a checkout: run the TypeScript CLI through tsx (platform/db devDependency).
-  let tsxCli;
-  try {
-    tsxCli = fileURLToPath(import.meta.resolve('tsx/cli'));
-  } catch {
-    tsxCli = fileURLToPath(new URL('../../node_modules/tsx/dist/cli.mjs', import.meta.url));
+let tsxCli;
+function viaTsx(script, cwd, rest) {
+  // From a checkout: run the TypeScript CLIs through tsx (platform devDependency).
+  if (!tsxCli) {
+    try {
+      tsxCli = fileURLToPath(import.meta.resolve('tsx/cli'));
+    } catch {
+      tsxCli = fileURLToPath(new URL('../../node_modules/tsx/dist/cli.mjs', import.meta.url));
+    }
   }
-  const dbDir = fileURLToPath(new URL('../../db/', import.meta.url));
-  r = spawnSync(process.execPath, [tsxCli, 'src/cli.ts', ...command], { cwd: dbDir, stdio: 'inherit', env: process.env });
+  return spawnSync(process.execPath, [tsxCli, script, ...rest], { cwd, stdio: 'inherit', env: process.env });
 }
-process.exit(r.status ?? 1);
+
+function run([tool, ...rest]) {
+  log(`running: ${tool} ${rest.join(' ')}`);
+  if (tool === 'db') {
+    // Container image: the CLI is a single esbuild bundle.
+    if (process.env.MIGRATE_CLI) return spawnSync(process.execPath, [process.env.MIGRATE_CLI, ...rest], { stdio: 'inherit', env: process.env });
+    return viaTsx('src/cli.ts', fileURLToPath(new URL('../../db/', import.meta.url)), rest);
+  }
+  if (process.env.RELEASE_CLI) return spawnSync(process.execPath, [process.env.RELEASE_CLI, ...rest], { stdio: 'inherit', env: process.env });
+  return viaTsx('infra/docker/release-cli.ts', fileURLToPath(new URL('../../', import.meta.url)), rest);
+}
+
+for (const step of steps) {
+  const r = run(step);
+  if (r.status !== 0) {
+    log(`step failed: ${step.join(' ')} (exit ${r.status ?? 'signal'})`);
+    process.exit(r.status ?? 1);
+  }
+}
+log('done');
+process.exit(0);

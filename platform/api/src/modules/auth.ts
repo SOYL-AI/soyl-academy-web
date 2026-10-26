@@ -6,10 +6,15 @@
  *   GET  /v1/auth/google/start          GET  /v1/auth/google/callback      Google OIDC (PKCE+state+nonce)
  *   POST /v1/auth/sign-out
  *   POST /v1/auth/link/{phone,email}/send-otp, /verify, POST /v1/auth/unlink   (signed in, fresh session)
+ *   GET  /v1/auth/methods               which sign-in methods are enabled (public, cacheable)
+ *
+ * AUTH_METHODS (D-031) switches methods off: their routes answer 404 `method_disabled` after the
+ * edge, CSRF and rate-limit checks and before the body is read. Unlink stays available so a user can
+ * always remove a method.
  *
  * Auth bodies are never logged (API-14). Send responses do not reveal whether an account exists (AUTH-5).
  */
-import type { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify';
+import type { FastifyInstance, FastifyReply, FastifyRequest, onRequestHookHandler } from 'fastify';
 import type { ZodTypeProvider } from 'fastify-type-provider-zod';
 import { z } from 'zod/v4';
 import { OAUTH, safeReturnTo } from '@soyl/shared/config/security';
@@ -24,6 +29,10 @@ import { sessionUser } from '../domain/profile';
 import { SignInRefused, type SignInMethod } from '../auth/identity';
 import { OAuthFlowError } from '../auth/google';
 import type { OtpChannel } from '../auth/otp';
+import { AUTH_METHODS, type AuthMethod } from '../config';
+
+/** Changes only with a deploy; short enough that switching a method on shows up within minutes. */
+const METHODS_CACHE_CONTROL = 'public, max-age=300, s-maxage=300';
 
 const PhoneSendBody = z.strictObject({ phoneNumber: z.string().min(8).max(20) });
 const PhoneVerifyBody = z.strictObject({ phoneNumber: z.string().min(8).max(20), code: OtpCode, returnTo: z.string().max(2048).optional() });
@@ -42,6 +51,14 @@ const GoogleCallbackQuery = z.object({
   error: z.string().max(200).optional(),
 });
 const MethodsResponse = z.object({ phone: z.string().nullable(), email: z.string().nullable(), google: z.boolean() }).meta({ id: 'SignInMethods' });
+const EnabledMethodsResponse = z
+  .object({
+    methods: z.array(z.enum(AUTH_METHODS)).describe('Enabled sign-in methods, in display order'),
+    email: z.boolean(),
+    phone: z.boolean(),
+    google: z.boolean(),
+  })
+  .meta({ id: 'AuthMethods' });
 
 const linkPolicy = (): RoutePolicy => ({ ...policies.member(), rateLimit: { buckets: ['auth.ip'], failClosed: true }, fresh: true });
 
@@ -52,6 +69,25 @@ function ctxOf(request: FastifyRequest) {
 export function registerAuthRoutes(appIn: FastifyInstance, services: Services, deps: AppDeps): void {
   const app = appIn.withTypeProvider<ZodTypeProvider>();
   const { config, db } = deps;
+
+  /** Route-level gate: runs after the global edge/policy hooks, before body parsing and validation. */
+  const methodGate =
+    (method: AuthMethod): onRequestHookHandler =>
+    async () => {
+      if (!config.authMethods.includes(method)) throw new ApiProblem('method_disabled');
+    };
+  const gate = (method: AuthMethod) => ({ onRequest: methodGate(method) });
+
+  app.get('/v1/auth/methods', {
+    config: { policy: policies.publicRead() },
+    schema: { tags: ['auth'], summary: 'Enabled sign-in methods (the login sheet hides the others)', response: withProblems({ 200: EnabledMethodsResponse }) },
+    handler: async (_request, reply) => {
+      // Public and identical for everyone; the onSend hook keeps it only for guests (API-4).
+      reply.header('cache-control', METHODS_CACHE_CONTROL);
+      const on = (m: AuthMethod) => config.authMethods.includes(m);
+      return { methods: AUTH_METHODS.filter(on), email: on('email'), phone: on('phone'), google: on('google') };
+    },
+  });
 
   async function completeSignIn(user: AuthUser, method: SignInMethod, created: boolean, request: FastifyRequest, reply: FastifyReply) {
     const session = await services.sessions.create(user, request, reply);
@@ -68,12 +104,14 @@ export function registerAuthRoutes(appIn: FastifyInstance, services: Services, d
   };
 
   app.post('/v1/auth/phone/send-otp', {
+    ...gate('phone'),
     config: { policy: policies.auth() },
     schema: { tags: ['auth'], summary: 'Send a sign-in code by SMS (+91 mobiles only)', body: PhoneSendBody, response: withProblems({ 200: OtpSentResponse }) },
     handler: async (request) => otpSend('phone', 'sign-in')(request, request.body.phoneNumber),
   });
 
   app.post('/v1/auth/phone/verify', {
+    ...gate('phone'),
     config: { policy: policies.auth() },
     schema: { tags: ['auth'], summary: 'Verify an SMS code and sign in (creates the account on first use)', body: PhoneVerifyBody, response: withProblems({ 200: SignInResponse }) },
     handler: async (request, reply) => {
@@ -88,12 +126,14 @@ export function registerAuthRoutes(appIn: FastifyInstance, services: Services, d
 
   // ---- email OTP ----------------------------------------------------------------------------------
   app.post('/v1/auth/email/send-otp', {
+    ...gate('email'),
     config: { policy: policies.auth() },
     schema: { tags: ['auth'], summary: 'Send a sign-in code by email', body: EmailSendBody, response: withProblems({ 200: OtpSentResponse }) },
     handler: async (request) => otpSend('email', 'sign-in')(request, request.body.email),
   });
 
   app.post('/v1/auth/email/verify', {
+    ...gate('email'),
     config: { policy: policies.auth() },
     schema: { tags: ['auth'], summary: 'Verify an email code and sign in (creates the account on first use)', body: EmailVerifyBody, response: withProblems({ 200: SignInResponse }) },
     handler: async (request, reply) => {
@@ -114,6 +154,7 @@ export function registerAuthRoutes(appIn: FastifyInstance, services: Services, d
   };
 
   app.get('/v1/auth/google/start', {
+    ...gate('google'),
     config: { policy: policies.auth() },
     schema: {
       tags: ['auth'],
@@ -138,6 +179,7 @@ export function registerAuthRoutes(appIn: FastifyInstance, services: Services, d
   });
 
   app.get('/v1/auth/google/callback', {
+    ...gate('google'),
     // OAuth callback: a GET that signs in. Protected by single-use state bound to a signed cookie, PKCE and nonce (AUTH-6, ADR-002).
     config: { policy: policies.auth() },
     schema: {
@@ -197,12 +239,14 @@ export function registerAuthRoutes(appIn: FastifyInstance, services: Services, d
 
   // ---- linking (AUTH-7) ---------------------------------------------------------------------------
   app.post('/v1/auth/link/phone/send-otp', {
+    ...gate('phone'),
     config: { policy: linkPolicy() },
     schema: { tags: ['auth'], summary: 'Send a code to a phone number to add it to your account', body: PhoneSendBody, response: withProblems({ 200: OtpSentResponse }) },
     handler: async (request) => otpSend('phone', 'link')(request, request.body.phoneNumber),
   });
 
   app.post('/v1/auth/link/phone/verify', {
+    ...gate('phone'),
     config: { policy: linkPolicy() },
     schema: { tags: ['auth'], summary: 'Verify the code and add the phone number to your account', body: LinkVerifyPhone, response: withProblems({ 200: MethodsResponse }) },
     handler: async (request) => {
@@ -214,12 +258,14 @@ export function registerAuthRoutes(appIn: FastifyInstance, services: Services, d
   });
 
   app.post('/v1/auth/link/email/send-otp', {
+    ...gate('email'),
     config: { policy: linkPolicy() },
     schema: { tags: ['auth'], summary: 'Send a code to an email address to add it to your account', body: EmailSendBody, response: withProblems({ 200: OtpSentResponse }) },
     handler: async (request) => otpSend('email', 'link')(request, request.body.email),
   });
 
   app.post('/v1/auth/link/email/verify', {
+    ...gate('email'),
     config: { policy: linkPolicy() },
     schema: { tags: ['auth'], summary: 'Verify the code and add the email address to your account', body: LinkVerifyEmail, response: withProblems({ 200: MethodsResponse }) },
     handler: async (request) => {

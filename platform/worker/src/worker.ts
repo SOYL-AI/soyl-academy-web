@@ -8,7 +8,7 @@
 import { PgBoss } from 'pg-boss';
 import type { ConstructorOptions } from 'pg-boss';
 import type pg from 'pg';
-import type { Database } from '@soyl/db';
+import { pgConnectionConfig, type Database, type PgPassword } from '@soyl/db';
 import type { WorkerConfig } from './config';
 import { checkDatabase, createHealthServer } from './health';
 import { allJobs } from './jobs';
@@ -21,6 +21,8 @@ export interface WorkerDeps {
   config: WorkerConfig;
   /** Connection string for pg-boss's own small pool. */
   databaseUrl: string;
+  /** DATABASE_AUTH=entra: token function used for pg-boss's pool too. */
+  databasePassword?: PgPassword;
   /** App pool for job handlers and /readyz. `stop()` ends it. */
   db: Database;
   pool: pg.Pool;
@@ -54,9 +56,10 @@ export interface RunningWorker {
   stop(): Promise<void>;
 }
 
-export function bossOptions(config: WorkerConfig, databaseUrl: string): ConstructorOptions {
+export function bossOptions(config: WorkerConfig, databaseUrl: string, password?: PgPassword): ConstructorOptions {
   return {
-    connectionString: databaseUrl,
+    // A password function needs the URL parsed into fields (pg would override it from the URL).
+    ...(password === undefined ? { connectionString: databaseUrl } : (pgConnectionConfig(databaseUrl, password) as Partial<ConstructorOptions>)),
     schema: config.pgboss.schema,
     migrate: config.pgboss.migrate,
     // Supervision (expiry, retention, archiving) and cron evaluation are DML on the pg-boss schema.
@@ -75,7 +78,7 @@ export async function startWorker(deps: WorkerDeps): Promise<RunningWorker> {
   const now = deps.now ?? (() => new Date());
   const state: WorkerState = { started: false, stopping: false, lastBossOkAt: null, lastJobOkAt: null };
 
-  const boss = new PgBoss({ ...bossOptions(config, deps.databaseUrl), ...deps.bossOptions });
+  const boss = new PgBoss({ ...bossOptions(config, deps.databaseUrl, deps.databasePassword), ...deps.bossOptions });
   boss.on('error', (err) => log.error('pg-boss error', { err: errorFields(err) }));
   boss.on('warning', (w) => log.warn('pg-boss warning', { message: w.message }));
 
@@ -103,7 +106,7 @@ export async function startWorker(deps: WorkerDeps): Promise<RunningWorker> {
   try {
     await boss.start({ attempts: 3 });
     state.lastBossOkAt = new Date();
-    jobs = await registerJobs(boss, deps.jobs ?? allJobs({ unconsentedAccountTtlDays: config.unconsentedAccountTtlDays }), {
+    jobs = await registerJobs(boss, deps.jobs ?? allJobs({ unconsentedAccountTtlDays: config.unconsentedAccountTtlDays, unconsentedPurge: config.unconsentedPurge }), {
       db: deps.db,
       log,
       now,
@@ -124,6 +127,7 @@ export async function startWorker(deps: WorkerDeps): Promise<RunningWorker> {
 
   heartbeatTimer = setInterval(() => void heartbeat(), deps.heartbeatMs ?? HEARTBEAT_MS);
   heartbeatTimer.unref();
+  if (!config.unconsentedPurge) log.warn('AUTH-15 unconsented-account purge is OFF (CONSENT_PROVIDER=unavailable or UNCONSENTED_PURGE=off)');
   log.info('worker started', { appEnv: config.appEnv, schema: config.pgboss.schema, migrate: config.pgboss.migrate, healthPort: port });
 
   let stopping: Promise<void> | null = null;

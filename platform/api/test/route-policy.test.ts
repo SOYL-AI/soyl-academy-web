@@ -44,6 +44,7 @@ describe('route policy (API-6)', () => {
       [
         'GET /v1/auth/google/callback',
         'GET /v1/auth/google/start',
+        'GET /v1/auth/methods', // read-only: which methods are enabled (signs nobody in)
         'POST /v1/auth/email/send-otp',
         'POST /v1/auth/email/verify',
         'POST /v1/auth/link/email/send-otp',

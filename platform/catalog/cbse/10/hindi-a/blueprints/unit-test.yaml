@@ -11,39 +11,35 @@ mark_shares: {}
 scope: unit
 sections:
   - id: A
-    title: Section A - Reading (10)
-    instructions: One unseen passage with objective and short sub-questions.
+    title: खंड क - अपठित बोध (7)
+    instructions: एक अपठित गद्यांश या काव्यांश; बहुविकल्पी और लघु उत्तरीय उपप्रश्न।
     items:
-      - {type: case-based, count: 1, marks_each: 10}
+      - {type: case-based, count: 1, marks_each: 7}
   - id: B
-    title: Section B - Extract-based (2 x 5)
-    instructions: Two extract questions; in each answer one of the two extracts given.
+    title: खंड ख - व्यावहारिक व्याकरण (8)
+    instructions: दो उपविषय; प्रत्येक में पाँच में से किन्हीं चार के उत्तर दीजिए (1 अंक)।
     items:
-      - {type: source-based, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 10, marks_each: 1, internal_choice: {attempt: 4, of: 5}}
   - id: C
-    title: Section C - Short answer
-    instructions: Any five of six 2-mark questions and any two of three 3-mark questions.
+    title: खंड ग - पाठ्यपुस्तक एवं पूरक पाठ्यपुस्तक (19)
+    instructions: >-
+      पठित गद्यांश/काव्यांश (5 बहुविकल्पी, 5); चार में से तीन लघु उत्तरीय प्रश्न (25-30 शब्द, 2-2); कृतिका, तीन में से दो (50-60 शब्द, 4-4)।
     items:
-      - {type: short, count: 6, marks_each: 2, internal_choice: {attempt: 5, of: 6}}
-      - {type: short, count: 3, marks_each: 3, internal_choice: {attempt: 2, of: 3}}
+      - {type: source-based, count: 1, marks_each: 5}
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 3, of: 4}}
+      - {type: long, count: 3, marks_each: 4, internal_choice: {attempt: 2, of: 3}}
   - id: D
-    title: Section D - Long answer / writing
-    instructions: One of two 6-mark and one of two 8-mark questions (literature long answer or writing task).
+    title: खंड घ - रचनात्मक लेखन (16)
+    instructions: अनुच्छेद, तीन विषयों में से एक (~120 शब्द, 6); पत्र, दो में से एक (~100 शब्द, 5); स्ववृत्त या ई-मेल, दो में से एक (5)।
     items:
-      - {type: long, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
-      - {type: long, count: 2, marks_each: 8, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 3, marks_each: 6, internal_choice: {attempt: 1, of: 3}}
+      - {type: writing, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
 source_status: unverified
 source: lead-default
 notes: >-
   SOYL default modelled on the CBSE board pattern (CONTEXT section 9: "use a generic blueprint per board and subject, stored as editable
-
-  config"); not an official CBSE paper. Item types and marks follow the 2026-27 CBSE board style (MCQ/assertion-reason 1, short 2-3, long 5,
-
-  case-based 4, about one-third internal choice) so practice transfers to the board paper. Subject-family override (languages) of the class
-  default in platform/catalog/cbse/blueprints/<class>/. Built for literature chapters: extract-based (source-based) questions, short answers
-  and a long answer;
-
-  for grammar or writing chapters the assembler substitutes items of the same marks from that chapter (1-mark grammar items for a 5-mark
-  extract
-
-  group, writing tasks for long answers). Answers are written in the subject's language.
+  config"); not an official CBSE paper. A 50-mark cut of the 2026-27 Hindi A board paper with the same item marks: a 7-mark अपठित passage
+  (case-based), 1-mark grammar tasks four of five, a 5-mark पठित गद्यांश, 2-mark and 4-mark answers, and the रचनात्मक लेखन tasks as
+  'writing' items (अनुच्छेद 6, पत्र 5, स्ववृत्त/ई-मेल 5). The scope must include reading, grammar and writing chapters as well as textbook
+  chapters for the paper to fill.

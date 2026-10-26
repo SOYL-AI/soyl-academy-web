@@ -22,10 +22,10 @@ sections:
       Q3 application (~50 words, 3). Q4 factual description (~100 words, 4). Q5 letter, A or B (~120 words, 7). Q6 article or story, A or B
       (~150 words, 8).
     items:
-      - {type: short, count: 1, marks_each: 3}
-      - {type: long, count: 1, marks_each: 4}
-      - {type: long, count: 2, marks_each: 7, internal_choice: {attempt: 1, of: 2}}
-      - {type: long, count: 2, marks_each: 8, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 1, marks_each: 3}
+      - {type: writing, count: 1, marks_each: 4}
+      - {type: writing, count: 2, marks_each: 7, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 2, marks_each: 8, internal_choice: {attempt: 1, of: 2}}
   - id: C
     title: Section C - Grammar (10)
     instructions: Q7 gap filling (3 x 1). Q8 omission editing (4 x 1). Q9 reordering (1) and reported speech (2 x 1).
@@ -45,7 +45,5 @@ source: cbse-sqp-x-english-communicative-2026-27
 notes: >-
   12 questions in four sections. FORMAT MAPPING: unseen passages -> case-based; literature extracts -> source-based; grammar gap filling,
 
-  omission editing and reordering/reporting -> 1-mark fill-blank; the short application (3 marks) -> short; factual description (4), letter
-  (7) and
-
-  article/story (8) -> long writing tasks (no writing type in the contract). No competency weights are published. Theory 80 + IA 20.
+  omission editing and reordering/reporting -> 1-mark fill-blank; the application (3), factual description (4), letter
+  (7) and article/story (8) -> 'writing' items (contract v2: format, word_limit and rubric). No competency weights are published. Theory 80 + IA 20.

@@ -1,12 +1,20 @@
 /**
- * External providers from config (SMS, email, consent). GEN-3: every mock refuses to start when
- * APP_ENV=prod; in `stg` the mock SMS sender delivers only to the reserved test range. Mock OAuth is
- * refused by config (GOOGLE_ISSUER must be Google's in prod).
+ * External providers from config (SMS, email, consent). GEN-3: every mock for an ENABLED sign-in
+ * method refuses to start when APP_ENV=prod; in `stg` the mock SMS sender delivers only to the
+ * reserved test range. Disabled methods (AUTH_METHODS) get a non-delivering sender instead. Mock OAuth
+ * is refused by config (GOOGLE_ISSUER must be Google's in prod while Google is enabled).
+ *
+ * ACS email authenticates with the API's managed identity (token for https://communication.azure.com)
+ * unless an access key is configured (local only; config refuses a key in production).
  */
+import { AZURE_RESOURCES, defaultTokenProvider, type TokenProvider } from '@soyl/shared/azure/identity';
 import type { Config } from './config';
-import { AcsEmailSender, MockEmailSender } from './auth/senders/email';
-import { MockSmsSender, Msg91SmsSender } from './auth/senders/sms';
+import { AcsEmailSender, MockEmailSender, type EmailSender } from './auth/senders/email';
+import { DisabledEmailSender, DisabledSmsSender } from './auth/senders/disabled';
+import { MockSmsSender, Msg91SmsSender, type SmsSender } from './auth/senders/sms';
 import { MockConsentProvider } from './consent/mock';
+import { UnavailableConsentProvider } from './consent/unavailable';
+import type { ConsentProvider } from './consent/provider';
 import type { Providers } from './services';
 
 export class MockInProductionError extends Error {
@@ -16,31 +24,53 @@ export class MockInProductionError extends Error {
   }
 }
 
-export function createProviders(config: Config): Providers {
+export interface ProviderOptions {
+  /** Managed-identity token provider (tests inject a fake). Default: one per process. */
+  tokens?: TokenProvider;
+  fetch?: typeof fetch;
+}
+
+export function createProviders(config: Config, opts: ProviderOptions = {}): Providers {
   const refuseMock = (what: string) => {
     if (config.isProduction) throw new MockInProductionError(what);
   };
+  const enabled = (m: Config['authMethods'][number]) => config.authMethods.includes(m);
 
-  let sms;
-  if (config.sms.provider === 'msg91') {
+  let sms: SmsSender;
+  if (!enabled('phone')) {
+    sms = new DisabledSmsSender();
+  } else if (config.sms.provider === 'msg91') {
     sms = new Msg91SmsSender({ authKey: config.sms.apiKey!, templateIds: config.sms.templateIds, senderId: config.sms.senderId, baseUrl: config.sms.baseUrl });
   } else {
     refuseMock('SMS_PROVIDER=mock');
     sms = new MockSmsSender(config.appEnv === 'stg');
   }
 
-  let email;
+  let email: EmailSender;
   if (config.email.provider === 'acs') {
-    email = new AcsEmailSender({ endpoint: config.email.acsEndpoint!, accessKey: config.email.acsAccessKey, from: config.email.from });
+    const tokens = config.email.acsAccessKey ? undefined : (opts.tokens ?? defaultTokenProvider());
+    email = new AcsEmailSender({
+      endpoint: config.email.acsEndpoint!,
+      from: config.email.from,
+      accessKey: config.email.acsAccessKey,
+      getToken: tokens ? async () => (await tokens.getToken(AZURE_RESOURCES.communication)).token : undefined,
+      fetch: opts.fetch,
+    });
+  } else if (!enabled('email')) {
+    email = new DisabledEmailSender();
   } else {
     refuseMock('EMAIL_PROVIDER=mock');
     email = new MockEmailSender();
   }
 
-  // OA-08: the owner's consent system has no adapter yet, so the mock is the only provider. This means
-  // production cannot start until the real adapter exists — intended (fail closed).
-  refuseMock('CONSENT_PROVIDER=mock');
-  const consent = new MockConsentProvider(config.consent.mockDefault, config.isLocal);
+  let consent: ConsentProvider;
+  if (config.consent.provider === 'unavailable') {
+    // OA-08 still open: fail-closed provider, allowed in production (D-031).
+    consent = new UnavailableConsentProvider();
+  } else {
+    refuseMock('CONSENT_PROVIDER=mock');
+    consent = new MockConsentProvider(config.consent.mockDefault, config.isLocal);
+  }
 
   return { sms, email, consent };
 }

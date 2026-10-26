@@ -1,2 +1,5 @@
-# Test snapshots are written with LF by vitest; keep them LF in the working tree on Windows too.
-*.snap text eol=lf
+# Shell scripts run inside Linux images (az acr build uploads the working tree as-is): always LF,
+# even on Windows checkouts with core.autocrlf=true.
+*.sh text eol=lf
+Dockerfile text eol=lf
+*.Dockerfile text eol=lf
