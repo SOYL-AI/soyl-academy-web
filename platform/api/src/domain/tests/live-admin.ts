@@ -40,6 +40,8 @@ export interface ScheduleOptions {
   allowPracticePool?: boolean;
   /** Paper type when the subject's board blueprint cannot be filled (local dev: 'unit-test'). */
   fallbackPaper?: PaperType;
+  /** Local dev only: a paper may reuse items of other live papers (a dev sitting on a small bank). */
+  allowRepeats?: boolean;
   production?: boolean;
   now?: Date;
 }
@@ -70,6 +72,7 @@ async function liveBank(db: Database, year: string, subjectKey: string, pools: s
 
 export async function scheduleLiveMocks(db: Database, opts: ScheduleOptions): Promise<ScheduledEvent[]> {
   if (opts.allowPracticePool && opts.production) throw new Error('allowPracticePool is refused in production (AC-11: live items must not be practice items)');
+  if (opts.allowRepeats && opts.production) throw new Error('allowRepeats is refused in production (no repeats across the live series)');
   const sittings = opts.sittings ?? configuredSittings();
   const subjectsInScope = opts.catalog.subjects.filter((s) => (opts.subjects ? opts.subjects.includes(s.id) : (LIVE_MOCK_CLASSES as readonly number[]).includes(s.class) && s.has_board_exam) && opts.catalog.syllabi.has(s.id));
   const out: ScheduledEvent[] = [];
@@ -111,7 +114,7 @@ export async function scheduleLiveMocks(db: Database, opts: ScheduleOptions): Pr
         const attempt = (paper: PaperType, chapters: string[]) => {
           const bp = blueprintFor(opts.catalog, subject, paper);
           if (!bp) return { ok: false as const, requests: [] as GenerationRequest[], note: `no ${paper} blueprint` };
-          const r = assemblePaper({ id: testKey, title: `${s.title} — ${subject.name}`, blueprint: bp, subjectId: subject.id, chapters, seed: `${testKey}@${opts.year}`, exclude: used }, bank);
+          const r = assemblePaper({ id: testKey, title: `${s.title} — ${subject.name}`, blueprint: bp, subjectId: subject.id, chapters, seed: `${testKey}@${opts.year}`, exclude: opts.allowRepeats ? new Set<string>() : used }, bank);
           return r.ok ? { ...r, note: `${paper} paper` } : { ...r, note: `${paper} blueprint cannot be filled` };
         };
         let r = attempt('board', assessed);
