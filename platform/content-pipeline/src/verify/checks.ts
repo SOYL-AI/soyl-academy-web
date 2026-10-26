@@ -37,6 +37,8 @@ export interface Flag {
 type Part = AlternativeQuestion & { passage_md?: string; children?: (AlternativeQuestion & { alternatives?: AlternativeQuestion[] })[] };
 
 const norm = (s: string) => s.toLowerCase().replace(/\s+/g, ' ').replace(/[.。।!?]+$/u, '').trim();
+/** Case matters for option identity: genotypes (TT, Tt, tt), chemical symbols (Co, CO), variables (a, A). */
+const normKeepCase = (s: string) => s.replace(/\s+/g, ' ').replace(/[.。।!?]+$/u, '').trim();
 
 /** Every maths span in a Markdown text. */
 function mathSpans(md: string): string[] {
@@ -118,7 +120,7 @@ function checkPart(q: Part, ref: string, flags: Flag[], parentContext: string) {
   if (q.options.length) {
     const seen = new Map<string, string>();
     for (const o of q.options) {
-      const t = norm(o.text_md);
+      const t = normKeepCase(o.text_md);
       if (t && seen.has(t)) add('objective.options', 'major', `options ${seen.get(t)} and ${o.id} have the same text`);
       seen.set(t, o.id);
     }

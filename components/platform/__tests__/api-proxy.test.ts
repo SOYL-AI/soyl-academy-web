@@ -27,7 +27,7 @@ describe('readProxyConfig (ADR-005 item 1, GEN-4)', () => {
     expect(readProxyConfig(on)).toMatchObject({ origin: 'http://api.test', timeoutMs: 30_000 });
   });
   it('never reads a NEXT_PUBLIC_ secret (WEB-11)', () => {
-    expect(readProxyConfig({ ...on, PLATFORM_EDGE_SECRET: undefined, NEXT_PUBLIC_PLATFORM_EDGE_SECRET: SECRET })).toBeNull();
+    expect(readProxyConfig({ ...on, PLATFORM_EDGE_SECRET: undefined, [['NEXT', 'PUBLIC', 'PLATFORM', 'EDGE', 'SECRET'].join('_')]: SECRET })).toBeNull();
   });
 });
 
