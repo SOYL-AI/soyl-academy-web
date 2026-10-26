@@ -24,8 +24,8 @@ Narration: max 72 words, mean 57. Visuals on 16 of 35 slides.
 
 | Type | Count | Notes |
 |---|---|---|
-| writing, letter-formal | 8 | 2 each: complaint (company, municipal officer), to the editor (noise, library), placing an order (books, sports goods), enquiry (coding camp, school tour). Models 103–121 words including the format lines. |
-| writing, paragraph | 8 | bar charts (museum visitors, monsoon rainfall, EV sales), tables (travel survey, screen time, electricity mix, canteen), then-and-now village plan, cues (millets). Models 108–123 words. Data visuals in `assets` (`plot` bar series, `table`). |
+| writing, letter-formal | 8 | 2 each: complaint (water purifier, municipal officer), to the editor (noise, library), placing an order (books, sports goods), enquiry (coding camp, school tour). Models 103–121 words including the format lines. |
+| writing, paragraph | 8 | bar charts (phone ownership, monsoon rainfall, EV sales), tables (travel survey, screen time, electricity mix, canteen), then-and-now village plan, cues (millets). Models 108–123 words. Data visuals in `assets` (`plot` bar series, `table`). |
 | mcq | 16 | format, register, subject lines, overview, trend words, comparisons, percentage points, correlation; keys a/b/c/d = 4/4/4/4 |
 | fill-blank | 6 | formal phrases, *by / to*, proportions, noun forms; alternatives accepted |
 | ordering | 3 | letter parts; paragraph moves; six sentences of a paragraph |
@@ -56,7 +56,8 @@ Narration: max 72 words, mean 57. Visuals on 16 of 35 slides.
 ## Verifier record (author pass, 2026-10-27)
 - Every objective item and case part re-answered from its stem; every writing model checked against its cues (all used), the format (8 parts in order), the rubric and the word limit; every number in the analytical models recomputed.
 - **Fixed:** a screen-time model sentence whose arithmetic was correct but meaningless ("equal … minus fifteen points") rewritten; the overview MCQ's key said "grew steadily" though the stem gives only two points → "grew substantially"; three uses of "data:" that tripped `banned.url`; assertion-reason keys rebalanced (a, d, a, d, d → a, d, b, d, c); competency labels revised after the lint band warning (74% → 61%).
-- **Pipeline checks:** `content lint --exemplars` 0 errors, 0 warnings for this unit; `verify --authored` and `originality --authored` results are in the handoff.
+- **Answer-leak fix (Lead, API contract DB-6):** the deck's worked examples (the study-table complaint, the museum chart, the editor and order letters, the travel table) had become practice items whose model answers repeated slide sentences. The complaint and the chart practice items now use new tasks (water purifier; phone ownership); the editor, order and travel models were reworded. The builder now fails on any key-side sentence of 60+ characters that appears in served content.
+- **Pipeline checks:** `content lint --exemplars` 0 errors, 0 warnings for this unit; `verify --authored` 66/66 pass; `originality --authored` 0 errors; API `content.test.ts` (no answers in served content) passes.
 
 ## Known gaps
 - **Map input:** the syllabus allows a map; there is no map visual here. The "then-and-now" village plan is given as a table. A drawn plan (SVG) would need the SVG allow-list review; left for a later pass.

@@ -446,7 +446,7 @@ const T_SHORT = test({
   duration: 40,
   sections: [
     { id: 'A', title: 'Section A — Formal letter (5 marks)', instr: 'Attempt any one in 100–120 words.', items: [{ attempt: 1, keys: ['let_table', 'let_enquiry_camp'] }] },
-    { id: 'B', title: 'Section B — Analytical paragraph (5 marks)', instr: 'Attempt any one in 100–120 words.', items: [{ attempt: 1, keys: ['par_museum', 'par_ev'] }] },
+    { id: 'B', title: 'Section B — Analytical paragraph (5 marks)', instr: 'Attempt any one in 100–120 words.', items: [{ attempt: 1, keys: ['par_phones', 'par_ev'] }] },
     { id: 'C', title: 'Section C — Objective questions (1 mark each)', instr: 'Answer all questions.', items: ['fmt_subject', 'fmt_close', 'fmt_register', 'fmt_purpose', 'fmt_fb_phrase', 'ap_overview', 'ap_verb', 'ap_adverb', 'ap_fb_by_to', 'ap_tf_all'] },
   ],
 });

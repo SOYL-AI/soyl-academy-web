@@ -422,6 +422,28 @@ export function build({ dir, decks, notes: n, flashcards, tests, checks = {} }) 
   for (const q of S.questions) {
     for (const f of deterministicChecks(q)) (f.severity === 'minor' ? warn : errs).push(`verify ${q.id} ${f.check}: ${f.message}`);
   }
+  // Answer-leak contract (api/test/content.test.ts, DB-6): key-side text (solution_md, model answers,
+  // child solutions) of 60+ characters must not appear in served content (decks, notes, flashcards,
+  // stems, options, passages). Checked per sentence, which is stricter than the API's whole-string test.
+  {
+    const strip = (q) => ({ s: q.stem_md, o: q.options, m: q.match_right, p: q.passage_md, c: (q.children ?? []).map((c) => ({ s: c.stem_md, o: c.options, m: c.match_right })) });
+    const served = JSON.stringify({ decks, n, flashcards, q: S.questions.map(strip) }).replace(/\\n/g, ' ').replace(/\\"/g, '"').replace(/\*/g, '');
+    const keyTexts = [];
+    for (const q of S.questions) {
+      keyTexts.push([q.id, q.solution_md], [q.id, q.answer.model_answer_md ?? '']);
+      for (const c of q.children) {
+        keyTexts.push([`${q.id}/${c.id}`, c.solution_md], [`${q.id}/${c.id}`, c.answer.model_answer_md ?? '']);
+        for (const a of c.alternatives ?? []) keyTexts.push([`${q.id}/${a.id}`, a.solution_md]);
+      }
+    }
+    for (const [id, t] of keyTexts) {
+      if (t.length >= 60 && served.includes(t.replace(/\*/g, ''))) errs.push(`answer leak ${id}: whole key text appears in served content`);
+      for (const sent of t.split(/(?<=[.!?])\s+|\n+/)) {
+        const s = sent.trim().replace(/\*/g, '');
+        if (s.length >= 60 && served.includes(s)) errs.push(`answer leak ${id}: "${s.slice(0, 70)}…" also appears in served content`);
+      }
+    }
+  }
   // Schemas.
   const pr = ChapterRelease.safeParse(release);
   if (!pr.success) errs.push(...pr.error.issues.slice(0, 15).map((i) => `ChapterRelease ${i.path.join('.')}: ${i.message}`));

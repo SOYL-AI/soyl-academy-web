@@ -41,7 +41,8 @@ The poem is eight lines and about thirty words, so **any** run of its words is a
 - Every item re-answered from its stem; form facts and symbolism checked; every student-facing string scanned for runs of the poem's words.
 - **Reproduction fixes:** "hemlock tree" (a two-word run of the poem, 4 places) → "hemlock"; "change of mood" (a phrase of the poem, 2 places) → "shift in mood"; "snow … from a hemlock" (three-word run) → "a crow in a hemlock shakes some snow onto him"; "part of the day … saved" (echo of the poem's closing) → "the remainder of the day … rescued".
 - **Accuracy fixes:** "alone except for a crow" (the poem does not say he is alone) → "no other person mentioned"; "told in the past tense" (the effect is in the present perfect) → "looking back on a moment and its effect"; "no difficult words except rued" → "few difficult words besides rued and hemlock"; assertion-reason keys rebalanced (b, a, d, d → b, a, c, d).
-- **Pipeline checks:** `content lint --exemplars` 0 errors, 0 warnings (no `literature.quote-review` or `literature.verse` hits); `verify --authored` and `originality --authored` in the handoff.
+- **Answer-leak fix:** the 3-mark practice item matching the deck's worked example repeated its model sentences; it now asks a different question (why the day is not entirely lost) with its own model.
+- **Pipeline checks:** `content lint --exemplars` 0 errors, 0 warnings (no `literature.quote-review` or `literature.verse` hits); `verify --authored` 62/62 pass; `originality --authored` 0 errors; API `content.test.ts` passes.
 
 ## Known gaps
 - The CBSE 2026-27 extract item for poems may mix MCQs and short completions differently; our commentary items use 3–4 MCQ/fill parts and 1 short part.

@@ -26,19 +26,19 @@ const W_PARA = { format: 'paragraph', wl: [100, 120], marks: 5, rubric: PARA_RUB
 // ================================================================ letters (writing, 5 marks)
 Q('let_table', writing({
   ...W_LETTER, d: 2,
-  stem: 'You are **Riya Sharma**, 14 Shanti Nagar, Jaipur 302006. You ordered a study table from Furnish Home Pvt Ltd, Koramangala, Bengaluru 560034 (Order No. FH20817). It arrived with a cracked top and missing drawer handles. Write a letter in **100–120 words** to the Customer Relations Manager complaining about it and asking for a replacement or refund.',
+  stem: 'You are **Rohit / Rashmi Bansal**, 9 Civil Lines, Kanpur 208001. Three weeks ago you bought a water purifier from AquaPure Appliances, Mall Road, Kanpur 208004 (Invoice No. AP5521). It now leaks and the filter light stays red, and two service requests have gone unanswered. Write a letter in **100–120 words** to the Service Manager complaining about it.',
   model: letter([
-    lines('14 Shanti Nagar', 'Jaipur 302006'),
+    lines('9 Civil Lines', 'Kanpur 208001'),
     '27 October 2026',
-    lines('The Customer Relations Manager', 'Furnish Home Pvt Ltd', 'Koramangala, Bengaluru 560034'),
-    '**Subject: Complaint about a damaged study table (Order No. FH20817)**',
+    lines('The Service Manager', 'AquaPure Appliances', 'Mall Road, Kanpur 208004'),
+    '**Subject: Defective water purifier (Invoice No. AP5521)**',
     'Sir/Madam,',
-    'I am writing to complain about a study table I ordered from your website on 15 October. It was delivered yesterday in a damaged condition.',
-    'The tabletop has a deep crack along one edge, and two drawer handles and their screws were missing from the box. Since I paid the full amount in advance, this is very disappointing.',
-    'I request you to replace the table within a week or refund the full amount of ₹6,499. I have kept the packing and the invoice for your inspection.',
-    lines('Yours faithfully', 'Riya Sharma'),
+    'I bought a water purifier from your showroom three weeks ago, and I regret to report that it has developed serious faults.',
+    'Water leaks from the base every time the tank fills, and the filter warning light has stayed red since last Monday. I have lodged two service requests, but no technician has visited.',
+    'As the purifier is under warranty, please send a technician within three days or replace the unit. My family has had no safe drinking water at home all week.',
+    lines('Yours faithfully', 'Rohit Bansal'),
   ]),
-  sol: '**Plan:** P1 purpose (complaint, order details) → P2 the defects (crack, missing handles) → P3 action wanted (replacement or refund, time limit) and evidence kept. The tone stays firm but polite; the order number appears in the subject line so the company can trace it.',
+  sol: '**Plan:** P1 purpose (complaint about a recent purchase) → P2 the faults and the unanswered requests → P3 the remedy wanted (technician or replacement, a time limit) and why it is urgent. The tone stays firm but polite, and the invoice number in the subject line lets the company trace the sale.',
 }));
 Q('let_garbage', writing({
   ...W_LETTER,
@@ -65,7 +65,7 @@ Q('let_editor_noise', writing({
     lines('The Editor', 'The City Chronicle', 'Nagpur 440001'),
     '**Subject: Late-night loudspeakers disturbing students**',
     'Sir/Madam,',
-    'Through the columns of your newspaper, I wish to draw attention to the noise from loudspeakers at late-night functions in our locality.',
+    'I am writing to ask your readers, and the city authorities, to take note of the loudspeakers that blare at late-night functions in our locality.',
     'With the board exams only weeks away, students cannot study or sleep properly. Elderly residents and patients suffer too, and the noise often continues well past ten at night.',
     'The authorities should strictly enforce the time limits on amplified sound and act quickly on complaints. Organisers, too, could keep the volume low and end on time.',
     lines('Yours faithfully', 'Sneha Iyer'),
@@ -97,9 +97,9 @@ Q('let_order_books', writing({
     lines('The Sales Manager', 'Vidya Book House', 'Sayyaji Rao Road, Mysuru 570001'),
     '**Subject: Order for library books**',
     'Sir/Madam,',
-    'We would like to place an order for the following books for our school library:',
+    'Please supply the following books, which our library needs for the new session:',
     '1. Oxford Student Atlas for India (latest edition) — 10 copies  \n2. Wings of Fire by A. P. J. Abdul Kalam — 5 copies  \n3. Concise English–Hindi Dictionary — 8 copies',
-    'Kindly deliver the books by 10 November and ensure that they are in good condition. Payment will be made by cheque on delivery. Please allow the usual educational discount.',
+    'We would be grateful if the books reached us by 10 November, packed carefully. We will pay by cheque on delivery and request the usual discount for schools.',
     lines('Yours faithfully', 'Kavita Rao', 'Librarian'),
   ]),
   sol: '**Plan:** P1 purpose (placing an order); P2 the order as a numbered list (title, edition, quantity) so nothing is ambiguous; P3 terms — delivery date, condition, payment mode, discount. Order letters are short and exact; no complaints or stories.',
@@ -159,12 +159,18 @@ export const vMuseum = bars(
   'Bar chart of visitors to the State Heritage Museum: 4.2 lakh in 2019, 1.1 lakh in 2020, 1.8 lakh in 2021, 3.5 lakh in 2022, 4.8 lakh in 2023, 5.6 lakh in 2024 and 6.1 lakh in 2025.',
   'Visitors to the State Heritage Museum, 2019–2025 (illustrative data)',
 );
-Q('par_museum', writing({
+// The museum chart (vMuseum) is the deck's worked example only; the practice task below uses its own data.
+const vPhones = bars(
+  { x: { min: 2018, max: 2026, label: 'Year' }, y: { min: 0, max: 100, label: 'Children with own phone (%)' }, label: 'Children aged 10–14 with their own phone (%)', points: [[2019, 32], [2020, 48], [2021, 61], [2022, 66], [2023, 70], [2024, 71], [2025, 73]] },
+  'Bar chart of the percentage of children aged 10 to 14 in Nashik with their own mobile phone: 32 in 2019, 48 in 2020, 61 in 2021, 66 in 2022, 70 in 2023, 71 in 2024 and 73 in 2025.',
+  'Children aged 10–14 with their own mobile phone, Nashik, 2019–2025 (illustrative data)',
+);
+Q('par_phones', writing({
   ...W_PARA, d: 3,
-  assets: [vMuseum],
-  stem: 'The bar chart shows the number of visitors to the State Heritage Museum from 2019 to 2025. Write an analytical paragraph in **100–120 words** describing and analysing the data.',
-  model: 'The bar chart shows the number of visitors to the State Heritage Museum between 2019 and 2025. Overall, visitor numbers collapsed in 2020 but then recovered steadily, finally exceeding the 2019 level. In 2019 the museum received 4.2 lakh visitors. This figure plunged to just 1.1 lakh in 2020, roughly a quarter of the previous year\'s total. Recovery was slow at first, with 1.8 lakh visitors in 2021, before numbers nearly doubled to 3.5 lakh in 2022. By 2023 attendance (4.8 lakh) had overtaken the 2019 figure, and it went on rising to a peak of 6.1 lakh in 2025, almost one and a half times the 2019 level. In conclusion, the museum has more than recovered from its sharp fall.',
-  sol: '**Plan:** introduce the chart → overview (fall, then recovery beyond the start) → details in time order with figures (4.2 → 1.1 → 1.8 → 3.5 → 4.8 → 6.1) → comparisons (a quarter; nearly doubled; one and a half times) → conclusion. Check: 1.1 ÷ 4.2 ≈ 0.26 (about a quarter); 3.5 ÷ 1.8 ≈ 1.9 (nearly doubled); 6.1 ÷ 4.2 ≈ 1.45. No reasons are invented: the chart does not say why numbers fell.',
+  assets: [vPhones],
+  stem: 'The bar chart shows the percentage of children aged 10–14 in Nashik who had their own mobile phone from 2019 to 2025. Write an analytical paragraph in **100–120 words** describing and analysing the data.',
+  model: 'The bar chart presents the share of children aged 10 to 14 in Nashik who owned a mobile phone between 2019 and 2025. The pattern is one of rapid growth followed by levelling off. In 2019 fewer than a third of these children, 32 per cent, had a phone. Ownership then jumped by 16 percentage points to 48 per cent in 2020 and climbed to 61 per cent in 2021, nearly double the 2019 figure. After that, growth slowed sharply: the share rose by only 5 points to 66 per cent in 2022 and then edged up to 73 per cent by 2025. Overall, phone ownership has become the norm for this age group, but its growth has almost stopped.',
+  sol: '**Plan:** introduce the chart (who, where, when) → overview (fast rise, then a plateau) → the fast phase with figures (32 → 48 → 61; 61 ÷ 32 ≈ 1.9, nearly double) → the slow phase (66 → 70 → 71 → 73) → conclusion. Check the changes: 48 − 32 = 16 points; 66 − 61 = 5 points. Describe the levelling off with words such as *slowed* and *edged up*, and do not invent reasons the chart does not give.',
 }));
 export const vTravel = table(
   ['Mode of travel to school', '2016 (%)', '2026 (%)'],
@@ -176,7 +182,7 @@ Q('par_travel', writing({
   ...W_PARA, d: 4,
   assets: [vTravel],
   stem: 'The table shows how students of Vidya Niketan, Pune, travelled to school in 2016 and 2026. Write an analytical paragraph in **100–120 words** describing the changes.',
-  model: 'The table compares how the students of Vidya Niketan, Pune, travelled to school in 2016 and in 2026. The clear trend is a shift away from walking and cycling towards motorised transport. Walking, the most common mode in 2016 at 35 per cent, almost halved to 18 per cent, while cycling fell from 30 to 22 per cent. In contrast, the share of students using private cars or two-wheelers more than doubled, from 10 to 24 per cent, and the school bus rose from 20 to 28 per cent, becoming the most popular choice. Public transport grew only slightly, from 5 to 8 per cent. Overall, students today depend far more on vehicles than they did a decade ago.',
+  model: 'The table compares how the students of Vidya Niketan, Pune, travelled to school in 2016 and in 2026. Over the decade, students switched in large numbers from walking and cycling to travelling by vehicle. Walking, the most common mode in 2016 at 35 per cent, almost halved to 18 per cent, while cycling fell from 30 to 22 per cent. In contrast, the share of students using private cars or two-wheelers more than doubled, from 10 to 24 per cent, and the school bus rose from 20 to 28 per cent, becoming the most popular choice. Public transport grew only slightly, from 5 to 8 per cent. Taken together, the figures show a growing reliance on vehicles over these ten years.',
   sol: '**Plan:** introduce → overview (from walking/cycling to vehicles) → falls (walk 35 → 18, about half; cycle 30 → 22) → rises (private 10 → 24, more than double; bus 20 → 28, now the largest) → small change (public transport 5 → 8) → conclusion. Grouping falls and rises is better than listing all ten numbers in table order.',
 }));
 const vRain = bars(

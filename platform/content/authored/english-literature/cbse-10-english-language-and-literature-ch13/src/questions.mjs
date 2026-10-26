@@ -107,9 +107,9 @@ Q('src_speaker', source({
 const SA3 = { marks: 3, wl: [40, 50], scheme: SCHEME3, time: 240 };
 Q('sa_mood_change', short({
   ...SA3, t: [2, 1], d: 2, c: 'understanding',
-  stem: 'How does a small incident lift the speaker\'s spirits? Answer in 40–50 words.',
-  model: 'The speaker is in a gloomy mood, regretting how his day has gone. A crow in a hemlock shakes some snow onto him. The sudden, cold touch of nature jolts him out of his sadness, and he feels that the rest of the day has been rescued.',
-  sol: 'Before (gloom, regret) + incident (crow, snow) + effect (mood lifts, day rescued).',
+  stem: 'Why is the speaker\'s day not entirely lost, in the end? Answer in 40–50 words.',
+  model: 'Until then the day had gone badly and the speaker was weighed down by regret. Then a crow perched in a hemlock dislodged some snow, which fell on him. That brief, chilly shock broke his gloomy train of thought, so the hours that remained could still be enjoyed.',
+  sol: 'Say what had already gone wrong (regret about the earlier part of the day), name the small natural incident in your own words, and explain how it changed the rest of the day.',
 }));
 Q('sa_crow_symbol', short({
   ...SA3, t: 3, d: 3, c: 'analysis',
