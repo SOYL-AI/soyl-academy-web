@@ -42,7 +42,7 @@ Grammar is procedural, so each topic ends in a procedure the student can run in 
 ## Chapter tests (`tests.json`)
 - **Short (20 marks, 40 min):** A 10 of 12 one-mark tasks (6 fill-blank, 6 editing/transformation) · B editing passage (5) · C 5 MCQs.
 - **Long (40 marks, 90 min):** A 10 of 12 one-mark tasks · B gap-filling and reported-speech passages (5 + 5) · C 5 of 6 two-mark transformations/edits · D 1 of 2 five-mark items · E 5 assertion-reason.
-- The two tests share no questions. `blueprint_id` is null: the subject's chapter-test blueprints are built for literature chapters (extracts, 7- and 8-mark long answers); their notes say grammar chapters substitute same-mark grammar items, which is what these tests do, keeping the board's 10-of-12 one-mark format in section A.
+- The two tests share no questions. `blueprint_id` is null: the subject's chapter-test blueprints describe literature chapters (5-mark extracts, 3-mark shorts, 6-mark longs; ch04 and ch13 match them), and a grammar chapter's sections (10 of 12 one-mark tasks mixing gap-fill and transformation, editing passages) cannot match a literature blueprint item for item.
 
 ## Pitfalls for generated grammar (seen in drafts or common in generated keys)
 1. **Collective nouns** (*society, family, team*) as the subject of a concord error: British usage allows a plural verb, so the key is disputable. Use a plural noun hidden behind an *of*-phrase instead, or force the number with *its*.

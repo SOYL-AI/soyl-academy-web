@@ -179,11 +179,13 @@ export async function finalizeLive(ctx: JobContext): Promise<LiveFinalizeResult>
 
 export interface JobSettings {
   unconsentedAccountTtlDays?: number;
+  /** false: the AUTH-15 purge is not registered (no consent system, CONSENT_PROVIDER=unavailable). */
+  unconsentedPurge?: boolean;
 }
 
 /** Every job the worker runs. */
 export function allJobs(settings: JobSettings = {}): JobDefinition[] {
-  return [
+  const jobs = [
     defineJob<unknown, DeleteResult>({
       name: JOB_NAMES.accountPurge,
       description: `Hard-delete accounts anonymised more than ${ACCOUNT.purgeAfterDays} days ago (PII.md)`,
@@ -227,4 +229,5 @@ export function allJobs(settings: JobSettings = {}): JobDefinition[] {
       handler: (ctx) => finalizeLive(ctx),
     }),
   ] as JobDefinition[];
+  return settings.unconsentedPurge === false ? jobs.filter((j) => j.name !== JOB_NAMES.accountPurgeUnconsented) : jobs;
 }

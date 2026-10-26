@@ -20,8 +20,8 @@ sections:
     title: Section B - Creative Writing Skills (18)
     instructions: Q3 notice (4), Q4 invitation/reply (4), Q5 letter (5), Q6 article/report (5). Attempt A or B in each.
     items:
-      - {type: long, count: 4, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
-      - {type: long, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 4, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
   - id: C
     title: Section C - Literature (40)
     instructions: >-

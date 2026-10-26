@@ -326,8 +326,11 @@ export function cards(list) {
 }
 
 // ---------------------------------------------------------------- tests
-/** sections: [{ id, title, instr, items: [key | { attempt, keys }] }] */
-export function test({ kind, title, duration, sections }) {
+/**
+ * sections: [{ id, title, instr, items: [key | { attempt, keys }] }]
+ * blueprint: the subject blueprint id when the test follows it item for item (else null).
+ */
+export function test({ kind, title, duration, sections, blueprint = null }) {
   const short = kind === 'short';
   const subject = S.unit.replace(/-ch\d{2}$/, '');
   let total = 0;
@@ -357,7 +360,7 @@ export function test({ kind, title, duration, sections }) {
     id: `${S.prefix.replace(/^q_/, 't_')}_${kind}`,
     kind: 'chapter',
     paper_type: short ? 'chapter-test-short' : 'chapter-test-long',
-    blueprint_id: null,
+    blueprint_id: blueprint,
     title,
     subject_id: subject,
     chapter_ids: [S.unit],

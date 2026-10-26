@@ -42,7 +42,7 @@ title (with board pattern table) → how to use this lesson → author (table) �
 Natural spoken Hindi, 21 slides, max 70 words (mean 58), no Latin letters, digits (years are spoken: "सन् अठारह सौ निन्यानवे"), quotes or symbols. It interprets ("यह कठोरता नहीं, करुणा थी") rather than narrating the text.
 
 ### 3. Question bank: 68 items (+29 passage children), 133 marks
-- **By type:** mcq 22 · short 2-mark (25–30 words) 17 · long 4-mark (60–80 words) 7 · source-based 5 (5 × 1 each) · case-based 1 (4 × 1) · true-false 5 · match 4 (columns shuffled) · fill-blank 3 · assertion-reason 4 (keys a, c, a, d).
+- **By type:** mcq 22 (keys a 5 · b 6 · c 6 · d 5 after the 2026-10-27 rebalance; they were a 1 · b 17 · c 4 · d 0) · short 2-mark (25–30 words) 17 · long 4-mark (60–80 words) 7 · source-based 5 (5 × 1 each) · case-based 1 (4 × 1) · true-false 5 · match 4 (columns shuffled) · fill-blank 3 · assertion-reason 4 (keys a, c, a, d).
 - **By topic (parent tags):** t01 8 · t02 24 · t03 20 · t04 21 · t05 6.
 - **Difficulty (all 91 gradable units):** d1 21 · d2 46 · d3 20 · d4 4.
 - **Competency:** application or higher is 26% of parent items, 30% of gradable units and 38% of marks. Literature recall/understanding legitimately dominates the board's prose section; the higher-order items are deliberate: values applied to a new situation (`b59` widow remarriage in the neighbourhood, `b62` who lives by Bhagat's ideals), evaluation (`b40` "आचरण vs वेश", `b51`, `b55`, `b60` दृढ़ता या हठ), creative application (`b61` diary entry), and inference/title children in every passage.
@@ -97,3 +97,5 @@ tests: short 20 marks / 40 min (12 items, A–D); long 40 marks / 80 min (20 ite
 warnings (0)
 NO ERRORS
 ```
+
+**Answer-key rebalance (catalog QA, 2026-10-27).** Eleven MCQs had the key option swapped with another option: q002, q010, q011 and q013 (ख→क); q015 and q030 (ख→ग); q032, q043, q045, q046 and q062 (ख→घ). The letters in their marking schemes ("सही विकल्प (…)") and in the q062 solution were remapped with the swap. Stems, option texts and the correct option text are unchanged.

@@ -10,9 +10,17 @@
  *   Check-and-add is one Lua script so parallel requests cannot all pass (AC-01). Members are
  *   `now:random` so equal timestamps stay distinct.
  * Every failure surfaces as KvUnavailableError so callers can fail closed (API-16).
+ *
+ * Entra auth (INFRA-3, REDIS_AUTH=entra): Azure Managed Redis with access keys disabled. The ACL
+ * username is the managed identity's object id and the password is an Entra token for
+ * https://redis.azure.com. The first command waits for the token; the connection is TLS (rediss://,
+ * SNI = host). Before the token expires (REFRESH_MARGIN_MS) a fresh one is fetched and sent with
+ * AUTH on the live connection, and stored in the client options so reconnects use it too. A failed
+ * refresh is retried every 30 s; commands keep working on the authenticated connection meanwhile.
  */
 import { randomBytes } from 'node:crypto';
 import { Redis, type RedisOptions } from 'ioredis';
+import { AZURE_RESOURCES, REFRESH_MARGIN_MS, type TokenProvider } from '@soyl/shared/azure/identity';
 import { KvUnavailableError, type KeyValueStore, type WindowResult, type ZEntry } from './store';
 
 const WINDOW_HIT = `
@@ -74,9 +82,33 @@ export function decodeValue(raw: unknown, now: number): string | null {
 
 const ttl = (ms: number) => Math.max(1, Math.ceil(ms));
 
+export interface RedisEntraAuth {
+  /** Object (principal) id of the managed identity: the Redis ACL username. */
+  username: string;
+  tokens: TokenProvider;
+  /** Called when a background token refresh fails (it is retried). */
+  onRefreshError?: (err: unknown) => void;
+  now?: () => number;
+  /** Retry delay after a failed refresh (default 30 s). */
+  retryMs?: number;
+}
+
+/** TLS options for a rediss:// URL (SNI must be the host name for Azure Managed Redis). */
+export function redisTlsOptions(url: string): Pick<RedisOptions, 'tls'> {
+  try {
+    const u = new URL(url);
+    return u.protocol === 'rediss:' ? { tls: { servername: u.hostname } } : {};
+  } catch {
+    return {};
+  }
+}
+
 export class RedisKv implements KeyValueStore {
   readonly kind = 'redis' as const;
   private readonly redis: Redis;
+  private ready: Promise<void> | null = null;
+  private refreshTimer: ReturnType<typeof setTimeout> | undefined;
+  private closed = false;
 
   constructor(
     url: string,
@@ -84,6 +116,8 @@ export class RedisKv implements KeyValueStore {
     private readonly prefix = 'soyl:',
     /** Tests inject a client (ioredis-mock); production builds one from the URL. */
     client?: Redis,
+    /** REDIS_AUTH=entra: managed-identity token as the password (Azure Managed Redis). */
+    private readonly entra?: RedisEntraAuth,
   ) {
     this.redis =
       client ??
@@ -93,6 +127,9 @@ export class RedisKv implements KeyValueStore {
         enableOfflineQueue: true,
         connectTimeout: 2000,
         commandTimeout: 2000,
+        ...redisTlsOptions(url),
+        // With Entra auth the first command connects, after the token is in the options.
+        ...(entra ? { username: entra.username, lazyConnect: true } : {}),
         ...opts,
       });
     this.redis.on('error', () => {
@@ -104,8 +141,51 @@ export class RedisKv implements KeyValueStore {
     return this.prefix + key;
   }
 
+  /** Entra auth: fetch the first token (once; retried on the next command after a failure). */
+  private ensureAuth(): Promise<void> | null {
+    if (!this.entra) return null;
+    this.ready ??= this.authenticate(false).catch((err) => {
+      this.ready = null;
+      throw err;
+    });
+    return this.ready;
+  }
+
+  /** Puts a fresh token in the client options (reconnects) and, on a live connection, re-AUTHs. */
+  private async authenticate(live: boolean): Promise<void> {
+    const entra = this.entra!;
+    const t = await entra.tokens.getToken(AZURE_RESOURCES.redis);
+    this.redis.options.username = entra.username;
+    this.redis.options.password = t.token;
+    if (live && this.redis.status === 'ready') await this.redis.auth(entra.username, t.token);
+    this.scheduleRefresh(t.expiresOnTimestamp);
+  }
+
+  private scheduleRefresh(expiresOn: number) {
+    if (this.closed) return;
+    clearTimeout(this.refreshTimer);
+    const now = this.entra!.now?.() ?? Date.now();
+    // Just inside the provider's refresh window, so it hands out a new token.
+    const delay = Math.max(1000, expiresOn - REFRESH_MARGIN_MS - now + 1000);
+    this.refreshTimer = setTimeout(() => void this.refresh(), delay);
+    this.refreshTimer.unref?.();
+  }
+
+  private async refresh(): Promise<void> {
+    if (this.closed) return;
+    try {
+      await this.authenticate(true);
+    } catch (err) {
+      this.entra!.onRefreshError?.(err);
+      if (this.closed) return;
+      this.refreshTimer = setTimeout(() => void this.refresh(), this.entra!.retryMs ?? 30_000);
+      this.refreshTimer.unref?.();
+    }
+  }
+
   private async run<T>(fn: () => Promise<T>): Promise<T> {
     try {
+      await this.ensureAuth();
       return await fn();
     } catch (err) {
       throw new KvUnavailableError(err);
@@ -187,6 +267,8 @@ export class RedisKv implements KeyValueStore {
   }
 
   async close() {
+    this.closed = true;
+    clearTimeout(this.refreshTimer);
     this.redis.disconnect();
   }
 }
