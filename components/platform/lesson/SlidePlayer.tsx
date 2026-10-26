@@ -192,7 +192,7 @@ export function SlidePlayer({ chapterId, part, firstPart, slides, meta, lang, li
     // Prefetch the next two slides' images (they are mounted but hidden).
     const root = viewportRef.current;
     if (root) {
-      for (const n of [index + 1, index + 2]) root.querySelectorAll<HTMLImageElement>(`[data-slide-index="${n}"] img[loading="lazy"]`).forEach((img) => (img.loading = 'eager'));
+      for (const n of [index + 1, index + 2]) root.querySelectorAll<HTMLImageElement>(`[data-slide-index="${n}"] img[loading="lazy"]`).forEach((img) => img.setAttribute('loading', 'eager'));
     }
   }, [index, total, meta]);
 
