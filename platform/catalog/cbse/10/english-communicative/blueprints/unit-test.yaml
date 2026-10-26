@@ -12,38 +12,30 @@ scope: unit
 sections:
   - id: A
     title: Section A - Reading (10)
-    instructions: One unseen passage with objective and short sub-questions.
+    instructions: One unseen passage or non-continuous text with objective and short sub-questions.
     items:
       - {type: case-based, count: 1, marks_each: 10}
   - id: B
-    title: Section B - Extract-based (2 x 5)
-    instructions: Two extract questions; in each answer one of the two extracts given.
+    title: Section B - Writing (15)
+    instructions: A letter (about 120 words, 7) and an article or story (about 150 words, 8); one of two in each.
     items:
-      - {type: source-based, count: 4, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 2, marks_each: 7, internal_choice: {attempt: 1, of: 2}}
+      - {type: writing, count: 2, marks_each: 8, internal_choice: {attempt: 1, of: 2}}
   - id: C
-    title: Section C - Short answer
-    instructions: Any five of six 2-mark questions and any two of three 3-mark questions.
+    title: Section C - Grammar (7)
+    instructions: Gap filling (3 x 1) and omission editing (4 x 1).
     items:
-      - {type: short, count: 6, marks_each: 2, internal_choice: {attempt: 5, of: 6}}
-      - {type: short, count: 3, marks_each: 3, internal_choice: {attempt: 2, of: 3}}
+      - {type: fill-blank, count: 3, marks_each: 1}
+      - {type: fill-blank, count: 4, marks_each: 1}
   - id: D
-    title: Section D - Long answer / writing
-    instructions: One of two 6-mark and one of two 8-mark questions (literature long answer or writing task).
+    title: Section D - Literature (18)
+    instructions: Any two of three extracts (4 each); any five of six short answers in 30-40 words (2 each).
     items:
-      - {type: long, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
-      - {type: long, count: 2, marks_each: 8, internal_choice: {attempt: 1, of: 2}}
+      - {type: source-based, count: 3, marks_each: 4, internal_choice: {attempt: 2, of: 3}}
+      - {type: short, count: 6, marks_each: 2, internal_choice: {attempt: 5, of: 6}}
 source_status: unverified
 source: lead-default
 notes: >-
   SOYL default modelled on the CBSE board pattern (CONTEXT section 9: "use a generic blueprint per board and subject, stored as editable
-
-  config"); not an official CBSE paper. Item types and marks follow the 2026-27 CBSE board style (MCQ/assertion-reason 1, short 2-3, long 5,
-
-  case-based 4, about one-third internal choice) so practice transfers to the board paper. Subject-family override (languages) of the class
-  default in platform/catalog/cbse/blueprints/<class>/. Built for literature chapters: extract-based (source-based) questions, short answers
-  and a long answer;
-
-  for grammar or writing chapters the assembler substitutes items of the same marks from that chapter (1-mark grammar items for a 5-mark
-  extract
-
-  group, writing tasks for long answers). Answers are written in the subject's language.
+  config"); not an official CBSE paper. A 50-mark cut of the 2026-27 English Communicative board paper with the same item marks; the letter and the
+  article/story are 'writing' items. The scope must include reading, grammar and writing chapters as well as textbook chapters for the paper to fill.
