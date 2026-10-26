@@ -1,0 +1,457 @@
+# CBSE Class 12 Sindhi (108), 2026-27. Sections, marks, grammar items, writing tasks
+# and every prescribed lesson (titles as printed by CBSE in Devanagari Sindhi) from the CBSE 2026-27 Sindhi XI-XII
+# syllabus, Class XII. Books: NIOS Senior Secondary Course 301 Sindhi; novel Sat Deenh (Krishan Khatwani, Sindhi Academy, New Delhi); grammar and usage:
+# Choonda Sindhi Istalah ain Pahaka and Nutan Sindhi Grammar (Usha Saraswat), Sindhi Vyakaran (Gangaram Israni). The CBSE
+# document uses Devanagari script, not the Arabic script listed in subjects.yaml. Titles only; no text is reproduced.
+subject_id: cbse-12-sindhi
+academic_year: "2026-27"
+source_status: verified
+sources:
+  - cbse-xii-sindhi-2026-27
+  - cbse-senior-secondary-curriculum-2026-27
+exam_notes: >-
+  Board theory 80 marks (3 hours) + internal assessment 20. Unseen prose passage 5 MCQs; unseen poem 5 MCQs; MCQs on prose, poetry and
+  grammar 10; grammar 10; main course book 30; novel 10; creative writing 10 - essay of 500 words 6, report of 150 words 4. Grammar: figures
+  of speech (anuprasa, slesha, yamaka, upama, rupaka) and idioms and proverbs.
+units:
+  - name: अणपढ़ियलु नसुर ऐं नज़्म
+    marks: 10
+  - name: साहित्य (MCQ)
+    marks: 10
+  - name: ग्रामर
+    marks: 10
+  - name: दर्सी किताबु
+    marks: 30
+  - name: नाविल
+    marks: 10
+  - name: तख़लीक़ी लिखणु
+    marks: 10
+chapters:
+  - id: cbse-12-sindhi-ch01
+    number: 1
+    title: अणपढ़ियलु नसुर जो टुकिरो
+    title_en: Unseen prose passage
+    unit: अणपढ़ियलु नसुर ऐं नज़्म
+    topics:
+      - id: cbse-12-sindhi-ch01-t01
+        title: 'अपठित गद्यांश: MCQ'
+        title_en: 'Unseen prose passage: MCQs'
+        learning_outcomes:
+          - Read an unseen Sindhi passage and answer MCQs testing understanding, reasoning and analysis
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-sindhi-ch02
+    number: 2
+    title: अणपढ़ियल नज़्म
+    title_en: Unseen poem
+    unit: अणपढ़ियलु नसुर ऐं नज़्म
+    topics:
+      - id: cbse-12-sindhi-ch02-t01
+        title: नज़्म ते MCQ
+        title_en: 'Unseen poem: MCQs'
+        learning_outcomes:
+          - Read an unseen Sindhi poem and answer MCQs on meaning, images and message
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-sindhi-ch03
+    number: 3
+    title: साहित्य ऐं ग्रामर ते MCQ
+    title_en: MCQs on prose, poetry and grammar
+    unit: साहित्य (MCQ)
+    topics:
+      - id: cbse-12-sindhi-ch03-t01
+        title: नसुर, नज़्म ऐं ग्रामर जा बहुविकल्पी सुवाल
+        title_en: Multiple-choice questions on textbook prose, poetry and grammar
+        learning_outcomes:
+          - Answer MCQs on the content of the textbook lessons and on applied grammar
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-sindhi-ch04
+    number: 4
+    title: अलंकार
+    title_en: Figures of speech
+    unit: ग्रामर
+    topics:
+      - id: cbse-12-sindhi-ch04-t01
+        title: 'अलंकार: अनुप्रास, श्लेष, यमक'
+        title_en: Anuprasa, slesha and yamaka
+        learning_outcomes:
+          - Identify sound-based figures of speech in verse
+      - id: cbse-12-sindhi-ch04-t02
+        title: 'अलंकार: उपमा, रूपक'
+        title_en: Upama and rupaka
+        learning_outcomes:
+          - Identify simile and metaphor in verse and explain them
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-sindhi-ch05
+    number: 5
+    title: इस्तलाह ऐं पहाका
+    title_en: Idioms and proverbs
+    unit: ग्रामर
+    topics:
+      - id: cbse-12-sindhi-ch05-t01
+        title: इस्तलाह ऐं पहाका
+        title_en: Idioms and proverbs
+        learning_outcomes:
+          - Explain Sindhi idioms and proverbs and use them in sentences
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-sindhi-ch06
+    number: 6
+    title: सिंधी शइर जी टिमूर्ति - शाहु, सचलु ऐं सामी
+    title_en: Sindhi Shayari Jee Tirmoorti - Shah, Sachal Ain Saami (poem)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-12-sindhi-ch06-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Explain the central idea, mood and message of the poem "Sindhi Shayari Jee Tirmoorti - Shah, Sachal Ain Saami"
+          - Interpret key images, figures of speech and lines in their own words without reproducing the text
+      - id: cbse-12-sindhi-ch06-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the poem as set in the board paper
+          - Relate the theme of the poem to their own life and values
+    removed_topics: []
+    literature_texts:
+      - title: सिंधी शइर जी टिमूर्ति - शाहु, सचलु ऐं सामी
+        title_en: Sindhi Shayari Jee Tirmoorti - Shah, Sachal Ain Saami
+  - id: cbse-12-sindhi-ch07
+    number: 7
+    title: सामूंडी सिपूं - बेवसि
+    title_en: Saamundee Sipoon - Bewas (poem)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-12-sindhi-ch07-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Explain the central idea, mood and message of the poem "Saamundee Sipoon - Bewas"
+          - Interpret key images, figures of speech and lines in their own words without reproducing the text
+      - id: cbse-12-sindhi-ch07-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the poem as set in the board paper
+          - Relate the theme of the poem to their own life and values
+    removed_topics: []
+    literature_texts:
+      - title: सामूंडी सिपूं - बेवसि
+        title_en: Saamundee Sipoon - Bewas
+  - id: cbse-12-sindhi-ch08
+    number: 8
+    title: नईं कविता
+    title_en: Naee Kavita (poem)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-12-sindhi-ch08-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Explain the central idea, mood and message of the poem "Naee Kavita"
+          - Interpret key images, figures of speech and lines in their own words without reproducing the text
+      - id: cbse-12-sindhi-ch08-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the poem as set in the board paper
+          - Relate the theme of the poem to their own life and values
+    removed_topics: []
+    literature_texts:
+      - title: नईं कविता
+        title_en: Naee Kavita
+  - id: cbse-12-sindhi-ch09
+    number: 9
+    title: बंधन
+    title_en: Bandhan (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-12-sindhi-ch09-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Bandhan" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-12-sindhi-ch09-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: बंधन
+        title_en: Bandhan
+  - id: cbse-12-sindhi-ch10
+    number: 10
+    title: बस स्टाप ते
+    title_en: Bas Staap Te (story)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-12-sindhi-ch10-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Narrate the plot of the story "Bas Staap Te" in their own words
+          - Describe the main characters, the setting and the turning point of the story
+      - id: cbse-12-sindhi-ch10-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the story as set in the board paper
+          - Explain the message or value the story conveys
+    removed_topics: []
+    literature_texts:
+      - title: बस स्टाप ते
+        title_en: Bas Staap Te
+  - id: cbse-12-sindhi-ch11
+    number: 11
+    title: दस्तावेज़
+    title_en: Dastaavez (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-12-sindhi-ch11-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Dastaavez" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-12-sindhi-ch11-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: दस्तावेज़
+        title_en: Dastaavez
+  - id: cbse-12-sindhi-ch12
+    number: 12
+    title: सरयू खां सिंधूअ ताईं
+    title_en: Saryu Khan Sindhua Tain (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-12-sindhi-ch12-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Saryu Khan Sindhua Tain" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-12-sindhi-ch12-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: सरयू खां सिंधूअ ताईं
+        title_en: Saryu Khan Sindhua Tain
+  - id: cbse-12-sindhi-ch13
+    number: 13
+    title: घिटियुनि में घुमंदॾु शख़्सु
+    title_en: Ghitiyun Mein Ghumandad Shakhs (story)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-12-sindhi-ch13-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Narrate the plot of the story "Ghitiyun Mein Ghumandad Shakhs" in their own words
+          - Describe the main characters, the setting and the turning point of the story
+      - id: cbse-12-sindhi-ch13-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the story as set in the board paper
+          - Explain the message or value the story conveys
+    removed_topics: []
+    literature_texts:
+      - title: घिटियुनि में घुमंदॾु शख़्सु
+        title_en: Ghitiyun Mein Ghumandad Shakhs
+  - id: cbse-12-sindhi-ch14
+    number: 14
+    title: सिंधी ॿोलीअ जो बुणु बुनियादु
+    title_en: Sindhi Bolia Jo Bun Buniyad (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-12-sindhi-ch14-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Sindhi Bolia Jo Bun Buniyad" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-12-sindhi-ch14-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: सिंधी ॿोलीअ जो बुणु बुनियादु
+        title_en: Sindhi Bolia Jo Bun Buniyad
+  - id: cbse-12-sindhi-ch15
+    number: 15
+    title: सिंधी ॿोलीअ जूं उप भाषाऊं
+    title_en: Sindhi Bolia Joon Up Bhashaoon (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-12-sindhi-ch15-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Sindhi Bolia Joon Up Bhashaoon" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-12-sindhi-ch15-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: सिंधी ॿोलीअ जूं उप भाषाऊं
+        title_en: Sindhi Bolia Joon Up Bhashaoon
+  - id: cbse-12-sindhi-ch16
+    number: 16
+    title: सिंधी साहित्य जो इतिहासु
+    title_en: Sindhi Sahity Jo Itihas (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-12-sindhi-ch16-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Sindhi Sahity Jo Itihas" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-12-sindhi-ch16-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: सिंधी साहित्य जो इतिहासु
+        title_en: Sindhi Sahity Jo Itihas
+  - id: cbse-12-sindhi-ch17
+    number: 17
+    title: सिंधी साहित्य जो विकास
+    title_en: Sindhi Sahity Jo Vikas (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-12-sindhi-ch17-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Sindhi Sahity Jo Vikas" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-12-sindhi-ch17-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: सिंधी साहित्य जो विकास
+        title_en: Sindhi Sahity Jo Vikas
+  - id: cbse-12-sindhi-ch18
+    number: 18
+    title: लिखण जी क़ाबिलियत, फुकिरो लिखणु, रूपकु ऐं रिपोर्टि
+    title_en: Likhan Jee Kabiliyat, Phukiro Likhanu, Roopak Ain Report (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-12-sindhi-ch18-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Likhan Jee Kabiliyat, Phukiro Likhanu, Roopak Ain Report" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-12-sindhi-ch18-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: लिखण जी क़ाबिलियत, फुकिरो लिखणु, रूपकु ऐं रिपोर्टि
+        title_en: Likhan Jee Kabiliyat, Phukiro Likhanu, Roopak Ain Report
+  - id: cbse-12-sindhi-ch19
+    number: 19
+    title: आफ़ीस लिखपढ़
+    title_en: Aafees Likh Padh (prose lesson)
+    unit: दर्सी किताबु
+    topics:
+      - id: cbse-12-sindhi-ch19-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Summarise the prose lesson "Aafees Likh Padh" and state its central idea
+          - Identify the writer's purpose, tone and the main points or examples used
+      - id: cbse-12-sindhi-ch19-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer objective, short and long questions on the lesson as set in the board paper
+          - Use new words and expressions from the lesson in their own sentences
+    removed_topics: []
+    literature_texts:
+      - title: आफ़ीस लिखपढ़
+        title_en: Aafees Likh Padh
+  - id: cbse-12-sindhi-ch20
+    number: 20
+    title: सत ॾींह
+    title_en: Sat Deenh (novel) (novel, Krishan Khatwani)
+    unit: नाविल
+    topics:
+      - id: cbse-12-sindhi-ch20-t01
+        title: सारु ऐं मरकज़ी ख़्यालु
+        title_en: Summary and central idea
+        learning_outcomes:
+          - Narrate the main events of the novel "Sat Deenh (novel)" by Krishan Khatwani in sequence
+          - Sketch the major characters and their relationships
+      - id: cbse-12-sindhi-ch20-t02
+        title: सुवाल-जवाब जी मश्क़
+        title_en: Question practice
+        learning_outcomes:
+          - Answer short and long questions on the novel as set in the board paper
+          - Discuss the themes and social picture presented in the novel
+    removed_topics: []
+    literature_texts:
+      - title: सत ॾींह
+        author: कृष्ण खटवाणी
+        title_en: Sat Deenh (novel)
+  - id: cbse-12-sindhi-ch21
+    number: 21
+    title: मज़मून (500 लफ़्ज़नि में)
+    title_en: Essay writing (500 words)
+    unit: तख़लीक़ी लिखणु
+    topics:
+      - id: cbse-12-sindhi-ch21-t01
+        title: मज़मून लिखणु
+        title_en: Writing an essay
+        learning_outcomes:
+          - Write an organised Sindhi essay of about 500 words
+    removed_topics: []
+    literature_texts: []
+  - id: cbse-12-sindhi-ch22
+    number: 22
+    title: रिपोर्ट (150 लफ़्ज़नि में)
+    title_en: Report writing (150 words)
+    unit: तख़लीक़ी लिखणु
+    topics:
+      - id: cbse-12-sindhi-ch22-t01
+        title: रिपोर्ट लिखणु
+        title_en: Writing a report
+        learning_outcomes:
+          - Write a report of about 150 words on an event
+    removed_topics: []
+    literature_texts: []
+removed_topics: []
