@@ -7954,7 +7954,7 @@
       "svg_allowlist": "17 SVG visuals (9 distinct diagrams) checked against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette colours incl. named hues, viewBox, title, unique ids — 0 failures",
       "equation_balance": "93 reaction equations atom- and charge-balanced (hydrates and fractional coefficients included); 3 intentionally skeletal equations in worked-example steps, labelled 'skeletal'",
       "narration": "63 slides, max 84 words, no symbols or formulae",
-      "pipeline_lint": "content-pipeline lintExemplar() run on this directory: 0 errors, 0 warnings",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings",
       "verifier_pass": "2026-10-26: every question and case part re-solved from the stem by the author; MCQ keys rebalanced and re-checked — see README \"Verifier pass\""
     }
   }

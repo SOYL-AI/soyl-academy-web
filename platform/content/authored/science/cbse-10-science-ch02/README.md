@@ -51,7 +51,7 @@ All items are `status: "draft"` until a reviewer approves them.
 
 ## Validation
 - `npm test -w @soyl/content-templates`: all 7 checks for this chapter pass.
-- Pipeline lint (`lintExemplar` from `content-pipeline/src/commands/lint.ts`, run on this directory because `lint --exemplars` does not yet scan `content/authored/`): **0 errors, 0 warnings**.
+- `npm run content -- lint --exemplars` (covers `content/authored` since d19bf5e): **0 errors, 0 warnings**.
 - Scratch validator (ported from the exemplar handoff): 289 maths strings parsed (KaTeX 0.19.1 + mhchem, strict); 93 equations atom- and charge-balanced, including hydrates and the plaster-of-Paris fractions; 3 intentionally skeletal equations inside worked-example steps (labelled "skeletal"); 17 SVG visuals / 9 distinct diagrams pass the allow-list (class pattern, palette, viewBox, title, unique ids); narration max 84 words. Every SVG was rasterised and checked by eye.
 
 ## Verifier pass (2026-10-26)
