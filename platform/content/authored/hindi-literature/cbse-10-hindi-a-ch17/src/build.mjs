@@ -316,28 +316,28 @@ const F = cards([
 ]);
 
 // ---------------------------------------------------------------- tests
+// कृतिका blueprints (catalog chapter override, 2026-10-27): no passage section; the board sets कृतिका only as
+// प्रश्न 11 (three questions, attempt two, 50–60 words, 4 marks each).
 const T_SHORT = test({
   kind: 'short',
   title: 'अध्याय परीक्षा (लघु) — मैं क्यों लिखता हूँ?',
   duration: 40,
-  blueprint: 'cbse-10-hindi-a-chapter-test-short',
+  blueprint: 'cbse-10-hindi-a-chapter-test-short-kritika',
   sections: [
-    { id: 'A', title: 'खंड क — प्रसंग-आधारित अनुच्छेद (5 अंक)', instr: 'अनुच्छेद पढ़कर सभी प्रश्नों के सही विकल्प चुनिए। (अनुच्छेद SOYL की टिप्पणी है; मूल निबंध कृतिका भाग 2 में पढ़ें।)', items: ['src_dabav'] },
-    { id: 'B', title: 'खंड ख — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_genre', 'b_first_answer', 'b_hospital', 'b_shadow_where', 'm_style'] },
-    { id: 'C', title: 'खंड ग — लघु उत्तरीय प्रश्न (2 अंक, 25–30 शब्द)', instr: 'चार में से किन्हीं तीन प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 3, keys: ['b_short_why', 'b_short_external', 'b_short_shadow', 'm_short_style'] }] },
-    { id: 'D', title: 'खंड घ — दीर्घ उत्तरीय प्रश्न (4 अंक, 50–60 शब्द)', instr: 'दो में से कोई एक प्रश्न कीजिए।', items: [{ attempt: 1, keys: ['l_journey', 'l_title'] }] },
+    { id: 'A', title: 'खंड क — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_genre', 'b_first_answer', 'b_hospital', 'b_shadow_where', 'm_style', 'a_name'] },
+    { id: 'B', title: 'खंड ख — लघु उत्तरीय प्रश्न (2 अंक, 25–30 शब्द)', instr: 'चार में से किन्हीं तीन प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 3, keys: ['b_short_why', 'b_short_external', 'b_short_shadow', 'm_short_style'] }] },
+    { id: 'C', title: 'खंड ग — कृतिका पर आधारित प्रश्न (4 अंक, 50–60 शब्द)', instr: 'तीन में से किन्हीं दो प्रश्नों के उत्तर दीजिए। (बोर्ड परीक्षा का प्रश्न 11 इसी रूप में आता है।)', items: [{ attempt: 2, keys: ['l_journey', 'l_title', 'l_inspire'] }] },
   ],
 });
 const T_LONG = test({
   kind: 'long',
   title: 'अध्याय परीक्षा (दीर्घ) — मैं क्यों लिखता हूँ?',
   duration: 80,
-  blueprint: 'cbse-10-hindi-a-chapter-test-long',
+  blueprint: 'cbse-10-hindi-a-chapter-test-long-kritika',
   sections: [
-    { id: 'A', title: 'खंड क — प्रसंग-आधारित अनुच्छेद (5 अंक प्रत्येक)', instr: 'दोनों अनुच्छेद पढ़कर सभी प्रश्नों के सही विकल्प चुनिए। (अनुच्छेद SOYL की टिप्पणियाँ हैं।)', items: ['src_anubhuti', 'src_chhaya'] },
-    { id: 'B', title: 'खंड ख — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_life', 'a_saptak', 'b_anubhuti_def', 'b_bhokta', 'b_poem_where', 'm_central', 'b_ar_chhaya', 'm_ar_quality'] },
-    { id: 'C', title: 'खंड ग — लघु उत्तरीय प्रश्न (2 अंक, 25–30 शब्द)', instr: 'छह में से किन्हीं पाँच प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 5, keys: ['b_short_anubhav', 'b_short_hospital', 'b_short_bhokta', 'b_short_poem', 'm_short_science', 'm_short_arts'] }] },
-    { id: 'D', title: 'खंड घ — दीर्घ उत्तरीय प्रश्न (4 अंक, 50–60 शब्द)', instr: 'चार में से किन्हीं तीन प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 3, keys: ['l_anubhuti', 'l_misuse', 'l_external', 'l_agyeya'] }] },
+    { id: 'A', title: 'खंड क — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_life', 'a_saptak', 'b_anubhuti_def', 'b_bhokta', 'b_poem_where', 'm_central', 'b_science', 'a_award', 'b_ar_chhaya', 'm_ar_quality', 'b_ar_bahri', 'm_ar_science'] },
+    { id: 'B', title: 'खंड ख — लघु उत्तरीय प्रश्न (2 अंक, 25–30 शब्द)', instr: 'दो समूह; प्रत्येक समूह के चार में से किन्हीं तीन प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 3, keys: ['b_short_anubhav', 'b_short_hospital', 'b_short_bhokta', 'a_short_author'] }, { attempt: 3, keys: ['b_short_poem', 'm_short_science', 'm_short_arts', 'm_short_title'] }] },
+    { id: 'C', title: 'खंड ग — कृतिका पर आधारित प्रश्न (4 अंक, 50–60 शब्द)', instr: 'दो समूह; प्रत्येक समूह के तीन में से किन्हीं दो प्रश्नों के उत्तर दीजिए। (बोर्ड परीक्षा का प्रश्न 11 इसी रूप में आता है।)', items: [{ attempt: 2, keys: ['l_anubhuti', 'l_external', 'l_unease'] }, { attempt: 2, keys: ['l_misuse', 'l_agyeya', 'l_diary'] }] },
   ],
 });
 
