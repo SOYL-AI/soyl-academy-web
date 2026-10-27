@@ -11,7 +11,7 @@ export default function NotFound() {
           <h1 className="t-display rise" style={{ '--d': '80ms' } as React.CSSProperties}>
             <span className="line-through decoration-red-pen decoration-[3px]">This page</span> isn’t <span className="t-accent">here.</span>
           </h1>
-          <p className="t-lead rise mt-6 max-w-[44ch]" style={{ '--d': '160ms' } as React.CSSProperties}>
+          <p className="t-lead mt-6 max-w-[44ch]">
             It may have moved, or the link may be wrong. Try the homepage, or book a demo if that’s what you came for.
           </p>
           <div className="rise mt-10 flex flex-wrap gap-3" style={{ '--d': '240ms' } as React.CSSProperties}>

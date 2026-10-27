@@ -60,7 +60,7 @@ export function PageHero({
             {title}
           </h1>
           {intro && (
-            <div className="t-lead rise mt-6 max-w-[52ch] md:mt-8" style={{ '--d': '180ms' } as React.CSSProperties}>
+            <div className="t-lead mt-6 max-w-[52ch] md:mt-8">
               {intro}
             </div>
           )}

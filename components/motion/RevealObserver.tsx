@@ -24,23 +24,29 @@ export function RevealObserver() {
     if (typeof IntersectionObserver === 'undefined') return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+    // No getBoundingClientRect here: the observer's first, asynchronous report says
+    // where each element is, so hydration never forces a synchronous layout.
     const io = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          (entry.target as HTMLElement).dataset.rs = 'in';
-          io.unobserve(entry.target);
+          const el = entry.target as HTMLElement;
+          if (entry.isIntersecting) {
+            // On screen: reveal it if it was waiting; otherwise it simply stays visible.
+            if (el.dataset.rs === 'pending') el.dataset.rs = 'in';
+            io.unobserve(el);
+          } else if (!el.dataset.rs) {
+            if (entry.boundingClientRect.top > 0) {
+              el.dataset.rs = 'pending'; // below the fold: hide until it scrolls in
+            } else {
+              io.unobserve(el); // already scrolled past: leave it alone
+            }
+          }
         }
       },
-      { rootMargin: '0px 0px -8% 0px' }
+      { rootMargin: '0px 0px -40px 0px' }
     );
 
-    const fold = window.innerHeight * 0.9;
-    document.querySelectorAll<HTMLElement>('[data-reveal]:not([data-rs])').forEach((el) => {
-      if (el.getBoundingClientRect().top < fold) return;
-      el.dataset.rs = 'pending';
-      io.observe(el);
-    });
+    document.querySelectorAll<HTMLElement>('[data-reveal]:not([data-rs])').forEach((el) => io.observe(el));
 
     return () => {
       io.disconnect();

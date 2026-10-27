@@ -91,7 +91,7 @@ export default async function JournalArticlePage({ params }: Props) {
                 <span>{formatReadingTime(article.readingTime)}</span>
               </p>
               <h1 className="t-display rise mt-5 max-w-[16ch]" style={{ '--d': '80ms' } as React.CSSProperties}>{article.title}</h1>
-              <p className="t-lead rise mt-6 max-w-[56ch]" style={{ '--d': '160ms' } as React.CSSProperties}>{article.excerpt}</p>
+              <p className="t-lead mt-6 max-w-[56ch]">{article.excerpt}</p>
               {article.author && <p className="t-small mt-6 text-muted">By {article.author}</p>}
             </div>
           </div>

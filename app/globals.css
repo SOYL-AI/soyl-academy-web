@@ -333,6 +333,15 @@ html[data-consent] .cookie-bar:not([data-forced]) {
   display: none;
 }
 
+/* Rendering cost: sections after the first are only laid out and painted when
+   they approach the viewport. "auto" in contain-intrinsic-size remembers the real
+   height once rendered, so scrolling back never jumps. */
+main > section ~ section,
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
 /* ==========================================================================
    MOTION
    All of it is decoration. Without JS, content is simply there; with

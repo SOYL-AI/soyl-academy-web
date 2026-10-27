@@ -56,7 +56,7 @@ export default function ContactPage() {
           <div className="col-span-12 lg:col-span-7">
             <div className="rise"><Label className="mb-8">Contact</Label></div>
             <h1 className="t-display rise max-w-[14ch]" style={{ '--d': '80ms' } as React.CSSProperties}>Talk to the SOYL <span className="t-accent">team.</span></h1>
-            <p className="t-lead rise mt-6 max-w-[48ch]" style={{ '--d': '160ms' } as React.CSSProperties}>
+            <p className="t-lead mt-6 max-w-[48ch]">
               Questions about SOYL, partnerships or anything else. For a product walkthrough,{' '}
               <Link href="/book-a-demo" className="link">book a demo</Link>.
             </p>

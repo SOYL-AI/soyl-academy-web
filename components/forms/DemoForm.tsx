@@ -194,7 +194,7 @@ export function DemoForm() {
                   onChange={() => toggleGrade(g)}
                   className="peer sr-only"
                 />
-                <span className="press t-num inline-flex h-11 min-w-11 items-center justify-center border border-control bg-white px-3 text-[15px] font-medium peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-cobalt">
+                <span className="press t-num inline-flex h-11 min-w-11 items-center justify-center rounded-full border border-control/70 bg-white px-3 hover:border-ink text-[15px] font-medium peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-cobalt">
                   <span className="sr-only">Grade </span>
                   {g}
                 </span>

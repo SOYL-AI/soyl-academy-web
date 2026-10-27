@@ -27,22 +27,24 @@ const inter = Inter({
   display: 'swap',
 });
 
-// Display serif for the marketing pages: variable weight and optical size.
+// Display serif for the marketing pages. One static weight per style keeps each
+// file small. `optional`: the headline never re-flows when the font arrives late
+// (no layout shift); on a first, very slow visit the size-adjusted fallback stays.
 const newsreader = Newsreader({
   subsets: ['latin'],
   variable: '--font-newsreader',
-  display: 'swap',
+  display: 'optional',
+  weight: '400',
   style: 'normal',
-  axes: ['opsz'],
 });
 
 // Italic accents in headlines.
 const newsreaderItalic = Newsreader({
   subsets: ['latin'],
   variable: '--font-newsreader-italic',
-  display: 'swap',
+  display: 'optional',
+  weight: '400',
   style: 'italic',
-  axes: ['opsz'],
 });
 
 // Kept for the learning platform's UI kit (--font-instrument-serif). The marketing

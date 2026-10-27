@@ -29,7 +29,8 @@ export function Hero() {
               </Drawn>
             </span>
           </h1>
-          <p className="t-lead rise mt-8 max-w-[46ch] md:mt-10" style={{ '--d': '380ms' } as React.CSSProperties}>
+          {/* Static on purpose: on phones this paragraph is the LCP element. */}
+          <p className="t-lead mt-8 max-w-[46ch] md:mt-10">
             {hero.support}
           </p>
           <div className="rise mt-9 flex flex-wrap items-center gap-3" style={{ '--d': '480ms' } as React.CSSProperties}>
