@@ -29,3 +29,7 @@ All items are original. Deliberately avoided: NCERT's 24/25 → 7 tangent, the 5
 
 ## Known gaps
 Narration audio not generated (TTS stage). The renderer needs geometry point labels with KaTeX (`$Q_1$`).
+
+## Changed by assessment-designer (2026-10-27)
+
+Rewritten in `src/questions.mjs` (then rebuilt) because `originality --authored` flagged them as near-duplicates of other items in this chapter; each is now a different question (new numbers, context or skill) with its re-solve check: fb4 (q_cbse10math_ch10_033: angle between tangents from the angle between radii, new numbers).

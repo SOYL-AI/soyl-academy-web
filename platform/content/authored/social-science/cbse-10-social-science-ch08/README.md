@@ -56,3 +56,7 @@ Every passage has `passage_origin: "soyl-original"` and a stem label saying it i
 ## Gaps
 - Map items cannot show the answer on a map until `MapPlace` has coordinates; dams are described by river-and-state clues, so the board's "identify the feature marked A" format is not yet possible.
 - No drawn map of India is used anywhere; the dam table and landmarks stand in for a map in the decks.
+
+## Added by assessment-designer (2026-10-27)
+
+1 Geography map question (3 marks, three dams: q_cbse10sst_ch08_115) for the full mocks' Q19. Original wording; places from the CBSE 2026-27 map list; `map_id: india-political`.

@@ -5668,23 +5668,23 @@
       "unit": "cbse-10-mathematics-ch10",
       "language": "en",
       "type": "fill-blank",
-      "stem_md": "$PA$ and $PB$ are tangents from $P$ to a circle with centre $O$. If $\\angle AOB = 115^\\circ$, then $\\angle APB =$ ___ degrees.",
+      "stem_md": "Two radii of a circle make an angle of $124^\\circ$ with each other. The tangents drawn at their outer ends meet at a point outside the circle, where they make an angle of ___ degrees.",
       "options": [],
       "match_right": [],
       "answer": {
         "blanks": [
           {
             "accepted": [
-              "65",
-              "65°"
+              "56",
+              "56°"
             ]
           }
         ]
       },
-      "solution_md": "$\\angle APB = 180^\\circ - \\angle AOB = 180^\\circ - 115^\\circ = 65^\\circ$ (the angles at $A$ and $B$ in $OAPB$ are right angles).",
+      "solution_md": "Each tangent is perpendicular to its radius, so the quadrilateral formed by the two radii and the two tangents has two right angles. Its angles add up to $360^\\circ$: the angle between the tangents $= 360^\\circ - 90^\\circ - 90^\\circ - 124^\\circ = 56^\\circ$.",
       "marking_scheme": [
         {
-          "step": "65",
+          "step": "56",
           "marks": 1
         }
       ],
@@ -8521,7 +8521,7 @@
     "run_id": null,
     "checks": {
       "syllabus": "topics t01–t03 only (tangent; tangent ⟂ radius; equal tangents from an external point, incl. circumscribed quadrilaterals and triangles); no removed topics in this chapter. Constructions (deleted chapter) are not used: figures are given, never constructed by the student.",
-      "katex": "1641 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "1634 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "0 deck plots + 0 notes/question plots: 0 marked points all on their curves and matching their labels; 0 zeros located numerically and all marked; 0 intersection points lie on both lines",
       "re_solve": "142/142 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "geometry": "19 geometry figures, 157 exact checks (points on circles, right angles, equal lengths, collinearity, labelled angles and lengths to scale), 0 failures",

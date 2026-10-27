@@ -163,6 +163,13 @@ export function loadCatalog(dir: string): Catalog {
         const expected = path.join(subjectDir(bp.subject_id), 'blueprints');
         if (path.normalize(path.relative(dir, path.dirname(file))) !== path.normalize(expected))
           warn(file, `subject blueprint usually lives in ${expected.split(path.sep).join('/')}`);
+        // Section / item chapter scopes must name chapters of this subject's syllabus.
+        const known = syllabi.get(bp.subject_id);
+        for (const s of bp.sections)
+          for (const id of [...(s.chapters ?? []), ...s.items.flatMap((it) => it.chapters ?? [])])
+            if (!id.startsWith(`${bp.subject_id}-ch`) || (known && !known.chapters.some((c) => c.id === id))) err(file, `section ${s.id}: chapter ${id} is not in ${bp.subject_id}'s syllabus`);
+      } else if (bp.sections.some((s) => s.chapters || s.items.some((it) => it.chapters))) {
+        err(file, 'a board/class default blueprint cannot scope sections or items to chapters');
       }
       if (blueprints.some((b) => b.id === bp.id)) err(file, `duplicate blueprint id ${bp.id}`);
       blueprints.push(bp);

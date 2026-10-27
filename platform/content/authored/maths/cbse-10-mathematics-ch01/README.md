@@ -43,3 +43,7 @@ re-solve check per item), `src/lib.mjs` (builders + validator). Run from `platfo
 - Narration audio not generated (TTS stage).
 - `table` cells use `$…$` maths per the current contract; renderers must support inline KaTeX in cells.
 - The bus-departure plot uses `series` of kind `scatter` on three horizontal rows; a renderer without series support will show only the marked point.
+
+## Changed by assessment-designer (2026-10-27)
+
+Rewritten in `src/questions.mjs` (then rebuilt) because `originality --authored` flagged them as near-duplicates of other items in this chapter; each is now a different question (new numbers, context or skill) with its re-solve check: m10 (q_cbse10math_ch01_010: HCF with remainders, now a sharing context), s206 (_049: now sum and product of two irrationals), s302 (_054: now an LCM context with three lamps).

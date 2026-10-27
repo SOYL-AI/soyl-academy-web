@@ -55,3 +55,7 @@ Every key and part re-solved from its stem; the key-check script found 0 mismatc
 - **Cartoon items:** the board's Political Science section can carry a cartoon-based MCQ (this chapter's textbook has several on gender); cartoons need artwork, so none are included.
 - The 2023 amendment's commencement depends on the census and delimitation; when it comes into force, the representation slide, notes, flashcards and items `m_2023`, `ar_lok_sabha`, `m_lok_sabha` and `l_representation` need a wording update.
 - Bar plots name their categories by number on the x-axis (no `categories` field for bar plots yet).
+
+## Changed by assessment-designer (2026-10-27)
+
+`q_cbse10sst_ch15_062`: stem reworded (it duplicated the generic match stem of ch18_041 and ch21_049); the item is unchanged.

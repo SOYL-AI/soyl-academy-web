@@ -105,16 +105,16 @@ Option (b) is the HCF. Option (c) $216$ is not a multiple of $48$, and (d) is a 
 }), (C) => { C.opt(lcmN(48, 72, 108)); C.assert(hcfN(48, 72, 108) === 12 && 216 % 48 !== 0, 'distractors'); });
 
 Q('m10', mk.mcq({
-  stem: r`The largest number that divides $245$ and $1029$, leaving remainders $5$ and $9$ respectively, is`,
-  opts: ['$60$', '$120$', '$30$', '$20$'],
+  stem: r`When $172$ notebooks and $259$ pens are shared equally among the students of a class, $4$ notebooks and $7$ pens are left over. The greatest possible number of students in the class is`,
+  opts: ['$84$', '$42$', '$168$', '$28$'],
   key: 'a',
-  sol: r`**Step 1.** Remove the remainders: the number divides $245 - 5 = 240$ and $1029 - 9 = 1020$ exactly.
+  sol: r`**Step 1.** The students received $172 - 4 = 168$ notebooks and $259 - 7 = 252$ pens, so the number of students divides both $168$ and $252$ exactly.
 
-**Step 2.** $240 = 2^4 \times 3 \times 5$ and $1020 = 2^2 \times 3 \times 5 \times 17$, so HCF $= 2^2 \times 3 \times 5 = 60$.
+**Step 2.** $168 = 2^3 \times 3 \times 7$ and $252 = 2^2 \times 3^2 \times 7$, so HCF $= 2^2 \times 3 \times 7 = 84$.
 
-**Check:** $245 = 4 \times 60 + 5$ and $1029 = 17 \times 60 + 9$. Options (c) and (d) also leave these remainders but are not the largest; $120$ does not divide $1020$.`,
+**Check:** $172 = 2 \times 84 + 4$ and $259 = 3 \times 84 + 7$. Options (b) and (d) also leave these remainders but are not the greatest; $168$ does not divide $252$.`,
   d: 3, c: 'application', t: [2], time: 90,
-}), (C) => { C.opt(gcd(245 - 5, 1029 - 9)); C.assert(245 % 60 === 5 && 1029 % 60 === 9 && 1020 % 120 !== 0, 'remainders'); });
+}), (C) => { C.opt(gcd(172 - 4, 259 - 7)); C.assert(172 % 84 === 4 && 259 % 84 === 7 && 172 % 42 === 4 && 259 % 28 === 7 && 252 % 168 !== 0, 'remainders'); });
 
 Q('m11', mk.mcq({
   stem: r`Which of these numbers is **irrational**?`,
@@ -444,16 +444,16 @@ Check: $161 = 7 \times 23$, $207 = 3^2 \times 23$; HCF $= 23$, LCM $= 3^2 \times
 }), (C) => { const b = (23 * 1449) / 161; C.model([b, 33327]); C.assert(gcd(161, b) === 23 && lcm(161, b) === 1449, 'consistent'); });
 Q('s206', mk.short({
   marks: 2,
-  stem: r`Given that $\sqrt{3}$ is irrational, prove that $\dfrac{2\sqrt{3}}{7}$ is irrational.`,
-  model: r`Suppose, to the contrary, that $\dfrac{2\sqrt3}{7} = r$ for some rational number $r$.
+  stem: r`Both $5 + \sqrt{3}$ and $5 - \sqrt{3}$ are irrational. Work out their sum and their product. What do your answers show about adding or multiplying two irrational numbers?`,
+  model: r`Sum: $(5 + \sqrt3) + (5 - \sqrt3) = 10$, which is rational.
 
-Then $\sqrt3 = \dfrac{7r}{2}$. Since $r$ is rational, $\dfrac{7r}{2}$ is rational, so $\sqrt3$ would be rational.
+Product: $(5 + \sqrt3)(5 - \sqrt3) = 25 - 3 = 22$, which is also rational.
 
-This contradicts the fact that $\sqrt3$ is irrational. Hence $\dfrac{2\sqrt3}{7}$ is irrational.`,
-  sol: r`Assume it is rational, isolate $\sqrt3$, and note that a rational number multiplied by $\dfrac72$ stays rational. The contradiction completes the proof.`,
-  scheme: [['Assumes rational and isolates √3 = 7r/2', 1], ['States contradiction and conclusion', 1]],
-  d: 2, c: 'application', t: [3], time: 150,
-}), null, 'proof: structure checked by hand (assume rational, isolate root 3, contradiction)');
+So the sum, and the product, of two irrational numbers need **not** be irrational: here both are rational.`,
+  sol: r`The $\sqrt3$ terms cancel in the sum; the product is a difference of squares, $a^2 - b^2$ with $a = 5$, $b = \sqrt3$.`,
+  scheme: [['Sum 10 and product 22', 1], ['Conclusion: sum/product of irrationals can be rational', 1]],
+  d: 2, c: 'analysis', t: [3], time: 150,
+}), (C) => { const s3 = Math.sqrt(3); C.assert(Math.abs((5 + s3) + (5 - s3) - 10) < 1e-12 && Math.abs((5 + s3) * (5 - s3) - 22) < 1e-12, 'sum 10, product 22'); C.model([10, 22]); });
 Q('s207', mk.short({
   marks: 2,
   stem: r`Meera says, "$\sqrt{8} + \sqrt{2}$ is rational, because $8 + 2 = 10$." Is she right? Justify your answer.`,
@@ -506,16 +506,16 @@ Verification: $\text{HCF} \times \text{LCM} = 3 \times 31500 = 94500$ and $252 \
 }), (C) => { C.model([gcd(252, 375), lcm(252, 375), 252 * 375]); C.assert(gcd(252, 375) * lcm(252, 375) === 94500, 'product'); });
 Q('s302', mk.short({
   marks: 3,
-  stem: r`Find the HCF and LCM of $40$, $84$ and $210$ by prime factorisation.`,
-  model: r`$40 = 2^3 \times 5$, $84 = 2^2 \times 3 \times 7$, $210 = 2 \times 3 \times 5 \times 7$.
+  stem: r`Three warning lamps on a factory floor flash every $36$, $48$ and $90$ seconds. They flash together at noon. Using prime factorisation, find after how many minutes they next flash together, and how many times they flash together in the next $2$ hours (not counting noon).`,
+  model: r`$36 = 2^2 \times 3^2$, $48 = 2^4 \times 3$, $90 = 2 \times 3^2 \times 5$.
 
-HCF: the only prime common to all three is $2$, smallest power $2^1$. HCF $= 2$.
+LCM $= 2^4 \times 3^2 \times 5 = 720$ seconds $= 12$ minutes. They next flash together $12$ minutes after noon, at 12:12.
 
-LCM $= 2^3 \times 3 \times 5 \times 7 = 840$.`,
-  sol: r`For three numbers, the HCF uses primes common to **all three**: $3$, $5$ and $7$ are each missing from one number. The LCM takes every prime with its greatest power. Note $2 \times 840 = 1680 \ne 40 \times 84 \times 210$.`,
-  scheme: [['All three factorisations', 1], ['HCF = 2', 1], ['LCM = 840', 1]],
-  d: 2, c: 'understanding', t: [2], time: 240,
-}), (C) => { C.model([hcfN(40, 84, 210), lcmN(40, 84, 210)]); C.assert(2 * 840 !== 40 * 84 * 210, 'not product'); });
+In $2$ hours $= 120$ minutes they flash together every $12$ minutes: $120 \div 12 = 10$ times.`,
+  sol: r`"Together again" means a common multiple of all three intervals, and the first time is the LCM. Take every prime with its greatest power: $2^4$ from $48$, $3^2$ from $36$ or $90$, $5$ from $90$.`,
+  scheme: [['All three factorisations', 1], ['LCM = 720 s = 12 minutes', 1], ['10 times in 2 hours', 1]],
+  d: 3, c: 'application', t: [2], time: 240,
+}), (C) => { const L = lcmN(36, 48, 90); C.assert(L === 720, 'lcm 720'); C.model([L, L / 60, 120 / (L / 60)]); });
 Q('s303', mk.short({
   marks: 3,
   stem: r`Prove that $\sqrt{5}$ is irrational.`,

@@ -6,12 +6,23 @@
  *   - hard: type (with the blueprint's documented mapping: a `short`/`long` slot also takes a
  *     `numerical` of the same marks, since board numericals carry step marks), marks_each exactly,
  *     competency and difficulty range when the item sets them, not already in this paper, not in
- *     the series' exclusion set ("no repeats across a series"), scope chapters only;
+ *     the series' exclusion set ("no repeats across a series"), not a practice-only item (tagged
+ *     with any project / periodic-assessment-only topic), not a near-duplicate of a question already
+ *     in the paper (`conflicts`), scope chapters only, and the
+ *     section's / item's own chapter scope when the blueprint sets one (discipline sections:
+ *     Science Biology / Chemistry / Physics, Social Science History / Geography / …);
  *   - multi-chapter scopes: every chapter in scope must have questions in the bank, otherwise the
  *     paper is not built (a syllabus paper from one chapter is not a board paper);
+ *   - unit weightage (board papers, `unitTargets` from the syllabus unit marks): the attempted marks
+ *     of every syllabus unit equal its target exactly. Slots are allocated to units first (largest
+ *     marks first, a bounded seeded search that respects section scopes and what the bank holds),
+ *     and both alternatives of an internal choice come from the same unit;
  *   - soft (scored): chapter spread (unused chapter +3), topic coverage (new topic +2), difficulty
- *     curve (target ramps from easy to hard across the paper; −|d − target|), internal-choice
- *     alternatives from the same chapter as their partner (+2); ties broken by the seeded shuffle.
+ *     curve (target ramps from easy to hard across the paper; −|d − target|), the blueprint's
+ *     competency mark shares (under-filled share preferred), questions in `avoid` (−6: another track's
+ *     papers), internal-choice alternatives from the
+ *     same chapter as their partner (+2); ties broken by the seeded shuffle of the id-sorted bank,
+ *     so the same bank gives the same paper whatever order the bank was read in.
  * Shortages never fail silently: they come back as GenerationRequest records (what to generate,
  * for which chapters) and no TestDefinition is produced for that paper.
  */
@@ -30,6 +41,13 @@ export interface BankItem {
   topic_ids: string[];
 }
 
+/** Attempted marks a syllabus unit must carry in a paper (board papers: the syllabus unit marks). */
+export interface UnitTarget {
+  unit: string;
+  chapters: string[];
+  marks: number;
+}
+
 export interface PaperSpec {
   id: string;
   title: string;
@@ -40,6 +58,18 @@ export interface PaperSpec {
   seed: string;
   /** Question ids that must not be used (series no-repeat rule, short/long disjointness). */
   exclude?: ReadonlySet<string>;
+  /** Exact unit weightage; the targets must add up to the blueprint's total marks. */
+  unitTargets?: UnitTarget[];
+  /**
+   * Topics the board does not assess (syllabus `board_assessed: false`: project / periodic-assessment
+   * only, and every topic of a chapter that is not board-assessed). A question tagged with any of them
+   * is practice, never part of this paper.
+   */
+  practiceOnlyTopics?: ReadonlySet<string>;
+  /** Near-duplicate questions (stem similarity, ORIGINALITY.samePaper): never two of a group in one paper. */
+  conflicts?: ReadonlyMap<string, ReadonlySet<string>>;
+  /** Soft: questions to avoid when the bank allows (the May track avoids the main mocks' questions). */
+  avoid?: ReadonlySet<string>;
 }
 
 export interface GenerationRequest {
@@ -88,8 +118,19 @@ interface Slot {
   difficulty: [number, number] | null;
   group: string | null;
   attempt: number;
+  /** Section / item chapter scope (null = the paper's scope). */
+  chapters: readonly string[] | null;
   /** 0..1 position in the paper (difficulty ramp). */
   position: number;
+}
+
+/** One unit of allocation: a single slot, or every alternative of one internal-choice group. */
+interface Block {
+  slots: Slot[];
+  /** Attempted marks the block adds to the paper. */
+  counted: number;
+  /** Availability key (slot predicate). */
+  key: string;
 }
 
 function slotsOf(bp: Blueprint): Slot[] {
@@ -97,27 +138,109 @@ function slotsOf(bp: Blueprint): Slot[] {
   for (const s of bp.sections) {
     let g = 0;
     s.items.forEach((it, itemIndex) => {
+      const chapters = it.chapters ?? s.chapters ?? null;
+      const base = { section: s.id, itemIndex, type: it.type, marks: it.marks_each, competency: it.competency, difficulty: it.difficulty, chapters };
       if (it.internal_choice) {
         const groups = Math.floor(it.count / it.internal_choice.of);
         for (let k = 0; k < groups; k++) {
           const group = `${s.id}-c${++g}`;
-          for (let j = 0; j < it.internal_choice.of; j++)
-            slots.push({ section: s.id, itemIndex, type: it.type, marks: it.marks_each, competency: it.competency, difficulty: it.difficulty, group, attempt: it.internal_choice.attempt });
+          for (let j = 0; j < it.internal_choice.of; j++) slots.push({ ...base, group, attempt: it.internal_choice.attempt });
         }
-      } else for (let k = 0; k < it.count; k++) slots.push({ section: s.id, itemIndex, type: it.type, marks: it.marks_each, competency: it.competency, difficulty: it.difficulty, group: null, attempt: 1 });
+      } else for (let k = 0; k < it.count; k++) slots.push({ ...base, group: null, attempt: 1 });
     });
   }
   return slots.map((s, i) => ({ ...s, position: slots.length > 1 ? i / (slots.length - 1) : 0.5 }));
 }
 
+function blocksOf(slots: Slot[]): Block[] {
+  const blocks: Block[] = [];
+  const byGroup = new Map<string, Block>();
+  for (const s of slots) {
+    const key = `${s.section}|${s.type}|${s.marks}|${s.competency}|${s.difficulty}|${s.chapters?.join(',') ?? '*'}`;
+    if (s.group) {
+      const b = byGroup.get(s.group);
+      if (b) {
+        b.slots.push(s);
+        continue;
+      }
+      const nb: Block = { slots: [s], counted: s.marks * s.attempt, key };
+      byGroup.set(s.group, nb);
+      blocks.push(nb);
+    } else blocks.push({ slots: [s], counted: s.marks, key });
+  }
+  return blocks;
+}
+
 const DIFFICULTY_RAMP = { start: 1.8, end: 3.8 } as const;
+/** Search budget for the unit allocation (nodes); beyond it the paper is reported as a shortage. */
+const ALLOCATION_NODE_LIMIT = 200_000;
+
+function accepts(slot: Slot, q: BankItem, scope: ReadonlySet<string> | null): boolean {
+  const accept = SLOT_COMPATIBLE[slot.type] ?? [slot.type];
+  if (!accept.includes(q.type) || Math.abs(q.marks - slot.marks) > 1e-9) return false;
+  if (slot.competency && !slot.competency.split('+').includes(q.competency)) return false;
+  if (slot.difficulty && (q.difficulty < slot.difficulty[0] || q.difficulty > slot.difficulty[1])) return false;
+  if (slot.chapters && !slot.chapters.includes(q.unit)) return false;
+  if (scope && !scope.has(q.unit)) return false;
+  return true;
+}
+
+/**
+ * Allocates every block to a unit so that each unit's attempted marks equal its target exactly.
+ * Deterministic: units are tried by remaining share (largest first), ties by the seeded order.
+ */
+function allocateUnits(
+  blocks: Block[],
+  targets: UnitTarget[],
+  candidates: (b: Block, unit: number) => number,
+  order: number[],
+): { ok: true; units: number[] } | { ok: false; block: Block; open: number[] } {
+  const rem = targets.map((t) => t.marks);
+  const eligible = blocks.map((b) => targets.map((_, u) => u).filter((u) => candidates(b, u) >= b.slots.length));
+  // Remaining capacity per unit (sum of counted marks of later blocks that may go to it), for pruning.
+  const capAfter: number[][] = blocks.map(() => targets.map(() => 0));
+  for (let i = blocks.length - 2; i >= 0; i--) for (let u = 0; u < targets.length; u++) capAfter[i]![u] = capAfter[i + 1]![u]! + (eligible[i + 1]!.includes(u) ? blocks[i + 1]!.counted : 0);
+  const used = new Map<string, number>();
+  const units: number[] = [];
+  let nodes = 0;
+  let deepest = { i: -1, open: [] as number[] };
+  const rank = new Map(order.map((u, i) => [u, i]));
+  const dfs = (i: number): boolean => {
+    if (i === blocks.length) return rem.every((r) => Math.abs(r) < 1e-9);
+    if (++nodes > ALLOCATION_NODE_LIMIT) return false;
+    if (i > deepest.i) deepest = { i, open: rem.map((r, u) => (r > 1e-9 ? u : -1)).filter((u) => u >= 0) };
+    const b = blocks[i]!;
+    const opts = eligible[i]!
+      .filter((u) => rem[u]! - b.counted > -1e-9 && candidates(b, u) - (used.get(`${u}|${b.key}`) ?? 0) >= b.slots.length)
+      .sort((x, y) => rem[y]! / targets[y]!.marks - rem[x]! / targets[x]!.marks || rank.get(x)! - rank.get(y)!);
+    for (const u of opts) {
+      rem[u]! -= b.counted;
+      // Prune: every unit must still be reachable with the blocks left.
+      if (rem.every((r, v) => r < 1e-9 || capAfter[i]![v]! - r > -1e-9)) {
+        const k = `${u}|${b.key}`;
+        used.set(k, (used.get(k) ?? 0) + b.slots.length);
+        units.push(u);
+        if (dfs(i + 1)) return true;
+        units.pop();
+        used.set(k, used.get(k)! - b.slots.length);
+      }
+      rem[u]! += b.counted;
+    }
+    return false;
+  };
+  if (dfs(0)) return { ok: true, units };
+  const at = Math.min(Math.max(deepest.i, 0), blocks.length - 1);
+  return { ok: false, block: blocks[at]!, open: deepest.open };
+}
 
 export function assemblePaper(spec: PaperSpec, bank: readonly BankItem[]): PaperResult {
   const bp = spec.blueprint;
   const scope = new Set(spec.chapters);
   const exclude = spec.exclude ?? new Set<string>();
   const rng = createRng(spec.seed);
-  const pool = rng.shuffle(bank.filter((q) => scope.has(q.unit)));
+  const sorted = [...bank].sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+  const practiceOnly = spec.practiceOnlyTopics;
+  const pool = rng.shuffle(sorted.filter((q) => scope.has(q.unit) && !(practiceOnly && q.topic_ids.some((t) => practiceOnly.has(t)))));
   const requests: GenerationRequest[] = [];
   const base = { paper_id: spec.id, blueprint_id: bp.id };
 
@@ -133,6 +256,64 @@ export function assemblePaper(spec: PaperSpec, bank: readonly BankItem[]): Paper
     }
   }
 
+  const slots = slotsOf(bp);
+  const blocks = blocksOf(slots).map((b, i) => ({ b, i })).sort((x, y) => y.b.counted - x.b.counted || x.i - y.i).map((x) => x.b);
+  const available = pool.filter((q) => !exclude.has(q.id));
+
+  // Unit weightage: allocate blocks to units before choosing questions.
+  const targets = (spec.unitTargets ?? []).map((t) => ({ ...t, chapters: t.chapters.filter((c) => scope.has(c)) })).filter((t) => t.marks > 0);
+  let unitOfBlock: (Set<string> | null)[] = blocks.map(() => null);
+  if (targets.length) {
+    const sets = targets.map((t) => new Set(t.chapters));
+    const counts = new Map<string, number>();
+    const candidates = (b: Block, u: number) => {
+      const k = `${u}|${b.key}`;
+      let n = counts.get(k);
+      if (n === undefined) {
+        n = available.filter((q) => accepts(b.slots[0]!, q, sets[u]!)).length;
+        counts.set(k, n);
+      }
+      return n;
+    };
+    // Plain shortages first: blocks of one kind that need more questions than every unit together holds.
+    const demand = new Map<string, { block: Block; need: number }>();
+    for (const b of blocks) {
+      const d = demand.get(b.key) ?? { block: b, need: 0 };
+      d.need += b.slots.length;
+      demand.set(b.key, d);
+    }
+    for (const { block, need } of demand.values()) {
+      const have = available.filter((q) => accepts(block.slots[0]!, q, null)).length;
+      if (have >= need) continue;
+      const s = block.slots[0]!;
+      requests.push({ ...base, section: s.section, type: s.type, marks: s.marks, competency: s.competency, difficulty: s.difficulty, chapters: s.chapters ? spec.chapters.filter((c) => s.chapters!.includes(c)) : spec.chapters, missing: need - have, reason: `not enough unused ${s.type} (${s.marks} mark${s.marks === 1 ? '' : 's'}) questions in scope` });
+    }
+    if (requests.length) return { ok: false, requests };
+    const order = rng.shuffle(targets.map((_, u) => u));
+    const alloc = allocateUnits(blocks, targets, candidates, order);
+    if (!alloc.ok) {
+      const s = alloc.block.slots[0]!;
+      const chapters = alloc.open.flatMap((u) => targets[u]!.chapters).filter((c) => !s.chapters || s.chapters.includes(c));
+      requests.push({
+        ...base,
+        section: s.section,
+        type: s.type,
+        marks: s.marks,
+        competency: s.competency,
+        difficulty: s.difficulty,
+        chapters: chapters.length ? chapters : spec.chapters,
+        missing: alloc.block.slots.length,
+        reason: `unit weightage cannot be met from the bank: not enough unused ${s.type} (${s.marks} mark${s.marks === 1 ? '' : 's'}) questions in ${alloc.open.map((u) => targets[u]!.unit).join(' / ') || 'the units in scope'}`,
+      });
+      return { ok: false, requests };
+    }
+    unitOfBlock = alloc.units.map((u) => sets[u]!);
+  }
+
+  // Competency mark shares (soft): target attempted marks per share group ("recall+understanding" …).
+  const shareGroups = Object.entries(bp.mark_shares).map(([k, share]) => ({ comps: new Set(k.split('+')), target: share * bp.total_marks, assigned: 0 }));
+  const groupOf = (c: string) => shareGroups.find((g) => g.comps.has(c)) ?? null;
+
   const used = new Set<string>();
   const usedUnits = new Map<string, number>();
   const coveredTopics = new Set<string>();
@@ -140,72 +321,79 @@ export function assemblePaper(spec: PaperSpec, bank: readonly BankItem[]): Paper
   const groupUnit = new Map<string, string>();
   const shortage = new Map<string, GenerationRequest>();
 
-  for (const slot of slotsOf(bp)) {
-    const accept = SLOT_COMPATIBLE[slot.type] ?? [slot.type];
-    const target = slot.difficulty ? (slot.difficulty[0] + slot.difficulty[1]) / 2 : DIFFICULTY_RAMP.start + (DIFFICULTY_RAMP.end - DIFFICULTY_RAMP.start) * slot.position;
-    let best: BankItem | null = null;
-    let bestScore = -Infinity;
-    for (const q of pool) {
-      if (used.has(q.id) || exclude.has(q.id)) continue;
-      if (!accept.includes(q.type) || Math.abs(q.marks - slot.marks) > 1e-9) continue;
-      if (slot.competency && !slot.competency.split('+').includes(q.competency)) continue;
-      if (slot.difficulty && (q.difficulty < slot.difficulty[0] || q.difficulty > slot.difficulty[1])) continue;
-      let score = 0;
-      if (!usedUnits.has(q.unit)) score += 3;
-      else score -= 0.5 * (usedUnits.get(q.unit)! / Math.max(1, chosen.length));
-      if (q.topic_ids.some((t) => !coveredTopics.has(t))) score += 2;
-      score -= Math.abs(q.difficulty - target);
-      if (q.type !== slot.type) score -= 0.25; // prefer the exact type
-      if (slot.group && groupUnit.has(slot.group)) score += groupUnit.get(slot.group) === q.unit ? 2 : -1;
-      if (score > bestScore) {
-        bestScore = score;
-        best = q;
+  blocks.forEach((block, bi) => {
+    const unitScope = unitOfBlock[bi] ?? null;
+    block.slots.forEach((slot, member) => {
+      const counted = member === 0 ? block.counted : 0;
+      const target = slot.difficulty ? (slot.difficulty[0] + slot.difficulty[1]) / 2 : DIFFICULTY_RAMP.start + (DIFFICULTY_RAMP.end - DIFFICULTY_RAMP.start) * slot.position;
+      let best: BankItem | null = null;
+      let bestScore = -Infinity;
+      for (const q of available) {
+        if (used.has(q.id) || !accepts(slot, q, unitScope)) continue;
+        const near = spec.conflicts?.get(q.id);
+        if (near && [...near].some((id) => used.has(id))) continue;
+        let score = 0;
+        if (!usedUnits.has(q.unit)) score += 3;
+        else score -= 0.5 * (usedUnits.get(q.unit)! / Math.max(1, chosen.length));
+        if (q.topic_ids.some((t) => !coveredTopics.has(t))) score += 2;
+        score -= Math.abs(q.difficulty - target);
+        if (q.type !== slot.type) score -= 0.25; // prefer the exact type
+        if (spec.avoid?.has(q.id)) score -= 6;
+        if (slot.group && groupUnit.has(slot.group)) score += groupUnit.get(slot.group) === q.unit ? 2 : -1;
+        const g = counted ? groupOf(q.competency) : null;
+        if (g) score += 3 * Math.max(-1, Math.min(1, (g.target - g.assigned) / counted));
+        if (score > bestScore) {
+          bestScore = score;
+          best = q;
+        }
       }
-    }
-    if (!best) {
-      const key = `${slot.section}|${slot.type}|${slot.marks}|${slot.competency}|${slot.difficulty}`;
-      const prev = shortage.get(key);
-      if (prev) prev.missing++;
-      else
-        shortage.set(key, {
-          ...base,
-          section: slot.section,
-          type: slot.type,
-          marks: slot.marks,
-          competency: slot.competency,
-          difficulty: slot.difficulty,
-          chapters: spec.chapters,
-          missing: 1,
-          reason: `not enough unused ${slot.type} (${slot.marks} mark${slot.marks === 1 ? '' : 's'}) questions in scope`,
-        });
-      continue;
-    }
-    used.add(best.id);
-    usedUnits.set(best.unit, (usedUnits.get(best.unit) ?? 0) + 1);
-    best.topic_ids.forEach((t) => coveredTopics.add(t));
-    if (slot.group && !groupUnit.has(slot.group)) groupUnit.set(slot.group, best.unit);
-    chosen.push({ slot, q: best });
-  }
+      if (!best) {
+        const key = `${slot.section}|${slot.type}|${slot.marks}|${slot.competency}|${slot.difficulty}`;
+        const prev = shortage.get(key);
+        if (prev) prev.missing++;
+        else
+          shortage.set(key, {
+            ...base,
+            section: slot.section,
+            type: slot.type,
+            marks: slot.marks,
+            competency: slot.competency,
+            difficulty: slot.difficulty,
+            chapters: slot.chapters ? spec.chapters.filter((c) => slot.chapters!.includes(c)) : spec.chapters,
+            missing: 1,
+            reason: `not enough unused ${slot.type} (${slot.marks} mark${slot.marks === 1 ? '' : 's'}) questions in scope`,
+          });
+        return;
+      }
+      used.add(best.id);
+      usedUnits.set(best.unit, (usedUnits.get(best.unit) ?? 0) + 1);
+      best.topic_ids.forEach((t) => coveredTopics.add(t));
+      if (slot.group && !groupUnit.has(slot.group)) groupUnit.set(slot.group, best.unit);
+      const g = counted ? groupOf(best.competency) : null;
+      if (g) g.assigned += counted;
+      chosen.push({ slot, q: best });
+    });
+  });
   if (shortage.size) return { ok: false, requests: [...shortage.values()] };
 
   // Lay out: blueprint section and item order; inside an item, easier first; choice groups stay together.
   const sections = bp.sections.map((s) => {
-    const inSection = chosen.filter((c) => c.slot.section === s.id);
-    const blocks: { key: string; itemIndex: number; difficulty: number; members: typeof inSection }[] = [];
+    const inSection = chosen.filter((c) => c.slot.section === s.id).sort((a, b) => slots.indexOf(a.slot) - slots.indexOf(b.slot));
+    const blocksOut: { key: string; itemIndex: number; difficulty: number; members: typeof inSection }[] = [];
     for (const c of inSection) {
       const key = c.slot.group ?? c.q.id;
-      const block = blocks.find((b) => b.key === key);
+      const block = blocksOut.find((b) => b.key === key);
       if (block) block.members.push(c);
-      else blocks.push({ key, itemIndex: c.slot.itemIndex, difficulty: 0, members: [c] });
+      else blocksOut.push({ key, itemIndex: c.slot.itemIndex, difficulty: 0, members: [c] });
     }
-    blocks.forEach((b) => (b.difficulty = Math.min(...b.members.map((m) => m.q.difficulty))));
-    blocks.sort((a, b) => a.itemIndex - b.itemIndex || a.difficulty - b.difficulty);
+    blocksOut.forEach((b) => (b.difficulty = Math.min(...b.members.map((m) => m.q.difficulty))));
+    blocksOut.sort((a, b) => a.itemIndex - b.itemIndex || a.difficulty - b.difficulty);
     const groups = [...new Map(inSection.filter((c) => c.slot.group).map((c) => [c.slot.group!, c.slot.attempt])).entries()].map(([id, attempt]) => ({ id, attempt }));
     return {
       id: s.id,
       title: s.title,
       instructions: s.instructions,
-      items: blocks.flatMap((b) => b.members.map((m) => ({ question_id: m.q.id, question_version: m.q.version, marks: m.q.marks, choice_group: m.slot.group }))),
+      items: blocksOut.flatMap((b) => b.members.map((m) => ({ question_id: m.q.id, question_version: m.q.version, marks: m.q.marks, choice_group: m.slot.group }))),
       choice_groups: groups,
     };
   });
@@ -225,4 +413,26 @@ export function assemblePaper(spec: PaperSpec, bank: readonly BankItem[]): Paper
     version: 1,
   });
   return { ok: true, test, used: [...used] };
+}
+
+/**
+ * Attempted marks per key (chapter, unit …) of a test: ungrouped items count fully; in a choice group
+ * the first `attempt` alternatives count (with unit weightage every alternative shares their unit).
+ */
+export function attemptedMarksBy(test: TestDefinition, keyOf: (questionId: string) => string): Map<string, number> {
+  const out = new Map<string, number>();
+  for (const s of test.sections) {
+    const attempts = new Map(s.choice_groups.map((g) => [g.id, g.attempt]));
+    const seen = new Map<string, number>();
+    for (const it of s.items) {
+      const unit = keyOf(it.question_id);
+      if (it.choice_group) {
+        const n = seen.get(it.choice_group) ?? 0;
+        seen.set(it.choice_group, n + 1);
+        if (n >= (attempts.get(it.choice_group) ?? 1)) continue;
+      }
+      out.set(unit, (out.get(unit) ?? 0) + it.marks);
+    }
+  }
+  return out;
 }

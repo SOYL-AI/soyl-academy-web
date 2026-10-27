@@ -27,6 +27,9 @@ import type { Pipeline } from '../pipeline';
 import { loadAuthoredUnits, loadOutUnit, outUnits } from '../sources';
 import { assemblePaper, type BankItem, type GenerationRequest } from '../assemble/engine';
 import { planSubjectTests, type PlannedPaper } from '../assemble/series';
+import { nearDuplicates } from '../originality/ngrams';
+import { ORIGINALITY } from '../../config/pipeline';
+import { loadFrozenSeries, questionIds, remapVersions, seriesFile, writeFrozenSeries, type FrozenSeriesFile } from '../assemble/frozen';
 
 export const PUBLISHABLE_STATUSES = new Set(['auto_verified', 'published', 'reviewed']);
 
@@ -35,12 +38,24 @@ export interface Bank {
   /** unit → paper types that already have a published chapter test. */
   chapterTests: Map<string, Set<string>>;
   source: 'db' | 'files';
+  /** Near-duplicate questions (ORIGINALITY.samePaper) that must not share a paper. */
+  conflicts?: Map<string, Set<string>>;
+}
+
+/** Near-duplicate groups (ORIGINALITY.samePaper) from question texts: id → ids it must not share a paper with. */
+export function conflictsOf(texts: { id: string; unit: string; text: string }[]): Map<string, Set<string>> {
+  const out = new Map<string, Set<string>>();
+  for (const { a, b } of nearDuplicates(texts, ORIGINALITY.samePaper)) {
+    out.set(a.id, (out.get(a.id) ?? new Set()).add(b.id));
+    out.set(b.id, (out.get(b.id) ?? new Set()).add(a.id));
+  }
+  return out;
 }
 
 export async function bankFromDb(p: Pipeline, subject: Subject, academicYear: string): Promise<Bank> {
   const { db } = await p.dbAccess.get();
   const rows = await db
-    .select({ key: questionsTable.key, version: questionsTable.version, unit: questionsTable.unit, type: questionsTable.type, marks: questionsTable.marks, difficulty: questionsTable.difficulty, competency: questionsTable.competency, topicKeys: questionsTable.topicKeys })
+    .select({ key: questionsTable.key, version: questionsTable.version, unit: questionsTable.unit, type: questionsTable.type, marks: questionsTable.marks, difficulty: questionsTable.difficulty, competency: questionsTable.competency, topicKeys: questionsTable.topicKeys, body: questionsTable.body })
     .from(questionsTable)
     .where(and(eq(questionsTable.academicYear, academicYear), eq(questionsTable.isCurrent, true), inArray(questionsTable.status, ['published', 'reviewed']), eq(questionsTable.pool, 'practice'), sql`${questionsTable.unit} LIKE ${`${subject.id}-ch%`}`));
   const items: BankItem[] = rows.map((r) => ({ id: r.key, version: r.version, unit: r.unit, type: r.type as BankItem['type'], marks: Number(r.marks), difficulty: r.difficulty, competency: r.competency as BankItem['competency'], topic_ids: r.topicKeys }));
@@ -51,11 +66,14 @@ export async function bankFromDb(p: Pipeline, subject: Subject, academicYear: st
     .where(and(eq(subjectsTable.key, subject.id), eq(testsTable.academicYear, academicYear), eq(testsTable.status, 'published'), inArray(testsTable.paperType, ['chapter-test-short', 'chapter-test-long'])));
   const chapterTests = new Map<string, Set<string>>();
   for (const t of tests) for (const u of t.chapterKeys) chapterTests.set(u, new Set([...(chapterTests.get(u) ?? []), t.paperType]));
-  return { items, chapterTests, source: 'db' };
+  const conflicts = conflictsOf(rows.map((r) => ({ id: r.key, unit: r.unit, text: `${(r.body as { passage_md?: string }).passage_md ?? ''}
+${(r.body as { stem_md?: string }).stem_md ?? ''}` })));
+  return { items, chapterTests, source: 'db', conflicts };
 }
 
 export function bankFromFiles(p: Pipeline, subject: Subject, opts: { allowMock?: boolean } = {}): Bank {
   const items: BankItem[] = [];
+  const texts: { id: string; unit: string; text: string }[] = [];
   const chapterTests = new Map<string, Set<string>>();
   const prefix = `${subject.id}-ch`;
   const authored = loadAuthoredUnits(p).filter((u) => u.unit.startsWith(prefix) && !u.problems.length);
@@ -67,10 +85,12 @@ export function bankFromFiles(p: Pipeline, subject: Subject, opts: { allowMock?:
     for (const q of u.questions) {
       if (u.origin === 'pipeline' && !PUBLISHABLE_STATUSES.has(q.status)) continue;
       items.push({ id: q.id, version: q.version, unit: u.unit, type: q.type, marks: q.marks, difficulty: q.difficulty, competency: q.competency, topic_ids: q.topic_ids });
+      texts.push({ id: q.id, unit: u.unit, text: `${q.passage_md ?? ''}
+${q.stem_md}` });
     }
     for (const t of u.tests) if (t.kind === 'chapter') chapterTests.set(u.unit, new Set([...(chapterTests.get(u.unit) ?? []), t.paper_type]));
   }
-  return { items, chapterTests, source: 'files' };
+  return { items, chapterTests, source: 'files', conflicts: conflictsOf(texts) };
 }
 
 export interface AssembledSubject {
@@ -80,20 +100,56 @@ export interface AssembledSubject {
   notes: string[];
 }
 
-/** Plans and assembles every paper for one subject from a bank (pure apart from logging). */
-export function assembleSubject(plan: ReturnType<typeof planSubjectTests>, bank: Bank): AssembledSubject {
+/**
+ * Plans and assembles every paper for one subject from a bank (pure apart from logging).
+ * With a frozen series (ADR-019), its papers are taken as frozen (question versions remapped to the
+ * bank) instead of being re-assembled, and their questions are excluded from any other paper of the
+ * same series; a frozen paper whose questions are not all in the bank becomes a generation request.
+ */
+export function assembleSubject(plan: ReturnType<typeof planSubjectTests>, bank: Bank, frozen: FrozenSeriesFile | null = null): AssembledSubject {
   const used = new Map<string, Set<string>>();
   const out: AssembledSubject = { subject: plan.subject.id, tests: [], requests: [], notes: [...plan.notes] };
+  const frozenById = new Map((frozen?.tests ?? []).map((e) => [e.test.id, e]));
+  const versions = new Map(bank.items.map((q) => [q.id, q.version]));
+  const exclusionFor = (series: string) => used.get(series) ?? used.set(series, new Set()).get(series)!;
+  // Frozen papers first, so new papers of the same series never repeat their questions.
   for (const planned of plan.papers) {
-    const exclude = used.get(planned.series) ?? new Set<string>();
-    const r = assemblePaper({ ...planned.spec, exclude }, bank.items);
+    const f = frozenById.get(planned.spec.id);
+    if (!f) continue;
+    questionIds(f.test).forEach((id) => exclusionFor(planned.series).add(id));
+    const r = remapVersions(f.test, versions);
+    if (r.ok) out.tests.push({ test: r.test, planned });
+    else
+      out.requests.push({ paper_id: f.test.id, blueprint_id: f.test.blueprint_id ?? '', section: null, type: '*', marks: null, competency: null, difficulty: null, chapters: [...new Set(r.missing.map((id) => bank.items.find((q) => q.id === id)?.unit ?? id))], missing: r.missing.length, reason: `frozen paper references ${r.missing.length} question(s) that are not in the bank (${r.missing.slice(0, 3).join(', ')}…): publish them, or re-freeze the series` });
+  }
+  for (const id of frozenById.keys()) if (!plan.papers.some((x) => x.spec.id === id)) out.notes.push(`${id}: frozen but no longer planned (blueprint or syllabus changed); re-freeze the series`);
+  for (const planned of plan.papers) {
+    if (frozenById.has(planned.spec.id)) continue;
+    const exclude = exclusionFor(planned.series);
+    // The May (second-exam) track avoids the questions of the same variant's main mocks where the bank allows.
+    const avoid = planned.track === 'second_exam' ? used.get(planned.series.replace(/^may/, 'mocks')) : undefined;
+    const r = assemblePaper({ ...planned.spec, exclude, ...(bank.conflicts ? { conflicts: bank.conflicts } : {}), ...(avoid ? { avoid } : {}) }, bank.items);
     if (r.ok) {
       r.used.forEach((id) => exclude.add(id));
-      used.set(planned.series, exclude);
       out.tests.push({ test: r.test, planned });
     } else out.requests.push(...r.requests);
   }
+  // Keep the plan's order (chapter tests, unit tests, mocks, May track).
+  const order = new Map(plan.papers.map((x, i) => [x.spec.id, i]));
+  out.tests.sort((a, b) => order.get(a.test.id)! - order.get(b.test.id)!);
   return out;
+}
+
+/** The series papers of an assembled subject as a frozen series file (chapter tests excluded). */
+export function toFrozenSeries(a: AssembledSubject, academicYear: string, assembledBy: string): FrozenSeriesFile {
+  return {
+    subject_id: a.subject,
+    academic_year: academicYear,
+    assembled_by: assembledBy,
+    tests: a.tests
+      .filter(({ planned }) => planned.seriesTitle)
+      .map(({ test, planned }) => ({ series: { key: seriesKey(test, planned), title: planned.seriesTitle!, track: planned.track, position: planned.position }, test })),
+  };
 }
 
 export interface TestToIngest {
@@ -161,6 +217,8 @@ export interface AssembleOptions {
   allowMock?: boolean;
   strict?: boolean;
   verbose?: boolean;
+  /** With --series: write the assembled series papers to content/authored/series/<subject>.json (ADR-019). */
+  freeze?: boolean;
 }
 
 export async function assembleCommand(p: Pipeline, scope: Scope, opts: AssembleOptions = {}): Promise<{ results: AssembledSubject[]; exitCode: number }> {
@@ -173,13 +231,19 @@ export async function assembleCommand(p: Pipeline, scope: Scope, opts: AssembleO
     p.log('no subjects with a syllabus in scope');
     return { results: [], exitCode: 1 };
   }
+  if (opts.freeze && !opts.series) {
+    p.log('--freeze needs --series');
+    return { results: [], exitCode: 1 };
+  }
   const source = opts.source ?? 'db';
   const results: AssembledSubject[] = [];
+  let failed = false;
   for (const subject of subjects) {
     const year = p.catalog.syllabi.get(subject.id)!.academic_year;
     const bank = source === 'db' ? await bankFromDb(p, subject, year) : bankFromFiles(p, subject, { allowMock: opts.allowMock });
     const plan = planSubjectTests(p.catalog, subject, { series: !!opts.series, academicYear: year, chapters: scope.chapter ? [scope.chapter] : undefined, existingChapterTests: bank.chapterTests });
-    const a = assembleSubject(plan, bank);
+    const frozen = opts.series && !opts.freeze ? loadFrozenSeries(p.paths, subject.id) : null;
+    const a = assembleSubject(plan, bank, frozen);
     const dir = path.join(p.paths.outDir, 'assemble', subject.id);
     for (const { test } of a.tests) writeJson(path.join(dir, 'tests', `${test.id}.json`), test);
     writeJson(path.join(dir, 'generation-requests.json'), { subject: subject.id, at: new Date().toISOString(), bank: { source: bank.source, questions: bank.items.length }, requests: a.requests });
@@ -198,10 +262,19 @@ export async function assembleCommand(p: Pipeline, scope: Scope, opts: AssembleO
     for (const r of shown) p.log(`  request ${r.paper_id} ${r.section ? `§${r.section} ` : ''}${r.missing} × ${r.type}${r.marks ? `/${r.marks}m` : ''}${r.chapters.length <= 3 ? ` [${r.chapters.join(', ')}]` : ` [${r.chapters.length} chapters]`}: ${r.reason}`);
     if (a.requests.length > shown.length) p.log(`  … ${a.requests.length - shown.length} more in ${path.relative(process.cwd(), path.join(dir, 'generation-requests.json'))}`);
     for (const n of a.notes.slice(0, opts.verbose ? undefined : 6)) p.log(`  note: ${n}`);
+    if (frozen) p.log(`  frozen series: ${frozen.tests.length} paper(s) from ${path.relative(process.cwd(), seriesFile(p.paths, subject.id))} (not re-assembled)`);
+    if (opts.freeze) {
+      const seriesIds = new Set(plan.papers.filter((x) => x.seriesTitle).map((x) => x.spec.id));
+      const blocking = a.requests.filter((x) => seriesIds.has(x.paper_id));
+      if (blocking.length || !a.tests.some(({ planned }) => planned.seriesTitle)) {
+        p.log(`  freeze refused for ${subject.id}: ${blocking.length} series paper(s) cannot be assembled yet; a frozen series must be complete`);
+        failed = true;
+      } else p.log(`  frozen: ${path.relative(process.cwd(), writeFrozenSeries(p.paths, toFrozenSeries(a, year, `assemble --board ${subject.board} --class ${subject.class} --subject ${subject.id} --series --source ${bank.source} --freeze`)))}`);
+    }
     results.push(a);
   }
   const requests = results.reduce((n, r) => n + r.requests.length, 0);
-  return { results, exitCode: opts.strict && requests ? 2 : 0 };
+  return { results, exitCode: failed ? 1 : opts.strict && requests ? 2 : 0 };
 }
 
 /** JSON with object keys sorted (jsonb does not keep key order), for content comparison. */

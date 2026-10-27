@@ -15,6 +15,7 @@ scope: syllabus
 sections:
   - id: A
     title: Section A - Biology
+    chapters: [cbse-10-science-ch05, cbse-10-science-ch06, cbse-10-science-ch07, cbse-10-science-ch08, cbse-10-science-ch13]
     instructions: >-
       Questions 1-16. Q1-7 MCQ, Q8-9 assertion-reason, Q10-12 very short answer (2 marks), Q13-14 short answer (3 marks), Q15 case-based (4
       marks), Q16 long answer (5 marks). Internal choice in one 2-mark, the case-based sub-part and the long answer.
@@ -28,6 +29,7 @@ sections:
       - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
   - id: B
     title: Section B - Chemistry
+    chapters: [cbse-10-science-ch01, cbse-10-science-ch02, cbse-10-science-ch03, cbse-10-science-ch04]
     instructions: Questions 17-29. Q17-23 MCQ, Q24 assertion-reason, Q25 very short answer, Q26-27 short answer, Q28 case-based, Q29 long answer.
     items:
       - {type: mcq, count: 7, marks_each: 1}
@@ -39,6 +41,7 @@ sections:
       - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
   - id: C
     title: Section C - Physics
+    chapters: [cbse-10-science-ch09, cbse-10-science-ch10, cbse-10-science-ch11, cbse-10-science-ch12]
     instructions: Questions 30-39. Q30-31 MCQ, Q32 assertion-reason, Q33-34 very short answer, Q35-37 short answer, Q38 case-based, Q39 long answer.
     items:
       - {type: mcq, count: 2, marks_each: 1}

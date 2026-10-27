@@ -10429,6 +10429,153 @@
         "generated_at": "2026-10-27",
         "author": "claude-opus-5-5 (subject-producer)"
       }
+    },
+    {
+      "id": "q_cbse10sst_ch11_137",
+      "unit": "cbse-10-social-science-ch11",
+      "language": "en",
+      "type": "map",
+      "stem_md": "Locate and label these three iron and steel centres on an outline political map of India:\n\n**A.** the integrated plant in Chhattisgarh built with Soviet collaboration in the 1950s;\n\n**B.** the plant at the foot of the Shevaroy hills in Tamil Nadu;\n\n**C.** the steel city where the Subarnarekha and Kharkai rivers meet in Jharkhand.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "places": [
+          {
+            "id": "A",
+            "name": "Bhilai",
+            "accepted": [
+              "Bhilai"
+            ],
+            "kind": "steel-plant"
+          },
+          {
+            "id": "B",
+            "name": "Salem",
+            "accepted": [
+              "Salem"
+            ],
+            "kind": "steel-plant"
+          },
+          {
+            "id": "C",
+            "name": "Jamshedpur",
+            "accepted": [
+              "Jamshedpur",
+              "Tatanagar"
+            ],
+            "kind": "steel-plant"
+          }
+        ]
+      },
+      "solution_md": "Step 1: Bhilai is in Durg district of Chhattisgarh, near Raipur.\nStep 2: The Salem steel plant is in Salem, northern Tamil Nadu, below the Shevaroy hills.\nStep 3: Jamshedpur is in south-eastern Jharkhand at the meeting of the Subarnarekha and the Kharkai.\nStep 4: Mark and label each centre.",
+      "marking_scheme": [
+        {
+          "step": "A: Bhilai correctly located and labelled",
+          "marks": 1
+        },
+        {
+          "step": "B: Salem correctly located and labelled",
+          "marks": 1
+        },
+        {
+          "step": "C: Jamshedpur correctly located and labelled",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "cbse-10-social-science-ch11-t03"
+      ],
+      "expected_time_sec": 180,
+      "assets": [],
+      "map_id": "india-political",
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-27",
+        "author": "claude-opus-5-5 (assessment-designer)"
+      }
+    },
+    {
+      "id": "q_cbse10sst_ch11_138",
+      "unit": "cbse-10-social-science-ch11",
+      "language": "en",
+      "type": "map",
+      "stem_md": "Three cotton textile centres are described. Show them on an outline political map of India.\n\n**A.** The port city on the Arabian Sea that grew into the first big cotton-mill centre of the country.\n\n**B.** The largest industrial city of Uttar Pradesh, on the Ganga.\n\n**C.** The textile city of western Tamil Nadu that uses cotton grown nearby and cheap hydroelectric power.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "places": [
+          {
+            "id": "A",
+            "name": "Mumbai",
+            "accepted": [
+              "Mumbai",
+              "Bombay"
+            ],
+            "kind": "industrial-centre"
+          },
+          {
+            "id": "B",
+            "name": "Kanpur",
+            "accepted": [
+              "Kanpur",
+              "Cawnpore"
+            ],
+            "kind": "industrial-centre"
+          },
+          {
+            "id": "C",
+            "name": "Coimbatore",
+            "accepted": [
+              "Coimbatore"
+            ],
+            "kind": "industrial-centre"
+          }
+        ]
+      },
+      "solution_md": "Step 1: Mumbai, on the Konkan coast of Maharashtra, had the first successful cotton mill (1854).\nStep 2: Kanpur lies on the Ganga in central Uttar Pradesh.\nStep 3: Coimbatore lies in western Tamil Nadu near the Palghat gap.\nStep 4: Mark and label each centre.",
+      "marking_scheme": [
+        {
+          "step": "A: Mumbai correctly located and labelled",
+          "marks": 1
+        },
+        {
+          "step": "B: Kanpur correctly located and labelled",
+          "marks": 1
+        },
+        {
+          "step": "C: Coimbatore correctly located and labelled",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "cbse-10-social-science-ch11-t03"
+      ],
+      "expected_time_sec": 180,
+      "assets": [],
+      "map_id": "india-political",
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-27",
+        "author": "claude-opus-5-5 (assessment-designer)"
+      }
     }
   ],
   "build": {
