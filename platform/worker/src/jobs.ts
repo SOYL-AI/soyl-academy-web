@@ -21,6 +21,7 @@ import { autoSubmitExpired } from '@soyl/api/engine/finalize';
 import { finalizeLiveEvents, type LiveFinalizeResult } from '@soyl/api/engine/live-finalize';
 import { TEST_ENGINE } from '@soyl/shared/config/tests';
 import { defineJob, type JobContext, type JobDefinition, type JobQueueOptions } from './registry';
+import { BILLING_JOB_NAMES, billingJobs, type BillingJobSettings } from './billing-jobs';
 import { AI_JOB_NAMES, aiJobs } from './ai-jobs';
 import type { AiWorkerSettings } from '@soyl/api/ai/worker';
 
@@ -159,6 +160,8 @@ export const JOB_NAMES = {
   sweepSessions: 'auth.sweep-sessions',
   attemptsAutoSubmit: 'attempts.auto-submit',
   liveFinalize: 'live.finalize',
+  billingReconcile: BILLING_JOB_NAMES.reconcile,
+  billingExpire: BILLING_JOB_NAMES.expire,
   // AI gateway (ai-jobs.ts)
   aiJobs: AI_JOB_NAMES.jobs,
   creditsSweepReservations: AI_JOB_NAMES.sweepReservations,
@@ -191,6 +194,8 @@ export interface JobSettings {
   ai?: AiWorkerSettings;
   /** false: the AUTH-15 purge is not registered (no consent system, CONSENT_PROVIDER=unavailable). */
   unconsentedPurge?: boolean;
+  /** Billing jobs (billing-jobs.ts). Default: no Razorpay provider (reconcile skips, expiry runs). */
+  billing?: BillingJobSettings;
 }
 
 /** Every job the worker runs. */
@@ -238,6 +243,7 @@ export function allJobs(settings: JobSettings = {}): JobDefinition[] {
       options: ENGINE,
       handler: (ctx) => finalizeLive(ctx),
     }),
+    ...billingJobs(settings.billing ?? { razorpay: null }),
     ...aiJobs(settings.ai),
   ] as JobDefinition[];
   return settings.unconsentedPurge === false ? jobs.filter((j) => j.name !== JOB_NAMES.accountPurgeUnconsented) : jobs;

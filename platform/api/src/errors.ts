@@ -41,6 +41,14 @@ export const PROBLEMS = {
   test_unavailable: [409, 'This test is not available right now.'],
   /** Custom test builder: not enough questions match the choices. */
   bank_too_small: [422, 'Not enough questions match your choices.'],
+  /** Billing (ADR-016): purchases are switched off (BILLING_ENABLED=false). Learning and tests stay free. */
+  billing_disabled: [403, 'Plans cannot be bought yet. Lessons, practice and tests are free for everyone.'],
+  /** Billing: the payment provider is not configured or did not answer. */
+  billing_unavailable: [503, 'Payments are not available right now. Please try again shortly.'],
+  /** Billing: the student already has this plan (or a subscription to cancel first). */
+  already_subscribed: [409, 'You already have an active plan.'],
+  /** Billing: the plan is not sold now (e.g. the Board Exam Pass after its end date). */
+  plan_unavailable: [409, 'This plan cannot be bought right now.'],
   identifier_unavailable: [409, 'This cannot be linked to your account.'],
   last_sign_in_method: [409, 'You cannot remove your only way to sign in.'],
   payload_too_large: [413, 'The request is too large.'],

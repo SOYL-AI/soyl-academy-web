@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { PLANS, Plan, formatInr, getPlan } from './plans';
+import { BILLING, PLANS, Plan, formatInr, getPlan, planPrice, priceLabel } from './plans';
 import { readFlags } from './flags';
 
 describe('plans config', () => {

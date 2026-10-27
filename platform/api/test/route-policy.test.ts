@@ -64,8 +64,10 @@ describe('route policy (API-6)', () => {
     expect(outside.sort()).toEqual(['/healthz', '/readyz']);
   });
 
-  it('every state-changing route has csrf=true', () => {
-    for (const r of h.app.routeTable.filter((r) => ['POST', 'PUT', 'PATCH', 'DELETE'].includes(r.method)))
+  it('every state-changing route has csrf=true, except the HMAC-verified Razorpay webhook (AUTH-12)', () => {
+    const exempt = h.app.routeTable.filter((r) => !r.policy.csrf).map((r) => `${r.method} ${r.url}`);
+    expect(exempt).toEqual(['POST /v1/webhooks/razorpay']);
+    for (const r of h.app.routeTable.filter((r) => ['POST', 'PUT', 'PATCH', 'DELETE'].includes(r.method) && r.url !== '/v1/webhooks/razorpay'))
       expect(r.policy.csrf, `${r.method} ${r.url}`).toBe(true);
   });
 
