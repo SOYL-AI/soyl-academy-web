@@ -66,3 +66,7 @@ Every question, case part and alternative was re-solved from its stem. Findings 
 - Concentration and energy values in the cases and diagrams are illustrative (realistic orders of magnitude, not cited measurements).
 - Food-web diagrams in answers are described in words or as chains; graders should accept any correct web.
 - `blueprint_id` is null on both tests, as for the exemplar.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 6 item tag(s) and 5 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 16, understanding 25, application 19, analysis 6, evaluation 4 — application or higher 41% of items, 47% of marks (supersedes the competency figures above).

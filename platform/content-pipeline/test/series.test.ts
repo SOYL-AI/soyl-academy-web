@@ -40,12 +40,6 @@ const FORMER_DUPLICATE_PAIRS: [string, string][] = [
   ['q_cbse10math_ch11_003', 'q_cbse10math_ch11_031'],
   ['q_cbse10sst_ch18_041', 'q_cbse10sst_ch15_062'],
 ];
-/**
- * Frozen before the competency balance (2026-10-27) and kept byte-identical since (ADR-019 addendum):
- * their board / May papers are not asserted against the competency targets, but every off-target
- * paper must be reported by assemble as a note (never silent). Re-freezing brings them under the rule.
- */
-const FROZEN_BEFORE_COMPETENCY_BALANCE = new Set(['cbse-10-science', 'cbse-10-social-science']);
 
 /** Word 5-gram Jaccard similarity of two stems (maths stripped), as the originality stage measures it. */
 function similarity(a: Question, b: Question): number {
@@ -97,8 +91,8 @@ export function blueprintProblems(test: TestDefinition, bp: Blueprint, find: (id
 }
 
 describe('frozen test series (content/authored/series)', () => {
-  it('exist for CBSE 10 Science and Mathematics', () => {
-    expect(subjects).toEqual(expect.arrayContaining(['cbse-10-mathematics', 'cbse-10-science']));
+  it('exist for CBSE 10 Science, Mathematics and Social Science', () => {
+    expect(subjects).toEqual(expect.arrayContaining(['cbse-10-mathematics', 'cbse-10-science', 'cbse-10-social-science']));
   });
 
   for (const subjectId of subjects) {
@@ -182,10 +176,9 @@ describe('frozen test series (content/authored/series)', () => {
           const { lo, hi } = competencyRangeByBand(test, (id) => byId.get(id), targets);
           if (targets.some((t, i) => lo[i]! < t.marks - tol - 1e-9 || hi[i]! > t.marks + tol + 1e-9)) off.push(test.id);
         }
-        if (FROZEN_BEFORE_COMPETENCY_BALANCE.has(subjectId)) {
-          const notes = assembleSubject(plan, bank, file).notes;
-          for (const id of off) expect(notes.some((n) => n.startsWith(`${id}: frozen paper is off its competency targets`)), id).toBe(true);
-        } else expect(off).toEqual([]);
+        expect(off).toEqual([]);
+        // …so re-planning never reports a frozen paper as off target ("re-freeze to rebalance").
+        expect(assembleSubject(plan, bank, file).notes.filter((n) => /frozen paper is off its competency targets/.test(n))).toEqual([]);
       });
 
       it('never repeats a question inside a series (mock overlap 0 %)', () => {

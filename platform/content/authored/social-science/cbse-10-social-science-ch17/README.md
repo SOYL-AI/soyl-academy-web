@@ -51,3 +51,7 @@ Every key and part re-solved; every MCQ/A-R solution's final letter checked agai
 ## Gaps
 - **Cartoon items:** the textbook chapter is rich in cartoons; the board's cartoon-based MCQ needs artwork, so none are included.
 - Bar plots name their categories by number on the x-axis (no `categories` field for bar plots yet).
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 0 item tag(s) and 1 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 8, understanding 35, application 12, analysis 26, evaluation 11 — application or higher 53% of items, 63% of marks (supersedes the competency figures above).

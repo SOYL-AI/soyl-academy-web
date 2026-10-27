@@ -4448,8 +4448,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-science-ch15-t03"
       ],
@@ -5402,8 +5402,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-science-ch15-t02"
           ],
@@ -5715,8 +5715,8 @@
       ],
       "marks": 4,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-science-ch15-t03"
       ],
@@ -5760,8 +5760,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-science-ch15-t03"
           ],
@@ -5787,8 +5787,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-science-ch15-t03"
           ],
@@ -6279,7 +6279,7 @@
       "content_gate": "npm test -w @soyl/content-templates: all 7 checks pass for this chapter",
       "verifier_pass": "2026-10-27: every question, case part and alternative re-solved from its stem by the author; keys, schemes and word limits checked — see README \"Verifier pass\"",
       "assessment": "Formative-only chapter (syllabus board_assessed: false): content is for internal assessment, activities and projects; the chapter tests follow the default chapter-test blueprints for practice.",
-      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 1 warnings"
     }
   }
 }

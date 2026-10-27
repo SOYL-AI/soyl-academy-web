@@ -315,7 +315,7 @@ add('organs-short', short({
   model: '(a) **Homologous**: both are forelimbs with the same bones, though the horse runs and the monkey grasps.\n\n(b) **Analogous**: both are used for flying, but the housefly’s wing has no bones while the crow’s is feathers on arm bones.\n\nPair **(a)** shows common ancestry.',
   sol: 'Judge each pair by origin and structure, not by function.',
   scheme: [['(a) Homologous and (b) analogous, with reasons', 1], ['Pair (a) shows common ancestry', 1]],
-  d: 2, c: 'application', t: [3],
+  d: 2, c: 'understanding', t: [3],
   wl: null,
 }));
 add('dating-short', short({
@@ -456,7 +456,7 @@ add('grasshopper-case', mk.case({
       value: 80, tol: 0, unit: '%',
       sol: r`$\dfrac{160}{40 + 160} \times 100 = \dfrac{160}{200} \times 100 = 80\%$.`,
       scheme: [['80%', 1]],
-      d: 2, c: 'application', t: [2],
+      d: 2, c: 'understanding', t: [2],
     })),
     part('c', short({
       marks: 2,
@@ -518,14 +518,14 @@ add('island-case', mk.case({
 }));
 add('limb-case', mk.case({
   passage: 'During a visit to a natural history museum in Kolkata, a class looked at four skeletons: a human, a cat, a dolphin and a bat. Their guide pointed out that the arm of the human, the front leg of the cat, the flipper of the dolphin and the wing of the bat each had one upper bone, two forearm bones, a group of wrist bones and finger bones. Nearby, a case of insects showed butterflies and dragonflies with thin, veined wings that had no bones at all.',
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   children: [
     part('a', mcq({
       stem: 'The bat’s wing and the dolphin’s flipper are best described as:',
       right: 'homologous organs, because they have the same basic bones',
       wrong: ['analogous organs, because they do the same job', 'analogous organs, because they look different', 'unrelated organs that cannot be compared'],
       sol: 'They share the same plan of bones though one flies and one swims, so they are homologous — option (@K).',
-      d: 2, c: 'application', t: [3],
+      d: 2, c: 'understanding', t: [3],
     })),
     part('b', short({
       marks: 1,
@@ -533,7 +533,7 @@ add('limb-case', mk.case({
       model: 'The **wing of a bat** and the **wing of a butterfly** (or dragonfly): same job, different structure.',
       sol: 'Pick two wings with different structures.',
       scheme: [['Bat or bird wing with an insect wing', 1]],
-      d: 2, c: 'application', t: [3],
+      d: 2, c: 'understanding', t: [3],
       wl: null,
     })),
     part('c', short({

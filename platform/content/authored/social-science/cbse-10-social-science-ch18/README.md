@@ -61,3 +61,7 @@ All four topics of chapter 18: t01 different people, different goals (11 items) 
 ## Changed by assessment-designer (2026-10-27)
 
 `q_cbse10sst_ch18_041`: stem reworded (it was the same generic stem as a match item in ch15 and ch21); the item is unchanged.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 0 item tag(s) and 2 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 16, understanding 28, application 14, analysis 20, evaluation 5 — application or higher 47% of items, 53% of marks (supersedes the competency figures above).

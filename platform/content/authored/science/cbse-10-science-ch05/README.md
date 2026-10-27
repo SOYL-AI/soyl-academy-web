@@ -65,3 +65,7 @@ Every question, case part and alternative was re-solved from its stem; biology f
 - Diagrams are schematic and not to scale (stated in captions); the heart is shown from the front.
 - Data in case passages (bubble counts, potometer readings, blood pressures) are realistic illustrative values, not measurements from a cited study.
 - `blueprint_id` is null on both tests, as for the exemplar.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 4 item tag(s) and 2 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 13, understanding 34, application 20, analysis 16, evaluation 1 — application or higher 44% of items, 49% of marks (supersedes the competency figures above).

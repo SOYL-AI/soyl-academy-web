@@ -3674,8 +3674,8 @@
       ],
       "marks": 2,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-science-ch08-t02"
       ],
@@ -4778,8 +4778,8 @@
       ],
       "marks": 1,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-science-ch08-t04"
       ],
@@ -4818,8 +4818,8 @@
       ],
       "marks": 1,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-science-ch08-t04"
       ],
@@ -5275,8 +5275,8 @@
       ],
       "marks": 5,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-science-ch08-t04"
       ],
@@ -6176,8 +6176,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-science-ch08-t04"
           ],
@@ -6469,7 +6469,7 @@
       "biology_facts": "Variation, Mendelian ratios (re-derived by an independent Punnett-square engine), gene to enzyme to hormone to height, chromosome pairs and germ cells, XX/XY sex determination, temperature-dependent sex in turtles checked against the 2026-27 syllabus scope (see README \"Verifier pass\")",
       "content_gate": "npm test -w @soyl/content-templates: all 7 checks pass for this chapter",
       "verifier_pass": "2026-10-26: every question, case part and alternative re-solved from its stem by the author; keys, schemes and word limits checked — see README \"Verifier pass\"",
-      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 1 warnings"
     }
   }
 }

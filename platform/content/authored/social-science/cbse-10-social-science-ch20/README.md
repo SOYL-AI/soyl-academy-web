@@ -47,3 +47,7 @@ All four topics: t01 money as a medium of exchange and modern forms of money (21
 ## Gaps
 - No **map** item: the chapter has no map work.
 - The SHG membership figure and the Jan Dhan count change every year; they are rounded and should be refreshed when the chapter is reviewed.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 0 item tag(s) and 2 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 14, understanding 27, application 21, analysis 22, evaluation 3 — application or higher 53% of items, 62% of marks (supersedes the competency figures above).

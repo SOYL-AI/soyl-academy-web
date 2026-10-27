@@ -279,7 +279,7 @@ add('potato-chromo-num', num({
   value: 24, tol: 0, unit: null,
   sol: r`A germ cell has half the chromosomes of a body cell: $\dfrac{48}{2} = 24$.`,
   scheme: [['Halves 48 to get 24', 1]],
-  d: 2, c: 'application', t: [3],
+  d: 2, c: 'understanding', t: [3],
 }), (q) => near(48 / 2, q.answer.value) || 'half');
 add('pea-pod-num', num({
   stem: 'A pea pod contains 9 seeds. What is the minimum number of pollen grains that must have germinated on the stigma to produce these seeds?',
@@ -411,7 +411,7 @@ add('sperm-chromo-num', num({
   value: 23, tol: 0, unit: null,
   sol: r`A sperm is a germ cell, so it has half the number: $\dfrac{46}{2} = 23$.`,
   scheme: [['Halves 46 to get 23', 1]],
-  d: 2, c: 'application', t: [4],
+  d: 2, c: 'understanding', t: [4],
 }), (q) => near(46 / 2, q.answer.value) || 'half');
 add('sperm-path-short', short({
   marks: 2,
@@ -547,7 +547,7 @@ add('bacteria-case', mk.case({
       value: 11, tol: 0.5, unit: '%',
       sol: r`Percentage $= \dfrac{24}{210} \times 100 \approx 11.4$, so about 11%.`,
       scheme: [['About 11%', 1]],
-      d: 3, c: 'application', t: [1],
+      d: 3, c: 'understanding', t: [1],
     })),
     part('c', short({
       marks: 2,
@@ -660,7 +660,7 @@ add('pumpkin-case', mk.case({
       value: 85, tol: 0, unit: '%',
       sol: r`$\dfrac{17}{20} \times 100 = 85$%.`,
       scheme: [['85%', 1]],
-      d: 2, c: 'application', t: [3],
+      d: 2, c: 'understanding', t: [3],
     })),
     part('c', short({
       marks: 2,
@@ -733,7 +733,7 @@ add('sexratio-case', mk.case({
       value: 95, tol: 0, unit: null,
       sol: r`$1000 - 905 = 95$ fewer girls per 1000 boys.`,
       scheme: [['95', 1]],
-      d: 2, c: 'application', t: [5],
+      d: 2, c: 'understanding', t: [5],
     })),
     part('c', short({
       marks: 2,

@@ -73,3 +73,7 @@ Every item, case part and alternative was re-solved from its stem; no key was wr
 - Narration audio is not generated (TTS stage).
 - The radius plot has no per-point labels (the plot contract has none for series); the values are in the slide body and the alt text.
 - Formative-only status is stated in content; the contract has no field to mark a whole release as formative, so the API serves it like any other chapter.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 8 item tag(s) and 5 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 10, understanding 32, application 15, analysis 7, evaluation 0 — application or higher 34% of items, 41% of marks (supersedes the competency figures above).

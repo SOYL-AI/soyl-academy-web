@@ -54,3 +54,7 @@ Every item and part was re-solved from its stem; figures (59/40/1, 80/20, 74/18 
 - **Simplification flagged for reviewers:** the syllabus describes Belgian community governments as elected by a language community "no matter where they live"; in practice their powers are tied to language areas and Brussels. The chapter keeps the syllabus formulation in definitions but avoids application items that depend on it.
 - **Cartoon items:** the board's Political Science section has a cartoon-based MCQ; cartoons need artwork (licensed or SOYL-drawn), so none are included.
 - Map items are practice only and need `europe-political` and `south-asia-political` outline maps in the renderer.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 0 item tag(s) and 1 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 13, understanding 29, application 16, analysis 16, evaluation 4 — application or higher 46% of items, 55% of marks (supersedes the competency figures above).

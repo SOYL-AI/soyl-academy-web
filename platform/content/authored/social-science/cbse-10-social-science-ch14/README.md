@@ -51,3 +51,7 @@ Every key and part re-solved from its stem; a key-check script listed each MCQ/A
 - **Cartoon items:** the board's Political Science section can carry a cartoon-based MCQ; cartoons need artwork, so none are included.
 - The map item is practice only and needs the `india-political` outline map in the renderer.
 - The bar plot names its six imagined panchayats by number on the x-axis (no `categories` field for bar plots yet).
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 1 item tag(s) and 0 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 23, understanding 38, application 22, analysis 29, evaluation 6 — application or higher 48% of items, 57% of marks (supersedes the competency figures above).

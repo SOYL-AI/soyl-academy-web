@@ -60,3 +60,7 @@ Every passage has `passage_origin: "soyl-original"` and a stem label saying it i
 ## Gaps
 - The mine and oil-field map items need confirmation against the current CBSE map list (they follow the catalog syllabus learning outcomes); until then they are practice in effect, since no test uses them.
 - Map items cannot show answers on a map until `MapPlace` has coordinates.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 1 item tag(s) and 0 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 28, understanding 39, application 32, analysis 26, evaluation 7 — application or higher 49% of items, 54% of marks (supersedes the competency figures above).

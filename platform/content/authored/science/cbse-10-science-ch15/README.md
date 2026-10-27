@@ -78,3 +78,7 @@ Every item, case part and alternative was re-solved from its stem; no key was wr
 - The fossil-layer diagram is schematic: it shows "deeper is older" and should not be read as the order in which these groups first appeared.
 - Bird and bat wings are treated as analogous as wings (flight evolved separately) while their forelimb bones are homologous; the deck states this nuance once, and the items avoid relying on it.
 - Formative-only status is stated in content; the contract has no release-level field for it.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 2 item tag(s) and 3 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 8, understanding 28, application 19, analysis 8, evaluation 1 — application or higher 44% of items, 43% of marks (supersedes the competency figures above).

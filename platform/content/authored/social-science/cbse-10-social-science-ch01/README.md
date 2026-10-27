@@ -72,3 +72,7 @@ The author re-solved every item and part from its stem alone and re-checked ever
 - **Maps:** `map` items name `map_id: "europe-political"`; the renderer must ship that outline map. `MapPlace` has no coordinates, so "identify the place marked A" items (the board's other map format) cannot be drawn yet; these items use "locate and label".
 - **Images:** the board sometimes prints a painting or cartoon; here allegory items describe an imagined image in words. Real image items need licensed or SOYL-drawn artwork.
 - Tests use only `short` items in Section B (no map items), because the board's History map work comes from ch02.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 1 item tag(s) and 0 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 15, understanding 27, application 12, analysis 21, evaluation 3 — application or higher 46% of items, 53% of marks (supersedes the competency figures above).

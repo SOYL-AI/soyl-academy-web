@@ -61,3 +61,7 @@ Every passage has `passage_origin: "soyl-original"` and a stem label saying it i
 ## Added by assessment-designer (2026-10-27)
 
 2 Geography map questions (3 marks: steel plants q_cbse10sst_ch11_137, textile centres q_cbse10sst_ch11_138) for the full mocks' Q19. Original wording; places from the CBSE 2026-27 map list; `map_id: india-political`.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 0 item tag(s) and 3 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 15, understanding 52, application 34, analysis 30, evaluation 7 — application or higher 51% of items, 54% of marks (supersedes the competency figures above).

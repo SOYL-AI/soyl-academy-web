@@ -62,3 +62,7 @@ An Amritsar schoolteacher's diary (April 1919), a Pratapgarh tenant's letter to 
 ## Added by assessment-designer (2026-10-27)
 
 8 board-pattern History map questions (2 marks, two places from the CBSE map list: q_cbse10sst_ch02_099–106) for the full mocks' Q9. Original wording; places from the CBSE 2026-27 map list; `map_id: india-political`.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 1 item tag(s) and 0 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 18, understanding 34, application 27, analysis 25, evaluation 2 — application or higher 51% of items, 58% of marks (supersedes the competency figures above).

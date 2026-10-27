@@ -52,3 +52,7 @@ Hand-authored to the Geography standard set by `cbse-10-social-science-ch06` and
 ## Gaps
 - Map items cannot show answers on a map until `MapPlace` has coordinates.
 - A `practice_only` flag (or an assembler rule using `board_assessed: false`) would let custom test builders skip the 19 project items automatically; today only the stem label marks them.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 0 item tag(s) and 5 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 26, understanding 10, application 37, analysis 19, evaluation 2 — application or higher 62% of items, 69% of marks (supersedes the competency figures above).

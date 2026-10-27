@@ -23,6 +23,7 @@ export function lintContextFor(ref: ChapterRef, requirePipelineProvenance: boole
     literature: isLiteratureChapter(ref.subject, ref.chapter),
     topicIds: new Set(ref.chapter.topics.map((t) => t.id)),
     requirePipelineProvenance,
+    subjectId: ref.subject.id,
   };
 }
 
