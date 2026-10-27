@@ -4,9 +4,26 @@ import type { ModelTier, TokenUsage } from '@soyl/shared/config/models';
 export type { ModelTier, TokenUsage };
 
 export type ChatRole = 'system' | 'user' | 'assistant';
+
+/** An image for vision models: a base64 `data:` URL. Never a user-supplied http(s) URL (AC-16: no SSRF). */
+export interface ImageInput {
+  dataUrl: string;
+  detail?: 'low' | 'high' | 'auto';
+}
+
+/** A document (PDF) for models that accept file inputs: a base64 `data:` URL. */
+export interface FileInput {
+  dataUrl: string;
+  filename: string;
+}
+
 export interface ChatMessage {
   role: ChatRole;
   content: string;
+  /** User messages only: images sent with the text (photo doubts, sample papers). */
+  images?: ImageInput[];
+  /** User messages only: documents sent with the text (PDF sample papers). */
+  files?: FileInput[];
 }
 
 /** Free-form labels carried onto every usage record (run, unit, item) for the spend ledger. */
@@ -32,6 +49,8 @@ export interface ChatRequest {
    * Real providers ignore it; it never reaches a model.
    */
   mock?: { fixture: string; input?: unknown };
+  /** Cancels the call (client disconnect, stream time cap). Providers stop and reject. */
+  signal?: AbortSignal;
 }
 
 export interface StructuredRequest<T> extends ChatRequest {

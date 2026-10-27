@@ -6,7 +6,8 @@
   "description": "SOYL Academy Learning Platform API (Fastify). See README.md and docs/platform/adr/002-auth-better-auth.md.",
   "exports": {
     "./contract/*": "./src/contract/*.ts",
-    "./engine/*": "./src/domain/tests/*.ts"
+    "./engine/*": "./src/domain/tests/*.ts",
+    "./ai/*": "./src/ai/*.ts"
   },
   "scripts": {
     "dev": "tsx scripts/dev.ts",
@@ -20,6 +21,7 @@
   },
   "dependencies": {
     "@fastify/swagger": "9.9.2",
+    "@soyl/ai-core": "*",
     "@soyl/content-pipeline": "*",
     "@soyl/db": "*",
     "@soyl/shared": "*",

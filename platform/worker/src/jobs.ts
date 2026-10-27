@@ -21,6 +21,8 @@ import { autoSubmitExpired } from '@soyl/api/engine/finalize';
 import { finalizeLiveEvents, type LiveFinalizeResult } from '@soyl/api/engine/live-finalize';
 import { TEST_ENGINE } from '@soyl/shared/config/tests';
 import { defineJob, type JobContext, type JobDefinition, type JobQueueOptions } from './registry';
+import { AI_JOB_NAMES, aiJobs } from './ai-jobs';
+import type { AiWorkerSettings } from '@soyl/api/ai/worker';
 
 const DAY_MS = 86_400_000;
 
@@ -157,6 +159,12 @@ export const JOB_NAMES = {
   sweepSessions: 'auth.sweep-sessions',
   attemptsAutoSubmit: 'attempts.auto-submit',
   liveFinalize: 'live.finalize',
+  // AI gateway (ai-jobs.ts)
+  aiJobs: AI_JOB_NAMES.jobs,
+  creditsSweepReservations: AI_JOB_NAMES.sweepReservations,
+  aiIndexContent: AI_JOB_NAMES.indexContent,
+  aiRetention: AI_JOB_NAMES.retention,
+  aiCostGuardrail: AI_JOB_NAMES.costGuardrail,
 } as const;
 
 /** Test-engine sweeps run often and are short: one run at a time, no pile-up, a few quick retries. */
@@ -179,6 +187,8 @@ export async function finalizeLive(ctx: JobContext): Promise<LiveFinalizeResult>
 
 export interface JobSettings {
   unconsentedAccountTtlDays?: number;
+  /** AI gateway jobs (ai-jobs.ts): runtime from env unless given (tests). */
+  ai?: AiWorkerSettings;
   /** false: the AUTH-15 purge is not registered (no consent system, CONSENT_PROVIDER=unavailable). */
   unconsentedPurge?: boolean;
 }
@@ -228,6 +238,7 @@ export function allJobs(settings: JobSettings = {}): JobDefinition[] {
       options: ENGINE,
       handler: (ctx) => finalizeLive(ctx),
     }),
+    ...aiJobs(settings.ai),
   ] as JobDefinition[];
   return settings.unconsentedPurge === false ? jobs.filter((j) => j.name !== JOB_NAMES.accountPurgeUnconsented) : jobs;
 }

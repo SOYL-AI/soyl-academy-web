@@ -11,7 +11,7 @@
  *   POST /v1/attempts/:id/submit                  idempotent submit (optional final batch)
  *   GET  /v1/attempts/:id/result                  results with solutions (after submission)
  *   POST /v1/attempts/:id/self-evaluation         self-marks for written items
- *   POST /v1/attempts/:id/ai-evaluation           M4 (501 until the AI gateway exists)
+ *   POST /v1/attempts/:id/ai-evaluation           AI evaluation job (ai-gateway M4, src/ai)
  *   GET  /v1/me/attempts                          your attempts, newest first
  *   GET  /v1/live-events                          live mocks (+ your registration when signed in)
  *   POST /v1/live-events/:id/register             register (idempotent)
@@ -61,6 +61,8 @@ import {
   TestSeriesQuery,
   TestSeriesResponse,
 } from './tests-schemas';
+import { startAttemptEvaluation } from '../ai/routes';
+import { AiEvaluationRequest, AiJobAccepted } from '../ai/schemas';
 
 const member = (buckets: RateLimitBucketName[] = [], consent: 'test_attempts' | false = 'test_attempts') => policies.member({ rateLimit: { buckets }, consent });
 
@@ -224,16 +226,19 @@ export function registerTestRoutes(appIn: FastifyInstance, deps: AppDeps, servic
   });
 
   app.post('/v1/attempts/:id/ai-evaluation', {
-    config: { policy: policies.member({ rateLimit: { buckets: ['ai.user'] }, consent: 'ai' }) },
+    // AI gateway M4: limits fail closed when the KV store is down (F-027).
+    config: { policy: policies.member({ rateLimit: { buckets: ['ai.user'], failClosed: true }, consent: 'ai' }) },
     schema: {
       tags: ['tests'],
-      summary: 'AI evaluation of written answers (credits). Arrives with the AI gateway (M4): 501 until then.',
+      summary:
+        'AI evaluation of written answers (credits: 6 per answer, at most 40 per paper; quote first with GET /v1/ai/quote/evaluate-paper?attemptId=). Body {itemIds?}: one id = evaluate-answer, none/several = evaluate-paper. 202 with a job id; marks never count for scores or ranks.',
       params: AttemptParams,
-      response: withProblems({}),
+      body: AiEvaluationRequest.nullish(),
+      response: withProblems({ 202: AiJobAccepted }),
     },
-    handler: async (request) => {
-      await ownAttempt(ctx, request.auth!.user.id, request.params.id);
-      throw new ApiProblem('not_implemented', { detail: 'AI evaluation arrives with the AI gateway.' });
+    handler: async (request, reply) => {
+      const r = await startAttemptEvaluation(services, request.auth!.user.id, request.params.id, request.body, request.headers['idempotency-key']);
+      return reply.status(202).send(r);
     },
   });
 

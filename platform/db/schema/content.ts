@@ -12,7 +12,10 @@
  * of practice; `live_reserved` items are embargoed until `embargo_until`.
  */
 import { sql } from 'drizzle-orm';
-import { boolean, check, index, integer, jsonb, pgTable, smallint, text, uniqueIndex, uuid, vector } from 'drizzle-orm/pg-core';
+import { boolean, check, customType, index, integer, jsonb, pgTable, smallint, text, uniqueIndex, uuid, vector } from 'drizzle-orm/pg-core';
+
+/** PostgreSQL tsvector (read-only generated column; never selected as data). */
+const tsvector = customType<{ data: string }>({ dataType: () => 'tsvector' });
 import { ContentStatus } from '@soyl/shared/content/common';
 import { QUESTION_TYPES, Bloom, Competency } from '@soyl/shared/content/question';
 import { id, marks, oneOf, ratio, timestamps, tstz } from './_shared';
@@ -282,6 +285,12 @@ export const contentChunks = pgTable(
     embeddingModel: text('embedding_model'),
     contentHash: text('content_hash').notNull(),
     embedding: vector('embedding', { dimensions: EMBEDDING_DIMENSIONS }),
+    /**
+     * Full-text search fallback (ai-gateway M4, ADR-014): generated from `text` with the `simple`
+     * configuration (no stemming or stop words, so English, Hindi and Hinglish all index). Used where
+     * pgvector or embeddings are unavailable, and to fill a vector search that returns too little.
+     */
+    searchVector: tsvector('search_vector').generatedAlwaysAs(sql`to_tsvector('simple'::regconfig, "text")`),
     ...timestamps(),
   },
   (t) => [
@@ -289,6 +298,7 @@ export const contentChunks = pgTable(
     index('content_chunks_chapter_id_idx').on(t.chapterId),
     index('content_chunks_scope_idx').on(t.academicYear, t.exam, t.classLevel, t.subjectKey),
     index('content_chunks_embedding_hnsw_idx').using('hnsw', t.embedding.op('vector_cosine_ops')),
+    index('content_chunks_search_idx').using('gin', t.searchVector),
     oneOf('content_chunks_type_check', t.contentType, CONTENT_TYPES),
   ],
 );

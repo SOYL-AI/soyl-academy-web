@@ -7,7 +7,13 @@ DELETE /v1/me/sessions/:id                    roles=student|parent|reviewer|admi
 GET    /healthz                               roles=guest|student|parent|reviewer|admin csrf=true rl=none consent=no
 GET    /readyz                                roles=guest|student|parent|reviewer|admin csrf=true rl=none consent=no
 GET    /v1/admin/reports                      roles=reviewer|admin csrf=true rl=default consent=no mfa
+GET    /v1/ai/conversations                   roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/ai/conversations/:id               roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/ai/jobs/:id                        roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/ai/quote/:action                   roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/ai/uploads/:id                     roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/attempts/:id                       roles=student|parent|reviewer|admin csrf=true rl=default+attempt.read.user consent=test_attempts
+GET    /v1/attempts/:id/ai-evaluation         roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/attempts/:id/result                roles=student|parent|reviewer|admin csrf=true rl=default+attempt.read.user consent=test_attempts
 GET    /v1/auth/google/callback               roles=guest|student|parent|reviewer|admin csrf=true rl=default+auth.ip (fail-closed) consent=no
 GET    /v1/auth/google/start                  roles=guest|student|parent|reviewer|admin csrf=true rl=default+auth.ip (fail-closed) consent=no
@@ -20,6 +26,8 @@ GET    /v1/chapters/:id/deck                  roles=guest|student|parent|reviewe
 GET    /v1/chapters/:id/flashcards            roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/chapters/:id/notes                 roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/chapters/:id/practice              roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/credits                            roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/credits/ledger                     roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/dev/otp-outbox                     roles=guest|student|parent|reviewer|admin csrf=true rl=default+auth.ip consent=no (dev-only, hidden)
 GET    /v1/live-events                        roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/live-events/:id/leaderboard        roles=student|parent|reviewer|admin csrf=true rl=default+attempt.read.user consent=leaderboards
@@ -35,7 +43,11 @@ GET    /v1/test-series                        roles=guest|student|parent|reviewe
 GET    /v1/tests/:id                          roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
 PATCH  /v1/me                                 roles=student|parent|reviewer|admin csrf=true rl=default+me.write.user consent=no
 PATCH  /v1/practice/answers/:id               roles=student|parent|reviewer|admin csrf=true rl=default+practice.answer.user consent=no
-POST   /v1/attempts/:id/ai-evaluation         roles=student|parent|reviewer|admin csrf=true rl=default+ai.user consent=ai
+POST   /v1/ai/:action                         roles=student|parent|reviewer|admin csrf=true rl=default+ai.user (fail-closed) consent=ai
+POST   /v1/ai/conversations                   roles=student|parent|reviewer|admin csrf=true rl=default+ai.user (fail-closed) consent=ai
+POST   /v1/ai/uploads                         roles=student|parent|reviewer|admin csrf=true rl=default+uploads.user.hour+uploads.user.day (fail-closed) consent=uploads
+POST   /v1/ai/uploads/:id/complete            roles=student|parent|reviewer|admin csrf=true rl=default (fail-closed) consent=uploads
+POST   /v1/attempts/:id/ai-evaluation         roles=student|parent|reviewer|admin csrf=true rl=default+ai.user (fail-closed) consent=ai
 POST   /v1/attempts/:id/self-evaluation       roles=student|parent|reviewer|admin csrf=true rl=default+attempt.evaluate.user consent=test_attempts
 POST   /v1/attempts/:id/submit                roles=student|parent|reviewer|admin csrf=true rl=default consent=test_attempts
 POST   /v1/auth/email/send-otp                roles=guest|student|parent|reviewer|admin csrf=true rl=default+auth.ip (fail-closed) consent=no

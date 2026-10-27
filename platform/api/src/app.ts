@@ -47,6 +47,7 @@ import { registerReportRoutes } from './modules/reports';
 import { registerMfaRoutes } from './modules/mfa';
 import { registerAdminRoutes } from './modules/admin';
 import { registerTestRoutes } from './modules/tests';
+import { registerAiRoutes } from './ai/routes';
 
 export const HEALTH_PATHS = new Set(['/healthz', '/readyz']);
 const STATE_CHANGING = new Set(['POST', 'PUT', 'PATCH', 'DELETE']);
@@ -285,6 +286,7 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
   registerMfaRoutes(app, services);
   registerAdminRoutes(app, deps);
   registerTestRoutes(app, deps, services);
+  registerAiRoutes(app, deps, services);
   if (config.devOtpOutbox) registerDevRoutes(app, deps);
   opts.extraRoutes?.(app, services);
 

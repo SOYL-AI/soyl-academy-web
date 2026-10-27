@@ -13,6 +13,8 @@ export interface ProblemBody {
   detail?: string;
   errors?: { path: string; message: string }[];
   retryAfterSeconds?: number;
+  /** Extension members of specific problems (credits_exhausted, plan_required). */
+  [extension: string]: unknown;
 }
 
 /** Stable codes and their generic titles. */
@@ -52,6 +54,22 @@ export const PROBLEMS = {
   consent_unavailable: [503, 'We could not check consent right now. Please try again shortly.'],
   internal: [500, 'Something went wrong on our side.'],
   not_implemented: [501, 'This is not available yet.'],
+  /** AI gateway (M4, ADR-013). Paywall: extension fields balance, required, resetAt, resetInSeconds, plan, plansUrl. */
+  credits_exhausted: [402, 'You have used today’s AI credits.'],
+  /** The action needs a paid plan (extension fields: plan, plansUrl). */
+  plan_required: [403, 'This AI feature is part of a paid plan.'],
+  /** Spend circuit-breaker: AI is paused until 00:00 IST (Retry-After). Learning content is unaffected. */
+  ai_paused: [503, 'AI help is taking a short break. Lessons, practice and tests still work.'],
+  /** Moderation, the model or storage could not be reached: refused rather than unchecked (F-027). */
+  ai_unavailable: [503, 'AI help is not available right now. Please try again shortly.'],
+  /** Too many AI answers streaming at once for this student. */
+  ai_busy: [429, 'Please wait for your current AI answer to finish.'],
+  /** AC-14: the tutor is off while the student is in a live test. */
+  ai_blocked_during_test: [409, 'AI help is turned off while you are taking a live test.'],
+  /** The same Idempotency-Key was already used for a finished or running request. */
+  duplicate_request: [409, 'This request was already received.'],
+  upload_rejected: [422, 'This file cannot be used.'],
+  upload_not_ready: [409, 'This file is not ready yet.'],
 } as const satisfies Record<string, readonly [number, string]>;
 
 export type ProblemCode = keyof typeof PROBLEMS;
@@ -60,7 +78,14 @@ export class ApiProblem extends Error {
   readonly status: number;
   constructor(
     readonly code: ProblemCode,
-    readonly extra: { detail?: string; retryAfterSeconds?: number; errors?: ProblemBody['errors']; headers?: Record<string, string> } = {},
+    readonly extra: {
+      detail?: string;
+      retryAfterSeconds?: number;
+      errors?: ProblemBody['errors'];
+      headers?: Record<string, string>;
+      /** RFC 7807 extension members (e.g. the paywall's balance and reset time). Never personal data of others. */
+      fields?: Record<string, string | number | boolean | null>;
+    } = {},
   ) {
     super(code);
     this.name = 'ApiProblem';
@@ -71,6 +96,7 @@ export class ApiProblem extends Error {
 export function problemBody(code: ProblemCode, traceId: string, extra: ApiProblem['extra'] = {}): ProblemBody {
   const [status, title] = PROBLEMS[code];
   return {
+    ...extra.fields,
     type: `${PROBLEM_TYPE_BASE}${code.replace(/_/g, '-')}`,
     title,
     status,

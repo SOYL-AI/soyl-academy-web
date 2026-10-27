@@ -78,6 +78,10 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `ai_conversations.title` | Conversation title (may quote the student) | 30 days | delete |
 | `ai_messages.content` | Prompts and answers | 30 days (ARCHITECTURE §10) | delete |
 | `uploads.blob_key` | Uploaded photo/paper (the file is in Blob) | 30 days (`expires_at`) | delete |
+| `uploads.processed_key` | Cleaned derivative of the upload (re-encoded, EXIF/GPS stripped) in the `uploads` container | 30 days (`expires_at`; Blob lifecycle rule as backstop) | delete |
+| `credit_wallets.*` | Per-student lock row for credit operations: plan of the last daily grant, its IST day | life of account | cascade |
+| `ai_jobs.*` | Queued AI work (ids of the attempt/upload/items, status, result: AI marks and feedback, or a paper blueprint without school questions) | 30 days (worker job ai.retention) | cascade |
+| `ai_spend_daily.*` | Total AI spend per IST day (all students / free tier), no user link | 1 year | retain (aggregate, not personal) |
 | `tests.created_by_user_id` | Custom test owner | life of account | cascade |
 | `content_reports.message` | Free-text report (may contain anything) | 1 year | detach |
 | `content_reports.user_id`, `content_reports.resolved_by_user_id` | Reporter / resolver | 1 year | detach |

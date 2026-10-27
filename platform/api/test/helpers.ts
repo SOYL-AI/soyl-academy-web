@@ -17,6 +17,7 @@ import { MockSmsSender } from '../src/auth/senders/sms';
 import { MockConsentProvider } from '../src/consent/mock';
 import { MockOidcServer } from '../src/dev/mock-oidc';
 import type { Services } from '../src/services';
+import type { AiDeps } from '../src/ai/services';
 
 export const PUBLIC_BASE = 'https://www.soylai.test';
 export const ORIGIN = PUBLIC_BASE;
@@ -45,6 +46,8 @@ export interface HarnessOptions {
   extraRoutes?: BuildAppOptions['extraRoutes'];
   /** Reuse a database (several apps on one DB). */
   t?: TestDb;
+  /** AI gateway runtime overrides (default: local stand-ins). */
+  ai?: AiDeps;
 }
 
 const secret = () => randomBytes(32).toString('base64url');
@@ -94,7 +97,7 @@ export async function createHarness(opts: HarnessOptions = {}): Promise<Harness>
   let app: App;
   try {
     app = await buildApp(
-      { config, db: t.db, kv, clock, providers: { sms, email, consent }, google: { allowInsecure: true } },
+      { config, db: t.db, kv, clock, providers: { sms, email, consent }, google: { allowInsecure: true }, ai: opts.ai },
       { logStream, extraRoutes: opts.extraRoutes },
     );
   } catch (err) {
