@@ -1,6 +1,6 @@
 # ADR-018: Platform web tests, AI and plans — offline answer queue, proxy headers, page CSPs, uploads, e2e stand-ins
 
-- **Status:** Proposed (web-platform, 2026-10-27; Lead to accept on merge of `platform/web-platform/m3-m4`)
+- **Status:** Accepted (Lead, 2026-10-27, on merge of `platform/web-platform/m3-m4` into `platform/main` 4c3da7f: root lint, build, test:platform-web 171/171, test:platform-ui 548/548, platform typecheck green)
 - **Date:** 2026-10-27
 - **Author:** web-platform
 - **Related:** ARCHITECTURE §3.1–3.2, §9–§11, §15–§16; CONTEXT §5–§7, §10–§11; ADR-005 (proxy), ADR-011 (CSP), ADR-012
