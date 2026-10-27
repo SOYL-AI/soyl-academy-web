@@ -15,7 +15,7 @@ import { TEST_SERIES_TARGETS } from '@soyl/shared/config/content-targets';
 import type { Blueprint, PaperType, Subject, SyllabusFile } from '@soyl/shared/content/index';
 import type { Catalog } from '../catalog';
 import { questionIdPrefix } from '../ids';
-import type { PaperSpec } from './engine';
+import type { PaperSpec, UnitTarget } from './engine';
 
 export interface PlannedPaper {
   spec: PaperSpec;
@@ -77,6 +77,21 @@ export function testIdBase(subjectId: string): string {
   return questionIdPrefix(`${subjectId}-ch01`).replace(/^q_/, 't_').replace(/_ch01$/, '');
 }
 
+/**
+ * Board-paper unit weightage from the syllabus (`units[].marks`): one target per unit with marks, over
+ * its board-assessed chapters. Null unless the unit marks add up to the paper's total and every
+ * board-assessed chapter belongs to such a unit (otherwise the weightage is not defined for the paper).
+ */
+export function unitTargetsFor(syllabus: SyllabusFile, boardAssessed: readonly string[], totalMarks: number): UnitTarget[] | null {
+  const targets = syllabus.units
+    .filter((u) => u.marks != null && u.marks > 0)
+    .map((u) => ({ unit: u.name, marks: u.marks!, chapters: syllabus.chapters.filter((c) => c.unit === u.name && boardAssessed.includes(c.id)).map((c) => c.id) }));
+  if (!targets.length || Math.abs(targets.reduce((n, t) => n + t.marks, 0) - totalMarks) > 1e-9) return null;
+  if (targets.some((t) => !t.chapters.length)) return null;
+  if (boardAssessed.some((c) => !targets.some((t) => t.chapters.includes(c)))) return null;
+  return targets;
+}
+
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 /** Splits chapters into `n` contiguous groups, following syllabus units where they give n or more groups. */
@@ -104,13 +119,19 @@ export function planSubjectTests(
   const base = testIdBase(subject.id);
   const name = subject.name;
   const seed = (id: string) => `${id}@${opts.academicYear}`;
-  const add = (paper: PaperType, id: string, title: string, chapters: string[], series: string, seriesTitle: string | null, position: number, variant = '', track: 'main' | 'second_exam' = 'main') => {
+  // Board-pattern integrity (series papers: unit tests, mocks, May track): no question tagged with a topic
+  // the board does not assess (project / periodic-assessment only) or from a chapter it does not assess.
+  // Driven by the syllabus data, never by stem text. Chapter tests and student-built custom tests may use them.
+  const practiceOnly = new Set(syllabus.chapters.flatMap((c) => c.topics.filter((t) => t.board_assessed === false || c.board_assessed === false).map((t) => t.id)));
+  const add =(paper: PaperType, id: string, title: string, chapters: string[], series: string, seriesTitle: string | null, position: number, variant = '', track: 'main' | 'second_exam' = 'main', weighted = false) => {
     const bp = blueprintFor(catalog, subject, paper, variant);
     if (!bp) {
       notes.push(`${id}: no ${paper} blueprint${variant ? ` for variant ${variant}` : ''} for ${subject.id} or its class default`);
       return;
     }
-    papers.push({ spec: { id, title, blueprint: bp, subjectId: subject.id, chapters, seed: seed(id) }, series, seriesTitle, track, position });
+    const unitTargets = weighted ? unitTargetsFor(syllabus, chapters, bp.total_marks) : null;
+    if (weighted && !unitTargets) notes.push(`${id}: syllabus unit marks do not add up to ${bp.total_marks} over its chapters; no unit weightage applied`);
+    papers.push({ spec: { id, title, blueprint: bp, subjectId: subject.id, chapters, seed: seed(id), ...(unitTargets ? { unitTargets } : {}), ...(series.startsWith('chapter:') || !practiceOnly.size ? {} : { practiceOnlyTopics: practiceOnly }) }, series, seriesTitle, track, position });
   };
 
   // Chapter tests (short + long, disjoint) for every chapter in scope.
@@ -140,10 +161,10 @@ export function planSubjectTests(
         const vs = v.key ? `_${v.key}` : '';
         const vName = v.name ? ` ${v.name}` : '';
         for (let i = 1; i <= TEST_SERIES_TARGETS.boardClasses.fullMocksMin; i++)
-          add('board', `${base}${vs}_mock_${i}`, `${name}${vName} — Full mock ${i} (board pattern)`, boardAssessed, `mocks${vs}`, `${name}${vName} full mocks`, i, v.key);
+          add('board', `${base}${vs}_mock_${i}`, `${name}${vName} — Full mock ${i} (board pattern)`, boardAssessed, `mocks${vs}`, `${name}${vName} full mocks`, i, v.key, 'main', true);
         if (subject.board === 'cbse' && subject.class === 10 && blueprintFor(catalog, subject, 'board-second-exam', v.key))
           for (let i = 1; i <= 2; i++)
-            add('board-second-exam', `${base}${vs}_may_${i}`, `${name}${vName} — May second exam, paper ${i}`, boardAssessed, `may${vs}`, `${name}${vName} second-exam (May) track`, i, v.key, 'second_exam');
+            add('board-second-exam', `${base}${vs}_may_${i}`, `${name}${vName} — May second exam, paper ${i}`, boardAssessed, `may${vs}`, `${name}${vName} second-exam (May) track`, i, v.key, 'second_exam', true);
       }
       notes.push(`${subject.id}: the ${TEST_SERIES_TARGETS.boardClasses.liveMocks} All-India live mocks are scheduled events (M3 test engine), not assembled here`);
     } else notes.push(`${subject.id}: no board exam; no full mocks`);

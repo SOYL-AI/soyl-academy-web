@@ -9345,6 +9345,78 @@
         "generated_at": "2026-10-27",
         "author": "claude-opus-5-5 (subject-producer)"
       }
+    },
+    {
+      "id": "q_cbse10sst_ch09_121",
+      "unit": "cbse-10-social-science-ch09",
+      "language": "en",
+      "type": "map",
+      "stem_md": "Shade and label on an outline political map of India the leading producer state of each crop:\n\n**A.** jute, the golden fibre, grown on the floodplains of the lower Ganga;\n\n**B.** natural rubber, grown on plantations along the wet south-western coast;\n\n**C.** coffee, grown on estates in the hills of the Western Ghats.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "places": [
+          {
+            "id": "A",
+            "name": "West Bengal",
+            "accepted": [
+              "West Bengal"
+            ],
+            "kind": "crop-area"
+          },
+          {
+            "id": "B",
+            "name": "Kerala",
+            "accepted": [
+              "Kerala"
+            ],
+            "kind": "crop-area"
+          },
+          {
+            "id": "C",
+            "name": "Karnataka",
+            "accepted": [
+              "Karnataka"
+            ],
+            "kind": "crop-area"
+          }
+        ]
+      },
+      "solution_md": "Step 1: West Bengal grows most of India's jute in the Ganga–Brahmaputra delta.\nStep 2: Kerala produces most of India's natural rubber.\nStep 3: Karnataka produces the largest share of India's coffee.\nStep 4: Shade each state and write the crop and state name.",
+      "marking_scheme": [
+        {
+          "step": "A: West Bengal correctly located and labelled",
+          "marks": 1
+        },
+        {
+          "step": "B: Kerala correctly located and labelled",
+          "marks": 1
+        },
+        {
+          "step": "C: Karnataka correctly located and labelled",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "cbse-10-social-science-ch09-t03"
+      ],
+      "expected_time_sec": 180,
+      "assets": [],
+      "map_id": "india-political",
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-27",
+        "author": "claude-opus-5-5 (assessment-designer)"
+      }
     }
   ],
   "build": {

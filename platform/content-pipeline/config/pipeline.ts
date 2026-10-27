@@ -164,5 +164,7 @@ export const ORIGINALITY = {
   literatureMaxRunWords: 6,
   /** Near-duplicate questions in our own bank: Jaccard of word 5-grams over stem + passage. */
   duplicate: { n: 5, threshold: 0.7, minWords: 10 },
+  /** Stage 7: two questions at least this similar (same measure) never appear in one assembled paper. */
+  samePaper: { n: 5, threshold: 0.5, minWords: 5 },
   referenceExtensions: ['.txt', '.md'],
 } as const;

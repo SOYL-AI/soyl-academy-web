@@ -4594,23 +4594,23 @@
       "unit": "cbse-10-mathematics-ch01",
       "language": "en",
       "type": "mcq",
-      "stem_md": "The largest number that divides $245$ and $1029$, leaving remainders $5$ and $9$ respectively, is",
+      "stem_md": "When $172$ notebooks and $259$ pens are shared equally among the students of a class, $4$ notebooks and $7$ pens are left over. The greatest possible number of students in the class is",
       "options": [
         {
           "id": "a",
-          "text_md": "$20$"
+          "text_md": "$28$"
         },
         {
           "id": "b",
-          "text_md": "$60$"
+          "text_md": "$84$"
         },
         {
           "id": "c",
-          "text_md": "$120$"
+          "text_md": "$42$"
         },
         {
           "id": "d",
-          "text_md": "$30$"
+          "text_md": "$168$"
         }
       ],
       "match_right": [],
@@ -4619,7 +4619,7 @@
           "b"
         ]
       },
-      "solution_md": "**Step 1.** Remove the remainders: the number divides $245 - 5 = 240$ and $1029 - 9 = 1020$ exactly.\n\n**Step 2.** $240 = 2^4 \\times 3 \\times 5$ and $1020 = 2^2 \\times 3 \\times 5 \\times 17$, so HCF $= 2^2 \\times 3 \\times 5 = 60$.\n\n**Check:** $245 = 4 \\times 60 + 5$ and $1029 = 17 \\times 60 + 9$. Options (d) and (a) also leave these remainders but are not the largest; $120$ does not divide $1020$.",
+      "solution_md": "**Step 1.** The students received $172 - 4 = 168$ notebooks and $259 - 7 = 252$ pens, so the number of students divides both $168$ and $252$ exactly.\n\n**Step 2.** $168 = 2^3 \\times 3 \\times 7$ and $252 = 2^2 \\times 3^2 \\times 7$, so HCF $= 2^2 \\times 3 \\times 7 = 84$.\n\n**Check:** $172 = 2 \\times 84 + 4$ and $259 = 3 \\times 84 + 7$. Options (c) and (a) also leave these remainders but are not the greatest; $168$ does not divide $252$.",
       "marking_scheme": [
         {
           "step": "Correct option (b)",
@@ -6517,27 +6517,27 @@
       "unit": "cbse-10-mathematics-ch01",
       "language": "en",
       "type": "short",
-      "stem_md": "Given that $\\sqrt{3}$ is irrational, prove that $\\dfrac{2\\sqrt{3}}{7}$ is irrational.",
+      "stem_md": "Both $5 + \\sqrt{3}$ and $5 - \\sqrt{3}$ are irrational. Work out their sum and their product. What do your answers show about adding or multiplying two irrational numbers?",
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "Suppose, to the contrary, that $\\dfrac{2\\sqrt3}{7} = r$ for some rational number $r$.\n\nThen $\\sqrt3 = \\dfrac{7r}{2}$. Since $r$ is rational, $\\dfrac{7r}{2}$ is rational, so $\\sqrt3$ would be rational.\n\nThis contradicts the fact that $\\sqrt3$ is irrational. Hence $\\dfrac{2\\sqrt3}{7}$ is irrational."
+        "model_answer_md": "Sum: $(5 + \\sqrt3) + (5 - \\sqrt3) = 10$, which is rational.\n\nProduct: $(5 + \\sqrt3)(5 - \\sqrt3) = 25 - 3 = 22$, which is also rational.\n\nSo the sum, and the product, of two irrational numbers need **not** be irrational: here both are rational."
       },
-      "solution_md": "Assume it is rational, isolate $\\sqrt3$, and note that a rational number multiplied by $\\dfrac72$ stays rational. The contradiction completes the proof.",
+      "solution_md": "The $\\sqrt3$ terms cancel in the sum; the product is a difference of squares, $a^2 - b^2$ with $a = 5$, $b = \\sqrt3$.",
       "marking_scheme": [
         {
-          "step": "Assumes rational and isolates √3 = 7r/2",
+          "step": "Sum 10 and product 22",
           "marks": 1
         },
         {
-          "step": "States contradiction and conclusion",
+          "step": "Conclusion: sum/product of irrationals can be rational",
           "marks": 1
         }
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "analysis",
+      "bloom": "analyze",
       "topic_ids": [
         "cbse-10-mathematics-ch01-t03"
       ],
@@ -6731,31 +6731,31 @@
       "unit": "cbse-10-mathematics-ch01",
       "language": "en",
       "type": "short",
-      "stem_md": "Find the HCF and LCM of $40$, $84$ and $210$ by prime factorisation.",
+      "stem_md": "Three warning lamps on a factory floor flash every $36$, $48$ and $90$ seconds. They flash together at noon. Using prime factorisation, find after how many minutes they next flash together, and how many times they flash together in the next $2$ hours (not counting noon).",
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "$40 = 2^3 \\times 5$, $84 = 2^2 \\times 3 \\times 7$, $210 = 2 \\times 3 \\times 5 \\times 7$.\n\nHCF: the only prime common to all three is $2$, smallest power $2^1$. HCF $= 2$.\n\nLCM $= 2^3 \\times 3 \\times 5 \\times 7 = 840$."
+        "model_answer_md": "$36 = 2^2 \\times 3^2$, $48 = 2^4 \\times 3$, $90 = 2 \\times 3^2 \\times 5$.\n\nLCM $= 2^4 \\times 3^2 \\times 5 = 720$ seconds $= 12$ minutes. They next flash together $12$ minutes after noon, at 12:12.\n\nIn $2$ hours $= 120$ minutes they flash together every $12$ minutes: $120 \\div 12 = 10$ times."
       },
-      "solution_md": "For three numbers, the HCF uses primes common to **all three**: $3$, $5$ and $7$ are each missing from one number. The LCM takes every prime with its greatest power. Note $2 \\times 840 = 1680 \\ne 40 \\times 84 \\times 210$.",
+      "solution_md": "\"Together again\" means a common multiple of all three intervals, and the first time is the LCM. Take every prime with its greatest power: $2^4$ from $48$, $3^2$ from $36$ or $90$, $5$ from $90$.",
       "marking_scheme": [
         {
           "step": "All three factorisations",
           "marks": 1
         },
         {
-          "step": "HCF = 2",
+          "step": "LCM = 720 s = 12 minutes",
           "marks": 1
         },
         {
-          "step": "LCM = 840",
+          "step": "10 times in 2 hours",
           "marks": 1
         }
       ],
       "marks": 3,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "cbse-10-mathematics-ch01-t02"
       ],
@@ -8270,9 +8270,9 @@
     "run_id": null,
     "checks": {
       "syllabus": "topics t01–t03 only; removed topics (Euclid's division lemma/algorithm, decimal expansions) absent",
-      "katex": "1562 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "1567 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "1 deck plots + 1 notes/question plots: 2 marked points all on their curves and matching their labels; 0 zeros located numerically and all marked; 0 intersection points lie on both lines",
-      "re_solve": "141/141 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
+      "re_solve": "142/142 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "narration": "38 slides, max 71 words, mean 57; no symbols, LaTeX or letter abbreviations",
       "gate": "npm test -w @soyl/content-templates and content lint (lintExemplar) run clean on this chapter"
     }

@@ -1,0 +1,3697 @@
+{
+  "subject_id": "cbse-10-social-science",
+  "academic_year": "2026-27",
+  "assembled_by": "assemble --board cbse --class 10 --subject cbse-10-social-science --series --source files --freeze",
+  "tests": [
+    {
+      "series": {
+        "key": "ts_cbse10sst_unit_tests",
+        "title": "Social Science unit tests",
+        "track": "main",
+        "position": 1
+      },
+      "test": {
+        "id": "t_cbse10sst_unit_1",
+        "kind": "unit",
+        "paper_type": "unit-test",
+        "blueprint_id": "cbse-10-social-science-unit-test",
+        "title": "Social Science — Unit test 1 (half-syllabus)",
+        "subject_id": "cbse-10-social-science",
+        "chapter_ids": [
+          "cbse-10-social-science-ch01",
+          "cbse-10-social-science-ch02",
+          "cbse-10-social-science-ch03",
+          "cbse-10-social-science-ch05",
+          "cbse-10-social-science-ch06",
+          "cbse-10-social-science-ch07",
+          "cbse-10-social-science-ch08"
+        ],
+        "duration_min": 120,
+        "total_marks": 50,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - Objective (1 mark each)",
+            "instructions": "Multiple-choice and assertion-reason questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch05_017",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch06_012",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch06_027",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_002",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch03_007",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch03_008",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch08_017",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_029",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch03_029",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch07_036",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": []
+          },
+          {
+            "id": "B",
+            "title": "Section B - Very short answer (2 marks)",
+            "instructions": "Internal choice in two questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch02_067",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch06_054",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_099",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_063",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_060",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch07_067",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch07_063",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              },
+              {
+                "id": "B-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Short answer (3 marks)",
+            "instructions": "Internal choice in two questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch07_100",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch07_076",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_055",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_056",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch08_087",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch08_091",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              },
+              {
+                "id": "C-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "D",
+            "title": "Section D - Long answer (5 marks)",
+            "instructions": "Internal choice in both questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch02_081",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch06_072",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_106",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch03_072",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "D-c1",
+                "attempt": 1
+              },
+              {
+                "id": "D-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "E",
+            "title": "Section E - Source-based (4 marks each)",
+            "instructions": "Read each source and answer all parts; internal choice in one sub-part.",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch08_105",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_071",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": []
+          }
+        ],
+        "seed": "t_cbse10sst_unit_1@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sst_unit_tests",
+        "title": "Social Science unit tests",
+        "track": "main",
+        "position": 2
+      },
+      "test": {
+        "id": "t_cbse10sst_unit_2",
+        "kind": "unit",
+        "paper_type": "unit-test",
+        "blueprint_id": "cbse-10-social-science-unit-test",
+        "title": "Social Science — Unit test 2 (half-syllabus)",
+        "subject_id": "cbse-10-social-science",
+        "chapter_ids": [
+          "cbse-10-social-science-ch09",
+          "cbse-10-social-science-ch10",
+          "cbse-10-social-science-ch11",
+          "cbse-10-social-science-ch12",
+          "cbse-10-social-science-ch13",
+          "cbse-10-social-science-ch14"
+        ],
+        "duration_min": 120,
+        "total_marks": 50,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - Objective (1 mark each)",
+            "instructions": "Multiple-choice and assertion-reason questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch12_017",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch12_008",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_028",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch11_010",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch13_022",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch12_016",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch09_028",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch11_023",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch13_030",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch12_025",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": []
+          },
+          {
+            "id": "B",
+            "title": "Section B - Very short answer (2 marks)",
+            "instructions": "Internal choice in two questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch09_082",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch10_094",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch13_051",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch09_117",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch09_078",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch10_091",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch10_086",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              },
+              {
+                "id": "B-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Short answer (3 marks)",
+            "instructions": "Internal choice in two questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch10_099",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch13_057",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_113",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_084",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch11_105",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch11_134",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              },
+              {
+                "id": "C-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "D",
+            "title": "Section D - Long answer (5 marks)",
+            "instructions": "Internal choice in both questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch13_067",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch09_103",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch10_112",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch11_136",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "D-c1",
+                "attempt": 1
+              },
+              {
+                "id": "D-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "E",
+            "title": "Section E - Source-based (4 marks each)",
+            "instructions": "Read each source and answer all parts; internal choice in one sub-part.",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch12_070",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_095",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": []
+          }
+        ],
+        "seed": "t_cbse10sst_unit_2@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sst_unit_tests",
+        "title": "Social Science unit tests",
+        "track": "main",
+        "position": 3
+      },
+      "test": {
+        "id": "t_cbse10sst_unit_3",
+        "kind": "unit",
+        "paper_type": "unit-test",
+        "blueprint_id": "cbse-10-social-science-unit-test",
+        "title": "Social Science — Unit test 3 (half-syllabus)",
+        "subject_id": "cbse-10-social-science",
+        "chapter_ids": [
+          "cbse-10-social-science-ch15",
+          "cbse-10-social-science-ch16",
+          "cbse-10-social-science-ch17",
+          "cbse-10-social-science-ch18",
+          "cbse-10-social-science-ch19",
+          "cbse-10-social-science-ch20",
+          "cbse-10-social-science-ch21"
+        ],
+        "duration_min": 120,
+        "total_marks": 50,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - Objective (1 mark each)",
+            "instructions": "Multiple-choice and assertion-reason questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch16_014",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_007",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_003",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_002",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_079",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch17_003",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch17_023",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_005",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch17_038",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch15_048",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": []
+          },
+          {
+            "id": "B",
+            "title": "Section B - Very short answer (2 marks)",
+            "instructions": "Internal choice in two questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch18_080",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_109",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_056",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_034",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_013",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_019",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_052",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              },
+              {
+                "id": "B-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Short answer (3 marks)",
+            "instructions": "Internal choice in two questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch18_059",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_072",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_031",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_054",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch15_080",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch15_087",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              },
+              {
+                "id": "C-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "D",
+            "title": "Section D - Long answer (5 marks)",
+            "instructions": "Internal choice in both questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch20_074",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_057",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_091",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_064",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "D-c1",
+                "attempt": 1
+              },
+              {
+                "id": "D-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "E",
+            "title": "Section E - Source-based (4 marks each)",
+            "instructions": "Read each source and answer all parts; internal choice in one sub-part.",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch15_098",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch17_081",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": []
+          }
+        ],
+        "seed": "t_cbse10sst_unit_3@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sst_mocks",
+        "title": "Social Science full mocks",
+        "track": "main",
+        "position": 1
+      },
+      "test": {
+        "id": "t_cbse10sst_mock_1",
+        "kind": "full",
+        "paper_type": "board",
+        "blueprint_id": "cbse-10-social-science-board",
+        "title": "Social Science — Full mock 1 (board pattern)",
+        "subject_id": "cbse-10-social-science",
+        "chapter_ids": [
+          "cbse-10-social-science-ch01",
+          "cbse-10-social-science-ch02",
+          "cbse-10-social-science-ch03",
+          "cbse-10-social-science-ch05",
+          "cbse-10-social-science-ch06",
+          "cbse-10-social-science-ch07",
+          "cbse-10-social-science-ch08",
+          "cbse-10-social-science-ch09",
+          "cbse-10-social-science-ch10",
+          "cbse-10-social-science-ch11",
+          "cbse-10-social-science-ch12",
+          "cbse-10-social-science-ch13",
+          "cbse-10-social-science-ch14",
+          "cbse-10-social-science-ch15",
+          "cbse-10-social-science-ch16",
+          "cbse-10-social-science-ch17",
+          "cbse-10-social-science-ch18",
+          "cbse-10-social-science-ch19",
+          "cbse-10-social-science-ch20",
+          "cbse-10-social-science-ch21"
+        ],
+        "duration_min": 180,
+        "total_marks": 80,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - History (20)",
+            "instructions": "Q1-4 MCQ; Q5 VSA (2); Q6 SA (3, A/B choice); Q7 LA (5, A/B choice); Q8 case-based (4); Q9 map work (2: identify/locate two places).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch01_012",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch03_013",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_021",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_018",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_065",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_076",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_071",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch03_069",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_076",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_070",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_105",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "A-c1",
+                "attempt": 1
+              },
+              {
+                "id": "A-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Section B - Geography (20)",
+            "instructions": "Q10-15 MCQ (Q15 assertion-reason); Q16 VSA (2); Q17 LA (5, A/B choice); Q18 case-based (4); Q19 map work (3: locate and label three features).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch09_007",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch06_022",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch07_020",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch11_119",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch08_107",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch08_044",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch12_062",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch06_070",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch11_110",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch07_083",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch10_075",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Political Science (20)",
+            "instructions": "Q20 assertion-reason; Q21-23 MCQ (Q23 cartoon-based); Q24-25 VSA (2); Q26 SA (3); Q27 LA (5, A/B choice); Q28 case-based (4).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch15_054",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch17_016",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_019",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch15_008",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_074",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch13_077",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch15_087",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch17_077",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_090",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_100",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "D",
+            "title": "Section D - Economics (20)",
+            "instructions": "Q29-34 MCQ (Q34 assertion-reason); Q35-37 SA (3); Q38 LA (5, A/B choice, data/table based).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch20_023",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_008",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_081",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_018",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_086",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_032",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_073",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_060",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_082",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_067",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_043",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "D-c1",
+                "attempt": 1
+              }
+            ]
+          }
+        ],
+        "seed": "t_cbse10sst_mock_1@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sst_mocks",
+        "title": "Social Science full mocks",
+        "track": "main",
+        "position": 2
+      },
+      "test": {
+        "id": "t_cbse10sst_mock_2",
+        "kind": "full",
+        "paper_type": "board",
+        "blueprint_id": "cbse-10-social-science-board",
+        "title": "Social Science — Full mock 2 (board pattern)",
+        "subject_id": "cbse-10-social-science",
+        "chapter_ids": [
+          "cbse-10-social-science-ch01",
+          "cbse-10-social-science-ch02",
+          "cbse-10-social-science-ch03",
+          "cbse-10-social-science-ch05",
+          "cbse-10-social-science-ch06",
+          "cbse-10-social-science-ch07",
+          "cbse-10-social-science-ch08",
+          "cbse-10-social-science-ch09",
+          "cbse-10-social-science-ch10",
+          "cbse-10-social-science-ch11",
+          "cbse-10-social-science-ch12",
+          "cbse-10-social-science-ch13",
+          "cbse-10-social-science-ch14",
+          "cbse-10-social-science-ch15",
+          "cbse-10-social-science-ch16",
+          "cbse-10-social-science-ch17",
+          "cbse-10-social-science-ch18",
+          "cbse-10-social-science-ch19",
+          "cbse-10-social-science-ch20",
+          "cbse-10-social-science-ch21"
+        ],
+        "duration_min": 180,
+        "total_marks": 80,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - History (20)",
+            "instructions": "Q1-4 MCQ; Q5 VSA (2); Q6 SA (3, A/B choice); Q7 LA (5, A/B choice); Q8 case-based (4); Q9 map work (2: identify/locate two places).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch03_019",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_091",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_073",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_031",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_059",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_053",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_059",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_080",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_078",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch03_075",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_101",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "A-c1",
+                "attempt": 1
+              },
+              {
+                "id": "A-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Section B - Geography (20)",
+            "instructions": "Q10-15 MCQ (Q15 assertion-reason); Q16 VSA (2); Q17 LA (5, A/B choice); Q18 case-based (4); Q19 map work (3: locate and label three features).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch07_013",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch10_031",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch06_084",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch07_025",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch10_007",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch09_054",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch12_059",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch06_073",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch09_099",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch08_101",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch11_137",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Political Science (20)",
+            "instructions": "Q20 assertion-reason; Q21-23 MCQ (Q23 cartoon-based); Q24-25 VSA (2); Q26 SA (3); Q27 LA (5, A/B choice); Q28 case-based (4).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch17_039",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_029",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch13_011",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_009",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch17_064",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch15_077",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch15_084",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch13_067",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_092",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_117",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "D",
+            "title": "Section D - Economics (20)",
+            "instructions": "Q29-34 MCQ (Q34 assertion-reason); Q35-37 SA (3); Q38 LA (5, A/B choice, data/table based).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch18_012",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_040",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_065",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_036",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_077",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_010",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_072",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_064",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_039",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_064",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_057",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "D-c1",
+                "attempt": 1
+              }
+            ]
+          }
+        ],
+        "seed": "t_cbse10sst_mock_2@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sst_mocks",
+        "title": "Social Science full mocks",
+        "track": "main",
+        "position": 3
+      },
+      "test": {
+        "id": "t_cbse10sst_mock_3",
+        "kind": "full",
+        "paper_type": "board",
+        "blueprint_id": "cbse-10-social-science-board",
+        "title": "Social Science — Full mock 3 (board pattern)",
+        "subject_id": "cbse-10-social-science",
+        "chapter_ids": [
+          "cbse-10-social-science-ch01",
+          "cbse-10-social-science-ch02",
+          "cbse-10-social-science-ch03",
+          "cbse-10-social-science-ch05",
+          "cbse-10-social-science-ch06",
+          "cbse-10-social-science-ch07",
+          "cbse-10-social-science-ch08",
+          "cbse-10-social-science-ch09",
+          "cbse-10-social-science-ch10",
+          "cbse-10-social-science-ch11",
+          "cbse-10-social-science-ch12",
+          "cbse-10-social-science-ch13",
+          "cbse-10-social-science-ch14",
+          "cbse-10-social-science-ch15",
+          "cbse-10-social-science-ch16",
+          "cbse-10-social-science-ch17",
+          "cbse-10-social-science-ch18",
+          "cbse-10-social-science-ch19",
+          "cbse-10-social-science-ch20",
+          "cbse-10-social-science-ch21"
+        ],
+        "duration_min": 180,
+        "total_marks": 80,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - History (20)",
+            "instructions": "Q1-4 MCQ; Q5 VSA (2); Q6 SA (3, A/B choice); Q7 LA (5, A/B choice); Q8 case-based (4); Q9 map work (2: identify/locate two places).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch03_018",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_002",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_011",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_011",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_055",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_056",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_058",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch03_068",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_083",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_085",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_099",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "A-c1",
+                "attempt": 1
+              },
+              {
+                "id": "A-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Section B - Geography (20)",
+            "instructions": "Q10-15 MCQ (Q15 assertion-reason); Q16 VSA (2); Q17 LA (5, A/B choice); Q18 case-based (4); Q19 map work (3: locate and label three features).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch07_011",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch12_017",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch06_025",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch10_017",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch08_018",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch09_115",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch10_129",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch08_100",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch06_069",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch09_105",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch11_138",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Political Science (20)",
+            "instructions": "Q20 assertion-reason; Q21-23 MCQ (Q23 cartoon-based); Q24-25 VSA (2); Q26 SA (3); Q27 LA (5, A/B choice); Q28 case-based (4).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch15_046",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch17_030",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_106",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch13_014",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch13_051",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_080",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_087",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch17_075",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_087",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch15_101",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "D",
+            "title": "Section D - Economics (20)",
+            "instructions": "Q29-34 MCQ (Q34 assertion-reason); Q35-37 SA (3); Q38 LA (5, A/B choice, data/table based).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch21_003",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_005",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_026",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_021",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_062",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_024",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_061",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_083",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_062",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_074",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_056",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "D-c1",
+                "attempt": 1
+              }
+            ]
+          }
+        ],
+        "seed": "t_cbse10sst_mock_3@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sst_mocks",
+        "title": "Social Science full mocks",
+        "track": "main",
+        "position": 4
+      },
+      "test": {
+        "id": "t_cbse10sst_mock_4",
+        "kind": "full",
+        "paper_type": "board",
+        "blueprint_id": "cbse-10-social-science-board",
+        "title": "Social Science — Full mock 4 (board pattern)",
+        "subject_id": "cbse-10-social-science",
+        "chapter_ids": [
+          "cbse-10-social-science-ch01",
+          "cbse-10-social-science-ch02",
+          "cbse-10-social-science-ch03",
+          "cbse-10-social-science-ch05",
+          "cbse-10-social-science-ch06",
+          "cbse-10-social-science-ch07",
+          "cbse-10-social-science-ch08",
+          "cbse-10-social-science-ch09",
+          "cbse-10-social-science-ch10",
+          "cbse-10-social-science-ch11",
+          "cbse-10-social-science-ch12",
+          "cbse-10-social-science-ch13",
+          "cbse-10-social-science-ch14",
+          "cbse-10-social-science-ch15",
+          "cbse-10-social-science-ch16",
+          "cbse-10-social-science-ch17",
+          "cbse-10-social-science-ch18",
+          "cbse-10-social-science-ch19",
+          "cbse-10-social-science-ch20",
+          "cbse-10-social-science-ch21"
+        ],
+        "duration_min": 180,
+        "total_marks": 80,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - History (20)",
+            "instructions": "Q1-4 MCQ; Q5 VSA (2); Q6 SA (3, A/B choice); Q7 LA (5, A/B choice); Q8 case-based (4); Q9 map work (2: identify/locate two places).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch05_006",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_014",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_021",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_010",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_060",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_055",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_057",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch03_073",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_079",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_088",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_106",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "A-c1",
+                "attempt": 1
+              },
+              {
+                "id": "A-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Section B - Geography (20)",
+            "instructions": "Q10-15 MCQ (Q15 assertion-reason); Q16 VSA (2); Q17 LA (5, A/B choice); Q18 case-based (4); Q19 map work (3: locate and label three features).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch07_031",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch11_003",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch06_019",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch07_010",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch11_031",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch08_043",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch10_094",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch08_099",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch06_071",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch12_071",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch09_121",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Political Science (20)",
+            "instructions": "Q20 assertion-reason; Q21-23 MCQ (Q23 cartoon-based); Q24-25 VSA (2); Q26 SA (3); Q27 LA (5, A/B choice); Q28 case-based (4).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch16_050",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch17_004",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch15_044",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_102",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_109",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_073",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch17_074",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch13_063",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch15_091",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_097",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "D",
+            "title": "Section D - Economics (20)",
+            "instructions": "Q29-34 MCQ (Q34 assertion-reason); Q35-37 SA (3); Q38 LA (5, A/B choice, data/table based).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch18_020",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_078",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_039",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_033",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_023",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_065",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_071",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_059",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_040",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_063",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_057",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "D-c1",
+                "attempt": 1
+              }
+            ]
+          }
+        ],
+        "seed": "t_cbse10sst_mock_4@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sst_mocks",
+        "title": "Social Science full mocks",
+        "track": "main",
+        "position": 5
+      },
+      "test": {
+        "id": "t_cbse10sst_mock_5",
+        "kind": "full",
+        "paper_type": "board",
+        "blueprint_id": "cbse-10-social-science-board",
+        "title": "Social Science — Full mock 5 (board pattern)",
+        "subject_id": "cbse-10-social-science",
+        "chapter_ids": [
+          "cbse-10-social-science-ch01",
+          "cbse-10-social-science-ch02",
+          "cbse-10-social-science-ch03",
+          "cbse-10-social-science-ch05",
+          "cbse-10-social-science-ch06",
+          "cbse-10-social-science-ch07",
+          "cbse-10-social-science-ch08",
+          "cbse-10-social-science-ch09",
+          "cbse-10-social-science-ch10",
+          "cbse-10-social-science-ch11",
+          "cbse-10-social-science-ch12",
+          "cbse-10-social-science-ch13",
+          "cbse-10-social-science-ch14",
+          "cbse-10-social-science-ch15",
+          "cbse-10-social-science-ch16",
+          "cbse-10-social-science-ch17",
+          "cbse-10-social-science-ch18",
+          "cbse-10-social-science-ch19",
+          "cbse-10-social-science-ch20",
+          "cbse-10-social-science-ch21"
+        ],
+        "duration_min": 180,
+        "total_marks": 80,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - History (20)",
+            "instructions": "Q1-4 MCQ; Q5 VSA (2); Q6 SA (3, A/B choice); Q7 LA (5, A/B choice); Q8 case-based (4); Q9 map work (2: identify/locate two places).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch05_005",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_004",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_017",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_022",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_062",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch03_060",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch03_063",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_081",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_081",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_069",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_100",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "A-c1",
+                "attempt": 1
+              },
+              {
+                "id": "A-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Section B - Geography (20)",
+            "instructions": "Q10-15 MCQ (Q15 assertion-reason); Q16 VSA (2); Q17 LA (5, A/B choice); Q18 case-based (4); Q19 map work (3: locate and label three features).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch06_008",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch12_014",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch10_002",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch09_014",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch07_089",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch06_030",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch09_117",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch10_110",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch11_108",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch07_084",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch08_115",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Political Science (20)",
+            "instructions": "Q20 assertion-reason; Q21-23 MCQ (Q23 cartoon-based); Q24-25 VSA (2); Q26 SA (3); Q27 LA (5, A/B choice); Q28 case-based (4).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch17_041",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch15_028",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_020",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch13_020",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_074",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_111",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_113",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch15_088",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch13_066",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch17_085",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "D",
+            "title": "Section D - Economics (20)",
+            "instructions": "Q29-34 MCQ (Q34 assertion-reason); Q35-37 SA (3); Q38 LA (5, A/B choice, data/table based).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch18_006",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_019",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_031",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_048",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_036",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_067",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_017",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_060",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_014",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_023",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_089",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "D-c1",
+                "attempt": 1
+              }
+            ]
+          }
+        ],
+        "seed": "t_cbse10sst_mock_5@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sst_mocks",
+        "title": "Social Science full mocks",
+        "track": "main",
+        "position": 6
+      },
+      "test": {
+        "id": "t_cbse10sst_mock_6",
+        "kind": "full",
+        "paper_type": "board",
+        "blueprint_id": "cbse-10-social-science-board",
+        "title": "Social Science — Full mock 6 (board pattern)",
+        "subject_id": "cbse-10-social-science",
+        "chapter_ids": [
+          "cbse-10-social-science-ch01",
+          "cbse-10-social-science-ch02",
+          "cbse-10-social-science-ch03",
+          "cbse-10-social-science-ch05",
+          "cbse-10-social-science-ch06",
+          "cbse-10-social-science-ch07",
+          "cbse-10-social-science-ch08",
+          "cbse-10-social-science-ch09",
+          "cbse-10-social-science-ch10",
+          "cbse-10-social-science-ch11",
+          "cbse-10-social-science-ch12",
+          "cbse-10-social-science-ch13",
+          "cbse-10-social-science-ch14",
+          "cbse-10-social-science-ch15",
+          "cbse-10-social-science-ch16",
+          "cbse-10-social-science-ch17",
+          "cbse-10-social-science-ch18",
+          "cbse-10-social-science-ch19",
+          "cbse-10-social-science-ch20",
+          "cbse-10-social-science-ch21"
+        ],
+        "duration_min": 180,
+        "total_marks": 80,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - History (20)",
+            "instructions": "Q1-4 MCQ; Q5 VSA (2); Q6 SA (3, A/B choice); Q7 LA (5, A/B choice); Q8 case-based (4); Q9 map work (2: identify/locate two places).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch05_016",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch03_007",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_012",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_018",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_047",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_070",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_079",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_061",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch03_070",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_086",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_102",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "A-c1",
+                "attempt": 1
+              },
+              {
+                "id": "A-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Section B - Geography (20)",
+            "instructions": "Q10-15 MCQ (Q15 assertion-reason); Q16 VSA (2); Q17 LA (5, A/B choice); Q18 case-based (4); Q19 map work (3: locate and label three features).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch09_004",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch08_001",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch07_026",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch10_035",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch11_042",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch06_032",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch07_103",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch10_109",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch11_107",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch06_078",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch12_056",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Political Science (20)",
+            "instructions": "Q20 assertion-reason; Q21-23 MCQ (Q23 cartoon-based); Q24-25 VSA (2); Q26 SA (3); Q27 LA (5, A/B choice); Q28 case-based (4).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch14_048",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_010",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_043",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_019",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch15_078",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch13_053",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch15_083",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_089",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_089",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch17_086",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "D",
+            "title": "Section D - Economics (20)",
+            "instructions": "Q29-34 MCQ (Q34 assertion-reason); Q35-37 SA (3); Q38 LA (5, A/B choice, data/table based).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch21_030",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_025",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_079",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_007",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_038",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_025",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_063",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_021",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_056",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_042",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_074",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "D-c1",
+                "attempt": 1
+              }
+            ]
+          }
+        ],
+        "seed": "t_cbse10sst_mock_6@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sst_may",
+        "title": "Social Science second-exam (May) track",
+        "track": "second_exam",
+        "position": 1
+      },
+      "test": {
+        "id": "t_cbse10sst_may_1",
+        "kind": "full",
+        "paper_type": "board-second-exam",
+        "blueprint_id": "cbse-10-social-science-board-second-exam",
+        "title": "Social Science — May second exam, paper 1",
+        "subject_id": "cbse-10-social-science",
+        "chapter_ids": [
+          "cbse-10-social-science-ch01",
+          "cbse-10-social-science-ch02",
+          "cbse-10-social-science-ch03",
+          "cbse-10-social-science-ch05",
+          "cbse-10-social-science-ch06",
+          "cbse-10-social-science-ch07",
+          "cbse-10-social-science-ch08",
+          "cbse-10-social-science-ch09",
+          "cbse-10-social-science-ch10",
+          "cbse-10-social-science-ch11",
+          "cbse-10-social-science-ch12",
+          "cbse-10-social-science-ch13",
+          "cbse-10-social-science-ch14",
+          "cbse-10-social-science-ch15",
+          "cbse-10-social-science-ch16",
+          "cbse-10-social-science-ch17",
+          "cbse-10-social-science-ch18",
+          "cbse-10-social-science-ch19",
+          "cbse-10-social-science-ch20",
+          "cbse-10-social-science-ch21"
+        ],
+        "duration_min": 180,
+        "total_marks": 80,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - History (20)",
+            "instructions": "Q1-4 MCQ; Q5 VSA (2); Q6 SA (3, A/B choice); Q7 LA (5, A/B choice); Q8 case-based (4); Q9 map work (2: identify/locate two places).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch05_018",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_025",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_030",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_015",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_050",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch03_061",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch03_062",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_077",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_064",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_091",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_104",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "A-c1",
+                "attempt": 1
+              },
+              {
+                "id": "A-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Section B - Geography (20)",
+            "instructions": "Q10-15 MCQ (Q15 assertion-reason); Q16 VSA (2); Q17 LA (5, A/B choice); Q18 case-based (4); Q19 map work (3: locate and label three features).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch09_010",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch10_038",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch10_036",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch08_033",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch11_005",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch09_049",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch07_065",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch08_096",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch11_111",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch06_080",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch12_057",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Political Science (20)",
+            "instructions": "Q20 assertion-reason; Q21-23 MCQ (Q23 cartoon-based); Q24-25 VSA (2); Q26 SA (3); Q27 LA (5, A/B choice); Q28 case-based (4).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch15_047",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch17_013",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_042",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch15_027",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch15_076",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_108",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_078",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch13_064",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch17_076",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_098",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "D",
+            "title": "Section D - Economics (20)",
+            "instructions": "Q29-34 MCQ (Q34 assertion-reason); Q35-37 SA (3); Q38 LA (5, A/B choice, data/table based).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch19_007",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_005",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_019",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_024",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_037",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_042",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_072",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_059",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_031",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_084",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_069",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "D-c1",
+                "attempt": 1
+              }
+            ]
+          }
+        ],
+        "seed": "t_cbse10sst_may_1@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sst_may",
+        "title": "Social Science second-exam (May) track",
+        "track": "second_exam",
+        "position": 2
+      },
+      "test": {
+        "id": "t_cbse10sst_may_2",
+        "kind": "full",
+        "paper_type": "board-second-exam",
+        "blueprint_id": "cbse-10-social-science-board-second-exam",
+        "title": "Social Science — May second exam, paper 2",
+        "subject_id": "cbse-10-social-science",
+        "chapter_ids": [
+          "cbse-10-social-science-ch01",
+          "cbse-10-social-science-ch02",
+          "cbse-10-social-science-ch03",
+          "cbse-10-social-science-ch05",
+          "cbse-10-social-science-ch06",
+          "cbse-10-social-science-ch07",
+          "cbse-10-social-science-ch08",
+          "cbse-10-social-science-ch09",
+          "cbse-10-social-science-ch10",
+          "cbse-10-social-science-ch11",
+          "cbse-10-social-science-ch12",
+          "cbse-10-social-science-ch13",
+          "cbse-10-social-science-ch14",
+          "cbse-10-social-science-ch15",
+          "cbse-10-social-science-ch16",
+          "cbse-10-social-science-ch17",
+          "cbse-10-social-science-ch18",
+          "cbse-10-social-science-ch19",
+          "cbse-10-social-science-ch20",
+          "cbse-10-social-science-ch21"
+        ],
+        "duration_min": 180,
+        "total_marks": 80,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - History (20)",
+            "instructions": "Q1-4 MCQ; Q5 VSA (2); Q6 SA (3, A/B choice); Q7 LA (5, A/B choice); Q8 case-based (4); Q9 map work (2: identify/locate two places).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch03_006",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_013",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_019",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_028",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_057",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_069",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_075",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch01_062",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch05_107",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sst_ch03_076",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch02_103",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "A-c1",
+                "attempt": 1
+              },
+              {
+                "id": "A-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Section B - Geography (20)",
+            "instructions": "Q10-15 MCQ (Q15 assertion-reason); Q16 VSA (2); Q17 LA (5, A/B choice); Q18 case-based (4); Q19 map work (3: locate and label three features).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch09_001",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch12_012",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch09_016",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch10_029",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch06_026",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch08_046",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch06_085",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch08_097",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch07_077",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch11_113",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch10_075",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Political Science (20)",
+            "instructions": "Q20 assertion-reason; Q21-23 MCQ (Q23 cartoon-based); Q24-25 VSA (2); Q26 SA (3); Q27 LA (5, A/B choice); Q28 case-based (4).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch14_109",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_034",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch17_021",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_008",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch14_071",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch15_075",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch16_085",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch15_092",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch17_079",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch13_073",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "D",
+            "title": "Section D - Economics (20)",
+            "instructions": "Q29-34 MCQ (Q34 assertion-reason); Q35-37 SA (3); Q38 LA (5, A/B choice, data/table based).",
+            "items": [
+              {
+                "question_id": "q_cbse10sst_ch18_011",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_062",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_008",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_062",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_081",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_027",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch19_038",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch18_061",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_054",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sst_ch20_085",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sst_ch21_062",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "D-c1",
+                "attempt": 1
+              }
+            ]
+          }
+        ],
+        "seed": "t_cbse10sst_may_2@2026-27",
+        "version": 1
+      }
+    }
+  ]
+}

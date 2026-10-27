@@ -57,3 +57,7 @@ All four topics of chapter 18: t01 different people, different goals (11 items) 
 - **Plot categories:** bar series have no category labels, so families and states are numbered on the x-axis and named in the axis label and caption.
 - **Net attendance ratio** is defined generally ("an age group, e.g. 14–15 years") because the age band used in published tables varies by source.
 - No **BMI** activity item: it is not in the 2026-27 learning outcomes for this chapter.
+
+## Changed by assessment-designer (2026-10-27)
+
+`q_cbse10sst_ch18_041`: stem reworded (it was the same generic stem as a match item in ch15 and ch21); the item is unchanged.

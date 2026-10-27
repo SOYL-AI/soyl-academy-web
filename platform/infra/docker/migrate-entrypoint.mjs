@@ -7,7 +7,8 @@
 //    soyl_app, the grants from platform/db/README.md "Roles" (DB-1), and the `vector` extension.
 // 3. Runs the steps (each a separate process; the first failure stops the run, exit code = its code):
 //      (no args)  db migrate up  ->  pg-boss schema install + soyl_app grants (worker `migrate`, DB-1)
-//      release    db seed catalog  ->  content publish --authored (D-026: hand-authored chapters + exemplars)
+//      release    db seed catalog  ->  content publish --authored (D-026: hand-authored chapters + exemplars,
+//                 then the frozen test series in content/authored/series, ADR-019)
 //      <args>     db <args>, e.g. `migrate status`, `seed catalog`, `admin bootstrap --email E`
 //    The @soyl/db CLI is $MIGRATE_CLI and the pg-boss/content CLI is $RELEASE_CLI (esbuild bundles in
 //    the image); from a checkout both run through tsx. Exit 2 from `migrate status` = a changed migration.
