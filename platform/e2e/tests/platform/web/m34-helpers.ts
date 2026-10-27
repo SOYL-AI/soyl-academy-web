@@ -42,8 +42,15 @@ export async function checkPage(page: Page) {
   expect(await axe(page)).toEqual([]);
 }
 
-/** A fresh student (email OTP), signed in on `path`. */
+let ipSeq = 0;
+/**
+ * A fresh student (email OTP), signed in on `path`. Each gets its own client IP (the proxy forwards
+ * x-real-ip as Vercel does), so the suite's many sign-ups do not trip the per-IP account-creation limit
+ * (D-015) that protects production from one device creating many accounts.
+ */
 export async function signUp(page: Page, tag: string, path = '/tests'): Promise<string> {
+  ipSeq += 1;
+  await page.context().setExtraHTTPHeaders({ 'x-real-ip': `203.0.113.${(ipSeq % 250) + 1}` });
   const email = uniqueEmail(tag);
   await page.goto(path, { waitUntil: 'networkidle' });
   await openLoginFromHeader(page);

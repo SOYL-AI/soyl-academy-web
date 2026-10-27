@@ -116,7 +116,7 @@ function send(res: ServerResponse, status: number, body: unknown, extra: Record<
   res.writeHead(status, { 'content-type': 'application/json', ...extra });
   res.end(body === null ? '' : JSON.stringify(body));
 }
-const cors = { 'access-control-allow-origin': webOrigin, 'access-control-allow-methods': 'PUT', 'access-control-allow-headers': 'content-type, x-ms-blob-type', 'access-control-max-age': '60' };
+const cors = { 'access-control-allow-origin': webOrigin, 'access-control-allow-methods': 'PUT', 'access-control-allow-headers': 'content-type, x-ms-blob-type, x-real-ip', 'access-control-max-age': '60' };
 
 function latest<T extends { created_at: number }>(m: Map<string, T>): T | null {
   return [...m.values()].sort((a, b) => b.created_at - a.created_at)[0] ?? null;

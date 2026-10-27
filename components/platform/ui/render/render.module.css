@@ -142,15 +142,9 @@
      a long equation in a solution wraps at 360 px instead of widening the page. */
   white-space: normal;
 }
-.mathInlineScroll {
-  display: inline-block;
-  max-width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  vertical-align: bottom;
-  padding: 2px 0;
-  border-radius: var(--p-radius-sm);
-}
+/* Long inline formulas: focusable so that, where a container lets them scroll (answer keys, AI replies),
+   keyboard users can scroll them (axe scrollable-region-focusable). They do not scroll by themselves:
+   inside answer options (labels, disabled after checking) a scroller would trap the formula. */
 .mathInlineScroll:focus-visible {
   outline: 2px solid var(--p-focus);
   outline-offset: 1px;

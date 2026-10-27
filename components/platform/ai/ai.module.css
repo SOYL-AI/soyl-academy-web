@@ -99,6 +99,14 @@
 .msgBody {
   min-width: 0;
 }
+.msgBody [data-math='inline'][tabindex] {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: bottom;
+  padding: 2px 0;
+}
 .msgBody p:first-child {
   margin-top: 0;
 }

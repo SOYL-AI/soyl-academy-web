@@ -52,7 +52,7 @@ export default defineConfig({
       command: `npx next start --port ${WEB_PORT} --hostname localhost`,
       cwd: repoRoot,
       url: `${WEB_ORIGIN}/learn`,
-      timeout: 120_000,
+      timeout: 240_000,
       reuseExistingServer: false,
       stdout: 'ignore',
       stderr: 'pipe',
