@@ -1,22 +1,31 @@
 import { belief } from '@/content/home';
+import { VideoLoop } from '@/components/media/VideoLoop';
+import poster from '@/public/video/soyl-loop-poster.jpg';
 
-/** The belief, as a single static statement in the one cobalt block. */
+/** The belief, set over a quiet classroom loop. */
 export function Belief() {
   return (
     <section aria-label="What we believe" className="section-tight">
       <div className="page">
-        <div className="bleed on-dark grid-12 bg-cobalt px-6 py-14 text-white md:px-12 md:py-20">
-          <p className="t-label col-span-12 mb-8 flex items-center gap-2.5 self-start text-white md:col-span-3 md:mb-0 md:mt-4">
-            <span aria-hidden="true" className="h-px w-5 bg-highlighter" />
-            What we believe
-          </p>
-          <blockquote className="col-span-12 md:col-span-9">
-            <p className="t-headline max-w-[22ch]">{belief.first}</p>
-            <p className="t-headline mt-4 max-w-[24ch]">
-              {belief.second.replace(/think\.$/, '')}
-              <span className="underline decoration-highlighter decoration-[3px] underline-offset-[0.15em]">think.</span>
-            </p>
-          </blockquote>
+        <div className="on-dark frame frame-lg relative bg-ink text-white" data-reveal="image">
+          <VideoLoop
+            src="/video/soyl-loop.mp4"
+            poster={poster}
+            alt="A worksheet lying on a classroom desk"
+            sizes="(min-width: 1320px) 1210px, 100vw"
+            className="absolute inset-0"
+          />
+          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/55 to-ink/25" />
+          <div className="relative flex min-h-[34rem] flex-col justify-end p-6 sm:p-10 md:min-h-[40rem] md:p-14 lg:p-20">
+            <p className="t-eyebrow mb-6 text-white/75">What we believe</p>
+            <blockquote>
+              <p className="t-headline max-w-[20ch]">{belief.first}</p>
+              <p className="t-headline mt-3 max-w-[22ch] text-white/90">
+                {belief.second.replace(/think\.$/, '')}
+                <span className="t-accent text-highlighter">think.</span>
+              </p>
+            </blockquote>
+          </div>
         </div>
       </div>
     </section>

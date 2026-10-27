@@ -37,9 +37,9 @@ export async function GET(request: Request) {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          background: '#F4F0E7',
+          background: '#FFFFFF',
           padding: '64px 72px',
-          color: '#171717',
+          color: '#141414',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -88,8 +88,8 @@ export async function GET(request: Request) {
 
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', gap: 10 }}>
-            <div style={{ width: 56, height: 8, background: '#3155FF' }} />
-            <div style={{ width: 56, height: 8, background: '#D84A3F' }} />
+            <div style={{ width: 56, height: 8, background: '#2B4FE6' }} />
+            <div style={{ width: 56, height: 8, background: '#C8473C' }} />
             <div style={{ width: 56, height: 8, background: '#F2D45C' }} />
           </div>
           <div style={{ display: 'flex', fontSize: 24, color: '#5E5E59' }}>{new URL(SITE_URL).host.replace(/^www\./, '')}</div>

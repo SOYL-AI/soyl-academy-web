@@ -1,7 +1,9 @@
 import { FinalCta } from '@/components/home/FinalCta';
-import { PageHero } from '@/components/notebook/PageHero';
-import { Label } from '@/components/notebook/SectionHeader';
+import { PageHero } from '@/components/ui/PageHero';
+import { Label } from '@/components/ui/SectionHeader';
+import { Photo } from '@/components/media/Photo';
 import { StructuredData } from '@/components/seo/StructuredData';
+import { images } from '@/content/images';
 import { ORGANIZATION_ID, SITE_CONTACT_EMAIL, SITE_LEGAL_NAME } from '@/lib/seo/config';
 import { createMetadata } from '@/lib/seo/metadata';
 import { breadcrumbNode, graph, topLevelCrumbs, webPageNode } from '@/lib/seo/schema';
@@ -22,36 +24,47 @@ export default function AboutPage() {
         label="About SOYL Academy"
         title={
           <>
-            Answers are cheap. <span className="mark">Thinking is not.</span>
+            Answers are cheap. <span className="t-accent">Thinking is not.</span>
           </>
         }
         intro="For most of history, a correct answer meant a student had learned. Today technology can produce the answer for free, so school has to ask for something more."
+        image={images.classroomMaking}
+        imageLayout="wide"
       />
 
       <section className="section">
-        <div className="page grid grid-cols-1 gap-px border border-rule bg-rule md:grid-cols-2">
-          <div className="ruled margin-line p-6 pl-14 md:p-10 md:pl-16">
-            <p className="t-label mb-4 text-muted">The old model</p>
+        <div className="page grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+          <div className="rounded-[var(--radius-lg)] bg-paper p-7 md:p-12" data-reveal>
+            <p className="t-eyebrow mb-6 text-muted">The old model</p>
             <p className="t-title">The essay and the worksheet belonged to a world where producing the work was proof of effort.</p>
           </div>
-          <div className="border-t-2 border-t-cobalt bg-white p-6 md:p-10">
-            <p className="t-label mb-4 text-cobalt">The new reality</p>
+          <div className="on-dark rounded-[var(--radius-lg)] bg-ink p-7 text-white md:p-12" data-reveal style={{ '--d': '120ms' } as React.CSSProperties}>
+            <p className="t-eyebrow mb-6 text-highlighter">The new reality</p>
             <p className="t-title">When the work can be generated for free, we have to assess the process, not just the product.</p>
           </div>
         </div>
       </section>
 
-      <section className="section rule-t">
-        <div className="page grid-12 gap-y-8">
+      <section className="section pt-0">
+        <div className="page grid-12 items-center gap-y-12">
           <div className="col-span-12 lg:col-span-6">
-            <Label className="mb-5">What we build</Label>
-            <h2 className="t-headline max-w-[16ch]">Teachers remain the irreplaceable core.</h2>
+            <Photo
+              image={images.teacherMentoring}
+              aspect="aspect-[4/3]"
+              large
+              parallax
+              sizes="(min-width: 1320px) 600px, (min-width: 1024px) 48vw, 100vw"
+            />
           </div>
-          <div className="col-span-12 space-y-5 lg:col-span-5 lg:col-start-8">
-            <p className="t-lead text-ink">
+          <div className="col-span-12 lg:col-span-5 lg:col-start-8" data-reveal>
+            <Label num="01" className="mb-6">What we build</Label>
+            <h2 className="t-headline max-w-[14ch]">
+              Teachers remain the <span className="t-accent">irreplaceable</span> core.
+            </h2>
+            <p className="t-lead mt-6 text-ink">
               Software can generate content. It can’t inspire, build relationships or read a room.
             </p>
-            <p className="text-muted">
+            <p className="mt-5 text-muted">
               SOYL builds tools that give teachers time back and a clearer view of each pupil’s thinking, so they can do what only people can: mentor, challenge and guide. Alongside the school platform, we run Future Builders, a weekend programme where students in Grades 7–12 build real products.
             </p>
           </div>

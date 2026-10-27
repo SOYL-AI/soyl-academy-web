@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 
 export const inputClasses =
-  'block w-full min-h-12 rounded-[var(--radius-xs)] border border-control bg-white px-3.5 py-2.5 text-base text-ink placeholder:text-muted transition-colors duration-150 hover:border-ink focus:border-cobalt focus:outline-none focus:ring-2 focus:ring-cobalt/30 aria-[invalid=true]:border-red-pen';
+  'block w-full min-h-12 rounded-[var(--radius-sm)] border border-control/70 bg-white px-3.5 py-2.5 text-base text-ink placeholder:text-muted transition-[border-color,box-shadow] duration-200 hover:border-ink focus:border-ink focus:outline-none focus:ring-4 focus:ring-cobalt/15 aria-[invalid=true]:border-red-pen';
 
 interface FieldProps {
   id: string;

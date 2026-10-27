@@ -6,7 +6,9 @@
  * slot: drop the file in /public/media (AVIF/WebP/PNG for stills, MP4 for
  * loops), set `src`, `width` and `height`, and check the alt text.
  *
- * Photography: real SOYL sessions, Future Builders cohorts or pilot classrooms
+ * Illustrative editorial photography (not SOYL pupils) lives in content/images.ts.
+ *
+ * Photography here: real SOYL sessions, Future Builders cohorts or pilot classrooms
  * only, with consent on file. No AI-generated people.
  */
 

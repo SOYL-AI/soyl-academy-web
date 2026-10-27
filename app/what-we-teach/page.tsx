@@ -1,7 +1,9 @@
 import Link from 'next/link';
-import { ArrowRight, ButtonLink } from '@/components/notebook/Button';
-import { PageHero } from '@/components/notebook/PageHero';
-import { SectionHeader } from '@/components/notebook/SectionHeader';
+import { ArrowRight, ButtonLink } from '@/components/ui/Button';
+import { PageHero } from '@/components/ui/PageHero';
+import { Photo } from '@/components/media/Photo';
+import { images } from '@/content/images';
+import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Faq } from '@/components/seo/Faq';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { whatWeTeachFaqs } from '@/content/faqs';
@@ -59,23 +61,27 @@ export default function WhatWeTeachPage() {
         label="What we teach"
         title={
           <>
-            Some things are better learned <span className="mark">together</span>.
+            Some things are better learned <span className="t-accent">together.</span>
           </>
         }
         intro="Join Future Builders online as an individual student, or bring SOYL workshops into your school."
+        image={images.studentsDebating}
       />
 
       <section className="section-tight">
         <div className="page">
-          <div className="module grid-12 items-center gap-y-5 border-t-2 border-t-cobalt p-6 md:p-8">
-            <div className="col-span-12 md:col-span-8">
-              <p className="t-label text-muted">Running now · Grades 7–12</p>
+          <div className="grid-12 items-center gap-y-6 rounded-[var(--radius-lg)] bg-paper p-5 md:p-6" data-reveal>
+            <div className="col-span-12 md:col-span-4">
+              <Photo image={images.fbSoftware} aspect="aspect-[3/2]" reveal={false} sizes="(min-width: 768px) 380px, 100vw" />
+            </div>
+            <div className="col-span-12 md:col-span-5 md:pl-4">
+              <p className="t-eyebrow text-muted">Grades 7–12</p>
               <h2 className="t-title mt-2">Future Builders</h2>
               <p className="mt-2 max-w-[56ch] text-muted">
                 A 12-weekend live online cohort: software, AI, IoT robotics and entrepreneurship, ending in a Demo Day pitch.
               </p>
             </div>
-            <div className="col-span-12 md:col-span-4 md:text-right">
+            <div className="col-span-12 md:col-span-3 md:text-right">
               <Link href="/future-builders" className="arrow-link">
                 See dates and fees <ArrowRight />
               </Link>
@@ -84,21 +90,21 @@ export default function WhatWeTeachPage() {
         </div>
       </section>
 
-      <section className="section rule-t">
+      <section className="section">
         <div className="page">
           <SectionHeader label="Coming soon" title="School workshops and programmes." intro="Intensive sessions where students negotiate, build and defend ideas in real time." />
-          <ul className="mt-10 grid grid-cols-1 gap-px border border-rule bg-rule md:mt-14 md:grid-cols-2">
-            {programs.map((p) => (
-              <li key={p.id} className="flex flex-col bg-white p-5 md:p-7">
+          <ul className="mt-12 grid grid-cols-1 gap-x-10 md:mt-16 md:grid-cols-2">
+            {programs.map((p, i) => (
+              <li key={p.id} data-reveal style={{ '--d': `${(i % 2) * 90}ms` } as React.CSSProperties} className="flex flex-col border-t border-rule-strong pb-12 pt-7">
                 <div className="flex items-baseline justify-between gap-4">
-                  <p className="t-label text-muted">{p.category}</p>
-                  <p className="t-label bg-paper px-2 py-0.5 text-ink">Coming soon</p>
+                  <p className="t-eyebrow text-muted">{p.category}</p>
+                  <p className="t-label rounded-full bg-paper px-2.5 py-0.5 text-ink">Coming soon</p>
                 </div>
                 <h3 className="t-title mt-3">{p.title}</h3>
                 <p className="mt-2 text-muted">{p.description}</p>
                 <ul className="mt-5 flex flex-wrap gap-2" aria-label="Topics">
                   {p.tags.map((t) => (
-                    <li key={t} className="t-label border border-rule px-2.5 py-1 text-ink">
+                    <li key={t} className="t-label rounded-full border border-rule-strong px-3 py-1 text-ink">
                       {t}
                     </li>
                   ))}

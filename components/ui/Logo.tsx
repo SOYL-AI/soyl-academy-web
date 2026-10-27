@@ -23,7 +23,7 @@ export function Logo({ size = 32, className, href = '/' }: LogoProps) {
         width={size}
         height={size}
         className="shrink-0 rounded-full"
-        priority={size <= 64}
+        loading="eager"
       />
       <span
         className="font-semibold tracking-[-0.015em] text-ink"

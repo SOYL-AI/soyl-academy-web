@@ -1,9 +1,9 @@
 import { FutureBuildersForm } from '@/components/forms/FutureBuildersForm';
 import { WaitlistForm } from '@/components/forms/WaitlistForm';
-import { ButtonLink } from '@/components/notebook/Button';
-import { PageHero } from '@/components/notebook/PageHero';
-import { ProductShot, hasMedia } from '@/components/notebook/ProductShot';
-import { Label, SectionHeader } from '@/components/notebook/SectionHeader';
+import { ButtonLink } from '@/components/ui/Button';
+import { PageHero } from '@/components/ui/PageHero';
+import { Photo } from '@/components/media/Photo';
+import { Label, SectionHeader } from '@/components/ui/SectionHeader';
 import { Faq } from '@/components/seo/Faq';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { getFutureBuildersFaqs } from '@/content/future-builders-faqs';
@@ -22,7 +22,7 @@ import {
   whatsappShareLink,
   type CohortState,
 } from '@/content/future-builders';
-import { media } from '@/content/media';
+import { images, type EditorialImage } from '@/content/images';
 import { ORGANIZATION_ID, SITE_URL, absoluteUrl } from '@/lib/seo/config';
 import { createMetadata } from '@/lib/seo/metadata';
 import { breadcrumbNode, faqNode, graph, topLevelCrumbs, webPageNode } from '@/lib/seo/schema';
@@ -37,11 +37,11 @@ export const revalidate = 3600;
 
 const PRICE = `₹${BASE_PRICE.toLocaleString('en-IN')}`;
 
-const MODULES = [
-  { weeks: 'Weeks 1–4', title: 'Software and computing', desc: 'Python, APIs and SQLite databases. No prior coding needed.', outcome: 'A working Python tool and database backend for the capstone.' },
-  { weeks: 'Weeks 5–6', title: 'AI and automation', desc: 'Machine learning, deep learning, RL agents and image processing.', outcome: 'Train a model and build a smart assistant into the product.' },
-  { weeks: 'Weeks 7–9', title: 'IoT and robotics', desc: 'Low-voltage ESP32 electronics, sensors, servos and networking.', outcome: 'Wire sensors and a servo to give the software a physical body.' },
-  { weeks: 'Weeks 10–12', title: 'Entrepreneurship', desc: 'Market discovery, customer interviews, cost sheets and Demo Day.', outcome: 'Pitch the finished prototype to parents, teachers and guests.' },
+const MODULES: { weeks: string; title: string; desc: string; outcome: string; image: EditorialImage }[] = [
+  { weeks: 'Weeks 1–4', title: 'Software and computing', desc: 'Python, APIs and SQLite databases. No prior coding needed.', outcome: 'A working Python tool and database backend for the capstone.', image: images.fbSoftware },
+  { weeks: 'Weeks 5–6', title: 'AI and automation', desc: 'Machine learning, deep learning, RL agents and image processing.', outcome: 'Train a model and build a smart assistant into the product.', image: images.fbAi },
+  { weeks: 'Weeks 7–9', title: 'IoT and robotics', desc: 'Low-voltage ESP32 electronics, sensors, servos and networking.', outcome: 'Wire sensors and a servo to give the software a physical body.', image: images.fbIot },
+  { weeks: 'Weeks 10–12', title: 'Entrepreneurship', desc: 'Market discovery, customer interviews, cost sheets and Demo Day.', outcome: 'Pitch the finished prototype to parents, teachers and guests.', image: images.fbPitch },
 ];
 
 const GLANCE = [
@@ -64,8 +64,8 @@ function StatusBox({ state }: { state: CohortState }) {
   const COHORT = COHORT_DATA;
   if (state === 'waitlist' || !COHORT) {
     return (
-      <div className="module border-t-2 border-t-ink p-6">
-        <p className="t-label mb-2 text-muted">Registration</p>
+      <div className="module p-6 shadow-[0_30px_60px_-40px_rgba(20,20,20,0.4)] md:p-8">
+        <p className="t-eyebrow mb-3 text-muted">Registration</p>
         <p className="t-title">Waitlist open</p>
         <p className="mt-3 text-muted">
           {COHORT ? `Registration for the ${COHORT.name} has closed. ` : ''}Dates for the next cohort are being set. Join the waitlist to hear first.
@@ -80,8 +80,8 @@ function StatusBox({ state }: { state: CohortState }) {
 
   const closing = state === 'closing-soon';
   return (
-    <div className="module border-t-2 border-t-cobalt p-6">
-      <p className="t-label mb-2 text-muted">{COHORT.name}</p>
+    <div className="module p-6 shadow-[0_30px_60px_-40px_rgba(20,20,20,0.4)] md:p-8">
+      <p className="t-eyebrow mb-3 text-muted">{COHORT.name}</p>
       <p className="t-title">
         {closing ? (
           <>
@@ -159,7 +159,11 @@ export default function FutureBuildersPage() {
 
       <PageHero
         label="Future Builders · Grades 7–12"
-        title="Build a real product."
+        title={
+          <>
+            Build a <span className="t-accent">real</span> product.
+          </>
+        }
         intro={`12 weekends, ${CONTACT_HOURS} contact hours, one working prototype. A live online cohort covering software, AI, IoT robotics and entrepreneurship, with a hardware kit shipped home.`}
         actions={
           <a href={whatsappLink('Hi, I have a question about Future Builders')} target="_blank" rel="noopener noreferrer" className="arrow-link">
@@ -167,16 +171,24 @@ export default function FutureBuildersPage() {
           </a>
         }
         aside={<StatusBox state={state} />}
+        image={images.fbPresentation}
+        imageLayout="wide"
       />
 
       {/* At a glance */}
-      <section className="section-tight">
+      <section className="section">
         <div className="page">
-          <dl className="grid grid-cols-1 gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3">
-            {GLANCE.map(([title, line]) => (
-              <div key={title} className="bg-white p-5 md:p-6">
-                <dt className="font-semibold">{title}</dt>
-                <dd className="t-small mt-1.5 text-muted">{line}</dd>
+          <SectionHeader label="At a glance" num="01" title="Everything a parent asks first." />
+          <dl className="mt-12 grid grid-cols-1 gap-x-8 sm:grid-cols-2 md:mt-16 lg:grid-cols-3">
+            {GLANCE.map(([title, line], i) => (
+              <div
+                key={title}
+                data-reveal
+                style={{ '--d': `${(i % 3) * 80}ms` } as React.CSSProperties}
+                className="border-t border-rule-strong pb-8 pt-6"
+              >
+                <dt className="font-serif text-[1.625rem] leading-tight">{title}</dt>
+                <dd className="mt-2 max-w-[38ch] text-muted">{line}</dd>
               </div>
             ))}
           </dl>
@@ -184,16 +196,17 @@ export default function FutureBuildersPage() {
       </section>
 
       {/* Curriculum */}
-      <section className="section rule-t">
+      <section className="section bg-paper">
         <div className="page">
-          <SectionHeader label="Curriculum" title="Four modules, one product." intro={`${CONTACT_HOURS} hours of hands-on building over 12 weekends, from first Python program to a device that senses and acts.`} />
-          <ol className="mt-10 grid grid-cols-1 gap-px border border-rule bg-rule md:mt-14 md:grid-cols-2 lg:grid-cols-4">
-            {MODULES.map((m) => (
-              <li key={m.title} className="flex flex-col bg-white p-5 md:p-6">
-                <p className="t-label t-num text-muted">{m.weeks}</p>
-                <h3 className="t-title mt-3">{m.title}</h3>
+          <SectionHeader label="Curriculum" num="02" title="Four modules, one product." intro={`${CONTACT_HOURS} hours of hands-on building over 12 weekends, from first Python program to a device that senses and acts.`} />
+          <ol className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 md:mt-16 md:grid-cols-2 lg:grid-cols-4">
+            {MODULES.map((m, i) => (
+              <li key={m.title} className="flex flex-col" data-reveal style={{ '--d': `${i * 90}ms` } as React.CSSProperties}>
+                <Photo image={m.image} aspect="aspect-[4/3]" reveal={false} sizes="(min-width: 1320px) 290px, (min-width: 768px) 45vw, 100vw" />
+                <p className="t-label t-num mt-6 text-muted">{m.weeks}</p>
+                <h3 className="t-title mt-2">{m.title}</h3>
                 <p className="mt-2 text-muted">{m.desc}</p>
-                <p className="t-small mt-auto border-t border-rule pt-4 text-ink">
+                <p className="t-small mt-auto border-t border-rule-strong pt-4 text-ink">
                   <span className="font-semibold">Outcome: </span>
                   {m.outcome}
                 </p>
@@ -203,33 +216,25 @@ export default function FutureBuildersPage() {
         </div>
       </section>
 
-      {/* Photos (real cohort photography only) */}
-      {(hasMedia(media.futureBuildersHero) || hasMedia(media.futureBuildersDemoDay)) && (
-        <section className="section-tight">
-          <div className="page grid grid-cols-1 gap-4 md:grid-cols-2">
-            <ProductShot slot={media.futureBuildersHero} kind="Photo" sizes="(min-width: 768px) 50vw, 92vw" />
-            <ProductShot slot={media.futureBuildersDemoDay} kind="Photo" sizes="(min-width: 768px) 50vw, 92vw" />
-          </div>
-        </section>
-      )}
-
       {/* What students leave with */}
-      <section className="section rule-t">
-        <div className="page grid-12 gap-y-10">
-          <div className="col-span-12 lg:col-span-5">
-            <Label className="mb-5">For Grades 10–12</Label>
-            <h2 className="t-headline">Proof of work, not just marks.</h2>
-            <p className="t-lead mt-5 max-w-[42ch]">
+      <section className="section">
+        <div className="page grid-12 gap-y-12">
+          <div className="col-span-12 lg:col-span-5" data-reveal>
+            <Label num="03" className="mb-6">For Grades 10–12</Label>
+            <h2 className="t-headline max-w-[12ch]">
+              Proof of work, not just <span className="t-accent">marks.</span>
+            </h2>
+            <p className="t-lead mt-6 max-w-[42ch]">
               Admissions panels and internship recruiters look for what a student has actually built. Every Future Builder leaves with four things to show.
             </p>
           </div>
-          <ul className="col-span-12 border-t border-rule lg:col-span-6 lg:col-start-7">
+          <ul className="col-span-12 border-t border-ink lg:col-span-6 lg:col-start-7">
             {PORTFOLIO.map((p, i) => (
-              <li key={p.title} className="flex gap-5 border-b border-rule py-5">
-                <span className="t-num font-serif text-[1.75rem] leading-none text-cobalt">{i + 1}</span>
+              <li key={p.title} data-reveal style={{ '--d': `${i * 80}ms` } as React.CSSProperties} className="flex gap-6 border-b border-rule py-6">
+                <span className="t-num font-serif text-[2.25rem] leading-none text-cobalt">{i + 1}</span>
                 <div>
-                  <h3 className="font-semibold">{p.title}</h3>
-                  <p className="t-small mt-1 text-muted">{p.line}</p>
+                  <h3 className="t-subtitle">{p.title}</h3>
+                  <p className="mt-1 text-muted">{p.line}</p>
                 </div>
               </li>
             ))}
@@ -241,12 +246,12 @@ export default function FutureBuildersPage() {
       {open && (
         <section className="section-tight">
           <div className="page">
-            <div className="bleed grid-12 items-center gap-y-6 border border-ink bg-highlighter p-6 md:p-10">
+            <div className="grid-12 items-center gap-y-6 rounded-[var(--radius-lg)] bg-highlighter p-6 md:p-12" data-reveal>
               <div className="col-span-12 lg:col-span-8">
-                <p className="t-label mb-3 text-ink">Bring a friend</p>
+                <p className="t-eyebrow mb-4 text-ink">Bring a friend</p>
                 <h2 className="t-headline">You both save ₹{FRIEND_DISCOUNT}.</h2>
                 <p className="mt-4 max-w-[52ch] text-ink">
-                  Projects are built in teams of 3–4, so it’s better with a friend. Use code <strong className="bg-ink px-1.5 py-0.5 font-mono text-[15px] text-white">{FRIEND_CODE}</strong> at checkout; your friend gets ₹{FRIEND_DISCOUNT} too.
+                  Projects are built in teams of 3–4, so it’s better with a friend. Use code <strong className="rounded bg-ink px-1.5 py-0.5 font-mono text-[15px] text-white">{FRIEND_CODE}</strong> at checkout; your friend gets ₹{FRIEND_DISCOUNT} too.
                 </p>
               </div>
               <div className="col-span-12 flex flex-col gap-3 lg:col-span-4">
@@ -267,13 +272,13 @@ export default function FutureBuildersPage() {
         </section>
       )}
 
-      <Faq faqs={faqs} heading="Questions from parents" />
+      <Faq faqs={faqs} heading="Questions from parents" num="04" />
 
       {/* Enrol or join the waitlist — exactly one state */}
-      <section id="enroll" className="section rule-t scroll-mt-16">
+      <section id="enroll" className="section scroll-mt-16 bg-paper">
         <div className="page grid-12 gap-y-10">
           <div className="col-span-12 lg:col-span-4">
-            <Label className="mb-5">{open ? 'Enrol' : 'Waitlist'}</Label>
+            <Label num="05" className="mb-6">{open ? 'Enrol' : 'Waitlist'}</Label>
             <h2 className="t-headline">{cohort ? `Join the ${cohort.name}.` : 'Be first in the next cohort.'}</h2>
             <p className="mt-5 max-w-[38ch] text-muted">
               {open

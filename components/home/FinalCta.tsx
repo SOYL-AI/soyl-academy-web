@@ -1,30 +1,41 @@
 import { finalCta } from '@/content/home';
 import { PRIMARY_CTA } from '@/lib/site';
 import { SITE_CONTACT_EMAIL } from '@/lib/seo/config';
-import { ButtonLink } from '@/components/notebook/Button';
+import { ButtonLink } from '@/components/ui/Button';
+import { Drawn } from '@/components/motion/Text';
 
 interface FinalCtaProps {
   headline?: string;
   line?: string;
 }
 
-/** The closing call to action, shared by the homepage and audience pages. */
+/**
+ * The closing call to action, shared by the homepage and inner pages.
+ * The last two words of the headline get the drawn pen underline.
+ */
 export function FinalCta({ headline = finalCta.headline, line = finalCta.line }: FinalCtaProps) {
+  const words = headline.split(' ');
+  const tail = words.slice(-2).join(' ');
+  const head = words.slice(0, -2).join(' ');
+
   return (
-    <section className="section-tight">
-      <div className="page">
-        <div className="bleed grid-12 items-end gap-y-8 border border-ink bg-highlighter px-6 py-12 md:px-12 md:py-16">
-          <h2 className="t-display col-span-12 max-w-[12ch] lg:col-span-7">{headline}</h2>
-          <div className="col-span-12 lg:col-span-5">
-            <p className="max-w-[40ch] text-ink">{line}</p>
-            <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
-              <ButtonLink href={PRIMARY_CTA.href} size="lg" arrow>
-                {PRIMARY_CTA.label}
-              </ButtonLink>
-              <a href={`mailto:${SITE_CONTACT_EMAIL}`} className="font-medium text-ink underline underline-offset-4">
-                or email {SITE_CONTACT_EMAIL}
-              </a>
-            </div>
+    <section className="bg-paper">
+      <div className="page section grid-12 items-end gap-y-10">
+        <h2 className="t-display col-span-12 max-w-[13ch] lg:col-span-8" data-reveal>
+          {head}{' '}
+          <span className="t-accent">
+            <Drawn>{tail}</Drawn>
+          </span>
+        </h2>
+        <div className="col-span-12 lg:col-span-4" data-reveal style={{ '--d': '120ms' } as React.CSSProperties}>
+          <p className="t-lead max-w-[40ch] text-ink">{line}</p>
+          <div className="mt-8 flex flex-col items-start gap-4">
+            <ButtonLink href={PRIMARY_CTA.href} size="lg" arrow>
+              {PRIMARY_CTA.label}
+            </ButtonLink>
+            <a href={`mailto:${SITE_CONTACT_EMAIL}`} className="hover-line font-medium text-ink">
+              or email {SITE_CONTACT_EMAIL}
+            </a>
           </div>
         </div>
       </div>

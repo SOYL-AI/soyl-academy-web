@@ -1,20 +1,20 @@
-import { ButtonLink } from '@/components/notebook/Button';
-import { Label } from '@/components/notebook/SectionHeader';
+import { ButtonLink } from '@/components/ui/Button';
+import { Label } from '@/components/ui/SectionHeader';
 import { PRIMARY_CTA } from '@/lib/site';
 
 export default function NotFound() {
   return (
     <section className="section">
       <div className="page grid-12">
-        <div className="ruled margin-line col-span-12 border border-rule p-6 pl-14 md:col-span-8 md:p-10 md:pl-20">
-          <Label className="mb-5">Error 404</Label>
-          <h1 className="t-headline">
-            <span className="line-through decoration-red-pen decoration-2">This page</span> isn’t here.
+        <div className="col-span-12 md:col-span-9">
+          <div className="rise"><Label className="mb-8">Error 404</Label></div>
+          <h1 className="t-display rise" style={{ '--d': '80ms' } as React.CSSProperties}>
+            <span className="line-through decoration-red-pen decoration-[3px]">This page</span> isn’t <span className="t-accent">here.</span>
           </h1>
-          <p className="t-lead mt-5 max-w-[44ch]">
+          <p className="t-lead rise mt-6 max-w-[44ch]" style={{ '--d': '160ms' } as React.CSSProperties}>
             It may have moved, or the link may be wrong. Try the homepage, or book a demo if that’s what you came for.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="rise mt-10 flex flex-wrap gap-3" style={{ '--d': '240ms' } as React.CSSProperties}>
             <ButtonLink href="/" size="lg">
               Go to the homepage
             </ButtonLink>
