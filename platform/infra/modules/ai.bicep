@@ -3,15 +3,24 @@
 //   with Entra tokens (roles assigned below).
 // - Private endpoints for all three. Public network access is a parameter: dev = Enabled (still
 //   Entra-only) so the content pipeline can run from a developer machine (D-021); stg/prod = Disabled.
-// - Azure OpenAI deployments: tiers small / mid / verify on a REGIONAL Standard deployment
-//   (processing stays in the account's region), plus a Batch deployment for bulk content
-//   generation (Global Batch: no personal data allowed - ADR-008). Model names/versions are
-//   placeholders until the owner confirms them (OA-02), so deployModels=false by default.
+// - One region parameter per service, because no single Indian region offers all three (checked
+//   2026-10-28 with az cognitiveservices model list and the Microsoft.CognitiveServices skus API):
+//   Azure OpenAI (kind OpenAI) and the GPT-6 Luna / GPT-6.1 Sol models exist only in southindia,
+//   Content Safety only in southindia, Speech only in centralindia. The private endpoints are created
+//   next to the VNet (cross-region private endpoints are supported).
+// - Azure OpenAI deployments (ADR-008): one entry per tier - small (GPT-6 Luna), mid (GPT-6.1 Sol;
+//   the verify pass reuses it, D-033), embedding (text-embedding-3-small) - plus optional
+//   small-batch / mid-batch entries for a GlobalBatch deployment. The deployment type decides where
+//   prompts are PROCESSED (GlobalStandard: any Azure region); data at rest stays in the account's region.
 // - Default content filters stay on (raiPolicyName Microsoft.DefaultV2).
 
 param env string
-@description('Region for the AI accounts. Default centralindia; any other region is an ADR-008 exception and must stay in India.')
-param location string
+@description('Region of the Azure OpenAI account (ADR-008: an Indian region).')
+param openAiLocation string
+@description('Region of the Speech account (ADR-008: an Indian region).')
+param speechLocation string
+@description('Region of the Content Safety account (ADR-008: an Indian region).')
+param contentSafetyLocation string
 @description('Region of the VNet (private endpoints live next to the VNet).')
 param vnetLocation string
 param tags object
@@ -32,7 +41,7 @@ param allowedIps array
 @description('Create the model deployments. false until OA-02 confirms model names, versions and quota.')
 param deployModels bool
 
-@description('Model deployments: [{ tier, name, model, version, skuName, capacity }]. skuName Standard (regional) for interactive tiers, GlobalBatch for content Batch (ADR-008).')
+@description('Model deployments: [{ tier, name, model, version, skuName, capacity }]. tier: small | mid | verify | embedding | small-batch | mid-batch; skuName per ADR-008 (GlobalStandard, DataZoneStandard, Standard, GlobalBatch); capacity in thousands of tokens per minute.')
 param deployments array
 
 @description('Principals allowed to call Azure OpenAI (Cognitive Services OpenAI User).')
@@ -59,7 +68,7 @@ var networkAcls = {
 
 resource aoai 'Microsoft.CognitiveServices/accounts@2025-06-01' = {
   name: aoaiName
-  location: location
+  location: openAiLocation
   tags: tags
   kind: 'OpenAI'
   sku: {
@@ -96,7 +105,7 @@ resource modelDeployments 'Microsoft.CognitiveServices/accounts/deployments@2025
 
 resource speech 'Microsoft.CognitiveServices/accounts@2025-06-01' = {
   name: speechName
-  location: location
+  location: speechLocation
   tags: tags
   kind: 'SpeechServices'
   sku: {
@@ -112,7 +121,7 @@ resource speech 'Microsoft.CognitiveServices/accounts@2025-06-01' = {
 
 resource safety 'Microsoft.CognitiveServices/accounts@2025-06-01' = {
   name: safetyName
-  location: location
+  location: contentSafetyLocation
   tags: tags
   kind: 'ContentSafety'
   sku: {
@@ -260,4 +269,7 @@ output openAiEndpoint string = aoai.properties.endpoint
 output speechId string = speech.id
 output speechEndpoint string = speech.properties.endpoint
 output contentSafetyEndpoint string = safety.properties.endpoint
-output aiLocation string = location
+output openAiLocation string = openAiLocation
+@description('Speech region (AZURE_SPEECH_REGION).')
+output speechRegion string = speechLocation
+output contentSafetyLocation string = contentSafetyLocation

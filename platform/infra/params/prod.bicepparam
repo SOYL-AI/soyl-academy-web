@@ -1,6 +1,9 @@
 // prod - DARK first start (D-031, 2026-10-27): the API runs with PLATFORM_ENABLED=false and
 // BILLING_ENABLED=false (every route except /healthz and /readyz answers 404, GEN-4), email OTP only,
-// no AI, no consent system yet (CONSENT_PROVIDER=unavailable). Sized for a small budget, NOT for launch.
+// no consent system yet (CONSENT_PROVIDER=unavailable). Sized for a small budget, NOT for launch.
+// AI (D-038, 2026-10-28): Azure OpenAI (GPT-6 Luna = small, GPT-6.1 Sol = mid/verify, embeddings),
+// Speech and Content Safety are deployed, private-endpoint only and keyless (ADR-008). AI stays
+// unreachable while the platform is dark and, after launch, until consent unlocks it (D-039).
 //
 // BEFORE LAUNCH (docs/platform/runbooks/prod-first-deploy.md "Scale up before launch"):
 //   - Postgres: Burstable B2s -> General Purpose (Standard_D2ds_v5 or larger) + pgHaMode 'ZoneRedundant'
@@ -8,7 +11,9 @@
 //   - Redis: Balanced_B0 non-HA -> Balanced_B1+ with redisHighAvailability = true (+ AOF once credit
 //     reservations live in Redis).
 //   - api: apiMinReplicas 2, larger CPU/memory; worker as queue load needs.
-//   - deployFrontDoor = true when public assets (diagrams/audio) are published; deployAi = true for M4.
+//   - deployFrontDoor = true when public assets (diagrams/audio) are published.
+//   - Azure OpenAI capacity: 50K TPM each for Luna and Sol is all the subscription quota left (ADR-008);
+//     request more GlobalStandard TPM in South India before launch traffic.
 // Immutable after the first deploy (choose now): pgGeoRedundantBackup, acaZoneRedundant, the VNet ranges.
 //
 // No secrets here (GEN-1): workloads use managed identities; secret VALUES live in Key Vault and are
@@ -18,7 +23,12 @@ using '../main.bicep'
 
 param env = 'prod'
 param location = 'centralindia'
-param aiLocation = 'centralindia'
+// AI regions (ADR-008): no Indian region offers all three services. Azure OpenAI with GPT-6 Luna /
+// GPT-6.1 Sol and Content Safety exist only in South India; Speech only in Central India. The private
+// endpoints of all three sit in the Central India VNet.
+param aiLocation = 'southindia'
+param speechLocation = 'centralindia'
+param contentSafetyLocation = 'southindia'
 
 param vnetAddressPrefix = '10.30.0.0/16'
 param acaSubnetPrefix = '10.30.0.0/23'
@@ -85,15 +95,26 @@ param appSecrets = [
   { secretName: 'mfa-encryption-key', envName: 'MFA_ENCRYPTION_KEY', apps: ['api'] }
 ]
 
-// AI is M4: no Azure OpenAI / Speech / Content Safety accounts yet (no cost, no private endpoints).
-param deployAi = false
+// AI on (D-038). One switch: the accounts, the model deployments and the app settings that select the
+// Azure providers (appSettings below) follow it, so the apps never point at a service that is not there.
+var aiOn = true
+param deployAi = aiOn
+// Private endpoints only (INFRA-5). SOYL_AI_ALLOWED_IP opens the accounts to ONE operator IP for a
+// content-pipeline run from outside the VNet (Entra auth still required); unset it afterwards.
 param aiPublicNetworkAccess = 'Disabled'
-param aiAllowedIps = []
-param aoaiDeployModels = false
+param aiAllowedIps = empty(readEnvironmentVariable('SOYL_AI_ALLOWED_IP', '')) ? [] : [readEnvironmentVariable('SOYL_AI_ALLOWED_IP', '')]
+param aoaiDeployModels = aiOn
+// ADR-008: GlobalStandard is the only deployment type with quota for these models in South India
+// (DataZoneStandard Sol quota is fully used by other apps; Luna has no Data Zone offer; no GlobalBatch
+// sku exists for either). capacity = thousands of tokens per minute; 50 is the remaining subscription
+// quota for Luna and Sol (250 limit, 200 used by the owner's other apps, 2026-10-28). No *-batch
+// entry: the content pipeline runs synchronously (AZURE_OPENAI_DEPLOYMENT_*_BATCH stay empty).
+// Embeddings: text-embedding-3-small, 1536 dimensions = EMBEDDING_DIMENSIONS (platform/db/schema/content.ts),
+// on DataZoneStandard (processing stays in the APAC data zone; 0/1000 of that quota was in use).
 param aoaiDeployments = [
-  { tier: 'small', name: 'small', model: 'gpt-6-luna', version: 'OA-02', skuName: 'Standard', capacity: 10 }
-  { tier: 'mid', name: 'mid', model: 'gpt-6.1-sol', version: 'OA-02', skuName: 'Standard', capacity: 10 }
-  { tier: 'batch', name: 'mid-batch', model: 'gpt-6.1-sol', version: 'OA-02', skuName: 'GlobalBatch', capacity: 100 }
+  { tier: 'small', name: 'small', model: 'gpt-6-luna', version: '2026-09-22', skuName: 'GlobalStandard', capacity: 50 }
+  { tier: 'mid', name: 'mid', model: 'gpt-6.1-sol', version: '2026-09-29', skuName: 'GlobalStandard', capacity: 50 }
+  { tier: 'embedding', name: 'embedding', model: 'text-embedding-3-small', version: '1', skuName: 'DataZoneStandard', capacity: 100 }
 ]
 
 // No public assets are published yet (diagrams/audio come with content releases later): no Front Door.
@@ -122,12 +143,20 @@ param otpVerifyFailuresPerHourThreshold = 100
 param edgeAuthFailuresPer15MinThreshold = 50
 param queueBacklogThreshold = 500
 
-// Dark-start budget (INR/month, alerts at 50/80/100% actual and 100% forecast). Estimate INR 15-20k:
-// Postgres B2s + backup, Redis B0, api 0.5 vCPU + worker 0.25 vCPU always on, 4 private endpoints,
-// Log Analytics, Key Vault, ACS email (per message). Raise with the launch scale-up.
-param budgetAmount = 25000
-// Unused while deployAi = false (the AI budget is only created with the AI accounts).
-param aiBudgetAmount = 1000
+// Azure OpenAI budget (INR/month, alerts only; the hard limits are in the app). Interactive AI is capped
+// at AI_DAILY_SPEND_CAP_INR = 2,000/day, at most ~62,000 in a 31-day month. Content-pipeline runs on the
+// same account are capped by CONTENT_BUDGET_INR = 3,00,000 for the whole programme; ~38,000/month of
+// headroom covers a steady content wave (about 8 months to spend that cap). 100,000/month therefore means:
+// the 50% alert (50,000) is normal late in a busy month, 80%/100% means content is running hot or the
+// interactive cap is not holding - investigate. Raise it for a month with a planned large content wave.
+var aiMonthlyBudgetInr = 100000
+param aiBudgetAmount = aiMonthlyBudgetInr
+// Resource-group budget (INR/month, alerts at 50/80/100% actual and 100% forecast). Infrastructure
+// estimate INR 15-20k for the dark start (Postgres B2s + backup, Redis B0, api 0.5 vCPU + worker 0.25 vCPU
+// always on, private endpoints, Log Analytics, Key Vault, ACS email) = 25,000, plus the AI accounts in this
+// resource group (Azure OpenAI budget above; Speech and Content Safety are small and fall inside the
+// infrastructure margin). Raise with the launch scale-up.
+param budgetAmount = 25000 + aiMonthlyBudgetInr
 
 param appSettings = {
   PLATFORM_ENABLED: 'false'
@@ -137,10 +166,18 @@ param appSettings = {
   AUTH_METHODS: 'email'
   EMAIL_PROVIDER: 'acs'
   CONSENT_PROVIDER: 'unavailable'
+  // AI providers (ai-gateway handoff 2026-10-27): real Azure services when aiOn, else fail-closed.
+  AI_PROVIDER: aiOn ? 'azure' : 'disabled'
+  AI_EMBEDDINGS: aiOn ? 'azure' : 'disabled'
+  CONTENT_SAFETY_PROVIDER: aiOn ? 'azure' : 'disabled'
+  // Photo/PDF uploads for AI (keyless user-delegation SAS on the existing storage account; the API's
+  // write role on the uploads container is S6-L02, modules/storage.bicep).
+  BLOB_PROVIDER: aiOn ? 'azure' : 'disabled'
   // Worker: with CONSENT_PROVIDER=unavailable the AUTH-15 purge would delete every student after 30
   // days; auto keeps it off until a consent system exists (owner decision before launch).
   UNCONSENTED_PURGE: 'auto'
-  AI_DAILY_SPEND_CAP_INR: '0'
-  CONTENT_BUDGET_INR: '0'
+  // Spend caps (D-038): rupees per day for all interactive AI, and the content programme's total.
+  AI_DAILY_SPEND_CAP_INR: aiOn ? '2000' : '0'
+  CONTENT_BUDGET_INR: aiOn ? '300000' : '0'
   LOG_LEVEL: 'info'
 }

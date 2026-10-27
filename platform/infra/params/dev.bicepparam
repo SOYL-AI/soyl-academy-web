@@ -6,7 +6,10 @@ using '../main.bicep'
 
 param env = 'dev'
 param location = 'centralindia'
-param aiLocation = 'centralindia'
+// ADR-008: Azure OpenAI and Content Safety exist only in southindia, Speech only in centralindia.
+param aiLocation = 'southindia'
+param speechLocation = 'centralindia'
+param contentSafetyLocation = 'southindia'
 
 param vnetAddressPrefix = '10.10.0.0/16'
 param acaSubnetPrefix = '10.10.0.0/23'
@@ -68,12 +71,13 @@ param appSecrets = [
 param deployAi = true
 param aiPublicNetworkAccess = 'Enabled'
 param aiAllowedIps = empty(readEnvironmentVariable('SOYL_AI_ALLOWED_IP', '')) ? [] : [readEnvironmentVariable('SOYL_AI_ALLOWED_IP', '')]
-// OA-02: flip to true once model names/versions/quota are confirmed (ADR-008).
+// Models are confirmed (D-033, D-038), but the subscription's GlobalStandard quota for Luna/Sol is used by
+// prod (ADR-008): request more TPM before setting SOYL_AOAI_DEPLOY_MODELS=true here.
 param aoaiDeployModels = bool(readEnvironmentVariable('SOYL_AOAI_DEPLOY_MODELS', 'false'))
 param aoaiDeployments = [
-  { tier: 'small', name: 'small', model: 'gpt-6-luna', version: 'OA-02', skuName: 'Standard', capacity: 10 }
-  { tier: 'mid', name: 'mid', model: 'gpt-6.1-sol', version: 'OA-02', skuName: 'Standard', capacity: 10 }
-  { tier: 'batch', name: 'mid-batch', model: 'gpt-6.1-sol', version: 'OA-02', skuName: 'GlobalBatch', capacity: 100 }
+  { tier: 'small', name: 'small', model: 'gpt-6-luna', version: '2026-09-22', skuName: 'GlobalStandard', capacity: 10 }
+  { tier: 'mid', name: 'mid', model: 'gpt-6.1-sol', version: '2026-09-29', skuName: 'GlobalStandard', capacity: 10 }
+  { tier: 'embedding', name: 'embedding', model: 'text-embedding-3-small', version: '1', skuName: 'DataZoneStandard', capacity: 10 }
 ]
 
 param deployFrontDoor = true

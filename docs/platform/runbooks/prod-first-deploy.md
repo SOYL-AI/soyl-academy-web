@@ -335,14 +335,63 @@ Change `platform/infra/params/prod.bicepparam`, then redeploy:
 | `redisSku` / `redisHighAvailability` | Balanced_B0 / false | Balanced_B1+ / true (`redisAofPersistence` true once credits use Redis) |
 | `apiMinReplicas` / CPU | 1 / 0.5 | 2+ / 1.0 |
 | `deployFrontDoor` | false | true when public assets exist |
-| `deployAi` | false | true at M4 (OA-02) |
-| `budgetAmount` | 25,000 | per COSTS.md |
+| AI (`aiOn` in prod.bicepparam) | true since p6 (D-038, step 14) | more TPM (ADR-008 owner action 1) |
+| `budgetAmount` | 25,000 + AI budget (1,25,000 since p6) | per COSTS.md |
 | Vercel | flags unset | `PLATFORM_API_ORIGIN=https://<apiFqdn>`, `PLATFORM_EDGE_SECRET` (= `edge-secret-current`), flags on (OA-09) |
 
 Also needed before launch:
 - the consent adapter (OA-08), which replaces `CONSENT_PROVIDER=unavailable`;
 - a decision on the AUTH-15 purge (`UNCONSENTED_PURGE`);
 - Google and staff sign-in (OA-05, AUTH-11): admin and reviewer accounts cannot sign in without Google.
+
+## 14. AI go-live: Azure OpenAI, Speech, Content Safety (D-038, ADR-008) 🔑
+
+Run this from a checkout of `platform/infra-azure/ai-prod`, or from `platform/main` after it is merged.
+The pass creates three accounts, the model deployments, three private endpoints, six role assignments
+(api and worker identities: Cognitive Services OpenAI User, Speech User, Cognitive Services User) and an
+Azure OpenAI budget. It also sets the `AZURE_OPENAI_*`, `AZURE_SPEECH_*`, `AZURE_CONTENT_SAFETY_ENDPOINT`,
+`AI_PROVIDER/AI_EMBEDDINGS/CONTENT_SAFETY_PROVIDER/BLOB_PROVIDER=azure` and spend-cap app settings. The
+api and worker keep their images. The platform stays dark, and AI also stays gated by consent (D-039).
+
+```bash
+export SOYL_ACR_NAME=crsoylplatform SOYL_ALERT_EMAIL="<alert inbox>" SOYL_KV_SECRET_REFS=true SOYL_ACS_LINK_DOMAIN=true
+export SOYL_ACS_SENDER_ROLE_ID=09976791-48a7-449e-bb21-39d1a415f350
+# The images that are live now (do not roll them back by accident):
+export SOYL_API_IMAGE=$(az containerapp show -g $RG -n ca-soyl-api-prod --query "properties.template.containers[0].image" -o tsv)
+export SOYL_WORKER_IMAGE=$(az containerapp show -g $RG -n ca-soyl-worker-prod --query "properties.template.containers[0].image" -o tsv)
+export SOYL_MIGRATE_IMAGE=$(az containerapp job show -g $RG -n caj-soyl-migrate-prod --query "properties.template.containers[0].image" -o tsv)
+unset SOYL_KV_ALLOWED_IP SOYL_AI_ALLOWED_IP
+
+# Quota check: GlobalStandard gpt-6-luna and gpt-6.1-sol need 50 free each in South India.
+az cognitiveservices usage list -l southindia --query "[?contains(name.value,'GlobalStandard.gpt-6')].{q:name.value,used:currentValue,limit:limit}" -o table
+
+az deployment group what-if -g $RG -n soyl-prod-p6 -f platform/infra/main.bicep -p platform/infra/params/prod.bicepparam
+az deployment group create  -g $RG -n soyl-prod-p6 -f platform/infra/main.bicep -p platform/infra/params/prod.bicepparam -o none
+```
+
+Verify (all read-only):
+
+```bash
+OAI=$(az cognitiveservices account list -g $RG --query "[?kind=='OpenAI'].name" -o tsv)
+az cognitiveservices account deployment list -g $RG -n $OAI --query "[].{name:name,model:properties.model.name,ver:properties.model.version,sku:sku.name,cap:sku.capacity,state:properties.provisioningState}" -o table
+az cognitiveservices account list -g $RG --query "[].{name:name,kind:kind,loc:location,public:properties.publicNetworkAccess,localAuth:properties.disableLocalAuth}" -o table
+az network private-endpoint list -g $RG --query "[?contains(name,'oai-') || contains(name,'spch-') || contains(name,'cs-')].{pe:name,state:privateLinkServiceConnections[0].privateLinkServiceConnectionState.status}" -o table
+az containerapp revision list -g $RG -n ca-soyl-api-prod --query "[?properties.active].{rev:name,health:properties.healthState,running:properties.runningState}" -o table
+curl -s -o /dev/null -w "%{http_code}
+" "https://$(az containerapp show -g $RG -n ca-soyl-api-prod --query properties.configuration.ingress.fqdn -o tsv)/readyz"   # 200
+```
+
+Expected: three deployments (small = gpt-6-luna and mid = gpt-6.1-sol, both GlobalStandard 50; embedding = text-embedding-3-small, DataZoneStandard 100), all `Succeeded`. Three accounts with public access `Disabled` and local auth disabled. Three private endpoints `Approved`. A new healthy api revision, and `/readyz` 200.
+A real AI call cannot be made while `PLATFORM_ENABLED=false`. The first end-to-end AI check comes with the launch smoke test (release gates).
+
+**Rollback.** Set `var aiOn = false` in prod.bicepparam and redeploy. The app settings go back to
+`disabled`, and the AI accounts stay in place unused, because deployments are incremental. Delete them
+only on purpose (`az cognitiveservices account delete`, a soft delete).
+
+**Content-pipeline run against production (optional, operator).** Export `SOYL_AI_ALLOWED_IP=<your IP>` and
+redeploy. This opens the accounts to that one IP, and Entra auth is still required. Give the operator's
+user **Cognitive Services OpenAI User** on the account, run the pipeline with `--provider azure` (`--batch`
+runs synchronously: no Batch deployment exists, ADR-008), then unset the variable and redeploy.
 
 ## Known first-deploy risks (not yet seen against a live Azure)
 
