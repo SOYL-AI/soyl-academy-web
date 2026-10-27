@@ -290,6 +290,76 @@ describe('live window', () => {
   });
 });
 
+describe('GET /v1/live-events/:id', () => {
+  it('timeline, registration window, your status and rank availability through the event', async () => {
+    const now = h.clock.now();
+    const L = await makeLive('det', now + 60 * MIN, { count: 3, durationMin: 30 });
+    const url = `/v1/live-events/${L.eventKey}`;
+    expect((await h.client().get('/v1/live-events/live_nope_1')).statusCode).toBe(404);
+    expect((await h.client().get('/v1/live-events/not-an-id')).statusCode).toBe(400);
+
+    const guest = await h.client().get(url);
+    expect(guest.statusCode).toBe(200);
+    expect(guest.headers['cache-control']).toBe('no-store');
+    const g = guest.json();
+    const start = new Date(L.startsAt);
+    const iso = (ms: number) => new Date(ms).toISOString();
+    expect(g).toMatchObject({
+      id: L.eventKey,
+      phase: 'registration_open',
+      testId: L.testKey,
+      durationMin: 30,
+      lateStartMinutes: 15,
+      startsAt: start.toISOString(),
+      lateStartUntil: iso(L.startsAt + 15 * MIN),
+      latestDeadlineAt: iso(L.startsAt + 45 * MIN),
+      writingUntil: iso(L.startsAt + 45 * MIN + TEST_ENGINE.graceSeconds.live * 1000),
+      graceSeconds: TEST_ENGINE.graceSeconds.live,
+      registration: { open: true, opensAt: iso(L.startsAt - 3 * 86_400_000), closesAt: iso(L.startsAt + 15 * MIN) },
+      ranks: { status: 'not_started', beta: true, requiresConsent: true, consentGranted: null, canView: false },
+      me: null,
+    });
+    expect(g.timeline.map((p: { phase: string }) => p.phase)).toEqual(['upcoming', 'registration_open', 'live', 'writing', 'closed', 'results_published']);
+    expect(g.timeline[2]).toEqual({ phase: 'live', from: start.toISOString(), until: iso(L.startsAt + 15 * MIN) });
+    expect(g.timeline[5]).toEqual({ phase: 'results_published', from: null, until: null });
+
+    const a = await member('Nisha Bose');
+    const before = (await a.c.get(url)).json();
+    expect(before.me).toEqual({ registered: false, attemptId: null, attemptStatus: null, deadlineAt: null, canRegister: true, canStart: false, canResume: false, result: null });
+    expect(before.ranks).toMatchObject({ consentGranted: true, canView: false });
+    await a.c.post(`${url}/register`);
+    expect((await a.c.get(url)).json().me).toMatchObject({ registered: true, canRegister: false, canStart: false });
+
+    const noConsent = await member('Tara Sen');
+    await h.t.db.update(consentStatus).set({ status: 'pending' }).where(eq(consentStatus.userId, noConsent.id));
+    h.consent.setStatus(noConsent.id, 'pending');
+
+    h.clock.set(L.startsAt + MIN);
+    expect((await a.c.get(url)).json()).toMatchObject({ phase: 'live', me: { canStart: true, canResume: false }, ranks: { status: 'provisional', canView: true } });
+    expect((await noConsent.c.get(url)).json()).toMatchObject({ ranks: { status: 'provisional', consentGranted: false, canView: false }, me: { canStart: true, canRegister: true } });
+    const started = (await a.c.post(`/v1/tests/${L.testKey}/attempts`)).json();
+    const live = (await a.c.get(url)).json();
+    expect(live.me).toMatchObject({ attemptId: started.attempt.id, attemptStatus: 'in_progress', deadlineAt: started.attempt.deadlineAt, canStart: false, canResume: true });
+    await answer(a.c, started.attempt.id, started.items, L.testKey, 3);
+    h.clock.set(L.startsAt + 20 * MIN);
+    expect((await a.c.get(url)).json()).toMatchObject({ phase: 'writing', registration: { open: false }, me: { canResume: true } });
+    await a.c.post(`/v1/attempts/${started.attempt.id}/submit`);
+    expect((await a.c.get(url)).json().me).toMatchObject({ attemptStatus: 'submitted', canResume: false, result: null });
+
+    const closeAt = L.startsAt + 45 * MIN + TEST_ENGINE.graceSeconds.live * 1000 + TEST_ENGINE.live.finalizeDelaySeconds * 1000;
+    await finalizeLiveEvents({ db: h.t.db, now: new Date(closeAt) });
+    h.clock.set(closeAt + MIN);
+    const after = (await a.c.get(url)).json();
+    expect(after).toMatchObject({ phase: 'results_published', ranks: { status: 'final', canView: true }, me: { result: { rank: 1, score: 3, percentile: expect.any(Number) } } });
+    expect(after.timeline[4].until).toBe(after.resultsPublishedAt);
+    expect(after.timeline[5].from).toBe(after.resultsPublishedAt);
+
+    await h.t.db.update(liveEvents).set({ status: 'cancelled' }).where(eq(liveEvents.id, L.eventId));
+    expect((await a.c.get(url)).json()).toMatchObject({ phase: 'cancelled', ranks: { status: 'unavailable', canView: false }, me: { result: null, canRegister: false } });
+    h.clock.set(Date.now());
+  });
+});
+
 describe('scheduling (npm run live -- schedule)', () => {
   it('Wave 1 sittings are 13 Dec 2026 and 17 Jan 2027, 10:00 IST', () => {
     expect(configuredSittings().map((s) => s.starts.toISOString())).toEqual(['2026-12-13T04:30:00.000Z', '2027-01-17T04:30:00.000Z']);

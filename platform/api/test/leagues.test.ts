@@ -301,7 +301,10 @@ describe('weekly formation (worker job logic)', () => {
     const early = await dbStudent({ board: 'cisce', classLevel: 12 });
     const div1 = await joinLeague(h.t.db, early, { scope: 'class', scopeKey: 'cisce-12' }, W, 1, MON - 60_000);
     const r = await formWeek(h.t.db, MON);
-    expect(r).toMatchObject({ week: W, students: 2, leaguesCreated: 0 });
+    // (Other cohorts in this shared database roll forward too; only cisce-12 matters here.)
+    expect(r.week).toBe(W);
+    expect(r.students).toBeGreaterThanOrEqual(2);
+    expect(await h.t.db.select().from(leagues).where(and(eq(leagues.weekStart, W), eq(leagues.scopeKey, 'cisce-12')))).toHaveLength(1);
     const rows = await h.t.db.select().from(leagueMemberships).where(eq(leagueMemberships.weekStart, W));
     expect(rows.filter((m) => [a, b, early].includes(m.userId)).every((m) => m.leagueId === div1)).toBe(true);
   });
