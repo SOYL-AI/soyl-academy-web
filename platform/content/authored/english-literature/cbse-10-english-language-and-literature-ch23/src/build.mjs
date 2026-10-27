@@ -331,27 +331,27 @@ const F = cards([
 ]);
 
 // ---------------------------------------------------------------- tests
+// Supplementary-reader blueprints (catalog chapter override, 2026-10-27): no extract section; the board sets
+// Footprints without Feet only as 3-mark short answers (two of three) and a 6-mark long answer.
 const T_SHORT = test({
   kind: 'short',
-  blueprint: 'cbse-10-english-language-and-literature-chapter-test-short',
+  blueprint: 'cbse-10-english-language-and-literature-chapter-test-short-supplementary',
   title: 'Chapter test (short) — A Triumph of Surgery',
   duration: 40,
   sections: [
-    { id: 'A', title: 'Section A — Commentary-based (5 marks)', instr: 'Read the commentary and answer all parts. (The passage is SOYL commentary used as a comprehension check; the board sets no extracts from Footprints without Feet.)', items: ['src_street'] },
-    { id: 'B', title: 'Section B — Short answers (3 marks each)', instr: 'Answer any three of four in 40–50 words.', items: [{ attempt: 3, keys: ['sa_diet', 'sa_hospital', 'sa_title', 'sa_pumphrey'] }] },
-    { id: 'C', title: 'Section C — Long answer (6 marks)', instr: 'Answer any one in 100–120 words.', items: [{ attempt: 1, keys: ['la_compare', 'la_pampering'] }] },
+    { id: 'A', title: 'Section A — Short answers (3 marks each)', instr: 'Two sets of three questions; in each set answer any two in 40–50 words.', items: [{ attempt: 2, keys: ['sa_diet', 'sa_hospital', 'sa_advice_fail'] }, { attempt: 2, keys: ['sa_pumphrey', 'sa_title', 'sa_belongings'] }] },
+    { id: 'B', title: 'Section B — Long answer (6 marks)', instr: 'Answer any one of two questions in 100–120 words.', items: [{ attempt: 1, keys: ['la_compare', 'la_pampering'] }] },
   ],
 });
 const T_LONG = test({
   kind: 'long',
-  blueprint: 'cbse-10-english-language-and-literature-chapter-test-long',
+  blueprint: 'cbse-10-english-language-and-literature-chapter-test-long-supplementary',
   title: 'Chapter test (long) — A Triumph of Surgery',
-  duration: 90,
+  duration: 80,
   sections: [
-    { id: 'A', title: 'Section A — Commentary-based (2 × 5 marks)', instr: 'In each pair, answer one passage. (Passages are SOYL commentary used as comprehension checks.)', items: [{ attempt: 1, keys: ['src_illness', 'src_surgery'] }, { attempt: 1, keys: ['src_gifts', 'src_reunion'] }] },
-    { id: 'B', title: 'Section B — Short answers (2 marks each)', instr: 'Answer any three of four in 30–40 words.', items: [{ attempt: 3, keys: ['sb_who', 'sb_extras', 'sb_water', 'sb_reunion'] }] },
-    { id: 'C', title: 'Section C — Short answers (3 marks each)', instr: 'Answer any four of five in 40–50 words.', items: [{ attempt: 4, keys: ['sa_shock', 'sa_recovery', 'sa_vet', 'sa_humour', 'sa_owners'] }] },
-    { id: 'D', title: 'Section D — Long answers (6 marks each)', instr: 'Answer one question from each pair in 100–120 words.', items: [{ attempt: 1, keys: ['la_vet_sketch', 'la_title_long'] }, { attempt: 1, keys: ['la_diary_pumphrey', 'la_letter_vet'] }] },
+    { id: 'A', title: 'Section A — Short answers (2 marks each)', instr: 'Answer any three of four in 30–40 words.', items: [{ attempt: 3, keys: ['sb_who', 'sb_extras', 'sb_water', 'sb_reunion'] }] },
+    { id: 'B', title: 'Section B — Short answers (3 marks each)', instr: 'Two sets of three questions; in each set answer any two in 40–50 words.', items: [{ attempt: 2, keys: ['sa_shock', 'sa_recovery', 'sa_gifts'] }, { attempt: 2, keys: ['sa_vet', 'sa_humour', 'sa_owners'] }] },
+    { id: 'C', title: 'Section C — Long answers (6 marks each)', instr: 'Answer one question from each of the three pairs in 100–120 words.', items: [{ attempt: 1, keys: ['la_vet_sketch', 'la_title_long'] }, { attempt: 1, keys: ['la_diary_pumphrey', 'la_letter_vet'] }, { attempt: 1, keys: ['la_humour_irony', 'la_values'] }] },
   ],
 });
 

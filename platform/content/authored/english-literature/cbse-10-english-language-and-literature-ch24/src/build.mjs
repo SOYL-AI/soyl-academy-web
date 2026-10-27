@@ -330,27 +330,27 @@ const F = cards([
 ]);
 
 // ---------------------------------------------------------------- tests
+// Supplementary-reader blueprints (catalog chapter override, 2026-10-27): no extract section; the board sets
+// Footprints without Feet only as 3-mark short answers (two of three) and a 6-mark long answer.
 const T_SHORT = test({
   kind: 'short',
-  blueprint: 'cbse-10-english-language-and-literature-chapter-test-short',
+  blueprint: 'cbse-10-english-language-and-literature-chapter-test-short-supplementary',
   title: 'Chapter test (short) — The Thief’s Story',
   duration: 40,
   sections: [
-    { id: 'A', title: 'Section A — Commentary-based (5 marks)', instr: 'Read the commentary and answer all parts. (The passage is SOYL commentary used as a comprehension check; the board sets no extracts from Footprints without Feet.)', items: ['src_meeting'] },
-    { id: 'B', title: 'Section B — Short answers (3 marks each)', instr: 'Answer any three of four in 40–50 words.', items: [{ attempt: 3, keys: ['sa_cooking', 'sa_station', 'sa_wet_note', 'sa_anil_trust'] }] },
-    { id: 'C', title: 'Section C — Long answer (6 marks)', instr: 'Answer any one in 100–120 words.', items: [{ attempt: 1, keys: ['la_trust_education', 'la_anil_sketch'] }] },
+    { id: 'A', title: 'Section A — Short answers (3 marks each)', instr: 'Two sets of three questions; in each set answer any two in 40–50 words.', items: [{ attempt: 2, keys: ['sa_cooking', 'sa_station', 'sa_narrator'] }, { attempt: 2, keys: ['sa_anil_trust', 'sa_wet_note', 'sa_anil_money'] }] },
+    { id: 'B', title: 'Section B — Long answer (6 marks)', instr: 'Answer any one of two questions in 100–120 words.', items: [{ attempt: 1, keys: ['la_trust_education', 'la_anil_sketch'] }] },
   ],
 });
 const T_LONG = test({
   kind: 'long',
-  blueprint: 'cbse-10-english-language-and-literature-chapter-test-long',
+  blueprint: 'cbse-10-english-language-and-literature-chapter-test-long-supplementary',
   title: 'Chapter test (long) — The Thief’s Story',
-  duration: 90,
+  duration: 80,
   sections: [
-    { id: 'A', title: 'Section A — Commentary-based (2 × 5 marks)', instr: 'In each pair, answer one passage. (Passages are SOYL commentary used as comprehension checks.)', items: [{ attempt: 1, keys: ['src_learning', 'src_theft'] }, { attempt: 1, keys: ['src_return', 'src_morning'] }] },
-    { id: 'B', title: 'Section B — Short answers (2 marks each)', instr: 'Answer any three of four in 30–40 words.', items: [{ attempt: 3, keys: ['sb_who', 'sb_lessons', 'sb_rain', 'sb_smile'] }] },
-    { id: 'C', title: 'Section C — Short answers (3 marks each)', instr: 'Answer any four of five in 40–50 words.', items: [{ attempt: 4, keys: ['sa_approach', 'sa_education', 'sa_reflection', 'sa_hari_conflict', 'sa_reform'] }] },
-    { id: 'D', title: 'Section D — Long answers (6 marks each)', instr: 'Answer one question from each pair in 100–120 words.', items: [{ attempt: 1, keys: ['la_hari_sketch', 'la_ending'] }, { attempt: 1, keys: ['la_diary_anil', 'la_letter_hari'] }] },
+    { id: 'A', title: 'Section A — Short answers (2 marks each)', instr: 'Answer any three of four in 30–40 words.', items: [{ attempt: 3, keys: ['sb_who', 'sb_lessons', 'sb_rain', 'sb_smile'] }] },
+    { id: 'B', title: 'Section B — Short answers (3 marks each)', instr: 'Two sets of three questions; in each set answer any two in 40–50 words.', items: [{ attempt: 2, keys: ['sa_approach', 'sa_education', 'sa_title'] }, { attempt: 2, keys: ['sa_reflection', 'sa_hari_conflict', 'sa_reform'] }] },
+    { id: 'C', title: 'Section C — Long answers (6 marks each)', instr: 'Answer one question from each of the three pairs in 100–120 words.', items: [{ attempt: 1, keys: ['la_hari_sketch', 'la_ending'] }, { attempt: 1, keys: ['la_diary_anil', 'la_letter_hari'] }, { attempt: 1, keys: ['la_values', 'la_forgive_debate'] }] },
   ],
 });
 

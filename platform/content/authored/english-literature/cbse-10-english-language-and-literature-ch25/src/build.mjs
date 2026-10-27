@@ -328,27 +328,27 @@ const F = cards([
 ]);
 
 // ---------------------------------------------------------------- tests
+// Supplementary-reader blueprints (catalog chapter override, 2026-10-27): no extract section; the board sets
+// Footprints without Feet only as 3-mark short answers (two of three) and a 6-mark long answer.
 const T_SHORT = test({
   kind: 'short',
-  blueprint: 'cbse-10-english-language-and-literature-chapter-test-short',
+  blueprint: 'cbse-10-english-language-and-literature-chapter-test-short-supplementary',
   title: 'Chapter test (short) — The Midnight Visitor',
   duration: 40,
   sections: [
-    { id: 'A', title: 'Section A — Commentary-based (5 marks)', instr: 'Read the commentary and answer all parts. (The passage is SOYL commentary used as a comprehension check; the board sets no extracts from Footprints without Feet.)', items: ['src_fowler'] },
-    { id: 'B', title: 'Section B — Short answers (3 marks each)', instr: 'Answer any three of four in 40–50 words.', items: [{ attempt: 3, keys: ['sa_max_purpose', 'sa_balcony_trick', 'sa_appearance', 'sa_henry'] }] },
-    { id: 'C', title: 'Section C — Long answer (6 marks)', instr: 'Answer any one in 100–120 words.', items: [{ attempt: 1, keys: ['la_ausable_sketch', 'la_appearance_theme'] }] },
+    { id: 'A', title: 'Section A — Short answers (3 marks each)', instr: 'Two sets of three questions; in each set answer any two in 40–50 words.', items: [{ attempt: 2, keys: ['sa_max_purpose', 'sa_balcony_trick', 'sa_fowler_role'] }, { attempt: 2, keys: ['sa_appearance', 'sa_henry', 'sa_title'] }] },
+    { id: 'B', title: 'Section B — Long answer (6 marks)', instr: 'Answer any one of two questions in 100–120 words.', items: [{ attempt: 1, keys: ['la_ausable_sketch', 'la_appearance_theme'] }] },
   ],
 });
 const T_LONG = test({
   kind: 'long',
-  blueprint: 'cbse-10-english-language-and-literature-chapter-test-long',
+  blueprint: 'cbse-10-english-language-and-literature-chapter-test-long-supplementary',
   title: 'Chapter test (long) — The Midnight Visitor',
-  duration: 90,
+  duration: 80,
   sections: [
-    { id: 'A', title: 'Section A — Commentary-based (2 × 5 marks)', instr: 'In each pair, answer one passage. (Passages are SOYL commentary used as comprehension checks.)', items: [{ attempt: 1, keys: ['src_max', 'src_balcony'] }, { attempt: 1, keys: ['src_knock', 'src_henry'] }] },
-    { id: 'B', title: 'Section B — Short answers (2 marks each)', instr: 'Answer any three of four in 30–40 words.', items: [{ attempt: 3, keys: ['sb_who', 'sb_report', 'sb_police', 'sb_fowler_end'] }] },
-    { id: 'C', title: 'Section C — Short answers (3 marks each)', instr: 'Answer any four of five in 40–50 words.', items: [{ attempt: 4, keys: ['sa_fowler_expect', 'sa_knock', 'sa_presence', 'sa_max_trait', 'sa_suspense'] }] },
-    { id: 'D', title: 'Section D — Long answers (6 marks each)', instr: 'Answer one question from each pair in 100–120 words.', items: [{ attempt: 1, keys: ['la_max_mistakes', 'la_twist'] }, { attempt: 1, keys: ['la_fowler_diary', 'la_report_police'] }] },
+    { id: 'A', title: 'Section A — Short answers (2 marks each)', instr: 'Answer any three of four in 30–40 words.', items: [{ attempt: 3, keys: ['sb_who', 'sb_report', 'sb_police', 'sb_fowler_end'] }] },
+    { id: 'B', title: 'Section B — Short answers (3 marks each)', instr: 'Two sets of three questions; in each set answer any two in 40–50 words.', items: [{ attempt: 2, keys: ['sa_fowler_expect', 'sa_knock', 'sa_suspense'] }, { attempt: 2, keys: ['sa_presence', 'sa_max_trait', 'sa_brains'] }] },
+    { id: 'C', title: 'Section C — Long answers (6 marks each)', instr: 'Answer one question from each of the three pairs in 100–120 words.', items: [{ attempt: 1, keys: ['la_max_mistakes', 'la_twist'] }, { attempt: 1, keys: ['la_fowler_diary', 'la_report_police'] }, { attempt: 1, keys: ['la_values', 'la_debate'] }] },
   ],
 });
 
