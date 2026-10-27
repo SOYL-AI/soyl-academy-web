@@ -6,7 +6,7 @@ import type { Config } from '../config';
 import type { KeyValueStore } from '../kv';
 import { loadAiConfig, type AiConfig } from './config';
 import { CreditService } from './credits';
-import type { EntitlementService } from './entitlements';
+import { BillingEntitlementService, type EntitlementService } from './entitlements';
 import { AiGateway, type GatewayDeps } from './gateway';
 import { AiJobRunner } from './jobs';
 import { localRuntime, type AiRuntime } from './runtime';
@@ -48,7 +48,7 @@ export class AiServices {
     const missing = (['provider', 'moderation', 'blob'] as const).filter((k) => !deps.ai?.runtime?.[k]);
     if (deps.config.isProduction && missing.length) throw new Error(`AI runtime must be configured explicitly in production (missing ${missing.join(', ')}); GEN-3 forbids the local stand-ins`);
     this.config = deps.ai?.config ?? loadAiConfig({ isLocal: true, isProduction: false, appEnv: 'test' }, {});
-    this.runtime = { ...localRuntime(() => deps.clock.now()), ...deps.ai?.runtime };
+    this.runtime = { ...localRuntime(() => deps.clock.now()), entitlements: new BillingEntitlementService(deps.db), ...deps.ai?.runtime };
     const entitlements: EntitlementService = { name: 'runtime', planFor: (u, at) => this.runtime.entitlements.planFor(u, at) };
     this.credits = new CreditService(deps.db, deps.clock, entitlements);
     this.breaker = new SpendBreaker(deps.db, deps.clock, this.config.dailySpendCapPaise, { emit: (a) => this.runtime.alerts.emit(a) });

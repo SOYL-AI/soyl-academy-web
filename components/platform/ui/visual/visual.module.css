@@ -93,6 +93,32 @@
 .table tbody th {
   font-weight: 600;
 }
+.table thead .tableCorner {
+  background: var(--p-surface-2);
+  border-bottom-color: var(--p-border-strong);
+}
+/* Small grids (Punnett squares, x/y value tables): centred cells in a bordered grid. */
+.tableCompact {
+  width: auto;
+  min-width: min(100%, 12rem);
+  margin-inline: auto;
+}
+.tableCompact th,
+.tableCompact td {
+  border: 1px solid var(--p-border);
+  text-align: center;
+  vertical-align: middle;
+  min-width: 3em;
+}
+.tableCompact thead th,
+.tableCompact tbody th {
+  border-color: var(--p-border-strong);
+}
+.tableCompact thead .tableCorner {
+  background: transparent;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
 .tableCaption {
   caption-side: bottom;
   padding-top: var(--p-space-2);

@@ -88,7 +88,8 @@ export interface AiActionConfig {
 }
 
 const ALL_PLANS: readonly PlanId[] = ['free', 'plus', 'pro', 'board_exam_pass'];
-const PAID_PLANS: readonly PlanId[] = ['plus', 'pro', 'board_exam_pass'];
+/** Plans with at least 60 credits a day (D-034: paper-from-upload costs 60, Plus grants 40). */
+const PRO_PLANS: readonly PlanId[] = ['pro', 'board_exam_pass'];
 
 const CHAT_MODERATION: AiModerationPolicy = {
   input: 'strict',
@@ -245,7 +246,7 @@ export const AI_ACTIONS: Record<AiActionId, AiActionConfig> = {
     maxInputTokens: 20_000,
     maxOutputTokens: 4_000,
     reasoningEffort: 'medium',
-    plans: PAID_PLANS,
+    plans: PRO_PLANS,
     moderation: STRUCTURED_MODERATION,
     degradeTo: null,
     retrievalK: 0,

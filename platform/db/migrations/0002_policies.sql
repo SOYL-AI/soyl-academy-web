@@ -7,7 +7,12 @@
 DO $$
 BEGIN
   IF EXISTS (SELECT 1 FROM pg_available_extensions WHERE name = 'vector') THEN
-    CREATE EXTENSION IF NOT EXISTS vector;
+    -- On Azure, CREATE EXTENSION is permission-checked even with IF NOT EXISTS and even when the
+    -- extension is installed, and soyl_migrator is not in azure_pg_admin. The migrate bootstrap installs
+    -- it as the admin identity, so only create it here when it is genuinely missing (local/CI superuser).
+    IF NOT EXISTS (SELECT 1 FROM pg_extension WHERE extname = 'vector') THEN
+      CREATE EXTENSION vector;
+    END IF;
     ALTER TABLE content_chunks ADD COLUMN IF NOT EXISTS embedding vector(1536);
     CREATE INDEX IF NOT EXISTS content_chunks_embedding_hnsw_idx ON content_chunks USING hnsw (embedding vector_cosine_ops);
   ELSE

@@ -2,8 +2,8 @@ import { acceptAllCookies, expect, openLoginFromHeader, signInWithEmail, test, u
 
 /**
  * Guest mode (CONTEXT §5, ARCHITECTURE §3.2): progress kept on the device under soyl_guest_v1 merges into the
- * account on first sign-in (POST /v1/me/merge-guest), exactly once; incomplete lesson positions stay on the
- * device until the API stores them (backend handoff).
+ * account on first sign-in (POST /v1/me/merge-guest), exactly once; since API M2 stores lesson positions as
+ * well, the device copy is cleared after the merge.
  */
 
 const now = new Date().toISOString();
@@ -48,10 +48,9 @@ test('guest progress merges on first login, once', async ({ page }) => {
   expect(merged.lessonsCompleted).toBe(1);
   expect(merged.profileUpdated).toBe(true);
 
-  // Completed items cleared; the incomplete lesson position stays on the device.
-  await expect
-    .poll(async () => page.evaluate(() => JSON.parse(window.localStorage.getItem('soyl_guest_v1') ?? 'null')))
-    .toEqual({ v: 1, lessons: [{ chapter: 'cbse-10-science-ch02', slide: 3, completed: false, updatedAt: now }], practice: [] });
+  // API M2 stores positions too, so the whole device copy is cleared (backend-api M2 point 6).
+  expect(merged.lessonsStored).toBe(2);
+  await expect.poll(async () => page.evaluate(() => window.localStorage.getItem('soyl_guest_v1'))).toBeNull();
 
   // Board/class from the guest filled the empty profile.
   await page.goto('/me');

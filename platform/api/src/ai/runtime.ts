@@ -15,6 +15,9 @@ import { AzureContentSafetyProvider, FailingModerationProvider, LocalRuleModerat
 import type { ModerationProvider } from './moderation/types';
 import { LogAlertSink, type AlertSink } from './spend';
 
+/** What createAiRuntime builds per process; entitlements come from the database (AiServices). */
+export type AiProcessRuntime = Omit<AiRuntime, 'entitlements'>;
+
 export interface AiRuntime {
   provider: ModelProvider;
   embedder: Embedder | null;
@@ -56,7 +59,7 @@ export async function createAiRuntime(
   config: Pick<Config, 'isProduction' | 'appEnv'>,
   ai: AiConfig,
   opts: { credential?: TokenCredentialLike; env?: Record<string, string | undefined>; now?: () => number } = {},
-): Promise<AiRuntime> {
+): Promise<AiProcessRuntime> {
   const env = opts.env ?? process.env;
   const credential = opts.credential ?? managedIdentityCredential();
   const provider = await createProvider({ provider: ai.provider, env, credential: ai.provider === 'azure' ? credential : undefined });
@@ -74,5 +77,6 @@ export async function createAiRuntime(
       : ai.blob.provider === 'memory'
         ? new MemoryBlobStore(opts.now)
         : new DisabledBlobStore();
-  return { provider, embedder, moderation, blob, entitlements: new FreeEntitlementService(), alerts: new LogAlertSink() };
+  // No entitlements here: AiServices reads plans from the database (BillingEntitlementService, ADR-016).
+  return { provider, embedder, moderation, blob, alerts: new LogAlertSink() };
 }

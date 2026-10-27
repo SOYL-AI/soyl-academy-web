@@ -38,6 +38,8 @@ GET    /v1/me/mfa                             roles=reviewer|admin csrf=true rl=
 GET    /v1/me/progress                        roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/me/progress/chapters/:id           roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/me/sessions                        roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/me/subscription                    roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/plans                              roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/session                            roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/test-series                        roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/tests/:id                          roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
@@ -60,6 +62,10 @@ POST   /v1/auth/phone/send-otp                roles=guest|student|parent|reviewe
 POST   /v1/auth/phone/verify                  roles=guest|student|parent|reviewer|admin csrf=true rl=default+auth.ip (fail-closed) consent=no
 POST   /v1/auth/sign-out                      roles=guest|student|parent|reviewer|admin csrf=true rl=default+auth.ip consent=no
 POST   /v1/auth/unlink                        roles=student|parent|reviewer|admin csrf=true rl=default+auth.ip (fail-closed) consent=no fresh
+POST   /v1/billing/cancel                     roles=student csrf=true rl=default consent=no
+POST   /v1/billing/orders                     roles=student csrf=true rl=default consent=no
+POST   /v1/billing/refresh                    roles=student csrf=true rl=default consent=no
+POST   /v1/billing/subscriptions              roles=student csrf=true rl=default consent=no
 POST   /v1/content-reports                    roles=guest|student|parent|reviewer|admin csrf=true rl=default+reports.ip+reports.user consent=no
 POST   /v1/live-events/:id/register           roles=student|parent|reviewer|admin csrf=true rl=default+live.register.user consent=no
 POST   /v1/me/consent/start                   roles=student|parent|reviewer|admin csrf=true rl=default consent=no
@@ -71,6 +77,7 @@ POST   /v1/me/mfa/verify                      roles=reviewer|admin csrf=true rl=
 POST   /v1/practice/answers                   roles=guest|student|parent|reviewer|admin csrf=true rl=default+practice.answer.ip+practice.answer.user consent=no
 POST   /v1/tests/:id/attempts                 roles=student|parent|reviewer|admin csrf=true rl=default+attempt.start.user consent=test_attempts
 POST   /v1/tests/custom                       roles=student|parent|reviewer|admin csrf=true rl=default+tests.custom.user consent=no
+POST   /v1/webhooks/razorpay                  roles=guest|student|parent|reviewer|admin csrf=false rl=default consent=no
 PUT    /v1/attempts/:id/responses             roles=student|parent|reviewer|admin csrf=true rl=default consent=test_attempts
 PUT    /v1/me/lesson-progress                 roles=student|parent|reviewer|admin csrf=true rl=default+progress.write.user consent=no"
 `;

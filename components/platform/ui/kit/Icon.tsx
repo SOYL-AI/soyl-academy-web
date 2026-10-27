@@ -15,6 +15,16 @@ const PATHS = {
   speaker: 'M4 9.5h4l5-4v13l-5-4H4v-5zM16.5 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12',
   search: 'M11 18a7 7 0 100-14 7 7 0 000 14zM21 21l-5-5',
   clock: 'M12 7v5l3 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+  // M2 (web-platform): player, flashcards, practice, report.
+  play: 'M7 4.5v15l12-7.5-12-7.5z',
+  pause: 'M8 5v14M16 5v14',
+  flag: 'M5 21V4M5 4h11l-2 4 2 4H5',
+  shuffle: 'M3 7h4l10 10h4M3 17h4l3-3M14 10l3-3h4M18 4l3 3-3 3M18 14l3 3-3 3',
+  arrowUp: 'M12 19V5M6 11l6-6 6 6',
+  arrowDown: 'M12 5v14M6 13l6 6 6-6',
+  grip: 'M9 6h.01M15 6h.01M9 12h.01M15 12h.01M9 18h.01M15 18h.01',
+  rotate: 'M4 12a8 8 0 0114-5.3L20 9M20 4v5h-5M20 12a8 8 0 01-14 5.3L4 15M4 20v-5h5',
+  lock: 'M6 11h12v10H6V11zM8.5 11V8a3.5 3.5 0 017 0v3',
 } as const;
 
 export type IconName = keyof typeof PATHS;

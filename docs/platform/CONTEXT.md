@@ -103,7 +103,7 @@ Credits are how students see AI usage. Internally, **1 credit = ₹0.10 of AI bu
 | Photo doubt (image of a question) | mid + vision | ₹0.89 | 10 |
 | AI evaluation of one written answer | mid | ₹0.56 | 6 |
 | AI evaluation of a full paper | mid | per answer, capped | max 40 |
-| "Papers like my school's" (from uploaded sample paper) | mid | ₹6.10 | 60 (paid plans only in practice) |
+| "Papers like my school's" (from uploaded sample paper) | mid | ₹6.10 | 60 (Pro and Board Exam Pass only, D-034) |
 
 **Guardrail:** the system meters the real INR cost of every AI request. If any action's 7-day average real cost exceeds 80% of its credit price, alert the owner.
 
@@ -114,7 +114,7 @@ All prices INR, GST-inclusive, stored in `platform/shared/config/plans.ts`. **Ow
 | Plan | Monthly | Yearly | Includes |
 |---|---|---|---|
 | Free | ₹0 | — | 25 credits/day |
-| Plus | ₹199 | ₹1,499 | 40 credits/day, paper-from-upload |
+| Plus | ₹199 | ₹1,499 | 40 credits/day (paper-from-upload moved to Pro: it costs 60 credits, D-034) |
 | Pro | ₹299 | ₹2,499 | 60 credits/day, everything in Plus, priority AI evaluation, parent weekly report |
 | Board Exam Pass | ₹499 one-time | — | Pro benefits until 31 March 2027 |
 

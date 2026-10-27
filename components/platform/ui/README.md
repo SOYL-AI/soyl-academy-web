@@ -16,6 +16,7 @@ Gallery (dev only): `/dev/ui` with `NEXT_PUBLIC_PLATFORM_ENABLED=true` and `npm 
 | `render/` | **Reviewed renderers** (the only code allowed to inject HTML): `Markdown`, `MathBlock`/`MathInline`, `SvgDiagram`, plus `policy.ts`, `math.ts`, `sanitize-svg.ts`, `remark-soyl.ts`. |
 | `visual/` | `Visual` dispatcher and one renderer per kind in `platform/shared/content/visual.ts`; safe expression parser `expr.ts`; flow layout. |
 | `slides/` | `SlideFrame`, one component per layout, `renderSlide(slide, options)`, `ReadAlong`, narration `segment.ts`. |
+| `question/` | Question renderers for every contract-v2 type (web-platform M2; the M3 test player reuses them): `model.ts` (drafts → `PracticeResponse`), `slots.tsx` (server-rendered content), `QuestionCard`, inputs, `OrderingInput`, `AnswerReveal`, `RichText` (lazy Markdown). |
 | `__fixtures__/` | Sample decks (English, Hindi), XSS corpus. |
 | `__tests__/` | Vitest suites (`npm run test:platform-ui` at the repo root). |
 
@@ -52,21 +53,71 @@ return <SlidePlayer slides={slides} />; // 'use client' player (web-platform, M2
   with `segmentNarration(text)` + `wordAtOffset(sentences, offset)`. Segmentation is deterministic
   (no `Intl.Segmenter`) and splits Hindi sentences on `।`/`॥`. If the player is a client component
   that re-renders slides itself, the slide modules (and KaTeX) join its chunk: lazy-load the player.
-- **Check slides** render `options.renderCheck(questionId)`; the question UI belongs to the player/test engine.
+- **Check slides** render `options.renderCheck(questionId)`; the question UI belongs to the player/test engine
+  (web-platform passes a client `CheckQuestion` with server-built slots).
+- **Underline** `++text++` (contract v2) renders as `<ins>` (underlined): text nodes only, never inside code or
+  maths; `C++` stays text; `++**word**++` works. `UNDERLINE_SOURCE` in `remark-soyl.ts` must equal the shared
+  `UNDERLINE_RE` (a test checks).
 - **Tables** (`visual.kind = 'table'`): every header/cell is **inline Markdown** (`**bold**`, `$…$`,
   `\ce{…}`, no images). Plain Unicode renders unchanged. A cell starting with `1. ` would parse as a
-  list: write `1.` as `1\.` or avoid it.
+  list: write `1.` as `1\.` or avoid it. The first column is the row header (`<th scope="row">`); an
+  empty header or first cell (the corner of a Punnett square) renders as a plain `<td>`, never an
+  unnamed header. Small grids (2–6 columns, ≤ 8 rows, every cell ≤ 16 characters, corner ignored) render
+  compact: centred, bordered cells (`isCompactTable`), which suits Punnett squares and x/y value tables.
 - **Geometry** uses the maths convention: origin bottom-left, **y up**, coordinates in
   `[0, width] × [0, height]`; the renderer flips y. Point labels sit opposite the point's neighbours
   (outside its own shape); segment labels sit on the side away from the shape that contains the segment.
-  Unknown point references and unknown/extra spec fields are ignored, so new optional fields
-  (ADR-007 extensions) never break rendering.
+  `lines` (`through: [A, B]`) are drawn infinitely, clipped to the canvas, label near the B-side end;
+  `rays` (`from`, `through`) run from `from` to the canvas edge with an arrowhead; both take `dashed`.
+  A point on a line gets its label beside the line. Segment `ticks: 1–3` = equal-length marks at the
+  midpoint, `arrows: 1–3` = parallel chevrons pointing from → to; angle `arcs: 1–3` = concentric arcs
+  for equal angles (right angles keep the square mark). Polygon `highlight`: `shade` = light fill,
+  `outline` = thick accent outline (drawn above segments), `accent` = translucent accent fill + accent
+  outline; labels are always drawn last, with halos. Unknown point references and unknown/extra spec
+  fields are ignored, so new optional fields (ADR-007 extensions) never break rendering.
+- **Diagram labels** (geometry and plot SVG text) go through `svgLabel` (`svg-utils.ts`): `x_1`/`P_{12}`
+  subscript, `x^2`/`10^{-3}` superscript (`<tspan>` at 75 %, shifted with `dy`, which unlike
+  `baseline-shift` also works in Firefox), ASCII `'` after a letter → `′` (`A'` → `A′`, but not
+  `Snell's`), and inside `$…$` a small TeX subset (`\frac`/`\tfrac`/`\dfrac` → `a/b`, `\sqrt` → `√`,
+  Greek letters, `\times \pm \le \ge \ne \angle`, `^\circ` → `°`, `\text{}`, `\ce{H2O}` → H₂O, `-` → `−`).
+  All React text nodes; the accessible name stays the visual's `alt`.
 - **Plot** functions use the ADR-007 grammar (`expr.ts`): `x`; `sin cos tan asin acos atan sqrt abs ln log exp floor ceil`
   (`log` = log10); `pi π e`; `+ - * / ^`; implicit multiplication only before a name or `(` (`2x`, `3sin(x)`,
   `(x+1)(x-1)`); `x2`, `e3`, `(x+1)2`, `1e3`, `**` are errors. Default 200 samples per function
-  (`spec.samples`, 10–2000). Curves break at asymptotes.
+  (`spec.samples`, 10–2000). Curves break at asymptotes. `vlines` (`x`) / `hlines` (`y`) draw x = c / y = c
+  across the plot area (under the curves, `dashed` optional) only when c is within the axis range; labels
+  sit at the top / right end, nudged clear of the axis labels. `points[].on_curve: false` is lint-only and
+  renders the same solid dot (a hollow dot would read as an excluded endpoint); it is marked
+  `data-on-curve="false"`. Legend labels with `$…$`/`\ce{}` render through KaTeX (inline Markdown), others
+  with `<sub>`/`<sup>`.
 - **Flow** uses a deterministic layered layout. Left-to-right flows with more than three steps also
   render a top-to-bottom version; a container query picks it under 480 px of width.
+
+## Questions (`question/`)
+
+```tsx
+// Server Component: content rendered on the server, interaction on the client.
+import { buildQuestionSlots } from '@/components/platform/ui/question/slots';
+import { QuestionCard } from '@/components/platform/ui/question/QuestionCard'; // 'use client'
+<QuestionCard question={q} slots={buildQuestionSlots(q, lang)} submit={(response) => postAnswer(q, response)} />
+```
+
+- **Types:** mcq, multi-select, assertion-reason, true-false (native radios/checkboxes), numerical (number only,
+  Unicode minus and thousands commas accepted), fill-blank (stem blanks `___` numbered, one labelled field each),
+  match (a labelled `<select>` per left item; right column lettered A, B …), ordering (drag handle with pointer
+  events, Move up/down buttons, and Space/↑/↓/Esc on the handle; moves announced), code-output (fenced code in the
+  stem, monospace answer sent verbatim), short/long (word-limit counter), writing (format badge, word counter, rubric
+  after checking), map (list of labelled fields with place suggestions per `map_id` until outline maps exist;
+  `renderMap` slot for an SVG map later), case/source-based (passage, `passage_origin` label, parts, internal choice
+  between a part and its `alternatives`).
+- **F-006:** the card never holds answers. `submit(response)` returns the graded result with the key; the reveal shows
+  verdict, marks, correct answer (where the inputs cannot), solution, marking scheme, model answer, rubric, and a
+  self-mark form for written answers (`selfAssess`, members) or a login prompt (`onLogin`, guests).
+- **Client rendering:** `QuestionCard` and the inputs ship no Markdown/KaTeX. Never value-import `slots.tsx`,
+  `render/Markdown` or `visual/Visual` from a client module (type imports are fine); text that only exists after a
+  client request goes through `RichText` (lazy chunk).
+- **Fixtures** for every type: `__fixtures__/questions.ts`. Tests: `__tests__/question.test.tsx` (every type, model,
+  XSS corpus through stems/options/passages on the server and through revealed keys in `RichText`, underline).
 
 ## Tokens contract
 

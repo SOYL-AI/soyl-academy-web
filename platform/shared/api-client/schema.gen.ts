@@ -3445,6 +3445,346 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/plans": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Plans and prices (GST-inclusive INR) */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["PlansResponse"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/billing/subscriptions": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Start a Plus/Pro subscription (returns Razorpay Checkout parameters) */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["BillingSubscriptionRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                201: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SubscriptionCheckout"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/billing/orders": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Buy the Board Exam Pass (returns Razorpay Checkout parameters) */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["BillingOrderRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                201: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["OrderCheckout"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/billing/cancel": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Cancel the subscription (a paid period runs to its end) */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["EmptyRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["MySubscription"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/billing/refresh": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Re-check open purchases with Razorpay (call after Checkout; takes no payment data) */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["EmptyRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["MySubscription"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/subscription": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** The plan in force and the subscription status */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["MySubscription"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/v1/credits": {
         parameters: {
             query?: never;
@@ -4061,6 +4401,60 @@ export interface paths {
         };
         put?: never;
         post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/webhooks/razorpay": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Razorpay webhook (X-Razorpay-Signature over the raw body; X-Razorpay-Event-Id) */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["RazorpayWebhookAck"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
         delete?: never;
         options?: never;
         head?: never;
@@ -5490,6 +5884,104 @@ export interface components {
                 status: string;
             } | null;
         };
+        /** @description Plans and GST-inclusive INR prices from platform/shared/config/plans.ts. */
+        PlansResponseInput: {
+            billingEnabled: boolean;
+            /** @constant */
+            currency: "INR";
+            /** @constant */
+            pricesIncludeGst: true;
+            plans: {
+                /** @enum {string} */
+                id: "free" | "plus" | "pro" | "board_exam_pass";
+                name: string;
+                creditsPerDay: number;
+                features: string[];
+                validUntil: string | null;
+                order: number;
+                prices: {
+                    /** @enum {string} */
+                    interval: "monthly" | "yearly" | "one_time";
+                    amountPaise: number;
+                    label: string;
+                }[];
+                purchasable: boolean;
+            }[];
+        };
+        BillingSubscriptionRequestInput: {
+            /** @enum {string} */
+            plan: "plus" | "pro";
+            /** @enum {string} */
+            interval: "monthly" | "yearly";
+        };
+        BillingOrderRequestInput: {
+            /** @constant */
+            plan: "board_exam_pass";
+        };
+        EmptyRequestInput: Record<string, never> | null;
+        /** @description Razorpay Checkout options: { key: keyId, subscription_id: subscriptionId, name, description }. Completing Checkout does not grant the plan; poll GET /v1/me/subscription (after POST /v1/billing/refresh). */
+        SubscriptionCheckoutInput: {
+            /** @constant */
+            kind: "subscription";
+            keyId: string;
+            subscriptionId: string;
+            /** @enum {string} */
+            plan: "free" | "plus" | "pro" | "board_exam_pass";
+            /** @enum {string} */
+            interval: "monthly" | "yearly";
+            amountPaise: number;
+            /** @constant */
+            currency: "INR";
+            label: string;
+            name: string;
+            description: string;
+            reused: boolean;
+        };
+        /** @description Razorpay Checkout options: { key: keyId, order_id: orderId, amount: amountPaise, currency, name, description }. */
+        OrderCheckoutInput: {
+            /** @constant */
+            kind: "order";
+            keyId: string;
+            orderId: string;
+            /** @enum {string} */
+            plan: "free" | "plus" | "pro" | "board_exam_pass";
+            amountPaise: number;
+            /** @constant */
+            currency: "INR";
+            label: string;
+            name: string;
+            description: string;
+            /** Format: date-time */
+            validUntil: string;
+            reused: boolean;
+        };
+        MySubscriptionInput: {
+            /** @enum {string} */
+            plan: "free" | "plus" | "pro" | "board_exam_pass";
+            planName: string;
+            creditsPerDay: number;
+            /** @enum {string} */
+            source: "free" | "subscription" | "order" | "admin" | "promo";
+            validUntil: string | null;
+            subscription: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                plan: "free" | "plus" | "pro" | "board_exam_pass";
+                /** @enum {string} */
+                interval: "monthly" | "yearly";
+                status: string;
+                currentPeriodEnd: string | null;
+                cancelAtPeriodEnd: boolean;
+            } | null;
+            billingEnabled: boolean;
+        };
+        RazorpayWebhookAckInput: {
+            /** @constant */
+            received: true;
+            duplicate: boolean;
+            outcome: string;
+        };
         PracticeSelfAssessRequestInput: {
             marks: number;
         };
@@ -6914,6 +7406,104 @@ export interface components {
                 id: string;
                 status: string;
             } | null;
+        };
+        /** @description Plans and GST-inclusive INR prices from platform/shared/config/plans.ts. */
+        PlansResponse: {
+            billingEnabled: boolean;
+            /** @constant */
+            currency: "INR";
+            /** @constant */
+            pricesIncludeGst: true;
+            plans: {
+                /** @enum {string} */
+                id: "free" | "plus" | "pro" | "board_exam_pass";
+                name: string;
+                creditsPerDay: number;
+                features: string[];
+                validUntil: string | null;
+                order: number;
+                prices: {
+                    /** @enum {string} */
+                    interval: "monthly" | "yearly" | "one_time";
+                    amountPaise: number;
+                    label: string;
+                }[];
+                purchasable: boolean;
+            }[];
+        };
+        BillingSubscriptionRequest: {
+            /** @enum {string} */
+            plan: "plus" | "pro";
+            /** @enum {string} */
+            interval: "monthly" | "yearly";
+        };
+        BillingOrderRequest: {
+            /** @constant */
+            plan: "board_exam_pass";
+        };
+        EmptyRequest: Record<string, never> | null;
+        /** @description Razorpay Checkout options: { key: keyId, subscription_id: subscriptionId, name, description }. Completing Checkout does not grant the plan; poll GET /v1/me/subscription (after POST /v1/billing/refresh). */
+        SubscriptionCheckout: {
+            /** @constant */
+            kind: "subscription";
+            keyId: string;
+            subscriptionId: string;
+            /** @enum {string} */
+            plan: "free" | "plus" | "pro" | "board_exam_pass";
+            /** @enum {string} */
+            interval: "monthly" | "yearly";
+            amountPaise: number;
+            /** @constant */
+            currency: "INR";
+            label: string;
+            name: string;
+            description: string;
+            reused: boolean;
+        };
+        /** @description Razorpay Checkout options: { key: keyId, order_id: orderId, amount: amountPaise, currency, name, description }. */
+        OrderCheckout: {
+            /** @constant */
+            kind: "order";
+            keyId: string;
+            orderId: string;
+            /** @enum {string} */
+            plan: "free" | "plus" | "pro" | "board_exam_pass";
+            amountPaise: number;
+            /** @constant */
+            currency: "INR";
+            label: string;
+            name: string;
+            description: string;
+            /** Format: date-time */
+            validUntil: string;
+            reused: boolean;
+        };
+        MySubscription: {
+            /** @enum {string} */
+            plan: "free" | "plus" | "pro" | "board_exam_pass";
+            planName: string;
+            creditsPerDay: number;
+            /** @enum {string} */
+            source: "free" | "subscription" | "order" | "admin" | "promo";
+            validUntil: string | null;
+            subscription: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                plan: "free" | "plus" | "pro" | "board_exam_pass";
+                /** @enum {string} */
+                interval: "monthly" | "yearly";
+                status: string;
+                currentPeriodEnd: string | null;
+                cancelAtPeriodEnd: boolean;
+            } | null;
+            billingEnabled: boolean;
+        };
+        RazorpayWebhookAck: {
+            /** @constant */
+            received: true;
+            duplicate: boolean;
+            outcome: string;
         };
         PracticeSelfAssessRequest: {
             marks: number;
