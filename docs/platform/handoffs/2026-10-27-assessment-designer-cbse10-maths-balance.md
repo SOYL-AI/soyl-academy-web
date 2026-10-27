@@ -110,7 +110,7 @@ npm run content -- assemble --board cbse --class 10 --subject mathematics --seri
 
 The Standard target 43.2 / 19.2 / 17.6 is 54 / 24 / 22 % of 80 (the blueprint's `mark_shares`; the CBSE design table rounds it to 43 / 19 / 18). All papers are within ±3 in every band for every choice (asserted by `series.test.ts`); 15 of 16 are within ±2.
 
-Science and Social Science (frozen, unchanged) measured the same way are partly off target; `assemble --series` prints a note for each: Science mocks 3, 5, 6 (analysis+evaluation 11–12.5 against 16) and SST mocks 3–6 and May 2 (recall+understanding 26–31 against 24; analysis+evaluation 30–35.5 against 40). Re-freezing them is a separate decision (see follow-ups).
+Science and Social Science (frozen, unchanged) are off target under this measure, and `assemble --series` prints a note for each paper. On average, Science mocks 3, 5 and 6 are short of analysis+evaluation (11–12.5 marks against 16), and SST mocks 3–6 and May 2 carry too much recall+understanding (26–31 against 24) and too little analysis+evaluation (30–35.5 against 40). The other Science and SST papers are close on average, but their internal-choice alternatives mix bands, so depending on the choices a student makes their shares swing by up to ±8 marks (e.g. Science mock 1: recall+understanding 36–48 against 40). All 16 Science and SST board/May papers therefore get a note. Re-freezing them is a separate decision (see follow-ups).
 
 ## How to verify (from `platform/`)
 
@@ -148,4 +148,15 @@ None.
 
 ## Gate results (2026-10-27)
 
-GATES_PLACEHOLDER
+```
+npm test -w @soyl/content-templates                            Test Files 1 passed · Tests 505 passed · exit 0
+npm run content -- lint --exemplars                            all units 0 error(s) (11 Maths balance.competency warnings, see gaps) · exit 0
+npm run content -- verify --board cbse --class 10 --authored   72 unit(s), 5771 questions, 0 blocking flag(s) · exit 0
+npm run content -- originality --authored                      72 unit(s), 0 error(s) · exit 0
+npm test -w @soyl/content-pipeline                             Test Files 8 passed · Tests 277 passed (series.test.ts 41) · exit 0
+assemble --series --source files --strict                      science 0 · mathematics 0 · social-science 0
+npx vitest run --root api test/content.test.ts                 Test Files 1 passed · Tests 13 passed · exit 0
+npx vitest run --root db test/db6-split.test.ts                Test Files 1 passed · Tests 8 passed · exit 0
+npm run typecheck                                              all workspaces · exit 0
+Maths chapter builds (13)                                      NO ERRORS; every new item's re-solve check OK
+```
