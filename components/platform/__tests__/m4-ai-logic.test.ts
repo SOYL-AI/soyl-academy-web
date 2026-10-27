@@ -42,7 +42,7 @@ describe('SSE parser (ai-gateway M4 protocol)', () => {
   it('streamAiAction posts with the Idempotency-Key and dispatches events in order', async () => {
     const fetchImpl = vi.fn(async () => sseResponse(['event: meta\ndata: {"conversationId":"c1","balance":23,"mode":"hint","language":"hinglish"}\n\n', 'event: delta\ndata: {"text":"[MOCK] Hint"}\n\nevent: done\ndata: {"status":"ok","creditsCharged":1,"balance":23}\n\n']));
     const events: string[] = [];
-    await streamAiAction('quick-doubt', { message: 'why?' }, { idempotencyKey: 'key-12345678', fetchImpl: fetchImpl as unknown as typeof fetch, onEvent: (e) => events.push(e.type) });
+    await streamAiAction('quick-doubt', { message: 'why?' }, { idempotencyKey: 'key-12345678', fetchImpl: fetchImpl as unknown as typeof fetch, onEvent: (e) => events.push(e.type) }); // gitleaks:allow (placeholder idempotency key)
     expect(events).toEqual(['meta', 'delta', 'done']);
     const [url, init] = fetchImpl.mock.calls[0] as unknown as [string, RequestInit];
     expect(url).toBe('/api/platform/v1/ai/quick-doubt');
