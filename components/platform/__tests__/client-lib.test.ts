@@ -6,13 +6,13 @@ import { googleErrorMessage, problemMessage } from '../lib/problems';
 import { currentReturnTo, googleStartUrl, safeReturnTo, takeAuthResult } from '../lib/return-to';
 
 describe('return-to (AUTH-13, WEB-8)', () => {
-  it.each(['//evil.com', '/\\evil.com', 'https://evil.com', 'javascript:alert(1)', '/%2F%2Fevil.com', '/about', '/learning', '', '/learn\u0000x'])(
+  it.each(['//evil.com', '/\\evil.com', 'https://evil.com', 'javascript:alert(1)', '/%2F%2Fevil.com', '/about', '/learning', '', '/learn\u0000x', '/storefront', '/coinsx'])(
     '%s → /learn',
     (raw) => {
       expect(safeReturnTo(raw)).toBe('/learn');
     },
   );
-  it.each(['/learn', '/learn/cbse/10/science/ch01', '/me', '/tests/series/cbse/10/science?x=1'])('%s is kept', (raw) => {
+  it.each(['/learn', '/learn/cbse/10/science/ch01', '/me', '/tests/series/cbse/10/science?x=1', '/coins', '/store', '/store?item=hoodie'])('%s is kept', (raw) => {
     expect(safeReturnTo(raw)).toBe(raw);
   });
   it('the current page drops auth result params', () => {

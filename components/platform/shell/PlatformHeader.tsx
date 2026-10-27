@@ -3,7 +3,8 @@
 /**
  * The platform bar under the marketing header (ADR-001: platform pages render inside the marketing
  * header/footer): Learn, Tests and Ask links, today's AI credits (GET /v1/credits, ai-gateway M4; shown
- * only when a parent approved AI, D-014; links to the credits history on /me), and log in / profile.
+ * only when a parent approved AI, D-014; links to the credits history on /me), SOYL Coins (members; links to
+ * /coins, ADR-020), and log in / profile.
  */
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -13,6 +14,7 @@ import { Avatar } from '@/components/platform/ui/kit/Display';
 import { Icon, type IconName } from '@/components/platform/ui/kit/Icon';
 import { cx } from '@/components/platform/ui/cx';
 import { useCredits } from '../ai/CreditsProvider';
+import { CoinChip } from '../coins/CoinChip';
 import { useSession } from '../auth/SessionProvider';
 import s from './shell.module.css';
 
@@ -58,6 +60,7 @@ export function PlatformHeader() {
                   <CreditChip balance={credits.balance} resetAt={credits.resetAt} className={s.credits} />
                 </Link>
               )}
+              <CoinChip />
               <Link href="/me" className={s.profile} data-testid="profile-link">
                 <Avatar name={name} size={32} decorative />
                 <span className={s.profileName}>{name}</span>

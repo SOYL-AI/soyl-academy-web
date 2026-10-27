@@ -83,6 +83,8 @@ export function result(question: StudentQuestion, over: Partial<PracticeAnswerRe
     xpAwarded: 0,
     badgesAwarded: [],
     streak: null,
+    coinsAwarded: 0,
+    coinAwards: [],
     ...over,
   };
 }

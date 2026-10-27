@@ -322,7 +322,7 @@ export const GUEST_MERGE = {
 
 export const RETURN_TO_FALLBACK = '/learn';
 /** Platform route prefixes a login may return to (ARCHITECTURE §3.1). */
-export const RETURN_TO_PREFIXES: readonly string[] = ['/learn', '/tests', '/ask', '/plans', '/me', '/leaderboard', '/admin'];
+export const RETURN_TO_PREFIXES: readonly string[] = ['/learn', '/tests', '/ask', '/plans', '/me', '/leaderboard', '/coins', '/store', '/admin'];
 
 /**
  * AUTH-13: accept a login return target only if it is a relative path that starts with a single `/`

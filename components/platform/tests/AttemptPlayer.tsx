@@ -25,6 +25,8 @@ import { fromResponse, initialDraft, toTestResponse, type Draft } from '@/compon
 import { QuestionCard } from '@/components/platform/ui/question/QuestionCard';
 import type { QuestionSlots } from '@/components/platform/ui/question/slots';
 import { useSession } from '../auth/SessionProvider';
+import { summariseAwards } from '../coins/coins-logic';
+import { useOptionalCoins } from '../coins/CoinsProvider';
 import { api } from '../lib/api-browser';
 import { AutosaveQueue, type QueueStatus } from './autosave';
 import { createQueueStorage } from './idb-storage';
@@ -160,6 +162,7 @@ function StartScreen({ attempt, onStart, starting }: { attempt: AttemptState; on
 function Player({ initial }: { initial: AttemptState }) {
   const router = useRouter();
   const toast = useToast();
+  const coins = useOptionalCoins();
   const attemptId = initial.attempt.id;
   const order = useMemo(() => paperOrder(initial), [initial]);
   const itemsById = useMemo(() => new Map(initial.items.map((it) => [it.itemId, it])), [initial]);
@@ -363,7 +366,16 @@ function Player({ initial }: { initial: AttemptState }) {
         if (q.pending > 200) await q.flush({ force: true });
         const res: SubmitResult = await api.post('/v1/attempts/{id}/submit', { params: { id: attemptId }, body: q.submitBody() });
         await q.clear();
-        const extra = [res.xpAwarded > 0 ? `+${res.xpAwarded} XP` : '', res.badgesAwarded.length ? `New badge: ${res.badgesAwarded.join(', ')}` : ''].filter(Boolean).join(' · ');
+        const paid = summariseAwards(res.coinAwards);
+        if (paid.total > 0) coins?.addEarned(paid.total);
+        const extra = [
+          res.xpAwarded > 0 ? `+${res.xpAwarded} XP` : '',
+          res.badgesAwarded.length ? `New badge: ${res.badgesAwarded.join(', ')}` : '',
+          paid.text ?? '',
+          paid.capped && paid.total === 0 ? 'Today’s coin limit reached' : '',
+        ]
+          .filter(Boolean)
+          .join(' · ');
         toast.show({ title: res.status === 'auto_submitted' ? 'Time is up. Your test was submitted.' : 'Test submitted', description: extra || undefined, tone: 'success' });
         goToResult(rejectedRef.current);
       } catch (err) {
@@ -380,7 +392,7 @@ function Player({ initial }: { initial: AttemptState }) {
         );
       }
     },
-    [attemptId, goToResult, recordNow, toast],
+    [attemptId, goToResult, recordNow, toast, coins],
   );
 
   // Auto-submit retries once the connection comes back.

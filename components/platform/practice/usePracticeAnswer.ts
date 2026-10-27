@@ -5,12 +5,15 @@
  * - submit → POST /v1/practice/answers (guests too: checked, not stored);
  * - guests: the result is kept on this device (soyl_guest_v1, CONTEXT §5) when it is auto-graded;
  * - members: written answers can be self-marked (PATCH /v1/practice/answers/:id);
- * - XP / badges / streak from the response are announced with a toast.
+ * - XP / badges / streak from the response are announced with a toast;
+ * - SOYL Coins the answer paid (daily challenge, milestones, mastery; ADR-020) too, and the chip updates.
  */
 import { useCallback, useMemo } from 'react';
 import { isApiError, type PracticeAnswerResult, type PracticeResponse, type StudentQuestion } from '@/platform/shared/api-client';
 import { useToast } from '@/components/platform/ui/kit/Toast';
 import { useSession } from '../auth/SessionProvider';
+import { announceCoins } from '../coins/announce';
+import { useOptionalCoins } from '../coins/CoinsProvider';
 import { api } from '../lib/api-browser';
 import { recordGuestPracticeAnswer } from '../lib/guest-storage';
 
@@ -38,6 +41,7 @@ export interface PracticeAnswerApi {
 export function usePracticeAnswer(chapterId: string): PracticeAnswerApi {
   const { state, openLogin } = useSession();
   const toast = useToast();
+  const coins = useOptionalCoins();
   const isMember = state.status === 'member';
 
   const submit = useCallback(
@@ -45,9 +49,10 @@ export function usePracticeAnswer(chapterId: string): PracticeAnswerApi {
       const res = await api.post('/v1/practice/answers', { body: { questionId: question.id, version: question.version, response } });
       if (!res.stored && res.correct !== null) recordGuestPracticeAnswer(chapterId, question.id, res.correct);
       if (res.badgesAwarded.length) toast.show({ title: 'New badge!', description: res.badgesAwarded.join(', '), tone: 'success' });
+      announceCoins(res.coinsAwarded, res.coinAwards, toast, coins);
       return res;
     },
-    [chapterId, toast],
+    [chapterId, toast, coins],
   );
 
   const selfAssess = useCallback(async (answerId: string, marks: number) => {

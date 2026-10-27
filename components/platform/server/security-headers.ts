@@ -17,7 +17,7 @@ import { CONSENT_BOOT_SCRIPT } from '@/components/legal/consent';
 export const CSP_REPORT_PATH = '/api/platform/csp-report';
 
 /** Route prefixes rendered per request with a nonce policy (WEB-3). */
-export const NONCE_ROUTE_PREFIXES: readonly string[] = ['/me', '/tests/attempt', '/tests/result', '/tests/builder', '/tests/live', '/ask', '/leaderboard', '/admin'];
+export const NONCE_ROUTE_PREFIXES: readonly string[] = ['/me', '/tests/attempt', '/tests/result', '/tests/builder', '/tests/live', '/ask', '/leaderboard', '/coins', '/store', '/admin'];
 
 /**
  * Razorpay Checkout origins, allowed on `/plans` only (WEB-1, WEB-3; billing M4 handoff §2; ADR-018 §4).

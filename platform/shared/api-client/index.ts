@@ -111,6 +111,23 @@ export type PlanView = PlansResponse['plans'][number];
 export type SubscriptionCheckout = Schemas['SubscriptionCheckout'];
 export type OrderCheckout = Schemas['OrderCheckout'];
 export type MySubscription = Schemas['MySubscription'];
+// SOYL Coins (ADR-020, D-037)
+export type CoinAward = Schemas['CoinAward'];
+export type CoinEarnSource = Schemas['CoinEarnSource'];
+export type CoinsSummary = Schemas['CoinsSummary'];
+export type CoinHistory = Schemas['CoinHistory'];
+export type CoinHistoryEntry = CoinHistory['entries'][number];
+export type CoinLedgerSource = CoinHistoryEntry['source'];
+export type CoinCheckIn = Schemas['CoinCheckIn'];
+export type CoinStore = Schemas['CoinStore'];
+export type CoinStoreItem = CoinStore['items'][number];
+export type StoreItemState = Schemas['StoreItemState'];
+export type CoinRedemption = Schemas['CoinRedemption'];
+export type CoinRedeemResult = Schemas['CoinRedeemResult'];
+export type CoinEquipped = Schemas['CoinEquipped'];
+export type ShippingAddress = Schemas['ShippingAddress'];
+export type DailyChallenge = Schemas['DailyChallenge'];
+export type DailyChallengeEntry = DailyChallenge['challenges'][number];
 
 /** Browser base path of the same-origin proxy (ADR-005). */
 export const API_BROWSER_BASE = '/api/platform';

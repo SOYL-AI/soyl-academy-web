@@ -7,6 +7,7 @@ import { requirePlatform } from '@/components/platform/server/gate';
 import { platformMetadata } from '@/components/platform/server/metadata';
 import { PageHeader } from '@/components/platform/shell/PageHeader';
 import { ContinueLearning } from '@/components/platform/learn/LearnClient';
+import { DailyChallengeCard } from '@/components/platform/coins/DailyChallengeCard';
 import { BOARDS, BOARD_NAMES, CLASS_LEVELS, examLabel, learnPath, type BoardSlug } from '@/components/platform/lib/catalog';
 import { Card } from '@/components/platform/ui/kit/Display';
 import shell from '@/components/platform/shell/shell.module.css';
@@ -33,6 +34,7 @@ export default function LearnPage() {
         lead="Pick your board and class. Lessons, notes, flashcards, practice and tests are free for every subject."
       />
       <ContinueLearning />
+      <DailyChallengeCard />
       <div className={s.boards}>
         {BOARDS.map((board) => (
           <Card as="section" key={board} aria-labelledby={`board-${board}`}>

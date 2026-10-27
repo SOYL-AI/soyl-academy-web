@@ -11,6 +11,7 @@
  * 3. Blob uploads: the memory store, but its signed upload URLs point at the control server over http, so the
  *    browser's PUT is a real cross-origin request (CSP connect-src = PLATFORM_UPLOAD_ORIGIN, CORS).
  * 4. Time travel for the test engine and live mocks: move an attempt's deadline, move the dev live mock.
+ *    SOYL Coins: grant a student coins (a staff `adjust` row) so store redemptions can be exercised.
  *
  * Run from platform/: `npx tsx e2e/tests/platform/web/api-e2e.ts` (playwright.config.ts does this).
  * Local only: APP_ENV=local, every provider a stand-in. Never deployed.
@@ -148,6 +149,16 @@ const control = createServer(async (req, res) => {
           registration_opens_at = least(registration_opens_at, now() + make_interval(secs => ${seconds}) - interval '1 minute'),
           starts_at = now() + make_interval(secs => ${seconds})
         WHERE key = ${String(body.eventId)} OR id::text = ${String(body.eventId)}`);
+      return send(res, 200, { ok: true });
+    }
+    if (url.pathname === '/ctl/coins/grant') {
+      // SOYL Coins e2e (ADR-020): a staff-style `adjust` row so a fresh student can afford a store item.
+      // The ledger guard trigger still checks the balance and writes balance_after.
+      const amount = Math.trunc(Number(body.amount));
+      if (!Number.isFinite(amount) || amount === 0) return send(res, 400, { error: 'amount' });
+      await db.execute(sql`INSERT INTO coin_wallets (user_id) VALUES (${String(body.userId)}::uuid) ON CONFLICT DO NOTHING`);
+      await db.execute(sql`INSERT INTO coin_ledger (user_id, kind, source, amount, idempotency_key, ist_day, capped, metadata)
+        VALUES (${String(body.userId)}::uuid, 'adjust', 'admin', ${amount}, ${`e2e-grant:${crypto.randomUUID()}`}, (now() AT TIME ZONE 'Asia/Kolkata')::date, false, '{"e2e":true}'::jsonb)`);
       return send(res, 200, { ok: true });
     }
     if (url.pathname === '/ctl/razorpay/pay-latest') {

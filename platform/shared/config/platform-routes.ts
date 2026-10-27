@@ -7,7 +7,7 @@
  *
  * No imports: the marketing app's client bundle imports this file.
  */
-export const PLATFORM_PREFIXES: readonly string[] = ['/learn', '/tests', '/ask', '/plans', '/me', '/leaderboard', '/admin', '/api/platform'];
+export const PLATFORM_PREFIXES: readonly string[] = ['/learn', '/tests', '/ask', '/plans', '/me', '/leaderboard', '/coins', '/store', '/admin', '/api/platform'];
 
 /** True for `/learn`, `/learn/...`, `/me?x=1` etc.; false for `/learning`, `/` and every marketing path. */
 export function isPlatformPath(pathnameOrUrl: string | null | undefined): boolean {

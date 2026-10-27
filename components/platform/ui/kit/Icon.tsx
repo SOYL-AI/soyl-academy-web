@@ -34,6 +34,10 @@ const PATHS = {
   stop: 'M7 7h10v10H7V7z',
   chat: 'M4 5h16v11H9l-5 4V5z',
   card: 'M3 6h18v12H3V6zM3 10h18M7 15h4',
+  // SOYL Coins (ADR-020): coin, store, streak.
+  coin: 'M12 21a9 9 0 100-18 9 9 0 000 18zM14.5 9.2A3 3 0 0012 8c-1.7 0-3 .9-3 2s1.3 1.6 3 2 3 .9 3 2-1.3 2-3 2a3 3 0 01-2.5-1.2M12 6.5V8M12 16v1.5',
+  gift: 'M4 11h16v10H4V11zM3 7h18v4H3V7zM12 7v14M12 7c-1.5-3-5-4-5-1.5S10 7 12 7zM12 7c1.5-3 5-4 5-1.5S14 7 12 7z',
+  flame: 'M12 22a7 7 0 007-7c0-3.5-2.5-6-4-9.5-1.5 2-2.5 3.5-2.5 5.5-1.2-.8-2-2-2.2-3.8C8 8.5 5 11.5 5 15a7 7 0 007 7z',
 } as const;
 
 export type IconName = keyof typeof PATHS;
