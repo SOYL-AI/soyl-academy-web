@@ -6,7 +6,7 @@
 | Book | NCERT **कृतिका भाग 2** (पूरक पाठ्यपुस्तक) · a travelogue (यात्रा-वृत्तांत) of a journey in Sikkim |
 | Syllabus | `platform/catalog/cbse/10/hindi-a/syllabus.yaml` (2026-27, `source_status: unverified`): t01 लेखक-परिचय और पाठ का प्रसंग · t02 पाठ का सार (incl. सिक्किम का सौंदर्य और पहाड़ी श्रमिकों का कठिन जीवन) · t03 मूल भाव, संदेश और भाषा-शैली · **t04 पर्यावरण-चेतना** · t05 गद्यांश आधारित प्रश्न-अभ्यास (MCQ and 50–60-word answers). Unit "खंड ग: कृतिका भाग 2"; examinable (not in `removed_topics`). No `board_assessed` field. |
 | Board weight | खंड ग, कृतिका 8 marks: प्रश्न 11, **three questions, attempt two, 50–60 words, 4 marks each** — every 4-mark long here is 50–60 words. |
-| Files | `release.json` (1 deck of 22 slides, 7 notes sections, 28 flashcards, 70 questions with 34 passage children), `tests.json` (short 20 / 40 min, long 40 / 80 min), `src/` (build sources; uses `hindi-language/cbse-10-hindi-a-ch01/src/lib.mjs`) |
+| Files | `release.json` (1 deck of 22 slides, 7 notes sections, 28 flashcards, 71 questions with 34 passage children), `tests.json` (short 20 / 40 min, long 40 / 80 min), `src/` (build sources; uses `hindi-language/cbse-10-hindi-a-ch01/src/lib.mjs`) |
 | Status | `draft` on every item (D-025/D-026 hand-authored content) |
 | Author | `claude-opus-5-5 (subject-producer)`, provenance `origin: human`, 2026-10-27 |
 
@@ -15,6 +15,8 @@ Rebuild from `platform/`: `npx tsx content/authored/hindi-literature/cbse-10-hin
 ## The कृतिका pattern
 
 As in ch15: the chapter tests follow the catalog's literature blueprints (section A keeps a 5-mark SOYL commentary passage), but every 4-mark long is a **50–60-word** answer (models 51–59) marked in four steps (context, the author's feeling or idea, evidence, conclusion and language), there are **8 longs**, and the title slide, notes section 7, exam tips and flashcards teach the 4-mark frame. The syllabus gives this lesson its own topic **t04 पर्यावरण-चेतना**, so it has its own items (four MCQs, a true-false, two assertion-reason, three shorts, two longs, a passage and the case).
+
+**Update, 2026-10-27 (curriculum-architect):** the catalog now has कृतिका chapter-test blueprints for ch15–ch17 (`chapter-test-short-kritika`, `chapter-test-long-kritika`; a chapter override through the blueprint `scope`). They have no passage section; their section C is the board's प्रश्न 11 (three 4-mark questions, attempt two, 50–60 words), once in the short test and twice in the long one. Both tests were re-selected onto them from the bank (no item text changed). Filling both without sharing a question needs nine 4-mark answers, so one was added: `l_children` — पहाड़ी बच्चों के जीवन की शहर के बच्चे से तुलना और सीख (t02, d3, application); its facts are ones the bank already states, it quotes nothing from the text, and the build's `setForbidden` list, leak check and lint pass. Where this note and the paragraph above differ, this note is current.
 
 ## Facts about Sikkim: stated only where certain
 
@@ -64,18 +66,18 @@ The brief asked for place names, altitudes and distances to be stated only if ce
 
 ## Counts
 
-- **Questions: 70 (136 marks) + 34 passage children (+ 2 alternatives).**
-  - By type: source-based 6, case-based 1, mcq 27, short 2-mark 12 (25–30 words), long 4-mark 8 (**50–60 words**), true-false 5, fill-blank 3, match 2, assertion-reason 5 (keys b, a, d, a, c), ordering 1.
-  - Difficulty: d1 15 · d2 23 · d3 24 · d4 8.
-  - Competency: application or higher on 51% of items and 64% of marks. Higher-order items include: the school-trip case; a panchayat's tourism plan; a mountain-lake decision; a tour company choosing a guide; India's unity in the student's own examples; reviewing the "Katao needs a market" claim; labourers in the student's city; a thank-you message to a soldier; a travel-blog entry.
+- **Questions: 71 (140 marks) + 34 passage children (+ 2 alternatives).**
+  - By type: source-based 6, case-based 1, mcq 27, short 2-mark 12 (25–30 words), long 4-mark 9 (**50–60 words**; the ninth, `l_children`, added 2026-10-27 for the कृतिका tests), true-false 5, fill-blank 3, match 2, assertion-reason 5 (keys b, a, d, a, c), ordering 1.
+  - Difficulty: d1 15 · d2 23 · d3 25 · d4 8.
+  - Competency: application or higher on 52% of items and 65% of marks. Higher-order items include: the school-trip case; a panchayat's tourism plan; a mountain-lake decision; a tour company choosing a guide; India's unity in the student's own examples; reviewing the "Katao needs a market" claim; labourers in the student's city; a thank-you message to a soldier; a travel-blog entry.
   - MCQ keys (incl. children and alternatives): a 14, b 16, c 15, d 16.
   - Model answers: 2-mark 25–30 words; 4-mark 51–59 words.
 - **Deck:** 22 slides — title (कृतिका pattern), how-to, author, the route, Gangtok's night and the title, white and coloured flags, check, the prayer wheel, the Himalaya's changing faces, labour amid beauty, ordering check, Jiten as guide, Lachung, Katao, AR check, nature's water system, soldiers, style, application check, word meanings, summary, exam tips. 10 visuals. Narration max 65 words (mean 50), Devanagari only, no digits or symbols.
 - **Notes:** 7 sections (incl. one on पर्यावरण-चेतना) + exam tips. **Flashcards:** 28.
-- **Tests (no shared questions):**
-  - Short (20 marks, 40 min): A one commentary passage (5) · B 5 MCQ · C short "4 में से 3" × 2 · D long "2 में से 1" × 4 (50–60 words).
-  - Long (40 marks, 80 min): A two passages (10) · B 6 MCQ + 2 assertion-reason · C short "6 में से 5" × 2 · D long "4 में से 3" × 4 (50–60 words).
-  - `blueprint_id` is `cbse-10-hindi-a-chapter-test-short` / `-long`; the sections match the blueprints slot for slot (scratch check).
+- **Tests (no shared questions; re-selected 2026-10-27 on the कृतिका blueprints):**
+  - Short (20 marks, 40 min): A 6 MCQ · B short "4 में से 3" × 2 · C long "3 में से 2" × 4 (50–60 words; the board's प्रश्न 11).
+  - Long (40 marks, 80 min): A 8 MCQ + 4 assertion-reason · B two sets of short "4 में से 3" × 2 · C two sets of long "3 में से 2" × 4 (प्रश्न 11 twice).
+  - `blueprint_id` is `cbse-10-hindi-a-chapter-test-short-kritika` / `-long-kritika`; the sections match the blueprints slot for slot. No passage section: the commentary passages and the case stay in the bank as practice.
 
 ## Verifier record (author pass, 2026-10-27; no sub-agents per D-024)
 

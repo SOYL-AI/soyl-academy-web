@@ -6,7 +6,7 @@
 | Book | NCERT *Footprints without Feet* (supplementary reader), story · first-person humorous memoir by James Herriot (in copyright) |
 | Syllabus | `platform/catalog/cbse/10/english-language-and-literature/syllabus.yaml` (2026-27): t01 context and summary · t02 themes (how pampering harms Tricki and how the vet cures him) · t03 characters (compare Mrs Pumphrey and the narrator) · t04 exam practice. No removed topics. |
 | Board weight | Section C, Footprints: Q9 short answers (3 marks, 40–50 words, two of three) and the Footprints long answer (6 marks, 100–120 words). No extracts are set from this reader. |
-| Files | `release.json` (1 deck of 23 slides; 8 notes sections; 30 flashcards; 65 questions with 25 passage children), `tests.json` (short 20 / 40 min; long 40 / 90 min), `src/` (builder, question bank, `guard.mjs`; shared library in `../../english-language/cbse-10-english-language-and-literature-ch02/src/lib.mjs`, unchanged) |
+| Files | `release.json` (1 deck of 23 slides; 8 notes sections; 30 flashcards; 65 questions with 25 passage children), `tests.json` (short 18 / 40 min; long 36 / 80 min, supplementary-reader blueprints), `src/` (builder, question bank, `guard.mjs`; shared library in `../../english-language/cbse-10-english-language-and-literature-ch02/src/lib.mjs`, unchanged) |
 | Provenance | `origin: human`, `author: claude-opus-5-5 (subject-producer)`, every item `status: draft` |
 
 Rebuild from `platform/`: `npx tsx content/authored/english-literature/cbse-10-english-language-and-literature-ch23/src/build.mjs`.
@@ -25,6 +25,8 @@ The subject's chapter-test blueprints (`chapter-test-short`, `chapter-test-long`
 | Long, 6 marks (Footprints long answer) | 7 | **9** (comparison, values, character sketch, title, humour and irony, diary, letter, the dog's own account) |
 
 The five commentary items are labelled in every stem as comprehension checks, with a note that the board sets no extracts from this reader. Their parts test inference about character, theme and values rather than line-level reference to context. The title slide, notes section 8, the exam tips and the flashcards all tell students how the reader is actually examined.
+
+**Update, 2026-10-27 (curriculum-architect):** the catalog now has supplementary-reader chapter-test blueprints for ch23–ch31 (`chapter-test-short-supplementary`, `chapter-test-long-supplementary`; a chapter override through the blueprint `scope`). They have no extract section and use only the board's forms for this reader (3-mark answers, two of three; 6-mark long answers, one of two), plus the 2-mark recall section in the long test. This chapter's two tests were re-selected onto them from the existing bank; see **Tests** below. Where this note and the paragraphs above differ, this note is current.
 
 ## The literature rule: taught without reproducing the text (CONTEXT §8–§9, D-036)
 
@@ -68,7 +70,7 @@ Deliberately **left out** because they cannot be confirmed without the text: how
 - **D-032:** written answers keep their worked content in `answer.model_answer_md`; `solution_md` is a short method note. No solution sentence of 60+ characters appears in served content (the builder's per-sentence leak check).
 - **Stems are chapter-specific** (they name Tricki, Mrs Pumphrey, the vet, Herriot or the story), so the bank-duplicate check cannot match them to other chapters.
 
-**Tests:** short (20 marks, 40 min): A commentary item (5) · B 3 of 4 three-mark (9) · C 1 of 2 long (6). Long (40 marks, 90 min): A two commentary pairs (10) · B 3 of 4 two-mark (6) · C 4 of 5 three-mark (12) · D two long pairs (12). No shared questions. Both match the subject's chapter-test blueprints item for item, so `blueprint_id` is `cbse-10-english-language-and-literature-chapter-test-short` / `-long`.
+**Tests** (re-selected from the existing bank on 2026-10-27, no item text changed): short (18 marks, 40 min): A two sets of three 3-mark answers, two of each (12) · B 1 of 2 long (6). Long (36 marks, 80 min): A 3 of 4 two-mark (6) · B two sets of three 3-mark answers, two of each (12) · C three long pairs, one of each (18). No shared questions. Both follow the supplementary-reader blueprints item for item, so `blueprint_id` is `cbse-10-english-language-and-literature-chapter-test-short-supplementary` / `-long-supplementary`. The commentary items remain in the bank as practice and are no longer in the tests.
 
 ## Verifier record (author pass, 2026-10-27)
 Every item was re-answered from its stem, and every factual claim was checked against the author's knowledge of the story.

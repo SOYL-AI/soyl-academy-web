@@ -1,0 +1,39 @@
+id: cbse-10-hindi-a-chapter-test-short-kritika
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-hindi-a
+paper_type: chapter-test-short
+academic_year: "2026-27"
+duration_min: 40
+total_marks: 20
+mark_shares: {}
+# Chapter override: the कृतिका भाग 2 chapters use this blueprint instead of chapter-test-short.yaml.
+scope:
+  - cbse-10-hindi-a-ch15
+  - cbse-10-hindi-a-ch16
+  - cbse-10-hindi-a-ch17
+sections:
+  - id: A
+    title: खंड क - वस्तुनिष्ठ प्रश्न (1 अंक)
+    instructions: सभी प्रश्न अनिवार्य हैं।
+    items:
+      - {type: mcq, count: 6, marks_each: 1}
+  - id: B
+    title: खंड ख - लघु उत्तरीय प्रश्न (2 अंक, 25-30 शब्द)
+    instructions: चार में से किन्हीं तीन प्रश्नों के उत्तर दीजिए।
+    items:
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 3, of: 4}}
+  - id: C
+    title: खंड ग - कृतिका पर आधारित प्रश्न (4 अंक, 50-60 शब्द)
+    instructions: तीन में से किन्हीं दो प्रश्नों के उत्तर दीजिए।
+    items:
+      - {type: long, count: 3, marks_each: 4, internal_choice: {attempt: 2, of: 3}}
+source_status: unverified
+source: lead-default
+notes: >-
+  कृतिका भाग 2 (पूरक पाठ्यपुस्तक) chapter test, ch15-ch17. SOYL default modelled on the 2026-27 Hindi A board paper and marking scheme
+  (sources: cbse-sqp-x-hindi-a-2026-27); not an official CBSE paper. The board sets कृतिका only as प्रश्न 11: three questions, attempt
+  two, 50-60 words, 4 marks each, with no पठित गद्यांश. So this blueprint has no source-based section; Section C is प्रश्न 11 exactly.
+  Sections A and B keep the subject's chapter-level 1-mark objective and 2-mark (25-30 words) recall items, as in chapter-test-short.yaml.
+  Selected through `scope` (a chapter list), which overrides the subject's chapter-test-short for those chapters only.

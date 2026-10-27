@@ -25,7 +25,7 @@ sections:
     instructions: >-
       पठित गद्यांश/काव्यांश (5 बहुविकल्पी, 5); चार में से तीन लघु उत्तरीय प्रश्न (25-30 शब्द, 2-2); कृतिका, तीन में से दो (50-60 शब्द, 4-4)।
     items:
-      - {type: source-based, count: 1, marks_each: 5}
+      - {type: source-based, count: 1, marks_each: 5, chapters: [cbse-10-hindi-a-ch03, cbse-10-hindi-a-ch04, cbse-10-hindi-a-ch05, cbse-10-hindi-a-ch06, cbse-10-hindi-a-ch07, cbse-10-hindi-a-ch08, cbse-10-hindi-a-ch09, cbse-10-hindi-a-ch10, cbse-10-hindi-a-ch11, cbse-10-hindi-a-ch12, cbse-10-hindi-a-ch13, cbse-10-hindi-a-ch14]}
       - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 3, of: 4}}
       - {type: long, count: 3, marks_each: 4, internal_choice: {attempt: 2, of: 3}}
   - id: D
@@ -43,3 +43,5 @@ notes: >-
   (case-based), 1-mark grammar tasks four of five, a 5-mark पठित गद्यांश, 2-mark and 4-mark answers, and the रचनात्मक लेखन tasks as
   'writing' items (अनुच्छेद 6, पत्र 5, स्ववृत्त/ई-मेल 5). The scope must include reading, grammar and writing chapters as well as textbook
   chapters for the paper to fill.
+
+  CHAPTER SCOPE (2026-10-28): the पठित गद्यांश/काव्यांश comes from क्षितिज (ch03-ch14) only; the board sets no कृतिका passage. The 4-mark item is left unscoped because unit tests 1 and 2 contain no कृतिका chapter.

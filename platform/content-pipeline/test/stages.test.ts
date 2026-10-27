@@ -17,7 +17,7 @@ import { ReferenceIndex, nearDuplicates, words } from '../src/originality/ngrams
 import { deterministicChecks, lastNumericResult, runJavaScript } from '../src/verify/checks';
 import { parseOgg } from '../src/tts/ogg-opus';
 import { SCOPE, UNIT, testPipeline } from './helpers';
-import { loadCatalog } from '../src/catalog';
+import { blueprintsFor, loadCatalog } from '../src/catalog';
 import { defaultPaths } from '../src/paths';
 
 const unit = 'cbse-10-science-ch01';
@@ -270,6 +270,59 @@ describe('stage 7 blueprint engine', () => {
     fs.writeFileSync(path.join(dir, 'cbse', '10', 'mathematics', 'blueprints', 'board-basic.yaml'), basic);
     const errors = loadCatalog(dir).issues.filter((i) => i.severity === 'error').map((i) => `${i.file}: ${i.message}`);
     expect(errors).toEqual(["cbse/10/mathematics/blueprints/board-basic.yaml: blueprint variant Elementary (241) is not one of cbse-10-mathematics's variants in subjects.yaml"]);
+  });
+  it('chapter overrides: Footprints and कृतिका chapter tests use their own blueprints (scope = chapter ids)', () => {
+    const { p } = testPipeline();
+    const eng = p.catalog.subjectsById.get('cbse-10-english-language-and-literature')!;
+    const hin = p.catalog.subjectsById.get('cbse-10-hindi-a')!;
+    const E = (n: number) => `${eng.id}-ch${String(n).padStart(2, '0')}`;
+    const H = (n: number) => `${hin.id}-ch${String(n).padStart(2, '0')}`;
+    for (const n of [23, 26, 28, 31]) {
+      expect(blueprintFor(p.catalog, eng, 'chapter-test-short', '', [E(n)])!.id).toBe(`${eng.id}-chapter-test-short-supplementary`);
+      expect(blueprintFor(p.catalog, eng, 'chapter-test-long', '', [E(n)])!.id).toBe(`${eng.id}-chapter-test-long-supplementary`);
+    }
+    expect(blueprintFor(p.catalog, eng, 'chapter-test-short', '', [E(4)])!.id).toBe(`${eng.id}-chapter-test-short`); // First Flight
+    expect(blueprintFor(p.catalog, eng, 'chapter-test-short')!.id).toBe(`${eng.id}-chapter-test-short`); // no chapters: the subject's own
+    expect(blueprintFor(p.catalog, eng, 'chapter-test-short', '', [E(22), E(23)])!.id).toBe(`${eng.id}-chapter-test-short`); // not all covered
+    for (const n of [15, 16, 17]) expect(blueprintFor(p.catalog, hin, 'chapter-test-long', '', [H(n)])!.id).toBe(`${hin.id}-chapter-test-long-kritika`);
+    expect(blueprintFor(p.catalog, hin, 'chapter-test-long', '', [H(14)])!.id).toBe(`${hin.id}-chapter-test-long`); // क्षितिज गद्य
+    // Overrides are not paper variants, and the board-paper variants are unchanged.
+    expect(variantsFor(p.catalog, eng)).toEqual([{ key: '', name: null, code: null }]);
+    // The planner picks the override per chapter; no source-based slot in a Footprints or कृतिका chapter test.
+    const plan = planSubjectTests(p.catalog, eng, { series: false, academicYear: '2026-27', chapters: [4, 23] });
+    expect(plan.papers.map((x) => x.spec.blueprint.id)).toEqual([`${eng.id}-chapter-test-short`, `${eng.id}-chapter-test-long`, `${eng.id}-chapter-test-short-supplementary`, `${eng.id}-chapter-test-long-supplementary`]);
+    for (const bp of [...plan.papers.slice(2).map((x) => x.spec.blueprint), blueprintFor(p.catalog, hin, 'chapter-test-short', '', [H(15)])!])
+      expect(bp.sections.flatMap((s) => s.items.map((i) => i.type))).not.toContain('source-based');
+    // Generation context: the chapter sees its override in place of the subject blueprint of that paper type.
+    const ids = (ch?: string) => blueprintsFor(p.catalog, eng, ch).map((b) => b.id).filter((id) => id.includes('chapter-test')).sort();
+    expect(ids(E(23))).toEqual([`${eng.id}-chapter-test-long-supplementary`, `${eng.id}-chapter-test-short-supplementary`]);
+    expect(ids(E(4))).toEqual([`${eng.id}-chapter-test-long`, `${eng.id}-chapter-test-short`]);
+    expect(ids()).toEqual(ids(E(4)));
+    // Board-pattern papers: an extract / passage slot never accepts a Footprints or कृतिका chapter (item-level chapter scopes).
+    const supplementary = new Set([...[23, 24, 25, 26, 27, 28, 29, 30, 31].map(E), ...[15, 16, 17].map(H)]);
+    for (const s of [eng, hin])
+      for (const paper of ['board', 'board-second-exam', 'unit-test'] as const) {
+        const slots = blueprintFor(p.catalog, s, paper)!.sections.flatMap((x) => x.items).filter((i) => i.type === 'source-based');
+        expect(slots.length, `${s.id} ${paper}`).toBeGreaterThan(0);
+        for (const it of slots) {
+          expect(it.chapters?.length, `${s.id} ${paper}: source-based slot is scoped`).toBeGreaterThan(0);
+          expect(it.chapters!.filter((c) => supplementary.has(c)), `${s.id} ${paper}`).toEqual([]);
+        }
+      }
+  });
+  it('catalog: a chapter override must name syllabus chapters and not overlap another override', () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'soyl-catalog-override-'));
+    const real = path.join(defaultPaths().catalogDir, 'cbse');
+    const sub = path.join('10', 'english-language-and-literature');
+    fs.mkdirSync(path.join(dir, 'cbse', sub, 'blueprints'), { recursive: true });
+    fs.copyFileSync(path.join(real, 'subjects.yaml'), path.join(dir, 'cbse', 'subjects.yaml'));
+    fs.copyFileSync(path.join(real, sub, 'syllabus.yaml'), path.join(dir, 'cbse', sub, 'syllabus.yaml'));
+    const src = fs.readFileSync(path.join(real, sub, 'blueprints', 'chapter-test-short-supplementary.yaml'), 'utf8').replace(/\r\n/g, '\n');
+    fs.writeFileSync(path.join(dir, 'cbse', sub, 'blueprints', 'a.yaml'), src.replace('literature-ch31\n', 'literature-ch31\n  - cbse-10-english-language-and-literature-ch99\n'));
+    fs.writeFileSync(path.join(dir, 'cbse', sub, 'blueprints', 'b.yaml'), src.replace('-supplementary', '-other'));
+    const errors = loadCatalog(dir).issues.filter((i) => i.severity === 'error').map((i) => `${i.file}: ${i.message}`);
+    expect(errors).toContain("cbse/10/english-language-and-literature/blueprints/a.yaml: scope: chapter cbse-10-english-language-and-literature-ch99 is not in cbse-10-english-language-and-literature's syllabus");
+    expect(errors).toContain('cbse/10/english-language-and-literature/blueprints/b.yaml: scope: chapter cbse-10-english-language-and-literature-ch23 is already overridden for chapter-test-short by cbse-10-english-language-and-literature-chapter-test-short-supplementary');
   });
   it('plans term papers for a Class 9 subject', () => {
     const { p } = testPipeline();

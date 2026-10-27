@@ -37,6 +37,7 @@ notes: >-
   SOYL default modelled on the CBSE board pattern (CONTEXT section 9: "use a generic blueprint per board and subject, stored as editable
   config"); not an official CBSE paper. Marks follow the 2026-27 Hindi A board paper's textbook section (खंड ग): 5-mark पठित गद्यांश/काव्यांश items
   with 5 MCQs (source-based), 2-mark short answers in 25-30 words and 4-mark long answers, plus 1-mark objective items. 80 minutes, as in
-  the Hindi exemplars. Built for literature chapters and matching the gold-standard exemplar
-  content-templates/exemplars/hindi-literature/cbse-10-hindi-a-ch10 item for item. The grammar chapter has its own section design, so its
+  the Hindi exemplars. Built for the क्षितिज भाग 2 chapters (ch03-ch14) and matching the gold-standard exemplar
+  content-templates/exemplars/hindi-literature/cbse-10-hindi-a-ch10 item for item. The कृतिका भाग 2 chapters (ch15-ch17) use
+  chapter-test-long-kritika.yaml instead (no passage; the board sets कृतिका only as प्रश्न 11). The grammar chapter has its own section design, so its
   tests carry blueprint_id null.
