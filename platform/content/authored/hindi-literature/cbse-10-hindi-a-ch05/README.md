@@ -39,7 +39,7 @@ This poem is harder to protect than सूरदास or तुलसी: it is
 1. **`setForbidden([...])` in `src/build.mjs`: 121 entries.** Every distinctive two-word-or-longer run of the poem as the author recalls it (including content-word pairs such as the pitcher, moonlit-night, tired-traveller and silent-sorrow phrases), and wording from the textbook introduction and exercises. The build fails on any hit; it caught "मुरझाकर गिर" in a solution during authoring.
 2. **Bigram overlap scan** against a scratch copy of the poem written from memory, **kept only in the agent's scratchpad, never committed**.
    - First build: 11 shared bigrams (32 occurrences). The real echoes were rewritten: "आते-आते" and "देखकर … जागने पर" (the dream line), "लेती थी" (the dawn line), "खाली करने वाले" (the pitcher line, 5 places), "सोई है" (the last line, 6 places), "क्या तुम" (a direct-speech rendering of the friends' question), "कंथा की", "स्मृति पाथेय", "गागर रीती" (two adjacent words in an alt text), "भी कहते", "रहते हैं".
-   - **After: 4 grammatical bigrams remain** — "जीवन की" (noun + postposition, in phrases such as "जीवन की मिठास"), "न हो", "से जीवन", "करने वाले" (in "छल करने वाले" style phrasing). None renders a line; they are listed for the reviewer.
+   - **After: 3 grammatical bigrams remain** — "जीवन की" (noun + postposition, in phrases such as "जीवन की मिठास"), "न हो", "से जीवन". None renders a line; they are listed for the reviewer. (A fourth, "करने वाले", was removed in the verifier pass.)
 3. **The pipeline's literature lint**: 0 findings after two stems that quoted SOYL sentences of 9–10 words were rephrased.
 
 **Board "पठित काव्यांश" pattern.**
@@ -77,11 +77,11 @@ This poem is harder to protect than सूरदास or तुलसी: it is
 - `npm run content -- lint --exemplars`: 0 errors and 0 warnings for this unit.
 - `npm run content -- verify --authored --board cbse --class 10 --subject hindi-a`: 0 blocking flags.
 - Exemplar Hindi validator (`--literature`): NO ERRORS, 0 warnings, 0 quoted spans ≥ 8 words.
-- Bigram overlap with the poem (scratch copy, not committed): 4 grammatical bigrams, listed above; 0 content-word pairs.
+- Bigram overlap with the poem (scratch copy, not committed): 3 grammatical bigrams, listed above; 0 content-word pairs.
 
 ## Reviewer checklist (hindi-literature, poem)
 
-- [ ] **No reproduction (critical).** With क्षितिज भाग 2 open, scan every string for any distinctive run of two or more words of the poem, and for any sentence that renders a line's frame. The four grammatical bigrams listed above are expected; anything else is a find. Add it to `setForbidden` and rebuild.
+- [ ] **No reproduction (critical).** With क्षितिज भाग 2 open, scan every string for any distinctive run of two or more words of the poem, and for any sentence that renders a line's frame. The three grammatical bigrams listed above are expected; anything else is a find. Add it to `setForbidden` and rebuild.
 - [ ] Image descriptions (भौंरा, पत्ते, आकाश, घड़ा, गुदड़ी, रास्ते का भोजन, भोर, सोई पीड़ा) are facts about the poem, not translations of lines.
 - [ ] Facts match the textbook's poet introduction (dates, education, works) and the note on हंस (1932).
 - [ ] Re-solve every item blind. Device MCQs have one defensible answer.
