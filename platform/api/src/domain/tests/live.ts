@@ -283,3 +283,81 @@ export async function liveLeaderboard(db: Database, kv: KeyValueStore, year: str
     me: mine ? { rank: mine.rank, score: mine.score, percentile: mine.total > 1 ? Math.round((1000 * (mine.total - mine.rank)) / (mine.total - 1)) / 10 : null } : null,
   };
 }
+
+/* ---------------------------------------------------------------------------------------------- */
+/* GET /v1/live-events/:id (M5)                                                                    */
+/* ---------------------------------------------------------------------------------------------- */
+
+/**
+ * One event with everything the live page needs: the phase timeline, registration window, your
+ * registration/attempt (members), and whether ranks exist yet and whether you may see them (consent,
+ * D-014). `consentGranted` is null for guests. Ranks themselves stay behind the consent-gated
+ * leaderboard route.
+ */
+export async function liveEventDetail(db: Database, year: string, now: number, userId: string | null, key: string, consentGranted: boolean | null) {
+  const { ev, test } = await eventWithTest(db, key, year);
+  const phase = livePhase(ev, now);
+  const cutoff = startCutoff(ev);
+  const latestDeadline = deadlineCap(ev);
+  const writingUntil = closesAt(ev);
+  let mine: {
+    registered: boolean;
+    attemptId: string | null;
+    attemptStatus: string | null;
+    deadlineAt: string | null;
+    canRegister: boolean;
+    canStart: boolean;
+    canResume: boolean;
+    result: { rank: number; score: number; percentile: number | null } | null;
+  } | null = null;
+  if (userId) {
+    const [[reg], [att]] = await Promise.all([
+      db
+        .select({ rank: liveRegistrations.finalRank, score: liveRegistrations.score, percentile: liveRegistrations.percentile })
+        .from(liveRegistrations)
+        .where(and(eq(liveRegistrations.liveEventId, ev.id), eq(liveRegistrations.userId, userId))),
+      db.select({ id: attempts.id, status: attempts.status, deadlineAt: attempts.deadlineAt }).from(attempts).where(and(eq(attempts.userId, userId), eq(attempts.liveEventId, ev.id))),
+    ]);
+    const writing = att?.status === 'in_progress';
+    const notStarted = !att || att.status === 'created';
+    mine = {
+      registered: !!reg,
+      attemptId: att?.id ?? null,
+      attemptStatus: att?.status ?? null,
+      deadlineAt: att?.deadlineAt?.toISOString() ?? null,
+      canRegister: !reg && (phase === 'registration_open' || phase === 'live'),
+      canStart: notStarted && phase === 'live',
+      canResume: writing && (phase === 'live' || phase === 'writing'),
+      result: phase === 'results_published' && reg?.rank ? { rank: reg.rank, score: Number(reg.score ?? 0), percentile: reg.percentile === null ? null : Number(reg.percentile) } : null,
+    };
+  }
+  const iso = (d: Date) => d.toISOString();
+  const rankStatus: 'not_started' | 'provisional' | 'final' | 'unavailable' = phase === 'cancelled' ? 'unavailable' : phase === 'results_published' ? 'final' : phase === 'upcoming' || phase === 'registration_open' ? 'not_started' : 'provisional';
+  return {
+    ...eventDto(ev, test, now, null),
+    me: mine,
+    serverNow: iso(new Date(now)),
+    lateStartMinutes: ev.lateStartMinutes,
+    /** Saves are accepted until this instant (latest deadline + grace); then the event closes. */
+    writingUntil: iso(writingUntil),
+    latestDeadlineAt: iso(latestDeadline),
+    graceSeconds: TEST_ENGINE.graceSeconds.live,
+    timeline: [
+      { phase: 'upcoming' as const, from: null, until: iso(ev.registrationOpensAt) },
+      { phase: 'registration_open' as const, from: iso(ev.registrationOpensAt), until: iso(ev.startsAt) },
+      { phase: 'live' as const, from: iso(ev.startsAt), until: iso(cutoff) },
+      { phase: 'writing' as const, from: iso(cutoff), until: iso(writingUntil) },
+      { phase: 'closed' as const, from: iso(writingUntil), until: ev.resultsPublishedAt ? iso(ev.resultsPublishedAt) : null },
+      { phase: 'results_published' as const, from: ev.resultsPublishedAt ? iso(ev.resultsPublishedAt) : null, until: null },
+    ],
+    registration: { open: phase === 'registration_open' || phase === 'live', opensAt: iso(ev.registrationOpensAt), closesAt: iso(cutoff) },
+    ranks: {
+      status: rankStatus,
+      beta: true,
+      /** The leaderboard needs consent (D-014): GET /v1/live-events/:id/leaderboard answers 403 consent_required otherwise. */
+      requiresConsent: true,
+      consentGranted,
+      canView: consentGranted === true && (rankStatus === 'provisional' || rankStatus === 'final'),
+    },
+  };
+}

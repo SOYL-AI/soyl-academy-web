@@ -96,6 +96,27 @@ describe('seed catalog', () => {
     if (ch.length) expect(ch.every((c) => c.key.startsWith('cbse-10-science-ch') && c.academicYear === '2026-27')).toBe(true);
   });
 
+  it('stores board_assessed (formative / school-only) for chapters and topics exactly as the files say (M5)', async () => {
+    const falseIn = { chapters: new Set<string>(), topics: new Set<string>() };
+    for (const f of walk(DEFAULT_CATALOG_DIR, 'syllabus.yaml')) {
+      const y = yaml.load(fs.readFileSync(f, 'utf8')) as { chapters: { id: string; board_assessed?: boolean; topics: { id: string; board_assessed?: boolean }[] }[] };
+      for (const c of y.chapters) {
+        if (c.board_assessed === false) falseIn.chapters.add(c.id);
+        for (const tp of c.topics) if (tp.board_assessed === false) falseIn.topics.add(tp.id);
+      }
+    }
+    expect(falseIn.chapters.size).toBeGreaterThan(0);
+    expect(falseIn.topics.size).toBeGreaterThan(0);
+    const chRows = await t.db.select({ key: chapters.key }).from(chapters).where(eq(chapters.boardAssessed, false));
+    const tpRows = await t.db.select({ key: topics.key }).from(topics).where(eq(topics.boardAssessed, false));
+    expect(new Set(chRows.map((r) => r.key))).toEqual(falseIn.chapters);
+    expect(new Set(tpRows.map((r) => r.key))).toEqual(falseIn.topics);
+    // Known examples: CBSE 10 Science ch12 topic 6 (formative only) and the periodic-only SST history chapter.
+    expect(falseIn.topics.has('cbse-10-science-ch12-t06')).toBe(true);
+    const [sst] = await t.db.select().from(chapters).where(sql`${chapters.title} LIKE 'The Age of Industrialisation%'`);
+    expect(sst).toMatchObject({ boardAssessed: false });
+  });
+
   it('fails without writing anything when a catalog file is invalid', async () => {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'soyl-bad-catalog-'));
     try {

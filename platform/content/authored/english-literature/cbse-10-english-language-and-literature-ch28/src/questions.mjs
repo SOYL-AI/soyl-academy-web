@@ -22,7 +22,7 @@ const LONG_SCHEME = [['Content: relevant points from the account, accurately use
 
 // ================================================================ commentary passages (blueprint Section A slots)
 Q('src_childhood', source({
-  t: [1, 2], d: 2, c: 'understanding', origin: 'soyl-commentary',
+  t: [1, 2, 4], d: 2, c: 'understanding', origin: 'soyl-commentary',
   stem: SRC_STEM,
   passage: "Richard Ebright's story begins with a boy who could not stop collecting. Coins, fossils, stones and, above all, butterflies filled his days, and he wanted to know everything about each find. He was an only child, and after his father died when Richard was still in primary school, his mother became his closest companion and his most important teacher. She took him on trips, filled the house with instruments for looking closely at the world, and made sure his questions never went unanswered. Peterson's account makes clear that the scientist was not born ready-made. He was shaped, day by day, by an eager mind and a parent who fed it.",
   parts: [
@@ -30,7 +30,7 @@ Q('src_childhood', source({
     child('b', fb({ t: 1, d: 2, c: 'recall', stem: 'After Richard Ebright’s father died, his ___ became his closest companion and teacher.', acc: [['mother', 'mom', 'mum']], sol: 'His **mother** guided and encouraged him.' })),
     child('c', mcq({ t: 2, d: 2, c: 'understanding', stem: 'How did Ebright’s mother encourage his interests?', opts: ['She took him on trips and bought him instruments for close study.', 'She sent him to a boarding school abroad.', 'She told him to stop collecting and study harder.', 'She hired a famous scientist as his tutor.'], sol: 'She gave him outings and equipment and answered his questions.' })),
     child('d', short({ t: 2, d: 3, c: 'analysis', marks: 1, stem: 'What does the commentary mean when it says the scientist was not born ready-made?', model: 'His success grew over years from his own curiosity and his mother’s steady support; it was not simply a gift at birth.', sol: 'Talent was developed through effort and encouragement.', scheme: [['Success was built through curiosity, effort and support, not inborn alone', 1]] })),
-    child('e', mcq({ t: 2, d: 3, c: 'analysis', stem: 'Which quality of the young Ebright does this passage stress most?', opts: ['curiosity', 'shyness', 'carelessness', 'stubborn laziness'], sol: 'He wanted to know everything about each thing he found.' })),
+    child('e', mcq({ t: 4, d: 3, c: 'analysis', stem: 'Which quality of the young Ebright does this passage stress most?', opts: ['curiosity', 'shyness', 'carelessness', 'stubborn laziness'], sol: 'He wanted to know everything about each thing he found.' })),
   ],
   sol: 'Parts (a)–(c) recall his childhood; (d) and (e) interpret it.',
 }));
@@ -48,7 +48,7 @@ Q('src_monarch_book', source({
   sol: 'Link the gift (a) to the change in his hobby (c, d).',
 }));
 Q('src_fair', source({
-  t: [1, 2], d: 3, c: 'analysis', origin: 'soyl-commentary',
+  t: [1, 2, 4], d: 3, c: 'analysis', origin: 'soyl-commentary',
   stem: SRC_STEM,
   passage: "Losing taught Ebright more than winning could have. In seventh grade he entered a county science fair and came away with nothing. Looking at the projects that succeeded, he saw what they had that his lacked: their makers had carried out real experiments instead of simply arranging attractive exhibits. Many children would have given up. Ebright drew a lesson and changed his method. From then on his projects asked a question and tried to answer it by testing, even when the test failed to produce a clear result. Failure, for him, was information.",
   parts: [
@@ -56,7 +56,7 @@ Q('src_fair', source({
     child('b', mcq({ t: 1, d: 2, c: 'understanding', stem: 'What did Ebright notice about the winning projects at that fair?', opts: ['Their makers had done real experiments.', 'They had the most colourful posters.', 'They were made by older students.', 'They were about butterflies.'], sol: 'The winners had experimented, not just displayed.' })),
     child('c', fb({ t: 2, d: 2, c: 'understanding', stem: 'After the fair, Ebright’s projects tried to answer a question by carrying out real ___.', acc: [['experiments', 'tests', 'experimentation']], sol: 'He now built his projects around real **experiments**.' })),
     child('d', short({ t: 2, d: 3, c: 'analysis', marks: 1, stem: 'What does the commentary mean by *failure, for him, was information*?', model: 'Each defeat or failed test told Ebright what to change, so he used it to improve instead of feeling beaten.', sol: 'He learnt from failure rather than giving up.', scheme: [['He treated failure as a lesson to improve', 1]] })),
-    child('e', mcq({ t: 2, d: 3, c: 'evaluation', stem: 'Which quality does Ebright show in his response to losing at the fair?', opts: ['persistence and a willingness to learn', 'jealousy of the winners', 'loss of interest in science', 'anger at the judges'], sol: 'He studied why he lost and changed his approach.' })),
+    child('e', mcq({ t: 4, d: 3, c: 'evaluation', stem: 'Which quality does Ebright show in his response to losing at the fair?', opts: ['persistence and a willingness to learn', 'jealousy of the winners', 'loss of interest in science', 'anger at the judges'], sol: 'He studied why he lost and changed his approach.' })),
   ],
   sol: 'The turning point: from displays to experiments.',
 }));
@@ -74,14 +74,14 @@ Q('src_gold_spots', source({
   sol: 'Track question → experiment → discovery → reward.',
 }));
 Q('src_qualities', source({
-  t: [2, 3], d: 3, c: 'evaluation', origin: 'soyl-commentary',
+  t: [4, 3], d: 3, c: 'evaluation', origin: 'soyl-commentary',
   stem: SRC_STEM,
   passage: "Peterson suggests that Ebright's success rested on a combination of qualities. He had a sharp intellect, and he never lost the curiosity of the boy who chased butterflies. Just as important, he competed to learn and to do good work, not merely to collect trophies. He was no narrow specialist, either: he did well at debating and public speaking and enjoyed canoeing and photography. Behind all of this stood a mother who supported him without pushing him. The account invites young readers to see that ability counts for little unless it is joined by curiosity, effort and a healthy reason for working hard.",
   parts: [
-    child('a', mcq({ t: 2, d: 2, c: 'understanding', stem: 'According to the commentary, why did Ebright compete in science?', opts: ['to learn and to do good work', 'only to win trophies', 'to please his teachers', 'to become rich quickly'], sol: 'He competed for learning and good work, not just prizes.' })),
-    child('b', mcq({ t: 2, d: 2, c: 'recall', stem: 'Which of these interests did Ebright have besides science?', opts: ['debating and photography', 'football and painting', 'cooking and chess', 'singing and cricket'], sol: 'He debated, spoke in public, canoed and took photographs.' })),
-    child('c', fb({ t: 2, d: 2, c: 'understanding', stem: 'Ebright kept the ___ of the boy who chased butterflies throughout his career.', acc: [['curiosity', 'inquisitiveness']], sol: 'His **curiosity** never faded.' })),
-    child('d', short({ t: 2, d: 4, c: 'evaluation', marks: 1, stem: 'Which of Ebright’s qualities do you think mattered most to his success? Give one reason.', model: 'Curiosity, because it made him ask questions others ignored, such as what the gold spots were for.', sol: 'Any quality, supported: curiosity, intellect, persistence, the right motive, his mother’s support.', scheme: [['A quality with one supporting reason from the account', 1]] })),
+    child('a', mcq({ t: 4, d: 2, c: 'understanding', stem: 'According to the commentary, why did Ebright compete in science?', opts: ['to learn and to do good work', 'only to win trophies', 'to please his teachers', 'to become rich quickly'], sol: 'He competed for learning and good work, not just prizes.' })),
+    child('b', mcq({ t: 4, d: 2, c: 'recall', stem: 'Which of these interests did Ebright have besides science?', opts: ['debating and photography', 'football and painting', 'cooking and chess', 'singing and cricket'], sol: 'He debated, spoke in public, canoed and took photographs.' })),
+    child('c', fb({ t: 4, d: 2, c: 'understanding', stem: 'Ebright kept the ___ of the boy who chased butterflies throughout his career.', acc: [['curiosity', 'inquisitiveness']], sol: 'His **curiosity** never faded.' })),
+    child('d', short({ t: 4, d: 4, c: 'evaluation', marks: 1, stem: 'Which of Ebright’s qualities do you think mattered most to his success? Give one reason.', model: 'Curiosity, because it made him ask questions others ignored, such as what the gold spots were for.', sol: 'Any quality, supported: curiosity, intellect, persistence, the right motive, his mother’s support.', scheme: [['A quality with one supporting reason from the account', 1]] })),
     child('e', mcq({ t: 3, d: 3, c: 'analysis', stem: 'Why does the commentary mention Ebright’s debating, canoeing and photography?', opts: ['to show he was a well-rounded person, not a narrow specialist', 'to show that he neglected science', 'to suggest he wanted a career in sport', 'to explain why he lost the fair'], sol: 'His wide interests show an all-round personality.' })),
   ],
   sol: 'Part (d) has no single right answer; reward a supported view.',
@@ -108,7 +108,7 @@ Q('sa_fair_lesson', short({
   sol: 'What the winners did differently + the lesson about real science + how he changed.',
 }));
 Q('sa_curiosity', short({
-  ...SA3, t: 2, d: 3, c: 'analysis',
+  ...SA3, t: 4, d: 3, c: 'analysis',
   stem: 'Show how curiosity drives Richard Ebright’s work, from childhood to college. Answer in 40–50 words.',
   model: 'As a boy, Ebright wanted to know about every butterfly, stone and fossil he found. Curiosity led him to tag monarchs, to ask why viceroys resemble them, and to investigate the gold spots on the pupa. At college it led him to questions about how cells use DNA.',
   sol: 'Two or three stages showing curiosity (collecting, tagging, the gold spots, the cell theory).',
@@ -126,13 +126,13 @@ Q('sa_viceroy', short({
   sol: 'The theory (resemblance protects viceroys because birds avoid monarchs) + what it shows (scientific method).',
 }));
 Q('sa_all_rounder', short({
-  ...SA3, t: 2, d: 3, c: 'analysis',
+  ...SA3, t: 4, d: 3, c: 'analysis',
   stem: 'Richard Ebright was not interested only in science. Do you agree? Answer in 40–50 words.',
   model: 'Yes. Besides his research, Ebright did well in debating and public speaking, and he enjoyed outdoor activities such as canoeing, as well as photography. These varied interests show a balanced, well-rounded person who developed many abilities, not a student who lived only inside a laboratory.',
   sol: 'A stand + two or three non-science interests + what this shows about him.',
 }));
 Q('sa_failure', short({
-  ...SA3, t: 2, d: 3, c: 'analysis',
+  ...SA3, t: 4, d: 3, c: 'analysis',
   stem: 'How did Richard Ebright respond to failure? Give two examples. Answer in 40–50 words.',
   model: 'Ebright treated failure as a lesson. After losing at the county fair, he switched from displays to real experiments. When his project on a disease killing monarch caterpillars produced no clear result, he did not quit but moved on to his next question. Each setback improved him.',
   sol: 'Two examples (the lost fair, the unsuccessful disease project, tedious tagging) + his response.',
@@ -216,7 +216,7 @@ Q('sb_lesson_readers', short({
 // ================================================================ long answers, 6 marks (100–120 words) — the board's long-answer form
 const LA = { marks: 6, wl: [100, 120], scheme: LONG_SCHEME, time: 720 };
 Q('la_ebright_sketch', long({
-  ...LA, t: [3, 2], d: 3, c: 'analysis',
+  ...LA, t: [3, 4], d: 3, c: 'analysis',
   stem: 'Write a character sketch of Richard Ebright as Peterson presents him in *The Making of a Scientist*. Answer in 100–120 words.',
   model: 'Richard Ebright is above all curious. As a boy he collected butterflies, coins and fossils and wanted to know everything about them. He is persistent: losing at a county science fair did not discourage him but taught him to experiment, and a failed project on a caterpillar disease only led him to the next question. He is intelligent and original, discovering that the gold spots on a monarch pupa produce a vital hormone. He competes to learn rather than for trophies. He is also well-rounded, enjoying debating, public speaking, canoeing and photography. Supported by a devoted mother, he grew from a young collector into a serious scientist with ideas about how cells work.',
   sol: 'Traits with evidence: curious, persistent, intelligent and original, motivated by learning, well-rounded. Mention his mother’s support and end with a judgement.',
@@ -246,7 +246,7 @@ Q('la_letter_urquhart', long({
   sol: 'Letter format (salutation, body, close). Content consistent with the account: the book, raising and tagging, the purpose of the research, a request for further questions. Polite, eager tone.',
 }));
 Q('la_qualities', long({
-  ...LA, t: [3, 2], d: 4, c: 'analysis',
+  ...LA, t: [3, 4], d: 4, c: 'analysis',
   stem: 'What qualities, according to *The Making of a Scientist*, does a person need to become a good scientist? Discuss with examples from Ebright’s life. Answer in 100–120 words.',
   model: 'The account suggests that a scientist needs several qualities together. First is a strong mind: Ebright showed real originality when he worked out what the gold spots on a monarch pupa do. Second is curiosity, which made him collect, tag, question and test from childhood onwards. Third is persistence, seen when he learnt from losing at a county fair and from a project that gave no result. Fourth is the right motive: he competed to understand, not just to win prizes. Finally, a wide range of interests, like his debating and photography, made him a balanced thinker. Ebright’s life shows that intelligence alone is not enough; character turns ability into achievement.',
   sol: 'Qualities with examples: intellect, curiosity, persistence, right motive, breadth of interests. Conclude with the overall idea.',
@@ -277,7 +277,7 @@ Q('mc_book', mcq({ t: 1, d: 1, c: 'recall', stem: 'Which book did Ebright’s mo
 Q('mc_fair_lost', mcq({ t: 1, d: 2, c: 'understanding', stem: 'Why did Ebright lose at the county science fair in seventh grade, according to his own later realisation?', opts: ['He had made a display instead of doing a real experiment.', 'He arrived late for the judging.', 'His project was about the wrong subject.', 'The judges were unfair to younger students.'], sol: 'The winners had experimented; he had only displayed.' }));
 Q('mc_hormone', mcq({ t: 1, d: 2, c: 'recall', stem: 'What did Ebright show the gold spots on a monarch pupa produce?', opts: ['a hormone needed for full development', 'a poison that keeps birds away', 'a colour that attracts mates', 'a scent that guides migration'], sol: 'They produce a hormone the butterfly needs to develop fully.' }));
 Q('mc_viceroy', mcq({ t: 1, d: 3, c: 'understanding', stem: 'According to the theory Ebright tested, why might viceroy butterflies benefit from looking like monarchs?', opts: ['Birds avoid monarchs, so they may avoid viceroys too.', 'Monarchs share their food with viceroys.', 'Looking alike helps them migrate together.', 'Monarchs protect viceroys from insects.'], sol: 'Birds dislike the taste of monarchs; resemblance protects viceroys.' }));
-Q('mc_motive', mcq({ t: 2, d: 3, c: 'analysis', stem: 'What drove Ebright to keep entering science fairs after his first defeat?', opts: ['a wish to learn and do real science', 'a need for prize money', 'his teacher’s threats', 'jealousy of his classmates'], sol: 'He competed for learning and good work.' }));
+Q('mc_motive', mcq({ t: 4, d: 3, c: 'analysis', stem: 'What drove Ebright to keep entering science fairs after his first defeat?', opts: ['a wish to learn and do real science', 'a need for prize money', 'his teacher’s threats', 'jealousy of his classmates'], sol: 'He competed for learning and good work.' }));
 Q('mc_message', mcq({ t: 2, d: 3, c: 'evaluation', stem: 'Which message does *The Making of a Scientist* most strongly convey?', opts: ['Curiosity, support and persistence together build achievement.', 'Scientists are born, not made.', 'Hobbies distract children from real study.', 'Winning prizes is the main aim of science.'], sol: 'Ebright’s success grew from curiosity, his mother’s support and steady effort.' }));
 Q('mc_apply', mcq({ t: [2, 3], d: 3, c: 'application', stem: 'A student’s first robotics entry loses at a school fair. Which response follows Ebright’s example?', opts: ['studying what the winners did and building a real test into next year’s project', 'never entering a fair again', 'complaining that the judges were biased', 'copying a winning project exactly'], sol: 'Ebright learnt from the winners and changed his method.' }));
 Q('mc_mother_trait', mcq({ t: 2, d: 2, c: 'understanding', fixed: true, key: 'c', stem: 'Which word best describes Ebright’s mother in the account?', opts: ['strict', 'indifferent', 'encouraging', 'anxious'], sol: 'She supported his interests with books, trips and equipment.' }));
@@ -296,7 +296,7 @@ Q('ar_gave_up', ar({ t: 2, d: 3, c: 'understanding', a: 'Ebright gave up science
 
 Q('tf_father', tf({ t: 1, d: 1, c: 'recall', stem: 'True or false: Richard Ebright’s father guided his science projects throughout high school.', ans: false, sol: 'His father died when he was young; his mother guided him.' }));
 Q('tf_tagging_dull', tf({ t: 1, d: 2, c: 'understanding', stem: 'True or false: Ebright eventually found tagging monarch butterflies tedious.', ans: true, sol: 'The repetitive work grew dull, and he turned to new questions.' }));
-Q('tf_prizes_only', tf({ t: 2, d: 2, c: 'understanding', stem: 'True or false: according to Peterson, Ebright competed in science fairs only to win prizes.', ans: false, sol: 'He competed to learn and to do good work.' }));
+Q('tf_prizes_only', tf({ t: 4, d: 2, c: 'understanding', stem: 'True or false: according to Peterson, Ebright competed in science fairs only to win prizes.', ans: false, sol: 'He competed to learn and to do good work.' }));
 Q('tf_lab', tf({ t: 1, d: 2, c: 'recall', stem: 'True or false: Ebright’s gold-spot research earned him the chance to work in a research laboratory while still at school.', ans: true, sol: 'His success led to laboratory work as a student.' }));
 
 Q('ord_life', ord({
@@ -325,7 +325,7 @@ Q('mt_words', match({
   sol: 'Key words for discussing this chapter.',
 }));
 Q('mt_traits', match({
-  t: 2, d: 3, c: 'analysis', marks: 2,
+  t: 4, d: 3, c: 'analysis', marks: 2,
   stem: 'Match each episode in Ebright’s life with the quality it shows.',
   pairs: [['Collecting everything he found as a child', 'curiosity'], ['Changing his approach after losing a fair', 'persistence'], ['Asking what the gold spots were for', 'original thinking'], ['Debating, canoeing and photography', 'all-round interests']],
   sol: 'Each episode and the quality it reveals.',

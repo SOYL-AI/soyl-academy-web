@@ -6,17 +6,30 @@
  * The comment is free text from a child: it is normalised (NFC), stripped of control, zero-width and
  * bidi-override characters, capped at 1000 characters, and stored as plain text. The admin UI renders
  * it as text, never as HTML or Markdown (WEB-7). Rate limits: reports.user, reports.ip.
+ *
+ * "Report this AI answer" (AC-15, backend-api M5): `contentType: 'ai_answer'` reports an assistant
+ * message of the caller's own conversation (members only; anyone else's conversation is 404). The
+ * message is named by `messageId` (from GET /v1/ai/conversations/:id) or by the stream's `requestId`
+ * (the SSE `meta` event), so the web can report straight after an answer. The row stores the message id
+ * (`content_id`) and `conv:<conversation id>` (`item_ref`), never the message text; the message itself
+ * is purged with the conversation after 30 days (PII.md). Reporting the same answer again returns the
+ * open report. `inappropriate` reports also raise an ops alert (a log line without content), as unsafe
+ * output is a moderation incident.
  */
 import { and, desc, eq, lt, or, sql, type SQL } from 'drizzle-orm';
 import type { AnyPgColumn } from 'drizzle-orm/pg-core';
-import { contentReports, flashcardSets, notes, questions, type Database } from '@soyl/db';
+import { aiConversations, aiMessages, aiRequests, chapters, contentReports, flashcardSets, notes, questions, type Database } from '@soyl/db';
 import { CONTENT_REPORTS } from '@soyl/shared/config/security';
 import type { Clock } from '../clock';
 import { ApiProblem } from '../errors';
 import { deckParts, visible, type ChapterRef, type ReleaseItemType } from './content';
 
-export const REPORT_CONTENT_TYPES = ['deck', 'notes', 'flashcard_set', 'question'] as const;
+/** What students report: content items (with a chapter) and AI answers. */
+export const REPORT_CONTENT_TYPES = ['deck', 'notes', 'flashcard_set', 'question', 'ai_answer'] as const;
 export type ReportContentType = (typeof REPORT_CONTENT_TYPES)[number];
+export type ContentReportType = Exclude<ReportContentType, 'ai_answer'>;
+/** Reasons that make sense for an AI answer (audio and typo belong to authored content). */
+export const AI_REPORT_REASONS = ['wrong_answer', 'wrong_content', 'inappropriate', 'rendering', 'other'] as const;
 
 /** NFC; drops C0/C1 controls except newline and tab, zero-width and bidi controls; at most 2 blank lines in a row. */
 export function sanitiseComment(raw: string | undefined | null): string | null {
@@ -37,7 +50,7 @@ export function sanitiseComment(raw: string | undefined | null): string | null {
 }
 
 export interface ReportInput {
-  contentType: ReportContentType;
+  contentType: ContentReportType;
   part?: number;
   questionId?: string;
   itemRef?: string;
@@ -77,6 +90,69 @@ async function resolveContentId(db: Database, chapter: ChapterRef, year: string,
     }
   }
   throw new ApiProblem('not_found');
+}
+
+export interface AiReportInput {
+  conversationId: string;
+  messageId?: string;
+  requestId?: string;
+  reason: (typeof AI_REPORT_REASONS)[number];
+  comment?: string;
+}
+
+/** The assistant message being reported, in the caller's own conversation; 404 otherwise. */
+async function resolveAiAnswer(db: Database, userId: string, input: AiReportInput) {
+  const [conv] = await db
+    .select({ id: aiConversations.id, chapterKey: chapters.key })
+    .from(aiConversations)
+    .leftJoin(chapters, eq(chapters.id, aiConversations.chapterId))
+    .where(and(eq(aiConversations.id, input.conversationId), eq(aiConversations.userId, userId)));
+  if (!conv) throw new ApiProblem('not_found');
+  const target = input.messageId ? eq(aiMessages.id, input.messageId) : eq(aiRequests.requestId, input.requestId!);
+  const [msg] = await db
+    .select({ id: aiMessages.id })
+    .from(aiMessages)
+    .leftJoin(aiRequests, eq(aiRequests.id, aiMessages.aiRequestId))
+    .where(and(eq(aiMessages.conversationId, conv.id), eq(aiMessages.role, 'assistant'), target))
+    .orderBy(desc(aiMessages.createdAt))
+    .limit(1);
+  if (!msg) throw new ApiProblem('not_found');
+  return { messageId: msg.id, conversationId: conv.id, unit: conv.chapterKey ?? 'ai' };
+}
+
+export interface ReportLog {
+  warn(obj: object, msg: string): void;
+}
+
+/** POST /v1/content-reports with contentType ai_answer (members only). Idempotent per answer while open. */
+export async function createAiAnswerReport(db: Database, clock: Clock, log: ReportLog, userId: string, input: AiReportInput) {
+  if (!input.messageId === !input.requestId)
+    throw new ApiProblem('validation_failed', { errors: [{ path: 'body.messageId', message: 'Give exactly one of messageId or requestId for an AI answer.' }] });
+  const message = sanitiseComment(input.comment);
+  const target = await resolveAiAnswer(db, userId, input);
+  const [open] = await db
+    .select({ id: contentReports.id, createdAt: contentReports.createdAt })
+    .from(contentReports)
+    .where(and(eq(contentReports.userId, userId), eq(contentReports.contentType, 'ai_answer'), eq(contentReports.contentId, target.messageId), eq(contentReports.status, 'open')));
+  if (open) return { receipt: { id: open.id, status: 'open' as const, createdAt: open.createdAt.toISOString() }, created: false };
+  const now = new Date(clock.now());
+  const [row] = await db
+    .insert(contentReports)
+    .values({
+      userId,
+      contentType: 'ai_answer',
+      contentId: target.messageId,
+      unit: target.unit,
+      itemRef: `conv:${target.conversationId}`,
+      category: input.reason,
+      message,
+      createdAt: now,
+      updatedAt: now,
+    })
+    .returning({ id: contentReports.id, createdAt: contentReports.createdAt });
+  if (input.reason === 'inappropriate')
+    log.warn({ alert: true, alertKind: 'ai_answer_reported_inappropriate', reportId: row!.id, messageId: target.messageId }, 'a student reported an AI answer as inappropriate (review queue)');
+  return { receipt: { id: row!.id, status: 'open' as const, createdAt: row!.createdAt.toISOString() }, created: true };
 }
 
 export async function createReport(db: Database, clock: Clock, year: string, userId: string | null, chapter: ChapterRef, input: ReportInput) {

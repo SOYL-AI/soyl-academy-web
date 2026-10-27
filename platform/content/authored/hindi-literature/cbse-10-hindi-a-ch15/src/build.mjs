@@ -335,28 +335,28 @@ const F = cards([
 ]);
 
 // ---------------------------------------------------------------- tests
+// कृतिका blueprints (catalog chapter override, 2026-10-27): no passage section; the board sets कृतिका only as
+// प्रश्न 11 (three questions, attempt two, 50–60 words, 4 marks each).
 const T_SHORT = test({
   kind: 'short',
   title: 'अध्याय परीक्षा (लघु) — माता का अँचल',
   duration: 40,
-  blueprint: 'cbse-10-hindi-a-chapter-test-short',
+  blueprint: 'cbse-10-hindi-a-chapter-test-short-kritika',
   sections: [
-    { id: 'A', title: 'खंड क — प्रसंग-आधारित अनुच्छेद (5 अंक)', instr: 'अनुच्छेद पढ़कर सभी प्रश्नों के सही विकल्प चुनिए। (अनुच्छेद SOYL की टिप्पणी है; मूल पाठ कृतिका भाग 2 में पढ़ें।)', items: ['src_khilana'] },
-    { id: 'B', title: 'खंड ख — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_source', 'b_tilak', 'b_wrestle', 'b_moosan', 'm_lang'] },
-    { id: 'C', title: 'खंड ग — लघु उत्तरीय प्रश्न (2 अंक, 25–30 शब्द)', instr: 'चार में से किन्हीं तीन प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 3, keys: ['b_short_morning', 'b_short_feed', 'c_short_bholanath', 'm_short_style'] }] },
-    { id: 'D', title: 'खंड घ — दीर्घ उत्तरीय प्रश्न (4 अंक, 50–60 शब्द)', instr: 'दो में से कोई एक प्रश्न कीजिए।', items: [{ attempt: 1, keys: ['l_babuji', 'l_diary'] }] },
+    { id: 'A', title: 'खंड क — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_source', 'b_tilak', 'b_wrestle', 'b_moosan', 'm_lang', 'm_central'] },
+    { id: 'B', title: 'खंड ख — लघु उत्तरीय प्रश्न (2 अंक, 25–30 शब्द)', instr: 'चार में से किन्हीं तीन प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 3, keys: ['b_short_morning', 'b_short_feed', 'c_short_bholanath', 'm_short_style'] }] },
+    { id: 'C', title: 'खंड ग — कृतिका पर आधारित प्रश्न (4 अंक, 50–60 शब्द)', instr: 'तीन में से किन्हीं दो प्रश्नों के उत्तर दीजिए। (बोर्ड परीक्षा का प्रश्न 11 इसी रूप में आता है।)', items: [{ attempt: 2, keys: ['l_babuji', 'l_diary', 'l_maiyan'] }] },
   ],
 });
 const T_LONG = test({
   kind: 'long',
   title: 'अध्याय परीक्षा (दीर्घ) — माता का अँचल',
   duration: 80,
-  blueprint: 'cbse-10-hindi-a-chapter-test-long',
+  blueprint: 'cbse-10-hindi-a-chapter-test-long-kritika',
   sections: [
-    { id: 'A', title: 'खंड क — प्रसंग-आधारित अनुच्छेद (5 अंक प्रत्येक)', instr: 'दोनों अनुच्छेद पढ़कर सभी प्रश्नों के सही विकल्प चुनिए। (अनुच्छेद SOYL की टिप्पणियाँ हैं।)', items: ['src_bhoj', 'src_sankat'] },
-    { id: 'B', title: 'खंड ख — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_life', 'b_name', 'b_ramnaam', 'b_plead', 'c_maiyan', 'm_title', 'b_ar_mother', 'm_ar_title'] },
-    { id: 'C', title: 'खंड ग — लघु उत्तरीय प्रश्न (2 अंक, 25–30 शब्द)', instr: 'छह में से किन्हीं पाँच प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 5, keys: ['b_short_school', 'b_short_snake', 'c_short_maiyan', 'm_short_today', 'm_short_title', 'm_short_love'] }] },
-    { id: 'D', title: 'खंड घ — दीर्घ उत्तरीय प्रश्न (4 अंक, 50–60 शब्द)', instr: 'चार में से किन्हीं तीन प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 3, keys: ['l_why_mother', 'l_vatsalya', 'l_games', 'l_title'] }] },
+    { id: 'A', title: 'खंड क — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_life', 'b_name', 'b_ramnaam', 'b_plead', 'c_maiyan', 'm_title', 'c_bholanath', 'm_humor', 'b_ar_mother', 'm_ar_title', 'c_ar_pita', 'b_ar_wrestle'] },
+    { id: 'B', title: 'खंड ख — लघु उत्तरीय प्रश्न (2 अंक, 25–30 शब्द)', instr: 'दो समूह; प्रत्येक समूह के चार में से किन्हीं तीन प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 3, keys: ['b_short_school', 'b_short_snake', 'c_short_maiyan', 'c_short_friends'] }, { attempt: 3, keys: ['m_short_today', 'm_short_title', 'm_short_love', 'a_short_author'] }] },
+    { id: 'C', title: 'खंड ग — कृतिका पर आधारित प्रश्न (4 अंक, 50–60 शब्द)', instr: 'दो समूह; प्रत्येक समूह के तीन में से किन्हीं दो प्रश्नों के उत्तर दीजिए। (बोर्ड परीक्षा का प्रश्न 11 इसी रूप में आता है।)', items: [{ attempt: 2, keys: ['l_why_mother', 'l_vatsalya', 'l_friendship'] }, { attempt: 2, keys: ['l_games', 'l_title', 'l_village'] }] },
   ],
 });
 

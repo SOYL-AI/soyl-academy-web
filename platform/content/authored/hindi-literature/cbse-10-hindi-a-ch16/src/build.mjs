@@ -331,28 +331,28 @@ const F = cards([
 ]);
 
 // ---------------------------------------------------------------- tests
+// कृतिका blueprints (catalog chapter override, 2026-10-27): no passage section; the board sets कृतिका only as
+// प्रश्न 11 (three questions, attempt two, 50–60 words, 4 marks each).
 const T_SHORT = test({
   kind: 'short',
   title: 'अध्याय परीक्षा (लघु) — साना-साना हाथ जोड़ि',
   duration: 40,
-  blueprint: 'cbse-10-hindi-a-chapter-test-short',
+  blueprint: 'cbse-10-hindi-a-chapter-test-short-kritika',
   sections: [
-    { id: 'A', title: 'खंड क — प्रसंग-आधारित अनुच्छेद (5 अंक)', instr: 'अनुच्छेद पढ़कर सभी प्रश्नों के सही विकल्प चुनिए। (अनुच्छेद SOYL की टिप्पणी है; मूल पाठ कृतिका भाग 2 में पढ़ें।)', items: ['src_pataka'] },
-    { id: 'B', title: 'खंड ख — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_genre', 'b_guide', 'b_white_flag', 'b_katao_name', 'm_lang'] },
-    { id: 'C', title: 'खंड ग — लघु उत्तरीय प्रश्न (2 अंक, 25–30 शब्द)', instr: 'चार में से किन्हीं तीन प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 3, keys: ['b_short_night', 'b_short_flags', 'b_short_children', 'm_short_title'] }] },
-    { id: 'D', title: 'खंड घ — दीर्घ उत्तरीय प्रश्न (4 अंक, 50–60 शब्द)', instr: 'दो में से कोई एक प्रश्न कीजिए।', items: [{ attempt: 1, keys: ['l_jiten', 'l_himalaya'] }] },
+    { id: 'A', title: 'खंड क — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_genre', 'b_guide', 'b_white_flag', 'b_katao_name', 'm_lang', 'm_central'] },
+    { id: 'B', title: 'खंड ख — लघु उत्तरीय प्रश्न (2 अंक, 25–30 शब्द)', instr: 'चार में से किन्हीं तीन प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 3, keys: ['b_short_night', 'b_short_flags', 'b_short_children', 'm_short_title'] }] },
+    { id: 'C', title: 'खंड ग — कृतिका पर आधारित प्रश्न (4 अंक, 50–60 शब्द)', instr: 'तीन में से किन्हीं दो प्रश्नों के उत्तर दीजिए। (बोर्ड परीक्षा का प्रश्न 11 इसी रूप में आता है।)', items: [{ attempt: 2, keys: ['l_jiten', 'l_himalaya', 'l_katao'] }] },
   ],
 });
 const T_LONG = test({
   kind: 'long',
   title: 'अध्याय परीक्षा (दीर्घ) — साना-साना हाथ जोड़ि',
   duration: 80,
-  blueprint: 'cbse-10-hindi-a-chapter-test-long',
+  blueprint: 'cbse-10-hindi-a-chapter-test-long-kritika',
   sections: [
-    { id: 'A', title: 'खंड क — प्रसंग-आधारित अनुच्छेद (5 अंक प्रत्येक)', instr: 'दोनों अनुच्छेद पढ़कर सभी प्रश्नों के सही विकल्प चुनिए। (अनुच्छेद SOYL की टिप्पणियाँ हैं।)', items: ['src_shram', 'src_katao'] },
-    { id: 'B', title: 'खंड ख — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_life', 'b_dest', 'b_wheel_belief', 'b_women_back', 'e_snow_reason', 'm_contrast', 'b_ar_wheel', 'e_ar_katao'] },
-    { id: 'C', title: 'खंड ग — लघु उत्तरीय प्रश्न (2 अंक, 25–30 शब्द)', instr: 'छह में से किन्हीं पाँच प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 5, keys: ['b_short_wheel', 'b_short_women', 'm_short_contrast', 'e_short_snow', 'e_short_water', 'm_short_guide'] }] },
-    { id: 'D', title: 'खंड घ — दीर्घ उत्तरीय प्रश्न (4 अंक, 50–60 शब्द)', instr: 'चार में से किन्हीं तीन प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 3, keys: ['l_labour', 'l_environment', 'l_soldiers', 'l_contrast'] }] },
+    { id: 'A', title: 'खंड क — वस्तुनिष्ठ प्रश्न (1 अंक)', instr: 'सभी प्रश्न अनिवार्य हैं।', items: ['a_life', 'b_dest', 'b_wheel_belief', 'b_women_back', 'e_snow_reason', 'm_contrast', 'b_kanchen', 'b_waterfall', 'b_ar_wheel', 'e_ar_katao', 'b_ar_flag', 'm_ar_soldier'] },
+    { id: 'B', title: 'खंड ख — लघु उत्तरीय प्रश्न (2 अंक, 25–30 शब्द)', instr: 'दो समूह; प्रत्येक समूह के चार में से किन्हीं तीन प्रश्नों के उत्तर दीजिए।', items: [{ attempt: 3, keys: ['b_short_wheel', 'b_short_women', 'm_short_contrast', 'a_short_author'] }, { attempt: 3, keys: ['e_short_snow', 'e_short_water', 'm_short_guide', 'e_short_shops'] }] },
+    { id: 'C', title: 'खंड ग — कृतिका पर आधारित प्रश्न (4 अंक, 50–60 शब्द)', instr: 'दो समूह; प्रत्येक समूह के तीन में से किन्हीं दो प्रश्नों के उत्तर दीजिए। (बोर्ड परीक्षा का प्रश्न 11 इसी रूप में आता है।)', items: [{ attempt: 2, keys: ['l_labour', 'l_contrast', 'l_children'] }, { attempt: 2, keys: ['l_environment', 'l_soldiers', 'l_unity'] }] },
   ],
 });
 

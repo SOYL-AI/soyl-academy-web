@@ -7,7 +7,7 @@ decisions: `docs/platform/adr/004-orm-drizzle.md`; personal data: [PII.md](PII.m
 ```
 platform/db/
   schema/          Drizzle tables by group: identity, catalog, content, assessment, gamification,
-                   ai-credits, ai-gateway, billing, ops, pipeline, progress, views  (68 tables, 2 views)
+                   ai-credits, ai-gateway, billing, ops, pipeline, progress, views  (69 tables, 2 views)
   migrations/      NNNN_name.sql (drizzle-kit, up) + NNNN_name.down.sql (hand-written) + meta/
   src/             client, migrator, CLI, seeds, test harness, normalisers, DB-6 helpers
   test/            vitest suites against real PostgreSQL
@@ -99,7 +99,9 @@ Current migrations: `0000_foundations` (roles, uuid v7, normalisers, conventions
 a unit through its active release, so rollback serves the older versions), `0007_test_engine` (backend-api M3,
 ADR-012: `responses.client_seq`, attempt score split and percentile flag, `test_score_buckets`),
 `0008_ai_gateway` (ai-gateway M4, ADR-013/014: `credit_wallets` lock rows, `ai_spend_daily`, `ai_jobs`,
-`ai_requests.plan_id/degraded/simulated`, `uploads.processed_key`, `content_chunks.search_vector` FTS fallback).
+`ai_requests.plan_id/degraded/simulated`, `uploads.processed_key`, `content_chunks.search_vector` FTS fallback),
+`0009_billing` (billing-razorpay M4, ADR-016: Razorpay binding columns, webhook outcome), `0010_leagues` (backend-api M5:
+weekly `leagues` and `league_memberships.league_id/tier/outcome`; the `ai_answer` report type on `content_reports`).
 
 ## Roles (DB-1) and Azure mapping
 

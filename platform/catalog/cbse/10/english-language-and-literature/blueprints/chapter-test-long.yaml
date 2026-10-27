@@ -36,7 +36,8 @@ notes: >-
   SOYL default modelled on the CBSE board pattern (CONTEXT section 9: "use a generic blueprint per board and subject, stored as editable
   config"); not an official CBSE paper. Marks follow the 2026-27 board paper's literature section: 5-mark extract questions (Q6/Q7), 3-mark
   short answers in 40-50 words (Q8/Q9) and 6-mark long answers in 100-120 words (Q10/Q11), each with internal choice; Section B adds
-  2-mark recall answers (30-40 words) for a chapter-level test. Built for the literature chapters (First Flight, Footprints without Feet);
-  the authored chapter tests for ch04 and ch13 follow it item for item. Reading, grammar and writing chapters (ch01-ch03) have a different
+  2-mark recall answers (30-40 words) for a chapter-level test. Built for the First Flight chapters (ch04-ch22);
+  the authored chapter tests for ch04 and ch13 follow it item for item. Footprints without Feet chapters (ch23-ch31) use
+  chapter-test-long-supplementary.yaml instead (no extracts; the board sets none from that reader). Reading, grammar and writing chapters (ch01-ch03) have a different
   section design (grammar tasks, editing passages, 5-mark 'writing' items) that one subject-level blueprint per paper type cannot also
   describe, so their authored tests carry blueprint_id null.

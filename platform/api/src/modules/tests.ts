@@ -14,6 +14,7 @@
  *   POST /v1/attempts/:id/ai-evaluation           AI evaluation job (ai-gateway M4, src/ai)
  *   GET  /v1/me/attempts                          your attempts, newest first
  *   GET  /v1/live-events                          live mocks (+ your registration when signed in)
+ *   GET  /v1/live-events/:id                      one event: timeline, registration, your status, rank availability
  *   POST /v1/live-events/:id/register             register (idempotent)
  *   GET  /v1/live-events/:id/leaderboard          consent-gated (D-014), first name + last initial (F-017)
  *
@@ -37,7 +38,7 @@ import { cachedContent } from '../http/cache';
 import { attemptState, ownAttempt, saveResponses, startOrResume, submitAttempt, type EngineContext } from '../domain/tests/attempts';
 import { listTestSeries, testMetadata } from '../domain/tests/catalogue';
 import { buildCustomTest } from '../domain/tests/custom';
-import { listLiveEvents, liveLeaderboard, registerForLive } from '../domain/tests/live';
+import { listLiveEvents, liveEventDetail, liveLeaderboard, registerForLive } from '../domain/tests/live';
 import { attemptResult, selfEvaluate } from '../domain/tests/results';
 import {
   AttemptParams,
@@ -46,6 +47,7 @@ import {
   CustomTestResponse,
   LeaderboardQuery,
   LeaderboardResponse,
+  LiveEventDetailSchema,
   LiveEventParams,
   LiveEventSchema,
   LiveEventsQuery,
@@ -294,6 +296,23 @@ export function registerTestRoutes(appIn: FastifyInstance, deps: AppDeps, servic
       response: withProblems({ 200: z.object({ events: z.array(LiveEventSchema) }).meta({ id: 'LiveEvents' }) }),
     },
     handler: async (request) => listLiveEvents(deps.db, ctx.year, deps.clock.now(), request.auth?.user.id ?? null, { subjectKey: request.query.subject, board: request.query.board, classLevel: request.query.class }),
+  });
+
+  app.get('/v1/live-events/:id', {
+    config: { policy: policies.publicRead() },
+    schema: {
+      tags: ['live'],
+      summary: 'One live mock: phase timeline, registration window, rank availability. Signed in: your registration, attempt and result.',
+      params: LiveEventParams,
+      response: withProblems({ 200: LiveEventDetailSchema }),
+    },
+    handler: async (request, reply) => {
+      const userId = request.auth?.user.id ?? null;
+      let consentGranted: boolean | null = null;
+      if (userId) consentGranted = (await services.consent.getStatus(userId)) === 'granted';
+      reply.header('cache-control', 'no-store');
+      return liveEventDetail(deps.db, ctx.year, deps.clock.now(), userId, request.params.id, consentGranted);
+    },
   });
 
   app.post('/v1/live-events/:id/register', {

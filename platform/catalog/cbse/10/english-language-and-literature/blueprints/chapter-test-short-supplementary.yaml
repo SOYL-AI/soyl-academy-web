@@ -1,0 +1,42 @@
+id: cbse-10-english-language-and-literature-chapter-test-short-supplementary
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-english-language-and-literature
+paper_type: chapter-test-short
+academic_year: "2026-27"
+duration_min: 40
+total_marks: 18
+mark_shares: {}
+# Chapter override: these Footprints without Feet chapters use this blueprint instead of chapter-test-short.yaml.
+scope:
+  - cbse-10-english-language-and-literature-ch23
+  - cbse-10-english-language-and-literature-ch24
+  - cbse-10-english-language-and-literature-ch25
+  - cbse-10-english-language-and-literature-ch26
+  - cbse-10-english-language-and-literature-ch27
+  - cbse-10-english-language-and-literature-ch28
+  - cbse-10-english-language-and-literature-ch29
+  - cbse-10-english-language-and-literature-ch30
+  - cbse-10-english-language-and-literature-ch31
+sections:
+  - id: A
+    title: Section A - Short answers (3 marks each)
+    instructions: Two sets of three questions; in each set answer any two in 40-50 words.
+    items:
+      - {type: short, count: 6, marks_each: 3, internal_choice: {attempt: 2, of: 3}}
+  - id: B
+    title: Section B - Long answer (6)
+    instructions: Answer any one of two questions in 100-120 words.
+    items:
+      - {type: long, count: 2, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+source_status: unverified
+source: lead-default
+notes: >-
+  Supplementary-reader chapter test (Footprints without Feet, ch23-ch31). SOYL default modelled on the 2026-27 board paper and marking
+  scheme (sources: cbse-sqp-x-english-language-and-literature-2026-27); not an official CBSE paper. The board examines this reader only
+  through Q9 (3-mark short answers in 40-50 words, any two of three) and one 6-mark long answer in 100-120 words (one of two) on
+  character, theme and values; its reference-to-context extracts (Q6/Q7) come from First Flight only. So this blueprint has no extract
+  section: Section A is the Q9 form twice, Section B is the long-answer form once. 18 marks rather than 20, because only the board's own
+  item forms for this reader are used. Selected through `scope` (a chapter list), which overrides the subject's chapter-test-short for
+  those chapters only.

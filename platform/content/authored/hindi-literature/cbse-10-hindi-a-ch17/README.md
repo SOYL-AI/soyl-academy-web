@@ -6,7 +6,7 @@
 | Book | NCERT **कृतिका भाग 2** (पूरक पाठ्यपुस्तक) · a personal reflective essay (आत्मपरक निबंध) |
 | Syllabus | `platform/catalog/cbse/10/hindi-a/syllabus.yaml` (2026-27, `source_status: unverified`): t01 लेखक-परिचय और पाठ का प्रसंग · t02 पाठ का सार (incl. लेखक की आंतरिक विवशता, अनुभूति और अनुभव का अंतर, हिरोशिमा का प्रसंग) · t03 मूल भाव, संदेश और भाषा-शैली · t04 गद्यांश आधारित प्रश्न-अभ्यास (MCQ and 50–60-word answers). Unit "खंड ग: कृतिका भाग 2"; examinable (not in `removed_topics`). No `board_assessed` field. |
 | Board weight | खंड ग, कृतिका 8 marks: प्रश्न 11, **three questions, attempt two, 50–60 words, 4 marks each** — every 4-mark long here is 50–60 words. |
-| Files | `release.json` (1 deck of 21 slides, 7 notes sections, 28 flashcards, 68 questions with 34 passage children), `tests.json` (short 20 / 40 min, long 40 / 80 min), `src/` (build sources; uses `hindi-language/cbse-10-hindi-a-ch01/src/lib.mjs`) |
+| Files | `release.json` (1 deck of 21 slides, 7 notes sections, 28 flashcards, 69 questions with 34 passage children), `tests.json` (short 20 / 40 min, long 40 / 80 min), `src/` (build sources; uses `hindi-language/cbse-10-hindi-a-ch01/src/lib.mjs`) |
 | Status | `draft` on every item (D-025/D-026 hand-authored content) |
 | Author | `claude-opus-5-5 (subject-producer)`, provenance `origin: human`, 2026-10-27 |
 
@@ -15,6 +15,8 @@ Rebuild from `platform/`: `npx tsx content/authored/hindi-literature/cbse-10-hin
 ## The कृतिका pattern
 
 As in ch15–ch16: the chapter tests follow the catalog's literature blueprints (section A keeps a 5-mark SOYL commentary passage), but every 4-mark long is a **50–60-word** answer (models 50–59) marked in four steps (idea, the essay's episode, own example or view, conclusion and language); there are **8 longs**; the title slide, notes section 7, exam tips and flashcards teach the 4-mark frame.
+
+**Update, 2026-10-27 (curriculum-architect):** the catalog now has कृतिका chapter-test blueprints for ch15–ch17 (`chapter-test-short-kritika`, `chapter-test-long-kritika`; a chapter override through the blueprint `scope`). They have no passage section; their section C is the board's प्रश्न 11 (three 4-mark questions, attempt two, 50–60 words), once in the short test and twice in the long one. Both tests were re-selected onto them from the bank (no item text changed). Filling both without sharing a question needs nine 4-mark answers, so one was added: `l_unease` — लेखन से भीतर की बेचैनी को पहचानना और मन हल्का होना; डायरी लिखने वाले विद्यार्थी के लिए सीख (t02/t03, d3, application); its facts are ones the bank already states, it quotes nothing from the text, and the build's `setForbidden` list, leak check and lint pass. Where this note and the paragraph above differ, this note is current.
 
 ## The rule: an essay taught without reproducing it (CONTEXT §8)
 
@@ -49,18 +51,18 @@ This essay is short and quotable, and its key sentences (the definitions of अ�
 
 ## Counts
 
-- **Questions: 68 (134 marks) + 34 passage children (+ 2 alternatives).**
-  - By type: source-based 6, case-based 1, mcq 25, short 2-mark 12 (25–30 words), long 4-mark 8 (**50–60 words**), true-false 5, fill-blank 3, match 2, assertion-reason 5 (keys c, a, a, d, b), ordering 1.
-  - Difficulty: d1 9 · d2 26 · d3 27 · d4 6.
-  - Competency: application or higher on 50% of items and 65% of marks. Higher-order items include: Meher's case; a singer's two songs; a student's inner-compulsion essay; misuse of science today (MCQ, short, assembly message); explaining अनुभूति to a younger brother; "is writing under pressure always weak?"; changing one's own way of writing; the author's personality; a diary entry after the shadow (in SOYL images); the title's question form.
+- **Questions: 69 (138 marks) + 34 passage children (+ 2 alternatives).**
+  - By type: source-based 6, case-based 1, mcq 25, short 2-mark 12 (25–30 words), long 4-mark 9 (**50–60 words**; the ninth, `l_unease`, added 2026-10-27 for the कृतिका tests), true-false 5, fill-blank 3, match 2, assertion-reason 5 (keys c, a, a, d, b), ordering 1.
+  - Difficulty: d1 9 · d2 26 · d3 28 · d4 6.
+  - Competency: application or higher on 51% of items and 66% of marks. Higher-order items include: Meher's case; a singer's two songs; a student's inner-compulsion essay; misuse of science today (MCQ, short, assembly message); explaining अनुभूति to a younger brother; "is writing under pressure always weak?"; changing one's own way of writing; the author's personality; a diary entry after the shadow (in SOYL images); the title's question form.
   - MCQ keys (incl. children and alternatives): a 14, b 14, c 15, d 16.
   - Model answers: 2-mark 27–30 words; 4-mark 50–59 words.
 - **Deck:** 21 slides — title (कृतिका pattern), how-to, author, the question, two kinds of reasons, check (which is not outer pressure), अनुभव and अनुभूति, Hiroshima from knowledge to poem, the hospital, AR check, the shadow, how the shadow formed, bearing the tragedy, ordering check, the poem, science: boon or ruin, style, application check, word meanings, summary, exam tips. 9 visuals. Narration max 62 words (mean 50), Devanagari only, no digits or symbols.
 - **Notes:** 7 sections (incl. a table of the four key terms) + exam tips. **Flashcards:** 28.
-- **Tests (no shared questions):**
-  - Short (20 marks, 40 min): A one commentary passage (5) · B 5 MCQ · C short "4 में से 3" × 2 · D long "2 में से 1" × 4 (50–60 words).
-  - Long (40 marks, 80 min): A two passages (10) · B 6 MCQ + 2 assertion-reason · C short "6 में से 5" × 2 · D long "4 में से 3" × 4 (50–60 words).
-  - `blueprint_id` is `cbse-10-hindi-a-chapter-test-short` / `-long`; the sections match the blueprints slot for slot (scratch check).
+- **Tests (no shared questions; re-selected 2026-10-27 on the कृतिका blueprints):**
+  - Short (20 marks, 40 min): A 6 MCQ · B short "4 में से 3" × 2 · C long "3 में से 2" × 4 (50–60 words; the board's प्रश्न 11).
+  - Long (40 marks, 80 min): A 8 MCQ + 4 assertion-reason · B two sets of short "4 में से 3" × 2 · C two sets of long "3 में से 2" × 4 (प्रश्न 11 twice).
+  - `blueprint_id` is `cbse-10-hindi-a-chapter-test-short-kritika` / `-long-kritika`; the sections match the blueprints slot for slot. No passage section: the commentary passages and the case stay in the bank as practice.
 
 ## Verifier record (author pass, 2026-10-27; no sub-agents per D-024)
 
