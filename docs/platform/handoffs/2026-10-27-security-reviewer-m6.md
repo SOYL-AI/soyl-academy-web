@@ -348,7 +348,8 @@ webhook headers path-scoped, raw body streamed unchanged), `security-headers.ts`
 (no raw HTML, link allowlist, images off for AI text), `lib/return-to.ts` (`safeReturnTo`), IndexedDB
 queue, client image re-encode (`ai/upload.ts`: canvas re-encode, `credentials: 'omit'` to Blob).
 No `dangerouslySetInnerHTML` outside KaTeX (trust off) and the sanitised SVG renderer.
-Web unit run (root): see the appended result line below.
+Web unit run (root, after `npm ci`): `npm run test:platform-web -- components/platform/__tests__/api-proxy.test.ts
+components/platform/__tests__/security-headers.test.ts` → Test Files 2 passed (2), Tests 47 passed (47).
 
 Tests added: none in the repository (PoC tests lived in the session scratch area only).
 
