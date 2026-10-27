@@ -138,7 +138,7 @@ describe('photo doubts (vision)', () => {
   });
 });
 
-describe('papers like my school’s (paid plans)', () => {
+describe('papers like my school’s (Pro and Board Exam Pass, D-034)', () => {
   it('extracts a blueprint and builds a paper from our bank; school questions are never stored; 60 credits', async () => {
     const { c, id } = await h.member();
     h.plans.set(id, 'pro');
@@ -162,13 +162,14 @@ describe('papers like my school’s (paid plans)', () => {
     expect(meta.json()).toMatchObject({ custom: true });
     expect((await h.t.db.select({ n: count() }).from(questions))[0]!.n).toBe(before);
     expect((await c.get('/v1/credits')).json()).toMatchObject({ balance: 0, spentToday: 60 });
-    // Plus has 40 credits a day: the action is allowed but cannot be afforded (owner decision, handoff).
+    // Plus has 40 credits a day, less than the 60 this costs, so it is not offered on Plus (D-034).
     const plus = await h.member();
     h.plans.set(plus.id, 'plus');
+    expect((await plus.c.get('/v1/ai/quote/paper-from-upload')).json()).toMatchObject({ credits: 60, allowedForPlan: false });
     const up2 = await uploadFile(h, plus.c, 'sample_paper', 'image/png', png());
     const r2 = await plus.c.post('/v1/ai/paper-from-upload', { uploadId: up2.id, subjectId: 'cbse-10-science' });
-    expect(r2.statusCode).toBe(402);
-    expect(r2.json()).toMatchObject({ code: 'credits_exhausted', required: 60, balance: 40 });
+    expect(r2.statusCode).toBe(403);
+    expect(r2.json()).toMatchObject({ code: 'plan_required', plan: 'plus' });
     // Jobs are private.
     expect((await plus.c.get(`/v1/ai/jobs/${accepted.jobId}`)).statusCode).toBe(404);
   });
