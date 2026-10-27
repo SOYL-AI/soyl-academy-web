@@ -335,6 +335,7 @@ function Player({ initial }: { initial: AttemptState }) {
       } else if (navigator.onLine) void flush({ force: true });
     };
     const onPageHide = () => void flush({ force: true, keepalive: true });
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- the browser's connectivity at mount
     setOnline(navigator.onLine);
     window.addEventListener('online', goOnline);
     window.addEventListener('offline', goOffline);
@@ -407,16 +408,7 @@ function Player({ initial }: { initial: AttemptState }) {
     update(currentId, { response: null }, 0);
   };
 
-  const slotsCache = useRef(new Map<string, QuestionSlots>());
-  const slots = useMemo(() => {
-    if (!slotsModule) return null;
-    let sl = slotsCache.current.get(currentId);
-    if (!sl) {
-      sl = slotsModule.buildQuestionSlots(item.question, lang);
-      slotsCache.current.set(currentId, sl);
-    }
-    return sl;
-  }, [slotsModule, currentId, item, lang]);
+  const slots: QuestionSlots | null = useMemo(() => (slotsModule ? slotsModule.buildQuestionSlots(item.question, lang) : null), [slotsModule, item, lang]);
 
   const sectionOf = (id: string) => initial.sections.find((sec) => sec.itemIds.includes(id));
   const section = sectionOf(currentId);

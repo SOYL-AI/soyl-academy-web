@@ -36,7 +36,7 @@ export function isPlansPath(pathname: string | undefined): boolean {
 }
 
 /** Pages that PUT uploads straight to Blob storage (AI uploads, D-018/F-013): the upload origin joins connect-src. */
-export const UPLOAD_ROUTE_PREFIXES: readonly string[] = ['/ask'];
+export const UPLOAD_ROUTE_PREFIXES: readonly string[] = ['/ask', '/tests/builder'];
 
 export function usesUploads(pathname: string | undefined): boolean {
   return !!pathname && UPLOAD_ROUTE_PREFIXES.some((p) => pathname === p || pathname.startsWith(`${p}/`));

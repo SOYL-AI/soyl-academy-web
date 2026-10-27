@@ -132,14 +132,16 @@ type ParamGroup<O, K extends 'path' | 'query'> = O extends { parameters: infer P
 
 type BodyOf<O> = O extends { requestBody: { content: { 'application/json': infer B } } } ? B : never;
 
-/** The JSON body of the 200 (or 201) response, `null` for 204, `unknown` otherwise (e.g. a 302 redirect). */
+/** The JSON body of the 200 (or 201, or 202 for AI jobs) response, `null` for 204, `unknown` otherwise (e.g. a 302 redirect). */
 export type ResponseOf<O> = O extends { responses: { 200: { content: { 'application/json': infer R } } } }
   ? R
   : O extends { responses: { 201: { content: { 'application/json': infer R } } } }
     ? R
-    : O extends { responses: { 204: unknown } }
-      ? null
-      : unknown;
+    : O extends { responses: { 202: { content: { 'application/json': infer R } } } }
+      ? R
+      : O extends { responses: { 204: unknown } }
+        ? null
+        : unknown;
 
 type IfNever<T, A, B> = [T] extends [never] ? A : B;
 
