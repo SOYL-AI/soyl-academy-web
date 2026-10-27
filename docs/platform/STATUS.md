@@ -80,7 +80,7 @@ M0–M4 are done or built on stand-ins. CBSE Class 10 core five subjects are com
 | 2026-10-27 | DB-6/F-006: answers of case-question `alternatives` left in `questions.body` | backend-api M2 | **done** (621f6dc) |
 | 2026-10-27 | MCQ answer-key skew (Hindi A ch10, Science ch01) | content producers | **done** (61c04ef) |
 | 2026-10-27 | Hindi chapter-test blueprints vs exemplar marks; Maths Basic `variant` | curriculum | **done** (47a7185, 2cb1ffe, 3672131) |
-| 2026-10-27 | Stray local API dev server (PID 3200, :8787) from the web M1 agent; stopping it was denied by the permission system | owner | open (check whether it still runs) |
+| 2026-10-27 | Stray local API dev server (PID 3200, :8787) from the web M1 agent; stopping it was denied by the permission system | owner | open — still running on 2026-10-28 (an embedded postgres.exe from `web-platform-m1` has parent PID 3200) |
 | 2026-10-27 | Intermittent native vitest worker crash (0xC0000409) on Windows under heavy parallel load; reruns green; Linux CI unaffected | — | watch |
 | 2026-10-28 | `platform-ci` on `platform/main` 49aa8a4: **gitleaks job failed**, every other job green. Logs need repository access; earlier gitleaks false positives were fixed by allowlisting test ids (e75da26) and reviewed placeholders (4dac20c) | Lead | **open** |
 | 2026-10-28 | `scripts/openapi.ts` header says the staleness test is `test/openapi.test.ts`; it is in `test/unit.test.ts` | backend-api | open (comment only) |

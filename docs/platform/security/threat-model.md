@@ -2,7 +2,7 @@
 
 > Owner: security-reviewer · Version 0.1 (M0 draft, before any platform code) · Last updated: 2026-10-25
 > Inputs: `docs/platform/CONTEXT.md`, `docs/platform/ARCHITECTURE.md`, `docs/platform/DECISIONS.md`, `AGENTS.md`, the existing marketing code (`app/api/*`, `app/layout.tsx`, `next.config.ts`, `components/legal/*`), Next.js 16 docs in `node_modules/next/dist/docs/`, and an `npm audit` of both lockfiles on 2026-10-25.
-> Companion docs: [requirements-for-m1.md](requirements-for-m1.md) (testable MUSTs, IDs like `AUTH-3`), [asvs-l2-checklist.md](asvs-l2-checklist.md), [findings.md](findings.md) (IDs like `F-004`).
+> Companion docs: [requirements-for-m1.md](requirements-for-m1.md) (testable MUSTs, IDs like `AUTH-3`), [asvs-l2-checklist.md](asvs-l2-checklist.md), findings.md (IDs like `F-004`; never committed, OA-13; current register: [M6 review](../handoffs/2026-10-27-security-reviewer-m6.md)).
 > Method: STRIDE per component + abuse cases. Re-run at the end of every milestone and whenever ARCHITECTURE.md changes.
 
 ---
