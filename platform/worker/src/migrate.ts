@@ -10,10 +10,13 @@
 import pg from 'pg';
 import { PgBoss } from 'pg-boss';
 import type { ConstructorOptions } from 'pg-boss';
+import { pgConnectionConfig, type PgPassword } from '@soyl/db';
 import { errorFields, type Logger } from './logger';
 
 export interface InstallOptions {
   connectionString: string;
+  /** DATABASE_AUTH=entra: token function (the URL then has no password). */
+  password?: PgPassword;
   schema: string;
   /** Role that receives DML on the schema; skipped (with a notice) when the role does not exist. */
   appRole?: string;
@@ -64,7 +67,8 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 export async function installPgBossSchema(opts: InstallOptions): Promise<InstallResult> {
   const { connectionString, schema, log } = opts;
   quoteIdent(schema);
-  const client = new pg.Client({ connectionString, application_name: 'soyl-worker-migrate' });
+  const connection = pgConnectionConfig(connectionString, opts.password);
+  const client = new pg.Client({ ...connection, application_name: 'soyl-worker-migrate' });
   await client.connect();
   try {
     // An existing (e.g. pre-created by the server admin) schema must not be re-created: CREATE SCHEMA
@@ -72,7 +76,7 @@ export async function installPgBossSchema(opts: InstallOptions): Promise<Install
     const exists = ((await client.query('SELECT 1 FROM pg_namespace WHERE nspname = $1', [schema])).rowCount ?? 0) > 0;
 
     const boss = new PgBoss({
-      connectionString,
+      ...(connection as Partial<ConstructorOptions>),
       schema,
       migrate: true,
       createSchema: !exists,

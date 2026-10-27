@@ -49,6 +49,12 @@ param workerActiveWindow object
 param pgHost string
 param pgDatabase string
 
+@description('API-only plain env vars (e.g. ACS_ENDPOINT from the Communication Services resource).')
+param apiExtraEnv array
+
+@description('Blob endpoint the release job publishes content releases to (D-026).')
+param blobAccountUrl string
+
 // mcr.microsoft.com/k8se/quickstart:latest pinned by digest (listens on port 80, no probes).
 var placeholderImage = 'mcr.microsoft.com/k8se/quickstart@sha256:d278e30de23a1b5b5f4c987e830dbd915f9fafc1e2e574022eadf7e7ce1c05fb'
 var apiPlaceholder = empty(apiImage)
@@ -131,13 +137,14 @@ var apiEnv = concat(
     }
     {
       name: 'DATABASE_URL'
-      value: 'postgresql://${apiIdentity.name}@${pgHost}:5432/${pgDatabase}?sslmode=require'
+      value: 'postgresql://${apiIdentity.name}@${pgHost}:5432/${pgDatabase}?sslmode=verify-full'
     }
     {
       name: 'REDIS_USERNAME'
       value: apiIdentity.principalId
     }
   ],
+  apiExtraEnv,
   map(apiSecretRefs, s => {
     name: s.envName
     secretRef: s.secretName
@@ -169,7 +176,7 @@ var workerEnv = concat(
     }
     {
       name: 'DATABASE_URL'
-      value: 'postgresql://${workerIdentity.name}@${pgHost}:5432/${pgDatabase}?sslmode=require'
+      value: 'postgresql://${workerIdentity.name}@${pgHost}:5432/${pgDatabase}?sslmode=verify-full'
     }
     {
       name: 'REDIS_USERNAME'
@@ -414,47 +421,117 @@ resource migrate 'Microsoft.App/jobs@2025-01-01' = {
             cpu: json('0.5')
             memory: '1Gi'
           }
-          env: migratePlaceholder
+          // No args: bootstrap + `db migrate up` + pg-boss schema install (migrate-entrypoint.mjs).
+          env: migratePlaceholder ? [] : migrateJobEnv
+        }
+      ]
+    }
+  }
+  dependsOn: [
+    caeDiag
+  ]
+}
+
+// Seeds the catalog and publishes the hand-authored content (D-026) with the migrations image:
+// `migrate-entrypoint.mjs release` = bootstrap + `db seed catalog` + `content publish --authored`.
+// Runs as the migrator identity (owns the schema through soyl_migrator; Blob Data Contributor on
+// content-releases). Manual trigger, after the migrations job.
+var migrateJobEnv = [
+  {
+    name: 'APP_ENV'
+    value: env
+  }
+  {
+    name: 'AZURE_CLIENT_ID'
+    value: migratorIdentity.clientId
+  }
+  {
+    name: 'PGHOST'
+    value: pgHost
+  }
+  {
+    name: 'PGPORT'
+    value: '5432'
+  }
+  {
+    name: 'PGDATABASE'
+    value: pgDatabase
+  }
+  {
+    name: 'PGUSER'
+    value: migratorIdentity.name
+  }
+  {
+    name: 'PGSSLMODE'
+    value: 'verify-full'
+  }
+  {
+    name: 'DATABASE_URL'
+    value: 'postgresql://${migratorIdentity.name}@${pgHost}:5432/${pgDatabase}?sslmode=verify-full'
+  }
+  {
+    name: 'PG_APP_PRINCIPALS'
+    value: '${apiIdentity.name},${workerIdentity.name}'
+  }
+]
+
+resource release 'Microsoft.App/jobs@2025-01-01' = {
+  name: 'caj-soyl-release-${env}'
+  location: location
+  tags: tags
+  identity: {
+    type: 'UserAssigned'
+    userAssignedIdentities: {
+      '${migratorIdentity.id}': {}
+    }
+  }
+  properties: {
+    environmentId: cae.id
+    workloadProfileName: 'Consumption'
+    configuration: {
+      triggerType: 'Manual'
+      replicaTimeout: 3600
+      replicaRetryLimit: 0
+      manualTriggerConfig: {
+        parallelism: 1
+        replicaCompletionCount: 1
+      }
+      registries: migratePlaceholder
+        ? []
+        : [
+            {
+              server: acrLoginServer
+              identity: migratorIdentity.id
+            }
+          ]
+    }
+    template: {
+      containers: [
+        {
+          name: 'release'
+          image: migratePlaceholder ? placeholderImage : migrateImage
+          args: migratePlaceholder
             ? []
             : [
-                {
-                  name: 'APP_ENV'
-                  value: env
-                }
-                {
-                  name: 'AZURE_CLIENT_ID'
-                  value: migratorIdentity.clientId
-                }
-                {
-                  name: 'PGHOST'
-                  value: pgHost
-                }
-                {
-                  name: 'PGPORT'
-                  value: '5432'
-                }
-                {
-                  name: 'PGDATABASE'
-                  value: pgDatabase
-                }
-                {
-                  name: 'PGUSER'
-                  value: migratorIdentity.name
-                }
-                {
-                  name: 'PGSSLMODE'
-                  value: 'require'
-                }
-                {
-                  name: 'DATABASE_URL'
-                  value: 'postgresql://${migratorIdentity.name}@${pgHost}:5432/${pgDatabase}?sslmode=require'
-                }
-                {
-                  // Entra principals the bootstrap step creates and grants soyl_app (platform/db/README.md "Roles").
-                  name: 'PG_APP_PRINCIPALS'
-                  value: '${apiIdentity.name},${workerIdentity.name}'
-                }
+                '/app/migrate-entrypoint.mjs'
+                'release'
               ]
+          resources: {
+            cpu: json('1.0')
+            memory: '2Gi'
+          }
+          env: migratePlaceholder
+            ? []
+            : concat(migrateJobEnv, [
+                {
+                  name: 'CONTENT_BLOB_ACCOUNT_URL'
+                  value: blobAccountUrl
+                }
+                {
+                  name: 'CONTENT_BLOB_CONTAINER'
+                  value: 'content-releases'
+                }
+              ])
         }
       ]
     }
@@ -470,3 +547,4 @@ output apiName string = api.name
 output apiFqdn string = api.properties.configuration.ingress.fqdn
 output workerName string = worker.name
 output migrateJobName string = migrate.name
+output releaseJobName string = release.name

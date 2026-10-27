@@ -22,7 +22,7 @@ sections:
       प्रश्न 3 तीन में से एक विषय पर रचनात्मक लेखन (~120 शब्द, 6); प्रश्न 4 पाँच में से कोई चार (~40 शब्द, 2-2); प्रश्न 5 तीन में से कोई दो
       (~80 शब्द, 4-4)।
     items:
-      - {type: long, count: 3, marks_each: 6, internal_choice: {attempt: 1, of: 3}}
+      - {type: writing, count: 3, marks_each: 6, internal_choice: {attempt: 1, of: 3}}
       - {type: short, count: 5, marks_each: 2, internal_choice: {attempt: 4, of: 5}}
       - {type: long, count: 3, marks_each: 4, internal_choice: {attempt: 2, of: 3}}
   - id: C

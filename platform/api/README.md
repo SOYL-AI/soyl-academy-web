@@ -74,20 +74,24 @@ Tests use `@soyl/db/testing` (one embedded PostgreSQL per run, a fresh database 
 | `API_PUBLIC_PATH` | `/api/platform` | Proxy path on the web origin. |
 | `ALLOWED_ORIGINS` | origin of `PUBLIC_BASE_URL` | AUTH-12 exact Origin allowlist (comma-separated, no wildcards). |
 | `DATABASE_URL` | — | Required outside local/test. |
+| `DATABASE_AUTH` | `password` | `entra`: the URL has no password; each new connection uses a managed-identity token for `https://ossrdbms-aad.database.windows.net` (INFRA-2). |
 | `DATABASE_POOL_MAX` | 10 | Connections per API replica (§16 capacity; replicas × pool ≤ the server's limit). |
 | `REDIS_URL` | — | Required in `stg`/`prod`; memory store otherwise. |
-| `EDGE_SECRETS` | dev value in local/test | API-2: one or two secrets (≥ 32 chars), current first. |
+| `REDIS_AUTH`, `REDIS_USERNAME` | `none` | `entra`: Azure Managed Redis; username = managed identity object id, password = token for `https://redis.azure.com`, re-AUTH before expiry; `rediss://` required (INFRA-3). |
+| `AZURE_CLIENT_ID` (+ `IDENTITY_ENDPOINT`, `IDENTITY_HEADER` set by Container Apps) | — | User-assigned managed identity for all tokens (`@soyl/shared/azure/identity`). Without the endpoint, local dev uses `az account get-access-token`; never in prod. |
+| `EDGE_SECRETS` | dev value in local/test | API-2: one or two secrets (≥ 32 chars), current first. Or `EDGE_SECRET_CURRENT` + `EDGE_SECRET_PREVIOUS` (Key Vault refs; equal values are de-duplicated). |
+| `AUTH_METHODS` | `email,phone,google` | AUTH-1: enabled sign-in methods. Others answer 404 `method_disabled`; their settings (Google, SMS) are then not required. `GET /v1/auth/methods` reports them. Production: `email` (D-031). |
 | `CLIENT_IP_HEADER` | `x-soyl-client-ip` | API-3; trusted only after edge auth. |
 | `AUTH_SECRET` | dev value in local/test | Signs session and OAuth-state cookies (≥ 32 chars). |
 | `OTP_PEPPER` | dev value in local/test | AUTH-4 HMAC key (≥ 32 chars). |
 | `MFA_ENCRYPTION_KEY` | dev value in local/test | AUTH-11: 32 bytes, base64; encrypts staff TOTP secrets at rest (ADR-011). |
 | `SMS_GLOBAL_HOURLY_CAP` | `1000` | AUTH-5 global phone-OTP cap. |
-| `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | dev values in local/test | |
+| `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | dev values in local/test | Required only while `google` is in `AUTH_METHODS`. |
 | `GOOGLE_ISSUER` | `https://accounts.google.com` | Must be Google in prod; the dev script points it at the mock. |
 | `ADMIN_GOOGLE_DOMAINS` | — | AUTH-11 Workspace domains allowed for reviewer/admin. |
 | `SMS_PROVIDER` | `mock` | `msg91` needs `SMS_PROVIDER_API_KEY`, `SMS_DLT_TEMPLATE_IDS` (`{"otp":"…","notice":"…"}`), optional `SMS_SENDER_ID`, `MSG91_BASE_URL`. |
-| `EMAIL_PROVIDER` | `mock` | `acs` needs `ACS_EMAIL_ENDPOINT`, `ACS_EMAIL_ACCESS_KEY`; `EMAIL_FROM`. |
-| `CONSENT_PROVIDER`, `MOCK_CONSENT_DEFAULT` | `mock`, `required` | Only the mock exists (OA-08). |
+| `EMAIL_PROVIDER` | `mock` | `acs` needs `ACS_ENDPOINT` (alias `ACS_EMAIL_ENDPOINT`); sends with the managed identity (token for `https://communication.azure.com`). `ACS_EMAIL_ACCESS_KEY` only outside prod. `EMAIL_FROM` default `SOYL Academy <noreply@soylai.com>`. |
+| `CONSENT_PROVIDER`, `MOCK_CONSENT_DEFAULT` | `mock`, `required` | `mock` is refused in prod. `unavailable` (prod until OA-08): everyone `pending`, cannot be granted, so every consent-gated feature (D-014) answers 403 `consent_required`; learning and tests work. |
 | `ACADEMIC_YEAR` | `2026-27` | Catalog year served. |
 | `DEV_OTP_OUTBOX` | off | Local/test only. |
 | `DEV_CONTENT` | on | `npm run dev` only: `off` skips publishing authored content at start-up. |

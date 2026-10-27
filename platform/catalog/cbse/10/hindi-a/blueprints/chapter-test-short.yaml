@@ -11,32 +11,31 @@ mark_shares: {}
 scope: chapter
 sections:
   - id: A
-    title: Section A - Extract-based (5)
-    instructions: Read the extract and answer all parts.
+    title: खंड क - प्रसंग-आधारित अनुच्छेद (5 अंक)
+    instructions: अनुच्छेद पढ़कर सभी प्रश्नों के सही विकल्प चुनिए।
     items:
       - {type: source-based, count: 1, marks_each: 5}
   - id: B
-    title: Section B - Short answer (2 marks each)
-    instructions: Answer any four of five questions in 30-40 words.
+    title: खंड ख - वस्तुनिष्ठ प्रश्न (1 अंक)
+    instructions: सभी प्रश्न अनिवार्य हैं।
     items:
-      - {type: short, count: 5, marks_each: 2, internal_choice: {attempt: 4, of: 5}}
+      - {type: mcq, count: 5, marks_each: 1}
   - id: C
-    title: Section C - Long answer (7)
-    instructions: Answer any one of two questions in 100-120 words.
+    title: खंड ग - लघु उत्तरीय प्रश्न (2 अंक, 25-30 शब्द)
+    instructions: चार में से किन्हीं तीन प्रश्नों के उत्तर दीजिए।
     items:
-      - {type: long, count: 2, marks_each: 7, internal_choice: {attempt: 1, of: 2}}
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 3, of: 4}}
+  - id: D
+    title: खंड घ - दीर्घ उत्तरीय प्रश्न (4 अंक)
+    instructions: दो में से कोई एक प्रश्न कीजिए।
+    items:
+      - {type: long, count: 2, marks_each: 4, internal_choice: {attempt: 1, of: 2}}
 source_status: unverified
 source: lead-default
 notes: >-
   SOYL default modelled on the CBSE board pattern (CONTEXT section 9: "use a generic blueprint per board and subject, stored as editable
-
-  config"); not an official CBSE paper. Item types and marks follow the 2026-27 CBSE board style (MCQ/assertion-reason 1, short 2-3, long 5,
-
-  case-based 4, about one-third internal choice) so practice transfers to the board paper. Subject-family override (languages) of the class
-  default in platform/catalog/cbse/blueprints/<class>/. Built for literature chapters: extract-based (source-based) questions, short answers
-  and a long answer;
-
-  for grammar or writing chapters the assembler substitutes items of the same marks from that chapter (1-mark grammar items for a 5-mark
-  extract
-
-  group, writing tasks for long answers). Answers are written in the subject's language.
+  config"); not an official CBSE paper. Marks follow the 2026-27 Hindi A board paper's textbook section (खंड ग): a 5-mark पठित गद्यांश/काव्यांश with
+  5 MCQs (source-based, Q7/Q9), 2-mark short answers in 25-30 words, three of four (Q8/Q10), and 4-mark long answers (Q11), plus 1-mark
+  objective items. Built for literature chapters (क्षितिज, कृतिका) and matching the gold-standard exemplar
+  content-templates/exemplars/hindi-literature/cbse-10-hindi-a-ch10 item for item. The grammar chapter (व्यावहारिक व्याकरण) has its own
+  section design (1-mark tasks, four of five per topic), so its tests carry blueprint_id null.

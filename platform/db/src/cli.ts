@@ -10,9 +10,10 @@
  *
  * Target database: DATABASE_URL. When it is unset, a persistent local embedded PostgreSQL server
  * (platform/db/.data/dev, port 54320) is started for the command and stopped afterwards.
+ * DATABASE_AUTH=entra: DATABASE_URL has no password; each connection uses a managed-identity token.
  */
 import pg from 'pg';
-import { createDb, redactUrl } from './client';
+import { createDb, pgConnectionConfig, pgPasswordFromEnv, redactUrl } from './client';
 import { migrateDown, migrateUp, migrationStatus } from './migrator';
 import { startDevServer, type EmbeddedServer } from './embedded';
 import { seedCatalog } from './seed/catalog';
@@ -59,7 +60,8 @@ async function main(argv: string[]): Promise<number> {
 
   try {
     if (group === 'migrate') {
-      const client = new pg.Client({ connectionString: url });
+      // DATABASE_AUTH=entra: a fresh Entra token as the password (INFRA-2); otherwise the URL/PGPASSWORD.
+      const client = new pg.Client(pgConnectionConfig(url, pgPasswordFromEnv()));
       await client.connect();
       try {
         if (command === 'up') {

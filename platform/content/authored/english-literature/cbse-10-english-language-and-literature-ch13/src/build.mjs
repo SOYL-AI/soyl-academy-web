@@ -307,6 +307,7 @@ const F = cards([
 // ---------------------------------------------------------------- tests
 const T_SHORT = test({
   kind: 'short',
+  blueprint: 'cbse-10-english-language-and-literature-chapter-test-short',
   title: 'Chapter test (short) — Dust of Snow',
   duration: 40,
   sections: [
@@ -317,6 +318,7 @@ const T_SHORT = test({
 });
 const T_LONG = test({
   kind: 'long',
+  blueprint: 'cbse-10-english-language-and-literature-chapter-test-long',
   title: 'Chapter test (long) — Dust of Snow',
   duration: 90,
   sections: [

@@ -39,8 +39,9 @@ const prodEnv = {
   SMS_PROVIDER_API_KEY: 'k',
   SMS_DLT_TEMPLATE_IDS: '{"otp":"1107","notice":"1108"}',
   EMAIL_PROVIDER: 'acs',
-  ACS_EMAIL_ENDPOINT: 'https://soyl.india.communication.azure.com',
-  ACS_EMAIL_ACCESS_KEY: Buffer.from('k'.repeat(32)).toString('base64'),
+  ACS_ENDPOINT: 'https://soyl.india.communication.azure.com',
+  // D-031: production has no consent adapter yet (OA-08) and sends email with its managed identity.
+  CONSENT_PROVIDER: 'unavailable',
 };
 
 describe('config', () => {
@@ -95,7 +96,13 @@ describe('config', () => {
     ['dev OTP outbox in prod', { DEV_OTP_OUTBOX: 'true' }, /DEV_OTP_OUTBOX/],
     ['msg91 without template', { SMS_DLT_TEMPLATE_IDS: '{}' }, /SMS_DLT_TEMPLATE_IDS.otp/],
     ['bad template json', { SMS_DLT_TEMPLATE_IDS: 'nope' }, /JSON object/],
-    ['acs without key', { ACS_EMAIL_ACCESS_KEY: undefined }, /ACS_EMAIL/],
+    ['acs without endpoint', { ACS_ENDPOINT: undefined }, /ACS_ENDPOINT is required/],
+    ['acs access key in prod (keyless)', { ACS_EMAIL_ACCESS_KEY: 'a2V5' }, /not allowed in production/],
+    ['mock consent in prod (GEN-3)', { CONSENT_PROVIDER: 'mock' }, /CONSENT_PROVIDER=mock cannot run/],
+    ['unknown auth method', { AUTH_METHODS: 'email,carrier-pigeon' }, /unknown method/],
+    ['no auth method', { AUTH_METHODS: ' , ' }, /at least one/],
+    ['entra redis without username', { REDIS_AUTH: 'entra' }, /REDIS_USERNAME/],
+    ['entra redis without TLS', { REDIS_AUTH: 'entra', REDIS_USERNAME: 'oid', REDIS_URL: 'redis://cache:10000' }, /rediss:\/\//],
     ['invalid APP_ENV', { APP_ENV: 'production' }, /APP_ENV/],
   ])('refuses %s', (_l, patch, re) => {
     expect(() => loadConfig({ ...prodEnv, ...patch })).toThrow(re);
@@ -121,9 +128,12 @@ describe('provider factory (GEN-3)', () => {
   it.each([
     ['SMS', { SMS_PROVIDER: 'mock' }],
     ['email', { EMAIL_PROVIDER: 'mock' }],
-    ['consent', {}],
+    ['consent', { CONSENT_PROVIDER: 'mock' }],
   ])('refuses the mock %s provider in production', (_l, patch) => {
-    expect(() => createProviders(loadConfig({ ...prodEnv, ...patch }))).toThrow(MockInProductionError);
+    // Config refuses it first; the factory refuses it again if config is bypassed.
+    expect(() => createProviders(loadConfig({ ...prodEnv, ...patch }))).toThrow(/GEN-3/);
+    const bypass = { ...loadConfig({ ...prodEnv, APP_ENV: 'stg', ...patch }), isProduction: true };
+    expect(() => createProviders(bypass)).toThrow(MockInProductionError);
   });
 
   it('stg mock SMS delivers only to the reserved test range', async () => {

@@ -1,8 +1,19 @@
-// prod: zone-redundant HA everywhere it exists, api min 2, PITR 14 days, no log cap (security logs are
-// never dropped), AI private only. Deployed only through the approval-gated `production` environment.
-// No secrets here (GEN-1): identities are managed identities; secret VALUES live in Key Vault.
-// Values that must not be committed (e-mail, object ids) and the image tags come from environment
-// variables set by the deploy workflow (repo variables) or the operator's shell.
+// prod - DARK first start (D-031, 2026-10-27): the API runs with PLATFORM_ENABLED=false and
+// BILLING_ENABLED=false (every route except /healthz and /readyz answers 404, GEN-4), email OTP only,
+// no AI, no consent system yet (CONSENT_PROVIDER=unavailable). Sized for a small budget, NOT for launch.
+//
+// BEFORE LAUNCH (docs/platform/runbooks/prod-first-deploy.md "Scale up before launch"):
+//   - Postgres: Burstable B2s -> General Purpose (Standard_D2ds_v5 or larger) + pgHaMode 'ZoneRedundant'
+//     (compute tier and HA can be changed in place; a short restart/failover).
+//   - Redis: Balanced_B0 non-HA -> Balanced_B1+ with redisHighAvailability = true (+ AOF once credit
+//     reservations live in Redis).
+//   - api: apiMinReplicas 2, larger CPU/memory; worker as queue load needs.
+//   - deployFrontDoor = true when public assets (diagrams/audio) are published; deployAi = true for M4.
+// Immutable after the first deploy (choose now): pgGeoRedundantBackup, acaZoneRedundant, the VNet ranges.
+//
+// No secrets here (GEN-1): workloads use managed identities; secret VALUES live in Key Vault and are
+// referenced by name only (appSecrets). Values that must not be committed (e-mail, object ids, the
+// operator IP) and the image references come from SOYL_* environment variables.
 using '../main.bicep'
 
 param env = 'prod'
@@ -16,34 +27,44 @@ param peSubnetPrefix = '10.30.4.0/24'
 param acrName = readEnvironmentVariable('SOYL_ACR_NAME', 'crsoylplatform')
 param acrResourceGroup = 'rg-soyl-platform-shared'
 
+// Empty = pinned placeholder image (infrastructure-only deploy); otherwise <acr>.azurecr.io/<repo>@sha256:<digest>.
 param apiImage = readEnvironmentVariable('SOYL_API_IMAGE', '')
 param workerImage = readEnvironmentVariable('SOYL_WORKER_IMAGE', '')
 param migrateImage = readEnvironmentVariable('SOYL_MIGRATE_IMAGE', '')
 
+// Zone redundancy of the Container Apps environment is free on the Consumption profile and cannot be
+// changed later, so it is on even though one replica gives no redundancy yet.
 param acaZoneRedundant = true
-param apiCpu = '1.0'
-param apiMemory = '2Gi'
-param apiMinReplicas = 2
-param apiMaxReplicas = 20
-param apiConcurrentRequests = 80
-param workerCpu = '1.0'
-param workerMemory = '2Gi'
+param apiCpu = '0.5'
+param apiMemory = '1Gi'
+param apiMinReplicas = 1
+param apiMaxReplicas = 5
+param apiConcurrentRequests = 50
+// One small always-on worker: its cron jobs (OTP/session sweeps, account purge) need a running replica,
+// and CPU scale rules cannot wake a worker from zero.
+param workerCpu = '0.25'
+param workerMemory = '0.5Gi'
 param workerMinReplicas = 1
-param workerMaxReplicas = 6
+param workerMaxReplicas = 1
 param workerActiveWindow = {}
 
-param pgSkuName = 'Standard_D2ds_v5'
-param pgTier = 'GeneralPurpose'
-param pgStorageGb = 128
-param pgHaMode = 'ZoneRedundant'
+// Burstable B2s (2 vCores, 4 GiB), no HA: dark start only. Scale to General Purpose + ZoneRedundant HA
+// before launch (see header). Geo-redundant backup goes to the paired region South India (data stays
+// in India) and can only be chosen at creation.
+param pgSkuName = 'Standard_B2s'
+param pgTier = 'Burstable'
+param pgStorageGb = 32
+param pgHaMode = 'Disabled'
 param pgBackupRetentionDays = 14
 param pgGeoRedundantBackup = 'Enabled'
 param pgOwnerAdminGroupObjectId = readEnvironmentVariable('SOYL_PG_ADMIN_GROUP_ID', '')
 param pgOwnerAdminGroupName = readEnvironmentVariable('SOYL_PG_ADMIN_GROUP_NAME', '')
 
-param redisSku = 'Balanced_B3'
-param redisHighAvailability = true
-param redisAofPersistence = true
+// Smallest Azure Managed Redis tier, no HA, no persistence: Redis only holds rate-limit windows and OTP
+// state in the dark start (losing it on a restart only resets limits). Scale before launch.
+param redisSku = 'Balanced_B0'
+param redisHighAvailability = false
+param redisAofPersistence = false
 
 param storageSku = 'Standard_ZRS'
 // The production web origin (API-1, AUTH-12). Never soylacademy.com (not owned by SOYL).
@@ -51,20 +72,24 @@ param uploadCorsOrigins = [
   'https://www.soylai.com'
 ]
 
+// The operator's public IP while creating Key Vault secrets (runbook); empty afterwards.
 param keyVaultAllowedIps = empty(readEnvironmentVariable('SOYL_KV_ALLOWED_IP', '')) ? [] : [readEnvironmentVariable('SOYL_KV_ALLOWED_IP', '')]
+// false only for the very first deploy, before the secrets exist (runbook).
 param kvSecretRefs = bool(readEnvironmentVariable('SOYL_KV_SECRET_REFS', 'true'))
+// Key Vault secret NAMES (values are generated by the operator, never committed).
 param appSecrets = [
   { secretName: 'edge-secret-current', envName: 'EDGE_SECRET_CURRENT', apps: ['api'] }
   { secretName: 'edge-secret-previous', envName: 'EDGE_SECRET_PREVIOUS', apps: ['api'] }
   { secretName: 'otp-pepper', envName: 'OTP_PEPPER', apps: ['api'] }
   { secretName: 'auth-secret', envName: 'AUTH_SECRET', apps: ['api'] }
+  { secretName: 'mfa-encryption-key', envName: 'MFA_ENCRYPTION_KEY', apps: ['api'] }
 ]
 
-// AI services reachable only through private endpoints (INFRA-5); the pipeline runs as a job in the VNet.
+// AI is M4: no Azure OpenAI / Speech / Content Safety accounts yet (no cost, no private endpoints).
+param deployAi = false
 param aiPublicNetworkAccess = 'Disabled'
 param aiAllowedIps = []
-// OA-02: flip to true once model names/versions/quota are confirmed (ADR-008).
-param aoaiDeployModels = bool(readEnvironmentVariable('SOYL_AOAI_DEPLOY_MODELS', 'false'))
+param aoaiDeployModels = false
 param aoaiDeployments = [
   { tier: 'small', name: 'small', model: 'gpt-6-luna', version: 'OA-02', skuName: 'Standard', capacity: 10 }
   { tier: 'mid', name: 'mid', model: 'gpt-6.1-sol', version: 'OA-02', skuName: 'Standard', capacity: 10 }
@@ -72,23 +97,51 @@ param aoaiDeployments = [
   { tier: 'batch', name: 'mid-batch', model: 'gpt-6.1-sol', version: 'OA-02', skuName: 'GlobalBatch', capacity: 100 }
 ]
 
+// No public assets are published yet (diagrams/audio come with content releases later): no Front Door.
+param deployFrontDoor = false
+
+// Email OTP via Azure Communication Services (D-031): noreply@soylai.com on the customer-managed
+// domain soylai.com. The owner adds the DNS records from the emailDnsRecords output; once Azure shows
+// the domain verified, redeploy with SOYL_ACS_LINK_DOMAIN=true to link it (runbook).
+param emailDomainManagement = 'CustomerManaged'
+param emailDomain = 'soylai.com'
+param emailSenderUsername = 'noreply'
+param emailSenderDisplayName = 'SOYL Academy'
+param acsDataLocation = 'India'
+// GUID of the built-in "Communication and Email Service Owner" role (runbook step 0 looks it up);
+// default Contributor, scoped to the one Communication Services resource.
+param acsSenderRoleId = empty(readEnvironmentVariable('SOYL_ACS_SENDER_ROLE_ID', '')) ? 'b24988ac-6181-4c74-a15b-b2e1ee7d7cc3' : readEnvironmentVariable('SOYL_ACS_SENDER_ROLE_ID', '')
+param acsLinkDomain = bool(readEnvironmentVariable('SOYL_ACS_LINK_DOMAIN', 'false'))
+
 param logRetentionDays = 180
+// Security logs are never dropped in production (no daily cap).
 param logDailyCapGb = -1
 param alertEmail = readEnvironmentVariable('SOYL_ALERT_EMAIL', '')
 param alertEvaluationFrequency = 'PT5M'
-param otpSendsPerHourThreshold = 1000
-param otpVerifyFailuresPerHourThreshold = 300
-param edgeAuthFailuresPer15MinThreshold = 100
-param queueBacklogThreshold = 2000
+param otpSendsPerHourThreshold = 200
+param otpVerifyFailuresPerHourThreshold = 100
+param edgeAuthFailuresPer15MinThreshold = 50
+param queueBacklogThreshold = 500
 
-// Production budget: owner to confirm (COSTS.md). AI budget is a placeholder until AI_DAILY_SPEND_CAP_INR is set.
-param budgetAmount = 150000
-param aiBudgetAmount = 100000
+// Dark-start budget (INR/month, alerts at 50/80/100% actual and 100% forecast). Estimate INR 15-20k:
+// Postgres B2s + backup, Redis B0, api 0.5 vCPU + worker 0.25 vCPU always on, 4 private endpoints,
+// Log Analytics, Key Vault, ACS email (per message). Raise with the launch scale-up.
+param budgetAmount = 25000
+// Unused while deployAi = false (the AI budget is only created with the AI accounts).
+param aiBudgetAmount = 1000
 
 param appSettings = {
   PLATFORM_ENABLED: 'false'
   BILLING_ENABLED: 'false'
-  AI_DAILY_SPEND_CAP_INR: '3000'
-  CONTENT_BUDGET_INR: '0'
+  PUBLIC_BASE_URL: 'https://www.soylai.com'
   WEB_ORIGIN: 'https://www.soylai.com'
+  AUTH_METHODS: 'email'
+  EMAIL_PROVIDER: 'acs'
+  CONSENT_PROVIDER: 'unavailable'
+  // Worker: with CONSENT_PROVIDER=unavailable the AUTH-15 purge would delete every student after 30
+  // days; auto keeps it off until a consent system exists (owner decision before launch).
+  UNCONSENTED_PURGE: 'auto'
+  AI_DAILY_SPEND_CAP_INR: '0'
+  CONTENT_BUDGET_INR: '0'
+  LOG_LEVEL: 'info'
 }

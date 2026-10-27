@@ -35,7 +35,7 @@ The poem is eight lines and about thirty words, so **any** run of its words is a
 - **Difficulty:** d1 8 · d2 23 · d3 24 · d4 7. **Competency:** recall 12 · understanding 20 · application 5 · analysis 21 · evaluation 4 → **48% application or higher**.
 - Long answers are beyond the board's poem pattern (poems carry 3-mark answers) and are included as extended practice and for unit tests.
 
-**Tests:** short (20 marks, 40 min): A extract (5) · B 3 of 4 three-mark (9) · C 1 of 2 long (6). Long (40 marks, 90 min): A two extract pairs (10) · B 3 of 4 two-mark (6) · C 4 of 5 three-mark (12) · D two long pairs (12). No shared questions; `blueprint_id` null (see ch04 README for the blueprint mismatch).
+**Tests:** short (20 marks, 40 min): A extract (5) · B 3 of 4 three-mark (9) · C 1 of 2 long (6). Long (40 marks, 90 min): A two extract pairs (10) · B 3 of 4 two-mark (6) · C 4 of 5 three-mark (12) · D two long pairs (12). No shared questions; `blueprint_id` set to the subject's chapter-test blueprints, which these tests match item for item (see ch04 README).
 
 ## Verifier record (author pass, 2026-10-27)
 - Every item re-answered from its stem; form facts and symbolism checked; every student-facing string scanned for runs of the poem's words.

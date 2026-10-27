@@ -33,6 +33,8 @@ param uploadCorsOrigins array
 @description('Principal ids per access need.')
 param apiPrincipalId string
 param workerPrincipalId string
+@description('Migrator identity: the release job publishes content releases (D-026).')
+param migratorPrincipalId string
 param frontDoorPrincipalId string
 
 var saName = 'stsoyl${env}${take(uniqueString(resourceGroup().id), 8)}'
@@ -221,6 +223,17 @@ resource apiReleases 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
     principalId: apiPrincipalId
     principalType: 'ServicePrincipal'
     roleDefinitionId: roles.blobDataReader
+  }
+}
+
+// Release job (migrator identity): writes content releases only.
+resource migratorReleases 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
+  name: guid(cReleases.id, migratorPrincipalId, roles.blobDataContributor)
+  scope: cReleases
+  properties: {
+    principalId: migratorPrincipalId
+    principalType: 'ServicePrincipal'
+    roleDefinitionId: roles.blobDataContributor
   }
 }
 

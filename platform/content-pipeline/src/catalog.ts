@@ -156,6 +156,9 @@ export function loadCatalog(dir: string): Catalog {
         else {
           const s = subjectsById.get(bp.subject_id)!;
           if (s.class !== bp.class || s.exam !== bp.exam) err(file, `blueprint class/exam ${bp.exam}-${bp.class} ≠ subject ${s.id}`);
+          const v = bp.variant;
+          if (v && !s.variants.some((sv) => sv.name === v.name && sv.code === v.code))
+            err(file, `blueprint variant ${v.name} (${v.code ?? 'no code'}) is not one of ${s.id}'s variants in subjects.yaml`);
         }
         const expected = path.join(subjectDir(bp.subject_id), 'blueprints');
         if (path.normalize(path.relative(dir, path.dirname(file))) !== path.normalize(expected))
