@@ -47,6 +47,8 @@ options
   --authored              verify/originality/tts/publish: hand-authored chapters + exemplars instead of out/
   --allow-mock            publish: allow mock placeholder content (never in production)
   --series                assemble: the whole test series, not only chapter tests
+  --freeze                assemble --series: write the series papers to content/authored/series/<subject>.json (ADR-019;
+                          later runs and publish --authored use the frozen papers instead of re-assembling)
   --source db|files       assemble/coverage: published content in Postgres (default) or files
   --strict                assemble: exit 2 when any paper produced a generation request
   --unit <id> --to <n>    rollback target
@@ -78,6 +80,7 @@ export async function main(argv: string[], env: Record<string, string | undefine
       authored: { type: 'boolean', default: false },
       'allow-mock': { type: 'boolean', default: false },
       series: { type: 'boolean', default: false },
+      freeze: { type: 'boolean', default: false },
       source: { type: 'string' },
       strict: { type: 'boolean', default: false },
       unit: { type: 'string' },
@@ -161,7 +164,7 @@ export async function main(argv: string[], env: Record<string, string | undefine
       case 'originality':
         return (await originalityCommand(p, scope, { authored: values.authored, verbose: values.verbose })).exitCode;
       case 'assemble':
-        return (await assembleCommand(p, scope, { series: values.series, source, allowMock: values['allow-mock'], strict: values.strict, verbose: values.verbose })).exitCode;
+        return (await assembleCommand(p, scope, { series: values.series, source, allowMock: values['allow-mock'], strict: values.strict, verbose: values.verbose, freeze: values.freeze })).exitCode;
       case 'tts':
         return (await ttsCommand(p, scope, { authored: values.authored, force: values.force })).exitCode;
       case 'publish':

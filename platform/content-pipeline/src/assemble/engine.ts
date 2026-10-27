@@ -7,7 +7,8 @@
  *     `numerical` of the same marks, since board numericals carry step marks), marks_each exactly,
  *     competency and difficulty range when the item sets them, not already in this paper, not in
  *     the series' exclusion set ("no repeats across a series"), not a practice-only item (every
- *     topic it is tagged with is project / formative-only), scope chapters only, and the
+ *     topic it is tagged with is project / formative-only), not a near-duplicate of a question already
+ *     in the paper (`conflicts`), scope chapters only, and the
  *     section's / item's own chapter scope when the blueprint sets one (discipline sections:
  *     Science Biology / Chemistry / Physics, Social Science History / Geography / …);
  *   - multi-chapter scopes: every chapter in scope must have questions in the bank, otherwise the
@@ -63,6 +64,8 @@ export interface PaperSpec {
    * A question tagged only with such topics is practice, never part of this paper.
    */
   practiceOnlyTopics?: ReadonlySet<string>;
+  /** Near-duplicate questions (stem similarity, ORIGINALITY.samePaper): never two of a group in one paper. */
+  conflicts?: ReadonlyMap<string, ReadonlySet<string>>;
 }
 
 export interface GenerationRequest {
@@ -323,6 +326,8 @@ export function assemblePaper(spec: PaperSpec, bank: readonly BankItem[]): Paper
       let bestScore = -Infinity;
       for (const q of available) {
         if (used.has(q.id) || !accepts(slot, q, unitScope)) continue;
+        const near = spec.conflicts?.get(q.id);
+        if (near && [...near].some((id) => used.has(id))) continue;
         let score = 0;
         if (!usedUnits.has(q.unit)) score += 3;
         else score -= 0.5 * (usedUnits.get(q.unit)! / Math.max(1, chosen.length));

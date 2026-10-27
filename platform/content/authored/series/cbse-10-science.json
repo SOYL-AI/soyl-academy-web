@@ -1,0 +1,3690 @@
+{
+  "subject_id": "cbse-10-science",
+  "academic_year": "2026-27",
+  "assembled_by": "assemble --board cbse --class 10 --subject cbse-10-science --series --source files --freeze",
+  "tests": [
+    {
+      "series": {
+        "key": "ts_cbse10sci_unit_tests",
+        "title": "Science unit tests",
+        "track": "main",
+        "position": 1
+      },
+      "test": {
+        "id": "t_cbse10sci_unit_1",
+        "kind": "unit",
+        "paper_type": "unit-test",
+        "blueprint_id": "cbse-10-default-unit-test",
+        "title": "Science — Unit test 1 (half-syllabus)",
+        "subject_id": "cbse-10-science",
+        "chapter_ids": [
+          "cbse-10-science-ch01",
+          "cbse-10-science-ch02",
+          "cbse-10-science-ch03",
+          "cbse-10-science-ch04"
+        ],
+        "duration_min": 120,
+        "total_marks": 50,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - Objective (1 mark each)",
+            "instructions": "Multiple-choice and assertion-reason questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch01_003",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_003",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_002",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_006",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_012",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_030",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_019",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_007",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_058",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_022",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": []
+          },
+          {
+            "id": "B",
+            "title": "Section B - Very short answer (2 marks)",
+            "instructions": "Internal choice in two questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch02_069",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_053",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_056",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_054",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_027",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_024",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_062",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              },
+              {
+                "id": "B-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Short answer (3 marks)",
+            "instructions": "Internal choice in two questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch02_017",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_009",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_022",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_062",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_038",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_071",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              },
+              {
+                "id": "C-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "D",
+            "title": "Section D - Long answer (5 marks)",
+            "instructions": "Internal choice in both questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch01_066",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_052",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_046",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_052",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "D-c1",
+                "attempt": 1
+              },
+              {
+                "id": "D-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "E",
+            "title": "Section E - Case-based (4 marks each)",
+            "instructions": "Read each passage/data set and answer all parts; internal choice in one sub-part.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch01_073",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_066",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": []
+          }
+        ],
+        "seed": "t_cbse10sci_unit_1@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sci_unit_tests",
+        "title": "Science unit tests",
+        "track": "main",
+        "position": 2
+      },
+      "test": {
+        "id": "t_cbse10sci_unit_2",
+        "kind": "unit",
+        "paper_type": "unit-test",
+        "blueprint_id": "cbse-10-default-unit-test",
+        "title": "Science — Unit test 2 (half-syllabus)",
+        "subject_id": "cbse-10-science",
+        "chapter_ids": [
+          "cbse-10-science-ch05",
+          "cbse-10-science-ch06",
+          "cbse-10-science-ch07",
+          "cbse-10-science-ch08",
+          "cbse-10-science-ch09"
+        ],
+        "duration_min": 120,
+        "total_marks": 50,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - Objective (1 mark each)",
+            "instructions": "Multiple-choice and assertion-reason questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch09_025",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_050",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_001",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_002",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_047",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_038",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_010",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_046",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_023",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_049",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": []
+          },
+          {
+            "id": "B",
+            "title": "Section B - Very short answer (2 marks)",
+            "instructions": "Internal choice in two questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch05_015",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_070",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_061",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_075",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_005",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_066",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_029",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c1"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              },
+              {
+                "id": "B-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Short answer (3 marks)",
+            "instructions": "Internal choice in two questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch09_053",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_045",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_007",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_046",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_024",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_071",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              },
+              {
+                "id": "C-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "D",
+            "title": "Section D - Long answer (5 marks)",
+            "instructions": "Internal choice in both questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch07_045",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_060",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_080",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_044",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "D-c1",
+                "attempt": 1
+              },
+              {
+                "id": "D-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "E",
+            "title": "Section E - Case-based (4 marks each)",
+            "instructions": "Read each passage/data set and answer all parts; internal choice in one sub-part.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch08_069",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_075",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": []
+          }
+        ],
+        "seed": "t_cbse10sci_unit_2@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sci_unit_tests",
+        "title": "Science unit tests",
+        "track": "main",
+        "position": 3
+      },
+      "test": {
+        "id": "t_cbse10sci_unit_3",
+        "kind": "unit",
+        "paper_type": "unit-test",
+        "blueprint_id": "cbse-10-default-unit-test",
+        "title": "Science — Unit test 3 (half-syllabus)",
+        "subject_id": "cbse-10-science",
+        "chapter_ids": [
+          "cbse-10-science-ch10",
+          "cbse-10-science-ch11",
+          "cbse-10-science-ch12",
+          "cbse-10-science-ch13"
+        ],
+        "duration_min": 120,
+        "total_marks": 50,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - Objective (1 mark each)",
+            "instructions": "Multiple-choice and assertion-reason questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch12_033",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_004",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_053",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_005",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_004",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_018",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_002",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_003",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_057",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_007",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": []
+          },
+          {
+            "id": "B",
+            "title": "Section B - Very short answer (2 marks)",
+            "instructions": "Internal choice in two questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch12_008",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_052",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_046",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_024",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_041",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_006",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_026",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "B-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              },
+              {
+                "id": "B-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Short answer (3 marks)",
+            "instructions": "Internal choice in two questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch10_063",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_024",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_039",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_024",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_061",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_048",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "C-c1"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              },
+              {
+                "id": "C-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "D",
+            "title": "Section D - Long answer (5 marks)",
+            "instructions": "Internal choice in both questions.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch11_084",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_070",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_074",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_035",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "D-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "D-c1",
+                "attempt": 1
+              },
+              {
+                "id": "D-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "E",
+            "title": "Section E - Case-based (4 marks each)",
+            "instructions": "Read each passage/data set and answer all parts; internal choice in one sub-part.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch13_070",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_089",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              }
+            ],
+            "choice_groups": []
+          }
+        ],
+        "seed": "t_cbse10sci_unit_3@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sci_mocks",
+        "title": "Science full mocks",
+        "track": "main",
+        "position": 1
+      },
+      "test": {
+        "id": "t_cbse10sci_mock_1",
+        "kind": "full",
+        "paper_type": "board",
+        "blueprint_id": "cbse-10-science-board",
+        "title": "Science — Full mock 1 (board pattern)",
+        "subject_id": "cbse-10-science",
+        "chapter_ids": [
+          "cbse-10-science-ch01",
+          "cbse-10-science-ch02",
+          "cbse-10-science-ch03",
+          "cbse-10-science-ch04",
+          "cbse-10-science-ch05",
+          "cbse-10-science-ch06",
+          "cbse-10-science-ch07",
+          "cbse-10-science-ch08",
+          "cbse-10-science-ch09",
+          "cbse-10-science-ch10",
+          "cbse-10-science-ch11",
+          "cbse-10-science-ch12",
+          "cbse-10-science-ch13"
+        ],
+        "duration_min": 180,
+        "total_marks": 80,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - Biology",
+            "instructions": "Questions 1-16. Q1-7 MCQ, Q8-9 assertion-reason, Q10-12 very short answer (2 marks), Q13-14 short answer (3 marks), Q15 case-based (4 marks), Q16 long answer (5 marks). Internal choice in one 2-mark, the case-based sub-part and the long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch05_036",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_005",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_007",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_012",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_034",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_048",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_062",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_049",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_042",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_069",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_006",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_042",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_022",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_067",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_062",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_077",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_034",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_012",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "A-c1",
+                "attempt": 1
+              },
+              {
+                "id": "A-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Section B - Chemistry",
+            "instructions": "Questions 17-29. Q17-23 MCQ, Q24 assertion-reason, Q25 very short answer, Q26-27 short answer, Q28 case-based, Q29 long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch04_012",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_010",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_002",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_006",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_039",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_066",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_049",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_045",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_051",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_037",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_017",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_038",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_073",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_070",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_063",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              },
+              {
+                "id": "B-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Physics",
+            "instructions": "Questions 30-39. Q30-31 MCQ, Q32 assertion-reason, Q33-34 very short answer, Q35-37 short answer, Q38 case-based, Q39 long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch09_001",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_036",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_007",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_062",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_052",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_026",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_024",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_039",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_040",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_086",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_074",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_080",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              },
+              {
+                "id": "C-c2",
+                "attempt": 1
+              }
+            ]
+          }
+        ],
+        "seed": "t_cbse10sci_mock_1@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sci_mocks",
+        "title": "Science full mocks",
+        "track": "main",
+        "position": 2
+      },
+      "test": {
+        "id": "t_cbse10sci_mock_2",
+        "kind": "full",
+        "paper_type": "board",
+        "blueprint_id": "cbse-10-science-board",
+        "title": "Science — Full mock 2 (board pattern)",
+        "subject_id": "cbse-10-science",
+        "chapter_ids": [
+          "cbse-10-science-ch01",
+          "cbse-10-science-ch02",
+          "cbse-10-science-ch03",
+          "cbse-10-science-ch04",
+          "cbse-10-science-ch05",
+          "cbse-10-science-ch06",
+          "cbse-10-science-ch07",
+          "cbse-10-science-ch08",
+          "cbse-10-science-ch09",
+          "cbse-10-science-ch10",
+          "cbse-10-science-ch11",
+          "cbse-10-science-ch12",
+          "cbse-10-science-ch13"
+        ],
+        "duration_min": 180,
+        "total_marks": 80,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - Biology",
+            "instructions": "Questions 1-16. Q1-7 MCQ, Q8-9 assertion-reason, Q10-12 very short answer (2 marks), Q13-14 short answer (3 marks), Q15 case-based (4 marks), Q16 long answer (5 marks). Internal choice in one 2-mark, the case-based sub-part and the long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch08_050",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_020",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_010",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_027",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_016",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_002",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_011",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_039",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_036",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_009",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_076",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_006",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_057",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_007",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_016",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_068",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_072",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_073",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "A-c1",
+                "attempt": 1
+              },
+              {
+                "id": "A-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Section B - Chemistry",
+            "instructions": "Questions 17-29. Q17-23 MCQ, Q24 assertion-reason, Q25 very short answer, Q26-27 short answer, Q28 case-based, Q29 long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch03_030",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_047",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_003",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_055",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_013",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_031",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_041",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_026",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_056",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_063",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_038",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_018",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_064",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_066",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_028",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              },
+              {
+                "id": "B-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Physics",
+            "instructions": "Questions 30-39. Q30-31 MCQ, Q32 assertion-reason, Q33-34 very short answer, Q35-37 short answer, Q38 case-based, Q39 long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch09_055",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_056",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_048",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_067",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_038",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_034",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_053",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_030",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_028",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_082",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_070",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_084",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              },
+              {
+                "id": "C-c2",
+                "attempt": 1
+              }
+            ]
+          }
+        ],
+        "seed": "t_cbse10sci_mock_2@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sci_mocks",
+        "title": "Science full mocks",
+        "track": "main",
+        "position": 3
+      },
+      "test": {
+        "id": "t_cbse10sci_mock_3",
+        "kind": "full",
+        "paper_type": "board",
+        "blueprint_id": "cbse-10-science-board",
+        "title": "Science — Full mock 3 (board pattern)",
+        "subject_id": "cbse-10-science",
+        "chapter_ids": [
+          "cbse-10-science-ch01",
+          "cbse-10-science-ch02",
+          "cbse-10-science-ch03",
+          "cbse-10-science-ch04",
+          "cbse-10-science-ch05",
+          "cbse-10-science-ch06",
+          "cbse-10-science-ch07",
+          "cbse-10-science-ch08",
+          "cbse-10-science-ch09",
+          "cbse-10-science-ch10",
+          "cbse-10-science-ch11",
+          "cbse-10-science-ch12",
+          "cbse-10-science-ch13"
+        ],
+        "duration_min": 180,
+        "total_marks": 80,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - Biology",
+            "instructions": "Questions 1-16. Q1-7 MCQ, Q8-9 assertion-reason, Q10-12 very short answer (2 marks), Q13-14 short answer (3 marks), Q15 case-based (4 marks), Q16 long answer (5 marks). Internal choice in one 2-mark, the case-based sub-part and the long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch07_002",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_047",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_049",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_029",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_038",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_046",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_008",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_017",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_004",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_005",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_045",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_044",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_066",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_072",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_034",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_075",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_049",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_063",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "A-c1",
+                "attempt": 1
+              },
+              {
+                "id": "A-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Section B - Chemistry",
+            "instructions": "Questions 17-29. Q17-23 MCQ, Q24 assertion-reason, Q25 very short answer, Q26-27 short answer, Q28 case-based, Q29 long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch01_007",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_031",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_053",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_009",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_002",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_019",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_032",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_023",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_054",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_051",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_022",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_060",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_075",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_039",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_070",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              },
+              {
+                "id": "B-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Physics",
+            "instructions": "Questions 30-39. Q30-31 MCQ, Q32 assertion-reason, Q33-34 very short answer, Q35-37 short answer, Q38 case-based, Q39 long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch10_047",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_035",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_035",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_026",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_049",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_065",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_063",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_039",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_032",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_085",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_068",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_015",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              },
+              {
+                "id": "C-c2",
+                "attempt": 1
+              }
+            ]
+          }
+        ],
+        "seed": "t_cbse10sci_mock_3@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sci_mocks",
+        "title": "Science full mocks",
+        "track": "main",
+        "position": 4
+      },
+      "test": {
+        "id": "t_cbse10sci_mock_4",
+        "kind": "full",
+        "paper_type": "board",
+        "blueprint_id": "cbse-10-science-board",
+        "title": "Science — Full mock 4 (board pattern)",
+        "subject_id": "cbse-10-science",
+        "chapter_ids": [
+          "cbse-10-science-ch01",
+          "cbse-10-science-ch02",
+          "cbse-10-science-ch03",
+          "cbse-10-science-ch04",
+          "cbse-10-science-ch05",
+          "cbse-10-science-ch06",
+          "cbse-10-science-ch07",
+          "cbse-10-science-ch08",
+          "cbse-10-science-ch09",
+          "cbse-10-science-ch10",
+          "cbse-10-science-ch11",
+          "cbse-10-science-ch12",
+          "cbse-10-science-ch13"
+        ],
+        "duration_min": 180,
+        "total_marks": 80,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - Biology",
+            "instructions": "Questions 1-16. Q1-7 MCQ, Q8-9 assertion-reason, Q10-12 very short answer (2 marks), Q13-14 short answer (3 marks), Q15 case-based (4 marks), Q16 long answer (5 marks). Internal choice in one 2-mark, the case-based sub-part and the long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch07_015",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_064",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_002",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_042",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_001",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_071",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_062",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_029",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_004",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_060",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_070",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_058",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_029",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_053",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_046",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_065",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_060",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_046",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "A-c1",
+                "attempt": 1
+              },
+              {
+                "id": "A-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Section B - Chemistry",
+            "instructions": "Questions 17-29. Q17-23 MCQ, Q24 assertion-reason, Q25 very short answer, Q26-27 short answer, Q28 case-based, Q29 long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch03_054",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_020",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_010",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_003",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_028",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_057",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_018",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_033",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_049",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_055",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_045",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_051",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_068",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_071",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_010",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              },
+              {
+                "id": "B-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Physics",
+            "instructions": "Questions 30-39. Q30-31 MCQ, Q32 assertion-reason, Q33-34 very short answer, Q35-37 short answer, Q38 case-based, Q39 long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch10_001",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_040",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_035",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_052",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_038",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_023",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_067",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_024",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_079",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_089",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_033",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_032",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              },
+              {
+                "id": "C-c2",
+                "attempt": 1
+              }
+            ]
+          }
+        ],
+        "seed": "t_cbse10sci_mock_4@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sci_mocks",
+        "title": "Science full mocks",
+        "track": "main",
+        "position": 5
+      },
+      "test": {
+        "id": "t_cbse10sci_mock_5",
+        "kind": "full",
+        "paper_type": "board",
+        "blueprint_id": "cbse-10-science-board",
+        "title": "Science — Full mock 5 (board pattern)",
+        "subject_id": "cbse-10-science",
+        "chapter_ids": [
+          "cbse-10-science-ch01",
+          "cbse-10-science-ch02",
+          "cbse-10-science-ch03",
+          "cbse-10-science-ch04",
+          "cbse-10-science-ch05",
+          "cbse-10-science-ch06",
+          "cbse-10-science-ch07",
+          "cbse-10-science-ch08",
+          "cbse-10-science-ch09",
+          "cbse-10-science-ch10",
+          "cbse-10-science-ch11",
+          "cbse-10-science-ch12",
+          "cbse-10-science-ch13"
+        ],
+        "duration_min": 180,
+        "total_marks": 80,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - Biology",
+            "instructions": "Questions 1-16. Q1-7 MCQ, Q8-9 assertion-reason, Q10-12 very short answer (2 marks), Q13-14 short answer (3 marks), Q15 case-based (4 marks), Q16 long answer (5 marks). Internal choice in one 2-mark, the case-based sub-part and the long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch05_023",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_046",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_069",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_051",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_014",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_056",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_050",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_053",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_003",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_042",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_033",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_070",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_023",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_043",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_045",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_066",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_047",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_022",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "A-c1",
+                "attempt": 1
+              },
+              {
+                "id": "A-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Section B - Chemistry",
+            "instructions": "Questions 17-29. Q17-23 MCQ, Q24 assertion-reason, Q25 very short answer, Q26-27 short answer, Q28 case-based, Q29 long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch04_042",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_044",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_002",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_041",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_056",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_020",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_010",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_031",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_037",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_068",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_057",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_009",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_072",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_023",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_064",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              },
+              {
+                "id": "B-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Physics",
+            "instructions": "Questions 30-39. Q30-31 MCQ, Q32 assertion-reason, Q33-34 very short answer, Q35-37 short answer, Q38 case-based, Q39 long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch10_066",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_003",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_036",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_065",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_046",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_021",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_066",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_031",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_054",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_088",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_054",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_054",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              },
+              {
+                "id": "C-c2",
+                "attempt": 1
+              }
+            ]
+          }
+        ],
+        "seed": "t_cbse10sci_mock_5@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sci_mocks",
+        "title": "Science full mocks",
+        "track": "main",
+        "position": 6
+      },
+      "test": {
+        "id": "t_cbse10sci_mock_6",
+        "kind": "full",
+        "paper_type": "board",
+        "blueprint_id": "cbse-10-science-board",
+        "title": "Science — Full mock 6 (board pattern)",
+        "subject_id": "cbse-10-science",
+        "chapter_ids": [
+          "cbse-10-science-ch01",
+          "cbse-10-science-ch02",
+          "cbse-10-science-ch03",
+          "cbse-10-science-ch04",
+          "cbse-10-science-ch05",
+          "cbse-10-science-ch06",
+          "cbse-10-science-ch07",
+          "cbse-10-science-ch08",
+          "cbse-10-science-ch09",
+          "cbse-10-science-ch10",
+          "cbse-10-science-ch11",
+          "cbse-10-science-ch12",
+          "cbse-10-science-ch13"
+        ],
+        "duration_min": 180,
+        "total_marks": 80,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - Biology",
+            "instructions": "Questions 1-16. Q1-7 MCQ, Q8-9 assertion-reason, Q10-12 very short answer (2 marks), Q13-14 short answer (3 marks), Q15 case-based (4 marks), Q16 long answer (5 marks). Internal choice in one 2-mark, the case-based sub-part and the long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch13_040",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_047",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_014",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_013",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_037",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_040",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_019",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_066",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_064",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_031",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_015",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_032",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_061",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_059",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_010",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_070",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_063",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_045",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "A-c1",
+                "attempt": 1
+              },
+              {
+                "id": "A-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Section B - Chemistry",
+            "instructions": "Questions 17-29. Q17-23 MCQ, Q24 assertion-reason, Q25 very short answer, Q26-27 short answer, Q28 case-based, Q29 long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch02_003",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_005",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_065",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_024",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_029",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_055",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_057",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_030",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_067",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_064",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_062",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_021",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_078",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_039",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_019",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              },
+              {
+                "id": "B-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Physics",
+            "instructions": "Questions 30-39. Q30-31 MCQ, Q32 assertion-reason, Q33-34 very short answer, Q35-37 short answer, Q38 case-based, Q39 long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch10_046",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_018",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_061",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_049",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_012",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_033",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_073",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_078",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_083",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_084",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_070",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_027",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              },
+              {
+                "id": "C-c2",
+                "attempt": 1
+              }
+            ]
+          }
+        ],
+        "seed": "t_cbse10sci_mock_6@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sci_may",
+        "title": "Science second-exam (May) track",
+        "track": "second_exam",
+        "position": 1
+      },
+      "test": {
+        "id": "t_cbse10sci_may_1",
+        "kind": "full",
+        "paper_type": "board-second-exam",
+        "blueprint_id": "cbse-10-science-board-second-exam",
+        "title": "Science — May second exam, paper 1",
+        "subject_id": "cbse-10-science",
+        "chapter_ids": [
+          "cbse-10-science-ch01",
+          "cbse-10-science-ch02",
+          "cbse-10-science-ch03",
+          "cbse-10-science-ch04",
+          "cbse-10-science-ch05",
+          "cbse-10-science-ch06",
+          "cbse-10-science-ch07",
+          "cbse-10-science-ch08",
+          "cbse-10-science-ch09",
+          "cbse-10-science-ch10",
+          "cbse-10-science-ch11",
+          "cbse-10-science-ch12",
+          "cbse-10-science-ch13"
+        ],
+        "duration_min": 180,
+        "total_marks": 80,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - Biology",
+            "instructions": "Questions 1-16. Q1-7 MCQ, Q8-9 assertion-reason, Q10-12 very short answer (2 marks), Q13-14 short answer (3 marks), Q15 case-based (4 marks), Q16 long answer (5 marks). Internal choice in one 2-mark, the case-based sub-part and the long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch08_001",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_003",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_064",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_034",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_012",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_008",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_002",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_049",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_042",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_005",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_022",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_076",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_044",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_062",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_043",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_077",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_034",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_012",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "A-c1",
+                "attempt": 1
+              },
+              {
+                "id": "A-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Section B - Chemistry",
+            "instructions": "Questions 17-29. Q17-23 MCQ, Q24 assertion-reason, Q25 very short answer, Q26-27 short answer, Q28 case-based, Q29 long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch03_030",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_012",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_044",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_020",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_053",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_057",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_012",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_050",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_024",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_058",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_062",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_017",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_064",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_070",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_039",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              },
+              {
+                "id": "B-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Physics",
+            "instructions": "Questions 30-39. Q30-31 MCQ, Q32 assertion-reason, Q33-34 very short answer, Q35-37 short answer, Q38 case-based, Q39 long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch10_056",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_046",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_021",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_065",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_023",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_065",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_054",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_039",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_079",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_086",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_074",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_033",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              },
+              {
+                "id": "C-c2",
+                "attempt": 1
+              }
+            ]
+          }
+        ],
+        "seed": "t_cbse10sci_may_1@2026-27",
+        "version": 1
+      }
+    },
+    {
+      "series": {
+        "key": "ts_cbse10sci_may",
+        "title": "Science second-exam (May) track",
+        "track": "second_exam",
+        "position": 2
+      },
+      "test": {
+        "id": "t_cbse10sci_may_2",
+        "kind": "full",
+        "paper_type": "board-second-exam",
+        "blueprint_id": "cbse-10-science-board-second-exam",
+        "title": "Science — May second exam, paper 2",
+        "subject_id": "cbse-10-science",
+        "chapter_ids": [
+          "cbse-10-science-ch01",
+          "cbse-10-science-ch02",
+          "cbse-10-science-ch03",
+          "cbse-10-science-ch04",
+          "cbse-10-science-ch05",
+          "cbse-10-science-ch06",
+          "cbse-10-science-ch07",
+          "cbse-10-science-ch08",
+          "cbse-10-science-ch09",
+          "cbse-10-science-ch10",
+          "cbse-10-science-ch11",
+          "cbse-10-science-ch12",
+          "cbse-10-science-ch13"
+        ],
+        "duration_min": 180,
+        "total_marks": 80,
+        "shuffle": false,
+        "sections": [
+          {
+            "id": "A",
+            "title": "Section A - Biology",
+            "instructions": "Questions 1-16. Q1-7 MCQ, Q8-9 assertion-reason, Q10-12 very short answer (2 marks), Q13-14 short answer (3 marks), Q15 case-based (4 marks), Q16 long answer (5 marks). Internal choice in one 2-mark, the case-based sub-part and the long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch05_071",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_038",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_027",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_036",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_051",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_065",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_019",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_017",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_004",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_033",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch08_045",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_057",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_042",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "A-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch06_072",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch05_067",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch07_074",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_063",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch13_049",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "A-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "A-c1",
+                "attempt": 1
+              },
+              {
+                "id": "A-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "title": "Section B - Chemistry",
+            "instructions": "Questions 17-29. Q17-23 MCQ, Q24 assertion-reason, Q25 very short answer, Q26-27 short answer, Q28 case-based, Q29 long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch03_008",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_013",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_009",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_066",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_003",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_040",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_019",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_023",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_037",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_051",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch03_038",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": "B-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_064",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch02_076",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch04_064",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch01_071",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "B-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "B-c1",
+                "attempt": 1
+              },
+              {
+                "id": "B-c2",
+                "attempt": 1
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "title": "Section C - Physics",
+            "instructions": "Questions 30-39. Q30-31 MCQ, Q32 assertion-reason, Q33-34 very short answer, Q35-37 short answer, Q38 case-based, Q39 long answer.",
+            "items": [
+              {
+                "question_id": "q_cbse10sci_ch10_001",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_047",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_048",
+                "question_version": 1,
+                "marks": 1,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_051",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_006",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_026",
+                "question_version": 1,
+                "marks": 2,
+                "choice_group": "C-c1"
+              },
+              {
+                "question_id": "q_cbse10sci_ch11_039",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_024",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_032",
+                "question_version": 1,
+                "marks": 3,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch12_079",
+                "question_version": 1,
+                "marks": 4,
+                "choice_group": null
+              },
+              {
+                "question_id": "q_cbse10sci_ch10_032",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c2"
+              },
+              {
+                "question_id": "q_cbse10sci_ch09_080",
+                "question_version": 1,
+                "marks": 5,
+                "choice_group": "C-c2"
+              }
+            ],
+            "choice_groups": [
+              {
+                "id": "C-c1",
+                "attempt": 1
+              },
+              {
+                "id": "C-c2",
+                "attempt": 1
+              }
+            ]
+          }
+        ],
+        "seed": "t_cbse10sci_may_2@2026-27",
+        "version": 1
+      }
+    }
+  ]
+}
