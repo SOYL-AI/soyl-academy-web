@@ -134,12 +134,17 @@ describe('frozen test series (content/authored/series)', () => {
         }
       });
 
-      it('uses only board-assessed, non-practice-only questions from the chapters in scope', () => {
+      it('board-pattern integrity: no item from a chapter or topic the board does not assess (syllabus data)', () => {
+        const notAssessed = new Set(syllabus.chapters.filter((c) => c.board_assessed === false).map((c) => c.id));
+        expect(file.tests.flatMap(({ test }) => test.chapter_ids.filter((c) => notAssessed.has(c)).map((c) => `${test.id}: scope ${c}`))).toEqual([]);
         const bad = file.tests.flatMap(({ test }) =>
-          questionIds(test).filter((id) => {
-            const q = questionById.get(id)!;
-            return !test.chapter_ids.includes(q.unit) || (q.topic_ids.length > 0 && q.topic_ids.every((t) => practiceOnly.has(t)));
-          }),
+          questionIds(test)
+            .filter((id) => {
+              const q = questionById.get(id)!;
+              // The stem label is only a cross-check of the tagging; selection itself uses the syllabus data.
+              return !test.chapter_ids.includes(q.unit) || notAssessed.has(q.unit) || q.topic_ids.some((t) => practiceOnly.has(t)) || /practice only, not assessed/i.test(q.stem_md);
+            })
+            .map((id) => `${test.id}: ${id}`),
         );
         expect(bad).toEqual([]);
       });
@@ -233,7 +238,7 @@ describe('blueprint engine: discipline sections, unit weightage, practice-only t
     for (const g of ok.test.sections[0]!.choice_groups) expect(new Set(ok.test.sections[0]!.items.filter((i) => i.choice_group === g.id).map((i) => i.question_id.slice(0, 9))).size).toBe(1);
   });
 
-  it('keeps questions tagged only with board_assessed:false topics out of series papers', () => {
+  it('keeps questions tagged with a board_assessed:false topic out of series papers', () => {
     const topic = 'cbse-10-science-ch01-t01';
     const items: BankItem[] = bank.items.map((q) => (q.unit.endsWith('-ch01') ? { ...q, topic_ids: [topic] } : q));
     const unitPaper = plan.papers.find((x) => x.spec.id === 't_cbse10sci_unit_1')!;

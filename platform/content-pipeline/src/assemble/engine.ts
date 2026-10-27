@@ -6,8 +6,8 @@
  *   - hard: type (with the blueprint's documented mapping: a `short`/`long` slot also takes a
  *     `numerical` of the same marks, since board numericals carry step marks), marks_each exactly,
  *     competency and difficulty range when the item sets them, not already in this paper, not in
- *     the series' exclusion set ("no repeats across a series"), not a practice-only item (every
- *     topic it is tagged with is project / formative-only), not a near-duplicate of a question already
+ *     the series' exclusion set ("no repeats across a series"), not a practice-only item (tagged
+ *     with any project / periodic-assessment-only topic), not a near-duplicate of a question already
  *     in the paper (`conflicts`), scope chapters only, and the
  *     section's / item's own chapter scope when the blueprint sets one (discipline sections:
  *     Science Biology / Chemistry / Physics, Social Science History / Geography / …);
@@ -19,7 +19,8 @@
  *     and both alternatives of an internal choice come from the same unit;
  *   - soft (scored): chapter spread (unused chapter +3), topic coverage (new topic +2), difficulty
  *     curve (target ramps from easy to hard across the paper; −|d − target|), the blueprint's
- *     competency mark shares (under-filled share preferred), internal-choice alternatives from the
+ *     competency mark shares (under-filled share preferred), questions in `avoid` (−6: another track's
+ *     papers), internal-choice alternatives from the
  *     same chapter as their partner (+2); ties broken by the seeded shuffle of the id-sorted bank,
  *     so the same bank gives the same paper whatever order the bank was read in.
  * Shortages never fail silently: they come back as GenerationRequest records (what to generate,
@@ -60,12 +61,15 @@ export interface PaperSpec {
   /** Exact unit weightage; the targets must add up to the blueprint's total marks. */
   unitTargets?: UnitTarget[];
   /**
-   * Topics the board does not assess (syllabus `board_assessed: false`: project / formative-only).
-   * A question tagged only with such topics is practice, never part of this paper.
+   * Topics the board does not assess (syllabus `board_assessed: false`: project / periodic-assessment
+   * only, and every topic of a chapter that is not board-assessed). A question tagged with any of them
+   * is practice, never part of this paper.
    */
   practiceOnlyTopics?: ReadonlySet<string>;
   /** Near-duplicate questions (stem similarity, ORIGINALITY.samePaper): never two of a group in one paper. */
   conflicts?: ReadonlyMap<string, ReadonlySet<string>>;
+  /** Soft: questions to avoid when the bank allows (the May track avoids the main mocks' questions). */
+  avoid?: ReadonlySet<string>;
 }
 
 export interface GenerationRequest {
@@ -236,7 +240,7 @@ export function assemblePaper(spec: PaperSpec, bank: readonly BankItem[]): Paper
   const rng = createRng(spec.seed);
   const sorted = [...bank].sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
   const practiceOnly = spec.practiceOnlyTopics;
-  const pool = rng.shuffle(sorted.filter((q) => scope.has(q.unit) && !(practiceOnly && q.topic_ids.length && q.topic_ids.every((t) => practiceOnly.has(t)))));
+  const pool = rng.shuffle(sorted.filter((q) => scope.has(q.unit) && !(practiceOnly && q.topic_ids.some((t) => practiceOnly.has(t)))));
   const requests: GenerationRequest[] = [];
   const base = { paper_id: spec.id, blueprint_id: bp.id };
 
@@ -334,6 +338,7 @@ export function assemblePaper(spec: PaperSpec, bank: readonly BankItem[]): Paper
         if (q.topic_ids.some((t) => !coveredTopics.has(t))) score += 2;
         score -= Math.abs(q.difficulty - target);
         if (q.type !== slot.type) score -= 0.25; // prefer the exact type
+        if (spec.avoid?.has(q.id)) score -= 6;
         if (slot.group && groupUnit.has(slot.group)) score += groupUnit.get(slot.group) === q.unit ? 2 : -1;
         const g = counted ? groupOf(q.competency) : null;
         if (g) score += 3 * Math.max(-1, Math.min(1, (g.target - g.assigned) / counted));

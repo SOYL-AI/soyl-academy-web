@@ -126,7 +126,9 @@ export function assembleSubject(plan: ReturnType<typeof planSubjectTests>, bank:
   for (const planned of plan.papers) {
     if (frozenById.has(planned.spec.id)) continue;
     const exclude = exclusionFor(planned.series);
-    const r = assemblePaper({ ...planned.spec, exclude, ...(bank.conflicts ? { conflicts: bank.conflicts } : {}) }, bank.items);
+    // The May (second-exam) track avoids the questions of the same variant's main mocks where the bank allows.
+    const avoid = planned.track === 'second_exam' ? used.get(planned.series.replace(/^may/, 'mocks')) : undefined;
+    const r = assemblePaper({ ...planned.spec, exclude, ...(bank.conflicts ? { conflicts: bank.conflicts } : {}), ...(avoid ? { avoid } : {}) }, bank.items);
     if (r.ok) {
       r.used.forEach((id) => exclude.add(id));
       out.tests.push({ test: r.test, planned });

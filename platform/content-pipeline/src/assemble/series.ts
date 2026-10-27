@@ -119,8 +119,10 @@ export function planSubjectTests(
   const base = testIdBase(subject.id);
   const name = subject.name;
   const seed = (id: string) => `${id}@${opts.academicYear}`;
-  // Project / formative-only topics: their questions stay practice and never enter series papers.
-  const practiceOnly = new Set(syllabus.chapters.flatMap((c) => c.topics.filter((t) => t.board_assessed === false).map((t) => t.id)));
+  // Board-pattern integrity (series papers: unit tests, mocks, May track): no question tagged with a topic
+  // the board does not assess (project / periodic-assessment only) or from a chapter it does not assess.
+  // Driven by the syllabus data, never by stem text. Chapter tests and student-built custom tests may use them.
+  const practiceOnly = new Set(syllabus.chapters.flatMap((c) => c.topics.filter((t) => t.board_assessed === false || c.board_assessed === false).map((t) => t.id)));
   const add =(paper: PaperType, id: string, title: string, chapters: string[], series: string, seriesTitle: string | null, position: number, variant = '', track: 'main' | 'second_exam' = 'main', weighted = false) => {
     const bp = blueprintFor(catalog, subject, paper, variant);
     if (!bp) {
