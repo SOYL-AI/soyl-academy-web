@@ -350,9 +350,10 @@ describe('AzureOpenAIProvider', () => {
       AZURE_OPENAI_ENDPOINT: 'https://x.openai.azure.com',
       AZURE_OPENAI_DEPLOYMENT_SMALL: 's',
       AZURE_OPENAI_DEPLOYMENT_MID: 'm',
+      // Ignored: D-033 — the verify pass runs on the Sol (mid) deployment; there is no separate verify model.
       AZURE_OPENAI_DEPLOYMENT_VERIFY: 'v',
     });
-    expect(cfg.deployments).toEqual({ small: 's', mid: 'm', verify: 'v' });
+    expect(cfg.deployments).toEqual({ small: 's', mid: 'm', verify: 'm' });
   });
 
   it('rejects a non-https endpoint', () => {
