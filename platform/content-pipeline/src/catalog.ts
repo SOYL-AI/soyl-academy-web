@@ -168,9 +168,15 @@ export function loadCatalog(dir: string): Catalog {
         for (const s of bp.sections)
           for (const id of [...(s.chapters ?? []), ...s.items.flatMap((it) => it.chapters ?? [])])
             if (!id.startsWith(`${bp.subject_id}-ch`) || (known && !known.chapters.some((c) => c.id === id))) err(file, `section ${s.id}: chapter ${id} is not in ${bp.subject_id}'s syllabus`);
-      } else if (bp.sections.some((s) => s.chapters || s.items.some((it) => it.chapters))) {
-        err(file, 'a board/class default blueprint cannot scope sections or items to chapters');
+        // Chapter override: a scope listing chapter ids replaces the subject's blueprint of the same paper type for those chapters.
+        for (const id of chapterOverride(bp) ?? [])
+          if (!id.startsWith(`${bp.subject_id}-ch`) || (known && !known.chapters.some((c) => c.id === id))) err(file, `scope: chapter ${id} is not in ${bp.subject_id}'s syllabus`);
+      } else if (bp.sections.some((s) => s.chapters || s.items.some((it) => it.chapters)) || chapterOverride(bp)) {
+        err(file, 'a board/class default blueprint cannot scope sections, items or the paper to chapters');
       }
+      for (const other of blueprints.filter((b) => b.subject_id === bp.subject_id && b.paper_type === bp.paper_type && chapterOverride(b)))
+        for (const id of chapterOverride(bp) ?? [])
+          if (chapterOverride(other)!.includes(id)) err(file, `scope: chapter ${id} is already overridden for ${bp.paper_type} by ${other.id}`);
       if (blueprints.some((b) => b.id === bp.id)) err(file, `duplicate blueprint id ${bp.id}`);
       blueprints.push(bp);
     }
@@ -193,11 +199,27 @@ export function findChapter(catalog: Catalog, unit: string): ChapterRef | null {
   return subject && syllabus && chapter ? { subject, syllabus, chapter } : null;
 }
 
-/** Blueprints that apply to a subject: its own, else board/class defaults (subject_id null). */
-export function blueprintsFor(catalog: Catalog, subject: Subject): Blueprint[] {
+/**
+ * Chapter ids of a chapter-override blueprint (`scope` given as a list of chapter ids, e.g. the CBSE 10 English
+ * supplementary-reader or Hindi A कृतिका chapter tests); null for a blueprint that applies to the whole subject.
+ */
+export function chapterOverride(bp: Blueprint): readonly string[] | null {
+  return Array.isArray(bp.scope) ? bp.scope : null;
+}
+
+/**
+ * Blueprints that apply to a subject: its own, else board/class defaults (subject_id null). With a chapter id,
+ * a chapter-override blueprint listing that chapter replaces the blueprint of the same paper type; without one,
+ * chapter overrides are left out.
+ */
+export function blueprintsFor(catalog: Catalog, subject: Subject, chapterId?: string): Blueprint[] {
   const own = catalog.blueprints.filter((b) => b.subject_id === subject.id);
-  if (own.length) return own;
-  return catalog.blueprints.filter((b) => b.subject_id === null && b.board === subject.board && b.class === subject.class && b.exam === subject.exam);
+  const general = own.filter((b) => !chapterOverride(b));
+  const base = general.length
+    ? general
+    : catalog.blueprints.filter((b) => b.subject_id === null && b.board === subject.board && b.class === subject.class && b.exam === subject.exam);
+  const overrides = chapterId ? own.filter((b) => chapterOverride(b)?.includes(chapterId)) : [];
+  return [...base.filter((b) => !overrides.some((o) => o.paper_type === b.paper_type)), ...overrides];
 }
 
 export interface Scope {

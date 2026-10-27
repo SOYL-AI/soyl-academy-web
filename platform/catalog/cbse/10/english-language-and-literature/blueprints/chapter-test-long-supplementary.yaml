@@ -1,0 +1,47 @@
+id: cbse-10-english-language-and-literature-chapter-test-long-supplementary
+board: cbse
+exam: cbse
+class: 10
+subject_id: cbse-10-english-language-and-literature
+paper_type: chapter-test-long
+academic_year: "2026-27"
+duration_min: 80
+total_marks: 36
+mark_shares: {}
+# Chapter override: these Footprints without Feet chapters use this blueprint instead of chapter-test-long.yaml.
+scope:
+  - cbse-10-english-language-and-literature-ch23
+  - cbse-10-english-language-and-literature-ch24
+  - cbse-10-english-language-and-literature-ch25
+  - cbse-10-english-language-and-literature-ch26
+  - cbse-10-english-language-and-literature-ch27
+  - cbse-10-english-language-and-literature-ch28
+  - cbse-10-english-language-and-literature-ch29
+  - cbse-10-english-language-and-literature-ch30
+  - cbse-10-english-language-and-literature-ch31
+sections:
+  - id: A
+    title: Section A - Short answers (2 marks each)
+    instructions: Answer any three of four questions in 30-40 words.
+    items:
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 3, of: 4}}
+  - id: B
+    title: Section B - Short answers (3 marks each)
+    instructions: Two sets of three questions; in each set answer any two in 40-50 words.
+    items:
+      - {type: short, count: 6, marks_each: 3, internal_choice: {attempt: 2, of: 3}}
+  - id: C
+    title: Section C - Long answers (6 marks each)
+    instructions: Answer one question from each of the three pairs in 100-120 words.
+    items:
+      - {type: long, count: 6, marks_each: 6, internal_choice: {attempt: 1, of: 2}}
+source_status: unverified
+source: lead-default
+notes: >-
+  Supplementary-reader chapter test (Footprints without Feet, ch23-ch31). SOYL default modelled on the 2026-27 board paper and marking
+  scheme (sources: cbse-sqp-x-english-language-and-literature-2026-27); not an official CBSE paper. No extract section, because the board
+  sets no extracts from this reader: Section B is the board's Q9 form (3-mark short answers in 40-50 words, any two of three) twice, and
+  Section C the 6-mark long answer (100-120 words, one of two) three times, on character, theme and values. Section A keeps the subject's
+  chapter-level 2-mark recall answers (30-40 words), as in chapter-test-long.yaml. 36 marks in 80 minutes. A chapter bank of 12 three-mark,
+  8 long and 4 two-mark answers fills this and the short test without sharing a question. Selected through `scope` (a chapter list), which
+  overrides the subject's chapter-test-long for those chapters only.

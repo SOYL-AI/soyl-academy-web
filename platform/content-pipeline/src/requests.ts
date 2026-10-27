@@ -47,7 +47,7 @@ export function unitContext(catalog: Catalog, ref: ChapterRef): UnitContext {
     ref,
     unit: ref.chapter.id,
     family: familyForChapter(ref.subject, ref.chapter),
-    blueprints: blueprintsFor(catalog, ref.subject),
+    blueprints: blueprintsFor(catalog, ref.subject, ref.chapter.id),
     topics: ref.chapter.topics.map((t) => ({ id: t.id, title: t.title })),
     language: ref.subject.language,
   };

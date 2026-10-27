@@ -14,7 +14,7 @@
 import { TEST_SERIES_TARGETS } from '@soyl/shared/config/content-targets';
 import { Competency, type Blueprint, type PaperType, type Subject, type SyllabusFile } from '@soyl/shared/content/index';
 import { COMPETENCY_BALANCE } from '../../config/pipeline';
-import type { Catalog } from '../catalog';
+import { chapterOverride, type Catalog } from '../catalog';
 import { questionIdPrefix } from '../ids';
 import type { CompetencyTarget, PaperSpec, UnitTarget } from './engine';
 
@@ -78,9 +78,18 @@ export function variantOf(bp: Blueprint, subject?: Pick<Subject, 'code'>): Paper
   return suffix && bp.id.startsWith(`${bp.subject_id}-${bp.paper_type}`) ? { key: suffix.replace(/-/g, ''), name: suffix.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase()), code: null } : { key: '', name: null, code: null };
 }
 
-/** The blueprint for one paper type and variant: the subject's own, else the board/class default (default variant only). */
-export function blueprintFor(catalog: Catalog, subject: Subject, paper: PaperType, variantKey = ''): Blueprint | null {
-  const own = catalog.blueprints.filter((b) => b.subject_id === subject.id && b.paper_type === paper);
+/**
+ * The blueprint for one paper type and variant: the subject's own, else the board/class default (default variant only).
+ * When the paper's chapters are given and a chapter-override blueprint (scope = chapter ids) of that paper type covers
+ * all of them, it wins for the default variant (CBSE 10 English Footprints, Hindi A कृतिका chapter tests).
+ */
+export function blueprintFor(catalog: Catalog, subject: Subject, paper: PaperType, variantKey = '', chapters?: readonly string[]): Blueprint | null {
+  const all = catalog.blueprints.filter((b) => b.subject_id === subject.id && b.paper_type === paper);
+  if (!variantKey && chapters?.length) {
+    const override = all.find((b) => chapters.every((c) => chapterOverride(b)?.includes(c)));
+    if (override) return override;
+  }
+  const own = all.filter((b) => !chapterOverride(b));
   const match = own.find((b) => variantOf(b, subject).key === variantKey);
   if (match) return match;
   if (variantKey) return null;
@@ -89,7 +98,7 @@ export function blueprintFor(catalog: Catalog, subject: Subject, paper: PaperTyp
 
 /** Paper variants with their own board blueprint (Maths Standard / Basic …); [default] when none. */
 export function variantsFor(catalog: Catalog, subject: Subject): PaperVariant[] {
-  const own = catalog.blueprints.filter((b) => b.subject_id === subject.id && b.paper_type === 'board').map((b) => variantOf(b, subject));
+  const own = catalog.blueprints.filter((b) => b.subject_id === subject.id && b.paper_type === 'board' && !chapterOverride(b)).map((b) => variantOf(b, subject));
   const unique = new Map(own.map((v) => [v.key, v]));
   return unique.size ? [...unique.values()].sort((a, b) => a.key.localeCompare(b.key)) : [{ key: '', name: null, code: null }];
 }
@@ -146,7 +155,7 @@ export function planSubjectTests(
   // Driven by the syllabus data, never by stem text. Chapter tests and student-built custom tests may use them.
   const practiceOnly = new Set(syllabus.chapters.flatMap((c) => c.topics.filter((t) => t.board_assessed === false || c.board_assessed === false).map((t) => t.id)));
   const add =(paper: PaperType, id: string, title: string, chapters: string[], series: string, seriesTitle: string | null, position: number, variant = '', track: 'main' | 'second_exam' = 'main', weighted = false) => {
-    const bp = blueprintFor(catalog, subject, paper, variant);
+    const bp = blueprintFor(catalog, subject, paper, variant, chapters);
     if (!bp) {
       notes.push(`${id}: no ${paper} blueprint${variant ? ` for variant ${variant}` : ''} for ${subject.id} or its class default`);
       return;
