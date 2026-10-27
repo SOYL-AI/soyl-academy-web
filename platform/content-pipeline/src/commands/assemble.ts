@@ -45,10 +45,14 @@ export interface Bank {
 /** Near-duplicate groups (ORIGINALITY.samePaper) from question texts: id → ids it must not share a paper with. */
 export function conflictsOf(texts: { id: string; unit: string; text: string }[]): Map<string, Set<string>> {
   const out = new Map<string, Set<string>>();
-  for (const { a, b } of nearDuplicates(texts, ORIGINALITY.samePaper)) {
-    out.set(a.id, (out.get(a.id) ?? new Set()).add(b.id));
-    out.set(b.id, (out.get(b.id) ?? new Set()).add(a.id));
-  }
+  const pair = (a: string, b: string) => {
+    out.set(a, (out.get(a) ?? new Set()).add(b));
+    out.set(b, (out.get(b) ?? new Set()).add(a));
+  };
+  for (const { a, b } of nearDuplicates(texts, ORIGINALITY.samePaper)) pair(a.id, b.id);
+  // Rewritten former duplicates (ORIGINALITY.keepApart): still never in one paper.
+  const ids = new Set(texts.map((t) => t.id));
+  for (const [a, b] of ORIGINALITY.keepApart) if (ids.has(a) && ids.has(b)) pair(a, b);
   return out;
 }
 
