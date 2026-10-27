@@ -59,6 +59,7 @@ export default function WhatWeTeachPage() {
       />
 
       <PageHero
+        tone="yellow"
         label="What we teach"
         title={
           <>
@@ -99,7 +100,7 @@ export default function WhatWeTeachPage() {
               <li key={p.id} data-reveal style={{ '--d': `${(i % 2) * 90}ms` } as React.CSSProperties} className="flex flex-col border-t border-rule-strong pb-12 pt-7">
                 <div className="flex items-baseline justify-between gap-4">
                   <p className="t-eyebrow text-muted">{p.category}</p>
-                  <p className="t-label rounded-full bg-paper px-2.5 py-0.5 text-ink">Coming soon</p>
+                  <p className="t-label rounded-full bg-highlighter px-2.5 py-0.5 text-ink">Coming soon</p>
                 </div>
                 <h3 className="t-title mt-3">{p.title}</h3>
                 <p className="mt-2 text-muted">{p.description}</p>

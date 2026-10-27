@@ -22,6 +22,7 @@ export default function BookDemoPage() {
         data={graph(webPageNode({ path: '/book-a-demo' }), breadcrumbNode('/book-a-demo', topLevelCrumbs('/book-a-demo')))}
       />
       <PageHero
+        tone="blue"
         label="Book a demo"
         title={
           <>

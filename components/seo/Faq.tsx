@@ -35,7 +35,7 @@ export function Faq({ faqs, heading = 'Common questions', label = 'FAQ', num, cl
                 <h3 className="t-subtitle transition-colors duration-200 group-hover:text-cobalt">{faq.question}</h3>
                 <span
                   aria-hidden="true"
-                  className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-rule-strong text-ink transition-[transform,background-color,color] duration-300 group-open:rotate-45 group-open:bg-ink group-open:text-white"
+                  className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-rule-strong text-ink transition-[transform,background-color,color] duration-300 group-open:rotate-45 group-open:border-cobalt group-open:bg-cobalt group-open:text-white"
                 >
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                     <path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />

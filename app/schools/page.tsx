@@ -45,6 +45,7 @@ export default function SchoolsPage() {
       />
 
       <PageHero
+        tone="red"
         label="For schools"
         title={
           <>
@@ -94,7 +95,7 @@ export default function SchoolsPage() {
                 style={{ '--d': `${(i % 3) * 80}ms` } as React.CSSProperties}
                 className="border-t border-rule-strong pb-10 pt-6"
               >
-                <span className="t-num font-serif text-[3rem] leading-none text-cobalt">{String(i + 1).padStart(2, '0')}</span>
+                <span className={`t-num font-serif text-[3rem] leading-none ${['text-cobalt', 'text-red-ink', 'text-ink'][i % 3]}`}>{String(i + 1).padStart(2, '0')}</span>
                 <h3 className="t-subtitle mt-5">{step.title}</h3>
                 <p className="mt-2 max-w-[36ch] text-muted">{step.desc}</p>
               </li>
@@ -107,6 +108,8 @@ export default function SchoolsPage() {
         <div className="page grid-12 items-center gap-y-12">
           <div className="col-span-12 lg:col-span-5">
             <Photo
+              backdrop="yellow"
+              backdropSide="left"
               image={images.teacherMentoring}
               aspect="aspect-[4/3] lg:aspect-[4/5]"
               large

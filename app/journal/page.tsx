@@ -29,6 +29,7 @@ export default function JournalPage() {
       />
 
       <PageHero
+        tone="red"
         label="The SOYL Journal"
         title={
           <>
@@ -87,7 +88,7 @@ export default function JournalPage() {
 function ArticleMeta({ date, readingTime, category }: { date: string; readingTime: number; category: string }) {
   return (
     <p className="t-label flex flex-wrap items-center gap-x-2 text-muted">
-      <span className="text-ink">{category}</span>
+      <span className="text-red-ink">{category}</span>
       <span aria-hidden="true">·</span>
       <time dateTime={date}>{formatArticleDate(date)}</time>
       <span aria-hidden="true">·</span>

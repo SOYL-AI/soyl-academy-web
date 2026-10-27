@@ -28,7 +28,7 @@ export function JournalTeaser() {
               <Link href={`/journal/${a.slug}`} className="group block">
                 <ArticleImage article={a} sizes="(min-width: 1320px) 390px, (min-width: 768px) 31vw, 100vw" />
                 <p className="t-label mt-5 flex flex-wrap gap-x-2 text-muted">
-                  <span className="text-ink">{a.category}</span>
+                  <span className="text-red-ink">{a.category}</span>
                   <span aria-hidden="true">·</span>
                   <time dateTime={a.date}>{formatArticleDate(a.date)}</time>
                 </p>

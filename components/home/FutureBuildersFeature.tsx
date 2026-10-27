@@ -17,6 +17,8 @@ export function FutureBuildersFeature({ state }: { state: CohortState }) {
       <div className="page grid-12 items-center gap-y-12">
         <div className="relative col-span-12 lg:col-span-7">
           <Photo
+            backdrop="blue"
+            backdropSide="left"
             image={images.fbPresentation}
             aspect="aspect-[4/3] md:aspect-[3/2]"
             large
@@ -28,7 +30,7 @@ export function FutureBuildersFeature({ state }: { state: CohortState }) {
               image={images.fbIot}
               aspect="aspect-square"
               reveal={false}
-              className="border-[6px] border-paper shadow-[0_30px_60px_-30px_rgba(20,20,20,0.45)]"
+              className="border-[6px] border-highlighter shadow-[0_30px_60px_-30px_rgba(20,20,20,0.45)]"
               sizes="(min-width: 1024px) 260px, 38vw"
             />
           </div>

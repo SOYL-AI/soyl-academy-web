@@ -1,7 +1,7 @@
 import type { EditorialImage } from '@/content/images';
 import { Photo } from '@/components/media/Photo';
 import { cn } from '@/lib/utils';
-import { Label } from './SectionHeader';
+import { Label, type Tone } from './SectionHeader';
 
 interface PageHeroProps {
   label: string;
@@ -16,6 +16,8 @@ interface PageHeroProps {
   imageLayout?: 'aside' | 'wide';
   /** `display` for audience pages, `headline` for quieter pages (legal, journal). */
   size?: 'display' | 'headline';
+  /** The page's accent colour: eyebrow mark, photo backdrop, headline highlight. */
+  tone?: Tone;
   className?: string;
 }
 
@@ -32,11 +34,13 @@ export function PageHero({
   image,
   imageLayout = 'aside',
   size = 'display',
+  tone = 'blue',
   className,
 }: PageHeroProps) {
   const sideImage = !aside && image && imageLayout === 'aside';
   const right = aside ?? (sideImage ? (
     <Photo
+      backdrop={tone}
       image={image}
       priority
       settle
@@ -51,7 +55,7 @@ export function PageHero({
       <div className="page grid-12 items-center gap-y-10 pb-14 pt-10 md:pb-20 md:pt-16 lg:pt-20">
         <div className={cn('col-span-12', right ? 'lg:col-span-7 lg:pr-6' : 'lg:col-span-10')}>
           <div className="rise">
-            <Label className="mb-6 md:mb-8">{label}</Label>
+            <Label tone={tone} className="mb-6 md:mb-8">{label}</Label>
           </div>
           <h1
             className={cn(size === 'display' ? 't-display' : 't-headline', 'rise max-w-[15ch]')}

@@ -8,6 +8,7 @@ import { CookieSettingsButton } from '@/components/legal/CookieSettingsButton';
 export function Footer() {
   return (
     <footer className="cv-auto on-dark bg-ink text-white">
+      <div aria-hidden="true" className="tri-stripe" />
       <div className="page grid-12 gap-y-14 pb-14 pt-16 md:pb-20 md:pt-24">
         <div className="col-span-12 lg:col-span-5">
           <p className="font-serif text-[clamp(2rem,3.6vw,3rem)] leading-[1.05] tracking-[-0.02em]">

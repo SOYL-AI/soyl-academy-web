@@ -25,6 +25,7 @@ export function Audiences() {
                 />
                 <div className="mt-6 flex items-start justify-between gap-4">
                   <div>
+                    <span aria-hidden="true" className={`mb-4 block h-1 w-12 rounded-full ${['bg-cobalt', 'bg-red-pen', 'bg-highlighter'][i % 3]}`} />
                     <h3 className="t-title">{item.title}</h3>
                     <p className="mt-2 max-w-[34ch] text-muted">{item.line}</p>
                     <span className="arrow-link mt-4">

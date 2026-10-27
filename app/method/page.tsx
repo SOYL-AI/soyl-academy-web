@@ -35,6 +35,7 @@ export default function MethodPage() {
       />
 
       <PageHero
+        tone="blue"
         label="The SOYL Method"
         title={
           <>
@@ -55,6 +56,8 @@ export default function MethodPage() {
                   {image && (
                     <div className={cn('col-span-12 lg:col-span-5', flip && 'lg:order-2 lg:col-start-8')}>
                       <Photo
+                        backdrop={(['blue', 'red', 'yellow'] as const)[i % 3]}
+                        backdropSide={flip ? 'left' : 'right'}
                         image={image}
                         aspect="aspect-[4/3] lg:aspect-[4/5]"
                         large
@@ -74,7 +77,7 @@ export default function MethodPage() {
                         <p className="t-eyebrow mb-2 text-muted">Traditional</p>
                         <p className="text-ink line-through decoration-red-pen decoration-2">{p.traditional}</p>
                       </div>
-                      <div className="rounded-[var(--radius-md)] border border-ink/80 bg-white p-5">
+                      <div className="rounded-[var(--radius-md)] border-2 border-cobalt bg-white p-5">
                         <p className="t-eyebrow mb-2 text-cobalt">SOYL</p>
                         <p className="font-medium text-ink">{p.soyl}</p>
                       </div>

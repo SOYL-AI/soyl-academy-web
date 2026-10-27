@@ -1,19 +1,31 @@
 import { cn } from '@/lib/utils';
 
+export type Tone = 'blue' | 'red' | 'yellow';
+
+/** Section colour coding: numbered sections cycle blue → red → yellow. */
+export function toneFor(num?: string): Tone {
+  const n = num ? parseInt(num, 10) : 1;
+  return (['yellow', 'blue', 'red'] as const)[n % 3];
+}
+
 interface LabelProps {
   children: React.ReactNode;
   /** Optional section number, e.g. "02". */
   num?: string;
+  /** Accent colour; defaults to the section-number cycle. */
+  tone?: Tone;
   className?: string;
 }
 
-/** Section eyebrow: tracked capitals with an optional number. */
-export function Label({ children, num, className }: LabelProps) {
+/** Section eyebrow: a colour mark, an optional number, tracked capitals. */
+export function Label({ children, num, tone, className }: LabelProps) {
+  const t = tone ?? toneFor(num);
   return (
-    <p className={cn('t-eyebrow flex items-center gap-3 text-muted', className)}>
+    <p className={cn(`tone-${t} t-eyebrow flex items-center gap-3 text-muted`, className)}>
+      <span aria-hidden="true" className="h-2.5 w-2.5 shrink-0 rounded-full bg-[var(--tone)]" />
       {num && (
         <>
-          <span className="t-num text-ink">{num}</span>
+          <span className="t-num text-[var(--tone-text)]">{num}</span>
           <span aria-hidden="true" className="h-px w-6 bg-current opacity-40" />
         </>
       )}

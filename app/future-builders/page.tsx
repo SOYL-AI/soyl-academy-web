@@ -158,6 +158,7 @@ export default function FutureBuildersPage() {
       />
 
       <PageHero
+        tone="yellow"
         label="Future Builders · Grades 7–12"
         title={
           <>

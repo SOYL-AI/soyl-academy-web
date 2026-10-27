@@ -19,7 +19,11 @@
   --color-cobalt: #2B4FE6;       /* links and the single accent colour */
   --color-cobalt-deep: #1F3BB3;
   --color-highlighter: #F2D45C;  /* small marks, focus on dark */
-  --color-red-pen: #C8473C;      /* drawn underlines */
+  --color-red-pen: #C8473C;      /* drawn underlines, red fills */
+  --color-red-ink: #B23A30;      /* red as text (5.6:1 on white) */
+  --color-cobalt-soft: #E8EDFF;  /* blue tint for fills */
+  --color-red-soft: #FBE9E6;     /* red tint for fills */
+  --color-yellow-soft: #FCF3CF;  /* yellow tint for fills */
   --color-success: #1E7A4C;
 
   --color-rule: rgba(20, 20, 20, 0.12);
@@ -114,6 +118,38 @@ h1, h2, h3, h4 {
   font-family: var(--font-newsreader-italic), var(--font-serif);
   font-style: italic;
   font-weight: 400;
+}
+
+/* In headlines on light backgrounds the accent word gets a highlighter stroke
+   (yellow by default; a section can switch it with --hl). Never on dark bands,
+   and not where a drawn pen underline already marks the word. */
+:is(h1, h2, .t-display, .t-headline) .t-accent:not(:has(.drawn)) {
+  background-image: linear-gradient(transparent 64%, var(--hl, var(--color-highlighter)) 64%, var(--hl, var(--color-highlighter)) 90%, transparent 90%);
+  padding-inline: 0.04em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.on-dark :is(h1, h2, .t-display, .t-headline) .t-accent { background-image: none; }
+
+/* Accent tones for per-section colour coding. --tone fills shapes and dots;
+   --tone-text is the AA-safe text colour for the same tone. */
+.tone-blue { --tone: var(--color-cobalt); --tone-text: var(--color-cobalt); --tone-soft: var(--color-cobalt-soft); }
+.tone-red { --tone: var(--color-red-pen); --tone-text: var(--color-red-ink); --tone-soft: var(--color-red-soft); }
+.tone-yellow { --tone: var(--color-highlighter); --tone-text: var(--color-ink); --tone-soft: var(--color-yellow-soft); }
+
+/* A thin three-colour stripe along the top edge of a panel. */
+.tri-top::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--color-cobalt) 0 33.33%, var(--color-red-pen) 33.33% 66.66%, var(--color-highlighter) 66.66% 100%);
+}
+
+/* The three-colour brand stripe. */
+.tri-stripe {
+  height: 6px;
+  background: linear-gradient(90deg, var(--color-cobalt) 0 33.33%, var(--color-red-pen) 33.33% 66.66%, var(--color-highlighter) 66.66% 100%);
 }
 
 .t-subtitle {
@@ -261,15 +297,15 @@ h1, h2, h3, h4 {
 
 /* Underline that grows from the left on hover (nav, footer). */
 .hover-line {
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size: 0% 1px;
+  background-image: linear-gradient(var(--color-red-pen), var(--color-red-pen));
+  background-size: 0% 2px;
   background-position: 0 100%;
   background-repeat: no-repeat;
   transition: background-size var(--duration-base) var(--ease-out), color var(--duration-fast) var(--ease-out);
 }
 .hover-line:hover,
 .hover-line[aria-current="page"] {
-  background-size: 100% 1px;
+  background-size: 100% 2px;
 }
 
 :focus-visible {

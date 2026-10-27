@@ -10,7 +10,7 @@ const base =
 const variants: Record<Variant, string> = {
   // Ink is the action colour; cobalt is its hover.
   primary: 'bg-ink text-white hover:bg-cobalt',
-  secondary: 'border border-ink/25 bg-white text-ink hover:border-ink hover:bg-ink hover:text-white',
+  secondary: 'border border-ink/25 bg-white text-ink hover:border-highlighter hover:bg-highlighter',
   // For use on ink / dark blocks.
   inverse: 'bg-white text-ink hover:bg-highlighter',
   'outline-inverse': 'border border-white/45 text-white hover:border-white hover:bg-white hover:text-ink',

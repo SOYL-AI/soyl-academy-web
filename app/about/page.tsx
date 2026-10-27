@@ -21,6 +21,7 @@ export default function AboutPage() {
       />
 
       <PageHero
+        tone="red"
         label="About SOYL Academy"
         title={
           <>
@@ -49,6 +50,8 @@ export default function AboutPage() {
         <div className="page grid-12 items-center gap-y-12">
           <div className="col-span-12 lg:col-span-6">
             <Photo
+              backdrop="red"
+              backdropSide="left"
               image={images.teacherMentoring}
               aspect="aspect-[4/3]"
               large

@@ -19,7 +19,7 @@ export function Hero() {
       <div className="page grid-12 items-center gap-y-12 pb-6 pt-10 md:pb-10 md:pt-16 lg:pb-12 lg:pt-20">
         <div className="col-span-12 lg:col-span-6 lg:pr-4">
           <div className="rise">
-            <Label className="mb-7 md:mb-9">{hero.label}</Label>
+            <Label tone="blue" className="mb-7 md:mb-9">{hero.label}</Label>
           </div>
           <h1 className="t-display max-w-[11ch]">
             <RiseWords text={hero.headline} />{' '}
@@ -42,9 +42,16 @@ export function Hero() {
             </ButtonLink>
           </div>
           <ul className="rise mt-10 flex flex-wrap gap-x-6 gap-y-2" style={{ '--d': '580ms' } as React.CSSProperties}>
-            {hero.points.map((p) => (
+            {hero.points.map((p, i) => (
               <li key={p} className="t-small flex items-center gap-2 text-muted">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="text-success">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  aria-hidden="true"
+                  className={['rounded-full bg-cobalt p-1 text-white', 'rounded-full bg-red-pen p-1 text-white', 'rounded-full bg-highlighter p-1 text-ink'][i % 3]}
+                >
                   <path d="M3.5 8.5l3 3 6-7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 {p}
@@ -56,6 +63,7 @@ export function Hero() {
         <div className="col-span-12 lg:col-span-6">
           <div className="relative pb-10 sm:pb-12 lg:pb-0">
             <Photo
+              backdrop="yellow"
               image={images.heroCollab}
               priority
               settle

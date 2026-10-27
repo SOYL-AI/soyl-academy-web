@@ -27,6 +27,7 @@ export default function StudentsPage() {
       />
 
       <PageHero
+        tone="blue"
         label="For students"
         title={
           <>

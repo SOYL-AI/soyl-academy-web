@@ -27,6 +27,7 @@ export default function ParentsPage() {
       />
 
       <PageHero
+        tone="yellow"
         label="For parents"
         title={
           <>

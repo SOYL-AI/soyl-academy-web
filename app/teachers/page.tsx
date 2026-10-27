@@ -40,6 +40,7 @@ export default function TeachersPage() {
       />
 
       <PageHero
+        tone="blue"
         label="For teachers"
         title={
           <>
@@ -92,7 +93,11 @@ export default function TeachersPage() {
                   style={{ '--d': `${i * 80}ms` } as React.CSSProperties}
                   className="grid grid-cols-[3.25rem_1fr] gap-x-4 border-t border-rule-strong py-6 first:border-t-0 first:pt-0 md:py-7"
                 >
-                  <span className="t-num font-serif text-[2.75rem] leading-[0.9] text-cobalt">{i + 1}</span>
+                  <span
+                  className={`t-num flex h-12 w-12 items-center justify-center rounded-full font-serif text-[1.75rem] leading-none ${['bg-cobalt text-white', 'bg-red-pen text-white', 'bg-highlighter text-ink'][i % 3]}`}
+                >
+                  {i + 1}
+                </span>
                   <div>
                     <h3 className="t-subtitle">{step.title}</h3>
                     <p className="mt-1.5 text-muted">{step.line}</p>

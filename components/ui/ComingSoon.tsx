@@ -24,11 +24,11 @@ export function ComingSoon({
 }: ComingSoonProps) {
   return (
     <div
-      className={cn('grid-12 items-end gap-y-8 rounded-[var(--radius-lg)] bg-paper px-6 py-10 md:px-12 md:py-14', className)}
+      className={cn('tri-top relative grid-12 items-end gap-y-8 overflow-hidden rounded-[var(--radius-lg)] bg-paper px-6 py-10 md:px-12 md:py-14', className)}
       data-reveal
     >
       <div className="col-span-12 lg:col-span-7">
-        <p className="t-eyebrow flex items-center gap-2.5 text-muted">
+        <p className="t-eyebrow inline-flex items-center gap-2.5 rounded-full bg-highlighter px-3.5 py-1.5 text-ink">
           <span aria-hidden="true" className="h-2 w-2 animate-pulse rounded-full bg-red-pen" />
           Coming soon
         </p>

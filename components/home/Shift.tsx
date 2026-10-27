@@ -14,6 +14,8 @@ export function Shift() {
         <div className="grid-12 mt-12 gap-y-10 md:mt-16">
           <div className="col-span-12 lg:col-span-5">
             <Photo
+              backdrop="red"
+              backdropSide="left"
               image={images.traditionalClassroom}
               aspect="aspect-[4/3] lg:aspect-[4/5]"
               parallax

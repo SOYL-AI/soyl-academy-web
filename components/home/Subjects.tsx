@@ -45,6 +45,9 @@ const ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
+/** Colour coding per subject. */
+const SUBJECT_TONE: Record<string, string> = { Maths: 'tone-blue', Physics: 'tone-red', Chemistry: 'tone-yellow' };
+
 export function Subjects() {
   return (
     <section className="section">
@@ -69,10 +72,13 @@ export function Subjects() {
               style={{ '--d': `${i * 70}ms` } as React.CSSProperties}
               className="last:col-span-2 sm:last:col-span-1"
             >
-              <div className="lift flex h-full flex-col gap-8 rounded-[var(--radius-md)] border border-rule bg-white p-5 hover:border-ink/30 hover:shadow-[0_24px_48px_-32px_rgba(20,20,20,0.4)] md:p-6">
+              <div
+                className={`${SUBJECT_TONE[sim.subject] ?? 'tone-blue'} lift flex h-full flex-col gap-8 rounded-[var(--radius-md)] border border-rule bg-white p-5 hover:border-[var(--tone)] hover:shadow-[0_24px_48px_-32px_rgba(20,20,20,0.4)] md:p-6`}
+              >
+                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--tone-soft)]">
                 <svg
-                  width="56"
-                  height="56"
+                  width="40"
+                  height="40"
                   viewBox="0 0 56 56"
                   fill="none"
                   stroke="currentColor"
@@ -80,10 +86,11 @@ export function Subjects() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   aria-hidden="true"
-                  className="text-cobalt"
+                  className="text-[var(--tone-text)]"
                 >
                   {ICONS[sim.title]}
                 </svg>
+                </span>
                 <ProductShot slot={sim} sizes="(min-width: 1024px) 220px, 45vw" />
                 <div className="mt-auto">
                   <p className="t-eyebrow text-muted">{sim.subject}</p>

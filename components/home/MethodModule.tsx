@@ -69,6 +69,7 @@ export function MethodModule() {
           <div className="col-span-12 lg:col-span-5 lg:col-start-8">
             <div className="lg:sticky lg:top-28">
               <Photo
+                backdrop="blue"
                 image={images.studentsDebating}
                 aspect="aspect-[4/5]"
                 large
