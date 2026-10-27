@@ -70,11 +70,15 @@ export function registerTestRoutes(appIn: FastifyInstance, deps: AppDeps, servic
   const app = appIn.withTypeProvider<ZodTypeProvider>();
   const ctx: EngineContext = { db: deps.db, kv: deps.kv, clock: deps.clock, year: deps.config.academicYear };
 
-  /** Attempt-keyed limits; a KV outage lets learning traffic through (API-16 fail-open for non-auth). */
-  async function attemptLimit(name: 'attempt.autosave' | 'attempt.submit', attemptId: string) {
+  /**
+   * Attempt-keyed limits; a KV outage lets learning traffic through (API-16 fail-open for non-auth).
+   * S6-L01: the bucket is keyed by caller + attempt, so someone who learns an attempt id (ids are not
+   * secrets, F-026) spends their own bucket, never the owner's (and then gets the ownership 404).
+   */
+  async function attemptLimit(name: 'attempt.autosave' | 'attempt.submit', userId: string, attemptId: string) {
     let r;
     try {
-      r = await services.limiter.bucket(name, attemptId);
+      r = await services.limiter.bucket(name, `${userId}:${attemptId}`);
     } catch (err) {
       if (err instanceof KvUnavailableError) return;
       throw err;
@@ -168,7 +172,7 @@ export function registerTestRoutes(appIn: FastifyInstance, deps: AppDeps, servic
       response: withProblems({ 200: SaveResponsesResponse }),
     },
     handler: async (request) => {
-      await attemptLimit('attempt.autosave', request.params.id);
+      await attemptLimit('attempt.autosave', request.auth!.user.id, request.params.id);
       return saveResponses(ctx, request.auth!.user.id, request.params.id, request.body);
     },
   });
@@ -184,7 +188,7 @@ export function registerTestRoutes(appIn: FastifyInstance, deps: AppDeps, servic
       response: withProblems({ 200: SubmitResponse }),
     },
     handler: async (request) => {
-      await attemptLimit('attempt.submit', request.params.id);
+      await attemptLimit('attempt.submit', request.auth!.user.id, request.params.id);
       const r = await submitAttempt(ctx, request.auth!.user.id, request.params.id, request.body ?? undefined);
       return {
         attemptId: r.attemptId,
