@@ -87,7 +87,8 @@ export function aiMessage(err: unknown): string {
 
 /** Upload rejection reasons (ai-gateway M4 handoff §7) → plain words. */
 export const UPLOAD_REJECT_TEXT: Record<string, string> = {
-  unsupported_type: 'That file type is not supported. Use a JPEG, PNG or WebP photo (or a PDF for sample papers).',
+  unsupported_type: 'That file type is not supported. Use a JPEG, PNG or WebP photo.',
+  pdf_not_accepted: 'PDFs cannot be uploaded yet. Take a clear photo of the page instead (JPEG, PNG or WebP).',
   type_mismatch: 'That file is not what its name says. Try taking the photo again.',
   too_large: 'That file is too large (10 MB at most).',
   too_many_pixels: 'That image is too large. Try a normal phone photo.',

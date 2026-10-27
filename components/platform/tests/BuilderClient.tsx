@@ -19,6 +19,7 @@ import { useSession } from '../auth/SessionProvider';
 import { AiNotice, PaywallDialog, QuoteDialog } from '../ai/AiDialogs';
 import { useCredits } from '../ai/CreditsProvider';
 import { aiBlockFrom, creditsText, newIdempotencyKey, type AiBlock } from '../ai/problems';
+import { AI_UPLOADS } from '@/platform/shared/config/ai-actions';
 import { prepareFile, uploadForAi, UploadRejected } from '../ai/upload';
 import { api } from '../lib/api-browser';
 import { BOARDS, BOARD_NAMES, CLASS_LEVELS, examLabel, type BoardSlug } from '../lib/catalog';
@@ -378,8 +379,8 @@ function PaperFromUpload({ subjectId }: { subjectId: string }) {
       ) : (
         <>
           <label className={s.field} htmlFor={fileId}>
-            Sample paper (PDF or photo, up to 10 MB)
-            <input id={fileId} type="file" accept="application/pdf,image/jpeg,image/png,image/webp" onChange={(e) => setFile(e.target.files?.[0] ?? null)} />
+            Sample paper (a photo of the paper, up to 10 MB)
+            <input id={fileId} type="file" accept={AI_UPLOADS.contentTypes.join(',')} onChange={(e) => setFile(e.target.files?.[0] ?? null)} />
           </label>
           <Button icon="spark" disabled={!file || stage !== 'idle'} loading={stage !== 'idle'} onClick={() => setConfirming(true)}>
             Build a paper ({creditsText(quote.credits)})

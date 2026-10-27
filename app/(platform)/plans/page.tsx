@@ -4,6 +4,7 @@
  * ADR-018 §4); checkout.js is added to the page only when the student presses Buy.
  */
 import type { Metadata } from 'next';
+import { connection } from 'next/server';
 import { requirePlatform } from '@/components/platform/server/gate';
 import { platformMetadata } from '@/components/platform/server/metadata';
 import { PageHeader } from '@/components/platform/shell/PageHeader';
@@ -16,8 +17,9 @@ export const metadata: Metadata = platformMetadata({
   path: '/plans',
 });
 
-export default function PlansPage() {
+export default async function PlansPage() {
   requirePlatform();
+  await connection(); // S6-L03: rendered per request so the proxy's CSP nonce applies
   return (
     <div className={shell.page}>
       <PageHeader crumbs={[{ name: 'Plans', path: '/plans' }]} title="AI plans" lead="Lessons, practice and tests are always free. Plans only add AI credits." />

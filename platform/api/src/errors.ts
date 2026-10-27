@@ -39,6 +39,8 @@ export const PROBLEMS = {
   live_not_open: [409, 'This live test is not open right now.'],
   /** A test whose questions cannot be served yet (embargoed items) or are no longer available. */
   test_unavailable: [409, 'This test is not available right now.'],
+  /** S6-H01: a live mock's solutions, marking and AI evaluation open after the event closes (extension: opensAt). */
+  results_after_event: [409, 'Solutions open when the live test closes.'],
   /** Custom test builder: not enough questions match the choices. */
   bank_too_small: [422, 'Not enough questions match your choices.'],
   /** Billing (ADR-016): purchases are switched off (BILLING_ENABLED=false). Learning and tests stay free. */

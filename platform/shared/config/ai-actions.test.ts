@@ -43,6 +43,8 @@ describe('AI action registry (CONTEXT §6)', () => {
     expect(AI_MODERATION.blockAtSeverity.sexual).toBeLessThanOrEqual(2); // AC-15: minors, block at low
     expect(AI_MODERATION.selfHarmMessage).toMatch(/14416/);
     expect(AI_UPLOADS.contentTypes).not.toContain('image/svg+xml');
+    // S6-M01 / ADR-020: images only until PDFs are parsed and rasterised in the worker.
+    expect(AI_UPLOADS.contentTypes).toEqual(['image/jpeg', 'image/png', 'image/webp']);
     expect(AI_UPLOADS.sasTtlSeconds).toBeLessThanOrEqual(300);
   });
 

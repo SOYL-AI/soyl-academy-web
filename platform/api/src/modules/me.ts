@@ -143,6 +143,14 @@ export function registerMeRoutes(appIn: FastifyInstance, services: Services, dep
       const result = await deleteAccount(db, clock, services.otp, user, { purgeAfterDays: ACCOUNT.purgeAfterDays, requestId: String(request.id) });
       // PII.md: provisional live-mock ranks are KV entries keyed by user id. Best effort: the rows go with the purge anyway.
       await removeFromLiveBoards(db, deps.kv, user.id).catch((err) => request.log.warn({ err }, 'live leaderboard cleanup failed'));
+      // S6-M02: the uploaded photos/papers and their cleaned copies leave Blob storage now; anything that
+      // fails here stays marked `deleted` and the worker's uploads.purge-deleted retries it.
+      await services.ai.uploads
+        .purgeDeleted(new Date(clock.now()), { userId: user.id })
+        .then((r) => {
+          if (r.failed) request.log.warn({ userId: user.id, failed: r.failed }, 'upload blob deletion deferred to the worker');
+        })
+        .catch((err) => request.log.warn({ err, userId: user.id }, 'upload blob deletion deferred to the worker'));
       services.sessions.clear(reply);
       reply.header('clear-site-data', '"cookies"');
       authEvent(request.log, 'account_deleted', { outcome: 'success', userId: user.id, ip: request.clientIp, userAgent: request.headers['user-agent'] });

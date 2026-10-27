@@ -26,7 +26,10 @@ test('/plans: public, GST-inclusive prices from the API; Razorpay CSP only here;
   const res = await page.goto('/plans', { waitUntil: 'networkidle' });
   expect(res?.status()).toBe(200);
   const csp = res!.headers()['content-security-policy']!;
-  expect(csp).toContain(`script-src 'self' 'unsafe-inline' ${RZP}`);
+  // S6-L03: nonce policy (no 'unsafe-inline' next to the payment flow); the Checkout host is the CSP2 fallback.
+  expect(csp).toMatch(/script-src 'self' 'nonce-[^']+' 'strict-dynamic'/);
+  expect(csp.split('; ').find((d) => d.startsWith('script-src'))).not.toContain('unsafe-inline');
+  expect(csp).toContain(RZP);
   expect(csp).toContain('frame-src https://api.razorpay.com');
   expect(res!.headers()['cross-origin-opener-policy']).toBe('same-origin-allow-popups');
   await expect(page.getByTestId('plans')).toHaveAttribute('data-billing', 'on');

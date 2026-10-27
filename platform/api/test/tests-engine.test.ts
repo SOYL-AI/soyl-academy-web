@@ -236,6 +236,21 @@ describe('autosave', () => {
     expect((await save(c, s.attempt.id, [])).statusCode).toBe(200);
   });
 
+  it('S6-L01: another user hammering an attempt id spends their own bucket, never the owner\'s', async () => {
+    const owner = await member();
+    const attacker = await member();
+    const s = await start(owner.c);
+    h.clock.advance(16_000); // a fresh window for the owner's bucket
+    const hits = [];
+    for (let i = 0; i < 10; i++) hits.push((await save(attacker.c, s.attempt.id, [])).statusCode);
+    expect(hits.slice(0, 8).every((x) => x === 404)).toBe(true); // ownership: not yours
+    expect(hits.slice(8).every((x) => x === 429)).toBe(true); // the attacker's own bucket
+    for (let i = 0; i < 6; i++) expect((await attacker.c.post(`/v1/attempts/${s.attempt.id}/submit`)).statusCode).not.toBe(200);
+    // The owner's autosave and submit are untouched.
+    expect((await save(owner.c, s.attempt.id, [])).statusCode).toBe(200);
+    expect((await owner.c.post(`/v1/attempts/${s.attempt.id}/submit`)).statusCode).toBe(200);
+  });
+
   it('F-007: after the deadline only changes claimed before it are accepted, and only within the grace', async () => {
     const { c } = await member();
     const s = await start(c);

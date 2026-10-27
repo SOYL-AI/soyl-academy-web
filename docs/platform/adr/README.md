@@ -23,8 +23,9 @@ Format and rules: AGENTS.md §4.4 (context, options, decision, consequences). An
 | [015](015-ai-moderation-fail-closed.md) | AI moderation: Content Safety in and out, local stand-in, fail closed | Accepted | 2026-10-27 | AI, safety |
 | [016](016-billing-razorpay.md) | Billing with Razorpay: purchases, webhooks, entitlements, reconciliation, consent | Accepted | 2026-10-27 | Billing |
 | [017](017-platform-web-learning-core.md) | Platform web learning core: lesson URLs, listen mode, where content renders, QR dependency | Accepted | 2026-10-27 | Web |
-| [018](018-platform-web-tests-ai-plans.md) | Platform web tests, AI and plans: offline answer queue, proxy headers, page CSPs, uploads, e2e stand-ins | Accepted | 2026-10-27 | Web |
+| [018](018-platform-web-tests-ai-plans.md) | Platform web tests, AI and plans: offline answer queue, proxy headers, page CSPs, uploads, e2e stand-ins (amended 2026-10-28, S6-L03: nonce CSP on /plans and /tests) | Accepted | 2026-10-27 | Web |
 | [019](019-frozen-test-series-in-release.md) | Frozen test series, published by the release step (with the competency-balance addendum) | Accepted | 2026-10-27 | Content, tests |
+| [020](020-images-only-uploads-at-launch.md) | Images only for AI uploads at launch: PDF uploads off until the worker parses and rasterises them (S6-M01) | Accepted | 2026-10-28 | AI, security |
 
 ## Housekeeping notes
 
