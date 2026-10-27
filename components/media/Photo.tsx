@@ -8,7 +8,11 @@ interface PhotoProps {
   sizes: string;
   /** Tailwind aspect class for the frame, e.g. "aspect-[4/5]". */
   aspect?: string;
-  /** Above-the-fold hero image: preloaded, never lazy. */
+  /**
+   * Hero image: fetched at high priority, no reveal. Deliberately not preloaded: on
+   * phones the hero photo sits under the headline, the text is the LCP element, and a
+   * preload would spend the critical first second of a slow connection on it.
+   */
   priority?: boolean;
   /** Clip-path wipe in when scrolled into view. */
   reveal?: boolean;
@@ -53,7 +57,7 @@ export function Photo({
         alt={image.alt}
         fill
         sizes={sizes}
-        preload={priority}
+        fetchPriority={priority ? 'high' : undefined}
         placeholder="blur"
         className={cn('object-cover', settle && 'settle', imgClassName)}
         style={image.focus ? { objectPosition: image.focus } : undefined}
