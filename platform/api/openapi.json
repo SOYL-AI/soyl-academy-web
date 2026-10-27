@@ -731,271 +731,15 @@
           "redirectUrl"
         ]
       },
-      "CatalogBoardsInput": {
-        "type": "object",
-        "properties": {
-          "academicYear": {
-            "type": "string"
-          },
-          "boards": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "code": {
-                  "$ref": "#/components/schemas/BoardInput"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "classes": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "level": {
-                        "type": "integer",
-                        "minimum": -9007199254740991,
-                        "maximum": 9007199254740991
-                      },
-                      "exam": {
-                        "type": "string",
-                        "enum": [
-                          "cbse",
-                          "icse",
-                          "isc"
-                        ]
-                      },
-                      "name": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "level",
-                      "exam",
-                      "name"
-                    ]
-                  }
-                }
-              },
-              "required": [
-                "code",
-                "name",
-                "classes"
-              ]
-            }
-          }
-        },
-        "required": [
-          "academicYear",
-          "boards"
-        ]
-      },
-      "CatalogSubjectInput": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "code": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "exam": {
-            "type": "string",
-            "enum": [
-              "cbse",
-              "icse",
-              "isc"
-            ]
-          },
-          "classLevel": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "language": {
-            "type": "string"
-          },
-          "script": {
-            "type": "string"
-          },
-          "tier": {
-            "type": "string",
-            "enum": [
-              "core",
-              "language",
-              "elective"
-            ]
-          },
-          "wave": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "hasBoardExam": {
-            "type": "boolean"
-          },
-          "theoryOnly": {
-            "type": "boolean"
-          },
-          "variants": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "code": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "code",
-                "name"
-              ]
-            }
-          }
-        },
-        "required": [
-          "id",
-          "name",
-          "code",
-          "exam",
-          "classLevel",
-          "language",
-          "script",
-          "tier",
-          "wave",
-          "hasBoardExam",
-          "theoryOnly",
-          "variants"
-        ]
-      },
-      "CatalogSubjectsInput": {
-        "type": "object",
-        "properties": {
-          "academicYear": {
-            "type": "string"
-          },
-          "board": {
-            "$ref": "#/components/schemas/BoardInput"
-          },
-          "classLevel": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "subjects": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CatalogSubjectInput"
-            }
-          }
-        },
-        "required": [
-          "academicYear",
-          "board",
-          "classLevel",
-          "subjects"
-        ]
-      },
-      "CatalogChaptersInput": {
-        "type": "object",
-        "properties": {
-          "academicYear": {
-            "type": "string"
-          },
-          "subject": {
-            "$ref": "#/components/schemas/CatalogSubjectInput"
-          },
-          "chapters": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "number": {
-                  "type": "integer",
-                  "minimum": -9007199254740991,
-                  "maximum": 9007199254740991
-                },
-                "title": {
-                  "type": "string"
-                },
-                "titleEn": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
-                "unit": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
-                "boardAssessed": {
-                  "type": "boolean"
-                },
-                "topics": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "string"
-                      },
-                      "title": {
-                        "type": "string"
-                      },
-                      "titleEn": {
-                        "type": [
-                          "string",
-                          "null"
-                        ]
-                      },
-                      "boardAssessed": {
-                        "type": "boolean"
-                      }
-                    },
-                    "required": [
-                      "id",
-                      "title",
-                      "titleEn",
-                      "boardAssessed"
-                    ]
-                  }
-                }
-              },
-              "required": [
-                "id",
-                "number",
-                "title",
-                "titleEn",
-                "unit",
-                "boardAssessed",
-                "topics"
-              ]
-            }
-          }
-        },
-        "required": [
-          "academicYear",
-          "subject",
-          "chapters"
-        ]
+      "SchoolAssessmentInput": {
+        "type": "string",
+        "enum": [
+          "periodic",
+          "project",
+          "practical",
+          "internal"
+        ],
+        "description": "Only when boardAssessed is false: assessed by the school, not in the board exam. periodic = periodic assessment only; project = project work only; practical = practical; internal = formative/internal assessment."
       },
       "ReviewStatusInput": {
         "type": "string",
@@ -1394,6 +1138,16 @@
               "boardAssessed": {
                 "type": "boolean"
               },
+              "schoolAssessment": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/SchoolAssessmentInput"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
               "topics": {
                 "type": "array",
                 "items": {
@@ -1410,12 +1164,27 @@
                         "string",
                         "null"
                       ]
+                    },
+                    "boardAssessed": {
+                      "type": "boolean"
+                    },
+                    "schoolAssessment": {
+                      "anyOf": [
+                        {
+                          "$ref": "#/components/schemas/SchoolAssessmentInput"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
                     }
                   },
                   "required": [
                     "id",
                     "title",
-                    "titleEn"
+                    "titleEn",
+                    "boardAssessed",
+                    "schoolAssessment"
                   ]
                 }
               }
@@ -1427,6 +1196,7 @@
               "titleEn",
               "unit",
               "boardAssessed",
+              "schoolAssessment",
               "topics"
             ]
           },
@@ -2112,6 +1882,294 @@
           "freezeAvailableThisWeek"
         ],
         "description": "IST calendar days; one missed day per week is covered automatically."
+      },
+      "CatalogBoardsInput": {
+        "type": "object",
+        "properties": {
+          "academicYear": {
+            "type": "string"
+          },
+          "boards": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "$ref": "#/components/schemas/BoardInput"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "classes": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "level": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "exam": {
+                        "type": "string",
+                        "enum": [
+                          "cbse",
+                          "icse",
+                          "isc"
+                        ]
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "level",
+                      "exam",
+                      "name"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "code",
+                "name",
+                "classes"
+              ]
+            }
+          }
+        },
+        "required": [
+          "academicYear",
+          "boards"
+        ]
+      },
+      "CatalogSubjectInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "exam": {
+            "type": "string",
+            "enum": [
+              "cbse",
+              "icse",
+              "isc"
+            ]
+          },
+          "classLevel": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "language": {
+            "type": "string"
+          },
+          "script": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "string",
+            "enum": [
+              "core",
+              "language",
+              "elective"
+            ]
+          },
+          "wave": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "hasBoardExam": {
+            "type": "boolean"
+          },
+          "theoryOnly": {
+            "type": "boolean"
+          },
+          "variants": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "code",
+                "name"
+              ]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "code",
+          "exam",
+          "classLevel",
+          "language",
+          "script",
+          "tier",
+          "wave",
+          "hasBoardExam",
+          "theoryOnly",
+          "variants"
+        ]
+      },
+      "CatalogSubjectsInput": {
+        "type": "object",
+        "properties": {
+          "academicYear": {
+            "type": "string"
+          },
+          "board": {
+            "$ref": "#/components/schemas/BoardInput"
+          },
+          "classLevel": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "subjects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CatalogSubjectInput"
+            }
+          }
+        },
+        "required": [
+          "academicYear",
+          "board",
+          "classLevel",
+          "subjects"
+        ]
+      },
+      "CatalogChaptersInput": {
+        "type": "object",
+        "properties": {
+          "academicYear": {
+            "type": "string"
+          },
+          "subject": {
+            "$ref": "#/components/schemas/CatalogSubjectInput"
+          },
+          "chapters": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "number": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "title": {
+                  "type": "string"
+                },
+                "titleEn": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "unit": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "boardAssessed": {
+                  "type": "boolean"
+                },
+                "schoolAssessment": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/SchoolAssessmentInput"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "topics": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "titleEn": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "boardAssessed": {
+                        "type": "boolean"
+                      },
+                      "schoolAssessment": {
+                        "anyOf": [
+                          {
+                            "$ref": "#/components/schemas/SchoolAssessmentInput"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "title",
+                      "titleEn",
+                      "boardAssessed",
+                      "schoolAssessment"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "number",
+                "title",
+                "titleEn",
+                "unit",
+                "boardAssessed",
+                "schoolAssessment",
+                "topics"
+              ]
+            }
+          }
+        },
+        "required": [
+          "academicYear",
+          "subject",
+          "chapters"
+        ]
       },
       "PracticePartResponseInput": {
         "anyOf": [
@@ -3225,7 +3283,8 @@
               "deck",
               "notes",
               "flashcard_set",
-              "question"
+              "question",
+              "ai_answer"
             ]
           },
           "part": {
@@ -3243,6 +3302,22 @@
             "minLength": 1,
             "maxLength": 64,
             "pattern": "^[A-Za-z0-9_.:-]+$"
+          },
+          "conversationId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "messageId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "requestId": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 64,
+            "pattern": "^[A-Za-z0-9_-]+$"
           },
           "reason": {
             "type": "string",
@@ -3262,7 +3337,6 @@
           }
         },
         "required": [
-          "chapterId",
           "contentType",
           "reason"
         ],
@@ -3450,7 +3524,8 @@
                     "deck",
                     "notes",
                     "flashcard_set",
-                    "question"
+                    "question",
+                    "ai_answer"
                   ]
                 },
                 "contentId": {
@@ -3723,6 +3798,325 @@
           "ranksBeta",
           "me"
         ]
+      },
+      "LiveEventDetailInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "phase": {
+            "$ref": "#/components/schemas/LivePhaseInput"
+          },
+          "subject": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "name"
+            ]
+          },
+          "testId": {
+            "type": "string"
+          },
+          "durationMin": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "totalMarks": {
+            "type": "number"
+          },
+          "registrationOpensAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "startsAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "lateStartUntil": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "endsAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "resultsPublishedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "ranksBeta": {
+            "type": "boolean"
+          },
+          "me": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "registered": {
+                    "type": "boolean"
+                  },
+                  "attemptId": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "uuid",
+                        "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "attemptStatus": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "deadlineAt": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date-time",
+                        "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "canRegister": {
+                    "type": "boolean"
+                  },
+                  "canStart": {
+                    "type": "boolean"
+                  },
+                  "canResume": {
+                    "type": "boolean"
+                  },
+                  "result": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "rank": {
+                            "type": "integer",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          },
+                          "score": {
+                            "type": "number"
+                          },
+                          "percentile": {
+                            "type": [
+                              "number",
+                              "null"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "rank",
+                          "score",
+                          "percentile"
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "registered",
+                  "attemptId",
+                  "attemptStatus",
+                  "deadlineAt",
+                  "canRegister",
+                  "canStart",
+                  "canResume",
+                  "result"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "serverNow": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "lateStartMinutes": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "writingUntil": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "latestDeadlineAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "graceSeconds": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "timeline": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "phase": {
+                  "$ref": "#/components/schemas/LivePhaseInput"
+                },
+                "from": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "date-time",
+                      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "until": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "date-time",
+                      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "phase",
+                "from",
+                "until"
+              ]
+            }
+          },
+          "registration": {
+            "type": "object",
+            "properties": {
+              "open": {
+                "type": "boolean"
+              },
+              "opensAt": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              "closesAt": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              }
+            },
+            "required": [
+              "open",
+              "opensAt",
+              "closesAt"
+            ]
+          },
+          "ranks": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "not_started",
+                  "provisional",
+                  "final",
+                  "unavailable"
+                ]
+              },
+              "beta": {
+                "type": "boolean"
+              },
+              "requiresConsent": {
+                "type": "boolean"
+              },
+              "consentGranted": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "canView": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "status",
+              "beta",
+              "requiresConsent",
+              "consentGranted",
+              "canView"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "phase",
+          "subject",
+          "testId",
+          "durationMin",
+          "totalMarks",
+          "registrationOpensAt",
+          "startsAt",
+          "lateStartUntil",
+          "endsAt",
+          "resultsPublishedAt",
+          "ranksBeta",
+          "me",
+          "serverNow",
+          "lateStartMinutes",
+          "writingUntil",
+          "latestDeadlineAt",
+          "graceSeconds",
+          "timeline",
+          "registration",
+          "ranks"
+        ],
+        "description": "Signed in: me is your registration, attempt and result; null for guests."
       },
       "TestSeriesInput": {
         "type": "object",
@@ -6957,6 +7351,327 @@
           "job"
         ]
       },
+      "LeagueTierInput": {
+        "type": "object",
+        "properties": {
+          "level": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "level",
+          "key",
+          "name",
+          "icon"
+        ],
+        "description": "level 1 = the lowest tier; names and icons from LEAGUE_TIERS (shared/config/gamification.ts)."
+      },
+      "LeagueZoneInput": {
+        "type": "string",
+        "enum": [
+          "promotion",
+          "safe",
+          "relegation"
+        ],
+        "description": "Where the place would finish if the week ended now. Promotion needs at least minXpToPromote XP."
+      },
+      "LeagueCurrentInput": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "class_required",
+              "students_only"
+            ],
+            "description": "active = placed in a league; class_required = set board and class first (PATCH /v1/me); students_only = parent/staff accounts do not play."
+          },
+          "scope": {
+            "type": "string",
+            "enum": [
+              "class",
+              "school",
+              "city"
+            ]
+          },
+          "serverNow": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "week": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "string"
+              },
+              "end": {
+                "type": "string"
+              },
+              "startsAt": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              "endsAt": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              }
+            },
+            "required": [
+              "start",
+              "end",
+              "startsAt",
+              "endsAt"
+            ]
+          },
+          "cohort": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  },
+                  "board": {
+                    "$ref": "#/components/schemas/BoardInput"
+                  },
+                  "classLevel": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  }
+                },
+                "required": [
+                  "key",
+                  "board",
+                  "classLevel"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "league": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  "tier": {
+                    "$ref": "#/components/schemas/LeagueTierInput"
+                  },
+                  "division": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "size": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "capacity": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "promotionPlaces": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "relegationPlaces": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "minXpToPromote": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "isTopTier": {
+                    "type": "boolean"
+                  },
+                  "isBottomTier": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "id",
+                  "tier",
+                  "division",
+                  "size",
+                  "capacity",
+                  "promotionPlaces",
+                  "relegationPlaces",
+                  "minXpToPromote",
+                  "isTopTier",
+                  "isBottomTier"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "standings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "rank": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "name": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "xp": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "zone": {
+                  "$ref": "#/components/schemas/LeagueZoneInput"
+                },
+                "isMe": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "rank",
+                "name",
+                "xp",
+                "zone",
+                "isMe"
+              ]
+            }
+          },
+          "me": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "rank": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "xp": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "zone": {
+                    "$ref": "#/components/schemas/LeagueZoneInput"
+                  }
+                },
+                "required": [
+                  "rank",
+                  "xp",
+                  "zone"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "lastWeek": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "weekStart": {
+                    "type": "string"
+                  },
+                  "tier": {
+                    "$ref": "#/components/schemas/LeagueTierInput"
+                  },
+                  "finalRank": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "xp": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "outcome": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "enum": [
+                          "promoted",
+                          "stayed",
+                          "relegated"
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "weekStart",
+                  "tier",
+                  "finalRank",
+                  "xp",
+                  "outcome"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "status",
+          "scope",
+          "serverNow",
+          "week",
+          "cohort",
+          "league",
+          "standings",
+          "me",
+          "lastWeek"
+        ],
+        "description": "Your weekly league (IST week). XP is what each student earned this week. Consent-gated (D-014)."
+      },
       "PlansResponseInput": {
         "type": "object",
         "properties": {
@@ -8147,280 +8862,15 @@
         ],
         "additionalProperties": false
       },
-      "CatalogBoards": {
-        "type": "object",
-        "properties": {
-          "academicYear": {
-            "type": "string"
-          },
-          "boards": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "code": {
-                  "$ref": "#/components/schemas/Board"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "classes": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "level": {
-                        "type": "integer",
-                        "minimum": -9007199254740991,
-                        "maximum": 9007199254740991
-                      },
-                      "exam": {
-                        "type": "string",
-                        "enum": [
-                          "cbse",
-                          "icse",
-                          "isc"
-                        ]
-                      },
-                      "name": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "level",
-                      "exam",
-                      "name"
-                    ],
-                    "additionalProperties": false
-                  }
-                }
-              },
-              "required": [
-                "code",
-                "name",
-                "classes"
-              ],
-              "additionalProperties": false
-            }
-          }
-        },
-        "required": [
-          "academicYear",
-          "boards"
+      "SchoolAssessment": {
+        "type": "string",
+        "enum": [
+          "periodic",
+          "project",
+          "practical",
+          "internal"
         ],
-        "additionalProperties": false
-      },
-      "CatalogSubject": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "code": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "exam": {
-            "type": "string",
-            "enum": [
-              "cbse",
-              "icse",
-              "isc"
-            ]
-          },
-          "classLevel": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "language": {
-            "type": "string"
-          },
-          "script": {
-            "type": "string"
-          },
-          "tier": {
-            "type": "string",
-            "enum": [
-              "core",
-              "language",
-              "elective"
-            ]
-          },
-          "wave": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "hasBoardExam": {
-            "type": "boolean"
-          },
-          "theoryOnly": {
-            "type": "boolean"
-          },
-          "variants": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "code": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
-                "name": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "code",
-                "name"
-              ],
-              "additionalProperties": false
-            }
-          }
-        },
-        "required": [
-          "id",
-          "name",
-          "code",
-          "exam",
-          "classLevel",
-          "language",
-          "script",
-          "tier",
-          "wave",
-          "hasBoardExam",
-          "theoryOnly",
-          "variants"
-        ],
-        "additionalProperties": false
-      },
-      "CatalogSubjects": {
-        "type": "object",
-        "properties": {
-          "academicYear": {
-            "type": "string"
-          },
-          "board": {
-            "$ref": "#/components/schemas/Board"
-          },
-          "classLevel": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "subjects": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CatalogSubject"
-            }
-          }
-        },
-        "required": [
-          "academicYear",
-          "board",
-          "classLevel",
-          "subjects"
-        ],
-        "additionalProperties": false
-      },
-      "CatalogChapters": {
-        "type": "object",
-        "properties": {
-          "academicYear": {
-            "type": "string"
-          },
-          "subject": {
-            "$ref": "#/components/schemas/CatalogSubject"
-          },
-          "chapters": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "number": {
-                  "type": "integer",
-                  "minimum": -9007199254740991,
-                  "maximum": 9007199254740991
-                },
-                "title": {
-                  "type": "string"
-                },
-                "titleEn": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
-                "unit": {
-                  "type": [
-                    "string",
-                    "null"
-                  ]
-                },
-                "boardAssessed": {
-                  "type": "boolean"
-                },
-                "topics": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "string"
-                      },
-                      "title": {
-                        "type": "string"
-                      },
-                      "titleEn": {
-                        "type": [
-                          "string",
-                          "null"
-                        ]
-                      },
-                      "boardAssessed": {
-                        "type": "boolean"
-                      }
-                    },
-                    "required": [
-                      "id",
-                      "title",
-                      "titleEn",
-                      "boardAssessed"
-                    ],
-                    "additionalProperties": false
-                  }
-                }
-              },
-              "required": [
-                "id",
-                "number",
-                "title",
-                "titleEn",
-                "unit",
-                "boardAssessed",
-                "topics"
-              ],
-              "additionalProperties": false
-            }
-          }
-        },
-        "required": [
-          "academicYear",
-          "subject",
-          "chapters"
-        ],
-        "additionalProperties": false
+        "description": "Only when boardAssessed is false: assessed by the school, not in the board exam. periodic = periodic assessment only; project = project work only; practical = practical; internal = formative/internal assessment."
       },
       "ReviewStatus": {
         "type": "string",
@@ -8831,6 +9281,16 @@
               "boardAssessed": {
                 "type": "boolean"
               },
+              "schoolAssessment": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/SchoolAssessment"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
               "topics": {
                 "type": "array",
                 "items": {
@@ -8847,12 +9307,27 @@
                         "string",
                         "null"
                       ]
+                    },
+                    "boardAssessed": {
+                      "type": "boolean"
+                    },
+                    "schoolAssessment": {
+                      "anyOf": [
+                        {
+                          "$ref": "#/components/schemas/SchoolAssessment"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
                     }
                   },
                   "required": [
                     "id",
                     "title",
-                    "titleEn"
+                    "titleEn",
+                    "boardAssessed",
+                    "schoolAssessment"
                   ],
                   "additionalProperties": false
                 }
@@ -8865,6 +9340,7 @@
               "titleEn",
               "unit",
               "boardAssessed",
+              "schoolAssessment",
               "topics"
             ],
             "additionalProperties": false
@@ -9572,6 +10048,303 @@
         ],
         "additionalProperties": false,
         "description": "IST calendar days; one missed day per week is covered automatically."
+      },
+      "CatalogBoards": {
+        "type": "object",
+        "properties": {
+          "academicYear": {
+            "type": "string"
+          },
+          "boards": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "$ref": "#/components/schemas/Board"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "classes": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "level": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "exam": {
+                        "type": "string",
+                        "enum": [
+                          "cbse",
+                          "icse",
+                          "isc"
+                        ]
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "level",
+                      "exam",
+                      "name"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "code",
+                "name",
+                "classes"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "academicYear",
+          "boards"
+        ],
+        "additionalProperties": false
+      },
+      "CatalogSubject": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "exam": {
+            "type": "string",
+            "enum": [
+              "cbse",
+              "icse",
+              "isc"
+            ]
+          },
+          "classLevel": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "language": {
+            "type": "string"
+          },
+          "script": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "string",
+            "enum": [
+              "core",
+              "language",
+              "elective"
+            ]
+          },
+          "wave": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "hasBoardExam": {
+            "type": "boolean"
+          },
+          "theoryOnly": {
+            "type": "boolean"
+          },
+          "variants": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "code",
+                "name"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "code",
+          "exam",
+          "classLevel",
+          "language",
+          "script",
+          "tier",
+          "wave",
+          "hasBoardExam",
+          "theoryOnly",
+          "variants"
+        ],
+        "additionalProperties": false
+      },
+      "CatalogSubjects": {
+        "type": "object",
+        "properties": {
+          "academicYear": {
+            "type": "string"
+          },
+          "board": {
+            "$ref": "#/components/schemas/Board"
+          },
+          "classLevel": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "subjects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CatalogSubject"
+            }
+          }
+        },
+        "required": [
+          "academicYear",
+          "board",
+          "classLevel",
+          "subjects"
+        ],
+        "additionalProperties": false
+      },
+      "CatalogChapters": {
+        "type": "object",
+        "properties": {
+          "academicYear": {
+            "type": "string"
+          },
+          "subject": {
+            "$ref": "#/components/schemas/CatalogSubject"
+          },
+          "chapters": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "number": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "title": {
+                  "type": "string"
+                },
+                "titleEn": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "unit": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "boardAssessed": {
+                  "type": "boolean"
+                },
+                "schoolAssessment": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/SchoolAssessment"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "topics": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "titleEn": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "boardAssessed": {
+                        "type": "boolean"
+                      },
+                      "schoolAssessment": {
+                        "anyOf": [
+                          {
+                            "$ref": "#/components/schemas/SchoolAssessment"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "title",
+                      "titleEn",
+                      "boardAssessed",
+                      "schoolAssessment"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "number",
+                "title",
+                "titleEn",
+                "unit",
+                "boardAssessed",
+                "schoolAssessment",
+                "topics"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "academicYear",
+          "subject",
+          "chapters"
+        ],
+        "additionalProperties": false
       },
       "PracticePartResponse": {
         "anyOf": [
@@ -10708,7 +11481,8 @@
               "deck",
               "notes",
               "flashcard_set",
-              "question"
+              "question",
+              "ai_answer"
             ]
           },
           "part": {
@@ -10726,6 +11500,22 @@
             "minLength": 1,
             "maxLength": 64,
             "pattern": "^[A-Za-z0-9_.:-]+$"
+          },
+          "conversationId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "messageId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "requestId": {
+            "type": "string",
+            "minLength": 8,
+            "maxLength": 64,
+            "pattern": "^[A-Za-z0-9_-]+$"
           },
           "reason": {
             "type": "string",
@@ -10745,7 +11535,6 @@
           }
         },
         "required": [
-          "chapterId",
           "contentType",
           "reason"
         ],
@@ -10938,7 +11727,8 @@
                     "deck",
                     "notes",
                     "flashcard_set",
-                    "question"
+                    "question",
+                    "ai_answer"
                   ]
                 },
                 "contentId": {
@@ -11217,6 +12007,332 @@
           "me"
         ],
         "additionalProperties": false
+      },
+      "LiveEventDetail": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "phase": {
+            "$ref": "#/components/schemas/LivePhase"
+          },
+          "subject": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          "testId": {
+            "type": "string"
+          },
+          "durationMin": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "totalMarks": {
+            "type": "number"
+          },
+          "registrationOpensAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "startsAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "lateStartUntil": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "endsAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "resultsPublishedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "ranksBeta": {
+            "type": "boolean"
+          },
+          "me": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "registered": {
+                    "type": "boolean"
+                  },
+                  "attemptId": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "uuid",
+                        "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "attemptStatus": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "deadlineAt": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date-time",
+                        "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "canRegister": {
+                    "type": "boolean"
+                  },
+                  "canStart": {
+                    "type": "boolean"
+                  },
+                  "canResume": {
+                    "type": "boolean"
+                  },
+                  "result": {
+                    "anyOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "rank": {
+                            "type": "integer",
+                            "minimum": -9007199254740991,
+                            "maximum": 9007199254740991
+                          },
+                          "score": {
+                            "type": "number"
+                          },
+                          "percentile": {
+                            "type": [
+                              "number",
+                              "null"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "rank",
+                          "score",
+                          "percentile"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "registered",
+                  "attemptId",
+                  "attemptStatus",
+                  "deadlineAt",
+                  "canRegister",
+                  "canStart",
+                  "canResume",
+                  "result"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "serverNow": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "lateStartMinutes": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "writingUntil": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "latestDeadlineAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "graceSeconds": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "timeline": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "phase": {
+                  "$ref": "#/components/schemas/LivePhase"
+                },
+                "from": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "date-time",
+                      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "until": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "date-time",
+                      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "phase",
+                "from",
+                "until"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "registration": {
+            "type": "object",
+            "properties": {
+              "open": {
+                "type": "boolean"
+              },
+              "opensAt": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              "closesAt": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              }
+            },
+            "required": [
+              "open",
+              "opensAt",
+              "closesAt"
+            ],
+            "additionalProperties": false
+          },
+          "ranks": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "not_started",
+                  "provisional",
+                  "final",
+                  "unavailable"
+                ]
+              },
+              "beta": {
+                "type": "boolean"
+              },
+              "requiresConsent": {
+                "type": "boolean"
+              },
+              "consentGranted": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "canView": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "status",
+              "beta",
+              "requiresConsent",
+              "consentGranted",
+              "canView"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "phase",
+          "subject",
+          "testId",
+          "durationMin",
+          "totalMarks",
+          "registrationOpensAt",
+          "startsAt",
+          "lateStartUntil",
+          "endsAt",
+          "resultsPublishedAt",
+          "ranksBeta",
+          "me",
+          "serverNow",
+          "lateStartMinutes",
+          "writingUntil",
+          "latestDeadlineAt",
+          "graceSeconds",
+          "timeline",
+          "registration",
+          "ranks"
+        ],
+        "additionalProperties": false,
+        "description": "Signed in: me is your registration, attempt and result; null for guests."
       },
       "TestSeries": {
         "type": "object",
@@ -14523,6 +15639,335 @@
         ],
         "additionalProperties": false
       },
+      "LeagueTier": {
+        "type": "object",
+        "properties": {
+          "level": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "level",
+          "key",
+          "name",
+          "icon"
+        ],
+        "additionalProperties": false,
+        "description": "level 1 = the lowest tier; names and icons from LEAGUE_TIERS (shared/config/gamification.ts)."
+      },
+      "LeagueZone": {
+        "type": "string",
+        "enum": [
+          "promotion",
+          "safe",
+          "relegation"
+        ],
+        "description": "Where the place would finish if the week ended now. Promotion needs at least minXpToPromote XP."
+      },
+      "LeagueCurrent": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "class_required",
+              "students_only"
+            ],
+            "description": "active = placed in a league; class_required = set board and class first (PATCH /v1/me); students_only = parent/staff accounts do not play."
+          },
+          "scope": {
+            "type": "string",
+            "enum": [
+              "class",
+              "school",
+              "city"
+            ]
+          },
+          "serverNow": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "week": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "string"
+              },
+              "end": {
+                "type": "string"
+              },
+              "startsAt": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              "endsAt": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              }
+            },
+            "required": [
+              "start",
+              "end",
+              "startsAt",
+              "endsAt"
+            ],
+            "additionalProperties": false
+          },
+          "cohort": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  },
+                  "board": {
+                    "$ref": "#/components/schemas/Board"
+                  },
+                  "classLevel": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  }
+                },
+                "required": [
+                  "key",
+                  "board",
+                  "classLevel"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "league": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  "tier": {
+                    "$ref": "#/components/schemas/LeagueTier"
+                  },
+                  "division": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "size": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "capacity": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "promotionPlaces": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "relegationPlaces": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "minXpToPromote": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "isTopTier": {
+                    "type": "boolean"
+                  },
+                  "isBottomTier": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "id",
+                  "tier",
+                  "division",
+                  "size",
+                  "capacity",
+                  "promotionPlaces",
+                  "relegationPlaces",
+                  "minXpToPromote",
+                  "isTopTier",
+                  "isBottomTier"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "standings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "rank": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "name": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "xp": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "zone": {
+                  "$ref": "#/components/schemas/LeagueZone"
+                },
+                "isMe": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "rank",
+                "name",
+                "xp",
+                "zone",
+                "isMe"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "me": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "rank": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "xp": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "zone": {
+                    "$ref": "#/components/schemas/LeagueZone"
+                  }
+                },
+                "required": [
+                  "rank",
+                  "xp",
+                  "zone"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "lastWeek": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "weekStart": {
+                    "type": "string"
+                  },
+                  "tier": {
+                    "$ref": "#/components/schemas/LeagueTier"
+                  },
+                  "finalRank": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "xp": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "outcome": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "enum": [
+                          "promoted",
+                          "stayed",
+                          "relegated"
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "weekStart",
+                  "tier",
+                  "finalRank",
+                  "xp",
+                  "outcome"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "status",
+          "scope",
+          "serverNow",
+          "week",
+          "cohort",
+          "league",
+          "standings",
+          "me",
+          "lastWeek"
+        ],
+        "additionalProperties": false,
+        "description": "Your weekly league (IST week). XP is what each student earned this week. Consent-gated (D-014)."
+      },
       "PlansResponse": {
         "type": "object",
         "properties": {
@@ -17070,7 +18515,7 @@
     },
     "/v1/content-reports": {
       "post": {
-        "summary": "Report a mistake in a lesson, notes, flashcard or question",
+        "summary": "Report a mistake in a lesson, notes, flashcard or question, or a bad AI answer (contentType ai_answer, members only)",
         "tags": [
           "reports"
         ],
@@ -17085,6 +18530,16 @@
           }
         },
         "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContentReportReceipt"
+                }
+              }
+            }
+          },
           "201": {
             "description": "Default Response",
             "content": {
@@ -18242,6 +19697,58 @@
         }
       }
     },
+    "/v1/live-events/{id}": {
+      "get": {
+        "summary": "One live mock: phase timeline, registration window, rank availability. Signed in: your registration, attempt and result.",
+        "tags": [
+          "live"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "maxLength": 120,
+              "pattern": "^live_[a-z0-9_-]+$"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LiveEventDetail"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/live-events/{id}/register": {
       "post": {
         "summary": "Register for a live mock (idempotent). Starting the test also registers you.",
@@ -18330,6 +19837,62 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/LiveLeaderboard"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/leagues/current": {
+      "get": {
+        "summary": "Your weekly league: tier, division standings (first name + last initial), promotion and relegation zones. Needs consent (D-014).",
+        "tags": [
+          "gamification"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "default": "class",
+              "type": "string",
+              "enum": [
+                "class",
+                "school",
+                "city"
+              ]
+            },
+            "in": "query",
+            "name": "scope",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LeagueCurrent"
                 }
               }
             }
