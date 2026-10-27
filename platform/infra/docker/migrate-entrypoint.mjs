@@ -39,7 +39,10 @@ async function withClient(database, fn) {
   const client = new pg.Client({ database, ssl: { rejectUnauthorized: true } });
   await client.connect();
   try {
-    await client.query('RESET ROLE');
+    // SET ROLE NONE, not RESET ROLE: bootstrap gives the migrator a default `role = soyl_migrator`
+    // (ALTER ROLE ... SET role), and RESET ROLE restores that default. Bootstrap steps such as
+    // CREATE EXTENSION need the identity's own azure_pg_admin membership.
+    await client.query('SET ROLE NONE');
     return await fn(client);
   } finally {
     await client.end();
