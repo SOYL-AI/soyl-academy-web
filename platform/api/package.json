@@ -8,7 +8,8 @@
     "./contract/*": "./src/contract/*.ts",
     "./engine/*": "./src/domain/tests/*.ts",
     "./billing/*": "./src/billing/*.ts",
-    "./ai/*": "./src/ai/*.ts"
+    "./ai/*": "./src/ai/*.ts",
+    "./leagues/*": "./src/domain/leagues/*.ts"
   },
   "scripts": {
     "dev": "tsx scripts/dev.ts",

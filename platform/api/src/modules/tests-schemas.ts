@@ -55,6 +55,47 @@ export const LiveEventSchema = z
   })
   .meta({ id: 'LiveEvent' });
 
+const IsoOrNull = z.iso.datetime().nullable();
+
+/** GET /v1/live-events/:id (M5): one event with its timeline, registration window, your status and rank availability. */
+export const LiveEventDetailSchema = LiveEventSchema.extend({
+  serverNow: z.iso.datetime(),
+  lateStartMinutes: z.number().int(),
+  /** Saves are accepted until this instant (latest deadline + grace); then the phase is closed. */
+  writingUntil: z.iso.datetime(),
+  /** The latest deadline any attempt can have (window end + late-start minutes). */
+  latestDeadlineAt: z.iso.datetime(),
+  graceSeconds: z.number().int(),
+  /** Phases in order with their bounds (null = open-ended or not known yet). */
+  timeline: z.array(z.object({ phase: LivePhase, from: IsoOrNull, until: IsoOrNull })),
+  registration: z.object({ open: z.boolean(), opensAt: z.iso.datetime(), closesAt: z.iso.datetime() }),
+  ranks: z.object({
+    /** not_started → provisional (during and after the window) → final (results published); unavailable when cancelled. */
+    status: z.enum(['not_started', 'provisional', 'final', 'unavailable']),
+    beta: z.boolean(),
+    requiresConsent: z.boolean(),
+    /** null for guests. */
+    consentGranted: z.boolean().nullable(),
+    /** true when GET /v1/live-events/:id/leaderboard will answer for you now. */
+    canView: z.boolean(),
+  }),
+  me: z
+    .object({
+      registered: z.boolean(),
+      attemptId: z.uuid().nullable(),
+      attemptStatus: z.string().nullable(),
+      deadlineAt: IsoOrNull,
+      canRegister: z.boolean(),
+      /** POST /v1/tests/:testId/attempts now (registers you too). */
+      canStart: z.boolean(),
+      /** You have an attempt in progress: GET /v1/attempts/:attemptId. */
+      canResume: z.boolean(),
+      /** Your final rank once results are published (auto-graded marks, beta). */
+      result: z.object({ rank: z.number().int(), score: z.number(), percentile: z.number().nullable() }).nullable(),
+    })
+    .nullable(),
+}).meta({ id: 'LiveEventDetail', description: 'Signed in: me is your registration, attempt and result; null for guests.' });
+
 const TestSummary = z.object({
   id: z.string(),
   version: z.number().int(),
