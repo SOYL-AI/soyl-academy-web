@@ -1,0 +1,45 @@
+id: icse-10-biology-board
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-biology
+paper_type: board
+academic_year: "2026-27"
+duration_min: 120
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.5
+  application+analysis+evaluation: 0.5
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Compulsory (40 marks)
+    instructions: >-
+      Attempt all questions. Question 1: 15 multiple-choice items of 1 mark (two assertion-reason, several set on a short scenario);
+      write the correct answers only. Question 2: five 5-mark parts - biological terms and odd-one-out sets with their category (1 mark
+      each); a short passage with five blanks to fill from given terms; a short case with five 1-mark sub-questions; a labelled diagram
+      whose five structures are matched with their functions.
+    items:
+      - {type: mcq, count: 13, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+      - {type: short, count: 10, marks_each: 1}
+      - {type: fill-blank, count: 1, marks_each: 5}
+      - {type: case-based, count: 1, marks_each: 5}
+      - {type: match, count: 1, marks_each: 5}
+  - id: B
+    title: Section B - Any four of six (40 marks)
+    instructions: >-
+      Attempt any four of Questions 3-8, 10 marks each. Most open with a short real-life scenario, experiment or picture followed by
+      parts of 1, 2 and 3 marks, often ending with a neat, labelled diagram.
+    items:
+      - {type: case-based, count: 6, marks_each: 10, internal_choice: {attempt: 4, of: 6}}
+source_status: verified
+source: icse-2027-specimen-523-biology
+notes: >-
+  ICSE 2027 Science (52) Paper 3 Biology, specimen paper code 523: one theory paper of two hours (plus 15 minutes reading time),
+  80 marks; internal assessment of practical work 20 marks is not modelled. Section A (40, compulsory): Q1 15 x 1 MCQ incl. 2
+  assertion-reason; Q2 five 5-mark parts (terms and odd-one-out as ten 1-mark short answers, a 5-blank fill-in passage, a 5-mark case,
+  a 5-pair diagram match). Section B (40): any four of six 10-mark questions, modelled as case-based items (a stimulus with 1-3-mark
+  parts), which is the form of most specimen Section B questions; one specimen question instead mixes unrelated parts.
+  mark_shares 0.5 / 0.5: the October 2026 circular (cisce-circular-specimen-papers-2027) gives higher-order questions an approximate
+  weightage of 50% in 2027. CISCE publishes no unit-wise marks for ICSE Biology, so no unit weightage is applied.
