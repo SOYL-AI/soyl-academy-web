@@ -103,4 +103,17 @@ npm run content -- lint --exemplars --verbose | grep -B1 "balance.competency"   
 
 ## Gate results
 
-GATES_PLACEHOLDER
+```
+npm test -w @soyl/content-templates                            533 passed · exit 0
+npm run content -- lint --exemplars                            0 errors · exit 0; balance.competency: 0 Maths warnings
+                                                               (11 Science + SST ch05 + the existing Hindi exemplar ch10 warning, see open issue)
+npm run content -- verify --board cbse --class 10 --authored   76 units, 6065 questions, 0 blocking flags · exit 0
+npm run content -- originality --authored                      76 units, 0 errors · exit 0
+npm test -w @soyl/content-pipeline                             8 files, 278 passed · exit 0 (see note)
+assemble --series --source files --strict                      science 0 · mathematics 0 · social-science 0; "re-freeze to rebalance" notes 0 · 0 · 0
+npx vitest run --root api test/content.test.ts                 13 passed · exit 0
+npx vitest run --root db test/db6-split.test.ts                8 passed · exit 0
+npm run typecheck                                              all workspaces · exit 0
+```
+
+Note: the first `npm test -w @soyl/content-pipeline` run in the sequential gate script exited 1, and its output was overwritten before I could read it. I ran it twice more straight away, without changing anything, and both runs passed 278 / 278. That points to a flaky test under load (likely the Postgres container test) rather than this change, but I could not confirm which test failed.
