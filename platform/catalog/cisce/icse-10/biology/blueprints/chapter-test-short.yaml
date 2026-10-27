@@ -1,0 +1,32 @@
+id: icse-10-biology-chapter-test-short
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-biology
+paper_type: chapter-test-short
+academic_year: "2026-27"
+duration_min: 30
+total_marks: 20
+mark_shares: {}
+scope: chapter
+sections:
+  - id: A
+    title: Section A - Compulsory (10 marks)
+    instructions: >-
+      Attempt all questions. Four MCQs and one assertion-reason item (1 mark each); three 1-mark answers (a biological term or an odd one
+      out with its category); one 2-mark item.
+    items:
+      - {type: mcq, count: 4, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: short, count: 3, marks_each: 1}
+      - {type: short, count: 1, marks_each: 2}
+  - id: B
+    title: Section B - Case-based question (10 marks)
+    instructions: Attempt any one of the two questions; each opens with a scenario, experiment or diagram followed by parts of 1-3 marks.
+    items:
+      - {type: case-based, count: 2, marks_each: 10, internal_choice: {attempt: 1, of: 2}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL chapter test in the ICSE 2027 Biology form (icse-2027-specimen-523-biology): compulsory objective items and 1-mark terms, then
+  a choice of 10-mark case-based questions; not an official CISCE paper. One chapter, 20 marks in 30 minutes (board pace).

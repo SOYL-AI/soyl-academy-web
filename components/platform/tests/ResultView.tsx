@@ -34,7 +34,7 @@ import { useCredits } from '../ai/CreditsProvider';
 import { aiBlockFrom, newIdempotencyKey, type AiBlock } from '../ai/problems';
 import { api } from '../lib/api-browser';
 import { attemptPath, DIFFICULTY_NAMES, marksText, scoreText, testProblemMessage } from './player-model';
-import { durationText, formatClock } from './timer';
+import { durationText, formatClock, istDateTime } from './timer';
 import s from './tests.module.css';
 
 type SlotsModule = typeof import('@/components/platform/ui/question/slots');
@@ -166,7 +166,7 @@ function Result({ result, onChange, late }: { result: AttemptResult; onChange: (
           {score.percentage !== null && <Badge>{Math.round(score.percentage)}%</Badge>}
           {result.attempt.status === 'auto_submitted' && <Badge tone="warning">Submitted when time ran out</Badge>}
         </div>
-        {score.pendingSelfEvaluation.items > 0 && (
+        {score.pendingSelfEvaluation.items > 0 && result.review?.status !== 'after_event' && (
           <p className={s.muted} data-testid="pending-self">
             {score.pendingSelfEvaluation.items} written answer{score.pendingSelfEvaluation.items === 1 ? '' : 's'} ({marksText(score.pendingSelfEvaluation.marks)}) to mark yourself below.
           </p>
@@ -220,11 +220,25 @@ function Result({ result, onChange, late }: { result: AttemptResult; onChange: (
         </Card>
       )}
 
-      <Analysis result={result} />
+      {result.review?.status === 'after_event' ? (
+        // S6-H01: a live mock's solutions open only after everyone has finished.
+        <Card as="section" aria-labelledby="review-later" data-testid="review-after-event">
+          <CardTitle as="h2" id="review-later">
+            Solutions open after the live test
+          </CardTitle>
+          <p className={s.muted}>
+            Answers, solutions and marking open when the live test closes{result.review.opensAt ? ` at ${istDateTime(result.review.opensAt)}` : ''}. Come back then to review every question.
+          </p>
+        </Card>
+      ) : (
+        <>
+          <Analysis result={result} />
 
-      {written.length > 0 && <AiEvaluationPanel result={result} written={written} ai={ai} onAi={setAi} />}
+          {written.length > 0 && <AiEvaluationPanel result={result} written={written} ai={ai} onAi={setAi} />}
 
-      <ReviewList result={result} lang={lang} ai={ai} onChange={onChange} onAi={setAi} />
+          <ReviewList result={result} lang={lang} ai={ai} onChange={onChange} onAi={setAi} />
+        </>
+      )}
 
       <p>
         <Link href="/tests">Back to tests</Link>

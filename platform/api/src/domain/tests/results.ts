@@ -8,6 +8,11 @@
  *                                          ≥ 50 first attempts are graded, live rank for ranked attempts
  *   POST /v1/attempts/:id/self-evaluation  marks for written items, within each step's / part's maximum
  *
+ * S6-H01 (AC-11): a live-mock attempt is score-only (score, time, percentile, provisional rank) until
+ * the event closes for everyone (live-review.ts): no keys, per-item status or correctness, no
+ * section, topic or difficulty breakdown and no self-evaluation before then (`review.status` is
+ * `after_event` with `opensAt`).
+ *
  * Percentiles read `test_score_buckets` (two sums over ≤ 2 × total_marks + 1 rows) and use the
  * auto-graded score only; self-evaluated marks change the student's own total, never peer stats.
  */
@@ -19,7 +24,8 @@ import type { KeyReveal, PartResult, PracticeResponse } from '../grading';
 import { finalizeCtx, ownAttempt, testHeader, type EngineContext } from './attempts';
 import { deliverPaper } from './delivery';
 import { gradeAttempt, isFinal } from './finalize';
-import { liveEventById, LiveRanks, livePhase } from './live';
+import { LiveRanks, livePhase } from './live';
+import { assertReviewOpen, reviewWindow } from './live-review';
 import { loadKeys, loadStructure, testById, type TestStructure } from './load';
 import { scoreBucket, type ItemOutcome } from './score';
 
@@ -57,6 +63,7 @@ function itemStatus(o: ItemOutcome): 'correct' | 'partial' | 'wrong' | 'unanswer
 export async function attemptResult(ctx: EngineContext, userId: string, attemptId: string) {
   const a = await ownAttempt(ctx, userId, attemptId);
   if (!isFinal(a.status)) throw new ApiProblem('conflict', { detail: 'Results are available after you submit.' });
+  const review = await reviewWindow(ctx.db, a, ctx.clock.now());
   const test = await testById(ctx.db, a.testId);
   const structure = await loadStructure(ctx.db, test!);
   const { outcomes, agg } = await gradeAttempt(ctx.db, structure, await loadKeys(ctx.db, structure), a.id);
@@ -100,7 +107,7 @@ export async function attemptResult(ctx: EngineContext, userId: string, attemptI
   const percentile = await percentileFor(ctx.db, a.testId, agg.autoScore);
   let live = null;
   if (a.liveEventId) {
-    const ev = await liveEventById(ctx.db, a.liveEventId);
+    const ev = review.event;
     if (ev) {
       if (livePhase(ev, ctx.clock.now()) === 'results_published') {
         const [reg] = await ctx.db
@@ -117,7 +124,7 @@ export async function attemptResult(ctx: EngineContext, userId: string, attemptI
   }
 
   const totalTime = saved.reduce((n, r) => n + r.timeSpentSec, 0);
-  return {
+  const header = {
     attempt: {
       id: a.id,
       status: a.status as 'submitted' | 'auto_submitted',
@@ -138,12 +145,18 @@ export async function attemptResult(ctx: EngineContext, userId: string, attemptI
       answered: agg.answeredSlots,
       questions: agg.totalSlots,
     },
-    sections: agg.sections,
-    topics: [...topicAcc.entries()].map(([id, t]) => ({ id, title: topicTitle.get(id) ?? id, earned: round1(t.earned), max: round1(t.max), items: t.items, mastery: pct(t.earned, t.max) })),
-    byDifficulty: [...diff.entries()].sort(([x], [y]) => x - y).map(([difficulty, d]) => ({ difficulty, total: d.total, attempted: d.attempted, correct: d.correct, accuracy: pct(d.correct, d.attempted) })),
     time: { totalSec: totalTime, averagePerQuestionSec: structure.items.length ? Math.round(totalTime / structure.items.length) : 0 },
     percentile,
     live,
+    review: { status: review.open ? ('open' as const) : ('after_event' as const), opensAt: review.opensAt?.toISOString() ?? null },
+  };
+  // S6-H01: score and rank only while the live event is still running for others.
+  if (!review.open) return { ...header, sections: [], topics: [], byDifficulty: [], sectionsLayout: [], items: [] };
+  return {
+    ...header,
+    sections: agg.sections,
+    topics: [...topicAcc.entries()].map(([id, t]) => ({ id, title: topicTitle.get(id) ?? id, earned: round1(t.earned), max: round1(t.max), items: t.items, mastery: pct(t.earned, t.max) })),
+    byDifficulty: [...diff.entries()].sort(([x], [y]) => x - y).map(([difficulty, d]) => ({ difficulty, total: d.total, attempted: d.attempted, correct: d.correct, accuracy: pct(d.correct, d.attempted) })),
     sectionsLayout: paper.sections.map((s) => ({ id: s.id, title: s.title, itemIds: s.itemIds, choiceGroups: s.choiceGroups })),
     items: paper.items.map((d) => {
       const o = outcomes.get(d.itemId)!;
@@ -223,6 +236,8 @@ function selfMarksFor(entry: SelfEvalEntry, i: number, o: ItemOutcome, structure
 export async function selfEvaluate(ctx: EngineContext, userId: string, attemptId: string, entries: SelfEvalEntry[]) {
   const a = await ownAttempt(ctx, userId, attemptId);
   if (!isFinal(a.status)) throw new ApiProblem('conflict', { detail: 'Self-evaluate after you submit.' });
+  // S6-H01: marking against the scheme reveals it; a live attempt self-evaluates after the event.
+  await assertReviewOpen(ctx.db, a, ctx.clock.now());
   const test = await testById(ctx.db, a.testId);
   const structure = await loadStructure(ctx.db, test!);
   const keys = await loadKeys(ctx.db, structure);

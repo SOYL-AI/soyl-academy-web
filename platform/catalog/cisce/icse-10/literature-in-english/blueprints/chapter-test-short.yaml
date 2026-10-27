@@ -1,0 +1,28 @@
+id: icse-10-literature-in-english-chapter-test-short
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-literature-in-english
+paper_type: chapter-test-short
+academic_year: "2026-27"
+duration_min: 30
+total_marks: 20
+mark_shares: {}
+scope: chapter
+sections:
+  - id: A
+    title: Section A - Objective (4 marks)
+    instructions: Four multiple-choice items (1 mark each).
+    items:
+      - {type: mcq, count: 4, marks_each: 1}
+  - id: B
+    title: Section B - Reference-to-context question (16 marks)
+    instructions: One question on a scene, story moment or lines, in parts of 3, 3, 3, 3 and 4 marks.
+    items:
+      - {type: source-based, count: 1, marks_each: 16}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL chapter test in the ICSE 2027 Literature in English form (icse-2027-specimen-012-literature-in-english): 1-mark MCQs and one
+  16-mark question in five parts; not an official CISCE paper. One chapter, 20 marks in 30 minutes. Questions refer to the text and
+  never reproduce it (CONTEXT section 8).

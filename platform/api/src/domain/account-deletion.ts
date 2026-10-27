@@ -1,14 +1,15 @@
 /**
  * DELETE /v1/me — step 1 of platform/db/PII.md "Account deletion" (AC-25 erasure, AC-26):
  * in one transaction delete sessions, accounts, pending OTP rows, consent_status, guardian links
- * (both directions), AI conversations (messages cascade), uploads rows and the staff TOTP enrolment; anonymise `users` and the
- * personal `profiles` fields; write an audit row (ids only). Step 2 — the hard delete ≤ 30 days later
- * — is the worker's `account.purge` job (`users.deleted_at < now() - 30 days`).
- *
- * Gaps recorded in the handoff: upload blobs (no Blob client yet; the uploads feature lands in M4 and
- * must delete blobs here) and Redis leaderboard entries (no leaderboards yet).
+ * (both directions), AI conversations (messages cascade) and the staff TOTP enrolment; mark the user's
+ * uploads `deleted` (S6-M02: their blobs — the photo/paper in `uploads-quarantine` and its cleaned copy
+ * in `uploads` — are deleted right after by UploadService.purgeDeleted, then the rows; the worker's
+ * `uploads.purge-deleted` retries until done, with an audit row); anonymise `users` and the personal
+ * `profiles` fields; write an audit row (ids only). Step 2 — the hard delete ≤ 30 days later — is the
+ * worker's `account.purge` job (`users.deleted_at < now() - 30 days`). Provisional live ranks (KV) are
+ * removed by the route (removeFromLiveBoards).
  */
-import { eq, or } from 'drizzle-orm';
+import { and, eq, ne, or } from 'drizzle-orm';
 import {
   accounts,
   aiConversations,
@@ -50,7 +51,8 @@ export async function deleteAccount(
     await tx.delete(consentStatus).where(eq(consentStatus.userId, user.id));
     await tx.delete(guardianLinks).where(or(eq(guardianLinks.parentUserId, user.id), eq(guardianLinks.studentUserId, user.id)));
     await tx.delete(aiConversations).where(eq(aiConversations.userId, user.id));
-    await tx.delete(uploads).where(eq(uploads.userId, user.id));
+    // Blobs first, then rows (UploadService.purgeDeleted): the rows are the index of the blobs.
+    await tx.update(uploads).set({ status: 'deleted', expiresAt: now, updatedAt: now }).where(and(eq(uploads.userId, user.id), ne(uploads.status, 'deleted')));
     await tx.delete(userMfa).where(eq(userMfa.userId, user.id));
     await tx
       .update(users)

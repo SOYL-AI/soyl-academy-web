@@ -158,6 +158,7 @@ describe('ResultView', () => {
     time: { totalSec: 600, averagePerQuestionSec: 300 },
     percentile: { value: null, attempts: 3, minAttempts: 50 },
     live: null,
+    review: { status: 'open', opensAt: null },
     sectionsLayout: [{ id: 'A', title: 'A', itemIds: [I1, I2], choiceGroups: [] }],
     items: [
       { itemId: I1, sectionId: 'A', number: 1, marks: 1, choiceGroup: null, counted: true, status: 'correct', autoMarks: 1, autoMax: 1, selfMarks: null, selfMax: 0, correct: true, timeSpentSec: 20, markedForReview: false, response: { option_ids: ['a'] }, question: mcq('q1'), key: { answer: { option_ids: ['a'] }, solution_md: 'S', marking_scheme: [] }, parts: [] },
@@ -197,6 +198,28 @@ describe('ResultView', () => {
     h.api.get.mockResolvedValue(result());
     wrap(<ResultView attemptId={ATT} />);
     await waitFor(() => expect(screen.getByTestId('ai-consent-needed')).toBeTruthy());
+  });
+
+  it('S6-H01: a live mock before it closes shows score and rank only, and when solutions open', async () => {
+    const opensAt = '2026-12-13T06:16:00.000Z';
+    h.api.get.mockResolvedValue({
+      ...result(),
+      live: { eventId: 'live_cbse10sci_1', status: 'provisional', rank: 4, total: 120, percentile: 97.5 },
+      review: { status: 'after_event', opensAt },
+      sections: [],
+      topics: [],
+      byDifficulty: [],
+      sectionsLayout: [],
+      items: [],
+    } satisfies AttemptResult);
+    wrap(<ResultView attemptId={ATT} />);
+    await waitFor(() => expect(screen.getByTestId('review-after-event')).toBeTruthy());
+    expect(screen.getByTestId('review-after-event').textContent).toContain('11:46 am IST');
+    expect(screen.getByText(/Rank 4 of 120/)).toBeTruthy();
+    expect(screen.queryByTestId('review-list')).toBeNull();
+    expect(screen.queryByTestId('pending-self')).toBeNull();
+    expect(screen.queryByTestId('self-eval')).toBeNull();
+    expect(h.api.get).not.toHaveBeenCalledWith('/v1/attempts/{id}/ai-evaluation', expect.anything());
   });
 });
 

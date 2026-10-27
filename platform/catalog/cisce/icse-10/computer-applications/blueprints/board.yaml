@@ -1,0 +1,39 @@
+id: icse-10-computer-applications-board
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-computer-applications
+paper_type: board
+academic_year: "2026-27"
+duration_min: 120
+total_marks: 100
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Compulsory (40 marks)
+    instructions: >-
+      Attempt all questions. Question 1: 20 multiple-choice items of 1 mark on Java concepts, syntax and library methods. Question 2:
+      ten 2-mark items - short answers (write a Java expression or statement, explain, find the error) and predict-the-output items.
+    items:
+      - {type: mcq, count: 20, marks_each: 1}
+      - {type: short, count: 6, marks_each: 2}
+      - {type: code-output, count: 4, marks_each: 2}
+  - id: B
+    title: Section B - Any four of six programs (60 marks)
+    instructions: >-
+      Attempt any four of the six questions, 15 marks each. Each asks for a complete Java program (class design, methods, constructors,
+      arrays, strings, menus) written in BlueJ style with variable descriptions or comments; marks go to logic, syntax and documentation.
+    items:
+      - {type: long, count: 6, marks_each: 15, internal_choice: {attempt: 4, of: 6}}
+source_status: unverified
+source: icse-2026-computer-applications-paper
+notes: >-
+  ICSE 2027 Computer Applications (86), a Group III subject: one theory paper of two hours, 100 marks (VERIFIED from the ICSE 2027
+  syllabus, icse-2027-computer-applications); the internal assessment of 100 marks (programming assignments) is not modelled.
+  UNVERIFIED: the section layout - Section A 40 compulsory (20 x 1 MCQ, 10 x 2 short / output items), Section B any four of six
+  15-mark programs - is the 2026-cycle format, which the October 2026 circular keeps for 2027 (no 2027 Class X specimen; the circular
+  lists Computer Applications for Class IX only). The 2026 paper could not be fetched (icse-2026-computer-applications-paper; owner
+  request in the handoff), so the layout comes from recent ICSE papers and the 6 / 4 split of Question 2 between short answers and
+  predict-the-output items is SOYL's. No mark_shares: CISCE publishes no competency design for this subject in 2027.
+  Programs are self-evaluated or AI-evaluated against a marking scheme; predict-the-output items are auto-graded (code-output).

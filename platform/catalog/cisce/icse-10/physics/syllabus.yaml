@@ -7,8 +7,8 @@ sources: [icse-2027-physics, icse-2027-regulations, icse-2027-specimen-papers, c
 exam_notes: >-
   One theory paper of 2 hours, 80 marks, plus internal assessment of practical work 20 marks
   (10 subject teacher + 10 external examiner; about ten experiments). SI units throughout.
-  The 2027 specimen paper (code 521) has Section A (compulsory objective/short) and Section B (choice of long
-  questions); about 50% of marks target higher-order skills (apply, analyse, evaluate, create) per the October 2026 circular.
+  The 2027 specimen paper (code 521) has Section A (40 marks, compulsory; Question 1 is 15 one-mark objective items) and
+  Section B (40 marks, any four of six 10-mark questions); about 50% of marks target higher-order skills (apply, analyse, evaluate, create) per the October 2026 circular.
   CISCE publishes a topic list in six sections, not textbook chapters: SOYL groups it into 12 teachable chapters in
   syllabus order (conservation of energy is taught with work and energy, before machines, as in common ICSE texts).
   No unit-wise marks weightage is published for ICSE Physics.
@@ -32,7 +32,7 @@ chapters:
           - "Calculate the moment of a force about a point as force times perpendicular distance, in N m and dyne cm"
           - "Explain why door handles and spanners are placed far from the axis of rotation"
       - id: icse-10-physics-ch01-t02
-        title: "Clockwise and anticlockwise moments; couple"
+        title: "Clockwise and anticlockwise moments; resultant moment"
         learning_outcomes:
           - "Identify the sense of rotation produced by a force and assign sign conventions to moments"
           - "Calculate the resultant moment when several forces act on a rigid body"
@@ -150,7 +150,7 @@ chapters:
         learning_outcomes:
           - "Trace the path of a ray through a prism and mark the angle of deviation"
       - id: icse-10-physics-ch04-t06
-        title: "Critical angle and total internal reflection (mu = 1/sin C); conditions; TIR in right-angled prisms; comparison with plane-mirror reflection"
+        title: "Critical angle and total internal reflection (mu = 1/sin C); conditions; TIR in triangular prisms (60-60-60, 30-60-90, 45-45-90); comparison with plane-mirror reflection"
         learning_outcomes:
           - "State the two conditions for total internal reflection"
           - "Calculate the critical angle from the refractive index"
@@ -334,7 +334,7 @@ chapters:
           - "Compare primary and secondary coils in step-up and step-down transformers"
           - "Give two advantages of AC over DC for power distribution"
     removed_topics:
-      - "Laws of electromagnetism (principles only)"
+      - "Laws of the magnetic effect of a current (principles only)"
       - "Working of the DC motor and AC generator (parts and energy transfer only)"
     literature_texts: []
   - id: icse-10-physics-ch11

@@ -1,0 +1,34 @@
+id: icse-10-english-language-unit-test
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-english-language
+paper_type: unit-test
+academic_year: "2026-27"
+duration_min: 60
+total_marks: 40
+mark_shares: {}
+scope: unit
+sections:
+  - id: A
+    title: Section A - Objective (10 marks)
+    instructions: Ten multiple-choice items (1 mark each).
+    items:
+      - {type: mcq, count: 10, marks_each: 1}
+  - id: B
+    title: Section B - Short answers (20 marks)
+    instructions: Ten 2-mark answers.
+    items:
+      - {type: short, count: 10, marks_each: 2}
+  - id: C
+    title: Section C - Longer tasks (10 marks)
+    instructions: Attempt any two of the three 5-mark tasks.
+    items:
+      - {type: short, count: 3, marks_each: 5, internal_choice: {attempt: 2, of: 3}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL half-syllabus test for ICSE English Language (icse-2027-specimen-011-english-language); not an official CISCE paper. The series
+  planner groups the 11 chapters into three contiguous groups (composition and letter; notice, comprehension and summary; grammar),
+  which hold different kinds of work, so this blueprint uses only item types every group can supply (MCQs and short answers). 40 marks
+  in 60 minutes. The six full mocks carry the board pattern.

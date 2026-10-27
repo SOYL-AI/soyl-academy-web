@@ -1,0 +1,34 @@
+id: icse-10-physics-unit-test
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-physics
+paper_type: unit-test
+academic_year: "2026-27"
+duration_min: 90
+total_marks: 60
+mark_shares: {}
+scope: unit
+sections:
+  - id: A
+    title: Section A - Compulsory (30 marks)
+    instructions: >-
+      Attempt all questions. Nine MCQs, one assertion-reason item and four bracket fill-ins (1 mark each); a 2-mark match; four 2-mark
+      items and two 3-mark items.
+    items:
+      - {type: mcq, count: 9, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: fill-blank, count: 4, marks_each: 1}
+      - {type: match, count: 1, marks_each: 2}
+      - {type: short, count: 4, marks_each: 2}
+      - {type: short, count: 2, marks_each: 3}
+  - id: B
+    title: Section B - Structured questions (30 marks)
+    instructions: Attempt any three of the five questions, each in parts (3 + 3 + 4 marks).
+    items:
+      - {type: long, count: 5, marks_each: 10, internal_choice: {attempt: 3, of: 5}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL half-syllabus test in the ICSE 2027 Physics form (icse-2027-specimen-521-physics); not an official CISCE paper. 60 marks in
+  90 minutes (board pace); no chapter scopes, so it fills from whichever chapters the series planner groups.

@@ -10,9 +10,13 @@
 //     pins location=centralindia and an Indian aiLocation (ADR-008).
 //   - GEN-1: no parameter value looks like a credential (long random-looking strings, connection
 //     strings, private keys).
+// and one source check on modules/storage.bicep:
+//   - S6-L02 Blob write contract: the containers each identity can write (Blob Data Contributor/Owner)
+//     are exactly the ones its code writes (BLOB_WRITE_CONTRACT below), so a missing grant (403 at run
+//     time) or an extra one fails here.
 // Bicep binary: $BICEP_BIN, else `bicep` on PATH (CI downloads a pinned, checksum-verified release).
 import { spawnSync } from 'node:child_process';
-import { readdirSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -76,7 +80,52 @@ function scanSecrets(value, path, out) {
   else if (value && typeof value === 'object') for (const [k, v] of Object.entries(value)) scanSecrets(v, `${path}.${k}`, out);
 }
 
+/**
+ * S6-L02: which Blob containers each identity's code writes (put/delete/SAS write).
+ *   api       uploads-quarantine (write SAS, delete), uploads (in-process cleaning, account deletion)
+ *   worker    both upload containers (processing, retention, purge), content-releases, public-assets
+ *   migrator  content-releases (release job)
+ *   frontdoor nothing (reads public-assets)
+ */
+const BLOB_WRITE_CONTRACT = {
+  apiPrincipalId: ['uploads', 'uploads-quarantine'],
+  workerPrincipalId: ['content-releases', 'public-assets', 'uploads', 'uploads-quarantine'],
+  migratorPrincipalId: ['content-releases'],
+  frontDoorPrincipalId: [],
+};
+function blobWriteContract() {
+  const src = readFileSync(join(here, 'modules', 'storage.bicep'), 'utf8').replace(/\r\n/g, '\n');
+  const containers = new Map([...src.matchAll(/resource (\w+) 'Microsoft\.Storage\/storageAccounts\/blobServices\/containers@[^']+' = \{\s*parent: \w+\s*name: '([^']+)'/g)].map((m) => [m[1], m[2]]));
+  const writes = new Map(Object.keys(BLOB_WRITE_CONTRACT).map((k) => [k, new Set()]));
+  const writeRole = /roleDefinitionId: roles\.(blobDataContributor|blobDataOwner)\b/;
+  // Single assignments: scope = a container symbol.
+  for (const m of src.matchAll(/^resource \w+ 'Microsoft\.Authorization\/roleAssignments@[^']+' = \{([\s\S]*?)^\}/gm)) {
+    const body = m[1];
+    const scope = /scope: (\w+)/.exec(body)?.[1];
+    const principal = /principalId: (\w+)/.exec(body)?.[1];
+    if (!principal || !writeRole.test(body)) continue;
+    if (!containers.has(scope)) throw new Error(`S6-L02: write role for ${principal} at a non-container scope (${scope})`);
+    if (!writes.has(principal)) writes.set(principal, new Set());
+    writes.get(principal).add(containers.get(scope));
+  }
+  // The worker's loop over workerContainerNames (one assignment per name).
+  const loop = /var workerContainerNames = \[([\s\S]*?)\]/.exec(src);
+  const loopBody = /^resource workerContainers 'Microsoft\.Authorization\/roleAssignments@[^']+' = \[([\s\S]*?)^\]/m.exec(src)?.[1] ?? '';
+  if (loop && writeRole.test(loopBody) && /principalId: workerPrincipalId/.test(loopBody)) for (const n of loop[1].matchAll(/'([^']+)'/g)) writes.get('workerPrincipalId').add(n[1]);
+  let bad = 0;
+  for (const [principal, set] of writes) {
+    const want = (BLOB_WRITE_CONTRACT[principal] ?? []).slice().sort().join(', ');
+    const got = [...set].sort().join(', ');
+    const ok = want === got;
+    if (!ok) bad++;
+    console.log(`  S6-L02 blob writes ${principal}: ${got || '(none)'}${ok ? '' : `  -- expected ${want || '(none)'}`}`);
+  }
+  return bad;
+}
+
 console.log(`bicep: ${run(['--version']).stdout.trim()}`);
+console.log('\n# storage.bicep blob write contract (S6-L02)');
+errors += blobWriteContract();
 
 for (const t of templates) {
   console.log(`\n# bicep build ${t}`);

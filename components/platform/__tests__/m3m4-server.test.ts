@@ -8,8 +8,13 @@ const cfg: ProxyConfig = { origin: 'http://api.test', edgeSecret: SECRET, timeou
 
 describe('CSP per page (WEB-1, WEB-3, ADR-018 §4)', () => {
   it('Razorpay Checkout origins only on /plans; COOP allows its popups there only', () => {
-    const plans = buildCsp({ pathname: '/plans' });
-    expect(plans).toContain("script-src 'self' 'unsafe-inline' https://checkout.razorpay.com");
+    // S6-L03: /plans is a nonce page (no 'unsafe-inline' next to the payment flow); the Checkout host stays
+    // listed as the CSP2 fallback ('strict-dynamic' ignores host sources in CSP3 browsers).
+    expect(usesNonce('/plans')).toBe(true);
+    const plans = buildCsp({ pathname: '/plans', nonce: 'n' });
+    expect(plans).toContain("script-src 'self' 'nonce-n' 'strict-dynamic'");
+    expect(plans.split('; ').find((d) => d.startsWith('script-src'))).not.toContain('unsafe-inline');
+    expect(plans).toContain('https://checkout.razorpay.com');
     expect(plans).toContain('frame-src https://api.razorpay.com https://checkout.razorpay.com');
     expect(plans).toContain("connect-src 'self' https://api.razorpay.com https://lumberjack.razorpay.com");
     expect(plans).toContain('https://cdn.razorpay.com');
@@ -35,7 +40,9 @@ describe('CSP per page (WEB-1, WEB-3, ADR-018 §4)', () => {
 
   it('logged-in M3/M4 pages use the nonce policy', () => {
     for (const p of ['/tests/attempt/x', '/tests/result/x', '/tests/builder', '/tests/live/e', '/ask', '/leaderboard']) expect(usesNonce(p), p).toBe(true);
-    for (const p of ['/tests', '/tests/series/cbse/10/science', '/plans']) expect(usesNonce(p), p).toBe(false);
+    // S6-L03: the catalogue, series pages and /plans render per request under the nonce policy too.
+    for (const p of ['/tests', '/tests/series/cbse/10/science', '/plans', '/plans/x']) expect(usesNonce(p), p).toBe(true);
+    for (const p of ['/learn/cbse/10', '/testsx', '/plansx']) expect(usesNonce(p), p).toBe(false);
   });
 });
 
