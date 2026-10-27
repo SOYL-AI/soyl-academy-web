@@ -54,7 +54,7 @@ Rebuild from `platform/`: `npx tsx content/authored/hindi-literature/cbse-10-hin
   - Competency: application or higher on 53% of items and 64% of marks. Higher-order items include: everyday parallels (wedding waste, tiffin, café); the double satire (Nawab and narrator); whether a mood alone makes a story; whether the title is ironic; the harm of दिखावा today; a diary entry in the Nawab's voice; inference and title children in every passage.
   - MCQ keys (incl. children): a 15, b 14, c 14, d 15.
   - Model answers: 2-mark 25–30 words; 4-mark 71–75 words.
-- **Deck:** 21 slides — title, how-to, author, elements, event flow, ordering check, first meeting, invitation and refusals, the ritual, the climax, AR check, two kinds of pride, सामंती मनोवृत्ति, application check, the twist, ending check, style, the title, word meanings, summary, exam tips. 10 visuals. Narration max 65 words (mean 53), Devanagari only, no digits or symbols.
+- **Deck:** 21 slides — title, how-to, author, elements, event flow, ordering check, first meeting, invitation and refusals, the ritual, the climax, AR check, two kinds of pride, सामंती मनोवृत्ति, application check, the twist, ending check, style, the title, word meanings, summary, exam tips. 10 visuals. Narration max 65 words (mean 51), Devanagari only, no digits or symbols.
 - **Notes:** 7 sections + exam tips. **Flashcards:** 28.
 - **Tests (no shared questions):**
   - Short (20 marks, 40 min): A one commentary passage (5) · B 5 MCQ · C short "4 में से 3" × 2 · D long "2 में से 1" × 4.
