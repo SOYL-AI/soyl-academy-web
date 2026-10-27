@@ -9,9 +9,10 @@
  */
 import { describe, expect, it } from 'vitest';
 import type { Blueprint, Question, TestDefinition } from '@soyl/shared/content/index';
-import { assembleSubject, bankFromFiles, toFrozenSeries, type Bank } from '../src/commands/assemble';
-import { SLOT_COMPATIBLE, assemblePaper, attemptedMarksBy, type BankItem } from '../src/assemble/engine';
-import { planSubjectTests, unitTargetsFor } from '../src/assemble/series';
+import { assembleSubject, bankFromFiles, keepFrozen, toFrozenSeries, type Bank } from '../src/commands/assemble';
+import { SLOT_COMPATIBLE, assemblePaper, attemptedMarksBy, bandFractions, competencyMarksOf, competencyRangeByBand, type BankItem, type CompetencyTarget } from '../src/assemble/engine';
+import { competencyTargetsFor, planSubjectTests, unitTargetsFor } from '../src/assemble/series';
+import { COMPETENCY_BALANCE } from '../config/pipeline';
 import { FrozenSeriesFile, frozenSubjects, loadFrozenSeries, questionIds, remapVersions } from '../src/assemble/frozen';
 import { loadAuthoredUnits } from '../src/sources';
 import { shingles, words } from '../src/originality/ngrams';
@@ -39,6 +40,13 @@ const FORMER_DUPLICATE_PAIRS: [string, string][] = [
   ['q_cbse10math_ch11_003', 'q_cbse10math_ch11_031'],
   ['q_cbse10sst_ch18_041', 'q_cbse10sst_ch15_062'],
 ];
+/**
+ * Frozen before the competency balance (2026-10-27) and kept byte-identical since (ADR-019 addendum):
+ * their board / May papers are not asserted against the competency targets, but every off-target
+ * paper must be reported by assemble as a note (never silent). Re-freezing brings them under the rule.
+ */
+const FROZEN_BEFORE_COMPETENCY_BALANCE = new Set(['cbse-10-science', 'cbse-10-social-science']);
+
 /** Word 5-gram Jaccard similarity of two stems (maths stripped), as the originality stage measures it. */
 function similarity(a: Question, b: Question): number {
   const sa = new Set(shingles(words(`${a.passage_md ?? ''}\n${a.stem_md}`), 5));
@@ -161,6 +169,25 @@ describe('frozen test series (content/authored/series)', () => {
         }
       });
 
+      it('board and May papers meet the competency targets within the tolerance, whichever alternatives a student attempts', () => {
+        const bank = bankFromFiles(p, subject);
+        const byId = new Map(bank.items.map((q) => [q.id, q]));
+        const tol = COMPETENCY_BALANCE.toleranceMarks;
+        const off: string[] = [];
+        for (const { test } of file.tests) {
+          const planned = seriesPapers.find((x) => x.spec.id === test.id)!;
+          const targets = planned.spec.competencyTargets;
+          if (test.paper_type === 'board' || test.paper_type === 'board-second-exam') expect(targets, `${test.id}: targets from the blueprint mark_shares`).toBeDefined();
+          if (!targets) continue;
+          const { lo, hi } = competencyRangeByBand(test, (id) => byId.get(id), targets);
+          if (targets.some((t, i) => lo[i]! < t.marks - tol - 1e-9 || hi[i]! > t.marks + tol + 1e-9)) off.push(test.id);
+        }
+        if (FROZEN_BEFORE_COMPETENCY_BALANCE.has(subjectId)) {
+          const notes = assembleSubject(plan, bank, file).notes;
+          for (const id of off) expect(notes.some((n) => n.startsWith(`${id}: frozen paper is off its competency targets`)), id).toBe(true);
+        } else expect(off).toEqual([]);
+      });
+
       it('never repeats a question inside a series (mock overlap 0 %)', () => {
         const bySeries = new Map<string, string[]>();
         for (const { test, series } of file.tests) bySeries.set(series.key, [...(bySeries.get(series.key) ?? []), ...questionIds(test)]);
@@ -262,5 +289,84 @@ describe('blueprint engine: discipline sections, unit weightage, practice-only t
     expect(missing.tests.map((t) => t.test.id)).toEqual([frozen.tests[1]!.test.id]);
     expect(missing.requests[0]).toMatchObject({ paper_id: frozen.tests[0]!.test.id, missing: 1 });
     expect(remapVersions(frozen.tests[0]!.test, new Map()).ok).toBe(false);
+  });
+});
+
+describe('competency balance (board-pattern papers, COMPETENCY_BALANCE)', () => {
+  const RU: CompetencyTarget['competencies'] = ['recall', 'understanding'];
+  const targets: CompetencyTarget[] = [
+    { band: 'recall+understanding', competencies: RU, marks: 6 },
+    { band: 'application', competencies: ['application'], marks: 2 },
+    { band: 'analysis+evaluation', competencies: ['analysis', 'evaluation'], marks: 2 },
+  ];
+  const ch = 'cbse-10-mathematics-ch01';
+  // 4 single 2-mark questions and one internal choice (attempt 1 of 2): 10 attempted marks.
+  const bp = {
+    id: 'x-board', board: 'cbse', exam: 'cbse', class: 10, subject_id: 'cbse-10-mathematics', paper_type: 'board', academic_year: '2026-27', duration_min: 30, total_marks: 10,
+    mark_shares: { 'recall+understanding': 0.6, application: 0.2, 'analysis+evaluation': 0.2 }, scope: 'syllabus', source_status: 'unverified', source: 'test',
+    sections: [{ id: 'A', title: 'A', instructions: '', items: [{ type: 'short', count: 4, marks_each: 2, internal_choice: null, competency: null, difficulty: null }, { type: 'short', count: 2, marks_each: 2, internal_choice: { attempt: 1, of: 2 }, competency: null, difficulty: null }] }],
+  } as unknown as Blueprint;
+  const item = (i: number, competency: BankItem['competency'], difficulty = 3): BankItem => ({ id: `q_x_ch01_${String(i).padStart(3, '0')}`, version: 1, unit: ch, type: 'short', marks: 2, difficulty, competency, topic_ids: [] });
+  const spec = { id: 't_x_mock_1', title: 'x', blueprint: bp, subjectId: 'cbse-10-mathematics', chapters: [ch], seed: 's', competencyTargets: targets, competencyTolerance: 0 };
+
+  it('counts case parts at their own competency and splits a part between its alternatives', () => {
+    expect(competencyMarksOf({ marks: 4, children: [{ marks: 1, competency: 'recall' }, { marks: 1, competency: 'understanding' }, { marks: 2, competency: 'application', alternatives: [{ competency: 'analysis' }] }] })).toEqual({ recall: 1, understanding: 1, application: 1, analysis: 1 });
+    expect(competencyMarksOf({ marks: 4, children: [{ marks: 1, competency: 'recall' }] })).toBeUndefined();
+    expect(competencyMarksOf({ marks: 2, children: [] })).toBeUndefined();
+    expect(bandFractions({ marks: 4, competency: 'application', competency_marks: { recall: 1, understanding: 1, application: 2 } }, targets)).toEqual([0.5, 0.5, 0]);
+    expect(bandFractions({ marks: 3, competency: 'evaluation' }, targets)).toEqual([0, 0, 1]);
+  });
+
+  it('takes the targets from the blueprint mark_shares for board-pattern papers only', () => {
+    const bps = p.catalog.blueprints;
+    const marks = (id: string) => competencyTargetsFor(bps.find((b) => b.id === id)!)?.map((t) => t.marks);
+    expect(marks('cbse-10-mathematics-board')).toEqual([43.2, 19.2, 17.6]);
+    expect(marks('cbse-10-mathematics-board-basic')).toEqual([60, 12, 8]);
+    expect(marks('cbse-10-mathematics-board-second-exam-basic')).toEqual([60, 12, 8]);
+    expect(marks('cbse-10-social-science-board')).toEqual([24, 15.6, 40]);
+    const unitTest = bps.find((b) => b.subject_id === null && b.board === 'cbse' && b.class === 10 && b.paper_type === 'unit-test')!;
+    expect(competencyTargetsFor(unitTest)).toBeNull();
+    expect(competencyTargetsFor({ ...bp, mark_shares: { 'recall+understanding': 0.5, application: 0.2 } } as Blueprint)).toBeNull();
+  });
+
+  it('balances a paper to the targets by swaps, with both alternatives of a choice in one band, whatever the bank order', () => {
+    // The difficulty ramp pulls the easy analysis items in first; the balance must undo that.
+    const bank = [...[1, 2, 3, 4, 5, 6].map((i) => item(i, 'understanding', 4)), ...[7, 8, 9].map((i) => item(i, 'application', 3)), ...[10, 11, 12, 13].map((i) => item(i, 'analysis', 2))];
+    for (const b of [bank, [...bank].reverse()]) {
+      const r = assemblePaper(spec, b);
+      expect(r.ok).toBe(true);
+      if (!r.ok) return;
+      expect(r.shortfalls).toBeUndefined();
+      const byId = new Map(b.map((q) => [q.id, q]));
+      const range = competencyRangeByBand(r.test, (id) => byId.get(id), targets);
+      expect(range.lo).toEqual([6, 2, 2]);
+      expect(range.hi).toEqual([6, 2, 2]);
+    }
+    expect((assemblePaper(spec, bank) as { test: unknown }).test).toEqual((assemblePaper(spec, [...bank].reverse()) as { test: unknown }).test);
+  });
+
+  it('reports a band the bank cannot fill as a generation request, never a silent miss', () => {
+    const bank = [item(1, 'understanding'), ...[2, 3, 4].map((i) => item(i, 'application')), ...[5, 6, 7].map((i) => item(i, 'analysis'))];
+    const r = assemblePaper({ ...spec, competencyTolerance: 1 }, bank);
+    expect(r.ok).toBe(true);
+    if (!r.ok) return;
+    expect(r.shortfalls?.length).toBeGreaterThan(0);
+    expect(r.shortfalls![0]).toMatchObject({ paper_id: 't_x_mock_1', competency: 'recall+understanding', type: 'short', marks: 2, chapters: [ch] });
+    expect(r.shortfalls![0]!.reason).toMatch(/competency balance/);
+    // assembleSubject records it as a request: --strict exits 2 and --freeze refuses the series.
+    const subject = p.catalog.subjectsById.get('cbse-10-mathematics')!;
+    const a = assembleSubject({ subject, papers: [{ spec: { ...spec, competencyTolerance: 1 }, series: 'mocks', seriesTitle: 'x', track: 'main', position: 1 }], notes: [] }, { items: bank, chapterTests: new Map(), source: 'files' });
+    expect(a.tests).toHaveLength(1);
+    expect(a.requests.map((x) => x.competency)).toContain('recall+understanding');
+  });
+
+  it('--refreeze keeps every frozen paper outside the listed series', () => {
+    const subject = p.catalog.subjectsById.get('cbse-10-mathematics')!;
+    const syl = p.catalog.syllabi.get(subject.id)!;
+    const plan = planSubjectTests(p.catalog, subject, { series: true, academicYear: syl.academic_year });
+    const file = loadFrozenSeries(p.paths, subject.id)!;
+    const kept = keepFrozen(file, plan, ['mocks', 'may', 'mocks_basic', 'may_basic'])!;
+    expect(kept.tests.map((t) => t.test.id).sort()).toEqual(file.tests.filter((t) => t.test.paper_type === 'unit-test').map((t) => t.test.id).sort());
+    expect(keepFrozen(file, plan, ['mocks', 'may', 'mocks_basic', 'may_basic', 'unit-tests'])).toBeNull();
   });
 });

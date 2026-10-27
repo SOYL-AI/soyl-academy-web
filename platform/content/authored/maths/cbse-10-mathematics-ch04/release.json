@@ -4148,8 +4148,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch04-t04"
       ],
@@ -4534,8 +4534,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch04-t02"
       ],
@@ -4618,8 +4618,8 @@
       ],
       "marks": 2,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch04-t04"
       ],
@@ -4660,8 +4660,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch04-t04"
       ],
@@ -4786,8 +4786,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch04-t01",
         "cbse-10-mathematics-ch04-t02"
@@ -5218,8 +5218,8 @@
       ],
       "marks": 5,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch04-t03",
         "cbse-10-mathematics-ch04-t04"
@@ -5589,8 +5589,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch04-t02",
             "cbse-10-mathematics-ch04-t05"
@@ -5781,8 +5781,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch04-t02"
           ],
@@ -5891,8 +5891,8 @@
       ],
       "marks": 4,
       "difficulty": 3,
-      "competency": "analysis",
-      "bloom": "analyze",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch04-t04",
         "cbse-10-mathematics-ch04-t02"
@@ -6029,8 +6029,8 @@
               ],
               "marks": 2,
               "difficulty": 3,
-              "competency": "application",
-              "bloom": "apply",
+              "competency": "understanding",
+              "bloom": "understand",
               "topic_ids": [
                 "cbse-10-mathematics-ch04-t04"
               ],
@@ -6196,8 +6196,8 @@
           ],
           "marks": 2,
           "difficulty": 3,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch04-t02",
             "cbse-10-mathematics-ch04-t05"
@@ -6385,8 +6385,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch04-t02",
             "cbse-10-mathematics-ch04-t05"
@@ -6469,15 +6469,62 @@
         "generated_at": "2026-10-26",
         "author": "claude-opus-5-5 (subject-producer)"
       }
+    },
+    {
+      "id": "q_cbse10math_ch04_071",
+      "unit": "cbse-10-mathematics-ch04",
+      "language": "en",
+      "type": "short",
+      "stem_md": "For the equation $2x^2 - 7x + 3 = 0$, find the discriminant and state the nature of the roots. Then find the roots using the quadratic formula.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Here $a = 2$, $b = -7$, $c = 3$.\n\n$D = b^2 - 4ac = 49 - 24 = 25$. Since $D > 0$, the roots are real and distinct (and, as $25$ is a perfect square, rational).\n\n$x = \\dfrac{-b \\pm \\sqrt D}{2a} = \\dfrac{7 \\pm 5}{4}$, so $x = \\dfrac{12}{4} = 3$ or $x = \\dfrac{2}{4} = \\dfrac12$."
+      },
+      "solution_md": "Read off $a$, $b$, $c$ with their signs; $D > 0$ means two distinct real roots.",
+      "marking_scheme": [
+        {
+          "step": "D = 25",
+          "marks": 1
+        },
+        {
+          "step": "Real and distinct roots",
+          "marks": 1
+        },
+        {
+          "step": "x = 3 or x = 1/2",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "cbse-10-mathematics-ch04-t03",
+        "cbse-10-mathematics-ch04-t04"
+      ],
+      "expected_time_sec": 240,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
     }
   ],
   "build": {
     "run_id": null,
     "checks": {
       "syllabus": "topics t01–t05 only; removed topic (solution by completing the square) absent — the quadratic formula is stated and applied, never derived by completing the square",
-      "katex": "1291 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "1305 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "7 deck plots + 6 notes/question plots: 24 marked points all on their curves and matching their labels; 24 zeros located numerically and all marked; 0 intersection points lie on both lines",
-      "re_solve": "144/144 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
+      "re_solve": "146/146 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "narration": "33 slides, max 66 words, mean 51; no symbols, LaTeX or letter abbreviations",
       "gate": "npm test -w @soyl/content-templates and content lint (lintExemplar) run clean on this chapter"
     }

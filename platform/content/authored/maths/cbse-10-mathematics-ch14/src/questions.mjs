@@ -60,20 +60,20 @@ Q('n02', mk.num({ stem: 'A bag has 7 red, 5 green and 8 white marbles. One marbl
 **Step 2.** $P(\text{green}) = \dfrac{5}{20} = \dfrac14 = 0.25$.`, scheme: [['Total 20', 1], ['0.25', 1]], d: 2, c: 'understanding', t: [2], time: 60 }), (C) => { const p = P(bag({ red: 7, green: 5, white: 8 }), (b) => b === 'green'); C.val(p.v); C.sol([tex(p)]); });
 Q('n03', mk.num({ stem: 'Two dice are thrown together. Find the probability that the sum of the numbers is 9. Give your answer as a decimal correct to two places.', value: 0.11, tol: 0.005, marks: 2, sol: r`**Step 1.** Sum $9$: $(3,6), (4,5), (5,4), (6,3)$ — four of the $36$ outcomes.
 
-**Step 2.** $P = \dfrac{4}{36} = \dfrac19 \approx 0.11$.`, scheme: [['4 favourable of 36', 1], ['≈ 0.11', 1]], d: 2, c: 'application', t: [2], time: 120 }), (C) => { const p = P(dice2, (q) => sum(q) === 9); C.val(R2(p.v), 0.005); C.sol([tex(p)]); });
+**Step 2.** $P = \dfrac{4}{36} = \dfrac19 \approx 0.11$.`, scheme: [['4 favourable of 36', 1], ['≈ 0.11', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), (C) => { const p = P(dice2, (q) => sum(q) === 9); C.val(R2(p.v), 0.005); C.sol([tex(p)]); });
 Q('n04', mk.num({ stem: 'A card is drawn from a deck of 52 cards. Find the probability that it is a black card that is not a face card. Give your answer as a decimal correct to two places.', value: 0.38, tol: 0.005, marks: 2, sol: r`**Step 1.** Black cards: $26$; black face cards: $6$; so $20$ black non-face cards.
 
-**Step 2.** $P = \dfrac{20}{52} = \dfrac{5}{13} \approx 0.38$.`, scheme: [['20 favourable', 1], ['5/13 ≈ 0.38', 1]], d: 3, c: 'application', t: [2], time: 120 }), (C) => { const p = P(deck, (c) => c.colour === 'black' && !c.face); C.val(R2(p.v), 0.005); C.sol([tex(p), 20]); });
+**Step 2.** $P = \dfrac{20}{52} = \dfrac{5}{13} \approx 0.38$.`, scheme: [['20 favourable', 1], ['5/13 ≈ 0.38', 1]], d: 3, c: 'understanding', t: [2], time: 120 }), (C) => { const p = P(deck, (c) => c.colour === 'black' && !c.face); C.val(R2(p.v), 0.005); C.sol([tex(p), 20]); });
 Q('n05', mk.num({ stem: r`The probability that it will rain on a given day in Bengaluru is $0.08$. Find the probability that it will not rain on that day.`, value: 0.92, sol: r`$P(\text{no rain}) = 1 - 0.08 = 0.92$.`, scheme: [['0.92', 1]], d: 1, c: 'understanding', t: [1], time: 45 }), (C) => C.val(R2(1 - 0.08)));
 Q('n06', mk.num({ stem: 'At a Diwali mela in Varanasi, 400 lucky-dip coupons are sold, of which 12 carry a prize. Sneha buys one coupon. Find the probability (as a decimal) that she wins a prize.', value: 0.03, marks: 2, sol: r`**Step 1.** Each coupon is equally likely to be hers: $400$ outcomes, $12$ favourable.
 
-**Step 2.** $P = \dfrac{12}{400} = \dfrac{3}{100} = 0.03$.`, scheme: [['12/400', 1], ['0.03', 1]], d: 2, c: 'application', t: [2], time: 75 }), (C) => { const p = P(range(1, 400), (x) => x <= 12); C.val(p.v); C.sol([tex(p)]); });
+**Step 2.** $P = \dfrac{12}{400} = \dfrac{3}{100} = 0.03$.`, scheme: [['12/400', 1], ['0.03', 1]], d: 2, c: 'understanding', t: [2], time: 75 }), (C) => { const p = P(range(1, 400), (x) => x <= 12); C.val(p.v); C.sol([tex(p)]); });
 Q('n07', mk.num({ stem: r`A bag has $6$ red balls and some blue balls. The probability of drawing a blue ball is $\dfrac35$. Find the number of blue balls.`, value: 9, marks: 2, sol: r`**Step 1.** With $b$ blue balls: $\dfrac{b}{6 + b} = \dfrac35 \Rightarrow 5b = 18 + 3b$.
 
 **Step 2.** $2b = 18 \Rightarrow b = 9$. **Check:** $\dfrac{9}{15} = \dfrac35$ ✓.`, scheme: [['Equation', 1], ['9 blue balls', 1]], d: 3, c: 'application', t: [2], time: 120 }), (C) => { let b = null; for (let k = 0; k <= 100; k++) if (near(P(bag({ red: 6, blue: k }), (x) => x === 'blue').v, 3 / 5)) b = k; C.val(b); C.sol([18]); });
 Q('n08', mk.num({ stem: 'Three coins are tossed together. Find the probability (as a decimal) of getting at most one head.', value: 0.5, marks: 2, sol: r`**Step 1.** At most one head: TTT, HTT, THT, TTH — four of the $8$ outcomes.
 
-**Step 2.** $P = \dfrac48 = \dfrac12 = 0.5$.`, scheme: [['4 favourable of 8', 1], ['0.5', 1]], d: 3, c: 'application', t: [2], time: 120 }), (C) => { const p = P(coins(3), (s) => heads(s) <= 1); C.val(p.v); C.sol([tex(p)]); });
+**Step 2.** $P = \dfrac48 = \dfrac12 = 0.5$.`, scheme: [['4 favourable of 8', 1], ['0.5', 1]], d: 3, c: 'understanding', t: [2], time: 120 }), (C) => { const p = P(coins(3), (s) => heads(s) <= 1); C.val(p.v); C.sol([tex(p)]); });
 Q('n09', mk.num({ stem: 'A number is chosen at random from 1 to 100. Find the probability (as a decimal) that it is a perfect square or a perfect cube.', value: 0.12, marks: 2, sol: r`**Step 1.** Squares: $1, 4, 9, \ldots, 100$ — ten. Cubes: $1, 8, 27, 64$ — four. Both: $1$ and $64$. So $10 + 4 - 2 = 12$ numbers.
 
 **Step 2.** $P = \dfrac{12}{100} = 0.12$.`, scheme: [['12 favourable (overlap removed)', 1], ['0.12', 1]], d: 4, c: 'analysis', t: [2], time: 180 }), (C) => { const p = P(range(1, 100), (x) => isSquare(x) || isCube(x)); C.val(p.v); C.assert(p.fav === 12, '12'); });
@@ -95,10 +95,10 @@ Q('s205', mk.short({ marks: 2, stem: 'A box has 4 red, 5 white and 6 green beads
 
 (a) $P(\text{not green}) = \dfrac{9}{15} = \dfrac35$.
 
-(b) Neither red nor white means green: $P = \dfrac{6}{15} = \dfrac25$.`, sol: 'Check: 3/5 + 2/5 = 1.', scheme: [['(a) 3/5', 1], ['(b) 2/5', 1]], d: 2, c: 'application', t: [2], time: 90 }), (C) => { const B = bag({ red: 4, white: 5, green: 6 }); C.model([tex(P(B, (b) => b !== 'green')), tex(P(B, (b) => b !== 'red' && b !== 'white'))]); });
+(b) Neither red nor white means green: $P = \dfrac{6}{15} = \dfrac25$.`, sol: 'Check: 3/5 + 2/5 = 1.', scheme: [['(a) 3/5', 1], ['(b) 2/5', 1]], d: 2, c: 'understanding', t: [2], time: 90 }), (C) => { const B = bag({ red: 4, white: 5, green: 6 }); C.model([tex(P(B, (b) => b !== 'green')), tex(P(B, (b) => b !== 'red' && b !== 'white'))]); });
 Q('s206', mk.short({ marks: 2, stem: 'Two dice are thrown together. Find the probability that the product of the numbers is 6.', model: r`Product $6$: $(1,6), (6,1), (2,3), (3,2)$ — four of $36$ outcomes.
 
-$P = \dfrac{4}{36} = \dfrac19$.`, sol: 'Order matters: (2, 3) and (3, 2) are different outcomes.', scheme: [['4 favourable', 1], ['1/9', 1]], d: 3, c: 'application', t: [2], time: 120 }), (C) => { const p = P(dice2, ([a, b]) => a * b === 6); C.assert(p.fav === 4, '4'); C.model([tex(p)]); });
+$P = \dfrac{4}{36} = \dfrac19$.`, sol: 'Order matters: (2, 3) and (3, 2) are different outcomes.', scheme: [['4 favourable', 1], ['1/9', 1]], d: 3, c: 'understanding', t: [2], time: 120 }), (C) => { const p = P(dice2, ([a, b]) => a * b === 6); C.assert(p.fav === 4, '4'); C.model([tex(p)]); });
 Q('s207', mk.short({ marks: 2, stem: r`The probability that Ravi's bus to Mangaluru is late on a given day is $\dfrac27$. Find the probability that it is not late, and say which is more likely.`, model: r`$P(\text{not late}) = 1 - \dfrac27 = \dfrac57$.
 
 Since $\dfrac57 > \dfrac27$, the bus being on time is more likely.`, sol: 'Complementary events.', scheme: [['5/7', 1], ['Comparison', 1]], d: 2, c: 'understanding', t: [1], time: 60 }), (C) => { C.assert(near(1 - 2 / 7, 5 / 7), '5/7'); C.model(['\\dfrac57']); });
@@ -112,7 +112,7 @@ Q('s301', mk.short({ marks: 3, stem: 'Two dice are thrown together. Find the pro
 
 (a) Square sums: $4$ in $3$ ways ($1{+}3, 2{+}2, 3{+}1$) and $9$ in $4$ ways ($3{+}6, 4{+}5, 5{+}4, 6{+}3$): $7$ outcomes. $P = \dfrac{7}{36}$.
 
-(b) Sums $2, 3, 4$: $1 + 2 + 3 = 6$ outcomes. $P = \dfrac{6}{36} = \dfrac16$.`, sol: 'The only perfect squares between 2 and 12 are 4 and 9.', scheme: [['36 outcomes', 1], ['(a) 7/36', 1], ['(b) 1/6', 1]], d: 3, c: 'application', t: [2], time: 240 }), (C) => { C.model([tex(P(dice2, (q) => isSquare(sum(q)))), tex(P(dice2, (q) => sum(q) < 5))]); });
+(b) Sums $2, 3, 4$: $1 + 2 + 3 = 6$ outcomes. $P = \dfrac{6}{36} = \dfrac16$.`, sol: 'The only perfect squares between 2 and 12 are 4 and 9.', scheme: [['36 outcomes', 1], ['(a) 7/36', 1], ['(b) 1/6', 1]], d: 3, c: 'understanding', t: [2], time: 240 }), (C) => { C.model([tex(P(dice2, (q) => isSquare(sum(q)))), tex(P(dice2, (q) => sum(q) < 5))]); });
 const deckNoRedFace = deck.filter((c) => !(c.face && c.colour === 'red'));
 Q('s302', mk.short({ marks: 3, stem: 'All the red face cards are removed from a deck of 52 cards. A card is then drawn at random from the remaining cards. Find the probability that it is (a) a red card (b) a face card (c) a king.', model: r`$6$ red face cards are removed, leaving $46$ cards.
 
@@ -127,7 +127,7 @@ Q('s303', mk.short({ marks: 3, stem: 'Three coins are tossed together. Find the 
 
 (b) No head: TTT: $P = \dfrac18$.
 
-(c) Alternately: HTH, THT: $P = \dfrac28 = \dfrac14$.`, sol: 'List all 8 outcomes before counting.', scheme: [['8 outcomes', 1], ['(a) 1/2 and (b) 1/8', 1], ['(c) 1/4', 1]], d: 3, c: 'application', t: [2], time: 240 }), (C) => { const S = coins(3); C.model([tex(P(S, (s) => heads(s) >= 2)), tex(P(S, (s) => heads(s) === 0)), tex(P(S, (s) => s.join('') === 'HTH' || s.join('') === 'THT'))]); });
+(c) Alternately: HTH, THT: $P = \dfrac28 = \dfrac14$.`, sol: 'List all 8 outcomes before counting.', scheme: [['8 outcomes', 1], ['(a) 1/2 and (b) 1/8', 1], ['(c) 1/4', 1]], d: 3, c: 'understanding', t: [2], time: 240 }), (C) => { const S = coins(3); C.model([tex(P(S, (s) => heads(s) >= 2)), tex(P(S, (s) => heads(s) === 0)), tex(P(S, (s) => s.join('') === 'HTH' || s.join('') === 'THT'))]); });
 Q('s304', mk.short({ marks: 3, stem: r`A bag has $5$ red balls and $x$ blue balls. The probability of drawing a blue ball is twice that of drawing a red ball. (a) Find $x$. (b) If $3$ more red balls are added, find the new probability of drawing a red ball.`, model: r`(a) $\dfrac{x}{5 + x} = 2 \times \dfrac{5}{5 + x} \Rightarrow x = 10$.
 
 (b) Now $8$ red and $10$ blue: $P(\text{red}) = \dfrac{8}{18} = \dfrac49$.`, sol: r`Check (a): $\dfrac{10}{15} = \dfrac23 = 2 \times \dfrac13$ ✓.`, scheme: [['Equation', 1], ['x = 10', 1], ['4/9', 1]], d: 3, c: 'application', t: [2], time: 240 }), (C) => { let x = null; for (let k = 0; k <= 100; k++) { const B = bag({ red: 5, blue: k }); if (near(P(B, (b) => b === 'blue').v, 2 * P(B, (b) => b === 'red').v)) x = k; } C.assert(x === 10, `x ${x}`); C.model([10, tex(P(bag({ red: 8, blue: 10 }), (b) => b === 'red'))]); });
@@ -141,7 +141,7 @@ Q('s306', mk.short({ marks: 3, stem: 'Fifty tickets numbered 11 to 60 are placed
 
 (b) Multiples of $7$: $14, 21, 28, 35, 42, 49, 56$: $P = \dfrac{7}{50}$.
 
-(c) Digit sum $9$: $18, 27, 36, 45, 54$: $P = \dfrac{5}{50} = \dfrac{1}{10}$.`, sol: 'There are 60 − 11 + 1 = 50 tickets.', scheme: [['(a) 2/25', 1], ['(b) 7/50', 1], ['(c) 1/10', 1]], d: 3, c: 'application', t: [2], time: 240 }), (C) => { C.assert(tickets.length === 50, '50'); const ds = (n) => String(n).split('').reduce((s, c) => s + Number(c), 0); C.model([tex(P(tickets, isSquare)), tex(P(tickets, (n) => n % 7 === 0)), tex(P(tickets, (n) => ds(n) === 9))]); });
+(c) Digit sum $9$: $18, 27, 36, 45, 54$: $P = \dfrac{5}{50} = \dfrac{1}{10}$.`, sol: 'There are 60 − 11 + 1 = 50 tickets.', scheme: [['(a) 2/25', 1], ['(b) 7/50', 1], ['(c) 1/10', 1]], d: 3, c: 'understanding', t: [2], time: 240 }), (C) => { C.assert(tickets.length === 50, '50'); const ds = (n) => String(n).split('').reduce((s, c) => s + Number(c), 0); C.model([tex(P(tickets, isSquare)), tex(P(tickets, (n) => n % 7 === 0)), tex(P(tickets, (n) => ds(n) === 9))]); });
 const spinner = range(1, 8);
 Q('s307', mk.short({ marks: 3, stem: 'A spinner at a school fair in Mysuru has 8 equal sectors numbered 1 to 8. Find the probability that the arrow stops on (a) a number greater than 5 (b) an odd number (c) a factor of 8.', model: r`$8$ equally likely outcomes.
 
@@ -165,7 +165,7 @@ Q('l01', mk.long({ stem: `Two dice, one blue and one grey, are thrown together.
 
 (d) Difference $2$: $(1,3), (3,1), (2,4), (4,2), (3,5), (5,3), (4,6), (6,4)$: $P = \dfrac{8}{36} = \dfrac29$.
 
-(e) $(2,2), (4,4), (6,6)$: $P = \dfrac{3}{36} = \dfrac{1}{12}$.`, sol: 'Use the 6 × 6 table of outcomes; colour the dice so that (2, 6) and (6, 2) are clearly different.', scheme: [['36 outcomes', 1], ['(b) 5/36', 1], ['(c) 5/18', 1], ['(d) 2/9', 1], ['(e) 1/12', 1]], d: 3, c: 'application', t: [2], time: 600 }), (C) => { C.model([36, tex(P(dice2, (q) => sum(q) === 8)), tex(P(dice2, (q) => sum(q) >= 9)), tex(P(dice2, ([a, b]) => Math.abs(a - b) === 2)), tex(P(dice2, ([a, b]) => a === b && a % 2 === 0))]); });
+(e) $(2,2), (4,4), (6,6)$: $P = \dfrac{3}{36} = \dfrac{1}{12}$.`, sol: 'Use the 6 × 6 table of outcomes; colour the dice so that (2, 6) and (6, 2) are clearly different.', scheme: [['36 outcomes', 1], ['(b) 5/36', 1], ['(c) 5/18', 1], ['(d) 2/9', 1], ['(e) 1/12', 1]], d: 3, c: 'understanding', t: [2], time: 600 }), (C) => { C.model([36, tex(P(dice2, (q) => sum(q) === 8)), tex(P(dice2, (q) => sum(q) >= 9)), tex(P(dice2, ([a, b]) => Math.abs(a - b) === 2)), tex(P(dice2, ([a, b]) => a === b && a % 2 === 0))]); });
 Q('l02', mk.long({ stem: `A card is drawn at random from a well-shuffled deck of 52 playing cards. Find the probability that it is
 (a) a black king
 (b) neither a red card nor a queen
@@ -179,7 +179,7 @@ Q('l02', mk.long({ stem: `A card is drawn at random from a well-shuffled deck of
 
 (d) $52 - 4 = 48$: $\dfrac{48}{52} = \dfrac{12}{13}$.
 
-(e) $26$ red cards $+ 2$ black kings $= 28$: $\dfrac{28}{52} = \dfrac{7}{13}$.`, sol: 'For "or", count each card once; for "neither … nor", count what is left.', scheme: [['(a) 1/26', 1], ['(b) 6/13', 1], ['(c) 3/52', 1], ['(d) 12/13', 1], ['(e) 7/13', 1]], d: 3, c: 'application', t: [2], time: 600 }), (C) => { C.model([tex(P(deck, (c) => c.rank === 'K' && c.colour === 'black')), tex(P(deck, (c) => c.colour !== 'red' && c.rank !== 'Q')), tex(P(deck, (c) => c.face && c.suit === 'spades')), tex(P(deck, (c) => c.rank !== 'A')), tex(P(deck, (c) => c.colour === 'red' || c.rank === 'K'))]); });
+(e) $26$ red cards $+ 2$ black kings $= 28$: $\dfrac{28}{52} = \dfrac{7}{13}$.`, sol: 'For "or", count each card once; for "neither … nor", count what is left.', scheme: [['(a) 1/26', 1], ['(b) 6/13', 1], ['(c) 3/52', 1], ['(d) 12/13', 1], ['(e) 7/13', 1]], d: 3, c: 'understanding', t: [2], time: 600 }), (C) => { C.model([tex(P(deck, (c) => c.rank === 'K' && c.colour === 'black')), tex(P(deck, (c) => c.colour !== 'red' && c.rank !== 'Q')), tex(P(deck, (c) => c.face && c.suit === 'spades')), tex(P(deck, (c) => c.rank !== 'A')), tex(P(deck, (c) => c.colour === 'red' || c.rank === 'K'))]); });
 Q('l03', mk.long({ stem: `Bag A has 4 red and 6 blue balls. Bag B has $x$ red and 12 blue balls.
 (a) If the probability of drawing a red ball is the same for both bags, find $x$.
 (b) Then 3 red balls are moved from bag B to bag A. Find the new probability of drawing a red ball from each bag.
@@ -216,7 +216,7 @@ Q('l05', mk.long({ stem: `A box has 80 discs numbered 1 to 80. One disc is drawn
 
 (d) Primes up to $80$: $2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79$ — $22$: $\dfrac{22}{80} = \dfrac{11}{40}$.
 
-(e) Divisible by both $3$ and $4$ means divisible by $12$: $12, 24, 36, 48, 60, 72$ — $6$: $\dfrac{6}{80} = \dfrac{3}{40}$.`, sol: 'Count carefully; list where needed.', scheme: [['(a) 71/80', 1], ['(b) 1/10', 1], ['(c) 1/5', 1], ['(d) 11/40', 1], ['(e) 3/40', 1]], d: 4, c: 'application', t: [2], time: 660 }), (C) => { C.model([tex(P(discs80, (n) => n >= 10)), tex(P(discs80, isSquare)), tex(P(discs80, (n) => n % 5 === 0)), tex(P(discs80, isPrime)), tex(P(discs80, (n) => n % 3 === 0 && n % 4 === 0))]); C.assert(P(discs80, isPrime).fav === 22, '22 primes'); });
+(e) Divisible by both $3$ and $4$ means divisible by $12$: $12, 24, 36, 48, 60, 72$ — $6$: $\dfrac{6}{80} = \dfrac{3}{40}$.`, sol: 'Count carefully; list where needed.', scheme: [['(a) 71/80', 1], ['(b) 1/10', 1], ['(c) 1/5', 1], ['(d) 11/40', 1], ['(e) 3/40', 1]], d: 4, c: 'understanding', t: [2], time: 660 }), (C) => { C.model([tex(P(discs80, (n) => n >= 10)), tex(P(discs80, isSquare)), tex(P(discs80, (n) => n % 5 === 0)), tex(P(discs80, isPrime)), tex(P(discs80, (n) => n % 3 === 0 && n % 4 === 0))]); C.assert(P(discs80, isPrime).fav === 22, '22 primes'); });
 Q('l06', mk.long({ stem: `Asha, Bhaskar and Chitra play a game with three coins tossed together. Asha wins if all three coins show the same face. Bhaskar wins if exactly two coins show heads. Chitra wins in every other case.
 (a) List the sample space.
 (b) Find the probability of winning for each player.
@@ -232,7 +232,7 @@ Q('l06', mk.long({ stem: `Asha, Bhaskar and Chitra play a game with three coins 
 // =============================================================== Case-based
 caseQ('c01', {
   passage: `Four friends in Guwahati play Ludo on a rainy afternoon. A player throws one die each turn, and needs a 6 to bring a new piece onto the board. In a variant they sometimes play, each player throws two dice together.`,
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   model: r`(a) Option (a): $\dfrac16$. (b) $\dfrac12$. (c) (i) $\dfrac{11}{36}$. Or (ii) $\dfrac{1}{36}$.`,
   sol: r`One die: $P(6) = \dfrac16$; odd: $\dfrac36 = \dfrac12$. Two dice: at least one $6$ in $11$ of $36$ outcomes; sum $12$ only for $(6,6)$.`,
   children: [
@@ -247,7 +247,7 @@ caseQ('c01', {
 const noHearts = deck.filter((c) => c.suit !== 'hearts');
 caseQ('c02', {
   passage: 'At a school magic show in Jabalpur, the magician asks a volunteer to pick one card at random from a well-shuffled deck of 52 playing cards.',
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   model: r`(a) Option (b): $\dfrac14$. (b) $6$. (c) (i) $\dfrac{3}{26}$. Or (ii) $\dfrac23$.`,
   sol: r`Diamonds $\dfrac{13}{52}$; red face cards $6$, $\dfrac{6}{52} = \dfrac{3}{26}$. Without hearts, $39$ cards, $26$ black: $\dfrac{26}{39} = \dfrac23$.`,
   children: [
@@ -262,13 +262,13 @@ caseQ('c02', {
 const dip = bag({ red: 10, green: 15, yellow: 25 });
 caseQ('c03', {
   passage: 'A lucky-dip box at a Diwali mela in Ahmedabad has 10 red, 15 green and 25 yellow balls of the same size. A visitor takes out one ball without looking.',
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   model: r`(a) Option (c): $\dfrac{3}{10}$. (b) $0.5$. (c) (i) $\dfrac45$. Or (ii) $10$ red balls.`,
   sol: r`Total $50$. Green $\dfrac{15}{50}$; yellow $\dfrac{25}{50} = 0.5$; not red $\dfrac{40}{50}$. Adding $r$ red: $\dfrac{10 + r}{50 + r} = \dfrac13 \Rightarrow r = 10$.`,
   children: [
     child('a', mk.mcq({ stem: 'The probability that the ball is green is', opts: [r`$\dfrac{3}{5}$`, r`$\dfrac15$`, r`$\dfrac{3}{10}$`, r`$\dfrac{15}{35}$`], key: 'c', sol: r`$\dfrac{15}{50} = \dfrac{3}{10}$. Option (d) divides by the number of non-green balls.`, d: 1, c: 'understanding', t: [2], time: 45 })),
     child('b', mk.num({ stem: 'Find the probability (as a decimal) that the ball is yellow.', value: 0.5, sol: r`$\dfrac{25}{50} = 0.5$.`, scheme: [['0.5', 1]], d: 1, c: 'understanding', t: [2], time: 45 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** Find the probability that the ball is not red.', model: r`$P(\text{not red}) = 1 - \dfrac{10}{50} = \dfrac{40}{50} = \dfrac45$.`, sol: 'Complement.', scheme: [['1 − 1/5', 1], ['4/5', 1]], d: 2, c: 'application', t: [1, 2], time: 60 }), [
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the probability that the ball is not red.', model: r`$P(\text{not red}) = 1 - \dfrac{10}{50} = \dfrac{40}{50} = \dfrac45$.`, sol: 'Complement.', scheme: [['1 − 1/5', 1], ['4/5', 1]], d: 2, c: 'understanding', t: [1, 2], time: 60 }), [
       mk.short({ marks: 2, stem: '**(ii)** How many red balls must be added so that the probability of a red ball becomes 1/3?', model: r`$\dfrac{10 + r}{50 + r} = \dfrac13 \Rightarrow 30 + 3r = 50 + r \Rightarrow r = 10$. Check: $\dfrac{20}{60} = \dfrac13$ ✓.`, sol: 'Both the red count and the total change.', scheme: [['Equation', 1], ['10 balls', 1]], d: 3, c: 'analysis', t: [2], time: 120 }),
     ]),
   ],
@@ -276,13 +276,13 @@ caseQ('c03', {
 
 caseQ('c04', {
   passage: 'In a quiz round at a school in Shillong, the quizmaster tosses three coins together and asks the teams to predict the outcome before the coins land.',
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   model: r`(a) Option (d): $8$. (b) $0.375$. (c) (i) $\dfrac78$. Or (ii) $\dfrac12$.`,
   sol: r`$8$ outcomes. Exactly one tail: HHT, HTH, THH: $\dfrac38$. At least one head $= 1 - P(\text{TTT}) = \dfrac78$. More heads than tails: $2$ or $3$ heads: $\dfrac48$.`,
   children: [
     child('a', mk.mcq({ stem: 'The number of possible outcomes is', opts: ['$3$', '$4$', '$6$', '$8$'], key: 'd', sol: r`Each coin has $2$ faces: $2 \times 2 \times 2 = 8$.`, d: 1, c: 'understanding', t: [2], time: 30 })),
-    child('b', mk.num({ stem: 'Find the probability (as a decimal) of getting exactly one tail.', value: 0.375, sol: r`HHT, HTH, THH: $\dfrac38 = 0.375$.`, scheme: [['0.375', 1]], d: 2, c: 'application', t: [2], time: 60 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** Find the probability of getting at least one head.', model: r`The only outcome with no head is TTT. $P = 1 - \dfrac18 = \dfrac78$.`, sol: 'Complement of "no head".', scheme: [['Complement idea', 1], ['7/8', 1]], d: 2, c: 'application', t: [1, 2], time: 90 }), [
+    child('b', mk.num({ stem: 'Find the probability (as a decimal) of getting exactly one tail.', value: 0.375, sol: r`HHT, HTH, THH: $\dfrac38 = 0.375$.`, scheme: [['0.375', 1]], d: 2, c: 'understanding', t: [2], time: 60 })),
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the probability of getting at least one head.', model: r`The only outcome with no head is TTT. $P = 1 - \dfrac18 = \dfrac78$.`, sol: 'Complement of "no head".', scheme: [['Complement idea', 1], ['7/8', 1]], d: 2, c: 'understanding', t: [1, 2], time: 90 }), [
       mk.short({ marks: 2, stem: '**(ii)** Find the probability of getting more heads than tails.', model: r`More heads than tails means $2$ or $3$ heads: HHT, HTH, THH, HHH: $P = \dfrac48 = \dfrac12$.`, sol: 'With three coins, there is never a tie.', scheme: [['4 favourable', 1], ['1/2', 1]], d: 3, c: 'analysis', t: [2], time: 90 }),
     ]),
   ],
@@ -290,14 +290,54 @@ caseQ('c04', {
 
 caseQ('c05', {
   passage: 'Class 10 students in Ranchi design a board game in which a player throws two dice together and moves according to the sum and the product of the two numbers.',
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   model: r`(a) Option (b): $36$. (b) $0.08$. (c) (i) $\dfrac{5}{12}$. Or (ii) $\dfrac14$.`,
   sol: r`Sum $10$: $3$ outcomes, $\dfrac{3}{36} = \dfrac{1}{12} \approx 0.08$. Prime sums $2, 3, 5, 7, 11$: $1 + 2 + 4 + 6 + 2 = 15$, $\dfrac{15}{36} = \dfrac{5}{12}$. Odd product: both odd, $3 \times 3 = 9$, $\dfrac{9}{36} = \dfrac14$.`,
   children: [
     child('a', mk.mcq({ stem: 'The number of equally likely outcomes is', opts: ['$12$', '$36$', '$11$', '$6$'], key: 'b', sol: r`$6 \times 6 = 36$. Option (c) counts the possible sums, which are not equally likely.`, d: 1, c: 'understanding', t: [2], time: 30 })),
-    child('b', mk.num({ stem: 'Find the probability that the sum is 10, as a decimal correct to two places.', value: 0.08, tol: 0.005, sol: r`$(4,6), (5,5), (6,4)$: $\dfrac{3}{36} = \dfrac{1}{12} \approx 0.08$.`, scheme: [['0.08', 1]], d: 2, c: 'application', t: [2], time: 75 })),
+    child('b', mk.num({ stem: 'Find the probability that the sum is 10, as a decimal correct to two places.', value: 0.08, tol: 0.005, sol: r`$(4,6), (5,5), (6,4)$: $\dfrac{3}{36} = \dfrac{1}{12} \approx 0.08$.`, scheme: [['0.08', 1]], d: 2, c: 'understanding', t: [2], time: 75 })),
     child('c', mk.short({ marks: 2, stem: '**(i)** Find the probability that the sum is a prime number.', model: r`Prime sums: $2$ (1 way), $3$ (2), $5$ (4), $7$ (6), $11$ (2): $15$ outcomes. $P = \dfrac{15}{36} = \dfrac{5}{12}$.`, sol: 'List the prime sums from 2 to 12.', scheme: [['15 favourable', 1], ['5/12', 1]], d: 3, c: 'analysis', t: [2], time: 150 }), [
-      mk.short({ marks: 2, stem: '**(ii)** Find the probability that the product of the numbers is odd.', model: r`The product is odd only when both numbers are odd: $3 \times 3 = 9$ outcomes. $P = \dfrac{9}{36} = \dfrac14$.`, sol: 'One even factor makes the product even.', scheme: [['9 favourable', 1], ['1/4', 1]], d: 3, c: 'application', t: [2], time: 120 }),
+      mk.short({ marks: 2, stem: '**(ii)** Find the probability that the product of the numbers is odd.', model: r`The product is odd only when both numbers are odd: $3 \times 3 = 9$ outcomes. $P = \dfrac{9}{36} = \dfrac14$.`, sol: 'One even factor makes the product even.', scheme: [['9 favourable', 1], ['1/4', 1]], d: 3, c: 'understanding', t: [2], time: 120 }),
     ]),
   ],
 }, (C) => { C.child('a').which([12, 36, 11, 6], dice2.length); C.child('b').val(R2(P(dice2, (q) => sum(q) === 10).v), 0.005); C.child('c').model([15, tex(P(dice2, (q) => isPrime(sum(q))))]); C.child('cii').model([tex(P(dice2, ([a, b]) => (a * b) % 2 === 1))]); });
+// =============================================================== added 2026-10-27 (assessment-designer)
+// Recall/understanding written items for the board-paper competency balance (blueprint 54/24/22 Standard,
+// 75/15/10 Basic). Appended after every existing item so earlier ids do not move.
+Q('u301', mk.short({
+  marks: 3,
+  stem: r`A bag contains 6 red, 4 blue and 10 yellow balls of the same size. One ball is drawn at random. Find the probability that the ball drawn is (a) blue, (b) not yellow, (c) green.`,
+  model: r`Total number of balls $= 6 + 4 + 10 = 20$; each is equally likely to be drawn.
+
+(a) $P(\text{blue}) = \dfrac{4}{20} = \dfrac15$.
+
+(b) Balls that are not yellow: $6 + 4 = 10$, so $P(\text{not yellow}) = \dfrac{10}{20} = \dfrac12$. (Or $1 - \dfrac{10}{20} = \dfrac12$.)
+
+(c) There are no green balls, so $P(\text{green}) = \dfrac{0}{20} = 0$: an impossible event.`,
+  sol: r`$P(E) = \dfrac{\text{number of favourable outcomes}}{\text{total number of outcomes}}$; an event with no favourable outcome has probability $0$.`,
+  scheme: [['P(blue) = 1/5', 1], ['P(not yellow) = 1/2', 1], ['P(green) = 0, impossible event', 1]],
+  d: 1, c: 'understanding', t: [1, 2], time: 180,
+}), (C) => { const b = bag({ red: 6, blue: 4, yellow: 10 }); const pb = P(b, (x) => x === 'blue'), pny = P(b, (x) => x !== 'yellow'), pg = P(b, (x) => x === 'green'); C.assert(pb.num === 1 && pb.den === 5 && pny.num === 1 && pny.den === 2 && pg.fav === 0, 'probabilities'); C.model([r`\dfrac15`, r`\dfrac12`, 'impossible']); });
+Q('u501', mk.long({
+  stem: r`Cards numbered 1 to 50 are shuffled, and one card is picked at random. Find the probability that the number on the card is
+
+(a) a multiple of 5
+(b) a perfect square
+(c) a prime number less than 20
+(d) greater than 45
+(e) an even number.`,
+  model: r`There are $50$ equally likely outcomes.
+
+(a) Multiples of $5$: $5, 10, \ldots, 50$, that is $10$ numbers. $P = \dfrac{10}{50} = \dfrac15$.
+
+(b) Perfect squares: $1, 4, 9, 16, 25, 36, 49$, that is $7$ numbers. $P = \dfrac{7}{50}$.
+
+(c) Primes less than $20$: $2, 3, 5, 7, 11, 13, 17, 19$, that is $8$ numbers. $P = \dfrac{8}{50} = \dfrac{4}{25}$.
+
+(d) Greater than $45$: $46, 47, 48, 49, 50$, that is $5$ numbers. $P = \dfrac{5}{50} = \dfrac{1}{10}$.
+
+(e) Even numbers: $25$ of them. $P = \dfrac{25}{50} = \dfrac12$.`,
+  sol: r`List or count the favourable numbers for each event, then divide by $50$.`,
+  scheme: [['1/5', 1], ['7/50', 1], ['4/25', 1], ['1/10', 1], ['1/2', 1]],
+  d: 1, c: 'understanding', t: [1, 2], time: 420,
+}), (C) => { const s = range(1, 50); const p = [P(s, (n) => n % 5 === 0), P(s, isSquare), P(s, (n) => isPrime(n) && n < 20), P(s, (n) => n > 45), P(s, (n) => n % 2 === 0)]; C.assert(p.map((x) => `${x.num}/${x.den}`).join() === '1/5,7/50,4/25,1/10,1/2', p.map((x) => `${x.num}/${x.den}`).join()); C.model([r`\dfrac15`, r`\dfrac{7}{50}`, r`\dfrac{4}{25}`, r`\dfrac{1}{10}`, r`\dfrac12`]); });

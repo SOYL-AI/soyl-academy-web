@@ -166,5 +166,37 @@ export const ORIGINALITY = {
   duplicate: { n: 5, threshold: 0.7, minWords: 10 },
   /** Stage 7: two questions at least this similar (same measure) never appear in one assembled paper. */
   samePaper: { n: 5, threshold: 0.5, minWords: 5 },
+  /**
+   * Stage 7: question pairs that were near-duplicates and were rewritten (2026-10-27). They test the same
+   * idea, so they still never share an assembled paper, although their texts no longer look alike.
+   */
+  keepApart: [
+    ['q_cbse10math_ch01_054', 'q_cbse10math_ch01_047'],
+    ['q_cbse10math_ch01_056', 'q_cbse10math_ch01_049'],
+    ['q_cbse10math_ch01_010', 'q_cbse10math_ch01_057'],
+    ['q_cbse10math_ch02_016', 'q_cbse10math_ch02_012'],
+    ['q_cbse10math_ch02_017', 'q_cbse10math_ch02_011'],
+    ['q_cbse10math_ch02_037', 'q_cbse10math_ch02_036'],
+    ['q_cbse10math_ch02_040', 'q_cbse10math_ch02_036'],
+    ['q_cbse10math_ch02_047', 'q_cbse10math_ch02_044'],
+    ['q_cbse10math_ch02_053', 'q_cbse10math_ch02_044'],
+    ['q_cbse10math_ch02_053', 'q_cbse10math_ch02_047'],
+    ['q_cbse10math_ch02_055', 'q_cbse10math_ch02_048'],
+    ['q_cbse10math_ch10_010', 'q_cbse10math_ch10_033'],
+    ['q_cbse10math_ch11_003', 'q_cbse10math_ch11_031'],
+    ['q_cbse10sst_ch18_041', 'q_cbse10sst_ch15_062'],
+  ] as readonly (readonly [string, string])[],
   referenceExtensions: ['.txt', '.md'],
+} as const;
+
+/**
+ * Stage 7 competency balance (ADR-019 addendum): board-pattern papers carry the blueprint's
+ * `mark_shares` (recall+understanding / application / analysis+evaluation) in attempted marks, within
+ * `toleranceMarks` per band. Case parts count at their own competency; internal-choice alternatives
+ * share their marks equally. A paper outside the tolerance is reported as a generation request
+ * (`assemble --strict` exits 2 and `--freeze` is refused), never shipped silently.
+ */
+export const COMPETENCY_BALANCE = {
+  paperTypes: ['board', 'board-second-exam'] as readonly string[],
+  toleranceMarks: 3,
 } as const;

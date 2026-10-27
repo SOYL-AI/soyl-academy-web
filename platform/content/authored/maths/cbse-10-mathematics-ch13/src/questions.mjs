@@ -78,7 +78,7 @@ ${mdRow(gN2, 'Temperature (°C)', 'Number of days')}`, value: 31.24, unit: '°C'
 
 ${mdWork(gN2, 'assumed', 31)}
 
-**Step 2.** $\bar x = 31 + \dfrac{12}{50} = 31 + 0.24 = 31.24$ °C.`, scheme: [['Σfd = 12 with a = 31', 1], ['31.24 °C', 1]], d: 2, c: 'application', t: [1], time: 150 }), (C) => { C.val(R6(mean(gN2)), 0.005); C.assert(sumFd(gN2, 31) === 12, 'Σfd'); });
+**Step 2.** $\bar x = 31 + \dfrac{12}{50} = 31 + 0.24 = 31.24$ °C.`, scheme: [['Σfd = 12 with a = 31', 1], ['31.24 °C', 1]], d: 2, c: 'understanding', t: [1], time: 150 }), (C) => { C.val(R6(mean(gN2)), 0.005); C.assert(sumFd(gN2, 31) === 12, 'Σfd'); });
 const gN3 = G(200, 200, [6, 14, 20, 7, 3]);
 Q('n03', mk.num({ stem: r`The monthly electricity bills (₹) of 50 homes in a Nagpur colony are given below. Find the mean bill using the step-deviation method.
 
@@ -86,7 +86,7 @@ ${mdRow(gN3, 'Bill (₹)', 'Number of homes')}`, value: 648, unit: '₹', marks:
 
 ${mdWork(gN3, 'step', 700)}
 
-**Step 2.** $\bar x = 700 + 200 \times \dfrac{-13}{50} = 700 - 52 = 648$, so the mean bill is ₹$648$.`, scheme: [['Σfu = −13', 1], ['Mean ₹648', 1]], d: 3, c: 'application', t: [1], time: 150 }), (C) => { C.val(mean(gN3)); C.assert(sumFu(gN3, 700) === -13, 'Σfu'); });
+**Step 2.** $\bar x = 700 + 200 \times \dfrac{-13}{50} = 700 - 52 = 648$, so the mean bill is ₹$648$.`, scheme: [['Σfu = −13', 1], ['Mean ₹648', 1]], d: 3, c: 'understanding', t: [1], time: 150 }), (C) => { C.val(mean(gN3)); C.assert(sumFu(gN3, 700) === -13, 'Σfu'); });
 const gN4 = G(10, 10, [3, 7, 20, 12, 8]);
 Q('n04', mk.num({ stem: r`The mean of the following distribution is $38$. Find the missing frequency $p$.
 
@@ -115,7 +115,7 @@ Q('n08', mk.num({ stem: r`The runs scored by a batter in 50 T20 innings for a Mu
 
 ${mdRow(gN8, 'Runs', 'Number of innings')}`, value: 52, unit: 'runs', marks: 2, sol: r`**Step 1.** Modal class $40$–$60$: $l = 40$, $f_1 = 16$, $f_0 = 10$, $f_2 = 12$, $h = 20$.
 
-**Step 2.** Mode $= 40 + \dfrac{16 - 10}{32 - 10 - 12} \times 20 = 40 + \dfrac{6}{10} \times 20 = 52$ runs.`, scheme: [['Modal class values', 1], ['52 runs', 1]], d: 2, c: 'application', t: [2], time: 120 }), (C) => C.val(mode(gN8)));
+**Step 2.** Mode $= 40 + \dfrac{16 - 10}{32 - 10 - 12} \times 20 = 40 + \dfrac{6}{10} \times 20 = 52$ runs.`, scheme: [['Modal class values', 1], ['52 runs', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), (C) => C.val(mode(gN8)));
 const gN9 = G(1, 10, [5, 8, 14, 9, 4], { inclusive: true });
 Q('n09', mk.num({ stem: r`The number of books issued by a Kochi library on 40 days is given below. Find the median.
 
@@ -148,7 +148,7 @@ Q('s204', mk.short({ marks: 2, stem: r`For the distribution below, Kabir finds t
 ${mdRow(gS4, 'Class', 'Frequency')}`, model: r`The $x_i$ must be the **class marks** $5, 15, 25, 35$, not the upper limits.
 
 $\sum f_ix_i = 10 + 75 + 200 + 175 = 460$, so $\bar x = \dfrac{460}{20} = 23$. (Using upper limits adds half the class width, $5$, to the mean: $28 = 23 + 5$.)`, sol: 'Class marks represent the observations in each class.', scheme: [['Identifies the error', 1], ['Correct mean 23', 1]], d: 3, c: 'evaluation', t: [1], time: 150 }), (C) => { const wrong = gS4.f.reduce((s, v, i) => s + v * gS4.cls[i][1], 0) / gS4.n; C.assert(near(mean(gS4), 23) && near(wrong, 28), 'values'); C.model([460, 23, 28]); });
-Q('s205', mk.short({ marks: 2, stem: 'For a distribution, the mode is 24 and the mean is 30. Use the empirical relation 3 Median = Mode + 2 Mean to estimate the median.', model: r`$3 \times \text{Median} = 24 + 2 \times 30 = 84$, so Median $= \dfrac{84}{3} = 28$.`, sol: 'For a moderately skewed distribution the median lies between the mode and the mean.', scheme: [['Substitution 3 Median = 84', 1], ['Median 28', 1]], d: 2, c: 'application', t: [2, 3], time: 90 }), (C) => { C.assert((24 + 60) / 3 === 28, '28'); C.model([84, 28]); });
+Q('s205', mk.short({ marks: 2, stem: 'For a distribution, the mode is 24 and the mean is 30. Use the empirical relation 3 Median = Mode + 2 Mean to estimate the median.', model: r`$3 \times \text{Median} = 24 + 2 \times 30 = 84$, so Median $= \dfrac{84}{3} = 28$.`, sol: 'For a moderately skewed distribution the median lies between the mode and the mean.', scheme: [['Substitution 3 Median = 84', 1], ['Median 28', 1]], d: 2, c: 'understanding', t: [2, 3], time: 90 }), (C) => { C.assert((24 + 60) / 3 === 28, '28'); C.model([84, 28]); });
 Q('s206', mk.short({ marks: 2, stem: 'Show that if every frequency of a grouped distribution is doubled, the mean does not change. Illustrate with the classes 0–10, 10–20, 20–30 and frequencies 2, 3, 5.', model: r`$\bar x' = \dfrac{\sum 2f_ix_i}{\sum 2f_i} = \dfrac{2\sum f_ix_i}{2\sum f_i} = \bar x$: the factor $2$ cancels.
 
 Example: $\dfrac{2 \times 5 + 3 \times 15 + 5 \times 25}{10} = \dfrac{180}{10} = 18$ and $\dfrac{4 \times 5 + 6 \times 15 + 10 \times 25}{20} = \dfrac{360}{20} = 18$.`, sol: 'Scaling all frequencies by the same factor leaves the weighted average unchanged.', scheme: [['General argument', 1], ['Numerical check (18 both times)', 1]], d: 3, c: 'analysis', t: [1], time: 150 }), (C) => { C.assert(near(mean(G(0, 10, [2, 3, 5])), 18) && near(mean(G(0, 10, [4, 6, 10])), 18), '18'); C.model([180, 360, 18]); });
@@ -161,7 +161,7 @@ Mode $= 0 + \dfrac{12 - 0}{24 - 0 - 8} \times 10 = \dfrac{12}{16} \times 10 = 7.
 const gS8 = G(0, 10, [5, 7, 16, 7, 5]);
 Q('s208', mk.short({ marks: 2, stem: 'The cumulative frequencies of a distribution are: less than 10: 5; less than 20: 12; less than 30: 28; less than 40: 35; less than 50: 40. Find the median.', model: r`Frequencies: $5, 7, 16, 7, 5$ for $0$–$10$, …, $40$–$50$. $n = 40$, $\dfrac n2 = 20$: median class $20$–$30$ with $cf = 12$, $f = 16$.
 
-Median $= 20 + \dfrac{20 - 12}{16} \times 10 = 20 + 5 = 25$.`, sol: 'Recover the class frequencies as differences of cumulative frequencies.', scheme: [['Median class, cf 12, f 16', 1], ['Median 25', 1]], d: 3, c: 'application', t: [3], time: 150 }), (C) => { C.assert(gS8.cf.join() === '5,12,28,35,40' && near(med(gS8), 25), '25'); C.model([16, 12, 25]); });
+Median $= 20 + \dfrac{20 - 12}{16} \times 10 = 20 + 5 = 25$.`, sol: 'Recover the class frequencies as differences of cumulative frequencies.', scheme: [['Median class, cf 12, f 16', 1], ['Median 25', 1]], d: 3, c: 'understanding', t: [3], time: 150 }), (C) => { C.assert(gS8.cf.join() === '5,12,28,35,40' && near(med(gS8), 25), '25'); C.model([16, 12, 25]); });
 const gS9 = G(100, 20, [10, 15, 20, 10, 5]);
 Q('s209', mk.short({ marks: 2, stem: r`The daily wages (₹, in hundreds) of 60 workers at a Tiruppur garment unit are grouped as below. Find the mean using the assumed-mean method with $a = 150$.
 
@@ -177,13 +177,13 @@ ${mdRow(gT1, 'Rainfall (mm)', 'Number of days')}`, model: r`Take $a = 70$, $h = 
 
 ${mdWork(gT1, 'step', 70)}
 
-$\bar x = 70 + 20 \times \dfrac{-30}{40} = 70 - 15 = 55$ mm.`, sol: r`Check by the direct method: $\sum f_ix_i = 2200$, $\dfrac{2200}{40} = 55$ ✓.`, scheme: [['u-values with a = 70, h = 20', 1], ['Σfu = −30', 1], ['Mean 55 mm', 1]], d: 3, c: 'application', t: [1], time: 270 }), (C) => { C.assert(near(mean(gT1), 55) && sumFu(gT1, 70) === -30, '55'); C.model([-30, 55]); C.sol([2200]); });
+$\bar x = 70 + 20 \times \dfrac{-30}{40} = 70 - 15 = 55$ mm.`, sol: r`Check by the direct method: $\sum f_ix_i = 2200$, $\dfrac{2200}{40} = 55$ ✓.`, scheme: [['u-values with a = 70, h = 20', 1], ['Σfu = −30', 1], ['Mean 55 mm', 1]], d: 3, c: 'understanding', t: [1], time: 270 }), (C) => { C.assert(near(mean(gT1), 55) && sumFu(gT1, 70) === -30, '55'); C.model([-30, 55]); C.sol([2200]); });
 const gT2 = G(100, 50, [4, 10, 16, 20, 8, 2]);
 Q('s302', mk.short({ marks: 3, stem: r`The air quality index (AQI) in a Delhi neighbourhood on 60 winter days is given below. Find the modal AQI.
 
 ${mdRow(gT2, 'AQI', 'Number of days')}`, model: r`Modal class $250$–$300$ (frequency $20$): $l = 250$, $f_1 = 20$, $f_0 = 16$, $f_2 = 8$, $h = 50$.
 
-Mode $= 250 + \dfrac{20 - 16}{40 - 16 - 8} \times 50 = 250 + \dfrac{4}{16} \times 50 = 250 + 12.5 = 262.5$.`, sol: 'The modal class is decided by frequency, not by the class mark.', scheme: [['Modal class', 1], ['Correct substitution', 1], ['Mode 262.5', 1]], d: 3, c: 'application', t: [2], time: 240 }), (C) => { C.assert(near(mode(gT2), 262.5), '262.5'); C.model([250, 20, 16, 8, 12.5, 262.5]); });
+Mode $= 250 + \dfrac{20 - 16}{40 - 16 - 8} \times 50 = 250 + \dfrac{4}{16} \times 50 = 250 + 12.5 = 262.5$.`, sol: 'The modal class is decided by frequency, not by the class mark.', scheme: [['Modal class', 1], ['Correct substitution', 1], ['Mode 262.5', 1]], d: 3, c: 'understanding', t: [2], time: 240 }), (C) => { C.assert(near(mode(gT2), 262.5), '262.5'); C.model([250, 20, 16, 8, 12.5, 262.5]); });
 const gT3 = G(100, 50, [4, 6, 12, 15, 9, 4]);
 Q('s303', mk.short({ marks: 3, stem: r`The monthly spending (₹) on mobile data by 50 families in a Lucknow colony is given below. Find the median spending.
 
@@ -191,7 +191,7 @@ ${mdRow(gT3, 'Spending (₹)', 'Number of families')}`, model: r`${mdWork(gT3, '
 
 $\dfrac n2 = 25$: median class $250$–$300$, $l = 250$, $cf = 22$, $f = 15$, $h = 50$.
 
-Median $= 250 + \dfrac{25 - 22}{15} \times 50 = 250 + 10 = 260$, i.e. ₹$260$.`, sol: 'cf is the cumulative frequency before the median class.', scheme: [['Cumulative frequencies', 1], ['Median class values', 1], ['Median ₹260', 1]], d: 3, c: 'application', t: [3], time: 240 }), (C) => { C.assert(near(med(gT3), 260), '260'); C.model([22, 15, 260]); });
+Median $= 250 + \dfrac{25 - 22}{15} \times 50 = 250 + 10 = 260$, i.e. ₹$260$.`, sol: 'cf is the cumulative frequency before the median class.', scheme: [['Cumulative frequencies', 1], ['Median class values', 1], ['Median ₹260', 1]], d: 3, c: 'understanding', t: [3], time: 240 }), (C) => { C.assert(near(med(gT3), 260), '260'); C.model([22, 15, 260]); });
 const gT4 = G(0, 20, [7, 13, 12, 8, 5]);
 Q('s304', mk.short({ marks: 3, stem: r`The mean of the following distribution is $46$. Find the missing frequency $p$.
 
@@ -224,7 +224,7 @@ ${mdRow(gT7, 'Class', 'Frequency')}`, model: r`Mean: $\sum f_ix_i = 15 + 105 + 3
 
 Median: cumulative frequencies $3, 10, 22, 32, 40$; $\dfrac n2 = 20$; class $20$–$30$ with $cf = 10$, $f = 12$: Median $= 20 + \dfrac{10}{12} \times 10 \approx 28.33$.
 
-The median is slightly larger.`, sol: 'Exactly, the median is 28 1/3.', scheme: [['Mean 28.25', 1], ['Median ≈ 28.33', 1], ['Comparison', 1]], d: 3, c: 'application', t: [1, 3], time: 270 }), (C) => { C.assert(near(mean(gT7), 28.25) && near(R2(med(gT7)), 28.33), 'values'); C.model([1130, 28.25, 28.33]); });
+The median is slightly larger.`, sol: 'Exactly, the median is 28 1/3.', scheme: [['Mean 28.25', 1], ['Median ≈ 28.33', 1], ['Comparison', 1]], d: 3, c: 'understanding', t: [1, 3], time: 270 }), (C) => { C.assert(near(mean(gT7), 28.25) && near(R2(med(gT7)), 28.33), 'values'); C.model([1130, 28.25, 28.33]); });
 
 // =============================================================== Long answer, 5 marks
 const gL1 = G(0, 6, [8, 12, 15, 10, 5]);
@@ -242,7 +242,7 @@ $\bar x = 15 + \dfrac{-48}{50} = 15 - 0.96 = 14.04$ km.
 
 (c) Step deviation, $h = 6$: $\sum f_iu_i = -16 - 12 + 0 + 10 + 10 = -8$, so $\bar x = 15 + 6 \times \dfrac{-8}{50} = 15 - 0.96 = 14.04$ km.
 
-All three methods give the same mean, $14.04$ km; the last two only shorten the arithmetic.`, sol: 'Class marks 3, 9, 15, 21, 27.', scheme: [['Direct method 702/50', 1], ['14.04 km', 1], ['Assumed mean Σfd = −48', 1], ['Step deviation Σfu = −8', 1], ['All equal: comment', 1]], d: 3, c: 'application', t: [1], time: 660 }), (C) => { C.assert(near(mean(gL1), 14.04) && sumFd(gL1, 15) === -48 && sumFu(gL1, 15) === -8 && sumFx(gL1) === 702, 'values'); C.model([702, 14.04, -48, 0.96, -8]); });
+All three methods give the same mean, $14.04$ km; the last two only shorten the arithmetic.`, sol: 'Class marks 3, 9, 15, 21, 27.', scheme: [['Direct method 702/50', 1], ['14.04 km', 1], ['Assumed mean Σfd = −48', 1], ['Step deviation Σfu = −8', 1], ['All equal: comment', 1]], d: 3, c: 'understanding', t: [1], time: 660 }), (C) => { C.assert(near(mean(gL1), 14.04) && sumFd(gL1, 15) === -48 && sumFu(gL1, 15) === -8 && sumFx(gL1) === 702, 'values'); C.model([702, 14.04, -48, 0.96, -8]); });
 const gL2 = G(0, 20, [5, 15, 30, 20, 10]);
 Q('l02', mk.long({ stem: r`The marks (out of 100) of 80 students of a school in Patna are given below.
 
@@ -254,7 +254,7 @@ ${mdRow(gL2, 'Marks', 'Number of students')}
 
 (c) Modal class $40$–$60$: Mode $= 40 + \dfrac{30 - 15}{60 - 15 - 20} \times 20 = 40 + \dfrac{15}{25} \times 20 = 52$.
 
-(d) $3 \times 53.33 - 2 \times 53.75 \approx 160 - 107.5 = 52.5$, close to the mode $52$ ✓.`, sol: 'For a nearly symmetric distribution, mean, median and mode are close.', scheme: [['Mean 53.75', 1], ['Median ≈ 53.33', 1], ['Mode 52', 1], ['Empirical check ≈ 52.5', 1], ['Conclusion', 1]], d: 3, c: 'application', t: [1, 2, 3], time: 720 }), (C) => { C.assert(near(mean(gL2), 53.75) && near(R2(med(gL2)), 53.33) && near(mode(gL2), 52) && near(3 * med(gL2) - 2 * mean(gL2), 52.5), 'values'); C.model([4300, 53.75, 53.33, 52, 52.5]); });
+(d) $3 \times 53.33 - 2 \times 53.75 \approx 160 - 107.5 = 52.5$, close to the mode $52$ ✓.`, sol: 'For a nearly symmetric distribution, mean, median and mode are close.', scheme: [['Mean 53.75', 1], ['Median ≈ 53.33', 1], ['Mode 52', 1], ['Empirical check ≈ 52.5', 1], ['Conclusion', 1]], d: 3, c: 'understanding', t: [1, 2, 3], time: 720 }), (C) => { C.assert(near(mean(gL2), 53.75) && near(R2(med(gL2)), 53.33) && near(mode(gL2), 52) && near(3 * med(gL2) - 2 * mean(gL2), 52.5), 'values'); C.model([4300, 53.75, 53.33, 52, 52.5]); });
 const gL3 = G(300, 100, [8, 17, 20, 25, 23, 7]);
 Q('l03', mk.long({ stem: r`The daily wages (₹) of $100$ workers at a construction site in Hyderabad are given below; two frequencies are missing. The median wage is ₹$620$.
 
@@ -315,14 +315,14 @@ caseQ('c01', {
   passage: r`The Maharashtra agriculture department recorded the July rainfall (cm) in $40$ talukas:
 
 ${mdRow(gC1, 'Rainfall (cm)', 'Number of talukas')}`,
-  assets: [hist(gC1, 'rainfall (cm)', 'number of talukas', 'Histogram of July rainfall in 40 talukas: bars of height 6, 8, 14, 10 and 2 over the classes 20 to 40, 40 to 60, 60 to 80, 80 to 100 and 100 to 120 centimetres; the tallest bar is 60 to 80.', 'The tallest bar marks the modal class.')], d: 3, c: 'application',
+  assets: [hist(gC1, 'rainfall (cm)', 'number of talukas', 'Histogram of July rainfall in 40 talukas: bars of height 6, 8, 14, 10 and 2 over the classes 20 to 40, 40 to 60, 60 to 80, 80 to 100 and 100 to 120 centimetres; the tallest bar is 60 to 80.', 'The tallest bar marks the modal class.')], d: 3, c: 'understanding',
   model: r`(a) Option (c): $60$–$80$. (b) $67$ cm. (c) (i) $72$ cm. Or (ii) $28$ talukas, $70\%$.`,
   sol: r`Mean: $\sum f_ix_i = 180 + 400 + 980 + 900 + 220 = 2680$, $\dfrac{2680}{40} = 67$. Mode: $60 + \dfrac{14 - 8}{28 - 8 - 10} \times 20 = 72$. Cumulative frequency up to $60$–$80$: $28$.`,
   children: [
     child('a', mk.mcq({ stem: 'The modal class is', opts: ['20–40', '40–60', '60–80', '80–100'], key: 'c', sol: 'It has the highest frequency, 14.', d: 1, c: 'understanding', t: [2], time: 30 })),
-    child('b', mk.num({ stem: 'Find the mean rainfall in cm.', value: 67, unit: 'cm', sol: r`$\sum f_ix_i = 6 \times 30 + 8 \times 50 + 14 \times 70 + 10 \times 90 + 2 \times 110 = 2680$; $\bar x = \dfrac{2680}{40} = 67$ cm.`, scheme: [['67 cm', 1]], d: 2, c: 'application', t: [1], time: 120 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** Find the modal rainfall.', model: r`$l = 60$, $f_1 = 14$, $f_0 = 8$, $f_2 = 10$, $h = 20$: Mode $= 60 + \dfrac{6}{10} \times 20 = 72$ cm.`, sol: 'Mode formula.', scheme: [['Values', 1], ['72 cm', 1]], d: 2, c: 'application', t: [2], time: 120 }), [
-      mk.short({ marks: 2, stem: '**(ii)** How many talukas received less than 80 cm, and what percentage is this?', model: r`$6 + 8 + 14 = 28$ talukas; $\dfrac{28}{40} \times 100 = 70\%$.`, sol: 'Cumulative frequency up to 80 cm.', scheme: [['28 talukas', 1], ['70%', 1]], d: 2, c: 'application', t: [3], time: 90 }),
+    child('b', mk.num({ stem: 'Find the mean rainfall in cm.', value: 67, unit: 'cm', sol: r`$\sum f_ix_i = 6 \times 30 + 8 \times 50 + 14 \times 70 + 10 \times 90 + 2 \times 110 = 2680$; $\bar x = \dfrac{2680}{40} = 67$ cm.`, scheme: [['67 cm', 1]], d: 2, c: 'understanding', t: [1], time: 120 })),
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the modal rainfall.', model: r`$l = 60$, $f_1 = 14$, $f_0 = 8$, $f_2 = 10$, $h = 20$: Mode $= 60 + \dfrac{6}{10} \times 20 = 72$ cm.`, sol: 'Mode formula.', scheme: [['Values', 1], ['72 cm', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), [
+      mk.short({ marks: 2, stem: '**(ii)** How many talukas received less than 80 cm, and what percentage is this?', model: r`$6 + 8 + 14 = 28$ talukas; $\dfrac{28}{40} \times 100 = 70\%$.`, sol: 'Cumulative frequency up to 80 cm.', scheme: [['28 talukas', 1], ['70%', 1]], d: 2, c: 'understanding', t: [3], time: 90 }),
     ]),
   ],
 }, (C) => { C.child('a').which(['20–40', '40–60', '60–80', '80–100'], `${gC1.cls[modalIdx(gC1)][0]}–${gC1.cls[modalIdx(gC1)][1]}`); C.child('b').val(mean(gC1)); C.child('c').model([mode(gC1)]); C.child('cii').model([gC1.cf[2], 70]); });
@@ -332,14 +332,14 @@ caseQ('c02', {
   passage: r`The runs scored by $50$ batters in an inter-school cricket tournament in Lucknow are given below.
 
 ${mdRow(gC2, 'Runs', 'Number of batters')}`,
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   model: r`(a) Option (b): $50$. (b) $46.8$. (c) (i) about $46.67$. Or (ii) $47.5$.`,
   sol: r`Mean $= \dfrac{2340}{50} = 46.8$. Median: $\dfrac n2 = 25$, class $40$–$60$, $cf = 20$, $f = 15$: $40 + \dfrac{5}{15} \times 20 \approx 46.67$. Mode: $40 + \dfrac{3}{30 - 12 - 10} \times 20 = 47.5$.`,
   children: [
     child('a', mk.mcq({ stem: 'The class mark of the class 40–60 is', opts: ['$40$', '$50$', '$60$', '$20$'], key: 'b', sol: r`$\dfrac{40 + 60}{2} = 50$.`, d: 1, c: 'recall', t: [1], time: 30 })),
-    child('b', mk.num({ stem: 'Find the mean score.', value: 46.8, unit: 'runs', sol: r`$\sum f_ix_i = 80 + 360 + 750 + 700 + 450 = 2340$; $\bar x = \dfrac{2340}{50} = 46.8$.`, scheme: [['46.8', 1]], d: 2, c: 'application', t: [1], time: 120 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** Find the median score.', model: r`Cumulative $8, 20, 35, 45, 50$; median class $40$–$60$: Median $= 40 + \dfrac{25 - 20}{15} \times 20 \approx 46.67$.`, sol: 'Median formula.', scheme: [['Median class values', 1], ['≈ 46.67', 1]], d: 3, c: 'application', t: [3], time: 120 }), [
-      mk.short({ marks: 2, stem: '**(ii)** Find the modal score.', model: r`Modal class $40$–$60$: $l = 40$, $f_1 = 15$, $f_0 = 12$, $f_2 = 10$: Mode $= 40 + \dfrac{3}{8} \times 20 = 47.5$.`, sol: 'Mode formula.', scheme: [['Values', 1], ['47.5', 1]], d: 3, c: 'application', t: [2], time: 120 }),
+    child('b', mk.num({ stem: 'Find the mean score.', value: 46.8, unit: 'runs', sol: r`$\sum f_ix_i = 80 + 360 + 750 + 700 + 450 = 2340$; $\bar x = \dfrac{2340}{50} = 46.8$.`, scheme: [['46.8', 1]], d: 2, c: 'understanding', t: [1], time: 120 })),
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the median score.', model: r`Cumulative $8, 20, 35, 45, 50$; median class $40$–$60$: Median $= 40 + \dfrac{25 - 20}{15} \times 20 \approx 46.67$.`, sol: 'Median formula.', scheme: [['Median class values', 1], ['≈ 46.67', 1]], d: 3, c: 'understanding', t: [3], time: 120 }), [
+      mk.short({ marks: 2, stem: '**(ii)** Find the modal score.', model: r`Modal class $40$–$60$: $l = 40$, $f_1 = 15$, $f_0 = 12$, $f_2 = 10$: Mode $= 40 + \dfrac{3}{8} \times 20 = 47.5$.`, sol: 'Mode formula.', scheme: [['Values', 1], ['47.5', 1]], d: 3, c: 'understanding', t: [2], time: 120 }),
     ]),
   ],
 }, (C) => { C.child('a').which([40, 50, 60, 20], gC2.x[2]); C.child('b').val(mean(gC2)); C.child('c').model([R2(med(gC2))]); C.child('cii').model([mode(gC2)]); });
@@ -349,14 +349,14 @@ caseQ('c03', {
   passage: r`The monthly electricity use (units) of $60$ households in a Kochi housing society is shown below.
 
 ${mdRow(gC3, 'Units', 'Households')}`,
-  assets: [hist(gC3, 'units used', 'households', 'Histogram of electricity units used by 60 households: bars of height 4, 8, 12, 20, 12 and 4 over classes from 50 to 350 units in steps of 50; the tallest bar is 200 to 250.', 'Electricity use in the society.')], d: 3, c: 'application',
+  assets: [hist(gC3, 'units used', 'households', 'Histogram of electricity units used by 60 households: bars of height 4, 8, 12, 20, 12 and 4 over classes from 50 to 350 units in steps of 50; the tallest bar is 200 to 250.', 'Electricity use in the society.')], d: 3, c: 'understanding',
   model: r`(a) Option (d): $200$–$250$. (b) $215$ units. (c) (i) $225$ units. Or (ii) $24$ households, $40\%$.`,
   sol: r`Cumulative $4, 12, 24, 44, 56, 60$; median class $200$–$250$: $200 + \dfrac{30 - 24}{20} \times 50 = 215$. Mode: $200 + \dfrac{8}{40 - 12 - 12} \times 50 = 225$.`,
   children: [
     child('a', mk.mcq({ stem: 'The median class is', opts: ['50–100', '100–150', '150–200', '200–250'], key: 'd', sol: r`$\dfrac n2 = 30$; cumulative frequencies $4, 12, 24, 44$: the $30$th household is in $200$–$250$.`, d: 2, c: 'understanding', t: [3], time: 60 })),
-    child('b', mk.num({ stem: 'Find the median electricity use.', value: 215, unit: 'units', sol: r`$l = 200$, $cf = 24$, $f = 20$, $h = 50$: $200 + \dfrac{30 - 24}{20} \times 50 = 215$.`, scheme: [['215', 1]], d: 2, c: 'application', t: [3], time: 120 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** Find the modal electricity use.', model: r`Modal class $200$–$250$: $f_1 = 20$, $f_0 = 12$, $f_2 = 12$: Mode $= 200 + \dfrac{8}{16} \times 50 = 225$ units.`, sol: 'Here f₀ = f₂, so the mode is the class mark.', scheme: [['Values', 1], ['225', 1]], d: 2, c: 'application', t: [2], time: 120 }), [
-      mk.short({ marks: 2, stem: '**(ii)** How many households use less than 200 units, and what percentage is this?', model: r`$4 + 8 + 12 = 24$ households; $\dfrac{24}{60} \times 100 = 40\%$.`, sol: 'Cumulative frequency up to 200.', scheme: [['24', 1], ['40%', 1]], d: 2, c: 'application', t: [3], time: 90 }),
+    child('b', mk.num({ stem: 'Find the median electricity use.', value: 215, unit: 'units', sol: r`$l = 200$, $cf = 24$, $f = 20$, $h = 50$: $200 + \dfrac{30 - 24}{20} \times 50 = 215$.`, scheme: [['215', 1]], d: 2, c: 'understanding', t: [3], time: 120 })),
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the modal electricity use.', model: r`Modal class $200$–$250$: $f_1 = 20$, $f_0 = 12$, $f_2 = 12$: Mode $= 200 + \dfrac{8}{16} \times 50 = 225$ units.`, sol: 'Here f₀ = f₂, so the mode is the class mark.', scheme: [['Values', 1], ['225', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), [
+      mk.short({ marks: 2, stem: '**(ii)** How many households use less than 200 units, and what percentage is this?', model: r`$4 + 8 + 12 = 24$ households; $\dfrac{24}{60} \times 100 = 40\%$.`, sol: 'Cumulative frequency up to 200.', scheme: [['24', 1], ['40%', 1]], d: 2, c: 'understanding', t: [3], time: 90 }),
     ]),
   ],
 }, (C) => { C.child('a').which(['50–100', '100–150', '150–200', '200–250'], `${gC3.cls[medianIdx(gC3)][0]}–${gC3.cls[medianIdx(gC3)][1]}`); C.child('b').val(med(gC3)); C.child('c').model([mode(gC3)]); C.child('cii').model([gC3.cf[2], 40]); });
@@ -366,14 +366,14 @@ caseQ('c04', {
   passage: r`A school in Indore surveyed the daily screen time (minutes) of $50$ Class 10 students.
 
 ${mdRow(gC4, 'Screen time (min)', 'Number of students')}`,
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   model: r`(a) Option (c): $1$. (b) $72.6$ minutes. (c) (i) $75$ minutes. Or (ii) about $73.33$ minutes.`,
   sol: r`Step deviation with $a = 75$, $h = 30$: $\sum f_iu_i = -10 - 12 + 0 + 12 + 6 = -4$, $\bar x = 75 - \dfrac{4}{50} \times 30 = 72.6$. Mode: $60 + \dfrac{6}{12} \times 30 = 75$. Median: $60 + \dfrac{25 - 17}{18} \times 30 \approx 73.33$.`,
   children: [
     child('a', mk.mcq({ stem: r`With $a = 75$ and $h = 30$, the value of $u_i$ for the class $90$–$120$ is`, opts: ['$-1$', '$0$', '$1$', '$30$'], key: 'c', sol: r`Class mark $105$: $u = \dfrac{105 - 75}{30} = 1$.`, d: 1, c: 'understanding', t: [1], time: 45 })),
-    child('b', mk.num({ stem: 'Find the mean screen time in minutes.', value: 72.6, unit: 'min', sol: r`$\sum f_iu_i = -4$; $\bar x = 75 + 30 \times \dfrac{-4}{50} = 75 - 2.4 = 72.6$ minutes.`, scheme: [['72.6', 1]], d: 2, c: 'application', t: [1], time: 120 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** Find the modal screen time.', model: r`Modal class $60$–$90$: $f_1 = 18$, $f_0 = 12$, $f_2 = 12$: Mode $= 60 + \dfrac{6}{12} \times 30 = 75$ minutes.`, sol: 'Mode formula.', scheme: [['Values', 1], ['75 min', 1]], d: 2, c: 'application', t: [2], time: 120 }), [
-      mk.short({ marks: 2, stem: '**(ii)** Find the median screen time.', model: r`Cumulative $5, 17, 35, 47, 50$; $\dfrac n2 = 25$ in $60$–$90$: Median $= 60 + \dfrac{25 - 17}{18} \times 30 \approx 73.33$ minutes.`, sol: 'Median formula.', scheme: [['Values', 1], ['≈ 73.33 min', 1]], d: 3, c: 'application', t: [3], time: 120 }),
+    child('b', mk.num({ stem: 'Find the mean screen time in minutes.', value: 72.6, unit: 'min', sol: r`$\sum f_iu_i = -4$; $\bar x = 75 + 30 \times \dfrac{-4}{50} = 75 - 2.4 = 72.6$ minutes.`, scheme: [['72.6', 1]], d: 2, c: 'understanding', t: [1], time: 120 })),
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the modal screen time.', model: r`Modal class $60$–$90$: $f_1 = 18$, $f_0 = 12$, $f_2 = 12$: Mode $= 60 + \dfrac{6}{12} \times 30 = 75$ minutes.`, sol: 'Mode formula.', scheme: [['Values', 1], ['75 min', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), [
+      mk.short({ marks: 2, stem: '**(ii)** Find the median screen time.', model: r`Cumulative $5, 17, 35, 47, 50$; $\dfrac n2 = 25$ in $60$–$90$: Median $= 60 + \dfrac{25 - 17}{18} \times 30 \approx 73.33$ minutes.`, sol: 'Median formula.', scheme: [['Values', 1], ['≈ 73.33 min', 1]], d: 3, c: 'understanding', t: [3], time: 120 }),
     ]),
   ],
 }, (C) => { C.child('a').which([-1, 0, 1, 30], (gC4.x[3] - 75) / 30); C.child('b').val(R6(mean(gC4))); C.assert(sumFu(gC4, 75) === -4, 'Σfu'); C.child('c').model([mode(gC4)]); C.child('cii').model([R2(med(gC4))]); });
@@ -383,14 +383,56 @@ caseQ('c05', {
   passage: r`An orchard in Ratnagiri weighed $50$ Alphonso mangoes. One frequency was smudged on the record sheet:
 
 ${mdRow(gC5, 'Weight (g)', 'Number of mangoes', ['6', '9', '$p$', '12', '5'])}`,
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   model: r`(a) Option (a): $18$. (b) $280$ g. (c) (i) $276$ g. Or (ii) about $277.78$ g.`,
   sol: r`$p = 50 - 32 = 18$. Mode: $250 + \dfrac{18 - 9}{36 - 9 - 12} \times 50 = 280$. Mean: $a = 275$, $\sum f_iu_i = -12 - 9 + 0 + 12 + 10 = 1$, $\bar x = 275 + \dfrac{1}{50} \times 50 = 276$. Median: $250 + \dfrac{25 - 15}{18} \times 50 \approx 277.78$.`,
   children: [
     child('a', mk.mcq({ stem: 'The value of p is', opts: ['$18$', '$32$', '$12$', '$20$'], key: 'a', sol: r`$6 + 9 + p + 12 + 5 = 50 \Rightarrow p = 18$.`, d: 1, c: 'understanding', t: [1], time: 45 })),
-    child('b', mk.num({ stem: 'Find the modal weight in grams.', value: 280, unit: 'g', sol: r`Modal class $250$–$300$: $250 + \dfrac{18 - 9}{36 - 9 - 12} \times 50 = 250 + \dfrac{9}{15} \times 50 = 280$ g.`, scheme: [['280 g', 1]], d: 2, c: 'application', t: [2], time: 120 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** Find the mean weight by the step-deviation method.', model: r`$a = 275$, $h = 50$: $u = -2, -1, 0, 1, 2$; $\sum f_iu_i = -12 - 9 + 0 + 12 + 10 = 1$. $\bar x = 275 + 50 \times \dfrac{1}{50} = 276$ g.`, sol: 'Step deviation.', scheme: [['Σfu = 1', 1], ['276 g', 1]], d: 3, c: 'application', t: [1], time: 150 }), [
-      mk.short({ marks: 2, stem: '**(ii)** Find the median weight.', model: r`Cumulative $6, 15, 33, 45, 50$; median class $250$–$300$: Median $= 250 + \dfrac{25 - 15}{18} \times 50 \approx 277.78$ g.`, sol: 'Median formula.', scheme: [['Values', 1], ['≈ 277.78 g', 1]], d: 3, c: 'application', t: [3], time: 120 }),
+    child('b', mk.num({ stem: 'Find the modal weight in grams.', value: 280, unit: 'g', sol: r`Modal class $250$–$300$: $250 + \dfrac{18 - 9}{36 - 9 - 12} \times 50 = 250 + \dfrac{9}{15} \times 50 = 280$ g.`, scheme: [['280 g', 1]], d: 2, c: 'understanding', t: [2], time: 120 })),
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the mean weight by the step-deviation method.', model: r`$a = 275$, $h = 50$: $u = -2, -1, 0, 1, 2$; $\sum f_iu_i = -12 - 9 + 0 + 12 + 10 = 1$. $\bar x = 275 + 50 \times \dfrac{1}{50} = 276$ g.`, sol: 'Step deviation.', scheme: [['Σfu = 1', 1], ['276 g', 1]], d: 3, c: 'understanding', t: [1], time: 150 }), [
+      mk.short({ marks: 2, stem: '**(ii)** Find the median weight.', model: r`Cumulative $6, 15, 33, 45, 50$; median class $250$–$300$: Median $= 250 + \dfrac{25 - 15}{18} \times 50 \approx 277.78$ g.`, sol: 'Median formula.', scheme: [['Values', 1], ['≈ 277.78 g', 1]], d: 3, c: 'understanding', t: [3], time: 120 }),
     ]),
   ],
 }, (C) => { C.child('a').which([18, 32, 12, 20], 50 - (6 + 9 + 12 + 5)); C.child('b').val(mode(gC5)); C.child('c').model([sumFu(gC5, 275), mean(gC5)]); C.child('cii').model([R2(med(gC5))]); });
+// =============================================================== added 2026-10-27 (assessment-designer)
+// Recall/understanding written items for the board-paper competency balance (blueprint 54/24/22 Standard,
+// 75/15/10 Basic). Appended after every existing item so earlier ids do not move.
+const gU301 = G(10, 10, [8, 12, 20, 14, 6]);
+Q('u301', mk.short({
+  marks: 3,
+  stem: r`The ages (in years) of $60$ visitors to a science museum in Bhopal on one morning are grouped below. Find the median age.
+
+${mdRow(gU301, 'Age (years)', 'Number of visitors')}`,
+  model: r`${mdWork(gU301, 'cf')}
+
+$\dfrac n2 = 30$: the median class is $30$–$40$, with $l = 30$, $cf = 20$, $f = 20$, $h = 10$.
+
+Median $= l + \dfrac{\frac n2 - cf}{f} \times h = 30 + \dfrac{30 - 20}{20} \times 10 = 30 + 5 = 35$ years.`,
+  sol: r`The median class is the first class whose cumulative frequency reaches $\dfrac n2$; $cf$ is the cumulative frequency of the class before it.`,
+  scheme: [['Cumulative frequencies', 1], ['Median class 30–40 and its values', 1], ['Median 35 years', 1]],
+  d: 2, c: 'understanding', t: [3], time: 240,
+}), (C) => { C.assert(gU301.n === 60 && near(med(gU301), 35), 'median 35'); C.model([20, 30, 35]); });
+const gU501 = G(0, 10, [4, 6, 12, 8, 10]);
+Q('u501', mk.long({
+  stem: r`The scores (out of $50$) of $40$ students in a class quiz in Kochi are grouped below.
+
+${mdRow(gU501, 'Score', 'Number of students')}
+
+(a) Find the mean score by the direct method.
+(b) Find the mean again by the assumed-mean method with $a = 25$, and check that it agrees.
+(c) Find the modal class and the mode.`,
+  model: r`(a) ${mdWork(gU501, 'direct')}
+
+Mean $= \dfrac{\sum f_ix_i}{\sum f_i} = \dfrac{1140}{40} = 28.5$.
+
+(b) ${mdWork(gU501, 'assumed', 25)}
+
+Mean $= a + \dfrac{\sum f_id_i}{\sum f_i} = 25 + \dfrac{140}{40} = 25 + 3.5 = 28.5$ ✓.
+
+(c) The modal class is $20$–$30$ (highest frequency, $12$): $l = 20$, $f_1 = 12$, $f_0 = 6$, $f_2 = 8$, $h = 10$.
+
+Mode $= l + \dfrac{f_1 - f_0}{2f_1 - f_0 - f_2} \times h = 20 + \dfrac{6}{24 - 14} \times 10 = 20 + 6 = 26$.`,
+  sol: r`Class marks $5, 15, 25, 35, 45$; the mode uses the frequencies of the modal class and its two neighbours.`,
+  scheme: [['Σfx = 1140', 1], ['Mean 28.5', 1], ['Assumed mean gives 28.5', 1], ['Modal class 20–30', 1], ['Mode 26', 1]],
+  d: 2, c: 'understanding', t: [1, 2], time: 540,
+}), (C) => { C.assert(gU501.n === 40 && near(sumFx(gU501), 1140) && near(sumFx(gU501) / 40, 28.5) && near(25 + sumFd(gU501, 25) / 40, 28.5), 'mean 28.5'); C.assert(near(mode(gU501), 26), 'mode 26'); C.model([1140, 28.5, 140, 26]); });

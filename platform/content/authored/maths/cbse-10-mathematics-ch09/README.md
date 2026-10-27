@@ -19,9 +19,9 @@ Author: `claude-opus-5-5 (subject-producer)`, provenance `origin: "human"`, `mod
 | Check slides | 3 + 3, all objective (q001, q007, q011; q039, q017, q028) |
 | Notes | 6 sections, each with key terms and a visual; exam tips with mark split and 7 common mistakes |
 | Flashcards | 30 (definition 3, formula 4, concept 5, fact 6, example 5, exam-tip 5, diagram 2) |
-| Questions | 70 items, 139 marks: mcq 18, assertion-reason 6 (keys a b c d a d), true-false 5, fill-blank 5, numerical 9 (tolerances for $\sqrt3 \approx 1.732$), short-2 9, short-3 7, long-5 6, case-based 5 (1 + 1 + 2, part (c) either/or via `alternatives`, `passage_origin: soyl-original`; one carries a to-scale lighthouse figure) |
-| Difficulty | d1 15, d2 25, d3 24, d4 5, d5 1 |
-| Competency | recall 4, understanding 27, application 33, analysis 2, evaluation 4 — application or higher 56% of items, 73% of marks |
+| Questions | 70 items, 139 marks: mcq 18, assertion-reason 6 (keys a b c d a d), true-false 5, fill-blank 5, numerical 9 (tolerances for $\sqrt3 \approx 1.732$), short-2 9, short-3 8, long-5 7, case-based 5 (1 + 1 + 2, part (c) either/or via `alternatives`, `passage_origin: soyl-original`; one carries a to-scale lighthouse figure) |
+| Difficulty | d1 15, d2 27, d3 24, d4 5, d5 1 |
+| Competency | recall 4, understanding 32, application 30, analysis 2, evaluation 4 — application or higher 50% of items, 63% of marks (after the 2026-10-27 competency audit) |
 | Topics | t01 17, t02 60 (items may carry two topics) |
 | Tests | `t_cbse10math_ch09_short` (20 marks / 40 min) and `_long` (40 marks / 90 min), matching `cbse-10-default-chapter-test-short/long`; disjoint |
 
@@ -42,3 +42,9 @@ Run from `platform/`: `npx tsx content/authored/maths/cbse-10-mathematics-ch09/s
 - Analysis-level items are few (2); the chapter's harder items are mostly application with two triangles. d4–d5 items: 6.
 - Geometry figures rely on renderer support for `arcs` (equal-angle marks) and `scale`; the hidden helper points use `label: false`.
 - Narration audio not generated (TTS stage). `word_limit` not set on maths short/long items (marked by steps).
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Board papers need recall/understanding written items (CBSE design: Standard 54/24/22, Basic 75/15/10 per cent of marks), and the bank had tagged almost every routine written answer as application or higher. Every short, long, numerical and case item was re-read against what it actually asks. A routine, textbook-standard procedure on given data (find the HCF by prime factorisation, solve a given pair, find a term, compute a mean, a sector area, a single right triangle) is now **understanding**; word problems that need modelling, multi-step or non-routine reasoning, error analysis and justification keep application / analysis / evaluation. 3 item tag(s) and 2 case-part tag(s) changed (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed.
+
+Added (appended, so earlier ids are unchanged; each has its re-solve check): `q_cbse10math_ch09_071` short-3, `q_cbse10math_ch09_072` long.

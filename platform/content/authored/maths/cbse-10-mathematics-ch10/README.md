@@ -14,8 +14,8 @@ Syllabus topics (catalog `cbse/10/mathematics/syllabus.yaml`): t01 tangent to a 
 | Visuals | 23 of 33 slides; never more than 1 slide without a visual. 19 distinct geometry figures + tables + a proof flow |
 | Notes | 6 sections + exam tips |
 | Flashcards | 30 |
-| Questions | 70 (140 marks): mcq 18 · AR 6 · TF 5 · fill 5 · numerical 9 · short-2 9 · short-3 7 · long 6 · case 5 |
-| Difficulty | d1 11 · d2 22 · d3 29 · d4 7 · d5 1; application or higher 56% of items, 69% of marks |
+| Questions | 74 (154 marks): mcq 18 · AR 6 · TF 5 · fill 5 · numerical 9 · short-2 9 · short-3 12 · long 7 · case 5 |
+| Difficulty | d1 13 · d2 26 · d3 29 · d4 7 · d5 1; application or higher 37% of items, 39% of marks (after the 2026-10-27 competency audit) (after the 2026-10-27 competency audit) |
 | Tests | `t_cbse10math_ch10_short` (20 marks) and `_long` (40 marks) on the default blueprints, disjoint |
 
 ## Figures
@@ -33,3 +33,9 @@ Narration audio not generated (TTS stage). The renderer needs geometry point lab
 ## Changed by assessment-designer (2026-10-27)
 
 Rewritten in `src/questions.mjs` (then rebuilt) because `originality --authored` flagged them as near-duplicates of other items in this chapter; each is now a different question (new numbers, context or skill) with its re-solve check: fb4 (q_cbse10math_ch10_033: angle between tangents from the angle between radii, new numbers).
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Board papers need recall/understanding written items (CBSE design: Standard 54/24/22, Basic 75/15/10 per cent of marks), and the bank had tagged almost every routine written answer as application or higher. Every short, long, numerical and case item was re-read against what it actually asks. A routine, textbook-standard procedure on given data (find the HCF by prime factorisation, solve a given pair, find a term, compute a mean, a sector area, a single right triangle) is now **understanding**; word problems that need modelling, multi-step or non-routine reasoning, error analysis and justification keep application / analysis / evaluation. 11 item tag(s) and 8 case-part tag(s) changed (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed.
+
+Added (appended, so earlier ids are unchanged; each has its re-solve check): `q_cbse10math_ch10_071` short-3, `q_cbse10math_ch10_072` short-3, `q_cbse10math_ch10_073` short-3, `q_cbse10math_ch10_074` long, `q_cbse10math_ch10_075` short-3, `q_cbse10math_ch10_076` short-3.

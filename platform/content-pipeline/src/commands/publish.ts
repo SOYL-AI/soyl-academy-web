@@ -30,7 +30,7 @@ import type { Pipeline } from '../pipeline';
 import { loadOutUnit, type ContentUnit } from '../sources';
 import { assemblePaper, type BankItem } from '../assemble/engine';
 import { planSubjectTests } from '../assemble/series';
-import { ingestTests } from './assemble';
+import { ingestTests, withCompetencyMarks } from './assemble';
 import { frozenSubjects, loadFrozenSeries, questionIds, remapVersions } from '../assemble/frozen';
 import { applyAudio, audioManifestFile, type AudioManifestFile } from './tts';
 import { authoredInScope } from './verify';
@@ -163,7 +163,7 @@ async function publishUnit(p: Pipeline, u: ContentUnit, opts: { allowMock: boole
       .map((t) => ({ ...t, sections: t.sections.map((s) => ({ ...s, items: s.items.map((i) => ({ ...i, question_version: versions.get(i.question_id)! })) })) }));
     if (tests.length < u.tests.length) notes.push(`${u.tests.length - tests.length} test(s) reference questions not in the release; skipped`);
   } else {
-    const bank: BankItem[] = vQuestions.map((q) => ({ id: q.id, version: q.version, unit: u.unit, type: q.type, marks: q.marks, difficulty: q.difficulty, competency: q.competency, topic_ids: q.topic_ids }));
+    const bank: BankItem[] = vQuestions.map((q) => withCompetencyMarks({ id: q.id, version: q.version, unit: u.unit, type: q.type, marks: q.marks, difficulty: q.difficulty, competency: q.competency, topic_ids: q.topic_ids }, q.children));
     const plan = planSubjectTests(p.catalog, ref.subject, { series: false, academicYear: year, chapters: [ref.chapter.number] });
     const exclude = new Set<string>();
     for (const planned of plan.papers) {

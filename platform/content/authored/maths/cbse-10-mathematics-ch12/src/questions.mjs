@@ -68,22 +68,22 @@ Q('n02', mk.num({ stem: r`Find the curved surface area (in cm²) of a cone of ra
 **Step 2.** $\pi rl = \dfrac{22}{7} \times 21 \times 29 = 66 \times 29 = 1914$ cm².`, scheme: [['l = 29 cm', 1], ['1914 cm²', 1]], d: 2, c: 'understanding', t: [1], time: 120 }), (C) => { C.val(R6(cone.csa(P7, 21, 20))); C.sol([29, 841]); });
 Q('n03', mk.num({ stem: r`A wooden toy rocket is a cylinder of radius $3$ cm and height $10$ cm with a cone of radius $3$ cm and height $4$ cm on top. Find its volume in cm³. Use $\pi = 3.14$.`, value: 320.28, unit: 'cm³', tol: 0.005, marks: 2, sol: r`**Step 1.** Cylinder $= 3.14 \times 9 \times 10 = 282.6$ cm³; cone $= \dfrac13 \times 3.14 \times 9 \times 4 = 37.68$ cm³.
 
-**Step 2.** Volume $= 282.6 + 37.68 = 320.28$ cm³.`, scheme: [['Cylinder 282.6 and cone 37.68', 1], ['320.28 cm³', 1]], d: 2, c: 'application', t: [2], time: 120 }), (C) => { C.val(R6(cyl.vol(P3, 3, 10) + cone.vol(P3, 3, 4)), 0.005); C.sol([282.6, 37.68]); });
+**Step 2.** Volume $= 282.6 + 37.68 = 320.28$ cm³.`, scheme: [['Cylinder 282.6 and cone 37.68', 1], ['320.28 cm³', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), (C) => { C.val(R6(cyl.vol(P3, 3, 10) + cone.vol(P3, 3, 4)), 0.005); C.sol([282.6, 37.68]); });
 Q('n04', mk.num({ stem: r`A hemispherical steel bowl has an inner radius of $10.5$ cm. Find its capacity in cm³. Use $\pi = \dfrac{22}{7}$.`, value: 2425.5, unit: 'cm³', marks: 2, sol: r`**Step 1.** $V = \dfrac23\pi r^3$, with $10.5^3 = 1157.625$.
 
 **Step 2.** $\dfrac23 \times \dfrac{22}{7} \times 1157.625 = 2425.5$ cm³ (about $2.43$ litres).`, scheme: [['Hemisphere volume formula', 1], ['2425.5 cm³', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), (C) => { C.val(R6(hemi.vol(P7, 10.5))); C.sol([1157.625]); });
 Q('n05', mk.num({ stem: r`The hemispherical dome of a gurdwara in Amritsar has radius $7$ m. Find the cost (in ₹) of gilding its curved surface at ₹$20$ per m². Use $\pi = \dfrac{22}{7}$.`, value: 6160, unit: '₹', marks: 2, sol: r`**Step 1.** Curved surface $= 2\pi r^2 = 2 \times \dfrac{22}{7} \times 49 = 308$ m².
 
-**Step 2.** Cost $= 308 \times 20 = $ ₹$6160$.`, scheme: [['308 m²', 1], ['₹6160', 1]], d: 2, c: 'application', t: [1], time: 90 }), (C) => { C.val(R6(hemi.csa(P7, 7) * 20)); C.sol([308]); });
+**Step 2.** Cost $= 308 \times 20 = $ ₹$6160$.`, scheme: [['308 m²', 1], ['₹6160', 1]], d: 2, c: 'understanding', t: [1], time: 90 }), (C) => { C.val(R6(hemi.csa(P7, 7) * 20)); C.sol([308]); });
 Q('n06', mk.num({ stem: r`A grain silo near Karnal is a cylinder of radius $2.1$ m and height $5$ m with a conical top of height $1.5$ m. Find its volume in m³. Use $\pi = \dfrac{22}{7}$.`, value: 76.23, unit: 'm³', tol: 0.005, marks: 2, sol: r`**Step 1.** $\pi r^2 = \dfrac{22}{7} \times 4.41 = 13.86$ m².
 
-**Step 2.** Volume $= 13.86 \times 5 + \dfrac13 \times 13.86 \times 1.5 = 69.3 + 6.93 = 76.23$ m³.`, scheme: [['Cylinder 69.3 and cone 6.93', 1], ['76.23 m³', 1]], d: 2, c: 'application', t: [2], time: 120 }), (C) => { C.val(R6(cyl.vol(P7, 2.1, 5) + cone.vol(P7, 2.1, 1.5)), 0.005); C.sol([13.86, 69.3, 6.93]); });
+**Step 2.** Volume $= 13.86 \times 5 + \dfrac13 \times 13.86 \times 1.5 = 69.3 + 6.93 = 76.23$ m³.`, scheme: [['Cylinder 69.3 and cone 6.93', 1], ['76.23 m³', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), (C) => { C.val(R6(cyl.vol(P7, 2.1, 5) + cone.vol(P7, 2.1, 1.5)), 0.005); C.sol([13.86, 69.3, 6.93]); });
 Q('n07', mk.num({ stem: r`A toy is a cone of radius $5$ cm and height $12$ cm mounted on a hemisphere of radius $5$ cm. Find its total surface area in cm². Use $\pi = 3.14$.`, value: 361.1, unit: 'cm²', tol: 0.005, marks: 2, sol: r`**Step 1.** $l = \sqrt{25 + 144} = 13$ cm.
 
 **Step 2.** Surface $= \pi rl + 2\pi r^2 = 3.14 \times 5 \times (13 + 10) = 15.7 \times 23 = 361.1$ cm².`, scheme: [['l = 13 cm and visible faces', 1], ['361.1 cm²', 1]], d: 3, c: 'application', t: [1], time: 150 }), (C) => { C.val(R6(cone.csa(P3, 5, 12) + hemi.csa(P3, 5)), 0.005); C.sol([13, 15.7, 23]); });
 Q('n08', mk.num({ stem: r`From a solid wooden cylinder of radius $3.5$ cm and height $6$ cm, a cone of the same radius and height is carved out. Find the volume of wood left in cm³. Use $\pi = \dfrac{22}{7}$.`, value: 154, unit: 'cm³', marks: 2, sol: r`**Step 1.** Cylinder $= \dfrac{22}{7} \times 12.25 \times 6 = 231$ cm³.
 
-**Step 2.** Wood left $= \dfrac23 \times 231 = 154$ cm³ (the cone takes one-third).`, scheme: [['Cylinder 231 cm³', 1], ['154 cm³', 1]], d: 3, c: 'application', t: [2], time: 120 }), (C) => { C.val(R6(cyl.vol(P7, 3.5, 6) - cone.vol(P7, 3.5, 6))); C.sol([231]); });
+**Step 2.** Wood left $= \dfrac23 \times 231 = 154$ cm³ (the cone takes one-third).`, scheme: [['Cylinder 231 cm³', 1], ['154 cm³', 1]], d: 3, c: 'understanding', t: [2], time: 120 }), (C) => { C.val(R6(cyl.vol(P7, 3.5, 6) - cone.vol(P7, 3.5, 6))); C.sol([231]); });
 Q('n09', mk.num({ stem: r`From a solid cube of edge $10$ cm, a hemisphere of radius $3.5$ cm is scooped out of each of two opposite faces. Find the total surface area of the remaining solid in cm². Use $\pi = \dfrac{22}{7}$.`, value: 677, unit: 'cm²', marks: 2, sol: r`**Step 1.** Each scoop removes a circle $\pi r^2 = 38.5$ cm² and adds a bowl $2\pi r^2 = 77$ cm²: net $+38.5$ cm².
 
 **Step 2.** Surface $= 6 \times 100 + 2 \times 38.5 = 600 + 77 = 677$ cm².`, scheme: [['Net change +πr² per scoop', 1], ['677 cm²', 1]], d: 4, c: 'analysis', t: [1], time: 180 }), (C) => { C.val(R6(600 + 2 * (hemi.csa(P7, 3.5) - cyl.base(P7, 3.5)))); C.sol([38.5, 77, 600]); });
@@ -94,7 +94,7 @@ Q('s201', mk.short({ marks: 2, stem: r`A solid is made of a cylinder of radius $
 Total $= 220 + 154 + 308 = 682$ cm².`, sol: 'The joining circle is hidden and is not counted.', scheme: [['Correct visible faces', 1], ['682 cm²', 1]], d: 2, c: 'application', t: [1], time: 120 }), (C) => { C.assert(near(cyl.csa(P7, 7, 5) + cyl.base(P7, 7) + hemi.csa(P7, 7), 682), '682'); C.model([220, 154, 308, 682]); });
 Q('s202', mk.short({ marks: 2, stem: r`Find the volume of the solid in the previous question: a cylinder of radius $7$ cm and height $5$ cm with a hemisphere of radius $7$ cm on top. Use $\pi = \dfrac{22}{7}$.`, model: r`Cylinder $= \dfrac{22}{7} \times 49 \times 5 = 770$ cm³. Hemisphere $= \dfrac23 \times \dfrac{22}{7} \times 343 \approx 718.67$ cm³.
 
-Volume $= 770 + 718.67 = 1488.67$ cm³.`, sol: r`Exactly, $\dfrac{4466}{3}$ cm³.`, scheme: [['Cylinder 770 and hemisphere 718.67', 1], ['1488.67 cm³', 1]], d: 2, c: 'application', t: [2], time: 120 }), (C) => { C.assert(near(R2(cyl.vol(P7, 7, 5) + hemi.vol(P7, 7)), 1488.67), '1488.67'); C.model([770, 718.67, 1488.67]); });
+Volume $= 770 + 718.67 = 1488.67$ cm³.`, sol: r`Exactly, $\dfrac{4466}{3}$ cm³.`, scheme: [['Cylinder 770 and hemisphere 718.67', 1], ['1488.67 cm³', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), (C) => { C.assert(near(R2(cyl.vol(P7, 7, 5) + hemi.vol(P7, 7)), 1488.67), '1488.67'); C.model([770, 718.67, 1488.67]); });
 Q('s203', mk.short({ marks: 2, stem: r`A joker's cap for a school play in Mysuru is a cone of base radius $7$ cm and height $24$ cm. Find the area of sheet needed to make it. Use $\pi = \dfrac{22}{7}$.`, model: r`$l = \sqrt{7^2 + 24^2} = \sqrt{625} = 25$ cm.
 
 Sheet $=$ curved surface $= \pi rl = \dfrac{22}{7} \times 7 \times 25 = 550$ cm².`, sol: 'A cap has no base: only the curved surface is needed.', scheme: [['l = 25 cm', 1], ['550 cm²', 1]], d: 2, c: 'understanding', t: [1], time: 120 }), (C) => { C.assert(near(cone.csa(P7, 7, 24), 550), '550'); C.model([25, 550]); });
@@ -102,7 +102,7 @@ Q('s204', mk.short({ marks: 2, stem: r`An ice-cream cone has radius $3.5$ cm and
 
 Cone $= \dfrac13 \times 38.5 \times 9 = 115.5$ cm³; hemisphere $= \dfrac23 \times 38.5 \times 3.5 \approx 89.83$ cm³.
 
-Total $\approx 115.5 + 89.83 = 205.33$ cm³.`, sol: r`Using $V = \dfrac13\pi r^2(h + 2r) = \dfrac13 \times 38.5 \times 16 \approx 205.33$ ✓.`, scheme: [['Cone 115.5 and hemisphere 89.83', 1], ['205.33 cm³', 1]], d: 2, c: 'application', t: [2], time: 150 }), (C) => { C.assert(near(R2(cone.vol(P7, 3.5, 9) + hemi.vol(P7, 3.5)), 205.33), '205.33'); C.model([38.5, 115.5, 89.83, 205.33]); });
+Total $\approx 115.5 + 89.83 = 205.33$ cm³.`, sol: r`Using $V = \dfrac13\pi r^2(h + 2r) = \dfrac13 \times 38.5 \times 16 \approx 205.33$ ✓.`, scheme: [['Cone 115.5 and hemisphere 89.83', 1], ['205.33 cm³', 1]], d: 2, c: 'understanding', t: [2], time: 150 }), (C) => { C.assert(near(R2(cone.vol(P7, 3.5, 9) + hemi.vol(P7, 3.5)), 205.33), '205.33'); C.model([38.5, 115.5, 89.83, 205.33]); });
 Q('s205', mk.short({ marks: 2, stem: r`A tent is a cylinder of radius $7$ m and height $4$ m with a conical top of slant height $10$ m. Arjun finds the canvas needed as $2\pi r(r + h) + \pi r(l + r) = 858$ m². Find his mistake and the correct area. Use $\pi = \dfrac{22}{7}$.`, model: r`He used **total** surface areas, counting the floor, the top of the cylinder and the base of the cone. A tent has no floor and the two joined circles are inside.
 
 Canvas $= 2\pi rh + \pi rl = 2 \times \dfrac{22}{7} \times 7 \times 4 + \dfrac{22}{7} \times 7 \times 10 = 176 + 220 = 396$ m².`, sol: r`His value: $44 \times 11 + 22 \times 17 = 484 + 374 = 858$; it includes three circles of $154$ m² each.`, scheme: [['Identifies the extra circles', 1], ['396 m²', 1]], d: 3, c: 'evaluation', t: [1], time: 150 }), (C) => { const right = cyl.csa(P7, 7, 4) + P7 * 7 * 10; const wrong = 2 * P7 * 7 * 11 + P7 * 7 * 17; C.assert(near(right, 396) && near(wrong, 858) && near(wrong - right, 3 * 154), 'three circles'); C.model([176, 220, 396]); C.sol([858, 154]); });
@@ -129,7 +129,7 @@ Q('s302', mk.short({ marks: 3, stem: r`A wooden block $15$ cm $\times$ $10$ cm $
 
 One hollow $= \dfrac23 \times \dfrac{22}{7} \times 2.1^3 = \dfrac23 \times \dfrac{22}{7} \times 9.261 = 19.404$ cm³; two hollows $= 38.808$ cm³.
 
-Wood $= 600 - 38.808 = 561.192$ cm³.`, sol: 'Volume removed is subtracted; the hollows (depth 2.1 cm) fit within the 4 cm height.', scheme: [['Block 600 cm³', 1], ['Two hollows 38.808 cm³', 1], ['561.192 cm³', 1]], d: 3, c: 'application', t: [2], time: 240 }), (C) => { C.assert(near(600 - 2 * hemi.vol(P7, 2.1), 561.192), '561.192'); C.model([600, 19.404, 38.808, 561.192]); });
+Wood $= 600 - 38.808 = 561.192$ cm³.`, sol: 'Volume removed is subtracted; the hollows (depth 2.1 cm) fit within the 4 cm height.', scheme: [['Block 600 cm³', 1], ['Two hollows 38.808 cm³', 1], ['561.192 cm³', 1]], d: 3, c: 'understanding', t: [2], time: 240 }), (C) => { C.assert(near(600 - 2 * hemi.vol(P7, 2.1), 561.192), '561.192'); C.model([600, 19.404, 38.808, 561.192]); });
 Q('s303', mk.short({ marks: 3, stem: r`A spinning top is a cone of height $8$ cm on a hemisphere, both of radius $6$ cm. Find its surface area and the cost of painting it at $50$ paise per cm². Use $\pi = 3.14$.`, model: r`$l = \sqrt{36 + 64} = 10$ cm.
 
 Surface $= \pi rl + 2\pi r^2 = 3.14 \times 6 \times (10 + 12) = 18.84 \times 22 = 414.48$ cm².
@@ -137,7 +137,7 @@ Surface $= \pi rl + 2\pi r^2 = 3.14 \times 6 \times (10 + 12) = 18.84 \times 22 
 Cost $= 414.48 \times 0.50 = $ ₹$207.24$.`, sol: 'Only the two curved surfaces are on the outside.', scheme: [['l = 10 cm', 1], ['414.48 cm²', 1], ['₹207.24', 1]], d: 3, c: 'application', t: [1], time: 240 }), (C) => { const s = cone.csa(P3, 6, 8) + hemi.csa(P3, 6); C.assert(near(s, 414.48) && near(s * 0.5, 207.24), 'values'); C.model([10, 18.84, 414.48, 207.24]); });
 Q('s304', mk.short({ marks: 3, stem: r`A cement storage silo at a site in Visakhapatnam is a cylinder of radius $1.4$ m and height $3$ m with a conical top of height $2.1$ m. Find the volume of cement it can hold. Use $\pi = \dfrac{22}{7}$.`, model: r`$\pi r^2 = \dfrac{22}{7} \times 1.96 = 6.16$ m².
 
-Volume $= \pi r^2\left(h_1 + \dfrac{h_2}{3}\right) = 6.16 \times (3 + 0.7) = 6.16 \times 3.7 = 22.792$ m³.`, sol: r`Cylinder $18.48$ m³ $+$ cone $4.312$ m³.`, scheme: [['πr² = 6.16', 1], ['Sum of cylinder and cone', 1], ['22.792 m³', 1]], d: 3, c: 'application', t: [2], time: 240 }), (C) => { C.assert(near(cyl.vol(P7, 1.4, 3) + cone.vol(P7, 1.4, 2.1), 22.792), '22.792'); C.model([6.16, 3.7, 22.792]); C.sol([18.48, 4.312]); });
+Volume $= \pi r^2\left(h_1 + \dfrac{h_2}{3}\right) = 6.16 \times (3 + 0.7) = 6.16 \times 3.7 = 22.792$ m³.`, sol: r`Cylinder $18.48$ m³ $+$ cone $4.312$ m³.`, scheme: [['πr² = 6.16', 1], ['Sum of cylinder and cone', 1], ['22.792 m³', 1]], d: 3, c: 'understanding', t: [2], time: 240 }), (C) => { C.assert(near(cyl.vol(P7, 1.4, 3) + cone.vol(P7, 1.4, 2.1), 22.792), '22.792'); C.model([6.16, 3.7, 22.792]); C.sol([18.48, 4.312]); });
 Q('s305', mk.short({ marks: 3, stem: r`Neha writes the total surface area of a solid made of a hemisphere and a cone of the same radius $r$ (slant height $l$) as $\pi rl + 3\pi r^2$. Find her error. Then find the correct surface area for $r = 14$ cm and $l = 50$ cm. Use $\pi = \dfrac{22}{7}$.`, model: r`She used the hemisphere's **total** surface $3\pi r^2$, which includes its flat face. That face is glued to the cone's base and is hidden. Correct: $\pi rl + 2\pi r^2$.
 
 For $r = 14$, $l = 50$: $\pi rl = \dfrac{22}{7} \times 14 \times 50 = 2200$ cm², $2\pi r^2 = 1232$ cm²; surface $= 3432$ cm² (her formula gives $2200 + 1848 = 4048$ cm²).`, sol: 'Count only the outer surfaces.', scheme: [['Identifies the hidden flat face', 1], ['Correct formula', 1], ['3432 cm²', 1]], d: 3, c: 'evaluation', t: [1], time: 240 }), (C) => { C.assert(near(P7 * 14 * 50 + hemi.csa(P7, 14), 3432) && near(P7 * 14 * 50 + hemi.tsa(P7, 14), 4048), 'values'); C.model([2200, 1232, 3432, 1848, 4048]); });
@@ -226,7 +226,7 @@ caseQ('c01', {
   sol: r`$l = \sqrt{4.41 + 51.84} = \sqrt{56.25} = 7.5$. $\pi r^2 = 13.86$; $V = \dfrac13 \times 13.86 \times (7.2 + 4.2) = 52.668$. Surface $= \pi r(l + 2r) = 6.6 \times 11.7 = 77.22$.`,
   children: [
     child('a', mk.mcq({ stem: 'The slant height of the conical part is', opts: ['$7.5$ cm', '$9.3$ cm', '$5.1$ cm', '$7.2$ cm'], key: 'a', sol: r`$l = \sqrt{2.1^2 + 7.2^2} = \sqrt{4.41 + 51.84} = \sqrt{56.25} = 7.5$ cm. Option (b) adds the lengths; (d) is the height.`, d: 2, c: 'understanding', t: [1], time: 60 })),
-    child('b', mk.num({ stem: 'Find the volume of one kulfi in cm³, to two decimal places.', value: 52.67, tol: 0.005, unit: 'cm³', sol: r`$\dfrac13\pi r^2h + \dfrac23\pi r^3 = \dfrac13 \times 13.86 \times (7.2 + 4.2) = 4.62 \times 11.4 = 52.668 \approx 52.67$ cm³.`, scheme: [['52.67 cm³', 1]], d: 3, c: 'application', t: [2], time: 120 })),
+    child('b', mk.num({ stem: 'Find the volume of one kulfi in cm³, to two decimal places.', value: 52.67, tol: 0.005, unit: 'cm³', sol: r`$\dfrac13\pi r^2h + \dfrac23\pi r^3 = \dfrac13 \times 13.86 \times (7.2 + 4.2) = 4.62 \times 11.4 = 52.668 \approx 52.67$ cm³.`, scheme: [['52.67 cm³', 1]], d: 3, c: 'understanding', t: [2], time: 120 })),
     child('c', mk.short({ marks: 2, stem: '**(i)** Each kulfi is wrapped in foil covering its whole surface. Find the area of foil per kulfi.', model: r`Surface $= \pi rl + 2\pi r^2 = \dfrac{22}{7} \times 2.1 \times (7.5 + 4.2) = 6.6 \times 11.7 = 77.22$ cm².`, sol: 'The flat circle is hidden inside.', scheme: [['Visible faces', 1], ['77.22 cm²', 1]], d: 3, c: 'application', t: [1], time: 120 }), [
       mk.short({ marks: 2, stem: '**(ii)** How many litres of kulfi mixture are needed for 100 kulfis?', model: r`$100 \times 52.668 = 5266.8$ cm³ $= 5.2668$ litres $\approx 5.27$ litres.`, sol: '1 litre = 1000 cm³.', scheme: [['5266.8 cm³', 1], ['≈ 5.27 litres', 1]], d: 2, c: 'application', t: [2], time: 90 }),
     ]),
@@ -235,28 +235,28 @@ caseQ('c01', {
 
 caseQ('c02', {
   passage: r`At the Rann Utsav in Kutch, guests stay in tents shaped like a cylinder of radius $2.8$ m and height $2$ m with a conical top of height $2.1$ m. (Use $\pi = \dfrac{22}{7}$.)`,
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   model: r`(a) Option (c). (b) $3.5$ m. (c) (i) $66$ m². Or (ii) $66.528$ m³.`,
   sol: r`$l = \sqrt{7.84 + 4.41} = 3.5$. Canvas $= \pi r(2h + l) = 8.8 \times 7.5 = 66$. Air $= \pi r^2(h_1 + \dfrac{h_2}{3}) = 24.64 \times 2.7 = 66.528$.`,
   children: [
     child('a', mk.mcq({ stem: 'The canvas of the tent (no floor) is', opts: ['TSA of cylinder + TSA of cone', 'CSA of cylinder + TSA of cone', 'CSA of cylinder + CSA of cone', 'TSA of cylinder + CSA of cone'], key: 'c', sol: 'The floor is not canvas, and the circle where the cone meets the cylinder is open inside the tent: only the two curved surfaces.', d: 1, c: 'understanding', t: [1], time: 45 })),
     child('b', mk.num({ stem: 'Find the slant height of the conical top in metres.', value: 3.5, unit: 'm', sol: r`$l = \sqrt{2.8^2 + 2.1^2} = \sqrt{7.84 + 4.41} = \sqrt{12.25} = 3.5$ m.`, scheme: [['3.5 m', 1]], d: 2, c: 'understanding', t: [1], time: 60 })),
     child('c', mk.short({ marks: 2, stem: '**(i)** Find the area of canvas in one tent.', model: r`$2\pi rh + \pi rl = \dfrac{22}{7} \times 2.8 \times (4 + 3.5) = 8.8 \times 7.5 = 66$ m².`, sol: 'Two curved surfaces.', scheme: [['Formula', 1], ['66 m²', 1]], d: 2, c: 'application', t: [1], time: 120 }), [
-      mk.short({ marks: 2, stem: '**(ii)** Find the volume of air in one tent.', model: r`$\pi r^2 = \dfrac{22}{7} \times 7.84 = 24.64$ m². Air $= 24.64 \times 2 + \dfrac13 \times 24.64 \times 2.1 = 49.28 + 17.248 = 66.528$ m³.`, sol: 'Cylinder plus cone.', scheme: [['Cylinder 49.28 and cone 17.248', 1], ['66.528 m³', 1]], d: 3, c: 'application', t: [2], time: 120 }),
+      mk.short({ marks: 2, stem: '**(ii)** Find the volume of air in one tent.', model: r`$\pi r^2 = \dfrac{22}{7} \times 7.84 = 24.64$ m². Air $= 24.64 \times 2 + \dfrac13 \times 24.64 \times 2.1 = 49.28 + 17.248 = 66.528$ m³.`, sol: 'Cylinder plus cone.', scheme: [['Cylinder 49.28 and cone 17.248', 1], ['66.528 m³', 1]], d: 3, c: 'understanding', t: [2], time: 120 }),
     ]),
   ],
 }, (C) => { C.child('a').key('c'); C.child('b').val(R6(slant(2.8, 2.1))); C.child('c').model([R6(cyl.csa(P7, 2.8, 2) + cone.csa(P7, 2.8, 2.1))]); C.child('cii').model([49.28, 17.248, R6(cyl.vol(P7, 2.8, 2) + cone.vol(P7, 2.8, 2.1))]); });
 
 caseQ('c03', {
   passage: r`A grain silo on a farm near Ludhiana is a cylinder of radius $3.5$ m and height $8$ m with a conical roof of height $8.4$ m. (Use $\pi = \dfrac{22}{7}$.)`,
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   model: r`(a) Option (b). (b) $308$ m³. (c) (i) $415.8$ m³. Or (ii) $100.1$ m².`,
   sol: r`$\pi r^2 = 38.5$. Cylinder $= 308$; cone $= \dfrac13 \times 38.5 \times 8.4 = 107.8$; total $415.8$. Roof: $l = \sqrt{12.25 + 70.56} = 9.1$, $\pi rl = 11 \times 9.1 = 100.1$.`,
   children: [
     child('a', mk.mcq({ stem: 'The volume of the silo is', opts: [r`$\pi r^2h_1 + \pi r^2h_2$`, r`$\pi r^2h_1 + \dfrac13\pi r^2h_2$`, r`$\dfrac13\pi r^2(h_1 + h_2)$`, r`$2\pi rh_1 + \pi rl$`], key: 'b', sol: 'Cylinder plus one-third of the cylinder on the same base for the cone. Option (d) is a surface area.', d: 2, c: 'understanding', t: [2], time: 60 })),
-    child('b', mk.num({ stem: 'Find the volume of the cylindrical part in m³.', value: 308, unit: 'm³', sol: r`$\dfrac{22}{7} \times 12.25 \times 8 = 38.5 \times 8 = 308$ m³.`, scheme: [['308 m³', 1]], d: 2, c: 'application', t: [2], time: 60 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** Find the total volume of grain the silo can hold.', model: r`Cone $= \dfrac13 \times 38.5 \times 8.4 = 107.8$ m³. Total $= 308 + 107.8 = 415.8$ m³.`, sol: 'Add the conical part.', scheme: [['Cone 107.8 m³', 1], ['415.8 m³', 1]], d: 2, c: 'application', t: [2], time: 90 }), [
-      mk.short({ marks: 2, stem: '**(ii)** Find the area of metal sheet needed for the conical roof.', model: r`$l = \sqrt{3.5^2 + 8.4^2} = \sqrt{12.25 + 70.56} = \sqrt{82.81} = 9.1$ m. Sheet $= \pi rl = \dfrac{22}{7} \times 3.5 \times 9.1 = 100.1$ m².`, sol: 'Curved surface of the cone.', scheme: [['l = 9.1 m', 1], ['100.1 m²', 1]], d: 3, c: 'application', t: [1], time: 120 }),
+    child('b', mk.num({ stem: 'Find the volume of the cylindrical part in m³.', value: 308, unit: 'm³', sol: r`$\dfrac{22}{7} \times 12.25 \times 8 = 38.5 \times 8 = 308$ m³.`, scheme: [['308 m³', 1]], d: 2, c: 'understanding', t: [2], time: 60 })),
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the total volume of grain the silo can hold.', model: r`Cone $= \dfrac13 \times 38.5 \times 8.4 = 107.8$ m³. Total $= 308 + 107.8 = 415.8$ m³.`, sol: 'Add the conical part.', scheme: [['Cone 107.8 m³', 1], ['415.8 m³', 1]], d: 2, c: 'understanding', t: [2], time: 90 }), [
+      mk.short({ marks: 2, stem: '**(ii)** Find the area of metal sheet needed for the conical roof.', model: r`$l = \sqrt{3.5^2 + 8.4^2} = \sqrt{12.25 + 70.56} = \sqrt{82.81} = 9.1$ m. Sheet $= \pi rl = \dfrac{22}{7} \times 3.5 \times 9.1 = 100.1$ m².`, sol: 'Curved surface of the cone.', scheme: [['l = 9.1 m', 1], ['100.1 m²', 1]], d: 3, c: 'understanding', t: [1], time: 120 }),
     ]),
   ],
 }, (C) => { C.child('a').key('b'); C.child('b').val(R6(cyl.vol(P7, 3.5, 8))); C.child('c').model([R6(cone.vol(P7, 3.5, 8.4)), R6(cyl.vol(P7, 3.5, 8) + cone.vol(P7, 3.5, 8.4))]); C.child('cii').model([R6(slant(3.5, 8.4)), R6(cone.csa(P7, 3.5, 8.4))]); });
@@ -268,7 +268,7 @@ caseQ('c04', {
   sol: r`$V = \pi r^2\left(12 + \dfrac43\right) = 28.26 \times \dfrac{40}{3} = 376.8$. Surface $= \pi r(2h + r + l) = 9.42 \times 32 = 301.44$. Hemisphere $18\pi$ vs cone $12\pi$: $6\pi = 18.84$.`,
   children: [
     child('a', mk.mcq({ stem: 'Which surfaces make up the outer surface of the rocket (including its bottom)?', opts: ['TSA of cylinder + CSA of cone', 'CSA of cylinder + TSA of cone', 'TSA of cylinder + TSA of cone', 'CSA of cylinder + CSA of cone + bottom circle'], key: 'd', sol: 'The top of the cylinder and the base of the cone are glued together and hidden; the bottom circle is visible.', d: 2, c: 'understanding', t: [1], time: 60 })),
-    child('b', mk.num({ stem: 'Find the volume of the rocket in cm³.', value: 376.8, tol: 0.005, unit: 'cm³', sol: r`$3.14 \times 9 \times 12 + \dfrac13 \times 3.14 \times 9 \times 4 = 339.12 + 37.68 = 376.8$ cm³.`, scheme: [['376.8 cm³', 1]], d: 2, c: 'application', t: [2], time: 90 })),
+    child('b', mk.num({ stem: 'Find the volume of the rocket in cm³.', value: 376.8, tol: 0.005, unit: 'cm³', sol: r`$3.14 \times 9 \times 12 + \dfrac13 \times 3.14 \times 9 \times 4 = 339.12 + 37.68 = 376.8$ cm³.`, scheme: [['376.8 cm³', 1]], d: 2, c: 'understanding', t: [2], time: 90 })),
     child('c', mk.short({ marks: 2, stem: '**(i)** Find the total outer surface area of the rocket, including the bottom.', model: r`$l = 5$ cm. Surface $= 2\pi rh + \pi r^2 + \pi rl = 3.14 \times 3 \times (24 + 3 + 5) = 9.42 \times 32 = 301.44$ cm².`, sol: 'Three visible surfaces.', scheme: [['l = 5 and faces', 1], ['301.44 cm²', 1]], d: 3, c: 'application', t: [1], time: 150 }), [
       mk.short({ marks: 2, stem: '**(ii)** If the cone were replaced by a hemisphere of radius 3 cm, by how much would the volume change?', model: r`Cone $= \dfrac13\pi \times 9 \times 4 = 12\pi$; hemisphere $= \dfrac23\pi \times 27 = 18\pi$. The volume increases by $6\pi = 6 \times 3.14 = 18.84$ cm³.`, sol: 'Compare the two tops only.', scheme: [['12π and 18π', 1], ['Increase 18.84 cm³', 1]], d: 3, c: 'analysis', t: [2], time: 120 }),
     ]),
@@ -277,14 +277,70 @@ caseQ('c04', {
 
 caseQ('c05', {
   passage: r`Channapatna toy makers turn wooden spinning tops: a cone of radius $2.1$ cm and height $2.8$ cm, point downwards, joined to a hemisphere of radius $2.1$ cm on top, as shown. (Use $\pi = \dfrac{22}{7}$.)`,
-  assets: [figs.lattu], d: 3, c: 'application',
+  assets: [figs.lattu], d: 3, c: 'understanding',
   model: r`(a) Option (b). (b) $50.82$ cm². (c) (i) $32.34$ cm³. Or (ii) $35.574$ cm³.`,
   sol: r`$l = \sqrt{4.41 + 7.84} = 3.5$. Surface $= 6.6 \times (3.5 + 4.2) = 50.82$. $\pi r^2 = 13.86$; $V = \dfrac13 \times 13.86 \times (2.8 + 4.2) = 32.34$. Box: $13.86 \times 4.9 = 67.914$; empty $35.574$.`,
   children: [
     child('a', mk.mcq({ stem: 'The surfaces that are painted are', opts: ['CSA of cone + TSA of hemisphere', 'CSA of cone + CSA of hemisphere', 'TSA of cone + CSA of hemisphere', 'TSA of cone + TSA of hemisphere'], key: 'b', sol: 'The flat faces are glued together; only the two curved surfaces are outside.', d: 1, c: 'understanding', t: [1], time: 45 })),
-    child('b', mk.num({ stem: 'Find the area painted on one top, in cm².', value: 50.82, tol: 0.005, unit: 'cm²', sol: r`$l = \sqrt{2.1^2 + 2.8^2} = 3.5$ cm. $\pi rl + 2\pi r^2 = \dfrac{22}{7} \times 2.1 \times (3.5 + 4.2) = 6.6 \times 7.7 = 50.82$ cm².`, scheme: [['50.82 cm²', 1]], d: 2, c: 'application', t: [1], time: 90 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** Find the volume of wood in one top.', model: r`$\pi r^2 = 13.86$ cm². $V = \dfrac13 \times 13.86 \times 2.8 + \dfrac23 \times 13.86 \times 2.1 = 12.936 + 19.404 = 32.34$ cm³.`, sol: 'Cone plus hemisphere.', scheme: [['Cone 12.936 and hemisphere 19.404', 1], ['32.34 cm³', 1]], d: 2, c: 'application', t: [2], time: 120 }), [
+    child('b', mk.num({ stem: 'Find the area painted on one top, in cm².', value: 50.82, tol: 0.005, unit: 'cm²', sol: r`$l = \sqrt{2.1^2 + 2.8^2} = 3.5$ cm. $\pi rl + 2\pi r^2 = \dfrac{22}{7} \times 2.1 \times (3.5 + 4.2) = 6.6 \times 7.7 = 50.82$ cm².`, scheme: [['50.82 cm²', 1]], d: 2, c: 'understanding', t: [1], time: 90 })),
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the volume of wood in one top.', model: r`$\pi r^2 = 13.86$ cm². $V = \dfrac13 \times 13.86 \times 2.8 + \dfrac23 \times 13.86 \times 2.1 = 12.936 + 19.404 = 32.34$ cm³.`, sol: 'Cone plus hemisphere.', scheme: [['Cone 12.936 and hemisphere 19.404', 1], ['32.34 cm³', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), [
       mk.short({ marks: 2, stem: '**(ii)** Each top is packed upright in the smallest cylindrical box that holds it. Find the empty space in the box.', model: r`Box: radius $2.1$ cm, height $2.8 + 2.1 = 4.9$ cm: $13.86 \times 4.9 = 67.914$ cm³. Empty $= 67.914 - 32.34 = 35.574$ cm³.`, sol: 'Box height = cone height + radius.', scheme: [['Box 67.914 cm³', 1], ['35.574 cm³', 1]], d: 3, c: 'analysis', t: [2], time: 120 }),
     ]),
   ],
 }, (C) => { C.child('a').key('b'); C.child('b').val(R6(cone.csa(P7, 2.1, 2.8) + hemi.csa(P7, 2.1)), 0.005); const v = cone.vol(P7, 2.1, 2.8) + hemi.vol(P7, 2.1); C.child('c').model([12.936, 19.404, R6(v)]); C.child('cii').model([R6(cyl.vol(P7, 2.1, 4.9)), R6(cyl.vol(P7, 2.1, 4.9) - v)]); });
+// =============================================================== added 2026-10-27 (assessment-designer)
+// Recall/understanding written items for the board-paper competency balance (blueprint 54/24/22 Standard,
+// 75/15/10 Basic). Appended after every existing item so earlier ids do not move.
+Q('u301', mk.short({
+  marks: 3,
+  stem: r`A solid wooden toy is a cone of base radius $7$ cm and height $10$ cm standing on a hemisphere of the same radius, with the flat faces glued together. Find the volume of wood in the toy. Use $\pi = \dfrac{22}{7}$.`,
+  model: r`Volume of the cone $= \dfrac13\pi r^2h = \dfrac13 \times \dfrac{22}{7} \times 7 \times 7 \times 10 = \dfrac{1540}{3} \approx 513.33$ cm³.
+
+Volume of the hemisphere $= \dfrac23\pi r^3 = \dfrac23 \times \dfrac{22}{7} \times 7 \times 7 \times 7 = \dfrac{2156}{3} \approx 718.67$ cm³.
+
+Total volume $= \dfrac{1540 + 2156}{3} = \dfrac{3696}{3} = 1232$ cm³.`,
+  sol: r`The volume of a combined solid is the sum of the volumes of its parts.`,
+  scheme: [['Cone 1540/3 cm³', 1], ['Hemisphere 2156/3 cm³', 1], ['Total 1232 cm³', 1]],
+  d: 2, c: 'understanding', t: [2], time: 210,
+}), (C) => { const v1 = cone.vol(P7, 7, 10), v2 = hemi.vol(P7, 7); C.assert(near(v1, 1540 / 3) && near(v2, 2156 / 3) && near(v1 + v2, 1232), 'volumes'); C.model([513.33, 718.67, 1232]); });
+Q('u501', mk.long({
+  stem: r`A storage tank is a cylinder of radius $2.1$ m and height $3$ m with a hemispherical dome of the same radius on top. Use $\pi = \dfrac{22}{7}$.
+
+(a) Find the volume of the cylindrical part.
+(b) Find the volume of the dome.
+(c) Find the capacity of the tank in litres.
+(d) Find the curved surface area of the cylindrical part and of the dome.`,
+  model: r`(a) Cylinder: $\pi r^2h = \dfrac{22}{7} \times 2.1 \times 2.1 \times 3 = 13.86 \times 3 = 41.58$ m³.
+
+(b) Dome: $\dfrac23\pi r^3 = \dfrac23 \times 13.86 \times 2.1 = 19.404$ m³.
+
+(c) Capacity $= 41.58 + 19.404 = 60.984$ m³ $= 60.984 \times 1000 = 60984$ litres.
+
+(d) Curved surface of the cylinder $= 2\pi rh = 2 \times \dfrac{22}{7} \times 2.1 \times 3 = 39.6$ m². Curved surface of the dome $= 2\pi r^2 = 2 \times 13.86 = 27.72$ m².`,
+  sol: r`$\pi r^2 = \dfrac{22}{7} \times 4.41 = 13.86$ is used in every part; $1$ m³ $= 1000$ litres.`,
+  scheme: [['Cylinder 41.58 m³', 1], ['Dome 19.404 m³', 1], ['60984 litres', 1], ['CSA cylinder 39.6 m²', 1], ['CSA dome 27.72 m²', 1]],
+  d: 2, c: 'understanding', t: [1, 2], time: 540,
+}), (C) => { const vc = cyl.vol(P7, 2.1, 3), vh = hemi.vol(P7, 2.1); C.assert(near(vc, 41.58) && near(vh, 19.404) && near((vc + vh) * 1000, 60984, 1e-6), 'volumes'); C.assert(near(cyl.csa(P7, 2.1, 3), 39.6) && near(hemi.csa(P7, 2.1), 27.72), 'surfaces'); C.model([41.58, 19.404, 60984, 39.6, 27.72]); });
+Q('u502', mk.long({
+  stem: r`A solid is made of a cylinder of radius $3.5$ cm and height $10$ cm with a cone of the same radius and height $12$ cm on top. Use $\pi = \dfrac{22}{7}$.
+
+(a) Find the volume of the cylinder.
+(b) Find the volume of the cone.
+(c) Find the volume of the solid.
+(d) Find the slant height of the cone.
+(e) Find the curved surface area of the cone.`,
+  model: r`$\pi r^2 = \dfrac{22}{7} \times 3.5 \times 3.5 = 38.5$ cm².
+
+(a) Cylinder: $\pi r^2 h = 38.5 \times 10 = 385$ cm³.
+
+(b) Cone: $\dfrac13 \pi r^2 h = \dfrac13 \times 38.5 \times 12 = 154$ cm³.
+
+(c) Solid: $385 + 154 = 539$ cm³.
+
+(d) $l = \sqrt{r^2 + h^2} = \sqrt{12.25 + 144} = \sqrt{156.25} = 12.5$ cm.
+
+(e) $\pi r l = \dfrac{22}{7} \times 3.5 \times 12.5 = 137.5$ cm².`,
+  sol: r`Volumes of the parts add; the slant height comes from Pythagoras.`,
+  scheme: [['Cylinder 385 cm³', 1], ['Cone 154 cm³', 1], ['Total 539 cm³', 1], ['l = 12.5 cm', 1], ['CSA 137.5 cm²', 1]],
+  d: 1, c: 'understanding', t: [1, 2], time: 420,
+}), (C) => { const v1 = cyl.vol(P7, 3.5, 10), v2 = cone.vol(P7, 3.5, 12); C.assert(near(v1, 385) && near(v2, 154) && near(v1 + v2, 539) && near(slant(3.5, 12), 12.5) && near(cone.csa(P7, 3.5, 12), 137.5), 'values'); C.model([385, 154, 539, 12.5, 137.5]); });

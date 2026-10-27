@@ -64,13 +64,13 @@ Q('fb5', mk.fill({ stem: 'A straight path from $(1, -2)$ to $(4, 6)$ crosses the
 
 // =============================================================== Numerical
 Q('n01', mk.num({ stem: 'Find the perimeter of the triangle with vertices $A(0, 0)$, $B(6, 8)$ and $C(6, 0)$.', value: 24, unit: 'units', marks: 2, sol: r`**Step 1.** $AB = \sqrt{36 + 64} = 10$, $BC = 8$ (vertical), $CA = 6$ (horizontal). **Step 2.** Perimeter $= 10 + 8 + 6 = 24$ units.`, scheme: [['Three sides 10, 8, 6', 1], ['24', 1]], d: 2, c: 'understanding', t: [1], time: 120 }), (C) => { const [A, B, Cc] = [[0, 0], [6, 8], [6, 0]]; C.val(dist(A, B) + dist(B, Cc) + dist(Cc, A)); });
-Q('n02', mk.num({ stem: 'The distance between $(x, 7)$ and $(3, -1)$ is $10$ units. Find the positive value of $x$.', value: 9, marks: 2, sol: r`**Step 1.** $(x - 3)^2 + 64 = 100 \Rightarrow (x - 3)^2 = 36 \Rightarrow x - 3 = \pm 6$. **Step 2.** $x = 9$ or $x = -3$; the positive value is $9$.`, scheme: [['(x − 3)² = 36', 1], ['x = 9', 1]], d: 2, c: 'application', t: [1], time: 120 }), (C) => { const xs = search((x) => near(dist([x, 7], [3, -1]), 10)); C.assert(xs.join() === '-3,9', xs.join()); C.val(xs[1]); });
+Q('n02', mk.num({ stem: 'The distance between $(x, 7)$ and $(3, -1)$ is $10$ units. Find the positive value of $x$.', value: 9, marks: 2, sol: r`**Step 1.** $(x - 3)^2 + 64 = 100 \Rightarrow (x - 3)^2 = 36 \Rightarrow x - 3 = \pm 6$. **Step 2.** $x = 9$ or $x = -3$; the positive value is $9$.`, scheme: [['(x − 3)² = 36', 1], ['x = 9', 1]], d: 2, c: 'understanding', t: [1], time: 120 }), (C) => { const xs = search((x) => near(dist([x, 7], [3, -1]), 10)); C.assert(xs.join() === '-3,9', xs.join()); C.val(xs[1]); });
 Q('n03', mk.num({ stem: 'Find the distance between $(-3, -4)$ and $(3, 4)$.', value: 10, unit: 'units', sol: r`$\sqrt{6^2 + 8^2} = \sqrt{100} = 10$ units.`, scheme: [['10', 1]], d: 1, c: 'understanding', t: [1], time: 45 }), (C) => C.val(dist([-3, -4], [3, 4])));
 Q('n04', mk.num({ stem: 'The point $P$ divides the segment joining $A(-1, 7)$ and $B(4, -3)$ internally in the ratio $2 : 3$. Find the $y$-coordinate of $P$.', value: 3, marks: 2, sol: r`**Step 1.** $y = \dfrac{2 \times (-3) + 3 \times 7}{2 + 3} = \dfrac{-6 + 21}{5}$. **Step 2.** $y = \dfrac{15}{5} = 3$. (The point is $(1, 3)$.)`, scheme: [['Section formula with m₁ = 2 paired with B', 1], ['y = 3', 1]], d: 2, c: 'understanding', t: [2], time: 90 }), (C) => { const P = divide([-1, 7], [4, -3], 2, 3); C.val(P[1]); C.assert(same(P, [1, 3]), 'P'); });
-Q('n05', mk.num({ stem: 'The segment joining $A(-4, 9)$ and $B(8, -3)$ crosses the $y$-axis at $P(0, y)$. Find $y$.', value: 5, marks: 2, sol: r`**Step 1.** $x = 0$: $\dfrac{8k - 4}{k + 1} = 0 \Rightarrow k = \dfrac12$, so $AP : PB = 1 : 2$. **Step 2.** $y = \dfrac{1 \times (-3) + 2 \times 9}{3} = \dfrac{15}{3} = 5$.`, scheme: [['Ratio 1 : 2', 1], ['y = 5', 1]], d: 3, c: 'application', t: [2], time: 150 }), (C) => { const A = [-4, 9], B = [8, -3]; const t = -A[0] / (B[0] - A[0]); C.assert(near(t, 1 / 3), 'ratio 1:2'); C.val(A[1] + t * (B[1] - A[1])); });
-Q('n06', mk.num({ stem: 'A circle has centre $(3, -1)$ and passes through $(-2, 11)$. Find its diameter.', value: 26, unit: 'units', marks: 2, sol: r`**Step 1.** Radius $= \sqrt{(-2 - 3)^2 + (11 + 1)^2} = \sqrt{25 + 144} = 13$. **Step 2.** Diameter $= 2 \times 13 = 26$ units.`, scheme: [['Radius 13', 1], ['Diameter 26', 1]], d: 2, c: 'application', t: [1], time: 120 }), (C) => C.val(2 * dist([3, -1], [-2, 11])));
+Q('n05', mk.num({ stem: 'The segment joining $A(-4, 9)$ and $B(8, -3)$ crosses the $y$-axis at $P(0, y)$. Find $y$.', value: 5, marks: 2, sol: r`**Step 1.** $x = 0$: $\dfrac{8k - 4}{k + 1} = 0 \Rightarrow k = \dfrac12$, so $AP : PB = 1 : 2$. **Step 2.** $y = \dfrac{1 \times (-3) + 2 \times 9}{3} = \dfrac{15}{3} = 5$.`, scheme: [['Ratio 1 : 2', 1], ['y = 5', 1]], d: 3, c: 'understanding', t: [2], time: 150 }), (C) => { const A = [-4, 9], B = [8, -3]; const t = -A[0] / (B[0] - A[0]); C.assert(near(t, 1 / 3), 'ratio 1:2'); C.val(A[1] + t * (B[1] - A[1])); });
+Q('n06', mk.num({ stem: 'A circle has centre $(3, -1)$ and passes through $(-2, 11)$. Find its diameter.', value: 26, unit: 'units', marks: 2, sol: r`**Step 1.** Radius $= \sqrt{(-2 - 3)^2 + (11 + 1)^2} = \sqrt{25 + 144} = 13$. **Step 2.** Diameter $= 2 \times 13 = 26$ units.`, scheme: [['Radius 13', 1], ['Diameter 26', 1]], d: 2, c: 'understanding', t: [1], time: 120 }), (C) => C.val(2 * dist([3, -1], [-2, 11])));
 Q('n07', mk.num({ stem: 'On a survey map of Hyderabad, 1 unit represents 0.5 km. A drone flies straight from $H(1, 2)$ to $K(9, 17)$. How many kilometres does it fly?', value: 8.5, unit: 'km', marks: 2, sol: r`**Step 1.** $HK = \sqrt{8^2 + 15^2} = \sqrt{64 + 225} = \sqrt{289} = 17$ units. **Step 2.** $17 \times 0.5 = 8.5$ km.`, scheme: [['HK = 17 units', 1], ['8.5 km', 1]], d: 2, c: 'application', t: [1], time: 120 }), (C) => C.val(dist([1, 2], [9, 17]) * 0.5));
-Q('n08', mk.num({ stem: 'Find the length of the median $AD$ of the triangle with vertices $A(1, 8)$, $B(-2, 1)$ and $C(6, 3)$, correct to two decimal places.', value: 6.08, tol: 0.005, unit: 'units', marks: 2, sol: r`**Step 1.** $D$ is the midpoint of $BC$: $\left(\dfrac{-2 + 6}{2}, \dfrac{1 + 3}{2}\right) = (2, 2)$. **Step 2.** $AD = \sqrt{1^2 + 6^2} = \sqrt{37} \approx 6.08$ units.`, scheme: [['D = (2, 2)', 1], ['AD = √37 ≈ 6.08', 1]], d: 3, c: 'application', t: [1, 2], time: 150 }), (C) => { const D = mid([-2, 1], [6, 3]); C.assert(same(D, [2, 2]), 'D'); C.val(dist([1, 8], D), 0.005); });
+Q('n08', mk.num({ stem: 'Find the length of the median $AD$ of the triangle with vertices $A(1, 8)$, $B(-2, 1)$ and $C(6, 3)$, correct to two decimal places.', value: 6.08, tol: 0.005, unit: 'units', marks: 2, sol: r`**Step 1.** $D$ is the midpoint of $BC$: $\left(\dfrac{-2 + 6}{2}, \dfrac{1 + 3}{2}\right) = (2, 2)$. **Step 2.** $AD = \sqrt{1^2 + 6^2} = \sqrt{37} \approx 6.08$ units.`, scheme: [['D = (2, 2)', 1], ['AD = √37 ≈ 6.08', 1]], d: 3, c: 'understanding', t: [1, 2], time: 150 }), (C) => { const D = mid([-2, 1], [6, 3]); C.assert(same(D, [2, 2]), 'D'); C.val(dist([1, 8], D), 0.005); });
 Q('n09', mk.num({ stem: 'Find the $x$-coordinate of the point that divides the segment joining $(-2, 4)$ and $(8, 9)$ internally in the ratio $3 : 2$.', value: 4, sol: r`$x = \dfrac{3 \times 8 + 2 \times (-2)}{5} = \dfrac{20}{5} = 4$.`, scheme: [['4', 1]], d: 1, c: 'understanding', t: [2], time: 60 }), (C) => C.val(divide([-2, 4], [8, 9], 3, 2)[0]));
 
 // =============================================================== Short answer, 2 marks
@@ -79,23 +79,23 @@ Q('s201', mk.short({ marks: 2, stem: 'Find the distance between $P(-4, 3)$ and $
 Midpoint $= \left(\dfrac{-4 + 4}{2}, \dfrac{3 - 3}{2}\right) = (0, 0)$, the origin.`, sol: r`$P$ and $Q$ are reflections of each other in the origin, so each is $5$ units from it.`, scheme: [['PQ = 10', 1], ['Midpoint (0, 0)', 1]], d: 2, c: 'understanding', t: [1, 2], time: 90 }), (C) => { C.assert(same(mid([-4, 3], [4, -3]), [0, 0]), 'mid'); C.model([dist([-4, 3], [4, -3])]); });
 Q('s202', mk.short({ marks: 2, stem: 'Find the values of $y$ for which the distance between $A(2, y)$ and $B(-4, 3)$ is $10$ units.', model: r`$(2 + 4)^2 + (y - 3)^2 = 100 \Rightarrow (y - 3)^2 = 64 \Rightarrow y - 3 = \pm 8$.
 
-So $y = 11$ or $y = -5$.`, sol: r`Both values work: the two points $(2, 11)$ and $(2, -5)$ are each $10$ units from $B$.`, scheme: [['(y − 3)² = 64', 1], ['y = 11 or −5', 1]], d: 2, c: 'application', t: [1], time: 120 }), (C) => { const ys = search((y) => near(dist([2, y], [-4, 3]), 10)); C.assert(ys.join() === '-5,11', ys.join()); C.model([64, 11, -5]); });
+So $y = 11$ or $y = -5$.`, sol: r`Both values work: the two points $(2, 11)$ and $(2, -5)$ are each $10$ units from $B$.`, scheme: [['(y − 3)² = 64', 1], ['y = 11 or −5', 1]], d: 2, c: 'understanding', t: [1], time: 120 }), (C) => { const ys = search((y) => near(dist([2, y], [-4, 3]), 10)); C.assert(ys.join() === '-5,11', ys.join()); C.model([64, 11, -5]); });
 Q('s203', mk.short({ marks: 2, stem: 'Find a relation between $x$ and $y$ such that the point $P(x, y)$ is equidistant from $A(5, 1)$ and $B(-1, 5)$.', model: r`$PA^2 = PB^2$: $(x - 5)^2 + (y - 1)^2 = (x + 1)^2 + (y - 5)^2$.
 
-$-10x + 25 - 2y + 1 = 2x + 1 - 10y + 25 \Rightarrow -12x + 8y = 0 \Rightarrow 3x = 2y$.`, sol: r`**Check:** the midpoint $(2, 3)$ of $AB$ satisfies $3 \times 2 = 2 \times 3$, as it must.`, scheme: [['PA² = PB² expanded', 1], ['3x = 2y', 1]], d: 3, c: 'application', t: [1], time: 150 }), (C) => { for (const [x, y] of [[2, 3], [4, 6], [-2, -3]]) C.assert(near(dist([x, y], [5, 1]), dist([x, y], [-1, 5])), `(${x}, ${y}) equidistant`); C.assert(!near(dist([1, 1], [5, 1]), dist([1, 1], [-1, 5])), 'off the line'); C.model(['3x = 2y']); });
+$-10x + 25 - 2y + 1 = 2x + 1 - 10y + 25 \Rightarrow -12x + 8y = 0 \Rightarrow 3x = 2y$.`, sol: r`**Check:** the midpoint $(2, 3)$ of $AB$ satisfies $3 \times 2 = 2 \times 3$, as it must.`, scheme: [['PA² = PB² expanded', 1], ['3x = 2y', 1]], d: 3, c: 'understanding', t: [1], time: 150 }), (C) => { for (const [x, y] of [[2, 3], [4, 6], [-2, -3]]) C.assert(near(dist([x, y], [5, 1]), dist([x, y], [-1, 5])), `(${x}, ${y}) equidistant`); C.assert(!near(dist([1, 1], [5, 1]), dist([1, 1], [-1, 5])), 'off the line'); C.model(['3x = 2y']); });
 Q('s204', mk.short({ marks: 2, stem: 'Find the coordinates of the point that divides the segment joining $A(4, -3)$ and $B(-6, 7)$ internally in the ratio $3 : 2$.', model: r`$x = \dfrac{3(-6) + 2(4)}{3 + 2} = \dfrac{-18 + 8}{5} = -2$, $\quad y = \dfrac{3(7) + 2(-3)}{5} = \dfrac{21 - 6}{5} = 3$.
 
 The point is $(-2, 3)$.`, sol: r`**Check:** $AP = \sqrt{36 + 36} = 6\sqrt2$, $PB = \sqrt{16 + 16} = 4\sqrt2$, ratio $3 : 2$.`, scheme: [['Correct substitution', 1], ['(−2, 3)', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), (C) => { const P = divide([4, -3], [-6, 7], 3, 2); C.assert(same(P, [-2, 3]), 'P'); C.model([-2, 3]); C.sol([6, 4]); });
 Q('s205', mk.short({ marks: 2, stem: '$M(3, -2)$ is the midpoint of the segment joining $A(x, 1)$ and $B(4, y)$. Find $x$ and $y$.', model: r`$\dfrac{x + 4}{2} = 3 \Rightarrow x = 2$; $\quad \dfrac{1 + y}{2} = -2 \Rightarrow y = -5$.`, sol: r`**Check:** the midpoint of $(2, 1)$ and $(4, -5)$ is $(3, -2)$.`, scheme: [['x = 2', 1], ['y = −5', 1]], d: 1, c: 'understanding', t: [2], time: 90 }), (C) => { C.assert(same(mid([2, 1], [4, -5]), [3, -2]), 'mid'); C.model([2, -5]); });
 Q('s206', mk.short({ marks: 2, stem: 'Find the ratio in which the $y$-axis divides the segment joining $A(6, -2)$ and $B(-3, 7)$. Also find the point of division.', model: r`Let the ratio be $k : 1$. On the $y$-axis $x = 0$: $\dfrac{-3k + 6}{k + 1} = 0 \Rightarrow k = 2$. Ratio $2 : 1$.
 
-$y = \dfrac{2 \times 7 + 1 \times (-2)}{3} = \dfrac{12}{3} = 4$. The point is $(0, 4)$.`, sol: 'Use the k : 1 form, then the coordinate that must be zero.', scheme: [['Ratio 2 : 1', 1], ['(0, 4)', 1]], d: 2, c: 'application', t: [2], time: 150 }), (C) => { const A = [6, -2], B = [-3, 7]; const t = -A[0] / (B[0] - A[0]); C.assert(near(t / (1 - t), 2) && same(divide(A, B, 2, 1), [0, 4]), 'ratio and point'); C.model([2, 4]); });
+$y = \dfrac{2 \times 7 + 1 \times (-2)}{3} = \dfrac{12}{3} = 4$. The point is $(0, 4)$.`, sol: 'Use the k : 1 form, then the coordinate that must be zero.', scheme: [['Ratio 2 : 1', 1], ['(0, 4)', 1]], d: 2, c: 'understanding', t: [2], time: 150 }), (C) => { const A = [6, -2], B = [-3, 7]; const t = -A[0] / (B[0] - A[0]); C.assert(near(t / (1 - t), 2) && same(divide(A, B, 2, 1), [0, 4]), 'ratio and point'); C.model([2, 4]); });
 Q('s207', mk.short({ marks: 2, stem: 'Arjun finds the distance between $(-3, 5)$ and $(2, -7)$ as $\\sqrt{(2 - 3)^2 + (-7 - 5)^2} = \\sqrt{145}$. Find his mistake and give the correct distance.', model: r`He used $x_1 = 3$ instead of $x_1 = -3$: the first bracket should be $2 - (-3) = 5$.
 
 Correct distance: $\sqrt{5^2 + (-12)^2} = \sqrt{169} = 13$ units.`, sol: r`Substitute negative coordinates inside brackets to keep their signs.`, scheme: [['Identifies the sign error in x₁', 1], ['13', 1]], d: 2, c: 'evaluation', t: [1], time: 120 }), (C) => { C.assert(dist([-3, 5], [2, -7]) === 13 && near(Math.hypot(2 - 3, -7 - 5), Math.sqrt(145)), 'his and correct'); C.model([5, 169, 13]); });
 Q('s208', mk.short({ marks: 2, stem: 'Show that $A(2, -2)$, $B(8, 4)$ and $C(5, 7)$ are the vertices of a right-angled triangle. At which vertex is the right angle?', model: r`$AB^2 = 36 + 36 = 72$, $BC^2 = 9 + 9 = 18$, $AC^2 = 9 + 81 = 90$.
 
-$AB^2 + BC^2 = 72 + 18 = 90 = AC^2$, so by the converse of Pythagoras' theorem the triangle is right-angled, with the right angle at $B$ (opposite the longest side $AC$).`, sol: 'Compare squared lengths; there is no need to take square roots.', scheme: [['Three squared lengths', 1], ['Conclusion: right angle at B', 1]], d: 2, c: 'application', t: [1], time: 150 }), (C) => { const [A, B, Cc] = [[2, -2], [8, 4], [5, 7]]; const sq = (P, Q) => dist(P, Q) ** 2; C.assert(near(sq(A, B) + sq(B, Cc), sq(A, Cc)), 'right at B'); C.model([72, 18, 90]); });
+$AB^2 + BC^2 = 72 + 18 = 90 = AC^2$, so by the converse of Pythagoras' theorem the triangle is right-angled, with the right angle at $B$ (opposite the longest side $AC$).`, sol: 'Compare squared lengths; there is no need to take square roots.', scheme: [['Three squared lengths', 1], ['Conclusion: right angle at B', 1]], d: 2, c: 'understanding', t: [1], time: 150 }), (C) => { const [A, B, Cc] = [[2, -2], [8, 4], [5, 7]]; const sq = (P, Q) => dist(P, Q) ** 2; C.assert(near(sq(A, B) + sq(B, Cc), sq(A, Cc)), 'right at B'); C.model([72, 18, 90]); });
 Q('s209', mk.short({ marks: 2, stem: 'Find the point on the segment joining $A(-5, 4)$ and $B(7, -2)$ that is twice as far from $A$ as from $B$.', model: r`$AP = 2PB$ means $AP : PB = 2 : 1$.
 
 $P = \left(\dfrac{2 \times 7 + 1 \times (-5)}{3}, \dfrac{2 \times (-2) + 1 \times 4}{3}\right) = \left(\dfrac{9}{3}, \dfrac{0}{3}\right) = (3, 0)$.`, sol: r`**Check:** $AP = \sqrt{64 + 16} = 4\sqrt5$, $PB = \sqrt{16 + 4} = 2\sqrt5$.`, scheme: [['Ratio 2 : 1', 1], ['(3, 0)', 1]], d: 2, c: 'application', t: [2], time: 120 }), (C) => { const P = divide([-5, 4], [7, -2], 2, 1); C.assert(same(P, [3, 0]) && near(dist([-5, 4], P), 2 * dist(P, [7, -2])), 'P'); C.model([3, 0]); });
@@ -118,10 +118,10 @@ Equilateral: $AC = AB$, so $9 + (k - 1)^2 = 36 \Rightarrow (k - 1)^2 = 27 \Right
 Since $k > 1$, $k = 1 + 3\sqrt3 \approx 6.20$.`, sol: r`$C$ lies on the perpendicular bisector $x = 4$ of $AB$, at height $3\sqrt3$ (the height of an equilateral triangle of side $6$) above $AB$.`, scheme: [['AB = 6 and AC = BC', 1], ['(k − 1)² = 27', 1], ['k = 1 + 3√3', 1]], d: 4, c: 'analysis', t: [1], time: 300 }), (C) => { const k = 1 + 3 * Math.sqrt(3); const [A, B, Cc] = [[1, 1], [7, 1], [4, k]]; C.assert(near(dist(A, B), dist(A, Cc)) && near(dist(A, B), dist(B, Cc)), 'equilateral'); C.model([6, 27, '1 + 3\\sqrt3', 6.2]); });
 Q('s304', mk.short({ marks: 3, stem: 'Find the coordinates of the points that divide the segment joining $A(-4, 1)$ and $B(8, 9)$ into four equal parts.', model: r`The points divide $AB$ in the ratios $1 : 3$, $1 : 1$ and $3 : 1$.
 
-$P = \left(\dfrac{8 - 12}{4}, \dfrac{9 + 3}{4}\right) = (-1, 3)$; $\quad Q = \left(\dfrac{-4 + 8}{2}, \dfrac{1 + 9}{2}\right) = (2, 5)$; $\quad R = \left(\dfrac{24 - 4}{4}, \dfrac{27 + 1}{4}\right) = (5, 7)$.`, sol: r`**Check:** each step from $A$ to $P$ to $Q$ to $R$ to $B$ adds $(3, 2)$.`, scheme: [['Ratios 1 : 3, 1 : 1, 3 : 1', 1], ['P(−1, 3) and Q(2, 5)', 1], ['R(5, 7)', 1]], d: 3, c: 'application', t: [2], time: 240 }), (C) => { const A = [-4, 1], B = [8, 9]; const pts = [[1, 3], [1, 1], [3, 1]].map(([m, n]) => divide(A, B, m, n)); C.assert(same(pts[0], [-1, 3]) && same(pts[1], [2, 5]) && same(pts[2], [5, 7]), 'points'); C.model([-1, 3, 2, 5, 7]); });
+$P = \left(\dfrac{8 - 12}{4}, \dfrac{9 + 3}{4}\right) = (-1, 3)$; $\quad Q = \left(\dfrac{-4 + 8}{2}, \dfrac{1 + 9}{2}\right) = (2, 5)$; $\quad R = \left(\dfrac{24 - 4}{4}, \dfrac{27 + 1}{4}\right) = (5, 7)$.`, sol: r`**Check:** each step from $A$ to $P$ to $Q$ to $R$ to $B$ adds $(3, 2)$.`, scheme: [['Ratios 1 : 3, 1 : 1, 3 : 1', 1], ['P(−1, 3) and Q(2, 5)', 1], ['R(5, 7)', 1]], d: 3, c: 'understanding', t: [2], time: 240 }), (C) => { const A = [-4, 1], B = [8, 9]; const pts = [[1, 3], [1, 1], [3, 1]].map(([m, n]) => divide(A, B, m, n)); C.assert(same(pts[0], [-1, 3]) && same(pts[1], [2, 5]) && same(pts[2], [5, 7]), 'points'); C.model([-1, 3, 2, 5, 7]); });
 Q('s305', mk.short({ marks: 3, stem: 'The point $P(x, 2)$ lies on the segment joining $A(-4, 8)$ and $B(11, -7)$. Find the ratio in which $P$ divides $AB$, and find $x$.', model: r`Let $AP : PB = k : 1$. Using $y$: $\dfrac{-7k + 8}{k + 1} = 2 \Rightarrow -7k + 8 = 2k + 2 \Rightarrow 9k = 6 \Rightarrow k = \dfrac23$. Ratio $2 : 3$.
 
-$x = \dfrac{2 \times 11 + 3 \times (-4)}{5} = \dfrac{10}{5} = 2$.`, sol: r`**Check:** $AP = \sqrt{36 + 36} = 6\sqrt2$ and $PB = \sqrt{81 + 81} = 9\sqrt2$, ratio $2 : 3$.`, scheme: [['Equation in k from y', 1], ['Ratio 2 : 3', 1], ['x = 2', 1]], d: 3, c: 'application', t: [2], time: 240 }), (C) => { const A = [-4, 8], B = [11, -7]; const t = (2 - A[1]) / (B[1] - A[1]); C.assert(near(t / (1 - t), 2 / 3), 'ratio'); const P = divide(A, B, 2, 3); C.assert(same(P, [2, 2]), 'P'); C.model(['2 : 3', 2]); C.sol([6, 9]); });
+$x = \dfrac{2 \times 11 + 3 \times (-4)}{5} = \dfrac{10}{5} = 2$.`, sol: r`**Check:** $AP = \sqrt{36 + 36} = 6\sqrt2$ and $PB = \sqrt{81 + 81} = 9\sqrt2$, ratio $2 : 3$.`, scheme: [['Equation in k from y', 1], ['Ratio 2 : 3', 1], ['x = 2', 1]], d: 3, c: 'understanding', t: [2], time: 240 }), (C) => { const A = [-4, 8], B = [11, -7]; const t = (2 - A[1]) / (B[1] - A[1]); C.assert(near(t / (1 - t), 2 / 3), 'ratio'); const P = divide(A, B, 2, 3); C.assert(same(P, [2, 2]), 'P'); C.model(['2 : 3', 2]); C.sol([6, 9]); });
 Q('s306', mk.short({ marks: 3, stem: '$A(-1, 2)$, $B(3, a)$, $C(6, 7)$ and $D(b, 5)$ are the vertices of parallelogram $ABCD$, taken in order. Find $a$ and $b$.', model: r`The diagonals of a parallelogram bisect each other, so $AC$ and $BD$ have the same midpoint.
 
 Midpoint of $AC = \left(\dfrac{-1 + 6}{2}, \dfrac{2 + 7}{2}\right) = (2.5, 4.5)$.
@@ -129,7 +129,7 @@ Midpoint of $AC = \left(\dfrac{-1 + 6}{2}, \dfrac{2 + 7}{2}\right) = (2.5, 4.5)$
 Midpoint of $BD = \left(\dfrac{3 + b}{2}, \dfrac{a + 5}{2}\right)$. So $3 + b = 5$, $b = 2$, and $a + 5 = 9$, $a = 4$.`, sol: r`**Check:** $AB$ goes from $(-1, 2)$ to $(3, 4)$, a step of $(4, 2)$; $DC$ goes from $(2, 5)$ to $(6, 7)$, also $(4, 2)$.`, scheme: [['Diagonals bisect each other', 1], ['b = 2', 1], ['a = 4', 1]], d: 3, c: 'application', t: [2], time: 240 }), (C) => { const [A, B, Cc, D] = [[-1, 2], [3, 4], [6, 7], [2, 5]]; C.assert(same(mid(A, Cc), mid(B, D)) && B[0] - A[0] === Cc[0] - D[0] && B[1] - A[1] === Cc[1] - D[1], 'parallelogram'); C.model([2.5, 4.5, 2, 4]); });
 Q('s307', mk.short({ marks: 3, stem: '$AB$ is a diameter of a circle with centre $O(2, -3)$. If $A$ is $(-1, 1)$, find $B$ and the radius of the circle.', model: r`$O$ is the midpoint of $AB$. With $B(x, y)$: $\dfrac{-1 + x}{2} = 2 \Rightarrow x = 5$ and $\dfrac{1 + y}{2} = -3 \Rightarrow y = -7$. So $B = (5, -7)$.
 
-Radius $= OA = \sqrt{3^2 + 4^2} = 5$ units. (Check: $OB = \sqrt{9 + 16} = 5$.)`, sol: 'The centre is the midpoint of every diameter.', scheme: [['O is the midpoint of AB', 1], ['B(5, −7)', 1], ['Radius 5 with check', 1]], d: 2, c: 'application', t: [1, 2], time: 240 }), (C) => { const B = [5, -7]; C.assert(same(mid([-1, 1], B), [2, -3]) && dist([2, -3], [-1, 1]) === 5 && dist([2, -3], B) === 5, 'diameter'); C.model([5, -7]); });
+Radius $= OA = \sqrt{3^2 + 4^2} = 5$ units. (Check: $OB = \sqrt{9 + 16} = 5$.)`, sol: 'The centre is the midpoint of every diameter.', scheme: [['O is the midpoint of AB', 1], ['B(5, −7)', 1], ['Radius 5 with check', 1]], d: 2, c: 'understanding', t: [1, 2], time: 240 }), (C) => { const B = [5, -7]; C.assert(same(mid([-1, 1], B), [2, -3]) && dist([2, -3], [-1, 1]) === 5 && dist([2, -3], B) === 5, 'diameter'); C.model([5, -7]); });
 
 // =============================================================== Long answer, 5 marks
 Q('l01', mk.long({ stem: `A flower bed at Lalbagh, Bengaluru, is drawn on a grid with corners $A(1, 0)$, $B(5, 3)$, $C(9, 0)$ and $D(5, -3)$, where 1 unit is 1 m.
@@ -231,13 +231,13 @@ $AB = AC$, and $AB^2 + AC^2 = 100 + 100 = 200 = BC^2$. So the triangle is **isos
 
 caseQ('c02', {
   passage: 'A new metro line in Kolkata runs straight from station $A(-3, 2)$ to station $B(9, 8)$ on the city grid, where 1 unit is 1 km. The graph shows the line.',
-  assets: [qMetro], d: 3, c: 'application',
+  assets: [qMetro], d: 3, c: 'understanding',
   model: r`(a) Option (c): $(3, 5)$. (b) $(1, 4)$. (c) (i) $AP = 2\sqrt5 \approx 4.47$ km. Or (ii) $1 : 3$, at $(0, 3.5)$.`,
   sol: r`(a) $\left(\dfrac{-3 + 9}{2}, \dfrac{2 + 8}{2}\right)$. (b) $P = \left(\dfrac{9 - 6}{3}, \dfrac{8 + 4}{3}\right)$. (c) (i) $\sqrt{16 + 4}$. (ii) $\dfrac{9k - 3}{k + 1} = 0$.`,
   children: [
     child('a', mk.mcq({ stem: 'An interchange station is to be built exactly halfway between A and B. Its position is', opts: ['$(6, 3)$', '$(6, 10)$', '$(3, 5)$', '$(12, 6)$'], key: 'c', sol: r`Midpoint $= \left(\dfrac{-3 + 9}{2}, \dfrac{2 + 8}{2}\right) = (3, 5)$. Option (a) halves the differences; option (d) is the difference itself.`, d: 1, c: 'understanding', t: [2], time: 60 })),
     child('b', mk.num({ stem: 'Station P divides AB in the ratio 1 : 2. Find the y-coordinate of P.', value: 4, sol: r`$y = \dfrac{1 \times 8 + 2 \times 2}{3} = \dfrac{12}{3} = 4$; $P = (1, 4)$.`, scheme: [['4', 1]], d: 2, c: 'understanding', t: [2], time: 75 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** How far is station P from station A?', model: r`$P = \left(\dfrac{9 + 2(-3)}{3}, 4\right) = (1, 4)$. $AP = \sqrt{(1 + 3)^2 + (4 - 2)^2} = \sqrt{20} = 2\sqrt5 \approx 4.47$ km.`, sol: r`Also $AB = \sqrt{144 + 36} = 6\sqrt5$, and $AP = \dfrac13 AB$ ✓.`, scheme: [['P = (1, 4)', 1], ['AP = 2√5 ≈ 4.47 km', 1]], d: 2, c: 'application', t: [1, 2], time: 120 }), [
+    child('c', mk.short({ marks: 2, stem: '**(i)** How far is station P from station A?', model: r`$P = \left(\dfrac{9 + 2(-3)}{3}, 4\right) = (1, 4)$. $AP = \sqrt{(1 + 3)^2 + (4 - 2)^2} = \sqrt{20} = 2\sqrt5 \approx 4.47$ km.`, sol: r`Also $AB = \sqrt{144 + 36} = 6\sqrt5$, and $AP = \dfrac13 AB$ ✓.`, scheme: [['P = (1, 4)', 1], ['AP = 2√5 ≈ 4.47 km', 1]], d: 2, c: 'understanding', t: [1, 2], time: 120 }), [
       mk.short({ marks: 2, stem: '**(ii)** The line crosses the $y$-axis (a highway). In what ratio does the highway divide AB, and where does the line cross it?', model: r`On the $y$-axis $x = 0$: $\dfrac{9k - 3}{k + 1} = 0 \Rightarrow k = \dfrac13$. Ratio $1 : 3$.
 
 $y = \dfrac{1 \times 8 + 3 \times 2}{4} = \dfrac{14}{4} = 3.5$. The crossing is at $(0, 3.5)$.`, sol: 'Use the k : 1 form.', scheme: [['Ratio 1 : 3', 1], ['(0, 3.5)', 1]], d: 3, c: 'application', t: [2], time: 150 }),
@@ -267,7 +267,7 @@ Distance to each corner $= \dfrac12 PR = \dfrac{\sqrt{50}}{2} \approx 3.54$ unit
 
 caseQ('c04', {
   passage: 'A farm near Nashik is mapped with the $x$-axis and $y$-axis along two boundary walls (1 unit = 10 m). A straight irrigation pipe runs from $A(-4, 6)$ to $B(8, -3)$, crossing both walls.',
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   model: r`(a) Option (a): $(2, 1.5)$. (b) $15$ units. (c) (i) $2 : 1$, at $(4, 0)$. Or (ii) $1 : 2$, at $(0, 3)$.`,
   sol: r`(a) $\left(\dfrac{-4 + 8}{2}, \dfrac{6 - 3}{2}\right)$. (b) $\sqrt{144 + 81} = 15$. (c) (i) $y = 0$: $\dfrac{-3k + 6}{k + 1} = 0$, $k = 2$. (ii) $x = 0$: $\dfrac{8k - 4}{k + 1} = 0$, $k = \dfrac12$.`,
   children: [
@@ -275,28 +275,173 @@ caseQ('c04', {
     child('b', mk.num({ stem: 'Find the length of the pipe in grid units.', value: 15, unit: 'units', sol: r`$AB = \sqrt{12^2 + 9^2} = \sqrt{225} = 15$ units ($150$ m).`, scheme: [['15', 1]], d: 2, c: 'understanding', t: [1], time: 75 })),
     child('c', mk.short({ marks: 2, stem: '**(i)** In what ratio does the $x$-axis wall divide the pipe, and where does the pipe cross it?', model: r`$y = 0$: $\dfrac{-3k + 6}{k + 1} = 0 \Rightarrow k = 2$. Ratio $2 : 1$.
 
-$x = \dfrac{2 \times 8 + 1 \times (-4)}{3} = 4$. The pipe crosses at $(4, 0)$.`, sol: 'Set the y-coordinate of the division point to 0.', scheme: [['Ratio 2 : 1', 1], ['(4, 0)', 1]], d: 3, c: 'application', t: [2], time: 150 }), [
+$x = \dfrac{2 \times 8 + 1 \times (-4)}{3} = 4$. The pipe crosses at $(4, 0)$.`, sol: 'Set the y-coordinate of the division point to 0.', scheme: [['Ratio 2 : 1', 1], ['(4, 0)', 1]], d: 3, c: 'understanding', t: [2], time: 150 }), [
       mk.short({ marks: 2, stem: '**(ii)** In what ratio does the $y$-axis wall divide the pipe, and where does the pipe cross it?', model: r`$x = 0$: $\dfrac{8k - 4}{k + 1} = 0 \Rightarrow k = \dfrac12$. Ratio $1 : 2$.
 
-$y = \dfrac{1 \times (-3) + 2 \times 6}{3} = 3$. The pipe crosses at $(0, 3)$.`, sol: 'Set the x-coordinate of the division point to 0.', scheme: [['Ratio 1 : 2', 1], ['(0, 3)', 1]], d: 3, c: 'application', t: [2], time: 150 }),
+$y = \dfrac{1 \times (-3) + 2 \times 6}{3} = 3$. The pipe crosses at $(0, 3)$.`, sol: 'Set the x-coordinate of the division point to 0.', scheme: [['Ratio 1 : 2', 1], ['(0, 3)', 1]], d: 3, c: 'understanding', t: [2], time: 150 }),
     ]),
   ],
 }, (C) => { const A = [-4, 6], B = [8, -3]; C.child('a').which([[2, 1.5], [6, -4.5], [2, 4.5], [4, 3]], mid(A, B)); C.child('b').val(dist(A, B)); C.child('c').assert(same(divide(A, B, 2, 1), [4, 0]), 'x-axis'); C.child('c').model([4]); C.child('cii').assert(same(divide(A, B, 1, 2), [0, 3]), 'y-axis'); C.child('cii').model([3]); C.model(['(2, 1.5)', 15, '(4, 0)', '(0, 3)']); });
 
 caseQ('c05', {
   passage: 'A mobile tower near Kanpur stands at $T(2, 3)$ on a map grid (1 unit = 1 km) and covers every place within 5 km of it. Three villages are at $P(5, 7)$, $Q(-2, 6)$ and $R(6, -1)$.',
-  d: 4, c: 'analysis',
+  d: 4, c: 'understanding',
   model: r`(a) Option (b): $5$ km. (b) no. (c) (i) $M(1.5, 6.5)$, $TM = \sqrt{12.5} \approx 3.54$ km. Or (ii) $4\sqrt2 \approx 5.66$ km.`,
   sol: r`$TP = \sqrt{9 + 16} = 5$, $TQ = \sqrt{16 + 9} = 5$, $TR = \sqrt{16 + 16} = \sqrt{32} \approx 5.66 > 5$.`,
   children: [
     child('a', mk.mcq({ stem: 'The distance of village P from the tower is', opts: ['$7$ km', '$5$ km', '$25$ km', r`$\sqrt{7}$ km`], key: 'b', sol: r`$TP = \sqrt{3^2 + 4^2} = 5$ km: P is just within range (on the boundary).`, d: 1, c: 'understanding', t: [1], time: 60 })),
-    child('b', mk.fill({ stem: 'Is village R covered by the tower? Answer yes or no: ___', acc: [['no']], sol: r`$TR = \sqrt{16 + 16} = \sqrt{32} \approx 5.66$ km $> 5$ km, so R is **not** covered.`, d: 2, c: 'application', t: [1], time: 75 })),
+    child('b', mk.fill({ stem: 'Is village R covered by the tower? Answer yes or no: ___', acc: [['no']], sol: r`$TR = \sqrt{16 + 16} = \sqrt{32} \approx 5.66$ km $> 5$ km, so R is **not** covered.`, d: 2, c: 'understanding', t: [1], time: 75 })),
     child('c', mk.short({ marks: 2, stem: '**(i)** A repeater is placed at the midpoint M of PQ. Find M and its distance from the tower.', model: r`$M = \left(\dfrac{5 - 2}{2}, \dfrac{7 + 6}{2}\right) = (1.5, 6.5)$.
 
-$TM = \sqrt{0.5^2 + 3.5^2} = \sqrt{0.25 + 12.25} = \sqrt{12.5} \approx 3.54$ km.`, sol: 'P and Q are both 5 km from T, so the midpoint of PQ is closer than 5 km.', scheme: [['M(1.5, 6.5)', 1], ['TM ≈ 3.54 km', 1]], d: 3, c: 'application', t: [1, 2], time: 150 }), [
+$TM = \sqrt{0.5^2 + 3.5^2} = \sqrt{0.25 + 12.25} = \sqrt{12.5} \approx 3.54$ km.`, sol: 'P and Q are both 5 km from T, so the midpoint of PQ is closer than 5 km.', scheme: [['M(1.5, 6.5)', 1], ['TM ≈ 3.54 km', 1]], d: 3, c: 'understanding', t: [1, 2], time: 150 }), [
       mk.short({ marks: 2, stem: '**(ii)** What is the least range (in km) the tower needs so that all three villages are covered?', model: r`The farthest village decides: $TP = 5$, $TQ = 5$, $TR = \sqrt{32} = 4\sqrt2 \approx 5.66$ km.
 
 The least range is $4\sqrt2 \approx 5.66$ km.`, sol: 'Compare all three distances and take the largest.', scheme: [['Three distances', 1], ['4√2 ≈ 5.66 km', 1]], d: 4, c: 'analysis', t: [1], time: 150 }),
     ]),
   ],
 }, (C) => { const [T, P, Qv, R] = [[2, 3], [5, 7], [-2, 6], [6, -1]]; C.child('a').which([7, 5, 25, Math.sqrt(7)], dist(T, P)); C.child('b').assert(dist(T, R) > 5, 'R outside'); C.child('b').blank('no'); const M = mid(P, Qv); C.child('c').assert(same(M, [1.5, 6.5]), 'M'); C.child('c').model([1.5, 6.5, 12.5, 3.54]); C.child('cii').assert(near(Math.max(dist(T, P), dist(T, Qv), dist(T, R)), 4 * Math.SQRT2), 'max'); C.child('cii').model([5.66, '4\\sqrt2']); C.model(['(1.5, 6.5)', 3.54, 5.66]); });
+// =============================================================== added 2026-10-27 (assessment-designer)
+// Recall/understanding written items for the board-paper competency balance (blueprint 54/24/22 Standard,
+// 75/15/10 Basic). Appended after every existing item so earlier ids do not move.
+Q('u301', mk.short({
+  marks: 3,
+  stem: r`Find the distances $PQ$, $QR$ and $PR$ for the points $P(1, 2)$, $Q(4, 6)$ and $R(7, 10)$. Use them to show that the three points lie on one straight line.`,
+  model: r`$PQ = \sqrt{(4 - 1)^2 + (6 - 2)^2} = \sqrt{9 + 16} = 5$.
+
+$QR = \sqrt{(7 - 4)^2 + (10 - 6)^2} = \sqrt{9 + 16} = 5$.
+
+$PR = \sqrt{(7 - 1)^2 + (10 - 2)^2} = \sqrt{36 + 64} = 10$.
+
+Since $PQ + QR = 5 + 5 = 10 = PR$, the point $Q$ lies on the segment $PR$, so $P$, $Q$ and $R$ are collinear.`,
+  sol: r`Three points are collinear when the two shorter distances add up to the longest one.`,
+  scheme: [['PQ = 5 and QR = 5', 1], ['PR = 10', 1], ['PQ + QR = PR, so collinear', 1]],
+  d: 2, c: 'understanding', t: [1], time: 240,
+}), (C) => { const P = [1, 2], Qp = [4, 6], R = [7, 10]; C.assert(near(dist(P, Qp), 5) && near(dist(Qp, R), 5) && near(dist(P, R), 10) && collinear(P, Qp, R), 'collinear'); C.model([5, 10]); });
+Q('u302', mk.short({
+  marks: 3,
+  stem: r`The segment joining $A(-3, 5)$ and $B(6, -1)$ is divided into three equal parts by the points $P$ and $Q$, with $P$ nearer to $A$. Find the coordinates of $P$ and $Q$.`,
+  model: r`$P$ divides $AB$ in the ratio $1 : 2$:
+
+$P = \left(\dfrac{1 \times 6 + 2 \times (-3)}{3}, \dfrac{1 \times (-1) + 2 \times 5}{3}\right) = \left(\dfrac{0}{3}, \dfrac{9}{3}\right) = (0, 3)$.
+
+$Q$ divides $AB$ in the ratio $2 : 1$:
+
+$Q = \left(\dfrac{2 \times 6 + 1 \times (-3)}{3}, \dfrac{2 \times (-1) + 1 \times 5}{3}\right) = \left(\dfrac{9}{3}, \dfrac{3}{3}\right) = (3, 1)$.`,
+  sol: r`Points of trisection divide the segment in the ratios $1 : 2$ and $2 : 1$; apply the section formula twice.`,
+  scheme: [['Ratios 1 : 2 and 2 : 1', 1], ['P = (0, 3)', 1], ['Q = (3, 1)', 1]],
+  d: 2, c: 'understanding', t: [2], time: 240,
+}), (C) => { const A = [-3, 5], B = [6, -1]; C.assert(same(divide(A, B, 1, 2), [0, 3]) && same(divide(A, B, 2, 1), [3, 1]), 'P, Q'); C.model(['(0, 3)', '(3, 1)']); });
+Q('u501', mk.long({
+  stem: r`The vertices of a quadrilateral are $A(1, 1)$, $B(7, 1)$, $C(7, 9)$ and $D(1, 9)$, taken in order.
+
+(a) Find the lengths of the four sides.
+(b) Find the lengths of the diagonals $AC$ and $BD$.
+(c) Find the midpoints of $AC$ and $BD$.
+(d) Name the quadrilateral, giving a reason from your answers.`,
+  model: r`(a) $AB = \sqrt{6^2 + 0^2} = 6$, $BC = \sqrt{0^2 + 8^2} = 8$, $CD = \sqrt{6^2 + 0^2} = 6$, $DA = \sqrt{0^2 + 8^2} = 8$.
+
+(b) $AC = \sqrt{6^2 + 8^2} = \sqrt{100} = 10$ and $BD = \sqrt{(1 - 7)^2 + (9 - 1)^2} = \sqrt{100} = 10$.
+
+(c) Midpoint of $AC = \left(\dfrac{1 + 7}{2}, \dfrac{1 + 9}{2}\right) = (4, 5)$; midpoint of $BD = \left(\dfrac{7 + 1}{2}, \dfrac{1 + 9}{2}\right) = (4, 5)$.
+
+(d) The opposite sides are equal ($6$ and $8$), the diagonals bisect each other (same midpoint $(4, 5)$) and the diagonals are equal ($10$). So $ABCD$ is a **rectangle** (not a square, since $6 \ne 8$).`,
+  sol: r`Distance formula for (a) and (b), midpoint formula for (c); equal diagonals that bisect each other give a rectangle.`,
+  scheme: [['Four sides 6, 8, 6, 8', 2], ['Diagonals 10 and 10', 1], ['Both midpoints (4, 5)', 1], ['Rectangle, with reason', 1]],
+  d: 2, c: 'understanding', t: [1, 2], time: 540,
+}), (C) => { const P = [[1, 1], [7, 1], [7, 9], [1, 9]]; const s = P.map((p, i) => dist(p, P[(i + 1) % 4])); C.assert(s.join() === '6,8,6,8', `sides ${s}`); C.assert(near(dist(P[0], P[2]), 10) && near(dist(P[1], P[3]), 10) && same(mid(P[0], P[2]), [4, 5]) && same(mid(P[1], P[3]), [4, 5]), 'diagonals'); C.model([6, 8, 10, '(4, 5)', 'rectangle']); });
+Q('u502', mk.long({
+  stem: r`$A(-2, 3)$ and $B(8, -7)$ are two points.
+
+(a) Find the point $P$ that divides $AB$ internally in the ratio $2 : 3$.
+(b) Find the midpoint $M$ of $AB$.
+(c) Find the length of $AB$.
+(d) Find the distance $PM$.`,
+  model: r`(a) $P = \left(\dfrac{2 \times 8 + 3 \times (-2)}{2 + 3}, \dfrac{2 \times (-7) + 3 \times 3}{2 + 3}\right) = \left(\dfrac{10}{5}, \dfrac{-5}{5}\right) = (2, -1)$.
+
+(b) $M = \left(\dfrac{-2 + 8}{2}, \dfrac{3 - 7}{2}\right) = (3, -2)$.
+
+(c) $AB = \sqrt{(8 + 2)^2 + (-7 - 3)^2} = \sqrt{100 + 100} = 10\sqrt2 \approx 14.14$ units.
+
+(d) $PM = \sqrt{(3 - 2)^2 + (-2 + 1)^2} = \sqrt{1 + 1} = \sqrt2 \approx 1.41$ units.`,
+  sol: r`Section formula with $m : n = 2 : 3$, then the midpoint and distance formulae.`,
+  scheme: [['Section formula set up', 1], ['P = (2, −1)', 1], ['M = (3, −2)', 1], ['AB = 10√2', 1], ['PM = √2', 1]],
+  d: 2, c: 'understanding', t: [1, 2], time: 480,
+}), (C) => { const A = [-2, 3], B = [8, -7]; const P = divide(A, B, 2, 3), M = mid(A, B); C.assert(same(P, [2, -1]) && same(M, [3, -2]), 'P, M'); C.assert(near(dist(A, B), 10 * Math.SQRT2) && near(dist(P, M), Math.SQRT2), 'AB, PM'); C.model(['(2, -1)', '(3, -2)', 14.14, 1.41]); });
+caseQ('uc1', {
+  passage: r`For sports day, a school ground is drawn on a grid in which $1$ unit is $10$ m. The starting post $S$ is at $(-4, -3)$ and the finishing post $F$ is at $(8, 6)$; the track between them is straight. A drinks table is placed at the midpoint $M$ of $SF$, and a first-aid tent $T$ is placed on the track one-third of the way from $S$ to $F$.`,
+  d: 2, c: 'understanding',
+  model: r`(a) Option (b): $\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$. (b) $15$ units. (c) (i) $M = (2, 1.5)$, $SM = 7.5$ units $= 75$ m. Or (ii) $T = (0, 0)$, $TF = 10$ units $= 100$ m.`,
+  sol: r`(a) Distance formula. (b) $\sqrt{12^2 + 9^2} = 15$. (c) (i) Midpoint formula, then half of $SF$. (ii) $T$ divides $SF$ in the ratio $1 : 2$.`,
+  children: [
+    child('a', mk.mcq({ stem: r`The distance between the points $(x_1, y_1)$ and $(x_2, y_2)$ is`, opts: [r`$\sqrt{(x_2 + x_1)^2 + (y_2 + y_1)^2}$`, r`$\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$`, r`$(x_2 - x_1)^2 + (y_2 - y_1)^2$`, r`$\sqrt{(x_2 - x_1) + (y_2 - y_1)}$`], key: 'b', sol: r`The distance is the length of the hypotenuse of a right triangle with legs $|x_2 - x_1|$ and $|y_2 - y_1|$ (Pythagoras). Option (c) forgets the square root; options (a) and (d) misuse the differences.`, d: 1, c: 'recall', t: [1], time: 40 })),
+    child('b', mk.num({ stem: 'Find the length of the track SF, in grid units.', value: 15, sol: r`$SF = \sqrt{(8 + 4)^2 + (6 + 3)^2} = \sqrt{144 + 81} = \sqrt{225} = 15$ units.`, scheme: [['15', 1]], d: 1, c: 'understanding', t: [1], time: 75 })),
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the position of the drinks table M, and its distance from S in metres.', model: r`$M = \left(\dfrac{-4 + 8}{2}, \dfrac{-3 + 6}{2}\right) = (2, 1.5)$. $SM = \sqrt{6^2 + 4.5^2} = \sqrt{56.25} = 7.5$ units $= 75$ m.`, sol: r`$M$ is the midpoint, so $SM$ is half of $SF = 15$ units.`, scheme: [['M = (2, 1.5)', 1], ['SM = 75 m', 1]], d: 2, c: 'understanding', t: [1, 2], time: 120 }), [
+      mk.short({ marks: 2, stem: '**(ii)** Find the position of the first-aid tent T, and its distance from F in metres.', model: r`$T$ divides $SF$ in the ratio $1 : 2$: $T = \left(\dfrac{1 \times 8 + 2 \times (-4)}{3}, \dfrac{1 \times 6 + 2 \times (-3)}{3}\right) = (0, 0)$. $TF = \sqrt{8^2 + 6^2} = 10$ units $= 100$ m.`, sol: r`One-third of the way from $S$ means the ratio $1 : 2$.`, scheme: [['T = (0, 0)', 1], ['TF = 100 m', 1]], d: 2, c: 'understanding', t: [1, 2], time: 120 }),
+    ]),
+  ],
+}, (C) => { const S = [-4, -3], F = [8, 6]; C.child('a').key('b'); C.child('b').val(dist(S, F)); const M = mid(S, F), T = divide(S, F, 1, 2); C.child('c').assert(same(M, [2, 1.5]) && near(dist(S, M) * 10, 75), 'M, SM'); C.child('c').model([1.5, 75]); C.child('cii').assert(same(T, [0, 0]) && near(dist(T, F) * 10, 100), 'T, TF'); C.child('cii').model(['(0, 0)', 100]); C.model([15, 75, 100]); });
+Q('u303', mk.short({
+  marks: 3,
+  stem: r`The point $P(k, 4)$ is at the same distance from $A(2, 1)$ as from $B(6, 5)$. Find $k$, and check your answer by finding $PA$ and $PB$.`,
+  model: r`$PA^2 = PB^2$: $(k - 2)^2 + (4 - 1)^2 = (k - 6)^2 + (4 - 5)^2$.
+
+$k^2 - 4k + 4 + 9 = k^2 - 12k + 36 + 1 \Rightarrow 8k = 24 \Rightarrow k = 3$.
+
+Check: $PA = \sqrt{(3 - 2)^2 + 3^2} = \sqrt{10}$ and $PB = \sqrt{(3 - 6)^2 + (-1)^2} = \sqrt{10}$ ✓.`,
+  sol: r`Equal distances: equate the squared distances so no square roots are needed; the $k^2$ terms cancel.`,
+  scheme: [['PA² = PB² set up', 1], ['k = 3', 1], ['Both distances √10', 1]],
+  d: 2, c: 'understanding', t: [1], time: 210,
+}), (C) => { const ks = search((k) => near(dist([k, 4], [2, 1]), dist([k, 4], [6, 5]))); C.assert(ks.length === 1 && ks[0] === 3 && near(dist([3, 4], [2, 1]), Math.sqrt(10)), 'k = 3'); C.model([3, 24, r`\sqrt{10}`]); });
+Q('u503', mk.long({
+  stem: r`$A(3, -2)$, $B(8, -2)$ and $C(3, 10)$ are the vertices of a triangle.
+
+(a) Find the lengths $AB$, $AC$ and $BC$.
+(b) Show that the triangle is right-angled, and name the vertex of the right angle.
+(c) Find the midpoint $M$ of the hypotenuse $BC$.
+(d) Show that $M$ is at the same distance from all three vertices.`,
+  model: r`(a) $AB = \sqrt{(8 - 3)^2 + 0^2} = 5$, $AC = \sqrt{0^2 + (10 + 2)^2} = 12$, $BC = \sqrt{(3 - 8)^2 + (10 + 2)^2} = \sqrt{25 + 144} = 13$.
+
+(b) $AB^2 + AC^2 = 25 + 144 = 169 = BC^2$, so by the converse of Pythagoras' theorem the triangle is right-angled at $A$.
+
+(c) $M = \left(\dfrac{8 + 3}{2}, \dfrac{-2 + 10}{2}\right) = (5.5, 4)$.
+
+(d) $MB = MC = \dfrac{13}{2} = 6.5$, and $MA = \sqrt{(5.5 - 3)^2 + (4 + 2)^2} = \sqrt{6.25 + 36} = \sqrt{42.25} = 6.5$. So $MA = MB = MC = 6.5$ units.`,
+  sol: r`Distance formula three times; the longest side is the hypotenuse; midpoint formula for $M$.`,
+  scheme: [['AB = 5, AC = 12', 1], ['BC = 13', 1], ['Right angle at A', 1], ['M = (5.5, 4)', 1], ['MA = MB = MC = 6.5', 1]],
+  d: 2, c: 'understanding', t: [1, 2], time: 480,
+}), (C) => { const A = [3, -2], B = [8, -2], Cc = [3, 10]; C.assert(near(dist(A, B), 5) && near(dist(A, Cc), 12) && near(dist(B, Cc), 13), 'sides'); const M = mid(B, Cc); C.assert(same(M, [5.5, 4]) && near(dist(M, A), 6.5) && near(dist(M, B), 6.5), 'M'); C.model([5, 12, 13, 169, '(5.5, 4)', 6.5]); });
+Q('u504', mk.long({
+  stem: r`$A(-4, -1)$ and $B(6, 4)$ are two points.
+
+(a) Find the coordinates of the point $P$ that divides $AB$ internally in the ratio $3 : 2$.
+(b) Find the ratio in which the $x$-axis divides $AB$, and the point where it cuts $AB$.
+(c) Find the length of $AB$.`,
+  model: r`(a) $P = \left(\dfrac{3 \times 6 + 2 \times (-4)}{3 + 2}, \dfrac{3 \times 4 + 2 \times (-1)}{3 + 2}\right) = \left(\dfrac{10}{5}, \dfrac{10}{5}\right) = (2, 2)$.
+
+(b) Let the $x$-axis divide $AB$ in the ratio $k : 1$. The point is $\left(\dfrac{6k - 4}{k + 1}, \dfrac{4k - 1}{k + 1}\right)$, and on the $x$-axis its $y$-coordinate is $0$: $4k - 1 = 0$, so $k = \dfrac14$. The ratio is $1 : 4$.
+
+$x = \dfrac{6 \times \frac14 - 4}{\frac14 + 1} = \dfrac{-2.5}{1.25} = -2$. The $x$-axis cuts $AB$ at $(-2, 0)$.
+
+(c) $AB = \sqrt{(6 + 4)^2 + (4 + 1)^2} = \sqrt{100 + 25} = \sqrt{125} = 5\sqrt5 \approx 11.18$ units.`,
+  sol: r`Section formula; on the $x$-axis the $y$-coordinate is $0$; distance formula.`,
+  scheme: [['Section formula with 3 : 2', 1], ['P = (2, 2)', 1], ['Ratio 1 : 4', 1], ['Point (−2, 0)', 1], ['AB = 5√5', 1]],
+  d: 2, c: 'understanding', t: [1, 2], time: 480,
+}), (C) => { const A = [-4, -1], B = [6, 4]; C.assert(same(divide(A, B, 3, 2), [2, 2]), 'P'); const t = -A[1] / (B[1] - A[1]); C.assert(near(t / (1 - t), 1 / 4) && same(divide(A, B, 1, 4), [-2, 0]), '1 : 4 at (−2, 0)'); C.assert(near(dist(A, B), 5 * Math.sqrt(5)), 'AB'); C.model(['(2, 2)', '(-2, 0)', 11.18]); });
+Q('u505', mk.long({
+  stem: r`Consider the points $A(4, 2)$, $B(7, 5)$ and $C(9, 7)$.
+
+(a) Find $AB$, $BC$ and $AC$, leaving your answers in surd form.
+(b) Use your answers to show that $A$, $B$ and $C$ are collinear.
+(c) Find the ratio $AB : BC$.
+(d) Use the section formula to check that the point dividing $AC$ in this ratio is $B$.`,
+  model: r`(a) $AB = \sqrt{3^2 + 3^2} = 3\sqrt2$, $BC = \sqrt{2^2 + 2^2} = 2\sqrt2$, $AC = \sqrt{5^2 + 5^2} = 5\sqrt2$.
+
+(b) $AB + BC = 3\sqrt2 + 2\sqrt2 = 5\sqrt2 = AC$, so $B$ lies on the segment $AC$: the points are collinear.
+
+(c) $AB : BC = 3\sqrt2 : 2\sqrt2 = 3 : 2$.
+
+(d) $\left(\dfrac{3 \times 9 + 2 \times 4}{5}, \dfrac{3 \times 7 + 2 \times 2}{5}\right) = \left(\dfrac{35}{5}, \dfrac{25}{5}\right) = (7, 5)$, which is $B$ ✓.`,
+  sol: r`Collinear when the two shorter distances add up to the third; then $B$ divides $AC$ in the ratio $AB : BC$.`,
+  scheme: [['AB = 3√2, BC = 2√2', 1], ['AC = 5√2', 1], ['AB + BC = AC, collinear', 1], ['Ratio 3 : 2', 1], ['Section formula gives (7, 5)', 1]],
+  d: 2, c: 'understanding', t: [1, 2], time: 480,
+}), (C) => { const A = [4, 2], B = [7, 5], Cc = [9, 7]; C.assert(near(dist(A, B), 3 * Math.SQRT2) && near(dist(B, Cc), 2 * Math.SQRT2) && near(dist(A, Cc), 5 * Math.SQRT2) && collinear(A, B, Cc), 'collinear'); C.assert(same(divide(A, Cc, 3, 2), B), 'B divides AC 3 : 2'); C.model(['3\\sqrt2', '2\\sqrt2', '5\\sqrt2', '3 : 2', '(7, 5)']); });

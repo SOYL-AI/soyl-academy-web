@@ -5716,8 +5716,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch09-t01",
         "cbse-10-mathematics-ch09-t02"
@@ -5970,8 +5970,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch09-t02"
       ],
@@ -6827,8 +6827,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch09-t02"
           ],
@@ -7217,8 +7217,8 @@
       ],
       "marks": 4,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch09-t02"
       ],
@@ -7324,8 +7324,8 @@
           ],
           "marks": 2,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch09-t02"
           ],
@@ -7746,15 +7746,117 @@
         "generated_at": "2026-10-26",
         "author": "claude-opus-5-5 (subject-producer)"
       }
+    },
+    {
+      "id": "q_cbse10math_ch09_071",
+      "unit": "cbse-10-mathematics-ch09",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A straight guy wire $24$ m long runs from the top of a vertical mobile tower to a hook on level ground. The wire makes an angle of $60^\\circ$ with the ground. Find the height of the tower and the distance of the hook from the foot of the tower. (Use $\\sqrt3 \\approx 1.732$.)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Let the top of the tower be $T$, its foot $F$ and the hook $H$. Triangle $TFH$ is right-angled at $F$, with hypotenuse $TH = 24$ m and $\\angle THF = 60^\\circ$.\n\nHeight: $\\sin 60^\\circ = \\dfrac{TF}{TH}$, so $TF = 24 \\times \\dfrac{\\sqrt3}{2} = 12\\sqrt3 \\approx 12 \\times 1.732 = 20.78$ m.\n\nDistance: $\\cos 60^\\circ = \\dfrac{FH}{TH}$, so $FH = 24 \\times \\dfrac12 = 12$ m."
+      },
+      "solution_md": "The wire is the hypotenuse: use sine for the height and cosine for the ground distance.",
+      "marking_scheme": [
+        {
+          "step": "Right triangle with hypotenuse 24 m and angle 60°",
+          "marks": 1
+        },
+        {
+          "step": "Height 12√3 ≈ 20.78 m",
+          "marks": 1
+        },
+        {
+          "step": "Distance 12 m",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "cbse-10-mathematics-ch09-t01",
+        "cbse-10-mathematics-ch09-t02"
+      ],
+      "expected_time_sec": 210,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_cbse10math_ch09_072",
+      "unit": "cbse-10-mathematics-ch09",
+      "language": "en",
+      "type": "long",
+      "stem_md": "A vertical flagpole stands on level ground.\n\n(a) Draw a labelled figure for part (b).\n\n(b) From a point $A$, $20$ m from the foot of the flagpole, the angle of elevation of its top is $45^\\circ$. Find the height of the flagpole.\n\n(c) How far from the foot must an observer stand for the angle of elevation of the top to be $60^\\circ$?\n\n(d) How far from the foot must an observer stand for the angle of elevation of the top to be $30^\\circ$?\n\n(e) Find the length of the line of sight from $A$ to the top of the flagpole.\n\n(Use $\\sqrt2 \\approx 1.414$ and $\\sqrt3 \\approx 1.732$.)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Figure: flagpole $PF$ with foot $F$ on the ground, point $A$ on the ground $20$ m from $F$, line of sight $AP$, angle $PAF = 45^\\circ$, right angle at $F$.\n\n(b) $\\tan 45^\\circ = \\dfrac{PF}{AF}$, so $PF = 20 \\times 1 = 20$ m.\n\n(c) $\\tan 60^\\circ = \\dfrac{20}{d}$, so $d = \\dfrac{20}{\\sqrt3} = \\dfrac{20\\sqrt3}{3} \\approx 11.55$ m.\n\n(d) $\\tan 30^\\circ = \\dfrac{20}{d}$, so $d = 20\\sqrt3 \\approx 34.64$ m.\n\n(e) $\\cos 45^\\circ = \\dfrac{AF}{AP}$, so $AP = \\dfrac{20}{1/\\sqrt2} = 20\\sqrt2 \\approx 28.28$ m."
+      },
+      "solution_md": "Each part is one right triangle with the flagpole as the opposite side; $\\tan$ links height and ground distance, $\\cos$ gives the line of sight.",
+      "marking_scheme": [
+        {
+          "step": "Labelled figure",
+          "marks": 1
+        },
+        {
+          "step": "Height 20 m",
+          "marks": 1
+        },
+        {
+          "step": "20/√3 ≈ 11.55 m",
+          "marks": 1
+        },
+        {
+          "step": "20√3 ≈ 34.64 m",
+          "marks": 1
+        },
+        {
+          "step": "20√2 ≈ 28.28 m",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "cbse-10-mathematics-ch09-t01",
+        "cbse-10-mathematics-ch09-t02"
+      ],
+      "expected_time_sec": 540,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
     }
   ],
   "build": {
     "run_id": null,
     "checks": {
       "syllabus": "topics t01–t02 only; every problem uses at most two right triangles and angles of 30°, 45° and 60°; ratios of complementary angles (removed in ch08) are not used — the \"complementary angles of elevation\" configuration is deliberately avoided",
-      "katex": "899 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "939 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "0 deck plots + 0 notes/question plots: 0 marked points all on their curves and matching their labels; 0 zeros located numerically and all marked; 0 intersection points lie on both lines",
-      "re_solve": "164/164 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
+      "re_solve": "171/171 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "narration": "33 slides, max 64 words, mean 47; no symbols, LaTeX or letter abbreviations",
       "gate": "npm test -w @soyl/content-templates and content lint (lintExemplar) run clean on this chapter"
     }

@@ -18,9 +18,9 @@ provenance `origin: "human"`, `model: null`. All items are `status: "draft"` unt
 | Check slides | 3 + 3, all objective (q002, q003, q026; q009, q034, q021) |
 | Notes | 8 sections, each with key terms, formulas and a visual; exam tips with mark split and 8 common mistakes |
 | Flashcards | 30 (definition 2, fact 4, formula 7, concept 7, example 4, exam-tip 5, diagram 1) |
-| Questions | 70 items, 140 marks: mcq 18 (8 items across the bank carry graph assets), assertion-reason 6 (keys a c d b a c), true-false 5, fill-blank 5, numerical 9, short-2 9, short-3 7, long-5 6, case-based 5 (each 1 + 1 + 2, part (c) either/or via `alternatives`, `passage_origin: soyl-original`) |
-| Difficulty | d1 12, d2 29, d3 23, d4 4, d5 2 |
-| Competency | recall 7, understanding 27, application 25, analysis 8, evaluation 3 — application or higher 51% of items, 70% of marks |
+| Questions | 70 items, 140 marks: mcq 18 (8 items across the bank carry graph assets), assertion-reason 6 (keys a c d b a c), true-false 5, fill-blank 5, numerical 9, short-2 9, short-3 8, long-5 6, case-based 5 (each 1 + 1 + 2, part (c) either/or via `alternatives`, `passage_origin: soyl-original`) |
+| Difficulty | d1 12, d2 30, d3 23, d4 4, d5 2 |
+| Competency | recall 7, understanding 39, application 14, analysis 8, evaluation 3 — application or higher 35% of items, 48% of marks (after the 2026-10-27 competency audit) |
 | Tests | `t_cbse10math_ch02_short` (20 marks / 40 min) and `_long` (40 marks / 90 min), matching `cbse-10-default-chapter-test-short/long`; disjoint |
 
 ## Verifier record
@@ -44,3 +44,9 @@ Run from `platform/`: `npx tsx content/authored/maths/cbse-10-mathematics-ch02/s
 ## Changed by assessment-designer (2026-10-27)
 
 Rewritten in `src/questions.mjs` (then rebuilt) because `originality --authored` flagged them as near-duplicates of other items in this chapter; each is now a different question (new numbers, context or skill) with its re-solve check: m16 (_016), m17 (_017: polynomial from sum and product), n03 (_037: find k from the difference of zeroes), n06 (_040: find k from a given zero), s204 (_047: graph crossing points), s301 (_053: area/breadth context), s303 (_055: new numbers).
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Board papers need recall/understanding written items (CBSE design: Standard 54/24/22, Basic 75/15/10 per cent of marks), and the bank had tagged almost every routine written answer as application or higher. Every short, long, numerical and case item was re-read against what it actually asks. A routine, textbook-standard procedure on given data (find the HCF by prime factorisation, solve a given pair, find a term, compute a mean, a sector area, a single right triangle) is now **understanding**; word problems that need modelling, multi-step or non-routine reasoning, error analysis and justification keep application / analysis / evaluation. 12 item tag(s) and 5 case-part tag(s) changed (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed.
+
+Added (appended, so earlier ids are unchanged; each has its re-solve check): `q_cbse10math_ch02_071` short-3.

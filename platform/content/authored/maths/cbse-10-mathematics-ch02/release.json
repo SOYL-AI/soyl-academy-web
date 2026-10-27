@@ -4460,8 +4460,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t02"
       ],
@@ -4637,8 +4637,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t01",
         "cbse-10-mathematics-ch02-t02"
@@ -4682,8 +4682,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t01"
       ],
@@ -4726,8 +4726,8 @@
       ],
       "marks": 2,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t02"
       ],
@@ -5049,8 +5049,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t01",
         "cbse-10-mathematics-ch02-t02"
@@ -5176,8 +5176,8 @@
       ],
       "marks": 2,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t02"
       ],
@@ -5268,8 +5268,8 @@
       ],
       "marks": 3,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t02"
       ],
@@ -5360,8 +5360,8 @@
       ],
       "marks": 3,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t02"
       ],
@@ -5406,8 +5406,8 @@
       ],
       "marks": 3,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t01",
         "cbse-10-mathematics-ch02-t02"
@@ -5479,8 +5479,8 @@
       ],
       "marks": 3,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t02"
       ],
@@ -5579,8 +5579,8 @@
       ],
       "marks": 5,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t01",
         "cbse-10-mathematics-ch02-t02"
@@ -6037,8 +6037,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch02-t01"
           ],
@@ -6147,8 +6147,8 @@
       ],
       "marks": 4,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t02"
       ],
@@ -6194,8 +6194,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch02-t02"
           ],
@@ -6254,8 +6254,8 @@
           ],
           "marks": 2,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch02-t02"
           ],
@@ -6626,8 +6626,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch02-t01"
           ],
@@ -6816,8 +6816,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch02-t02"
           ],
@@ -6897,15 +6897,61 @@
         "generated_at": "2026-10-26",
         "author": "claude-opus-5-5 (subject-producer)"
       }
+    },
+    {
+      "id": "q_cbse10math_ch02_071",
+      "unit": "cbse-10-mathematics-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Factorise $6x^2 - 7x - 3$ to find its two zeroes. Then check that their sum equals $-\\dfrac{b}{a}$ and their product equals $\\dfrac{c}{a}$.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Split the middle term: $6x^2 - 9x + 2x - 3 = 3x(2x - 3) + 1(2x - 3) = (3x + 1)(2x - 3)$.\n\nZeroes: $3x + 1 = 0 \\Rightarrow x = -\\dfrac13$, and $2x - 3 = 0 \\Rightarrow x = \\dfrac32$.\n\nSum $= -\\dfrac13 + \\dfrac32 = \\dfrac{-2 + 9}{6} = \\dfrac{7}{6}$, and $-\\dfrac ba = -\\dfrac{-7}{6} = \\dfrac{7}{6}$ ✓.\n\nProduct $= -\\dfrac13 \\times \\dfrac32 = -\\dfrac12$, and $\\dfrac ca = \\dfrac{-3}{6} = -\\dfrac12$ ✓."
+      },
+      "solution_md": "Split $-7x$ as $-9x + 2x$ (product $6 \\times (-3) = -18$), then compare with $a = 6$, $b = -7$, $c = -3$.",
+      "marking_scheme": [
+        {
+          "step": "(3x + 1)(2x − 3)",
+          "marks": 1
+        },
+        {
+          "step": "Zeroes −1/3 and 3/2",
+          "marks": 1
+        },
+        {
+          "step": "Sum 7/6 and product −1/2 checked",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "cbse-10-mathematics-ch02-t02"
+      ],
+      "expected_time_sec": 240,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
     }
   ],
   "build": {
     "run_id": null,
     "checks": {
       "syllabus": "topics t01–t02 only; removed topics (zeroes–coefficients relation for cubics, division algorithm) absent; cubic graphs appear only for the geometric meaning of zeroes",
-      "katex": "1499 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "1515 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "12 deck plots + 14 notes/question plots: 53 marked points all on their curves and matching their labels; 59 zeros located numerically and all marked; 8 intersection points lie on both lines",
-      "re_solve": "139/139 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
+      "re_solve": "142/142 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "narration": "34 slides, max 68 words, mean 53; no symbols, LaTeX or letter abbreviations",
       "gate": "npm test -w @soyl/content-templates and content lint (lintExemplar) run clean on this chapter"
     }
