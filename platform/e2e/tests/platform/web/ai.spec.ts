@@ -51,7 +51,19 @@ test('AI tutor: quote → stream → credits; hint → full; refund on failure; 
   await expect(lastAnswer(page)).toHaveAttribute('data-mode', 'hint');
   await expect(chip(page)).toHaveAttribute('data-balance', '24');
 
-  // "Show full solution" in the same conversation.
+  // "Show full solution" in the same conversation. Record when the reply's text grows, to prove the tokens
+  // arrive incrementally through the web proxy (not buffered until the end).
+  await page.evaluate(() => {
+    const w = window as unknown as { __growth: { t: number; n: number }[] };
+    w.__growth = [];
+    const thread = document.querySelector('[data-testid="thread"]')!;
+    new MutationObserver(() => {
+      const last = Array.from(thread.querySelectorAll('[data-role="assistant"]')).pop();
+      const n = last?.textContent?.length ?? 0;
+      const g = w.__growth;
+      if (!g.length || g[g.length - 1]!.n !== n) g.push({ t: performance.now(), n });
+    }).observe(thread, { subtree: true, childList: true, characterData: true });
+  });
   await page.getByTestId('reveal').click();
   await page.getByRole('dialog', { name: 'Use AI credits?' }).getByTestId('quote-confirm').click();
   // Mid-stream (the mock streams 64 characters every 700 ms): text so far plus the cursor. Best effort on a
@@ -61,6 +73,9 @@ test('AI tutor: quote → stream → credits; hint → full; refund on failure; 
   await shot(page, 'ask-streaming', false);
   await expect(lastAnswer(page)).toHaveAttribute('data-status', 'done', { timeout: 30_000 });
   await expect(lastAnswer(page)).toHaveAttribute('data-mode', 'full');
+  const growth = await page.evaluate(() => (window as unknown as { __growth: { t: number; n: number }[] }).__growth);
+  const span = growth[growth.length - 1]!.t - growth.find((g) => g.n > 40)!.t;
+  expect(span, `text grew in steps over time: ${JSON.stringify(growth)}`).toBeGreaterThan(1000);
   await expect(lastAnswer(page)).toContainText('Write what is given');
   await expect(chip(page)).toHaveAttribute('data-balance', '23');
   await checkPage(page);
