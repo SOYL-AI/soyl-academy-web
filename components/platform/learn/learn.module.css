@@ -234,3 +234,10 @@
   color: var(--p-success);
   font-weight: 600;
 }
+.testList {
+  margin: 0;
+  padding-left: 1.2em;
+  list-style: disc;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}

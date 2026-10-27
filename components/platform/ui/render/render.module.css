@@ -175,3 +175,10 @@
   font-size: var(--p-text-sm);
   text-align: center;
 }
+/* `++text++` underline marker (contract v2): language items ("the underlined word"). */
+.md ins,
+.mdInline ins {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}

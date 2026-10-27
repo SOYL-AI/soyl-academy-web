@@ -73,8 +73,18 @@ export function ChapterProgressNote({ chapterId }: { chapterId: string }) {
   return <span className={s.progressNote}>{parts.join(' · ')}</span>;
 }
 
-/** Tests need an account (CONTEXT §5): guests get a login prompt that returns here. */
-export function ChapterTestsCard() {
+export interface ChapterTestItem {
+  id: string;
+  title: string;
+  durationMin: number;
+  totalMarks: number;
+}
+
+/**
+ * Tests need an account (CONTEXT §5): guests get a login prompt that returns here. The test player is M3;
+ * until it ships, members see the chapter's tests listed as coming soon.
+ */
+export function ChapterTestsCard({ tests = [] }: { tests?: ChapterTestItem[] }) {
   const { state, openLogin } = useSession();
   return (
     <div className={s.viewLink} data-testid="chapter-tests">
@@ -82,6 +92,15 @@ export function ChapterTestsCard() {
         Chapter tests <Badge tone="accent">Free</Badge>
       </span>
       <p className={s.viewBlurb}>Short and long chapter tests in board pattern, with results and analysis.</p>
+      {tests.length > 0 && (
+        <ul className={s.testList}>
+          {tests.map((t) => (
+            <li key={t.id}>
+              {t.title.replace(/s+—.*$/, '')} · {t.totalMarks} marks · {t.durationMin} min
+            </li>
+          ))}
+        </ul>
+      )}
       {state.status === 'member' ? (
         <p className={s.viewBlurb}>
           <Badge>Coming soon</Badge> Tests open here soon. You are all set to take them.
