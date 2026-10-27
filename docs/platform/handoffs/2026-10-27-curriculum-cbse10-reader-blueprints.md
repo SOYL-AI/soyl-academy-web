@@ -2,7 +2,7 @@
 
 Status: **done**
 
-Branch: `platform/curriculum/cbse10-reader-blueprints` (worktree `C:/Users/Prabhu/soyl-wt/catalog-cbse10-blueprints`), from `origin/platform/main` 42549a2. I merged `origin/platform/main` again (3648363: English ch18–22 and ch27–30) before re-selecting the ch27–ch30 tests, so all eight Footprints chapters now on main are covered. No sub-agents.
+Branch: `platform/curriculum/cbse10-reader-blueprints` (worktree `C:/Users/Prabhu/soyl-wt/catalog-cbse10-blueprints`), from `origin/platform/main` 42549a2. I merged `origin/platform/main` again (3648363: English ch18–22 and ch27–30) before re-selecting the ch27–ch30 tests, so all eight Footprints chapters then on main were covered. **Round 2 (2026-10-28, Lead request):** I merged `origin/platform/main` again (7e266e0, which brings English ch01 and ch31) and did the five follow-ups described under "Round 2" below. No sub-agents.
 
 Inputs: handoffs `2026-10-27-subject-producer-cbse10-english-f.md` (ch23–26), `…-english-g.md` (ch27–30) and `…-hindi-d.md` (Hindi A ch14–17).
 
@@ -62,7 +62,7 @@ All tests now follow their new blueprint item for item, short and long tests sha
 | Hindi A ch15 माता का अँचल | 20/40, 13 items | 40/80, 26 items | +1 long (`l_friendship`, q_…_070) |
 | Hindi A ch16 साना-साना हाथ जोड़ि | same | same | +1 long (`l_children`, q_…_071) |
 | Hindi A ch17 मैं क्यों लिखता हूँ? | same | same | +1 long (`l_unease`, q_…_069) |
-| English ch31 | wired only (catalog) | — | content not on main (english-h 7f32ba6, generic blueprints); re-selection ready in its handoff, apply after merge |
+| English ch31 The Book That Saved the Earth | 18/40, 8 items | 36/80, 16 items | none (round 2: english-h's re-selection, applied as listed) |
 
 How items were selected:
 - Each test keeps the items it already had of each kind, and the remaining slots come from unused bank items.
@@ -96,31 +96,60 @@ npx vitest run --root db test/db6-split.test.ts
 npm test -w @soyl/content-pipeline
 npm run typecheck
 ```
-Output tails are in "Gate results" below. A scratch slot-for-slot checker read every catalog blueprint and compared each authored test's sections (type, marks, count, choice), totals, duration and override scope, and checked that no question is shared. It reports `ok` for all 22 updated tests. As controls it also reports `ok` for English ch04 and Hindi A ch11–ch14 on the generic blueprints.
+Output tails are in "Gate results" below. A scratch slot-for-slot checker read every catalog blueprint and compared each authored test's sections (type, marks, count, choice), totals, duration and override scope, and checked that no question is shared. It reports `ok` for all 24 updated tests (22 in round 1, plus ch31 in round 2). As controls it also reports `ok` for English ch04 and Hindi A ch11–ch14 on the generic blueprints.
 
-## Gate results
-All run from `platform/` on the final tree, after merging 3648363. Every command exited 0.
+## Gate results (round 2, final tree)
+All run from `platform/` after merging 7e266e0. Every command exited 0.
 ```
-content catalog                      catalog valid: 0 error(s), 0 warning(s)   (767 subjects, 363 blueprints)
-content-templates                    Test Files 1 passed (1)   Tests 680 passed (680)
-lint --exemplars                     97 units ok; ch15-17 and ch23-30: 0 error(s), 0 warning(s) (other units show their existing warnings only)
-verify --board cbse --class 10 --authored   97 unit(s), 7412 questions, 0 blocking flag(s); ch15-17 and ch23-30 all pass
-originality --authored               97 unit(s), 0 error(s) (reference-overlap skipped: no owner texts, OA-16)
+content catalog                      catalog valid: 0 error(s), 0 warning(s)
+content-templates                    Test Files 1 passed (1)   Tests 694 passed (694)
+lint --exemplars                     99 units ok; ch15-17 and ch23-31: 0 error(s), 0 warning(s) (other units: existing warnings only)
+verify --board cbse --class 10 --authored   99 unit(s), 7537 questions, 0 blocking flag(s)
+originality --authored               99 unit(s), 0 error(s) (reference-overlap skipped: no owner texts, OA-16)
 assemble --series --source files --strict   science 0 (11 frozen papers) · mathematics 0 (19) · social-science 0 (11)
 @soyl/db                             Test Files 14 passed (14)   Tests 109 passed | 1 skipped (110)
-api test/content.test.ts             Test Files 1 passed (1)   Tests 13 passed (13)
+api test/content.test.ts             Test Files 1 passed (1)   Tests 13 passed (13)   (with e5c1a77's own fixture chapter)
 db test/db6-split.test.ts            Test Files 1 passed (1)   Tests 8 passed (8)
 @soyl/content-pipeline               Test Files 8 passed (8)   Tests 280 passed (280)
 npm run typecheck                    all workspaces clean
 ```
 The frozen series files (`content/authored/series/*.json`, ADR-019) cover only Science, Maths and SST, are unchanged, and are reused as-is.
 
+Informational, not gates: `assemble --series --source files` (non-strict) for the two scoped subjects.
+- **English:** 7 of 11 papers assembled (mocks 1–4, May 1–2, unit 1). Hindi A: 4 of 11 (mocks 1–2, May 1–2).
+- **No extract or passage slot is filled from Footprints or कृतिका.** A scratch check of every assembled paper found these source-based chapters:
+  - English: First Flight ch04–ch21 only.
+  - Hindi A: क्षितिज ch03–ch14 only.
+  - 0 violations.
+- **Every remaining request is a reading, grammar or writing slot**, not a literature one: English case-based and writing items for units 2–3 and mocks 5–6; Hindi A writing, case-based and 1-mark grammar items.
+
+## Round 2 (2026-10-28)
+1. **Merge.** I merged `origin/platform/main` (7e266e0: English ch01 and ch31, the M6 security review, and e5c1a77's API fixture chapter). There were no conflicts.
+2. **ch31 re-selected** onto the supplementary blueprints, exactly as english-h's handoff listed:
+   - Short: A `[sa_mission, sa_noodle_idea, sa_humpty]` + `[sa_title, sa_tt_traits, sa_historian]`; B `[la_tt_sketch, la_misunderstanding]`.
+   - Long: A `[sb_tt_who, sb_landing, sb_mother_goose, sb_ending]`; B `[sa_food_listen, sa_cow, sa_pride]` + `[sa_noodle_traits, sa_humour, sa_saved]`; C `[la_contrast, la_title]`, `[la_noodle_diary, la_omega_report]`, `[la_humour, la_values]`.
+   - The commentary row is gone from the title-slide table (`vBoard` row and its alt-text sentence), from notes section 8, and from the README pattern section.
+3. **Stale wording fixed in ch23–ch30.**
+   - ch23–26: the title-slide row now reads "not set from this reader; SOYL commentary items in the question bank are extra comprehension practice". `checks.pattern` now says the commentary items are bank practice only and the tests follow the supplementary-reader blueprints.
+   - ch27–30: the "SOYL chapter tests only" table row and its alt-text sentence are removed. Notes section 8 now says the commentary passages are bank practice, not part of the chapter tests. `checks.board_pattern` is reworded the same way.
+   - All nine chapters were rebuilt with their own `build.mjs`. In `release.json` only that deck, notes and provenance wording changed; no item, id or test changed. All builds report NO ERRORS and 0 guard hits.
+4. **ch28 retag t02 → t04.** Tags only, 17 changes:
+   - Items: `sa_curiosity`, `sa_all_rounder`, `sa_failure`, `mc_motive`, `tf_prizes_only`, `mt_traits`.
+   - Long answers: `la_ebright_sketch` and `la_qualities`, now `[3, 4]`.
+   - Passages: `src_qualities` (`[4, 3]`, parts a–d → t04). `src_childhood` and `src_fair` gain t04 as `[1, 2, 4]`, and their part e → t04.
+   - The ch28 README records the change.
+5. **Item-level `chapters` scopes** on the English and Hindi A `board`, `board-second-exam` and `unit-test` blueprints:
+   - **English board and board-second-exam:** Q6/Q7 extracts, Q8 and Q10 → First Flight (ch04–22); Q9 and Q11 → Footprints (ch23–31). Q10/Q11 were one "1 of 2 × 4" item and are now two "1 of 2" items; the marks are unchanged.
+   - **English unit test:** the extract → First Flight.
+   - **Hindi A board and board-second-exam:** प्रश्न 7/8 → क्षितिज गद्य (ch09–14), 9/10 → क्षितिज काव्य (ch03–08), 11 → कृतिका (ch15–17).
+   - **Hindi A unit test:** the passage → क्षितिज (ch03–14). Its 4-mark item is left unscoped, because the contiguous unit partition gives unit tests 1 and 2 (ch01–06, ch07–12) no कृतिका chapter.
+   - Each blueprint's notes record the scopes.
+   - **Catalog compatibility:** this uses the existing item-level `chapters` field (subject blueprints only, ids checked against the syllabus), and the catalog is valid.
+   - **New test:** `content-pipeline/test/stages.test.ts` now asserts that every source-based slot in these six papers is chapter-scoped and admits no Footprints or कृतिका chapter.
+
 ## Known gaps / follow-ups
-- **English board/unit blueprints still let a Footprints commentary item fill an extract slot.** The Footprints chapters are board-assessed, so assembled mocks and unit tests could draw a Footprints commentary passage into the Q6/Q7 extract slots, and the same applies to कृतिका commentary in प्रश्न 7. The fix is item-level `chapters` scopes on `board.yaml` / `board-second-exam.yaml` / `unit-test.yaml`: Q6/Q7/Q8/Q10 → First Flight, Q9/Q11 → Footprints; Hindi A प्रश्न 7/8 → क्षितिज गद्य, 9/10 → काव्य, 11 → कृतिका. This was not in this brief, and English and Hindi have no frozen series yet. Recommended before those series are frozen.
-- **ch31 tests:** english-h pushed ch31 (7f32ba6 on `platform/subject-producer/cbse-10-english-h`) on the generic blueprints, as its brief required. Its handoff (`2026-10-27-subject-producer-cbse10-english-h.md`, "Follow-up") lists a ready re-selection onto the supplementary blueprints. The ch31 bank (14 three-mark, 9 long, 6 two-mark) fills the supplementary shape with no shared questions. The handoff also says to drop the commentary row from vBoard and notes §8. **Apply it after both branches are on main**: until then ch31's `blueprint_id` names the generic blueprint while the catalog maps ch31 to the override. No gate checks that pairing, so nothing breaks in the meantime.
-- **Some deck and notes text in the Footprints chapters is now inaccurate.** It still says SOYL tests use commentary items as comprehension checks (for example the ch23 title-slide table). The `checks.pattern` provenance string in the English builds says the same. I left these alone: the brief allowed item re-selection only, and `release.json` stays byte-identical. Producers can reword them at their next pass.
-- **ch28 retag:** move the items on Ebright's qualities from t02 to the new t04.
-- **Hindi B** संचयन chapters were not in scope. Their chapter tests already use 3-mark संचयन answers.
+- **English and Hindi A series do not fully assemble from files yet.** The open requests are all reading, grammar or writing slots (see Gate results). Part of the cause is that the unit tests need ch01–03 (English) or the grammar and writing chapters (Hindi A) in every unit, but the contiguous unit partition does not put them there. That is a series-planning question for assessment-designer and pipeline-engineer before these series are frozen. It is not a catalog error.
+- **Hindi B संचयन** chapters were not in scope. Their chapter tests already use 3-mark संचयन answers.
 
 ## Decisions made
 - Chapter override = blueprint `scope` given as a list of chapter ids, resolved in content-pipeline (above). No ADR was written: it uses an existing schema field, and the only change is to the content-pipeline's blueprint resolution. Pipeline-engineer should review the `catalog.ts` / `series.ts` diff.
