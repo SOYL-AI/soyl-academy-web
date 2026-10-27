@@ -26,17 +26,16 @@
  * the one unauthenticated action, and it can only switch features OFF; its page needs a button press.
  */
 import { createHmac, randomInt, timingSafeEqual } from 'node:crypto';
-import { and, eq, inArray, isNotNull, sql } from 'drizzle-orm';
+import { and, eq, inArray, isNotNull, ne, sql } from 'drizzle-orm';
 import type { FastifyBaseLogger } from 'fastify';
 import { aiConversations, auditLog, consentRecords, normalizeEmail, uploads, type Database } from '@soyl/db';
-import { AI_UPLOADS } from '@soyl/shared/config/ai-actions';
 import { BUILTIN_CONSENT, type AgeBand, type ConsentMethod, type ConsentRevoker, type ConsentState } from '@soyl/shared/config/security';
 import type { Clock } from '../clock';
 import { ApiProblem } from '../errors';
 import { securityEvent } from '../logging';
 import { rateLimited, type RateLimiter } from '../rate-limit';
 import type { EmailSender } from '../auth/senders/email';
-import type { BlobStore } from '../ai/blob';
+import type { UploadService } from '../ai/uploads';
 import type { AuthUser } from '../types';
 import type { ConsentFlow, ConsentProvider, ConsentStatus } from './provider';
 import type { ConsentService } from './service';
@@ -98,8 +97,8 @@ export interface BuiltinConsentDeps {
   pepper: string;
   /** Public web origin + path base for links in the email. */
   publicBaseUrl: string;
-  /** Blob store for deleting uploads on withdrawal (the AI runtime's). */
-  blob: () => BlobStore;
+  /** Upload deletion (S6-M02 machinery: blobs, then rows; the worker's uploads.purge-deleted retries). */
+  uploads: () => Pick<UploadService, 'purgeDeleted'>;
 }
 
 const EMAIL_RE = /^[^\s@<>()[\]\\,;:"]{1,64}@[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+$/i;
@@ -411,8 +410,10 @@ export class BuiltinConsentFlow {
 
   /**
    * PII.md "AI data" on withdrawal: AI conversations (messages cascade) and uploads with both blobs.
-   * Rows are marked `deleted` in one transaction first (processing never resurrects them); blobs go
-   * next; a row whose blob delete failed stays `deleted` for the storage lifecycle rule (30 days).
+   * The same path as account deletion (S6-M02): in one transaction the uploads are marked `deleted`
+   * (unusable at once; processing never resurrects them), then UploadService.purgeDeleted deletes each
+   * quarantine original and cleaned copy and the row; what fails is retried by the worker's
+   * `uploads.purge-deleted` job.
    */
   async deleteAiData(userId: string, log: FastifyBaseLogger): Promise<{ conversations: number; uploads: number }> {
     const now = this.now();
@@ -420,32 +421,30 @@ export class BuiltinConsentFlow {
       const c = await tx.delete(aiConversations).where(eq(aiConversations.userId, userId)).returning({ id: aiConversations.id });
       const m = await tx
         .update(uploads)
-        .set({ status: 'deleted', updatedAt: now })
-        .where(eq(uploads.userId, userId))
-        .returning({ id: uploads.id, blobKey: uploads.blobKey, processedKey: uploads.processedKey });
-      return { conversations: c.length, marked: m };
+        .set({ status: 'deleted', expiresAt: now, updatedAt: now })
+        .where(and(eq(uploads.userId, userId), ne(uploads.status, 'deleted')))
+        .returning({ id: uploads.id });
+      return { conversations: c.length, marked: m.length };
     });
-    const done: string[] = [];
-    for (const u of marked) {
-      try {
-        const blob = this.d.blob();
-        await blob.delete(AI_UPLOADS.containers.quarantine, u.blobKey);
-        if (u.processedKey) await blob.delete(AI_UPLOADS.containers.clean, u.processedKey);
-        done.push(u.id);
-      } catch (err) {
-        log.warn({ err, uploadId: u.id }, 'consent withdrawal: upload blob delete failed (lifecycle rule will remove it)');
-      }
-    }
-    if (done.length) await this.d.db.delete(uploads).where(and(inArray(uploads.id, done), eq(uploads.status, 'deleted')));
     await this.d.db.insert(auditLog).values({
       actorUserId: null,
       actorRole: 'system',
       action: 'consent.ai_data_deleted',
       targetType: 'user',
       targetId: userId,
-      after: { conversations, uploads: marked.length, blobsDeleted: done.length },
+      after: { conversations, uploads: marked },
       createdAt: now,
     });
-    return { conversations, uploads: marked.length };
+    if (marked) {
+      const r = await this.d
+        .uploads()
+        .purgeDeleted(now, { userId })
+        .catch((err: unknown) => {
+          log.warn({ err, userId }, 'consent withdrawal: upload purge failed; the worker retries (uploads.purge-deleted)');
+          return null;
+        });
+      if (r?.failed) log.warn({ userId, failed: r.failed }, 'consent withdrawal: some upload blobs not deleted yet; the worker retries');
+    }
+    return { conversations, uploads: marked };
   }
 }

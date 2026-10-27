@@ -1,0 +1,53 @@
+id: icse-10-geography-board
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-geography
+paper_type: board
+academic_year: "2026-27"
+duration_min: 120
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: I-TOPO
+    title: Part I Question 1 - Topographical map (10 marks, compulsory)
+    instructions: >-
+      Five pairs of 1-mark sub-questions on the given extract of a Survey of India topographical sheet: grid references, heights and
+      contours, distance and area from the scale, direction, conventional symbols, drainage patterns, settlements, land use and the
+      reasons behind them. SOYL supplies its own original map extract as the stimulus.
+    chapters: [icse-10-geography-ch01, icse-10-geography-ch02, icse-10-geography-ch03]
+    items:
+      - {type: case-based, count: 1, marks_each: 10}
+  - id: I-MAP
+    title: Part I Question 2 - Outline map of India (10 marks, compulsory)
+    instructions: Mark and name six features and identify four marked features on the outline map of India provided.
+    chapters: [icse-10-geography-ch04, icse-10-geography-ch05]
+    items:
+      - {type: map, count: 1, marks_each: 10}
+  - id: I-OBJ
+    title: Part I Question 3 - Objective (10 marks, compulsory)
+    instructions: Ten 1-mark multiple-choice items on the Geography of India (one assertion-reason); write the correct answers only.
+    chapters: [icse-10-geography-ch06, icse-10-geography-ch07, icse-10-geography-ch08, icse-10-geography-ch09, icse-10-geography-ch10, icse-10-geography-ch11, icse-10-geography-ch12, icse-10-geography-ch13, icse-10-geography-ch14, icse-10-geography-ch15, icse-10-geography-ch16, icse-10-geography-ch17, icse-10-geography-ch18]
+    items:
+      - {type: mcq, count: 9, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+  - id: II
+    title: Part II - Any five of nine (50 marks)
+    instructions: >-
+      Attempt any five of Questions 4-12, 10 marks each, in four parts (2 + 2 + 3 + 3 marks): reasons, climatic data, pictures, sketches
+      and short explanations.
+    chapters: [icse-10-geography-ch06, icse-10-geography-ch07, icse-10-geography-ch08, icse-10-geography-ch09, icse-10-geography-ch10, icse-10-geography-ch11, icse-10-geography-ch12, icse-10-geography-ch13, icse-10-geography-ch14, icse-10-geography-ch15, icse-10-geography-ch16, icse-10-geography-ch17, icse-10-geography-ch18]
+    items:
+      - {type: long, count: 9, marks_each: 10, internal_choice: {attempt: 5, of: 9}}
+source_status: verified
+source: icse-2027-specimen-502-geography
+notes: >-
+  ICSE 2027 History, Civics and Geography (50) Paper 2, specimen paper code 502: one theory paper of two hours (plus 15 minutes reading
+  time), 80 marks; internal assessment 20 marks is not modelled. Part I (30, compulsory): Q1 topographical sheet 10 x 1 (a 10-mark
+  case item on map-work chapters 1-3), Q2 outline map of India 10 (chapters 4-5), Q3 10 x 1 objective items on the Geography of India.
+  Part II (50): any five of nine 10-mark questions, one per topic of the Geography of India (climate, soils, vegetation, water,
+  minerals and energy, agriculture, industries, transport, waste). Unit weightage follows from this layout: Map Work 20, Geography of
+  India 60 (syllabus units). The board supplies a real Survey of India sheet; SOYL uses its own drawn extracts (CONTEXT section 8).
+  No mark_shares, so no competency balance: the October 2026 circular (cisce-circular-specimen-papers-2027) gives higher-order questions (apply, analyse, evaluate, create) only an approximate overall weightage of about 50%, not a per-band design, and the engine rule (each band within 3 marks whichever alternatives are attempted) would, with single-competency 10-mark items and choice groups of 4 of 6 or more, push whole choice sections into one band and move the paper away from the specimen (follow-up in the handoff).
+  Deviation: one chapter per question in the item model, so a Part II question's four parts come from one chapter.

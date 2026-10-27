@@ -229,6 +229,10 @@ describe('uploads: validation and cleaning (AC-16 corpus)', () => {
     expect(() => checkPdf(pdf(1, '/Launch << /F (cmd.exe) >>'))).toThrow(expect.objectContaining({ reason: 'unsafe_pdf' }));
     expect(() => checkPdf(Buffer.from('%PDF-1.4\n%%EOF'))).toThrow(expect.objectContaining({ reason: 'corrupt' }));
     expect(() => validateAndClean(Buffer.alloc(11 * 1024 * 1024, 1), 'image/png')).toThrow(expect.objectContaining({ reason: 'too_large' }));
+    // S6-M01 / ADR-020: the pipeline refuses every PDF (checkPdf is not a security boundary any more).
+    expect(() => validateAndClean(pdf(3), 'application/pdf')).toThrow(expect.objectContaining({ reason: 'unsupported_type' }));
+    expect(() => validateAndClean(pdf(1, '/OpenAction << /S /J#61vaScript /JS (x) >>'), 'application/pdf')).toThrow(expect.objectContaining({ reason: 'unsupported_type' }));
+    expect(() => validateAndClean(pdf(2), 'image/png')).toThrow(expect.objectContaining({ reason: 'unsupported_type' }));
     expect(() => cleanJpeg(Buffer.from([0xff, 0xd8, 0xff, 0xe1, 0, 2, 0x00]))).toThrow(UploadRejectedError);
     expect(() => cleanPng(png().subarray(0, 40))).toThrow(UploadRejectedError);
   });

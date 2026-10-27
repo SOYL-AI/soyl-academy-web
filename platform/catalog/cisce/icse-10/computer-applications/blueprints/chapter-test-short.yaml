@@ -1,0 +1,29 @@
+id: icse-10-computer-applications-chapter-test-short
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-computer-applications
+paper_type: chapter-test-short
+academic_year: "2026-27"
+duration_min: 30
+total_marks: 25
+mark_shares: {}
+scope: chapter
+sections:
+  - id: A
+    title: Section A - Compulsory (10 marks)
+    instructions: Attempt all questions. Six multiple-choice items (1 mark each) and two 2-mark short answers.
+    items:
+      - {type: mcq, count: 6, marks_each: 1}
+      - {type: short, count: 2, marks_each: 2}
+  - id: B
+    title: Section B - Program (15 marks)
+    instructions: Write one of the two Java programs, with variable descriptions or comments.
+    items:
+      - {type: long, count: 2, marks_each: 15, internal_choice: {attempt: 1, of: 2}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL chapter test in the ICSE Computer Applications form (compulsory objective and short items, then a choice of 15-mark programs;
+  see icse-10-computer-applications-board, itself unverified below section level); not an official CISCE paper. One chapter, 25 marks
+  in 30 minutes (the board's pace of 100 marks in 2 hours).

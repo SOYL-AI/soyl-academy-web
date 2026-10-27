@@ -345,6 +345,13 @@ export const ResultResponse = z
     live: z
       .object({ eventId: z.string(), status: z.enum(['provisional', 'final']), rank: z.number().int().nullable(), total: z.number().int(), percentile: z.number().nullable() })
       .nullable(),
+    review: z
+      .object({
+        status: z.enum(['open', 'after_event']),
+        /** after_event: when the live test closes for everyone and the full review opens. */
+        opensAt: z.iso.datetime().nullable(),
+      })
+      .describe('S6-H01: a live-mock attempt is score-only until the event closes (after_event): sections, topics, byDifficulty, sectionsLayout and items are empty, self- and AI evaluation return 409 results_after_event.'),
     sectionsLayout: z.array(z.object({ id: z.string(), title: z.string(), itemIds: z.array(z.uuid()), choiceGroups: z.array(z.object({ id: z.string(), attempt: z.number().int(), of: z.number().int(), itemIds: z.array(z.uuid()) })) })),
     items: z.array(
       z.object({

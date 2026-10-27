@@ -67,7 +67,7 @@ export function createServices(deps: AppDeps) {
   billing.setCreditHook(ai.credits);
   // D-039 / ADR-022: the interactive flow exists only with CONSENT_PROVIDER=builtin (routes answer 409 otherwise).
   const consentFlow = isBuiltinProvider(providers.consent)
-    ? new BuiltinConsentFlow({ db, clock, limiter, email: providers.email, consent, pepper: config.otpPepper, publicBaseUrl: config.publicBaseUrl, blob: () => ai.runtime.blob })
+    ? new BuiltinConsentFlow({ db, clock, limiter, email: providers.email, consent, pepper: config.otpPepper, publicBaseUrl: config.publicBaseUrl, uploads: () => ai.uploads })
     : null;
   return { auth, adapter, limiter, sessions, otp, identity, google, consent, consentFlow, mfa, billing, ai };
 }

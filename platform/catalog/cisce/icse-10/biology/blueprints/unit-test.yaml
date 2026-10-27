@@ -1,0 +1,34 @@
+id: icse-10-biology-unit-test
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-biology
+paper_type: unit-test
+academic_year: "2026-27"
+duration_min: 90
+total_marks: 60
+mark_shares: {}
+scope: unit
+sections:
+  - id: A
+    title: Section A - Compulsory (30 marks)
+    instructions: >-
+      Attempt all questions. Nine MCQs and one assertion-reason item (1 mark each); five 1-mark terms / odd one out; a five-blank
+      passage; a short case with five 1-mark sub-questions; a five-pair diagram match.
+    items:
+      - {type: mcq, count: 9, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: short, count: 5, marks_each: 1}
+      - {type: fill-blank, count: 1, marks_each: 5}
+      - {type: case-based, count: 1, marks_each: 5}
+      - {type: match, count: 1, marks_each: 5}
+  - id: B
+    title: Section B - Case-based questions (30 marks)
+    instructions: Attempt any three of the five questions; each opens with a scenario, experiment or diagram followed by parts of 1-3 marks.
+    items:
+      - {type: case-based, count: 5, marks_each: 10, internal_choice: {attempt: 3, of: 5}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL half-syllabus test in the ICSE 2027 Biology form (icse-2027-specimen-523-biology); not an official CISCE paper. 60 marks in
+  90 minutes (board pace); no chapter scopes, so it fills from whichever chapters the series planner groups.

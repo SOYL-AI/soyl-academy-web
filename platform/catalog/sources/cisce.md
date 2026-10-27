@@ -461,6 +461,100 @@ Published under "Regulations and Syllabus ICSE 2027"; most files dated February 
 - **Fetched:** 2026-10-25
 - **Use:** Pattern and scope only (blueprints). Never copy questions.
 
+#### ICSE 2027 specimen papers used for the Class 10 board blueprints
+
+The index page above returned HTTP 403 to non-browser clients on 2026-10-28; the PDFs themselves download directly.
+Each file is the specimen question paper followed by its draft marking scheme. Used for the paper pattern only
+(sections, choice, marks, item forms, competency tags); no question, passage or answer is reproduced in the catalog.
+
+### `icse-2027-specimen-511-mathematics`
+- **Title:** ICSE 2027 Specimen Question Paper and Marking Scheme - Mathematics (511)
+- **URL:** https://cisce.org/wp-content/uploads/2026/07/ICSE-2027-SPECIMEN-511-MATHEMATICS-QP-MS-1.pdf
+- **Publisher:** CISCE
+- **Exam year:** ICSE 2027
+- **Fetched:** 2026-10-28
+- **Use:** Board blueprint icse-10-mathematics-board: 3 hours, 80 marks; Section A 40 compulsory (Q1 15 x 1 incl. 2 assertion-reason, Q2-Q3 parts of 4/4/4 and 4/4/5), Section B any 4 of 7 x 10.
+
+### `icse-2027-specimen-521-physics`
+- **Title:** ICSE 2027 Specimen Question Paper and Marking Scheme - Physics, Science Paper 1 (521)
+- **URL:** https://cisce.org/wp-content/uploads/2026/07/ICSE-2027-SPECIMEN-521-PHYSICS-QP-MS-1.pdf
+- **Publisher:** CISCE
+- **Exam year:** ICSE 2027
+- **Fetched:** 2026-10-28
+- **Use:** Board blueprint icse-10-physics-board: 2 hours, 80 marks; Section A 40 compulsory (Q1 15 x 1 incl. 1 assertion-reason; Q2 six 1-mark fill-ins, a 2-mark match, a 2-mark graph item; Q3 six 2-mark and one 3-mark item), Section B any 4 of 6 x 10. (An earlier upload without the "-1" suffix differs only in Q1; the "-1" file is the current one.)
+
+### `icse-2027-specimen-522-chemistry`
+- **Title:** ICSE 2027 Specimen Question Paper and Marking Scheme - Chemistry, Science Paper 2 (522)
+- **URL:** https://cisce.org/wp-content/uploads/2026/07/ICSE-2027-SPECIMEN-522-CHEMISTRY-QP-MS.pdf
+- **Publisher:** CISCE
+- **Exam year:** ICSE 2027
+- **Fetched:** 2026-10-28
+- **Use:** Board blueprint icse-10-chemistry-board: 2 hours, 80 marks; Section A 40 compulsory (Q1 15 x 1 incl. 1 assertion-reason; Q2 five 5-mark parts: diagram-based, equations, fill-ins, match, naming/structures), Section B any 4 of 6 x 10.
+
+### `icse-2027-specimen-523-biology`
+- **Title:** ICSE 2027 Specimen Question Paper and Marking Scheme - Biology, Science Paper 3 (523)
+- **URL:** https://cisce.org/wp-content/uploads/2026/07/ICSE-2027-SPECIMEN-523-BIOLOGY-QP-MS.pdf
+- **Publisher:** CISCE
+- **Exam year:** ICSE 2027
+- **Fetched:** 2026-10-28
+- **Use:** Board blueprint icse-10-biology-board: 2 hours, 80 marks; Section A 40 compulsory (Q1 15 x 1 incl. 2 assertion-reason; Q2 five 5-mark parts: terms, fill-ins, odd one out, a case, a diagram match), Section B any 4 of 6 x 10 (mostly case-based, parts of 1-3 marks).
+
+### `icse-2027-specimen-501-history-civics`
+- **Title:** ICSE 2027 Specimen Question Paper and Marking Scheme - History & Civics, H.C.G. Paper 1 (501)
+- **URL:** https://cisce.org/wp-content/uploads/2026/07/ICSE-2027-SPECIMEN-501-HISTORY-CIVICS-QP-MS.pdf
+- **Publisher:** CISCE
+- **Exam year:** ICSE 2027
+- **Fetched:** 2026-10-28
+- **Use:** Board blueprint icse-10-history-civics-board: 2 hours, 80 marks; Part I 30 compulsory (Q1 16 x 1 incl. 1 assertion-reason, Q2 7 x 2), Part II Section A Civics any 2 of 3 x 10, Section B History any 3 of 5 x 10.
+
+### `icse-2027-specimen-502-geography`
+- **Title:** ICSE 2027 Specimen Question Paper and Marking Scheme - Geography, H.C.G. Paper 2 (502)
+- **URL:** https://cisce.org/wp-content/uploads/2026/07/ICSE-2027-SPECIMEN-502-GEOGRAPHY-QP-MS.pdf
+- **Publisher:** CISCE
+- **Exam year:** ICSE 2027
+- **Fetched:** 2026-10-28
+- **Use:** Board blueprint icse-10-geography-board: 2 hours, 80 marks; Part I 30 compulsory (Q1 topographical sheet 10 x 1, Q2 outline map of India 10, Q3 10 x 1 objective incl. 1 assertion-reason), Part II any 5 of 9 x 10 (parts of 2/2/3/3).
+
+### `icse-2027-specimen-011-english-language`
+- **Title:** ICSE 2027 Specimen Question Paper and Marking Scheme - English Language, English Paper 1 (011)
+- **URL:** https://cisce.org/wp-content/uploads/2026/07/ICSE-2027-SPECIMEN-011-ENGLISH-LANGUAGE-QP-MS.pdf
+- **Publisher:** CISCE
+- **Exam year:** ICSE 2027
+- **Fetched:** 2026-10-28
+- **Use:** Board blueprint icse-10-english-language-board: 2 hours, 80 marks, all five questions compulsory (Q1 composition 20 from 5 choices, Q2 letter 10 from 2, Q3 notice 5 + e-mail 5, Q4 comprehension and summary 20, Q5 grammar 4 + 4 + 4 + 8). Its comprehension passage is from a published story; SOYL passages are original (CONTEXT section 8).
+
+### `icse-2027-specimen-012-literature-in-english`
+- **Title:** ICSE 2027 Specimen Question Paper and Marking Scheme - Literature in English, English Paper 2 (012)
+- **URL:** https://cisce.org/wp-content/uploads/2026/07/ICSE-2027-SPECIMEN-012-LITERATURE-IN-ENGLISH-QP-MS.pdf
+- **Publisher:** CISCE
+- **Exam year:** ICSE 2027
+- **Fetched:** 2026-10-28
+- **Use:** Board blueprint icse-10-literature-in-english-board: 2 hours, 80 marks; Section A 16 x 1 compulsory; Sections B (drama), C (prose), D (poetry) two 16-mark extract questions each; one question from each of B, C, D and one more from any of them. (The section headings print "40 Marks" for every section; the marks in brackets add up to 16 + 4 x 16 = 80.)
+
+#### Not fetched: ICSE 2026-pattern papers for Hindi and Computer Applications
+
+The October 2026 circular (`cisce-circular-specimen-papers-2027`) publishes no 2027 specimen for ICSE Hindi or Computer Applications;
+"the existing rubrics and assessment structure of Year 2026 Examination cycle shall apply". The 2026 specimen/question papers for these
+two subjects could not be located on 2026-10-28: the cisce.org index pages return HTTP 403, and probing the 2026 specimen file-name
+pattern (`/wp-content/uploads/2025/07/ICSE-2026-SPECIMEN-<code>-<abbr>.pdf`, which exists for English, H.C.G., Mathematics and
+Science) found no Computer Applications file; CISCE published 2026 specimens for a limited set of subjects only.
+
+### `icse-2026-hindi-paper`
+- **Title:** ICSE 2026 Hindi question paper or latest specimen paper - NOT FETCHED
+- **URL:** not located (cisce.org index pages return 403)
+- **Publisher:** CISCE
+- **Exam year:** ICSE 2026 pattern, applying to ICSE 2027
+- **Fetched:** not fetched (2026-10-28)
+- **Use:** Would verify icse-10-hindi-board below the section level. Until then the section structure (Section A Language 40, compulsory: composition from a choice, letter from a choice of two, a 250-word unseen passage, grammar; Section B 40: four questions from only two prescribed books; 3 hours) is verified from `icse-2027-second-languages`, and the per-question marks are unverified.
+
+### `icse-2026-computer-applications-paper`
+- **Title:** ICSE 2026 Computer Applications question paper or latest specimen paper - NOT FETCHED
+- **URL:** not located (cisce.org index pages return 403; no `ICSE-2026-SPECIMEN-861-*` file)
+- **Publisher:** CISCE
+- **Exam year:** ICSE 2026 pattern, applying to ICSE 2027
+- **Fetched:** not fetched (2026-10-28)
+- **Use:** Would verify icse-10-computer-applications-board. The syllabus (`icse-2027-computer-applications`) fixes only one theory paper of 2 hours, 100 marks; the section layout is unverified.
+
 ## ICSE Examination Year 2028 (Class 9 in 2026-27)
 
 Two-year course; Class IX portion is examined internally by schools.

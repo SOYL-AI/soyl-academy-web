@@ -6104,6 +6104,35 @@
               }
             ]
           },
+          "review": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "open",
+                  "after_event"
+                ]
+              },
+              "opensAt": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "status",
+              "opensAt"
+            ],
+            "description": "S6-H01: a live-mock attempt is score-only until the event closes (after_event): sections, topics, byDifficulty, sectionsLayout and items are empty, self- and AI evaluation return 409 results_after_event."
+          },
           "sectionsLayout": {
             "type": "array",
             "items": {
@@ -6366,6 +6395,7 @@
           "time",
           "percentile",
           "live",
+          "review",
           "sectionsLayout",
           "items"
         ],
@@ -7188,8 +7218,7 @@
             "enum": [
               "image/jpeg",
               "image/png",
-              "image/webp",
-              "application/pdf"
+              "image/webp"
             ]
           },
           "bytes": {
@@ -14674,6 +14703,36 @@
               }
             ]
           },
+          "review": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": [
+                  "open",
+                  "after_event"
+                ]
+              },
+              "opensAt": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "status",
+              "opensAt"
+            ],
+            "additionalProperties": false,
+            "description": "S6-H01: a live-mock attempt is score-only until the event closes (after_event): sections, topics, byDifficulty, sectionsLayout and items are empty, self- and AI evaluation return 409 results_after_event."
+          },
           "sectionsLayout": {
             "type": "array",
             "items": {
@@ -14940,6 +14999,7 @@
           "time",
           "percentile",
           "live",
+          "review",
           "sectionsLayout",
           "items"
         ],
@@ -15776,8 +15836,7 @@
             "enum": [
               "image/jpeg",
               "image/png",
-              "image/webp",
-              "application/pdf"
+              "image/webp"
             ]
           },
           "bytes": {

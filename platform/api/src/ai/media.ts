@@ -2,21 +2,21 @@
  * Upload validation and cleaning (AC-16, ASVS 5.1.1, 5.2.x; ADR-013). Pure functions over bytes, no
  * native decoders, so they run the same in the API, the worker and tests.
  *
- *   sniff      magic bytes decide the type; the declared Content-Type must agree. JPEG, PNG, WebP and
- *              PDF only. SVG/HTML/XML, HEIC and everything else are refused.
- *   limits     ≤ 10 MB; images ≤ 40 MP (dimensions read from the header, before any decoding);
- *              PDF ≤ 10 pages, not encrypted, no JavaScript, launch actions, embedded files or forms.
+ *   sniff      magic bytes decide the type; the declared Content-Type must agree. JPEG, PNG and WebP
+ *              only. PDFs are recognised but refused (S6-M01 / ADR-020: until the worker parses them
+ *              with a real parser and rasterises pages to images). SVG/HTML/XML, HEIC and everything
+ *              else are refused.
+ *   limits     ≤ 10 MB; images ≤ 40 MP (dimensions read from the header, before any decoding).
  *   clean      images are rebuilt from their image data only: every metadata segment (EXIF incl. GPS,
  *              XMP, ICC, comments, text chunks) and anything after the end marker (polyglot payloads)
- *              is dropped. PDFs are kept byte-for-byte after the checks (rendering to images needs a
- *              PDF renderer: follow-up, handoff).
+ *              is dropped.
  *
  * Full re-encoding (decode → encode) needs a native image library (sharp/libvips); this rebuild is the
  * dependency-free equivalent for metadata and appended payloads. ADR-013 records the trade-off.
  */
-import { AI_UPLOADS, type AiUploadContentType } from '@soyl/shared/config/ai-actions';
+import { AI_UPLOADS, type UploadMediaType } from '@soyl/shared/config/ai-actions';
 
-export type SniffedType = AiUploadContentType;
+export type SniffedType = UploadMediaType;
 
 export class UploadRejectedError extends Error {
   constructor(readonly reason: UploadRejectReason, detail?: string) {
@@ -190,6 +190,11 @@ export function pdfPageCount(buf: Buffer): number {
 
 const UNSAFE_PDF = /\/(JavaScript|JS|Launch|EmbeddedFile|EmbeddedFiles|RichMedia|XFA|AcroForm|SubmitForm|ImportData|GoToR|GoToE)\b/;
 
+/**
+ * NOT a security boundary (S6-M01): a regex scan cannot see inside compressed object streams or
+ * normalise name escapes, so it misses active content and page trees. It is no longer called by
+ * validateAndClean; it may only serve as a cheap pre-filter in front of the real parser (ADR-020).
+ */
 export function checkPdf(buf: Buffer): { pages: number } {
   const text = buf.toString('latin1');
   if (/\/Encrypt\b/.test(text)) throw new UploadRejectedError('unsafe_pdf', 'encrypted PDF');
@@ -220,11 +225,11 @@ export function validateAndClean(buf: Buffer, declaredType: string): CleanedUplo
   if (buf.length > AI_UPLOADS.maxBytes) throw new UploadRejectedError('too_large');
   const type = sniff(buf);
   if (!type) throw new UploadRejectedError('unsupported_type');
+  // S6-M01 / ADR-020: PDFs are refused whatever the config says until a real parser + rasteriser exists
+  // (an upload created before PDFs were turned off is refused here, in processing).
+  if (type === 'application/pdf') throw new UploadRejectedError('unsupported_type', 'PDF uploads are disabled (ADR-020)');
+  if (!(AI_UPLOADS.contentTypes as readonly string[]).includes(type)) throw new UploadRejectedError('unsupported_type');
   if (type !== declaredType) throw new UploadRejectedError('type_mismatch', `declared ${declaredType}, content is ${type}`);
-  if (type === 'application/pdf') {
-    const { pages } = checkPdf(buf);
-    return { type, data: buf, bytes: buf.length, pages, dimensions: null };
-  }
   const dims = imageDimensions(type, buf);
   if (!dims.width || !dims.height) throw new UploadRejectedError('corrupt', 'zero-size image');
   if (dims.width * dims.height > AI_UPLOADS.maxPixels) throw new UploadRejectedError('too_many_pixels');

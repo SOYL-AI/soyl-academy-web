@@ -1,0 +1,30 @@
+id: icse-10-mathematics-chapter-test-short
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-mathematics
+paper_type: chapter-test-short
+academic_year: "2026-27"
+duration_min: 45
+total_marks: 20
+mark_shares: {}
+scope: chapter
+sections:
+  - id: A
+    title: Section A - Compulsory (10 marks)
+    instructions: Attempt all questions. Three MCQs and one assertion-reason item (1 mark each), then two 3-mark problems; show all working.
+    items:
+      - {type: mcq, count: 3, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: short, count: 2, marks_each: 3}
+  - id: B
+    title: Section B - Structured problem (10 marks)
+    instructions: Attempt any one of the two questions, each in parts (3 + 3 + 4 or 5 + 5 marks).
+    items:
+      - {type: long, count: 2, marks_each: 10, internal_choice: {attempt: 1, of: 2}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL chapter test in the ICSE 2027 Mathematics form (icse-2027-specimen-511-mathematics): a compulsory Section A of 1-mark
+  objective items and short problems, then a choice of 10-mark structured questions; not an official CISCE paper. One chapter,
+  20 marks in 45 minutes (the board's pace of 80 marks in 3 hours).

@@ -6210,6 +6210,12 @@ export interface components {
                 total: number;
                 percentile: number | null;
             } | null;
+            /** @description S6-H01: a live-mock attempt is score-only until the event closes (after_event): sections, topics, byDifficulty, sectionsLayout and items are empty, self- and AI evaluation return 409 results_after_event. */
+            review: {
+                /** @enum {string} */
+                status: "open" | "after_event";
+                opensAt: string | null;
+            };
             sectionsLayout: {
                 id: string;
                 title: string;
@@ -6425,7 +6431,7 @@ export interface components {
             /** @enum {string} */
             kind: "photo_doubt" | "sample_paper";
             /** @enum {string} */
-            contentType: "image/jpeg" | "image/png" | "image/webp" | "application/pdf";
+            contentType: "image/jpeg" | "image/png" | "image/webp";
             bytes: number;
         };
         /** @description PUT the file to uploadUrl with these headers within uploadExpiresAt, then POST /v1/ai/uploads/:id/complete. */
@@ -7939,6 +7945,12 @@ export interface components {
                 total: number;
                 percentile: number | null;
             } | null;
+            /** @description S6-H01: a live-mock attempt is score-only until the event closes (after_event): sections, topics, byDifficulty, sectionsLayout and items are empty, self- and AI evaluation return 409 results_after_event. */
+            review: {
+                /** @enum {string} */
+                status: "open" | "after_event";
+                opensAt: string | null;
+            };
             sectionsLayout: {
                 id: string;
                 title: string;
@@ -8154,7 +8166,7 @@ export interface components {
             /** @enum {string} */
             kind: "photo_doubt" | "sample_paper";
             /** @enum {string} */
-            contentType: "image/jpeg" | "image/png" | "image/webp" | "application/pdf";
+            contentType: "image/jpeg" | "image/png" | "image/webp";
             bytes: number;
         };
         /** @description PUT the file to uploadUrl with these headers within uploadExpiresAt, then POST /v1/ai/uploads/:id/complete. */
