@@ -65,7 +65,7 @@ An essay is harder to protect than a story: its value is in its definitions and 
 
 ## Verifier record (author pass, 2026-10-27; no sub-agents per D-024)
 
-- **Keys:** 71/71 objective keys agreed on a blind re-solve from a key-less printout (25 MCQ, 5 true-false and 5 assertion-reason at top level; 34 MCQ children; 2 alternatives). The "not" item (which is not सभ्यता) has exactly one outlier. Match, ordering and fill-blank keys were checked by hand.
+- **Keys:** 71/71 objective keys agreed on a blind re-solve from a key-less printout (25 MCQ, 5 true-false and 5 assertion-reason at top level; 34 MCQ children; 2 alternatives). The "not" item (which is not सभ्यता) has exactly one outlier. Match, ordering and fill-blank keys were checked by hand. The library places keys by a fixed rotation, so key letters repeat across chapters; the re-solve checked that exactly one option is defensible in each item, not the letters.
 - **Facts checked (author's knowledge):** author (1905–1988; सोहाना, अंबाला; मूल नाम हरनाम दास; बौद्ध भिक्षु; वर्धा with Gandhi; works; जातक translation); the essay's examples (fire, needle and thread, Newton and gravitation, the star-gazer, the mother, Lenin's bread, Marx, Siddhartha) and the order of ideas.
 - **Other fixes:** four passages had internal-choice alternatives; reduced to two (the brief's pattern). Three 2-mark models of 32–33 words trimmed to 28–30. A 68-word narration trimmed to 61.
 
