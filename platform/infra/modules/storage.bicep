@@ -185,7 +185,11 @@ resource lifecycle 'Microsoft.Storage/storageAccounts/managementPolicies@2025-01
 }
 
 // --- RBAC (least privilege, container scope where possible) ---
-// API: issue user-delegation SAS for direct uploads (Delegator, account scope), write quarantine, read uploads/releases.
+// API: issue user-delegation SAS for direct uploads (Delegator, account scope), write quarantine, write
+// uploads, read releases. S6-L02: the API processes an upload in-process right after /complete (low
+// latency for photo doubts) and writes the cleaned copy to `uploads`; account deletion (S6-M02) deletes
+// from both upload containers. Contributor is scoped to those two containers only; validate.mjs checks
+// the write contract per identity.
 resource apiDelegator 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
   name: guid(sa.id, apiPrincipalId, roles.blobDelegator)
   scope: sa
@@ -207,12 +211,12 @@ resource apiQuarantine 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
 }
 
 resource apiUploads 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
-  name: guid(cUploads.id, apiPrincipalId, roles.blobDataReader)
+  name: guid(cUploads.id, apiPrincipalId, roles.blobDataContributor)
   scope: cUploads
   properties: {
     principalId: apiPrincipalId
     principalType: 'ServicePrincipal'
-    roleDefinitionId: roles.blobDataReader
+    roleDefinitionId: roles.blobDataContributor
   }
 }
 
