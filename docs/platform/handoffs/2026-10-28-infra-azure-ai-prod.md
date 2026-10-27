@@ -22,7 +22,7 @@ The `platform/ai-core` changes are in ai-gateway's area. They are kept minimal a
 
 ## Facts verified (read-only, 2026-10-28)
 
-- p4 parameters (`az deployment group show -n soyl-prod-p4`) match the Lead's env vars. The live api, worker and job images equal the p4 digests.
+- p4 parameters (`az deployment group show -n soyl-prod-p4`) match the Lead's env vars. While I worked, the Lead deployed `soyl-prod-fe404f0-a` and `-b` (the S6 merge). Their parameters differ from p4 only in the three image digests, so the final what-if and the deploy command below use the **live digests from fe404f0-b**.
 - Model availability: Luna and Sol are **not in Central India**. In South India: Luna 2026-09-22 is GlobalStandard only. Sol 2026-09-29 is GlobalStandard, DataZoneStandard and GlobalProvisionedManaged (not "ProvisionedManaged"). text-embedding-3-small 1 is GlobalStandard and DataZoneStandard. **No GlobalBatch or DataZoneBatch.** The models report `area: APAC`, so the Data Zone is APAC.
 - Service availability (`Microsoft.CognitiveServices/skus`): Azure OpenAI account and Content Safety are **South India only**; Speech is **Central India only**. Hence the three-way split.
 - Quota in South India: GlobalStandard Luna 200/250 and Sol 200/250; **DataZoneStandard Sol 100/100 (full)**; embeddings GlobalStandard 150/1000 and DataZoneStandard 0/1000.
@@ -50,7 +50,7 @@ The meters also show a **Flex** tier (`flexTierSkus: GlobalStandard`) at 50% of 
 
 **Every Sol action costs more than its credit price.** The 7-day cost guardrail (`COST_ALERT_RATIO` 0.8) will alert once real costs flow. Prompt caching (cached input at 5%) will lower the real numbers somewhat. Options: raise mid-tier credit prices about 30–40%, cap tokens, or lower reasoning effort. The `ai-actions.ts` `estCostPaise` values still hold CONTEXT's estimates; I left them unchanged (ai-gateway's file).
 
-## What-if (soyl-prod-p6, read-only): 16 create, 45 modify, 32 no change, 25 unsupported, 4 ignore
+## What-if (soyl-prod-p6, read-only; final run on the merged branch with fe404f0-b's images): 16 create, 45 modify, 32 no change, 25 unsupported, 4 ignore
 
 **Real changes**
 - Create the accounts `oai-soyl-prod-tek7mx` (OpenAI, southindia), `cs-soyl-prod-tek7mx` (ContentSafety, southindia) and `spch-soyl-prod-tek7mx` (SpeechServices, centralindia). All three have public access Disabled, ACL Deny, local auth disabled and S0.
@@ -61,7 +61,7 @@ The meters also show a **Flex** tier (`flexTierSkus: GlobalStandard`) at 50% of 
 - Change the api and worker env (the only real container change; images are unchanged):
   - `AZURE_OPENAI_ENDPOINT`, `AZURE_SPEECH_ENDPOINT/REGION(centralindia)/RESOURCE_ID` and `AZURE_CONTENT_SAFETY_ENDPOINT` are set.
   - `AZURE_OPENAI_DEPLOYMENT_EMBEDDING=embedding` is added; `*_SMALL_BATCH` and `*_MID_BATCH` are added as empty.
-  - `AZURE_OPENAI_DEPLOYMENT_VERIFY` changes verify → mid. `AZURE_OPENAI_DEPLOYMENT_BATCH` is removed. `AZURE_OPENAI_MODELS_DEPLOYED` changes False → True.
+  - `AZURE_OPENAI_DEPLOYMENT_BATCH` is removed. `AZURE_OPENAI_MODELS_DEPLOYED` changes False → True. `VERIFY` is already `mid` live.
   - `AI_PROVIDER`, `AI_EMBEDDINGS`, `CONTENT_SAFETY_PROVIDER` and `BLOB_PROVIDER` are added as `azure`.
   - `AI_DAILY_SPEND_CAP_INR` changes 0 → 2000 and `CONTENT_BUDGET_INR` 0 → 300000.
 - Six AI role assignments (OpenAI User, Speech User and Cognitive Services User for the api and worker identities). They appear under "Unsupported" because their principal ids are `reference()` expressions.
@@ -87,15 +87,15 @@ export PATH="/c/Users/Prabhu/soyl-wt/_tools:$PATH" MSYS_NO_PATHCONV=1   # bicep.
 RG=rg-soyl-platform-prod
 export SOYL_ACR_NAME=crsoylplatform SOYL_ALERT_EMAIL=outreach@soyl.cloud SOYL_KV_SECRET_REFS=true \
   SOYL_ACS_SENDER_ROLE_ID=09976791-48a7-449e-bb21-39d1a415f350 SOYL_ACS_LINK_DOMAIN=true \
-  SOYL_API_IMAGE=crsoylplatform.azurecr.io/soyl-api@sha256:a4533cb2c85f9b9849ebfc4c8e7c911a2fbdee62dd73cd27d3d5af6bd81b815f \
-  SOYL_WORKER_IMAGE=crsoylplatform.azurecr.io/soyl-worker@sha256:a15010524a9a99f87fe4e190eb6ffeb1d729714f425505c661d8dc949474db0c \
-  SOYL_MIGRATE_IMAGE=crsoylplatform.azurecr.io/soyl-migrate@sha256:22f066e568afadeaff467592e0dccf65f9fbf8368498d652c5a82f99a50c567f
+  SOYL_API_IMAGE=crsoylplatform.azurecr.io/soyl-api@sha256:f656f55c9496876e92c1eeae602f73d8ca05394e7f1a0a6b3f68765ba60cb029 \
+  SOYL_WORKER_IMAGE=crsoylplatform.azurecr.io/soyl-worker@sha256:b1e45450e39f900ba73878ef607922c584dd0f93ec3eb7ed3a33ea32b836c73a \
+  SOYL_MIGRATE_IMAGE=crsoylplatform.azurecr.io/soyl-migrate@sha256:15127a92cc3e7948b7fa83048e710393b89c37530779119ec55e9aa99bfc35ad
 unset SOYL_KV_ALLOWED_IP SOYL_AI_ALLOWED_IP SOYL_PG_ADMIN_GROUP_ID SOYL_PG_ADMIN_GROUP_NAME
 az deployment group what-if -g $RG -n soyl-prod-p6 -f platform/infra/main.bicep -p platform/infra/params/prod.bicepparam
 az deployment group create  -g $RG -n soyl-prod-p6 -f platform/infra/main.bicep -p platform/infra/params/prod.bicepparam -o none
 ```
 
-The deploy needs rights to create role assignments (Owner, User Access Administrator or RBAC Administrator). Use the image digests that are live at deploy time; the runbook reads them with `az containerapp show`.
+The deploy needs rights to create role assignments (Owner, User Access Administrator or RBAC Administrator). These are the digests live after `soyl-prod-fe404f0-b`. If anything is deployed later, use the digests that are live at deploy time (runbook §14 reads them with `az containerapp show`).
 
 ## AI budget choice
 
@@ -124,13 +124,15 @@ The deploy needs rights to create role assignments (Owner, User Access Administr
 
 ## S6-L02 overlap
 
-security-fixes-m6 (`0ed1882`) changes `modules/storage.bicep` (api uploads role Reader → Contributor) and adds a blob-write-contract check at the top of `validate.mjs`. My `validate.mjs` edit is in the per-params-file loop, so the hunks don't overlap. I did not touch `storage.bicep`.
+security-fixes-m6 was merged to platform/main (`fe404f0`), and the Lead has already deployed it (`soyl-prod-fe404f0-a/-b`). I merged it into this branch:
 
-`BLOB_PROVIDER=azure` (set here) needs S6-L02 for in-process upload cleaning. **Deploy p6 after merging security-fixes-m6, or accept that uploads fail with 403 until it lands.** Uploads are unreachable while the platform is dark anyway. Once both are merged, the what-if will also show the uploads role-assignment change.
+- `validate.mjs` auto-merged: their blob-write-contract check sits at the top, my AI checks in the per-params loop. It passes: S6-L02 contract OK, 0 errors, 0 warnings.
+- I did not touch `storage.bicep`.
+- The API's write role on `uploads` is therefore live, so `BLOB_PROVIDER=azure` set here has what it needs. The what-if shows no storage role change because it is already deployed.
 
 ## Gate results (2026-10-28, this machine)
 
-- `node validate.mjs --strict` (bicep 0.48.1): build, lint and build-params for all 4 params files; INFRA-9 and ADR-008 checks; **Total: 0 error(s), 0 warning(s)**.
+- `node validate.mjs --strict` (bicep 0.48.1, after merging fe404f0): build, lint and build-params for all 4 params files; INFRA-9, ADR-008 and S6-L02 checks; **Total: 0 error(s), 0 warning(s)**.
 - `npm run typecheck` (platform): exit 0.
 - `npm test -w @soyl/ai-core`: 38 passed. `-w @soyl/shared`: 80 passed. `-w @soyl/content-pipeline`: 280 passed. In the parallel run, `lint-rules` timed out once at 60 s on a loaded machine; rerun alone it gave 132/132.
 - api `test/ai-unit.test.ts` + `test/ai-spend.test.ts`: 37 passed. worker `test/ai-jobs.test.ts`: 6 passed.
