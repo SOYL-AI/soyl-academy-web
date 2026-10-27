@@ -31,9 +31,9 @@
   display: inline-flex;
   flex: none;
   align-items: center;
-  gap: var(--p-space-1);
+  gap: 2px;
   min-height: var(--p-touch);
-  padding: 0 var(--p-space-2);
+  padding: 0 6px;
   border: 1px solid var(--p-border-strong);
   border-radius: var(--p-radius-pill);
   background: var(--p-surface);
@@ -63,6 +63,7 @@
 }
 @media (min-width: 420px) {
   .chip {
+    gap: var(--p-space-1);
     padding: 0 var(--p-space-3);
   }
 }
@@ -92,9 +93,6 @@
 }
 .flameIcon {
   color: #c2410c;
-}
-.checkIn p:empty {
-  display: none;
 }
 
 /* /coins hero */
