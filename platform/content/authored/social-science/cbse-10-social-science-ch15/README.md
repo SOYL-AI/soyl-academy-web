@@ -28,7 +28,7 @@ All three topics: t01 gender and politics (43 items), t02 religion, communalism 
 | source-based | 5 | 4 = 1 + 1 + 2 | a Class 9 girl's notebook (Haryana, 2015), a suffrage marcher's letter (Manchester, 1910), a newspaper report of a rumour defused by citizens and police, a retired teacher's memoir (1960s → 2022), an election-day report from a mixed constituency; (c) has `alternatives` |
 | case-based | 3 | 4 | an imagined time-use survey; an imagined state assembly vs local bodies over five elections (reservation's effect); an imagined district's schooling, poverty and land by social group |
 
-- Difficulty d1/d2/d3/d4/d5 = 17/41/35/7/1. Competency: recall 18, understanding 34, application 15, analysis 28, evaluation 6 — **49% of items, 55% of marks at application or above**. No map items (the board has no Political Science map work, and none fits this chapter).
+- Difficulty d1/d2/d3/d4/d5 = 17/42/34/7/1. Competency: recall 18, understanding 34, application 15, analysis 28, evaluation 6 — **49% of items, 55% of marks at application or above**. No map items (the board has no Political Science map work, and none fits this chapter).
 - MCQ keys a11 b10 c12 d11; T/F 2/2.
 
 ## Balance and sensitivity
