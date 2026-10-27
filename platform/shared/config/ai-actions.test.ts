@@ -18,7 +18,7 @@ describe('AI action registry (CONTEXT §6)', () => {
     expect(AI_ACTIONS['quick-doubt'].tier).toBe('small');
     expect(AI_ACTIONS['hard-doubt'].tier).toBe('mid');
     expect(AI_ACTIONS['photo-doubt'].vision).toBe(true);
-    expect(AI_ACTIONS['paper-from-upload'].plans).toEqual(['plus', 'pro', 'board_exam_pass']);
+    expect(AI_ACTIONS['paper-from-upload'].plans).toEqual(['pro', 'board_exam_pass']); // D-034
   });
 
   it('is internally consistent', () => {
@@ -46,10 +46,19 @@ describe('AI action registry (CONTEXT §6)', () => {
     expect(AI_UPLOADS.sasTtlSeconds).toBeLessThanOrEqual(300);
   });
 
-  it('flags two paper-from-upload pricing issues for the owner (handoff): unaffordable on Plus, priced below cost', () => {
-    const plus = PLANS.find((p) => p.id === 'plus')!;
-    expect(AI_ACTIONS['paper-from-upload'].plans).toContain('plus');
-    expect(quoteCredits(AI_ACTIONS['paper-from-upload'])).toBeGreaterThan(plus.creditsPerDay);
+  it('offers every action only on plans whose daily credits can pay for its smallest purchase (D-034)', () => {
+    for (const id of AI_ACTION_IDS) {
+      const a = AI_ACTIONS[id];
+      for (const planId of a.plans) {
+        const plan = PLANS.find((p) => p.id === planId)!;
+        // Per-answer evaluation can be bought one answer at a time, so the smallest purchase is what matters.
+        expect(quoteCredits(a), `${id} on ${planId}`).toBeLessThanOrEqual(plan.creditsPerDay);
+      }
+    }
+    expect(PLANS.find((p) => p.id === 'plus')!.features).not.toContain('paper_from_upload');
+  });
+
+  it('flags that paper-from-upload is priced slightly below cost (owner, handoff)', () => {
     expect(AI_ACTIONS['paper-from-upload'].estCostPaise).toBeGreaterThan(quoteCredits(AI_ACTIONS['paper-from-upload']) * CREDIT_VALUE_PAISE);
   });
 });
