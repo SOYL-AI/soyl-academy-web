@@ -98,7 +98,9 @@ const TEX_SYMBOLS: Record<string, string> = {
   ldots: '…', cdots: '⋯', quad: ' ', qquad: '  ', ',': ' ', ';': ' ', ':': ' ', ' ': ' ', '!': '', '\\': ' ',
   '%': '%', '&': '&', '#': '#',
 };
-const TEXT_COMMANDS = new Set(['text', 'textrm', 'textit', 'textbf', 'mathrm', 'mathit', 'mathbf', 'mathsf', 'operatorname', 'boldsymbol', 'overline', 'vec', 'hat', 'bar']);
+// The TeX command \over+line is assembled at run time: as a literal it is a Tailwind utility name and would leak into the
+// marketing stylesheet (README "Tailwind leak rule").
+const TEXT_COMMANDS = new Set(['text', 'textrm', 'textit', 'textbf', 'mathrm', 'mathit', 'mathbf', 'mathsf', 'operatorname', 'boldsymbol', ['over', 'line'].join(''), 'vec', 'hat', 'bar']);
 const DROP_COMMANDS = new Set(['left', 'right', 'displaystyle', 'textstyle', 'big', 'Big', 'bigl', 'bigr', 'limits']);
 
 /** Index of the brace closing the one at `open`, or -1. */
