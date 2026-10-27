@@ -46,10 +46,11 @@ export function StatusCard({ state, cohort, upcoming, lastCohortName }: StatusCa
       <div className="module p-6 shadow-[0_30px_60px_-40px_rgba(20,20,20,0.4)] md:p-8">
         <p className="t-eyebrow inline-flex items-center gap-2.5 rounded-full bg-highlighter px-3.5 py-1.5 text-ink">
           <span aria-hidden="true" className="h-2 w-2 rounded-full bg-red-pen" />
-          Registration opens {upcoming.registrationOpensLabel}
+          Next cohort
         </p>
         <p className="t-title mt-5">{upcoming.name}</p>
         <p className="mt-2 text-ink">{capitalise(upcoming.window)}.</p>
+        <p className="mt-4 font-semibold text-red-ink">Registration opens {upcoming.registrationOpensLabel}</p>
         <Facts
           rows={[
             ['Format', 'Live online, recorded'],
@@ -98,10 +99,10 @@ export function StatusCard({ state, cohort, upcoming, lastCohortName }: StatusCa
       <p className="t-title mt-5">
         {closing ? (
           <>
-            Registration closes <span className="mark">{formatCohortDate(cohort.registrationCloses)}</span>
+            Registration closes <span className="mark whitespace-nowrap">{formatCohortDate(cohort.registrationCloses)}</span>
           </>
         ) : (
-          <>Registration open until {formatCohortDate(cohort.registrationCloses)}</>
+          <>Registration open until <span className="whitespace-nowrap">{formatCohortDate(cohort.registrationCloses)}</span></>
         )}
       </p>
       <Facts

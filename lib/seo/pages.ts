@@ -166,7 +166,7 @@ export const PAGES: Record<string, PageEntry> = {
     title: 'Future Builders — Live Tech Cohort for Grades 7–12',
     label: 'Future Builders',
     description:
-      'A live online cohort for Grades 7–12: Python, AI, IoT robotics and entrepreneurship. Students build a working prototype with a hardware kit at home and pitch it on Demo Day.',
+      'Live online cohort for Grades 7–12: Python, AI, IoT and entrepreneurship. Students build a working prototype with a home hardware kit and pitch it on Demo Day.',
     type: 'WebPage',
     eyebrow: 'Future Builders',
     priority: 0.8,

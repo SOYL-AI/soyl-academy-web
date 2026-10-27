@@ -94,7 +94,7 @@ export function Curriculum({ upcomingName }: { upcomingName?: string }) {
               Four modules. One <span className="t-accent">working</span> product.
             </>
           }
-          intro={`${CONTACT_HOURS} hours of live, hands-on building. Each module adds a layer to the same team project, so by Demo Day the code, the AI and the hardware fit together.`}
+          intro={`${upcomingName ? "Live" : `${CONTACT_HOURS} hours of live`}, hands-on building. Each module adds a layer to the same team project, so by Demo Day the code, the AI and the hardware fit together.`}
         />
 
         {/* Week bar: decorative; the same facts are in the module list below. */}
@@ -145,7 +145,7 @@ export function Curriculum({ upcomingName }: { upcomingName?: string }) {
                 Weeks {m.from}–{m.to}
               </p>
               <h3 className="t-title mt-2">{m.title}</h3>
-              <p className="mt-3 text-muted">
+              <p className="mb-5 mt-3 text-muted">
                 <span className="font-semibold text-ink">They learn: </span>
                 {m.learn}
               </p>

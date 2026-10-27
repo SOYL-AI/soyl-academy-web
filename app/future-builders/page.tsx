@@ -390,7 +390,7 @@ export default function FutureBuildersPage() {
       )}
 
       {/* 05 · Fee and enrolment / notify / waitlist: exactly one state */}
-      <section id="enroll" className="section scroll-mt-16 bg-paper" aria-labelledby="enroll-heading">
+      <section id="enroll" className="section scroll-mt-16" aria-labelledby="enroll-heading">
         <div className="page grid-12 gap-y-10 lg:gap-y-8">
           <div className="col-span-12 lg:col-span-5 lg:row-start-1">
             <Label num="05" className="mb-6">{cohort ? 'Fee and enrolment' : upcoming ? 'Registration opens soon' : 'Waitlist'}</Label>
@@ -401,7 +401,7 @@ export default function FutureBuildersPage() {
               {cohort
                 ? `Registration closes ${formatCohortDate(cohort.registrationCloses)}, or earlier once all ${SEATS_TOTAL} seats are taken.`
                 : upcoming
-                  ? `The ${upcoming.name} runs in ${upcoming.window}. Registration opens ${upcoming.registrationOpensLabel}: leave your details and we’ll email you the day it does. At most ${SEATS_TOTAL} students per cohort.`
+                  ? `The ${upcoming.name} runs in ${upcoming.window}. Each cohort has at most ${SEATS_TOTAL} students.`
                   : `Each cohort has at most ${SEATS_TOTAL} students. Waitlisted families hear the dates first.`}
             </p>
           </div>
@@ -434,10 +434,10 @@ export default function FutureBuildersPage() {
       </section>
 
       {/* 06 · Questions */}
-      <Faq faqs={faqs} heading="Questions parents ask" num="06" />
+      <Faq faqs={faqs} heading="Questions parents ask" num="06" className="bg-paper" />
 
       {/* Close */}
-      <section id="final-cta" className="bg-paper" aria-labelledby="final-heading">
+      <section id="final-cta" className="bg-white" aria-labelledby="final-heading">
         <div className="page section grid-12 items-end gap-y-10">
           <h2 id="final-heading" className="t-display col-span-12 max-w-[13ch] lg:col-span-8" data-reveal>
             {upcoming ? 'This summer, one' : 'Twelve weekends. One'}{' '}
