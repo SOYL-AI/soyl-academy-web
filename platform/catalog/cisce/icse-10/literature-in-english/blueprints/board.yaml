@@ -7,9 +7,7 @@ paper_type: board
 academic_year: "2026-27"
 duration_min: 120
 total_marks: 80
-mark_shares:
-  recall+understanding: 0.5
-  application+analysis+evaluation: 0.5
+mark_shares: {}
 scope: syllabus
 sections:
   - id: A
@@ -55,8 +53,7 @@ notes: >-
   one question from each of B, C and D and one more from any of them (16 + 4 x 16 = 80; the specimen's "40 Marks" section headings
   are misprints). CISCE prints short quotations from the prescribed texts; SOYL items never reproduce the texts and instead refer
   to a scene, moment or line by its place (passage_origin soyl-commentary; CONTEXT section 8).
-  mark_shares 0.5 / 0.5: the October 2026 circular (cisce-circular-specimen-papers-2027) gives higher-order questions an approximate
-  weightage of 50% in 2027. No unit weightage: CISCE fixes the choice, not the marks per genre.
+  No mark_shares, so no competency balance: the October 2026 circular (cisce-circular-specimen-papers-2027) gives higher-order questions (apply, analyse, evaluate, create) only an approximate overall weightage of about 50%, not a per-band design, and the engine rule (each band within 3 marks whichever alternatives are attempted) would, with single-competency 10-mark items and choice groups of 4 of 6 or more, push whole choice sections into one band and move the paper away from the specimen (follow-up in the handoff). No unit weightage: CISCE fixes the choice, not the marks per genre.
   Deviation: the blueprint schema has no choice across sections, so the fourth answer comes from a separate Section E of three
   further questions (one per genre is likely, not guaranteed); attempted marks, the per-genre minimum and the 16-mark question form
   match the board paper, but the paper offers 9 questions instead of 6. Follow-up for the series engine: a cross-section choice

@@ -7,9 +7,7 @@ paper_type: board
 academic_year: "2026-27"
 duration_min: 120
 total_marks: 80
-mark_shares:
-  recall+understanding: 0.5
-  application+analysis+evaluation: 0.5
+mark_shares: {}
 scope: syllabus
 sections:
   - id: A
@@ -41,5 +39,4 @@ notes: >-
   assertion-reason; Q2 five 5-mark parts (terms and odd-one-out as ten 1-mark short answers, a 5-blank fill-in passage, a 5-mark case,
   a 5-pair diagram match). Section B (40): any four of six 10-mark questions, modelled as case-based items (a stimulus with 1-3-mark
   parts), which is the form of most specimen Section B questions; one specimen question instead mixes unrelated parts.
-  mark_shares 0.5 / 0.5: the October 2026 circular (cisce-circular-specimen-papers-2027) gives higher-order questions an approximate
-  weightage of 50% in 2027. CISCE publishes no unit-wise marks for ICSE Biology, so no unit weightage is applied.
+  No mark_shares, so no competency balance: the October 2026 circular (cisce-circular-specimen-papers-2027) gives higher-order questions (apply, analyse, evaluate, create) only an approximate overall weightage of about 50%, not a per-band design, and the engine rule (each band within 3 marks whichever alternatives are attempted) would, with single-competency 10-mark items and choice groups of 4 of 6 or more, push whole choice sections into one band and move the paper away from the specimen (follow-up in the handoff). CISCE publishes no unit-wise marks for ICSE Biology, so no unit weightage is applied.

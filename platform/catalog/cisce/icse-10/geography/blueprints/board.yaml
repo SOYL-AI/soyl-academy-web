@@ -7,9 +7,7 @@ paper_type: board
 academic_year: "2026-27"
 duration_min: 120
 total_marks: 80
-mark_shares:
-  recall+understanding: 0.5
-  application+analysis+evaluation: 0.5
+mark_shares: {}
 scope: syllabus
 sections:
   - id: I-TOPO
@@ -51,6 +49,5 @@ notes: >-
   Part II (50): any five of nine 10-mark questions, one per topic of the Geography of India (climate, soils, vegetation, water,
   minerals and energy, agriculture, industries, transport, waste). Unit weightage follows from this layout: Map Work 20, Geography of
   India 60 (syllabus units). The board supplies a real Survey of India sheet; SOYL uses its own drawn extracts (CONTEXT section 8).
-  mark_shares 0.5 / 0.5: the October 2026 circular (cisce-circular-specimen-papers-2027) gives higher-order questions an approximate
-  weightage of 50% in 2027.
+  No mark_shares, so no competency balance: the October 2026 circular (cisce-circular-specimen-papers-2027) gives higher-order questions (apply, analyse, evaluate, create) only an approximate overall weightage of about 50%, not a per-band design, and the engine rule (each band within 3 marks whichever alternatives are attempted) would, with single-competency 10-mark items and choice groups of 4 of 6 or more, push whole choice sections into one band and move the paper away from the specimen (follow-up in the handoff).
   Deviation: one chapter per question in the item model, so a Part II question's four parts come from one chapter.

@@ -7,9 +7,7 @@ paper_type: board
 academic_year: "2026-27"
 duration_min: 180
 total_marks: 80
-mark_shares:
-  recall+understanding: 0.5
-  application+analysis+evaluation: 0.5
+mark_shares: {}
 scope: syllabus
 sections:
   - id: A
@@ -37,9 +35,7 @@ notes: >-
   assessment 20 marks is not modelled. Section A (40, compulsory): Q1 of 15 one-mark MCQs including 2 assertion-reason; Q2 three
   4-mark parts; Q3 parts of 4, 4 and 5 marks. Section B (40): any four of seven 10-mark questions. Numerical problems are constructed
   responses with step marks (short/long slots, which also accept the numerical type of the same marks).
-  The specimen tags every part with competencies, and the CISCE circular of 9 October 2026 (cisce-circular-specimen-papers-2027) gives
-  higher-order questions (apply, analyse, evaluate, create) an approximate weightage of 50% in 2027: hence mark_shares 0.5 / 0.5
-  (application+analysis+evaluation against recall+understanding). CISCE publishes no unit-wise marks for ICSE Mathematics, so the
+  The specimen tags every part with competencies. No mark_shares, so no competency balance: the October 2026 circular (cisce-circular-specimen-papers-2027) gives higher-order questions (apply, analyse, evaluate, create) only an approximate overall weightage of about 50%, not a per-band design, and the engine rule (each band within 3 marks whichever alternatives are attempted) would, with single-competency 10-mark items and choice groups of 4 of 6 or more, push whole choice sections into one band and move the paper away from the specimen (follow-up in the handoff). CISCE publishes no unit-wise marks for ICSE Mathematics, so the
   syllabus units carry no marks and the series engine applies no unit weightage (chapter spread is scored instead).
   Deviation: the item model has one chapter per question, so a Section B question cannot mix topics across its parts as the board's
   can; total marks, choice and part sizes are kept.

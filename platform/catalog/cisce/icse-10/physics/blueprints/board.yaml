@@ -7,9 +7,7 @@ paper_type: board
 academic_year: "2026-27"
 duration_min: 120
 total_marks: 80
-mark_shares:
-  recall+understanding: 0.5
-  application+analysis+evaluation: 0.5
+mark_shares: {}
 scope: syllabus
 sections:
   - id: A
@@ -40,6 +38,5 @@ notes: >-
   80 marks; internal assessment of practical work 20 marks is not modelled. Section A (40, compulsory): Q1 15 x 1 MCQ incl. 1
   assertion-reason; Q2 6 x 1 fill-ins + a 2-mark match + a 2-mark graph item; Q3 6 x 2 + 1 x 3. Section B (40): any four of six
   10-mark questions. Numericals are constructed responses with step marks (short/long slots also accept the numerical type).
-  mark_shares 0.5 / 0.5: the October 2026 circular (cisce-circular-specimen-papers-2027) gives higher-order questions an approximate
-  weightage of 50% in 2027. CISCE publishes no unit-wise marks for ICSE Physics, so no unit weightage is applied.
+  No mark_shares, so no competency balance: the October 2026 circular (cisce-circular-specimen-papers-2027) gives higher-order questions (apply, analyse, evaluate, create) only an approximate overall weightage of about 50%, not a per-band design, and the engine rule (each band within 3 marks whichever alternatives are attempted) would, with single-competency 10-mark items and choice groups of 4 of 6 or more, push whole choice sections into one band and move the paper away from the specimen (follow-up in the handoff). CISCE publishes no unit-wise marks for ICSE Physics, so no unit weightage is applied.
   Deviation: one chapter per question in the item model, so a Section B question cannot mix topics across its parts.

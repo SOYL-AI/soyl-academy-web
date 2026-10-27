@@ -7,9 +7,7 @@ paper_type: board
 academic_year: "2026-27"
 duration_min: 120
 total_marks: 80
-mark_shares:
-  recall+understanding: 0.5
-  application+analysis+evaluation: 0.5
+mark_shares: {}
 scope: syllabus
 sections:
   - id: I
@@ -46,6 +44,5 @@ notes: >-
   assertion-reason, Q2 7 x 2. Part II: Section A Civics (chapters 1-6) any two of three 10-mark questions; Section B History (chapters
   7-18) any three of five. Civics and History marks in Part I are not fixed by CISCE, so Part I has no chapter scope and the syllabus
   units carry no marks. Picture and source stimuli are SOYL-made or described in words (CONTEXT section 8).
-  mark_shares 0.5 / 0.5: the October 2026 circular (cisce-circular-specimen-papers-2027) gives higher-order questions an approximate
-  weightage of 50% in 2027.
+  No mark_shares, so no competency balance: the October 2026 circular (cisce-circular-specimen-papers-2027) gives higher-order questions (apply, analyse, evaluate, create) only an approximate overall weightage of about 50%, not a per-band design, and the engine rule (each band within 3 marks whichever alternatives are attempted) would, with single-competency 10-mark items and choice groups of 4 of 6 or more, push whole choice sections into one band and move the paper away from the specimen (follow-up in the handoff).
   Deviation: one chapter per question in the item model, so a Part II question's three parts come from one chapter.
