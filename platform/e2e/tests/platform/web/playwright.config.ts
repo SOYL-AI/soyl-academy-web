@@ -42,7 +42,7 @@ export default defineConfig({
       command: 'npx tsx e2e/tests/platform/web/api-e2e.ts',
       cwd: platformRoot,
       url: `${API_ORIGIN}/healthz`,
-      timeout: 120_000,
+      timeout: 300_000,
       reuseExistingServer: false,
       stdout: 'ignore',
       stderr: 'pipe',
