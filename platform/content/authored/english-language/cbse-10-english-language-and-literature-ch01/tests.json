@@ -1,0 +1,206 @@
+{
+ "tests": [
+  {
+   "id": "t_cbse10engll_ch01_short",
+   "kind": "chapter",
+   "paper_type": "chapter-test-short",
+   "blueprint_id": null,
+   "title": "Chapter test (short) — Reading Comprehension: Unseen Passages",
+   "subject_id": "cbse-10-english-language-and-literature",
+   "chapter_ids": [
+    "cbse-10-english-language-and-literature-ch01"
+   ],
+   "duration_min": 40,
+   "total_marks": 20,
+   "shuffle": false,
+   "sections": [
+    {
+     "id": "A",
+     "title": "Section A — Discursive passage (10 marks)",
+     "instructions": "Read the passage and answer all parts. Two-mark answers in about 30–40 words.",
+     "items": [
+      {
+       "question_id": "q_cbse10engll_ch01_001",
+       "question_version": 1,
+       "marks": 10,
+       "choice_group": null
+      }
+     ],
+     "choice_groups": []
+    },
+    {
+     "id": "B",
+     "title": "Section B — Case-based factual passage with visual input (10 marks)",
+     "instructions": "Read the passage, study the chart and answer all parts.",
+     "items": [
+      {
+       "question_id": "q_cbse10engll_ch01_007",
+       "question_version": 1,
+       "marks": 10,
+       "choice_group": null
+      }
+     ],
+     "choice_groups": []
+    }
+   ],
+   "seed": "cbse-10-english-language-and-literature-ch01-short-v1",
+   "version": 1
+  },
+  {
+   "id": "t_cbse10engll_ch01_long",
+   "kind": "chapter",
+   "paper_type": "chapter-test-long",
+   "blueprint_id": null,
+   "title": "Chapter test (long) — Reading Comprehension: Unseen Passages",
+   "subject_id": "cbse-10-english-language-and-literature",
+   "chapter_ids": [
+    "cbse-10-english-language-and-literature-ch01"
+   ],
+   "duration_min": 90,
+   "total_marks": 40,
+   "shuffle": false,
+   "sections": [
+    {
+     "id": "A",
+     "title": "Section A — Discursive passage (10 marks)",
+     "instructions": "Attempt one of the two passages and answer all its parts.",
+     "items": [
+      {
+       "question_id": "q_cbse10engll_ch01_002",
+       "question_version": 1,
+       "marks": 10,
+       "choice_group": "A1"
+      },
+      {
+       "question_id": "q_cbse10engll_ch01_003",
+       "question_version": 1,
+       "marks": 10,
+       "choice_group": "A1"
+      }
+     ],
+     "choice_groups": [
+      {
+       "id": "A1",
+       "attempt": 1
+      }
+     ]
+    },
+    {
+     "id": "B",
+     "title": "Section B — Case-based factual passage with visual input (10 marks)",
+     "instructions": "Attempt one of the two passages and answer all its parts.",
+     "items": [
+      {
+       "question_id": "q_cbse10engll_ch01_008",
+       "question_version": 1,
+       "marks": 10,
+       "choice_group": "B1"
+      },
+      {
+       "question_id": "q_cbse10engll_ch01_009",
+       "question_version": 1,
+       "marks": 10,
+       "choice_group": "B1"
+      }
+     ],
+     "choice_groups": [
+      {
+       "id": "B1",
+       "attempt": 1
+      }
+     ]
+    },
+    {
+     "id": "C",
+     "title": "Section C — Short skill passages (5 marks each)",
+     "instructions": "Answer all parts of both passages.",
+     "items": [
+      {
+       "question_id": "q_cbse10engll_ch01_013",
+       "question_version": 1,
+       "marks": 5,
+       "choice_group": null
+      },
+      {
+       "question_id": "q_cbse10engll_ch01_017",
+       "question_version": 1,
+       "marks": 5,
+       "choice_group": null
+      }
+     ],
+     "choice_groups": []
+    },
+    {
+     "id": "D",
+     "title": "Section D — Objective questions (1 mark each)",
+     "instructions": "Answer all questions.",
+     "items": [
+      {
+       "question_id": "q_cbse10engll_ch01_025",
+       "question_version": 1,
+       "marks": 1,
+       "choice_group": null
+      },
+      {
+       "question_id": "q_cbse10engll_ch01_029",
+       "question_version": 1,
+       "marks": 1,
+       "choice_group": null
+      },
+      {
+       "question_id": "q_cbse10engll_ch01_028",
+       "question_version": 1,
+       "marks": 1,
+       "choice_group": null
+      },
+      {
+       "question_id": "q_cbse10engll_ch01_033",
+       "question_version": 1,
+       "marks": 1,
+       "choice_group": null
+      },
+      {
+       "question_id": "q_cbse10engll_ch01_038",
+       "question_version": 1,
+       "marks": 1,
+       "choice_group": null
+      },
+      {
+       "question_id": "q_cbse10engll_ch01_036",
+       "question_version": 1,
+       "marks": 1,
+       "choice_group": null
+      },
+      {
+       "question_id": "q_cbse10engll_ch01_041",
+       "question_version": 1,
+       "marks": 1,
+       "choice_group": null
+      },
+      {
+       "question_id": "q_cbse10engll_ch01_046",
+       "question_version": 1,
+       "marks": 1,
+       "choice_group": null
+      },
+      {
+       "question_id": "q_cbse10engll_ch01_045",
+       "question_version": 1,
+       "marks": 1,
+       "choice_group": null
+      },
+      {
+       "question_id": "q_cbse10engll_ch01_047",
+       "question_version": 1,
+       "marks": 1,
+       "choice_group": null
+      }
+     ],
+     "choice_groups": []
+    }
+   ],
+   "seed": "cbse-10-english-language-and-literature-ch01-long-v1",
+   "version": 1
+  }
+ ]
+}
