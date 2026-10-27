@@ -20,6 +20,7 @@ import { cachedContent } from '../http/cache';
 import { loadChapter } from '../domain/content';
 import { listPractice, selfAssess, submitAnswer } from '../domain/practice';
 import { ChapterParams, StreakSchema, StudentQuestionSchema } from './content-schemas';
+import { coinAwardFields } from './coins-schemas';
 
 const Id = z.string().min(1).max(64).regex(/^[A-Za-z0-9_-]+$/);
 const OptionIds = z.array(Id).min(1).max(20);
@@ -98,6 +99,7 @@ const AnswerResult = z
     xpAwarded: z.number().int(),
     badgesAwarded: z.array(z.string()),
     streak: StreakSchema.nullable(),
+    ...coinAwardFields,
   })
   .meta({ id: 'PracticeAnswerResult' });
 

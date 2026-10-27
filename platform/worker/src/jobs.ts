@@ -11,6 +11,7 @@
  *                              attempts whose deadline + grace has passed (the API also does this lazily).
  * - live.finalize              every 5 minutes: after a live mock's window, auto-submit what is left, write
  *                              final ranks to live_registrations and publish the results.
+ * - coins.*                     SOYL Coins (coins-jobs.ts): live-mock rank awards, address retention.
  *
  * Cron expressions are UTC (GEN-6): 20:30 UTC = 02:00 IST, the quietest hour.
  */
@@ -23,6 +24,7 @@ import { TEST_ENGINE } from '@soyl/shared/config/tests';
 import { defineJob, type JobContext, type JobDefinition, type JobQueueOptions } from './registry';
 import { BILLING_JOB_NAMES, billingJobs, type BillingJobSettings } from './billing-jobs';
 import { AI_JOB_NAMES, aiJobs } from './ai-jobs';
+import { COINS_JOB_NAMES, coinsJobs } from './coins-jobs';
 import type { AiWorkerSettings } from '@soyl/api/ai/worker';
 
 const DAY_MS = 86_400_000;
@@ -168,6 +170,9 @@ export const JOB_NAMES = {
   aiIndexContent: AI_JOB_NAMES.indexContent,
   aiRetention: AI_JOB_NAMES.retention,
   aiCostGuardrail: AI_JOB_NAMES.costGuardrail,
+  // SOYL Coins (coins-jobs.ts, ADR-020)
+  coinsLiveRankAwards: COINS_JOB_NAMES.liveRankAwards,
+  coinsHousekeeping: COINS_JOB_NAMES.housekeeping,
 } as const;
 
 /** Test-engine sweeps run often and are short: one run at a time, no pile-up, a few quick retries. */
@@ -245,6 +250,7 @@ export function allJobs(settings: JobSettings = {}): JobDefinition[] {
     }),
     ...billingJobs(settings.billing ?? { razorpay: null }),
     ...aiJobs(settings.ai),
+    ...coinsJobs(),
   ] as JobDefinition[];
   return settings.unconsentedPurge === false ? jobs.filter((j) => j.name !== JOB_NAMES.accountPurgeUnconsented) : jobs;
 }

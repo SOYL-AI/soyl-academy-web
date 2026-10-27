@@ -8,6 +8,7 @@ import { QUESTION_TYPES } from '@soyl/shared/content/question';
 import { TEST_ENGINE } from '@soyl/shared/config/tests';
 import { BoardSchema } from '../schemas';
 import { StreakSchema, StudentQuestionSchema } from './content-schemas';
+import { coinAwardFields } from './coins-schemas';
 import { KeyRevealSchema, PracticeResponseSchema } from './practice';
 
 export const TestKey = z
@@ -260,6 +261,7 @@ export const SubmitResponse = z
     xpAwarded: z.number().int(),
     badgesAwarded: z.array(z.string()),
     streak: StreakSchema.nullable(),
+    ...coinAwardFields,
   })
   .meta({ id: 'SubmitResult' });
 

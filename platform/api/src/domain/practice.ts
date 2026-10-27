@@ -16,6 +16,10 @@ import { ApiProblem } from '../errors';
 import { activeReleases, practicePool, releaseMembers, studentQuestion, studentQuestionSelect, type ChapterRef, type StudentQuestion } from './content';
 import { awardXp, ensureBadges, evaluateBadges, recordActivity, refreshTotals, type StreakView } from './gamification';
 import { gradeQuestion, ResponseMismatchError, type PracticeResponse, type QuestionGrade, type StoredBodyPart } from './grading';
+import { istDay } from '@soyl/db';
+import { onPracticeAnswer, toDto, type CoinAwardDto } from './coins/awards';
+import { challengeKeyForChapter } from './coins/challenge';
+import { coinsPaid } from './coins/ledger';
 
 /* ---------------------------------------------------------------------------------------------- */
 /* List                                                                                            */
@@ -122,6 +126,9 @@ export interface SubmitAnswerResult extends QuestionGrade {
   xpAwarded: number;
   badgesAwarded: string[];
   streak: StreakView | null;
+  /** SOYL Coins this answer earned (ADR-020): daily challenge, solved milestones, chapter mastery. */
+  coinsAwarded: number;
+  coinAwards: CoinAwardDto[];
 }
 
 /**
@@ -179,11 +186,13 @@ export async function submitAnswer(db: Database, clock: Clock, year: string, use
   }
 
   const base = { questionId: row.key, version: row.version, type: row.type as QuestionType, ...grade };
-  if (!userId) return { ...base, stored: false, answerId: null, xpAwarded: 0, badgesAwarded: [], streak: null };
+  if (!userId) return { ...base, stored: false, answerId: null, xpAwarded: 0, badgesAwarded: [], streak: null, coinsAwarded: 0, coinAwards: [] };
 
   const now = new Date(clock.now());
   // Badge rows are synced before the transaction: a transaction must never wait for a second pooled connection.
   await ensureBadges(db);
+  // Today's challenge for this subject is read from the pool too (coins, ADR-020); only a correct answer can earn it.
+  const challenge = grade.correct === true ? await challengeKeyForChapter(db, year, row.chapterId, istDay(now), now.getTime()) : null;
   return db.transaction(async (tx) => {
     const [saved] = await tx
       .insert(practiceAnswers)
@@ -214,10 +223,29 @@ export async function submitAnswer(db: Database, clock: Clock, year: string, use
         .where(and(eq(practiceAnswers.userId, userId), eq(practiceAnswers.questionKey, row.key), eq(practiceAnswers.source, 'guest_merge'), eq(practiceAnswers.correct, true)));
       if (!merged) xpAwarded = await awardXp(tx, userId, now, [{ kind: 'practice', amount: XP_AWARDS.practiceFirstCorrect, sourceType: 'question', sourceId: row.key }]);
     }
+    let coinOutcomes: Awaited<ReturnType<typeof onPracticeAnswer>> = [];
+    if (grade.correct === true) {
+      // First correct app answer to this question (the one just saved is the only correct one).
+      const [prior] = await tx
+        .select({ n: sql<number>`count(*)::int` })
+        .from(practiceAnswers)
+        .where(and(eq(practiceAnswers.userId, userId), eq(practiceAnswers.questionKey, row.key), eq(practiceAnswers.correct, true), eq(practiceAnswers.source, 'app')));
+      coinOutcomes = await onPracticeAnswer(tx, {
+        userId,
+        now,
+        questionKey: row.key,
+        chapterId: row.chapterId,
+        chapterKey: (await chapterKeyById(tx, row.chapterId)) ?? row.chapterId,
+        subjectKey: challenge?.subjectKey ?? '',
+        challengeKey: challenge?.challengeKey ?? null,
+        firstCorrect: Number(prior?.n ?? 0) === 1,
+        correct: true,
+      });
+    }
     const streak = await recordActivity(tx, userId, now);
     if (xpAwarded) await refreshTotals(tx, userId);
     const badgesAwarded = await evaluateBadges(db, tx, userId, now);
-    return { ...base, stored: true, answerId: saved!.id, xpAwarded, badgesAwarded, streak };
+    return { ...base, stored: true, answerId: saved!.id, xpAwarded, badgesAwarded, streak, coinsAwarded: coinsPaid(coinOutcomes), coinAwards: toDto(coinOutcomes) };
   });
 }
 
@@ -242,7 +270,7 @@ export async function selfAssess(db: Database, clock: Clock, userId: string, ans
 }
 
 /** Chapter key for a chapter id (used by progress reads). */
-export async function chapterKeyById(db: Database, id: string): Promise<string | null> {
+export async function chapterKeyById(db: Database | Parameters<Parameters<Database['transaction']>[0]>[0], id: string): Promise<string | null> {
   const [c] = await db.select({ key: chapters.key }).from(chapters).where(eq(chapters.id, id));
   return c?.key ?? null;
 }

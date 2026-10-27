@@ -25,6 +25,7 @@ import {
 import type { Clock } from '../clock';
 import type { OtpService } from '../auth/otp';
 import type { AuthUser } from '../types';
+import { eraseCoinPersonalData } from './coins/store';
 
 export interface DeletionResult {
   deletedAt: Date;
@@ -52,6 +53,8 @@ export async function deleteAccount(
     await tx.delete(aiConversations).where(eq(aiConversations.userId, user.id));
     await tx.delete(uploads).where(eq(uploads.userId, user.id));
     await tx.delete(userMfa).where(eq(userMfa.userId, user.id));
+    // SOYL Coins (ADR-020): shipping addresses and tracking refs erased, open merch redemptions cancelled.
+    await eraseCoinPersonalData(tx, user.id, now);
     await tx
       .update(users)
       .set({

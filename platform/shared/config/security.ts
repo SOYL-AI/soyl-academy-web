@@ -190,6 +190,9 @@ export const RATE_LIMITS = {
   'progress.write.user': { key: 'user', limit: 120, windowSeconds: 60 },
   /** AUTH-11: TOTP enrol/confirm/verify/disable calls per user (wrong codes also lock, see MFA.failures). */
   'mfa.user': { key: 'user', limit: 20, windowSeconds: 15 * 60 },
+  /** SOYL Coins writes (check-in, equip, address, cancel) and redemptions per user (ADR-020). */
+  'coins.write.user': { key: 'user', limit: 30, windowSeconds: 3600 },
+  'coins.redeem.user': { key: 'user', limit: 10, windowSeconds: 3600 },
 } as const satisfies Record<string, RateLimitBucket>;
 
 export type RateLimitBucketName = keyof typeof RATE_LIMITS;
@@ -255,6 +258,8 @@ export const CONSENT_FEATURES = [
   'notifications',
   'merge_guest',
   'test_attempts',
+  /** SOYL Coins physical merch (D-037): a child's shipping address is collected only after consent. */
+  'physical_rewards',
 ] as const;
 export type ConsentFeature = (typeof CONSENT_FEATURES)[number];
 
@@ -265,7 +270,7 @@ export const CONSENT = {
    * API-11 lists test attempts and merge-guest as consent-gated by default; D-014 is the later,
    * more specific decision, so they are declared but not gated. Add them here to gate them.
    */
-  gatedFeatures: ['ai', 'uploads', 'leaderboards', 'rank_cards', 'profile_school_city', 'notifications'] as readonly ConsentFeature[],
+  gatedFeatures: ['ai', 'uploads', 'leaderboards', 'rank_cards', 'profile_school_city', 'notifications', 'physical_rewards'] as readonly ConsentFeature[],
   /** API-11: cached status is refreshed after this long (and on every sign-in). */
   cacheTtlSeconds: 15 * 60,
   /** AUTH-15: accounts that never reach `granted` are deleted after this many days (owner to confirm). */
