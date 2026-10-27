@@ -55,13 +55,13 @@ test('AI tutor: quote → stream → credits; hint → full; refund on failure; 
   await page.getByTestId('reveal').click();
   await page.getByRole('dialog', { name: 'Use AI credits?' }).getByTestId('quote-confirm').click();
   // Mid-stream (the mock streams 64 characters every 400 ms): text so far plus the cursor.
-  await expect(lastAnswer(page)).toContainText('Full solution');
+  await expect(lastAnswer(page)).toContainText('Write what is given');
   await expect(lastAnswer(page)).toHaveAttribute('data-status', 'streaming');
   await lastAnswer(page).scrollIntoViewIfNeeded();
   await shot(page, 'ask-streaming', false);
   await expect(lastAnswer(page)).toHaveAttribute('data-status', 'done', { timeout: 30_000 });
   await expect(lastAnswer(page)).toHaveAttribute('data-mode', 'full');
-  await expect(lastAnswer(page)).toContainText('Full solution');
+  await expect(lastAnswer(page)).toContainText('Write what is given');
   await expect(chip(page)).toHaveAttribute('data-balance', '23');
   await checkPage(page);
   await shot(page, 'ask-answered');
