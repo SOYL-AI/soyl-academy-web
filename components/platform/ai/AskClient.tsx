@@ -103,7 +103,7 @@ function Tutor() {
   }, [loadHistory]);
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ block: 'nearest' });
+    endRef.current?.scrollIntoView?.({ block: 'nearest' });
   }, [chat.messages.length]);
 
   /** Step 1: quote the cost (CONTEXT §6), then wait for the student's confirmation. */

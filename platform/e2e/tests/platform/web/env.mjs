@@ -9,6 +9,9 @@ export const WEB_PORT = Number(process.env.PW_WEB_PORT ?? 3320);
 export const FLAG_OFF_PORT = Number(process.env.PW_FLAG_OFF_PORT ?? 3321);
 export const API_PORT = Number(process.env.PW_API_PORT ?? 8797);
 export const OIDC_PORT = Number(process.env.PW_OIDC_PORT ?? 8098);
+/** M3/M4: the e2e API's control server (api-e2e.ts): Blob upload stand-in, Razorpay payments, time travel. */
+export const CONTROL_PORT = Number(process.env.PW_CONTROL_PORT ?? 8799);
+export const CONTROL_ORIGIN = `http://127.0.0.1:${CONTROL_PORT}`;
 
 /** The API's PUBLIC_BASE_URL / allowed Origin must match exactly what the browser uses (AUTH-12). */
 export const WEB_ORIGIN = `http://localhost:${WEB_PORT}`;
@@ -29,6 +32,8 @@ export const WEB_ENV_ON = {
   NEXT_PUBLIC_PLATFORM_ENABLED: 'true',
   PLATFORM_API_ORIGIN: API_ORIGIN,
   PLATFORM_EDGE_SECRET: LOCAL_EDGE_SECRET,
+  // Photo-doubt uploads PUT straight to "Blob storage" (the control server): CSP connect-src on /ask (ADR-018).
+  PLATFORM_UPLOAD_ORIGIN: CONTROL_ORIGIN,
   NEXT_TELEMETRY_DISABLED: '1',
 };
 
@@ -37,6 +42,7 @@ export const API_ENV = {
   CONTENT_PIPELINE_OUT_DIR: join(AUDIO_DIR, 'out'),
   PORT: String(API_PORT),
   MOCK_OIDC_PORT: String(OIDC_PORT),
+  E2E_CONTROL_PORT: String(CONTROL_PORT),
   PUBLIC_BASE_URL: WEB_ORIGIN,
   LOG_LEVEL: 'warn',
 };
