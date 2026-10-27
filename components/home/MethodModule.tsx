@@ -13,10 +13,12 @@ function VerbMarquee() {
       <div className="marquee">
         {[0, 1].map((copy) => (
           <div key={copy} className="flex shrink-0 items-center">
-            {[...row, ...row].map((verb, i) => (
-              <span key={`${copy}-${i}`} className="flex items-center font-serif text-[clamp(2.5rem,6vw,5rem)] leading-none tracking-[-0.02em]">
-                <span className={i % 2 ? 't-accent text-muted' : ''}>{verb}</span>
-                <span className="mx-6 inline-block h-2.5 w-2.5 rounded-full bg-red-pen md:mx-10" />
+            {row.map((verb, i) => (
+              <span
+                key={`${copy}-${i}`}
+                className={`flex items-center text-[clamp(2.5rem,6vw,5rem)] leading-none tracking-[-0.02em] after:mx-6 after:inline-block after:h-2.5 after:w-2.5 after:rounded-full after:bg-red-pen after:content-[""] md:after:mx-10 ${i % 2 ? 't-accent text-muted' : 'font-serif'}`}
+              >
+                {verb}
               </span>
             ))}
           </div>
@@ -44,14 +46,17 @@ export function MethodModule() {
 
             <ol className="mt-12 border-t border-rule">
               {method.steps.map((step, i) => (
-                <li key={step.verb} data-reveal style={{ '--d': `${i * 70}ms` } as React.CSSProperties}>
-                  <div className="group grid grid-cols-[3rem_1fr] items-baseline gap-x-4 border-b border-rule py-5 md:grid-cols-[3.5rem_12rem_1fr] md:py-6">
+                <li
+                  key={step.verb}
+                  data-reveal
+                  style={{ '--d': `${i * 70}ms` } as React.CSSProperties}
+                  className="group grid grid-cols-[3rem_1fr] items-baseline gap-x-4 border-b border-rule py-5 md:grid-cols-[3.5rem_12rem_1fr] md:py-6"
+                >
                     <span className="t-label t-num text-muted">{String(i + 1).padStart(2, '0')}</span>
                     <h3 className="font-serif text-[1.875rem] leading-none tracking-[-0.015em] transition-transform duration-500 ease-out-expo group-hover:translate-x-1.5 md:text-[2.25rem]">
                       {step.verb}
                     </h3>
                     <p className="col-start-2 mt-2 text-muted md:col-start-3 md:mt-0">{step.line}</p>
-                  </div>
                 </li>
               ))}
             </ol>

@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { cn } from '@/lib/utils';
 
 /**
@@ -10,12 +11,12 @@ export function RiseWords({ text, start = 0 }: { text: string; start?: number })
   return (
     <>
       {words.map((word, i) => (
-        <span key={`${word}-${i}`}>
+        <Fragment key={`${word}-${i}`}>
           <span className="rise-word" style={{ '--i': start + i } as React.CSSProperties}>
             {word}
           </span>
-          {i < words.length - 1 ? ' ' : ''}
-        </span>
+          {i < words.length - 1 ? ' ' : null}
+        </Fragment>
       ))}
     </>
   );

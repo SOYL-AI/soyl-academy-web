@@ -43,7 +43,7 @@ export function RevealObserver() {
           }
         }
       },
-      { rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0 }
     );
 
     document.querySelectorAll<HTMLElement>('[data-reveal]:not([data-rs])').forEach((el) => io.observe(el));
