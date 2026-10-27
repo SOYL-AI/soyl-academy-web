@@ -5782,7 +5782,7 @@ export interface components {
             /** @enum {string} */
             kind: "photo_doubt" | "sample_paper";
             /** @enum {string} */
-            contentType: "image/jpeg" | "image/png" | "image/webp" | "application/pdf";
+            contentType: "image/jpeg" | "image/png" | "image/webp";
             bytes: number;
         };
         /** @description PUT the file to uploadUrl with these headers within uploadExpiresAt, then POST /v1/ai/uploads/:id/complete. */
@@ -7311,7 +7311,7 @@ export interface components {
             /** @enum {string} */
             kind: "photo_doubt" | "sample_paper";
             /** @enum {string} */
-            contentType: "image/jpeg" | "image/png" | "image/webp" | "application/pdf";
+            contentType: "image/jpeg" | "image/png" | "image/webp";
             bytes: number;
         };
         /** @description PUT the file to uploadUrl with these headers within uploadExpiresAt, then POST /v1/ai/uploads/:id/complete. */

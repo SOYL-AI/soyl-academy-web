@@ -40,9 +40,10 @@ export class UploadService {
   }
 
   async create(userId: string, input: CreateUploadInput) {
-    if (!(AI_UPLOADS.contentTypes as readonly string[]).includes(input.contentType)) throw new ApiProblem('upload_rejected', { detail: 'Use a JPEG, PNG or WebP photo, or a PDF.' });
+    // S6-M01 / ADR-020: images only (config); PDFs are refused for photo doubts and sample papers alike.
+    if (!(AI_UPLOADS.contentTypes as readonly string[]).includes(input.contentType)) throw new ApiProblem('upload_rejected', { detail: 'Use a JPEG, PNG or WebP photo.' });
     if (input.bytes > AI_UPLOADS.maxBytes) throw new ApiProblem('upload_rejected', { detail: 'Files must be 10 MB or smaller.' });
-    if (input.kind === 'photo_doubt' && input.contentType === 'application/pdf') throw new ApiProblem('upload_rejected', { detail: 'Send a photo (JPEG, PNG or WebP) of the question.' });
+    if (input.kind === 'photo_doubt' && !input.contentType.startsWith('image/')) throw new ApiProblem('upload_rejected', { detail: 'Send a photo (JPEG, PNG or WebP) of the question.' });
     const now = this.now();
     const blobKey = quarantineKey(userId);
     const sasExpiry = new Date(now.getTime() + AI_UPLOADS.sasTtlSeconds * 1000);

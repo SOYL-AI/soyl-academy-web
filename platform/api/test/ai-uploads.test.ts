@@ -49,18 +49,22 @@ describe('upload URLs (F-013, AC-16)', () => {
     expect((await other.c.post(`/v1/ai/uploads/${t.uploadId}/complete`)).statusCode).toBe(404);
   });
 
-  it('refuses SVG/HTML types, files over 10 MB and PDFs for photo doubts; needs consent; is rate limited', async () => {
+  it('refuses SVG/HTML types, files over 10 MB and PDFs (S6-M01: images only, both kinds); needs consent; is rate limited', async () => {
     const { c, id } = await h.member();
     expect((await c.post('/v1/ai/uploads', { kind: 'photo_doubt', contentType: 'image/svg+xml', bytes: 10 })).statusCode).toBe(400);
     expect((await c.post('/v1/ai/uploads', { kind: 'photo_doubt', contentType: 'image/heic', bytes: 10 })).statusCode).toBe(400);
     expect((await c.post('/v1/ai/uploads', { kind: 'sample_paper', contentType: 'application/pdf', bytes: 10 * 1024 * 1024 + 1 })).statusCode).toBe(400);
-    const pdfPhoto = await c.post('/v1/ai/uploads', { kind: 'photo_doubt', contentType: 'application/pdf', bytes: 1000 });
-    expect(pdfPhoto.statusCode).toBe(422);
-    expect(pdfPhoto.json().code).toBe('upload_rejected');
+    // S6-M01 / ADR-020: PDFs are not an accepted type at launch, for photo doubts and sample papers alike.
+    for (const kind of ['photo_doubt', 'sample_paper']) {
+      const pdfUpload = await c.post('/v1/ai/uploads', { kind, contentType: 'application/pdf', bytes: 1000 });
+      expect(pdfUpload.statusCode).toBe(400);
+      expect(pdfUpload.json().code).toBe('validation_failed');
+    }
+    expect(await h.t.db.select().from(uploads).where(eq(uploads.userId, id))).toEqual([]);
     // Every call counts towards uploads.user.hour (5), refused ones included.
     const fresh = await h.member();
-    for (let i = 0; i < 5; i++) expect((await fresh.c.post('/v1/ai/uploads', { kind: 'sample_paper', contentType: 'application/pdf', bytes: 1000 })).statusCode).toBe(201);
-    expect((await fresh.c.post('/v1/ai/uploads', { kind: 'sample_paper', contentType: 'application/pdf', bytes: 1000 })).statusCode).toBe(429);
+    for (let i = 0; i < 5; i++) expect((await fresh.c.post('/v1/ai/uploads', { kind: 'sample_paper', contentType: 'image/jpeg', bytes: 1000 })).statusCode).toBe(201);
+    expect((await fresh.c.post('/v1/ai/uploads', { kind: 'sample_paper', contentType: 'image/jpeg', bytes: 1000 })).statusCode).toBe(429);
     h.consent.setStatus(id, 'revoked');
     await h.services.consent.refresh(id);
     const noConsent = await h.member();
@@ -93,15 +97,25 @@ describe('processing: the malicious-file corpus (AC-16)', () => {
     expect((await uploadFile(h, c, 'photo_doubt', 'image/webp', webp(800, 600))).status).toBe('ready');
   });
 
-  it('rejects SVG renamed .png, type mismatches, decompression bombs, PDF page bombs and active PDFs', async () => {
+  it('rejects SVG renamed .png, type mismatches, decompression bombs, and any PDF (S6-M01, incl. the PoC-2 bypasses)', async () => {
     const { c } = await h.member();
     expect(await uploadFile(h, c, 'photo_doubt', 'image/png', SVG_AS_PNG)).toMatchObject({ status: 'rejected', rejectReason: 'unsupported_type' });
     expect(await uploadFile(h, c, 'photo_doubt', 'image/png', jpeg())).toMatchObject({ status: 'rejected', rejectReason: 'type_mismatch' });
     expect(await uploadFile(h, c, 'photo_doubt', 'image/jpeg', jpeg(9000, 9000))).toMatchObject({ status: 'rejected', rejectReason: 'too_many_pixels' });
+    // A PDF upload row created before PDFs were turned off (the API refuses new ones) is refused in
+    // processing, whatever it contains: page bombs, active content, hex-escaped names, object streams.
     const other = await h.member();
-    expect(await uploadFile(h, other.c, 'sample_paper', 'application/pdf', pdf(11))).toMatchObject({ status: 'rejected', rejectReason: 'too_many_pages' });
-    expect(await uploadFile(h, other.c, 'sample_paper', 'application/pdf', pdf(2, '/OpenAction << /S /JavaScript /JS (x) >>'))).toMatchObject({ status: 'rejected', rejectReason: 'unsafe_pdf' });
-    expect(await uploadFile(h, other.c, 'sample_paper', 'application/pdf', pdf(3))).toMatchObject({ status: 'ready', pages: 3 });
+    const objStm = Buffer.from(['%PDF-1.7', '1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj', '2 0 obj << /Type /ObjStm /N 200 /Filter /FlateDecode /Length 9 >> stream', 'xxxxxxxxx', 'endstream endobj', '%%EOF', ''].join('\n'), 'latin1');
+    for (const data of [pdf(3), pdf(11), pdf(2, '/OpenAction << /S /JavaScript /JS (x) >>'), pdf(1, '/OpenAction << /S /J#61vaScript /JS (x) >> /AA << /O << /S /URI /URI (https://example.com) >> >>'), objStm]) {
+      const blobKey = `${other.id}/legacy-${Math.random().toString(36).slice(2)}`;
+      await h.blob.put(AI_UPLOADS.containers.quarantine, blobKey, data, 'application/pdf');
+      const [row] = await h.t.db.insert(uploads).values({ userId: other.id, kind: 'sample_paper', blobKey, contentType: 'application/pdf', bytes: data.length, status: 'uploaded', expiresAt: new Date(h.clock.now() + 86_400_000) }).returning();
+      await h.services.ai.jobs.startUploadProcessing(other.id, row!.id);
+      await h.services.ai.jobs.drain();
+      const [after] = await h.t.db.select().from(uploads).where(eq(uploads.id, row!.id));
+      expect(after).toMatchObject({ status: 'rejected', rejectReason: 'unsupported_type', processedKey: null });
+      expect(h.blob.has(AI_UPLOADS.containers.quarantine, blobKey)).toBe(false);
+    }
   });
 });
 
@@ -143,7 +157,7 @@ describe('papers like my school’s (Pro and Board Exam Pass, D-034)', () => {
     const { c, id } = await h.member();
     h.plans.set(id, 'pro');
     const before = (await h.t.db.select({ n: count() }).from(questions))[0]!.n;
-    const up = await uploadFile(h, c, 'sample_paper', 'application/pdf', pdf(4));
+    const up = await uploadFile(h, c, 'sample_paper', 'image/jpeg', jpeg());
     expect((await c.get('/v1/ai/quote/paper-from-upload')).json()).toMatchObject({ credits: 60, allowedForPlan: true, affordable: true });
     const res = await c.post('/v1/ai/paper-from-upload', { uploadId: up.id, subjectId: 'cbse-10-science' });
     expect(res.statusCode).toBe(202);
@@ -172,6 +186,21 @@ describe('papers like my school’s (Pro and Board Exam Pass, D-034)', () => {
     expect(r2.json()).toMatchObject({ code: 'plan_required', plan: 'plus' });
     // Jobs are private.
     expect((await plus.c.get(`/v1/ai/jobs/${accepted.jobId}`)).statusCode).toBe(404);
+  });
+
+  it('S6-M01: a PDF processed before PDFs were turned off can no longer be used, so its page count cannot bypass the price', async () => {
+    const { c, id } = await h.member();
+    h.plans.set(id, 'pro');
+    const processedKey = `${id}/legacy.pdf`;
+    await h.blob.put(AI_UPLOADS.containers.clean, processedKey, pdf(1), 'application/pdf');
+    const [legacy] = await h.t.db
+      .insert(uploads)
+      .values({ userId: id, kind: 'sample_paper', blobKey: `${id}/legacy-q`, contentType: 'application/pdf', bytes: 100, pages: 1, status: 'ready', processedKey, processedContentType: 'application/pdf', expiresAt: new Date(h.clock.now() + 86_400_000) })
+      .returning();
+    const res = await c.post('/v1/ai/paper-from-upload', { uploadId: legacy!.id, subjectId: 'cbse-10-science' });
+    expect(res.statusCode).toBe(422);
+    expect(res.json().code).toBe('upload_rejected');
+    expect((await c.get('/v1/credits')).json()).toMatchObject({ balance: 60, spentToday: 0 });
   });
 
   it('a failed blueprint is refunded', async () => {

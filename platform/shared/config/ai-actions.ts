@@ -274,13 +274,23 @@ export function quoteCredits(action: AiActionConfig, answers = 1): number {
  * Uploads (ARCHITECTURE §10, AC-16, F-013, ASVS 5.1.1)
  * ---------------------------------------------------------------------------------------------- */
 
+/** Every media type the upload pipeline can recognise (sniffing). Which ones are accepted is `AI_UPLOADS.contentTypes`. */
+export const UPLOAD_MEDIA_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'application/pdf'] as const;
+export type UploadMediaType = (typeof UPLOAD_MEDIA_TYPES)[number];
+
 export const AI_UPLOADS = {
   maxBytes: 10 * 1024 * 1024,
   /** Decompression-bomb guard: decoded pixels (width × height) per image. */
   maxPixels: 40_000_000,
+  /** Pages per sample paper once PDFs return (ADR-020 follow-up); images are one page each. */
   maxPdfPages: 10,
-  /** Images and PDF only. SVG is never accepted. HEIC is refused until a decoder is deployed (handoff). */
-  contentTypes: ['image/jpeg', 'image/png', 'image/webp', 'application/pdf'] as const,
+  /**
+   * Accepted uploads, for photo doubts and sample papers alike. S6-M01 / ADR-020: **images only at
+   * launch** — PDFs are refused at upload and in processing until the worker parses them with a real
+   * parser and rasterises pages to images. Do not add 'application/pdf' back without that work.
+   * SVG is never accepted. HEIC is refused until a decoder is deployed (the web re-encodes it to JPEG).
+   */
+  contentTypes: ['image/jpeg', 'image/png', 'image/webp'] as const satisfies readonly UploadMediaType[],
   /** Write-only SAS lifetime (AC-16: ≤ 5 min). */
   sasTtlSeconds: 5 * 60,
   /** Uploads and their derivatives are deleted after this many days. */

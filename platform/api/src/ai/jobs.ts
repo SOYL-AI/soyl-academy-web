@@ -306,6 +306,9 @@ export class AiJobRunner {
     const started = this.d.clock.now();
     const [u] = await this.d.db.select().from(uploads).where(and(eq(uploads.id, p.uploadId), eq(uploads.userId, job.userId)));
     if (!u || u.status !== 'ready' || !u.processedKey) return this.fail(job, 'upload_not_ready', true);
+    // S6-M01 / ADR-020: images only. A PDF processed before PDFs were turned off is refused (refunded):
+    // its page count — and so this action's cost — could not be trusted.
+    if (!(AI_UPLOADS.contentTypes as readonly string[]).includes(u.processedContentType ?? u.contentType)) return this.fail(job, 'upload_type_disabled', true);
     const dataUrl = await this.d.preflight.uploadDataUrl(u);
     const chapterRows = await this.d.db
       .select({ key: chapters.key, title: chapters.title })
@@ -322,14 +325,13 @@ export class AiJobRunner {
       ...chapterRows.map((c) => `${c.key} — ${c.title}`),
       'The sample paper is attached. Return its blueprint.',
     ].join('\n');
-    const isPdf = u.processedContentType === 'application/pdf';
     let bp: BlueprintOutput;
     try {
       const r = await client.structured({
         tier: p.tier,
         messages: [
           { role: 'system', content: systemRules('paper-blueprint') },
-          { role: 'user', content: instructions, ...(isPdf ? { files: [{ dataUrl, filename: 'sample-paper.pdf' }] } : { images: [{ dataUrl, detail: 'high' as const }] }) },
+          { role: 'user', content: instructions, images: [{ dataUrl, detail: 'high' as const }] },
         ],
         schema: BlueprintOutput,
         schemaName: 'paper_blueprint',
