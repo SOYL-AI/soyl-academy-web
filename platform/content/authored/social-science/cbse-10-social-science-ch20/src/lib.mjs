@@ -83,7 +83,7 @@ const AR_OPTS = [
   'A is false, but R is true.',
 ];
 export function ar(o) {
-  const q = common('assertion-reason', { marks: 1, time: 75, ...o, stem: `**Assertion (A):** ${o.a}\n\n**Reason (R):** ${o.r}\n\nChoose the correct option.` });
+  const q = common('assertion-reason', { marks: 1, time: 75, ...o, stem: `${o.pre ?? ''}**Assertion (A):** ${o.a}\n\n**Reason (R):** ${o.r}\n\nChoose the correct option.` });
   q.options = AR_OPTS.map((t, i) => ({ id: L[i], text_md: t }));
   q.answer = { option_ids: [o.key] };
   q.solution_md = `**Correct option: (${o.key})** ${o.sol}`;
