@@ -19,7 +19,6 @@ const PAGES = [
   { path: '/learn/cbse/10/science', h1: 'Science', shot: 'learn-cbse-10-science' },
   { path: '/learn/cbse/10/hindi-a', h1: 'Hindi Course A', shot: 'learn-cbse-10-hindi-a' },
   { path: '/learn/cbse/10/science/ch01', h1: 'Chemical Reactions and Equations', shot: 'chapter-hub' },
-  { path: '/learn/cbse/10/science/ch01/lesson', h1: 'Visual lesson', shot: 'chapter-lesson-coming-soon' },
 ];
 
 async function axe(page: Page) {
@@ -67,7 +66,8 @@ test('browse board → class → subject → chapter by tapping', async ({ page 
   await expect(page).toHaveURL(/\/learn\/cisce\/10\/chemistry$/);
   await page.getByRole('link', { name: /Chapter 1:/ }).click();
   await expect(page).toHaveURL(/\/learn\/cisce\/10\/chemistry\/ch01$/);
-  for (const v of ['Visual lesson', 'Notes', 'Flashcards', 'Practice']) await expect(page.getByRole('link', { name: new RegExp(v) })).toBeVisible();
+  // No content for this chapter yet (M2): every view says "Coming soon" instead of linking.
+  for (const v of ['hub-lesson', 'hub-notes', 'hub-flashcards', 'hub-practice']) await expect(page.getByTestId(v)).toContainText('Coming soon');
   await expect(page.getByTestId('chapter-tests')).toBeVisible();
 });
 

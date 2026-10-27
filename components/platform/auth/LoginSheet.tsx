@@ -4,9 +4,12 @@
  * Login prompt (CONTEXT §5: "a friendly modal that explains the benefit; after login the student returns
  * exactly where they were"). Bottom sheet on phones, dialog on wider screens (UI kit). Google, phone OTP
  * and email OTP (ARCHITECTURE §5). Loaded lazily by SessionProvider, so pages pay nothing until it opens.
+ * Only the methods the API has enabled are shown (GET /v1/auth/methods, public and cacheable); if that call
+ * fails, all three stay visible (the API refuses a disabled method anyway).
  */
-import { useState, useSyncExternalStore } from 'react';
-import type { SignInResponse } from '@/platform/shared/api-client';
+import { useEffect, useState, useSyncExternalStore } from 'react';
+import type { AuthMethods, SignInResponse } from '@/platform/shared/api-client';
+import { api } from '../lib/api-browser';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { Dialog } from '@/components/platform/ui/kit/Dialog';
 import { Icon } from '@/components/platform/ui/kit/Icon';
@@ -45,11 +48,45 @@ export const LOGIN_BENEFITS = [
   'Get free AI help every day',
 ] as const;
 
+type Method = AuthMethods['methods'][number];
+const ALL_METHODS: Method[] = ['phone', 'email', 'google'];
+
+/** Enabled methods in display order; null until known. */
+function useAuthMethods(): Method[] | null {
+  const [methods, setMethods] = useState<Method[] | null>(null);
+  useEffect(() => {
+    let alive = true;
+    api
+      .get('/v1/auth/methods')
+      .then((res) => alive && setMethods(res.methods.filter((m) => ALL_METHODS.includes(m))))
+      .catch(() => alive && setMethods(ALL_METHODS));
+    return () => {
+      alive = false;
+    };
+  }, []);
+  return methods;
+}
+
 export function LoginSheet({ open, reason, initialError, returnTo, onClose, onSignedIn }: LoginSheetProps) {
   const narrow = useNarrow();
-  const [method, setMethod] = useState<OtpChannel>('phone');
+  const enabled = useAuthMethods() ?? ALL_METHODS;
+  const otpMethods = enabled.filter((m): m is OtpChannel => m === 'phone' || m === 'email');
+  const google = enabled.includes('google');
+  const [chosen, setMethod] = useState<OtpChannel>('phone');
+  const method: OtpChannel = otpMethods.includes(chosen) ? chosen : (otpMethods[0] ?? 'phone');
   const [error, setError] = useState<string | undefined>(initialError);
   const [leaving, setLeaving] = useState(false);
+  const otpForm = (channel: OtpChannel) =>
+    channel === 'phone' ? (
+      <OtpForm
+        channel="phone"
+        returnTo={returnTo}
+        onSignedIn={onSignedIn}
+        onSuggestOther={() => setError(otherMethodsHint(otpMethods.includes('email'), google))}
+      />
+    ) : (
+      <OtpForm channel="email" returnTo={returnTo} onSignedIn={onSignedIn} />
+    );
 
   return (
     <Dialog
@@ -76,51 +113,56 @@ export function LoginSheet({ open, reason, initialError, returnTo, onClose, onSi
         </p>
       )}
 
-      <Button
-        variant="secondary"
-        block
-        loading={leaving}
-        onClick={() => {
-          setLeaving(true);
-          window.location.assign(googleStartUrl(returnTo));
-        }}
-      >
-        <GoogleMark /> Continue with Google
-      </Button>
+      {google && (
+        <Button
+          variant="secondary"
+          block
+          loading={leaving}
+          onClick={() => {
+            setLeaving(true);
+            window.location.assign(googleStartUrl(returnTo));
+          }}
+        >
+          <GoogleMark /> Continue with Google
+        </Button>
+      )}
 
-      <p className={s.divider}>
-        <span>or get a one-time code</span>
-      </p>
+      {google && otpMethods.length > 0 && (
+        <p className={s.divider}>
+          <span>or get a one-time code</span>
+        </p>
+      )}
 
-      <Tabs
-        label="Sign-in method"
-        value={method}
-        onChange={(id) => {
-          setMethod(id as OtpChannel);
-          setError(undefined);
-        }}
-        tabs={[
-          {
-            id: 'phone',
-            label: 'Phone',
-            content: (
-              <OtpForm
-                channel="phone"
-                returnTo={returnTo}
-                onSignedIn={onSignedIn}
-                onSuggestOther={() => setError('SMS codes are paused for a short while. Use email or Google instead.')}
-              />
-            ),
-          },
-          { id: 'email', label: 'Email', content: <OtpForm channel="email" returnTo={returnTo} onSignedIn={onSignedIn} /> },
-        ]}
-      />
+      {otpMethods.length > 1 ? (
+        <Tabs
+          label="Sign-in method"
+          value={method}
+          onChange={(id) => {
+            setMethod(id as OtpChannel);
+            setError(undefined);
+          }}
+          tabs={otpMethods.map((m) => ({ id: m, label: m === 'phone' ? 'Phone' : 'Email', content: otpForm(m) }))}
+        />
+      ) : (
+        otpMethods.length === 1 && otpForm(otpMethods[0]!)
+      )}
+      {otpMethods.length === 0 && !google && (
+        <p className={s.formError} role="alert">
+          Sign-in is not available right now. Please try again later.
+        </p>
+      )}
 
       <p className={s.legal}>
         By continuing you agree to the <a href="/terms">Terms</a> and <a href="/privacy">Privacy policy</a>. Under 18? A parent will be asked to approve AI and leaderboard features.
       </p>
     </Dialog>
   );
+}
+
+/** What to suggest when SMS codes are paused: only methods that are enabled. */
+export function otherMethodsHint(email: boolean, google: boolean): string {
+  const other = email && google ? 'email or Google' : email ? 'email' : google ? 'Google' : '';
+  return other ? `SMS codes are paused for a short while. Use ${other} instead.` : 'SMS codes are paused for a short while. Please try again soon.';
 }
 
 /** Google "G" drawn inline (no remote image, WEB-1). */

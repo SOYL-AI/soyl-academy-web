@@ -3,13 +3,15 @@
  *
  * Runs ONLY on platform page prefixes (matcher below; ARCHITECTURE §17.5): no marketing route ever reaches
  * this function. With the platform flag off it does nothing at all (the platform pages 404 anyway, GEN-4).
- * It never rewrites, redirects or reads cookies: it only adds response headers and, on the logged-in
- * dynamic routes, a per-request CSP nonce that Next.js applies to its own scripts.
+ * It never redirects or reads cookies: it adds response headers and, on the logged-in dynamic routes, a
+ * per-request CSP nonce that Next.js applies to its own scripts. Its one rewrite maps a lesson's
+ * `?part=N` to the prerendered part route (ADR-013, platform lesson URLs only).
  */
 import { NextResponse, type NextRequest } from 'next/server';
 import { isPlatformPath } from '@/platform/shared/config/platform-routes';
 import { readFlags } from '@/platform/shared/config/flags';
 import { createNonce, securityHeaders, usesNonce } from '@/components/platform/server/security-headers';
+import { lessonPartRewrite } from '@/components/platform/server/lesson-rewrite';
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -33,7 +35,15 @@ export function proxy(request: NextRequest) {
     requestHeaders.set('content-security-policy', headers['content-security-policy']!);
     response = NextResponse.next({ request: { headers: requestHeaders } });
   } else {
-    response = NextResponse.next();
+    const rewrite = lessonPartRewrite(pathname, request.nextUrl.searchParams);
+    if (rewrite) {
+      const url = request.nextUrl.clone();
+      url.pathname = rewrite;
+      url.search = '';
+      response = NextResponse.rewrite(url);
+    } else {
+      response = NextResponse.next();
+    }
   }
   for (const [name, value] of Object.entries(headers)) response.headers.set(name, value);
   return response;

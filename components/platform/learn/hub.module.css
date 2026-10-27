@@ -1,0 +1,96 @@
+/* Chapter hub (M2). */
+.card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  gap: var(--p-space-2);
+  padding: var(--p-space-4);
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-lg);
+  background: var(--p-surface);
+  min-width: 0;
+}
+.card:has(> .cardLink) {
+  padding: 0;
+}
+.cardLink {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--p-space-2);
+  padding: var(--p-space-4);
+  border-radius: var(--p-radius-lg);
+  color: inherit;
+  text-decoration: none;
+  min-height: 100%;
+}
+a.cardLink:hover {
+  background: var(--p-surface-2);
+}
+a.cardLink:focus-visible,
+.partLink:focus-visible,
+.continue:focus-visible {
+  outline: 2px solid var(--p-focus);
+  outline-offset: 2px;
+}
+.parts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--p-space-2);
+}
+.parts li {
+  display: grid;
+  gap: var(--p-space-1);
+}
+.partLink {
+  display: grid;
+  gap: 2px;
+  min-height: var(--p-touch);
+  padding: var(--p-space-2) var(--p-space-3);
+  border: 1px solid var(--p-border-strong);
+  border-radius: var(--p-radius-md);
+  color: inherit;
+  text-decoration: none;
+}
+.partLink:hover {
+  border-color: var(--p-accent);
+  background: var(--p-accent-soft);
+}
+.partTitle {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.partMeta {
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.partProgress {
+  display: grid;
+  gap: 2px;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.continue {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-2);
+  min-height: var(--p-touch);
+  margin-bottom: var(--p-space-3);
+  padding: var(--p-space-2) var(--p-space-4);
+  border-radius: var(--p-radius-pill);
+  background: var(--p-accent);
+  color: var(--p-on-accent);
+  font-weight: 650;
+  text-decoration: none;
+}
+.continue:hover {
+  background: var(--p-accent-hover);
+}
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--p-space-6);
+  padding-top: var(--p-space-3);
+  border-top: 1px solid var(--p-border);
+}
