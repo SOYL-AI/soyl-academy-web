@@ -18,8 +18,26 @@ export async function axe(page: Page) {
   return results.violations.filter((v) => v.impact === 'serious' || v.impact === 'critical').map((v) => `${v.id}: ${v.nodes.map((n) => n.target.join(' ')).join(', ')}`);
 }
 
+/** Elements whose right edge passes the viewport (to explain a horizontal-overflow failure). */
+export async function overflowing(page: Page): Promise<string[]> {
+  return page.evaluate(() => {
+    const w = document.documentElement.clientWidth;
+    const out: string[] = [];
+    for (const el of Array.from(document.body.querySelectorAll('*'))) {
+      const r = el.getBoundingClientRect();
+      if (r.right > w + 1 && r.width > 0) {
+        const parentOver = el.parentElement && el.parentElement.getBoundingClientRect().right > w + 1;
+        if (!parentOver) out.push(`${el.tagName.toLowerCase()}.${String((el as HTMLElement).className).slice(0, 60)} right=${Math.round(r.right)}`);
+      }
+    }
+    return out.slice(0, 10);
+  });
+}
+
 export async function checkPage(page: Page) {
   await page.evaluate(() => document.fonts.ready);
+  const over = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  if (over > 0) expect(await overflowing(page), 'elements wider than the viewport').toEqual([]);
   await expectNoHorizontalScroll(page);
   expect(await axe(page)).toEqual([]);
 }

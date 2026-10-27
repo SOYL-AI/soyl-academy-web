@@ -16,7 +16,7 @@ import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { isApiError, type AttemptItem, type AttemptState, type SubmitResult } from '@/platform/shared/api-client';
 import { cx } from '@/components/platform/ui/cx';
-import { Button } from '@/components/platform/ui/kit/Button';
+import { Button, IconButton } from '@/components/platform/ui/kit/Button';
 import { Dialog } from '@/components/platform/ui/kit/Dialog';
 import { Badge, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
 import { Icon } from '@/components/platform/ui/kit/Icon';
@@ -431,21 +431,7 @@ function Player({ initial }: { initial: AttemptState }) {
           <h1 className={s.paperTitle}>{initial.test.title}</h1>
           <SaveIndicator status={saveStatus.status} pending={saveStatus.pending} offline={offlineNow} />
         </div>
-        <Timer deadline={deadline} offset={offset} onExpire={onExpire} />
-        <Button variant="secondary" size="sm" icon="grid" onClick={() => setPaletteOpen(true)} data-testid="open-palette" aria-haspopup="dialog">
-          {summary.answered}/{summary.total}
-        </Button>
       </header>
-
-      {offlineNow && (
-        <div className={s.offline} role="status" data-testid="offline-banner">
-          <Icon name="wifiOff" size={20} />
-          <p>
-            <strong>You are offline.</strong> Keep answering: your answers are saved on this device
-            {saveStatus.pending ? ` (${saveStatus.pending} waiting)` : ''} and will be sent when you reconnect. The timer keeps running.
-          </p>
-        </div>
-      )}
       {rejected > 0 && (
         <div className={s.warn} role="alert" data-testid="late-banner">
           <Icon name="alert" size={20} />
@@ -527,25 +513,40 @@ function Player({ initial }: { initial: AttemptState }) {
         )}
       </div>
 
-      <nav className={s.bottomNav} aria-label="Question navigation">
-        <Button variant="secondary" icon="chevronLeft" onClick={() => goTo(index - 1)} disabled={index === 0}>
-          Previous
-        </Button>
-        {index < order.length - 1 ? (
-          <Button onClick={() => goTo(index + 1)} data-testid="next-question">
-            Next <Icon name="chevronRight" size={18} />
-          </Button>
-        ) : (
-          <Button onClick={() => setConfirmOpen(true)} data-testid="review-submit">
-            Review and submit
-          </Button>
-        )}
-      </nav>
       <p className={s.submitRow}>
         <Button variant="ghost" size="sm" onClick={() => setConfirmOpen(true)} data-testid="submit-open">
           Submit test
         </Button>
       </p>
+
+      {/* Sticky dock at the bottom (thumb reach; the marketing header owns the top edge). */}
+      <div className={s.dock}>
+        {offlineNow && (
+          <div className={s.offline} role="status" data-testid="offline-banner">
+            <Icon name="wifiOff" size={20} />
+            <p>
+              <strong>You are offline.</strong> Keep answering: answers are saved on this device
+              {saveStatus.pending ? ` (${saveStatus.pending} waiting)` : ''} and sent when you reconnect. The timer keeps running.
+            </p>
+          </div>
+        )}
+        <nav className={s.bottomNav} aria-label="Question navigation">
+          <IconButton icon="chevronLeft" label="Previous question" variant="secondary" onClick={() => goTo(index - 1)} disabled={index === 0} />
+          <Timer deadline={deadline} offset={offset} onExpire={onExpire} />
+          <Button variant="secondary" size="sm" icon="grid" onClick={() => setPaletteOpen(true)} data-testid="open-palette" aria-haspopup="dialog" aria-label={`${summary.answered}/${summary.total} answered: all questions`}>
+            {summary.answered}/{summary.total}
+          </Button>
+          {index < order.length - 1 ? (
+            <Button onClick={() => goTo(index + 1)} data-testid="next-question">
+              Next <Icon name="chevronRight" size={18} />
+            </Button>
+          ) : (
+            <Button onClick={() => setConfirmOpen(true)} data-testid="review-submit">
+              Submit
+            </Button>
+          )}
+        </nav>
+      </div>
 
       <Dialog open={paletteOpen} onClose={() => setPaletteOpen(false)} title="All questions" description={`${summary.answered} answered · ${summary.marked} marked · ${summary.notVisited} not visited`} variant="sheet">
         <Palette initial={initial} order={order} states={states} currentId={currentId} onPick={(id) => goTo(order.indexOf(id))} />
@@ -645,7 +646,11 @@ function Palette({ initial, order, states, currentId, onPick }: { initial: Attem
                     onClick={() => onPick(id)}
                   >
                     {it.number}
-                    {group && group.index > 0 ? <span aria-hidden="true">′</span> : null}
+                    {group && group.index > 0 ? (
+                      <span className={s.cellOr} aria-hidden="true">
+                        or
+                      </span>
+                    ) : null}
                     {(st === 'marked' || st === 'answered-marked') && <Icon name="flag" size={12} className={s.cellFlag} />}
                   </button>
                 </li>

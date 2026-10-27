@@ -147,7 +147,7 @@ const control = createServer(async (req, res) => {
           ends_at = now() + make_interval(secs => ${seconds}) + (ends_at - starts_at),
           registration_opens_at = least(registration_opens_at, now() + make_interval(secs => ${seconds}) - interval '1 minute'),
           starts_at = now() + make_interval(secs => ${seconds})
-        WHERE id = ${String(body.eventId)}::uuid`);
+        WHERE key = ${String(body.eventId)} OR id::text = ${String(body.eventId)}`);
       return send(res, 200, { ok: true });
     }
     if (url.pathname === '/ctl/razorpay/pay-latest') {
