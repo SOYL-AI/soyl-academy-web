@@ -1,0 +1,65 @@
+id: icse-10-english-language-board
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-english-language
+paper_type: board
+academic_year: "2026-27"
+duration_min: 120
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.5
+  application+analysis+evaluation: 0.5
+scope: syllabus
+sections:
+  - id: Q1
+    title: Question 1 - Composition (20 marks)
+    instructions: >-
+      Write a composition of 300-350 words on any one of five topics (an original story from a given opening, a personal account, an
+      argument for or against a statement, a description, and a picture prompt). Spend no more than 30 minutes.
+    chapters: [icse-10-english-language-ch01, icse-10-english-language-ch02, icse-10-english-language-ch03]
+    items:
+      - {type: writing, count: 5, marks_each: 20, internal_choice: {attempt: 1, of: 5}}
+  - id: Q2
+    title: Question 2 - Letter (10 marks)
+    instructions: Write one letter from a choice of two (one informal, one formal). Spend no more than 20 minutes.
+    chapters: [icse-10-english-language-ch04]
+    items:
+      - {type: writing, count: 2, marks_each: 10, internal_choice: {attempt: 1, of: 2}}
+  - id: Q3
+    title: Question 3 - Notice and e-mail (10 marks)
+    instructions: Write a notice (5 marks) and an e-mail (5 marks); on the board paper both arise from the same situation.
+    chapters: [icse-10-english-language-ch05]
+    items:
+      - {type: writing, count: 2, marks_each: 5}
+  - id: Q4
+    title: Question 4 - Comprehension and summary (20 marks)
+    instructions: >-
+      Read the unseen prose passage and answer all parts: word meanings in context and an opposite from the passage (3), short answers in
+      your own words (9) and a summary of a stated aspect in not more than 50 words (8).
+    chapters: [icse-10-english-language-ch06, icse-10-english-language-ch07]
+    items:
+      - {type: case-based, count: 1, marks_each: 20}
+  - id: Q5
+    title: Question 5 - Grammar (20 marks)
+    instructions: >-
+      (i) Eight numbered blanks in a passage filled with the correct form of the verb in brackets (4); (ii) eight blanks filled with one
+      appropriate word (4); (iii) four sentence pairs joined into one sentence without and, but or so - choose the correct option (4);
+      (iv) eight sentences rewritten as instructed - choose the correct option (8).
+    items:
+      - {type: fill-blank, count: 1, marks_each: 4, chapters: [icse-10-english-language-ch08]}
+      - {type: fill-blank, count: 1, marks_each: 4, chapters: [icse-10-english-language-ch09]}
+      - {type: mcq, count: 4, marks_each: 1, chapters: [icse-10-english-language-ch10]}
+      - {type: mcq, count: 8, marks_each: 1, chapters: [icse-10-english-language-ch11]}
+source_status: verified
+source: icse-2027-specimen-011-english-language
+notes: >-
+  ICSE 2027 English (01) Paper 1 English Language, specimen paper code 011: one paper of two hours (plus 15 minutes reading time),
+  80 marks, all five questions compulsory; internal assessment (listening 10, speaking 10) is not modelled. Q1 composition 20 (any one
+  of five), Q2 letter 10 (one of two), Q3 notice 5 + e-mail 5, Q4 comprehension 12 + summary 8 on one unseen passage, Q5 grammar
+  4 + 4 + 4 + 8. Writing items carry a word limit and rubric (contract v2). The syllabus units carry these question marks
+  (20 / 10 / 10 / 20 / 20). Passages are SOYL-original (CONTEXT section 8); the specimen's passage is from a published story and is
+  not reused. Q5(ii) is set on prepositions as in the specimen; the board may use other one-word blanks.
+  mark_shares 0.5 / 0.5: the October 2026 circular (cisce-circular-specimen-papers-2027) gives higher-order questions an approximate
+  weightage of 50% in 2027; the specimen tags composition and letters as creating / evaluating and the grammar items as applying.
+  Deviation: the notice and the e-mail are two separate items, so they need not share a situation as on the board paper.

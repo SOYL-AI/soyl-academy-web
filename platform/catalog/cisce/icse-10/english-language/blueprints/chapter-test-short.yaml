@@ -1,0 +1,32 @@
+id: icse-10-english-language-chapter-test-short
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-english-language
+paper_type: chapter-test-short
+academic_year: "2026-27"
+duration_min: 30
+total_marks: 20
+mark_shares: {}
+scope: chapter
+sections:
+  - id: A
+    title: Section A - Objective (8 marks)
+    instructions: Eight multiple-choice items (1 mark each) on the chapter's skill, in the board's "choose the correct option" style.
+    items:
+      - {type: mcq, count: 8, marks_each: 1}
+  - id: B
+    title: Section B - Short answers (12 marks)
+    instructions: Four 2-mark answers and one 4-mark task on the chapter's skill.
+    items:
+      - {type: short, count: 4, marks_each: 2}
+      - {type: short, count: 1, marks_each: 4}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL chapter test for ICSE English Language (icse-2027-specimen-011-english-language); not an official CISCE paper. The paper is
+  skill-based and its chapters are of different kinds (composition, letter, notice and e-mail, comprehension, summary, grammar), so one
+  subject-level blueprint uses only item types every chapter can supply: 1-mark MCQs and 2- and 4-mark short answers (for writing
+  chapters: an opening paragraph, a format element, a corrected draft; for grammar chapters: rewriting or completing sentences). 20 marks
+  in 30 minutes. Authored chapter tests may add a full writing task (writing chapters) or a fill-in passage (grammar chapters) with
+  blueprint_id null, as the CBSE English chapters do.

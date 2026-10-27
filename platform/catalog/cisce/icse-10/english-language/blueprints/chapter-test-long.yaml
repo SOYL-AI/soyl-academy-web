@@ -1,0 +1,32 @@
+id: icse-10-english-language-chapter-test-long
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-english-language
+paper_type: chapter-test-long
+academic_year: "2026-27"
+duration_min: 60
+total_marks: 40
+mark_shares: {}
+scope: chapter
+sections:
+  - id: A
+    title: Section A - Objective (12 marks)
+    instructions: Twelve multiple-choice items (1 mark each) on the chapter's skill.
+    items:
+      - {type: mcq, count: 12, marks_each: 1}
+  - id: B
+    title: Section B - Short answers (16 marks)
+    instructions: Eight 2-mark answers.
+    items:
+      - {type: short, count: 8, marks_each: 2}
+  - id: C
+    title: Section C - Longer tasks (12 marks)
+    instructions: Attempt any three of the four 4-mark tasks.
+    items:
+      - {type: short, count: 4, marks_each: 4, internal_choice: {attempt: 3, of: 4}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL chapter test for ICSE English Language (icse-2027-specimen-011-english-language); not an official CISCE paper. Item types every
+  chapter can supply (see chapter-test-short); 40 marks in 60 minutes.
