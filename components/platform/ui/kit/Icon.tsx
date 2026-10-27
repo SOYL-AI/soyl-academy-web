@@ -25,6 +25,15 @@ const PATHS = {
   grip: 'M9 6h.01M15 6h.01M9 12h.01M15 12h.01M9 18h.01M15 18h.01',
   rotate: 'M4 12a8 8 0 0114-5.3L20 9M20 4v5h-5M20 12a8 8 0 01-14 5.3L4 15M4 20v-5h5',
   lock: 'M6 11h12v10H6V11zM8.5 11V8a3.5 3.5 0 017 0v3',
+  // M3/M4 (web-platform): tests, AI, plans, leaderboard.
+  grid: 'M4 4h6v6H4V4zM14 4h6v6h-6V4zM4 14h6v6H4v-6zM14 14h6v6h-6v-6z',
+  wifiOff: 'M3 3l18 18M8.5 16.5a5 5 0 017 0M5 12.5a10 10 0 015.2-2.8M19 12.5a10 10 0 00-2.4-1.7M2 8.8a15 15 0 014.3-2.6M22 8.8A15 15 0 0010.5 5M12 20h.01',
+  trophy: 'M8 4h8v5a4 4 0 01-8 0V4zM8 6H5a3 3 0 003 4M16 6h3a3 3 0 01-3 4M12 13v4M8 21h8M9 17h6',
+  camera: 'M4 8h3l2-3h6l2 3h3v11H4V8zM12 17a3.5 3.5 0 100-7 3.5 3.5 0 000 7z',
+  send: 'M4 12l16-8-6 16-2.5-6.5L4 12z',
+  stop: 'M7 7h10v10H7V7z',
+  chat: 'M4 5h16v11H9l-5 4V5z',
+  card: 'M3 6h18v12H3V6zM3 10h18M7 15h4',
 } as const;
 
 export type IconName = keyof typeof PATHS;

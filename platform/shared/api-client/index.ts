@@ -149,6 +149,8 @@ export type RequestOptions<O> = IfNever<ParamGroup<O, 'path'>, { params?: undefi
     signal?: AbortSignal;
     /** Extra request headers (e.g. `if-none-match`). Never put personal data in a query string (WEB-12). */
     headers?: Record<string, string>;
+    /** fetch keepalive: the request may outlive the page (test-player autosave on page hide). */
+    keepalive?: boolean;
   };
 
 /** A failed API call. `code` is the problem's stable machine code (backend handoff list). */
@@ -226,10 +228,11 @@ export function createApiClient(options: ApiClientOptions = {}): ApiClient {
   const doFetch = options.fetch ?? ((input: RequestInfo | URL, init?: RequestInit) => globalThis.fetch(input, init));
 
   async function request(method: HttpMethod, path: string, opts: RequestOptions<unknown> | undefined): Promise<unknown> {
-    const o = (opts ?? {}) as { params?: Record<string, unknown>; query?: Record<string, unknown>; body?: unknown; signal?: AbortSignal; headers?: Record<string, string> };
+    const o = (opts ?? {}) as { params?: Record<string, unknown>; query?: Record<string, unknown>; body?: unknown; signal?: AbortSignal; headers?: Record<string, string>; keepalive?: boolean };
     const url = `${base}${buildPath(path, o.params)}${buildQuery(o.query)}`;
     const headers: Record<string, string> = { accept: 'application/json', ...options.headers, ...o.headers };
     const init: RequestInit = { method: method.toUpperCase(), headers, credentials: 'same-origin', cache: 'no-store', signal: o.signal };
+    if (o.keepalive) init.keepalive = true;
     if (o.body !== undefined) {
       headers['content-type'] = 'application/json';
       init.body = JSON.stringify(o.body);
