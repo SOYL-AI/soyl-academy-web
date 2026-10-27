@@ -67,3 +67,7 @@ Every question, case part and alternative was re-solved from its stem alone and 
 - Universal-indicator colours and household pH values are typical values and vary by brand and sample; the slides and questions say so.
 - The bleaching powder formula is given as $\ce{CaOCl2}$ with a note that its real composition is more complex, as in the syllabus.
 - `blueprint_id` is null on both tests, as for the exemplar.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 5 item tag(s) and 2 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 10, understanding 35, application 18, analysis 12, evaluation 2 — application or higher 42% of items, 50% of marks (supersedes the competency figures above).

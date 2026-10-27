@@ -63,3 +63,7 @@ Every item, case part and alternative was re-solved from its stem; no key was wr
 ## Known gaps
 - Narration audio is not generated (TTS stage).
 - Breeding data in cases are realistic illustrative numbers chosen to sit near the expected ratios; turtle percentages are rounded illustrative values consistent with temperature-dependent sex determination in sea turtles.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 4 item tag(s) and 1 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 11, understanding 30, application 14, analysis 12, evaluation 2 — application or higher 41% of items, 46% of marks (supersedes the competency figures above).

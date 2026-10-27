@@ -568,7 +568,7 @@ add('ruler-case', mk.case({
       model: '**Photoreceptors** in the eye (retina), because the partner sees the ruler begin to fall.',
       sol: 'The stimulus is seen, so the receptors are in the eye.',
       scheme: [['Photoreceptors in the eye', 1]],
-      d: 2, c: 'application', t: [1],
+      d: 2, c: 'understanding', t: [1],
     })),
     part('c', short({
       marks: 2,
@@ -591,7 +591,7 @@ add('ruler-case', mk.case({
 }), () => [[0.15, 0.17], [0.24, 0.22], [0.12, 0.16]].every(([d, t]) => Math.abs(Math.sqrt((2 * d) / 9.8) - t) < 0.006) || 'reaction times');
 add('kitchen-case', mk.case({
   passage: 'Sana was helping her grandmother make rotis on a hot tava. While reaching for the dough, the back of her hand touched the edge of the tava. Before she even realised what had happened, her hand had jerked away. A moment later she felt a sharp, burning pain and cried out. Her grandmother cooled the spot under running tap water. "Your body protected you before you could think," she said. Sana’s brother, who studies biology, explained that the message from the skin had taken a short cut.',
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   children: [
     part('a', mcq({
       stem: 'In Sana’s response, the effector is:',
@@ -612,7 +612,7 @@ add('kitchen-case', mk.case({
       model: 'Heat (stimulus) → heat and pain **receptors** in the skin → **sensory neuron** → **relay neuron** in the spinal cord → **motor neuron** → arm **muscles** (effector) contract → hand is pulled away.',
       sol: 'List the five parts of the reflex arc in order, starting from the stimulus.',
       scheme: [['Receptor, sensory neuron, relay neuron in the order given', 1], ['Motor neuron, effector and response', 1]],
-      d: 3, c: 'application', t: [2],
+      d: 3, c: 'understanding', t: [2],
       wl: null,
     }), [
       short({
@@ -719,7 +719,7 @@ add('grape-case', mk.case({
       model: '**Abscisic acid** (it inhibits growth and causes wilting).',
       sol: 'Drooping leaves and stopped growth point to abscisic acid.',
       scheme: [['Abscisic acid', 1]],
-      d: 2, c: 'application', t: [5],
+      d: 2, c: 'understanding', t: [5],
     })),
     part('c', short({
       marks: 2,
@@ -756,7 +756,7 @@ add('glucose-case', mk.case({
       value: 60, tol: 0, unit: 'mg/dL',
       sol: r`Fall $= 150 - 90 = 60$ mg/dL.`,
       scheme: [['60 mg/dL', 1]],
-      d: 2, c: 'application', t: [6],
+      d: 2, c: 'understanding', t: [6],
     })),
     part('c', short({
       marks: 2,

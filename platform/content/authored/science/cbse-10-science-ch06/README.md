@@ -66,3 +66,7 @@ Every question, case part and alternative was re-solved from its stem; biology f
 - Narration audio is not generated (TTS stage).
 - The touch-me-not response is called a nastic movement once in the notes, as the syllabus topic title uses "nastic"; questions do not test the word.
 - Data in case passages are realistic illustrative values (stated in captions or passages where relevant), not cited measurements.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 1 item tag(s) and 4 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 15, understanding 28, application 25, analysis 11, evaluation 1 — application or higher 46% of items, 52% of marks (supersedes the competency figures above).

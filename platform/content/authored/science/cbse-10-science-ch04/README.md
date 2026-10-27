@@ -64,3 +64,7 @@ Every question, case part and alternative was re-solved from its stem; every ele
 - Electron-dot structures in model answers are described in words (Markdown cannot draw them); graders should accept any correct drawing.
 - Boiling points are rounded to the nearest kelvin.
 - `blueprint_id` is null on both tests, as for the exemplar.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 14 item tag(s) and 6 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 11, understanding 41, application 11, analysis 14, evaluation 1 — application or higher 33% of items, 39% of marks (supersedes the competency figures above).

@@ -67,3 +67,7 @@ Every item and part was re-solved from its stem; facts were re-checked against s
 - **Maps:** `MapPlace` has no geometry, so the renderer cannot draw the expected shading or a pin for "identify the soil marked A" items; the items are "shade and label" with the region described in `name`. A soil-region overlay for `india-political` (or `india-soils`) would let these be self-checked visually.
 - **Plot categories:** the relief bar chart uses x = 1, 2, 3 with the categories named in the axis label and caption; optional category labels on bar series would read better.
 - Land-use percentages for India as a whole are not quoted (the data change year to year); the chapter teaches the categories with an imagined district instead.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 0 item tag(s) and 2 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 17, understanding 29, application 19, analysis 19, evaluation 2 — application or higher 47% of items, 52% of marks (supersedes the competency figures above).

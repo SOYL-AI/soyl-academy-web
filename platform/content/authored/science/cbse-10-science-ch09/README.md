@@ -67,3 +67,7 @@ Every item, case part and alternative was re-solved; no key was wrong. Fixes dur
 - Narration audio is not generated (TTS stage).
 - Diagram scale: mirrors use f = 60 px with small objects so that sagitta stays small; rays meet at the exact image, and the ray drawn "through F" passes within about 2 px of F because it reflects at the true curved surface.
 - Plot points: the renderer must support a point label on a function plot (as for the maths chapters).
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 22 item tag(s) and 7 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 9, understanding 46, application 20, analysis 11, evaluation 0 — application or higher 36% of items, 39% of marks (supersedes the competency figures above).

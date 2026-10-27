@@ -67,3 +67,7 @@ Every question, case part and alternative was re-solved from its stem. Findings 
 - The traced field lines come from idealised models (point poles; infinite line currents for the loop and solenoid cross-sections). They are qualitatively right, not measured maps.
 - Indian house-wiring colour codes are given as in the textbook tradition (red/black/green); newer installations may use brown/blue/green-yellow, which is not examined.
 - `blueprint_id` is null on both tests, as for the exemplar.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 5 item tag(s) and 1 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 17, understanding 28, application 27, analysis 7, evaluation 0 — application or higher 43% of items, 47% of marks (supersedes the competency figures above).

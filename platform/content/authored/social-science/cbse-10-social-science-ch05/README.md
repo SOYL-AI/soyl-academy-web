@@ -54,3 +54,7 @@ A Wittenberg student's letter (winter 1517), a Paris bookseller's account book (
 ## Gaps
 - Board History papers can include a picture-based item (e.g. a cartoon or a print); here pictures are described in words inside imagined sources.
 - Map items are practice only.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 2 item tag(s) and 2 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 20, understanding 42, application 19, analysis 24, evaluation 7 — application or higher 45% of items, 50% of marks (supersedes the competency figures above).

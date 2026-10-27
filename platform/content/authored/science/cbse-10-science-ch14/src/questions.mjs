@@ -56,7 +56,7 @@ add('triad-mean-num', num({
   value: 23.0, tol: 0.05, unit: 'u',
   sol: r`Mean of the outer masses: $\dfrac{6.9 + 39.1}{2} = \dfrac{46.0}{2} = 23.0$ u (the measured value is 23.0 u).`,
   scheme: [['Mean of 6.9 and 39.1 = 23.0 u', 1]],
-  d: 2, c: 'application', t: [1],
+  d: 2, c: 'understanding', t: [1],
 }), (q) => near(mean(6.9, 39.1), q.answer.value, 1e-9) || 'mean');
 add('newlands-ar', ar({
   a: 'Newlands’ law of octaves applied to all the elements known in his time.',
@@ -157,7 +157,7 @@ add('ga-valency-num', num({
   value: 3, tol: 0, unit: null,
   sol: r`Three oxygen atoms supply $3 \times 2 = 6$ units of combining capacity, shared by two gallium atoms: $\dfrac{6}{2} = 3$.`,
   scheme: [['Valency 3', 1]],
-  d: 2, c: 'application', t: [2],
+  d: 2, c: 'understanding', t: [2],
 }), (q) => near((3 * 2) / 2, q.answer.value) || 'Ga');
 add('gaps-ar', ar({
   a: 'Mendeléev’s periodic table helped in the discovery of new elements.',
@@ -376,14 +376,14 @@ add('group-config-num', num({
   value: 17, tol: 0, unit: null,
   sol: 'Seven valence electrons; for 3 to 8 valence electrons, group = 10 + valence electrons = 10 + 7 = 17.',
   scheme: [['Group 17', 1]],
-  d: 2, c: 'application', t: [3],
+  d: 2, c: 'understanding', t: [3],
 }), (q) => positionOf(17).group === q.answer.value || 'group');
 add('z-position-num', num({
   stem: 'An element is in period 3 and group 14 of the modern periodic table. What is its atomic number?',
   value: 14, tol: 0, unit: null,
   sol: 'Period 3 → three shells; group 14 → 14 − 10 = 4 valence electrons. Configuration 2, 8, 4, so the atomic number is 2 + 8 + 4 = 14 (silicon).',
   scheme: [['Atomic number 14', 1]],
-  d: 3, c: 'application', t: [3],
+  d: 3, c: 'understanding', t: [3],
 }), (q) => {
   const z = q.answer.value;
   return (positionOf(z).period === 3 && positionOf(z).group === 14) || 'Si';
@@ -395,7 +395,7 @@ add('locate-short', short({
   model: 'X: **2, 1**; Y: **2, 8, 1**.\n\nThey are in the **same group** (group 1), because each has **one valence electron**. They are not in the same period: X has two shells (period 2) and Y has three (period 3).',
   sol: 'Write the configurations, then compare valence electrons (group) and shells (period).',
   scheme: [['Both configurations', 1], ['Same group, because of one valence electron each', 1]],
-  d: 2, c: 'application', t: [3],
+  d: 2, c: 'understanding', t: [3],
 }), () => (cfg(3) === '2, 1' && cfg(11) === '2, 8, 1' && positionOf(3).group === positionOf(11).group && positionOf(3).period !== positionOf(11).period) || 'Li Na');
 add('size-short', short({
   marks: 2,
@@ -419,7 +419,7 @@ add('period3-short', short({
   model: '(a) **Sodium**: it is at the left end of the period, with the largest atom, so it loses its outer electron most easily.\n\n(b) **Silicon** shows properties of both metals and non-metals.\n\n(c) **Argon** has a valency of zero, because its outermost shell is **full** (2, 8, 8), so it does not need to lose, gain or share electrons.',
   sol: 'Use the trend in metallic character, the zig-zag line, and the full outer shell of a noble gas.',
   scheme: [['(a) Sodium with reason', 1], ['(b) Silicon', 1], ['(c) Argon, full outer shell', 1]],
-  d: 3, c: 'application', t: [3],
+  d: 3, c: 'understanding', t: [3],
 }), () => (valencyOf(18) === 0 && positionOf(11).group === 1) || 'period 3');
 add('oxides-short', short({
   marks: 3,
@@ -436,7 +436,7 @@ add('valency-formula-short', short({
   model: '(a) P: **2, 8, 2**, valency **2**; Q: **2, 8, 7**, valency 8 − 7 = **1**.\n\n(b) One P combines with two Q: **PQ₂** (magnesium chloride, MgCl₂).\n\n(c) **P** is larger. Both are in period 3 with three shells, but Q has more protons (17 against 12), which pull its electrons closer.',
   sol: 'Configurations → valencies → cross over; compare size across period 3.',
   scheme: [['(a) Configurations and valencies', 1], ['(b) PQ₂', 1], ['(c) P larger, with reason', 1]],
-  d: 3, c: 'application', t: [3],
+  d: 3, c: 'understanding', t: [3],
 }), () => (cfg(12) === '2, 8, 2' && cfg(17) === '2, 8, 7' && formula(valencyOf(12), valencyOf(17)).join(',') === '1,2' && positionOf(12).period === positionOf(17).period) || 'MgCl2');
 add('modern-long', long({
   stem: '(a) State the modern periodic law.\n\n(b) Explain how the period and group of an element are found from its electronic configuration, using the element with atomic number 19 as an example.\n\n(c) How do atomic size and metallic character change across a period and down a group? Give reasons.',
@@ -492,7 +492,7 @@ add('triad-case', mk.case({
       value: 81.2, tol: 0.05, unit: 'u',
       sol: r`$\dfrac{35.5 + 126.9}{2} = \dfrac{162.4}{2} = 81.2$ u.`,
       scheme: [['81.2 u', 1]],
-      d: 2, c: 'application', t: [1],
+      d: 2, c: 'understanding', t: [1],
     })),
     part('c', short({
       marks: 2,
@@ -518,7 +518,7 @@ add('triad-case', mk.case({
 });
 add('gallium-case', mk.case({
   passage: 'In 1871, Mendeléev left a gap below aluminium in his table and described the missing element, which he called eka-aluminium. In 1875 a French chemist discovered gallium in a zinc ore. The table compares the prediction with what was found.\n\n| Property | Eka-aluminium (predicted) | Gallium (found) |\n|---|---|---|\n| Atomic mass | about 68 u | 69.7 u |\n| Formula of oxide | E₂O₃ | Ga₂O₃ |\n| Formula of chloride | ECl₃ | GaCl₃ |\n\nGallium also has such a low melting point that it melts on a warm day.',
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   children: [
     part('a', mcq({
       stem: 'In which group of Mendeléev’s table did eka-aluminium belong?',
@@ -532,7 +532,7 @@ add('gallium-case', mk.case({
       value: 1.7, tol: 0.05, unit: 'u',
       sol: r`$69.7 - 68 = 1.7$ u, only about 2.5% of the predicted value.`,
       scheme: [['1.7 u', 1]],
-      d: 2, c: 'application', t: [2],
+      d: 2, c: 'understanding', t: [2],
     })),
     part('c', short({
       marks: 2,
@@ -569,7 +569,7 @@ add('cards-case', mk.case({
       value: 2, tol: 0, unit: null,
       sol: 'Atomic number 4 → configuration 2, 2: it has 2 valence electrons (beryllium, group 2).',
       scheme: [['2', 1]],
-      d: 2, c: 'application', t: [3],
+      d: 2, c: 'understanding', t: [3],
     })),
     part('c', short({
       marks: 2,
@@ -606,7 +606,7 @@ add('radius-case', mk.case({
       value: 87, tol: 0, unit: 'pm',
       sol: r`$186 - 99 = 87$ pm.`,
       scheme: [['87 pm', 1]],
-      d: 2, c: 'application', t: [3],
+      d: 2, c: 'understanding', t: [3],
     })),
     part('c', short({
       marks: 2,
@@ -650,7 +650,7 @@ add('oxide-case', mk.case({
       model: 'Z (2, 8, 6) is in **group 16**; it is a **non-metal** (sulfur).',
       sol: 'Six valence electrons give group 16; acidic oxide shows a non-metal.',
       scheme: [['Group 16, non-metal', 1]],
-      d: 2, c: 'application', t: [3],
+      d: 2, c: 'understanding', t: [3],
       wl: null,
     })),
     part('c', short({

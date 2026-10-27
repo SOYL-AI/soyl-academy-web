@@ -143,7 +143,7 @@ add('ray-cf-short', short({
   model: 'Ray diagram: from the top of the object, one ray **parallel to the axis** reflects through **F**; a second ray **through F** reflects **parallel** to the axis. They meet below the axis beyond C, where the tip of the image is drawn.\n\nImage: **beyond C**, **enlarged**, **real and inverted**.',
   sol: 'Draw two standard rays with arrows, locate the image where they cross, then describe it.',
   scheme: [['Two correct rays with arrows', 1], ['Image drawn beyond C', 1], ['Position, size and nature stated', 1]],
-  d: 3, c: 'application', t: [1],
+  d: 3, c: 'understanding', t: [1],
 }), () => { const { v, m } = mirrorImage(-30, -20); return (v < -40 && m < -1) || 'C-F'; });
 add('concave-long', long({
   stem: '(a) Draw ray diagrams to show the image formed by a concave mirror when the object is placed (i) beyond the centre of curvature and (ii) between the pole and the principal focus.\n\n(b) State the position, size and nature of the image in each case.\n\n(c) Which of these two arrangements is used in a shaving mirror, and why?',
@@ -163,7 +163,7 @@ Step 2 — $\dfrac{1}{v} = \dfrac{1}{f} - \dfrac{1}{u} = -\dfrac{1}{12} + \dfrac
 
 Step 3 — $v = -30\ \text{cm}$: the image is 30 cm in front of the mirror (real).`,
   scheme: [['Signs and formula', 0.5], ['v = −30 cm', 0.5]],
-  d: 3, c: 'application', t: [2],
+  d: 3, c: 'understanding', t: [2],
 }), (q) => near(mirrorImage(-20, -12).v, q.answer.value) || 'v');
 add('mirror-m-num', num({
   stem: 'An object is placed 25 cm in front of a concave mirror of focal length 10 cm. Find the magnification produced, correct to two decimal places.',
@@ -172,7 +172,7 @@ add('mirror-m-num', num({
 
 Step 2 — $m = -\dfrac{v}{u} \approx -\dfrac{-16.67}{-25} \approx -0.67$: real, inverted, diminished.`,
   scheme: [['Finds v ≈ −16.7 cm', 0.5], ['m ≈ −0.67', 0.5]],
-  d: 3, c: 'application', t: [2],
+  d: 3, c: 'understanding', t: [2],
 }), (q) => near(mirrorImage(-25, -10).m, q.answer.value, 0.005) || 'm');
 add('convex-v-num', num({
   stem: 'An object is placed 10 cm in front of a convex mirror of focal length 15 cm. Find the image distance v, with its sign, in centimetres.',
@@ -183,7 +183,7 @@ Step 2 — $\dfrac{1}{v} = \dfrac{1}{15} - \dfrac{1}{-10} = \dfrac{1}{15} + \dfr
 
 Step 3 — $v = +6\ \text{cm}$: 6 cm behind the mirror (virtual).`,
   scheme: [['Signs and formula', 0.5], ['v = +6 cm', 0.5]],
-  d: 3, c: 'application', t: [2],
+  d: 3, c: 'understanding', t: [2],
 }), (q) => near(mirrorImage(-10, 15).v, q.answer.value) || 'convex v');
 add('radius-fill', fill({
   stem: 'A spherical mirror has a radius of curvature of 32 cm. Its focal length is ___ cm.',
@@ -264,7 +264,7 @@ $m = -\dfrac{v}{u} = -\dfrac{-60}{-30} = -2$, so $h' = -2 \times 5 = -10$ cm.
 The image is **60 cm in front** of the mirror, **real, inverted** and **enlarged** (10 cm tall).`,
   sol: r`Step 1 — Signs. Step 2 — Mirror formula for v. Step 3 — $m = -\dfrac{v}{u}$, then $h' = m h$.`,
   scheme: [['Signs and formula; v = −60 cm', 1], ['m = −2 and h′ = −10 cm', 1], ['Nature: real, inverted, enlarged', 1]],
-  d: 3, c: 'application', t: [2],
+  d: 3, c: 'understanding', t: [2],
 }), () => { const { v, m } = mirrorImage(-30, -20); return (near(v, -60) && near(m, -2) && near(m * 5, -10)) || 'calc'; });
 add('dentist-short', short({
   marks: 3,
@@ -291,7 +291,7 @@ add('convex-long', long({
 (d) Rear-view mirrors of vehicles: they always give an erect, diminished image and a **wider field of view**.`,
   sol: 'Step 1 — f = R/2, positive for convex. Step 2 — Mirror formula and magnification. Step 3 — Describe and draw. Step 4 — Use with reason.',
   scheme: [['(a) f = +30 cm and v = +12 cm', 1.5], ['(a) m = 0.6, h′ = 3.6 cm', 1], ['(b) Nature', 0.5], ['(c) Ray diagram with dashed extensions', 1], ['(d) Use with reason', 1]],
-  d: 4, c: 'application', t: [1, 2],
+  d: 4, c: 'understanding', t: [1, 2],
 }), () => { const { v, m } = mirrorImage(-20, 30); return (near(v, 12) && near(m, 0.6) && near(m * 6, 3.6)) || 'convex long'; });
 add('shaving-long', long({
   wl: null,
@@ -356,14 +356,14 @@ add('speed-num', num({
   value: 2.4, tol: 0.01, unit: '× 10⁸ m/s',
   sol: r`$v = \dfrac{c}{n} = \dfrac{3 \times 10^8}{1.25} = 2.4 \times 10^8\ \text{m/s}$.`,
   scheme: [['v = c/n = 2.4 × 10⁸ m/s', 1]],
-  d: 2, c: 'application', t: [3],
+  d: 2, c: 'understanding', t: [3],
 }), (q) => near(C / 1.25 / 1e8, q.answer.value) || 'speed');
 add('snell-num', num({
   stem: 'For a ray passing from air into a transparent plastic, sin i = 0.50 and sin r = 0.32. Find the refractive index of the plastic, correct to two decimal places.',
   value: 1.56, tol: 0.01, unit: null,
   sol: r`$n = \dfrac{\sin i}{\sin r} = \dfrac{0.50}{0.32} \approx 1.56$.`,
   scheme: [['n = 0.50 ÷ 0.32 ≈ 1.56', 1]],
-  d: 2, c: 'application', t: [3],
+  d: 2, c: 'understanding', t: [3],
 }), (q) => near(0.5 / 0.32, q.answer.value, 0.005) || 'snell');
 add('relative-num', num({
   marks: 2,
@@ -373,14 +373,14 @@ add('relative-num', num({
 
 Step 2 — The value is greater than 1, so diamond is optically denser than glass (light is slower in diamond).`,
   scheme: [['Relative index formula', 0.5], ['1.61', 1], ['Diamond is optically denser', 0.5]],
-  d: 3, c: 'application', t: [3],
+  d: 3, c: 'understanding', t: [3],
 }), (q) => near(2.42 / 1.5, q.answer.value, 0.005) || 'relative');
 add('n-from-speed-num', num({
   stem: 'Light travels at 2.25 × 10⁸ m/s in a liquid. Find the refractive index of the liquid, correct to two decimal places.',
   value: 1.33, tol: 0.01, unit: null,
   sol: r`$n = \dfrac{c}{v} = \dfrac{3 \times 10^8}{2.25 \times 10^8} \approx 1.33$ (the liquid could be water).`,
   scheme: [['n = c/v ≈ 1.33', 1]],
-  d: 3, c: 'application', t: [3],
+  d: 3, c: 'understanding', t: [3],
 }), (q) => near(C / 2.25e8, q.answer.value, 0.005) || 'n');
 add('kerosene-ar', ar({
   a: 'Kerosene is optically denser than water.',
@@ -437,7 +437,7 @@ add('slab-short', short({
   model: 'Diagram labels: incident ray, normal at each face, refracted ray inside the slab, emergent ray, angles **i**, **r** and **e**, lateral shift.\n\nOn entering the glass the ray slows down and bends **towards** the normal (r < i). On leaving, it speeds up and bends **away** from the normal. Because the two faces are **parallel**, the bending at the second face exactly reverses the bending at the first, so **e = i** and the emergent ray is **parallel** to the incident ray, shifted sideways.',
   sol: 'Draw the ray with normals and angles; explain the two bendings and why they cancel.',
   scheme: [['Labelled diagram with normals and angles', 1], ['Towards then away from the normal', 1], ['Parallel faces, so e = i and the rays are parallel', 1]],
-  d: 3, c: 'application', t: [3],
+  d: 3, c: 'understanding', t: [3],
 }));
 add('speed-short', short({
   marks: 3,
@@ -450,7 +450,7 @@ add('speed-short', short({
 (c) **Glass** is optically denser (larger n, lower speed).`,
   sol: r`Use $v = \dfrac{c}{n}$ for each, then compare.`,
   scheme: [['Speed in water ≈ 2.26 × 10⁸ m/s', 1], ['Speed in glass = 2.0 × 10⁸ m/s', 1], ['Faster in water; glass optically denser', 1]],
-  d: 3, c: 'application', t: [3],
+  d: 3, c: 'understanding', t: [3],
 }), () => (near(C / 1.33 / 1e8, 2.26, 0.005) && near(C / 1.5 / 1e8, 2)) || 'speeds');
 add('refraction-long', long({
   stem: '(a) What is refraction of light? Why does it happen?\n\n(b) State the laws of refraction.\n\n(c) Draw a labelled diagram of refraction through a rectangular glass slab and mark the lateral shift.\n\n(d) The speed of light in a medium is 2 × 10⁸ m/s. Find its absolute refractive index.',
@@ -547,7 +547,7 @@ add('concave-lens-ray-short', short({
   model: 'Ray diagram: a ray **parallel to the axis** is refracted so that it **appears to come from F₁** (dashed back to F₁); a ray **through O** goes straight on. The dashed extension and the ray through O meet **between F₁ and O**, on the same side as the object.\n\nImage: **virtual, erect, diminished**.',
   sol: 'Two standard rays; locate the image where the ray through O meets the backward extension.',
   scheme: [['Correct rays with dashed extension', 1], ['Image between F₁ and O, virtual, erect, diminished', 1]],
-  d: 3, c: 'application', t: [4],
+  d: 3, c: 'understanding', t: [4],
 }), () => { const { v, m } = lensImage(-30, -20); return (v < 0 && v > -20 && m > 0 && m < 1) || 'concave lens image'; });
 add('convex-lens-ray-short', short({
   marks: 3,
@@ -556,7 +556,7 @@ add('convex-lens-ray-short', short({
   model: 'Ray diagram: a ray **parallel to the axis** refracts through **F₂**; a ray **through O** goes straight on. The refracted rays **diverge**; their dashed backward extensions meet on the **same side as the object**, beyond it.\n\nImage: **virtual, erect, enlarged**. Device: a **magnifying glass** (simple microscope).',
   sol: 'Draw the two rays, extend them backwards, describe the image and name the magnifier.',
   scheme: [['Correct rays', 1], ['Dashed extensions locate a virtual image on the object’s side', 1], ['Virtual, erect, enlarged; magnifying glass', 1]],
-  d: 3, c: 'application', t: [4],
+  d: 3, c: 'understanding', t: [4],
 }), () => { const { v, m } = lensImage(-10, 20); return (v < 0 && m > 1) || 'magnifier'; });
 add('lens-diagram-long', long({
   stem: '(a) Distinguish between a convex lens and a concave lens (two points).\n\n(b) Draw ray diagrams for a convex lens when the object is placed (i) at 2F₁ and (ii) at F₁. State the position and nature of the image in each case.\n\n(c) Explain why a concave lens can never form a real image of a real object.',
@@ -576,28 +576,28 @@ Step 2 — $\dfrac{1}{v} = \dfrac{1}{f} + \dfrac{1}{u} = \dfrac{1}{10} - \dfrac{
 
 Step 3 — $v = +30\ \text{cm}$: on the other side of the lens (real).`,
   scheme: [['Signs and formula', 0.5], ['v = +30 cm', 0.5]],
-  d: 3, c: 'application', t: [5],
+  d: 3, c: 'understanding', t: [5],
 }), (q) => near(lensImage(-15, 10).v, q.answer.value) || 'lens v');
 add('concave-lens-num', num({
   stem: 'An object is placed 20 cm in front of a concave lens of focal length 20 cm. Find the image distance v, with its sign, in centimetres.',
   value: -10, tol: 0.05, unit: 'cm',
   sol: r`$u = -20$ cm, $f = -20$ cm. $\dfrac{1}{v} = -\dfrac{1}{20} - \dfrac{1}{20} = -\dfrac{1}{10}$, so $v = -10$ cm: virtual, on the same side as the object.`,
   scheme: [['v = −10 cm', 1]],
-  d: 3, c: 'application', t: [5],
+  d: 3, c: 'understanding', t: [5],
 }), (q) => near(lensImage(-20, -20).v, q.answer.value) || 'concave lens v');
 add('power-num', num({
   stem: 'Find the power of a convex lens of focal length 40 cm, in dioptres.',
   value: 2.5, tol: 0.01, unit: 'D',
   sol: r`$f = +40\ \text{cm} = +0.40\ \text{m}$, so $P = \dfrac{1}{0.40} = +2.5\ \text{D}$.`,
   scheme: [['Converts to metres; P = +2.5 D', 1]],
-  d: 2, c: 'application', t: [5],
+  d: 2, c: 'understanding', t: [5],
 }), (q) => near(1 / 0.4, q.answer.value) || 'power');
 add('contact-num', num({
   stem: 'A convex lens of power +4.0 D is placed in contact with a concave lens of power −1.5 D. Find the focal length of the combination, in centimetres.',
   value: 40, tol: 0.1, unit: 'cm',
   sol: r`$P = +4.0 + (-1.5) = +2.5\ \text{D}$, so $f = \dfrac{1}{2.5} = 0.40\ \text{m} = 40\ \text{cm}$ (converging).`,
   scheme: [['P = +2.5 D', 0.5], ['f = 40 cm', 0.5]],
-  d: 3, c: 'application', t: [5],
+  d: 3, c: 'understanding', t: [5],
 }), (q) => near(100 / (4.0 - 1.5), q.answer.value) || 'contact');
 add('lens-m-num', num({
   stem: 'An object is placed 10 cm in front of a convex lens of focal length 15 cm. Find the magnification produced.',
@@ -606,7 +606,7 @@ add('lens-m-num', num({
 
 Step 2 — $m = \dfrac{v}{u} = \dfrac{-30}{-10} = +3$: virtual, erect, three times enlarged.`,
   scheme: [['v = −30 cm', 0.5], ['m = +3', 0.5]],
-  d: 3, c: 'application', t: [5],
+  d: 3, c: 'understanding', t: [5],
 }), (q) => near(lensImage(-10, 15).m, q.answer.value) || 'lens m');
 add('power-sign-mcq', mcq({
   stem: 'An optician’s prescription reads −2.0 D. What kind of lens is it, and what is its focal length?',
@@ -645,7 +645,7 @@ add('power-short', short({
 (b) (i) $P = \dfrac{1}{0.25} = +4\ \text{D}$. (ii) $P = \dfrac{1}{-0.50} = -2\ \text{D}$.`,
   sol: 'Define the unit, convert each focal length to metres with its sign, and take the reciprocal.',
   scheme: [['(a) Definition', 1], ['(b) +4 D and −2 D (0.5 each)', 1]],
-  d: 2, c: 'application', t: [5],
+  d: 2, c: 'understanding', t: [5],
 }), () => (near(1 / 0.25, 4) && near(1 / -0.5, -2)) || 'powers');
 add('lens-calc-short', short({
   marks: 3,
@@ -658,7 +658,7 @@ $m = \dfrac{v}{u} = \dfrac{48}{-24} = -2$, so $h' = -2 \times 3 = -6$ cm.
 The image is **48 cm on the other side** of the lens, **real, inverted** and **enlarged** (6 cm tall).`,
   sol: 'Step 1 — Signs and the lens formula. Step 2 — m = v/u and h′ = m h. Step 3 — Interpret.',
   scheme: [['v = +48 cm', 1], ['m = −2, h′ = −6 cm', 1], ['Real, inverted, enlarged', 1]],
-  d: 3, c: 'application', t: [5],
+  d: 3, c: 'understanding', t: [5],
 }), () => { const { v, m } = lensImage(-24, 16); return (near(v, 48) && near(m, -2) && near(m * 3, -6)) || 'lens calc'; });
 add('contact-short', short({
   marks: 3,
@@ -685,7 +685,7 @@ add('lens-long', long({
 (d) $u = -10$ cm: $\dfrac{1}{v} = \dfrac{1}{20} - \dfrac{1}{10} = -\dfrac{1}{20}$, so $v = -20$ cm; $m = \dfrac{-20}{-10} = +2$: **virtual, erect, enlarged**, on the same side as the object.`,
   sol: 'Step 1 — Lens formula and magnification. Step 2 — Ray diagram. Step 3 — P = 1/f in metres. Step 4 — Repeat with u = −10 cm.',
   scheme: [['(a) v = +60 cm, h′ = −8 cm, nature', 1.5], ['(b) Ray diagram', 1], ['(c) +5 D', 1], ['(d) v = −20 cm, virtual erect enlarged', 1.5]],
-  d: 4, c: 'application', t: [4, 5],
+  d: 4, c: 'understanding', t: [4, 5],
 }), () => { const a = lensImage(-30, 20); const b = lensImage(-10, 20); return (near(a.v, 60) && near(a.m * 4, -8) && near(1 / 0.2, 5) && near(b.v, -20) && near(b.m, 2)) || 'lens long'; });
 
 // ---------------------------------------------------------------- case-based
@@ -705,7 +705,7 @@ add('torch-case', mk.case({
       value: 8, tol: 0, unit: 'cm',
       sol: r`$R = 2f = 2 \times 4 = 8$ cm.`,
       scheme: [['R = 8 cm', 1]],
-      d: 1, c: 'application', t: [1],
+      d: 1, c: 'understanding', t: [1],
     })),
     part('c', short({
       marks: 2,
@@ -742,7 +742,7 @@ add('mirror-lab-case', mk.case({
       value: -2, tol: 0, unit: null,
       sol: r`$m = -\dfrac{v}{u} = -\dfrac{-60}{-30} = -2$.`,
       scheme: [['m = −2', 1]],
-      d: 2, c: 'application', t: [2],
+      d: 2, c: 'understanding', t: [2],
     })),
     part('c', short({
       marks: 2,
@@ -784,7 +784,7 @@ add('hillroad-case', mk.case({
       value: 0.11, tol: 0.01, unit: null,
       sol: r`$u = -12$ m, $f = +1.5$ m: $\dfrac{1}{v} = \dfrac{1}{1.5} + \dfrac{1}{12} = \dfrac{3}{4}$, so $v \approx +1.33$ m. $m = -\dfrac{v}{u} \approx -\dfrac{1.33}{-12} \approx 0.11$.`,
       scheme: [['m ≈ 0.11', 1]],
-      d: 3, c: 'application', t: [2],
+      d: 3, c: 'understanding', t: [2],
     })),
     part('c', short({
       marks: 2,
@@ -821,7 +821,7 @@ add('snell-case', mk.case({
       value: 1.5, tol: 0.05, unit: null,
       sol: r`$n = \dfrac{\sin i}{\sin r} = \dfrac{0.707}{0.471} \approx 1.5$.`,
       scheme: [['n ≈ 1.5', 1]],
-      d: 2, c: 'application', t: [3],
+      d: 2, c: 'understanding', t: [3],
     })),
     part('c', short({
       marks: 2,
@@ -865,7 +865,7 @@ add('loupe-case', mk.case({
       value: 20, tol: 0, unit: 'D',
       sol: r`$P = \dfrac{1}{0.05} = +20$ D.`,
       scheme: [['+20 D', 1]],
-      d: 2, c: 'application', t: [5],
+      d: 2, c: 'understanding', t: [5],
     })),
     part('c', short({
       marks: 2,
@@ -873,7 +873,7 @@ add('loupe-case', mk.case({
       model: r`$u = -4$ cm, $f = +5$ cm: $\dfrac{1}{v} = \dfrac{1}{5} - \dfrac{1}{4} = -\dfrac{1}{20}$, so $v = -20$ cm. $m = \dfrac{v}{u} = \dfrac{-20}{-4} = +5$: the gear appears five times larger and upright.`,
       sol: 'Lens formula, then m = v/u.',
       scheme: [['v = −20 cm', 1], ['m = +5', 1]],
-      d: 3, c: 'application', t: [5],
+      d: 3, c: 'understanding', t: [5],
       wl: null,
     }), [
       short({
@@ -907,7 +907,7 @@ add('camera-case', mk.case({
       value: 12.5, tol: 0.05, unit: 'cm',
       sol: r`$u = -50$ cm, $f = +10$ cm: $\dfrac{1}{v} = \dfrac{1}{10} - \dfrac{1}{50} = \dfrac{4}{50}$, so $v = 12.5$ cm.`,
       scheme: [['v = 12.5 cm', 1]],
-      d: 3, c: 'application', t: [5],
+      d: 3, c: 'understanding', t: [5],
     })),
     part('c', short({
       marks: 2,

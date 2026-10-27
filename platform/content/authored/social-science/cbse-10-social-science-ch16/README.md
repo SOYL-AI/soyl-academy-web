@@ -54,3 +54,7 @@ Every key and part re-solved; every MCQ/A-R solution's final letter was checked 
 - **Cartoon items:** the board can set a cartoon-based MCQ on parties; cartoons need artwork, so none are included.
 - **Recognition rules:** if catalog QA wants the Commission's full criteria (alternative routes via seats in three states or recognition in four states), the syllabus LO and these items should be updated together.
 - The bar plot names its four imagined parties by number on the x-axis (no `categories` field for bar plots yet).
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 0 item tag(s) and 1 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 23, understanding 32, application 25, analysis 23, evaluation 9 — application or higher 51% of items, 58% of marks (supersedes the competency figures above).

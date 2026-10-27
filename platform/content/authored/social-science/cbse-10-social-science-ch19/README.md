@@ -51,3 +51,7 @@ All five topics: t01 the three sectors and interdependence (15 tags) · t02 GDP,
 - **Plot categories:** bar series have no category labels, so sectors are numbered on the x-axis and named in the axis label and caption.
 - No **map** item: the chapter has no map work in the 2026-27 syllabus.
 - The two dated updates above should be re-checked by the Lead or content-verifier before the chapter is published.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 0 item tag(s) and 3 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 12, understanding 24, application 26, analysis 26, evaluation 4 — application or higher 61% of items, 72% of marks (supersedes the competency figures above).

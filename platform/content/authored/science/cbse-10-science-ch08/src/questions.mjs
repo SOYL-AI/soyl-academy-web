@@ -241,7 +241,7 @@ add('monohybrid-short', short({
   model: 'Parents RR × rr → first generation **Rr** (all round). Germ cells of each Rr plant: R and r.\n\n| | R | r |\n|---|---|---|\n| **R** | RR | Rr |\n| **r** | Rr | rr |\n\nSecond generation: RR : Rr : rr = 1 : 2 : 1, so **3 round : 1 wrinkled**.',
   sol: 'Set out parents, first generation, germ cells, the Punnett square and the ratio.',
   scheme: [['First generation Rr and its germ cells', 0.5], ['Correct Punnett square', 1], ['Ratio 3 round : 1 wrinkled', 0.5]],
-  d: 3, c: 'application', t: [2],
+  d: 3, c: 'understanding', t: [2],
 }), () => frac(cross('Rr', 'Rr'), (g) => showsDominant(g, 0)) === 0.75 || 'mono');
 add('hidden-short', short({
   marks: 2,
@@ -414,14 +414,14 @@ add('sperm-num', num({
   value: 23, tol: 0, unit: null,
   sol: r`A sperm has one chromosome of each pair: $\dfrac{46}{2} = 23$.`,
   scheme: [['23', 1]],
-  d: 2, c: 'application', t: [4],
+  d: 2, c: 'understanding', t: [4],
 }), (q) => near(46 / 2, q.answer.value) || 'sperm');
 add('autosome-num', num({
   stem: 'How many autosomes (chromosomes other than the sex chromosome) are present in a human egg cell?',
   value: 22, tol: 0, unit: null,
   sol: r`An egg has 23 chromosomes: one sex chromosome (X) and $23 - 1 = 22$ autosomes.`,
   scheme: [['22', 1]],
-  d: 3, c: 'application', t: [4],
+  d: 3, c: 'understanding', t: [4],
 }), (q) => near(23 - 1, q.answer.value) || 'autosomes');
 add('xy-fill', fill({
   stem: 'Human males have the sex chromosomes ___, and human females have ___.',
@@ -489,7 +489,7 @@ add('sex-long', long({
   model: '(a) **46** chromosomes in **23 pairs**: 22 pairs of autosomes and one pair of sex chromosomes. Women have **XX**; men have **XY**, with a shorter Y.\n\n(b) Mother XX → all eggs X. Father XY → sperms X or Y, in equal numbers. Egg (X) + sperm (X) → **XX, girl**; egg (X) + sperm (Y) → **XY, boy**. Cross: XX × XY → XX, XX, XY, XY = 1 girl : 1 boy.\n\n(c) **One half** (50%). Each birth is a separate event decided by which sperm fertilises the egg; earlier children do not change the chance.\n\n(d) The mother always gives an X. It is the **father’s sperm** that decides the sex, and that is a matter of chance, so the mother cannot be responsible.',
   sol: 'Step 1 — Numbers and sex chromosomes.\n\nStep 2 — The cross with germ cells.\n\nStep 3 — Independent chance at each birth.\n\nStep 4 — The father’s sperm decides.',
   scheme: [['(a) 23 pairs; XX and XY', 1], ['(b) Labelled cross with germ cells and result', 2], ['(c) One half, with reason', 1], ['(d) Father’s sperm decides', 1]],
-  d: 3, c: 'application', t: [4],
+  d: 3, c: 'understanding', t: [4],
 }));
 
 // ---------------------------------------------------------------- case-based
@@ -659,7 +659,7 @@ add('family-case', mk.case({
       value: 50, tol: 0, unit: '%',
       sol: 'Half the sperms carry Y, so the chance of a boy is one half, or 50%, at every birth.',
       scheme: [['50%', 1]],
-      d: 2, c: 'application', t: [4],
+      d: 2, c: 'understanding', t: [4],
     })),
     part('c', short({
       marks: 2,

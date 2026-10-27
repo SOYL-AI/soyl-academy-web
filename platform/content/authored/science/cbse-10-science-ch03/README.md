@@ -64,3 +64,7 @@ Every question, case part and alternative was re-solved from its stem. Findings 
 - The CaO melting point in case q066 is given as "about 2900 K" (literature values are 2840–2900 K).
 - Electrode half-equations are shown for enrichment and in one long answer; they are not required by the syllabus and are not needed in any 1–3-mark key.
 - `blueprint_id` is null on both tests.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 8 item tag(s) and 3 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 8, understanding 36, application 12, analysis 10, evaluation 3 — application or higher 36% of items, 45% of marks (supersedes the competency figures above).

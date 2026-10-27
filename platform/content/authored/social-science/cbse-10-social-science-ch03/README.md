@@ -54,3 +54,7 @@ A caravan-town merchant's account book (around 800 CE), a schoolmistress's diary
 ## Gaps
 - The board does not examine t03; if CBSE restores those subtopics, Part 2 and its items would need a full bank (the current 7 items are a starter set).
 - Map items are practice only and cannot show answers on a map until `MapPlace` has coordinates.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Re-read against the rule used for CBSE 10 Maths (D-035 context): a routine, textbook-standard step on given data — a one-step formula numerical, a balanced equation, an electron-dot structure, a named part or a value read off a table — is **understanding**; applying ideas to new situations, interpreting data, explaining observations, analysis and evaluation keep their tags. 0 item tag(s) and 1 case/source-part tag(s) changed to understanding (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed. Now: recall 18, understanding 34, application 15, analysis 23, evaluation 6 — application or higher 46% of items, 55% of marks (supersedes the competency figures above).
