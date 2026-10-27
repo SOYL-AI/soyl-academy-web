@@ -192,6 +192,7 @@ describe('allJobs', () => {
         [JOB_NAMES.creditsSweepReservations]: { refunded: 0 },
         [JOB_NAMES.aiIndexContent]: { chapters: 0, inserted: 0, removed: 0, embedded: 0, failed: 0 },
         [JOB_NAMES.aiRetention]: { messages: 0, conversations: 0, jobs: 0, uploads: 0 },
+        [JOB_NAMES.leaguesWeekly]: { closed: 0, week: expect.stringMatching(/^\d{4}-\d{2}-\d{2}$/), students: 0, leaguesCreated: 0 },
         [JOB_NAMES.aiCostGuardrail]: { actions: [], alerts: 0, invariants: { negativeBalances: [], unresolvedExpired: 0, doubleResolved: 0 } },
       };
       const empty =

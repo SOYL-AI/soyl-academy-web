@@ -20,6 +20,7 @@ import type { Deck, Slide } from '@soyl/shared/content/deck';
 import type { FlashcardSet, Notes } from '@soyl/shared/content/study';
 import type { QuestionBody } from '@soyl/db/student-questions';
 import { ApiProblem } from '../errors';
+import { schoolAssessmentKind, topicAssessment } from './assessment';
 
 export const STUDENT_VISIBLE = ['published', 'reviewed'] as const;
 export type ReviewStatus = 'beta' | 'reviewed';
@@ -395,7 +396,7 @@ export async function loadHub(db: Database, chapter: ChapterRef, year: string) {
       .from(studentQuestions)
       .where(practicePool(chapter, year))
       .groupBy(studentQuestions.type, studentQuestions.difficulty),
-    db.select({ key: topics.key, title: topics.title, titleEn: topics.titleEn }).from(topics).where(eq(topics.chapterId, chapter.id)).orderBy(asc(topics.position)),
+    db.select({ key: topics.key, title: topics.title, titleEn: topics.titleEn, boardAssessed: topics.boardAssessed }).from(topics).where(eq(topics.chapterId, chapter.id)).orderBy(asc(topics.position)),
     db
       .select({ key: tests.key, title: tests.title, kind: tests.kind, durationMin: tests.durationMin, totalMarks: tests.totalMarks, items: sql<number>`(SELECT count(*)::int FROM ${testItems} WHERE ${testItems.testId} = ${tests.id})` })
       .from(tests)
@@ -420,7 +421,8 @@ export async function loadHub(db: Database, chapter: ChapterRef, year: string) {
       titleEn: chapter.titleEn,
       unit: chapter.unit,
       boardAssessed: chapter.boardAssessed,
-      topics: topicRows.map((t) => ({ id: t.key, title: t.title, titleEn: t.titleEn })),
+      schoolAssessment: schoolAssessmentKind(chapter.boardAssessed, chapter.title, chapter.unit),
+      topics: topicRows.map((t) => ({ id: t.key, title: t.title, titleEn: t.titleEn, ...topicAssessment(chapter, t) })),
     },
     subject: {
       id: chapter.subject.key,

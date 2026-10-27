@@ -67,7 +67,9 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `test_score_buckets.*` | Per-test score distribution: counts per half-mark bucket, no user link | life of test | retain (aggregate, not personal) |
 | KV `lb:live:<event>` sorted sets | Live-mock provisional ranks: user id → auto score (no names) | until the event's results are published + 30 days (key TTL) | delete (`DELETE /v1/me` removes the member) |
 | `live_registrations.*` | Live-mock registration, rank, score | life of account | cascade |
-| `xp_events.*`, `streaks.*`, `user_badges.*`, `league_memberships.*` | Progress and gamification | life of account | cascade |
+| `xp_events.*`, `streaks.*`, `user_badges.*`, `league_memberships.*` | Progress and gamification (memberships: league, tier, week XP, final rank, outcome; 0010) | life of account | cascade |
+| `leagues.*` | Weekly league divisions: week, cohort (e.g. `cbse-10`), tier, division number; no user link | life of the platform | retain (not personal) |
+| `content_reports` with `content_type = ai_answer` | Report of an AI answer: `content_id` = the `ai_messages` id, `item_ref` = `conv:<conversation id>` (no message text is copied) | 1 year | detach |
 | `lesson_progress.*` | Lesson position per chapter/deck part, read/listen mode, first completion time | life of account | cascade |
 | `practice_answers.*`, `practice_answers.response` | Practice answers: the response (may include the student's own written text), outcome, marks, time | life of account | cascade |
 | `user_mfa.totp_secret_enc` | Staff TOTP secret, AES-256-GCM encrypted (key in Key Vault, not in the database) | while enrolled | delete |
