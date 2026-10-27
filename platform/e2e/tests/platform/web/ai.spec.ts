@@ -63,7 +63,6 @@ test('AI tutor: quote → stream → credits; hint → full; refund on failure; 
   await shot(page, 'ask-answered');
 
   // The provider fails before any output: credits come back.
-  await page.getByRole('button', { name: 'Start a new chat' }).click({ trial: true }).catch(() => undefined);
   await ask(page, 'Quick doubt', `What is the pH of pure water? ${FAIL}`, 1);
   await expect(page.getByText(/refunded/i).last()).toBeVisible({ timeout: 30_000 });
   await expect(chip(page)).toHaveAttribute('data-balance', '23');
