@@ -1,0 +1,33 @@
+id: icse-10-biology-chapter-test-long
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-biology
+paper_type: chapter-test-long
+academic_year: "2026-27"
+duration_min: 60
+total_marks: 40
+mark_shares: {}
+scope: chapter
+sections:
+  - id: A
+    title: Section A - Compulsory (20 marks)
+    instructions: >-
+      Attempt all questions. Six MCQs and one assertion-reason item (1 mark each); three 1-mark answers (terms, odd one out); a short
+      passage with five blanks; a labelled diagram whose five structures are matched with their functions.
+    items:
+      - {type: mcq, count: 6, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: short, count: 3, marks_each: 1}
+      - {type: fill-blank, count: 1, marks_each: 5}
+      - {type: match, count: 1, marks_each: 5}
+  - id: B
+    title: Section B - Case-based questions (20 marks)
+    instructions: Attempt any two of the three questions; each opens with a scenario, experiment or diagram followed by parts of 1-3 marks.
+    items:
+      - {type: case-based, count: 3, marks_each: 10, internal_choice: {attempt: 2, of: 3}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL chapter test in the ICSE 2027 Biology form (icse-2027-specimen-523-biology); not an official CISCE paper. One chapter, 40 marks
+  in 60 minutes (board pace).

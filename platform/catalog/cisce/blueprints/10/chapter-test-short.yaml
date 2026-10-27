@@ -1,0 +1,33 @@
+id: icse-10-default-chapter-test-short
+board: cisce
+exam: icse
+class: 10
+subject_id: null
+paper_type: chapter-test-short
+academic_year: "2026-27"
+duration_min: 30
+total_marks: 20
+mark_shares: {}
+scope: chapter
+sections:
+  - id: A
+    title: Section A - Compulsory (10 marks)
+    instructions: Attempt all questions. Multiple-choice and assertion-reason items (1 mark each), then short answers of 2 and 3 marks.
+    items:
+      - {type: mcq, count: 4, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: short, count: 1, marks_each: 2}
+      - {type: short, count: 1, marks_each: 3}
+  - id: B
+    title: Section B - Structured question (10 marks)
+    instructions: Attempt any one of the two questions. Each is set in parts (for example 3 + 3 + 4 marks).
+    items:
+      - {type: long, count: 2, marks_each: 10, internal_choice: {attempt: 1, of: 2}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default for any ICSE Class 10 subject without its own chapter-test blueprint (CONTEXT section 9: a generic blueprint per board and
+  subject, stored as editable config); not an official CISCE paper. It follows the shape every ICSE 2027 specimen paper shares
+  (sources/cisce.md icse-2027-specimen-papers): a compulsory Section A that opens with 1-mark objective items and short answers, then a
+  Section B of 10-mark structured questions with a choice. One chapter, 20 marks in 30 minutes (the board pace of 80 marks in 2 hours).
+  The ten core subjects have their own chapter tests in icse-10/<subject>/blueprints/.

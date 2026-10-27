@@ -1,0 +1,47 @@
+id: icse-10-hindi-board
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-hindi
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: खंड क - भाषा (Section A - Language, 40 marks, compulsory)
+    instructions: >-
+      प्रश्न 1: दिए गए विषयों में से किसी एक पर लगभग 250 शब्दों में रचना (15)। प्रश्न 2: दो में से एक विषय पर पत्र (7)। प्रश्न 3: लगभग 250
+      शब्दों का अपठित गद्यांश और उस पर प्रश्न (10)। प्रश्न 4: व्याकरण - आठ प्रश्न, 1-1 अंक (8)। (Q1 composition from a choice of
+      topics, Q2 a letter from a choice of two, Q3 an unseen passage of about 250 words, Q4 eight 1-mark grammar items.)
+    items:
+      - {type: writing, count: 5, marks_each: 15, internal_choice: {attempt: 1, of: 5}, chapters: [icse-10-hindi-ch01]}
+      - {type: writing, count: 2, marks_each: 7, internal_choice: {attempt: 1, of: 2}, chapters: [icse-10-hindi-ch02]}
+      - {type: case-based, count: 1, marks_each: 10, chapters: [icse-10-hindi-ch03]}
+      - {type: short, count: 8, marks_each: 1, chapters: [icse-10-hindi-ch04, icse-10-hindi-ch05]}
+  - id: B
+    title: खंड ख - निर्धारित पाठ्य-पुस्तकें (Section B - Prescribed texts, 40 marks)
+    instructions: >-
+      केवल दो पुस्तकों में से कुल चार प्रश्नों के उत्तर दीजिए। प्रत्येक प्रश्न किसी प्रसंग पर आधारित है और उसके भाग 2, 2, 3 और 3 अंकों के हैं।
+      (Answer four questions in all from only two of the prescribed books; each question is set on a reference to the text, in parts of
+      2, 2, 3 and 3 marks.)
+    chapters: [icse-10-hindi-ch06, icse-10-hindi-ch07, icse-10-hindi-ch08, icse-10-hindi-ch09]
+    items:
+      - {type: source-based, count: 8, marks_each: 10, internal_choice: {attempt: 4, of: 8}}
+source_status: unverified
+source: icse-2027-second-languages
+notes: >-
+  ICSE 2027 Second Language Hindi: one paper of three hours, 80 marks; internal assessment 20 marks is not modelled. VERIFIED from the
+  ICSE 2027 Second Languages syllabus (icse-2027-second-languages): Section A Language 40 marks, compulsory (one composition from a
+  choice of subjects, one letter from a choice of two, an unseen passage of about 250 words with questions, grammar); Section B
+  Prescribed Texts 40 marks (four questions from ONLY two of the prescribed books, Class X portion only per circular 2026-27/33).
+  UNVERIFIED: the per-question marks (15 / 7 / 10 / 8), five composition topics, eight 1-mark grammar items, 10-mark text questions in
+  2 + 2 + 3 + 3 parts and two questions per book (eight in Section B) follow recent ICSE Hindi papers; no 2027 specimen exists for Hindi
+  (the October 2026 circular keeps the 2026 rubric) and the 2026 paper could not be fetched (icse-2026-hindi-paper; owner request in the
+  handoff). Hence source_status unverified. No mark_shares: CISCE publishes no competency design for Hindi.
+  Section B models the four books as the four text chapters (Sahitya Sagar stories and poems, Naya Raasta, Ekanki Sanchay); the schema
+  cannot express "only two books", so eight questions over the four chapters are offered with "attempt 4 of 8" and chapter spread makes
+  two per chapter likely. Unit weightage 40 / 40 comes from the syllabus units. Texts are never reproduced: questions refer to a
+  scene or lines by place (CONTEXT section 8).

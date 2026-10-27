@@ -9,8 +9,9 @@ exam_notes: >-
   One paper of 2 hours, 80 marks, all questions compulsory: Q1 composition of about 300-350 words from a choice of topics
   (some suggested by pictures); Q2 a formal or informal letter from a choice of two; Q3 a notice and an e-mail on the same
   situation; Q4 an unseen prose passage of about 500 words with vocabulary-in-context, short-answer and summary questions;
-  Q5 functional grammar (prepositions, conjunctions, verbs and sentence structure). Recent ICSE papers carry about
-  20 + 10 + 10 + 20 + 20 marks; the syllabus itself publishes no weightage (see the 2027 specimen paper).
+  Q5 functional grammar (prepositions, conjunctions, verbs and sentence structure). The syllabus publishes no weightage;
+  the 2027 specimen paper (code 011) gives Q1 20 (one of five topics), Q2 10 (one of two letters), Q3 5 + 5, Q4 20
+  (comprehension 12 + summary 8) and Q5 20 (4 + 4 + 4 + 8), which the unit marks below follow.
   Internal assessment 20 marks: Listening (10; a passage of about 300 words read aloud twice, objective test) and
   Speaking (10; a two-minute presentation followed by about three minutes of discussion), two assessments in Class X,
   marked by the subject teacher and an external examiner. These are school-assessed skills, so they are not chapters here.
@@ -18,11 +19,11 @@ exam_notes: >-
   CISCE describes the paper by question, not by chapters: SOYL groups each question's skills into teachable chapters,
   and the split of Q5 into grammar chapters (verbs, prepositions, conjunctions, transformation) is SOYL's, not CISCE's.
 units:
-  - { name: "Question 1: Composition", marks: null }
-  - { name: "Question 2: Letter Writing", marks: null }
-  - { name: "Question 3: Notice and E-mail", marks: null }
-  - { name: "Question 4: Comprehension and Summary", marks: null }
-  - { name: "Question 5: Functional Grammar", marks: null }
+  - { name: "Question 1: Composition", marks: 20 }
+  - { name: "Question 2: Letter Writing", marks: 10 }
+  - { name: "Question 3: Notice and E-mail", marks: 10 }
+  - { name: "Question 4: Comprehension and Summary", marks: 20 }
+  - { name: "Question 5: Functional Grammar", marks: 20 }
 chapters:
   - id: icse-10-english-language-ch01
     number: 1

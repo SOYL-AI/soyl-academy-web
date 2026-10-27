@@ -1,0 +1,29 @@
+id: icse-10-history-civics-chapter-test-long
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-history-civics
+paper_type: chapter-test-long
+academic_year: "2026-27"
+duration_min: 60
+total_marks: 40
+mark_shares: {}
+scope: chapter
+sections:
+  - id: I
+    title: Part I - Compulsory (20 marks)
+    instructions: Attempt all questions. Nine MCQs and one assertion-reason item (1 mark each), then five 2-mark short answers.
+    items:
+      - {type: mcq, count: 9, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: short, count: 5, marks_each: 2}
+  - id: II
+    title: Part II - Structured questions (20 marks)
+    instructions: Attempt any two of the three questions, each in three parts (3 + 3 + 4 marks).
+    items:
+      - {type: long, count: 3, marks_each: 10, internal_choice: {attempt: 2, of: 3}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL chapter test in the ICSE 2027 History & Civics form (icse-2027-specimen-501-history-civics); not an official CISCE paper. One
+  chapter, 40 marks in 60 minutes (board pace).

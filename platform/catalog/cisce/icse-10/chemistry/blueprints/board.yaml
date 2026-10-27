@@ -1,0 +1,45 @@
+id: icse-10-chemistry-board
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-chemistry
+paper_type: board
+academic_year: "2026-27"
+duration_min: 120
+total_marks: 80
+mark_shares: {}
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Compulsory (40 marks)
+    instructions: >-
+      Attempt all questions. Question 1: 15 multiple-choice items of 1 mark (one assertion-reason); write the correct answers only.
+      Question 2: five 5-mark parts - five 1-mark sub-questions on a given diagram or set-up; balanced equations, observations and
+      names (1 mark each); five sentences completed by choosing the correct word from a bracket; a five-pair match; IUPAC names and
+      structural diagrams (1 mark each).
+    items:
+      - {type: mcq, count: 14, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: case-based, count: 1, marks_each: 5}
+      - {type: short, count: 10, marks_each: 1}
+      - {type: fill-blank, count: 1, marks_each: 5}
+      - {type: match, count: 1, marks_each: 5}
+  - id: B
+    title: Section B - Any four of six (40 marks)
+    instructions: >-
+      Attempt any four of Questions 3-8, 10 marks each. On the board paper each question has three or four parts (2 + 2 + 3 + 3 or
+      3 + 3 + 4 marks: equations, observations, identification, calculations, electron-dot structures) that may come from different
+      topics; SOYL sets each as one structured multi-part question on one chapter.
+    items:
+      - {type: long, count: 6, marks_each: 10, internal_choice: {attempt: 4, of: 6}}
+source_status: verified
+source: icse-2027-specimen-522-chemistry
+notes: >-
+  ICSE 2027 Science (52) Paper 2 Chemistry, specimen paper code 522: one theory paper of two hours (plus 15 minutes reading time),
+  80 marks; internal assessment of practical work 20 marks is not modelled. Section A (40, compulsory): Q1 15 x 1 MCQ incl. 1
+  assertion-reason; Q2 five 5-mark parts (diagram-based sub-questions as a 5-mark case item, ten 1-mark equation / naming / structure
+  answers, one 5-blank bracket fill-in, one 5-pair match). Section B (40): any four of six 10-mark questions.
+  No mark_shares, so no competency balance: the October 2026 circular (cisce-circular-specimen-papers-2027) gives higher-order questions (apply, analyse, evaluate, create) only an approximate overall weightage of about 50%, not a per-band design, and the engine rule (each band within 3 marks whichever alternatives are attempted) would, with single-competency 10-mark items and choice groups of 4 of 6 or more, push whole choice sections into one band and move the paper away from the specimen (follow-up in the handoff). CISCE publishes no unit-wise marks for ICSE Chemistry, so no unit weightage is applied.
+  Deviation: one chapter per question in the item model, so a Section B question cannot mix topics across its parts, and the
+  specimen's organic naming/structure part (Q2 v) is merged into the 1-mark short answers without a chapter scope (the board may set
+  that part on any topic).
