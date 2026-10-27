@@ -26,7 +26,8 @@ Robin Klein is a living author, so the poem is in copyright. The rule is applied
 
 ### Reproduction checks (D-036 method)
 - **No reconstructed poem text was written anywhere,** not even in scratch files. The content was authored in SOYL's own words from an understanding of the poem's structure, imagery and devices.
-- **Forbidden-phrase guard:** `src/build.mjs` holds a list of 26 short distinctive phrases of the poem (each 4 words or fewer, never a whole line). After writing the files, `src/guard.mjs` scans every string of `release.json` and `tests.json` and every line of this README, ignoring case and punctuation, and fails the build on any hit. The final build has **0 hits**. One hit was caught while drafting: an imagery phrase in the long answer on the two worlds, also used in notes section 4 and the devices table. It was reworded, and its two-word core was added to the list.
+- **Forbidden-phrase guard:** `src/build.mjs` holds a list of 27 short distinctive phrases of the poem (each 4 words or fewer, never a whole line). After writing the files, `src/guard.mjs` scans every string of `release.json` and `tests.json` and every line of this README, ignoring case and punctuation, and fails the build on any hit. The final build has **0 hits**. One hit was caught while drafting: an imagery phrase in the long answer on the two worlds, also used in notes section 4 and the devices table. It was reworded, and its two-word core was added to the list.
+- **Author's re-read after ch21 (three-word runs):** one short run of a preposition, an article and the tower noun (6 places) was found and added to the guard. It now reads "inside a tower" or "at the top of a tower".
 - **Repo checks:** `content lint --exemplars` (literature quote and verse-shape rules) and `content originality --authored` both report 0 errors and 0 warnings for this unit.
 - **Still to do:** a real n-gram check against the printed poem needs the owner to supply the text in `catalog/sources/reference/` (OA-16). Until then a reviewer with *First Flight* should run the checklist below.
 
@@ -83,7 +84,7 @@ Narration: max 62 words, mean 50. Visuals on 9 slides.
 | Source-based | 7 (5 × 1 mark each) | commentary on the nagging, the mermaid, the orphan, Rapunzel, the ending, the form, the adult |
 | Short, 3 marks | 12 | models 44–47 words |
 | Short, 2 marks | 6 | models 31–35 words |
-| Long, 6 marks | 6 | models 108–117 words: freedom, Amanda's diary, which character we sympathise with, a letter about a silent sister, the two worlds, guiding teenagers today |
+| Long, 6 marks | 6 | models 108–120 words: freedom, Amanda's diary, which character we sympathise with, a letter about a silent sister, the two worlds, guiding teenagers today |
 | MCQ | 14 | |
 | Fill-blank | 4 | |
 | Assertion-reason | 4 | keys a, b, d, c |
@@ -113,7 +114,7 @@ The two tests share no questions. `blueprint_id` is set to the subject's chapter
 ## Verifier record (author pass, 2026-10-27)
 - Every item was re-answered from its stem. The order of the daydreams, the brackets and the ending were checked. Every stem names the poem, the poet, Amanda or the adult.
 - The forbidden-phrase guard caught one imagery phrase (see above). It was reworded in three places.
-- **Word limits:** every model is inside its exact limit (3-mark 44–47, 2-mark 31–35, long 108–117), not just inside the builder's ±20% gate.
+- **Word limits:** every model is inside its exact limit (3-mark 44–47, 2-mark 31–35, long 108–120), not just inside the builder's ±20% gate.
 - **Pipeline checks:** build validation reports 0 errors and 0 warnings (answer-leak, word limits, deterministic verify, lint).
 
 ## Known gaps

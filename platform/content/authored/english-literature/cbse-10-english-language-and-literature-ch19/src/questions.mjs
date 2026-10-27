@@ -29,7 +29,7 @@ Q("src_empty_forest", source({
 Q("src_struggle", source({
   t: [1, 3], d: 3, c: "analysis", origin: "soyl-commentary",
   stem: SRC_STEM,
-  passage: "The second stanza shows the effort of escape. Through the night the roots labour to pull themselves free of cracks in the veranda boards. The leaves press towards the window panes, the small twigs grow rigid with effort, and the big branches, cramped for a long time under the roof, drag themselves forward. The poet compares them to patients just released from hospital, still dazed, making their way towards the clinic's exit. Freedom here is not easy or graceful. It is slow, stiff and hard-won.",
+  passage: "The second stanza shows the effort of escape. Through the night the roots labour to pull themselves free of cracks in the veranda boards. The leaves press towards the window panes, the small twigs grow rigid with effort, and the big branches, cramped for a long time beneath the roof, drag themselves forward. The poet compares them to patients just released from hospital, still dazed, making their way towards the clinic's exit. Freedom here is not easy or graceful. It is slow, stiff and hard-won.",
   parts: [
     child("a", mcq({ t: 1, d: 1, c: "recall", stem: "In *The Trees*, where are the roots stuck?", opts: ["in cracks in the veranda boards", "in flower pots on the roof", "in the garden wall", "under the kitchen sink"], sol: "They pull free from cracks in the veranda boards." })),
     child("b", mcq({ t: 3, d: 2, c: "understanding", stem: "To whom does the poet of *The Trees* compare the branches?", opts: ["patients just released from hospital", "soldiers marching to war", "children running out of school", "dancers on a stage"], sol: "The simile compares them to dazed patients leaving a clinic." })),
@@ -42,7 +42,7 @@ Q("src_struggle", source({
 Q("src_speaker", source({
   t: [1, 2], d: 3, c: "analysis", origin: "soyl-commentary",
   stem: SRC_STEM,
-  passage: "Meanwhile the speaker sits indoors with the doors to the veranda open, busy writing letters. In them she barely refers to the most remarkable event of the night: the forest leaving her house. Is she unaware, or does she choose not to speak of it? Many readers sense that she knows exactly what is happening and keeps quiet, perhaps because she too longs to break free. The open doors matter. She is not trying to stop the trees. She lets them go.",
+  passage: "Meanwhile the speaker sits indoors with the veranda doors open, busy writing letters. In them she barely refers to the most remarkable event of the night: the forest leaving her house. Is she unaware, or does she choose not to speak of it? Many readers sense that she knows exactly what is happening and keeps quiet, perhaps because she too longs to break free. The open doors matter. She is not trying to stop the trees. She lets them go.",
   parts: [
     child("a", mcq({ t: 1, d: 1, c: "recall", stem: "What is the speaker of *The Trees* doing while the trees leave?", opts: ["writing letters", "watering the plants", "sleeping", "cooking dinner"], sol: "She sits inside writing letters." })),
     child("b", mcq({ t: 1, d: 2, c: "understanding", stem: "How much does the speaker of *The Trees* say about the trees' departure in her letters?", opts: ["almost nothing", "everything, in detail", "only that she is angry", "that she will plant more"], sol: "She hardly mentions it." })),
@@ -55,10 +55,10 @@ Q("src_speaker", source({
 Q("src_night", source({
   t: [3, 1], d: 3, c: "analysis", origin: "soyl-commentary",
   stem: SRC_STEM,
-  passage: "The night around the house is cool and clear, and a full moon shines in a sky that is not yet closed in by branches. The scent of leaves and of the crusty growth on bark drifts into the rooms, and the poet compares the scent to a voice calling. The speaker's mind is busy with murmurs that, she senses, will fall quiet by the next day. It is a calm, almost magical scene, and yet something enormous is happening at its edges. The stillness makes the coming break-out more dramatic.",
+  passage: "The night around the house is cool and clear, and a full moon glows in a sky that is not yet closed in by branches. The scent of leaves and of the crusty growth on bark drifts indoors, and the poet compares the scent to a voice calling. The speaker's mind is busy with murmurs that, she senses, will fall quiet by the next day. It is a calm, almost magical scene, and yet something enormous is happening at its edges. The stillness makes the coming break-out more dramatic.",
   parts: [
-    child("a", mcq({ t: 3, d: 2, c: "understanding", stem: "In *The Trees*, the scent drifting into the rooms is compared to…", opts: ["a voice", "a song bird", "a cold wind", "a river"], sol: "The scent is likened to a voice calling." })),
-    child("b", mcq({ t: 1, d: 1, c: "recall", stem: "What kind of moon shines in *The Trees*?", opts: ["a full moon", "a crescent moon", "no moon at all", "a red moon"], sol: "A full moon lights the night." })),
+    child("a", mcq({ t: 3, d: 2, c: "understanding", stem: "In *The Trees*, the scent drifting indoors is compared to…", opts: ["a voice", "a song bird", "a cold wind", "a river"], sol: "The scent is likened to a voice calling." })),
+    child("b", mcq({ t: 1, d: 1, c: "recall", stem: "What kind of moon glows in *The Trees*?", opts: ["a full moon", "a crescent moon", "no moon at all", "a red moon"], sol: "A full moon lights the night." })),
     child("c", fb({ t: 4, d: 2, c: "understanding", stem: "The crusty growth found on bark and rocks, mentioned in *The Trees*, is called ___.", acc: [["lichen"]], sol: "It is **lichen**." })),
     child("d", short({ t: 3, d: 4, c: "analysis", marks: 1, stem: "How does the stillness of the night affect the drama of *The Trees*?", model: "The calm makes the trees' sudden break-out seem more dramatic by contrast.", sol: "Contrast heightens the drama.", scheme: [["Calm contrasts with and heightens the break-out", 1]] })),
     child("e", mcq({ t: 3, d: 3, c: "analysis", stem: "Which sense does the scent of leaves in *The Trees* appeal to?", opts: ["smell", "taste", "touch", "hearing only"], sol: "It is olfactory imagery, though it is compared to a voice." })),
@@ -68,7 +68,7 @@ Q("src_night", source({
 Q("src_breakout", source({
   t: [1, 3], d: 3, c: "analysis", origin: "soyl-commentary",
   stem: SRC_STEM,
-  passage: "The final stanza begins with a command to the reader to listen. Window panes are shattering. The trees lurch out into the night, and the winds hurry forward to greet them as if welcoming them home. Then comes the most striking image: the moon itself seems to shatter like a looking-glass, and its fragments glitter in the top of the tallest tree. The breaking of the panes and the shattering of the moon suggest that an old order has been broken for good. The trees are free.",
+  passage: "The final stanza begins with a command to the reader to listen. Window panes are shattering. The trees lurch out into the darkness, and the winds hurry forward to greet them as if welcoming them home. Then comes the most striking image: the moon itself seems to shatter like a looking-glass, and its fragments glitter in the top of the tallest tree. The breaking of the panes and the shattering of the moon suggest that an old order has been broken for good. The trees are free.",
   parts: [
     child("a", mcq({ t: 1, d: 1, c: "recall", stem: "How does the final stanza of *The Trees* begin?", opts: ["with a command to listen", "with a question", "with the speaker's name", "with a description of dawn"], sol: "It opens by telling the reader to listen." })),
     child("b", mcq({ t: 3, d: 2, c: "understanding", stem: "In *The Trees*, the moon is compared to…", opts: ["a broken looking-glass", "a silver coin", "a lamp", "an eye"], sol: "The moon shatters like a mirror." })),
@@ -94,7 +94,7 @@ Q("src_meaning", source({
 Q("src_form", source({
   t: [3, 4], d: 3, c: "analysis", origin: "soyl-commentary",
   stem: SRC_STEM,
-  passage: "The poem has four stanzas of free verse, with no regular rhyme or metre. Its lines often run on without punctuation, so that one image tumbles into the next, much as the trees push forward. Rich builds the poem from sharp images: the struggling roots, the dazed branches, the scent in the rooms, the shattered moon. Almost everything in it is personified; trees, winds and even the scent act like living people. The calm tone of the middle gives way to urgency at the end, matching the movement from slow effort to sudden escape.",
+  passage: "The poem has four stanzas of free verse, with no regular rhyme or metre. Its lines often run on without punctuation, so that one image tumbles into the next, much as the trees push forward. Rich builds the poem from sharp images: the struggling roots, the dazed branches, the scent indoors, the shattered moon. Almost everything in it is personified; trees, winds and even the scent act like living people. The calm tone of the middle gives way to urgency at the end, matching the movement from slow effort to sudden escape.",
   parts: [
     child("a", fb({ t: 3, d: 1, c: "recall", stem: "*The Trees* is written in ___ verse, with no regular rhyme or metre.", acc: [["free"]], sol: "It is **free** verse." })),
     child("b", mcq({ t: 1, d: 1, c: "recall", stem: "How many stanzas does *The Trees* have?", opts: ["four", "three", "five", "six"], sol: "The poem has four stanzas." })),
@@ -170,7 +170,7 @@ Q("sa_apply", short({
 Q("sa_tone", short({
   ...SA3, t: 3, d: 3, c: "analysis",
   stem: "Describe the mood of *The Trees* and how it changes. Answer in 40–50 words.",
-  model: "The opening has a calm, mysterious mood, as the news of the departure is stated simply. In the middle stanzas the night grows still and almost magical. The ending becomes urgent and dramatic, with panes shattering and trees lurching into the night. The mood moves from mystery to liberation.",
+  model: "The opening has a calm, mysterious mood, as the news of the departure is stated simply. In the middle stanzas the night grows still and almost magical. The ending becomes urgent and dramatic, with panes shattering and trees lurching into the darkness. The mood moves from mystery to liberation.",
   sol: "The opening mood + the middle + the ending + the overall movement.",
 }));
 Q("sa_symbols", short({
@@ -197,19 +197,19 @@ Q("sb_forest_empty", short({
 Q("sb_letters", short({
   ...SA2, t: 1, d: 2, c: "understanding",
   stem: "What is the speaker of *The Trees* doing while the trees leave, and what does she leave out? Answer in 30–40 words.",
-  model: "She is sitting indoors, writing letters, with the doors open to the veranda. In those letters she hardly refers to the trees' departure, the most remarkable event happening around her.",
+  model: "She is sitting indoors, writing letters, with the veranda doors left wide open to the night. In those letters she hardly refers to the trees' departure, the most remarkable event happening around her.",
   sol: "Her activity + what she barely mentions.",
 }));
 Q("sb_winds", short({
   ...SA2, t: 3, d: 2, c: "understanding",
   stem: "How do the winds respond to the trees at the end of *The Trees*, and what does this suggest? Answer in 30–40 words.",
-  model: "The winds hurry forward to greet the trees as they lurch into the night. This personification suggests that nature welcomes the trees home, as if it has been waiting for their return.",
+  model: "The winds hurry forward to greet the trees as they lurch into the darkness. This personification suggests that nature welcomes the trees home, as if it has been waiting for their return.",
   sol: "The winds' action + what it suggests.",
 }));
 Q("sb_exertion", short({
   ...SA2, t: [4, 1], d: 2, c: "understanding",
   stem: "What does *exertion* mean, and how does the word suit the twigs in *The Trees*? Answer in 30–40 words.",
-  model: "Exertion means great physical effort. It suits the twigs because they have grown stiff from straining to move, showing how hard the trees must work to free themselves from the house.",
+  model: "Exertion means great physical effort. It suits the twigs because they have grown stiff from straining to move, showing how hard the trees must work to free themselves and leave the house.",
   sol: "Meaning + why it fits the twigs.",
 }));
 Q("sb_message", short({
@@ -224,7 +224,7 @@ const LA = { marks: 6, wl: [100, 120], scheme: LONG_SCHEME, time: 720 };
 Q("la_freedom", long({
   ...LA, t: 2, d: 3, c: "analysis",
   stem: "How does *The Trees* present the struggle for freedom? Answer in 100–120 words.",
-  model: "The Trees shows freedom as something won through slow, painful effort. Trees that have been kept indoors decide to return to the forest, which has stood lifeless without them. Through the night their roots strain to pull out of the cracked veranda boards, their twigs stiffen and their cramped branches drag forward like dazed patients leaving hospital. Meanwhile the speaker writes letters and barely mentions what is happening, leaving the doors open. At last window panes shatter, the trees lurch into the night, the winds hurry to greet them and the moon seems to break apart. Freedom arrives suddenly after a long struggle, and nothing can return to how it was before.",
+  model: "The Trees shows freedom as something won through slow, painful effort. Trees that have been kept indoors decide to return to the forest, which has stood lifeless without them. Through the night their roots strain to pull out of the cracked veranda boards, their twigs stiffen and their cramped branches drag forward like dazed patients leaving hospital. Meanwhile the speaker writes letters and barely mentions what is happening, leaving the doors open. At last window panes shatter, the trees lurch into the darkness, the winds hurry to greet them and the moon seems to break apart. Freedom arrives suddenly after a long struggle, and nothing can return to how it was before.",
   sol: "The decision → the effort (roots, twigs, branches, simile) → the speaker → the break-out → the conclusion. Do not quote the poem.",
 }));
 Q("la_tree_diary", long({
@@ -236,7 +236,7 @@ Q("la_tree_diary", long({
 Q("la_speaker_view", long({
   ...LA, t: 2, d: 4, c: "evaluation",
   stem: "Why do you think the speaker of *The Trees* barely mentions the trees' departure in her letters? Give a reasoned answer in 100–120 words.",
-  model: "The speaker's silence is one of the most puzzling parts of The Trees. One possibility is that she is simply absorbed in her own life, so the departure seems unimportant to her. But the details suggest otherwise. She leaves the doors to the veranda open, she notices the cool night, the moon and the scent drifting in, and her mind is full of murmurs. She seems fully aware of what is happening. I think she stays quiet because she understands and quietly supports it. If the trees stand for confined women, she may share their wish to escape and be unable to say so openly. Her silence becomes a form of consent.",
+  model: "The speaker's silence is one of the most puzzling parts of The Trees. One possibility is that she is simply absorbed in her own life, so the departure seems unimportant to her. But the details suggest otherwise. She leaves the veranda doors open, she notices the cool night, the moon and the scent drifting in, and her mind is full of murmurs. She seems fully aware of what is happening. I think she stays quiet because she understands and quietly supports it. If the trees stand for confined women, she may share their wish to escape and be unable to say so openly. Her silence becomes a form of consent.",
   sol: "The puzzle → a first possibility → evidence against it → a reasoned view → link to the symbolic reading → conclusion.",
 }));
 Q("la_letter", long({
@@ -284,7 +284,7 @@ Q("ar_speaker", ar({ t: 2, d: 3, c: "analysis", a: "The speaker of *The Trees* t
 Q("ar_patients", ar({ t: 3, d: 3, c: "analysis", a: "The branches in *The Trees* are compared to patients leaving hospital.", r: "The branches in *The Trees* are weak and dazed after long confinement.", key: "a", sol: "Both are true, and R explains why the simile fits." }));
 Q("ar_rhyme", ar({ t: 3, d: 2, c: "understanding", a: "*The Trees* is written in free verse.", r: "*The Trees* has a regular abab rhyme scheme.", key: "c", sol: "A is true. R is false: there is no regular rhyme scheme." }));
 
-Q("tf_moon", tf({ t: 1, d: 1, c: "recall", stem: "True or false: *The Trees* is set on a moonlit night.", ans: true, sol: "A full moon shines over the scene." }));
+Q("tf_moon", tf({ t: 1, d: 1, c: "recall", stem: "True or false: *The Trees* is set on a moonlit night.", ans: true, sol: "A full moon glows over the scene." }));
 Q("tf_letters", tf({ t: 1, d: 2, c: "understanding", stem: "True or false: the speaker of *The Trees* describes the trees' departure in detail in her letters.", ans: false, sol: "She hardly mentions it." }));
 Q("tf_easy", tf({ t: 1, d: 2, c: "understanding", stem: "True or false: in *The Trees*, the trees leave the house quickly and without effort.", ans: false, sol: "Their escape is slow and painful." }));
 Q("tf_winds", tf({ t: 3, d: 2, c: "understanding", stem: "True or false: in *The Trees*, the winds hurry to meet the trees.", ans: true, sol: "The winds hurry forward as if to welcome them." }));
@@ -292,7 +292,7 @@ Q("tf_winds", tf({ t: 3, d: 2, c: "understanding", stem: "True or false: in *The
 Q("ord_events", ord({
   t: [1, 3], d: 2, c: "understanding", marks: 2,
   stem: "Arrange these stages of *The Trees* in order (SOYL summary).",
-  items: ["The indoor trees set off for the empty forest.", "Roots strain to free themselves from the veranda boards.", "Branches drag forward like dazed patients.", "The speaker writes letters, barely mentioning the departure.", "Window panes shatter and the trees lurch into the night.", "The moon seems to shatter in the top of the tallest tree."],
+  items: ["The indoor trees set off for the empty forest.", "Roots strain to free themselves from the veranda boards.", "Branches drag forward like dazed patients.", "The speaker writes letters, barely mentioning the departure.", "Window panes shatter and the trees lurch into the darkness.", "The moon seems to shatter in the top of the tallest tree."],
   sol: "Decision → struggle → simile → the quiet speaker → break-out → the shattered moon.",
 }));
 Q("ord_answer", ord({

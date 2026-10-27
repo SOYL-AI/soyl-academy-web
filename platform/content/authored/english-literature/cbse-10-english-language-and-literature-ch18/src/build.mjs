@@ -20,7 +20,7 @@ const FORBID = [
   "finish your homework", "tidy your room", "clean your shoes", "roaming the street",
   "bare feet", "soft dust", "silence is golden", "freedom is sweet",
   "eat that chocolate", "remember your acne", "when I'm speaking", "not a care",
-  "tranquil and rare", "let down my", "stop that sulking", "always so moody", "nagged at you", "anyone would think",
+  "tranquil and rare", "in a tower", "let down my", "stop that sulking", "always so moody", "nagged at you", "anyone would think",
 ];
 
 // ---------------------------------------------------------------- visuals

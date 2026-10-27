@@ -21,7 +21,7 @@ const FORBID = [
   "newly discharged", "discharged patients", "half dazed", "clinic doors", "long letters",
   "scarcely mention", "night is fresh", "whole moon shines", "sky still open", "leaves and lichen",
   "like a voice", "full of whispers", "will be silent", "glass is breaking", "stumbling forward",
-  "winds rush", "rush to meet them", "broken like a mirror", "pieces flash", "tallest oak",
+  "winds rush", "rush to meet them", "into the night", "into the rooms", "moon shines", "under the roof", "open to the veranda", "broken like a mirror", "pieces flash", "tallest oak",
 ];
 
 // ---------------------------------------------------------------- visuals
@@ -131,20 +131,20 @@ const D = deck({
       n: "The poem opens with strange news. The trees that have been kept indoors are leaving for the forest. Then the poet looks at the forest. It has stood bare for a long time. Birds had nowhere to perch, insects nowhere to shelter, and the sun no shade to rest in. A forest without trees is hardly a forest. By dawn, it will be filled again.",
     }),
     sl("concept", "Stanza 2: a night of struggle", {
-      b: "In SOYL's words: all night the roots labour to pull free of cracks in the veranda boards. Leaves press towards the windows, twigs grow rigid with effort, and the big branches, cramped for years under the roof, drag forward like dazed patients just released from hospital.",
-      n: "Now the struggle. All night the roots labour to pull free of cracks in the veranda boards. Leaves press towards the windows. Twigs grow rigid with effort. And the big branches, cramped for years under the roof, drag themselves forward like dazed patients just released from hospital. Freedom here is slow, stiff and hard-won.",
+      b: "In SOYL's words: all night the roots labour to pull free of cracks in the veranda boards. Leaves press towards the windows, twigs grow rigid with effort, and the big branches, cramped for years beneath the roof, drag forward like dazed patients just released from hospital.",
+      n: "Now the struggle. All night the roots labour to pull free of cracks in the veranda boards. Leaves press towards the windows. Twigs grow rigid with effort. And the big branches, cramped for years beneath the roof, drag themselves forward like dazed patients just released from hospital. Freedom here is slow, stiff and hard-won.",
     }),
     sl("check", "Check: the simile", {
       chk: "mc_simile",
       n: "Your turn. The poet compares the branches to something. Which of these is the simile? Choose the best answer.",
     }),
     sl("concept", "Stanza 3: the quiet speaker", {
-      b: "In SOYL's words: the speaker sits inside with the veranda doors open, writing letters in which she barely refers to the departure. The night is cool and clear, the full moon shines, and the scent of leaves drifts in, compared to a voice calling. Her mind is full of murmurs that will be quiet by tomorrow.",
-      n: "Meanwhile the speaker sits indoors with the veranda doors open. She is writing letters, and she barely refers to the trees leaving. The night is cool and clear, and a full moon shines. The scent of leaves drifts into the rooms, and the poet compares it to a voice calling. Her mind is full of murmurs. Why does she say so little?",
+      b: "In SOYL's words: the speaker sits inside with the veranda doors open, writing letters in which she barely refers to the departure. The night is cool and clear, the full moon glows, and the scent of leaves drifts in, compared to a voice calling. Her mind is full of murmurs that will be quiet by tomorrow.",
+      n: "Meanwhile the speaker sits indoors with the veranda doors open. She is writing letters, and she barely refers to the trees leaving. The night is cool and clear, and a full moon glows. The scent of leaves drifts indoors, and the poet compares it to a voice calling. Her mind is full of murmurs. Why does she say so little?",
     }),
     sl("concept", "Stanza 4: the break-out", {
-      b: "In SOYL's words: the last stanza tells us to listen. Window panes are shattering. The trees lurch out into the night, and the winds hurry to greet them. The moon itself seems to shatter like a looking-glass, and its fragments glitter at the top of the tallest tree.",
-      n: "The last stanza begins with a command: listen. Window panes are shattering. The trees lurch out into the night, and the winds hurry forward to greet them, as if welcoming them home. Then the moon itself seems to shatter like a looking-glass, and its fragments glitter at the top of the tallest tree. The trees are free.",
+      b: "In SOYL's words: the last stanza tells us to listen. Window panes are shattering. The trees lurch out into the darkness, and the winds hurry to greet them. The moon itself seems to shatter like a looking-glass, and its fragments glitter at the top of the tallest tree.",
+      n: "The last stanza begins with a command: listen. Window panes are shattering. The trees lurch out into the darkness, and the winds hurry forward to greet them, as if welcoming them home. Then the moon itself seems to shatter like a looking-glass, and its fragments glitter at the top of the tallest tree. The trees are free.",
     }),
     sl("diagram", "From confinement to freedom", {
       v: vJourney,
@@ -250,7 +250,7 @@ const N = notes({
     {
       h: "2. What happens (SOYL summary)",
       t: 1,
-      b: "**Stanza 1:** the trees kept indoors set off for the forest, which has stood bare: no perches for birds, no shelter for insects, no shade for the sun. By dawn it will be filled.\n\n**Stanza 2:** through the night the roots labour to pull free of the veranda boards; leaves press towards the windows; twigs grow rigid with effort; cramped branches drag forward like dazed patients leaving hospital.\n\n**Stanza 3:** the speaker sits inside with the doors open, writing letters that barely refer to the departure; a cool, clear night, a full moon, the scent of leaves drifting in like a calling voice; her mind full of murmurs.\n\n**Stanza 4:** a command to listen; panes shattering; the trees lurch into the night; the winds hurry to greet them; the moon seems to shatter, its fragments glittering at the top of the tallest tree.",
+      b: "**Stanza 1:** the trees kept indoors set off for the forest, which has stood bare: no perches for birds, no shelter for insects, no shade for the sun. By dawn it will be filled.\n\n**Stanza 2:** through the night the roots labour to pull free of the veranda boards; leaves press towards the windows; twigs grow rigid with effort; cramped branches drag forward like dazed patients leaving hospital.\n\n**Stanza 3:** the speaker sits inside with the doors open, writing letters that barely refer to the departure; a cool, clear night, a full moon, the scent of leaves drifting in like a calling voice; her mind full of murmurs.\n\n**Stanza 4:** a command to listen; panes shattering; the trees lurch into the darkness; the winds hurry to greet them; the moon seems to shatter, its fragments glittering at the top of the tallest tree.",
       v: vJourney,
     },
     {

@@ -29,10 +29,11 @@ Adrienne Rich died in 2012, so the poem is in copyright. The rule is applied str
 
 ### Reproduction checks (D-036 method)
 - **No reconstructed poem text was written anywhere,** not even in scratch files. The content was authored in SOYL's own words from an understanding of the poem's stanzas, images and devices.
-- **Forbidden-phrase guard:** `src/build.mjs` holds a list of 35 short distinctive phrases of the poem (each 4 words or fewer, never a whole line). After writing the files, the shared guard scans every string of `release.json` and `tests.json` and every line of this README, ignoring case and punctuation, and fails the build on any hit. The final build has **0 hits**.
+- **Forbidden-phrase guard:** `src/build.mjs` holds a list of 40 short distinctive phrases of the poem (each 4 words or fewer, never a whole line). After writing the files, the shared guard scans every string of `release.json` and `tests.json` and every line of this README, ignoring case and punctuation, and fails the build on any hit. The final build has **0 hits**.
 - **What the guard caught in the first draft:**
   - the poem's two-word name for the place where the roots are caught (8 places), now "veranda boards";
   - the poem's two-word phrase for the winds' movement (17 places), now "hurry".
+- **Author's re-read after ch21 (three-word runs):** five short runs that join a preposition and article to a key noun were found and added to the guard. They are the phrase for where the trees go at the end, the scent's destination indoors, the moon's verb, the branches' position and the doors' relation to the veranda (17 places in all). They now read "into the darkness", "indoors", "glows", "beneath the roof" and "the veranda doors open".
 - **Repo checks:** `content lint --exemplars` (literature quote and verse-shape rules) and `content originality --authored` both report 0 errors and 0 warnings for this unit.
 - **Still to do:** a real n-gram check against the printed poem needs the owner to supply the text in `catalog/sources/reference/` (OA-16). Until then a reviewer with *First Flight* should run the checklist below.
 
@@ -94,7 +95,7 @@ Narration: max 65 words, mean 50. Visuals on 9 slides.
 |---|---|---|
 | Source-based | 7 (5 × 1 mark each) | commentary on the empty forest, the struggle, the speaker, the night, the break-out, the two readings, the form |
 | Short, 3 marks | 12 | models 43–49 words |
-| Short, 2 marks | 6 | models 30–34 words |
+| Short, 2 marks | 6 | models 32–34 words |
 | Long, 6 marks | 6 | models 109–116 words: the struggle for freedom, a tree's diary, the speaker's silence, a letter to the editor on uprooting trees, symbolism and imagery, relevance to India today |
 | MCQ | 14 | |
 | Fill-blank | 4 | |

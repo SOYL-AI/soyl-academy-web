@@ -128,7 +128,7 @@ Q("sa_orphan", short({
 Q("sa_rapunzel", short({
   ...SA3, t: 3, d: 3, c: "analysis",
   stem: "Explain the Rapunzel allusion in *Amanda!*. Answer in 40–50 words.",
-  model: "In the fairy tale, Rapunzel is locked in a tower and people climb up by her hair. Amanda imagines enjoying that lonely tower and never lowering her hair. The tower becomes her refuge, and refusing to let her hair down means keeping everyone out of her world.",
+  model: "In the fairy tale, Rapunzel is locked inside a tower and people climb up by her hair. Amanda imagines enjoying that lonely tower and never lowering her hair. The tower becomes her refuge, and refusing to let her hair down means keeping everyone out of her world.",
   sol: "The original story + Amanda's reversal + what it means.",
 }));
 Q("sa_brackets", short({
@@ -224,7 +224,7 @@ const LA = { marks: 6, wl: [100, 120], scheme: LONG_SCHEME, time: 720 };
 Q("la_freedom", long({
   ...LA, t: 2, d: 3, c: "analysis",
   stem: "How does *Amanda!* show a child's longing for freedom? Answer in 100–120 words.",
-  model: "Amanda! sets a stream of adult instructions against a child's private dreams. The adult corrects Amanda about her habits, her chores, her diet and her moods, and never waits for an answer. Amanda escapes in her mind. She becomes a mermaid alone in a calm green sea, an orphan wandering barefoot with nobody to command her, and a girl alone in a tower who would never let anyone climb up. Each daydream is about being alone and unordered. The brackets around them show that this world is hers alone. Even her silence at the end is a form of freedom. The poem suggests that a child who is never given space will create it in her imagination.",
+  model: "Amanda! sets a stream of adult instructions against a child's private dreams. The adult corrects Amanda about her habits, her chores, her diet and her moods, and never waits for an answer. Amanda escapes in her mind. She becomes a mermaid alone in a calm green sea, an orphan wandering barefoot with nobody to command her, and a girl alone at the top of a tower who would never let anyone climb up. Each daydream is about being alone and unordered. The brackets around them show that this world is hers alone. Even her silence at the end is a form of freedom. The poem suggests that a child who is never given space will create it in her imagination.",
   sol: "The nagging → each daydream and what it gives her → the brackets → the silence → the conclusion. Do not quote the poem.",
 }));
 Q("la_diary", long({
@@ -236,7 +236,7 @@ Q("la_diary", long({
 Q("la_adult_view", long({
   ...LA, t: 2, d: 4, c: "evaluation",
   stem: "Do you sympathise more with Amanda or with the adult in *Amanda!*? Give a reasoned answer in 100–120 words.",
-  model: "I sympathise more with Amanda, though the adult deserves some understanding. Her instructions are not cruel; she wants Amanda to be healthy, tidy, polite and hard-working, as most parents do. Yet she never pauses, never asks a question that expects a real answer, and never notices the girl's feelings. To Amanda, this feels like a wall of criticism, so she retreats into dreams of being a mermaid, an orphan and a girl alone in a tower. When the adult finally complains about sulking and denies nagging, she shows how little she understands. Amanda's faults are small; the adult's failure to listen is larger. Both need patience, but the adult must change first.",
+  model: "I sympathise more with Amanda, though the adult deserves some understanding. Her instructions are not cruel; she wants Amanda to be healthy, tidy, polite and hard-working, as most parents do. Yet she never pauses, never asks a question that expects a real answer, and never notices the girl's feelings. To Amanda, this feels like a wall of criticism, so she retreats into dreams of being a mermaid, an orphan and a girl alone at the top of a tower. When the adult finally complains about sulking and denies nagging, she shows how little she understands. Amanda's faults are small; the adult's failure to listen is larger. Both need patience, but the adult must change first.",
   sol: "A clear view → fair credit to the adult → the failure to listen → Amanda's response → a balanced conclusion.",
 }));
 Q("la_letter", long({
@@ -265,7 +265,7 @@ Q("mc_speaker", mcq({ t: 1, d: 2, c: "understanding", stem: "In *Amanda!*, the s
 Q("mc_brackets", mcq({ t: 3, d: 2, c: "understanding", stem: "What do the bracketed stanzas of *Amanda!* contain?", opts: ["Amanda's daydreams", "the adult's commands", "the poet's notes", "a song Amanda sings aloud"], sol: "They hold Amanda's private, imagined escapes." }));
 Q("mc_order", mcq({ t: 1, d: 2, c: "understanding", stem: "In what order do Amanda's daydreams appear in *Amanda!*?", opts: ["mermaid, orphan, Rapunzel", "orphan, mermaid, Rapunzel", "Rapunzel, orphan, mermaid", "mermaid, Rapunzel, orphan"], sol: "Sea first, then the streets, then the tower." }));
 Q("mc_orphan", mcq({ t: 2, d: 3, c: "analysis", stem: "Why does Amanda in *Amanda!* imagine being an orphan?", opts: ["An orphan would have no one to order her about.", "She wants to live in a big city.", "She dislikes wearing shoes.", "She has read about orphans at school."], sol: "To her, being an orphan means freedom from instructions." }));
-Q("mc_rapunzel", mcq({ t: 3, d: 2, c: "understanding", stem: "Rapunzel, mentioned in *Amanda!*, is a character from…", opts: ["a fairy tale", "a history book", "a newspaper", "a Shakespeare play"], sol: "Rapunzel is a fairy-tale girl kept in a tower." }));
+Q("mc_rapunzel", mcq({ t: 3, d: 2, c: "understanding", stem: "Rapunzel, mentioned in *Amanda!*, is a character from…", opts: ["a fairy tale", "a history book", "a newspaper", "a Shakespeare play"], sol: "Rapunzel is a fairy-tale girl kept inside a tower." }));
 Q("mc_irony", mcq({ t: 3, d: 3, c: "analysis", stem: "Which best describes the ending of *Amanda!*?", opts: ["ironic, because the adult denies nagging while nagging", "joyful, because Amanda is set free", "tragic, because Amanda runs away", "neutral, because nothing changes in tone"], sol: "The final denial is itself more nagging." }));
 Q("mc_theme", mcq({ t: 2, d: 2, c: "understanding", stem: "Which is the central theme of *Amanda!*?", opts: ["a child's need for freedom and understanding", "the beauty of the sea", "the dangers of chocolate", "the history of fairy tales"], sol: "Constant correction drives a child to long for freedom." }));
 Q("mc_apply", mcq({ t: 2, d: 3, c: "application", stem: "Which SOYL-written situation is closest to Amanda's in *Amanda!*?", opts: ["Kabir is told off about his hair, his marks and his phone before he can say hello, and he stares out of the window.", "Kabir's coach explains a new tactic and asks for his ideas.", "Kabir's mother asks him what he would like for dinner.", "Kabir wins a painting competition at school."], sol: "Non-stop correction and a silent, distant child mirror the poem." }));
