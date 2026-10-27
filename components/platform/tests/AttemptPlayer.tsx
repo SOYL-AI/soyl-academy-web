@@ -431,6 +431,9 @@ function Player({ initial }: { initial: AttemptState }) {
           <h1 className={s.paperTitle}>{initial.test.title}</h1>
           <SaveIndicator status={saveStatus.status} pending={saveStatus.pending} offline={offlineNow} />
         </div>
+        <Button variant="secondary" size="sm" onClick={() => setConfirmOpen(true)} data-testid="submit-open">
+          Submit test
+        </Button>
       </header>
       {rejected > 0 && (
         <div className={s.warn} role="alert" data-testid="late-banner">
@@ -513,11 +516,6 @@ function Player({ initial }: { initial: AttemptState }) {
         )}
       </div>
 
-      <p className={s.submitRow}>
-        <Button variant="ghost" size="sm" onClick={() => setConfirmOpen(true)} data-testid="submit-open">
-          Submit test
-        </Button>
-      </p>
 
       {/* Sticky dock at the bottom (thumb reach; the marketing header owns the top edge). */}
       <div className={s.dock}>

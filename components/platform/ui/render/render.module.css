@@ -138,7 +138,22 @@
   font-size: 1.1em;
 }
 .mathInline {
-  white-space: nowrap;
+  /* KaTeX breaks inline maths between its .base boxes (at relations and operators) when the line allows it, so
+     a long equation in a solution wraps at 360 px instead of widening the page. */
+  white-space: normal;
+}
+.mathInlineScroll {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: bottom;
+  padding: 2px 0;
+  border-radius: var(--p-radius-sm);
+}
+.mathInlineScroll:focus-visible {
+  outline: 2px solid var(--p-focus);
+  outline-offset: 1px;
 }
 .mathBlock :global(.katex-error),
 .mathInline :global(.katex-error) {
