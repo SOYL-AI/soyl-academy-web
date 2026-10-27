@@ -40,3 +40,7 @@ Run from `platform/`: `npx tsx content/authored/maths/cbse-10-mathematics-ch02/s
 - Narration audio not generated (TTS stage).
 - Plot labels for irrational zeroes use KaTeX (`$3 + \sqrt2$`); the renderer must support maths in plot labels.
 - `word_limit` (contract v2, optional) is not set on maths short/long items: maths answers are marked by steps, not words.
+
+## Changed by assessment-designer (2026-10-27)
+
+Rewritten in `src/questions.mjs` (then rebuilt) because `originality --authored` flagged them as near-duplicates of other items in this chapter; each is now a different question (new numbers, context or skill) with its re-solve check: m16 (_016), m17 (_017: polynomial from sum and product), n03 (_037: find k from the difference of zeroes), n06 (_040: find k from a given zero), s204 (_047: graph crossing points), s301 (_053: area/breadth context), s303 (_055: new numbers).

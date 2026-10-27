@@ -19,7 +19,7 @@ npm run content -- <command> [scope] [options]
 | `lint` | 4 | Deterministic checks (rules below) → `out/<unit>/lint.json`. `--exemplars` lints `content-templates/exemplars/` **and** `content/authored/`. |
 | `verify` | 5 | Deterministic re-derivation (below) + an independent solve by the `verify` tier (`<family>/verify.v1.md`, batches of 12). Flagged questions are regenerated (same slot and id) and re-verified up to 2 times, then `needs_review` (kept out of releases); the rest become `auto_verified`. `--authored`: deterministic checks only, report, files untouched. Exit 2 when items need review. |
 | `originality` | 6 | Word 6-gram overlap with owner-supplied reference texts (`catalog/sources/reference/*.txt` or `*.md`, gitignored; none → a notice and the check is skipped), exact/near-duplicate questions across every chapter we hold (Jaccard of 5-grams ≥ 0.7; mock-vs-mock pairs ignored), and the literature rule. Generated questions that fail are regenerated ≤ 2 times, then `needs_review`. `--authored`: report only. |
-| `assemble` | 7 | Blueprint engine: chapter tests (short + long) for chapters without them; `--series` adds unit tests, ≥ 6 full mocks per paper variant and the CBSE 10 May track (Classes 10/12), or unit tests + half-yearly/annual/term papers (7, 8, 9, 11). Bank = published questions in Postgres (`--source db`, default; tests are ingested, series rows created) or files (`--source files`). Missing questions → generation requests (never silent). |
+| `assemble` | 7 | Blueprint engine: chapter tests (short + long) for chapters without them; `--series` adds unit tests, ≥ 6 full mocks per paper variant and the CBSE 10 May track (Classes 10/12), or unit tests + half-yearly/annual/term papers (7, 8, 9, 11). Bank = published questions in Postgres (`--source db`, default; tests are ingested, series rows created) or files (`--source files`). Missing questions → generation requests (never silent). `--freeze` writes the series papers to `content/authored/series/<subject>.json`; afterwards `assemble` and `publish --authored` use the frozen papers (ADR-019). |
 | `tts` | 8 | Narration audio per slide (Azure AI Speech REST with SSML; `--provider mock` = valid silent Ogg Opus of the estimated length) → BlobStore `audio/<unit>/<deck>/<slide>-<hash>.ogg` (content-addressed: unchanged narration is not re-synthesised) and `slide.audio {key, duration_ms}`. `--authored` writes `out/<unit>/audio.json`, which publish merges. |
 | `publish` | 9 | Builds a `ChapterRelease`, writes it to the BlobStore at `content/releases/<unit>/<version>.json`, ingests it (`ingestChapterRelease`, which activates it) with its chapter tests (`ingestTestDefinition`). Generated units need a clean lint and a verify report and ship only `auto_verified` questions; `--authored` publishes `content/authored` + exemplars (draft → published, beta posture §7.3). Unchanged content is skipped; changed items get version + 1. Mock output is refused unless `--allow-mock`, and always in production. |
 | `rollback` | 9 | `--unit <chapter id> --to <version>`: re-activates an earlier release. |
@@ -35,7 +35,7 @@ npm run content -- <command> [scope] [options]
 | `--state pg\|file` | Pipeline state store. Default `pg` when `DATABASE_URL` is set, else `file` (`.state/`, offline). |
 | `--authored` | verify / originality / tts / publish work on hand-authored chapters + exemplars instead of `out/`. |
 | `--allow-mock` | publish: allow mock placeholder content into a non-production database (dev and e2e only). |
-| `--series`, `--source db\|files`, `--strict` | assemble options (`--strict`: exit 2 when any generation request was recorded). |
+| `--series`, `--source db\|files`, `--strict`, `--freeze` | assemble options (`--strict`: exit 2 when any generation request was recorded; `--freeze`: write the frozen series, refused unless every series paper assembles). |
 | `--concurrency`, `--batch`, `--run <id>`, `--force`, `--retry-review`, `--dry-run`, `--seed`, `--poll`, `--verbose` | As in M1. `--force` also re-synthesises audio. |
 
 **Database.** Stages that touch Postgres (publish, rollback, assemble and coverage with the db source, `--state pg`) use `DATABASE_URL`; without it they start the persistent local embedded server of `@soyl/db` (`platform/db/.data/dev`, port 54320) for the command, exactly like `npm run db -w @soyl/db`. Migrate and seed first:
@@ -61,6 +61,23 @@ npm run content -- verify      --board cbse --class 12 --subject physics --chapt
 npm run content -- originality --board cbse --class 12 --subject physics --chapter 1 --state pg
 npm run content -- tts         --board cbse --class 12 --subject physics --chapter 1 --state pg
 npm run content -- publish     --board cbse --class 12 --subject physics --chapter 1 --state pg --allow-mock
+```
+
+## Test series (stage 7) and the release
+
+Board-pattern rules the engine enforces (`src/assemble/engine.ts`, `series.ts`):
+
+- Blueprint sections/items may scope chapters (`chapters`): discipline sections (Science Biology / Chemistry / Physics; SST History / Geography / Political Science / Economics) and the SST History map item (ch02).
+- Board and May papers carry the syllabus unit marks exactly (`units[].marks`); both alternatives of an internal choice come from one unit.
+- Series papers (unit tests, mocks, May track) never use a chapter or a topic with `board_assessed: false` (syllabus data, not stem text).
+- No repeats inside a series; near-duplicate questions (`ORIGINALITY.samePaper`) never share a paper; the May track avoids the main mocks' questions when the bank allows.
+- The bank is sorted by id before the seeded shuffle: same bank, same papers.
+
+Frozen series (ADR-019): `assemble --series --source files --freeze` writes `content/authored/series/<subject>.json`. The production release step (`publish --authored`) ingests it after the chapters, with question versions remapped to the published ones: re-running the release changes nothing, and new or edited questions never reshuffle a published mock. Re-freeze only deliberately (a reviewed commit). `test/series.test.ts` checks every frozen file against the catalog and bank.
+
+```
+npm run content -- assemble --board cbse --class 10 --subject science --series --source files --strict   # frozen papers reused; requests listed
+npm run content -- assemble --board cbse --class 10 --subject science --series --source files --freeze   # only to (re)build the papers
 ```
 
 ## Stage 5 deterministic checks
@@ -196,7 +213,8 @@ Errors block a unit; warnings are reported. Rule ids appear in `lint.json`.
 
 ## Tests
 
-`npm test -w @soyl/content-pipeline` (7 files):
+`npm test -w @soyl/content-pipeline` (8 files):
+- `series`: every frozen series file (complete plan, exact blueprint layout and chapter scopes, exact unit weightage, board-pattern integrity, no repeats, no near-duplicates, frozen papers reused) and the engine rules behind it.
 - `lint-rules`, `lint-v2`: every lint rule with pass/fail fixtures (incl. the SVG/markdown/KaTeX XSS corpus, contract v2 types, scripts, underline, bare LaTeX commands, arithmetic opt-out, key skew, plot points/zeros).
 - `templates-families`: templates, few-shot trimming, family mapping and id prefixes over the real catalog, planning.
 - `pipeline`: state/resume/retry/budget, Batch, end-to-end plan → outline → generate → lint, every exemplar and authored chapter lint-clean, CLI.

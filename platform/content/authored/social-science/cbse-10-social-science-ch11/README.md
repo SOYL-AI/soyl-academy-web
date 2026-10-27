@@ -57,3 +57,7 @@ Every passage has `passage_origin: "soyl-original"` and a stem label saying it i
 ## Gaps
 - Map items cannot show answers on a map until `MapPlace` has coordinates.
 - Current production rankings and shares are deliberately left out (volatile).
+
+## Added by assessment-designer (2026-10-27)
+
+2 Geography map questions (3 marks: steel plants q_cbse10sst_ch11_137, textile centres q_cbse10sst_ch11_138) for the full mocks' Q19. Original wording; places from the CBSE 2026-27 map list; `map_id: india-political`.

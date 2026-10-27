@@ -31,7 +31,7 @@ The engine was tightened at the same time, so the frozen papers are board-faithf
 
 - Blueprint sections and items may carry a chapter scope (`BlueprintSection.chapters`, `BlueprintItem.chapters`, optional): Science Biology / Chemistry / Physics, Social Science History / Geography / Political Science / Economics, the History map question from *Nationalism in India* only. The catalog checks the ids.
 - Board and May papers carry the syllabus unit marks exactly (`unitTargets` from `syllabus.units[].marks`; a bounded seeded allocation of slots to units, internal-choice alternatives from the same unit). A unit that cannot be filled is a generation request, never an off-weight paper.
-- Questions tagged only with `board_assessed: false` topics (project / formative-only) never enter series papers.
+- **Board-pattern integrity** (unit tests, mocks, May track), from the syllabus data and never from stem text: no chapter with `board_assessed: false` (CBSE 10 SST ch04, Science ch14/ch15) is in scope, and no question tagged with **any** topic marked `board_assessed: false` (project / periodic or formative assessment only: SST ch03-t03, ch12-t02, ch21-t03; Science ch12-t06; and every topic of a non-assessed chapter) is selected. Chapter tests (shipped with the chapter) and the student's custom tests (practice pool, chapters the student picks) may use them.
 - Near-duplicate questions (`ORIGINALITY.samePaper`: word 5-gram Jaccard ≥ 0.5 over stem + passage) never share a paper.
 - No question repeats inside a series (6 mocks: 0 % overlap); the May track avoids the main mocks' questions where the bank allows (soft).
 - The bank is sorted by id before the seeded shuffle, so the same bank gives the same paper whatever order it was read in.

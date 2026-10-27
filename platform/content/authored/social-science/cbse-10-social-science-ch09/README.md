@@ -58,3 +58,7 @@ Every passage has `passage_origin: "soyl-original"` and a stem label saying it i
 ## Gaps
 - Crop map items are "shade and label" approximations of the board's "identify" format until map geometry exists.
 - Current production rankings and shares are deliberately left out (volatile); reviewers may add a dated data note.
+
+## Added by assessment-designer (2026-10-27)
+
+1 Geography map question (3 marks, three crop states: q_cbse10sst_ch09_121) for the full mocks' Q19. Original wording; places from the CBSE 2026-27 map list; `map_id: india-political`.

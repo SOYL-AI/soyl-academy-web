@@ -29,3 +29,7 @@ All items are original. NCERT configurations deliberately avoided: the lighthous
 
 ## Known gaps
 Narration audio is not generated yet (TTS stage). SVG labels are plain text (θ, °) because SVG cannot carry KaTeX.
+
+## Changed by assessment-designer (2026-10-27)
+
+Rewritten in `src/questions.mjs` (then rebuilt) because `originality --authored` flagged them as near-duplicates of other items in this chapter; each is now a different question (new numbers, context or skill) with its re-solve check: fb2 (q_cbse10math_ch11_031: area swept by a minute hand).
