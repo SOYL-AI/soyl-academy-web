@@ -84,6 +84,8 @@ async function bootstrap() {
     // CREATE EXTENSION needs azure_pg_admin; the migrations' own IF NOT EXISTS then succeeds as soyl_migrator.
     await c.query('CREATE EXTENSION IF NOT EXISTS vector');
     await c.query('GRANT CREATE, USAGE ON SCHEMA public TO soyl_migrator');
+    // pg-boss installs its own schema (CREATE SCHEMA pgboss), which needs CREATE on the database.
+    await c.query(`GRANT CREATE ON DATABASE ${c.escapeIdentifier(appDb)} TO soyl_migrator`);
   });
   log(`bootstrap ok (app principals: ${appPrincipals.join(', ') || 'none'})`);
 }
