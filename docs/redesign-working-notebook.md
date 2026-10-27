@@ -121,3 +121,15 @@ deploys, and is hidden on the live site (layouts fall back to text-only cells). 
 
 Run `COHORT_PREVIEW_DATE=2026-10-10 npm run dev` (open), `2026-10-20` (closing soon) or any
 date after the close (waitlist). The override is ignored in production builds.
+
+Since 28 Oct 2026 (D-038) there is a fourth state, **upcoming**: `NEXT_COHORT` in
+`content/future-builders.ts` (Summer 2027 cohort, April–May 2027, registration opens
+mid-November 2026). Any date after the October close now shows it; add
+`COHORT_PREVIEW_NEXT=none` to preview the plain waitlist. While upcoming, the page collects
+"notify me" sign-ups (`/api/enroll`, `mode: waitlist`, `source: fb_summer_2027`) and
+`/api/razorpay` refuses payment. To open registration, set `NEXT_COHORT.registrationOpens`
+and `NEXT_COHORT.dates` together (the state flips to open at that moment), and update
+`SCHEDULE` / `CONTACT_HOURS` if the summer format differs from the weekend one.
+
+The Future Builders page itself (sections, conversion decisions, analytics events) is
+described in the report for branch `marketing/future-builders-cro`.
