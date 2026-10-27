@@ -1,0 +1,45 @@
+id: icse-10-mathematics-board
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-mathematics
+paper_type: board
+academic_year: "2026-27"
+duration_min: 180
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.5
+  application+analysis+evaluation: 0.5
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Compulsory (40 marks)
+    instructions: >-
+      Attempt all questions. Question 1: 15 multiple-choice items of 1 mark (two of them assertion-reason); write the correct answers
+      only. Questions 2 and 3: three parts each (4 + 4 + 4 and 4 + 4 + 5 marks), each a short structured problem. All working, including
+      rough work, must be shown; mathematical tables are provided.
+    items:
+      - {type: mcq, count: 13, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+      - {type: short, count: 5, marks_each: 4}
+      - {type: long, count: 1, marks_each: 5}
+  - id: B
+    title: Section B - Any four of seven (40 marks)
+    instructions: >-
+      Attempt any four of Questions 4-10, 10 marks each. On the board paper each question has three parts (3 + 3 + 4 marks, or 5 + 5)
+      that may come from different topics; SOYL sets each 10-mark question as one structured multi-part problem on one chapter.
+    items:
+      - {type: long, count: 7, marks_each: 10, internal_choice: {attempt: 4, of: 7}}
+source_status: verified
+source: icse-2027-specimen-511-mathematics
+notes: >-
+  ICSE 2027 Mathematics (51), specimen paper code 511: one paper of three hours (plus 15 minutes reading time), 80 marks; internal
+  assessment 20 marks is not modelled. Section A (40, compulsory): Q1 of 15 one-mark MCQs including 2 assertion-reason; Q2 three
+  4-mark parts; Q3 parts of 4, 4 and 5 marks. Section B (40): any four of seven 10-mark questions. Numerical problems are constructed
+  responses with step marks (short/long slots, which also accept the numerical type of the same marks).
+  The specimen tags every part with competencies, and the CISCE circular of 9 October 2026 (cisce-circular-specimen-papers-2027) gives
+  higher-order questions (apply, analyse, evaluate, create) an approximate weightage of 50% in 2027: hence mark_shares 0.5 / 0.5
+  (application+analysis+evaluation against recall+understanding). CISCE publishes no unit-wise marks for ICSE Mathematics, so the
+  syllabus units carry no marks and the series engine applies no unit weightage (chapter spread is scored instead).
+  Deviation: the item model has one chapter per question, so a Section B question cannot mix topics across its parts as the board's
+  can; total marks, choice and part sizes are kept.
