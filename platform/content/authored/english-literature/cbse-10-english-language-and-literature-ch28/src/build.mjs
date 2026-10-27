@@ -22,9 +22,8 @@ const vBoard = table(
   [
     ['Short answer (Footprints without Feet)', '40–50 words; answer two of three', '3 each'],
     ['Long answer (Footprints without Feet)', '100–120 words on character, theme or values: sketch, opinion, diary, letter or speech; one of two', '6'],
-    ['SOYL chapter tests only', 'commentary passages with short parts on character and theme (extra practice; no extract is set from this book)', '5'],
   ],
-  'Table of how a Footprints without Feet chapter is examined: three-mark short answers of forty to fifty words, two of three to be answered, and a six-mark long answer of one hundred to one hundred and twenty words on character, theme or values. SOYL chapter tests also include five-mark commentary passages for extra practice.',
+  'Table of how a Footprints without Feet chapter is examined: three-mark short answers of forty to fifty words, two of three to be answered, and a six-mark long answer of one hundred to one hundred and twenty words on character, theme or values.',
   'CBSE 2026-27, Section C (literature): the supplementary reader is not used for extracts.',
 );
 const vAuthor = table(
@@ -288,7 +287,7 @@ const N = notes({
     {
       h: '8. Answering exam questions',
       t: 3,
-      b: '**How this book is examined:** the board sets 3-mark short answers (40–50 words; two of three) and a 6-mark long answer (100–120 words) from *Footprints without Feet*, on character, theme and values. It does not set extracts from this book. SOYL chapter tests add commentary passages only as extra practice.\n\n**Short answers (3 marks):** point + evidence + explanation.\n\n**Long answers (6 marks):** a clear stand; three points with evidence in your own words; a link to a theme or value; a one-line conclusion. Extrapolation tasks (Ebright\'s diary, a letter to Dr Urquhart, a speech) must stay consistent with the account.',
+      b: '**How this book is examined:** the board sets 3-mark short answers (40–50 words; two of three) and a 6-mark long answer (100–120 words) from *Footprints without Feet*, on character, theme and values. It does not set extracts from this book. SOYL’s commentary passages in the question bank are extra practice; they are not part of the chapter tests.\n\n**Short answers (3 marks):** point + evidence + explanation.\n\n**Long answers (6 marks):** a clear stand; three points with evidence in your own words; a link to a theme or value; a one-line conclusion. Extrapolation tasks (Ebright\'s diary, a letter to Dr Urquhart, a speech) must stay consistent with the account.',
       v: vLongPlan,
     },
   ],
@@ -362,7 +361,7 @@ build({
   tests: [T_SHORT, T_LONG],
   checks: {
     syllabus: 'topics t01–t03 only (the syllabus has no separate character topic for this chapter; Ebright\'s qualities are taught under t02); no removed topics for 2026-27',
-    board_pattern: 'supplementary reader: board sets 3-mark short answers and a 6-mark long answer (no extracts); bank weighted to 14 three-mark and 9 long items; 5 commentary passages fill the generic chapter-test blueprint Section A slots',
+    board_pattern: 'supplementary reader: board sets 3-mark short answers and a 6-mark long answer (no extracts); bank weighted to 14 three-mark and 9 long items; 5 commentary passages are question-bank practice only; the chapter tests follow the supplementary-reader blueprints, which have no extract section',
     literature_rule: 'written in SOYL words at the level of events and ideas; no sentence, phrase or quoted remark of the account; commentary passages (passage_origin soyl-commentary); single words only for word meanings; textbook pointer on the title slide, notes and every passage stem; guard list of short distinctive phrases (ch27 src/guard.mjs)',
     originality: 'questions written for SOYL; NCERT exercise questions not reused (stems reframed where a classic question exists)',
     re_solve: 'author verifier pass: every item re-answered from its stem and checked against the chapter',

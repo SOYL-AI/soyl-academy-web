@@ -18,7 +18,7 @@ const vBoard = table(
   [
     ['Short answer (Footprints)', '40–50 words; answer two of three', '3 each'],
     ['Long answer (Footprints)', '100–120 words: character, theme, values, diary or letter', '6'],
-    ['Extract (reference to context)', 'not set from this reader; SOYL tests use commentary items only as comprehension checks', '—'],
+    ['Extract (reference to context)', 'not set from this reader; SOYL commentary items in the question bank are extra comprehension practice', '—'],
   ],
   'Table of how a Footprints without Feet story is examined: three-mark short answers of forty to fifty words, two of three to be answered, and a six-mark long answer of one hundred to one hundred and twenty words on character, theme, values, or a diary or letter. Extracts are not set from this reader.',
   'CBSE 2026-27, Section C (literature), questions on the supplementary reader.',
@@ -363,7 +363,7 @@ build({
   tests: [T_SHORT, T_LONG],
   checks: {
     syllabus: 'topics t01–t04 only; no removed topics for 2026-27',
-    pattern: 'Footprints without Feet is examined by 3-mark short answers (Q9) and a 6-mark long answer, not extracts; the bank is weighted to those (14 three-mark, 9 long); the 5 commentary items fill the chapter-test blueprints’ extract slots as comprehension checks',
+    pattern: 'Footprints without Feet is examined by 3-mark short answers (Q9) and a 6-mark long answer, not extracts; the bank is weighted to those (14 three-mark, 9 long); the 5 commentary items are question-bank practice only; the chapter tests follow the supplementary-reader blueprints, which have no extract section',
     literature_rule: 'no sentence, close paraphrase or distinctive phrase of the text; dialogue reported, never quoted; summaries in SOYL words; commentary items use passage_origin soyl-commentary; single words only for word meanings; textbook pointer on the title slide, notes and every passage stem',
     originality: 'questions written for SOYL; NCERT exercise questions not reused (stems reframed where a classic question exists)',
     re_solve: 'author verifier pass: every item re-answered from its stem and checked against the story',
