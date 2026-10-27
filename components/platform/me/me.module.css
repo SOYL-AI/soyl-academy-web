@@ -108,3 +108,29 @@
 .danger {
   border-color: var(--p-danger);
 }
+
+/* M3/M4: tests, plan and credits cards. */
+.list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.listRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--p-space-1) var(--p-space-3);
+  padding: var(--p-space-2) 0;
+  border-bottom: 1px solid var(--p-border);
+  overflow-wrap: anywhere;
+}
+.listRow:last-child {
+  border-bottom: 0;
+}
+.listRow a {
+  min-height: 24px;
+  color: var(--p-ink);
+  font-weight: 600;
+}

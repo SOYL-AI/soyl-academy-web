@@ -16,6 +16,7 @@ import { TextInput } from '@/components/platform/ui/kit/Field';
 import { useToast } from '@/components/platform/ui/kit/Toast';
 import { useSession } from '../auth/SessionProvider';
 import { ConsentNotice } from '../auth/ConsentNotice';
+import { CreditsCard, MyAttemptsCard, SubscriptionCard } from './MeExtras';
 import { api } from '../lib/api-browser';
 import { BOARDS, BOARD_NAMES, CLASS_LEVELS, examLabel, learnPath, type BoardSlug } from '../lib/catalog';
 import { maskedPhone } from '../lib/phone';
@@ -110,6 +111,9 @@ function Profile({ me, onChange }: { me: Me; onChange: (me: Me) => void }) {
           onChange({ ...me, consent: (await api.get('/v1/me')).consent });
         }} />
         <ProfileForm me={me} onSaved={onChange} />
+        <MyAttemptsCard />
+        <SubscriptionCard />
+        <CreditsCard />
         <Methods me={me} />
         <Card as="section" aria-labelledby="signout-title">
           <CardTitle as="h2" id="signout-title">

@@ -44,8 +44,19 @@ type PartResult = PracticeAnswerResult['parts'][number];
 export interface QuestionCardProps {
   question: StudentQuestion;
   slots: QuestionSlots;
-  /** Server check (practice: POST /v1/practice/answers). Throw to show `describeError(err)`. */
-  submit: (response: PracticeResponse) => Promise<PracticeAnswerResult>;
+  /**
+   * - `check` (default): practice and check slides: "Check answer" → `submit` → reveal.
+   * - `test` (M3 test player): controlled `draft`/`onDraftChange`, no Check button and no reveal (the key
+   *   only exists after the attempt is submitted).
+   * - `review` (M3 result page): the student's answer (`draft`) locked, with `initialResult` revealed; no
+   *   "Try again", no practice self-mark (the result page self-evaluates per step).
+   */
+  mode?: 'check' | 'test' | 'review';
+  /** Controlled draft (test and review modes). */
+  draft?: Draft;
+  onDraftChange?: (draft: Draft) => void;
+  /** Server check (practice: POST /v1/practice/answers). Throw to show `describeError(err)`. Required in check mode. */
+  submit?: (response: PracticeResponse) => Promise<PracticeAnswerResult>;
   /** Members: save a self-mark for written answers. Omit for guests. */
   selfAssess?: (answerId: string, marks: number) => Promise<void>;
   /** Guests: open the login sheet (self-marks need an account). */
@@ -144,9 +155,15 @@ export function QuestionCard({
   actions,
   initialResult = null,
   className,
+  mode = 'check',
+  draft: draftProp,
+  onDraftChange,
 }: QuestionCardProps) {
   const idBase = useId();
-  const [draft, setDraft] = useState<Draft>(() => initialDraft(q));
+  const [localDraft, setDraft] = useState<Draft>(() => draftProp ?? initialDraft(q));
+  const draft = draftProp ?? localDraft;
+  const testMode = mode === 'test';
+  const review = mode === 'review';
   const [phase, setPhase] = useState<'answering' | 'submitting' | 'answered'>(initialResult ? 'answered' : 'answering');
   const [result, setResult] = useState<PracticeAnswerResult | null>(initialResult);
   const [error, setError] = useState<string | null>(null);
@@ -155,9 +172,10 @@ export function QuestionCard({
   const isCase = isCaseType(q.type);
 
   const change = (d: Draft) => {
-    setDraft(d);
+    if (draftProp === undefined) setDraft(d);
+    onDraftChange?.(d);
     setError(null);
-    preloadRichText();
+    if (!testMode) preloadRichText();
   };
 
   const onSubmit = async () => {
@@ -166,6 +184,7 @@ export function QuestionCard({
       setError(blocker);
       return;
     }
+    if (!submit) return;
     setPhase('submitting');
     setError(null);
     try {
@@ -224,7 +243,7 @@ export function QuestionCard({
         className={s.answerForm}
         onSubmit={(e) => {
           e.preventDefault();
-          void onSubmit();
+          if (mode === 'check') void onSubmit();
         }}
         noValidate
       >
@@ -243,7 +262,7 @@ export function QuestionCard({
                     <span className={s.fieldNote}>{marksText(child.marks)}</span>
                   </div>
                   {child.alternatives.length > 0 && (
-                    <fieldset className={s.choiceOfPart} disabled={answered}>
+                    <fieldset className={s.choiceOfPart} disabled={answered || review}>
                       <legend className={s.fieldLabel}>Internal choice: answer one</legend>
                       {[child, ...child.alternatives].map((opt, k) => (
                         <label key={opt.id} className={s.inlineRadio}>
@@ -266,7 +285,7 @@ export function QuestionCard({
                     slots={slots.parts[key]}
                     draft={pd.draft}
                     onChange={(d) => setPart({ ...pd, draft: d })}
-                    disabled={answered || phase === 'submitting'}
+                    disabled={answered || review || phase === 'submitting'}
                     label={`Answer for part (${roman(i)})`}
                     lang={lang}
                     result={partResult}
@@ -287,7 +306,7 @@ export function QuestionCard({
             slots={slots.parts['']}
             draft={draft}
             onChange={change}
-            disabled={answered || phase === 'submitting'}
+            disabled={answered || review || phase === 'submitting'}
             label={number !== undefined ? `Answer for question ${number}` : 'Your answer'}
             lang={lang}
             result={answered ? result : null}
@@ -300,7 +319,7 @@ export function QuestionCard({
           </p>
         )}
 
-        {!answered && (
+        {!answered && !testMode && (
           <div className={s.actions}>
             <Button type="submit" loading={phase === 'submitting'}>
               Check answer
@@ -308,6 +327,7 @@ export function QuestionCard({
             {actions}
           </div>
         )}
+        {testMode && actions && <div className={s.actions}>{actions}</div>}
       </form>
 
       {answered && result && (
@@ -315,7 +335,7 @@ export function QuestionCard({
           <Verdict v={result} />
           {!isCase && <KeyDetails answerKey={result.key} lang={lang} headingLevel={H === 'h2' ? 'h3' : 'h4'} />}
           {isCase && result.key.solution_md && <KeyDetails answerKey={{ ...result.key, marking_scheme: [] }} lang={lang} headingLevel={H === 'h2' ? 'h3' : 'h4'} />}
-          {result.selfAssessmentPending && result.selfMaxMarks > 0 && (
+          {!review && result.selfAssessmentPending && result.selfMaxMarks > 0 && (
             <SelfMark
               max={result.selfMaxMarks}
               onSave={selfAssess && result.answerId ? (m) => selfAssess(result.answerId!, m) : undefined}
@@ -328,12 +348,16 @@ export function QuestionCard({
               {result.badgesAwarded.length > 0 ? ` · New badge: ${result.badgesAwarded.join(', ')}` : ''}
             </p>
           )}
-          <div className={s.actions}>
-            <Button variant="secondary" size="sm" icon="rotate" onClick={tryAgain}>
-              Try again
-            </Button>
-            {actions}
-          </div>
+          {review ? (
+            actions && <div className={s.actions}>{actions}</div>
+          ) : (
+            <div className={s.actions}>
+              <Button variant="secondary" size="sm" icon="rotate" onClick={tryAgain}>
+                Try again
+              </Button>
+              {actions}
+            </div>
+          )}
         </div>
       )}
     </article>

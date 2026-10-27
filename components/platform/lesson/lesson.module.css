@@ -234,3 +234,32 @@
   outline: 2px solid var(--p-focus);
   outline-offset: 2px;
 }
+
+/* M4: "Explain this slide" (AI, 1 credit) next to Report a mistake. */
+.toolbarActions {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-1);
+}
+.explainButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-1);
+  min-height: var(--p-touch);
+  padding: 0 var(--p-space-3);
+  border: 1px solid var(--p-border-strong);
+  border-radius: var(--p-radius-pill);
+  background: var(--p-surface);
+  color: var(--p-ink);
+  font: inherit;
+  font-size: var(--p-text-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+.explainButton:hover {
+  background: var(--p-surface-2);
+}
+.explainButton:focus-visible {
+  outline: 2px solid var(--p-focus);
+  outline-offset: 2px;
+}

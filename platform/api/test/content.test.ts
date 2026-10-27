@@ -90,11 +90,11 @@ describe('chapter hub', () => {
   });
 
   it('a catalog chapter without content says so; unknown or malformed ids are 404/400', async () => {
-    // Pick a catalog chapter with no authored release, so new content never invalidates this test.
-    const withContent = new Set(releases.map((r) => r.release.unit));
-    const keys = (await h.t.db.select({ key: chapters.key }).from(chapters)).map((r) => r.key);
-    const emptyId = keys.filter((k) => k.startsWith('cbse-10-science-') && !withContent.has(k)).sort()[0]
-      ?? keys.filter((k) => !withContent.has(k)).sort()[0]!;
+    // A fixture catalog chapter with no release: the seeded subjects are fully authored, so the test makes its own
+    // empty chapter instead of depending on content coverage.
+    const [sibling] = await h.t.db.select().from(chapters).where(eq(chapters.key, 'cbse-10-science-ch01'));
+    const emptyId = 'cbse-10-science-ch98';
+    await h.t.db.insert(chapters).values({ subjectId: sibling!.subjectId, key: emptyId, academicYear: sibling!.academicYear, number: 98, title: 'Fixture chapter without content' });
     const empty = await h.client().get(`/v1/chapters/${emptyId}`);
     expect(empty.statusCode).toBe(200);
     expect(empty.json().assets).toMatchObject({ lesson: { available: false }, notes: { available: false }, practice: { available: false, count: 0 } });

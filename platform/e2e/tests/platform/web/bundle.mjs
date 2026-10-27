@@ -30,6 +30,17 @@ export const PAGES = [
   ['notes (Hindi)', '/learn/cbse/10/hindi-a/ch02/notes'],
   ['admin', '/admin'],
   ['learn', '/learn'],
+  // M3/M4
+  ['tests', '/tests'],
+  ['test series', '/tests/series/cbse/10/science'],
+  ['test player', '/tests/attempt/00000000-0000-4000-8000-000000000000'],
+  ['test result', '/tests/result/00000000-0000-4000-8000-000000000000'],
+  ['test builder', '/tests/builder'],
+  ['live mock', '/tests/live/live_cbse10sci_1'],
+  ['ask', '/ask'],
+  ['plans', '/plans'],
+  ['leaderboard', '/leaderboard'],
+  ['me', '/me'],
 ];
 
 const cache = new Map();

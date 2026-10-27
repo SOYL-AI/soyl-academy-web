@@ -127,7 +127,8 @@ test('login prompt returns to the original page (AUTH-13)', async ({ page }) => 
   await expect(page.getByText('Log in to take chapter tests. They are free, and your results are saved.')).toBeVisible();
   await signInWithEmail(page, uniqueEmail('return'));
   await expect(page).toHaveURL(new RegExp(`${hub}$`));
-  await expect(page.getByTestId('chapter-tests')).toContainText('Coming soon');
+  // M3: members get the subject's test series (the player shipped).
+  await expect(page.getByTestId('chapter-tests-link')).toHaveAttribute('href', '/tests/series/cbse/10/science');
 });
 
 test('a hostile returnTo never leaves the platform (AUTH-13, WEB-8)', async ({ page }) => {

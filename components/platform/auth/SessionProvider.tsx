@@ -58,9 +58,15 @@ export function useSession(): SessionApi {
 }
 
 /** Pages that make no sense without an account; logout leaves them for /learn. */
-const MEMBER_ONLY_PREFIXES = ['/me', '/tests/attempt', '/tests/result', '/admin'];
+const MEMBER_ONLY_PREFIXES = ['/me', '/tests/attempt', '/tests/result', '/tests/builder', '/admin'];
 
 async function clearPlatformCaches(): Promise<void> {
+  // WEB-10: the test player's offline answer queues (IndexedDB) leave the device at logout.
+  try {
+    await (await import('../tests/idb-storage')).clearAllTestQueues();
+  } catch {
+    // nothing stored
+  }
   try {
     if (typeof caches === 'undefined') return;
     for (const key of await caches.keys()) if (key.startsWith('soyl')) await caches.delete(key);

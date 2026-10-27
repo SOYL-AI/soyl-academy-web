@@ -140,7 +140,8 @@ export interface EmptyStateProps {
   children?: ReactNode;
   icon?: IconName;
   action?: ReactNode;
-  headingLevel?: 'h2' | 'h3' | 'h4';
+  /** h1 when the empty state is the whole page (e.g. a test that could not load). */
+  headingLevel?: 'h1' | 'h2' | 'h3' | 'h4';
   className?: string;
 }
 

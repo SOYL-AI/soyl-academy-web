@@ -243,6 +243,78 @@ export function toResponse(draft: Draft): PracticeResponse {
   return r;
 }
 
+/**
+ * Test mode (M3 autosave): the response to save for a draft, or `null` when there is nothing to save
+ * (an empty answer clears the item on the server). Lenient where `toResponse` throws: a numerical draft
+ * that is not a number yet saves as `null`, and case/source items keep only the parts that are ready.
+ */
+export function toTestResponse(draft: Draft): PracticeResponse | null {
+  if (!hasInput(draft)) return null;
+  if (draft.kind === 'parts') {
+    const r = toResponse(draft) as { parts: unknown[] };
+    return r.parts.length ? (r as PracticeResponse) : null;
+  }
+  return partResponse(draft);
+}
+
+type AnyPartResponse = Partial<{ option_ids: string[]; value: number; blanks: string[]; pairs: { left_id: string; right_id: string }[]; order: string[]; output: string; text: string }>;
+
+function partFromResponse(part: QuestionPart & { children?: StudentQuestion['children'] }, raw: unknown): Draft {
+  const base = initialDraft(part);
+  const r = (raw && typeof raw === 'object' ? raw : {}) as AnyPartResponse;
+  switch (base.kind) {
+    case 'choice': {
+      const known = new Set(part.options.map((o) => o.id));
+      return { kind: 'choice', ids: Array.isArray(r.option_ids) ? r.option_ids.filter((id) => known.has(id)) : [] };
+    }
+    case 'value':
+      return { kind: 'value', text: typeof r.value === 'number' && Number.isFinite(r.value) ? String(r.value) : '' };
+    case 'blanks': {
+      const got = Array.isArray(r.blanks) ? r.blanks.map((v) => (typeof v === 'string' ? v : '')) : [];
+      return { kind: 'blanks', values: base.values.map((_, i) => got[i] ?? '') };
+    }
+    case 'pairs': {
+      const left = new Set(part.options.map((o) => o.id));
+      const right = new Set(part.match_right.map((o) => o.id));
+      const pairs: Record<string, string> = {};
+      for (const p of Array.isArray(r.pairs) ? r.pairs : []) if (left.has(p?.left_id) && right.has(p?.right_id)) pairs[p.left_id] = p.right_id;
+      return { kind: 'pairs', pairs };
+    }
+    case 'order': {
+      const ids = Array.isArray(r.order) ? r.order : [];
+      const same = ids.length === base.ids.length && base.ids.every((id) => ids.includes(id));
+      return same ? { kind: 'order', ids: [...ids] } : base;
+    }
+    case 'output':
+      return { kind: 'output', text: typeof r.output === 'string' ? r.output : '' };
+    case 'text':
+      return { kind: 'text', text: typeof r.text === 'string' ? r.text : '' };
+    case 'parts':
+      return base;
+  }
+}
+
+/**
+ * The inverse of `toResponse` (M3: resume a test attempt from its saved responses, show a student's answer
+ * on the result page). Unknown ids are dropped, so a stale or tampered response can never select an
+ * option the question does not have.
+ */
+export function fromResponse(q: QuestionPart & { children?: StudentQuestion['children'] }, response: PracticeResponse | null | undefined): Draft {
+  if (!response) return initialDraft(q);
+  if (isCaseType(q.type)) {
+    const saved = 'parts' in response && Array.isArray(response.parts) ? response.parts : [];
+    const parts: Record<string, PartDraft> = {};
+    for (const child of q.children ?? []) {
+      const r = saved.find((p) => p.id === child.id);
+      const alternative = r?.alternative && child.alternatives.some((a) => a.id === r.alternative) ? r.alternative : undefined;
+      const active = chosenPart(child, alternative);
+      parts[child.id] = { ...(alternative ? { alternative } : {}), draft: r ? partFromResponse(active, r.response) : initialDraft(active) };
+    }
+    return { kind: 'parts', parts };
+  }
+  return partFromResponse(q, response);
+}
+
 /** Slot keys: '' = the question; `<childId>` = a case/source part; `<childId>/<altId>` = an alternative. */
 export function partKey(childId?: string, altId?: string): string {
   if (!childId) return '';

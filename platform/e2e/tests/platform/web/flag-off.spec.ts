@@ -20,6 +20,19 @@ const ROUTES = [
   '/api/platform/v1/session',
   '/api/platform/v1/catalog/boards',
   '/api/platform/v1/auth/google/start',
+  // M3/M4
+  '/tests',
+  '/tests/series/cbse/10/science',
+  '/tests/attempt/00000000-0000-4000-8000-000000000000',
+  '/tests/result/00000000-0000-4000-8000-000000000000',
+  '/tests/builder',
+  '/tests/live/live_cbse10sci_1',
+  '/ask',
+  '/plans',
+  '/leaderboard',
+  '/api/platform/v1/plans',
+  '/api/platform/v1/test-series?subject=cbse-10-science',
+  '/api/platform/v1/credits',
 ];
 
 for (const path of ROUTES) {
@@ -34,6 +47,8 @@ for (const path of ROUTES) {
 test('POSTs to the proxy and CSP endpoint → 404', async ({ request }) => {
   expect((await request.post('/api/platform/v1/auth/email/send-otp', { data: { email: 'a@example.com' } })).status()).toBe(404);
   expect((await request.post('/api/platform/csp-report', { headers: { 'content-type': 'application/csp-report' }, data: '{}' })).status()).toBe(404);
+  expect((await request.post('/api/platform/v1/webhooks/razorpay', { headers: { 'content-type': 'application/json', 'x-razorpay-signature': 'x' }, data: '{}' })).status()).toBe(404);
+  expect((await request.post('/api/platform/v1/ai/quick-doubt', { data: { message: 'x' } })).status()).toBe(404);
 });
 
 test('the marketing header has no Learn link', async ({ page }) => {

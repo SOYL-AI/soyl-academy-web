@@ -5,3 +5,8 @@
 6638cecdf4f2bc161a24bbdd3cc2e20be0141b87:platform/api/src/config.ts:generic-api-key:21
 # 2026-10-27, Lead: unit-test constant for the API proxy edge secret (web-platform branch).
 7e632d668f63d6a8f78b96a94b1a4ab9fb81152e:components/platform/__tests__/api-proxy.test.ts:generic-api-key:14
+# Reviewed 2026-10-27 (Lead): placeholder Idempotency-Key values in two web unit tests (fixed 8-digit dummies), not secrets.
+# The first version of this comment quoted those dummies and was itself flagged (commit 235bf23):
+235bf23ebd6e2b675ea382b9f62815c2577d6bed:.gitleaksignore:generic-api-key:8
+3025804f5221610b35ad51f981fd771a26739088:components/platform/__tests__/m4-ai-logic.test.ts:generic-api-key:45
+3025804f5221610b35ad51f981fd771a26739088:components/platform/__tests__/m3m4-server.test.ts:generic-api-key:45

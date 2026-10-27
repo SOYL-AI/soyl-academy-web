@@ -81,15 +81,33 @@ export function clientIpFrom(incoming: Headers): string | null {
 }
 
 /**
+ * Request headers forwarded only to particular upstream paths (ADR-018 §2), each with a value check:
+ * - `idempotency-key` on AI actions and AI evaluation (ai-gateway M4: retries never charge twice);
+ * - Razorpay's `x-razorpay-signature` / `x-razorpay-event-id` on the webhook only (billing M4: the body
+ *   is streamed through byte for byte, never re-serialised, so the HMAC still matches).
+ */
+export const PATH_SCOPED_HEADERS: readonly { name: string; applies: (path: string) => boolean; valid: RegExp }[] = [
+  { name: 'idempotency-key', applies: (p) => p.startsWith('v1/ai/') || /^v1\/attempts\/[^/]+\/ai-evaluation$/.test(p), valid: /^[A-Za-z0-9_\-:.]{8,128}$/ },
+  { name: 'x-razorpay-signature', applies: (p) => p === 'v1/webhooks/razorpay', valid: /^[A-Za-z0-9+/=_-]{1,256}$/ },
+  { name: 'x-razorpay-event-id', applies: (p) => p === 'v1/webhooks/razorpay', valid: /^[A-Za-z0-9_.-]{1,128}$/ },
+];
+
+/**
  * ADR-005 item 4: a fresh header set with only the allowlist, then the edge secret and client IP
  * **set** (overwriting anything the browser sent: host, x-forwarded-*, forwarded, x-real-ip, x-soyl-* are
- * never copied).
+ * never copied). `path` (the upstream path) enables the path-scoped headers above.
  */
-export function buildUpstreamHeaders(incoming: Headers, cfg: Pick<ProxyConfig, 'edgeSecret'>): Headers {
+export function buildUpstreamHeaders(incoming: Headers, cfg: Pick<ProxyConfig, 'edgeSecret'>, path?: string): Headers {
   const out = new Headers();
   for (const name of FORWARDED_REQUEST_HEADERS) {
     const value = incoming.get(name);
     if (value !== null) out.set(name, value);
+  }
+  if (path !== undefined) {
+    for (const h of PATH_SCOPED_HEADERS) {
+      const value = incoming.get(h.name);
+      if (value !== null && h.applies(path) && h.valid.test(value)) out.set(h.name, value);
+    }
   }
   const length = out.get('content-length');
   if (length !== null && !/^\d{1,9}$/.test(length)) out.delete('content-length');
@@ -112,6 +130,12 @@ export function buildResponseHeaders(upstream: Headers): Headers {
   const cookies = typeof upstream.getSetCookie === 'function' ? upstream.getSetCookie() : [];
   for (const cookie of cookies) out.append('set-cookie', cookie);
   if (cookies.length > 0 || !out.has('cache-control')) out.set('cache-control', 'no-store');
+  if (/^text\/event-stream\b/i.test(out.get('content-type') ?? '')) {
+    // AI streams (ai-gateway M4): `no-transform` keeps Next's response compression from buffering the
+    // events until the end; `x-accel-buffering: no` does the same for any buffering proxy in front.
+    out.set('cache-control', 'no-store, no-transform');
+    out.set('x-accel-buffering', 'no');
+  }
   out.set('x-content-type-options', 'nosniff');
   out.set('referrer-policy', 'no-referrer');
   return out;
@@ -167,7 +191,7 @@ export async function proxyRequest(request: Request, cfg: ProxyConfig, fetchImpl
   const path = upstreamPath(url.pathname);
   if (!path) return problemResponse(404, 'not_found', 'Not found');
 
-  const headers = buildUpstreamHeaders(request.headers, cfg);
+  const headers = buildUpstreamHeaders(request.headers, cfg, path);
   const declared = Number(headers.get('content-length') ?? '0');
   if (declared > cfg.maxBodyBytes) return problemResponse(413, 'payload_too_large', 'Request body too large');
 
