@@ -1,6 +1,6 @@
 /**
  * DELETE /v1/me — step 1 of platform/db/PII.md "Account deletion" (AC-25 erasure, AC-26):
- * in one transaction delete sessions, accounts, pending OTP rows, consent_status, guardian links
+ * in one transaction delete sessions, accounts, pending OTP rows, consent_status, consent_records (D-039), guardian links
  * (both directions), AI conversations (messages cascade), uploads rows and the staff TOTP enrolment; anonymise `users` and the
  * personal `profiles` fields; write an audit row (ids only). Step 2 — the hard delete ≤ 30 days later
  * — is the worker's `account.purge` job (`users.deleted_at < now() - 30 days`).
@@ -13,6 +13,7 @@ import {
   accounts,
   aiConversations,
   auditLog,
+  consentRecords,
   consentStatus,
   guardianLinks,
   profiles,
@@ -48,6 +49,7 @@ export async function deleteAccount(
     await tx.delete(sessions).where(eq(sessions.userId, user.id));
     await tx.delete(accounts).where(eq(accounts.userId, user.id));
     await tx.delete(consentStatus).where(eq(consentStatus.userId, user.id));
+    await tx.delete(consentRecords).where(eq(consentRecords.userId, user.id));
     await tx.delete(guardianLinks).where(or(eq(guardianLinks.parentUserId, user.id), eq(guardianLinks.studentUserId, user.id)));
     await tx.delete(aiConversations).where(eq(aiConversations.userId, user.id));
     await tx.delete(uploads).where(eq(uploads.userId, user.id));
@@ -68,7 +70,7 @@ export async function deleteAccount(
       .where(eq(users.id, user.id));
     await tx
       .update(profiles)
-      .set({ displayName: null, board: null, classLevel: null, schoolId: null, city: null, updatedAt: now })
+      .set({ displayName: null, board: null, classLevel: null, schoolId: null, city: null, publicNameSeed: 0, updatedAt: now })
       .where(eq(profiles.userId, user.id));
     await tx.insert(auditLog).values({
       actorUserId: user.id,

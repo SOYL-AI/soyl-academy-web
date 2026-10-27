@@ -1,6 +1,7 @@
 /**
- * Display-name validation (AC-18, F-017). Display names appear to other students (leaderboards show
- * first name + last initial), so they must not carry contact details, handles, links or abuse.
+ * Display-name validation (AC-18, F-017). Since D-039 other students never see display names (leaderboards
+ * show an auto-generated public name), but the name is still shown on the student's own screens and
+ * reviewed by staff, so it must not carry contact details, handles, links or abuse.
  *
  * Rules: NFKC-normalised, spaces collapsed, 2–20 characters; letters (Latin or Devanagari), spaces,
  * apostrophes, dots and hyphens only — which already excludes '@', '/', ':' and other URL/handle

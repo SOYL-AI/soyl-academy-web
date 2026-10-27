@@ -7,7 +7,7 @@ decisions: `docs/platform/adr/004-orm-drizzle.md`; personal data: [PII.md](PII.m
 ```
 platform/db/
   schema/          Drizzle tables by group: identity, catalog, content, assessment, gamification,
-                   ai-credits, ai-gateway, billing, ops, pipeline, progress, views  (69 tables, 2 views)
+                   ai-credits, ai-gateway, billing, ops, pipeline, progress, views  (70 tables, 2 views)
   migrations/      NNNN_name.sql (drizzle-kit, up) + NNNN_name.down.sql (hand-written) + meta/
   src/             client, migrator, CLI, seeds, test harness, normalisers, DB-6 helpers
   test/            vitest suites against real PostgreSQL
@@ -101,7 +101,9 @@ ADR-012: `responses.client_seq`, attempt score split and percentile flag, `test_
 `0008_ai_gateway` (ai-gateway M4, ADR-013/014: `credit_wallets` lock rows, `ai_spend_daily`, `ai_jobs`,
 `ai_requests.plan_id/degraded/simulated`, `uploads.processed_key`, `content_chunks.search_vector` FTS fallback),
 `0009_billing` (billing-razorpay M4, ADR-016: Razorpay binding columns, webhook outcome), `0010_leagues` (backend-api M5:
-weekly `leagues` and `league_memberships.league_id/tier/outcome`; the `ai_answer` report type on `content_reports`).
+weekly `leagues` and `league_memberships.league_id/tier/outcome`; the `ai_answer` report type on `content_reports`),
+`0011_consent_interim` (backend-api, D-039, ADR-022: `consent_records` for the built-in consent provider,
+`profiles.public_name_seed` for auto-generated public names).
 
 ## Roles (DB-1) and Azure mapping
 

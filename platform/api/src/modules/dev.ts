@@ -24,13 +24,16 @@ export function registerDevRoutes(appIn: FastifyInstance, deps: AppDeps): void {
     schema: {
       hide: true,
       querystring: z.strictObject({ to: z.string().max(254) }),
-      response: { 200: z.object({ code: z.string().nullable() }) },
+      // `link`: the parent's consent withdraw link from the last parent-approval email (D-039 e2e).
+      response: { 200: z.object({ code: z.string().nullable(), link: z.string().nullable() }) },
     },
     handler: async (request) => {
       const to = request.query.to.trim().toLowerCase();
       const allowed = TEST_PHONE_REGEX.test(to) || to.endsWith(`@${TEST_EMAIL_DOMAIN}`);
       if (!allowed) throw new ApiProblem('not_found');
-      return { code: (to.includes('@') ? email.lastCode(to) : sms.lastCode(to)) ?? null };
+      if (!to.includes('@')) return { code: sms.lastCode(to) ?? null, link: null };
+      const last = email.last(to);
+      return { code: email.lastCode(to) ?? null, link: last?.tag === 'parent-consent' ? (last.text.match(/https?:\/\/\S+\/me\/consent\/parent#t=\S+/)?.[0] ?? null) : null };
     },
   });
 }

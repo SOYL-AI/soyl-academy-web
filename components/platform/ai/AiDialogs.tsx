@@ -8,6 +8,7 @@
  * - `AiNotice`: consent-needed, paused (spend breaker) and unavailable states.
  */
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import type { AiQuote } from '@/platform/shared/api-client';
 import { Button } from '@/components/platform/ui/kit/Button';
@@ -138,7 +139,13 @@ export function PaywallDialog({ block, onClose }: { block: Extract<AiBlock, { ki
   );
 }
 
+/** The consent flow page, returning here afterwards (D-039). */
+export function consentFlowHref(pathname: string | null): string {
+  return pathname && pathname.startsWith('/') && !pathname.startsWith('/me/consent') ? `/me/consent?next=${encodeURIComponent(pathname)}` : '/me/consent';
+}
+
 export function AiNotice({ block, feature = 'AI help' }: { block: AiBlock; feature?: string }) {
+  const pathname = usePathname();
   switch (block.kind) {
     case 'consent':
       return (
@@ -146,10 +153,11 @@ export function AiNotice({ block, feature = 'AI help' }: { block: AiBlock; featu
           <Icon name="lock" size={20} />
           <div>
             <p>
-              <strong>{feature} needs a parent’s approval.</strong> Ask a parent to approve your account from your profile. Lessons, practice and tests are always open.
+              <strong>{feature} needs approval first.</strong> If you are under 18, ask a parent to approve by email; if you are 18 or older, you can approve it
+              yourself. Lessons, practice and tests are always open.
             </p>
-            <Link href="/me" className={s.textLink}>
-              Go to your profile
+            <Link href={consentFlowHref(pathname)} className={s.textLink} data-testid="consent-flow-link">
+              Ask a parent to approve
             </Link>
           </div>
         </div>

@@ -195,7 +195,8 @@ export function PlansClient() {
       )}
       {consentNeeded && plans.billingEnabled && (
         <p className={s.notice} role="note" data-testid="plans-consent">
-          <Icon name="lock" size={18} /> A parent needs to approve your account before you can buy a plan. <Link href="/me">Ask from your profile</Link>
+          <Icon name="lock" size={18} /> A parent needs to approve your account (or you confirm you are 18 or older) before you can buy a plan.{' '}
+          <Link href="/me/consent?next=%2Fplans">Ask a parent to approve</Link>
         </p>
       )}
       {mine && mine.plan !== 'free' && (
@@ -232,7 +233,7 @@ export function PlansClient() {
           {buy.code === 'consent_required' && (
             <>
               {' '}
-              <Link href="/me">Ask a parent</Link>
+              <Link href="/me/consent?next=%2Fplans">Ask a parent to approve</Link>
             </>
           )}
         </p>

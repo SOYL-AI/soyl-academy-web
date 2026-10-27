@@ -5,7 +5,7 @@
  * `local`/`test`.
  */
 import { z } from 'zod/v4';
-import { OAUTH, OTP } from '@soyl/shared/config/security';
+import { CONSENT_PROVIDERS, OAUTH, OTP, type ConsentProviderName } from '@soyl/shared/config/security';
 import { loadBillingConfig, type BillingConfig } from './billing/config';
 
 export const APP_ENVS = ['local', 'test', 'dev', 'stg', 'prod'] as const;
@@ -114,10 +114,14 @@ const EnvSchema = z.object({
   ACS_EMAIL_ACCESS_KEY: z.string().optional(),
 
   /**
-   * `mock` (local/test/stg; refused in prod, GEN-3) or `unavailable`: no consent system yet (OA-08), every
-   * account stays `pending` and consent cannot be granted, so every consent-gated feature (D-014) is off.
+   * CONSENT_PROVIDERS (@soyl/shared/config/security):
+   * - `builtin`: the interim built-in provider (D-039, ADR-022): age band; 18+ self-declares; under 18 needs a
+   *   parent's emailed approval code. Allowed in prod (needs EMAIL_PROVIDER=acs there).
+   * - `unavailable`: no consent system yet (D-031): every account stays `pending`, every consent-gated
+   *   feature (D-014) is off.
+   * - `mock`: local/test/stg only (refused in prod, GEN-3).
    */
-  CONSENT_PROVIDER: z.enum(['mock', 'unavailable']).default('mock'),
+  CONSENT_PROVIDER: z.enum(CONSENT_PROVIDERS).default('mock'),
   MOCK_CONSENT_DEFAULT: z.enum(['required', 'pending', 'granted', 'revoked']).default('required'),
 
   ACADEMIC_YEAR: z.string().regex(/^\d{4}-\d{2}$/).default('2026-27'),
@@ -164,7 +168,7 @@ export interface Config {
   };
   sms: { provider: 'mock' | 'msg91'; apiKey?: string; senderId?: string; templateIds: Record<string, string>; baseUrl: string };
   email: { provider: 'mock' | 'acs'; from: string; acsEndpoint?: string; acsAccessKey?: string };
-  consent: { provider: 'mock' | 'unavailable'; mockDefault: 'required' | 'pending' | 'granted' | 'revoked' };
+  consent: { provider: ConsentProviderName; mockDefault: 'required' | 'pending' | 'granted' | 'revoked' };
   academicYear: string;
   devOtpOutbox: boolean;
   /** Razorpay billing (billing/config.ts, ADR-016). */
@@ -270,7 +274,10 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
   if (isProduction && enabled('email') && e.EMAIL_PROVIDER === 'mock') problems.push('EMAIL_PROVIDER=mock cannot run with APP_ENV=prod while email sign-in is enabled (GEN-3)');
   if (isProduction && enabled('phone') && e.SMS_PROVIDER === 'mock') problems.push('SMS_PROVIDER=mock cannot run with APP_ENV=prod while phone sign-in is enabled (GEN-3)');
   if (isProduction && e.CONSENT_PROVIDER === 'mock')
-    problems.push('CONSENT_PROVIDER=mock cannot run with APP_ENV=prod (GEN-3); use CONSENT_PROVIDER=unavailable until the consent adapter exists (OA-08)');
+    problems.push('CONSENT_PROVIDER=mock cannot run with APP_ENV=prod (GEN-3); use CONSENT_PROVIDER=builtin (D-039) or unavailable until the consent adapter exists (OA-08)');
+  // The built-in provider emails parents: in production that must be a real sender (GEN-3).
+  if (isProduction && e.CONSENT_PROVIDER === 'builtin' && e.EMAIL_PROVIDER !== 'acs')
+    problems.push('CONSENT_PROVIDER=builtin needs EMAIL_PROVIDER=acs in production (it emails the parent approval code)');
 
   const apiPublicUrl = `${publicBaseUrl}${e.API_PUBLIC_PATH}`;
   const allowedOrigins = e.ALLOWED_ORIGINS.length ? e.ALLOWED_ORIGINS : [publicOrigin];

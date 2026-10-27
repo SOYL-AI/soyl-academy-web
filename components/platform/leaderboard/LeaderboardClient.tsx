@@ -45,7 +45,7 @@ export function LeaderboardClient() {
   if (state.status === 'guest') {
     return (
       <EmptyState title="Log in to see leaderboards" headingLevel="h2" icon="trophy" action={<Button onClick={() => openLogin()}>Log in</Button>}>
-        Leaderboards show first name and last initial only.
+        Leaderboards show an auto-generated name for each student, never a real name.
       </EmptyState>
     );
   }

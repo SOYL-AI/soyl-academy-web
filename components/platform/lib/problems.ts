@@ -56,7 +56,20 @@ export function problemMessage(err: unknown, channel: 'phone' | 'email' | 'gener
     case 'fresh_session_required':
       return 'For your safety, please log in again to do this.';
     case 'consent_required':
-      return 'A parent needs to approve your account before you can use this.';
+      return 'This needs approval first: a parent’s if you are under 18, or your own if you are 18 or older.';
+    // Built-in consent flow (D-039).
+    case 'consent_code_invalid':
+      return 'That approval code is not right. Check the code your parent gave you and try again.';
+    case 'consent_code_expired':
+      return 'That approval code has expired or was replaced. Send a new one to your parent.';
+    case 'age_band_required':
+      return 'Tell us your age group first.';
+    case 'age_band_locked':
+      return 'Your age group cannot be changed here. If it is wrong, contact SOYL Academy support.';
+    case 'consent_link_invalid':
+      return 'This link is not valid any more. A newer email may have replaced it.';
+    case 'consent_flow_unavailable':
+      return 'Approval works differently here. Please check your profile page.';
     case 'consent_unavailable':
     case 'service_unavailable':
     case 'upstream_unavailable':

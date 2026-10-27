@@ -1,0 +1,128 @@
+/* Consent flow (D-039): age band, parent email, code entry, status. Mobile-first, 360 px. */
+.form {
+  display: grid;
+  gap: var(--p-space-4);
+  margin-top: var(--p-space-3);
+}
+.choices {
+  display: grid;
+  gap: var(--p-space-3);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.legend {
+  margin-bottom: var(--p-space-2);
+  padding: 0;
+  font-weight: 600;
+}
+.choice {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--p-space-3);
+  min-height: var(--p-touch);
+  padding: var(--p-space-3);
+  border: 1px solid var(--p-border-strong);
+  border-radius: var(--p-radius-md);
+  background: var(--p-surface);
+  cursor: pointer;
+}
+.choice:has(input:checked) {
+  border-color: var(--p-accent);
+  box-shadow: inset 0 0 0 1px var(--p-accent);
+}
+.choice:has(input:focus-visible) {
+  box-shadow: var(--p-focus-ring);
+}
+.choice input,
+.check input {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin: 2px 0 0;
+  accent-color: var(--p-accent);
+}
+.choiceText {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.choiceText strong {
+  font-weight: 600;
+}
+.choiceText span,
+.small {
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--p-space-3);
+  min-height: var(--p-touch);
+  cursor: pointer;
+}
+.muted {
+  margin: var(--p-space-2) 0 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.list {
+  margin: var(--p-space-2) 0 0;
+  padding-left: var(--p-space-5);
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.list li {
+  margin: var(--p-space-1) 0;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-3);
+}
+.error {
+  margin: 0;
+  padding: var(--p-space-3);
+  border-radius: var(--p-radius-md);
+  background: var(--p-danger-soft);
+  color: var(--p-danger);
+  font-size: var(--p-text-sm);
+}
+.ok {
+  margin: 0;
+  padding: var(--p-space-3);
+  border-radius: var(--p-radius-md);
+  background: var(--p-success-soft, var(--p-surface-sunken));
+  font-size: var(--p-text-sm);
+}
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--p-touch);
+  color: var(--p-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+.link:focus-visible {
+  outline: none;
+  box-shadow: var(--p-focus-ring);
+  border-radius: var(--p-radius-sm);
+}
+.inlineLink {
+  color: var(--p-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.page {
+  display: grid;
+  gap: var(--p-space-4);
+  max-width: 640px;
+}
+.hint {
+  overflow-wrap: anywhere;
+}

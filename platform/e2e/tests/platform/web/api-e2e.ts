@@ -61,6 +61,8 @@ const env: Record<string, string | undefined> = {
   BILLING_ENABLED: 'true',
   RAZORPAY_PROVIDER: 'stub',
   DEV_LIVE_IN: '120',
+  // D-039: the e2e runs the production consent flow (built-in provider; parent codes via the dev outbox).
+  CONSENT_PROVIDER: 'builtin',
   ...process.env,
   PUBLIC_BASE_URL: webOrigin,
   GOOGLE_ISSUER: process.env.GOOGLE_ISSUER ?? issuer,
@@ -73,7 +75,7 @@ const devDb = await startDevDatabase((m) => console.log(`[dev-db] ${m}`));
 await publishDevContent(devDb.url);
 const { db, close: closeDb } = createDb(devDb.url, { max: config.databasePoolMax });
 const kv = createKv(config);
-const providers = createProviders(config);
+const providers = createProviders(config, { db });
 
 // 1. Razorpay stub with synced plans.
 const razorpay = new RazorpayStub(BILLING_DEV_DEFAULTS.keyId);

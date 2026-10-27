@@ -1,7 +1,7 @@
 /**
  * Live All-India mocks: registration window, questions only after the start (embargoed pool,
  * AC-11), late start ≤ 15 min, deadline cap, one attempt per event, per-attempt shuffle, provisional
- * ranks in the KV sorted set, consent-gated leaderboard with first name + last initial (F-017,
+ * ranks in the KV sorted set, consent-gated leaderboard with auto-generated public names (D-039, F-017,
  * D-014), account deletion removing KV ranks, the worker's final-rank snapshot, unranked attempts
  * after the event, and the schedule CLI logic (Wave 1 sittings, dev fallback, production refusal).
  */
@@ -10,6 +10,7 @@ import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { and, eq } from 'drizzle-orm';
 import { attempts, chapters, consentStatus, ingestTestDefinition, liveEvents, liveRegistrations, questionKeys, questionRow, questions, splitQuestion, tests } from '@soyl/db';
 import { Question } from '@soyl/shared/content/question';
+import { publicName } from '@soyl/shared/config/public-names';
 import { TestDefinition } from '@soyl/shared/content/test';
 import { LIVE_MOCK_SITTINGS, TEST_ENGINE } from '@soyl/shared/config/tests';
 import { loadCatalog } from '@soyl/content-pipeline/catalog';
@@ -194,12 +195,12 @@ describe('live window', () => {
     expect(board.total).toBe(3);
     expect(board.entries).toEqual([
       { rank: 1, name: null, score: 6, isMe: false },
-      { rank: 2, name: 'Priya S.', score: 5, isMe: true },
-      { rank: 3, name: 'Aarav K.', score: 3, isMe: false },
+      { rank: 2, name: publicName(a.id), score: 5, isMe: true },
+      { rank: 3, name: publicName(b.id), score: 3, isMe: false },
     ]);
     expect(board.me).toMatchObject({ rank: 2, score: 5 });
-    // F-017: no ids, emails or full names anywhere in the leaderboard.
-    expect(lb.body).not.toMatch(/Sharma|Kumar|@example\.com/);
+    // F-017 / D-039: no ids, emails or real names (not even first names) anywhere in the leaderboard.
+    expect(lb.body).not.toMatch(/Priya|Aarav|Sharma|Kumar|@example\.com/);
     expect(lb.body).not.toContain(a.id);
     // D-014: viewing needs consent.
     const denied = await c3.c.get(`/v1/live-events/${L.eventKey}/leaderboard`);
@@ -265,7 +266,7 @@ describe('live window', () => {
     h.clock.set(closeAt + 5 * MIN);
     const lb = (await a.c.get(`/v1/live-events/${L.eventKey}/leaderboard`)).json();
     expect(lb).toMatchObject({ status: 'final', total: 3, me: { rank: 1, score: 4, percentile: 100 } });
-    expect(lb.entries.map((e: { name: string }) => e.name)).toEqual(['Kavya R.', 'Ishaan D.', 'Zoya K.']);
+    expect(lb.entries.map((e: { name: string }) => e.name)).toEqual([publicName(a.id), publicName(b.id), publicName(c.id)]);
     expect((await c.c.get(`/v1/attempts/${sc.attempt.id}/result`)).json().live).toMatchObject({ status: 'final', rank: 3, total: 3 });
     // After the event the paper can be taken again, unranked.
     const unranked = await c.c.post(`/v1/tests/${L.testKey}/attempts`);

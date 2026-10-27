@@ -16,7 +16,7 @@ export default async function LeaderboardPage() {
   await connection();
   return (
     <div className={shell.page}>
-      <PageHeader crumbs={[{ name: 'Leaderboards', path: '/leaderboard' }]} title="Leaderboards" lead="Weekly leagues and All-India mock ranks. First name and last initial only." structuredData={false} />
+      <PageHeader crumbs={[{ name: 'Leaderboards', path: '/leaderboard' }]} title="Leaderboards" lead="Weekly leagues and All-India mock ranks. Everyone appears under an auto-generated name, never a real name." structuredData={false} />
       <LeaderboardClient />
     </div>
   );

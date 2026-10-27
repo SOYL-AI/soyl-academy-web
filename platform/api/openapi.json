@@ -574,17 +574,8 @@
               }
             ]
           },
-          "schoolId": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "uuid",
-                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-              },
-              {
-                "type": "null"
-              }
-            ]
+          "publicName": {
+            "type": "string"
           },
           "locale": {
             "type": "string"
@@ -641,7 +632,7 @@
           "displayName",
           "board",
           "classLevel",
-          "schoolId",
+          "publicName",
           "locale",
           "consent",
           "methods",
@@ -671,24 +662,12 @@
             "minimum": 7,
             "maximum": 12
           },
-          "schoolId": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "uuid",
-                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
           "locale": {
             "$ref": "#/components/schemas/LocaleInput"
           }
         },
         "additionalProperties": false,
-        "description": "API-8: only these fields; role, status, xp etc. are rejected (400)."
+        "description": "API-8: only these fields; role, status, xp, school, city etc. are rejected (400; D-039: no school or city)."
       },
       "DeleteMeResponseInput": {
         "type": "object",
@@ -729,6 +708,326 @@
         "required": [
           "status",
           "redirectUrl"
+        ]
+      },
+      "ConsentViewInput": {
+        "type": "object",
+        "properties": {
+          "flow": {
+            "type": "string",
+            "enum": [
+              "builtin",
+              "external",
+              "none"
+            ],
+            "description": "builtin = age band + parent code here; external = POST /v1/me/consent/start; none = no consent system yet."
+          },
+          "status": {
+            "$ref": "#/components/schemas/ConsentStateInput"
+          },
+          "ageBand": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "adult",
+                  "minor"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "adult = 18 or older; minor = under 18 (self-declared)."
+          },
+          "method": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "self_declared",
+                  "parent_email_code"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "parentEmailHint": {
+            "description": "Masked parent email, e.g. p•••@gmail.com.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "codeExpiresAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "grantedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "revokedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "revokedBy": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "parent",
+                  "account_holder",
+                  "admin"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "policyVersion": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "flow",
+          "status",
+          "ageBand",
+          "method",
+          "parentEmailHint",
+          "codeExpiresAt",
+          "grantedAt",
+          "revokedAt",
+          "revokedBy",
+          "policyVersion"
+        ]
+      },
+      "ConsentAgeBandBodyInput": {
+        "type": "object",
+        "properties": {
+          "ageBand": {
+            "type": "string",
+            "enum": [
+              "adult",
+              "minor"
+            ]
+          },
+          "agree": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "ageBand"
+        ],
+        "additionalProperties": false
+      },
+      "ConsentParentBodyInput": {
+        "type": "object",
+        "properties": {
+          "parentEmail": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 254
+          }
+        },
+        "required": [
+          "parentEmail"
+        ],
+        "additionalProperties": false
+      },
+      "ConsentParentResponseInput": {
+        "type": "object",
+        "properties": {
+          "flow": {
+            "type": "string",
+            "enum": [
+              "builtin",
+              "external",
+              "none"
+            ],
+            "description": "builtin = age band + parent code here; external = POST /v1/me/consent/start; none = no consent system yet."
+          },
+          "status": {
+            "$ref": "#/components/schemas/ConsentStateInput"
+          },
+          "ageBand": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "adult",
+                  "minor"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "adult = 18 or older; minor = under 18 (self-declared)."
+          },
+          "method": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "self_declared",
+                  "parent_email_code"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "parentEmailHint": {
+            "description": "Masked parent email, e.g. p•••@gmail.com.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "codeExpiresAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "grantedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "revokedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "revokedBy": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "parent",
+                  "account_holder",
+                  "admin"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "policyVersion": {
+            "type": "string"
+          },
+          "resendAfterSeconds": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "flow",
+          "status",
+          "ageBand",
+          "method",
+          "parentEmailHint",
+          "codeExpiresAt",
+          "grantedAt",
+          "revokedAt",
+          "revokedBy",
+          "policyVersion",
+          "resendAfterSeconds"
+        ]
+      },
+      "ConsentVerifyBodyInput": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "additionalProperties": false
+      },
+      "ConsentParentWithdrawBodyInput": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 200
+          }
+        },
+        "required": [
+          "token"
+        ],
+        "additionalProperties": false
+      },
+      "ConsentParentWithdrawResponseInput": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ConsentStateInput"
+          },
+          "alreadyWithdrawn": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "status",
+          "alreadyWithdrawn"
         ]
       },
       "SchoolAssessmentInput": {
@@ -8099,6 +8398,17 @@
           "outcome"
         ]
       },
+      "PublicNameResponseInput": {
+        "type": "object",
+        "properties": {
+          "publicName": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "publicName"
+        ]
+      },
       "PracticeSelfAssessRequestInput": {
         "type": "object",
         "properties": {
@@ -8701,17 +9011,8 @@
               }
             ]
           },
-          "schoolId": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "uuid",
-                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-              },
-              {
-                "type": "null"
-              }
-            ]
+          "publicName": {
+            "type": "string"
           },
           "locale": {
             "type": "string"
@@ -8769,7 +9070,7 @@
           "displayName",
           "board",
           "classLevel",
-          "schoolId",
+          "publicName",
           "locale",
           "consent",
           "methods",
@@ -8800,24 +9101,12 @@
             "minimum": 7,
             "maximum": 12
           },
-          "schoolId": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "uuid",
-                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
           "locale": {
             "$ref": "#/components/schemas/Locale"
           }
         },
         "additionalProperties": false,
-        "description": "API-8: only these fields; role, status, xp etc. are rejected (400)."
+        "description": "API-8: only these fields; role, status, xp, school, city etc. are rejected (400; D-039: no school or city)."
       },
       "DeleteMeResponse": {
         "type": "object",
@@ -8859,6 +9148,329 @@
         "required": [
           "status",
           "redirectUrl"
+        ],
+        "additionalProperties": false
+      },
+      "ConsentView": {
+        "type": "object",
+        "properties": {
+          "flow": {
+            "type": "string",
+            "enum": [
+              "builtin",
+              "external",
+              "none"
+            ],
+            "description": "builtin = age band + parent code here; external = POST /v1/me/consent/start; none = no consent system yet."
+          },
+          "status": {
+            "$ref": "#/components/schemas/ConsentState"
+          },
+          "ageBand": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "adult",
+                  "minor"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "adult = 18 or older; minor = under 18 (self-declared)."
+          },
+          "method": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "self_declared",
+                  "parent_email_code"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "parentEmailHint": {
+            "description": "Masked parent email, e.g. p•••@gmail.com.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "codeExpiresAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "grantedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "revokedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "revokedBy": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "parent",
+                  "account_holder",
+                  "admin"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "policyVersion": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "flow",
+          "status",
+          "ageBand",
+          "method",
+          "parentEmailHint",
+          "codeExpiresAt",
+          "grantedAt",
+          "revokedAt",
+          "revokedBy",
+          "policyVersion"
+        ],
+        "additionalProperties": false
+      },
+      "ConsentAgeBandBody": {
+        "type": "object",
+        "properties": {
+          "ageBand": {
+            "type": "string",
+            "enum": [
+              "adult",
+              "minor"
+            ]
+          },
+          "agree": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "ageBand"
+        ],
+        "additionalProperties": false
+      },
+      "ConsentParentBody": {
+        "type": "object",
+        "properties": {
+          "parentEmail": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 254
+          }
+        },
+        "required": [
+          "parentEmail"
+        ],
+        "additionalProperties": false
+      },
+      "ConsentParentResponse": {
+        "type": "object",
+        "properties": {
+          "flow": {
+            "type": "string",
+            "enum": [
+              "builtin",
+              "external",
+              "none"
+            ],
+            "description": "builtin = age band + parent code here; external = POST /v1/me/consent/start; none = no consent system yet."
+          },
+          "status": {
+            "$ref": "#/components/schemas/ConsentState"
+          },
+          "ageBand": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "adult",
+                  "minor"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "adult = 18 or older; minor = under 18 (self-declared)."
+          },
+          "method": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "self_declared",
+                  "parent_email_code"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "parentEmailHint": {
+            "description": "Masked parent email, e.g. p•••@gmail.com.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "codeExpiresAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "grantedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "revokedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "revokedBy": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "parent",
+                  "account_holder",
+                  "admin"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "policyVersion": {
+            "type": "string"
+          },
+          "resendAfterSeconds": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "flow",
+          "status",
+          "ageBand",
+          "method",
+          "parentEmailHint",
+          "codeExpiresAt",
+          "grantedAt",
+          "revokedAt",
+          "revokedBy",
+          "policyVersion",
+          "resendAfterSeconds"
+        ],
+        "additionalProperties": false
+      },
+      "ConsentVerifyBody": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "additionalProperties": false
+      },
+      "ConsentParentWithdrawBody": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 200
+          }
+        },
+        "required": [
+          "token"
+        ],
+        "additionalProperties": false
+      },
+      "ConsentParentWithdrawResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/ConsentState"
+          },
+          "alreadyWithdrawn": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "status",
+          "alreadyWithdrawn"
         ],
         "additionalProperties": false
       },
@@ -16403,6 +17015,18 @@
         ],
         "additionalProperties": false
       },
+      "PublicNameResponse": {
+        "type": "object",
+        "properties": {
+          "publicName": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "publicName"
+        ],
+        "additionalProperties": false
+      },
       "PracticeSelfAssessRequest": {
         "type": "object",
         "properties": {
@@ -17556,6 +18180,46 @@
         }
       }
     },
+    "/v1/me/public-name": {
+      "post": {
+        "summary": "Pick a new random public name (the auto-generated name shown on leaderboards; real names never are)",
+        "tags": [
+          "me"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PublicNameResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/me/sessions": {
       "get": {
         "summary": "Your active sessions",
@@ -17718,6 +18382,286 @@
         "responses": {
           "204": {
             "description": "Default Response"
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/consent": {
+      "get": {
+        "summary": "Your consent state and which consent flow applies (D-039)",
+        "tags": [
+          "me"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsentView"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/consent/age-band": {
+      "post": {
+        "summary": "Declare your age group. 18 or older (with agree: true) turns consent-gated features on; under 18 needs a parent.",
+        "tags": [
+          "me"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConsentAgeBandBodyInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsentView"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/consent/parent": {
+      "post": {
+        "summary": "Under 18: email a one-time approval code to your parent or guardian (rate-limited per account, parent email and IP).",
+        "tags": [
+          "me"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConsentParentBodyInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsentParentResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/consent/verify": {
+      "post": {
+        "summary": "Enter the approval code your parent gave you. Single use; replays after approval return the granted state.",
+        "tags": [
+          "me"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConsentVerifyBodyInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsentView"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/consent/withdraw": {
+      "post": {
+        "summary": "Withdraw consent (or cancel a pending request). Gated features switch off and AI conversations and uploads are deleted.",
+        "tags": [
+          "me"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsentView"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/consent/parent/withdraw": {
+      "post": {
+        "summary": "The parent's link: withdraw approval, or decline a pending request. No sign-in; it can only switch features off. Idempotent.",
+        "tags": [
+          "consent"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConsentParentWithdrawBodyInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConsentParentWithdrawResponse"
+                }
+              }
+            }
           },
           "4XX": {
             "description": "Default Response",
@@ -19866,7 +20810,7 @@
     },
     "/v1/leagues/current": {
       "get": {
-        "summary": "Your weekly league: tier, division standings (first name + last initial), promotion and relegation zones. Needs consent (D-014).",
+        "summary": "Your weekly league: tier, division standings (auto-generated public names), promotion and relegation zones. Needs consent (D-014).",
         "tags": [
           "gamification"
         ],

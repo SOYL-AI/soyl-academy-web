@@ -2,12 +2,13 @@
  * Weekly leagues (backend-api M5; ARCHITECTURE §12, CONTEXT §11, D-014, F-017): IST weeks, class
  * cohorts, divisions of at most LEAGUES.size, week XP from xp_events, promotion and relegation zones,
  * lazy close + placement on the first visit of a week, the weekly formation job's logic, consent gate,
- * names (first name + last initial only) and account deletion.
+ * names (auto-generated public names only, D-039) and account deletion.
  */
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { and, eq } from 'drizzle-orm';
 import { consentStatus, leagueMemberships, leagues, profiles, users, xpEvents } from '@soyl/db';
 import { LEAGUE_TIERS, LEAGUES, leagueZones } from '@soyl/shared/config/gamification';
+import { publicName } from '@soyl/shared/config/public-names';
 import { createHarness, type Client, type Harness } from './helpers';
 import {
   closeEndedLeagues,
@@ -164,7 +165,7 @@ describe('GET /v1/leagues/current', () => {
     expect(await h.t.db.select().from(leagueMemberships).where(eq(leagueMemberships.userId, parent.id))).toEqual([]);
   });
 
-  it('places the student on the first visit; standings use this week XP, first name + last initial and zones', async () => {
+  it('places the student on the first visit; standings use this week XP, auto-generated public names (D-039) and zones', async () => {
     const a = await student('Priya Sharma', 'cisce', 9);
     const b = await student('Aarav Kumar', 'cisce', 9);
     const c = await student('Zoya', 'cisce', 9);
@@ -177,7 +178,7 @@ describe('GET /v1/leagues/current', () => {
     const first = await a.c.get('/v1/leagues/current');
     expect(first.statusCode).toBe(200);
     expect(first.headers['cache-control']).toBe('no-store');
-    expect(first.json()).toMatchObject({ status: 'active', scope: 'class', cohort: { key: 'cisce-9', board: 'cisce', classLevel: 9 }, standings: [{ rank: 1, name: 'Priya S.', xp: 30, isMe: true }] });
+    expect(first.json()).toMatchObject({ status: 'active', scope: 'class', cohort: { key: 'cisce-9', board: 'cisce', classLevel: 9 }, standings: [{ rank: 1, name: publicName(a.id), xp: 30, isMe: true }] });
     for (const s of [b, c, other]) expect((await s.c.get('/v1/leagues/current')).statusCode).toBe(200);
 
     const res = await c.c.get('/v1/leagues/current');
@@ -185,14 +186,14 @@ describe('GET /v1/leagues/current', () => {
     expect(body.league).toMatchObject({ tier: { level: 1, key: 'bronze' }, division: 1, size: 3, capacity: LEAGUES.size, promotionPlaces: 1, relegationPlaces: 0, isBottomTier: true, isTopTier: false, minXpToPromote: 1 });
     expect(body.week).toEqual({ start: WEEK, end: '2026-11-01', startsAt: '2026-10-25T18:30:00.000Z', endsAt: '2026-11-01T18:30:00.000Z' });
     expect(body.standings).toEqual([
-      { rank: 1, name: 'Aarav K.', xp: 50, zone: 'promotion', isMe: false },
-      { rank: 2, name: 'Priya S.', xp: 30, zone: 'safe', isMe: false },
-      { rank: 3, name: 'Zoya', xp: 0, zone: 'safe', isMe: true },
+      { rank: 1, name: publicName(b.id), xp: 50, zone: 'promotion', isMe: false },
+      { rank: 2, name: publicName(a.id), xp: 30, zone: 'safe', isMe: false },
+      { rank: 3, name: publicName(c.id), xp: 0, zone: 'safe', isMe: true },
     ]);
     expect(body.me).toEqual({ rank: 3, xp: 0, zone: 'safe' });
     expect(body.lastWeek).toBeNull();
-    // F-017 / D-014: no ids, emails or surnames; the other class plays elsewhere.
-    expect(res.body).not.toMatch(/Sharma|Kumar|@example\.com/);
+    // F-017 / D-014 / D-039: no ids, emails or real names (not even first names); the other class plays elsewhere.
+    expect(res.body).not.toMatch(/Priya|Aarav|Zoya|Sharma|Kumar|@example\.com/);
     for (const s of [a, b, c, other]) expect(res.body).not.toContain(s.id);
     expect(res.body).not.toContain('Dev');
     // Idempotent: a second visit does not move anyone.

@@ -14,6 +14,8 @@ import { DisabledEmailSender, DisabledSmsSender } from './auth/senders/disabled'
 import { MockSmsSender, Msg91SmsSender, type SmsSender } from './auth/senders/sms';
 import { MockConsentProvider } from './consent/mock';
 import { UnavailableConsentProvider } from './consent/unavailable';
+import { BuiltinConsentProvider } from './consent/builtin';
+import type { Database } from '@soyl/db';
 import type { ConsentProvider } from './consent/provider';
 import type { Providers } from './services';
 
@@ -28,6 +30,8 @@ export interface ProviderOptions {
   /** Managed-identity token provider (tests inject a fake). Default: one per process. */
   tokens?: TokenProvider;
   fetch?: typeof fetch;
+  /** CONSENT_PROVIDER=builtin keeps its records in the platform database (D-039). */
+  db?: Database;
 }
 
 export function createProviders(config: Config, opts: ProviderOptions = {}): Providers {
@@ -67,6 +71,10 @@ export function createProviders(config: Config, opts: ProviderOptions = {}): Pro
   if (config.consent.provider === 'unavailable') {
     // OA-08 still open: fail-closed provider, allowed in production (D-031).
     consent = new UnavailableConsentProvider();
+  } else if (config.consent.provider === 'builtin') {
+    // D-039 / ADR-022: the interim built-in provider (not a mock; allowed in production).
+    if (!opts.db) throw new Error('CONSENT_PROVIDER=builtin needs the database (createProviders(config, { db }))');
+    consent = new BuiltinConsentProvider(opts.db);
   } else {
     refuseMock('CONSENT_PROVIDER=mock');
     consent = new MockConsentProvider(config.consent.mockDefault, config.isLocal);

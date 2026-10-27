@@ -38,6 +38,9 @@ describe('AUTH-15 purge guard', () => {
   it('is off with CONSENT_PROVIDER=unavailable (nobody can reach granted), unless forced on', () => {
     expect(loadConfig({ ...PROD, CONSENT_PROVIDER: 'unavailable' }).unconsentedPurge).toBe(false);
     expect(loadConfig({ ...PROD, CONSENT_PROVIDER: 'unavailable', UNCONSENTED_PURGE: 'on' }).unconsentedPurge).toBe(true);
+    // D-039: with the built-in provider consent is optional for learning, so auto keeps the purge off too.
+    expect(loadConfig({ ...PROD, CONSENT_PROVIDER: 'builtin' }).unconsentedPurge).toBe(false);
+    expect(loadConfig({ ...PROD, CONSENT_PROVIDER: 'builtin', UNCONSENTED_PURGE: 'on' }).unconsentedPurge).toBe(true);
     expect(loadConfig({ ...PROD, UNCONSENTED_PURGE: 'off' }).unconsentedPurge).toBe(false);
     expect(names(false)).not.toContain(JOB_NAMES.accountPurgeUnconsented);
     expect(names(false)).toContain(JOB_NAMES.accountPurge);

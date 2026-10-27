@@ -16,7 +16,7 @@
  *   GET  /v1/live-events                          live mocks (+ your registration when signed in)
  *   GET  /v1/live-events/:id                      one event: timeline, registration, your status, rank availability
  *   POST /v1/live-events/:id/register             register (idempotent)
- *   GET  /v1/live-events/:id/leaderboard          consent-gated (D-014), first name + last initial (F-017)
+ *   GET  /v1/live-events/:id/leaderboard          consent-gated (D-014), auto-generated public names (D-039)
  *
  * Test attempts are declared under the `test_attempts` consent feature but not gated (D-014; see
  * CONSENT.gatedFeatures). Attempt-keyed limits (`attempt.autosave`, `attempt.submit`) are checked in

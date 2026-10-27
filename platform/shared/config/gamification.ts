@@ -96,7 +96,7 @@ export const BADGES: readonly BadgeDefinition[] = [
 
 /* ------------------------------------------------------------------------------------------------
  * Weekly leagues (ARCHITECTURE §12, CONTEXT §11; backend-api M5). Consent-gated (D-014): only students
- * whose consent is `granted` play, and standings show first name + last initial only (F-017, AC-18).
+ * whose consent is `granted` play, and standings show the auto-generated public name only (D-039, F-017, AC-18).
  *
  * A league week is an IST week (Monday 00:00 – Sunday 23:59:59 IST). Students are grouped by cohort
  * (class leagues: board + class, e.g. `cbse-10`), then by tier, into divisions of at most `size`.

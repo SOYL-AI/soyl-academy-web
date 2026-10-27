@@ -43,7 +43,7 @@ export async function main(env: Record<string, string | undefined> = process.env
   // INFRA-2 / INFRA-3: DATABASE_AUTH=entra and REDIS_AUTH=entra use managed-identity tokens.
   const { db, close: closeDb } = createDb(databaseUrl, { max: config.databasePoolMax, password: pgPasswordFromEnv({ DATABASE_AUTH: config.databaseAuth }) });
   const kv = createKv(config, { onRefreshError: (err) => console.error(`redis token refresh failed: ${(err as Error).message}`) });
-  const providers = createProviders(config);
+  const providers = createProviders(config, { db });
   // AI gateway (ADR-013): mock/local stand-ins locally; Azure services by config; 'disabled' fails closed.
   const aiConfig = loadAiConfig(config, env);
   const aiRuntime = await createAiRuntime(config, aiConfig, { env });

@@ -192,6 +192,12 @@ export const RATE_LIMITS = {
   'progress.write.user': { key: 'user', limit: 120, windowSeconds: 60 },
   /** AUTH-11: TOTP enrol/confirm/verify/disable calls per user (wrong codes also lock, see MFA.failures). */
   'mfa.user': { key: 'user', limit: 20, windowSeconds: 15 * 60 },
+  /** Built-in consent (D-039): age band, parent email, code entry, withdraw per user (sends have their own limits). */
+  'consent.write.user': { key: 'user', limit: 30, windowSeconds: 3600 },
+  /** Built-in consent: the parent's withdraw link (no session) per IP. */
+  'consent.parent.ip': { key: 'ip', limit: 20, windowSeconds: 3600 },
+  /** Regenerating the public leaderboard name (D-039). */
+  'public-name.user': { key: 'user', limit: 10, windowSeconds: 24 * 3600 },
 } as const satisfies Record<string, RateLimitBucket>;
 
 export type RateLimitBucketName = keyof typeof RATE_LIMITS;
@@ -272,6 +278,64 @@ export const CONSENT = {
   cacheTtlSeconds: 15 * 60,
   /** AUTH-15: accounts that never reach `granted` are deleted after this many days (owner to confirm). */
   unconsentedAccountTtlDays: 30,
+} as const;
+
+/**
+ * CONSENT_PROVIDER values (API env):
+ * - `builtin`     interim built-in provider (D-039, ADR-022): age-band self-declaration; 18+ self-consents,
+ *                 under-18 needs a parent's one-time approval code sent by email. Real, not a mock: allowed in prod.
+ * - `unavailable` no consent system at all (D-031): everyone is `pending`, every gated feature is off.
+ * - `mock`        tests/local only (GEN-3: refused in prod); states are set by the test.
+ * The owner's external system (OA-08) becomes a fourth value behind the same ConsentProvider interface.
+ */
+export const CONSENT_PROVIDERS = ['mock', 'unavailable', 'builtin'] as const;
+export type ConsentProviderName = (typeof CONSENT_PROVIDERS)[number];
+
+/** D-039: the only age information collected — a self-declared band, never a date of birth. */
+export const AGE_BANDS = ['adult', 'minor'] as const;
+export type AgeBand = (typeof AGE_BANDS)[number];
+
+/** How a built-in consent was given. */
+export const CONSENT_METHODS = ['self_declared', 'parent_email_code'] as const;
+export type ConsentMethod = (typeof CONSENT_METHODS)[number];
+
+/** Who withdrew a consent. */
+export const CONSENT_REVOKERS = ['parent', 'account_holder', 'admin'] as const;
+export type ConsentRevoker = (typeof CONSENT_REVOKERS)[number];
+
+/** The built-in provider (D-039, ADR-022). Tunable without code changes. */
+export const BUILTIN_CONSENT = {
+  /**
+   * Version of the notice the parent / adult agrees to (privacy notice + what the gated features do).
+   * Recorded on every consent. Bump it when the notice changes materially.
+   */
+  policyVersion: '2026-10-28',
+  /** The parent's approval code: digits from crypto.randomInt. */
+  codeLength: 6,
+  /** Parents do not always read email at once; the code stays valid for two days. */
+  codeTtlSeconds: 48 * 3600,
+  /** Wrong entries per code before it is dead (a new code must be sent). */
+  maxAttemptsPerCode: 5,
+  /** Wrong codes per account per rolling day across all codes (then entry locks until the window frees up). */
+  verifyFailures: { limit: 10, windowSeconds: 24 * 3600 },
+  /** Code sends: per student account, per parent email address, per IP. */
+  send: {
+    perUser: [
+      { limit: 1, windowSeconds: 60 },
+      { limit: 3, windowSeconds: 3600 },
+      { limit: 5, windowSeconds: 24 * 3600 },
+    ] as readonly WindowLimit[],
+    perParentEmail: [
+      { limit: 3, windowSeconds: 3600 },
+      { limit: 5, windowSeconds: 24 * 3600 },
+    ] as readonly WindowLimit[],
+    perIp: [
+      { limit: 10, windowSeconds: 3600 },
+      { limit: 30, windowSeconds: 24 * 3600 },
+    ] as readonly WindowLimit[],
+  },
+  /** UI resend cooldown after a send (the server limits above apply regardless). */
+  resendAfterSeconds: 60,
 } as const;
 
 /* ------------------------------------------------------------------------------------------------
