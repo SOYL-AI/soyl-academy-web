@@ -108,3 +108,15 @@ live mock. All of it is local-only (`APP_ENV=local`) and lives in the e2e folder
   (D-018/F-013 chose direct SAS uploads).
 - **A nonce policy on `/plans`:** would make the page dynamic; the static page with three Razorpay host allowances is
   simpler and keeps `/plans` cacheable.
+
+## Amendment (2026-10-28, S6-L03, M6 security review)
+
+§3 and §4 are superseded for `/plans` and `/tests`: the static policy (`script-src 'self' 'unsafe-inline'`) put
+inline-script execution next to the payment flow and the test pages, so any HTML-injection bug there would run
+script. `NONCE_ROUTE_PREFIXES` is now `/me`, `/tests` (every `/tests/**` page), `/plans`, `/ask`, `/leaderboard`,
+`/admin`; `/plans`, `/tests` and the series pages call `connection()` and render per request (the series page drops
+its ISR `revalidate`; the catalog data it reads is still cached). On `/plans` the nonced bundle injects
+checkout.js, which `'strict-dynamic'` trusts; `https://checkout.razorpay.com` stays in `script-src` as the CSP2
+fallback, and the frame/connect/img Razorpay origins are unchanged. The static policy now covers `/learn/**` only
+(F-010, ADR-011). Cost: `/plans` and `/tests` are no longer CDN-cacheable HTML (small client shells; the data was
+already fetched in the browser). The "nonce policy on /plans" alternative below is therefore the chosen option.
