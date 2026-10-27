@@ -1,0 +1,63 @@
+id: icse-10-literature-in-english-board
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-literature-in-english
+paper_type: board
+academic_year: "2026-27"
+duration_min: 120
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.5
+  application+analysis+evaluation: 0.5
+scope: syllabus
+sections:
+  - id: A
+    title: Section A - Compulsory (16 marks)
+    instructions: >-
+      Sixteen multiple-choice items of 1 mark across the play, the stories and the poems (meaning of a line, character, sequence of
+      events, figures of speech); write the correct answers only.
+    items:
+      - {type: mcq, count: 16, marks_each: 1}
+  - id: B
+    title: Section B - Drama, Julius Caesar (one question, 16 marks)
+    instructions: >-
+      Answer one of the two questions. Each is set on a short reference to a scene, with parts of 3, 3, 3, 3 and 4 marks (explain,
+      describe, give your opinion).
+    chapters: [icse-10-literature-in-english-ch01, icse-10-literature-in-english-ch02, icse-10-literature-in-english-ch03, icse-10-literature-in-english-ch04]
+    items:
+      - {type: source-based, count: 2, marks_each: 16, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Prose, short stories (one question, 16 marks)
+    instructions: Answer one of the two questions, each on a moment in a prescribed story, with parts of 3, 3, 3, 3 and 4 marks.
+    chapters: [icse-10-literature-in-english-ch05]
+    items:
+      - {type: source-based, count: 2, marks_each: 16, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Poetry (one question, 16 marks)
+    instructions: Answer one of the two questions, each on lines or a moment from a prescribed poem, with parts of 3, 3, 3, 3 and 4 marks.
+    chapters: [icse-10-literature-in-english-ch06]
+    items:
+      - {type: source-based, count: 2, marks_each: 16, internal_choice: {attempt: 1, of: 2}}
+  - id: E
+    title: One more question from any section (16 marks)
+    instructions: >-
+      Answer one further question (drama, prose or poetry). On the board paper this is the unanswered question of Section B, C or D;
+      SOYL offers three further questions here instead.
+    items:
+      - {type: source-based, count: 3, marks_each: 16, internal_choice: {attempt: 1, of: 3}}
+source_status: verified
+source: icse-2027-specimen-012-literature-in-english
+notes: >-
+  ICSE 2027 English (01) Paper 2 Literature in English, specimen paper code 012: one paper of two hours (plus 15 minutes reading time),
+  80 marks; internal assessment 20 marks is not modelled. Section A: 16 x 1 MCQ, compulsory. Sections B (Drama), C (Prose) and D
+  (Poetry): two 16-mark questions each (3 + 3 + 3 + 3 + 4), every one set on a short reference to the text; the candidate answers
+  one question from each of B, C and D and one more from any of them (16 + 4 x 16 = 80; the specimen's "40 Marks" section headings
+  are misprints). CISCE prints short quotations from the prescribed texts; SOYL items never reproduce the texts and instead refer
+  to a scene, moment or line by its place (passage_origin soyl-commentary; CONTEXT section 8).
+  mark_shares 0.5 / 0.5: the October 2026 circular (cisce-circular-specimen-papers-2027) gives higher-order questions an approximate
+  weightage of 50% in 2027. No unit weightage: CISCE fixes the choice, not the marks per genre.
+  Deviation: the blueprint schema has no choice across sections, so the fourth answer comes from a separate Section E of three
+  further questions (one per genre is likely, not guaranteed); attempted marks, the per-genre minimum and the 16-mark question form
+  match the board paper, but the paper offers 9 questions instead of 6. Follow-up for the series engine: a cross-section choice
+  ("answer 4 of the 6, at least one from each of B, C, D").
