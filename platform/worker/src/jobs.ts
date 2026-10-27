@@ -11,6 +11,8 @@
  *                              attempts whose deadline + grace has passed (the API also does this lazily).
  * - live.finalize              every 5 minutes: after a live mock's window, auto-submit what is left, write
  *                              final ranks to live_registrations and publish the results.
+ * - leagues.weekly             hourly (first run Monday 00:05 IST): close last week's leagues (final ranks,
+ *                              promotion/relegation) and form this week's for returning students (M5).
  *
  * Cron expressions are UTC (GEN-6): 20:30 UTC = 02:00 IST, the quietest hour.
  */
@@ -20,6 +22,8 @@ import { ACCOUNT, CONSENT } from '@soyl/shared/config/security';
 import { autoSubmitExpired } from '@soyl/api/engine/finalize';
 import { finalizeLiveEvents, type LiveFinalizeResult } from '@soyl/api/engine/live-finalize';
 import { TEST_ENGINE } from '@soyl/shared/config/tests';
+import { LEAGUES } from '@soyl/shared/config/gamification';
+import { runLeagueWeek, type FormResult } from '@soyl/api/leagues/leagues';
 import { defineJob, type JobContext, type JobDefinition, type JobQueueOptions } from './registry';
 import { BILLING_JOB_NAMES, billingJobs, type BillingJobSettings } from './billing-jobs';
 import { AI_JOB_NAMES, aiJobs } from './ai-jobs';
@@ -160,6 +164,7 @@ export const JOB_NAMES = {
   sweepSessions: 'auth.sweep-sessions',
   attemptsAutoSubmit: 'attempts.auto-submit',
   liveFinalize: 'live.finalize',
+  leaguesWeekly: 'leagues.weekly',
   billingReconcile: BILLING_JOB_NAMES.reconcile,
   billingExpire: BILLING_JOB_NAMES.expire,
   // AI gateway (ai-jobs.ts)
@@ -186,6 +191,10 @@ export async function autoSubmitAttempts(ctx: JobContext): Promise<{ submitted: 
 
 export async function finalizeLive(ctx: JobContext): Promise<LiveFinalizeResult> {
   return finalizeLiveEvents({ db: ctx.db, now: ctx.now });
+}
+
+export async function runLeagues(ctx: JobContext): Promise<{ closed: number } & FormResult> {
+  return runLeagueWeek(ctx.db, ctx.now.getTime());
 }
 
 export interface JobSettings {
@@ -242,6 +251,13 @@ export function allJobs(settings: JobSettings = {}): JobDefinition[] {
       cron: '*/5 * * * *',
       options: ENGINE,
       handler: (ctx) => finalizeLive(ctx),
+    }),
+    defineJob<unknown, { closed: number } & FormResult>({
+      name: JOB_NAMES.leaguesWeekly,
+      description: 'Close ended weekly leagues and form the current IST week (M5)',
+      cron: LEAGUES.cron,
+      options: { ...ENGINE, expireInSeconds: 30 * 60, deleteAfterSeconds: 7 * 86_400 },
+      handler: (ctx) => runLeagues(ctx),
     }),
     ...billingJobs(settings.billing ?? { razorpay: null }),
     ...aiJobs(settings.ai),
