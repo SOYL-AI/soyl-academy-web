@@ -49,7 +49,9 @@ options
   --series                assemble: the whole test series, not only chapter tests
   --freeze                assemble --series: write the series papers to content/authored/series/<subject>.json (ADR-019;
                           later runs and publish --authored use the frozen papers instead of re-assembling)
-  --source db|files       assemble/coverage: published content in Postgres (default) or files
+  --refreeze <series,…>   with --freeze: re-assemble only these series of the frozen file (e.g. mocks,may,mocks_basic,
+                          may_basic) and keep every other frozen paper exactly as it is
+  --source db|files      assemble/coverage: published content in Postgres (default) or files
   --strict                assemble: exit 2 when any paper produced a generation request
   --unit <id> --to <n>    rollback target
   --concurrency <n>       parallel model calls (default 4)
@@ -81,6 +83,7 @@ export async function main(argv: string[], env: Record<string, string | undefine
       'allow-mock': { type: 'boolean', default: false },
       series: { type: 'boolean', default: false },
       freeze: { type: 'boolean', default: false },
+      refreeze: { type: 'string' },
       source: { type: 'string' },
       strict: { type: 'boolean', default: false },
       unit: { type: 'string' },
@@ -164,7 +167,7 @@ export async function main(argv: string[], env: Record<string, string | undefine
       case 'originality':
         return (await originalityCommand(p, scope, { authored: values.authored, verbose: values.verbose })).exitCode;
       case 'assemble':
-        return (await assembleCommand(p, scope, { series: values.series, source, allowMock: values['allow-mock'], strict: values.strict, verbose: values.verbose, freeze: values.freeze })).exitCode;
+        return (await assembleCommand(p, scope, { series: values.series, source, allowMock: values['allow-mock'], strict: values.strict, verbose: values.verbose, freeze: values.freeze, ...(values.refreeze ? { refreeze: values.refreeze.split(',').map((x) => x.trim()).filter(Boolean) } : {}) })).exitCode;
       case 'tts':
         return (await ttsCommand(p, scope, { authored: values.authored, force: values.force })).exitCode;
       case 'publish':

@@ -409,3 +409,25 @@ Q('u501', mk.long({
   scheme: [['Theorem stated', 1], ['OP = 25 cm', 1], ['Area 84 cm²', 1], ['PS = 24 cm', 1], ['Perimeter 62 cm', 1]],
   d: 2, c: 'understanding', t: [2, 3], time: 480,
 }), (C) => { const op = hyp(7, 24); C.assert(near(op, 25) && near(leg(op, 7), 24), 'OP 25'); C.assert(near(0.5 * 7 * 24, 84) && near(2 * 7 + 2 * 24, 62), 'area, perimeter'); C.model([25, 84, 24, 62]); });
+Q('u304', mk.short({
+  marks: 3,
+  stem: r`A circle has centre $O$ and radius $5$ cm. Three lines $l$, $m$ and $n$ are at distances $3$ cm, $5$ cm and $7$ cm from $O$. (a) For each line, say whether it cuts the circle in two points, touches it, or does not meet it, and name it as a secant or a tangent where it meets the circle. (b) For the secant, find the length of the chord it cuts off.`,
+  model: r`(a) $l$: $3 < 5$, so it cuts the circle in two points — a **secant**. $m$: $5 = 5$, so it touches the circle at one point — a **tangent**. $n$: $7 > 5$, so it does not meet the circle.
+
+(b) The perpendicular from $O$ to $l$ bisects the chord. Half the chord $= \sqrt{5^2 - 3^2} = \sqrt{16} = 4$ cm, so the chord is $8$ cm long.`,
+  sol: r`Compare each distance with the radius; for the chord use the right triangle formed by the radius, the perpendicular and half the chord.`,
+  scheme: [['Secant, tangent, no meeting point', 2], ['Chord 8 cm', 1]],
+  d: 1, c: 'understanding', t: [1], time: 180,
+}), (C) => { C.assert(meets(5, 3) === 2 && meets(5, 5) === 1 && meets(5, 7) === 0, 'positions'); C.assert(near(2 * leg(5, 3), 8), 'chord 8'); C.model([4, 8, 'secant', 'tangent']); });
+Q('u305', mk.short({
+  marks: 3,
+  stem: r`The tangent at a point $A$ of a circle with centre $O$ meets a line through $O$ at $B$. If $OA = 5$ cm and $\angle ABO = 30^\circ$, find $\angle OAB$, $OB$ and $AB$. (Use $\sqrt3 \approx 1.732$.)`,
+  model: r`The tangent at $A$ is perpendicular to the radius $OA$, so $\angle OAB = 90^\circ$.
+
+In right triangle $OAB$: $\sin 30^\circ = \dfrac{OA}{OB}$, so $OB = \dfrac{5}{1/2} = 10$ cm.
+
+$\tan 30^\circ = \dfrac{OA}{AB}$, so $AB = 5\sqrt3 \approx 5 \times 1.732 = 8.66$ cm.`,
+  sol: r`Radius $\perp$ tangent gives the right angle at $A$; then one right triangle with a $30^\circ$ angle.`,
+  scheme: [['∠OAB = 90°', 1], ['OB = 10 cm', 1], ['AB = 5√3 ≈ 8.66 cm', 1]],
+  d: 2, c: 'understanding', t: [2], time: 180,
+}), (C) => { const ob = 5 / Math.sin(deg(30)), ab = 5 / Math.tan(deg(30)); C.assert(near(ob, 10) && near(leg(ob, 5), ab) && Math.round(5 * 1.732 * 100) / 100 === 8.66, 'OB, AB'); C.model([90, 10, 8.66]); });

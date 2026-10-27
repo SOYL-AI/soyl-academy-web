@@ -6535,15 +6535,70 @@
         "generated_at": "2026-10-26",
         "author": "claude-opus-5-5 (subject-producer)"
       }
+    },
+    {
+      "id": "q_cbse10math_ch14_072",
+      "unit": "cbse-10-mathematics-ch14",
+      "language": "en",
+      "type": "long",
+      "stem_md": "Cards numbered 1 to 50 are shuffled, and one card is picked at random. Find the probability that the number on the card is\n\n(a) a multiple of 5\n\n(b) a perfect square\n\n(c) a prime number less than 20\n\n(d) greater than 45\n\n(e) an even number.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "There are $50$ equally likely outcomes.\n\n(a) Multiples of $5$: $5, 10, \\ldots, 50$, that is $10$ numbers. $P = \\dfrac{10}{50} = \\dfrac15$.\n\n(b) Perfect squares: $1, 4, 9, 16, 25, 36, 49$, that is $7$ numbers. $P = \\dfrac{7}{50}$.\n\n(c) Primes less than $20$: $2, 3, 5, 7, 11, 13, 17, 19$, that is $8$ numbers. $P = \\dfrac{8}{50} = \\dfrac{4}{25}$.\n\n(d) Greater than $45$: $46, 47, 48, 49, 50$, that is $5$ numbers. $P = \\dfrac{5}{50} = \\dfrac{1}{10}$.\n\n(e) Even numbers: $25$ of them. $P = \\dfrac{25}{50} = \\dfrac12$."
+      },
+      "solution_md": "List or count the favourable numbers for each event, then divide by $50$.",
+      "marking_scheme": [
+        {
+          "step": "1/5",
+          "marks": 1
+        },
+        {
+          "step": "7/50",
+          "marks": 1
+        },
+        {
+          "step": "4/25",
+          "marks": 1
+        },
+        {
+          "step": "1/10",
+          "marks": 1
+        },
+        {
+          "step": "1/2",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "cbse-10-mathematics-ch14-t01",
+        "cbse-10-mathematics-ch14-t02"
+      ],
+      "expected_time_sec": 420,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
     }
   ],
   "build": {
     "run_id": null,
     "checks": {
       "syllabus": "topics t01–t02 only (classical probability, 0 ≤ P ≤ 1, complements; coins, dice, playing cards, numbered discs and bags); no removed topics in this chapter. Every probability re-solved by enumerating the sample space (space.mjs): 2–3 coins, 36 ordered pairs of dice, the 52-card deck, discs and bags.",
-      "katex": "1168 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "1187 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "0 deck plots + 0 notes/question plots: 0 marked points all on their curves and matching their labels; 0 zeros located numerically and all marked; 0 intersection points lie on both lines",
-      "re_solve": "117/117 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
+      "re_solve": "119/119 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "geometry": "0 geometry figures, 0 exact checks (points on circles, right angles, equal lengths, collinearity, labelled angles and lengths to scale), 0 failures",
       "narration": "33 slides, max 60 words, mean 46; no symbols, LaTeX or letter abbreviations",
       "gate": "npm test -w @soyl/content-templates and content lint (lintExemplar) run clean on this chapter"

@@ -316,3 +316,21 @@ $\dfrac{3 + 2}{4} = \dfrac{5}{4}$.`,
   scheme: [['Standard values substituted', 1], ['(a) = 2', 1], ['(b) = 5/4', 1]],
   d: 1, c: 'understanding', t: [2], time: 210,
 }), (C) => { const a = 2 * sin(45) ** 2 + 3 * tan(30) ** 2 - cos(0) ** 2 + 4 * sin(30) * cos(60); const b = (tan(60) ** 2 + 1 / cos(45) ** 2) / (1 / sin(30) ** 2); C.assert(near(a, 2) && near(b, 1.25), `a ${a}, b ${b}`); C.model([2, r`\dfrac{5}{4}`]); });
+Q('u501', mk.long({
+  stem: r`$A$ is an acute angle with $\sin A = \dfrac35$.
+
+(a) Find $\cos A$ and $\tan A$.
+(b) Write the values of $\operatorname{cosec} A$, $\sec A$ and $\cot A$.
+(c) Verify that $\sin^2 A + \cos^2 A = 1$ with your values.
+(d) Evaluate $5\sin A + 4\cos A$.`,
+  model: r`(a) Draw a right triangle with the side opposite $A$ equal to $3k$ and hypotenuse $5k$. The adjacent side is $\sqrt{25k^2 - 9k^2} = 4k$. So $\cos A = \dfrac45$ and $\tan A = \dfrac34$.
+
+(b) $\operatorname{cosec} A = \dfrac53$, $\sec A = \dfrac54$, $\cot A = \dfrac43$.
+
+(c) $\sin^2 A + \cos^2 A = \dfrac{9}{25} + \dfrac{16}{25} = \dfrac{25}{25} = 1$ ✓.
+
+(d) $5 \times \dfrac35 + 4 \times \dfrac45 = 3 + \dfrac{16}{5} = 6.2$.`,
+  sol: r`Sides $3k$, $4k$, $5k$; the other three ratios are reciprocals.`,
+  scheme: [['cos A = 4/5', 1], ['tan A = 3/4', 1], ['Reciprocal ratios', 1], ['Identity verified', 1], ['6.2', 1]],
+  d: 2, c: 'understanding', t: [1, 3], time: 420,
+}), (C) => { const A = (Math.asin(0.6) * 180) / Math.PI; C.assert(near(cos(A), 0.8) && near(tan(A), 0.75) && near(1 / sin(A), 5 / 3) && near(1 / cos(A), 1.25) && near(1 / tan(A), 4 / 3), 'ratios'); C.assert(near(5 * sin(A) + 4 * cos(A), 6.2), '6.2'); C.model([r`\dfrac45`, r`\dfrac34`, r`\dfrac53`, r`\dfrac54`, r`\dfrac43`, 6.2]); });

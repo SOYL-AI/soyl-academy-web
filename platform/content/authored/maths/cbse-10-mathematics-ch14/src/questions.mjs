@@ -318,3 +318,26 @@ Q('u301', mk.short({
   scheme: [['P(blue) = 1/5', 1], ['P(not yellow) = 1/2', 1], ['P(green) = 0, impossible event', 1]],
   d: 1, c: 'understanding', t: [1, 2], time: 180,
 }), (C) => { const b = bag({ red: 6, blue: 4, yellow: 10 }); const pb = P(b, (x) => x === 'blue'), pny = P(b, (x) => x !== 'yellow'), pg = P(b, (x) => x === 'green'); C.assert(pb.num === 1 && pb.den === 5 && pny.num === 1 && pny.den === 2 && pg.fav === 0, 'probabilities'); C.model([r`\dfrac15`, r`\dfrac12`, 'impossible']); });
+Q('u501', mk.long({
+  stem: r`Cards numbered 1 to 50 are shuffled, and one card is picked at random. Find the probability that the number on the card is
+
+(a) a multiple of 5
+(b) a perfect square
+(c) a prime number less than 20
+(d) greater than 45
+(e) an even number.`,
+  model: r`There are $50$ equally likely outcomes.
+
+(a) Multiples of $5$: $5, 10, \ldots, 50$, that is $10$ numbers. $P = \dfrac{10}{50} = \dfrac15$.
+
+(b) Perfect squares: $1, 4, 9, 16, 25, 36, 49$, that is $7$ numbers. $P = \dfrac{7}{50}$.
+
+(c) Primes less than $20$: $2, 3, 5, 7, 11, 13, 17, 19$, that is $8$ numbers. $P = \dfrac{8}{50} = \dfrac{4}{25}$.
+
+(d) Greater than $45$: $46, 47, 48, 49, 50$, that is $5$ numbers. $P = \dfrac{5}{50} = \dfrac{1}{10}$.
+
+(e) Even numbers: $25$ of them. $P = \dfrac{25}{50} = \dfrac12$.`,
+  sol: r`List or count the favourable numbers for each event, then divide by $50$.`,
+  scheme: [['1/5', 1], ['7/50', 1], ['4/25', 1], ['1/10', 1], ['1/2', 1]],
+  d: 1, c: 'understanding', t: [1, 2], time: 420,
+}), (C) => { const s = range(1, 50); const p = [P(s, (n) => n % 5 === 0), P(s, isSquare), P(s, (n) => isPrime(n) && n < 20), P(s, (n) => n > 45), P(s, (n) => n % 2 === 0)]; C.assert(p.map((x) => `${x.num}/${x.den}`).join() === '1/5,7/50,4/25,1/10,1/2', p.map((x) => `${x.num}/${x.den}`).join()); C.model([r`\dfrac15`, r`\dfrac{7}{50}`, r`\dfrac{4}{25}`, r`\dfrac{1}{10}`, r`\dfrac12`]); });

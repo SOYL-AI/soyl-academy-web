@@ -25,7 +25,7 @@ import { subjectsInScope, type Scope } from '../catalog';
 import { table, writeJson } from '../io';
 import type { Pipeline } from '../pipeline';
 import { loadAuthoredUnits, loadOutUnit, outUnits } from '../sources';
-import { assemblePaper, competencyMarksByBand, competencyMarksOf, type BankItem, type GenerationRequest } from '../assemble/engine';
+import { assemblePaper, competencyMarksOf, competencyRangeByBand, type BankItem, type GenerationRequest } from '../assemble/engine';
 import { planSubjectTests, type PlannedPaper } from '../assemble/series';
 import { nearDuplicates } from '../originality/ngrams';
 import { ORIGINALITY } from '../../config/pipeline';
@@ -161,11 +161,11 @@ function competencyNote(test: TestDefinition, planned: PlannedPaper, bank: Bank)
   const targets = planned.spec.competencyTargets;
   if (!targets?.length) return null;
   const byId = new Map(bank.items.map((q) => [q.id, q]));
-  const got = competencyMarksByBand(test, (id) => byId.get(id), targets);
+  const { avg, lo, hi } = competencyRangeByBand(test, (id) => byId.get(id), targets);
   const tol = planned.spec.competencyTolerance ?? 0;
-  if (got.every((m, i) => Math.abs(m - targets[i]!.marks) <= tol + 1e-9)) return null;
+  if (targets.every((t, i) => lo[i]! >= t.marks - tol - 1e-9 && hi[i]! <= t.marks + tol + 1e-9)) return null;
   const fmt = (x: number) => String(Math.round(x * 10) / 10);
-  return `${test.id}: frozen paper is off its competency targets (±${fmt(tol)}): ${targets.map((t, i) => `${t.band} ${fmt(got[i]!)}/${fmt(t.marks)}`).join(', ')}; re-freeze to rebalance`;
+  return `${test.id}: frozen paper is off its competency targets (±${fmt(tol)}, whichever choices a student makes): ${targets.map((t, i) => `${t.band} ${fmt(avg[i]!)}${hi[i]! - lo[i]! > 1e-9 ? ` (${fmt(lo[i]!)}–${fmt(hi[i]!)})` : ''}/${fmt(t.marks)}`).join(', ')}; re-freeze to rebalance`;
 }
 
 /** The series papers of an assembled subject as a frozen series file (chapter tests excluded). */
@@ -178,6 +178,17 @@ export function toFrozenSeries(a: AssembledSubject, academicYear: string, assemb
       .filter(({ planned }) => planned.seriesTitle)
       .map(({ test, planned }) => ({ series: { key: seriesKey(test, planned), title: planned.seriesTitle!, track: planned.track, position: planned.position }, test })),
   };
+}
+
+/**
+ * The frozen papers to keep when re-freezing some series (--refreeze): every frozen paper whose planned
+ * series is not listed. Null when nothing is kept (no file, or every series is re-assembled).
+ */
+export function keepFrozen(frozen: FrozenSeriesFile | null, plan: ReturnType<typeof planSubjectTests>, refreeze: readonly string[]): FrozenSeriesFile | null {
+  if (!frozen) return null;
+  const seriesOf = new Map(plan.papers.map((x) => [x.spec.id, x.series]));
+  const tests = frozen.tests.filter((t) => !refreeze.includes(seriesOf.get(t.test.id) ?? ''));
+  return tests.length ? { ...frozen, tests } : null;
 }
 
 export interface TestToIngest {
@@ -247,6 +258,11 @@ export interface AssembleOptions {
   verbose?: boolean;
   /** With --series: write the assembled series papers to content/authored/series/<subject>.json (ADR-019). */
   freeze?: boolean;
+  /**
+   * With --freeze: re-assemble only the papers of these series keys (e.g. "mocks", "may_basic") and keep
+   * every other paper of the existing frozen file unchanged. Without it, --freeze re-assembles all.
+   */
+  refreeze?: string[];
 }
 
 export async function assembleCommand(p: Pipeline, scope: Scope, opts: AssembleOptions = {}): Promise<{ results: AssembledSubject[]; exitCode: number }> {
@@ -263,6 +279,10 @@ export async function assembleCommand(p: Pipeline, scope: Scope, opts: AssembleO
     p.log('--freeze needs --series');
     return { results: [], exitCode: 1 };
   }
+  if (opts.refreeze?.length && !opts.freeze) {
+    p.log('--refreeze needs --freeze');
+    return { results: [], exitCode: 1 };
+  }
   const source = opts.source ?? 'db';
   const results: AssembledSubject[] = [];
   let failed = false;
@@ -270,7 +290,7 @@ export async function assembleCommand(p: Pipeline, scope: Scope, opts: AssembleO
     const year = p.catalog.syllabi.get(subject.id)!.academic_year;
     const bank = source === 'db' ? await bankFromDb(p, subject, year) : bankFromFiles(p, subject, { allowMock: opts.allowMock });
     const plan = planSubjectTests(p.catalog, subject, { series: !!opts.series, academicYear: year, chapters: scope.chapter ? [scope.chapter] : undefined, existingChapterTests: bank.chapterTests });
-    const frozen = opts.series && !opts.freeze ? loadFrozenSeries(p.paths, subject.id) : null;
+    const frozen = opts.series && !opts.freeze ? loadFrozenSeries(p.paths, subject.id) : opts.refreeze?.length ? keepFrozen(loadFrozenSeries(p.paths, subject.id), plan, opts.refreeze) : null;
     const a = assembleSubject(plan, bank, frozen);
     const dir = path.join(p.paths.outDir, 'assemble', subject.id);
     for (const { test } of a.tests) writeJson(path.join(dir, 'tests', `${test.id}.json`), test);
@@ -295,9 +315,9 @@ export async function assembleCommand(p: Pipeline, scope: Scope, opts: AssembleO
       const seriesIds = new Set(plan.papers.filter((x) => x.seriesTitle).map((x) => x.spec.id));
       const blocking = a.requests.filter((x) => seriesIds.has(x.paper_id));
       if (blocking.length || !a.tests.some(({ planned }) => planned.seriesTitle)) {
-        p.log(`  freeze refused for ${subject.id}: ${blocking.length} series paper(s) cannot be assembled yet; a frozen series must be complete`);
+        p.log(`  freeze refused for ${subject.id}: ${blocking.length} generation request(s) on series papers (missing questions or a competency shortfall); a frozen series must be complete and on target`);
         failed = true;
-      } else p.log(`  frozen: ${path.relative(process.cwd(), writeFrozenSeries(p.paths, toFrozenSeries(a, year, `assemble --board ${subject.board} --class ${subject.class} --subject ${subject.id} --series --source ${bank.source} --freeze`)))}`);
+      } else p.log(`  frozen: ${path.relative(process.cwd(), writeFrozenSeries(p.paths, toFrozenSeries(a, year, `assemble --board ${subject.board} --class ${subject.class} --subject ${subject.id} --series --source ${bank.source} --freeze${opts.refreeze?.length ? ` --refreeze ${opts.refreeze.join(',')}` : ''}`)))}`);
     }
     results.push(a);
   }

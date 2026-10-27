@@ -380,3 +380,68 @@ caseQ('uc1', {
     ]),
   ],
 }, (C) => { const S = [-4, -3], F = [8, 6]; C.child('a').key('b'); C.child('b').val(dist(S, F)); const M = mid(S, F), T = divide(S, F, 1, 2); C.child('c').assert(same(M, [2, 1.5]) && near(dist(S, M) * 10, 75), 'M, SM'); C.child('c').model([1.5, 75]); C.child('cii').assert(same(T, [0, 0]) && near(dist(T, F) * 10, 100), 'T, TF'); C.child('cii').model(['(0, 0)', 100]); C.model([15, 75, 100]); });
+Q('u303', mk.short({
+  marks: 3,
+  stem: r`The point $P(k, 4)$ is at the same distance from $A(2, 1)$ as from $B(6, 5)$. Find $k$, and check your answer by finding $PA$ and $PB$.`,
+  model: r`$PA^2 = PB^2$: $(k - 2)^2 + (4 - 1)^2 = (k - 6)^2 + (4 - 5)^2$.
+
+$k^2 - 4k + 4 + 9 = k^2 - 12k + 36 + 1 \Rightarrow 8k = 24 \Rightarrow k = 3$.
+
+Check: $PA = \sqrt{(3 - 2)^2 + 3^2} = \sqrt{10}$ and $PB = \sqrt{(3 - 6)^2 + (-1)^2} = \sqrt{10}$ ✓.`,
+  sol: r`Equal distances: equate the squared distances so no square roots are needed; the $k^2$ terms cancel.`,
+  scheme: [['PA² = PB² set up', 1], ['k = 3', 1], ['Both distances √10', 1]],
+  d: 2, c: 'understanding', t: [1], time: 210,
+}), (C) => { const ks = search((k) => near(dist([k, 4], [2, 1]), dist([k, 4], [6, 5]))); C.assert(ks.length === 1 && ks[0] === 3 && near(dist([3, 4], [2, 1]), Math.sqrt(10)), 'k = 3'); C.model([3, 24, r`\sqrt{10}`]); });
+Q('u503', mk.long({
+  stem: r`$A(3, -2)$, $B(8, -2)$ and $C(3, 10)$ are the vertices of a triangle.
+
+(a) Find the lengths $AB$, $AC$ and $BC$.
+(b) Show that the triangle is right-angled, and name the vertex of the right angle.
+(c) Find the midpoint $M$ of the hypotenuse $BC$.
+(d) Show that $M$ is at the same distance from all three vertices.`,
+  model: r`(a) $AB = \sqrt{(8 - 3)^2 + 0^2} = 5$, $AC = \sqrt{0^2 + (10 + 2)^2} = 12$, $BC = \sqrt{(3 - 8)^2 + (10 + 2)^2} = \sqrt{25 + 144} = 13$.
+
+(b) $AB^2 + AC^2 = 25 + 144 = 169 = BC^2$, so by the converse of Pythagoras' theorem the triangle is right-angled at $A$.
+
+(c) $M = \left(\dfrac{8 + 3}{2}, \dfrac{-2 + 10}{2}\right) = (5.5, 4)$.
+
+(d) $MB = MC = \dfrac{13}{2} = 6.5$, and $MA = \sqrt{(5.5 - 3)^2 + (4 + 2)^2} = \sqrt{6.25 + 36} = \sqrt{42.25} = 6.5$. So $MA = MB = MC = 6.5$ units.`,
+  sol: r`Distance formula three times; the longest side is the hypotenuse; midpoint formula for $M$.`,
+  scheme: [['AB = 5, AC = 12', 1], ['BC = 13', 1], ['Right angle at A', 1], ['M = (5.5, 4)', 1], ['MA = MB = MC = 6.5', 1]],
+  d: 2, c: 'understanding', t: [1, 2], time: 480,
+}), (C) => { const A = [3, -2], B = [8, -2], Cc = [3, 10]; C.assert(near(dist(A, B), 5) && near(dist(A, Cc), 12) && near(dist(B, Cc), 13), 'sides'); const M = mid(B, Cc); C.assert(same(M, [5.5, 4]) && near(dist(M, A), 6.5) && near(dist(M, B), 6.5), 'M'); C.model([5, 12, 13, 169, '(5.5, 4)', 6.5]); });
+Q('u504', mk.long({
+  stem: r`$A(-4, -1)$ and $B(6, 4)$ are two points.
+
+(a) Find the coordinates of the point $P$ that divides $AB$ internally in the ratio $3 : 2$.
+(b) Find the ratio in which the $x$-axis divides $AB$, and the point where it cuts $AB$.
+(c) Find the length of $AB$.`,
+  model: r`(a) $P = \left(\dfrac{3 \times 6 + 2 \times (-4)}{3 + 2}, \dfrac{3 \times 4 + 2 \times (-1)}{3 + 2}\right) = \left(\dfrac{10}{5}, \dfrac{10}{5}\right) = (2, 2)$.
+
+(b) Let the $x$-axis divide $AB$ in the ratio $k : 1$. The point is $\left(\dfrac{6k - 4}{k + 1}, \dfrac{4k - 1}{k + 1}\right)$, and on the $x$-axis its $y$-coordinate is $0$: $4k - 1 = 0$, so $k = \dfrac14$. The ratio is $1 : 4$.
+
+$x = \dfrac{6 \times \frac14 - 4}{\frac14 + 1} = \dfrac{-2.5}{1.25} = -2$. The $x$-axis cuts $AB$ at $(-2, 0)$.
+
+(c) $AB = \sqrt{(6 + 4)^2 + (4 + 1)^2} = \sqrt{100 + 25} = \sqrt{125} = 5\sqrt5 \approx 11.18$ units.`,
+  sol: r`Section formula; on the $x$-axis the $y$-coordinate is $0$; distance formula.`,
+  scheme: [['Section formula with 3 : 2', 1], ['P = (2, 2)', 1], ['Ratio 1 : 4', 1], ['Point (−2, 0)', 1], ['AB = 5√5', 1]],
+  d: 2, c: 'understanding', t: [1, 2], time: 480,
+}), (C) => { const A = [-4, -1], B = [6, 4]; C.assert(same(divide(A, B, 3, 2), [2, 2]), 'P'); const t = -A[1] / (B[1] - A[1]); C.assert(near(t / (1 - t), 1 / 4) && same(divide(A, B, 1, 4), [-2, 0]), '1 : 4 at (−2, 0)'); C.assert(near(dist(A, B), 5 * Math.sqrt(5)), 'AB'); C.model(['(2, 2)', '(-2, 0)', 11.18]); });
+Q('u505', mk.long({
+  stem: r`Consider the points $A(4, 2)$, $B(7, 5)$ and $C(9, 7)$.
+
+(a) Find $AB$, $BC$ and $AC$, leaving your answers in surd form.
+(b) Use your answers to show that $A$, $B$ and $C$ are collinear.
+(c) Find the ratio $AB : BC$.
+(d) Use the section formula to check that the point dividing $AC$ in this ratio is $B$.`,
+  model: r`(a) $AB = \sqrt{3^2 + 3^2} = 3\sqrt2$, $BC = \sqrt{2^2 + 2^2} = 2\sqrt2$, $AC = \sqrt{5^2 + 5^2} = 5\sqrt2$.
+
+(b) $AB + BC = 3\sqrt2 + 2\sqrt2 = 5\sqrt2 = AC$, so $B$ lies on the segment $AC$: the points are collinear.
+
+(c) $AB : BC = 3\sqrt2 : 2\sqrt2 = 3 : 2$.
+
+(d) $\left(\dfrac{3 \times 9 + 2 \times 4}{5}, \dfrac{3 \times 7 + 2 \times 2}{5}\right) = \left(\dfrac{35}{5}, \dfrac{25}{5}\right) = (7, 5)$, which is $B$ ✓.`,
+  sol: r`Collinear when the two shorter distances add up to the third; then $B$ divides $AC$ in the ratio $AB : BC$.`,
+  scheme: [['AB = 3√2, BC = 2√2', 1], ['AC = 5√2', 1], ['AB + BC = AC, collinear', 1], ['Ratio 3 : 2', 1], ['Section formula gives (7, 5)', 1]],
+  d: 2, c: 'understanding', t: [1, 2], time: 480,
+}), (C) => { const A = [4, 2], B = [7, 5], Cc = [9, 7]; C.assert(near(dist(A, B), 3 * Math.SQRT2) && near(dist(B, Cc), 2 * Math.SQRT2) && near(dist(A, Cc), 5 * Math.SQRT2) && collinear(A, B, Cc), 'collinear'); C.assert(same(divide(A, Cc, 3, 2), B), 'B divides AC 3 : 2'); C.model(['3\\sqrt2', '2\\sqrt2', '5\\sqrt2', '3 : 2', '(7, 5)']); });

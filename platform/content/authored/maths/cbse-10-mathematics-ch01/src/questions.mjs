@@ -797,3 +797,38 @@ Q('u501', mk.long({
   scheme: [['3150 = 2 × 3² × 5² × 7', 1], ['1260 = 2² × 3² × 5 × 7', 1], ['HCF = 630', 1], ['LCM = 6300', 1], ['Both products 3969000', 1]],
   d: 2, c: 'understanding', t: [1, 2], time: 540,
 }), (C) => { const H = gcd(3150, 1260), L = lcm(3150, 1260); C.assert(H === 630 && L === 6300 && H * L === 3150 * 1260, 'HCF·LCM = product'); C.assert(2 * 9 * 25 * 7 === 3150 && 4 * 9 * 5 * 7 === 1260, 'factorisations'); C.model([630, 6300, 3969000]); });
+Q('u502', mk.long({
+  stem: r`(a) Prove that $\sqrt{2}$ is irrational.
+
+(b) Using (a), show that $5 + 3\sqrt{2}$ is irrational.`,
+  model: r`(a) Assume, to the contrary, that $\sqrt2$ is rational: $\sqrt2 = \dfrac ab$, where $a$ and $b$ are co-prime integers and $b \ne 0$.
+
+Squaring, $2b^2 = a^2$. So $2$ divides $a^2$; since $2$ is prime, $2$ divides $a$. Write $a = 2c$.
+
+Then $2b^2 = 4c^2$, so $b^2 = 2c^2$. Hence $2$ divides $b^2$, and so $2$ divides $b$.
+
+Now $2$ divides both $a$ and $b$, which contradicts their being co-prime. So $\sqrt2$ is irrational.
+
+(b) Suppose $5 + 3\sqrt2 = r$, where $r$ is rational. Then $\sqrt2 = \dfrac{r - 5}{3}$.
+
+Since $r$ is rational, $\dfrac{r - 5}{3}$ is rational, so $\sqrt2$ would be rational. This contradicts (a). Hence $5 + 3\sqrt2$ is irrational.`,
+  sol: r`(a) the standard contradiction with a prime dividing a square; (b) isolate $\sqrt2$: a rational expression cannot equal an irrational number.`,
+  scheme: [['Assumption √2 = a/b, co-prime', 1], ['2 | a, a = 2c', 1], ['2 | b, contradiction', 1], ['√2 = (r − 5)/3', 1], ['Contradiction with (a), conclusion', 1]],
+  d: 2, c: 'understanding', t: [3], time: 480,
+}), null, 'standard proof (syllabus LO): steps checked by hand');
+Q('u503', mk.long({
+  stem: r`(a) Write $72$, $120$ and $168$ as products of primes.
+(b) Find the HCF of the three numbers.
+(c) Find the LCM of the three numbers.
+(d) Find the HCF and the LCM of $72$ and $120$ only, and check that their product equals $72 \times 120$.`,
+  model: r`(a) $72 = 2^3 \times 3^2$, $\quad 120 = 2^3 \times 3 \times 5$, $\quad 168 = 2^3 \times 3 \times 7$.
+
+(b) HCF $= 2^3 \times 3 = 24$ (smallest power of each common prime).
+
+(c) LCM $= 2^3 \times 3^2 \times 5 \times 7 = 2520$ (greatest power of every prime that appears).
+
+(d) HCF$(72, 120) = 2^3 \times 3 = 24$ and LCM$(72, 120) = 2^3 \times 3^2 \times 5 = 360$. Then $24 \times 360 = 8640$ and $72 \times 120 = 8640$ ✓.`,
+  sol: r`Read HCF and LCM off the prime powers; the product rule is checked for two numbers only.`,
+  scheme: [['Three factorisations', 2], ['HCF = 24', 1], ['LCM = 2520', 1], ['24 × 360 = 8640 = 72 × 120', 1]],
+  d: 2, c: 'understanding', t: [1, 2], time: 480,
+}), (C) => { C.assert(hcfN(72, 120, 168) === 24 && lcmN(72, 120, 168) === 2520, 'three numbers'); C.assert(gcd(72, 120) === 24 && lcm(72, 120) === 360 && 24 * 360 === 72 * 120, 'two numbers'); C.model([24, 2520, 360, 8640]); });

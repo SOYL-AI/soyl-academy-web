@@ -14,8 +14,8 @@ Syllabus topics: t01 area of a sector and length of an arc; t02 area of a segmen
 | Visuals | 23 of 33 slides; never more than 1 slide without a visual. 14 SVG figures in decks, 16 more in notes and questions, plus tables, a strategy flow and one geometry figure |
 | Notes | 6 sections + exam tips |
 | Flashcards | 30 |
-| Questions | 71 (144 marks): mcq 18 · AR 6 · TF 5 · fill 5 · numerical 9 · short-2 9 · short-3 8 · long 6 · case 5 |
-| Difficulty | d1 12 · d2 31 · d3 23 · d4 4 · d5 1; application or higher 32% of items, 36% of marks (after the 2026-10-27 competency audit) |
+| Questions | 71 (144 marks): mcq 18 · AR 6 · TF 5 · fill 5 · numerical 9 · short-2 9 · short-3 8 · long 7 · case 5 |
+| Difficulty | d1 13 · d2 31 · d3 23 · d4 4 · d5 1; application or higher 32% of items, 35% of marks (after the 2026-10-27 competency audit) (after the 2026-10-27 competency audit) |
 | Tests | `t_cbse10math_ch11_short` (20 marks) and `_long` (40 marks) on the default blueprints, disjoint |
 
 ## Figures
@@ -38,4 +38,4 @@ Rewritten in `src/questions.mjs` (then rebuilt) because `originality --authored`
 
 Board papers need recall/understanding written items (CBSE design: Standard 54/24/22, Basic 75/15/10 per cent of marks), and the bank had tagged almost every routine written answer as application or higher. Every short, long, numerical and case item was re-read against what it actually asks. A routine, textbook-standard procedure on given data (find the HCF by prime factorisation, solve a given pair, find a term, compute a mean, a sector area, a single right triangle) is now **understanding**; word problems that need modelling, multi-step or non-routine reasoning, error analysis and justification keep application / analysis / evaluation. 17 item tag(s) and 11 case-part tag(s) changed (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed.
 
-Added (appended, so earlier ids are unchanged; each has its re-solve check): `q_cbse10math_ch11_071` short-3.
+Added (appended, so earlier ids are unchanged; each has its re-solve check): `q_cbse10math_ch11_071` short-3, `q_cbse10math_ch11_072` long.

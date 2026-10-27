@@ -5777,15 +5777,70 @@
         "generated_at": "2026-10-26",
         "author": "claude-opus-5-5 (subject-producer)"
       }
+    },
+    {
+      "id": "q_cbse10math_ch12_073",
+      "unit": "cbse-10-mathematics-ch12",
+      "language": "en",
+      "type": "long",
+      "stem_md": "A solid is made of a cylinder of radius $3.5$ cm and height $10$ cm with a cone of the same radius and height $12$ cm on top. Use $\\pi = \\dfrac{22}{7}$.\n\n(a) Find the volume of the cylinder.\n\n(b) Find the volume of the cone.\n\n(c) Find the volume of the solid.\n\n(d) Find the slant height of the cone.\n\n(e) Find the curved surface area of the cone.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\pi r^2 = \\dfrac{22}{7} \\times 3.5 \\times 3.5 = 38.5$ cm².\n\n(a) Cylinder: $\\pi r^2 h = 38.5 \\times 10 = 385$ cm³.\n\n(b) Cone: $\\dfrac13 \\pi r^2 h = \\dfrac13 \\times 38.5 \\times 12 = 154$ cm³.\n\n(c) Solid: $385 + 154 = 539$ cm³.\n\n(d) $l = \\sqrt{r^2 + h^2} = \\sqrt{12.25 + 144} = \\sqrt{156.25} = 12.5$ cm.\n\n(e) $\\pi r l = \\dfrac{22}{7} \\times 3.5 \\times 12.5 = 137.5$ cm²."
+      },
+      "solution_md": "Volumes of the parts add; the slant height comes from Pythagoras.",
+      "marking_scheme": [
+        {
+          "step": "Cylinder 385 cm³",
+          "marks": 1
+        },
+        {
+          "step": "Cone 154 cm³",
+          "marks": 1
+        },
+        {
+          "step": "Total 539 cm³",
+          "marks": 1
+        },
+        {
+          "step": "l = 12.5 cm",
+          "marks": 1
+        },
+        {
+          "step": "CSA 137.5 cm²",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "cbse-10-mathematics-ch12-t01",
+        "cbse-10-mathematics-ch12-t02"
+      ],
+      "expected_time_sec": 420,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
     }
   ],
   "build": {
     "run_id": null,
     "checks": {
       "syllabus": "topics t01–t02 only (surface area and volume of combinations of two of cube, cuboid, sphere, hemisphere, cylinder, cone); removed topics absent: no conversion of solids (no melting, recasting, digging or flow problems) and no frustum anywhere, including distractors.",
-      "katex": "980 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "990 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "0 deck plots + 0 notes/question plots: 0 marked points all on their curves and matching their labels; 0 zeros located numerically and all marked; 0 intersection points lie on both lines",
-      "re_solve": "136/136 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
+      "re_solve": "138/138 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "geometry": "0 geometry figures, 0 exact checks (points on circles, right angles, equal lengths, collinearity, labelled angles and lengths to scale), 0 failures",
       "narration": "31 slides, max 65 words, mean 48; no symbols, LaTeX or letter abbreviations",
       "gate": "npm test -w @soyl/content-templates and content lint (lintExemplar) run clean on this chapter"

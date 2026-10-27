@@ -321,3 +321,24 @@ Q('u301', mk.short({
   scheme: [['Arc 44 cm', 1], ['Area 462 cm²', 1], ['Perimeter 86 cm', 1]],
   d: 1, c: 'understanding', t: [1], time: 180,
 }), (C) => { const a = arc(21, 120, P7), s = sec(21, 120, P7); C.assert(near(a, 44) && near(s, 462) && near(a + 42, 86), 'arc, area, perimeter'); C.model([44, 462, 86]); });
+Q('u501', mk.long({
+  stem: r`A circle has radius $10.5$ cm. Use $\pi = \dfrac{22}{7}$.
+
+(a) Find the area of the circle.
+(b) Find the area of a sector of angle $60^\circ$.
+(c) Find the length of the arc of this sector.
+(d) Find the perimeter of the sector.
+(e) Find the area of the corresponding major sector.`,
+  model: r`(a) Area $= \dfrac{22}{7} \times 10.5 \times 10.5 = 346.5$ cm².
+
+(b) The sector is $\dfrac{60}{360} = \dfrac16$ of the circle: area $= \dfrac{346.5}{6} = 57.75$ cm².
+
+(c) Circumference $= 2 \times \dfrac{22}{7} \times 10.5 = 66$ cm, so the arc $= \dfrac{66}{6} = 11$ cm.
+
+(d) Perimeter $= 11 + 10.5 + 10.5 = 32$ cm.
+
+(e) Major sector $= 346.5 - 57.75 = 288.75$ cm².`,
+  sol: r`A $60^\circ$ sector is one-sixth of the circle; the major sector is the rest of the circle.`,
+  scheme: [['Circle 346.5 cm²', 1], ['Sector 57.75 cm²', 1], ['Arc 11 cm', 1], ['Perimeter 32 cm', 1], ['Major sector 288.75 cm²', 1]],
+  d: 1, c: 'understanding', t: [1], time: 420,
+}), (C) => { const A = sec(10.5, 360, P7), s = sec(10.5, 60, P7), a = arc(10.5, 60, P7); C.assert(near(A, 346.5) && near(s, 57.75) && near(a, 11) && near(a + 21, 32) && near(A - s, 288.75), 'values'); C.model([346.5, 57.75, 11, 32, 288.75]); });

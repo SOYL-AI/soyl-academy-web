@@ -7374,15 +7374,70 @@
         "generated_at": "2026-10-26",
         "author": "claude-opus-5-5 (subject-producer)"
       }
+    },
+    {
+      "id": "q_cbse10math_ch08_073",
+      "unit": "cbse-10-mathematics-ch08",
+      "language": "en",
+      "type": "long",
+      "stem_md": "$A$ is an acute angle with $\\sin A = \\dfrac35$.\n\n(a) Find $\\cos A$ and $\\tan A$.\n\n(b) Write the values of $\\operatorname{cosec} A$, $\\sec A$ and $\\cot A$.\n\n(c) Verify that $\\sin^2 A + \\cos^2 A = 1$ with your values.\n\n(d) Evaluate $5\\sin A + 4\\cos A$.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Draw a right triangle with the side opposite $A$ equal to $3k$ and hypotenuse $5k$. The adjacent side is $\\sqrt{25k^2 - 9k^2} = 4k$. So $\\cos A = \\dfrac45$ and $\\tan A = \\dfrac34$.\n\n(b) $\\operatorname{cosec} A = \\dfrac53$, $\\sec A = \\dfrac54$, $\\cot A = \\dfrac43$.\n\n(c) $\\sin^2 A + \\cos^2 A = \\dfrac{9}{25} + \\dfrac{16}{25} = \\dfrac{25}{25} = 1$ ✓.\n\n(d) $5 \\times \\dfrac35 + 4 \\times \\dfrac45 = 3 + \\dfrac{16}{5} = 6.2$."
+      },
+      "solution_md": "Sides $3k$, $4k$, $5k$; the other three ratios are reciprocals.",
+      "marking_scheme": [
+        {
+          "step": "cos A = 4/5",
+          "marks": 1
+        },
+        {
+          "step": "tan A = 3/4",
+          "marks": 1
+        },
+        {
+          "step": "Reciprocal ratios",
+          "marks": 1
+        },
+        {
+          "step": "Identity verified",
+          "marks": 1
+        },
+        {
+          "step": "6.2",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "cbse-10-mathematics-ch08-t01",
+        "cbse-10-mathematics-ch08-t03"
+      ],
+      "expected_time_sec": 420,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
     }
   ],
   "build": {
     "run_id": null,
     "checks": {
       "syllabus": "topics t01–t03 only; removed topic (trigonometric ratios of complementary angles) absent everywhere, including distractors — no item relates the ratios of A and 90° − A, and the decks and notes say so",
-      "katex": "1543 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "1566 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "0 deck plots + 0 notes/question plots: 0 marked points all on their curves and matching their labels; 0 zeros located numerically and all marked; 0 intersection points lie on both lines",
-      "re_solve": "152/152 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
+      "re_solve": "155/155 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "narration": "36 slides, max 65 words, mean 44; no symbols, LaTeX or letter abbreviations",
       "gate": "npm test -w @soyl/content-templates and content lint (lintExemplar) run clean on this chapter"
     }

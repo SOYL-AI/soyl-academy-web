@@ -412,3 +412,27 @@ Median $= l + \dfrac{\frac n2 - cf}{f} \times h = 30 + \dfrac{30 - 20}{20} \time
   scheme: [['Cumulative frequencies', 1], ['Median class 30–40 and its values', 1], ['Median 35 years', 1]],
   d: 2, c: 'understanding', t: [3], time: 240,
 }), (C) => { C.assert(gU301.n === 60 && near(med(gU301), 35), 'median 35'); C.model([20, 30, 35]); });
+const gU501 = G(0, 10, [4, 6, 12, 8, 10]);
+Q('u501', mk.long({
+  stem: r`The scores (out of $50$) of $40$ students in a class quiz in Kochi are grouped below.
+
+${mdRow(gU501, 'Score', 'Number of students')}
+
+(a) Find the mean score by the direct method.
+(b) Find the mean again by the assumed-mean method with $a = 25$, and check that it agrees.
+(c) Find the modal class and the mode.`,
+  model: r`(a) ${mdWork(gU501, 'direct')}
+
+Mean $= \dfrac{\sum f_ix_i}{\sum f_i} = \dfrac{1140}{40} = 28.5$.
+
+(b) ${mdWork(gU501, 'assumed', 25)}
+
+Mean $= a + \dfrac{\sum f_id_i}{\sum f_i} = 25 + \dfrac{140}{40} = 25 + 3.5 = 28.5$ ✓.
+
+(c) The modal class is $20$–$30$ (highest frequency, $12$): $l = 20$, $f_1 = 12$, $f_0 = 6$, $f_2 = 8$, $h = 10$.
+
+Mode $= l + \dfrac{f_1 - f_0}{2f_1 - f_0 - f_2} \times h = 20 + \dfrac{6}{24 - 14} \times 10 = 20 + 6 = 26$.`,
+  sol: r`Class marks $5, 15, 25, 35, 45$; the mode uses the frequencies of the modal class and its two neighbours.`,
+  scheme: [['Σfx = 1140', 1], ['Mean 28.5', 1], ['Assumed mean gives 28.5', 1], ['Modal class 20–30', 1], ['Mode 26', 1]],
+  d: 2, c: 'understanding', t: [1, 2], time: 540,
+}), (C) => { C.assert(gU501.n === 40 && near(sumFx(gU501), 1140) && near(sumFx(gU501) / 40, 28.5) && near(25 + sumFd(gU501, 25) / 40, 28.5), 'mean 28.5'); C.assert(near(mode(gU501), 26), 'mode 26'); C.model([1140, 28.5, 140, 26]); });

@@ -6621,15 +6621,70 @@
         "generated_at": "2026-10-26",
         "author": "claude-opus-5-5 (subject-producer)"
       }
+    },
+    {
+      "id": "q_cbse10math_ch13_072",
+      "unit": "cbse-10-mathematics-ch13",
+      "language": "en",
+      "type": "long",
+      "stem_md": "The scores (out of $50$) of $40$ students in a class quiz in Kochi are grouped below.\n\n| Score | 0–10 | 10–20 | 20–30 | 30–40 | 40–50 |\n|---|---|---|---|---|---|\n| Number of students | 4 | 6 | 12 | 8 | 10 |\n\n(a) Find the mean score by the direct method.\n\n(b) Find the mean again by the assumed-mean method with $a = 25$, and check that it agrees.\n\n(c) Find the modal class and the mode.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) | Class | $f_i$ | $x_i$ | $f_ix_i$ |\n|---|---|---|---|\n| 0–10 | 4 | 5 | 20 |\n| 10–20 | 6 | 15 | 90 |\n| 20–30 | 12 | 25 | 300 |\n| 30–40 | 8 | 35 | 280 |\n| 40–50 | 10 | 45 | 450 |\n| Total | 40 |  | 1140 |\n\nMean $= \\dfrac{\\sum f_ix_i}{\\sum f_i} = \\dfrac{1140}{40} = 28.5$.\n\n(b) | Class | $f_i$ | $x_i$ | $d_i = x_i - 25$ | $f_id_i$ |\n|---|---|---|---|---|\n| 0–10 | 4 | 5 | −20 | −80 |\n| 10–20 | 6 | 15 | −10 | −60 |\n| 20–30 | 12 | 25 | 0 | 0 |\n| 30–40 | 8 | 35 | 10 | 80 |\n| 40–50 | 10 | 45 | 20 | 200 |\n| Total | 40 |  |  | 140 |\n\nMean $= a + \\dfrac{\\sum f_id_i}{\\sum f_i} = 25 + \\dfrac{140}{40} = 25 + 3.5 = 28.5$ ✓.\n\n(c) The modal class is $20$–$30$ (highest frequency, $12$): $l = 20$, $f_1 = 12$, $f_0 = 6$, $f_2 = 8$, $h = 10$.\n\nMode $= l + \\dfrac{f_1 - f_0}{2f_1 - f_0 - f_2} \\times h = 20 + \\dfrac{6}{24 - 14} \\times 10 = 20 + 6 = 26$."
+      },
+      "solution_md": "Class marks $5, 15, 25, 35, 45$; the mode uses the frequencies of the modal class and its two neighbours.",
+      "marking_scheme": [
+        {
+          "step": "Σfx = 1140",
+          "marks": 1
+        },
+        {
+          "step": "Mean 28.5",
+          "marks": 1
+        },
+        {
+          "step": "Assumed mean gives 28.5",
+          "marks": 1
+        },
+        {
+          "step": "Modal class 20–30",
+          "marks": 1
+        },
+        {
+          "step": "Mode 26",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "cbse-10-mathematics-ch13-t01",
+        "cbse-10-mathematics-ch13-t02"
+      ],
+      "expected_time_sec": 540,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
     }
   ],
   "build": {
     "run_id": null,
     "checks": {
       "syllabus": "topics t01–t03 only (mean by three methods; mode by the modal-class formula, bimodal cases avoided; median and missing frequencies); removed topic absent: no ogive is drawn or asked anywhere (cumulative frequency appears only in tables). Statistics re-solved from the data arrays: three mean methods agree for every distribution, median by formula and by cumulative walk, mode with a unique modal class.",
-      "katex": "1381 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "1403 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "3 deck plots + 3 notes/question plots: 0 marked points all on their curves and matching their labels; 0 zeros located numerically and all marked; 0 intersection points lie on both lines",
-      "re_solve": "131/131 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
+      "re_solve": "134/134 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "geometry": "0 geometry figures, 0 exact checks (points on circles, right angles, equal lengths, collinearity, labelled angles and lengths to scale), 0 failures",
       "narration": "31 slides, max 60 words, mean 47; no symbols, LaTeX or letter abbreviations",
       "gate": "npm test -w @soyl/content-templates and content lint (lintExemplar) run clean on this chapter"

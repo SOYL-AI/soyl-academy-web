@@ -28,7 +28,8 @@
  *     slot and unit (so blueprint layout and unit weightage are untouched) move the attempted marks per
  *     band (recall+understanding / application / analysis+evaluation) to the targets. Marks are
  *     counted per part for case items (`competency_marks`) and averaged over the alternatives of an
- *     internal choice, so the share holds whichever alternative a student attempts.
+ *     internal choice; the swaps also make the alternatives of a choice test the same bands, so the
+ *     shares hold whichever alternative a student attempts.
  * Shortages never fail silently: they come back as GenerationRequest records (what to generate,
  * for which chapters) and no TestDefinition is produced for that paper. A paper that is complete but
  * misses a competency target by more than the tolerance is built and returned with `shortfalls`
@@ -101,6 +102,59 @@ export function bandFractions(q: Pick<BankItem, 'marks' | 'competency' | 'compet
     if (i >= 0 && q.marks > 0) out[i]! += (m ?? 0) / q.marks;
   }
   return out;
+}
+
+/** One item of a paper for the band arithmetic: its marks, band fractions and internal-choice group. */
+interface BandEntry {
+  marks: number;
+  f: readonly number[];
+  group: string | null;
+  /** Alternatives the student attempts in the group (1 of 2 on CBSE papers). */
+  attempt: number;
+}
+
+/**
+ * Attempted marks per band: `avg` shares each choice group's attempted marks equally between its
+ * alternatives; `lo` / `hi` are the least and the most a band can carry over every way a student can
+ * choose (per band, the `attempt` alternatives with the fewest / most marks in it).
+ */
+function bandRange(entries: readonly BandEntry[], bands: number): { avg: number[]; lo: number[]; hi: number[] } {
+  const avg = Array.from({ length: bands }, () => 0);
+  const lo = [...avg];
+  const hi = [...avg];
+  const groups = new Map<string, BandEntry[]>();
+  for (const e of entries) {
+    if (e.group) groups.set(e.group, [...(groups.get(e.group) ?? []), e]);
+    else e.f.forEach((x, b) => ((avg[b]! += e.marks * x), (lo[b]! += e.marks * x), (hi[b]! += e.marks * x)));
+  }
+  for (const members of groups.values()) {
+    const attempt = Math.min(members[0]!.attempt, members.length);
+    for (let b = 0; b < bands; b++) {
+      const v = members.map((m) => m.marks * m.f[b]!).sort((x, y) => x - y);
+      avg[b]! += (attempt * v.reduce((n, x) => n + x, 0)) / v.length;
+      lo[b]! += v.slice(0, attempt).reduce((n, x) => n + x, 0);
+      hi[b]! += v.slice(-attempt).reduce((n, x) => n + x, 0);
+    }
+  }
+  return { avg, lo, hi };
+}
+
+function testBandEntries(test: TestDefinition, find: (questionId: string) => Pick<BankItem, 'marks' | 'competency' | 'competency_marks'> | undefined, targets: readonly CompetencyTarget[]): BandEntry[] {
+  return test.sections.flatMap((s) => {
+    const attempts = new Map(s.choice_groups.map((g) => [g.id, g.attempt]));
+    return s.items.flatMap((it) => {
+      const q = find(it.question_id);
+      return q ? [{ marks: it.marks, f: bandFractions(q, targets), group: it.choice_group ? `${s.id}/${it.choice_group}` : null, attempt: it.choice_group ? (attempts.get(it.choice_group) ?? 1) : 1 }] : [];
+    });
+  });
+}
+
+/**
+ * Attempted marks per competency band of a test, with the range over every way a student can choose
+ * between internal-choice alternatives (see bandRange).
+ */
+export function competencyRangeByBand(test: TestDefinition, find: (questionId: string) => Pick<BankItem, 'marks' | 'competency' | 'competency_marks'> | undefined, targets: readonly CompetencyTarget[]): { avg: number[]; lo: number[]; hi: number[] } {
+  return bandRange(testBandEntries(test, find, targets), targets.length);
 }
 
 /**
@@ -522,6 +576,8 @@ export function assemblePaper(spec: PaperSpec, bank: readonly BankItem[]): Paper
 
 /** Swap rounds of the competency balance (each round makes the best single improving swap). */
 const BALANCE_MAX_ROUNDS = 400;
+/** Weight of internal-choice band mismatch against band deviation (both in marks) in the balance. */
+const CHOICE_MISMATCH_WEIGHT = 2;
 
 /**
  * Competency balance (see the header): repeatedly makes the single swap — same slot, same unit scope,
@@ -540,51 +596,75 @@ function balanceCompetency(
   base: { paper_id: string; blueprint_id: string },
 ): GenerationRequest[] {
   const dev = (a: readonly number[]) => a.reduce((n, x, i) => n + Math.abs(x - targets[i]!.marks), 0);
+  // Internal choice: alternatives of one group should test the same bands, so the shares hold whichever
+  // alternative a student picks. Mismatch of a group = its attempted marks × half the band-wise spread.
+  const groups = new Map<string, number[]>();
+  chosen.forEach((c, i) => c.slot.group && groups.set(c.slot.group, [...(groups.get(c.slot.group) ?? []), i]));
+  const groupMismatch = (idx: readonly number[], at = -1, f: number[] | null = null) => {
+    const fs = idx.map((i) => (i === at && f ? f : fracs(chosen[i]!.q)));
+    const counted = idx.reduce((n, i) => n + chosen[i]!.weight, 0);
+    return (counted / 2) * targets.reduce((n, _, b) => n + Math.max(...fs.map((x) => x[b]!)) - Math.min(...fs.map((x) => x[b]!)), 0);
+  };
+  const mismatchOf = new Map([...groups].map(([g, idx]) => [g, groupMismatch(idx)]));
+  const total = (a: readonly number[], mismatch: number) => dev(a) + CHOICE_MISMATCH_WEIGHT * mismatch;
   for (let round = 0; round < BALANCE_MAX_ROUNDS; round++) {
-    const current = dev(assigned);
+    const mismatch = [...mismatchOf.values()].reduce((n, x) => n + x, 0);
+    const current = total(assigned, mismatch);
     if (current < 1e-9) break;
-    let best: { at: number; q: BankItem; next: number[]; key: number } | null = null;
+    let best: { at: number; q: BankItem; next: number[]; groupMismatch: number | null; key: number } | null = null;
     for (const [at, c] of chosen.entries()) {
       const out = fracs(c.q);
+      const idx = c.slot.group ? groups.get(c.slot.group)! : null;
       for (const q of available) {
         if (used.has(q.id) || !accepts(c.slot, q, c.unitScope)) continue;
         const near = spec.conflicts?.get(q.id);
         if (near && [...near].some((id) => id !== c.q.id && used.has(id))) continue;
         const inn = fracs(q);
         const next = assigned.map((x, i) => x + c.weight * (inn[i]! - out[i]!));
-        const gain = current - dev(next);
+        const gm = idx ? groupMismatch(idx, at, inn) : null;
+        const gain = current - total(next, gm === null ? mismatch : mismatch - mismatchOf.get(c.slot.group!)! + gm);
         if (gain < 1e-9) continue;
         const key = gain - (spec.avoid?.has(q.id) ? 0.5 : 0) - 0.01 * Math.abs(q.difficulty - c.target);
-        if (!best || key > best.key + 1e-12) best = { at, q, next, key };
+        if (!best || key > best.key + 1e-12) best = { at, q, next, groupMismatch: gm, key };
       }
     }
     if (!best) break;
     const b = best;
+    const slot = chosen[b.at]!.slot;
     used.delete(chosen[b.at]!.q.id);
     used.add(b.q.id);
     chosen[b.at] = { ...chosen[b.at]!, q: b.q };
     b.next.forEach((x, i) => (assigned[i] = x));
+    if (slot.group && b.groupMismatch !== null) mismatchOf.set(slot.group, b.groupMismatch);
   }
 
+  // The tolerance must hold whichever internal-choice alternatives a student attempts.
   const tol = spec.competencyTolerance ?? 0;
+  const range = bandRange(
+    chosen.map((c) => ({ marks: c.q.marks, f: fracs(c.q), group: c.slot.group, attempt: c.slot.attempt })),
+    targets.length,
+  );
+  const lowOut = targets.map((t, i) => range.lo[i]! < t.marks - tol - 1e-9);
+  const highOut = targets.map((t, i) => range.hi[i]! > t.marks + tol + 1e-9);
+  if (!lowOut.some(Boolean) && !highOut.some(Boolean)) return [];
+  // Bands to ask for: every band that can fall more than the tolerance below its target; if only an
+  // excess is out of tolerance, the band furthest below its target on average.
   const off = targets.map((t, i) => assigned[i]! - t.marks);
-  if (off.every((d) => Math.abs(d) <= tol + 1e-9)) return [];
-  // Bands to ask for: every band short by more than the tolerance; if only an excess is out of
-  // tolerance, the band furthest below its target.
-  let short = off.map((d, i) => (d < -tol - 1e-9 ? i : -1)).filter((i) => i >= 0);
+  let short = lowOut.map((x, i) => (x ? i : -1)).filter((i) => i >= 0);
   if (!short.length) short = [off.indexOf(Math.min(...off))];
   const fmt = (x: number) => String(Math.round(x * 10) / 10);
-  const summary = targets.map((t, i) => `${t.band} ${fmt(assigned[i]!)}/${fmt(t.marks)}`).join(', ');
+  const summary = targets.map((t, i) => `${t.band} ${fmt(assigned[i]!)}${Math.abs(range.hi[i]! - range.lo[i]!) > 1e-9 ? ` (${fmt(range.lo[i]!)}–${fmt(range.hi[i]!)} by choice)` : ''}/${fmt(t.marks)}`).join(', ');
+  const spread = (c: (typeof chosen)[number]) => (c.slot.group ? (mismatchOf.get(c.slot.group) ?? 0) : 0);
   const out: GenerationRequest[] = [];
   for (const bi of short) {
-    // Slots now holding marks of over-target bands, largest first: those are where a question of the
-    // short band would go.
-    let need = targets[bi]!.marks - assigned[bi]!;
+    // Slots that could carry more of the short band — alternatives of a mismatched choice first, then
+    // slots holding over-target bands, largest first: that is where a question of the band would go.
+    let need = targets[bi]!.marks - range.lo[bi]!;
     const byKey = new Map<string, GenerationRequest>();
     const hosts = chosen
-      .map((c) => ({ c, movable: c.weight * fracs(c.q).reduce((n, f, i) => n + (off[i]! > 0 && i !== bi ? f : 0), 0) }))
+      .map((c) => ({ c, movable: c.weight * fracs(c.q).reduce((n, f, i) => n + (i !== bi && (off[i]! > 0 || spread(c) > 1e-9) ? f : 0), 0) }))
       .filter((h) => h.movable > 1e-9)
-      .sort((x, y) => y.movable - x.movable);
+      .sort((x, y) => spread(y.c) - spread(x.c) || y.movable - x.movable);
     for (const { c, movable } of hosts) {
       if (need <= 1e-9) break;
       need -= movable;

@@ -321,3 +321,26 @@ Q('u501', mk.long({
   scheme: [['Cylinder 41.58 m³', 1], ['Dome 19.404 m³', 1], ['60984 litres', 1], ['CSA cylinder 39.6 m²', 1], ['CSA dome 27.72 m²', 1]],
   d: 2, c: 'understanding', t: [1, 2], time: 540,
 }), (C) => { const vc = cyl.vol(P7, 2.1, 3), vh = hemi.vol(P7, 2.1); C.assert(near(vc, 41.58) && near(vh, 19.404) && near((vc + vh) * 1000, 60984, 1e-6), 'volumes'); C.assert(near(cyl.csa(P7, 2.1, 3), 39.6) && near(hemi.csa(P7, 2.1), 27.72), 'surfaces'); C.model([41.58, 19.404, 60984, 39.6, 27.72]); });
+Q('u502', mk.long({
+  stem: r`A solid is made of a cylinder of radius $3.5$ cm and height $10$ cm with a cone of the same radius and height $12$ cm on top. Use $\pi = \dfrac{22}{7}$.
+
+(a) Find the volume of the cylinder.
+(b) Find the volume of the cone.
+(c) Find the volume of the solid.
+(d) Find the slant height of the cone.
+(e) Find the curved surface area of the cone.`,
+  model: r`$\pi r^2 = \dfrac{22}{7} \times 3.5 \times 3.5 = 38.5$ cm².
+
+(a) Cylinder: $\pi r^2 h = 38.5 \times 10 = 385$ cm³.
+
+(b) Cone: $\dfrac13 \pi r^2 h = \dfrac13 \times 38.5 \times 12 = 154$ cm³.
+
+(c) Solid: $385 + 154 = 539$ cm³.
+
+(d) $l = \sqrt{r^2 + h^2} = \sqrt{12.25 + 144} = \sqrt{156.25} = 12.5$ cm.
+
+(e) $\pi r l = \dfrac{22}{7} \times 3.5 \times 12.5 = 137.5$ cm².`,
+  sol: r`Volumes of the parts add; the slant height comes from Pythagoras.`,
+  scheme: [['Cylinder 385 cm³', 1], ['Cone 154 cm³', 1], ['Total 539 cm³', 1], ['l = 12.5 cm', 1], ['CSA 137.5 cm²', 1]],
+  d: 1, c: 'understanding', t: [1, 2], time: 420,
+}), (C) => { const v1 = cyl.vol(P7, 3.5, 10), v2 = cone.vol(P7, 3.5, 12); C.assert(near(v1, 385) && near(v2, 154) && near(v1 + v2, 539) && near(slant(3.5, 12), 12.5) && near(cone.csa(P7, 3.5, 12), 137.5), 'values'); C.model([385, 154, 539, 12.5, 137.5]); });

@@ -8416,15 +8416,120 @@
         "generated_at": "2026-10-26",
         "author": "claude-opus-5-5 (subject-producer)"
       }
+    },
+    {
+      "id": "q_cbse10math_ch01_074",
+      "unit": "cbse-10-mathematics-ch01",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Prove that $\\sqrt{2}$ is irrational.\n\n(b) Using (a), show that $5 + 3\\sqrt{2}$ is irrational.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Assume, to the contrary, that $\\sqrt2$ is rational: $\\sqrt2 = \\dfrac ab$, where $a$ and $b$ are co-prime integers and $b \\ne 0$.\n\nSquaring, $2b^2 = a^2$. So $2$ divides $a^2$; since $2$ is prime, $2$ divides $a$. Write $a = 2c$.\n\nThen $2b^2 = 4c^2$, so $b^2 = 2c^2$. Hence $2$ divides $b^2$, and so $2$ divides $b$.\n\nNow $2$ divides both $a$ and $b$, which contradicts their being co-prime. So $\\sqrt2$ is irrational.\n\n(b) Suppose $5 + 3\\sqrt2 = r$, where $r$ is rational. Then $\\sqrt2 = \\dfrac{r - 5}{3}$.\n\nSince $r$ is rational, $\\dfrac{r - 5}{3}$ is rational, so $\\sqrt2$ would be rational. This contradicts (a). Hence $5 + 3\\sqrt2$ is irrational."
+      },
+      "solution_md": "(a) the standard contradiction with a prime dividing a square; (b) isolate $\\sqrt2$: a rational expression cannot equal an irrational number.",
+      "marking_scheme": [
+        {
+          "step": "Assumption √2 = a/b, co-prime",
+          "marks": 1
+        },
+        {
+          "step": "2 | a, a = 2c",
+          "marks": 1
+        },
+        {
+          "step": "2 | b, contradiction",
+          "marks": 1
+        },
+        {
+          "step": "√2 = (r − 5)/3",
+          "marks": 1
+        },
+        {
+          "step": "Contradiction with (a), conclusion",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "cbse-10-mathematics-ch01-t03"
+      ],
+      "expected_time_sec": 480,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_cbse10math_ch01_075",
+      "unit": "cbse-10-mathematics-ch01",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Write $72$, $120$ and $168$ as products of primes.\n\n(b) Find the HCF of the three numbers.\n\n(c) Find the LCM of the three numbers.\n\n(d) Find the HCF and the LCM of $72$ and $120$ only, and check that their product equals $72 \\times 120$.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $72 = 2^3 \\times 3^2$, $\\quad 120 = 2^3 \\times 3 \\times 5$, $\\quad 168 = 2^3 \\times 3 \\times 7$.\n\n(b) HCF $= 2^3 \\times 3 = 24$ (smallest power of each common prime).\n\n(c) LCM $= 2^3 \\times 3^2 \\times 5 \\times 7 = 2520$ (greatest power of every prime that appears).\n\n(d) HCF$(72, 120) = 2^3 \\times 3 = 24$ and LCM$(72, 120) = 2^3 \\times 3^2 \\times 5 = 360$. Then $24 \\times 360 = 8640$ and $72 \\times 120 = 8640$ ✓."
+      },
+      "solution_md": "Read HCF and LCM off the prime powers; the product rule is checked for two numbers only.",
+      "marking_scheme": [
+        {
+          "step": "Three factorisations",
+          "marks": 2
+        },
+        {
+          "step": "HCF = 24",
+          "marks": 1
+        },
+        {
+          "step": "LCM = 2520",
+          "marks": 1
+        },
+        {
+          "step": "24 × 360 = 8640 = 72 × 120",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "cbse-10-mathematics-ch01-t01",
+        "cbse-10-mathematics-ch01-t02"
+      ],
+      "expected_time_sec": 480,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
     }
   ],
   "build": {
     "run_id": null,
     "checks": {
       "syllabus": "topics t01–t03 only; removed topics (Euclid's division lemma/algorithm, decimal expansions) absent",
-      "katex": "1615 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "1662 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "1 deck plots + 1 notes/question plots: 2 marked points all on their curves and matching their labels; 0 zeros located numerically and all marked; 0 intersection points lie on both lines",
-      "re_solve": "149/149 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
+      "re_solve": "153/153 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "narration": "38 slides, max 71 words, mean 57; no symbols, LaTeX or letter abbreviations",
       "gate": "npm test -w @soyl/content-templates and content lint (lintExemplar) run clean on this chapter"
     }

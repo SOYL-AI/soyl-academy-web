@@ -21,12 +21,13 @@ import type { CompetencyTarget, PaperSpec, UnitTarget } from './engine';
 /**
  * Competency targets of a board-pattern paper (COMPETENCY_BALANCE.paperTypes): attempted marks per
  * blueprint `mark_shares` band. Null for other paper types, or when the shares are not a partition of
- * the competencies (unknown names, a competency in two bands, shares not adding up to 1).
+ * the competencies (unknown names, a competency in two bands, shares not adding up to 1 within 1 %:
+ * rounded board designs such as CBSE 10 SST's 30 / 19.5 / 50 still count).
  */
 export function competencyTargetsFor(bp: Blueprint): CompetencyTarget[] | null {
   if (!COMPETENCY_BALANCE.paperTypes.includes(bp.paper_type)) return null;
   const entries = Object.entries(bp.mark_shares);
-  if (!entries.length || Math.abs(entries.reduce((n, [, s]) => n + s, 0) - 1) > 1e-6) return null;
+  if (!entries.length || Math.abs(entries.reduce((n, [, s]) => n + s, 0) - 1) > 0.01 + 1e-9) return null;
   const seen = new Set<string>();
   const targets: CompetencyTarget[] = [];
   for (const [band, share] of entries) {

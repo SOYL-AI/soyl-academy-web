@@ -5838,15 +5838,69 @@
         "generated_at": "2026-10-26",
         "author": "claude-opus-5-5 (subject-producer)"
       }
+    },
+    {
+      "id": "q_cbse10math_ch11_072",
+      "unit": "cbse-10-mathematics-ch11",
+      "language": "en",
+      "type": "long",
+      "stem_md": "A circle has radius $10.5$ cm. Use $\\pi = \\dfrac{22}{7}$.\n\n(a) Find the area of the circle.\n\n(b) Find the area of a sector of angle $60^\\circ$.\n\n(c) Find the length of the arc of this sector.\n\n(d) Find the perimeter of the sector.\n\n(e) Find the area of the corresponding major sector.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Area $= \\dfrac{22}{7} \\times 10.5 \\times 10.5 = 346.5$ cm².\n\n(b) The sector is $\\dfrac{60}{360} = \\dfrac16$ of the circle: area $= \\dfrac{346.5}{6} = 57.75$ cm².\n\n(c) Circumference $= 2 \\times \\dfrac{22}{7} \\times 10.5 = 66$ cm, so the arc $= \\dfrac{66}{6} = 11$ cm.\n\n(d) Perimeter $= 11 + 10.5 + 10.5 = 32$ cm.\n\n(e) Major sector $= 346.5 - 57.75 = 288.75$ cm²."
+      },
+      "solution_md": "A $60^\\circ$ sector is one-sixth of the circle; the major sector is the rest of the circle.",
+      "marking_scheme": [
+        {
+          "step": "Circle 346.5 cm²",
+          "marks": 1
+        },
+        {
+          "step": "Sector 57.75 cm²",
+          "marks": 1
+        },
+        {
+          "step": "Arc 11 cm",
+          "marks": 1
+        },
+        {
+          "step": "Perimeter 32 cm",
+          "marks": 1
+        },
+        {
+          "step": "Major sector 288.75 cm²",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "cbse-10-mathematics-ch11-t01"
+      ],
+      "expected_time_sec": 420,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
     }
   ],
   "build": {
     "run_id": null,
     "checks": {
       "syllabus": "topics t01–t03 only; segments only for central angles 60°, 90° and 120° (syllabus LO); combinations of plane figures appear only as simple shaded regions inside problems (the separate section is deleted). Every stem states the value of π (and √3 where needed) used in the key.",
-      "katex": "1172 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "1183 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "0 deck plots + 0 notes/question plots: 0 marked points all on their curves and matching their labels; 0 zeros located numerically and all marked; 0 intersection points lie on both lines",
-      "re_solve": "129/129 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
+      "re_solve": "131/131 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "geometry": "1 geometry figures, 4 exact checks (points on circles, right angles, equal lengths, collinearity, labelled angles and lengths to scale), 0 failures",
       "narration": "33 slides, max 77 words, mean 49; no symbols, LaTeX or letter abbreviations",
       "gate": "npm test -w @soyl/content-templates and content lint (lintExemplar) run clean on this chapter"

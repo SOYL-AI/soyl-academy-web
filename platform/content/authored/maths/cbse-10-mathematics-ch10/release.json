@@ -8709,15 +8709,103 @@
         "generated_at": "2026-10-26",
         "author": "claude-opus-5-5 (subject-producer)"
       }
+    },
+    {
+      "id": "q_cbse10math_ch10_075",
+      "unit": "cbse-10-mathematics-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A circle has centre $O$ and radius $5$ cm. Three lines $l$, $m$ and $n$ are at distances $3$ cm, $5$ cm and $7$ cm from $O$. (a) For each line, say whether it cuts the circle in two points, touches it, or does not meet it, and name it as a secant or a tangent where it meets the circle. (b) For the secant, find the length of the chord it cuts off.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $l$: $3 < 5$, so it cuts the circle in two points — a **secant**. $m$: $5 = 5$, so it touches the circle at one point — a **tangent**. $n$: $7 > 5$, so it does not meet the circle.\n\n(b) The perpendicular from $O$ to $l$ bisects the chord. Half the chord $= \\sqrt{5^2 - 3^2} = \\sqrt{16} = 4$ cm, so the chord is $8$ cm long."
+      },
+      "solution_md": "Compare each distance with the radius; for the chord use the right triangle formed by the radius, the perpendicular and half the chord.",
+      "marking_scheme": [
+        {
+          "step": "Secant, tangent, no meeting point",
+          "marks": 2
+        },
+        {
+          "step": "Chord 8 cm",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "cbse-10-mathematics-ch10-t01"
+      ],
+      "expected_time_sec": 180,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_cbse10math_ch10_076",
+      "unit": "cbse-10-mathematics-ch10",
+      "language": "en",
+      "type": "short",
+      "stem_md": "The tangent at a point $A$ of a circle with centre $O$ meets a line through $O$ at $B$. If $OA = 5$ cm and $\\angle ABO = 30^\\circ$, find $\\angle OAB$, $OB$ and $AB$. (Use $\\sqrt3 \\approx 1.732$.)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The tangent at $A$ is perpendicular to the radius $OA$, so $\\angle OAB = 90^\\circ$.\n\nIn right triangle $OAB$: $\\sin 30^\\circ = \\dfrac{OA}{OB}$, so $OB = \\dfrac{5}{1/2} = 10$ cm.\n\n$\\tan 30^\\circ = \\dfrac{OA}{AB}$, so $AB = 5\\sqrt3 \\approx 5 \\times 1.732 = 8.66$ cm."
+      },
+      "solution_md": "Radius $\\perp$ tangent gives the right angle at $A$; then one right triangle with a $30^\\circ$ angle.",
+      "marking_scheme": [
+        {
+          "step": "∠OAB = 90°",
+          "marks": 1
+        },
+        {
+          "step": "OB = 10 cm",
+          "marks": 1
+        },
+        {
+          "step": "AB = 5√3 ≈ 8.66 cm",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "cbse-10-mathematics-ch10-t02"
+      ],
+      "expected_time_sec": 180,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
     }
   ],
   "build": {
     "run_id": null,
     "checks": {
       "syllabus": "topics t01–t03 only (tangent; tangent ⟂ radius; equal tangents from an external point, incl. circumscribed quadrilaterals and triangles); no removed topics in this chapter. Constructions (deleted chapter) are not used: figures are given, never constructed by the student.",
-      "katex": "1704 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "1744 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "0 deck plots + 0 notes/question plots: 0 marked points all on their curves and matching their labels; 0 zeros located numerically and all marked; 0 intersection points lie on both lines",
-      "re_solve": "151/151 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
+      "re_solve": "156/156 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "geometry": "19 geometry figures, 157 exact checks (points on circles, right angles, equal lengths, collinearity, labelled angles and lengths to scale), 0 failures",
       "narration": "33 slides, max 69 words, mean 48; no symbols, LaTeX or letter abbreviations",
       "gate": "npm test -w @soyl/content-templates and content lint (lintExemplar) run clean on this chapter"
