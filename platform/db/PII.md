@@ -15,7 +15,7 @@ Two steps, implemented by backend-api:
    `ai_conversations` (cascades `ai_messages`), and the user's uploads with their blobs (S6-M02: in the
    transaction the `uploads` rows are marked `deleted`, so they are unusable at once; right after it the API
    deletes each upload's quarantine original (`uploads-quarantine/<blob_key>`) and cleaned copy
-   (`uploads/<processed_key>`) and then the row, writing an `account.uploads_purged` audit row with ids and
+   (`uploads/<processed_key>`) and then the row, writing an `audit_log` row (action "account.uploads_purged") with ids and
    counts only; whatever fails is retried by the worker's `uploads.purge-deleted` job every 5 minutes, and an
    upload still being processed is never resurrected). Overwrite the `users` row:
    `name = 'Deleted user'`, `email = 'deleted+<id>@deleted.soyl.invalid'`, `phone_number = NULL`,
