@@ -193,6 +193,7 @@ describe('allJobs', () => {
         [JOB_NAMES.aiIndexContent]: { chapters: 0, inserted: 0, removed: 0, embedded: 0, failed: 0 },
         [JOB_NAMES.aiRetention]: { messages: 0, conversations: 0, jobs: 0, uploads: 0 },
         [JOB_NAMES.aiCostGuardrail]: { actions: [], alerts: 0, invariants: { negativeBalances: [], unresolvedExpired: 0, doubleResolved: 0 } },
+        [JOB_NAMES.uploadsPurgeDeleted]: { purged: 0, failed: 0 },
       };
       const empty =
         job.name in emptyAi ? emptyAi[job.name] : job.name === JOB_NAMES.attemptsAutoSubmit ? { submitted: 0, failed: 0 } : job.name === JOB_NAMES.liveFinalize ? { events: 0, autoSubmitted: 0, ranked: 0 } : job.name === JOB_NAMES.billingReconcile ? { skipped: 'no_provider' } : job.name === JOB_NAMES.billingExpire ? { ordersExpired: 0, subscriptionsResynced: 0, entitlementsLapsed: 0, errors: 0 } : { deleted: 0 };

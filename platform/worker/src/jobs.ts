@@ -168,6 +168,7 @@ export const JOB_NAMES = {
   aiIndexContent: AI_JOB_NAMES.indexContent,
   aiRetention: AI_JOB_NAMES.retention,
   aiCostGuardrail: AI_JOB_NAMES.costGuardrail,
+  uploadsPurgeDeleted: AI_JOB_NAMES.purgeDeletedUploads,
 } as const;
 
 /** Test-engine sweeps run often and are short: one run at a time, no pile-up, a few quick retries. */
