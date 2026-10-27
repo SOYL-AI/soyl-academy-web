@@ -85,7 +85,7 @@ page load (members with consent only, D-014) and then the balances from SSE `met
 
 The e2e starts the API through its own injection points (`buildApp` deps) instead of `npm run dev -w @soyl/api`:
 the same embedded database and content publish, plus (a) the in-memory `RazorpayStub` with plans synced and
-`BILLING_ENABLED=true`, (b) the deterministic `MockProvider` with the gateway fixtures, streaming at 400 ms per 64-character chunk
+`BILLING_ENABLED=true`, (b) the deterministic `MockProvider` with the gateway fixtures, streaming at 700 ms per 64-character chunk
 and failing before output for one marker string, (c) the memory Blob store whose SAS URLs point at a local control
 server over http (CORS like Azure's), and (d) a control server that plays Razorpay's side of a payment (returns the
 signed webhooks, which the test POSTs **through the web proxy**), moves an attempt's deadline and moves the dev

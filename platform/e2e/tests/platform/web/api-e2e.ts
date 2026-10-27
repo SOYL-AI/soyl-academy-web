@@ -83,7 +83,7 @@ await syncPlans(db, razorpay);
 const provider = new MockProvider({
   env: { APP_ENV: 'test' },
   seed: 'soyl-gateway',
-  streamDelayMs: 400,
+  streamDelayMs: 700,
   failOnCall: (_i, req) => (JSON.stringify(req.messages).includes(E2E_FAIL_MARKER) ? new Error('e2e: injected provider failure') : null),
 });
 registerGatewayFixtures(provider);
