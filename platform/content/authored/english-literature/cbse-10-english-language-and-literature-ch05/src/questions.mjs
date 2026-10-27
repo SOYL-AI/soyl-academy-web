@@ -315,7 +315,7 @@ Q('mt_people', match({
 }));
 Q('mt_words', match({
   t: 1, d: 2, c: 'understanding', marks: 2,
-  stem: 'Match each word with its meaning.',
+  stem: 'Match each word from the Mandela chapter with its meaning.',
   pairs: [['inauguration', 'a formal ceremony to begin a term of office'], ['dignitaries', 'people holding high positions'], ['oppression', 'cruel and unjust use of power'], ['emancipation', 'freedom from restriction or control']],
   sol: 'Key words for this chapter with their meanings.',
 }));

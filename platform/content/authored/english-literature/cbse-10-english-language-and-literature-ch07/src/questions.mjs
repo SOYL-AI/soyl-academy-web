@@ -316,7 +316,7 @@ Q('mt_people', match({
 }));
 Q('mt_words', match({
   t: 4, d: 2, c: 'understanding', marks: 2,
-  stem: 'Match each word with its meaning.',
+  stem: 'Match each word from the diary extract with its meaning.',
   pairs: [['incorrigible', 'impossible to correct or reform'], ['listless', 'lacking energy or interest'], ['musings', 'quiet, thoughtful reflections'], ['fogey', 'an old-fashioned, dull person']],
   sol: 'Words from the chapter with their meanings.',
 }));

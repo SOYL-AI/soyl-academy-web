@@ -334,7 +334,7 @@ Q('mt_stories', match({
 }));
 Q('mt_words', match({
   t: 1, d: 2, c: 'understanding', marks: 2,
-  stem: 'Match each word with its meaning.',
+  stem: 'Match each word from the two flying stories with its meaning.',
   pairs: [['ledge', 'a narrow shelf on the face of a cliff'], ['plateau', 'an area of flat, high ground'], ['preening', 'cleaning and arranging feathers with the beak'], ['radar', 'a system that detects aircraft by radio waves']],
   sol: 'Words from the two stories with their meanings.',
 }));
