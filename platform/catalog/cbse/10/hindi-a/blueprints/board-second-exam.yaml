@@ -26,11 +26,11 @@ sections:
       प्रश्न 7 पठित गद्यांश (5 बहुविकल्पी); प्रश्न 8 गद्य पाठ, चार में से तीन (25-30 शब्द, 2 अंक); प्रश्न 9 पठित काव्यांश (5 बहुविकल्पी);
       प्रश्न 10 काव्य पाठ, चार में से तीन (2 अंक); प्रश्न 11 कृतिका, तीन में से दो (50-60 शब्द, 4 अंक)।
     items:
-      - {type: source-based, count: 1, marks_each: 5}
-      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 3, of: 4}}
-      - {type: source-based, count: 1, marks_each: 5}
-      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 3, of: 4}}
-      - {type: long, count: 3, marks_each: 4, internal_choice: {attempt: 2, of: 3}}
+      - {type: source-based, count: 1, marks_each: 5, chapters: [cbse-10-hindi-a-ch09, cbse-10-hindi-a-ch10, cbse-10-hindi-a-ch11, cbse-10-hindi-a-ch12, cbse-10-hindi-a-ch13, cbse-10-hindi-a-ch14]}
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 3, of: 4}, chapters: [cbse-10-hindi-a-ch09, cbse-10-hindi-a-ch10, cbse-10-hindi-a-ch11, cbse-10-hindi-a-ch12, cbse-10-hindi-a-ch13, cbse-10-hindi-a-ch14]}
+      - {type: source-based, count: 1, marks_each: 5, chapters: [cbse-10-hindi-a-ch03, cbse-10-hindi-a-ch04, cbse-10-hindi-a-ch05, cbse-10-hindi-a-ch06, cbse-10-hindi-a-ch07, cbse-10-hindi-a-ch08]}
+      - {type: short, count: 4, marks_each: 2, internal_choice: {attempt: 3, of: 4}, chapters: [cbse-10-hindi-a-ch03, cbse-10-hindi-a-ch04, cbse-10-hindi-a-ch05, cbse-10-hindi-a-ch06, cbse-10-hindi-a-ch07, cbse-10-hindi-a-ch08]}
+      - {type: long, count: 3, marks_each: 4, internal_choice: {attempt: 2, of: 3}, chapters: [cbse-10-hindi-a-ch15, cbse-10-hindi-a-ch16, cbse-10-hindi-a-ch17]}
   - id: D
     title: खंड घ - रचनात्मक लेखन (20)
     instructions: >-
@@ -58,3 +58,5 @@ notes: >-
   structure
 
   cross-checked with the marking scheme and the CBSE syllabus.
+
+  CHAPTER SCOPES (2026-10-28): प्रश्न 7 (पठित गद्यांश) and 8 from क्षितिज गद्य (ch09-ch14); प्रश्न 9 (पठित काव्यांश) and 10 from क्षितिज काव्य (ch03-ch08); प्रश्न 11 from कृतिका (ch15-ch17) only, so a कृतिका commentary item can never fill a passage slot.

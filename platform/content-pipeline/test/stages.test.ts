@@ -298,6 +298,17 @@ describe('stage 7 blueprint engine', () => {
     expect(ids(E(23))).toEqual([`${eng.id}-chapter-test-long-supplementary`, `${eng.id}-chapter-test-short-supplementary`]);
     expect(ids(E(4))).toEqual([`${eng.id}-chapter-test-long`, `${eng.id}-chapter-test-short`]);
     expect(ids()).toEqual(ids(E(4)));
+    // Board-pattern papers: an extract / passage slot never accepts a Footprints or कृतिका chapter (item-level chapter scopes).
+    const supplementary = new Set([...[23, 24, 25, 26, 27, 28, 29, 30, 31].map(E), ...[15, 16, 17].map(H)]);
+    for (const s of [eng, hin])
+      for (const paper of ['board', 'board-second-exam', 'unit-test'] as const) {
+        const slots = blueprintFor(p.catalog, s, paper)!.sections.flatMap((x) => x.items).filter((i) => i.type === 'source-based');
+        expect(slots.length, `${s.id} ${paper}`).toBeGreaterThan(0);
+        for (const it of slots) {
+          expect(it.chapters?.length, `${s.id} ${paper}: source-based slot is scoped`).toBeGreaterThan(0);
+          expect(it.chapters!.filter((c) => supplementary.has(c)), `${s.id} ${paper}`).toEqual([]);
+        }
+      }
   });
   it('catalog: a chapter override must name syllabus chapters and not overlap another override', () => {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'soyl-catalog-override-'));
