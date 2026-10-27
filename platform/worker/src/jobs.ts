@@ -256,7 +256,7 @@ export function allJobs(settings: JobSettings = {}): JobDefinition[] {
       name: JOB_NAMES.leaguesWeekly,
       description: 'Close ended weekly leagues and form the current IST week (M5)',
       cron: LEAGUES.cron,
-      options: { ...ENGINE, expireInSeconds: 30 * 60, deleteAfterSeconds: 7 * 86_400 },
+      options: MAINTENANCE,
       handler: (ctx) => runLeagues(ctx),
     }),
     ...billingJobs(settings.billing ?? { razorpay: null }),
