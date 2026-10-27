@@ -13,7 +13,7 @@ import { journalArticles } from '@/content/journal';
  * sitemap `lastmod` for static pages. Do not replace it with `new Date()`:
  * search engines learn to ignore `lastmod` when it changes on every build.
  */
-export const CONTENT_LAST_MODIFIED = '2026-10-25';
+export const CONTENT_LAST_MODIFIED = '2026-10-28';
 
 export type PageType =
   | 'WebPage'
@@ -163,10 +163,10 @@ export const PAGES: Record<string, PageEntry> = {
   },
   '/future-builders': {
     path: '/future-builders',
-    title: 'Future Builders — Weekend Tech Cohort for Grades 7–12',
+    title: 'Future Builders — Live Tech Cohort for Grades 7–12',
     label: 'Future Builders',
     description:
-      'A 12-weekend live online cohort for Grades 7–12: software, AI, IoT robotics and entrepreneurship, with a hardware kit. Students build a working prototype and pitch it.',
+      'A live online cohort for Grades 7–12: Python, AI, IoT robotics and entrepreneurship. Students build a working prototype with a hardware kit at home and pitch it on Demo Day.',
     type: 'WebPage',
     eyebrow: 'Future Builders',
     priority: 0.8,

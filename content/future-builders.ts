@@ -5,11 +5,16 @@
  * (banner, programme page, form, FAQ, payment API) reads from here.
  *
  * Registration state is derived from the dates, so nothing goes stale:
- *   open          → more than CLOSING_SOON_DAYS before registration closes
+ *   open          → a cohort is taking registrations, more than CLOSING_SOON_DAYS before the close
  *   closing-soon  → within CLOSING_SOON_DAYS of the close
- *   waitlist      → after the close (or when no cohort is scheduled)
+ *   upcoming      → NEXT_COHORT is announced but registration hasn't opened yet
+ *                   (the page collects "notify me" sign-ups; payment is refused)
+ *   waitlist      → nothing open and nothing announced
  *
- * To open the next cohort: replace COHORT with its dates. That's all.
+ * To open the next cohort, either:
+ *   - set NEXT_COHORT.registrationOpens AND NEXT_COHORT.dates: the site switches
+ *     from "upcoming" to "open" by itself at that moment; or
+ *   - replace COHORT with the new cohort's dates (and set NEXT_COHORT to null).
  */
 
 export interface Cohort {
@@ -20,11 +25,11 @@ export interface Cohort {
   classesStart: string;
   /** Registration close, ISO timestamp with offset. */
   registrationCloses: string;
-  /** Week-12 Demo Day / end date, ISO. */
+  /** Demo Day / end date, ISO. */
   ends: string;
 }
 
-/** Set to `null` when no cohort is scheduled; the site then shows the waitlist. */
+/** The most recent cohort with full dates. Open from now until `registrationCloses`. */
 export const COHORT: Cohort | null = {
   name: 'October 2026 cohort',
   orientation: '2026-10-20',
@@ -33,26 +38,91 @@ export const COHORT: Cohort | null = {
   ends: '2027-01-12',
 };
 
-export const CLOSING_SOON_DAYS = 5;
-
-export type CohortState = 'open' | 'closing-soon' | 'waitlist';
+/** An announced cohort whose registration has not opened yet. */
+export interface UpcomingCohort {
+  /** Shown in headings, e.g. "Summer 2027 cohort". */
+  name: string;
+  /** When it runs, in words. No exact dates until they are set. */
+  window: string;
+  /** When registration opens, in words, e.g. "mid-November 2026". */
+  registrationOpensLabel: string;
+  /**
+   * Optional exact opening, ISO timestamp with offset (e.g. "2026-11-15T10:00:00+05:30").
+   * Once it has passed AND `dates` is filled in, the state becomes open automatically.
+   */
+  registrationOpens?: string;
+  /** The cohort's dates; required before it can take payments. */
+  dates?: Omit<Cohort, 'name'>;
+  /** Tag stored with "notify me" and call requests in the Google Sheet. */
+  sourceTag: string;
+}
 
 /**
- * Development only: set COHORT_PREVIEW_DATE (e.g. 2026-10-10) to preview how the
- * site looks on that day. Ignored in production builds.
+ * D-038 (owner, 28 Oct 2026): the next cohort runs in the summer break, April–May 2027;
+ * registration opens mid-November 2026. Exact dates, timetable and price are not set yet,
+ * so none are stated: the page shows the current BASE_PRICE and "timetable announced at registration".
+ * Set to `null` when nothing is announced; the site then shows the plain waitlist.
  */
+export const NEXT_COHORT: UpcomingCohort | null = {
+  name: 'Summer 2027 cohort',
+  window: 'April–May 2027, during the summer break',
+  registrationOpensLabel: 'mid-November 2026',
+  sourceTag: 'fb_summer_2027',
+};
+
+export const CLOSING_SOON_DAYS = 5;
+
+export type CohortState = 'open' | 'closing-soon' | 'upcoming' | 'waitlist';
+
+/**
+ * Development only, ignored in production builds:
+ * - COHORT_PREVIEW_DATE (e.g. 2026-10-10) previews the site on that day;
+ * - COHORT_PREVIEW_NEXT=none previews it as if no next cohort were announced.
+ */
+const DEV = process.env.NODE_ENV !== 'production';
+
 function today(): Date {
-  const preview = process.env.NODE_ENV !== 'production' ? process.env.COHORT_PREVIEW_DATE : undefined;
+  const preview = DEV ? process.env.COHORT_PREVIEW_DATE : undefined;
   return preview ? new Date(`${preview}T12:00:00+05:30`) : new Date();
 }
 
-export function getCohortState(now: Date = today()): CohortState {
-  if (!COHORT) return 'waitlist';
-  const closes = new Date(COHORT.registrationCloses).getTime();
-  const left = closes - now.getTime();
-  if (left <= 0) return 'waitlist';
-  if (left <= CLOSING_SOON_DAYS * 24 * 60 * 60 * 1000) return 'closing-soon';
-  return 'open';
+function announcedNext(): UpcomingCohort | null {
+  return DEV && process.env.COHORT_PREVIEW_NEXT === 'none' ? null : NEXT_COHORT;
+}
+
+const ms = (iso: string) => new Date(iso).getTime();
+
+interface Schedule {
+  current: Cohort | null;
+  next: UpcomingCohort | null;
+}
+
+/** The cohort taking registrations right now, if any. Payment is allowed only when this is not null. */
+export function getOpenCohort(now: Date = today(), { current, next }: Schedule = { current: COHORT, next: announcedNext() }): Cohort | null {
+  const t = now.getTime();
+  if (current && t < ms(current.registrationCloses)) return current;
+  if (next?.registrationOpens && next.dates && t >= ms(next.registrationOpens) && t < ms(next.dates.registrationCloses)) {
+    return { name: next.name, ...next.dates };
+  }
+  return null;
+}
+
+/** The announced cohort, while its registration has not opened yet. */
+export function getUpcomingCohort(now: Date = today(), schedule: Schedule = { current: COHORT, next: announcedNext() }): UpcomingCohort | null {
+  const { next } = schedule;
+  if (!next || getOpenCohort(now, schedule)) return null;
+  // Its registration has already closed: it is no longer "upcoming".
+  if (next.dates && now.getTime() >= ms(next.dates.registrationCloses)) return null;
+  return next;
+}
+
+export function getCohortState(now: Date = today(), schedule: Schedule = { current: COHORT, next: announcedNext() }): CohortState {
+  const open = getOpenCohort(now, schedule);
+  if (open) {
+    const left = ms(open.registrationCloses) - now.getTime();
+    return left <= CLOSING_SOON_DAYS * 24 * 60 * 60 * 1000 ? 'closing-soon' : 'open';
+  }
+  return getUpcomingCohort(now, schedule) ? 'upcoming' : 'waitlist';
 }
 
 /** "22 Oct" in IST, from an ISO date or timestamp. */

@@ -111,7 +111,7 @@ export const audiences = {
 export const futureBuilders = {
   label: 'Future Builders · Grades 7–12',
   headline: 'Build a real product.',
-  line: 'Alongside the school platform, we run a live online weekend cohort: software, AI, IoT robotics and entrepreneurship, ending with a Demo Day pitch.',
+  line: 'Alongside the school platform, we run a live online cohort: software, AI, IoT robotics and entrepreneurship, ending with a Demo Day pitch.',
   link: { label: 'Explore Future Builders', href: '/future-builders' },
 } as const;
 
