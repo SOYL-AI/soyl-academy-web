@@ -47,7 +47,6 @@ test('AI tutor: quote → stream → credits; hint → full; refund on failure; 
   await ask(page, 'Quick doubt', 'Why does iron rust faster near the sea?', 1);
   await expect(lastAnswer(page)).toHaveAttribute('data-status', 'streaming');
   await expect(lastAnswer(page)).toContainText('[MOCK]');
-  await shot(page, 'ask-streaming', false);
   await expect(lastAnswer(page)).toHaveAttribute('data-status', 'done', { timeout: 30_000 });
   await expect(lastAnswer(page)).toHaveAttribute('data-mode', 'hint');
   await expect(chip(page)).toHaveAttribute('data-balance', '24');
@@ -55,6 +54,11 @@ test('AI tutor: quote → stream → credits; hint → full; refund on failure; 
   // "Show full solution" in the same conversation.
   await page.getByTestId('reveal').click();
   await page.getByRole('dialog', { name: 'Use AI credits?' }).getByTestId('quote-confirm').click();
+  // Mid-stream (the mock streams 64 characters every 400 ms): text so far plus the cursor.
+  await expect(lastAnswer(page)).toContainText('Full solution');
+  await expect(lastAnswer(page)).toHaveAttribute('data-status', 'streaming');
+  await lastAnswer(page).scrollIntoViewIfNeeded();
+  await shot(page, 'ask-streaming', false);
   await expect(lastAnswer(page)).toHaveAttribute('data-status', 'done', { timeout: 30_000 });
   await expect(lastAnswer(page)).toHaveAttribute('data-mode', 'full');
   await expect(lastAnswer(page)).toContainText('Full solution');
