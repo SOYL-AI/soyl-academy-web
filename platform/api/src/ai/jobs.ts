@@ -9,7 +9,7 @@
  * reservation was already refunded by the sweeper does not call the model.
  */
 import { createHash, randomUUID } from 'node:crypto';
-import { and, asc, eq, lt, or, sql } from 'drizzle-orm';
+import { and, asc, eq, lt, ne, notInArray, or, sql } from 'drizzle-orm';
 import { z } from 'zod/v4';
 import { aiJobs, aiRequests, chapters, subjects, uploads, type Database } from '@soyl/db';
 import { ModelClient, type UsageRecord } from '@soyl/ai-core';
@@ -382,13 +382,19 @@ export class AiJobRunner {
     const { uploadId } = job.payload as { uploadId: string };
     const [u] = await this.d.db.select().from(uploads).where(and(eq(uploads.id, uploadId), eq(uploads.userId, job.userId)));
     if (!u) return this.fail(job, 'upload_missing', false);
-    if (u.status === 'ready' || u.status === 'rejected') return this.done(job, { uploadId, status: u.status });
+    // S6-M02: an upload of a deleted account (or an expired one) is never processed or resurrected.
+    if (u.status === 'ready' || u.status === 'rejected' || u.status === 'deleted' || u.status === 'expired') return this.done(job, { uploadId, status: u.status });
     const blob = this.d.runtime().blob;
     const now = this.now();
-    await this.d.db.update(uploads).set({ status: 'scanning', updatedAt: now }).where(eq(uploads.id, u.id));
+    const [claimed] = await this.d.db
+      .update(uploads)
+      .set({ status: 'scanning', updatedAt: now })
+      .where(and(eq(uploads.id, u.id), notInArray(uploads.status, ['deleted', 'expired'])))
+      .returning({ id: uploads.id });
+    if (!claimed) return this.done(job, { uploadId, status: 'deleted' });
     const reject = async (reason: string) => {
       await blob.delete(AI_UPLOADS.containers.quarantine, u.blobKey).catch(() => {});
-      await this.d.db.update(uploads).set({ status: 'rejected', rejectReason: reason, updatedAt: this.now() }).where(eq(uploads.id, u.id));
+      await this.d.db.update(uploads).set({ status: 'rejected', rejectReason: reason, updatedAt: this.now() }).where(and(eq(uploads.id, u.id), ne(uploads.status, 'deleted')));
       return this.done(job, { uploadId, status: 'rejected', reason });
     };
     let data: Buffer;
@@ -419,10 +425,16 @@ export class AiJobRunner {
     const processedKey = `${u.userId}/${u.id}.${EXTENSION[cleaned.type]}`;
     await blob.put(AI_UPLOADS.containers.clean, processedKey, cleaned.data, cleaned.type);
     await blob.delete(AI_UPLOADS.containers.quarantine, u.blobKey).catch(() => {});
-    await this.d.db
+    const [ready] = await this.d.db
       .update(uploads)
       .set({ status: 'ready', bytes: cleaned.bytes, pages: cleaned.pages, sha256: createHash('sha256').update(cleaned.data).digest('hex'), processedKey, processedContentType: cleaned.type, rejectReason: null, updatedAt: this.now() })
-      .where(eq(uploads.id, u.id));
+      .where(and(eq(uploads.id, u.id), eq(uploads.status, 'scanning')))
+      .returning({ id: uploads.id });
+    if (!ready) {
+      // Deleted (account deletion) while this ran: the derivative must not outlive the row (S6-M02).
+      await blob.delete(AI_UPLOADS.containers.clean, processedKey);
+      return this.done(job, { uploadId, status: 'deleted' });
+    }
     return this.done(job, { uploadId, status: 'ready' });
   }
 

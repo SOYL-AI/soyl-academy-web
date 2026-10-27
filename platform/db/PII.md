@@ -12,7 +12,12 @@ Two steps, implemented by backend-api:
 
 1. **Immediately (anonymise + revoke):** delete the user's `sessions`, `accounts` and `verifications`
    (by identifier = their email/phone), `consent_status`, `guardian_links` (both directions), `user_mfa`,
-   `ai_conversations` (cascades `ai_messages`), `uploads` (and the blobs). Overwrite the `users` row:
+   `ai_conversations` (cascades `ai_messages`), and the user's uploads with their blobs (S6-M02: in the
+   transaction the `uploads` rows are marked `deleted`, so they are unusable at once; right after it the API
+   deletes each upload's quarantine original (`uploads-quarantine/<blob_key>`) and cleaned copy
+   (`uploads/<processed_key>`) and then the row, writing an `account.uploads_purged` audit row with ids and
+   counts only; whatever fails is retried by the worker's `uploads.purge-deleted` job every 5 minutes, and an
+   upload still being processed is never resurrected). Overwrite the `users` row:
    `name = 'Deleted user'`, `email = 'deleted+<id>@deleted.soyl.invalid'`, `phone_number = NULL`,
    `image = NULL`, `ban_reason = NULL`, `deleted_at = now()`; null the personal `profiles` fields.
    The generated `email_normalized` / `phone_e164` become NULL automatically.
@@ -77,8 +82,8 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `ai_requests.*` | AI usage metering (no prompt text) | 30 days per user, then aggregates only | cascade |
 | `ai_conversations.title` | Conversation title (may quote the student) | 30 days | delete |
 | `ai_messages.content` | Prompts and answers | 30 days (ARCHITECTURE §10) | delete |
-| `uploads.blob_key` | Uploaded photo/paper (the file is in Blob) | 30 days (`expires_at`) | delete |
-| `uploads.processed_key` | Cleaned derivative of the upload (re-encoded, EXIF/GPS stripped) in the `uploads` container | 30 days (`expires_at`; Blob lifecycle rule as backstop) | delete |
+| `uploads.blob_key` | Uploaded photo/paper (the file is in Blob) | 30 days (`expires_at`) | delete (blob in `uploads-quarantine`, then row; S6-M02) |
+| `uploads.processed_key` | Cleaned derivative of the upload (re-encoded, EXIF/GPS stripped) in the `uploads` container | 30 days (`expires_at`; Blob lifecycle rule as backstop) | delete (blob in `uploads`, then row; S6-M02) |
 | `credit_wallets.*` | Per-student lock row for credit operations: plan of the last daily grant, its IST day | life of account | cascade |
 | `ai_jobs.*` | Queued AI work (ids of the attempt/upload/items, status, result: AI marks and feedback, or a paper blueprint without school questions) | 30 days (worker job ai.retention) | cascade |
 | `ai_spend_daily.*` | Total AI spend per IST day (all students / free tier), no user link | 1 year | retain (aggregate, not personal) |

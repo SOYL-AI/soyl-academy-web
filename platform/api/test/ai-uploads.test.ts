@@ -5,8 +5,8 @@
  * "papers like my school's" building a paper from OUR bank by blueprint (paid plans), 30-day expiry.
  */
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
-import { count, eq, sql } from 'drizzle-orm';
-import { aiJobs, questions, uploads } from '@soyl/db';
+import { and, count, eq, sql } from 'drizzle-orm';
+import { aiJobs, auditLog, questions, uploads } from '@soyl/db';
 import { MockProvider, type ProviderRequest } from '@soyl/ai-core';
 import { AI_UPLOADS } from '@soyl/shared/config/ai-actions';
 import { registerGatewayFixtures } from '../src/ai/fixtures';
@@ -202,6 +202,54 @@ describe('retention', () => {
     const [after] = await h.t.db.select().from(uploads).where(eq(uploads.id, up.id));
     expect(after).toMatchObject({ status: 'expired', processedKey: null });
     expect((await c.get(`/v1/ai/uploads/${up.id}`)).statusCode).toBe(404);
+  });
+
+  it('S6-M02: account deletion deletes every upload blob (quarantine original + cleaned copy), then the rows, with an audit row', async () => {
+    const { c, id } = await h.member();
+    const ready = await uploadFile(h, c, 'photo_doubt', 'image/png', png());
+    // A second file uploaded to quarantine but never completed (still pending_upload).
+    const t = (await c.post('/v1/ai/uploads', { kind: 'photo_doubt', contentType: 'image/jpeg', bytes: jpeg().length })).json() as { uploadId: string; uploadUrl: string };
+    expect(h.blob.acceptUpload(t.uploadUrl, jpeg(), 'image/jpeg').ok).toBe(true);
+    const rows = await h.t.db.select().from(uploads).where(eq(uploads.userId, id));
+    const readyRow = rows.find((r) => r.id === ready.id)!;
+    const pendingRow = rows.find((r) => r.id === t.uploadId)!;
+    expect(h.blob.has(AI_UPLOADS.containers.clean, readyRow.processedKey!)).toBe(true);
+    expect(h.blob.has(AI_UPLOADS.containers.quarantine, pendingRow.blobKey)).toBe(true);
+
+    const del = await c.delete('/v1/me');
+    expect(del.statusCode).toBe(200);
+    // Deleted at once by the API: both containers, then the rows; one audit row (ids and counts only).
+    expect(h.blob.has(AI_UPLOADS.containers.clean, readyRow.processedKey!)).toBe(false);
+    expect(h.blob.has(AI_UPLOADS.containers.quarantine, pendingRow.blobKey)).toBe(false);
+    expect(await h.t.db.select().from(uploads).where(eq(uploads.userId, id))).toEqual([]);
+    const audit = await h.t.db.select().from(auditLog).where(and(eq(auditLog.action, 'account.uploads_purged'), eq(auditLog.targetId, id)));
+    expect(audit).toHaveLength(1);
+    expect(audit[0]!.after).toEqual({ uploads: 2, blobs: 'deleted' });
+  });
+
+  it('S6-M02: when Blob storage is down at deletion time, the uploads stay unusable and the worker run deletes them later', async () => {
+    const { c, id } = await h.member();
+    const up = await uploadFile(h, c, 'photo_doubt', 'image/png', png());
+    const [row] = await h.t.db.select().from(uploads).where(eq(uploads.id, up.id));
+    h.blob.failing = true;
+    try {
+      expect((await c.delete('/v1/me')).statusCode).toBe(200); // deletion itself never waits on Blob
+    } finally {
+      h.blob.failing = false;
+    }
+    const [marked] = await h.t.db.select().from(uploads).where(eq(uploads.id, up.id));
+    expect(marked).toMatchObject({ status: 'deleted' });
+    expect(h.blob.has(AI_UPLOADS.containers.clean, row!.processedKey!)).toBe(true);
+    // A processing job that runs now does not resurrect it.
+    const [job] = await h.t.db.select().from(aiJobs).where(sql`${aiJobs.payload}->>'uploadId' = ${up.id}`);
+    await h.t.db.update(aiJobs).set({ status: 'queued', lockedUntil: null }).where(eq(aiJobs.id, job!.id));
+    await h.services.ai.jobs.runJob(job!.id);
+    expect((await h.t.db.select().from(uploads).where(eq(uploads.id, up.id)))[0]).toMatchObject({ status: 'deleted' });
+    // The worker's uploads.purge-deleted run (same code) finishes the job.
+    expect(await h.services.ai.uploads.purgeDeleted(new Date(h.clock.now()))).toMatchObject({ purged: 1, failed: 0 });
+    expect(h.blob.has(AI_UPLOADS.containers.clean, row!.processedKey!)).toBe(false);
+    expect(await h.t.db.select().from(uploads).where(eq(uploads.userId, id))).toEqual([]);
+    expect(await h.services.ai.uploads.purgeDeleted(new Date(h.clock.now()))).toEqual({ purged: 0, failed: 0 });
   });
 });
 

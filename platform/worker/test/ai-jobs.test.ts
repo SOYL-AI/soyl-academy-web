@@ -5,7 +5,7 @@
  */
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { eq } from 'drizzle-orm';
-import { aiConversations, aiJobs as aiJobsTable, aiMessages, aiRequests, boards, chapters, classes, contentChunks, creditLedger, notes, subjects, uploads } from '@soyl/db';
+import { aiConversations, aiJobs as aiJobsTable, aiMessages, aiRequests, auditLog, boards, chapters, classes, contentChunks, creditLedger, notes, subjects, uploads } from '@soyl/db';
 import { createTestDb, type TestDb } from '@soyl/db/testing';
 import { localRuntime } from '@soyl/api/ai/runtime';
 import { MemoryAlertSink } from '@soyl/api/ai/spend';
@@ -45,7 +45,7 @@ afterAll(async () => {
 });
 
 describe('AI jobs in the worker', () => {
-  it('registers the five AI jobs with UTC crons alongside the existing ones', () => {
+  it('registers the six AI jobs with UTC crons alongside the existing ones', () => {
     const names = allJobs({ ai: { appEnv: 'test', env: { APP_ENV: 'test' }, runtime } }).map((j) => j.name);
     expect(names).toEqual(expect.arrayContaining(Object.values(AI_JOB_NAMES)));
     expect(jobs.map((j) => [j.name, j.cron])).toEqual([
@@ -54,6 +54,7 @@ describe('AI jobs in the worker', () => {
       ['ai.index-content', '20 * * * *'],
       ['ai.retention', '0 21 * * *'],
       ['ai.cost-guardrail', '30 3 * * *'],
+      ['uploads.purge-deleted', '*/5 * * * *'],
     ]);
   });
 
@@ -127,6 +128,32 @@ describe('AI jobs in the worker', () => {
     expect((r as { uploads: number }).uploads).toBeGreaterThanOrEqual(1);
     expect(blob.has('uploads', `${userId}/old.png`)).toBe(false);
     expect(await t.db.select().from(aiConversations).where(eq(aiConversations.userId, userId))).toEqual([]);
+  });
+
+  it('S6-M02 uploads.purge-deleted: blobs of a deleted account go from both containers, then the rows; failures retry', async () => {
+    const userId = await makeUser(t.db);
+    await blob.put('uploads-quarantine', `${userId}/del-q1`, png(), 'image/png');
+    await blob.put('uploads', `${userId}/del-1.png`, png(), 'image/png');
+    await blob.put('uploads-quarantine', `${userId}/del-q2`, png(), 'image/png');
+    const exp = new Date(NOW.getTime() + 30 * 86_400_000);
+    await t.db.insert(uploads).values([
+      { userId, kind: 'photo_doubt', blobKey: `${userId}/del-q1`, contentType: 'image/png', status: 'deleted', processedKey: `${userId}/del-1.png`, expiresAt: exp },
+      { userId, kind: 'sample_paper', blobKey: `${userId}/del-q2`, contentType: 'image/png', status: 'deleted', expiresAt: exp },
+    ]);
+    // Blob storage down: nothing moves, the run fails (pg-boss retries) and the rows stay.
+    blob.failing = true;
+    try {
+      await expect(handler(AI_JOB_NAMES.purgeDeletedUploads)(ctx(), undefined)).rejects.toThrow(/could not delete 2/);
+    } finally {
+      blob.failing = false;
+    }
+    expect(await t.db.select().from(uploads).where(eq(uploads.userId, userId))).toHaveLength(2);
+    expect(await handler(AI_JOB_NAMES.purgeDeletedUploads)(ctx(), undefined)).toEqual({ purged: 2, failed: 0 });
+    expect([blob.has('uploads-quarantine', `${userId}/del-q1`), blob.has('uploads', `${userId}/del-1.png`), blob.has('uploads-quarantine', `${userId}/del-q2`)]).toEqual([false, false, false]);
+    expect(await t.db.select().from(uploads).where(eq(uploads.userId, userId))).toEqual([]);
+    const audit = await t.db.select().from(auditLog).where(eq(auditLog.targetId, userId));
+    expect(audit.map((a) => [a.action, a.actorRole, a.after])).toEqual([['account.uploads_purged', 'system', { uploads: 2, blobs: 'deleted' }]]);
+    expect(await handler(AI_JOB_NAMES.purgeDeletedUploads)(ctx(), undefined)).toEqual({ purged: 0, failed: 0 });
   });
 
   it('ai.cost-guardrail alerts on expensive actions and on ledger invariant violations', async () => {

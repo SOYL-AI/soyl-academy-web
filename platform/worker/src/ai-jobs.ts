@@ -11,6 +11,9 @@
  *                              expired uploads and their blobs (ARCHITECTURE §10, §15).
  * - ai.cost-guardrail          daily 09:00 IST: 7-day real cost per action vs credit price (CONTEXT §6) and
  *                              the ledger invariants (no negative balance, every reserve resolved).
+ * - uploads.purge-deleted      every 5 minutes (S6-M02): blobs of uploads of deleted accounts (quarantine
+ *                              original + cleaned copy), then their rows, with an audit row. The API does
+ *                              this right after DELETE /v1/me; this run retries anything that failed.
  *
  * Crons are UTC (GEN-6).
  */
@@ -28,6 +31,7 @@ export const AI_JOB_NAMES = {
   indexContent: 'ai.index-content',
   retention: 'ai.retention',
   costGuardrail: 'ai.cost-guardrail',
+  purgeDeletedUploads: 'uploads.purge-deleted',
 } as const;
 
 /** Frequent, short sweeps: one at a time, never piling up. */
@@ -85,6 +89,19 @@ export function aiJobs(settings: AiWorkerSettings = {}): JobDefinition[] {
       cron: '30 3 * * *',
       options: DAILY,
       handler: async (ctx) => guardrail(ctx, await services(ctx)),
+    }),
+    defineJob<unknown, { purged: number; failed: number }>({
+      name: AI_JOB_NAMES.purgeDeletedUploads,
+      description: 'Delete the upload blobs (and rows) of deleted accounts (S6-M02, AC-25)',
+      cron: '*/5 * * * *',
+      options: SWEEP,
+      handler: async (ctx) => {
+        const r = await (await services(ctx)).uploads.purgeDeleted(ctx.now);
+        // A failure is retried by the next run; the job fails (pg-boss retry + alert) only if nothing moved.
+        if (r.failed) ctx.log.warn('upload blob deletion failed; retrying next run', { failed: r.failed, purged: r.purged });
+        if (r.failed && !r.purged) throw new Error(`could not delete ${r.failed} deleted-account upload(s) from Blob storage`);
+        return r;
+      },
     }),
   ] as JobDefinition[];
 }
