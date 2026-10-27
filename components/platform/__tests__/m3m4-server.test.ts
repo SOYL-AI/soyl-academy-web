@@ -42,7 +42,7 @@ describe('CSP per page (WEB-1, WEB-3, ADR-018 §4)', () => {
 describe('proxy: path-scoped headers and SSE (ADR-018 §2)', () => {
   const incoming = new Headers({
     'content-type': 'application/json',
-    'idempotency-key': 'abc-12345678',
+    'idempotency-key': 'abc-12345678', // gitleaks:allow (placeholder idempotency key)
     'x-razorpay-signature': 'a'.repeat(64),
     'x-razorpay-event-id': 'evt_123',
   });
