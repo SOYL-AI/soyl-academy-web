@@ -35,7 +35,7 @@ In Azure the managed identities log in with Entra tokens (no passwords) and are 
 
 | Area (schema file) | # | Tables | Notes |
 |---|---|---|---|
-| Identity (`identity.ts`) | 8 | `users`, `sessions`, `accounts`, `verifications`, `schools`, `profiles`, `guardian_links`, `consent_status` | Better Auth's tables plus ours. `role` lives on `users` (Better Auth admin plugin), not `profiles`. Email/phone have generated normalised columns with unique indexes. `verifications.identifier` stores `otp:<purpose>:<channel>:<HMAC(identifier)>`, not the raw address. `sessions.mfa_verified_at` added in 0005. |
+| Identity (`identity.ts`) | 9 | `users`, `sessions`, `accounts`, `verifications`, `schools`, `profiles`, `guardian_links`, `consent_status`, `consent_records` (0011, D-039) | Better Auth's tables plus ours. `role` lives on `users` (Better Auth admin plugin), not `profiles`. Email/phone have generated normalised columns with unique indexes. `verifications.identifier` stores `otp:<purpose>:<channel>:<HMAC(identifier)>`, not the raw address. `sessions.mfa_verified_at` added in 0005. |
 | Catalog (`catalog.ts`) | 7 | `boards`, `classes`, `subjects`, `syllabus_versions`, `chapters`, `topics`, `learning_outcomes` | Seeded from `platform/catalog/` by `db seed catalog` (idempotent; `syllabus_versions` holds per-file hash). `boards`/`classes` have no `academic_year`. |
 | Content (`content.ts`) | 10 | `content_releases`, `decks`, `notes`, `flashcard_sets`, `questions`, `question_keys`, `question_stats`, `assets`, `content_status_events`, `content_chunks` | DB-6 split (below). `content_chunks` holds tutor retrieval chunks: `embedding vector(1536)` + HNSW index where pgvector exists, and a generated `search_vector` tsvector + GIN index (0008) as the full-text fallback (ADR-014). |
 | Release membership (`release-items.ts`) | 1 | `content_release_items` | Which item rows each release contains, so reads go through the **active** release and rollback works (ADR-006/010). |
@@ -125,6 +125,6 @@ npm run generate -w @soyl/db                    # drizzle-kit: generate the next
 The DB-5 inventory is [`platform/db/PII.md`](../../platform/db/PII.md): every personal-data column, its retention, and what account deletion does to it. `db/test/schema.test.ts` fails if a column is missing from it. Summary:
 
 - **Account deletion** (`DELETE /v1/me`) anonymises at once, revokes all sessions, deletes `user_mfa` and live ranks in Redis; the worker's `account.purge` job removes the rest within 30 days. Uploaded blobs are not yet deleted with the account (finding S6-M02, open).
-- **Unconsented accounts** (AUTH-15): `account.purge-unconsented` is **off** in production while `CONSENT_PROVIDER=unavailable` (otherwise every student would be deleted after 30 days). Decision pending OA-14.
+- **Unconsented accounts** (AUTH-15): `account.purge-unconsented` is **off** in production while `CONSENT_PROVIDER=unavailable` or `builtin` (otherwise every student who only learns would be deleted after 30 days). Decision pending OA-14.
 - **Retention:** AI messages, jobs and uploads 30 days; analytics are first-party and aggregate (no user, device or IP).
 - Retention periods are pending counsel (OA-14).

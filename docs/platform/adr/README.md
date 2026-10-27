@@ -26,6 +26,7 @@ Format and rules: AGENTS.md §4.4 (context, options, decision, consequences). An
 | [018](018-platform-web-tests-ai-plans.md) | Platform web tests, AI and plans: offline answer queue, proxy headers, page CSPs, uploads, e2e stand-ins (amended 2026-10-28, S6-L03: nonce CSP on /plans and /tests) | Accepted | 2026-10-27 | Web |
 | [019](019-frozen-test-series-in-release.md) | Frozen test series, published by the release step (with the competency-balance addendum) | Accepted | 2026-10-27 | Content, tests |
 | [020](020-images-only-uploads-at-launch.md) | Images only for AI uploads at launch: PDF uploads off until the worker parses and rasterises them (S6-M01) | Accepted | 2026-10-28 | AI, security |
+| [022](022-interim-builtin-consent-provider.md) | Interim built-in consent provider: age band, parent approval code by email, withdraw link, AI data deletion (D-039) | Accepted | 2026-10-28 | Consent, privacy |
 
 ## Housekeeping notes
 

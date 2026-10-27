@@ -37,6 +37,7 @@ export const PARENT_EMAIL_UNLOCKS = [
 
 export const PARENT_EMAIL_DATA = [
   'Lessons, practice and tests are free and stay open whether or not you approve.',
+  'Approval also allows buying an optional paid AI plan. Nothing is ever charged unless someone completes a payment at checkout.',
   'We do not sell data, show ads or use third-party trackers. Data is stored in India (Azure Central India).',
   `We record that you approved, when, and the version of this notice (${BUILTIN_CONSENT.policyVersion}). We keep only a scrambled (hashed) form of your email address, not the address itself.`,
 ] as const;
