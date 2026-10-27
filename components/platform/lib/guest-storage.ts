@@ -34,7 +34,16 @@ function cleanLesson(raw: unknown): GuestLesson | null {
   if (typeof r.chapter !== 'string' || !CHAPTER_RE.test(r.chapter)) return null;
   if (typeof r.slide !== 'number' || !Number.isInteger(r.slide) || r.slide < 0 || r.slide > 1000) return null;
   if (typeof r.completed !== 'boolean' || !isIso(r.updatedAt)) return null;
-  return { chapter: r.chapter, slide: r.slide, completed: r.completed, updatedAt: r.updatedAt };
+  const out: GuestLesson = { chapter: r.chapter, slide: r.slide, completed: r.completed, updatedAt: r.updatedAt };
+  // M2 (optional): deck part (0 = single deck) and mode.
+  if (typeof r.part === 'number' && Number.isInteger(r.part) && r.part >= 0 && r.part <= 20) out.part = r.part;
+  if (r.mode === 'read' || r.mode === 'listen') out.mode = r.mode;
+  return out;
+}
+
+/** One lesson entry per chapter and part; a missing part means "the chapter's first part". */
+function lessonKey(l: Pick<GuestLesson, 'chapter' | 'part'>): string {
+  return `${l.chapter}|${l.part ?? 'first'}`;
 }
 
 function cleanAnswer(raw: unknown): GuestPracticeAnswer | null {
@@ -67,7 +76,7 @@ export function sanitizeGuestProgress(raw: unknown): GuestProgress | null {
   if (typeof r.classLevel === 'number' && Number.isInteger(r.classLevel) && r.classLevel >= 7 && r.classLevel <= 12) out.classLevel = r.classLevel;
   const lessons = Array.isArray(r.lessons) ? r.lessons.map(cleanLesson).filter((x): x is GuestLesson => x !== null) : [];
   const practice = Array.isArray(r.practice) ? r.practice.map(cleanAnswer).filter((x): x is GuestPracticeAnswer => x !== null) : [];
-  out.lessons = newestUnique(lessons, (l) => l.chapter, (l) => l.updatedAt, GUEST_LIMITS.maxLessons);
+  out.lessons = newestUnique(lessons, lessonKey, (l) => l.updatedAt, GUEST_LIMITS.maxLessons);
   out.practice = newestUnique(practice, (p) => `${p.chapter}|${p.question}`, (p) => p.answeredAt, GUEST_LIMITS.maxPracticeAnswers);
   return out;
 }
@@ -118,20 +127,44 @@ function isEmpty(p: GuestProgress): boolean {
 
 const nowIso = (now: Date = new Date()) => now.toISOString();
 
-/** Practice answer on the device (M2 practice UI calls this for guests). */
+/** Practice answer on the device (practice page and lesson check slides, for guests). */
 export function recordGuestPracticeAnswer(chapter: string, question: string, correct: boolean, now?: Date): boolean {
   const p = readGuestProgress();
   p.practice.push({ chapter, question, correct, answeredAt: nowIso(now) });
   return writeGuestProgress(p);
 }
 
-/** Lesson position on the device (M2 slide player calls this for guests). */
-export function recordGuestLessonPosition(chapter: string, slide: number, completed: boolean, now?: Date): boolean {
+export interface GuestLessonPosition {
+  /** Deck part (0 = single-deck chapter); undefined = the chapter's first part. */
+  part?: number;
+  slide: number;
+  completed: boolean;
+  mode?: 'read' | 'listen';
+}
+
+/** Lesson position on the device (the slide player calls this for guests). Completion is sticky. */
+export function recordGuestLessonPosition(chapter: string, pos: GuestLessonPosition, now?: Date): boolean {
   const p = readGuestProgress();
-  const prev = p.lessons.find((l) => l.chapter === chapter);
-  p.lessons = p.lessons.filter((l) => l.chapter !== chapter);
-  p.lessons.push({ chapter, slide, completed: completed || prev?.completed === true, updatedAt: nowIso(now) });
+  const key = lessonKey({ chapter, part: pos.part });
+  const prev = p.lessons.find((l) => lessonKey(l) === key);
+  p.lessons = p.lessons.filter((l) => lessonKey(l) !== key);
+  const entry: GuestLesson = { chapter, slide: pos.slide, completed: pos.completed || prev?.completed === true, updatedAt: nowIso(now) };
+  if (pos.part !== undefined) entry.part = pos.part;
+  if (pos.mode) entry.mode = pos.mode;
+  p.lessons.push(entry);
   return writeGuestProgress(p);
+}
+
+/** The saved position for a chapter part on this device, or null. */
+export function readGuestLessonPosition(p: GuestProgress, chapter: string, part: number | undefined): GuestLesson | null {
+  return p.lessons.find((l) => lessonKey(l) === lessonKey({ chapter, part })) ?? null;
+}
+
+/** Last guest answer per question of a chapter (practice page: "answered" / "correct last time"). */
+export function guestAnswersFor(p: GuestProgress, chapter: string): Map<string, boolean> {
+  const out = new Map<string, boolean>();
+  for (const a of p.practice) if (a.chapter === chapter) out.set(a.question, a.correct);
+  return out;
 }
 
 /** Remembers the board/class a guest browses, so the profile can be filled after sign-up. */
@@ -144,35 +177,42 @@ export function rememberGuestBoardClass(board: 'cbse' | 'cisce', classLevel: num
 }
 
 /**
- * Worth sending to merge-guest? Completed lessons and practice answers are; bare lesson positions are not
- * stored by the API yet (`ignored.positionsNotStored`), so they alone never trigger a merge.
+ * Worth sending to merge-guest? Since API M2 stores lesson positions (`lessonsStored`), any lesson entry or
+ * practice answer is.
  */
 export function hasMergeableProgress(p: GuestProgress): boolean {
-  return p.practice.length > 0 || p.lessons.some((l) => l.completed);
+  return p.practice.length > 0 || p.lessons.length > 0;
 }
 
 /**
- * After a successful (or already-done) merge: drop what the server now has, keep incomplete lesson
- * positions until the API stores them (backend handoff), and forget board/class.
+ * After a successful (or already-done) merge the server has everything (backend-api M2 handoff point 6:
+ * "clear the whole soyl_guest_v1"), so nothing is kept.
  */
-export function afterMerge(p: GuestProgress): GuestProgress {
-  return { v: 1, lessons: p.lessons.filter((l) => !l.completed), practice: [] };
+export function afterMerge(_p: GuestProgress): GuestProgress {
+  void _p;
+  return emptyGuestProgress();
 }
 
 export interface ChapterGuestSummary {
+  /** Most recently viewed slide (0-based) of the most recently opened part. */
   lessonSlide: number | null;
+  lessonPart: number | null;
+  /** Every part this device opened is completed. */
   lessonCompleted: boolean;
   practiceAnswered: number;
   practiceCorrect: number;
 }
 
 export function chapterSummary(p: GuestProgress, chapter: string): ChapterGuestSummary {
-  const lesson = p.lessons.find((l) => l.chapter === chapter);
-  const answers = p.practice.filter((a) => a.chapter === chapter);
+  const lessons = p.lessons.filter((l) => l.chapter === chapter).sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : -1));
+  const latest = lessons[0];
+  // One answer per question: the latest counts.
+  const answers = guestAnswersFor(p, chapter);
   return {
-    lessonSlide: lesson ? lesson.slide : null,
-    lessonCompleted: lesson?.completed ?? false,
-    practiceAnswered: answers.length,
-    practiceCorrect: answers.filter((a) => a.correct).length,
+    lessonSlide: latest ? latest.slide : null,
+    lessonPart: latest?.part ?? null,
+    lessonCompleted: lessons.length > 0 && lessons.every((l) => l.completed),
+    practiceAnswered: answers.size,
+    practiceCorrect: [...answers.values()].filter(Boolean).length,
   };
 }

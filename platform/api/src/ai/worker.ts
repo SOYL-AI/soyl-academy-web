@@ -8,7 +8,7 @@ import type { Database } from '@soyl/db';
 import type { TokenCredentialLike } from '@soyl/ai-core';
 import { MemoryKv } from '../kv';
 import { loadAiConfig, type AiConfig } from './config';
-import { createAiRuntime, type AiRuntime } from './runtime';
+import { createAiRuntime, type AiProcessRuntime, type AiRuntime } from './runtime';
 import { AiServices } from './services';
 import type { MinimalLogger } from './spend';
 
@@ -26,7 +26,7 @@ export interface AiWorkerSettings {
 
 export interface AiWorkerContext {
   config: AiConfig;
-  runtime: AiRuntime | null;
+  runtime: AiProcessRuntime | null;
   services(db: Database, now: Date, log?: MinimalLogger): AiServices;
 }
 

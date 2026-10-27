@@ -1,0 +1,91 @@
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-2);
+  margin: var(--p-space-1) 0 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.deck {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--p-space-3);
+  max-width: 40rem;
+  margin-top: var(--p-space-4);
+}
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--p-space-2);
+}
+.count {
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  gap: var(--p-space-3);
+  min-height: 14rem;
+  padding: var(--p-space-5) var(--p-space-4);
+  border: 1px solid var(--p-border-strong);
+  border-radius: var(--p-radius-lg);
+  background: var(--p-surface);
+  box-shadow: var(--p-shadow-2);
+  cursor: pointer;
+  transition: background var(--p-duration-base) var(--p-ease), border-color var(--p-duration-base) var(--p-ease);
+}
+.cardFlipped {
+  background: var(--p-accent-soft);
+  border-color: var(--p-accent);
+}
+.side {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--p-space-2);
+}
+.sideLabel {
+  font-size: var(--p-text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--p-ink-muted);
+}
+.face {
+  font-size: var(--p-text-lg);
+  line-height: var(--p-leading-body);
+  min-width: 0;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--p-space-2);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--p-space-2);
+}
+.tally {
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.done {
+  display: grid;
+  gap: var(--p-space-2);
+  padding: var(--p-space-4);
+  border-radius: var(--p-radius-lg);
+  background: var(--p-success-soft);
+}
+.done p {
+  display: flex;
+  gap: var(--p-space-2);
+  align-items: center;
+  margin: 0;
+}

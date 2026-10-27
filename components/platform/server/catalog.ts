@@ -17,21 +17,22 @@ export class PlatformApiNotConfigured extends Error {
   }
 }
 
-function serverApi(): ApiClient {
+/** Server-side client for public data: edge secret, ISR data cache (catalog: 1 h by default). */
+export function serverApi(cacheOpts: { revalidate: number; tags: string[] } = { revalidate: CATALOG_REVALIDATE_SECONDS, tags: ['platform-catalog'] }): ApiClient {
   const cfg = readProxyConfig();
   if (!cfg) throw new PlatformApiNotConfigured();
   return createApiClient({
     baseUrl: cfg.origin,
     headers: { [EDGE_AUTH_HEADER]: cfg.edgeSecret },
     fetch: (input, init) => {
-      // Catalog data is the same for everyone: cache it (ISR) instead of the client's no-store default.
+      // Public data is the same for everyone: cache it (ISR) instead of the client's no-store default.
       const { cache: _ignored, ...rest } = init ?? {};
       void _ignored;
       return fetch(input, {
         ...rest,
         credentials: undefined,
         signal: AbortSignal.timeout(cfg.timeoutMs),
-        next: { revalidate: CATALOG_REVALIDATE_SECONDS, tags: ['platform-catalog'] },
+        next: cacheOpts,
       } as RequestInit);
     },
   });

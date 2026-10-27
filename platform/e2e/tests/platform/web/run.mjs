@@ -12,9 +12,10 @@
  * to Playwright (e.g. --grep "guest").
  * The build in .next is left in the flag-OFF state at the end, so the marketing regression can follow.
  */
+import { existsSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { canonicalEnv, run, runPlaywright } from '../../../scripts/lib.mjs';
-import { WEB_ENV_ON } from './env.mjs';
+import { AUDIO_DIR, WEB_ENV_ON } from './env.mjs';
 
 const here = import.meta.dirname;
 const repoRoot = resolve(here, '../../../../..');
@@ -32,15 +33,45 @@ async function build(env, label) {
   if (code !== 0) throw new Error(`next build (${label}) failed, see test-results/platform-web/build-${label}.log`);
 }
 
+/**
+ * Narration for one chapter (CBSE 10 Science ch01) from the pipeline's mock speech provider: valid, silent
+ * Ogg Opus of the estimated length. The manifest is marked non-simulated so the local dev publish merges it
+ * (it refuses mock audio by default); this is e2e-only data in test-results/, never committed or deployed.
+ */
+async function prepareAudio() {
+  const manifest = resolve(AUDIO_DIR, 'out/cbse-10-science-ch01/audio.json');
+  if (!existsSync(manifest)) {
+    log('mock narration audio for cbse-10-science-ch01 (pipeline tts, mock speech)…');
+    const env = { ...process.env, CONTENT_PIPELINE_OUT_DIR: resolve(AUDIO_DIR, 'out'), CONTENT_PIPELINE_STATE_DIR: resolve(AUDIO_DIR, 'state'), CONTENT_BLOB_DIR: resolve(AUDIO_DIR, 'blob') };
+    const code = await run('npm', ['run', 'content', '--', 'tts', '--authored', '--board', 'cbse', '--class', '10', '--subject', 'science', '--chapter', '1', '--state', 'file'], {
+      cwd: resolve(repoRoot, 'platform'),
+      env,
+      logFile: resolve(here, '../../../test-results/platform-web/tts.log'),
+      quiet: true,
+    });
+    if (code !== 0) throw new Error('mock tts failed, see test-results/platform-web/tts.log');
+  }
+  const m = JSON.parse(readFileSync(manifest, 'utf8'));
+  if (m.simulated) writeFileSync(manifest, JSON.stringify({ ...m, simulated: false }, null, 2));
+}
+
+/** ISR pages rendered by an earlier `next start` survive a rebuild in .next/server/route-cache: drop them. */
+function clearRouteCache() {
+  rmSync(resolve(repoRoot, '.next/server/route-cache'), { recursive: true, force: true });
+}
+
 let failed = false;
 if (!flag('--off-only')) {
+  await prepareAudio();
   if (!flag('--skip-build')) await build(canonicalEnv(WEB_ENV_ON), 'flag-on');
+  clearRouteCache();
   log('Playwright: flows with the flag ON');
   const code = await runPlaywright(['-c', resolve(here, 'playwright.config.ts'), ...passThrough], {});
   failed ||= code !== 0;
 }
 if (!flag('--on-only')) {
   await build(canonicalEnv(), 'flag-off');
+  clearRouteCache();
   log('Playwright: flag OFF');
   const code = await runPlaywright(['-c', resolve(here, 'flag-off.config.ts'), ...passThrough], {});
   failed ||= code !== 0;

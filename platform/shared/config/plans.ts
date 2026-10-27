@@ -97,3 +97,42 @@ export function formatInr(amountPaise: number): string {
     : rupees.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   return `₹${text}`;
 }
+
+/** The price of a plan for an interval, or null when the plan is not sold that way. */
+export function planPrice(id: PlanId, interval: BillingInterval): PlanPrice | null {
+  return getPlan(id).prices.find((p) => p.interval === interval) ?? null;
+}
+
+const INTERVAL_SUFFIX: Record<BillingInterval, string> = { monthly: '/month', yearly: '/year', one_time: ' one-time' };
+
+/** GST-inclusive price label for /plans, e.g. "₹199/month", "₹1,499/year", "₹499 one-time". */
+export function priceLabel(price: PlanPrice): string {
+  return `${formatInr(price.amountPaise)}${INTERVAL_SUFFIX[price.interval]}`;
+}
+
+/**
+ * Billing behaviour (ARCHITECTURE §11.2, ADR-016). Owner-tunable values only; prices live in PLANS.
+ */
+export const BILLING = {
+  currency: 'INR',
+  /** Brand shown in Razorpay Checkout. */
+  checkoutName: 'SOYL Academy',
+  /**
+   * A paid-up subscription stays entitled this long past `current_end`: Razorpay charges at the period
+   * boundary and the `subscription.charged` webhook arrives after it. A halted subscription is revoked
+   * at once regardless.
+   */
+  renewalGraceHours: 48,
+  /** A created-but-unpaid order or subscription younger than this is returned again instead of a new one. */
+  reusePendingMinutes: 30,
+  /** Unpaid local orders older than this are marked `expired` by the worker. */
+  orderExpiryHours: 24,
+  /** Razorpay `expire_by`: a subscription not authorised within this many hours expires at Razorpay. */
+  subscriptionAuthWindowHours: 24,
+  /** Razorpay `total_count` (billing cycles) per interval. */
+  subscriptionTotalCount: { monthly: 60, yearly: 5 },
+  /** `POST /v1/billing/refresh`: at most this many server-side re-syncs per user per minute. */
+  refreshPerMinute: 12,
+  /** Value of `notes.app` on every Razorpay object we create (other Razorpay products on the account are ignored). */
+  notesApp: 'soyl-academy',
+} as const;

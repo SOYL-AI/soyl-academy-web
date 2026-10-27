@@ -12,6 +12,7 @@ import { pgConnectionConfig, type Database, type PgPassword } from '@soyl/db';
 import type { WorkerConfig } from './config';
 import { checkDatabase, createHealthServer } from './health';
 import { allJobs } from './jobs';
+import { RazorpayHttpClient } from '@soyl/api/billing/razorpay/http';
 import { errorFields, type Logger } from './logger';
 import { registerJobs, type JobDefinition, type RegisteredJob } from './registry';
 
@@ -73,6 +74,12 @@ export function bossOptions(config: WorkerConfig, databaseUrl: string, password?
   };
 }
 
+/** The real Razorpay client when configured (billing-jobs.ts: never the in-memory stub). */
+export function billingClient(config: WorkerConfig): RazorpayHttpClient | null {
+  const b = config.billing;
+  return b.provider === 'razorpay' ? new RazorpayHttpClient({ keyId: b.keyId!, keySecret: b.keySecret!, baseUrl: b.apiBaseUrl }) : null;
+}
+
 export async function startWorker(deps: WorkerDeps): Promise<RunningWorker> {
   const { config, log } = deps;
   const now = deps.now ?? (() => new Date());
@@ -106,7 +113,7 @@ export async function startWorker(deps: WorkerDeps): Promise<RunningWorker> {
   try {
     await boss.start({ attempts: 3 });
     state.lastBossOkAt = new Date();
-    jobs = await registerJobs(boss, deps.jobs ?? allJobs({ unconsentedAccountTtlDays: config.unconsentedAccountTtlDays, unconsentedPurge: config.unconsentedPurge }), {
+    jobs = await registerJobs(boss, deps.jobs ?? allJobs({ unconsentedAccountTtlDays: config.unconsentedAccountTtlDays, unconsentedPurge: config.unconsentedPurge, billing: { razorpay: billingClient(config) } }), {
       db: deps.db,
       log,
       now,

@@ -1,7 +1,8 @@
 /**
- * Which plan a student is on (CONTEXT §6–7). The billing agent (M4 billing) owns entitlements and
- * replaces the default below with an implementation over `entitlements`/`subscriptions` written by
- * the Razorpay webhook path (AC-10: the client never decides entitlement).
+ * Which plan a student is on (CONTEXT §6–7). The real implementation is `BillingEntitlementService`
+ * (billing/entitlements.ts, ADR-016), over `entitlements` rows written only by the server-verified
+ * Razorpay paths (AC-10: the client never decides entitlement). AiServices uses it by default; tests
+ * inject `StaticEntitlementService`; `FreeEntitlementService` remains for stand-alone stand-ins.
  *
  * Contract for billing:
  * - `planFor(userId, at)` returns the plan in force at `at` (server clock). Called once per AI request
@@ -13,12 +14,15 @@
  */
 import type { PlanId } from '@soyl/shared/config/plans';
 
+/** planFor(userId, at) from the `entitlements` table: 'free' when none; throws only if Postgres is unreachable. */
+export { BillingEntitlementService } from '../billing/entitlements';
+
 export interface EntitlementService {
   readonly name: string;
   planFor(userId: string, at: Date): Promise<PlanId>;
 }
 
-/** Until billing lands: every student is on the free plan. */
+/** Every student on the free plan (stand-alone stand-in; the app uses BillingEntitlementService). */
 export class FreeEntitlementService implements EntitlementService {
   readonly name = 'free-default';
   async planFor(): Promise<PlanId> {

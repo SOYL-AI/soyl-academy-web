@@ -7,6 +7,7 @@
   "exports": {
     "./contract/*": "./src/contract/*.ts",
     "./engine/*": "./src/domain/tests/*.ts",
+    "./billing/*": "./src/billing/*.ts",
     "./ai/*": "./src/ai/*.ts"
   },
   "scripts": {
@@ -17,7 +18,8 @@
     "typecheck": "tsc -p tsconfig.json",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "live": "tsx scripts/live.ts"
+    "live": "tsx scripts/live.ts",
+    "billing": "tsx scripts/billing.ts"
   },
   "dependencies": {
     "@fastify/swagger": "9.9.2",
