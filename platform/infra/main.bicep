@@ -416,7 +416,7 @@ var commonEnv = concat(
     }
     {
       name: 'AZURE_OPENAI_DEPLOYMENT_VERIFY'
-      value: deploymentNameByTier.?verify ?? ''
+      value: deploymentNameByTier.?verify ?? deploymentNameByTier.?mid ?? ''
     }
     {
       name: 'AZURE_OPENAI_DEPLOYMENT_BATCH'

@@ -39,7 +39,7 @@ flowchart TB
     PG[(PostgreSQL Flexible Server + pgvector)]
     RD[(Azure Managed Redis)]
     BL[(Blob Storage + Front Door CDN)]
-    AOAI[Azure OpenAI: GPT-6 Luna · GPT-6.1 Sol · GPT-6 Astra]
+    AOAI[Azure OpenAI: GPT-6 Luna · GPT-6.1 Sol]
     SP[Azure AI Speech · TTS]
     CS[Azure AI Content Safety]
     KV[Key Vault]
@@ -295,7 +295,7 @@ Bulk generation runs as **pipeline jobs that call Azure OpenAI**, not inside a c
 | 2 | Outline | GPT-6.1 Sol | per-chapter lesson outline, question plan (counts by type/difficulty/competency) |
 | 3 | Generate | Azure OpenAI **Batch** (GPT-6.1 Sol) | deck, notes, flashcards, question bank, case passages |
 | 4 | Lint & render | deterministic code | schema validation, KaTeX parse, SVG/spec compile, length limits, banned-content checks |
-| 5 | Verify | GPT-6 Astra (independent solve) + SymPy/numeric checks | mismatch flags; auto-regenerate flagged items up to 2 times, then mark for human review |
+| 5 | Verify | GPT-6.1 Sol via Batch (independent re-solve, D-033) + JS numeric checks | mismatch flags; auto-regenerate flagged items up to 2 times, then mark for human review |
 | 6 | Originality | n-gram overlap vs. any reference text available + model check | rewrite if overlap above threshold |
 | 7 | Assemble tests | blueprint engine | chapter/unit/term/full papers, test series |
 | 8 | Audio | Azure AI Speech (en-IN; hi-IN for Hindi) | narration MP3/Opus per slide → Blob |
@@ -338,7 +338,7 @@ Bulk generation runs as **pipeline jobs that call Azure OpenAI**, not inside a c
 Every model call in the system — API or worker — goes through this module.
 
 - **Action registry** (`platform/shared/config/ai-actions.ts`): action → model tier, prompt template, max output tokens, reasoning effort, credit price, allowed plans, moderation policy.
-- **Model config** (`platform/shared/config/models.ts`): logical tiers `small | mid | verify` mapped to Azure OpenAI deployment names (initially GPT-6 Luna, GPT-6.1 Sol, GPT-6 Astra). Changing a model is a config change.
+- **Model config** (`platform/shared/config/models.ts`): logical tiers `small | mid | verify` mapped to Azure OpenAI deployment names (GPT-6 Luna for `small`; GPT-6.1 Sol for `mid` and for the pipeline's `verify` pass — D-033: only two models). Changing a model is a config change.
 - **Flow:** authenticate → check plan + quote → **reserve credits** (Redis atomic, mirrored to ledger) → moderate input (Azure AI Content Safety) → build prompt with **stable prefix first** (system + syllabus context) to maximise prompt-cache hits → stream response (SSE) → moderate output → record `ai_requests` with tokens and INR cost → **charge or refund**.
 - **Tutor behaviour:** grounded in our own content (pgvector retrieval over deck/notes/question chunks for the student's board/class/chapter); hint first, full solution only after the student tries or asks again; refuses off-topic or unsafe requests; age-appropriate; replies in English or Hinglish matching the student, Hindi for Hindi subjects.
 - **Evaluation:** marking-scheme-based, step marks with reasons, returns a confidence; low confidence shows "AI-graded — check with your teacher".

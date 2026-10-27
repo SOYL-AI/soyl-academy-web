@@ -65,12 +65,18 @@ export const MODELS: Record<ModelTier, ModelConfig> = {
     context_window: 400_000,
     price_status: 'unverified',
   },
+  /**
+   * The pipeline's independent re-solve pass (stage 5). Owner decision D-033: only two models are used,
+   * GPT-6 Luna and GPT-6.1 Sol; there is no separate (more expensive) verification model. This tier
+   * therefore runs on the Sol deployment, normally through Batch. It is a fresh call with a different
+   * prompt and no access to the generated answer, so it still checks the content independently.
+   */
   verify: {
     tier: 'verify',
-    display_name: 'GPT-6 Astra',
-    deployment_env: 'AZURE_OPENAI_DEPLOYMENT_VERIFY',
-    batch_deployment_env: 'AZURE_OPENAI_DEPLOYMENT_VERIFY_BATCH',
-    price_inr_per_1m: { input: 176, cached_input: 17.6, output: 1_408 },
+    display_name: 'GPT-6.1 Sol (verification pass)',
+    deployment_env: 'AZURE_OPENAI_DEPLOYMENT_MID',
+    batch_deployment_env: 'AZURE_OPENAI_DEPLOYMENT_MID_BATCH',
+    price_inr_per_1m: { input: 110, cached_input: 11, output: 880 },
     batch_price_factor: 0.5,
     max_output_tokens: 32_000,
     context_window: 400_000,

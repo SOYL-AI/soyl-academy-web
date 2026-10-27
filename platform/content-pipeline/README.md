@@ -121,7 +121,7 @@ Nothing is needed in code. When OA-02 is done:
    AZURE_OPENAI_ENDPOINT=https://<resource>.openai.azure.com
    AZURE_OPENAI_DEPLOYMENT_SMALL=<GPT-6 Luna deployment>
    AZURE_OPENAI_DEPLOYMENT_MID=<GPT-6.1 Sol deployment>
-   AZURE_OPENAI_DEPLOYMENT_VERIFY=<GPT-6 Astra deployment>
+   # verify pass uses AZURE_OPENAI_DEPLOYMENT_MID (Sol) — D-033, no separate verify model
    # optional Global-Batch deployments (default: the same names)
    AZURE_OPENAI_DEPLOYMENT_MID_BATCH=...
    CONTENT_BUDGET_INR=25000

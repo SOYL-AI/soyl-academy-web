@@ -73,7 +73,6 @@ param aoaiDeployModels = bool(readEnvironmentVariable('SOYL_AOAI_DEPLOY_MODELS',
 param aoaiDeployments = [
   { tier: 'small', name: 'small', model: 'gpt-6-luna', version: 'OA-02', skuName: 'Standard', capacity: 10 }
   { tier: 'mid', name: 'mid', model: 'gpt-6.1-sol', version: 'OA-02', skuName: 'Standard', capacity: 10 }
-  { tier: 'verify', name: 'verify', model: 'gpt-6-astra', version: 'OA-02', skuName: 'Standard', capacity: 10 }
   { tier: 'batch', name: 'mid-batch', model: 'gpt-6.1-sol', version: 'OA-02', skuName: 'GlobalBatch', capacity: 100 }
 ]
 
