@@ -137,6 +137,7 @@ security-fixes-m6 was merged to platform/main (`fe404f0`), and the Lead has alre
 - `npm test -w @soyl/ai-core`: 38 passed. `-w @soyl/shared`: 80 passed. `-w @soyl/content-pipeline`: 280 passed. In the parallel run, `lint-rules` timed out once at 60 s on a loaded machine; rerun alone it gave 132/132.
 - api `test/ai-unit.test.ts` + `test/ai-spend.test.ts`: 37 passed. worker `test/ai-jobs.test.ts`: 6 passed.
 - what-if `soyl-prod-p6`: see above.
+- After merging fe404f0, `@soyl/shared` has 1 failure, `api-client.test.ts` ("generated schema matches openapi.json"). It comes in with platform/main; this branch does not touch `platform/api` or `platform/shared/api-client`. Fix with `npm run generate:api-client -w @soyl/shared` (backend-api/web-platform). ai-core still 38/38 after the merge.
 
 ## How to verify
 
