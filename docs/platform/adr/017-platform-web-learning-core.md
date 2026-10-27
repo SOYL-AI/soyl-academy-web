@@ -1,6 +1,6 @@
 # ADR-017: Platform web learning core — lesson URLs, listen mode, where content renders, QR dependency
 
-- **Status:** Proposed (web-platform M2; for Lead approval at integration)
+- **Status:** Accepted (Lead, 2026-10-27, on merge of `platform/web-platform/m2`)
 - **Date:** 2026-10-27
 - **Author:** web-platform
 - **Related:** ARCHITECTURE §3.1–3.2, §16; CONTEXT §5; ADR-005, ADR-009 (renderers), ADR-010 (content API), ADR-011 (proxy +
