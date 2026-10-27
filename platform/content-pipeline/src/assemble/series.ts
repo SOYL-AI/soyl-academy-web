@@ -12,10 +12,31 @@
  * default. Board and term papers cover board-assessed chapters only.
  */
 import { TEST_SERIES_TARGETS } from '@soyl/shared/config/content-targets';
-import type { Blueprint, PaperType, Subject, SyllabusFile } from '@soyl/shared/content/index';
+import { Competency, type Blueprint, type PaperType, type Subject, type SyllabusFile } from '@soyl/shared/content/index';
+import { COMPETENCY_BALANCE } from '../../config/pipeline';
 import type { Catalog } from '../catalog';
 import { questionIdPrefix } from '../ids';
-import type { PaperSpec, UnitTarget } from './engine';
+import type { CompetencyTarget, PaperSpec, UnitTarget } from './engine';
+
+/**
+ * Competency targets of a board-pattern paper (COMPETENCY_BALANCE.paperTypes): attempted marks per
+ * blueprint `mark_shares` band. Null for other paper types, or when the shares are not a partition of
+ * the competencies (unknown names, a competency in two bands, shares not adding up to 1).
+ */
+export function competencyTargetsFor(bp: Blueprint): CompetencyTarget[] | null {
+  if (!COMPETENCY_BALANCE.paperTypes.includes(bp.paper_type)) return null;
+  const entries = Object.entries(bp.mark_shares);
+  if (!entries.length || Math.abs(entries.reduce((n, [, s]) => n + s, 0) - 1) > 1e-6) return null;
+  const seen = new Set<string>();
+  const targets: CompetencyTarget[] = [];
+  for (const [band, share] of entries) {
+    const comps = band.split('+');
+    if (comps.some((c) => !Competency.safeParse(c).success || seen.has(c))) return null;
+    comps.forEach((c) => seen.add(c));
+    targets.push({ band, competencies: comps as CompetencyTarget['competencies'], marks: Math.round(share * bp.total_marks * 100) / 100 });
+  }
+  return targets;
+}
 
 export interface PlannedPaper {
   spec: PaperSpec;
@@ -131,7 +152,24 @@ export function planSubjectTests(
     }
     const unitTargets = weighted ? unitTargetsFor(syllabus, chapters, bp.total_marks) : null;
     if (weighted && !unitTargets) notes.push(`${id}: syllabus unit marks do not add up to ${bp.total_marks} over its chapters; no unit weightage applied`);
-    papers.push({ spec: { id, title, blueprint: bp, subjectId: subject.id, chapters, seed: seed(id), ...(unitTargets ? { unitTargets } : {}), ...(series.startsWith('chapter:') || !practiceOnly.size ? {} : { practiceOnlyTopics: practiceOnly }) }, series, seriesTitle, track, position });
+    const competencyTargets = competencyTargetsFor(bp);
+    papers.push({
+      spec: {
+        id,
+        title,
+        blueprint: bp,
+        subjectId: subject.id,
+        chapters,
+        seed: seed(id),
+        ...(unitTargets ? { unitTargets } : {}),
+        ...(series.startsWith('chapter:') || !practiceOnly.size ? {} : { practiceOnlyTopics: practiceOnly }),
+        ...(competencyTargets ? { competencyTargets, competencyTolerance: COMPETENCY_BALANCE.toleranceMarks } : {}),
+      },
+      series,
+      seriesTitle,
+      track,
+      position,
+    });
   };
 
   // Chapter tests (short + long, disjoint) for every chapter in scope.

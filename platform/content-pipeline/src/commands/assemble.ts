@@ -25,7 +25,7 @@ import { subjectsInScope, type Scope } from '../catalog';
 import { table, writeJson } from '../io';
 import type { Pipeline } from '../pipeline';
 import { loadAuthoredUnits, loadOutUnit, outUnits } from '../sources';
-import { assemblePaper, type BankItem, type GenerationRequest } from '../assemble/engine';
+import { assemblePaper, competencyMarksByBand, competencyMarksOf, type BankItem, type GenerationRequest } from '../assemble/engine';
 import { planSubjectTests, type PlannedPaper } from '../assemble/series';
 import { nearDuplicates } from '../originality/ngrams';
 import { ORIGINALITY } from '../../config/pipeline';
@@ -52,13 +52,19 @@ export function conflictsOf(texts: { id: string; unit: string; text: string }[])
   return out;
 }
 
+/** A bank item with its per-part competency marks (case / source-based items), when it has parts. */
+export function withCompetencyMarks(item: BankItem, children: Parameters<typeof competencyMarksOf>[0]['children']): BankItem {
+  const cm = competencyMarksOf({ marks: item.marks, children });
+  return cm ? { ...item, competency_marks: cm } : item;
+}
+
 export async function bankFromDb(p: Pipeline, subject: Subject, academicYear: string): Promise<Bank> {
   const { db } = await p.dbAccess.get();
   const rows = await db
     .select({ key: questionsTable.key, version: questionsTable.version, unit: questionsTable.unit, type: questionsTable.type, marks: questionsTable.marks, difficulty: questionsTable.difficulty, competency: questionsTable.competency, topicKeys: questionsTable.topicKeys, body: questionsTable.body })
     .from(questionsTable)
     .where(and(eq(questionsTable.academicYear, academicYear), eq(questionsTable.isCurrent, true), inArray(questionsTable.status, ['published', 'reviewed']), eq(questionsTable.pool, 'practice'), sql`${questionsTable.unit} LIKE ${`${subject.id}-ch%`}`));
-  const items: BankItem[] = rows.map((r) => ({ id: r.key, version: r.version, unit: r.unit, type: r.type as BankItem['type'], marks: Number(r.marks), difficulty: r.difficulty, competency: r.competency as BankItem['competency'], topic_ids: r.topicKeys }));
+  const items: BankItem[] = rows.map((r) => withCompetencyMarks({ id: r.key, version: r.version, unit: r.unit, type: r.type as BankItem['type'], marks: Number(r.marks), difficulty: r.difficulty, competency: r.competency as BankItem['competency'], topic_ids: r.topicKeys }, (r.body as { children?: Parameters<typeof competencyMarksOf>[0]['children'] }).children));
   const tests = await db
     .select({ paperType: testsTable.paperType, chapterKeys: testsTable.chapterKeys })
     .from(testsTable)
@@ -84,7 +90,7 @@ export function bankFromFiles(p: Pipeline, subject: Subject, opts: { allowMock?:
   for (const u of [...authored, ...generated]) {
     for (const q of u.questions) {
       if (u.origin === 'pipeline' && !PUBLISHABLE_STATUSES.has(q.status)) continue;
-      items.push({ id: q.id, version: q.version, unit: u.unit, type: q.type, marks: q.marks, difficulty: q.difficulty, competency: q.competency, topic_ids: q.topic_ids });
+      items.push(withCompetencyMarks({ id: q.id, version: q.version, unit: u.unit, type: q.type, marks: q.marks, difficulty: q.difficulty, competency: q.competency, topic_ids: q.topic_ids }, q.children));
       texts.push({ id: q.id, unit: u.unit, text: `${q.passage_md ?? ''}
 ${q.stem_md}` });
     }
@@ -118,7 +124,11 @@ export function assembleSubject(plan: ReturnType<typeof planSubjectTests>, bank:
     if (!f) continue;
     questionIds(f.test).forEach((id) => exclusionFor(planned.series).add(id));
     const r = remapVersions(f.test, versions);
-    if (r.ok) out.tests.push({ test: r.test, planned });
+    if (r.ok) {
+      out.tests.push({ test: r.test, planned });
+      const note = competencyNote(f.test, planned, bank);
+      if (note) out.notes.push(note);
+    }
     else
       out.requests.push({ paper_id: f.test.id, blueprint_id: f.test.blueprint_id ?? '', section: null, type: '*', marks: null, competency: null, difficulty: null, chapters: [...new Set(r.missing.map((id) => bank.items.find((q) => q.id === id)?.unit ?? id))], missing: r.missing.length, reason: `frozen paper references ${r.missing.length} question(s) that are not in the bank (${r.missing.slice(0, 3).join(', ')}…): publish them, or re-freeze the series` });
   }
@@ -132,12 +142,30 @@ export function assembleSubject(plan: ReturnType<typeof planSubjectTests>, bank:
     if (r.ok) {
       r.used.forEach((id) => exclude.add(id));
       out.tests.push({ test: r.test, planned });
+      // Complete but off its competency targets: built (usable in dev), and reported as requests so
+      // --strict fails and --freeze refuses the series.
+      if (r.shortfalls) out.requests.push(...r.shortfalls);
     } else out.requests.push(...r.requests);
   }
   // Keep the plan's order (chapter tests, unit tests, mocks, May track).
   const order = new Map(plan.papers.map((x, i) => [x.spec.id, i]));
   out.tests.sort((a, b) => order.get(a.test.id)! - order.get(b.test.id)!);
   return out;
+}
+
+/**
+ * A note for a frozen paper whose competency marks are off its targets by more than the tolerance
+ * (frozen before competency balancing, or the bank was re-tagged since): re-freeze to rebalance.
+ */
+function competencyNote(test: TestDefinition, planned: PlannedPaper, bank: Bank): string | null {
+  const targets = planned.spec.competencyTargets;
+  if (!targets?.length) return null;
+  const byId = new Map(bank.items.map((q) => [q.id, q]));
+  const got = competencyMarksByBand(test, (id) => byId.get(id), targets);
+  const tol = planned.spec.competencyTolerance ?? 0;
+  if (got.every((m, i) => Math.abs(m - targets[i]!.marks) <= tol + 1e-9)) return null;
+  const fmt = (x: number) => String(Math.round(x * 10) / 10);
+  return `${test.id}: frozen paper is off its competency targets (±${fmt(tol)}): ${targets.map((t, i) => `${t.band} ${fmt(got[i]!)}/${fmt(t.marks)}`).join(', ')}; re-freeze to rebalance`;
 }
 
 /** The series papers of an assembled subject as a frozen series file (chapter tests excluded). */

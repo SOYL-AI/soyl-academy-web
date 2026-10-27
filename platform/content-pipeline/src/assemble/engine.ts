@@ -22,12 +22,20 @@
  *     competency mark shares (under-filled share preferred), questions in `avoid` (−6: another track's
  *     papers), internal-choice alternatives from the
  *     same chapter as their partner (+2); ties broken by the seeded shuffle of the id-sorted bank,
- *     so the same bank gives the same paper whatever order the bank was read in.
+ *     so the same bank gives the same paper whatever order the bank was read in;
+ *   - competency balance (board-pattern papers, `competencyTargets` from the blueprint `mark_shares`,
+ *     COMPETENCY_BALANCE in config/pipeline.ts): after the greedy fill, single swaps inside the same
+ *     slot and unit (so blueprint layout and unit weightage are untouched) move the attempted marks per
+ *     band (recall+understanding / application / analysis+evaluation) to the targets. Marks are
+ *     counted per part for case items (`competency_marks`) and averaged over the alternatives of an
+ *     internal choice, so the share holds whichever alternative a student attempts.
  * Shortages never fail silently: they come back as GenerationRequest records (what to generate,
- * for which chapters) and no TestDefinition is produced for that paper.
+ * for which chapters) and no TestDefinition is produced for that paper. A paper that is complete but
+ * misses a competency target by more than the tolerance is built and returned with `shortfalls`
+ * (generation requests for the band it lacks); callers record them like any other request.
  */
 import { createRng } from '@soyl/ai-core';
-import { TestDefinition, type Blueprint, type Competency, type PaperType, type QuestionType, type TestKind } from '@soyl/shared/content/index';
+import { Competency, TestDefinition, type Blueprint, type PaperType, type QuestionType, type TestKind } from '@soyl/shared/content/index';
 import type { z } from 'zod/v4';
 
 export interface BankItem {
@@ -39,6 +47,80 @@ export interface BankItem {
   difficulty: number;
   competency: z.infer<typeof Competency>;
   topic_ids: string[];
+  /**
+   * Marks per competency when they differ from `competency` (case items: per part, see
+   * competencyMarksOf). Absent: all marks count at `competency`.
+   */
+  competency_marks?: CompetencyMarks;
+}
+
+export type CompetencyMarks = Partial<Record<z.infer<typeof Competency>, number>>;
+
+interface PartLike {
+  marks: number;
+  competency: string;
+  alternatives?: readonly { competency: string }[] | null;
+}
+
+/**
+ * Marks per competency of a question with parts (case / source-based): each part counts at its own
+ * competency, and a part with internal-choice alternatives splits its marks equally between them (the
+ * student attempts one). Undefined when the question has no parts or the parts do not add up to its
+ * marks (then the question's own competency applies).
+ */
+export function competencyMarksOf(q: { marks: number; children?: readonly PartLike[] | null }): CompetencyMarks | undefined {
+  const parts = q.children ?? [];
+  if (!parts.length) return undefined;
+  const out: Record<string, number> = {};
+  let sum = 0;
+  for (const c of parts) {
+    const comps = [c.competency, ...(c.alternatives ?? []).map((a) => a.competency)];
+    for (const comp of comps) {
+      if (!Competency.safeParse(comp).success) return undefined;
+      out[comp] = (out[comp] ?? 0) + c.marks / comps.length;
+    }
+    sum += c.marks;
+  }
+  return Math.abs(sum - q.marks) > 1e-9 ? undefined : (out as CompetencyMarks);
+}
+
+/** Attempted marks a paper must carry in one competency band of the blueprint's `mark_shares`. */
+export interface CompetencyTarget {
+  /** The mark_shares key, e.g. "recall+understanding". */
+  band: string;
+  competencies: z.infer<typeof Competency>[];
+  marks: number;
+}
+
+/** Fraction of a question's marks in each target band (index-aligned with `targets`). */
+export function bandFractions(q: Pick<BankItem, 'marks' | 'competency' | 'competency_marks'>, targets: readonly CompetencyTarget[]): number[] {
+  const out = targets.map(() => 0);
+  const cm: CompetencyMarks = q.competency_marks ?? { [q.competency]: q.marks };
+  for (const [comp, m] of Object.entries(cm)) {
+    const i = targets.findIndex((t) => t.competencies.includes(comp as z.infer<typeof Competency>));
+    if (i >= 0 && q.marks > 0) out[i]! += (m ?? 0) / q.marks;
+  }
+  return out;
+}
+
+/**
+ * Attempted marks per competency band of a test. Ungrouped items count fully; the alternatives of
+ * an internal choice share the group's attempted marks equally (whichever the student picks).
+ */
+export function competencyMarksByBand(test: TestDefinition, find: (questionId: string) => Pick<BankItem, 'marks' | 'competency' | 'competency_marks'> | undefined, targets: readonly CompetencyTarget[]): number[] {
+  const out = targets.map(() => 0);
+  for (const s of test.sections) {
+    const attempts = new Map(s.choice_groups.map((g) => [g.id, g.attempt]));
+    const sizes = new Map<string, number>();
+    for (const it of s.items) if (it.choice_group) sizes.set(it.choice_group, (sizes.get(it.choice_group) ?? 0) + 1);
+    for (const it of s.items) {
+      const q = find(it.question_id);
+      if (!q) continue;
+      const w = it.choice_group ? (it.marks * (attempts.get(it.choice_group) ?? 1)) / sizes.get(it.choice_group)! : it.marks;
+      bandFractions(q, targets).forEach((f, i) => (out[i]! += w * f));
+    }
+  }
+  return out;
 }
 
 /** Attempted marks a syllabus unit must carry in a paper (board papers: the syllabus unit marks). */
@@ -70,6 +152,13 @@ export interface PaperSpec {
   conflicts?: ReadonlyMap<string, ReadonlySet<string>>;
   /** Soft: questions to avoid when the bank allows (the May track avoids the main mocks' questions). */
   avoid?: ReadonlySet<string>;
+  /**
+   * Competency balance (board-pattern papers): attempted marks per band. The paper is balanced towards
+   * them by swaps; a band still more than `competencyTolerance` marks off becomes a shortfall request.
+   */
+  competencyTargets?: CompetencyTarget[];
+  /** Allowed deviation per band, in marks (COMPETENCY_BALANCE.toleranceMarks). */
+  competencyTolerance?: number;
 }
 
 export interface GenerationRequest {
@@ -85,7 +174,11 @@ export interface GenerationRequest {
   reason: string;
 }
 
-export type PaperResult = { ok: true; test: TestDefinition; used: string[] } | { ok: false; requests: GenerationRequest[] };
+/**
+ * `shortfalls`: the paper is complete but a competency band is off target by more than the tolerance;
+ * each entry asks for questions of the missing band (same slot types and units). Never silent.
+ */
+export type PaperResult = { ok: true; test: TestDefinition; used: string[]; shortfalls?: GenerationRequest[] } | { ok: false; requests: GenerationRequest[] };
 
 /** Bank types a blueprint slot accepts (blueprints handoff convention 3: numericals map to short/long). */
 export const SLOT_COMPATIBLE: Partial<Record<QuestionType, QuestionType[]>> = {
@@ -313,11 +406,16 @@ export function assemblePaper(spec: PaperSpec, bank: readonly BankItem[]): Paper
   // Competency mark shares (soft): target attempted marks per share group ("recall+understanding" …).
   const shareGroups = Object.entries(bp.mark_shares).map(([k, share]) => ({ comps: new Set(k.split('+')), target: share * bp.total_marks, assigned: 0 }));
   const groupOf = (c: string) => shareGroups.find((g) => g.comps.has(c)) ?? null;
+  // Competency balance (board-pattern papers): per-part marks, choice alternatives weighted equally.
+  const cTargets = spec.competencyTargets?.length ? spec.competencyTargets : null;
+  const cAssigned = cTargets ? cTargets.map(() => 0) : [];
+  const fracCache = new Map<string, number[]>();
+  const fracs = (q: BankItem) => fracCache.get(q.id) ?? fracCache.set(q.id, bandFractions(q, cTargets ?? [])).get(q.id)!;
 
   const used = new Set<string>();
   const usedUnits = new Map<string, number>();
   const coveredTopics = new Set<string>();
-  const chosen: { slot: Slot; q: BankItem }[] = [];
+  const chosen: { slot: Slot; q: BankItem; weight: number; unitScope: Set<string> | null; target: number }[] = [];
   const groupUnit = new Map<string, string>();
   const shortage = new Map<string, GenerationRequest>();
 
@@ -325,6 +423,7 @@ export function assemblePaper(spec: PaperSpec, bank: readonly BankItem[]): Paper
     const unitScope = unitOfBlock[bi] ?? null;
     block.slots.forEach((slot, member) => {
       const counted = member === 0 ? block.counted : 0;
+      const weight = block.counted / block.slots.length;
       const target = slot.difficulty ? (slot.difficulty[0] + slot.difficulty[1]) / 2 : DIFFICULTY_RAMP.start + (DIFFICULTY_RAMP.end - DIFFICULTY_RAMP.start) * slot.position;
       let best: BankItem | null = null;
       let bestScore = -Infinity;
@@ -340,8 +439,11 @@ export function assemblePaper(spec: PaperSpec, bank: readonly BankItem[]): Paper
         if (q.type !== slot.type) score -= 0.25; // prefer the exact type
         if (spec.avoid?.has(q.id)) score -= 6;
         if (slot.group && groupUnit.has(slot.group)) score += groupUnit.get(slot.group) === q.unit ? 2 : -1;
-        const g = counted ? groupOf(q.competency) : null;
-        if (g) score += 3 * Math.max(-1, Math.min(1, (g.target - g.assigned) / counted));
+        if (cTargets) fracs(q).forEach((f, i) => (score += f * 3 * Math.max(-1, Math.min(1, (cTargets[i]!.marks - cAssigned[i]!) / weight))));
+        else {
+          const g = counted ? groupOf(q.competency) : null;
+          if (g) score += 3 * Math.max(-1, Math.min(1, (g.target - g.assigned) / counted));
+        }
         if (score > bestScore) {
           bestScore = score;
           best = q;
@@ -371,10 +473,13 @@ export function assemblePaper(spec: PaperSpec, bank: readonly BankItem[]): Paper
       if (slot.group && !groupUnit.has(slot.group)) groupUnit.set(slot.group, best.unit);
       const g = counted ? groupOf(best.competency) : null;
       if (g) g.assigned += counted;
-      chosen.push({ slot, q: best });
+      if (cTargets) fracs(best).forEach((f, i) => (cAssigned[i]! += weight * f));
+      chosen.push({ slot, q: best, weight, unitScope, target });
     });
   });
   if (shortage.size) return { ok: false, requests: [...shortage.values()] };
+
+  const shortfalls = cTargets ? balanceCompetency(spec, cTargets, cAssigned, chosen, available, used, fracs, base) : [];
 
   // Lay out: blueprint section and item order; inside an item, easier first; choice groups stay together.
   const sections = bp.sections.map((s) => {
@@ -412,7 +517,101 @@ export function assemblePaper(spec: PaperSpec, bank: readonly BankItem[]): Paper
     seed: spec.seed,
     version: 1,
   });
-  return { ok: true, test, used: [...used] };
+  return { ok: true, test, used: [...used], ...(shortfalls.length ? { shortfalls } : {}) };
+}
+
+/** Swap rounds of the competency balance (each round makes the best single improving swap). */
+const BALANCE_MAX_ROUNDS = 400;
+
+/**
+ * Competency balance (see the header): repeatedly makes the single swap — same slot, same unit scope,
+ * no repeat, no near-duplicate — that most reduces Σ |attempted − target| over the bands; candidates
+ * in `avoid` pay 0.5, and a closer difficulty breaks ties. Mutates `chosen`, `used` and `assigned`.
+ * Returns shortfall requests for every band still more than the tolerance off target.
+ */
+function balanceCompetency(
+  spec: PaperSpec,
+  targets: readonly CompetencyTarget[],
+  assigned: number[],
+  chosen: { slot: Slot; q: BankItem; weight: number; unitScope: Set<string> | null; target: number }[],
+  available: readonly BankItem[],
+  used: Set<string>,
+  fracs: (q: BankItem) => number[],
+  base: { paper_id: string; blueprint_id: string },
+): GenerationRequest[] {
+  const dev = (a: readonly number[]) => a.reduce((n, x, i) => n + Math.abs(x - targets[i]!.marks), 0);
+  for (let round = 0; round < BALANCE_MAX_ROUNDS; round++) {
+    const current = dev(assigned);
+    if (current < 1e-9) break;
+    let best: { at: number; q: BankItem; next: number[]; key: number } | null = null;
+    for (const [at, c] of chosen.entries()) {
+      const out = fracs(c.q);
+      for (const q of available) {
+        if (used.has(q.id) || !accepts(c.slot, q, c.unitScope)) continue;
+        const near = spec.conflicts?.get(q.id);
+        if (near && [...near].some((id) => id !== c.q.id && used.has(id))) continue;
+        const inn = fracs(q);
+        const next = assigned.map((x, i) => x + c.weight * (inn[i]! - out[i]!));
+        const gain = current - dev(next);
+        if (gain < 1e-9) continue;
+        const key = gain - (spec.avoid?.has(q.id) ? 0.5 : 0) - 0.01 * Math.abs(q.difficulty - c.target);
+        if (!best || key > best.key + 1e-12) best = { at, q, next, key };
+      }
+    }
+    if (!best) break;
+    const b = best;
+    used.delete(chosen[b.at]!.q.id);
+    used.add(b.q.id);
+    chosen[b.at] = { ...chosen[b.at]!, q: b.q };
+    b.next.forEach((x, i) => (assigned[i] = x));
+  }
+
+  const tol = spec.competencyTolerance ?? 0;
+  const off = targets.map((t, i) => assigned[i]! - t.marks);
+  if (off.every((d) => Math.abs(d) <= tol + 1e-9)) return [];
+  // Bands to ask for: every band short by more than the tolerance; if only an excess is out of
+  // tolerance, the band furthest below its target.
+  let short = off.map((d, i) => (d < -tol - 1e-9 ? i : -1)).filter((i) => i >= 0);
+  if (!short.length) short = [off.indexOf(Math.min(...off))];
+  const fmt = (x: number) => String(Math.round(x * 10) / 10);
+  const summary = targets.map((t, i) => `${t.band} ${fmt(assigned[i]!)}/${fmt(t.marks)}`).join(', ');
+  const out: GenerationRequest[] = [];
+  for (const bi of short) {
+    // Slots now holding marks of over-target bands, largest first: those are where a question of the
+    // short band would go.
+    let need = targets[bi]!.marks - assigned[bi]!;
+    const byKey = new Map<string, GenerationRequest>();
+    const hosts = chosen
+      .map((c) => ({ c, movable: c.weight * fracs(c.q).reduce((n, f, i) => n + (off[i]! > 0 && i !== bi ? f : 0), 0) }))
+      .filter((h) => h.movable > 1e-9)
+      .sort((x, y) => y.movable - x.movable);
+    for (const { c, movable } of hosts) {
+      if (need <= 1e-9) break;
+      need -= movable;
+      const chapters = c.unitScope ? spec.chapters.filter((ch) => c.unitScope!.has(ch)) : c.slot.chapters ? spec.chapters.filter((ch) => c.slot.chapters!.includes(ch)) : spec.chapters;
+      const key = `${c.slot.section}|${c.slot.type}|${c.slot.marks}`;
+      const prev = byKey.get(key);
+      if (prev) {
+        prev.missing++;
+        prev.chapters = spec.chapters.filter((ch) => prev.chapters.includes(ch) || chapters.includes(ch));
+      } else
+        byKey.set(key, {
+          ...base,
+          section: c.slot.section,
+          type: c.slot.type,
+          marks: c.slot.marks,
+          competency: targets[bi]!.band,
+          difficulty: c.slot.difficulty,
+          chapters,
+          missing: 1,
+          reason: `competency balance (±${fmt(tol)} marks) not met: ${summary}; not enough unused ${targets[bi]!.band.replace(/\+/g, '/')} ${c.slot.type} (${c.slot.marks} mark${c.slot.marks === 1 ? '' : 's'}) questions in these chapters`,
+        });
+    }
+    if (!byKey.size)
+      byKey.set('*', { ...base, section: null, type: '*', marks: null, competency: targets[bi]!.band, difficulty: null, chapters: spec.chapters, missing: 1, reason: `competency balance (±${fmt(tol)} marks) not met: ${summary}` });
+    out.push(...byKey.values());
+  }
+  return out;
 }
 
 /**

@@ -168,3 +168,15 @@ export const ORIGINALITY = {
   samePaper: { n: 5, threshold: 0.5, minWords: 5 },
   referenceExtensions: ['.txt', '.md'],
 } as const;
+
+/**
+ * Stage 7 competency balance (ADR-019 addendum): board-pattern papers carry the blueprint's
+ * `mark_shares` (recall+understanding / application / analysis+evaluation) in attempted marks, within
+ * `toleranceMarks` per band. Case parts count at their own competency; internal-choice alternatives
+ * share their marks equally. A paper outside the tolerance is reported as a generation request
+ * (`assemble --strict` exits 2 and `--freeze` is refused), never shipped silently.
+ */
+export const COMPETENCY_BALANCE = {
+  paperTypes: ['board', 'board-second-exam'] as readonly string[],
+  toleranceMarks: 3,
+} as const;
