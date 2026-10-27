@@ -1,8 +1,8 @@
 # SOYL Academy Learning Platform — API reference
 
-As built: 2026-10-28, generated from platform/main @ 2d76ef0
+As built: 2026-10-28, generated from platform/main @ 49aa8a4 (first written at 2d76ef0; updated for the backend-api M5 follow-ups merge)
 
-This lists **every route the Fastify API registers: 79 in total**. That is 78 public routes (2 health routes outside `/v1` plus 76 under `/v1`) and 1 dev-only hidden route. The count matches the reviewed route-policy snapshot, [`platform/api/test/__snapshots__/route-policy.test.ts.snap`](../../platform/api/test/__snapshots__/route-policy.test.ts.snap). The OpenAPI contract, [`platform/api/openapi.json`](../../platform/api/openapi.json), has 78 operations, because the dev-only route is hidden from it.
+This lists **every route the Fastify API registers: 81 in total**. That is 80 public routes (2 health routes outside `/v1` plus 78 under `/v1`) and 1 dev-only hidden route. The count matches the reviewed route-policy snapshot, [`platform/api/test/__snapshots__/route-policy.test.ts.snap`](../../platform/api/test/__snapshots__/route-policy.test.ts.snap). The OpenAPI contract, [`platform/api/openapi.json`](../../platform/api/openapi.json), has 80 operations, because the dev-only route is hidden from it.
 
 Sources, in order of authority: the route-policy snapshot (for roles, CSRF, rate limits, consent, fresh and MFA), `openapi.json` (for summaries and tags), [`platform/api/src/policy.ts`](../../platform/api/src/policy.ts) and [`platform/api/src/app.ts`](../../platform/api/src/app.ts) (for enforcement), [`platform/shared/config/security.ts`](../../platform/shared/config/security.ts) (for the numbers), and the handoffs cited per route. Where a handoff and the code disagree, the code wins.
 
@@ -203,7 +203,7 @@ Outside `/v1`. No edge auth and no rate limits. They are served even when the pl
 | POST | `/v1/practice/answers` | All | true | default + `practice.answer.ip` + `practice.answer.user` | — | — | Check a practice answer on the server. Returns correctness, the answer, the solution and the marking scheme. Guest answers are checked but not stored | [backend-api M2](handoffs/2026-10-27-backend-api-m2.md) |
 | PATCH | `/v1/practice/answers/:id` | Members | true | default + `practice.answer.user` | — | — | Self-assess the written parts of one of your practice answers against the marking scheme | [backend-api M2](handoffs/2026-10-27-backend-api-m2.md) |
 
-## 10. Progress and gamification (4)
+## 10. Progress and gamification (5)
 
 `modules/progress.ts`.
 
@@ -213,6 +213,7 @@ Outside `/v1`. No edge auth and no rate limits. They are served even when the pl
 | GET | `/v1/me/progress/chapters/:id` | Members | true | default | — | — | Your progress in one chapter (the private half of the chapter hub) | [backend-api M2](handoffs/2026-10-27-backend-api-m2.md) |
 | PUT | `/v1/me/lesson-progress` | Members | true | default + `progress.write.user` | — | — | Save your lesson position or completion (idempotent) | [backend-api M2](handoffs/2026-10-27-backend-api-m2.md) |
 | GET | `/v1/me/badges` | Members | true | default | — | — | Badges you can earn and the ones you have | [backend-api M2](handoffs/2026-10-27-backend-api-m2.md) |
+| GET | `/v1/leagues/current?scope=class` | Members | true | default + `leagues.read.user` | `leaderboards` | — | Your weekly league (IST week, 5 tiers, divisions of 30). The first visit of a week places you (idempotent). `school`/`city` → 501 | [backend-api M5 follow-ups](handoffs/2026-10-27-backend-api-m5-followups.md) |
 
 ## 11. Content reports (1)
 
@@ -220,7 +221,7 @@ Outside `/v1`. No edge auth and no rate limits. They are served even when the pl
 
 | Method | Path | Roles | CSRF | Rate limit | Consent | Fresh/MFA | Purpose | Documented in |
 |---|---|---|---|---|---|---|---|---|
-| POST | `/v1/content-reports` | All | true | default + `reports.ip` + `reports.user` | — | — | Report a mistake in a lesson, notes, flashcard or question. Body limit 8 KB | [backend-api M2](handoffs/2026-10-27-backend-api-m2.md) |
+| POST | `/v1/content-reports` | All | true | default + `reports.ip` + `reports.user` | — | — | Report a mistake in a lesson, notes, flashcard or question. Since M5 follow-ups also `contentType: ai_answer` (members only; names the answer by stream `requestId` or `messageId`; a repeat report returns 200 with the open report). Body limit 8 KB | [backend-api M2](handoffs/2026-10-27-backend-api-m2.md), [M5 follow-ups](handoffs/2026-10-27-backend-api-m5-followups.md) |
 
 ## 12. Staff: two-step verification and admin (6)
 
@@ -254,13 +255,14 @@ Outside `/v1`. No edge auth and no rate limits. They are served even when the pl
 | GET | `/v1/attempts/:id/ai-evaluation` | Members | true | default | — | — | AI marks of your submitted attempt, per item, with step marks and confidence | [ai-gateway M4](handoffs/2026-10-27-ai-gateway-m4.md) |
 | GET | `/v1/me/attempts` | Members | true | default + `attempt.read.user` | — | — | Your attempts, newest first (cursor paging) | [backend-api M3](handoffs/2026-10-27-backend-api-m3.md) |
 
-## 14. Live mocks (3)
+## 14. Live mocks (4)
 
 `modules/tests.ts`.
 
 | Method | Path | Roles | CSRF | Rate limit | Consent | Fresh/MFA | Purpose | Documented in |
 |---|---|---|---|---|---|---|---|---|
 | GET | `/v1/live-events` | All | true | default | — | — | All-India live mocks with their windows and phase. For signed-in users, includes your registration and attempt | [backend-api M3](handoffs/2026-10-27-backend-api-m3.md) |
+| GET | `/v1/live-events/:id` | All | true | default | — | — | One live mock: timeline, registration window, rank availability; signed in, also your status, buttons (`canRegister`/`canStart`/`canResume`) and result | [backend-api M5 follow-ups](handoffs/2026-10-27-backend-api-m5-followups.md) |
 | POST | `/v1/live-events/:id/register` | Members | true | default + `live.register.user` | — | — | Register for a live mock (idempotent). Starting the test also registers you | [backend-api M3](handoffs/2026-10-27-backend-api-m3.md) |
 | GET | `/v1/live-events/:id/leaderboard` | Members | true | default + `attempt.read.user` | `leaderboards` | — | Live mock leaderboard: provisional during the event, final once ranks are published (first name + last initial) | [backend-api M3](handoffs/2026-10-27-backend-api-m3.md) |
 
@@ -324,22 +326,22 @@ Registered only when `DEV_OTP_OUTBOX=true`. Config refuses that setting unless `
 | Catalog | 3 |
 | Content | 4 |
 | Practice | 3 |
-| Progress and gamification | 4 |
+| Progress and gamification | 5 |
 | Content reports | 1 |
 | Staff MFA and admin | 6 |
 | Tests, attempts and evaluation | 12 |
-| Live mocks | 3 |
+| Live mocks | 4 |
 | AI and credits | 11 |
 | Billing | 7 |
 | Dev-only (hidden) | 1 |
-| **Total** | **79** (snapshot rows; 78 in `openapi.json`) |
+| **Total** | **81** (snapshot rows; 80 in `openapi.json`) |
 
 ## 19. Differences from ARCHITECTURE §4.1
 
 [ARCHITECTURE.md §4.1](ARCHITECTURE.md) lists *key* endpoints. At this commit the code differs from it as follows:
 
 - **Listed but not built:**
-  - `/v1/leaderboards/:scope`. The only leaderboard is the live-mock one, `GET /v1/live-events/:id/leaderboard`.
+  - `/v1/leaderboards/:scope`. Leaderboards exist as `GET /v1/live-events/:id/leaderboard` (live mocks) and `GET /v1/leagues/current?scope=class` (weekly class leagues; school and city answer 501).
   - `/v1/admin/content/:type/:id`, `/v1/admin/config` and `/v1/admin/users/:id`. The only admin route is `GET /v1/admin/reports`.
 - **Auth is not "handled by the auth library":** Better Auth's HTTP handler is not mounted. The 13 `/v1/auth/*` routes are explicit Fastify routes ([ADR-002](adr/002-auth-better-auth.md)).
 - **Built but not listed in §4.1:**
@@ -350,6 +352,7 @@ Registered only when `DEV_OTP_OUTBOX=true`. Config refuses that setting unless `
   - `GET /v1/tests/:id`, `GET /v1/attempts/:id`, `GET /v1/me/attempts` and `GET /v1/attempts/:id/ai-evaluation`.
   - `/v1/ai/jobs/:id`, `/v1/ai/uploads/:id(/complete)` and `/v1/ai/conversations*`.
   - `/v1/billing/refresh` and `/v1/me/subscription`.
+  - `GET /v1/live-events/:id` and `GET /v1/leagues/current`.
   - The dev-only `/v1/dev/otp-outbox`.
 
 ## 20. Regenerating this reference

@@ -1,6 +1,6 @@
 # Operations: environments, deploys, CI, monitoring, costs, rollback
 
-> As built: 2026-10-28, from `platform/main` @ 2d76ef0 and the deployment evidence in [STATUS.md](STATUS.md). Infrastructure code: `platform/infra/` (Bicep). Workflows: `.github/workflows/platform-*.yml`.
+> As built: 2026-10-28, from `platform/main` @ 49aa8a4 and the deployment evidence in [STATUS.md](STATUS.md). Infrastructure code: `platform/infra/` (Bicep). Workflows: `.github/workflows/platform-*.yml`.
 > Decisions: D-025 (deployment deferred), D-029 (Lead may merge, incl. `main`), D-030 (no Vercel builds for `platform/**`), D-031 (production backend deployed dark), D-033 (two models). Runbooks: [runbooks/](#runbooks).
 
 ## 1. What runs where
@@ -38,7 +38,7 @@ Images were built in Azure with `az acr build` from commit `0dee08c` (api, worke
 | Network | `vnet-soyl-prod`, `nsg-soyl-aca-prod`, `nsg-soyl-pe-prod` | Private endpoints for Postgres, Redis, Blob, Key Vault |
 | Budget | `budget-soyl-platform-prod` | ₹25,000/month (estimate ₹15–20k) |
 
-What production does today: migrations 0000–0007 applied; catalog seeded; **41 chapters published** (82 chapter tests, no frozen series); sign-in method email only (`AUTH_METHODS=email`); consent `unavailable` (everyone `pending`, so AI, leaderboards and purchases are off even when lit); `UNCONSENTED_PURGE=auto` (off); `AI_DAILY_SPEND_CAP_INR=0`, `CONTENT_BUDGET_INR=0`. Production is behind `platform/main` (no AI gateway, billing, M3 web or the last 58 chapters); see [update-dark-backend](runbooks/update-dark-backend.md).
+What production does today: migrations 0000–0007 applied; catalog seeded; **41 chapters published** (82 chapter tests, no frozen series); sign-in method email only (`AUTH_METHODS=email`); consent `unavailable` (everyone `pending`, so AI, leaderboards and purchases are off even when lit); `UNCONSENTED_PURGE=auto` (off); `AI_DAILY_SPEND_CAP_INR=0`, `CONTENT_BUDGET_INR=0`. Production is behind `platform/main` (no AI gateway, billing, leagues, frozen series or the last 58 chapters); see [update-dark-backend](runbooks/update-dark-backend.md).
 
 **Keyless by design.** No connection string holds a password. API, worker and jobs get Entra tokens from the Container Apps managed-identity endpoint (`IDENTITY_ENDPOINT` + `X-IDENTITY-HEADER`) through `platform/shared/azure/identity.ts` (no `@azure/identity` dependency): Postgres (`DATABASE_AUTH=entra`), Redis (`REDIS_AUTH=entra`), ACS email, Blob. See the [prod-readiness handoff](handoffs/2026-10-27-prod-readiness.md).
 

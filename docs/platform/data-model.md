@@ -1,10 +1,10 @@
 # Data model (as built)
 
-> As built: 2026-10-28, from `platform/main` @ 2d76ef0. Source of truth: `platform/db/schema/*.ts` and `platform/db/migrations/`.
+> As built: 2026-10-28, from `platform/main` @ 49aa8a4. Source of truth: `platform/db/schema/*.ts` and `platform/db/migrations/`.
 > Design intent: [ARCHITECTURE §6](ARCHITECTURE.md#6-data-model-postgresql). Decisions: [ADR-004](adr/004-orm-drizzle.md) (Drizzle, migrations, roles), [ADR-006](adr/006-content-storage.md) (releases), [ADR-010](adr/010-content-api-caching-and-answer-separation.md) (answer separation), [ADR-012](adr/012-test-engine.md) (test engine), [ADR-013](adr/013-ai-gateway.md) (credits), [ADR-016](adr/016-billing-razorpay.md) (billing).
 > Package guide: [`platform/db/README.md`](../../platform/db/README.md). Personal data: [`platform/db/PII.md`](../../platform/db/PII.md).
 
-PostgreSQL 17 on Azure (PostgreSQL Flexible Server, Entra-only auth), embedded PostgreSQL 18 locally and in unit tests, `pgvector/pgvector:pg17` in CI. **68 tables and 2 views** across 12 schema files, created by **10 migrations** (0000 to 0009).
+PostgreSQL 17 on Azure (PostgreSQL Flexible Server, Entra-only auth), embedded PostgreSQL 18 locally and in unit tests, `pgvector/pgvector:pg17` in CI. **69 tables and 2 views** across 12 schema files, created by **11 migrations** (0000 to 0010).
 
 ## Conventions
 
@@ -41,15 +41,15 @@ In Azure the managed identities log in with Entra tokens (no passwords) and are 
 | Release membership (`release-items.ts`) | 1 | `content_release_items` | Which item rows each release contains, so reads go through the **active** release and rollback works (ADR-006/010). |
 | Learning progress (`progress.ts`) | 3 | `lesson_progress`, `practice_answers`, `user_mfa` | `lesson_progress` UNIQUE(user, chapter, part); `practice_answers` keeps the exact question version answered; `user_mfa` holds the AES-GCM-encrypted TOTP secret and hashed recovery codes (ADR-011 staff TOTP). |
 | Assessment (`assessment.ts`) | 10 | `blueprints`, `test_series`, `tests`, `test_items`, `attempts`, `responses`, `evaluations`, `live_events`, `live_registrations`, `test_score_buckets` | Tests point at question **version** rows (D-023). One active attempt per (user, test); one attempt per live event. Attempt score split into `auto_score` / `self_score` (0007). `responses.client_seq` orders autosaves. `test_score_buckets` feeds percentiles. |
-| Gamification (`gamification.ts`) | 6 | `xp_events`, `streaks`, `badges`, `user_badges`, `league_memberships`, `leaderboard_snapshots` | XP, streaks and badges are written by the API. `league_memberships` and `leaderboard_snapshots` exist but no weekly-league API uses them yet. SOYL Coins (D-037) have **no tables yet**. |
+| Gamification (`gamification.ts`) | 7 | `xp_events`, `streaks`, `badges`, `user_badges`, `leagues`, `league_memberships`, `leaderboard_snapshots` | XP, streaks and badges are written by the API. Weekly leagues (0010): `leagues` = IST week × scope × cohort key × tier × division (≤ 30); `league_memberships` carries `league_id`, `tier`, final XP, rank and `outcome` (promoted / stayed / relegated). League XP is summed from `xp_events`, never incremented. `leaderboard_snapshots` is not used for divisions. SOYL Coins (D-037) have **no tables yet**. |
 | AI and credits (`ai-credits.ts`) | 5 | `credit_ledger`, `ai_requests`, `ai_conversations`, `ai_messages`, `uploads` | Ledger invariants below. `ai_requests` meters tokens and `cost_inr_paise` per call. Messages, jobs and uploads are kept 30 days. |
 | AI gateway (`ai-gateway.ts`) | 3 | `credit_wallets`, `ai_spend_daily`, `ai_jobs` | `credit_wallets` is the row-lock target for credit transactions; `ai_spend_daily` is the per-IST-day spend breaker (scopes `all` and `free`); `ai_jobs` runs evaluations and paper-from-upload. |
 | Billing (`billing.ts`) | 6 | `plans`, `subscriptions`, `orders`, `payments`, `entitlements`, `webhook_events` | `plans` synced from `platform/shared/config/plans.ts`. `webhook_events` has the Razorpay event id UNIQUE plus `outcome` (applied / ignored / rejected). Entitlements decide the plan, never the browser. |
-| Ops (`ops.ts`) | 5 | `feature_flags`, `config_values`, `audit_log`, `analytics_events`, `content_reports` | `audit_log` is append-only. `analytics_events` has no user, device or IP column (D-014). `content_reports` is the "Report a mistake" queue. |
+| Ops (`ops.ts`) | 5 | `feature_flags`, `config_values`, `audit_log`, `analytics_events`, `content_reports` | `audit_log` is append-only. `analytics_events` has no user, device or IP column (D-014). `content_reports` is the "Report a mistake" queue; since 0010 it also takes `ai_answer` reports (ids only, no message text). |
 | Pipeline (`pipeline.ts`) | 4 | `pipeline_runs`, `pipeline_unit_status`, `pipeline_items`, `content_budget_ledger` | Resumable pipeline state and the append-only content spend ledger (shared budget across processes). |
 | Views (`views.ts`) | 2 views | `student_questions`, `content_budget` | See below. |
 
-Total: 8 + 7 + 10 + 1 + 3 + 10 + 6 + 5 + 3 + 6 + 5 + 4 = **68 tables**.
+Total: 8 + 7 + 10 + 1 + 3 + 10 + 7 + 5 + 3 + 6 + 5 + 4 = **69 tables**.
 
 ## Key invariants
 
@@ -95,8 +95,9 @@ All are reversible (`NNNN_name.sql` + `NNNN_name.down.sql`, plus drizzle snapsho
 | 0007 | `0007_test_engine` | `responses.client_seq`, attempt score split, `test_score_buckets` | backend-api M3 | yes |
 | 0008 | `0008_ai_gateway` | `credit_wallets`, `ai_spend_daily`, `ai_jobs`; `ai_requests` plan/degraded/simulated; processed upload keys; `content_chunks.search_vector` | ai-gateway M4 | **no** (pending) |
 | 0009 | `0009_billing` | `subscriptions` Razorpay plan id, amount, paid count, ended at; `webhook_events.outcome`, `entity_id` | billing-razorpay M4 | **no** (pending) |
+| 0010 | `0010_leagues` | `leagues` table; `league_memberships.league_id`, `tier`, `outcome`; `content_reports` type check accepts `ai_answer` (down deletes those reports) | backend-api M5 follow-ups | **no** (pending) |
 
-Production (dark) was migrated on 2026-10-27 from images built at `0dee08c`, so it has 0000 to 0007. 0008 and 0009 apply on the next backend update ([runbook](runbooks/update-dark-backend.md)).
+Production (dark) was migrated on 2026-10-27 from images built at `0dee08c`, so it has 0000 to 0007. 0008 to 0010 apply on the next backend update ([runbook](runbooks/update-dark-backend.md)).
 
 Commands (from `platform/`; without `DATABASE_URL` the CLI starts the persistent local embedded server at `platform/db/.data/dev`, port 54320):
 

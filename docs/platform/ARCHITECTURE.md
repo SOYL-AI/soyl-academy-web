@@ -6,7 +6,7 @@
 >
 > Last updated: 25 Oct 2026
 >
-> **As-built notes (2026-10-28, `platform/main` @ 2d76ef0).** The design text below is unchanged. Where the implementation differs from it or extends it, a note marked **As built (2026-10-28)** follows the section. Detailed as-built references: [README.md](README.md) (handbook), [api-reference.md](api-reference.md), [data-model.md](data-model.md), [content.md](content.md), [operations.md](operations.md).
+> **As-built notes (2026-10-28, `platform/main` @ 49aa8a4).** The design text below is unchanged. Where the implementation differs from it or extends it, a note marked **As built (2026-10-28)** follows the section. Detailed as-built references: [README.md](README.md) (handbook), [api-reference.md](api-reference.md), [data-model.md](data-model.md), [content.md](content.md), [operations.md](operations.md).
 
 ---
 
@@ -140,7 +140,7 @@ The marketing app stays exactly where it is. Platform code is added beside it. *
 
 > **As built (2026-10-28): routes.** Every route above exists in `app/(platform)/` except as noted:
 > - Lessons have a part route, `.../[chapter]/lesson/[part]`, so each deck part is prerendered; `?part=N` is rewritten to it by `proxy.ts` ([ADR-017](adr/017-platform-web-learning-core.md)).
-> - `/leaderboard` shows live-mock ranks (consent-gated); **weekly leagues show "coming soon"**: there is no leagues API yet.
+> - `/leaderboard` shows live-mock ranks (consent-gated); **weekly leagues still show "coming soon"** in the web app, although the API (`GET /v1/leagues/current`) was merged on 2026-10-28 and is waiting for a web task.
 > - `/admin` is a single page: TOTP enrolment/verification and the content-reports queue. The inline content editor, config and user lookup are **not built**.
 > - Extra: `/learn/sitemap.xml` (platform sitemap), `/api/platform/csp-report`, and `/dev/ui` (design-system gallery).
 > - Every platform page returns 404 while the flag is off (the layout calls `notFound()`), and flag-off marketing HTML is byte-identical (ADR-001).
@@ -199,17 +199,18 @@ The marketing app stays exactly where it is. Platform code is added beside it. *
 
 **Authorization:** every route declares its required role (`guest`, `student`, `parent`, `reviewer`, `admin`). A test asserts that every registered route has an explicit policy.
 
-> **As built (2026-10-28): API.** 79 routes (76 under `/v1`, 2 health, 1 local-only dev route); full list with policies in [api-reference.md](api-reference.md).
+> **As built (2026-10-28): API.** 81 routes (78 under `/v1`, 2 health, 1 local-only dev route); full list with policies in [api-reference.md](api-reference.md).
 > - Each route's policy covers roles, CSRF Origin check, rate-limit buckets (fail-closed for auth, OTP, MFA and AI), consent feature, fresh session and staff MFA. The server refuses to start without one, and a snapshot test pins the table.
 > - `/v1/auth/*` is **not** handled by the auth library: Better Auth's HTTP handler is not mounted, and all 13 auth routes are explicit Fastify routes ([ADR-002](adr/002-auth-better-auth.md)).
-> - **Not built:** `/v1/leaderboards/:scope`, `/v1/admin/content/:type/:id`, `/v1/admin/config`, `/v1/admin/users/:id`. The only leaderboard is `GET /v1/live-events/:id/leaderboard`; the only admin route is `GET /v1/admin/reports`.
+> - **Not built:** `/v1/leaderboards/:scope`, `/v1/admin/content/:type/:id`, `/v1/admin/config`, `/v1/admin/users/:id`. Leaderboards are `GET /v1/live-events/:id/leaderboard` and `GET /v1/leagues/current?scope=class`; the only admin route is `GET /v1/admin/reports` (which also lists AI-answer reports).
 > - **Built beyond §4.1 (about 25 routes):**
 >   - auth: link/unlink, `GET /v1/auth/methods`;
 >   - session and account: `me/sessions*`, `me/consent/start`, `me/mfa*`;
 >   - learning: `me/lesson-progress`, `PATCH /v1/practice/answers/:id`;
 >   - tests: `GET /v1/tests/:id`, `GET /v1/attempts/:id`, `me/attempts`;
 >   - AI: AI jobs, uploads and conversations;
->   - billing: `billing/refresh`, `me/subscription`.
+>   - billing: `billing/refresh`, `me/subscription`;
+>   - M5 follow-ups: `GET /v1/live-events/:id`, `GET /v1/leagues/current`.
 > - Rate-limit windows, OTP lockouts and live-mock provisional ranks live in Redis (Azure Managed Redis, Entra auth); an in-memory store with the same contract is used locally and in unit tests.
 
 ---
@@ -260,7 +261,7 @@ Logical groups (Drizzle schema in `platform/db/schema/*`). All tables have `id` 
 
 Indexes on every foreign key and on hot lookups (`questions(chapter_id,status,difficulty)`, `attempts(user_id,created_at)`, `credit_ledger(user_id,created_at)`). pgvector index on content chunk embeddings for tutor retrieval (`content_chunks(embedding)`).
 
-> **As built (2026-10-28): data model.** 68 tables and 2 views, migrations 0000–0009; see [data-model.md](data-model.md).
+> **As built (2026-10-28): data model.** 69 tables and 2 views, migrations 0000–0010; see [data-model.md](data-model.md).
 > - **Answers are split out (DB-6):** answers, solutions, marking schemes and rubrics live in `question_keys`; `questions.body` and the `student_questions` view are student-safe.
 > - `role` is on `users`, not `profiles` (Better Auth admin plugin).
 > - Append-only tables have no `updated_at`.
@@ -498,7 +499,7 @@ Every model call in the system — API or worker — goes through this module.
 
 > **As built (2026-10-28): gamification.**
 > - **XP, levels, IST streaks** (with one freeze per week) and **badges** are built. They are written by the API when the learning event is stored (badges included: the API evaluates them, not a worker). Values are in `platform/shared/config/gamification.ts`.
-> - **Leaderboards exist only for live mocks.** Weekly leagues have tables but no API or reset job yet. Leaderboards are consent-gated (D-014).
+> - **Leaderboards:** live-mock ranks, and **weekly class leagues** (merged 2026-10-28, migration 0010): IST weeks, 5 tiers (bronze to diamond), divisions of 30, top 1/6 promoted and bottom 1/6 relegated, league XP summed from `xp_events`, an hourly `leagues.weekly` job closes and forms leagues. School and city leagues answer 501 (they need consent-gated profile fields). All leaderboards are consent-gated (D-014), so in production (consent unavailable) everyone gets 403. The web league view is not built yet.
 > - **SOYL Coins** (D-037, decided 2026-10-28) are in progress:
 >   - Coins are earn-only and never bought, transferred or converted. They are redeemable for digital items and exclusive physical merch.
 >   - Physical redemption needs parent consent (OA-08) and a merch vendor (OA-19).

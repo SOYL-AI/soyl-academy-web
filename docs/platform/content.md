@@ -1,6 +1,6 @@
 # Content: contract, authoring, pipeline, gates and coverage
 
-> As built: 2026-10-28, from `platform/main` @ 2d76ef0. Coverage numbers are computed from the files in `platform/content/authored/**` and `platform/content-templates/exemplars/**` (method at the end).
+> As built: 2026-10-28, from `platform/main` @ 49aa8a4. Coverage numbers are computed from the files in `platform/content/authored/**` and `platform/content-templates/exemplars/**` (method at the end).
 > Rules: [CONTEXT §8–§10](CONTEXT.md#8-content-standards-apply-to-every-piece-of-content). Design: [ARCHITECTURE §7–§8](ARCHITECTURE.md#7-content-system). Decisions: [D-025, D-026, D-032, D-035, D-036](DECISIONS.md), [ADR-006](adr/006-content-storage.md), [ADR-007](adr/007-diagram-rendering.md), [ADR-019](adr/019-frozen-test-series-in-release.md).
 > Package guides: [`platform/content-pipeline/README.md`](../../platform/content-pipeline/README.md), [`platform/content/README.md`](../../platform/content/README.md), [`platform/content-templates/README.md`](../../platform/content-templates/README.md).
 

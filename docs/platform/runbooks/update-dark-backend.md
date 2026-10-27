@@ -4,12 +4,12 @@ Use this to move `rg-soyl-platform-prod` (deployed dark on 2026-10-27, D-031) to
 
 Reference for every command and right: [prod-first-deploy.md](prod-first-deploy.md). This runbook reuses its variables and helpers (§0) and differs in three ways: the infrastructure already exists, the email domain is already linked, and the Key Vault firewall is closed.
 
-**Current gap (2026-10-28):** production runs images from `0dee08c` (migrate image from `9f5926e`): migrations 0000–0007 and 41 chapters. `platform/main` @ 2d76ef0 adds migrations `0008_ai_gateway` and `0009_billing`, the AI gateway and billing code (both off by default in prod), the M3/M4 test engine changes, 58 more chapters and the frozen Science, Maths and SST series.
+**Current gap (2026-10-28):** production runs images from `0dee08c` (migrate image from `9f5926e`): migrations 0000–0007 and 41 chapters. `platform/main` @ 49aa8a4 adds migrations `0008_ai_gateway`, `0009_billing` and `0010_leagues`; the AI gateway and billing code (both off by default in prod); weekly leagues, the live-event detail route and AI-answer reports; 58 more chapters; and the frozen Science, Maths and SST series (41 papers).
 
 ## 0. Before you start
 
 - [ ] `platform-ci` is green for the target commit on GitHub.
-- [ ] Read the handoffs merged since the last deploy for **new required settings**. A missing required setting stops the API from starting (`Invalid configuration:` in the console log). For 0dee08c → 2d76ef0 none are required: AI (`AI_PROVIDER`, `CONTENT_SAFETY_PROVIDER`, `BLOB_PROVIDER`) and billing (`RAZORPAY_PROVIDER`) default to `disabled` outside local/test, and the stand-ins are refused in prod (GEN-3).
+- [ ] Read the handoffs merged since the last deploy for **new required settings**. A missing required setting stops the API from starting (`Invalid configuration:` in the console log). For 0dee08c → 49aa8a4 none are required: AI (`AI_PROVIDER`, `CONTENT_SAFETY_PROVIDER`, `BLOB_PROVIDER`) and billing (`RAZORPAY_PROVIDER`) default to `disabled` outside local/test, and the stand-ins are refused in prod (GEN-3).
 - [ ] The owner is reachable for the device-code sign-in, and you have Owner or User Access Administrator on `rg-soyl-platform-prod` (Bicep re-asserts role assignments).
 
 ```bash
@@ -69,7 +69,7 @@ until s=$(az containerapp job execution show -g $RG -n $MIGRATE_JOB --job-execut
       [ "$s" = Succeeded ] || [ "$s" = Failed ]; do echo "$s"; sleep 15; done; echo "migrations: $s"
 ```
 
-Expect the log to show the new migrations applied (for 2d76ef0: `0008_ai_gateway`, `0009_billing`, "10 applied, 0 pending" on a status check) and the pg-boss schema ready. Logs: prod-first-deploy §6.
+Expect the log to show the new migrations applied (for 49aa8a4: `0008_ai_gateway`, `0009_billing`, `0010_leagues`; "11 applied, 0 pending" on a status check) and the pg-boss schema ready. Logs: prod-first-deploy §6.
 
 ## 4. Release content 🛠
 
