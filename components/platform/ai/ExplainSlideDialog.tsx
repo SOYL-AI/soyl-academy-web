@@ -72,7 +72,7 @@ export function ExplainSlideDialog({ open, onClose, chapterId, part, slideId, sl
                 You have used today’s AI credits. They reset <ResetCountdown resetAt={quote.resetAt} resetInSeconds={quote.resetInSeconds} />.
               </p>
             )
-          ) : !block ? (
+          ) : block === null ? (
             <p className={s.muted}>Checking the cost…</p>
           ) : null}
           {block && block.kind !== 'paywall' && block.kind !== 'plan' && <AiNotice block={block} />}
