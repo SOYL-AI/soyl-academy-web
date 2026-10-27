@@ -81,10 +81,10 @@ export interface ChapterTestItem {
 }
 
 /**
- * Tests need an account (CONTEXT §5): guests get a login prompt that returns here. The test player is M3;
- * until it ships, members see the chapter's tests listed as coming soon.
+ * Tests need an account (CONTEXT §5): guests get a login prompt that returns here. Each test links to the
+ * subject's test series (M3), where it starts.
  */
-export function ChapterTestsCard({ tests = [] }: { tests?: ChapterTestItem[] }) {
+export function ChapterTestsCard({ tests = [], seriesHref }: { tests?: ChapterTestItem[]; seriesHref?: string }) {
   const { state, openLogin } = useSession();
   return (
     <div className={s.viewLink} data-testid="chapter-tests">
@@ -96,15 +96,19 @@ export function ChapterTestsCard({ tests = [] }: { tests?: ChapterTestItem[] }) 
         <ul className={s.testList}>
           {tests.map((t) => (
             <li key={t.id}>
-              {t.title.replace(/s+—.*$/, '')} · {t.totalMarks} marks · {t.durationMin} min
+              {seriesHref ? <Link href={`${seriesHref}#test-${t.id}`}>{t.title.replace(/s+—.*$/, '')}</Link> : t.title.replace(/s+—.*$/, '')} · {t.totalMarks} marks · {t.durationMin} min
             </li>
           ))}
         </ul>
       )}
       {state.status === 'member' ? (
-        <p className={s.viewBlurb}>
-          <Badge>Coming soon</Badge> Tests open here soon. You are all set to take them.
-        </p>
+        seriesHref ? (
+          <p className={s.viewBlurb}>
+            <Link href={seriesHref} data-testid="chapter-tests-link">
+              All tests for this subject
+            </Link>
+          </p>
+        ) : null
       ) : (
         <div>
           <Button

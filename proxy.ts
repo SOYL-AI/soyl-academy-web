@@ -26,6 +26,7 @@ export function proxy(request: NextRequest) {
     dev: process.env.NODE_ENV === 'development',
     cdnBaseUrl: process.env.NEXT_PUBLIC_CDN_BASE_URL,
     origin: request.nextUrl.origin,
+    pathname, // /plans: Razorpay Checkout; /ask: the upload origin (ADR-018)
   });
 
   let response: NextResponse;

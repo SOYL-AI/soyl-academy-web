@@ -51,6 +51,8 @@ export default async function ChapterHubPage({ params }: { params: Promise<Chapt
   const r = await loadChapterRoute(params);
   if (!r) notFound();
   const { hub, base, lang, chapterId } = r;
+  // The subject's test series (M3): /tests/series/[board]/[class]/[subject] (same slugs as /learn).
+  const seriesBase = base.replace(/^\/learn\//, '/tests/series/').replace(/\/ch\d{2}$/, '');
   const { chapter, assets } = hub;
   const parts = assets.lesson.parts;
   const partTitles = Object.fromEntries(parts.map((p, i) => [p.part, parts.length > 1 ? `part ${i + 1}` : 'the lesson']));
@@ -149,7 +151,7 @@ export default async function ChapterHubPage({ params }: { params: Promise<Chapt
               )}
             </li>
             <li>
-              <ChapterTestsCard tests={assets.tests.items.map((t) => ({ id: t.id, title: t.title, durationMin: t.durationMin, totalMarks: t.totalMarks }))} />
+              <ChapterTestsCard seriesHref={seriesBase} tests={assets.tests.items.map((t) => ({ id: t.id, title: t.title, durationMin: t.durationMin, totalMarks: t.totalMarks }))} />
             </li>
           </ul>
         </section>

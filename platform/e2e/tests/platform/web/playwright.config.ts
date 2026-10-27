@@ -38,7 +38,8 @@ export default defineConfig({
   projects: [{ name: 'mobile-360' }],
   webServer: [
     {
-      command: 'npm run dev -w @soyl/api',
+      // scripts/dev.ts plus the M3/M4 e2e stand-ins (Razorpay stub, AI mock, Blob over http, time travel).
+      command: 'npx tsx e2e/tests/platform/web/api-e2e.ts',
       cwd: platformRoot,
       url: `${API_ORIGIN}/healthz`,
       timeout: 300_000,
@@ -51,7 +52,7 @@ export default defineConfig({
       command: `npx next start --port ${WEB_PORT} --hostname localhost`,
       cwd: repoRoot,
       url: `${WEB_ORIGIN}/learn`,
-      timeout: 120_000,
+      timeout: 240_000,
       reuseExistingServer: false,
       stdout: 'ignore',
       stderr: 'pipe',

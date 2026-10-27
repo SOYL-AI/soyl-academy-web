@@ -464,6 +464,15 @@
   color: var(--p-ink);
   font-size: var(--p-text-sm);
 }
+/* A long inline formula in a solution or model answer (e.g. ce{…} reactions) scrolls in place at 360 px. */
+.keyDetails [data-math='inline'][tabindex] {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  vertical-align: bottom;
+  padding: 2px 0;
+}
 .keyDetails {
   display: grid;
   grid-template-columns: minmax(0, 1fr);

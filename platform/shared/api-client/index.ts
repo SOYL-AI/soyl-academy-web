@@ -66,6 +66,51 @@ export type MfaEnrollment = Schemas['MfaEnrollment'];
 export type MfaRecoveryCodes = Schemas['MfaRecoveryCodes'];
 export type MfaVerified = Schemas['MfaVerified'];
 export type AdminContentReports = Schemas['AdminContentReports'];
+// M3 tests (backend-api M3 handoff)
+export type MyTestStatus = Schemas['MyTestStatus'];
+export type LivePhase = Schemas['LivePhase'];
+export type LiveEvent = Schemas['LiveEvent'];
+export type LiveEvents = Schemas['LiveEvents'];
+export type TestSeries = Schemas['TestSeries'];
+export type TestSeriesGroup = TestSeries['series'][number];
+export type TestSeriesTest = TestSeriesGroup['tests'][number];
+export type TestMeta = Schemas['TestMeta'];
+export type CustomTestRequest = Schemas['CustomTestRequest'];
+export type CustomTest = Schemas['CustomTest'];
+export type AttemptStatus = Schemas['AttemptStatus'];
+export type AttemptState = Schemas['AttemptState'];
+export type AttemptItem = AttemptState['items'][number];
+export type AttemptSection = AttemptState['sections'][number];
+export type SavedResponse = AttemptState['responses'][number];
+export type SaveResponsesRequest = Schemas['SaveResponsesRequest'];
+export type SaveResponsesResult = Schemas['SaveResponsesResult'];
+export type SubmitResult = Schemas['SubmitResult'];
+export type AttemptResult = Schemas['AttemptResult'];
+export type AttemptResultItem = AttemptResult['items'][number];
+export type SelfEvaluationRequest = Schemas['SelfEvaluationRequest'];
+export type LiveLeaderboard = Schemas['LiveLeaderboard'];
+export type MyAttempts = Schemas['MyAttempts'];
+export type MyAttempt = MyAttempts['attempts'][number];
+// M4 AI gateway + billing (ai-gateway M4, billing-razorpay M4 handoffs)
+export type AiActionId = Schemas['AiQuote']['action'];
+export type AiActionRequest = Schemas['AiActionRequest'];
+export type AiJobAccepted = Schemas['AiJobAccepted'];
+export type AiJob = Schemas['AiJob'];
+export type Credits = Schemas['Credits'];
+export type CreditLedger = Schemas['CreditLedger'];
+export type AiQuote = Schemas['AiQuote'];
+export type AiUploadRequest = Schemas['AiUploadRequest'];
+export type AiUploadTarget = Schemas['AiUploadTarget'];
+export type AiUpload = Schemas['AiUpload'];
+export type AiConversation = Schemas['AiConversation'];
+export type AiConversations = Schemas['AiConversations'];
+export type AiConversationDetail = Schemas['AiConversationDetail'];
+export type AiEvaluation = Schemas['AiEvaluation'];
+export type PlansResponse = Schemas['PlansResponse'];
+export type PlanView = PlansResponse['plans'][number];
+export type SubscriptionCheckout = Schemas['SubscriptionCheckout'];
+export type OrderCheckout = Schemas['OrderCheckout'];
+export type MySubscription = Schemas['MySubscription'];
 
 /** Browser base path of the same-origin proxy (ADR-005). */
 export const API_BROWSER_BASE = '/api/platform';
@@ -87,14 +132,16 @@ type ParamGroup<O, K extends 'path' | 'query'> = O extends { parameters: infer P
 
 type BodyOf<O> = O extends { requestBody: { content: { 'application/json': infer B } } } ? B : never;
 
-/** The JSON body of the 200 (or 201) response, `null` for 204, `unknown` otherwise (e.g. a 302 redirect). */
+/** The JSON body of the 200 (or 201, or 202 for AI jobs) response, `null` for 204, `unknown` otherwise (e.g. a 302 redirect). */
 export type ResponseOf<O> = O extends { responses: { 200: { content: { 'application/json': infer R } } } }
   ? R
   : O extends { responses: { 201: { content: { 'application/json': infer R } } } }
     ? R
-    : O extends { responses: { 204: unknown } }
-      ? null
-      : unknown;
+    : O extends { responses: { 202: { content: { 'application/json': infer R } } } }
+      ? R
+      : O extends { responses: { 204: unknown } }
+        ? null
+        : unknown;
 
 type IfNever<T, A, B> = [T] extends [never] ? A : B;
 
@@ -104,6 +151,8 @@ export type RequestOptions<O> = IfNever<ParamGroup<O, 'path'>, { params?: undefi
     signal?: AbortSignal;
     /** Extra request headers (e.g. `if-none-match`). Never put personal data in a query string (WEB-12). */
     headers?: Record<string, string>;
+    /** fetch keepalive: the request may outlive the page (test-player autosave on page hide). */
+    keepalive?: boolean;
   };
 
 /** A failed API call. `code` is the problem's stable machine code (backend handoff list). */
@@ -181,10 +230,11 @@ export function createApiClient(options: ApiClientOptions = {}): ApiClient {
   const doFetch = options.fetch ?? ((input: RequestInfo | URL, init?: RequestInit) => globalThis.fetch(input, init));
 
   async function request(method: HttpMethod, path: string, opts: RequestOptions<unknown> | undefined): Promise<unknown> {
-    const o = (opts ?? {}) as { params?: Record<string, unknown>; query?: Record<string, unknown>; body?: unknown; signal?: AbortSignal; headers?: Record<string, string> };
+    const o = (opts ?? {}) as { params?: Record<string, unknown>; query?: Record<string, unknown>; body?: unknown; signal?: AbortSignal; headers?: Record<string, string>; keepalive?: boolean };
     const url = `${base}${buildPath(path, o.params)}${buildQuery(o.query)}`;
     const headers: Record<string, string> = { accept: 'application/json', ...options.headers, ...o.headers };
     const init: RequestInit = { method: method.toUpperCase(), headers, credentials: 'same-origin', cache: 'no-store', signal: o.signal };
+    if (o.keepalive) init.keepalive = true;
     if (o.body !== undefined) {
       headers['content-type'] = 'application/json';
       init.body = JSON.stringify(o.body);

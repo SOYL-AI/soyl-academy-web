@@ -27,6 +27,7 @@ import { useSession } from '../auth/SessionProvider';
 import { api } from '../lib/api-browser';
 import { readGuestLessonPosition, readGuestProgress, recordGuestLessonPosition } from '../lib/guest-storage';
 import { ReportMistake } from '../report/ReportMistake';
+import { ExplainSlideButton } from '../ai/ExplainSlide';
 import { CheckResultsProvider } from './CheckQuestion';
 import { applyNav, isInteractiveTarget, keyAction, mountedWindow, PROGRESS_DEBOUNCE_MS, startsInHorizontalScroller, swipeAction, wordAtTime, type NavAction } from './player-logic';
 import s from './lesson.module.css';
@@ -306,7 +307,10 @@ export function SlidePlayer({ chapterId, part, firstPart, slides, meta, lang, li
           ) : (
             <span className={s.toolbarNote}>Read mode</span>
           )}
-          <ReportMistake target={{ chapterId, contentType: 'deck', part, itemRef: current?.id }} what={`slide ${index + 1}`} compact />
+          <span className={s.toolbarActions}>
+            <ExplainSlideButton chapterId={chapterId} part={part} slideId={current?.id} slideNumber={index + 1} />
+            <ReportMistake target={{ chapterId, contentType: 'deck', part, itemRef: current?.id }} what={`slide ${index + 1}`} compact />
+          </span>
         </div>
         {deckHasAudio && audioSupport === 'no' && (
           <p className={s.note} role="note">

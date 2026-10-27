@@ -27,7 +27,20 @@ export function MathBlock({ tex, className }: MathProps) {
   );
 }
 
-/** Inline maths inside running text. */
+/**
+ * Inline maths inside running text. KaTeX can only break a line between its boxes, and a chemical equation
+ * (ce{…}) is one box, so a long formula becomes a small focusable scroller instead of widening a 360 px page
+ * (axe scrollable-region-focusable). Short formulas stay plain inline text (no extra tab stops).
+ */
+export const LONG_INLINE_TEX = 24;
 export function MathInline({ tex, className }: MathProps) {
-  return <span className={cx(s.mathInline, className)} data-math="inline" dangerouslySetInnerHTML={{ __html: renderMathToString(tex, false) }} />;
+  const long = tex.length > LONG_INLINE_TEX;
+  return (
+    <span
+      className={cx(s.mathInline, long && s.mathInlineScroll, className)}
+      data-math="inline"
+      tabIndex={long ? 0 : undefined}
+      dangerouslySetInnerHTML={{ __html: renderMathToString(tex, false) }}
+    />
+  );
 }
