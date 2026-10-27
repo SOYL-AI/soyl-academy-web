@@ -114,7 +114,7 @@ Process: after every integration the Lead checks the platform-ci run for the new
 | Shared container registry `crsoylplatform` (+ budget, action group → outreach@soyl.cloud) | **deployed** | deployment `soyl-shared-1` Succeeded (what-if: 3 creates) |
 | Code + Bicep for keyless MI auth, email-only OTP via ACS (soylai.com), consent fail-safe, prod params | in progress | prod-readiness agent, branch `platform/backend-api/prod-auth` |
 | Images (api, worker, migrate) via `az acr build` | **built** (from `0dee08c`; migrate rebuilt from hotfix `9f5926e`) | ACR runs Succeeded |
-| main.bicep → prod (Postgres, Redis, Key Vault, ACS, Container Apps, monitoring) | **deployed** (passes p1, p2–p2d, p3, p5) | p1: 77 resources; 5 Key Vault secrets (random, never displayed) |
+| main.bicep → prod (Postgres, Redis, Key Vault, ACS, Container Apps, monitoring) | **deployed** (passes p1, p2–p2d, p3, p5) | p1: 77 resources; 5 Key Vault secrets (random, never displayed); p5: Key Vault public network access Disabled, 0 IP rules, `/readyz` still ready |
 | Migrations, catalog seed, content publish, smoke tests | **done** — 3 Azure-specific fixes (SET ROLE NONE; vector created only when missing; CREATE on database for pg-boss) | 8 migrations applied; release job: catalog seeded, **41 chapters published** (82 tests); `/healthz` ok, `/readyz` ready (MI tokens → Postgres + Redis); every `/v1` route 404 while dark (GEN-4) |
 | soylai.com DNS records for ACS email (owner adds) | waiting | — |
 | 2026-10-27 | `bebeeff` | [platform-ci 40389356089](https://github.com/SOYL-AI/soyl-academy-web/actions/runs/40389356089) | **failure** — gitleaks: test id `t_cbse10sci_ch02_short` in an M3 test tripped generic-api-key (false positive) |
