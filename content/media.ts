@@ -1,9 +1,8 @@
 /**
  * Media contract — every product screenshot, loop and photograph the site shows.
  *
- * Nothing here is invented. A slot with no `src` renders as a clearly labelled
- * TODO frame (or nothing, if NEXT_PUBLIC_SHOW_CONTENT_TODOS=false). To fill a
- * slot: drop the file in /public/media (AVIF/WebP/PNG for stills, MP4 for
+ * Nothing here is invented. A slot with no `src` renders nothing at all (the
+ * editorial layouts stand without it). To fill a slot: drop the file in /public/media (AVIF/WebP/PNG for stills, MP4 for
  * loops), set `src`, `width` and `height`, and check the alt text.
  *
  * Illustrative editorial photography (not SOYL pupils) lives in content/images.ts.

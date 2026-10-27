@@ -3,13 +3,11 @@ import { MiniSimulator } from '@/components/home/MiniSimulator';
 import { ArrowRight } from '@/components/ui/Button';
 import { PageHero } from '@/components/ui/PageHero';
 import { Label } from '@/components/ui/SectionHeader';
-import { TodoSlot } from '@/components/ui/TodoSlot';
 import { Photo } from '@/components/media/Photo';
 import { Faq } from '@/components/seo/Faq';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { studentsFaqs } from '@/content/faqs';
 import { images } from '@/content/images';
-import { SHOW_CONTENT_TODOS } from '@/lib/site';
 import { createMetadata } from '@/lib/seo/metadata';
 import { breadcrumbNode, faqNode, graph, topLevelCrumbs, webPageNode } from '@/lib/seo/schema';
 
@@ -49,15 +47,6 @@ export default function StudentsPage() {
             <p className="t-lead mt-6 max-w-[40ch]">
               Every try is kept, and nobody minds how many it takes. When you get there, SOYL tells you how: “You worked it out · 3 tries · 1 hint.”
             </p>
-            {SHOW_CONTENT_TODOS && (
-              // Pip, the SOYL mascot, appears only on the students page.
-              <TodoSlot
-                kind="Illustration"
-                brief="Pip, the SOYL mascot (illustration from the product’s brand folder), cheering a student on."
-                ratio="4 / 3"
-                className="mt-10 max-w-sm"
-              />
-            )}
           </div>
           <div className="col-span-12 lg:col-span-7" data-reveal style={{ '--d': '120ms' } as React.CSSProperties}>
             <MiniSimulator />

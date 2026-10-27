@@ -29,8 +29,10 @@ Screenshots (OLD e2f1085 / CURRENT origin/main / NEW, 1440 and 390, full page):
   school name on a lanyard, which is now blurred (and cropped out by the frame).
   The five Future Builders JPEGs were re-encoded (≈800 KB → 115–160 KB each).
 - **Images.** `next/image` with static imports: intrinsic size (no CLS), blur placeholder,
-  AVIF/WebP via the existing `images.formats`, honest `sizes`, lazy below the fold, `preload`
-  (Next 16 replacement for `priority`) only on hero images.
+  AVIF/WebP via the existing `images.formats`, honest `sizes`, lazy loading. Hero photos get
+  `fetchPriority="high"` but no preload: on phones they sit under the headline (the text is
+  the LCP element), so a preload would only compete for the first second of a slow connection.
+  (`priority` is deprecated in Next 16 and is not used.)
 - **Video.** `components/media/VideoLoop.tsx`: muted, looping, `preload="none"`, no
   `autoplay` attribute — it is only fetched and played when its frame nears the viewport,
   pauses when scrolled away, and fades in over a still (`public/video/soyl-loop-poster.jpg`,

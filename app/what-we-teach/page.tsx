@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { ArrowRight, ButtonLink } from '@/components/ui/Button';
+import { ArrowRight } from '@/components/ui/Button';
 import { PageHero } from '@/components/ui/PageHero';
+import { ComingSoon } from '@/components/ui/ComingSoon';
 import { Photo } from '@/components/media/Photo';
 import { images } from '@/content/images';
 import { SectionHeader } from '@/components/ui/SectionHeader';
@@ -112,11 +113,13 @@ export default function WhatWeTeachPage() {
               </li>
             ))}
           </ul>
-          <div className="mt-8">
-            <ButtonLink href={PRIMARY_CTA.href} variant="secondary">
-              Ask about workshops for your school
-            </ButtonLink>
-          </div>
+          <ComingSoon
+            className="mt-4"
+            title={<>Workshops for your <span className="t-accent">school.</span></>}
+            line="We are shaping the first school workshops now. Tell us about your school and we will be in touch when they open."
+            primary={{ label: 'Register your school', href: '/contact' }}
+            secondary={{ label: PRIMARY_CTA.label, href: PRIMARY_CTA.href }}
+          />
         </div>
       </section>
 
