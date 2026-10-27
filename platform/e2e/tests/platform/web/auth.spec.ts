@@ -52,7 +52,8 @@ test('email OTP: sign up → profile → logout → log in again', async ({ page
   await page.getByRole('button', { name: 'Save' }).click();
   await expect(page.getByText('Profile saved')).toBeVisible();
   await expect(page.getByRole('heading', { level: 1, name: 'Asha' })).toBeVisible();
-  await expect(page.getByTestId('consent-notice')).toBeVisible();
+  await expect(page.getByTestId('consent-flow')).toBeVisible();
+  await expect(page.getByTestId('public-name-value')).toHaveText(/^[A-Z][a-z]+ [A-Z][a-z]+ [0-9]{3}$/);
 
   // Logout (WEB-9): API sign-out, session gone, member page left for /learn.
   await page.getByTestId('logout-button').click();

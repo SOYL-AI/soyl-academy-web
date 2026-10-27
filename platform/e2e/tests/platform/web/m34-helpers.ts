@@ -58,14 +58,19 @@ export async function signUp(page: Page, tag: string, path = '/tests'): Promise<
   return email;
 }
 
-/** Parent approval through /me (the local mock consent provider approves at once). */
+/**
+ * Consent through /me/consent with the built-in provider (D-039, the e2e API runs CONSENT_PROVIDER=builtin):
+ * the quickest path, "18 or older" + the agreement. consent.spec.ts covers the under-18 parent code.
+ */
 export async function grantConsent(page: Page) {
-  await page.goto('/me', { waitUntil: 'networkidle' });
-  const notice = page.getByTestId('consent-notice');
-  await expect(notice).toBeVisible();
-  if ((await notice.getAttribute('data-consent')) !== 'granted') {
-    await notice.getByRole('button').click();
-    await expect(page.getByTestId('consent-notice')).toHaveAttribute('data-consent', 'granted');
+  await page.goto('/me/consent', { waitUntil: 'networkidle' });
+  const flow = page.getByTestId('consent-flow');
+  await expect(flow).toHaveAttribute('data-consent', /^(required|pending|granted|revoked)$/);
+  if ((await flow.getAttribute('data-consent')) !== 'granted') {
+    await flow.getByRole('radio', { name: /18 or older/ }).check();
+    await flow.getByRole('checkbox').check();
+    await flow.getByRole('button', { name: 'Continue' }).click();
+    await expect(page.getByTestId('consent-flow')).toHaveAttribute('data-consent', 'granted');
   }
 }
 

@@ -36,6 +36,7 @@ GET    /v1/live-events/:id/leaderboard        roles=student|parent|reviewer|admi
 GET    /v1/me                                 roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/me/attempts                        roles=student|parent|reviewer|admin csrf=true rl=default+attempt.read.user consent=no
 GET    /v1/me/badges                          roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/me/consent                         roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/me/mfa                             roles=reviewer|admin csrf=true rl=default consent=no
 GET    /v1/me/progress                        roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/me/progress/chapters/:id           roles=student|parent|reviewer|admin csrf=true rl=default consent=no
@@ -68,14 +69,20 @@ POST   /v1/billing/cancel                     roles=student csrf=true rl=default
 POST   /v1/billing/orders                     roles=student csrf=true rl=default consent=no
 POST   /v1/billing/refresh                    roles=student csrf=true rl=default consent=no
 POST   /v1/billing/subscriptions              roles=student csrf=true rl=default consent=no
+POST   /v1/consent/parent/withdraw            roles=guest|student|parent|reviewer|admin csrf=true rl=default+consent.parent.ip (fail-closed) consent=no
 POST   /v1/content-reports                    roles=guest|student|parent|reviewer|admin csrf=true rl=default+reports.ip+reports.user consent=no
 POST   /v1/live-events/:id/register           roles=student|parent|reviewer|admin csrf=true rl=default+live.register.user consent=no
+POST   /v1/me/consent/age-band                roles=student|parent|reviewer|admin csrf=true rl=default+consent.write.user (fail-closed) consent=no
+POST   /v1/me/consent/parent                  roles=student|parent|reviewer|admin csrf=true rl=default+consent.write.user (fail-closed) consent=no
 POST   /v1/me/consent/start                   roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+POST   /v1/me/consent/verify                  roles=student|parent|reviewer|admin csrf=true rl=default+consent.write.user (fail-closed) consent=no
+POST   /v1/me/consent/withdraw                roles=student|parent|reviewer|admin csrf=true rl=default+consent.write.user (fail-closed) consent=no
 POST   /v1/me/merge-guest                     roles=student|parent|reviewer|admin csrf=true rl=default consent=merge_guest
 POST   /v1/me/mfa/totp/confirm                roles=reviewer|admin csrf=true rl=default+mfa.user (fail-closed) consent=no
 POST   /v1/me/mfa/totp/disable                roles=reviewer|admin csrf=true rl=default+mfa.user (fail-closed) consent=no fresh mfa
 POST   /v1/me/mfa/totp/enroll                 roles=reviewer|admin csrf=true rl=default+mfa.user (fail-closed) consent=no fresh
 POST   /v1/me/mfa/verify                      roles=reviewer|admin csrf=true rl=default+mfa.user (fail-closed) consent=no
+POST   /v1/me/public-name                     roles=student|parent|reviewer|admin csrf=true rl=default+public-name.user consent=no
 POST   /v1/practice/answers                   roles=guest|student|parent|reviewer|admin csrf=true rl=default+practice.answer.ip+practice.answer.user consent=no
 POST   /v1/tests/:id/attempts                 roles=student|parent|reviewer|admin csrf=true rl=default+attempt.start.user consent=test_attempts
 POST   /v1/tests/custom                       roles=student|parent|reviewer|admin csrf=true rl=default+tests.custom.user consent=no
