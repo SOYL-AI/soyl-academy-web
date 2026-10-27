@@ -9281,6 +9281,81 @@
         "generated_at": "2026-10-27",
         "author": "claude-opus-5-5 (subject-producer)"
       }
+    },
+    {
+      "id": "q_cbse10sst_ch08_115",
+      "unit": "cbse-10-social-science-ch08",
+      "language": "en",
+      "type": "map",
+      "stem_md": "Three multipurpose projects are described below. On an outline political map of India, locate and label the dam of each.\n\n**A.** The project on the Sutlej built to irrigate Punjab and Haryana and generate power, with its reservoir in Himachal Pradesh.\n\n**B.** The long earthen dam across the Mahanadi near Sambalpur.\n\n**C.** The masonry dam across the Krishna where Telangana meets Andhra Pradesh.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "places": [
+          {
+            "id": "A",
+            "name": "Bhakra Nangal",
+            "accepted": [
+              "Bhakra Nangal",
+              "Bhakra",
+              "Bhakra Dam"
+            ],
+            "kind": "dam"
+          },
+          {
+            "id": "B",
+            "name": "Hirakud",
+            "accepted": [
+              "Hirakud"
+            ],
+            "kind": "dam"
+          },
+          {
+            "id": "C",
+            "name": "Nagarjuna Sagar",
+            "accepted": [
+              "Nagarjuna Sagar",
+              "Nagarjunasagar"
+            ],
+            "kind": "dam"
+          }
+        ]
+      },
+      "solution_md": "Step 1: Bhakra Nangal is on the Sutlej in Bilaspur district of Himachal Pradesh, close to the Punjab border; its reservoir is Govind Sagar.\nStep 2: Hirakud is on the Mahanadi near Sambalpur in western Odisha.\nStep 3: Nagarjuna Sagar is on the Krishna on the Telangana–Andhra Pradesh border.\nStep 4: Mark each dam with a dot or the dam symbol and label it.",
+      "marking_scheme": [
+        {
+          "step": "A: Bhakra Nangal correctly located and labelled",
+          "marks": 1
+        },
+        {
+          "step": "B: Hirakud correctly located and labelled",
+          "marks": 1
+        },
+        {
+          "step": "C: Nagarjuna Sagar correctly located and labelled",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "cbse-10-social-science-ch08-t02"
+      ],
+      "expected_time_sec": 180,
+      "assets": [],
+      "map_id": "india-political",
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-27",
+        "author": "claude-opus-5-5 (assessment-designer)"
+      }
     }
   ],
   "build": {
