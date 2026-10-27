@@ -68,6 +68,11 @@ export const analyticsEvents = pgTable(
 );
 
 export const REPORT_CATEGORIES = ['wrong_answer', 'wrong_content', 'typo', 'rendering', 'audio', 'inappropriate', 'other'] as const;
+/**
+ * What a report can point at: content items, plus `ai_answer` (migration 0010, backend-api M5): an
+ * assistant message in `ai_messages` (`content_id` = the message id, `item_ref` = `conv:<conversation id>`).
+ */
+export const REPORT_CONTENT_TYPES = [...CONTENT_TYPES, 'ai_answer'] as const;
 
 /** "Report a mistake" (CONTEXT §4): Wave 1 reports are fixed within 24 hours. */
 export const contentReports = pgTable(
@@ -95,7 +100,7 @@ export const contentReports = pgTable(
     index('content_reports_unit_idx').on(t.unit),
     index('content_reports_user_id_idx').on(t.userId),
     index('content_reports_resolved_by_user_id_idx').on(t.resolvedByUserId),
-    oneOf('content_reports_type_check', t.contentType, CONTENT_TYPES),
+    oneOf('content_reports_type_check', t.contentType, REPORT_CONTENT_TYPES),
     oneOf('content_reports_category_check', t.category, REPORT_CATEGORIES),
     oneOf('content_reports_status_check', t.status, ['open', 'triaged', 'fixed', 'rejected', 'duplicate']),
   ],

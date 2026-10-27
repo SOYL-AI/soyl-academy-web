@@ -93,3 +93,59 @@ export const BADGES: readonly BadgeDefinition[] = [
   { key: 'perfect-score', name: 'Perfect paper', description: 'Get every auto-marked question in a test right.', icon: 'medal', criteria: { kind: 'perfect_scores', count: 1 } },
   { key: 'test-streak-3', name: 'Test streak', description: 'Submit a test on 3 days in a row.', icon: 'calendar-check', criteria: { kind: 'test_day_streak', count: 3 } },
 ];
+
+/* ------------------------------------------------------------------------------------------------
+ * Weekly leagues (ARCHITECTURE §12, CONTEXT §11; backend-api M5). Consent-gated (D-014): only students
+ * whose consent is `granted` play, and standings show first name + last initial only (F-017, AC-18).
+ *
+ * A league week is an IST week (Monday 00:00 – Sunday 23:59:59 IST). Students are grouped by cohort
+ * (class leagues: board + class, e.g. `cbse-10`), then by tier, into divisions of at most `size`.
+ * League XP is the XP earned in that IST week (xp_events). When the week ends, the top `promoteShare`
+ * of a division move up a tier and the bottom `relegateShare` move down (no promotion from the top
+ * tier, no relegation from the bottom tier); nobody is promoted with 0 XP.
+ * ---------------------------------------------------------------------------------------------- */
+
+export interface LeagueTier {
+  key: string;
+  name: string;
+  /** Icon name from the platform UI kit. */
+  icon: string;
+}
+
+/** Lowest first. Tier numbers in the API are 1-based positions in this list. */
+export const LEAGUE_TIERS: readonly LeagueTier[] = [
+  { key: 'bronze', name: 'Bronze', icon: 'shield' },
+  { key: 'silver', name: 'Silver', icon: 'shield' },
+  { key: 'gold', name: 'Gold', icon: 'shield' },
+  { key: 'sapphire', name: 'Sapphire', icon: 'gem' },
+  { key: 'diamond', name: 'Diamond', icon: 'gem' },
+];
+
+export const LEAGUES = {
+  /** Most students in one division. Divisions formed by the weekly job are balanced and leave room for late joiners. */
+  size: 30,
+  /** Share of a division promoted / relegated at the end of the week (30 → 5 up, 5 down). */
+  promoteShare: 1 / 6,
+  relegateShare: 1 / 6,
+  /** Smaller divisions keep at least one promotion place; relegation needs at least this many students. */
+  minSizeForRelegation: 6,
+  /** Promotion needs at least this much XP in the week. */
+  minXpToPromote: 1,
+  /** Scopes the API serves now; school and city leagues are opt-in and arrive later (D-014). */
+  liveScopes: ['class'] as readonly string[],
+  /**
+   * The worker job `leagues.weekly` runs hourly at :35 UTC (= :05 IST, so the first run of a week is Monday
+   * 00:05 IST). It closes ended leagues and forms the current week for returning students; once the
+   * week is formed a run is a no-op, so the hourly runs are catch-ups after an outage.
+   */
+  cron: '35 * * * *',
+} as const;
+
+/** Promotion / relegation places for a division of `n` students in tier `tier` (1-based). */
+export function leagueZones(n: number, tier: number): { promote: number; relegate: number } {
+  const top = tier >= LEAGUE_TIERS.length;
+  const bottom = tier <= 1;
+  const promote = top || n < 2 ? 0 : Math.max(1, Math.floor(n * LEAGUES.promoteShare));
+  const relegate = bottom || n < LEAGUES.minSizeForRelegation ? 0 : Math.max(1, Math.floor(n * LEAGUES.relegateShare));
+  return { promote, relegate };
+}

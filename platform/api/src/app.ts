@@ -47,6 +47,7 @@ import { registerReportRoutes } from './modules/reports';
 import { registerMfaRoutes } from './modules/mfa';
 import { registerAdminRoutes } from './modules/admin';
 import { registerTestRoutes } from './modules/tests';
+import { registerLeagueRoutes } from './modules/leagues';
 import { registerBillingRoutes } from './billing/routes';
 import { registerAiRoutes } from './ai/routes';
 
@@ -288,6 +289,7 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
   registerMfaRoutes(app, services);
   registerAdminRoutes(app, deps);
   registerTestRoutes(app, deps, services);
+  registerLeagueRoutes(app, deps);
   registerBillingRoutes(app, services.billing);
   registerAiRoutes(app, deps, services);
   if (config.devOtpOutbox) registerDevRoutes(app, deps);
