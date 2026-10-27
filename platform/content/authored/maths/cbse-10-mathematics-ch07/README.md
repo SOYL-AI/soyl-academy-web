@@ -19,9 +19,9 @@ Author: `claude-opus-5-5 (subject-producer)`, provenance `origin: "human"`, `mod
 | Check slides | 3 + 3, all objective (q001, q007, q004; q010, q012, q014) |
 | Notes | 6 sections, each with key terms and a visual; exam tips with mark split and 8 common mistakes |
 | Flashcards | 30 (formula 5, concept 9, example 5, exam-tip 6, diagram 2, fact 3) |
-| Questions | 70 items, 139 marks: mcq 18, assertion-reason 6 (keys a b c d a d), true-false 5, fill-blank 5, numerical 9, short-2 9, short-3 7, long-5 6, case-based 5 (1 + 1 + 2, part (c) either/or via `alternatives`, `passage_origin: soyl-original`; one carries a plot asset) |
-| Difficulty | d1 14, d2 32, d3 18, d4 5, d5 1 |
-| Competency | recall 4, understanding 21, application 34, analysis 10, evaluation 1 — application or higher 64% of items, 78% of marks |
+| Questions | 70 items, 139 marks: mcq 18, assertion-reason 6 (keys a b c d a d), true-false 5, fill-blank 5, numerical 9, short-2 9, short-3 9, long-5 8, case-based 6 (1 + 1 + 2, part (c) either/or via `alternatives`, `passage_origin: soyl-original`; one carries a plot asset) |
+| Difficulty | d1 14, d2 37, d3 18, d4 5, d5 1 |
+| Competency | recall 4, understanding 40, application 21, analysis 9, evaluation 1 — application or higher 41% of items, 45% of marks (after the 2026-10-27 competency audit) |
 | Topics | t01 44, t02 38 (items may carry two topics) |
 | Tests | `t_cbse10math_ch07_short` (20 marks / 40 min) and `_long` (40 marks / 90 min), matching `cbse-10-default-chapter-test-short/long`; disjoint |
 
@@ -44,3 +44,9 @@ Run from `platform/`: `npx tsx content/authored/maths/cbse-10-mathematics-ch07/s
 - Coordinate figures are `plot` visuals with `series` of kind `line` for segments and KaTeX in a few point labels ($P(x_1, y_1)$); the renderer must support both (same need as noted for ch01–ch04).
 - Evaluation-level items are few (1); the chapter's error-analysis items are mostly at analysis level.
 - Narration audio not generated (TTS stage). `word_limit` not set on maths short/long items (marked by steps).
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Board papers need recall/understanding written items (CBSE design: Standard 54/24/22, Basic 75/15/10 per cent of marks), and the bank had tagged almost every routine written answer as application or higher. Every short, long, numerical and case item was re-read against what it actually asks. A routine, textbook-standard procedure on given data (find the HCF by prime factorisation, solve a given pair, find a term, compute a mean, a sector area, a single right triangle) is now **understanding**; word problems that need modelling, multi-step or non-routine reasoning, error analysis and justification keep application / analysis / evaluation. 14 item tag(s) and 5 case-part tag(s) changed (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed.
+
+Added (appended, so earlier ids are unchanged; each has its re-solve check): `q_cbse10math_ch07_071` short-3, `q_cbse10math_ch07_072` short-3, `q_cbse10math_ch07_073` long, `q_cbse10math_ch07_074` long, `q_cbse10math_ch07_075` case-based.

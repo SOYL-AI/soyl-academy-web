@@ -20,9 +20,9 @@ Author: `claude-opus-5-5 (subject-producer)`, provenance `origin: "human"`, `mod
 | Check slides | 3 + 3, all objective (q001, q006, q008; q012, q029, q014) |
 | Notes | 6 sections, each with key terms and a visual; exam tips with mark split and 7 common mistakes |
 | Flashcards | 30 (definition 3, formula 5, concept 5, fact 6, example 3, exam-tip 5, diagram 3) |
-| Questions | 70 items, 139 marks: mcq 18, assertion-reason 6 (keys a b c d a d), true-false 5, fill-blank 5, numerical 9, short-2 9, short-3 7, long-5 6 (incl. the examined proof of the three identities), case-based 5 (1 + 1 + 2, part (c) either/or via `alternatives`, `passage_origin: soyl-original`; one carries a to-scale roof-truss figure) |
-| Difficulty | d1 14, d2 35, d3 15, d4 5, d5 1 |
-| Competency | recall 8, understanding 29, application 23, analysis 8, evaluation 2 — application or higher 47% of items, 65% of marks |
+| Questions | 70 items, 139 marks: mcq 18, assertion-reason 6 (keys a b c d a d), true-false 5, fill-blank 5, numerical 9, short-2 9, short-3 9, long-5 6 (incl. the examined proof of the three identities), case-based 5 (1 + 1 + 2, part (c) either/or via `alternatives`, `passage_origin: soyl-original`; one carries a to-scale roof-truss figure) |
+| Difficulty | d1 15, d2 36, d3 15, d4 5, d5 1 |
+| Competency | recall 8, understanding 49, application 6, analysis 7, evaluation 2 — application or higher 21% of items, 25% of marks (after the 2026-10-27 competency audit) |
 | Topics | t01 23, t02 28, t03 25 (items may carry two topics) |
 | Tests | `t_cbse10math_ch08_short` (20 marks / 40 min) and `_long` (40 marks / 90 min), matching `cbse-10-default-chapter-test-short/long`; disjoint |
 
@@ -42,3 +42,9 @@ Run from `platform/`: `npx tsx content/authored/maths/cbse-10-mathematics-ch08/s
 ## Gaps / follow-ups
 - d4–d5 items are 6 (the identity chapter's hard items are mostly the long proofs); application+ is 47% of items but 65% of marks.
 - Narration audio not generated (TTS stage). `word_limit` not set on maths short/long items (marked by steps).
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Board papers need recall/understanding written items (CBSE design: Standard 54/24/22, Basic 75/15/10 per cent of marks), and the bank had tagged almost every routine written answer as application or higher. Every short, long, numerical and case item was re-read against what it actually asks. A routine, textbook-standard procedure on given data (find the HCF by prime factorisation, solve a given pair, find a term, compute a mean, a sector area, a single right triangle) is now **understanding**; word problems that need modelling, multi-step or non-routine reasoning, error analysis and justification keep application / analysis / evaluation. 18 item tag(s) and 7 case-part tag(s) changed (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed.
+
+Added (appended, so earlier ids are unchanged; each has its re-solve check): `q_cbse10math_ch08_071` short-3, `q_cbse10math_ch08_072` short-3.

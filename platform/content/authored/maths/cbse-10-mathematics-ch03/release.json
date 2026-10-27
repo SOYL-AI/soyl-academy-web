@@ -4412,8 +4412,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch03-t02"
       ],
@@ -4840,8 +4840,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch03-t02"
       ],
@@ -5096,8 +5096,8 @@
       ],
       "marks": 3,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch03-t03"
       ],
@@ -5426,8 +5426,8 @@
       ],
       "marks": 5,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch03-t01"
       ],
@@ -5913,8 +5913,8 @@
           ],
           "marks": 2,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch03-t04"
           ],
@@ -6109,8 +6109,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch03-t03"
           ],
@@ -6333,8 +6333,8 @@
           ],
           "marks": 2,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch03-t03"
           ],
@@ -6488,8 +6488,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch03-t05"
           ],
@@ -6756,15 +6756,61 @@
         "generated_at": "2026-10-26",
         "author": "claude-opus-5-5 (subject-producer)"
       }
+    },
+    {
+      "id": "q_cbse10math_ch03_071",
+      "unit": "cbse-10-mathematics-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Use the elimination method to solve $4x + 3y = 25$ and $5x - 2y = 14$. Check your answer in both equations.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Multiply the first equation by $2$ and the second by $3$, so the $y$-terms cancel:\n\n$8x + 6y = 50$ and $15x - 6y = 42$.\n\nAdding: $23x = 92$, so $x = 4$. Then $4(4) + 3y = 25 \\Rightarrow 3y = 9 \\Rightarrow y = 3$.\n\nCheck: $4(4) + 3(3) = 16 + 9 = 25$ ✓ and $5(4) - 2(3) = 20 - 6 = 14$ ✓. So $x = 4$, $y = 3$."
+      },
+      "solution_md": "Make the $y$-coefficients $+6$ and $-6$, add, then back-substitute.",
+      "marking_scheme": [
+        {
+          "step": "Equations scaled to eliminate y",
+          "marks": 1
+        },
+        {
+          "step": "x = 4 and y = 3",
+          "marks": 1
+        },
+        {
+          "step": "Check in both equations",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "cbse-10-mathematics-ch03-t04"
+      ],
+      "expected_time_sec": 240,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
     }
   ],
   "build": {
     "run_id": null,
     "checks": {
       "syllabus": "topics t01–t05 only; removed topics (cross-multiplication method, equations reducible to a pair of linear equations) absent — no 1/x substitutions or upstream/downstream speed problems",
-      "katex": "1291 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "1308 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "10 deck plots + 9 notes/question plots: 44 marked points all on their curves and matching their labels; 18 zeros located numerically and all marked; 16 intersection points lie on both lines",
-      "re_solve": "129/129 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
+      "re_solve": "131/131 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "narration": "35 slides, max 67 words, mean 53; no symbols, LaTeX or letter abbreviations",
       "gate": "npm test -w @soyl/content-templates and content lint (lintExemplar) run clean on this chapter"
     }

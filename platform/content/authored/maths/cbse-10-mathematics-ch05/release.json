@@ -5350,8 +5350,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch05-t02"
       ],
@@ -5434,8 +5434,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch05-t02"
       ],
@@ -5476,8 +5476,8 @@
       ],
       "marks": 2,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch05-t02"
       ],
@@ -5560,8 +5560,8 @@
       ],
       "marks": 2,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch05-t03"
       ],
@@ -6029,8 +6029,8 @@
       ],
       "marks": 5,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch05-t02",
         "cbse-10-mathematics-ch05-t03"
@@ -6084,8 +6084,8 @@
       ],
       "marks": 5,
       "difficulty": 4,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch05-t02",
         "cbse-10-mathematics-ch05-t03"
@@ -6432,8 +6432,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch05-t02",
             "cbse-10-mathematics-ch05-t04"
@@ -6691,8 +6691,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch05-t02"
           ],
@@ -6888,8 +6888,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch05-t02"
           ],
@@ -7000,8 +7000,8 @@
       ],
       "marks": 4,
       "difficulty": 4,
-      "competency": "analysis",
-      "bloom": "analyze",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch05-t03",
         "cbse-10-mathematics-ch05-t02"
@@ -7081,8 +7081,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch05-t03"
           ],
@@ -7112,8 +7112,8 @@
           ],
           "marks": 2,
           "difficulty": 3,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch05-t02",
             "cbse-10-mathematics-ch05-t03"
@@ -7240,8 +7240,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch05-t02",
             "cbse-10-mathematics-ch05-t04"
@@ -7270,8 +7270,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch05-t02",
             "cbse-10-mathematics-ch05-t04"
@@ -7353,15 +7353,118 @@
         "generated_at": "2026-10-26",
         "author": "claude-opus-5-5 (subject-producer)"
       }
+    },
+    {
+      "id": "q_cbse10math_ch05_071",
+      "unit": "cbse-10-mathematics-ch05",
+      "language": "en",
+      "type": "short",
+      "stem_md": "For the AP $7, 11, 15, \\ldots$, find (a) its $20$th term and (b) the sum of its first $20$ terms.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Here $a = 7$ and $d = 11 - 7 = 4$.\n\n(a) $a_{20} = a + 19d = 7 + 19 \\times 4 = 7 + 76 = 83$.\n\n(b) $S_{20} = \\dfrac{20}{2}(a + a_{20}) = 10 \\times (7 + 83) = 900$."
+      },
+      "solution_md": "Use $a_n = a + (n - 1)d$, then $S_n = \\dfrac n2(a + a_n)$ with the last term just found.",
+      "marking_scheme": [
+        {
+          "step": "a = 7, d = 4",
+          "marks": 1
+        },
+        {
+          "step": "a₂₀ = 83",
+          "marks": 1
+        },
+        {
+          "step": "S₂₀ = 900",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "cbse-10-mathematics-ch05-t02",
+        "cbse-10-mathematics-ch05-t03"
+      ],
+      "expected_time_sec": 180,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_cbse10math_ch05_072",
+      "unit": "cbse-10-mathematics-ch05",
+      "language": "en",
+      "type": "long",
+      "stem_md": "An AP has first term $5$ and common difference $3$.\n\n(a) Write its first four terms.\n\n(b) Find its $25$th term.\n\n(c) Find the sum of its first $25$ terms.\n\n(d) Which term of the AP is $101$?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $5, 8, 11, 14$.\n\n(b) $a_{25} = 5 + 24 \\times 3 = 5 + 72 = 77$.\n\n(c) $S_{25} = \\dfrac{25}{2}(5 + 77) = \\dfrac{25}{2} \\times 82 = 25 \\times 41 = 1025$.\n\n(d) $5 + (n - 1) \\times 3 = 101 \\Rightarrow (n - 1) \\times 3 = 96 \\Rightarrow n - 1 = 32 \\Rightarrow n = 33$. So $101$ is the $33$rd term."
+      },
+      "solution_md": "All four parts use $a_n = a + (n - 1)d$ and $S_n = \\dfrac n2(a + a_n)$ with $a = 5$, $d = 3$.",
+      "marking_scheme": [
+        {
+          "step": "First four terms",
+          "marks": 1
+        },
+        {
+          "step": "a₂₅ = 77",
+          "marks": 1
+        },
+        {
+          "step": "S₂₅ formula",
+          "marks": 1
+        },
+        {
+          "step": "S₂₅ = 1025",
+          "marks": 1
+        },
+        {
+          "step": "n = 33",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "cbse-10-mathematics-ch05-t01",
+        "cbse-10-mathematics-ch05-t02",
+        "cbse-10-mathematics-ch05-t03"
+      ],
+      "expected_time_sec": 480,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
     }
   ],
   "build": {
     "run_id": null,
     "checks": {
       "syllabus": "topics t01–t04 only; the chapter has no removed topics for 2026-27",
-      "katex": "1454 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "1478 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "7 deck plots + 6 notes/question plots: 52 marked points all on their curves and matching their labels; 0 zeros located numerically and all marked; 0 intersection points lie on both lines",
-      "re_solve": "158/158 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
+      "re_solve": "162/162 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "narration": "35 slides, max 66 words, mean 53; no symbols, LaTeX or letter abbreviations",
       "gate": "npm test -w @soyl/content-templates and content lint (lintExemplar) run clean on this chapter"
     }

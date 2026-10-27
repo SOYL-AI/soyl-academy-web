@@ -21,9 +21,9 @@ provenance `origin: "human"`, `model: null`. All items are `status: "draft"` unt
 | Check slides | 3 + 3, all objective (q001, q006, q007; q011, q034, q016) |
 | Notes | 6 sections (one per topic, t01 twice), each with key terms and a visual; exam tips with mark split and 8 common mistakes |
 | Flashcards | 30 (definition 2, fact 5, concept 7, formula 3, example 5, exam-tip 6, diagram 2) |
-| Questions | 70 items, 140 marks: mcq 18, assertion-reason 6 (keys a b c d a d), true-false 5, fill-blank 5, numerical 9, short-2 9, short-3 7, long-5 6, case-based 5 (1 + 1 + 2, part (c) either/or via `alternatives`, `passage_origin: soyl-original`; two carry plot assets) |
-| Difficulty | d1 12, d2 27, d3 19, d4 11, d5 1 |
-| Competency | recall 7, understanding 24, application 27, analysis 8, evaluation 4 — application or higher 56% of items, 73% of marks |
+| Questions | 70 items, 140 marks: mcq 18, assertion-reason 6 (keys a b c d a d), true-false 5, fill-blank 5, numerical 9, short-2 9, short-3 8, long-5 6, case-based 5 (1 + 1 + 2, part (c) either/or via `alternatives`, `passage_origin: soyl-original`; two carry plot assets) |
+| Difficulty | d1 12, d2 28, d3 19, d4 11, d5 1 |
+| Competency | recall 7, understanding 32, application 21, analysis 7, evaluation 4 — application or higher 45% of items, 58% of marks (after the 2026-10-27 competency audit) |
 | Topics | t01 13, t02 15, t03 7, t04 27, t05 21 (items may carry two topics) |
 | Tests | `t_cbse10math_ch04_short` (20 marks / 40 min) and `_long` (40 marks / 90 min), matching `cbse-10-default-chapter-test-short/long`; disjoint |
 
@@ -43,3 +43,9 @@ Run from `platform/`: `npx tsx content/authored/maths/cbse-10-mathematics-ch04/s
 ## Gaps / follow-ups
 - t03 has 7 tagged items (fewer than other topics) because many formula items are tagged under t04/t05 where the formula is used; every deck formula example is mirrored by bank items.
 - Narration audio not generated (TTS stage). `word_limit` not set on maths short/long items (marked by steps).
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Board papers need recall/understanding written items (CBSE design: Standard 54/24/22, Basic 75/15/10 per cent of marks), and the bank had tagged almost every routine written answer as application or higher. Every short, long, numerical and case item was re-read against what it actually asks. A routine, textbook-standard procedure on given data (find the HCF by prime factorisation, solve a given pair, find a term, compute a mean, a sector area, a single right triangle) is now **understanding**; word problems that need modelling, multi-step or non-routine reasoning, error analysis and justification keep application / analysis / evaluation. 7 item tag(s) and 5 case-part tag(s) changed (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed.
+
+Added (appended, so earlier ids are unchanged; each has its re-solve check): `q_cbse10math_ch04_071` short-3.

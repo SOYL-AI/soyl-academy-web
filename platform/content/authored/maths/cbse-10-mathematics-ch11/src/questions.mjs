@@ -73,10 +73,10 @@ Q('n02', mk.num({ stem: r`Find the length (in cm) of the arc of a sector of angl
 **Step 2.** $l = \dfrac{135}{360} \times 2 \times \dfrac{22}{7} \times 28 = \dfrac38 \times 176 = 66$ cm.`, scheme: [['Formula with θ/360 and 2πr', 1], ['66 cm', 1]], d: 2, c: 'understanding', t: [1], time: 90 }), (C) => C.val(R6(arc(28, 135, P7))));
 Q('n03', mk.num({ stem: r`A rotating garden sprinkler in a Bengaluru park waters a sector of angle $150^\circ$ and radius $12$ m. Find the area watered, in m². Use $\pi = 3.14$.`, value: 188.4, unit: 'm²', marks: 2, sol: r`**Step 1.** The watered region is a sector.
 
-**Step 2.** $A = \dfrac{150}{360} \times 3.14 \times 12 \times 12 = \dfrac{5}{12} \times 452.16 = 188.4$ m².`, scheme: [['Sector formula', 1], ['188.4 m²', 1]], d: 2, c: 'application', t: [1], time: 90 }), (C) => { C.val(R6(sec(12, 150, P3))); C.sol([452.16]); });
+**Step 2.** $A = \dfrac{150}{360} \times 3.14 \times 12 \times 12 = \dfrac{5}{12} \times 452.16 = 188.4$ m².`, scheme: [['Sector formula', 1], ['188.4 m²', 1]], d: 2, c: 'understanding', t: [1], time: 90 }), (C) => { C.val(R6(sec(12, 150, P3))); C.sol([452.16]); });
 Q('n04', mk.num({ stem: r`The bob of a pendulum $42$ cm long swings through an arc of length $33$ cm. Find the angle (in degrees) through which it swings. Use $\pi = \dfrac{22}{7}$.`, value: 45, unit: '°', marks: 2, sol: r`**Step 1.** Circumference of the circle traced: $2 \times \dfrac{22}{7} \times 42 = 264$ cm.
 
-**Step 2.** $\dfrac{\theta}{360} = \dfrac{33}{264} = \dfrac18$, so $\theta = 45^\circ$.`, scheme: [['Arc as a fraction of 264 cm', 1], ['45°', 1]], d: 3, c: 'application', t: [1], time: 120 }), (C) => { C.val(R6((33 / (2 * P7 * 42)) * 360)); C.sol([264]); });
+**Step 2.** $\dfrac{\theta}{360} = \dfrac{33}{264} = \dfrac18$, so $\theta = 45^\circ$.`, scheme: [['Arc as a fraction of 264 cm', 1], ['45°', 1]], d: 3, c: 'understanding', t: [1], time: 120 }), (C) => { C.val(R6((33 / (2 * P7 * 42)) * 360)); C.sol([264]); });
 Q('n05', mk.num({ stem: r`A chord of a circle of radius $20$ cm subtends a right angle at the centre. Find the area (in cm²) of the minor segment. Use $\pi = 3.14$.`, value: 114, unit: 'cm²', marks: 2, sol: r`**Step 1.** Sector $= \dfrac14 \times 3.14 \times 400 = 314$ cm²; $\triangle OAB = \dfrac12 \times 20 \times 20 = 200$ cm².
 
 **Step 2.** Segment $= 314 - 200 = 114$ cm².`, scheme: [['Sector 314 and triangle 200', 1], ['114 cm²', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), (C) => { C.val(R6(seg(20, 90, P3))); C.sol([314, 200]); });
@@ -84,16 +84,16 @@ Q('n06', mk.num({ stem: r`A chord of a circle of radius $6$ cm subtends an angle
 
 **Step 2.** $\triangle OAB$ is equilateral: $\dfrac{1.73}{4} \times 36 = 15.57$ cm².
 
-**Step 3.** Segment $= 18.84 - 15.57 = 3.27$ cm².`, scheme: [['Sector 18.84 and triangle 15.57', 1], ['3.27 cm²', 1]], d: 3, c: 'application', t: [2], time: 150 }), (C) => { C.val(R2(seg(6, 60, P3)), 0.005); C.sol([18.84, 15.57]); });
+**Step 3.** Segment $= 18.84 - 15.57 = 3.27$ cm².`, scheme: [['Sector 18.84 and triangle 15.57', 1], ['3.27 cm²', 1]], d: 3, c: 'understanding', t: [2], time: 150 }), (C) => { C.val(R2(seg(6, 60, P3)), 0.005); C.sol([18.84, 15.57]); });
 Q('n07', mk.num({ stem: r`The minute hand of a clock in a Kochi railway station is $10.5$ cm long. Find the area (in cm²) it sweeps in $20$ minutes. Use $\pi = \dfrac{22}{7}$.`, value: 115.5, unit: 'cm²', marks: 2, sol: r`**Step 1.** In $20$ minutes the hand turns $20 \times 6^\circ = 120^\circ$.
 
-**Step 2.** Area $= \dfrac{120}{360} \times \dfrac{22}{7} \times 10.5 \times 10.5 = \dfrac13 \times 346.5 = 115.5$ cm².`, scheme: [['Angle 120°', 1], ['115.5 cm²', 1]], d: 2, c: 'application', t: [1], time: 120 }), (C) => C.val(R6(sec(10.5, 20 * 6, P7))));
+**Step 2.** Area $= \dfrac{120}{360} \times \dfrac{22}{7} \times 10.5 \times 10.5 = \dfrac13 \times 346.5 = 115.5$ cm².`, scheme: [['Angle 120°', 1], ['115.5 cm²', 1]], d: 2, c: 'understanding', t: [1], time: 120 }), (C) => C.val(R6(sec(10.5, 20 * 6, P7))));
 Q('n08', mk.num({ stem: r`The wheels of a bicycle have radius $35$ cm and make $120$ revolutions per minute. Find the speed of the bicycle in km/h. Use $\pi = \dfrac{22}{7}$.`, value: 15.84, unit: 'km/h', tol: 0.005, marks: 2, sol: r`**Step 1.** One revolution covers the circumference: $2 \times \dfrac{22}{7} \times 35 = 220$ cm. In one minute: $120 \times 220 = 26400$ cm $= 0.264$ km.
 
 **Step 2.** In one hour: $0.264 \times 60 = 15.84$ km, so the speed is $15.84$ km/h.`, scheme: [['Distance per minute 26400 cm', 1], ['15.84 km/h', 1]], d: 4, c: 'application', t: [3], time: 180 }), (C) => { C.val(R6(((120 * 2 * P7 * 35) / 100000) * 60), 0.005); C.sol([220, 26400, 0.264]); });
 Q('n09', mk.num({ stem: r`A circular pond in Udaipur has radius $7$ m. A path $3.5$ m wide is built around it. Find the area of the path in m². Use $\pi = \dfrac{22}{7}$.`, value: 192.5, unit: 'm²', marks: 2, sol: r`**Step 1.** Outer radius $= 7 + 3.5 = 10.5$ m.
 
-**Step 2.** Path $= \pi(R^2 - r^2) = \dfrac{22}{7}(110.25 - 49) = \dfrac{22}{7} \times 61.25 = 192.5$ m².`, scheme: [['Outer radius 10.5 m and ring formula', 1], ['192.5 m²', 1]], d: 3, c: 'application', t: [3], time: 150 }), (C) => C.val(R6(P7 * (10.5 ** 2 - 49))));
+**Step 2.** Path $= \pi(R^2 - r^2) = \dfrac{22}{7}(110.25 - 49) = \dfrac{22}{7} \times 61.25 = 192.5$ m².`, scheme: [['Outer radius 10.5 m and ring formula', 1], ['192.5 m²', 1]], d: 3, c: 'understanding', t: [3], time: 150 }), (C) => C.val(R6(P7 * (10.5 ** 2 - 49))));
 
 // =============================================================== Short answer, 2 marks
 Q('s201', mk.short({ marks: 2, stem: r`Find the area of a sector of angle $72^\circ$ of a circle of radius $35$ cm, and the length of its arc. Use $\pi = \dfrac{22}{7}$.`, model: r`$\dfrac{72}{360} = \dfrac15$.
@@ -103,7 +103,7 @@ Area $= \dfrac15 \times \dfrac{22}{7} \times 35 \times 35 = \dfrac15 \times 3850
 Arc $= \dfrac15 \times 2 \times \dfrac{22}{7} \times 35 = \dfrac15 \times 220 = 44$ cm.`, sol: r`Check: area $= \dfrac12 lr = \dfrac12 \times 44 \times 35 = 770$ ✓.`, scheme: [['Area 770 cm²', 1], ['Arc 44 cm', 1]], d: 2, c: 'understanding', t: [1], time: 120 }), (C) => { C.assert(near(sec(35, 72, P7), 770) && near(arc(35, 72, P7), 44), 'values'); C.model([3850, 770, 220, 44]); });
 Q('s202', mk.short({ marks: 2, stem: r`An arc of a circle of radius $21$ cm is $33$ cm long. Find the angle it subtends at the centre and the area of the sector. Use $\pi = \dfrac{22}{7}$.`, model: r`Circumference $= 2 \times \dfrac{22}{7} \times 21 = 132$ cm. $\dfrac{\theta}{360} = \dfrac{33}{132} = \dfrac14$, so $\theta = 90^\circ$.
 
-Area $= \dfrac14 \times \dfrac{22}{7} \times 21 \times 21 = \dfrac14 \times 1386 = 346.5$ cm².`, sol: r`Check: $\dfrac12 lr = \dfrac12 \times 33 \times 21 = 346.5$ ✓.`, scheme: [['θ = 90°', 1], ['Area 346.5 cm²', 1]], d: 2, c: 'application', t: [1], time: 120 }), (C) => { const th = (33 / arc(21, 360, P7)) * 360; C.assert(near(th, 90) && near(sec(21, th, P7), 346.5) && near(0.5 * 33 * 21, 346.5), 'values'); C.model([132, 90, 1386, 346.5]); });
+Area $= \dfrac14 \times \dfrac{22}{7} \times 21 \times 21 = \dfrac14 \times 1386 = 346.5$ cm².`, sol: r`Check: $\dfrac12 lr = \dfrac12 \times 33 \times 21 = 346.5$ ✓.`, scheme: [['θ = 90°', 1], ['Area 346.5 cm²', 1]], d: 2, c: 'understanding', t: [1], time: 120 }), (C) => { const th = (33 / arc(21, 360, P7)) * 360; C.assert(near(th, 90) && near(sec(21, th, P7), 346.5) && near(0.5 * 33 * 21, 346.5), 'values'); C.model([132, 90, 1386, 346.5]); });
 Q('s203', mk.short({ marks: 2, stem: r`A chord of a circle of radius $7$ cm subtends a right angle at the centre. Find the areas of the minor and the major segments. Use $\pi = \dfrac{22}{7}$.`, model: r`Sector $= \dfrac14 \times \dfrac{22}{7} \times 49 = 38.5$ cm²; $\triangle OAB = \dfrac12 \times 7 \times 7 = 24.5$ cm².
 
 Minor segment $= 38.5 - 24.5 = 14$ cm². Circle $= 154$ cm², so the major segment $= 154 - 14 = 140$ cm².`, sol: 'Minor segment = sector − triangle; major segment = circle − minor segment.', scheme: [['Minor segment 14 cm²', 1], ['Major segment 140 cm²', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), (C) => { C.assert(near(seg(7, 90, P7), 14), '14'); C.model([38.5, 24.5, 14, 154, 140]); });
@@ -118,25 +118,25 @@ Q('s206', mk.short({ marks: 2, stem: r`A sector of angle $80^\circ$ is cut from 
 $\theta = \dfrac{2880}{16} = 180^\circ$: the second sector is a semicircle.`, sol: 'π and 360 cancel, so θ × r² stays the same.', scheme: [['Equation 80 × 36 = 16θ', 1], ['θ = 180°', 1]], d: 3, c: 'analysis', t: [1], time: 120 }), (C) => { const th = (80 * 36) / 16; C.assert(near(sec(6, 80, P3), sec(4, th, P3)), 'equal areas'); C.model([2880, 180]); });
 Q('s207', mk.short({ marks: 2, stem: r`A circular steel plate of radius $14$ cm has four circular holes, each of radius $3.5$ cm, punched in it. Find the area of the remaining plate. Use $\pi = \dfrac{22}{7}$.`, model: r`Plate $= \dfrac{22}{7} \times 14 \times 14 = 616$ cm². One hole $= \dfrac{22}{7} \times 3.5 \times 3.5 = 38.5$ cm²; four holes $= 154$ cm².
 
-Remaining $= 616 - 154 = 462$ cm².`, sol: 'Whole minus the parts removed.', scheme: [['Plate 616 and holes 154', 1], ['462 cm²', 1]], d: 2, c: 'application', t: [3], time: 120 }), (C) => { C.assert(near(P7 * 196 - 4 * P7 * 12.25, 462), '462'); C.model([616, 38.5, 154, 462]); });
+Remaining $= 616 - 154 = 462$ cm².`, sol: 'Whole minus the parts removed.', scheme: [['Plate 616 and holes 154', 1], ['462 cm²', 1]], d: 2, c: 'understanding', t: [3], time: 120 }), (C) => { C.assert(near(P7 * 196 - 4 * P7 * 12.25, 462), '462'); C.model([616, 38.5, 154, 462]); });
 Q('s208', mk.short({ marks: 2, stem: r`Find the perimeter and the area of a quadrant of a circle of radius $14$ cm. Use $\pi = \dfrac{22}{7}$.`, model: r`Arc $= \dfrac14 \times 2 \times \dfrac{22}{7} \times 14 = 22$ cm, so the perimeter $= 22 + 14 + 14 = 50$ cm.
 
 Area $= \dfrac14 \times \dfrac{22}{7} \times 196 = 154$ cm².`, sol: 'The perimeter of a sector includes the two radii.', scheme: [['Perimeter 50 cm', 1], ['Area 154 cm²', 1]], d: 2, c: 'understanding', t: [1], time: 90 }), (C) => { C.assert(near(arc(14, 90, P7) + 28, 50) && near(sec(14, 90, P7), 154), 'values'); C.model([22, 50, 154]); });
 Q('s209', mk.short({ marks: 2, stem: r`In a circle of radius $21$ cm, an arc subtends an angle of $60^\circ$ at the centre. Find (a) the length of the arc (b) the area of the minor segment cut off by its chord. Use $\pi = \dfrac{22}{7}$ and $\sqrt3 = 1.73$.`, model: r`(a) Arc $= \dfrac16 \times 2 \times \dfrac{22}{7} \times 21 = 22$ cm.
 
-(b) Sector $= \dfrac16 \times \dfrac{22}{7} \times 441 = 231$ cm². $\triangle OAB$ is equilateral: $\dfrac{1.73}{4} \times 441 = 190.7325$ cm². Segment $= 231 - 190.7325 = 40.2675 \approx 40.27$ cm².`, sol: 'For 60° the triangle formed by the radii and the chord is equilateral.', scheme: [['Arc 22 cm', 1], ['Segment ≈ 40.27 cm²', 1]], d: 3, c: 'application', t: [1, 2], time: 150 }), (C) => { C.assert(near(arc(21, 60, P7), 22) && near(seg(21, 60, P7), 40.2675), 'values'); C.model([22, 231, 190.7325, 40.27]); });
+(b) Sector $= \dfrac16 \times \dfrac{22}{7} \times 441 = 231$ cm². $\triangle OAB$ is equilateral: $\dfrac{1.73}{4} \times 441 = 190.7325$ cm². Segment $= 231 - 190.7325 = 40.2675 \approx 40.27$ cm².`, sol: 'For 60° the triangle formed by the radii and the chord is equilateral.', scheme: [['Arc 22 cm', 1], ['Segment ≈ 40.27 cm²', 1]], d: 3, c: 'understanding', t: [1, 2], time: 150 }), (C) => { C.assert(near(arc(21, 60, P7), 22) && near(seg(21, 60, P7), 40.2675), 'values'); C.model([22, 231, 190.7325, 40.27]); });
 
 // =============================================================== Short answer, 3 marks
 Q('s301', mk.short({ marks: 3, stem: r`A cricket ground in Kolkata is a circle of radius $70$ m. The sight-screen stands on the boundary along an arc that subtends $18^\circ$ at the centre of the ground. Find (a) the length of this arc (b) the area of the sector of the ground in front of it. Use $\pi = \dfrac{22}{7}$.`, model: r`$\dfrac{18}{360} = \dfrac{1}{20}$.
 
 (a) Arc $= \dfrac{1}{20} \times 2 \times \dfrac{22}{7} \times 70 = \dfrac{1}{20} \times 440 = 22$ m.
 
-(b) Area $= \dfrac{1}{20} \times \dfrac{22}{7} \times 70 \times 70 = \dfrac{1}{20} \times 15400 = 770$ m².`, sol: r`Check: $\dfrac12 lr = \dfrac12 \times 22 \times 70 = 770$ ✓.`, scheme: [['Fraction 1/20', 1], ['Arc 22 m', 1], ['Area 770 m²', 1]], d: 2, c: 'application', t: [1], time: 240 }), (C) => { C.assert(near(arc(70, 18, P7), 22) && near(sec(70, 18, P7), 770), 'values'); C.model([440, 22, 15400, 770]); });
+(b) Area $= \dfrac{1}{20} \times \dfrac{22}{7} \times 70 \times 70 = \dfrac{1}{20} \times 15400 = 770$ m².`, sol: r`Check: $\dfrac12 lr = \dfrac12 \times 22 \times 70 = 770$ ✓.`, scheme: [['Fraction 1/20', 1], ['Arc 22 m', 1], ['Area 770 m²', 1]], d: 2, c: 'understanding', t: [1], time: 240 }), (C) => { C.assert(near(arc(70, 18, P7), 22) && near(sec(70, 18, P7), 770), 'values'); C.model([440, 22, 15400, 770]); });
 Q('s302', mk.short({ marks: 3, stem: r`A chord of a circle of radius $12$ cm subtends an angle of $120^\circ$ at the centre. Find the area of the minor segment. Use $\pi = 3.14$ and $\sqrt3 = 1.73$.`, model: r`Sector $= \dfrac{120}{360} \times 3.14 \times 144 = 150.72$ cm².
 
 Draw $OM \perp AB$. In $\triangle OAB$, $\angle OAB = 30^\circ$, so $OM = \dfrac{r}{2} = 6$ cm and $AM = \dfrac{\sqrt3}{2}r = 6\sqrt3$ cm. Area $= \dfrac12 \times AB \times OM = \dfrac12 \times 12\sqrt3 \times 6 = 36\sqrt3 = 36 \times 1.73 = 62.28$ cm².
 
-Segment $= 150.72 - 62.28 = 88.44$ cm².`, sol: r`For $120^\circ$, $\triangle OAB$ has area $\dfrac{\sqrt3}{4}r^2$, the same as for $60^\circ$.`, scheme: [['Sector 150.72 cm²', 1], ['Triangle 62.28 cm² (with OM = 6, AB = 12√3)', 1], ['Segment 88.44 cm²', 1]], d: 3, c: 'application', t: [2], time: 270 }), (C) => { C.assert(near(seg(12, 120, P3), 88.44), '88.44'); const h = 12 * Math.cos(Math.PI / 3), half = 12 * Math.sin(Math.PI / 3); C.assert(near(h, 6) && near(half * h, 36 * Math.sqrt(3)), 'triangle by OM'); C.model([150.72, 62.28, 88.44]); });
+Segment $= 150.72 - 62.28 = 88.44$ cm².`, sol: r`For $120^\circ$, $\triangle OAB$ has area $\dfrac{\sqrt3}{4}r^2$, the same as for $60^\circ$.`, scheme: [['Sector 150.72 cm²', 1], ['Triangle 62.28 cm² (with OM = 6, AB = 12√3)', 1], ['Segment 88.44 cm²', 1]], d: 3, c: 'understanding', t: [2], time: 270 }), (C) => { C.assert(near(seg(12, 120, P3), 88.44), '88.44'); const h = 12 * Math.cos(Math.PI / 3), half = 12 * Math.sin(Math.PI / 3); C.assert(near(h, 6) && near(half * h, 36 * Math.sqrt(3)), 'triangle by OM'); C.model([150.72, 62.28, 88.44]); });
 Q('s303', mk.short({ marks: 3, stem: r`A square tile of side $20$ cm has a semicircle drawn inwards on each of two opposite sides (the sides are the diameters). The two semicircles are painted. Find the area of the tile that is **not** painted. Use $\pi = 3.14$.`, assets: [figs.tile2], model: r`Each semicircle has radius $10$ cm and area $\dfrac12 \times 3.14 \times 100 = 157$ cm². Two semicircles: $314$ cm².
 
 The semicircles just touch at the centre of the tile (each reaches $10$ cm in), so they do not overlap.
@@ -173,7 +173,7 @@ Use $\pi = \dfrac{22}{7}$ and $\sqrt3 = 1.73$.`, model: r`(a) Arc $= \dfrac{60}{
 
 (c) $\triangle OAB$ is equilateral (two radii and $60^\circ$): area $= \dfrac{1.73}{4} \times 441 = 190.7325$ cm². Minor segment $= 231 - 190.7325 = 40.2675 \approx 40.27$ cm².
 
-(d) Circle $= \dfrac{22}{7} \times 441 = 1386$ cm². Major segment $= 1386 - 40.2675 = 1345.7325 \approx 1345.73$ cm².`, sol: 'Keep unrounded values until the last step.', scheme: [['Arc 22 cm', 1], ['Sector 231 cm²', 1], ['Equilateral triangle 190.73 cm²', 1], ['Minor segment 40.27 cm²', 1], ['Major segment 1345.73 cm²', 1]], d: 3, c: 'application', t: [1, 2], time: 600 }), (C) => { C.assert(near(P7 * 441 - seg(21, 60, P7), 1345.7325), 'major'); C.model([22, 231, 190.7325, 40.27, 1386, 1345.73]); });
+(d) Circle $= \dfrac{22}{7} \times 441 = 1386$ cm². Major segment $= 1386 - 40.2675 = 1345.7325 \approx 1345.73$ cm².`, sol: 'Keep unrounded values until the last step.', scheme: [['Arc 22 cm', 1], ['Sector 231 cm²', 1], ['Equilateral triangle 190.73 cm²', 1], ['Minor segment 40.27 cm²', 1], ['Major segment 1345.73 cm²', 1]], d: 3, c: 'understanding', t: [1, 2], time: 600 }), (C) => { C.assert(near(P7 * 441 - seg(21, 60, P7), 1345.7325), 'major'); C.model([22, 231, 190.7325, 40.27, 1386, 1345.73]); });
 Q('l02', mk.long({ stem: r`A square park in Lucknow has side $42$ m. At each corner there is a flower bed in the shape of a quadrant of radius $14$ m, and at the centre there is a circular fountain of diameter $14$ m. The rest of the park is lawn.
 (a) Find the area of the flower beds.
 (b) Find the area of the lawn.
@@ -197,7 +197,7 @@ Use $\pi = \dfrac{22}{7}$ and $\sqrt2 = 1.414$.`, model: r`(a) Sector $= \dfrac1
 
 (c) Circle $= 616$ cm². Major segment $= 616 - 56 = 560$ cm².
 
-(d) $AB = \sqrt{14^2 + 14^2} = 14\sqrt2 = 14 \times 1.414 = 19.796$ cm. Minor arc $= \dfrac14 \times 2 \times \dfrac{22}{7} \times 14 = 22$ cm. Perimeter of the minor segment $= 22 + 19.796 = 41.796 \approx 41.80$ cm.`, sol: 'The perimeter of a segment is its arc plus its chord.', scheme: [['Sector 154 cm²', 1], ['Minor segment 56 cm²', 1], ['Major segment 560 cm²', 1], ['Chord 19.796 cm', 1], ['Perimeter ≈ 41.80 cm', 1]], d: 3, c: 'application', t: [1, 2], time: 600 }), (C) => { C.assert(near(14 * 1.414, 19.796) && near(arc(14, 90, P7) + 19.796, 41.796), 'perimeter'); C.model([154, 98, 56, 616, 560, 19.796, 22, 41.8]); });
+(d) $AB = \sqrt{14^2 + 14^2} = 14\sqrt2 = 14 \times 1.414 = 19.796$ cm. Minor arc $= \dfrac14 \times 2 \times \dfrac{22}{7} \times 14 = 22$ cm. Perimeter of the minor segment $= 22 + 19.796 = 41.796 \approx 41.80$ cm.`, sol: 'The perimeter of a segment is its arc plus its chord.', scheme: [['Sector 154 cm²', 1], ['Minor segment 56 cm²', 1], ['Major segment 560 cm²', 1], ['Chord 19.796 cm', 1], ['Perimeter ≈ 41.80 cm', 1]], d: 3, c: 'understanding', t: [1, 2], time: 600 }), (C) => { C.assert(near(14 * 1.414, 19.796) && near(arc(14, 90, P7) + 19.796, 41.796), 'perimeter'); C.model([154, 98, 56, 616, 560, 19.796, 22, 41.8]); });
 Q('l04', mk.long({ stem: r`A cricket ground in Raipur is a circle of radius $63$ m. The inner fielding circle, with the same centre, has radius $28$ m. The region between the two circles is the outfield.
 (a) Find the area of the outfield.
 (b) A sector of angle $36^\circ$ at the centre marks the "third man" region. Find the area of the outfield inside this sector.
@@ -237,13 +237,13 @@ Use $\pi = \dfrac{22}{7}$.`, assets: [figs.lune], model: r`(a) $AB = \sqrt{14^2 
 // =============================================================== Case-based
 caseQ('c01', {
   passage: r`A pizza shop in Hyderabad sells a round pizza of radius $14$ cm, cut into $8$ equal slices from the centre. (Use $\pi = \dfrac{22}{7}$.)`,
-  assets: [figs.pizza], d: 2, c: 'application',
+  assets: [figs.pizza], d: 2, c: 'understanding',
   model: r`(a) Option (b): $45^\circ$. (b) $77$ cm². (c) (i) $39$ cm. Or (ii) $385$ cm².`,
   sol: r`Each slice is a sector of $45^\circ$: area $\dfrac18 \times 616 = 77$ cm², crust (arc) $\dfrac18 \times 88 = 11$ cm, perimeter $11 + 28 = 39$ cm. Five slices left: $5 \times 77 = 385$ cm².`,
   children: [
     child('a', mk.mcq({ stem: 'The angle at the centre of each slice is', opts: [r`$8^\circ$`, r`$45^\circ$`, r`$22.5^\circ$`, r`$90^\circ$`], key: 'b', sol: r`$360^\circ \div 8 = 45^\circ$.`, d: 1, c: 'understanding', t: [1], time: 30 })),
-    child('b', mk.num({ stem: 'Find the area of one slice in cm².', value: 77, unit: 'cm²', sol: r`$\dfrac{45}{360} \times \dfrac{22}{7} \times 14 \times 14 = \dfrac18 \times 616 = 77$ cm².`, scheme: [['77 cm²', 1]], d: 2, c: 'application', t: [1], time: 60 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** Find the perimeter of one slice (two straight edges and the crust).', model: r`Crust $= \dfrac18 \times 2 \times \dfrac{22}{7} \times 14 = \dfrac18 \times 88 = 11$ cm. Perimeter $= 11 + 14 + 14 = 39$ cm.`, sol: 'Arc plus two radii.', scheme: [['Arc 11 cm', 1], ['Perimeter 39 cm', 1]], d: 2, c: 'application', t: [1], time: 90 }), [
+    child('b', mk.num({ stem: 'Find the area of one slice in cm².', value: 77, unit: 'cm²', sol: r`$\dfrac{45}{360} \times \dfrac{22}{7} \times 14 \times 14 = \dfrac18 \times 616 = 77$ cm².`, scheme: [['77 cm²', 1]], d: 2, c: 'understanding', t: [1], time: 60 })),
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the perimeter of one slice (two straight edges and the crust).', model: r`Crust $= \dfrac18 \times 2 \times \dfrac{22}{7} \times 14 = \dfrac18 \times 88 = 11$ cm. Perimeter $= 11 + 14 + 14 = 39$ cm.`, sol: 'Arc plus two radii.', scheme: [['Arc 11 cm', 1], ['Perimeter 39 cm', 1]], d: 2, c: 'understanding', t: [1], time: 90 }), [
       mk.short({ marks: 2, stem: '**(ii)** Riya and her brother eat 3 slices. Find the area of pizza left.', model: r`$5$ slices are left, a sector of $5 \times 45^\circ = 225^\circ$: area $= \dfrac{225}{360} \times 616 = 385$ cm² (or $5 \times 77$).`, sol: 'Five-eighths of the pizza.', scheme: [['5 slices or 225°', 1], ['385 cm²', 1]], d: 2, c: 'application', t: [1], time: 90 }),
     ]),
   ],
@@ -251,13 +251,13 @@ caseQ('c01', {
 
 caseQ('c02', {
   passage: r`On a farm near Nashik, a rotating sprinkler fixed at the centre of a circular field of radius $21$ m can be set to water any sector of the field. On Monday it is set to a sector of $120^\circ$. (Use $\pi = \dfrac{22}{7}$.)`,
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   model: r`(a) Option (c): one-third. (b) $462$ m². (c) (i) $44$ m. Or (ii) $693$ m², which is half the field.`,
   sol: r`Field $= \dfrac{22}{7} \times 441 = 1386$ m². $120^\circ$ is $\dfrac13$: $462$ m²; edge $\dfrac13 \times 132 = 44$ m. Monday $+$ Tuesday $= 120^\circ + 60^\circ = 180^\circ$: $693$ m².`,
   children: [
     child('a', mk.mcq({ stem: 'What fraction of the field is watered on Monday?', opts: ['one-sixth', 'one-quarter', 'one-third', 'one-half'], key: 'c', sol: r`$\dfrac{120}{360} = \dfrac13$.`, d: 1, c: 'understanding', t: [1], time: 30 })),
-    child('b', mk.num({ stem: 'Find the area watered on Monday, in m².', value: 462, unit: 'm²', sol: r`$\dfrac13 \times \dfrac{22}{7} \times 21 \times 21 = \dfrac13 \times 1386 = 462$ m².`, scheme: [['462 m²', 1]], d: 2, c: 'application', t: [1], time: 60 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** Find the length of the field boundary that is watered on Monday.', model: r`Arc $= \dfrac{120}{360} \times 2 \times \dfrac{22}{7} \times 21 = \dfrac13 \times 132 = 44$ m.`, sol: 'Arc length of the sector.', scheme: [['Arc formula', 1], ['44 m', 1]], d: 2, c: 'application', t: [1], time: 90 }), [
+    child('b', mk.num({ stem: 'Find the area watered on Monday, in m².', value: 462, unit: 'm²', sol: r`$\dfrac13 \times \dfrac{22}{7} \times 21 \times 21 = \dfrac13 \times 1386 = 462$ m².`, scheme: [['462 m²', 1]], d: 2, c: 'understanding', t: [1], time: 60 })),
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the length of the field boundary that is watered on Monday.', model: r`Arc $= \dfrac{120}{360} \times 2 \times \dfrac{22}{7} \times 21 = \dfrac13 \times 132 = 44$ m.`, sol: 'Arc length of the sector.', scheme: [['Arc formula', 1], ['44 m', 1]], d: 2, c: 'understanding', t: [1], time: 90 }), [
       mk.short({ marks: 2, stem: r`**(ii)** On Tuesday it waters the next $60^\circ$ sector. Find the total area watered on the two days, and say what part of the field it is.`, model: r`Total angle $= 120^\circ + 60^\circ = 180^\circ$, a semicircle: $\dfrac12 \times 1386 = 693$ m², half the field.`, sol: 'Angles of adjacent sectors add.', scheme: [['Total angle 180°', 1], ['693 m², half', 1]], d: 3, c: 'application', t: [1], time: 90 }),
     ]),
   ],
@@ -265,13 +265,13 @@ caseQ('c02', {
 
 caseQ('c03', {
   passage: r`The Ashoka Chakra painted on a school's wall in Sarnath has $24$ equally spaced spokes and an outer rim of radius $7$ cm. (Use $\pi = \dfrac{22}{7}$.)`,
-  assets: [figs.chakra], d: 3, c: 'application',
+  assets: [figs.chakra], d: 3, c: 'understanding',
   model: r`(a) Option (a): $15^\circ$. (b) $6.42$ cm². (c) (i) $1.83$ cm. Or (ii) $38.5$ cm².`,
   sol: r`Sector between adjacent spokes: $\dfrac{15}{360} = \dfrac{1}{24}$ of the circle: area $\dfrac{154}{24} \approx 6.42$ cm², arc $\dfrac{44}{24} \approx 1.83$ cm. Six gaps make $90^\circ$: a quadrant of $38.5$ cm².`,
   children: [
     child('a', mk.mcq({ stem: 'The angle between two adjacent spokes is', opts: [r`$15^\circ$`, r`$24^\circ$`, r`$30^\circ$`, r`$7.5^\circ$`], key: 'a', sol: r`$360^\circ \div 24 = 15^\circ$. Option (c) divides by $12$ (one line through the centre holds two spokes).`, d: 1, c: 'understanding', t: [1], time: 45 })),
-    child('b', mk.num({ stem: 'Find the area (in cm²) of the sector between two adjacent spokes, to two decimal places.', value: 6.42, tol: 0.005, unit: 'cm²', sol: r`$\dfrac{15}{360} \times \dfrac{22}{7} \times 49 = \dfrac{154}{24} = 6.4166\ldots \approx 6.42$ cm².`, scheme: [['6.42 cm²', 1]], d: 2, c: 'application', t: [1], time: 75 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** Find the length of the rim between two adjacent spokes, to two decimal places.', model: r`Arc $= \dfrac{15}{360} \times 2 \times \dfrac{22}{7} \times 7 = \dfrac{44}{24} \approx 1.83$ cm.`, sol: 'One twenty-fourth of the circumference.', scheme: [['Arc formula with 15°', 1], ['1.83 cm', 1]], d: 2, c: 'application', t: [1], time: 90 }), [
+    child('b', mk.num({ stem: 'Find the area (in cm²) of the sector between two adjacent spokes, to two decimal places.', value: 6.42, tol: 0.005, unit: 'cm²', sol: r`$\dfrac{15}{360} \times \dfrac{22}{7} \times 49 = \dfrac{154}{24} = 6.4166\ldots \approx 6.42$ cm².`, scheme: [['6.42 cm²', 1]], d: 2, c: 'understanding', t: [1], time: 75 })),
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the length of the rim between two adjacent spokes, to two decimal places.', model: r`Arc $= \dfrac{15}{360} \times 2 \times \dfrac{22}{7} \times 7 = \dfrac{44}{24} \approx 1.83$ cm.`, sol: 'One twenty-fourth of the circumference.', scheme: [['Arc formula with 15°', 1], ['1.83 cm', 1]], d: 2, c: 'understanding', t: [1], time: 90 }), [
       mk.short({ marks: 2, stem: '**(ii)** Find the area of the sector between spoke 1 and spoke 7.', model: r`From spoke $1$ to spoke $7$ there are $6$ gaps: $6 \times 15^\circ = 90^\circ$, a quadrant. Area $= \dfrac14 \times 154 = 38.5$ cm².`, sol: 'Count gaps, not spokes.', scheme: [['6 gaps, 90°', 1], ['38.5 cm²', 1]], d: 3, c: 'analysis', t: [1], time: 90 }),
     ]),
   ],
@@ -279,28 +279,45 @@ caseQ('c03', {
 
 caseQ('c04', {
   passage: r`The top of a doorway in a Jaipur haveli is a glass panel in the shape of the minor segment of a circle of radius $70$ cm. The chord $AB$ at the bottom of the panel subtends a right angle at the centre $O$ of the circle. (Use $\pi = \dfrac{22}{7}$.)`,
-  assets: [figs.door], d: 3, c: 'application',
+  assets: [figs.door], d: 3, c: 'understanding',
   model: r`(a) Option (d): $\dfrac12 r^2$. (b) $3850$ cm². (c) (i) $1400$ cm². Or (ii) $110$ cm.`,
   sol: r`Sector $= \dfrac14 \times \dfrac{22}{7} \times 4900 = 3850$ cm²; $\triangle OAB = \dfrac12 \times 70 \times 70 = 2450$ cm²; panel $= 1400$ cm². Arc $= \dfrac14 \times 440 = 110$ cm.`,
   children: [
     child('a', mk.mcq({ stem: r`The area of $\triangle OAB$ is`, opts: [r`$\dfrac{\sqrt3}{4} r^2$`, r`$r^2$`, r`$\dfrac{\pi r^2}{4}$`, r`$\dfrac12 r^2$`], key: 'd', sol: r`$\angle AOB = 90^\circ$, so $\triangle OAB$ is right-angled with legs $r$ and $r$: area $\dfrac12 r^2$. Option (a) is for $60^\circ$ or $120^\circ$; (c) is the sector.`, d: 1, c: 'understanding', t: [2], time: 45 })),
-    child('b', mk.num({ stem: r`Find the area (in cm²) of the sector $OAB$.`, value: 3850, unit: 'cm²', sol: r`$\dfrac14 \times \dfrac{22}{7} \times 70 \times 70 = 3850$ cm².`, scheme: [['3850 cm²', 1]], d: 2, c: 'application', t: [1], time: 60 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** Find the area of the glass panel.', model: r`Panel $=$ sector $-$ triangle $= 3850 - \dfrac12 \times 70 \times 70 = 3850 - 2450 = 1400$ cm².`, sol: 'Segment = sector − triangle.', scheme: [['Triangle 2450 cm²', 1], ['Panel 1400 cm²', 1]], d: 2, c: 'application', t: [2], time: 90 }), [
-      mk.short({ marks: 2, stem: '**(ii)** A brass strip runs along the curved edge of the panel. Find its length.', model: r`Arc $= \dfrac14 \times 2 \times \dfrac{22}{7} \times 70 = \dfrac14 \times 440 = 110$ cm.`, sol: 'Quarter of the circumference.', scheme: [['Arc formula', 1], ['110 cm', 1]], d: 2, c: 'application', t: [1], time: 90 }),
+    child('b', mk.num({ stem: r`Find the area (in cm²) of the sector $OAB$.`, value: 3850, unit: 'cm²', sol: r`$\dfrac14 \times \dfrac{22}{7} \times 70 \times 70 = 3850$ cm².`, scheme: [['3850 cm²', 1]], d: 2, c: 'understanding', t: [1], time: 60 })),
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the area of the glass panel.', model: r`Panel $=$ sector $-$ triangle $= 3850 - \dfrac12 \times 70 \times 70 = 3850 - 2450 = 1400$ cm².`, sol: 'Segment = sector − triangle.', scheme: [['Triangle 2450 cm²', 1], ['Panel 1400 cm²', 1]], d: 2, c: 'understanding', t: [2], time: 90 }), [
+      mk.short({ marks: 2, stem: '**(ii)** A brass strip runs along the curved edge of the panel. Find its length.', model: r`Arc $= \dfrac14 \times 2 \times \dfrac{22}{7} \times 70 = \dfrac14 \times 440 = 110$ cm.`, sol: 'Quarter of the circumference.', scheme: [['Arc formula', 1], ['110 cm', 1]], d: 2, c: 'understanding', t: [1], time: 90 }),
     ]),
   ],
 }, (C) => { C.child('a').key('d'); C.child('b').val(R6(sec(70, 90, P7))); C.child('c').model([2450, R6(seg(70, 90, P7))]); C.child('cii').model([R6(arc(70, 90, P7))]); });
 
 caseQ('c05', {
   passage: r`A circular park in Bhubaneswar has radius $35$ m. A walking track $7$ m wide runs inside the park all along its boundary. (Use $\pi = \dfrac{22}{7}$.)`,
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   model: r`(a) Option (b). (b) $1386$ m². (c) (i) ₹$69300$. Or (ii) $44$ m.`,
   sol: r`Inner radius $= 28$ m. Track $= \dfrac{22}{7}(35^2 - 28^2) = \dfrac{22}{7} \times 441 = 1386$ m². Cost $= 1386 \times 50 = 69300$. Outer edge $220$ m, inner edge $176$ m.`,
   children: [
     child('a', mk.mcq({ stem: 'The area of the track is', opts: [r`$\pi(35 - 28)^2$`, r`$\pi(35^2 - 28^2)$`, r`$\pi(35^2 - 7^2)$`, r`$2\pi(35 - 28)$`], key: 'b', sol: r`The track is the ring between radii $35$ m and $35 - 7 = 28$ m: $\pi(R^2 - r^2)$. Option (a) squares the difference; (c) uses the width as the inner radius.`, d: 2, c: 'understanding', t: [3], time: 60 })),
-    child('b', mk.num({ stem: 'Find the area of the track in m².', value: 1386, unit: 'm²', sol: r`$\dfrac{22}{7}(1225 - 784) = \dfrac{22}{7} \times 441 = 1386$ m².`, scheme: [['1386 m²', 1]], d: 2, c: 'application', t: [3], time: 75 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** Find the cost of paving the track at ₹50 per m².', model: r`Cost $= 1386 \times 50 = $ ₹$69300$.`, sol: 'Area × rate.', scheme: [['Area used', 1], ['₹69300', 1]], d: 2, c: 'application', t: [3], time: 60 }), [
+    child('b', mk.num({ stem: 'Find the area of the track in m².', value: 1386, unit: 'm²', sol: r`$\dfrac{22}{7}(1225 - 784) = \dfrac{22}{7} \times 441 = 1386$ m².`, scheme: [['1386 m²', 1]], d: 2, c: 'understanding', t: [3], time: 75 })),
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the cost of paving the track at ₹50 per m².', model: r`Cost $= 1386 \times 50 = $ ₹$69300$.`, sol: 'Area × rate.', scheme: [['Area used', 1], ['₹69300', 1]], d: 2, c: 'understanding', t: [3], time: 60 }), [
       mk.short({ marks: 2, stem: '**(ii)** How much longer is the outer edge of the track than its inner edge?', model: r`Outer $= 2 \times \dfrac{22}{7} \times 35 = 220$ m; inner $= 2 \times \dfrac{22}{7} \times 28 = 176$ m. Difference $= 44$ m (always $2\pi \times$ width).`, sol: 'Difference of circumferences = 2π(R − r).', scheme: [['220 m and 176 m', 1], ['44 m', 1]], d: 3, c: 'analysis', t: [3], time: 90 }),
     ]),
   ],
 }, (C) => { C.child('a').key('b'); const ring = P7 * (35 ** 2 - 28 ** 2); C.child('b').val(R6(ring)); C.child('c').model([R6(ring * 50)]); C.child('cii').model([220, 176, R6(2 * P7 * 7)]); });
+// =============================================================== added 2026-10-27 (assessment-designer)
+// Recall/understanding written items for the board-paper competency balance (blueprint 54/24/22 Standard,
+// 75/15/10 Basic). Appended after every existing item so earlier ids do not move.
+Q('u301', mk.short({
+  marks: 3,
+  stem: r`A sector of a circle of radius $21$ cm has a central angle of $120^\circ$. Find (a) the length of its arc, (b) its area and (c) its perimeter. Use $\pi = \dfrac{22}{7}$.`,
+  model: r`The sector is $\dfrac{120}{360} = \dfrac13$ of the circle.
+
+(a) Arc length $= \dfrac13 \times 2 \times \dfrac{22}{7} \times 21 = \dfrac13 \times 132 = 44$ cm.
+
+(b) Area $= \dfrac13 \times \dfrac{22}{7} \times 21 \times 21 = \dfrac13 \times 1386 = 462$ cm².
+
+(c) Perimeter $= $ arc $+$ two radii $= 44 + 21 + 21 = 86$ cm.`,
+  sol: r`Arc $= \dfrac{\theta}{360} \times 2\pi r$ and area $= \dfrac{\theta}{360} \times \pi r^2$; the perimeter adds both radii to the arc.`,
+  scheme: [['Arc 44 cm', 1], ['Area 462 cm²', 1], ['Perimeter 86 cm', 1]],
+  d: 1, c: 'understanding', t: [1], time: 180,
+}), (C) => { const a = arc(21, 120, P7), s = sec(21, 120, P7); C.assert(near(a, 44) && near(s, 462) && near(a + 42, 86), 'arc, area, perimeter'); C.model([44, 462, 86]); });

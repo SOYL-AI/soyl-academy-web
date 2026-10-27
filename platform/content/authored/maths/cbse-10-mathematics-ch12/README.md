@@ -14,8 +14,8 @@ Syllabus topics: t01 surface area of a combination of any two of cube, cuboid, s
 | Visuals | 21 of 31 slides; never more than 1 slide without a visual. 14 SVG solid drawings in the decks and 15 more in notes and questions, plus formula, visibility and unit tables and two method flows |
 | Notes | 6 sections + exam tips |
 | Flashcards | 30 |
-| Questions | 70 (141 marks): mcq 18 · AR 6 · TF 5 · fill 5 · numerical 9 · short-2 9 · short-3 7 · long 6 · case 5 |
-| Difficulty | d1 12 · d2 27 · d3 25 · d4 4 · d5 2; application or higher 59% of items, 77% of marks |
+| Questions | 72 (149 marks): mcq 18 · AR 6 · TF 5 · fill 5 · numerical 9 · short-2 9 · short-3 8 · long 7 · case 5 |
+| Difficulty | d1 12 · d2 29 · d3 25 · d4 4 · d5 2; application or higher 42% of items, 52% of marks (after the 2026-10-27 competency audit) |
 | Tests | `t_cbse10math_ch12_short` (20 marks) and `_long` (40 marks) on the default blueprints, disjoint |
 
 ## Figures
@@ -41,3 +41,9 @@ Contexts: Udaipur shamiana, Shimla water heater, Hampi mandapam pillars, Old Del
 
 ## Known gaps
 Narration audio is not generated yet (that is the TTS stage). The solid drawings are schematic 3D views, so the lint does not check their angles. A dedicated `solid` visual kind in the contract would let the renderer draw these natively.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Board papers need recall/understanding written items (CBSE design: Standard 54/24/22, Basic 75/15/10 per cent of marks), and the bank had tagged almost every routine written answer as application or higher. Every short, long, numerical and case item was re-read against what it actually asks. A routine, textbook-standard procedure on given data (find the HCF by prime factorisation, solve a given pair, find a term, compute a mean, a sector area, a single right triangle) is now **understanding**; word problems that need modelling, multi-step or non-routine reasoning, error analysis and justification keep application / analysis / evaluation. 11 item tag(s) and 8 case-part tag(s) changed (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed.
+
+Added (appended, so earlier ids are unchanged; each has its re-solve check): `q_cbse10math_ch12_071` short-3, `q_cbse10math_ch12_072` long.

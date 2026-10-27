@@ -18,8 +18,8 @@ Experimental probability is not used anywhere.
 | Visuals | 23 of 33 slides; never more than 1 slide without a visual. Probability-scale and spinner SVGs, a bag SVG, a three-coin tree (flow), the 6 × 6 table of sums, a deck table and sample-space tables |
 | Notes | 6 sections + exam tips |
 | Flashcards | 30 |
-| Questions | 70 (140 marks): mcq 18 · AR 6 · TF 5 · fill 5 · numerical 9 · short-2 9 · short-3 7 · long 6 · case 5 |
-| Difficulty | d1 13 · d2 31 · d3 21 · d4 4 · d5 1; application or higher 49% of items, 69% of marks |
+| Questions | 71 (143 marks): mcq 18 · AR 6 · TF 5 · fill 5 · numerical 9 · short-2 9 · short-3 8 · long 6 · case 5 |
+| Difficulty | d1 14 · d2 31 · d3 21 · d4 4 · d5 1; application or higher 24% of items, 28% of marks (after the 2026-10-27 competency audit) |
 | Tests | `t_cbse10math_ch14_short` (20 marks) and `_long` (40 marks), on the default blueprints, with no question shared between them |
 
 ## Verifier pass
@@ -56,3 +56,9 @@ Contexts: Ludo in Guwahati, a magic show in Jabalpur, a Diwali lucky dip in Ahme
 ## Known gaps
 - Narration audio is not generated yet (TTS stage).
 - The SVG figures use the named palette colours (`var(--diagram-blue)` and others), which the renderer must map. The bag figure also states the counts in text, so it does not rely on colour.
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Board papers need recall/understanding written items (CBSE design: Standard 54/24/22, Basic 75/15/10 per cent of marks), and the bank had tagged almost every routine written answer as application or higher. Every short, long, numerical and case item was re-read against what it actually asks. A routine, textbook-standard procedure on given data (find the HCF by prime factorisation, solve a given pair, find a term, compute a mean, a sector area, a single right triangle) is now **understanding**; word problems that need modelling, multi-step or non-routine reasoning, error analysis and justification keep application / analysis / evaluation. 17 item tag(s) and 5 case-part tag(s) changed (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed.
+
+Added (appended, so earlier ids are unchanged; each has its re-solve check): `q_cbse10math_ch14_071` short-3.

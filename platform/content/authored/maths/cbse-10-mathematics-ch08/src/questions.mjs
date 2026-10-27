@@ -70,10 +70,10 @@ Q('fb5', mk.fill({ stem: 'If $\\sin A = \\dfrac{8}{17}$ and $A$ is acute, then $
 Q('n01', mk.num({ stem: 'Evaluate $6\\tan^2 30^\\circ + 4\\cos^2 60^\\circ - 3\\sec^2 45^\\circ$.', value: -3, marks: 2, sol: r`**Step 1.** $\tan^2 30^\circ = \dfrac13$, $\cos^2 60^\circ = \dfrac14$, $\sec^2 45^\circ = 2$. **Step 2.** $6 \times \dfrac13 + 4 \times \dfrac14 - 3 \times 2 = 2 + 1 - 6 = -3$.`, scheme: [['Correct values', 1], ['−3', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), (C) => C.val(6 * tan(30) ** 2 + 4 * cos(60) ** 2 - 3 / cos(45) ** 2, 1e-9));
 Q('n02', mk.num({ stem: 'In triangle $PQR$, right-angled at $Q$, $PR = 26$ cm and $PQ = 10$ cm. Find $\\tan P$.', value: 2.4, marks: 2, sol: r`**Step 1.** $QR = \sqrt{26^2 - 10^2} = \sqrt{576} = 24$ cm. **Step 2.** $\tan P = \dfrac{QR}{PQ} = \dfrac{24}{10} = 2.4$.`, scheme: [['QR = 24', 1], ['tan P = 2.4', 1]], d: 2, c: 'understanding', t: [1], time: 120 }), (C) => { const qr = Math.sqrt(26 ** 2 - 10 ** 2); C.assert(qr === 24, 'QR'); C.val(qr / 10); });
 Q('n03', mk.num({ stem: 'Find the value of $\\sin 30^\\circ \\times \\tan 60^\\circ \\times \\cos 30^\\circ$.', value: 0.75, sol: r`$\dfrac12 \times \sqrt3 \times \dfrac{\sqrt3}{2} = \dfrac{3}{4} = 0.75$.`, scheme: [['0.75', 1]], d: 1, c: 'understanding', t: [2], time: 60 }), (C) => C.val(sin(30) * tan(60) * cos(30), 1e-9));
-Q('n04', mk.num({ stem: 'If $\\theta$ is acute and $2\\sin\\theta - 1 = 0$, find the value of $3\\tan^2\\theta + 4\\cos^2\\theta$.', value: 4, marks: 2, sol: r`**Step 1.** $\sin\theta = \dfrac12$, so $\theta = 30^\circ$. **Step 2.** $3 \times \dfrac13 + 4 \times \dfrac34 = 1 + 3 = 4$.`, scheme: [['θ = 30°', 1], ['4', 1]], d: 2, c: 'application', t: [2], time: 120 }), (C) => { const th = angles((d) => near(2 * sin(d) - 1, 0))[0]; C.val(3 * tan(th) ** 2 + 4 * cos(th) ** 2, 1e-9); });
-Q('n05', mk.num({ stem: 'If $\\sec\\theta = 1.25$ and $\\theta$ is acute, find $\\tan\\theta$ using an identity.', value: 0.75, marks: 2, sol: r`**Step 1.** $\tan^2\theta = \sec^2\theta - 1 = 1.5625 - 1 = 0.5625$. **Step 2.** $\tan\theta = 0.75$ (positive, as $\theta$ is acute).`, scheme: [['tan²θ = sec²θ − 1 = 0.5625', 1], ['0.75', 1]], d: 2, c: 'application', t: [3], time: 120 }), (C) => { const th = Math.acos(1 / 1.25) * 180 / Math.PI; C.val(tan(th), 1e-9); });
-Q('n06', mk.num({ stem: 'If $\\operatorname{cosec} A = 2.6$ and $A$ is acute, find $\\cot A$.', value: 2.4, marks: 2, sol: r`**Step 1.** $\cot^2 A = \operatorname{cosec}^2 A - 1 = 6.76 - 1 = 5.76$. **Step 2.** $\cot A = 2.4$.`, scheme: [['cot²A = 5.76', 1], ['2.4', 1]], d: 2, c: 'application', t: [3], time: 120 }), (C) => { const A = Math.asin(1 / 2.6) * 180 / Math.PI; C.val(1 / tan(A), 1e-9); });
-Q('n07', mk.num({ stem: 'In triangle $ABC$, right-angled at $B$, the hypotenuse $AC = 20$ cm and $\\sin A = 0.6$. Find the perimeter of the triangle in cm.', value: 48, unit: 'cm', marks: 2, sol: r`**Step 1.** $BC = AC \sin A = 20 \times 0.6 = 12$ cm, and $AB = \sqrt{400 - 144} = 16$ cm. **Step 2.** Perimeter $= 20 + 12 + 16 = 48$ cm.`, scheme: [['BC = 12 and AB = 16', 1], ['48 cm', 1]], d: 3, c: 'application', t: [1], time: 150 }), (C) => { const A = Math.asin(0.6) * 180 / Math.PI; C.val(20 + 20 * sin(A) + 20 * cos(A), 1e-9); });
+Q('n04', mk.num({ stem: 'If $\\theta$ is acute and $2\\sin\\theta - 1 = 0$, find the value of $3\\tan^2\\theta + 4\\cos^2\\theta$.', value: 4, marks: 2, sol: r`**Step 1.** $\sin\theta = \dfrac12$, so $\theta = 30^\circ$. **Step 2.** $3 \times \dfrac13 + 4 \times \dfrac34 = 1 + 3 = 4$.`, scheme: [['θ = 30°', 1], ['4', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), (C) => { const th = angles((d) => near(2 * sin(d) - 1, 0))[0]; C.val(3 * tan(th) ** 2 + 4 * cos(th) ** 2, 1e-9); });
+Q('n05', mk.num({ stem: 'If $\\sec\\theta = 1.25$ and $\\theta$ is acute, find $\\tan\\theta$ using an identity.', value: 0.75, marks: 2, sol: r`**Step 1.** $\tan^2\theta = \sec^2\theta - 1 = 1.5625 - 1 = 0.5625$. **Step 2.** $\tan\theta = 0.75$ (positive, as $\theta$ is acute).`, scheme: [['tan²θ = sec²θ − 1 = 0.5625', 1], ['0.75', 1]], d: 2, c: 'understanding', t: [3], time: 120 }), (C) => { const th = Math.acos(1 / 1.25) * 180 / Math.PI; C.val(tan(th), 1e-9); });
+Q('n06', mk.num({ stem: 'If $\\operatorname{cosec} A = 2.6$ and $A$ is acute, find $\\cot A$.', value: 2.4, marks: 2, sol: r`**Step 1.** $\cot^2 A = \operatorname{cosec}^2 A - 1 = 6.76 - 1 = 5.76$. **Step 2.** $\cot A = 2.4$.`, scheme: [['cot²A = 5.76', 1], ['2.4', 1]], d: 2, c: 'understanding', t: [3], time: 120 }), (C) => { const A = Math.asin(1 / 2.6) * 180 / Math.PI; C.val(1 / tan(A), 1e-9); });
+Q('n07', mk.num({ stem: 'In triangle $ABC$, right-angled at $B$, the hypotenuse $AC = 20$ cm and $\\sin A = 0.6$. Find the perimeter of the triangle in cm.', value: 48, unit: 'cm', marks: 2, sol: r`**Step 1.** $BC = AC \sin A = 20 \times 0.6 = 12$ cm, and $AB = \sqrt{400 - 144} = 16$ cm. **Step 2.** Perimeter $= 20 + 12 + 16 = 48$ cm.`, scheme: [['BC = 12 and AB = 16', 1], ['48 cm', 1]], d: 3, c: 'understanding', t: [1], time: 150 }), (C) => { const A = Math.asin(0.6) * 180 / Math.PI; C.val(20 + 20 * sin(A) + 20 * cos(A), 1e-9); });
 Q('n08', mk.num({ stem: 'If $\\sin\\theta + \\cos\\theta = 1.4$ for an acute angle $\\theta$, find $\\sin\\theta\\cos\\theta$.', value: 0.48, marks: 2, sol: r`**Step 1.** Square: $\sin^2\theta + 2\sin\theta\cos\theta + \cos^2\theta = 1.96$, so $1 + 2\sin\theta\cos\theta = 1.96$. **Step 2.** $\sin\theta\cos\theta = \dfrac{0.96}{2} = 0.48$. (Indeed $\sin\theta = 0.6$, $\cos\theta = 0.8$ or the other way round.)`, scheme: [['1 + 2 sinθ cosθ = 1.96', 1], ['0.48', 1]], d: 3, c: 'analysis', t: [3], time: 150 }), (C) => { const th = Math.asin(0.6) * 180 / Math.PI; C.assert(near(sin(th) + cos(th), 1.4), 'example angle'); C.val(sin(th) * cos(th), 1e-9); });
 Q('n09', mk.num({ stem: 'If $A = 45^\\circ$, find the value of $\\sec^2 A + \\operatorname{cosec}^2 A$.', value: 4, sol: r`$\sec 45^\circ = \operatorname{cosec} 45^\circ = \sqrt2$, so the value is $2 + 2 = 4$.`, scheme: [['4', 1]], d: 1, c: 'understanding', t: [2], time: 60 }), (C) => C.val(1 / cos(45) ** 2 + 1 / sin(45) ** 2, 1e-9));
 
@@ -91,25 +91,25 @@ Denominator: $\dfrac14 + \dfrac12 = \dfrac34$.
 Value $= \dfrac52 \div \dfrac34 = \dfrac52 \times \dfrac43 = \dfrac{10}{3}$.`, sol: r`$\sec 30^\circ = \dfrac{2}{\sqrt3}$, so $\sec^2 30^\circ = \dfrac43$.`, scheme: [['Numerator 5/2 and denominator 3/4', 1], ['10/3', 1]], d: 2, c: 'understanding', t: [2], time: 150 }), (C) => { const v = (2 * cos(60) ** 2 + 3 / cos(30) ** 2 - 2 * tan(45) ** 2) / (sin(30) ** 2 + cos(45) ** 2); C.assert(near(v, 10 / 3), `${v}`); C.model(['\\dfrac52', '\\dfrac34', '\\dfrac{10}{3}']); });
 Q('s204', mk.short({ marks: 2, stem: 'Find the acute angles $A$ and $B$, with $A > B$, if $\\tan(A + B) = 1$ and $\\sin(A - B) = \\dfrac12$.', model: r`$\tan(A + B) = 1 \Rightarrow A + B = 45^\circ$; $\sin(A - B) = \dfrac12 \Rightarrow A - B = 30^\circ$.
 
-Adding: $2A = 75^\circ$, so $A = 37.5^\circ$ and $B = 7.5^\circ$.`, sol: r`Both $A + B$ and $A - B$ are acute here, so each equation has exactly one solution.`, scheme: [['A + B = 45°, A − B = 30°', 1], ['A = 37.5°, B = 7.5°', 1]], d: 3, c: 'application', t: [2], time: 150 }), (C) => { const A = 37.5, B = 7.5; C.assert(near(tan(A + B), 1) && near(sin(A - B), 0.5), 'check'); C.model([37.5, 7.5]); });
+Adding: $2A = 75^\circ$, so $A = 37.5^\circ$ and $B = 7.5^\circ$.`, sol: r`Both $A + B$ and $A - B$ are acute here, so each equation has exactly one solution.`, scheme: [['A + B = 45°, A − B = 30°', 1], ['A = 37.5°, B = 7.5°', 1]], d: 3, c: 'understanding', t: [2], time: 150 }), (C) => { const A = 37.5, B = 7.5; C.assert(near(tan(A + B), 1) && near(sin(A - B), 0.5), 'check'); C.model([37.5, 7.5]); });
 Q('s205', mk.short({ marks: 2, stem: 'Prove that $\\cot\\theta - \\tan\\theta = \\dfrac{2\\cos^2\\theta - 1}{\\sin\\theta\\cos\\theta}$ for every acute angle $\\theta$.', model: r`LHS $= \dfrac{\cos\theta}{\sin\theta} - \dfrac{\sin\theta}{\cos\theta} = \dfrac{\cos^2\theta - \sin^2\theta}{\sin\theta\cos\theta}$.
 
 Since $\sin^2\theta = 1 - \cos^2\theta$, the numerator is $\cos^2\theta - (1 - \cos^2\theta) = 2\cos^2\theta - 1$. So LHS $=$ RHS.`, sol: 'Write everything in sine and cosine, then use sin²θ + cos²θ = 1.', scheme: [['Common denominator', 1], ['Numerator 2cos²θ − 1 via identity', 1]], d: 2, c: 'application', t: [3], time: 150 }), (C) => { C.assert(identity((d) => 1 / tan(d) - tan(d), (d) => (2 * cos(d) ** 2 - 1) / (sin(d) * cos(d))), 'identity'); C.model(['2\\cos^2\\theta - 1']); });
-Q('s206', mk.short({ marks: 2, stem: 'If $x = 3\\sec\\theta$ and $y = 3\\tan\\theta$, show that $x^2 - y^2 = 9$.', model: r`$x^2 - y^2 = 9\sec^2\theta - 9\tan^2\theta = 9(\sec^2\theta - \tan^2\theta) = 9 \times 1 = 9$.`, sol: r`Uses $1 + \tan^2\theta = \sec^2\theta$.`, scheme: [['9(sec²θ − tan²θ)', 1], ['= 9', 1]], d: 2, c: 'application', t: [3], time: 90 }), (C) => { C.assert(identity((d) => (3 / cos(d)) ** 2 - (3 * tan(d)) ** 2, () => 9), 'identity'); C.model([9]); });
+Q('s206', mk.short({ marks: 2, stem: 'If $x = 3\\sec\\theta$ and $y = 3\\tan\\theta$, show that $x^2 - y^2 = 9$.', model: r`$x^2 - y^2 = 9\sec^2\theta - 9\tan^2\theta = 9(\sec^2\theta - \tan^2\theta) = 9 \times 1 = 9$.`, sol: r`Uses $1 + \tan^2\theta = \sec^2\theta$.`, scheme: [['9(sec²θ − tan²θ)', 1], ['= 9', 1]], d: 2, c: 'understanding', t: [3], time: 90 }), (C) => { C.assert(identity((d) => (3 / cos(d)) ** 2 - (3 * tan(d)) ** 2, () => 9), 'identity'); C.model([9]); });
 Q('s207', mk.short({ marks: 2, stem: 'In triangle $ABC$, right-angled at $B$, $AB = 5$ cm and $BC = 12$ cm. Riya writes $\\sin A = \\dfrac{5}{13}$. Find her mistake and give the correct value.', model: r`$AC = \sqrt{25 + 144} = 13$ cm. She used the side **adjacent** to $A$ ($AB$), which gives $\cos A$.
 
 The side opposite $A$ is $BC = 12$ cm, so $\sin A = \dfrac{12}{13}$.`, sol: r`Mark the angle first, then name the opposite side, the side across from it.`, scheme: [['Identifies adjacent used instead of opposite', 1], ['sin A = 12/13', 1]], d: 2, c: 'evaluation', t: [1], time: 120 }), (C) => { const A = Math.atan(12 / 5) * 180 / Math.PI; C.assert(near(sin(A), 12 / 13) && near(cos(A), 5 / 13), 'values'); C.model([13, '\\dfrac{12}{13}']); });
 Q('s208', mk.short({ marks: 2, stem: 'If $\\tan\\theta = \\dfrac12$ for an acute angle $\\theta$, find $\\sin\\theta\\cos\\theta$ using identities.', model: r`$\sec^2\theta = 1 + \tan^2\theta = 1 + \dfrac14 = \dfrac54$, so $\cos^2\theta = \dfrac45$.
 
-$\sin\theta\cos\theta = \tan\theta\cos^2\theta = \dfrac12 \times \dfrac45 = \dfrac25$.`, sol: r`**Check** with a triangle: legs $1$ and $2$, hypotenuse $\sqrt5$: $\dfrac{1}{\sqrt5} \times \dfrac{2}{\sqrt5} = \dfrac25$.`, scheme: [['cos²θ = 4/5', 1], ['2/5', 1]], d: 3, c: 'application', t: [3], time: 150 }), (C) => { const th = Math.atan(0.5) * 180 / Math.PI; C.assert(near(sin(th) * cos(th), 0.4) && near(cos(th) ** 2, 0.8), 'value'); C.model(['\\dfrac45', '\\dfrac25']); });
+$\sin\theta\cos\theta = \tan\theta\cos^2\theta = \dfrac12 \times \dfrac45 = \dfrac25$.`, sol: r`**Check** with a triangle: legs $1$ and $2$, hypotenuse $\sqrt5$: $\dfrac{1}{\sqrt5} \times \dfrac{2}{\sqrt5} = \dfrac25$.`, scheme: [['cos²θ = 4/5', 1], ['2/5', 1]], d: 3, c: 'understanding', t: [3], time: 150 }), (C) => { const th = Math.atan(0.5) * 180 / Math.PI; C.assert(near(sin(th) * cos(th), 0.4) && near(cos(th) ** 2, 0.8), 'value'); C.model(['\\dfrac45', '\\dfrac25']); });
 Q('s209', mk.short({ marks: 2, stem: 'If $\\sin A = \\dfrac{\\sqrt3}{2}$ and $A$ is acute, find the value of $2\\cot^2 A - 1$.', model: r`$\sin A = \dfrac{\sqrt3}{2}$ gives $A = 60^\circ$, so $\cot A = \dfrac{1}{\sqrt3}$ and $\cot^2 A = \dfrac13$.
 
-$2 \times \dfrac13 - 1 = -\dfrac13$.`, sol: 'Find the angle first, then use the table.', scheme: [['A = 60°, cot²A = 1/3', 1], ['−1/3', 1]], d: 2, c: 'application', t: [2], time: 120 }), (C) => { const A = angles((d) => near(sin(d), S3 / 2))[0]; C.assert(A === 60 && near(2 / tan(A) ** 2 - 1, -1 / 3), 'value'); C.model(['-\\dfrac13']); });
+$2 \times \dfrac13 - 1 = -\dfrac13$.`, sol: 'Find the angle first, then use the table.', scheme: [['A = 60°, cot²A = 1/3', 1], ['−1/3', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), (C) => { const A = angles((d) => near(sin(d), S3 / 2))[0]; C.assert(A === 60 && near(2 / tan(A) ** 2 - 1, -1 / 3), 'value'); C.model(['-\\dfrac13']); });
 
 // =============================================================== Short answer, 3 marks
 Q('s301', mk.short({ marks: 3, stem: 'If $\\tan\\theta = \\dfrac43$, find the value of $\\dfrac{2\\sin\\theta - \\cos\\theta}{2\\sin\\theta + \\cos\\theta}$.', model: r`Take the opposite side $4k$ and the adjacent side $3k$; the hypotenuse is $5k$. So $\sin\theta = \dfrac45$ and $\cos\theta = \dfrac35$.
 
-$\dfrac{2 \times \frac45 - \frac35}{2 \times \frac45 + \frac35} = \dfrac{\frac85 - \frac35}{\frac85 + \frac35} = \dfrac{1}{\frac{11}{5}} = \dfrac{5}{11}$.`, sol: r`Shortcut: divide the numerator and denominator by $\cos\theta$: $\dfrac{2\tan\theta - 1}{2\tan\theta + 1} = \dfrac{\frac83 - 1}{\frac83 + 1} = \dfrac{5}{11}$.`, scheme: [['Hypotenuse 5k', 1], ['sin θ = 4/5, cos θ = 3/5', 1], ['5/11', 1]], d: 3, c: 'application', t: [1], time: 240 }), (C) => { const th = Math.atan(4 / 3) * 180 / Math.PI; C.assert(near((2 * sin(th) - cos(th)) / (2 * sin(th) + cos(th)), 5 / 11), 'value'); C.model(['\\dfrac45', '\\dfrac35', '\\dfrac{5}{11}']); });
+$\dfrac{2 \times \frac45 - \frac35}{2 \times \frac45 + \frac35} = \dfrac{\frac85 - \frac35}{\frac85 + \frac35} = \dfrac{1}{\frac{11}{5}} = \dfrac{5}{11}$.`, sol: r`Shortcut: divide the numerator and denominator by $\cos\theta$: $\dfrac{2\tan\theta - 1}{2\tan\theta + 1} = \dfrac{\frac83 - 1}{\frac83 + 1} = \dfrac{5}{11}$.`, scheme: [['Hypotenuse 5k', 1], ['sin θ = 4/5, cos θ = 3/5', 1], ['5/11', 1]], d: 3, c: 'understanding', t: [1], time: 240 }), (C) => { const th = Math.atan(4 / 3) * 180 / Math.PI; C.assert(near((2 * sin(th) - cos(th)) / (2 * sin(th) + cos(th)), 5 / 11), 'value'); C.model(['\\dfrac45', '\\dfrac35', '\\dfrac{5}{11}']); });
 Q('s302', mk.short({ marks: 3, stem: 'The hypotenuse $AC$ of a right triangle $ABC$ (right angle at $B$) is $2$ cm longer than the side $BC$, and $AB = 8$ cm. Work out $\\sin A$, $\\cos A$ and $\\tan A$.', model: r`$AC^2 - BC^2 = AB^2 = 64$, i.e. $(AC - BC)(AC + BC) = 64$, so $AC + BC = \dfrac{64}{2} = 32$.
 
 With $AC - BC = 2$: $AC = 17$ cm and $BC = 15$ cm.
@@ -124,12 +124,12 @@ Q('s304', mk.short({ marks: 3, stem: 'Show that, whatever the acute angle $\\the
 
 Since $1 + \tan^2\theta = \sec^2\theta$, this equals $\tan^2\theta$.
 
-LHS $= \cos^2\theta \cdot \tan^2\theta = \cos^2\theta \cdot \dfrac{\sin^2\theta}{\cos^2\theta} = \sin^2\theta =$ RHS.`, sol: 'Difference of squares first, then an identity, then sine and cosine.', scheme: [['sec²θ − 1', 1], ['= tan²θ by identity', 1], ['cos²θ tan²θ = sin²θ', 1]], d: 3, c: 'application', t: [3], time: 240 }), (C) => { C.assert(identity((d) => cos(d) ** 2 * (1 / cos(d) - 1) * (1 / cos(d) + 1), (d) => sin(d) ** 2), 'identity'); C.model(['\\sec^2\\theta - 1', '\\tan^2\\theta']); });
+LHS $= \cos^2\theta \cdot \tan^2\theta = \cos^2\theta \cdot \dfrac{\sin^2\theta}{\cos^2\theta} = \sin^2\theta =$ RHS.`, sol: 'Difference of squares first, then an identity, then sine and cosine.', scheme: [['sec²θ − 1', 1], ['= tan²θ by identity', 1], ['cos²θ tan²θ = sin²θ', 1]], d: 3, c: 'understanding', t: [3], time: 240 }), (C) => { C.assert(identity((d) => cos(d) ** 2 * (1 / cos(d) - 1) * (1 / cos(d) + 1), (d) => sin(d) ** 2), 'identity'); C.model(['\\sec^2\\theta - 1', '\\tan^2\\theta']); });
 Q('s305', mk.short({ marks: 3, stem: 'Given $\\tan\\theta = 0.75$ for an acute angle $\\theta$, use identities (not a triangle) to find $\\sec\\theta$, $\\cos\\theta$ and $\\sin\\theta$. Verify that $\\sin^2\\theta + \\cos^2\\theta = 1$.', model: r`$\sec^2\theta = 1 + 0.5625 = 1.5625$, so $\sec\theta = 1.25$ (positive for an acute angle).
 
 $\cos\theta = \dfrac{1}{1.25} = 0.8$ and $\sin\theta = \tan\theta\cos\theta = 0.75 \times 0.8 = 0.6$.
 
-Check: $0.36 + 0.64 = 1$ ✓.`, sol: 'Identity, then reciprocal, then tan × cos.', scheme: [['sec θ = 1.25', 1], ['cos θ = 0.8, sin θ = 0.6', 1], ['Verification', 1]], d: 2, c: 'application', t: [3], time: 240 }), (C) => { const th = Math.atan(0.75) * 180 / Math.PI; C.assert(near(1 / cos(th), 1.25) && near(sin(th), 0.6), 'values'); C.model([1.5625, 1.25, 0.8, 0.6, 0.36, 0.64]); });
+Check: $0.36 + 0.64 = 1$ ✓.`, sol: 'Identity, then reciprocal, then tan × cos.', scheme: [['sec θ = 1.25', 1], ['cos θ = 0.8, sin θ = 0.6', 1], ['Verification', 1]], d: 2, c: 'understanding', t: [3], time: 240 }), (C) => { const th = Math.atan(0.75) * 180 / Math.PI; C.assert(near(1 / cos(th), 1.25) && near(sin(th), 0.6), 'values'); C.model([1.5625, 1.25, 0.8, 0.6, 0.36, 0.64]); });
 Q('s306', mk.short({ marks: 3, stem: 'If $\\operatorname{cosec}\\theta - \\cot\\theta = \\dfrac13$ for an acute angle $\\theta$, find $\\operatorname{cosec}\\theta + \\cot\\theta$, and hence find $\\operatorname{cosec}\\theta$ and $\\cot\\theta$.', model: r`$(\operatorname{cosec}\theta - \cot\theta)(\operatorname{cosec}\theta + \cot\theta) = \operatorname{cosec}^2\theta - \cot^2\theta = 1$, so $\operatorname{cosec}\theta + \cot\theta = 3$.
 
 Adding the two equations: $2\operatorname{cosec}\theta = \dfrac{10}{3}$, so $\operatorname{cosec}\theta = \dfrac53$; subtracting: $2\cot\theta = \dfrac83$, so $\cot\theta = \dfrac43$.`, sol: r`**Check:** $\dfrac{25}{9} - \dfrac{16}{9} = 1$ ✓.`, scheme: [['Sum = 3 using the identity', 1], ['cosec θ = 5/3', 1], ['cot θ = 4/3', 1]], d: 4, c: 'analysis', t: [3], time: 300 }), (C) => { const th = Math.asin(3 / 5) * 180 / Math.PI; C.assert(near(1 / sin(th) - 1 / tan(th), 1 / 3) && near(1 / sin(th) + 1 / tan(th), 3), 'values'); C.model([3, '\\dfrac53', '\\dfrac43']); });
@@ -155,14 +155,14 @@ Q('l02', mk.long({ stem: `Given $3\\tan\\theta = 4$, where $\\theta$ is acute:
 
 (b) $\dfrac{4 \times \frac35 - \frac45}{2 \times \frac35 + \frac45} = \dfrac{\frac{12 - 4}{5}}{\frac{6 + 4}{5}} = \dfrac{8}{10} = \dfrac45$.
 
-(c) $\sec\theta = \dfrac53$, so $\sec^2\theta - \tan^2\theta = \dfrac{25}{9} - \dfrac{16}{9} = \dfrac99 = 1$ ✓.`, sol: r`In (b), dividing through by $\cos\theta$ gives $\dfrac{4 - \tan\theta}{2 + \tan\theta} = \dfrac{\frac83}{\frac{10}{3}} = \dfrac45$ — the same answer.`, scheme: [['Hypotenuse 5k', 1], ['sin θ = 4/5, cos θ = 3/5', 1], ['Substitution in (b)', 1], ['4/5', 1], ['Verification in (c)', 1]], d: 3, c: 'application', t: [1, 3], time: 600 }), (C) => { const th = Math.atan(4 / 3) * 180 / Math.PI; C.assert(near((4 * cos(th) - sin(th)) / (2 * cos(th) + sin(th)), 0.8), 'value'); C.model(['\\dfrac45', '\\dfrac35', '\\dfrac{8}{10}', '\\dfrac{25}{9}', '\\dfrac{16}{9}']); });
+(c) $\sec\theta = \dfrac53$, so $\sec^2\theta - \tan^2\theta = \dfrac{25}{9} - \dfrac{16}{9} = \dfrac99 = 1$ ✓.`, sol: r`In (b), dividing through by $\cos\theta$ gives $\dfrac{4 - \tan\theta}{2 + \tan\theta} = \dfrac{\frac83}{\frac{10}{3}} = \dfrac45$ — the same answer.`, scheme: [['Hypotenuse 5k', 1], ['sin θ = 4/5, cos θ = 3/5', 1], ['Substitution in (b)', 1], ['4/5', 1], ['Verification in (c)', 1]], d: 3, c: 'understanding', t: [1, 3], time: 600 }), (C) => { const th = Math.atan(4 / 3) * 180 / Math.PI; C.assert(near((4 * cos(th) - sin(th)) / (2 * cos(th) + sin(th)), 0.8), 'value'); C.model(['\\dfrac45', '\\dfrac35', '\\dfrac{8}{10}', '\\dfrac{25}{9}', '\\dfrac{16}{9}']); });
 Q('l03', mk.long({ stem: `(a) Find the acute angle $\\theta$ for which $2\\sin^2\\theta = \\dfrac12$.
 (b) For this $\\theta$, evaluate $4\\cos^2\\theta - 3\\sec^2 2\\theta$.
 (c) For this $\\theta$, verify that $\\sin 3\\theta = 3\\sin\\theta - 4\\sin^3\\theta$.`, model: r`(a) $\sin^2\theta = \dfrac14$, so $\sin\theta = \dfrac12$ (positive for an acute angle) and $\theta = 30^\circ$.
 
 (b) $2\theta = 60^\circ$, $\sec 60^\circ = 2$. $4\cos^2 30^\circ - 3\sec^2 60^\circ = 4 \times \dfrac34 - 3 \times 4 = 3 - 12 = -9$.
 
-(c) LHS $= \sin 90^\circ = 1$. RHS $= 3 \times \dfrac12 - 4 \times \dfrac18 = \dfrac32 - \dfrac12 = 1$. Both sides equal $1$ ✓.`, sol: r`$3\theta = 90^\circ$ is still a standard angle, which is why this value of $\theta$ was chosen.`, scheme: [['θ = 30°', 1], ['Values cos²30° = 3/4 and sec²60° = 4', 1], ['−9', 1], ['LHS = sin 90° = 1', 1], ['RHS = 1, verified', 1]], d: 3, c: 'application', t: [2], time: 600 }), (C) => { const th = angles((d) => near(2 * sin(d) ** 2, 0.5))[0]; C.assert(th === 30 && near(sin(3 * th), 3 * sin(th) - 4 * sin(th) ** 3), 'θ and identity'); C.model([30, -9, 1]); C.assert(near(4 * cos(th) ** 2 - 3 / cos(2 * th) ** 2, -9), '−9'); });
+(c) LHS $= \sin 90^\circ = 1$. RHS $= 3 \times \dfrac12 - 4 \times \dfrac18 = \dfrac32 - \dfrac12 = 1$. Both sides equal $1$ ✓.`, sol: r`$3\theta = 90^\circ$ is still a standard angle, which is why this value of $\theta$ was chosen.`, scheme: [['θ = 30°', 1], ['Values cos²30° = 3/4 and sec²60° = 4', 1], ['−9', 1], ['LHS = sin 90° = 1', 1], ['RHS = 1, verified', 1]], d: 3, c: 'understanding', t: [2], time: 600 }), (C) => { const th = angles((d) => near(2 * sin(d) ** 2, 0.5))[0]; C.assert(th === 30 && near(sin(3 * th), 3 * sin(th) - 4 * sin(th) ** 3), 'θ and identity'); C.model([30, -9, 1]); C.assert(near(4 * cos(th) ** 2 - 3 / cos(2 * th) ** 2, -9), '−9'); });
 Q('l04', mk.long({ stem: `For an acute angle $\\theta$ with $\\theta > 45^\\circ$, it is given that $\\sin\\theta + \\cos\\theta = \\dfrac75$.
 
 (a) Show that $\\sin\\theta\\cos\\theta = \\dfrac{12}{25}$.
@@ -200,7 +200,7 @@ By (a), $p^2 + q^2 = 1 - 2pq$, so $p^3 + q^3 = 1 - 2pq - pq = 1 - 3\sin^2 A\cos^
 // =============================================================== Case-based
 caseQ('c01', {
   passage: 'A hospital in Pune builds a wheelchair ramp. The ramp rises 0.7 m over a horizontal distance of 2.4 m. Let $A$ be the angle the ramp makes with the ground.',
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   model: r`(a) Option (c): $2.5$ m. (b) $0.28$. (c) (i) $\cos A = 0.96$, $\tan A = \dfrac{7}{24} \approx 0.29$. Or (ii) No: $\tan A \approx 0.29 > \dfrac{1}{12} \approx 0.083$.`,
   sol: r`Ramp length $= \sqrt{0.49 + 5.76} = \sqrt{6.25} = 2.5$ m. $\sin A = \dfrac{0.7}{2.5} = 0.28$, $\cos A = \dfrac{2.4}{2.5} = 0.96$, $\tan A = \dfrac{0.7}{2.4} = \dfrac{7}{24}$.`,
   children: [
@@ -216,7 +216,7 @@ For $\tan A = \dfrac{1}{12}$ with a rise of $0.7$ m, the horizontal length must 
 
 caseQ('c02', {
   passage: 'For a rangoli competition in Chennai, Kavya draws an equilateral triangle $ABC$ of side $4$ cm and the line $AD$ from $A$ perpendicular to $BC$. She uses the figure to find the trigonometric ratios of $30^\\circ$ and $60^\\circ$.',
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   model: r`(a) Option (b): $2\sqrt3$ cm. (b) $\dfrac{\sqrt3}{2}$. (c) (i) $\tan 30^\circ = \dfrac{1}{\sqrt3}$. Or (ii) $\tan 60^\circ = \sqrt3 = \dfrac{\sin 60^\circ}{\cos 60^\circ}$.`,
   sol: r`$BD = 2$ cm (the perpendicular bisects $BC$). $AD = \sqrt{16 - 4} = \sqrt{12} = 2\sqrt3$ cm. $\angle B = 60^\circ$, $\angle BAD = 30^\circ$.`,
   children: [
@@ -227,36 +227,36 @@ caseQ('c02', {
 $\tan 30^\circ = \dfrac{BD}{AD} = \dfrac{2}{2\sqrt3} = \dfrac{1}{\sqrt3}$.`, sol: 'The angle at A in triangle ABD is half of 60°.', scheme: [['Opposite BD, adjacent AD', 1], ['1/√3', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), [
       mk.short({ marks: 2, stem: '**(ii)** Use triangle $ABD$ to find $\\tan 60^\\circ$, and verify that $\\tan 60^\\circ = \\dfrac{\\sin 60^\\circ}{\\cos 60^\\circ}$.', model: r`At $B$ ($60^\circ$): opposite $AD = 2\sqrt3$ cm, adjacent $BD = 2$ cm, so $\tan 60^\circ = \dfrac{2\sqrt3}{2} = \sqrt3$.
 
-$\sin 60^\circ = \dfrac{AD}{AB} = \dfrac{\sqrt3}{2}$ and $\cos 60^\circ = \dfrac{BD}{AB} = \dfrac12$, so $\dfrac{\sin 60^\circ}{\cos 60^\circ} = \dfrac{\sqrt3/2}{1/2} = \sqrt3$ ✓.`, sol: 'Read each ratio from triangle ABD, standing at B.', scheme: [['tan 60° = √3 from the figure', 1], ['sin 60° ÷ cos 60° = √3, verified', 1]], d: 2, c: 'application', t: [2], time: 120 }),
+$\sin 60^\circ = \dfrac{AD}{AB} = \dfrac{\sqrt3}{2}$ and $\cos 60^\circ = \dfrac{BD}{AB} = \dfrac12$, so $\dfrac{\sin 60^\circ}{\cos 60^\circ} = \dfrac{\sqrt3/2}{1/2} = \sqrt3$ ✓.`, sol: 'Read each ratio from triangle ABD, standing at B.', scheme: [['tan 60° = √3 from the figure', 1], ['sin 60° ÷ cos 60° = √3, verified', 1]], d: 2, c: 'understanding', t: [2], time: 120 }),
     ]),
   ],
 }, (C) => { const ad = Math.sqrt(16 - 4); C.child('a').which([2, 2 * S3, 4 * S3, Math.sqrt(20)], ad); C.child('b').assert(near(ad / 4, sin(60)), 'sin 60'); C.child('b').blank('√3/2'); C.child('c').assert(near(2 / ad, tan(30)), 'tan 30'); C.child('c').model(['\\dfrac{1}{\\sqrt3}']); C.child('cii').assert(near(ad / 2, tan(60)) && near(sin(60) / cos(60), S3), 'tan 60'); C.child('cii').model(['\\sqrt3', '\\dfrac12']); C.model(['2\\sqrt3', '\\dfrac{\\sqrt3}{2}', '\\dfrac{1}{\\sqrt3}']); });
 
 caseQ('c03', {
   passage: 'In a trigonometry relay in a Lucknow school, the first runner is told only that $\\sec\\theta = \\dfrac54$ for an acute angle $\\theta$. Each runner must find one more value using identities.',
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   model: r`(a) Option (a): $\dfrac34$. (b) $0.6$. (c) (i) $1$. Or (ii) $\dfrac{16}{9}$.`,
   sol: r`$\tan^2\theta = \dfrac{25}{16} - 1 = \dfrac{9}{16}$, $\tan\theta = \dfrac34$; $\cos\theta = \dfrac45$; $\sin\theta = \tan\theta\cos\theta = \dfrac35$.`,
   children: [
     child('a', mk.mcq({ stem: 'Using $1 + \\tan^2\\theta = \\sec^2\\theta$, the value of $\\tan\\theta$ is', opts: [r`$\dfrac34$`, r`$\dfrac{9}{16}$`, r`$\dfrac43$`, r`$\dfrac35$`], key: 'a', sol: r`$\tan^2\theta = \dfrac{25}{16} - 1 = \dfrac{9}{16}$, so $\tan\theta = \dfrac34$. Option (b) forgets the square root.`, d: 2, c: 'understanding', t: [3], time: 60 })),
-    child('b', mk.num({ stem: 'Find $\\sin\\theta$.', value: 0.6, sol: r`$\cos\theta = \dfrac{1}{\sec\theta} = 0.8$ and $\sin\theta = \tan\theta\cos\theta = 0.75 \times 0.8 = 0.6$.`, scheme: [['0.6', 1]], d: 2, c: 'application', t: [3], time: 75 })),
+    child('b', mk.num({ stem: 'Find $\\sin\\theta$.', value: 0.6, sol: r`$\cos\theta = \dfrac{1}{\sec\theta} = 0.8$ and $\sin\theta = \tan\theta\cos\theta = 0.75 \times 0.8 = 0.6$.`, scheme: [['0.6', 1]], d: 2, c: 'understanding', t: [3], time: 75 })),
     child('c', mk.short({ marks: 2, stem: '**(i)** Without finding $\\theta$, evaluate $(\\sec\\theta + \\tan\\theta)(\\sec\\theta - \\tan\\theta)$ in two ways.', model: r`By the identity: $\sec^2\theta - \tan^2\theta = 1$.
 
 By the values: $\left(\dfrac54 + \dfrac34\right)\left(\dfrac54 - \dfrac34\right) = 2 \times \dfrac12 = 1$. Both give $1$.`, sol: 'Difference of squares.', scheme: [['Identity method', 1], ['Value method', 1]], d: 2, c: 'application', t: [3], time: 120 }), [
-      mk.short({ marks: 2, stem: '**(ii)** Evaluate $\\dfrac{1 + \\cot^2\\theta}{1 + \\tan^2\\theta}$.', model: r`$\dfrac{1 + \cot^2\theta}{1 + \tan^2\theta} = \dfrac{\operatorname{cosec}^2\theta}{\sec^2\theta} = \dfrac{\cos^2\theta}{\sin^2\theta} = \cot^2\theta = \left(\dfrac43\right)^2 = \dfrac{16}{9}$.`, sol: r`**Check** with values: $\dfrac{1 + \frac{16}{9}}{1 + \frac{9}{16}} = \dfrac{25/9}{25/16} = \dfrac{16}{9}$.`, scheme: [['Simplifies to cot²θ', 1], ['16/9', 1]], d: 3, c: 'application', t: [3], time: 150 }),
+      mk.short({ marks: 2, stem: '**(ii)** Evaluate $\\dfrac{1 + \\cot^2\\theta}{1 + \\tan^2\\theta}$.', model: r`$\dfrac{1 + \cot^2\theta}{1 + \tan^2\theta} = \dfrac{\operatorname{cosec}^2\theta}{\sec^2\theta} = \dfrac{\cos^2\theta}{\sin^2\theta} = \cot^2\theta = \left(\dfrac43\right)^2 = \dfrac{16}{9}$.`, sol: r`**Check** with values: $\dfrac{1 + \frac{16}{9}}{1 + \frac{9}{16}} = \dfrac{25/9}{25/16} = \dfrac{16}{9}$.`, scheme: [['Simplifies to cot²θ', 1], ['16/9', 1]], d: 3, c: 'understanding', t: [3], time: 150 }),
     ]),
   ],
 }, (C) => { const th = Math.acos(4 / 5) * 180 / Math.PI; C.child('a').which([0.75, 9 / 16, 4 / 3, 0.6], tan(th)); C.child('b').val(Math.round(sin(th) * 1e12) / 1e12); C.child('c').assert(near((1 / cos(th) + tan(th)) * (1 / cos(th) - tan(th)), 1), '1'); C.child('c').model([1]); C.child('cii').assert(near((1 + 1 / tan(th) ** 2) / (1 + tan(th) ** 2), 16 / 9), '16/9'); C.child('cii').model(['\\dfrac{16}{9}']); C.model(['\\dfrac34', 0.6, '\\dfrac{16}{9}']); });
 
 caseQ('c04', {
   passage: 'The roof truss of a house in Kozhikode is an isosceles triangle $LTR$ with base $LR = 8$ m. Each rafter $LT$ and $RT$ makes an angle of $30^\\circ$ with the base, and $TM$ is the height from the apex $T$ to the base.',
-  assets: [roof], d: 3, c: 'application',
+  assets: [roof], d: 3, c: 'understanding',
   model: r`(a) Option (d): $LM = 4$ m. (b) $2.31$ m. (c) (i) $\dfrac{8}{\sqrt3} \approx 4.62$ m. Or (ii) $\angle LTR = 120^\circ$; $LT + RT \approx 9.24$ m.`,
   sol: r`$M$ is the midpoint of $LR$, so $LM = 4$ m. $\tan 30^\circ = \dfrac{TM}{LM} \Rightarrow TM = \dfrac{4}{\sqrt3} \approx 2.31$ m. $\cos 30^\circ = \dfrac{LM}{LT} \Rightarrow LT = \dfrac{4}{\sqrt3/2} = \dfrac{8}{\sqrt3} \approx 4.62$ m.`,
   children: [
     child('a', mk.mcq({ stem: 'The height $TM$ meets the base at $M$. The length $LM$ is', opts: ['$8$ m', '$2$ m', r`$4\sqrt3$ m`, '$4$ m'], key: 'd', sol: r`In an isosceles triangle the height from the apex bisects the base: $LM = \dfrac82 = 4$ m.`, d: 1, c: 'understanding', t: [1], time: 45 })),
-    child('b', mk.num({ stem: 'Find the height $TM$ in metres, correct to two decimal places. (Use $\\sqrt3 \\approx 1.732$.)', value: 2.31, tol: 0.005, unit: 'm', sol: r`$TM = LM\tan 30^\circ = \dfrac{4}{\sqrt3} = \dfrac{4\sqrt3}{3} \approx \dfrac{6.928}{3} \approx 2.31$ m.`, scheme: [['2.31 m', 1]], d: 2, c: 'application', t: [1, 2], time: 90 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** Find the length of each rafter.', model: r`$\cos 30^\circ = \dfrac{LM}{LT}$, so $LT = \dfrac{4}{\cos 30^\circ} = \dfrac{4}{\sqrt3/2} = \dfrac{8}{\sqrt3} = \dfrac{8\sqrt3}{3} \approx 4.62$ m.`, sol: r`**Check:** $LM^2 + TM^2 = 16 + \dfrac{16}{3} = \dfrac{64}{3} = LT^2$ ✓.`, scheme: [['cos 30° = LM/LT', 1], ['8/√3 ≈ 4.62 m', 1]], d: 3, c: 'application', t: [1, 2], time: 120 }), [
+    child('b', mk.num({ stem: 'Find the height $TM$ in metres, correct to two decimal places. (Use $\\sqrt3 \\approx 1.732$.)', value: 2.31, tol: 0.005, unit: 'm', sol: r`$TM = LM\tan 30^\circ = \dfrac{4}{\sqrt3} = \dfrac{4\sqrt3}{3} \approx \dfrac{6.928}{3} \approx 2.31$ m.`, scheme: [['2.31 m', 1]], d: 2, c: 'understanding', t: [1, 2], time: 90 })),
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the length of each rafter.', model: r`$\cos 30^\circ = \dfrac{LM}{LT}$, so $LT = \dfrac{4}{\cos 30^\circ} = \dfrac{4}{\sqrt3/2} = \dfrac{8}{\sqrt3} = \dfrac{8\sqrt3}{3} \approx 4.62$ m.`, sol: r`**Check:** $LM^2 + TM^2 = 16 + \dfrac{16}{3} = \dfrac{64}{3} = LT^2$ ✓.`, scheme: [['cos 30° = LM/LT', 1], ['8/√3 ≈ 4.62 m', 1]], d: 3, c: 'understanding', t: [1, 2], time: 120 }), [
       mk.short({ marks: 2, stem: '**(ii)** Find the angle at the apex $T$ and the total length of timber in the two rafters.', model: r`Angle sum: $\angle LTR = 180^\circ - 30^\circ - 30^\circ = 120^\circ$.
 
 Two rafters: $2 \times \dfrac{8}{\sqrt3} = \dfrac{16}{\sqrt3} \approx 9.24$ m.`, sol: r`$\dfrac{16}{\sqrt3} = \dfrac{16\sqrt3}{3} \approx \dfrac{27.71}{3}$.`, scheme: [['120°', 1], ['9.24 m', 1]], d: 2, c: 'application', t: [1, 2], time: 120 }),
@@ -266,7 +266,7 @@ Two rafters: $2 \times \dfrac{8}{\sqrt3} = \dfrac{16}{\sqrt3} \approx 9.24$ m.`,
 
 caseQ('c05', {
   passage: 'Meera tests some statements about an acute angle $\\theta$ by substituting $\\theta = 30^\\circ$, $45^\\circ$ and $60^\\circ$. A statement that holds for every acute angle is an **identity**; a statement that fails for even one angle is not.',
-  d: 3, c: 'analysis',
+  d: 3, c: 'understanding',
   model: r`(a) Option (b). (b) $1$. (c) (i) and (ii): proofs as shown — each side reduces to $1$.`,
   sol: r`A neat-looking statement need not be an identity: at $\theta = 45^\circ$, $\sin\theta + \cos\theta = \sqrt2 \ne 1$. Each proof in (c) turns the left side into $\sin^2\theta + \cos^2\theta$ or uses $\operatorname{cosec}^2\theta = 1 + \cot^2\theta$.`,
   children: [
@@ -274,10 +274,45 @@ caseQ('c05', {
     child('b', mk.fill({ stem: 'For $\\theta = 60^\\circ$, the value of $\\operatorname{cosec}^2\\theta - \\cot^2\\theta$ is ___', acc: [['1']], sol: r`$\dfrac43 - \dfrac13 = 1$, as the identity $1 + \cot^2\theta = \operatorname{cosec}^2\theta$ predicts.`, d: 1, c: 'understanding', t: [2, 3], time: 60 })),
     child('c', mk.short({ marks: 2, stem: '**(i)** Prove that $(1 - \\cos\\theta)(1 + \\cos\\theta)(1 + \\cot^2\\theta) = 1$.', model: r`$(1 - \cos\theta)(1 + \cos\theta) = 1 - \cos^2\theta = \sin^2\theta$, and $1 + \cot^2\theta = \operatorname{cosec}^2\theta = \dfrac{1}{\sin^2\theta}$.
 
-So the left side is $\sin^2\theta \times \dfrac{1}{\sin^2\theta} = 1$.`, sol: 'Two identities, then cancel.', scheme: [['sin²θ and cosec²θ', 1], ['Product = 1', 1]], d: 2, c: 'application', t: [3], time: 120 }), [
+So the left side is $\sin^2\theta \times \dfrac{1}{\sin^2\theta} = 1$.`, sol: 'Two identities, then cancel.', scheme: [['sin²θ and cosec²θ', 1], ['Product = 1', 1]], d: 2, c: 'understanding', t: [3], time: 120 }), [
       mk.short({ marks: 2, stem: '**(ii)** Prove that $\\cos^2\\theta\\,(1 + \\tan^2\\theta) = 1$, and check it at $\\theta = 60^\\circ$.', model: r`$1 + \tan^2\theta = \sec^2\theta = \dfrac{1}{\cos^2\theta}$, so $\cos^2\theta(1 + \tan^2\theta) = 1$.
 
-At $60^\circ$: $\dfrac14 \times (1 + 3) = 1$ ✓.`, sol: 'Identity, then reciprocal.', scheme: [['Proof', 1], ['Check at 60°', 1]], d: 2, c: 'application', t: [2, 3], time: 120 }),
+At $60^\circ$: $\dfrac14 \times (1 + 3) = 1$ ✓.`, sol: 'Identity, then reciprocal.', scheme: [['Proof', 1], ['Check at 60°', 1]], d: 2, c: 'understanding', t: [2, 3], time: 120 }),
     ]),
   ],
 }, (C) => { const tests = [(d) => near(sin(d) + cos(d), 1), (d) => near(1 / cos(d) ** 2 - tan(d) ** 2, 1), (d) => near(tan(d), sin(d) * cos(d)), (d) => near(sin(d) ** 2, 1 + cos(d) ** 2)]; C.child('a').which(tests.map((t) => [30, 45, 60, 17, 73].every(t)), true); C.child('b').blank(Math.round((1 / sin(60) ** 2 - 1 / tan(60) ** 2) * 1e9) / 1e9); C.child('c').assert(identity((d) => (1 - cos(d)) * (1 + cos(d)) * (1 + 1 / tan(d) ** 2), () => 1), 'identity i'); C.child('c').model(['\\sin^2\\theta']); C.child('cii').assert(identity((d) => cos(d) ** 2 * (1 + tan(d) ** 2), () => 1), 'identity ii'); C.child('cii').model(['\\dfrac14']); C.model(['Option (b)', 1]); });
+// =============================================================== added 2026-10-27 (assessment-designer)
+// Recall/understanding written items for the board-paper competency balance (blueprint 54/24/22 Standard,
+// 75/15/10 Basic). Appended after every existing item so earlier ids do not move.
+Q('u301', mk.short({
+  marks: 3,
+  stem: r`A right triangle $ABC$ has its right angle at $C$. The two shorter sides are $BC = 8$ cm and $AC = 15$ cm. Find the hypotenuse, then write $\sin A$, $\cos A$ and $\tan B$.`,
+  model: r`By Pythagoras, $AB = \sqrt{8^2 + 15^2} = \sqrt{64 + 225} = \sqrt{289} = 17$ cm.
+
+For angle $A$: the opposite side is $BC = 8$ and the adjacent side is $AC = 15$.
+
+$\sin A = \dfrac{BC}{AB} = \dfrac{8}{17}$, $\quad \cos A = \dfrac{AC}{AB} = \dfrac{15}{17}$.
+
+For angle $B$: the opposite side is $AC = 15$ and the adjacent side is $BC = 8$, so $\tan B = \dfrac{AC}{BC} = \dfrac{15}{8}$.`,
+  sol: r`Name the opposite and adjacent sides separately for each angle; the hypotenuse is $AB$, opposite the right angle.`,
+  scheme: [['AB = 17 cm', 1], ['sin A = 8/17 and cos A = 15/17', 1], ['tan B = 15/8', 1]],
+  d: 2, c: 'understanding', t: [1], time: 210,
+}), (C) => { const AB = hyp(8, 15); const A = (Math.atan2(8, 15) * 180) / Math.PI, B = 90 - A; C.assert(near(AB, 17) && near(sin(A), 8 / 17) && near(cos(A), 15 / 17) && near(tan(B), 15 / 8), 'ratios'); C.model([17, r`\dfrac{8}{17}`, r`\dfrac{15}{17}`, r`\dfrac{15}{8}`]); });
+Q('u302', mk.short({
+  marks: 3,
+  stem: r`Using the values of the trigonometric ratios of standard angles, evaluate:
+
+(a) $2\sin^2 45^\circ + 3\tan^2 30^\circ - \cos^2 0^\circ + 4\sin 30^\circ\cos 60^\circ$
+
+(b) $\dfrac{\tan^2 60^\circ + \sec^2 45^\circ}{\operatorname{cosec}^2 30^\circ}$`,
+  model: r`(a) $\sin 45^\circ = \dfrac{1}{\sqrt2}$, $\tan 30^\circ = \dfrac{1}{\sqrt3}$, $\cos 0^\circ = 1$, $\sin 30^\circ = \cos 60^\circ = \dfrac12$.
+
+$2 \times \dfrac12 + 3 \times \dfrac13 - 1 + 4 \times \dfrac12 \times \dfrac12 = 1 + 1 - 1 + 1 = 2$.
+
+(b) $\tan 60^\circ = \sqrt3$, $\sec 45^\circ = \sqrt2$, $\operatorname{cosec} 30^\circ = 2$.
+
+$\dfrac{3 + 2}{4} = \dfrac{5}{4}$.`,
+  sol: r`Square each ratio before multiplying by its coefficient.`,
+  scheme: [['Standard values substituted', 1], ['(a) = 2', 1], ['(b) = 5/4', 1]],
+  d: 1, c: 'understanding', t: [2], time: 210,
+}), (C) => { const a = 2 * sin(45) ** 2 + 3 * tan(30) ** 2 - cos(0) ** 2 + 4 * sin(30) * cos(60); const b = (tan(60) ** 2 + 1 / cos(45) ** 2) / (1 / sin(30) ** 2); C.assert(near(a, 2) && near(b, 1.25), `a ${a}, b ${b}`); C.model([2, r`\dfrac{5}{4}`]); });

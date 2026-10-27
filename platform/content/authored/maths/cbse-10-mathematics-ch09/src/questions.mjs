@@ -73,7 +73,7 @@ Q('n09', mk.num({ stem: 'Find the angle of elevation (in degrees) of the top of 
 // =============================================================== Short answer, 2 marks
 Q('s201', mk.short({ marks: 2, stem: 'From a window 8 m above the ground, Ravi sees a car on the road at an angle of depression of $30^\\circ$. Draw a figure, mark the angle of depression and the equal angle of elevation, and find the distance of the car from the foot of the building.', model: r`Figure: a vertical $BW$ of height $8$ m ($W$ the window), the car $C$ on the ground, a dashed horizontal through $W$; the angle between the horizontal and $WC$ is $30^\circ$, and $\angle WCB = 30^\circ$ (alternate angles).
 
-In right triangle $WBC$: $\tan 30^\circ = \dfrac{8}{BC} \Rightarrow BC = 8\sqrt3 \approx 13.86$ m.`, sol: 'The angle of depression at W equals the angle of elevation at C.', scheme: [['Correct figure with both angles marked', 1], ['BC = 8√3 ≈ 13.86 m', 1]], d: 2, c: 'application', t: [1, 2], time: 150 }), (C) => { const W = [0, 8], Cc = [8 * S3, 0]; C.assert(is(W, Cc, 30), 'measured'); C.model(['8\\sqrt3', 13.86]); });
+In right triangle $WBC$: $\tan 30^\circ = \dfrac{8}{BC} \Rightarrow BC = 8\sqrt3 \approx 13.86$ m.`, sol: 'The angle of depression at W equals the angle of elevation at C.', scheme: [['Correct figure with both angles marked', 1], ['BC = 8√3 ≈ 13.86 m', 1]], d: 2, c: 'understanding', t: [1, 2], time: 150 }), (C) => { const W = [0, 8], Cc = [8 * S3, 0]; C.assert(is(W, Cc, 30), 'measured'); C.model(['8\\sqrt3', 13.86]); });
 Q('s202', mk.short({ marks: 2, stem: 'The angle of elevation of the top of a tower from a point 24 m from its foot is $60^\\circ$. Find the height of the tower.', model: r`$\tan 60^\circ = \dfrac{h}{24} \Rightarrow h = 24\sqrt3 \approx 41.57$ m.`, sol: r`$24 \times 1.732 = 41.568$.`, scheme: [['tan 60° = h/24', 1], ['24√3 ≈ 41.57 m', 1]], d: 2, c: 'understanding', t: [2], time: 90 }), (C) => { C.assert(is([24, 0], [0, 24 * S3], 60), 'measured'); C.model(['24\\sqrt3', 41.57]); });
 Q('s203', mk.short({ marks: 2, stem: 'A tightrope is stretched from the top of a 12 m pole to a peg on the ground, making an angle of $30^\\circ$ with the ground. Find the length of the rope and the distance of the peg from the foot of the pole.', model: r`$\sin 30^\circ = \dfrac{12}{l} \Rightarrow l = 24$ m.
 
@@ -85,7 +85,7 @@ Q('s206', mk.short({ marks: 2, stem: 'From the top of a 45 m lighthouse, the ang
 Correct: $\tan 30^\circ = \dfrac{45}{d} \Rightarrow d = 45\sqrt3 \approx 77.94$ m (three times her answer).`, sol: r`Her value $15\sqrt3 \approx 25.98$ m would mean an angle of depression of $60^\circ$.`, scheme: [['Identifies the horizontal as the reference', 1], ['45√3 ≈ 77.94 m', 1]], d: 3, c: 'evaluation', t: [1, 2], time: 150 }), (C) => { C.assert(is([0, 45], [45 * S3, 0], 30) && is([0, 45], [15 * S3, 0], 60), 'correct and hers'); C.model(['45\\sqrt3', 77.94]); C.sol([25.98]); });
 Q('s207', mk.short({ marks: 2, stem: 'A ramp at a railway station in Bhopal rises 1.2 m and makes an angle of $30^\\circ$ with the ground. Find the length of the ramp and the horizontal distance it covers.', model: r`$\sin 30^\circ = \dfrac{1.2}{l} \Rightarrow l = 2.4$ m.
 
-$\tan 30^\circ = \dfrac{1.2}{x} \Rightarrow x = 1.2\sqrt3 \approx 2.08$ m.`, sol: r`$1.2 \times 1.732 = 2.0784$.`, scheme: [['Length 2.4 m', 1], ['Horizontal 1.2√3 ≈ 2.08 m', 1]], d: 2, c: 'application', t: [2], time: 120 }), (C) => { const foot = [-1.2 * S3, 0], top = [0, 1.2]; C.assert(is(foot, top, 30) && near(len(foot, top), 2.4), 'ramp'); C.model([2.4, '1.2\\sqrt3', 2.08]); });
+$\tan 30^\circ = \dfrac{1.2}{x} \Rightarrow x = 1.2\sqrt3 \approx 2.08$ m.`, sol: r`$1.2 \times 1.732 = 2.0784$.`, scheme: [['Length 2.4 m', 1], ['Horizontal 1.2√3 ≈ 2.08 m', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), (C) => { const foot = [-1.2 * S3, 0], top = [0, 1.2]; C.assert(is(foot, top, 30) && near(len(foot, top), 2.4), 'ramp'); C.model([2.4, '1.2\\sqrt3', 2.08]); });
 Q('s208', mk.short({ marks: 2, stem: 'Two points on the ground lie on opposite sides of a vertical pole, 60 m apart and in line with its foot. The angles of elevation of the top of the pole from them are $30^\\circ$ and $60^\\circ$. Find the height of the pole.', model: r`Distances from the foot: $h\sqrt3$ (at $30^\circ$) and $\dfrac{h}{\sqrt3}$ (at $60^\circ$).
 
 $h\sqrt3 + \dfrac{h}{\sqrt3} = 60 \Rightarrow \dfrac{4h}{\sqrt3} = 60 \Rightarrow h = 15\sqrt3 \approx 25.98$ m.`, sol: r`**Check:** $15\sqrt3 \times \sqrt3 = 45$ and $\dfrac{15\sqrt3}{\sqrt3} = 15$; $45 + 15 = 60$ ✓.`, scheme: [['Equation h√3 + h/√3 = 60', 1], ['h = 15√3 ≈ 25.98 m', 1]], d: 3, c: 'application', t: [2], time: 150 }), (C) => { const h = 15 * S3; C.assert(is([-45, 0], [0, h], 30) && is([15, 0], [0, h], 60), 'scene'); C.model(['15\\sqrt3', 25.98]); C.sol([45, 15]); });
@@ -208,7 +208,7 @@ caseQ('c01', {
   sol: r`Above eye level the minaret rises $72.5 - 1.5 = 71$ m; at $45^\circ$ her distance is $71$ m. At $30^\circ$ she would be $71\sqrt3 \approx 122.97$ m away.`,
   children: [
     child('a', mk.mcq({ stem: 'The angle of elevation is measured between her line of sight and', opts: ['the minaret', 'the horizontal through her eyes', 'the ground at the foot of the minaret', 'the vertical through her eyes'], key: 'b', sol: r`Angles of elevation are measured from the horizontal through the observer's eye. That is why her eye height must be subtracted.`, d: 1, c: 'recall', t: [1], time: 45 })),
-    child('b', mk.num({ stem: 'How far is she from the minaret (in metres)?', value: 71, unit: 'm', sol: r`Height above eye level $= 72.5 - 1.5 = 71$ m. $\tan 45^\circ = \dfrac{71}{d} \Rightarrow d = 71$ m.`, scheme: [['71 m', 1]], d: 2, c: 'application', t: [2], time: 75 })),
+    child('b', mk.num({ stem: 'How far is she from the minaret (in metres)?', value: 71, unit: 'm', sol: r`Height above eye level $= 72.5 - 1.5 = 71$ m. $\tan 45^\circ = \dfrac{71}{d} \Rightarrow d = 71$ m.`, scheme: [['71 m', 1]], d: 2, c: 'understanding', t: [2], time: 75 })),
     child('c', mk.short({ marks: 2, stem: '**(i)** She walks straight back until the angle of elevation is $30^\\circ$. How far does she walk? (Use $\\sqrt3 \\approx 1.732$.)', model: r`At $30^\circ$: distance $= 71\sqrt3 \approx 122.97$ m.
 
 She walks $71\sqrt3 - 71 = 71(\sqrt3 - 1) \approx 71 \times 0.732 \approx 51.97$ m.`, sol: 'Subtract the two distances.', scheme: [['71√3 m', 1], ['≈ 51.97 m', 1]], d: 3, c: 'application', t: [2], time: 150 }), [
@@ -235,13 +235,13 @@ Distance sailed $= 40\sqrt3 - \dfrac{40}{\sqrt3} = \dfrac{120 - 40}{\sqrt3} = \d
 
 caseQ('c03', {
   passage: 'At an adventure park in Rishikesh, a straight zip-line runs from the top of a 30 m platform down to a landing point on level ground. The angle of depression of the landing point from the top of the platform is $30^\\circ$.',
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   model: r`(a) Option (c): $60$ m. (b) $51.96$ m. (c) (i) $30\sqrt2 \approx 42.43$ m. Or (ii) $15$ m.`,
   sol: r`The zip-line makes $30^\circ$ with the horizontal: length $= \dfrac{30}{\sin 30^\circ} = 60$ m, horizontal distance $= 30\sqrt3 \approx 51.96$ m.`,
   children: [
     child('a', mk.mcq({ stem: 'The length of the zip-line is', opts: [r`$30\sqrt3$ m`, r`$20\sqrt3$ m`, '$60$ m', '$15$ m'], key: 'c', sol: r`$\sin 30^\circ = \dfrac{30}{l} \Rightarrow l = 60$ m. Option (a) is the horizontal distance.`, d: 2, c: 'understanding', t: [2], time: 60 })),
     child('b', mk.num({ stem: 'How far is the landing point from the foot of the platform (in metres, to two decimal places)? (Use $\\sqrt3 \\approx 1.732$.)', value: 51.96, tol: 0.01, unit: 'm', sol: r`$\tan 30^\circ = \dfrac{30}{d} \Rightarrow d = 30\sqrt3 \approx 51.96$ m.`, scheme: [['51.96 m', 1]], d: 2, c: 'understanding', t: [2], time: 75 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** A second zip-line from the same platform lands where the angle of depression is $45^\\circ$. How long is it? (Use $\\sqrt2 \\approx 1.414$.)', model: r`$\sin 45^\circ = \dfrac{30}{l} \Rightarrow l = 30\sqrt2 \approx 42.43$ m.`, sol: 'Steeper line, shorter zip-line.', scheme: [['sin 45° relation', 1], ['≈ 42.43 m', 1]], d: 2, c: 'application', t: [2], time: 120 }), [
+    child('c', mk.short({ marks: 2, stem: '**(i)** A second zip-line from the same platform lands where the angle of depression is $45^\\circ$. How long is it? (Use $\\sqrt2 \\approx 1.414$.)', model: r`$\sin 45^\circ = \dfrac{30}{l} \Rightarrow l = 30\sqrt2 \approx 42.43$ m.`, sol: 'Steeper line, shorter zip-line.', scheme: [['sin 45° relation', 1], ['≈ 42.43 m', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), [
       mk.short({ marks: 2, stem: '**(ii)** A rider on the first zip-line has travelled half its length. How high above the ground is the rider?', model: r`Half the length is $30$ m along a line at $30^\circ$ below the horizontal, so the rider has dropped $30\sin 30^\circ = 15$ m.
 
 Height above the ground $= 30 - 15 = 15$ m.`, sol: 'The midpoint of the line is at half the height.', scheme: [['Drop of 15 m', 1], ['15 m above ground', 1]], d: 3, c: 'analysis', t: [2], time: 120 }),
@@ -278,3 +278,41 @@ caseQ('c05', {
     ]),
   ],
 }, (C) => { const T = [0, 20], F1 = [20 * S3, 0], F2 = [-20, 0]; C.child('a').assert(is(T, F1, 30) && is(T, F2, 45), 'scene'); C.child('a').which([20, 20 * S3, 20 / S3, 40], F1[0]); C.child('b').val(-F2[0]); C.child('c').model([54.64]); C.child('cii').model([14.64]); C.model(['20\\sqrt3', 20, 54.64, 14.64]); });
+// =============================================================== added 2026-10-27 (assessment-designer)
+// Recall/understanding written items for the board-paper competency balance (blueprint 54/24/22 Standard,
+// 75/15/10 Basic). Appended after every existing item so earlier ids do not move.
+Q('u301', mk.short({
+  marks: 3,
+  stem: r`A straight guy wire $24$ m long runs from the top of a vertical mobile tower to a hook on level ground. The wire makes an angle of $60^\circ$ with the ground. Find the height of the tower and the distance of the hook from the foot of the tower. (Use $\sqrt3 \approx 1.732$.)`,
+  model: r`Let the top of the tower be $T$, its foot $F$ and the hook $H$. Triangle $TFH$ is right-angled at $F$, with hypotenuse $TH = 24$ m and $\angle THF = 60^\circ$.
+
+Height: $\sin 60^\circ = \dfrac{TF}{TH}$, so $TF = 24 \times \dfrac{\sqrt3}{2} = 12\sqrt3 \approx 12 \times 1.732 = 20.78$ m.
+
+Distance: $\cos 60^\circ = \dfrac{FH}{TH}$, so $FH = 24 \times \dfrac12 = 12$ m.`,
+  sol: r`The wire is the hypotenuse: use sine for the height and cosine for the ground distance.`,
+  scheme: [['Right triangle with hypotenuse 24 m and angle 60°', 1], ['Height 12√3 ≈ 20.78 m', 1], ['Distance 12 m', 1]],
+  d: 2, c: 'understanding', t: [1, 2], time: 210,
+}), (C) => { const H = [0, 0], F = [12, 0], T = [12, 12 * S3]; C.assert(near(len(H, T), 24) && is(H, T, 60), 'wire 24 m at 60°'); C.assert(r2(12 * 1.732) === 20.78 && near(r2(T[1]), 20.78), 'height'); C.model([20.78, 12]); });
+Q('u501', mk.long({
+  stem: r`A vertical flagpole stands on level ground.
+
+(a) Draw a labelled figure for part (b).
+(b) From a point $A$, $20$ m from the foot of the flagpole, the angle of elevation of its top is $45^\circ$. Find the height of the flagpole.
+(c) How far from the foot must an observer stand for the angle of elevation of the top to be $60^\circ$?
+(d) How far from the foot must an observer stand for the angle of elevation of the top to be $30^\circ$?
+(e) Find the length of the line of sight from $A$ to the top of the flagpole.
+
+(Use $\sqrt2 \approx 1.414$ and $\sqrt3 \approx 1.732$.)`,
+  model: r`(a) Figure: flagpole $PF$ with foot $F$ on the ground, point $A$ on the ground $20$ m from $F$, line of sight $AP$, angle $PAF = 45^\circ$, right angle at $F$.
+
+(b) $\tan 45^\circ = \dfrac{PF}{AF}$, so $PF = 20 \times 1 = 20$ m.
+
+(c) $\tan 60^\circ = \dfrac{20}{d}$, so $d = \dfrac{20}{\sqrt3} = \dfrac{20\sqrt3}{3} \approx 11.55$ m.
+
+(d) $\tan 30^\circ = \dfrac{20}{d}$, so $d = 20\sqrt3 \approx 34.64$ m.
+
+(e) $\cos 45^\circ = \dfrac{AF}{AP}$, so $AP = \dfrac{20}{1/\sqrt2} = 20\sqrt2 \approx 28.28$ m.`,
+  sol: r`Each part is one right triangle with the flagpole as the opposite side; $\tan$ links height and ground distance, $\cos$ gives the line of sight.`,
+  scheme: [['Labelled figure', 1], ['Height 20 m', 1], ['20/√3 ≈ 11.55 m', 1], ['20√3 ≈ 34.64 m', 1], ['20√2 ≈ 28.28 m', 1]],
+  d: 2, c: 'understanding', t: [1, 2], time: 540,
+}), (C) => { const F = [0, 0], P = [0, 20], A = [-20, 0]; C.assert(is(A, P, 45), '45° from A'); const d60 = 20 / S3, d30 = 20 * S3; C.assert(is([-d60, 0], P, 60) && is([-d30, 0], P, 30), '60° and 30° positions'); C.assert(r2(d60) === 11.55 && r2(d30) === 34.64 && r2(len(A, P)) === 28.28, 'values'); C.model([20, 11.55, 34.64, 28.28]); });
