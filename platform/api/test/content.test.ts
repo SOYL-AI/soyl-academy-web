@@ -197,14 +197,23 @@ describe('DB-6 / F-006 contract: no answers in content or practice GET responses
     const member = h.client();
     await member.signInEmail('scanner@example.com');
     let scanned = 0;
+    // Every scanned body must be a real 200 response: a 429/404 problem body would pass the leak checks vacuously.
+    const ok = async (path: string) => {
+      const res = await h.client().get(path);
+      expect(res.statusCode, path).toBe(200);
+      return res.body;
+    };
     for (const { release } of releases) {
+      // All requests come from one IP; a fresh rate-limit window per chapter keeps the scan independent of how many
+      // chapters exist (the `api.ip` limit itself is covered by the rate-limit tests).
+      h.clock.advance(61_000);
       const unit = release.unit;
       const secrets = await keyTexts(unit);
       const bodies: string[] = [];
-      bodies.push((await h.client().get(`/v1/chapters/${unit}`)).body);
-      for (const d of release.decks) bodies.push((await h.client().get(`/v1/chapters/${unit}/deck?part=${d.part ?? 0}`)).body);
-      bodies.push((await h.client().get(`/v1/chapters/${unit}/notes`)).body);
-      bodies.push((await h.client().get(`/v1/chapters/${unit}/flashcards`)).body);
+      bodies.push(await ok(`/v1/chapters/${unit}`));
+      for (const d of release.decks) bodies.push(await ok(`/v1/chapters/${unit}/deck?part=${d.part ?? 0}`));
+      bodies.push(await ok(`/v1/chapters/${unit}/notes`));
+      bodies.push(await ok(`/v1/chapters/${unit}/flashcards`));
       for (const client of [h.client(), member]) {
         let cursor: string | null = null;
         let seen = 0;
