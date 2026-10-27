@@ -4,7 +4,7 @@
  * (or a board/class-level default in platform/catalog/<board>/blueprints/).
  */
 import { z } from 'zod/v4';
-import { Board, ClassLevel, Exam, SubjectId } from './ids';
+import { Board, ChapterId, ClassLevel, Exam, SubjectId } from './ids';
 import { Competency, QuestionType } from './question';
 
 export const PaperType = z.enum([
@@ -27,6 +27,11 @@ export const BlueprintItem = z.object({
   internal_choice: z.object({ attempt: z.number().int().positive(), of: z.number().int().positive() }).nullable().default(null),
   competency: Competency.nullable().default(null),
   difficulty: z.tuple([z.number().int().min(1).max(5), z.number().int().min(1).max(5)]).nullable().default(null),
+  /**
+   * Chapter scope of this item, narrower than its section's (the CBSE 10 History map question comes from
+   * "Nationalism in India" only). Null = the section's scope. Subject blueprints only (catalog check).
+   */
+  chapters: z.array(ChapterId).min(1).nullable().optional(),
 });
 
 export const BlueprintSection = z.object({
@@ -34,6 +39,11 @@ export const BlueprintSection = z.object({
   title: z.string().min(1),
   instructions: z.string().default(''),
   items: z.array(BlueprintItem).min(1),
+  /**
+   * Chapter scope of a discipline section (CBSE 10 Science Biology / Chemistry / Physics, Social Science
+   * History / Geography / Political Science / Economics). Null = every chapter of the paper.
+   */
+  chapters: z.array(ChapterId).min(1).nullable().optional(),
 });
 
 export const Blueprint = z

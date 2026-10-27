@@ -19,9 +19,9 @@ provenance `origin: "human"`, `model: null`. All items are `status: "draft"` unt
 | Check slides | 3 + 3, all objective (q001, q037, q009; q013, q011, q021) |
 | Notes | 8 sections, each with key terms, formula(s) and a visual; exam tips with mark split and 8 common mistakes |
 | Flashcards | 32 (definition 5, fact 6, example 4, concept 5, formula 5, exam-tip 6, diagram 1) |
-| Questions | 70 items, 139 marks: mcq 18, assertion-reason 6 (keys a b c d a c), true-false 5, fill-blank 5, numerical 9, short-2 9, short-3 7, long-5 6, case-based 5 (each 1 + 1 + 2 with an either/or part (c) via `alternatives`) |
-| Difficulty | d1 9, d2 34, d3 21, d4 4, d5 2 |
-| Competency | recall 9, understanding 28, application 18, analysis 11, evaluation 4 — application or higher 47% of items, 65% of marks |
+| Questions | 70 items, 139 marks: mcq 18, assertion-reason 6 (keys a b c d a c), true-false 5, fill-blank 5, numerical 9, short-2 9, short-3 9, long-5 9, case-based 5 (each 1 + 1 + 2 with an either/or part (c) via `alternatives`) |
+| Difficulty | d1 9, d2 38, d3 22, d4 4, d5 2 |
+| Competency | recall 9, understanding 38, application 13, analysis 11, evaluation 4 — application or higher 37% of items, 47% of marks (after the 2026-10-27 competency audit) |
 | Tests | `t_cbse10math_ch01_short` (20 marks / 40 min) and `_long` (40 marks / 90 min), matching `cbse-10-default-chapter-test-short/long` (sections A objective, B short 2/3, C long with choice, D case); disjoint |
 
 ## Verifier record
@@ -43,3 +43,13 @@ re-solve check per item), `src/lib.mjs` (builders + validator). Run from `platfo
 - Narration audio not generated (TTS stage).
 - `table` cells use `$…$` maths per the current contract; renderers must support inline KaTeX in cells.
 - The bus-departure plot uses `series` of kind `scatter` on three horizontal rows; a renderer without series support will show only the marked point.
+
+## Changed by assessment-designer (2026-10-27)
+
+Rewritten in `src/questions.mjs` (then rebuilt) because `originality --authored` flagged them as near-duplicates of other items in this chapter; each is now a different question (new numbers, context or skill) with its re-solve check: m10 (q_cbse10math_ch01_010: HCF with remainders, now a sharing context), s206 (_049: now sum and product of two irrationals), s302 (_054: now an LCM context with three lamps).
+
+## Competency audit by assessment-designer (2026-10-27)
+
+Board papers need recall/understanding written items (CBSE design: Standard 54/24/22, Basic 75/15/10 per cent of marks), and the bank had tagged almost every routine written answer as application or higher. Every short, long, numerical and case item was re-read against what it actually asks. A routine, textbook-standard procedure on given data (find the HCF by prime factorisation, solve a given pair, find a term, compute a mean, a sector area, a single right triangle) is now **understanding**; word problems that need modelling, multi-step or non-routine reasoning, error analysis and justification keep application / analysis / evaluation. 6 item tag(s) and 6 case-part tag(s) changed (case items whose parts are now mostly recall/understanding carry `understanding` at the top level). No question text, key, solution or marking scheme changed.
+
+Added (appended, so earlier ids are unchanged; each has its re-solve check): `q_cbse10math_ch01_071` short-3, `q_cbse10math_ch01_072` short-3, `q_cbse10math_ch01_073` long, `q_cbse10math_ch01_074` long, `q_cbse10math_ch01_075` long.

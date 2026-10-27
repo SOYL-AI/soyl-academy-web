@@ -119,7 +119,7 @@ Q('tf5', mk.tf({ stem: r`If a circle inscribed in $\triangle ABC$ touches $AB$ a
 Q('fb1', mk.fill({ stem: 'A line that touches a circle at exactly one point is called a ___ to the circle.', acc: [['tangent']], sol: 'Such a line is a **tangent**; the common point is the point of contact.', d: 1, c: 'recall', t: [1] }), (C) => C.blank('tangent'));
 Q('fb2', mk.fill({ stem: 'The common point of a tangent and a circle is called the ___.', acc: [['point of contact', 'point of tangency', 'contact point']], sol: 'It is the **point of contact** (also called the point of tangency).', d: 1, c: 'recall', t: [1] }), (C) => C.blank('point of contact'));
 Q('fb3', mk.fill({ stem: 'The angle between a tangent to a circle and the radius through the point of contact is ___ degrees.', acc: [['90', '90°']], sol: r`The tangent at any point is perpendicular to the radius through the point of contact: the angle is $90^\circ$.`, d: 1, c: 'recall', t: [2] }), (C) => C.blank(90));
-Q('fb4', mk.fill({ stem: r`$PA$ and $PB$ are tangents from $P$ to a circle with centre $O$. If $\angle AOB = 115^\circ$, then $\angle APB =$ ___ degrees.`, acc: [['65', '65°']], sol: r`$\angle APB = 180^\circ - \angle AOB = 180^\circ - 115^\circ = 65^\circ$ (the angles at $A$ and $B$ in $OAPB$ are right angles).`, d: 2, c: 'understanding', t: [3] }), (C) => { const O = [0, 0], P = [1 / Math.cos(deg(57.5)), 0]; const [A, B] = tangentPtsRaw(O, 1, P); C.assert(near(angleDeg(O, A, B), 115, 1e-6), 'AOB'); C.blank(Math.round(angleDeg(P, A, B) * 1e6) / 1e6); });
+Q('fb4', mk.fill({ stem: r`Two radii of a circle make an angle of $124^\circ$ with each other. The tangents drawn at their outer ends meet at a point outside the circle, where they make an angle of ___ degrees.`, acc: [['56', '56°']], sol: r`Each tangent is perpendicular to its radius, so the quadrilateral formed by the two radii and the two tangents has two right angles. Its angles add up to $360^\circ$: the angle between the tangents $= 360^\circ - 90^\circ - 90^\circ - 124^\circ = 56^\circ$.`, d: 2, c: 'understanding', t: [3] }), (C) => { const O = [0, 0], P = [1 / Math.cos(deg(62)), 0]; const [A, B] = tangentPtsRaw(O, 1, P); C.assert(near(angleDeg(O, A, B), 124, 1e-6), 'AOB'); C.blank(Math.round(angleDeg(P, A, B) * 1e6) / 1e6); });
 Q('fb5', mk.fill({ stem: r`A circle inscribed in $\triangle ABC$ touches $BC$ at $D$, $CA$ at $E$ and $AB$ at $F$. If $BF = 4$ cm and $CE = 5$ cm, then $BC =$ ___ cm.`, acc: [['9']], sol: r`$BD = BF = 4$ cm and $CD = CE = 5$ cm (tangents from a point are equal), so $BC = BD + DC = 9$ cm.`, d: 2, c: 'application', t: [3] }), (C) => C.blank(4 + 5));
 
 // =============================================================== Numerical
@@ -138,16 +138,16 @@ Q('n05', mk.num({ stem: r`A circle is inscribed in $\triangle ABC$ with $AB = 12
 **Step 2.** Adding, $2(x + y + z) = 38$, so $x + y + z = 19$. Then $y = 19 - 11 = 8$. Hence $BD = 8$ cm (and $CD = 7$ cm, $AF = 4$ cm).`, scheme: [['Tangent-length equations', 1], ['BD = 8 cm', 1]], d: 3, c: 'application', t: [3], time: 150 }), (C) => { const [x, y, z] = tri(15, 11, 12); C.val(y); C.sol([19, z, x]); });
 Q('n06', mk.num({ stem: r`Two concentric circles have radii $17$ cm and $8$ cm. Find the length (in cm) of the chord of the larger circle that touches the smaller circle.`, value: 30, unit: 'cm', marks: 2, sol: r`**Step 1.** Let the chord $AB$ touch the small circle at $M$. Then $OM \perp AB$ (radius $\perp$ tangent), and the perpendicular from the centre bisects the chord.
 
-**Step 2.** $AM = \sqrt{17^2 - 8^2} = \sqrt{289 - 64} = \sqrt{225} = 15$ cm, so $AB = 2 \times 15 = 30$ cm.`, scheme: [['OM ⟂ AB and AM by Pythagoras', 1], ['AB = 30 cm', 1]], d: 3, c: 'application', t: [2], time: 150 }), (C) => C.val(2 * leg(17, 8)));
+**Step 2.** $AM = \sqrt{17^2 - 8^2} = \sqrt{289 - 64} = \sqrt{225} = 15$ cm, so $AB = 2 \times 15 = 30$ cm.`, scheme: [['OM ⟂ AB and AM by Pythagoras', 1], ['AB = 30 cm', 1]], d: 3, c: 'understanding', t: [2], time: 150 }), (C) => C.val(2 * leg(17, 8)));
 Q('n07', mk.num({ stem: r`The tangent $PT$ from a point $P$ to a circle is $9$ cm long. The line from $P$ to the centre $O$ meets the circle first at $Q$, with $PQ = 3$ cm. Find the radius of the circle in cm.`, value: 12, unit: 'cm', marks: 2, sol: r`**Step 1.** $OP = r + 3$ and $\angle OTP = 90^\circ$, so $(r + 3)^2 = r^2 + 9^2$.
 
 **Step 2.** $r^2 + 6r + 9 = r^2 + 81 \Rightarrow 6r = 72 \Rightarrow r = 12$ cm. **Check:** $15^2 = 225 = 144 + 81$ ✓.`, scheme: [['(r + 3)² = r² + 81', 1], ['r = 12 cm', 1]], d: 4, c: 'analysis', t: [2], time: 180 }), (C) => { let rr = null; for (let k = 1; k <= 100; k++) if (near(hyp(k, 9), k + 3)) rr = k; C.val(rr); C.sol([225, 144, 81]); });
 Q('n08', mk.num({ stem: r`$PA$ and $PB$ are tangents from $P$ to a circle with centre $O$ and radius $9$ cm. If $OP = 15$ cm, find the area of the quadrilateral $OAPB$ in cm².`, value: 108, unit: 'cm²', marks: 2, sol: r`**Step 1.** $PA = \sqrt{15^2 - 9^2} = \sqrt{144} = 12$ cm.
 
-**Step 2.** $OP$ splits $OAPB$ into two congruent right triangles, each of area $\dfrac12 \times 9 \times 12 = 54$ cm². Area $= 2 \times 54 = 108$ cm².`, scheme: [['PA = 12 cm', 1], ['Area 108 cm²', 1]], d: 3, c: 'application', t: [2, 3], time: 150 }), (C) => { const O = [0, 0], P = [15, 0]; const [A, B] = tangentPtsRaw(O, 9, P); const area = Math.abs(A[0] * P[1] - P[0] * A[1]) / 2 + Math.abs(P[0] * B[1] - B[0] * P[1]) / 2; C.val(Math.round(area * 1e3) / 1e3, 1e-2); C.sol([12, 54]); });
+**Step 2.** $OP$ splits $OAPB$ into two congruent right triangles, each of area $\dfrac12 \times 9 \times 12 = 54$ cm². Area $= 2 \times 54 = 108$ cm².`, scheme: [['PA = 12 cm', 1], ['Area 108 cm²', 1]], d: 3, c: 'understanding', t: [2, 3], time: 150 }), (C) => { const O = [0, 0], P = [15, 0]; const [A, B] = tangentPtsRaw(O, 9, P); const area = Math.abs(A[0] * P[1] - P[0] * A[1]) / 2 + Math.abs(P[0] * B[1] - B[0] * P[1]) / 2; C.val(Math.round(area * 1e3) / 1e3, 1e-2); C.sol([12, 54]); });
 Q('n09', mk.num({ stem: r`Two tangents drawn from a point $P$ to a circle of radius $8$ cm are inclined to each other at $60^\circ$. Find the distance of $P$ from the centre, in cm.`, value: 16, unit: 'cm', marks: 2, sol: r`**Step 1.** $OP$ bisects the angle between the tangents, so $\angle OPA = 30^\circ$, and $\angle OAP = 90^\circ$.
 
-**Step 2.** $\sin 30^\circ = \dfrac{OA}{OP}$, so $OP = \dfrac{8}{1/2} = 16$ cm.`, scheme: [['∠OPA = 30° with right angle at A', 1], ['OP = 16 cm', 1]], d: 3, c: 'application', t: [3], time: 120 }), (C) => { const { O, P } = twoTangents(60, 8); C.val(Math.round(dist(O, P) * 1e9) / 1e9); });
+**Step 2.** $\sin 30^\circ = \dfrac{OA}{OP}$, so $OP = \dfrac{8}{1/2} = 16$ cm.`, scheme: [['∠OPA = 30° with right angle at A', 1], ['OP = 16 cm', 1]], d: 3, c: 'understanding', t: [3], time: 120 }), (C) => { const { O, P } = twoTangents(60, 8); C.val(Math.round(dist(O, P) * 1e9) / 1e9); });
 
 // =============================================================== Short answer, 2 marks
 Q('s201', mk.short({ marks: 2, stem: 'Prove that the tangents drawn at the ends of a diameter of a circle are parallel.', model: r`Let $AB$ be a diameter of a circle with centre $O$, and let $l$ and $m$ be the tangents at $A$ and $B$.
@@ -157,7 +157,7 @@ The tangent at a point is perpendicular to the radius through it, so $OA \perp l
 So $l \parallel m$.`, sol: 'Use the tangent–radius theorem twice, then the alternate-angles test for parallel lines.', scheme: [['OA ⟂ l and OB ⟂ m (tangent ⟂ radius)', 1], ['Equal alternate angles, hence l ∥ m', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), null, 'proof: structure checked by hand (two perpendiculars, alternate angles)');
 Q('s202', mk.short({ marks: 2, stem: r`$PA$ and $PB$ are tangents from an external point $P$ to a circle with centre $O$. If $\angle PAB = 62^\circ$, find $\angle APB$ and $\angle AOB$.`, model: r`$PA = PB$ (tangents from an external point), so $\angle PBA = \angle PAB = 62^\circ$ and $\angle APB = 180^\circ - 124^\circ = 56^\circ$.
 
-In $OAPB$, $\angle OAP = \angle OBP = 90^\circ$, so $\angle AOB = 360^\circ - 180^\circ - 56^\circ = 124^\circ$.`, sol: r`The angle between the tangents and the angle at the centre are supplementary: $56^\circ + 124^\circ = 180^\circ$.`, scheme: [['∠APB = 56° (isosceles triangle PAB)', 1], ['∠AOB = 124°', 1]], d: 2, c: 'application', t: [3], time: 120 }), (C) => { const { O, P, A, B } = twoTangents(56); C.assert(near(angleDeg(A, P, B), 62, 1e-6) && near(angleDeg(O, A, B), 124, 1e-6), 'PAB 62, AOB 124'); C.model([56, 124]); });
+In $OAPB$, $\angle OAP = \angle OBP = 90^\circ$, so $\angle AOB = 360^\circ - 180^\circ - 56^\circ = 124^\circ$.`, sol: r`The angle between the tangents and the angle at the centre are supplementary: $56^\circ + 124^\circ = 180^\circ$.`, scheme: [['∠APB = 56° (isosceles triangle PAB)', 1], ['∠AOB = 124°', 1]], d: 2, c: 'understanding', t: [3], time: 120 }), (C) => { const { O, P, A, B } = twoTangents(56); C.assert(near(angleDeg(A, P, B), 62, 1e-6) && near(angleDeg(O, A, B), 124, 1e-6), 'PAB 62, AOB 124'); C.model([56, 124]); });
 Q('s203', mk.short({ marks: 2, stem: r`A circle touches all four sides of a quadrilateral $ABCD$, with $AB = 11$ cm, $BC = 9$ cm and $CD = 7$ cm. Find $AD$ and the perimeter of $ABCD$.`, model: r`For a quadrilateral circumscribing a circle, $AB + CD = BC + AD$.
 
 $11 + 7 = 9 + AD$, so $AD = 9$ cm.
@@ -170,12 +170,12 @@ By the tangent–radius theorem, $OP \perp l$ as well. Then $OP$ and $PX$ are tw
 So $PX$ coincides with $PO$, i.e. it passes through the centre.`, sol: 'Proof by contradiction using the uniqueness of the perpendicular at a point.', scheme: [['OP ⟂ l by the theorem', 1], ['Uniqueness of the perpendicular gives the conclusion', 1]], d: 3, c: 'analysis', t: [2], time: 150 }), null, 'proof: contradiction structure checked by hand');
 Q('s205', mk.short({ marks: 2, stem: r`A circle is inscribed in an isosceles triangle $ABC$ with $AB = AC = 13$ cm and $BC = 10$ cm. It touches $BC$ at $D$ and $AB$ at $F$. Find $BD$ and $AF$.`, model: r`Let the tangent lengths from $A$, $B$, $C$ be $x$, $y$, $z$: $x + y = 13$, $y + z = 10$, $z + x = 13$. Adding: $x + y + z = 18$.
 
-So $BD = y = 18 - 13 = 5$ cm and $AF = x = 18 - 10 = 8$ cm. ($D$ is the midpoint of $BC$, as expected by symmetry.)`, sol: 'Each tangent length is the semi-perimeter minus the opposite side.', scheme: [['Semi-perimeter 18 and the tangent-length method', 1], ['BD = 5 cm, AF = 8 cm', 1]], d: 3, c: 'application', t: [3], time: 150 }), (C) => { const [x, y] = tri(10, 13, 13); C.assert(x === 8 && y === 5, 'lengths'); C.model([18, 5, 8]); });
+So $BD = y = 18 - 13 = 5$ cm and $AF = x = 18 - 10 = 8$ cm. ($D$ is the midpoint of $BC$, as expected by symmetry.)`, sol: 'Each tangent length is the semi-perimeter minus the opposite side.', scheme: [['Semi-perimeter 18 and the tangent-length method', 1], ['BD = 5 cm, AF = 8 cm', 1]], d: 3, c: 'understanding', t: [3], time: 150 }), (C) => { const [x, y] = tri(10, 13, 13); C.assert(x === 8 && y === 5, 'lengths'); C.model([18, 5, 8]); });
 Q('s206', mk.short({ marks: 2, stem: r`$PQ$ is the tangent at $P$ to a circle with centre $O$ and radius $6$ cm, and $Q$ is a point on it with $\angle POQ = 60^\circ$. Find $OQ$ and $PQ$.`, model: r`$\angle OPQ = 90^\circ$ (tangent $\perp$ radius).
 
 $\cos 60^\circ = \dfrac{OP}{OQ}$, so $OQ = \dfrac{6}{1/2} = 12$ cm.
 
-$\tan 60^\circ = \dfrac{PQ}{OP}$, so $PQ = 6\sqrt3 \approx 10.39$ cm.`, sol: r`Check: $6^2 + (6\sqrt3)^2 = 36 + 108 = 144 = 12^2$ ✓.`, scheme: [['Right angle at P; OQ = 12 cm', 1], ['PQ = 6√3 cm', 1]], d: 3, c: 'application', t: [2], time: 150 }), (C) => { const O = [0, 0], P = [0, -6], Qp = [6 * Math.tan(deg(60)), -6]; C.assert(near(angleDeg(O, P, Qp), 60, 1e-9) && near(dist(O, Qp), 12, 1e-9) && near(dist(P, Qp), 6 * Math.sqrt(3), 1e-9), 'OQ 12, PQ 6√3'); C.model([12, '6\\sqrt3', 10.39]); C.sol([108, 144]); });
+$\tan 60^\circ = \dfrac{PQ}{OP}$, so $PQ = 6\sqrt3 \approx 10.39$ cm.`, sol: r`Check: $6^2 + (6\sqrt3)^2 = 36 + 108 = 144 = 12^2$ ✓.`, scheme: [['Right angle at P; OQ = 12 cm', 1], ['PQ = 6√3 cm', 1]], d: 3, c: 'understanding', t: [2], time: 150 }), (C) => { const O = [0, 0], P = [0, -6], Qp = [6 * Math.tan(deg(60)), -6]; C.assert(near(angleDeg(O, P, Qp), 60, 1e-9) && near(dist(O, Qp), 12, 1e-9) && near(dist(P, Qp), 6 * Math.sqrt(3), 1e-9), 'OQ 12, PQ 6√3'); C.model([12, '6\\sqrt3', 10.39]); C.sol([108, 144]); });
 Q('s207', mk.short({ marks: 2, stem: r`Ravi is told that the tangent $PA$ is drawn from $P$ to a circle with centre $O$, $OA = 6$ cm and $OP = 10$ cm. He writes: "$PA = \sqrt{OA^2 + OP^2} = \sqrt{136}$ cm." Find his mistake and the correct length.`, model: r`In $\triangle OAP$ the right angle is at $A$ (tangent $\perp$ radius), so the **hypotenuse is $OP$**, not $PA$. Ravi treated $PA$ as the hypotenuse.
 
 Correctly, $PA = \sqrt{OP^2 - OA^2} = \sqrt{100 - 36} = \sqrt{64} = 8$ cm.`, sol: 'The side opposite the right angle (at the point of contact) is the hypotenuse.', scheme: [['Identifies OP as the hypotenuse', 1], ['PA = 8 cm', 1]], d: 3, c: 'evaluation', t: [2], time: 120 }), (C) => { C.assert(leg(10, 6) === 8, '8'); C.model([100, 36, 64, 8]); });
@@ -243,7 +243,7 @@ Adding: $AP + BP + CR + DR = AS + BQ + CQ + DS$, i.e. $(AP + BP) + (CR + DR) = (
 
 (b) $6 + 9 = (x + 4) + (2x - 1) \Rightarrow 15 = 3x + 3 \Rightarrow x = 4$.
 
-$BC = 8$ cm, $DA = 7$ cm. Perimeter $= 6 + 8 + 9 + 7 = 30$ cm.`, sol: r`Check: $AB + CD = 15 = BC + DA$ ✓.`, scheme: [['Four pairs of equal tangents', 1], ['Adding and regrouping', 1], ['Conclusion AB + CD = AD + BC', 1], ['x = 4', 1], ['BC = 8, DA = 7, perimeter 30 cm', 1]], d: 3, c: 'application', t: [3], time: 600 }), (C) => { const x = (15 - 3) / 3; C.assert(x === 4 && 6 + 9 === x + 4 + 2 * x - 1, 'x'); C.model([4, 8, 7, 30, 15]); });
+$BC = 8$ cm, $DA = 7$ cm. Perimeter $= 6 + 8 + 9 + 7 = 30$ cm.`, sol: r`Check: $AB + CD = 15 = BC + DA$ ✓.`, scheme: [['Four pairs of equal tangents', 1], ['Adding and regrouping', 1], ['Conclusion AB + CD = AD + BC', 1], ['x = 4', 1], ['BC = 8, DA = 7, perimeter 30 cm', 1]], d: 3, c: 'understanding', t: [3], time: 600 }), (C) => { const x = (15 - 3) / 3; C.assert(x === 4 && 6 + 9 === x + 4 + 2 * x - 1, 'x'); C.model([4, 8, 7, 30, 15]); });
 Q('l04', mk.long({ stem: r`A circle with centre $O$ and radius $r$ is inscribed in a triangle $ABC$ right-angled at $C$, with legs $BC = a$, $CA = b$ and hypotenuse $AB = c$.
 (a) Prove that $r = \dfrac{a + b - c}{2}$.
 (b) Prove that the area of the triangle equals $r \times s$, where $s$ is half the perimeter.
@@ -281,13 +281,13 @@ $AF = s - BC = 16 - 12 = 4$ cm. (Check: $AO = 8 - 3 = 5$ and $AF = \sqrt{5^2 - 3
 // =============================================================== Case-based
 caseQ('c01', {
   passage: r`At the Dussehra fair in Mysuru, a giant wheel of radius $15$ m has its centre $O$ at a height of $24$ m above the point $F$ on the ground. To steady it in the wind, a straight cable runs from an anchor $A$ on the ground, $7$ m from $F$, and just touches the rim of the wheel at $T$. The figure shows the set-up.`,
-  assets: [figWheel], d: 3, c: 'application',
+  assets: [figWheel], d: 3, c: 'understanding',
   model: r`(a) Option (a): $\angle OTA = 90^\circ$. (b) $OA = 25$ m. (c) (i) $AT = 20$ m. Or (ii) $AT' = AT = 20$ m and the area of $OTAT'$ is $300$ m².`,
   sol: r`(b) $OA = \sqrt{24^2 + 7^2} = \sqrt{625} = 25$ m. (c) (i) $AT = \sqrt{25^2 - 15^2} = \sqrt{400} = 20$ m. (ii) Two right triangles, each $\dfrac12 \times 15 \times 20 = 150$ m².`,
   children: [
     child('a', mk.mcq({ stem: r`The angle between the cable $AT$ and the radius $OT$ is`, opts: [r`$90^\circ$`, r`$45^\circ$`, r`$60^\circ$`, 'impossible to find without measuring'], key: 'a', sol: 'The cable touches the wheel, so it is a tangent at T and is perpendicular to the radius OT.', d: 1, c: 'understanding', t: [2], time: 45 })),
-    child('b', mk.num({ stem: r`Find the distance $OA$ from the centre of the wheel to the anchor, in metres.`, value: 25, unit: 'm', sol: r`$\angle OFA = 90^\circ$: $OA = \sqrt{24^2 + 7^2} = \sqrt{576 + 49} = \sqrt{625} = 25$ m.`, scheme: [['25 m', 1]], d: 2, c: 'application', t: [2], time: 75 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** Find the length of the cable AT.', model: r`$OT \perp AT$, so $AT = \sqrt{OA^2 - OT^2} = \sqrt{625 - 225} = \sqrt{400} = 20$ m.`, sol: 'Right angle at the point of contact; OA is the hypotenuse.', scheme: [['Right triangle OTA with hypotenuse OA', 1], ['AT = 20 m', 1]], d: 2, c: 'application', t: [2], time: 120 }), [
+    child('b', mk.num({ stem: r`Find the distance $OA$ from the centre of the wheel to the anchor, in metres.`, value: 25, unit: 'm', sol: r`$\angle OFA = 90^\circ$: $OA = \sqrt{24^2 + 7^2} = \sqrt{576 + 49} = \sqrt{625} = 25$ m.`, scheme: [['25 m', 1]], d: 2, c: 'understanding', t: [2], time: 75 })),
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the length of the cable AT.', model: r`$OT \perp AT$, so $AT = \sqrt{OA^2 - OT^2} = \sqrt{625 - 225} = \sqrt{400} = 20$ m.`, sol: 'Right angle at the point of contact; OA is the hypotenuse.', scheme: [['Right triangle OTA with hypotenuse OA', 1], ['AT = 20 m', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), [
       mk.short({ marks: 2, stem: r`**(ii)** A second cable from the same anchor touches the wheel at $T'$ on the other side of $OA$. Find its length, and the area of the quadrilateral $OTAT'$.`, model: r`Tangents from $A$ are equal, so $AT' = AT = 20$ m. $OA$ splits $OTAT'$ into two congruent right triangles, each of area $\dfrac12 \times 15 \times 20 = 150$ m², so the area is $300$ m².`, sol: 'Equal tangents and two congruent right triangles.', scheme: [["AT' = 20 m", 1], ['Area 300 m²', 1]], d: 3, c: 'application', t: [3], time: 150 }),
     ]),
   ],
@@ -309,13 +309,13 @@ caseQ('c02', {
 
 caseQ('c03', {
   passage: r`Meera places a glass bangle of radius $3.5$ cm in the corner $P$ of a tray. The two edges of the tray at $P$ are perpendicular, and the bangle touches the edges at $A$ and $B$. The figure shows the bangle with centre $O$.`,
-  assets: [figBangle], d: 3, c: 'application',
+  assets: [figBangle], d: 3, c: 'understanding',
   model: r`(a) Option (a): a square. (b) $PA = 3.5$ cm. (c) (i) $OP = 3.5\sqrt2 \approx 4.95$ cm. Or (ii) $OP = 7$ cm.`,
   sol: r`$\angle OAP = \angle OBP = \angle APB = 90^\circ$ and $OA = OB$, $PA = PB$: $OAPB$ is a square of side $3.5$ cm, with diagonal $OP = 3.5\sqrt2$. For a $60^\circ$ corner, $\angle OPA = 30^\circ$ and $OP = \dfrac{OA}{\sin 30^\circ} = 7$ cm.`,
   children: [
     child('a', mk.mcq({ stem: r`The quadrilateral $OAPB$ is`, opts: ['a square', 'a rectangle that is not a square', 'a trapezium that is not a parallelogram', 'a kite that is not a rhombus'], key: 'a', sol: r`All four angles are $90^\circ$ (two by tangent $\perp$ radius, one at the corner, so the fourth too), and $OA = OB$: a square.`, d: 2, c: 'understanding', t: [2, 3], time: 60 })),
-    child('b', mk.num({ stem: r`Find $PA$ in cm.`, value: 3.5, unit: 'cm', sol: r`$OAPB$ is a square, so $PA = OB = 3.5$ cm.`, scheme: [['3.5 cm', 1]], d: 2, c: 'application', t: [3], time: 60 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** Find the distance OP of the centre of the bangle from the corner.', model: r`$OP$ is the diagonal of the square $OAPB$: $OP = \sqrt{3.5^2 + 3.5^2} = 3.5\sqrt2 \approx 4.95$ cm.`, sol: 'Diagonal of a square = side × √2.', scheme: [['Right triangle OAP', 1], ['OP = 3.5√2 ≈ 4.95 cm', 1]], d: 2, c: 'application', t: [2], time: 90 }), [
+    child('b', mk.num({ stem: r`Find $PA$ in cm.`, value: 3.5, unit: 'cm', sol: r`$OAPB$ is a square, so $PA = OB = 3.5$ cm.`, scheme: [['3.5 cm', 1]], d: 2, c: 'understanding', t: [3], time: 60 })),
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the distance OP of the centre of the bangle from the corner.', model: r`$OP$ is the diagonal of the square $OAPB$: $OP = \sqrt{3.5^2 + 3.5^2} = 3.5\sqrt2 \approx 4.95$ cm.`, sol: 'Diagonal of a square = side × √2.', scheme: [['Right triangle OAP', 1], ['OP = 3.5√2 ≈ 4.95 cm', 1]], d: 2, c: 'understanding', t: [2], time: 90 }), [
       mk.short({ marks: 2, stem: r`**(ii)** The same bangle is placed in a corner where the edges meet at $60^\circ$. Find the distance of its centre from the corner.`, model: r`$OP$ bisects the $60^\circ$ angle between the two tangents, so $\angle OPA = 30^\circ$, with $\angle OAP = 90^\circ$. Then $\sin 30^\circ = \dfrac{OA}{OP}$, so $OP = \dfrac{3.5}{1/2} = 7$ cm.`, sol: 'The centre lies on the bisector of the angle between the tangents.', scheme: [['∠OPA = 30° with right angle at A', 1], ['OP = 7 cm', 1]], d: 4, c: 'analysis', t: [3], time: 150 }),
     ]),
   ],
@@ -323,13 +323,13 @@ caseQ('c03', {
 
 caseQ('c04', {
   passage: r`A circular well in a village near Nashik has a radius of $3.3$ m. To lift a heavy bucket, two ropes are tied to a peg $P$ fixed in the ground $6.5$ m from the centre $O$ of the well, and stretched so that each just touches the rim of the well, at $A$ and at $B$.`,
-  d: 3, c: 'application',
+  d: 3, c: 'understanding',
   model: r`(a) Option (a). (b) $PA = 5.6$ m. (c) (i) Area of $OAPB = 18.48$ m². Or (ii) $\triangle OAP \cong \triangle OBP$ (RHS), so $\angle APO = \angle BPO$; and in $OAPB$, $\angle AOB + \angle APB = 360^\circ - 90^\circ - 90^\circ = 180^\circ$.`,
   sol: r`(b) $PA = \sqrt{6.5^2 - 3.3^2} = \sqrt{42.25 - 10.89} = \sqrt{31.36} = 5.6$ m. (c) (i) $2 \times \dfrac12 \times 3.3 \times 5.6 = 18.48$ m².`,
   children: [
     child('a', mk.mcq({ stem: 'The two ropes PA and PB are of equal length because', opts: ['tangents drawn from an external point to a circle are equal', 'all radii of a circle are equal', 'the peg is on the perpendicular bisector of the well', 'the ropes are tied to the same bucket'], key: 'a', sol: 'PA and PB are tangents from the same external point P, so they are equal. (Equal radii are used inside the proof, but they are not the reason by themselves.)', d: 1, c: 'understanding', t: [3], time: 45 })),
-    child('b', mk.num({ stem: 'Find the length of each rope, PA, in metres.', value: 5.6, unit: 'm', sol: r`$\angle OAP = 90^\circ$: $PA = \sqrt{6.5^2 - 3.3^2} = \sqrt{42.25 - 10.89} = \sqrt{31.36} = 5.6$ m.`, scheme: [['5.6 m', 1]], d: 2, c: 'application', t: [2], time: 90 })),
-    child('c', mk.short({ marks: 2, stem: '**(i)** Find the area of the region OAPB enclosed by the two ropes and the radii OA and OB.', model: r`$OP$ splits $OAPB$ into two congruent right triangles, each of area $\dfrac12 \times 3.3 \times 5.6 = 9.24$ m². Area $= 2 \times 9.24 = 18.48$ m².`, sol: 'Two right triangles with legs 3.3 m and 5.6 m.', scheme: [['One triangle 9.24 m²', 1], ['Area 18.48 m²', 1]], d: 3, c: 'application', t: [2, 3], time: 120 }), [
+    child('b', mk.num({ stem: 'Find the length of each rope, PA, in metres.', value: 5.6, unit: 'm', sol: r`$\angle OAP = 90^\circ$: $PA = \sqrt{6.5^2 - 3.3^2} = \sqrt{42.25 - 10.89} = \sqrt{31.36} = 5.6$ m.`, scheme: [['5.6 m', 1]], d: 2, c: 'understanding', t: [2], time: 90 })),
+    child('c', mk.short({ marks: 2, stem: '**(i)** Find the area of the region OAPB enclosed by the two ropes and the radii OA and OB.', model: r`$OP$ splits $OAPB$ into two congruent right triangles, each of area $\dfrac12 \times 3.3 \times 5.6 = 9.24$ m². Area $= 2 \times 9.24 = 18.48$ m².`, sol: 'Two right triangles with legs 3.3 m and 5.6 m.', scheme: [['One triangle 9.24 m²', 1], ['Area 18.48 m²', 1]], d: 3, c: 'understanding', t: [2, 3], time: 120 }), [
       mk.short({ marks: 2, stem: r`**(ii)** Show that $OP$ bisects the angle between the two ropes, and that $\angle AOB + \angle APB = 180^\circ$.`, model: r`In right triangles $OAP$ and $OBP$: $OA = OB$ (radii), $OP$ is common, so they are congruent (RHS) and $\angle APO = \angle BPO$: $OP$ bisects $\angle APB$.
 
 In quadrilateral $OAPB$, $\angle OAP = \angle OBP = 90^\circ$, so $\angle AOB + \angle APB = 360^\circ - 180^\circ = 180^\circ$.`, sol: 'RHS congruence, then the angle sum of a quadrilateral.', scheme: [['RHS congruence and bisector', 1], ['Angle sum gives 180°', 1]], d: 3, c: 'analysis', t: [3], time: 150 }),
@@ -339,14 +339,95 @@ In quadrilateral $OAPB$, $\angle OAP = \angle OBP = 90^\circ$, so $\angle AOB + 
 
 caseQ('c05', {
   passage: r`A farmer in Anand owns a four-sided plot $ABCD$ with a circular pond that touches all four boundaries, $AB$ at $P$, $BC$ at $Q$, $CD$ at $R$ and $DA$ at $S$. The boundaries measure $AB = 25$ m, $BC = 31$ m and $CD = 29$ m, as shown in the figure. The fourth side $DA$ has not been measured.`,
-  assets: [figPlot], d: 3, c: 'application',
+  assets: [figPlot], d: 3, c: 'understanding',
   model: r`(a) Option (a). (b) $DA = 23$ m. (c) (i) $BQ = 15$ m, $CR = 16$ m, $DS = 13$ m. Or (ii) perimeter $108$ m; cost ₹$16200$.`,
   sol: r`(b) $AB + CD = BC + DA$: $25 + 29 = 31 + DA$, so $DA = 23$ m. (c) (i) $BP = 25 - 10 = 15 = BQ$; $CQ = 31 - 15 = 16 = CR$; $DR = 29 - 16 = 13 = DS$; check $AS = 23 - 13 = 10 = AP$ ✓. (ii) $25 + 31 + 29 + 23 = 108$ m; $108 \times 150 = 16200$.`,
   children: [
     child('a', mk.mcq({ stem: 'Which relation must hold for the four sides of the plot?', opts: ['AB + CD = BC + DA', 'AB + BC = CD + DA', 'AB = CD and BC = DA', 'AB × CD = BC × DA'], key: 'a', sol: 'For a quadrilateral circumscribing a circle, the sums of opposite sides are equal (from the four pairs of equal tangents).', d: 1, c: 'understanding', t: [3], time: 45 })),
-    child('b', mk.num({ stem: 'Find the length of DA in metres.', value: 23, unit: 'm', sol: r`$25 + 29 = 31 + DA \Rightarrow DA = 54 - 31 = 23$ m.`, scheme: [['23 m', 1]], d: 2, c: 'application', t: [3], time: 60 })),
+    child('b', mk.num({ stem: 'Find the length of DA in metres.', value: 23, unit: 'm', sol: r`$25 + 29 = 31 + DA \Rightarrow DA = 54 - 31 = 23$ m.`, scheme: [['23 m', 1]], d: 2, c: 'understanding', t: [3], time: 60 })),
     child('c', mk.short({ marks: 2, stem: r`**(i)** The pond touches $AB$ at $P$ with $AP = 10$ m. Find $BQ$, $CR$ and $DS$.`, model: r`$BQ = BP = 25 - 10 = 15$ m; $CR = CQ = 31 - 15 = 16$ m; $DS = DR = 29 - 16 = 13$ m. Check: $AS = DA - DS = 23 - 13 = 10 = AP$ ✓.`, sol: 'Walk round the plot using equal tangents.', scheme: [['BQ = 15 m', 0.5], ['CR = 16 m and DS = 13 m', 1], ['Check AS = AP', 0.5]], d: 3, c: 'analysis', t: [3], time: 150 }), [
-      mk.short({ marks: 2, stem: '**(ii)** The farmer fences all four sides at ₹150 per metre. Find the cost.', model: r`Perimeter $= 25 + 31 + 29 + 23 = 108$ m (also $2 \times 54$). Cost $= 108 \times 150 = $ ₹$16200$.`, sol: 'Perimeter = twice the sum of a pair of opposite sides.', scheme: [['Perimeter 108 m', 1], ['₹16200', 1]], d: 2, c: 'application', t: [3], time: 90 }),
+      mk.short({ marks: 2, stem: '**(ii)** The farmer fences all four sides at ₹150 per metre. Find the cost.', model: r`Perimeter $= 25 + 31 + 29 + 23 = 108$ m (also $2 \times 54$). Cost $= 108 \times 150 = $ ₹$16200$.`, sol: 'Perimeter = twice the sum of a pair of opposite sides.', scheme: [['Perimeter 108 m', 1], ['₹16200', 1]], d: 2, c: 'understanding', t: [3], time: 90 }),
     ]),
   ],
 }, (C) => { const [A, B, Cc, D] = kiteQ.V; const k = 0.13; const s = [dist(A, B), dist(B, Cc), dist(Cc, D), dist(D, A)].map((v) => Math.round((v / k) * 10) / 10); C.assert(s.join() === '25,31,29,23', `sides ${s}`); C.child('a').key('a'); C.child('b').val(s[3]); C.child('c').model([15, 16, 13, 10]); C.child('cii').model([108, 16200]); C.assert(near(dist(A, kiteQ.T[0]) / k, 10, 1e-3), 'AP = 10 on the drawing'); });
+// =============================================================== added 2026-10-27 (assessment-designer)
+// Recall/understanding written items for the board-paper competency balance (blueprint 54/24/22 Standard,
+// 75/15/10 Basic). Appended after every existing item so earlier ids do not move.
+Q('u301', mk.short({
+  marks: 3,
+  stem: r`From a point $Q$ outside a circle with centre $O$ and radius $5$ cm, two tangents $QA$ and $QB$ are drawn to the circle. If $OQ = 13$ cm, find the lengths $QA$ and $QB$ and the perimeter of the quadrilateral $OAQB$.`,
+  model: r`The tangent at $A$ is perpendicular to the radius $OA$, so triangle $OAQ$ is right-angled at $A$.
+
+$QA = \sqrt{OQ^2 - OA^2} = \sqrt{169 - 25} = \sqrt{144} = 12$ cm.
+
+Tangents from an external point are equal, so $QB = QA = 12$ cm.
+
+Perimeter of $OAQB = OA + AQ + QB + BO = 5 + 12 + 12 + 5 = 34$ cm.`,
+  sol: r`Radius $\perp$ tangent gives a right triangle; the two tangents from $Q$ are equal.`,
+  scheme: [['Right angle at A (radius ⟂ tangent)', 1], ['QA = QB = 12 cm', 1], ['Perimeter 34 cm', 1]],
+  d: 2, c: 'understanding', t: [2, 3], time: 210,
+}), (C) => { const t = leg(13, 5); C.assert(near(t, 12) && near(5 + 2 * t + 5, 34), 'tangent 12, perimeter 34'); C.model([12, 34]); });
+Q('u302', mk.short({
+  marks: 3,
+  stem: r`A point $P$ is $10$ cm from the centre $O$ of a circle of radius $6$ cm. A tangent from $P$ touches the circle at $T$. Find (a) the length $PT$, (b) $\angle OTP$, and (c) the area of triangle $OTP$.`,
+  model: r`(b) The tangent at $T$ is perpendicular to the radius $OT$, so $\angle OTP = 90^\circ$.
+
+(a) In right triangle $OTP$: $PT = \sqrt{OP^2 - OT^2} = \sqrt{100 - 36} = \sqrt{64} = 8$ cm.
+
+(c) Area $= \dfrac12 \times OT \times PT = \dfrac12 \times 6 \times 8 = 24$ cm².`,
+  sol: r`Use the right angle at the point of contact first; the two legs of the right triangle give the area.`,
+  scheme: [['PT = 8 cm', 1], ['∠OTP = 90°', 1], ['Area 24 cm²', 1]],
+  d: 1, c: 'understanding', t: [2], time: 180,
+}), (C) => { const t = leg(10, 6); C.assert(near(t, 8) && near(0.5 * 6 * t, 24), 'PT 8, area 24'); C.model([8, 90, 24]); });
+Q('u303', mk.short({
+  marks: 3,
+  stem: r`The circle inscribed in triangle $ABC$ touches $BC$ at $P$, $CA$ at $Q$ and $AB$ at $R$. If $AR = 4$ cm, $BP = 6$ cm and $CQ = 5$ cm, find the three sides of the triangle and its perimeter.`,
+  model: r`Tangents drawn from one external point to a circle are equal, so $AQ = AR = 4$ cm, $BR = BP = 6$ cm and $CP = CQ = 5$ cm.
+
+$AB = AR + RB = 4 + 6 = 10$ cm, $\quad BC = BP + PC = 6 + 5 = 11$ cm, $\quad CA = CQ + QA = 5 + 4 = 9$ cm.
+
+Perimeter $= 10 + 11 + 9 = 30$ cm.`,
+  sol: r`Each vertex sends two equal tangents to the incircle; every side is the sum of two such tangents.`,
+  scheme: [['Equal tangents from A, B and C', 1], ['AB = 10, BC = 11, CA = 9', 1], ['Perimeter 30 cm', 1]],
+  d: 2, c: 'understanding', t: [3], time: 210,
+}), (C) => { const [a, b, c] = [6 + 5, 5 + 4, 4 + 6]; const [x, y, z] = tri(a, b, c); C.assert(near(x, 4) && near(y, 6) && near(z, 5), `tangent lengths ${x}, ${y}, ${z}`); C.model([10, 11, 9, 30]); });
+Q('u501', mk.long({
+  stem: r`$PT$ is a tangent at $T$ to a circle with centre $O$. $OT = 7$ cm and $PT = 24$ cm.
+
+(a) State the theorem about the angle between a tangent and the radius through the point of contact.
+(b) Find $OP$.
+(c) Find the area of triangle $OTP$.
+(d) A second tangent $PS$ is drawn from $P$ to the circle. Find $PS$ and the perimeter of the quadrilateral $OTPS$.`,
+  model: r`(a) The tangent at any point of a circle is perpendicular to the radius through the point of contact. So $\angle OTP = 90^\circ$.
+
+(b) $OP = \sqrt{OT^2 + PT^2} = \sqrt{49 + 576} = \sqrt{625} = 25$ cm.
+
+(c) Area of $\triangle OTP = \dfrac12 \times OT \times PT = \dfrac12 \times 7 \times 24 = 84$ cm².
+
+(d) Tangents from an external point are equal: $PS = PT = 24$ cm. Perimeter of $OTPS = 7 + 24 + 24 + 7 = 62$ cm.`,
+  sol: r`Radius $\perp$ tangent gives the right angle at $T$; equal tangents from $P$ give $PS$.`,
+  scheme: [['Theorem stated', 1], ['OP = 25 cm', 1], ['Area 84 cm²', 1], ['PS = 24 cm', 1], ['Perimeter 62 cm', 1]],
+  d: 2, c: 'understanding', t: [2, 3], time: 480,
+}), (C) => { const op = hyp(7, 24); C.assert(near(op, 25) && near(leg(op, 7), 24), 'OP 25'); C.assert(near(0.5 * 7 * 24, 84) && near(2 * 7 + 2 * 24, 62), 'area, perimeter'); C.model([25, 84, 24, 62]); });
+Q('u304', mk.short({
+  marks: 3,
+  stem: r`A circle has centre $O$ and radius $5$ cm. Three lines $l$, $m$ and $n$ are at distances $3$ cm, $5$ cm and $7$ cm from $O$. (a) For each line, say whether it cuts the circle in two points, touches it, or does not meet it, and name it as a secant or a tangent where it meets the circle. (b) For the secant, find the length of the chord it cuts off.`,
+  model: r`(a) $l$: $3 < 5$, so it cuts the circle in two points — a **secant**. $m$: $5 = 5$, so it touches the circle at one point — a **tangent**. $n$: $7 > 5$, so it does not meet the circle.
+
+(b) The perpendicular from $O$ to $l$ bisects the chord. Half the chord $= \sqrt{5^2 - 3^2} = \sqrt{16} = 4$ cm, so the chord is $8$ cm long.`,
+  sol: r`Compare each distance with the radius; for the chord use the right triangle formed by the radius, the perpendicular and half the chord.`,
+  scheme: [['Secant, tangent, no meeting point', 2], ['Chord 8 cm', 1]],
+  d: 1, c: 'understanding', t: [1], time: 180,
+}), (C) => { C.assert(meets(5, 3) === 2 && meets(5, 5) === 1 && meets(5, 7) === 0, 'positions'); C.assert(near(2 * leg(5, 3), 8), 'chord 8'); C.model([4, 8, 'secant', 'tangent']); });
+Q('u305', mk.short({
+  marks: 3,
+  stem: r`The tangent at a point $A$ of a circle with centre $O$ meets a line through $O$ at $B$. If $OA = 5$ cm and $\angle ABO = 30^\circ$, find $\angle OAB$, $OB$ and $AB$. (Use $\sqrt3 \approx 1.732$.)`,
+  model: r`The tangent at $A$ is perpendicular to the radius $OA$, so $\angle OAB = 90^\circ$.
+
+In right triangle $OAB$: $\sin 30^\circ = \dfrac{OA}{OB}$, so $OB = \dfrac{5}{1/2} = 10$ cm.
+
+$\tan 30^\circ = \dfrac{OA}{AB}$, so $AB = 5\sqrt3 \approx 5 \times 1.732 = 8.66$ cm.`,
+  sol: r`Radius $\perp$ tangent gives the right angle at $A$; then one right triangle with a $30^\circ$ angle.`,
+  scheme: [['∠OAB = 90°', 1], ['OB = 10 cm', 1], ['AB = 5√3 ≈ 8.66 cm', 1]],
+  d: 2, c: 'understanding', t: [2], time: 180,
+}), (C) => { const ob = 5 / Math.sin(deg(30)), ab = 5 / Math.tan(deg(30)); C.assert(near(ob, 10) && near(leg(ob, 5), ab) && Math.round(5 * 1.732 * 100) / 100 === 8.66, 'OB, AB'); C.model([90, 10, 8.66]); });

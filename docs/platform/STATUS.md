@@ -60,8 +60,8 @@ Single source of truth for progress (AGENTS.md §4.3). Updated by the Lead after
 ### Catalog totals (platform/main, `npm run content -- catalog`, 2026-10-26)
 767 subjects (CBSE 444, CISCE 323) · **644 syllabus files** · 7,440 chapters · 26,454 topics · 329 board blueprints + class defaults · 0 errors (updated 2026-10-27 after language syllabi + D-027 corrections)
 
-### Active (D-024 cap 5)
-backend-api (M1) · curriculum-cbse-languages (M1) · producer CBSE 10 Science ch02–05 · producer CBSE 10 Maths ch01–04 · pipeline-engineer M2 (contract v2 + stages 5–9)
+### Active (D-024 cap 5) — 2026-10-27 afternoon
+web-platform M3+M4 (test player, /ask, /plans, credits, leaderboard; branch platform/web-platform/m3-m4) · assessment-designer CBSE 10 series (≥ 6 mocks, unit tests, May track for Science/Maths/SST; release publishes series; fixing 30 duplicate stems; excludes formative/project-only chapters from board papers) · producer English ch09–12 · producer Science ch14–15 (formative-only) · producer Hindi A ch06–08, ch13
 
 ### CI evidence (GitHub Actions, real Postgres+pgvector / Redis containers)
 | Date | Commit | Run | Result |
@@ -76,13 +76,17 @@ Process: after every integration the Lead checks the platform-ci run for the new
 | 2026-10-27 | M2 API | Content (hub, deck, notes, flashcards via ACTIVE release), practice + server-side grading of every type, progress, reports, XP/streaks/badges, staff TOTP; migrations 0005–0006; DB-6 alternatives leak fixed; Redis KV clock parity; api 265 tests (98% lines) | backend-api M2 | `platform/backend-api/m2` | `platform/api/`, `platform/db/` | **merged** bf6e4d9 | — |
 | 2026-10-27 | M2 content | CBSE 10 Science ch06–ch09 | subject-producer | `platform/subject-producer/cbse-10-science-b` | `platform/content/authored/science/` | in progress | — |
 
-### Content coverage (hand-authored, gate + lint clean) — 2026-10-27
-| Subject | Chapters done | of | Questions |
-|---|---|---|---|
-| CBSE 10 Science | ch01–ch05 | 13 (+ ch14 formative-only) | 385 |
-| CBSE 10 Mathematics | ch01–ch04, ch06 | 14 | 358 |
-| CBSE 10 Hindi A | ch02, ch10 | 18 | 163 |
-| **Total** | **12 chapters** | | **906** |
+### Content coverage (hand-authored, gate + lint clean) — 2026-10-27 (platform/main d06cb0a)
+| Subject | Chapters done | of | Questions | Chapter tests |
+|---|---|---|---|---|
+| CBSE 10 Science | ch01–ch13 | 15 (ch14–15 formative-only, in progress) | 1,017 | 26 |
+| CBSE 10 Mathematics | ch01–ch14 (**complete**) | 14 | 988 | 28 |
+| CBSE 10 Social Science | ch01–ch21 (**complete**) | 21 | 2,091 | 42 |
+| CBSE 10 English Lang. & Lit. | ch02–08, ch13 | 31 | 526 | 16 |
+| CBSE 10 Hindi A | ch01–05, ch09–12, ch18 | 18 | 718 | 20 |
+| **Total** | **66 chapters** | | **5,340** | **132** |
+
+Originality (report-only): 30 `bank.duplicate` errors (26 within Maths ch01/02/10/11, 4 SST cross-chapter) — being fixed by assessment-designer. Full-length mocks: not yet in production (release publishes chapter tests only) — assessment-designer.
 | 2026-10-27 | M2 content | CBSE 10 Science ch10–ch13 | subject-producer | `platform/subject-producer/cbse-10-science-c` | `platform/content/authored/science/` | in progress | — |
 | 2026-10-27 | Security | DB-6/F-006: answers of case-question `alternatives` were left in `questions.body` by `splitQuestion` (API unaffected: whitelisted DTOs) | backend-api M2 | in progress |
 | 2026-10-27 | M2 pipeline | Stages 5–9 (verify, originality, assemble incl. test series, TTS, publish/rollback), Postgres state + shared budget ledger, contract v2 extras, ADR-006; 12 authored chapters publish into Postgres with 24 tests; 233 pipeline tests | pipeline-engineer M2 | `platform/pipeline-engineer/m2` | `platform/content-pipeline/`, `platform/ai-core/`, `platform/shared/content/` | **merged** | real model/speech: OA-02/OA-03 |

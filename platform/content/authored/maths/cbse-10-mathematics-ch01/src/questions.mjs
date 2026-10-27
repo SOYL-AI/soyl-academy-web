@@ -105,16 +105,16 @@ Option (b) is the HCF. Option (c) $216$ is not a multiple of $48$, and (d) is a 
 }), (C) => { C.opt(lcmN(48, 72, 108)); C.assert(hcfN(48, 72, 108) === 12 && 216 % 48 !== 0, 'distractors'); });
 
 Q('m10', mk.mcq({
-  stem: r`The largest number that divides $245$ and $1029$, leaving remainders $5$ and $9$ respectively, is`,
-  opts: ['$60$', '$120$', '$30$', '$20$'],
+  stem: r`When $172$ notebooks and $259$ pens are shared equally among the students of a class, $4$ notebooks and $7$ pens are left over. The greatest possible number of students in the class is`,
+  opts: ['$84$', '$42$', '$168$', '$28$'],
   key: 'a',
-  sol: r`**Step 1.** Remove the remainders: the number divides $245 - 5 = 240$ and $1029 - 9 = 1020$ exactly.
+  sol: r`**Step 1.** The students received $172 - 4 = 168$ notebooks and $259 - 7 = 252$ pens, so the number of students divides both $168$ and $252$ exactly.
 
-**Step 2.** $240 = 2^4 \times 3 \times 5$ and $1020 = 2^2 \times 3 \times 5 \times 17$, so HCF $= 2^2 \times 3 \times 5 = 60$.
+**Step 2.** $168 = 2^3 \times 3 \times 7$ and $252 = 2^2 \times 3^2 \times 7$, so HCF $= 2^2 \times 3 \times 7 = 84$.
 
-**Check:** $245 = 4 \times 60 + 5$ and $1029 = 17 \times 60 + 9$. Options (c) and (d) also leave these remainders but are not the largest; $120$ does not divide $1020$.`,
+**Check:** $172 = 2 \times 84 + 4$ and $259 = 3 \times 84 + 7$. Options (b) and (d) also leave these remainders but are not the greatest; $168$ does not divide $252$.`,
   d: 3, c: 'application', t: [2], time: 90,
-}), (C) => { C.opt(gcd(245 - 5, 1029 - 9)); C.assert(245 % 60 === 5 && 1029 % 60 === 9 && 1020 % 120 !== 0, 'remainders'); });
+}), (C) => { C.opt(gcd(172 - 4, 259 - 7)); C.assert(172 % 84 === 4 && 259 % 84 === 7 && 172 % 42 === 4 && 259 % 28 === 7 && 252 % 168 !== 0, 'remainders'); });
 
 Q('m11', mk.mcq({
   stem: r`Which of these numbers is **irrational**?`,
@@ -374,7 +374,7 @@ Q('n07', mk.num({
 
 **Check:** $108 = 2^2 \times 3^3$ and $240 = 2^4 \times 3 \times 5$ give HCF $2^2 \times 3$ and LCM $2^4 \times 3^3 \times 5$. ✓`,
   scheme: [['Uses HCF × LCM = product with HCF = 12, LCM = 2160', 1], ['Other number = 108', 1]],
-  d: 3, c: 'application', t: [2], time: 150,
+  d: 3, c: 'understanding', t: [2], time: 150,
 }), (C) => { const b = (12 * 2160) / 240; C.val(b); C.assert(gcd(240, b) === 12 && lcm(240, b) === 2160, 'pair consistent'); });
 Q('n08', mk.num({
   stem: r`Find the smallest natural number by which $1188$ must be multiplied so that the product is a perfect square.`,
@@ -385,7 +385,7 @@ Q('n08', mk.num({
 
 **Step 3.** Multiply by $3 \times 11 = 33$: $1188 \times 33 = 39204 = 198^2$.`,
   scheme: [['Prime factorisation 2² × 3³ × 11', 1], ['Multiplier 33', 1]],
-  d: 3, c: 'application', t: [1], time: 150,
+  d: 3, c: 'understanding', t: [1], time: 150,
 }), (C) => { let k = 1; while (!isSquare(1188 * k)) k++; C.val(k); C.sol([39204, 198]); C.assert(198 * 198 === 39204, '198^2'); });
 Q('n09', mk.num({
   stem: r`The LCM of two co-prime numbers is $391$. One of them is $17$. Find the other.`,
@@ -412,7 +412,7 @@ Q('s202', mk.short({
 It has the factor $9$ besides $1$ and itself (indeed $3474 = 2 \times 3^2 \times 193$), so it is composite.`,
   sol: r`**Step 1.** Take $9$ common. **Step 2.** The bracket is $386$, a natural number greater than $1$. **Step 3.** The number is $9 \times 386 = 3474$, a product of two factors each greater than $1$, so it is composite.`,
   scheme: [['Takes 9 common: 9 × 386', 1], ['Concludes composite with reason', 1]],
-  d: 2, c: 'application', t: [1], time: 120,
+  d: 2, c: 'understanding', t: [1], time: 120,
 }), (C) => { const N = 5 * 7 * 9 * 11 + 9; C.assert(N === 9 * 386 && !isPrime(N) && factorTex(N) === r`2 \times 3^2 \times 193`, 'composite'); C.model([385, 386, N]); });
 Q('s203', mk.short({
   marks: 2,
@@ -444,16 +444,16 @@ Check: $161 = 7 \times 23$, $207 = 3^2 \times 23$; HCF $= 23$, LCM $= 3^2 \times
 }), (C) => { const b = (23 * 1449) / 161; C.model([b, 33327]); C.assert(gcd(161, b) === 23 && lcm(161, b) === 1449, 'consistent'); });
 Q('s206', mk.short({
   marks: 2,
-  stem: r`Given that $\sqrt{3}$ is irrational, prove that $\dfrac{2\sqrt{3}}{7}$ is irrational.`,
-  model: r`Suppose, to the contrary, that $\dfrac{2\sqrt3}{7} = r$ for some rational number $r$.
+  stem: r`Both $5 + \sqrt{3}$ and $5 - \sqrt{3}$ are irrational. Work out their sum and their product. What do your answers show about adding or multiplying two irrational numbers?`,
+  model: r`Sum: $(5 + \sqrt3) + (5 - \sqrt3) = 10$, which is rational.
 
-Then $\sqrt3 = \dfrac{7r}{2}$. Since $r$ is rational, $\dfrac{7r}{2}$ is rational, so $\sqrt3$ would be rational.
+Product: $(5 + \sqrt3)(5 - \sqrt3) = 25 - 3 = 22$, which is also rational.
 
-This contradicts the fact that $\sqrt3$ is irrational. Hence $\dfrac{2\sqrt3}{7}$ is irrational.`,
-  sol: r`Assume it is rational, isolate $\sqrt3$, and note that a rational number multiplied by $\dfrac72$ stays rational. The contradiction completes the proof.`,
-  scheme: [['Assumes rational and isolates √3 = 7r/2', 1], ['States contradiction and conclusion', 1]],
-  d: 2, c: 'application', t: [3], time: 150,
-}), null, 'proof: structure checked by hand (assume rational, isolate root 3, contradiction)');
+So the sum, and the product, of two irrational numbers need **not** be irrational: here both are rational.`,
+  sol: r`The $\sqrt3$ terms cancel in the sum; the product is a difference of squares, $a^2 - b^2$ with $a = 5$, $b = \sqrt3$.`,
+  scheme: [['Sum 10 and product 22', 1], ['Conclusion: sum/product of irrationals can be rational', 1]],
+  d: 2, c: 'analysis', t: [3], time: 150,
+}), (C) => { const s3 = Math.sqrt(3); C.assert(Math.abs((5 + s3) + (5 - s3) - 10) < 1e-12 && Math.abs((5 + s3) * (5 - s3) - 22) < 1e-12, 'sum 10, product 22'); C.model([10, 22]); });
 Q('s207', mk.short({
   marks: 2,
   stem: r`Meera says, "$\sqrt{8} + \sqrt{2}$ is rational, because $8 + 2 = 10$." Is she right? Justify your answer.`,
@@ -506,16 +506,16 @@ Verification: $\text{HCF} \times \text{LCM} = 3 \times 31500 = 94500$ and $252 \
 }), (C) => { C.model([gcd(252, 375), lcm(252, 375), 252 * 375]); C.assert(gcd(252, 375) * lcm(252, 375) === 94500, 'product'); });
 Q('s302', mk.short({
   marks: 3,
-  stem: r`Find the HCF and LCM of $40$, $84$ and $210$ by prime factorisation.`,
-  model: r`$40 = 2^3 \times 5$, $84 = 2^2 \times 3 \times 7$, $210 = 2 \times 3 \times 5 \times 7$.
+  stem: r`Three warning lamps on a factory floor flash every $36$, $48$ and $90$ seconds. They flash together at noon. Using prime factorisation, find after how many minutes they next flash together, and how many times they flash together in the next $2$ hours (not counting noon).`,
+  model: r`$36 = 2^2 \times 3^2$, $48 = 2^4 \times 3$, $90 = 2 \times 3^2 \times 5$.
 
-HCF: the only prime common to all three is $2$, smallest power $2^1$. HCF $= 2$.
+LCM $= 2^4 \times 3^2 \times 5 = 720$ seconds $= 12$ minutes. They next flash together $12$ minutes after noon, at 12:12.
 
-LCM $= 2^3 \times 3 \times 5 \times 7 = 840$.`,
-  sol: r`For three numbers, the HCF uses primes common to **all three**: $3$, $5$ and $7$ are each missing from one number. The LCM takes every prime with its greatest power. Note $2 \times 840 = 1680 \ne 40 \times 84 \times 210$.`,
-  scheme: [['All three factorisations', 1], ['HCF = 2', 1], ['LCM = 840', 1]],
-  d: 2, c: 'understanding', t: [2], time: 240,
-}), (C) => { C.model([hcfN(40, 84, 210), lcmN(40, 84, 210)]); C.assert(2 * 840 !== 40 * 84 * 210, 'not product'); });
+In $2$ hours $= 120$ minutes they flash together every $12$ minutes: $120 \div 12 = 10$ times.`,
+  sol: r`"Together again" means a common multiple of all three intervals, and the first time is the LCM. Take every prime with its greatest power: $2^4$ from $48$, $3^2$ from $36$ or $90$, $5$ from $90$.`,
+  scheme: [['All three factorisations', 1], ['LCM = 720 s = 12 minutes', 1], ['10 times in 2 hours', 1]],
+  d: 3, c: 'application', t: [2], time: 240,
+}), (C) => { const L = lcmN(36, 48, 90); C.assert(L === 720, 'lcm 720'); C.model([L, L / 60, 120 / (L / 60)]); });
 Q('s303', mk.short({
   marks: 3,
   stem: r`Prove that $\sqrt{5}$ is irrational.`,
@@ -542,7 +542,7 @@ Since $r$ is rational, $r - 7$ is rational and so is $\dfrac{r - 7}{2}$. This ma
 Hence $7 + 2\sqrt3$ is irrational.`,
   sol: r`Isolate $\sqrt3$ using only operations that keep rational numbers rational (subtract $7$, divide by $2$).`,
   scheme: [['Assumes 7 + 2√3 = r rational', 1], ['√3 = (r − 7)/2 is rational', 1], ['Contradiction and conclusion', 1]],
-  d: 2, c: 'application', t: [3], time: 240,
+  d: 2, c: 'understanding', t: [3], time: 240,
 }), null, 'proof: structure checked by hand');
 Q('s305', mk.short({
   marks: 3,
@@ -597,7 +597,7 @@ So $3$ is a common factor of $a$ and $b$, contradicting that they are co-prime. 
 **Part 2.** Suppose $2 + 5\sqrt3 = r$, rational. Then $\sqrt3 = \dfrac{r - 2}{5}$, which is rational because $r$ is rational. This contradicts Part 1. Hence $2 + 5\sqrt3$ is irrational.`,
   sol: r`Part 1 is the standard contradiction proof. Part 2 reuses Part 1: isolate $\sqrt3$ with operations (subtract $2$, divide by $5$) that keep rationals rational.`,
   scheme: [['Assumption √3 = a/b, a and b co-prime', 1], ['3 | a, a = 3c', 1], ['b² = 3c² ⇒ 3 | b, contradiction, conclusion', 1], ['Assume 2 + 5√3 = r and isolate √3 = (r − 2)/5', 1], ['Contradiction and conclusion for Part 2', 1]],
-  d: 3, c: 'application', t: [3], time: 600,
+  d: 3, c: 'understanding', t: [3], time: 600,
 }), null, 'proof: steps checked by hand');
 Q('l02', mk.long({
   stem: r`A school hall in Bhopal measures $15.12$ m by $10.8$ m. It is to be paved with identical square marble tiles, as large as possible, with no tile cut.
@@ -684,7 +684,7 @@ caseQ('c01', {
   sol: r`(a) Common departures repeat at common multiples of $15$, $20$, $36$; the first is the LCM. (b) $15 = 3 \times 5$, $20 = 2^2 \times 5$, $36 = 2^2 \times 3^2$, so LCM $= 2^2 \times 3^2 \times 5 = 180$ min. (c) (i) 6:00 a.m. to 9:00 p.m. is $15$ h $= 900$ min; $900 \div 180 = 5$. (ii) $24 = 2^3 \times 3$, LCM $= 2^3 \times 3 \times 5 = 120$ min.`,
   children: [
     child('a', mk.mcq({ stem: 'Which idea gives the first time after 6:00 a.m. when buses on all three routes leave together?', opts: ['HCF of 15, 20 and 36', 'LCM of 15, 20 and 36', 'Product 15 × 20 × 36', 'Sum 15 + 20 + 36'], key: 'b', sol: 'Departures of each route are multiples of its interval; a common departure is a common multiple, and the first one is the least common multiple.', d: 1, c: 'understanding', t: [2], time: 45 })),
-    child('b', mk.num({ stem: 'After how many minutes from 6:00 a.m. do all three routes next leave together?', value: 180, unit: 'min', sol: r`$15 = 3 \times 5$, $20 = 2^2 \times 5$, $36 = 2^2 \times 3^2$. LCM $= 2^2 \times 3^2 \times 5 = 180$ minutes (9:00 a.m.).`, scheme: [['180 minutes', 1]], d: 2, c: 'application', t: [2], time: 90 })),
+    child('b', mk.num({ stem: 'After how many minutes from 6:00 a.m. do all three routes next leave together?', value: 180, unit: 'min', sol: r`$15 = 3 \times 5$, $20 = 2^2 \times 5$, $36 = 2^2 \times 3^2$. LCM $= 2^2 \times 3^2 \times 5 = 180$ minutes (9:00 a.m.).`, scheme: [['180 minutes', 1]], d: 2, c: 'understanding', t: [2], time: 90 })),
     child('c', mk.short({ marks: 2, stem: '**(i)** After 6:00 a.m., how many more times do all three routes leave together, up to and including 9:00 p.m.?', model: r`6:00 a.m. to 9:00 p.m. is $900$ minutes. Common departures every $180$ minutes: $\dfrac{900}{180} = 5$ more times — 9 a.m., 12 noon, 3 p.m., 6 p.m. and 9 p.m.`, sol: r`Duration $900$ min; divide by the LCM $180$.`, scheme: [['900 minutes', 1], ['5 times', 1]], d: 3, c: 'application', t: [2], time: 150 }), [
       mk.short({ marks: 2, stem: '**(ii)** If route C changes to a bus every 24 minutes, at what time after 6:00 a.m. will all three routes first leave together?', model: r`$24 = 2^3 \times 3$. New LCM $= \text{LCM}(15, 20, 24) = 2^3 \times 3 \times 5 = 120$ minutes, so at 8:00 a.m.`, sol: r`Recompute the LCM with $24$: $120$ min after 6:00 a.m.`, scheme: [['LCM = 120 minutes', 1], ['8:00 a.m.', 1]], d: 3, c: 'application', t: [2], time: 150 }),
     ]),
@@ -698,7 +698,7 @@ caseQ('c02', {
   sol: r`(a) Fewest packets means the largest packet size dividing all three counts: the HCF. (b) $432 = 2^4 \times 3^3$, $576 = 2^6 \times 3^2$, $720 = 2^4 \times 3^2 \times 5$, HCF $= 2^4 \times 3^2 = 144$. (c) (i) $432 \div 144 = 3$, $576 \div 144 = 4$, $720 \div 144 = 5$. (ii) $432 \div 48 = 9$, $576 \div 48 = 12$, $720 \div 48 = 15$.`,
   children: [
     child('a', mk.mcq({ stem: 'The number of bangles in each packet should be', opts: ['the LCM of 432, 576 and 720', 'the product of the three numbers', 'the HCF of 432, 576 and 720', 'any common factor of the three numbers'], key: 'c', sol: 'The packet size must divide all three counts (common factor), and the fewest packets needs the largest such size: the HCF. Any common factor works, but only the HCF gives the fewest packets.', d: 1, c: 'understanding', t: [2], time: 45 })),
-    child('b', mk.num({ stem: 'How many bangles go in each packet?', value: 144, sol: r`$432 = 2^4 \times 3^3$, $576 = 2^6 \times 3^2$, $720 = 2^4 \times 3^2 \times 5$. HCF $= 2^4 \times 3^2 = 144$.`, scheme: [['144', 1]], d: 2, c: 'application', t: [2], time: 120 })),
+    child('b', mk.num({ stem: 'How many bangles go in each packet?', value: 144, sol: r`$432 = 2^4 \times 3^3$, $576 = 2^6 \times 3^2$, $720 = 2^4 \times 3^2 \times 5$. HCF $= 2^4 \times 3^2 = 144$.`, scheme: [['144', 1]], d: 2, c: 'understanding', t: [2], time: 120 })),
     child('c', mk.short({ marks: 2, stem: '**(i)** How many packets does Farida make in all?', model: r`Red: $\dfrac{432}{144} = 3$, green: $\dfrac{576}{144} = 4$, golden: $\dfrac{720}{144} = 5$. Total $= 12$ packets.`, sol: 'Divide each count by 144 and add.', scheme: [['3, 4 and 5 packets', 1], ['Total 12', 1]], d: 2, c: 'application', t: [2], time: 120 }), [
       mk.short({ marks: 2, stem: '**(ii)** Her assistant suggests packets of 48 bangles instead. Find how many packets this needs, and say why 48 is allowed but not the best choice.', model: r`$\dfrac{432}{48} + \dfrac{576}{48} + \dfrac{720}{48} = 9 + 12 + 15 = 36$ packets. $48$ divides all three counts, so it is a common factor, but it is smaller than the HCF $144$, so it needs three times as many packets.`, sol: '48 is a common factor (48 divides 144), not the highest.', scheme: [['36 packets', 1], ['48 is a common factor but not the highest', 1]], d: 3, c: 'evaluation', t: [2], time: 150 }),
     ]),
@@ -712,7 +712,7 @@ caseQ('c03', {
   sol: r`(a) Primes $2, 3, 5, 7$. (b) $2520k$ is a perfect square when every exponent is even: $2^3 \to$ needs $2$, $3^2$ fine, $5 \to$ needs $5$, $7 \to$ needs $7$; $k = 2 \times 5 \times 7 = 70$, and $2520 \times 70 = 176400 = 420^2$. (c) See model answer.`,
   children: [
     child('a', mk.mcq({ stem: 'How many distinct prime factors does 2520 have?', opts: ['3', '4', '7', '8'], key: 'b', sol: r`The distinct primes are $2, 3, 5, 7$: four. (Counting with repetition gives $3 + 2 + 1 + 1 = 7$, option (c).)`, d: 1, c: 'recall', t: [1], time: 40 })),
-    child('b', mk.fill({ stem: r`The smallest natural number $k$ for which $2520k$ is a perfect square is ___.`, acc: [['70']], sol: r`$2520 = 2^3 \times 3^2 \times 5 \times 7$. Make every exponent even: multiply by $2 \times 5 \times 7 = 70$. Check: $2520 \times 70 = 176400 = 420^2$.`, d: 3, c: 'application', t: [1], time: 90 })),
+    child('b', mk.fill({ stem: r`The smallest natural number $k$ for which $2520k$ is a perfect square is ___.`, acc: [['70']], sol: r`$2520 = 2^3 \times 3^2 \times 5 \times 7$. Make every exponent even: multiply by $2 \times 5 \times 7 = 70$. Check: $2520 \times 70 = 176400 = 420^2$.`, d: 3, c: 'understanding', t: [1], time: 90 })),
     child('c', mk.short({ marks: 2, stem: '**(i)** Is Arjun right? Explain using the Fundamental Theorem of Arithmetic.', model: r`No. A prime factorisation must use only primes, and $4$ and $630$ are composite. Breaking them down, $4 = 2^2$ and $630 = 2 \times 3^2 \times 5 \times 7$, gives $2^3 \times 3^2 \times 5 \times 7$ again. The Fundamental Theorem says the prime factorisation is unique apart from order, so there is no "different" one.`, sol: 'Reduce 4 × 630 to primes; it matches the board.', scheme: [['4 and 630 are not prime', 1], ['Reduces to the same factorisation; uniqueness stated', 1]], d: 3, c: 'evaluation', t: [1], time: 150 }), [
       mk.short({ marks: 2, stem: '**(ii)** Use prime factorisation to justify Sana\'s statement that 2520 is the smallest number divisible by every whole number from 1 to 10.', model: r`The smallest such number is $\text{LCM}(1, 2, \dots, 10)$. The greatest prime powers among $1$ to $10$ are $2^3$ (from $8$), $3^2$ (from $9$), $5$ and $7$. So the LCM is $2^3 \times 3^2 \times 5 \times 7 = 2520$.`, sol: 'LCM takes the greatest power of each prime up to 10.', scheme: [['Identifies LCM of 1 to 10', 1], ['Greatest powers 2³, 3², 5, 7 give 2520', 1]], d: 3, c: 'analysis', t: [2], time: 150 }),
     ]),
@@ -721,13 +721,13 @@ caseQ('c03', {
 
 caseQ('c04', {
   passage: r`At a Ramanujan Day quiz in Chennai, the quizmaster writes two numbers: $P = 3 + \sqrt{2}$ and $Q = 3 - \sqrt{2}$. Team Kaveri says both numbers are irrational. Team Vaigai claims, "The sum and the product of two irrational numbers are always irrational." The teams may use the fact that $\sqrt{2}$ is irrational.`,
-  d: 3, c: 'analysis',
+  d: 3, c: 'understanding',
   model: r`(a) Option (a): $P + Q = 6$, rational. (b) $PQ = 7$. (c) (i) If $3 + \sqrt2 = r$ (rational) then $\sqrt2 = r - 3$ is rational, a contradiction; so $P$ is irrational. Or (ii) Vaigai is wrong: $P$ and $Q$ are irrational but $P + Q = 6$ and $PQ = 7$ are rational.`,
   sol: r`(a) $(3 + \sqrt2) + (3 - \sqrt2) = 6$. (b) $(3 + \sqrt2)(3 - \sqrt2) = 9 - 2 = 7$. (c) as in the model answer.`,
   children: [
     child('a', mk.mcq({ stem: r`$P + Q$ is`, opts: [r`$6$, a rational number`, r`$6 + 2\sqrt2$, an irrational number`, r`$2\sqrt2$, an irrational number`, r`$0$`], key: 'a', sol: r`The $\sqrt2$ terms cancel: $3 + \sqrt2 + 3 - \sqrt2 = 6$.`, d: 1, c: 'understanding', t: [3], time: 45 })),
-    child('b', mk.num({ stem: r`Find the value of $P \times Q$.`, value: 7, sol: r`$(3 + \sqrt2)(3 - \sqrt2) = 3^2 - (\sqrt2)^2 = 9 - 2 = 7$.`, scheme: [['7', 1]], d: 2, c: 'application', t: [3], time: 75 })),
-    child('c', mk.short({ marks: 2, stem: r`**(i)** Prove that $P = 3 + \sqrt2$ is irrational.`, model: r`Suppose $3 + \sqrt2 = r$ for a rational $r$. Then $\sqrt2 = r - 3$. A difference of two rationals is rational, so $\sqrt2$ would be rational — a contradiction. Hence $P$ is irrational.`, sol: 'Assume rational, isolate √2, contradiction.', scheme: [['Assumption and √2 = r − 3', 1], ['Contradiction and conclusion', 1]], d: 2, c: 'application', t: [3], time: 150 }), [
+    child('b', mk.num({ stem: r`Find the value of $P \times Q$.`, value: 7, sol: r`$(3 + \sqrt2)(3 - \sqrt2) = 3^2 - (\sqrt2)^2 = 9 - 2 = 7$.`, scheme: [['7', 1]], d: 2, c: 'understanding', t: [3], time: 75 })),
+    child('c', mk.short({ marks: 2, stem: r`**(i)** Prove that $P = 3 + \sqrt2$ is irrational.`, model: r`Suppose $3 + \sqrt2 = r$ for a rational $r$. Then $\sqrt2 = r - 3$. A difference of two rationals is rational, so $\sqrt2$ would be rational — a contradiction. Hence $P$ is irrational.`, sol: 'Assume rational, isolate √2, contradiction.', scheme: [['Assumption and √2 = r − 3', 1], ['Contradiction and conclusion', 1]], d: 2, c: 'understanding', t: [3], time: 150 }), [
       mk.short({ marks: 2, stem: r`**(ii)** Use $P$ and $Q$ to decide whether Team Vaigai's claim is correct.`, model: r`The claim is false. $P$ and $Q$ are both irrational, yet $P + Q = 6$ and $P \times Q = 7$ are rational. One counter-example is enough to disprove an "always" statement.`, sol: 'Counter-example from parts (a) and (b).', scheme: [['Uses P + Q = 6 or PQ = 7 as counter-example', 1], ['Concludes the claim is false', 1]], d: 3, c: 'evaluation', t: [3], time: 120 }),
     ]),
   ],
@@ -741,9 +741,94 @@ caseQ('c05', {
   sol: r`(a) The spacing must divide each side exactly, and be as large as possible. (b) $396 = 2^2 \times 3^2 \times 11$, $504 = 2^3 \times 3^2 \times 7$, $612 = 2^2 \times 3^2 \times 17$, HCF $= 2^2 \times 3^2 = 36$ m. (c) (i) Gaps: $11 + 14 + 17 = 42$; an open path with $42$ gaps has $43$ poles. (ii) Common divisors of the three sides are the divisors of the HCF $36$: $1, 2, 3, 4, 6, 9, 12, 18, 36$; the largest below $20$ is $18$.`,
   children: [
     child('a', mk.mcq({ stem: 'The largest possible distance between poles is', opts: ['the LCM of the three sides', 'the sum of the three sides divided by 3', 'the smallest side', 'the HCF of the three sides'], key: 'd', sol: 'Each side must be an exact number of gaps, so the gap divides every side; the largest such gap is the HCF.', d: 1, c: 'understanding', t: [2], time: 45 })),
-    child('b', mk.num({ stem: 'Find the distance between consecutive poles, in metres.', value: 36, unit: 'm', sol: r`$396 = 2^2 \times 3^2 \times 11$, $504 = 2^3 \times 3^2 \times 7$, $612 = 2^2 \times 3^2 \times 17$. HCF $= 2^2 \times 3^2 = 36$ m.`, scheme: [['36 m', 1]], d: 2, c: 'application', t: [2], time: 120 })),
+    child('b', mk.num({ stem: 'Find the distance between consecutive poles, in metres.', value: 36, unit: 'm', sol: r`$396 = 2^2 \times 3^2 \times 11$, $504 = 2^3 \times 3^2 \times 7$, $612 = 2^2 \times 3^2 \times 17$. HCF $= 2^2 \times 3^2 = 36$ m.`, scheme: [['36 m', 1]], d: 2, c: 'understanding', t: [2], time: 120 })),
     child('c', mk.short({ marks: 2, stem: '**(i)** How many poles are needed in all?', model: r`Gaps: $\dfrac{396}{36} + \dfrac{504}{36} + \dfrac{612}{36} = 11 + 14 + 17 = 42$. The fence is an open path, so poles $= 42 + 1 = 43$ (corner poles are shared, not double-counted).`, sol: 'Count gaps, then add one pole for an open path.', scheme: [['42 gaps', 1], ['43 poles', 1]], d: 4, c: 'analysis', t: [2], time: 180 }), [
       mk.short({ marks: 2, stem: '**(ii)** The supplier can only deliver wire in pieces shorter than 20 m, so each gap must be less than 20 m. What is now the largest possible gap? Explain.', model: r`The gap must still divide all three sides, so it must be a divisor of their HCF $36$: $1, 2, 3, 4, 6, 9, 12, 18, 36$. The largest one below $20$ m is $18$ m.`, sol: 'Common divisors are exactly the divisors of the HCF.', scheme: [['Common divisors are divisors of 36', 1], ['18 m', 1]], d: 4, c: 'analysis', t: [2], time: 180 }),
     ]),
   ],
 }, (C) => { const H = hcfN(396, 504, 612); C.child('a').key('d'); C.child('b').val(H); C.child('c').model([396 / H, 504 / H, 612 / H, (396 + 504 + 612) / H + 1]); let best = 0; for (let g = 1; g < 20; g++) if ([396, 504, 612].every((s) => s % g === 0)) best = g; C.child('cii').model([best]); });
+// =============================================================== added 2026-10-27 (assessment-designer)
+// Recall/understanding written items for the board-paper competency balance (blueprint 54/24/22 Standard,
+// 75/15/10 Basic). Appended after every existing item so earlier ids do not move.
+Q('u301', mk.short({
+  marks: 3,
+  stem: r`Write each of $120$, $144$ and $204$ as a product of primes. Use these factorisations to find the HCF and the LCM of the three numbers.`,
+  model: r`$120 = 2^3 \times 3 \times 5$, $\quad 144 = 2^4 \times 3^2$, $\quad 204 = 2^2 \times 3 \times 17$.
+
+HCF: take each prime common to all three, with its smallest power: $2^2 \times 3 = 12$.
+
+LCM: take every prime that appears, with its greatest power: $2^4 \times 3^2 \times 5 \times 17 = 12240$.`,
+  sol: r`HCF uses the smallest power of each common prime; LCM uses the greatest power of every prime present.`,
+  scheme: [['Three prime factorisations', 1], ['HCF = 12', 1], ['LCM = 12240', 1]],
+  d: 2, c: 'understanding', t: [1, 2], time: 240,
+}), (C) => { C.assert(hcfN(120, 144, 204) === 12 && lcmN(120, 144, 204) === 12240, 'HCF 12, LCM 12240'); C.assert(2 ** 3 * 3 * 5 === 120 && 2 ** 4 * 9 === 144 && 4 * 3 * 17 === 204, 'factorisations'); C.model([12, 12240]); });
+Q('u302', mk.short({
+  marks: 3,
+  stem: r`Prove that $\sqrt{7}$ is irrational.`,
+  model: r`Assume, to the contrary, that $\sqrt7$ is rational. Then $\sqrt7 = \dfrac ab$, where $a$ and $b$ are integers with no common factor other than $1$, and $b \ne 0$.
+
+Squaring, $7b^2 = a^2$. So $7$ divides $a^2$; since $7$ is prime, $7$ divides $a$. Write $a = 7c$ for some integer $c$.
+
+Then $7b^2 = 49c^2$, so $b^2 = 7c^2$. Hence $7$ divides $b^2$, and so $7$ divides $b$.
+
+So $7$ is a common factor of $a$ and $b$, which contradicts our choice of $a$ and $b$. The assumption is false: $\sqrt7$ is irrational.`,
+  sol: r`Contradiction: write the root in lowest terms, show the prime $7$ divides both numerator and denominator.`,
+  scheme: [['Assumption √7 = a/b in lowest terms', 0.5], ['7 | a² ⇒ 7 | a, a = 7c', 1], ['b² = 7c² ⇒ 7 | b', 1], ['Contradiction and conclusion', 0.5]],
+  d: 2, c: 'understanding', t: [3], time: 300,
+}), null, 'standard proof (syllabus LO): steps checked by hand');
+Q('u501', mk.long({
+  stem: r`Two numbers are $3150$ and $1260$.
+
+(a) Write $3150$ as a product of prime factors.
+(b) Write $1260$ as a product of prime factors.
+(c) Use your answers to find the HCF of the two numbers.
+(d) Find their LCM.
+(e) Check that HCF $\times$ LCM equals the product of the two numbers.`,
+  model: r`(a) $3150 = 2 \times 1575 = 2 \times 3^2 \times 175 = 2 \times 3^2 \times 5^2 \times 7$.
+
+(b) $1260 = 2^2 \times 315 = 2^2 \times 3^2 \times 35 = 2^2 \times 3^2 \times 5 \times 7$.
+
+(c) HCF $= 2 \times 3^2 \times 5 \times 7 = 630$ (smallest power of each common prime).
+
+(d) LCM $= 2^2 \times 3^2 \times 5^2 \times 7 = 6300$ (greatest power of each prime).
+
+(e) HCF $\times$ LCM $= 630 \times 6300 = 3969000$, and $3150 \times 1260 = 3969000$. They are equal.`,
+  sol: r`Factorise both numbers first; then read the HCF and LCM off the prime powers.`,
+  scheme: [['3150 = 2 × 3² × 5² × 7', 1], ['1260 = 2² × 3² × 5 × 7', 1], ['HCF = 630', 1], ['LCM = 6300', 1], ['Both products 3969000', 1]],
+  d: 2, c: 'understanding', t: [1, 2], time: 540,
+}), (C) => { const H = gcd(3150, 1260), L = lcm(3150, 1260); C.assert(H === 630 && L === 6300 && H * L === 3150 * 1260, 'HCF·LCM = product'); C.assert(2 * 9 * 25 * 7 === 3150 && 4 * 9 * 5 * 7 === 1260, 'factorisations'); C.model([630, 6300, 3969000]); });
+Q('u502', mk.long({
+  stem: r`(a) Prove that $\sqrt{2}$ is irrational.
+
+(b) Using (a), show that $5 + 3\sqrt{2}$ is irrational.`,
+  model: r`(a) Assume, to the contrary, that $\sqrt2$ is rational: $\sqrt2 = \dfrac ab$, where $a$ and $b$ are co-prime integers and $b \ne 0$.
+
+Squaring, $2b^2 = a^2$. So $2$ divides $a^2$; since $2$ is prime, $2$ divides $a$. Write $a = 2c$.
+
+Then $2b^2 = 4c^2$, so $b^2 = 2c^2$. Hence $2$ divides $b^2$, and so $2$ divides $b$.
+
+Now $2$ divides both $a$ and $b$, which contradicts their being co-prime. So $\sqrt2$ is irrational.
+
+(b) Suppose $5 + 3\sqrt2 = r$, where $r$ is rational. Then $\sqrt2 = \dfrac{r - 5}{3}$.
+
+Since $r$ is rational, $\dfrac{r - 5}{3}$ is rational, so $\sqrt2$ would be rational. This contradicts (a). Hence $5 + 3\sqrt2$ is irrational.`,
+  sol: r`(a) the standard contradiction with a prime dividing a square; (b) isolate $\sqrt2$: a rational expression cannot equal an irrational number.`,
+  scheme: [['Assumption √2 = a/b, co-prime', 1], ['2 | a, a = 2c', 1], ['2 | b, contradiction', 1], ['√2 = (r − 5)/3', 1], ['Contradiction with (a), conclusion', 1]],
+  d: 2, c: 'understanding', t: [3], time: 480,
+}), null, 'standard proof (syllabus LO): steps checked by hand');
+Q('u503', mk.long({
+  stem: r`(a) Write $72$, $120$ and $168$ as products of primes.
+(b) Find the HCF of the three numbers.
+(c) Find the LCM of the three numbers.
+(d) Find the HCF and the LCM of $72$ and $120$ only, and check that their product equals $72 \times 120$.`,
+  model: r`(a) $72 = 2^3 \times 3^2$, $\quad 120 = 2^3 \times 3 \times 5$, $\quad 168 = 2^3 \times 3 \times 7$.
+
+(b) HCF $= 2^3 \times 3 = 24$ (smallest power of each common prime).
+
+(c) LCM $= 2^3 \times 3^2 \times 5 \times 7 = 2520$ (greatest power of every prime that appears).
+
+(d) HCF$(72, 120) = 2^3 \times 3 = 24$ and LCM$(72, 120) = 2^3 \times 3^2 \times 5 = 360$. Then $24 \times 360 = 8640$ and $72 \times 120 = 8640$ ✓.`,
+  sol: r`Read HCF and LCM off the prime powers; the product rule is checked for two numbers only.`,
+  scheme: [['Three factorisations', 2], ['HCF = 24', 1], ['LCM = 2520', 1], ['24 × 360 = 8640 = 72 × 120', 1]],
+  d: 2, c: 'understanding', t: [1, 2], time: 480,
+}), (C) => { C.assert(hcfN(72, 120, 168) === 24 && lcmN(72, 120, 168) === 2520, 'three numbers'); C.assert(gcd(72, 120) === 24 && lcm(72, 120) === 360 && 24 * 360 === 72 * 120, 'two numbers'); C.model([24, 2520, 360, 8640]); });

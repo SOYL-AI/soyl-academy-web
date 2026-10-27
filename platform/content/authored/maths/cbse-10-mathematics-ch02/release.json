@@ -3419,23 +3419,23 @@
       "unit": "cbse-10-mathematics-ch02",
       "language": "en",
       "type": "mcq",
-      "stem_md": "If $\\alpha$ and $\\beta$ are the zeroes of $x^2 - 5x + 6$, then $\\dfrac{1}{\\alpha} + \\dfrac{1}{\\beta}$ equals",
+      "stem_md": "Without solving $x^2 - 7x + 12 = 0$, Tanvi adds the reciprocals of the two zeroes of $x^2 - 7x + 12$. Her total is",
       "options": [
         {
           "id": "a",
-          "text_md": "$\\dfrac{6}{5}$"
+          "text_md": "$\\dfrac{12}{7}$"
         },
         {
           "id": "b",
-          "text_md": "$-\\dfrac{5}{6}$"
+          "text_md": "$-\\dfrac{7}{12}$"
         },
         {
           "id": "c",
-          "text_md": "$\\dfrac{1}{6}$"
+          "text_md": "$\\dfrac{1}{12}$"
         },
         {
           "id": "d",
-          "text_md": "$\\dfrac{5}{6}$"
+          "text_md": "$\\dfrac{7}{12}$"
         }
       ],
       "match_right": [],
@@ -3444,7 +3444,7 @@
           "d"
         ]
       },
-      "solution_md": "$\\dfrac1\\alpha + \\dfrac1\\beta = \\dfrac{\\alpha + \\beta}{\\alpha\\beta} = \\dfrac56$. **Check:** zeroes $2$ and $3$: $\\dfrac12 + \\dfrac13 = \\dfrac56$. Option (a) inverts the fraction.",
+      "solution_md": "$\\dfrac1\\alpha + \\dfrac1\\beta = \\dfrac{\\alpha + \\beta}{\\alpha\\beta} = \\dfrac{7}{12}$. **Check:** the zeroes are $3$ and $4$: $\\dfrac13 + \\dfrac14 = \\dfrac{7}{12}$. Option (a) inverts the fraction; (b) takes the sum of the zeroes as $-7$.",
       "marking_scheme": [
         {
           "step": "Correct option (d)",
@@ -3476,23 +3476,23 @@
       "unit": "cbse-10-mathematics-ch02",
       "language": "en",
       "type": "mcq",
-      "stem_md": "A quadratic polynomial whose zeroes are $2 + \\sqrt{3}$ and $2 - \\sqrt{3}$ is",
+      "stem_md": "Which of these has $6$ as the sum and $7$ as the product of its zeroes?",
       "options": [
         {
           "id": "a",
-          "text_md": "$x^2 - 4x + 1$"
+          "text_md": "$x^2 - 6x + 7$"
         },
         {
           "id": "b",
-          "text_md": "$x^2 + 4x + 1$"
+          "text_md": "$x^2 + 6x + 7$"
         },
         {
           "id": "c",
-          "text_md": "$x^2 - 4x - 1$"
+          "text_md": "$x^2 - 6x - 7$"
         },
         {
           "id": "d",
-          "text_md": "$x^2 - 4x + 7$"
+          "text_md": "$x^2 - 7x + 6$"
         }
       ],
       "match_right": [],
@@ -3501,7 +3501,7 @@
           "a"
         ]
       },
-      "solution_md": "Sum $= 4$; product $= (2 + \\sqrt3)(2 - \\sqrt3) = 4 - 3 = 1$. Polynomial: $x^2 - 4x + 1$. Option (d) adds $4 + 3$ for the product.",
+      "solution_md": "A quadratic with sum of zeroes $S$ and product $P$ is $k(x^2 - Sx + P)$. With $S = 6$, $P = 7$: $x^2 - 6x + 7$. **Check:** its zeroes are $3 \\pm \\sqrt2$; sum $6$, product $9 - 2 = 7$. Option (b) has sum $-6$; (c) has product $-7$; (d) swaps the two numbers.",
       "marking_scheme": [
         {
           "step": "Correct option (a)",
@@ -4460,8 +4460,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t02"
       ],
@@ -4483,22 +4483,22 @@
       "unit": "cbse-10-mathematics-ch02",
       "language": "en",
       "type": "numerical",
-      "stem_md": "If $\\alpha$ and $\\beta$ are the zeroes of $x^2 - 8x + 13$, find $(\\alpha - \\beta)^2$.",
+      "stem_md": "The two zeroes of $x^2 - 8x + k$ differ by $2\\sqrt{3}$. Find the value of $k$.",
       "options": [],
       "match_right": [],
       "answer": {
-        "value": 12,
+        "value": 13,
         "tolerance": 0,
         "unit": null
       },
-      "solution_md": "$(\\alpha - \\beta)^2 = (\\alpha + \\beta)^2 - 4\\alpha\\beta = 64 - 52 = 12$.",
+      "solution_md": "With $\\alpha + \\beta = 8$ and $\\alpha\\beta = k$: $(\\alpha - \\beta)^2 = (\\alpha + \\beta)^2 - 4\\alpha\\beta$, so $(2\\sqrt3)^2 = 64 - 4k$, i.e. $12 = 64 - 4k$ and $4k = 52$. Hence $k = 13$. **Check:** the zeroes of $x^2 - 8x + 13$ are $4 \\pm \\sqrt3$, which differ by $2\\sqrt3$.",
       "marking_scheme": [
         {
-          "step": "Identity (α − β)² = (α + β)² − 4αβ",
+          "step": "Uses (α − β)² = (α + β)² − 4αβ with 12 = 64 − 4k",
           "marks": 1
         },
         {
-          "step": "12",
+          "step": "k = 13",
           "marks": 1
         }
       ],
@@ -4616,33 +4616,34 @@
       "unit": "cbse-10-mathematics-ch02",
       "language": "en",
       "type": "numerical",
-      "stem_md": "If $\\alpha$ and $\\beta$ are the zeroes of $2x^2 + 7x + 3$, find $\\alpha^2\\beta + \\alpha\\beta^2$.",
+      "stem_md": "One zero of the polynomial $2x^2 + 7x + k$ is $-3$. What is $k$?",
       "options": [],
       "match_right": [],
       "answer": {
-        "value": -5.25,
+        "value": 3,
         "tolerance": 0,
         "unit": null
       },
-      "solution_md": "$\\alpha^2\\beta + \\alpha\\beta^2 = \\alpha\\beta(\\alpha + \\beta) = \\dfrac32 \\times \\left(-\\dfrac72\\right) = -\\dfrac{21}{4} = -5.25$.",
+      "solution_md": "A zero makes the polynomial equal to $0$: $2(-3)^2 + 7(-3) + k = 0$, so $18 - 21 + k = 0$ and $k = 3$. **Check:** $2x^2 + 7x + 3 = (2x + 1)(x + 3)$ has zeroes $-3$ and $-\\dfrac12$.",
       "marking_scheme": [
         {
-          "step": "Factorises as αβ(α + β)",
+          "step": "Substitutes x = −3 and equates to 0",
           "marks": 1
         },
         {
-          "step": "−21/4 = −5.25",
+          "step": "k = 3",
           "marks": 1
         }
       ],
       "marks": 2,
-      "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
+        "cbse-10-mathematics-ch02-t01",
         "cbse-10-mathematics-ch02-t02"
       ],
-      "expected_time_sec": 120,
+      "expected_time_sec": 90,
       "assets": [],
       "children": [],
       "status": "draft",
@@ -4681,8 +4682,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t01"
       ],
@@ -4725,8 +4726,8 @@
       ],
       "marks": 2,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t02"
       ],
@@ -4944,20 +4945,20 @@
       "unit": "cbse-10-mathematics-ch02",
       "language": "en",
       "type": "short",
-      "stem_md": "Find the zeroes of $9t^2 - 16$ and verify the relationship between the zeroes and the coefficients.",
+      "stem_md": "The graph of $y = 25t^2 - 36$ cuts the $t$-axis at two points. Write down their coordinates, and explain from the coefficients why the two points are the same distance from the origin.",
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "$9t^2 - 16 = (3t - 4)(3t + 4)$, so the zeroes are $\\dfrac43$ and $-\\dfrac43$.\n\nSum $= 0 = -\\dfrac{0}{9}$ ✓ (the coefficient of $t$ is $0$). Product $= -\\dfrac{16}{9} = \\dfrac ca$ ✓."
+        "model_answer_md": "$25t^2 - 36 = (5t - 6)(5t + 6)$, so $y = 0$ at $t = \\dfrac65$ and $t = -\\dfrac65$: the points are $\\left(\\dfrac65, 0\\right)$ and $\\left(-\\dfrac65, 0\\right)$.\n\nThe coefficient of $t$ is $0$, so the sum of the zeroes is $-\\dfrac{0}{25} = 0$: the zeroes are negatives of each other, and so they lie at the same distance, $\\dfrac65 = 1.2$, on either side of the origin."
       },
-      "solution_md": "Difference of squares. Remember $b = 0$ here.",
+      "solution_md": "Difference of squares for the crossing points; then use sum of zeroes $= -\\dfrac ba$ with $b = 0$.",
       "marking_scheme": [
         {
-          "step": "Zeroes ±4/3",
+          "step": "Points (6/5, 0) and (−6/5, 0)",
           "marks": 1
         },
         {
-          "step": "Relations verified with b = 0",
+          "step": "Sum of zeroes = −b/a = 0, so symmetric about the origin",
           "marks": 1
         }
       ],
@@ -4966,6 +4967,7 @@
       "competency": "understanding",
       "bloom": "understand",
       "topic_ids": [
+        "cbse-10-mathematics-ch02-t01",
         "cbse-10-mathematics-ch02-t02"
       ],
       "expected_time_sec": 120,
@@ -5047,8 +5049,8 @@
       ],
       "marks": 2,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t01",
         "cbse-10-mathematics-ch02-t02"
@@ -5174,8 +5176,8 @@
       ],
       "marks": 2,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t02"
       ],
@@ -5197,31 +5199,31 @@
       "unit": "cbse-10-mathematics-ch02",
       "language": "en",
       "type": "short",
-      "stem_md": "Find the zeroes of $4x^2 + 4x - 15$ and verify the relationship between the zeroes and the coefficients.",
+      "stem_md": "A rectangular mat has area $(6x^2 + 7x - 20)$ cm² and length $(2x + 5)$ cm. Find an expression for its breadth. For which value of $x$ would the breadth become zero, and why is that value also a zero of the area polynomial?",
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "$4x^2 + 4x - 15 = 4x^2 + 10x - 6x - 15 = 2x(2x + 5) - 3(2x + 5) = (2x + 5)(2x - 3)$.\n\nZeroes: $-\\dfrac52$ and $\\dfrac32$.\n\nSum $= -\\dfrac52 + \\dfrac32 = -1 = -\\dfrac44$ ✓. Product $= -\\dfrac52 \\times \\dfrac32 = -\\dfrac{15}{4}$ ✓."
+        "model_answer_md": "Split the middle term: $ac = -120 = 15 \\times (-8)$ with $15 - 8 = 7$.\n\n$6x^2 + 7x - 20 = 6x^2 + 15x - 8x - 20 = 3x(2x + 5) - 4(2x + 5) = (2x + 5)(3x - 4)$.\n\nSo the breadth is $(3x - 4)$ cm.\n\nThe breadth is zero when $3x - 4 = 0$, i.e. $x = \\dfrac43$.\n\nAt $x = \\dfrac43$ the area $= (2x + 5) \\times 0 = 0$, so $\\dfrac43$ is a zero of $6x^2 + 7x - 20$ (its other zero, $-\\dfrac52$, would make the length zero)."
       },
-      "solution_md": "$ac = -60 = 10 \\times (-6)$ with $10 - 6 = 4$: split the middle term as $10x - 6x$.",
+      "solution_md": "Factorise the area by splitting the middle term; the factor other than the length is the breadth, and a factor equal to zero makes the product zero.",
       "marking_scheme": [
         {
-          "step": "Correct splitting and factorisation",
+          "step": "Correct splitting and factorisation (2x + 5)(3x − 4)",
           "marks": 1
         },
         {
-          "step": "Zeroes −5/2 and 3/2",
+          "step": "Breadth (3x − 4) cm and x = 4/3",
           "marks": 1
         },
         {
-          "step": "Both relations verified",
+          "step": "Reason: area = length × 0 = 0, so 4/3 is a zero",
           "marks": 1
         }
       ],
       "marks": 3,
-      "difficulty": 2,
-      "competency": "understanding",
-      "bloom": "understand",
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t02"
       ],
@@ -5266,8 +5268,8 @@
       ],
       "marks": 3,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t02"
       ],
@@ -5289,24 +5291,24 @@
       "unit": "cbse-10-mathematics-ch02",
       "language": "en",
       "type": "short",
-      "stem_md": "$\\alpha$ and $\\beta$ are the zeroes of $x^2 - 7x + 10$. Find a quadratic polynomial whose zeroes are $\\alpha^2$ and $\\beta^2$.",
+      "stem_md": "The zeroes of $x^2 - 5x + 3$ are irrational, so call them $p$ and $q$ without working them out. Squaring each zero gives the two zeroes of another quadratic, $x^2 + bx + c$. Find $b$ and $c$.",
       "options": [],
       "match_right": [],
       "answer": {
-        "model_answer_md": "$\\alpha + \\beta = 7$, $\\alpha\\beta = 10$.\n\nSum of new zeroes $= \\alpha^2 + \\beta^2 = (\\alpha + \\beta)^2 - 2\\alpha\\beta = 49 - 20 = 29$.\n\nProduct $= \\alpha^2\\beta^2 = (\\alpha\\beta)^2 = 100$.\n\nPolynomial: $x^2 - 29x + 100$. (Check: $\\alpha, \\beta = 2, 5$ give $4$ and $25$; $4 + 25 = 29$, $4 \\times 25 = 100$.)"
+        "model_answer_md": "From the coefficients: $p + q = 5$ and $pq = 3$.\n\nSum of the new zeroes $= p^2 + q^2 = (p + q)^2 - 2pq = 25 - 6 = 19$.\n\nProduct of the new zeroes $= p^2q^2 = (pq)^2 = 9$.\n\nThe new quadratic is $x^2 - 19x + 9$, so $b = -19$ and $c = 9$."
       },
-      "solution_md": "Express the new sum and product through $\\alpha + \\beta$ and $\\alpha\\beta$.",
+      "solution_md": "Work only with $p + q$ and $pq$: $p^2 + q^2 = (p + q)^2 - 2pq$ and $p^2q^2 = (pq)^2$; then $x^2 - (\\text{sum})x + \\text{product}$.",
       "marking_scheme": [
         {
-          "step": "α² + β² = 29",
+          "step": "p² + q² = 19",
           "marks": 1
         },
         {
-          "step": "α²β² = 100",
+          "step": "p²q² = 9",
           "marks": 1
         },
         {
-          "step": "x² − 29x + 100",
+          "step": "b = −19, c = 9",
           "marks": 1
         }
       ],
@@ -5358,8 +5360,8 @@
       ],
       "marks": 3,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t02"
       ],
@@ -5404,8 +5406,8 @@
       ],
       "marks": 3,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t01",
         "cbse-10-mathematics-ch02-t02"
@@ -5477,8 +5479,8 @@
       ],
       "marks": 3,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t02"
       ],
@@ -5577,8 +5579,8 @@
       ],
       "marks": 5,
       "difficulty": 2,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t01",
         "cbse-10-mathematics-ch02-t02"
@@ -6035,8 +6037,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch02-t01"
           ],
@@ -6145,8 +6147,8 @@
       ],
       "marks": 4,
       "difficulty": 3,
-      "competency": "application",
-      "bloom": "apply",
+      "competency": "understanding",
+      "bloom": "understand",
       "topic_ids": [
         "cbse-10-mathematics-ch02-t02"
       ],
@@ -6192,8 +6194,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch02-t02"
           ],
@@ -6252,8 +6254,8 @@
           ],
           "marks": 2,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch02-t02"
           ],
@@ -6624,8 +6626,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch02-t01"
           ],
@@ -6814,8 +6816,8 @@
           ],
           "marks": 1,
           "difficulty": 2,
-          "competency": "application",
-          "bloom": "apply",
+          "competency": "understanding",
+          "bloom": "understand",
           "topic_ids": [
             "cbse-10-mathematics-ch02-t02"
           ],
@@ -6895,15 +6897,61 @@
         "generated_at": "2026-10-26",
         "author": "claude-opus-5-5 (subject-producer)"
       }
+    },
+    {
+      "id": "q_cbse10math_ch02_071",
+      "unit": "cbse-10-mathematics-ch02",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Factorise $6x^2 - 7x - 3$ to find its two zeroes. Then check that their sum equals $-\\dfrac{b}{a}$ and their product equals $\\dfrac{c}{a}$.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Split the middle term: $6x^2 - 9x + 2x - 3 = 3x(2x - 3) + 1(2x - 3) = (3x + 1)(2x - 3)$.\n\nZeroes: $3x + 1 = 0 \\Rightarrow x = -\\dfrac13$, and $2x - 3 = 0 \\Rightarrow x = \\dfrac32$.\n\nSum $= -\\dfrac13 + \\dfrac32 = \\dfrac{-2 + 9}{6} = \\dfrac{7}{6}$, and $-\\dfrac ba = -\\dfrac{-7}{6} = \\dfrac{7}{6}$ ✓.\n\nProduct $= -\\dfrac13 \\times \\dfrac32 = -\\dfrac12$, and $\\dfrac ca = \\dfrac{-3}{6} = -\\dfrac12$ ✓."
+      },
+      "solution_md": "Split $-7x$ as $-9x + 2x$ (product $6 \\times (-3) = -18$), then compare with $a = 6$, $b = -7$, $c = -3$.",
+      "marking_scheme": [
+        {
+          "step": "(3x + 1)(2x − 3)",
+          "marks": 1
+        },
+        {
+          "step": "Zeroes −1/3 and 3/2",
+          "marks": 1
+        },
+        {
+          "step": "Sum 7/6 and product −1/2 checked",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "cbse-10-mathematics-ch02-t02"
+      ],
+      "expected_time_sec": 240,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-26",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
     }
   ],
   "build": {
     "run_id": null,
     "checks": {
       "syllabus": "topics t01–t02 only; removed topics (zeroes–coefficients relation for cubics, division algorithm) absent; cubic graphs appear only for the geometric meaning of zeroes",
-      "katex": "1469 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
+      "katex": "1515 math strings parsed with KaTeX 0.19.0 (throwOnError, strict: error), 0 failures; 0 LaTeX commands missing their backslash; 0 LaTeX outside $…$",
       "plots": "12 deck plots + 14 notes/question plots: 53 marked points all on their curves and matching their labels; 59 zeros located numerically and all marked; 8 intersection points lie on both lines",
-      "re_solve": "137/137 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
+      "re_solve": "142/142 checks pass (independent arithmetic from the givens; keys, numerical values, and the numbers inside solutions and model answers)",
       "narration": "34 slides, max 68 words, mean 53; no symbols, LaTeX or letter abbreviations",
       "gate": "npm test -w @soyl/content-templates and content lint (lintExemplar) run clean on this chapter"
     }

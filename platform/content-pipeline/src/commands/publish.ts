@@ -7,7 +7,9 @@
  *   generated units (out/)   need a clean lint and a verify report; only auto_verified questions ship
  *                            (needs_review ones stay out); chapter tests are assembled from the release
  *   --authored               platform/content/authored + content-templates/exemplars: every item;
- *                            tests.json is ingested with its question versions remapped
+ *                            tests.json is ingested with its question versions remapped; then each
+ *                            subject's frozen test series (content/authored/series/<subject>.json,
+ *                            ADR-019) is ingested the same way, after all of its chapters
  *
  * Beta posture (§7.3, CONTEXT §4): items go draft/auto_verified → published.
  * Versioning: an item whose content is unchanged keeps its version; a changed item gets version + 1
@@ -17,7 +19,7 @@
  * Rollback: `rollback --unit <id> --to <version>` re-activates an earlier release.
  */
 import path from 'node:path';
-import { and, desc, eq, isNull, ne } from 'drizzle-orm';
+import { and, desc, eq, inArray, isNull, ne } from 'drizzle-orm';
 import { activateRelease, ingestChapterRelease, sha256Json } from '@soyl/db/content-ingest';
 import { contentReleases, decks as decksTable, flashcardSets, notes as notesTable, questions as questionsTable } from '@soyl/db/schema';
 import { ChapterRelease, releaseBlobKey, type Deck, type FlashcardSet, type Notes, type Question, type TestDefinition } from '@soyl/shared/content/index';
@@ -28,7 +30,8 @@ import type { Pipeline } from '../pipeline';
 import { loadOutUnit, type ContentUnit } from '../sources';
 import { assemblePaper, type BankItem } from '../assemble/engine';
 import { planSubjectTests } from '../assemble/series';
-import { ingestTests } from './assemble';
+import { ingestTests, withCompetencyMarks } from './assemble';
+import { frozenSubjects, loadFrozenSeries, questionIds, remapVersions } from '../assemble/frozen';
 import { applyAudio, audioManifestFile, type AudioManifestFile } from './tts';
 import { authoredInScope } from './verify';
 
@@ -160,7 +163,7 @@ async function publishUnit(p: Pipeline, u: ContentUnit, opts: { allowMock: boole
       .map((t) => ({ ...t, sections: t.sections.map((s) => ({ ...s, items: s.items.map((i) => ({ ...i, question_version: versions.get(i.question_id)! })) })) }));
     if (tests.length < u.tests.length) notes.push(`${u.tests.length - tests.length} test(s) reference questions not in the release; skipped`);
   } else {
-    const bank: BankItem[] = vQuestions.map((q) => ({ id: q.id, version: q.version, unit: u.unit, type: q.type, marks: q.marks, difficulty: q.difficulty, competency: q.competency, topic_ids: q.topic_ids }));
+    const bank: BankItem[] = vQuestions.map((q) => withCompetencyMarks({ id: q.id, version: q.version, unit: u.unit, type: q.type, marks: q.marks, difficulty: q.difficulty, competency: q.competency, topic_ids: q.topic_ids }, q.children));
     const plan = planSubjectTests(p.catalog, ref.subject, { series: false, academicYear: year, chapters: [ref.chapter.number] });
     const exclude = new Set<string>();
     for (const planned of plan.papers) {
@@ -209,10 +212,49 @@ export async function publishCommand(p: Pipeline, scope: Scope, opts: { authored
       results.push({ unit: u.unit, status: 'failed', version: null, questions: 0, tests: 0, message: (e as Error).message });
     }
   }
+  // Frozen test series (ADR-019): after every chapter, so the questions they reference are published.
+  if (opts.authored && scope.chapter === undefined) {
+    const inScope = new Set(subjectsInScope(p.catalog, scope).map((s) => s.id));
+    for (const subjectId of frozenSubjects(p.paths).filter((s) => inScope.has(s))) {
+      try {
+        results.push(await publishSeries(p, subjectId));
+      } catch (e) {
+        results.push({ unit: `series:${subjectId}`, status: 'failed', version: null, questions: 0, tests: 0, message: (e as Error).message });
+      }
+    }
+  }
   p.log(table(['unit', 'status', 'version', 'questions', 'tests', 'detail'], results.map((r) => [r.unit, r.status, r.version ?? '—', r.questions, r.tests, r.message]), ['l', 'l', 'r', 'r', 'r', 'l']));
   const bad = results.filter((r) => r.status === 'refused' || r.status === 'failed').length;
   p.log(`publish: ${results.filter((r) => r.status === 'published').length} published, ${results.filter((r) => r.status === 'unchanged').length} unchanged, ${bad} refused/failed`);
   return { results, exitCode: bad ? 1 : 0 };
+}
+
+/**
+ * Ingests a subject's frozen series with question versions remapped to the current published ones.
+ * Idempotent: unchanged papers are left alone (ingestTests compares sections), series rows are upserted
+ * by key. Refuses the whole series when any referenced question is not published.
+ */
+export async function publishSeries(p: Pipeline, subjectId: string): Promise<PublishResult> {
+  const unit = `series:${subjectId}`;
+  const file = loadFrozenSeries(p.paths, subjectId);
+  if (!file) return { unit, status: 'refused', version: null, questions: 0, tests: 0, message: 'no frozen series file' };
+  const { db } = await p.dbAccess.get();
+  const ids = [...new Set(file.tests.flatMap((t) => questionIds(t.test)))];
+  const rows = ids.length
+    ? await db
+        .select({ key: questionsTable.key, version: questionsTable.version })
+        .from(questionsTable)
+        .where(and(inArray(questionsTable.key, ids), eq(questionsTable.academicYear, file.academic_year), eq(questionsTable.isCurrent, true), inArray(questionsTable.status, ['published', 'reviewed'])))
+    : [];
+  const versions = new Map(rows.map((r) => [r.key, r.version]));
+  const list = [];
+  for (const { test, series } of file.tests) {
+    const r = remapVersions(test, versions);
+    if (!r.ok) return { unit, status: 'refused', version: null, questions: ids.length, tests: 0, message: `${test.id} references ${r.missing.length} unpublished question(s): ${r.missing.slice(0, 4).join(', ')}` };
+    list.push({ test: r.test, series });
+  }
+  const n = await ingestTests(p, subjectId, file.academic_year, list);
+  return { unit, status: n.ingested ? 'published' : 'unchanged', version: null, questions: ids.length, tests: list.length, message: `frozen series: tests ${n.ingested} new / ${n.unchanged} unchanged; ${new Set(file.tests.map((t) => t.series.key)).size} series` };
 }
 
 /** `rollback --unit <id> --to <version>`: re-activates an earlier release of a unit. */

@@ -58,3 +58,7 @@ An Amritsar schoolteacher's diary (April 1919), a Pratapgarh tenant's letter to 
 ## Gaps
 - Map answers cannot be drawn on a map until `MapPlace` has coordinates (batch A handoff, gap 1); stems describe each place by its event.
 - Board History papers sometimes use a picture (e.g. a Bharat Mata painting); here images are described in words inside an imagined source.
+
+## Added by assessment-designer (2026-10-27)
+
+8 board-pattern History map questions (2 marks, two places from the CBSE map list: q_cbse10sst_ch02_099–106) for the full mocks' Q9. Original wording; places from the CBSE 2026-27 map list; `map_id: india-political`.

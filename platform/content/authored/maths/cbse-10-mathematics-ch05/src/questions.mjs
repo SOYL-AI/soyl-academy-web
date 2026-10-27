@@ -80,20 +80,20 @@ Q('s201', mk.short({ marks: 2, stem: 'Is $-10, -6, -2, 2, \\ldots$ an AP? If it 
 Next three terms: $6, 10, 14$.`, sol: 'Check every given difference, not just the first one.', scheme: [['Common difference 4 shown for all pairs', 1], ['6, 10, 14', 1]], d: 1, c: 'understanding', t: [1], time: 90 }), (C) => { C.assert(isAP([-10, -6, -2, 2]), 'AP'); C.model([4, 6, 10, 14]); });
 Q('s202', mk.short({ marks: 2, stem: 'The 9th term of an AP is 47 and its 15th term is 77. Find its 25th term.', model: r`$a + 8d = 47$ and $a + 14d = 77$. Subtracting, $6d = 30$, so $d = 5$ and $a = 47 - 40 = 7$.
 
-$a_{25} = 7 + 24 \times 5 = 127$.`, sol: r`**Check:** $7 + 70 = 77$ for the $15$th term.`, scheme: [['a = 7, d = 5', 1], ['a₂₅ = 127', 1]], d: 2, c: 'application', t: [2], time: 120 }), (C) => { const d = (77 - 47) / 6, a = 47 - 8 * d; C.assert(T(a, d, 15) === 77, 'a15'); C.model([a, d, T(a, d, 25)]); });
+$a_{25} = 7 + 24 \times 5 = 127$.`, sol: r`**Check:** $7 + 70 = 77$ for the $15$th term.`, scheme: [['a = 7, d = 5', 1], ['a₂₅ = 127', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), (C) => { const d = (77 - 47) / 6, a = 47 - 8 * d; C.assert(T(a, d, 15) === 77, 'a15'); C.model([a, d, T(a, d, 25)]); });
 Q('s203', mk.short({ marks: 2, stem: 'In an AP, the 5th term is 19, and the 8th term exceeds the 13th term by 20. Find the first three terms.', model: r`$a_8 - a_{13} = (a + 7d) - (a + 12d) = -5d = 20$, so $d = -4$.
 
 $a + 4d = 19 \Rightarrow a = 19 + 16 = 35$. The AP is $35, 31, 27, \ldots$`, sol: r`**Check:** $a_8 = 35 - 28 = 7$, $a_{13} = 35 - 48 = -13$, and $7 - (-13) = 20$.`, scheme: [['d = −4', 1], ['35, 31, 27', 1]], d: 3, c: 'application', t: [2], time: 150 }), (C) => { const d = -4, a = 35; C.assert(T(a, d, 5) === 19 && T(a, d, 8) - T(a, d, 13) === 20, 'conditions'); C.model([35, 31, 27]); C.sol([7, -13]); });
 Q('s204', mk.short({ marks: 2, stem: 'For what value of $n$ are the $n$th terms of the APs $50, 53, 56, \\ldots$ and $8, 14, 20, \\ldots$ equal? Find that common term.', model: r`$50 + 3(n - 1) = 8 + 6(n - 1) \Rightarrow 42 = 3(n - 1) \Rightarrow n - 1 = 14 \Rightarrow n = 15$.
 
-The common term is $50 + 42 = 92$ (and $8 + 84 = 92$).`, sol: 'Equate the two general terms.', scheme: [['Equation and n = 15', 1], ['Common term 92', 1]], d: 2, c: 'application', t: [2], time: 120 }), (C) => { const n = firstN((k) => T(50, 3, k) === T(8, 6, k)); C.assert(n === 15, 'n'); C.model([15, T(50, 3, n), 84]); });
+The common term is $50 + 42 = 92$ (and $8 + 84 = 92$).`, sol: 'Equate the two general terms.', scheme: [['Equation and n = 15', 1], ['Common term 92', 1]], d: 2, c: 'understanding', t: [2], time: 120 }), (C) => { const n = firstN((k) => T(50, 3, k) === T(8, 6, k)); C.assert(n === 15, 'n'); C.model([15, T(50, 3, n), 84]); });
 Q('s205', mk.short({ marks: 2, stem: 'Find the middle term of the AP $6, 13, 20, \\ldots, 216$.', model: r`$216 = 6 + (n - 1)7 \Rightarrow n - 1 = 30 \Rightarrow n = 31$, an odd number, so the middle term is the $16$th.
 
-$a_{16} = 6 + 15 \times 7 = 111$.`, sol: r`With $31$ terms, $15$ come before the middle term and $15$ after it. (Also: $\dfrac{6 + 216}{2} = 111$.)`, scheme: [['n = 31', 1], ['Middle (16th) term 111', 1]], d: 3, c: 'application', t: [2], time: 150 }), (C) => { const n = firstN((k) => T(6, 7, k) === 216); C.assert(n % 2 === 1, 'odd count'); C.model([31, 16, T(6, 7, (n + 1) / 2)]); });
+$a_{16} = 6 + 15 \times 7 = 111$.`, sol: r`With $31$ terms, $15$ come before the middle term and $15$ after it. (Also: $\dfrac{6 + 216}{2} = 111$.)`, scheme: [['n = 31', 1], ['Middle (16th) term 111', 1]], d: 3, c: 'understanding', t: [2], time: 150 }), (C) => { const n = firstN((k) => T(6, 7, k) === 216); C.assert(n % 2 === 1, 'odd count'); C.model([31, 16, T(6, 7, (n + 1) / 2)]); });
 Q('s206', mk.short({ marks: 2, stem: 'Find the sum of the first 22 terms of the AP $8, 3, -2, \\ldots$', model: r`$a = 8$, $d = -5$. $S_{22} = \dfrac{22}{2}[16 + 21(-5)] = 11(16 - 105) = 11 \times (-89) = -979$.`, sol: 'The terms become negative from the 3rd term, so a negative sum is reasonable.', scheme: [['Substitution in Sₙ', 1], ['−979', 1]], d: 2, c: 'understanding', t: [3], time: 120 }), (C) => { C.assert(S(8, -5, 22) === -979, 'S22'); C.model([105, 89, -979]); });
 Q('s207', mk.short({ marks: 2, stem: 'The sum of the first $n$ terms of an AP is $S_n = 3n^2 - n$. Find the AP and its 12th term.', model: r`$a_1 = S_1 = 2$ and $S_2 = 12 - 2 = 10$, so $a_2 = 10 - 2 = 8$ and $d = 6$. The AP is $2, 8, 14, \ldots$
 
-$a_{12} = 2 + 11 \times 6 = 68$.`, sol: r`**Check:** $a_{12} = S_{12} - S_{11} = 420 - 352 = 68$.`, scheme: [['a = 2, d = 6', 1], ['a₁₂ = 68', 1]], d: 3, c: 'application', t: [3], time: 150 }), (C) => { const Sn = (n) => 3 * n * n - n; C.assert(Sn(12) - Sn(11) === 68 && T(2, 6, 12) === 68 && Sn(2) - Sn(1) === 8, 'AP'); C.model([2, 8, 14, 68]); C.sol([420, 352]); });
+$a_{12} = 2 + 11 \times 6 = 68$.`, sol: r`**Check:** $a_{12} = S_{12} - S_{11} = 420 - 352 = 68$.`, scheme: [['a = 2, d = 6', 1], ['a₁₂ = 68', 1]], d: 3, c: 'understanding', t: [3], time: 150 }), (C) => { const Sn = (n) => 3 * n * n - n; C.assert(Sn(12) - Sn(11) === 68 && T(2, 6, 12) === 68 && Sn(2) - Sn(1) === 8, 'AP'); C.model([2, 8, 14, 68]); C.sol([420, 352]); });
 Q('s208', mk.short({ marks: 2, stem: 'Shalini in Pune puts ₹50 in a piggy bank on day 1, ₹60 on day 2, ₹70 on day 3, and so on. How much has she saved at the end of 20 days?', model: r`$a = 50$, $d = 10$, $n = 20$. $S_{20} = \dfrac{20}{2}[100 + 19 \times 10] = 10 \times 290 = 2900$.
 
 She has saved ₹$2900$.`, sol: r`On day $20$ she puts in $50 + 190 = $ ₹$240$; check: $10(50 + 240) = 2900$.`, scheme: [['a = 50, d = 10, n = 20 in Sₙ', 1], ['₹2900', 1]], d: 2, c: 'application', t: [3, 4], time: 120 }), (C) => { C.assert(S(50, 10, 20) === 2900 && T(50, 10, 20) === 240, 'savings'); C.model([290, 2900]); });
@@ -143,7 +143,7 @@ Q('l01', mk.long({ stem: `In an AP, the sum of the 3rd and 9th terms is 34, and 
 
 (b) $S_{20} = \dfrac{20}{2}[2(-8) + 19 \times 5] = 10(-16 + 95) = 10 \times 79 = 790$.
 
-(c) $-8 + 5(n - 1) = 100 \Rightarrow n - 1 = 21.6$, not a whole number, so $100$ is not a term. $-8 + 5(n - 1) = 97 \Rightarrow n - 1 = 21 \Rightarrow n = 22$: $97$ is the $22$nd term.`, sol: r`**Check (a):** $a_3 = 2$, $a_9 = 32$, sum $34$; $a_{12} = -8 + 55 = 47$.`, scheme: [['a + 5d = 17 and a + 11d = 47', 1], ['a = −8, d = 5', 1], ['S₂₀ = 790', 1], ['100 not a term (n − 1 not whole)', 1], ['97 is the 22nd term', 1]], d: 3, c: 'application', t: [2, 3], time: 600 }), (C) => { const a = -8, d = 5; C.assert(T(a, d, 3) + T(a, d, 9) === 34 && T(a, d, 12) === 47, 'conditions'); C.assert(!seq(a, d, 40).includes(100), '100 not a term'); C.model([a, d, S(a, d, 20), 79, 21.6, firstN((n) => T(a, d, n) === 97)]); C.sol([2, 32]); });
+(c) $-8 + 5(n - 1) = 100 \Rightarrow n - 1 = 21.6$, not a whole number, so $100$ is not a term. $-8 + 5(n - 1) = 97 \Rightarrow n - 1 = 21 \Rightarrow n = 22$: $97$ is the $22$nd term.`, sol: r`**Check (a):** $a_3 = 2$, $a_9 = 32$, sum $34$; $a_{12} = -8 + 55 = 47$.`, scheme: [['a + 5d = 17 and a + 11d = 47', 1], ['a = −8, d = 5', 1], ['S₂₀ = 790', 1], ['100 not a term (n − 1 not whole)', 1], ['97 is the 22nd term', 1]], d: 3, c: 'understanding', t: [2, 3], time: 600 }), (C) => { const a = -8, d = 5; C.assert(T(a, d, 3) + T(a, d, 9) === 34 && T(a, d, 12) === 47, 'conditions'); C.assert(!seq(a, d, 40).includes(100), '100 not a term'); C.model([a, d, S(a, d, 20), 79, 21.6, firstN((n) => T(a, d, n) === 97)]); C.sol([2, 32]); });
 Q('l02', mk.long({ stem: `The sum of the first 9 terms of an AP is 171, and the sum of its first 24 terms is 996.
 
 (a) Find the first term and the common difference.
@@ -156,7 +156,7 @@ Substituting $a = 19 - 4d$: $38 - 8d + 23d = 83 \Rightarrow 15d = 45 \Rightarrow
 
 (b) $a_n = 7 + (n - 1)3 = 3n + 4$.
 
-(c) $S_n = \dfrac{n}{2}[14 + 3(n - 1)] = \dfrac{n(3n + 11)}{2}$.`, sol: r`**Check:** $S_9 = \dfrac{9 \times 38}{2} = 171$ and $S_{24} = \dfrac{24 \times 83}{2} = 996$.`, scheme: [['a + 4d = 19', 1], ['2a + 23d = 83', 1], ['d = 3, a = 7', 1], ['aₙ = 3n + 4', 1], ['Sₙ = n(3n + 11)/2', 1]], d: 4, c: 'application', t: [2, 3], time: 660 }), (C) => { C.assert(S(7, 3, 9) === 171 && S(7, 3, 24) === 996, 'sums'); C.assert([1, 5, 9, 30].every((n) => T(7, 3, n) === 3 * n + 4 && S(7, 3, n) === (n * (3 * n + 11)) / 2), 'general forms'); C.model([19, 83, 45, 3, 7, '3n + 4', '3n + 11']); C.sol([38]); });
+(c) $S_n = \dfrac{n}{2}[14 + 3(n - 1)] = \dfrac{n(3n + 11)}{2}$.`, sol: r`**Check:** $S_9 = \dfrac{9 \times 38}{2} = 171$ and $S_{24} = \dfrac{24 \times 83}{2} = 996$.`, scheme: [['a + 4d = 19', 1], ['2a + 23d = 83', 1], ['d = 3, a = 7', 1], ['aₙ = 3n + 4', 1], ['Sₙ = n(3n + 11)/2', 1]], d: 4, c: 'understanding', t: [2, 3], time: 660 }), (C) => { C.assert(S(7, 3, 9) === 171 && S(7, 3, 24) === 996, 'sums'); C.assert([1, 5, 9, 30].every((n) => T(7, 3, n) === 3 * n + 4 && S(7, 3, n) === (n * (3 * n + 11)) / 2), 'general forms'); C.model([19, 83, 45, 3, 7, '3n + 4', '3n + 11']); C.sol([38]); });
 Q('l03', mk.long({ stem: `Arjun, a carpenter in Lucknow, saves ₹500 in the first month and increases his saving by ₹150 every month.
 
 (a) How much does he save in the 12th month?
@@ -217,7 +217,7 @@ caseQ('c01', {
   sol: r`$a = 120$, $d = 15$. (a) $a_{10} = 120 + 135 = 255$. (b) $120 + 15(n - 1) = 345 \Rightarrow n = 16$. (c) (i) $S_{10} = 5(240 + 135) = 1875$. (ii) $S_{20} = 10(240 + 285) = 5250$.`,
   children: [
     child('a', mk.mcq({ stem: 'How many kites does the shop sell on day 10?', opts: ['$255$', '$270$', '$240$', '$135$'], key: 'a', sol: r`$a_{10} = 120 + 9 \times 15 = 255$. Option (b) uses $10d$; option (d) is only the increase $9d$.`, d: 1, c: 'understanding', t: [2], time: 60 })),
-    child('b', mk.num({ stem: 'On which day does the shop sell 345 kites?', value: 16, sol: r`$120 + 15(n - 1) = 345 \Rightarrow 15(n - 1) = 225 \Rightarrow n = 16$.`, scheme: [['Day 16', 1]], d: 2, c: 'application', t: [2, 4], time: 75 })),
+    child('b', mk.num({ stem: 'On which day does the shop sell 345 kites?', value: 16, sol: r`$120 + 15(n - 1) = 345 \Rightarrow 15(n - 1) = 225 \Rightarrow n = 16$.`, scheme: [['Day 16', 1]], d: 2, c: 'understanding', t: [2, 4], time: 75 })),
     child('c', mk.short({ marks: 2, stem: '**(i)** How many kites does the shop sell in the first 10 days altogether?', model: r`$S_{10} = \dfrac{10}{2}[240 + 9 \times 15] = 5 \times 375 = 1875$ kites.`, sol: 'Use the sum formula with n = 10.', scheme: [['Substitution', 1], ['1875', 1]], d: 2, c: 'application', t: [3, 4], time: 120 }), [
       mk.short({ marks: 2, stem: '**(ii)** Show that the number of kites sold on day $n$ is $105 + 15n$, and find how many kites are sold from day 11 to day 20.', model: r`$a_n = 120 + (n - 1)15 = 105 + 15n$.
 
@@ -233,7 +233,7 @@ caseQ('c02', {
   sol: r`$a = 2$, $d = 0.5$. (b) $a_{15} = 2 + 14 \times 0.5 = 9$. (c) (i) $S_{15} = \dfrac{15}{2}(2 + 9) = 82.5$. (ii) $2 + 0.5(n - 1) = 12 \Rightarrow n = 21$; $S_{21} = \dfrac{21}{2}(2 + 12) = 147$.`,
   children: [
     child('a', mk.mcq({ stem: 'The common difference of the AP of her daily distances is', opts: ['$2$ km', '$2.5$ km', '$0.5$ km', '$1$ km'], key: 'c', sol: r`From the graph, each day is $0.5$ km more than the day before: $2.5 - 2 = 0.5$.`, d: 1, c: 'understanding', t: [1], time: 45 })),
-    child('b', mk.num({ stem: 'How far does she run on day 15 (in km)?', value: 9, unit: 'km', sol: r`$a_{15} = 2 + 14 \times 0.5 = 2 + 7 = 9$ km.`, scheme: [['9 km', 1]], d: 2, c: 'application', t: [2], time: 60 })),
+    child('b', mk.num({ stem: 'How far does she run on day 15 (in km)?', value: 9, unit: 'km', sol: r`$a_{15} = 2 + 14 \times 0.5 = 2 + 7 = 9$ km.`, scheme: [['9 km', 1]], d: 2, c: 'understanding', t: [2], time: 60 })),
     child('c', mk.short({ marks: 2, stem: '**(i)** Find the total distance she runs in the first 15 days.', model: r`$S_{15} = \dfrac{15}{2}(a + a_{15}) = \dfrac{15}{2}(2 + 9) = \dfrac{15 \times 11}{2} = 82.5$ km.`, sol: 'Use the (a + l) form with l = 9.', scheme: [['Substitution', 1], ['82.5 km', 1]], d: 2, c: 'application', t: [3, 4], time: 120 }), [
       mk.short({ marks: 2, stem: '**(ii)** On which day does she run 12 km, and what is her total distance up to and including that day?', model: r`$2 + 0.5(n - 1) = 12 \Rightarrow 0.5(n - 1) = 10 \Rightarrow n = 21$.
 
@@ -249,7 +249,7 @@ caseQ('c03', {
   sol: r`$5{:}40$ am is $340$ minutes after midnight, so $a = 340$, $d = 12$. (b) $a_{10} = 340 + 108 = 448$ minutes $= 7$ h $28$ min. (c) (i) $9{:}00$ am is $540$ minutes: $340 + 12(n - 1) < 540 \Rightarrow n - 1 < 16.7$, so $n - 1 \le 16$ and $n \le 17$ (the $17$th train leaves at $8{:}52$ am). (ii) $11{:}16$ pm is $1396$ minutes: $340 + 12(n - 1) = 1396 \Rightarrow n - 1 = 88 \Rightarrow n = 89$.`,
   children: [
     child('a', mk.mcq({ stem: 'The departure times, in minutes after midnight, are', opts: ['$540, 552, 564, \\ldots$', '$340, 352, 364, \\ldots$', '$340, 352, 366, \\ldots$', '$5.40, 5.52, 6.04, \\ldots$'], key: 'b', sol: r`$5$ h $40$ min $= 5 \times 60 + 40 = 340$ minutes, and each train is $12$ minutes later. Option (d) treats clock times as decimals, which do not form an AP ($6.04 - 5.52 \ne 5.52 - 5.40$).`, d: 2, c: 'understanding', t: [1], time: 75 })),
-    child('b', mk.fill({ stem: 'The 10th train leaves at ___ am.', acc: [['7:28', '7.28', '7:28 am', '07:28']], sol: r`$a_{10} = 340 + 9 \times 12 = 448$ minutes $= 7$ h $28$ min. Answer: 7:28 am.`, d: 2, c: 'application', t: [2], time: 75 })),
+    child('b', mk.fill({ stem: 'The 10th train leaves at ___ am.', acc: [['7:28', '7.28', '7:28 am', '07:28']], sol: r`$a_{10} = 340 + 9 \times 12 = 448$ minutes $= 7$ h $28$ min. Answer: 7:28 am.`, d: 2, c: 'understanding', t: [2], time: 75 })),
     child('c', mk.short({ marks: 2, stem: '**(i)** How many trains leave before 9:00 am?', model: r`$9{:}00$ am is $540$ minutes after midnight. $340 + 12(n - 1) < 540 \Rightarrow 12(n - 1) < 200 \Rightarrow n - 1 < 16.7$ (about), so the largest $n$ is $17$.
 
 $17$ trains leave before $9{:}00$ am (the last of them at $8{:}52$ am).`, sol: 'Count terms below a bound with an inequality.', scheme: [['Inequality 12(n − 1) < 200', 1], ['17 trains', 1]], d: 3, c: 'application', t: [2, 4], time: 150 }), [
@@ -262,15 +262,15 @@ $340 + 12(n - 1) = 1396 \Rightarrow 12(n - 1) = 1056 \Rightarrow n - 1 = 88 \Rig
 
 caseQ('c04', {
   passage: r`In a maths quiz in Shillong, the quizmaster announces: "The sum of the first $n$ terms of a certain AP is $S_n = 5n^2 - 3n$." Teams must find facts about the AP from this rule alone.`,
-  d: 4, c: 'analysis',
+  d: 4, c: 'understanding',
   model: r`(a) Option (d): $2$. (b) $d = 10$. (c) (i) $a_n = 10n - 8$. Or (ii) $192$ is the $20$th term.`,
   sol: r`$S_1 = 2$, $S_2 = 14$, so $a_1 = 2$, $a_2 = 12$, $d = 10$. $a_n = S_n - S_{n-1} = 10n - 8$. $10n - 8 = 192 \Rightarrow n = 20$.`,
   children: [
     child('a', mk.mcq({ stem: 'The first term of the AP is', opts: ['$5$', '$14$', '$-3$', '$2$'], key: 'd', sol: r`$a_1 = S_1 = 5 - 3 = 2$. Option (b) is $S_2$.`, d: 1, c: 'understanding', t: [3], time: 45 })),
-    child('b', mk.fill({ stem: 'The common difference of the AP is ___.', acc: [['10']], sol: r`$a_2 = S_2 - S_1 = 14 - 2 = 12$, so $d = 12 - 2 = 10$.`, d: 2, c: 'application', t: [3], time: 75 })),
+    child('b', mk.fill({ stem: 'The common difference of the AP is ___.', acc: [['10']], sol: r`$a_2 = S_2 - S_1 = 14 - 2 = 12$, so $d = 12 - 2 = 10$.`, d: 2, c: 'understanding', t: [3], time: 75 })),
     child('c', mk.short({ marks: 2, stem: '**(i)** Find the $n$th term of the AP.', model: r`$a_n = a + (n - 1)d = 2 + 10(n - 1) = 10n - 8$.
 
-(Or $a_n = S_n - S_{n-1} = (5n^2 - 3n) - (5(n - 1)^2 - 3(n - 1)) = 10n - 8$.)`, sol: 'Either method gives the same result.', scheme: [['Method', 1], ['aₙ = 10n − 8', 1]], d: 3, c: 'application', t: [2, 3], time: 120 }), [
+(Or $a_n = S_n - S_{n-1} = (5n^2 - 3n) - (5(n - 1)^2 - 3(n - 1)) = 10n - 8$.)`, sol: 'Either method gives the same result.', scheme: [['Method', 1], ['aₙ = 10n − 8', 1]], d: 3, c: 'understanding', t: [2, 3], time: 120 }), [
       mk.short({ marks: 2, stem: '**(ii)** Which term of the AP is 192?', model: r`$a_n = 10n - 8 = 192 \Rightarrow 10n = 200 \Rightarrow n = 20$. So $192$ is the $20$th term.`, sol: r`**Check:** $S_{20} - S_{19} = 1940 - 1748 = 192$.`, scheme: [['10n − 8 = 192', 1], ['20th term', 1]], d: 3, c: 'application', t: [2], time: 120 }),
     ]),
   ],
@@ -282,8 +282,8 @@ caseQ('c05', {
   model: r`(a) Option (c): $6850$ litres. (b) After $15$ hours. (c) (i) No: $\dfrac{9100}{550}$ is not a whole number. Or (ii) $5800$ litres drawn, $3800$ litres left.`,
   sol: r`After $k$ hours the tank holds $9600 - 550k$ litres. (a) $k = 5$: $9600 - 2750 = 6850$. (b) $9600 - 550k = 1350 \Rightarrow k = 15$. (c) (i) $9600 - 550k = 500 \Rightarrow k = 16.5$ (about), not whole. (ii) Drawn: $550, 600, 650, \ldots$; $S_8 = 4(1100 + 350) = 5800$.`,
   children: [
-    child('a', mk.mcq({ stem: 'How much water is left after 5 hours (at 11 am)?', opts: ['$7400$ litres', '$6300$ litres', '$6850$ litres', '$2750$ litres'], key: 'c', sol: r`$9600 - 5 \times 550 = 9600 - 2750 = 6850$ litres. This is the $6$th term of the AP $9600, 9050, 8500, \ldots$; option (a) is the amount after $4$ hours and option (d) is the water drawn.`, d: 2, c: 'application', t: [2, 4], time: 60 })),
-    child('b', mk.num({ stem: 'After how many hours will 1350 litres be left?', value: 15, unit: 'hours', sol: r`$9600 - 550k = 1350 \Rightarrow 550k = 8250 \Rightarrow k = 15$ hours.`, scheme: [['15 hours', 1]], d: 2, c: 'application', t: [2, 4], time: 75 })),
+    child('a', mk.mcq({ stem: 'How much water is left after 5 hours (at 11 am)?', opts: ['$7400$ litres', '$6300$ litres', '$6850$ litres', '$2750$ litres'], key: 'c', sol: r`$9600 - 5 \times 550 = 9600 - 2750 = 6850$ litres. This is the $6$th term of the AP $9600, 9050, 8500, \ldots$; option (a) is the amount after $4$ hours and option (d) is the water drawn.`, d: 2, c: 'understanding', t: [2, 4], time: 60 })),
+    child('b', mk.num({ stem: 'After how many hours will 1350 litres be left?', value: 15, unit: 'hours', sol: r`$9600 - 550k = 1350 \Rightarrow 550k = 8250 \Rightarrow k = 15$ hours.`, scheme: [['15 hours', 1]], d: 2, c: 'understanding', t: [2, 4], time: 75 })),
     child('c', mk.short({ marks: 2, stem: '**(i)** Will the tank ever hold exactly 500 litres at one of the hourly readings? Justify.', model: r`We need $9600 - 550k = 500$, i.e. $550k = 9100$, so $k = \dfrac{9100}{550} \approx 16.55$, which is not a whole number.
 
 So $500$ litres is **not** one of the readings (after $16$ hours $800$ litres are left, after $17$ hours $250$).`, sol: 'A value is a term only if it gives a whole number of steps.', scheme: [['Equation and k not whole', 1], ['Conclusion with neighbouring readings', 1]], d: 3, c: 'analysis', t: [2], time: 150 }), [
@@ -293,3 +293,36 @@ $S_8 = \dfrac82[1100 + 7 \times 50] = 4 \times 1450 = 5800$ litres drawn; $9600 
     ]),
   ],
 }, (C) => { const left = (k) => 9600 - 550 * k; C.child('a').which([7400, 6300, 6850, 2750], left(5)); C.child('b').val(firstN((k) => left(k) === 1350)); C.child('c').assert(!Array.from({ length: 20 }, (_, k) => left(k)).includes(500) && left(16) === 800 && left(17) === 250, '500 never'); C.child('c').model([9100, 800, 250]); C.child('cii').model([S(550, 50, 8), 9600 - S(550, 50, 8), 1450]);  C.model([6850, 15, 5800, 3800]); });
+// =============================================================== added 2026-10-27 (assessment-designer)
+// Recall/understanding written items for the board-paper competency balance (blueprint 54/24/22 Standard,
+// 75/15/10 Basic). Appended after every existing item so earlier ids do not move.
+Q('u301', mk.short({
+  marks: 3,
+  stem: r`For the AP $7, 11, 15, \ldots$, find (a) its $20$th term and (b) the sum of its first $20$ terms.`,
+  model: r`Here $a = 7$ and $d = 11 - 7 = 4$.
+
+(a) $a_{20} = a + 19d = 7 + 19 \times 4 = 7 + 76 = 83$.
+
+(b) $S_{20} = \dfrac{20}{2}(a + a_{20}) = 10 \times (7 + 83) = 900$.`,
+  sol: r`Use $a_n = a + (n - 1)d$, then $S_n = \dfrac n2(a + a_n)$ with the last term just found.`,
+  scheme: [['a = 7, d = 4', 1], ['a₂₀ = 83', 1], ['S₂₀ = 900', 1]],
+  d: 1, c: 'understanding', t: [2, 3], time: 180,
+}), (C) => { const t = (n) => 7 + (n - 1) * 4; let s = 0; for (let n = 1; n <= 20; n++) s += t(n); C.assert(t(20) === 83 && s === 900, `a20 ${t(20)}, S20 ${s}`); C.model([83, 900]); });
+Q('u501', mk.long({
+  stem: r`An AP has first term $5$ and common difference $3$.
+
+(a) Write its first four terms.
+(b) Find its $25$th term.
+(c) Find the sum of its first $25$ terms.
+(d) Which term of the AP is $101$?`,
+  model: r`(a) $5, 8, 11, 14$.
+
+(b) $a_{25} = 5 + 24 \times 3 = 5 + 72 = 77$.
+
+(c) $S_{25} = \dfrac{25}{2}(5 + 77) = \dfrac{25}{2} \times 82 = 25 \times 41 = 1025$.
+
+(d) $5 + (n - 1) \times 3 = 101 \Rightarrow (n - 1) \times 3 = 96 \Rightarrow n - 1 = 32 \Rightarrow n = 33$. So $101$ is the $33$rd term.`,
+  sol: r`All four parts use $a_n = a + (n - 1)d$ and $S_n = \dfrac n2(a + a_n)$ with $a = 5$, $d = 3$.`,
+  scheme: [['First four terms', 1], ['a₂₅ = 77', 1], ['S₂₅ formula', 1], ['S₂₅ = 1025', 1], ['n = 33', 1]],
+  d: 2, c: 'understanding', t: [1, 2, 3], time: 480,
+}), (C) => { const t = (n) => 5 + (n - 1) * 3; let s = 0; for (let n = 1; n <= 25; n++) s += t(n); C.assert(t(25) === 77 && s === 1025 && t(33) === 101, 'a25, S25, n'); C.model([5, 8, 11, 14, 77, 1025, 33]); });

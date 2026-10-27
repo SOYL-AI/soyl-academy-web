@@ -9,10 +9,11 @@ import path from 'node:path';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { and, eq } from 'drizzle-orm';
 import { BudgetExceededError } from '@soyl/ai-core';
-import { configValues, contentReleases, questions as questionsTable, tests as testsTable } from '@soyl/db/schema';
+import { configValues, contentReleases, questions as questionsTable, testSeries, tests as testsTable } from '@soyl/db/schema';
 import { seedCatalog } from '@soyl/db';
 import { createTestDb, stopTestServer, type TestDb } from '@soyl/db/testing';
-import { assembleSubject, bankFromDb, ingestTests } from '../src/commands/assemble';
+import { assembleCommand, assembleSubject, bankFromDb, bankFromFiles, ingestTests, toFrozenSeries } from '../src/commands/assemble';
+import { writeFrozenSeries } from '../src/assemble/frozen';
 import { coverageCommand } from '../src/commands/coverage';
 import { generateCommand } from '../src/commands/generate';
 import { lintCommand } from '../src/commands/lint';
@@ -174,6 +175,67 @@ describe('publish, rollback, tests and coverage', () => {
     expect(s.have.chapter_tests).toBeGreaterThanOrEqual(4);
     expect(r.report.source).toMatch(/Postgres/);
   }, 120_000);
+});
+
+describe('frozen test series in the release step (publish --authored, ADR-019)', () => {
+  it('publishes a frozen series idempotently: re-runs and new questions never change or duplicate it', async () => {
+    const authored = tempDir('soyl-authored-series-');
+    const src = path.join(defaultPaths().authoredDir, 'science', 'cbse-10-science-ch02');
+    const unitDir = path.join(authored, 'science', 'cbse-10-science-ch02');
+    fs.cpSync(src, unitDir, { recursive: true });
+    const { p } = pgPipeline({}, { authoredDir: authored });
+    const science = p.catalog.subjectsById.get('cbse-10-science')!;
+    // A two-chapter unit test (ch01 exemplar + ch02) frozen from the files bank.
+    const plan = planSubjectTests(p.catalog, science, { series: true, academicYear: '2026-27' });
+    const unit1 = plan.papers.find((x) => x.spec.id === 't_cbse10sci_unit_1')!;
+    const chapters = ['cbse-10-science-ch01', 'cbse-10-science-ch02'];
+    const bank = bankFromFiles(p, science);
+    const built = assembleSubject({ ...plan, papers: [{ ...unit1, spec: { ...unit1.spec, chapters } }] }, { ...bank, items: bank.items.filter((q) => chapters.includes(q.unit)) });
+    expect(built.tests).toHaveLength(1);
+    writeFrozenSeries(p.paths, toFrozenSeries(built, '2026-27', 'test'));
+    const scope = { board: 'cbse', class: 10, subject: 'science' };
+    const seriesRows = () => t.db.select({ id: testSeries.id }).from(testSeries).where(eq(testSeries.key, 'ts_cbse10sci_unit_tests'));
+    const testRows = () => t.db.select({ version: testsTable.version, status: testsTable.status, definition: testsTable.definition }).from(testsTable).where(eq(testsTable.key, 't_cbse10sci_unit_1'));
+
+    const first = await publishCommand(p, scope, { authored: true });
+    expect(first.exitCode).toBe(0);
+    expect(first.results.find((r) => r.unit === 'series:cbse-10-science')).toMatchObject({ status: 'published', tests: 1 });
+    expect(await seriesRows()).toHaveLength(1);
+    const [v1] = await testRows();
+    expect(v1).toMatchObject({ version: 1, status: 'published' });
+
+    // Re-running the release: nothing new.
+    const again = await publishCommand(p, scope, { authored: true });
+    expect(again.results.find((r) => r.unit === 'series:cbse-10-science')).toMatchObject({ status: 'unchanged' });
+    expect(await seriesRows()).toHaveLength(1);
+    expect(await testRows()).toHaveLength(1);
+
+    // New questions land in a chapter: the chapter gets a new release, the published paper stays as it is.
+    const release = JSON.parse(fs.readFileSync(path.join(unitDir, 'release.json'), 'utf8'));
+    const added = { ...release.questions[0], id: 'q_cbse10sci_ch02_901', stem_md: `${release.questions[0].stem_md} (new practice variant for the release test)` };
+    release.questions.push(added);
+    fs.writeFileSync(path.join(unitDir, 'release.json'), JSON.stringify(release));
+    const third = await publishCommand(p, scope, { authored: true });
+    expect(third.results.find((r) => r.unit === 'cbse-10-science-ch02')!.status).toBe('published');
+    expect(third.results.find((r) => r.unit === 'series:cbse-10-science')).toMatchObject({ status: 'unchanged' });
+    const rows = await testRows();
+    expect(rows).toHaveLength(1);
+    expect(rows[0]!.definition).toEqual(v1!.definition);
+
+    // assemble --series --source db reuses the frozen paper instead of re-assembling it.
+    const a = await assembleCommand(p, scope, { series: true, source: 'db' });
+    expect(a.results[0]!.tests.find((x) => x.test.id === 't_cbse10sci_unit_1')!.test.sections).toEqual((v1!.definition as { sections: unknown }).sections);
+    expect(await testRows()).toHaveLength(1);
+
+    // A frozen paper that references an unpublished question is refused (exit 1), never published partially.
+    const broken = toFrozenSeries(built, '2026-27', 'test');
+    broken.tests[0]!.test.sections[0]!.items[0]!.question_id = 'q_cbse10sci_ch02_999';
+    writeFrozenSeries(p.paths, broken);
+    const refused = await publishCommand(p, scope, { authored: true });
+    expect(refused.exitCode).toBe(1);
+    expect(refused.results.find((r) => r.unit === 'series:cbse-10-science')).toMatchObject({ status: 'refused' });
+    expect(await testRows()).toHaveLength(1);
+  }, 300_000);
 });
 
 describe('mock end to end for a chapter with no hand-written content', () => {
