@@ -6,7 +6,7 @@
 | Book | NCERT *Footprints without Feet* (supplementary reader) · biographical account by Robert W. Peterson of the scientist Richard H. Ebright |
 | Syllabus | `platform/catalog/cbse/10/english-language-and-literature/syllabus.yaml` (2026-27): t01 context and summary · t02 themes and message (curiosity, a mother's encouragement, persistence) · t03 exam practice. **This chapter has three topics, with no separate character topic**, so Ebright's qualities are taught and tagged under t02. No removed topics. |
 | Board weight | Section C, supplementary reader: 3-mark short answers (40–50 words, two of three) and a 6-mark long answer (100–120 words) on character, theme and values. **No extracts are set from this book.** |
-| Files | `release.json` (1 deck of 22 slides; 8 notes sections; 30 flashcards; 63 questions with 25 passage children), `tests.json` (short 20 / 40 min; long 40 / 90 min), `src/` (builder; shared library `../../english-language/cbse-10-english-language-and-literature-ch02/src/lib.mjs`, unchanged; reproduction guard `../../cbse-10-english-language-and-literature-ch27/src/guard.mjs`) |
+| Files | `release.json` (1 deck of 22 slides; 8 notes sections; 30 flashcards; 63 questions with 25 passage children), `tests.json` (short 18 / 40 min; long 36 / 80 min, supplementary-reader blueprints), `src/` (builder; shared library `../../english-language/cbse-10-english-language-and-literature-ch02/src/lib.mjs`, unchanged; reproduction guard `../../cbse-10-english-language-and-literature-ch27/src/guard.mjs`) |
 | Provenance | `origin: human`, `author: claude-opus-5-5 (subject-producer)`, every item `status: draft` |
 
 Rebuild from `platform/`: `npx tsx content/authored/english-literature/cbse-10-english-language-and-literature-ch28/src/build.mjs` (deterministic; also runs the guard).
@@ -17,6 +17,8 @@ This chapter follows the same decision as ch27–ch30. The board uses *Footprint
 - **Section A slots hold SOYL commentary passages on character and theme**, titled "Commentary passage". Their parts ask what an episode shows about Ebright, his mother or the theme.
 - **The bank is weighted to the board's form:** 14 three-mark short answers, 9 long answers, 6 two-mark answers and only 5 commentary passages (the minimum that fills both tests without sharing).
 - The board table on the title slide, notes section 8, exam tips and flashcards all say that no extracts are set from this book.
+
+**Update, 2026-10-27 (curriculum-architect):** the catalog now has supplementary-reader chapter-test blueprints for ch23–ch31 (`chapter-test-short-supplementary`, `chapter-test-long-supplementary`; a chapter override through the blueprint `scope`). They have no extract section and use only the board's forms for this reader (3-mark answers, two of three; 6-mark long answers, one of two), plus the 2-mark recall section in the long test. This chapter's two tests were re-selected onto them from the existing bank; see **Tests** below. Where this note and the paragraphs above differ, this note is current.
 
 ## The literature rule: taught without reproducing the text
 The account is in copyright (CONTEXT §8–§9, D-036). Everything was written in SOYL's own words from the start, at the level of events and ideas.
@@ -63,7 +65,7 @@ Deliberately **left out** because they cannot be confirmed without the text: his
 - **Schemes:** 3-mark = point (1) + explanation (1) + expression (1); 2-mark = point (1) + explanation (1); 6-mark = content 3 + interpretation of character/theme/value 1 + organisation/expression 2.
 - **Stems are chapter-specific** (they name Ebright, his mother, Dr Urquhart or the account).
 
-**Tests:** short (20 marks, 40 min): A commentary passage (5) · B 3 of 4 three-mark (9) · C 1 of 2 long (6). Long (40 marks, 90 min): A two passage pairs (10) · B 3 of 4 two-mark (6) · C 4 of 5 three-mark (12) · D two long pairs (12). No shared questions.
+**Tests** (re-selected from the existing bank on 2026-10-27, no item text changed): short (18 marks, 40 min): A two sets of three 3-mark answers, two of each (12) · B 1 of 2 long (6). Long (36 marks, 80 min): A 3 of 4 two-mark (6) · B two sets of three 3-mark answers, two of each (12) · C three long pairs, one of each (18). No shared questions. Both follow the supplementary-reader blueprints item for item, so `blueprint_id` is `cbse-10-english-language-and-literature-chapter-test-short-supplementary` / `-long-supplementary`. The commentary items remain in the bank as practice and are no longer in the tests.
 
 ## Verifier record (author pass, 2026-10-27)
 Every item was re-answered from its stem, every factual claim was checked against the author's knowledge of the account, and every field was reviewed for wording that might echo it.
@@ -74,4 +76,4 @@ Every item was re-answered from its stem, every factual claim was checked agains
 
 ## Known gaps
 - No n-gram check against the actual account: it awaits owner-supplied reference texts (OA-16, D-036).
-- `catalog` issues (reported, not edited): this chapter's syllabus has no character topic, although board questions often ask about Ebright's character. Topic t03's outcome says "extract-based", though the board sets no extracts from this book.
+- `catalog` issues (reported, not edited): this chapter's syllabus has no character topic, although board questions often ask about Ebright's character. Topic t03's outcome says "extract-based", though the board sets no extracts from this book. **Resolved in the catalog on 2026-10-27:** t03 now reads "short-answer and long-answer responses", and a character topic was added as **t04** ("Character: Richard Ebright as a young scientist"; ids kept stable, so it is numbered after t03). The items on Ebright's qualities are still tagged t02; moving them to t04 is a follow-up for the next content pass.

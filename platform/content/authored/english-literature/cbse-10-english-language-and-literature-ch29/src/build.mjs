@@ -328,27 +328,27 @@ const F = cards([
 ]);
 
 // ---------------------------------------------------------------- tests
+// Supplementary-reader blueprints (catalog chapter override, 2026-10-27): no extract section; the board sets
+// Footprints without Feet only as 3-mark short answers (two of three) and a 6-mark long answer.
 const T_SHORT = test({
   kind: 'short',
-  blueprint: 'cbse-10-english-language-and-literature-chapter-test-short',
+  blueprint: 'cbse-10-english-language-and-literature-chapter-test-short-supplementary',
   title: 'Chapter test (short) — The Necklace',
   duration: 40,
   sections: [
-    { id: 'A', title: 'Section A — Commentary passage (5 marks)', instr: 'Read the commentary and answer all parts. (The passage is SOYL commentary on character and theme; read the chapter in Footprints without Feet.)', items: ['src_twist'] },
-    { id: 'B', title: 'Section B — Short answers (3 marks each)', instr: 'Answer any three of four in 40–50 words.', items: [{ attempt: 3, keys: ['sa_unhappy', 'sa_loisel', 'sa_irony', 'sa_honesty'] }] },
-    { id: 'C', title: 'Section C — Long answer (6 marks)', instr: 'Answer any one in 100–120 words.', items: [{ attempt: 1, keys: ['la_matilda_sketch', 'la_vanity_theme'] }] },
+    { id: 'A', title: 'Section A — Short answers (3 marks each)', instr: 'Two sets of three questions; in each set answer any two in 40–50 words.', items: [{ attempt: 2, keys: ['sa_unhappy', 'sa_loisel', 'sa_invitation_reaction'] }, { attempt: 2, keys: ['sa_irony', 'sa_honesty', 'sa_forestier'] }] },
+    { id: 'B', title: 'Section B — Long answer (6 marks)', instr: 'Answer any one of two questions in 100–120 words.', items: [{ attempt: 1, keys: ['la_matilda_sketch', 'la_vanity_theme'] }] },
   ],
 });
 const T_LONG = test({
   kind: 'long',
-  blueprint: 'cbse-10-english-language-and-literature-chapter-test-long',
+  blueprint: 'cbse-10-english-language-and-literature-chapter-test-long-supplementary',
   title: 'Chapter test (long) — The Necklace',
-  duration: 90,
+  duration: 80,
   sections: [
-    { id: 'A', title: 'Section A — Commentary passages (2 × 5 marks)', instr: 'In each pair, answer one passage. (Passages are SOYL commentary on character and theme.)', items: [{ attempt: 1, keys: ['src_discontent', 'src_invitation'] }, { attempt: 1, keys: ['src_ball', 'src_sacrifice'] }] },
-    { id: 'B', title: 'Section B — Short answers (2 marks each)', instr: 'Answer any three of four in 30–40 words.', items: [{ attempt: 3, keys: ['sb_flowers', 'sb_letter', 'sb_return', 'sb_aged'] }] },
-    { id: 'C', title: 'Section C — Short answers (3 marks each)', instr: 'Answer any four of five in 40–50 words.', items: [{ attempt: 4, keys: ['sa_contrast', 'sa_lost', 'sa_hardship', 'sa_vanity', 'sa_fate'] }] },
-    { id: 'D', title: 'Section D — Long answers (6 marks each)', instr: 'Answer one question from each pair in 100–120 words.', items: [{ attempt: 1, keys: ['la_loisel_sketch', 'la_honesty_debate'] }, { attempt: 1, keys: ['la_diary_matilda', 'la_loisel_letter'] }] },
+    { id: 'A', title: 'Section A — Short answers (2 marks each)', instr: 'Answer any three of four in 30–40 words.', items: [{ attempt: 3, keys: ['sb_flowers', 'sb_letter', 'sb_return', 'sb_aged'] }] },
+    { id: 'B', title: 'Section B — Short answers (3 marks each)', instr: 'Two sets of three questions; in each set answer any two in 40–50 words.', items: [{ attempt: 2, keys: ['sa_lost', 'sa_hardship', 'sa_replace'] }, { attempt: 2, keys: ['sa_contrast', 'sa_vanity', 'sa_fate'] }] },
+    { id: 'C', title: 'Section C — Long answers (6 marks each)', instr: 'Answer one question from each of the three pairs in 100–120 words.', items: [{ attempt: 1, keys: ['la_loisel_sketch', 'la_honesty_debate'] }, { attempt: 1, keys: ['la_diary_matilda', 'la_loisel_letter'] }, { attempt: 1, keys: ['la_appearance_reality', 'la_ending_alt'] }] },
   ],
 });
 

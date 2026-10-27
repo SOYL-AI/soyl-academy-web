@@ -336,27 +336,27 @@ const F = cards([
 ]);
 
 // ---------------------------------------------------------------- tests
+// Supplementary-reader blueprints (catalog chapter override, 2026-10-27): no extract section; the board sets
+// Footprints without Feet only as 3-mark short answers (two of three) and a 6-mark long answer.
 const T_SHORT = test({
   kind: 'short',
-  blueprint: 'cbse-10-english-language-and-literature-chapter-test-short',
+  blueprint: 'cbse-10-english-language-and-literature-chapter-test-short-supplementary',
   title: 'Chapter test (short) — Footprints without Feet',
   duration: 40,
   sections: [
-    { id: 'A', title: 'Section A — Commentary passage (5 marks)', instr: 'Read the commentary and answer all parts. (The passage is SOYL commentary on character and theme; read the chapter in Footprints without Feet.)', items: ['src_lawless'] },
-    { id: 'B', title: 'Section B — Short answers (3 marks each)', instr: 'Answer any three of four in 40–50 words.', items: [{ attempt: 3, keys: ['sa_invisible_how', 'sa_room', 'sa_misery', 'sa_griffin_sympathy'] }] },
-    { id: 'C', title: 'Section C — Long answer (6 marks)', instr: 'Answer any one in 100–120 words.', items: [{ attempt: 1, keys: ['la_griffin_sketch', 'la_invisible_day'] }] },
+    { id: 'A', title: 'Section A — Short answers (3 marks each)', instr: 'Two sets of three questions; in each set answer any two in 40–50 words.', items: [{ attempt: 2, keys: ['sa_invisible_how', 'sa_room', 'sa_footprints'] }, { attempt: 2, keys: ['sa_misery', 'sa_griffin_sympathy', 'sa_jaffers'] }] },
+    { id: 'B', title: 'Section B — Long answer (6 marks)', instr: 'Answer any one of two questions in 100–120 words.', items: [{ attempt: 1, keys: ['la_griffin_sketch', 'la_invisible_day'] }] },
   ],
 });
 const T_LONG = test({
   kind: 'long',
-  blueprint: 'cbse-10-english-language-and-literature-chapter-test-long',
+  blueprint: 'cbse-10-english-language-and-literature-chapter-test-long-supplementary',
   title: 'Chapter test (long) — Footprints without Feet',
-  duration: 90,
+  duration: 80,
   sections: [
-    { id: 'A', title: 'Section A — Commentary passages (2 × 5 marks)', instr: 'In each pair, answer one passage. (Passages are SOYL commentary on character and theme.)', items: [{ attempt: 1, keys: ['src_opening', 'src_store'] }, { attempt: 1, keys: ['src_iping', 'src_unmasked'] }] },
-    { id: 'B', title: 'Section B — Short answers (2 marks each)', instr: 'Answer any three of four in 30–40 words.', items: [{ attempt: 3, keys: ['sb_fire', 'sb_winter', 'sb_shopkeeper', 'sb_spirits'] }] },
-    { id: 'C', title: 'Section C — Short answers (3 marks each)', instr: 'Answer any four of five in 40–50 words.', items: [{ attempt: 4, keys: ['sa_lawless', 'sa_disguise', 'sa_clergyman', 'sa_science_misuse', 'sa_title'] }] },
-    { id: 'D', title: 'Section D — Long answers (6 marks each)', instr: 'Answer one question from each pair in 100–120 words.', items: [{ attempt: 1, keys: ['la_science_ethics', 'la_power_isolation'] }, { attempt: 1, keys: ['la_diary_hall', 'la_jaffers_report'] }] },
+    { id: 'A', title: 'Section A — Short answers (2 marks each)', instr: 'Answer any three of four in 30–40 words.', items: [{ attempt: 3, keys: ['sb_fire', 'sb_winter', 'sb_shopkeeper', 'sb_spirits'] }] },
+    { id: 'B', title: 'Section B — Short answers (3 marks each)', instr: 'Two sets of three questions; in each set answer any two in 40–50 words.', items: [{ attempt: 2, keys: ['sa_disguise', 'sa_clergyman', 'sa_store'] }, { attempt: 2, keys: ['sa_lawless', 'sa_science_misuse', 'sa_title'] }] },
+    { id: 'C', title: 'Section C — Long answers (6 marks each)', instr: 'Answer one question from each of the three pairs in 100–120 words.', items: [{ attempt: 1, keys: ['la_science_ethics', 'la_power_isolation'] }, { attempt: 1, keys: ['la_diary_hall', 'la_jaffers_report'] }, { attempt: 1, keys: ['la_techniques', 'la_griffin_letter'] }] },
   ],
 });
 
