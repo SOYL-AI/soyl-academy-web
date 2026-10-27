@@ -1,0 +1,51 @@
+id: icse-10-history-civics-board
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-history-civics
+paper_type: board
+academic_year: "2026-27"
+duration_min: 120
+total_marks: 80
+mark_shares:
+  recall+understanding: 0.5
+  application+analysis+evaluation: 0.5
+scope: syllabus
+sections:
+  - id: I
+    title: Part I - Compulsory (30 marks)
+    instructions: >-
+      Attempt all questions. Question 1: 16 multiple-choice items of 1 mark across Civics and History (one assertion-reason; others use
+      pictures, cartoons, headlines, analogies, chronology and matching); write the correct answers only. Question 2: seven 2-mark short
+      answers across Civics and History (some on an extract, picture or imagined situation).
+    items:
+      - {type: mcq, count: 15, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: short, count: 7, marks_each: 2}
+  - id: IIA
+    title: Part II Section A - Civics, any two of three (20 marks)
+    instructions: >-
+      Attempt any two of Questions 3-5, 10 marks each, in three parts (3 + 3 + 4 marks); a question may open with a news headline or a
+      short source.
+    chapters: [icse-10-history-civics-ch01, icse-10-history-civics-ch02, icse-10-history-civics-ch03, icse-10-history-civics-ch04, icse-10-history-civics-ch05, icse-10-history-civics-ch06]
+    items:
+      - {type: long, count: 3, marks_each: 10, internal_choice: {attempt: 2, of: 3}}
+  - id: IIB
+    title: Part II Section B - History, any three of five (30 marks)
+    instructions: >-
+      Attempt any three of Questions 6-10, 10 marks each, in three parts (3 + 3 + 4 marks); several open with a short source, picture or
+      headline.
+    chapters: [icse-10-history-civics-ch07, icse-10-history-civics-ch08, icse-10-history-civics-ch09, icse-10-history-civics-ch10, icse-10-history-civics-ch11, icse-10-history-civics-ch12, icse-10-history-civics-ch13, icse-10-history-civics-ch14, icse-10-history-civics-ch15, icse-10-history-civics-ch16, icse-10-history-civics-ch17, icse-10-history-civics-ch18]
+    items:
+      - {type: long, count: 5, marks_each: 10, internal_choice: {attempt: 3, of: 5}}
+source_status: verified
+source: icse-2027-specimen-501-history-civics
+notes: >-
+  ICSE 2027 History, Civics and Geography (50) Paper 1, specimen paper code 501: one theory paper of two hours (plus 15 minutes reading
+  time), 80 marks; internal assessment 20 marks is not modelled. Part I (30, compulsory, whole syllabus): Q1 16 x 1 incl. 1
+  assertion-reason, Q2 7 x 2. Part II: Section A Civics (chapters 1-6) any two of three 10-mark questions; Section B History (chapters
+  7-18) any three of five. Civics and History marks in Part I are not fixed by CISCE, so Part I has no chapter scope and the syllabus
+  units carry no marks. Picture and source stimuli are SOYL-made or described in words (CONTEXT section 8).
+  mark_shares 0.5 / 0.5: the October 2026 circular (cisce-circular-specimen-papers-2027) gives higher-order questions an approximate
+  weightage of 50% in 2027.
+  Deviation: one chapter per question in the item model, so a Part II question's three parts come from one chapter.
