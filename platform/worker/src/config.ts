@@ -68,7 +68,7 @@ export interface WorkerConfig {
   /** Whether the AUTH-15 purge job is registered (see UNCONSENTED_PURGE). */
   unconsentedPurge: boolean;
   shutdownTimeoutMs: number;
-  /** Razorpay settings for the billing jobs (same variables as the API, ADR-014). */
+  /** Razorpay settings for the billing jobs (same variables as the API, ADR-016). */
   billing: BillingConfig;
 }
 

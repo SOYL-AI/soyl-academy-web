@@ -1,5 +1,5 @@
 /**
- * Razorpay API surface the platform uses (ADR-014), as an interface with two implementations:
+ * Razorpay API surface the platform uses (ADR-016), as an interface with two implementations:
  * `RazorpayHttpClient` (real API, test or live keys) and `RazorpayStub` (in-memory, faithful to the
  * entity shapes and state machines; local/test only, GEN-3). Entities keep Razorpay's snake_case field
  * names so the stub, the webhook payloads and the real API look the same to the billing code.

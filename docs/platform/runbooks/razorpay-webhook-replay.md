@@ -1,6 +1,6 @@
 # Runbook: Razorpay webhook incidents (replay, resync, reconcile)
 
-Design: ADR-014. Code: `platform/api/src/billing/` (CLI in `cli.ts`). Run commands from `platform/`.
+Design: ADR-016. Code: `platform/api/src/billing/` (CLI in `cli.ts`). Run commands from `platform/`.
 
 Every command below re-fetches state **from Razorpay** and applies it; nothing is ever taken from a
 webhook body or from the operator's input. They are safe to run more than once. Non-dry-run `replay`

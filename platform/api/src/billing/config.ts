@@ -1,5 +1,5 @@
 /**
- * Billing configuration (ARCHITECTURE §11.2, §19; ADR-014). Read with the rest of the API config
+ * Billing configuration (ARCHITECTURE §11.2, §19; ADR-016). Read with the rest of the API config
  * (config.ts calls loadBillingConfig) and by the worker for the reconciliation job.
  *
  *   BILLING_ENABLED              purchases open (CONTEXT §7). Off in production until the owner says so (D-003).

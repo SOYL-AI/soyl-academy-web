@@ -3123,10 +3123,8 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        get?: never;
-        put?: never;
-        /** AI evaluation of written answers (credits). Arrives with the AI gateway (M4): 501 until then. */
-        post: {
+        /** AI marks of your submitted attempt, per item, with step marks and confidence. Never used for scores, percentiles or ranks. */
+        get: {
             parameters: {
                 query?: never;
                 header?: never;
@@ -3137,6 +3135,61 @@ export interface paths {
             };
             requestBody?: never;
             responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiEvaluation"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        /** AI evaluation of written answers (credits: 6 per answer, at most 40 per paper; quote first with GET /v1/ai/quote/evaluate-paper?attemptId=). Body {itemIds?}: one id = evaluate-answer, none/several = evaluate-paper. 202 with a job id; marks never count for scores or ranks. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["AiEvaluationRequestInput"] | null;
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                202: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiJobAccepted"];
+                    };
+                };
                 /** @description Default Response */
                 "4XX": {
                     headers: {
@@ -3732,6 +3785,628 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/credits": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Today’s AI credits: balance, plan, reset time (00:00 IST) and prices. */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Credits"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/credits/ledger": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Credit history, newest first (cursor = last id of the previous page). */
+        get: {
+            parameters: {
+                query?: {
+                    cursor?: string;
+                    limit?: number;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CreditLedger"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ai/quote/{action}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** What an AI action will cost, before the student confirms. Evaluate-paper: pass attemptId to price the actual answers. */
+        get: {
+            parameters: {
+                query?: {
+                    attemptId?: string;
+                    answers?: number;
+                };
+                header?: never;
+                path: {
+                    action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiQuote"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ai/{action}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Run an AI action. Stream actions (quick-doubt, explain-slide, hard-doubt, photo-doubt) answer with Server-Sent Events; job actions (evaluate-answer, evaluate-paper, paper-from-upload) answer 202 with a job id. Optional Idempotency-Key header (retries never charge twice). */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["AiActionRequestInput"];
+                };
+            };
+            responses: {
+                /** @description text/event-stream. Events: `meta` {requestId, conversationId, action, credits, balance, tier, degraded, mode: hint|full|explain, language: english|hinglish|hindi}; `delta` {text} (moderated chunks, Markdown); `refusal` {kind: unsafe|off_topic|self_harm|output_blocked, message, creditsRefunded, balance}; `error` {code: ai_unavailable|ai_failed|ai_interrupted, message, creditsRefunded|creditsCharged, balance}; `done` {status, creditsCharged, balance, sources?}. */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": string;
+                    };
+                };
+                /** @description Default Response */
+                202: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiJobAccepted"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ai/jobs/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Status and result of an AI job (yours only). */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiJob"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ai/uploads": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Get a short-lived, write-only upload URL for one photo (JPEG/PNG/WebP) or sample paper (also PDF), ≤ 10 MB. Uploads are deleted after 30 days. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["AiUploadRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                201: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiUploadTarget"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ai/uploads/{id}/complete": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Tell the server the file is uploaded; it is checked and cleaned (metadata removed) before use. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                202: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiUpload"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ai/uploads/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Upload status. */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiUpload"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ai/conversations": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Your AI conversations, newest first. */
+        get: {
+            parameters: {
+                query?: {
+                    cursor?: string;
+                    limit?: number;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiConversations"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        /** Start a conversation (optional: an action without conversationId starts one). */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["AiConversationCreateInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                201: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": {
+                            conversation: components["schemas"]["AiConversation"];
+                        };
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/ai/conversations/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** A conversation’s messages (kept 30 days). */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AiConversationDetail"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/v1/webhooks/razorpay": {
         parameters: {
             query?: never;
@@ -3803,6 +4478,13 @@ export interface components {
                 message: string;
             }[];
             retryAfterSeconds?: number;
+            balance?: number;
+            required?: number;
+            /** Format: date-time */
+            resetAt?: string;
+            resetInSeconds?: number;
+            plan?: string;
+            plansUrl?: string;
         };
         /** @enum {string} */
         ConsentStateInput: "required" | "pending" | "granted" | "revoked";
@@ -4973,6 +5655,235 @@ export interface components {
             }[];
             nextCursor: string | null;
         };
+        AiActionRequestInput: {
+            message?: string;
+            attempt?: string;
+            reveal?: boolean;
+            /** Format: uuid */
+            conversationId?: string;
+            chapterId?: string;
+            slide?: {
+                part?: number;
+                slideId: string;
+            };
+            /** Format: uuid */
+            uploadId?: string;
+            subjectId?: string;
+            /** Format: uuid */
+            attemptId?: string;
+            itemIds?: string[];
+        };
+        /** @description Poll GET /v1/ai/jobs/:id. */
+        AiJobAcceptedInput: {
+            /** Format: uuid */
+            jobId: string;
+            /** @constant */
+            status: "queued";
+            /** @enum {string} */
+            action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+            credits: number;
+            balance: number;
+            answers?: number;
+            skipped?: {
+                /** Format: uuid */
+                itemId: string;
+                /** @enum {string} */
+                reason: "not_written" | "unanswered" | "already_evaluated";
+            }[];
+        };
+        /** @description evaluation result: {attemptId, evaluated[], notEvaluated[{itemId, reason}], creditsCharged, creditsRefunded, countsForRanks:false}. paper_from_upload result: {blueprint {durationMin, totalMarks, sections[{id, questionType, count, marksEach, internalChoice}], chapterIds}, testId, skippedChapters, creditsCharged}. */
+        AiJobInput: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "evaluation" | "paper_from_upload";
+            action: string | null;
+            /** @enum {string} */
+            status: "queued" | "running" | "succeeded" | "failed";
+            result: {
+                [key: string]: unknown;
+            } | null;
+            error: string | null;
+            /** Format: date-time */
+            createdAt: string;
+            finishedAt: string | null;
+        };
+        /** @description Today’s AI credits (1 credit = ₹0.10 of AI). Resets at 00:00 IST; no rollover. */
+        CreditsInput: {
+            plan: string;
+            planName: string;
+            dailyCredits: number;
+            balance: number;
+            grantedToday: number;
+            reservedNow: number;
+            spentToday: number;
+            day: string;
+            /** Format: date-time */
+            resetAt: string;
+            resetInSeconds: number;
+            plansUrl: string;
+            prices: {
+                /** @enum {string} */
+                action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+                label: string;
+                credits: number;
+                perAnswer: boolean;
+                maxCredits: number;
+                allowedForPlan: boolean;
+            }[];
+        };
+        CreditLedgerInput: {
+            entries: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                kind: "grant" | "reserve" | "charge" | "refund" | "expire";
+                amount: number;
+                action: string;
+                label: string;
+                day: string;
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+            nextCursor: string | null;
+        };
+        /** @description Show the cost before the student confirms (CONTEXT §6). */
+        AiQuoteInput: {
+            /** @enum {string} */
+            action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+            label: string;
+            credits: number;
+            perAnswer: boolean;
+            answers: number | null;
+            maxCredits: number;
+            /** @enum {string} */
+            tier: "small" | "mid" | "verify";
+            /** @enum {string} */
+            mode: "stream" | "job";
+            requiresUpload: boolean;
+            plan: string;
+            allowedForPlan: boolean;
+            balance: number;
+            affordable: boolean;
+            /** @enum {string} */
+            status: "available" | "degraded" | "paused";
+            /** Format: date-time */
+            resetAt: string;
+            resetInSeconds: number;
+            plansUrl: string;
+        };
+        AiUploadRequestInput: {
+            /** @enum {string} */
+            kind: "photo_doubt" | "sample_paper";
+            /** @enum {string} */
+            contentType: "image/jpeg" | "image/png" | "image/webp" | "application/pdf";
+            bytes: number;
+        };
+        /** @description PUT the file to uploadUrl with these headers within uploadExpiresAt, then POST /v1/ai/uploads/:id/complete. */
+        AiUploadTargetInput: {
+            /** Format: uuid */
+            uploadId: string;
+            uploadUrl: string;
+            /** @constant */
+            method: "PUT";
+            headers: {
+                [key: string]: string;
+            };
+            /** Format: date-time */
+            uploadExpiresAt: string;
+            maxBytes: number;
+            /** Format: date-time */
+            expiresAt: string;
+        };
+        AiUploadInput: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "photo_doubt" | "sample_paper" | "answer_sheet";
+            /** @enum {string} */
+            status: "pending_upload" | "uploaded" | "scanning" | "ready" | "rejected";
+            rejectReason: string | null;
+            contentType: string;
+            bytes: number | null;
+            pages: number | null;
+            /** Format: date-time */
+            expiresAt: string;
+            /** Format: date-time */
+            createdAt: string;
+        };
+        AiConversationCreateInput: {
+            /**
+             * @default tutor
+             * @enum {string}
+             */
+            kind: "tutor" | "photo_doubt" | "explain_slide" | "evaluation" | "paper_from_upload";
+            chapterId?: string;
+            title?: string;
+        };
+        AiConversationInput: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "tutor" | "photo_doubt" | "explain_slide" | "evaluation" | "paper_from_upload";
+            chapterId: string | null;
+            title: string | null;
+            lastMessageAt: string | null;
+            /** Format: date-time */
+            createdAt: string;
+        };
+        AiConversationsInput: {
+            conversations: components["schemas"]["AiConversationInput"][];
+            nextCursor: string | null;
+        };
+        /** @description Messages are kept for 30 days. */
+        AiConversationDetailInput: {
+            conversation: components["schemas"]["AiConversationInput"];
+            messages: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                role: "user" | "assistant";
+                content: string;
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+        };
+        AiEvaluationRequestInput: {
+            itemIds?: string[];
+        };
+        AiEvaluationInput: {
+            /** Format: uuid */
+            attemptId: string;
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                marks: number;
+                maxMarks: number;
+                confidence: number;
+                lowConfidence: boolean;
+                label: string;
+                steps: {
+                    part: string | null;
+                    index: number;
+                    step: string;
+                    awarded: number;
+                    max: number;
+                    reason: string;
+                }[];
+                feedback: string;
+                /** Format: date-time */
+                evaluatedAt: string;
+            }[];
+            totalMarks: number;
+            maxMarks: number;
+            /** @constant */
+            countsForRanks: false;
+            job: {
+                /** Format: uuid */
+                id: string;
+                status: string;
+            } | null;
+        };
         /** @description Plans and GST-inclusive INR prices from platform/shared/config/plans.ts. */
         PlansResponseInput: {
             billingEnabled: boolean;
@@ -5090,6 +6001,13 @@ export interface components {
                 message: string;
             }[];
             retryAfterSeconds?: number;
+            balance?: number;
+            required?: number;
+            /** Format: date-time */
+            resetAt?: string;
+            resetInSeconds?: number;
+            plan?: string;
+            plansUrl?: string;
         };
         /** @enum {string} */
         ConsentState: "required" | "pending" | "granted" | "revoked";
@@ -6259,6 +7177,235 @@ export interface components {
                 maxScore: number | null;
             }[];
             nextCursor: string | null;
+        };
+        AiActionRequest: {
+            message?: string;
+            attempt?: string;
+            reveal?: boolean;
+            /** Format: uuid */
+            conversationId?: string;
+            chapterId?: string;
+            slide?: {
+                part?: number;
+                slideId: string;
+            };
+            /** Format: uuid */
+            uploadId?: string;
+            subjectId?: string;
+            /** Format: uuid */
+            attemptId?: string;
+            itemIds?: string[];
+        };
+        /** @description Poll GET /v1/ai/jobs/:id. */
+        AiJobAccepted: {
+            /** Format: uuid */
+            jobId: string;
+            /** @constant */
+            status: "queued";
+            /** @enum {string} */
+            action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+            credits: number;
+            balance: number;
+            answers?: number;
+            skipped?: {
+                /** Format: uuid */
+                itemId: string;
+                /** @enum {string} */
+                reason: "not_written" | "unanswered" | "already_evaluated";
+            }[];
+        };
+        /** @description evaluation result: {attemptId, evaluated[], notEvaluated[{itemId, reason}], creditsCharged, creditsRefunded, countsForRanks:false}. paper_from_upload result: {blueprint {durationMin, totalMarks, sections[{id, questionType, count, marksEach, internalChoice}], chapterIds}, testId, skippedChapters, creditsCharged}. */
+        AiJob: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "evaluation" | "paper_from_upload";
+            action: string | null;
+            /** @enum {string} */
+            status: "queued" | "running" | "succeeded" | "failed";
+            result: {
+                [key: string]: unknown;
+            } | null;
+            error: string | null;
+            /** Format: date-time */
+            createdAt: string;
+            finishedAt: string | null;
+        };
+        /** @description Today’s AI credits (1 credit = ₹0.10 of AI). Resets at 00:00 IST; no rollover. */
+        Credits: {
+            plan: string;
+            planName: string;
+            dailyCredits: number;
+            balance: number;
+            grantedToday: number;
+            reservedNow: number;
+            spentToday: number;
+            day: string;
+            /** Format: date-time */
+            resetAt: string;
+            resetInSeconds: number;
+            plansUrl: string;
+            prices: {
+                /** @enum {string} */
+                action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+                label: string;
+                credits: number;
+                perAnswer: boolean;
+                maxCredits: number;
+                allowedForPlan: boolean;
+            }[];
+        };
+        CreditLedger: {
+            entries: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                kind: "grant" | "reserve" | "charge" | "refund" | "expire";
+                amount: number;
+                action: string;
+                label: string;
+                day: string;
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+            nextCursor: string | null;
+        };
+        /** @description Show the cost before the student confirms (CONTEXT §6). */
+        AiQuote: {
+            /** @enum {string} */
+            action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+            label: string;
+            credits: number;
+            perAnswer: boolean;
+            answers: number | null;
+            maxCredits: number;
+            /** @enum {string} */
+            tier: "small" | "mid" | "verify";
+            /** @enum {string} */
+            mode: "stream" | "job";
+            requiresUpload: boolean;
+            plan: string;
+            allowedForPlan: boolean;
+            balance: number;
+            affordable: boolean;
+            /** @enum {string} */
+            status: "available" | "degraded" | "paused";
+            /** Format: date-time */
+            resetAt: string;
+            resetInSeconds: number;
+            plansUrl: string;
+        };
+        AiUploadRequest: {
+            /** @enum {string} */
+            kind: "photo_doubt" | "sample_paper";
+            /** @enum {string} */
+            contentType: "image/jpeg" | "image/png" | "image/webp" | "application/pdf";
+            bytes: number;
+        };
+        /** @description PUT the file to uploadUrl with these headers within uploadExpiresAt, then POST /v1/ai/uploads/:id/complete. */
+        AiUploadTarget: {
+            /** Format: uuid */
+            uploadId: string;
+            uploadUrl: string;
+            /** @constant */
+            method: "PUT";
+            headers: {
+                [key: string]: string;
+            };
+            /** Format: date-time */
+            uploadExpiresAt: string;
+            maxBytes: number;
+            /** Format: date-time */
+            expiresAt: string;
+        };
+        AiUpload: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "photo_doubt" | "sample_paper" | "answer_sheet";
+            /** @enum {string} */
+            status: "pending_upload" | "uploaded" | "scanning" | "ready" | "rejected";
+            rejectReason: string | null;
+            contentType: string;
+            bytes: number | null;
+            pages: number | null;
+            /** Format: date-time */
+            expiresAt: string;
+            /** Format: date-time */
+            createdAt: string;
+        };
+        AiConversationCreate: {
+            /**
+             * @default tutor
+             * @enum {string}
+             */
+            kind: "tutor" | "photo_doubt" | "explain_slide" | "evaluation" | "paper_from_upload";
+            chapterId?: string;
+            title?: string;
+        };
+        AiConversation: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "tutor" | "photo_doubt" | "explain_slide" | "evaluation" | "paper_from_upload";
+            chapterId: string | null;
+            title: string | null;
+            lastMessageAt: string | null;
+            /** Format: date-time */
+            createdAt: string;
+        };
+        AiConversations: {
+            conversations: components["schemas"]["AiConversation"][];
+            nextCursor: string | null;
+        };
+        /** @description Messages are kept for 30 days. */
+        AiConversationDetail: {
+            conversation: components["schemas"]["AiConversation"];
+            messages: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                role: "user" | "assistant";
+                content: string;
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+        };
+        AiEvaluationRequest: {
+            itemIds?: string[];
+        };
+        AiEvaluation: {
+            /** Format: uuid */
+            attemptId: string;
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                marks: number;
+                maxMarks: number;
+                confidence: number;
+                lowConfidence: boolean;
+                label: string;
+                steps: {
+                    part: string | null;
+                    index: number;
+                    step: string;
+                    awarded: number;
+                    max: number;
+                    reason: string;
+                }[];
+                feedback: string;
+                /** Format: date-time */
+                evaluatedAt: string;
+            }[];
+            totalMarks: number;
+            maxMarks: number;
+            /** @constant */
+            countsForRanks: false;
+            job: {
+                /** Format: uuid */
+                id: string;
+                status: string;
+            } | null;
         };
         /** @description Plans and GST-inclusive INR prices from platform/shared/config/plans.ts. */
         PlansResponse: {

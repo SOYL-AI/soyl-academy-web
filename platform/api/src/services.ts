@@ -17,6 +17,7 @@ import { MfaService } from './auth/mfa';
 import { MFA } from '@soyl/shared/config/security';
 import { BillingService } from './billing/service';
 import { createRazorpayClient, type RazorpayClient } from './billing/razorpay';
+import { AiServices, type AiDeps } from './ai/services';
 
 export interface Providers {
   sms: SmsSender;
@@ -32,8 +33,10 @@ export interface AppDeps {
   providers: Providers;
   /** Google OIDC options (tests point fetch at the mock provider). */
   google?: { allowInsecure?: boolean; fetch?: typeof fetch };
-  /** Billing (ADR-014): inject a Razorpay client (scripts, tests). Default: from config.billing (stub/real/none). */
+  /** Billing (ADR-016): inject a Razorpay client (scripts, tests). Default: from config.billing (stub/real/none). */
   billing?: { razorpay?: RazorpayClient | null };
+  /** AI gateway runtime (ai/runtime.ts). Omitted: local stand-ins (refused in production). */
+  ai?: AiDeps;
 }
 
 export function createServices(deps: AppDeps) {
@@ -57,7 +60,11 @@ export function createServices(deps: AppDeps) {
   const mfa = new MfaService(db, clock, limiter, { encryptionKey: config.mfaEncryptionKey, pepper: config.otpPepper, issuer: MFA.totp.issuer });
   const razorpay = deps.billing && 'razorpay' in deps.billing ? (deps.billing.razorpay ?? null) : createRazorpayClient(config.billing, () => clock.now());
   const billing = new BillingService({ db, clock, kv, config: config.billing, razorpay, consent });
-  return { auth, adapter, limiter, sessions, otp, identity, google, consent, mfa, billing };
+  // AI gateway: plans come from billing's entitlements (AiServices defaults to BillingEntitlementService over the same
+  // database; tests may inject a StaticEntitlementService); a newly granted plan tops today's credits up at once.
+  const ai = new AiServices({ config, db, kv, clock, ai: deps.ai });
+  billing.setCreditHook(ai.credits);
+  return { auth, adapter, limiter, sessions, otp, identity, google, consent, mfa, billing, ai };
 }
 
 export type Services = ReturnType<typeof createServices>;

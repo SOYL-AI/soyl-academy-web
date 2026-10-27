@@ -1,5 +1,5 @@
 /**
- * `npm run billing -w @soyl/api -- <command>` (from platform/). Operator tool for billing (ADR-014,
+ * `npm run billing -w @soyl/api -- <command>` (from platform/). Operator tool for billing (ADR-016,
  * runbook docs/platform/runbooks/razorpay-webhook-replay.md). Needs DATABASE_URL (DATABASE_AUTH=entra
  * for managed identity) and the RAZORPAY_* settings of the environment (billing/config.ts).
  *

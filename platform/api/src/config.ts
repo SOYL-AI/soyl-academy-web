@@ -167,7 +167,7 @@ export interface Config {
   consent: { provider: 'mock' | 'unavailable'; mockDefault: 'required' | 'pending' | 'granted' | 'revoked' };
   academicYear: string;
   devOtpOutbox: boolean;
-  /** Razorpay billing (billing/config.ts, ADR-014). */
+  /** Razorpay billing (billing/config.ts, ADR-016). */
   billing: BillingConfig;
 }
 

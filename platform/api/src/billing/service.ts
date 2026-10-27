@@ -1,5 +1,5 @@
 /**
- * Billing service (CONTEXT §5–7, ARCHITECTURE §11.2, ADR-014): plans, purchases, cancellation, the
+ * Billing service (CONTEXT §5–7, ARCHITECTURE §11.2, ADR-016): plans, purchases, cancellation, the
  * student's subscription view, and the server-side refresh after Checkout.
  *
  * Who decides entitlement: never the client (AC-10, F-020). Purchase endpoints only create a Razorpay
@@ -7,7 +7,7 @@
  * Checkout `handler` callback in the browser is ignored: entitlement is written only by sync.ts from
  * state re-fetched from Razorpay (webhook, `POST /v1/billing/refresh`, reconciliation).
  *
- * Consent (D-014, ADR-014): buying is for a parent. Until the account's consent status is `granted`,
+ * Consent (D-014, ADR-016): buying is for a parent. Until the account's consent status is `granted`,
  * purchases are refused (403 consent_required); with CONSENT_PROVIDER=unavailable (production today)
  * nobody can buy. Cancelling, the subscription view and webhooks never depend on consent or on
  * BILLING_ENABLED, so an existing subscription can always be managed and renewals keep applying.

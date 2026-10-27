@@ -1,6 +1,6 @@
--- 0008 billing (billing-razorpay M4, ADR-014): Razorpay binding columns on subscriptions (plan id and
+-- 0009 billing (billing-razorpay M4, ADR-016): Razorpay binding columns on subscriptions (plan id and
 -- price at creation, paid count, end time) and the processing outcome + entity id on the append-only
--- webhook_events. Down: 0008_billing.down.sql. NOTE: ai-gateway M4 also adds a 0008; the Lead renumbers.
+-- webhook_events. Down: 0009_billing.down.sql. (Was 0008 on its branch; renumbered after ai-gateway's 0008.)
 ALTER TABLE "subscriptions" ADD COLUMN "razorpay_plan_id" text;--> statement-breakpoint
 ALTER TABLE "subscriptions" ADD COLUMN "amount_paise" integer;--> statement-breakpoint
 ALTER TABLE "subscriptions" ADD COLUMN "paid_count" integer DEFAULT 0 NOT NULL;--> statement-breakpoint

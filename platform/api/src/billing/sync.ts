@@ -1,5 +1,5 @@
 /**
- * Applying Razorpay state to our records (ADR-014). Every path that changes billing state — webhooks,
+ * Applying Razorpay state to our records (ADR-016). Every path that changes billing state — webhooks,
  * the server-side refresh after Checkout, the cancel endpoint, nightly reconciliation and the replay
  * CLI — goes through these functions, and they never trust the caller's copy of an entity:
  *

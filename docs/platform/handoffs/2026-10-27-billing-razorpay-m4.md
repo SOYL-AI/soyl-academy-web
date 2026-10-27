@@ -7,7 +7,7 @@ switch the real client on by configuration only. `BILLING_ENABLED` stays false i
 was deployed.
 
 Branch: `platform/billing-razorpay/m4` (worktree `C:/Users/Prabhu/soyl-wt/billing-m4`), from
-`platform/main` b3379cc (prod-readiness merge) + `origin/platform/main` 0dee08c merged. Design: ADR-014.
+`platform/main` b3379cc (prod-readiness merge) + `origin/platform/main` 0dee08c merged. Design: ADR-016.
 Runbook: `docs/platform/runbooks/razorpay-webhook-replay.md`.
 
 ## What changed
@@ -22,7 +22,7 @@ Runbook: `docs/platform/runbooks/razorpay-webhook-replay.md`.
 | `platform/shared/config/plans.ts` (+ test) | `planPrice`, `priceLabel` (₹199/month, ₹1,499/year, ₹499 one-time) and `BILLING` (grace 48 h, reuse 30 min, order expiry 24 h, `expire_by` 24 h, total_count 60/5, refresh 12/min, `notes.app`). Prices unchanged. |
 | `platform/worker/src/billing-jobs.ts` (new), `jobs.ts`, `config.ts`, `worker.ts`, tests | Jobs `billing.reconcile` (22:00 UTC) and `billing.expire` (hourly); worker config reads the same RAZORPAY_* variables and uses only the real client. |
 | `platform/api/openapi.json`, `platform/shared/api-client/schema.gen.ts` | Regenerated. |
-| `docs/platform/adr/014-billing-razorpay.md`, `docs/platform/runbooks/razorpay-webhook-replay.md` | ADR-014; incident runbook (replay, resync, reconcile, secret rotation, webhook setup). |
+| `docs/platform/adr/014-billing-razorpay.md`, `docs/platform/runbooks/razorpay-webhook-replay.md` | ADR-016; incident runbook (replay, resync, reconcile, secret rotation, webhook setup). |
 
 ## Endpoints (browser path = `/api/platform` + path)
 
@@ -56,7 +56,7 @@ return { …, billing, ai };
 (`index.ts` passes `createAiRuntime(...)`'s runtime, which carries `FreeEntitlementService`; the spread
 order above replaces it.) The worker needs nothing: it never reads plans.
 
-## Decisions taken here (details in ADR-014)
+## Decisions taken here (details in ADR-016)
 
 - **Consent (D-014):** purchases need consent `granted` → else 403 `consent_required` (+ `consent_denied`
   security event, `feature=purchases`); consent outage → 503. With `CONSENT_PROVIDER=unavailable`
@@ -118,7 +118,7 @@ test purchases (UPI `success@razorpay`, card 4111 1111 1111 1111), `reconcile --
   merge conflicts expected, no semantic ones.
 - The stub cannot prove Razorpay's exact Checkout behaviour (UPI AutoPay mandate timing, `authenticated`
   without an immediate charge for future-start subscriptions); rerun the flows in test mode (D-010).
-- Webhook event-id header is unsigned; harmless by design (re-fetch), noted in ADR-014.
+- Webhook event-id header is unsigned; harmless by design (re-fetch), noted in ADR-016.
 - `docs/platform/STATUS.md`, `OWNER_ACTIONS.md` (OA-04 detail), `ARCHITECTURE.md` §11.2 / §19 (new
   `RAZORPAY_PROVIDER`, `RAZORPAY_WEBHOOK_SECRET_PREVIOUS`, `RAZORPAY_API_BASE_URL`) and
   `platform/db/README.md` (migration list) are the Lead's files — please update.

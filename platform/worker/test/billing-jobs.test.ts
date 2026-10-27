@@ -1,10 +1,10 @@
 /**
- * Billing jobs (ADR-014): nightly reconciliation repairs and alerts on drift; hourly expiry; the worker
+ * Billing jobs (ADR-016): nightly reconciliation repairs and alerts on drift; hourly expiry; the worker
  * only ever uses the real Razorpay client (never the per-process stub).
  */
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { eq } from 'drizzle-orm';
-import { auditLog, orders, plans } from '@soyl/db';
+import { auditLog, creditLedger, orders, plans } from '@soyl/db';
 import { createTestDb, type TestDb } from '@soyl/db/testing';
 import { RazorpayStub } from '@soyl/api/billing/razorpay/stub';
 import { RazorpayHttpClient } from '@soyl/api/billing/razorpay/http';
@@ -61,6 +61,9 @@ describe('billing jobs', () => {
     const [o] = await t.db.select().from(orders).where(eq(orders.razorpayOrderId, rz.id));
     expect(o!.status).toBe('paid');
     expect(await t.db.select().from(auditLog).where(eq(auditLog.targetId, rz.id))).toHaveLength(1);
+    // The new plan's credits apply at once (AI gateway CreditService.applyPlanChange).
+    const grants = await t.db.select().from(creditLedger).where(eq(creditLedger.userId, userId));
+    expect(grants.map((g) => [g.kind, g.amount, g.planId])).toEqual([['grant', 60, 'board_exam_pass']]);
     // Second night: nothing to do.
     expect(await job.handler({ db: t.db, now: NOW, log }, undefined)).toMatchObject({ drift: 0, alerts: 0 });
   });

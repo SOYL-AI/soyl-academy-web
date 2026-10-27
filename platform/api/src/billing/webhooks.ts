@@ -1,5 +1,5 @@
 /**
- * POST /v1/webhooks/razorpay processing (ARCHITECTURE §11.2, AC-09, F-019, ADR-014).
+ * POST /v1/webhooks/razorpay processing (ARCHITECTURE §11.2, AC-09, F-019, ADR-016).
  *
  *   raw bytes ─ signature (HMAC-SHA256, constant time, current+previous secret) ─ only then JSON.parse
  *     ─ one transaction:

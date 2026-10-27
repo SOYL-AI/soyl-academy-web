@@ -1,4 +1,4 @@
--- Down for 0008_billing (billing-razorpay M4). Drops the Razorpay binding columns on subscriptions and
+-- Down for 0009_billing (billing-razorpay M4). Drops the Razorpay binding columns on subscriptions and
 -- the outcome/entity columns on webhook_events (event rows themselves are kept).
 DROP INDEX IF EXISTS "webhook_events_entity_idx";
 ALTER TABLE "webhook_events" DROP CONSTRAINT IF EXISTS "webhook_events_outcome_check";

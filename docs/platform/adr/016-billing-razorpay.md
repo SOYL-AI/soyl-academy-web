@@ -1,7 +1,7 @@
-# ADR-014: Billing with Razorpay — purchases, webhooks, entitlements, reconciliation, consent
+# ADR-016: Billing with Razorpay — purchases, webhooks, entitlements, reconciliation, consent
 
 - Status: accepted (billing-razorpay M4, 2026-10-27)
-- Related: CONTEXT §5–§7, §12; ARCHITECTURE §4.1 (billing row), §6 (billing tables), §11.2, §19; threat model AC-09, AC-10, AC-17, AC-22; findings F-019, F-020; requirements AUTH-12, API-6, API-8, API-13..API-16, DB-1, DB-2, GEN-1, GEN-3; D-003, D-014, D-031; OA-04, OA-08; ADR-003 (pg-boss), ADR-013 (AI gateway, credits)
+- Related: CONTEXT §5–§7, §12; ARCHITECTURE §4.1 (billing row), §6 (billing tables), §11.2, §19; threat model AC-09, AC-10, AC-17, AC-22; findings F-019, F-020; requirements AUTH-12, API-6, API-8, API-13..API-16, DB-1, DB-2, GEN-1, GEN-3; D-003, D-014, D-031; OA-04, OA-08; ADR-003 (pg-boss), ADR-013 (AI gateway, credits). (Numbered 016: ai-gateway took 013–015.)
 
 ## Context
 
@@ -76,9 +76,9 @@ production runs with `CONSENT_PROVIDER=unavailable` (D-031: nobody can be grante
    treated as `halted`. `planFor(user, at)` = the in-force entitlement with the most daily credits
    (`valid_from ≤ at ≤ valid_until`, not revoked at `at`), else `free`.
 
-5. **Contract with the AI gateway (ADR-013).** `BillingEntitlementService` implements the gateway's
+5. **Contract with the AI gateway (ADR-013).** `BillingEntitlementService` (re-exported from `ai/entitlements.ts`) implements the gateway's
    `EntitlementService` (`name`, `planFor(userId, at)`; never throws for "no plan"; throws only when the
-   database is unreachable). When a sync makes a plan newly in force, after commit the billing service
+   database is unreachable). `AiServices` uses it by default (`createAiRuntime` no longer returns a placeholder; tests inject `StaticEntitlementService`), and `createServices` calls `billing.setCreditHook(ai.credits)`. When a sync makes a plan newly in force, after commit the billing service
    calls the `CreditTopUpHook` (`CreditService.applyPlanChange(userId, plan)`) so today's grant is topped
    up to the new plan's daily credits. A failing hook never fails the payment path: the credits service
    also tops up lazily because `planFor` already returns the new plan.
@@ -135,10 +135,9 @@ production runs with `CONSENT_PROVIDER=unavailable` (D-031: nobody can be grante
     `RAZORPAY_WEBHOOK_SECRET` (+ `_PREVIOUS`), `RAZORPAY_API_BASE_URL`. Public development placeholders
     are refused outside local/test (GEN-1). Test-mode keys switch the real client on with no code change.
 
-12. **Schema** (migration `0008_billing`, reversible): `subscriptions.razorpay_plan_id`, `amount_paise`
+12. **Schema** (migration `0009_billing`, reversible, after ai-gateway's `0008_ai_gateway`): `subscriptions.razorpay_plan_id`, `amount_paise`
     (CHECK > 0), `paid_count`, `ended_at`; `webhook_events.outcome` (`applied|ignored|rejected`, CHECK) and
-    `entity_id` (indexed, for incident lookups). ai-gateway M4 also adds a `0008`; whichever merges second
-    is renumbered `0009` (and its drizzle snapshot regenerated).
+    `entity_id` (indexed, for incident lookups). No new tables.
 
 ## Consequences
 

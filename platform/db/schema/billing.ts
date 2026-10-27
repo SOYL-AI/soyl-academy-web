@@ -45,7 +45,7 @@ export const subscriptions = pgTable(
       .references(() => plans.id, { onDelete: 'restrict' }),
     interval: text('interval').notNull(),
     razorpaySubscriptionId: text('razorpay_subscription_id').notNull().unique('subscriptions_razorpay_id_unique'),
-    /** The Razorpay plan the subscription was created on (binding check, AC-09; plans are immutable). Migration 0008_billing. */
+    /** The Razorpay plan the subscription was created on (binding check, AC-09; plans are immutable). Migration 0009_billing. */
     razorpayPlanId: text('razorpay_plan_id'),
     /** GST-inclusive price per period at creation, paise: every charge must equal it (AC-09). */
     amountPaise: integer('amount_paise'),
@@ -172,7 +172,7 @@ export const webhookEvents = pgTable(
     eventCreatedAt: tstz('event_created_at'),
     processedAt: tstz('processed_at').notNull().defaultNow(),
     /**
-     * What processing did (migration 0008_billing): applied (state written), ignored (not ours / no-op
+     * What processing did (migration 0009_billing): applied (state written), ignored (not ours / no-op
      * event type), rejected (failed a binding check: security event). Written with processed_at in the
      * one INSERT at the end of the processing transaction, because the row is append-only (DB-1).
      */

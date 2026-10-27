@@ -11,6 +11,8 @@ import { systemClock } from './clock';
 import { ConfigError, loadConfig } from './config';
 import { createKv } from './kv';
 import { createProviders } from './providers';
+import { loadAiConfig } from './ai/config';
+import { createAiRuntime } from './ai/runtime';
 
 export interface MainHooks {
   /** Local dev only: runs after the embedded database is migrated and seeded, before the server starts (scripts/dev.ts publishes content here). */
@@ -42,7 +44,10 @@ export async function main(env: Record<string, string | undefined> = process.env
   const { db, close: closeDb } = createDb(databaseUrl, { max: config.databasePoolMax, password: pgPasswordFromEnv({ DATABASE_AUTH: config.databaseAuth }) });
   const kv = createKv(config, { onRefreshError: (err) => console.error(`redis token refresh failed: ${(err as Error).message}`) });
   const providers = createProviders(config);
-  const app = await buildApp({ config, db, kv, clock: systemClock, providers });
+  // AI gateway (ADR-013): mock/local stand-ins locally; Azure services by config; 'disabled' fails closed.
+  const aiConfig = loadAiConfig(config, env);
+  const aiRuntime = await createAiRuntime(config, aiConfig, { env });
+  const app = await buildApp({ config, db, kv, clock: systemClock, providers, ai: { config: aiConfig, runtime: aiRuntime } });
 
   let closing = false;
   const shutdown = async (signal: string) => {
@@ -74,7 +79,7 @@ export async function main(env: Record<string, string | undefined> = process.env
     throw err;
   }
   app.log.info(
-    { appEnv: config.appEnv, platformEnabled: config.platformEnabled, kv: kv.kind, authMethods: config.authMethods, databaseAuth: config.databaseAuth, redisAuth: config.redis.auth, sms: providers.sms.name, email: providers.email.name, consent: providers.consent.name },
+    { appEnv: config.appEnv, platformEnabled: config.platformEnabled, kv: kv.kind, authMethods: config.authMethods, databaseAuth: config.databaseAuth, redisAuth: config.redis.auth, sms: providers.sms.name, email: providers.email.name, consent: providers.consent.name, ai: aiConfig.provider, contentSafety: aiConfig.contentSafety.provider, blob: aiConfig.blob.provider },
     'SOYL API ready',
   );
   return app;

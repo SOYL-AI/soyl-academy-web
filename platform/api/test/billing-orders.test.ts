@@ -5,7 +5,7 @@
  */
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { and, eq } from 'drizzle-orm';
-import { auditLog, entitlements, orders, payments, webhookEvents } from '@soyl/db';
+import { auditLog, creditLedger, entitlements, orders, payments, webhookEvents } from '@soyl/db';
 import { signWebhook } from '../src/billing/razorpay';
 import { securityEvents } from './helpers';
 import { billingRows, createBillingHarness, eventRows, planFor, type BillingHarness } from './billing-fixture';
@@ -370,8 +370,20 @@ describe('credit top-up hook (ARCHITECTURE §11.2)', () => {
       expect(res[0]!.statusCode).toBe(200);
       expect(await planFor(h, other.userId)).toBe('board_exam_pass');
     } finally {
-      h.services.billing.setCreditHook(null);
+      h.services.billing.setCreditHook(h.services.ai.credits);
     }
+  });
+
+  it('is wired to the AI gateway: credits read before the purchase are topped up to the pass at once', async () => {
+    const { c, userId, checkout } = await buyPass();
+    const before = (await c.get('/v1/credits')).json();
+    expect(before).toMatchObject({ plan: 'free', dailyCredits: 25, grantedToday: 25 });
+    await h.deliverAll(h.stub.simulateOrderPayment(checkout.orderId));
+    // The top-up row exists before the student's next request (hook after commit, not the lazy path).
+    const rows = await h.t.db.select().from(creditLedger).where(and(eq(creditLedger.userId, userId), eq(creditLedger.kind, 'grant')));
+    expect(rows.map((r) => [r.action, r.amount]).sort()).toEqual([['daily_grant', 25], ['plan_topup', 35]]);
+    expect(await h.services.ai.credits.balance(userId)).toMatchObject({ plan: 'board_exam_pass', dailyCredits: 60, grantedToday: 60 });
+    expect((await c.get('/v1/credits')).json()).toMatchObject({ plan: 'board_exam_pass', dailyCredits: 60, balance: 60 });
   });
 });
 

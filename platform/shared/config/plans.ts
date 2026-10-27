@@ -111,7 +111,7 @@ export function priceLabel(price: PlanPrice): string {
 }
 
 /**
- * Billing behaviour (ARCHITECTURE §11.2, ADR-014). Owner-tunable values only; prices live in PLANS.
+ * Billing behaviour (ARCHITECTURE §11.2, ADR-016). Owner-tunable values only; prices live in PLANS.
  */
 export const BILLING = {
   currency: 'INR',

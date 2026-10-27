@@ -1,5 +1,5 @@
 /**
- * Nightly reconciliation and hourly expiry (ARCHITECTURE §11.2, ADR-014). Run by the worker
+ * Nightly reconciliation and hourly expiry (ARCHITECTURE §11.2, ADR-016). Run by the worker
  * (`billing.reconcile`, `billing.expire`) and by the CLI (`npm run billing -w @soyl/api -- reconcile`).
  *
  * Reconciliation compares Razorpay with our records by running each sync in dry-run mode: any change

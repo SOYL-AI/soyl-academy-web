@@ -1,5 +1,5 @@
 /**
- * Billing routes (ARCHITECTURE §4.1 billing row, §11.2; ADR-014).
+ * Billing routes (ARCHITECTURE §4.1 billing row, §11.2; ADR-016).
  *
  *   GET  /v1/plans                    public: plans, GST-inclusive INR labels, purchasable flags
  *   POST /v1/billing/subscriptions    student: Plus/Pro monthly/yearly → Razorpay subscription + Checkout params

@@ -9,7 +9,8 @@ import type { z } from 'zod/v4';
 import { MODELS, costPaise, type ModelTier, type TokenUsage } from '@soyl/shared/config/models';
 import { BudgetGuard, type BudgetLedger } from './budget';
 import { parseJsonOutput, toJsonSchema } from './json-schema';
-import { estimateMessagesTokens } from './tokens';
+import { StreamInterruptedError } from './errors';
+import { estimateMessagesTokens, estimateTokens } from './tokens';
 import type {
   BatchStatus,
   ChatRequest,
@@ -134,7 +135,22 @@ export class ModelClient {
     try {
       raw = await this.provider.stream(req, onDelta);
     } catch (error) {
-      await this.budget.release(reservation);
+      if (error instanceof StreamInterruptedError && error.partialText) {
+        // Output was produced before the failure/cancel: meter it (estimated tokens) like a finished call.
+        const partial: RawCompletion = {
+          text: error.partialText,
+          finishReason: error.cancelled ? 'cancelled' : 'interrupted',
+          usage: { input_tokens: estimateMessagesTokens(req.messages), cached_input_tokens: 0, output_tokens: estimateTokens(error.partialText) },
+          model: this.provider.simulated ? 'mock' : 'unknown',
+          requestId: null,
+        };
+        const usage = this.record(req.tier, partial, Math.round(performance.now() - started), false, req.meta);
+        await this.budget.settle(reservation, usage.cost_paise);
+        await this.emit(usage);
+        error.usage = usage;
+      } else {
+        await this.budget.release(reservation);
+      }
       throw error;
     }
     const usage = this.record(req.tier, raw, Math.round(performance.now() - started), false, req.meta);
