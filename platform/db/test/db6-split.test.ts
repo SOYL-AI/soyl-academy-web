@@ -137,7 +137,9 @@ describe.skipIf(!releases.length)('every authored and exemplar release (DB-6 dee
     t = await createTestDb();
     await seedCatalog(t.db);
     for (const r of releases) await ingestChapterRelease(t.db, r);
-  });
+    // Ingesting every authored release grows with the content (99 chapters ≈ 2.5 min on a loaded machine), so the
+    // budget scales with the number of releases instead of using the package's fixed 180 s hook timeout.
+  }, Math.max(180_000, releases.length * 4_000));
   afterAll(async () => {
     await t?.close();
   });
