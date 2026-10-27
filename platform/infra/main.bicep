@@ -24,13 +24,29 @@ param env string
 ])
 param location string
 
-@description('Region for the Azure AI accounts. Must stay in India (ADR-008); default centralindia.')
+@description('Region of the Azure OpenAI account. Must stay in India (ADR-008); prod uses southindia, the only Indian region with the GPT-6 Luna / GPT-6.1 Sol models.')
 @allowed([
   'centralindia'
   'southindia'
   'westindia'
 ])
 param aiLocation string
+
+@description('Region of the Azure AI Speech account (ADR-008). Speech is offered in centralindia, not southindia.')
+@allowed([
+  'centralindia'
+  'southindia'
+  'westindia'
+])
+param speechLocation string
+
+@description('Region of the Azure AI Content Safety account (ADR-008). Content Safety is offered in southindia, not centralindia.')
+@allowed([
+  'centralindia'
+  'southindia'
+  'westindia'
+])
+param contentSafetyLocation string
 
 // ---------- network ----------
 param vnetAddressPrefix string
@@ -277,7 +293,9 @@ module ai 'modules/ai.bicep' = if (deployAi) {
   name: 'ai'
   params: {
     env: env
-    location: aiLocation
+    openAiLocation: aiLocation
+    speechLocation: speechLocation
+    contentSafetyLocation: contentSafetyLocation
     vnetLocation: location
     tags: tags
     peSubnetId: network.outputs.peSubnetId
@@ -342,7 +360,10 @@ module acrPull 'modules/acrPull.bicep' = {
 }
 
 // Deployment names per tier (models.ts maps tiers to these env vars, ARCHITECTURE section 10/19).
-var deploymentNameByTier = toObject(aoaiDeployments, d => d.tier, d => d.name)
+// Empty unless the deployments exist, so an app never points at a deployment that is not there.
+// A tier without a *-batch entry gets an empty AZURE_OPENAI_DEPLOYMENT_<TIER>_BATCH: @soyl/ai-core
+// then offers no Batch and the content pipeline runs synchronously at the standard price.
+var deploymentNameByTier = toObject(filter(aoaiDeployments, d => deployAi && aoaiDeployModels), d => d.tier, d => d.name)
 
 var commonEnv = concat(
   [
@@ -419,8 +440,16 @@ var commonEnv = concat(
       value: deploymentNameByTier.?verify ?? deploymentNameByTier.?mid ?? ''
     }
     {
-      name: 'AZURE_OPENAI_DEPLOYMENT_BATCH'
-      value: deploymentNameByTier.?batch ?? ''
+      name: 'AZURE_OPENAI_DEPLOYMENT_EMBEDDING'
+      value: deploymentNameByTier.?embedding ?? ''
+    }
+    {
+      name: 'AZURE_OPENAI_DEPLOYMENT_SMALL_BATCH'
+      value: deploymentNameByTier[?'small-batch'] ?? ''
+    }
+    {
+      name: 'AZURE_OPENAI_DEPLOYMENT_MID_BATCH'
+      value: deploymentNameByTier[?'mid-batch'] ?? ''
     }
     {
       name: 'AZURE_OPENAI_MODELS_DEPLOYED'
@@ -428,7 +457,7 @@ var commonEnv = concat(
     }
     {
       name: 'AZURE_SPEECH_REGION'
-      value: deployAi ? ai!.outputs.aiLocation : ''
+      value: deployAi ? ai!.outputs.speechRegion : ''
     }
     {
       name: 'AZURE_SPEECH_ENDPOINT'

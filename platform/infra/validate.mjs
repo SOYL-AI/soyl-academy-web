@@ -154,15 +154,31 @@ for (const p of paramFiles) {
     console.log(`  INFRA-9: location must be centralindia, got ${val('location')}`);
     errors++;
   }
-  if (val('aiLocation') !== undefined && !INDIA_REGIONS.has(val('aiLocation'))) {
-    console.log(`  INFRA-9/ADR-008: aiLocation must be an Indian region, got ${val('aiLocation')}`);
-    errors++;
+  for (const k of ['aiLocation', 'speechLocation', 'contentSafetyLocation']) {
+    if (val(k) !== undefined && !INDIA_REGIONS.has(val(k))) {
+      console.log(`  INFRA-9/ADR-008: ${k} must be an Indian region, got ${val(k)}`);
+      errors++;
+    }
+  }
+  // ADR-008: model deployments name a known tier (main.bicep maps tiers to AZURE_OPENAI_DEPLOYMENT_*),
+  // a real model version and an approved deployment type.
+  const AOAI_TIERS = new Set(['small', 'mid', 'verify', 'embedding', 'small-batch', 'mid-batch']);
+  const AOAI_SKUS = new Set(['GlobalStandard', 'DataZoneStandard', 'Standard', 'GlobalBatch', 'DataZoneBatch']);
+  for (const d of val('aoaiDeployments') ?? []) {
+    const problems = [];
+    if (!AOAI_TIERS.has(d.tier)) problems.push(`unknown tier "${d.tier}"`);
+    if (!AOAI_SKUS.has(d.skuName)) problems.push(`skuName "${d.skuName}" not in ADR-008`);
+    if (d.tier?.endsWith('-batch') !== /Batch$/.test(d.skuName ?? '')) problems.push('batch tiers (and only they) use a *Batch sku');
+    if (val('aoaiDeployModels') && !/^[0-9]/.test(String(d.version))) problems.push(`placeholder version "${d.version}" with aoaiDeployModels=true`);
+    if (!(d.capacity > 0)) problems.push('capacity must be > 0');
+    for (const p of problems) console.log(`  ADR-008: aoaiDeployments ${d.name}: ${p}`);
+    errors += problems.length;
   }
   const leaks = [];
   for (const [k, v] of Object.entries(params)) scanSecrets(v.value, k, leaks);
   for (const l of leaks) console.log(`  GEN-1: parameter value looks like a credential: ${l}`);
   errors += leaks.length;
-  console.log(`  ${Object.keys(params).length} parameters; location=${val('location')}${val('aiLocation') ? `, aiLocation=${val('aiLocation')}` : ''}; credential-like values: ${leaks.length}`);
+  console.log(`  ${Object.keys(params).length} parameters; location=${val('location')}${val('aiLocation') ? `, ai=${val('aiLocation')}/${val('speechLocation')}/${val('contentSafetyLocation')} (openai/speech/safety)` : ''}; credential-like values: ${leaks.length}`);
 }
 
 console.log('\n| step | file | errors | warnings |\n|---|---|---|---|');

@@ -2,14 +2,23 @@
  * Model registry (ARCHITECTURE §10, D-021). Logical tiers map to Azure OpenAI deployments whose
  * names come from env vars; changing a model is a config change, never a code change.
  *
- * PRICES ARE PLACEHOLDERS (`price_status: 'unverified'`). They were derived so that the per-action
- * costs in CONTEXT §6 come out right with typical prompt sizes, assuming USD 1 = INR 88:
- *   - small (GPT-6 Luna): quick doubt ≈ 600 input + 100 output tokens → ₹0.013 + ₹0.018 ≈ ₹0.03
- *   - mid (GPT-6.1 Sol): hard doubt ≈ 1,500 in + 400 out → ₹0.17 + ₹0.35 ≈ ₹0.52 (CONTEXT: ₹0.53);
- *     paper-from-upload ≈ 15,000 in + 5,000 out → ₹1.65 + ₹4.40 ≈ ₹6.05 (CONTEXT: ₹6.10)
- *   - verify (GPT-6 Astra): not priced in CONTEXT; assumed 1.6× mid.
- * Cached input is assumed at 10% of input; Azure OpenAI Batch at 50% of the standard price.
- * The owner confirms real prices for the deployed models under OA-02; update the numbers here only.
+ * PRICES ARE VERIFIED (2026-10-28) against the Azure Retail Prices API
+ * (https://prices.azure.com/api/retail/prices, currencyCode=INR, serviceName 'Foundry Models',
+ * armRegionName 'southindia'), for the deployments production actually uses (ADR-008):
+ *   - GPT-6 Luna, GlobalStandard, short context (meters "6-luna ShortCo {Inp|Cd Inp|Opt} Std Gl",
+ *     effective 2026-09-01): input ₹9.5989, cached input ₹0.9599, output ₹47.9947 per 1M tokens.
+ *   - GPT-6.1 Sol, GlobalStandard, short context (meters "6.1-sol ShortCo ... Std Gl", effective
+ *     2026-10-01): input ₹191.9788, cached input ₹9.5989, output ₹959.894 per 1M tokens.
+ *   - text-embedding-3-small, DataZoneStandard ("text embedding 3 small DZ Tokens", 2026-06-01):
+ *     ₹0.0023 per 1K = ₹2.30 per 1M.
+ * The INR meters correspond to USD 1 ≈ INR 95.99 (e.g. Sol input USD 2.00, output USD 10.00 per 1M).
+ * Not modelled here (both make real cost HIGHER than costPaise; the 7-day cost guardrail sees metered cost):
+ *   - prompt-cache WRITES ("Cd Wr" meters) are billed at 1.25× input (Luna ₹11.9987, Sol ₹239.9735);
+ *   - LONG-context requests ("LongCo" meters) cost 2× input and 1.5× output; our prompts stay short.
+ * At these prices the CONTEXT §6 per-action estimates (made with placeholder prices) move: quick doubt
+ * ≈ ₹0.011 (was ₹0.03), hard doubt ≈ ₹0.67 (was ₹0.53), paper-from-upload ≈ ₹7.68 (was ₹6.10).
+ * No Batch deployment exists for these models (no GlobalBatch sku in South India, ADR-008), so
+ * batch_price_factor only applies if one is added later. Update the numbers here only.
  *
  * Dependency-free (no zod) so the API, worker, pipeline and web can all import it.
  */
@@ -33,14 +42,15 @@ export interface ModelConfig {
   /** Optional env var for a separate Global-Batch deployment of the same model; falls back to `deployment_env`. */
   batch_deployment_env: string;
   price_inr_per_1m: TokenPrices;
-  /** Fraction of the standard price charged for Batch requests (0.5 = half price). */
+  /** Fraction of the standard price charged for Batch requests (0.5 = half price). Unused while no Batch deployment exists. */
   batch_price_factor: number;
   max_output_tokens: number;
   context_window: number;
   price_status: 'verified' | 'unverified';
 }
 
-export const USD_TO_INR_ASSUMED = 88;
+/** The rate implied by Azure's INR retail meters on 2026-10-28 (documentation only; prices above are INR). */
+export const USD_TO_INR_ASSUMED = 95.99;
 
 export const MODELS: Record<ModelTier, ModelConfig> = {
   small: {
@@ -48,22 +58,22 @@ export const MODELS: Record<ModelTier, ModelConfig> = {
     display_name: 'GPT-6 Luna',
     deployment_env: 'AZURE_OPENAI_DEPLOYMENT_SMALL',
     batch_deployment_env: 'AZURE_OPENAI_DEPLOYMENT_SMALL_BATCH',
-    price_inr_per_1m: { input: 22, cached_input: 2.2, output: 176 },
+    price_inr_per_1m: { input: 9.5989, cached_input: 0.9599, output: 47.9947 },
     batch_price_factor: 0.5,
     max_output_tokens: 16_000,
     context_window: 400_000,
-    price_status: 'unverified',
+    price_status: 'verified',
   },
   mid: {
     tier: 'mid',
     display_name: 'GPT-6.1 Sol',
     deployment_env: 'AZURE_OPENAI_DEPLOYMENT_MID',
     batch_deployment_env: 'AZURE_OPENAI_DEPLOYMENT_MID_BATCH',
-    price_inr_per_1m: { input: 110, cached_input: 11, output: 880 },
+    price_inr_per_1m: { input: 191.9788, cached_input: 9.5989, output: 959.894 },
     batch_price_factor: 0.5,
     max_output_tokens: 32_000,
     context_window: 400_000,
-    price_status: 'unverified',
+    price_status: 'verified',
   },
   /**
    * The pipeline's independent re-solve pass (stage 5). Owner decision D-033: only two models are used,
@@ -76,11 +86,11 @@ export const MODELS: Record<ModelTier, ModelConfig> = {
     display_name: 'GPT-6.1 Sol (verification pass)',
     deployment_env: 'AZURE_OPENAI_DEPLOYMENT_MID',
     batch_deployment_env: 'AZURE_OPENAI_DEPLOYMENT_MID_BATCH',
-    price_inr_per_1m: { input: 110, cached_input: 11, output: 880 },
+    price_inr_per_1m: { input: 191.9788, cached_input: 9.5989, output: 959.894 },
     batch_price_factor: 0.5,
     max_output_tokens: 32_000,
     context_window: 400_000,
-    price_status: 'unverified',
+    price_status: 'verified',
   },
 };
 
@@ -89,8 +99,8 @@ export const EMBEDDING_MODEL = {
   display_name: 'text-embedding-3-small',
   deployment_env: 'AZURE_OPENAI_DEPLOYMENT_EMBEDDING',
   dimensions: 1536,
-  price_inr_per_1m: { input: 1.76 },
-  price_status: 'unverified' as const,
+  price_inr_per_1m: { input: 2.3 },
+  price_status: 'verified' as const,
 };
 
 export const AZURE_OPENAI_ENV = {
