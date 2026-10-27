@@ -1,0 +1,32 @@
+id: icse-10-hindi-chapter-test-long
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-hindi
+paper_type: chapter-test-long
+academic_year: "2026-27"
+duration_min: 90
+total_marks: 40
+mark_shares: {}
+scope: chapter
+sections:
+  - id: A
+    title: खंड क - वस्तुनिष्ठ (Objective, 10 marks)
+    instructions: दस बहुविकल्पीय प्रश्न, 1-1 अंक। (Ten multiple-choice items, 1 mark each.)
+    items:
+      - {type: mcq, count: 10, marks_each: 1}
+  - id: B
+    title: खंड ख - लघु उत्तर (Short answers, 12 marks)
+    instructions: छह प्रश्न, 2-2 अंक। (Six 2-mark answers.)
+    items:
+      - {type: short, count: 6, marks_each: 2}
+  - id: C
+    title: खंड ग - विस्तृत उत्तर (Longer answers, 18 marks)
+    instructions: आठ में से किन्हीं छह प्रश्नों के उत्तर, 3-3 अंक। (Any six of eight 3-mark answers.)
+    items:
+      - {type: short, count: 8, marks_each: 3, internal_choice: {attempt: 6, of: 8}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL chapter test for ICSE Hindi (see chapter-test-short for the design); not an official CISCE paper. One chapter, 40 marks in
+  90 minutes (board pace).

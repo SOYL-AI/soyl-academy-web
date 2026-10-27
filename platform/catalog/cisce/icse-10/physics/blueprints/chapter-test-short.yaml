@@ -1,0 +1,31 @@
+id: icse-10-physics-chapter-test-short
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-physics
+paper_type: chapter-test-short
+academic_year: "2026-27"
+duration_min: 30
+total_marks: 20
+mark_shares: {}
+scope: chapter
+sections:
+  - id: A
+    title: Section A - Compulsory (10 marks)
+    instructions: Attempt all questions. Three MCQs, one assertion-reason item and two fill-ins (1 mark each), then two 2-mark items.
+    items:
+      - {type: mcq, count: 3, marks_each: 1}
+      - {type: assertion-reason, count: 1, marks_each: 1}
+      - {type: fill-blank, count: 2, marks_each: 1}
+      - {type: short, count: 2, marks_each: 2}
+  - id: B
+    title: Section B - Structured question (10 marks)
+    instructions: Attempt any one of the two questions, each in parts (3 + 3 + 4 marks).
+    items:
+      - {type: long, count: 2, marks_each: 10, internal_choice: {attempt: 1, of: 2}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL chapter test in the ICSE 2027 Physics form (icse-2027-specimen-521-physics): compulsory objective items (MCQ, assertion-reason,
+  bracket fill-ins) and short answers, then a choice of 10-mark structured questions; not an official CISCE paper. One chapter,
+  20 marks in 30 minutes (board pace).

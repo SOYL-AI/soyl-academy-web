@@ -9,3 +9,8 @@ useDefault = true
 description = "SOYL question/test ids: [tq]_<exam><class><subject>_<rest>"
 regexTarget = "secret"
 regexes = ['''^[tq]_(cbse|icse|isc)\d{1,2}[a-z]{2,8}_[a-z0-9_]+$''']
+
+[[allowlists]]
+description = "SOYL catalog unit/topic ids: <board>-<class>-<subject-slug>-chNN[-tNN] (e.g. cbse-10-hindi-a-ch02-t01)"
+regexTarget = "secret"
+regexes = ['''^(cbse|icse|isc)-\d{1,2}-[a-z0-9-]+-ch\d{2}(-t\d{2})?$''']

@@ -1,0 +1,31 @@
+id: icse-10-computer-applications-unit-test
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-computer-applications
+paper_type: unit-test
+academic_year: "2026-27"
+duration_min: 90
+total_marks: 75
+mark_shares: {}
+scope: unit
+sections:
+  - id: A
+    title: Section A - Compulsory (30 marks)
+    instructions: >-
+      Attempt all questions. Ten multiple-choice items (1 mark each); seven 2-mark short answers and three 2-mark predict-the-output
+      items.
+    items:
+      - {type: mcq, count: 10, marks_each: 1}
+      - {type: short, count: 7, marks_each: 2}
+      - {type: code-output, count: 3, marks_each: 2}
+  - id: B
+    title: Section B - Programs (45 marks)
+    instructions: Write any three of the five Java programs, with variable descriptions or comments.
+    items:
+      - {type: long, count: 5, marks_each: 15, internal_choice: {attempt: 3, of: 5}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL half-syllabus test in the ICSE Computer Applications form (see icse-10-computer-applications-board); not an official CISCE
+  paper. 75 marks in 90 minutes (board pace); no chapter scopes, so it fills from whichever chapters the series planner groups.
