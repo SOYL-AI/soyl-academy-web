@@ -289,3 +289,35 @@ describe('/admin', () => {
     expect(d.startsWith('M4 4')).toBe(true);
   });
 });
+
+describe('LoginSheet shows only enabled sign-in methods (GET /v1/auth/methods)', () => {
+  beforeEach(() => {
+    window.matchMedia = ((q: string) => ({ matches: true, media: q, addEventListener() {}, removeEventListener() {} })) as unknown as typeof window.matchMedia;
+  });
+  it('email only: no Google button, no tabs, the email form', async () => {
+    const { LoginSheet, otherMethodsHint } = await import('../auth/LoginSheet');
+    h.api.get.mockResolvedValue({ methods: ['email'], email: true, phone: false, google: false });
+    render(
+      <ToastProvider>
+        <LoginSheet open returnTo="/learn" onClose={() => {}} onSignedIn={() => {}} />
+      </ToastProvider>,
+    );
+    expect(await screen.findByLabelText('Email address')).toBeTruthy();
+    expect(screen.queryByText(/Continue with Google/)).toBeNull();
+    expect(screen.queryByRole('tab')).toBeNull();
+    expect(h.api.get).toHaveBeenCalledWith('/v1/auth/methods');
+    expect(otherMethodsHint(false, true)).toContain('Use Google instead');
+    expect(otherMethodsHint(false, false)).toContain('try again soon');
+  });
+  it('falls back to every method when the call fails', async () => {
+    const { LoginSheet } = await import('../auth/LoginSheet');
+    h.api.get.mockRejectedValue(new ApiError(503, 'service_unavailable', null));
+    render(
+      <ToastProvider>
+        <LoginSheet open returnTo="/learn" onClose={() => {}} onSignedIn={() => {}} />
+      </ToastProvider>,
+    );
+    await waitFor(() => expect(screen.getAllByRole('tab')).toHaveLength(2));
+    expect(screen.getByText(/Continue with Google/)).toBeTruthy();
+  });
+});

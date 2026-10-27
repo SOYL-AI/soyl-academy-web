@@ -35,6 +35,7 @@ export type CatalogSubject = Schemas['CatalogSubject'];
 export type CatalogChapters = Schemas['CatalogChapters'];
 export type CatalogChapter = CatalogChapters['chapters'][number];
 export type Problem = Schemas['Problem'];
+export type AuthMethods = Schemas['AuthMethods'];
 // M2 learning core (backend-api M2 handoff)
 export type ChapterHub = Schemas['ChapterHub'];
 export type LessonDeck = Schemas['LessonDeck'];
