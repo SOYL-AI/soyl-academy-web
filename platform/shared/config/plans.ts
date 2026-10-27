@@ -52,7 +52,8 @@ export const PLANS: readonly Plan[] = [
     id: 'plus',
     name: 'Plus',
     creditsPerDay: 40,
-    features: ['ai_credits', 'paper_from_upload'],
+    // Not paper_from_upload: it costs 60 credits, more than Plus grants in a day (D-034).
+    features: ['ai_credits'],
     prices: [
       { interval: 'monthly', amountPaise: 19_900 },
       { interval: 'yearly', amountPaise: 149_900 },
