@@ -9,7 +9,8 @@ import { evaluate, parseExpr } from '../src/lint/expr';
 import { checkLiterature, checkText } from '../src/lint/text';
 import { checkVisual } from '../src/lint/visual';
 import { checkBalance, ceBodies, parseFormula } from '../src/lint/chem';
-import { lintBundle, type Finding } from '../src/lint/index';
+import { competencyBandFor, lintBundle, type Finding } from '../src/lint/index';
+import { LINT_COMPETENCY_BAND } from '../config/pipeline';
 import { mockBundle } from './helpers';
 
 const NS = 'xmlns="http://www.w3.org/2000/svg"';
@@ -271,6 +272,28 @@ describe('lint engine on a unit', () => {
   it('warns on competency and difficulty balance', async () => {
     const f = await lintWith((b) => b.questions.forEach((q) => ((q.competency = 'recall'), (q.difficulty = 2))));
     expect(rules(f, 'warning')).toEqual(expect.arrayContaining(['balance.competency', 'balance.difficulty']));
+  });
+
+  it('uses the per-subject competency band from config (D-035: CBSE 10 Maths 20–65 %, others 45–65 %)', async () => {
+    expect(competencyBandFor('cbse-10-mathematics')).toEqual({ min: 0.2, max: 0.65 });
+    expect(competencyBandFor('cbse-10-science')).toEqual(LINT_COMPETENCY_BAND.default);
+    expect(competencyBandFor('cbse-10-social-science')).toEqual({ min: 0.45, max: 0.65 });
+    expect(competencyBandFor(undefined)).toEqual({ min: 0.45, max: 0.65 });
+    // 30 % of items at application or higher: inside the Maths band, below the default band.
+    const { bundle, ctx } = await mockBundle();
+    const qs = (bundle.questions as Mutable).questions as Mutable[];
+    const share = (s: number) => qs.forEach((q, i) => (q.competency = i < Math.round(qs.length * s) ? 'application' : 'understanding'));
+    const at = (subjectId: string) => rules(lintBundle(bundle, { ...ctx, subjectId }).findings, 'warning');
+    share(0.3);
+    expect(at('cbse-10-mathematics')).not.toContain('balance.competency');
+    expect(at('cbse-10-science')).toContain('balance.competency');
+    expect(at('cbse-10-social-science')).toContain('balance.competency');
+    // 15 % is below even the Maths band; 50 % is inside both.
+    share(0.15);
+    expect(at('cbse-10-mathematics')).toContain('balance.competency');
+    share(0.5);
+    expect(at('cbse-10-mathematics')).not.toContain('balance.competency');
+    expect(at('cbse-10-science')).not.toContain('balance.competency');
   });
 
   it('applies the literature heuristic only to literature chapters', async () => {

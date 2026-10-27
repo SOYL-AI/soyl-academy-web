@@ -30,7 +30,7 @@ import {
   wordCount,
 } from '@soyl/shared/content/index';
 import { TEXT_FAMILIES, type Family } from '../../config/families';
-import { HINDI_ORTHOGRAPHY, LITERATURE, WORD_LIMIT_SLACK } from '../../config/pipeline';
+import { HINDI_ORTHOGRAPHY, LINT_COMPETENCY_BAND, LITERATURE, WORD_LIMIT_SLACK } from '../../config/pipeline';
 import { checkArithmetic } from './arith';
 import { SKELETAL_CONTEXT, ceBodies, checkBalance } from './chem';
 import { checkTex, extractMath } from './math';
@@ -60,6 +60,8 @@ export interface LintContext {
   topicIds: ReadonlySet<string> | null;
   /** Content that must carry pipeline provenance (template + model). False for exemplars. */
   requirePipelineProvenance: boolean;
+  /** Catalog subject id (e.g. cbse-10-mathematics), for per-subject settings such as the competency band. */
+  subjectId?: string;
 }
 
 export interface UnitBundle {
@@ -80,7 +82,12 @@ export interface LintReport {
 }
 
 /** Share of items at application or above that CBSE papers target (~50%); outside this band is a warning. */
-export const COMPETENCY_BAND = { min: 0.45, max: 0.65 } as const;
+export const COMPETENCY_BAND = LINT_COMPETENCY_BAND.default;
+
+/** The application-or-higher band for a subject's chapters (LINT_COMPETENCY_BAND in config/pipeline.ts, D-035). */
+export function competencyBandFor(subjectId: string | undefined): { min: number; max: number } {
+  return (subjectId && LINT_COMPETENCY_BAND.bySubject[subjectId]) || LINT_COMPETENCY_BAND.default;
+}
 
 /** LaTeX commands that take a brace argument; seen without a backslash they mean an escape was lost. */
 const LOST_BACKSLASH = /(^|[^\\A-Za-z])(ce|frac|dfrac|tfrac|sqrt|text|mathrm|mathbf|xrightarrow|overline|underline|vec|hat|operatorname|pu)\{/;
@@ -414,8 +421,9 @@ function lintBank(c: Collector, questions: QuestionT[]) {
   if (types.size < 5) c.add('questions', 'editorial.question-types', 'error', 'questions', `${types.size} question types (min 5): ${[...types].join(', ')}`);
   if (questions.length) {
     const higher = questions.filter((q) => ['application', 'analysis', 'evaluation'].includes(q.competency)).length / questions.length;
-    if (higher < COMPETENCY_BAND.min || higher > COMPETENCY_BAND.max)
-      c.add('questions', 'balance.competency', 'warning', 'questions', `${Math.round(higher * 100)}% of items are application or above (board papers ≈ 50%; band ${COMPETENCY_BAND.min * 100}–${COMPETENCY_BAND.max * 100}%)`);
+    const band = competencyBandFor(ctx.subjectId);
+    if (higher < band.min || higher > band.max)
+      c.add('questions', 'balance.competency', 'warning', 'questions', `${Math.round(higher * 100)}% of items are application or above (band for this subject ${Math.round(band.min * 100)}–${Math.round(band.max * 100)}%)`);
     if (!questions.some((q) => q.difficulty >= 4)) c.add('questions', 'balance.difficulty', 'warning', 'questions', 'no difficulty 4–5 items');
     const skew = answerKeySkew(questions);
     if (skew) c.add('questions', 'balance.answer-keys', 'warning', 'questions', skew);

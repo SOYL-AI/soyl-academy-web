@@ -150,6 +150,19 @@ export const HINDI_ORTHOGRAPHY = {
 export const WORD_LIMIT_SLACK = { below: 0.8, above: 1.2 } as const;
 
 /**
+ * Lint `balance.competency` (warning): share of a chapter's items tagged application or higher.
+ * Default 45–65 % (board papers ≈ 50 %). Per subject (catalog subject id) where one bank serves papers
+ * with different mixes: CBSE 10 Mathematics serves Standard 041 (54 / 24 / 22 %) and Basic 241
+ * (75 / 15 / 10 %), so its band is 20–65 % (D-035).
+ */
+export const LINT_COMPETENCY_BAND: { default: { min: number; max: number }; bySubject: Readonly<Record<string, { min: number; max: number }>> } = {
+  default: { min: 0.45, max: 0.65 },
+  bySubject: {
+    'cbse-10-mathematics': { min: 0.2, max: 0.65 },
+  },
+};
+
+/**
  * Stage 6 originality (CONTEXT §8). Reference texts are owner-supplied plain text in
  * platform/catalog/sources/reference/ (gitignored); without them only the bank checks run.
  */
