@@ -2,7 +2,7 @@
 
 > Owner: security-reviewer · Status: draft for M1 briefs · Last updated: 2026-10-25
 > Paste the sections that apply into each M1 task brief. Each item is a **MUST** unless it says otherwise and has a **Test** line that defines "done".
-> Background and rationale: [threat-model.md](threat-model.md) · Checklist mapping: [asvs-l2-checklist.md](asvs-l2-checklist.md) · Open issues: [findings.md](findings.md)
+> Background and rationale: [threat-model.md](threat-model.md) · Checklist mapping: [asvs-l2-checklist.md](asvs-l2-checklist.md) · Open issues: findings.md was never committed (OA-13); the current register is the [M6 review](../handoffs/2026-10-27-security-reviewer-m6.md)
 > Where a value is marked *(config)*, put it in `platform/shared/config/security.ts` (or env), not in code, so it can be tuned without a deploy of logic.
 
 Abbreviations: **ACA** Azure Container Apps · **KV** Key Vault · **MI** managed identity · **RL** rate limit (Redis, sliding window, keyed as stated; on breach return `429` problem+json with `Retry-After`).
