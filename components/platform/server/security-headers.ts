@@ -17,7 +17,46 @@ import { CONSENT_BOOT_SCRIPT } from '@/components/legal/consent';
 export const CSP_REPORT_PATH = '/api/platform/csp-report';
 
 /** Route prefixes rendered per request with a nonce policy (WEB-3). */
-export const NONCE_ROUTE_PREFIXES: readonly string[] = ['/me', '/tests/attempt', '/tests/result', '/ask', '/admin'];
+export const NONCE_ROUTE_PREFIXES: readonly string[] = ['/me', '/tests/attempt', '/tests/result', '/tests/builder', '/tests/live', '/ask', '/leaderboard', '/admin'];
+
+/**
+ * Razorpay Checkout origins, allowed on `/plans` only (WEB-1, WEB-3; billing M4 handoff §2; ADR-018 §4).
+ * Verify against Razorpay test mode before launch (OA-04).
+ */
+export const RAZORPAY_CSP = {
+  script: ['https://checkout.razorpay.com'],
+  frame: ['https://api.razorpay.com', 'https://checkout.razorpay.com'],
+  connect: ['https://api.razorpay.com', 'https://lumberjack.razorpay.com'],
+  img: ['https://cdn.razorpay.com'],
+} as const;
+
+/** `/plans` and below: the only pages that may load Razorpay Checkout. */
+export function isPlansPath(pathname: string | undefined): boolean {
+  return pathname === '/plans' || (pathname?.startsWith('/plans/') ?? false);
+}
+
+/** Pages that PUT uploads straight to Blob storage (AI uploads, D-018/F-013): the upload origin joins connect-src. */
+export const UPLOAD_ROUTE_PREFIXES: readonly string[] = ['/ask'];
+
+export function usesUploads(pathname: string | undefined): boolean {
+  return !!pathname && UPLOAD_ROUTE_PREFIXES.some((p) => pathname === p || pathname.startsWith(`${p}/`));
+}
+
+/**
+ * PLATFORM_UPLOAD_ORIGIN (server-only): the Blob account origin of the SAS upload URLs, e.g.
+ * https://soylprodst.blob.core.windows.net. https only; plain http only for loopback hosts (local e2e).
+ */
+export function uploadOriginFrom(raw: string | undefined): string | null {
+  if (!raw) return null;
+  try {
+    const u = new URL(raw);
+    if (u.protocol === 'https:') return u.origin;
+    if (u.protocol === 'http:' && (u.hostname === '127.0.0.1' || u.hostname === 'localhost')) return u.origin;
+  } catch {
+    // ignore
+  }
+  return null;
+}
 
 export function usesNonce(pathname: string): boolean {
   return NONCE_ROUTE_PREFIXES.some((p) => pathname === p || pathname.startsWith(`${p}/`));
@@ -43,6 +82,10 @@ export interface CspOptions {
   https?: boolean;
   /** NEXT_PUBLIC_CDN_BASE_URL: images and audio may come from its origin. */
   cdnBaseUrl?: string;
+  /** The page's path: `/plans` adds Razorpay Checkout, upload pages add the upload origin. */
+  pathname?: string;
+  /** PLATFORM_UPLOAD_ORIGIN (see uploadOriginFrom); defaults to the environment variable. */
+  uploadOrigin?: string;
 }
 
 function cdnOrigin(raw: string | undefined): string | null {
@@ -58,22 +101,25 @@ function cdnOrigin(raw: string | undefined): string | null {
 export function buildCsp(o: CspOptions = {}): string {
   const cdn = cdnOrigin(o.cdnBaseUrl);
   const eval_ = o.dev ? " 'unsafe-eval'" : '';
+  const plans = isPlansPath(o.pathname);
+  const upload = usesUploads(o.pathname) ? uploadOriginFrom(o.uploadOrigin ?? process.env.PLATFORM_UPLOAD_ORIGIN) : null;
+  const extra = (list: readonly string[]) => (plans ? ` ${list.join(' ')}` : '');
   const script = o.nonce
     ? `'self' 'nonce-${o.nonce}' 'strict-dynamic' ${CONSENT_BOOT_SCRIPT_HASH}${eval_}`
-    : `'self' 'unsafe-inline'${eval_}`;
+    : `'self' 'unsafe-inline'${eval_}${extra(RAZORPAY_CSP.script)}`;
   const directives = [
     `default-src 'self'`,
     `script-src ${script}`,
     // KaTeX and next/font emit inline styles (ADR-009).
     `style-src 'self' 'unsafe-inline'`,
-    `img-src 'self' data: blob:${cdn ? ` ${cdn}` : ''}`,
+    `img-src 'self' data: blob:${cdn ? ` ${cdn}` : ''}${extra(RAZORPAY_CSP.img)}`,
     `media-src 'self' blob:${cdn ? ` ${cdn}` : ''}`,
     `font-src 'self'`,
-    `connect-src 'self'`,
+    `connect-src 'self'${upload ? ` ${upload}` : ''}${extra(RAZORPAY_CSP.connect)}`,
     `object-src 'none'`,
     `base-uri 'none'`,
     `form-action 'self'`,
-    `frame-src 'none'`,
+    `frame-src ${plans ? RAZORPAY_CSP.frame.join(' ') : "'none'"}`,
     `frame-ancestors 'none'`,
     `worker-src 'self' blob:`,
     `manifest-src 'self'`,
@@ -92,7 +138,8 @@ export function securityHeaders(o: CspOptions & { origin: string }): Record<stri
     'x-content-type-options': 'nosniff',
     'referrer-policy': 'strict-origin-when-cross-origin',
     'permissions-policy': 'camera=(), microphone=(), geolocation=(), browsing-topics=()',
-    'cross-origin-opener-policy': 'same-origin',
+    // Razorpay's UPI / 3-D Secure steps may open popups that must reach back (WEB-4, /plans only).
+    'cross-origin-opener-policy': isPlansPath(o.pathname) ? 'same-origin-allow-popups' : 'same-origin',
     'x-frame-options': 'DENY',
   };
   if (o.https) h['strict-transport-security'] = 'max-age=63072000; includeSubDomains';
