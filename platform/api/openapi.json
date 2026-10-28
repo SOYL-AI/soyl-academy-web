@@ -3270,6 +3270,709 @@
         ],
         "additionalProperties": false
       },
+      "ActivityDayInput": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "answered": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "solved": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "lessonsCompleted": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "testsSubmitted": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "total": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "date",
+          "answered",
+          "solved",
+          "lessonsCompleted",
+          "testsSubmitted",
+          "total"
+        ]
+      },
+      "MyActivityInput": {
+        "type": "object",
+        "properties": {
+          "timezone": {
+            "type": "string",
+            "const": "Asia/Kolkata"
+          },
+          "from": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "to": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "days": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "calendar": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityDayInput"
+            }
+          },
+          "totals": {
+            "type": "object",
+            "properties": {
+              "answered": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "solved": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "lessonsCompleted": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "testsSubmitted": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "activeDays": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "answered",
+              "solved",
+              "lessonsCompleted",
+              "testsSubmitted",
+              "activeDays"
+            ]
+          },
+          "streak": {
+            "$ref": "#/components/schemas/StreakInput"
+          },
+          "activeDaysAllTime": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "timezone",
+          "from",
+          "to",
+          "days",
+          "calendar",
+          "totals",
+          "streak",
+          "activeDaysAllTime"
+        ],
+        "description": "Daily learning activity for a LeetCode-style heatmap. Days are IST calendar days."
+      },
+      "MasteryLevelInput": {
+        "type": "string",
+        "enum": [
+          "not_started",
+          "attempted",
+          "familiar",
+          "proficient",
+          "mastered"
+        ]
+      },
+      "ChapterEvidenceInput": {
+        "type": "object",
+        "properties": {
+          "lessonParts": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "lessonPartsStarted": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "lessonPartsCompleted": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "practiceTotal": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "practiceAttempted": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "practiceSolved": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "firstTryChecked": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "firstTryCorrect": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "chapterTestAvailable": {
+            "type": "boolean"
+          },
+          "chapterTestPct": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "lessonParts",
+          "lessonPartsStarted",
+          "lessonPartsCompleted",
+          "practiceTotal",
+          "practiceAttempted",
+          "practiceSolved",
+          "firstTryChecked",
+          "firstTryCorrect",
+          "chapterTestAvailable",
+          "chapterTestPct"
+        ],
+        "description": "Inputs of the mastery formula (@soyl/shared/learning/mastery chapterMastery)."
+      },
+      "ChapterMasteryInput": {
+        "type": "object",
+        "properties": {
+          "chapterId": {
+            "type": "string"
+          },
+          "number": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "title": {
+            "type": "string"
+          },
+          "level": {
+            "$ref": "#/components/schemas/MasteryLevelInput"
+          },
+          "score": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "components": {
+            "type": "object",
+            "properties": {
+              "lesson": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "coverage": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "accuracy": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "test": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "lesson",
+              "coverage",
+              "accuracy",
+              "test"
+            ]
+          },
+          "firstTryAccuracy": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "nextLevel": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MasteryLevelInput"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "hints": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "finish_lesson",
+                "practice_more",
+                "improve_accuracy",
+                "take_chapter_test",
+                "improve_chapter_test"
+              ]
+            }
+          },
+          "evidence": {
+            "$ref": "#/components/schemas/ChapterEvidenceInput"
+          }
+        },
+        "required": [
+          "chapterId",
+          "number",
+          "title",
+          "level",
+          "score",
+          "components",
+          "firstTryAccuracy",
+          "nextLevel",
+          "hints",
+          "evidence"
+        ]
+      },
+      "SubjectMasteryInput": {
+        "type": "object",
+        "properties": {
+          "subjectId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "classLevel": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "score": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "chapterCount": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "levels": {
+            "type": "object",
+            "properties": {
+              "not_started": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "attempted": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "familiar": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "proficient": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "mastered": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "not_started",
+              "attempted",
+              "familiar",
+              "proficient",
+              "mastered"
+            ]
+          },
+          "chapters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChapterMasteryInput"
+            }
+          }
+        },
+        "required": [
+          "subjectId",
+          "name",
+          "classLevel",
+          "score",
+          "chapterCount",
+          "levels",
+          "chapters"
+        ]
+      },
+      "MyMasteryInput": {
+        "type": "object",
+        "properties": {
+          "subjects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubjectMasteryInput"
+            }
+          }
+        },
+        "required": [
+          "subjects"
+        ]
+      },
+      "DifficultyBandInput": {
+        "type": "string",
+        "enum": [
+          "easy",
+          "medium",
+          "hard"
+        ],
+        "description": "Content difficulty 1–2 easy, 3 medium, 4–5 hard (config DIFFICULTY_BAND_LEVELS)."
+      },
+      "PracticeStatusInput": {
+        "type": "string",
+        "enum": [
+          "new",
+          "attempted",
+          "solved"
+        ],
+        "description": "new: never answered; attempted: answered, never right; solved: auto-checked right or self-marked full marks at least once."
+      },
+      "PracticeSummaryInput": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "byDifficulty": {
+            "type": "object",
+            "properties": {
+              "easy": {
+                "type": "object",
+                "properties": {
+                  "total": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "solved": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "total",
+                  "solved"
+                ]
+              },
+              "medium": {
+                "type": "object",
+                "properties": {
+                  "total": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "solved": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "total",
+                  "solved"
+                ]
+              },
+              "hard": {
+                "type": "object",
+                "properties": {
+                  "total": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "solved": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "total",
+                  "solved"
+                ]
+              }
+            },
+            "required": [
+              "easy",
+              "medium",
+              "hard"
+            ]
+          },
+          "byStatus": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "new": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "attempted": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "solved": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  }
+                },
+                "required": [
+                  "new",
+                  "attempted",
+                  "solved"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "total",
+          "byDifficulty",
+          "byStatus"
+        ],
+        "description": "Whole-chapter counts for a LeetCode-style header; `solved` and `byStatus` are null for guests."
+      },
+      "CardAttributeInput": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "enum": [
+              "ACC",
+              "CON",
+              "SPD",
+              "BRE",
+              "MAS",
+              "TST"
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 99
+          },
+          "raw": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "weight": {
+            "type": "number"
+          },
+          "explain": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "label",
+          "value",
+          "raw",
+          "weight",
+          "explain"
+        ]
+      },
+      "MyPlayerCardInput": {
+        "type": "object",
+        "properties": {
+          "publicName": {
+            "type": "string"
+          },
+          "level": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "xp": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "coins": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "overall": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "tier": {
+            "type": "string",
+            "enum": [
+              "bronze",
+              "silver",
+              "gold",
+              "elite"
+            ]
+          },
+          "provisional": {
+            "type": "boolean"
+          },
+          "formulaVersion": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "attributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CardAttributeInput"
+            }
+          },
+          "asOfDay": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          }
+        },
+        "required": [
+          "publicName",
+          "level",
+          "xp",
+          "coins",
+          "overall",
+          "tier",
+          "provisional",
+          "formulaVersion",
+          "attributes",
+          "asOfDay"
+        ],
+        "description": "Your private player card. Deterministic from your own learning data; never shown to anyone else."
+      },
       "PracticePartResponseInput": {
         "anyOf": [
           {
@@ -3806,12 +4509,27 @@
                     "boolean",
                     "null"
                   ]
+                },
+                "difficulty": {
+                  "$ref": "#/components/schemas/DifficultyBandInput"
+                },
+                "status": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/PracticeStatusInput"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
                 }
               },
               "required": [
                 "question",
                 "answered",
-                "lastCorrect"
+                "lastCorrect",
+                "difficulty",
+                "status"
               ]
             }
           },
@@ -3820,13 +4538,17 @@
               "string",
               "null"
             ]
+          },
+          "summary": {
+            "$ref": "#/components/schemas/PracticeSummaryInput"
           }
         },
         "required": [
           "chapterId",
           "total",
           "items",
-          "nextCursor"
+          "nextCursor",
+          "summary"
         ]
       },
       "PracticeSelfAssessmentInput": {
@@ -12913,6 +13635,726 @@
         ],
         "additionalProperties": false
       },
+      "ActivityDay": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "answered": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "solved": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "lessonsCompleted": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "testsSubmitted": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "total": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "date",
+          "answered",
+          "solved",
+          "lessonsCompleted",
+          "testsSubmitted",
+          "total"
+        ],
+        "additionalProperties": false
+      },
+      "MyActivity": {
+        "type": "object",
+        "properties": {
+          "timezone": {
+            "type": "string",
+            "const": "Asia/Kolkata"
+          },
+          "from": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "to": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "days": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "calendar": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActivityDay"
+            }
+          },
+          "totals": {
+            "type": "object",
+            "properties": {
+              "answered": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "solved": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "lessonsCompleted": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "testsSubmitted": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "activeDays": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "answered",
+              "solved",
+              "lessonsCompleted",
+              "testsSubmitted",
+              "activeDays"
+            ],
+            "additionalProperties": false
+          },
+          "streak": {
+            "$ref": "#/components/schemas/Streak"
+          },
+          "activeDaysAllTime": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "timezone",
+          "from",
+          "to",
+          "days",
+          "calendar",
+          "totals",
+          "streak",
+          "activeDaysAllTime"
+        ],
+        "additionalProperties": false,
+        "description": "Daily learning activity for a LeetCode-style heatmap. Days are IST calendar days."
+      },
+      "MasteryLevel": {
+        "type": "string",
+        "enum": [
+          "not_started",
+          "attempted",
+          "familiar",
+          "proficient",
+          "mastered"
+        ]
+      },
+      "ChapterEvidence": {
+        "type": "object",
+        "properties": {
+          "lessonParts": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "lessonPartsStarted": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "lessonPartsCompleted": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "practiceTotal": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "practiceAttempted": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "practiceSolved": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "firstTryChecked": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "firstTryCorrect": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "chapterTestAvailable": {
+            "type": "boolean"
+          },
+          "chapterTestPct": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "lessonParts",
+          "lessonPartsStarted",
+          "lessonPartsCompleted",
+          "practiceTotal",
+          "practiceAttempted",
+          "practiceSolved",
+          "firstTryChecked",
+          "firstTryCorrect",
+          "chapterTestAvailable",
+          "chapterTestPct"
+        ],
+        "additionalProperties": false,
+        "description": "Inputs of the mastery formula (@soyl/shared/learning/mastery chapterMastery)."
+      },
+      "ChapterMastery": {
+        "type": "object",
+        "properties": {
+          "chapterId": {
+            "type": "string"
+          },
+          "number": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "title": {
+            "type": "string"
+          },
+          "level": {
+            "$ref": "#/components/schemas/MasteryLevel"
+          },
+          "score": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "components": {
+            "type": "object",
+            "properties": {
+              "lesson": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "coverage": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "accuracy": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "test": {
+                "anyOf": [
+                  {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "lesson",
+              "coverage",
+              "accuracy",
+              "test"
+            ],
+            "additionalProperties": false
+          },
+          "firstTryAccuracy": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "nextLevel": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/MasteryLevel"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "hints": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "finish_lesson",
+                "practice_more",
+                "improve_accuracy",
+                "take_chapter_test",
+                "improve_chapter_test"
+              ]
+            }
+          },
+          "evidence": {
+            "$ref": "#/components/schemas/ChapterEvidence"
+          }
+        },
+        "required": [
+          "chapterId",
+          "number",
+          "title",
+          "level",
+          "score",
+          "components",
+          "firstTryAccuracy",
+          "nextLevel",
+          "hints",
+          "evidence"
+        ],
+        "additionalProperties": false
+      },
+      "SubjectMastery": {
+        "type": "object",
+        "properties": {
+          "subjectId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "classLevel": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "score": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "chapterCount": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "levels": {
+            "type": "object",
+            "properties": {
+              "not_started": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "attempted": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "familiar": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "proficient": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "mastered": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "not_started",
+              "attempted",
+              "familiar",
+              "proficient",
+              "mastered"
+            ],
+            "additionalProperties": false
+          },
+          "chapters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChapterMastery"
+            }
+          }
+        },
+        "required": [
+          "subjectId",
+          "name",
+          "classLevel",
+          "score",
+          "chapterCount",
+          "levels",
+          "chapters"
+        ],
+        "additionalProperties": false
+      },
+      "MyMastery": {
+        "type": "object",
+        "properties": {
+          "subjects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SubjectMastery"
+            }
+          }
+        },
+        "required": [
+          "subjects"
+        ],
+        "additionalProperties": false
+      },
+      "DifficultyBand": {
+        "type": "string",
+        "enum": [
+          "easy",
+          "medium",
+          "hard"
+        ],
+        "description": "Content difficulty 1–2 easy, 3 medium, 4–5 hard (config DIFFICULTY_BAND_LEVELS)."
+      },
+      "PracticeStatus": {
+        "type": "string",
+        "enum": [
+          "new",
+          "attempted",
+          "solved"
+        ],
+        "description": "new: never answered; attempted: answered, never right; solved: auto-checked right or self-marked full marks at least once."
+      },
+      "PracticeSummary": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "byDifficulty": {
+            "type": "object",
+            "properties": {
+              "easy": {
+                "type": "object",
+                "properties": {
+                  "total": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "solved": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "total",
+                  "solved"
+                ],
+                "additionalProperties": false
+              },
+              "medium": {
+                "type": "object",
+                "properties": {
+                  "total": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "solved": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "total",
+                  "solved"
+                ],
+                "additionalProperties": false
+              },
+              "hard": {
+                "type": "object",
+                "properties": {
+                  "total": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "solved": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "total",
+                  "solved"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "easy",
+              "medium",
+              "hard"
+            ],
+            "additionalProperties": false
+          },
+          "byStatus": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "new": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "attempted": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  },
+                  "solved": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  }
+                },
+                "required": [
+                  "new",
+                  "attempted",
+                  "solved"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "total",
+          "byDifficulty",
+          "byStatus"
+        ],
+        "additionalProperties": false,
+        "description": "Whole-chapter counts for a LeetCode-style header; `solved` and `byStatus` are null for guests."
+      },
+      "CardAttribute": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "enum": [
+              "ACC",
+              "CON",
+              "SPD",
+              "BRE",
+              "MAS",
+              "TST"
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 99
+          },
+          "raw": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "weight": {
+            "type": "number"
+          },
+          "explain": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "label",
+          "value",
+          "raw",
+          "weight",
+          "explain"
+        ],
+        "additionalProperties": false
+      },
+      "MyPlayerCard": {
+        "type": "object",
+        "properties": {
+          "publicName": {
+            "type": "string"
+          },
+          "level": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "xp": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "coins": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "overall": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "tier": {
+            "type": "string",
+            "enum": [
+              "bronze",
+              "silver",
+              "gold",
+              "elite"
+            ]
+          },
+          "provisional": {
+            "type": "boolean"
+          },
+          "formulaVersion": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "attributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CardAttribute"
+            }
+          },
+          "asOfDay": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          }
+        },
+        "required": [
+          "publicName",
+          "level",
+          "xp",
+          "coins",
+          "overall",
+          "tier",
+          "provisional",
+          "formulaVersion",
+          "attributes",
+          "asOfDay"
+        ],
+        "additionalProperties": false,
+        "description": "Your private player card. Deterministic from your own learning data; never shown to anyone else."
+      },
       "PracticePartResponse": {
         "anyOf": [
           {
@@ -13456,12 +14898,27 @@
                     "boolean",
                     "null"
                   ]
+                },
+                "difficulty": {
+                  "$ref": "#/components/schemas/DifficultyBand"
+                },
+                "status": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/PracticeStatus"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
                 }
               },
               "required": [
                 "question",
                 "answered",
-                "lastCorrect"
+                "lastCorrect",
+                "difficulty",
+                "status"
               ],
               "additionalProperties": false
             }
@@ -13471,13 +14928,17 @@
               "string",
               "null"
             ]
+          },
+          "summary": {
+            "$ref": "#/components/schemas/PracticeSummary"
           }
         },
         "required": [
           "chapterId",
           "total",
           "items",
-          "nextCursor"
+          "nextCursor",
+          "summary"
         ],
         "additionalProperties": false
       },
@@ -21377,7 +22838,7 @@
     },
     "/v1/chapters/{id}/practice": {
       "get": {
-        "summary": "Practice questions of a chapter (stems and options only), paged. Signed in: questions you have not answered come first.",
+        "summary": "Practice questions of a chapter (stems and options only), paged, with difficulty bands, your status per question and whole-chapter counts. Signed in: questions you have not answered come first.",
         "tags": [
           "practice"
         ],
@@ -21407,6 +22868,15 @@
             },
             "in": "query",
             "name": "difficulty",
+            "required": false
+          },
+          {
+            "schema": {
+              "type": "string",
+              "maxLength": 300
+            },
+            "in": "query",
+            "name": "status",
             "required": false
           },
           {
@@ -21733,6 +23203,150 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/MyBadges"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/activity": {
+      "get": {
+        "summary": "Your daily learning activity (IST days) for a heatmap, with streaks and active days",
+        "tags": [
+          "progress"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "default": 365,
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 371
+            },
+            "in": "query",
+            "name": "days",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MyActivity"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/mastery": {
+      "get": {
+        "summary": "Your mastery level per chapter (not started → mastered) and per subject",
+        "tags": [
+          "progress"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(?:cbse|icse|isc)-(?:7|8|9|10|11|12)-[a-z0-9]+(?:-[a-z0-9]+)*$"
+            },
+            "in": "query",
+            "name": "subjectId",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MyMastery"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/card": {
+      "get": {
+        "summary": "Your private player card: overall rating, tier and attributes (deterministic, explained)",
+        "tags": [
+          "progress"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MyPlayerCard"
                 }
               }
             }

@@ -13,6 +13,8 @@ import type { FastifyInstance } from 'fastify';
 import type { ZodTypeProvider } from 'fastify-type-provider-zod';
 import { z } from 'zod/v4';
 import { QUESTION_TYPES, type QuestionType } from '@soyl/shared/content/question';
+import { DIFFICULTY_BANDS, type DifficultyBand } from '@soyl/shared/config/learning';
+import { difficultiesIn } from '@soyl/shared/learning/mastery';
 import { EVERYONE, policies } from '../policy';
 import { withProblems } from '../schemas';
 import type { AppDeps } from '../services';
@@ -21,6 +23,7 @@ import { loadChapter } from '../domain/content';
 import { listPractice, selfAssess, submitAnswer } from '../domain/practice';
 import { ChapterParams, StreakSchema, StudentQuestionSchema } from './content-schemas';
 import { coinAwardFields } from './coins-schemas';
+import { DifficultyBandSchema, PRACTICE_STATUSES, PracticeStatusSchema, PracticeSummarySchema } from './insights-schemas';
 
 const Id = z.string().min(1).max(64).regex(/^[A-Za-z0-9_-]+$/);
 const OptionIds = z.array(Id).min(1).max(20);
@@ -117,8 +120,10 @@ const PracticeQuery = z.strictObject({
   cursor: z.string().max(400).optional(),
   /** Comma-separated question types. */
   type: csvEnum(QUESTION_TYPES).optional(),
-  /** Comma-separated difficulties 1–5. */
-  difficulty: csvEnum(['1', '2', '3', '4', '5'] as const).optional(),
+  /** Comma-separated difficulties 1–5 and/or bands easy, medium, hard. */
+  difficulty: csvEnum(['1', '2', '3', '4', '5', ...DIFFICULTY_BANDS] as const).optional(),
+  /** Comma-separated statuses new, attempted, solved (signed in; for guests every question is new). */
+  status: csvEnum(PRACTICE_STATUSES).optional(),
   limit: z.coerce.number().int().min(1).max(25).default(10),
 });
 
@@ -126,8 +131,18 @@ const PracticeListResponse = z
   .object({
     chapterId: z.string(),
     total: z.number().int(),
-    items: z.array(z.object({ question: StudentQuestionSchema, answered: z.boolean().nullable(), lastCorrect: z.boolean().nullable() })),
+    items: z.array(
+      z.object({
+        question: StudentQuestionSchema,
+        answered: z.boolean().nullable(),
+        lastCorrect: z.boolean().nullable(),
+        difficulty: DifficultyBandSchema,
+        /** Signed in only (null for guests). */
+        status: PracticeStatusSchema.nullable(),
+      }),
+    ),
     nextCursor: z.string().nullable(),
+    summary: PracticeSummarySchema,
   })
   .meta({ id: 'PracticePage' });
 
@@ -142,7 +157,7 @@ export function registerPracticeRoutes(appIn: FastifyInstance, deps: AppDeps): v
     config: { policy: policies.publicRead() },
     schema: {
       tags: ['practice'],
-      summary: 'Practice questions of a chapter (stems and options only), paged. Signed in: questions you have not answered come first.',
+      summary: 'Practice questions of a chapter (stems and options only), paged, with difficulty bands, your status per question and whole-chapter counts. Signed in: questions you have not answered come first.',
       params: ChapterParams,
       querystring: PracticeQuery,
       response: withProblems({ 200: PracticeListResponse, 304: z.null() }),
@@ -153,7 +168,8 @@ export function registerPracticeRoutes(appIn: FastifyInstance, deps: AppDeps): v
       const page = await listPractice(db, chapter, year, userId, {
         cursor: request.query.cursor,
         types: request.query.type as QuestionType[] | undefined,
-        difficulties: request.query.difficulty?.map(Number),
+        difficulties: request.query.difficulty && [...new Set(request.query.difficulty.flatMap((d) => (DIFFICULTY_BANDS as readonly string[]).includes(d) ? difficultiesIn(d as DifficultyBand) : [Number(d)]))],
+        statuses: request.query.status,
         limit: request.query.limit,
       });
       // Guests: the same page for everyone, so cacheable. Signed in: personal (answered flags) → no-store.

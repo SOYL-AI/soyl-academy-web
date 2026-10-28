@@ -11,6 +11,8 @@ import { chapters, practiceAnswers, questionKeys, studentQuestions, type Databas
 import type { ChildKey } from '@soyl/db/student-questions';
 import { XP_AWARDS } from '@soyl/shared/config/gamification';
 import type { QuestionType } from '@soyl/shared/content/question';
+import { DIFFICULTY_BANDS, type DifficultyBand } from '@soyl/shared/config/learning';
+import { difficultyBand } from '@soyl/shared/learning/mastery';
 import type { Clock } from '../clock';
 import { ApiProblem } from '../errors';
 import { activeReleases, practicePool, releaseMembers, studentQuestion, studentQuestionSelect, type ChapterRef, type StudentQuestion } from './content';
@@ -25,11 +27,57 @@ import { coinsPaid } from './coins/ledger';
 /* List                                                                                            */
 /* ---------------------------------------------------------------------------------------------- */
 
+export type PracticeStatus = 'new' | 'attempted' | 'solved';
+
 export interface PracticeListQuery {
   cursor?: string;
   types?: QuestionType[];
   difficulties?: number[];
+  /** Signed in: only these statuses. Guests: every question is `new`. */
+  statuses?: PracticeStatus[];
   limit: number;
+}
+
+/**
+ * "Solved" (learning insights): auto-checked right, or self-marked full marks, at least once. Used by
+ * the practice list status, mastery coverage and the activity heatmap, so they always agree.
+ */
+export const solvedAnswer = (pa: string) => sql.raw(`(${pa}.correct IS TRUE OR (${pa}.grading = 'self' AND ${pa}.marks_awarded IS NOT NULL AND ${pa}.marks_awarded >= ${pa}.max_marks))`);
+
+/** new | attempted | solved for one user and the `student_questions` row in scope (same chapter: index-friendly). */
+export function practiceStatusExpr(userId: string): SQL<PracticeStatus> {
+  const exists = (extra: SQL) =>
+    sql`EXISTS (SELECT 1 FROM ${practiceAnswers} pa WHERE pa.user_id = ${userId} AND pa.chapter_id = ${studentQuestions.chapterId} AND pa.question_key = ${studentQuestions.key}${extra})`;
+  return sql<PracticeStatus>`(CASE WHEN ${exists(sql` AND ${solvedAnswer('pa')}`)} THEN 'solved' WHEN ${exists(sql``)} THEN 'attempted' ELSE 'new' END)`;
+}
+
+export interface PracticeSummary {
+  total: number;
+  byDifficulty: Record<DifficultyBand, { total: number; solved: number | null }>;
+  byStatus: Record<PracticeStatus, number> | null;
+}
+
+/** Whole-chapter counts (filters ignored) for the list header. */
+async function practiceSummary(db: Database, chapter: ChapterRef, year: string, userId: string | null): Promise<PracticeSummary> {
+  const status = userId ? practiceStatusExpr(userId) : sql<PracticeStatus>`'new'::text`;
+  // GROUP BY output positions: the status expression carries a bound parameter, so it cannot be repeated.
+  const rows = await db
+    .select({ difficulty: studentQuestions.difficulty, status, n: sql<number>`count(*)::int` })
+    .from(studentQuestions)
+    .where(practicePool(chapter, year))
+    .groupBy(userId ? sql`1, 2` : sql`1`);
+  const byDifficulty = Object.fromEntries(DIFFICULTY_BANDS.map((b) => [b, { total: 0, solved: userId ? 0 : null }])) as PracticeSummary['byDifficulty'];
+  const byStatus: Record<PracticeStatus, number> = { new: 0, attempted: 0, solved: 0 };
+  let total = 0;
+  for (const r of rows) {
+    const n = Number(r.n);
+    const band = byDifficulty[difficultyBand(Number(r.difficulty))];
+    band.total += n;
+    if (userId && r.status === 'solved') band.solved = (band.solved ?? 0) + n;
+    byStatus[r.status] += n;
+    total += n;
+  }
+  return { total, byDifficulty, byStatus: userId ? byStatus : null };
 }
 
 interface Cursor {
@@ -55,6 +103,10 @@ export interface PracticeItem {
   /** Signed-in only: whether you have answered it before, and whether your latest checked answer was right. */
   answered: boolean | null;
   lastCorrect: boolean | null;
+  /** Band of the question's 1–5 difficulty (config DIFFICULTY_BAND_LEVELS). */
+  difficulty: DifficultyBand;
+  /** Signed-in only (null for guests). */
+  status: PracticeStatus | null;
 }
 
 /**
@@ -65,6 +117,11 @@ export async function listPractice(db: Database, chapter: ChapterRef, year: stri
   const conds: SQL[] = [practicePool(chapter, year)];
   if (q.types?.length) conds.push(inArray(studentQuestions.type, q.types));
   if (q.difficulties?.length) conds.push(inArray(studentQuestions.difficulty, q.difficulties));
+  const statusExpr = userId ? practiceStatusExpr(userId) : null;
+  if (q.statuses?.length) {
+    if (statusExpr) conds.push(sql`${statusExpr} IN (${sql.join(q.statuses.map((x) => sql`${x}`), sql`, `)})`);
+    else if (!q.statuses.includes('new')) conds.push(sql`false`);
+  }
   const where = and(...conds)!;
   const cursor = decodeCursor(q.cursor);
 
@@ -73,14 +130,15 @@ export async function listPractice(db: Database, chapter: ChapterRef, year: stri
     : sql<number>`0`;
   const after = !cursor ? undefined : userId ? sql`(${answeredExpr}, ${studentQuestions.key}) > (${cursor.a}, ${cursor.k})` : sql`${studentQuestions.key} > ${cursor.k}`;
 
-  const [rows, [count]] = await Promise.all([
+  const [rows, [count], summary] = await Promise.all([
     db
-      .select({ ...studentQuestionSelect, answered: answeredExpr })
+      .select({ ...studentQuestionSelect, answered: answeredExpr, status: statusExpr ?? sql<PracticeStatus>`'new'::text` })
       .from(studentQuestions)
       .where(after ? and(where, after) : where)
       .orderBy(...(userId ? [answeredExpr, asc(studentQuestions.key)] : [asc(studentQuestions.key)]))
       .limit(q.limit + 1),
     db.select({ n: sql<number>`count(*)::int` }).from(studentQuestions).where(where),
+    practiceSummary(db, chapter, year, userId),
   ]);
   const page = rows.slice(0, q.limit);
   const last = new Map<string, boolean | null>();
@@ -101,8 +159,11 @@ export async function listPractice(db: Database, chapter: ChapterRef, year: stri
         question: studentQuestion(r),
         answered: userId ? Number(r.answered) === 1 : null,
         lastCorrect: userId ? (last.get(r.key) ?? null) : null,
+        difficulty: difficultyBand(r.difficulty),
+        status: userId ? r.status : null,
       }),
     ),
+    summary,
     nextCursor: rows.length > q.limit && lastRow ? encodeCursor({ a: Number(lastRow.answered) === 1 ? 1 : 0, k: lastRow.key }) : null,
   };
 }

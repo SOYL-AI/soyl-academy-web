@@ -190,6 +190,8 @@ export const RATE_LIMITS = {
   'practice.answer.ip': { key: 'ip', limit: 300, windowSeconds: 60 },
   /** Lesson-position saves (M2): the player saves on slide changes, debounced. */
   'progress.write.user': { key: 'user', limit: 120, windowSeconds: 60 },
+  /** Learning insights reads (activity heatmap, mastery, player card): aggregate queries, so tighter than api.user. */
+  'insights.read.user': { key: 'user', limit: 60, windowSeconds: 60 },
   /** AUTH-11: TOTP enrol/confirm/verify/disable calls per user (wrong codes also lock, see MFA.failures). */
   'mfa.user': { key: 'user', limit: 20, windowSeconds: 15 * 60 },
   /** SOYL Coins writes (check-in, equip, address, cancel) and redemptions per user (ADR-021). */

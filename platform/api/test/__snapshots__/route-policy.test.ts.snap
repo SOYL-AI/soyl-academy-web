@@ -40,9 +40,12 @@ GET    /v1/live-events                        roles=guest|student|parent|reviewe
 GET    /v1/live-events/:id                    roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/live-events/:id/leaderboard        roles=student|parent|reviewer|admin csrf=true rl=default+attempt.read.user consent=leaderboards
 GET    /v1/me                                 roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/me/activity                        roles=student|parent|reviewer|admin csrf=true rl=default+insights.read.user consent=no
 GET    /v1/me/attempts                        roles=student|parent|reviewer|admin csrf=true rl=default+attempt.read.user consent=no
 GET    /v1/me/badges                          roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/me/card                            roles=student|parent|reviewer|admin csrf=true rl=default+insights.read.user consent=no
 GET    /v1/me/consent                         roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/me/mastery                         roles=student|parent|reviewer|admin csrf=true rl=default+insights.read.user consent=no
 GET    /v1/me/mfa                             roles=reviewer|admin csrf=true rl=default consent=no
 GET    /v1/me/progress                        roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/me/progress/chapters/:id           roles=student|parent|reviewer|admin csrf=true rl=default consent=no
