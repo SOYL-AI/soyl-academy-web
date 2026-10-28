@@ -83,18 +83,18 @@ export default async function SubjectPage({ params }: { params: Promise<Params> 
           <CourseSidebar title={subject.name} href={subjectHref} units={units.map((u) => ({ unit: u.unit, chapters: u.chapters.map(link) }))} lang={lang} />
           <div className={c.main}>
             <div className={c.subjectHead}>
-            <span className={`${c.tile} ${c.tileLarge}`} data-hue={subjectStyle(subject.id, subject.name, subject.language).hue} aria-hidden="true" data-testid="subject-glyph">
-              <SubjectGlyph kind={subjectStyle(subject.id, subject.name, subject.language).art} size={40} />
-            </span>
-            <PageHeader
-              crumbs={[
-                { name: 'Learn', path: '/learn' },
-                { name: `${BOARD_NAMES[board]} Class ${classLevel}`, path: learnPath(board, classLevel) },
-                { name: subject.name, path: subjectHref },
-              ]}
-              title={subject.name}
-              lead={`${examLabel(board, classLevel)} Class ${classLevel} · ${data.chapters.length} chapters · ${data.academicYear} syllabus`}
-            />
+              <span className={`${c.tile} ${c.tileLarge}`} data-hue={subjectStyle(subject.id, subject.name, subject.language).hue} aria-hidden="true" data-testid="subject-glyph">
+                <SubjectGlyph kind={subjectStyle(subject.id, subject.name, subject.language).art} size={40} />
+              </span>
+              <PageHeader
+                crumbs={[
+                  { name: 'Learn', path: '/learn' },
+                  { name: `${BOARD_NAMES[board]} Class ${classLevel}`, path: learnPath(board, classLevel) },
+                  { name: subject.name, path: subjectHref },
+                ]}
+                title={subject.name}
+                lead={`${examLabel(board, classLevel)} Class ${classLevel} · ${data.chapters.length} chapters · ${data.academicYear} syllabus`}
+              />
             </div>
             {subject.theoryOnly && (
               <div className={s.notice}>

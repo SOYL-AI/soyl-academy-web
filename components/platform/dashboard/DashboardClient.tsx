@@ -283,15 +283,15 @@ function DashboardHeader({ d, name, now, card, activity }: { d: MyDashboard; nam
           <AnimalAvatar avatar={avatar} size={56} decorative />
         </Link>
         <div>
-        <p className={s.kicker}>Your dashboard</p>
-        <h1 className={s.title}>
-          {greeting(now)}
-          {name ? `, ${name}` : ''}
-        </h1>
-        <p className={s.headMeta} data-testid="dashboard-profile-line">
-          {cls ?? 'Board and class not set'}
-          {school ? ` · ${school}` : ''}
-        </p>
+          <p className={s.kicker}>Your dashboard</p>
+          <h1 className={s.title}>
+            {greeting(now)}
+            {name ? `, ${name}` : ''}
+          </h1>
+          <p className={s.headMeta} data-testid="dashboard-profile-line">
+            {cls ?? 'Board and class not set'}
+            {school ? ` · ${school}` : ''}
+          </p>
         </div>
       </div>
       <ul className={s.stats} aria-label="Your stats">
