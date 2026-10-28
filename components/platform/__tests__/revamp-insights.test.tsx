@@ -203,6 +203,7 @@ describe('activity heatmap', () => {
 describe('player card (private, deterministic)', () => {
   const card: MyPlayerCard = {
     publicName: 'Brave Otter 123',
+    avatar: { id: 'otter', bg: 'sky', isDefault: true },
     level: 4,
     xp: 1240,
     coins: 30,
@@ -240,7 +241,7 @@ describe('player card (private, deterministic)', () => {
 
 describe('weekly league zones', () => {
   type St = Schemas['LeagueCurrent']['standings'][number];
-  const st = (rank: number, zone: St['zone']): St => ({ rank, name: `S ${rank}`, xp: 100 - rank, zone, isMe: rank === 3 });
+  const st = (rank: number, zone: St['zone']): St => ({ rank, name: `S ${rank}`, avatar: null, xp: 100 - rank, zone, isMe: rank === 3 });
   it('labels the promotion zone and every change of zone', () => {
     const rows = zoneRows([st(1, 'promotion'), st(2, 'promotion'), st(3, 'safe'), st(4, 'relegation')]);
     expect(rows.map((r) => (r.kind === 'divider' ? `[${r.zone}]` : r.s.rank))).toEqual(['[promotion]', 1, 2, '[safe]', 3, '[relegation]', 4]);

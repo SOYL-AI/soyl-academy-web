@@ -172,7 +172,7 @@ export function SubscriptionCard() {
   );
 }
 
-const KIND_TEXT: Record<CreditLedger['entries'][number]['kind'], string> = { grant: 'Daily credits', reserve: 'Used', charge: 'Settled', refund: 'Refunded', expire: 'Expired' };
+const KIND_TEXT: Record<CreditLedger['entries'][number]['kind'], string> = { grant: 'Daily credits', reserve: 'Used', charge: 'Settled', refund: 'Refunded', expire: 'Expired', bonus_goal: 'Bonus: daily practice goal', bonus_streak: 'Bonus: streak milestone' };
 
 export function CreditsCard() {
   const { aiAllowed } = useCredits();

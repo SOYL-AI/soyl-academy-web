@@ -78,7 +78,7 @@ describe('QuestionCard test and review modes', () => {
         question={q}
         slots={buildQuestionSlots(q)}
         draft={{ kind: 'choice', ids: ['a'] }}
-        initialResult={{ questionId: 'q1', version: 1, type: 'mcq', correct: false, marksAwarded: 0, maxMarks: 1, grading: 'auto', key: { answer: { option_ids: ['b'] }, solution_md: 'Because.', marking_scheme: [] }, parts: [], selfAssessmentPending: false, selfMaxMarks: 0, stored: true, answerId: null, xpAwarded: 0, badgesAwarded: [], streak: null, coinsAwarded: 0, coinAwards: [] }}
+        initialResult={{ questionId: 'q1', version: 1, type: 'mcq', correct: false, marksAwarded: 0, maxMarks: 1, grading: 'auto', key: { answer: { option_ids: ['b'] }, solution_md: 'Because.', marking_scheme: [] }, parts: [], selfAssessmentPending: false, selfMaxMarks: 0, stored: true, answerId: null, xpAwarded: 0, badgesAwarded: [], streak: null, coinsAwarded: 0, coinAwards: [], creditBonuses: [] }}
       />,
     );
     expect(screen.getAllByRole('radio').every((r) => (r as HTMLInputElement).matches(':disabled'))).toBe(true);
