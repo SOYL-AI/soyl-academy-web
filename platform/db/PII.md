@@ -24,6 +24,9 @@ What an account holds is kept to what the product needs:
   only a keyed hash (rate limits, noticing a change of parent) and a masked hint ("p•••@gmail.com").
 - **Public names:** other students only ever see an auto-generated name ("Brave Otter 417") derived from
   the account id and `profiles.public_name_seed`; display names stay on the student's own screens.
+- **Avatars (0015):** `profiles.avatar_id` / `avatar_bg` are a choice from fixed config lists (an animal and a
+  colour theme), not personal data; they are shown next to the public name on public boards (consented
+  students only, as the name) and cleared at account deletion.
 - **Analytics:** `analytics_events` and `analytics_counters` (0015, D-045: counts per IST day, allowlisted event
   and dimension) have no user, session, device, user-agent or IP column; client counters are sent only after
   the visitor accepted analytics in the cookie bar. No third-party analytics, pixels or Vercel Analytics on
@@ -57,7 +60,7 @@ Two steps, implemented by backend-api:
    upload still being processed is never resurrected). Overwrite the `users` row:
    `name = 'Deleted user'`, `email = 'deleted+<id>@deleted.soyl.invalid'`, `phone_number = NULL`,
    `image = NULL`, `ban_reason = NULL`, `deleted_at = now()`; null the personal `profiles` fields
-   (school, city and weekly goal included). Schools the account added (0013): an unverified one no other
+   (school, city, weekly goal and avatar included). Schools the account added (0013): an unverified one no other
    profile uses is deleted (a typed name could identify the child); the others stay as shared school
    records with `created_by_user_id` set to NULL.
    The generated `email_normalized` / `phone_e164` become NULL automatically.
@@ -107,6 +110,7 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `profiles.school_id` | The student's school (PII-adjacent for a minor). Saved only with consent `granted` (D-014, `PATCH /v1/me` `school`), shown only while granted; for the dashboard now and a school leaderboard later | life of account; cleared when consent leaves `granted` | anonymise |
 | `profiles.city` | The chosen school's city (mirrored; never entered on its own) | as `school_id` | anonymise |
 | `profiles.weekly_goal` | Dashboard goal (questions per week); not personal | life of account | anonymise |
+| `profiles.avatar_id`, `profiles.avatar_bg` | Avatar picked from config lists (animal + background, 0015); not personal; shown next to the public name | life of account | anonymise (cleared) |
 | `schools.name_normalized`, `schools.city_normalized` | Dedupe/search keys of the school name and city (not personal; see `schools.name` below) | life of row | — |
 | `schools.created_by_user_id` | The account that added a student-sourced school (0013), for the per-day add limit and erasure | life of account | delete (unverified + unused by others: row deleted) or detach (set NULL) in step 1 |
 | `profiles.locale` | Language preference | life of account | cascade |
@@ -130,7 +134,7 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `user_mfa.totp_secret_enc` | Staff TOTP secret, AES-256-GCM encrypted (key in Key Vault, not in the database) | while enrolled | delete |
 | `user_mfa.recovery_code_hashes`, `user_mfa.last_used_step`, `user_mfa.confirmed_at` | HMACs of unused staff recovery codes; last accepted TOTP step | while enrolled | delete |
 | `leaderboard_snapshots.entries` | Auto-generated public names (D-039), XP, rank (opaque handles) | 1 year | retain (no ids; no real names) |
-| `credit_ledger.*` | AI credit grants and spend | life of account | cascade |
+| `credit_ledger.*` | AI credit grants, bonus credits for learning (0015, D-044) and spend | life of account | cascade |
 | `ai_requests.*` | AI usage metering (no prompt text) | 30 days per user, then aggregates only | cascade |
 | `ai_conversations.title` | Conversation title (may quote the student) | 30 days | delete |
 | `ai_messages.content` | Prompts and answers | 30 days (ARCHITECTURE §10) | delete |

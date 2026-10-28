@@ -18,6 +18,7 @@ import { policies } from '../policy';
 import { BoardSchema, withProblems } from '../schemas';
 import type { AppDeps } from '../services';
 import { currentLeague } from '../domain/leagues/leagues';
+import { AvatarRefSchema } from './avatar-schemas';
 
 const LeagueTierSchema = z
   .object({ level: z.number().int().min(1), key: z.string(), name: z.string(), icon: z.string() })
@@ -61,6 +62,8 @@ export const LeagueCurrentResponse = z
         rank: z.number().int(),
         /** Auto-generated public name (D-039, e.g. "Brave Otter 417"; never a real name); null when that student's consent is not granted (show "Student"). */
         name: z.string().nullable(),
+        /** The avatar shown next to the name (config ids); null exactly when `name` is null. */
+        avatar: AvatarRefSchema.nullable(),
         xp: z.number().int(),
         zone: LeagueZoneSchema,
         isMe: z.boolean(),

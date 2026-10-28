@@ -22,6 +22,7 @@ import { istDay } from '@soyl/db';
 import { onPracticeAnswer, toDto, type CoinAwardDto } from './coins/awards';
 import { challengeKeyForChapter } from './coins/challenge';
 import { coinsPaid } from './coins/ledger';
+import { checkDailyGoal, type CreditBonusAward } from '../ai/bonuses';
 
 /* ---------------------------------------------------------------------------------------------- */
 /* List                                                                                            */
@@ -190,6 +191,8 @@ export interface SubmitAnswerResult extends QuestionGrade {
   /** SOYL Coins this answer earned (ADR-021): daily challenge, solved milestones, chapter mastery. */
   coinsAwarded: number;
   coinAwards: CoinAwardDto[];
+  /** D-044 bonus AI credits this answer earned (daily practice goal met, 7-day streak milestone); consent `granted` only. */
+  creditBonuses: CreditBonusAward[];
 }
 
 /**
@@ -247,14 +250,15 @@ export async function submitAnswer(db: Database, clock: Clock, year: string, use
   }
 
   const base = { questionId: row.key, version: row.version, type: row.type as QuestionType, ...grade };
-  if (!userId) return { ...base, stored: false, answerId: null, xpAwarded: 0, badgesAwarded: [], streak: null, coinsAwarded: 0, coinAwards: [] };
+  if (!userId) return { ...base, stored: false, answerId: null, xpAwarded: 0, badgesAwarded: [], streak: null, coinsAwarded: 0, coinAwards: [], creditBonuses: [] };
 
   const now = new Date(clock.now());
   // Badge rows are synced before the transaction: a transaction must never wait for a second pooled connection.
   await ensureBadges(db);
   // Today's challenge for this subject is read from the pool too (coins, ADR-021); only a correct answer can earn it.
   const challenge = grade.correct === true ? await challengeKeyForChapter(db, year, row.chapterId, istDay(now), now.getTime()) : null;
-  return db.transaction(async (tx) => {
+  const creditBonuses: CreditBonusAward[] = [];
+  const result = await db.transaction(async (tx) => {
     const [saved] = await tx
       .insert(practiceAnswers)
       .values({
@@ -303,11 +307,17 @@ export async function submitAnswer(db: Database, clock: Clock, year: string, use
         correct: true,
       });
     }
-    const streak = await recordActivity(tx, userId, now);
+    const streak = await recordActivity(tx, userId, now, { creditBonuses });
     if (xpAwarded) await refreshTotals(tx, userId);
     const badgesAwarded = await evaluateBadges(db, tx, userId, now);
     return { ...base, stored: true, answerId: saved!.id, xpAwarded, badgesAwarded, streak, coinsAwarded: coinsPaid(coinOutcomes), coinAwards: toDto(coinOutcomes) };
   });
+  // D-044 daily goal: a follow-up after the commit, so concurrent answers each count every committed solve.
+  if (grade.correct === true) {
+    const goal = await checkDailyGoal(db, userId, now);
+    if (goal) creditBonuses.push(goal);
+  }
+  return { ...result, creditBonuses };
 }
 
 /** PATCH /v1/practice/answers/:id — the student's own mark for the written parts (API-7: own answers only). */
@@ -322,12 +332,19 @@ export async function selfAssess(db: Database, clock: Clock, userId: string, ans
   if (selfMax <= 0) throw new ApiProblem('conflict', { detail: 'This answer was marked automatically.' });
   if (marks > selfMax) throw new ApiProblem('validation_failed', { errors: [{ path: 'body.marks', message: `At most ${selfMax} marks can be self-assessed here.` }] });
   const total = Number(stored.auto_marks ?? 0) + marks;
+  const now = new Date(clock.now());
   const [updated] = await db
     .update(practiceAnswers)
-    .set({ marksAwarded: total, grading: 'self', updatedAt: new Date(clock.now()) })
+    .set({ marksAwarded: total, grading: 'self', updatedAt: now })
     .where(and(eq(practiceAnswers.id, answerId), eq(practiceAnswers.userId, userId)))
     .returning();
-  return { answerId: updated!.id, marksAwarded: Number(updated!.marksAwarded), maxMarks: Number(updated!.maxMarks), grading: 'self' as const };
+  // D-042: full self-marks solve the question; D-044: that may complete today's practice goal.
+  const creditBonuses: CreditBonusAward[] = [];
+  if (Number(updated!.marksAwarded) >= Number(updated!.maxMarks)) {
+    const goal = await checkDailyGoal(db, userId, now);
+    if (goal) creditBonuses.push(goal);
+  }
+  return { answerId: updated!.id, marksAwarded: Number(updated!.marksAwarded), maxMarks: Number(updated!.maxMarks), grading: 'self' as const, creditBonuses };
 }
 
 /** Chapter key for a chapter id (used by progress reads). */

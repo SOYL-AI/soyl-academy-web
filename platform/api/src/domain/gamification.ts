@@ -12,6 +12,7 @@
 import { and, eq, inArray, sql } from 'drizzle-orm';
 import { attempts, badges, istDay, lessonProgress, practiceAnswers, streaks, userBadges, xpEvents, type Database } from '@soyl/db';
 import { BADGES, STREAK, levelForXp, type BadgeDefinition } from '@soyl/shared/config/gamification';
+import { checkStreakMilestone, type CreditBonusAward } from '../ai/bonuses';
 
 type Tx = Parameters<Parameters<Database['transaction']>[0]>[0];
 type Db = Database | Tx;
@@ -74,8 +75,12 @@ export interface StreakView {
 
 type StreakRow = typeof streaks.$inferSelect;
 
-/** Records learning activity on the IST day of `now` and returns the updated streak. */
-export async function recordActivity(tx: Tx, userId: string, now: Date): Promise<StreakView> {
+/**
+ * Records learning activity on the IST day of `now` and returns the updated streak. When this records a
+ * new streak day that is a 7-day milestone, the D-044 streak bonus credits are granted in the same
+ * transaction (consent `granted` only; once per IST day); `out.creditBonuses` collects it for the caller.
+ */
+export async function recordActivity(tx: Tx, userId: string, now: Date, out?: { creditBonuses: CreditBonusAward[] }): Promise<StreakView> {
   const today = istDay(now);
   await tx.insert(streaks).values({ userId }).onConflictDoNothing();
   const [row] = await tx.select().from(streaks).where(eq(streaks.userId, userId)).for('update');
@@ -100,6 +105,8 @@ export async function recordActivity(tx: Tx, userId: string, now: Date): Promise
     .set({ currentDays: current, longestDays: longest, lastActiveIstDay: today, freezeUsedWeek })
     .where(eq(streaks.userId, userId))
     .returning();
+  const bonus = await checkStreakMilestone(tx, userId, current, now);
+  if (bonus) out?.creditBonuses.push(bonus);
   return streakView(updated!, today);
 }
 

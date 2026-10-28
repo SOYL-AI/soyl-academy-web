@@ -77,7 +77,7 @@ export async function deleteAccount(
       .where(eq(users.id, user.id));
     await tx
       .update(profiles)
-      .set({ displayName: null, board: null, classLevel: null, schoolId: null, city: null, publicNameSeed: 0, weeklyGoal: null, updatedAt: now })
+      .set({ displayName: null, board: null, classLevel: null, schoolId: null, city: null, publicNameSeed: 0, weeklyGoal: null, avatarId: null, avatarBg: null, updatedAt: now })
       .where(eq(profiles.userId, user.id));
     // 0013: unverified schools only this account used are deleted; other schools it added are unlinked.
     await unlinkCreatedSchools(tx, user.id);

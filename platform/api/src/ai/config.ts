@@ -4,7 +4,7 @@
  *
  *   AI_PROVIDER                 mock | azure | disabled   (default: mock in local/test, disabled elsewhere)
  *   AI_EMBEDDINGS               mock | azure | disabled   (default: follows AI_PROVIDER)
- *   AI_DAILY_SPEND_CAP_INR      global daily AI spend cap in rupees (default 2000, owner's figure)
+ *   AI_DAILY_SPEND_CAP_INR      global daily AI spend cap in rupees (default 3000, D-044)
  *   CONTENT_SAFETY_PROVIDER     local | azure | disabled  (default: local in local/test, disabled elsewhere)
  *   AZURE_CONTENT_SAFETY_ENDPOINT  https://<name>.cognitiveservices.azure.com
  *   BLOB_PROVIDER               memory | azure | disabled (default: memory in local/test, disabled elsewhere)

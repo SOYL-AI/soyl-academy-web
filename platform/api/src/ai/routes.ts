@@ -3,6 +3,8 @@
  *
  *   GET  /v1/credits                         balance, plan, reset time (lazy daily grant)
  *   GET  /v1/credits/ledger                  history, newest first
+ *   GET  /v1/me/credits/guide                what each action costs, plans, how many are left today, bonuses (D-044)
+ *   GET  /v1/me/credits/history?days=14      per-IST-day granted / bonus / spent / refunded (D-044)
  *   GET  /v1/ai/quote/:action                cost before the action (CONTEXT §6)
  *   POST /v1/ai/:action                      stream actions → SSE; job actions → 202 + job id
  *   GET  /v1/ai/jobs/:id                     job status/result
@@ -26,7 +28,8 @@ import type { ZodTypeProvider } from 'fastify-type-provider-zod';
 import { z } from 'zod/v4';
 import { and, desc, eq, lt } from 'drizzle-orm';
 import { aiConversations, chapters } from '@soyl/db';
-import { AI_ACTION_IDS, AI_ACTIONS, quoteCredits, type AiActionId } from '@soyl/shared/config/ai-actions';
+import { AI_ACTION_IDS, AI_ACTIONS, actionAllowedOnPlan, quoteCredits, type AiActionId } from '@soyl/shared/config/ai-actions';
+import { getPlan } from '@soyl/shared/config/plans';
 import { AI_GATEWAY } from '@soyl/shared/config/credits';
 import { BODY_LIMITS } from '@soyl/shared/config/security';
 import { ApiProblem } from '../errors';
@@ -46,6 +49,9 @@ import {
   ConversationCreateRequest,
   ConversationDetail,
   ConversationList,
+  CreditGuideResponse,
+  CreditHistoryQuery,
+  CreditHistoryResponse,
   CreditsResponse,
   IdParam,
   LedgerQuery,
@@ -57,6 +63,8 @@ import {
   UploadView,
 } from './schemas';
 import { nextIstMidnight, secondsUntil } from './time';
+import { bonusLabel } from './bonuses';
+import { creditGuide } from './guide';
 
 const LEDGER_LABELS: Record<string, string> = {
   daily_grant: 'Daily credits',
@@ -107,11 +115,35 @@ export function registerAiRoutes(appIn: FastifyInstance, deps: AppDeps, services
             credits: a.pricing.kind === 'flat' ? a.pricing.credits : a.pricing.creditsPerAnswer,
             perAnswer: a.pricing.kind === 'per_answer',
             maxCredits: a.pricing.kind === 'flat' ? a.pricing.credits : a.pricing.maxCredits,
-            allowedForPlan: a.plans.includes(b.plan),
+            allowedForPlan: actionAllowedOnPlan(a, getPlan(b.plan)),
           };
         }),
       };
     },
+  });
+
+  // D-044: rate-limited like the other /v1/me reads (aggregate queries).
+  const creditsRead = () => policies.member({ rateLimit: { buckets: ['credits.read.user'] } });
+
+  app.get('/v1/me/credits/guide', {
+    config: { policy: creditsRead() },
+    schema: {
+      tags: ['credits'],
+      summary: '“What can I do with my credits?”: each AI action with its price, the plans that offer it and how many you can still do today, plus the learning bonuses (consent granted only).',
+      response: withProblems({ 200: CreditGuideResponse }),
+    },
+    handler: async (request) => creditGuide({ db: deps.db, clock: deps.clock, credits: ai.credits, plansUrl }, request.auth!.user.id),
+  });
+
+  app.get('/v1/me/credits/history', {
+    config: { policy: creditsRead() },
+    schema: {
+      tags: ['credits'],
+      summary: 'Your credits per IST day for the last `days` days (default 14): granted, bonus, spent, refunded, left.',
+      querystring: CreditHistoryQuery,
+      response: withProblems({ 200: CreditHistoryResponse }),
+    },
+    handler: async (request) => ({ timezone: 'Asia/Kolkata' as const, ...(await ai.credits.history(request.auth!.user.id, request.query.days)) }),
   });
 
   app.get('/v1/credits/ledger', {
@@ -122,10 +154,10 @@ export function registerAiRoutes(appIn: FastifyInstance, deps: AppDeps, services
       return {
         entries: r.entries.map((e) => ({
           id: e.id,
-          kind: e.kind as 'grant' | 'reserve' | 'charge' | 'refund' | 'expire',
+          kind: e.kind as 'grant' | 'reserve' | 'charge' | 'refund' | 'expire' | 'bonus_goal' | 'bonus_streak',
           amount: e.amount,
           action: e.action,
-          label: LEDGER_LABELS[e.action] ?? AI_ACTIONS[e.action as AiActionId]?.label ?? e.action,
+          label: bonusLabel(e.kind) ?? LEDGER_LABELS[e.action] ?? AI_ACTIONS[e.action as AiActionId]?.label ?? e.action,
           day: e.istDay,
           createdAt: e.createdAt.toISOString(),
         })),
@@ -159,7 +191,7 @@ export function registerAiRoutes(appIn: FastifyInstance, deps: AppDeps, services
         mode: action.mode,
         requiresUpload: action.uploadKinds.length > 0,
         plan: b.plan,
-        allowedForPlan: action.plans.includes(b.plan),
+        allowedForPlan: actionAllowedOnPlan(action, getPlan(b.plan)),
         balance: b.balance,
         affordable: b.balance >= credits,
         status: status as 'available' | 'degraded' | 'paused',

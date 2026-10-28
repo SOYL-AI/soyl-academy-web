@@ -9,6 +9,7 @@ import { boolean, index, integer, pgTable, smallint, text, uniqueIndex, uuid } f
 import { check } from 'drizzle-orm/pg-core';
 import { AGE_BANDS, CONSENT_METHODS, CONSENT_REVOKERS } from '@soyl/shared/config/security';
 import { SCHOOL_SOURCES } from '@soyl/shared/config/schools';
+import { AVATAR_BACKGROUND_IDS, AVATAR_IDS } from '@soyl/shared/config/avatars';
 import { id, oneOf, timestamps, tstz } from './_shared';
 
 export const ROLES = ['student', 'parent', 'reviewer', 'admin'] as const;
@@ -178,10 +179,19 @@ export const profiles = pgTable(
     guestMergedAt: tstz('guest_merged_at'),
     /** 0013: dashboard weekly goal (practice questions solved per IST week); null = DASHBOARD.weeklyGoal.default. */
     weeklyGoal: smallint('weekly_goal'),
+    /**
+     * 0015: the avatar the student picked (@soyl/shared/config/avatars: animal id + background theme), shown
+     * next to the public name. Both null = the default (public-name animal, seeded background). Not PII.
+     */
+    avatarId: text('avatar_id'),
+    avatarBg: text('avatar_bg'),
     ...timestamps(),
   },
   (t) => [
     check('profiles_weekly_goal_check', sql`${t.weeklyGoal} IS NULL OR ${t.weeklyGoal} BETWEEN 1 AND 1000`),
+    oneOf('profiles_avatar_id_check', t.avatarId, AVATAR_IDS),
+    oneOf('profiles_avatar_bg_check', t.avatarBg, AVATAR_BACKGROUND_IDS),
+    check('profiles_avatar_pair_check', sql`(${t.avatarId} IS NULL) = (${t.avatarBg} IS NULL)`),
     oneOf('profiles_board_check', t.board, BOARDS),
     check('profiles_class_level_check', sql`${t.classLevel} BETWEEN 7 AND 12`),
     index('profiles_school_id_idx').on(t.schoolId),

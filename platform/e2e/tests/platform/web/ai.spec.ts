@@ -41,7 +41,7 @@ test('AI tutor: quote → stream → credits; hint → full; refund on failure; 
 
   await grantConsent(page);
   await page.goto('/ask', { waitUntil: 'networkidle' });
-  await expect(chip(page)).toHaveAttribute('data-balance', '25');
+  await expect(chip(page)).toHaveAttribute('data-balance', '50'); // D-044: 50 free credits a day
 
   // Quick doubt: 1 credit, quoted first, streamed, hint first.
   await ask(page, 'Quick doubt', 'Why does iron rust faster near the sea?', 1);
@@ -49,7 +49,7 @@ test('AI tutor: quote → stream → credits; hint → full; refund on failure; 
   await expect(lastAnswer(page)).toContainText('[MOCK]');
   await expect(lastAnswer(page)).toHaveAttribute('data-status', 'done', { timeout: 30_000 });
   await expect(lastAnswer(page)).toHaveAttribute('data-mode', 'hint');
-  await expect(chip(page)).toHaveAttribute('data-balance', '24');
+  await expect(chip(page)).toHaveAttribute('data-balance', '49');
 
   // "Show full solution" in the same conversation. Record when the reply's text grows, to prove the tokens
   // arrive incrementally through the web proxy (not buffered until the end).
@@ -77,16 +77,16 @@ test('AI tutor: quote → stream → credits; hint → full; refund on failure; 
   const span = growth[growth.length - 1]!.t - growth.find((g) => g.n > 40)!.t;
   expect(span, `text grew in steps over time: ${JSON.stringify(growth)}`).toBeGreaterThan(1000);
   await expect(lastAnswer(page)).toContainText('Write what is given');
-  await expect(chip(page)).toHaveAttribute('data-balance', '23');
+  await expect(chip(page)).toHaveAttribute('data-balance', '48');
   await checkPage(page);
   await shot(page, 'ask-answered');
 
   // The provider fails before any output: credits come back.
   await ask(page, 'Quick doubt', `What is the pH of pure water? ${FAIL}`, 1);
   await expect(page.getByText(/refunded/i).last()).toBeVisible({ timeout: 30_000 });
-  await expect(chip(page)).toHaveAttribute('data-balance', '23');
+  await expect(chip(page)).toHaveAttribute('data-balance', '48');
   const credits = await (await page.request.get('/api/platform/v1/credits')).json();
-  expect(credits.balance).toBe(23);
+  expect(credits.balance).toBe(48);
 
   // Photo doubt: the browser re-encodes the photo and PUTs it straight to storage.
   const png = await page.evaluate(() => {
@@ -105,14 +105,14 @@ test('AI tutor: quote → stream → credits; hint → full; refund on failure; 
   await page.getByTestId('photo-input').setInputFiles({ name: 'question.png', mimeType: 'image/png', buffer: Buffer.from(png, 'base64') });
   const put = page.waitForRequest((r) => r.url().startsWith(`${CONTROL_ORIGIN}/blob`) && r.method() === 'PUT');
   await page.getByTestId('ask-send').click();
-  await expect(page.getByRole('dialog', { name: 'Use AI credits?' }).getByTestId('quote')).toContainText('10 credits');
+  await expect(page.getByRole('dialog', { name: 'Use AI credits?' }).getByTestId('quote')).toContainText('12 credits');
   await page.getByRole('dialog', { name: 'Use AI credits?' }).getByTestId('quote-confirm').click();
   const putReq = await put;
   expect(putReq.headers()['content-type']).toBe('image/jpeg'); // re-encoded: EXIF-free JPEG
   expect(putReq.headers()['cookie']).toBeUndefined();
   await expect(lastAnswer(page)).toContainText('I read the question in your photo', { timeout: 60_000 });
   await expect(lastAnswer(page)).toHaveAttribute('data-status', 'done', { timeout: 30_000 });
-  await expect(chip(page)).toHaveAttribute('data-balance', '13');
+  await expect(chip(page)).toHaveAttribute('data-balance', '36');
 
   // History.
   await page.getByText('Your recent chats').click();
@@ -128,7 +128,7 @@ test('AI tutor: quote → stream → credits; hint → full; refund on failure; 
   await checkPage(page);
   await shot(page, 'explain-slide', false);
   await page.keyboard.press('Escape');
-  await expect(chip(page)).toHaveAttribute('data-balance', '12');
+  await expect(chip(page)).toHaveAttribute('data-balance', '35');
 
   // AI evaluation of a written answer: quote, job, labels; the score does not change.
   const attemptId = await startCh02Short(page);
@@ -139,7 +139,7 @@ test('AI tutor: quote → stream → credits; hint → full; refund on failure; 
   await page.waitForURL(new RegExp(`/tests/result/${attemptId}`));
   const before = await page.getByTestId('score').textContent();
   await page.getByTestId('ai-evaluate-all').click();
-  await expect(page.getByRole('dialog', { name: 'Use AI credits?' }).getByTestId('quote')).toContainText('6 credits');
+  await expect(page.getByRole('dialog', { name: 'Use AI credits?' }).getByTestId('quote')).toContainText('7 credits');
   await page.getByRole('dialog', { name: 'Use AI credits?' }).getByTestId('quote-confirm').click();
   await expect(page.getByTestId('ai-marks')).toBeVisible({ timeout: 60_000 });
   await expect(page.getByTestId('ai-marks')).toContainText(/AI-graded/);
@@ -147,13 +147,16 @@ test('AI tutor: quote → stream → credits; hint → full; refund on failure; 
   expect(await page.getByTestId('score').textContent()).toBe(before);
   await checkPage(page);
   await shot(page, 'test-result-ai');
-  await expect(chip(page)).toHaveAttribute('data-balance', '6');
+  await expect(chip(page)).toHaveAttribute('data-balance', '28');
 
-  // Out of credits: the quote stops it and the paywall shows the reset countdown and plans.
+  // Out of credits: four step-by-step doubts (7 each) spend the rest; then the quote stops it and the
+  // paywall shows the reset countdown and plans.
   await page.goto('/ask', { waitUntil: 'networkidle' });
-  await ask(page, 'Step by step', 'Balance Fe + O2 → Fe2O3 step by step.', 6);
-  await expect(lastAnswer(page)).toHaveAttribute('data-status', 'done', { timeout: 30_000 });
-  await expect(chip(page)).toHaveAttribute('data-balance', '0');
+  for (const left of [21, 14, 7, 0]) {
+    await ask(page, 'Step by step', `Balance Fe + O2 → Fe2O3 step by step (${left}).`, 7);
+    await expect(lastAnswer(page)).toHaveAttribute('data-status', 'done', { timeout: 30_000 });
+    await expect(chip(page)).toHaveAttribute('data-balance', String(left));
+  }
   await page.getByRole('radio', { name: /^Step by step/ }).check();
   await page.getByTestId('ask-input').fill('One more question about acids.');
   await page.getByTestId('ask-send').click();

@@ -27,7 +27,7 @@ import { createHash } from 'node:crypto';
 import { consentStatus, istDay, leagueMemberships, leagues, profiles, users, type Database } from '@soyl/db';
 import { LEAGUE_TIERS, LEAGUES, leagueZones } from '@soyl/shared/config/gamification';
 import { dayNumber, dayString, weekMonday } from '../gamification';
-import { leaderboardNames } from '../tests/live';
+import { leaderboardIdentities } from '../tests/live';
 import { onLeagueClosed } from '../coins/awards';
 
 type Tx = Parameters<Parameters<Database['transaction']>[0]>[0];
@@ -351,7 +351,7 @@ export async function currentLeague(db: Database, now: number, userId: string, s
   const leagueId = await joinLeague(db, userId, { scope, scopeKey: cohort.key }, week.start, nextTier(last), now);
   const [league] = await db.select().from(leagues).where(eq(leagues.id, leagueId));
   const standings = await leagueStandings(db, league!);
-  const names = await leaderboardNames(db, standings.map((s) => s.userId));
+  const ids = await leaderboardIdentities(db, standings.map((s) => s.userId));
   const zones = leagueZones(standings.length, league!.tier);
   const mine = standings.find((s) => s.userId === userId);
   return {
@@ -370,7 +370,7 @@ export async function currentLeague(db: Database, now: number, userId: string, s
       isTopTier: league!.tier >= MAX_TIER,
       isBottomTier: league!.tier <= 1,
     },
-    standings: standings.map((s) => ({ rank: s.rank, name: names.get(s.userId) ?? null, xp: s.xp, zone: s.zone, isMe: s.userId === userId })),
+    standings: standings.map((s) => ({ rank: s.rank, name: ids.get(s.userId)?.name ?? null, avatar: ids.get(s.userId)?.avatar ?? null, xp: s.xp, zone: s.zone, isMe: s.userId === userId })),
     me: mine ? { rank: mine.rank, xp: mine.xp, zone: mine.zone } : null,
     lastWeek: last
       ? {

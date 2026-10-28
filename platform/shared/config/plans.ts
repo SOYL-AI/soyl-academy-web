@@ -1,5 +1,6 @@
 /**
  * AI plans and prices (CONTEXT.md §7). Prices are INR, GST-inclusive, stored in integer paise.
+ * Daily credits: D-044 (2026-10-28) — Free 50, Plus 100, Pro and Board Exam Pass 150 (were 25 / 40 / 60).
  * The owner changes prices here, never in code. `npm run billing -- sync-plans` pushes them to Razorpay.
  */
 import { z } from 'zod/v4';
@@ -42,7 +43,7 @@ export const PLANS: readonly Plan[] = [
   {
     id: 'free',
     name: 'Free',
-    creditsPerDay: 25,
+    creditsPerDay: 50,
     features: ['ai_credits'],
     prices: [],
     validUntil: null,
@@ -51,8 +52,9 @@ export const PLANS: readonly Plan[] = [
   {
     id: 'plus',
     name: 'Plus',
-    creditsPerDay: 40,
-    // Not paper_from_upload: it costs 60 credits, more than Plus grants in a day (D-034).
+    creditsPerDay: 100,
+    // Not paper_from_upload: a Pro and Board Exam Pass feature (D-034). The gate is this feature list
+    // (AI_ACTIONS['paper-from-upload'].requiredFeature), not a credit comparison: since D-044 Plus could afford it.
     features: ['ai_credits'],
     prices: [
       { interval: 'monthly', amountPaise: 19_900 },
@@ -64,7 +66,7 @@ export const PLANS: readonly Plan[] = [
   {
     id: 'pro',
     name: 'Pro',
-    creditsPerDay: 60,
+    creditsPerDay: 150,
     features: ['ai_credits', 'paper_from_upload', 'priority_ai_evaluation', 'parent_weekly_report'],
     prices: [
       { interval: 'monthly', amountPaise: 29_900 },
@@ -76,13 +78,18 @@ export const PLANS: readonly Plan[] = [
   {
     id: 'board_exam_pass',
     name: 'Board Exam Pass',
-    creditsPerDay: 60,
+    creditsPerDay: 150,
     features: ['ai_credits', 'paper_from_upload', 'priority_ai_evaluation', 'parent_weekly_report'],
     prices: [{ interval: 'one_time', amountPaise: 49_900 }],
     validUntil: '2027-03-31T23:59:59+05:30',
     order: 3,
   },
 ] as const;
+
+/** Plans whose feature list includes `feature`, in display order (who may use paper-from-upload, D-034). */
+export function plansWithFeature(feature: PlanFeature): PlanId[] {
+  return [...PLANS].sort((a, b) => a.order - b.order).filter((p) => p.features.includes(feature)).map((p) => p.id);
+}
 
 export function getPlan(id: PlanId): Plan {
   const plan = PLANS.find((p) => p.id === id);

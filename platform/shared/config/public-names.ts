@@ -31,8 +31,8 @@ export const PUBLIC_NAME_ANIMALS: readonly string[] = [
   'Tapir', 'Toucan', 'Walrus', 'Wombat', 'Yak', 'Bulbul', 'Hoopoe', 'Langur',
 ];
 
-/** 32-bit FNV-1a: stable across runtimes, no crypto needed (the name is public anyway). */
-function fnv1a(s: string): number {
+/** 32-bit FNV-1a: stable across runtimes, no crypto needed (the name is public anyway). Also seeds the default avatar. */
+export function fnv1a(s: string): number {
   let h = 0x811c9dc5;
   for (let i = 0; i < s.length; i++) {
     h ^= s.charCodeAt(i);
@@ -41,12 +41,16 @@ function fnv1a(s: string): number {
   return h >>> 0;
 }
 
+/** The animal of the public name for (account id, seed), e.g. "Otter" for "Brave Otter 417" (the default avatar, avatars.ts). */
+export function publicNameAnimal(userId: string, seed = 0): string {
+  return PUBLIC_NAME_ANIMALS[fnv1a(`ani:${userId}:${seed}`) % PUBLIC_NAME_ANIMALS.length]!;
+}
+
 /** "Brave Otter 417" for (account id, seed). Numbers are 100–999, so no name looks like a roll or phone number. */
 export function publicName(userId: string, seed = 0): string {
   const a = fnv1a(`adj:${userId}:${seed}`);
-  const b = fnv1a(`ani:${userId}:${seed}`);
   const n = fnv1a(`num:${userId}:${seed}`);
-  return `${PUBLIC_NAME_ADJECTIVES[a % PUBLIC_NAME_ADJECTIVES.length]} ${PUBLIC_NAME_ANIMALS[b % PUBLIC_NAME_ANIMALS.length]} ${100 + (n % 900)}`;
+  return `${PUBLIC_NAME_ADJECTIVES[a % PUBLIC_NAME_ADJECTIVES.length]} ${publicNameAnimal(userId, seed)} ${100 + (n % 900)}`;
 }
 
 /** Seeds are positive 31-bit integers; 0 is every account's first name. */

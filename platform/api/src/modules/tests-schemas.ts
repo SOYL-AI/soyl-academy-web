@@ -9,6 +9,7 @@ import { TEST_ENGINE } from '@soyl/shared/config/tests';
 import { BoardSchema } from '../schemas';
 import { StreakSchema, StudentQuestionSchema } from './content-schemas';
 import { coinAwardFields } from './coins-schemas';
+import { AvatarRefSchema } from './avatar-schemas';
 import { KeyRevealSchema, PracticeResponseSchema } from './practice';
 
 export const TestKey = z
@@ -416,6 +417,8 @@ export const LeaderboardResponse = z
         rank: z.number().int(),
         /** Auto-generated public name (D-039; never a real name); null when the student's consent is not granted (D-014). */
         name: z.string().nullable(),
+        /** The avatar shown next to the name (config ids); null exactly when `name` is null. */
+        avatar: AvatarRefSchema.nullable(),
         score: z.number(),
         isMe: z.boolean(),
       }),

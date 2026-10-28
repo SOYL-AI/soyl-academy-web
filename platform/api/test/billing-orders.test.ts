@@ -89,7 +89,7 @@ describe('payment → entitlement (webhook)', () => {
     const res = await c.get('/v1/me/subscription');
     expect(res.statusCode).toBe(200);
     expect(res.headers['cache-control']).toBe('no-store');
-    expect(res.json()).toMatchObject({ plan: 'board_exam_pass', planName: 'Board Exam Pass', creditsPerDay: 60, source: 'order', validUntil: '2027-03-31T18:29:59.000Z', subscription: null, billingEnabled: true });
+    expect(res.json()).toMatchObject({ plan: 'board_exam_pass', planName: 'Board Exam Pass', creditsPerDay: 150, source: 'order', validUntil: '2027-03-31T18:29:59.000Z', subscription: null, billingEnabled: true });
   });
 
   it('a second webhook delivery of the same event is a no-op (exactly once)', async () => {
@@ -377,13 +377,13 @@ describe('credit top-up hook (ARCHITECTURE §11.2)', () => {
   it('is wired to the AI gateway: credits read before the purchase are topped up to the pass at once', async () => {
     const { c, userId, checkout } = await buyPass();
     const before = (await c.get('/v1/credits')).json();
-    expect(before).toMatchObject({ plan: 'free', dailyCredits: 25, grantedToday: 25 });
+    expect(before).toMatchObject({ plan: 'free', dailyCredits: 50, grantedToday: 50 });
     await h.deliverAll(h.stub.simulateOrderPayment(checkout.orderId));
     // The top-up row exists before the student's next request (hook after commit, not the lazy path).
     const rows = await h.t.db.select().from(creditLedger).where(and(eq(creditLedger.userId, userId), eq(creditLedger.kind, 'grant')));
-    expect(rows.map((r) => [r.action, r.amount]).sort()).toEqual([['daily_grant', 25], ['plan_topup', 35]]);
-    expect(await h.services.ai.credits.balance(userId)).toMatchObject({ plan: 'board_exam_pass', dailyCredits: 60, grantedToday: 60 });
-    expect((await c.get('/v1/credits')).json()).toMatchObject({ plan: 'board_exam_pass', dailyCredits: 60, balance: 60 });
+    expect(rows.map((r) => [r.action, r.amount]).sort()).toEqual([['daily_grant', 50], ['plan_topup', 100]]);
+    expect(await h.services.ai.credits.balance(userId)).toMatchObject({ plan: 'board_exam_pass', dailyCredits: 150, grantedToday: 150 });
+    expect((await c.get('/v1/credits')).json()).toMatchObject({ plan: 'board_exam_pass', dailyCredits: 150, balance: 150 });
   });
 });
 

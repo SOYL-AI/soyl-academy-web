@@ -53,9 +53,12 @@ GET    /v1/live-events/:id/leaderboard        roles=student|parent|reviewer|admi
 GET    /v1/me                                 roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/me/activity                        roles=student|parent|reviewer|admin csrf=true rl=default+insights.read.user consent=no
 GET    /v1/me/attempts                        roles=student|parent|reviewer|admin csrf=true rl=default+attempt.read.user consent=no
+GET    /v1/me/avatars                         roles=student|parent|reviewer|admin csrf=true rl=default+avatars.read.user consent=no
 GET    /v1/me/badges                          roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/me/card                            roles=student|parent|reviewer|admin csrf=true rl=default+insights.read.user consent=no
 GET    /v1/me/consent                         roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/me/credits/guide                   roles=student|parent|reviewer|admin csrf=true rl=default+credits.read.user consent=no
+GET    /v1/me/credits/history                 roles=student|parent|reviewer|admin csrf=true rl=default+credits.read.user consent=no
 GET    /v1/me/dashboard                       roles=student|parent|reviewer|admin csrf=true rl=default+dashboard.read.user consent=no
 GET    /v1/me/mastery                         roles=student|parent|reviewer|admin csrf=true rl=default+insights.read.user consent=no
 GET    /v1/me/mfa                             roles=reviewer|admin csrf=true rl=default consent=no

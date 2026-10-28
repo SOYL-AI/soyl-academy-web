@@ -62,7 +62,7 @@ test('under 18: the parent’s emailed code turns the AI tutor on', async ({ pag
   await page.getByTestId('consent-continue').click();
   await expect(page).toHaveURL(/\/ask$/);
   await expect(page.getByTestId('ai-consent-needed')).toHaveCount(0);
-  await expect(page.getByTestId('credit-chip')).toHaveAttribute('data-balance', '25');
+  await expect(page.getByTestId('credit-chip')).toHaveAttribute('data-balance', '50'); // D-044
 });
 
 test('18 or older: self-declared approval turns leaderboards on; withdrawing from /me turns them off', async ({ page }) => {

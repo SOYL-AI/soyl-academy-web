@@ -3,7 +3,8 @@
  * ids of other users' resources return 404.
  *
  *   GET    /v1/me                    profile, consent, sign-in methods
- *   PATCH  /v1/me                    board, classLevel, displayName, locale, weeklyGoal; school only with consent (D-014)
+ *   PATCH  /v1/me                    board, classLevel, displayName, locale, weeklyGoal, avatar; school only with consent (D-014)
+ *   GET    /v1/me/avatars            every avatar with its unlock rule, progress and lock state
  *   DELETE /v1/me                    anonymise + revoke now, purge ≤ 30 days (fresh session)
  *   POST   /v1/me/merge-guest        guest progress, once per account (256 KB body)
  *   POST   /v1/me/consent/start      start the parental-consent flow (built-in flow: modules/consent.ts)
@@ -35,6 +36,8 @@ import { mergeGuestProgress } from '../domain/guest-merge';
 import { deleteAccount } from '../domain/account-deletion';
 import { removeFromLiveBoards } from '../domain/tests/live';
 import { findOrCreateSchool, profileSchoolFields, schoolById, visibleSchool } from '../domain/schools';
+import { avatarCatalog, avatarFor, avatarUpdate, dropAvatarIfLocked } from '../domain/avatars';
+import { AvatarCatalogResponse, AvatarInput, MyAvatarSchema } from './avatar-schemas';
 
 const MeResponse = z
   .object({
@@ -45,6 +48,8 @@ const MeResponse = z
     classLevel: ClassLevelSchema.nullable(),
     /** D-039: the only name other students ever see (leaderboards, leagues, live ranks); auto-generated. */
     publicName: z.string(),
+    /** The avatar shown next to the public name: your pick, or your public-name animal on a seeded background (isDefault). */
+    avatar: MyAvatarSchema,
     locale: z.string(),
     consent: ConsentStateSchema,
     /** D-014: null unless consent is granted and a school is saved. */
@@ -70,6 +75,8 @@ const PatchMeBody = z
     school: SchoolInput.optional(),
     /** Weekly goal (practice questions solved per IST week); null resets it to the default. */
     weeklyGoal: z.number().int().min(DASHBOARD.weeklyGoal.min).max(DASHBOARD.weeklyGoal.max).nullable().optional(),
+    /** Pick an unlocked avatar ({ id, bg }); 403 avatar_locked when it is still locked. null goes back to the default. */
+    avatar: AvatarInput.optional(),
   })
   .refine((b) => Object.keys(b).length > 0, 'at least one field')
   .meta({
@@ -104,6 +111,7 @@ export function registerMeRoutes(appIn: FastifyInstance, services: Services, dep
       board: (p?.board as 'cbse' | 'cisce' | null | undefined) ?? null,
       classLevel: p?.classLevel ?? null,
       publicName: publicName(user.id, p?.publicNameSeed ?? 0),
+      avatar: avatarFor(user.id, p),
       locale: p?.locale ?? 'en-IN',
       consent,
       school,
@@ -139,6 +147,7 @@ export function registerMeRoutes(appIn: FastifyInstance, services: Services, dep
       if (b.classLevel !== undefined) set.classLevel = b.classLevel;
       if (b.locale !== undefined) set.locale = b.locale;
       if (b.weeklyGoal !== undefined) set.weeklyGoal = b.weeklyGoal;
+      if (b.avatar !== undefined) Object.assign(set, await avatarUpdate(db, userId, b.avatar));
       if (b.school === null) Object.assign(set, profileSchoolFields(null)); // clearing is always allowed
       else if (b.school !== undefined) {
         // D-014: 403 consent_required (503 consent_unavailable) before anything is validated or stored.
@@ -219,8 +228,20 @@ export function registerMeRoutes(appIn: FastifyInstance, services: Services, dep
         .insert(profiles)
         .values({ userId, publicNameSeed: seed })
         .onConflictDoUpdate({ target: profiles.userId, set: { publicNameSeed: seed, updatedAt: new Date(clock.now()) } });
+      // A picked avatar unlocked only as the old name's animal goes back to the default.
+      await dropAvatarIfLocked(db, clock, userId);
       return { publicName: publicName(userId, seed) };
     },
+  });
+
+  app.get('/v1/me/avatars', {
+    config: { policy: policies.member({ rateLimit: { buckets: ['avatars.read.user'] } }) },
+    schema: {
+      tags: ['me'],
+      summary: 'Every avatar with its unlock rule (level, badge, streak, league tier, live mocks; 16 starters plus your public-name animal), your progress and the backgrounds',
+      response: withProblems({ 200: AvatarCatalogResponse }),
+    },
+    handler: async (request) => avatarCatalog(db, request.auth!.user.id),
   });
 
   app.get('/v1/me/sessions', {

@@ -11,6 +11,7 @@ import { and, eq } from 'drizzle-orm';
 import { attempts, chapters, consentStatus, ingestTestDefinition, liveEvents, liveRegistrations, questionKeys, questionRow, questions, splitQuestion, tests } from '@soyl/db';
 import { Question } from '@soyl/shared/content/question';
 import { publicName } from '@soyl/shared/config/public-names';
+import { defaultAvatar } from '@soyl/shared/config/avatars';
 import { TestDefinition } from '@soyl/shared/content/test';
 import { LIVE_MOCK_SITTINGS, TEST_ENGINE } from '@soyl/shared/config/tests';
 import { loadCatalog } from '@soyl/content-pipeline/catalog';
@@ -188,15 +189,17 @@ describe('live window', () => {
 
     await h.t.db.update(consentStatus).set({ status: 'required' }).where(eq(consentStatus.userId, c3.id));
     h.consent.setStatus(c3.id, 'required');
+    expect((await b.c.patch('/v1/me', { avatar: { id: 'kiwi', bg: 'meadow' } })).statusCode).toBe(200);
     const lb = await a.c.get(`/v1/live-events/${L.eventKey}/leaderboard`);
     expect(lb.statusCode).toBe(200);
     const board = lb.json() as { status: string; total: number; entries: { rank: number; name: string | null; score: number; isMe: boolean }[]; me: { rank: number; score: number } };
     expect(board.status).toBe('provisional');
     expect(board.total).toBe(3);
     expect(board.entries).toEqual([
-      { rank: 1, name: null, score: 6, isMe: false },
-      { rank: 2, name: publicName(a.id), score: 5, isMe: true },
-      { rank: 3, name: publicName(b.id), score: 3, isMe: false },
+      // No consent: no name and no avatar.
+      { rank: 1, name: null, avatar: null, score: 6, isMe: false },
+      { rank: 2, name: publicName(a.id), avatar: defaultAvatar(a.id), score: 5, isMe: true },
+      { rank: 3, name: publicName(b.id), avatar: { id: 'kiwi', bg: 'meadow' }, score: 3, isMe: false },
     ]);
     expect(board.me).toMatchObject({ rank: 2, score: 5 });
     // F-017 / D-039: no ids, emails or real names (not even first names) anywhere in the leaderboard.
@@ -267,6 +270,8 @@ describe('live window', () => {
     const lb = (await a.c.get(`/v1/live-events/${L.eventKey}/leaderboard`)).json();
     expect(lb).toMatchObject({ status: 'final', total: 3, me: { rank: 1, score: 4, percentile: 100 } });
     expect(lb.entries.map((e: { name: string }) => e.name)).toEqual([publicName(a.id), publicName(b.id), publicName(c.id)]);
+    expect(lb.entries.map((e: { avatar: unknown }) => e.avatar)).toEqual([defaultAvatar(a.id), defaultAvatar(b.id), defaultAvatar(c.id)]);
+    for (const s of [a, b, c]) expect(JSON.stringify(lb)).not.toContain(s.id);
     expect((await c.c.get(`/v1/attempts/${sc.attempt.id}/result`)).json().live).toMatchObject({ status: 'final', rank: 3, total: 3 });
     // After the event the paper can be taken again, unranked.
     const unranked = await c.c.post(`/v1/tests/${L.testKey}/attempts`);

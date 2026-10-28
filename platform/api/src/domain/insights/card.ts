@@ -8,6 +8,7 @@ import { istDay, streaks, type Database } from '@soyl/db';
 import { PLAYER_CARD } from '@soyl/shared/config/learning';
 import { levelForXp } from '@soyl/shared/config/gamification';
 import { publicName } from '@soyl/shared/config/public-names';
+import { avatarFor } from '../avatars';
 import { playerCard, type CardEvidence } from '@soyl/shared/learning/card';
 import { chapterMastery } from '@soyl/shared/learning/mastery';
 import type { Clock } from '../../clock';
@@ -89,6 +90,7 @@ export async function playerCardFor(db: Database, clock: Clock, year: string, us
   const xp = s?.totalXp ?? 0;
   return {
     publicName: publicName(userId, profile?.publicNameSeed ?? 0),
+    avatar: avatarFor(userId, profile),
     level: levelForXp(xp).level,
     xp,
     coins,

@@ -11,11 +11,14 @@
  *   charge   >= 0    settles a reservation as spent; amount = unused part returned (0 = full quote spent)
  *   refund   > 0     settles a reservation as failed; returns exactly the reserved credits
  *   expire   < 0     unused credits removed at the end of an IST day (no rollover)
+ *   bonus_goal   > 0  0015, D-044: bonus for meeting the daily practice goal (action 'daily_practice_goal')
+ *   bonus_streak > 0  0015, D-044: bonus on a 7-day streak milestone (action 'streak_milestone')
  *
  * Today's balance = SUM(amount) WHERE user_id = ? AND ist_day = today (IST, GEN-6).
  *
  * DB-2 / AC-07 / AC-08, enforced by the database:
  * - one daily grant per user per IST day;
+ * - one bonus row per rule (kind) per user per IST day (0015: idempotent under concurrent triggers);
  * - UNIQUE (kind, request_id): a reserve, charge or refund for one AI request cannot be written twice;
  * - one resolution per reservation: a request gets a charge OR a refund, never both;
  * - a charge/refund needs a reserve for the same request and user, and cannot return more than it held
@@ -26,8 +29,9 @@ import { boolean, check, date, index, integer, jsonb, pgTable, text, uniqueIndex
 import { createdAt, id, meteredPaise, oneOf, timestamps, tstz } from './_shared';
 import { chapters } from './catalog';
 import { users } from './identity';
+import { CREDIT_BONUS_KINDS } from '@soyl/shared/config/credit-bonuses';
 
-export const LEDGER_KINDS = ['grant', 'reserve', 'charge', 'refund', 'expire'] as const;
+export const LEDGER_KINDS = ['grant', 'reserve', 'charge', 'refund', 'expire', ...CREDIT_BONUS_KINDS] as const;
 export type LedgerKind = (typeof LEDGER_KINDS)[number];
 export const GRANT_ACTIONS = ['daily_grant', 'plan_topup', 'admin_adjustment'] as const;
 
@@ -60,7 +64,8 @@ export const creditLedger = pgTable(
        OR (${t.kind} = 'reserve' AND ${t.amount} < 0)
        OR (${t.kind} = 'charge' AND ${t.amount} >= 0)
        OR (${t.kind} = 'refund' AND ${t.amount} > 0)
-       OR (${t.kind} = 'expire' AND ${t.amount} < 0)`,
+       OR (${t.kind} = 'expire' AND ${t.amount} < 0)
+       OR (${t.kind} IN ('bonus_goal', 'bonus_streak') AND ${t.amount} > 0)`,
     ),
     check(
       'credit_ledger_request_id_check',
@@ -72,6 +77,8 @@ export const creditLedger = pgTable(
       .on(t.userId, t.istDay)
       .where(sql`${t.kind} = 'grant' AND ${t.action} = 'daily_grant'`),
     uniqueIndex('credit_ledger_one_expiry_per_day').on(t.userId, t.istDay).where(sql`${t.kind} = 'expire'`),
+    // 0015 (D-044): at most one bonus per rule per user per IST day.
+    uniqueIndex('credit_ledger_one_bonus_per_day').on(t.userId, t.istDay, t.kind).where(sql`${t.kind} IN ('bonus_goal', 'bonus_streak')`),
     uniqueIndex('credit_ledger_one_resolution').on(t.requestId).where(sql`${t.kind} IN ('charge', 'refund')`),
     // ARCHITECTURE §6 hot lookup
     index('credit_ledger_user_created_idx').on(t.userId, t.createdAt),

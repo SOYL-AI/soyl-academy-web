@@ -104,6 +104,8 @@ export const PROBLEMS = {
   verification_required: [403, 'Verify your email or phone number first.'],
   /** Physical merch redemption is switched off (COINS_PHYSICAL_REDEMPTION_ENABLED=false). */
   redemption_disabled: [403, 'Merch redemption opens soon. Keep earning coins.'],
+  /** PATCH /v1/me avatar: that avatar is not unlocked yet (it unlocks by learning; GET /v1/me/avatars says how). */
+  avatar_locked: [403, 'This avatar is still locked. Keep learning to unlock it.'],
 } as const satisfies Record<string, readonly [number, string]>;
 
 export type ProblemCode = keyof typeof PROBLEMS;

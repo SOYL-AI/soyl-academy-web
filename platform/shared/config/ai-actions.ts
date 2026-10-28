@@ -4,14 +4,14 @@
  * moderation policy. The gateway (platform/api/src/ai) reads nothing else, so prices, caps and tiers
  * are config changes, never code changes.
  *
- * Credits: 1 credit = ₹0.10 (credits.ts). The prices below are CONTEXT §6 "initial values"; the
- * `estCostPaise` column is CONTEXT's estimated real cost, used only for documentation and the
- * 7-day cost guardrail report (the guardrail itself uses metered cost).
+ * Credits: 1 credit = ₹0.10 (credits.ts). Prices were repriced to measured cost on 2026-10-28 (D-044,
+ * from the D-040 verified Azure prices); `estCostPaise` is that measured cost per request (CONTEXT §6),
+ * used for documentation and the 7-day cost guardrail report (the guardrail itself uses metered cost).
  *
  * Dependency-free (type-only imports) so the web can import it for the "costs N credits" labels.
  */
 import type { ModelTier } from './models';
-import type { PlanId } from './plans';
+import type { Plan, PlanFeature, PlanId } from './plans';
 
 export const AI_ACTION_IDS = [
   'quick-doubt',
@@ -60,6 +60,8 @@ export interface AiActionConfig {
   id: AiActionId;
   /** Student-facing name. */
   label: string;
+  /** One line for the "What can I do with my credits?" guide (GET /v1/me/credits/guide). */
+  guide: string;
   tier: ModelTier;
   /** Needs an image/PDF input (photo doubt, paper from upload). */
   vision: boolean;
@@ -76,6 +78,12 @@ export interface AiActionConfig {
   reasoningEffort: AiReasoningEffort;
   /** Plans allowed to use the action (`free` = every signed-in student with consent). */
   plans: readonly PlanId[];
+  /**
+   * A plan feature the action also needs (D-034: paper-from-upload needs `paper_from_upload`), or null.
+   * The gate is the feature, not a credit comparison: `plans` must equal plansWithFeature(requiredFeature)
+   * (config test), and actionAllowedOnPlan checks both.
+   */
+  requiredFeature: PlanFeature | null;
   moderation: AiModerationPolicy;
   /** Spend breaker "degraded" state (ARCHITECTURE §10): run on this tier instead; null = pause the action. */
   degradeTo: ModelTier | null;
@@ -89,7 +97,7 @@ export interface AiActionConfig {
 }
 
 const ALL_PLANS: readonly PlanId[] = ['free', 'plus', 'pro', 'board_exam_pass'];
-/** Plans with at least 60 credits a day (D-034: paper-from-upload costs 60, Plus grants 40). */
+/** Plans with the `paper_from_upload` feature (D-034; plans.ts). Kept literal so this file stays dependency-free. */
 const PRO_PLANS: readonly PlanId[] = ['pro', 'board_exam_pass'];
 
 const CHAT_MODERATION: AiModerationPolicy = {
@@ -109,6 +117,7 @@ const STRUCTURED_MODERATION: AiModerationPolicy = { ...CHAT_MODERATION, document
 export const AI_ACTIONS: Record<AiActionId, AiActionConfig> = {
   'quick-doubt': {
     id: 'quick-doubt',
+    guide: 'Ask a short question from your syllabus and get a hint, then the answer.',
     label: 'Quick doubt',
     tier: 'small',
     vision: false,
@@ -121,6 +130,7 @@ export const AI_ACTIONS: Record<AiActionId, AiActionConfig> = {
     maxOutputTokens: 600,
     reasoningEffort: 'none',
     plans: ALL_PLANS,
+    requiredFeature: null,
     moderation: CHAT_MODERATION,
     degradeTo: 'small',
     retrievalK: 4,
@@ -130,6 +140,7 @@ export const AI_ACTIONS: Record<AiActionId, AiActionConfig> = {
   },
   'explain-slide': {
     id: 'explain-slide',
+    guide: 'Get any lesson slide explained again in simpler words.',
     label: 'Explain this slide',
     tier: 'small',
     vision: false,
@@ -142,6 +153,7 @@ export const AI_ACTIONS: Record<AiActionId, AiActionConfig> = {
     maxOutputTokens: 600,
     reasoningEffort: 'none',
     plans: ALL_PLANS,
+    requiredFeature: null,
     moderation: CHAT_MODERATION,
     degradeTo: 'small',
     retrievalK: 2,
@@ -151,18 +163,20 @@ export const AI_ACTIONS: Record<AiActionId, AiActionConfig> = {
   },
   'hard-doubt': {
     id: 'hard-doubt',
+    guide: 'Work through a tough problem step by step with the tutor.',
     label: 'Step-by-step doubt',
     tier: 'mid',
     vision: false,
     mode: 'stream',
     template: 'tutor-steps',
-    pricing: { kind: 'flat', credits: 6 },
-    estCostPaise: 53,
+    pricing: { kind: 'flat', credits: 7 },
+    estCostPaise: 67,
     maxInputChars: 2_000,
     maxInputTokens: 4_000,
     maxOutputTokens: 1_500,
     reasoningEffort: 'low',
     plans: ALL_PLANS,
+    requiredFeature: null,
     moderation: CHAT_MODERATION,
     degradeTo: 'small',
     retrievalK: 5,
@@ -172,18 +186,20 @@ export const AI_ACTIONS: Record<AiActionId, AiActionConfig> = {
   },
   'photo-doubt': {
     id: 'photo-doubt',
+    guide: 'Snap a photo of a question and get it explained.',
     label: 'Photo doubt',
     tier: 'mid',
     vision: true,
     mode: 'stream',
     template: 'photo-doubt',
-    pricing: { kind: 'flat', credits: 10 },
-    estCostPaise: 89,
+    pricing: { kind: 'flat', credits: 12 },
+    estCostPaise: 115,
     maxInputChars: 1_000,
     maxInputTokens: 6_000,
     maxOutputTokens: 1_500,
     reasoningEffort: 'low',
     plans: ALL_PLANS,
+    requiredFeature: null,
     moderation: DOCUMENT_MODERATION,
     // Vision needs the mid model; under budget pressure the action pauses rather than guessing.
     degradeTo: null,
@@ -194,18 +210,20 @@ export const AI_ACTIONS: Record<AiActionId, AiActionConfig> = {
   },
   'evaluate-answer': {
     id: 'evaluate-answer',
+    guide: 'Have one written answer marked against the marking scheme, with feedback.',
     label: 'AI evaluation of an answer',
     tier: 'mid',
     vision: false,
     mode: 'job',
     template: 'evaluate-answer',
-    pricing: { kind: 'per_answer', creditsPerAnswer: 6, maxCredits: 6 },
-    estCostPaise: 56,
+    pricing: { kind: 'per_answer', creditsPerAnswer: 7, maxCredits: 7 },
+    estCostPaise: 72,
     maxInputChars: 6_000,
     maxInputTokens: 5_000,
     maxOutputTokens: 1_200,
     reasoningEffort: 'low',
     plans: ALL_PLANS,
+    requiredFeature: null,
     moderation: STRUCTURED_MODERATION,
     degradeTo: null,
     retrievalK: 0,
@@ -215,18 +233,20 @@ export const AI_ACTIONS: Record<AiActionId, AiActionConfig> = {
   },
   'evaluate-paper': {
     id: 'evaluate-paper',
+    guide: 'Have every written answer in a test marked, with step marks and feedback.',
     label: 'AI evaluation of a full paper',
     tier: 'mid',
     vision: false,
     mode: 'job',
     template: 'evaluate-answer',
-    pricing: { kind: 'per_answer', creditsPerAnswer: 6, maxCredits: 40 },
-    estCostPaise: 56,
+    pricing: { kind: 'per_answer', creditsPerAnswer: 7, maxCredits: 50 },
+    estCostPaise: 72,
     maxInputChars: 6_000,
     maxInputTokens: 5_000,
     maxOutputTokens: 1_200,
     reasoningEffort: 'low',
     plans: ALL_PLANS,
+    requiredFeature: null,
     moderation: STRUCTURED_MODERATION,
     degradeTo: null,
     retrievalK: 0,
@@ -236,18 +256,20 @@ export const AI_ACTIONS: Record<AiActionId, AiActionConfig> = {
   },
   'paper-from-upload': {
     id: 'paper-from-upload',
+    guide: 'Upload a sample paper from your school and get a practice paper in the same pattern.',
     label: 'Papers like my school’s',
     tier: 'mid',
     vision: true,
     mode: 'job',
     template: 'paper-blueprint',
-    pricing: { kind: 'flat', credits: 60 },
-    estCostPaise: 610,
+    pricing: { kind: 'flat', credits: 80 },
+    estCostPaise: 768,
     maxInputChars: 500,
     maxInputTokens: 20_000,
     maxOutputTokens: 4_000,
     reasoningEffort: 'medium',
     plans: PRO_PLANS,
+    requiredFeature: 'paper_from_upload',
     moderation: STRUCTURED_MODERATION,
     degradeTo: null,
     retrievalK: 0,
@@ -263,12 +285,22 @@ export function isAiActionId(id: string): id is AiActionId {
 
 /**
  * Credits for an action. Per-answer actions take the number of answers (≥ 1) and are capped at
- * `maxCredits` (CONTEXT §6: full paper "per answer, capped", max 40).
+ * `maxCredits` (CONTEXT §6: full paper "per answer, capped", max 50 since D-044).
  */
 export function quoteCredits(action: AiActionConfig, answers = 1): number {
   if (action.pricing.kind === 'flat') return action.pricing.credits;
   const n = Math.max(1, Math.floor(answers));
   return Math.min(action.pricing.maxCredits, n * action.pricing.creditsPerAnswer);
+}
+
+/** Whether a student on `plan` may use the action: listed in `plans` and, if set, the plan has `requiredFeature`. */
+export function actionAllowedOnPlan(action: Pick<AiActionConfig, 'plans' | 'requiredFeature'>, plan: Pick<Plan, 'id' | 'features'>): boolean {
+  return action.plans.includes(plan.id) && (action.requiredFeature === null || plan.features.includes(action.requiredFeature));
+}
+
+/** Smallest purchase of an action (one answer for per-answer actions). */
+export function minCredits(action: AiActionConfig): number {
+  return quoteCredits(action, 1);
 }
 
 /* ------------------------------------------------------------------------------------------------

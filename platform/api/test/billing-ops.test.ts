@@ -76,7 +76,7 @@ describe('billing sync-plans', () => {
     await t.db.update(plans).set({ creditsPerDay: 1 }).where(eq(plans.key, 'pro'));
     const fix = cli(t.db, stub, clock);
     await fix.run('sync-plans');
-    expect(fix.json()[0]).toMatchObject({ kind: 'db_update', plan: 'pro', detail: 'credits/day 1 → 60' });
+    expect(fix.json()[0]).toMatchObject({ kind: 'db_update', plan: 'pro', detail: 'credits/day 1 → 150' });
   });
 
   it('without a provider only the database rows are synced', async () => {

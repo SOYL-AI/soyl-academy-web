@@ -35,10 +35,10 @@ describe('GET /v1/plans', () => {
     expect(body).toMatchObject({ billingEnabled: true, currency: 'INR', pricesIncludeGst: true });
     expect(body.plans.map((p: { id: string }) => p.id)).toEqual(['free', 'plus', 'pro', 'board_exam_pass']);
     const byId = Object.fromEntries(body.plans.map((p: { id: string }) => [p.id, p]));
-    expect(byId.free).toMatchObject({ creditsPerDay: 25, prices: [], purchasable: false });
-    expect(byId.plus).toMatchObject({ creditsPerDay: 40, purchasable: true, prices: [{ interval: 'monthly', amountPaise: 19_900, label: '₹199/month' }, { interval: 'yearly', amountPaise: 149_900, label: '₹1,499/year' }] });
+    expect(byId.free).toMatchObject({ creditsPerDay: 50, prices: [], purchasable: false });
+    expect(byId.plus).toMatchObject({ creditsPerDay: 100, purchasable: true, prices: [{ interval: 'monthly', amountPaise: 19_900, label: '₹199/month' }, { interval: 'yearly', amountPaise: 149_900, label: '₹1,499/year' }] });
     expect(byId.pro.prices.map((p: { label: string }) => p.label)).toEqual(['₹299/month', '₹2,499/year']);
-    expect(byId.board_exam_pass).toMatchObject({ creditsPerDay: 60, validUntil: '2027-03-31T18:29:59.000Z', prices: [{ interval: 'one_time', label: '₹499 one-time' }], purchasable: true });
+    expect(byId.board_exam_pass).toMatchObject({ creditsPerDay: 150, validUntil: '2027-03-31T18:29:59.000Z', prices: [{ interval: 'one_time', label: '₹499 one-time' }], purchasable: true });
   });
 
   it('signed-in reads are not cached', async () => {
@@ -64,7 +64,7 @@ describe('GET /v1/plans', () => {
 
   it('a student with no purchases is on Free', async () => {
     const { c } = await h.student();
-    expect((await c.get('/v1/me/subscription')).json()).toEqual({ plan: 'free', planName: 'Free', creditsPerDay: 25, source: 'free', validUntil: null, subscription: null, billingEnabled: true });
+    expect((await c.get('/v1/me/subscription')).json()).toEqual({ plan: 'free', planName: 'Free', creditsPerDay: 50, source: 'free', validUntil: null, subscription: null, billingEnabled: true });
   });
 });
 

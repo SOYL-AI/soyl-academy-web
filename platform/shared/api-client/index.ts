@@ -157,6 +157,19 @@ export type AiJobAccepted = Schemas['AiJobAccepted'];
 export type AiJob = Schemas['AiJob'];
 export type Credits = Schemas['Credits'];
 export type CreditLedger = Schemas['CreditLedger'];
+/** D-044: GET /v1/me/credits/guide, GET /v1/me/credits/history, bonus awards on practice answers. */
+export type CreditGuide = Schemas['CreditGuide'];
+export type CreditHistory = Schemas['CreditHistory'];
+export type CreditBonusAward = Schemas['CreditBonusAward'];
+export type CreditBonusKind = Schemas['CreditBonusKind'];
+/** Avatars: GET /v1/me/avatars, Me.avatar, PATCH /v1/me avatar, public boards. */
+export type AvatarCatalog = Schemas['AvatarCatalog'];
+export type AvatarRef = Schemas['AvatarRef'];
+export type MyAvatar = Schemas['MyAvatar'];
+export type AvatarChoice = Schemas['AvatarChoice'];
+export type AvatarUnlockRule = Schemas['AvatarUnlockRule'];
+export type AvatarId = Schemas['AvatarId'];
+export type AvatarBackground = Schemas['AvatarBackground'];
 export type AiQuote = Schemas['AiQuote'];
 export type AiUploadRequest = Schemas['AiUploadRequest'];
 export type AiUploadTarget = Schemas['AiUploadTarget'];

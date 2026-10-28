@@ -89,6 +89,8 @@ After the hooks, the request goes through:
 | `progress.write.user` | user | 120 / 60 s | `PUT /v1/me/lesson-progress` |
 | `insights.read.user` | user | 60 / 60 s | `GET /v1/me/activity`, `GET /v1/me/mastery`, `GET /v1/me/card` |
 | `dashboard.read.user` | user | 30 / 60 s | `GET /v1/me/dashboard` |
+| `credits.read.user` | user | 60 / 60 s | `GET /v1/me/credits/guide`, `GET /v1/me/credits/history` |
+| `avatars.read.user` | user | 60 / 60 s | `GET /v1/me/avatars` |
 | `schools.search.user` | user | 60 / 60 s | `GET /v1/schools` |
 | `mfa.user` | user | 20 / 900 s | Staff TOTP routes |
 
@@ -178,7 +180,8 @@ Outside `/v1`. No edge auth and no rate limits. They are served even when the pl
 | POST | `/v1/me/consent/verify` | Members | true | default + `consent.write.user` (fail-closed) | — | — | Enter the parent's code → `granted` | [consent interim](handoffs/2026-10-28-consent-interim.md) |
 | POST | `/v1/me/consent/withdraw` | Members | true | default + `consent.write.user` (fail-closed) | — | — | Withdraw (or cancel a pending request); deletes AI conversations and uploads | [consent interim](handoffs/2026-10-28-consent-interim.md) |
 | POST | `/v1/consent/parent/withdraw` | All | true | default + `consent.parent.ip` (fail-closed) | — | — | The parent's email link (no session): withdraw or decline; can only switch features off | [consent interim](handoffs/2026-10-28-consent-interim.md) |
-| POST | `/v1/me/public-name` | Members | true | default + `public-name.user` | — | — | A new random public (leaderboard) name (D-039) | [consent interim](handoffs/2026-10-28-consent-interim.md) |
+| POST | `/v1/me/public-name` | Members | true | default + `public-name.user` | — | — | A new random public (leaderboard) name (D-039); an avatar unlocked only as the old name's animal goes back to the default | [consent interim](handoffs/2026-10-28-consent-interim.md) |
+| GET | `/v1/me/avatars` | Members | true | default + `avatars.read.user` | — | — | Every avatar (64 animals) with its unlock rule (starter, level, badge, streak, league tier, live mocks), label, your progress and lock state; the 8 backgrounds; your current and default avatar | [credits + avatars](handoffs/2026-10-28-ai-gateway-credits-avatars.md) |
 | GET | `/v1/me/sessions` | Members | true | default | — | — | Your active sessions | [backend-api M1](handoffs/2026-10-26-backend-api-m1.md) |
 | DELETE | `/v1/me/sessions` | Members | true | default | — | — | Sign out everywhere else | [backend-api M1](handoffs/2026-10-26-backend-api-m1.md) |
 | DELETE | `/v1/me/sessions/:id` | Members | true | default | — | — | Revoke one of your sessions | [backend-api M1](handoffs/2026-10-26-backend-api-m1.md) |
@@ -266,7 +269,7 @@ Outside `/v1`. No edge auth and no rate limits. They are served even when the pl
 | POST | `/v1/attempts/:id/submit` | Members | true | default (+ `attempt.submit` in the handler) | `test_attempts` † | — | Submit (idempotent). An optional final batch is saved first. Objective items are graded now; written items wait for self-evaluation | [backend-api M3](handoffs/2026-10-27-backend-api-m3.md); open finding S6-L01 in [security M6](handoffs/2026-10-27-security-reviewer-m6.md) |
 | GET | `/v1/attempts/:id/result` | Members | true | default + `attempt.read.user` | `test_attempts` † | — | Result of a submitted attempt: scores, analysis, every answer with its solution and marking scheme, percentile, live rank | [backend-api M3](handoffs/2026-10-27-backend-api-m3.md); **open High S6-H01** (live-mock keys shown to early submitters) in [security M6](handoffs/2026-10-27-security-reviewer-m6.md) |
 | POST | `/v1/attempts/:id/self-evaluation` | Members | true | default + `attempt.evaluate.user` | `test_attempts` † | — | Self-evaluate written answers against the marking scheme (free). Returns the updated result | [backend-api M3](handoffs/2026-10-27-backend-api-m3.md) |
-| POST | `/v1/attempts/:id/ai-evaluation` | Members | true | default + `ai.user` FC | `ai` | — | AI evaluation of written answers. Costs 6 credits per answer, at most 40 per paper. Returns 202 with a job id. AI marks never count towards scores or ranks | [ai-gateway M4](handoffs/2026-10-27-ai-gateway-m4.md), [backend-api M3](handoffs/2026-10-27-backend-api-m3.md) |
+| POST | `/v1/attempts/:id/ai-evaluation` | Members | true | default + `ai.user` FC | `ai` | — | AI evaluation of written answers. Costs 7 credits per answer, at most 50 per paper (D-044). Returns 202 with a job id. AI marks never count towards scores or ranks | [ai-gateway M4](handoffs/2026-10-27-ai-gateway-m4.md), [backend-api M3](handoffs/2026-10-27-backend-api-m3.md) |
 | GET | `/v1/attempts/:id/ai-evaluation` | Members | true | default | — | — | AI marks of your submitted attempt, per item, with step marks and confidence | [ai-gateway M4](handoffs/2026-10-27-ai-gateway-m4.md) |
 | GET | `/v1/me/attempts` | Members | true | default + `attempt.read.user` | — | — | Your attempts, newest first (cursor paging) | [backend-api M3](handoffs/2026-10-27-backend-api-m3.md) |
 
@@ -292,7 +295,9 @@ Outside `/v1`. No edge auth and no rate limits. They are served even when the pl
 | Method | Path | Roles | CSRF | Rate limit | Consent | Fresh/MFA | Purpose | Documented in |
 |---|---|---|---|---|---|---|---|---|
 | GET | `/v1/credits` | Members | true | default | — | — | Today's AI credits: balance, plan, reset time (00:00 IST) and prices | [ai-gateway M4](handoffs/2026-10-27-ai-gateway-m4.md) |
-| GET | `/v1/credits/ledger` | Members | true | default | — | — | Credit history, newest first (cursor paging) | [ai-gateway M4](handoffs/2026-10-27-ai-gateway-m4.md) |
+| GET | `/v1/credits/ledger` | Members | true | default | — | — | Credit history, newest first (cursor paging); kinds include `bonus_goal` / `bonus_streak` (D-044) | [ai-gateway M4](handoffs/2026-10-27-ai-gateway-m4.md) |
+| GET | `/v1/me/credits/guide` | Members | true | default + `credits.read.user` | — | — | "What can I do with my credits?": each AI action with its price, plans that offer it, how many are left today and per day on each plan; learning bonuses (null without consent) | [credits + avatars](handoffs/2026-10-28-ai-gateway-credits-avatars.md) |
+| GET | `/v1/me/credits/history?days=14` | Members | true | default + `credits.read.user` | — | — | Per-IST-day credits (1–31 days, default 14): granted, bonus, spent, refunded, held, left | [credits + avatars](handoffs/2026-10-28-ai-gateway-credits-avatars.md) |
 | GET | `/v1/ai/quote/:action` | Members | true | default | — | — | What an AI action will cost, before the student confirms. For evaluate-paper, pass `attemptId` to price the actual answers | [ai-gateway M4](handoffs/2026-10-27-ai-gateway-m4.md) |
 | POST | `/v1/ai/:action` | Members | true | default + `ai.user` FC | `ai` | — | Run an AI action (SSE stream or 202 job). Credits are reserved, then charged or refunded | [ai-gateway M4](handoffs/2026-10-27-ai-gateway-m4.md) |
 | GET | `/v1/ai/jobs/:id` | Members | true | default | — | — | Status and result of an AI job (yours only) | [ai-gateway M4](handoffs/2026-10-27-ai-gateway-m4.md) |
@@ -350,6 +355,8 @@ Registered only when `DEV_OTP_OUTBOX=true`. Config refuses that setting unless `
 | Billing | 7 |
 | Dev-only (hidden) | 1 |
 | **Total** | **81** (snapshot rows; 80 in `openapi.json`) |
+
+> 2026-10-28, credits + avatars (D-044): 3 member routes (`/v1/me/credits/guide`, `/v1/me/credits/history`, `/v1/me/avatars`); `/v1/me` and `PATCH /v1/me` gained `avatar` (403 `avatar_locked`); `/v1/credits` gained `bonusToday`; league standings, live leaderboards and the player card gained `avatar` next to the public name; practice answer and self-mark responses gained `creditBonuses`.
 
 > 2026-10-28, dashboard + school capture: 2 member routes (`/v1/me/dashboard`, `/v1/schools`); `/v1/me` gained `school` and `weeklyGoal`.
 
