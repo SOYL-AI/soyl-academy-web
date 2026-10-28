@@ -132,6 +132,9 @@ test.describe('ADR-023 theme', () => {
       await page.goto(path, { waitUntil: 'networkidle' });
       await expect(root(page), path).toHaveAttribute('data-theme', 'dark');
       await checkPage(page);
+      // A phone widens its layout viewport when content is too wide (then scrollWidth == clientWidth and the
+      // overflow check above cannot see it): the layout viewport must still be the device's 360 px.
+      expect(await page.evaluate(() => window.innerWidth), path).toBe(360);
     }
   });
 });
@@ -220,6 +223,7 @@ async function shots(page: Page, baseURL: string | undefined, name: string, path
       await expect(root(page)).toHaveAttribute('data-theme', theme);
       await page.evaluate(() => document.fonts.ready);
       await page.waitForTimeout(400);
+      if (v.name === 'mobile') expect(await page.evaluate(() => window.innerWidth), `${path} layout viewport`).toBe(360);
       await page.screenshot({ path: resolve(OUT, `${v.name}-${theme}-${name}.png`), fullPage: v.name === 'mobile' ? false : true });
     }
   }

@@ -70,6 +70,7 @@
 }
 .dashGrid {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--p-space-3);
 }
 @media (min-width: 768px) {
