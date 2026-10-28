@@ -1,5 +1,5 @@
 /**
- * Student avatars (config @soyl/shared/config/avatars; profiles.avatar_id / avatar_bg, migration 0014).
+ * Student avatars (config @soyl/shared/config/avatars; profiles.avatar_id / avatar_bg, migration 0015).
  *
  * - GET /v1/me shows the avatar the student wears ({ id, bg, isDefault }); GET /v1/me/avatars lists every
  *   avatar with its unlock rule, progress and lock state; PATCH /v1/me { avatar } picks one (403

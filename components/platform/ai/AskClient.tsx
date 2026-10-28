@@ -20,6 +20,7 @@ import { Badge, EmptyState } from '@/components/platform/ui/kit/Display';
 import { Icon } from '@/components/platform/ui/kit/Icon';
 import { useSession } from '../auth/SessionProvider';
 import { api } from '../lib/api-browser';
+import { trackInterest } from '../lib/interest';
 import { AiNotice, PaywallDialog, QuoteDialog } from './AiDialogs';
 import { useCredits } from './CreditsProvider';
 import { aiBlockFrom, aiMessage, creditsText, type AiBlock } from './problems';
@@ -101,6 +102,9 @@ function Tutor() {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- history list on mount
     void loadHistory();
   }, [loadHistory]);
+
+  // D-045 interest counter (aggregate; only after analytics consent).
+  useEffect(() => trackInterest('ask_ai_open'), []);
 
   useEffect(() => {
     endRef.current?.scrollIntoView?.({ block: 'nearest' });

@@ -1,7 +1,7 @@
 /**
- * Migration 0014 (D-044 bonus credits, student avatars): the database enforces one bonus per rule per user
+ * Migration 0015 (D-044 bonus credits, student avatars): the database enforces one bonus per rule per user
  * per IST day and positive bonus amounts; avatars must come from the config lists and be set together;
- * 0014 goes down and back up on a seeded database with bonus rows and avatars present.
+ * 0015 goes down and back up on a seeded database with bonus rows and avatars present.
  */
 import pg from 'pg';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
@@ -20,7 +20,7 @@ afterAll(async () => {
   await t?.close();
 });
 
-describe('bonus credit rows (0014, D-044)', () => {
+describe('bonus credit rows (0015, D-044)', () => {
   it('allow one bonus per rule per user per IST day, positive amounts only, append-only for the app', async () => {
     const u = await makeUser(t.db);
     const day = '2026-11-02';
@@ -57,7 +57,7 @@ describe('bonus credit rows (0014, D-044)', () => {
   });
 });
 
-describe('profile avatars (0014)', () => {
+describe('profile avatars (0015)', () => {
   it('accept only config ids and backgrounds, set or cleared together', async () => {
     const u = await makeUser(t.db);
     await t.db.insert(profiles).values({ userId: u.id, avatarId: 'giraffe', avatarBg: 'mint' });
@@ -77,7 +77,7 @@ describe('profile avatars (0014)', () => {
   });
 });
 
-describe('0014 down and up on a seeded database', () => {
+describe('0015 down and up on a seeded database', () => {
   it('drops bonus rows and avatar columns, keeps every other ledger row, and comes back identical', async () => {
     const u = await makeUser(t.db);
     await t.db.insert(profiles).values({ userId: u.id, avatarId: 'owl', avatarBg: 'sky' });
@@ -87,7 +87,7 @@ describe('0014 down and up on a seeded database', () => {
       { userId: u.id, kind: 'bonus_streak', amount: 5, action: 'streak_milestone', istDay: '2026-11-05' },
     ]);
     const total = loadMigrations().length;
-    expect(loadMigrations().at(-1)!.name).toBe('0014_avatars_credit_bonus');
+    expect(loadMigrations().at(-1)!.name).toBe('0015_avatars_credit_bonus');
     const c = new pg.Client({ connectionString: t.url });
     await c.connect();
     const defs = async () =>
@@ -95,7 +95,7 @@ describe('0014 down and up on a seeded database', () => {
     const indexes = async () => (await c.query(`SELECT indexname, indexdef FROM pg_indexes WHERE tablename IN ('credit_ledger', 'profiles') ORDER BY indexname`)).rows;
     try {
       const before = { defs: await defs(), indexes: await indexes() };
-      expect(await migrateDown(c, { to: total - 1, log })).toEqual(['0014_avatars_credit_bonus']);
+      expect(await migrateDown(c, { to: total - 1, log })).toEqual(['0015_avatars_credit_bonus']);
       const rows = (await c.query(`SELECT kind, amount FROM credit_ledger WHERE user_id = $1 ORDER BY kind`, [u.id])).rows;
       expect(rows).toEqual([{ kind: 'grant', amount: 50 }]);
       const cols = (await c.query(`SELECT column_name FROM information_schema.columns WHERE table_name = 'profiles' AND column_name LIKE 'avatar%'`)).rows;

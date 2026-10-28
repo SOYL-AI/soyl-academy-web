@@ -10,7 +10,7 @@
  *
  * Both are rows in `credit_ledger` for that IST day, so they count towards that day's balance only and
  * lapse at the 00:00 IST reset with the daily grant (no rollover). The partial unique index
- * `credit_ledger_one_bonus_per_day` (migration 0014) makes a second grant for the same rule and day insert
+ * `credit_ledger_one_bonus_per_day` (migration 0015) makes a second grant for the same rule and day insert
  * nothing, so concurrent triggers are idempotent. A bonus row is positive, so it can never make a balance
  * negative and needs no wallet lock.
  *

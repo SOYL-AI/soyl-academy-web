@@ -1,4 +1,4 @@
--- Down for 0014_avatars_credit_bonus. Removes the avatar columns (students fall back to the default avatar)
+-- Down for 0015_avatars_credit_bonus. Removes the avatar columns (students fall back to the default avatar)
 -- and the bonus-credit ledger kinds. Bonus rows (bonus_goal, bonus_streak) are DELETED first so the old
 -- kind/amount checks can be restored: this is lossy for credit history (bonus credits disappear from past
 -- and current days' balances). The migrator runs as the owner role, so the app's append-only rule (DB-1)

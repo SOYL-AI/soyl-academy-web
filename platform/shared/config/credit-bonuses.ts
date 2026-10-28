@@ -10,7 +10,7 @@
  * - Same IST day only: a bonus row counts towards that day's balance, so it lapses at the 00:00 IST reset
  *   like the daily grant (no rollover).
  * - At most one row per rule per student per IST day (unique index `credit_ledger_one_bonus_per_day`,
- *   migration 0014), so concurrent triggers are idempotent.
+ *   migration 0015), so concurrent triggers are idempotent.
  * - Only for students allowed to use AI (consent `granted`, D-014/D-039). Others earn nothing and the
  *   guide shows them nothing.
  * - Never from SOYL Coins, coin redemption or purchases (D-037): coins never convert to credits.

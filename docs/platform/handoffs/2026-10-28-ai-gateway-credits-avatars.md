@@ -26,7 +26,7 @@ Branch: `platform/ai-gateway/credits-avatars` from `origin/platform/main` a19917
 ### Bonus credits for learning (D-044)
 
 - Config: `platform/shared/config/credit-bonuses.ts` (`CREDIT_BONUSES.dailyGoal` +10, `streakMilestone` +5 every 7 days, `CREDIT_HISTORY` 14/31 days) and `DAILY_PRACTICE_GOAL` (10 questions solved in an IST day) in `learning.ts`.
-- Ledger: new kinds `bonus_goal` (action `daily_practice_goal`, metadata `{solved, target}`) and `bonus_streak` (action `streak_milestone`, metadata `{streakDays}`). Migration 0014: kind/amount checks widened (bonus > 0) and partial unique index `credit_ledger_one_bonus_per_day (user_id, ist_day, kind)`. A bonus counts towards its IST day only, so it lapses at 00:00 IST like the daily grant (no rollover, no job).
+- Ledger: new kinds `bonus_goal` (action `daily_practice_goal`, metadata `{solved, target}`) and `bonus_streak` (action `streak_milestone`, metadata `{streakDays}`). Migration 0015: kind/amount checks widened (bonus > 0) and partial unique index `credit_ledger_one_bonus_per_day (user_id, ist_day, kind)`. A bonus counts towards its IST day only, so it lapses at 00:00 IST like the daily grant (no rollover, no job).
 - Logic: `platform/api/src/ai/bonuses.ts`.
   - Daily goal: checked after a solving practice answer (`submitAnswer`, after its transaction commits) and after a full self-mark (`selfAssess`), so concurrent answers each count every committed solve; the insert is idempotent through the unique index. Cheap exits first (already granted today → consent). "Solved" is D-042; a question counts once, on the IST day of its first solve; the day's solving answer must be an app answer (guest-merged answers carry device timestamps and never earn credits).
   - Streak milestone: inside `recordActivity` (all callers: practice, lesson completion, test submit, worker auto-submit), when a new streak day is recorded and the streak is 7, 14, 21, … — under the streak row lock.
@@ -41,7 +41,7 @@ Branch: `platform/ai-gateway/credits-avatars` from `origin/platform/main` a19917
 ### Avatars
 
 - Config `platform/shared/config/avatars.ts`: `AVATARS` (64, ids = lower-case `PUBLIC_NAME_ANIMALS`), `AVATAR_BACKGROUNDS` (8), unlock rules, pure `unlockedAvatars(state)`, `avatarProgress(rule, state)`, `avatarUnlockLabel(rule)`, `defaultAvatar(userId, publicNameSeed)`, `effectiveAvatar(...)`. `public-names.ts` exports `publicNameAnimal(userId, seed)` and `fnv1a` (names unchanged).
-- Migration 0014: `profiles.avatar_id`, `profiles.avatar_bg` (text, null), CHECKs against the config lists plus `(avatar_id IS NULL) = (avatar_bg IS NULL)`. Hand-written down (drops the columns; deletes bonus rows before restoring the old ledger checks — lossy for credit history).
+- Migration 0015: `profiles.avatar_id`, `profiles.avatar_bg` (text, null), CHECKs against the config lists plus `(avatar_id IS NULL) = (avatar_bg IS NULL)`. Hand-written down (drops the columns; deletes bonus rows before restoring the old ledger checks — lossy for credit history).
 - API (`platform/api/src/domain/avatars.ts`, `modules/avatar-schemas.ts`, `modules/me.ts`):
   - `GET /v1/me` → `avatar: { id, bg, isDefault }`.
   - `GET /v1/me/avatars` (`AvatarCatalog`, rate limit `avatars.read.user` 60/min): every avatar with rule, label, progress and lock state; I chose a separate endpoint so `/v1/me` stays cheap (unlocks need 2 aggregate reads).
@@ -49,7 +49,7 @@ Branch: `platform/ai-gateway/credits-avatars` from `origin/platform/main` a19917
   - `POST /v1/me/public-name`: a picked avatar unlocked only as the old name's animal goes back to the default (so cycling names cannot collect animals).
   - Account deletion clears the avatar.
   - Public surfaces: `GET /v1/leagues/current` standings and `GET /v1/live-events/:id/leaderboard` entries gain `avatar: { id, bg } | null` (null exactly when `name` is null: no consent or deleted); `GET /v1/me/card` gains `avatar`. Still no user ids or real names (tests assert it).
-- Docs: `platform/db/PII.md` (avatar is not personal data; cleared at deletion), `docs/platform/data-model.md` (0014, ledger kinds), `docs/platform/api-reference.md` (3 routes, 2 buckets, changed responses), `docs/platform/CONTEXT.md` §5/§7 and `docs/platform/README.md` (credit numbers that D-044 had not updated).
+- Docs: `platform/db/PII.md` (avatar is not personal data; cleared at deletion), `docs/platform/data-model.md` (0015, ledger kinds), `docs/platform/api-reference.md` (3 routes, 2 buckets, changed responses), `docs/platform/CONTEXT.md` §5/§7 and `docs/platform/README.md` (credit numbers that D-044 had not updated).
 
 ## For the web agent
 
@@ -85,7 +85,7 @@ From `platform/` (each heavy step through `C:/Users/Prabhu/soyl-wt/_tools/heavy.
 ```
 npm run typecheck                                  # exit 0
 npm test -w @soyl/shared                           # RESULT_SHARED
-npm test -w @soyl/db                               # RESULT_DB (incl. avatars-bonus.test.ts: 0014 down/up seeded)
+npm test -w @soyl/db                               # RESULT_DB (incl. avatars-bonus.test.ts: 0015 down/up seeded)
 cd api && npx vitest run test/ai-bonuses.test.ts test/avatars.test.ts test/ai-credits.test.ts ...   # RESULT_TARGETED
 npm run build                                      # RESULT_BUILD
 npm test -w @soyl/api                              # RESULT_API
@@ -96,7 +96,7 @@ Playwright (`npm run test:platform-web -w @soyl/e2e`) was not run in this task (
 
 ## Tests added
 - `platform/shared/config/avatars.test.ts`, `credit-bonuses.test.ts`; `ai-actions.test.ts` (feature gate, below-cost flag), `plans.test.ts`.
-- `platform/db/test/avatars-bonus.test.ts`: one bonus per rule per day (unique index), positive amounts, app role append-only, avatar checks, 0014 down/up on a seeded DB with bonus rows and avatars.
+- `platform/db/test/avatars-bonus.test.ts`: one bonus per rule per day (unique index), positive amounts, app role append-only, avatar checks, 0015 down/up on a seeded DB with bonus rows and avatars.
 - `platform/api/test/ai-bonuses.test.ts`: goal exactly at the 10th solve (wrong answers and re-solves don't count), once under 5 concurrent answers and 10 racing checks, lapses at 00:00 IST (no rollover, next day starts from zero), no grant/visibility without consent, streak 7 and 14 (not 8, once per day), balance/ledger/history show it, the spend breaker still pauses AI, guide and history shapes, ledger invariants.
 - `platform/api/test/avatars.test.ts`: default by seed, picking and resetting, 400s, catalog, lock → 403 `avatar_locked` → unlock for every rule kind (level, badge, streak, league tier, live mocks), public-name change drops a name-only avatar, deletion clears it.
 - `leagues.test.ts` and `live.test.ts`: standings / leaderboards carry the avatar (picked or default), null with the name for non-consented students, no user ids.

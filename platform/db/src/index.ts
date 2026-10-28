@@ -39,5 +39,5 @@ export { normalizeEmail, normalizePhone } from './normalize';
 export { splitQuestion, joinQuestion, questionRow, studentQuestionColumns, findKeySideFields, KEY_SIDE_FIELDS, STUDENT_QUESTION_FORBIDDEN_FIELDS } from './student-questions';
 export { seedCatalog, type CatalogSeedReport } from './seed/catalog';
 export { seedTestUsers, TEST_PHONE_PREFIX, TEST_EMAIL_DOMAIN } from './seed/test-users';
-export { bootstrapAdmin } from './seed/admin';
+export { bootstrapAdmin, BOOTSTRAP_ROLES, type BootstrapRole } from './seed/admin';
 export { ingestChapterRelease, ingestTestDefinition, activateRelease, sha256Json, canonicalJson } from './content-ingest';

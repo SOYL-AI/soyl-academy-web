@@ -24,11 +24,16 @@ What an account holds is kept to what the product needs:
   only a keyed hash (rate limits, noticing a change of parent) and a masked hint ("p•••@gmail.com").
 - **Public names:** other students only ever see an auto-generated name ("Brave Otter 417") derived from
   the account id and `profiles.public_name_seed`; display names stay on the student's own screens.
-- **Avatars (0014):** `profiles.avatar_id` / `avatar_bg` are a choice from fixed config lists (an animal and a
+- **Avatars (0015):** `profiles.avatar_id` / `avatar_bg` are a choice from fixed config lists (an animal and a
   colour theme), not personal data; they are shown next to the public name on public boards (consented
   students only, as the name) and cleared at account deletion.
-- **Analytics:** `analytics_events` has no user, device or IP column; no third-party analytics, pixels or
-  Vercel Analytics on platform routes (D-014, WEB-1).
+- **Analytics:** `analytics_events` and `analytics_counters` (0015, D-045: counts per IST day, allowlisted event
+  and dimension) have no user, session, device, user-agent or IP column; client counters are sent only after
+  the visitor accepted analytics in the cookie bar. No third-party analytics, pixels or Vercel Analytics on
+  platform routes (D-014, WEB-1).
+- **Staff views of accounts (D-045):** the super-admin dashboard shows aggregates and masked emails
+  (`a***@g***.com`); revealing a full email or opening a user's summary (counts only, never AI chats or
+  uploads) writes an `audit_log` row (`admin.user.reveal_email`, `admin.user.view_summary`).
 
 ## Consent withdrawal (built-in provider, D-039)
 
@@ -105,7 +110,7 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `profiles.school_id` | The student's school (PII-adjacent for a minor). Saved only with consent `granted` (D-014, `PATCH /v1/me` `school`), shown only while granted; for the dashboard now and a school leaderboard later | life of account; cleared when consent leaves `granted` | anonymise |
 | `profiles.city` | The chosen school's city (mirrored; never entered on its own) | as `school_id` | anonymise |
 | `profiles.weekly_goal` | Dashboard goal (questions per week); not personal | life of account | anonymise |
-| `profiles.avatar_id`, `profiles.avatar_bg` | Avatar picked from config lists (animal + background, 0014); not personal; shown next to the public name | life of account | anonymise (cleared) |
+| `profiles.avatar_id`, `profiles.avatar_bg` | Avatar picked from config lists (animal + background, 0015); not personal; shown next to the public name | life of account | anonymise (cleared) |
 | `schools.name_normalized`, `schools.city_normalized` | Dedupe/search keys of the school name and city (not personal; see `schools.name` below) | life of row | — |
 | `schools.created_by_user_id` | The account that added a student-sourced school (0013), for the per-day add limit and erasure | life of account | delete (unverified + unused by others: row deleted) or detach (set NULL) in step 1 |
 | `profiles.locale` | Language preference | life of account | cascade |
@@ -129,7 +134,7 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `user_mfa.totp_secret_enc` | Staff TOTP secret, AES-256-GCM encrypted (key in Key Vault, not in the database) | while enrolled | delete |
 | `user_mfa.recovery_code_hashes`, `user_mfa.last_used_step`, `user_mfa.confirmed_at` | HMACs of unused staff recovery codes; last accepted TOTP step | while enrolled | delete |
 | `leaderboard_snapshots.entries` | Auto-generated public names (D-039), XP, rank (opaque handles) | 1 year | retain (no ids; no real names) |
-| `credit_ledger.*` | AI credit grants, bonus credits for learning (0014, D-044) and spend | life of account | cascade |
+| `credit_ledger.*` | AI credit grants, bonus credits for learning (0015, D-044) and spend | life of account | cascade |
 | `ai_requests.*` | AI usage metering (no prompt text) | 30 days per user, then aggregates only | cascade |
 | `ai_conversations.title` | Conversation title (may quote the student) | 30 days | delete |
 | `ai_messages.content` | Prompts and answers | 30 days (ARCHITECTURE §10) | delete |
@@ -144,6 +149,8 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `content_status_events.actor_user_id` | Reviewer who changed content status | life of content | detach |
 | `audit_log.actor_user_id`, `audit_log.target_id`, `audit_log.before`, `audit_log.after` | Admin actions (ids only, DB-8) | 2 years | detach |
 | `feature_flags.updated_by_user_id`, `config_values.updated_by_user_id` | Admin who changed a value | life of row | detach |
+| `staff_capabilities.user_id`, `staff_capabilities.granted_by_user_id` | Staff capability (`superadmin`, 0015) and who granted it (null = bootstrap CLI) | while staff | cascade / detach |
+| `analytics_counters.*` | Interest counters per IST day, event and dimension; no user link (D-045) | 2 years | retain (aggregate, not personal) |
 | `subscriptions.user_id`, `orders.user_id`, `payments.user_id` | Purchaser link | 8 years (tax records; pending OA-14) | detach |
 | `subscriptions.razorpay_subscription_id`, `orders.razorpay_order_id`, `orders.receipt`, `payments.razorpay_payment_id`, `payments.method` | Payment references | 8 years | retain |
 | `entitlements.*` | Plan entitlement | life of account | cascade |

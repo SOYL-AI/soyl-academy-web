@@ -1,4 +1,4 @@
--- 0014 avatars + credit bonus (ai-gateway, 2026-10-28; D-044). Down: 0014_avatars_credit_bonus.down.sql.
+-- 0015 avatars + credit bonus (ai-gateway, 2026-10-28; D-044). Down: 0015_avatars_credit_bonus.down.sql.
 --
 -- (1) Bonus credits for learning: two new credit_ledger kinds, bonus_goal (daily practice goal met) and
 -- bonus_streak (7-day streak milestone), always positive, at most one per kind per user per IST day

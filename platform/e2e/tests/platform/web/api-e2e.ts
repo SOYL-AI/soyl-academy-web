@@ -11,13 +11,15 @@
  * 3. Blob uploads: the memory store, but its signed upload URLs point at the control server over http, so the
  *    browser's PUT is a real cross-origin request (CSP connect-src = PLATFORM_UPLOAD_ORIGIN, CORS).
  * 4. Time travel for the test engine and live mocks: move an attempt's deadline, move the dev live mock.
+ * 5. Staff (D-045): queue the next mock-Google user (with a Workspace `hd`, ADMIN_GOOGLE_DOMAINS below) and run
+ *    the real `db admin bootstrap` step (bootstrapAdmin) for an email, as the Lead does in production.
  *
  * Run from platform/: `npx tsx e2e/tests/platform/web/api-e2e.ts` (playwright.config.ts does this).
  * Local only: APP_ENV=local, every provider a stand-in. Never deployed.
  */
 import { createServer, type IncomingMessage, type ServerResponse } from 'node:http';
 import { sql } from 'drizzle-orm';
-import { createDb } from '@soyl/db';
+import { bootstrapAdmin, createDb, type BootstrapRole } from '@soyl/db';
 import { MockProvider } from '@soyl/ai-core';
 import { buildApp } from '../../../../api/src/app';
 import { systemClock } from '../../../../api/src/clock';
@@ -63,6 +65,8 @@ const env: Record<string, string | undefined> = {
   DEV_LIVE_IN: '120',
   // D-039: the e2e runs the production consent flow (built-in provider; parent codes via the dev outbox).
   CONSENT_PROVIDER: 'builtin',
+  // D-045: staff sign in with Google from this Workspace domain (AUTH-11); admin.spec.ts uses it.
+  ADMIN_GOOGLE_DOMAINS: 'staff.e2e.example.com',
   ...process.env,
   PUBLIC_BASE_URL: webOrigin,
   GOOGLE_ISSUER: process.env.GOOGLE_ISSUER ?? issuer,
@@ -151,6 +155,14 @@ const control = createServer(async (req, res) => {
           starts_at = now() + make_interval(secs => ${seconds})
         WHERE key = ${String(body.eventId)} OR id::text = ${String(body.eventId)}`);
       return send(res, 200, { ok: true });
+    }
+    if (url.pathname === '/ctl/oidc-next-user') {
+      oidc.nextUser({ sub: String(body.sub), email: String(body.email), email_verified: true, ...(body.hd ? { hd: String(body.hd) } : {}) });
+      return send(res, 200, { ok: true });
+    }
+    if (url.pathname === '/ctl/bootstrap-admin') {
+      const r = await bootstrapAdmin(db, String(body.email), (body.role ?? 'admin') as BootstrapRole);
+      return send(res, 200, r);
     }
     if (url.pathname === '/ctl/razorpay/pay-latest') {
       const sub = latest(razorpay.subscriptions);

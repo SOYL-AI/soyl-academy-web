@@ -211,6 +211,12 @@ export const RATE_LIMITS = {
   'consent.parent.ip': { key: 'ip', limit: 20, windowSeconds: 3600 },
   /** Regenerating the public leaderboard name (D-039). */
   'public-name.user': { key: 'user', limit: 10, windowSeconds: 24 * 3600 },
+  /** Super-admin dashboard reads (D-045): each call runs several aggregate queries. */
+  'admin.analytics.user': { key: 'user', limit: 60, windowSeconds: 60 },
+  /** Super-admin user lookup: search, reveal and summary (each audited). */
+  'admin.users.user': { key: 'user', limit: 60, windowSeconds: 15 * 60 },
+  /** POST /v1/events (D-045 interest counters): strict per IP; the IP is a rate-limit key only, never stored. */
+  'events.ip': { key: 'ip', limit: 30, windowSeconds: 60 },
 } as const satisfies Record<string, RateLimitBucket>;
 
 export type RateLimitBucketName = keyof typeof RATE_LIMITS;
@@ -253,6 +259,8 @@ export const BODY_LIMITS = {
   attemptResponsesBytes: 256 * 1024,
   aiActionBytes: 16 * 1024,
   contentReportBytes: 8 * 1024,
+  /** POST /v1/events (D-045): a few counter names, nothing else. */
+  eventsBytes: 1024,
   /** API-5: JSON nesting deeper than this is rejected before schema validation. */
   maxJsonDepth: 10,
   /** API-5: no array in any body may be longer than this (schemas set tighter limits). */

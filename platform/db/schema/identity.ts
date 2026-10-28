@@ -180,7 +180,7 @@ export const profiles = pgTable(
     /** 0013: dashboard weekly goal (practice questions solved per IST week); null = DASHBOARD.weeklyGoal.default. */
     weeklyGoal: smallint('weekly_goal'),
     /**
-     * 0014: the avatar the student picked (@soyl/shared/config/avatars: animal id + background theme), shown
+     * 0015: the avatar the student picked (@soyl/shared/config/avatars: animal id + background theme), shown
      * next to the public name. Both null = the default (public-name animal, seeded background). Not PII.
      */
     avatarId: text('avatar_id'),

@@ -1,5 +1,5 @@
 /**
- * Student avatars (@soyl/shared/config/avatars, migration 0014): the default is the public-name animal on
+ * Student avatars (@soyl/shared/config/avatars, migration 0015): the default is the public-name animal on
  * a seeded background; GET /v1/me/avatars lists unlocks with progress; PATCH /v1/me picks only unlocked
  * avatars (403 avatar_locked) — unlocks by level, badge, streak, league tier and live mocks; a new
  * public name drops an avatar that only the old name unlocked; account deletion clears it. Public boards

@@ -12,6 +12,7 @@ import { MathBlock } from '@/components/platform/ui/render/MathBlock';
 import { Visual } from '@/components/platform/ui/visual/Visual';
 import { examLabel } from '../lib/catalog';
 import { ReportMistake } from '../report/ReportMistake';
+import { InterestPing } from '../lib/InterestPing';
 import type { ChapterRoute } from '../server/chapter-route';
 import { PageHeader } from '../shell/PageHeader';
 import shell from '../shell/shell.module.css';
@@ -134,6 +135,7 @@ export function NotesView({ route, notes }: { route: ChapterRoute; notes: Chapte
       <footer className={s.footer}>
         <ReportMistake target={{ chapterId, contentType: 'notes' }} what="these notes" />
       </footer>
+      <InterestPing name="notes_open" />
     </div>
   );
 }

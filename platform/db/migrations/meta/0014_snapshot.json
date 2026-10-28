@@ -1,5 +1,5 @@
 {
-  "id": "e93a1ba1-d6e1-4596-bd0b-b9e2a20def59",
+  "id": "297a7e34-6f2d-4702-b390-c1706b70a046",
   "prevId": "3381c1cf-3bf0-4a0c-8652-e2e2aa24118e",
   "version": "7",
   "dialect": "postgresql",
@@ -652,18 +652,6 @@
           "primaryKey": false,
           "notNull": false
         },
-        "avatar_id": {
-          "name": "avatar_id",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "avatar_bg": {
-          "name": "avatar_bg",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
         "created_at": {
           "name": "created_at",
           "type": "timestamp with time zone",
@@ -739,18 +727,6 @@
         "profiles_weekly_goal_check": {
           "name": "profiles_weekly_goal_check",
           "value": "\"profiles\".\"weekly_goal\" IS NULL OR \"profiles\".\"weekly_goal\" BETWEEN 1 AND 1000"
-        },
-        "profiles_avatar_id_check": {
-          "name": "profiles_avatar_id_check",
-          "value": "\"profiles\".\"avatar_id\" IN ('otter', 'falcon', 'panda', 'tiger', 'dolphin', 'eagle', 'koala', 'lynx', 'peacock', 'parrot', 'penguin', 'rabbit', 'robin', 'sparrow', 'squirrel', 'turtle', 'whale', 'zebra', 'badger', 'beaver', 'bison', 'camel', 'cheetah', 'crane', 'deer', 'elephant', 'finch', 'fox', 'gazelle', 'gecko', 'giraffe', 'heron', 'hornbill', 'ibex', 'jaguar', 'kingfisher', 'kiwi', 'lemur', 'leopard', 'lion', 'llama', 'macaw', 'mongoose', 'moose', 'myna', 'narwhal', 'owl', 'panther', 'pelican', 'puffin', 'quail', 'raven', 'rhino', 'seal', 'starling', 'swan', 'tapir', 'toucan', 'walrus', 'wombat', 'yak', 'bulbul', 'hoopoe', 'langur')"
-        },
-        "profiles_avatar_bg_check": {
-          "name": "profiles_avatar_bg_check",
-          "value": "\"profiles\".\"avatar_bg\" IN ('sky', 'mint', 'sunflower', 'coral', 'lavender', 'meadow', 'peach', 'ocean')"
-        },
-        "profiles_avatar_pair_check": {
-          "name": "profiles_avatar_pair_check",
-          "value": "(\"profiles\".\"avatar_id\" IS NULL) = (\"profiles\".\"avatar_bg\" IS NULL)"
         },
         "profiles_board_check": {
           "name": "profiles_board_check",
@@ -4718,6 +4694,36 @@
           "concurrently": false,
           "method": "btree",
           "with": {}
+        },
+        "attempts_started_at_idx": {
+          "name": "attempts_started_at_idx",
+          "columns": [
+            {
+              "expression": "started_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "attempts_submitted_at_idx": {
+          "name": "attempts_submitted_at_idx",
+          "columns": [
+            {
+              "expression": "submitted_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
         }
       },
       "foreignKeys": {
@@ -7454,6 +7460,27 @@
           "concurrently": false,
           "method": "btree",
           "with": {}
+        },
+        "coin_ledger_day_kind_idx": {
+          "name": "coin_ledger_day_kind_idx",
+          "columns": [
+            {
+              "expression": "ist_day",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "kind",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
         }
       },
       "foreignKeys": {
@@ -8613,34 +8640,6 @@
           "method": "btree",
           "with": {}
         },
-        "credit_ledger_one_bonus_per_day": {
-          "name": "credit_ledger_one_bonus_per_day",
-          "columns": [
-            {
-              "expression": "user_id",
-              "isExpression": false,
-              "asc": true,
-              "nulls": "last"
-            },
-            {
-              "expression": "ist_day",
-              "isExpression": false,
-              "asc": true,
-              "nulls": "last"
-            },
-            {
-              "expression": "kind",
-              "isExpression": false,
-              "asc": true,
-              "nulls": "last"
-            }
-          ],
-          "isUnique": true,
-          "where": "\"credit_ledger\".\"kind\" IN ('bonus_goal', 'bonus_streak')",
-          "concurrently": false,
-          "method": "btree",
-          "with": {}
-        },
         "credit_ledger_one_resolution": {
           "name": "credit_ledger_one_resolution",
           "columns": [
@@ -8699,6 +8698,27 @@
           "method": "btree",
           "with": {}
         },
+        "credit_ledger_day_kind_idx": {
+          "name": "credit_ledger_day_kind_idx",
+          "columns": [
+            {
+              "expression": "ist_day",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "kind",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
         "credit_ledger_reservation_expiry_idx": {
           "name": "credit_ledger_reservation_expiry_idx",
           "columns": [
@@ -8737,11 +8757,11 @@
       "checkConstraints": {
         "credit_ledger_kind_check": {
           "name": "credit_ledger_kind_check",
-          "value": "\"credit_ledger\".\"kind\" IN ('grant', 'reserve', 'charge', 'refund', 'expire', 'bonus_goal', 'bonus_streak')"
+          "value": "\"credit_ledger\".\"kind\" IN ('grant', 'reserve', 'charge', 'refund', 'expire')"
         },
         "credit_ledger_amount_sign_check": {
           "name": "credit_ledger_amount_sign_check",
-          "value": "(\"credit_ledger\".\"kind\" = 'grant' AND \"credit_ledger\".\"amount\" > 0)\n       OR (\"credit_ledger\".\"kind\" = 'reserve' AND \"credit_ledger\".\"amount\" < 0)\n       OR (\"credit_ledger\".\"kind\" = 'charge' AND \"credit_ledger\".\"amount\" >= 0)\n       OR (\"credit_ledger\".\"kind\" = 'refund' AND \"credit_ledger\".\"amount\" > 0)\n       OR (\"credit_ledger\".\"kind\" = 'expire' AND \"credit_ledger\".\"amount\" < 0)\n       OR (\"credit_ledger\".\"kind\" IN ('bonus_goal', 'bonus_streak') AND \"credit_ledger\".\"amount\" > 0)"
+          "value": "(\"credit_ledger\".\"kind\" = 'grant' AND \"credit_ledger\".\"amount\" > 0)\n       OR (\"credit_ledger\".\"kind\" = 'reserve' AND \"credit_ledger\".\"amount\" < 0)\n       OR (\"credit_ledger\".\"kind\" = 'charge' AND \"credit_ledger\".\"amount\" >= 0)\n       OR (\"credit_ledger\".\"kind\" = 'refund' AND \"credit_ledger\".\"amount\" > 0)\n       OR (\"credit_ledger\".\"kind\" = 'expire' AND \"credit_ledger\".\"amount\" < 0)"
         },
         "credit_ledger_request_id_check": {
           "name": "credit_ledger_request_id_check",
@@ -10344,6 +10364,128 @@
       },
       "isRLSEnabled": false
     },
+    "public.analytics_counters": {
+      "name": "analytics_counters",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "uuid_generate_v7()"
+        },
+        "ist_day": {
+          "name": "ist_day",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "event": {
+          "name": "event",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dimension": {
+          "name": "dimension",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "''"
+        },
+        "count": {
+          "name": "count",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 0
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "analytics_counters_day_event_dimension_unique": {
+          "name": "analytics_counters_day_event_dimension_unique",
+          "columns": [
+            {
+              "expression": "ist_day",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "event",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "dimension",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "analytics_counters_event_day_idx": {
+          "name": "analytics_counters_event_day_idx",
+          "columns": [
+            {
+              "expression": "event",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "ist_day",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "analytics_counters_event_check": {
+          "name": "analytics_counters_event_check",
+          "value": "\"analytics_counters\".\"event\" ~ '^[a-z][a-z0-9_]{1,63}$'"
+        },
+        "analytics_counters_count_check": {
+          "name": "analytics_counters_count_check",
+          "value": "\"analytics_counters\".\"count\" >= 0"
+        },
+        "analytics_counters_dimension_check": {
+          "name": "analytics_counters_dimension_check",
+          "value": "length(\"analytics_counters\".\"dimension\") <= 64"
+        }
+      },
+      "isRLSEnabled": false
+    },
     "public.analytics_events": {
       "name": "analytics_events",
       "schema": "",
@@ -10986,6 +11128,127 @@
       },
       "policies": {},
       "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.staff_capabilities": {
+      "name": "staff_capabilities",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "uuid_generate_v7()"
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "capability": {
+          "name": "capability",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "granted_by_user_id": {
+          "name": "granted_by_user_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "staff_capabilities_user_capability_unique": {
+          "name": "staff_capabilities_user_capability_unique",
+          "columns": [
+            {
+              "expression": "user_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "capability",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "staff_capabilities_granted_by_user_id_idx": {
+          "name": "staff_capabilities_granted_by_user_id_idx",
+          "columns": [
+            {
+              "expression": "granted_by_user_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "staff_capabilities_user_id_users_id_fk": {
+          "name": "staff_capabilities_user_id_users_id_fk",
+          "tableFrom": "staff_capabilities",
+          "tableTo": "users",
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        },
+        "staff_capabilities_granted_by_user_id_users_id_fk": {
+          "name": "staff_capabilities_granted_by_user_id_users_id_fk",
+          "tableFrom": "staff_capabilities",
+          "tableTo": "users",
+          "columnsFrom": [
+            "granted_by_user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "set null",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "staff_capabilities_capability_check": {
+          "name": "staff_capabilities_capability_check",
+          "value": "\"staff_capabilities\".\"capability\" IN ('superadmin')"
+        }
+      },
       "isRLSEnabled": false
     },
     "public.content_budget_ledger": {
@@ -11777,6 +12040,51 @@
           "concurrently": false,
           "method": "btree",
           "with": {}
+        },
+        "lesson_progress_created_at_idx": {
+          "name": "lesson_progress_created_at_idx",
+          "columns": [
+            {
+              "expression": "created_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "lesson_progress_completed_at_idx": {
+          "name": "lesson_progress_completed_at_idx",
+          "columns": [
+            {
+              "expression": "completed_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "lesson_progress_updated_at_idx": {
+          "name": "lesson_progress_updated_at_idx",
+          "columns": [
+            {
+              "expression": "updated_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
         }
       },
       "foreignKeys": {
@@ -11978,6 +12286,21 @@
           "columns": [
             {
               "expression": "chapter_id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        },
+        "practice_answers_answered_at_idx": {
+          "name": "practice_answers_answered_at_idx",
+          "columns": [
+            {
+              "expression": "answered_at",
               "isExpression": false,
               "asc": true,
               "nulls": "last"
