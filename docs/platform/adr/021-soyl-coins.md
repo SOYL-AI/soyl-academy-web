@@ -1,7 +1,8 @@
 # ADR-021: SOYL Coins — earn-only ledger, daily check-in and challenge, store and merch redemption
 
 - Status: accepted (backend-api + web-platform, 2026-10-28)
-- Related: D-037 (owner decision), D-014 (consent gates), D-015 (farming controls), D-031 (production consent
+- Related: D-037 (owner decision), D-038 (no redemptions at launch: store is "coming soon"), D-039 (consent-gated
+  coin rewards only where ranks/leaderboards are involved), D-014 (consent gates), D-015 (farming controls), D-031 (production consent
   provider `unavailable`); OA-08 (consent contract), OA-19 (merch vendor and budget); CONTEXT §5, §11, §12;
   ARCHITECTURE §4, §6, §9, §12; ADR-012 (test engine), ADR-013 (credit ledger pattern), ADR-011 (platform
   proxy/CSP), ADR-001 (allowed paths); PII.md.
@@ -13,6 +14,21 @@ questions, daily check-in, streaks (D-037). Coins cannot be bought, transferred 
 credits. The accounts are children's: rewards must not become a grind or a gambling loop, and a physical
 prize means collecting a child's home address, which CONTEXT §12 and D-014 only allow after parental
 consent. Production runs `CONSENT_PROVIDER=unavailable` (D-031) and there is no merch vendor yet (OA-19).
+
+## Launch scope (D-038, D-039)
+
+- **At launch coins are earned, not spent.** Earning, check-in, the daily challenge, balance and history are
+  live. `COINS_REDEMPTION_ENABLED` (default `COIN_STORE.redemptionEnabled = false`) is the master switch for
+  every redemption: while off, `GET /v1/coins/store` returns `redemptionEnabled: false` and no items, and
+  redeem, equip and address answer `403 redemption_disabled` (tested). The web `/store` is an
+  "Exclusive rewards — coming soon" page. Every item in `STORE_ITEMS` is a draft (`active: false`) so the
+  owner can design the rewards and launch them by config. The redemption, address and staff paths below
+  stay implemented and tested behind the switch (`COINS_PHYSICAL_REDEMPTION_ENABLED` additionally gates
+  merch).
+- **Consent (D-039).** Plain earning from one's own learning (check-in, daily challenge, milestones, chapter
+  mastery, tests, live participation) is a learning feature like XP and needs no consent. Rank-based awards
+  (live-mock ranks, league promotion/top finish) are paid only with consent `granted` (read from the
+  `consent_status` cache, which the interim provider of ADR-022 rewrites on every grant/withdraw).
 
 ## Decision
 
@@ -85,9 +101,9 @@ consent. Production runs `CONSENT_PROVIDER=unavailable` (D-031) and there is no 
 
 ## Consequences
 
-- Earning, check-in, the daily challenge, balance/history and digital redemptions work everywhere,
-  including production with consent `unavailable`. Physical redemption is refused in production
-  (`consent_required`) and shows "Coming soon" while the flag is off.
+- Earning, check-in, the daily challenge and balance/history work everywhere. Redemptions are off at launch
+  (D-038). When switched on later, digital redemptions work for everyone; physical redemption additionally
+  needs consent `granted` and its own flag.
 - The owner tunes every number in `coins.ts` (handoff table). Changing a store price affects new
   redemptions only (the price is copied onto the redemption).
 - New problem codes: `coins_insufficient`, `item_unavailable`, `out_of_stock`, `redemption_limit`,

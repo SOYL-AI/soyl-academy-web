@@ -101,7 +101,9 @@ ADR-012: `responses.client_seq`, attempt score split and percentile flag, `test_
 `0008_ai_gateway` (ai-gateway M4, ADR-013/014: `credit_wallets` lock rows, `ai_spend_daily`, `ai_jobs`,
 `ai_requests.plan_id/degraded/simulated`, `uploads.processed_key`, `content_chunks.search_vector` FTS fallback),
 `0009_billing` (billing-razorpay M4, ADR-016: Razorpay binding columns, webhook outcome), `0010_leagues` (backend-api M5:
-weekly `leagues` and `league_memberships.league_id/tier/outcome`; the `ai_answer` report type on `content_reports`).
+weekly `leagues` and `league_memberships.league_id/tier/outcome`; the `ai_answer` report type on `content_reports`),
+`0011_coins` (SOYL Coins, ADR-021: `coin_wallets`, `coin_redemptions`, append-only `coin_ledger` with the
+`soyl_coin_ledger_guard` balance trigger; conventions function now lists `coin_ledger` as append-only).
 
 ## Roles (DB-1) and Azure mapping
 
@@ -110,7 +112,7 @@ Migration 0000 creates two NOLOGIN group roles if the migrating user may (`CREAT
 | Role | Gets | Used by |
 |---|---|---|
 | `soyl_migrator` | owns schema objects; DDL | pre-deploy migrations job |
-| `soyl_app` | `SELECT, INSERT, UPDATE, DELETE` on all tables; **only `SELECT, INSERT`** on `credit_ledger`, `audit_log`, `webhook_events`, `content_budget_ledger`; nothing on `soyl_schema_migrations`; no DDL | API and worker |
+| `soyl_app` | `SELECT, INSERT, UPDATE, DELETE` on all tables; **only `SELECT, INSERT`** on `credit_ledger`, `audit_log`, `webhook_events`, `content_budget_ledger`, `coin_ledger`; nothing on `soyl_schema_migrations`; no DDL | API and worker |
 
 Azure Database for PostgreSQL Flexible Server with Entra auth (for infra-azure):
 
@@ -193,7 +195,7 @@ session storage.
 - `id` uuid v7, generated in app code (`uuidv7()`); DB default `uuid_generate_v7()` for raw SQL.
   Exception: `pipeline_runs.id` is the pipeline's readable run id (text).
 - `created_at`, `updated_at` timestamptz (UTC); a trigger keeps `updated_at` right. Append-only tables
-  (`credit_ledger`, `audit_log`, `webhook_events`, `content_budget_ledger`, `analytics_events`) have no `updated_at`.
+  (`credit_ledger`, `audit_log`, `webhook_events`, `content_budget_ledger`, `analytics_events`, `coin_ledger`) have no `updated_at`.
 - IST calendar days (`ist_day`, `date`) for credits, streaks, XP: compute with `istDay()` (GEN-6).
 - Money in integer paise. Metered model cost per call is `numeric(14,4)` paise (`cost_inr_paise`, `cost_paise`).
 - Enumerations are `text` + `CHECK (col IN (...))`, values imported from `@soyl/shared` where they exist.

@@ -6,6 +6,7 @@ DELETE /v1/me/sessions                        roles=student|parent|reviewer|admi
 DELETE /v1/me/sessions/:id                    roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /healthz                               roles=guest|student|parent|reviewer|admin csrf=true rl=none consent=no
 GET    /readyz                                roles=guest|student|parent|reviewer|admin csrf=true rl=none consent=no
+GET    /v1/admin/coins/redemptions            roles=reviewer|admin csrf=true rl=default consent=no mfa
 GET    /v1/admin/reports                      roles=reviewer|admin csrf=true rl=default consent=no mfa
 GET    /v1/ai/conversations                   roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/ai/conversations/:id               roles=student|parent|reviewer|admin csrf=true rl=default consent=no
@@ -26,6 +27,11 @@ GET    /v1/chapters/:id/deck                  roles=guest|student|parent|reviewe
 GET    /v1/chapters/:id/flashcards            roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/chapters/:id/notes                 roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/chapters/:id/practice              roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/coins                              roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/coins/daily-challenge              roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/coins/history                      roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/coins/redemptions                  roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/coins/store                        roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/credits                            roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/credits/ledger                     roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/dev/otp-outbox                     roles=guest|student|parent|reviewer|admin csrf=true rl=default+auth.ip consent=no (dev-only, hidden)
@@ -47,6 +53,9 @@ GET    /v1/test-series                        roles=guest|student|parent|reviewe
 GET    /v1/tests/:id                          roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
 PATCH  /v1/me                                 roles=student|parent|reviewer|admin csrf=true rl=default+me.write.user consent=no
 PATCH  /v1/practice/answers/:id               roles=student|parent|reviewer|admin csrf=true rl=default+practice.answer.user consent=no
+POST   /v1/admin/coins/redemptions/:id/approve roles=reviewer|admin csrf=true rl=default consent=no fresh mfa
+POST   /v1/admin/coins/redemptions/:id/fulfil roles=reviewer|admin csrf=true rl=default consent=no fresh mfa
+POST   /v1/admin/coins/redemptions/:id/reject roles=reviewer|admin csrf=true rl=default consent=no fresh mfa
 POST   /v1/ai/:action                         roles=student|parent|reviewer|admin csrf=true rl=default+ai.user (fail-closed) consent=ai
 POST   /v1/ai/conversations                   roles=student|parent|reviewer|admin csrf=true rl=default+ai.user (fail-closed) consent=ai
 POST   /v1/ai/uploads                         roles=student|parent|reviewer|admin csrf=true rl=default+uploads.user.hour+uploads.user.day (fail-closed) consent=uploads
@@ -68,6 +77,9 @@ POST   /v1/billing/cancel                     roles=student csrf=true rl=default
 POST   /v1/billing/orders                     roles=student csrf=true rl=default consent=no
 POST   /v1/billing/refresh                    roles=student csrf=true rl=default consent=no
 POST   /v1/billing/subscriptions              roles=student csrf=true rl=default consent=no
+POST   /v1/coins/check-in                     roles=student|parent|reviewer|admin csrf=true rl=default+coins.write.user consent=no
+POST   /v1/coins/redeem                       roles=student|parent|reviewer|admin csrf=true rl=default+coins.redeem.user consent=no
+POST   /v1/coins/redemptions/:id/cancel       roles=student|parent|reviewer|admin csrf=true rl=default+coins.write.user consent=no
 POST   /v1/content-reports                    roles=guest|student|parent|reviewer|admin csrf=true rl=default+reports.ip+reports.user consent=no
 POST   /v1/live-events/:id/register           roles=student|parent|reviewer|admin csrf=true rl=default+live.register.user consent=no
 POST   /v1/me/consent/start                   roles=student|parent|reviewer|admin csrf=true rl=default consent=no
@@ -81,5 +93,7 @@ POST   /v1/tests/:id/attempts                 roles=student|parent|reviewer|admi
 POST   /v1/tests/custom                       roles=student|parent|reviewer|admin csrf=true rl=default+tests.custom.user consent=no
 POST   /v1/webhooks/razorpay                  roles=guest|student|parent|reviewer|admin csrf=false rl=default consent=no
 PUT    /v1/attempts/:id/responses             roles=student|parent|reviewer|admin csrf=true rl=default consent=test_attempts
+PUT    /v1/coins/equipped                     roles=student|parent|reviewer|admin csrf=true rl=default+coins.write.user consent=no
+PUT    /v1/coins/redemptions/:id/address      roles=student|parent|reviewer|admin csrf=true rl=default+coins.write.user consent=physical_rewards
 PUT    /v1/me/lesson-progress                 roles=student|parent|reviewer|admin csrf=true rl=default+progress.write.user consent=no"
 `;

@@ -41,7 +41,7 @@ async function member(harness = h): Promise<{ c: Client; id: string }> {
 async function grant(harness: Harness, userId: string, amount: number) {
   await harness.t.db.transaction(async (tx) => {
     await tx.insert(coinWallets).values({ userId }).onConflictDoNothing();
-    await tx.insert(coinLedger).values({ userId, kind: 'adjust', source: 'admin', amount, idempotencyKey: `test-grant:${userId}:${Math.random()}`, istDay: istDay(new Date(harness.clock.now())) });
+    await tx.insert(coinLedger).values({ userId, kind: 'adjust', source: 'admin', amount, idempotencyKey: `test-grant:${userId}:${Math.random()}`, istDay: istDay(new Date(harness.clock.now())), createdAt: new Date(harness.clock.now() - 1000) });
   });
 }
 
@@ -349,8 +349,8 @@ describe('store: digital items (redemption switched on)', () => {
     const { id } = await member(hr);
     await grant(hr, id, 100);
     const items: StoreItem[] = [
-      { ...STORE_ITEMS[0]!, key: 'race-a', priceCoins: 60 },
-      { ...STORE_ITEMS[0]!, key: 'race-b', priceCoins: 60, slot: 'theme' },
+      { ...STORE_ITEMS[0]!, key: 'race-a', priceCoins: 60, active: true },
+      { ...STORE_ITEMS[0]!, key: 'race-b', priceCoins: 60, slot: 'theme', active: true },
     ];
     const deps: StoreDeps = { db: hr.t.db, consent: hr.services.consent, redemptionEnabled: true, physicalEnabled: false, masterKey: hr.config.mfaEncryptionKey, items };
     const viewer = { id, emailVerified: true, phoneNumberVerified: false };
