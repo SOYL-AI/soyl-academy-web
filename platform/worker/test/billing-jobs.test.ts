@@ -8,6 +8,7 @@ import { auditLog, creditLedger, invoices, orders, payments, plans } from '@soyl
 import { FIXTURE_SELLER, INVOICING } from '@soyl/shared/config/invoicing';
 import { MemoryBlobStore } from '@soyl/api/ai/blob';
 import { MockEmailSender } from '@soyl/api/billing/invoices/delivery';
+import { paymentsMissingDocuments } from '@soyl/api/billing/invoices/issue';
 import { createTestDb, type TestDb } from '@soyl/db/testing';
 import { RazorpayStub } from '@soyl/api/billing/razorpay/stub';
 import { RazorpayHttpClient } from '@soyl/api/billing/razorpay/http';
@@ -93,12 +94,16 @@ describe('billing jobs', () => {
     const blob = new MemoryBlobStore(() => NOW.getTime());
     const email = new MockEmailSender();
     const run = job({ razorpay: null, invoices: { runtime: { enabled: true, production: false, settings: { ...INVOICING, seller: FIXTURE_SELLER } }, blob: () => blob, email, publicBaseUrl: 'https://www.soylai.test' } });
-    expect(await run.handler({ db: t.db, now: NOW, log }, undefined)).toMatchObject({ issued: 1, rendered: 1, emailed: 1, emailFailed: 0, refused: false });
+    // Every captured payment in this database without an invoice (the reconcile test above recorded one too).
+    const missing = (await paymentsMissingDocuments(t.db, 100)).length;
+    expect(missing).toBeGreaterThanOrEqual(1);
+    expect(await run.handler({ db: t.db, now: NOW, log }, undefined)).toMatchObject({ issued: missing, rendered: missing, emailed: missing, emailFailed: 0, refused: false });
     const [inv] = await t.db.select().from(invoices).where(eq(invoices.razorpayPaymentId, 'pay_InvoiceSweep01'));
     expect(inv!.number).toMatch(/^SOYL\/2026-27\/\d{6}$/);
     expect(blob.has('invoices', inv!.pdfBlobPath!)).toBe(true);
-    expect(email.outbox).toHaveLength(1);
-    expect(email.outbox[0]!.attachments?.[0]?.contentType).toBe('application/pdf');
+    expect(email.outbox).toHaveLength(missing);
+    const mail = email.outbox.find((m) => m.subject.endsWith(inv!.number))!;
+    expect(mail.attachments?.[0]?.contentType).toBe('application/pdf');
     // Next run: nothing left to do.
     expect(await run.handler({ db: t.db, now: NOW, log }, undefined)).toMatchObject({ issued: 0, rendered: 0, emailed: 0 });
   });
