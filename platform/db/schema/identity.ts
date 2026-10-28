@@ -8,6 +8,7 @@ import { sql } from 'drizzle-orm';
 import { boolean, index, integer, pgTable, smallint, text, uniqueIndex, uuid } from 'drizzle-orm/pg-core';
 import { check } from 'drizzle-orm/pg-core';
 import { AGE_BANDS, CONSENT_METHODS, CONSENT_REVOKERS } from '@soyl/shared/config/security';
+import { SCHOOL_SOURCES } from '@soyl/shared/config/schools';
 import { id, oneOf, timestamps, tstz } from './_shared';
 
 export const ROLES = ['student', 'parent', 'reviewer', 'admin'] as const;
@@ -121,9 +122,33 @@ export const schools = pgTable(
     state: text('state'),
     /** UDISE+ school code when known. */
     udiseCode: text('udise_code').unique('schools_udise_code_unique'),
+    /**
+     * 0013: dedupe/search keys computed by the writer with @soyl/shared/profile/school
+     * (normalizeSchoolName, normalizeCity): lower case, punctuation removed, abbreviations expanded,
+     * old city names mapped. `city_normalized` is '' when the city is unknown.
+     */
+    nameNormalized: text('name_normalized').notNull(),
+    cityNormalized: text('city_normalized').notNull().default(''),
+    /** 0013: where the row came from (SCHOOL_SOURCES): `student` (added in the profile), `udise`, `cbse`. */
+    source: text('source').notNull().default('student'),
+    /** 0013: set when staff or an official list confirms the school; null = unverified. */
+    verifiedAt: tstz('verified_at'),
+    /** 0013: the account that added a `student` school; nulled at account deletion (PII.md). */
+    createdByUserId: uuid('created_by_user_id').references(() => users.id, { onDelete: 'set null' }),
     ...timestamps(),
   },
-  (t) => [index('schools_city_idx').on(t.city), index('schools_name_idx').on(t.name)],
+  (t) => [
+    index('schools_city_idx').on(t.city),
+    index('schools_name_idx').on(t.name),
+    // Student-added schools are stored once per normalised name + city (find-or-create). Official
+    // lists may hold several schools with the same name in one city, so they are not constrained.
+    uniqueIndex('schools_student_name_city_unique').on(t.nameNormalized, t.cityNormalized).where(sql`${t.source} = 'student'`),
+    // GET /v1/schools: prefix of the name key, optionally within a city.
+    index('schools_name_normalized_idx').on(t.nameNormalized.op('text_pattern_ops')),
+    index('schools_city_name_normalized_idx').on(t.cityNormalized, t.nameNormalized.op('text_pattern_ops')),
+    index('schools_created_by_user_id_idx').on(t.createdByUserId),
+    oneOf('schools_source_check', t.source, SCHOOL_SOURCES),
+  ],
 );
 
 export const profiles = pgTable(
@@ -137,7 +162,10 @@ export const profiles = pgTable(
     displayName: text('display_name'),
     board: text('board'),
     classLevel: smallint('class_level'),
-    /** D-014: school and city are only collected once consent is `granted`. */
+    /**
+     * D-014: school and city are only collected and shown once consent is `granted` (PATCH /v1/me school).
+     * `city` mirrors the chosen school's city; both are cleared together (and when consent is withdrawn).
+     */
     schoolId: uuid('school_id').references(() => schools.id, { onDelete: 'set null' }),
     city: text('city'),
     locale: text('locale').notNull().default('en-IN'),
@@ -148,9 +176,12 @@ export const profiles = pgTable(
     publicNameSeed: integer('public_name_seed').notNull().default(0),
     /** Idempotency for POST /v1/me/merge-guest. */
     guestMergedAt: tstz('guest_merged_at'),
+    /** 0013: dashboard weekly goal (practice questions solved per IST week); null = DASHBOARD.weeklyGoal.default. */
+    weeklyGoal: smallint('weekly_goal'),
     ...timestamps(),
   },
   (t) => [
+    check('profiles_weekly_goal_check', sql`${t.weeklyGoal} IS NULL OR ${t.weeklyGoal} BETWEEN 1 AND 1000`),
     oneOf('profiles_board_check', t.board, BOARDS),
     check('profiles_class_level_check', sql`${t.classLevel} BETWEEN 7 AND 12`),
     index('profiles_school_id_idx').on(t.schoolId),

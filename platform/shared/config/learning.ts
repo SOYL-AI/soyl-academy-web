@@ -103,3 +103,39 @@ export const ACTIVITY = {
   maxDays: 371,
   timezone: 'Asia/Kolkata',
 } as const;
+
+/* Student dashboard (GET /v1/me/dashboard) ---------------------------------------------------------- */
+
+/** Weekly goal metrics. Only `questions_solved` exists today (first solves in the IST week, D-042 "solved"). */
+export const WEEKLY_GOAL_METRICS = ['questions_solved'] as const;
+export type WeeklyGoalMetric = (typeof WEEKLY_GOAL_METRICS)[number];
+
+export const DASHBOARD = {
+  /** Days and weeks are IST calendar days; weeks start on Monday (same as leagues and the streak freeze). */
+  timezone: 'Asia/Kolkata',
+  /** Accuracy compares the last `accuracyWindowDays` IST days (today included) with the same span before. */
+  accuracyWindowDays: 7,
+  /** Most recent submitted attempts listed in the test history. */
+  testHistoryLimit: 20,
+  /** Most recent events in the activity feed (lessons, practice sessions, tests, badges). */
+  recentLimit: 10,
+  focus: {
+    /** Chapters listed on each side (weakest / strongest). */
+    perSide: 3,
+    /**
+     * A chapter counts as "really attempted" with at least this many distinct practice questions
+     * answered, or a graded chapter test. Opening a lesson alone is not enough to judge a chapter.
+     */
+    minAttempted: 3,
+    /** Strongest chapters are at these levels; weakest are below them (no chapter is on both lists). */
+    strongLevels: ['proficient', 'mastered'] as readonly MasteryLevel[],
+  },
+  weeklyGoal: {
+    metric: 'questions_solved' as WeeklyGoalMetric,
+    /** Used until the student picks a goal (profiles.weekly_goal is null). */
+    default: 20,
+    /** Bounds for a goal the student sets (PATCH /v1/me weeklyGoal). */
+    min: 5,
+    max: 300,
+  },
+} as const;

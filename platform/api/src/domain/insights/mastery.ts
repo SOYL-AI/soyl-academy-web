@@ -116,7 +116,7 @@ export async function chapterEvidence(db: Database, year: string, userId: string
 }
 
 /** Subjects (database ids) the caller has any learning activity in. */
-async function activeSubjectIds(db: Database, userId: string): Promise<string[]> {
+export async function activeSubjectIds(db: Database, userId: string): Promise<string[]> {
   const res = await db.execute<{ subject_id: string }>(sql`
     SELECT c.subject_id FROM chapters c WHERE c.id IN (
       SELECT chapter_id FROM lesson_progress WHERE user_id = ${userId}

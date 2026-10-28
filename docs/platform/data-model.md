@@ -4,7 +4,7 @@
 > Design intent: [ARCHITECTURE §6](ARCHITECTURE.md#6-data-model-postgresql). Decisions: [ADR-004](adr/004-orm-drizzle.md) (Drizzle, migrations, roles), [ADR-006](adr/006-content-storage.md) (releases), [ADR-010](adr/010-content-api-caching-and-answer-separation.md) (answer separation), [ADR-012](adr/012-test-engine.md) (test engine), [ADR-013](adr/013-ai-gateway.md) (credits), [ADR-016](adr/016-billing-razorpay.md) (billing).
 > Package guide: [`platform/db/README.md`](../../platform/db/README.md). Personal data: [`platform/db/PII.md`](../../platform/db/PII.md).
 
-PostgreSQL 17 on Azure (PostgreSQL Flexible Server, Entra-only auth), embedded PostgreSQL 18 locally and in unit tests, `pgvector/pgvector:pg17` in CI. **73 tables and 2 views** across 13 schema files, created by **13 migrations** (0000 to 0012).
+PostgreSQL 17 on Azure (PostgreSQL Flexible Server, Entra-only auth), embedded PostgreSQL 18 locally and in unit tests, `pgvector/pgvector:pg17` in CI. **73 tables and 2 views** across 13 schema files, created by **14 migrations** (0000 to 0013).
 
 ## Conventions
 
@@ -35,7 +35,7 @@ In Azure the managed identities log in with Entra tokens (no passwords) and are 
 
 | Area (schema file) | # | Tables | Notes |
 |---|---|---|---|
-| Identity (`identity.ts`) | 9 | `users`, `sessions`, `accounts`, `verifications`, `schools`, `profiles`, `guardian_links`, `consent_status`, `consent_records` (0012, D-039) | Better Auth's tables plus ours. `role` lives on `users` (Better Auth admin plugin), not `profiles`. Email/phone have generated normalised columns with unique indexes. `verifications.identifier` stores `otp:<purpose>:<channel>:<HMAC(identifier)>`, not the raw address. `sessions.mfa_verified_at` added in 0005. |
+| Identity (`identity.ts`) | 9 | `users`, `sessions`, `accounts`, `verifications`, `schools`, `profiles`, `guardian_links`, `consent_status`, `consent_records` (0012, D-039) | Better Auth's tables plus ours. `role` lives on `users` (Better Auth admin plugin), not `profiles`. Email/phone have generated normalised columns with unique indexes. `verifications.identifier` stores `otp:<purpose>:<channel>:<HMAC(identifier)>`, not the raw address. `sessions.mfa_verified_at` added in 0005. Schools (0013): `name_normalized`/`city_normalized` dedupe keys (unique per name + city for `source = 'student'` rows; `text_pattern_ops` indexes for prefix search), `source` (`student`/`udise`/`cbse`), `verified_at`, `created_by_user_id` (set null on user delete); `profiles.weekly_goal`. School and city are stored and shown only with consent `granted` (D-014). |
 | Catalog (`catalog.ts`) | 7 | `boards`, `classes`, `subjects`, `syllabus_versions`, `chapters`, `topics`, `learning_outcomes` | Seeded from `platform/catalog/` by `db seed catalog` (idempotent; `syllabus_versions` holds per-file hash). `boards`/`classes` have no `academic_year`. |
 | Content (`content.ts`) | 10 | `content_releases`, `decks`, `notes`, `flashcard_sets`, `questions`, `question_keys`, `question_stats`, `assets`, `content_status_events`, `content_chunks` | DB-6 split (below). `content_chunks` holds tutor retrieval chunks: `embedding vector(1536)` + HNSW index where pgvector exists, and a generated `search_vector` tsvector + GIN index (0008) as the full-text fallback (ADR-014). |
 | Release membership (`release-items.ts`) | 1 | `content_release_items` | Which item rows each release contains, so reads go through the **active** release and rollback works (ADR-006/010). |
@@ -99,8 +99,9 @@ All are reversible (`NNNN_name.sql` + `NNNN_name.down.sql`, plus drizzle snapsho
 | 0010 | `0010_leagues` | `leagues` table; `league_memberships.league_id`, `tier`, `outcome`; `content_reports` type check accepts `ai_answer` (down deletes those reports) | backend-api M5 follow-ups | yes |
 | 0011 | `0011_coins` | `coin_wallets`, `coin_ledger` (append-only, `soyl_coin_ledger_guard` balance trigger), `coin_redemptions`; conventions list `coin_ledger` as append-only | backend-api (SOYL Coins, ADR-021) | **no** (pending) |
 | 0012 | `0012_consent_interim` | `consent_records`; `profiles.public_name_seed` | backend-api (consent interim, D-039, ADR-022) | **no** (pending) |
+| 0013 | `0013_school_capture` | `schools.name_normalized`, `city_normalized` (backfilled), `source`, `verified_at`, `created_by_user_id`; partial unique index on student schools; prefix-search indexes; `profiles.weekly_goal` | backend-api (dashboard + school capture, D-014) | **no** (pending) |
 
-Production (dark) was last migrated on 2026-10-28 from images built at `fe404f0`, so it has 0000 to 0010. 0011 and 0012 apply on the next backend update ([runbook](runbooks/update-dark-backend.md)).
+Production (dark) was last migrated on 2026-10-28 from images built at `fe404f0`, so it has 0000 to 0010. 0011 to 0013 apply on the next backend update ([runbook](runbooks/update-dark-backend.md)).
 
 Commands (from `platform/`; without `DATABASE_URL` the CLI starts the persistent local embedded server at `platform/db/.data/dev`, port 54320):
 

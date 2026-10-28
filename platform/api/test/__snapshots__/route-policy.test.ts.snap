@@ -45,6 +45,7 @@ GET    /v1/me/attempts                        roles=student|parent|reviewer|admi
 GET    /v1/me/badges                          roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/me/card                            roles=student|parent|reviewer|admin csrf=true rl=default+insights.read.user consent=no
 GET    /v1/me/consent                         roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/me/dashboard                       roles=student|parent|reviewer|admin csrf=true rl=default+dashboard.read.user consent=no
 GET    /v1/me/mastery                         roles=student|parent|reviewer|admin csrf=true rl=default+insights.read.user consent=no
 GET    /v1/me/mfa                             roles=reviewer|admin csrf=true rl=default consent=no
 GET    /v1/me/progress                        roles=student|parent|reviewer|admin csrf=true rl=default consent=no
@@ -52,6 +53,7 @@ GET    /v1/me/progress/chapters/:id           roles=student|parent|reviewer|admi
 GET    /v1/me/sessions                        roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/me/subscription                    roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/plans                              roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/schools                            roles=student|parent|reviewer|admin csrf=true rl=default+schools.search.user consent=profile_school_city
 GET    /v1/session                            roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/test-series                        roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/tests/:id                          roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no

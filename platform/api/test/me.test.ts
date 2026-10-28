@@ -27,8 +27,10 @@ describe('GET/PATCH /v1/me', () => {
     expect(res.statusCode).toBe(200);
     expect(res.headers['cache-control']).toBe('no-store');
     expect(res.json()).toMatchObject({ id: user.id, role: 'student', displayName: null, board: null, classLevel: null, locale: 'en-IN', consent: 'required', methods: { email: e, phone: null, google: false } });
-    // D-039: no school field at all; an auto-generated public name instead of any real name.
+    // D-014: no school without consent (no raw schoolId/city ever); an auto-generated public name instead of any real name.
     expect(res.json()).not.toHaveProperty('schoolId');
+    expect(res.json()).not.toHaveProperty('city');
+    expect(res.json()).toMatchObject({ school: null, weeklyGoal: { target: 20, isDefault: true } });
     expect(res.json().publicName).toMatch(/^[A-Z][a-z]+ [A-Z][a-z]+ [0-9]{3}$/);
   });
 
@@ -80,22 +82,52 @@ describe('GET/PATCH /v1/me', () => {
     expect((await c.patch('/v1/me', {})).statusCode).toBe(400);
   });
 
-  it('school is never collected (D-039; was consent-gated under D-014): refused without and with consent, nothing stored', async () => {
-    const [school] = await h.t.db.insert(schools).values({ name: 'Test School', city: 'Pune' }).returning();
+  it('school is consent-gated (D-014): refused without consent and nothing stored; raw schoolId/city fields are never accepted', async () => {
+    const [school] = await h.t.db.insert(schools).values({ name: 'Test School', nameNormalized: 'test school', city: 'Pune', cityNormalized: 'pune', source: 'udise', verifiedAt: new Date() }).returning();
     const c = h.client();
     const { user } = await c.signInEmail(email('school'));
-    const denied = await c.patch('/v1/me', { schoolId: school!.id });
-    expect(denied.statusCode).toBe(400);
-    expect(denied.json().code).toBe('validation_failed');
+    // Raw columns are not part of the allowlist (API-8), with or without consent.
+    expect((await c.patch('/v1/me', { schoolId: school!.id })).json().code).toBe('validation_failed');
+    expect((await c.patch('/v1/me', { city: 'Pune' })).statusCode).toBe(400);
+    // `school` without consent: 403 consent_required, nothing stored, nothing created.
+    const denied = await c.patch('/v1/me', { school: { schoolId: school!.id } });
+    expect(denied.statusCode).toBe(403);
+    expect(denied.json().code).toBe('consent_required');
+    const create = await c.patch('/v1/me', { school: { name: 'Unconsented Academy', city: 'Pune' } });
+    expect(create.json().code).toBe('consent_required');
+    expect(await h.t.db.select().from(schools).where(eq(schools.nameNormalized, 'unconsented academy'))).toHaveLength(0);
+    // Clearing is always allowed.
+    expect((await c.patch('/v1/me', { school: null })).statusCode).toBe(200);
+    let [p] = await h.t.db.select().from(profiles).where(eq(profiles.userId, user.id));
+    expect({ schoolId: p?.schoolId ?? null, city: p?.city ?? null }).toEqual({ schoolId: null, city: null });
+
     h.consent.setStatus(user.id, 'granted');
     h.clock.advance(16 * 60_000); // cache TTL
-    const stillDenied = await c.patch('/v1/me', { schoolId: school!.id });
-    expect(stillDenied.statusCode).toBe(400);
-    expect((await c.patch('/v1/me', { city: 'Pune' })).statusCode).toBe(400);
-    const [p] = await h.t.db.select().from(profiles).where(eq(profiles.userId, user.id));
-    expect(p?.schoolId ?? null).toBeNull();
-    expect(p?.city ?? null).toBeNull();
+    const ok = await c.patch('/v1/me', { school: { schoolId: school!.id } });
+    expect(ok.statusCode, ok.body).toBe(200);
+    expect(ok.json().school).toEqual({ id: school!.id, name: 'Test School', city: 'Pune', state: null, board: null, verified: true });
+    [p] = await h.t.db.select().from(profiles).where(eq(profiles.userId, user.id));
+    expect({ schoolId: p!.schoolId, city: p!.city }).toEqual({ schoolId: school!.id, city: 'Pune' });
     expect((await c.get('/v1/me')).json()).not.toHaveProperty('schoolId');
+
+    // Consent no longer granted (e.g. another provider's revocation): stored, but never returned.
+    h.consent.setStatus(user.id, 'revoked');
+    h.clock.advance(16 * 60_000);
+    const me = (await c.get('/v1/me')).json();
+    expect(me.consent).toBe('revoked');
+    expect(me.school).toBeNull();
+    expect(JSON.stringify(me)).not.toContain('Pune');
+  });
+
+  it('weekly goal: default until set, bounds enforced, null resets', async () => {
+    const c = h.client();
+    await c.signInEmail(email('goal'));
+    expect((await c.get('/v1/me')).json().weeklyGoal).toEqual({ target: 20, isDefault: true });
+    expect((await c.patch('/v1/me', { weeklyGoal: 35 })).json().weeklyGoal).toEqual({ target: 35, isDefault: false });
+    expect((await c.patch('/v1/me', { weeklyGoal: 4 })).statusCode).toBe(400);
+    expect((await c.patch('/v1/me', { weeklyGoal: 301 })).statusCode).toBe(400);
+    expect((await c.patch('/v1/me', { weeklyGoal: 2.5 })).statusCode).toBe(400);
+    expect((await c.patch('/v1/me', { weeklyGoal: null })).json().weeklyGoal).toEqual({ target: 20, isDefault: true });
   });
 });
 

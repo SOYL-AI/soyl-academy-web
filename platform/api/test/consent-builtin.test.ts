@@ -202,6 +202,20 @@ describe('built-in consent: withdrawal', () => {
     expect((await s.c.post('/v1/me/consent/verify', { code: parentMail(s.parent).code })).json().status).toBe('granted');
   });
 
+  it('leaving `granted` clears the saved school and city (D-014), with the count in the audit row', async () => {
+    const s = await student();
+    expect((await s.c.post('/v1/me/consent/age-band', { ageBand: 'adult', agree: true })).json().status).toBe('granted');
+    const set = await s.c.patch('/v1/me', { school: { name: `Withdrawal Test School ${uniq().replace(/\d/g, '')}`, city: 'Nagpur' } });
+    expect(set.statusCode, set.body).toBe(200);
+    expect(set.json().school).toMatchObject({ city: 'Nagpur', verified: false });
+    expect((await s.c.post('/v1/me/consent/withdraw')).json().status).toBe('revoked');
+    const [p] = await h.t.db.select().from(profiles).where(eq(profiles.userId, s.id));
+    expect({ schoolId: p!.schoolId, city: p!.city }).toEqual({ schoolId: null, city: null });
+    expect((await s.c.get('/v1/me')).json().school).toBeNull();
+    const audit = await h.t.db.select().from(auditLog).where(and(eq(auditLog.targetId, s.id), eq(auditLog.action, 'consent.ai_data_deleted')));
+    expect(audit.at(-1)!.after).toMatchObject({ schoolCleared: true });
+  });
+
   it('the parent’s link withdraws without a session (idempotent); declines a pending request; forged or stale links are refused', async () => {
     const s = await minorWithCode();
     await s.c.post('/v1/me/consent/verify', { code: s.code });

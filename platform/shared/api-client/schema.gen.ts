@@ -2730,6 +2730,117 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/me/dashboard": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Your progress dashboard: totals, solved by difficulty, mastery levels, test history, focus areas, recent activity, next badge and weekly goal (IST days, Monday weeks) */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["MyDashboard"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/schools": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Find your school by name (prefix of any word) and optional city; at most 20. Consent must be granted (D-014). */
+        get: {
+            parameters: {
+                query: {
+                    q: string;
+                    city?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["SchoolSearch"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/v1/content-reports": {
         parameters: {
             query?: never;
@@ -6040,6 +6151,36 @@ export interface components {
             phone: boolean;
             google: boolean;
         };
+        /** @description A school. Shown only to accounts whose consent is granted (D-014). */
+        SchoolInput: {
+            /** Format: uuid */
+            id: string;
+            name: string;
+            city: string | null;
+            state: ("Andaman and Nicobar Islands" | "Andhra Pradesh" | "Arunachal Pradesh" | "Assam" | "Bihar" | "Chandigarh" | "Chhattisgarh" | "Dadra and Nagar Haveli and Daman and Diu" | "Delhi" | "Goa" | "Gujarat" | "Haryana" | "Himachal Pradesh" | "Jammu and Kashmir" | "Jharkhand" | "Karnataka" | "Kerala" | "Ladakh" | "Lakshadweep" | "Madhya Pradesh" | "Maharashtra" | "Manipur" | "Meghalaya" | "Mizoram" | "Nagaland" | "Odisha" | "Puducherry" | "Punjab" | "Rajasthan" | "Sikkim" | "Tamil Nadu" | "Telangana" | "Tripura" | "Uttar Pradesh" | "Uttarakhand" | "West Bengal") | null;
+            board: components["schemas"]["BoardInput"] | null;
+            verified: boolean;
+        };
+        /** @description At most 20 schools, best match first (name starts with the query, verified first). */
+        SchoolSearchInput: {
+            schools: components["schemas"]["SchoolInput"][];
+        };
+        SchoolPickInput: {
+            /** Format: uuid */
+            schoolId: string;
+        };
+        /** @description Find-or-create by normalised name + city (an existing school with the same name in the same city is reused). Names must not contain emails, links, handles, phone numbers or blocked words. */
+        SchoolCreateInput: {
+            name: string;
+            city: string;
+            state?: string;
+            board?: components["schemas"]["BoardInput"];
+        };
+        /**
+         * @description set: a school is saved; not_set: none yet (the UI may prompt); consent_required: consent is not granted, so no school can be saved or shown (D-014).
+         * @enum {string}
+         */
+        SchoolStatusInput: "set" | "not_set" | "consent_required";
         GuestLessonInput: {
             chapter: string;
             part?: number;
@@ -6096,6 +6237,11 @@ export interface components {
             publicName: string;
             locale: string;
             consent: components["schemas"]["ConsentStateInput"];
+            school: components["schemas"]["SchoolInput"] | null;
+            weeklyGoal: {
+                target: number;
+                isDefault: boolean;
+            };
             methods: {
                 phone: string | null;
                 email: string | null;
@@ -6105,12 +6251,14 @@ export interface components {
             /** Format: date-time */
             createdAt: string;
         };
-        /** @description API-8: only these fields; role, status, xp, school, city etc. are rejected (400; D-039: no school or city). */
+        /** @description API-8: only these fields; role, status, xp, schoolId, city etc. are rejected (400). A school is saved through `school`, and only with consent granted (D-014). */
         PatchMeInput: {
             displayName?: string | null;
             board?: components["schemas"]["BoardInput"];
             classLevel?: number;
             locale?: components["schemas"]["LocaleInput"];
+            school?: (components["schemas"]["SchoolPickInput"] | components["schemas"]["SchoolCreateInput"]) | null;
+            weeklyGoal?: number | null;
         };
         DeleteMeResponseInput: {
             /** @constant */
@@ -6953,6 +7101,265 @@ export interface components {
                 awarded: boolean;
                 awardedAt: string | null;
             }[];
+        };
+        /** @description IST calendar days, both inclusive. */
+        DayRangeInput: {
+            /** Format: date */
+            from: string;
+            /** Format: date */
+            to: string;
+        };
+        DashboardProfileInput: {
+            board: components["schemas"]["BoardInput"] | null;
+            classLevel: number | null;
+            school: components["schemas"]["SchoolInput"] | null;
+            schoolStatus: components["schemas"]["SchoolStatusInput"];
+            missing: ("board" | "classLevel" | "school")[];
+        };
+        AccuracyWindowInput: {
+            /** Format: date */
+            from: string;
+            /** Format: date */
+            to: string;
+            checked: number;
+            right: number;
+            accuracy: number | null;
+        };
+        DashboardTotalsInput: {
+            solved: {
+                allTime: number;
+                thisWeek: number;
+                lastWeek: number;
+            };
+            answered: {
+                allTime: number;
+                thisWeek: number;
+                lastWeek: number;
+            };
+            accuracy: {
+                recent: components["schemas"]["AccuracyWindowInput"];
+                previous: components["schemas"]["AccuracyWindowInput"];
+            };
+            lessonsCompleted: {
+                allTime: number;
+                thisWeek: number;
+                lastWeek: number;
+            };
+            tests: {
+                submitted: {
+                    allTime: number;
+                    thisWeek: number;
+                    lastWeek: number;
+                };
+                distinctTests: number;
+                averagePct: number | null;
+                bestPct: number | null;
+            };
+            activeDays: {
+                thisWeek: number;
+                lastWeek: number;
+                allTime: number;
+            };
+        };
+        DashboardScopeInput: {
+            /** @enum {string} */
+            kind: "class" | "activity" | "none";
+            board: components["schemas"]["BoardInput"] | null;
+            classLevel: number | null;
+            subjectCount: number;
+            chapterCount: number;
+        };
+        /** @description LeetCode-style solved / total per difficulty band (1–2 easy, 3 medium, 4–5 hard). */
+        SolvedByDifficultyInput: {
+            all: {
+                solved: number;
+                total: number;
+            };
+            easy: {
+                solved: number;
+                total: number;
+            };
+            medium: {
+                solved: number;
+                total: number;
+            };
+            hard: {
+                solved: number;
+                total: number;
+            };
+        };
+        DashboardMasteryInput: {
+            score: number;
+            chapterCount: number;
+            levels: {
+                not_started: number;
+                attempted: number;
+                familiar: number;
+                proficient: number;
+                mastered: number;
+            };
+        };
+        TestHistoryItemInput: {
+            /** Format: uuid */
+            attemptId: string;
+            testId: string;
+            title: string;
+            /** @enum {string} */
+            kind: "chapter" | "unit" | "term" | "full" | "live" | "custom";
+            subjectId: string;
+            subjectName: string;
+            /** Format: date-time */
+            submittedAt: string;
+            /** Format: date */
+            day: string;
+            autoSubmitted: boolean;
+            score: number;
+            maxScore: number;
+            percentage: number | null;
+            autoScore: number;
+            selfScore: number;
+            /** @enum {string} */
+            marking: "auto" | "self";
+            liveEventId: string | null;
+        };
+        /** @description Route parts for /learn/{board}/{classLevel}/{subjectSlug}/{chapterSlug}. */
+        ChapterLinkInput: {
+            board: components["schemas"]["BoardInput"];
+            classLevel: number;
+            subjectId: string;
+            subjectSlug: string;
+            chapterId: string;
+            chapterSlug: string;
+        };
+        FocusChapterInput: {
+            chapterId: string;
+            number: number;
+            title: string;
+            subjectId: string;
+            subjectName: string;
+            level: components["schemas"]["MasteryLevelInput"];
+            score: number;
+            firstTryAccuracy: number | null;
+            practiceAttempted: number;
+            practiceTotal: number;
+            chapterTestPct: number | null;
+            link: components["schemas"]["ChapterLinkInput"];
+        };
+        RecentLessonEventInput: {
+            /** @constant */
+            kind: "lesson";
+            id: string;
+            /** Format: date-time */
+            at: string;
+            /** Format: date */
+            day: string;
+            chapter: {
+                chapterId: string;
+                title: string;
+                subjectId: string;
+                subjectName: string;
+                link: components["schemas"]["ChapterLinkInput"];
+            };
+            part: number;
+        };
+        RecentPracticeEventInput: {
+            /** @constant */
+            kind: "practice";
+            id: string;
+            /** Format: date-time */
+            at: string;
+            /** Format: date */
+            day: string;
+            chapter: {
+                chapterId: string;
+                title: string;
+                subjectId: string;
+                subjectName: string;
+                link: components["schemas"]["ChapterLinkInput"];
+            };
+            answered: number;
+            solved: number;
+        };
+        RecentTestEventInput: {
+            /** @constant */
+            kind: "test";
+            id: string;
+            /** Format: date-time */
+            at: string;
+            /** Format: date */
+            day: string;
+            /** Format: uuid */
+            attemptId: string;
+            testId: string;
+            title: string;
+            /** @enum {string} */
+            testKind: "chapter" | "unit" | "term" | "full" | "live" | "custom";
+            percentage: number | null;
+        };
+        RecentBadgeEventInput: {
+            /** @constant */
+            kind: "badge";
+            id: string;
+            /** Format: date-time */
+            at: string;
+            /** Format: date */
+            day: string;
+            badgeKey: string;
+            name: string;
+            icon: string;
+        };
+        /** @description A practice event groups one chapter’s answers on one IST day (`at` = the last answer). */
+        RecentEventInput: components["schemas"]["RecentLessonEventInput"] | components["schemas"]["RecentPracticeEventInput"] | components["schemas"]["RecentTestEventInput"] | components["schemas"]["RecentBadgeEventInput"];
+        /** @description The unearned badge closest to being earned (streak badges count the current streak). */
+        NextBadgeInput: {
+            key: string;
+            name: string;
+            description: string;
+            icon: string;
+            current: number;
+            target: number;
+            progress: number;
+        };
+        /** @description questions_solved: practice questions first solved this IST week (Monday–Sunday). */
+        WeeklyGoalInput: {
+            /** @enum {string} */
+            metric: "questions_solved";
+            target: number;
+            isDefault: boolean;
+            progress: number;
+            remaining: number;
+            met: boolean;
+            /** Format: date */
+            weekStart: string;
+            /** Format: date */
+            weekEnd: string;
+            daysLeft: number;
+        };
+        /** @description Your progress dashboard. Days and weeks are IST (Monday start). Level, XP and coins: GET /v1/me/card; streak and heatmap: GET /v1/me/activity; per-subject chapter levels: GET /v1/me/mastery. */
+        MyDashboardInput: {
+            /** @constant */
+            timezone: "Asia/Kolkata";
+            /** Format: date */
+            today: string;
+            thisWeek: components["schemas"]["DayRangeInput"];
+            lastWeek: components["schemas"]["DayRangeInput"];
+            profile: components["schemas"]["DashboardProfileInput"];
+            totals: components["schemas"]["DashboardTotalsInput"];
+            scope: components["schemas"]["DashboardScopeInput"];
+            solvedByDifficulty: components["schemas"]["SolvedByDifficultyInput"];
+            mastery: components["schemas"]["DashboardMasteryInput"];
+            testHistory: components["schemas"]["TestHistoryItemInput"][];
+            focus: {
+                weakest: components["schemas"]["FocusChapterInput"][];
+                strongest: components["schemas"]["FocusChapterInput"][];
+            };
+            recent: components["schemas"]["RecentEventInput"][];
+            badges: {
+                earned: number;
+                total: number;
+                next: components["schemas"]["NextBadgeInput"] | null;
+            };
+            weeklyGoal: components["schemas"]["WeeklyGoalInput"];
         };
         ContentReportRequestInput: {
             chapterId?: string;
@@ -8111,6 +8518,36 @@ export interface components {
             phone: boolean;
             google: boolean;
         };
+        /** @description A school. Shown only to accounts whose consent is granted (D-014). */
+        School: {
+            /** Format: uuid */
+            id: string;
+            name: string;
+            city: string | null;
+            state: ("Andaman and Nicobar Islands" | "Andhra Pradesh" | "Arunachal Pradesh" | "Assam" | "Bihar" | "Chandigarh" | "Chhattisgarh" | "Dadra and Nagar Haveli and Daman and Diu" | "Delhi" | "Goa" | "Gujarat" | "Haryana" | "Himachal Pradesh" | "Jammu and Kashmir" | "Jharkhand" | "Karnataka" | "Kerala" | "Ladakh" | "Lakshadweep" | "Madhya Pradesh" | "Maharashtra" | "Manipur" | "Meghalaya" | "Mizoram" | "Nagaland" | "Odisha" | "Puducherry" | "Punjab" | "Rajasthan" | "Sikkim" | "Tamil Nadu" | "Telangana" | "Tripura" | "Uttar Pradesh" | "Uttarakhand" | "West Bengal") | null;
+            board: components["schemas"]["Board"] | null;
+            verified: boolean;
+        };
+        /** @description At most 20 schools, best match first (name starts with the query, verified first). */
+        SchoolSearch: {
+            schools: components["schemas"]["School"][];
+        };
+        SchoolPick: {
+            /** Format: uuid */
+            schoolId: string;
+        };
+        /** @description Find-or-create by normalised name + city (an existing school with the same name in the same city is reused). Names must not contain emails, links, handles, phone numbers or blocked words. */
+        SchoolCreate: {
+            name: string;
+            city: string;
+            state?: string;
+            board?: components["schemas"]["Board"];
+        };
+        /**
+         * @description set: a school is saved; not_set: none yet (the UI may prompt); consent_required: consent is not granted, so no school can be saved or shown (D-014).
+         * @enum {string}
+         */
+        SchoolStatus: "set" | "not_set" | "consent_required";
         GuestLesson: {
             chapter: string;
             part?: number;
@@ -8167,6 +8604,11 @@ export interface components {
             publicName: string;
             locale: string;
             consent: components["schemas"]["ConsentState"];
+            school: components["schemas"]["School"] | null;
+            weeklyGoal: {
+                target: number;
+                isDefault: boolean;
+            };
             methods: {
                 phone: string | null;
                 email: string | null;
@@ -8176,12 +8618,14 @@ export interface components {
             /** Format: date-time */
             createdAt: string;
         };
-        /** @description API-8: only these fields; role, status, xp, school, city etc. are rejected (400; D-039: no school or city). */
+        /** @description API-8: only these fields; role, status, xp, schoolId, city etc. are rejected (400). A school is saved through `school`, and only with consent granted (D-014). */
         PatchMe: {
             displayName?: string | null;
             board?: components["schemas"]["Board"];
             classLevel?: number;
             locale?: components["schemas"]["Locale"];
+            school?: (components["schemas"]["SchoolPick"] | components["schemas"]["SchoolCreate"]) | null;
+            weeklyGoal?: number | null;
         };
         DeleteMeResponse: {
             /** @constant */
@@ -9024,6 +9468,265 @@ export interface components {
                 awarded: boolean;
                 awardedAt: string | null;
             }[];
+        };
+        /** @description IST calendar days, both inclusive. */
+        DayRange: {
+            /** Format: date */
+            from: string;
+            /** Format: date */
+            to: string;
+        };
+        DashboardProfile: {
+            board: components["schemas"]["Board"] | null;
+            classLevel: number | null;
+            school: components["schemas"]["School"] | null;
+            schoolStatus: components["schemas"]["SchoolStatus"];
+            missing: ("board" | "classLevel" | "school")[];
+        };
+        AccuracyWindow: {
+            /** Format: date */
+            from: string;
+            /** Format: date */
+            to: string;
+            checked: number;
+            right: number;
+            accuracy: number | null;
+        };
+        DashboardTotals: {
+            solved: {
+                allTime: number;
+                thisWeek: number;
+                lastWeek: number;
+            };
+            answered: {
+                allTime: number;
+                thisWeek: number;
+                lastWeek: number;
+            };
+            accuracy: {
+                recent: components["schemas"]["AccuracyWindow"];
+                previous: components["schemas"]["AccuracyWindow"];
+            };
+            lessonsCompleted: {
+                allTime: number;
+                thisWeek: number;
+                lastWeek: number;
+            };
+            tests: {
+                submitted: {
+                    allTime: number;
+                    thisWeek: number;
+                    lastWeek: number;
+                };
+                distinctTests: number;
+                averagePct: number | null;
+                bestPct: number | null;
+            };
+            activeDays: {
+                thisWeek: number;
+                lastWeek: number;
+                allTime: number;
+            };
+        };
+        DashboardScope: {
+            /** @enum {string} */
+            kind: "class" | "activity" | "none";
+            board: components["schemas"]["Board"] | null;
+            classLevel: number | null;
+            subjectCount: number;
+            chapterCount: number;
+        };
+        /** @description LeetCode-style solved / total per difficulty band (1–2 easy, 3 medium, 4–5 hard). */
+        SolvedByDifficulty: {
+            all: {
+                solved: number;
+                total: number;
+            };
+            easy: {
+                solved: number;
+                total: number;
+            };
+            medium: {
+                solved: number;
+                total: number;
+            };
+            hard: {
+                solved: number;
+                total: number;
+            };
+        };
+        DashboardMastery: {
+            score: number;
+            chapterCount: number;
+            levels: {
+                not_started: number;
+                attempted: number;
+                familiar: number;
+                proficient: number;
+                mastered: number;
+            };
+        };
+        TestHistoryItem: {
+            /** Format: uuid */
+            attemptId: string;
+            testId: string;
+            title: string;
+            /** @enum {string} */
+            kind: "chapter" | "unit" | "term" | "full" | "live" | "custom";
+            subjectId: string;
+            subjectName: string;
+            /** Format: date-time */
+            submittedAt: string;
+            /** Format: date */
+            day: string;
+            autoSubmitted: boolean;
+            score: number;
+            maxScore: number;
+            percentage: number | null;
+            autoScore: number;
+            selfScore: number;
+            /** @enum {string} */
+            marking: "auto" | "self";
+            liveEventId: string | null;
+        };
+        /** @description Route parts for /learn/{board}/{classLevel}/{subjectSlug}/{chapterSlug}. */
+        ChapterLink: {
+            board: components["schemas"]["Board"];
+            classLevel: number;
+            subjectId: string;
+            subjectSlug: string;
+            chapterId: string;
+            chapterSlug: string;
+        };
+        FocusChapter: {
+            chapterId: string;
+            number: number;
+            title: string;
+            subjectId: string;
+            subjectName: string;
+            level: components["schemas"]["MasteryLevel"];
+            score: number;
+            firstTryAccuracy: number | null;
+            practiceAttempted: number;
+            practiceTotal: number;
+            chapterTestPct: number | null;
+            link: components["schemas"]["ChapterLink"];
+        };
+        RecentLessonEvent: {
+            /** @constant */
+            kind: "lesson";
+            id: string;
+            /** Format: date-time */
+            at: string;
+            /** Format: date */
+            day: string;
+            chapter: {
+                chapterId: string;
+                title: string;
+                subjectId: string;
+                subjectName: string;
+                link: components["schemas"]["ChapterLink"];
+            };
+            part: number;
+        };
+        RecentPracticeEvent: {
+            /** @constant */
+            kind: "practice";
+            id: string;
+            /** Format: date-time */
+            at: string;
+            /** Format: date */
+            day: string;
+            chapter: {
+                chapterId: string;
+                title: string;
+                subjectId: string;
+                subjectName: string;
+                link: components["schemas"]["ChapterLink"];
+            };
+            answered: number;
+            solved: number;
+        };
+        RecentTestEvent: {
+            /** @constant */
+            kind: "test";
+            id: string;
+            /** Format: date-time */
+            at: string;
+            /** Format: date */
+            day: string;
+            /** Format: uuid */
+            attemptId: string;
+            testId: string;
+            title: string;
+            /** @enum {string} */
+            testKind: "chapter" | "unit" | "term" | "full" | "live" | "custom";
+            percentage: number | null;
+        };
+        RecentBadgeEvent: {
+            /** @constant */
+            kind: "badge";
+            id: string;
+            /** Format: date-time */
+            at: string;
+            /** Format: date */
+            day: string;
+            badgeKey: string;
+            name: string;
+            icon: string;
+        };
+        /** @description A practice event groups one chapter’s answers on one IST day (`at` = the last answer). */
+        RecentEvent: components["schemas"]["RecentLessonEvent"] | components["schemas"]["RecentPracticeEvent"] | components["schemas"]["RecentTestEvent"] | components["schemas"]["RecentBadgeEvent"];
+        /** @description The unearned badge closest to being earned (streak badges count the current streak). */
+        NextBadge: {
+            key: string;
+            name: string;
+            description: string;
+            icon: string;
+            current: number;
+            target: number;
+            progress: number;
+        };
+        /** @description questions_solved: practice questions first solved this IST week (Monday–Sunday). */
+        WeeklyGoal: {
+            /** @enum {string} */
+            metric: "questions_solved";
+            target: number;
+            isDefault: boolean;
+            progress: number;
+            remaining: number;
+            met: boolean;
+            /** Format: date */
+            weekStart: string;
+            /** Format: date */
+            weekEnd: string;
+            daysLeft: number;
+        };
+        /** @description Your progress dashboard. Days and weeks are IST (Monday start). Level, XP and coins: GET /v1/me/card; streak and heatmap: GET /v1/me/activity; per-subject chapter levels: GET /v1/me/mastery. */
+        MyDashboard: {
+            /** @constant */
+            timezone: "Asia/Kolkata";
+            /** Format: date */
+            today: string;
+            thisWeek: components["schemas"]["DayRange"];
+            lastWeek: components["schemas"]["DayRange"];
+            profile: components["schemas"]["DashboardProfile"];
+            totals: components["schemas"]["DashboardTotals"];
+            scope: components["schemas"]["DashboardScope"];
+            solvedByDifficulty: components["schemas"]["SolvedByDifficulty"];
+            mastery: components["schemas"]["DashboardMastery"];
+            testHistory: components["schemas"]["TestHistoryItem"][];
+            focus: {
+                weakest: components["schemas"]["FocusChapter"][];
+                strongest: components["schemas"]["FocusChapter"][];
+            };
+            recent: components["schemas"]["RecentEvent"][];
+            badges: {
+                earned: number;
+                total: number;
+                next: components["schemas"]["NextBadge"] | null;
+            };
+            weeklyGoal: components["schemas"]["WeeklyGoal"];
         };
         ContentReportRequest: {
             chapterId?: string;
