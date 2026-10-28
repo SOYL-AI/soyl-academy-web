@@ -195,6 +195,8 @@ describe('allJobs', () => {
         [JOB_NAMES.leaguesWeekly]: { closed: 0, week: expect.stringMatching(/^\d{4}-\d{2}-\d{2}$/), students: 0, leaguesCreated: 0 },
         [JOB_NAMES.aiCostGuardrail]: { actions: [], alerts: 0, invariants: { negativeBalances: [], unresolvedExpired: 0, doubleResolved: 0 } },
         [JOB_NAMES.uploadsPurgeDeleted]: { purged: 0, failed: 0 },
+        [JOB_NAMES.coinsLiveRankAwards]: { events: 0, awarded: 0, coins: 0, skippedNoConsent: 0 },
+        [JOB_NAMES.coinsHousekeeping]: { addressesErased: 0, cancelled: 0 },
       };
       const empty =
         job.name in emptyAi ? emptyAi[job.name] : job.name === JOB_NAMES.attemptsAutoSubmit ? { submitted: 0, failed: 0 } : job.name === JOB_NAMES.liveFinalize ? { events: 0, autoSubmitted: 0, ranked: 0 } : job.name === JOB_NAMES.billingReconcile ? { skipped: 'no_provider' } : job.name === JOB_NAMES.billingExpire ? { ordersExpired: 0, subscriptionsResynced: 0, entitlementsLapsed: 0, errors: 0 } : { deleted: 0 };

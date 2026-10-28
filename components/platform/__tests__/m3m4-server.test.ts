@@ -18,7 +18,7 @@ describe('CSP per page (WEB-1, WEB-3, ADR-018 §4)', () => {
     expect(plans).toContain('frame-src https://api.razorpay.com https://checkout.razorpay.com');
     expect(plans).toContain("connect-src 'self' https://api.razorpay.com https://lumberjack.razorpay.com");
     expect(plans).toContain('https://cdn.razorpay.com');
-    for (const path of ['/learn', '/tests', '/tests/series/cbse/10/science', '/ask', '/me', '/plansx', '/leaderboard']) {
+    for (const path of ['/learn', '/tests', '/tests/series/cbse/10/science', '/ask', '/me', '/plansx', '/leaderboard', '/coins', '/store']) {
       const csp = buildCsp({ pathname: path, nonce: usesNonce(path) ? 'n' : undefined });
       expect(csp, path).not.toContain('razorpay');
       expect(csp, path).toContain("frame-src 'none'");
@@ -33,13 +33,14 @@ describe('CSP per page (WEB-1, WEB-3, ADR-018 §4)', () => {
     expect(buildCsp({ pathname: '/ask', nonce: 'n', uploadOrigin: `${blob}/uploads-quarantine` })).toContain(`connect-src 'self' ${blob};`);
     expect(buildCsp({ pathname: '/tests/builder', nonce: 'n', uploadOrigin: blob })).toContain(`connect-src 'self' ${blob};`);
     expect(buildCsp({ pathname: '/learn', uploadOrigin: blob })).toContain("connect-src 'self';");
+    expect(buildCsp({ pathname: '/store', nonce: 'n', uploadOrigin: blob })).toContain("connect-src 'self';");
     expect(uploadOriginFrom('http://evil.example')).toBeNull();
     expect(uploadOriginFrom('http://127.0.0.1:8799/x')).toBe('http://127.0.0.1:8799');
     expect(uploadOriginFrom('not a url')).toBeNull();
   });
 
   it('logged-in M3/M4 pages use the nonce policy', () => {
-    for (const p of ['/tests/attempt/x', '/tests/result/x', '/tests/builder', '/tests/live/e', '/ask', '/leaderboard']) expect(usesNonce(p), p).toBe(true);
+    for (const p of ['/tests/attempt/x', '/tests/result/x', '/tests/builder', '/tests/live/e', '/ask', '/leaderboard', '/coins', '/store']) expect(usesNonce(p), p).toBe(true);
     // S6-L03: the catalogue, series pages and /plans render per request under the nonce policy too.
     for (const p of ['/tests', '/tests/series/cbse/10/science', '/plans', '/plans/x']) expect(usesNonce(p), p).toBe(true);
     for (const p of ['/learn/cbse/10', '/testsx', '/plansx']) expect(usesNonce(p), p).toBe(false);

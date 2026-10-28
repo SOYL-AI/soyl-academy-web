@@ -1,0 +1,279 @@
+/* SOYL Coins: header chip, check-in, /coins, the daily challenge card. Mobile-first at 360 px; camelCase
+   class names (Tailwind leak rule, ui/README). The coin gold is decorative; text stays on --p-* tokens. */
+.coinIcon {
+  color: #b08a00;
+  flex: none;
+}
+.small {
+  margin: 0;
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-sm);
+}
+.muted {
+  margin: 0 0 var(--p-space-3);
+  color: var(--p-ink-muted);
+}
+.errorText {
+  margin: var(--p-space-2) 0 0;
+  color: var(--p-danger);
+  font-size: var(--p-text-sm);
+  font-weight: 500;
+}
+.stack {
+  display: grid;
+  gap: var(--p-space-4);
+  margin-top: var(--p-space-5);
+}
+
+/* Header chip */
+.chip {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 2px;
+  min-height: var(--p-touch);
+  padding: 0 6px;
+  border: 1px solid var(--p-border-strong);
+  border-radius: var(--p-radius-pill);
+  background: var(--p-surface);
+  color: var(--p-ink);
+  font-size: var(--p-text-sm);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.chip:focus-visible {
+  outline: none;
+  box-shadow: var(--p-focus-ring);
+}
+.chipIcon {
+  color: #b08a00;
+}
+.chipDot {
+  position: absolute;
+  top: 6px;
+  right: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--p-danger);
+  box-shadow: 0 0 0 2px var(--p-surface);
+}
+@media (min-width: 420px) {
+  .chip {
+    gap: var(--p-space-1);
+    padding: 0 var(--p-space-3);
+  }
+}
+
+/* Check-in */
+.checkIn {
+  display: grid;
+  gap: var(--p-space-2);
+  margin-top: var(--p-space-3);
+}
+.checkInCompact {
+  margin-top: var(--p-space-2);
+}
+.checkInRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-3);
+}
+.streak {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-1);
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+  font-weight: 600;
+}
+.flameIcon {
+  color: #c2410c;
+}
+
+/* /coins hero */
+.hero {
+  display: grid;
+  gap: var(--p-space-2);
+  padding: var(--p-space-5) var(--p-space-4);
+  border-radius: var(--p-radius-lg);
+  background: linear-gradient(135deg, #10131f 0%, #1d2766 70%, #2f3e9e 100%);
+  color: #f4f0e7;
+}
+.heroBalance {
+  display: flex;
+  align-items: baseline;
+  gap: var(--p-space-2);
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.heroCoin {
+  align-self: center;
+  color: #f2d45c;
+}
+.heroUnit {
+  font-size: var(--p-text-lg);
+  font-weight: 600;
+  color: #d9d5ca;
+}
+.heroMeta {
+  margin: 0;
+  color: #d9d5ca;
+  font-size: var(--p-text-sm);
+}
+.heroLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-2);
+  justify-self: start;
+  min-height: var(--p-touch);
+  padding: 0 var(--p-space-4);
+  border-radius: var(--p-radius-pill);
+  background: #f2d45c;
+  color: #171717;
+  font-weight: 700;
+  text-decoration: none;
+}
+.heroLink:focus-visible {
+  outline: 3px solid #f4f0e7;
+  outline-offset: 2px;
+}
+
+/* How to earn */
+.earnList,
+.historyList,
+.milestones,
+.challengeList {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.earnRow,
+.historyRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--p-space-1) var(--p-space-3);
+  padding: var(--p-space-2) 0;
+  border-top: 1px solid var(--p-border);
+}
+.earnLabel {
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+.earnCoins {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-1);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.capTag {
+  padding: 0 var(--p-space-2);
+  border-radius: var(--p-radius-pill);
+  background: var(--p-surface-2);
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-xs);
+  font-weight: 600;
+}
+
+/* History */
+.historyMain {
+  display: grid;
+  min-width: 0;
+}
+.historyLabel {
+  font-weight: 600;
+}
+.historyAmount {
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+.plus {
+  color: var(--p-success);
+}
+.minus {
+  color: var(--p-danger);
+}
+
+/* Milestones */
+.milestones {
+  margin-top: var(--p-space-3);
+}
+.milestone {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-2);
+  padding: var(--p-space-2) 0;
+  border-top: 1px solid var(--p-border);
+  color: var(--p-ink-muted);
+}
+.milestoneDone {
+  color: var(--p-ink);
+}
+
+/* Daily challenge (learn hub) */
+.challenge {
+  display: grid;
+  gap: var(--p-space-2);
+  margin-top: var(--p-space-5);
+  padding: var(--p-space-4);
+  border: 1px solid var(--p-border-strong);
+  border-left: 4px solid #b08a00;
+  border-radius: var(--p-radius-lg);
+  background: var(--p-surface);
+}
+.challengeHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--p-space-2);
+}
+.challengeTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-2);
+  margin: 0;
+  font-size: var(--p-text-lg);
+  font-weight: 700;
+}
+.challengeLead {
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.challengeList {
+  margin-top: var(--p-space-2);
+}
+.challengeItem {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-2);
+  padding: var(--p-space-2) 0;
+  border-top: 1px solid var(--p-border);
+}
+.challengeMain {
+  display: grid;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.challengeSubject {
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+.solverDialog {
+  max-width: 720px;
+}

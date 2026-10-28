@@ -79,6 +79,8 @@ export function toReveal(item: AttemptResultItem): PracticeAnswerResult | null {
     xpAwarded: 0,
     badgesAwarded: [],
     streak: null,
+    coinsAwarded: 0,
+    coinAwards: [],
   };
 }
 

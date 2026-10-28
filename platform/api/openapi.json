@@ -2171,6 +2171,806 @@
           "chapters"
         ]
       },
+      "CoinEarnSourceInput": {
+        "type": "string",
+        "enum": [
+          "checkin",
+          "checkin_streak",
+          "daily_challenge",
+          "solved_milestone",
+          "chapter_mastered",
+          "test_submitted",
+          "perfect_paper",
+          "live_participation",
+          "live_rank",
+          "league_promotion",
+          "league_top_finish"
+        ]
+      },
+      "CoinAwardInput": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "$ref": "#/components/schemas/CoinEarnSourceInput"
+          },
+          "amount": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "cappedOut": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "source",
+          "amount",
+          "cappedOut"
+        ]
+      },
+      "CoinsSummaryInput": {
+        "type": "object",
+        "properties": {
+          "balance": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "lifetimeEarned": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "today": {
+            "type": "object",
+            "properties": {
+              "day": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+              },
+              "earnedCapped": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "cap": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "remaining": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "earnedTotal": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "resetsAt": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              }
+            },
+            "required": [
+              "day",
+              "earnedCapped",
+              "cap",
+              "remaining",
+              "earnedTotal",
+              "resetsAt"
+            ]
+          },
+          "checkIn": {
+            "type": "object",
+            "properties": {
+              "checkedInToday": {
+                "type": "boolean"
+              },
+              "current": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "longest": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "coins": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "nextBonus": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "everyDays": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "coins": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "inDays": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      }
+                    },
+                    "required": [
+                      "everyDays",
+                      "coins",
+                      "inDays"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "checkedInToday",
+              "current",
+              "longest",
+              "coins",
+              "nextBonus"
+            ]
+          },
+          "solved": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "milestones": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "solved": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "coins": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "reached": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "solved",
+                    "coins",
+                    "reached"
+                  ]
+                }
+              },
+              "next": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "solved": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "coins": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "reached": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "solved",
+                      "coins",
+                      "reached"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "count",
+              "milestones",
+              "next"
+            ]
+          },
+          "chaptersMastered": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "equipped": {
+            "type": "object",
+            "properties": {
+              "frame": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "theme": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "frame",
+              "theme"
+            ]
+          }
+        },
+        "required": [
+          "balance",
+          "lifetimeEarned",
+          "today",
+          "checkIn",
+          "solved",
+          "chaptersMastered",
+          "equipped"
+        ]
+      },
+      "CoinHistoryInput": {
+        "type": "object",
+        "properties": {
+          "entries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "earn",
+                    "redeem",
+                    "refund",
+                    "adjust"
+                  ]
+                },
+                "source": {
+                  "type": "string",
+                  "enum": [
+                    "checkin",
+                    "checkin_streak",
+                    "daily_challenge",
+                    "solved_milestone",
+                    "chapter_mastered",
+                    "test_submitted",
+                    "perfect_paper",
+                    "live_participation",
+                    "live_rank",
+                    "league_promotion",
+                    "league_top_finish",
+                    "redemption",
+                    "admin"
+                  ]
+                },
+                "amount": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "balanceAfter": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "istDay": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+                },
+                "cappedOut": {
+                  "type": "boolean"
+                },
+                "redemptionId": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "uuid",
+                      "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "detail": {
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string"
+                  },
+                  "additionalProperties": {
+                    "type": [
+                      "string",
+                      "number",
+                      "boolean",
+                      "null"
+                    ]
+                  }
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                }
+              },
+              "required": [
+                "id",
+                "kind",
+                "source",
+                "amount",
+                "balanceAfter",
+                "istDay",
+                "cappedOut",
+                "redemptionId",
+                "detail",
+                "createdAt"
+              ]
+            }
+          },
+          "nextCursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "entries",
+          "nextCursor"
+        ]
+      },
+      "CoinCheckInInput": {
+        "type": "object",
+        "properties": {
+          "day": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "alreadyCheckedIn": {
+            "type": "boolean"
+          },
+          "streak": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "longest": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "coinsAwarded": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "awards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CoinAwardInput"
+            }
+          },
+          "balance": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "day",
+          "alreadyCheckedIn",
+          "streak",
+          "longest",
+          "coinsAwarded",
+          "awards",
+          "balance"
+        ]
+      },
+      "StoreItemStateInput": {
+        "type": "string",
+        "enum": [
+          "available",
+          "sign_in",
+          "insufficient_coins",
+          "locked",
+          "owned",
+          "limit_reached",
+          "sold_out",
+          "upcoming",
+          "ended",
+          "coming_soon",
+          "verification_needed",
+          "consent_needed"
+        ]
+      },
+      "CoinStoreInput": {
+        "type": "object",
+        "properties": {
+          "balance": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "redemptionEnabled": {
+            "type": "boolean"
+          },
+          "physicalRedemptionEnabled": {
+            "type": "boolean"
+          },
+          "consentStatus": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "required",
+                  "pending",
+                  "granted",
+                  "revoked"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "verified": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "digital",
+                    "physical"
+                  ]
+                },
+                "slot": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "frame",
+                        "theme"
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "priceCoins": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "stock": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "remaining": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "availableFrom": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "availableUntil": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "eligibilityLabel": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "eligible": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
+                },
+                "owned": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "maxPerUser": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "state": {
+                  "$ref": "#/components/schemas/StoreItemStateInput"
+                }
+              },
+              "required": [
+                "key",
+                "name",
+                "description",
+                "image",
+                "type",
+                "slot",
+                "priceCoins",
+                "stock",
+                "remaining",
+                "availableFrom",
+                "availableUntil",
+                "eligibilityLabel",
+                "eligible",
+                "owned",
+                "maxPerUser",
+                "state"
+              ]
+            }
+          }
+        },
+        "required": [
+          "balance",
+          "redemptionEnabled",
+          "physicalRedemptionEnabled",
+          "consentStatus",
+          "verified",
+          "items"
+        ]
+      },
+      "CoinRedemptionInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "itemKey": {
+            "type": "string"
+          },
+          "itemName": {
+            "type": "string"
+          },
+          "itemType": {
+            "type": "string",
+            "enum": [
+              "digital",
+              "physical"
+            ]
+          },
+          "priceCoins": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "requested",
+              "parent_approval_pending",
+              "approved",
+              "fulfilled",
+              "cancelled",
+              "refunded"
+            ]
+          },
+          "statusReason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "addressOnFile": {
+            "type": "boolean"
+          },
+          "trackingRef": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          }
+        },
+        "required": [
+          "id",
+          "itemKey",
+          "itemName",
+          "itemType",
+          "priceCoins",
+          "status",
+          "statusReason",
+          "addressOnFile",
+          "trackingRef",
+          "createdAt",
+          "updatedAt"
+        ]
+      },
+      "ShippingAddressInput": {
+        "type": "object",
+        "properties": {
+          "recipientName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80,
+            "pattern": "^[^<>{}\\u0000-\\u001f]*$"
+          },
+          "line1": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120,
+            "pattern": "^[^<>{}\\u0000-\\u001f]*$"
+          },
+          "line2": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120,
+                "pattern": "^[^<>{}\\u0000-\\u001f]*$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "city": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60,
+            "pattern": "^[^<>{}\\u0000-\\u001f]*$"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "Andaman and Nicobar Islands",
+              "Andhra Pradesh",
+              "Arunachal Pradesh",
+              "Assam",
+              "Bihar",
+              "Chandigarh",
+              "Chhattisgarh",
+              "Dadra and Nagar Haveli and Daman and Diu",
+              "Delhi",
+              "Goa",
+              "Gujarat",
+              "Haryana",
+              "Himachal Pradesh",
+              "Jammu and Kashmir",
+              "Jharkhand",
+              "Karnataka",
+              "Kerala",
+              "Ladakh",
+              "Lakshadweep",
+              "Madhya Pradesh",
+              "Maharashtra",
+              "Manipur",
+              "Meghalaya",
+              "Mizoram",
+              "Nagaland",
+              "Odisha",
+              "Puducherry",
+              "Punjab",
+              "Rajasthan",
+              "Sikkim",
+              "Tamil Nadu",
+              "Telangana",
+              "Tripura",
+              "Uttar Pradesh",
+              "Uttarakhand",
+              "West Bengal"
+            ]
+          },
+          "pincode": {
+            "type": "string",
+            "pattern": "^[1-9]\\d{5}$"
+          },
+          "phone": {
+            "type": "string",
+            "pattern": "^\\+91[6-9]\\d{9}$"
+          }
+        },
+        "required": [
+          "recipientName",
+          "line1",
+          "city",
+          "state",
+          "pincode",
+          "phone"
+        ],
+        "additionalProperties": false
+      },
       "PracticePartResponseInput": {
         "anyOf": [
           {
@@ -2643,6 +3443,17 @@
                 "type": "null"
               }
             ]
+          },
+          "coinsAwarded": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "coinAwards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CoinAwardInput"
+            }
           }
         },
         "required": [
@@ -2661,7 +3472,9 @@
           "answerId",
           "xpAwarded",
           "badgesAwarded",
-          "streak"
+          "streak",
+          "coinsAwarded",
+          "coinAwards"
         ]
       },
       "PracticePageInput": {
@@ -5386,6 +6199,17 @@
                 "type": "null"
               }
             ]
+          },
+          "coinsAwarded": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "coinAwards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CoinAwardInput"
+            }
           }
         },
         "required": [
@@ -5399,7 +6223,9 @@
           "pendingSelfEvaluation",
           "xpAwarded",
           "badgesAwarded",
-          "streak"
+          "streak",
+          "coinsAwarded",
+          "coinAwards"
         ]
       },
       "AttemptResultInput": {
@@ -8128,6 +8954,225 @@
           "outcome"
         ]
       },
+      "DailyChallengeInput": {
+        "type": "object",
+        "properties": {
+          "day": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "resetsAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "coins": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "awardsPerDay": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "earnedToday": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "board": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "cbse",
+                  "cisce"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "classLevel": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "class_required"
+            ]
+          },
+          "challenges": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "subjectId": {
+                  "type": "string"
+                },
+                "subjectName": {
+                  "type": "string"
+                },
+                "chapterId": {
+                  "type": "string"
+                },
+                "chapterTitle": {
+                  "type": "string"
+                },
+                "question": {
+                  "$ref": "#/components/schemas/StudentQuestionInput"
+                },
+                "solved": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "subjectId",
+                "subjectName",
+                "chapterId",
+                "chapterTitle",
+                "question",
+                "solved"
+              ]
+            }
+          }
+        },
+        "required": [
+          "day",
+          "resetsAt",
+          "coins",
+          "awardsPerDay",
+          "earnedToday",
+          "board",
+          "classLevel",
+          "status",
+          "challenges"
+        ]
+      },
+      "AdminCoinRedemptionInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "itemKey": {
+            "type": "string"
+          },
+          "itemName": {
+            "type": "string"
+          },
+          "itemType": {
+            "type": "string",
+            "enum": [
+              "digital",
+              "physical"
+            ]
+          },
+          "priceCoins": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "requested",
+              "parent_approval_pending",
+              "approved",
+              "fulfilled",
+              "cancelled",
+              "refunded"
+            ]
+          },
+          "statusReason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "addressOnFile": {
+            "type": "boolean"
+          },
+          "trackingRef": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "student": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid",
+                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "address": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ShippingAddressInput"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "itemKey",
+          "itemName",
+          "itemType",
+          "priceCoins",
+          "status",
+          "statusReason",
+          "addressOnFile",
+          "trackingRef",
+          "createdAt",
+          "updatedAt",
+          "student",
+          "address"
+        ]
+      },
       "PracticeSelfAssessRequestInput": {
         "type": "object",
         "properties": {
@@ -8155,6 +9200,72 @@
         },
         "required": [
           "events"
+        ]
+      },
+      "CoinRedeemResultInput": {
+        "type": "object",
+        "properties": {
+          "redemption": {
+            "$ref": "#/components/schemas/CoinRedemptionInput"
+          },
+          "balance": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "redemption",
+          "balance"
+        ]
+      },
+      "CoinRedemptionsInput": {
+        "type": "object",
+        "properties": {
+          "redemptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CoinRedemptionInput"
+            }
+          }
+        },
+        "required": [
+          "redemptions"
+        ]
+      },
+      "CoinEquippedInput": {
+        "type": "object",
+        "properties": {
+          "frame": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "theme": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "frame",
+          "theme"
+        ]
+      },
+      "AdminCoinRedemptionsInput": {
+        "type": "object",
+        "properties": {
+          "redemptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminCoinRedemptionInput"
+            }
+          }
+        },
+        "required": [
+          "redemptions"
         ]
       },
       "Problem": {
@@ -10375,6 +11486,821 @@
         ],
         "additionalProperties": false
       },
+      "CoinEarnSource": {
+        "type": "string",
+        "enum": [
+          "checkin",
+          "checkin_streak",
+          "daily_challenge",
+          "solved_milestone",
+          "chapter_mastered",
+          "test_submitted",
+          "perfect_paper",
+          "live_participation",
+          "live_rank",
+          "league_promotion",
+          "league_top_finish"
+        ]
+      },
+      "CoinAward": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "$ref": "#/components/schemas/CoinEarnSource"
+          },
+          "amount": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "cappedOut": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "source",
+          "amount",
+          "cappedOut"
+        ],
+        "additionalProperties": false
+      },
+      "CoinsSummary": {
+        "type": "object",
+        "properties": {
+          "balance": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "lifetimeEarned": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "today": {
+            "type": "object",
+            "properties": {
+              "day": {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+              },
+              "earnedCapped": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "cap": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "remaining": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "earnedTotal": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "resetsAt": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              }
+            },
+            "required": [
+              "day",
+              "earnedCapped",
+              "cap",
+              "remaining",
+              "earnedTotal",
+              "resetsAt"
+            ],
+            "additionalProperties": false
+          },
+          "checkIn": {
+            "type": "object",
+            "properties": {
+              "checkedInToday": {
+                "type": "boolean"
+              },
+              "current": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "longest": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "coins": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "nextBonus": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "everyDays": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "coins": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "inDays": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      }
+                    },
+                    "required": [
+                      "everyDays",
+                      "coins",
+                      "inDays"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "checkedInToday",
+              "current",
+              "longest",
+              "coins",
+              "nextBonus"
+            ],
+            "additionalProperties": false
+          },
+          "solved": {
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "milestones": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "solved": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "coins": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "reached": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "solved",
+                    "coins",
+                    "reached"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "next": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "solved": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "coins": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "reached": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "solved",
+                      "coins",
+                      "reached"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "count",
+              "milestones",
+              "next"
+            ],
+            "additionalProperties": false
+          },
+          "chaptersMastered": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "equipped": {
+            "type": "object",
+            "properties": {
+              "frame": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "theme": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "frame",
+              "theme"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "balance",
+          "lifetimeEarned",
+          "today",
+          "checkIn",
+          "solved",
+          "chaptersMastered",
+          "equipped"
+        ],
+        "additionalProperties": false
+      },
+      "CoinHistory": {
+        "type": "object",
+        "properties": {
+          "entries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "earn",
+                    "redeem",
+                    "refund",
+                    "adjust"
+                  ]
+                },
+                "source": {
+                  "type": "string",
+                  "enum": [
+                    "checkin",
+                    "checkin_streak",
+                    "daily_challenge",
+                    "solved_milestone",
+                    "chapter_mastered",
+                    "test_submitted",
+                    "perfect_paper",
+                    "live_participation",
+                    "live_rank",
+                    "league_promotion",
+                    "league_top_finish",
+                    "redemption",
+                    "admin"
+                  ]
+                },
+                "amount": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "balanceAfter": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "istDay": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+                },
+                "cappedOut": {
+                  "type": "boolean"
+                },
+                "redemptionId": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "format": "uuid",
+                      "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "detail": {
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string"
+                  },
+                  "additionalProperties": {
+                    "type": [
+                      "string",
+                      "number",
+                      "boolean",
+                      "null"
+                    ]
+                  }
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                }
+              },
+              "required": [
+                "id",
+                "kind",
+                "source",
+                "amount",
+                "balanceAfter",
+                "istDay",
+                "cappedOut",
+                "redemptionId",
+                "detail",
+                "createdAt"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "nextCursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "entries",
+          "nextCursor"
+        ],
+        "additionalProperties": false
+      },
+      "CoinCheckIn": {
+        "type": "object",
+        "properties": {
+          "day": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "alreadyCheckedIn": {
+            "type": "boolean"
+          },
+          "streak": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "longest": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "coinsAwarded": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "awards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CoinAward"
+            }
+          },
+          "balance": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "day",
+          "alreadyCheckedIn",
+          "streak",
+          "longest",
+          "coinsAwarded",
+          "awards",
+          "balance"
+        ],
+        "additionalProperties": false
+      },
+      "StoreItemState": {
+        "type": "string",
+        "enum": [
+          "available",
+          "sign_in",
+          "insufficient_coins",
+          "locked",
+          "owned",
+          "limit_reached",
+          "sold_out",
+          "upcoming",
+          "ended",
+          "coming_soon",
+          "verification_needed",
+          "consent_needed"
+        ]
+      },
+      "CoinStore": {
+        "type": "object",
+        "properties": {
+          "balance": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "redemptionEnabled": {
+            "type": "boolean"
+          },
+          "physicalRedemptionEnabled": {
+            "type": "boolean"
+          },
+          "consentStatus": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "required",
+                  "pending",
+                  "granted",
+                  "revoked"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "verified": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "digital",
+                    "physical"
+                  ]
+                },
+                "slot": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "enum": [
+                        "frame",
+                        "theme"
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "priceCoins": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "stock": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "remaining": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "availableFrom": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "availableUntil": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "eligibilityLabel": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "eligible": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
+                },
+                "owned": {
+                  "anyOf": [
+                    {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "maxPerUser": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "state": {
+                  "$ref": "#/components/schemas/StoreItemState"
+                }
+              },
+              "required": [
+                "key",
+                "name",
+                "description",
+                "image",
+                "type",
+                "slot",
+                "priceCoins",
+                "stock",
+                "remaining",
+                "availableFrom",
+                "availableUntil",
+                "eligibilityLabel",
+                "eligible",
+                "owned",
+                "maxPerUser",
+                "state"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "balance",
+          "redemptionEnabled",
+          "physicalRedemptionEnabled",
+          "consentStatus",
+          "verified",
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "CoinRedemption": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "itemKey": {
+            "type": "string"
+          },
+          "itemName": {
+            "type": "string"
+          },
+          "itemType": {
+            "type": "string",
+            "enum": [
+              "digital",
+              "physical"
+            ]
+          },
+          "priceCoins": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "requested",
+              "parent_approval_pending",
+              "approved",
+              "fulfilled",
+              "cancelled",
+              "refunded"
+            ]
+          },
+          "statusReason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "addressOnFile": {
+            "type": "boolean"
+          },
+          "trackingRef": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          }
+        },
+        "required": [
+          "id",
+          "itemKey",
+          "itemName",
+          "itemType",
+          "priceCoins",
+          "status",
+          "statusReason",
+          "addressOnFile",
+          "trackingRef",
+          "createdAt",
+          "updatedAt"
+        ],
+        "additionalProperties": false
+      },
+      "ShippingAddress": {
+        "type": "object",
+        "properties": {
+          "recipientName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80,
+            "pattern": "^[^<>{}\\u0000-\\u001f]*$"
+          },
+          "line1": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120,
+            "pattern": "^[^<>{}\\u0000-\\u001f]*$"
+          },
+          "line2": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120,
+                "pattern": "^[^<>{}\\u0000-\\u001f]*$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "city": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60,
+            "pattern": "^[^<>{}\\u0000-\\u001f]*$"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "Andaman and Nicobar Islands",
+              "Andhra Pradesh",
+              "Arunachal Pradesh",
+              "Assam",
+              "Bihar",
+              "Chandigarh",
+              "Chhattisgarh",
+              "Dadra and Nagar Haveli and Daman and Diu",
+              "Delhi",
+              "Goa",
+              "Gujarat",
+              "Haryana",
+              "Himachal Pradesh",
+              "Jammu and Kashmir",
+              "Jharkhand",
+              "Karnataka",
+              "Kerala",
+              "Ladakh",
+              "Lakshadweep",
+              "Madhya Pradesh",
+              "Maharashtra",
+              "Manipur",
+              "Meghalaya",
+              "Mizoram",
+              "Nagaland",
+              "Odisha",
+              "Puducherry",
+              "Punjab",
+              "Rajasthan",
+              "Sikkim",
+              "Tamil Nadu",
+              "Telangana",
+              "Tripura",
+              "Uttar Pradesh",
+              "Uttarakhand",
+              "West Bengal"
+            ]
+          },
+          "pincode": {
+            "type": "string",
+            "pattern": "^[1-9]\\d{5}$"
+          },
+          "phone": {
+            "type": "string",
+            "pattern": "^\\+91[6-9]\\d{9}$"
+          }
+        },
+        "required": [
+          "recipientName",
+          "line1",
+          "city",
+          "state",
+          "pincode",
+          "phone"
+        ],
+        "additionalProperties": false
+      },
       "PracticePartResponse": {
         "anyOf": [
           {
@@ -10853,6 +12779,17 @@
                 "type": "null"
               }
             ]
+          },
+          "coinsAwarded": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "coinAwards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CoinAward"
+            }
           }
         },
         "required": [
@@ -10871,7 +12808,9 @@
           "answerId",
           "xpAwarded",
           "badgesAwarded",
-          "streak"
+          "streak",
+          "coinsAwarded",
+          "coinAwards"
         ],
         "additionalProperties": false
       },
@@ -13660,6 +15599,17 @@
                 "type": "null"
               }
             ]
+          },
+          "coinsAwarded": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "coinAwards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CoinAward"
+            }
           }
         },
         "required": [
@@ -13673,7 +15623,9 @@
           "pendingSelfEvaluation",
           "xpAwarded",
           "badgesAwarded",
-          "streak"
+          "streak",
+          "coinsAwarded",
+          "coinAwards"
         ],
         "additionalProperties": false
       },
@@ -16462,6 +18414,228 @@
         ],
         "additionalProperties": false
       },
+      "DailyChallenge": {
+        "type": "object",
+        "properties": {
+          "day": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "resetsAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "coins": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "awardsPerDay": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "earnedToday": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "board": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "cbse",
+                  "cisce"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "classLevel": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "class_required"
+            ]
+          },
+          "challenges": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "subjectId": {
+                  "type": "string"
+                },
+                "subjectName": {
+                  "type": "string"
+                },
+                "chapterId": {
+                  "type": "string"
+                },
+                "chapterTitle": {
+                  "type": "string"
+                },
+                "question": {
+                  "$ref": "#/components/schemas/StudentQuestion"
+                },
+                "solved": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "subjectId",
+                "subjectName",
+                "chapterId",
+                "chapterTitle",
+                "question",
+                "solved"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "day",
+          "resetsAt",
+          "coins",
+          "awardsPerDay",
+          "earnedToday",
+          "board",
+          "classLevel",
+          "status",
+          "challenges"
+        ],
+        "additionalProperties": false
+      },
+      "AdminCoinRedemption": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "itemKey": {
+            "type": "string"
+          },
+          "itemName": {
+            "type": "string"
+          },
+          "itemType": {
+            "type": "string",
+            "enum": [
+              "digital",
+              "physical"
+            ]
+          },
+          "priceCoins": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "requested",
+              "parent_approval_pending",
+              "approved",
+              "fulfilled",
+              "cancelled",
+              "refunded"
+            ]
+          },
+          "statusReason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "addressOnFile": {
+            "type": "boolean"
+          },
+          "trackingRef": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "student": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid",
+                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "address": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ShippingAddress"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "itemKey",
+          "itemName",
+          "itemType",
+          "priceCoins",
+          "status",
+          "statusReason",
+          "addressOnFile",
+          "trackingRef",
+          "createdAt",
+          "updatedAt",
+          "student",
+          "address"
+        ],
+        "additionalProperties": false
+      },
       "PracticeSelfAssessRequest": {
         "type": "object",
         "properties": {
@@ -16489,6 +18663,76 @@
         },
         "required": [
           "events"
+        ],
+        "additionalProperties": false
+      },
+      "CoinRedeemResult": {
+        "type": "object",
+        "properties": {
+          "redemption": {
+            "$ref": "#/components/schemas/CoinRedemption"
+          },
+          "balance": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "redemption",
+          "balance"
+        ],
+        "additionalProperties": false
+      },
+      "CoinRedemptions": {
+        "type": "object",
+        "properties": {
+          "redemptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CoinRedemption"
+            }
+          }
+        },
+        "required": [
+          "redemptions"
+        ],
+        "additionalProperties": false
+      },
+      "CoinEquipped": {
+        "type": "object",
+        "properties": {
+          "frame": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "theme": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "frame",
+          "theme"
+        ],
+        "additionalProperties": false
+      },
+      "AdminCoinRedemptions": {
+        "type": "object",
+        "properties": {
+          "redemptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminCoinRedemption"
+            }
+          }
+        },
+        "required": [
+          "redemptions"
         ],
         "additionalProperties": false
       }
@@ -20872,6 +23116,873 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AiConversationDetail"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/coins": {
+      "get": {
+        "summary": "Your SOYL Coins: balance, today against the daily cap, check-in streak, milestones",
+        "tags": [
+          "coins"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoinsSummary"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/coins/history": {
+      "get": {
+        "summary": "Your coin history (earned, redeemed, refunded), newest first",
+        "tags": [
+          "coins"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "in": "query",
+            "name": "cursor",
+            "required": false
+          },
+          {
+            "schema": {
+              "default": 30,
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            },
+            "in": "query",
+            "name": "limit",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoinHistory"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/coins/check-in": {
+      "post": {
+        "summary": "Daily check-in (once per IST day; idempotent)",
+        "tags": [
+          "coins"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoinCheckIn"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/coins/daily-challenge": {
+      "get": {
+        "summary": "Today's daily challenge question for each subject of a board and class (defaults to your profile)",
+        "tags": [
+          "coins"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "cbse",
+                "cisce"
+              ]
+            },
+            "in": "query",
+            "name": "board",
+            "required": false
+          },
+          {
+            "schema": {
+              "type": "integer",
+              "minimum": 7,
+              "maximum": 12
+            },
+            "in": "query",
+            "name": "class",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DailyChallenge"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/coins/store": {
+      "get": {
+        "summary": "The SOYL store: items, prices, drops and what you can redeem",
+        "tags": [
+          "coins"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoinStore"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/coins/redeem": {
+      "post": {
+        "summary": "Redeem coins for an item. Digital items are granted at once; merch needs a verified account, parent consent and redemption switched on, then an address.",
+        "tags": [
+          "coins"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "itemKey": {
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 64,
+                    "pattern": "^[a-z0-9][a-z0-9-]*$"
+                  }
+                },
+                "required": [
+                  "itemKey"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoinRedeemResult"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/coins/redemptions": {
+      "get": {
+        "summary": "Your redemptions",
+        "tags": [
+          "coins"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoinRedemptions"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/coins/redemptions/{id}/address": {
+      "put": {
+        "summary": "Shipping address for a merch redemption (only after verification, parent consent and redemption are in place)",
+        "tags": [
+          "coins"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ShippingAddressInput"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoinRedemption"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/coins/redemptions/{id}/cancel": {
+      "post": {
+        "summary": "Cancel a merch redemption before approval (coins come back)",
+        "tags": [
+          "coins"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoinRedemption"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/coins/equipped": {
+      "put": {
+        "summary": "Equip an owned profile frame or theme (null takes it off)",
+        "tags": [
+          "coins"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "frame": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 64,
+                        "pattern": "^[a-z0-9][a-z0-9-]*$"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "theme": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "minLength": 2,
+                        "maxLength": 64,
+                        "pattern": "^[a-z0-9][a-z0-9-]*$"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoinEquipped"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/coins/redemptions": {
+      "get": {
+        "summary": "Merch redemptions by status (staff, two-step verified). Addresses only while under review or approved; viewing is audit-logged.",
+        "tags": [
+          "admin"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "default": "parent_approval_pending",
+              "type": "string",
+              "enum": [
+                "requested",
+                "parent_approval_pending",
+                "approved",
+                "fulfilled",
+                "cancelled",
+                "refunded"
+              ]
+            },
+            "in": "query",
+            "name": "status",
+            "required": false
+          },
+          {
+            "schema": {
+              "default": 50,
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            },
+            "in": "query",
+            "name": "limit",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminCoinRedemptions"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/coins/redemptions/{id}/approve": {
+      "post": {
+        "summary": "Approve a merch redemption after review (the student's consent is re-checked)",
+        "tags": [
+          "admin"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoinRedemption"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/coins/redemptions/{id}/fulfil": {
+      "post": {
+        "summary": "Mark an approved merch redemption shipped",
+        "tags": [
+          "admin"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "trackingRef": {
+                    "type": "string",
+                    "minLength": 3,
+                    "maxLength": 64,
+                    "pattern": "^[A-Za-z0-9 ._:/-]+$"
+                  }
+                },
+                "required": [
+                  "trackingRef"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoinRedemption"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/coins/redemptions/{id}/reject": {
+      "post": {
+        "summary": "Reject a merch redemption: coins are refunded and the address erased",
+        "tags": [
+          "admin"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "reason": {
+                    "default": "staff_rejected",
+                    "type": "string",
+                    "enum": [
+                      "staff_rejected",
+                      "out_of_stock"
+                    ]
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoinRedemption"
                 }
               }
             }

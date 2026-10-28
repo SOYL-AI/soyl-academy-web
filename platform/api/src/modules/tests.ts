@@ -204,6 +204,8 @@ export function registerTestRoutes(appIn: FastifyInstance, deps: AppDeps, servic
         xpAwarded: r.xpAwarded,
         badgesAwarded: r.badgesAwarded,
         streak: r.streak,
+        coinsAwarded: r.coinsAwarded,
+        coinAwards: r.coinAwards,
       };
     },
   });

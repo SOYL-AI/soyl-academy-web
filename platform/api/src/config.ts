@@ -6,6 +6,7 @@
  */
 import { z } from 'zod/v4';
 import { OAUTH, OTP } from '@soyl/shared/config/security';
+import { COIN_STORE } from '@soyl/shared/config/coins';
 import { loadBillingConfig, type BillingConfig } from './billing/config';
 
 export const APP_ENVS = ['local', 'test', 'dev', 'stg', 'prod'] as const;
@@ -123,6 +124,10 @@ const EnvSchema = z.object({
   ACADEMIC_YEAR: z.string().regex(/^\d{4}-\d{2}$/).default('2026-27'),
   /** Local/test only: expose the mock OTP outbox for allow-listed test identifiers (ADR-002). */
   DEV_OTP_OUTBOX: bool,
+  /** SOYL Coins (ADR-021): physical merch redemption. Default COIN_STORE.physicalRedemptionEnabled (off until OA-19). */
+  COINS_PHYSICAL_REDEMPTION_ENABLED: z.enum(['true', 'false', '1', '0']).optional(),
+  /** SOYL Coins (D-038): master switch for every redemption. Default COIN_STORE.redemptionEnabled (off at launch). */
+  COINS_REDEMPTION_ENABLED: z.enum(['true', 'false', '1', '0']).optional(),
 });
 
 export interface Config {
@@ -169,6 +174,8 @@ export interface Config {
   devOtpOutbox: boolean;
   /** Razorpay billing (billing/config.ts, ADR-016). */
   billing: BillingConfig;
+  /** SOYL Coins (ADR-021). */
+  coins: { redemptionEnabled: boolean; physicalRedemptionEnabled: boolean };
 }
 
 export class ConfigError extends Error {
@@ -337,6 +344,14 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
     academicYear: e.ACADEMIC_YEAR,
     devOtpOutbox,
     billing: billing.config,
+    coins: {
+      redemptionEnabled:
+        e.COINS_REDEMPTION_ENABLED === undefined ? COIN_STORE.redemptionEnabled : e.COINS_REDEMPTION_ENABLED === 'true' || e.COINS_REDEMPTION_ENABLED === '1',
+      physicalRedemptionEnabled:
+        e.COINS_PHYSICAL_REDEMPTION_ENABLED === undefined
+          ? COIN_STORE.physicalRedemptionEnabled
+          : e.COINS_PHYSICAL_REDEMPTION_ENABLED === 'true' || e.COINS_PHYSICAL_REDEMPTION_ENABLED === '1',
+    },
   };
 }
 

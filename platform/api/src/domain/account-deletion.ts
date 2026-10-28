@@ -26,6 +26,7 @@ import {
 import type { Clock } from '../clock';
 import type { OtpService } from '../auth/otp';
 import type { AuthUser } from '../types';
+import { eraseCoinPersonalData } from './coins/store';
 
 export interface DeletionResult {
   deletedAt: Date;
@@ -54,6 +55,8 @@ export async function deleteAccount(
     // Blobs first, then rows (UploadService.purgeDeleted): the rows are the index of the blobs.
     await tx.update(uploads).set({ status: 'deleted', expiresAt: now, updatedAt: now }).where(and(eq(uploads.userId, user.id), ne(uploads.status, 'deleted')));
     await tx.delete(userMfa).where(eq(userMfa.userId, user.id));
+    // SOYL Coins (ADR-021): shipping addresses and tracking refs erased, open merch redemptions cancelled.
+    await eraseCoinPersonalData(tx, user.id, now);
     await tx
       .update(users)
       .set({

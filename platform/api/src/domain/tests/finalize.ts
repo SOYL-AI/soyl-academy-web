@@ -18,6 +18,8 @@ import { TEST_ENGINE } from '@soyl/shared/config/tests';
 import { awardXp, ensureBadges, evaluateBadges, recordActivity, refreshTotals, type StreakView } from '../gamification';
 import { loadKeys, loadStructure, testById, type QuestionKeyRow, type TestStructure } from './load';
 import { aggregate, gradeItem, scoreBucket, type Aggregate, type ItemOutcome } from './score';
+import { onTestGraded, toDto, type CoinAwardDto } from '../coins/awards';
+import { coinsPaid } from '../coins/ledger';
 
 type Tx = Parameters<Parameters<Database['transaction']>[0]>[0];
 
@@ -48,6 +50,9 @@ export interface FinalizeResult {
   xpAwarded: number;
   badgesAwarded: string[];
   streak: StreakView | null;
+  /** SOYL Coins (ADR-021): series test, perfect paper, live participation. */
+  coinsAwarded: number;
+  coinAwards: CoinAwardDto[];
 }
 
 /**
@@ -154,9 +159,11 @@ export async function finalizeAttempt(ctx: FinalizeContext, attemptId: string, m
     const streak = await recordActivity(tx, a.userId, now);
     if (xpAwarded) await refreshTotals(tx, a.userId);
     const badgesAwarded = await evaluateBadges(db, tx, a.userId, now);
+    const perfect = agg.autoMaxCounted >= TEST_XP_RULES.perfectMinAutoMarks && Math.abs(agg.autoScore - agg.autoMaxCounted) < 1e-9;
+    const coinOutcomes = await onTestGraded(tx, { userId: a.userId, now, testKey: test.key, testKind: test.kind, liveEventId: a.liveEventId, answeredShare, perfect });
 
     if (a.liveEventId) live = { eventId: a.liveEventId, userId: a.userId, autoScore: agg.autoScore, timeTakenSec };
-    return { ...summaryOf(updated!, false, agg), xpAwarded, badgesAwarded, streak };
+    return { ...summaryOf(updated!, false, agg), xpAwarded, badgesAwarded, streak, coinsAwarded: coinsPaid(coinOutcomes), coinAwards: toDto(coinOutcomes) };
   });
   if (live && ctx.onLiveGraded) {
     const l = live as { eventId: string; userId: string; autoScore: number; timeTakenSec: number };
@@ -178,6 +185,8 @@ function summaryOf(a: typeof attempts.$inferSelect, alreadyFinal: boolean, agg?:
     xpAwarded: 0,
     badgesAwarded: [],
     streak: null,
+    coinsAwarded: 0,
+    coinAwards: [],
   };
 }
 

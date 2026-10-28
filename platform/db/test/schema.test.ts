@@ -11,7 +11,7 @@ import { createTestDb, type TestDb } from '../src/testing';
 import * as schema from '../schema/index';
 import { EMBEDDING_DIMENSIONS } from '../schema/index';
 
-const APPEND_ONLY = ['credit_ledger', 'audit_log', 'webhook_events', 'content_budget_ledger', 'analytics_events'];
+const APPEND_ONLY = ['credit_ledger', 'audit_log', 'webhook_events', 'content_budget_ledger', 'analytics_events', 'coin_ledger'];
 const YEAR_SCOPED = ['subjects', 'syllabus_versions', 'chapters', 'topics', 'learning_outcomes', 'decks', 'notes', 'flashcard_sets', 'questions', 'content_releases', 'content_chunks', 'blueprints', 'test_series', 'tests', 'live_events'];
 
 let t: TestDb;
@@ -27,8 +27,8 @@ afterAll(async () => {
 const drizzleTables: PgTable[] = (Object.values(schema) as unknown[]).filter((v): v is PgTable => is(v, PgTable));
 
 describe('schema conventions', () => {
-  it('defines the ARCHITECTURE §6 groups (60 tables) + learning progress (3, migration 0005) + release items (0006) + test score buckets (0007) + AI gateway (3, 0008) + leagues (0010)', () => {
-    expect(drizzleTables.length).toBe(69);
+  it('defines the ARCHITECTURE §6 groups (60 tables) + learning progress (3, migration 0005) + release items (0006) + test score buckets (0007) + AI gateway (3, 0008) + leagues (0010) + SOYL Coins (3, 0011)', () => {
+    expect(drizzleTables.length).toBe(72);
   });
 
   it('matches the migrated database table by table, column by column', async () => {
@@ -50,7 +50,7 @@ describe('schema conventions', () => {
       FROM information_schema.columns c JOIN information_schema.tables t USING (table_schema, table_name)
       WHERE c.table_schema = 'public' AND t.table_type = 'BASE TABLE' AND c.table_name <> 'soyl_schema_migrations'`);
     const tables = [...new Set(cols.map((c) => c.table_name))];
-    expect(tables.length).toBe(69);
+    expect(tables.length).toBe(72);
     for (const tbl of tables) {
       const col = (n: string) => cols.find((c) => c.table_name === tbl && c.column_name === n);
       expect(col('id')?.data_type, `${tbl}.id`).toBe(tbl === 'pipeline_runs' ? 'text' : 'uuid');

@@ -33,6 +33,12 @@ const ROUTES = [
   '/api/platform/v1/plans',
   '/api/platform/v1/test-series?subject=cbse-10-science',
   '/api/platform/v1/credits',
+  // SOYL Coins (ADR-021 §8)
+  '/coins',
+  '/store',
+  '/api/platform/v1/coins',
+  '/api/platform/v1/coins/store',
+  '/api/platform/v1/coins/daily-challenge?board=cbse&class=10',
 ];
 
 for (const path of ROUTES) {
@@ -49,6 +55,8 @@ test('POSTs to the proxy and CSP endpoint → 404', async ({ request }) => {
   expect((await request.post('/api/platform/csp-report', { headers: { 'content-type': 'application/csp-report' }, data: '{}' })).status()).toBe(404);
   expect((await request.post('/api/platform/v1/webhooks/razorpay', { headers: { 'content-type': 'application/json', 'x-razorpay-signature': 'x' }, data: '{}' })).status()).toBe(404);
   expect((await request.post('/api/platform/v1/ai/quick-doubt', { data: { message: 'x' } })).status()).toBe(404);
+  expect((await request.post('/api/platform/v1/coins/check-in', { data: {} })).status()).toBe(404);
+  expect((await request.post('/api/platform/v1/coins/redeem', { data: { itemKey: 'hoodie' } })).status()).toBe(404);
 });
 
 test('the marketing header has no Learn link', async ({ page }) => {

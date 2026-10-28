@@ -12,6 +12,7 @@ import { platformMetadata } from '@/components/platform/server/metadata';
 import { getSubjects, groupByTier, TIER_HEADINGS } from '@/components/platform/server/catalog';
 import { PageHeader } from '@/components/platform/shell/PageHeader';
 import { RememberClass } from '@/components/platform/learn/LearnClient';
+import { DailyChallengeCard } from '@/components/platform/coins/DailyChallengeCard';
 import { BOARD_NAMES, examLabel, learnPath, parseBoard, parseClass } from '@/components/platform/lib/catalog';
 import shell from '@/components/platform/shell/shell.module.css';
 import s from '@/components/platform/learn/learn.module.css';
@@ -66,6 +67,7 @@ export default async function ClassPage({ params }: { params: Promise<Params> })
         title={`${exam} Class ${classLevel}`}
         lead={`${data.subjects.length} subjects for ${data.academicYear}. Choose one to see its chapters.`}
       />
+      <DailyChallengeCard board={board} classLevel={classLevel} />
       {groups.map((g) => (
         <section key={g.tier} className={s.section} aria-labelledby={`tier-${g.tier}`}>
           <h2 id={`tier-${g.tier}`} className={s.sectionTitle}>

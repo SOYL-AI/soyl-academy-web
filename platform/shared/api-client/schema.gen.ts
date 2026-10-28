@@ -4528,6 +4528,826 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/coins": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Your SOYL Coins: balance, today against the daily cap, check-in streak, milestones */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CoinsSummary"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/coins/history": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Your coin history (earned, redeemed, refunded), newest first */
+        get: {
+            parameters: {
+                query?: {
+                    cursor?: string;
+                    limit?: number;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CoinHistory"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/coins/check-in": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Daily check-in (once per IST day; idempotent) */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": Record<string, never> | null;
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CoinCheckIn"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/coins/daily-challenge": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Today's daily challenge question for each subject of a board and class (defaults to your profile) */
+        get: {
+            parameters: {
+                query?: {
+                    board?: "cbse" | "cisce";
+                    class?: number;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["DailyChallenge"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/coins/store": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** The SOYL store: items, prices, drops and what you can redeem */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CoinStore"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/coins/redeem": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Redeem coins for an item. Digital items are granted at once; merch needs a verified account, parent consent and redemption switched on, then an address. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": {
+                        itemKey: string;
+                    };
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CoinRedeemResult"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/coins/redemptions": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Your redemptions */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CoinRedemptions"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/coins/redemptions/{id}/address": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        /** Shipping address for a merch redemption (only after verification, parent consent and redemption are in place) */
+        put: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["ShippingAddressInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CoinRedemption"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/coins/redemptions/{id}/cancel": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Cancel a merch redemption before approval (coins come back) */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": Record<string, never> | null;
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CoinRedemption"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/coins/equipped": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        /** Equip an owned profile frame or theme (null takes it off) */
+        put: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": {
+                        frame?: string | null;
+                        theme?: string | null;
+                    };
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CoinEquipped"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/coins/redemptions": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Merch redemptions by status (staff, two-step verified). Addresses only while under review or approved; viewing is audit-logged. */
+        get: {
+            parameters: {
+                query?: {
+                    status?: "requested" | "parent_approval_pending" | "approved" | "fulfilled" | "cancelled" | "refunded";
+                    limit?: number;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AdminCoinRedemptions"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/coins/redemptions/{id}/approve": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Approve a merch redemption after review (the student's consent is re-checked) */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": Record<string, never> | null;
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CoinRedemption"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/coins/redemptions/{id}/fulfil": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Mark an approved merch redemption shipped */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": {
+                        trackingRef: string;
+                    };
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CoinRedemption"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/coins/redemptions/{id}/reject": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Reject a merch redemption: coins are refunded and the address erased */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": {
+                        /**
+                         * @default staff_rejected
+                         * @enum {string}
+                         */
+                        reason?: "staff_rejected" | "out_of_stock";
+                    };
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CoinRedemption"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/v1/webhooks/razorpay": {
         parameters: {
             query?: never;
@@ -5045,6 +5865,144 @@ export interface components {
                 }[];
             }[];
         };
+        /** @enum {string} */
+        CoinEarnSourceInput: "checkin" | "checkin_streak" | "daily_challenge" | "solved_milestone" | "chapter_mastered" | "test_submitted" | "perfect_paper" | "live_participation" | "live_rank" | "league_promotion" | "league_top_finish";
+        CoinAwardInput: {
+            source: components["schemas"]["CoinEarnSourceInput"];
+            amount: number;
+            cappedOut: boolean;
+        };
+        CoinsSummaryInput: {
+            balance: number;
+            lifetimeEarned: number;
+            today: {
+                /** Format: date */
+                day: string;
+                earnedCapped: number;
+                cap: number;
+                remaining: number;
+                earnedTotal: number;
+                /** Format: date-time */
+                resetsAt: string;
+            };
+            checkIn: {
+                checkedInToday: boolean;
+                current: number;
+                longest: number;
+                coins: number;
+                nextBonus: {
+                    everyDays: number;
+                    coins: number;
+                    inDays: number;
+                } | null;
+            };
+            solved: {
+                count: number;
+                milestones: {
+                    solved: number;
+                    coins: number;
+                    reached: boolean;
+                }[];
+                next: {
+                    solved: number;
+                    coins: number;
+                    reached: boolean;
+                } | null;
+            };
+            chaptersMastered: number;
+            equipped: {
+                frame: string | null;
+                theme: string | null;
+            };
+        };
+        CoinHistoryInput: {
+            entries: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                kind: "earn" | "redeem" | "refund" | "adjust";
+                /** @enum {string} */
+                source: "checkin" | "checkin_streak" | "daily_challenge" | "solved_milestone" | "chapter_mastered" | "test_submitted" | "perfect_paper" | "live_participation" | "live_rank" | "league_promotion" | "league_top_finish" | "redemption" | "admin";
+                amount: number;
+                balanceAfter: number;
+                /** Format: date */
+                istDay: string;
+                cappedOut: boolean;
+                redemptionId: string | null;
+                detail: {
+                    [key: string]: string | number | boolean | null;
+                };
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+            nextCursor: string | null;
+        };
+        CoinCheckInInput: {
+            /** Format: date */
+            day: string;
+            alreadyCheckedIn: boolean;
+            streak: number;
+            longest: number;
+            coinsAwarded: number;
+            awards: components["schemas"]["CoinAwardInput"][];
+            balance: number;
+        };
+        /** @enum {string} */
+        StoreItemStateInput: "available" | "sign_in" | "insufficient_coins" | "locked" | "owned" | "limit_reached" | "sold_out" | "upcoming" | "ended" | "coming_soon" | "verification_needed" | "consent_needed";
+        CoinStoreInput: {
+            balance: number | null;
+            redemptionEnabled: boolean;
+            physicalRedemptionEnabled: boolean;
+            consentStatus: ("required" | "pending" | "granted" | "revoked") | null;
+            verified: boolean | null;
+            items: {
+                key: string;
+                name: string;
+                description: string;
+                image: string;
+                /** @enum {string} */
+                type: "digital" | "physical";
+                slot: ("frame" | "theme") | null;
+                priceCoins: number;
+                stock: number | null;
+                remaining: number | null;
+                availableFrom: string | null;
+                availableUntil: string | null;
+                eligibilityLabel: string | null;
+                eligible: boolean | null;
+                owned: number | null;
+                maxPerUser: number;
+                state: components["schemas"]["StoreItemStateInput"];
+            }[];
+        };
+        CoinRedemptionInput: {
+            /** Format: uuid */
+            id: string;
+            itemKey: string;
+            itemName: string;
+            /** @enum {string} */
+            itemType: "digital" | "physical";
+            priceCoins: number;
+            /** @enum {string} */
+            status: "requested" | "parent_approval_pending" | "approved" | "fulfilled" | "cancelled" | "refunded";
+            statusReason: string | null;
+            addressOnFile: boolean;
+            trackingRef: string | null;
+            /** Format: date-time */
+            createdAt: string;
+            /** Format: date-time */
+            updatedAt: string;
+        };
+        ShippingAddressInput: {
+            recipientName: string;
+            line1: string;
+            line2?: string | null;
+            city: string;
+            /** @enum {string} */
+            state: "Andaman and Nicobar Islands" | "Andhra Pradesh" | "Arunachal Pradesh" | "Assam" | "Bihar" | "Chandigarh" | "Chhattisgarh" | "Dadra and Nagar Haveli and Daman and Diu" | "Delhi" | "Goa" | "Gujarat" | "Haryana" | "Himachal Pradesh" | "Jammu and Kashmir" | "Jharkhand" | "Karnataka" | "Kerala" | "Ladakh" | "Lakshadweep" | "Madhya Pradesh" | "Maharashtra" | "Manipur" | "Meghalaya" | "Mizoram" | "Nagaland" | "Odisha" | "Puducherry" | "Punjab" | "Rajasthan" | "Sikkim" | "Tamil Nadu" | "Telangana" | "Tripura" | "Uttar Pradesh" | "Uttarakhand" | "West Bengal";
+            pincode: string;
+            phone: string;
+        };
         /** @description mcq/assertion-reason/true-false/multi-select → option_ids; numerical → value; fill-blank → blanks (in stem order); match → pairs; ordering → order (all ids); code-output → output; short/long/writing/map → text. */
         PracticePartResponseInput: {
             option_ids: string[];
@@ -5131,6 +6089,8 @@ export interface components {
             xpAwarded: number;
             badgesAwarded: string[];
             streak: components["schemas"]["StreakInput"] | null;
+            coinsAwarded: number;
+            coinAwards: components["schemas"]["CoinAwardInput"][];
         };
         PracticePageInput: {
             chapterId: string;
@@ -5675,6 +6635,8 @@ export interface components {
             xpAwarded: number;
             badgesAwarded: string[];
             streak: components["schemas"]["StreakInput"] | null;
+            coinsAwarded: number;
+            coinAwards: components["schemas"]["CoinAwardInput"][];
         };
         /** @description After submission only. Percentile and ranks use auto-graded marks (AC-14). */
         AttemptResultInput: {
@@ -6258,11 +7220,66 @@ export interface components {
             duplicate: boolean;
             outcome: string;
         };
+        DailyChallengeInput: {
+            /** Format: date */
+            day: string;
+            /** Format: date-time */
+            resetsAt: string;
+            coins: number;
+            awardsPerDay: number;
+            earnedToday: number | null;
+            board: ("cbse" | "cisce") | null;
+            classLevel: number | null;
+            /** @enum {string} */
+            status: "ok" | "class_required";
+            challenges: {
+                subjectId: string;
+                subjectName: string;
+                chapterId: string;
+                chapterTitle: string;
+                question: components["schemas"]["StudentQuestionInput"];
+                solved: boolean | null;
+            }[];
+        };
+        AdminCoinRedemptionInput: {
+            /** Format: uuid */
+            id: string;
+            itemKey: string;
+            itemName: string;
+            /** @enum {string} */
+            itemType: "digital" | "physical";
+            priceCoins: number;
+            /** @enum {string} */
+            status: "requested" | "parent_approval_pending" | "approved" | "fulfilled" | "cancelled" | "refunded";
+            statusReason: string | null;
+            addressOnFile: boolean;
+            trackingRef: string | null;
+            /** Format: date-time */
+            createdAt: string;
+            /** Format: date-time */
+            updatedAt: string;
+            student: string | null;
+            address: components["schemas"]["ShippingAddressInput"] | null;
+        };
         PracticeSelfAssessRequestInput: {
             marks: number;
         };
         LiveEventsInput: {
             events: components["schemas"]["LiveEventInput"][];
+        };
+        CoinRedeemResultInput: {
+            redemption: components["schemas"]["CoinRedemptionInput"];
+            balance: number;
+        };
+        CoinRedemptionsInput: {
+            redemptions: components["schemas"]["CoinRedemptionInput"][];
+        };
+        CoinEquippedInput: {
+            frame: string | null;
+            theme: string | null;
+        };
+        AdminCoinRedemptionsInput: {
+            redemptions: components["schemas"]["AdminCoinRedemptionInput"][];
         };
         /** @description RFC 7807 problem details (application/problem+json). */
         Problem: {
@@ -6723,6 +7740,144 @@ export interface components {
                 }[];
             }[];
         };
+        /** @enum {string} */
+        CoinEarnSource: "checkin" | "checkin_streak" | "daily_challenge" | "solved_milestone" | "chapter_mastered" | "test_submitted" | "perfect_paper" | "live_participation" | "live_rank" | "league_promotion" | "league_top_finish";
+        CoinAward: {
+            source: components["schemas"]["CoinEarnSource"];
+            amount: number;
+            cappedOut: boolean;
+        };
+        CoinsSummary: {
+            balance: number;
+            lifetimeEarned: number;
+            today: {
+                /** Format: date */
+                day: string;
+                earnedCapped: number;
+                cap: number;
+                remaining: number;
+                earnedTotal: number;
+                /** Format: date-time */
+                resetsAt: string;
+            };
+            checkIn: {
+                checkedInToday: boolean;
+                current: number;
+                longest: number;
+                coins: number;
+                nextBonus: {
+                    everyDays: number;
+                    coins: number;
+                    inDays: number;
+                } | null;
+            };
+            solved: {
+                count: number;
+                milestones: {
+                    solved: number;
+                    coins: number;
+                    reached: boolean;
+                }[];
+                next: {
+                    solved: number;
+                    coins: number;
+                    reached: boolean;
+                } | null;
+            };
+            chaptersMastered: number;
+            equipped: {
+                frame: string | null;
+                theme: string | null;
+            };
+        };
+        CoinHistory: {
+            entries: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                kind: "earn" | "redeem" | "refund" | "adjust";
+                /** @enum {string} */
+                source: "checkin" | "checkin_streak" | "daily_challenge" | "solved_milestone" | "chapter_mastered" | "test_submitted" | "perfect_paper" | "live_participation" | "live_rank" | "league_promotion" | "league_top_finish" | "redemption" | "admin";
+                amount: number;
+                balanceAfter: number;
+                /** Format: date */
+                istDay: string;
+                cappedOut: boolean;
+                redemptionId: string | null;
+                detail: {
+                    [key: string]: string | number | boolean | null;
+                };
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+            nextCursor: string | null;
+        };
+        CoinCheckIn: {
+            /** Format: date */
+            day: string;
+            alreadyCheckedIn: boolean;
+            streak: number;
+            longest: number;
+            coinsAwarded: number;
+            awards: components["schemas"]["CoinAward"][];
+            balance: number;
+        };
+        /** @enum {string} */
+        StoreItemState: "available" | "sign_in" | "insufficient_coins" | "locked" | "owned" | "limit_reached" | "sold_out" | "upcoming" | "ended" | "coming_soon" | "verification_needed" | "consent_needed";
+        CoinStore: {
+            balance: number | null;
+            redemptionEnabled: boolean;
+            physicalRedemptionEnabled: boolean;
+            consentStatus: ("required" | "pending" | "granted" | "revoked") | null;
+            verified: boolean | null;
+            items: {
+                key: string;
+                name: string;
+                description: string;
+                image: string;
+                /** @enum {string} */
+                type: "digital" | "physical";
+                slot: ("frame" | "theme") | null;
+                priceCoins: number;
+                stock: number | null;
+                remaining: number | null;
+                availableFrom: string | null;
+                availableUntil: string | null;
+                eligibilityLabel: string | null;
+                eligible: boolean | null;
+                owned: number | null;
+                maxPerUser: number;
+                state: components["schemas"]["StoreItemState"];
+            }[];
+        };
+        CoinRedemption: {
+            /** Format: uuid */
+            id: string;
+            itemKey: string;
+            itemName: string;
+            /** @enum {string} */
+            itemType: "digital" | "physical";
+            priceCoins: number;
+            /** @enum {string} */
+            status: "requested" | "parent_approval_pending" | "approved" | "fulfilled" | "cancelled" | "refunded";
+            statusReason: string | null;
+            addressOnFile: boolean;
+            trackingRef: string | null;
+            /** Format: date-time */
+            createdAt: string;
+            /** Format: date-time */
+            updatedAt: string;
+        };
+        ShippingAddress: {
+            recipientName: string;
+            line1: string;
+            line2?: string | null;
+            city: string;
+            /** @enum {string} */
+            state: "Andaman and Nicobar Islands" | "Andhra Pradesh" | "Arunachal Pradesh" | "Assam" | "Bihar" | "Chandigarh" | "Chhattisgarh" | "Dadra and Nagar Haveli and Daman and Diu" | "Delhi" | "Goa" | "Gujarat" | "Haryana" | "Himachal Pradesh" | "Jammu and Kashmir" | "Jharkhand" | "Karnataka" | "Kerala" | "Ladakh" | "Lakshadweep" | "Madhya Pradesh" | "Maharashtra" | "Manipur" | "Meghalaya" | "Mizoram" | "Nagaland" | "Odisha" | "Puducherry" | "Punjab" | "Rajasthan" | "Sikkim" | "Tamil Nadu" | "Telangana" | "Tripura" | "Uttar Pradesh" | "Uttarakhand" | "West Bengal";
+            pincode: string;
+            phone: string;
+        };
         /** @description mcq/assertion-reason/true-false/multi-select → option_ids; numerical → value; fill-blank → blanks (in stem order); match → pairs; ordering → order (all ids); code-output → output; short/long/writing/map → text. */
         PracticePartResponse: {
             option_ids: string[];
@@ -6809,6 +7964,8 @@ export interface components {
             xpAwarded: number;
             badgesAwarded: string[];
             streak: components["schemas"]["Streak"] | null;
+            coinsAwarded: number;
+            coinAwards: components["schemas"]["CoinAward"][];
         };
         PracticePage: {
             chapterId: string;
@@ -7353,6 +8510,8 @@ export interface components {
             xpAwarded: number;
             badgesAwarded: string[];
             streak: components["schemas"]["Streak"] | null;
+            coinsAwarded: number;
+            coinAwards: components["schemas"]["CoinAward"][];
         };
         /** @description After submission only. Percentile and ranks use auto-graded marks (AC-14). */
         AttemptResult: {
@@ -7936,11 +9095,66 @@ export interface components {
             duplicate: boolean;
             outcome: string;
         };
+        DailyChallenge: {
+            /** Format: date */
+            day: string;
+            /** Format: date-time */
+            resetsAt: string;
+            coins: number;
+            awardsPerDay: number;
+            earnedToday: number | null;
+            board: ("cbse" | "cisce") | null;
+            classLevel: number | null;
+            /** @enum {string} */
+            status: "ok" | "class_required";
+            challenges: {
+                subjectId: string;
+                subjectName: string;
+                chapterId: string;
+                chapterTitle: string;
+                question: components["schemas"]["StudentQuestion"];
+                solved: boolean | null;
+            }[];
+        };
+        AdminCoinRedemption: {
+            /** Format: uuid */
+            id: string;
+            itemKey: string;
+            itemName: string;
+            /** @enum {string} */
+            itemType: "digital" | "physical";
+            priceCoins: number;
+            /** @enum {string} */
+            status: "requested" | "parent_approval_pending" | "approved" | "fulfilled" | "cancelled" | "refunded";
+            statusReason: string | null;
+            addressOnFile: boolean;
+            trackingRef: string | null;
+            /** Format: date-time */
+            createdAt: string;
+            /** Format: date-time */
+            updatedAt: string;
+            student: string | null;
+            address: components["schemas"]["ShippingAddress"] | null;
+        };
         PracticeSelfAssessRequest: {
             marks: number;
         };
         LiveEvents: {
             events: components["schemas"]["LiveEvent"][];
+        };
+        CoinRedeemResult: {
+            redemption: components["schemas"]["CoinRedemption"];
+            balance: number;
+        };
+        CoinRedemptions: {
+            redemptions: components["schemas"]["CoinRedemption"][];
+        };
+        CoinEquipped: {
+            frame: string | null;
+            theme: string | null;
+        };
+        AdminCoinRedemptions: {
+            redemptions: components["schemas"]["AdminCoinRedemption"][];
         };
     };
     responses: never;

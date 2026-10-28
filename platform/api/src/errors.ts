@@ -80,6 +80,20 @@ export const PROBLEMS = {
   duplicate_request: [409, 'This request was already received.'],
   upload_rejected: [422, 'This file cannot be used.'],
   upload_not_ready: [409, 'This file is not ready yet.'],
+  /** SOYL Coins (ADR-021): not enough coins for the item (extension fields balance, price). */
+  coins_insufficient: [409, 'You do not have enough coins for this yet.'],
+  /** The item is outside its limited-drop window. */
+  item_unavailable: [409, 'This item cannot be redeemed right now.'],
+  /** The item's limited stock is gone. */
+  out_of_stock: [409, 'This item is out of stock.'],
+  /** Already own the digital item / reached the per-student limit for merch. */
+  redemption_limit: [409, 'You have already redeemed this item.'],
+  /** The item is reserved for an achievement the student has not reached. */
+  not_eligible: [403, 'This item is unlocked by an achievement.'],
+  /** Merch needs a verified email or phone first. */
+  verification_required: [403, 'Verify your email or phone number first.'],
+  /** Physical merch redemption is switched off (COINS_PHYSICAL_REDEMPTION_ENABLED=false). */
+  redemption_disabled: [403, 'Merch redemption opens soon. Keep earning coins.'],
 } as const satisfies Record<string, readonly [number, string]>;
 
 export type ProblemCode = keyof typeof PROBLEMS;

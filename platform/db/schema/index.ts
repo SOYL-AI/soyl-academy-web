@@ -4,6 +4,7 @@ export * from './catalog';
 export * from './content';
 export * from './assessment';
 export * from './gamification';
+export * from './coins';
 export * from './ai-credits';
 export * from './ai-gateway';
 export * from './billing';

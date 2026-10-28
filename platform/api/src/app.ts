@@ -50,6 +50,7 @@ import { registerTestRoutes } from './modules/tests';
 import { registerLeagueRoutes } from './modules/leagues';
 import { registerBillingRoutes } from './billing/routes';
 import { registerAiRoutes } from './ai/routes';
+import { registerCoinsRoutes } from './modules/coins';
 
 export const HEALTH_PATHS = new Set(['/healthz', '/readyz']);
 const STATE_CHANGING = new Set(['POST', 'PUT', 'PATCH', 'DELETE']);
@@ -292,6 +293,7 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
   registerLeagueRoutes(app, deps);
   registerBillingRoutes(app, services.billing);
   registerAiRoutes(app, deps, services);
+  registerCoinsRoutes(app, deps, services);
   if (config.devOtpOutbox) registerDevRoutes(app, deps);
   opts.extraRoutes?.(app, services);
 

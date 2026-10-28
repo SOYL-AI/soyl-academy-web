@@ -28,6 +28,7 @@ import { consentStatus, istDay, leagueMemberships, leagues, profiles, users, typ
 import { LEAGUE_TIERS, LEAGUES, leagueZones } from '@soyl/shared/config/gamification';
 import { dayNumber, dayString, weekMonday } from '../gamification';
 import { leaderboardNames } from '../tests/live';
+import { onLeagueClosed } from '../coins/awards';
 
 type Tx = Parameters<Parameters<Database['transaction']>[0]>[0];
 type Db = Database | Tx;
@@ -153,8 +154,11 @@ export async function closeLeague(db: Database, leagueId: string, now: number): 
     if (!league || league.status === 'closed') return false;
     if (weekOf(league.weekStart).endsAt.getTime() > now) return false;
     const at = new Date(now);
-    for (const s of await leagueStandings(tx, league))
+    const standings = await leagueStandings(tx, league);
+    for (const s of standings)
       await tx.update(leagueMemberships).set({ xp: s.xp, finalRank: s.rank, outcome: outcomeFor(s.zone), updatedAt: at }).where(eq(leagueMemberships.id, s.membershipId));
+    // SOYL Coins (ADR-021): promotion and top-finish coins, consent-gated, idempotent per league.
+    await onLeagueClosed(tx, league.id, at, standings.map((s) => ({ userId: s.userId, rank: s.rank, xp: s.xp, outcome: outcomeFor(s.zone) })));
     await tx.update(leagues).set({ status: 'closed', closedAt: at, updatedAt: at }).where(eq(leagues.id, leagueId));
     return true;
   });
