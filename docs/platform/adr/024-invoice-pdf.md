@@ -13,7 +13,7 @@ The owner (2026-10-28): "focus on the razorpay payments part … invoice generat
 
 ## Decision
 
-### 1. Data (migration 0016)
+### 1. Data (migration `0015_invoices`; renumbered 0016 if the credits/avatars migration merges first)
 
 - `invoices`: one row per document (`tax_invoice` | `credit_note`), amounts in integer paise (taxable, CGST, SGST, IGST, total; a CHECK makes them add up), place of supply (state code), a snapshot of the seller and of the GST mode, the line items, the buyer's optional name and email, Razorpay references, and delivery state (PDF path, email attempts/backoff/claim, sent time).
 - `invoice_sequences`: one counter per series (`tax_invoice`, `credit_note`) and financial year. The issuing transaction increments it with `INSERT … ON CONFLICT DO UPDATE … RETURNING`: the row lock serialises issuers and a rolled-back transaction rolls its number back, so the series has **no gaps**.
@@ -39,13 +39,13 @@ Production refuses: `INVOICING_ENABLED=true` with any `OWNER_TO_PROVIDE` placeho
 
 Nothing in the dependency tree could render a PDF (checked both lockfiles). An invoice is a fixed, simple layout, so option 3 gives a ~5 KB document with zero new dependencies, and tests can read every printed string back (`extractPdfText`). Limits accepted: WinAnsi text only (the rupee sign is printed "Rs."; a name in Devanagari prints as "?", so the checkout field accepts Latin letters); no compression; one page (an invoice has one line). If documents ever need non-Latin text or several pages, revisit with pdf-lib and an embedded font.
 
-The layout follows CGST Rule 46 (tax invoice) and Rule 53 (credit note): number and date; supplier name, trade name, address, state and code, GSTIN when registered (PAN and CIN when set); recipient (name if given, email); place of supply with state name and code; SAC; description; quantity; taxable value; rate and amount of each tax; total in figures and in words (Indian numbering); reverse charge "No"; the note that a computer-generated document needs no signature; for credit notes the original invoice number and date. Unregistered: titled "Invoice" with "The supplier is not registered under GST. No GST is charged on this supply." (the CA may prefer another title; it is config).
+The layout follows CGST Rule 46 (tax invoice) and Rule 53 (credit note): number and date; supplier name, trade name, address, state and code, GSTIN when registered (PAN and CIN when set); recipient (name if given, email); place of supply with state name and code; SAC; description; quantity; taxable value; rate and amount of each tax; total in figures and in words (Indian numbering); reverse charge "No"; the note that a computer-generated document needs no signature; for credit notes the original invoice number and date. Unregistered: titled **"Bill of Supply"** (D-046) with "The supplier is not registered under GST. No GST is charged on this supply." Note for the CA (OA-22): CGST Rule 49 bills of supply formally belong to registered suppliers of exempt supplies; an unregistered supplier is outside the GST invoice rules, so plain "Invoice" is the alternative. The title is config (`titles.unregistered`).
 
 ### 4. Storage, delivery, access
 
 - PDFs go to a **private** `invoices` Blob container through the existing `BlobStore` abstraction (`ai/blob.ts`; locally the in-memory stand-in), key `<fy>/<type>/<id>.pdf`.
 - Email: the sign-in email provider (ACS, `noreply@soylai.com`) gains optional attachments (ACS `attachments[]`, base64); the PDF is attached, with a link to `/me/invoices`. Sending claims the row (conditional UPDATE), marks it sent, and on failure backs off exponentially (10 min × 2ⁿ, 8 attempts, then an alert); admins can resend.
-- `GET /v1/me/invoices`, `GET /v1/me/invoices/:id/pdf` (owner only; streamed through the API and the same-origin proxy because the storage account is private; another user's id → 404), `GET /v1/admin/invoices?from&to`, `GET /v1/admin/invoices/export` (CSV with GSTR-1 style columns, formula-injection safe), `POST /v1/admin/invoices/:id/resend` (admin + MFA; to move to `superadmin` when that role exists).
+- `GET /v1/me/invoices`, `GET /v1/me/invoices/:id/pdf` (owner only; streamed through the API and the same-origin proxy because the storage account is private; another user's id → 404), `GET /v1/admin/invoices?from&to`, `GET /v1/admin/invoices/export` (CSV with GSTR-1 style columns, formula-injection safe), `POST /v1/admin/invoices/:id/resend` (the three admin routes are superadmin only: role admin + the `superadmin` capability + staff TOTP, D-045, with their own rate-limit bucket `admin.invoices.user`). A captured checkout payment also counts `checkout_complete` (D-045 interest counters).
 
 ## Consequences
 

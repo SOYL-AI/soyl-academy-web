@@ -65,7 +65,7 @@ npm run db -w @soyl/db -- migrate down [--to N]      roll back one (or until N r
 npm run db -w @soyl/db -- migrate status             applied / pending / changed-since-applied (exit 2 on drift)
 npm run db -w @soyl/db -- seed catalog [--dir PATH]  load platform/catalog (idempotent)
 npm run db -w @soyl/db -- seed test-users            fixture users; refuses in production (GEN-2)
-npm run db -w @soyl/db -- admin bootstrap --email E  create/promote the admin for E (DB-7)
+npm run db -w @soyl/db -- admin bootstrap --email E [--role admin|superadmin]  create/promote the admin (or superadmin, D-045) for E (DB-7)
 npm run generate -w @soyl/db -- --name <name>        drizzle-kit: next up migration from schema changes
 npm run typecheck -w @soyl/db
 npm test -w @soyl/db
@@ -106,7 +106,7 @@ weekly `leagues` and `league_memberships.league_id/tier/outcome`; the `ai_answer
 `soyl_coin_ledger_guard` balance trigger; conventions function now lists `coin_ledger` as append-only).
 `0012_consent_interim` (backend-api, D-039, ADR-022: `consent_records` for the built-in consent provider,
 `profiles.public_name_seed` for auto-generated public names).
-`0016_invoices` (billing-razorpay, ADR-024: `invoices` + gap-free `invoice_sequences`, checkout `place_of_supply` / `buyer_name` on orders and subscriptions, the `soyl_invoices_guard` immutability trigger and the `soyl_billing_buyer_anonymise` trigger on `users.deleted_at`). On the invoices branch `0014_reserved_credits` and `0015_reserved_admin` are no-op placeholders that keep the sequence; the Lead deletes them when the real 0014/0015 are integrated.
+`0015_invoices` (billing-razorpay, ADR-024: `invoices` + gap-free `invoice_sequences`, checkout `place_of_supply` / `buyer_name` on orders and subscriptions, the `soyl_invoices_guard` immutability trigger and the `soyl_billing_buyer_anonymise` trigger on `users.deleted_at`). Renumbered 0016 at integration if the credits/avatars 0015 merges first.
 
 ## Roles (DB-1) and Azure mapping
 
@@ -236,5 +236,6 @@ session storage.
 - `seed test-users` creates six fixture users (`*@example.com`, phones `+91555000xxxx`, which cannot be
   Indian mobile subscribers), profiles, consent states and two guardian links (one verified). No admin,
   no password. Refuses when `NODE_ENV=production` or `APP_ENV=prod`.
-- `admin bootstrap --email E` promotes the user with that (normalised) email or creates one, and
-  writes an `audit_log` row. A fresh database has no admin until this runs (DB-7).
+- `admin bootstrap --email E [--role admin|superadmin]` promotes the user with that (normalised) email or creates one, and
+  writes an `audit_log` row. `superadmin` (D-045) = role `admin` + a `staff_capabilities` row (dashboard, audited user lookup);
+  `--role admin` removes the capability. Idempotent (no change, no audit row); a change revokes the account's sessions (API-10). A fresh database has no admin until this runs (DB-7).

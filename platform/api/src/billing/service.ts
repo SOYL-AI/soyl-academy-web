@@ -62,6 +62,8 @@ export interface BillingServiceDeps {
   log?: BillingLog;
   /** Invoice delivery (ADR-024). Default: an in-memory blob store and no email (tests that do not look at invoices). */
   invoiceDelivery?: { blob: () => BlobStore; email: EmailSender | null; publicBaseUrl: string };
+  /** D-045 interest counters (services.counters): `checkout_complete` when a checkout's payment is captured. */
+  counters?: { observe(name: 'checkout_complete', dimension: string, log?: Pick<BillingLog, 'warn'>): Promise<void> };
 }
 
 /** Checkout details for the invoice (optional; CONTEXT §7, ADR-024). */
@@ -156,6 +158,7 @@ export class BillingService {
       invoicing: () => this.invoicing,
       onInvoices: (ids) => this.invoices.schedule(ids),
       invoiceLog: () => this.d.log,
+      onCompleted: (plans) => this.onCompleted(plans),
     });
   }
 
@@ -185,6 +188,11 @@ export class BillingService {
 
   private now(): Date {
     return new Date(this.d.clock.now());
+  }
+
+  /** Best effort, after commit: never fails the payment path (the counter logs its own failures). */
+  private onCompleted(plans: readonly PlanId[]): void {
+    for (const plan of plans) void this.d.counters?.observe('checkout_complete', plan, this.d.log);
   }
 
   private async onGranted(g: { userId: string; plan: PlanId }): Promise<void> {
@@ -490,6 +498,7 @@ export class BillingService {
     });
     if (r.granted && !opts.dryRun) await this.onGranted(r.granted);
     if (r.invoices?.length && !opts.dryRun) this.invoices.schedule(r.invoices);
+    if (r.completed?.length && !opts.dryRun) this.onCompleted(r.completed);
     return r;
   }
 }

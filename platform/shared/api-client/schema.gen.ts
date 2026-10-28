@@ -3192,6 +3192,60 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/admin/me": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Staff role, capabilities and the admin sections this account may open */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AdminMe"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/v1/admin/reports": {
         parameters: {
             query?: never;
@@ -3244,6 +3298,751 @@ export interface paths {
         };
         put?: never;
         post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/analytics/overview": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** KPI tiles with the previous period, sign-ups and daily active students (superadmin, two-step verified session; IST days, at most 180) */
+        get: {
+            parameters: {
+                query?: {
+                    from?: string;
+                    to?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AdminAnalyticsOverview"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/analytics/growth": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Sign-ups by method and week, total students, consent funnel, boards/classes, schools, guest merges (superadmin, two-step verified session; IST days, at most 180) */
+        get: {
+            parameters: {
+                query?: {
+                    from?: string;
+                    to?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AdminAnalyticsGrowth"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/analytics/engagement": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** DAU/WAU/MAU, stickiness, learning activity, top chapters and subjects, streaks (superadmin, two-step verified session; IST days, at most 180) */
+        get: {
+            parameters: {
+                query?: {
+                    from?: string;
+                    to?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AdminAnalyticsEngagement"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/analytics/retention": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** D1/D7/D30 retention by sign-up week (superadmin, two-step verified session; IST days, at most 180) */
+        get: {
+            parameters: {
+                query?: {
+                    from?: string;
+                    to?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AdminAnalyticsRetention"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/analytics/ai": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** AI actions, credits granted/spent/refunded, spend vs the daily cap, breaker, paywall, moderation (superadmin, two-step verified session; IST days, at most 180) */
+        get: {
+            parameters: {
+                query?: {
+                    from?: string;
+                    to?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AdminAnalyticsAi"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/analytics/revenue": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Plans views, checkout funnel, subscriptions, MRR, revenue, refunds, Board Exam Pass, coins (superadmin, two-step verified session; IST days, at most 180) */
+        get: {
+            parameters: {
+                query?: {
+                    from?: string;
+                    to?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AdminAnalyticsRevenue"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/analytics/interest": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Product-interest counters (aggregate, no user link) (superadmin, two-step verified session; IST days, at most 180) */
+        get: {
+            parameters: {
+                query?: {
+                    from?: string;
+                    to?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AdminAnalyticsInterest"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/analytics/content": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Published chapters per subject and open "report a mistake" items by age (superadmin, two-step verified session; IST days, at most 180) */
+        get: {
+            parameters: {
+                query?: {
+                    from?: string;
+                    to?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AdminAnalyticsContent"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/users": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Recent sign-ups, newest first: masked email/phone, method, board/class, consent (no names) */
+        get: {
+            parameters: {
+                query?: {
+                    limit?: number;
+                    cursor?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AdminUsersPage"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/users/search": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Find an account by its exact email (support). Audited; the result stays masked. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["AdminUserSearchRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AdminUserSearchResult"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/users/{id}/reveal": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Reveal an account's full email (audited) */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": Record<string, never> | null;
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AdminUserReveal"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/users/{id}/summary": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** An account's activity, AI, coins and plan as counts only (audited; never chats or uploads) */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AdminUserSummary"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/events": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Count allowlisted product-interest events (aggregate counters; no user, session or IP stored). Sent only after analytics consent. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["InterestEventsRequestInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                202: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["InterestEventsAccepted"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
         delete?: never;
         options?: never;
         head?: never;
@@ -7700,6 +8499,282 @@ export interface components {
             method: "totp" | "recovery_code";
             recoveryCodesRemaining: number;
         };
+        AdminRangeInput: {
+            from: string;
+            to: string;
+            days: number;
+            previousFrom: string;
+            previousTo: string;
+            /** @constant */
+            timezone: "Asia/Kolkata";
+            /** Format: date-time */
+            generatedAt: string;
+        };
+        AdminDayCountInput: {
+            date: string;
+            value: number;
+        };
+        /** @description A daily series over the range; every day is present (zeros included). */
+        AdminSeriesInput: {
+            key: string;
+            label: string;
+            points: components["schemas"]["AdminDayCountInput"][];
+        };
+        AdminLabelledCountInput: {
+            key: string;
+            label: string;
+            value: number;
+        };
+        AdminKpiInput: {
+            key: string;
+            label: string;
+            value: number;
+            previous: number | null;
+            /** @enum {string} */
+            unit: "count" | "paise" | "ratio";
+        };
+        AdminMeInput: {
+            /** Format: uuid */
+            userId: string;
+            /** @enum {string} */
+            role: "reviewer" | "admin";
+            capabilities: "superadmin"[];
+            sections: ("analytics" | "users" | "reports")[];
+        };
+        AdminAnalyticsOverviewInput: {
+            range: components["schemas"]["AdminRangeInput"];
+            kpis: components["schemas"]["AdminKpiInput"][];
+            signups: components["schemas"]["AdminSeriesInput"];
+            dau: components["schemas"]["AdminSeriesInput"];
+        };
+        AdminAnalyticsGrowthInput: {
+            range: components["schemas"]["AdminRangeInput"];
+            totalUsers: number;
+            /** @description Per day, one series per sign-in method (inferred from the account: Google identity created with it, phone-only placeholder email, else email). */
+            signupsByMethod: components["schemas"]["AdminSeriesInput"][];
+            signupsByWeek: {
+                week: string;
+                email: number;
+                phone: number;
+                google: number;
+                total: number;
+            }[];
+            consentFunnel: components["schemas"]["AdminLabelledCountInput"][];
+            boards: components["schemas"]["AdminLabelledCountInput"][];
+            classes: components["schemas"]["AdminLabelledCountInput"][];
+            schoolsAdded: number;
+            guestMerges: components["schemas"]["AdminSeriesInput"];
+            /** @description Server-observed sign-up counter by method (exact, from the day counters started). */
+            signupCounter: components["schemas"]["AdminLabelledCountInput"][];
+        };
+        AdminTopItemInput: {
+            key: string;
+            label: string;
+            practiceAnswers: number;
+            lessonsOpened: number;
+            total: number;
+        };
+        AdminAnalyticsEngagementInput: {
+            range: components["schemas"]["AdminRangeInput"];
+            dau: components["schemas"]["AdminSeriesInput"];
+            /** @description Distinct students with any learning activity in the range. */
+            activeUsers: number;
+            /** @description Distinct active students in the 7 days ending `to`. */
+            wau: number;
+            /** @description Distinct active students in the 30 days ending `to`. */
+            mau: number;
+            /** @description Average DAU over the 30 days ending `to` divided by MAU. */
+            stickiness: number | null;
+            /** @description lessons_opened, lessons_completed, practice_answers, practice_solved, tests_started, tests_submitted, live_joins */
+            activity: components["schemas"]["AdminSeriesInput"][];
+            totals: components["schemas"]["AdminLabelledCountInput"][];
+            /** @description From the interest counters (notes_open, flashcards_open); 0 until the web sends them. */
+            notesFlashcards: components["schemas"]["AdminLabelledCountInput"][];
+            topChapters: components["schemas"]["AdminTopItemInput"][];
+            topSubjects: components["schemas"]["AdminTopItemInput"][];
+            streaks: components["schemas"]["AdminLabelledCountInput"][];
+        };
+        AdminAnalyticsRetentionInput: {
+            range: components["schemas"]["AdminRangeInput"];
+            days: number[];
+            cohorts: {
+                week: string;
+                size: number;
+                rates: (number | null)[];
+                eligible: number[];
+                retained: number[];
+            }[];
+        };
+        AdminAnalyticsAiInput: {
+            range: components["schemas"]["AdminRangeInput"];
+            actionsByType: components["schemas"]["AdminSeriesInput"][];
+            statusTotals: components["schemas"]["AdminLabelledCountInput"][];
+            credits: {
+                /** @description One series per grant reason (daily_grant, plan_topup, admin_adjustment, learning bonuses). */
+                granted: components["schemas"]["AdminSeriesInput"][];
+                spent: components["schemas"]["AdminSeriesInput"];
+                refunded: components["schemas"]["AdminSeriesInput"];
+                expired: components["schemas"]["AdminSeriesInput"];
+                totals: components["schemas"]["AdminLabelledCountInput"][];
+            };
+            spend: {
+                capPaise: number;
+                degradeAtShare: number;
+                days: {
+                    date: string;
+                    spentPaise: number;
+                    freeSpentPaise: number;
+                    share: number;
+                    /** @enum {string} */
+                    status: "normal" | "degraded" | "paused";
+                }[];
+                /** @description Days the spend breaker degraded or paused AI. */
+                breakerDays: number;
+                degradedRequests: number;
+                /** @description Requests refused with ai_paused (server-observed counter). */
+                pausedRefusals: number;
+            };
+            paywallShown: components["schemas"]["AdminLabelledCountInput"][];
+            paywallTotal: number;
+            moderationBlocks: components["schemas"]["AdminSeriesInput"];
+        };
+        AdminAnalyticsRevenueInput: {
+            range: components["schemas"]["AdminRangeInput"];
+            billingEnabled: boolean;
+            plansViews: number;
+            checkout: {
+                started: number;
+                completed: number;
+                failed: number;
+                startedCounter: number;
+                completedCounter: number;
+            };
+            activeSubscriptions: {
+                plan: string;
+                interval: string;
+                count: number;
+                mrrPaise: number;
+            }[];
+            mrrPaise: number;
+            revenue: components["schemas"]["AdminSeriesInput"];
+            revenueTotalPaise: number;
+            refundsPaise: number;
+            boardExamPass: {
+                sales: number;
+                revenuePaise: number;
+            };
+            coins: {
+                earned: components["schemas"]["AdminSeriesInput"];
+                earnedTotal: number;
+                storeViews: number;
+                itemViews: components["schemas"]["AdminLabelledCountInput"][];
+                redemptions: components["schemas"]["AdminLabelledCountInput"][];
+            };
+        };
+        AdminAnalyticsInterestInput: {
+            range: components["schemas"]["AdminRangeInput"];
+            events: {
+                /** @enum {string} */
+                event: "signup" | "paywall_shown" | "ai_paused" | "checkout_start" | "checkout_complete" | "plans_view" | "plan_select" | "store_view" | "store_item_view" | "ask_ai_open" | "dashboard_view" | "notes_open" | "flashcards_open" | "signup_prompt_click" | "future_builders_click";
+                label: string;
+                /** @enum {string} */
+                source: "server" | "client";
+                total: number;
+                previousTotal: number;
+                byDimension: components["schemas"]["AdminLabelledCountInput"][];
+                series: components["schemas"]["AdminSeriesInput"];
+            }[];
+        };
+        AdminAnalyticsContentInput: {
+            range: components["schemas"]["AdminRangeInput"];
+            subjects: {
+                subject: string;
+                label: string;
+                chapters: number;
+                published: number;
+            }[];
+            /** @description Open "report a mistake" items by age. */
+            openReports: components["schemas"]["AdminLabelledCountInput"][];
+            openReportsByType: components["schemas"]["AdminLabelledCountInput"][];
+            reportsInRange: number;
+            fixedInRange: number;
+        };
+        AdminUserRowInput: {
+            /** Format: uuid */
+            id: string;
+            maskedEmail: string | null;
+            maskedPhone: string | null;
+            /** @enum {string} */
+            method: "email" | "phone" | "google";
+            role: string;
+            board: string | null;
+            classLevel: number | null;
+            consent: string;
+            /** Format: date-time */
+            createdAt: string;
+        };
+        AdminUsersPageInput: {
+            users: components["schemas"]["AdminUserRowInput"][];
+            nextCursor: string | null;
+        };
+        AdminUserSearchRequestInput: {
+            email: string;
+        };
+        AdminUserSearchResultInput: {
+            users: components["schemas"]["AdminUserRowInput"][];
+        };
+        AdminUserRevealInput: {
+            /** Format: uuid */
+            id: string;
+            email: string | null;
+            /** @constant */
+            audited: true;
+        };
+        /** @description Counts only: never AI chats, uploads, answers or free text. */
+        AdminUserSummaryInput: {
+            user: components["schemas"]["AdminUserRowInput"];
+            signInMethods: ("email" | "phone" | "google")[];
+            consent: components["schemas"]["ConsentStateInput"] | null;
+            ageBand: ("adult" | "minor") | null;
+            hasSchool: boolean;
+            activity: {
+                lessonsOpened: number;
+                lessonsCompleted: number;
+                practiceAnswers: number;
+                practiceSolved: number;
+                testsStarted: number;
+                testsSubmitted: number;
+                activeDays30: number;
+                lastActiveDay: string | null;
+                currentStreak: number;
+                totalXp: number;
+            };
+            ai: {
+                requests30: number;
+                creditsSpent30: number;
+                creditsGranted30: number;
+            };
+            coins: {
+                balance: number;
+                earned: number;
+            };
+            subscription: {
+                plan: string;
+                status: string | null;
+                validUntil: string | null;
+            };
+            /** @constant */
+            audited: true;
+        };
+        InterestEventsRequestInput: {
+            events: {
+                name: string;
+                dimension?: string;
+            }[];
+        };
+        InterestEventsAcceptedInput: {
+            accepted: number;
+        };
         AdminContentReportsInput: {
             reports: {
                 /** Format: uuid */
@@ -10140,6 +11215,282 @@ export interface components {
             /** @enum {string} */
             method: "totp" | "recovery_code";
             recoveryCodesRemaining: number;
+        };
+        AdminRange: {
+            from: string;
+            to: string;
+            days: number;
+            previousFrom: string;
+            previousTo: string;
+            /** @constant */
+            timezone: "Asia/Kolkata";
+            /** Format: date-time */
+            generatedAt: string;
+        };
+        AdminDayCount: {
+            date: string;
+            value: number;
+        };
+        /** @description A daily series over the range; every day is present (zeros included). */
+        AdminSeries: {
+            key: string;
+            label: string;
+            points: components["schemas"]["AdminDayCount"][];
+        };
+        AdminLabelledCount: {
+            key: string;
+            label: string;
+            value: number;
+        };
+        AdminKpi: {
+            key: string;
+            label: string;
+            value: number;
+            previous: number | null;
+            /** @enum {string} */
+            unit: "count" | "paise" | "ratio";
+        };
+        AdminMe: {
+            /** Format: uuid */
+            userId: string;
+            /** @enum {string} */
+            role: "reviewer" | "admin";
+            capabilities: "superadmin"[];
+            sections: ("analytics" | "users" | "reports")[];
+        };
+        AdminAnalyticsOverview: {
+            range: components["schemas"]["AdminRange"];
+            kpis: components["schemas"]["AdminKpi"][];
+            signups: components["schemas"]["AdminSeries"];
+            dau: components["schemas"]["AdminSeries"];
+        };
+        AdminAnalyticsGrowth: {
+            range: components["schemas"]["AdminRange"];
+            totalUsers: number;
+            /** @description Per day, one series per sign-in method (inferred from the account: Google identity created with it, phone-only placeholder email, else email). */
+            signupsByMethod: components["schemas"]["AdminSeries"][];
+            signupsByWeek: {
+                week: string;
+                email: number;
+                phone: number;
+                google: number;
+                total: number;
+            }[];
+            consentFunnel: components["schemas"]["AdminLabelledCount"][];
+            boards: components["schemas"]["AdminLabelledCount"][];
+            classes: components["schemas"]["AdminLabelledCount"][];
+            schoolsAdded: number;
+            guestMerges: components["schemas"]["AdminSeries"];
+            /** @description Server-observed sign-up counter by method (exact, from the day counters started). */
+            signupCounter: components["schemas"]["AdminLabelledCount"][];
+        };
+        AdminTopItem: {
+            key: string;
+            label: string;
+            practiceAnswers: number;
+            lessonsOpened: number;
+            total: number;
+        };
+        AdminAnalyticsEngagement: {
+            range: components["schemas"]["AdminRange"];
+            dau: components["schemas"]["AdminSeries"];
+            /** @description Distinct students with any learning activity in the range. */
+            activeUsers: number;
+            /** @description Distinct active students in the 7 days ending `to`. */
+            wau: number;
+            /** @description Distinct active students in the 30 days ending `to`. */
+            mau: number;
+            /** @description Average DAU over the 30 days ending `to` divided by MAU. */
+            stickiness: number | null;
+            /** @description lessons_opened, lessons_completed, practice_answers, practice_solved, tests_started, tests_submitted, live_joins */
+            activity: components["schemas"]["AdminSeries"][];
+            totals: components["schemas"]["AdminLabelledCount"][];
+            /** @description From the interest counters (notes_open, flashcards_open); 0 until the web sends them. */
+            notesFlashcards: components["schemas"]["AdminLabelledCount"][];
+            topChapters: components["schemas"]["AdminTopItem"][];
+            topSubjects: components["schemas"]["AdminTopItem"][];
+            streaks: components["schemas"]["AdminLabelledCount"][];
+        };
+        AdminAnalyticsRetention: {
+            range: components["schemas"]["AdminRange"];
+            days: number[];
+            cohorts: {
+                week: string;
+                size: number;
+                rates: (number | null)[];
+                eligible: number[];
+                retained: number[];
+            }[];
+        };
+        AdminAnalyticsAi: {
+            range: components["schemas"]["AdminRange"];
+            actionsByType: components["schemas"]["AdminSeries"][];
+            statusTotals: components["schemas"]["AdminLabelledCount"][];
+            credits: {
+                /** @description One series per grant reason (daily_grant, plan_topup, admin_adjustment, learning bonuses). */
+                granted: components["schemas"]["AdminSeries"][];
+                spent: components["schemas"]["AdminSeries"];
+                refunded: components["schemas"]["AdminSeries"];
+                expired: components["schemas"]["AdminSeries"];
+                totals: components["schemas"]["AdminLabelledCount"][];
+            };
+            spend: {
+                capPaise: number;
+                degradeAtShare: number;
+                days: {
+                    date: string;
+                    spentPaise: number;
+                    freeSpentPaise: number;
+                    share: number;
+                    /** @enum {string} */
+                    status: "normal" | "degraded" | "paused";
+                }[];
+                /** @description Days the spend breaker degraded or paused AI. */
+                breakerDays: number;
+                degradedRequests: number;
+                /** @description Requests refused with ai_paused (server-observed counter). */
+                pausedRefusals: number;
+            };
+            paywallShown: components["schemas"]["AdminLabelledCount"][];
+            paywallTotal: number;
+            moderationBlocks: components["schemas"]["AdminSeries"];
+        };
+        AdminAnalyticsRevenue: {
+            range: components["schemas"]["AdminRange"];
+            billingEnabled: boolean;
+            plansViews: number;
+            checkout: {
+                started: number;
+                completed: number;
+                failed: number;
+                startedCounter: number;
+                completedCounter: number;
+            };
+            activeSubscriptions: {
+                plan: string;
+                interval: string;
+                count: number;
+                mrrPaise: number;
+            }[];
+            mrrPaise: number;
+            revenue: components["schemas"]["AdminSeries"];
+            revenueTotalPaise: number;
+            refundsPaise: number;
+            boardExamPass: {
+                sales: number;
+                revenuePaise: number;
+            };
+            coins: {
+                earned: components["schemas"]["AdminSeries"];
+                earnedTotal: number;
+                storeViews: number;
+                itemViews: components["schemas"]["AdminLabelledCount"][];
+                redemptions: components["schemas"]["AdminLabelledCount"][];
+            };
+        };
+        AdminAnalyticsInterest: {
+            range: components["schemas"]["AdminRange"];
+            events: {
+                /** @enum {string} */
+                event: "signup" | "paywall_shown" | "ai_paused" | "checkout_start" | "checkout_complete" | "plans_view" | "plan_select" | "store_view" | "store_item_view" | "ask_ai_open" | "dashboard_view" | "notes_open" | "flashcards_open" | "signup_prompt_click" | "future_builders_click";
+                label: string;
+                /** @enum {string} */
+                source: "server" | "client";
+                total: number;
+                previousTotal: number;
+                byDimension: components["schemas"]["AdminLabelledCount"][];
+                series: components["schemas"]["AdminSeries"];
+            }[];
+        };
+        AdminAnalyticsContent: {
+            range: components["schemas"]["AdminRange"];
+            subjects: {
+                subject: string;
+                label: string;
+                chapters: number;
+                published: number;
+            }[];
+            /** @description Open "report a mistake" items by age. */
+            openReports: components["schemas"]["AdminLabelledCount"][];
+            openReportsByType: components["schemas"]["AdminLabelledCount"][];
+            reportsInRange: number;
+            fixedInRange: number;
+        };
+        AdminUserRow: {
+            /** Format: uuid */
+            id: string;
+            maskedEmail: string | null;
+            maskedPhone: string | null;
+            /** @enum {string} */
+            method: "email" | "phone" | "google";
+            role: string;
+            board: string | null;
+            classLevel: number | null;
+            consent: string;
+            /** Format: date-time */
+            createdAt: string;
+        };
+        AdminUsersPage: {
+            users: components["schemas"]["AdminUserRow"][];
+            nextCursor: string | null;
+        };
+        AdminUserSearchRequest: {
+            email: string;
+        };
+        AdminUserSearchResult: {
+            users: components["schemas"]["AdminUserRow"][];
+        };
+        AdminUserReveal: {
+            /** Format: uuid */
+            id: string;
+            email: string | null;
+            /** @constant */
+            audited: true;
+        };
+        /** @description Counts only: never AI chats, uploads, answers or free text. */
+        AdminUserSummary: {
+            user: components["schemas"]["AdminUserRow"];
+            signInMethods: ("email" | "phone" | "google")[];
+            consent: components["schemas"]["ConsentState"] | null;
+            ageBand: ("adult" | "minor") | null;
+            hasSchool: boolean;
+            activity: {
+                lessonsOpened: number;
+                lessonsCompleted: number;
+                practiceAnswers: number;
+                practiceSolved: number;
+                testsStarted: number;
+                testsSubmitted: number;
+                activeDays30: number;
+                lastActiveDay: string | null;
+                currentStreak: number;
+                totalXp: number;
+            };
+            ai: {
+                requests30: number;
+                creditsSpent30: number;
+                creditsGranted30: number;
+            };
+            coins: {
+                balance: number;
+                earned: number;
+            };
+            subscription: {
+                plan: string;
+                status: string | null;
+                validUntil: string | null;
+            };
+            /** @constant */
+            audited: true;
+        };
+        InterestEventsRequest: {
+            events: {
+                name: string;
+                dimension?: string;
+            }[];
+        };
+        InterestEventsAccepted: {
+            accepted: number;
         };
         AdminContentReports: {
             reports: {

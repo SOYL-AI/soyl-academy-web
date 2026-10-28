@@ -51,6 +51,8 @@ export interface SyncResult {
   granted: { userId: string; plan: PlanId } | null;
   /** Invoices / credit notes issued by this sync (delivered after commit). Absent: none. */
   invoices?: string[];
+  /** Plans whose checkout this sync completed (a first captured payment): D-045 `checkout_complete` counter. */
+  completed?: PlanId[];
 }
 
 export interface SyncDeps {
@@ -84,6 +86,7 @@ export function mergeResults(primary: SyncResult, ...rest: SyncResult[]): SyncRe
     changes: all.flatMap((r) => r.changes),
     granted: rejected ? null : (all.find((r) => r.granted)?.granted ?? null),
     invoices: rejected ? [] : [...new Set(all.flatMap((r) => r.invoices ?? []))],
+    completed: rejected ? [] : all.flatMap((r) => r.completed ?? []),
   };
 }
 
@@ -133,7 +136,7 @@ export async function atomicSync(db: Exec, fn: (tx: Tx) => Promise<SyncResult>):
       return r;
     });
   } catch (err) {
-    if (err instanceof RejectedRollback) return { ...err.result, changes: [], granted: null, invoices: [] };
+    if (err instanceof RejectedRollback) return { ...err.result, changes: [], granted: null, invoices: [], completed: [] };
     throw err;
   }
 }
@@ -153,11 +156,29 @@ async function upsertPayment(
   parent: { userId: string | null; orderId: string | null; subscriptionId: string | null },
   p: RzpPayment,
   issued: string[],
-  opts: { insert?: boolean } = {},
+  opts: { insert?: boolean; completed?: { plan: PlanId; out: PlanId[] } } = {},
 ): Promise<string | null> {
+  const CAPTURED = ['captured', 'partially_refunded', 'refunded'];
+  const status = paymentStatus(p);
+  // A checkout completes when its first payment is captured: an order's payment, or a subscription's first
+  // charge (renewals are not checkouts). Decided before the write, from what was recorded until now.
+  let completes = false;
+  if (opts.completed && !d.dryRun && CAPTURED.includes(status)) {
+    const [prev] = await d.tx.select({ status: payments.status }).from(payments).where(eq(payments.razorpayPaymentId, p.id));
+    if (!prev || !CAPTURED.includes(prev.status)) {
+      const earlier = parent.subscriptionId
+        ? await d.tx
+            .select({ id: payments.id })
+            .from(payments)
+            .where(and(eq(payments.subscriptionId, parent.subscriptionId), inArray(payments.status, CAPTURED)))
+            .limit(1)
+        : [];
+      completes = earlier.length === 0;
+    }
+  }
   const bad = await writePayment(d, changes, parent, p, opts);
   if (bad) return bad;
-  const status = paymentStatus(p);
+  if (completes) opts.completed!.out.push(opts.completed!.plan);
   if (!d.invoicing?.enabled || !['captured', 'partially_refunded', 'refunded'].includes(status)) return null;
   const [row] = await d.tx.select({ id: payments.id }).from(payments).where(eq(payments.razorpayPaymentId, p.id));
   if (!row) {
@@ -235,8 +256,9 @@ export async function syncOrder(d: SyncDeps, razorpayOrderId: string): Promise<S
 
   const changes: Change[] = [];
   const issued: string[] = [];
+  const completed: PlanId[] = [];
   for (const p of pays) {
-    const bad = await upsertPayment(d, changes, { userId: local.userId, orderId: local.id, subscriptionId: null }, p, issued);
+    const bad = await upsertPayment(d, changes, { userId: local.userId, orderId: local.id, subscriptionId: null }, p, issued, { completed: { plan: planKey, out: completed } });
     if (bad) return result(razorpayOrderId, 'rejected', bad, base);
   }
 
@@ -254,7 +276,7 @@ export async function syncOrder(d: SyncDeps, razorpayOrderId: string): Promise<S
     const validUntil = validUntilIso ? new Date(validUntilIso) : null;
     if (!validUntil || validUntil <= d.now) {
       // Paid after the pass ended (should be impossible: orders are refused then). Needs a refund.
-      return result(razorpayOrderId, 'applied', 'paid_after_plan_end', { ...base, changes, invoices: issued });
+      return result(razorpayOrderId, 'applied', 'paid_after_plan_end', { ...base, changes, invoices: issued, completed });
     }
     if (!ent) {
       changes.push({ entity: 'entitlement', id: `order:${razorpayOrderId}`, field: 'granted', from: null, to: { plan: planKey, validUntil: validUntil.toISOString() } });
@@ -271,7 +293,7 @@ export async function syncOrder(d: SyncDeps, razorpayOrderId: string): Promise<S
     changes.push({ entity: 'entitlement', id: `order:${razorpayOrderId}`, field: 'revokedAt', from: null, to: d.now.toISOString() });
     if (!d.dryRun) await d.tx.update(entitlements).set({ revokedAt: d.now, updatedAt: d.now }).where(eq(entitlements.id, ent.id));
   }
-  return result(razorpayOrderId, 'applied', null, { ...base, changes, granted, invoices: issued });
+  return result(razorpayOrderId, 'applied', null, { ...base, changes, granted, invoices: issued, completed });
 }
 
 /* ---- subscriptions (Plus / Pro monthly / yearly) ---------------------------------------------- */
@@ -391,10 +413,11 @@ export async function syncPayment(d: SyncDeps, paymentId: string): Promise<SyncR
     if (p.status !== 'failed' && p.status !== 'created' && p.amount !== local.amountPaise) return result(paymentId, 'rejected', 'payment_amount_mismatch', base);
     const changes: Change[] = [];
     const issued: string[] = [];
-    const bad = await upsertPayment(d, changes, { userId: local.userId, orderId: null, subscriptionId: local.id }, p, issued);
+    const completed: PlanId[] = [];
+    const bad = await upsertPayment(d, changes, { userId: local.userId, orderId: null, subscriptionId: local.id }, p, issued, { completed: { plan: planKeyOf(d.plans, local.planId), out: completed } });
     if (bad) return result(paymentId, 'rejected', bad, base);
     const sub = await syncSubscription(d, subId);
-    return mergeResults(result(paymentId, 'applied', null, { ...base, changes, invoices: issued }), sub);
+    return mergeResults(result(paymentId, 'applied', null, { ...base, changes, invoices: issued, completed }), sub);
   }
   if (p.order_id) {
     const order = await syncOrder(d, p.order_id);

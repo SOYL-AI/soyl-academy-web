@@ -20,6 +20,8 @@ import type { StoreItem } from '@soyl/shared/config/coins';
 import { BillingService } from './billing/service';
 import { createRazorpayClient, type RazorpayClient } from './billing/razorpay';
 import { AiServices, type AiDeps } from './ai/services';
+import { StaffService } from './domain/admin/staff';
+import { InterestCounters } from './domain/admin/counters';
 
 export interface Providers {
   sms: SmsSender;
@@ -55,12 +57,15 @@ export function createServices(deps: AppDeps) {
     allowTestPhones: !config.isProduction,
     smsGlobalHourlyCap: config.smsGlobalHourlyCap,
   });
-  const identity = new IdentityService(db, adapter, limiter, clock, providers, config.google.adminDomains);
   const google = new GoogleAuth(config, kv, clock, {
     allowInsecure: (deps.google?.allowInsecure ?? config.isLocal) && config.isLocal,
     fetch: deps.google?.fetch,
   });
   const consent = new ConsentService(db, providers.consent, clock);
+  // D-045: staff capabilities (superadmin) and the aggregate interest counters.
+  const staff = new StaffService(db);
+  const counters = new InterestCounters(db, clock);
+  const identity = new IdentityService(db, adapter, limiter, clock, providers, config.google.adminDomains, counters);
   const mfa = new MfaService(db, clock, limiter, { encryptionKey: config.mfaEncryptionKey, pepper: config.otpPepper, issuer: MFA.totp.issuer });
   const razorpay = deps.billing && 'razorpay' in deps.billing ? (deps.billing.razorpay ?? null) : createRazorpayClient(config.billing, () => clock.now());
   // Invoices (ADR-024): PDFs go to the same Blob account as AI uploads (private `invoices` container), emails
@@ -73,6 +78,7 @@ export function createServices(deps: AppDeps) {
     razorpay,
     consent,
     invoiceDelivery: { blob: () => ai.runtime.blob, email: providers.email, publicBaseUrl: config.publicBaseUrl },
+    counters,
   });
   // AI gateway: plans come from billing's entitlements (AiServices defaults to BillingEntitlementService over the same
   // database; tests may inject a StaticEntitlementService); a newly granted plan tops today's credits up at once.
@@ -82,7 +88,7 @@ export function createServices(deps: AppDeps) {
   const consentFlow = isBuiltinProvider(providers.consent)
     ? new BuiltinConsentFlow({ db, clock, limiter, email: providers.email, consent, pepper: config.otpPepper, publicBaseUrl: config.publicBaseUrl, uploads: () => ai.uploads })
     : null;
-  return { auth, adapter, limiter, sessions, otp, identity, google, consent, consentFlow, mfa, billing, ai };
+  return { auth, adapter, limiter, sessions, otp, identity, google, consent, consentFlow, mfa, billing, ai, staff, counters };
 }
 
 export type Services = ReturnType<typeof createServices>;

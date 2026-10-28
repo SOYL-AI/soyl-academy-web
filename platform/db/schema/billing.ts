@@ -59,9 +59,9 @@ export const subscriptions = pgTable(
     cancelAtPeriodEnd: boolean('cancel_at_period_end').notNull().default(false),
     /** Entity timestamp of the last applied event: state precedence, not arrival order (AC-09). */
     lastEventAt: tstz('last_event_at'),
-    /** GST place of supply chosen at checkout (state code; migration 0016). Null: the seller's state applies. */
+    /** GST place of supply chosen at checkout (state code; migration *_invoices (0015 or 0016)). Null: the seller's state applies. */
     placeOfSupply: text('place_of_supply'),
-    /** Optional name for the invoice, as entered at checkout (0016; PII.md). */
+    /** Optional name for the invoice, as entered at checkout (*_invoices; PII.md). */
     buyerName: text('buyer_name'),
     ...timestamps(),
   },
@@ -88,9 +88,9 @@ export const orders = pgTable(
     amountPaise: integer('amount_paise').notNull(),
     currency: text('currency').notNull().default('INR'),
     status: text('status').notNull().default('created'),
-    /** GST place of supply chosen at checkout (state code; migration 0016). Null: the seller's state applies. */
+    /** GST place of supply chosen at checkout (state code; migration *_invoices (0015 or 0016)). Null: the seller's state applies. */
     placeOfSupply: text('place_of_supply'),
-    /** Optional name for the invoice, as entered at checkout (0016; PII.md). */
+    /** Optional name for the invoice, as entered at checkout (*_invoices; PII.md). */
     buyerName: text('buyer_name'),
     ...timestamps(),
   },
@@ -200,7 +200,7 @@ export const webhookEvents = pgTable(
 );
 
 
-/* ---- invoices (migration 0016, ADR-024) ------------------------------------------------------- */
+/* ---- invoices (migration *_invoices (0015 or 0016), ADR-024) ------------------------------------------------------- */
 
 export const INVOICE_TYPES = ['tax_invoice', 'credit_note'] as const;
 export type InvoiceType = (typeof INVOICE_TYPES)[number];

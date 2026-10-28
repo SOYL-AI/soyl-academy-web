@@ -83,7 +83,7 @@ deploy:         no CI deploy yet (OA-01); production is deployed by hand: docs/p
 - Tests beside the code they cover; integration tests use real Postgres/Redis containers.
 - Accessible, mobile-first UI; test at 360 px width.
 - Time zone: store UTC, compute "days" (credits reset, streaks) in **Asia/Kolkata**.
-- Money: integer paise; display INR with GST-inclusive labels.
+- Money: integer paise; display INR. GST labels follow `invoicing.ts` `gstRegistered` (false today, D-046: no "incl. GST", Bill of Supply).
 
 ## Definition of done for the whole project
 All release gates in AGENTS.md §7 are green on staging, production is deployed and smoke-tested, runbooks exist, and the owner has signed off.

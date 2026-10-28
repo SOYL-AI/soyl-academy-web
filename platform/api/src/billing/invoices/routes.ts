@@ -3,12 +3,12 @@
  *
  *   GET  /v1/me/invoices                   member: own invoices and credit notes (empty until a payment)
  *   GET  /v1/me/invoices/:id/pdf           member: the PDF of one's own document (another user's: 404)
- *   GET  /v1/admin/invoices?from&to        admin (two-step verified): documents issued on IST dates from..to
- *   GET  /v1/admin/invoices/export?from&to admin: the same as CSV with GSTR-1 style columns (for the accountant)
- *   POST /v1/admin/invoices/:id/resend     admin: email the document again now
+ *   GET  /v1/admin/invoices?from&to        superadmin (D-045: admin + superadmin capability + TOTP): documents
+ *                                          issued on IST dates from..to
+ *   GET  /v1/admin/invoices/export?from&to superadmin: the same as CSV with GSTR-1 style columns (for the accountant)
+ *   POST /v1/admin/invoices/:id/resend     superadmin: email the document again now
  *
  * Reads never depend on BILLING_ENABLED: with billing off there are simply no invoices.
- * TODO(integration): switch the admin routes to the superadmin role once it exists (D-043 follow-up).
  */
 import type { FastifyInstance } from 'fastify';
 import type { ZodTypeProvider } from 'fastify-type-provider-zod';
@@ -61,7 +61,7 @@ const IdParams = z.strictObject({ id: z.uuid() });
 const EmptyBody = z.strictObject({}).nullish();
 const ResendResult = z.object({ status: z.enum(['sent', 'failed', 'no_email']) }).meta({ id: 'InvoiceResendResult' });
 
-const adminPolicy = (): RoutePolicy => ({ roles: ['admin'], csrf: true, rateLimit: { buckets: [] }, consent: false, mfa: true });
+const adminPolicy = (): RoutePolicy => policies.superadmin('admin.invoices.user');
 
 function checkRange(q: { from: string; to: string }): void {
   const days = (Date.parse(`${q.to}T00:00:00Z`) - Date.parse(`${q.from}T00:00:00Z`)) / 86_400_000;

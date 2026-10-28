@@ -1,5 +1,5 @@
 /**
- * Invoices (migration 0016, ADR-024): constraints, immutability (soyl_invoices_guard), buyer erasure at
+ * Invoices (migration *_invoices (0015 or 0016), ADR-024): constraints, immutability (soyl_invoices_guard), buyer erasure at
  * account deletion (soyl_billing_buyer_anonymise), detach at purge, and the app role's rights.
  */
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
@@ -53,7 +53,7 @@ function invoiceRow(userId: string, paymentId: string, over: Partial<typeof invo
   };
 }
 
-describe('invoices (0016)', () => {
+describe('invoices migration', () => {
   it('amounts must reconcile; one tax invoice per payment; credit notes need their invoice', async () => {
     const u = await makeUser(t.db);
     const { payment } = await paidOrder(u.id);

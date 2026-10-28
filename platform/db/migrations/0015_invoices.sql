@@ -1,6 +1,6 @@
--- 0016 invoices (billing-razorpay, 2026-10-28; ADR-024): numbered invoices for captured payments and credit
+-- 0015 invoices (billing-razorpay, 2026-10-28; ADR-024; becomes 0016 if credits/avatars merges first): numbered invoices for captured payments and credit
 -- notes for refunds, gap-free per series and financial year (invoice_sequences); place of supply and an
--- optional buyer name captured at checkout (orders/subscriptions). Down: 0016_invoices.down.sql.
+-- optional buyer name captured at checkout (orders/subscriptions). Down: 0015_invoices.down.sql.
 --
 -- GST records are kept 8 years (PII.md): invoices are never deleted and their tax content never changes
 -- (soyl_invoices_guard). At account deletion the buyer's name and email are erased from invoices and from

@@ -85,7 +85,7 @@ describe('invoice document', () => {
     // Joined with spaces: a long description wraps onto two lines.
     const text = extractPdfText(renderInvoicePdf({ row: row(), cfg })).join(' ');
     for (const s of [
-      'Invoice',
+      cfg.titles.unregistered, // D-046: Bill of Supply
       'SOYL/2026-27/000001',
       '28 Oct 2026',
       FIXTURE_SELLER.legalName,

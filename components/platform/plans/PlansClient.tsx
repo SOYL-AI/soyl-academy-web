@@ -26,6 +26,7 @@ import { api } from '../lib/api-browser';
 import { GST_STATES } from '@/platform/shared/billing/gst';
 import { Field } from '@/components/platform/ui/kit/Field';
 import field from '@/components/platform/ui/kit/Interactive.module.css';
+import { trackInterest } from '../lib/interest';
 import { checkoutOptions, loadCheckout } from './razorpay';
 import s from './plans.module.css';
 
@@ -112,6 +113,9 @@ export function PlansClient() {
     }
   }, []);
 
+  // D-045 interest counter (aggregate; only after analytics consent).
+  useEffect(() => trackInterest('plans_view'), []);
+
   useEffect(() => {
     if (state.status === 'loading') return;
     // eslint-disable-next-line react-hooks/set-state-in-effect -- plans (members: no-store) and the current plan
@@ -144,7 +148,9 @@ export function PlansClient() {
   );
 
   const start = async (plan: PlanView) => {
+    trackInterest('plan_select', plan.id);
     if (!member) {
+      trackInterest('signup_prompt_click', 'plans');
       openLogin({ returnTo: '/plans', reason: 'Log in to choose a plan. Lessons, practice and tests stay free.' });
       return;
     }

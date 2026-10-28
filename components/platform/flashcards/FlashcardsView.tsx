@@ -5,6 +5,7 @@ import { Markdown } from '@/components/platform/ui/render/Markdown';
 import type { ChapterRoute } from '../server/chapter-route';
 import { PageHeader } from '../shell/PageHeader';
 import { FlashcardDeck } from './FlashcardDeck';
+import { InterestPing } from '../lib/InterestPing';
 import shell from '../shell/shell.module.css';
 import s from './flashcards.module.css';
 
@@ -19,6 +20,7 @@ export function FlashcardsView({ route, cards }: { route: ChapterRoute; cards: C
           {cards.reviewStatus === 'beta' && <Badge tone="warning">Beta</Badge>}
         </p>
       </PageHeader>
+      <InterestPing name="flashcards_open" />
       <FlashcardDeck
         chapterId={chapterId}
         lang={lang}

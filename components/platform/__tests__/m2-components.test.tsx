@@ -236,11 +236,15 @@ describe('/admin', () => {
 
   it('mfa_required → enrol (QR + secret) → confirm → recovery codes once → reports queue', async () => {
     h.session.state = { ...member, user: { ...member.user, role: 'reviewer' } };
-    let reportsCalls = 0;
+    let meCalls = 0;
     h.api.get.mockImplementation(async (path: string) => {
+      // D-045: GET /v1/admin/me comes first (staff + MFA) and decides the sections.
+      if (path === '/v1/admin/me') {
+        meCalls++;
+        if (meCalls === 1) throw new ApiError(403, 'mfa_required', null);
+        return { userId: 'u1', role: 'reviewer', capabilities: [], sections: ['reports'] };
+      }
       if (path === '/v1/admin/reports') {
-        reportsCalls++;
-        if (reportsCalls === 1) throw new ApiError(403, 'mfa_required', null);
         return { reports: [{ id: 'r1', unit: CH, contentType: 'deck', contentId: 'x', itemRef: 's03', reason: 'typo', comment: '<img src=x onerror=alert(1)>', status: 'open', reporter: 'guest', createdAt: '2026-10-27T05:00:00Z' }], nextCursor: null };
       }
       if (path === '/v1/me/mfa') return { enrolled: false, confirmed: false, sessionVerified: false, recoveryCodesRemaining: 0 };
@@ -270,7 +274,8 @@ describe('/admin', () => {
   it('verify step accepts a recovery code', async () => {
     h.session.state = { ...member, user: { ...member.user, role: 'admin' } };
     h.api.get.mockImplementation(async (path: string) => {
-      if (path === '/v1/admin/reports' && h.api.post.mock.calls.length === 0) throw new ApiError(403, 'mfa_required', null);
+      if (path === '/v1/admin/me' && h.api.post.mock.calls.length === 0) throw new ApiError(403, 'mfa_required', null);
+      if (path === '/v1/admin/me') return { userId: 'u1', role: 'admin', capabilities: [], sections: ['reports'] };
       if (path === '/v1/admin/reports') return { reports: [], nextCursor: null };
       return { enrolled: true, confirmed: true, sessionVerified: false, recoveryCodesRemaining: 9 };
     });

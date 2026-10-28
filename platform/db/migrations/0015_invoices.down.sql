@@ -1,4 +1,4 @@
--- Down for 0016_invoices. Drops the invoice tables (and every invoice in them: only on a database that never
+-- Down for 0015_invoices (0016 if renumbered at integration). Drops the invoice tables (and every invoice in them: only on a database that never
 -- issued real invoices), the triggers and the checkout columns on orders/subscriptions.
 DROP TRIGGER IF EXISTS soyl_billing_buyer_anonymise ON "users";
 DROP FUNCTION IF EXISTS soyl_billing_buyer_anonymise();

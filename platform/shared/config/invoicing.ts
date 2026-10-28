@@ -53,7 +53,7 @@ export interface InvoicingConfig {
   /** GST rate when registered (whole percent). */
   gstRatePercent: number;
   series: { tax_invoice: SeriesConfig; credit_note: SeriesConfig };
-  /** Document titles. An unregistered supplier is outside the GST invoice rules; "Invoice" avoids implying a GST document. */
+  /** Document titles. Unregistered: "Bill of Supply" (D-046); the CA may prefer plain "Invoice" (OA-22), a config change. */
   titles: { registered: string; unregistered: string; creditNote: string };
   /** Printed when not registered. */
   unregisteredNote: string;
@@ -95,7 +95,7 @@ export const INVOICING: InvoicingConfig = {
     tax_invoice: { prefix: 'SOYL', digits: 6 },
     credit_note: { prefix: 'SOYL/CN', digits: 6 },
   },
-  titles: { registered: 'Tax Invoice', unregistered: 'Invoice', creditNote: 'Credit Note' },
+  titles: { registered: 'Tax Invoice', unregistered: 'Bill of Supply', creditNote: 'Credit Note' },
   unregisteredNote: 'The supplier is not registered under GST. No GST is charged on this supply.',
   signatureNote: 'This is a computer-generated document; no signature is required.',
   blobContainer: 'invoices',

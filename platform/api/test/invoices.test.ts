@@ -6,7 +6,7 @@
  */
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import { and, asc, desc, eq } from 'drizzle-orm';
-import { invoices, payments, users } from '@soyl/db';
+import { analyticsCounters, invoices, payments, staffCapabilities, users } from '@soyl/db';
 import { base32Decode, stepAt, totpAt } from '../src/auth/mfa';
 import { FIXTURE_SELLER, INVOICING, type InvoicingConfig } from '@soyl/shared/config/invoicing';
 import { MemoryBlobStore } from '../src/ai/blob';
@@ -111,13 +111,13 @@ describe('payment → invoice', () => {
     expect(blob().has('invoices', inv!.pdfBlobPath!)).toBe(true);
     expect(inv!.sentAt).not.toBeNull();
     const mail = h.email.last('parent.pays@example.com')!;
-    expect(mail.subject).toBe(`Your SOYL Academy invoice ${inv!.number}`);
+    expect(mail.subject).toBe(`Your SOYL Academy ${INVOICING.titles.unregistered.toLowerCase()} ${inv!.number}`); // D-046: Bill of Supply
     expect(mail.text).toContain('https://www.soylai.test/me/invoices');
     expect(mail.attachments).toHaveLength(1);
     const pdf = mail.attachments![0]!;
     expect(pdf).toMatchObject({ contentType: 'application/pdf', name: `${inv!.number.replace(/\//g, '-')}.pdf` });
     const text = extractPdfText(pdf.content).join(' ');
-    for (const s of [inv!.number, 'Invoice', FIXTURE_SELLER.legalName, 'Ravi Kumar', 'parent.pays@example.com', 'Karnataka (29)', '999293', 'Rs. 499.00', 'Rupees Four Hundred Ninety-Nine Only', INVOICING.signatureNote])
+    for (const s of [inv!.number, INVOICING.titles.unregistered, FIXTURE_SELLER.legalName, 'Ravi Kumar', 'parent.pays@example.com', 'Karnataka (29)', '999293', 'Rs. 499.00', 'Rupees Four Hundred Ninety-Nine Only', INVOICING.signatureNote])
       expect(text).toContain(s);
   });
 
@@ -145,6 +145,31 @@ describe('payment → invoice', () => {
     expect((rows[0]!.lineItems as { description: string }[])[0]!.description).toBe('SOYL Academy Plus plan, monthly subscription (AI tutor credits)');
     expect(new Set(rows.map((r) => r.razorpayPaymentId)).size).toBe(2);
     h.clock.set(Date.parse('2026-11-02T06:30:00Z'));
+  });
+});
+
+describe('checkout_complete counter (D-045)', () => {
+  const completed = async (plan: string) => {
+    const rows = await h.t.db.select().from(analyticsCounters).where(and(eq(analyticsCounters.event, 'checkout_complete'), eq(analyticsCounters.dimension, plan)));
+    return rows.reduce((n, r) => n + r.count, 0);
+  };
+  const settle = () => new Promise((r) => setTimeout(r, 50)); // the counter is best effort, after commit
+
+  it('counts a captured order once (duplicate webhooks too) and a subscription only at its first charge', async () => {
+    const pass0 = await completed('board_exam_pass');
+    const { events } = await payPass();
+    await h.deliverAll(events.map((e) => ({ ...e, eventId: `${e.eventId}d` })));
+    await settle();
+    expect(await completed('board_exam_pass')).toBe(pass0 + 1);
+
+    const plus0 = await completed('plus');
+    const s = await h.student();
+    const sub = (await s.c.post('/v1/billing/subscriptions', { plan: 'plus', interval: 'monthly' })).json() as { subscriptionId: string };
+    await h.deliverAll(h.stub.simulateSubscriptionCheckout(sub.subscriptionId));
+    await h.deliverAll(h.stub.simulateRenewal(sub.subscriptionId));
+    await settle();
+    expect(await completed('plus')).toBe(plus0 + 1);
+    await drain();
   });
 });
 
@@ -319,7 +344,7 @@ describe('access', () => {
     expect(list.statusCode).toBe(200);
     const mine = list.json().invoices as { id: string; number: string; title: string; totalLabel: string; type: string }[];
     expect(mine).toHaveLength(1);
-    expect(mine[0]).toMatchObject({ type: 'tax_invoice', title: 'Invoice', totalLabel: '₹499.00', planName: 'Board Exam Pass', originalNumber: null, gstRegistered: false });
+    expect(mine[0]).toMatchObject({ type: 'tax_invoice', title: INVOICING.titles.unregistered, totalLabel: '₹499.00', planName: 'Board Exam Pass', originalNumber: null, gstRegistered: false });
     expect((await other.c.get('/v1/me/invoices')).json()).toEqual({ invoices: [] });
 
     const pdf = await a.c.get(`/v1/me/invoices/${mine[0]!.id}/pdf`);
@@ -368,17 +393,18 @@ describe('access', () => {
 });
 
 describe('admin', () => {
-  async function verifiedAdmin() {
+  async function verifiedAdmin(o: { superadmin?: boolean } = { superadmin: true }) {
     const c = h.client();
     const { user } = await c.signInEmail(email('admin'));
     await h.services.adapter().then((x) => x.updateUser(user.id, { role: 'admin' }));
+    if (o.superadmin) await h.t.db.insert(staffCapabilities).values({ userId: user.id, capability: 'superadmin' });
     const { secret } = (await c.post('/v1/me/mfa/totp/enroll')).json() as { secret: string };
     const confirm = await c.post('/v1/me/mfa/totp/confirm', { code: totpAt(base32Decode(secret), stepAt(h.clock.now())) });
     expect(confirm.statusCode, confirm.body).toBe(200);
     return c;
   }
 
-  it('lists by IST date range, exports CSV for the accountant and resends; students are refused', async () => {
+  it('lists by IST date range, exports CSV for the accountant and resends (superadmin); students and plain admins are refused', async () => {
     h.stub.payerEmail = 'csv@example.com';
     const { userId, c: student } = await payPass({ placeOfSupply: '27' });
     const [inv] = await docs(userId);
@@ -386,6 +412,10 @@ describe('admin', () => {
     const day = inv!.issueDate;
 
     expect((await student.get(`/v1/admin/invoices?from=${day}&to=${day}`)).statusCode).toBe(403);
+    // D-045: role admin with TOTP but without the superadmin capability is refused too.
+    const plainAdmin = await verifiedAdmin({ superadmin: false });
+    expect((await plainAdmin.get(`/v1/admin/invoices?from=${day}&to=${day}`)).statusCode).toBe(403);
+    expect((await plainAdmin.post(`/v1/admin/invoices/${inv!.id}/resend`, {})).statusCode).toBe(403);
     const list = await admin.get(`/v1/admin/invoices?from=${day}&to=${day}`);
     expect(list.statusCode, list.body).toBe(200);
     const row = (list.json().invoices as { number: string }[]).find((r) => r.number === inv!.number);
@@ -399,7 +429,7 @@ describe('admin', () => {
     expect(csv.headers['content-type']).toBe('text/csv; charset=utf-8');
     const lines = csv.body.trim().split('\r\n');
     expect(lines[0]).toBe('Document type,Document number,Document date,Original invoice number,Original invoice date,Place of supply,Supply type,GST registered,SAC,Description,Taxable value,Rate (%),CGST,SGST,IGST,Total,Razorpay payment id');
-    expect(lines.find((l) => l.includes(inv!.number))).toBe(`Invoice,${inv!.number},${day},,,27-Maharashtra,Not registered,No,999293,"SOYL Academy Board Exam Pass, valid until 31 Mar 2027 (AI tutor credits)",499.00,0,0.00,0.00,0.00,499.00,${inv!.razorpayPaymentId}`);
+    expect(lines.find((l) => l.includes(inv!.number))).toBe(`${INVOICING.titles.unregistered},${inv!.number},${day},,,27-Maharashtra,Not registered,No,999293,"SOYL Academy Board Exam Pass, valid until 31 Mar 2027 (AI tutor credits)",499.00,0,0.00,0.00,0.00,499.00,${inv!.razorpayPaymentId}`);
 
     const sent = h.email.outbox.filter((m) => m.to === 'csv@example.com').length;
     const resend = await admin.post(`/v1/admin/invoices/${inv!.id}/resend`, {});

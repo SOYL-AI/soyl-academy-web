@@ -24,8 +24,13 @@ What an account holds is kept to what the product needs:
   only a keyed hash (rate limits, noticing a change of parent) and a masked hint ("p•••@gmail.com").
 - **Public names:** other students only ever see an auto-generated name ("Brave Otter 417") derived from
   the account id and `profiles.public_name_seed`; display names stay on the student's own screens.
-- **Analytics:** `analytics_events` has no user, device or IP column; no third-party analytics, pixels or
-  Vercel Analytics on platform routes (D-014, WEB-1).
+- **Analytics:** `analytics_events` and `analytics_counters` (0015, D-045: counts per IST day, allowlisted event
+  and dimension) have no user, session, device, user-agent or IP column; client counters are sent only after
+  the visitor accepted analytics in the cookie bar. No third-party analytics, pixels or Vercel Analytics on
+  platform routes (D-014, WEB-1).
+- **Staff views of accounts (D-045):** the super-admin dashboard shows aggregates and masked emails
+  (`a***@g***.com`); revealing a full email or opening a user's summary (counts only, never AI chats or
+  uploads) writes an `audit_log` row (`admin.user.reveal_email`, `admin.user.view_summary`).
 
 ## Consent withdrawal (built-in provider, D-039)
 
@@ -38,7 +43,7 @@ are off without consent). An `audit_log` row (action "consent.ai_data_deleted") 
 (conversations, uploads, schoolCleared).
 Learning records (progress, practice, attempts, XP) are not AI data and stay.
 
-## Invoices (0016, ADR-024)
+## Invoices (*_invoices, ADR-024)
 
 GST law needs invoices and credit notes kept for 8 years (CGST Act s.36: 72 months from the annual return due date), so account deletion never deletes them. What it does:
 
@@ -149,9 +154,11 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `content_status_events.actor_user_id` | Reviewer who changed content status | life of content | detach |
 | `audit_log.actor_user_id`, `audit_log.target_id`, `audit_log.before`, `audit_log.after` | Admin actions (ids only, DB-8) | 2 years | detach |
 | `feature_flags.updated_by_user_id`, `config_values.updated_by_user_id` | Admin who changed a value | life of row | detach |
+| `staff_capabilities.user_id`, `staff_capabilities.granted_by_user_id` | Staff capability (`superadmin`, 0015) and who granted it (null = bootstrap CLI) | while staff | cascade / detach |
+| `analytics_counters.*` | Interest counters per IST day, event and dimension; no user link (D-045) | 2 years | retain (aggregate, not personal) |
 | `subscriptions.user_id`, `orders.user_id`, `payments.user_id` | Purchaser link | 8 years (tax records; pending OA-14) | detach |
 | `subscriptions.razorpay_subscription_id`, `orders.razorpay_order_id`, `orders.receipt`, `payments.razorpay_payment_id`, `payments.method` | Payment references | 8 years | retain |
-| `subscriptions.buyer_name`, `orders.buyer_name` | Optional name for the invoice, as typed at checkout (0016) | until account deletion | anonymise (trigger `soyl_billing_buyer_anonymise` sets NULL when `users.deleted_at` is set) |
+| `subscriptions.buyer_name`, `orders.buyer_name` | Optional name for the invoice, as typed at checkout (*_invoices) | until account deletion | anonymise (trigger `soyl_billing_buyer_anonymise` sets NULL when `users.deleted_at` is set) |
 | `subscriptions.place_of_supply`, `orders.place_of_supply` | GST state code chosen at checkout (a state, not an address) | 8 years with payment records | retain |
 | `invoices.buyer_name`, `invoices.buyer_email` | Buyer name (optional) and the payer's email (from Razorpay, else the account email), printed on the invoice and used to email it | until account deletion | anonymise (trigger sets both NULL and `buyer_anonymised_at`; the worker re-renders the stored PDF without them) |
 | `invoices.user_id` | Whose invoice it is (download at /me/invoices) | 8 years (GST records, CGST Act s.36) | detach |

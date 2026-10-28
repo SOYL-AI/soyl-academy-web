@@ -13,7 +13,7 @@ import { createTestDb, type TestDb } from '../src/testing';
 import { DEFAULT_CATALOG_DIR, seedCatalog } from '../src/seed/catalog';
 import { TEST_PHONE_PREFIX, seedTestUsers } from '../src/seed/test-users';
 import { bootstrapAdmin } from '../src/seed/admin';
-import { auditLog, chapters, guardianLinks, learningOutcomes, subjects, syllabusVersions, topics, users } from '../schema/index';
+import { auditLog, chapters, guardianLinks, learningOutcomes, sessions, staffCapabilities, subjects, syllabusVersions, topics, users } from '../schema/index';
 
 function walk(dir: string, name: string, out: string[] = []): string[] {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -183,5 +183,32 @@ describe('seed test-users (GEN-2) and admin bootstrap (DB-7)', () => {
     const audit = await t.db.select().from(auditLog).where(eq(auditLog.action, 'admin.bootstrap'));
     expect(audit).toHaveLength(2);
     expect(audit.find((a) => a.targetId === promoted.userId)?.before).toEqual({ role: 'reviewer' });
+  });
+
+  it('--role superadmin (D-045): admin + the superadmin capability, idempotent, revokes sessions on change, --role admin removes it', async () => {
+    const email = 'Super.Owner@Example.com';
+    const caps = async (userId: string) => (await t.db.select().from(staffCapabilities).where(eq(staffCapabilities.userId, userId))).map((c) => c.capability);
+    const audits = async (userId: string) => t.db.select().from(auditLog).where(eq(auditLog.targetId, userId));
+    // An existing student with a live session (signed up with email OTP first).
+    const [student] = await t.db.insert(users).values({ name: 'Owner', email: 'super.owner@example.com', emailVerified: true }).returning();
+    await t.db.insert(sessions).values({ userId: student!.id, token: 'tok-super-1', expiresAt: new Date(Date.now() + 3_600_000) });
+    const first = await bootstrapAdmin(t.db, email, 'superadmin');
+    expect(first).toMatchObject({ userId: student!.id, created: false, changed: true, role: 'superadmin', sessionsRevoked: 1 });
+    expect((await t.db.select().from(users).where(eq(users.id, student!.id)))[0]!.role).toBe('admin');
+    expect(await caps(student!.id)).toEqual(['superadmin']);
+    expect((await audits(student!.id)).map((a) => [a.before, a.after])).toEqual([[{ role: 'student' }, { role: 'admin', capabilities: ['superadmin'] }]]);
+    // Running the same step again changes nothing (no audit row, no revocation).
+    await t.db.insert(sessions).values({ userId: student!.id, token: 'tok-super-2', expiresAt: new Date(Date.now() + 3_600_000) });
+    expect(await bootstrapAdmin(t.db, email, 'superadmin')).toMatchObject({ changed: false, sessionsRevoked: 0 });
+    expect(await audits(student!.id)).toHaveLength(1);
+    expect(await t.db.select().from(sessions).where(eq(sessions.userId, student!.id))).toHaveLength(1);
+    // Back to plain admin: the capability goes, sessions are revoked, the change is audited.
+    expect(await bootstrapAdmin(t.db, email, 'admin')).toMatchObject({ changed: true, sessionsRevoked: 1 });
+    expect(await caps(student!.id)).toEqual([]);
+    // A missing account is created as a superadmin in one step.
+    const fresh = await bootstrapAdmin(t.db, 'new.super@example.com', 'superadmin');
+    expect(fresh).toMatchObject({ created: true, changed: true });
+    expect(await caps(fresh.userId)).toEqual(['superadmin']);
+    await expect(bootstrapAdmin(t.db, email, 'root' as never)).rejects.toThrow(/--role/);
   });
 });

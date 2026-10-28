@@ -80,6 +80,8 @@ export interface WebhookDeps {
   /** Called after commit with the documents the event issued (delivery: PDF + email). */
   onInvoices?: (ids: string[]) => void;
   invoiceLog?: () => InvoicingLog | undefined;
+  /** Called after commit with the plans whose checkout the event completed (D-045 counter). */
+  onCompleted?: (plans: PlanId[]) => void;
 }
 
 /** What an event is about, and which sync applies it. */
@@ -189,6 +191,7 @@ export class WebhookProcessor {
     });
     if (out.result?.granted && this.deps.onGranted) await this.deps.onGranted(out.result.granted);
     if (out.result?.invoices?.length) this.deps.onInvoices?.(out.result.invoices);
+    if (out.result?.completed?.length) this.deps.onCompleted?.(out.result.completed);
     return out;
   }
 }

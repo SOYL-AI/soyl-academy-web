@@ -6,7 +6,9 @@
  *   migrate status             applied / pending / changed migrations
  *   seed catalog [--dir P]     load platform/catalog (idempotent)
  *   seed test-users            fixture users (refuses in production; GEN-2)
- *   admin bootstrap --email E  make E an admin, creating the user if needed (DB-7)
+ *   admin bootstrap --email E [--role admin|superadmin]
+ *                              make E an admin (or a superadmin: admin + the analytics capability,
+ *                              D-045), creating the user if needed (DB-7). Idempotent, non-interactive.
  *
  * Target database: DATABASE_URL. When it is unset, a persistent local embedded PostgreSQL server
  * (platform/db/.data/dev, port 54320) is started for the command and stopped afterwards.
@@ -18,12 +20,12 @@ import { migrateDown, migrateUp, migrationStatus } from './migrator';
 import { startDevServer, type EmbeddedServer } from './embedded';
 import { seedCatalog } from './seed/catalog';
 import { seedTestUsers } from './seed/test-users';
-import { bootstrapAdmin } from './seed/admin';
+import { BOOTSTRAP_ROLES, bootstrapAdmin, type BootstrapRole } from './seed/admin';
 
 const USAGE = `usage:
   db migrate up [--to N] | down [--to N] | status
   db seed catalog [--dir PATH] | test-users
-  db admin bootstrap --email EMAIL`;
+  db admin bootstrap --email EMAIL [--role admin|superadmin]`;
 
 function option(args: string[], name: string): string | undefined {
   const i = args.indexOf(`--${name}`);
@@ -94,8 +96,11 @@ async function main(argv: string[]): Promise<number> {
       } else if (group === 'admin' && command === 'bootstrap') {
         const email = option(rest, 'email');
         if (!email) throw new Error('admin bootstrap needs --email <email>');
-        const r = await bootstrapAdmin(db, email);
-        console.log(`${r.created ? 'created' : 'updated'} admin ${r.email} (${r.userId})`);
+        const role = (option(rest, 'role') ?? 'admin') as BootstrapRole;
+        if (!BOOTSTRAP_ROLES.includes(role)) throw new Error(`--role must be one of ${BOOTSTRAP_ROLES.join(', ')}`);
+        const r = await bootstrapAdmin(db, email, role);
+        const what = r.created ? 'created' : r.changed ? 'updated' : 'unchanged (already)';
+        console.log(`${what} ${role} ${r.email} (${r.userId})${r.sessionsRevoked ? `; ${r.sessionsRevoked} session(s) revoked` : ''}`);
       } else {
         console.log(USAGE);
         return 1;
