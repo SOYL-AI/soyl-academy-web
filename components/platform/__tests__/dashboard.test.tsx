@@ -372,7 +372,7 @@ describe('DashboardView', () => {
   });
 
   it('level, XP, coins from the card and the streak from activity', () => {
-    const card = { status: 'ready' as const, data: { publicName: 'Brave Otter 123', level: 4, xp: 1250, coins: 37, overall: 55, tier: 'bronze' as const, provisional: true, formulaVersion: 1, attributes: [], asOfDay: '2026-10-28' } };
+    const card = { status: 'ready' as const, data: { publicName: 'Brave Otter 123', avatar: { id: 'otter' as const, bg: 'sky' as const, isDefault: true }, level: 4, xp: 1250, coins: 37, overall: 55, tier: 'bronze' as const, provisional: true, formulaVersion: 1, attributes: [], asOfDay: '2026-10-28' } };
     const activity = { status: 'ready' as const, data: { timezone: 'Asia/Kolkata' as const, from: '2026-06-11', to: '2026-10-28', days: 140, calendar: [], totals: { answered: 0, solved: 0, lessonsCompleted: 0, testsSubmitted: 0, activeDays: 0 }, streak: { current: 3, longest: 5, lastActiveDay: '2026-10-28', atRisk: false, freezeAvailableThisWeek: true }, activeDaysAllTime: 9 } };
     wrap(<DashboardView d={activeDashboard()} name="Asha" consent={false} card={card} activity={activity} mastery={{ status: 'loading' }} onProfileChanged={vi.fn()} />);
     const stats = screen.getByRole('list', { name: 'Your stats' });

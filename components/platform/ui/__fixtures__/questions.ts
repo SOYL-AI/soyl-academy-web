@@ -85,6 +85,7 @@ export function result(question: StudentQuestion, over: Partial<PracticeAnswerRe
     streak: null,
     coinsAwarded: 0,
     coinAwards: [],
+    creditBonuses: [],
     ...over,
   };
 }

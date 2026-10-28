@@ -81,6 +81,7 @@ export function toReveal(item: AttemptResultItem): PracticeAnswerResult | null {
     streak: null,
     coinsAwarded: 0,
     coinAwards: [],
+    creditBonuses: [],
   };
 }
 
