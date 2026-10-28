@@ -1,29 +1,35 @@
-/** Flashcards page body (Server Component): renders every card face once, on the server. */
+/**
+ * Flashcards page body (Server Component): renders every card face once, on the server, and hands them to the
+ * client deck (focus mode). The breadcrumb is not shown (the strip's × goes back to the chapter) but stays in the
+ * page as BreadcrumbList data.
+ */
 import type { ChapterFlashcards } from '@/platform/shared/api-client';
-import { Badge } from '@/components/platform/ui/kit/Display';
+import { StructuredData } from '@/components/seo/StructuredData';
+import { breadcrumbNode } from '@/lib/seo/schema';
 import { Markdown } from '@/components/platform/ui/render/Markdown';
 import type { ChapterRoute } from '../server/chapter-route';
-import { PageHeader } from '../shell/PageHeader';
 import { FlashcardDeck } from './FlashcardDeck';
 import { InterestPing } from '../lib/InterestPing';
-import shell from '../shell/shell.module.css';
-import s from './flashcards.module.css';
 
 export function FlashcardsView({ route, cards }: { route: ChapterRoute; cards: ChapterFlashcards }) {
   const { hub, base, lang, chapterId } = route;
   const hi = lang === 'hi';
+  const label = hi ? 'फ़्लैशकार्ड' : 'Flashcards';
+  const crumbs = [...route.crumbs, { name: label, path: `${base}/flashcards` }];
   return (
-    <div className={shell.page}>
-      <PageHeader crumbs={[...route.crumbs, { name: hi ? 'फ़्लैशकार्ड' : 'Flashcards', path: `${base}/flashcards` }]} title={`${hi ? 'फ़्लैशकार्ड' : 'Flashcards'}: ${hub.chapter.title}`} lang={lang}>
-        <p className={s.meta}>
-          {cards.cards.length} cards
-          {cards.reviewStatus === 'beta' && <Badge tone="warning">Beta</Badge>}
-        </p>
-      </PageHeader>
+    <div>
+      <StructuredData data={{ '@context': 'https://schema.org', ...breadcrumbNode(`${base}/flashcards`, crumbs) }} />
       <InterestPing name="flashcards_open" />
       <FlashcardDeck
         chapterId={chapterId}
         lang={lang}
+        title={`${label}: ${hub.chapter.title}`}
+        beta={cards.reviewStatus === 'beta'}
+        links={{
+          hub: base,
+          practice: hub.assets.practice.available ? `${base}/practice` : undefined,
+          notes: hub.assets.notes.available ? `${base}/notes` : undefined,
+        }}
         cards={cards.cards.map((c) => ({
           id: c.id,
           tag: c.tag,
