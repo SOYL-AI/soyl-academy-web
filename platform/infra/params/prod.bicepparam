@@ -1,7 +1,7 @@
-// prod - DARK first start (D-031, 2026-10-27): the API runs with PLATFORM_ENABLED=false and
-// BILLING_ENABLED=false (every route except /healthz and /readyz answers 404, GEN-4), email OTP only,
-// interim built-in consent (CONSENT_PROVIDER=builtin, D-039/ADR-022: age band, parent code by email).
-// Sized for a small budget, NOT for launch.
+// prod - first started DARK (D-031, 2026-10-27); platform ON from 2026-10-28 (D-041, owner go):
+// PLATFORM_ENABLED=true behind the edge secret (only the www.soylai.com proxy can call /v1),
+// BILLING_ENABLED=false (Razorpay later), email OTP only, interim built-in consent
+// (CONSENT_PROVIDER=builtin, D-039/ADR-022: age band, parent code by email). Small-budget sizing.
 // AI (D-038, 2026-10-28): Azure OpenAI (GPT-6 Luna = small, GPT-6.1 Sol = mid/verify, embeddings),
 // Speech and Content Safety are deployed, private-endpoint only and keyless (ADR-008). AI stays
 // unreachable while the platform is dark and, after launch, until consent unlocks it (D-039).
@@ -172,7 +172,8 @@ param aiBudgetAmount = aiMonthlyBudgetInr
 param budgetAmount = 25000 + aiMonthlyBudgetInr
 
 param appSettings = {
-  PLATFORM_ENABLED: 'false'
+  // D-041: on (owner go-live 2026-10-28). Rollback: 'false' and redeploy (every /v1 route answers 404).
+  PLATFORM_ENABLED: 'true'
   // Purchases (D-003, D-038): false until launch, even with billingOn (runbooks/billing-go-live.md step 6).
   BILLING_ENABLED: 'false'
   PUBLIC_BASE_URL: 'https://www.soylai.com'

@@ -35,9 +35,10 @@ az containerapp job show -g $RG -n $MIGRATE_JOB    --query "properties.template.
 From the repository root (context `platform/`), exactly as prod-first-deploy §3:
 
 ```bash
-az acr build -r $SOYL_ACR_NAME -t soyl-api:$TAG     -f api/Dockerfile                 platform
-az acr build -r $SOYL_ACR_NAME -t soyl-worker:$TAG  -f worker/Dockerfile              platform
-az acr build -r $SOYL_ACR_NAME -t soyl-migrate:$TAG -f infra/docker/migrate.Dockerfile platform
+# -f is relative to the current directory (the Windows CLI does not resolve it against the context)
+az acr build -r $SOYL_ACR_NAME -t soyl-api:$TAG     -f platform/api/Dockerfile                 platform
+az acr build -r $SOYL_ACR_NAME -t soyl-worker:$TAG  -f platform/worker/Dockerfile              platform
+az acr build -r $SOYL_ACR_NAME -t soyl-migrate:$TAG -f platform/infra/docker/migrate.Dockerfile platform
 digest() { az acr repository show -n $SOYL_ACR_NAME --image "$1:$TAG" --query digest -o tsv; }
 export SOYL_API_IMAGE="$SOYL_ACR_NAME.azurecr.io/soyl-api@$(digest soyl-api)"
 export SOYL_WORKER_IMAGE="$SOYL_ACR_NAME.azurecr.io/soyl-worker@$(digest soyl-worker)"
@@ -60,6 +61,8 @@ SOYL_API_IMAGE=$API_NOW SOYL_WORKER_IMAGE=$WORKER_NOW \
 ```
 
 Read the what-if before creating: expect image changes on the two jobs and any new Bicep resources from the merged commits. Stop and investigate anything that deletes or replaces a stateful resource.
+
+**Settings the running image would reject.** `appSettings` are shared by the api and worker, so pass A also rolls any changed setting onto the **current** images. If the new commit changes a setting to a value the old code refuses (2026-10-28: `CONSENT_PROVIDER: 'builtin'`, unknown before 0011/0012), the what-if shows it on `ca-soyl-api-prod` / `ca-soyl-worker-prod` and the old API would fail to start. Then run pass A from a checkout of the **currently deployed** commit (`git worktree add --detach <dir> <deployed sha>`) with the same three image variables, and confirm in its what-if that only the two jobs change image.
 
 ## 3. Migrate 🛠
 
