@@ -16,7 +16,7 @@ export default async function CoinsPage() {
   await connection();
   return (
     <div className={shell.page}>
-      <PageHeader crumbs={[{ name: 'SOYL Coins', path: '/coins' }]} title="SOYL Coins" lead="Earned by learning, never bought. Spend them in the SOYL Store." structuredData={false} />
+      <PageHeader crumbs={[{ name: 'SOYL Coins', path: '/coins' }]} title="SOYL Coins" lead="Earned by learning, never bought. They will redeem exclusive rewards in the SOYL Store." structuredData={false} />
       <CoinsClient />
     </div>
   );

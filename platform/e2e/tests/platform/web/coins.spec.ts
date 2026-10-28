@@ -1,23 +1,19 @@
 import type { Locator, Page } from '@playwright/test';
 import { expect, test } from './fixtures';
-import { checkPage, ctl, shot, signUp } from './m34-helpers';
+import { checkPage, shot, signUp } from './m34-helpers';
 
 /**
- * SOYL Coins (D-037, ADR-021) against the real local API (embedded Postgres, published content) through
- * `next start` with the flag on. The e2e API runs with merch redemption switched off (the production
- * default, COINS_PHYSICAL_REDEMPTION_ENABLED unset), so merch is "Coming soon" from the real API; the
- * consent-needed state is shown by replaying the real store response with redemption switched on.
+ * SOYL Coins (D-037, D-038, ADR-021) against the real local API (embedded Postgres, published content)
+ * through `next start` with the flag on, in the launch configuration: earning (check-in, the daily
+ * challenge through practice) is live, redemption is switched off (COINS_REDEMPTION_ENABLED unset), so
+ * /store is a coming-soon page. Redemption itself is covered by the API integration tests and the web unit
+ * tests (the redemption UI renders only when the API reports redemptionEnabled).
  */
 
 async function balance(page: Page): Promise<number> {
   const res = await page.request.get('/api/platform/v1/coins');
   expect(res.status()).toBe(200);
   return ((await res.json()) as { balance: number }).balance;
-}
-
-async function userId(page: Page): Promise<string> {
-  const res = await page.request.get('/api/platform/v1/session');
-  return ((await res.json()) as { user: { id: string } }).user.id;
 }
 
 test('check-in: +1 coin once per IST day, chip and history update, button disabled after', async ({ page }) => {
@@ -122,90 +118,35 @@ test('daily challenge on the class hub: guests are invited to log in; a right an
   await checkPage(page);
 });
 
-test('store: digital redeem → owned → equip; merch "Coming soon" while redemption is off', async ({ page }) => {
+test('store: "Exclusive rewards — coming soon" with how to earn; nothing can be redeemed or equipped (D-038)', async ({ page }) => {
   // Guests may look.
   await page.goto('/store', { waitUntil: 'networkidle' });
-  await expect(page.getByRole('heading', { level: 1, name: 'The SOYL Store' })).toBeVisible();
-  await expect(page.locator('[data-item="frame-saffron"]')).toHaveAttribute('data-state', 'sign_in');
+  await expect(page.getByRole('heading', { level: 1, name: 'Exclusive rewards — coming soon' })).toBeVisible();
+  await expect(page.getByTestId('store')).toHaveAttribute('data-redemption', 'off');
+  await expect(page.getByTestId('store-coming-soon')).toBeVisible();
+  await expect(page.getByTestId('store-teaser')).toHaveCount(3);
+  await expect(page.getByText(/Our merch is being designed now/)).toBeVisible();
+  await expect(page.getByTestId('store-how-to-earn')).toHaveAttribute('href', '/coins');
   await checkPage(page);
 
   await signUp(page, 'coins-store', '/store');
-  await ctl('/ctl/coins/grant', { userId: await userId(page), amount: 100 });
-  await page.reload({ waitUntil: 'networkidle' });
-  await expect(page.getByTestId('store-balance')).toContainText('100');
-
-  // Merch: "Coming soon" from the real API (COINS_PHYSICAL_REDEMPTION_ENABLED off), no redeem button.
-  await expect(page.getByTestId('merch-coming-soon')).toBeVisible();
-  const hoodie = page.locator('[data-item="hoodie"]');
-  await expect(hoodie).toHaveAttribute('data-state', 'coming_soon');
-  await expect(hoodie.getByTestId('item-state')).toHaveText('Coming soon');
-  await expect(hoodie.getByTestId('redeem')).toHaveCount(0);
-  // Locked by an achievement, with the rule shown.
-  const constellation = page.locator('[data-item="frame-constellation"]');
-  await expect(constellation).toHaveAttribute('data-state', 'locked');
-  await expect(constellation).toContainText('Solve 200 practice questions');
-  // Too expensive for 100 coins.
-  await expect(page.locator('[data-item="theme-streak-flame"]')).toHaveAttribute('data-state', /locked|insufficient_coins/);
+  await expect(page.getByTestId('store-balance')).toContainText('0');
+  // No items, prices, redeem or equip entry points; no address form.
+  for (const id of ['store-item', 'redeem', 'equip', 'address-form', 'my-redemptions']) await expect(page.getByTestId(id), id).toHaveCount(0);
+  await expect(page.getByRole('button', { name: /redeem|equip/i })).toHaveCount(0);
   await checkPage(page);
-  await shot(page, 'store');
+  await shot(page, 'store-coming-soon');
 
-  const frame = page.locator('[data-item="frame-saffron"]');
-  await expect(frame).toHaveAttribute('data-state', 'available');
-  await frame.getByTestId('redeem').click();
-  const dialog = page.getByRole('dialog', { name: 'Redeem Saffron profile frame?' });
-  await expect(dialog).toContainText('Balance after: 40 coins.');
-  await checkPage(page);
-  const redeem = page.waitForResponse((r) => r.url().endsWith('/api/platform/v1/coins/redeem') && r.request().method() === 'POST');
-  await dialog.getByTestId('confirm-redeem').click();
-  expect((await redeem).status()).toBe(200);
-  await expect(dialog).toBeHidden();
-  await expect(page.getByRole('status').filter({ hasText: 'Unlocked: Saffron profile frame' })).toBeVisible();
-  await expect(frame).toHaveAttribute('data-state', 'owned');
-  await expect(page.getByTestId('coin-chip')).toHaveAttribute('data-balance', '40');
-  await expect(page.getByTestId('redemption').filter({ hasText: 'Saffron profile frame' })).toContainText('Unlocked');
-  expect(await balance(page)).toBe(40);
-
-  await frame.getByTestId('equip').click();
-  await expect(frame.getByTestId('equip')).toHaveAttribute('aria-pressed', 'true');
-  const coins = (await (await page.request.get('/api/platform/v1/coins')).json()) as { equipped: { frame: string | null } };
-  expect(coins.equipped.frame).toBe('frame-saffron');
-
-  // A second redeem of an owned digital item is refused by the API (redemption_limit).
-  const twice = await page.evaluate(async () => {
-    const r = await fetch('/api/platform/v1/coins/redeem', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ itemKey: 'frame-saffron' }) });
-    return { status: r.status, code: ((await r.json()) as { code: string }).code };
+  // The API agrees: an empty store, and every spending call is refused with redemption_disabled.
+  const store = (await (await page.request.get('/api/platform/v1/coins/store')).json()) as { redemptionEnabled: boolean; items: unknown[] };
+  expect(store).toMatchObject({ redemptionEnabled: false, items: [] });
+  const refused = await page.evaluate(async () => {
+    const call = async (method: string, path: string, body: unknown) => {
+      const r = await fetch(`/api/platform${path}`, { method, headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
+      return `${r.status} ${((await r.json()) as { code: string }).code}`;
+    };
+    return [await call('POST', '/v1/coins/redeem', { itemKey: 'frame-saffron' }), await call('PUT', '/v1/coins/equipped', { frame: 'frame-saffron' })];
   });
-  expect(twice).toEqual({ status: 409, code: 'redemption_limit' });
-  // Merch is refused by the API while redemption is off (or before consent), never silently accepted.
-  const merch = await page.evaluate(async () => {
-    const r = await fetch('/api/platform/v1/coins/redeem', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ itemKey: 'sticker-pack' }) });
-    return { status: r.status, code: ((await r.json()) as { code: string }).code };
-  });
-  expect(merch.status).toBe(403);
-  expect(['redemption_disabled', 'consent_required', 'verification_required']).toContain(merch.code);
-  await checkPage(page);
-});
-
-test('store: merch needs a parent’s approval — explained, with the way to ask', async ({ page }) => {
-  await signUp(page, 'coins-consent', '/store');
-  // Replay the real store response as an environment with merch redemption switched on would serve it
-  // to a student without consent (the e2e API runs with redemption off, the production default).
-  await page.route('**/api/platform/v1/coins/store', async (route) => {
-    const res = await route.fetch();
-    const body = (await res.json()) as { physicalRedemptionEnabled: boolean; consentStatus: string | null; items: { type: string; state: string }[] };
-    body.physicalRedemptionEnabled = true;
-    body.consentStatus = 'required';
-    for (const i of body.items) if (i.type === 'physical' && i.state === 'coming_soon') i.state = 'consent_needed';
-    await route.fulfill({ response: res, json: body });
-  });
-  await page.reload({ waitUntil: 'networkidle' });
-  await expect(page.getByTestId('merch-consent')).toContainText('a parent or guardian must approve first');
-  const stickers = page.locator('[data-item="sticker-pack"]');
-  await expect(stickers).toHaveAttribute('data-state', 'consent_needed');
-  await expect(stickers.getByRole('link', { name: 'Parent approval needed' })).toHaveAttribute('href', '/me');
-  await expect(stickers.getByTestId('item-note')).toContainText('A parent or guardian must approve before we can send merch to your home.');
-  await expect(stickers.getByTestId('redeem')).toHaveCount(0);
-  await expect(page.getByTestId('address-form')).toHaveCount(0);
-  await checkPage(page);
-  await shot(page, 'store-consent-needed');
+  expect(refused).toEqual(['403 redemption_disabled', '403 redemption_disabled']);
+  expect(await balance(page)).toBe(0);
 });

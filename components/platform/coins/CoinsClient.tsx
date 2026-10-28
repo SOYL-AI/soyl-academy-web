@@ -146,7 +146,7 @@ export function CoinsClient() {
           icon="coin"
           action={<Button onClick={() => openLogin({ reason: 'Log in to check in, solve the daily challenge and earn SOYL Coins. It is free.' })}>Log in</Button>}
         >
-          Coins come from learning: daily check-ins, the daily challenge, practice milestones and tests. Spend them in the SOYL Store.
+          Coins come from learning: daily check-ins, the daily challenge, practice milestones and tests. Exclusive rewards to redeem them for are coming soon.
         </EmptyState>
         <HowToEarn />
       </div>
@@ -184,7 +184,7 @@ export function CoinsClient() {
           {coinsText(summary.lifetimeEarned)} earned in all · {summary.chaptersMastered} {summary.chaptersMastered === 1 ? 'chapter' : 'chapters'} mastered
         </p>
         <Link href="/store" className={s.heroLink} data-testid="store-link">
-          <Icon name="gift" size={18} /> Visit the SOYL Store
+          <Icon name="gift" size={18} /> Exclusive rewards: coming soon
         </Link>
       </section>
 

@@ -378,3 +378,47 @@
   flex-wrap: wrap;
   gap: var(--p-space-2);
 }
+
+/* D-038: coming-soon store (no redemptions at launch) */
+.teaser .artSvg {
+  opacity: 0.85;
+}
+.soonBadge {
+  position: absolute;
+  right: var(--p-space-2);
+  bottom: var(--p-space-2);
+  padding: 2px var(--p-space-2);
+  border-radius: var(--p-radius-pill);
+  background: #f2d45c;
+  color: #171717;
+  font-size: var(--p-text-xs);
+  font-weight: 700;
+}
+.earnNow {
+  padding: var(--p-space-4);
+  border: 1px solid var(--p-border-strong);
+  border-left: 4px solid #b08a00;
+  border-radius: var(--p-radius-lg);
+  background: var(--p-surface);
+}
+.earnNowList {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.earnNowList li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--p-space-1) var(--p-space-3);
+  padding: var(--p-space-2) 0;
+  border-top: 1px solid var(--p-border);
+}
+.earnNowCoins {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-1);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}

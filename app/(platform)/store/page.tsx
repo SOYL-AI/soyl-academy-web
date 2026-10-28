@@ -11,7 +11,7 @@ import shell from '@/components/platform/shell/shell.module.css';
 
 export const metadata = platformMetadata({
   title: 'SOYL Store: earned, never sold',
-  description: 'Profile rewards and SOYL merch you cannot buy: every item is paid for with SOYL Coins earned by learning.',
+  description: 'Exclusive rewards you cannot buy, redeemed with SOYL Coins earned by learning. Coming soon.',
   path: '/store',
   index: false,
 });

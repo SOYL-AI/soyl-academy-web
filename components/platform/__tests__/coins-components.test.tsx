@@ -67,7 +67,7 @@ function item(key: string, over: Partial<CoinStoreItem> = {}): CoinStoreItem {
 }
 
 function store(items: CoinStoreItem[], over: Partial<CoinStore> = {}): CoinStore {
-  return { balance: 120, physicalRedemptionEnabled: false, consentStatus: 'granted', verified: true, items, ...over };
+  return { balance: 120, redemptionEnabled: true, physicalRedemptionEnabled: false, consentStatus: 'granted', verified: true, items, ...over };
 }
 
 /** GET routing for the mocked client. */
@@ -205,7 +205,40 @@ describe('/coins', () => {
   });
 });
 
-describe('/store', () => {
+describe('/store while redemption is off (D-038, the launch default)', () => {
+  it('member: "Exclusive rewards — coming soon", how to earn, no items, prices, redeem or equip', async () => {
+    routeGets({ '/v1/coins': summary(), '/v1/coins/redemptions': { redemptions: [] }, '/v1/coins/store': store([], { redemptionEnabled: false }) });
+    wrap(<StoreClient />);
+    expect(await screen.findByTestId('store-coming-soon')).toBeTruthy();
+    expect(screen.getByRole('heading', { level: 1 }).textContent).toBe('Exclusive rewards — coming soon');
+    expect(screen.getByTestId('store').getAttribute('data-redemption')).toBe('off');
+    expect(screen.getByText(/Our merch is being designed now/)).toBeTruthy();
+    expect(screen.getAllByTestId('store-teaser')).toHaveLength(3);
+    expect(screen.getByTestId('store-how-to-earn').getAttribute('href')).toBe('/coins');
+    expect(screen.getByText('Solve the daily challenge')).toBeTruthy();
+    await waitFor(() => expect(screen.getByTestId('store-balance').textContent).toContain('120'));
+    for (const id of ['store-item', 'redeem', 'equip', 'my-redemptions', 'address-form']) expect(screen.queryByTestId(id), id).toBeNull();
+    expect(screen.queryByRole('button', { name: /redeem/i })).toBeNull();
+  });
+  it('guest: coming soon with a log-in call to action', async () => {
+    h.session.state = { status: 'guest' };
+    routeGets({ '/v1/coins/store': store([], { redemptionEnabled: false, balance: null, consentStatus: null, verified: null }) });
+    wrap(<StoreClient />);
+    expect(await screen.findByTestId('store-coming-soon')).toBeTruthy();
+    fireEvent.click(screen.getByRole('button', { name: 'Log in to start earning' }));
+    expect(h.session.openLogin).toHaveBeenCalled();
+    expect(screen.queryByTestId('store-item')).toBeNull();
+  });
+  it('earlier redemptions stay visible (and cancellable) after the switch is turned off', async () => {
+    const order = { id: RID, itemKey: 'sticker-pack', itemName: 'SOYL sticker pack', itemType: 'physical', priceCoins: 600, status: 'parent_approval_pending', statusReason: null, addressOnFile: true, trackingRef: null, createdAt: '2026-10-28T06:00:00.000Z', updatedAt: '2026-10-28T06:00:00.000Z' };
+    routeGets({ '/v1/coins': summary(), '/v1/coins/redemptions': { redemptions: [order] }, '/v1/coins/store': store([], { redemptionEnabled: false }) });
+    wrap(<StoreClient />);
+    expect(await screen.findByTestId('redemption')).toBeTruthy();
+    expect(screen.getByTestId('cancel-redemption')).toBeTruthy();
+  });
+});
+
+describe('/store with redemption switched on (behind COINS_REDEMPTION_ENABLED)', () => {
   it('guest: items with log in to redeem, merch coming soon', async () => {
     h.session.state = { status: 'guest' };
     routeGets({ '/v1/coins/store': store([item('frame-saffron', { state: 'sign_in' }), item('hoodie', { type: 'physical', slot: null, priceCoins: 7500, state: 'coming_soon' })], { balance: null, consentStatus: null, verified: null }) });

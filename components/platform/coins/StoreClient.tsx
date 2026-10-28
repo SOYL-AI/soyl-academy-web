@@ -1,14 +1,17 @@
 'use client';
 
 /**
- * /store (ADR-021 §5): the SOYL Store. Earned, never sold. Items come from GET /v1/coins/store with the
- * viewer's state (guests may look). Digital items are granted at once and can be equipped; merch needs a
- * verified account, parent consent and redemption switched on (until then "Coming soon"), and only then
- * asks for a delivery address. Every refusal is explained in plain words.
+ * /store (ADR-021 §5, D-038): the SOYL Store. Earned, never sold. At launch there are no redemptions:
+ * while GET /v1/coins/store says `redemptionEnabled: false` (items []), the page is an "Exclusive rewards —
+ * coming soon" page that points to how to earn. When redemption is switched on, items come with the
+ * viewer's state (guests may look): digital items are granted at once and can be equipped; merch needs a
+ * verified account, parent consent and physical redemption switched on, and only then asks for a delivery
+ * address. Every refusal is explained in plain words.
  */
 import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
 import type { CoinRedemption, CoinStore, CoinStoreItem } from '@/platform/shared/api-client';
+import { howToEarn } from '@/platform/shared/config/coins';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { Dialog } from '@/components/platform/ui/kit/Dialog';
 import { Badge, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
@@ -159,6 +162,60 @@ function Redemptions({ list, onAddress, onCancel }: { list: CoinRedemption[]; on
   );
 }
 
+const TEASERS: { image: string; title: string; text: string }[] = [
+  { image: 'hoodie', title: 'Exclusive SOYL merch', text: 'Being designed now. Never sold: only earned with coins.' },
+  { image: 'frame-constellation', title: 'Profile rewards', text: 'Frames and themes that show what you have achieved.' },
+  { image: 'topper-jacket', title: 'Limited drops', text: 'Rare rewards for top performers in live All-India mocks.' },
+];
+const EARN_NOW = ['checkin', 'daily_challenge', 'solved_milestone', 'test_submitted'];
+
+/** D-038: the store before redemption opens. Teasers, no items, prices or buttons that spend coins. */
+function ComingSoon({ member }: { member: boolean }) {
+  const ways = howToEarn().filter((r) => EARN_NOW.includes(r.key));
+  return (
+    <>
+      <section aria-labelledby="soon-title" className={s.section} data-testid="store-coming-soon">
+        <h2 id="soon-title" className={s.sectionTitle}>
+          What is coming <span className={s.sectionSub}>Opening soon</span>
+        </h2>
+        <ul className={s.grid}>
+          {TEASERS.map((t) => (
+            <li key={t.image} className={cx(s.item, s.teaser)} data-testid="store-teaser">
+              <div className={cx(s.art, s.artDigital)}>
+                <StoreArt image={t.image} className={s.artSvg} />
+                <span className={s.soonBadge}>Coming soon</span>
+              </div>
+              <div className={s.itemBody}>
+                <h3 className={s.itemName}>{t.title}</h3>
+                <p className={s.itemDesc}>{t.text}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section aria-labelledby="earn-now-title" className={cx(s.section, s.earnNow)}>
+        <h2 id="earn-now-title" className={s.sectionTitle}>
+          Start earning now
+        </h2>
+        <p className={s.muted}>Coins you earn today stay in your balance for the launch.</p>
+        <ul className={s.earnNowList}>
+          {ways.map((w) => (
+            <li key={w.key}>
+              <span>{w.label}</span>
+              <span className={s.earnNowCoins}>
+                <Icon name="coin" size={16} className={s.priceCoin} /> {w.coins}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <Link href="/coins" className={s.footLink} data-testid="store-how-to-earn">
+          {member ? 'Your coins and every way to earn' : 'Every way to earn SOYL Coins'} <Icon name="chevronRight" size={18} />
+        </Link>
+      </section>
+    </>
+  );
+}
+
 export function StoreClient() {
   const { state, openLogin } = useSession();
   const coins = useCoins();
@@ -277,15 +334,23 @@ export function StoreClient() {
     />
   );
   const redeemItem = pending?.kind === 'redeem' ? pending.item : null;
+  // D-038: no redemptions at launch. Until the API switches redemption on, the store is a coming-soon page
+  // with no items, prices, redeem or equip buttons; the redemption UI below stays behind the same flag.
+  const open = store?.redemptionEnabled === true;
+  const closed = store !== null && !open;
 
   return (
-    <div className={s.store} data-testid="store">
+    <div className={s.store} data-testid="store" data-redemption={store ? (open ? 'on' : 'off') : 'loading'}>
       <section className={s.hero} aria-labelledby="store-title">
-        <p className={s.eyebrow}>Earned, never sold</p>
+        <p className={s.eyebrow}>The SOYL Store · Earned, never sold</p>
         <h1 id="store-title" className={s.heroTitle}>
-          The SOYL Store
+          {closed ? 'Exclusive rewards — coming soon' : 'The SOYL Store'}
         </h1>
-        <p className={s.heroLead}>Rewards you cannot buy. Every item here is paid for with SOYL Coins, and coins only come from learning.</p>
+        <p className={s.heroLead}>
+          {closed
+            ? 'Your SOYL Coins will redeem exclusive rewards that cannot be bought, only earned. Our merch is being designed now. Every coin you earn today counts.'
+            : 'Rewards you cannot buy. Every item here is paid for with SOYL Coins, and coins only come from learning.'}
+        </p>
         <div className={s.heroBar}>
           {member ? (
             <p className={s.heroBalance} data-testid="store-balance">
@@ -314,7 +379,9 @@ export function StoreClient() {
         </div>
       )}
 
-      {store && (
+      {closed && <ComingSoon member={member} />}
+
+      {store && open && (
         <>
           <section aria-labelledby="digital-title" className={s.section}>
             <h2 id="digital-title" className={s.sectionTitle}>
@@ -343,7 +410,7 @@ export function StoreClient() {
         </>
       )}
 
-      {member && (
+      {member && (open || (orders !== null && orders.length > 0)) && (
         <section aria-labelledby="orders-title" className={s.section} data-testid="my-redemptions">
           <h2 id="orders-title" className={s.sectionTitle}>
             Your redemptions
@@ -356,7 +423,7 @@ export function StoreClient() {
         </section>
       )}
 
-      <p className={s.small}>SOYL Coins have no cash value and cannot be bought, sold or transferred. Merch is free; delivery is within India only.</p>
+      <p className={s.small}>SOYL Coins have no cash value and cannot be bought, sold or transferred.{open ? ' Merch is free; delivery is within India only.' : ''}</p>
 
       <Dialog
         open={redeemItem !== null}
