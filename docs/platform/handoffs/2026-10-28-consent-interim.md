@@ -1,8 +1,8 @@
 # backend-api + web-platform — interim built-in consent provider and D-039 data minimisation — 2026-10-28
 
-Status: **done** (see "How to verify" for the gate runs). Nothing was deployed and no infra parameter was changed.
+Status: **done in code; two gates partial** (full e2e re-run and marketing regression blocked by machine memory, see "How to verify"). Nothing was deployed and no infra parameter was changed.
 
-Branch: `platform/backend-api/consent-interim` (worktree `C:/Users/Prabhu/soyl-wt/consent-interim`), merged with `origin/platform/main` up to fe404f0 (security fixes M6).
+Branch: `platform/backend-api/consent-interim` (worktree `C:/Users/Prabhu/soyl-wt/consent-interim`), merged with `origin/platform/main` up to 2e10f53 (security fixes fe404f0, AI infra d1f03f4).
 Decision record: [ADR-022](../adr/022-interim-builtin-consent-provider.md) (code, not a click-to-approve link; why; residual risks).
 
 ## Flow
@@ -71,7 +71,24 @@ Keep `UNCONSENTED_PURGE: 'auto'` (it stays off for `builtin`) and `EMAIL_PROVIDE
 
 ## How to verify
 
-GATES_PLACEHOLDER
+Run on Windows 11 / Node 24 in the worktree, after merging `origin/platform/main` up to 2e10f53 (security fixes fe404f0 + AI infra d1f03f4). No migration from `soyl-coins` was on main, so `0011_consent_interim` keeps its number.
+
+| Gate | Command | Result |
+|---|---|---|
+| Typecheck | `cd platform && npm run typecheck` | exit 0 (all workspaces); root `npx tsc --noEmit` clean |
+| API | `npm test -w @soyl/api` | 35 files, 555 passed, 1 skipped (incl. `consent-builtin.test.ts` 19/19); re-run after the last merge: `route-policy` + `consent-builtin` 27/27, snapshot unchanged |
+| DB (migrations up/down) | `npm test -w @soyl/db` | 15 files, 114 passed, 1 skipped (`migrations.test.ts` applies and rolls back 0011) |
+| Worker | `npm test -w @soyl/worker` | 10/11 files in the batch run (`worker.test.ts` crashed the Windows process, 0xC0000409, machine load); re-run alone 6/6. Total 69 tests green |
+| Shared | `npm test -w @soyl/shared` | 8 files, 84 passed (incl. the stale-client check) |
+| Root lint | `npm run lint` | clean |
+| Root build | `npm run build` | exit 0 (`/me/consent`, `/me/consent/parent` listed) |
+| Web unit | `npm run test:platform-web` | 11 files, 184 passed (incl. `consent-flow.test.tsx` 11/11) |
+| UI kit | `npm run test:platform-ui` | 6 files, 548 passed |
+| Platform e2e (consent) | `npm run test:platform-web -w @soyl/e2e -- --on-only consent.spec auth.spec` (alternate `PW_*_PORT`s; the default ports were held by another process) | **consent.spec 3/3 green**: under-18 parent code → AI on; 18+ self-declare → leaderboards on → withdraw from /me → off; parent withdraw link → AI off (axe + 360 px checks on each step). Earlier full flag-on run: `account.spec` 2/2, `ai.spec` (uses the new `grantConsent`) green; flag-off suite 32/32 green |
+| auth.spec | same run | 1 failure caused by this branch (the new "Your name on leaderboards" card matched `getByLabel('Board')`), fixed in 1c5e54e by renaming the card to "Your public name". 2 Google tests failed only because they hard-code the mock OIDC port 8098 and the run used 8298 |
+| Marketing regression | `npm run marketing:regression -w @soyl/e2e -- --skip-lighthouse` | **not run to completion**: every `next build` after 09:30 IST crashed on this machine (Turbopack `memory allocation failed`, PostCSS subprocess 0xC0000409) while other agents' jobs used the memory. The same build passed earlier in this task. `git diff --stat origin/platform/main -- . ':!platform' ':!docs' ':!app/(platform)' ':!components/platform'` is empty: no marketing file, global CSS, root layout, proxy or route list changed |
+
+Still to run when the machine has memory (Lead): `npm run test:platform-web -w @soyl/e2e` (full, default ports) and the marketing regression. Expected green, per the above.
 
 ## Known gaps / follow-ups
 
