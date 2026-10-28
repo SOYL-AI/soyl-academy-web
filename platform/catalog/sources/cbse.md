@@ -1340,6 +1340,7 @@ CBSE's skill page are the 2025-26 papers; CBSE notification 132/2026 (`cbse-sqp-
 - **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/EnglishL-SQP.pdf
 - **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/EnglishL-MS.pdf
 - **Publisher:** CBSE · **Fetched:** 2026-10-26
+- **Used for (2026-10-27):** pattern only for `english-language-and-literature/blueprints/chapter-test-short-supplementary.yaml` and `-long-supplementary.yaml`: Section C sets *Footprints without Feet* only as Q9 (3-mark short answers, 40-50 words, two of three) and one 6-mark long answer (100-120 words, one of two); the Q6/Q7 extracts are from *First Flight*. No question copied.
 
 ### `cbse-sqp-x-food-production-2026-27`
 - **Title:** Food Production (409) Class X skill-subject Sample Question Paper and Marking Scheme (2025-26 paper, pattern unchanged for 2026-27)
@@ -1394,6 +1395,7 @@ CBSE's skill page are the 2025-26 papers; CBSE notification 132/2026 (`cbse-sqp-
 - **URL:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/HindiCourseA-SQP.pdf
 - **Marking scheme:** https://cbseacademic.nic.in/web_material/SQP/ClassX_2026_27/HindiCourseA-MS.pdf
 - **Publisher:** CBSE · **Fetched:** 2026-10-26
+- **Used for (2026-10-27):** pattern only for `hindi-a/blueprints/chapter-test-short-kritika.yaml` and `-long-kritika.yaml`: खंड ग sets कृतिका भाग 2 only as प्रश्न 11 (three questions, attempt two, 50-60 words, 4 marks each), with no पठित गद्यांश. No question copied.
 
 ### `cbse-sqp-x-hindi-b-2026-27`
 - **Title:** Hindi Course B (085) Class X Sample Question Paper and Marking Scheme 2026-27

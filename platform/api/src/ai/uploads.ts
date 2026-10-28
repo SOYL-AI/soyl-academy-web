@@ -11,7 +11,7 @@
  * question bank; the blueprint flow reads only structure from them.
  */
 import { and, eq, inArray, lt, sql } from 'drizzle-orm';
-import { uploads, type Database } from '@soyl/db';
+import { auditLog, uploads, type Database } from '@soyl/db';
 import { AI_UPLOADS, type AiUploadContentType } from '@soyl/shared/config/ai-actions';
 import type { Clock } from '../clock';
 import { ApiProblem } from '../errors';
@@ -40,9 +40,10 @@ export class UploadService {
   }
 
   async create(userId: string, input: CreateUploadInput) {
-    if (!(AI_UPLOADS.contentTypes as readonly string[]).includes(input.contentType)) throw new ApiProblem('upload_rejected', { detail: 'Use a JPEG, PNG or WebP photo, or a PDF.' });
+    // S6-M01 / ADR-020: images only (config); PDFs are refused for photo doubts and sample papers alike.
+    if (!(AI_UPLOADS.contentTypes as readonly string[]).includes(input.contentType)) throw new ApiProblem('upload_rejected', { detail: 'Use a JPEG, PNG or WebP photo.' });
     if (input.bytes > AI_UPLOADS.maxBytes) throw new ApiProblem('upload_rejected', { detail: 'Files must be 10 MB or smaller.' });
-    if (input.kind === 'photo_doubt' && input.contentType === 'application/pdf') throw new ApiProblem('upload_rejected', { detail: 'Send a photo (JPEG, PNG or WebP) of the question.' });
+    if (input.kind === 'photo_doubt' && !input.contentType.startsWith('image/')) throw new ApiProblem('upload_rejected', { detail: 'Send a photo (JPEG, PNG or WebP) of the question.' });
     const now = this.now();
     const blobKey = quarantineKey(userId);
     const sasExpiry = new Date(now.getTime() + AI_UPLOADS.sasTtlSeconds * 1000);
@@ -120,6 +121,48 @@ export class UploadService {
       expiresAt: u.expiresAt.toISOString(),
       createdAt: u.createdAt.toISOString(),
     };
+  }
+
+  /**
+   * S6-M02 (AC-25, DPDP erasure): account deletion marks the user's uploads `deleted` (in its
+   * transaction); this deletes both blobs of each — the quarantine original (`blob_key` in
+   * `uploads-quarantine`) and the cleaned derivative (`processed_key` in `uploads`) — then the row,
+   * and writes one audit row per user (ids and counts only). A failed blob delete leaves the row for
+   * the next run: the API runs this right after `DELETE /v1/me`, the worker's `uploads.purge-deleted`
+   * retries every 5 minutes. The rows are the index of the blobs (every blob key comes from a row),
+   * so nothing is orphaned; the 30-day storage lifecycle rule stays the last-resort backstop.
+   */
+  async purgeDeleted(now: Date, opts: { userId?: string; limit?: number } = {}): Promise<{ purged: number; failed: number }> {
+    const due = await this.db
+      .select({ id: uploads.id, userId: uploads.userId, blobKey: uploads.blobKey, processedKey: uploads.processedKey })
+      .from(uploads)
+      .where(and(eq(uploads.status, 'deleted'), opts.userId ? eq(uploads.userId, opts.userId) : undefined))
+      .orderBy(uploads.id)
+      .limit(opts.limit ?? 500);
+    if (!due.length) return { purged: 0, failed: 0 };
+    const blob = this.runtime().blob;
+    const done: typeof due = [];
+    let failed = 0;
+    for (const u of due) {
+      try {
+        await blob.delete(AI_UPLOADS.containers.quarantine, u.blobKey);
+        if (u.processedKey) await blob.delete(AI_UPLOADS.containers.clean, u.processedKey);
+        done.push(u);
+      } catch {
+        failed++; // kept as `deleted`; retried by the next run
+      }
+    }
+    if (done.length) {
+      const perUser = new Map<string, number>();
+      for (const u of done) perUser.set(u.userId, (perUser.get(u.userId) ?? 0) + 1);
+      await this.db.transaction(async (tx) => {
+        await tx.delete(uploads).where(and(inArray(uploads.id, done.map((u) => u.id)), eq(uploads.status, 'deleted')));
+        await tx.insert(auditLog).values(
+          [...perUser].map(([userId, n]) => ({ actorUserId: null, actorRole: 'system', action: 'account.uploads_purged', targetType: 'user', targetId: userId, after: { uploads: n, blobs: 'deleted' }, createdAt: now })),
+        );
+      });
+    }
+    return { purged: done.length, failed };
   }
 
   /** Retention (worker `ai.retention`): expired uploads lose both blobs; the row stays as `expired`. */

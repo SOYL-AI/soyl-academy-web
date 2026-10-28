@@ -105,6 +105,8 @@ export function testProblemMessage(err: unknown): string {
       return err.problem?.detail ? `This live test is not open: ${err.problem.detail}` : 'This live test is not open right now.';
     case 'test_unavailable':
       return 'This test is not available yet. Please try again later.';
+    case 'results_after_event':
+      return 'Solutions and marking open when the live test closes. Please come back then.';
     case 'bank_too_small':
       return err.problem?.detail ? `Not enough questions: ${err.problem.detail}` : 'There are not enough questions for these choices. Pick more chapters or fewer questions.';
     case 'not_found':

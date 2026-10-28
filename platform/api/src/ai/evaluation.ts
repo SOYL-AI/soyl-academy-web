@@ -22,6 +22,7 @@ import type { AiActionConfig } from '@soyl/shared/config/ai-actions';
 import { ApiProblem } from '../errors';
 import { ownAttempt, type EngineContext } from '../domain/tests/attempts';
 import { gradeAttempt, isFinal } from '../domain/tests/finalize';
+import { assertReviewOpen } from '../domain/tests/live-review';
 import { loadKeys, loadStructure, testById } from '../domain/tests/load';
 import { FIXTURE, type EvaluateFixtureInput } from './fixtures';
 import type { Moderator } from './moderation/moderator';
@@ -95,6 +96,8 @@ function textOf(response: unknown): string {
 export async function evaluationUnits(ctx: EngineContext, userId: string, attemptId: string, itemIds?: string[]) {
   const a = await ownAttempt(ctx, userId, attemptId);
   if (!isFinal(a.status)) throw new ApiProblem('conflict', { detail: 'Submit the test first, then ask for AI evaluation.' });
+  // S6-H01: the feedback is built from the model answer and marking scheme; live attempts wait for the event to close.
+  await assertReviewOpen(ctx.db, a, ctx.clock.now());
   const test = await testById(ctx.db, a.testId);
   const structure = await loadStructure(ctx.db, test!);
   const keys = await loadKeys(ctx.db, structure);
@@ -274,6 +277,7 @@ export async function saveItemEvaluation(db: Database, responseId: string, e: It
 /** GET view: the AI evaluations of an attempt's items (owner only). */
 export async function attemptAiEvaluations(ctx: EngineContext, userId: string, attemptId: string) {
   const a = await ownAttempt(ctx, userId, attemptId);
+  await assertReviewOpen(ctx.db, a, ctx.clock.now()); // S6-H01: step names and feedback come from the marking scheme
   const test = await testById(ctx.db, a.testId);
   const structure = await loadStructure(ctx.db, test!);
   const rows = await ctx.db

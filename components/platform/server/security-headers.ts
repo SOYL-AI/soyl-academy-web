@@ -3,11 +3,13 @@
  * Applied by the root `proxy.ts`, whose matcher lists only platform prefixes (ARCHITECTURE §17.5).
  *
  * Two script policies:
- * - **nonce** for the logged-in, dynamically rendered routes (`/me`, later `/tests/attempt`, `/tests/result`,
- *   `/ask`, `/admin`): a fresh nonce per request + `'strict-dynamic'`. Next.js reads the nonce from the request
+ * - **nonce** for the dynamically rendered routes (`/me`, `/tests/**`, `/plans`, `/ask`, `/leaderboard`,
+ *   `/admin`): a fresh nonce per request + `'strict-dynamic'`. S6-L03: `/plans` (Razorpay Checkout) and every
+ *   `/tests` page render per request so they get it too; the nonced bundle loads checkout.js, which
+ *   `'strict-dynamic'` trusts. Next.js reads the nonce from the request
  *   CSP header and stamps it on its own scripts. The root layout's inline consent boot script is allowed by
  *   its SHA-256 hash.
- * - **static** for prerendered/ISR routes (`/learn/**`): no per-request nonce is possible in cached HTML, and
+ * - **static** for prerendered/ISR routes (`/learn/**` only): no per-request nonce is possible in cached HTML, and
  *   Next's inline flight-data scripts change per page, so `script-src 'self' 'unsafe-inline'` (F-010 exception,
  *   recorded in ADR-011). Never a third-party host.
  */
@@ -17,7 +19,7 @@ import { CONSENT_BOOT_SCRIPT } from '@/components/legal/consent';
 export const CSP_REPORT_PATH = '/api/platform/csp-report';
 
 /** Route prefixes rendered per request with a nonce policy (WEB-3). */
-export const NONCE_ROUTE_PREFIXES: readonly string[] = ['/me', '/tests/attempt', '/tests/result', '/tests/builder', '/tests/live', '/ask', '/leaderboard', '/coins', '/store', '/admin'];
+export const NONCE_ROUTE_PREFIXES: readonly string[] = ['/me', '/tests', '/plans', '/ask', '/leaderboard', '/coins', '/store', '/admin'];
 
 /**
  * Razorpay Checkout origins, allowed on `/plans` only (WEB-1, WEB-3; billing M4 handoff §2; ADR-018 §4).
@@ -105,7 +107,7 @@ export function buildCsp(o: CspOptions = {}): string {
   const upload = usesUploads(o.pathname) ? uploadOriginFrom(o.uploadOrigin ?? process.env.PLATFORM_UPLOAD_ORIGIN) : null;
   const extra = (list: readonly string[]) => (plans ? ` ${list.join(' ')}` : '');
   const script = o.nonce
-    ? `'self' 'nonce-${o.nonce}' 'strict-dynamic' ${CONSENT_BOOT_SCRIPT_HASH}${eval_}`
+    ? `'self' 'nonce-${o.nonce}' 'strict-dynamic' ${CONSENT_BOOT_SCRIPT_HASH}${eval_}${extra(RAZORPAY_CSP.script)}`
     : `'self' 'unsafe-inline'${eval_}${extra(RAZORPAY_CSP.script)}`;
   const directives = [
     `default-src 'self'`,

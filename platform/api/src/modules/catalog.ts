@@ -14,6 +14,8 @@ import { ApiProblem } from '../errors';
 import { policies } from '../policy';
 import { BoardSchema, withProblems } from '../schemas';
 import type { AppDeps } from '../services';
+import { schoolAssessmentKind, topicAssessment } from '../domain/assessment';
+import { SchoolAssessmentSchema } from './content-schemas';
 
 export const CATALOG_CACHE_CONTROL = 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400';
 
@@ -60,8 +62,11 @@ const ChaptersResponse = z
         title: z.string(),
         titleEn: z.string().nullable(),
         unit: z.string().nullable(),
+        /** false: school assessment only, not in the board exam (label it). */
         boardAssessed: z.boolean(),
-        topics: z.array(z.object({ id: z.string(), title: z.string(), titleEn: z.string().nullable(), boardAssessed: z.boolean() })),
+        schoolAssessment: SchoolAssessmentSchema.nullable(),
+        /** Topic flags are effective: every topic of a school-only chapter is school-only. */
+        topics: z.array(z.object({ id: z.string(), title: z.string(), titleEn: z.string().nullable(), boardAssessed: z.boolean(), schoolAssessment: SchoolAssessmentSchema.nullable() })),
       }),
     ),
   })
@@ -168,7 +173,13 @@ export function registerCatalogRoutes(appIn: FastifyInstance, deps: AppDeps): vo
           titleEn: c.titleEn,
           unit: c.syllabusUnit,
           boardAssessed: c.boardAssessed,
-          topics: (byChapter.get(c.id) ?? []).map((t) => ({ id: t.key, title: t.title, titleEn: t.titleEn, boardAssessed: t.boardAssessed })),
+          schoolAssessment: schoolAssessmentKind(c.boardAssessed, c.title, c.syllabusUnit),
+          topics: (byChapter.get(c.id) ?? []).map((t) => ({
+            id: t.key,
+            title: t.title,
+            titleEn: t.titleEn,
+            ...topicAssessment({ boardAssessed: c.boardAssessed, title: c.title, unit: c.syllabusUnit }, t),
+          })),
         })),
       });
     },

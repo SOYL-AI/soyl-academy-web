@@ -5,8 +5,8 @@
  * "papers like my school's" building a paper from OUR bank by blueprint (paid plans), 30-day expiry.
  */
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
-import { count, eq, sql } from 'drizzle-orm';
-import { aiJobs, questions, uploads } from '@soyl/db';
+import { and, count, eq, sql } from 'drizzle-orm';
+import { aiJobs, auditLog, questions, uploads } from '@soyl/db';
 import { MockProvider, type ProviderRequest } from '@soyl/ai-core';
 import { AI_UPLOADS } from '@soyl/shared/config/ai-actions';
 import { registerGatewayFixtures } from '../src/ai/fixtures';
@@ -49,18 +49,22 @@ describe('upload URLs (F-013, AC-16)', () => {
     expect((await other.c.post(`/v1/ai/uploads/${t.uploadId}/complete`)).statusCode).toBe(404);
   });
 
-  it('refuses SVG/HTML types, files over 10 MB and PDFs for photo doubts; needs consent; is rate limited', async () => {
+  it('refuses SVG/HTML types, files over 10 MB and PDFs (S6-M01: images only, both kinds); needs consent; is rate limited', async () => {
     const { c, id } = await h.member();
     expect((await c.post('/v1/ai/uploads', { kind: 'photo_doubt', contentType: 'image/svg+xml', bytes: 10 })).statusCode).toBe(400);
     expect((await c.post('/v1/ai/uploads', { kind: 'photo_doubt', contentType: 'image/heic', bytes: 10 })).statusCode).toBe(400);
     expect((await c.post('/v1/ai/uploads', { kind: 'sample_paper', contentType: 'application/pdf', bytes: 10 * 1024 * 1024 + 1 })).statusCode).toBe(400);
-    const pdfPhoto = await c.post('/v1/ai/uploads', { kind: 'photo_doubt', contentType: 'application/pdf', bytes: 1000 });
-    expect(pdfPhoto.statusCode).toBe(422);
-    expect(pdfPhoto.json().code).toBe('upload_rejected');
+    // S6-M01 / ADR-020: PDFs are not an accepted type at launch, for photo doubts and sample papers alike.
+    for (const kind of ['photo_doubt', 'sample_paper']) {
+      const pdfUpload = await c.post('/v1/ai/uploads', { kind, contentType: 'application/pdf', bytes: 1000 });
+      expect(pdfUpload.statusCode).toBe(400);
+      expect(pdfUpload.json().code).toBe('validation_failed');
+    }
+    expect(await h.t.db.select().from(uploads).where(eq(uploads.userId, id))).toEqual([]);
     // Every call counts towards uploads.user.hour (5), refused ones included.
     const fresh = await h.member();
-    for (let i = 0; i < 5; i++) expect((await fresh.c.post('/v1/ai/uploads', { kind: 'sample_paper', contentType: 'application/pdf', bytes: 1000 })).statusCode).toBe(201);
-    expect((await fresh.c.post('/v1/ai/uploads', { kind: 'sample_paper', contentType: 'application/pdf', bytes: 1000 })).statusCode).toBe(429);
+    for (let i = 0; i < 5; i++) expect((await fresh.c.post('/v1/ai/uploads', { kind: 'sample_paper', contentType: 'image/jpeg', bytes: 1000 })).statusCode).toBe(201);
+    expect((await fresh.c.post('/v1/ai/uploads', { kind: 'sample_paper', contentType: 'image/jpeg', bytes: 1000 })).statusCode).toBe(429);
     h.consent.setStatus(id, 'revoked');
     await h.services.consent.refresh(id);
     const noConsent = await h.member();
@@ -93,15 +97,25 @@ describe('processing: the malicious-file corpus (AC-16)', () => {
     expect((await uploadFile(h, c, 'photo_doubt', 'image/webp', webp(800, 600))).status).toBe('ready');
   });
 
-  it('rejects SVG renamed .png, type mismatches, decompression bombs, PDF page bombs and active PDFs', async () => {
+  it('rejects SVG renamed .png, type mismatches, decompression bombs, and any PDF (S6-M01, incl. the PoC-2 bypasses)', async () => {
     const { c } = await h.member();
     expect(await uploadFile(h, c, 'photo_doubt', 'image/png', SVG_AS_PNG)).toMatchObject({ status: 'rejected', rejectReason: 'unsupported_type' });
     expect(await uploadFile(h, c, 'photo_doubt', 'image/png', jpeg())).toMatchObject({ status: 'rejected', rejectReason: 'type_mismatch' });
     expect(await uploadFile(h, c, 'photo_doubt', 'image/jpeg', jpeg(9000, 9000))).toMatchObject({ status: 'rejected', rejectReason: 'too_many_pixels' });
+    // A PDF upload row created before PDFs were turned off (the API refuses new ones) is refused in
+    // processing, whatever it contains: page bombs, active content, hex-escaped names, object streams.
     const other = await h.member();
-    expect(await uploadFile(h, other.c, 'sample_paper', 'application/pdf', pdf(11))).toMatchObject({ status: 'rejected', rejectReason: 'too_many_pages' });
-    expect(await uploadFile(h, other.c, 'sample_paper', 'application/pdf', pdf(2, '/OpenAction << /S /JavaScript /JS (x) >>'))).toMatchObject({ status: 'rejected', rejectReason: 'unsafe_pdf' });
-    expect(await uploadFile(h, other.c, 'sample_paper', 'application/pdf', pdf(3))).toMatchObject({ status: 'ready', pages: 3 });
+    const objStm = Buffer.from(['%PDF-1.7', '1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj', '2 0 obj << /Type /ObjStm /N 200 /Filter /FlateDecode /Length 9 >> stream', 'xxxxxxxxx', 'endstream endobj', '%%EOF', ''].join('\n'), 'latin1');
+    for (const data of [pdf(3), pdf(11), pdf(2, '/OpenAction << /S /JavaScript /JS (x) >>'), pdf(1, '/OpenAction << /S /J#61vaScript /JS (x) >> /AA << /O << /S /URI /URI (https://example.com) >> >>'), objStm]) {
+      const blobKey = `${other.id}/legacy-${Math.random().toString(36).slice(2)}`;
+      await h.blob.put(AI_UPLOADS.containers.quarantine, blobKey, data, 'application/pdf');
+      const [row] = await h.t.db.insert(uploads).values({ userId: other.id, kind: 'sample_paper', blobKey, contentType: 'application/pdf', bytes: data.length, status: 'uploaded', expiresAt: new Date(h.clock.now() + 86_400_000) }).returning();
+      await h.services.ai.jobs.startUploadProcessing(other.id, row!.id);
+      await h.services.ai.jobs.drain();
+      const [after] = await h.t.db.select().from(uploads).where(eq(uploads.id, row!.id));
+      expect(after).toMatchObject({ status: 'rejected', rejectReason: 'unsupported_type', processedKey: null });
+      expect(h.blob.has(AI_UPLOADS.containers.quarantine, blobKey)).toBe(false);
+    }
   });
 });
 
@@ -143,7 +157,7 @@ describe('papers like my school’s (Pro and Board Exam Pass, D-034)', () => {
     const { c, id } = await h.member();
     h.plans.set(id, 'pro');
     const before = (await h.t.db.select({ n: count() }).from(questions))[0]!.n;
-    const up = await uploadFile(h, c, 'sample_paper', 'application/pdf', pdf(4));
+    const up = await uploadFile(h, c, 'sample_paper', 'image/jpeg', jpeg());
     expect((await c.get('/v1/ai/quote/paper-from-upload')).json()).toMatchObject({ credits: 60, allowedForPlan: true, affordable: true });
     const res = await c.post('/v1/ai/paper-from-upload', { uploadId: up.id, subjectId: 'cbse-10-science' });
     expect(res.statusCode).toBe(202);
@@ -174,6 +188,21 @@ describe('papers like my school’s (Pro and Board Exam Pass, D-034)', () => {
     expect((await plus.c.get(`/v1/ai/jobs/${accepted.jobId}`)).statusCode).toBe(404);
   });
 
+  it('S6-M01: a PDF processed before PDFs were turned off can no longer be used, so its page count cannot bypass the price', async () => {
+    const { c, id } = await h.member();
+    h.plans.set(id, 'pro');
+    const processedKey = `${id}/legacy.pdf`;
+    await h.blob.put(AI_UPLOADS.containers.clean, processedKey, pdf(1), 'application/pdf');
+    const [legacy] = await h.t.db
+      .insert(uploads)
+      .values({ userId: id, kind: 'sample_paper', blobKey: `${id}/legacy-q`, contentType: 'application/pdf', bytes: 100, pages: 1, status: 'ready', processedKey, processedContentType: 'application/pdf', expiresAt: new Date(h.clock.now() + 86_400_000) })
+      .returning();
+    const res = await c.post('/v1/ai/paper-from-upload', { uploadId: legacy!.id, subjectId: 'cbse-10-science' });
+    expect(res.statusCode).toBe(422);
+    expect(res.json().code).toBe('upload_rejected');
+    expect((await c.get('/v1/credits')).json()).toMatchObject({ balance: 60, spentToday: 0 });
+  });
+
   it('a failed blueprint is refunded', async () => {
     const { c, id } = await h.member();
     h.plans.set(id, 'pro');
@@ -202,6 +231,54 @@ describe('retention', () => {
     const [after] = await h.t.db.select().from(uploads).where(eq(uploads.id, up.id));
     expect(after).toMatchObject({ status: 'expired', processedKey: null });
     expect((await c.get(`/v1/ai/uploads/${up.id}`)).statusCode).toBe(404);
+  });
+
+  it('S6-M02: account deletion deletes every upload blob (quarantine original + cleaned copy), then the rows, with an audit row', async () => {
+    const { c, id } = await h.member();
+    const ready = await uploadFile(h, c, 'photo_doubt', 'image/png', png());
+    // A second file uploaded to quarantine but never completed (still pending_upload).
+    const t = (await c.post('/v1/ai/uploads', { kind: 'photo_doubt', contentType: 'image/jpeg', bytes: jpeg().length })).json() as { uploadId: string; uploadUrl: string };
+    expect(h.blob.acceptUpload(t.uploadUrl, jpeg(), 'image/jpeg').ok).toBe(true);
+    const rows = await h.t.db.select().from(uploads).where(eq(uploads.userId, id));
+    const readyRow = rows.find((r) => r.id === ready.id)!;
+    const pendingRow = rows.find((r) => r.id === t.uploadId)!;
+    expect(h.blob.has(AI_UPLOADS.containers.clean, readyRow.processedKey!)).toBe(true);
+    expect(h.blob.has(AI_UPLOADS.containers.quarantine, pendingRow.blobKey)).toBe(true);
+
+    const del = await c.delete('/v1/me');
+    expect(del.statusCode).toBe(200);
+    // Deleted at once by the API: both containers, then the rows; one audit row (ids and counts only).
+    expect(h.blob.has(AI_UPLOADS.containers.clean, readyRow.processedKey!)).toBe(false);
+    expect(h.blob.has(AI_UPLOADS.containers.quarantine, pendingRow.blobKey)).toBe(false);
+    expect(await h.t.db.select().from(uploads).where(eq(uploads.userId, id))).toEqual([]);
+    const audit = await h.t.db.select().from(auditLog).where(and(eq(auditLog.action, 'account.uploads_purged'), eq(auditLog.targetId, id)));
+    expect(audit).toHaveLength(1);
+    expect(audit[0]!.after).toEqual({ uploads: 2, blobs: 'deleted' });
+  });
+
+  it('S6-M02: when Blob storage is down at deletion time, the uploads stay unusable and the worker run deletes them later', async () => {
+    const { c, id } = await h.member();
+    const up = await uploadFile(h, c, 'photo_doubt', 'image/png', png());
+    const [row] = await h.t.db.select().from(uploads).where(eq(uploads.id, up.id));
+    h.blob.failing = true;
+    try {
+      expect((await c.delete('/v1/me')).statusCode).toBe(200); // deletion itself never waits on Blob
+    } finally {
+      h.blob.failing = false;
+    }
+    const [marked] = await h.t.db.select().from(uploads).where(eq(uploads.id, up.id));
+    expect(marked).toMatchObject({ status: 'deleted' });
+    expect(h.blob.has(AI_UPLOADS.containers.clean, row!.processedKey!)).toBe(true);
+    // A processing job that runs now does not resurrect it.
+    const [job] = await h.t.db.select().from(aiJobs).where(sql`${aiJobs.payload}->>'uploadId' = ${up.id}`);
+    await h.t.db.update(aiJobs).set({ status: 'queued', lockedUntil: null }).where(eq(aiJobs.id, job!.id));
+    await h.services.ai.jobs.runJob(job!.id);
+    expect((await h.t.db.select().from(uploads).where(eq(uploads.id, up.id)))[0]).toMatchObject({ status: 'deleted' });
+    // The worker's uploads.purge-deleted run (same code) finishes the job.
+    expect(await h.services.ai.uploads.purgeDeleted(new Date(h.clock.now()))).toMatchObject({ purged: 1, failed: 0 });
+    expect(h.blob.has(AI_UPLOADS.containers.clean, row!.processedKey!)).toBe(false);
+    expect(await h.t.db.select().from(uploads).where(eq(uploads.userId, id))).toEqual([]);
+    expect(await h.services.ai.uploads.purgeDeleted(new Date(h.clock.now()))).toEqual({ purged: 0, failed: 0 });
   });
 });
 

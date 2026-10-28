@@ -14,6 +14,7 @@
  *   POST /v1/attempts/:id/ai-evaluation           AI evaluation job (ai-gateway M4, src/ai)
  *   GET  /v1/me/attempts                          your attempts, newest first
  *   GET  /v1/live-events                          live mocks (+ your registration when signed in)
+ *   GET  /v1/live-events/:id                      one event: timeline, registration, your status, rank availability
  *   POST /v1/live-events/:id/register             register (idempotent)
  *   GET  /v1/live-events/:id/leaderboard          consent-gated (D-014), first name + last initial (F-017)
  *
@@ -37,7 +38,7 @@ import { cachedContent } from '../http/cache';
 import { attemptState, ownAttempt, saveResponses, startOrResume, submitAttempt, type EngineContext } from '../domain/tests/attempts';
 import { listTestSeries, testMetadata } from '../domain/tests/catalogue';
 import { buildCustomTest } from '../domain/tests/custom';
-import { listLiveEvents, liveLeaderboard, registerForLive } from '../domain/tests/live';
+import { listLiveEvents, liveEventDetail, liveLeaderboard, registerForLive } from '../domain/tests/live';
 import { attemptResult, selfEvaluate } from '../domain/tests/results';
 import {
   AttemptParams,
@@ -46,6 +47,7 @@ import {
   CustomTestResponse,
   LeaderboardQuery,
   LeaderboardResponse,
+  LiveEventDetailSchema,
   LiveEventParams,
   LiveEventSchema,
   LiveEventsQuery,
@@ -70,11 +72,15 @@ export function registerTestRoutes(appIn: FastifyInstance, deps: AppDeps, servic
   const app = appIn.withTypeProvider<ZodTypeProvider>();
   const ctx: EngineContext = { db: deps.db, kv: deps.kv, clock: deps.clock, year: deps.config.academicYear };
 
-  /** Attempt-keyed limits; a KV outage lets learning traffic through (API-16 fail-open for non-auth). */
-  async function attemptLimit(name: 'attempt.autosave' | 'attempt.submit', attemptId: string) {
+  /**
+   * Attempt-keyed limits; a KV outage lets learning traffic through (API-16 fail-open for non-auth).
+   * S6-L01: the bucket is keyed by caller + attempt, so someone who learns an attempt id (ids are not
+   * secrets, F-026) spends their own bucket, never the owner's (and then gets the ownership 404).
+   */
+  async function attemptLimit(name: 'attempt.autosave' | 'attempt.submit', userId: string, attemptId: string) {
     let r;
     try {
-      r = await services.limiter.bucket(name, attemptId);
+      r = await services.limiter.bucket(name, `${userId}:${attemptId}`);
     } catch (err) {
       if (err instanceof KvUnavailableError) return;
       throw err;
@@ -168,7 +174,7 @@ export function registerTestRoutes(appIn: FastifyInstance, deps: AppDeps, servic
       response: withProblems({ 200: SaveResponsesResponse }),
     },
     handler: async (request) => {
-      await attemptLimit('attempt.autosave', request.params.id);
+      await attemptLimit('attempt.autosave', request.auth!.user.id, request.params.id);
       return saveResponses(ctx, request.auth!.user.id, request.params.id, request.body);
     },
   });
@@ -184,7 +190,7 @@ export function registerTestRoutes(appIn: FastifyInstance, deps: AppDeps, servic
       response: withProblems({ 200: SubmitResponse }),
     },
     handler: async (request) => {
-      await attemptLimit('attempt.submit', request.params.id);
+      await attemptLimit('attempt.submit', request.auth!.user.id, request.params.id);
       const r = await submitAttempt(ctx, request.auth!.user.id, request.params.id, request.body ?? undefined);
       return {
         attemptId: r.attemptId,
@@ -292,6 +298,23 @@ export function registerTestRoutes(appIn: FastifyInstance, deps: AppDeps, servic
       response: withProblems({ 200: z.object({ events: z.array(LiveEventSchema) }).meta({ id: 'LiveEvents' }) }),
     },
     handler: async (request) => listLiveEvents(deps.db, ctx.year, deps.clock.now(), request.auth?.user.id ?? null, { subjectKey: request.query.subject, board: request.query.board, classLevel: request.query.class }),
+  });
+
+  app.get('/v1/live-events/:id', {
+    config: { policy: policies.publicRead() },
+    schema: {
+      tags: ['live'],
+      summary: 'One live mock: phase timeline, registration window, rank availability. Signed in: your registration, attempt and result.',
+      params: LiveEventParams,
+      response: withProblems({ 200: LiveEventDetailSchema }),
+    },
+    handler: async (request, reply) => {
+      const userId = request.auth?.user.id ?? null;
+      let consentGranted: boolean | null = null;
+      if (userId) consentGranted = (await services.consent.getStatus(userId)) === 'granted';
+      reply.header('cache-control', 'no-store');
+      return liveEventDetail(deps.db, ctx.year, deps.clock.now(), userId, request.params.id, consentGranted);
+    },
   });
 
   app.post('/v1/live-events/:id/register', {

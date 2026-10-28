@@ -158,6 +158,10 @@ export class Preflight {
     if (!u || !kinds.includes(u.kind)) throw new ApiProblem('not_found');
     if (u.status === 'rejected') throw new ApiProblem('upload_rejected', { detail: u.rejectReason ?? undefined });
     if (u.status !== 'ready' || !u.processedKey || u.expiresAt.getTime() <= this.d.clock.now()) throw new ApiProblem('upload_not_ready');
+    // S6-M01 / ADR-020: a file type that is no longer accepted (a PDF processed before PDFs were turned
+    // off) never reaches a model: its pages could not be counted reliably, nor its content checked.
+    if (!(AI_UPLOADS.contentTypes as readonly string[]).includes(u.processedContentType ?? u.contentType))
+      throw new ApiProblem('upload_rejected', { detail: 'This file type cannot be used. Upload a photo (JPEG, PNG or WebP) instead.' });
     return u;
   }
 

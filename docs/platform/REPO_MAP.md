@@ -30,6 +30,8 @@
 - **Existing product app on Azure:** the header's **"Sign in"** links to `APP_URL` = `NEXT_PUBLIC_APP_URL` or the default `https://soylacad-web.bravesmoke-98c7316a.centralindia.azurecontainerapps.io` (Azure Container Apps, Central India), described as "the product app" (teacher assignments, Grades 1–10). It is **not** in this repo and is separate from the new learning platform. See owner question Q-2 in §12.
 - **Domain:** canonical origin is hard-coded as `https://www.soylai.com` (`lib/seo/config.ts`); an env value pointing at `soylacademy.com` is ignored on purpose (SOYL does not own it).
 
+> **As built (2026-10-28):** since M0, `vercel.json` exists (it only stops Vercel building `platform/**` branches, D-030) and `.github/workflows/platform-{ci,codeql,deploy}.yml` exist (platform CI only; no marketing workflow). Next.js is 16.4.3 on both `main` and `platform/main` (OA-11 live 2026-10-27). `main` also carries an owner-approved editorial redesign (a2c76a5), so the committed marketing baseline must be re-captured with owner approval when `platform/main` merges `main`. Deploy procedure: [runbooks/deploy-marketing-site.md](runbooks/deploy-marketing-site.md).
+
 ## 3. Environment variables used by the marketing code
 
 | Variable | Where | Effect |
@@ -103,6 +105,8 @@ The regression checks GET → 405 for both API routes and never POSTs them (they
 ## 5. Middleware / proxy
 
 **None.** No `proxy.ts` (Next 16 name) or `middleware.ts` at the root, in `app/` or anywhere else. ADR-001 keeps it that way by default. The edge-secret requirement (D-016, WEB-2) cannot be met by a `next.config.ts` rewrite (rewrites cannot add request headers); ADR-001 recommends a route-handler BFF at `app/(platform)/api/platform/[...path]/route.ts` (inside the allowed paths, no shared-file change). If ADR-005 picks `proxy.ts` instead, its `matcher` must be limited to platform prefixes.
+
+> **As built (2026-10-28):** ADR-005 chose the route-handler proxy (`app/(platform)/api/platform/[...path]/route.ts`), and ADR-011 (web) added a root **`proxy.ts`** for platform security headers and CSP. Its `matcher` lists platform page prefixes only (`/learn`, `/tests`, `/ask`, `/plans`, `/me`, `/leaderboard`, `/admin` and their sub-paths), so no marketing route reaches it, and it does nothing while the flag is off.
 
 ## 6. Existing auth, consent and payment code
 

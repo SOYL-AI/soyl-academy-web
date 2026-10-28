@@ -22,9 +22,8 @@ const vBoard = table(
   [
     ['Short answer (Footprints without Feet)', '40–50 words; answer two of three', '3 each'],
     ['Long answer (Footprints without Feet)', '100–120 words on character, theme or values: sketch, opinion, diary, letter or report; one of two', '6'],
-    ['SOYL chapter tests only', 'commentary passages with short parts on character and theme (extra practice; no extract is set from this book)', '5'],
   ],
-  'Table of how a Footprints without Feet chapter is examined: three-mark short answers of forty to fifty words, two of three to be answered, and a six-mark long answer of one hundred to one hundred and twenty words on character, theme or values. SOYL chapter tests also include five-mark commentary passages for extra practice.',
+  'Table of how a Footprints without Feet chapter is examined: three-mark short answers of forty to fifty words, two of three to be answered, and a six-mark long answer of one hundred to one hundred and twenty words on character, theme or values.',
   'CBSE 2026-27, Section C (literature): the supplementary reader is not used for extracts.',
 );
 const vAuthor = table(
@@ -294,7 +293,7 @@ const N = notes({
     {
       h: '8. Answering exam questions',
       t: 4,
-      b: '**How this book is examined:** the board sets 3-mark short answers (40–50 words; two of three) and a 6-mark long answer (100–120 words) from *Footprints without Feet*, on character, theme and values. It does not set extracts from this book. SOYL chapter tests add commentary passages only as extra practice.\n\n**Short answers (3 marks):** point + evidence + explanation.\n\n**Long answers (6 marks):** a clear stand; three points with evidence in your own words; a link to a theme or value; a one-line conclusion. Extrapolation tasks (Mrs Hall\'s diary, Jaffers\'s report, a letter from Griffin) must stay consistent with the chapter.',
+      b: '**How this book is examined:** the board sets 3-mark short answers (40–50 words; two of three) and a 6-mark long answer (100–120 words) from *Footprints without Feet*, on character, theme and values. It does not set extracts from this book. SOYL’s commentary passages in the question bank are extra practice; they are not part of the chapter tests.\n\n**Short answers (3 marks):** point + evidence + explanation.\n\n**Long answers (6 marks):** a clear stand; three points with evidence in your own words; a link to a theme or value; a one-line conclusion. Extrapolation tasks (Mrs Hall\'s diary, Jaffers\'s report, a letter from Griffin) must stay consistent with the chapter.',
       v: vLongPlan,
     },
   ],
@@ -336,27 +335,27 @@ const F = cards([
 ]);
 
 // ---------------------------------------------------------------- tests
+// Supplementary-reader blueprints (catalog chapter override, 2026-10-27): no extract section; the board sets
+// Footprints without Feet only as 3-mark short answers (two of three) and a 6-mark long answer.
 const T_SHORT = test({
   kind: 'short',
-  blueprint: 'cbse-10-english-language-and-literature-chapter-test-short',
+  blueprint: 'cbse-10-english-language-and-literature-chapter-test-short-supplementary',
   title: 'Chapter test (short) — Footprints without Feet',
   duration: 40,
   sections: [
-    { id: 'A', title: 'Section A — Commentary passage (5 marks)', instr: 'Read the commentary and answer all parts. (The passage is SOYL commentary on character and theme; read the chapter in Footprints without Feet.)', items: ['src_lawless'] },
-    { id: 'B', title: 'Section B — Short answers (3 marks each)', instr: 'Answer any three of four in 40–50 words.', items: [{ attempt: 3, keys: ['sa_invisible_how', 'sa_room', 'sa_misery', 'sa_griffin_sympathy'] }] },
-    { id: 'C', title: 'Section C — Long answer (6 marks)', instr: 'Answer any one in 100–120 words.', items: [{ attempt: 1, keys: ['la_griffin_sketch', 'la_invisible_day'] }] },
+    { id: 'A', title: 'Section A — Short answers (3 marks each)', instr: 'Two sets of three questions; in each set answer any two in 40–50 words.', items: [{ attempt: 2, keys: ['sa_invisible_how', 'sa_room', 'sa_footprints'] }, { attempt: 2, keys: ['sa_misery', 'sa_griffin_sympathy', 'sa_jaffers'] }] },
+    { id: 'B', title: 'Section B — Long answer (6 marks)', instr: 'Answer any one of two questions in 100–120 words.', items: [{ attempt: 1, keys: ['la_griffin_sketch', 'la_invisible_day'] }] },
   ],
 });
 const T_LONG = test({
   kind: 'long',
-  blueprint: 'cbse-10-english-language-and-literature-chapter-test-long',
+  blueprint: 'cbse-10-english-language-and-literature-chapter-test-long-supplementary',
   title: 'Chapter test (long) — Footprints without Feet',
-  duration: 90,
+  duration: 80,
   sections: [
-    { id: 'A', title: 'Section A — Commentary passages (2 × 5 marks)', instr: 'In each pair, answer one passage. (Passages are SOYL commentary on character and theme.)', items: [{ attempt: 1, keys: ['src_opening', 'src_store'] }, { attempt: 1, keys: ['src_iping', 'src_unmasked'] }] },
-    { id: 'B', title: 'Section B — Short answers (2 marks each)', instr: 'Answer any three of four in 30–40 words.', items: [{ attempt: 3, keys: ['sb_fire', 'sb_winter', 'sb_shopkeeper', 'sb_spirits'] }] },
-    { id: 'C', title: 'Section C — Short answers (3 marks each)', instr: 'Answer any four of five in 40–50 words.', items: [{ attempt: 4, keys: ['sa_lawless', 'sa_disguise', 'sa_clergyman', 'sa_science_misuse', 'sa_title'] }] },
-    { id: 'D', title: 'Section D — Long answers (6 marks each)', instr: 'Answer one question from each pair in 100–120 words.', items: [{ attempt: 1, keys: ['la_science_ethics', 'la_power_isolation'] }, { attempt: 1, keys: ['la_diary_hall', 'la_jaffers_report'] }] },
+    { id: 'A', title: 'Section A — Short answers (2 marks each)', instr: 'Answer any three of four in 30–40 words.', items: [{ attempt: 3, keys: ['sb_fire', 'sb_winter', 'sb_shopkeeper', 'sb_spirits'] }] },
+    { id: 'B', title: 'Section B — Short answers (3 marks each)', instr: 'Two sets of three questions; in each set answer any two in 40–50 words.', items: [{ attempt: 2, keys: ['sa_disguise', 'sa_clergyman', 'sa_store'] }, { attempt: 2, keys: ['sa_lawless', 'sa_science_misuse', 'sa_title'] }] },
+    { id: 'C', title: 'Section C — Long answers (6 marks each)', instr: 'Answer one question from each of the three pairs in 100–120 words.', items: [{ attempt: 1, keys: ['la_science_ethics', 'la_power_isolation'] }, { attempt: 1, keys: ['la_diary_hall', 'la_jaffers_report'] }, { attempt: 1, keys: ['la_techniques', 'la_griffin_letter'] }] },
   ],
 });
 
@@ -368,7 +367,7 @@ build({
   tests: [T_SHORT, T_LONG],
   checks: {
     syllabus: 'topics t01–t04 only; no removed topics for 2026-27',
-    board_pattern: 'supplementary reader: board sets 3-mark short answers and a 6-mark long answer (no extracts); bank weighted to 14 three-mark and 9 long items; 5 commentary passages fill the generic chapter-test blueprint Section A slots',
+    board_pattern: 'supplementary reader: board sets 3-mark short answers and a 6-mark long answer (no extracts); bank weighted to 14 three-mark and 9 long items; 5 commentary passages are question-bank practice only; the chapter tests follow the supplementary-reader blueprints, which have no extract section',
     literature_rule: 'written in SOYL words at the level of events and ideas; no sentence, phrase or dialogue of the adaptation; speech reported; commentary passages (passage_origin soyl-commentary); single words only for word meanings; textbook pointer on the title slide, notes and every passage stem; guard list of short distinctive phrases (guard.mjs)',
     originality: 'questions written for SOYL; NCERT exercise questions not reused (stems reframed where a classic question exists)',
     re_solve: 'author verifier pass: every item re-answered from its stem and checked against the chapter',

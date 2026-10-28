@@ -4,7 +4,7 @@
  */
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { eq } from 'drizzle-orm';
-import { contentReports, decks, sessions, userMfa } from '@soyl/db';
+import { aiConversations, aiMessages, aiRequests, chapters, contentReports, decks, sessions, userMfa } from '@soyl/db';
 import { base32Decode, base32Encode, decryptSecret, encryptSecret, matchTotp, stepAt, totpAt } from '../src/auth/mfa';
 import { sanitiseComment } from '../src/domain/reports';
 import { createHarness, type Client, type Harness } from './helpers';
@@ -77,6 +77,73 @@ describe('POST /v1/content-reports', () => {
     for (let i = 0; i < 51; i++) guestCodes.push((await guest.post('/v1/content-reports', body)).statusCode);
     expect(guestCodes.filter((s) => s === 201)).toHaveLength(50);
     expect(guestCodes[50]).toBe(429);
+  });
+});
+
+describe('POST /v1/content-reports: AI answers (ai_answer, AC-15)', () => {
+  /** A conversation of `userId` with one user turn and one assistant answer (as the gateway stores them). */
+  async function conversation(userId: string, chapterKey: string | null = SCI) {
+    const [ch] = chapterKey ? await h.t.db.select({ id: chapters.id }).from(chapters).where(eq(chapters.key, chapterKey)) : [];
+    const [conv] = await h.t.db.insert(aiConversations).values({ userId, kind: 'tutor', chapterId: ch?.id ?? null }).returning();
+    const requestId = `req_${Date.now().toString(36)}${++n}`;
+    const [req] = await h.t.db.insert(aiRequests).values({ userId, requestId, action: 'doubt_quick', modelTier: 'small', model: 'mock', status: 'succeeded', conversationId: conv!.id }).returning();
+    const t0 = Date.now();
+    const [question] = await h.t.db.insert(aiMessages).values({ conversationId: conv!.id, role: 'user', content: 'Why is the sky blue?', createdAt: new Date(t0) }).returning();
+    const [answer] = await h.t.db.insert(aiMessages).values({ conversationId: conv!.id, role: 'assistant', content: 'Scattering.', aiRequestId: req!.id, createdAt: new Date(t0 + 1) }).returning();
+    return { conversationId: conv!.id, requestId, answerId: answer!.id, questionId: question!.id };
+  }
+
+  it('members report their own AI answer by messageId or by the stream requestId; the row keeps ids, not the text', async () => {
+    const c = h.client();
+    const me = await c.signInEmail(email());
+    const conv = await conversation(me.user.id);
+    const byMessage = await c.post('/v1/content-reports', { contentType: 'ai_answer', conversationId: conv.conversationId, messageId: conv.answerId, reason: 'wrong_answer', comment: 'The answer skips the reason.' });
+    expect(byMessage.statusCode).toBe(201);
+    const [row] = await h.t.db.select().from(contentReports).where(eq(contentReports.id, byMessage.json().id));
+    expect(row).toMatchObject({ contentType: 'ai_answer', contentId: conv.answerId, unit: SCI, itemRef: `conv:${conv.conversationId}`, category: 'wrong_answer', status: 'open', userId: me.user.id, message: 'The answer skips the reason.' });
+    expect(JSON.stringify(row)).not.toContain('Scattering');
+    // Same answer again (double click, or by requestId): the open report comes back with 200.
+    const again = await c.post('/v1/content-reports', { contentType: 'ai_answer', conversationId: conv.conversationId, requestId: conv.requestId, reason: 'other' });
+    expect(again.statusCode).toBe(200);
+    expect(again.json().id).toBe(byMessage.json().id);
+    // A conversation without a chapter files under unit "ai"; "inappropriate" raises an ops alert without content.
+    const free = await conversation(me.user.id, null);
+    const bad = await c.post('/v1/content-reports', { contentType: 'ai_answer', conversationId: free.conversationId, requestId: free.requestId, reason: 'inappropriate' });
+    expect(bad.statusCode).toBe(201);
+    expect((await h.t.db.select().from(contentReports).where(eq(contentReports.id, bad.json().id)))[0]!.unit).toBe('ai');
+    const alert = h.logs.find((l) => l.alertKind === 'ai_answer_reported_inappropriate');
+    expect(alert).toMatchObject({ alert: true, reportId: bad.json().id, messageId: free.answerId });
+    expect(JSON.stringify(alert)).not.toContain('Scattering');
+  });
+
+  it("refuses guests, other students' conversations, user turns and malformed bodies", async () => {
+    const owner = h.client();
+    const o = await owner.signInEmail(email());
+    const conv = await conversation(o.user.id);
+    const body = { contentType: 'ai_answer', conversationId: conv.conversationId, messageId: conv.answerId, reason: 'wrong_answer' };
+    expect((await h.client().post('/v1/content-reports', body)).statusCode).toBe(401);
+    const other = h.client();
+    await other.signInEmail(email());
+    expect((await other.post('/v1/content-reports', body)).statusCode).toBe(404); // IDOR: not yours
+    expect((await owner.post('/v1/content-reports', { ...body, messageId: conv.questionId })).statusCode).toBe(404); // a user turn is not an AI answer
+    expect((await owner.post('/v1/content-reports', { ...body, messageId: undefined, requestId: 'req_unknown_123' })).statusCode).toBe(404);
+    const invalid = async (b: Record<string, unknown>, path: string) => {
+      const r = await owner.post('/v1/content-reports', { ...body, ...b });
+      expect(r.statusCode).toBe(400);
+      expect(r.json().errors[0].path).toBe(path);
+    };
+    await invalid({ conversationId: undefined }, 'body.conversationId');
+    await invalid({ requestId: conv.requestId }, 'body.messageId'); // both
+    await invalid({ messageId: undefined }, 'body.messageId'); // neither
+    await invalid({ reason: 'audio' }, 'body.reason');
+    await invalid({ questionId: 'q_cbse10sci_ch01_001' }, 'body.questionId');
+    await invalid({ comment: 'x'.repeat(1001) }, 'body.comment');
+    expect((await owner.post('/v1/content-reports', { ...body, requestId: 'bad id!' , messageId: undefined })).statusCode).toBe(400);
+    // Content reports still need their chapter, and must not carry AI fields.
+    const content = await owner.post('/v1/content-reports', { contentType: 'notes', reason: 'typo' });
+    expect(content.json()).toMatchObject({ code: 'validation_failed', errors: [{ path: 'body.chapterId' }] });
+    const mixed = await owner.post('/v1/content-reports', { chapterId: SCI, contentType: 'notes', reason: 'typo', conversationId: conv.conversationId });
+    expect(mixed.json()).toMatchObject({ code: 'validation_failed', errors: [{ path: 'body.conversationId' }] });
   });
 });
 

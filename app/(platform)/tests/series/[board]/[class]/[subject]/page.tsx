@@ -1,9 +1,11 @@
 /**
  * /tests/series/[board]/[class]/[subject] — a subject's test series (ARCHITECTURE §3.1: public list,
- * login to start). The shell (subject name, breadcrumbs) is ISR from the public catalog; the series and the
- * student's status per test load in the browser (members get a personal, no-store list).
+ * login to start). The shell (subject name, breadcrumbs) is rendered per request from the (cached) public
+ * catalog so the proxy's CSP nonce applies (S6-L03); the series and the student's status per test load in
+ * the browser (members get a personal, no-store list).
  */
 import type { Metadata } from 'next';
+import { connection } from 'next/server';
 import { notFound } from 'next/navigation';
 import { platformOn, requirePlatform } from '@/components/platform/server/gate';
 import { platformMetadata } from '@/components/platform/server/metadata';
@@ -12,12 +14,6 @@ import { PageHeader } from '@/components/platform/shell/PageHeader';
 import { SeriesClient } from '@/components/platform/tests/SeriesClient';
 import { examLabel, langAttr, parseBoard, parseClass, subjectIdFor, subjectSlug } from '@/components/platform/lib/catalog';
 import shell from '@/components/platform/shell/shell.module.css';
-
-export const revalidate = 3600;
-
-export function generateStaticParams() {
-  return [];
-}
 
 interface Params {
   board: string;
@@ -50,6 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 
 export default async function SeriesPage({ params }: { params: Promise<Params> }) {
   requirePlatform();
+  await connection();
   const r = await load(params);
   if (!r) notFound();
   const { board, classLevel, subjectId, data } = r;

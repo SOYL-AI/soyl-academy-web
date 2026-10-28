@@ -10,9 +10,13 @@
 //     pins location=centralindia and an Indian aiLocation (ADR-008).
 //   - GEN-1: no parameter value looks like a credential (long random-looking strings, connection
 //     strings, private keys).
+// and one source check on modules/storage.bicep:
+//   - S6-L02 Blob write contract: the containers each identity can write (Blob Data Contributor/Owner)
+//     are exactly the ones its code writes (BLOB_WRITE_CONTRACT below), so a missing grant (403 at run
+//     time) or an extra one fails here.
 // Bicep binary: $BICEP_BIN, else `bicep` on PATH (CI downloads a pinned, checksum-verified release).
 import { spawnSync } from 'node:child_process';
-import { readdirSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -76,7 +80,52 @@ function scanSecrets(value, path, out) {
   else if (value && typeof value === 'object') for (const [k, v] of Object.entries(value)) scanSecrets(v, `${path}.${k}`, out);
 }
 
+/**
+ * S6-L02: which Blob containers each identity's code writes (put/delete/SAS write).
+ *   api       uploads-quarantine (write SAS, delete), uploads (in-process cleaning, account deletion)
+ *   worker    both upload containers (processing, retention, purge), content-releases, public-assets
+ *   migrator  content-releases (release job)
+ *   frontdoor nothing (reads public-assets)
+ */
+const BLOB_WRITE_CONTRACT = {
+  apiPrincipalId: ['uploads', 'uploads-quarantine'],
+  workerPrincipalId: ['content-releases', 'public-assets', 'uploads', 'uploads-quarantine'],
+  migratorPrincipalId: ['content-releases'],
+  frontDoorPrincipalId: [],
+};
+function blobWriteContract() {
+  const src = readFileSync(join(here, 'modules', 'storage.bicep'), 'utf8').replace(/\r\n/g, '\n');
+  const containers = new Map([...src.matchAll(/resource (\w+) 'Microsoft\.Storage\/storageAccounts\/blobServices\/containers@[^']+' = \{\s*parent: \w+\s*name: '([^']+)'/g)].map((m) => [m[1], m[2]]));
+  const writes = new Map(Object.keys(BLOB_WRITE_CONTRACT).map((k) => [k, new Set()]));
+  const writeRole = /roleDefinitionId: roles\.(blobDataContributor|blobDataOwner)\b/;
+  // Single assignments: scope = a container symbol.
+  for (const m of src.matchAll(/^resource \w+ 'Microsoft\.Authorization\/roleAssignments@[^']+' = \{([\s\S]*?)^\}/gm)) {
+    const body = m[1];
+    const scope = /scope: (\w+)/.exec(body)?.[1];
+    const principal = /principalId: (\w+)/.exec(body)?.[1];
+    if (!principal || !writeRole.test(body)) continue;
+    if (!containers.has(scope)) throw new Error(`S6-L02: write role for ${principal} at a non-container scope (${scope})`);
+    if (!writes.has(principal)) writes.set(principal, new Set());
+    writes.get(principal).add(containers.get(scope));
+  }
+  // The worker's loop over workerContainerNames (one assignment per name).
+  const loop = /var workerContainerNames = \[([\s\S]*?)\]/.exec(src);
+  const loopBody = /^resource workerContainers 'Microsoft\.Authorization\/roleAssignments@[^']+' = \[([\s\S]*?)^\]/m.exec(src)?.[1] ?? '';
+  if (loop && writeRole.test(loopBody) && /principalId: workerPrincipalId/.test(loopBody)) for (const n of loop[1].matchAll(/'([^']+)'/g)) writes.get('workerPrincipalId').add(n[1]);
+  let bad = 0;
+  for (const [principal, set] of writes) {
+    const want = (BLOB_WRITE_CONTRACT[principal] ?? []).slice().sort().join(', ');
+    const got = [...set].sort().join(', ');
+    const ok = want === got;
+    if (!ok) bad++;
+    console.log(`  S6-L02 blob writes ${principal}: ${got || '(none)'}${ok ? '' : `  -- expected ${want || '(none)'}`}`);
+  }
+  return bad;
+}
+
 console.log(`bicep: ${run(['--version']).stdout.trim()}`);
+console.log('\n# storage.bicep blob write contract (S6-L02)');
+errors += blobWriteContract();
 
 for (const t of templates) {
   console.log(`\n# bicep build ${t}`);
@@ -105,15 +154,31 @@ for (const p of paramFiles) {
     console.log(`  INFRA-9: location must be centralindia, got ${val('location')}`);
     errors++;
   }
-  if (val('aiLocation') !== undefined && !INDIA_REGIONS.has(val('aiLocation'))) {
-    console.log(`  INFRA-9/ADR-008: aiLocation must be an Indian region, got ${val('aiLocation')}`);
-    errors++;
+  for (const k of ['aiLocation', 'speechLocation', 'contentSafetyLocation']) {
+    if (val(k) !== undefined && !INDIA_REGIONS.has(val(k))) {
+      console.log(`  INFRA-9/ADR-008: ${k} must be an Indian region, got ${val(k)}`);
+      errors++;
+    }
+  }
+  // ADR-008: model deployments name a known tier (main.bicep maps tiers to AZURE_OPENAI_DEPLOYMENT_*),
+  // a real model version and an approved deployment type.
+  const AOAI_TIERS = new Set(['small', 'mid', 'verify', 'embedding', 'small-batch', 'mid-batch']);
+  const AOAI_SKUS = new Set(['GlobalStandard', 'DataZoneStandard', 'Standard', 'GlobalBatch', 'DataZoneBatch']);
+  for (const d of val('aoaiDeployments') ?? []) {
+    const problems = [];
+    if (!AOAI_TIERS.has(d.tier)) problems.push(`unknown tier "${d.tier}"`);
+    if (!AOAI_SKUS.has(d.skuName)) problems.push(`skuName "${d.skuName}" not in ADR-008`);
+    if (d.tier?.endsWith('-batch') !== /Batch$/.test(d.skuName ?? '')) problems.push('batch tiers (and only they) use a *Batch sku');
+    if (val('aoaiDeployModels') && !/^[0-9]/.test(String(d.version))) problems.push(`placeholder version "${d.version}" with aoaiDeployModels=true`);
+    if (!(d.capacity > 0)) problems.push('capacity must be > 0');
+    for (const p of problems) console.log(`  ADR-008: aoaiDeployments ${d.name}: ${p}`);
+    errors += problems.length;
   }
   const leaks = [];
   for (const [k, v] of Object.entries(params)) scanSecrets(v.value, k, leaks);
   for (const l of leaks) console.log(`  GEN-1: parameter value looks like a credential: ${l}`);
   errors += leaks.length;
-  console.log(`  ${Object.keys(params).length} parameters; location=${val('location')}${val('aiLocation') ? `, aiLocation=${val('aiLocation')}` : ''}; credential-like values: ${leaks.length}`);
+  console.log(`  ${Object.keys(params).length} parameters; location=${val('location')}${val('aiLocation') ? `, ai=${val('aiLocation')}/${val('speechLocation')}/${val('contentSafetyLocation')} (openai/speech/safety)` : ''}; credential-like values: ${leaks.length}`);
 }
 
 console.log('\n| step | file | errors | warnings |\n|---|---|---|---|');

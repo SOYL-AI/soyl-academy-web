@@ -2178,7 +2178,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        /** Report a mistake in a lesson, notes, flashcard or question */
+        /** Report a mistake in a lesson, notes, flashcard or question, or a bad AI answer (contentType ai_answer, members only) */
         post: {
             parameters: {
                 query?: never;
@@ -2192,6 +2192,15 @@ export interface paths {
                 };
             };
             responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["ContentReportReceipt"];
+                    };
+                };
                 /** @description Default Response */
                 201: {
                     headers: {
@@ -3331,6 +3340,62 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/live-events/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** One live mock: phase timeline, registration window, rank availability. Signed in: your registration, attempt and result. */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["LiveEventDetail"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/v1/live-events/{id}/register": {
         parameters: {
             query?: never;
@@ -3415,6 +3480,62 @@ export interface paths {
                     };
                     content: {
                         "application/json": components["schemas"]["LiveLeaderboard"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/leagues/current": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Your weekly league: tier, division standings (first name + last initial), promotion and relegation zones. Needs consent (D-014). */
+        get: {
+            parameters: {
+                query?: {
+                    scope?: "class" | "school" | "city";
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["LeagueCurrent"];
                     };
                 };
                 /** @description Default Response */
@@ -4621,62 +4742,11 @@ export interface components {
             status: components["schemas"]["ConsentStateInput"];
             redirectUrl: string | null;
         };
-        CatalogBoardsInput: {
-            academicYear: string;
-            boards: {
-                code: components["schemas"]["BoardInput"];
-                name: string;
-                classes: {
-                    level: number;
-                    /** @enum {string} */
-                    exam: "cbse" | "icse" | "isc";
-                    name: string;
-                }[];
-            }[];
-        };
-        CatalogSubjectInput: {
-            id: string;
-            name: string;
-            code: string | null;
-            /** @enum {string} */
-            exam: "cbse" | "icse" | "isc";
-            classLevel: number;
-            language: string;
-            script: string;
-            /** @enum {string} */
-            tier: "core" | "language" | "elective";
-            wave: number;
-            hasBoardExam: boolean;
-            theoryOnly: boolean;
-            variants: {
-                code: string | null;
-                name: string;
-            }[];
-        };
-        CatalogSubjectsInput: {
-            academicYear: string;
-            board: components["schemas"]["BoardInput"];
-            classLevel: number;
-            subjects: components["schemas"]["CatalogSubjectInput"][];
-        };
-        CatalogChaptersInput: {
-            academicYear: string;
-            subject: components["schemas"]["CatalogSubjectInput"];
-            chapters: {
-                id: string;
-                number: number;
-                title: string;
-                titleEn: string | null;
-                unit: string | null;
-                boardAssessed: boolean;
-                topics: {
-                    id: string;
-                    title: string;
-                    titleEn: string | null;
-                    boardAssessed: boolean;
-                }[];
-            }[];
-        };
+        /**
+         * @description Only when boardAssessed is false: assessed by the school, not in the board exam. periodic = periodic assessment only; project = project work only; practical = practical; internal = formative/internal assessment.
+         * @enum {string}
+         */
+        SchoolAssessmentInput: "periodic" | "project" | "practical" | "internal";
         /**
          * @description beta = published after automated checks; reviewed = human-reviewed (CONTEXT §4).
          * @enum {string}
@@ -4769,10 +4839,13 @@ export interface components {
                 titleEn: string | null;
                 unit: string | null;
                 boardAssessed: boolean;
+                schoolAssessment: components["schemas"]["SchoolAssessmentInput"] | null;
                 topics: {
                     id: string;
                     title: string;
                     titleEn: string | null;
+                    boardAssessed: boolean;
+                    schoolAssessment: components["schemas"]["SchoolAssessmentInput"] | null;
                 }[];
             };
             subject: {
@@ -4913,6 +4986,64 @@ export interface components {
             lastActiveDay: string | null;
             atRisk: boolean;
             freezeAvailableThisWeek: boolean;
+        };
+        CatalogBoardsInput: {
+            academicYear: string;
+            boards: {
+                code: components["schemas"]["BoardInput"];
+                name: string;
+                classes: {
+                    level: number;
+                    /** @enum {string} */
+                    exam: "cbse" | "icse" | "isc";
+                    name: string;
+                }[];
+            }[];
+        };
+        CatalogSubjectInput: {
+            id: string;
+            name: string;
+            code: string | null;
+            /** @enum {string} */
+            exam: "cbse" | "icse" | "isc";
+            classLevel: number;
+            language: string;
+            script: string;
+            /** @enum {string} */
+            tier: "core" | "language" | "elective";
+            wave: number;
+            hasBoardExam: boolean;
+            theoryOnly: boolean;
+            variants: {
+                code: string | null;
+                name: string;
+            }[];
+        };
+        CatalogSubjectsInput: {
+            academicYear: string;
+            board: components["schemas"]["BoardInput"];
+            classLevel: number;
+            subjects: components["schemas"]["CatalogSubjectInput"][];
+        };
+        CatalogChaptersInput: {
+            academicYear: string;
+            subject: components["schemas"]["CatalogSubjectInput"];
+            chapters: {
+                id: string;
+                number: number;
+                title: string;
+                titleEn: string | null;
+                unit: string | null;
+                boardAssessed: boolean;
+                schoolAssessment: components["schemas"]["SchoolAssessmentInput"] | null;
+                topics: {
+                    id: string;
+                    title: string;
+                    titleEn: string | null;
+                    boardAssessed: boolean;
+                    schoolAssessment: components["schemas"]["SchoolAssessmentInput"] | null;
+                }[];
+            }[];
         };
         /** @description mcq/assertion-reason/true-false/multi-select → option_ids; numerical → value; fill-blank → blanks (in stem order); match → pairs; ordering → order (all ids); code-output → output; short/long/writing/map → text. */
         PracticePartResponseInput: {
@@ -5110,12 +5241,17 @@ export interface components {
             }[];
         };
         ContentReportRequestInput: {
-            chapterId: string;
+            chapterId?: string;
             /** @enum {string} */
-            contentType: "deck" | "notes" | "flashcard_set" | "question";
+            contentType: "deck" | "notes" | "flashcard_set" | "question" | "ai_answer";
             part?: number;
             questionId?: string;
             itemRef?: string;
+            /** Format: uuid */
+            conversationId?: string;
+            /** Format: uuid */
+            messageId?: string;
+            requestId?: string;
             /** @enum {string} */
             reason: "wrong_answer" | "wrong_content" | "typo" | "rendering" | "audio" | "inappropriate" | "other";
             comment?: string;
@@ -5165,7 +5301,7 @@ export interface components {
                 id: string;
                 unit: string;
                 /** @enum {string} */
-                contentType: "deck" | "notes" | "flashcard_set" | "question";
+                contentType: "deck" | "notes" | "flashcard_set" | "question" | "ai_answer";
                 /** Format: uuid */
                 contentId: string;
                 itemRef: string | null;
@@ -5221,6 +5357,71 @@ export interface components {
                 attemptId: string | null;
                 attemptStatus: string | null;
             } | null;
+        };
+        /** @description Signed in: me is your registration, attempt and result; null for guests. */
+        LiveEventDetailInput: {
+            id: string;
+            title: string;
+            phase: components["schemas"]["LivePhaseInput"];
+            subject: {
+                id: string;
+                name: string;
+            };
+            testId: string;
+            durationMin: number;
+            totalMarks: number;
+            /** Format: date-time */
+            registrationOpensAt: string;
+            /** Format: date-time */
+            startsAt: string;
+            /** Format: date-time */
+            lateStartUntil: string;
+            /** Format: date-time */
+            endsAt: string;
+            resultsPublishedAt: string | null;
+            ranksBeta: boolean;
+            me: {
+                registered: boolean;
+                attemptId: string | null;
+                attemptStatus: string | null;
+                deadlineAt: string | null;
+                canRegister: boolean;
+                canStart: boolean;
+                canResume: boolean;
+                result: {
+                    rank: number;
+                    score: number;
+                    percentile: number | null;
+                } | null;
+            } | null;
+            /** Format: date-time */
+            serverNow: string;
+            lateStartMinutes: number;
+            /** Format: date-time */
+            writingUntil: string;
+            /** Format: date-time */
+            latestDeadlineAt: string;
+            graceSeconds: number;
+            timeline: {
+                phase: components["schemas"]["LivePhaseInput"];
+                from: string | null;
+                until: string | null;
+            }[];
+            registration: {
+                open: boolean;
+                /** Format: date-time */
+                opensAt: string;
+                /** Format: date-time */
+                closesAt: string;
+            };
+            ranks: {
+                /** @enum {string} */
+                status: "not_started" | "provisional" | "final" | "unavailable";
+                beta: boolean;
+                requiresConsent: boolean;
+                consentGranted: boolean | null;
+                canView: boolean;
+            };
         };
         TestSeriesInput: {
             subject: {
@@ -5561,6 +5762,12 @@ export interface components {
                 total: number;
                 percentile: number | null;
             } | null;
+            /** @description S6-H01: a live-mock attempt is score-only until the event closes (after_event): sections, topics, byDifficulty, sectionsLayout and items are empty, self- and AI evaluation return 409 results_after_event. */
+            review: {
+                /** @enum {string} */
+                status: "open" | "after_event";
+                opensAt: string | null;
+            };
             sectionsLayout: {
                 id: string;
                 title: string;
@@ -5776,7 +5983,7 @@ export interface components {
             /** @enum {string} */
             kind: "photo_doubt" | "sample_paper";
             /** @enum {string} */
-            contentType: "image/jpeg" | "image/png" | "image/webp" | "application/pdf";
+            contentType: "image/jpeg" | "image/png" | "image/webp";
             bytes: number;
         };
         /** @description PUT the file to uploadUrl with these headers within uploadExpiresAt, then POST /v1/ai/uploads/:id/complete. */
@@ -5882,6 +6089,75 @@ export interface components {
                 /** Format: uuid */
                 id: string;
                 status: string;
+            } | null;
+        };
+        /** @description level 1 = the lowest tier; names and icons from LEAGUE_TIERS (shared/config/gamification.ts). */
+        LeagueTierInput: {
+            level: number;
+            key: string;
+            name: string;
+            icon: string;
+        };
+        /**
+         * @description Where the place would finish if the week ended now. Promotion needs at least minXpToPromote XP.
+         * @enum {string}
+         */
+        LeagueZoneInput: "promotion" | "safe" | "relegation";
+        /** @description Your weekly league (IST week). XP is what each student earned this week. Consent-gated (D-014). */
+        LeagueCurrentInput: {
+            /**
+             * @description active = placed in a league; class_required = set board and class first (PATCH /v1/me); students_only = parent/staff accounts do not play.
+             * @enum {string}
+             */
+            status: "active" | "class_required" | "students_only";
+            /** @enum {string} */
+            scope: "class" | "school" | "city";
+            /** Format: date-time */
+            serverNow: string;
+            week: {
+                start: string;
+                end: string;
+                /** Format: date-time */
+                startsAt: string;
+                /** Format: date-time */
+                endsAt: string;
+            };
+            cohort: {
+                key: string;
+                board: components["schemas"]["BoardInput"];
+                classLevel: number;
+            } | null;
+            league: {
+                /** Format: uuid */
+                id: string;
+                tier: components["schemas"]["LeagueTierInput"];
+                division: number;
+                size: number;
+                capacity: number;
+                promotionPlaces: number;
+                relegationPlaces: number;
+                minXpToPromote: number;
+                isTopTier: boolean;
+                isBottomTier: boolean;
+            } | null;
+            standings: {
+                rank: number;
+                name: string | null;
+                xp: number;
+                zone: components["schemas"]["LeagueZoneInput"];
+                isMe: boolean;
+            }[];
+            me: {
+                rank: number;
+                xp: number;
+                zone: components["schemas"]["LeagueZoneInput"];
+            } | null;
+            lastWeek: {
+                weekStart: string;
+                tier: components["schemas"]["LeagueTierInput"];
+                finalRank: number | null;
+                xp: number;
+                outcome: ("promoted" | "stayed" | "relegated") | null;
             } | null;
         };
         /** @description Plans and GST-inclusive INR prices from platform/shared/config/plans.ts. */
@@ -6144,62 +6420,11 @@ export interface components {
             status: components["schemas"]["ConsentState"];
             redirectUrl: string | null;
         };
-        CatalogBoards: {
-            academicYear: string;
-            boards: {
-                code: components["schemas"]["Board"];
-                name: string;
-                classes: {
-                    level: number;
-                    /** @enum {string} */
-                    exam: "cbse" | "icse" | "isc";
-                    name: string;
-                }[];
-            }[];
-        };
-        CatalogSubject: {
-            id: string;
-            name: string;
-            code: string | null;
-            /** @enum {string} */
-            exam: "cbse" | "icse" | "isc";
-            classLevel: number;
-            language: string;
-            script: string;
-            /** @enum {string} */
-            tier: "core" | "language" | "elective";
-            wave: number;
-            hasBoardExam: boolean;
-            theoryOnly: boolean;
-            variants: {
-                code: string | null;
-                name: string;
-            }[];
-        };
-        CatalogSubjects: {
-            academicYear: string;
-            board: components["schemas"]["Board"];
-            classLevel: number;
-            subjects: components["schemas"]["CatalogSubject"][];
-        };
-        CatalogChapters: {
-            academicYear: string;
-            subject: components["schemas"]["CatalogSubject"];
-            chapters: {
-                id: string;
-                number: number;
-                title: string;
-                titleEn: string | null;
-                unit: string | null;
-                boardAssessed: boolean;
-                topics: {
-                    id: string;
-                    title: string;
-                    titleEn: string | null;
-                    boardAssessed: boolean;
-                }[];
-            }[];
-        };
+        /**
+         * @description Only when boardAssessed is false: assessed by the school, not in the board exam. periodic = periodic assessment only; project = project work only; practical = practical; internal = formative/internal assessment.
+         * @enum {string}
+         */
+        SchoolAssessment: "periodic" | "project" | "practical" | "internal";
         /**
          * @description beta = published after automated checks; reviewed = human-reviewed (CONTEXT §4).
          * @enum {string}
@@ -6292,10 +6517,13 @@ export interface components {
                 titleEn: string | null;
                 unit: string | null;
                 boardAssessed: boolean;
+                schoolAssessment: components["schemas"]["SchoolAssessment"] | null;
                 topics: {
                     id: string;
                     title: string;
                     titleEn: string | null;
+                    boardAssessed: boolean;
+                    schoolAssessment: components["schemas"]["SchoolAssessment"] | null;
                 }[];
             };
             subject: {
@@ -6436,6 +6664,64 @@ export interface components {
             lastActiveDay: string | null;
             atRisk: boolean;
             freezeAvailableThisWeek: boolean;
+        };
+        CatalogBoards: {
+            academicYear: string;
+            boards: {
+                code: components["schemas"]["Board"];
+                name: string;
+                classes: {
+                    level: number;
+                    /** @enum {string} */
+                    exam: "cbse" | "icse" | "isc";
+                    name: string;
+                }[];
+            }[];
+        };
+        CatalogSubject: {
+            id: string;
+            name: string;
+            code: string | null;
+            /** @enum {string} */
+            exam: "cbse" | "icse" | "isc";
+            classLevel: number;
+            language: string;
+            script: string;
+            /** @enum {string} */
+            tier: "core" | "language" | "elective";
+            wave: number;
+            hasBoardExam: boolean;
+            theoryOnly: boolean;
+            variants: {
+                code: string | null;
+                name: string;
+            }[];
+        };
+        CatalogSubjects: {
+            academicYear: string;
+            board: components["schemas"]["Board"];
+            classLevel: number;
+            subjects: components["schemas"]["CatalogSubject"][];
+        };
+        CatalogChapters: {
+            academicYear: string;
+            subject: components["schemas"]["CatalogSubject"];
+            chapters: {
+                id: string;
+                number: number;
+                title: string;
+                titleEn: string | null;
+                unit: string | null;
+                boardAssessed: boolean;
+                schoolAssessment: components["schemas"]["SchoolAssessment"] | null;
+                topics: {
+                    id: string;
+                    title: string;
+                    titleEn: string | null;
+                    boardAssessed: boolean;
+                    schoolAssessment: components["schemas"]["SchoolAssessment"] | null;
+                }[];
+            }[];
         };
         /** @description mcq/assertion-reason/true-false/multi-select → option_ids; numerical → value; fill-blank → blanks (in stem order); match → pairs; ordering → order (all ids); code-output → output; short/long/writing/map → text. */
         PracticePartResponse: {
@@ -6633,12 +6919,17 @@ export interface components {
             }[];
         };
         ContentReportRequest: {
-            chapterId: string;
+            chapterId?: string;
             /** @enum {string} */
-            contentType: "deck" | "notes" | "flashcard_set" | "question";
+            contentType: "deck" | "notes" | "flashcard_set" | "question" | "ai_answer";
             part?: number;
             questionId?: string;
             itemRef?: string;
+            /** Format: uuid */
+            conversationId?: string;
+            /** Format: uuid */
+            messageId?: string;
+            requestId?: string;
             /** @enum {string} */
             reason: "wrong_answer" | "wrong_content" | "typo" | "rendering" | "audio" | "inappropriate" | "other";
             comment?: string;
@@ -6688,7 +6979,7 @@ export interface components {
                 id: string;
                 unit: string;
                 /** @enum {string} */
-                contentType: "deck" | "notes" | "flashcard_set" | "question";
+                contentType: "deck" | "notes" | "flashcard_set" | "question" | "ai_answer";
                 /** Format: uuid */
                 contentId: string;
                 itemRef: string | null;
@@ -6744,6 +7035,71 @@ export interface components {
                 attemptId: string | null;
                 attemptStatus: string | null;
             } | null;
+        };
+        /** @description Signed in: me is your registration, attempt and result; null for guests. */
+        LiveEventDetail: {
+            id: string;
+            title: string;
+            phase: components["schemas"]["LivePhase"];
+            subject: {
+                id: string;
+                name: string;
+            };
+            testId: string;
+            durationMin: number;
+            totalMarks: number;
+            /** Format: date-time */
+            registrationOpensAt: string;
+            /** Format: date-time */
+            startsAt: string;
+            /** Format: date-time */
+            lateStartUntil: string;
+            /** Format: date-time */
+            endsAt: string;
+            resultsPublishedAt: string | null;
+            ranksBeta: boolean;
+            me: {
+                registered: boolean;
+                attemptId: string | null;
+                attemptStatus: string | null;
+                deadlineAt: string | null;
+                canRegister: boolean;
+                canStart: boolean;
+                canResume: boolean;
+                result: {
+                    rank: number;
+                    score: number;
+                    percentile: number | null;
+                } | null;
+            } | null;
+            /** Format: date-time */
+            serverNow: string;
+            lateStartMinutes: number;
+            /** Format: date-time */
+            writingUntil: string;
+            /** Format: date-time */
+            latestDeadlineAt: string;
+            graceSeconds: number;
+            timeline: {
+                phase: components["schemas"]["LivePhase"];
+                from: string | null;
+                until: string | null;
+            }[];
+            registration: {
+                open: boolean;
+                /** Format: date-time */
+                opensAt: string;
+                /** Format: date-time */
+                closesAt: string;
+            };
+            ranks: {
+                /** @enum {string} */
+                status: "not_started" | "provisional" | "final" | "unavailable";
+                beta: boolean;
+                requiresConsent: boolean;
+                consentGranted: boolean | null;
+                canView: boolean;
+            };
         };
         TestSeries: {
             subject: {
@@ -7084,6 +7440,12 @@ export interface components {
                 total: number;
                 percentile: number | null;
             } | null;
+            /** @description S6-H01: a live-mock attempt is score-only until the event closes (after_event): sections, topics, byDifficulty, sectionsLayout and items are empty, self- and AI evaluation return 409 results_after_event. */
+            review: {
+                /** @enum {string} */
+                status: "open" | "after_event";
+                opensAt: string | null;
+            };
             sectionsLayout: {
                 id: string;
                 title: string;
@@ -7299,7 +7661,7 @@ export interface components {
             /** @enum {string} */
             kind: "photo_doubt" | "sample_paper";
             /** @enum {string} */
-            contentType: "image/jpeg" | "image/png" | "image/webp" | "application/pdf";
+            contentType: "image/jpeg" | "image/png" | "image/webp";
             bytes: number;
         };
         /** @description PUT the file to uploadUrl with these headers within uploadExpiresAt, then POST /v1/ai/uploads/:id/complete. */
@@ -7405,6 +7767,75 @@ export interface components {
                 /** Format: uuid */
                 id: string;
                 status: string;
+            } | null;
+        };
+        /** @description level 1 = the lowest tier; names and icons from LEAGUE_TIERS (shared/config/gamification.ts). */
+        LeagueTier: {
+            level: number;
+            key: string;
+            name: string;
+            icon: string;
+        };
+        /**
+         * @description Where the place would finish if the week ended now. Promotion needs at least minXpToPromote XP.
+         * @enum {string}
+         */
+        LeagueZone: "promotion" | "safe" | "relegation";
+        /** @description Your weekly league (IST week). XP is what each student earned this week. Consent-gated (D-014). */
+        LeagueCurrent: {
+            /**
+             * @description active = placed in a league; class_required = set board and class first (PATCH /v1/me); students_only = parent/staff accounts do not play.
+             * @enum {string}
+             */
+            status: "active" | "class_required" | "students_only";
+            /** @enum {string} */
+            scope: "class" | "school" | "city";
+            /** Format: date-time */
+            serverNow: string;
+            week: {
+                start: string;
+                end: string;
+                /** Format: date-time */
+                startsAt: string;
+                /** Format: date-time */
+                endsAt: string;
+            };
+            cohort: {
+                key: string;
+                board: components["schemas"]["Board"];
+                classLevel: number;
+            } | null;
+            league: {
+                /** Format: uuid */
+                id: string;
+                tier: components["schemas"]["LeagueTier"];
+                division: number;
+                size: number;
+                capacity: number;
+                promotionPlaces: number;
+                relegationPlaces: number;
+                minXpToPromote: number;
+                isTopTier: boolean;
+                isBottomTier: boolean;
+            } | null;
+            standings: {
+                rank: number;
+                name: string | null;
+                xp: number;
+                zone: components["schemas"]["LeagueZone"];
+                isMe: boolean;
+            }[];
+            me: {
+                rank: number;
+                xp: number;
+                zone: components["schemas"]["LeagueZone"];
+            } | null;
+            lastWeek: {
+                weekStart: string;
+                tier: components["schemas"]["LeagueTier"];
+                finalRank: number | null;
+                xp: number;
+                outcome: ("promoted" | "stayed" | "relegated") | null;
             } | null;
         };
         /** @description Plans and GST-inclusive INR prices from platform/shared/config/plans.ts. */

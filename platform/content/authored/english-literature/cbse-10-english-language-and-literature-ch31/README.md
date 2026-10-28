@@ -6,17 +6,17 @@
 | Text | *Footprints without Feet* (NCERT supplementary reader), a play. **Students read the play in their textbook; nothing here reproduces it.** |
 | Syllabus | `platform/catalog/cbse/10/english-language-and-literature/syllabus.yaml` (2026-27): t01 reading the play: context and summary · t02 themes and message · t03 characters and their development · t04 exam practice. No removed topics. |
 | Board weight | Section C: Q9 short answers on *Footprints without Feet* (3 marks, 40–50 words, two of three) and one long answer (6 marks, 100–120 words) on character, theme or values. No extracts are set from this reader. |
-| Files | `release.json` (1 deck of 24 slides; 8 notes sections; 30 flashcards; 63 questions with 25 passage children), `tests.json` (short 20 / 40 min; long 40 / 90 min), `src/` (`build.mjs`, `questions.mjs`; shared library `../../../english-language/cbse-10-english-language-and-literature-ch02/src/lib.mjs`, unchanged; D-036 guard from `../cbse-10-english-language-and-literature-ch27/src/guard.mjs`) |
+| Files | `release.json` (1 deck of 24 slides; 8 notes sections; 30 flashcards; 63 questions with 25 passage children), `tests.json` (short 18 / 40 min; long 36 / 80 min, supplementary-reader blueprints), `src/` (`build.mjs`, `questions.mjs`; shared library `../../../english-language/cbse-10-english-language-and-literature-ch02/src/lib.mjs`, unchanged; D-036 guard from `../cbse-10-english-language-and-literature-ch27/src/guard.mjs`) |
 | Provenance | `origin: human`, `author: claude-opus-5-5 (subject-producer)`, every item `status: draft` |
 
 Rebuild from `platform/`: `npx tsx content/authored/english-literature/cbse-10-english-language-and-literature-ch31/src/build.mjs` (deterministic; the build ends with `NO ERRORS` and `GUARD: 0 of 10 guard phrases found`).
 
 ## Pattern decision (supplementary reader)
 This chapter follows the decision used for ch23–ch30 (handoffs `2026-10-27-subject-producer-cbse10-english-f.md` and `-english-g.md`):
-- **Blueprint slots kept.** Both tests follow `chapter-test-short` / `chapter-test-long` item for item, so `blueprint_id` is set. The Section A extract slots are filled with **SOYL commentary** items (`passage_origin: soyl-commentary`) on character, theme and values. Every stem says they are comprehension checks and that the board sets no extracts from this reader.
+- **Supplementary-reader blueprints (updated 2026-10-28 by curriculum-architect).** Both tests follow `chapter-test-short-supplementary` / `chapter-test-long-supplementary` item for item (a catalog chapter override for ch23–ch31), so `blueprint_id` is set. These blueprints have no extract section. The five **SOYL commentary** items (`passage_origin: soyl-commentary`) on character, theme and values stay in the bank as comprehension practice; every stem says the board sets no extracts from this reader.
 - **Bank weighted to the board's form:** 14 three-mark short answers, 9 six-mark long answers, 6 two-mark answers and only 5 commentary items. Five is the minimum that fills both tests without sharing a question. The objective items follow english-g: mcq 12, fill-blank 4, assertion-reason 4, true-false 4, ordering 2, match 3.
 - **Students are told** how the reader is examined on the title slide, in notes section 8, in the exam tips and on a flashcard.
-- In the tests, 15 of 20 marks (short) and 30 of 40 marks (long) are in the board's short- and long-answer form.
+- The tests use only the board's forms for this reader (3-mark answers, two of three; 6-mark long answers), plus the 2-mark recall section in the long test. The title-slide table and notes section 8 no longer mention commentary passages in the tests.
 
 ## Originality (CONTEXT §8–§9, D-036)
 - **No part of the play was written out from memory anywhere, including scratch.** Everything was authored in SOYL's own words at the level of events and ideas. Dialogue is reported, never quoted.
@@ -42,9 +42,9 @@ This chapter follows the decision used for ch23–ch30 (handoffs `2026-10-27-sub
 - **Stems are chapter-specific:** each names the play, its author or its characters.
 
 ## Chapter tests (`tests.json`)
-- **Short (20 marks, 40 min):** A `src_noodle` (5) · B 3 of 4 three-mark answers · C 1 of 2 long answers.
-- **Long (40 marks, 90 min):** A two commentary pairs · B 3 of 4 two-mark answers · C 4 of 5 three-mark answers · D two long-answer pairs.
-- The two tests share no question. Practice-only written items: `sa_noodle_traits`, `sa_humour`, `sa_misunderstanding`, `sa_saved`, `sa_crew`, `sb_listen`, `sb_lesson`, `la_humour`, `la_values` and `la_books`.
+- **Short (18 marks, 40 min):** A two sets of three 3-mark answers, two of each · B 1 of 2 long answers.
+- **Long (36 marks, 80 min):** A 3 of 4 two-mark answers · B two sets of three 3-mark answers, two of each · C three long-answer pairs, one of each.
+- The two tests share no question. Practice-only written items: `sa_misunderstanding`, `sa_crew`, `sb_listen`, `sb_lesson` and `la_books`, plus the five commentary items.
 
 ## Facts to confirm with the textbook (reviewer)
 1. Claire Boiko is an American writer of plays for young people. No dates are given.
@@ -63,4 +63,4 @@ This chapter follows the decision used for ch23–ch30 (handoffs `2026-10-27-sub
 - MCQ keys rebalanced from 4/3/3/2 to 3/3/3/3 by fixing the last three keys.
 
 ## Catalog notes (reported, not edited)
-- The t04 learning outcome for this chapter still says *extract-based* questions, but the board sets none from this reader. This was already reported for ch23–ch30.
+- The t04 learning outcome for this chapter said *extract-based* questions; the catalog now reads "short-answer and long-answer responses" (curriculum-architect, 2026-10-27).

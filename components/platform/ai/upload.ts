@@ -121,12 +121,9 @@ export async function uploadForAi(o: UploadOptions): Promise<AiUpload> {
   return up;
 }
 
-/** Image files are compressed; PDFs (sample papers) go as they are. */
+/** Image files are compressed and sent as JPEG. PDFs are refused (S6-M01 / ADR-020: images only at launch). */
 export async function prepareFile(file: File): Promise<{ blob: Blob; contentType: AiUploadRequest['contentType'] }> {
-  if (file.type === 'application/pdf') {
-    if (file.size > MAX_UPLOAD_BYTES) throw new UploadRejected('too_large');
-    return { blob: file, contentType: 'application/pdf' };
-  }
+  if (file.type === 'application/pdf') throw new UploadRejected('pdf_not_accepted');
   if (!file.type.startsWith('image/')) throw new UploadRejected('unsupported_type');
   // HEIC from iPhones: Safari can decode it, and the re-encode below makes it a JPEG the API accepts.
   return { blob: await compressImage(file), contentType: 'image/jpeg' };

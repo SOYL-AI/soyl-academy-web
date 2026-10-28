@@ -29,7 +29,9 @@ GET    /v1/chapters/:id/practice              roles=guest|student|parent|reviewe
 GET    /v1/credits                            roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/credits/ledger                     roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/dev/otp-outbox                     roles=guest|student|parent|reviewer|admin csrf=true rl=default+auth.ip consent=no (dev-only, hidden)
+GET    /v1/leagues/current                    roles=student|parent|reviewer|admin csrf=true rl=default+leagues.read.user consent=leaderboards
 GET    /v1/live-events                        roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/live-events/:id                    roles=guest|student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/live-events/:id/leaderboard        roles=student|parent|reviewer|admin csrf=true rl=default+attempt.read.user consent=leaderboards
 GET    /v1/me                                 roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/me/attempts                        roles=student|parent|reviewer|admin csrf=true rl=default+attempt.read.user consent=no

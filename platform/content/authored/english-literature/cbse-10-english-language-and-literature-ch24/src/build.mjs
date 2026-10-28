@@ -18,7 +18,7 @@ const vBoard = table(
   [
     ['Short answer (Footprints)', '40–50 words; answer two of three', '3 each'],
     ['Long answer (Footprints)', '100–120 words: character, theme, values, diary, letter or speech', '6'],
-    ['Extract (reference to context)', 'not set from this reader; SOYL tests use commentary items only as comprehension checks', '—'],
+    ['Extract (reference to context)', 'not set from this reader; SOYL commentary items in the question bank are extra comprehension practice', '—'],
   ],
   'Table of how a Footprints without Feet story is examined: three-mark short answers of forty to fifty words, two of three to be answered, and a six-mark long answer of one hundred to one hundred and twenty words on character, theme, values, or a diary, letter or speech. Extracts are not set from this reader.',
   'CBSE 2026-27, Section C (literature), questions on the supplementary reader.',
@@ -330,27 +330,27 @@ const F = cards([
 ]);
 
 // ---------------------------------------------------------------- tests
+// Supplementary-reader blueprints (catalog chapter override, 2026-10-27): no extract section; the board sets
+// Footprints without Feet only as 3-mark short answers (two of three) and a 6-mark long answer.
 const T_SHORT = test({
   kind: 'short',
-  blueprint: 'cbse-10-english-language-and-literature-chapter-test-short',
+  blueprint: 'cbse-10-english-language-and-literature-chapter-test-short-supplementary',
   title: 'Chapter test (short) — The Thief’s Story',
   duration: 40,
   sections: [
-    { id: 'A', title: 'Section A — Commentary-based (5 marks)', instr: 'Read the commentary and answer all parts. (The passage is SOYL commentary used as a comprehension check; the board sets no extracts from Footprints without Feet.)', items: ['src_meeting'] },
-    { id: 'B', title: 'Section B — Short answers (3 marks each)', instr: 'Answer any three of four in 40–50 words.', items: [{ attempt: 3, keys: ['sa_cooking', 'sa_station', 'sa_wet_note', 'sa_anil_trust'] }] },
-    { id: 'C', title: 'Section C — Long answer (6 marks)', instr: 'Answer any one in 100–120 words.', items: [{ attempt: 1, keys: ['la_trust_education', 'la_anil_sketch'] }] },
+    { id: 'A', title: 'Section A — Short answers (3 marks each)', instr: 'Two sets of three questions; in each set answer any two in 40–50 words.', items: [{ attempt: 2, keys: ['sa_cooking', 'sa_station', 'sa_narrator'] }, { attempt: 2, keys: ['sa_anil_trust', 'sa_wet_note', 'sa_anil_money'] }] },
+    { id: 'B', title: 'Section B — Long answer (6 marks)', instr: 'Answer any one of two questions in 100–120 words.', items: [{ attempt: 1, keys: ['la_trust_education', 'la_anil_sketch'] }] },
   ],
 });
 const T_LONG = test({
   kind: 'long',
-  blueprint: 'cbse-10-english-language-and-literature-chapter-test-long',
+  blueprint: 'cbse-10-english-language-and-literature-chapter-test-long-supplementary',
   title: 'Chapter test (long) — The Thief’s Story',
-  duration: 90,
+  duration: 80,
   sections: [
-    { id: 'A', title: 'Section A — Commentary-based (2 × 5 marks)', instr: 'In each pair, answer one passage. (Passages are SOYL commentary used as comprehension checks.)', items: [{ attempt: 1, keys: ['src_learning', 'src_theft'] }, { attempt: 1, keys: ['src_return', 'src_morning'] }] },
-    { id: 'B', title: 'Section B — Short answers (2 marks each)', instr: 'Answer any three of four in 30–40 words.', items: [{ attempt: 3, keys: ['sb_who', 'sb_lessons', 'sb_rain', 'sb_smile'] }] },
-    { id: 'C', title: 'Section C — Short answers (3 marks each)', instr: 'Answer any four of five in 40–50 words.', items: [{ attempt: 4, keys: ['sa_approach', 'sa_education', 'sa_reflection', 'sa_hari_conflict', 'sa_reform'] }] },
-    { id: 'D', title: 'Section D — Long answers (6 marks each)', instr: 'Answer one question from each pair in 100–120 words.', items: [{ attempt: 1, keys: ['la_hari_sketch', 'la_ending'] }, { attempt: 1, keys: ['la_diary_anil', 'la_letter_hari'] }] },
+    { id: 'A', title: 'Section A — Short answers (2 marks each)', instr: 'Answer any three of four in 30–40 words.', items: [{ attempt: 3, keys: ['sb_who', 'sb_lessons', 'sb_rain', 'sb_smile'] }] },
+    { id: 'B', title: 'Section B — Short answers (3 marks each)', instr: 'Two sets of three questions; in each set answer any two in 40–50 words.', items: [{ attempt: 2, keys: ['sa_approach', 'sa_education', 'sa_title'] }, { attempt: 2, keys: ['sa_reflection', 'sa_hari_conflict', 'sa_reform'] }] },
+    { id: 'C', title: 'Section C — Long answers (6 marks each)', instr: 'Answer one question from each of the three pairs in 100–120 words.', items: [{ attempt: 1, keys: ['la_hari_sketch', 'la_ending'] }, { attempt: 1, keys: ['la_diary_anil', 'la_letter_hari'] }, { attempt: 1, keys: ['la_values', 'la_forgive_debate'] }] },
   ],
 });
 
@@ -362,7 +362,7 @@ build({
   tests: [T_SHORT, T_LONG],
   checks: {
     syllabus: 'topics t01–t04 only; no removed topics for 2026-27',
-    pattern: 'Footprints without Feet is examined by 3-mark short answers (Q9) and a 6-mark long answer, not extracts; the bank is weighted to those (14 three-mark, 9 long); the 5 commentary items fill the chapter-test blueprints’ extract slots as comprehension checks',
+    pattern: 'Footprints without Feet is examined by 3-mark short answers (Q9) and a 6-mark long answer, not extracts; the bank is weighted to those (14 three-mark, 9 long); the 5 commentary items are question-bank practice only; the chapter tests follow the supplementary-reader blueprints, which have no extract section',
     literature_rule: 'no sentence, close paraphrase or distinctive phrase of the text; dialogue reported, never quoted; summaries in SOYL words; commentary items use passage_origin soyl-commentary; single words only for word meanings; textbook pointer on the title slide, notes and every passage stem',
     originality: 'questions written for SOYL; NCERT exercise questions not reused (stems reframed where a classic question exists)',
     re_solve: 'author verifier pass: every item re-answered from its stem and checked against the story',

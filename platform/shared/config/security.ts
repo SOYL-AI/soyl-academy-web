@@ -177,6 +177,8 @@ export const RATE_LIMITS = {
   'tests.custom.user': { key: 'user', limit: 20, windowSeconds: 3600 },
   /** Live-mock registrations per user. */
   'live.register.user': { key: 'user', limit: 30, windowSeconds: 3600 },
+  /** Weekly league reads per user (M5): the first visit of a week may also place the student in a league. */
+  'leagues.read.user': { key: 'user', limit: 60, windowSeconds: 60 },
   'reports.user': { key: 'user', limit: 20, windowSeconds: 86400 },
   'reports.ip': { key: 'ip', limit: 50, windowSeconds: 86400 },
   'account.create.ip': { key: 'ip', limit: 20, windowSeconds: 86400, soft: true },

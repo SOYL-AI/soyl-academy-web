@@ -38,29 +38,43 @@ This repository is the **SOYL Academy marketing website**. We are adding the **S
 - Final prices and launch date confirmation.
 
 ## Commands
-Recorded in M0 by repo-cartographer (tested on Windows 11, Node 24, npm 11); details in `docs/platform/REPO_MAP.md` §9. Keep them accurate.
+Recorded in M0 by repo-cartographer, completed 2026-10-28 from the package scripts (tested on Windows 11, Node 24, npm 11); details in `docs/platform/REPO_MAP.md` §9, `docs/platform/operations.md` and each package README. Keep them accurate.
 ```
-# marketing site (repo root)
+# marketing site + platform web pages (repo root)
 install:        npm ci
-dev:            npm run dev                 # http://localhost:3000
+dev:            npm run dev                 # http://localhost:3000 (platform pages need NEXT_PUBLIC_PLATFORM_ENABLED=true + PLATFORM_API_ORIGIN, PLATFORM_EDGE_SECRET in .env.local)
 build:          npm run build               # next build (Turbopack); also type-checks
 start:          npm run start               # serves the production build
 lint:           npm run lint
-test:           none (no unit tests in the marketing app; use the marketing regression)
+test:           none for marketing pages (use the marketing regression)
+web unit tests: npm run test:platform-web   # components/platform (vitest)
+ui kit tests:   npm run test:platform-ui    # components/platform/ui (vitest)
 # platform (run from platform/)
 install:        npm ci                      # platform workspace root (own lockfile, D-005)
 browsers:       npm run browsers:install -w @soyl/e2e   # Playwright Chromium, once per machine
 typecheck:      npm run typecheck           # all platform workspaces
-unit tests:     npm test                    # all platform workspaces
-api dev:        <to add in M1>
-worker dev:     <to add in M1>
-db migrate:     <to add in M1>
-content CLI:    <to add in M1>   # npm run content -- plan | generate | verify | assemble | tts | publish | coverage
-e2e:            <to add in M1>   # platform flows, @soyl/e2e
+lint:           npm run lint                # runs workspace lint scripts; none defines one yet (exits 0)
+unit tests:     npm test                    # all platform workspaces (embedded PostgreSQL; TEST_KV=redis-mock for the Redis store)
+build:          npm run build               # api + worker esbuild bundles (dist/index.js)
+api dev:        npm run dev -w @soyl/api    # http://localhost:8787: embedded Postgres, catalog, fixture users, all authored content, mock providers, mock Google on :8090 (DEV_CONTENT=off, DEV_LIVE_IN=off, PORT, MOCK_OIDC_PORT)
+worker dev:     npm run dev -w @soyl/worker # own throwaway embedded DB unless DATABASE_URL is set (point it at the API's dev DB to share)
+db migrate:     npm run db -w @soyl/db -- migrate up | down [--to N] | status     # no DATABASE_URL = local embedded server (port 54320)
+db seed:        npm run db -w @soyl/db -- seed catalog | test-users
+db admin:       npm run db -w @soyl/db -- admin bootstrap --email EMAIL
+db new migration: npm run generate -w @soyl/db                                   # drizzle-kit; write the .down.sql by hand
+content CLI:    npm run content -- catalog | plan | outline | generate | lint | verify | originality | assemble | tts | publish | rollback | status | coverage
+content gates:  npm test -w @soyl/content-templates && npm run content -- lint --exemplars && npm run content -- verify --board cbse --class 10 --authored && npm run content -- originality --authored
+openapi:        npm run openapi -w @soyl/api && npm run generate:api-client -w @soyl/shared   # then: cd api && npx vitest run test/route-policy.test.ts -u (review)
+billing CLI:    npm run billing -w @soyl/api -- sync-plans | reconcile | expire | resync | events | replay
+live mocks:     npm run live -w @soyl/api -- schedule | list
+e2e:            npm run test:platform-web -w @soyl/e2e   # builds the web flag ON + real local API, then flag OFF (--on-only, --off-only, --skip-build)
+design-system e2e: npm run test:design-system -w @soyl/e2e
 marketing regression: npm run marketing:regression -w @soyl/e2e   # build + visual + status + Lighthouse vs Windows baseline
 marketing diff (CI/any OS): npm run marketing:diff -w @soyl/e2e  # merge-base(main) build vs HEAD build, zero-diff
 marketing baseline (owner-approved only): npm run marketing:baseline -w @soyl/e2e
-load test:      <to add in M1>
+load test:      npm run attempts -w @soyl/load -- --base http://127.0.0.1:8787 --users 1000 --minutes 3 --ramp 60 --result   # needs api dev running; k6 script: platform/load/k6/attempts.js
+infra validate: node infra/validate.mjs --strict  # bicep on PATH or BICEP_BIN (CI pins 0.48.1)
+deploy:         no CI deploy yet (OA-01); production is deployed by hand: docs/platform/runbooks/
 ```
 
 ## Coding standards

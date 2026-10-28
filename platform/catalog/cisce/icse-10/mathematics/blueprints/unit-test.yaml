@@ -1,0 +1,32 @@
+id: icse-10-mathematics-unit-test
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-mathematics
+paper_type: unit-test
+academic_year: "2026-27"
+duration_min: 135
+total_marks: 60
+mark_shares: {}
+scope: unit
+sections:
+  - id: A
+    title: Section A - Compulsory (30 marks)
+    instructions: >-
+      Attempt all questions. Question 1: eight MCQs and two assertion-reason items (1 mark each). Then five 4-mark problems; show all
+      working.
+    items:
+      - {type: mcq, count: 8, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+      - {type: short, count: 5, marks_each: 4}
+  - id: B
+    title: Section B - Structured problems (30 marks)
+    instructions: Attempt any three of the five questions, each in parts (3 + 3 + 4 or 5 + 5 marks).
+    items:
+      - {type: long, count: 5, marks_each: 10, internal_choice: {attempt: 3, of: 5}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL half-syllabus test in the ICSE 2027 Mathematics form (icse-2027-specimen-511-mathematics); not an official CISCE paper. Used
+  for the three unit / half-syllabus tests of the Class 10 series (CONTEXT section 10): 60 marks in 135 minutes (board pace), no
+  chapter scopes, so it fills from whichever chapters the planner groups.

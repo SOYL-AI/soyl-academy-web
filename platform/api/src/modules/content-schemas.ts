@@ -8,8 +8,16 @@ import { QUESTION_TYPES } from '@soyl/shared/content/question';
 import { SLIDE_LAYOUTS } from '@soyl/shared/content/deck';
 import { ChapterId } from '@soyl/shared/content/ids';
 import { BoardSchema } from '../schemas';
+import { SCHOOL_ASSESSMENT_KINDS } from '../domain/assessment';
 
 export const ChapterParams = z.strictObject({ id: ChapterId });
+/** Formative-only chapters/topics (M5): set when boardAssessed is false (domain/assessment.ts). */
+export const SchoolAssessmentSchema = z
+  .enum(SCHOOL_ASSESSMENT_KINDS)
+  .meta({
+    id: 'SchoolAssessment',
+    description: 'Only when boardAssessed is false: assessed by the school, not in the board exam. periodic = periodic assessment only; project = project work only; practical = practical; internal = formative/internal assessment.',
+  });
 export const ReviewStatusSchema = z.enum(['beta', 'reviewed']).meta({ id: 'ReviewStatus', description: 'beta = published after automated checks; reviewed = human-reviewed (CONTEXT §4).' });
 const QuestionTypeSchema = z.enum(QUESTION_TYPES).meta({ id: 'QuestionType' });
 const OptionSchema = z.object({ id: z.string(), text_md: z.string() });
@@ -55,7 +63,8 @@ export const ChapterHubResponse = z
       titleEn: z.string().nullable(),
       unit: z.string().nullable(),
       boardAssessed: z.boolean(),
-      topics: z.array(z.object({ id: z.string(), title: z.string(), titleEn: z.string().nullable() })),
+      schoolAssessment: SchoolAssessmentSchema.nullable(),
+      topics: z.array(z.object({ id: z.string(), title: z.string(), titleEn: z.string().nullable(), boardAssessed: z.boolean(), schoolAssessment: SchoolAssessmentSchema.nullable() })),
     }),
     subject: z.object({ id: z.string(), name: z.string(), board: BoardSchema, exam: z.enum(['cbse', 'icse', 'isc']), classLevel: z.number().int(), language: z.string(), script: z.string() }),
     assets: z.object({

@@ -6,7 +6,8 @@ vi.mock('../lib/api-browser', () => ({ api: h.api }));
 
 import { SseParser, streamAiAction, type AiStreamEvent } from '../ai/sse';
 import { aiBlockFrom, aiMessage, creditsText, newIdempotencyKey, safePlansPath } from '../ai/problems';
-import { fitWithin, uploadForAi, UploadRejected } from '../ai/upload';
+import { fitWithin, prepareFile, uploadForAi, UploadRejected } from '../ai/upload';
+import { AI_UPLOADS } from '@/platform/shared/config/ai-actions';
 import { applyEvent, type ChatMessage } from '../ai/useAiStream';
 import { checkoutOptions } from '../plans/razorpay';
 import { billingProblem, featureText } from '../plans/PlansClient';
@@ -123,6 +124,15 @@ describe('uploads (ai-gateway M4 handoff §7)', () => {
     const err = await uploadForAi({ kind: 'photo_doubt', blob: new Blob(['x']), contentType: 'image/jpeg', fetchImpl: (async () => new Response(null, { status: 201 })) as unknown as typeof fetch }).catch((e) => e);
     expect(err).toBeInstanceOf(UploadRejected);
     expect(err.message).toMatch(/only a photo of your question/);
+  });
+
+  it('S6-M01: PDFs are refused before anything is uploaded (images only at launch, ADR-020)', async () => {
+    const calls = h.api.post.mock.calls.length;
+    const err = await prepareFile(new File(['%PDF-1.7'], 'paper.pdf', { type: 'application/pdf' })).catch((e) => e);
+    expect(err).toBeInstanceOf(UploadRejected);
+    expect(err.message).toMatch(/PDFs cannot be uploaded yet/);
+    expect(h.api.post.mock.calls.length).toBe(calls);
+    expect(AI_UPLOADS.contentTypes).not.toContain('application/pdf');
   });
 });
 

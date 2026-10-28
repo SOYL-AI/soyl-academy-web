@@ -4,12 +4,14 @@
  * handles, never user ids (AC-18). D-014: leagues/leaderboards are off until consent is `granted`.
  */
 import { sql } from 'drizzle-orm';
-import { check, date, index, integer, jsonb, pgTable, text, uniqueIndex, uuid } from 'drizzle-orm/pg-core';
+import { check, date, index, integer, jsonb, pgTable, smallint, text, uniqueIndex, uuid } from 'drizzle-orm/pg-core';
 import { id, oneOf, timestamps, tstz } from './_shared';
 import { users } from './identity';
 
 export const XP_KINDS = ['lesson_completed', 'practice', 'test_submitted', 'streak_bonus', 'badge', 'live_event'] as const;
 export const LEAGUE_SCOPES = ['class', 'school', 'city'] as const;
+export const LEAGUE_STATUSES = ['open', 'closed'] as const;
+export const LEAGUE_OUTCOMES = ['promoted', 'stayed', 'relegated'] as const;
 
 export const xpEvents = pgTable(
   'xp_events',
@@ -81,6 +83,37 @@ export const userBadges = pgTable(
   (t) => [uniqueIndex('user_badges_user_badge_unique').on(t.userId, t.badgeId), index('user_badges_badge_id_idx').on(t.badgeId)],
 );
 
+/**
+ * Weekly leagues (migration 0010, backend-api M5; ARCHITECTURE §12, CONTEXT §11). One row per league:
+ * an IST week (Monday), a cohort (scope + scope key, e.g. class / `cbse-10`), a tier (1 = the lowest;
+ * names in the LEAGUES config) and a division number inside that tier, about LEAGUES.size students each.
+ * The worker's `leagues.weekly` job closes last week's leagues (final ranks, promotion/relegation) and
+ * forms this week's for returning students; others join on their first visit (filling open divisions).
+ */
+export const leagues = pgTable(
+  'leagues',
+  {
+    id: id(),
+    /** IST Monday of the league week. */
+    weekStart: date('week_start', { mode: 'string' }).notNull(),
+    scope: text('scope').notNull(),
+    scopeKey: text('scope_key').notNull(),
+    tier: smallint('tier').notNull(),
+    division: smallint('division').notNull(),
+    status: text('status').notNull().default('open'),
+    closedAt: tstz('closed_at'),
+    ...timestamps(),
+  },
+  (t) => [
+    uniqueIndex('leagues_cohort_unique').on(t.weekStart, t.scope, t.scopeKey, t.tier, t.division),
+    index('leagues_status_week_idx').on(t.status, t.weekStart),
+    oneOf('leagues_scope_check', t.scope, LEAGUE_SCOPES),
+    oneOf('leagues_status_check', t.status, LEAGUE_STATUSES),
+    check('leagues_tier_check', sql`${t.tier} >= 1`),
+    check('leagues_division_check', sql`${t.division} >= 1`),
+  ],
+);
+
 export const leagueMemberships = pgTable(
   'league_memberships',
   {
@@ -93,14 +126,24 @@ export const leagueMemberships = pgTable(
     scope: text('scope').notNull(),
     /** e.g. 'cbse-10' for class, school id, city slug. School/city leagues are opt-in. */
     scopeKey: text('scope_key').notNull(),
+    /** Week XP: computed live from xp_events while the league is open; written when it closes. */
     xp: integer('xp').notNull().default(0),
     finalRank: integer('final_rank'),
+    /** 0010: the league (division) the student plays in this week. */
+    leagueId: uuid('league_id').references(() => leagues.id, { onDelete: 'cascade' }),
+    /** 0010: the student's tier this week (the league's tier; next week's tier follows `outcome`). */
+    tier: smallint('tier').notNull().default(1),
+    /** 0010: promoted / stayed / relegated, set when the league closes. */
+    outcome: text('outcome'),
     ...timestamps(),
   },
   (t) => [
     uniqueIndex('league_memberships_user_week_scope_unique').on(t.userId, t.weekStart, t.scope),
     index('league_memberships_league_idx').on(t.weekStart, t.scope, t.scopeKey),
+    index('league_memberships_league_id_idx').on(t.leagueId),
     oneOf('league_memberships_scope_check', t.scope, LEAGUE_SCOPES),
+    oneOf('league_memberships_outcome_check', t.outcome, LEAGUE_OUTCOMES),
+    check('league_memberships_tier_check', sql`${t.tier} >= 1`),
   ],
 );
 

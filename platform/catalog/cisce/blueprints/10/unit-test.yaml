@@ -1,0 +1,32 @@
+id: icse-10-default-unit-test
+board: cisce
+exam: icse
+class: 10
+subject_id: null
+paper_type: unit-test
+academic_year: "2026-27"
+duration_min: 90
+total_marks: 60
+mark_shares: {}
+scope: unit
+sections:
+  - id: A
+    title: Section A - Compulsory (30 marks)
+    instructions: Attempt all questions. Question 1 has 15 objective items (1 mark each); then short answers of 2 and 3 marks.
+    items:
+      - {type: mcq, count: 13, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+      - {type: short, count: 3, marks_each: 2}
+      - {type: short, count: 3, marks_each: 3}
+  - id: B
+    title: Section B - Structured questions (30 marks)
+    instructions: Attempt any three of the five questions. Each is set in parts (for example 3 + 3 + 4 marks).
+    items:
+      - {type: long, count: 5, marks_each: 10, internal_choice: {attempt: 3, of: 5}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default for any ICSE Class 10 subject without its own unit-test blueprint (CONTEXT section 9); not an official CISCE paper.
+  Used for the three half-syllabus tests of the Class 10 test series (CONTEXT section 10): a 60-mark cut of the ICSE 2027 specimen
+  layout (Question 1 of 15 objective items, short answers, then 10-mark structured questions with a choice), 90 minutes at board pace.
+  No chapter scopes, so it fills from whichever chapters the series planner groups into a unit test.

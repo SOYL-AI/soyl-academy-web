@@ -1,0 +1,30 @@
+id: icse-10-hindi-chapter-test-short
+board: cisce
+exam: icse
+class: 10
+subject_id: icse-10-hindi
+paper_type: chapter-test-short
+academic_year: "2026-27"
+duration_min: 45
+total_marks: 20
+mark_shares: {}
+scope: chapter
+sections:
+  - id: A
+    title: खंड क - वस्तुनिष्ठ (Objective, 6 marks)
+    instructions: छह बहुविकल्पीय प्रश्न, 1-1 अंक। (Six multiple-choice items, 1 mark each.)
+    items:
+      - {type: mcq, count: 6, marks_each: 1}
+  - id: B
+    title: खंड ख - लघु उत्तर (Short answers, 14 marks)
+    instructions: चार प्रश्न 2-2 अंक के और दो प्रश्न 3-3 अंक के। (Four 2-mark and two 3-mark answers.)
+    items:
+      - {type: short, count: 4, marks_each: 2}
+      - {type: short, count: 2, marks_each: 3}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL chapter test for ICSE Hindi, in the item sizes of the ICSE Hindi paper (1-mark grammar items; 2- and 3-mark parts of text
+  questions); not an official CISCE paper. The chapters are of different kinds (composition, letter, unseen passage, grammar, four
+  prescribed books), so one subject-level blueprint uses only item types every chapter can supply. 20 marks in 45 minutes (the board's
+  pace of 80 marks in 3 hours). Authored chapter tests may add a full composition or letter (writing chapters) with blueprint_id null.
