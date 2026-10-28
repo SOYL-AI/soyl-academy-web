@@ -16,6 +16,14 @@ export interface EmailMessage {
   html?: string;
   /** For logs/metrics only, e.g. 'otp', 'link-notice'. */
   tag: string;
+  /** Files, e.g. an invoice PDF (ADR-024). ACS accepts up to 10 MB per message in total. */
+  attachments?: EmailAttachment[];
+}
+
+export interface EmailAttachment {
+  name: string;
+  contentType: string;
+  content: Buffer;
 }
 
 export interface EmailSender {
@@ -90,6 +98,7 @@ export class AcsEmailSender implements EmailSender {
       senderAddress: senderAddress(this.o.from),
       recipients: { to: [{ address: message.to }] },
       content: { subject: message.subject, plainText: message.text, ...(message.html ? { html: message.html } : {}) },
+      ...(message.attachments?.length ? { attachments: message.attachments.map((a) => ({ name: a.name, contentType: a.contentType, contentInBase64: a.content.toString('base64') })) } : {}),
       userEngagementTrackingDisabled: true,
     });
     const headers: Record<string, string> = { 'content-type': 'application/json' };

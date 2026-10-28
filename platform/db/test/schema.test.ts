@@ -27,8 +27,8 @@ afterAll(async () => {
 const drizzleTables: PgTable[] = (Object.values(schema) as unknown[]).filter((v): v is PgTable => is(v, PgTable));
 
 describe('schema conventions', () => {
-  it('defines the ARCHITECTURE §6 groups (60 tables) + learning progress (3, migration 0005) + release items (0006) + test score buckets (0007) + AI gateway (3, 0008) + leagues (0010) + SOYL Coins (3, 0011) + consent records (0012) + staff capabilities and interest counters (2, 0014)', () => {
-    expect(drizzleTables.length).toBe(75);
+  it('defines the ARCHITECTURE §6 groups (60 tables) + learning progress (3, migration 0005) + release items (0006) + test score buckets (0007) + AI gateway (3, 0008) + leagues (0010) + SOYL Coins (3, 0011) + consent records (0012) + staff capabilities and interest counters (2, 0014) + invoices (2, 0016)', () => {
+    expect(drizzleTables.length).toBe(77);
   });
 
   it('matches the migrated database table by table, column by column', async () => {
@@ -50,7 +50,7 @@ describe('schema conventions', () => {
       FROM information_schema.columns c JOIN information_schema.tables t USING (table_schema, table_name)
       WHERE c.table_schema = 'public' AND t.table_type = 'BASE TABLE' AND c.table_name <> 'soyl_schema_migrations'`);
     const tables = [...new Set(cols.map((c) => c.table_name))];
-    expect(tables.length).toBe(75);
+    expect(tables.length).toBe(77); // + invoices, invoice_sequences (migration 0016)
     for (const tbl of tables) {
       const col = (n: string) => cols.find((c) => c.table_name === tbl && c.column_name === n);
       expect(col('id')?.data_type, `${tbl}.id`).toBe(tbl === 'pipeline_runs' ? 'text' : 'uuid');

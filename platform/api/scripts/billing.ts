@@ -27,6 +27,7 @@ const code = await runBillingCli(process.argv.slice(2), {
   db,
   razorpay: createRazorpayClient(config, systemClock.now),
   clock: systemClock,
+  invoicing: config.invoicing,
   io: { out: (l) => console.log(l), err: (l) => console.error(l) },
 });
 await close();

@@ -8,7 +8,7 @@
  *         dispatch → sync*() (re-fetch, bind, apply; savepoint rolled back when rejected)
  *         INSERT webhook_events (payload, outcome, entity id, processed_at)   append-only, same tx
  *       commit
- *     ─ after commit: credit top-up hook for a newly granted plan
+ *     ─ after commit: credit top-up hook for a newly granted plan; delivery of invoices the event issued
  *
  * A Razorpay API failure (outage, timeout) aborts the transaction and answers 503, so the event is
  * not recorded and Razorpay retries it. A binding failure is recorded as `rejected` (200, so Razorpay
@@ -22,6 +22,7 @@ import { and, eq, sql } from 'drizzle-orm';
 import { webhookEvents, type Database } from '@soyl/db';
 import type { PlanId } from '@soyl/shared/config/plans';
 import type { Clock } from '../clock';
+import type { InvoicingLog, InvoicingRuntime } from './invoices/issue';
 import type { PlanRow } from './plans';
 import { fromUnix, RazorpayApiError, RzpWebhookEvent, type RazorpayClient } from './razorpay/types';
 import { verifyWebhookSignature } from './razorpay/signature';
@@ -74,6 +75,13 @@ export interface WebhookDeps {
   clock: Clock;
   plans: () => Promise<Map<PlanId, PlanRow>>;
   onGranted?: (granted: { userId: string; plan: PlanId }) => Promise<void>;
+  /** Invoicing (ADR-024): documents are issued in the event's transaction. */
+  invoicing?: () => InvoicingRuntime | null | undefined;
+  /** Called after commit with the documents the event issued (delivery: PDF + email). */
+  onInvoices?: (ids: string[]) => void;
+  invoiceLog?: () => InvoicingLog | undefined;
+  /** Called after commit with the plans whose checkout the event completed (D-045 counter). */
+  onCompleted?: (plans: PlanId[]) => void;
 }
 
 /** What an event is about, and which sync applies it. */
@@ -88,7 +96,7 @@ export function dispatchTarget(ev: RzpWebhookEvent): { kind: 'subscription' | 'p
 
 export async function applyEvent(d: SyncDeps, ev: RzpWebhookEvent): Promise<SyncResult> {
   const target = (HANDLED_EVENTS as readonly string[]).includes(ev.event) ? dispatchTarget(ev) : null;
-  if (!target) return { outcome: 'ignored', reason: 'unhandled_event', entityId: '', userId: null, changes: [], granted: null };
+  if (!target) return { outcome: 'ignored', reason: 'unhandled_event', entityId: '', userId: null, changes: [], granted: null, invoices: [] };
   if (target.kind === 'subscription') {
     // A charge carries its payment: record it (bound through the invoice), which also syncs the subscription.
     if (target.paymentId) {
@@ -166,7 +174,7 @@ export class WebhookProcessor {
           .where(and(eq(webhookEvents.provider, 'razorpay'), eq(webhookEvents.eventId, eventId)));
         if (dupe) return { duplicate: true, outcome: dupe.outcome, result: null } satisfies ProcessedEvent;
       }
-      const result = await atomicSync(tx, (sp: Tx) => applyEvent({ tx: sp, razorpay, now, plans }, ev));
+      const result = await atomicSync(tx, (sp: Tx) => applyEvent({ tx: sp, razorpay, now, plans, invoicing: this.deps.invoicing?.(), log: this.deps.invoiceLog?.() }, ev));
       if (record)
         await tx.insert(webhookEvents).values({
           provider: 'razorpay',
@@ -182,6 +190,8 @@ export class WebhookProcessor {
       return { duplicate: false, outcome: result.outcome, result } satisfies ProcessedEvent;
     });
     if (out.result?.granted && this.deps.onGranted) await this.deps.onGranted(out.result.granted);
+    if (out.result?.invoices?.length) this.deps.onInvoices?.(out.result.invoices);
+    if (out.result?.completed?.length) this.deps.onCompleted?.(out.result.completed);
     return out;
   }
 }

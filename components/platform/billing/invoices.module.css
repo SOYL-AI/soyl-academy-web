@@ -1,0 +1,98 @@
+/* /me/invoices (ADR-024): a list that stacks at 360 px and lines up from 600 px. Tokens only (light/dark). */
+.page {
+  display: grid;
+  gap: var(--p-space-3);
+  margin-top: var(--p-space-4);
+}
+.list {
+  display: grid;
+  gap: var(--p-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    'main amount'
+    'download download';
+  align-items: center;
+  gap: var(--p-space-2) var(--p-space-3);
+  padding: var(--p-space-3);
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-md);
+  background: var(--p-surface);
+}
+.main {
+  grid-area: main;
+  min-width: 0;
+}
+.title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-1) var(--p-space-2);
+  margin: 0;
+  color: var(--p-ink);
+  font-weight: 600;
+}
+.number {
+  font-family: var(--p-font-mono);
+  font-size: var(--p-text-sm);
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.meta {
+  margin: var(--p-space-1) 0 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.amount {
+  grid-area: amount;
+  margin: 0;
+  color: var(--p-ink);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.download {
+  grid-area: download;
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 var(--p-space-3);
+  border: 1px solid var(--p-border-strong);
+  border-radius: var(--p-radius-pill);
+  background: var(--p-surface-2);
+  color: var(--p-ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+.download:hover {
+  border-color: var(--p-accent);
+}
+.download:focus-visible {
+  outline: none;
+  box-shadow: var(--p-focus-ring);
+}
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.note {
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+@media (min-width: 600px) {
+  .item {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    grid-template-areas: 'main amount download';
+  }
+}

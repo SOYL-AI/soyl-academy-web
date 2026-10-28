@@ -8,13 +8,18 @@
  * which the Log Analytics alert rule watches, plus an audit_log row per entity); other drift (an
  * abandoned checkout Razorpay expired) is informational. Unless `dryRun`, the drift is then repaired by
  * applying Razorpay's state — Razorpay is the source of truth for payments.
+ *
+ * Subscriptions are also checked charge by charge (syncSubscriptionPayments: every paid Razorpay invoice
+ * has its payment recorded), and every recorded captured payment gets its invoice / credit notes
+ * (ADR-024): a missing one is drift (alert) and is issued by the repair.
  */
 import { and, gt, gte, inArray, lt, lte, notInArray, or, sql } from 'drizzle-orm';
 import { auditLog, entitlements, orders, subscriptions, type Database } from '@soyl/db';
 import { BILLING, type PlanId } from '@soyl/shared/config/plans';
 import { requirePlanRows, type PlanRow } from './plans';
 import { RazorpayApiError, type RazorpayClient } from './razorpay/types';
-import { atomicSync, syncOrder, syncSubscription, type Change, type SyncResult } from './sync';
+import type { InvoicingLog, InvoicingRuntime } from './invoices/issue';
+import { atomicSync, mergeResults, syncOrder, syncSubscription, syncSubscriptionPayments, type Change, type SyncResult } from './sync';
 
 const HOUR = 3_600_000;
 const DAY = 24 * HOUR;
@@ -50,6 +55,11 @@ export interface ReconcileDeps {
   now: Date;
   log?: ReconcileLog;
   onGranted?: (g: { userId: string; plan: PlanId }) => Promise<void>;
+  /** Invoicing (ADR-024): documents for captured/refunded payments are issued during repair. */
+  invoicing?: InvoicingRuntime | null;
+  /** Documents issued by the repair, for delivery after commit. */
+  onInvoices?: (ids: string[]) => void;
+  invoiceLog?: InvoicingLog;
 }
 
 const MONEY_FIELDS = new Set(['paidCount', 'currentPeriodEnd', 'refundedPaise', 'status:paid']);
@@ -57,7 +67,7 @@ const MONEY_FIELDS = new Set(['paidCount', 'currentPeriodEnd', 'refundedPaise', 
 function severity(kind: DriftItem['kind'], r: SyncResult): DriftItem['severity'] {
   if (r.outcome === 'rejected') return 'alert';
   for (const c of r.changes) {
-    if (c.entity === 'payment' || c.entity === 'entitlement') return 'alert';
+    if (c.entity === 'payment' || c.entity === 'entitlement' || c.entity === 'invoice') return 'alert';
     if (MONEY_FIELDS.has(c.field)) return 'alert';
     if (kind === 'order' && c.field === 'status' && c.to === 'paid') return 'alert';
     if (kind === 'subscription' && c.field === 'status' && ['active', 'halted', 'cancelled', 'pending'].includes(String(c.to))) return 'alert';
@@ -66,9 +76,12 @@ function severity(kind: DriftItem['kind'], r: SyncResult): DriftItem['severity']
 }
 
 async function syncOne(deps: ReconcileDeps, plans: Map<PlanId, PlanRow>, kind: DriftItem['kind'], id: string, dryRun: boolean): Promise<SyncResult> {
-  return atomicSync(deps.db, (tx) => {
-    const d = { tx, razorpay: deps.razorpay, now: deps.now, plans, dryRun };
-    return kind === 'order' ? syncOrder(d, id) : syncSubscription(d, id);
+  return atomicSync(deps.db, async (tx) => {
+    const d = { tx, razorpay: deps.razorpay, now: deps.now, plans, dryRun, invoicing: deps.invoicing, log: deps.invoiceLog };
+    if (kind === 'order') return syncOrder(d, id);
+    const sub = await syncSubscription(d, id);
+    if (sub.outcome !== 'applied') return sub;
+    return mergeResults(sub, await syncSubscriptionPayments(d, id));
   });
 }
 
@@ -107,6 +120,7 @@ export async function reconcile(deps: ReconcileDeps, opts: { dryRun?: boolean; l
         const applied = await syncOne(deps, plans, kind, id, false);
         if (applied.changes.length) report.repaired++;
         if (applied.granted && deps.onGranted) await deps.onGranted(applied.granted);
+        if (applied.invoices?.length) deps.onInvoices?.(applied.invoices);
       }
     } catch (err) {
       report.errors.push({ kind, id, message: err instanceof RazorpayApiError ? `razorpay ${err.status} ${err.code ?? ''}`.trim() : (err as Error).name });
@@ -148,7 +162,7 @@ export interface ExpireReport {
  * would otherwise let a paid renewal lapse after the grace period); (3) count entitlements that lapsed
  * in the last hour (metric). Entitlements themselves need no write: planFor honours valid_until.
  */
-export async function expireBilling(deps: { db: Database; razorpay: RazorpayClient | null; now: Date; log?: ReconcileLog; onGranted?: ReconcileDeps['onGranted'] }, opts: { batch?: number } = {}): Promise<ExpireReport> {
+export async function expireBilling(deps: { db: Database; razorpay: RazorpayClient | null; now: Date; log?: ReconcileLog; onGranted?: ReconcileDeps['onGranted']; invoicing?: InvoicingRuntime | null; onInvoices?: (ids: string[]) => void }, opts: { batch?: number } = {}): Promise<ExpireReport> {
   const { db, now } = deps;
   const expired = await db
     .update(orders)
@@ -168,9 +182,10 @@ export async function expireBilling(deps: { db: Database; razorpay: RazorpayClie
       const plans = await requirePlanRows(db);
       for (const s of overdue) {
         try {
-          const r = await syncOne({ db, razorpay: deps.razorpay, now }, plans, 'subscription', s.id, false);
+          const r = await syncOne({ db, razorpay: deps.razorpay, now, invoicing: deps.invoicing, onInvoices: deps.onInvoices }, plans, 'subscription', s.id, false);
           if (r.changes.length) resynced++;
           if (r.granted && deps.onGranted) await deps.onGranted(r.granted);
+          if (r.invoices?.length) deps.onInvoices?.(r.invoices);
         } catch {
           errors++;
         }

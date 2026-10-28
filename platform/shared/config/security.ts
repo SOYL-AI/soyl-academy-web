@@ -215,6 +215,8 @@ export const RATE_LIMITS = {
   'admin.analytics.user': { key: 'user', limit: 60, windowSeconds: 60 },
   /** Super-admin user lookup: search, reveal and summary (each audited). */
   'admin.users.user': { key: 'user', limit: 60, windowSeconds: 15 * 60 },
+  /** Super-admin invoice list, CSV export and resend (ADR-024; resend sends an email). */
+  'admin.invoices.user': { key: 'user', limit: 30, windowSeconds: 60 },
   /** POST /v1/events (D-045 interest counters): strict per IP; the IP is a rate-limit key only, never stored. */
   'events.ip': { key: 'ip', limit: 30, windowSeconds: 60 },
 } as const satisfies Record<string, RateLimitBucket>;
