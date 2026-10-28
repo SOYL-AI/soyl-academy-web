@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 import { APP_URL, MAIN_NAV, PRIMARY_CTA } from '@/lib/site';
 import { Logo } from '@/components/ui/Logo';
 import { buttonClasses } from '@/components/ui/Button';
+import { platformChromeActive } from '@/components/platform/shell/chrome';
 
 export function Header() {
   const pathname = usePathname();
@@ -39,6 +40,9 @@ export function Header() {
   }, [open]);
 
   const isCurrent = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+
+  // Learning-platform pages have their own app shell (ADR-023).
+  if (platformChromeActive(pathname)) return null;
 
   return (
     <>

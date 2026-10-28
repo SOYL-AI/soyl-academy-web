@@ -220,11 +220,24 @@ describe('design tokens', () => {
     ['--p-warning', '--p-warning-soft'],
     ['--p-info', '--p-accent-soft'],
     ['--p-surface', '--p-ink'],
+    // ADR-023: accent text on the page background, info on its own soft fill, difficulty tags.
+    ['--p-accent', '--p-bg'],
+    ['--p-info', '--p-info-soft'],
+    ['--p-ink-muted', '--p-surface-2'],
+    ...(['easy', 'medium', 'hard'] as const).flatMap((d) => [
+      [`--p-${d}`, '--p-surface'] as [string, string],
+      [`--p-${d}`, `--p-${d}-soft`] as [string, string],
+    ]),
   ];
   const GRAPHIC_PAIRS: Array<[string, string]> = [
     ['--p-border-strong', '--p-surface'],
     ['--p-focus', '--p-surface'],
     ['--p-focus', '--p-bg'],
+    // ADR-023: mastery levels, streak flame and tier colours carry meaning (always written as text too).
+    ...(['m-attempted', 'm-familiar', 'm-proficient', 'm-mastered', 'flame', 'tier-bronze', 'tier-silver', 'tier-gold', 'tier-elite', 'heat-4'] as const).flatMap((c) => [
+      [`--p-${c}`, '--p-surface'] as [string, string],
+      [`--p-${c}`, '--p-bg'] as [string, string],
+    ]),
     ...(['accent', 'muted', 'blue', 'green', 'yellow', 'brown', 'red'] as const).flatMap((c) => [
       [`--diagram-${c}`, '--p-surface'] as [string, string],
       [`--diagram-${c}`, '--p-bg'] as [string, string],

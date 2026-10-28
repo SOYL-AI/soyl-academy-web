@@ -4,9 +4,12 @@ import { SITE_CONTACT_EMAIL, SITE_LEGAL_NAME } from '@/lib/seo/config';
 import { Logo } from '@/components/ui/Logo';
 import { ButtonLink } from '@/components/ui/Button';
 import { CookieSettingsButton } from '@/components/legal/CookieSettingsButton';
+import { MarketingOnly } from '@/components/platform/shell/MarketingOnly';
 
 export function Footer() {
   return (
+    // Learning-platform pages have their own app shell and footer (ADR-023).
+    <MarketingOnly>
     <footer className="cv-auto on-dark bg-ink text-white">
       <div aria-hidden="true" className="tri-stripe" />
       <div className="page grid-12 gap-y-14 pb-14 pt-16 md:pb-20 md:pt-24">
@@ -73,5 +76,6 @@ export function Footer() {
         </div>
       </div>
     </footer>
+    </MarketingOnly>
   );
 }

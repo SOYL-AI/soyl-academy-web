@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Page-level theme for platform pages (ADR-023). Imported only by the (platform) layout.
+
+   Every selector requires `html[data-platform-theme]`, an attribute that only the platform's theme boot
+   script / ThemeProvider set (and remove again when the platform unmounts), so these rules can never apply
+   to a marketing page, even after a client-side navigation has loaded this stylesheet.
+   ========================================================================== */
+
+/* Page canvas (overscroll, short pages) and the sticky app bar offset for anchor links. */
+html[data-platform-theme] {
+  scroll-padding-top: 4.5rem;
+}
+html[data-platform-theme='light'],
+html[data-platform-theme='light'] body {
+  background-color: #f5f6f8;
+  color-scheme: light;
+}
+html[data-platform-theme='dark'],
+html[data-platform-theme='dark'] body {
+  background-color: #16171a;
+  color-scheme: dark;
+}
+
+/* The site's cookie bar (components/legal/CookieConsent.tsx, unchanged) in the platform's dark theme. */
+html[data-platform-theme='dark'] .cookie-bar {
+  border-color: rgba(236, 238, 242, 0.12);
+  background-color: rgba(31, 32, 36, 0.97);
+  color: #eceef2;
+}
+html[data-platform-theme='dark'] .cookie-bar h2,
+html[data-platform-theme='dark'] .cookie-bar label {
+  color: #eceef2;
+}
+html[data-platform-theme='dark'] .cookie-bar p {
+  color: #b9bdc7;
+}
+html[data-platform-theme='dark'] .cookie-bar a {
+  color: #8ea2ff;
+}
+html[data-platform-theme='dark'] .cookie-bar button {
+  border-color: rgba(236, 238, 242, 0.35);
+  color: #eceef2;
+}
+html[data-platform-theme='dark'] .cookie-bar button:first-child {
+  background-color: #eceef2;
+  color: #15171c;
+}
+html[data-platform-theme='dark'] .cookie-bar button:hover {
+  background-color: #8ea2ff;
+  border-color: #8ea2ff;
+  color: #0e1222;
+}

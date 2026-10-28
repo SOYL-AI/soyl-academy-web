@@ -15,6 +15,7 @@
  */
 import { createHash, randomBytes } from 'node:crypto';
 import { CONSENT_BOOT_SCRIPT } from '@/components/legal/consent';
+import { THEME_BOOT_SCRIPT } from '@/components/platform/shell/theme';
 
 export const CSP_REPORT_PATH = '/api/platform/csp-report';
 
@@ -71,6 +72,9 @@ export function sha256Base64(text: string): string {
 /** `'sha256-…'` of the root layout's inline <head> script (components/legal/consent.ts). */
 export const CONSENT_BOOT_SCRIPT_HASH = `'sha256-${sha256Base64(CONSENT_BOOT_SCRIPT)}'`;
 
+/** `'sha256-…'` of the platform layout's inline theme script (ADR-023: no-flash Light / Dark / System). */
+export const THEME_BOOT_SCRIPT_HASH = `'sha256-${sha256Base64(THEME_BOOT_SCRIPT)}'`;
+
 export function createNonce(): string {
   return randomBytes(16).toString('base64');
 }
@@ -107,7 +111,7 @@ export function buildCsp(o: CspOptions = {}): string {
   const upload = usesUploads(o.pathname) ? uploadOriginFrom(o.uploadOrigin ?? process.env.PLATFORM_UPLOAD_ORIGIN) : null;
   const extra = (list: readonly string[]) => (plans ? ` ${list.join(' ')}` : '');
   const script = o.nonce
-    ? `'self' 'nonce-${o.nonce}' 'strict-dynamic' ${CONSENT_BOOT_SCRIPT_HASH}${eval_}${extra(RAZORPAY_CSP.script)}`
+    ? `'self' 'nonce-${o.nonce}' 'strict-dynamic' ${CONSENT_BOOT_SCRIPT_HASH} ${THEME_BOOT_SCRIPT_HASH}${eval_}${extra(RAZORPAY_CSP.script)}`
     : `'self' 'unsafe-inline'${eval_}${extra(RAZORPAY_CSP.script)}`;
   const directives = [
     `default-src 'self'`,

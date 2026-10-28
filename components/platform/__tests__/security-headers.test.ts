@@ -2,7 +2,8 @@
 import { createHash } from 'node:crypto';
 import { describe, expect, it } from 'vitest';
 import { CONSENT_BOOT_SCRIPT } from '@/components/legal/consent';
-import { buildCsp, CONSENT_BOOT_SCRIPT_HASH, createNonce, securityHeaders, summariseCspReport, usesNonce } from '../server/security-headers';
+import { buildCsp, CONSENT_BOOT_SCRIPT_HASH, createNonce, securityHeaders, summariseCspReport, THEME_BOOT_SCRIPT_HASH, usesNonce } from '../server/security-headers';
+import { THEME_BOOT_SCRIPT } from '../shell/theme';
 import { config } from '../../../proxy';
 
 describe('CSP (WEB-3)', () => {
@@ -25,6 +26,13 @@ describe('CSP (WEB-3)', () => {
   });
   it('hash matches the root layout inline script', () => {
     expect(CONSENT_BOOT_SCRIPT_HASH).toBe(`'sha256-${createHash('sha256').update(CONSENT_BOOT_SCRIPT).digest('base64')}'`);
+  });
+  it('ADR-023: the nonce policy allows exactly the platform theme boot script by its hash', () => {
+    expect(THEME_BOOT_SCRIPT_HASH).toBe(`'sha256-${createHash('sha256').update(THEME_BOOT_SCRIPT).digest('base64')}'`);
+    const script = buildCsp({ nonce: 'abc' }).split('; ').find((d) => d.startsWith('script-src'))!;
+    expect(script).toContain(THEME_BOOT_SCRIPT_HASH);
+    expect(script.match(/'sha256-/g)).toHaveLength(2);
+    expect(script).not.toContain('unsafe-inline');
   });
   it('dev adds unsafe-eval; CDN origin only when https', () => {
     expect(buildCsp({ dev: true })).toContain("'unsafe-eval'");
