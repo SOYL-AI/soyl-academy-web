@@ -180,9 +180,9 @@ const LEARN_GROUP: NavGroup = {
   heading: 'Free learning platform',
   items: [ITEMS.lessons, ITEMS.tests, ITEMS.ask],
   feature: {
-    eyebrow: 'CBSE · ICSE · Classes 7–12',
-    title: 'Free for every CBSE & ICSE student',
-    description: 'Lessons, practice and tests are free. Only AI help uses credits.',
+    eyebrow: 'Now live: CBSE Class 10',
+    title: 'Free for every student',
+    description: 'Lessons, practice and tests are free. Only AI help uses credits. More classes and ICSE are on the way.',
     href: '/learn',
     cta: 'Start learning free',
     tone: 'ink',
