@@ -268,7 +268,7 @@ test.describe('ADR-023 screenshots', () => {
       await page.getByTestId('next-question').click();
     }
     for (const [name, path] of [
-      ['dashboard', '/learn'],
+      ['learn-member', '/learn'], // the student dashboard itself (D-043): dashboard.spec.ts
       ['me', '/me'],
       ['leaderboard', '/leaderboard'],
       ['practice-member', `${CH01}/practice`],
