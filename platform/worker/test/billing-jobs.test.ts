@@ -6,6 +6,7 @@ import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { eq } from 'drizzle-orm';
 import { auditLog, creditLedger, invoices, orders, payments, plans } from '@soyl/db';
 import { FIXTURE_SELLER, INVOICING } from '@soyl/shared/config/invoicing';
+import { getPlan } from '@soyl/shared/config/plans';
 import { MemoryBlobStore } from '@soyl/api/ai/blob';
 import { MockEmailSender } from '@soyl/api/billing/invoices/delivery';
 import { paymentsMissingDocuments } from '@soyl/api/billing/invoices/issue';
@@ -67,7 +68,7 @@ describe('billing jobs', () => {
     expect(await t.db.select().from(auditLog).where(eq(auditLog.targetId, rz.id))).toHaveLength(1);
     // The new plan's credits apply at once (AI gateway CreditService.applyPlanChange).
     const grants = await t.db.select().from(creditLedger).where(eq(creditLedger.userId, userId));
-    expect(grants.map((g) => [g.kind, g.amount, g.planId])).toEqual([['grant', 60, 'board_exam_pass']]);
+    expect(grants.map((g) => [g.kind, g.amount, g.planId])).toEqual([['grant', getPlan('board_exam_pass').creditsPerDay, 'board_exam_pass']]); // 150 since D-044
     // Second night: nothing to do.
     expect(await job.handler({ db: t.db, now: NOW, log }, undefined)).toMatchObject({ drift: 0, alerts: 0 });
   });
