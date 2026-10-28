@@ -5,6 +5,7 @@
  * sidebar; the subject header with its segmented bar and "Up next". They read MasteryProvider (one fetch per page).
  */
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
 import { MasteryBar, MasteryPip, ProgressRing } from '@/components/platform/ui/kit/Mastery';
 import { Icon } from '@/components/platform/ui/kit/Icon';
 import { MASTERY_HINT_TEXT, MASTERY_LABELS } from '../lib/mastery';
@@ -80,4 +81,20 @@ export function SubjectMasteryHeader({ subjectId, name, chapters, lang }: { subj
       )}
     </section>
   );
+}
+
+/**
+ * Keeps the current chapter visible in the course sidebar (it scrolls on its own when a subject has many
+ * chapters): on load the sidebar scrolls itself, never the page, so the marked chapter is in view.
+ */
+export function SidebarKeepCurrent() {
+  const ref = useRef<HTMLSpanElement>(null);
+  useEffect(() => {
+    const nav = ref.current?.closest('nav');
+    const cur = nav?.querySelector<HTMLElement>('li [aria-current="page"]');
+    if (!nav || !cur || nav.scrollHeight <= nav.clientHeight) return;
+    const top = cur.offsetTop;
+    if (top < nav.scrollTop || top + cur.offsetHeight > nav.scrollTop + nav.clientHeight) nav.scrollTop = Math.max(0, top - nav.clientHeight / 2);
+  }, []);
+  return <span ref={ref} hidden />;
 }

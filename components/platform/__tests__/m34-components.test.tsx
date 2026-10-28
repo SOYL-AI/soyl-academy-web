@@ -240,11 +240,12 @@ describe('PlansClient', () => {
     h.api.get.mockResolvedValue(plans(false));
     wrap(<PlansClient />);
     await waitFor(() => expect(screen.getByTestId('billing-off')).toBeTruthy());
-    expect(screen.getByText('₹199/month')).toBeTruthy();
+    // The amount and its period are separate spans (tabular figures for the amount only).
+    expect(screen.getByTestId('price-plus').textContent).toBe('₹199/month incl. GST');
     expect((screen.getByTestId('buy-plus') as HTMLButtonElement).disabled).toBe(true);
     expect(screen.getByTestId('buy-plus').textContent).toBe('Coming soon');
     fireEvent.click(screen.getByRole('radio', { name: 'Yearly' }));
-    expect(screen.getByText('₹1,499/year')).toBeTruthy();
+    expect(screen.getByTestId('price-plus').textContent).toBe('₹1,499/year incl. GST');
     expect(document.querySelector('script[src*="razorpay"]')).toBeNull();
   });
 

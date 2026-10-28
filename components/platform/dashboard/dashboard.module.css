@@ -26,17 +26,18 @@
 }
 .title {
   margin: 2px 0 0;
+  text-wrap: balance;
   font-size: clamp(1.5rem, 5vw, 2rem);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 .headMeta {
   margin: var(--p-space-1) 0 0;
   color: var(--p-ink-muted);
   font-size: var(--p-text-sm);
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 .stats {
   display: flex;
@@ -236,6 +237,7 @@
 }
 .tileTitle {
   margin: 0;
+  text-wrap: balance;
   font-size: var(--p-text-md);
   font-weight: 750;
 }
@@ -469,7 +471,7 @@
 }
 .rowTitle {
   font-weight: 650;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 .rowMeta {
   color: var(--p-ink-subtle);

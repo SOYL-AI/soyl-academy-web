@@ -2,9 +2,11 @@
 
 /**
  * The learning platform's own app shell (ADR-023; replaces the marketing header/footer on platform pages):
- * - top bar: SOYL mark → /learn, primary nav (desktop), streak, SOYL Coins, today's AI credits (consented
- *   members, D-014), theme picker, profile / log in;
- * - mobile (< 768 px): a bottom tab bar, hidden on immersive pages (lesson, flashcards, test player);
+ * - the way back to the main site (owner, 2026-10-28): "‹ soylai.com" in the top bar from 768 px; below that a
+ *   slim row above the top bar (the phone top bar is full for members), never sticky, also for guests;
+ * - top bar: SOYL mark → /learn (the academy home), primary nav (≥ 1024 px; members: Home first), streak,
+ *   SOYL Coins, today's AI credits (consented members, D-014), theme picker, profile / log in;
+ * - phones and tablets (< 1024 px): a bottom tab bar, hidden on immersive pages (lesson, flashcards, test player);
  * - a quiet app footer (server-rendered, passed in) with the way back to the main site and the legal links.
  */
 import Image from 'next/image';
@@ -43,7 +45,7 @@ export const PRIMARY_NAV: readonly NavItem[] = [
 ];
 /** The student dashboard (D-043): first for members. */
 export const HOME_NAV: NavItem = { href: '/me/dashboard', label: 'Home', short: 'Home', icon: 'home' };
-const ME_TAB: NavItem = { href: '/me', label: 'Profile', short: 'Me', icon: 'user', also: ['/coins', '/store', '/plans'], except: [HOME_NAV.href] };
+const ME_TAB: NavItem = { href: '/me', label: 'Profile', short: 'Me', icon: 'user', also: ['/coins', '/store'], except: [HOME_NAV.href] };
 
 const under = (pathname: string, h: string) => pathname === h || pathname.startsWith(`${h}/`);
 
@@ -70,6 +72,7 @@ export function AppShell({ children, footer }: { children: ReactNode; footer?: R
       <a href="#platform-content" className={s.skip}>
         Skip to page content
       </a>
+      {!focus && <MainSiteLink variant="row" />}
       <TopBar pathname={pathname} />
       <div id="platform-content" className={s.content} tabIndex={-1}>
         {children}
@@ -78,6 +81,26 @@ export function AppShell({ children, footer }: { children: ReactNode; footer?: R
       {!focus && <TabBar pathname={pathname} />}
     </div>
   );
+}
+
+/**
+ * Back to the marketing site (owner, 2026-10-28: "once I click on learn there should be an option to go back to the
+ * marketing website"). A normal navigation to `/`: the marketing header and footer come back and the platform theme
+ * leaves `<html>` (ThemeProvider). Accessible name "Back to soylai.com, the SOYL main website" (it contains the
+ * visible text, WCAG 2.5.3).
+ */
+export function MainSiteLink({ variant }: { variant: 'bar' | 'row' }) {
+  const link = (
+    <Link href="/" className={variant === 'bar' ? s.siteLink : s.siteRowLink} data-testid={variant === 'bar' ? 'main-site-link' : 'main-site-row-link'}>
+      <Icon name="chevronLeft" size={16} />
+      {/* Phones show "Back to soylai.com"; the top bar shows "soylai.com" (same accessible name). */}
+      <span>
+        <span className={variant === 'bar' ? 'p-visually-hidden' : undefined}>Back to</span> soylai.com
+        <span className="p-visually-hidden">, the SOYL main website</span>
+      </span>
+    </Link>
+  );
+  return variant === 'bar' ? link : <div className={s.siteRow}>{link}</div>;
 }
 
 function TopBar({ pathname }: { pathname: string }) {
@@ -92,6 +115,7 @@ function TopBar({ pathname }: { pathname: string }) {
           <Image src="/brand/soyl-mark-128.png" alt="" width={30} height={30} className={s.mark} priority />
           <span className={s.brandName} aria-hidden="true">SOYL Academy</span>
         </Link>
+        <MainSiteLink variant="bar" />
         <nav aria-label="Learning platform" className={s.primary}>
           <ul>
             {navFor(state.status === 'member', 'top').map((n) => {

@@ -645,3 +645,41 @@ describe('app shell: Home for members', () => {
     expect(within(navs[0]!).getByRole('link', { name: 'Home', hidden: true }).getAttribute('href')).toBe('/me/dashboard');
   });
 });
+
+describe('app shell: the way back to the main site (owner, 2026-10-28)', () => {
+  function shell() {
+    window.matchMedia = ((q: string) => ({ matches: false, media: q, addEventListener: () => undefined, removeEventListener: () => undefined })) as unknown as typeof window.matchMedia;
+    return render(
+      <ThemeProvider>
+        <AppShell>
+          <p>page</p>
+        </AppShell>
+      </ThemeProvider>,
+    );
+  }
+
+  it('guests and members: a top-bar link and a phone row, both plain links to /, named for what they do', () => {
+    for (const state of [{ status: 'guest' }, member()]) {
+      h.session = { state, openLogin: vi.fn(), updateUser: vi.fn() };
+      h.pathname = '/learn/cbse/10/science';
+      shell();
+      // The phone row (the top-bar link is display: none here: jsdom applies the module CSS without media queries).
+      expect(screen.getByRole('link', { name: 'Back to soylai.com, the SOYL main website' }).getAttribute('href')).toBe('/');
+      const bar = screen.getByTestId('main-site-link');
+      expect(bar.getAttribute('href')).toBe('/');
+      expect(bar.textContent).toBe('Back to soylai.com, the SOYL main website');
+      expect(screen.getByTestId('main-site-link').textContent).toContain('soylai.com');
+      expect(screen.getByTestId('main-site-row-link').textContent).toContain('Back to soylai.com');
+      // The SOYL mark stays the academy home.
+      expect(screen.getByRole('link', { name: 'SOYL Academy, learning home' }).getAttribute('href')).toBe('/learn');
+      cleanup();
+    }
+  });
+
+  it('immersive pages keep the top-bar link but drop the phone row (their controls own the screen)', () => {
+    h.pathname = '/learn/cbse/10/science/ch01/lesson';
+    shell();
+    expect(screen.getByTestId('main-site-link')).toBeTruthy();
+    expect(screen.queryByTestId('main-site-row-link')).toBeNull();
+  });
+});

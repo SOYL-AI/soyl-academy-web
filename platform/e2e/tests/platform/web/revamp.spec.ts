@@ -67,6 +67,32 @@ test.describe('ADR-023 app shell', () => {
     await expect(page.locator('html')).not.toHaveAttribute('data-platform-theme', /.*/);
   });
 
+  // Owner, 2026-10-28: "once I click on learn there should be an option to go back to the marketing website".
+  for (const v of [
+    { name: 'phone (row above the top bar)', width: 360, height: 800, testId: 'main-site-row-link', hidden: 'main-site-link' },
+    { name: 'desktop (top bar)', width: 1280, height: 900, testId: 'main-site-link', hidden: 'main-site-row-link' },
+  ] as const) {
+    test(`back to the main site from the shell, ${v.name}: a normal navigation to /, marketing chrome back, no platform theme`, async ({ page, baseURL }) => {
+      await essentialCookiesOnly(page);
+      await setThemeCookie(page, baseURL, 'dark');
+      await page.setViewportSize({ width: v.width, height: v.height });
+      await page.goto('/learn/cbse/10/science', { waitUntil: 'networkidle' });
+      await expect(page.locator('html')).toHaveAttribute('data-platform-theme', 'dark');
+      const link = page.getByTestId(v.testId);
+      await expect(link).toBeVisible();
+      await expect(page.getByTestId(v.hidden)).toBeHidden();
+      await expect(link).toHaveAttribute('href', '/');
+      await expect(page.getByRole('link', { name: 'Back to soylai.com, the SOYL main website' })).toHaveCount(1); // the visible one
+      await checkPage(page);
+      await link.click();
+      await expect(page).toHaveURL(/\/$/);
+      await expect(page.locator('#mobile-menu')).toHaveCount(1); // the marketing header
+      await expect(page.locator('#soyl-platform-root')).toHaveCount(0);
+      await expect(page.locator('html')).not.toHaveAttribute('data-platform-theme', /.*/);
+      expect(await bg(page.locator('body'))).toBe('rgb(255, 255, 255)');
+    });
+  }
+
   test('immersive pages (lesson) hide the tab bar; the top bar stays', async ({ page }) => {
     await page.goto(`${CH01}/lesson`, { waitUntil: 'networkidle' });
     await expect(page.getByTestId('slide-player')).toBeVisible();

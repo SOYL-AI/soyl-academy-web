@@ -8,8 +8,10 @@
   line-height: var(--p-leading-body);
 }
 
+/* One container for every platform page: the top bar's width and gutter, so page headers line up with the
+   SOYL mark (Lead review 2026-10-28). Reading-width limits belong to the content inside, not to the page. */
 .page {
-  max-width: 1120px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: var(--p-space-5) var(--p-gutter) var(--p-space-10);
 }
@@ -65,7 +67,9 @@
   line-height: var(--p-leading-tight);
   font-weight: 750;
   letter-spacing: -0.015em;
-  overflow-wrap: anywhere;
+  /* Wrap between words (anywhere split "Chemical Reac|tions" at 360 px) and balance the lines. */
+  overflow-wrap: break-word;
+  text-wrap: balance;
 }
 .title:lang(hi) {
   letter-spacing: normal;
@@ -79,4 +83,9 @@
   .title {
     font-size: var(--p-text-3xl);
   }
+}
+
+/* In-page anchors (/me#school, /me#badges, /me#attempts …) land below the sticky top bar, not under it. */
+.root [id] {
+  scroll-margin-top: 72px;
 }
