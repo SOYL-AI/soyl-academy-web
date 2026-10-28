@@ -24,6 +24,14 @@ async function declineAnalytics(page: Page) {
 }
 
 async function axe(page: Page) {
+  // Contrast is judged on the settled page: wait for every finite animation (entrance fades, the menu's
+  // transitions) to finish. Infinite loops (float, marquee) and scroll-driven parallax only move things and
+  // are ignored.
+  await page.waitForFunction(() =>
+    document
+      .getAnimations()
+      .every((a) => !(a.timeline instanceof DocumentTimeline) || a.effect?.getTiming().iterations === Infinity || a.playState !== 'running')
+  );
   const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
   return results.violations.filter((v) => v.impact === 'serious' || v.impact === 'critical').map((v) => `${v.id}: ${v.nodes.map((n) => n.target.join(' ')).join(', ')}`);
 }

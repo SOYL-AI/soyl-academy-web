@@ -1,26 +1,46 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
-import { APP_URL, PLATFORM_ENABLED, PLATFORM_LOGIN_HREF, PRIMARY_CTA } from '@/lib/site';
-import { Logo } from '@/components/ui/Logo';
-import { buttonClasses } from '@/components/ui/Button';
 import { platformChromeActive } from '@/components/platform/shell/chrome';
-import { FeatureCard, MenuItemLink, type ResolvedNavGroup } from './MenuParts';
-import { NavIcon } from './NavIcon';
 
 /**
- * The marketing top bar with mega menus (ADR-025): a small client island.
+ * The marketing top bar's behaviour (ADR-025): a deliberately small client island. Everything visual — logo,
+ * menu panels, items, icons, featured cards, sign-in and call-to-action links — is rendered on the server
+ * (components/layout/Header.tsx) and passed in as React nodes, so it adds no client JavaScript. The island
+ * only holds state, focus management and the pointer / keyboard handling. The root layout imports it on every
+ * route, including platform routes, where it renders nothing (ADR-023), so its size counts against the
+ * platform route JS budget.
  *
  * Desktop (≥ 1024 px): each group is a disclosure button (aria-expanded / aria-controls, not ARIA menu roles)
  * that opens a full-width panel under the bar, on hover with a short intent delay or on click / Enter / Space.
  * Keyboard opening moves focus to the first link; Escape closes and returns focus to the button; arrow keys
- * move between buttons and links. The panel closes on route change, outside click, and when focus leaves.
- * Below 1024 px a menu button opens a full-height sheet with accordion groups, scroll lock and a focus trap.
- * Motion is CSS only; globals.css turns it off under prefers-reduced-motion.
+ * move between buttons and links. The panel closes on route change, link click, outside click, and when focus
+ * leaves. Below 1024 px a menu button opens a full-height sheet with accordion groups, scroll lock and a focus
+ * trap. Motion is CSS only; globals.css turns it off under prefers-reduced-motion.
  */
+
+export interface HeaderGroup {
+  id: string;
+  label: string;
+  /** Item URLs, to mark the current group. */
+  hrefs: string[];
+}
+
+interface Props {
+  groups: HeaderGroup[];
+  logo: ReactNode;
+  /** Sign-in link + primary call to action, right of the bar. */
+  actions: ReactNode;
+  /** Desktop panel content per group id. */
+  panels: Record<string, ReactNode>;
+  /** Mobile accordion content per group id. */
+  sheetPanels: Record<string, ReactNode>;
+  /** Shown above the accordions in the mobile sheet (the Learn card when the platform is on). */
+  sheetTop?: ReactNode;
+  /** Pinned to the bottom of the mobile sheet. */
+  sheetFooter: ReactNode;
+}
 
 const OPEN_DELAY_MS = 90;
 const CLOSE_DELAY_MS = 180;
@@ -28,7 +48,15 @@ const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1
 
 const visible = (el: HTMLElement) => el.getClientRects().length > 0;
 
-export function SiteHeader({ groups }: { groups: ResolvedNavGroup[] }) {
+function Chevron({ className }: { className: string }) {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false" className={className}>
+      <path d="m7 10 5 5 5-5" />
+    </svg>
+  );
+}
+
+export function SiteHeader({ groups, logo, actions, panels, sheetPanels, sheetTop, sheetFooter }: Props) {
   const pathname = usePathname();
   const [openId, setOpenId] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -39,6 +67,7 @@ export function SiteHeader({ groups }: { groups: ResolvedNavGroup[] }) {
   const sheetRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const openRef = useRef<string | null>(null);
   const openedBy = useRef<'hover' | 'click' | 'key'>('click');
   const focusOnOpen = useRef<'first' | 'last' | null>(null);
 
@@ -56,11 +85,17 @@ export function SiteHeader({ groups }: { groups: ResolvedNavGroup[] }) {
   };
   useEffect(() => clearTimer, []);
 
-  const trigger = (id: string) => document.getElementById(`nav-trigger-${id}`);
+  // The current page's item gets aria-current (items are server-rendered, so the island marks them).
+  useEffect(() => {
+    document.querySelectorAll<HTMLAnchorElement>('a[data-menu-item]').forEach((a) => {
+      if (a.getAttribute('href') === pathname) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+  }, [pathname]);
+
   const panelLinks = (id: string) =>
     Array.from(document.querySelectorAll<HTMLElement>(`#nav-panel-${id} a[href]`)).filter(visible);
 
-  const openRef = useRef<string | null>(null);
   const close = useCallback((returnFocus: boolean) => {
     clearTimer();
     const current = openRef.current;
@@ -78,8 +113,7 @@ export function SiteHeader({ groups }: { groups: ResolvedNavGroup[] }) {
       focusOnOpen.current = null;
     }
     const onKey = (e: KeyboardEvent) => {
-      if (e.key !== 'Escape') return;
-      close(Boolean(navRef.current?.contains(document.activeElement)));
+      if (e.key === 'Escape') close(Boolean(navRef.current?.contains(document.activeElement)));
     };
     const onPointer = (e: PointerEvent) => {
       if (!headerRef.current?.contains(e.target as Node)) close(false);
@@ -114,8 +148,8 @@ export function SiteHeader({ groups }: { groups: ResolvedNavGroup[] }) {
       const first = list[0];
       const last = list[list.length - 1];
       if (!first || !last) return;
-      const active = document.activeElement;
-      const inside = list.includes(active as HTMLElement);
+      const active = document.activeElement as HTMLElement | null;
+      const inside = Boolean(active && list.includes(active));
       if (e.shiftKey && (active === first || !inside)) {
         e.preventDefault();
         last.focus();
@@ -135,10 +169,20 @@ export function SiteHeader({ groups }: { groups: ResolvedNavGroup[] }) {
     };
   }, [mobileOpen]);
 
-  const isCurrent = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
-
   // Learning-platform pages have their own app shell (ADR-023): no marketing header there.
   if (platformChromeActive(pathname)) return null;
+
+  const isCurrent = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+
+  const closeAll = () => {
+    clearTimer();
+    setOpenId(null);
+    setMobileOpen(false);
+  };
+  // Following any link inside a panel or the sheet closes it, even when the URL does not change.
+  const closeOnLink = (e: React.MouseEvent) => {
+    if ((e.target as Element).closest('a[href]')) closeAll();
+  };
 
   const openFromKeyboard = (id: string, where: 'first' | 'last') => {
     clearTimer();
@@ -171,17 +215,14 @@ export function SiteHeader({ groups }: { groups: ResolvedNavGroup[] }) {
 
   const onTriggerKeyDown = (index: number, e: React.KeyboardEvent) => {
     const id = groups[index]!.id;
-    if (e.key === 'ArrowDown') {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
       e.preventDefault();
-      openFromKeyboard(id, 'first');
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      openFromKeyboard(id, 'last');
+      openFromKeyboard(id, e.key === 'ArrowDown' ? 'first' : 'last');
     } else if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
       e.preventDefault();
       const next = groups[(index + (e.key === 'ArrowRight' ? 1 : groups.length - 1)) % groups.length]!;
       if (openId) setOpenId(null);
-      trigger(next.id)?.focus();
+      document.getElementById(`nav-trigger-${next.id}`)?.focus();
     }
   };
 
@@ -200,39 +241,24 @@ export function SiteHeader({ groups }: { groups: ResolvedNavGroup[] }) {
     if (e.pointerType !== 'mouse') return;
     clearTimer();
     if (openId === id) return;
-    if (openId) {
+    const open = () => {
       openedBy.current = 'hover';
       setOpenId(id);
-      return;
-    }
-    timer.current = setTimeout(() => {
-      openedBy.current = 'hover';
-      setOpenId(id);
-    }, OPEN_DELAY_MS);
+    };
+    if (openId) open();
+    else timer.current = setTimeout(open, OPEN_DELAY_MS);
   };
 
   const onPointerLeave = (e: React.PointerEvent) => {
     if (e.pointerType !== 'mouse') return;
     clearTimer();
-    if (openedBy.current !== 'hover') return;
-    timer.current = setTimeout(() => setOpenId(null), CLOSE_DELAY_MS);
+    if (openedBy.current === 'hover') timer.current = setTimeout(() => setOpenId(null), CLOSE_DELAY_MS);
   };
 
   const onNavBlur = (e: React.FocusEvent) => {
     const next = e.relatedTarget as Node | null;
     if (openId && next && !navRef.current?.contains(next)) close(false);
   };
-
-  const closeAll = () => {
-    clearTimer();
-    setOpenId(null);
-    setMobileOpen(false);
-  };
-
-  const signIn = PLATFORM_ENABLED
-    ? { label: 'Log in', href: PLATFORM_LOGIN_HREF, external: false }
-    : { label: 'Sign in', href: APP_URL, external: true };
-  const learn = groups.find((g) => g.id === 'learn');
 
   return (
     <>
@@ -241,19 +267,15 @@ export function SiteHeader({ groups }: { groups: ResolvedNavGroup[] }) {
         className="sticky top-0 z-40 border-b border-rule bg-white/90 backdrop-blur-md backdrop-saturate-150"
       >
         <div className="page flex h-16 items-center gap-3 md:h-[72px] md:gap-6">
-          <Logo size={30} className="shrink-0 whitespace-nowrap" />
+          {logo}
 
           <nav ref={navRef} aria-label="Primary" className="ml-4 hidden lg:block" onBlur={onNavBlur}>
             <ul className="flex items-center gap-1">
               {groups.map((group, index) => {
                 const open = openId === group.id;
-                const current = group.items.some((item) => isCurrent(item.href));
+                const current = group.hrefs.some(isCurrent);
                 return (
-                  <li
-                    key={group.id}
-                    onPointerEnter={(e) => onPointerEnter(group.id, e)}
-                    onPointerLeave={onPointerLeave}
-                  >
+                  <li key={group.id} onPointerEnter={(e) => onPointerEnter(group.id, e)} onPointerLeave={onPointerLeave}>
                     <button
                       type="button"
                       id={`nav-trigger-${group.id}`}
@@ -261,51 +283,24 @@ export function SiteHeader({ groups }: { groups: ResolvedNavGroup[] }) {
                       aria-controls={`nav-panel-${group.id}`}
                       onClick={(e) => onTriggerClick(group.id, e)}
                       onKeyDown={(e) => onTriggerKeyDown(index, e)}
-                      className={cn(
-                        'group/trig relative inline-flex h-10 items-center gap-1 rounded-full px-3.5 text-[15px] font-medium transition-colors duration-200',
+                      className={`group/trig relative inline-flex h-10 items-center gap-1 rounded-full px-3.5 text-[15px] font-medium transition-colors duration-200 ${
                         open ? 'bg-paper text-ink' : current ? 'text-ink hover:bg-paper/70' : 'text-muted hover:bg-paper/70 hover:text-ink'
-                      )}
+                      }`}
                     >
                       {group.label}
-                      <NavIcon
-                        name="chevron"
-                        size={16}
-                        className="-mr-1 transition-transform duration-300 group-aria-expanded/trig:rotate-180"
-                      />
+                      <Chevron className="-mr-1 transition-transform duration-300 group-aria-expanded/trig:rotate-180" />
                       {current && (
                         <span aria-hidden="true" className="absolute bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-red-pen" />
                       )}
                     </button>
-
                     <div
                       id={`nav-panel-${group.id}`}
                       hidden={!open}
                       onKeyDown={(e) => onPanelKeyDown(group.id, e)}
+                      onClick={closeOnLink}
                       className="absolute inset-x-0 top-full border-b border-rule bg-white shadow-[0_28px_48px_-28px_rgba(20,20,20,0.28)] transition-[opacity,translate] duration-200 ease-out starting:-translate-y-1 starting:opacity-0"
                     >
-                      <div className="page grid grid-cols-12 gap-8 pb-9 pt-7">
-                        <div className="col-span-8 flex flex-col">
-                          <p className="t-eyebrow px-3 text-muted">{group.heading}</p>
-                          <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1">
-                            {group.items.map((item, i) => (
-                              <li key={item.href}>
-                                <MenuItemLink item={item} index={i} current={pathname === item.href} onNavigate={closeAll} />
-                              </li>
-                            ))}
-                          </ul>
-                          {group.id === 'programs' && PLATFORM_ENABLED && (
-                            <p className="mt-auto border-t border-rule-soft px-3 pt-4 text-[14px] text-muted">
-                              Already a SOYL school?{' '}
-                              <a href={APP_URL} className="hover-line font-medium text-ink">
-                                Sign in to the teacher app
-                              </a>
-                            </p>
-                          )}
-                        </div>
-                        <div className="col-span-4">
-                          <FeatureCard feature={group.feature} onNavigate={closeAll} />
-                        </div>
-                      </div>
+                      {panels[group.id]}
                     </div>
                   </li>
                 );
@@ -314,21 +309,7 @@ export function SiteHeader({ groups }: { groups: ResolvedNavGroup[] }) {
           </nav>
 
           <div className="ml-auto flex items-center gap-2 md:gap-5">
-            {signIn.external ? (
-              <a href={signIn.href} className="hover-line hidden py-1 text-[15px] font-medium text-ink sm:inline">
-                {signIn.label}
-              </a>
-            ) : (
-              <Link href={signIn.href} className="hover-line hidden py-1 text-[15px] font-medium text-ink sm:inline">
-                {signIn.label}
-              </Link>
-            )}
-            <Link
-              href={PRIMARY_CTA.href}
-              className={buttonClasses('primary', 'md', 'hidden h-9 px-3.5 text-[14px] min-[375px]:inline-flex md:h-11 md:px-5 md:text-[15px]')}
-            >
-              {PRIMARY_CTA.label}
-            </Link>
+            {actions}
             <button
               ref={toggleRef}
               type="button"
@@ -342,20 +323,8 @@ export function SiteHeader({ groups }: { groups: ResolvedNavGroup[] }) {
             >
               <span className="sr-only">{mobileOpen ? 'Close menu' : 'Open menu'}</span>
               <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
-                <path
-                  d={mobileOpen ? 'M5 5l12 12' : 'M3 8h16'}
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  className="transition-[d] duration-300"
-                />
-                <path
-                  d={mobileOpen ? 'M17 5L5 17' : 'M3 14h16'}
-                  stroke="currentColor"
-                  strokeWidth="1.6"
-                  strokeLinecap="round"
-                  className="transition-[d] duration-300"
-                />
+                <path d={mobileOpen ? 'M5 5l12 12' : 'M3 8h16'} stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" className="transition-[d] duration-300" />
+                <path d={mobileOpen ? 'M17 5L5 17' : 'M3 14h16'} stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" className="transition-[d] duration-300" />
               </svg>
             </button>
           </div>
@@ -376,25 +345,17 @@ export function SiteHeader({ groups }: { groups: ResolvedNavGroup[] }) {
         id="mobile-menu"
         ref={sheetRef}
         hidden={!mobileOpen}
+        onClick={closeOnLink}
         className="fixed inset-x-0 bottom-0 top-16 z-40 flex flex-col border-t border-rule bg-white md:top-[72px] lg:hidden"
       >
         <nav aria-label="Mobile" className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
           <div className="page pb-6 pt-4">
-            {learn && (
-              <div className="rise mb-4" style={{ '--d': '0ms' } as React.CSSProperties}>
-                <FeatureCard feature={learn.feature} onNavigate={closeAll} compact />
-              </div>
-            )}
+            {sheetTop && <div className="rise mb-4">{sheetTop}</div>}
             <ul>
               {groups.map((group, i) => {
                 const isOpen = expanded === group.id;
-                const current = group.items.some((item) => isCurrent(item.href));
                 return (
-                  <li
-                    key={group.id}
-                    className="rise border-b border-rule"
-                    style={{ '--d': `${(i + 1) * 45}ms` } as React.CSSProperties}
-                  >
+                  <li key={group.id} className="rise border-b border-rule" style={{ '--d': `${(i + 1) * 45}ms` } as React.CSSProperties}>
                     <button
                       type="button"
                       aria-expanded={isOpen}
@@ -404,32 +365,14 @@ export function SiteHeader({ groups }: { groups: ResolvedNavGroup[] }) {
                     >
                       <span className="flex items-center gap-2.5">
                         {group.label}
-                        {current && <span aria-hidden="true" className="h-2 w-2 rounded-full bg-red-pen" />}
+                        {group.hrefs.some(isCurrent) && <span aria-hidden="true" className="h-2 w-2 rounded-full bg-red-pen" />}
                       </span>
                       <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-rule text-ink transition-colors group-aria-expanded/acc:bg-paper">
-                        <NavIcon
-                          name="chevron"
-                          size={18}
-                          className="transition-transform duration-300 group-aria-expanded/acc:rotate-180"
-                        />
+                        <Chevron className="h-[18px] w-[18px] transition-transform duration-300 group-aria-expanded/acc:rotate-180" />
                       </span>
                     </button>
                     <div id={`mobile-group-${group.id}`} hidden={!isOpen} className="pb-4">
-                      <ul className="-mx-3 grid gap-0.5">
-                        {group.items.map((item, j) => (
-                          <li key={item.href}>
-                            <MenuItemLink item={item} index={j} current={pathname === item.href} onNavigate={closeAll} />
-                          </li>
-                        ))}
-                      </ul>
-                      {group.id === 'programs' && PLATFORM_ENABLED && (
-                        <p className="mt-3 text-[14px] text-muted">
-                          Already a SOYL school?{' '}
-                          <a href={APP_URL} className="link">
-                            Sign in to the teacher app
-                          </a>
-                        </p>
-                      )}
+                      {sheetPanels[group.id]}
                     </div>
                   </li>
                 );
@@ -438,20 +381,7 @@ export function SiteHeader({ groups }: { groups: ResolvedNavGroup[] }) {
           </div>
         </nav>
         <div className="border-t border-rule bg-white pb-[max(1rem,env(safe-area-inset-bottom))] pt-4">
-          <div className="page flex gap-3">
-            {signIn.external ? (
-              <a href={signIn.href} className={buttonClasses('secondary', 'lg', 'flex-1 px-4')}>
-                {signIn.label}
-              </a>
-            ) : (
-              <Link href={signIn.href} onClick={closeAll} className={buttonClasses('secondary', 'lg', 'flex-1 px-4')}>
-                {signIn.label}
-              </Link>
-            )}
-            <Link href={PRIMARY_CTA.href} onClick={closeAll} className={buttonClasses('primary', 'lg', 'flex-[1.4] px-4')}>
-              {PRIMARY_CTA.label}
-            </Link>
-          </div>
+          <div className="page flex gap-3">{sheetFooter}</div>
         </div>
       </div>
     </>
