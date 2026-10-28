@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Instrument_Serif } from 'next/font/google';
+import { Inter, Instrument_Serif, Newsreader } from 'next/font/google';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { CookieConsent } from '@/components/legal/CookieConsent';
 import { CONSENT_BOOT_SCRIPT } from '@/components/legal/consent';
 import { ConsentedAnalytics } from '@/components/legal/ConsentedAnalytics';
 import { StructuredData } from '@/components/seo/StructuredData';
+import { RevealObserver } from '@/components/motion/RevealObserver';
 import {
   SITE_DESCRIPTION,
   SITE_KEYWORDS,
@@ -19,20 +20,42 @@ import { HOME_TITLE } from '@/lib/seo/pages';
 import { graph, organizationNode, websiteNode } from '@/lib/seo/schema';
 import './globals.css';
 
-// Same faces as the product app.
+// Body face, shared with the product app (the platform UI kit reads --font-inter).
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
 });
 
+// Display serif for the marketing pages. One static weight per style keeps each
+// file small. `optional`: the headline never re-flows when the font arrives late
+// (no layout shift); on a first, very slow visit the size-adjusted fallback stays.
+const newsreader = Newsreader({
+  subsets: ['latin'],
+  variable: '--font-newsreader',
+  display: 'optional',
+  weight: '400',
+  style: 'normal',
+});
+
+// Italic accents in headlines.
+const newsreaderItalic = Newsreader({
+  subsets: ['latin'],
+  variable: '--font-newsreader-italic',
+  display: 'optional',
+  weight: '400',
+  style: 'italic',
+});
+
+// Kept for the learning platform's UI kit (--font-instrument-serif). The marketing
+// pages no longer use it, so it is not preloaded.
 const instrumentSerif = Instrument_Serif({
   subsets: ['latin'],
   variable: '--font-instrument-serif',
   display: 'swap',
   weight: '400',
-  // Normal only: the italic cost an extra preloaded font for two small accents.
   style: 'normal',
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -86,7 +109,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#F4F0E7',
+  themeColor: '#FFFFFF',
 };
 
 export default function RootLayout({
@@ -96,7 +119,7 @@ export default function RootLayout({
 }) {
   return (
     // suppressHydrationWarning: the consent boot script may add data-consent before React hydrates.
-    <html lang="en-IN" className={`${inter.variable} ${instrumentSerif.variable}`} suppressHydrationWarning>
+    <html lang="en-IN" className={`${inter.variable} ${newsreader.variable} ${newsreaderItalic.variable} ${instrumentSerif.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: CONSENT_BOOT_SCRIPT }} />
       </head>
@@ -110,6 +133,7 @@ export default function RootLayout({
         <Footer />
         <CookieConsent />
         <ConsentedAnalytics />
+        <RevealObserver />
       </body>
     </html>
   );

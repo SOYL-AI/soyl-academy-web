@@ -11,8 +11,8 @@ import {
   VALUE_LINE,
   whatsappLink,
 } from '@/content/future-builders';
-import { Field, describedBy, inputClasses } from '@/components/notebook/Field';
-import { buttonClasses } from '@/components/notebook/Button';
+import { Field, describedBy, inputClasses } from '@/components/ui/Field';
+import { buttonClasses } from '@/components/ui/Button';
 
 const WHATSAPP_URL = whatsappLink('Hi, I would like to enroll my child in Future Builders. Could you help me?');
 
@@ -150,7 +150,7 @@ export function FutureBuildersForm({ closesOn, orientationOn, cohortName }: Futu
           setLoading(false);
         },
         prefill: { name: formData.parentName, email: formData.email, contact: formData.phone },
-        theme: { color: '#3155FF' },
+        theme: { color: '#141414' },
       };
 
       const rzp1 = new (window as unknown as {
@@ -188,7 +188,7 @@ export function FutureBuildersForm({ closesOn, orientationOn, cohortName }: Futu
 
   if (success) {
     return (
-      <div role="status" className="module border-t-2 border-t-success p-6 md:p-8">
+      <div role="status" className="module border-success/40 p-6 md:p-8">
         <p className="t-label mb-3 text-success">{mode === 'pay' ? 'Payment received' : 'Request received'}</p>
         {mode === 'pay' ? (
           <>
@@ -234,20 +234,20 @@ export function FutureBuildersForm({ closesOn, orientationOn, cohortName }: Futu
   );
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="module p-5 md:p-8">
+    <form onSubmit={handleSubmit} noValidate className="module p-5 shadow-[0_30px_60px_-45px_rgba(20,20,20,0.4)] md:p-10">
       <div className="mb-6 flex flex-wrap items-baseline justify-between gap-2">
         <h3 className="t-title">Secure a seat</h3>
         <p className="t-small text-muted">Registration closes {closesOn}</p>
       </div>
 
-      <div role="group" aria-label="How would you like to enrol?" className="mb-6 grid grid-cols-2 border border-ink p-0.5">
+      <div role="group" aria-label="How would you like to enrol?" className="mb-6 grid grid-cols-2 rounded-full border border-rule bg-paper p-1">
         {(['pay', 'callback'] as const).map((m) => (
           <button
             key={m}
             type="button"
             aria-pressed={mode === m}
             onClick={() => setMode(m)}
-            className={cn('press h-11 text-[15px] font-semibold', mode === m ? 'bg-ink text-white' : 'text-ink hover:bg-paper')}
+            className={cn('press h-10 rounded-full text-[15px] font-semibold', mode === m ? 'bg-ink text-white' : 'text-ink hover:text-cobalt')}
           >
             {m === 'pay' ? 'Pay and enrol' : 'Request a callback'}
           </button>

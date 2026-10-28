@@ -11,8 +11,8 @@ import {
   type DemoFormData,
   type Grade,
 } from '@/lib/validation/demo-fields';
-import { Field, FieldError, describedBy, inputClasses } from '@/components/notebook/Field';
-import { buttonClasses } from '@/components/notebook/Button';
+import { Field, FieldError, describedBy, inputClasses } from '@/components/ui/Field';
+import { buttonClasses } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 
 type TextKey = 'name' | 'school' | 'email' | 'phone' | 'city';
@@ -76,7 +76,7 @@ export function DemoForm() {
   if (status === 'done') {
     const first = data.name.trim().split(' ')[0];
     return (
-      <div ref={thanksRef} tabIndex={-1} className="module border-t-2 border-t-success p-6 outline-none md:p-8" role="status">
+      <div ref={thanksRef} tabIndex={-1} className="module border-success/40 p-6 outline-none md:p-8" role="status">
         <p className="t-label mb-3 flex items-center gap-2 text-success">
           <span aria-hidden="true" className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-success text-[12px] text-white">✓</span>
           Request received
@@ -131,7 +131,7 @@ export function DemoForm() {
   };
 
   return (
-    <form onSubmit={onSubmit} noValidate className="module p-5 md:p-8">
+    <form onSubmit={onSubmit} noValidate className="module p-5 shadow-[0_30px_60px_-45px_rgba(20,20,20,0.4)] md:p-10">
       {status === 'error' && (
         <div role="alert" className="t-small mb-6 border-l-2 border-red-pen bg-paper px-3 py-2 text-ink">
           {serverMessage}
@@ -194,7 +194,7 @@ export function DemoForm() {
                   onChange={() => toggleGrade(g)}
                   className="peer sr-only"
                 />
-                <span className="press t-num inline-flex h-11 min-w-11 items-center justify-center border border-control bg-white px-3 text-[15px] font-medium peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-cobalt">
+                <span className="press t-num inline-flex h-11 min-w-11 items-center justify-center rounded-full border border-control/70 bg-white px-3 hover:border-ink text-[15px] font-medium peer-checked:border-ink peer-checked:bg-ink peer-checked:text-white peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-cobalt">
                   <span className="sr-only">Grade </span>
                   {g}
                 </span>

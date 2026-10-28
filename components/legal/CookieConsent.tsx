@@ -54,7 +54,7 @@ export function CookieConsent() {
     <section
       aria-labelledby={headingId}
       data-forced={forced || undefined}
-      className="cookie-bar fixed inset-x-0 bottom-0 z-50 border-t border-ink bg-white shadow-[0_-8px_24px_-16px_rgba(23,23,23,0.35)]"
+      className="cookie-bar fixed inset-x-0 bottom-0 z-50 border-t border-rule bg-white/95 backdrop-blur-md shadow-[0_-12px_32px_-20px_rgba(20,20,20,0.35)]"
     >
       <div className="page flex flex-col gap-3 py-3 md:flex-row md:items-center md:gap-8 md:py-4">
         <div className="min-w-0 flex-1">
@@ -102,7 +102,7 @@ export function CookieConsent() {
             <button
               type="button"
               onClick={() => save({ analytics, marketing })}
-              className="press h-10 rounded-[var(--radius-sm)] bg-cobalt px-4 text-[15px] font-semibold text-white hover:bg-cobalt-deep"
+              className="press h-10 rounded-full bg-ink px-5 text-[15px] font-semibold text-white hover:bg-cobalt"
             >
               Save choices
             </button>
@@ -111,14 +111,14 @@ export function CookieConsent() {
               <button
                 type="button"
                 onClick={() => save({ analytics: true, marketing: true })}
-                className="press h-10 rounded-[var(--radius-sm)] bg-cobalt px-4 text-[15px] font-semibold text-white hover:bg-cobalt-deep"
+                className="press h-10 rounded-full bg-ink px-5 text-[15px] font-semibold text-white hover:bg-cobalt"
               >
                 Accept all
               </button>
               <button
                 type="button"
                 onClick={() => save({ analytics: false, marketing: false })}
-                className="press h-10 rounded-[var(--radius-sm)] border border-ink px-4 text-[15px] font-semibold text-ink hover:bg-ink hover:text-white"
+                className="press h-10 rounded-full border border-ink/25 px-5 text-[15px] font-semibold text-ink hover:border-ink hover:bg-ink hover:text-white"
               >
                 Essential only
               </button>

@@ -1,43 +1,55 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   SOYL — "The Working Notebook"
-   Tokens match the product app exactly. See docs/redesign-working-notebook.md.
+   SOYL Academy — "Editorial" (Oct 2026)
+   White canvas, serif display, clean sans body, large photography, and
+   motion that is progressive: everything is visible without JS, and
+   prefers-reduced-motion turns every animation off.
+   See docs/redesign-editorial-restore.md.
    ========================================================================== */
 
 @theme {
-  /* ── Colour (exact values from the brief) ─────────────────────────────── */
-  --color-paper: #F4F0E7;        /* page background */
-  --color-white: #FFFFFF;        /* modules */
-  --color-ink: #171717;          /* text */
-  --color-muted: #5E5E59;        /* secondary text — never lighter for body copy */
-  --color-cobalt: #3155FF;       /* the single action colour */
-  --color-cobalt-deep: #2F3E9E;  /* hover + dark blocks */
-  --color-highlighter: #F2D45C;  /* highlights + one block colour */
-  --color-red-pen: #D84A3F;      /* margin lines, underlines, handwritten marks */
-  --color-success: #1E7A4C;      /* success moments only */
+  /* ── Colour ───────────────────────────────────────────────────────────── */
+  --color-white: #FFFFFF;
+  --color-paper: #F6F2EA;        /* warm sand: the one alternate band colour */
+  --color-paper-deep: #EDE6D8;
+  --color-ink: #141414;          /* text, primary buttons, dark bands */
+  --color-ink-soft: #2A2A28;
+  --color-muted: #55554F;        /* secondary text (7:1 on white) */
+  --color-cobalt: #2B4FE6;       /* links and the single accent colour */
+  --color-cobalt-deep: #1F3BB3;
+  --color-highlighter: #F2D45C;  /* small marks, focus on dark */
+  --color-red-pen: #C8473C;      /* drawn underlines, red fills */
+  --color-red-ink: #B23A30;      /* red as text (5.6:1 on white) */
+  --color-cobalt-soft: #E8EDFF;  /* blue tint for fills */
+  --color-red-soft: #FBE9E6;     /* red tint for fills */
+  --color-yellow-soft: #FCF3CF;  /* yellow tint for fills */
+  --color-success: #1E7A4C;
 
-  /* Lines. Structural rules are solid ink, Primer-style: they are the scaffold of the page. */
-  --color-rule: #171717;
-  --color-rule-soft: rgba(23, 23, 23, 0.16);
-  --color-rule-strong: rgba(23, 23, 23, 0.32);
+  --color-rule: rgba(20, 20, 20, 0.12);
+  --color-rule-soft: rgba(20, 20, 20, 0.08);
+  --color-rule-strong: rgba(20, 20, 20, 0.28);
   --color-control: #77776F;
 
   /* ── Type ─────────────────────────────────────────────────────────────── */
   --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-serif: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+  --font-serif: var(--font-newsreader), Georgia, "Times New Roman", serif;
 
-  /* ── Radii: notebook paper is square; controls are barely softened ────── */
-  --radius-xs: 2px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
+  /* ── Radii ────────────────────────────────────────────────────────────── */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
 
-  /* ── Motion: in-place, under 300 ms ───────────────────────────────────── */
+  /* ── Motion ───────────────────────────────────────────────────────────── */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --duration-fast: 150ms;
-  --duration-base: 240ms;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 160ms;
+  --duration-base: 280ms;
+  --duration-slow: 800ms;
 }
 
+@layer base {
 /* ==========================================================================
    BASE
    ========================================================================== */
@@ -45,82 +57,135 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 5.5rem;
 }
 
 body {
   font-family: var(--font-sans);
   font-size: 1rem;
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--color-ink);
-  background-color: var(--color-paper);
+  background-color: var(--color-white);
   overflow-x: clip;
   font-synthesis-weight: none;
 }
 
 @media (min-width: 768px) {
-  body { font-size: 1.125rem; }
+  body { font-size: 1.0625rem; }
 }
 
 h1, h2, h3, h4 {
   text-wrap: balance;
 }
 
-p { text-wrap: pretty; }
+.t-lead { text-wrap: pretty; }
 
+}
+
+@layer components {
 /* ==========================================================================
-   TYPE SCALE — serif for display, Inter for everything else.
-   Three display sizes so sections don't all shout at the same volume.
+   TYPE SCALE — Newsreader for display, Inter for everything else.
    ========================================================================== */
 
-.t-display {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  font-size: clamp(2.875rem, 6.4vw, 6rem);
-  line-height: 0.98;
-  letter-spacing: -0.012em;
-}
-
-.t-headline {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  font-size: clamp(2.25rem, 4.2vw, 3.75rem);
-  line-height: 1.02;
-  letter-spacing: -0.01em;
-}
-
+.t-display,
+.t-headline,
 .t-title {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: clamp(1.75rem, 2.6vw, 2.375rem);
-  line-height: 1.08;
+  font-optical-sizing: auto;
+}
+
+.t-display {
+  font-size: clamp(2.75rem, 7.2vw, 6.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+}
+
+.t-headline {
+  font-size: clamp(2.25rem, 4.8vw, 4.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+.t-title {
+  font-size: clamp(1.5rem, 2.4vw, 2.125rem);
+  line-height: 1.1;
+  letter-spacing: -0.012em;
+}
+
+/* Italic serif accent inside a headline: the editorial voice. */
+.t-accent {
+  font-family: var(--font-newsreader-italic), var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* In headlines on light backgrounds the accent word gets a highlighter stroke
+   (yellow by default; a section can switch it with --hl). Never on dark bands,
+   and not where a drawn pen underline already marks the word. */
+:is(h1, h2, .t-display, .t-headline) .t-accent:not(:has(.drawn)) {
+  background-image: linear-gradient(transparent 64%, var(--hl, var(--color-highlighter)) 64%, var(--hl, var(--color-highlighter)) 90%, transparent 90%);
+  padding-inline: 0.04em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.on-dark :is(h1, h2, .t-display, .t-headline) .t-accent { background-image: none; }
+
+/* Accent tones for per-section colour coding. --tone fills shapes and dots;
+   --tone-text is the AA-safe text colour for the same tone. */
+.tone-blue { --tone: var(--color-cobalt); --tone-text: var(--color-cobalt); --tone-soft: var(--color-cobalt-soft); }
+.tone-red { --tone: var(--color-red-pen); --tone-text: var(--color-red-ink); --tone-soft: var(--color-red-soft); }
+.tone-yellow { --tone: var(--color-highlighter); --tone-text: var(--color-ink); --tone-soft: var(--color-yellow-soft); }
+
+/* A thin three-colour stripe along the top edge of a panel. */
+.tri-top::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--color-cobalt) 0 33.33%, var(--color-red-pen) 33.33% 66.66%, var(--color-highlighter) 66.66% 100%);
+}
+
+/* The three-colour brand stripe. */
+.tri-stripe {
+  height: 6px;
+  background: linear-gradient(90deg, var(--color-cobalt) 0 33.33%, var(--color-red-pen) 33.33% 66.66%, var(--color-highlighter) 66.66% 100%);
 }
 
 .t-subtitle {
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: clamp(1.125rem, 1.4vw, 1.3125rem);
-  line-height: 1.3;
-  letter-spacing: -0.01em;
+  font-size: clamp(1.0625rem, 1.3vw, 1.25rem);
+  line-height: 1.35;
+  letter-spacing: -0.011em;
 }
 
 .t-lead {
-  font-size: clamp(1.125rem, 1.5vw, 1.3125rem);
-  line-height: 1.5;
+  font-size: clamp(1.125rem, 1.45vw, 1.3125rem);
+  line-height: 1.55;
   color: var(--color-muted);
 }
 
-/* Labels: 13–14 px, weight 500. Never smaller than 13 px anywhere. */
+/* Labels: never smaller than 13 px. */
 .t-label {
   font-size: 0.875rem;
   line-height: 1.4;
   font-weight: 500;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.005em;
+}
+
+/* Section eyebrow: tracked capitals. */
+.t-eyebrow {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .t-small {
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .t-num {
@@ -128,22 +193,22 @@ p { text-wrap: pretty; }
 }
 
 /* ==========================================================================
-   LAYOUT — a visible 12-column grid on a 1240 px page
+   LAYOUT
    ========================================================================== */
 
 .page {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1320px;
   margin-inline: auto;
-  padding-inline: 1rem;
+  padding-inline: 1.25rem;
 }
 
 @media (min-width: 768px) {
-  .page { padding-inline: 2rem; }
+  .page { padding-inline: 2.5rem; }
 }
 
 @media (min-width: 1280px) {
-  .page { padding-inline: 2.5rem; }
+  .page { padding-inline: 3.5rem; }
 }
 
 .grid-12 {
@@ -152,106 +217,48 @@ p { text-wrap: pretty; }
   column-gap: 1.5rem;
 }
 
-.section {
-  padding-block: clamp(3.5rem, 7vw, 6rem);
+@media (min-width: 1024px) {
+  .grid-12 { column-gap: 2rem; }
 }
 
-/* The page frame: two ink rules at the edges of the 1240 px page, running the
-   full length of the page (desktop only, where there is room outside them). */
-@media (min-width: 1280px) {
-  body {
-    position: relative;
-  }
-  body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 1240px;
-    transform: translateX(-50%);
-    border-inline: 1px solid var(--color-rule);
-    pointer-events: none;
-    z-index: 30;
-  }
-  /* Solid colour blocks run right up to the frame. */
-  .bleed {
-    margin-inline: -2.5rem;
-  }
+/* Generous section rhythm: whitespace is the asset. */
+.section {
+  padding-block: clamp(4.5rem, 9vw, 8.5rem);
 }
 
 .section-tight {
-  padding-block: clamp(2.5rem, 4.5vw, 4rem);
+  padding-block: clamp(3rem, 5.5vw, 5rem);
 }
-
-/* ==========================================================================
-   NOTEBOOK MOTIF
-   1 px rules, a faint 8 px graph grid (used sparingly), ruled lines,
-   and the teacher's red margin line.
-   ========================================================================== */
 
 .rule-t { border-top: 1px solid var(--color-rule); }
 .rule-b { border-bottom: 1px solid var(--color-rule); }
 
-/* White module with a hairline border — the Primer-style boxed cell. */
+/* A quiet white card. */
 .module {
   background: var(--color-white);
   border: 1px solid var(--color-rule);
+  border-radius: var(--radius-md);
 }
 
-.graph-grid {
-  background-color: var(--color-white);
-  background-image:
-    linear-gradient(rgba(49, 85, 255, 0.11) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(49, 85, 255, 0.11) 1px, transparent 1px),
-    linear-gradient(rgba(49, 85, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(49, 85, 255, 0.05) 1px, transparent 1px);
-  background-size: 40px 40px, 40px 40px, 8px 8px, 8px 8px;
-  background-position: -1px -1px;
-}
-
-.ruled {
-  background-color: var(--color-white);
-  background-image: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent 31px,
-    rgba(49, 85, 255, 0.14) 31px,
-    rgba(49, 85, 255, 0.14) 32px
-  );
-}
-
-/* Red teacher's-margin line on the left edge of a module. */
-.margin-line {
+/* Rounded editorial frame for photographs and video. */
+.frame {
   position: relative;
-}
-.margin-line::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: var(--margin-x, 2.25rem);
-  width: 1px;
-  background: var(--color-red-pen);
-  opacity: 0.7;
-  pointer-events: none;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--color-paper);
+  isolation: isolate;
 }
 
-/* Highlighter stroke behind a word. */
+@media (min-width: 768px) {
+  .frame-lg { border-radius: var(--radius-lg); }
+}
+
+/* Highlighter stroke behind a word (used sparingly). */
 .mark {
-  background: linear-gradient(transparent 12%, var(--color-highlighter) 12%, var(--color-highlighter) 88%, transparent 88%);
-  padding-inline: 0.12em;
-  margin-inline: -0.06em;
+  background: linear-gradient(transparent 58%, var(--color-highlighter) 58%, var(--color-highlighter) 92%, transparent 92%);
+  padding-inline: 0.06em;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
-}
-
-/* Red-pen underline, the teacher's mark. */
-.pen-underline {
-  text-decoration: underline;
-  text-decoration-color: var(--color-red-pen);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.18em;
 }
 
 /* ==========================================================================
@@ -267,31 +274,45 @@ p { text-wrap: pretty; }
 }
 .link:hover { color: var(--color-cobalt-deep); }
 
-/* Text link with an arrow that nudges on hover. */
+/* Text link with a rule underneath and an arrow that nudges on hover. */
 .arrow-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.4em;
+  gap: 0.45em;
   font-weight: 600;
   color: var(--color-ink);
-  text-decoration: underline;
-  text-decoration-color: var(--color-rule-strong);
-  text-underline-offset: 0.25em;
-  transition: color var(--duration-fast) var(--ease-out), text-decoration-color var(--duration-fast) var(--ease-out);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 2px;
+  transition: color var(--duration-fast) var(--ease-out);
 }
 .arrow-link:hover {
   color: var(--color-cobalt);
-  text-decoration-color: currentColor;
 }
 .arrow-link svg { transition: transform var(--duration-base) var(--ease-out); }
-.arrow-link:hover svg { transform: translateX(3px); }
+.arrow-link:hover svg,
+.group:hover .arrow-link svg { transform: translateX(4px); }
+
+/* Underline that grows from the left on hover (nav, footer). */
+.hover-line {
+  background-image: linear-gradient(var(--color-red-pen), var(--color-red-pen));
+  background-size: 0% 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size var(--duration-base) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+.hover-line:hover,
+.hover-line[aria-current="page"] {
+  background-size: 100% 2px;
+}
 
 :focus-visible {
   outline: 2px solid var(--color-cobalt);
   outline-offset: 3px;
 }
 
-/* On dark/cobalt blocks the focus ring switches to the highlighter. */
 .on-dark :focus-visible {
   outline-color: var(--color-highlighter);
 }
@@ -302,10 +323,11 @@ p { text-wrap: pretty; }
   left: 1rem;
   z-index: 100;
   padding: 0.75rem 1.25rem;
-  background: var(--color-cobalt);
+  background: var(--color-ink);
   color: var(--color-white);
   font-weight: 600;
   font-size: 0.875rem;
+  border-radius: 999px;
 }
 .skip-to-content:focus { top: 0.5rem; }
 
@@ -318,11 +340,28 @@ p { text-wrap: pretty; }
 .press {
   transition:
     transform var(--duration-fast) var(--ease-out),
-    background-color var(--duration-fast) var(--ease-out),
-    color var(--duration-fast) var(--ease-out),
-    border-color var(--duration-fast) var(--ease-out);
+    background-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out);
 }
 .press:active { transform: translateY(1px) scale(0.985); }
+
+/* Card that lifts on hover; its photo zooms slowly. */
+.lift {
+  transition: transform 500ms var(--ease-out-expo);
+}
+.lift:hover { transform: translateY(-4px); }
+.zoom-img img {
+  transition: transform 1100ms var(--ease-out-expo);
+}
+.zoom-img:hover img,
+.group:hover .zoom-img img {
+  transform: scale(1.045);
+}
+
+
+}
 
 /* Cookie bar: hidden before first paint once a choice is stored (see CONSENT_BOOT_SCRIPT),
    unless the visitor re-opened it from "Cookie preferences". */
@@ -330,17 +369,164 @@ html[data-consent] .cookie-bar:not([data-forced]) {
   display: none;
 }
 
-/* Success moment: a small settle, no confetti. */
+/* Rendering cost: sections after the first are only laid out and painted when
+   they approach the viewport. "auto" in contain-intrinsic-size remembers the real
+   height once rendered, so scrolling back never jumps. */
+main > section ~ section,
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
+/* ==========================================================================
+   MOTION
+   All of it is decoration. Without JS, content is simply there; with
+   prefers-reduced-motion, nothing moves (see the block at the end).
+   ========================================================================== */
+
+/* 1 · Page-load entrance (CSS only, runs without JS). Words rise in order. */
+.rise-word {
+  display: inline-block;
+  animation: rise-word 900ms var(--ease-out-expo) both;
+  animation-delay: calc(var(--i, 0) * 55ms + 40ms);
+}
+@keyframes rise-word {
+  from { opacity: 0.01; transform: translateY(0.42em); }
+  to { opacity: 1; transform: none; }
+}
+
+.rise {
+  animation: rise 900ms var(--ease-out-expo) both;
+  animation-delay: var(--d, 0ms);
+}
+@keyframes rise {
+  from { opacity: 0.01; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Hero photo: settles from a slight zoom. Transform only, so it paints at once. */
+.settle {
+  animation: settle 1800ms var(--ease-out-expo) both;
+}
+@keyframes settle {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+
+/* Gentle idle float for small overlay cards. */
+.float {
+  animation: float 7s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* 2 · Scroll reveals. components/motion/RevealObserver.tsx marks elements
+   that start below the fold as pending, then "in" once they scroll into view.
+   Elements on screen at load, and every element when JS is off, are never hidden. */
+[data-reveal][data-rs="pending"] {
+  opacity: 0;
+  transform: translateY(28px);
+}
+[data-reveal="fade"][data-rs="pending"] { transform: none; }
+[data-reveal="image"][data-rs="pending"] {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(14% 0 0 0);
+}
+[data-reveal="image"][data-rs="pending"] img,
+[data-reveal="image"][data-rs="pending"] video {
+  transform: scale(1.14);
+}
+[data-reveal][data-rs="in"] {
+  transition:
+    opacity 700ms var(--ease-out) var(--d, 0ms),
+    transform 1000ms var(--ease-out-expo) var(--d, 0ms),
+    clip-path 1300ms var(--ease-out-expo) var(--d, 0ms);
+}
+[data-reveal="image"][data-rs="in"] {
+  clip-path: inset(0 0 0 0);
+}
+[data-reveal="image"][data-rs="in"] img,
+[data-reveal="image"][data-rs="in"] video {
+  transition: transform 1700ms var(--ease-out-expo) var(--d, 0ms);
+}
+
+/* 3 · Drawn underline: an SVG pen stroke that traces itself. */
+.drawn {
+  position: relative;
+  display: inline-block;
+}
+.drawn > svg {
+  position: absolute;
+  left: 0;
+  bottom: -0.1em;
+  width: 100%;
+  height: 0.24em;
+  overflow: visible;
+  color: var(--color-red-pen);
+  pointer-events: none;
+}
+.drawn > svg path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+.drawn[data-draw="load"] > svg path {
+  animation: draw 1100ms var(--ease-out) 750ms both;
+}
+[data-rs="pending"] .drawn > svg path {
+  stroke-dashoffset: 1;
+}
+[data-rs="in"] .drawn > svg path {
+  transition: stroke-dashoffset 1100ms var(--ease-out) calc(var(--d, 0ms) + 450ms);
+}
+@keyframes draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* 4 · Parallax: scroll-driven, CSS only, where the browser supports it. */
+@supports (animation-timeline: view()) {
+  .parallax > img,
+  .parallax > video,
+  .parallax > .parallax-layer {
+    animation: parallax linear both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 100%;
+  }
+}
+@keyframes parallax {
+  from { translate: 0 -5%; scale: 1.12; }
+  to { translate: 0 5%; scale: 1.12; }
+}
+
+/* 5 · Marquee of the method verbs. */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+.marquee-wrap:hover .marquee { animation-play-state: paused; }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Success moment in the mini simulator. */
 .sim-pop {
-  animation: sim-pop 240ms var(--ease-out) both;
+  animation: sim-pop 260ms var(--ease-out) both;
 }
 @keyframes sim-pop {
   from { opacity: 0; transform: translateY(4px) scale(0.98); }
   to { opacity: 1; transform: none; }
 }
 
+/* Video loop: the still is only for reduced motion. */
+.motion-still { display: none; }
+
 /* ==========================================================================
-   REDUCED MOTION — nothing is load-bearing; every state is already visible.
+   REDUCED MOTION — nothing moves; every state is already visible.
    ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
@@ -348,8 +534,18 @@ html[data-consent] .cookie-bar:not([data-forced]) {
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
     scroll-behavior: auto !important;
   }
+  .parallax > img,
+  .parallax > video,
+  .parallax > .parallax-layer {
+    animation: none !important;
+  }
+  .marquee { animation: none !important; }
+  .motion-clip { display: none !important; }
+  .motion-still { display: block; }
 }

@@ -121,16 +121,16 @@ export function MiniSimulator() {
   const hints = HINTS(target);
 
   return (
-    <div className="module relative">
+    <div className="module relative overflow-hidden shadow-[0_30px_60px_-40px_rgba(20,20,20,0.35)]">
       {/* Question header, as in the student app */}
-      <div className="flex items-center justify-between gap-4 border-b border-rule px-4 py-3 md:px-5">
+      <div className="flex items-center justify-between gap-4 border-b border-rule bg-white px-4 py-3 md:px-6">
         <p className="t-label text-muted">
           <span className="t-num text-ink">Question {(round % TARGETS.length) + 1}</span> · Coordinates · Grade 6
         </p>
-        <p className="t-label text-muted">Try it</p>
+        <p className="t-label inline-flex items-center gap-1.5 text-muted"><span aria-hidden="true" className="h-2 w-2 animate-pulse rounded-full bg-success" />Live</p>
       </div>
 
-      <div className="grid gap-5 p-4 md:p-5 sm:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)]">
+      <div className="grid gap-6 p-4 md:p-6 sm:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] lg:grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)]">
         <div>
           <p id={ids.prompt} className="t-subtitle mb-3">
             Plot the point <span className="t-num whitespace-nowrap">{label(target)}</span>.
@@ -157,7 +157,7 @@ export function MiniSimulator() {
             }}
             onPointerUp={() => (dragging.current = false)}
             className={cn(
-              'graph-grid block w-full max-w-[340px] touch-none select-none border border-rule',
+              'block w-full max-w-[340px] touch-none select-none rounded-[var(--radius-sm)] border border-rule bg-white',
               solved ? 'cursor-default' : 'cursor-crosshair'
             )}
           >
@@ -165,27 +165,27 @@ export function MiniSimulator() {
             {Array.from({ length: RANGE * 2 + 1 }, (_, i) => {
               const v = PAD + i * UNIT;
               return (
-                <g key={i} stroke="#3155FF" strokeOpacity={0.16} strokeWidth={0.6}>
+                <g key={i} stroke="#2B4FE6" strokeOpacity={0.14} strokeWidth={0.6}>
                   <line x1={PAD} y1={v} x2={PAD + SIZE} y2={v} />
                   <line x1={v} y1={PAD} x2={v} y2={PAD + SIZE} />
                 </g>
               );
             })}
             {/* axes */}
-            <g stroke="#171717" strokeWidth={1.1}>
+            <g stroke="#141414" strokeWidth={1.1}>
               <line x1={PAD} y1={PAD + SIZE / 2} x2={PAD + SIZE} y2={PAD + SIZE / 2} />
               <line x1={PAD + SIZE / 2} y1={PAD} x2={PAD + SIZE / 2} y2={PAD + SIZE} />
             </g>
             {/* 11.5 units renders at ≥13 px: the grid is never drawn narrower than ~260 px. */}
-            <g fontSize={11.5} fill="#5E5E59" fontFamily="var(--font-inter), sans-serif">
+            <g fontSize={11.5} fill="#55554F" fontFamily="var(--font-inter), sans-serif">
               {[-4, -2, 2, 4].map((n) => (
                 <g key={n}>
                   <text x={toSvg({ x: n, y: 0 }).cx} y={PAD + SIZE / 2 + 12} textAnchor="middle">{fmt(n)}</text>
                   <text x={PAD + SIZE / 2 - 5} y={toSvg({ x: 0, y: n }).cy + 3.5} textAnchor="end">{fmt(n)}</text>
                 </g>
               ))}
-              <text x={PAD + SIZE - 2} y={PAD + SIZE / 2 - 5} textAnchor="end" fill="#171717">x</text>
-              <text x={PAD + SIZE / 2 + 6} y={PAD + 8} fill="#171717">y</text>
+              <text x={PAD + SIZE - 2} y={PAD + SIZE / 2 - 5} textAnchor="end" fill="#141414">x</text>
+              <text x={PAD + SIZE / 2 + 6} y={PAD + 8} fill="#141414">y</text>
             </g>
 
             {/* earlier wrong attempts stay visible: the trail */}
@@ -194,7 +194,7 @@ export function MiniSimulator() {
               .map((a, i) => {
                 const { cx, cy } = toSvg(a.p);
                 return (
-                  <g key={i} stroke="#D84A3F" strokeWidth={1.6} strokeLinecap="round" opacity={0.8}>
+                  <g key={i} stroke="#C8473C" strokeWidth={1.6} strokeLinecap="round" opacity={0.8}>
                     <line x1={cx - 4} y1={cy - 4} x2={cx + 4} y2={cy + 4} />
                     <line x1={cx + 4} y1={cy - 4} x2={cx - 4} y2={cy + 4} />
                   </g>
@@ -205,7 +205,7 @@ export function MiniSimulator() {
               <circle
                 {...toSvg(point)}
                 r={6}
-                fill={solved ? '#1E7A4C' : '#3155FF'}
+                fill={solved ? '#1E7A4C' : '#2B4FE6'}
                 stroke="#fff"
                 strokeWidth={2}
                 style={{ transition: 'cx 120ms ease-out, cy 120ms ease-out, fill 200ms' }}
@@ -228,7 +228,7 @@ export function MiniSimulator() {
               <li
                 key={i}
                 className={cn(
-                  't-num inline-flex h-8 items-center gap-1 border px-2 text-[14px]',
+                  't-num inline-flex h-8 items-center gap-1 rounded-full border px-2.5 text-[14px]',
                   a.ok ? 'border-success bg-success text-white' : 'border-rule-strong bg-white text-ink'
                 )}
               >
@@ -243,14 +243,14 @@ export function MiniSimulator() {
 
           <div aria-live="polite" className="min-h-[3.5rem]">
             {solved ? (
-              <p className="sim-pop border-l-2 border-success bg-success/10 px-3 py-2 font-semibold text-success">
+              <p className="sim-pop rounded-[var(--radius-sm)] border-l-2 border-success bg-success/10 px-3 py-2 font-semibold text-success">
                 You worked it out
                 <span className="t-num font-medium text-ink">
                   {' '}· {tries} {tries === 1 ? 'try' : 'tries'} · {hintsUsed} {hintsUsed === 1 ? 'hint' : 'hints'}
                 </span>
               </p>
             ) : message ? (
-              <p className="t-small border-l-2 border-red-pen bg-white px-3 py-2 text-ink">{message}</p>
+              <p className="t-small rounded-[var(--radius-sm)] border-l-2 border-red-pen bg-paper px-3 py-2 text-ink">{message}</p>
             ) : point ? (
               <p className="t-small text-muted">
                 Your point: <span className="t-num text-ink">{label(point)}</span>
@@ -261,7 +261,7 @@ export function MiniSimulator() {
           {hintsUsed > 0 && !solved && (
             <ul className="mt-3 space-y-1.5">
               {hints.slice(0, hintsUsed).map((h, i) => (
-                <li key={i} className="t-small bg-highlighter/40 px-3 py-2 text-ink">
+                <li key={i} className="t-small rounded-[var(--radius-sm)] bg-highlighter/40 px-3 py-2 text-ink">
                   <span className="font-semibold">Hint {i + 1}.</span> {h}
                 </li>
               ))}
@@ -273,7 +273,7 @@ export function MiniSimulator() {
               <button
                 type="button"
                 onClick={next}
-                className="press h-11 rounded-[var(--radius-sm)] bg-ink px-5 text-[15px] font-semibold text-white hover:bg-cobalt-deep"
+                className="press h-11 rounded-full bg-ink px-5 text-[15px] font-semibold text-white hover:bg-cobalt"
               >
                 Try another
               </button>
@@ -283,7 +283,7 @@ export function MiniSimulator() {
                   type="button"
                   onClick={check}
                   disabled={!point}
-                  className="press h-11 rounded-[var(--radius-sm)] bg-cobalt px-5 text-[15px] font-semibold text-white hover:bg-cobalt-deep disabled:cursor-not-allowed disabled:bg-muted"
+                  className="press h-11 rounded-full bg-ink px-5 text-[15px] font-semibold text-white hover:bg-cobalt disabled:cursor-not-allowed disabled:bg-muted"
                 >
                   Check
                 </button>
@@ -291,7 +291,7 @@ export function MiniSimulator() {
                   type="button"
                   onClick={() => setHintsUsed((h) => Math.min(h + 1, hints.length))}
                   disabled={hintsUsed >= hints.length}
-                  className="press h-11 rounded-[var(--radius-sm)] border border-ink px-4 text-[15px] font-semibold text-ink hover:bg-ink hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
+                  className="press h-11 rounded-full border border-ink/25 px-5 text-[15px] font-semibold text-ink hover:border-ink hover:bg-ink hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {hintsUsed >= hints.length ? 'No more hints' : 'Hint'}
                 </button>

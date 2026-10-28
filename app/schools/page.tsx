@@ -1,12 +1,12 @@
 import { FinalCta } from '@/components/home/FinalCta';
-import { ButtonLink } from '@/components/notebook/Button';
-import { PageHero } from '@/components/notebook/PageHero';
-import { ProductShot, hasMedia } from '@/components/notebook/ProductShot';
-import { Label, SectionHeader } from '@/components/notebook/SectionHeader';
+import { ButtonLink } from '@/components/ui/Button';
+import { PageHero } from '@/components/ui/PageHero';
+import { Label, SectionHeader } from '@/components/ui/SectionHeader';
+import { Photo } from '@/components/media/Photo';
 import { Faq } from '@/components/seo/Faq';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { schoolsFaqs } from '@/content/faqs';
-import { media } from '@/content/media';
+import { images } from '@/content/images';
 import { PRIMARY_CTA } from '@/lib/site';
 import { createMetadata } from '@/lib/seo/metadata';
 import { breadcrumbNode, faqNode, graph, howToNode, topLevelCrumbs, webPageNode } from '@/lib/seo/schema';
@@ -45,24 +45,35 @@ export default function SchoolsPage() {
       />
 
       <PageHero
+        tone="red"
         label="For schools"
-        title="Change what homework means."
+        title={
+          <>
+            Change what homework <span className="t-accent">means.</span>
+          </>
+        }
         intro="Traditional assignments no longer reliably show learning. SOYL gives every classroom assignments students have to work out, and gives teachers and leaders evidence of how they did it."
         actions={
-          <ButtonLink href={PRIMARY_CTA.href} size="lg" arrow>
-            Plan a pilot
-          </ButtonLink>
+          <>
+            <ButtonLink href={PRIMARY_CTA.href} size="lg" arrow>
+              Plan a pilot
+            </ButtonLink>
+            <ButtonLink href="#workflow" variant="secondary" size="lg">
+              See the workflow
+            </ButtonLink>
+          </>
         }
-        aside={hasMedia(media.schools) ? <ProductShot slot={media.schools} kind="Photo" sizes="(min-width: 1024px) 480px, 92vw" priority /> : undefined}
+        image={images.classroomWide}
+        imageLayout="wide"
       />
 
       <section className="section">
         <div className="page grid-12 gap-y-8">
-          <div className="col-span-12 lg:col-span-6">
-            <Label className="mb-5">The problem</Label>
+          <div className="col-span-12 lg:col-span-6" data-reveal>
+            <Label num="01" className="mb-6">The problem</Label>
             <h2 className="t-headline max-w-[14ch]">The output is no longer the proof.</h2>
           </div>
-          <div className="col-span-12 space-y-5 lg:col-span-5 lg:col-start-8">
+          <div className="col-span-12 space-y-5 lg:col-span-5 lg:col-start-8 lg:pt-14" data-reveal style={{ '--d': '120ms' } as React.CSSProperties}>
             <p className="t-lead text-ink">
               When AI can produce a B+ essay or solve an equation in seconds, the finished work alone proves nothing.
             </p>
@@ -73,42 +84,61 @@ export default function SchoolsPage() {
         </div>
       </section>
 
-      <section id="workflow" className="section rule-t scroll-mt-16">
+      <section id="workflow" className="section scroll-mt-16 bg-paper">
         <div className="page">
-          <SectionHeader label="The SOYL workflow" title="Six steps, teacher-led throughout." />
-          <ol className="mt-10 grid grid-cols-1 gap-px border border-rule bg-rule sm:grid-cols-2 md:mt-14 lg:grid-cols-3">
+          <SectionHeader label="The SOYL workflow" num="02" title="Six steps, teacher-led throughout." />
+          <ol className="mt-12 grid grid-cols-1 gap-x-8 sm:grid-cols-2 md:mt-16 lg:grid-cols-3">
             {workflowSteps.map((step, i) => (
-              <li key={step.title} className="bg-white p-5 md:p-6">
-                <span className="t-label t-num text-muted">{String(i + 1).padStart(2, '0')}</span>
-                <h3 className="t-subtitle mt-3">{step.title}</h3>
-                <p className="mt-2 text-muted">{step.desc}</p>
+              <li
+                key={step.title}
+                data-reveal
+                style={{ '--d': `${(i % 3) * 80}ms` } as React.CSSProperties}
+                className="border-t border-rule-strong pb-10 pt-6"
+              >
+                <span className={`t-num font-serif text-[3rem] leading-none ${['text-cobalt', 'text-red-ink', 'text-ink'][i % 3]}`}>{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="t-subtitle mt-5">{step.title}</h3>
+                <p className="mt-2 max-w-[36ch] text-muted">{step.desc}</p>
               </li>
             ))}
           </ol>
         </div>
       </section>
 
-      {/* Pilot: the cobalt-deep block on this page */}
-      <section className="section-tight">
-        <div className="page">
-          <div className="bleed on-dark grid-12 gap-y-10 bg-cobalt-deep px-6 py-12 text-white md:px-12 md:py-16">
-            <div className="col-span-12 lg:col-span-5">
-              <p className="t-label mb-5 flex items-center gap-2.5 text-white">
-                <span aria-hidden="true" className="h-px w-5 bg-highlighter" />
-                What a pilot looks like
-              </p>
-              <h2 className="t-headline">Ten weeks. Your curriculum.</h2>
-              <p className="mt-5 max-w-[42ch] text-white">
+      <section className="section">
+        <div className="page grid-12 items-center gap-y-12">
+          <div className="col-span-12 lg:col-span-5">
+            <Photo
+              backdrop="yellow"
+              backdropSide="left"
+              image={images.teacherMentoring}
+              aspect="aspect-[4/3] lg:aspect-[4/5]"
+              large
+              parallax
+              sizes="(min-width: 1320px) 480px, (min-width: 1024px) 40vw, 100vw"
+            />
+          </div>
+          <div className="col-span-12 lg:col-span-6 lg:col-start-7">
+            <div data-reveal>
+              <Label num="03" className="mb-6">What a pilot looks like</Label>
+              <h2 className="t-headline">
+                Ten weeks. <span className="t-accent">Your</span> curriculum.
+              </h2>
+              <p className="t-lead mt-6 max-w-[46ch]">
                 SOYL works alongside your existing standards, whether Common Core, IB, IGCSE or local frameworks. It changes how learning is assessed, not what is taught.
               </p>
             </div>
-            <ol className="col-span-12 border-t border-white/30 lg:col-span-6 lg:col-start-7">
-              {PILOT.map((p) => (
-                <li key={p.phase} className="grid grid-cols-[7rem_1fr] gap-4 border-b border-white/30 py-5">
-                  <span className="t-label t-num text-white">{p.weeks}</span>
+            <ol className="mt-10 border-t border-ink">
+              {PILOT.map((p, i) => (
+                <li
+                  key={p.phase}
+                  data-reveal
+                  style={{ '--d': `${i * 90}ms` } as React.CSSProperties}
+                  className="grid grid-cols-1 gap-2 border-b border-rule py-6 sm:grid-cols-[8rem_1fr] sm:gap-6"
+                >
+                  <span className="t-label t-num text-muted">{p.weeks}</span>
                   <div>
-                    <h3 className="t-subtitle">{p.phase}</h3>
-                    <p className="mt-1 text-white">{p.line}</p>
+                    <h3 className="font-serif text-[1.75rem] leading-none">{p.phase}</h3>
+                    <p className="mt-2 text-muted">{p.line}</p>
                   </div>
                 </li>
               ))}
@@ -117,7 +147,7 @@ export default function SchoolsPage() {
         </div>
       </section>
 
-      <Faq faqs={schoolsFaqs} heading="Questions from school leaders" />
+      <Faq faqs={schoolsFaqs} heading="Questions from school leaders" className="pt-0" />
       <FinalCta headline="Start with one class." line="Book a demo to see SOYL and plan a ten-week pilot for your school." />
     </>
   );

@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Field, describedBy, inputClasses } from '@/components/notebook/Field';
-import { buttonClasses } from '@/components/notebook/Button';
+import { Field, describedBy, inputClasses } from '@/components/ui/Field';
+import { buttonClasses } from '@/components/ui/Button';
 import { validateFamily } from './FutureBuildersForm';
 
 type FormFields = { parentName: string; studentName: string; email: string; phone: string; grade: string };
@@ -50,7 +50,7 @@ export function WaitlistForm() {
 
   if (status === 'done') {
     return (
-      <div role="status" className="module border-t-2 border-t-success p-6 md:p-8">
+      <div role="status" className="module border-success/40 p-6 md:p-8">
         <p className="t-label mb-3 text-success">You’re on the waitlist</p>
         <h3 className="t-title">Thank you, {data.parentName.split(' ')[0]}.</h3>
         <p className="mt-3 text-muted">
@@ -78,7 +78,7 @@ export function WaitlistForm() {
   );
 
   return (
-    <form onSubmit={onSubmit} noValidate className="module p-5 md:p-8">
+    <form onSubmit={onSubmit} noValidate className="module p-5 shadow-[0_30px_60px_-45px_rgba(20,20,20,0.4)] md:p-10">
       <h3 className="t-title mb-6">Join the waitlist</h3>
       {status === 'error' && (
         <div role="alert" className="t-small mb-6 border-l-2 border-red-pen bg-paper px-3 py-2 text-ink">

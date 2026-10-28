@@ -25,8 +25,16 @@ export function AssignmentToggle() {
       <div
         role="group"
         aria-label="Compare the traditional and SOYL versions of the assignment"
-        className="mb-4 inline-flex border border-ink bg-white p-0.5"
+        className="relative mb-5 inline-grid grid-cols-2 rounded-full border border-rule bg-paper p-1"
       >
+        {/* Sliding thumb */}
+        <span
+          aria-hidden="true"
+          className={cn(
+            'absolute inset-y-1 left-1 w-[calc(50%-0.25rem)] rounded-full bg-ink transition-transform duration-500 ease-[var(--ease-out-expo)]',
+            isOld ? 'translate-x-0' : 'translate-x-full'
+          )}
+        />
         {OPTIONS.map((opt) => {
           const active = mode === opt.mode;
           return (
@@ -36,8 +44,8 @@ export function AssignmentToggle() {
               aria-pressed={active}
               onClick={() => setMode(opt.mode)}
               className={cn(
-                'press h-10 min-w-[7.5rem] px-4 text-[15px] font-semibold',
-                active ? 'bg-ink text-white' : 'text-ink hover:bg-paper'
+                'relative z-10 h-10 min-w-[7.5rem] rounded-full px-5 text-[15px] font-semibold transition-colors duration-300',
+                active ? 'text-white' : 'text-ink hover:text-cobalt'
               )}
             >
               {opt.label}
@@ -52,17 +60,17 @@ export function AssignmentToggle() {
           aria-hidden={!isOld}
           style={{ gridArea: '1 / 1' }}
           className={cn(
-            'ruled margin-line border border-rule px-6 py-8 pl-14 transition-opacity duration-200 md:px-10 md:pl-16',
-            isOld ? 'opacity-100' : 'pointer-events-none invisible opacity-0'
+            'rounded-[var(--radius-md)] border border-rule bg-paper px-6 py-8 transition-[opacity,transform] duration-500 ease-[var(--ease-out-expo)] md:px-10 md:py-10',
+            isOld ? 'opacity-100' : 'pointer-events-none invisible translate-y-2 opacity-0'
           )}
         >
           <div className="mb-6 flex items-baseline justify-between gap-3">
             <span className="t-label text-muted">{shift.old.subject}</span>
             <span className="t-label t-num text-muted">Due Monday</span>
           </div>
-          <p className="t-label mb-2 text-muted">Homework</p>
+          <p className="t-eyebrow mb-3 text-muted">Homework</p>
           <p className="t-title max-w-[22ch]">{shift.old.prompt}</p>
-          <p className="t-small mt-8 max-w-[40ch] border-l-2 border-red-pen pl-3 text-ink">
+          <p className="t-small mt-10 max-w-[44ch] border-l-2 border-red-pen pl-3 text-ink">
             One prompt, one answer, one mark. A chatbot can write it in seconds, and the mark looks the same.
           </p>
         </article>
@@ -72,17 +80,17 @@ export function AssignmentToggle() {
           aria-hidden={isOld}
           style={{ gridArea: '1 / 1' }}
           className={cn(
-            'border border-rule border-t-2 border-t-cobalt bg-white px-6 py-8 transition-opacity duration-200 md:px-10',
-            isOld ? 'pointer-events-none invisible opacity-0' : 'opacity-100'
+            'rounded-[var(--radius-md)] border border-rule bg-white px-6 py-8 shadow-[0_30px_60px_-40px_rgba(20,20,20,0.35)] transition-[opacity,transform] duration-500 ease-[var(--ease-out-expo)] md:px-10 md:py-10',
+            isOld ? 'pointer-events-none invisible translate-y-2 opacity-0' : 'opacity-100'
           )}
         >
-          <p className="t-label mb-2 text-cobalt">{shift.soyl.eyebrow}</p>
-          <p className="t-title mb-6 max-w-[24ch]">{shift.soyl.prompt}</p>
+          <p className="t-eyebrow mb-3 text-cobalt">{shift.soyl.eyebrow}</p>
+          <p className="t-title mb-7 max-w-[24ch]">{shift.soyl.prompt}</p>
           <ul className="border-t border-rule">
             {shift.soyl.tasks.map((task) => (
-              <li key={task.tag} className="flex items-start justify-between gap-4 border-b border-rule py-3.5">
+              <li key={task.tag} className="flex items-start justify-between gap-4 border-b border-rule py-4">
                 <span>{task.text}</span>
-                <span className="t-label shrink-0 bg-highlighter px-2 py-0.5 text-ink">{task.tag}</span>
+                <span className="t-label shrink-0 rounded-full bg-highlighter px-2.5 py-0.5 text-ink">{task.tag}</span>
               </li>
             ))}
           </ul>

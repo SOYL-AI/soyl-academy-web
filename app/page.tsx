@@ -3,9 +3,11 @@ import { ProofStrip } from '@/components/home/ProofStrip';
 import { Shift } from '@/components/home/Shift';
 import { MethodModule } from '@/components/home/MethodModule';
 import { HowItWorks } from '@/components/home/HowItWorks';
+import { Belief } from '@/components/home/Belief';
 import { Subjects } from '@/components/home/Subjects';
 import { Audiences } from '@/components/home/Audiences';
-import { Belief } from '@/components/home/Belief';
+import { FutureBuildersFeature } from '@/components/home/FutureBuildersFeature';
+import { JournalTeaser } from '@/components/home/JournalTeaser';
 import { FinalCta } from '@/components/home/FinalCta';
 import { FutureBuildersBanner } from '@/components/marketing/FutureBuildersBanner';
 import { Faq } from '@/components/seo/Faq';
@@ -17,12 +19,13 @@ import { breadcrumbNode, faqNode, graph, webPageNode } from '@/lib/seo/schema';
 
 export const metadata = createMetadata({ path: '/' });
 
-// The Future Builders banner depends on today's date; re-check hourly.
+// The Future Builders banner and feature depend on today's date; re-check hourly.
 export const revalidate = 3600;
 
 /**
- * Homepage, in the order set by the Oct 2026 brief. Every section is fully
- * visible at rest: no pinned or scroll-driven scenes.
+ * Homepage: promise → the shift → the method → how it works → belief →
+ * subjects → who it's for → Future Builders → journal → FAQ → close.
+ * Every section is fully visible without JS; motion only decorates.
  */
 export default function HomePage() {
   const cohortState = getCohortState();
@@ -49,10 +52,12 @@ export default function HomePage() {
       <Shift />
       <MethodModule />
       <HowItWorks />
+      <Belief />
       <Subjects />
       <Audiences />
-      <Belief />
-      <Faq faqs={homeFaqs} heading="Common questions about SOYL Academy" num="06" />
+      <FutureBuildersFeature state={cohortState} />
+      <JournalTeaser />
+      <Faq faqs={homeFaqs} heading="Common questions about SOYL Academy" num="07" />
       <FinalCta />
     </>
   );

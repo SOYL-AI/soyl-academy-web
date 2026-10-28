@@ -1,5 +1,7 @@
 import { DemoForm } from '@/components/forms/DemoForm';
-import { PageHero } from '@/components/notebook/PageHero';
+import { PageHero } from '@/components/ui/PageHero';
+import { Photo } from '@/components/media/Photo';
+import { images } from '@/content/images';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { SITE_CONTACT_EMAIL } from '@/lib/seo/config';
 import { createMetadata } from '@/lib/seo/metadata';
@@ -20,24 +22,30 @@ export default function BookDemoPage() {
         data={graph(webPageNode({ path: '/book-a-demo' }), breadcrumbNode('/book-a-demo', topLevelCrumbs('/book-a-demo')))}
       />
       <PageHero
+        tone="blue"
         label="Book a demo"
-        title="See SOYL with your own eyes."
+        title={
+          <>
+            See SOYL with your own <span className="t-accent">eyes.</span>
+          </>
+        }
         intro="Tell us a little about your school. It takes a minute, and we’ll take it from there."
         size="headline"
       />
 
-      <section className="section-tight">
-        <div className="page grid-12 gap-y-10">
+      <section className="pb-20 md:pb-28">
+        <div className="page grid-12 gap-y-12">
           <div className="col-span-12 lg:col-span-7">
             <DemoForm />
           </div>
 
           <aside className="col-span-12 lg:col-span-4 lg:col-start-9">
-            <h2 className="t-subtitle mb-5">What happens next</h2>
-            <ol className="border-t border-rule">
+            <Photo image={images.teacherMentoring} aspect="aspect-[4/3]" className="mb-8" sizes="(min-width: 1024px) 380px, 100vw" />
+            <h2 className="t-eyebrow mb-4 text-muted">What happens next</h2>
+            <ol className="border-t border-ink">
               {WHAT_HAPPENS.map((s, i) => (
                 <li key={s.title} className="flex gap-4 border-b border-rule py-4">
-                  <span className="t-num font-serif text-[1.75rem] leading-none text-cobalt">{i + 1}</span>
+                  <span className="t-num font-serif text-[2rem] leading-none text-cobalt">{i + 1}</span>
                   <div>
                     <p className="font-semibold">{s.title}</p>
                     <p className="t-small mt-0.5 text-muted">{s.line}</p>

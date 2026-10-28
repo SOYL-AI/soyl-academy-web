@@ -1,28 +1,38 @@
 import Link from 'next/link';
 import { audiences } from '@/content/home';
-import { media } from '@/content/media';
-import { SectionHeader } from '@/components/notebook/SectionHeader';
-import { ProductShot } from '@/components/notebook/ProductShot';
-import { ArrowRight } from '@/components/notebook/Button';
+import { images } from '@/content/images';
+import { SectionHeader } from '@/components/ui/SectionHeader';
+import { ArrowRight } from '@/components/ui/Button';
+import { Photo } from '@/components/media/Photo';
 
+/** Three doors: one line each, the detail lives on the destination page. */
 export function Audiences() {
   return (
-    <section className="section rule-t">
+    <section className="section pt-0">
       <div className="page">
         <SectionHeader label={audiences.label} num="05" title={audiences.headline} />
 
-        <ul className="mt-10 grid grid-cols-1 gap-px border border-rule bg-rule md:mt-14 md:grid-cols-3">
-          {audiences.items.map((item) => (
-            <li key={item.id} className="flex flex-col bg-white p-5 md:p-6">
-              <ProductShot
-                slot={media[item.media]}
-                kind={item.kind}
-                sizes="(min-width: 1240px) 370px, (min-width: 768px) 30vw, 92vw"
-              />
-              <h3 className="t-title mt-6">{item.title}</h3>
-              <p className="mt-2 text-muted">{item.line}</p>
-              <Link href={item.link.href} className="arrow-link mt-auto pt-5">
-                {item.link.label} <ArrowRight />
+        <ul className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 md:mt-16 md:grid-cols-3">
+          {audiences.items.map((item, i) => (
+            <li key={item.id} data-reveal style={{ '--d': `${i * 90}ms` } as React.CSSProperties}>
+              <Link href={item.link.href} className="group block rounded-[var(--radius-md)] focus-visible:outline-offset-4">
+                <Photo
+                  image={images[item.image]}
+                  aspect="aspect-[4/3] md:aspect-[4/5]"
+                  zoom
+                  reveal={false}
+                  sizes="(min-width: 1320px) 390px, (min-width: 768px) 31vw, 100vw"
+                />
+                <div className="mt-6 flex items-start justify-between gap-4">
+                  <div>
+                    <span aria-hidden="true" className={`mb-4 block h-1 w-12 rounded-full ${['bg-cobalt', 'bg-red-pen', 'bg-highlighter'][i % 3]}`} />
+                    <h3 className="t-title">{item.title}</h3>
+                    <p className="mt-2 max-w-[34ch] text-muted">{item.line}</p>
+                    <span className="arrow-link mt-4">
+                      {item.link.label} <ArrowRight />
+                    </span>
+                  </div>
+                </div>
               </Link>
             </li>
           ))}

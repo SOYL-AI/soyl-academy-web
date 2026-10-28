@@ -11,6 +11,7 @@ export const hero = {
     'SOYL turns your notes into interactive assignments that students work out for themselves, with hints that never give the answer. You approve every question, and see how each pupil got there.',
   secondary: { label: 'See how it works', href: '#how-it-works' },
   caption: 'Unlimited attempts. Every try is kept, so the teacher sees the path, not just the score.',
+  points: ['You approve every question', 'Hints never give the answer', 'Every attempt is kept'],
 } as const;
 
 export const shift = {
@@ -88,26 +89,36 @@ export const audiences = {
       title: 'For teachers',
       line: 'Assignments from your own notes in minutes, and a clear view of how each pupil worked.',
       link: { label: 'How SOYL works for teachers', href: '/teachers' },
-      media: 'teachers',
-      kind: 'Photo',
+      image: 'teacherMentoring',
     },
     {
       id: 'schools',
       title: 'For schools',
       line: 'A ten-week pilot that fits your curriculum, with teachers in control from day one.',
       link: { label: 'Plan a pilot', href: '/schools' },
-      media: 'schools',
-      kind: 'Photo',
+      image: 'classroomWide',
     },
     {
       id: 'parents',
       title: 'For parents',
       line: 'See your child’s progress and their teacher’s feedback, not just a mark.',
       link: { label: 'What parents see', href: '/parents' },
-      media: 'parents',
-      kind: 'Screenshot',
+      image: 'studentThinking',
     },
   ],
+} as const;
+
+export const futureBuilders = {
+  label: 'Future Builders · Grades 7–12',
+  headline: 'Build a real product.',
+  line: 'Alongside the school platform, we run a live online weekend cohort: software, AI, IoT robotics and entrepreneurship, ending with a Demo Day pitch.',
+  link: { label: 'Explore Future Builders', href: '/future-builders' },
+} as const;
+
+export const journalTeaser = {
+  label: 'The SOYL Journal',
+  headline: 'Ideas about learning after AI.',
+  link: { label: 'All essays', href: '/journal' },
 } as const;
 
 export const belief = {

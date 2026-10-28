@@ -1,24 +1,25 @@
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
-type Variant = 'primary' | 'secondary' | 'inverse' | 'ghost';
+type Variant = 'primary' | 'secondary' | 'inverse' | 'outline-inverse' | 'ghost';
 type Size = 'md' | 'lg';
 
 const base =
-  'press inline-flex items-center justify-center gap-2 font-semibold whitespace-nowrap rounded-[var(--radius-sm)] disabled:cursor-not-allowed disabled:opacity-60';
+  'press group/btn inline-flex items-center justify-center gap-2 font-semibold whitespace-nowrap rounded-full disabled:cursor-not-allowed disabled:opacity-60';
 
 const variants: Record<Variant, string> = {
-  // Cobalt is the single action colour.
-  primary: 'bg-cobalt text-white hover:bg-cobalt-deep',
-  secondary: 'border border-ink bg-transparent text-ink hover:bg-ink hover:text-paper',
-  // For use on cobalt / dark blocks.
+  // Ink is the action colour; cobalt is its hover.
+  primary: 'bg-ink text-white hover:bg-cobalt',
+  secondary: 'border border-ink/25 bg-white text-ink hover:border-highlighter hover:bg-highlighter',
+  // For use on ink / dark blocks.
   inverse: 'bg-white text-ink hover:bg-highlighter',
+  'outline-inverse': 'border border-white/45 text-white hover:border-white hover:bg-white hover:text-ink',
   ghost: 'text-ink underline decoration-rule-strong underline-offset-4 hover:text-cobalt hover:decoration-current',
 };
 
 const sizes: Record<Size, string> = {
   md: 'h-11 px-5 text-[15px]',
-  lg: 'h-13 px-6 text-base min-h-[52px]',
+  lg: 'h-[52px] px-7 text-base',
 };
 
 export function buttonClasses(variant: Variant = 'primary', size: Size = 'md', className?: string) {
@@ -33,11 +34,11 @@ interface ButtonLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> 
 }
 
 export function ButtonLink({ href, variant, size, arrow, className, children, ...rest }: ButtonLinkProps) {
-  const classes = buttonClasses(variant, size, cn(arrow && 'group', className));
+  const classes = buttonClasses(variant, size, className);
   const inner = (
     <>
       {children}
-      {arrow && <ArrowRight className="transition-transform duration-200 group-hover:translate-x-0.5" />}
+      {arrow && <ArrowRight className="transition-transform duration-300 group-hover/btn:translate-x-1" />}
     </>
   );
   // External links (the product app, WhatsApp) use a plain anchor.

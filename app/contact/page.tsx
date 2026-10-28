@@ -5,9 +5,9 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { contactSchema, ContactFormData, InterestEnum, RoleEnum } from '@/lib/validation/contact-schema';
-import { Field, describedBy, inputClasses } from '@/components/notebook/Field';
-import { buttonClasses } from '@/components/notebook/Button';
-import { Label } from '@/components/notebook/SectionHeader';
+import { Field, describedBy, inputClasses } from '@/components/ui/Field';
+import { buttonClasses } from '@/components/ui/Button';
+import { Label } from '@/components/ui/SectionHeader';
 import { cn } from '@/lib/utils';
 import { submitContact } from './actions';
 
@@ -51,17 +51,17 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="rule-b">
-        <div className="page grid-12 items-end gap-y-6 py-12 md:py-16">
+      <section>
+        <div className="page grid-12 items-end gap-y-6 pb-10 pt-10 md:pb-14 md:pt-16 lg:pt-20">
           <div className="col-span-12 lg:col-span-7">
-            <Label className="mb-6">Contact</Label>
-            <h1 className="t-headline max-w-[16ch]">Talk to the SOYL team.</h1>
-            <p className="t-lead mt-6 max-w-[48ch] text-ink">
+            <div className="rise"><Label className="mb-8">Contact</Label></div>
+            <h1 className="t-display rise max-w-[14ch]" style={{ '--d': '80ms' } as React.CSSProperties}>Talk to the SOYL <span className="t-accent">team.</span></h1>
+            <p className="t-lead mt-6 max-w-[48ch]">
               Questions about SOYL, partnerships or anything else. For a product walkthrough,{' '}
               <Link href="/book-a-demo" className="link">book a demo</Link>.
             </p>
           </div>
-          <p className="col-span-12 text-muted lg:col-span-4 lg:col-start-9">
+          <p className="rise col-span-12 text-muted lg:col-span-4 lg:col-start-9" style={{ '--d': '240ms' } as React.CSSProperties}>
             Or email{' '}
             <a href="mailto:outreach@soyl.cloud" className="link">
               outreach@soyl.cloud
@@ -70,11 +70,11 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section-tight">
+      <section className="pb-20 md:pb-28">
         <div className="page grid-12">
           <div className="col-span-12 lg:col-span-8">
             {status === 'success' ? (
-              <div role="status" className="module border-t-2 border-t-success p-6 md:p-8">
+              <div role="status" className="module p-6 md:p-10">
                 <p className="t-label mb-3 text-success">Message sent</p>
                 <h2 className="t-title">Thank you.</h2>
                 <p className="mt-3 text-muted">{message}</p>
@@ -83,9 +83,9 @@ export default function ContactPage() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit(onSubmit)} noValidate className="module p-5 md:p-8">
+              <form onSubmit={handleSubmit(onSubmit)} noValidate className="module p-5 shadow-[0_30px_60px_-45px_rgba(20,20,20,0.4)] md:p-10">
                 {status === 'error' && (
-                  <div role="alert" className="t-small mb-6 border-l-2 border-red-pen bg-paper px-3 py-2 text-ink">
+                  <div role="alert" className="t-small mb-6 rounded-[var(--radius-sm)] border-l-2 border-red-pen bg-paper px-3 py-2 text-ink">
                     {message}
                   </div>
                 )}
