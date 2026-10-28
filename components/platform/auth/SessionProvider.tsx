@@ -146,8 +146,10 @@ export function SessionProvider({ children }: { children: ReactNode }) {
       toast.show({ title: res.isNewUser ? 'Welcome to SOYL Academy!' : 'You are logged in', tone: 'success' });
       const target = safeReturnTo(res.returnTo || returnTo);
       const here = `${window.location.pathname}${window.location.search}`;
-      if (target === here) router.refresh();
-      else router.push(target);
+      // Same page: nothing to reload. Platform server components never read the session (private data is
+      // fetched in the browser, ADR-010), and a router.refresh() here only re-rendered the same page while
+      // dropping the streamed <title> for a moment (axe document-title; seen in the ADR-023 e2e).
+      if (target !== here) router.push(target);
     },
     [mergeGuest, router, toast],
   );
