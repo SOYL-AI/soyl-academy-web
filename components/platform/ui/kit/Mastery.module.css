@@ -1,0 +1,155 @@
+/* Mastery, progress rings and difficulty tags (ADR-023). */
+.pipWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.pip {
+  display: inline-block;
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  border: 2px solid var(--p-border-strong);
+  background: transparent;
+}
+.pipSm {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+.pip[data-level='attempted'] {
+  border-color: var(--p-m-attempted);
+  background: linear-gradient(135deg, var(--p-m-attempted) 0 30%, transparent 30%);
+}
+.pip[data-level='familiar'] {
+  border-color: var(--p-m-familiar);
+  background: linear-gradient(0deg, var(--p-m-familiar) 0 50%, transparent 50%);
+}
+.pip[data-level='proficient'] {
+  border-color: var(--p-m-proficient);
+  background: var(--p-m-proficient);
+}
+.pip[data-level='mastered'] {
+  border-color: var(--p-m-mastered);
+  background: var(--p-m-mastered);
+  box-shadow: 0 0 0 2px var(--p-surface), 0 0 0 3px var(--p-m-mastered);
+}
+.pipLabel {
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-xs);
+  font-weight: 600;
+}
+
+.bar {
+  display: grid;
+  gap: var(--p-space-2);
+}
+.barTrack {
+  display: flex;
+  gap: 2px;
+  height: 10px;
+  overflow: hidden;
+  border-radius: var(--p-radius-pill);
+  background: var(--p-m-none);
+}
+.barSeg {
+  flex-basis: 0;
+  min-width: 6px;
+}
+.barSeg[data-level='attempted'] {
+  background: var(--p-m-attempted);
+}
+.barSeg[data-level='familiar'] {
+  background: var(--p-m-familiar);
+}
+.barSeg[data-level='proficient'] {
+  background: var(--p-m-proficient);
+}
+.barSeg[data-level='mastered'] {
+  background: var(--p-m-mastered);
+}
+.barSeg[data-level='not_started'] {
+  background: var(--p-m-none);
+}
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--p-space-1) var(--p-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-xs);
+}
+.legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.legend b {
+  color: var(--p-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.ring {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+}
+.ring svg {
+  position: absolute;
+  inset: 0;
+}
+.ringTrack {
+  stroke: var(--p-surface-3);
+}
+.ringFill {
+  stroke: var(--p-accent);
+  transition: stroke-dasharray var(--p-duration-base) var(--p-ease);
+}
+.ring[data-level='attempted'] .ringFill {
+  stroke: var(--p-m-attempted);
+}
+.ring[data-level='familiar'] .ringFill {
+  stroke: var(--p-m-familiar);
+}
+.ring[data-level='proficient'] .ringFill {
+  stroke: var(--p-m-proficient);
+}
+.ring[data-level='mastered'] .ringFill {
+  stroke: var(--p-m-mastered);
+}
+.ringCenter {
+  position: relative;
+  color: var(--p-ink);
+  font-size: var(--p-text-xs);
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.diff {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 8px;
+  border-radius: var(--p-radius-pill);
+  font-size: var(--p-text-xs);
+  font-weight: 650;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.diff[data-band='easy'] {
+  background: var(--p-easy-soft);
+  color: var(--p-easy);
+}
+.diff[data-band='medium'] {
+  background: var(--p-medium-soft);
+  color: var(--p-medium);
+}
+.diff[data-band='hard'] {
+  background: var(--p-hard-soft);
+  color: var(--p-hard);
+}

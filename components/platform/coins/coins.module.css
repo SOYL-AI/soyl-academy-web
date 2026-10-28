@@ -31,12 +31,12 @@
   display: inline-flex;
   flex: none;
   align-items: center;
-  gap: 2px;
-  min-height: var(--p-touch);
-  padding: 0 6px;
-  border: 1px solid var(--p-border-strong);
+  gap: 3px;
+  min-height: 36px;
+  padding: 0 10px 0 8px;
+  border: 0;
   border-radius: var(--p-radius-pill);
-  background: var(--p-surface);
+  background: var(--p-surface-2);
   color: var(--p-ink);
   font-size: var(--p-text-sm);
   font-weight: 700;
@@ -49,7 +49,7 @@
   box-shadow: var(--p-focus-ring);
 }
 .chipIcon {
-  color: #b08a00;
+  color: var(--p-tier-gold);
 }
 .chipDot {
   position: absolute;
@@ -224,16 +224,18 @@
   color: var(--p-ink);
 }
 
-/* Daily challenge (learn hub) */
+/* Daily challenge (learn hub; ADR-023: a compact card, subject tiles in a grid) */
 .challenge {
   display: grid;
   gap: var(--p-space-2);
-  margin-top: var(--p-space-5);
+  margin-top: var(--p-space-6);
   padding: var(--p-space-4);
-  border: 1px solid var(--p-border-strong);
-  border-left: 4px solid #b08a00;
-  border-radius: var(--p-radius-lg);
-  background: var(--p-surface);
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-xl);
+  background:
+    radial-gradient(120% 140% at 100% 0%, color-mix(in srgb, var(--p-highlight) 22%, transparent) 0, transparent 55%),
+    var(--p-surface);
+  box-shadow: var(--p-shadow-1);
 }
 .challengeHead {
   display: flex;
@@ -256,14 +258,34 @@
   font-size: var(--p-text-sm);
 }
 .challengeList {
-  margin-top: var(--p-space-2);
+  display: grid;
+  gap: var(--p-space-2);
+  margin: var(--p-space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 640px) {
+  .challengeList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .challengeList {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 .challengeItem {
   display: flex;
   align-items: center;
   gap: var(--p-space-2);
-  padding: var(--p-space-2) 0;
-  border-top: 1px solid var(--p-border);
+  padding: var(--p-space-2) var(--p-space-2) var(--p-space-2) var(--p-space-3);
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-lg);
+  background: var(--p-surface);
+}
+.challengeItem[data-solved='true'] {
+  border-color: color-mix(in srgb, var(--p-success) 45%, transparent);
+  background: var(--p-success-soft);
 }
 .challengeMain {
   display: grid;

@@ -70,3 +70,18 @@ export const TIER_HEADINGS: Record<SubjectTier, string> = { core: 'Core subjects
 export function groupByTier(subjects: CatalogSubjects['subjects']): Array<{ tier: SubjectTier; subjects: CatalogSubjects['subjects'] }> {
   return TIER_ORDER.map((tier) => ({ tier, subjects: subjects.filter((s) => s.tier === tier) })).filter((g) => g.subjects.length > 0);
 }
+
+/**
+ * Subjects of a board and class that have learning content (ADR-023: the class page shows them first). The
+ * catalog has no "has content" flag yet, so this reads the public daily-challenge list, which has one entry
+ * per subject with published practice questions (cached like the catalog). Null when unknown (the page then
+ * lists every subject the old way, never hiding one by mistake).
+ */
+export async function getContentSubjectIds(board: BoardSlug, classLevel: number): Promise<Set<string> | null> {
+  try {
+    const res = await serverApi().get('/v1/coins/daily-challenge', { query: { board, class: classLevel } });
+    return res.status === 'ok' ? new Set(res.challenges.map((c) => c.subjectId)) : null;
+  } catch {
+    return null;
+  }
+}

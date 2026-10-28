@@ -1,22 +1,26 @@
 /**
- * /learn/[board]/[class]/[subject] — chapters in board order, grouped by unit (ARCHITECTURE §3.1: public,
- * ISR). Progress kept on this device is shown per chapter; server progress for members needs
- * GET /v1/me/progress (M2).
+ * /learn/[board]/[class]/[subject] — the course page (ARCHITECTURE §3.1: public, ISR). ADR-023 (Khan style):
+ * course sidebar on desktop, the student's course mastery with "Up next" / "Continue", and the chapters in
+ * board order grouped by unit, each with its mastery level. Mastery and device progress are client islands
+ * (members: GET /v1/me/mastery; guests: this device), so the page itself stays cached.
  */
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Badge } from '@/components/platform/ui/kit/Display';
 import { Icon } from '@/components/platform/ui/kit/Icon';
-import type { CatalogChapter } from '@/platform/shared/api-client';
 import { platformOn, requirePlatform } from '@/components/platform/server/gate';
 import { platformMetadata } from '@/components/platform/server/metadata';
 import { getChapters } from '@/components/platform/server/catalog';
 import { PageHeader } from '@/components/platform/shell/PageHeader';
 import { ChapterProgressNote } from '@/components/platform/learn/LearnClient';
+import { MasteryProvider } from '@/components/platform/learn/MasteryProvider';
+import { ChapterMasteryPip, SubjectMasteryHeader, type CourseChapterLink } from '@/components/platform/learn/CourseIslands';
+import { CourseSidebar, unitsOf } from '@/components/platform/learn/CourseSidebar';
 import { BOARD_NAMES, examLabel, langAttr, learnPath, parseBoard, parseClass, subjectIdFor } from '@/components/platform/lib/catalog';
 import shell from '@/components/platform/shell/shell.module.css';
 import s from '@/components/platform/learn/learn.module.css';
+import c from '@/components/platform/learn/course.module.css';
 
 export const revalidate = 3600;
 
@@ -58,16 +62,6 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   });
 }
 
-function groupByUnit(chapters: CatalogChapter[]): Array<{ unit: string | null; chapters: CatalogChapter[] }> {
-  const groups: Array<{ unit: string | null; chapters: CatalogChapter[] }> = [];
-  for (const ch of chapters) {
-    const last = groups[groups.length - 1];
-    if (last && last.unit === ch.unit) last.chapters.push(ch);
-    else groups.push({ unit: ch.unit, chapters: [ch] });
-  }
-  return groups;
-}
-
 export default async function SubjectPage({ params }: { params: Promise<Params> }) {
   requirePlatform();
   const loaded = await load(params);
@@ -75,65 +69,80 @@ export default async function SubjectPage({ params }: { params: Promise<Params> 
   const { board, classLevel, data } = loaded;
   const subject = data.subject;
   const lang = langAttr(subject.language);
-  const groups = groupByUnit(data.chapters);
-  const showUnits = groups.some((g) => g.unit);
+  const subjectHref = learnPath(board, classLevel, subject.id);
+  const units = unitsOf(data.chapters);
+  const showUnits = units.some((g) => g.unit);
+  const link = (ch: (typeof data.chapters)[number]): CourseChapterLink => ({ id: ch.id, number: ch.number, title: ch.title, href: learnPath(board, classLevel, subject.id, ch.id) });
 
   return (
-    <div className={shell.page}>
-      <PageHeader
-        crumbs={[
-          { name: 'Learn', path: '/learn' },
-          { name: `${BOARD_NAMES[board]} Class ${classLevel}`, path: learnPath(board, classLevel) },
-          { name: subject.name, path: learnPath(board, classLevel, subject.id) },
-        ]}
-        title={subject.name}
-        lead={`${examLabel(board, classLevel)} Class ${classLevel} · ${data.chapters.length} chapters · ${data.academicYear} syllabus`}
-      />
-      {subject.theoryOnly && (
-        <div className={s.notice}>
-          <Icon name="info" size={20} />
-          <p>We cover the theory part of this subject. Practicals happen at school.</p>
-        </div>
-      )}
-      <section className={s.section} aria-labelledby="chapters-title">
-        <h2 id="chapters-title" className={s.sectionTitle}>
-          Chapters
-        </h2>
-        {data.chapters.length === 0 && <p className={s.sectionNote}>Chapters for this subject are being added.</p>}
-        {groups.map((g, gi) => (
-          <div key={`${g.unit ?? 'none'}-${gi}`}>
-            {showUnits && g.unit && (
-              <h3 className={s.unitHeading} lang={lang}>
-                {g.unit}
-              </h3>
+    <div className={`${shell.page} ${shell.wide}`}>
+      <MasteryProvider subjectId={subject.id}>
+        <div className={c.layout}>
+          <CourseSidebar title={subject.name} href={subjectHref} units={units.map((u) => ({ unit: u.unit, chapters: u.chapters.map(link) }))} lang={lang} />
+          <div className={c.main}>
+            <PageHeader
+              crumbs={[
+                { name: 'Learn', path: '/learn' },
+                { name: `${BOARD_NAMES[board]} Class ${classLevel}`, path: learnPath(board, classLevel) },
+                { name: subject.name, path: subjectHref },
+              ]}
+              title={subject.name}
+              lead={`${examLabel(board, classLevel)} Class ${classLevel} · ${data.chapters.length} chapters · ${data.academicYear} syllabus`}
+            />
+            {subject.theoryOnly && (
+              <div className={s.notice}>
+                <Icon name="info" size={20} />
+                <p>We cover the theory part of this subject. Practicals happen at school.</p>
+              </div>
             )}
-            <ol className={s.list}>
-              {g.chapters.map((ch) => (
-                <li key={ch.id}>
-                  <Link href={learnPath(board, classLevel, subject.id, ch.id)} className={s.itemLink}>
-                    <span className={s.chapterNumber} aria-hidden="true">
-                      {ch.number}
-                    </span>
-                    <span className={s.itemMain}>
-                      <span className={s.itemTitle} lang={lang}>
-                        <span className="p-visually-hidden">Chapter {ch.number}: </span>
-                        {ch.title}
+            {data.chapters.length > 0 && <SubjectMasteryHeader subjectId={subject.id} name={subject.name} chapters={data.chapters.map(link)} lang={lang} />}
+
+            <section className={s.section} aria-labelledby="chapters-title">
+              <h2 id="chapters-title" className={s.sectionTitle}>
+                Chapters <span className={s.sectionCount}>{data.chapters.length}</span>
+              </h2>
+              {data.chapters.length === 0 && <p className={s.sectionNote}>Chapters for this subject are being added.</p>}
+              {units.map((g, gi) => (
+                <div key={`${g.unit ?? 'none'}-${gi}`} className={c.unitCard}>
+                  {showUnits && g.unit && (
+                    <h3 className={c.unitHead} lang={lang}>
+                      <span>{g.unit}</span>
+                      <span className={c.unitCount} lang="en">
+                        {g.chapters.length} {g.chapters.length === 1 ? 'chapter' : 'chapters'}
                       </span>
-                      <span className={s.itemMeta}>
-                        {ch.titleEn && ch.titleEn !== ch.title && <span>{ch.titleEn}</span>}
-                        <span>{ch.topics.length} topics</span>
-                        {!ch.boardAssessed && <Badge>Not in board exam</Badge>}
-                        <ChapterProgressNote chapterId={ch.id} />
-                      </span>
-                    </span>
-                    <Icon name="chevronRight" size={20} className={s.itemChevron} />
-                  </Link>
-                </li>
+                    </h3>
+                  )}
+                  <ol className={c.chapterList}>
+                    {g.chapters.map((ch) => (
+                      <li key={ch.id}>
+                        <Link href={learnPath(board, classLevel, subject.id, ch.id)} className={c.chapterLink}>
+                          <span className={c.chapterNum} aria-hidden="true">
+                            {ch.number}
+                          </span>
+                          <span className={c.chapterMain}>
+                            <span className={c.chapterTitle} lang={lang}>
+                              <span className="p-visually-hidden">Chapter {ch.number}: </span>
+                              {ch.title}
+                            </span>
+                            <span className={c.chapterMeta}>
+                              <ChapterMasteryPip chapterId={ch.id} />
+                              {ch.titleEn && ch.titleEn !== ch.title && <span>{ch.titleEn}</span>}
+                              <span>{ch.topics.length} topics</span>
+                              {!ch.boardAssessed && <Badge>Not in board exam</Badge>}
+                              <ChapterProgressNote chapterId={ch.id} />
+                            </span>
+                          </span>
+                          <Icon name="chevronRight" size={20} className={s.itemChevron} />
+                        </Link>
+                      </li>
+                    ))}
+                  </ol>
+                </div>
               ))}
-            </ol>
+            </section>
           </div>
-        ))}
-      </section>
+        </div>
+      </MasteryProvider>
     </div>
   );
 }

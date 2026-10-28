@@ -5,45 +5,13 @@
  */
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Badge } from '@/components/platform/ui/kit/Display';
+
 import { Button } from '@/components/platform/ui/kit/Button';
-import { Icon } from '@/components/platform/ui/kit/Icon';
+
 import { useSession } from '../auth/SessionProvider';
 import { chapterSummary, readGuestProgress, rememberGuestBoardClass, type ChapterGuestSummary } from '../lib/guest-storage';
-import { BOARD_NAMES, examLabel, learnPath, type BoardSlug } from '../lib/catalog';
+import type { BoardSlug } from '../lib/catalog';
 import s from './learn.module.css';
-
-/** "Continue with CBSE Class 10" from the profile (members) or the last class a guest opened. */
-export function ContinueLearning() {
-  const { state } = useSession();
-  const [guestPick, setGuestPick] = useState<{ board: BoardSlug; classLevel: number } | null>(null);
-  useEffect(() => {
-    const p = readGuestProgress();
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- localStorage is only readable after mount
-    if (p.board && p.classLevel) setGuestPick({ board: p.board, classLevel: p.classLevel });
-  }, []);
-
-  const pick =
-    state.status === 'member' && state.user.board && state.user.classLevel
-      ? { board: state.user.board, classLevel: state.user.classLevel }
-      : state.status === 'guest'
-        ? guestPick
-        : null;
-  if (!pick) return null;
-  return (
-    <div className={s.continueCard} data-testid="continue-learning">
-      <p className={s.continueText}>
-        {BOARD_NAMES[pick.board]} · Class {pick.classLevel}
-        {pick.board === 'cisce' ? ` (${examLabel(pick.board, pick.classLevel)})` : ''}
-      </p>
-      <Link href={learnPath(pick.board, pick.classLevel)} className={s.viewLink} style={{ padding: '8px 16px' }}>
-        <span className={s.viewHead}>
-          Continue <Icon name="chevronRight" size={18} />
-        </span>
-      </Link>
-    </div>
-  );
-}
 
 /** Remembers the class a guest opens, so the profile can be filled after sign-up (merge-guest). */
 export function RememberClass({ board, classLevel }: { board: BoardSlug; classLevel: number }) {
@@ -87,11 +55,7 @@ export interface ChapterTestItem {
 export function ChapterTestsCard({ tests = [], seriesHref }: { tests?: ChapterTestItem[]; seriesHref?: string }) {
   const { state, openLogin } = useSession();
   return (
-    <div className={s.viewLink} data-testid="chapter-tests">
-      <span className={s.viewHead}>
-        Chapter tests <Badge tone="accent">Free</Badge>
-      </span>
-      <p className={s.viewBlurb}>Short and long chapter tests in board pattern, with results and analysis.</p>
+    <div className={s.testsBody} data-testid="chapter-tests">
       {tests.length > 0 && (
         <ul className={s.testList}>
           {tests.map((t) => (

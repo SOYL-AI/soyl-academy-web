@@ -1,11 +1,13 @@
 /**
- * Mastery levels (Khan Academy style): not started → attempted → familiar → proficient → mastered.
- * Pure and deterministic, so the same rules show a guest's device progress and a member's server progress.
- * When the API sends a level (GET /v1/me/progress, learning-insights), the UI shows the API's level; this
- * function is the guest fallback and must stay equivalent to the shared one in platform/shared.
+ * Mastery levels in the UI (Khan Academy style): not started → attempted → familiar → proficient → mastered.
+ * The formula is the shared one (platform/shared/learning/mastery.ts, the same the API uses for GET
+ * /v1/me/mastery), so a guest's device progress and a member's server progress show the same level for the
+ * same evidence. This module adds the words and the evidence we can build in the browser.
  */
-export const MASTERY_LEVELS = ['not_started', 'attempted', 'familiar', 'proficient', 'mastered'] as const;
-export type MasteryLevel = (typeof MASTERY_LEVELS)[number];
+import { chapterMastery, EMPTY_EVIDENCE, MASTERY_LEVELS, subjectMastery, type ChapterEvidence, type MasteryHint, type MasteryLevel } from '@/platform/shared/learning/mastery';
+
+export { MASTERY_LEVELS, chapterMastery, subjectMastery };
+export type { ChapterEvidence, MasteryHint, MasteryLevel };
 
 export const MASTERY_LABELS: Record<MasteryLevel, string> = {
   not_started: 'Not started',
@@ -15,47 +17,60 @@ export const MASTERY_LABELS: Record<MasteryLevel, string> = {
   mastered: 'Mastered',
 };
 
-/** Mastery points per level (subject percentage = average over its chapters). */
-export const MASTERY_POINTS: Record<MasteryLevel, number> = { not_started: 0, attempted: 10, familiar: 50, proficient: 80, mastered: 100 };
-
-export interface ChapterActivity {
-  /** Lesson parts started / completed (0 when the chapter has no lesson). */
-  lessonPartsStarted: number;
-  lessonPartsCompleted: number;
-  lessonParts: number;
-  /** Distinct practice questions answered / answered correctly, and the chapter's practice total (0 = unknown). */
-  answered: number;
-  correct: number;
-  practiceTotal: number;
-}
-
-export function masteryLevel(a: ChapterActivity): MasteryLevel {
-  const any = a.lessonPartsStarted > 0 || a.lessonPartsCompleted > 0 || a.answered > 0;
-  if (!any) return 'not_started';
-  const accuracy = a.answered > 0 ? a.correct / a.answered : 0;
-  const total = a.practiceTotal > 0 ? a.practiceTotal : Math.max(a.answered, 1);
-  const coverage = a.correct / total;
-  const lessonDone = a.lessonParts === 0 || a.lessonPartsCompleted >= a.lessonParts;
-  if (coverage >= 0.7 && accuracy >= 0.85 && lessonDone) return 'mastered';
-  if (coverage >= 0.4 && accuracy >= 0.7) return 'proficient';
-  if (a.correct >= 3 && accuracy >= 0.5) return 'familiar';
-  if (lessonDone && a.lessonParts > 0 && a.answered === 0) return 'familiar';
-  return 'attempted';
-}
+export const MASTERY_HINT_TEXT: Record<MasteryHint, string> = {
+  finish_lesson: 'Finish the lesson',
+  practice_more: 'Solve more practice questions',
+  improve_accuracy: 'Get more right on the first try',
+  take_chapter_test: 'Take the chapter test',
+  improve_chapter_test: 'Score 80% or more in the chapter test',
+};
 
 export function isMasteryLevel(v: unknown): v is MasteryLevel {
   return typeof v === 'string' && (MASTERY_LEVELS as readonly string[]).includes(v);
 }
 
-/** Count of chapters per level, in level order (for segmented bars). */
+/** Chapters per level, in level order (segmented bars). */
 export function masteryCounts(levels: readonly MasteryLevel[]): Record<MasteryLevel, number> {
-  const out = { not_started: 0, attempted: 0, familiar: 0, proficient: 0, mastered: 0 } as Record<MasteryLevel, number>;
+  const out = Object.fromEntries(MASTERY_LEVELS.map((l) => [l, 0])) as Record<MasteryLevel, number>;
   for (const l of levels) out[l] += 1;
   return out;
 }
 
-/** 0–100: average mastery points over chapters. */
-export function masteryPercent(levels: readonly MasteryLevel[]): number {
-  if (levels.length === 0) return 0;
-  return Math.round(levels.reduce((n, l) => n + MASTERY_POINTS[l], 0) / levels.length);
+/**
+ * Practice pool size assumed when a page does not know a chapter's real one (CONTEXT §8: about 60 questions per
+ * chapter), so one right answer never reads as full coverage. Members' levels come from the API instead.
+ */
+export const ASSUMED_PRACTICE_POOL = 60;
+
+/** What the browser knows about one chapter (device progress or GET /v1/me/progress). */
+export interface BrowserChapterActivity {
+  lessonPartsStarted: number;
+  lessonPartsCompleted: number;
+  /** Distinct questions answered / answered right (the latest answer per question on a device). */
+  answered: number;
+  correct: number;
+}
+
+/**
+ * Evidence for the shared formula from browser data. Totals come from the page when it knows them (the hub
+ * knows the deck parts and the practice pool); otherwise what was touched stands in. First-try accuracy is
+ * approximated by the kept answers (a device stores one answer per question).
+ */
+export function evidenceFrom(a: BrowserChapterActivity | null | undefined, totals: { lessonParts?: number; practiceTotal?: number; chapterTestAvailable?: boolean } = {}): ChapterEvidence {
+  if (!a) return { ...EMPTY_EVIDENCE, lessonParts: totals.lessonParts ?? 0, practiceTotal: totals.practiceTotal ?? 0, chapterTestAvailable: false };
+  const lessonParts = totals.lessonParts ?? Math.max(a.lessonPartsStarted, a.lessonPartsCompleted);
+  const practiceTotal = totals.practiceTotal ?? (a.answered > 0 ? Math.max(a.answered, ASSUMED_PRACTICE_POOL) : 0);
+  return {
+    lessonParts,
+    lessonPartsStarted: a.lessonPartsStarted,
+    lessonPartsCompleted: a.lessonPartsCompleted,
+    practiceTotal,
+    practiceAttempted: a.answered,
+    practiceSolved: a.correct,
+    firstTryChecked: a.answered,
+    firstTryCorrect: a.correct,
+    // The browser never knows a chapter-test score here; leaving the test out keeps the level honest.
+    chapterTestAvailable: false,
+    chapterTestPct: null,
+  };
 }

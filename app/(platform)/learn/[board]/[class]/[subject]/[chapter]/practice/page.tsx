@@ -38,7 +38,7 @@ export default async function PracticePage({ params }: { params: Promise<Chapter
   const { hub, base, lang, chapterId } = r;
   const hi = lang === 'hi';
   return (
-    <div className={shell.page}>
+    <div className={`${shell.page} ${shell.wide}`}>
       <PageHeader crumbs={[...r.crumbs, { name: hi ? 'अभ्यास' : 'Practice', path: `${base}/practice` }]} title={`${hi ? 'अभ्यास' : 'Practice'}: ${hub.chapter.title}`} lang={lang} />
       <PracticeApp chapterId={chapterId} lang={lang} total={hub.assets.practice.count} byType={hub.assets.practice.byType} byDifficulty={hub.assets.practice.byDifficulty} />
     </div>

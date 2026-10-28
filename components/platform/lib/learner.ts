@@ -3,7 +3,7 @@
  * member's GET /v1/me/progress or the guest's device progress (soyl_guest_v1). Pure functions (tested).
  */
 import type { GuestProgress, MyProgress, Streak } from '@/platform/shared/api-client';
-import { isMasteryLevel, masteryLevel, type MasteryLevel } from './mastery';
+import { chapterMastery, evidenceFrom, type MasteryLevel } from './mastery';
 
 export interface ChapterSnapshot {
   chapterId: string;
@@ -47,22 +47,24 @@ export function subjectOfChapter(chapterId: string): string {
   return chapterId.replace(/-ch\d{2}$/, '');
 }
 
+/** Level from what the browser knows (the hub and subject pages refine it with real totals or the API's level). */
+function levelOf(started: number, completed: number, answered: number, correct: number): MasteryLevel {
+  return chapterMastery(evidenceFrom({ lessonPartsStarted: started, lessonPartsCompleted: completed, answered, correct })).level;
+}
+
 function latest(a: string | null, b: string | null): string | null {
   if (!a) return b;
   if (!b) return a;
   return a > b ? a : b;
 }
 
-type MemberChapter = MyProgress['subjects'][number]['chapters'][number] & { mastery?: unknown; masteryLevel?: unknown };
 
 export function fromMemberProgress(p: MyProgress): LearnerProgress {
   const chapters: Record<string, ChapterSnapshot> = {};
   const subjects: SubjectSnapshot[] = p.subjects.map((s) => ({
     subjectId: s.subjectId,
     name: s.name,
-    chapters: s.chapters.map((raw) => {
-      const c = raw as MemberChapter;
-      const apiLevel = isMasteryLevel(c.masteryLevel) ? c.masteryLevel : isMasteryLevel(c.mastery) ? c.mastery : null;
+    chapters: s.chapters.map((c) => {
       const snap: ChapterSnapshot = {
         chapterId: c.chapterId,
         subjectId: s.subjectId,
@@ -75,16 +77,7 @@ export function fromMemberProgress(p: MyProgress): LearnerProgress {
         answered: c.practice.questionsAnswered,
         correct: c.practice.questionsCorrect,
         lastActivityAt: latest(c.lessons.updatedAt, c.practice.lastAnsweredAt),
-        level:
-          apiLevel ??
-          masteryLevel({
-            lessonPartsStarted: c.lessons.partsStarted,
-            lessonPartsCompleted: c.lessons.partsCompleted,
-            lessonParts: c.lessons.partsStarted,
-            answered: c.practice.questionsAnswered,
-            correct: c.practice.questionsCorrect,
-            practiceTotal: 0,
-          }),
+        level: levelOf(c.lessons.partsStarted, c.lessons.partsCompleted, c.practice.questionsAnswered, c.practice.questionsCorrect),
       };
       chapters[c.chapterId] = snap;
       return snap;
@@ -158,7 +151,7 @@ export function fromGuestProgress(g: GuestProgress): LearnerProgress {
       answered: e.answers.size,
       correct: nCorrect,
       lastActivityAt: e.last,
-      level: masteryLevel({ lessonPartsStarted: e.started.size, lessonPartsCompleted: e.completed.size, lessonParts: e.started.size, answered: e.answers.size, correct: nCorrect, practiceTotal: 0 }),
+      level: levelOf(e.started.size, e.completed.size, e.answers.size, nCorrect),
     };
     chapters[chapterId] = snap;
     lessonsCompleted += e.completed.size;

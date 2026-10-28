@@ -57,8 +57,9 @@
   min-height: 64px;
   padding: var(--p-space-2);
   border: 1px solid var(--p-border-strong);
-  border-radius: var(--p-radius-md);
-  background: var(--p-surface);
+  border-radius: var(--p-radius-lg);
+  background: var(--p-surface-2);
+  transition: border-color var(--p-duration-fast) var(--p-ease), background-color var(--p-duration-fast) var(--p-ease), transform var(--p-duration-fast) var(--p-ease);
   color: var(--p-ink);
   text-decoration: none;
   text-align: center;
@@ -66,6 +67,7 @@
 .classLink:hover {
   border-color: var(--p-accent);
   background: var(--p-accent-soft);
+  transform: translateY(-1px);
 }
 .classLink:focus-visible,
 .itemLink:focus-visible,
@@ -103,7 +105,7 @@
   min-height: 56px;
   padding: var(--p-space-3) var(--p-space-4);
   border: 1px solid var(--p-border);
-  border-radius: var(--p-radius-md);
+  border-radius: var(--p-radius-lg);
   background: var(--p-surface);
   color: var(--p-ink);
   text-decoration: none;
@@ -240,4 +242,16 @@
   list-style: disc;
   color: var(--p-ink-muted);
   font-size: var(--p-text-sm);
+}
+.testsBody {
+  display: grid;
+  gap: var(--p-space-2);
+}
+/* ADR-023: board cards inside the /learn hero. */
+.boardCard {
+  padding: var(--p-space-4);
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-xl);
+  background: var(--p-surface);
+  box-shadow: var(--p-shadow-1);
 }

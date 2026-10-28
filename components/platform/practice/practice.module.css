@@ -1,9 +1,226 @@
+/* Practice (ADR-023, LeetCode style): summary, problem list + filters, question workspace.
+   Mobile-first at 360 px (stacked); split view from 1024 px. camelCase class names (Tailwind leak rule). */
 .app {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
+  gap: var(--p-space-4);
+  margin-top: var(--p-space-4);
+}
+
+/* ── "Solved x/y" summary ───────────────────────────────────────────────── */
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-4);
+  padding: var(--p-space-4);
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-xl);
+  background: var(--p-surface);
+}
+.ringText {
+  display: grid;
+  justify-items: center;
+  line-height: 1.05;
+}
+.ringText b {
+  font-size: var(--p-text-lg);
+}
+.ringText span {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-xs);
+  font-weight: 600;
+}
+.summaryBody {
+  display: grid;
+  flex: 1 1 220px;
+  gap: var(--p-space-2);
+  min-width: 0;
+}
+.summaryTitle {
+  margin: 0;
+  font-weight: 650;
+}
+.summaryTitle b {
+  font-size: var(--p-text-lg);
+  font-variant-numeric: tabular-nums;
+}
+.summaryMuted {
+  color: var(--p-ink-subtle);
+  font-weight: 500;
+}
+.bandCounts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--p-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.bandCounts li {
+  display: grid;
+  gap: 2px;
+  padding: var(--p-space-2) var(--p-space-3);
+  border-radius: var(--p-radius-md);
+  background: var(--p-surface-2);
+}
+.bandName {
+  font-size: var(--p-text-xs);
+  font-weight: 700;
+}
+.bandCounts li[data-band='easy'] .bandName {
+  color: var(--p-easy);
+}
+.bandCounts li[data-band='medium'] .bandName {
+  color: var(--p-medium);
+}
+.bandCounts li[data-band='hard'] .bandName {
+  color: var(--p-hard);
+}
+.bandNum {
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+.bandNum span {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-sm);
+  font-weight: 500;
+}
+.deviceNote {
+  margin: 0;
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-sm);
+}
+
+/* ── Split view ──────────────────────────────────────────────────────────── */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--p-space-4);
+  align-items: start;
+}
+.listPane {
+  display: grid;
   gap: var(--p-space-3);
-  margin-top: var(--p-space-3);
-  max-width: 48rem;
+  min-width: 0;
+}
+.workspace {
+  display: grid;
+  gap: var(--p-space-3);
+  min-width: 0;
+  scroll-margin-top: 72px;
+}
+.workspace:focus {
+  outline: none;
+}
+@media (min-width: 1024px) {
+  .split {
+    grid-template-columns: minmax(300px, 380px) minmax(0, 1fr);
+  }
+  .listPane {
+    position: sticky;
+    top: 76px;
+    max-height: calc(100vh - 92px);
+    overflow-y: auto;
+    padding: var(--p-space-3);
+    border: 1px solid var(--p-border);
+    border-radius: var(--p-radius-xl);
+    background: var(--p-surface);
+    scrollbar-width: thin;
+  }
+}
+
+/* ── Filters ─────────────────────────────────────────────────────────────── */
+.filterBar {
+  display: grid;
+  gap: var(--p-space-2);
+}
+.segmented {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2px;
+  margin: 0;
+  padding: 3px;
+  border: 0;
+  border-radius: var(--p-radius-lg);
+  background: var(--p-surface-3);
+}
+.segment {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 36px;
+  padding: 0 var(--p-space-1);
+  border-radius: var(--p-radius-md);
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+  font-weight: 650;
+  cursor: pointer;
+}
+.segment input,
+.bandChip input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.segmentOn {
+  background: var(--p-surface);
+  color: var(--p-ink);
+  box-shadow: var(--p-shadow-1);
+}
+.segment:has(input:focus-visible),
+.bandChip:has(input:focus-visible) {
+  outline: 2px solid var(--p-focus);
+  outline-offset: 1px;
+}
+.bandChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--p-space-2);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.bandChip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 var(--p-space-3);
+  border: 1px solid var(--p-border-strong);
+  border-radius: var(--p-radius-pill);
+  background: var(--p-surface);
+  font-size: var(--p-text-sm);
+  font-weight: 650;
+  cursor: pointer;
+}
+.bandChip[data-band='easy'] {
+  color: var(--p-easy);
+}
+.bandChip[data-band='medium'] {
+  color: var(--p-medium);
+}
+.bandChip[data-band='hard'] {
+  color: var(--p-hard);
+}
+.bandChipOn[data-band='easy'] {
+  border-color: var(--p-easy);
+  background: var(--p-easy-soft);
+}
+.bandChipOn[data-band='medium'] {
+  border-color: var(--p-medium);
+  background: var(--p-medium-soft);
+}
+.bandChipOn[data-band='hard'] {
+  border-color: var(--p-hard);
+  background: var(--p-hard-soft);
+}
+.chipCount {
+  color: var(--p-ink-subtle);
+  font-weight: 500;
 }
 .filters {
   border: 1px solid var(--p-border);
@@ -19,6 +236,7 @@
   align-items: center;
   gap: var(--p-space-2);
   min-height: var(--p-touch);
+  font-size: var(--p-text-sm);
   font-weight: 650;
   cursor: pointer;
 }
@@ -65,9 +283,6 @@
   border-color: var(--p-accent);
   background: var(--p-accent-soft);
 }
-.chipCount {
-  color: var(--p-ink-muted);
-}
 .status {
   display: flex;
   flex-wrap: wrap;
@@ -75,16 +290,118 @@
   color: var(--p-ink-muted);
   font-size: var(--p-text-sm);
 }
-.deviceNote {
+
+/* ── Problem list ────────────────────────────────────────────────────────── */
+.listToggle {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-2);
+  min-height: var(--p-touch);
+  padding: 0 var(--p-space-3);
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-lg);
+  background: var(--p-surface);
+  color: var(--p-ink);
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+.listToggle:focus-visible {
+  outline: 2px solid var(--p-focus);
+  outline-offset: 2px;
+}
+.toggleChevron {
+  margin-left: auto;
+  transition: transform var(--p-duration-base) var(--p-ease);
+}
+.listToggle[aria-expanded='true'] .toggleChevron {
+  transform: rotate(180deg);
+}
+.problemList {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.problemList[data-open='false'] {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .listToggle {
+    display: none;
+  }
+  .problemList[data-open] {
+    display: grid;
+  }
+}
+.problem {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-2);
+  width: 100%;
+  min-height: 52px;
+  padding: var(--p-space-2);
+  border: 1px solid transparent;
+  border-radius: var(--p-radius-md);
+  background: transparent;
+  color: var(--p-ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.problemList > li:nth-child(odd) .problem {
+  background: var(--p-surface-2);
+}
+.problem:hover {
+  border-color: var(--p-border-strong);
+}
+.problemList > li .problemOn,
+.problemList > li .problemOn:hover {
+  border-color: var(--p-accent);
+  background: var(--p-accent-soft);
+}
+.problem:focus-visible {
+  outline: 2px solid var(--p-focus);
+  outline-offset: 1px;
+}
+.problemStatus {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
   color: var(--p-ink-subtle);
 }
-.cardAnchor {
+.problemStatus[data-status='solved'] {
+  color: var(--p-success);
+}
+.problemStatus[data-status='attempted'] {
+  color: var(--p-medium);
+}
+.problemMain {
+  display: grid;
+  flex: 1;
+  gap: 1px;
   min-width: 0;
-  scroll-margin-top: var(--p-space-4);
 }
-.cardAnchor:focus {
-  outline: none;
+.problemTitle {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: var(--p-text-sm);
+  font-weight: 600;
+  line-height: 1.35;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
+.problemNum {
+  color: var(--p-ink-subtle);
+  font-variant-numeric: tabular-nums;
+}
+.problemMeta {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-xs);
+}
+
+/* ── Workspace ───────────────────────────────────────────────────────────── */
 .skeleton {
   display: grid;
   gap: var(--p-space-3);
@@ -104,58 +421,26 @@
   justify-content: space-between;
   gap: var(--p-space-2);
 }
-.listBox {
-  border-top: 1px solid var(--p-border);
-  padding-top: var(--p-space-2);
-}
-.listBox summary {
-  min-height: var(--p-touch);
-  display: flex;
+.keysHint {
+  display: none;
   align-items: center;
-  cursor: pointer;
-  font-weight: 600;
+  gap: 6px;
+  margin: 0;
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-xs);
 }
-.list {
-  list-style: none;
-  margin: 0 0 var(--p-space-2);
-  padding: 0;
-  display: grid;
-  gap: var(--p-space-1);
-}
-.listItem {
-  display: flex;
-  align-items: center;
-  gap: var(--p-space-2);
-  width: 100%;
-  min-height: var(--p-touch);
-  padding: 0 var(--p-space-3);
-  border: 1px solid var(--p-border);
-  border-radius: var(--p-radius-md);
+.keysHint kbd {
+  padding: 0 5px;
+  border: 1px solid var(--p-border-strong);
+  border-bottom-width: 2px;
+  border-radius: 4px;
   background: var(--p-surface);
-  color: var(--p-ink);
-  font: inherit;
-  text-align: left;
-  cursor: pointer;
-}
-.listItem:focus-visible {
-  outline: 2px solid var(--p-focus);
-  outline-offset: 1px;
-}
-.listCurrent {
-  border-color: var(--p-accent);
-}
-.listType {
-  flex: 1;
   color: var(--p-ink-muted);
-  font-size: var(--p-text-sm);
-}
-.listStatus {
-  font-size: var(--p-text-sm);
+  font: inherit;
   font-weight: 650;
 }
-.good {
-  color: var(--p-success);
-}
-.bad {
-  color: var(--p-danger);
+@media (min-width: 1024px) and (hover: hover) {
+  .keysHint {
+    display: flex;
+  }
 }
