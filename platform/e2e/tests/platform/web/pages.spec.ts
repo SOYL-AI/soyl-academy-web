@@ -132,7 +132,16 @@ test('/me renders under the nonce CSP without violations (fixture)', async ({ pa
 });
 
 test('the marketing header shows the Learn entry point when the flag is on', async ({ page }) => {
-  // Platform pages have their own app shell since ADR-023, so the marketing header is checked on the home page.
+  // Platform pages have their own app shell since ADR-023, so the marketing header is checked on the home page,
+  // with analytics declined (the fixture fails on any Vercel Analytics request, which a marketing page with
+  // "Accept all" would rightly make).
+  await page.addInitScript(() => {
+    try {
+      window.localStorage.setItem('soyl_cookie_consent_v1', JSON.stringify({ necessary: true, analytics: false, marketing: false, timestamp: new Date().toISOString() }));
+    } catch {
+      // ignore
+    }
+  });
   await page.goto('/');
   await page.getByRole('button', { name: 'Open menu' }).click();
   await expect(page.locator('#mobile-menu').getByRole('link', { name: 'Learn' })).toHaveAttribute('href', '/learn');
