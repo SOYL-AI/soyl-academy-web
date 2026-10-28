@@ -29,6 +29,8 @@ export interface CreditChipProps {
   balance: number;
   /** When the balance resets; defaults to the next IST midnight. */
   resetAt?: Date | string;
+  /** Bonus credits included in today's balance (D-044): named in the label and the tooltip. */
+  bonusToday?: number;
   /** Show a warning border at or below this balance. */
   lowAt?: number;
   className?: string;
@@ -38,7 +40,7 @@ export interface CreditChipProps {
  * Placeholder credit display (M1): balance + reset countdown. The countdown renders only after
  * mount, so server HTML and hydration never disagree about the time.
  */
-export function CreditChip({ balance, resetAt, lowAt = 3, className }: CreditChipProps) {
+export function CreditChip({ balance, resetAt, bonusToday = 0, lowAt = 3, className }: CreditChipProps) {
   const [now, setNow] = useState<Date | null>(null);
   useEffect(() => {
     const tick = () => setNow(new Date());
@@ -52,14 +54,15 @@ export function CreditChip({ balance, resetAt, lowAt = 3, className }: CreditChi
 
   const reset = now ? (resetAt ? new Date(resetAt) : nextIstMidnight(now)) : null;
   const countdown = now && reset ? formatCountdown(reset.getTime() - now.getTime()) : null;
-  const label = `${balance} AI credit${balance === 1 ? '' : 's'} left today${countdown ? `, resets in ${countdown}` : ', resets at midnight IST'}`;
+  const label = `${balance} AI credit${balance === 1 ? '' : 's'} left today${bonusToday > 0 ? `, including ${bonusToday} bonus` : ''}${countdown ? `, resets in ${countdown}` : ', resets at midnight IST'}`;
 
   return (
-    <span className={cx(s.credit, balance <= lowAt && s.creditLow, className)}>
+    <span className={cx(s.credit, balance <= lowAt && s.creditLow, className)} title={bonusToday > 0 ? `Includes ${bonusToday} bonus credits earned today` : undefined}>
       <span className="p-visually-hidden">{label}</span>
       <Icon name="spark" size={18} className={s.creditIcon} />
       <span className={s.creditBalance} aria-hidden="true">
         {balance}
+        {bonusToday > 0 && <span className={s.creditBonus}>+{bonusToday}</span>}
       </span>
       <span className={s.creditReset} aria-hidden="true">
         {countdown ? `resets in ${countdown}` : 'resets 12 am IST'}

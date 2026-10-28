@@ -6,6 +6,7 @@
  * - Subscription: GET /v1/me/subscription, cancel renewal (POST /v1/billing/cancel: cancel at period end);
  * - AI credits: today's balance and reset (GET /v1/credits) and the history (GET /v1/credits/ledger).
  */
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
 import type { CreditLedger, Credits, MyAttempt, MySubscription } from '@/platform/shared/api-client';
@@ -19,6 +20,9 @@ import { api } from '../lib/api-browser';
 import { problemMessage } from '../lib/problems';
 import { attemptPath, resultPath, scoreText } from '../tests/player-model';
 import s from './me.module.css';
+
+// D-044: the 14-day chart loads after the page (JS budget on /me).
+const CreditHistorySection = dynamic(() => import('../ai/CreditHistory').then((m) => m.CreditHistorySection), { ssr: false, loading: () => <Skeleton variant="block" height={140} /> });
 
 function shortDate(iso: string | null): string {
   if (!iso) return '';
@@ -138,6 +142,10 @@ export function SubscriptionCard() {
           )}
           <div className={s.actions}>
             <Link href="/plans">{sub.plan === 'free' ? 'See plans' : 'Change plan'}</Link>
+            {/* Bills of Supply and credit notes (invoices work, merged separately into platform/main). */}
+            <Link href="/me/invoices" data-testid="invoices-link">
+              Invoices and receipts
+            </Link>
             {canCancel && (
               <Button variant="secondary" size="sm" onClick={() => setConfirm(true)} data-testid="cancel-plan">
                 Cancel renewal
@@ -175,7 +183,7 @@ export function SubscriptionCard() {
 const KIND_TEXT: Record<CreditLedger['entries'][number]['kind'], string> = { grant: 'Daily credits', reserve: 'Used', charge: 'Settled', refund: 'Refunded', expire: 'Expired', bonus_goal: 'Bonus: daily practice goal', bonus_streak: 'Bonus: streak milestone' };
 
 export function CreditsCard() {
-  const { aiAllowed } = useCredits();
+  const { aiAllowed, openGuide } = useCredits();
   const [credits, setCredits] = useState<Credits | null>(null);
   const [ledger, setLedger] = useState<CreditLedger['entries'] | null>(null);
   const [cursor, setCursor] = useState<string | null>(null);
@@ -210,12 +218,24 @@ export function CreditsCard() {
       </CardTitle>
       {credits ? (
         <p>
-          <strong>{creditsText(credits.balance)}</strong> left today of {credits.dailyCredits} ({credits.planName}). Resets in {formatCountdown(credits.resetInSeconds * 1000)} (00:00 IST).
+          <strong>{creditsText(credits.balance)}</strong> left today of {credits.dailyCredits} ({credits.planName})
+          {credits.bonusToday > 0 ? ` · ${credits.bonusToday} bonus credits earned today (included)` : ''}. Resets in {formatCountdown(credits.resetInSeconds * 1000)} (00:00 IST).
         </p>
       ) : (
         <Skeleton lines={1} />
       )}
       {!aiAllowed && <p className={s.muted}>AI features switch on once a parent approves your account.</p>}
+      {aiAllowed && (
+        <>
+          <div className={s.actions}>
+            <Button variant="secondary" size="sm" onClick={openGuide} data-testid="me-credit-guide">
+              What can I do with my credits?
+            </Button>
+          </div>
+          <h3 className={s.subTitle}>Your last 14 days</h3>
+          <CreditHistorySection />
+        </>
+      )}
       <details>
         <summary>Credits history</summary>
         {ledger === null ? (

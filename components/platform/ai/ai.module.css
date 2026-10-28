@@ -282,3 +282,27 @@
   display: grid;
   gap: var(--p-space-2);
 }
+
+/* D-044: "What can I do with my credits?" from the quote and paywall dialogs. */
+.textButton {
+  justify-self: start;
+  min-height: var(--p-touch);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--p-accent);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.askEmpty {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-3);
+}
+.askEmpty p {
+  flex: 1 1 200px;
+}

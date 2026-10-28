@@ -647,3 +647,10 @@
   font-size: var(--p-text-sm);
   font-weight: 500;
 }
+
+/* Leaderboard rows with the student's avatar (design-system, 2026-10-29). */
+.student {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-2);
+}

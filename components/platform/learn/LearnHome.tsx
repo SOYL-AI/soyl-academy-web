@@ -27,6 +27,7 @@ import { chapterHref } from './links';
 import { MasteryProvider, useCourseMastery } from './MasteryProvider';
 import { useLearnerProgress } from './ProgressProvider';
 import { subjectStyle } from './subject-style';
+import { SubjectGlyph } from '@/components/platform/ui/art/SubjectGlyph';
 import s from './home.module.css';
 
 export { chapterHref, greeting };
@@ -194,7 +195,7 @@ function SubjectsCard({ pick, subjects }: { pick: { board: BoardSlug; classLevel
               <li key={sub.subjectId}>
                 <Link href={learnPath(pick.board, pick.classLevel, sub.subjectId)} className={s.subjectRow}>
                   <span className={s.subjectTile} data-hue={st.hue} aria-hidden="true">
-                    {st.glyph}
+                    <SubjectGlyph kind={st.art} size={24} />
                   </span>
                   <span className={s.subjectName}>{sub.name}</span>
                   {agg ? (
@@ -251,7 +252,7 @@ export function GuestHome() {
                 <li key={sub.subjectId}>
                   <Link href={learnPath(shown.board, shown.classLevel, sub.subjectId)} className={s.readyCard}>
                     <span className={s.subjectTile} data-hue={st.hue} aria-hidden="true">
-                      {st.glyph}
+                      <SubjectGlyph kind={st.art} size={24} />
                     </span>
                     <span className={s.subjectName}>{sub.name}</span>
                     <Icon name="chevronRight" size={18} className={s.readyChevron} />

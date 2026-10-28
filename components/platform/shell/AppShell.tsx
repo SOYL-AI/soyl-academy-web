@@ -16,12 +16,14 @@ import type { ReactNode } from 'react';
 import { cx } from '@/components/platform/ui/cx';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { CreditChip } from '@/components/platform/ui/kit/CreditChip';
-import { Avatar } from '@/components/platform/ui/kit/Display';
+import { AnimalAvatar } from '@/components/platform/ui/kit/AnimalAvatar';
 import { Icon, type IconName } from '@/components/platform/ui/kit/Icon';
 import { useCredits } from '../ai/CreditsProvider';
 import { useSession } from '../auth/SessionProvider';
 import { CoinChip } from '../coins/CoinChip';
+import { CelebrationHost } from '../celebrate/CelebrationHost';
 import { useLearnerProgress } from '../learn/ProgressProvider';
+import { useMyAvatar } from '../me/MyAvatarProvider';
 import { isFocusRoute } from './chrome';
 import { ThemeToggle } from './ThemeToggle';
 import s from './appshell.module.css';
@@ -79,6 +81,7 @@ export function AppShell({ children, footer }: { children: ReactNode; footer?: R
       </div>
       {footer}
       {!focus && <TabBar pathname={pathname} />}
+      <CelebrationHost />
     </div>
   );
 }
@@ -108,7 +111,8 @@ export function MainSiteLink({ variant }: { variant: 'bar' | 'row' }) {
 
 function TopBar({ pathname }: { pathname: string }) {
   const { state, openLogin } = useSession();
-  const { credits, aiAllowed } = useCredits();
+  const { credits, aiAllowed, openGuide } = useCredits();
+  const mine = useMyAvatar();
   const name = state.status === 'member' ? state.user.displayName?.trim() || 'Student' : '';
   return (
     <header className={s.top}>
@@ -138,20 +142,36 @@ function TopBar({ pathname }: { pathname: string }) {
           {state.status === 'member' && <StreakChip />}
           {state.status === 'member' && <CoinChip className={s.coinChip} />}
           {state.status === 'member' && aiAllowed && credits && (
-            <Link href="/me#credits" className={s.creditLink} data-testid="credit-chip" data-balance={credits.balance}>
-              <CreditChip balance={credits.balance} resetAt={credits.resetAt} />
-            </Link>
+            <button
+              type="button"
+              className={s.creditLink}
+              data-testid="credit-chip"
+              data-balance={credits.balance}
+              aria-haspopup="dialog"
+              onClick={() => openGuide?.()}
+            >
+              <CreditChip balance={credits.balance} resetAt={credits.resetAt} bonusToday={credits.bonusToday ?? 0} />
+              <span className="p-visually-hidden">. What can I do with my credits?</span>
+            </button>
           )}
           <ThemeToggle />
           {state.status === 'loading' && <span className={s.placeholder} aria-hidden="true" />}
           {state.status === 'guest' && (
-            <Button size="sm" onClick={() => openLogin()} data-testid="login-button">
+            <Button
+              size="sm"
+              onClick={() => {
+                // D-045 interest counter (only after analytics consent); loaded on click, not with every page.
+                void import('../lib/interest').then((m) => m.trackInterest('signup_prompt_click', 'header'));
+                openLogin();
+              }}
+              data-testid="login-button"
+            >
               Log in
             </Button>
           )}
           {state.status === 'member' && (
             <Link href="/me" className={s.profile} data-testid="profile-link">
-              <Avatar name={name} size={32} decorative />
+              <AnimalAvatar avatar={mine?.avatar} size={32} decorative />
               <span className={s.profileName}>{name}</span>
               <span className="p-visually-hidden">, your profile</span>
             </Link>

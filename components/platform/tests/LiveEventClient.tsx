@@ -17,6 +17,7 @@ import { Badge, Card, CardTitle, EmptyState, Skeleton } from '@/components/platf
 import { Icon } from '@/components/platform/ui/kit/Icon';
 import { useToast } from '@/components/platform/ui/kit/Toast';
 import { useSession } from '../auth/SessionProvider';
+import { AnimalAvatar } from '@/components/platform/ui/kit/AnimalAvatar';
 import { AiNotice } from '../ai/AiDialogs';
 import { api } from '../lib/api-browser';
 import { attemptPath, LIVE_PHASE_LABELS, marksText, resultPath, scoreText, testProblemMessage } from './player-model';
@@ -239,8 +240,13 @@ export function Leaderboard({ eventId, compact }: { eventId: string; compact?: b
                   <tr key={`${e.rank}-${e.name ?? ''}-${e.isMe}`} data-me={e.isMe ? 'true' : undefined}>
                     <td>{e.rank}</td>
                     <td>
-                      {e.name ?? 'Student'}
-                      {e.isMe ? ' (you)' : ''}
+                      <span className={s.student}>
+                        <AnimalAvatar avatar={e.avatar} size={28} decorative />
+                        <span>
+                          {e.name ?? 'Student'}
+                          {e.isMe ? ' (you)' : ''}
+                        </span>
+                      </span>
                     </td>
                     <td>{scoreText(e.score)}</td>
                   </tr>

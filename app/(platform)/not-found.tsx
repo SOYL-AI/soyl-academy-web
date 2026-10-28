@@ -4,6 +4,7 @@
  */
 import Link from 'next/link';
 import { EmptyState } from '@/components/platform/ui/kit/Display';
+import { EmptyIllustration } from '@/components/platform/ui/art/EmptyIllustration';
 import shell from '@/components/platform/shell/shell.module.css';
 
 export default function PlatformNotFound() {
@@ -14,6 +15,7 @@ export default function PlatformNotFound() {
         title="We could not find that page"
         headingLevel="h2"
         icon="search"
+        art={<EmptyIllustration kind="not-found" />}
         action={
           <Link href="/learn" data-testid="not-found-learn">
             Go to Learn

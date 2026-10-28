@@ -245,3 +245,29 @@
   border-top: 2px dashed var(--p-danger);
   color: var(--p-danger);
 }
+
+/* Avatars and crests (design-system, 2026-10-29). */
+.crest {
+  background: transparent;
+}
+.podiumAvatar {
+  position: relative;
+  display: inline-grid;
+  margin-bottom: var(--p-space-1);
+}
+.podiumAvatar .medal,
+.place[data-place] .podiumAvatar .medal {
+  position: absolute;
+  right: -6px;
+  bottom: -4px;
+  width: 22px;
+  height: 22px;
+  font-size: var(--p-text-xs);
+  box-shadow: 0 0 0 2px var(--p-surface);
+}
+.student {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-2);
+  min-width: 0;
+}

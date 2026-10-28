@@ -10,12 +10,18 @@
  */
 import Link from 'next/link';
 import { useEffect, useState, type FormEvent } from 'react';
+import { BadgeMedal } from '@/components/platform/ui/art/Art';
+import { EmptyIllustration } from '@/components/platform/ui/art/EmptyIllustration';
+import { AnimalAvatar } from '@/components/platform/ui/kit/AnimalAvatar';
 import type { MyDashboard, MyMastery, WeeklyGoal } from '@/platform/shared/api-client';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { Badge, EmptyState, ProgressBar, Skeleton } from '@/components/platform/ui/kit/Display';
 import { Icon, type IconName } from '@/components/platform/ui/kit/Icon';
 import { MasteryBar, MasteryPip, ProgressRing } from '@/components/platform/ui/kit/Mastery';
 import { useSession } from '../auth/SessionProvider';
+import { trackInterest } from '../lib/interest';
+import { useMyAvatar } from '../me/MyAvatarProvider';
+import { CreditsTile } from './CreditsTile';
 import { api } from '../lib/api-browser';
 import { BOARDS, BOARD_NAMES, CLASS_LEVELS, chapterSlug, examLabel, learnPath, type BoardSlug } from '../lib/catalog';
 import { continueChapter } from '../lib/learner';
@@ -54,6 +60,9 @@ import s from './dashboard.module.css';
 
 export function DashboardClient() {
   const { state } = useSession();
+  useEffect(() => {
+    trackInterest('dashboard_view'); // D-045: aggregate count, only after analytics consent
+  }, []);
   if (state.status === 'loading') return <DashboardSkeleton />;
   if (state.status === 'guest') return <GuestDashboard />;
   return <MemberDashboard userId={state.user.id} name={state.user.displayName?.trim() || null} consent={state.consent === 'granted'} />;
@@ -216,6 +225,7 @@ export function DashboardView({
       <Kpis d={d} />
       <div className={s.grid}>
         <GoalTile goal={weeklyGoal} onSaved={(saved) => setGoal({ base: d.weeklyGoal, value: withTarget(weeklyGoal, saved) })} />
+        {consent && <CreditsTile />}
         <section className={s.tile} aria-labelledby="diff-title" data-testid="difficulty-tile">
           <div className={s.tileHead}>
             <h2 id="diff-title" className={s.tileTitle}>
@@ -264,9 +274,15 @@ function DashboardHeader({ d, name, now, card, activity }: { d: MyDashboard; nam
   const streak = activity.status === 'ready' ? activity.data.streak : progress?.streak ?? null;
   const cls = classLine(d.profile);
   const school = schoolLine(d.profile.school);
+  const mine = useMyAvatar();
+  const avatar = card.status === 'ready' ? card.data.avatar : (mine?.avatar ?? null);
   return (
     <header className={s.head}>
-      <div>
+      <div className={s.headWho}>
+        <Link href="/me#avatar" className={s.avatarLink} aria-label="Your avatar: change it on your profile" data-testid="dashboard-avatar">
+          <AnimalAvatar avatar={avatar} size={56} decorative />
+        </Link>
+        <div>
         <p className={s.kicker}>Your dashboard</p>
         <h1 className={s.title}>
           {greeting(now)}
@@ -276,6 +292,7 @@ function DashboardHeader({ d, name, now, card, activity }: { d: MyDashboard; nam
           {cls ?? 'Board and class not set'}
           {school ? ` · ${school}` : ''}
         </p>
+        </div>
       </div>
       <ul className={s.stats} aria-label="Your stats">
         <li className={s.stat} data-testid="dashboard-streak">
@@ -520,12 +537,15 @@ function TestsTile({ d }: { d: MyDashboard }) {
         </Link>
       </div>
       {d.testHistory.length === 0 ? (
-        <p className={s.muted}>
-          Take a chapter test to see your scores here.{' '}
-          <Link href="/tests" className={s.more}>
-            Find a test
-          </Link>
-        </p>
+        <div className={s.emptyArtRow} data-testid="tests-empty">
+          <EmptyIllustration kind="no-tests" width={104} />
+          <p className={s.muted}>
+            Take a chapter test to see your scores here.{' '}
+            <Link href="/tests" className={s.more}>
+              Find a test
+            </Link>
+          </p>
+        </div>
       ) : (
         <>
           {points.length > 0 && <ScoreTrendChart points={points} />}
@@ -636,7 +656,10 @@ function RecentTile({ d }: { d: MyDashboard }) {
         Recent activity
       </h2>
       {rows.length === 0 ? (
-        <p className={s.muted}>Lessons you finish, practice, tests and badges will be listed here.</p>
+        <div className={s.emptyArtRow} data-testid="recent-empty">
+          <EmptyIllustration kind="no-activity" width={104} />
+          <p className={s.muted}>Lessons you finish, practice, tests and badges will be listed here.</p>
+        </div>
       ) : (
         <ul className={s.recent}>
           {rows.map((r) => {
@@ -684,7 +707,7 @@ function BadgeTile({ d }: { d: MyDashboard }) {
       {next ? (
         <>
           <p className={s.leagueTier}>
-            <Icon name="trophy" size={22} /> {next.name}
+            <BadgeMedal badge={next.key} size={40} decorative className={s.badgeArt} /> {next.name}
           </p>
           <p className={s.muted}>{next.description}</p>
           <ProgressBar value={next.current} max={next.target} label={`Progress to ${next.name}`} valueText={`${next.current} of ${next.target}`} />

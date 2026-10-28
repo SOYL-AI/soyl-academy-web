@@ -10,6 +10,7 @@
  *   their label ("AI-graded" / "AI-graded — check with your teacher"): they never change scores,
  *   percentiles or ranks (F-028).
  */
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
@@ -29,13 +30,17 @@ import { fromResponse, isWritten, selfMarkSteps } from '@/components/platform/ui
 import { QuestionCard } from '@/components/platform/ui/question/QuestionCard';
 import type { QuestionSlots } from '@/components/platform/ui/question/slots';
 import { useSession } from '../auth/SessionProvider';
-import { AiNotice, PaywallDialog, QuoteDialog } from '../ai/AiDialogs';
+import { AiNotice } from '../ai/AiNotice';
 import { useCredits } from '../ai/CreditsProvider';
 import { aiBlockFrom, newIdempotencyKey, type AiBlock } from '../ai/problems';
 import { api } from '../lib/api-browser';
 import { attemptPath, DIFFICULTY_NAMES, marksText, scoreText, testProblemMessage } from './player-model';
 import { durationText, formatClock, istDateTime } from './timer';
 import s from './tests.module.css';
+
+// The AI quote and paywall dialogs load after the page (JS budget: this page sits at the 200 KB limit).
+const QuoteDialog = dynamic(() => import('../ai/AiDialogs').then((m) => m.QuoteDialog), { ssr: false });
+const PaywallDialog = dynamic(() => import('../ai/AiDialogs').then((m) => m.PaywallDialog), { ssr: false });
 
 type SlotsModule = typeof import('@/components/platform/ui/question/slots');
 type Filter = 'all' | 'wrong' | 'unanswered' | 'written';

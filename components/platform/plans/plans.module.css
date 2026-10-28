@@ -135,3 +135,35 @@
   gap: var(--p-space-2);
   align-items: flex-start;
 }
+
+/* D-044: how credits work (numbers from config). */
+.howCredits {
+  display: grid;
+  gap: var(--p-space-2);
+  padding: var(--p-space-4);
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-lg);
+  background: var(--p-surface);
+}
+.howCredits p {
+  margin: 0;
+}
+.howTitle {
+  margin: 0;
+  font-size: var(--p-text-lg);
+  font-weight: 700;
+}
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--p-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.examples li {
+  padding: 2px var(--p-space-2);
+  border-radius: var(--p-radius-pill);
+  background: var(--p-surface-2);
+  font-size: var(--p-text-sm);
+}

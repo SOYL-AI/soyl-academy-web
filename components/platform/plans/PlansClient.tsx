@@ -21,6 +21,7 @@ import { useSession } from '../auth/SessionProvider';
 import { useCredits } from '../ai/CreditsProvider';
 import { api } from '../lib/api-browser';
 import { trackInterest } from '../lib/interest';
+import { allowanceLine, bonusCopy, priceExamples } from './plans-copy';
 import { checkoutOptions, loadCheckout } from './razorpay';
 import s from './plans.module.css';
 
@@ -316,6 +317,18 @@ export function PlansClient() {
           );
         })}
       </ul>
+      <section className={s.howCredits} aria-labelledby="how-credits" data-testid="how-credits">
+        <h2 id="how-credits" className={s.howTitle}>
+          How AI credits work
+        </h2>
+        <p>{allowanceLine(ordered)}</p>
+        <ul className={s.examples}>
+          {priceExamples().map((t) => (
+            <li key={t}>{t}</li>
+          ))}
+        </ul>
+        <p>{bonusCopy()}</p>
+      </section>
       <p className={s.muted}>Prices include GST. Payments are handled by Razorpay (UPI, cards). Monthly and yearly plans renew automatically until you cancel; you keep the plan until the end of the period you paid for.</p>
 
       {mine?.subscription && !mine.subscription.cancelAtPeriodEnd && (mine.subscription.status === 'active' || mine.subscription.status === 'authenticated') && (

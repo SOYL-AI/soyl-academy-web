@@ -1,0 +1,216 @@
+/* D-044 credits UI: the guide, the bonuses and the per-day history (light and dark from the same tokens). */
+.guide {
+  display: grid;
+  gap: var(--p-space-4);
+}
+.muted {
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.balance {
+  margin: 0;
+}
+.spark {
+  color: var(--p-accent);
+  vertical-align: -3px;
+}
+.actions,
+.bonusList,
+.planList {
+  display: grid;
+  gap: var(--p-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.action {
+  display: grid;
+  gap: 2px;
+  padding: var(--p-space-3);
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-md);
+  background: var(--p-surface);
+}
+.action[data-allowed='false'] {
+  background: var(--p-surface-2);
+}
+.actionHead {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--p-space-1) var(--p-space-3);
+}
+.actionName {
+  font-weight: 650;
+}
+.price {
+  color: var(--p-info);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.actionGuide {
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.left {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--p-ink);
+  font-size: var(--p-text-sm);
+  font-weight: 600;
+}
+.action[data-allowed='false'] .left {
+  color: var(--p-ink-muted);
+  font-weight: 500;
+}
+.subTitle {
+  margin: 0 0 var(--p-space-2);
+  font-size: var(--p-text-md);
+  font-weight: 700;
+}
+.bonuses {
+  display: grid;
+  gap: var(--p-space-2);
+}
+.bonusList li {
+  display: grid;
+  gap: 4px;
+  padding: var(--p-space-3);
+  border-radius: var(--p-radius-md);
+  background: var(--p-accent-soft);
+}
+.bonusList li[data-earned='true'] {
+  background: var(--p-success-soft);
+}
+.bonusTitle {
+  font-weight: 650;
+}
+.earned {
+  color: var(--p-success);
+  vertical-align: -3px;
+}
+.planList {
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+}
+.planList li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--p-space-2);
+  padding: var(--p-space-2) var(--p-space-3);
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-md);
+  font-variant-numeric: tabular-nums;
+}
+.planList li[data-current] {
+  border-color: var(--p-accent);
+}
+.you {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.footerLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--p-touch);
+  padding: 0 var(--p-space-2);
+  color: var(--p-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* History chart */
+.chart {
+  display: grid;
+  gap: var(--p-space-2);
+  margin: 0;
+}
+.chartSvg {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  overflow: visible;
+}
+.axis {
+  stroke: var(--p-border-strong);
+  stroke-width: 1;
+}
+.barGrant {
+  fill: var(--p-accent);
+}
+.barBonus {
+  fill: var(--p-highlight);
+  stroke: var(--p-medium);
+  stroke-width: 0.6;
+}
+.barSpent {
+  fill: var(--p-m-attempted);
+}
+.tick {
+  fill: var(--p-ink-subtle);
+  font-size: 8px;
+  font-family: var(--p-font-sans);
+}
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--p-space-3);
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 4px;
+  border-radius: 2px;
+  vertical-align: -1px;
+}
+.keyGrant {
+  background: var(--p-accent);
+}
+.keyBonus {
+  background: var(--p-highlight);
+  box-shadow: inset 0 0 0 1px var(--p-medium);
+}
+.keySpent {
+  background: var(--p-m-attempted);
+}
+.tableToggle summary {
+  min-height: var(--p-touch);
+  display: flex;
+  align-items: center;
+  color: var(--p-accent);
+  cursor: pointer;
+  font-weight: 600;
+}
+.tableWrap {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--p-text-sm);
+  font-variant-numeric: tabular-nums;
+}
+.table th,
+.table td {
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--p-border);
+  text-align: right;
+}
+.table th:first-child {
+  text-align: left;
+  font-weight: 500;
+}
+.table thead th {
+  color: var(--p-ink-muted);
+  font-weight: 600;
+}

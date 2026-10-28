@@ -5,7 +5,8 @@
  * the marketing header and footer step aside on platform paths, the theme (Light / Dark / System) is applied
  * before first paint by a constant inline script, and the cookie bar stays (legal).
  * Providers: theme, toasts, the session (GET /v1/session), today's AI credits (GET /v1/credits, M4), SOYL Coins
- * (GET /v1/coins, ADR-021) and the learner's progress (GET /v1/me/progress or this device).
+ * (GET /v1/coins, ADR-021), the learner's progress (GET /v1/me/progress or this device) and the student's own avatar
+ * (GET /v1/me, for the top bar).
  */
 import type { ReactNode } from 'react';
 import { notoDevanagari } from '@/components/platform/ui/fonts';
@@ -16,6 +17,7 @@ import { SessionProvider } from '@/components/platform/auth/SessionProvider';
 import { CreditsProvider } from '@/components/platform/ai/CreditsProvider';
 import { CoinsProvider } from '@/components/platform/coins/CoinsProvider';
 import { ProgressProvider } from '@/components/platform/learn/ProgressProvider';
+import { MyAvatarProvider } from '@/components/platform/me/MyAvatarProvider';
 import { AppShell } from '@/components/platform/shell/AppShell';
 import { AppFooter } from '@/components/platform/shell/AppFooter';
 import { ThemeBootScript } from '@/components/platform/shell/ThemeBootScript';
@@ -37,7 +39,9 @@ export default function PlatformLayout({ children }: { children: ReactNode }) {
             <CreditsProvider>
               <CoinsProvider>
                 <ProgressProvider>
-                  <AppShell footer={<AppFooter />}>{children}</AppShell>
+                  <MyAvatarProvider>
+                    <AppShell footer={<AppFooter />}>{children}</AppShell>
+                  </MyAvatarProvider>
                 </ProgressProvider>
               </CoinsProvider>
             </CreditsProvider>

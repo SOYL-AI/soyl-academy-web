@@ -10,7 +10,7 @@ const h = vi.hoisted(() => ({
   router: { push: vi.fn(), replace: vi.fn(), refresh: vi.fn() },
 }));
 vi.mock('../auth/SessionProvider', () => ({ useSession: () => h.session }));
-vi.mock('../ai/CreditsProvider', () => ({ useCredits: () => h.credits }));
+vi.mock('../ai/CreditsProvider', () => ({ useCredits: () => h.credits, useOptionalCredits: () => h.credits }));
 vi.mock('../lib/api-browser', () => ({ api: h.api }));
 vi.mock('next/navigation', () => ({ useRouter: () => h.router, usePathname: () => '/tests' }));
 
