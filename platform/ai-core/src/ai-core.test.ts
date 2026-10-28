@@ -25,11 +25,11 @@ const noSleep = { sleep: async () => {}, random: () => 0.5 };
 
 describe('metering (models.ts prices → paise)', () => {
   it('prices input, cached input and output separately', () => {
-    // mid: ₹110 / ₹11 / ₹880 per 1M tokens
+    // mid (GPT-6.1 Sol, GlobalStandard, South India, 2026-10-28): ₹191.9788 / ₹9.5989 / ₹959.894 per 1M tokens
     const paise = costPaise('mid', { input_tokens: 1_000_000, cached_input_tokens: 0, output_tokens: 0 });
-    expect(paise).toBeCloseTo(11_000, 6);
-    expect(costPaise('mid', { input_tokens: 1_000_000, cached_input_tokens: 1_000_000, output_tokens: 0 })).toBeCloseTo(1_100, 6);
-    expect(costPaise('mid', { input_tokens: 0, cached_input_tokens: 0, output_tokens: 1_000_000 })).toBeCloseTo(88_000, 6);
+    expect(paise).toBeCloseTo(19_197.88, 6);
+    expect(costPaise('mid', { input_tokens: 1_000_000, cached_input_tokens: 1_000_000, output_tokens: 0 })).toBeCloseTo(959.89, 6);
+    expect(costPaise('mid', { input_tokens: 0, cached_input_tokens: 0, output_tokens: 1_000_000 })).toBeCloseTo(95_989.4, 6);
   });
 
   it('applies the Batch discount', () => {
@@ -37,17 +37,20 @@ describe('metering (models.ts prices → paise)', () => {
     expect(costPaise('mid', u, { batch: true })).toBeCloseTo(costPaise('mid', u) * MODELS.mid.batch_price_factor, 9);
   });
 
-  it('reproduces the CONTEXT §6 per-action costs within 10%', () => {
+  // CONTEXT §6 token sizes at the verified prices (models.ts header). The CONTEXT rupee estimates were made
+  // with placeholder prices: Luna is ~3x cheaper, Sol ~27% dearer at these sizes (flagged to the owner).
+  it('prices the CONTEXT §6 typical requests at the verified Azure prices', () => {
     const quickDoubt = costPaise('small', { input_tokens: 600, cached_input_tokens: 0, output_tokens: 100 }) / 100;
     const hardDoubt = costPaise('mid', { input_tokens: 1_500, cached_input_tokens: 0, output_tokens: 400 }) / 100;
     const paperFromUpload = costPaise('mid', { input_tokens: 15_000, cached_input_tokens: 0, output_tokens: 5_000 }) / 100;
-    expect(Math.abs(quickDoubt - 0.03) / 0.03).toBeLessThan(0.1);
-    expect(Math.abs(hardDoubt - 0.53) / 0.53).toBeLessThan(0.1);
-    expect(Math.abs(paperFromUpload - 6.1) / 6.1).toBeLessThan(0.1);
+    expect(quickDoubt).toBeCloseTo(0.0106, 4);
+    expect(hardDoubt).toBeCloseTo(0.672, 3);
+    expect(paperFromUpload).toBeCloseTo(7.679, 3);
   });
 
-  it('marks every price as unverified until OA-02', () => {
-    for (const m of Object.values(MODELS)) expect(m.price_status).toBe('unverified');
+  it('marks every price as verified (Azure Retail Prices API, 2026-10-28)', () => {
+    for (const m of Object.values(MODELS)) expect(m.price_status).toBe('verified');
+    expect(MODELS.verify.price_inr_per_1m).toEqual(MODELS.mid.price_inr_per_1m); // D-033: verify runs on Sol
   });
 
   it('every client call returns a usage record with cost', async () => {
@@ -97,11 +100,13 @@ describe('BudgetGuard', () => {
 
   it('stops a client at the cap without calling the provider', async () => {
     let calls = 0;
-    // Each call returns ~10k output tokens (≈176 paise on small) and reserves max_output_tokens (16k ≈ 282 paise).
+    // Each call reserves max_output_tokens (16k, R paise at models.ts prices) and then spends ~10k output
+    // tokens (~0.63 R). A cap of 1.7 R admits two calls (0.63 R + R) and stops the third (1.25 R + R).
     const provider = new MockProvider({ seed: 1, failOnCall: () => (calls++, null), fixtures: { long: () => 'x'.repeat(40_000) } });
-    const guard = new BudgetGuard({ runCapPaise: 600, totalCapPaise: 1e9 });
-    const client = new ModelClient({ provider, budget: guard });
     const req = { tier: 'small' as const, messages: [{ role: 'user' as const, content: 'hi' }], mock: { fixture: 'long' } };
+    const reserve = new ModelClient({ provider: new MockProvider({ seed: 1 }) }).estimateCostPaise(req);
+    const guard = new BudgetGuard({ runCapPaise: 1.7 * reserve, totalCapPaise: 1e9 });
+    const client = new ModelClient({ provider, budget: guard });
     await client.chat(req);
     await client.chat(req);
     await expect(client.chat(req)).rejects.toBeInstanceOf(BudgetExceededError);
@@ -325,7 +330,7 @@ describe('AzureOpenAIProvider', () => {
       new Response(output, { status: 200 }),
     ]);
     const provider = new AzureOpenAIProvider({ endpoint: 'https://x.openai.azure.com', deployments, batchDeployments: { mid: 'sol-batch' }, credential, fetch: fn });
-    const { jobId } = await provider.batch.submit([
+    const { jobId } = await provider.batch!.submit([
       { customId: 'a', request: { tier: 'mid', messages: [{ role: 'user', content: '1' }] } },
       { customId: 'b', request: { tier: 'mid', messages: [{ role: 'user', content: '2' }] } },
     ]);
@@ -335,12 +340,46 @@ describe('AzureOpenAIProvider', () => {
     const jsonl = await ((calls[0]!.init.body as FormData).get('file') as Blob).text();
     expect(JSON.parse(jsonl.split('\n')[0]!)).toMatchObject({ custom_id: 'a', method: 'POST', url: '/chat/completions', body: { model: 'sol-batch' } });
     expect(JSON.parse(String(calls[1]!.init.body))).toEqual({ input_file_id: 'file-in', endpoint: '/chat/completions', completion_window: '24h' });
-    expect((await provider.batch.poll(jobId)).state).toBe('completed');
-    const results = await provider.batch.fetch(jobId);
+    expect((await provider.batch!.poll(jobId)).state).toBe('completed');
+    const results = await provider.batch!.fetch(jobId);
     expect(results.map((r) => [r.customId, r.ok])).toEqual([
       ['a', true],
       ['b', false],
     ]);
+  });
+
+  // ADR-008: production has no GlobalBatch deployment (AZURE_OPENAI_DEPLOYMENT_*_BATCH are empty). The Batch
+  // API rejects standard deployments, so the provider must not offer Batch; the pipeline then runs sync.
+  it('offers no Batch without a Batch deployment, so callers fall back to synchronous calls', async () => {
+    const { fn, calls } = fakeFetch([]);
+    const cfg = azureConfigFromEnv({
+      AZURE_OPENAI_ENDPOINT: 'https://x.openai.azure.com',
+      AZURE_OPENAI_DEPLOYMENT_SMALL: 'small',
+      AZURE_OPENAI_DEPLOYMENT_MID: 'mid',
+      AZURE_OPENAI_DEPLOYMENT_SMALL_BATCH: '',
+      AZURE_OPENAI_DEPLOYMENT_MID_BATCH: '',
+    });
+    expect(cfg.batchDeployments).toEqual({});
+    const provider = new AzureOpenAIProvider({ ...cfg, credential, fetch: fn });
+    expect(provider.batch).toBeUndefined();
+    expect(provider.deployment('mid', true)).toBe('mid');
+    const client = new ModelClient({ provider });
+    expect(client.supportsBatch).toBe(false);
+    await expect(client.submitBatch([{ customId: 'a', request: { tier: 'mid', messages: [{ role: 'user', content: '1' }] } }])).rejects.toThrow(/does not support Batch/);
+    expect(calls).toHaveLength(0);
+  });
+
+  it('refuses a Batch job with a tier that has no Batch deployment, before uploading anything', async () => {
+    const { fn, calls } = fakeFetch([]);
+    const provider = new AzureOpenAIProvider({ endpoint: 'https://x.openai.azure.com', deployments, batchDeployments: { mid: 'sol-batch' }, credential, fetch: fn });
+    expect(provider.batch).toBeDefined();
+    await expect(
+      provider.batch!.submit([
+        { customId: 'a', request: { tier: 'mid', messages: [{ role: 'user', content: '1' }] } },
+        { customId: 'b', request: { tier: 'small', messages: [{ role: 'user', content: '2' }] } },
+      ]),
+    ).rejects.toThrow('no Batch deployment for tier(s) small (set AZURE_OPENAI_DEPLOYMENT_SMALL_BATCH');
+    expect(calls).toHaveLength(0);
   });
 
   it('is configured from env and explains what is missing', () => {

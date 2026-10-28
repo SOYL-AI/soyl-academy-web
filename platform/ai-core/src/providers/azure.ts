@@ -6,7 +6,9 @@
  * - Chat completions with optional JSON Schema response_format.
  * - Retries on 408/429/5xx/network errors with backoff + jitter, honouring retry-after(-ms).
  * - A concurrency limiter shared by all calls from this provider instance.
- * - Batch: JSONL upload (purpose=batch) → /batches → poll → output file (half price).
+ * - Batch: JSONL upload (purpose=batch) → /batches → poll → output file (half price). Offered only
+ *   when a Batch deployment is configured: the Batch API rejects standard deployments, so without one
+ *   `batch` is undefined and callers (the content pipeline) run synchronously at the standard price.
  * - Streaming via SSE (hook for the AI gateway in M4).
  */
 import { MODELS, MODEL_TIERS, type ModelTier, type TokenUsage } from '@soyl/shared/config/models';
@@ -26,7 +28,10 @@ export interface AzureOpenAIConfig {
   /** e.g. https://soyl-aoai-dev.openai.azure.com (no trailing path). */
   endpoint: string;
   deployments: Record<ModelTier, string>;
-  /** Global-Batch deployments; default to `deployments`. */
+  /**
+   * Global-Batch deployments (AZURE_OPENAI_DEPLOYMENT_<TIER>_BATCH). None configured = no Batch support
+   * (`batch` is undefined); a Batch job may only contain tiers that have one.
+   */
   batchDeployments?: Partial<Record<ModelTier, string>>;
   credential: TokenCredentialLike;
   fetch?: typeof fetch;
@@ -209,8 +214,23 @@ export class AzureOpenAIProvider implements ModelProvider {
     return { text, finishReason, usage, model, requestId: res.headers.get('apim-request-id') };
   }
 
-  readonly batch: BatchCapability = {
+  /**
+   * Present only when at least one Batch deployment is configured. Production has none (ADR-008: no
+   * GlobalBatch sku for GPT-6 Luna / GPT-6.1 Sol in South India), so the pipeline falls back to sync.
+   */
+  get batch(): BatchCapability | undefined {
+    return Object.values(this.config.batchDeployments ?? {}).some(Boolean) ? this.batchApi : undefined;
+  }
+
+  private readonly batchApi: BatchCapability = {
     submit: async (items) => {
+      // A tier without a Batch deployment would name a standard deployment, which the Batch API rejects
+      // only after the upload; refuse before anything is sent or reserved upstream.
+      const missing = [...new Set(items.map((it) => it.request.tier))].filter((t) => !this.config.batchDeployments?.[t]);
+      if (missing.length)
+        throw new Error(
+          `AzureOpenAIProvider: no Batch deployment for tier(s) ${missing.join(', ')} (set ${missing.map((t) => MODELS[t].batch_deployment_env).join(', ')} or run without Batch)`,
+        );
       const jsonl = items
         .map((it) => JSON.stringify({ custom_id: it.customId, method: 'POST', url: '/chat/completions', body: this.body(it.request, { batch: true }) }))
         .join('\n');
