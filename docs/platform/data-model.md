@@ -4,7 +4,7 @@
 > Design intent: [ARCHITECTURE §6](ARCHITECTURE.md#6-data-model-postgresql). Decisions: [ADR-004](adr/004-orm-drizzle.md) (Drizzle, migrations, roles), [ADR-006](adr/006-content-storage.md) (releases), [ADR-010](adr/010-content-api-caching-and-answer-separation.md) (answer separation), [ADR-012](adr/012-test-engine.md) (test engine), [ADR-013](adr/013-ai-gateway.md) (credits), [ADR-016](adr/016-billing-razorpay.md) (billing).
 > Package guide: [`platform/db/README.md`](../../platform/db/README.md). Personal data: [`platform/db/PII.md`](../../platform/db/PII.md).
 
-PostgreSQL 17 on Azure (PostgreSQL Flexible Server, Entra-only auth), embedded PostgreSQL 18 locally and in unit tests, `pgvector/pgvector:pg17` in CI. **69 tables and 2 views** across 12 schema files, created by **11 migrations** (0000 to 0010).
+PostgreSQL 17 on Azure (PostgreSQL Flexible Server, Entra-only auth), embedded PostgreSQL 18 locally and in unit tests, `pgvector/pgvector:pg17` in CI. **73 tables and 2 views** across 13 schema files, created by **13 migrations** (0000 to 0012).
 
 ## Conventions
 
@@ -35,21 +35,22 @@ In Azure the managed identities log in with Entra tokens (no passwords) and are 
 
 | Area (schema file) | # | Tables | Notes |
 |---|---|---|---|
-| Identity (`identity.ts`) | 8 | `users`, `sessions`, `accounts`, `verifications`, `schools`, `profiles`, `guardian_links`, `consent_status` | Better Auth's tables plus ours. `role` lives on `users` (Better Auth admin plugin), not `profiles`. Email/phone have generated normalised columns with unique indexes. `verifications.identifier` stores `otp:<purpose>:<channel>:<HMAC(identifier)>`, not the raw address. `sessions.mfa_verified_at` added in 0005. |
+| Identity (`identity.ts`) | 9 | `users`, `sessions`, `accounts`, `verifications`, `schools`, `profiles`, `guardian_links`, `consent_status`, `consent_records` (0012, D-039) | Better Auth's tables plus ours. `role` lives on `users` (Better Auth admin plugin), not `profiles`. Email/phone have generated normalised columns with unique indexes. `verifications.identifier` stores `otp:<purpose>:<channel>:<HMAC(identifier)>`, not the raw address. `sessions.mfa_verified_at` added in 0005. |
 | Catalog (`catalog.ts`) | 7 | `boards`, `classes`, `subjects`, `syllabus_versions`, `chapters`, `topics`, `learning_outcomes` | Seeded from `platform/catalog/` by `db seed catalog` (idempotent; `syllabus_versions` holds per-file hash). `boards`/`classes` have no `academic_year`. |
 | Content (`content.ts`) | 10 | `content_releases`, `decks`, `notes`, `flashcard_sets`, `questions`, `question_keys`, `question_stats`, `assets`, `content_status_events`, `content_chunks` | DB-6 split (below). `content_chunks` holds tutor retrieval chunks: `embedding vector(1536)` + HNSW index where pgvector exists, and a generated `search_vector` tsvector + GIN index (0008) as the full-text fallback (ADR-014). |
 | Release membership (`release-items.ts`) | 1 | `content_release_items` | Which item rows each release contains, so reads go through the **active** release and rollback works (ADR-006/010). |
 | Learning progress (`progress.ts`) | 3 | `lesson_progress`, `practice_answers`, `user_mfa` | `lesson_progress` UNIQUE(user, chapter, part); `practice_answers` keeps the exact question version answered; `user_mfa` holds the AES-GCM-encrypted TOTP secret and hashed recovery codes (ADR-011 staff TOTP). |
 | Assessment (`assessment.ts`) | 10 | `blueprints`, `test_series`, `tests`, `test_items`, `attempts`, `responses`, `evaluations`, `live_events`, `live_registrations`, `test_score_buckets` | Tests point at question **version** rows (D-023). One active attempt per (user, test); one attempt per live event. Attempt score split into `auto_score` / `self_score` (0007). `responses.client_seq` orders autosaves. `test_score_buckets` feeds percentiles. |
-| Gamification (`gamification.ts`) | 7 | `xp_events`, `streaks`, `badges`, `user_badges`, `leagues`, `league_memberships`, `leaderboard_snapshots` | XP, streaks and badges are written by the API. Weekly leagues (0010): `leagues` = IST week × scope × cohort key × tier × division (≤ 30); `league_memberships` carries `league_id`, `tier`, final XP, rank and `outcome` (promoted / stayed / relegated). League XP is summed from `xp_events`, never incremented. `leaderboard_snapshots` is not used for divisions. SOYL Coins (D-037) have **no tables yet**. |
+| Gamification (`gamification.ts`) | 7 | `xp_events`, `streaks`, `badges`, `user_badges`, `leagues`, `league_memberships`, `leaderboard_snapshots` | XP, streaks and badges are written by the API. Weekly leagues (0010): `leagues` = IST week × scope × cohort key × tier × division (≤ 30); `league_memberships` carries `league_id`, `tier`, final XP, rank and `outcome` (promoted / stayed / relegated). League XP is summed from `xp_events`, never incremented. `leaderboard_snapshots` is not used for divisions. SOYL Coins have their own schema file (below). |
 | AI and credits (`ai-credits.ts`) | 5 | `credit_ledger`, `ai_requests`, `ai_conversations`, `ai_messages`, `uploads` | Ledger invariants below. `ai_requests` meters tokens and `cost_inr_paise` per call. Messages, jobs and uploads are kept 30 days. |
 | AI gateway (`ai-gateway.ts`) | 3 | `credit_wallets`, `ai_spend_daily`, `ai_jobs` | `credit_wallets` is the row-lock target for credit transactions; `ai_spend_daily` is the per-IST-day spend breaker (scopes `all` and `free`); `ai_jobs` runs evaluations and paper-from-upload. |
+| SOYL Coins (`coins.ts`) | 3 | `coin_wallets`, `coin_ledger`, `coin_redemptions` | ADR-021, 0011. `coin_wallets` is the row-lock target and holds the check-in streak and equipped items. `coin_ledger` is append-only for `soyl_app`; every award has a unique idempotency key, and the `soyl_coin_ledger_guard` trigger refuses a negative balance, requires a refund to equal its redeem and writes `balance_after`. `coin_redemptions` keeps the shipping address AES-256-GCM encrypted (key derived from `MFA_ENCRYPTION_KEY`). Redemptions are off at launch (D-038). |
 | Billing (`billing.ts`) | 6 | `plans`, `subscriptions`, `orders`, `payments`, `entitlements`, `webhook_events` | `plans` synced from `platform/shared/config/plans.ts`. `webhook_events` has the Razorpay event id UNIQUE plus `outcome` (applied / ignored / rejected). Entitlements decide the plan, never the browser. |
 | Ops (`ops.ts`) | 5 | `feature_flags`, `config_values`, `audit_log`, `analytics_events`, `content_reports` | `audit_log` is append-only. `analytics_events` has no user, device or IP column (D-014). `content_reports` is the "Report a mistake" queue; since 0010 it also takes `ai_answer` reports (ids only, no message text). |
 | Pipeline (`pipeline.ts`) | 4 | `pipeline_runs`, `pipeline_unit_status`, `pipeline_items`, `content_budget_ledger` | Resumable pipeline state and the append-only content spend ledger (shared budget across processes). |
 | Views (`views.ts`) | 2 views | `student_questions`, `content_budget` | See below. |
 
-Total: 8 + 7 + 10 + 1 + 3 + 10 + 7 + 5 + 3 + 6 + 5 + 4 = **69 tables**.
+Total: 9 + 7 + 10 + 1 + 3 + 10 + 7 + 5 + 3 + 3 + 6 + 5 + 4 = **73 tables**.
 
 ## Key invariants
 
@@ -93,11 +94,13 @@ All are reversible (`NNNN_name.sql` + `NNNN_name.down.sql`, plus drizzle snapsho
 | 0005 | `0005_learning_progress` | `lesson_progress`, `practice_answers`, `user_mfa`, `sessions.mfa_verified_at` | backend-api M2 | yes |
 | 0006 | `0006_release_items` | `content_release_items` with backfill | backend-api M2 | yes |
 | 0007 | `0007_test_engine` | `responses.client_seq`, attempt score split, `test_score_buckets` | backend-api M3 | yes |
-| 0008 | `0008_ai_gateway` | `credit_wallets`, `ai_spend_daily`, `ai_jobs`; `ai_requests` plan/degraded/simulated; processed upload keys; `content_chunks.search_vector` | ai-gateway M4 | **no** (pending) |
-| 0009 | `0009_billing` | `subscriptions` Razorpay plan id, amount, paid count, ended at; `webhook_events.outcome`, `entity_id` | billing-razorpay M4 | **no** (pending) |
-| 0010 | `0010_leagues` | `leagues` table; `league_memberships.league_id`, `tier`, `outcome`; `content_reports` type check accepts `ai_answer` (down deletes those reports) | backend-api M5 follow-ups | **no** (pending) |
+| 0008 | `0008_ai_gateway` | `credit_wallets`, `ai_spend_daily`, `ai_jobs`; `ai_requests` plan/degraded/simulated; processed upload keys; `content_chunks.search_vector` | ai-gateway M4 | yes |
+| 0009 | `0009_billing` | `subscriptions` Razorpay plan id, amount, paid count, ended at; `webhook_events.outcome`, `entity_id` | billing-razorpay M4 | yes |
+| 0010 | `0010_leagues` | `leagues` table; `league_memberships.league_id`, `tier`, `outcome`; `content_reports` type check accepts `ai_answer` (down deletes those reports) | backend-api M5 follow-ups | yes |
+| 0011 | `0011_coins` | `coin_wallets`, `coin_ledger` (append-only, `soyl_coin_ledger_guard` balance trigger), `coin_redemptions`; conventions list `coin_ledger` as append-only | backend-api (SOYL Coins, ADR-021) | **no** (pending) |
+| 0012 | `0012_consent_interim` | `consent_records`; `profiles.public_name_seed` | backend-api (consent interim, D-039, ADR-022) | **no** (pending) |
 
-Production (dark) was migrated on 2026-10-27 from images built at `0dee08c`, so it has 0000 to 0007. 0008 to 0010 apply on the next backend update ([runbook](runbooks/update-dark-backend.md)).
+Production (dark) was last migrated on 2026-10-28 from images built at `fe404f0`, so it has 0000 to 0010. 0011 and 0012 apply on the next backend update ([runbook](runbooks/update-dark-backend.md)).
 
 Commands (from `platform/`; without `DATABASE_URL` the CLI starts the persistent local embedded server at `platform/db/.data/dev`, port 54320):
 
@@ -125,6 +128,6 @@ npm run generate -w @soyl/db                    # drizzle-kit: generate the next
 The DB-5 inventory is [`platform/db/PII.md`](../../platform/db/PII.md): every personal-data column, its retention, and what account deletion does to it. `db/test/schema.test.ts` fails if a column is missing from it. Summary:
 
 - **Account deletion** (`DELETE /v1/me`) anonymises at once, revokes all sessions, deletes `user_mfa` and live ranks in Redis; the worker's `account.purge` job removes the rest within 30 days. Uploaded blobs are not yet deleted with the account (finding S6-M02, open).
-- **Unconsented accounts** (AUTH-15): `account.purge-unconsented` is **off** in production while `CONSENT_PROVIDER=unavailable` (otherwise every student would be deleted after 30 days). Decision pending OA-14.
+- **Unconsented accounts** (AUTH-15): `account.purge-unconsented` is **off** in production while `CONSENT_PROVIDER=unavailable` or `builtin` (otherwise every student who only learns would be deleted after 30 days). Decision pending OA-14.
 - **Retention:** AI messages, jobs and uploads 30 days; analytics are first-party and aggregate (no user, device or IP).
 - Retention periods are pending counsel (OA-14).

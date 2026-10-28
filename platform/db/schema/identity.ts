@@ -5,8 +5,9 @@
  * Better Auth field names; DB columns are snake_case. Field mapping: platform/db/README.md.
  */
 import { sql } from 'drizzle-orm';
-import { boolean, index, pgTable, smallint, text, uniqueIndex, uuid } from 'drizzle-orm/pg-core';
+import { boolean, index, integer, pgTable, smallint, text, uniqueIndex, uuid } from 'drizzle-orm/pg-core';
 import { check } from 'drizzle-orm/pg-core';
+import { AGE_BANDS, CONSENT_METHODS, CONSENT_REVOKERS } from '@soyl/shared/config/security';
 import { id, oneOf, timestamps, tstz } from './_shared';
 
 export const ROLES = ['student', 'parent', 'reviewer', 'admin'] as const;
@@ -140,6 +141,11 @@ export const profiles = pgTable(
     schoolId: uuid('school_id').references(() => schools.id, { onDelete: 'set null' }),
     city: text('city'),
     locale: text('locale').notNull().default('en-IN'),
+    /**
+     * D-039: seed of the public pseudonymous name ("Brave Otter 417", @soyl/shared/config/public-names).
+     * Leaderboards show only that name; 0 = the account's first name, regenerating stores a new random seed.
+     */
+    publicNameSeed: integer('public_name_seed').notNull().default(0),
     /** Idempotency for POST /v1/me/merge-guest. */
     guestMergedAt: tstz('guest_merged_at'),
     ...timestamps(),
@@ -205,4 +211,60 @@ export const consentStatus = pgTable(
     ...timestamps(),
   },
   (t) => [oneOf('consent_status_status_check', t.status, CONSENT_STATES)],
+);
+
+/**
+ * Built-in interim consent provider (D-039, ADR-022): the provider's own record, one row per account.
+ * `consent_status` above stays the gate's cache and is rewritten from this row on every change.
+ *
+ * Data minimisation: no date of birth (an age band only), no parent name, and the parent's email is
+ * never stored: only a keyed hash (rate limits, detecting a change of parent) and a masked hint
+ * ("p•••@gmail.com") so the student can see where the request went. The approval code is stored as a
+ * keyed hash; the parent's withdraw link is an HMAC over (id, revoke_generation), so nothing is stored for it.
+ */
+export const consentRecords = pgTable(
+  'consent_records',
+  {
+    id: id(),
+    userId: uuid('user_id')
+      .notNull()
+      .unique('consent_records_user_id_unique')
+      .references(() => users.id, { onDelete: 'cascade' }),
+    /** Self-declared: `adult` (18 or older) or `minor` (under 18). Null until declared. */
+    ageBand: text('age_band'),
+    status: text('status').notNull().default('required'),
+    /** How the current/last consent was given: `self_declared` (18+) or `parent_email_code` (under 18). */
+    method: text('method'),
+    /** BUILTIN_CONSENT.policyVersion agreed to (set with the consent). */
+    policyVersion: text('policy_version'),
+    /** HMAC(server key, normalised parent email). Never the address itself. */
+    parentEmailHash: text('parent_email_hash'),
+    /** Masked parent email for the student's own status view, e.g. "p•••@gmail.com". */
+    parentEmailHint: text('parent_email_hint'),
+    /** HMAC of the live approval code (null when none is live). */
+    codeHash: text('code_hash'),
+    codeExpiresAt: tstz('code_expires_at'),
+    /** Wrong entries against the live code (dead at BUILTIN_CONSENT.maxAttemptsPerCode). */
+    codeAttempts: smallint('code_attempts').notNull().default(0),
+    codeSentAt: tstz('code_sent_at'),
+    /** Bumped when the parent email changes, so an earlier parent's withdraw link stops working. */
+    revokeGeneration: integer('revoke_generation').notNull().default(0),
+    declaredAt: tstz('declared_at'),
+    grantedAt: tstz('granted_at'),
+    revokedAt: tstz('revoked_at'),
+    revokedBy: text('revoked_by'),
+    ...timestamps(),
+  },
+  (t) => [
+    oneOf('consent_records_status_check', t.status, CONSENT_STATES),
+    oneOf('consent_records_age_band_check', t.ageBand, AGE_BANDS),
+    oneOf('consent_records_method_check', t.method, CONSENT_METHODS),
+    oneOf('consent_records_revoked_by_check', t.revokedBy, CONSENT_REVOKERS),
+    check('consent_records_code_attempts_check', sql`${t.codeAttempts} >= 0`),
+    check('consent_records_code_pair', sql`(${t.codeHash} IS NULL) = (${t.codeExpiresAt} IS NULL)`),
+    check(
+      'consent_records_granted_complete',
+      sql`${t.status} <> 'granted' OR (${t.method} IS NOT NULL AND ${t.policyVersion} IS NOT NULL AND ${t.grantedAt} IS NOT NULL AND ${t.ageBand} IS NOT NULL)`,
+    ),
+  ],
 );

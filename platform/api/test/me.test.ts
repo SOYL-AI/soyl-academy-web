@@ -26,7 +26,10 @@ describe('GET/PATCH /v1/me', () => {
     const res = await c.get('/v1/me');
     expect(res.statusCode).toBe(200);
     expect(res.headers['cache-control']).toBe('no-store');
-    expect(res.json()).toMatchObject({ id: user.id, role: 'student', displayName: null, board: null, classLevel: null, schoolId: null, locale: 'en-IN', consent: 'required', methods: { email: e, phone: null, google: false } });
+    expect(res.json()).toMatchObject({ id: user.id, role: 'student', displayName: null, board: null, classLevel: null, locale: 'en-IN', consent: 'required', methods: { email: e, phone: null, google: false } });
+    // D-039: no school field at all; an auto-generated public name instead of any real name.
+    expect(res.json()).not.toHaveProperty('schoolId');
+    expect(res.json().publicName).toMatch(/^[A-Z][a-z]+ [A-Z][a-z]+ [0-9]{3}$/);
   });
 
   it('updates board, class, display name and locale', async () => {
@@ -77,23 +80,22 @@ describe('GET/PATCH /v1/me', () => {
     expect((await c.patch('/v1/me', {})).statusCode).toBe(400);
   });
 
-  it('school needs consent (D-014): 403 until granted, then stored and returned', async () => {
+  it('school is never collected (D-039; was consent-gated under D-014): refused without and with consent, nothing stored', async () => {
     const [school] = await h.t.db.insert(schools).values({ name: 'Test School', city: 'Pune' }).returning();
     const c = h.client();
     const { user } = await c.signInEmail(email('school'));
     const denied = await c.patch('/v1/me', { schoolId: school!.id });
-    expect(denied.statusCode).toBe(403);
-    expect(denied.json().code).toBe('consent_required');
+    expect(denied.statusCode).toBe(400);
+    expect(denied.json().code).toBe('validation_failed');
     h.consent.setStatus(user.id, 'granted');
     h.clock.advance(16 * 60_000); // cache TTL
-    const ok = await c.patch('/v1/me', { schoolId: school!.id });
-    expect(ok.statusCode).toBe(200);
-    expect(ok.json().schoolId).toBe(school!.id);
-    expect((await c.patch('/v1/me', { schoolId: '00000000-0000-7000-8000-000000000000' })).statusCode).toBe(400);
-    // consent revoked → school hidden again
-    h.consent.setStatus(user.id, 'revoked');
-    h.clock.advance(16 * 60_000);
-    expect((await c.get('/v1/me')).json().schoolId).toBeNull();
+    const stillDenied = await c.patch('/v1/me', { schoolId: school!.id });
+    expect(stillDenied.statusCode).toBe(400);
+    expect((await c.patch('/v1/me', { city: 'Pune' })).statusCode).toBe(400);
+    const [p] = await h.t.db.select().from(profiles).where(eq(profiles.userId, user.id));
+    expect(p?.schoolId ?? null).toBeNull();
+    expect(p?.city ?? null).toBeNull();
+    expect((await c.get('/v1/me')).json()).not.toHaveProperty('schoolId');
   });
 });
 

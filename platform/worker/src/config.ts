@@ -8,6 +8,9 @@
  */
 import { z } from 'zod/v4';
 import { CONSENT } from '@soyl/shared/config/security';
+
+/** AUTH-15 `auto`: providers under which "never consented" is not a reason to delete an account (see UNCONSENTED_PURGE). */
+export const CONSENT_PROVIDERS_WITHOUT_PURGE: readonly string[] = ['unavailable', 'builtin'];
 import { loadBillingConfig, type BillingConfig } from '@soyl/api/billing/config';
 
 export const APP_ENVS = ['local', 'test', 'dev', 'stg', 'prod'] as const;
@@ -41,8 +44,10 @@ const EnvSchema = z.object({
   /** Graceful shutdown budget for in-flight jobs (ACA sends SIGTERM, then SIGKILL after 30 s by default). */
   /**
    * AUTH-15 purge of never-consented student accounts. `auto` (default) = on, except with
-   * CONSENT_PROVIDER=unavailable (no consent system yet, OA-08): nobody can ever reach `granted`, so the
-   * purge would delete every student 30 days after sign-up. `on`/`off` force it.
+   * CONSENT_PROVIDER=unavailable (no consent system yet, OA-08: nobody can ever reach `granted`, so the
+   * purge would delete every student 30 days after sign-up) and CONSENT_PROVIDER=builtin (D-039: consent is
+   * asked only when a gated feature is first used; lessons, practice and tests never need it, D-014, so
+   * "never consented" is a normal state). `on`/`off` force it.
    */
   UNCONSENTED_PURGE: z.enum(['on', 'off', 'auto']).default('auto'),
   CONSENT_PROVIDER: z.string().optional(),
@@ -114,7 +119,7 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
     logLevel: e.LOG_LEVEL,
     pgboss: { schema: e.PGBOSS_SCHEMA, migrate, appRole: e.PGBOSS_APP_ROLE },
     unconsentedAccountTtlDays: e.UNCONSENTED_ACCOUNT_TTL_DAYS,
-    unconsentedPurge: e.UNCONSENTED_PURGE === 'on' || (e.UNCONSENTED_PURGE === 'auto' && e.CONSENT_PROVIDER !== 'unavailable'),
+    unconsentedPurge: e.UNCONSENTED_PURGE === 'on' || (e.UNCONSENTED_PURGE === 'auto' && !CONSENT_PROVIDERS_WITHOUT_PURGE.includes(e.CONSENT_PROVIDER ?? '')),
     shutdownTimeoutMs: e.WORKER_SHUTDOWN_TIMEOUT_MS,
     billing: billing.config,
   };

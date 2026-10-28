@@ -3,7 +3,8 @@
 /**
  * Parental approval state (D-014, API-11). Until consent is `granted`: AI features, leaderboards/leagues/
  * rank cards, school/city fields and non-essential notifications are off; learning, practice and tests
- * stay open. POST /v1/me/consent/start starts the owner's consent flow (mock locally, OA-08).
+ * stay open. POST /v1/me/consent/start starts an external consent flow (mock locally, OA-08). With the
+ * built-in provider (D-039) /me shows ConsentFlow instead; this card stays for external providers.
  */
 import { useState } from 'react';
 import type { ConsentState } from '@/platform/shared/api-client';
@@ -20,11 +21,11 @@ const TEXT: Record<ConsentState, { badge: string; tone: 'success' | 'warning' | 
   revoked: { badge: 'Approval withdrawn', tone: 'neutral', body: 'A parent withdrew approval. AI help and leaderboards are off. Lessons, practice and tests stay open.' },
 };
 
-/** Inline note for a feature that needs parental approval (used by AI/leaderboard UIs from M3/M4). */
+/** Inline note for a feature that needs approval (D-039: the flow lives on /me/consent). */
 export function ConsentGateNote({ feature }: { feature: string }) {
   return (
     <p className={s.muted} role="note">
-      {feature} needs a parent&apos;s approval. You can ask from your profile. Lessons, practice and tests are always open.
+      {feature} needs approval first. <a href="/me/consent">Ask a parent to approve</a> (or approve it yourself if you are 18 or older). Lessons, practice and tests are always open.
     </p>
   );
 }

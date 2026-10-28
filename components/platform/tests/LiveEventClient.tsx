@@ -5,7 +5,7 @@
  *   upcoming → registration_open (Register) → live (Start, until lateStartUntil) → writing (only students
  *   who started can resume) → closed ("results soon") → results_published (ranks).
  * The leaderboard needs consent (D-014): on 403 consent_required (or no approval yet) a friendly
- * consent-needed state. Names are first name + last initial, "Student" when that student's consent is
+ * consent-needed state. Names are auto-generated public names (D-039), "Student" when that student's consent is
  * not granted; ranks are labelled beta. After the event the same paper can be taken unranked.
  */
 import Link from 'next/link';
@@ -248,7 +248,7 @@ export function Leaderboard({ eventId, compact }: { eventId: string; compact?: b
               </tbody>
             </table>
           </div>
-          <p className={s.muted}>Ranks use auto-graded marks only; ties go to the faster paper. Names show first name and last initial.</p>
+          <p className={s.muted}>Ranks use auto-graded marks only; ties go to the faster paper. Names are auto-generated, never real names.</p>
         </>
       )}
     </Card>

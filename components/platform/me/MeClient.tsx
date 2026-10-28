@@ -1,8 +1,8 @@
 'use client';
 
 /**
- * /me (ARCHITECTURE §3.1): profile (display name, board, class → PATCH /v1/me), parent approval state
- * (D-014), sign-in methods, sign out (WEB-9), sign out other devices, account deletion (DELETE /v1/me,
+ * /me (ARCHITECTURE §3.1): profile (display name, board, class → PATCH /v1/me), the public leaderboard
+ * name (D-039), the consent flow and its status (D-014, D-039: ConsentFlow), sign-in methods, sign out (WEB-9), sign out other devices, account deletion (DELETE /v1/me,
  * needs a fresh session: AUTH-9).
  */
 import { useRouter } from 'next/navigation';
@@ -15,7 +15,7 @@ import { Avatar, Badge, Card, CardTitle, EmptyState, Skeleton } from '@/componen
 import { TextInput } from '@/components/platform/ui/kit/Field';
 import { useToast } from '@/components/platform/ui/kit/Toast';
 import { useSession } from '../auth/SessionProvider';
-import { ConsentNotice } from '../auth/ConsentNotice';
+import { ConsentFlow } from '../consent/ConsentFlow';
 import { CreditsCard, MyAttemptsCard, SubscriptionCard } from './MeExtras';
 import { api } from '../lib/api-browser';
 import { BOARDS, BOARD_NAMES, CLASS_LEVELS, examLabel, learnPath, type BoardSlug } from '../lib/catalog';
@@ -92,7 +92,7 @@ export function MeClient() {
 }
 
 function Profile({ me, onChange }: { me: Me; onChange: (me: Me) => void }) {
-  const { signOut, refresh } = useSession();
+  const { signOut } = useSession();
   const name = me.displayName?.trim() || 'Student';
   return (
     <>
@@ -106,11 +106,11 @@ function Profile({ me, onChange }: { me: Me; onChange: (me: Me) => void }) {
         </div>
       </div>
       <div className={s.stack}>
-        <ConsentNotice consent={me.consent} onChanged={async () => {
-          await refresh();
-          onChange({ ...me, consent: (await api.get('/v1/me')).consent });
-        }} />
+        <div id="consent">
+          <ConsentFlow onChanged={(v) => onChange({ ...me, consent: v.status })} />
+        </div>
         <ProfileForm me={me} onSaved={onChange} />
+        <PublicName me={me} onChange={onChange} />
         <MyAttemptsCard />
         <SubscriptionCard />
         <CreditsCard />
@@ -364,6 +364,44 @@ function DeleteAccount() {
       >
         <TextInput label={`Type ${CONFIRM_WORD} to confirm`} value={typed} onChange={(e) => setTyped(e.target.value)} autoComplete="off" autoCapitalize="characters" spellCheck={false} error={error ?? undefined} name="confirmDelete" />
       </Dialog>
+    </Card>
+  );
+}
+
+/** D-039: the only name other students see. Auto-generated; the student can roll a new one. */
+function PublicName({ me, onChange }: { me: Me; onChange: (me: Me) => void }) {
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  async function regenerate() {
+    setBusy(true);
+    setError(null);
+    try {
+      const r = await api.post('/v1/me/public-name');
+      onChange({ ...me, publicName: r.publicName });
+    } catch (err) {
+      setError(problemMessage(err));
+    } finally {
+      setBusy(false);
+    }
+  }
+  return (
+    <Card as="section" aria-labelledby="public-name-title" data-testid="public-name">
+      <CardTitle as="h2" id="public-name-title">
+        Your public name
+      </CardTitle>
+      <p className={s.muted}>
+        Other students only ever see this made-up name, never your real name or email: <strong data-testid="public-name-value">{me.publicName}</strong>
+      </p>
+      {error && (
+        <p className={s.formError} role="alert">
+          {error}
+        </p>
+      )}
+      <div className={s.actions}>
+        <Button variant="secondary" loading={busy} onClick={() => void regenerate()}>
+          Give me a new name
+        </Button>
+      </div>
     </Card>
   );
 }

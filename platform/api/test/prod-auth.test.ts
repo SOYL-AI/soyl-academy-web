@@ -289,10 +289,10 @@ describe('email-only sign-in + CONSENT_PROVIDER=unavailable (app)', () => {
       expect(res.statusCode).toBe(403);
       expect(res.json()).toMatchObject({ code: 'consent_required', title: 'A parent or guardian needs to give consent first.' });
     }
-    // School (profile_school_city) is gated too.
+    // School is not collected at all since D-039 (it was gated under D-014): refused before any consent check.
     const school = await c.patch('/v1/me', { schoolId: randomUUID() });
-    expect(school.statusCode).toBe(403);
-    expect(school.json().code).toBe('consent_required');
+    expect(school.statusCode).toBe(400);
+    expect(school.json().code).toBe('validation_failed');
     // D-014: tests are not gated.
     expect((await c.post('/v1/test/attempt')).statusCode).toBe(200);
     expect(CONSENT.gatedFeatures).toEqual(expect.arrayContaining(['ai', 'leaderboards', 'rank_cards', 'profile_school_city']));

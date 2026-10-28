@@ -13,12 +13,13 @@
  * computes final ranks in Postgres after the window (`live_registrations.final_rank/percentile/score`)
  * and publishes them; the leaderboard then reads Postgres. Only auto-graded marks rank (AC-14).
  *
- * Leaderboard rows show first name + last initial from the validated display name (F-017, AC-18) of
+ * Leaderboard rows show the auto-generated public name (D-039; never a real name, F-017, AC-18) of
  * students whose consent is granted; everyone else is ranked but unnamed (D-014).
  */
 import { and, asc, eq, inArray, isNotNull, sql } from 'drizzle-orm';
 import { attempts, consentStatus, liveEvents, liveRegistrations, profiles, subjects, tests, users, type Database } from '@soyl/db';
 import { TEST_ENGINE } from '@soyl/shared/config/tests';
+import { publicName } from '@soyl/shared/config/public-names';
 import type { KeyValueStore } from '../../kv';
 import { ApiProblem } from '../../errors';
 
@@ -149,7 +150,10 @@ export async function removeFromLiveBoards(db: Database, kv: KeyValueStore, user
 /* Names (F-017)                                                                                   */
 /* ---------------------------------------------------------------------------------------------- */
 
-/** "Priya Sharma" → "Priya S."; "Priya" → "Priya". Display names are validated letters only (AC-18). */
+/**
+ * "Priya Sharma" → "Priya S."; "Priya" → "Priya". No longer shown to other students: D-039 replaced it with the
+ * auto-generated public name (leaderboardNames below). Kept for private, own-account displays.
+ */
 export function firstNameLastInitial(displayName: string | null | undefined): string | null {
   const parts = (displayName ?? '').normalize('NFKC').trim().split(/\s+/).filter(Boolean);
   if (!parts.length) return null;
@@ -159,16 +163,19 @@ export function firstNameLastInitial(displayName: string | null | undefined): st
   return `${first} ${initial}.`;
 }
 
-/** Leaderboard names for user ids: only consented, non-deleted students with a display name. */
+/**
+ * Leaderboard names for user ids (D-039): the auto-generated public name ("Brave Otter 417", never a real
+ * name), only for consented, non-deleted students; null otherwise (the UI shows "Student").
+ */
 export async function leaderboardNames(db: Database, userIds: string[]): Promise<Map<string, string | null>> {
   if (!userIds.length) return new Map();
   const rows = await db
-    .select({ id: users.id, deletedAt: users.deletedAt, displayName: profiles.displayName, consent: consentStatus.status })
+    .select({ id: users.id, deletedAt: users.deletedAt, seed: profiles.publicNameSeed, consent: consentStatus.status })
     .from(users)
     .leftJoin(profiles, eq(profiles.userId, users.id))
     .leftJoin(consentStatus, eq(consentStatus.userId, users.id))
     .where(inArray(users.id, userIds));
-  return new Map(rows.map((r) => [r.id, !r.deletedAt && r.consent === 'granted' ? firstNameLastInitial(r.displayName) : null]));
+  return new Map(rows.map((r) => [r.id, !r.deletedAt && r.consent === 'granted' ? publicName(r.id, r.seed ?? 0) : null]));
 }
 
 /* ---------------------------------------------------------------------------------------------- */

@@ -16,6 +16,7 @@ import { MemoryKv, RedisKv, type KeyValueStore } from '../src/kv';
 import { MockEmailSender } from '../src/auth/senders/email';
 import { MockSmsSender } from '../src/auth/senders/sms';
 import { MockConsentProvider } from '../src/consent/mock';
+import type { ConsentProvider } from '../src/consent/provider';
 import { MockOidcServer } from '../src/dev/mock-oidc';
 import type { Services } from '../src/services';
 import type { AiDeps } from '../src/ai/services';
@@ -51,6 +52,8 @@ export interface HarnessOptions {
   ai?: AiDeps;
   /** SOYL Coins store items override (default: config STORE_ITEMS). */
   coinItems?: readonly StoreItem[];
+  /** Another consent provider instead of the mock (e.g. the built-in one, D-039); `h.consent` is then unused. */
+  consentProvider?: (t: TestDb) => ConsentProvider;
 }
 
 const secret = () => randomBytes(32).toString('base64url');
@@ -100,7 +103,7 @@ export async function createHarness(opts: HarnessOptions = {}): Promise<Harness>
   let app: App;
   try {
     app = await buildApp(
-      { config, db: t.db, kv, clock, providers: { sms, email, consent }, google: { allowInsecure: true }, ai: opts.ai, coins: opts.coinItems ? { items: opts.coinItems } : undefined },
+      { config, db: t.db, kv, clock, providers: { sms, email, consent: opts.consentProvider ? opts.consentProvider(t) : consent }, google: { allowInsecure: true }, ai: opts.ai, coins: opts.coinItems ? { items: opts.coinItems } : undefined },
       { logStream, extraRoutes: opts.extraRoutes },
     );
   } catch (err) {

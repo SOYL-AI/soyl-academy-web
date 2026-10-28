@@ -1,6 +1,6 @@
 /**
  * DELETE /v1/me — step 1 of platform/db/PII.md "Account deletion" (AC-25 erasure, AC-26):
- * in one transaction delete sessions, accounts, pending OTP rows, consent_status, guardian links
+ * in one transaction delete sessions, accounts, pending OTP rows, consent_status, consent_records (D-039), guardian links
  * (both directions), AI conversations (messages cascade) and the staff TOTP enrolment; mark the user's
  * uploads `deleted` (S6-M02: their blobs — the photo/paper in `uploads-quarantine` and its cleaned copy
  * in `uploads` — are deleted right after by UploadService.purgeDeleted, then the rows; the worker's
@@ -14,6 +14,7 @@ import {
   accounts,
   aiConversations,
   auditLog,
+  consentRecords,
   consentStatus,
   guardianLinks,
   profiles,
@@ -50,6 +51,7 @@ export async function deleteAccount(
     await tx.delete(sessions).where(eq(sessions.userId, user.id));
     await tx.delete(accounts).where(eq(accounts.userId, user.id));
     await tx.delete(consentStatus).where(eq(consentStatus.userId, user.id));
+    await tx.delete(consentRecords).where(eq(consentRecords.userId, user.id));
     await tx.delete(guardianLinks).where(or(eq(guardianLinks.parentUserId, user.id), eq(guardianLinks.studentUserId, user.id)));
     await tx.delete(aiConversations).where(eq(aiConversations.userId, user.id));
     // Blobs first, then rows (UploadService.purgeDeleted): the rows are the index of the blobs.
@@ -73,7 +75,7 @@ export async function deleteAccount(
       .where(eq(users.id, user.id));
     await tx
       .update(profiles)
-      .set({ displayName: null, board: null, classLevel: null, schoolId: null, city: null, updatedAt: now })
+      .set({ displayName: null, board: null, classLevel: null, schoolId: null, city: null, publicNameSeed: 0, updatedAt: now })
       .where(eq(profiles.userId, user.id));
     await tx.insert(auditLog).values({
       actorUserId: user.id,

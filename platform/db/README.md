@@ -7,7 +7,7 @@ decisions: `docs/platform/adr/004-orm-drizzle.md`; personal data: [PII.md](PII.m
 ```
 platform/db/
   schema/          Drizzle tables by group: identity, catalog, content, assessment, gamification,
-                   ai-credits, ai-gateway, billing, ops, pipeline, progress, views  (69 tables, 2 views)
+                   ai-credits, ai-gateway, billing, ops, pipeline, progress, views  (70 tables, 2 views)
   migrations/      NNNN_name.sql (drizzle-kit, up) + NNNN_name.down.sql (hand-written) + meta/
   src/             client, migrator, CLI, seeds, test harness, normalisers, DB-6 helpers
   test/            vitest suites against real PostgreSQL
@@ -104,6 +104,8 @@ ADR-012: `responses.client_seq`, attempt score split and percentile flag, `test_
 weekly `leagues` and `league_memberships.league_id/tier/outcome`; the `ai_answer` report type on `content_reports`),
 `0011_coins` (SOYL Coins, ADR-021: `coin_wallets`, `coin_redemptions`, append-only `coin_ledger` with the
 `soyl_coin_ledger_guard` balance trigger; conventions function now lists `coin_ledger` as append-only).
+`0012_consent_interim` (backend-api, D-039, ADR-022: `consent_records` for the built-in consent provider,
+`profiles.public_name_seed` for auto-generated public names).
 
 ## Roles (DB-1) and Azure mapping
 

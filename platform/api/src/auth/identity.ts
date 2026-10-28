@@ -166,7 +166,8 @@ export class IdentityService {
     }
     const adapter = await this.adapter();
     const { user } = await adapter.createOAuthUser(
-      { name: (p.name ?? ACCOUNT.placeholderName).slice(0, 100), email: p.email, emailVerified: true, image: p.picture ?? null },
+      // D-039 data minimisation: Google's name and picture are not stored (the account needs the email only).
+      { name: ACCOUNT.placeholderName, email: p.email, emailVerified: true, image: null },
       // Tokens are not stored: the platform never calls Google APIs on the user's behalf.
       { providerId: 'google', accountId: p.sub, scope: 'openid email profile' },
     );

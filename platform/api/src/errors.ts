@@ -62,6 +62,16 @@ export const PROBLEMS = {
   phone_otp_paused: [503, 'Phone sign-in is busy right now. Please use email or Google.'],
   service_unavailable: [503, 'This is temporarily unavailable. Please try again shortly.'],
   consent_unavailable: [503, 'We could not check consent right now. Please try again shortly.'],
+  /** Built-in consent (D-039, ADR-022): this deployment uses another consent provider, so the built-in flow is off. */
+  consent_flow_unavailable: [409, 'Parent approval works differently here. Please check your profile page.'],
+  /** Built-in consent: declare the age group first (or the action is for the other age group). */
+  age_band_required: [409, 'Tell us your age group first.'],
+  /** Built-in consent: an account declared as under 18 cannot switch itself to 18 or older. */
+  age_band_locked: [409, 'Your age group cannot be changed here. Please contact us if it is wrong.'],
+  consent_code_invalid: [400, 'That approval code is not right. Check it and try again.'],
+  consent_code_expired: [400, 'That approval code has expired or was replaced. Ask for a new one.'],
+  /** The parent's withdraw link is malformed, forged or for an earlier request. */
+  consent_link_invalid: [404, 'This link is not valid any more. If you need help, contact SOYL Academy.'],
   internal: [500, 'Something went wrong on our side.'],
   not_implemented: [501, 'This is not available yet.'],
   /** AI gateway (M4, ADR-013). Paywall: extension fields balance, required, resetAt, resetInSeconds, plan, plansUrl. */

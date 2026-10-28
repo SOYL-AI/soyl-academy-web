@@ -6,12 +6,36 @@ Every column that holds personal data, how long it is kept, and what account del
 columns here in the same PR. Retention values follow ARCHITECTURE §15 and are **pending the owner's
 sign-off (F-015)**; payment-record retention is a legal question (OA-14).
 
+## Data minimisation (D-039)
+
+What an account holds is kept to what the product needs:
+
+- **Sign-up needs an email address only.** No name is required (`users.name` is the placeholder
+  "SOYL learner" for every sign-up method; Google's name and picture are not stored), no phone in
+  production (`AUTH_METHODS=email`), no school or city (`PATCH /v1/me` refuses them), no date of birth.
+- **Age:** a self-declared band only (`consent_records.age_band`: 18 or older / under 18).
+- **Parents:** the parent's email address is used once, to send the approval code, and never stored:
+  only a keyed hash (rate limits, noticing a change of parent) and a masked hint ("p•••@gmail.com").
+- **Public names:** other students only ever see an auto-generated name ("Brave Otter 417") derived from
+  the account id and `profiles.public_name_seed`; display names stay on the student's own screens.
+- **Analytics:** `analytics_events` has no user, device or IP column; no third-party analytics, pixels or
+  Vercel Analytics on platform routes (D-014, WEB-1).
+
+## Consent withdrawal (built-in provider, D-039)
+
+When consent leaves `granted` (the student withdraws, the parent's link withdraws, or an 18+ account
+re-declares as under 18), the API deletes the **AI data** at once: `ai_conversations` (cascades
+`ai_messages`) and the user's uploads with both blobs, by the same path as account deletion below
+(rows marked `deleted` in the transaction, then blobs and rows; the worker's `uploads.purge-deleted`
+retries failures). An `audit_log` row (action "consent.ai_data_deleted") records the counts only.
+Learning records (progress, practice, attempts, XP) are not AI data and stay.
+
 ## Account deletion (`DELETE /v1/me`)
 
 Two steps, implemented by backend-api:
 
 1. **Immediately (anonymise + revoke):** delete the user's `sessions`, `accounts` and `verifications`
-   (by identifier = their email/phone), `consent_status`, `guardian_links` (both directions), `user_mfa`,
+   (by identifier = their email/phone), `consent_status`, `consent_records`, `guardian_links` (both directions), `user_mfa`,
    `ai_conversations` (cascades `ai_messages`), and the user's uploads with their blobs (S6-M02: in the
    transaction the `uploads` rows are marked `deleted`, so they are unusable at once; right after it the API
    deletes each upload's quarantine original (`uploads-quarantine/<blob_key>`) and cleaned copy
@@ -37,11 +61,11 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 
 | Column | What it holds | Retention | On deletion |
 |---|---|---|---|
-| `users.name` | Name from sign-up or Google profile | life of account | anonymise |
+| `users.name` | Placeholder "SOYL learner" for every sign-up (D-039: Google's name is not stored; older Google accounts may hold it) | life of account | anonymise |
 | `users.email` | Email as given (display, sign-in) | life of account | anonymise |
 | `users.email_normalized` | Generated from `email` (DB-3) | follows `email` | anonymise (generated → NULL) |
 | `users.email_verified` | Whether the email is verified | life of account | cascade |
-| `users.image` | Profile picture URL (Google) | life of account | anonymise |
+| `users.image` | Not set since D-039 (older Google accounts may hold a picture URL) | life of account | anonymise |
 | `users.phone_number` | Phone as given (OTP sign-in) | life of account | anonymise |
 | `users.phone_e164` | Generated from `phone_number` (DB-3) | follows `phone_number` | anonymise (generated → NULL) |
 | `users.phone_number_verified` | Whether the phone is verified | life of account | cascade |
@@ -61,14 +85,19 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `accounts.password` | Unused (no passwords); Better Auth core column | — | delete |
 | `verifications.identifier` | `otp:<purpose>:<channel>:<HMAC(identifier)>` — a keyed hash of the email/phone, not the raw value (AUTH-4) | until expiry (minutes); swept daily | delete |
 | `verifications.value` | OTP (hashed, DB-4 / AUTH-4) | until expiry | delete |
-| `profiles.display_name` | Name shown in the app; leaderboards use first name + last initial | life of account | anonymise |
+| `profiles.display_name` | Optional name shown on the student's own screens only (D-039: never to other students) | life of account | anonymise |
+| `profiles.public_name_seed` | Seed of the auto-generated public name ("Brave Otter 417", D-039); not personal | life of account | anonymise (reset to 0) |
 | `profiles.board`, `profiles.class_level` | Board and class | life of account | anonymise |
-| `profiles.school_id` | School (only with consent, D-014) | life of account | anonymise |
-| `profiles.city` | City (only with consent, D-014) | life of account | anonymise |
+| `profiles.school_id` | Not collected (D-039: `PATCH /v1/me` refuses it); column kept for opt-in leagues later | life of account | anonymise |
+| `profiles.city` | Not collected (D-039) | life of account | anonymise |
 | `profiles.locale` | Language preference | life of account | cascade |
 | `guardian_links.parent_user_id`, `guardian_links.student_user_id` | Parent–child relationship | while linked | delete |
 | `consent_status.provider_ref` | Id in the owner's consent system | life of account | delete |
-| `consent_status.status` | Consent state | life of account | delete |
+| `consent_status.status` | Consent state (the gate's cache) | life of account | delete |
+| `consent_records.age_band`, `consent_records.status`, `consent_records.method`, `consent_records.policy_version`, `consent_records.declared_at`, `consent_records.granted_at`, `consent_records.revoked_at`, `consent_records.revoked_by` | Built-in consent (D-039): self-declared age band, consent state, how and when it was given or withdrawn, notice version | life of account | delete (the `audit_log` rows of each transition keep ids and states only) |
+| `consent_records.parent_email_hash` | Keyed HMAC of the parent's normalised email (never the address) | life of account | delete |
+| `consent_records.parent_email_hint` | Masked parent email, e.g. "p•••@gmail.com", shown to the student only | life of account | delete |
+| `consent_records.code_hash`, `consent_records.code_expires_at`, `consent_records.code_attempts`, `consent_records.code_sent_at`, `consent_records.revoke_generation` | Keyed hash of the live approval code (48 h, 5 tries), withdraw-link generation | until used/expired (code); life of account | delete |
 | `attempts.*`, `responses.answer`, `evaluations.feedback` | Test attempts, answers, marks | life of account | cascade |
 | `attempts.auto_score`, `attempts.self_score`, `attempts.time_taken_sec`, `attempts.counts_for_stats`, `attempts.graded_at`, `attempts.tab_switch_count`, `responses.client_seq`, `responses.client_saved_at`, `responses.time_spent_sec` | Attempt marks split (auto/self), time taken, percentile flag, tab switches, autosave sequence and advisory client times (0007, ADR-012) | life of account | cascade |
 | `test_score_buckets.*` | Per-test score distribution: counts per half-mark bucket, no user link | life of test | retain (aggregate, not personal) |
@@ -81,7 +110,7 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `practice_answers.*`, `practice_answers.response` | Practice answers: the response (may include the student's own written text), outcome, marks, time | life of account | cascade |
 | `user_mfa.totp_secret_enc` | Staff TOTP secret, AES-256-GCM encrypted (key in Key Vault, not in the database) | while enrolled | delete |
 | `user_mfa.recovery_code_hashes`, `user_mfa.last_used_step`, `user_mfa.confirmed_at` | HMACs of unused staff recovery codes; last accepted TOTP step | while enrolled | delete |
-| `leaderboard_snapshots.entries` | First name + last initial, XP, rank (opaque handles) | 1 year | retain (no ids; names age out) |
+| `leaderboard_snapshots.entries` | Auto-generated public names (D-039), XP, rank (opaque handles) | 1 year | retain (no ids; no real names) |
 | `credit_ledger.*` | AI credit grants and spend | life of account | cascade |
 | `ai_requests.*` | AI usage metering (no prompt text) | 30 days per user, then aggregates only | cascade |
 | `ai_conversations.title` | Conversation title (may quote the student) | 30 days | delete |

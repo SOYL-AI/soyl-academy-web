@@ -27,6 +27,7 @@ Format and rules: AGENTS.md §4.4 (context, options, decision, consequences). An
 | [019](019-frozen-test-series-in-release.md) | Frozen test series, published by the release step (with the competency-balance addendum) | Accepted | 2026-10-27 | Content, tests |
 | [020](020-images-only-uploads-at-launch.md) | Images only for AI uploads at launch: PDF uploads off until the worker parses and rasterises them (S6-M01) | Accepted | 2026-10-28 | AI, security |
 | [021](021-soyl-coins.md) | SOYL Coins: earn-only append-only ledger with a balance guard, check-in and daily challenge, store and merch redemption behind switches (off at launch, D-038) | Accepted | 2026-10-28 | gamification, data, privacy |
+| [022](022-interim-builtin-consent-provider.md) | Interim built-in consent provider: age band, parent approval code by email, withdraw link, AI data deletion (D-039) | Accepted | 2026-10-28 | Consent, privacy |
 
 ## Housekeeping notes
 

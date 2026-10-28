@@ -414,7 +414,7 @@ export const LeaderboardResponse = z
     entries: z.array(
       z.object({
         rank: z.number().int(),
-        /** First name + last initial (F-017); null when the student's consent is not granted (D-014). */
+        /** Auto-generated public name (D-039; never a real name); null when the student's consent is not granted (D-014). */
         name: z.string().nullable(),
         score: z.number(),
         isMe: z.boolean(),

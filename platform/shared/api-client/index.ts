@@ -25,6 +25,10 @@ export type Me = Schemas['Me'];
 export type PatchMe = Schemas['PatchMeInput'];
 export type DeleteMeResponse = Schemas['DeleteMeResponse'];
 export type ConsentStartResponse = Schemas['ConsentStartResponse'];
+// D-039 built-in consent flow and public names
+export type ConsentView = Schemas['ConsentView'];
+export type ConsentParentResponse = Schemas['ConsentParentResponse'];
+export type PublicNameResponse = Schemas['PublicNameResponse'];
 export type GuestProgress = Schemas['GuestProgressInput'];
 export type GuestLesson = Schemas['GuestLessonInput'];
 export type GuestPracticeAnswer = Schemas['GuestPracticeAnswerInput'];

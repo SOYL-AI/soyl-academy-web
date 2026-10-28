@@ -36,6 +36,7 @@ import { createServices, type AppDeps, type Services } from './services';
 import { registerAuthRoutes } from './modules/auth';
 import { registerSessionRoutes } from './modules/session';
 import { registerMeRoutes } from './modules/me';
+import { registerConsentRoutes } from './modules/consent';
 import { registerCatalogRoutes } from './modules/catalog';
 import { registerHealthRoutes } from './modules/health';
 import { CONTENT_PRIVATE_CACHE_CONTROL } from './http/cache';
@@ -282,6 +283,7 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
   registerAuthRoutes(app, services, deps);
   registerSessionRoutes(app, services);
   registerMeRoutes(app, services, deps);
+  registerConsentRoutes(app, services, deps);
   registerCatalogRoutes(app, deps);
   registerContentRoutes(app, deps);
   registerPracticeRoutes(app, deps);

@@ -154,7 +154,7 @@ Root: `npm run lint`, `npm run build`, `npm run test:platform-web`, `npm run tes
 - No staff UI for the merch queue (API only); not needed while redemptions are off.
 - Web: the consent-needed state (only shown when redemption is on) links to `/me`; switch it to `/me/consent?next=` when the D-039 interim provider (ADR-022) lands. The daily-challenge solver infers Hindi from the subject id (the API sends no language). With both credits and coins chips the header is close to 360 px; the AI e2e (chips + consent) was not re-run.
 - A stray process from an earlier e2e run (pid 30112 on :3320) could not be stopped by the agents (taskkill denied); the e2e above ran on alternate ports (`PW_*_PORT`).
-- `consent-interim` also numbered its migration 0011: whoever merges second renumbers (and regenerates the drizzle snapshot).
+- `consent-interim` also numbered its migration 0011: whoever merges second renumbers (and regenerates the drizzle snapshot). Done at integration: consent is `0012_consent_interim`.
 
 ## Decisions made
 

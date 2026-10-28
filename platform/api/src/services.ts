@@ -13,6 +13,7 @@ import type { EmailSender } from './auth/senders/email';
 import type { SmsSender } from './auth/senders/sms';
 import type { ConsentProvider } from './consent/provider';
 import { ConsentService } from './consent/service';
+import { BuiltinConsentFlow, isBuiltinProvider } from './consent/builtin';
 import { MfaService } from './auth/mfa';
 import { MFA } from '@soyl/shared/config/security';
 import type { StoreItem } from '@soyl/shared/config/coins';
@@ -67,7 +68,11 @@ export function createServices(deps: AppDeps) {
   // database; tests may inject a StaticEntitlementService); a newly granted plan tops today's credits up at once.
   const ai = new AiServices({ config, db, kv, clock, ai: deps.ai });
   billing.setCreditHook(ai.credits);
-  return { auth, adapter, limiter, sessions, otp, identity, google, consent, mfa, billing, ai };
+  // D-039 / ADR-022: the interactive flow exists only with CONSENT_PROVIDER=builtin (routes answer 409 otherwise).
+  const consentFlow = isBuiltinProvider(providers.consent)
+    ? new BuiltinConsentFlow({ db, clock, limiter, email: providers.email, consent, pepper: config.otpPepper, publicBaseUrl: config.publicBaseUrl, uploads: () => ai.uploads })
+    : null;
+  return { auth, adapter, limiter, sessions, otp, identity, google, consent, consentFlow, mfa, billing, ai };
 }
 
 export type Services = ReturnType<typeof createServices>;

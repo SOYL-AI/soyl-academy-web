@@ -15,7 +15,7 @@
  *   promoted (never with 0 XP, never from the top tier), the bottom places relegated (never from the
  *   bottom tier). Final XP, rank and outcome stay on `league_memberships` (cascade on account purge).
  * - **Privacy (D-014, F-017, AC-18).** Only students with consent `granted` are placed in a league,
- *   and the route itself needs consent. Standings carry rank, XP and first name + last initial; the
+ *   and the route itself needs consent. Standings carry rank, XP and the auto-generated public name (D-039); the
  *   name is null when that student's consent is no longer granted. Deleted accounts are left out.
  *
  * Concurrency: joins and division formation for one (week, cohort, tier) take a transaction-scoped

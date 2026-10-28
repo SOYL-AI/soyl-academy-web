@@ -3,19 +3,22 @@
  * ids of other users' resources return 404.
  *
  *   GET    /v1/me                    profile, consent, sign-in methods
- *   PATCH  /v1/me                    board, classLevel, schoolId (consent), displayName, locale (API-8 allowlist)
+ *   PATCH  /v1/me                    board, classLevel, displayName, locale (API-8 allowlist; D-039: no school or city)
  *   DELETE /v1/me                    anonymise + revoke now, purge ≤ 30 days (fresh session)
  *   POST   /v1/me/merge-guest        guest progress, once per account (256 KB body)
- *   POST   /v1/me/consent/start      start the parental-consent flow
+ *   POST   /v1/me/consent/start      start the parental-consent flow (built-in flow: modules/consent.ts)
+ *   POST   /v1/me/public-name        a new random public (leaderboard) name (D-039)
  *   GET    /v1/me/sessions           this account's sessions (AUTH-10)
  *   DELETE /v1/me/sessions/:id       revoke one (404 if not yours)
  *   DELETE /v1/me/sessions           revoke all others
  */
+import { randomInt } from 'node:crypto';
 import { eq } from 'drizzle-orm';
 import type { FastifyInstance } from 'fastify';
 import type { ZodTypeProvider } from 'fastify-type-provider-zod';
 import { z } from 'zod/v4';
-import { profiles, schools } from '@soyl/db';
+import { profiles } from '@soyl/db';
+import { publicName, PUBLIC_NAME_MAX_SEED } from '@soyl/shared/config/public-names';
 import { ACCOUNT, BODY_LIMITS, type ConsentState } from '@soyl/shared/config/security';
 import { ApiProblem } from '../errors';
 import { authEvent } from '../logging';
@@ -36,8 +39,8 @@ const MeResponse = z
     displayName: z.string().nullable(),
     board: BoardSchema.nullable(),
     classLevel: ClassLevelSchema.nullable(),
-    /** D-014: only returned when consent is granted. */
-    schoolId: z.uuid().nullable(),
+    /** D-039: the only name other students ever see (leaderboards, leagues, live ranks); auto-generated. */
+    publicName: z.string(),
     locale: z.string(),
     consent: ConsentStateSchema,
     methods: z.object({ phone: z.string().nullable(), email: z.string().nullable(), google: z.boolean() }),
@@ -51,11 +54,10 @@ const PatchMeBody = z
     displayName: z.string().max(100).nullable().optional(),
     board: BoardSchema.optional(),
     classLevel: ClassLevelSchema.optional(),
-    schoolId: z.uuid().nullable().optional(),
     locale: LocaleSchema.optional(),
   })
   .refine((b) => Object.keys(b).length > 0, 'at least one field')
-  .meta({ id: 'PatchMe', description: 'API-8: only these fields; role, status, xp etc. are rejected (400).' });
+  .meta({ id: 'PatchMe', description: 'API-8: only these fields; role, status, xp, school, city etc. are rejected (400; D-039: no school or city).' });
 
 const SessionsResponse = z.object({
   sessions: z.array(
@@ -81,7 +83,7 @@ export function registerMeRoutes(appIn: FastifyInstance, services: Services, dep
       displayName: p?.displayName ?? null,
       board: (p?.board as 'cbse' | 'cisce' | null | undefined) ?? null,
       classLevel: p?.classLevel ?? null,
-      schoolId: consent === 'granted' ? (p?.schoolId ?? null) : null,
+      publicName: publicName(user.id, p?.publicNameSeed ?? 0),
       locale: p?.locale ?? 'en-IN',
       consent,
       methods: await services.identity.methods(userId),
@@ -114,15 +116,6 @@ export function registerMeRoutes(appIn: FastifyInstance, services: Services, dep
       if (b.board !== undefined) set.board = b.board;
       if (b.classLevel !== undefined) set.classLevel = b.classLevel;
       if (b.locale !== undefined) set.locale = b.locale;
-      if (b.schoolId !== undefined) {
-        // D-014 / API-11: school is collected only with consent.
-        await services.consent.assertAllowed(userId, 'profile_school_city');
-        if (b.schoolId !== null) {
-          const [school] = await db.select({ id: schools.id }).from(schools).where(eq(schools.id, b.schoolId));
-          if (!school) throw new ApiProblem('validation_failed', { errors: [{ path: 'body.schoolId', message: 'Unknown school.' }] });
-        }
-        set.schoolId = b.schoolId;
-      }
       await db
         .insert(profiles)
         .values({ userId, ...set })
@@ -178,6 +171,24 @@ export function registerMeRoutes(appIn: FastifyInstance, services: Services, dep
     handler: async (request) => {
       const flow = await services.consent.startFlow(request.auth!.user.id);
       return { status: flow.status, redirectUrl: flow.redirectUrl ?? null };
+    },
+  });
+
+  app.post('/v1/me/public-name', {
+    config: { policy: policies.member({ rateLimit: { buckets: ['public-name.user'] } }) },
+    schema: {
+      tags: ['me'],
+      summary: 'Pick a new random public name (the auto-generated name shown on leaderboards; real names never are)',
+      response: withProblems({ 200: z.object({ publicName: z.string() }).meta({ id: 'PublicNameResponse' }) }),
+    },
+    handler: async (request) => {
+      const userId = request.auth!.user.id;
+      const seed = randomInt(1, PUBLIC_NAME_MAX_SEED);
+      await db
+        .insert(profiles)
+        .values({ userId, publicNameSeed: seed })
+        .onConflictDoUpdate({ target: profiles.userId, set: { publicNameSeed: seed, updatedAt: new Date(clock.now()) } });
+      return { publicName: publicName(userId, seed) };
     },
   });
 

@@ -1158,6 +1158,60 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/me/public-name": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Pick a new random public name (the auto-generated name shown on leaderboards; real names never are) */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["PublicNameResponse"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/v1/me/sessions": {
         parameters: {
             query?: never;
@@ -1314,6 +1368,346 @@ export interface paths {
                 };
             };
         };
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/consent": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Your consent state and which consent flow applies (D-039) */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["ConsentView"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/consent/age-band": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Declare your age group. 18 or older (with agree: true) turns consent-gated features on; under 18 needs a parent. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["ConsentAgeBandBodyInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["ConsentView"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/consent/parent": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Under 18: email a one-time approval code to your parent or guardian (rate-limited per account, parent email and IP). */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["ConsentParentBodyInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["ConsentParentResponse"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/consent/verify": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Enter the approval code your parent gave you. Single use; replays after approval return the granted state. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["ConsentVerifyBodyInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["ConsentView"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/consent/withdraw": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Withdraw consent (or cancel a pending request). Gated features switch off and AI conversations and uploads are deleted. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["ConsentView"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/consent/parent/withdraw": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** The parent's link: withdraw approval, or decline a pending request. No sign-in; it can only switch features off. Idempotent. */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": components["schemas"]["ConsentParentWithdrawBodyInput"];
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["ConsentParentWithdrawResponse"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        delete?: never;
         options?: never;
         head?: never;
         patch?: never;
@@ -3517,7 +3911,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Your weekly league: tier, division standings (first name + last initial), promotion and relegation zones. Needs consent (D-014). */
+        /** Your weekly league: tier, division standings (auto-generated public names), promotion and relegation zones. Needs consent (D-014). */
         get: {
             parameters: {
                 query?: {
@@ -5532,7 +5926,7 @@ export interface components {
             displayName: string | null;
             board: components["schemas"]["BoardInput"] | null;
             classLevel: number | null;
-            schoolId: string | null;
+            publicName: string;
             locale: string;
             consent: components["schemas"]["ConsentStateInput"];
             methods: {
@@ -5544,12 +5938,11 @@ export interface components {
             /** Format: date-time */
             createdAt: string;
         };
-        /** @description API-8: only these fields; role, status, xp etc. are rejected (400). */
+        /** @description API-8: only these fields; role, status, xp, school, city etc. are rejected (400; D-039: no school or city). */
         PatchMeInput: {
             displayName?: string | null;
             board?: components["schemas"]["BoardInput"];
             classLevel?: number;
-            schoolId?: string | null;
             locale?: components["schemas"]["LocaleInput"];
         };
         DeleteMeResponseInput: {
@@ -5561,6 +5954,61 @@ export interface components {
         ConsentStartResponseInput: {
             status: components["schemas"]["ConsentStateInput"];
             redirectUrl: string | null;
+        };
+        ConsentViewInput: {
+            /**
+             * @description builtin = age band + parent code here; external = POST /v1/me/consent/start; none = no consent system yet.
+             * @enum {string}
+             */
+            flow: "builtin" | "external" | "none";
+            status: components["schemas"]["ConsentStateInput"];
+            /** @description adult = 18 or older; minor = under 18 (self-declared). */
+            ageBand: ("adult" | "minor") | null;
+            method: ("self_declared" | "parent_email_code") | null;
+            /** @description Masked parent email, e.g. p•••@gmail.com. */
+            parentEmailHint: string | null;
+            codeExpiresAt: string | null;
+            grantedAt: string | null;
+            revokedAt: string | null;
+            revokedBy: ("parent" | "account_holder" | "admin") | null;
+            policyVersion: string;
+        };
+        ConsentAgeBandBodyInput: {
+            /** @enum {string} */
+            ageBand: "adult" | "minor";
+            agree?: boolean;
+        };
+        ConsentParentBodyInput: {
+            parentEmail: string;
+        };
+        ConsentParentResponseInput: {
+            /**
+             * @description builtin = age band + parent code here; external = POST /v1/me/consent/start; none = no consent system yet.
+             * @enum {string}
+             */
+            flow: "builtin" | "external" | "none";
+            status: components["schemas"]["ConsentStateInput"];
+            /** @description adult = 18 or older; minor = under 18 (self-declared). */
+            ageBand: ("adult" | "minor") | null;
+            method: ("self_declared" | "parent_email_code") | null;
+            /** @description Masked parent email, e.g. p•••@gmail.com. */
+            parentEmailHint: string | null;
+            codeExpiresAt: string | null;
+            grantedAt: string | null;
+            revokedAt: string | null;
+            revokedBy: ("parent" | "account_holder" | "admin") | null;
+            policyVersion: string;
+            resendAfterSeconds: number;
+        };
+        ConsentVerifyBodyInput: {
+            code: string;
+        };
+        ConsentParentWithdrawBodyInput: {
+            token: string;
+        };
+        ConsentParentWithdrawResponseInput: {
+            status: components["schemas"]["ConsentStateInput"];
+            alreadyWithdrawn: boolean;
         };
         /**
          * @description Only when boardAssessed is false: assessed by the school, not in the board exam. periodic = periodic assessment only; project = project work only; practical = practical; internal = formative/internal assessment.
@@ -7261,6 +7709,9 @@ export interface components {
             student: string | null;
             address: components["schemas"]["ShippingAddressInput"] | null;
         };
+        PublicNameResponseInput: {
+            publicName: string;
+        };
         PracticeSelfAssessRequestInput: {
             marks: number;
         };
@@ -7407,7 +7858,7 @@ export interface components {
             displayName: string | null;
             board: components["schemas"]["Board"] | null;
             classLevel: number | null;
-            schoolId: string | null;
+            publicName: string;
             locale: string;
             consent: components["schemas"]["ConsentState"];
             methods: {
@@ -7419,12 +7870,11 @@ export interface components {
             /** Format: date-time */
             createdAt: string;
         };
-        /** @description API-8: only these fields; role, status, xp etc. are rejected (400). */
+        /** @description API-8: only these fields; role, status, xp, school, city etc. are rejected (400; D-039: no school or city). */
         PatchMe: {
             displayName?: string | null;
             board?: components["schemas"]["Board"];
             classLevel?: number;
-            schoolId?: string | null;
             locale?: components["schemas"]["Locale"];
         };
         DeleteMeResponse: {
@@ -7436,6 +7886,61 @@ export interface components {
         ConsentStartResponse: {
             status: components["schemas"]["ConsentState"];
             redirectUrl: string | null;
+        };
+        ConsentView: {
+            /**
+             * @description builtin = age band + parent code here; external = POST /v1/me/consent/start; none = no consent system yet.
+             * @enum {string}
+             */
+            flow: "builtin" | "external" | "none";
+            status: components["schemas"]["ConsentState"];
+            /** @description adult = 18 or older; minor = under 18 (self-declared). */
+            ageBand: ("adult" | "minor") | null;
+            method: ("self_declared" | "parent_email_code") | null;
+            /** @description Masked parent email, e.g. p•••@gmail.com. */
+            parentEmailHint: string | null;
+            codeExpiresAt: string | null;
+            grantedAt: string | null;
+            revokedAt: string | null;
+            revokedBy: ("parent" | "account_holder" | "admin") | null;
+            policyVersion: string;
+        };
+        ConsentAgeBandBody: {
+            /** @enum {string} */
+            ageBand: "adult" | "minor";
+            agree?: boolean;
+        };
+        ConsentParentBody: {
+            parentEmail: string;
+        };
+        ConsentParentResponse: {
+            /**
+             * @description builtin = age band + parent code here; external = POST /v1/me/consent/start; none = no consent system yet.
+             * @enum {string}
+             */
+            flow: "builtin" | "external" | "none";
+            status: components["schemas"]["ConsentState"];
+            /** @description adult = 18 or older; minor = under 18 (self-declared). */
+            ageBand: ("adult" | "minor") | null;
+            method: ("self_declared" | "parent_email_code") | null;
+            /** @description Masked parent email, e.g. p•••@gmail.com. */
+            parentEmailHint: string | null;
+            codeExpiresAt: string | null;
+            grantedAt: string | null;
+            revokedAt: string | null;
+            revokedBy: ("parent" | "account_holder" | "admin") | null;
+            policyVersion: string;
+            resendAfterSeconds: number;
+        };
+        ConsentVerifyBody: {
+            code: string;
+        };
+        ConsentParentWithdrawBody: {
+            token: string;
+        };
+        ConsentParentWithdrawResponse: {
+            status: components["schemas"]["ConsentState"];
+            alreadyWithdrawn: boolean;
         };
         /**
          * @description Only when boardAssessed is false: assessed by the school, not in the board exam. periodic = periodic assessment only; project = project work only; practical = practical; internal = formative/internal assessment.
@@ -9135,6 +9640,9 @@ export interface components {
             updatedAt: string;
             student: string | null;
             address: components["schemas"]["ShippingAddress"] | null;
+        };
+        PublicNameResponse: {
+            publicName: string;
         };
         PracticeSelfAssessRequest: {
             marks: number;

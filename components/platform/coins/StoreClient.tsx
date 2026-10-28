@@ -109,7 +109,7 @@ function ItemCard({ item, balance, now, equipped, busy, onRedeem, onSignIn, onEq
             </Button>
           )}
           {(copy.action === 'consent' || copy.action === 'verify') && (
-            <Link href="/me" className={s.footLink}>
+            <Link href={copy.action === 'consent' ? '/me/consent?next=%2Fstore' : '/me'} className={s.footLink}>
               {copy.label}
             </Link>
           )}
@@ -122,7 +122,7 @@ function ItemCard({ item, balance, now, equipped, busy, onRedeem, onSignIn, onEq
         {copy.note && (
           <p className={s.itemNote} data-testid="item-note">
             {copy.note}
-            {copy.action === 'consent' ? ' Your profile has the parent approval request.' : ''}
+            {copy.action === 'consent' ? ' Ask a parent to approve from your profile.' : ''}
             {copy.action === 'verify' ? ' Add or verify one on your profile.' : ''}
           </p>
         )}
@@ -401,7 +401,7 @@ export function StoreClient() {
               member &&
               store.consentStatus !== 'granted' && (
                 <p className={s.notice} data-testid="merch-consent">
-                  <Icon name="info" size={18} /> Merch is sent to your home, so a parent or guardian must approve first. <Link href="/me">Ask from your profile</Link>.
+                  <Icon name="info" size={18} /> Merch is sent to your home, so a parent or guardian must approve first. <Link href="/me/consent?next=%2Fstore">Ask a parent to approve</Link>.
                 </p>
               )
             )}

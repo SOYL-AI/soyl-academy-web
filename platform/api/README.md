@@ -91,7 +91,7 @@ Tests use `@soyl/db/testing` (one embedded PostgreSQL per run, a fresh database 
 | `ADMIN_GOOGLE_DOMAINS` | — | AUTH-11 Workspace domains allowed for reviewer/admin. |
 | `SMS_PROVIDER` | `mock` | `msg91` needs `SMS_PROVIDER_API_KEY`, `SMS_DLT_TEMPLATE_IDS` (`{"otp":"…","notice":"…"}`), optional `SMS_SENDER_ID`, `MSG91_BASE_URL`. |
 | `EMAIL_PROVIDER` | `mock` | `acs` needs `ACS_ENDPOINT` (alias `ACS_EMAIL_ENDPOINT`); sends with the managed identity (token for `https://communication.azure.com`). `ACS_EMAIL_ACCESS_KEY` only outside prod. `EMAIL_FROM` default `SOYL Academy <noreply@soylai.com>`. |
-| `CONSENT_PROVIDER`, `MOCK_CONSENT_DEFAULT` | `mock`, `required` | `mock` is refused in prod. `unavailable` (prod until OA-08): everyone `pending`, cannot be granted, so every consent-gated feature (D-014) answers 403 `consent_required`; learning and tests work. |
+| `CONSENT_PROVIDER`, `MOCK_CONSENT_DEFAULT` | `mock`, `required` | `builtin` (D-039, ADR-022; intended for prod): age band, 18+ self-declares, under 18 needs a parent's emailed approval code; needs `EMAIL_PROVIDER=acs` in prod; no new secret (keys derive from `OTP_PEPPER`). `unavailable` (D-031): everyone `pending`, cannot be granted, so every consent-gated feature (D-014) answers 403 `consent_required`; learning and tests work. `mock` is refused in prod. Set the same value on the worker (AUTH-15 purge stays off under `auto` for `builtin` and `unavailable`). |
 | `ACADEMIC_YEAR` | `2026-27` | Catalog year served. |
 | `DEV_OTP_OUTBOX` | off | Local/test only. |
 | `DEV_CONTENT` | on | `npm run dev` only: `off` skips publishing authored content at start-up. |

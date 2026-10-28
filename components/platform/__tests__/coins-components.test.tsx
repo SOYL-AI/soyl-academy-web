@@ -271,10 +271,10 @@ describe('/store with redemption switched on (behind COINS_REDEMPTION_ENABLED)',
     expect(within(locked!).getByTestId('item-note').textContent).toBe('Unlock: Solve 200 practice questions.');
     expect(within(drop!).getByTestId('stock').textContent).toBe('37 of 100 left');
     await waitFor(() => expect(within(drop!).getByTestId('drop-countdown').textContent).toContain('Drops in 3d 1h'));
-    expect(within(consent!).getByRole('link', { name: 'Parent approval needed' }).getAttribute('href')).toBe('/me');
+    expect(within(consent!).getByRole('link', { name: 'Parent approval needed' }).getAttribute('href')).toBe('/me/consent?next=%2Fstore');
     expect(within(consent!).getByTestId('item-note').textContent).toContain('A parent or guardian must approve');
     expect(within(verify!).getByRole('link', { name: 'Verify to redeem' }).getAttribute('href')).toBe('/me');
-    expect(screen.getByTestId('merch-consent')).toBeTruthy();
+    expect(within(screen.getByTestId('merch-consent')).getByRole('link', { name: 'Ask a parent to approve' }).getAttribute('href')).toBe('/me/consent?next=%2Fstore');
   });
 
   it('digital: confirm → redeem → unlocked toast → equip', async () => {
