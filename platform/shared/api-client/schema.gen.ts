@@ -1212,6 +1212,60 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/v1/me/avatars": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Every avatar with its unlock rule (level, badge, streak, league tier, live mocks; 16 starters plus your public-name animal), your progress and the backgrounds */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AvatarCatalog"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/v1/me/sessions": {
         parameters: {
             query?: never;
@@ -3846,7 +3900,7 @@ export interface paths {
             };
         };
         put?: never;
-        /** AI evaluation of written answers (credits: 6 per answer, at most 40 per paper; quote first with GET /v1/ai/quote/evaluate-paper?attemptId=). Body {itemIds?}: one id = evaluate-answer, none/several = evaluate-paper. 202 with a job id; marks never count for scores or ranks. */
+        /** AI evaluation of written answers (credits: 7 per answer, at most 50 per paper; quote first with GET /v1/ai/quote/evaluate-paper?attemptId=). Body {itemIds?}: one id = evaluate-answer, none/several = evaluate-paper. 202 with a job id; marks never count for scores or ranks. */
         post: {
             parameters: {
                 query?: never;
@@ -4602,6 +4656,116 @@ export interface paths {
                     };
                     content: {
                         "application/json": components["schemas"]["Credits"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/credits/guide": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** “What can I do with my credits?”: each AI action with its price, the plans that offer it and how many you can still do today, plus the learning bonuses (consent granted only). */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CreditGuide"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/credits/history": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Your credits per IST day for the last `days` days (default 14): granted, bonus, spent, refunded, left. */
+        get: {
+            parameters: {
+                query?: {
+                    days?: number;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["CreditHistory"];
                     };
                 };
                 /** @description Default Response */
@@ -6227,6 +6391,78 @@ export interface components {
             };
             profileUpdated: boolean;
         };
+        /**
+         * @description Lower-case animal of the public-name list, e.g. "giraffe" (@soyl/shared/config/avatars).
+         * @enum {string}
+         */
+        AvatarIdInput: "otter" | "falcon" | "panda" | "tiger" | "dolphin" | "eagle" | "koala" | "lynx" | "peacock" | "parrot" | "penguin" | "rabbit" | "robin" | "sparrow" | "squirrel" | "turtle" | "whale" | "zebra" | "badger" | "beaver" | "bison" | "camel" | "cheetah" | "crane" | "deer" | "elephant" | "finch" | "fox" | "gazelle" | "gecko" | "giraffe" | "heron" | "hornbill" | "ibex" | "jaguar" | "kingfisher" | "kiwi" | "lemur" | "leopard" | "lion" | "llama" | "macaw" | "mongoose" | "moose" | "myna" | "narwhal" | "owl" | "panther" | "pelican" | "puffin" | "quail" | "raven" | "rhino" | "seal" | "starling" | "swan" | "tapir" | "toucan" | "walrus" | "wombat" | "yak" | "bulbul" | "hoopoe" | "langur";
+        /**
+         * @description Background theme; the UI kit token is `p-avatar-<id>`.
+         * @enum {string}
+         */
+        AvatarBackgroundInput: "sky" | "mint" | "sunflower" | "coral" | "lavender" | "meadow" | "peach" | "ocean";
+        AvatarRefInput: {
+            id: components["schemas"]["AvatarIdInput"];
+            bg: components["schemas"]["AvatarBackgroundInput"];
+        };
+        MyAvatarInput: {
+            id: components["schemas"]["AvatarIdInput"];
+            bg: components["schemas"]["AvatarBackgroundInput"];
+            isDefault: boolean;
+        };
+        AvatarChoiceInput: {
+            id: components["schemas"]["AvatarIdInput"];
+            bg: components["schemas"]["AvatarBackgroundInput"];
+        } | null;
+        /** @description One of starter, level, badge, streak, league_tier, live_mocks. league_tier is 1-based (Bronze = 1). Learning only: no purchases, no coins. */
+        AvatarUnlockRuleInput: {
+            /** @constant */
+            kind: "starter";
+        } | {
+            /** @constant */
+            kind: "level";
+            level: number;
+        } | {
+            /** @constant */
+            kind: "badge";
+            badge: string;
+        } | {
+            /** @constant */
+            kind: "streak";
+            days: number;
+        } | {
+            /** @constant */
+            kind: "league_tier";
+            tier: number;
+        } | {
+            /** @constant */
+            kind: "live_mocks";
+            count: number;
+        };
+        /** @description Every avatar with its unlock rule and your progress. Backgrounds are open to everyone. */
+        AvatarCatalogInput: {
+            current: components["schemas"]["MyAvatarInput"];
+            default: components["schemas"]["AvatarRefInput"];
+            backgrounds: {
+                id: components["schemas"]["AvatarBackgroundInput"];
+                label: string;
+                token: string;
+            }[];
+            unlockedCount: number;
+            total: number;
+            avatars: {
+                id: components["schemas"]["AvatarIdInput"];
+                animal: string;
+                unlocked: boolean;
+                isPublicNameAnimal: boolean;
+                unlock: components["schemas"]["AvatarUnlockRuleInput"];
+                unlockLabel: string;
+                progress: {
+                    current: number;
+                    target: number;
+                };
+            }[];
+        };
         MeInput: {
             /** Format: uuid */
             id: string;
@@ -6235,6 +6471,7 @@ export interface components {
             board: components["schemas"]["BoardInput"] | null;
             classLevel: number | null;
             publicName: string;
+            avatar: components["schemas"]["MyAvatarInput"];
             locale: string;
             consent: components["schemas"]["ConsentStateInput"];
             school: components["schemas"]["SchoolInput"] | null;
@@ -6259,6 +6496,7 @@ export interface components {
             locale?: components["schemas"]["LocaleInput"];
             school?: (components["schemas"]["SchoolPickInput"] | components["schemas"]["SchoolCreateInput"]) | null;
             weeklyGoal?: number | null;
+            avatar?: components["schemas"]["AvatarChoiceInput"];
         };
         DeleteMeResponseInput: {
             /** @constant */
@@ -6628,6 +6866,319 @@ export interface components {
                 }[];
             }[];
         };
+        AiActionRequestInput: {
+            message?: string;
+            attempt?: string;
+            reveal?: boolean;
+            /** Format: uuid */
+            conversationId?: string;
+            chapterId?: string;
+            slide?: {
+                part?: number;
+                slideId: string;
+            };
+            /** Format: uuid */
+            uploadId?: string;
+            subjectId?: string;
+            /** Format: uuid */
+            attemptId?: string;
+            itemIds?: string[];
+        };
+        /** @description Poll GET /v1/ai/jobs/:id. */
+        AiJobAcceptedInput: {
+            /** Format: uuid */
+            jobId: string;
+            /** @constant */
+            status: "queued";
+            /** @enum {string} */
+            action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+            credits: number;
+            balance: number;
+            answers?: number;
+            skipped?: {
+                /** Format: uuid */
+                itemId: string;
+                /** @enum {string} */
+                reason: "not_written" | "unanswered" | "already_evaluated";
+            }[];
+        };
+        /** @description evaluation result: {attemptId, evaluated[], notEvaluated[{itemId, reason}], creditsCharged, creditsRefunded, countsForRanks:false}. paper_from_upload result: {blueprint {durationMin, totalMarks, sections[{id, questionType, count, marksEach, internalChoice}], chapterIds}, testId, skippedChapters, creditsCharged}. */
+        AiJobInput: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "evaluation" | "paper_from_upload";
+            action: string | null;
+            /** @enum {string} */
+            status: "queued" | "running" | "succeeded" | "failed";
+            result: {
+                [key: string]: unknown;
+            } | null;
+            error: string | null;
+            /** Format: date-time */
+            createdAt: string;
+            finishedAt: string | null;
+        };
+        /** @description Today’s AI credits (1 credit = ₹0.10 of AI). Resets at 00:00 IST; no rollover. */
+        CreditsInput: {
+            plan: string;
+            planName: string;
+            dailyCredits: number;
+            balance: number;
+            grantedToday: number;
+            bonusToday: number;
+            reservedNow: number;
+            spentToday: number;
+            day: string;
+            /** Format: date-time */
+            resetAt: string;
+            resetInSeconds: number;
+            plansUrl: string;
+            prices: {
+                /** @enum {string} */
+                action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+                label: string;
+                credits: number;
+                perAnswer: boolean;
+                maxCredits: number;
+                allowedForPlan: boolean;
+            }[];
+        };
+        CreditLedgerInput: {
+            entries: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                kind: "grant" | "reserve" | "charge" | "refund" | "expire" | "bonus_goal" | "bonus_streak";
+                amount: number;
+                action: string;
+                label: string;
+                day: string;
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+            nextCursor: string | null;
+        };
+        /** @enum {string} */
+        CreditBonusKindInput: "bonus_goal" | "bonus_streak";
+        /** @description Bonus AI credits for learning (D-044): usable today only (they lapse at 00:00 IST). Consent-granted accounts only. */
+        CreditBonusAwardInput: {
+            kind: components["schemas"]["CreditBonusKindInput"];
+            credits: number;
+            label: string;
+        };
+        /** @description What you can do with your credits today (D-044). Prices and plans are config; counts use today’s balance. */
+        CreditGuideInput: {
+            /** @enum {string} */
+            plan: "free" | "plus" | "pro" | "board_exam_pass";
+            planName: string;
+            dailyCredits: number;
+            balance: number;
+            bonusToday: number;
+            creditValuePaise: number;
+            /** Format: date */
+            day: string;
+            /** Format: date-time */
+            resetAt: string;
+            resetInSeconds: number;
+            plansUrl: string;
+            plans: {
+                /** @enum {string} */
+                id: "free" | "plus" | "pro" | "board_exam_pass";
+                name: string;
+                creditsPerDay: number;
+            }[];
+            actions: {
+                /** @enum {string} */
+                action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+                label: string;
+                guide: string;
+                credits: number;
+                perAnswer: boolean;
+                maxCredits: number;
+                /** @enum {string} */
+                mode: "stream" | "job";
+                requiresUpload: boolean;
+                allowedForPlan: boolean;
+                remainingToday: number;
+                perDay: {
+                    /** @enum {string} */
+                    plan: "free" | "plus" | "pro" | "board_exam_pass";
+                    count: number;
+                }[];
+            }[];
+            bonuses: {
+                dailyGoal: {
+                    credits: number;
+                    target: number;
+                    solvedToday: number;
+                    earnedToday: boolean;
+                };
+                streakMilestone: {
+                    credits: number;
+                    everyDays: number;
+                    currentStreak: number;
+                    nextMilestone: number;
+                    earnedToday: boolean;
+                };
+            } | null;
+        };
+        /** @description Per-IST-day credit usage, oldest first, every day of the window present (zeros when nothing happened). */
+        CreditHistoryInput: {
+            /** @constant */
+            timezone: "Asia/Kolkata";
+            /** Format: date */
+            from: string;
+            /** Format: date */
+            to: string;
+            days: {
+                /** Format: date */
+                day: string;
+                granted: number;
+                bonus: number;
+                spent: number;
+                refunded: number;
+                held: number;
+                left: number;
+            }[];
+        };
+        /** @description Show the cost before the student confirms (CONTEXT §6). */
+        AiQuoteInput: {
+            /** @enum {string} */
+            action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+            label: string;
+            credits: number;
+            perAnswer: boolean;
+            answers: number | null;
+            maxCredits: number;
+            /** @enum {string} */
+            tier: "small" | "mid" | "verify";
+            /** @enum {string} */
+            mode: "stream" | "job";
+            requiresUpload: boolean;
+            plan: string;
+            allowedForPlan: boolean;
+            balance: number;
+            affordable: boolean;
+            /** @enum {string} */
+            status: "available" | "degraded" | "paused";
+            /** Format: date-time */
+            resetAt: string;
+            resetInSeconds: number;
+            plansUrl: string;
+        };
+        AiUploadRequestInput: {
+            /** @enum {string} */
+            kind: "photo_doubt" | "sample_paper";
+            /** @enum {string} */
+            contentType: "image/jpeg" | "image/png" | "image/webp";
+            bytes: number;
+        };
+        /** @description PUT the file to uploadUrl with these headers within uploadExpiresAt, then POST /v1/ai/uploads/:id/complete. */
+        AiUploadTargetInput: {
+            /** Format: uuid */
+            uploadId: string;
+            uploadUrl: string;
+            /** @constant */
+            method: "PUT";
+            headers: {
+                [key: string]: string;
+            };
+            /** Format: date-time */
+            uploadExpiresAt: string;
+            maxBytes: number;
+            /** Format: date-time */
+            expiresAt: string;
+        };
+        AiUploadInput: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "photo_doubt" | "sample_paper" | "answer_sheet";
+            /** @enum {string} */
+            status: "pending_upload" | "uploaded" | "scanning" | "ready" | "rejected";
+            rejectReason: string | null;
+            contentType: string;
+            bytes: number | null;
+            pages: number | null;
+            /** Format: date-time */
+            expiresAt: string;
+            /** Format: date-time */
+            createdAt: string;
+        };
+        AiConversationCreateInput: {
+            /**
+             * @default tutor
+             * @enum {string}
+             */
+            kind: "tutor" | "photo_doubt" | "explain_slide" | "evaluation" | "paper_from_upload";
+            chapterId?: string;
+            title?: string;
+        };
+        AiConversationInput: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "tutor" | "photo_doubt" | "explain_slide" | "evaluation" | "paper_from_upload";
+            chapterId: string | null;
+            title: string | null;
+            lastMessageAt: string | null;
+            /** Format: date-time */
+            createdAt: string;
+        };
+        AiConversationsInput: {
+            conversations: components["schemas"]["AiConversationInput"][];
+            nextCursor: string | null;
+        };
+        /** @description Messages are kept for 30 days. */
+        AiConversationDetailInput: {
+            conversation: components["schemas"]["AiConversationInput"];
+            messages: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                role: "user" | "assistant";
+                content: string;
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+        };
+        AiEvaluationRequestInput: {
+            itemIds?: string[];
+        };
+        AiEvaluationInput: {
+            /** Format: uuid */
+            attemptId: string;
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                marks: number;
+                maxMarks: number;
+                confidence: number;
+                lowConfidence: boolean;
+                label: string;
+                steps: {
+                    part: string | null;
+                    index: number;
+                    step: string;
+                    awarded: number;
+                    max: number;
+                    reason: string;
+                }[];
+                feedback: string;
+                /** Format: date-time */
+                evaluatedAt: string;
+            }[];
+            totalMarks: number;
+            maxMarks: number;
+            /** @constant */
+            countsForRanks: false;
+            job: {
+                /** Format: uuid */
+                id: string;
+                status: string;
+            } | null;
+        };
         /** @enum {string} */
         CoinEarnSourceInput: "checkin" | "checkin_streak" | "daily_challenge" | "solved_milestone" | "chapter_mastered" | "test_submitted" | "perfect_paper" | "live_participation" | "live_rank" | "league_promotion" | "league_top_finish";
         CoinAwardInput: {
@@ -6890,6 +7441,7 @@ export interface components {
         /** @description Your private player card. Deterministic from your own learning data; never shown to anyone else. */
         MyPlayerCardInput: {
             publicName: string;
+            avatar: components["schemas"]["MyAvatarInput"];
             level: number;
             xp: number;
             coins: number;
@@ -6990,6 +7542,7 @@ export interface components {
             streak: components["schemas"]["StreakInput"] | null;
             coinsAwarded: number;
             coinAwards: components["schemas"]["CoinAwardInput"][];
+            creditBonuses: components["schemas"]["CreditBonusAwardInput"][];
         };
         PracticePageInput: {
             chapterId: string;
@@ -7011,6 +7564,7 @@ export interface components {
             maxMarks: number;
             /** @constant */
             grading: "self";
+            creditBonuses: components["schemas"]["CreditBonusAwardInput"][];
         };
         MyProgressInput: {
             totals: {
@@ -7959,6 +8513,7 @@ export interface components {
             entries: {
                 rank: number;
                 name: string | null;
+                avatar: components["schemas"]["AvatarRefInput"] | null;
                 score: number;
                 isMe: boolean;
             }[];
@@ -7984,235 +8539,6 @@ export interface components {
                 maxScore: number | null;
             }[];
             nextCursor: string | null;
-        };
-        AiActionRequestInput: {
-            message?: string;
-            attempt?: string;
-            reveal?: boolean;
-            /** Format: uuid */
-            conversationId?: string;
-            chapterId?: string;
-            slide?: {
-                part?: number;
-                slideId: string;
-            };
-            /** Format: uuid */
-            uploadId?: string;
-            subjectId?: string;
-            /** Format: uuid */
-            attemptId?: string;
-            itemIds?: string[];
-        };
-        /** @description Poll GET /v1/ai/jobs/:id. */
-        AiJobAcceptedInput: {
-            /** Format: uuid */
-            jobId: string;
-            /** @constant */
-            status: "queued";
-            /** @enum {string} */
-            action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
-            credits: number;
-            balance: number;
-            answers?: number;
-            skipped?: {
-                /** Format: uuid */
-                itemId: string;
-                /** @enum {string} */
-                reason: "not_written" | "unanswered" | "already_evaluated";
-            }[];
-        };
-        /** @description evaluation result: {attemptId, evaluated[], notEvaluated[{itemId, reason}], creditsCharged, creditsRefunded, countsForRanks:false}. paper_from_upload result: {blueprint {durationMin, totalMarks, sections[{id, questionType, count, marksEach, internalChoice}], chapterIds}, testId, skippedChapters, creditsCharged}. */
-        AiJobInput: {
-            /** Format: uuid */
-            id: string;
-            /** @enum {string} */
-            kind: "evaluation" | "paper_from_upload";
-            action: string | null;
-            /** @enum {string} */
-            status: "queued" | "running" | "succeeded" | "failed";
-            result: {
-                [key: string]: unknown;
-            } | null;
-            error: string | null;
-            /** Format: date-time */
-            createdAt: string;
-            finishedAt: string | null;
-        };
-        /** @description Today’s AI credits (1 credit = ₹0.10 of AI). Resets at 00:00 IST; no rollover. */
-        CreditsInput: {
-            plan: string;
-            planName: string;
-            dailyCredits: number;
-            balance: number;
-            grantedToday: number;
-            reservedNow: number;
-            spentToday: number;
-            day: string;
-            /** Format: date-time */
-            resetAt: string;
-            resetInSeconds: number;
-            plansUrl: string;
-            prices: {
-                /** @enum {string} */
-                action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
-                label: string;
-                credits: number;
-                perAnswer: boolean;
-                maxCredits: number;
-                allowedForPlan: boolean;
-            }[];
-        };
-        CreditLedgerInput: {
-            entries: {
-                /** Format: uuid */
-                id: string;
-                /** @enum {string} */
-                kind: "grant" | "reserve" | "charge" | "refund" | "expire";
-                amount: number;
-                action: string;
-                label: string;
-                day: string;
-                /** Format: date-time */
-                createdAt: string;
-            }[];
-            nextCursor: string | null;
-        };
-        /** @description Show the cost before the student confirms (CONTEXT §6). */
-        AiQuoteInput: {
-            /** @enum {string} */
-            action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
-            label: string;
-            credits: number;
-            perAnswer: boolean;
-            answers: number | null;
-            maxCredits: number;
-            /** @enum {string} */
-            tier: "small" | "mid" | "verify";
-            /** @enum {string} */
-            mode: "stream" | "job";
-            requiresUpload: boolean;
-            plan: string;
-            allowedForPlan: boolean;
-            balance: number;
-            affordable: boolean;
-            /** @enum {string} */
-            status: "available" | "degraded" | "paused";
-            /** Format: date-time */
-            resetAt: string;
-            resetInSeconds: number;
-            plansUrl: string;
-        };
-        AiUploadRequestInput: {
-            /** @enum {string} */
-            kind: "photo_doubt" | "sample_paper";
-            /** @enum {string} */
-            contentType: "image/jpeg" | "image/png" | "image/webp";
-            bytes: number;
-        };
-        /** @description PUT the file to uploadUrl with these headers within uploadExpiresAt, then POST /v1/ai/uploads/:id/complete. */
-        AiUploadTargetInput: {
-            /** Format: uuid */
-            uploadId: string;
-            uploadUrl: string;
-            /** @constant */
-            method: "PUT";
-            headers: {
-                [key: string]: string;
-            };
-            /** Format: date-time */
-            uploadExpiresAt: string;
-            maxBytes: number;
-            /** Format: date-time */
-            expiresAt: string;
-        };
-        AiUploadInput: {
-            /** Format: uuid */
-            id: string;
-            /** @enum {string} */
-            kind: "photo_doubt" | "sample_paper" | "answer_sheet";
-            /** @enum {string} */
-            status: "pending_upload" | "uploaded" | "scanning" | "ready" | "rejected";
-            rejectReason: string | null;
-            contentType: string;
-            bytes: number | null;
-            pages: number | null;
-            /** Format: date-time */
-            expiresAt: string;
-            /** Format: date-time */
-            createdAt: string;
-        };
-        AiConversationCreateInput: {
-            /**
-             * @default tutor
-             * @enum {string}
-             */
-            kind: "tutor" | "photo_doubt" | "explain_slide" | "evaluation" | "paper_from_upload";
-            chapterId?: string;
-            title?: string;
-        };
-        AiConversationInput: {
-            /** Format: uuid */
-            id: string;
-            /** @enum {string} */
-            kind: "tutor" | "photo_doubt" | "explain_slide" | "evaluation" | "paper_from_upload";
-            chapterId: string | null;
-            title: string | null;
-            lastMessageAt: string | null;
-            /** Format: date-time */
-            createdAt: string;
-        };
-        AiConversationsInput: {
-            conversations: components["schemas"]["AiConversationInput"][];
-            nextCursor: string | null;
-        };
-        /** @description Messages are kept for 30 days. */
-        AiConversationDetailInput: {
-            conversation: components["schemas"]["AiConversationInput"];
-            messages: {
-                /** Format: uuid */
-                id: string;
-                /** @enum {string} */
-                role: "user" | "assistant";
-                content: string;
-                /** Format: date-time */
-                createdAt: string;
-            }[];
-        };
-        AiEvaluationRequestInput: {
-            itemIds?: string[];
-        };
-        AiEvaluationInput: {
-            /** Format: uuid */
-            attemptId: string;
-            items: {
-                /** Format: uuid */
-                itemId: string;
-                marks: number;
-                maxMarks: number;
-                confidence: number;
-                lowConfidence: boolean;
-                label: string;
-                steps: {
-                    part: string | null;
-                    index: number;
-                    step: string;
-                    awarded: number;
-                    max: number;
-                    reason: string;
-                }[];
-                feedback: string;
-                /** Format: date-time */
-                evaluatedAt: string;
-            }[];
-            totalMarks: number;
-            maxMarks: number;
-            /** @constant */
-            countsForRanks: false;
-            job: {
-                /** Format: uuid */
-                id: string;
-                status: string;
-            } | null;
         };
         /** @description level 1 = the lowest tier; names and icons from LEAGUE_TIERS (shared/config/gamification.ts). */
         LeagueTierInput: {
@@ -8266,6 +8592,7 @@ export interface components {
             standings: {
                 rank: number;
                 name: string | null;
+                avatar: components["schemas"]["AvatarRefInput"] | null;
                 xp: number;
                 zone: components["schemas"]["LeagueZoneInput"];
                 isMe: boolean;
@@ -8594,6 +8921,78 @@ export interface components {
             };
             profileUpdated: boolean;
         };
+        /**
+         * @description Lower-case animal of the public-name list, e.g. "giraffe" (@soyl/shared/config/avatars).
+         * @enum {string}
+         */
+        AvatarId: "otter" | "falcon" | "panda" | "tiger" | "dolphin" | "eagle" | "koala" | "lynx" | "peacock" | "parrot" | "penguin" | "rabbit" | "robin" | "sparrow" | "squirrel" | "turtle" | "whale" | "zebra" | "badger" | "beaver" | "bison" | "camel" | "cheetah" | "crane" | "deer" | "elephant" | "finch" | "fox" | "gazelle" | "gecko" | "giraffe" | "heron" | "hornbill" | "ibex" | "jaguar" | "kingfisher" | "kiwi" | "lemur" | "leopard" | "lion" | "llama" | "macaw" | "mongoose" | "moose" | "myna" | "narwhal" | "owl" | "panther" | "pelican" | "puffin" | "quail" | "raven" | "rhino" | "seal" | "starling" | "swan" | "tapir" | "toucan" | "walrus" | "wombat" | "yak" | "bulbul" | "hoopoe" | "langur";
+        /**
+         * @description Background theme; the UI kit token is `p-avatar-<id>`.
+         * @enum {string}
+         */
+        AvatarBackground: "sky" | "mint" | "sunflower" | "coral" | "lavender" | "meadow" | "peach" | "ocean";
+        AvatarRef: {
+            id: components["schemas"]["AvatarId"];
+            bg: components["schemas"]["AvatarBackground"];
+        };
+        MyAvatar: {
+            id: components["schemas"]["AvatarId"];
+            bg: components["schemas"]["AvatarBackground"];
+            isDefault: boolean;
+        };
+        AvatarChoice: {
+            id: components["schemas"]["AvatarId"];
+            bg: components["schemas"]["AvatarBackground"];
+        } | null;
+        /** @description One of starter, level, badge, streak, league_tier, live_mocks. league_tier is 1-based (Bronze = 1). Learning only: no purchases, no coins. */
+        AvatarUnlockRule: {
+            /** @constant */
+            kind: "starter";
+        } | {
+            /** @constant */
+            kind: "level";
+            level: number;
+        } | {
+            /** @constant */
+            kind: "badge";
+            badge: string;
+        } | {
+            /** @constant */
+            kind: "streak";
+            days: number;
+        } | {
+            /** @constant */
+            kind: "league_tier";
+            tier: number;
+        } | {
+            /** @constant */
+            kind: "live_mocks";
+            count: number;
+        };
+        /** @description Every avatar with its unlock rule and your progress. Backgrounds are open to everyone. */
+        AvatarCatalog: {
+            current: components["schemas"]["MyAvatar"];
+            default: components["schemas"]["AvatarRef"];
+            backgrounds: {
+                id: components["schemas"]["AvatarBackground"];
+                label: string;
+                token: string;
+            }[];
+            unlockedCount: number;
+            total: number;
+            avatars: {
+                id: components["schemas"]["AvatarId"];
+                animal: string;
+                unlocked: boolean;
+                isPublicNameAnimal: boolean;
+                unlock: components["schemas"]["AvatarUnlockRule"];
+                unlockLabel: string;
+                progress: {
+                    current: number;
+                    target: number;
+                };
+            }[];
+        };
         Me: {
             /** Format: uuid */
             id: string;
@@ -8602,6 +9001,7 @@ export interface components {
             board: components["schemas"]["Board"] | null;
             classLevel: number | null;
             publicName: string;
+            avatar: components["schemas"]["MyAvatar"];
             locale: string;
             consent: components["schemas"]["ConsentState"];
             school: components["schemas"]["School"] | null;
@@ -8626,6 +9026,7 @@ export interface components {
             locale?: components["schemas"]["Locale"];
             school?: (components["schemas"]["SchoolPick"] | components["schemas"]["SchoolCreate"]) | null;
             weeklyGoal?: number | null;
+            avatar?: components["schemas"]["AvatarChoice"];
         };
         DeleteMeResponse: {
             /** @constant */
@@ -8995,6 +9396,319 @@ export interface components {
                 }[];
             }[];
         };
+        AiActionRequest: {
+            message?: string;
+            attempt?: string;
+            reveal?: boolean;
+            /** Format: uuid */
+            conversationId?: string;
+            chapterId?: string;
+            slide?: {
+                part?: number;
+                slideId: string;
+            };
+            /** Format: uuid */
+            uploadId?: string;
+            subjectId?: string;
+            /** Format: uuid */
+            attemptId?: string;
+            itemIds?: string[];
+        };
+        /** @description Poll GET /v1/ai/jobs/:id. */
+        AiJobAccepted: {
+            /** Format: uuid */
+            jobId: string;
+            /** @constant */
+            status: "queued";
+            /** @enum {string} */
+            action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+            credits: number;
+            balance: number;
+            answers?: number;
+            skipped?: {
+                /** Format: uuid */
+                itemId: string;
+                /** @enum {string} */
+                reason: "not_written" | "unanswered" | "already_evaluated";
+            }[];
+        };
+        /** @description evaluation result: {attemptId, evaluated[], notEvaluated[{itemId, reason}], creditsCharged, creditsRefunded, countsForRanks:false}. paper_from_upload result: {blueprint {durationMin, totalMarks, sections[{id, questionType, count, marksEach, internalChoice}], chapterIds}, testId, skippedChapters, creditsCharged}. */
+        AiJob: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "evaluation" | "paper_from_upload";
+            action: string | null;
+            /** @enum {string} */
+            status: "queued" | "running" | "succeeded" | "failed";
+            result: {
+                [key: string]: unknown;
+            } | null;
+            error: string | null;
+            /** Format: date-time */
+            createdAt: string;
+            finishedAt: string | null;
+        };
+        /** @description Today’s AI credits (1 credit = ₹0.10 of AI). Resets at 00:00 IST; no rollover. */
+        Credits: {
+            plan: string;
+            planName: string;
+            dailyCredits: number;
+            balance: number;
+            grantedToday: number;
+            bonusToday: number;
+            reservedNow: number;
+            spentToday: number;
+            day: string;
+            /** Format: date-time */
+            resetAt: string;
+            resetInSeconds: number;
+            plansUrl: string;
+            prices: {
+                /** @enum {string} */
+                action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+                label: string;
+                credits: number;
+                perAnswer: boolean;
+                maxCredits: number;
+                allowedForPlan: boolean;
+            }[];
+        };
+        CreditLedger: {
+            entries: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                kind: "grant" | "reserve" | "charge" | "refund" | "expire" | "bonus_goal" | "bonus_streak";
+                amount: number;
+                action: string;
+                label: string;
+                day: string;
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+            nextCursor: string | null;
+        };
+        /** @enum {string} */
+        CreditBonusKind: "bonus_goal" | "bonus_streak";
+        /** @description Bonus AI credits for learning (D-044): usable today only (they lapse at 00:00 IST). Consent-granted accounts only. */
+        CreditBonusAward: {
+            kind: components["schemas"]["CreditBonusKind"];
+            credits: number;
+            label: string;
+        };
+        /** @description What you can do with your credits today (D-044). Prices and plans are config; counts use today’s balance. */
+        CreditGuide: {
+            /** @enum {string} */
+            plan: "free" | "plus" | "pro" | "board_exam_pass";
+            planName: string;
+            dailyCredits: number;
+            balance: number;
+            bonusToday: number;
+            creditValuePaise: number;
+            /** Format: date */
+            day: string;
+            /** Format: date-time */
+            resetAt: string;
+            resetInSeconds: number;
+            plansUrl: string;
+            plans: {
+                /** @enum {string} */
+                id: "free" | "plus" | "pro" | "board_exam_pass";
+                name: string;
+                creditsPerDay: number;
+            }[];
+            actions: {
+                /** @enum {string} */
+                action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+                label: string;
+                guide: string;
+                credits: number;
+                perAnswer: boolean;
+                maxCredits: number;
+                /** @enum {string} */
+                mode: "stream" | "job";
+                requiresUpload: boolean;
+                allowedForPlan: boolean;
+                remainingToday: number;
+                perDay: {
+                    /** @enum {string} */
+                    plan: "free" | "plus" | "pro" | "board_exam_pass";
+                    count: number;
+                }[];
+            }[];
+            bonuses: {
+                dailyGoal: {
+                    credits: number;
+                    target: number;
+                    solvedToday: number;
+                    earnedToday: boolean;
+                };
+                streakMilestone: {
+                    credits: number;
+                    everyDays: number;
+                    currentStreak: number;
+                    nextMilestone: number;
+                    earnedToday: boolean;
+                };
+            } | null;
+        };
+        /** @description Per-IST-day credit usage, oldest first, every day of the window present (zeros when nothing happened). */
+        CreditHistory: {
+            /** @constant */
+            timezone: "Asia/Kolkata";
+            /** Format: date */
+            from: string;
+            /** Format: date */
+            to: string;
+            days: {
+                /** Format: date */
+                day: string;
+                granted: number;
+                bonus: number;
+                spent: number;
+                refunded: number;
+                held: number;
+                left: number;
+            }[];
+        };
+        /** @description Show the cost before the student confirms (CONTEXT §6). */
+        AiQuote: {
+            /** @enum {string} */
+            action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
+            label: string;
+            credits: number;
+            perAnswer: boolean;
+            answers: number | null;
+            maxCredits: number;
+            /** @enum {string} */
+            tier: "small" | "mid" | "verify";
+            /** @enum {string} */
+            mode: "stream" | "job";
+            requiresUpload: boolean;
+            plan: string;
+            allowedForPlan: boolean;
+            balance: number;
+            affordable: boolean;
+            /** @enum {string} */
+            status: "available" | "degraded" | "paused";
+            /** Format: date-time */
+            resetAt: string;
+            resetInSeconds: number;
+            plansUrl: string;
+        };
+        AiUploadRequest: {
+            /** @enum {string} */
+            kind: "photo_doubt" | "sample_paper";
+            /** @enum {string} */
+            contentType: "image/jpeg" | "image/png" | "image/webp";
+            bytes: number;
+        };
+        /** @description PUT the file to uploadUrl with these headers within uploadExpiresAt, then POST /v1/ai/uploads/:id/complete. */
+        AiUploadTarget: {
+            /** Format: uuid */
+            uploadId: string;
+            uploadUrl: string;
+            /** @constant */
+            method: "PUT";
+            headers: {
+                [key: string]: string;
+            };
+            /** Format: date-time */
+            uploadExpiresAt: string;
+            maxBytes: number;
+            /** Format: date-time */
+            expiresAt: string;
+        };
+        AiUpload: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "photo_doubt" | "sample_paper" | "answer_sheet";
+            /** @enum {string} */
+            status: "pending_upload" | "uploaded" | "scanning" | "ready" | "rejected";
+            rejectReason: string | null;
+            contentType: string;
+            bytes: number | null;
+            pages: number | null;
+            /** Format: date-time */
+            expiresAt: string;
+            /** Format: date-time */
+            createdAt: string;
+        };
+        AiConversationCreate: {
+            /**
+             * @default tutor
+             * @enum {string}
+             */
+            kind: "tutor" | "photo_doubt" | "explain_slide" | "evaluation" | "paper_from_upload";
+            chapterId?: string;
+            title?: string;
+        };
+        AiConversation: {
+            /** Format: uuid */
+            id: string;
+            /** @enum {string} */
+            kind: "tutor" | "photo_doubt" | "explain_slide" | "evaluation" | "paper_from_upload";
+            chapterId: string | null;
+            title: string | null;
+            lastMessageAt: string | null;
+            /** Format: date-time */
+            createdAt: string;
+        };
+        AiConversations: {
+            conversations: components["schemas"]["AiConversation"][];
+            nextCursor: string | null;
+        };
+        /** @description Messages are kept for 30 days. */
+        AiConversationDetail: {
+            conversation: components["schemas"]["AiConversation"];
+            messages: {
+                /** Format: uuid */
+                id: string;
+                /** @enum {string} */
+                role: "user" | "assistant";
+                content: string;
+                /** Format: date-time */
+                createdAt: string;
+            }[];
+        };
+        AiEvaluationRequest: {
+            itemIds?: string[];
+        };
+        AiEvaluation: {
+            /** Format: uuid */
+            attemptId: string;
+            items: {
+                /** Format: uuid */
+                itemId: string;
+                marks: number;
+                maxMarks: number;
+                confidence: number;
+                lowConfidence: boolean;
+                label: string;
+                steps: {
+                    part: string | null;
+                    index: number;
+                    step: string;
+                    awarded: number;
+                    max: number;
+                    reason: string;
+                }[];
+                feedback: string;
+                /** Format: date-time */
+                evaluatedAt: string;
+            }[];
+            totalMarks: number;
+            maxMarks: number;
+            /** @constant */
+            countsForRanks: false;
+            job: {
+                /** Format: uuid */
+                id: string;
+                status: string;
+            } | null;
+        };
         /** @enum {string} */
         CoinEarnSource: "checkin" | "checkin_streak" | "daily_challenge" | "solved_milestone" | "chapter_mastered" | "test_submitted" | "perfect_paper" | "live_participation" | "live_rank" | "league_promotion" | "league_top_finish";
         CoinAward: {
@@ -9257,6 +9971,7 @@ export interface components {
         /** @description Your private player card. Deterministic from your own learning data; never shown to anyone else. */
         MyPlayerCard: {
             publicName: string;
+            avatar: components["schemas"]["MyAvatar"];
             level: number;
             xp: number;
             coins: number;
@@ -9357,6 +10072,7 @@ export interface components {
             streak: components["schemas"]["Streak"] | null;
             coinsAwarded: number;
             coinAwards: components["schemas"]["CoinAward"][];
+            creditBonuses: components["schemas"]["CreditBonusAward"][];
         };
         PracticePage: {
             chapterId: string;
@@ -9378,6 +10094,7 @@ export interface components {
             maxMarks: number;
             /** @constant */
             grading: "self";
+            creditBonuses: components["schemas"]["CreditBonusAward"][];
         };
         MyProgress: {
             totals: {
@@ -10326,6 +11043,7 @@ export interface components {
             entries: {
                 rank: number;
                 name: string | null;
+                avatar: components["schemas"]["AvatarRef"] | null;
                 score: number;
                 isMe: boolean;
             }[];
@@ -10351,235 +11069,6 @@ export interface components {
                 maxScore: number | null;
             }[];
             nextCursor: string | null;
-        };
-        AiActionRequest: {
-            message?: string;
-            attempt?: string;
-            reveal?: boolean;
-            /** Format: uuid */
-            conversationId?: string;
-            chapterId?: string;
-            slide?: {
-                part?: number;
-                slideId: string;
-            };
-            /** Format: uuid */
-            uploadId?: string;
-            subjectId?: string;
-            /** Format: uuid */
-            attemptId?: string;
-            itemIds?: string[];
-        };
-        /** @description Poll GET /v1/ai/jobs/:id. */
-        AiJobAccepted: {
-            /** Format: uuid */
-            jobId: string;
-            /** @constant */
-            status: "queued";
-            /** @enum {string} */
-            action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
-            credits: number;
-            balance: number;
-            answers?: number;
-            skipped?: {
-                /** Format: uuid */
-                itemId: string;
-                /** @enum {string} */
-                reason: "not_written" | "unanswered" | "already_evaluated";
-            }[];
-        };
-        /** @description evaluation result: {attemptId, evaluated[], notEvaluated[{itemId, reason}], creditsCharged, creditsRefunded, countsForRanks:false}. paper_from_upload result: {blueprint {durationMin, totalMarks, sections[{id, questionType, count, marksEach, internalChoice}], chapterIds}, testId, skippedChapters, creditsCharged}. */
-        AiJob: {
-            /** Format: uuid */
-            id: string;
-            /** @enum {string} */
-            kind: "evaluation" | "paper_from_upload";
-            action: string | null;
-            /** @enum {string} */
-            status: "queued" | "running" | "succeeded" | "failed";
-            result: {
-                [key: string]: unknown;
-            } | null;
-            error: string | null;
-            /** Format: date-time */
-            createdAt: string;
-            finishedAt: string | null;
-        };
-        /** @description Today’s AI credits (1 credit = ₹0.10 of AI). Resets at 00:00 IST; no rollover. */
-        Credits: {
-            plan: string;
-            planName: string;
-            dailyCredits: number;
-            balance: number;
-            grantedToday: number;
-            reservedNow: number;
-            spentToday: number;
-            day: string;
-            /** Format: date-time */
-            resetAt: string;
-            resetInSeconds: number;
-            plansUrl: string;
-            prices: {
-                /** @enum {string} */
-                action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
-                label: string;
-                credits: number;
-                perAnswer: boolean;
-                maxCredits: number;
-                allowedForPlan: boolean;
-            }[];
-        };
-        CreditLedger: {
-            entries: {
-                /** Format: uuid */
-                id: string;
-                /** @enum {string} */
-                kind: "grant" | "reserve" | "charge" | "refund" | "expire";
-                amount: number;
-                action: string;
-                label: string;
-                day: string;
-                /** Format: date-time */
-                createdAt: string;
-            }[];
-            nextCursor: string | null;
-        };
-        /** @description Show the cost before the student confirms (CONTEXT §6). */
-        AiQuote: {
-            /** @enum {string} */
-            action: "quick-doubt" | "explain-slide" | "hard-doubt" | "photo-doubt" | "evaluate-answer" | "evaluate-paper" | "paper-from-upload";
-            label: string;
-            credits: number;
-            perAnswer: boolean;
-            answers: number | null;
-            maxCredits: number;
-            /** @enum {string} */
-            tier: "small" | "mid" | "verify";
-            /** @enum {string} */
-            mode: "stream" | "job";
-            requiresUpload: boolean;
-            plan: string;
-            allowedForPlan: boolean;
-            balance: number;
-            affordable: boolean;
-            /** @enum {string} */
-            status: "available" | "degraded" | "paused";
-            /** Format: date-time */
-            resetAt: string;
-            resetInSeconds: number;
-            plansUrl: string;
-        };
-        AiUploadRequest: {
-            /** @enum {string} */
-            kind: "photo_doubt" | "sample_paper";
-            /** @enum {string} */
-            contentType: "image/jpeg" | "image/png" | "image/webp";
-            bytes: number;
-        };
-        /** @description PUT the file to uploadUrl with these headers within uploadExpiresAt, then POST /v1/ai/uploads/:id/complete. */
-        AiUploadTarget: {
-            /** Format: uuid */
-            uploadId: string;
-            uploadUrl: string;
-            /** @constant */
-            method: "PUT";
-            headers: {
-                [key: string]: string;
-            };
-            /** Format: date-time */
-            uploadExpiresAt: string;
-            maxBytes: number;
-            /** Format: date-time */
-            expiresAt: string;
-        };
-        AiUpload: {
-            /** Format: uuid */
-            id: string;
-            /** @enum {string} */
-            kind: "photo_doubt" | "sample_paper" | "answer_sheet";
-            /** @enum {string} */
-            status: "pending_upload" | "uploaded" | "scanning" | "ready" | "rejected";
-            rejectReason: string | null;
-            contentType: string;
-            bytes: number | null;
-            pages: number | null;
-            /** Format: date-time */
-            expiresAt: string;
-            /** Format: date-time */
-            createdAt: string;
-        };
-        AiConversationCreate: {
-            /**
-             * @default tutor
-             * @enum {string}
-             */
-            kind: "tutor" | "photo_doubt" | "explain_slide" | "evaluation" | "paper_from_upload";
-            chapterId?: string;
-            title?: string;
-        };
-        AiConversation: {
-            /** Format: uuid */
-            id: string;
-            /** @enum {string} */
-            kind: "tutor" | "photo_doubt" | "explain_slide" | "evaluation" | "paper_from_upload";
-            chapterId: string | null;
-            title: string | null;
-            lastMessageAt: string | null;
-            /** Format: date-time */
-            createdAt: string;
-        };
-        AiConversations: {
-            conversations: components["schemas"]["AiConversation"][];
-            nextCursor: string | null;
-        };
-        /** @description Messages are kept for 30 days. */
-        AiConversationDetail: {
-            conversation: components["schemas"]["AiConversation"];
-            messages: {
-                /** Format: uuid */
-                id: string;
-                /** @enum {string} */
-                role: "user" | "assistant";
-                content: string;
-                /** Format: date-time */
-                createdAt: string;
-            }[];
-        };
-        AiEvaluationRequest: {
-            itemIds?: string[];
-        };
-        AiEvaluation: {
-            /** Format: uuid */
-            attemptId: string;
-            items: {
-                /** Format: uuid */
-                itemId: string;
-                marks: number;
-                maxMarks: number;
-                confidence: number;
-                lowConfidence: boolean;
-                label: string;
-                steps: {
-                    part: string | null;
-                    index: number;
-                    step: string;
-                    awarded: number;
-                    max: number;
-                    reason: string;
-                }[];
-                feedback: string;
-                /** Format: date-time */
-                evaluatedAt: string;
-            }[];
-            totalMarks: number;
-            maxMarks: number;
-            /** @constant */
-            countsForRanks: false;
-            job: {
-                /** Format: uuid */
-                id: string;
-                status: string;
-            } | null;
         };
         /** @description level 1 = the lowest tier; names and icons from LEAGUE_TIERS (shared/config/gamification.ts). */
         LeagueTier: {
@@ -10633,6 +11122,7 @@ export interface components {
             standings: {
                 rank: number;
                 name: string | null;
+                avatar: components["schemas"]["AvatarRef"] | null;
                 xp: number;
                 zone: components["schemas"]["LeagueZone"];
                 isMe: boolean;

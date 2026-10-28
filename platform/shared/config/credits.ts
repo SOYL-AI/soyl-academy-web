@@ -33,7 +33,8 @@ export const SPEND_ALERT_THRESHOLDS = [0.5, 0.8, 1.0] as const;
  * Alerts fire once per threshold per day per budget.
  */
 export const AI_SPEND = {
-  dailyCapInrDefault: 2_000,
+  /** D-044: ₹3,000 a day (was ₹2,000); the free tier keeps ≤ 60 % = ₹1,800 (D-015). Production sets AI_DAILY_SPEND_CAP_INR. */
+  dailyCapInrDefault: 3_000,
   freeTierShare: 0.6,
   degradeAtShare: 0.8,
   alertThresholds: SPEND_ALERT_THRESHOLDS,

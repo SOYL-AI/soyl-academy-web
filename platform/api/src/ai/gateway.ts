@@ -19,8 +19,8 @@ import { aiConversations, aiMessages, aiRequests, attempts, profiles, uploads, t
 import { CallerAbortedError, ModelClient, ProviderUnavailableError, StreamInterruptedError, type UsageRecord } from '@soyl/ai-core';
 import { MODELS, type ModelTier } from '@soyl/shared/config/models';
 import { AI_GATEWAY } from '@soyl/shared/config/credits';
-import { AI_MODERATION, AI_UPLOADS, quoteCredits, type AiActionConfig } from '@soyl/shared/config/ai-actions';
-import type { PlanId } from '@soyl/shared/config/plans';
+import { AI_MODERATION, AI_UPLOADS, actionAllowedOnPlan, quoteCredits, type AiActionConfig } from '@soyl/shared/config/ai-actions';
+import { getPlan, PLANS, type PlanId } from '@soyl/shared/config/plans';
 import { AI_MAX_CONCURRENT_STREAMS } from '@soyl/shared/config/security';
 import type { Clock } from '../clock';
 import { ApiProblem } from '../errors';
@@ -112,9 +112,13 @@ export class Preflight {
     }
   }
 
+  /** D-034: by plan and plan feature (paper-from-upload needs `paper_from_upload`), never by credits alone. */
   assertPlan(action: AiActionConfig, plan: PlanId): void {
-    if (!action.plans.includes(plan))
-      throw new ApiProblem('plan_required', { detail: `${action.label} is part of the Plus, Pro and Board Exam Pass plans.`, fields: { plan, plansUrl: this.d.plansUrl } });
+    if (!actionAllowedOnPlan(action, getPlan(plan))) {
+      const names = PLANS.filter((p) => actionAllowedOnPlan(action, p)).map((p) => p.name);
+      const list = names.length > 1 ? `${names.slice(0, -1).join(', ')} and ${names.at(-1)}` : (names[0] ?? 'paid');
+      throw new ApiProblem('plan_required', { detail: `${action.label} is part of the ${list} plan${names.length > 1 ? 's' : ''}.`, fields: { plan, plansUrl: this.d.plansUrl } });
+    }
   }
 
   /** AC-14: no AI while a live mock is in progress for this student. */

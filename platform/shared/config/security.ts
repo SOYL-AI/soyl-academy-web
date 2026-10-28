@@ -194,6 +194,10 @@ export const RATE_LIMITS = {
   'insights.read.user': { key: 'user', limit: 60, windowSeconds: 60 },
   /** The student dashboard (GET /v1/me/dashboard): one call runs every aggregate, so tighter than the insights reads. */
   'dashboard.read.user': { key: 'user', limit: 30, windowSeconds: 60 },
+  /** D-044 credit guide and per-day credit history (GET /v1/me/credits/guide, /history): small aggregates, like the insights reads. */
+  'credits.read.user': { key: 'user', limit: 60, windowSeconds: 60 },
+  /** Avatar picker (GET /v1/me/avatars): reads the learner state behind the unlocks. */
+  'avatars.read.user': { key: 'user', limit: 60, windowSeconds: 60 },
   /** School search for the profile picker (GET /v1/schools); the web debounces typing. */
   'schools.search.user': { key: 'user', limit: 60, windowSeconds: 60 },
   /** AUTH-11: TOTP enrol/confirm/verify/disable calls per user (wrong codes also lock, see MFA.failures). */

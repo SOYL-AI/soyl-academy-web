@@ -1,14 +1,15 @@
 import { describe, expect, it } from 'vitest';
-import { BILLING, PLANS, Plan, formatInr, getPlan, planPrice, priceLabel } from './plans';
+import { BILLING, PLANS, Plan, formatInr, getPlan, planPrice, plansWithFeature, priceLabel } from './plans';
 import { readFlags } from './flags';
 
 describe('plans config', () => {
-  it('matches CONTEXT.md §6–7', () => {
+  it('matches CONTEXT.md §6–7 (daily credits D-044)', () => {
     for (const plan of PLANS) Plan.parse(plan);
-    expect(getPlan('free').creditsPerDay).toBe(25);
-    expect(getPlan('plus').creditsPerDay).toBe(40);
-    expect(getPlan('pro').creditsPerDay).toBe(60);
-    expect(getPlan('board_exam_pass').creditsPerDay).toBe(60);
+    expect(getPlan('free').creditsPerDay).toBe(50);
+    expect(getPlan('plus').creditsPerDay).toBe(100);
+    expect(getPlan('pro').creditsPerDay).toBe(150);
+    expect(getPlan('board_exam_pass').creditsPerDay).toBe(150);
+    expect(plansWithFeature('paper_from_upload')).toEqual(['pro', 'board_exam_pass']); // D-034
     expect(getPlan('plus').prices).toEqual([
       { interval: 'monthly', amountPaise: 19_900 },
       { interval: 'yearly', amountPaise: 149_900 },

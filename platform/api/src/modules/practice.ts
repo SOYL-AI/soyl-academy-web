@@ -21,6 +21,7 @@ import type { AppDeps } from '../services';
 import { cachedContent } from '../http/cache';
 import { loadChapter } from '../domain/content';
 import { listPractice, selfAssess, submitAnswer } from '../domain/practice';
+import { CreditBonusAwardSchema } from '../ai/schemas';
 import { ChapterParams, StreakSchema, StudentQuestionSchema } from './content-schemas';
 import { coinAwardFields } from './coins-schemas';
 import { DifficultyBandSchema, PRACTICE_STATUSES, PracticeStatusSchema, PracticeSummarySchema } from './insights-schemas';
@@ -103,6 +104,8 @@ const AnswerResult = z
     badgesAwarded: z.array(z.string()),
     streak: StreakSchema.nullable(),
     ...coinAwardFields,
+    /** D-044 bonus AI credits this answer earned (daily practice goal met, 7-day streak milestone); [] for guests and without consent. */
+    creditBonuses: z.array(CreditBonusAwardSchema),
   })
   .meta({ id: 'PracticeAnswerResult' });
 
@@ -146,7 +149,16 @@ const PracticeListResponse = z
   })
   .meta({ id: 'PracticePage' });
 
-const SelfAssessResult = z.object({ answerId: z.uuid(), marksAwarded: z.number(), maxMarks: z.number(), grading: z.literal('self') }).meta({ id: 'PracticeSelfAssessment' });
+const SelfAssessResult = z
+  .object({
+    answerId: z.uuid(),
+    marksAwarded: z.number(),
+    maxMarks: z.number(),
+    grading: z.literal('self'),
+    /** D-044: full self-marks solve the question (D-042) and may complete today's practice goal. */
+    creditBonuses: z.array(CreditBonusAwardSchema),
+  })
+  .meta({ id: 'PracticeSelfAssessment' });
 
 export function registerPracticeRoutes(appIn: FastifyInstance, deps: AppDeps): void {
   const app = appIn.withTypeProvider<ZodTypeProvider>();

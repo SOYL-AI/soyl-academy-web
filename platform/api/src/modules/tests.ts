@@ -28,6 +28,7 @@ import { z } from 'zod/v4';
 import { and, desc, eq, lt } from 'drizzle-orm';
 import { attempts, liveEvents, tests } from '@soyl/db';
 import { BODY_LIMITS, type RateLimitBucketName } from '@soyl/shared/config/security';
+import { AI_ACTIONS } from '@soyl/shared/config/ai-actions';
 import { ApiProblem } from '../errors';
 import { KvUnavailableError } from '../kv';
 import { policies } from '../policy';
@@ -65,6 +66,9 @@ import {
 } from './tests-schemas';
 import { startAttemptEvaluation } from '../ai/routes';
 import { AiEvaluationRequest, AiJobAccepted } from '../ai/schemas';
+
+const evalPricing = AI_ACTIONS['evaluate-paper'].pricing;
+const EVAL_PRICE_TEXT = evalPricing.kind === 'per_answer' ? `${evalPricing.creditsPerAnswer} per answer, at most ${evalPricing.maxCredits} per paper` : `${evalPricing.credits}`;
 
 const member = (buckets: RateLimitBucketName[] = [], consent: 'test_attempts' | false = 'test_attempts') => policies.member({ rateLimit: { buckets }, consent });
 
@@ -239,7 +243,7 @@ export function registerTestRoutes(appIn: FastifyInstance, deps: AppDeps, servic
     schema: {
       tags: ['tests'],
       summary:
-        'AI evaluation of written answers (credits: 6 per answer, at most 40 per paper; quote first with GET /v1/ai/quote/evaluate-paper?attemptId=). Body {itemIds?}: one id = evaluate-answer, none/several = evaluate-paper. 202 with a job id; marks never count for scores or ranks.',
+        `AI evaluation of written answers (credits: ${EVAL_PRICE_TEXT}; quote first with GET /v1/ai/quote/evaluate-paper?attemptId=). Body {itemIds?}: one id = evaluate-answer, none/several = evaluate-paper. 202 with a job id; marks never count for scores or ranks.`,
       params: AttemptParams,
       body: AiEvaluationRequest.nullish(),
       response: withProblems({ 202: AiJobAccepted }),

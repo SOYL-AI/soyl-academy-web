@@ -2,6 +2,8 @@
 import { z } from 'zod/v4';
 import { AI_ACTION_IDS, AI_UPLOADS } from '@soyl/shared/config/ai-actions';
 import { MODEL_TIERS } from '@soyl/shared/config/models';
+import { CREDIT_BONUS_KINDS, CREDIT_HISTORY } from '@soyl/shared/config/credit-bonuses';
+import { PlanId } from '@soyl/shared/config/plans';
 
 const ChapterKey = z.string().max(100).regex(/^[a-z]+-\d+-[a-z0-9-]+-ch\d{2}$/);
 const SubjectKey = z.string().max(80).regex(/^[a-z]+-\d+-[a-z0-9-]+$/);
@@ -73,6 +75,8 @@ export const CreditsResponse = z
     dailyCredits: z.number().int(),
     balance: z.number().int(),
     grantedToday: z.number().int(),
+    /** D-044 bonus credits earned today (daily practice goal, streak milestone); included in `balance`; lapse at 00:00 IST. */
+    bonusToday: z.number().int(),
     reservedNow: z.number().int(),
     spentToday: z.number().int(),
     day: z.string(),
@@ -99,7 +103,8 @@ export const LedgerResponse = z
     entries: z.array(
       z.object({
         id: z.uuid(),
-        kind: z.enum(['grant', 'reserve', 'charge', 'refund', 'expire']),
+        /** bonus_goal / bonus_streak: D-044 bonus credits for learning (same IST day only). */
+        kind: z.enum(['grant', 'reserve', 'charge', 'refund', 'expire', ...CREDIT_BONUS_KINDS]),
         /** Signed change in credits. A charge returns unused credits (usually 0); the spend is its reserve. */
         amount: z.number().int(),
         action: z.string(),
@@ -111,6 +116,84 @@ export const LedgerResponse = z
     nextCursor: z.uuid().nullable(),
   })
   .meta({ id: 'CreditLedger' });
+
+export const CreditBonusKindSchema = z.enum(CREDIT_BONUS_KINDS).meta({ id: 'CreditBonusKind' });
+
+/** A D-044 bonus just granted (practice answer / self-mark responses), for a "+10 credits" toast. */
+export const CreditBonusAwardSchema = z
+  .object({ kind: CreditBonusKindSchema, credits: z.number().int(), label: z.string() })
+  .meta({ id: 'CreditBonusAward', description: 'Bonus AI credits for learning (D-044): usable today only (they lapse at 00:00 IST). Consent-granted accounts only.' });
+
+export const CreditGuideResponse = z
+  .object({
+    plan: PlanId,
+    planName: z.string(),
+    dailyCredits: z.number().int(),
+    balance: z.number().int(),
+    bonusToday: z.number().int(),
+    /** 1 credit = this many paise of AI budget (₹0.10). */
+    creditValuePaise: z.number().int(),
+    day: z.iso.date(),
+    resetAt: z.iso.datetime(),
+    resetInSeconds: z.number().int(),
+    plansUrl: z.string(),
+    /** Every plan in display order (for the "which plan has it" columns). */
+    plans: z.array(z.object({ id: PlanId, name: z.string(), creditsPerDay: z.number().int() })),
+    actions: z.array(
+      z.object({
+        action: z.enum(AI_ACTION_IDS),
+        label: z.string(),
+        /** One student-facing line: what the action does. */
+        guide: z.string(),
+        /** Price of one action (per answer for evaluations). */
+        credits: z.number().int(),
+        perAnswer: z.boolean(),
+        maxCredits: z.number().int(),
+        mode: z.enum(['stream', 'job']),
+        requiresUpload: z.boolean(),
+        allowedForPlan: z.boolean(),
+        /** Whole actions today's balance still pays for ("≈ 7 hard doubts left today"); 0 when the plan lacks it. */
+        remainingToday: z.number().int(),
+        /** Per plan that offers the action: how many its daily credits pay for. */
+        perDay: z.array(z.object({ plan: PlanId, count: z.number().int() })),
+      }),
+    ),
+    /** D-044 learning bonuses; null unless consent is granted (then nothing is earned or shown). */
+    bonuses: z
+      .object({
+        dailyGoal: z.object({ credits: z.number().int(), target: z.number().int(), solvedToday: z.number().int(), earnedToday: z.boolean() }),
+        streakMilestone: z.object({ credits: z.number().int(), everyDays: z.number().int(), currentStreak: z.number().int(), nextMilestone: z.number().int(), earnedToday: z.boolean() }),
+      })
+      .nullable(),
+  })
+  .meta({ id: 'CreditGuide', description: 'What you can do with your credits today (D-044). Prices and plans are config; counts use today’s balance.' });
+
+export const CreditHistoryQuery = z.strictObject({ days: z.coerce.number().int().min(1).max(CREDIT_HISTORY.maxDays).default(CREDIT_HISTORY.defaultDays) });
+
+export const CreditHistoryResponse = z
+  .object({
+    timezone: z.literal('Asia/Kolkata'),
+    from: z.iso.date(),
+    to: z.iso.date(),
+    days: z.array(
+      z.object({
+        day: z.iso.date(),
+        /** Daily grant and plan top-ups. */
+        granted: z.number().int(),
+        /** D-044 bonus credits for learning. */
+        bonus: z.number().int(),
+        /** Credits actually used by AI actions (refunds and unused per-answer credits excluded). */
+        spent: z.number().int(),
+        /** Credits returned for failed or blocked actions. */
+        refunded: z.number().int(),
+        /** Reservations still open (today only, normally 0). */
+        held: z.number().int(),
+        /** The day's remaining balance: lapsed at its 00:00 IST reset (today: still usable). */
+        left: z.number().int(),
+      }),
+    ),
+  })
+  .meta({ id: 'CreditHistory', description: 'Per-IST-day credit usage, oldest first, every day of the window present (zeros when nothing happened).' });
 
 export const QuoteQuery = z.strictObject({ attemptId: z.uuid().optional(), answers: z.coerce.number().int().min(1).max(60).optional() });
 

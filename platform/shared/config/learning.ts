@@ -139,3 +139,16 @@ export const DASHBOARD = {
     max: 300,
   },
 } as const;
+
+/* Daily practice goal (D-044 bonus credits) ---------------------------------------------------------- */
+
+/**
+ * The daily practice goal behind the +10 bonus credits (credit-bonuses.ts): questions first solved in one
+ * IST day (D-042 "solved": auto-checked right or self-marked full marks; a question counts once, on the
+ * IST day of its first solving answer, as in the weekly goal and the activity heatmap).
+ */
+export const DAILY_PRACTICE_GOAL = {
+  metric: 'questions_solved' as WeeklyGoalMetric,
+  target: 10,
+  timezone: 'Asia/Kolkata',
+} as const;

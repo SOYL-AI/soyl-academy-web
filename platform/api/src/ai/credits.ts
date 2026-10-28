@@ -11,6 +11,7 @@
  *             lock, so they can never overspend (balance ≥ 0 after every reserve).
  *   charge    `charge` row (+unused credits returned, usually 0) — once output has started (F-008).
  *   refund    `refund` row (+reserved) — failures before output, moderation blocks, our errors.
+ *   bonus     `bonus_goal` / `bonus_streak` rows (+credits, D-044, ./bonuses.ts) — same IST day only.
  *
  * A reservation resolves exactly once: the partial unique index `credit_ledger_one_resolution` makes
  * the second of a charge/refund/sweeper race insert nothing (ON CONFLICT DO NOTHING), and the
@@ -64,12 +65,32 @@ export interface ReserveResult {
 
 export type SettleOutcome = 'charged' | 'refunded' | 'already_charged' | 'already_refunded';
 
+/** One IST day of GET /v1/me/credits/history. */
+export interface CreditDayUsage {
+  day: string;
+  granted: number;
+  bonus: number;
+  spent: number;
+  refunded: number;
+  held: number;
+  left: number;
+}
+
+/** YYYY-MM-DD + n calendar days. */
+function addIstDays(day: string, n: number): string {
+  const d = new Date(`${day}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + n);
+  return d.toISOString().slice(0, 10);
+}
+
 export interface BalanceView {
   plan: PlanId;
   planName: string;
   dailyCredits: number;
   balance: number;
   grantedToday: number;
+  /** D-044 bonus credits earned today (daily goal, streak milestone); they lapse at 00:00 IST too. */
+  bonusToday: number;
   reservedNow: number;
   spentToday: number;
   day: string;
@@ -125,6 +146,7 @@ export class CreditService {
       .select({
         balance: sql<number>`coalesce(sum(${creditLedger.amount}), 0)::int`,
         granted: sql<number>`coalesce(sum(${creditLedger.amount}) FILTER (WHERE ${creditLedger.kind} = 'grant'), 0)::int`,
+        bonus: sql<number>`coalesce(sum(${creditLedger.amount}) FILTER (WHERE ${creditLedger.kind} IN ('bonus_goal', 'bonus_streak')), 0)::int`,
         reserved: sql<number>`coalesce(sum(-${creditLedger.amount}) FILTER (WHERE ${creditLedger.kind} = 'reserve'), 0)::int`,
         returned: sql<number>`coalesce(sum(${creditLedger.amount}) FILTER (WHERE ${creditLedger.kind} IN ('charge', 'refund')), 0)::int`,
         open: sql<number>`coalesce(sum(-${creditLedger.amount}) FILTER (WHERE ${creditLedger.kind} = 'reserve' AND NOT EXISTS (
@@ -134,7 +156,7 @@ export class CreditService {
       .where(and(eq(creditLedger.userId, userId), eq(creditLedger.istDay, day)));
     const reserved = r?.reserved ?? 0;
     const open = r?.open ?? 0;
-    return { balance: r?.balance ?? 0, granted: r?.granted ?? 0, open, spent: reserved - open - (r?.returned ?? 0) };
+    return { balance: r?.balance ?? 0, granted: r?.granted ?? 0, bonus: r?.bonus ?? 0, open, spent: reserved - open - (r?.returned ?? 0) };
   }
 
   /** GET /v1/credits: writes today's lazy grant if needed, then the balance (never blocks on anything else). */
@@ -155,6 +177,7 @@ export class CreditService {
       dailyCredits: planCfg.creditsPerDay,
       balance: s.balance,
       grantedToday: s.granted,
+      bonusToday: s.bonus,
       reservedNow: s.open,
       spentToday: s.spent,
       day,
@@ -279,6 +302,47 @@ export class CreditService {
       .limit(opts.limit + 1);
     const page = rows.slice(0, opts.limit);
     return { entries: page, nextCursor: rows.length > opts.limit ? page[page.length - 1]!.id : null };
+  }
+
+  /**
+   * Per-IST-day usage for the `days` days ending today (oldest first, every day present). Rows count on
+   * their ledger day (a charge/refund on its reservation's day). `spent` = credits actually used (reserved
+   * minus unused returns and refunds, open holds excluded); `held` = reservations still open; `left` = the
+   * day's balance (what lapsed at its 00:00 IST reset, or what is left today).
+   */
+  async history(userId: string, days: number): Promise<{ from: string; to: string; days: CreditDayUsage[] }> {
+    const now = this.now();
+    const to = istDay(now);
+    const from = addIstDays(to, -(days - 1));
+    const rows = await this.db.execute<{ day: string; granted: number; bonus: number; reserved: number; returned: number; refunded: number; open: number; left: number }>(sql`
+      SELECT l.ist_day::text AS day,
+        coalesce(sum(l.amount) FILTER (WHERE l.kind = 'grant'), 0)::int AS granted,
+        coalesce(sum(l.amount) FILTER (WHERE l.kind IN ('bonus_goal', 'bonus_streak')), 0)::int AS bonus,
+        coalesce(sum(-l.amount) FILTER (WHERE l.kind = 'reserve'), 0)::int AS reserved,
+        coalesce(sum(l.amount) FILTER (WHERE l.kind = 'charge'), 0)::int AS returned,
+        coalesce(sum(l.amount) FILTER (WHERE l.kind = 'refund'), 0)::int AS refunded,
+        coalesce(sum(-l.amount) FILTER (WHERE l.kind = 'reserve' AND NOT EXISTS (
+          SELECT 1 FROM credit_ledger s WHERE s.request_id = l.request_id AND s.kind IN ('charge', 'refund'))), 0)::int AS open,
+        coalesce(sum(l.amount), 0)::int AS left
+      FROM credit_ledger l
+      WHERE l.user_id = ${userId} AND l.ist_day >= ${from}::date AND l.ist_day <= ${to}::date
+      GROUP BY l.ist_day`);
+    const byDay = new Map(rows.rows.map((r) => [r.day, r]));
+    const out: CreditDayUsage[] = [];
+    for (let d = from; d <= to; d = addIstDays(d, 1)) {
+      const r = byDay.get(d);
+      const n = (x: unknown) => Number(x ?? 0);
+      out.push({
+        day: d,
+        granted: n(r?.granted),
+        bonus: n(r?.bonus),
+        spent: n(r?.reserved) - n(r?.open) - n(r?.returned) - n(r?.refunded),
+        refunded: n(r?.refunded),
+        held: n(r?.open),
+        left: n(r?.left),
+      });
+    }
+    return { from, to, days: out };
   }
 
   /**

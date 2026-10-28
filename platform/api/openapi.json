@@ -691,6 +691,358 @@
           "profileUpdated"
         ]
       },
+      "AvatarIdInput": {
+        "type": "string",
+        "enum": [
+          "otter",
+          "falcon",
+          "panda",
+          "tiger",
+          "dolphin",
+          "eagle",
+          "koala",
+          "lynx",
+          "peacock",
+          "parrot",
+          "penguin",
+          "rabbit",
+          "robin",
+          "sparrow",
+          "squirrel",
+          "turtle",
+          "whale",
+          "zebra",
+          "badger",
+          "beaver",
+          "bison",
+          "camel",
+          "cheetah",
+          "crane",
+          "deer",
+          "elephant",
+          "finch",
+          "fox",
+          "gazelle",
+          "gecko",
+          "giraffe",
+          "heron",
+          "hornbill",
+          "ibex",
+          "jaguar",
+          "kingfisher",
+          "kiwi",
+          "lemur",
+          "leopard",
+          "lion",
+          "llama",
+          "macaw",
+          "mongoose",
+          "moose",
+          "myna",
+          "narwhal",
+          "owl",
+          "panther",
+          "pelican",
+          "puffin",
+          "quail",
+          "raven",
+          "rhino",
+          "seal",
+          "starling",
+          "swan",
+          "tapir",
+          "toucan",
+          "walrus",
+          "wombat",
+          "yak",
+          "bulbul",
+          "hoopoe",
+          "langur"
+        ],
+        "description": "Lower-case animal of the public-name list, e.g. \"giraffe\" (@soyl/shared/config/avatars)."
+      },
+      "AvatarBackgroundInput": {
+        "type": "string",
+        "enum": [
+          "sky",
+          "mint",
+          "sunflower",
+          "coral",
+          "lavender",
+          "meadow",
+          "peach",
+          "ocean"
+        ],
+        "description": "Background theme; the UI kit token is `p-avatar-<id>`."
+      },
+      "AvatarRefInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/AvatarIdInput"
+          },
+          "bg": {
+            "$ref": "#/components/schemas/AvatarBackgroundInput"
+          }
+        },
+        "required": [
+          "id",
+          "bg"
+        ]
+      },
+      "MyAvatarInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/AvatarIdInput"
+          },
+          "bg": {
+            "$ref": "#/components/schemas/AvatarBackgroundInput"
+          },
+          "isDefault": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "bg",
+          "isDefault"
+        ]
+      },
+      "AvatarChoiceInput": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/AvatarIdInput"
+              },
+              "bg": {
+                "$ref": "#/components/schemas/AvatarBackgroundInput"
+              }
+            },
+            "required": [
+              "id",
+              "bg"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "AvatarUnlockRuleInput": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "const": "starter"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "const": "level"
+              },
+              "level": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "kind",
+              "level"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "const": "badge"
+              },
+              "badge": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "badge"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "const": "streak"
+              },
+              "days": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "kind",
+              "days"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "const": "league_tier"
+              },
+              "tier": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "kind",
+              "tier"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "const": "live_mocks"
+              },
+              "count": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "kind",
+              "count"
+            ]
+          }
+        ],
+        "description": "One of starter, level, badge, streak, league_tier, live_mocks. league_tier is 1-based (Bronze = 1). Learning only: no purchases, no coins."
+      },
+      "AvatarCatalogInput": {
+        "type": "object",
+        "properties": {
+          "current": {
+            "$ref": "#/components/schemas/MyAvatarInput"
+          },
+          "default": {
+            "$ref": "#/components/schemas/AvatarRefInput"
+          },
+          "backgrounds": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "$ref": "#/components/schemas/AvatarBackgroundInput"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "token": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "label",
+                "token"
+              ]
+            }
+          },
+          "unlockedCount": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "total": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "avatars": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "$ref": "#/components/schemas/AvatarIdInput"
+                },
+                "animal": {
+                  "type": "string"
+                },
+                "unlocked": {
+                  "type": "boolean"
+                },
+                "isPublicNameAnimal": {
+                  "type": "boolean"
+                },
+                "unlock": {
+                  "$ref": "#/components/schemas/AvatarUnlockRuleInput"
+                },
+                "unlockLabel": {
+                  "type": "string"
+                },
+                "progress": {
+                  "type": "object",
+                  "properties": {
+                    "current": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "target": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    }
+                  },
+                  "required": [
+                    "current",
+                    "target"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "animal",
+                "unlocked",
+                "isPublicNameAnimal",
+                "unlock",
+                "unlockLabel",
+                "progress"
+              ]
+            }
+          }
+        },
+        "required": [
+          "current",
+          "default",
+          "backgrounds",
+          "unlockedCount",
+          "total",
+          "avatars"
+        ],
+        "description": "Every avatar with its unlock rule and your progress. Backgrounds are open to everyone."
+      },
       "MeInput": {
         "type": "object",
         "properties": {
@@ -732,6 +1084,9 @@
           },
           "publicName": {
             "type": "string"
+          },
+          "avatar": {
+            "$ref": "#/components/schemas/MyAvatarInput"
           },
           "locale": {
             "type": "string"
@@ -816,6 +1171,7 @@
           "board",
           "classLevel",
           "publicName",
+          "avatar",
           "locale",
           "consent",
           "school",
@@ -878,6 +1234,9 @@
                 "type": "null"
               }
             ]
+          },
+          "avatar": {
+            "$ref": "#/components/schemas/AvatarChoiceInput"
           }
         },
         "additionalProperties": false,
@@ -2684,6 +3043,1402 @@
           "chapters"
         ]
       },
+      "AiActionRequestInput": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "attempt": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "reveal": {
+            "type": "boolean"
+          },
+          "conversationId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "chapterId": {
+            "type": "string",
+            "maxLength": 100,
+            "pattern": "^[a-z]+-\\d+-[a-z0-9-]+-ch\\d{2}$"
+          },
+          "slide": {
+            "type": "object",
+            "properties": {
+              "part": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 20
+              },
+              "slideId": {
+                "type": "string",
+                "pattern": "^s\\d{2}$"
+              }
+            },
+            "required": [
+              "slideId"
+            ],
+            "additionalProperties": false
+          },
+          "uploadId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "subjectId": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z]+-\\d+-[a-z0-9-]+$"
+          },
+          "attemptId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "itemIds": {
+            "minItems": 1,
+            "maxItems": 60,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "AiJobAcceptedInput": {
+        "type": "object",
+        "properties": {
+          "jobId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "status": {
+            "type": "string",
+            "const": "queued"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "quick-doubt",
+              "explain-slide",
+              "hard-doubt",
+              "photo-doubt",
+              "evaluate-answer",
+              "evaluate-paper",
+              "paper-from-upload"
+            ]
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "balance": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "answers": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "skipped": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "itemId": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "reason": {
+                  "type": "string",
+                  "enum": [
+                    "not_written",
+                    "unanswered",
+                    "already_evaluated"
+                  ]
+                }
+              },
+              "required": [
+                "itemId",
+                "reason"
+              ]
+            }
+          }
+        },
+        "required": [
+          "jobId",
+          "status",
+          "action",
+          "credits",
+          "balance"
+        ],
+        "description": "Poll GET /v1/ai/jobs/:id."
+      },
+      "AiJobInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "evaluation",
+              "paper_from_upload"
+            ]
+          },
+          "action": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "queued",
+              "running",
+              "succeeded",
+              "failed"
+            ]
+          },
+          "result": {
+            "anyOf": [
+              {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {}
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "finishedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "action",
+          "status",
+          "result",
+          "error",
+          "createdAt",
+          "finishedAt"
+        ],
+        "description": "evaluation result: {attemptId, evaluated[], notEvaluated[{itemId, reason}], creditsCharged, creditsRefunded, countsForRanks:false}. paper_from_upload result: {blueprint {durationMin, totalMarks, sections[{id, questionType, count, marksEach, internalChoice}], chapterIds}, testId, skippedChapters, creditsCharged}."
+      },
+      "CreditsInput": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "type": "string"
+          },
+          "planName": {
+            "type": "string"
+          },
+          "dailyCredits": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "balance": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "grantedToday": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "bonusToday": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "reservedNow": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "spentToday": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "day": {
+            "type": "string"
+          },
+          "resetAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "resetInSeconds": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "plansUrl": {
+            "type": "string"
+          },
+          "prices": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "enum": [
+                    "quick-doubt",
+                    "explain-slide",
+                    "hard-doubt",
+                    "photo-doubt",
+                    "evaluate-answer",
+                    "evaluate-paper",
+                    "paper-from-upload"
+                  ]
+                },
+                "label": {
+                  "type": "string"
+                },
+                "credits": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "perAnswer": {
+                  "type": "boolean"
+                },
+                "maxCredits": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "allowedForPlan": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "action",
+                "label",
+                "credits",
+                "perAnswer",
+                "maxCredits",
+                "allowedForPlan"
+              ]
+            }
+          }
+        },
+        "required": [
+          "plan",
+          "planName",
+          "dailyCredits",
+          "balance",
+          "grantedToday",
+          "bonusToday",
+          "reservedNow",
+          "spentToday",
+          "day",
+          "resetAt",
+          "resetInSeconds",
+          "plansUrl",
+          "prices"
+        ],
+        "description": "Today’s AI credits (1 credit = ₹0.10 of AI). Resets at 00:00 IST; no rollover."
+      },
+      "CreditLedgerInput": {
+        "type": "object",
+        "properties": {
+          "entries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "grant",
+                    "reserve",
+                    "charge",
+                    "refund",
+                    "expire",
+                    "bonus_goal",
+                    "bonus_streak"
+                  ]
+                },
+                "amount": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "action": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "day": {
+                  "type": "string"
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                }
+              },
+              "required": [
+                "id",
+                "kind",
+                "amount",
+                "action",
+                "label",
+                "day",
+                "createdAt"
+              ]
+            }
+          },
+          "nextCursor": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid",
+                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "entries",
+          "nextCursor"
+        ]
+      },
+      "CreditBonusKindInput": {
+        "type": "string",
+        "enum": [
+          "bonus_goal",
+          "bonus_streak"
+        ]
+      },
+      "CreditBonusAwardInput": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/CreditBonusKindInput"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "credits",
+          "label"
+        ],
+        "description": "Bonus AI credits for learning (D-044): usable today only (they lapse at 00:00 IST). Consent-granted accounts only."
+      },
+      "CreditGuideInput": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "type": "string",
+            "enum": [
+              "free",
+              "plus",
+              "pro",
+              "board_exam_pass"
+            ]
+          },
+          "planName": {
+            "type": "string"
+          },
+          "dailyCredits": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "balance": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "bonusToday": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "creditValuePaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "day": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "resetAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "resetInSeconds": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "plansUrl": {
+            "type": "string"
+          },
+          "plans": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "enum": [
+                    "free",
+                    "plus",
+                    "pro",
+                    "board_exam_pass"
+                  ]
+                },
+                "name": {
+                  "type": "string"
+                },
+                "creditsPerDay": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "creditsPerDay"
+              ]
+            }
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "enum": [
+                    "quick-doubt",
+                    "explain-slide",
+                    "hard-doubt",
+                    "photo-doubt",
+                    "evaluate-answer",
+                    "evaluate-paper",
+                    "paper-from-upload"
+                  ]
+                },
+                "label": {
+                  "type": "string"
+                },
+                "guide": {
+                  "type": "string"
+                },
+                "credits": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "perAnswer": {
+                  "type": "boolean"
+                },
+                "maxCredits": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "mode": {
+                  "type": "string",
+                  "enum": [
+                    "stream",
+                    "job"
+                  ]
+                },
+                "requiresUpload": {
+                  "type": "boolean"
+                },
+                "allowedForPlan": {
+                  "type": "boolean"
+                },
+                "remainingToday": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "perDay": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "plan": {
+                        "type": "string",
+                        "enum": [
+                          "free",
+                          "plus",
+                          "pro",
+                          "board_exam_pass"
+                        ]
+                      },
+                      "count": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      }
+                    },
+                    "required": [
+                      "plan",
+                      "count"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "action",
+                "label",
+                "guide",
+                "credits",
+                "perAnswer",
+                "maxCredits",
+                "mode",
+                "requiresUpload",
+                "allowedForPlan",
+                "remainingToday",
+                "perDay"
+              ]
+            }
+          },
+          "bonuses": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "dailyGoal": {
+                    "type": "object",
+                    "properties": {
+                      "credits": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "target": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "solvedToday": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "earnedToday": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "credits",
+                      "target",
+                      "solvedToday",
+                      "earnedToday"
+                    ]
+                  },
+                  "streakMilestone": {
+                    "type": "object",
+                    "properties": {
+                      "credits": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "everyDays": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "currentStreak": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "nextMilestone": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "earnedToday": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "credits",
+                      "everyDays",
+                      "currentStreak",
+                      "nextMilestone",
+                      "earnedToday"
+                    ]
+                  }
+                },
+                "required": [
+                  "dailyGoal",
+                  "streakMilestone"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "plan",
+          "planName",
+          "dailyCredits",
+          "balance",
+          "bonusToday",
+          "creditValuePaise",
+          "day",
+          "resetAt",
+          "resetInSeconds",
+          "plansUrl",
+          "plans",
+          "actions",
+          "bonuses"
+        ],
+        "description": "What you can do with your credits today (D-044). Prices and plans are config; counts use today’s balance."
+      },
+      "CreditHistoryInput": {
+        "type": "object",
+        "properties": {
+          "timezone": {
+            "type": "string",
+            "const": "Asia/Kolkata"
+          },
+          "from": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "to": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "days": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "day": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+                },
+                "granted": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "bonus": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "spent": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "refunded": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "held": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "left": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                }
+              },
+              "required": [
+                "day",
+                "granted",
+                "bonus",
+                "spent",
+                "refunded",
+                "held",
+                "left"
+              ]
+            }
+          }
+        },
+        "required": [
+          "timezone",
+          "from",
+          "to",
+          "days"
+        ],
+        "description": "Per-IST-day credit usage, oldest first, every day of the window present (zeros when nothing happened)."
+      },
+      "AiQuoteInput": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "quick-doubt",
+              "explain-slide",
+              "hard-doubt",
+              "photo-doubt",
+              "evaluate-answer",
+              "evaluate-paper",
+              "paper-from-upload"
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "perAnswer": {
+            "type": "boolean"
+          },
+          "answers": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "maxCredits": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "tier": {
+            "type": "string",
+            "enum": [
+              "small",
+              "mid",
+              "verify"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "stream",
+              "job"
+            ]
+          },
+          "requiresUpload": {
+            "type": "boolean"
+          },
+          "plan": {
+            "type": "string"
+          },
+          "allowedForPlan": {
+            "type": "boolean"
+          },
+          "balance": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "affordable": {
+            "type": "boolean"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "available",
+              "degraded",
+              "paused"
+            ]
+          },
+          "resetAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "resetInSeconds": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "plansUrl": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "action",
+          "label",
+          "credits",
+          "perAnswer",
+          "answers",
+          "maxCredits",
+          "tier",
+          "mode",
+          "requiresUpload",
+          "plan",
+          "allowedForPlan",
+          "balance",
+          "affordable",
+          "status",
+          "resetAt",
+          "resetInSeconds",
+          "plansUrl"
+        ],
+        "description": "Show the cost before the student confirms (CONTEXT §6)."
+      },
+      "AiUploadRequestInput": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "photo_doubt",
+              "sample_paper"
+            ]
+          },
+          "contentType": {
+            "type": "string",
+            "enum": [
+              "image/jpeg",
+              "image/png",
+              "image/webp"
+            ]
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10485760
+          }
+        },
+        "required": [
+          "kind",
+          "contentType",
+          "bytes"
+        ],
+        "additionalProperties": false
+      },
+      "AiUploadTargetInput": {
+        "type": "object",
+        "properties": {
+          "uploadId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "uploadUrl": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string",
+            "const": "PUT"
+          },
+          "headers": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string"
+            },
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "uploadExpiresAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "maxBytes": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          }
+        },
+        "required": [
+          "uploadId",
+          "uploadUrl",
+          "method",
+          "headers",
+          "uploadExpiresAt",
+          "maxBytes",
+          "expiresAt"
+        ],
+        "description": "PUT the file to uploadUrl with these headers within uploadExpiresAt, then POST /v1/ai/uploads/:id/complete."
+      },
+      "AiUploadInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "photo_doubt",
+              "sample_paper",
+              "answer_sheet"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending_upload",
+              "uploaded",
+              "scanning",
+              "ready",
+              "rejected"
+            ]
+          },
+          "rejectReason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "contentType": {
+            "type": "string"
+          },
+          "bytes": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "pages": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "status",
+          "rejectReason",
+          "contentType",
+          "bytes",
+          "pages",
+          "expiresAt",
+          "createdAt"
+        ]
+      },
+      "AiConversationCreateInput": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "default": "tutor",
+            "type": "string",
+            "enum": [
+              "tutor",
+              "photo_doubt",
+              "explain_slide",
+              "evaluation",
+              "paper_from_upload"
+            ]
+          },
+          "chapterId": {
+            "type": "string",
+            "maxLength": 100,
+            "pattern": "^[a-z]+-\\d+-[a-z0-9-]+-ch\\d{2}$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          }
+        },
+        "additionalProperties": false
+      },
+      "AiConversationInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "tutor",
+              "photo_doubt",
+              "explain_slide",
+              "evaluation",
+              "paper_from_upload"
+            ]
+          },
+          "chapterId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "lastMessageAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "chapterId",
+          "title",
+          "lastMessageAt",
+          "createdAt"
+        ]
+      },
+      "AiConversationsInput": {
+        "type": "object",
+        "properties": {
+          "conversations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AiConversationInput"
+            }
+          },
+          "nextCursor": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid",
+                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "conversations",
+          "nextCursor"
+        ]
+      },
+      "AiConversationDetailInput": {
+        "type": "object",
+        "properties": {
+          "conversation": {
+            "$ref": "#/components/schemas/AiConversationInput"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "role": {
+                  "type": "string",
+                  "enum": [
+                    "user",
+                    "assistant"
+                  ]
+                },
+                "content": {
+                  "type": "string"
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                }
+              },
+              "required": [
+                "id",
+                "role",
+                "content",
+                "createdAt"
+              ]
+            }
+          }
+        },
+        "required": [
+          "conversation",
+          "messages"
+        ],
+        "description": "Messages are kept for 30 days."
+      },
+      "AiEvaluationRequestInput": {
+        "type": "object",
+        "properties": {
+          "itemIds": {
+            "minItems": 1,
+            "maxItems": 60,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "AiEvaluationInput": {
+        "type": "object",
+        "properties": {
+          "attemptId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "itemId": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "marks": {
+                  "type": "number"
+                },
+                "maxMarks": {
+                  "type": "number"
+                },
+                "confidence": {
+                  "type": "number"
+                },
+                "lowConfidence": {
+                  "type": "boolean"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "steps": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "part": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "index": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "step": {
+                        "type": "string"
+                      },
+                      "awarded": {
+                        "type": "number"
+                      },
+                      "max": {
+                        "type": "number"
+                      },
+                      "reason": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "part",
+                      "index",
+                      "step",
+                      "awarded",
+                      "max",
+                      "reason"
+                    ]
+                  }
+                },
+                "feedback": {
+                  "type": "string"
+                },
+                "evaluatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                }
+              },
+              "required": [
+                "itemId",
+                "marks",
+                "maxMarks",
+                "confidence",
+                "lowConfidence",
+                "label",
+                "steps",
+                "feedback",
+                "evaluatedAt"
+              ]
+            }
+          },
+          "totalMarks": {
+            "type": "number"
+          },
+          "maxMarks": {
+            "type": "number"
+          },
+          "countsForRanks": {
+            "type": "boolean",
+            "const": false
+          },
+          "job": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  "status": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "status"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attemptId",
+          "items",
+          "totalMarks",
+          "maxMarks",
+          "countsForRanks",
+          "job"
+        ]
+      },
       "CoinEarnSourceInput": {
         "type": "string",
         "enum": [
@@ -4124,6 +5879,9 @@
           "publicName": {
             "type": "string"
           },
+          "avatar": {
+            "$ref": "#/components/schemas/MyAvatarInput"
+          },
           "level": {
             "type": "integer",
             "minimum": -9007199254740991,
@@ -4175,6 +5933,7 @@
         },
         "required": [
           "publicName",
+          "avatar",
           "level",
           "xp",
           "coins",
@@ -4670,6 +6429,12 @@
             "items": {
               "$ref": "#/components/schemas/CoinAwardInput"
             }
+          },
+          "creditBonuses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreditBonusAwardInput"
+            }
           }
         },
         "required": [
@@ -4690,7 +6455,8 @@
           "badgesAwarded",
           "streak",
           "coinsAwarded",
-          "coinAwards"
+          "coinAwards",
+          "creditBonuses"
         ]
       },
       "PracticePageInput": {
@@ -4782,13 +6548,20 @@
           "grading": {
             "type": "string",
             "const": "self"
+          },
+          "creditBonuses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreditBonusAwardInput"
+            }
           }
         },
         "required": [
           "answerId",
           "marksAwarded",
           "maxMarks",
-          "grading"
+          "grading",
+          "creditBonuses"
         ]
       },
       "MyProgressInput": {
@@ -9480,6 +11253,16 @@
                     "null"
                   ]
                 },
+                "avatar": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/AvatarRefInput"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
                 "score": {
                   "type": "number"
                 },
@@ -9490,6 +11273,7 @@
               "required": [
                 "rank",
                 "name",
+                "avatar",
                 "score",
                 "isMe"
               ]
@@ -9642,1010 +11426,6 @@
         "required": [
           "attempts",
           "nextCursor"
-        ]
-      },
-      "AiActionRequestInput": {
-        "type": "object",
-        "properties": {
-          "message": {
-            "type": "string",
-            "maxLength": 2000
-          },
-          "attempt": {
-            "type": "string",
-            "maxLength": 2000
-          },
-          "reveal": {
-            "type": "boolean"
-          },
-          "conversationId": {
-            "type": "string",
-            "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-          },
-          "chapterId": {
-            "type": "string",
-            "maxLength": 100,
-            "pattern": "^[a-z]+-\\d+-[a-z0-9-]+-ch\\d{2}$"
-          },
-          "slide": {
-            "type": "object",
-            "properties": {
-              "part": {
-                "type": "integer",
-                "minimum": 0,
-                "maximum": 20
-              },
-              "slideId": {
-                "type": "string",
-                "pattern": "^s\\d{2}$"
-              }
-            },
-            "required": [
-              "slideId"
-            ],
-            "additionalProperties": false
-          },
-          "uploadId": {
-            "type": "string",
-            "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-          },
-          "subjectId": {
-            "type": "string",
-            "maxLength": 80,
-            "pattern": "^[a-z]+-\\d+-[a-z0-9-]+$"
-          },
-          "attemptId": {
-            "type": "string",
-            "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-          },
-          "itemIds": {
-            "minItems": 1,
-            "maxItems": 60,
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid",
-              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "AiJobAcceptedInput": {
-        "type": "object",
-        "properties": {
-          "jobId": {
-            "type": "string",
-            "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-          },
-          "status": {
-            "type": "string",
-            "const": "queued"
-          },
-          "action": {
-            "type": "string",
-            "enum": [
-              "quick-doubt",
-              "explain-slide",
-              "hard-doubt",
-              "photo-doubt",
-              "evaluate-answer",
-              "evaluate-paper",
-              "paper-from-upload"
-            ]
-          },
-          "credits": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "balance": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "answers": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "skipped": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "itemId": {
-                  "type": "string",
-                  "format": "uuid",
-                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-                },
-                "reason": {
-                  "type": "string",
-                  "enum": [
-                    "not_written",
-                    "unanswered",
-                    "already_evaluated"
-                  ]
-                }
-              },
-              "required": [
-                "itemId",
-                "reason"
-              ]
-            }
-          }
-        },
-        "required": [
-          "jobId",
-          "status",
-          "action",
-          "credits",
-          "balance"
-        ],
-        "description": "Poll GET /v1/ai/jobs/:id."
-      },
-      "AiJobInput": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-          },
-          "kind": {
-            "type": "string",
-            "enum": [
-              "evaluation",
-              "paper_from_upload"
-            ]
-          },
-          "action": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "status": {
-            "type": "string",
-            "enum": [
-              "queued",
-              "running",
-              "succeeded",
-              "failed"
-            ]
-          },
-          "result": {
-            "anyOf": [
-              {
-                "type": "object",
-                "propertyNames": {
-                  "type": "string"
-                },
-                "additionalProperties": {}
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "error": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-          },
-          "finishedAt": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "date-time",
-                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          }
-        },
-        "required": [
-          "id",
-          "kind",
-          "action",
-          "status",
-          "result",
-          "error",
-          "createdAt",
-          "finishedAt"
-        ],
-        "description": "evaluation result: {attemptId, evaluated[], notEvaluated[{itemId, reason}], creditsCharged, creditsRefunded, countsForRanks:false}. paper_from_upload result: {blueprint {durationMin, totalMarks, sections[{id, questionType, count, marksEach, internalChoice}], chapterIds}, testId, skippedChapters, creditsCharged}."
-      },
-      "CreditsInput": {
-        "type": "object",
-        "properties": {
-          "plan": {
-            "type": "string"
-          },
-          "planName": {
-            "type": "string"
-          },
-          "dailyCredits": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "balance": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "grantedToday": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "reservedNow": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "spentToday": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "day": {
-            "type": "string"
-          },
-          "resetAt": {
-            "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-          },
-          "resetInSeconds": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "plansUrl": {
-            "type": "string"
-          },
-          "prices": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "action": {
-                  "type": "string",
-                  "enum": [
-                    "quick-doubt",
-                    "explain-slide",
-                    "hard-doubt",
-                    "photo-doubt",
-                    "evaluate-answer",
-                    "evaluate-paper",
-                    "paper-from-upload"
-                  ]
-                },
-                "label": {
-                  "type": "string"
-                },
-                "credits": {
-                  "type": "integer",
-                  "minimum": -9007199254740991,
-                  "maximum": 9007199254740991
-                },
-                "perAnswer": {
-                  "type": "boolean"
-                },
-                "maxCredits": {
-                  "type": "integer",
-                  "minimum": -9007199254740991,
-                  "maximum": 9007199254740991
-                },
-                "allowedForPlan": {
-                  "type": "boolean"
-                }
-              },
-              "required": [
-                "action",
-                "label",
-                "credits",
-                "perAnswer",
-                "maxCredits",
-                "allowedForPlan"
-              ]
-            }
-          }
-        },
-        "required": [
-          "plan",
-          "planName",
-          "dailyCredits",
-          "balance",
-          "grantedToday",
-          "reservedNow",
-          "spentToday",
-          "day",
-          "resetAt",
-          "resetInSeconds",
-          "plansUrl",
-          "prices"
-        ],
-        "description": "Today’s AI credits (1 credit = ₹0.10 of AI). Resets at 00:00 IST; no rollover."
-      },
-      "CreditLedgerInput": {
-        "type": "object",
-        "properties": {
-          "entries": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string",
-                  "format": "uuid",
-                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-                },
-                "kind": {
-                  "type": "string",
-                  "enum": [
-                    "grant",
-                    "reserve",
-                    "charge",
-                    "refund",
-                    "expire"
-                  ]
-                },
-                "amount": {
-                  "type": "integer",
-                  "minimum": -9007199254740991,
-                  "maximum": 9007199254740991
-                },
-                "action": {
-                  "type": "string"
-                },
-                "label": {
-                  "type": "string"
-                },
-                "day": {
-                  "type": "string"
-                },
-                "createdAt": {
-                  "type": "string",
-                  "format": "date-time",
-                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-                }
-              },
-              "required": [
-                "id",
-                "kind",
-                "amount",
-                "action",
-                "label",
-                "day",
-                "createdAt"
-              ]
-            }
-          },
-          "nextCursor": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "uuid",
-                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          }
-        },
-        "required": [
-          "entries",
-          "nextCursor"
-        ]
-      },
-      "AiQuoteInput": {
-        "type": "object",
-        "properties": {
-          "action": {
-            "type": "string",
-            "enum": [
-              "quick-doubt",
-              "explain-slide",
-              "hard-doubt",
-              "photo-doubt",
-              "evaluate-answer",
-              "evaluate-paper",
-              "paper-from-upload"
-            ]
-          },
-          "label": {
-            "type": "string"
-          },
-          "credits": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "perAnswer": {
-            "type": "boolean"
-          },
-          "answers": {
-            "anyOf": [
-              {
-                "type": "integer",
-                "minimum": -9007199254740991,
-                "maximum": 9007199254740991
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "maxCredits": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "tier": {
-            "type": "string",
-            "enum": [
-              "small",
-              "mid",
-              "verify"
-            ]
-          },
-          "mode": {
-            "type": "string",
-            "enum": [
-              "stream",
-              "job"
-            ]
-          },
-          "requiresUpload": {
-            "type": "boolean"
-          },
-          "plan": {
-            "type": "string"
-          },
-          "allowedForPlan": {
-            "type": "boolean"
-          },
-          "balance": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "affordable": {
-            "type": "boolean"
-          },
-          "status": {
-            "type": "string",
-            "enum": [
-              "available",
-              "degraded",
-              "paused"
-            ]
-          },
-          "resetAt": {
-            "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-          },
-          "resetInSeconds": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "plansUrl": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "action",
-          "label",
-          "credits",
-          "perAnswer",
-          "answers",
-          "maxCredits",
-          "tier",
-          "mode",
-          "requiresUpload",
-          "plan",
-          "allowedForPlan",
-          "balance",
-          "affordable",
-          "status",
-          "resetAt",
-          "resetInSeconds",
-          "plansUrl"
-        ],
-        "description": "Show the cost before the student confirms (CONTEXT §6)."
-      },
-      "AiUploadRequestInput": {
-        "type": "object",
-        "properties": {
-          "kind": {
-            "type": "string",
-            "enum": [
-              "photo_doubt",
-              "sample_paper"
-            ]
-          },
-          "contentType": {
-            "type": "string",
-            "enum": [
-              "image/jpeg",
-              "image/png",
-              "image/webp"
-            ]
-          },
-          "bytes": {
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 10485760
-          }
-        },
-        "required": [
-          "kind",
-          "contentType",
-          "bytes"
-        ],
-        "additionalProperties": false
-      },
-      "AiUploadTargetInput": {
-        "type": "object",
-        "properties": {
-          "uploadId": {
-            "type": "string",
-            "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-          },
-          "uploadUrl": {
-            "type": "string"
-          },
-          "method": {
-            "type": "string",
-            "const": "PUT"
-          },
-          "headers": {
-            "type": "object",
-            "propertyNames": {
-              "type": "string"
-            },
-            "additionalProperties": {
-              "type": "string"
-            }
-          },
-          "uploadExpiresAt": {
-            "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-          },
-          "maxBytes": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "expiresAt": {
-            "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-          }
-        },
-        "required": [
-          "uploadId",
-          "uploadUrl",
-          "method",
-          "headers",
-          "uploadExpiresAt",
-          "maxBytes",
-          "expiresAt"
-        ],
-        "description": "PUT the file to uploadUrl with these headers within uploadExpiresAt, then POST /v1/ai/uploads/:id/complete."
-      },
-      "AiUploadInput": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-          },
-          "kind": {
-            "type": "string",
-            "enum": [
-              "photo_doubt",
-              "sample_paper",
-              "answer_sheet"
-            ]
-          },
-          "status": {
-            "type": "string",
-            "enum": [
-              "pending_upload",
-              "uploaded",
-              "scanning",
-              "ready",
-              "rejected"
-            ]
-          },
-          "rejectReason": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "contentType": {
-            "type": "string"
-          },
-          "bytes": {
-            "anyOf": [
-              {
-                "type": "integer",
-                "minimum": -9007199254740991,
-                "maximum": 9007199254740991
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "pages": {
-            "anyOf": [
-              {
-                "type": "integer",
-                "minimum": -9007199254740991,
-                "maximum": 9007199254740991
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "expiresAt": {
-            "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-          }
-        },
-        "required": [
-          "id",
-          "kind",
-          "status",
-          "rejectReason",
-          "contentType",
-          "bytes",
-          "pages",
-          "expiresAt",
-          "createdAt"
-        ]
-      },
-      "AiConversationCreateInput": {
-        "type": "object",
-        "properties": {
-          "kind": {
-            "default": "tutor",
-            "type": "string",
-            "enum": [
-              "tutor",
-              "photo_doubt",
-              "explain_slide",
-              "evaluation",
-              "paper_from_upload"
-            ]
-          },
-          "chapterId": {
-            "type": "string",
-            "maxLength": 100,
-            "pattern": "^[a-z]+-\\d+-[a-z0-9-]+-ch\\d{2}$"
-          },
-          "title": {
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 80
-          }
-        },
-        "additionalProperties": false
-      },
-      "AiConversationInput": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-          },
-          "kind": {
-            "type": "string",
-            "enum": [
-              "tutor",
-              "photo_doubt",
-              "explain_slide",
-              "evaluation",
-              "paper_from_upload"
-            ]
-          },
-          "chapterId": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "title": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "lastMessageAt": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "date-time",
-                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-          }
-        },
-        "required": [
-          "id",
-          "kind",
-          "chapterId",
-          "title",
-          "lastMessageAt",
-          "createdAt"
-        ]
-      },
-      "AiConversationsInput": {
-        "type": "object",
-        "properties": {
-          "conversations": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AiConversationInput"
-            }
-          },
-          "nextCursor": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "uuid",
-                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          }
-        },
-        "required": [
-          "conversations",
-          "nextCursor"
-        ]
-      },
-      "AiConversationDetailInput": {
-        "type": "object",
-        "properties": {
-          "conversation": {
-            "$ref": "#/components/schemas/AiConversationInput"
-          },
-          "messages": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string",
-                  "format": "uuid",
-                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-                },
-                "role": {
-                  "type": "string",
-                  "enum": [
-                    "user",
-                    "assistant"
-                  ]
-                },
-                "content": {
-                  "type": "string"
-                },
-                "createdAt": {
-                  "type": "string",
-                  "format": "date-time",
-                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-                }
-              },
-              "required": [
-                "id",
-                "role",
-                "content",
-                "createdAt"
-              ]
-            }
-          }
-        },
-        "required": [
-          "conversation",
-          "messages"
-        ],
-        "description": "Messages are kept for 30 days."
-      },
-      "AiEvaluationRequestInput": {
-        "type": "object",
-        "properties": {
-          "itemIds": {
-            "minItems": 1,
-            "maxItems": 60,
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid",
-              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "AiEvaluationInput": {
-        "type": "object",
-        "properties": {
-          "attemptId": {
-            "type": "string",
-            "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "itemId": {
-                  "type": "string",
-                  "format": "uuid",
-                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-                },
-                "marks": {
-                  "type": "number"
-                },
-                "maxMarks": {
-                  "type": "number"
-                },
-                "confidence": {
-                  "type": "number"
-                },
-                "lowConfidence": {
-                  "type": "boolean"
-                },
-                "label": {
-                  "type": "string"
-                },
-                "steps": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "part": {
-                        "type": [
-                          "string",
-                          "null"
-                        ]
-                      },
-                      "index": {
-                        "type": "integer",
-                        "minimum": -9007199254740991,
-                        "maximum": 9007199254740991
-                      },
-                      "step": {
-                        "type": "string"
-                      },
-                      "awarded": {
-                        "type": "number"
-                      },
-                      "max": {
-                        "type": "number"
-                      },
-                      "reason": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "part",
-                      "index",
-                      "step",
-                      "awarded",
-                      "max",
-                      "reason"
-                    ]
-                  }
-                },
-                "feedback": {
-                  "type": "string"
-                },
-                "evaluatedAt": {
-                  "type": "string",
-                  "format": "date-time",
-                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-                }
-              },
-              "required": [
-                "itemId",
-                "marks",
-                "maxMarks",
-                "confidence",
-                "lowConfidence",
-                "label",
-                "steps",
-                "feedback",
-                "evaluatedAt"
-              ]
-            }
-          },
-          "totalMarks": {
-            "type": "number"
-          },
-          "maxMarks": {
-            "type": "number"
-          },
-          "countsForRanks": {
-            "type": "boolean",
-            "const": false
-          },
-          "job": {
-            "anyOf": [
-              {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "format": "uuid",
-                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-                  },
-                  "status": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "id",
-                  "status"
-                ]
-              },
-              {
-                "type": "null"
-              }
-            ]
-          }
-        },
-        "required": [
-          "attemptId",
-          "items",
-          "totalMarks",
-          "maxMarks",
-          "countsForRanks",
-          "job"
         ]
       },
       "LeagueTierInput": {
@@ -10847,6 +11627,16 @@
                     "null"
                   ]
                 },
+                "avatar": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/AvatarRefInput"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
                 "xp": {
                   "type": "integer",
                   "minimum": -9007199254740991,
@@ -10862,6 +11652,7 @@
               "required": [
                 "rank",
                 "name",
+                "avatar",
                 "xp",
                 "zone",
                 "isMe"
@@ -12413,6 +13204,370 @@
         ],
         "additionalProperties": false
       },
+      "AvatarId": {
+        "type": "string",
+        "enum": [
+          "otter",
+          "falcon",
+          "panda",
+          "tiger",
+          "dolphin",
+          "eagle",
+          "koala",
+          "lynx",
+          "peacock",
+          "parrot",
+          "penguin",
+          "rabbit",
+          "robin",
+          "sparrow",
+          "squirrel",
+          "turtle",
+          "whale",
+          "zebra",
+          "badger",
+          "beaver",
+          "bison",
+          "camel",
+          "cheetah",
+          "crane",
+          "deer",
+          "elephant",
+          "finch",
+          "fox",
+          "gazelle",
+          "gecko",
+          "giraffe",
+          "heron",
+          "hornbill",
+          "ibex",
+          "jaguar",
+          "kingfisher",
+          "kiwi",
+          "lemur",
+          "leopard",
+          "lion",
+          "llama",
+          "macaw",
+          "mongoose",
+          "moose",
+          "myna",
+          "narwhal",
+          "owl",
+          "panther",
+          "pelican",
+          "puffin",
+          "quail",
+          "raven",
+          "rhino",
+          "seal",
+          "starling",
+          "swan",
+          "tapir",
+          "toucan",
+          "walrus",
+          "wombat",
+          "yak",
+          "bulbul",
+          "hoopoe",
+          "langur"
+        ],
+        "description": "Lower-case animal of the public-name list, e.g. \"giraffe\" (@soyl/shared/config/avatars)."
+      },
+      "AvatarBackground": {
+        "type": "string",
+        "enum": [
+          "sky",
+          "mint",
+          "sunflower",
+          "coral",
+          "lavender",
+          "meadow",
+          "peach",
+          "ocean"
+        ],
+        "description": "Background theme; the UI kit token is `p-avatar-<id>`."
+      },
+      "AvatarRef": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/AvatarId"
+          },
+          "bg": {
+            "$ref": "#/components/schemas/AvatarBackground"
+          }
+        },
+        "required": [
+          "id",
+          "bg"
+        ],
+        "additionalProperties": false
+      },
+      "MyAvatar": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/AvatarId"
+          },
+          "bg": {
+            "$ref": "#/components/schemas/AvatarBackground"
+          },
+          "isDefault": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "bg",
+          "isDefault"
+        ],
+        "additionalProperties": false
+      },
+      "AvatarChoice": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "$ref": "#/components/schemas/AvatarId"
+              },
+              "bg": {
+                "$ref": "#/components/schemas/AvatarBackground"
+              }
+            },
+            "required": [
+              "id",
+              "bg"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "AvatarUnlockRule": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "const": "starter"
+              }
+            },
+            "required": [
+              "kind"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "const": "level"
+              },
+              "level": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "kind",
+              "level"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "const": "badge"
+              },
+              "badge": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "badge"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "const": "streak"
+              },
+              "days": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "kind",
+              "days"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "const": "league_tier"
+              },
+              "tier": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "kind",
+              "tier"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "const": "live_mocks"
+              },
+              "count": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "kind",
+              "count"
+            ],
+            "additionalProperties": false
+          }
+        ],
+        "description": "One of starter, level, badge, streak, league_tier, live_mocks. league_tier is 1-based (Bronze = 1). Learning only: no purchases, no coins."
+      },
+      "AvatarCatalog": {
+        "type": "object",
+        "properties": {
+          "current": {
+            "$ref": "#/components/schemas/MyAvatar"
+          },
+          "default": {
+            "$ref": "#/components/schemas/AvatarRef"
+          },
+          "backgrounds": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "$ref": "#/components/schemas/AvatarBackground"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "token": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "label",
+                "token"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "unlockedCount": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "total": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "avatars": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "$ref": "#/components/schemas/AvatarId"
+                },
+                "animal": {
+                  "type": "string"
+                },
+                "unlocked": {
+                  "type": "boolean"
+                },
+                "isPublicNameAnimal": {
+                  "type": "boolean"
+                },
+                "unlock": {
+                  "$ref": "#/components/schemas/AvatarUnlockRule"
+                },
+                "unlockLabel": {
+                  "type": "string"
+                },
+                "progress": {
+                  "type": "object",
+                  "properties": {
+                    "current": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    },
+                    "target": {
+                      "type": "integer",
+                      "minimum": -9007199254740991,
+                      "maximum": 9007199254740991
+                    }
+                  },
+                  "required": [
+                    "current",
+                    "target"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "id",
+                "animal",
+                "unlocked",
+                "isPublicNameAnimal",
+                "unlock",
+                "unlockLabel",
+                "progress"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "current",
+          "default",
+          "backgrounds",
+          "unlockedCount",
+          "total",
+          "avatars"
+        ],
+        "additionalProperties": false,
+        "description": "Every avatar with its unlock rule and your progress. Backgrounds are open to everyone."
+      },
       "Me": {
         "type": "object",
         "properties": {
@@ -12454,6 +13609,9 @@
           },
           "publicName": {
             "type": "string"
+          },
+          "avatar": {
+            "$ref": "#/components/schemas/MyAvatar"
           },
           "locale": {
             "type": "string"
@@ -12540,6 +13698,7 @@
           "board",
           "classLevel",
           "publicName",
+          "avatar",
           "locale",
           "consent",
           "school",
@@ -12603,6 +13762,9 @@
                 "type": "null"
               }
             ]
+          },
+          "avatar": {
+            "$ref": "#/components/schemas/AvatarChoice"
           }
         },
         "additionalProperties": false,
@@ -14458,6 +15620,1433 @@
         ],
         "additionalProperties": false
       },
+      "AiActionRequest": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "attempt": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "reveal": {
+            "type": "boolean"
+          },
+          "conversationId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "chapterId": {
+            "type": "string",
+            "maxLength": 100,
+            "pattern": "^[a-z]+-\\d+-[a-z0-9-]+-ch\\d{2}$"
+          },
+          "slide": {
+            "type": "object",
+            "properties": {
+              "part": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 20
+              },
+              "slideId": {
+                "type": "string",
+                "pattern": "^s\\d{2}$"
+              }
+            },
+            "required": [
+              "slideId"
+            ],
+            "additionalProperties": false
+          },
+          "uploadId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "subjectId": {
+            "type": "string",
+            "maxLength": 80,
+            "pattern": "^[a-z]+-\\d+-[a-z0-9-]+$"
+          },
+          "attemptId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "itemIds": {
+            "minItems": 1,
+            "maxItems": 60,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "AiJobAccepted": {
+        "type": "object",
+        "properties": {
+          "jobId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "status": {
+            "type": "string",
+            "const": "queued"
+          },
+          "action": {
+            "type": "string",
+            "enum": [
+              "quick-doubt",
+              "explain-slide",
+              "hard-doubt",
+              "photo-doubt",
+              "evaluate-answer",
+              "evaluate-paper",
+              "paper-from-upload"
+            ]
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "balance": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "answers": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "skipped": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "itemId": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "reason": {
+                  "type": "string",
+                  "enum": [
+                    "not_written",
+                    "unanswered",
+                    "already_evaluated"
+                  ]
+                }
+              },
+              "required": [
+                "itemId",
+                "reason"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "jobId",
+          "status",
+          "action",
+          "credits",
+          "balance"
+        ],
+        "additionalProperties": false,
+        "description": "Poll GET /v1/ai/jobs/:id."
+      },
+      "AiJob": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "evaluation",
+              "paper_from_upload"
+            ]
+          },
+          "action": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "queued",
+              "running",
+              "succeeded",
+              "failed"
+            ]
+          },
+          "result": {
+            "anyOf": [
+              {
+                "type": "object",
+                "propertyNames": {
+                  "type": "string"
+                },
+                "additionalProperties": {}
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "finishedAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "action",
+          "status",
+          "result",
+          "error",
+          "createdAt",
+          "finishedAt"
+        ],
+        "additionalProperties": false,
+        "description": "evaluation result: {attemptId, evaluated[], notEvaluated[{itemId, reason}], creditsCharged, creditsRefunded, countsForRanks:false}. paper_from_upload result: {blueprint {durationMin, totalMarks, sections[{id, questionType, count, marksEach, internalChoice}], chapterIds}, testId, skippedChapters, creditsCharged}."
+      },
+      "Credits": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "type": "string"
+          },
+          "planName": {
+            "type": "string"
+          },
+          "dailyCredits": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "balance": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "grantedToday": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "bonusToday": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "reservedNow": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "spentToday": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "day": {
+            "type": "string"
+          },
+          "resetAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "resetInSeconds": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "plansUrl": {
+            "type": "string"
+          },
+          "prices": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "enum": [
+                    "quick-doubt",
+                    "explain-slide",
+                    "hard-doubt",
+                    "photo-doubt",
+                    "evaluate-answer",
+                    "evaluate-paper",
+                    "paper-from-upload"
+                  ]
+                },
+                "label": {
+                  "type": "string"
+                },
+                "credits": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "perAnswer": {
+                  "type": "boolean"
+                },
+                "maxCredits": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "allowedForPlan": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "action",
+                "label",
+                "credits",
+                "perAnswer",
+                "maxCredits",
+                "allowedForPlan"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "plan",
+          "planName",
+          "dailyCredits",
+          "balance",
+          "grantedToday",
+          "bonusToday",
+          "reservedNow",
+          "spentToday",
+          "day",
+          "resetAt",
+          "resetInSeconds",
+          "plansUrl",
+          "prices"
+        ],
+        "additionalProperties": false,
+        "description": "Today’s AI credits (1 credit = ₹0.10 of AI). Resets at 00:00 IST; no rollover."
+      },
+      "CreditLedger": {
+        "type": "object",
+        "properties": {
+          "entries": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "grant",
+                    "reserve",
+                    "charge",
+                    "refund",
+                    "expire",
+                    "bonus_goal",
+                    "bonus_streak"
+                  ]
+                },
+                "amount": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "action": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "day": {
+                  "type": "string"
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                }
+              },
+              "required": [
+                "id",
+                "kind",
+                "amount",
+                "action",
+                "label",
+                "day",
+                "createdAt"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "nextCursor": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid",
+                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "entries",
+          "nextCursor"
+        ],
+        "additionalProperties": false
+      },
+      "CreditBonusKind": {
+        "type": "string",
+        "enum": [
+          "bonus_goal",
+          "bonus_streak"
+        ]
+      },
+      "CreditBonusAward": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/CreditBonusKind"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "credits",
+          "label"
+        ],
+        "additionalProperties": false,
+        "description": "Bonus AI credits for learning (D-044): usable today only (they lapse at 00:00 IST). Consent-granted accounts only."
+      },
+      "CreditGuide": {
+        "type": "object",
+        "properties": {
+          "plan": {
+            "type": "string",
+            "enum": [
+              "free",
+              "plus",
+              "pro",
+              "board_exam_pass"
+            ]
+          },
+          "planName": {
+            "type": "string"
+          },
+          "dailyCredits": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "balance": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "bonusToday": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "creditValuePaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "day": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "resetAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "resetInSeconds": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "plansUrl": {
+            "type": "string"
+          },
+          "plans": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "enum": [
+                    "free",
+                    "plus",
+                    "pro",
+                    "board_exam_pass"
+                  ]
+                },
+                "name": {
+                  "type": "string"
+                },
+                "creditsPerDay": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "creditsPerDay"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "enum": [
+                    "quick-doubt",
+                    "explain-slide",
+                    "hard-doubt",
+                    "photo-doubt",
+                    "evaluate-answer",
+                    "evaluate-paper",
+                    "paper-from-upload"
+                  ]
+                },
+                "label": {
+                  "type": "string"
+                },
+                "guide": {
+                  "type": "string"
+                },
+                "credits": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "perAnswer": {
+                  "type": "boolean"
+                },
+                "maxCredits": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "mode": {
+                  "type": "string",
+                  "enum": [
+                    "stream",
+                    "job"
+                  ]
+                },
+                "requiresUpload": {
+                  "type": "boolean"
+                },
+                "allowedForPlan": {
+                  "type": "boolean"
+                },
+                "remainingToday": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "perDay": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "plan": {
+                        "type": "string",
+                        "enum": [
+                          "free",
+                          "plus",
+                          "pro",
+                          "board_exam_pass"
+                        ]
+                      },
+                      "count": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      }
+                    },
+                    "required": [
+                      "plan",
+                      "count"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "action",
+                "label",
+                "guide",
+                "credits",
+                "perAnswer",
+                "maxCredits",
+                "mode",
+                "requiresUpload",
+                "allowedForPlan",
+                "remainingToday",
+                "perDay"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "bonuses": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "dailyGoal": {
+                    "type": "object",
+                    "properties": {
+                      "credits": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "target": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "solvedToday": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "earnedToday": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "credits",
+                      "target",
+                      "solvedToday",
+                      "earnedToday"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "streakMilestone": {
+                    "type": "object",
+                    "properties": {
+                      "credits": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "everyDays": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "currentStreak": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "nextMilestone": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "earnedToday": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "credits",
+                      "everyDays",
+                      "currentStreak",
+                      "nextMilestone",
+                      "earnedToday"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "dailyGoal",
+                  "streakMilestone"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "plan",
+          "planName",
+          "dailyCredits",
+          "balance",
+          "bonusToday",
+          "creditValuePaise",
+          "day",
+          "resetAt",
+          "resetInSeconds",
+          "plansUrl",
+          "plans",
+          "actions",
+          "bonuses"
+        ],
+        "additionalProperties": false,
+        "description": "What you can do with your credits today (D-044). Prices and plans are config; counts use today’s balance."
+      },
+      "CreditHistory": {
+        "type": "object",
+        "properties": {
+          "timezone": {
+            "type": "string",
+            "const": "Asia/Kolkata"
+          },
+          "from": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "to": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "days": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "day": {
+                  "type": "string",
+                  "format": "date",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+                },
+                "granted": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "bonus": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "spent": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "refunded": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "held": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "left": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                }
+              },
+              "required": [
+                "day",
+                "granted",
+                "bonus",
+                "spent",
+                "refunded",
+                "held",
+                "left"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "timezone",
+          "from",
+          "to",
+          "days"
+        ],
+        "additionalProperties": false,
+        "description": "Per-IST-day credit usage, oldest first, every day of the window present (zeros when nothing happened)."
+      },
+      "AiQuote": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "quick-doubt",
+              "explain-slide",
+              "hard-doubt",
+              "photo-doubt",
+              "evaluate-answer",
+              "evaluate-paper",
+              "paper-from-upload"
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "credits": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "perAnswer": {
+            "type": "boolean"
+          },
+          "answers": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "maxCredits": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "tier": {
+            "type": "string",
+            "enum": [
+              "small",
+              "mid",
+              "verify"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "stream",
+              "job"
+            ]
+          },
+          "requiresUpload": {
+            "type": "boolean"
+          },
+          "plan": {
+            "type": "string"
+          },
+          "allowedForPlan": {
+            "type": "boolean"
+          },
+          "balance": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "affordable": {
+            "type": "boolean"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "available",
+              "degraded",
+              "paused"
+            ]
+          },
+          "resetAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "resetInSeconds": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "plansUrl": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "action",
+          "label",
+          "credits",
+          "perAnswer",
+          "answers",
+          "maxCredits",
+          "tier",
+          "mode",
+          "requiresUpload",
+          "plan",
+          "allowedForPlan",
+          "balance",
+          "affordable",
+          "status",
+          "resetAt",
+          "resetInSeconds",
+          "plansUrl"
+        ],
+        "additionalProperties": false,
+        "description": "Show the cost before the student confirms (CONTEXT §6)."
+      },
+      "AiUploadRequest": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "photo_doubt",
+              "sample_paper"
+            ]
+          },
+          "contentType": {
+            "type": "string",
+            "enum": [
+              "image/jpeg",
+              "image/png",
+              "image/webp"
+            ]
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10485760
+          }
+        },
+        "required": [
+          "kind",
+          "contentType",
+          "bytes"
+        ],
+        "additionalProperties": false
+      },
+      "AiUploadTarget": {
+        "type": "object",
+        "properties": {
+          "uploadId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "uploadUrl": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string",
+            "const": "PUT"
+          },
+          "headers": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string"
+            },
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "uploadExpiresAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "maxBytes": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          }
+        },
+        "required": [
+          "uploadId",
+          "uploadUrl",
+          "method",
+          "headers",
+          "uploadExpiresAt",
+          "maxBytes",
+          "expiresAt"
+        ],
+        "additionalProperties": false,
+        "description": "PUT the file to uploadUrl with these headers within uploadExpiresAt, then POST /v1/ai/uploads/:id/complete."
+      },
+      "AiUpload": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "photo_doubt",
+              "sample_paper",
+              "answer_sheet"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending_upload",
+              "uploaded",
+              "scanning",
+              "ready",
+              "rejected"
+            ]
+          },
+          "rejectReason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "contentType": {
+            "type": "string"
+          },
+          "bytes": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "pages": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "status",
+          "rejectReason",
+          "contentType",
+          "bytes",
+          "pages",
+          "expiresAt",
+          "createdAt"
+        ],
+        "additionalProperties": false
+      },
+      "AiConversationCreate": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "default": "tutor",
+            "type": "string",
+            "enum": [
+              "tutor",
+              "photo_doubt",
+              "explain_slide",
+              "evaluation",
+              "paper_from_upload"
+            ]
+          },
+          "chapterId": {
+            "type": "string",
+            "maxLength": 100,
+            "pattern": "^[a-z]+-\\d+-[a-z0-9-]+-ch\\d{2}$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          }
+        },
+        "required": [
+          "kind"
+        ],
+        "additionalProperties": false
+      },
+      "AiConversation": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "tutor",
+              "photo_doubt",
+              "explain_slide",
+              "evaluation",
+              "paper_from_upload"
+            ]
+          },
+          "chapterId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "lastMessageAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "chapterId",
+          "title",
+          "lastMessageAt",
+          "createdAt"
+        ],
+        "additionalProperties": false
+      },
+      "AiConversations": {
+        "type": "object",
+        "properties": {
+          "conversations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AiConversation"
+            }
+          },
+          "nextCursor": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid",
+                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "conversations",
+          "nextCursor"
+        ],
+        "additionalProperties": false
+      },
+      "AiConversationDetail": {
+        "type": "object",
+        "properties": {
+          "conversation": {
+            "$ref": "#/components/schemas/AiConversation"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "role": {
+                  "type": "string",
+                  "enum": [
+                    "user",
+                    "assistant"
+                  ]
+                },
+                "content": {
+                  "type": "string"
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                }
+              },
+              "required": [
+                "id",
+                "role",
+                "content",
+                "createdAt"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "conversation",
+          "messages"
+        ],
+        "additionalProperties": false,
+        "description": "Messages are kept for 30 days."
+      },
+      "AiEvaluationRequest": {
+        "type": "object",
+        "properties": {
+          "itemIds": {
+            "minItems": 1,
+            "maxItems": 60,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "AiEvaluation": {
+        "type": "object",
+        "properties": {
+          "attemptId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "itemId": {
+                  "type": "string",
+                  "format": "uuid",
+                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                },
+                "marks": {
+                  "type": "number"
+                },
+                "maxMarks": {
+                  "type": "number"
+                },
+                "confidence": {
+                  "type": "number"
+                },
+                "lowConfidence": {
+                  "type": "boolean"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "steps": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "part": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "index": {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      "step": {
+                        "type": "string"
+                      },
+                      "awarded": {
+                        "type": "number"
+                      },
+                      "max": {
+                        "type": "number"
+                      },
+                      "reason": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "part",
+                      "index",
+                      "step",
+                      "awarded",
+                      "max",
+                      "reason"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "feedback": {
+                  "type": "string"
+                },
+                "evaluatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                }
+              },
+              "required": [
+                "itemId",
+                "marks",
+                "maxMarks",
+                "confidence",
+                "lowConfidence",
+                "label",
+                "steps",
+                "feedback",
+                "evaluatedAt"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "totalMarks": {
+            "type": "number"
+          },
+          "maxMarks": {
+            "type": "number"
+          },
+          "countsForRanks": {
+            "type": "boolean",
+            "const": false
+          },
+          "job": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+                  },
+                  "status": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "status"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "attemptId",
+          "items",
+          "totalMarks",
+          "maxMarks",
+          "countsForRanks",
+          "job"
+        ],
+        "additionalProperties": false
+      },
       "CoinEarnSource": {
         "type": "string",
         "enum": [
@@ -15929,6 +18518,9 @@
           "publicName": {
             "type": "string"
           },
+          "avatar": {
+            "$ref": "#/components/schemas/MyAvatar"
+          },
           "level": {
             "type": "integer",
             "minimum": -9007199254740991,
@@ -15980,6 +18572,7 @@
         },
         "required": [
           "publicName",
+          "avatar",
           "level",
           "xp",
           "coins",
@@ -16482,6 +19075,12 @@
             "items": {
               "$ref": "#/components/schemas/CoinAward"
             }
+          },
+          "creditBonuses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreditBonusAward"
+            }
           }
         },
         "required": [
@@ -16502,7 +19101,8 @@
           "badgesAwarded",
           "streak",
           "coinsAwarded",
-          "coinAwards"
+          "coinAwards",
+          "creditBonuses"
         ],
         "additionalProperties": false
       },
@@ -16597,13 +19197,20 @@
           "grading": {
             "type": "string",
             "const": "self"
+          },
+          "creditBonuses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreditBonusAward"
+            }
           }
         },
         "required": [
           "answerId",
           "marksAwarded",
           "maxMarks",
-          "grading"
+          "grading",
+          "creditBonuses"
         ],
         "additionalProperties": false
       },
@@ -21407,6 +24014,16 @@
                     "null"
                   ]
                 },
+                "avatar": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/AvatarRef"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
                 "score": {
                   "type": "number"
                 },
@@ -21417,6 +24034,7 @@
               "required": [
                 "rank",
                 "name",
+                "avatar",
                 "score",
                 "isMe"
               ],
@@ -21573,1031 +24191,6 @@
         "required": [
           "attempts",
           "nextCursor"
-        ],
-        "additionalProperties": false
-      },
-      "AiActionRequest": {
-        "type": "object",
-        "properties": {
-          "message": {
-            "type": "string",
-            "maxLength": 2000
-          },
-          "attempt": {
-            "type": "string",
-            "maxLength": 2000
-          },
-          "reveal": {
-            "type": "boolean"
-          },
-          "conversationId": {
-            "type": "string",
-            "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-          },
-          "chapterId": {
-            "type": "string",
-            "maxLength": 100,
-            "pattern": "^[a-z]+-\\d+-[a-z0-9-]+-ch\\d{2}$"
-          },
-          "slide": {
-            "type": "object",
-            "properties": {
-              "part": {
-                "type": "integer",
-                "minimum": 0,
-                "maximum": 20
-              },
-              "slideId": {
-                "type": "string",
-                "pattern": "^s\\d{2}$"
-              }
-            },
-            "required": [
-              "slideId"
-            ],
-            "additionalProperties": false
-          },
-          "uploadId": {
-            "type": "string",
-            "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-          },
-          "subjectId": {
-            "type": "string",
-            "maxLength": 80,
-            "pattern": "^[a-z]+-\\d+-[a-z0-9-]+$"
-          },
-          "attemptId": {
-            "type": "string",
-            "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-          },
-          "itemIds": {
-            "minItems": 1,
-            "maxItems": 60,
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid",
-              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "AiJobAccepted": {
-        "type": "object",
-        "properties": {
-          "jobId": {
-            "type": "string",
-            "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-          },
-          "status": {
-            "type": "string",
-            "const": "queued"
-          },
-          "action": {
-            "type": "string",
-            "enum": [
-              "quick-doubt",
-              "explain-slide",
-              "hard-doubt",
-              "photo-doubt",
-              "evaluate-answer",
-              "evaluate-paper",
-              "paper-from-upload"
-            ]
-          },
-          "credits": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "balance": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "answers": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "skipped": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "itemId": {
-                  "type": "string",
-                  "format": "uuid",
-                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-                },
-                "reason": {
-                  "type": "string",
-                  "enum": [
-                    "not_written",
-                    "unanswered",
-                    "already_evaluated"
-                  ]
-                }
-              },
-              "required": [
-                "itemId",
-                "reason"
-              ],
-              "additionalProperties": false
-            }
-          }
-        },
-        "required": [
-          "jobId",
-          "status",
-          "action",
-          "credits",
-          "balance"
-        ],
-        "additionalProperties": false,
-        "description": "Poll GET /v1/ai/jobs/:id."
-      },
-      "AiJob": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-          },
-          "kind": {
-            "type": "string",
-            "enum": [
-              "evaluation",
-              "paper_from_upload"
-            ]
-          },
-          "action": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "status": {
-            "type": "string",
-            "enum": [
-              "queued",
-              "running",
-              "succeeded",
-              "failed"
-            ]
-          },
-          "result": {
-            "anyOf": [
-              {
-                "type": "object",
-                "propertyNames": {
-                  "type": "string"
-                },
-                "additionalProperties": {}
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "error": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-          },
-          "finishedAt": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "date-time",
-                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          }
-        },
-        "required": [
-          "id",
-          "kind",
-          "action",
-          "status",
-          "result",
-          "error",
-          "createdAt",
-          "finishedAt"
-        ],
-        "additionalProperties": false,
-        "description": "evaluation result: {attemptId, evaluated[], notEvaluated[{itemId, reason}], creditsCharged, creditsRefunded, countsForRanks:false}. paper_from_upload result: {blueprint {durationMin, totalMarks, sections[{id, questionType, count, marksEach, internalChoice}], chapterIds}, testId, skippedChapters, creditsCharged}."
-      },
-      "Credits": {
-        "type": "object",
-        "properties": {
-          "plan": {
-            "type": "string"
-          },
-          "planName": {
-            "type": "string"
-          },
-          "dailyCredits": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "balance": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "grantedToday": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "reservedNow": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "spentToday": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "day": {
-            "type": "string"
-          },
-          "resetAt": {
-            "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-          },
-          "resetInSeconds": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "plansUrl": {
-            "type": "string"
-          },
-          "prices": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "action": {
-                  "type": "string",
-                  "enum": [
-                    "quick-doubt",
-                    "explain-slide",
-                    "hard-doubt",
-                    "photo-doubt",
-                    "evaluate-answer",
-                    "evaluate-paper",
-                    "paper-from-upload"
-                  ]
-                },
-                "label": {
-                  "type": "string"
-                },
-                "credits": {
-                  "type": "integer",
-                  "minimum": -9007199254740991,
-                  "maximum": 9007199254740991
-                },
-                "perAnswer": {
-                  "type": "boolean"
-                },
-                "maxCredits": {
-                  "type": "integer",
-                  "minimum": -9007199254740991,
-                  "maximum": 9007199254740991
-                },
-                "allowedForPlan": {
-                  "type": "boolean"
-                }
-              },
-              "required": [
-                "action",
-                "label",
-                "credits",
-                "perAnswer",
-                "maxCredits",
-                "allowedForPlan"
-              ],
-              "additionalProperties": false
-            }
-          }
-        },
-        "required": [
-          "plan",
-          "planName",
-          "dailyCredits",
-          "balance",
-          "grantedToday",
-          "reservedNow",
-          "spentToday",
-          "day",
-          "resetAt",
-          "resetInSeconds",
-          "plansUrl",
-          "prices"
-        ],
-        "additionalProperties": false,
-        "description": "Today’s AI credits (1 credit = ₹0.10 of AI). Resets at 00:00 IST; no rollover."
-      },
-      "CreditLedger": {
-        "type": "object",
-        "properties": {
-          "entries": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string",
-                  "format": "uuid",
-                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-                },
-                "kind": {
-                  "type": "string",
-                  "enum": [
-                    "grant",
-                    "reserve",
-                    "charge",
-                    "refund",
-                    "expire"
-                  ]
-                },
-                "amount": {
-                  "type": "integer",
-                  "minimum": -9007199254740991,
-                  "maximum": 9007199254740991
-                },
-                "action": {
-                  "type": "string"
-                },
-                "label": {
-                  "type": "string"
-                },
-                "day": {
-                  "type": "string"
-                },
-                "createdAt": {
-                  "type": "string",
-                  "format": "date-time",
-                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-                }
-              },
-              "required": [
-                "id",
-                "kind",
-                "amount",
-                "action",
-                "label",
-                "day",
-                "createdAt"
-              ],
-              "additionalProperties": false
-            }
-          },
-          "nextCursor": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "uuid",
-                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          }
-        },
-        "required": [
-          "entries",
-          "nextCursor"
-        ],
-        "additionalProperties": false
-      },
-      "AiQuote": {
-        "type": "object",
-        "properties": {
-          "action": {
-            "type": "string",
-            "enum": [
-              "quick-doubt",
-              "explain-slide",
-              "hard-doubt",
-              "photo-doubt",
-              "evaluate-answer",
-              "evaluate-paper",
-              "paper-from-upload"
-            ]
-          },
-          "label": {
-            "type": "string"
-          },
-          "credits": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "perAnswer": {
-            "type": "boolean"
-          },
-          "answers": {
-            "anyOf": [
-              {
-                "type": "integer",
-                "minimum": -9007199254740991,
-                "maximum": 9007199254740991
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "maxCredits": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "tier": {
-            "type": "string",
-            "enum": [
-              "small",
-              "mid",
-              "verify"
-            ]
-          },
-          "mode": {
-            "type": "string",
-            "enum": [
-              "stream",
-              "job"
-            ]
-          },
-          "requiresUpload": {
-            "type": "boolean"
-          },
-          "plan": {
-            "type": "string"
-          },
-          "allowedForPlan": {
-            "type": "boolean"
-          },
-          "balance": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "affordable": {
-            "type": "boolean"
-          },
-          "status": {
-            "type": "string",
-            "enum": [
-              "available",
-              "degraded",
-              "paused"
-            ]
-          },
-          "resetAt": {
-            "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-          },
-          "resetInSeconds": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "plansUrl": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "action",
-          "label",
-          "credits",
-          "perAnswer",
-          "answers",
-          "maxCredits",
-          "tier",
-          "mode",
-          "requiresUpload",
-          "plan",
-          "allowedForPlan",
-          "balance",
-          "affordable",
-          "status",
-          "resetAt",
-          "resetInSeconds",
-          "plansUrl"
-        ],
-        "additionalProperties": false,
-        "description": "Show the cost before the student confirms (CONTEXT §6)."
-      },
-      "AiUploadRequest": {
-        "type": "object",
-        "properties": {
-          "kind": {
-            "type": "string",
-            "enum": [
-              "photo_doubt",
-              "sample_paper"
-            ]
-          },
-          "contentType": {
-            "type": "string",
-            "enum": [
-              "image/jpeg",
-              "image/png",
-              "image/webp"
-            ]
-          },
-          "bytes": {
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 10485760
-          }
-        },
-        "required": [
-          "kind",
-          "contentType",
-          "bytes"
-        ],
-        "additionalProperties": false
-      },
-      "AiUploadTarget": {
-        "type": "object",
-        "properties": {
-          "uploadId": {
-            "type": "string",
-            "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-          },
-          "uploadUrl": {
-            "type": "string"
-          },
-          "method": {
-            "type": "string",
-            "const": "PUT"
-          },
-          "headers": {
-            "type": "object",
-            "propertyNames": {
-              "type": "string"
-            },
-            "additionalProperties": {
-              "type": "string"
-            }
-          },
-          "uploadExpiresAt": {
-            "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-          },
-          "maxBytes": {
-            "type": "integer",
-            "minimum": -9007199254740991,
-            "maximum": 9007199254740991
-          },
-          "expiresAt": {
-            "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-          }
-        },
-        "required": [
-          "uploadId",
-          "uploadUrl",
-          "method",
-          "headers",
-          "uploadExpiresAt",
-          "maxBytes",
-          "expiresAt"
-        ],
-        "additionalProperties": false,
-        "description": "PUT the file to uploadUrl with these headers within uploadExpiresAt, then POST /v1/ai/uploads/:id/complete."
-      },
-      "AiUpload": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-          },
-          "kind": {
-            "type": "string",
-            "enum": [
-              "photo_doubt",
-              "sample_paper",
-              "answer_sheet"
-            ]
-          },
-          "status": {
-            "type": "string",
-            "enum": [
-              "pending_upload",
-              "uploaded",
-              "scanning",
-              "ready",
-              "rejected"
-            ]
-          },
-          "rejectReason": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "contentType": {
-            "type": "string"
-          },
-          "bytes": {
-            "anyOf": [
-              {
-                "type": "integer",
-                "minimum": -9007199254740991,
-                "maximum": 9007199254740991
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "pages": {
-            "anyOf": [
-              {
-                "type": "integer",
-                "minimum": -9007199254740991,
-                "maximum": 9007199254740991
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "expiresAt": {
-            "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-          }
-        },
-        "required": [
-          "id",
-          "kind",
-          "status",
-          "rejectReason",
-          "contentType",
-          "bytes",
-          "pages",
-          "expiresAt",
-          "createdAt"
-        ],
-        "additionalProperties": false
-      },
-      "AiConversationCreate": {
-        "type": "object",
-        "properties": {
-          "kind": {
-            "default": "tutor",
-            "type": "string",
-            "enum": [
-              "tutor",
-              "photo_doubt",
-              "explain_slide",
-              "evaluation",
-              "paper_from_upload"
-            ]
-          },
-          "chapterId": {
-            "type": "string",
-            "maxLength": 100,
-            "pattern": "^[a-z]+-\\d+-[a-z0-9-]+-ch\\d{2}$"
-          },
-          "title": {
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 80
-          }
-        },
-        "required": [
-          "kind"
-        ],
-        "additionalProperties": false
-      },
-      "AiConversation": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-          },
-          "kind": {
-            "type": "string",
-            "enum": [
-              "tutor",
-              "photo_doubt",
-              "explain_slide",
-              "evaluation",
-              "paper_from_upload"
-            ]
-          },
-          "chapterId": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "title": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "lastMessageAt": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "date-time",
-                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time",
-            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-          }
-        },
-        "required": [
-          "id",
-          "kind",
-          "chapterId",
-          "title",
-          "lastMessageAt",
-          "createdAt"
-        ],
-        "additionalProperties": false
-      },
-      "AiConversations": {
-        "type": "object",
-        "properties": {
-          "conversations": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AiConversation"
-            }
-          },
-          "nextCursor": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "uuid",
-                "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          }
-        },
-        "required": [
-          "conversations",
-          "nextCursor"
-        ],
-        "additionalProperties": false
-      },
-      "AiConversationDetail": {
-        "type": "object",
-        "properties": {
-          "conversation": {
-            "$ref": "#/components/schemas/AiConversation"
-          },
-          "messages": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string",
-                  "format": "uuid",
-                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-                },
-                "role": {
-                  "type": "string",
-                  "enum": [
-                    "user",
-                    "assistant"
-                  ]
-                },
-                "content": {
-                  "type": "string"
-                },
-                "createdAt": {
-                  "type": "string",
-                  "format": "date-time",
-                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-                }
-              },
-              "required": [
-                "id",
-                "role",
-                "content",
-                "createdAt"
-              ],
-              "additionalProperties": false
-            }
-          }
-        },
-        "required": [
-          "conversation",
-          "messages"
-        ],
-        "additionalProperties": false,
-        "description": "Messages are kept for 30 days."
-      },
-      "AiEvaluationRequest": {
-        "type": "object",
-        "properties": {
-          "itemIds": {
-            "minItems": 1,
-            "maxItems": 60,
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid",
-              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
-      "AiEvaluation": {
-        "type": "object",
-        "properties": {
-          "attemptId": {
-            "type": "string",
-            "format": "uuid",
-            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "itemId": {
-                  "type": "string",
-                  "format": "uuid",
-                  "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-                },
-                "marks": {
-                  "type": "number"
-                },
-                "maxMarks": {
-                  "type": "number"
-                },
-                "confidence": {
-                  "type": "number"
-                },
-                "lowConfidence": {
-                  "type": "boolean"
-                },
-                "label": {
-                  "type": "string"
-                },
-                "steps": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "part": {
-                        "type": [
-                          "string",
-                          "null"
-                        ]
-                      },
-                      "index": {
-                        "type": "integer",
-                        "minimum": -9007199254740991,
-                        "maximum": 9007199254740991
-                      },
-                      "step": {
-                        "type": "string"
-                      },
-                      "awarded": {
-                        "type": "number"
-                      },
-                      "max": {
-                        "type": "number"
-                      },
-                      "reason": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "part",
-                      "index",
-                      "step",
-                      "awarded",
-                      "max",
-                      "reason"
-                    ],
-                    "additionalProperties": false
-                  }
-                },
-                "feedback": {
-                  "type": "string"
-                },
-                "evaluatedAt": {
-                  "type": "string",
-                  "format": "date-time",
-                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
-                }
-              },
-              "required": [
-                "itemId",
-                "marks",
-                "maxMarks",
-                "confidence",
-                "lowConfidence",
-                "label",
-                "steps",
-                "feedback",
-                "evaluatedAt"
-              ],
-              "additionalProperties": false
-            }
-          },
-          "totalMarks": {
-            "type": "number"
-          },
-          "maxMarks": {
-            "type": "number"
-          },
-          "countsForRanks": {
-            "type": "boolean",
-            "const": false
-          },
-          "job": {
-            "anyOf": [
-              {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "type": "string",
-                    "format": "uuid",
-                    "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
-                  },
-                  "status": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "id",
-                  "status"
-                ],
-                "additionalProperties": false
-              },
-              {
-                "type": "null"
-              }
-            ]
-          }
-        },
-        "required": [
-          "attemptId",
-          "items",
-          "totalMarks",
-          "maxMarks",
-          "countsForRanks",
-          "job"
         ],
         "additionalProperties": false
       },
@@ -22804,6 +24397,16 @@
                     "null"
                   ]
                 },
+                "avatar": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/AvatarRef"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
                 "xp": {
                   "type": "integer",
                   "minimum": -9007199254740991,
@@ -22819,6 +24422,7 @@
               "required": [
                 "rank",
                 "name",
+                "avatar",
                 "xp",
                 "zone",
                 "isMe"
@@ -24835,6 +26439,46 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PublicNameResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/avatars": {
+      "get": {
+        "summary": "Every avatar with its unlock rule (level, badge, streak, league tier, live mocks; 16 starters plus your public-name animal), your progress and the backgrounds",
+        "tags": [
+          "me"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AvatarCatalog"
                 }
               }
             }
@@ -27288,7 +28932,7 @@
     },
     "/v1/attempts/{id}/ai-evaluation": {
       "post": {
-        "summary": "AI evaluation of written answers (credits: 6 per answer, at most 40 per paper; quote first with GET /v1/ai/quote/evaluate-paper?attemptId=). Body {itemIds?}: one id = evaluate-answer, none/several = evaluate-paper. 202 with a job id; marks never count for scores or ranks.",
+        "summary": "AI evaluation of written answers (credits: 7 per answer, at most 50 per paper; quote first with GET /v1/ai/quote/evaluate-paper?attemptId=). Body {itemIds?}: one id = evaluate-answer, none/several = evaluate-paper. 202 with a job id; marks never count for scores or ranks.",
         "tags": [
           "tests"
         ],
@@ -28054,6 +29698,99 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Credits"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/credits/guide": {
+      "get": {
+        "summary": "“What can I do with my credits?”: each AI action with its price, the plans that offer it and how many you can still do today, plus the learning bonuses (consent granted only).",
+        "tags": [
+          "credits"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreditGuide"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/credits/history": {
+      "get": {
+        "summary": "Your credits per IST day for the last `days` days (default 14): granted, bonus, spent, refunded, left.",
+        "tags": [
+          "credits"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "default": 14,
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 31
+            },
+            "in": "query",
+            "name": "days",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreditHistory"
                 }
               }
             }

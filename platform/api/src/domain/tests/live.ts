@@ -20,6 +20,7 @@ import { and, asc, eq, inArray, isNotNull, sql } from 'drizzle-orm';
 import { attempts, consentStatus, liveEvents, liveRegistrations, profiles, subjects, tests, users, type Database } from '@soyl/db';
 import { TEST_ENGINE } from '@soyl/shared/config/tests';
 import { publicName } from '@soyl/shared/config/public-names';
+import { avatarFor, type AvatarDto } from '../avatars';
 import type { KeyValueStore } from '../../kv';
 import { ApiProblem } from '../../errors';
 
@@ -163,19 +164,38 @@ export function firstNameLastInitial(displayName: string | null | undefined): st
   return `${first} ${initial}.`;
 }
 
+/** What a public board shows for one student: the public name and the avatar next to it (never a user id or real name). */
+export interface LeaderboardIdentity {
+  name: string;
+  avatar: AvatarDto;
+}
+
 /**
- * Leaderboard names for user ids (D-039): the auto-generated public name ("Brave Otter 417", never a real
- * name), only for consented, non-deleted students; null otherwise (the UI shows "Student").
+ * Leaderboard identities for user ids (D-039): the auto-generated public name ("Brave Otter 417", never a
+ * real name) and the avatar the student wears (config ids only), only for consented, non-deleted students;
+ * null otherwise (the UI shows "Student" with a neutral avatar).
  */
-export async function leaderboardNames(db: Database, userIds: string[]): Promise<Map<string, string | null>> {
+export async function leaderboardIdentities(db: Database, userIds: string[]): Promise<Map<string, LeaderboardIdentity | null>> {
   if (!userIds.length) return new Map();
   const rows = await db
-    .select({ id: users.id, deletedAt: users.deletedAt, seed: profiles.publicNameSeed, consent: consentStatus.status })
+    .select({ id: users.id, deletedAt: users.deletedAt, seed: profiles.publicNameSeed, avatarId: profiles.avatarId, avatarBg: profiles.avatarBg, consent: consentStatus.status })
     .from(users)
     .leftJoin(profiles, eq(profiles.userId, users.id))
     .leftJoin(consentStatus, eq(consentStatus.userId, users.id))
     .where(inArray(users.id, userIds));
-  return new Map(rows.map((r) => [r.id, !r.deletedAt && r.consent === 'granted' ? publicName(r.id, r.seed ?? 0) : null]));
+  return new Map(
+    rows.map((r) => {
+      if (r.deletedAt || r.consent !== 'granted') return [r.id, null];
+      const a = avatarFor(r.id, { publicNameSeed: r.seed ?? 0, avatarId: r.avatarId, avatarBg: r.avatarBg });
+      return [r.id, { name: publicName(r.id, r.seed ?? 0), avatar: { id: a.id, bg: a.bg } }];
+    }),
+  );
+}
+
+/** Names only (see leaderboardIdentities). */
+export async function leaderboardNames(db: Database, userIds: string[]): Promise<Map<string, string | null>> {
+  const ids = await leaderboardIdentities(db, userIds);
+  return new Map([...ids].map(([id, v]) => [id, v?.name ?? null]));
 }
 
 /* ---------------------------------------------------------------------------------------------- */
@@ -269,24 +289,24 @@ export async function liveLeaderboard(db: Database, kv: KeyValueStore, year: str
       .select({ rank: liveRegistrations.finalRank, score: liveRegistrations.score, percentile: liveRegistrations.percentile })
       .from(liveRegistrations)
       .where(and(eq(liveRegistrations.liveEventId, ev.id), eq(liveRegistrations.userId, userId)));
-    const names = await leaderboardNames(db, rows.map((r) => r.userId));
+    const ids = await leaderboardIdentities(db, rows.map((r) => r.userId));
     return {
       ...base,
       status: 'final' as const,
       total: count?.n ?? 0,
-      entries: rows.map((r) => ({ rank: r.rank!, name: names.get(r.userId) ?? null, score: Number(r.score ?? 0), isMe: r.userId === userId })),
+      entries: rows.map((r) => ({ rank: r.rank!, name: ids.get(r.userId)?.name ?? null, avatar: ids.get(r.userId)?.avatar ?? null, score: Number(r.score ?? 0), isMe: r.userId === userId })),
       me: me?.rank ? { rank: me.rank, score: Number(me.score ?? 0), percentile: me.percentile === null ? null : Number(me.percentile) } : null,
     };
   }
 
   const ranks = new LiveRanks(kv);
   const [top, mine] = await Promise.all([ranks.top(ev.id, limit), ranks.rankOf(ev.id, userId)]);
-  const names = await leaderboardNames(db, top.entries.map((e) => e.userId));
+  const ids = await leaderboardIdentities(db, top.entries.map((e) => e.userId));
   return {
     ...base,
     status: 'provisional' as const,
     total: top.total,
-    entries: top.entries.map((e) => ({ rank: e.rank, name: names.get(e.userId) ?? null, score: e.score, isMe: e.userId === userId })),
+    entries: top.entries.map((e) => ({ rank: e.rank, name: ids.get(e.userId)?.name ?? null, avatar: ids.get(e.userId)?.avatar ?? null, score: e.score, isMe: e.userId === userId })),
     me: mine ? { rank: mine.rank, score: mine.score, percentile: mine.total > 1 ? Math.round((1000 * (mine.total - mine.rank)) / (mine.total - 1)) / 10 : null } : null,
   };
 }

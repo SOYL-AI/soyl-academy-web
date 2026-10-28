@@ -8,6 +8,7 @@ import { ACTIVITY, CARD_ATTRIBUTES, CARD_TIERS, DIFFICULTY_BANDS, MASTERY_LEVELS
 import { SubjectId } from '@soyl/shared/content/ids';
 import { MASTERY_HINTS } from '@soyl/shared/learning/mastery';
 import { StreakSchema } from './content-schemas';
+import { MyAvatarSchema } from './avatar-schemas';
 
 const Int = z.number().int();
 const Ratio = z.number().min(0).max(1);
@@ -147,6 +148,8 @@ export const PlayerCardResponse = z
   .object({
     /** D-039 auto-generated public name (never the real name). */
     publicName: z.string(),
+    /** The avatar you wear next to it (your public-name animal until you pick one). */
+    avatar: MyAvatarSchema,
     level: Int,
     xp: Int,
     coins: Int,
