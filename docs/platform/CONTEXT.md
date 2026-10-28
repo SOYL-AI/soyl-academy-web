@@ -84,26 +84,28 @@ Credits are how students see AI usage. Internally, **1 credit = ₹0.10 of AI bu
 
 | Plan | Credits per day | ≈ AI budget per day |
 |---|---|---|
-| Free (logged in) | 25 | ₹2.50 |
-| Plus | 40 | ₹4.00 |
-| Pro / Board Exam Pass | 60 | ₹6.00 |
+| Free (logged in) | 50 | ₹5.00 |
+| Plus | 100 | ₹10.00 |
+| Pro / Board Exam Pass | 150 | ₹15.00 |
 
+- Values changed on 2026-10-28 (D-044; were 25 / 40 / 60).
+- **Bonus credits for learning (D-044):** +10 on the day the daily practice goal is met, +5 on each 7-day streak milestone; usable the same IST day only. SOYL Coins never convert to credits.
 - Credits reset at **00:00 IST**. No rollover.
 - The cost of an action is shown **before** the student confirms it. The balance is always visible in the header.
 - Credits are **reserved** when an action starts, **charged** when it succeeds, and **refunded** if it fails.
 - When credits run out: show the remaining-time-to-reset and the plans (paywall). Never block non-AI features.
 
-### Credit price per action (initial values — all in config)
+### Credit price per action (all in config; repriced to measured cost on 2026-10-28, D-044)
 
 | Action | Model tier | Est. real cost | Credits |
 |---|---|---|---|
 | Quick doubt (text) | small (GPT-6 Luna) | ₹0.03 | 1 |
 | Explain this slide / simplify | small | ₹0.03 | 1 |
-| Hard doubt, step by step | mid (GPT-6.1 Sol) | ₹0.53 | 6 |
-| Photo doubt (image of a question) | mid + vision | ₹0.89 | 10 |
-| AI evaluation of one written answer | mid | ₹0.56 | 6 |
-| AI evaluation of a full paper | mid | per answer, capped | max 40 |
-| "Papers like my school's" (from uploaded sample paper) | mid | ₹6.10 | 60 (Pro and Board Exam Pass only, D-034) |
+| Hard doubt, step by step | mid (GPT-6.1 Sol) | ₹0.67 | 7 |
+| Photo doubt (image of a question) | mid + vision | ₹1.15 | 12 |
+| AI evaluation of one written answer | mid | ₹0.72 | 7 |
+| AI evaluation of a full paper | mid | per answer, capped | max 50 |
+| "Papers like my school's" (from uploaded sample paper) | mid | ₹7.68 | 80 (Pro and Board Exam Pass only, D-034) |
 
 **Guardrail:** the system meters the real INR cost of every AI request. If any action's 7-day average real cost exceeds 80% of its credit price, alert the owner.
 

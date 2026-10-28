@@ -157,12 +157,12 @@ param edgeAuthFailuresPer15MinThreshold = 50
 param queueBacklogThreshold = 500
 
 // Azure OpenAI budget (INR/month, alerts only; the hard limits are in the app). Interactive AI is capped
-// at AI_DAILY_SPEND_CAP_INR = 2,000/day, at most ~62,000 in a 31-day month. Content-pipeline runs on the
+// at AI_DAILY_SPEND_CAP_INR = 3,000/day (D-044; was 2,000), at most ~93,000 in a 31-day month. Content-pipeline runs on the
 // same account are capped by CONTENT_BUDGET_INR = 3,00,000 for the whole programme; ~38,000/month of
-// headroom covers a steady content wave (about 8 months to spend that cap). 100,000/month therefore means:
-// the 50% alert (50,000) is normal late in a busy month, 80%/100% means content is running hot or the
+// headroom covers a steady content wave (about 8 months to spend that cap). 135,000/month therefore means:
+// the 50% alert (67,500) is normal late in a busy month, 80%/100% means content is running hot or the
 // interactive cap is not holding - investigate. Raise it for a month with a planned large content wave.
-var aiMonthlyBudgetInr = 100000
+var aiMonthlyBudgetInr = 135000
 param aiBudgetAmount = aiMonthlyBudgetInr
 // Resource-group budget (INR/month, alerts at 50/80/100% actual and 100% forecast). Infrastructure
 // estimate INR 15-20k for the dark start (Postgres B2s + backup, Redis B0, api 0.5 vCPU + worker 0.25 vCPU
@@ -194,7 +194,7 @@ param appSettings = {
   // those who only learn; auto keeps it off for unavailable and builtin (D-039).
   UNCONSENTED_PURGE: 'auto'
   // Spend caps (D-038): rupees per day for all interactive AI, and the content programme's total.
-  AI_DAILY_SPEND_CAP_INR: aiOn ? '2000' : '0'
+  AI_DAILY_SPEND_CAP_INR: aiOn ? '3000' : '0'
   CONTENT_BUDGET_INR: aiOn ? '300000' : '0'
   LOG_LEVEL: 'info'
 }
