@@ -115,7 +115,7 @@ export interface HistoryRow {
 export function dayName(day: string): string {
   const [y, m, d] = day.split('-').map(Number);
   if (!y || !m || !d) return day;
-  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' });
+  return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' }).replace(',', '');
 }
 
 export function historyRows(h: Pick<CreditHistory, 'days'>): HistoryRow[] {

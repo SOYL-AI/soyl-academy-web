@@ -91,6 +91,10 @@
 .swatchCheck {
   pointer-events: none;
 }
+.grid li {
+  display: grid;
+  align-content: start;
+}
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
@@ -144,6 +148,9 @@
   font-weight: 600;
 }
 .optionHint {
+  display: block;
+  margin-top: 2px;
+  text-align: center;
   color: var(--p-ink-muted);
   font-size: 0.75rem;
   line-height: 1.3;

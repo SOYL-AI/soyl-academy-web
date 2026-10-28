@@ -168,6 +168,20 @@ classes in camelCase (`fillGood`), and do not write a negated identifier directl
 modules that need them, so marketing routes never load them. The site's Tailwind preflight still applies
 inside platform pages (e.g. it removes list markers; content lists set them back).
 
+## Artwork (, design-system 2026-10-29)
+
+Original, hand-drawn flat SVG for the platform; no icon set, emoji, illustration or font was copied or traced, and nothing loads from a third party.
+
+| Piece | Data | React | Where it is used | Cost |
+|---|---|---|---|---|
+| 64 animal avatars (ids = ) |  (shared primitives: body, eyes, ears, muzzles, beaks) | ,  (inline) and  (static image) | picker and art sheet inline; everywhere else  →  (prerendered route, immutable cache) | the full set only in the picker's lazy chunk |
+| Badge medals (12 + locked state) |  |   | /me badges (lazy grid), dashboard next badge, badge celebration | |
+| League crests (Bronze … Diamond, Elite) |  |  | weekly league, dashboard league tile, player card | small, own module |
+| Subject glyphs (15 kinds) |  (, follows the tile hue) |  | /learn, class page, subject header | server-rendered on the course pages |
+| Empty states (6) |  (theme tokens only) |  →  | dashboard, /me badges, Ask AI, 404, error | |
+
+All drawings are  data (): rendered with  (no ) or as a string by the avatar route. Avatar backgrounds are tokens  (8 themes, light and dark) with  (AA on all of them); the art's dark features are ≥ 3:1 on every background (kit test). Bump  () when a drawing changes. Dev review: .
+
 ## Renderer security rules (WEB-6, WEB-7, AC-19, F-012)
 
 Only `render/MathBlock.tsx` and `render/SvgDiagram.tsx` use `dangerouslySetInnerHTML`, and only with the

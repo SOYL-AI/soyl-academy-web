@@ -1,0 +1,44 @@
+.sheet {
+  display: grid;
+  gap: var(--p-space-6);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--p-space-6) var(--p-gutter);
+}
+.sheet h2 {
+  margin: 0 0 var(--p-space-3);
+  font-size: var(--p-text-xl);
+}
+.h1 {
+  margin: 0;
+  font-size: var(--p-text-2xl);
+}
+.avatars,
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+  gap: var(--p-space-4) var(--p-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.row {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+.avatars li,
+.row li {
+  display: grid;
+  justify-items: center;
+  gap: var(--p-space-1);
+  text-align: center;
+}
+.small,
+.pair {
+  display: flex;
+  gap: var(--p-space-1);
+  align-items: center;
+}
+.name {
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}

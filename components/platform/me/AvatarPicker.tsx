@@ -139,11 +139,11 @@ export function PickerView({ catalog, publicName, onSaved }: { catalog: AvatarCa
                         )}
                       </span>
                       <span className={s.optionName}>{a.animal}</span>
-                      <span id={descId} className={s.optionHint}>
-                        {a.unlocked ? (a.isPublicNameAnimal ? 'Your name’s animal' : '') : unlockText(a)}
-                      </span>
-                      {a.unlocked && <span className="p-visually-hidden">{unlockText(a)}</span>}
                     </label>
+                    {/* Outside the label: the radio's name stays the animal; this is its description. */}
+                    <span id={descId} className={a.unlocked && !a.isPublicNameAnimal ? 'p-visually-hidden' : s.optionHint}>
+                      {unlockText(a)}
+                    </span>
                   </li>
                 );
               })}
