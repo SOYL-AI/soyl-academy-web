@@ -10,3 +10,6 @@
 235bf23ebd6e2b675ea382b9f62815c2577d6bed:.gitleaksignore:generic-api-key:8
 3025804f5221610b35ad51f981fd771a26739088:components/platform/__tests__/m4-ai-logic.test.ts:generic-api-key:45
 3025804f5221610b35ad51f981fd771a26739088:components/platform/__tests__/m3m4-server.test.ts:generic-api-key:45
+# Reviewed 2026-10-28 (Lead): a SOYL Coins store item id (the limited jacket drop, ADR-021) in config and its test, not a secret.
+a8560c4e63bd10c7b9e5ac69d5ecc804905fdcae:platform/shared/config/coins.ts:generic-api-key:313
+d318fe5be83fae3a784d0e042b0688ab5cf103ba:platform/api/test/coins.test.ts:generic-api-key:519
