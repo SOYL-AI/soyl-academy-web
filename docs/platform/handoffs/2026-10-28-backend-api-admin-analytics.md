@@ -114,3 +114,21 @@ Then the owner signs in with Continue with Google, opens `/admin`, sets up the a
 ## Needs from owner
 1. **How staff sign in to production (blocking).** A: switch on Google sign-in for staff (OA-05: Google OAuth client for www.soylai.com; confirm `soyl.cloud` is a Google Workspace domain so Google sends the `hd` claim; then `ADMIN_GOOGLE_DOMAINS=soyl.cloud`). B: an ADR to let staff use email OTP + TOTP (a deviation from AUTH-11 "no OTP-only admin login"; weaker than Workspace SSO; not implemented). Recommended: A.
 2. Confirm the owner account `ryan.gomez@soyl.cloud` (confirmed by the Lead 2026-10-28) and who else, if anyone, should be superadmin.
+
+## Gate results (2026-10-29, Windows 11, Node 24; heavy runs through `_tools/heavy.sh`)
+
+| Gate | Result |
+|---|---|
+| `platform/`: `npm run typecheck` | exit 0 (all workspaces) |
+| `npm test -w @soyl/shared` | 14 files, 167 passed |
+| `npm test -w @soyl/db` (incl. migration up/down fresh + seeded, schema 75 tables, bootstrap `--role`) | 16 files, 120 passed, 1 skipped (pre-existing `skipIf`) |
+| API targeted: admin-analytics, route-policy, reports-mfa, content (answer-leak), http-pipeline, unit, coins, email-otp, google | 9 files, 213 passed, 1 skipped (pre-existing) |
+| `npm run build` (api + worker bundles) | exit 0 |
+| `npm test -w @soyl/api` (full, once at the end) | 40 files, 630 passed, 1 skipped (pre-existing) |
+| Root: `npm run lint` | exit 0 |
+| `npm run test:platform-web -- --maxWorkers=2` | 17 files, 298 passed |
+| `npm run test:platform-ui -- --maxWorkers=2` | 6 files, 606 passed |
+| Root `npm run build` | exit 0 (`/admin` static shell) |
+| e2e `PW_WEB_PORT=3350 PW_FLAG_OFF_PORT=3351 npm run test:platform-web -w @soyl/e2e` | flag ON 77 passed (incl. the 2 admin specs and the JS budget: `/admin` 182.8 KB gz first load, budget 200; other runs today 180.3–180.8 before this change); flag OFF 37 passed (`/admin` → 404) |
+| `npm run marketing:diff -w @soyl/e2e -- --base origin/platform/main` | 48 passed; HEAD renders the marketing site identically to its merge-base |
+| gitleaks `origin/platform/main..HEAD` | no leaks |
