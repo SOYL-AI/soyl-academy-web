@@ -104,7 +104,7 @@ export function playerCard(ev: CardEvidence): PlayerCard {
       'MAS',
       masSum / masDen / 100,
       ev.masteryScores.length
-        ? `Average chapter mastery ${Math.round(masSum / masDen)} / 100 over ${plural(masDen, 'chapter')}${ev.masteryScores.length < A.MAS.minChapters ? ` (at least ${A.MAS.minChapters} count)` : ''}`
+        ? `Average mastery ${Math.round(masSum / ev.masteryScores.length)}/100 on ${plural(ev.masteryScores.length, 'chapter')}${ev.masteryScores.length < A.MAS.minChapters ? `, shared over ${A.MAS.minChapters} until you explore more` : ''}`
         : 'No chapters started yet',
     ),
   );

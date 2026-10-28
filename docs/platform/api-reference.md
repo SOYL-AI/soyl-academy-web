@@ -87,6 +87,7 @@ After the hooks, the request goes through:
 | `practice.answer.user` | user | 60 / 60 s | Practice answers |
 | `practice.answer.ip` | IP | 300 / 60 s | `POST /v1/practice/answers` |
 | `progress.write.user` | user | 120 / 60 s | `PUT /v1/me/lesson-progress` |
+| `insights.read.user` | user | 60 / 60 s | `GET /v1/me/activity`, `GET /v1/me/mastery`, `GET /v1/me/card` |
 | `mfa.user` | user | 20 / 900 s | Staff TOTP routes |
 
 The policy hook only knows IP keys and user keys. The attempt-keyed buckets are therefore enforced in the handlers (`modules/tests.ts`). Those handler-level checks fail open when the rate-limit store is down.
@@ -206,13 +207,13 @@ Outside `/v1`. No edge auth and no rate limits. They are served even when the pl
 
 | Method | Path | Roles | CSRF | Rate limit | Consent | Fresh/MFA | Purpose | Documented in |
 |---|---|---|---|---|---|---|---|---|
-| GET | `/v1/chapters/:id/practice` | All | true | default | — | — | A chapter's practice questions (stems and options only), paged. For signed-in users, unanswered questions come first | [backend-api M2](handoffs/2026-10-27-backend-api-m2.md) |
+| GET | `/v1/chapters/:id/practice` | All | true | default | — | — | A chapter's practice questions (stems and options only), paged. For signed-in users, unanswered questions come first. Each item has a `difficulty` band (easy/medium/hard) and, signed in, a `status` (new/attempted/solved); the page has a whole-chapter `summary` (per band and per status). Filters: `type`, `difficulty` (1–5 and/or bands), `status` | [backend-api M2](handoffs/2026-10-27-backend-api-m2.md), [learning insights](handoffs/2026-10-28-backend-api-learning-insights.md) |
 | POST | `/v1/practice/answers` | All | true | default + `practice.answer.ip` + `practice.answer.user` | — | — | Check a practice answer on the server. Returns correctness, the answer, the solution and the marking scheme. Guest answers are checked but not stored | [backend-api M2](handoffs/2026-10-27-backend-api-m2.md) |
 | PATCH | `/v1/practice/answers/:id` | Members | true | default + `practice.answer.user` | — | — | Self-assess the written parts of one of your practice answers against the marking scheme | [backend-api M2](handoffs/2026-10-27-backend-api-m2.md) |
 
-## 10. Progress and gamification (5)
+## 10. Progress and gamification (8)
 
-`modules/progress.ts`.
+`modules/progress.ts`; learning insights in `modules/insights.ts` (formulas: `platform/shared/learning/`, numbers: `platform/shared/config/learning.ts`).
 
 | Method | Path | Roles | CSRF | Rate limit | Consent | Fresh/MFA | Purpose | Documented in |
 |---|---|---|---|---|---|---|---|---|
@@ -220,6 +221,9 @@ Outside `/v1`. No edge auth and no rate limits. They are served even when the pl
 | GET | `/v1/me/progress/chapters/:id` | Members | true | default | — | — | Your progress in one chapter (the private half of the chapter hub) | [backend-api M2](handoffs/2026-10-27-backend-api-m2.md) |
 | PUT | `/v1/me/lesson-progress` | Members | true | default + `progress.write.user` | — | — | Save your lesson position or completion (idempotent) | [backend-api M2](handoffs/2026-10-27-backend-api-m2.md) |
 | GET | `/v1/me/badges` | Members | true | default | — | — | Badges you can earn and the ones you have | [backend-api M2](handoffs/2026-10-27-backend-api-m2.md) |
+| GET | `/v1/me/activity?days=N` | Members | true | default + `insights.read.user` | — | — | Your daily learning activity (IST days, N ≤ 371, default 365) for a heatmap: answered, first-solved, lesson parts finished, tests submitted; streak and active days | [learning insights](handoffs/2026-10-28-backend-api-learning-insights.md) |
+| GET | `/v1/me/mastery?subjectId=` | Members | true | default + `insights.read.user` | — | — | Your mastery level per chapter (not started → attempted → familiar → proficient → mastered, score 0–100, hints) and per subject; without `subjectId`, every subject you have activity in | [learning insights](handoffs/2026-10-28-backend-api-learning-insights.md) |
+| GET | `/v1/me/card` | Members | true | default + `insights.read.user` | — | — | Your private player card: overall 40–99, tier, attributes (ACC, CON, SPD, BRE, MAS, TST) with explanations, public name (D-039), level, XP, coins | [learning insights](handoffs/2026-10-28-backend-api-learning-insights.md) |
 | GET | `/v1/leagues/current?scope=class` | Members | true | default + `leagues.read.user` | `leaderboards` | — | Your weekly league (IST week, 5 tiers, divisions of 30). The first visit of a week places you (idempotent). `school`/`city` → 501 | [backend-api M5 follow-ups](handoffs/2026-10-27-backend-api-m5-followups.md) |
 
 ## 11. Content reports (1)
@@ -333,7 +337,7 @@ Registered only when `DEV_OTP_OUTBOX=true`. Config refuses that setting unless `
 | Catalog | 3 |
 | Content | 4 |
 | Practice | 3 |
-| Progress and gamification | 5 |
+| Progress and gamification | 8 |
 | Content reports | 1 |
 | Staff MFA and admin | 6 |
 | Tests, attempts and evaluation | 12 |
@@ -342,6 +346,8 @@ Registered only when `DEV_OTP_OUTBOX=true`. Config refuses that setting unless `
 | Billing | 7 |
 | Dev-only (hidden) | 1 |
 | **Total** | **81** (snapshot rows; 80 in `openapi.json`) |
+
+> 2026-10-28, learning insights: §10 gained 3 member routes (`/v1/me/activity`, `/v1/me/mastery`, `/v1/me/card`). The total above was not re-derived: the route-policy snapshot has 104 rows at that commit (routes from later merges, e.g. coins, are not all listed in this document yet).
 
 ## 19. Differences from ARCHITECTURE §4.1
 
