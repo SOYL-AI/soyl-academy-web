@@ -60,7 +60,7 @@ export const TemplateFrontMatter = z.object({
   model_tier: z.enum(MODEL_TIERS),
   max_output_tokens: z.number().int().positive(),
   temperature: z.number().min(0).max(2).optional(),
-  reasoning_effort: z.enum(['minimal', 'low', 'medium', 'high']).optional(),
+  reasoning_effort: z.enum(['none', 'low', 'medium', 'high']).optional(),
   few_shot: z.array(z.string()).default([]),
 });
 export type TemplateFrontMatter = z.infer<typeof TemplateFrontMatter>;

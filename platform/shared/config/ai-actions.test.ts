@@ -24,6 +24,13 @@ describe('AI action registry (CONTEXT §6, D-044)', () => {
     expect(AI_ACTIONS['paper-from-upload'].requiredFeature).toBe('paper_from_upload');
   });
 
+  it('asks only for reasoning efforts the GPT-6 models accept (production 400 on "minimal", 2026-10-29)', () => {
+    const accepted = ['none', 'low', 'medium', 'high', 'xhigh', 'max'];
+    for (const id of AI_ACTION_IDS) expect(accepted, id).toContain(AI_ACTIONS[id].reasoningEffort);
+    expect(AI_ACTIONS['quick-doubt'].reasoningEffort).toBe('none');
+    expect(AI_ACTIONS['explain-slide'].reasoningEffort).toBe('none');
+  });
+
   it('is internally consistent', () => {
     const planIds = PLANS.map((p) => p.id);
     for (const id of AI_ACTION_IDS) {

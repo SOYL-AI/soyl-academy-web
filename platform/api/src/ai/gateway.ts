@@ -508,7 +508,7 @@ export class AiGateway {
         context = [...context, ...r.chunks.map((c) => ({ title: c.title, text: c.text }))];
       } catch (e) {
         // Retrieval is best effort: the tutor still answers from general syllabus knowledge.
-        this.d.log().warn({ err: (e as Error).message, requestId: p.requestId }, 'retrieval failed');
+        this.d.log().warn({ err: e as Error, requestId: p.requestId }, 'retrieval failed');
       }
     }
     const messages = buildChatMessages({
@@ -617,7 +617,7 @@ export class AiGateway {
       const cancelled = clientSignal.aborted || failure instanceof CallerAbortedError || (failure instanceof StreamInterruptedError && failure.cancelled && !timeCap.aborted);
       const status = cancelled ? 'cancelled' : 'failed';
       const errorCode = timeCap.aborted ? 'time_cap' : cancelled ? 'client_disconnected' : failure instanceof ProviderUnavailableError ? 'provider_unavailable' : 'provider_error';
-      if (!(failure instanceof ProviderUnavailableError) && !cancelled) this.d.log().warn({ err: (failure as Error).message, requestId: p.requestId }, 'model call failed');
+      if (!(failure instanceof ProviderUnavailableError) && !cancelled) this.d.log().warn({ err: failure as Error, requestId: p.requestId }, 'model call failed');
       // F-008: output already shown → charged (also on disconnect); nothing shown → refunded.
       const f = await this.finish(base, { status, settle: outputStarted ? 'charge' : 'refund', reason: errorCode, usages, extraCostPaise, started, firstShownAt, input, output: null, errorCode, messages: outputStarted ? answerMessages(status) : [] });
       if (!clientSignal.aborted) {
