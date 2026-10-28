@@ -81,17 +81,19 @@ export function ProgressRing({
     <span className={cx(s.ring, className)} style={{ width: size, height: size } as CSSProperties} role="img" aria-label={label} data-level={level}>
       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} aria-hidden="true" focusable="false">
         <circle className={s.ringTrack} cx={size / 2} cy={size / 2} r={r} strokeWidth={stroke} fill="none" />
-        <circle
-          className={s.ringFill}
-          cx={size / 2}
-          cy={size / 2}
-          r={r}
-          strokeWidth={stroke}
-          fill="none"
-          strokeLinecap="round"
-          strokeDasharray={`${(c * v) / 100} ${c}`}
-          transform={`rotate(-90 ${size / 2} ${size / 2})`}
-        />
+        {v > 0 && (
+          <circle
+            className={s.ringFill}
+            cx={size / 2}
+            cy={size / 2}
+            r={r}
+            strokeWidth={stroke}
+            fill="none"
+            strokeLinecap="round"
+            strokeDasharray={`${(c * v) / 100} ${c}`}
+            transform={`rotate(-90 ${size / 2} ${size / 2})`}
+          />
+        )}
       </svg>
       <span className={s.ringCenter} aria-hidden="true">
         {children ?? `${v}%`}

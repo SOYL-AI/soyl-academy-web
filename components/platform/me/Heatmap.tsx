@@ -8,13 +8,14 @@
 import { useEffect, useRef } from 'react';
 import type { MyActivity } from '@/platform/shared/api-client';
 import { cx } from '@/components/platform/ui/cx';
-import { dayLabel, heatmapWeeks } from './heatmap-model';
+import { dayLabel, heatmapWeeks, windowStart } from './heatmap-model';
 import s from './insights.module.css';
 
 const ROW_LABELS = ['Mon', '', 'Wed', '', 'Fri', '', ''];
 
 export function Heatmap({ activity, className }: { activity: MyActivity; className?: string }) {
-  const weeks = heatmapWeeks(activity.calendar, activity.from, activity.to);
+  // At least 16 weeks, so a new student sees a calendar to fill rather than a single cell.
+  const weeks = heatmapWeeks(activity.calendar, windowStart(activity.from, activity.to, activity.days), activity.to);
   const scroller = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = scroller.current;

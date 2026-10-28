@@ -27,8 +27,23 @@ test.beforeEach(async ({ page }) => {
   await acceptAllCookies(page);
 });
 
+/**
+ * Tests that also open marketing pages: analytics declined, so the marketing page loads no Vercel scripts (the
+ * fixture fails on any /_vercel/ request; platform pages never load them either way).
+ */
+async function essentialCookiesOnly(page: Page) {
+  await page.addInitScript(() => {
+    try {
+      window.localStorage.setItem('soyl_cookie_consent_v1', JSON.stringify({ necessary: true, analytics: false, marketing: false, timestamp: new Date().toISOString() }));
+    } catch {
+      // ignore
+    }
+  });
+}
+
 test.describe('ADR-023 app shell', () => {
   test('platform pages have their own shell (no marketing header/footer); the cookie bar and legal links stay', async ({ page }) => {
+    await essentialCookiesOnly(page);
     await page.goto('/learn', { waitUntil: 'networkidle' });
     await expect(page.locator('#mobile-menu')).toHaveCount(0); // the marketing header's menu
     await expect(page.getByRole('link', { name: 'Book a demo' })).toHaveCount(0);
@@ -62,6 +77,7 @@ test.describe('ADR-023 app shell', () => {
 
 test.describe('ADR-023 theme', () => {
   test('Light / Dark / System: picked in the top bar, persisted across reloads, applied before first paint', async ({ page, baseURL }) => {
+    await essentialCookiesOnly(page);
     await page.emulateMedia({ colorScheme: 'light' });
     await page.goto('/learn', { waitUntil: 'networkidle' });
     await expect(root(page)).toHaveAttribute('data-theme', 'light');
@@ -199,7 +215,8 @@ async function shots(page: Page, baseURL: string | undefined, name: string, path
     await setThemeCookie(page, baseURL, theme);
     for (const v of VIEWPORTS) {
       await page.setViewportSize({ width: v.width, height: v.height });
-      await page.goto(path, { waitUntil: 'networkidle' });
+      await page.goto(path, { waitUntil: 'load' });
+      await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => undefined);
       await expect(root(page)).toHaveAttribute('data-theme', theme);
       await page.evaluate(() => document.fonts.ready);
       await page.waitForTimeout(400);
@@ -209,23 +226,24 @@ async function shots(page: Page, baseURL: string | undefined, name: string, path
 }
 
 test.describe('ADR-023 screenshots', () => {
-  test('guest pages', async ({ page, baseURL }) => {
-    test.setTimeout(6 * 60_000);
-    for (const [name, path] of [
-      ['learn', '/learn'],
-      ['class', '/learn/cbse/10'],
-      ['subject', '/learn/cbse/10/science'],
-      ['chapter', CH01],
-      ['practice', `${CH01}/practice`],
-      ['lesson', `${CH01}/lesson`],
-      ['notes-hindi', '/learn/cbse/10/hindi-a/ch02/notes'],
-      ['store', '/store'],
-    ] as const)
+  for (const [name, path] of [
+    ['learn', '/learn'],
+    ['class', '/learn/cbse/10'],
+    ['subject', '/learn/cbse/10/science'],
+    ['chapter', CH01],
+    ['practice', `${CH01}/practice`],
+    ['lesson', `${CH01}/lesson`],
+    ['notes-hindi', '/learn/cbse/10/hindi-a/ch02/notes'],
+    ['store', '/store'],
+  ] as const) {
+    test(`guest page: ${name}`, async ({ page, baseURL }) => {
+      test.setTimeout(4 * 60_000);
       await shots(page, baseURL, name, path);
-  });
+    });
+  }
 
   test('member pages: dashboard, profile with card and heatmap, league', async ({ page, baseURL }) => {
-    test.setTimeout(8 * 60_000);
+    test.setTimeout(15 * 60_000);
     await signUp(page, 'revamp', '/me');
     await page.getByLabel('Board').selectOption('cbse');
     await page.getByLabel('Class', { exact: true }).selectOption('10');

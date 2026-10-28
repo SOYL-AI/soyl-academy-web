@@ -78,3 +78,10 @@ export function dayLabel(date: string): string {
   const d = new Date(ms);
   return `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
 }
+
+/** First day of a window of `days` IST days ending on `to` (never later than `from`), at least `minDays` long. */
+export function windowStart(from: string, to: string, days: number, minDays = 112): string {
+  const span = Math.max(days, minDays, 1);
+  const start = fmt(parse(to) - (span - 1) * DAY);
+  return start < from ? start : from;
+}

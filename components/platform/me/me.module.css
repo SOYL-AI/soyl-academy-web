@@ -138,6 +138,7 @@
 /* ── ADR-023: learning profile (player card, activity, solved, badges) ───── */
 .insights {
   display: grid;
+  align-items: start;
   gap: var(--p-space-4);
   margin-bottom: var(--p-space-8);
 }

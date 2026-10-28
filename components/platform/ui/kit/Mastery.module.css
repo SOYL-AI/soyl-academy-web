@@ -153,3 +153,8 @@
   background: var(--p-hard-soft);
   color: var(--p-hard);
 }
+/* Not started is a hollow circle, so it never reads as a checkbox (and shape, not only colour, differs). */
+.pip[data-level='not_started'] {
+  border-radius: 50%;
+  border-width: 1.5px;
+}

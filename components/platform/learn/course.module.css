@@ -162,7 +162,7 @@
 }
 .tile {
   --hue: var(--p-accent);
-  background: color-mix(in srgb, var(--hue) 14%, var(--p-surface));
+  background: color-mix(in srgb, var(--hue) 8%, var(--p-surface));
   color: var(--hue);
 }
 .tile[data-hue='red'] {

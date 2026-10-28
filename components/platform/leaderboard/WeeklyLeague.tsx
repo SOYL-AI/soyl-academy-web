@@ -102,7 +102,7 @@ export function WeeklyLeague() {
           </h2>
           <p className={s.muted}>
             {endsIn ? `Week ends in ${endsIn}. ` : ''}
-            {L.promotionPlaces > 0 ? `Top ${L.promotionPlaces} move up${L.minXpToPromote > 0 ? ` (at least ${L.minXpToPromote} XP)` : ''}. ` : 'Top tier: stay at the top. '}
+            {L.isTopTier ? 'Top tier: stay at the top. ' : L.promotionPlaces > 0 ? `Top ${L.promotionPlaces} move up${L.minXpToPromote > 0 ? ` (at least ${L.minXpToPromote} XP)` : ''}. ` : 'Promotion places open as more students join your division. '}
             {L.relegationPlaces > 0 ? `Bottom ${L.relegationPlaces} move down.` : ''}
           </p>
         </div>
@@ -123,7 +123,7 @@ export function WeeklyLeague() {
         </p>
       )}
 
-      {top.length > 0 ? (
+      {top.length >= 3 ? (
         <ol className={s.podium} aria-label="Top three">
           {top.map((p) => (
             <li key={p.rank} className={cx(s.place, p.isMe && s.placeMe)} data-place={p.rank}>
@@ -136,7 +136,7 @@ export function WeeklyLeague() {
             </li>
           ))}
         </ol>
-      ) : (
+      ) : league.standings.length > 0 ? null : (
         <EmptyState title="Nobody has XP yet this week" headingLevel="h3" icon="trophy">
           Finish a lesson or practise to take the lead.
         </EmptyState>

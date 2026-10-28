@@ -158,7 +158,7 @@ function StreakCard() {
         </span>
       </div>
       <p className={s.muted}>
-        {streak?.atRisk ? 'Learn something today to keep your streak.' : streak?.current ? `Longest: ${streak.longest} days.` : 'Answer a question or finish a lesson today to start one.'}
+        {streak?.atRisk ? 'Learn something today to keep your streak.' : streak?.current ? `Longest: ${streak.longest} ${streak.longest === 1 ? 'day' : 'days'}.` : 'Answer a question or finish a lesson today to start one.'}
       </p>
       {progress?.level != null && (
         <div className={s.levelRow}>

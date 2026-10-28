@@ -38,7 +38,8 @@ export function masteryCounts(levels: readonly MasteryLevel[]): Record<MasteryLe
 
 /**
  * Practice pool size assumed when a page does not know a chapter's real one (CONTEXT §8: about 60 questions per
- * chapter), so one right answer never reads as full coverage. Members' levels come from the API instead.
+ * chapter), so one right answer never reads as full coverage and a finished lesson alone never reads as mastered.
+ * Members' levels come from the API instead.
  */
 export const ASSUMED_PRACTICE_POOL = 60;
 
@@ -59,7 +60,7 @@ export interface BrowserChapterActivity {
 export function evidenceFrom(a: BrowserChapterActivity | null | undefined, totals: { lessonParts?: number; practiceTotal?: number; chapterTestAvailable?: boolean } = {}): ChapterEvidence {
   if (!a) return { ...EMPTY_EVIDENCE, lessonParts: totals.lessonParts ?? 0, practiceTotal: totals.practiceTotal ?? 0, chapterTestAvailable: false };
   const lessonParts = totals.lessonParts ?? Math.max(a.lessonPartsStarted, a.lessonPartsCompleted);
-  const practiceTotal = totals.practiceTotal ?? (a.answered > 0 ? Math.max(a.answered, ASSUMED_PRACTICE_POOL) : 0);
+  const practiceTotal = totals.practiceTotal ?? Math.max(a.answered, ASSUMED_PRACTICE_POOL);
   return {
     lessonParts,
     lessonPartsStarted: a.lessonPartsStarted,

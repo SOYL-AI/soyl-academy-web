@@ -31,7 +31,7 @@ export function PlayerCard({ card, compact = false, className }: { card: MyPlaye
         </div>
         <p className={s.cardName}>{card.publicName}</p>
         <p className={s.cardMeta}>
-          Level {card.level} · {card.xp.toLocaleString('en-IN')} XP
+          Level {card.level} · {card.xp.toLocaleString('en-IN')} XP{card.provisional ? ' · Provisional' : ''}
         </p>
         {attrs.length > 0 && (
           <ul className={s.cardAttrs}>
@@ -42,7 +42,6 @@ export function PlayerCard({ card, compact = false, className }: { card: MyPlaye
             ))}
           </ul>
         )}
-        {card.provisional && <span className={s.cardRibbon}>Provisional</span>}
       </div>
     </div>
   );

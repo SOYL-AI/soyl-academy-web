@@ -12,7 +12,7 @@ Gallery (dev only): `/dev/ui` with `NEXT_PUBLIC_PLATFORM_ENABLED=true` and `npm 
 | `PlatformRoot.tsx` | `.soyl-platform` scope; imports `styles/tokens.css`. Put it on the outermost platform element. |
 | `fonts.ts` | `notoDevanagari` (next/font, `--font-noto-devanagari`). |
 | `styles/tokens.css` | Design tokens (all rules scoped under `.soyl-platform`). |
-| `kit/` | Button, IconButton, Card, Dialog, BottomSheet, Tabs, ProgressBar, Badge, Chip, Toast, Skeleton, EmptyState, Field, TextInput, OTPInput, CreditChip, Avatar, Icon. |
+| `kit/` | Button, IconButton, Card, Dialog, BottomSheet, Tabs, ProgressBar, Badge, Chip, Toast, Skeleton, EmptyState, Field, TextInput, OTPInput, CreditChip, Avatar, Icon; ADR-023: `Mastery.tsx` (MasteryPip, MasteryBar, ProgressRing, DifficultyTag). |
 | `render/` | **Reviewed renderers** (the only code allowed to inject HTML): `Markdown`, `MathBlock`/`MathInline`, `SvgDiagram`, plus `policy.ts`, `math.ts`, `sanitize-svg.ts`, `remark-soyl.ts`. |
 | `visual/` | `Visual` dispatcher and one renderer per kind in `platform/shared/content/visual.ts`; safe expression parser `expr.ts`; flow layout. |
 | `slides/` | `SlideFrame`, one component per layout, `renderSlide(slide, options)`, `ReadAlong`, narration `segment.ts`. |
@@ -123,6 +123,10 @@ import { QuestionCard } from '@/components/platform/ui/question/QuestionCard'; /
 
 All tokens are CSS custom properties on `.soyl-platform`; light by default, dark through
 `prefers-color-scheme: dark`, or forced with `data-theme="light|dark"` on the root (`<PlatformRoot theme>`).
+Since ADR-023 the student picks **Light / Dark / System** (top bar and /me → Appearance): the `soyl_theme` cookie, a
+hash-allowed inline boot script and `ThemeProvider` (`components/platform/shell/`) always put the resolved
+`data-theme` on the root before first paint; the media query only covers the moment before the script runs.
+Light is a cool neutral app background with white surfaces; dark is a neutral near-black (never pure black).
 Contrast is tested (`__tests__/kit.test.tsx`): text pairs ≥ 4.5:1, control boundaries and graphics ≥ 3:1, both themes.
 
 | Group | Tokens |
@@ -136,6 +140,11 @@ Contrast is tested (`__tests__/kit.test.tsx`): text pairs ≥ 4.5:1, control bou
 | Space / shape | `--p-space-1…10` (4 px grid), `--p-gutter` (16 px), `--p-radius-sm|md|lg|pill`, `--p-shadow-1|2|3` |
 | Interaction | `--p-touch` (44 px), `--p-ease`, `--p-duration-fast|base` (0 under reduced motion), `--p-z-sheet`, `--p-z-toast` |
 | Diagrams | `--diagram-accent`, `--diagram-muted`, `--diagram-fill`, `--diagram-paper` (label halo), named colours `--diagram-blue`, `--diagram-green`, `--diagram-yellow`, `--diagram-brown`, `--diagram-red` |
+| Brand (ADR-023) | `--p-brand-blue`, `--p-brand-red`, `--p-brand-yellow` (the marketing tri-stripe; decoration only, never text) |
+| Difficulty | `--p-easy`, `--p-medium`, `--p-hard` (AA text on surface) and `-soft` fills (AA text on them) |
+| Mastery | `--p-m-none`, `--p-m-attempted`, `--p-m-familiar`, `--p-m-proficient`, `--p-m-mastered` (graphics, >= 3:1; the level is always written too) |
+| Gamification | `--p-flame` (streak), `--p-heat-0…4` (activity heatmap), `--p-tier-bronze|silver|gold|elite` (player card, league, rarity) |
+| Shape | `--p-radius-xl` (16 px, cards) |
 
 Diagram colours are for SVG attributes (`stroke="var(--diagram-red)"`, `fill="var(--diagram-fill)"`) and
 `currentColor`. Always say the colour in the label as well ("blue solution"): colour alone fails

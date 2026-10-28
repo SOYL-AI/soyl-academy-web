@@ -179,7 +179,7 @@ export default async function ChapterHubPage({ params }: { params: Promise<Chapt
                       <Icon name="clock" size={20} /> Chapter test <Badge tone="accent">Free</Badge>
                     </h3>
                     <p className={c.stepBlurb}>Short and long chapter tests in board pattern, with results and analysis.</p>
-                    <ChapterTestsCard seriesHref={seriesBase} tests={assets.tests.items.map((t) => ({ id: t.id, title: t.title, durationMin: t.durationMin, totalMarks: t.totalMarks }))} />
+                    <ChapterTestsCard seriesHref={seriesBase} tests={assets.tests.items.filter((t) => t.kind === 'chapter').map((t) => ({ id: t.id, title: t.title, durationMin: t.durationMin, totalMarks: t.totalMarks }))} />
                   </PathStep>
                 </ol>
               </section>
