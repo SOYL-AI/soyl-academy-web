@@ -422,3 +422,41 @@
   font-weight: 650;
   font-variant-numeric: tabular-nums;
 }
+
+/* ── ADR-023: collectible rarity frames (deterministic; see rarity.ts) ───── */
+.item[data-rarity] {
+  --rarity: var(--p-tier-silver);
+  position: relative;
+  border: 2px solid var(--rarity);
+  border-radius: var(--p-radius-xl);
+}
+.item[data-rarity='rare'] {
+  --rarity: var(--p-accent);
+}
+.item[data-rarity='epic'] {
+  --rarity: var(--p-m-mastered);
+}
+.item[data-rarity='legendary'] {
+  --rarity: var(--p-tier-gold);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--p-tier-gold) 25%, transparent), var(--p-shadow-2);
+}
+.item[data-rarity='legendary'] .art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.22) 45%, transparent 60%);
+  pointer-events: none;
+}
+.rarity {
+  display: inline-flex;
+  align-items: center;
+  margin-right: var(--p-space-2);
+  padding: 1px 8px;
+  border-radius: var(--p-radius-pill);
+  background: color-mix(in srgb, var(--rarity, var(--p-tier-silver)) 16%, var(--p-surface));
+  color: var(--p-ink);
+  font-size: var(--p-text-xs);
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}

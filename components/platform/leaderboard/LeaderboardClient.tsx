@@ -5,20 +5,21 @@
  * then a friendly consent-needed state (production today: CONSENT_PROVIDER=unavailable → everyone sees it).
  * - All-India mock ranks: the live events the student took (GET /v1/me/attempts → liveEventId) and the
  *   current events, each with its consent-gated leaderboard.
- * - Weekly leagues (class / school / city): the API has no league endpoint yet (handoff gap), so the
- *   section explains what is coming instead of showing an empty table.
+ * - Weekly league (ADR-023): GET /v1/leagues/current as a tiered league with a podium and promotion /
+ *   relegation zones (WeeklyLeague).
  */
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import type { LiveEvent, MyAttempt } from '@/platform/shared/api-client';
 import { Button } from '@/components/platform/ui/kit/Button';
-import { Badge, Card, CardTitle, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
+import { EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
 import { useSession } from '../auth/SessionProvider';
 import { AiNotice } from '../ai/AiDialogs';
 import { api } from '../lib/api-browser';
 import { Leaderboard } from '../tests/LiveEventClient';
 import { LIVE_PHASE_LABELS } from '../tests/player-model';
 import { istDateTime } from '../tests/timer';
+import { WeeklyLeague } from './WeeklyLeague';
 import s from '../tests/tests.module.css';
 
 export function LeaderboardClient() {
@@ -63,12 +64,7 @@ export function LeaderboardClient() {
 
   return (
     <div className={s.stack} data-testid="leaderboards">
-      <Card as="section" aria-labelledby="leagues-title">
-        <CardTitle as="h2" id="leagues-title">
-          Weekly leagues <Badge>Coming soon</Badge>
-        </CardTitle>
-        <p className={s.muted}>Earn XP from lessons, practice and tests. Weekly leagues for your class start soon (school and city leagues are opt-in).</p>
-      </Card>
+      <WeeklyLeague />
 
       <section aria-labelledby="mock-ranks">
         <h2 id="mock-ranks" className={s.sectionHeading}>

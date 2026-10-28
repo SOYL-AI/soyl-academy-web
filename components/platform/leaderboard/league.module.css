@@ -1,0 +1,247 @@
+/* Weekly league (ADR-023): tier crest, podium, standings with zones. */
+.league {
+  --tier: var(--p-tier-bronze);
+  display: grid;
+  gap: var(--p-space-4);
+  padding: var(--p-space-4);
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-xl);
+  background:
+    radial-gradient(100% 120% at 100% 0%, color-mix(in srgb, var(--tier) 16%, transparent) 0, transparent 60%),
+    var(--p-surface);
+}
+.league[data-tier='silver'] {
+  --tier: var(--p-tier-silver);
+}
+.league[data-tier='gold'] {
+  --tier: var(--p-tier-gold);
+}
+.league[data-tier='sapphire'] {
+  --tier: var(--p-accent);
+}
+.league[data-tier='diamond'] {
+  --tier: var(--p-m-mastered);
+}
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-3) var(--p-space-4);
+}
+.crest {
+  position: relative;
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--p-radius-lg);
+  background: color-mix(in srgb, var(--tier) 18%, var(--p-surface));
+  color: var(--tier);
+}
+.crestLevel {
+  position: absolute;
+  font-size: var(--p-text-sm);
+  font-weight: 800;
+}
+.headBody {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+.title {
+  margin: 0;
+  font-size: var(--p-text-xl);
+  font-weight: 800;
+}
+.division {
+  margin-left: var(--p-space-1);
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-sm);
+  font-weight: 600;
+}
+.muted {
+  margin: var(--p-space-1) 0 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.link {
+  display: inline-flex;
+  margin-top: var(--p-space-2);
+  color: var(--p-accent);
+  font-weight: 650;
+}
+.me {
+  display: grid;
+  justify-items: end;
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.meRank {
+  color: var(--p-ink);
+  font-size: var(--p-text-3xl);
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.lastWeek {
+  margin: 0;
+  padding: var(--p-space-2) var(--p-space-3);
+  border-radius: var(--p-radius-md);
+  background: var(--p-surface-2);
+  font-size: var(--p-text-sm);
+}
+.lastWeek[data-outcome='promoted'] {
+  background: var(--p-success-soft);
+  color: var(--p-success);
+}
+
+/* Podium: 2 · 1 · 3 visually, 1 · 2 · 3 in the DOM (reading order). */
+.podium {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+  gap: var(--p-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.place {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  min-width: 0;
+  text-align: center;
+}
+.place[data-place='1'] {
+  order: 2;
+}
+.place[data-place='2'] {
+  order: 1;
+}
+.place[data-place='3'] {
+  order: 3;
+}
+.medal {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--p-tier-bronze);
+  color: #ffffff;
+  font-weight: 800;
+  box-shadow: 0 0 0 3px var(--p-surface), 0 0 0 4px var(--p-border);
+}
+.place[data-place='1'] .medal {
+  width: 52px;
+  height: 52px;
+  background: #e2b13c;
+  color: #2a1e00;
+  font-size: var(--p-text-lg);
+}
+.place[data-place='2'] .medal {
+  background: #c9d0d9;
+  color: #1b2330;
+}
+.place[data-place='3'] .medal {
+  background: #d9a066;
+  color: #2b1a0c;
+}
+.placeName {
+  max-width: 100%;
+  overflow: hidden;
+  font-size: var(--p-text-sm);
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.placeMe .placeName {
+  color: var(--p-accent);
+}
+.placeXp {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-xs);
+  font-weight: 600;
+}
+.plinth {
+  width: 100%;
+  height: 28px;
+  margin-top: var(--p-space-1);
+  border-radius: var(--p-radius-md) var(--p-radius-md) 0 0;
+  background: color-mix(in srgb, var(--tier) 22%, var(--p-surface-2));
+}
+.place[data-place='1'] .plinth {
+  height: 48px;
+}
+.place[data-place='2'] .plinth {
+  height: 36px;
+}
+
+/* Standings */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--p-text-sm);
+}
+.table th {
+  padding: var(--p-space-2);
+  border-bottom: 1px solid var(--p-border);
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-xs);
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.table th:last-child,
+.xp {
+  text-align: right;
+}
+.row td {
+  padding: var(--p-space-2);
+  border-bottom: 1px solid var(--p-border);
+}
+.row[data-zone='promotion'] .rank {
+  color: var(--p-success);
+}
+.row[data-zone='relegation'] .rank {
+  color: var(--p-danger);
+}
+.rank {
+  width: 3.5em;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.xp {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.rowMe td {
+  background: var(--p-accent-soft);
+  color: var(--p-info);
+  font-weight: 700;
+}
+.you {
+  font-weight: 600;
+}
+.divider td {
+  padding: var(--p-space-1) var(--p-space-2);
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.divider[data-zone='promotion'] td {
+  color: var(--p-success);
+}
+.divider[data-zone='safe'] td {
+  border-top: 2px dashed var(--p-success);
+  color: var(--p-success);
+}
+.divider[data-zone='relegation'] td {
+  border-top: 2px dashed var(--p-danger);
+  color: var(--p-danger);
+}

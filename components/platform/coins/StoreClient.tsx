@@ -25,6 +25,7 @@ import { canCancel, coinsProblemMessage, coinsText, dropLine, istDate, needsAddr
 import { useCoins } from './CoinsProvider';
 import { StoreArt } from './StoreArt';
 import { useNow } from './useNow';
+import { itemRarity, RARITY_LABELS, type Rarity } from './rarity';
 import s from './store.module.css';
 
 type Pending = { kind: 'redeem'; item: CoinStoreItem } | { kind: 'address'; redemption: Pick<CoinRedemption, 'id' | 'itemName'> } | { kind: 'cancel'; redemption: CoinRedemption } | null;
@@ -56,8 +57,9 @@ function ItemCard({ item, balance, now, equipped, busy, onRedeem, onSignIn, onEq
   const locked = item.state === 'locked';
   const isEquipped = equipped === item.key;
   const titleId = `item-${item.key}`;
+  const rarity = itemRarity(item);
   return (
-    <li className={cx(s.item, locked && s.itemLocked, item.state === 'available' && s.itemReady)} data-testid="store-item" data-item={item.key} data-state={item.state} aria-labelledby={titleId}>
+    <li className={cx(s.item, locked && s.itemLocked, item.state === 'available' && s.itemReady)} data-testid="store-item" data-item={item.key} data-state={item.state} data-rarity={rarity} aria-labelledby={titleId}>
       <div className={cx(s.art, item.type === 'digital' ? s.artDigital : s.artPhysical)}>
         <StoreArt image={item.image} className={s.artSvg} />
         {locked && (
@@ -73,6 +75,7 @@ function ItemCard({ item, balance, now, equipped, busy, onRedeem, onSignIn, onEq
       </div>
       <div className={s.itemBody}>
         <p className={s.itemKind}>
+          <span className={s.rarity}>{RARITY_LABELS[rarity]}</span>
           {item.type === 'digital' ? (item.slot === 'frame' ? 'Profile frame' : 'Theme') : 'Merch'}
           {(item.availableFrom || item.availableUntil) && <span className={s.dropTag}>Limited drop</span>}
         </p>
@@ -162,10 +165,10 @@ function Redemptions({ list, onAddress, onCancel }: { list: CoinRedemption[]; on
   );
 }
 
-const TEASERS: { image: string; title: string; text: string }[] = [
-  { image: 'hoodie', title: 'Exclusive SOYL merch', text: 'Being designed now. Never sold: only earned with coins.' },
-  { image: 'frame-constellation', title: 'Profile rewards', text: 'Frames and themes that show what you have achieved.' },
-  { image: 'topper-jacket', title: 'Limited drops', text: 'Rare rewards for top performers in live All-India mocks.' },
+const TEASERS: { image: string; title: string; text: string; rarity: Rarity }[] = [
+  { image: 'hoodie', title: 'Exclusive SOYL merch', text: 'Being designed now. Never sold: only earned with coins.', rarity: 'epic' },
+  { image: 'frame-constellation', title: 'Profile rewards', text: 'Frames and themes that show what you have achieved.', rarity: 'rare' },
+  { image: 'topper-jacket', title: 'Limited drops', text: 'Rare rewards for top performers in live All-India mocks.', rarity: 'legendary' },
 ];
 const EARN_NOW = ['checkin', 'daily_challenge', 'solved_milestone', 'test_submitted'];
 
@@ -180,12 +183,15 @@ function ComingSoon({ member }: { member: boolean }) {
         </h2>
         <ul className={s.grid}>
           {TEASERS.map((t) => (
-            <li key={t.image} className={cx(s.item, s.teaser)} data-testid="store-teaser">
+            <li key={t.image} className={cx(s.item, s.teaser)} data-testid="store-teaser" data-rarity={t.rarity}>
               <div className={cx(s.art, s.artDigital)}>
                 <StoreArt image={t.image} className={s.artSvg} />
                 <span className={s.soonBadge}>Coming soon</span>
               </div>
               <div className={s.itemBody}>
+                <p className={s.itemKind}>
+                  <span className={s.rarity}>{RARITY_LABELS[t.rarity]}</span>
+                </p>
                 <h3 className={s.itemName}>{t.title}</h3>
                 <p className={s.itemDesc}>{t.text}</p>
               </div>

@@ -17,6 +17,7 @@ import { useToast } from '@/components/platform/ui/kit/Toast';
 import { useSession } from '../auth/SessionProvider';
 import { ConsentFlow } from '../consent/ConsentFlow';
 import { CreditsCard, MyAttemptsCard, SubscriptionCard } from './MeExtras';
+import { AppearanceCard, MeInsights } from './MeInsights';
 import { api } from '../lib/api-browser';
 import { BOARDS, BOARD_NAMES, CLASS_LEVELS, examLabel, learnPath, type BoardSlug } from '../lib/catalog';
 import { maskedPhone } from '../lib/phone';
@@ -105,11 +106,14 @@ function Profile({ me, onChange }: { me: Me; onChange: (me: Me) => void }) {
           </p>
         </div>
       </div>
+      <MeInsights />
+      <h2 className={s.settingsTitle}>Settings</h2>
       <div className={s.stack}>
         <div id="consent">
           <ConsentFlow onChanged={(v) => onChange({ ...me, consent: v.status })} />
         </div>
         <ProfileForm me={me} onSaved={onChange} />
+        <AppearanceCard />
         <PublicName me={me} onChange={onChange} />
         <MyAttemptsCard />
         <SubscriptionCard />

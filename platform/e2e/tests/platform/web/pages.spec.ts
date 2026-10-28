@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import AxeBuilder from '@axe-core/playwright';
@@ -105,10 +106,16 @@ test('security headers on platform pages (WEB-3, WEB-4); nonce on /me', async ({
   expect(csp).toContain("'strict-dynamic'");
   expect(csp.split('; ').find((d) => d.startsWith('script-src'))).not.toContain('unsafe-inline');
   const html = await me.text();
-  const scripts = [...html.matchAll(/<script\b[^>]*>/g)].map((m) => m[0]);
-  const executable = scripts.filter((s) => !/type="application\/ld\+json"/.test(s));
-  const withoutNonce = executable.filter((s) => !s.includes(`nonce="${nonce}"`));
-  expect(withoutNonce.length, 'only the consent boot script (allowed by hash) has no nonce').toBeLessThanOrEqual(1);
+  const scripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].map((m) => ({ tag: m[1]!, body: m[2]! }));
+  const executable = scripts.filter((s) => !/type="application\/ld\+json"/.test(s.tag));
+  const withoutNonce = executable.filter((s) => !s.tag.includes(`nonce="${nonce}"`));
+  // Only the root layout's consent boot script and the platform theme boot script (ADR-023) have no nonce, and
+  // each is an inline script whose exact SHA-256 is in the policy (no src, nothing else allowed).
+  expect(withoutNonce.length, 'inline boot scripts without a nonce').toBeLessThanOrEqual(2);
+  for (const s of withoutNonce) {
+    expect(s.tag, 'a script without a nonce must be inline').not.toMatch(/\ssrc=/);
+    expect(csp, 'every script without a nonce is allowed by its hash').toContain(`'sha256-${createHash('sha256').update(s.body, 'utf8').digest('base64')}'`);
+  }
   const second = await page.request.get('/me');
   expect(/'nonce-([^']+)'/.exec(second.headers()['content-security-policy']!)?.[1]).not.toBe(nonce);
 
@@ -125,7 +132,8 @@ test('/me renders under the nonce CSP without violations (fixture)', async ({ pa
 });
 
 test('the marketing header shows the Learn entry point when the flag is on', async ({ page }) => {
-  await page.goto('/learn');
+  // Platform pages have their own app shell since ADR-023, so the marketing header is checked on the home page.
+  await page.goto('/');
   await page.getByRole('button', { name: 'Open menu' }).click();
   await expect(page.locator('#mobile-menu').getByRole('link', { name: 'Learn' })).toHaveAttribute('href', '/learn');
 });
