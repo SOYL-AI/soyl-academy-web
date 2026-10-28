@@ -15,7 +15,7 @@ const OUT = resolve(import.meta.dirname, '../../../test-results/platform-web/rev
 mkdirSync(OUT, { recursive: true });
 
 const SUBJECT = '/learn/cbse/10/science';
-const WIDTHS = [360, 480, 768, 900, 1024, 1100, 1280] as const;
+const WIDTHS = [360, 420, 480, 600, 768, 900, 1024, 1100, 1280, 1440] as const;
 const root = (page: Page) => page.locator('#soyl-platform-root');
 
 test.beforeEach(async ({ page }) => {

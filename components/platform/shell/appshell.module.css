@@ -79,6 +79,12 @@
     display: inline;
   }
 }
+/* Members carry streak, coins and credits: the brand name waits for 600 px. */
+@media (max-width: 599px) {
+  .topInner:has([data-session='member']) .brandName {
+    display: none;
+  }
+}
 /* 1024–1279 px: the full nav and the main-site link need the room; the mark alone stays the home link. */
 @media (min-width: 1024px) and (max-width: 1279px) {
   .brandName {
@@ -229,7 +235,9 @@
   color: inherit;
   text-decoration: none;
 }
-@media (max-width: 419px) {
+/* "resets in 3h 12m" next to the credits only where the bar has room for it with every member chip (the
+   count stays; the full text is on /me#credits). */
+@media (max-width: 1439px) {
   .creditLink > span > span:last-child {
     display: none;
   }
