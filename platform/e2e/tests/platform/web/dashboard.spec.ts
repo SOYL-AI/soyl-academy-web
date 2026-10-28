@@ -24,6 +24,16 @@ test.beforeEach(async ({ page }) => {
   await acceptAllCookies(page);
 });
 
+let ipSeq = 0;
+/**
+ * Sign-ins that do not go through signUp() still need their own client IP: email OTP sends are limited per IP
+ * (10 an hour, AUTH-5) and the rest of the suite already uses the default one. TEST-NET-2, apart from signUp's range.
+ */
+async function ownIp(page: Page) {
+  ipSeq += 1;
+  await page.context().setExtraHTTPHeaders({ 'x-real-ip': `198.51.100.${(ipSeq % 250) + 1}` });
+}
+
 /** Solves one multiple-choice question in CH01 practice (a wrong first try reveals the key). */
 async function solveOneMcq(page: Page, skip = 0) {
   await page.goto(`${CH01}/practice`, { waitUntil: 'networkidle' });
@@ -81,6 +91,7 @@ async function setClass(page: Page) {
 
 test.describe('D-043 dashboard', () => {
   test('default landing: logging in from /learn opens the dashboard; /dashboard is a short link to it', async ({ page }) => {
+    await ownIp(page);
     await page.goto('/learn', { waitUntil: 'networkidle' });
     await openLoginFromHeader(page);
     await signInWithEmail(page, uniqueEmail('landing'));
@@ -103,6 +114,7 @@ test.describe('D-043 dashboard', () => {
   });
 
   test('guests: a sign-in prompt with this device’s progress; logging in from it comes back to the dashboard', async ({ page, baseURL }) => {
+    await ownIp(page);
     for (const theme of ['light', 'dark'] as const) {
       await setTheme(page, baseURL, theme);
       await page.goto('/me/dashboard', { waitUntil: 'networkidle' });
