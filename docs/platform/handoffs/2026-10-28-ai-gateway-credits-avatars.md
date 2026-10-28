@@ -1,6 +1,6 @@
 # ai-gateway (+ backend-api, db-schema) — D-044 credits and student avatars — 2026-10-28
 
-Status: done (Playwright e2e expectations updated but the e2e suite was not run here; see "How to verify")
+Status: done. Merged origin/platform/main twice: the super-admin merge (877f5bd) took migration 0014, so this migration is now **0015_avatars_credit_bonus** (regenerated, same SQL); the GPT-6 reasoning-effort hotfix (da47d79) merged cleanly (D-044 prices kept, no 'minimal'). Final gates ran on 09214aa (Playwright e2e expectations updated but the e2e suite was not run here; see "How to verify")
 Branch: `platform/ai-gateway/credits-avatars` from `origin/platform/main` a199175. Contract commit **`fbd478e`** (config, schemas, routes, migration, `openapi.json`, `api-client`, route-policy snapshot) plus `7d44242` (api-client type aliases): the web can merge those two alone. Tests, docs and this note follow.
 
 ## What changed
@@ -83,14 +83,14 @@ On Free with 50 credits: hard doubt `remainingToday: 7` ("≈ 7 hard doubts left
 
 From `platform/` (each heavy step through `C:/Users/Prabhu/soyl-wt/_tools/heavy.sh`):
 ```
-npm run typecheck                                  # exit 0
-npm test -w @soyl/shared                           # RESULT_SHARED
-npm test -w @soyl/db                               # RESULT_DB (incl. avatars-bonus.test.ts: 0015 down/up seeded)
-cd api && npx vitest run test/ai-bonuses.test.ts test/avatars.test.ts test/ai-credits.test.ts ...   # RESULT_TARGETED
-npm run build                                      # RESULT_BUILD
-npm test -w @soyl/api                              # RESULT_API
+npm run typecheck                                  # exit 0 (all workspaces, after both merges)
+npm test -w @soyl/shared                           # 16 files, 180 passed
+npm test -w @soyl/db                               # 17 files, 123 passed, 1 skipped (incl. avatars-bonus.test.ts: 0015 down/up seeded)
+cd api && npx vitest run test/ai-bonuses.test.ts test/avatars.test.ts test/ai-credits.test.ts ...   # 24 files, 321 tests; first run 7 stale-number failures, fixed and re-run green
+npm run build                                      # exit 0 (api 6.2 MB, worker 3.5 MB)
+npm test -w @soyl/api                              # 42 files, 646 passed, 1 skipped
 # repo root
-npm run test:platform-web -- --maxWorkers=2        # RESULT_WEB
+npm run test:platform-web -- --maxWorkers=2        # 17 files, 298 passed
 ```
 Playwright (`npm run test:platform-web -w @soyl/e2e`) was not run in this task (8 GB machine, another agent's e2e held the lock); `ai.spec`, `plans.spec` and `consent.spec` expectations were updated to the new numbers and should be run before the web merge.
 
@@ -116,3 +116,5 @@ Playwright (`npm run test:platform-web -w @soyl/e2e`) was not run in this task (
 - Separate `GET /v1/me/avatars`.
 
 Needs from owner: confirm AI marking stays at 7 credits per answer (₹0.70 vs ₹0.72 measured), or reprice to 8.
+
+Note for the Lead: the super-admin code merged as 0014 still says "migration 0015" in comments (api/src/domain/admin/*.ts, policy.ts, db/schema/{ops,progress,assessment,coins}.ts, shared/config/analytics.ts, db/test/schema.test.ts, PII.md, its 0014 SQL headers). 0015 is now this branch's avatars/credit-bonus migration; those comments should say 0014.
