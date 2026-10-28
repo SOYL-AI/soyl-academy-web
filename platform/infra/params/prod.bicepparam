@@ -1,6 +1,7 @@
 // prod - DARK first start (D-031, 2026-10-27): the API runs with PLATFORM_ENABLED=false and
 // BILLING_ENABLED=false (every route except /healthz and /readyz answers 404, GEN-4), email OTP only,
-// no consent system yet (CONSENT_PROVIDER=unavailable). Sized for a small budget, NOT for launch.
+// interim built-in consent (CONSENT_PROVIDER=builtin, D-039/ADR-022: age band, parent code by email).
+// Sized for a small budget, NOT for launch.
 // AI (D-038, 2026-10-28): Azure OpenAI (GPT-6 Luna = small, GPT-6.1 Sol = mid/verify, embeddings),
 // Speech and Content Safety are deployed, private-endpoint only and keyless (ADR-008). AI stays
 // unreachable while the platform is dark and, after launch, until consent unlocks it (D-039).
@@ -178,7 +179,9 @@ param appSettings = {
   WEB_ORIGIN: 'https://www.soylai.com'
   AUTH_METHODS: 'email'
   EMAIL_PROVIDER: 'acs'
-  CONSENT_PROVIDER: 'unavailable'
+  // Interim built-in consent (D-039, ADR-022); needs EMAIL_PROVIDER=acs for the parent's code and
+  // migration 0012 before the new images start.
+  CONSENT_PROVIDER: 'builtin'
   // AI providers (ai-gateway handoff 2026-10-27): real Azure services when aiOn, else fail-closed.
   AI_PROVIDER: aiOn ? 'azure' : 'disabled'
   AI_EMBEDDINGS: aiOn ? 'azure' : 'disabled'
@@ -186,8 +189,8 @@ param appSettings = {
   // Photo/PDF uploads for AI (keyless user-delegation SAS on the existing storage account; the API's
   // write role on the uploads container is S6-L02, modules/storage.bicep).
   BLOB_PROVIDER: aiOn ? 'azure' : 'disabled'
-  // Worker: with CONSENT_PROVIDER=unavailable the AUTH-15 purge would delete every student after 30
-  // days; auto keeps it off until a consent system exists (owner decision before launch).
+  // Worker: the AUTH-15 purge would delete every student without consent after 30 days, including
+  // those who only learn; auto keeps it off for unavailable and builtin (D-039).
   UNCONSENTED_PURGE: 'auto'
   // Spend caps (D-038): rupees per day for all interactive AI, and the content programme's total.
   AI_DAILY_SPEND_CAP_INR: aiOn ? '2000' : '0'
