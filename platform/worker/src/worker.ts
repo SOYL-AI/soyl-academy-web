@@ -13,6 +13,8 @@ import type { WorkerConfig } from './config';
 import { checkDatabase, createHealthServer } from './health';
 import { allJobs } from './jobs';
 import { RazorpayHttpClient } from '@soyl/api/billing/razorpay/http';
+import { invoiceBlobStore, invoiceEmailSender } from '@soyl/api/billing/invoices/delivery';
+import type { BillingJobSettings } from './billing-jobs';
 import { errorFields, type Logger } from './logger';
 import { registerJobs, type JobDefinition, type RegisteredJob } from './registry';
 
@@ -75,6 +77,13 @@ export function bossOptions(config: WorkerConfig, databaseUrl: string, password?
 }
 
 /** The real Razorpay client when configured (billing-jobs.ts: never the in-memory stub). */
+/** Invoice delivery for the billing.invoices sweep (ADR-024): Blob and ACS email from the same env as the API. */
+export function invoiceSettings(config: WorkerConfig, env: Record<string, string | undefined> = process.env): BillingJobSettings['invoices'] {
+  if (!config.billing.invoicing) return null;
+  const blob = invoiceBlobStore({ appEnv: config.appEnv, env });
+  return { runtime: config.billing.invoicing, blob: () => blob, email: invoiceEmailSender({ appEnv: config.appEnv, env }), publicBaseUrl: env.PUBLIC_BASE_URL ?? 'https://www.soylai.com' };
+}
+
 export function billingClient(config: WorkerConfig): RazorpayHttpClient | null {
   const b = config.billing;
   return b.provider === 'razorpay' ? new RazorpayHttpClient({ keyId: b.keyId!, keySecret: b.keySecret!, baseUrl: b.apiBaseUrl }) : null;
@@ -113,7 +122,7 @@ export async function startWorker(deps: WorkerDeps): Promise<RunningWorker> {
   try {
     await boss.start({ attempts: 3 });
     state.lastBossOkAt = new Date();
-    jobs = await registerJobs(boss, deps.jobs ?? allJobs({ unconsentedAccountTtlDays: config.unconsentedAccountTtlDays, unconsentedPurge: config.unconsentedPurge, billing: { razorpay: billingClient(config) } }), {
+    jobs = await registerJobs(boss, deps.jobs ?? allJobs({ unconsentedAccountTtlDays: config.unconsentedAccountTtlDays, unconsentedPurge: config.unconsentedPurge, billing: { razorpay: billingClient(config), invoices: invoiceSettings(config) } }), {
       db: deps.db,
       log,
       now,
