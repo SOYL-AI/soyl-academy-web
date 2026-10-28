@@ -190,7 +190,7 @@ export function LineChart({ title, series, height = 200, csvName, format = forma
             </g>
           ))}
           {model.xTicks.map((t) => (
-            <text key={t.day} x={t.x} y={height - 8} textAnchor="middle" className={s.axis}>
+            <text key={t.day} x={t.x} y={height - 8} textAnchor={t.anchor} className={s.axis}>
               {dayLabel(t.day)}
             </text>
           ))}

@@ -64,6 +64,10 @@ describe('chart models', () => {
     expect(p1!.y).toBeCloseTo((m.pad.top + 200 - m.pad.bottom) / 2);
     expect(m.lines[0]!.path.startsWith('M')).toBe(true);
     expect(m.yTicks.map((t) => t.value)).toEqual([0, 5, 10]);
+    expect(lineModel([series('a', [0, 1])], 300, 200).yTicks.map((t) => t.value)).toEqual([0, 1, 2]);
+    expect(lineModel([series('a', [0, 21])], 300, 200).yTicks.map((t) => t.value)).toEqual([0, 25]);
+    expect(m.xTicks[0]!.anchor).toBe('start');
+    expect(m.xTicks[m.xTicks.length - 1]!.anchor).toBe('end');
     const wide = lineModel([series('a', Array.from({ length: 30 }, (_, i) => i))], 320, 200);
     const xs = wide.xTicks.map((t) => t.x);
     for (let i = 1; i < xs.length; i++) expect(xs[i]! - xs[i - 1]!).toBeGreaterThanOrEqual(30);

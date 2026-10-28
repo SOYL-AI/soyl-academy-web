@@ -108,7 +108,8 @@ export interface LineModel {
   pad: { top: number; right: number; bottom: number; left: number };
   max: number;
   yTicks: { value: number; y: number }[];
-  xTicks: { day: string; x: number }[];
+  /** `anchor`: the first and last labels align to the plot edges so they are never clipped. */
+  xTicks: { day: string; x: number; anchor: 'start' | 'middle' | 'end' }[];
   lines: { key: string; label: string; path: string; points: { x: number; y: number; value: number; date: string }[] }[];
   days: string[];
 }
@@ -117,17 +118,18 @@ export interface LineModel {
 export function lineModel(series: AdminSeries[], width: number, height: number): LineModel {
   const pad = { top: 12, right: 12, bottom: 28, left: 44 };
   const days = series[0]?.points.map((p) => p.date) ?? [];
-  const max = niceMax(Math.max(0, ...series.flatMap((s) => s.points.map((p) => p.value))));
+  // At least 2, so a count axis never shows a half (0, 1, 2).
+  const max = Math.max(2, niceMax(Math.max(0, ...series.flatMap((s) => s.points.map((p) => p.value)))));
   const iw = Math.max(1, width - pad.left - pad.right);
   const ih = Math.max(1, height - pad.top - pad.bottom);
   const x = (i: number) => pad.left + (days.length <= 1 ? iw / 2 : (i / (days.length - 1)) * iw);
   const y = (v: number) => pad.top + ih - (v / max) * ih;
-  const yTicks = [0, 0.5, 1].map((f) => ({ value: max * f, y: y(max * f) }));
+  const yTicks = (Number.isInteger(max / 2) ? [0, 0.5, 1] : [0, 1]).map((f) => ({ value: max * f, y: y(max * f) }));
   const step = Math.max(1, Math.ceil(days.length / Math.max(2, Math.floor(iw / 72))));
   const tickIdx = days.map((_, i) => i).filter((i) => i % step === 0);
   const lastIdx = days.length - 1;
   if (lastIdx > 0 && !tickIdx.includes(lastIdx) && lastIdx - tickIdx[tickIdx.length - 1]! >= step / 2) tickIdx.push(lastIdx);
-  const xTicks = tickIdx.map((i) => ({ day: days[i]!, x: x(i) }));
+  const xTicks = tickIdx.map((i) => ({ day: days[i]!, x: x(i), anchor: (i === 0 && days.length > 1 ? 'start' : i === lastIdx && lastIdx > 0 ? 'end' : 'middle') as 'start' | 'middle' | 'end' }));
   const lines = series.map((s) => {
     const points = s.points.map((p, i) => ({ x: x(i), y: y(p.value), value: p.value, date: p.date }));
     const path = points.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
