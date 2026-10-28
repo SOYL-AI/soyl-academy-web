@@ -90,4 +90,4 @@ export const LIGHTHOUSE_PATHS = [
  * URL prefixes owned by the learning platform (ARCHITECTURE §3.1). Build-manifest entries
  * under these, or under the `(platform)` route group, are not marketing routes.
  */
-export const PLATFORM_PREFIXES = ['/learn', '/tests', '/ask', '/plans', '/me', '/leaderboard', '/coins', '/store', '/admin', '/api/platform'];
+export const PLATFORM_PREFIXES = ['/learn', '/tests', '/ask', '/plans', '/me', '/leaderboard', '/coins', '/store', '/admin', '/dashboard', '/api/platform'];

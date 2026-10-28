@@ -157,7 +157,7 @@ function BadgesSection() {
   }, []);
   const earned = Array.isArray(badges) ? badges.filter((b) => b.awarded).length : 0;
   return (
-    <Card as="section" aria-labelledby="badges-title" data-testid="badges-section">
+    <Card as="section" aria-labelledby="badges-title" id="badges" data-testid="badges-section">
       <CardTitle as="h2" id="badges-title">
         Badges {Array.isArray(badges) && <span className={s.countNote}>{earned} of {badges.length}</span>}
       </CardTitle>

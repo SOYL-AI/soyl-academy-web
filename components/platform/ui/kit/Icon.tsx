@@ -52,6 +52,9 @@ const PATHS = {
   keyboard: 'M3 6h18v12H3V6zM7 10h.01M11 10h.01M15 10h.01M7 14h10',
   shield: 'M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z',
   external: 'M14 4h6v6M20 4l-9 9M18 14v6H4V6h6',
+  // Student dashboard (2026-10-28).
+  home: 'M3 11l9-7 9 7M5.5 9.5V20H10v-6h4v6h4.5V9.5',
+  pencil: 'M4 20h4L19 9l-4-4L4 16v4zM13.5 6.5l4 4',
 } as const;
 
 export type IconName = keyof typeof PATHS;

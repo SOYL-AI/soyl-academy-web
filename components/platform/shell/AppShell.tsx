@@ -31,6 +31,8 @@ interface NavItem {
   icon: IconName;
   /** Other prefixes that count as this section. */
   also?: string[];
+  /** Prefixes under `href` that belong to another section. */
+  except?: string[];
 }
 
 export const PRIMARY_NAV: readonly NavItem[] = [
@@ -39,10 +41,25 @@ export const PRIMARY_NAV: readonly NavItem[] = [
   { href: '/ask', label: 'Ask AI', short: 'Ask AI', icon: 'chat' },
   { href: '/leaderboard', label: 'Leaderboard', short: 'Ranks', icon: 'trophy' },
 ];
-const ME_TAB: NavItem = { href: '/me', label: 'Profile', short: 'Me', icon: 'user', also: ['/coins', '/store', '/plans'] };
+/** The student dashboard (D-043): first for members. */
+export const HOME_NAV: NavItem = { href: '/me/dashboard', label: 'Home', short: 'Home', icon: 'home' };
+const ME_TAB: NavItem = { href: '/me', label: 'Profile', short: 'Me', icon: 'user', also: ['/coins', '/store', '/plans'], except: [HOME_NAV.href] };
 
-export function isCurrentSection(pathname: string, item: Pick<NavItem, 'href' | 'also'>): boolean {
-  return [item.href, ...(item.also ?? [])].some((h) => pathname === h || pathname.startsWith(`${h}/`));
+const under = (pathname: string, h: string) => pathname === h || pathname.startsWith(`${h}/`);
+
+export function isCurrentSection(pathname: string, item: Pick<NavItem, 'href' | 'also' | 'except'>): boolean {
+  if (item.except?.some((h) => under(pathname, h))) return false;
+  return [item.href, ...(item.also ?? [])].some((h) => under(pathname, h));
+}
+
+/**
+ * Top bar: members get Home (the dashboard) first. Mobile tab bar: always five tabs; for members Home takes the
+ * place of Ranks (the dashboard carries the weekly-league teaser, so Home stays lit on /leaderboard).
+ */
+export function navFor(member: boolean, place: 'top' | 'tabs'): readonly NavItem[] {
+  if (place === 'top') return member ? [HOME_NAV, ...PRIMARY_NAV] : PRIMARY_NAV;
+  if (!member) return [...PRIMARY_NAV, ME_TAB];
+  return [{ ...HOME_NAV, also: ['/leaderboard'] }, ...PRIMARY_NAV.filter((n) => n.href !== '/leaderboard'), ME_TAB];
 }
 
 export function AppShell({ children, footer }: { children: ReactNode; footer?: ReactNode }) {
@@ -77,7 +94,7 @@ function TopBar({ pathname }: { pathname: string }) {
         </Link>
         <nav aria-label="Learning platform" className={s.primary}>
           <ul>
-            {PRIMARY_NAV.map((n) => {
+            {navFor(state.status === 'member', 'top').map((n) => {
               const on = isCurrentSection(pathname, n);
               return (
                 <li key={n.href}>
@@ -136,7 +153,8 @@ export function StreakChip() {
 }
 
 function TabBar({ pathname }: { pathname: string }) {
-  const items = [...PRIMARY_NAV, ME_TAB];
+  const { state } = useSession();
+  const items = navFor(state.status === 'member', 'tabs');
   return (
     <nav aria-label="Learning platform" className={s.tabs}>
       <ul>

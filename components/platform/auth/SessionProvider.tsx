@@ -18,7 +18,7 @@ import { useToast } from '@/components/platform/ui/kit/Toast';
 import { api } from '../lib/api-browser';
 import { afterMerge, hasMergeableProgress, readGuestProgress, writeGuestProgress } from '../lib/guest-storage';
 import { googleErrorMessage } from '../lib/problems';
-import { currentReturnTo, safeReturnTo, takeAuthResult } from '../lib/return-to';
+import { currentReturnTo, defaultLoginReturnTo, safeReturnTo, takeAuthResult } from '../lib/return-to';
 
 const LoginSheet = dynamic(() => import('./LoginSheet').then((m) => m.LoginSheet), { ssr: false });
 
@@ -123,7 +123,8 @@ export function SessionProvider({ children }: { children: ReactNode }) {
   }, [refresh]);
 
   const openLogin = useCallback((req: LoginRequest = {}) => {
-    setLogin({ ...req, key: ++loginKey.current, returnTo: safeReturnTo(req.returnTo ?? currentReturnTo()), open: true });
+    // No explicit returnTo: back to this page, except the platform home, which lands on the dashboard (D-043).
+    setLogin({ ...req, key: ++loginKey.current, returnTo: safeReturnTo(req.returnTo ?? defaultLoginReturnTo()), open: true });
   }, []);
 
   // Google sign-in comes back to the original page with ?authError= or ?linked= (backend handoff).

@@ -1,10 +1,12 @@
 'use client';
 
 /**
- * /me (ARCHITECTURE §3.1): profile (display name, board, class → PATCH /v1/me), the public leaderboard
+ * /me (ARCHITECTURE §3.1): profile (display name, board, class, weekly goal and, for consented accounts only,
+ * the school → PATCH /v1/me; D-043), the public leaderboard
  * name (D-039), the consent flow and its status (D-014, D-039: ConsentFlow), sign-in methods, sign out (WEB-9), sign out other devices, account deletion (DELETE /v1/me,
  * needs a fresh session: AUTH-9).
  */
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useId, useState, type FormEvent } from 'react';
 import { isApiError, type Me } from '@/platform/shared/api-client';
@@ -18,6 +20,10 @@ import { useSession } from '../auth/SessionProvider';
 import { ConsentFlow } from '../consent/ConsentFlow';
 import { CreditsCard, MyAttemptsCard, SubscriptionCard } from './MeExtras';
 import { AppearanceCard, MeInsights } from './MeInsights';
+import { WeeklyGoalEditor } from '../dashboard/WeeklyGoalEditor';
+
+// The school picker (and the shared school-name validator) loads with the profile, not in the page's first JS.
+const SchoolSetting = dynamic(() => import('./SchoolSetting').then((m) => m.SchoolSetting), { ssr: false });
 import { api } from '../lib/api-browser';
 import { BOARDS, BOARD_NAMES, CLASS_LEVELS, examLabel, learnPath, type BoardSlug } from '../lib/catalog';
 import { maskedPhone } from '../lib/phone';
@@ -110,7 +116,8 @@ function Profile({ me, onChange }: { me: Me; onChange: (me: Me) => void }) {
       <h2 className={s.settingsTitle}>Settings</h2>
       <div className={s.stack}>
         <div id="consent">
-          <ConsentFlow onChanged={(v) => onChange({ ...me, consent: v.status })} />
+          {/* Leaving 'granted' clears the school on the server (D-014), so it goes here too. */}
+          <ConsentFlow onChanged={(v) => onChange({ ...me, consent: v.status, school: v.status === 'granted' ? me.school : null })} />
         </div>
         <ProfileForm me={me} onSaved={onChange} />
         <AppearanceCard />
@@ -244,6 +251,14 @@ function ProfileForm({ me, onSaved }: { me: Me; onSaved: (me: Me) => void }) {
           )}
         </div>
       </form>
+      <section className={s.subsection} aria-labelledby="goal-title" id="weekly-goal" data-testid="profile-weekly-goal">
+        <h3 id="goal-title" className={s.subTitle}>
+          Weekly goal
+        </h3>
+        <p className={s.muted}>Practice questions to solve each week. Your dashboard shows how close you are.</p>
+        <WeeklyGoalEditor target={me.weeklyGoal.target} isDefault={me.weeklyGoal.isDefault} showSummary onSaved={(weeklyGoal) => onSaved({ ...me, weeklyGoal })} />
+      </section>
+      <SchoolSetting me={me} onChange={onSaved} />
     </Card>
   );
 }

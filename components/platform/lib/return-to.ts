@@ -17,6 +17,21 @@ export function currentReturnTo(loc: Pick<Location, 'pathname' | 'search'> = win
   return safeReturnTo(`${loc.pathname}${qs ? `?${qs}` : ''}`);
 }
 
+/** The signed-in student's dashboard (D-043). Under /me: nonce CSP and an allowed return target. */
+export const DASHBOARD_PATH = '/me/dashboard';
+
+/**
+ * Pages with nothing to come back to after logging in: the platform home (`/learn`, the board/class picker
+ * that guests land on). A login opened there without an explicit `returnTo` lands on the dashboard; every
+ * other page is returned to exactly (CONTEXT §5, AUTH-13), and an explicit `returnTo` always wins.
+ */
+const LANDING_PAGES: readonly string[] = ['/learn'];
+
+/** Default return target of a login opened without an explicit `returnTo`. */
+export function defaultLoginReturnTo(loc: Pick<Location, 'pathname' | 'search'> = window.location): string {
+  return LANDING_PAGES.includes(loc.pathname) ? DASHBOARD_PATH : currentReturnTo(loc);
+}
+
 /** Browser URL for Google sign-in (a top-level navigation, not fetch). */
 export function googleStartUrl(returnTo: string, intent: 'signin' | 'link' = 'signin'): string {
   const qs = new URLSearchParams({ returnTo: safeReturnTo(returnTo) });

@@ -286,3 +286,85 @@
   font-size: var(--p-text-xl);
   font-weight: 750;
 }
+
+/* School (D-043): consent-gated, private. */
+.privateNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 0;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.privateNote svg {
+  flex: none;
+  margin-top: 2px;
+}
+.schoolCurrent {
+  display: grid;
+  gap: var(--p-space-1);
+}
+.schoolName {
+  margin: 0;
+  color: var(--p-ink);
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+.schoolSearch {
+  display: grid;
+  gap: var(--p-space-3);
+}
+.schoolResults:empty {
+  display: none;
+}
+.schoolList {
+  display: grid;
+  gap: var(--p-space-1);
+  max-height: 320px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+.schoolOption {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  min-height: var(--p-touch);
+  padding: var(--p-space-2) var(--p-space-3);
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-md);
+  background: var(--p-surface);
+  color: var(--p-ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.schoolOption:hover {
+  border-color: var(--p-accent);
+  background: var(--p-accent-soft);
+}
+.schoolOption:focus-visible {
+  outline: none;
+  box-shadow: var(--p-focus-ring);
+}
+.schoolOption:disabled {
+  cursor: progress;
+  opacity: 0.7;
+}
+.goalSetting {
+  display: grid;
+  gap: var(--p-space-2);
+}
+.subsection {
+  display: grid;
+  gap: var(--p-space-2);
+  margin-top: var(--p-space-5);
+  padding-top: var(--p-space-4);
+  border-top: 1px solid var(--p-border);
+}
+.subTitle {
+  margin: 0;
+  font-size: var(--p-text-md);
+  font-weight: 700;
+}
