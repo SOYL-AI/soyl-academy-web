@@ -45,6 +45,8 @@ import { registerContentRoutes } from './modules/content';
 import { registerPracticeRoutes } from './modules/practice';
 import { registerProgressRoutes } from './modules/progress';
 import { registerInsightsRoutes } from './modules/insights';
+import { registerDashboardRoutes } from './modules/dashboard';
+import { registerSchoolRoutes } from './modules/schools';
 import { registerReportRoutes } from './modules/reports';
 import { registerMfaRoutes } from './modules/mfa';
 import { registerAdminRoutes } from './modules/admin';
@@ -290,6 +292,8 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
   registerPracticeRoutes(app, deps);
   registerProgressRoutes(app, deps);
   registerInsightsRoutes(app, deps);
+  registerDashboardRoutes(app, services, deps);
+  registerSchoolRoutes(app, deps);
   registerReportRoutes(app, deps);
   registerMfaRoutes(app, services);
   registerAdminRoutes(app, deps);

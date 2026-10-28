@@ -3,7 +3,7 @@
  * ids of other users' resources return 404.
  *
  *   GET    /v1/me                    profile, consent, sign-in methods
- *   PATCH  /v1/me                    board, classLevel, displayName, locale (API-8 allowlist; D-039: no school or city)
+ *   PATCH  /v1/me                    board, classLevel, displayName, locale, weeklyGoal; school only with consent (D-014)
  *   DELETE /v1/me                    anonymise + revoke now, purge ≤ 30 days (fresh session)
  *   POST   /v1/me/merge-guest        guest progress, once per account (256 KB body)
  *   POST   /v1/me/consent/start      start the parental-consent flow (built-in flow: modules/consent.ts)
@@ -24,6 +24,9 @@ import { ApiProblem } from '../errors';
 import { authEvent } from '../logging';
 import { policies } from '../policy';
 import { BoardSchema, ClassLevelSchema, ConsentStateSchema, LocaleSchema, RoleSchema, withProblems } from '../schemas';
+import { DASHBOARD } from '@soyl/shared/config/learning';
+import { effectiveWeeklyGoal } from '@soyl/shared/learning/dashboard';
+import { SchoolInput, SchoolSchema } from './schools-schemas';
 import type { AppDeps, Services } from '../services';
 import { GuestProgress, MergeGuestResponse } from '../contract/guest';
 import { validateDisplayName } from '../domain/display-name';
@@ -43,6 +46,10 @@ const MeResponse = z
     publicName: z.string(),
     locale: z.string(),
     consent: ConsentStateSchema,
+    /** D-014: null unless consent is granted and a school is saved. */
+    school: SchoolSchema.nullable(),
+    /** Practice questions to solve per IST week (the dashboard goal); isDefault until you pick one. */
+    weeklyGoal: z.object({ target: z.number().int(), isDefault: z.boolean() }),
     methods: z.object({ phone: z.string().nullable(), email: z.string().nullable(), google: z.boolean() }),
     guestMergedAt: z.iso.datetime().nullable(),
     createdAt: z.iso.datetime(),
@@ -55,9 +62,19 @@ const PatchMeBody = z
     board: BoardSchema.optional(),
     classLevel: ClassLevelSchema.optional(),
     locale: LocaleSchema.optional(),
+    /**
+     * D-014: pick ({ schoolId }) or add ({ name, city, state?, board? }) your school; 403 consent_required
+     * unless consent is granted. null clears it (always allowed).
+     */
+    school: SchoolInput.optional(),
+    /** Weekly goal (practice questions solved per IST week); null resets it to the default. */
+    weeklyGoal: z.number().int().min(DASHBOARD.weeklyGoal.min).max(DASHBOARD.weeklyGoal.max).nullable().optional(),
   })
   .refine((b) => Object.keys(b).length > 0, 'at least one field')
-  .meta({ id: 'PatchMe', description: 'API-8: only these fields; role, status, xp, school, city etc. are rejected (400; D-039: no school or city).' });
+  .meta({
+    id: 'PatchMe',
+    description: 'API-8: only these fields; role, status, xp, schoolId, city etc. are rejected (400). A school is saved through `school`, and only with consent granted (D-014).',
+  });
 
 const SessionsResponse = z.object({
   sessions: z.array(
@@ -86,6 +103,8 @@ export function registerMeRoutes(appIn: FastifyInstance, services: Services, dep
       publicName: publicName(user.id, p?.publicNameSeed ?? 0),
       locale: p?.locale ?? 'en-IN',
       consent,
+      school: null,
+      weeklyGoal: effectiveWeeklyGoal(null),
       methods: await services.identity.methods(userId),
       guestMergedAt: p?.guestMergedAt?.toISOString() ?? null,
       createdAt: user.createdAt.toISOString(),
@@ -104,6 +123,7 @@ export function registerMeRoutes(appIn: FastifyInstance, services: Services, dep
     handler: async (request) => {
       const userId = request.auth!.user.id;
       const b = request.body;
+      if (b.school !== undefined || b.weeklyGoal !== undefined) throw new ApiProblem('not_implemented');
       const set: Partial<typeof profiles.$inferInsert> = {};
       if (b.displayName !== undefined) {
         if (b.displayName === null) set.displayName = null;

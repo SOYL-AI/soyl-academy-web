@@ -192,6 +192,10 @@ export const RATE_LIMITS = {
   'progress.write.user': { key: 'user', limit: 120, windowSeconds: 60 },
   /** Learning insights reads (activity heatmap, mastery, player card): aggregate queries, so tighter than api.user. */
   'insights.read.user': { key: 'user', limit: 60, windowSeconds: 60 },
+  /** The student dashboard (GET /v1/me/dashboard): one call runs every aggregate, so tighter than the insights reads. */
+  'dashboard.read.user': { key: 'user', limit: 30, windowSeconds: 60 },
+  /** School search for the profile picker (GET /v1/schools); the web debounces typing. */
+  'schools.search.user': { key: 'user', limit: 60, windowSeconds: 60 },
   /** AUTH-11: TOTP enrol/confirm/verify/disable calls per user (wrong codes also lock, see MFA.failures). */
   'mfa.user': { key: 'user', limit: 20, windowSeconds: 15 * 60 },
   /** SOYL Coins writes (check-in, equip, address, cancel) and redemptions per user (ADR-021). */
