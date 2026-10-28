@@ -293,7 +293,7 @@ function Retention({ d, name }: { d: AdminAnalyticsRetention } & Named) {
   return (
     <Panel title="Retention by sign-up week">
       <p className={s.muted}>Share of each week&apos;s new students who were active exactly N days after signing up. A dash means no one in the week has reached that day yet.</p>
-      <div className={s.tableScroll}>
+      <div className={s.tableScroll} tabIndex={0} role="region" aria-label="Retention by sign-up week">
         <table className={s.table} data-testid="retention">
           <caption className={s.caption}>D1, D7 and D30 retention</caption>
           <thead>

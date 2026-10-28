@@ -53,7 +53,8 @@ export function CsvButton({ name, header, rows }: { name: string; header: string
 export function DataTable({ caption, header, rows, csvName, numeric = [] }: { caption: string; header: string[]; rows: CsvCell[][]; csvName: string; numeric?: number[] }) {
   return (
     <div className={s.tableBlock}>
-      <div className={s.tableScroll}>
+      {/* Focusable so keyboard users can scroll a wide table at 360 px (axe scrollable-region-focusable). */}
+      <div className={s.tableScroll} tabIndex={0} role="region" aria-label={caption}>
         <table className={s.table}>
           <caption className={s.caption}>{caption}</caption>
           <thead>
