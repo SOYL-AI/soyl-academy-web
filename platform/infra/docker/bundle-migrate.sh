@@ -5,7 +5,7 @@
 #
 #   migrate-cli.mjs         @soyl/db CLI (migrate, seed catalog, admin bootstrap)
 #   migrate-entrypoint.mjs  Entra token + role bootstrap, then runs the steps (see that file)
-#   release-cli.mjs         pg-boss schema install (worker `migrate`) + content pipeline CLI
+#   release-cli.mjs         pg-boss schema install (worker `migrate`) + content pipeline CLI + billing CLI
 #   db/migrations, catalog, content/authored, content-templates/exemplars   data read at runtime
 set -eu
 OUT="${1:?usage: bundle-migrate.sh <out-dir>}"

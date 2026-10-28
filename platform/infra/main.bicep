@@ -111,6 +111,10 @@ param kvSecretRefs bool
 @description('Key Vault secrets exposed to the apps as env vars: [{ secretName, envName, apps }]. Names only, never values.')
 param appSecrets array
 
+// ---------- billing (ADR-016, D-038, runbooks/billing-go-live.md) ----------
+@description('Wire Razorpay: RAZORPAY_PROVIDER=razorpay plus the three Razorpay Key Vault secret references on the api and worker, and the billing operator job. true ONLY after the owner has created the Key Vault secrets razorpay-key-id, razorpay-key-secret and razorpay-webhook-secret: an app that references a missing secret cannot start. Needs kvSecretRefs. Independent of BILLING_ENABLED (purchases), which stays in appSettings.')
+param deployBilling bool = false
+
 // ---------- AI (ADR-008) ----------
 @description('Create the Azure OpenAI / Speech / Content Safety accounts (and their private endpoints). false = AI off (M4); the AZURE_* env vars are then empty.')
 param deployAi bool
@@ -221,6 +225,9 @@ module kv 'modules/keyvault.bicep' = {
     privateDnsZoneId: network.outputs.zoneIds.keyVault
     workspaceId: monitoring.outputs.workspaceId
     allowedIps: keyVaultAllowedIps
+    // Billing gate: with billing wired, the deployment stops here (ResourceNotFound) unless the owner
+    // has created all three Razorpay secrets; the apps module depends on this one and stays untouched.
+    requiredSecretNames: billingWired ? map(razorpaySecrets, s => s.secretName) : []
     secretReaderPrincipalIds: [
       ids.outputs.api.principalId
       ids.outputs.worker.principalId
@@ -478,6 +485,32 @@ var commonEnv = concat(
   })
 )
 
+// Razorpay (ADR-016, D-038): secret NAMES only. The owner sets the values in Key Vault
+// (runbooks/billing-go-live.md); Bicep never creates these secrets. The worker needs all three too:
+// billing/config.ts refuses RAZORPAY_PROVIDER=razorpay without them (reconciliation and expiry jobs),
+// and so does the billing operator job ('billing').
+var razorpaySecrets = [
+  {
+    secretName: 'razorpay-key-id'
+    envName: 'RAZORPAY_KEY_ID'
+    apps: ['api', 'worker', 'billing']
+  }
+  {
+    secretName: 'razorpay-key-secret'
+    envName: 'RAZORPAY_KEY_SECRET'
+    apps: ['api', 'worker', 'billing']
+  }
+  {
+    secretName: 'razorpay-webhook-secret'
+    envName: 'RAZORPAY_WEBHOOK_SECRET'
+    apps: ['api', 'worker', 'billing']
+  }
+]
+// The provider setting, the secret references and the job come and go together, so an app never
+// selects Razorpay without its keys (it would refuse to start) and never references a secret while
+// secret references are off (first deploy).
+var billingWired = deployBilling && kvSecretRefs
+
 module apps 'modules/containerApps.bicep' = {
   name: 'container-apps'
   params: {
@@ -495,8 +528,17 @@ module apps 'modules/containerApps.bicep' = {
     workerIdentity: ids.outputs.worker
     migratorIdentity: ids.outputs.migrator
     commonEnv: commonEnv
-    secretRefs: kvSecretRefs ? appSecrets : []
+    secretRefs: kvSecretRefs ? concat(appSecrets, billingWired ? razorpaySecrets : []) : []
     keyVaultUri: kv.outputs.uri
+    deployBillingJob: billingWired
+    billingEnv: billingWired
+      ? [
+          {
+            name: 'RAZORPAY_PROVIDER'
+            value: 'razorpay'
+          }
+        ]
+      : []
     apiCpu: apiCpu
     apiMemory: apiMemory
     apiMinReplicas: apiMinReplicas
@@ -573,6 +615,8 @@ output apiFqdn string = apps.outputs.apiFqdn
 output workerAppName string = apps.outputs.workerName
 output migrateJobName string = apps.outputs.migrateJobName
 output releaseJobName string = apps.outputs.releaseJobName
+@description('The billing operator job (empty until billing is wired).')
+output billingJobName string = apps.outputs.billingJobName
 output keyVaultName string = kv.outputs.name
 output keyVaultUri string = kv.outputs.uri
 output storageAccountName string = storage.outputs.name

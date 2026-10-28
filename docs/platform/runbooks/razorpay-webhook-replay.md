@@ -24,6 +24,17 @@ export RAZORPAY_WEBHOOK_SECRET=...       # Key Vault: razorpay-webhook-secret
 Output is one JSON object per line. Exit codes: 0 ok, 1 error, 2 usage, 3 drift/rejection found.
 Always start with `--dry-run`.
 
+**Production:** the Key Vault and the database are private, so do not export keys locally. Run the
+same commands inside Azure with the job `caj-soyl-billing-prod` (worker identity, Razorpay secrets as
+Key Vault references; it exists once billing is wired, [billing-go-live.md](billing-go-live.md)):
+
+```bash
+az containerapp job start -g rg-soyl-platform-prod -n caj-soyl-billing-prod --image "$SOYL_MIGRATE_IMAGE" \
+  --container-name billing --args "/app/migrate-entrypoint.mjs" "billing" "reconcile" "--dry-run"
+```
+
+Read the output in Log Analytics (billing-go-live.md §5 shows the query).
+
 ## 1. Symptoms → what to run
 
 | Symptom | First command |
@@ -116,8 +127,12 @@ Razorpay dashboard → Settings → Webhooks → Add:
 - Secret: the value of `razorpay-webhook-secret`
 - Active events: `subscription.authenticated`, `subscription.activated`, `subscription.charged`,
   `subscription.pending`, `subscription.halted`, `subscription.cancelled`, `subscription.completed`,
-  `subscription.updated`, `payment.authorized`, `payment.captured`, `payment.failed`, `order.paid`,
-  `refund.created`, `refund.processed`, `refund.failed`
+  `subscription.updated`, `subscription.paused`, `subscription.resumed`, `payment.authorized`,
+  `payment.captured`, `payment.failed`, `order.paid`, `refund.created`, `refund.processed`,
+  `refund.failed` (exactly `HANDLED_EVENTS` in `billing/webhooks.ts`)
+
+Production (live account, OA-21): follow [billing-go-live.md](billing-go-live.md) instead; it also runs
+`sync-plans` inside Azure.
 
 Then `npm run billing -w @soyl/api -- sync-plans --dry-run`, `sync-plans`, and a test-mode purchase of
 each plan (UPI `success@razorpay`, card 4111 1111 1111 1111).
