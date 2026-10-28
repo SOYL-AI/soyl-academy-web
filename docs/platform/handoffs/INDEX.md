@@ -32,6 +32,7 @@ Every handoff note in this folder, by area and date. Format of a handoff: AGENTS
 | 2026-10-27 | ai-gateway | M4 | [AI gateway: credits, streaming, moderation, retrieval, uploads, evaluation, spend](2026-10-27-ai-gateway-m4.md) |
 | 2026-10-27 | billing-razorpay | M4 | [Razorpay billing: plans, purchases, webhooks, entitlements, reconciliation](2026-10-27-billing-razorpay-m4.md) |
 | 2026-10-27 (merged 2026-10-28) | backend-api | M5 | [Follow-ups: weekly leagues, live event detail, formative-only flags, AI answer reports](2026-10-27-backend-api-m5-followups.md) |
+| 2026-10-28 | ai-gateway + backend-api + db-schema | M6 | [D-044 credits (new values, feature-gated paper-from-upload, learning bonuses, guide and history) and student avatars (migration 0014)](2026-10-28-ai-gateway-credits-avatars.md) |
 
 ## Web and design system
 

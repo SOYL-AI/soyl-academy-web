@@ -4,7 +4,7 @@
 > Design intent: [ARCHITECTURE §6](ARCHITECTURE.md#6-data-model-postgresql). Decisions: [ADR-004](adr/004-orm-drizzle.md) (Drizzle, migrations, roles), [ADR-006](adr/006-content-storage.md) (releases), [ADR-010](adr/010-content-api-caching-and-answer-separation.md) (answer separation), [ADR-012](adr/012-test-engine.md) (test engine), [ADR-013](adr/013-ai-gateway.md) (credits), [ADR-016](adr/016-billing-razorpay.md) (billing).
 > Package guide: [`platform/db/README.md`](../../platform/db/README.md). Personal data: [`platform/db/PII.md`](../../platform/db/PII.md).
 
-PostgreSQL 17 on Azure (PostgreSQL Flexible Server, Entra-only auth), embedded PostgreSQL 18 locally and in unit tests, `pgvector/pgvector:pg17` in CI. **73 tables and 2 views** across 13 schema files, created by **14 migrations** (0000 to 0013).
+PostgreSQL 17 on Azure (PostgreSQL Flexible Server, Entra-only auth), embedded PostgreSQL 18 locally and in unit tests, `pgvector/pgvector:pg17` in CI. **73 tables and 2 views** across 13 schema files, created by **15 migrations** (0000 to 0014).
 
 ## Conventions
 
@@ -35,7 +35,7 @@ In Azure the managed identities log in with Entra tokens (no passwords) and are 
 
 | Area (schema file) | # | Tables | Notes |
 |---|---|---|---|
-| Identity (`identity.ts`) | 9 | `users`, `sessions`, `accounts`, `verifications`, `schools`, `profiles`, `guardian_links`, `consent_status`, `consent_records` (0012, D-039) | Better Auth's tables plus ours. `role` lives on `users` (Better Auth admin plugin), not `profiles`. Email/phone have generated normalised columns with unique indexes. `verifications.identifier` stores `otp:<purpose>:<channel>:<HMAC(identifier)>`, not the raw address. `sessions.mfa_verified_at` added in 0005. Schools (0013): `name_normalized`/`city_normalized` dedupe keys (unique per name + city for `source = 'student'` rows; `text_pattern_ops` indexes for prefix search), `source` (`student`/`udise`/`cbse`), `verified_at`, `created_by_user_id` (set null on user delete); `profiles.weekly_goal`. School and city are stored and shown only with consent `granted` (D-014). |
+| Identity (`identity.ts`) | 9 | `users`, `sessions`, `accounts`, `verifications`, `schools`, `profiles`, `guardian_links`, `consent_status`, `consent_records` (0012, D-039) | Better Auth's tables plus ours. `role` lives on `users` (Better Auth admin plugin), not `profiles`. Email/phone have generated normalised columns with unique indexes. `verifications.identifier` stores `otp:<purpose>:<channel>:<HMAC(identifier)>`, not the raw address. `sessions.mfa_verified_at` added in 0005. Schools (0013): `name_normalized`/`city_normalized` dedupe keys (unique per name + city for `source = 'student'` rows; `text_pattern_ops` indexes for prefix search), `source` (`student`/`udise`/`cbse`), `verified_at`, `created_by_user_id` (set null on user delete); `profiles.weekly_goal`. School and city are stored and shown only with consent `granted` (D-014). Avatars (0014): `profiles.avatar_id` / `avatar_bg`, checked against `@soyl/shared/config/avatars` (64 animal ids, 8 background themes) and set or cleared together (`profiles_avatar_pair_check`); both null = the default avatar (public-name animal, seeded background). |
 | Catalog (`catalog.ts`) | 7 | `boards`, `classes`, `subjects`, `syllabus_versions`, `chapters`, `topics`, `learning_outcomes` | Seeded from `platform/catalog/` by `db seed catalog` (idempotent; `syllabus_versions` holds per-file hash). `boards`/`classes` have no `academic_year`. |
 | Content (`content.ts`) | 10 | `content_releases`, `decks`, `notes`, `flashcard_sets`, `questions`, `question_keys`, `question_stats`, `assets`, `content_status_events`, `content_chunks` | DB-6 split (below). `content_chunks` holds tutor retrieval chunks: `embedding vector(1536)` + HNSW index where pgvector exists, and a generated `search_vector` tsvector + GIN index (0008) as the full-text fallback (ADR-014). |
 | Release membership (`release-items.ts`) | 1 | `content_release_items` | Which item rows each release contains, so reads go through the **active** release and rollback works (ADR-006/010). |
@@ -64,7 +64,8 @@ Total: 9 + 7 + 10 + 1 + 3 + 10 + 7 + 5 + 3 + 3 + 6 + 5 + 4 = **73 tables**.
 
 ### Credit ledger
 
-- `credit_ledger` is append-only for `soyl_app`. Kinds: `grant` (> 0), `reserve` (< 0), `charge` (≥ 0, the unused remainder returned), `refund` (= the reserved amount), `expire` (< 0). Plan top-ups are `grant` rows with action `plan_topup`.
+- `credit_ledger` is append-only for `soyl_app`. Kinds: `grant` (> 0), `reserve` (< 0), `charge` (≥ 0, the unused remainder returned), `refund` (= the reserved amount), `expire` (< 0), and since 0014 (D-044) `bonus_goal` / `bonus_streak` (> 0: bonus credits for meeting the daily practice goal and for a 7-day streak milestone). Plan top-ups are `grant` rows with action `plan_topup`.
+- Partial unique index `credit_ledger_one_bonus_per_day` (0014): at most one bonus per kind per user per IST day, so concurrent triggers are idempotent. Bonus rows count towards their IST day's balance only, so they lapse at the 00:00 IST reset like the daily grant.
 - **Trigger `soyl_credit_ledger_settlement_check`** (0002): a `charge` or `refund` must match an existing `reserve` of the same user and request; a refund returns exactly the reserved credits; a charge cannot return more than was reserved.
 - Partial unique index `credit_ledger_one_resolution`: each reservation is resolved once (charge and refund race; one loses).
 - One daily grant per user per IST day; `(kind, request_id)` unique.
@@ -100,8 +101,9 @@ All are reversible (`NNNN_name.sql` + `NNNN_name.down.sql`, plus drizzle snapsho
 | 0011 | `0011_coins` | `coin_wallets`, `coin_ledger` (append-only, `soyl_coin_ledger_guard` balance trigger), `coin_redemptions`; conventions list `coin_ledger` as append-only | backend-api (SOYL Coins, ADR-021) | **no** (pending) |
 | 0012 | `0012_consent_interim` | `consent_records`; `profiles.public_name_seed` | backend-api (consent interim, D-039, ADR-022) | **no** (pending) |
 | 0013 | `0013_school_capture` | `schools.name_normalized`, `city_normalized` (backfilled), `source`, `verified_at`, `created_by_user_id`; partial unique index on student schools; prefix-search indexes; `profiles.weekly_goal` | backend-api (dashboard + school capture, D-014) | **no** (pending) |
+| 0014 | `0014_avatars_credit_bonus` | `credit_ledger` kinds `bonus_goal` / `bonus_streak` (kind and amount checks widened) and `credit_ledger_one_bonus_per_day`; `profiles.avatar_id`, `avatar_bg` with config checks and the pair check. Down deletes bonus rows first (lossy for credit history) | ai-gateway (credits D-044, avatars) | **no** (pending) |
 
-Production (dark) was last migrated on 2026-10-28 from images built at `fe404f0`, so it has 0000 to 0010. 0011 to 0013 apply on the next backend update ([runbook](runbooks/update-dark-backend.md)).
+Production (dark) was last migrated on 2026-10-28 from images built at `fe404f0`, so it has 0000 to 0010. 0011 to 0014 apply on the next backend update ([runbook](runbooks/update-dark-backend.md)).
 
 Commands (from `platform/`; without `DATABASE_URL` the CLI starts the persistent local embedded server at `platform/db/.data/dev`, port 54320):
 

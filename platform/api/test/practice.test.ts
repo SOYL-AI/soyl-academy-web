@@ -226,7 +226,7 @@ describe('POST /v1/practice/answers', () => {
     expect((await c.patch(`/v1/practice/answers/${id}`, { marks: q.marks + 1 })).statusCode).toBe(400);
     expect((await c.patch(`/v1/practice/answers/${id}`, { marks: 0.25 })).statusCode).toBe(400);
     const ok = await c.patch(`/v1/practice/answers/${id}`, { marks: q.marks });
-    expect(ok.json()).toEqual({ answerId: id, marksAwarded: q.marks, maxMarks: q.marks, grading: 'self' });
+    expect(ok.json()).toEqual({ answerId: id, marksAwarded: q.marks, maxMarks: q.marks, grading: 'self', creditBonuses: [] });
 
     // API-7: someone else's answer is 404; guests need to sign in.
     const other = h.client();

@@ -72,7 +72,7 @@ Within each wave: core subjects and Hindi first, then electives.
 | Custom test builder (pick chapters → paper from question bank) | 🔒 prompt login | ✅ **free** | ✅ |
 | Results, analytics, XP, streaks, leaderboards, rank cards | — | ✅ | ✅ |
 | Self-evaluation of written answers using the official-style marking scheme | — | ✅ **free** | ✅ |
-| AI features (tutor, photo doubts, AI evaluation, paper-from-upload, explain-this-slide) | 🔒 prompt login | ✅ 25 credits/day | ✅ plan credits |
+| AI features (tutor, photo doubts, AI evaluation, paper-from-upload, explain-this-slide) | 🔒 prompt login | ✅ 50 credits/day (D-044) | ✅ plan credits |
 
 **Rules**
 - Learning content and tests are **never paywalled** during beta. Only AI consumes credits. No other payments for at least the first 2–3 months.
@@ -115,9 +115,9 @@ All prices INR, GST-inclusive, stored in `platform/shared/config/plans.ts`. **Ow
 
 | Plan | Monthly | Yearly | Includes |
 |---|---|---|---|
-| Free | ₹0 | — | 25 credits/day |
-| Plus | ₹199 | ₹1,499 | 40 credits/day (paper-from-upload moved to Pro: it costs 60 credits, D-034) |
-| Pro | ₹299 | ₹2,499 | 60 credits/day, everything in Plus, priority AI evaluation, parent weekly report |
+| Free | ₹0 | — | 50 credits/day (D-044) |
+| Plus | ₹199 | ₹1,499 | 100 credits/day (D-044); no paper-from-upload: a Pro and Board Exam Pass feature, gated by plan feature (D-034) |
+| Pro | ₹299 | ₹2,499 | 150 credits/day (D-044), everything in Plus, paper-from-upload, priority AI evaluation, parent weekly report |
 | Board Exam Pass | ₹499 one-time | — | Pro benefits until 31 March 2027 |
 
 - **Payments: Razorpay only** (Subscriptions for monthly/yearly with UPI AutoPay and cards; one-time Orders for Board Exam Pass).

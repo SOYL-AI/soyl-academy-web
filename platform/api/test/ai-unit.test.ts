@@ -301,7 +301,7 @@ describe('time, config, ids, pricing', () => {
   });
 
   it('config: local stand-ins by default, disabled (fail closed) elsewhere, mocks refused in production (GEN-3)', () => {
-    expect(loadAiConfig({ isLocal: true, isProduction: false, appEnv: 'test' }, {})).toMatchObject({ provider: 'mock', contentSafety: { provider: 'local' }, blob: { provider: 'memory' }, dailySpendCapPaise: 200_000 });
+    expect(loadAiConfig({ isLocal: true, isProduction: false, appEnv: 'test' }, {})).toMatchObject({ provider: 'mock', contentSafety: { provider: 'local' }, blob: { provider: 'memory' }, dailySpendCapPaise: 300_000 }); // D-044: ₹3,000 default
     expect(loadAiConfig({ isLocal: false, isProduction: true, appEnv: 'prod' }, {})).toMatchObject({ provider: 'disabled', embeddings: 'disabled', contentSafety: { provider: 'disabled' }, blob: { provider: 'disabled' } });
     expect(() => loadAiConfig({ isLocal: false, isProduction: true, appEnv: 'prod' }, { AI_PROVIDER: 'mock' })).toThrow(ConfigError);
     expect(() => loadAiConfig({ isLocal: false, isProduction: true, appEnv: 'prod' }, { CONTENT_SAFETY_PROVIDER: 'local' })).toThrow(ConfigError);
@@ -317,14 +317,14 @@ describe('time, config, ids, pricing', () => {
     expect(requestIdFor('u1', null)).not.toBe(requestIdFor('u1', null));
   });
 
-  it('prices match CONTEXT §6 and evaluation is per answer, capped at 40', () => {
+  it('prices match CONTEXT §6 (D-044) and evaluation is per answer, capped at 50', () => {
     expect(quoteCredits(AI_ACTIONS['quick-doubt'])).toBe(1);
-    expect(quoteCredits(AI_ACTIONS['hard-doubt'])).toBe(6);
-    expect(quoteCredits(AI_ACTIONS['photo-doubt'])).toBe(10);
-    expect(quoteCredits(AI_ACTIONS['evaluate-answer'], 5)).toBe(6);
-    expect(quoteCredits(AI_ACTIONS['evaluate-paper'], 3)).toBe(18);
-    expect(quoteCredits(AI_ACTIONS['evaluate-paper'], 12)).toBe(40);
-    expect(quoteCredits(AI_ACTIONS['paper-from-upload'])).toBe(60);
+    expect(quoteCredits(AI_ACTIONS['hard-doubt'])).toBe(7);
+    expect(quoteCredits(AI_ACTIONS['photo-doubt'])).toBe(12);
+    expect(quoteCredits(AI_ACTIONS['evaluate-answer'], 5)).toBe(7);
+    expect(quoteCredits(AI_ACTIONS['evaluate-paper'], 3)).toBe(21);
+    expect(quoteCredits(AI_ACTIONS['evaluate-paper'], 12)).toBe(50);
+    expect(quoteCredits(AI_ACTIONS['paper-from-upload'])).toBe(80);
     expect(statusFor(0.5)).toBe('normal');
     expect(statusFor(0.8)).toBe('degraded');
     expect(statusFor(1)).toBe('paused');

@@ -9,6 +9,7 @@ import { and, eq } from 'drizzle-orm';
 import { consentStatus, leagueMemberships, leagues, profiles, users, xpEvents } from '@soyl/db';
 import { LEAGUE_TIERS, LEAGUES, leagueZones } from '@soyl/shared/config/gamification';
 import { publicName } from '@soyl/shared/config/public-names';
+import { defaultAvatar } from '@soyl/shared/config/avatars';
 import { createHarness, type Client, type Harness } from './helpers';
 import {
   closeEndedLeagues,
@@ -181,14 +182,16 @@ describe('GET /v1/leagues/current', () => {
     expect(first.json()).toMatchObject({ status: 'active', scope: 'class', cohort: { key: 'cisce-9', board: 'cisce', classLevel: 9 }, standings: [{ rank: 1, name: publicName(a.id), xp: 30, isMe: true }] });
     for (const s of [b, c, other]) expect((await s.c.get('/v1/leagues/current')).statusCode).toBe(200);
 
+    // Avatars next to the public names: a picked one, or the public-name animal by default.
+    expect((await a.c.patch('/v1/me', { avatar: { id: 'owl', bg: 'coral' } })).statusCode).toBe(200);
     const res = await c.c.get('/v1/leagues/current');
     const body = res.json();
     expect(body.league).toMatchObject({ tier: { level: 1, key: 'bronze' }, division: 1, size: 3, capacity: LEAGUES.size, promotionPlaces: 1, relegationPlaces: 0, isBottomTier: true, isTopTier: false, minXpToPromote: 1 });
     expect(body.week).toEqual({ start: WEEK, end: '2026-11-01', startsAt: '2026-10-25T18:30:00.000Z', endsAt: '2026-11-01T18:30:00.000Z' });
     expect(body.standings).toEqual([
-      { rank: 1, name: publicName(b.id), xp: 50, zone: 'promotion', isMe: false },
-      { rank: 2, name: publicName(a.id), xp: 30, zone: 'safe', isMe: false },
-      { rank: 3, name: publicName(c.id), xp: 0, zone: 'safe', isMe: true },
+      { rank: 1, name: publicName(b.id), avatar: defaultAvatar(b.id), xp: 50, zone: 'promotion', isMe: false },
+      { rank: 2, name: publicName(a.id), avatar: { id: 'owl', bg: 'coral' }, xp: 30, zone: 'safe', isMe: false },
+      { rank: 3, name: publicName(c.id), avatar: defaultAvatar(c.id), xp: 0, zone: 'safe', isMe: true },
     ]);
     expect(body.me).toEqual({ rank: 3, xp: 0, zone: 'safe' });
     expect(body.lastWeek).toBeNull();
@@ -204,7 +207,7 @@ describe('GET /v1/leagues/current', () => {
     await h.t.db.update(consentStatus).set({ status: 'revoked' }).where(eq(consentStatus.userId, b.id));
     h.consent.setStatus(b.id, 'revoked');
     const after = (await c.c.get('/v1/leagues/current')).json();
-    expect(after.standings[0]).toEqual({ rank: 1, name: null, xp: 50, zone: 'promotion', isMe: false });
+    expect(after.standings[0]).toEqual({ rank: 1, name: null, avatar: null, xp: 50, zone: 'promotion', isMe: false });
     expect((await b.c.get('/v1/leagues/current')).statusCode).toBe(403);
 
     // Account deletion: the student leaves the standings.

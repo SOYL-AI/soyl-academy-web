@@ -97,11 +97,11 @@ describe('streaming answers', () => {
     expect(res.headers['content-type']).toContain('text/event-stream');
     expect(res.headers['cache-control']).toBe('no-store');
     const ev = sse(res);
-    expect(ev[0]).toMatchObject({ event: 'meta', data: { action: 'quick-doubt', credits: 1, balance: 24, tier: 'small', degraded: false, mode: 'hint', language: 'english' } });
+    expect(ev[0]).toMatchObject({ event: 'meta', data: { action: 'quick-doubt', credits: 1, balance: 49, tier: 'small', degraded: false, mode: 'hint', language: 'english' } });
     const text = textOf(ev);
     expect(text).toContain('[MOCK] Hint');
     expect(text).toMatch(/based on: /); // grounded in our lessons
-    expect(ev.at(-1)).toMatchObject({ event: 'done', data: { status: 'succeeded', creditsCharged: 1, balance: 24 } });
+    expect(ev.at(-1)).toMatchObject({ event: 'done', data: { status: 'succeeded', creditsCharged: 1, balance: 49 } });
     const conversationId = String(ev[0]!.data.conversationId);
     const [req] = await h.t.db.select().from(aiRequests).where(eq(aiRequests.requestId, String(ev[0]!.data.requestId)));
     expect(req).toMatchObject({ status: 'succeeded', creditsQuoted: 1, creditsCharged: 1, model: 'mock', simulated: true, planId: 'free', conversationId });
@@ -114,7 +114,7 @@ describe('streaming answers', () => {
     const second = sse(await c.post('/v1/ai/quick-doubt', { message: 'Please show me the full solution', conversationId }));
     expect(second[0]!.data).toMatchObject({ mode: 'full', conversationId });
     expect(textOf(second)).toContain('[MOCK] Full solution');
-    expect(await balance(c)).toBe(23);
+    expect(await balance(c)).toBe(48);
 
     const list = (await c.get('/v1/ai/conversations')).json();
     expect(list.conversations[0]).toMatchObject({ id: conversationId, kind: 'tutor', chapterId: SCI });
@@ -163,11 +163,11 @@ describe('moderation (AC-15, F-027)', () => {
     for (const [message, kind] of cases) {
       const ev = sse(await c.post('/v1/ai/quick-doubt', { message }));
       const refusal = ev.find((e) => e.event === 'refusal')!;
-      expect(refusal.data, message).toMatchObject({ kind, creditsRefunded: 1, balance: 25 });
+      expect(refusal.data, message).toMatchObject({ kind, creditsRefunded: 1, balance: 50 });
       expect(ev.some((e) => e.event === 'delta')).toBe(false);
       if (kind === 'self_harm') expect(String(refusal.data.message)).toMatch(/14416/);
     }
-    expect(await balance(c)).toBe(25);
+    expect(await balance(c)).toBe(50);
     const rows = await h.t.db.select({ status: aiRequests.status, flags: aiRequests.moderationFlags }).from(aiRequests).where(eq(aiRequests.userId, id));
     expect(rows.map((r) => r.status).sort()).toEqual(['moderated', 'moderated', 'moderated', 'refused']);
     expect(JSON.stringify(rows.map((r) => r.flags))).not.toContain('nudes'); // reasons only, never the text
@@ -184,7 +184,7 @@ describe('moderation (AC-15, F-027)', () => {
     } finally {
       h.services.ai.runtime.moderation = new LocalRuleModerationProvider();
     }
-    expect(await balance(c)).toBe(25);
+    expect(await balance(c)).toBe(50);
   });
 
   it('never shows unsafe model output: the blocked chunk stops the stream and the credits are refunded', async () => {
@@ -198,7 +198,7 @@ describe('moderation (AC-15, F-027)', () => {
     } finally {
       h.setProvider(mockProvider());
     }
-    expect(await balance(c)).toBe(25);
+    expect(await balance(c)).toBe(50);
   });
 });
 
@@ -207,14 +207,14 @@ describe('settlement (F-008, AC-08)', () => {
     const { c } = await h.member();
     h.setProvider(mockProvider({ failOnCall: () => new Error('HTTP 500') }));
     const failed = sse(await c.post('/v1/ai/hard-doubt', { message: 'Why is HCl a strong acid?' }));
-    expect(failed.find((e) => e.event === 'error')!.data).toMatchObject({ code: 'ai_failed', creditsRefunded: 6 });
-    expect(await balance(c)).toBe(25);
+    expect(failed.find((e) => e.event === 'error')!.data).toMatchObject({ code: 'ai_failed', creditsRefunded: 7 });
+    expect(await balance(c)).toBe(50);
 
     h.setProvider(new ScriptedProvider([sentence(6), sentence(6), sentence(6)], { failAfter: 2 }));
     const cut = sse(await c.post('/v1/ai/hard-doubt', { message: 'Explain neutralisation step by step' }));
     expect(textOf(cut).length).toBeGreaterThan(400);
-    expect(cut.find((e) => e.event === 'error')!.data).toMatchObject({ code: 'ai_interrupted', creditsCharged: 6 });
-    expect(await balance(c)).toBe(19);
+    expect(cut.find((e) => e.event === 'error')!.data).toMatchObject({ code: 'ai_interrupted', creditsCharged: 7 });
+    expect(await balance(c)).toBe(43);
     h.setProvider(mockProvider());
   });
 
@@ -233,7 +233,7 @@ describe('settlement (F-008, AC-08)', () => {
     } finally {
       h.setProvider(mockProvider());
     }
-    expect(await balance(c)).toBe(24);
+    expect(await balance(c)).toBe(49);
     const rows = await h.t.db.select({ status: aiRequests.status, errorCode: aiRequests.errorCode }).from(aiRequests).where(eq(aiRequests.userId, id));
     expect(rows.every((r) => r.status === 'cancelled' && r.errorCode === 'client_disconnected')).toBe(true);
   });
@@ -245,7 +245,7 @@ describe('settlement (F-008, AC-08)', () => {
     const again = await c.request('POST', '/v1/ai/quick-doubt', { body: { message: 'What is an indicator?' }, headers });
     expect(again.statusCode).toBe(409);
     expect(again.json().code).toBe('duplicate_request');
-    expect(await balance(c)).toBe(24);
+    expect(await balance(c)).toBe(49);
     expect((await c.request('POST', '/v1/ai/quick-doubt', { body: { message: 'x' }, headers: { 'idempotency-key': 'bad key!' } })).statusCode).toBe(400);
   });
 });

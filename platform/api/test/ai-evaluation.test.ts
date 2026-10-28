@@ -1,11 +1,14 @@
 /**
- * AI evaluation replacing M3's 501 (ARCHITECTURE §10, AC-14, F-028): quote per answer (cap 40), async
+ * AI evaluation replacing M3's 501 (ARCHITECTURE §10, AC-14, F-028): quote per answer (cap 50, D-044), async
  * job, step marks clamped to each step's maximum, confidence and the "check with your teacher" label,
  * prompt-injection fixtures (marks never exceed maxima), unsafe answers not sent, partial charging,
  * refunds on failure, the sweeper/job interplay, the worker sweep — and AI marks never touch scores,
  * percentiles or ranks.
  */
+import { randomUUID } from 'node:crypto';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+import { AI_ACTIONS } from '@soyl/shared/config/ai-actions';
+import { getPlan } from '@soyl/shared/config/plans';
 import { eq, sql } from 'drizzle-orm';
 import { aiJobs, attempts, testScoreBuckets, tests } from '@soyl/db';
 import { MockProvider } from '@soyl/ai-core';
@@ -50,7 +53,14 @@ afterAll(async () => {
   await h?.close();
 });
 
-/** Full-paper evaluation can cost up to 40 credits: more than the free 25 a day (see the paywall test in ai-credits). */
+/** D-044 prices from config (pinned by the shared config tests): 7 credits per answer, at most 50 a paper. */
+const paper = AI_ACTIONS['evaluate-paper'].pricing as { kind: 'per_answer'; creditsPerAnswer: number; maxCredits: number };
+const PER_ANSWER = paper.creditsPerAnswer;
+const CAP = paper.maxCredits;
+const PRO_DAILY = getPlan('pro').creditsPerDay;
+const FREE_DAILY = getPlan('free').creditsPerDay;
+
+/** Pro students can always pay for a full paper (at most CAP credits). */
 async function proMember() {
   const m = await h.member();
   h.plans.set(m.id, 'pro');
@@ -71,12 +81,13 @@ describe('AI evaluation of a paper', () => {
     const resultBefore = (await c.get(`/v1/attempts/${attemptId}/result`)).json();
 
     const quote = (await c.get(`/v1/ai/quote/evaluate-paper?attemptId=${attemptId}`)).json();
-    const expected = Math.min(40, written.length * 6);
-    expect(quote).toMatchObject({ credits: expected, answers: written.length, perAnswer: true, maxCredits: 40 });
+    expect([PER_ANSWER, CAP]).toEqual([7, 50]);
+    const expected = Math.min(CAP, written.length * PER_ANSWER);
+    expect(quote).toMatchObject({ credits: expected, answers: written.length, perAnswer: true, maxCredits: CAP });
 
     const res = await c.post(`/v1/attempts/${attemptId}/ai-evaluation`, {});
     expect(res.statusCode).toBe(202);
-    expect(res.json()).toMatchObject({ status: 'queued', action: 'evaluate-paper', credits: expected, answers: written.length, balance: 60 - expected });
+    expect(res.json()).toMatchObject({ status: 'queued', action: 'evaluate-paper', credits: expected, answers: written.length, balance: PRO_DAILY - expected });
     await h.services.ai.jobs.drain();
     const job = (await c.get(`/v1/ai/jobs/${res.json().jobId}`)).json();
     expect(job).toMatchObject({ kind: 'evaluation', status: 'succeeded', result: { countsForRanks: false, creditsCharged: expected, creditsRefunded: 0 } });
@@ -97,26 +108,29 @@ describe('AI evaluation of a paper', () => {
     expect(resultAfter.score).toEqual(resultBefore.score);
     expect(resultAfter.percentile).toEqual(resultBefore.percentile);
     expect(await buckets()).toEqual(bucketsBefore);
-    expect((await c.get('/v1/credits')).json().balance).toBe(60 - expected);
+    expect((await c.get('/v1/credits')).json().balance).toBe(PRO_DAILY - expected);
     // Nothing new to evaluate → 409, nothing reserved.
     expect((await c.post(`/v1/attempts/${attemptId}/ai-evaluation`, {})).statusCode).toBe(409);
-    // Free students: a full paper (36+ credits) is more than 25 a day → paywall.
+    // Free students with fewer credits left than the paper costs → paywall (since D-044 a full free day pays for one paper).
     const free = await h.member();
     const fa = await submitted(free.c);
-    expect((await free.c.post(`/v1/attempts/${fa}/ai-evaluation`, {})).json()).toMatchObject({ code: 'credits_exhausted', balance: 25 });
+    const spend = randomUUID();
+    await h.services.ai.credits.reserve({ userId: free.id, requestId: spend, action: 'quick-doubt', credits: FREE_DAILY - expected + 1, plan: 'free' });
+    await h.services.ai.credits.charge(free.id, spend);
+    expect((await free.c.post(`/v1/attempts/${fa}/ai-evaluation`, {})).json()).toMatchObject({ code: 'credits_exhausted', balance: expected - 1, required: expected });
     // IDOR.
     const other = await h.member();
     expect((await other.c.post(`/v1/attempts/${attemptId}/ai-evaluation`, {})).statusCode).toBe(404);
     expect((await other.c.get(`/v1/attempts/${attemptId}/ai-evaluation`)).statusCode).toBe(404);
   });
 
-  it('evaluates one answer for 6 credits; refuses objective-only choices; short answers get low confidence', async () => {
+  it('evaluates one answer for 7 credits; refuses objective-only choices; short answers get low confidence', async () => {
     const { c } = await proMember();
     const attemptId = await submitted(c, () => 'It makes salt and gas.');
     const one = written.find((k) => k.type === 'short')!;
     const res = await c.post(`/v1/ai/evaluate-answer`, { attemptId, itemIds: [one.itemId] });
     expect(res.statusCode).toBe(202);
-    expect(res.json()).toMatchObject({ action: 'evaluate-answer', credits: 6, answers: 1 });
+    expect(res.json()).toMatchObject({ action: 'evaluate-answer', credits: PER_ANSWER, answers: 1 });
     await h.services.ai.jobs.drain();
     const view = (await c.get(`/v1/attempts/${attemptId}/ai-evaluation`)).json() as View;
     expect(view.items).toHaveLength(1);
@@ -160,7 +174,7 @@ describe('AI evaluation of a paper', () => {
     await h.services.ai.jobs.drain();
     const job = (await c.get(`/v1/ai/jobs/${res.jobId}`)).json();
     expect(job.result.notEvaluated).toEqual([{ itemId: unsafe, reason: 'unsafe_content' }]);
-    expect(job.result.creditsCharged).toBe(Math.min(res.credits, (written.length - 1) * 6));
+    expect(job.result.creditsCharged).toBe(Math.min(res.credits, (written.length - 1) * PER_ANSWER));
 
     const second = await proMember();
     const a2 = await submitted(second.c);
@@ -173,7 +187,7 @@ describe('AI evaluation of a paper', () => {
     } finally {
       h.setProvider(mockProvider());
     }
-    expect((await second.c.get('/v1/credits')).json().balance).toBe(60);
+    expect((await second.c.get('/v1/credits')).json().balance).toBe(PRO_DAILY);
   });
 
   it('a job whose reservation the sweeper already refunded never calls the model; queued jobs run from the worker sweep', async () => {
@@ -192,7 +206,7 @@ describe('AI evaluation of a paper', () => {
       const [j1] = await h.t.db.select().from(aiJobs).where(eq(aiJobs.id, r1.jobId));
       expect(j1).toMatchObject({ status: 'failed', errorCode: 'reservation_closed' });
       expect(calls).toBe(0);
-      expect((await c.get('/v1/credits')).json().balance).toBe(60);
+      expect((await c.get('/v1/credits')).json().balance).toBe(PRO_DAILY);
 
       const other = await proMember();
       const a2 = await submitted(other.c);

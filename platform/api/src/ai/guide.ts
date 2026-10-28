@@ -19,6 +19,11 @@ import { streakView } from '../domain/gamification';
 import { bonusEligible, bonusesOn, solvedOnDay } from './bonuses';
 import type { CreditService } from './credits';
 
+export interface CreditGuideBonuses {
+  dailyGoal: { credits: number; target: number; solvedToday: number; earnedToday: boolean };
+  streakMilestone: { credits: number; everyDays: number; currentStreak: number; nextMilestone: number; earnedToday: boolean };
+}
+
 export interface GuideDeps {
   db: Database;
   clock: Clock;

@@ -120,7 +120,7 @@ describe('processing: the malicious-file corpus (AC-16)', () => {
 });
 
 describe('photo doubts (vision)', () => {
-  it('sends the cleaned image (never a URL) and charges 10 credits; refuses uploads that are not ready or not yours', async () => {
+  it('sends the cleaned image (never a URL) and charges 12 credits; refuses uploads that are not ready or not yours', async () => {
     const { c } = await h.member();
     const seen: ProviderRequest[] = [];
     const spy = new MockProvider({ env: { APP_ENV: 'test' }, seed: 'spy' });
@@ -134,12 +134,12 @@ describe('photo doubts (vision)', () => {
     try {
       const up = await uploadFile(h, c, 'photo_doubt', 'image/jpeg', jpeg(1200, 900));
       const ev = sse(await c.post('/v1/ai/photo-doubt', { uploadId: up.id, chapterId: SCI }));
-      expect(ev[0]!.data).toMatchObject({ action: 'photo-doubt', credits: 10, tier: 'mid', mode: 'hint' });
+      expect(ev[0]!.data).toMatchObject({ action: 'photo-doubt', credits: 12, tier: 'mid', mode: 'hint' });
       expect(textOf(ev)).toContain('I read the question in your photo');
       const img = seen[0]!.messages.at(-1)!.images![0]!;
       expect(img.dataUrl.startsWith('data:image/jpeg;base64,')).toBe(true);
       expect(Buffer.from(img.dataUrl.split(',')[1]!, 'base64').toString('latin1')).not.toMatch(/GPS/);
-      expect((await c.get('/v1/credits')).json().balance).toBe(15);
+      expect((await c.get('/v1/credits')).json().balance).toBe(38);
       const other = await h.member();
       expect((await other.c.post('/v1/ai/photo-doubt', { uploadId: up.id })).statusCode).toBe(404);
       const pending = (await c.post('/v1/ai/uploads', { kind: 'photo_doubt', contentType: 'image/png', bytes: 100 })).json();
@@ -153,16 +153,16 @@ describe('photo doubts (vision)', () => {
 });
 
 describe('papers like my school’s (Pro and Board Exam Pass, D-034)', () => {
-  it('extracts a blueprint and builds a paper from our bank; school questions are never stored; 60 credits', async () => {
+  it('extracts a blueprint and builds a paper from our bank; school questions are never stored; 80 credits (D-044)', async () => {
     const { c, id } = await h.member();
     h.plans.set(id, 'pro');
     const before = (await h.t.db.select({ n: count() }).from(questions))[0]!.n;
     const up = await uploadFile(h, c, 'sample_paper', 'image/jpeg', jpeg());
-    expect((await c.get('/v1/ai/quote/paper-from-upload')).json()).toMatchObject({ credits: 60, allowedForPlan: true, affordable: true });
+    expect((await c.get('/v1/ai/quote/paper-from-upload')).json()).toMatchObject({ credits: 80, balance: 150, allowedForPlan: true, affordable: true });
     const res = await c.post('/v1/ai/paper-from-upload', { uploadId: up.id, subjectId: 'cbse-10-science' });
     expect(res.statusCode).toBe(202);
     const accepted = res.json();
-    expect(accepted).toMatchObject({ status: 'queued', action: 'paper-from-upload', credits: 60, balance: 0 });
+    expect(accepted).toMatchObject({ status: 'queued', action: 'paper-from-upload', credits: 80, balance: 70 });
     await h.services.ai.jobs.drain();
     const job = (await c.get(`/v1/ai/jobs/${accepted.jobId}`)).json();
     expect(job).toMatchObject({ kind: 'paper_from_upload', status: 'succeeded', error: null });
@@ -175,15 +175,16 @@ describe('papers like my school’s (Pro and Board Exam Pass, D-034)', () => {
     expect(meta.statusCode).toBe(200);
     expect(meta.json()).toMatchObject({ custom: true });
     expect((await h.t.db.select({ n: count() }).from(questions))[0]!.n).toBe(before);
-    expect((await c.get('/v1/credits')).json()).toMatchObject({ balance: 0, spentToday: 60 });
-    // Plus has 40 credits a day, less than the 60 this costs, so it is not offered on Plus (D-034).
+    expect((await c.get('/v1/credits')).json()).toMatchObject({ balance: 70, spentToday: 80 });
+    // D-034 by plan feature: Plus has 100 credits a day since D-044, enough for the 80 this costs, and is still refused.
     const plus = await h.member();
     h.plans.set(plus.id, 'plus');
-    expect((await plus.c.get('/v1/ai/quote/paper-from-upload')).json()).toMatchObject({ credits: 60, allowedForPlan: false });
+    expect((await plus.c.get('/v1/ai/quote/paper-from-upload')).json()).toMatchObject({ credits: 80, balance: 100, affordable: true, allowedForPlan: false });
     const up2 = await uploadFile(h, plus.c, 'sample_paper', 'image/png', png());
     const r2 = await plus.c.post('/v1/ai/paper-from-upload', { uploadId: up2.id, subjectId: 'cbse-10-science' });
     expect(r2.statusCode).toBe(403);
-    expect(r2.json()).toMatchObject({ code: 'plan_required', plan: 'plus' });
+    expect(r2.json()).toMatchObject({ code: 'plan_required', plan: 'plus', detail: 'Papers like my school’s is part of the Pro and Board Exam Pass plans.' });
+    expect((await plus.c.get('/v1/credits')).json()).toMatchObject({ balance: 100, spentToday: 0 });
     // Jobs are private.
     expect((await plus.c.get(`/v1/ai/jobs/${accepted.jobId}`)).statusCode).toBe(404);
   });
@@ -200,7 +201,7 @@ describe('papers like my school’s (Pro and Board Exam Pass, D-034)', () => {
     const res = await c.post('/v1/ai/paper-from-upload', { uploadId: legacy!.id, subjectId: 'cbse-10-science' });
     expect(res.statusCode).toBe(422);
     expect(res.json().code).toBe('upload_rejected');
-    expect((await c.get('/v1/credits')).json()).toMatchObject({ balance: 60, spentToday: 0 });
+    expect((await c.get('/v1/credits')).json()).toMatchObject({ balance: 150, spentToday: 0 });
   });
 
   it('a failed blueprint is refunded', async () => {
@@ -213,7 +214,7 @@ describe('papers like my school’s (Pro and Board Exam Pass, D-034)', () => {
       await h.services.ai.jobs.drain();
       const [row] = await h.t.db.select().from(aiJobs).where(eq(aiJobs.id, accepted.jobId));
       expect(row).toMatchObject({ status: 'failed', errorCode: 'blueprint_failed' });
-      expect((await c.get('/v1/credits')).json().balance).toBe(60);
+      expect((await c.get('/v1/credits')).json().balance).toBe(150);
     } finally {
       h.setProvider(mockProvider());
     }

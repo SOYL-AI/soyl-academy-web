@@ -10,7 +10,7 @@ A learning platform for students in **Classes 7–12** on the **CBSE** and **CIS
 | Principle | Meaning |
 |---|---|
 | Learning is free | Visual slide lessons, notes, flashcards, practice, chapter tests, test series and All-India mocks are never paywalled (CONTEXT §5). |
-| Only AI costs credits | AI tutor, photo doubts, AI evaluation, "papers like my school's" and "explain this slide" use credits: 25 free per day; Plus 40, Pro and Board Exam Pass 60 (1 credit = ₹0.10 of AI budget; reset 00:00 IST). |
+| Only AI costs credits | AI tutor, photo doubts, AI evaluation, "papers like my school's" and "explain this slide" use credits: 50 free per day; Plus 100, Pro and Board Exam Pass 150, plus learning bonuses (D-044; 1 credit = ₹0.10 of AI budget; reset 00:00 IST). |
 | Plans (AI only) | Plus ₹199/month or ₹1,499/year; Pro ₹299/month or ₹2,499/year; Board Exam Pass ₹499 one-time until 31 Mar 2027. GST-inclusive, in config (`platform/shared/config/plans.ts`). Razorpay only. |
 | For whom | Mostly mid/low-end Android phones on patchy data; English-medium with Hinglish; Hindi subjects in Devanagari. Parents pay; parental consent comes from the owner's existing consent system. |
 | Beta target | 15 January 2027 (D-003), Wave 1 (Classes 10 and 12) first. |

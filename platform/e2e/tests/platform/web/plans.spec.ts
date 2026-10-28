@@ -36,7 +36,7 @@ test('/plans: public, GST-inclusive prices from the API; Razorpay CSP only here;
   const plus = page.locator('[data-plan="plus"]');
   await expect(plus).toContainText('₹199');
   await expect(plus).toContainText('incl. GST');
-  await expect(plus).toContainText('40 AI credits every day');
+  await expect(plus).toContainText('100 AI credits every day'); // D-044
   // D-034: "papers like my school's" is Pro and Board Exam Pass only, as the API says.
   await expect(plus).not.toContainText('Papers like my school');
   await expect(page.locator('[data-plan="pro"]')).toContainText('Papers like my school');
@@ -60,7 +60,7 @@ test('buy Plus: Checkout (no prefill) → signed webhook via the proxy → plan 
 
   await grantConsent(page);
   await page.goto('/plans', { waitUntil: 'networkidle' });
-  await expect(page.getByTestId('credit-chip')).toHaveAttribute('data-balance', '25');
+  await expect(page.getByTestId('credit-chip')).toHaveAttribute('data-balance', '50');
   const refreshBodies: unknown[] = [];
   page.on('request', (r) => {
     if (r.url().endsWith('/api/platform/v1/billing/refresh')) refreshBodies.push(r.postDataJSON());
@@ -88,7 +88,7 @@ test('buy Plus: Checkout (no prefill) → signed webhook via the proxy → plan 
   await expect(page.getByTestId('activated')).toBeVisible({ timeout: 60_000 });
   expect(Date.now() - started).toBeLessThan(60_000);
   expect(refreshBodies.every((b) => JSON.stringify(b) === '{}')).toBe(true); // never the Checkout response
-  await expect(page.getByTestId('credit-chip')).toHaveAttribute('data-balance', '40');
+  await expect(page.getByTestId('credit-chip')).toHaveAttribute('data-balance', '100');
   await expect(page.getByTestId('current-plan')).toContainText('Plus');
   await checkPage(page);
   await shot(page, 'plans');

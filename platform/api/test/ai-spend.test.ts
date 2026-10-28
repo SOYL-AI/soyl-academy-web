@@ -59,7 +59,7 @@ describe('spend breaker', () => {
     expect(paused.json().code).toBe('ai_paused');
     expect(Number(paused.headers['retry-after'])).toBe(12.5 * 3600); // 11:30 IST → 00:00 IST
     expect((await free.c.get('/v1/ai/quote/quick-doubt')).json().status).toBe('paused');
-    expect((await free.c.get('/v1/credits')).json().balance).toBe(25); // nothing reserved
+    expect((await free.c.get('/v1/credits')).json().balance).toBe(50); // nothing reserved
     const ok = await paid.c.post('/v1/ai/quick-doubt', { message: 'What is inertia?' });
     expect(ok.statusCode).toBe(200);
     expect(sse(ok).at(-1)!.data.status).toBe('succeeded');
@@ -70,10 +70,10 @@ describe('spend breaker', () => {
     await breaker().record(850, false);
     const paid = await h.member();
     h.plans.set(paid.id, 'pro');
-    expect((await paid.c.get('/v1/ai/quote/hard-doubt')).json()).toMatchObject({ status: 'degraded', tier: 'small', credits: 6 });
+    expect((await paid.c.get('/v1/ai/quote/hard-doubt')).json()).toMatchObject({ status: 'degraded', tier: 'small', credits: 7 });
     expect((await paid.c.get('/v1/ai/quote/photo-doubt')).json().status).toBe('paused');
     const ev = sse(await paid.c.post('/v1/ai/hard-doubt', { message: 'Derive the equation of motion v = u + at' }));
-    expect(ev[0]!.data).toMatchObject({ tier: 'small', degraded: true, credits: 6 });
+    expect(ev[0]!.data).toMatchObject({ tier: 'small', degraded: true, credits: 7 });
     const [row] = await h.t.db.select().from(aiRequests).where(eq(aiRequests.requestId, String(ev[0]!.data.requestId)));
     expect(row).toMatchObject({ modelTier: 'small', degraded: true, status: 'succeeded' });
     const photo = await paid.c.post('/v1/ai/photo-doubt', { uploadId: '0190f5b0-0000-7000-8000-000000000001' });
