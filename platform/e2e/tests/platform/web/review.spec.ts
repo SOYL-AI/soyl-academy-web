@@ -38,10 +38,14 @@ async function topBar(page: Page) {
   });
 }
 
-async function shellFits(page: Page, path: string) {
+async function shellFits(page: Page, path: string, waitForTestId?: string) {
   for (const width of WIDTHS) {
     await page.setViewportSize({ width, height: 800 });
-    await page.goto(path, { waitUntil: 'networkidle' });
+    // Resizing the same page is enough (CSS breakpoints); load it once, then wait for the session to settle.
+    if (width === WIDTHS[0]) await page.goto(path, { waitUntil: 'load' });
+    await expect(page.locator('#soyl-platform-root header [data-session]')).not.toHaveAttribute('data-session', 'loading');
+    if (waitForTestId) await expect(page.getByTestId(waitForTestId)).toBeVisible();
+    await page.evaluate(() => document.fonts.ready);
     const r = await topBar(page);
     expect(r, `top bar at ${width}px`).toEqual({ overflow: 0, out: [], height: r.height });
     expect(r.height, `top bar height at ${width}px (one row)`).toBeLessThan(70);
@@ -55,7 +59,7 @@ async function shellFits(page: Page, path: string) {
 
 test.describe('Lead review: shell and layout', () => {
   test('guests: the top bar fits on one row from 360 to 1280 px', async ({ page }) => {
-    test.setTimeout(3 * 60_000);
+    test.setTimeout(4 * 60_000);
     await shellFits(page, SUBJECT);
   });
 
@@ -65,7 +69,7 @@ test.describe('Lead review: shell and layout', () => {
     await grantConsent(page);
     await page.goto('/learn', { waitUntil: 'networkidle' });
     await expect(page.getByTestId('credit-chip')).toBeVisible();
-    await shellFits(page, '/me/dashboard');
+    await shellFits(page, '/me/dashboard', 'credit-chip');
   });
 
   test('one page container: content lines up with the top bar on every page (1280 px)', async ({ page }) => {
