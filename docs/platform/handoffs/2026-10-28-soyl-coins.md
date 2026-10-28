@@ -51,9 +51,22 @@ only, events with ≥ `liveRankMinParticipants`, 30-day window so late consent s
 `coins.housekeeping` (daily 02:45 IST; erase shipped addresses after 30 days; cancel + refund merch requests
 with no address after 14 days).
 
-**Web** (web-platform sub-agent; see its section below): coins chip beside the credits chip, check-in with
-streak, daily-challenge card on the hub, `/coins` (balance, today vs cap, how to earn from config,
-milestones, history), `/store` "Exclusive rewards — coming soon", coin-award notes on practice/test results.
+**Web** (web-platform sub-agent; commits c90fc87, 295fddb, 53d272b), `app/(platform)/{coins,store}`,
+`components/platform/coins/*`:
+- `CoinChip` beside the credits chip in `PlatformHeader` (balance; dot while today's check-in is open), fed by
+  `CoinsProvider` in the platform layout (one `GET /v1/coins` per page load for members).
+- `CheckIn` (streak, best, next bonus; polite live region announcing what it paid; disabled once done).
+- `DailyChallengeCard` on `/learn` and `/learn/[board]/[class]`; "Solve" lazy-loads `ChallengeSolver`, which reuses
+  the practice `QuestionCard` and `usePracticeAnswer` (answers go through `POST /v1/practice/answers`).
+- `/coins`: balance, today vs cap with the IST reset countdown, check-in, milestones, how to earn (`howToEarn()`),
+  paged history.
+- `/store`: "Exclusive rewards — coming soon" whenever `redemptionEnabled` is false (teasers, balance, how to earn;
+  no items, prices, redeem, equip or address). The full store (12 item states, drop countdown, stock, redeem
+  dialog, equip, `AddressForm` only after a `requested` redemption exists, own redemptions with cancel) renders
+  only when the API reports `redemptionEnabled: true`.
+- Coin-award announcements on practice answers and test submits; friendly copy for every coins problem code.
+- `/coins` and `/store` added to `platform-routes.ts`, the `proxy.ts` matcher, `RETURN_TO_PREFIXES`,
+  `NONCE_ROUTE_PREFIXES` (nonce CSP) and the marketing regression's route inventory (ADR-021 §8).
 
 ## Config for the owner to tune (`platform/shared/config/coins.ts`)
 
@@ -108,7 +121,22 @@ npm test -w @soyl/worker        # test/coins-jobs.test.ts
 Root: `npm run lint`, `npm run build`, `npm run test:platform-web`, `npm run test:platform-ui`; e2e
 `platform/e2e/tests/platform/web/coins.spec.ts`; marketing regression `--skip-lighthouse`.
 
-GATE_RESULTS_PLACEHOLDER
+### Gate results (2026-10-28, Windows 11; the machine was under heavy memory pressure from other agents, so suites ran with fewer workers)
+
+| Gate | Result |
+|---|---|
+| `npm run typecheck` (platform) | exit 0, every workspace |
+| `npm test -w @soyl/shared` | 8 files, 95 passed (incl. client drift and coins config) |
+| `npm test -w @soyl/db` | 16 files, 119 passed, 1 skipped (0011 up/down fresh + seeded; `coins.test.ts`) |
+| `npm test -w @soyl/api` | 35 files: 27 passed in the full run (`--maxWorkers=2`; 480 tests), the 8 files that crashed with out-of-memory (ai-credits, ai-evaluation, ai-gateway, content, phone-otp, progress, billing-ops, reports-mfa) re-run with `--maxWorkers=1`: all passed (74 + 13 tests). `coins.test.ts` 23/23 |
+| `npm test -w @soyl/worker` | 12 files, 68 passed |
+| root `npm run lint` | exit 0 (web-platform, on 53d272b) |
+| root `npm run build` | compiled, 44/44 static pages (web-platform) |
+| `npm run test:platform-web` | 12 files, 221 passed (`--maxWorkers=1`) |
+| `npm run test:platform-ui` | 6 files, 548 passed (`--maxWorkers=1`) |
+| e2e flag on: `coins.spec.ts` + JS budget | 4 passed: check-in; daily challenge +5 once; store coming soon + API 403 `redemption_disabled`; budget (/coins 173.5 KB, /store 179.1 KB gz first load) |
+| e2e flag off | 37 passed (includes /coins, /store and the coins API paths 404) |
+| marketing regression `--skip-lighthouse` | 48 passed, "no visual diffs, all routes as expected" on the web commits before the D-038 store change (web-platform; marketing CSS byte-identical). Re-run on the final commit: **not completed** — `next build` died twice with system out-of-memory (exit 134). The D-038 change touches only `/store` and `/coins` platform files. Needs one re-run on a machine with free memory. |
 
 ## Tests added
 
@@ -124,6 +152,8 @@ GATE_RESULTS_PLACEHOLDER
 - Address key is an HKDF subkey of `MFA_ENCRYPTION_KEY`; a dedicated Key Vault secret can replace it with a re-encryption job if security review asks.
 - Daily challenge picks from objective practice items only; subjects with no objective practice items have no challenge.
 - No staff UI for the merch queue (API only); not needed while redemptions are off.
+- Web: the consent-needed state (only shown when redemption is on) links to `/me`; switch it to `/me/consent?next=` when the D-039 interim provider (ADR-022) lands. The daily-challenge solver infers Hindi from the subject id (the API sends no language). With both credits and coins chips the header is close to 360 px; the AI e2e (chips + consent) was not re-run.
+- A stray process from an earlier e2e run (pid 30112 on :3320) could not be stopped by the agents (taskkill denied); the e2e above ran on alternate ports (`PW_*_PORT`).
 - `consent-interim` also numbered its migration 0011: whoever merges second renumbers (and regenerates the drizzle snapshot).
 
 ## Decisions made
