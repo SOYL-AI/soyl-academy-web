@@ -83,21 +83,24 @@ export function AppShell({ children, footer }: { children: ReactNode; footer?: R
   );
 }
 
+export const MAIN_SITE_LABEL = 'Back to soylai.com, the SOYL main website';
+
 /**
  * Back to the marketing site (owner, 2026-10-28: "once I click on learn there should be an option to go back to the
  * marketing website"). A normal navigation to `/`: the marketing header and footer come back and the platform theme
- * leaves `<html>` (ThemeProvider). Accessible name "Back to soylai.com, the SOYL main website" (it contains the
- * visible text, WCAG 2.5.3).
+ * leaves `<html>` (ThemeProvider).
  */
 export function MainSiteLink({ variant }: { variant: 'bar' | 'row' }) {
   const link = (
-    <Link href="/" className={variant === 'bar' ? s.siteLink : s.siteRowLink} data-testid={variant === 'bar' ? 'main-site-link' : 'main-site-row-link'}>
+    <Link
+      href="/"
+      className={variant === 'bar' ? s.siteLink : s.siteRowLink}
+      aria-label={MAIN_SITE_LABEL}
+      data-testid={variant === 'bar' ? 'main-site-link' : 'main-site-row-link'}
+    >
       <Icon name="chevronLeft" size={16} />
-      {/* Phones show "Back to soylai.com"; the top bar shows "soylai.com" (same accessible name). */}
-      <span>
-        <span className={variant === 'bar' ? 'p-visually-hidden' : undefined}>Back to</span> soylai.com
-        <span className="p-visually-hidden">, the SOYL main website</span>
-      </span>
+      {/* The label contains the visible text (WCAG 2.5.3): phones show "Back to soylai.com", the top bar "soylai.com". */}
+      <span>{variant === 'bar' ? 'soylai.com' : 'Back to soylai.com'}</span>
     </Link>
   );
   return variant === 'bar' ? link : <div className={s.siteRow}>{link}</div>;

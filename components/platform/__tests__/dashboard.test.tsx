@@ -667,7 +667,8 @@ describe('app shell: the way back to the main site (owner, 2026-10-28)', () => {
       expect(screen.getByRole('link', { name: 'Back to soylai.com, the SOYL main website' }).getAttribute('href')).toBe('/');
       const bar = screen.getByTestId('main-site-link');
       expect(bar.getAttribute('href')).toBe('/');
-      expect(bar.textContent).toBe('Back to soylai.com, the SOYL main website');
+      expect(bar.getAttribute('aria-label')).toBe('Back to soylai.com, the SOYL main website');
+      expect(bar.textContent).toBe('soylai.com');
       expect(screen.getByTestId('main-site-link').textContent).toContain('soylai.com');
       expect(screen.getByTestId('main-site-row-link').textContent).toContain('Back to soylai.com');
       // The SOYL mark stays the academy home.
