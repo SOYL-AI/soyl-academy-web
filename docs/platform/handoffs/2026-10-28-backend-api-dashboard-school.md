@@ -69,10 +69,10 @@ From `platform/` (heavy runs through `bash C:/Users/Prabhu/soyl-wt/_tools/heavy.
 ```
 npm run typecheck                                    # exit 0
 npm test -w @soyl/shared                             # 13 files, 164 tests (38 new)
-npm test -w @soyl/db                                 # RESULT_DB (migration 0013 up/down on fresh + seeded DB)
-cd api && npx vitest run test/dashboard.test.ts test/schools.test.ts test/me.test.ts test/consent-builtin.test.ts test/insights.test.ts test/content.test.ts test/route-policy.test.ts test/unit.test.ts
-npm run build                                        # exit 0
-npm test -w @soyl/api                                # RESULT_API
+npm test -w @soyl/db                                 # 16 files, 119 passed + 1 skipped (migration 0013 up/down on fresh + seeded DB)
+cd api && npx vitest run test/dashboard.test.ts test/schools.test.ts test/me.test.ts test/consent-builtin.test.ts test/insights.test.ts test/content.test.ts test/route-policy.test.ts test/unit.test.ts   # 8 files, 178 passed + 1 skipped
+npm run build                                        # exit 0 (api + worker bundles)
+npm test -w @soyl/api                                # 610 tests: 596 passed + 1 skipped; one vitest worker crashed natively (0xC0000409, 8 GB machine under load) on billing-gates.test.ts, which this work does not touch; rerun alone: 13/13
 ```
 Manual: `npm run dev -w @soyl/api`, sign in a fixture user, `GET /v1/me/dashboard`; set consent granted, `PATCH /v1/me {"school":{"name":"St. Mary's Sr. Sec. School","city":"Bombay"}}`, then `GET /v1/schools?q=saint%20mary&city=mumbai`.
 
