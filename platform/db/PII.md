@@ -38,6 +38,15 @@ are off without consent). An `audit_log` row (action "consent.ai_data_deleted") 
 (conversations, uploads, schoolCleared).
 Learning records (progress, practice, attempts, XP) are not AI data and stay.
 
+## Invoices (0016, ADR-024)
+
+GST law needs invoices and credit notes kept for 8 years (CGST Act s.36: 72 months from the annual return due date), so account deletion never deletes them. What it does:
+
+- **At deletion (step 1):** a database trigger (`soyl_billing_buyer_anonymise`, fires when `users.deleted_at` is set) erases `invoices.buyer_name` and `invoices.buyer_email` and the checkout `buyer_name` on orders and subscriptions. For a consumer (B2C) supply below Rs 50,000 to an unregistered recipient, the recipient's name and address are needed only if the recipient asks for them (CGST Rule 46(f)–(g)), so nothing the law needs is lost; the number, date, place of supply, amounts and seller details stay.
+- **The stored PDF** (private `invoices` container) is re-rendered without the buyer fields by the worker's billing.invoices sweep (rows with `buyer_anonymised_at` later than `pdf_rendered_at`).
+- **At purge (step 2):** `invoices.user_id` is set NULL (detach); the row stays. Rows cannot be deleted (trigger `soyl_invoices_guard`).
+- Invoices issued after deletion (e.g. a credit note for a later refund) are issued without buyer details.
+
 ## Account deletion (`DELETE /v1/me`)
 
 Two steps, implemented by backend-api:
@@ -142,6 +151,12 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `feature_flags.updated_by_user_id`, `config_values.updated_by_user_id` | Admin who changed a value | life of row | detach |
 | `subscriptions.user_id`, `orders.user_id`, `payments.user_id` | Purchaser link | 8 years (tax records; pending OA-14) | detach |
 | `subscriptions.razorpay_subscription_id`, `orders.razorpay_order_id`, `orders.receipt`, `payments.razorpay_payment_id`, `payments.method` | Payment references | 8 years | retain |
+| `subscriptions.buyer_name`, `orders.buyer_name` | Optional name for the invoice, as typed at checkout (0016) | until account deletion | anonymise (trigger `soyl_billing_buyer_anonymise` sets NULL when `users.deleted_at` is set) |
+| `subscriptions.place_of_supply`, `orders.place_of_supply` | GST state code chosen at checkout (a state, not an address) | 8 years with payment records | retain |
+| `invoices.buyer_name`, `invoices.buyer_email` | Buyer name (optional) and the payer's email (from Razorpay, else the account email), printed on the invoice and used to email it | until account deletion | anonymise (trigger sets both NULL and `buyer_anonymised_at`; the worker re-renders the stored PDF without them) |
+| `invoices.user_id` | Whose invoice it is (download at /me/invoices) | 8 years (GST records, CGST Act s.36) | detach |
+| `invoices.number`, `invoices.place_of_supply`, `invoices.line_items`, amounts, `invoices.razorpay_payment_id`, `invoices.razorpay_order_id`, `invoices.razorpay_subscription_id`, `invoices.seller`, `invoices.pdf_blob_path` | The invoice / credit note itself (no personal data once the buyer fields are erased) | 8 years | retain (immutable: `soyl_invoices_guard` refuses UPDATE of tax fields and DELETE) |
+| `invoices.email_last_error`, `invoices.email_attempts`, `invoices.email_next_at`, `invoices.email_claimed_until` | Delivery state of the invoice email: error class of the last failure (no message text, no address), attempts, next retry, send claim | 8 years | retain |
 | `entitlements.*` | Plan entitlement | life of account | cascade |
 | `webhook_events.payload` | Razorpay event, includes payer contact (email/phone) | 8 years with payment records (pending OA-14) | retain |
 | `coin_ledger.*` | SOYL Coins earned/redeemed/refunded (amounts, sources, ids such as test or chapter keys; no names) | life of account | cascade |

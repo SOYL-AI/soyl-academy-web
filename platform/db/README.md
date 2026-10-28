@@ -106,6 +106,7 @@ weekly `leagues` and `league_memberships.league_id/tier/outcome`; the `ai_answer
 `soyl_coin_ledger_guard` balance trigger; conventions function now lists `coin_ledger` as append-only).
 `0012_consent_interim` (backend-api, D-039, ADR-022: `consent_records` for the built-in consent provider,
 `profiles.public_name_seed` for auto-generated public names).
+`0016_invoices` (billing-razorpay, ADR-024: `invoices` + gap-free `invoice_sequences`, checkout `place_of_supply` / `buyer_name` on orders and subscriptions, the `soyl_invoices_guard` immutability trigger and the `soyl_billing_buyer_anonymise` trigger on `users.deleted_at`). On the invoices branch `0014_reserved_credits` and `0015_reserved_admin` are no-op placeholders that keep the sequence; the Lead deletes them when the real 0014/0015 are integrated.
 
 ## Roles (DB-1) and Azure mapping
 
