@@ -89,29 +89,19 @@ npm run lint && npm run test:platform-web -- --maxWorkers=2 && npm run build
 
 | Gate | Result |
 |---|---|
-|  (platform) | clean |
-|  | 16 files, **195 passed** |
-|  (migration up/down incl. 0015_invoices, schema, PII inventory, invoices) | 17 files, **123 passed**, 1 skipped (pre-existing) |
+| `npm run typecheck` (platform) | clean |
+| `npm test -w @soyl/shared` | 16 files, **195 passed** |
+| `npm test -w @soyl/db` (migration up/down incl. 0015_invoices, schema, PII inventory, invoices) | 17 files, **123 passed**, 1 skipped (pre-existing) |
 | API targeted: invoices, invoices-unit, billing-gates/orders/subscriptions/ops/unit, route-policy, content (answer leak), openapi, admin-analytics | 10 files, **174 passed** |
-|  | 12 files, **70 passed** |
-|  (platform) | api + worker bundles built |
-|  (full) | 42 files, **659 passed**, 1 skipped (pre-existing). An earlier full run (before the worker-test fix, same API code) summarised 41/42 files and 655 + 1 skipped of 660 without printing a failure line in my filtered log; the full rerun was green. |
-| Repo root  | clean |
-| Repo root > soyl-academy@0.1.0 test:platform-web
-> vitest run --config components/platform/vitest.config.mts --maxWorkers=2
+| `npm test -w @soyl/worker` | 12 files, **70 passed** |
+| `npm run build` (platform) | api + worker bundles built |
+| `npm test -w @soyl/api` (full) | 42 files, **659 passed**, 1 skipped (pre-existing). An earlier full run in the same session (same API code, before a worker-test fix) summarised 41/42 files and 655 + 1 skipped of 660 without a failure line in my filtered log; the full rerun was green. |
+| Repo root `npm run lint` | clean |
+| Repo root `npm run test:platform-web -- --maxWorkers=2` | 18 files, **305 passed** |
+| Repo root `npm run build` | exit 0 (/me/invoices and /plans built) |
+| gitleaks `origin/platform/main..HEAD` | no leaks |
 
- RUN  v4.1.12 C:/Users/Prabhu/soyl-wt/invoices
-
-
- Test Files  18 passed (18)
-      Tests  305 passed (305)
-   Start at  02:54:09
-   Duration  60.38s (transform 28.52s, setup 0ms, import 119.54s, tests 33.48s, environment 232.99s) | 18 files, **305 passed** |
-| Repo root  | exit 0 (/me/invoices and /plans built) |
-| gitleaks  | no leaks |
-
-New tests:  (GST split for ₹199, ₹1,499, ₹2,499, ₹299, ₹499, ₹1 intra and inter-state; exhaustive reconciliation to ₹5,000; amount in words; FY rollover; GSTIN),  (owner values, production refusal while the street line is a placeholder, GST-mode rules),  (constraints, immutability, app role, gap-free rollback, deletion + purge),  (PDF structure and xref, Rule 46/53 fields read back, Bill of Supply / tax invoice / credit note, production refusal),  (checkout fields, one invoice per payment under duplicate webhooks, PDF in Blob + email attachment, credit notes incl. partial refunds reversing to the paisa and after an account purge, IGST, 20 concurrent payments gap-free, FY rollover at 1 April 00:00 IST, reconciliation backfill for orders and subscription charges, sweep backfill + email retry with backoff, production refusal, owner-only download (other user 404), billing off, account deletion keeps invoices and re-renders the PDF, superadmin list/CSV/resend and refusals, checkout_complete counter), worker  (sweep job + settings), web  and new PlansClient cases.
-
+New tests: `platform/shared/billing/gst.test.ts` (GST split for ₹199, ₹1,499, ₹2,499, ₹299, ₹499, ₹1 intra- and inter-state; exhaustive reconciliation up to ₹5,000; amount in words; FY rollover; GSTIN), `platform/shared/config/invoicing.test.ts` (owner values, production refusal while the street line is a placeholder, GST-mode rules), `platform/db/test/invoices.test.ts` (constraints, immutability, app role, gap-free rollback, deletion + purge), `platform/api/test/invoices-unit.test.ts` (PDF structure and xref, Rule 46/53 fields read back, Bill of Supply / tax invoice / credit note, production refusal), `platform/api/test/invoices.test.ts` (checkout fields, one invoice per payment under duplicate webhooks, PDF in Blob + email attachment, credit notes incl. partial refunds reversing to the paisa and after an account purge, IGST, 20 concurrent payments gap-free, FY rollover at 1 April 00:00 IST, reconciliation backfill for orders and subscription charges, sweep backfill + email retry with backoff, production refusal, owner-only download (other user 404), billing off, account deletion keeps invoices and re-renders the PDF, superadmin list/CSV/resend and refusals, checkout_complete counter), worker `billing-jobs.test.ts` (sweep job + settings), web `invoices.test.tsx` and new PlansClient cases.
 
 Decisions made: ADR-024 (built-in PDF writer, no new dependency; issue-in-transaction; gap-free sequences; retention triggers). Followed D-046 (Bill of Supply title) and D-045 (superadmin, counters).
 Needs from owner: OA-22 (above).
