@@ -60,11 +60,13 @@ M0–M4 are done or built on stand-ins. CBSE Class 10 core five subjects are com
 | M5 | Weekly leagues + job, live-event detail, formative-only flags, AI-answer reports; migration 0010 | backend-api M5 | `platform/backend-api/m5-followups` | `platform/api/`, `platform/worker/`, `platform/db/` | merged 49aa8a4 | web league view not built |
 | M5 | ICSE Class 10 blueprints (10 subjects) | curriculum-architect (ICSE 10) | `platform/curriculum/icse10-blueprints` | `platform/catalog/cisce/` | **in progress** | some layouts/marks unverified |
 | M5 | CBSE 10 English + Hindi A reader blueprints (item-level chapter scopes), to allow their series | curriculum-architect | `platform/curriculum/cbse10-reader-blueprints` | `platform/catalog/cbse/` | **in progress** | — |
-| M5 | SOYL Coins (D-037): earn-only rewards, check-in, digital store; physical merch later | — | — | — | **in progress** (decided 2026-10-28; no code on `platform/main` yet) | OA-08, OA-19 for physical merch |
+| M5 | SOYL Coins (D-037/D-038, ADR-021): earn rules + daily cap, check-in, daily challenge, /coins, /store "coming soon"; redemptions built but off; migration 0011 | backend-api + web-platform | `platform/backend-api/soyl-coins` | api, worker, db, shared config, `app/(platform)/`, `components/platform/coins/` | merged 3cd40df (integration `platform/lead/integrate-m5b`) | OA-19 (reward design), earn table to confirm |
+| M5 | Interim built-in consent (D-039, ADR-022): age band, parent approval code by email, withdraw link, pseudonymous public names, data minimisation; migration **0012** (renumbered from 0011 at integration) | backend-api | `platform/backend-api/consent-interim` | api, worker, db, `components/platform/consent/`, `/me/consent` | merged 97b7650; prod `CONSENT_PROVIDER=builtin` 590b782 (applies at next backend update) | OA-14 legal points |
+| M4 | Billing go-live infra: Key Vault Razorpay secret refs, `caj-soyl-billing-prod` sync job, runbook; `billingOn = false` | infra-azure | `platform/infra-azure/billing-golive` | `platform/infra/`, billing runbook | merged 3afd24d, **not deployed** (owner: Razorpay later) | OA-21 |
 | M6 | Security review of M2–M4, infra, CI | security-reviewer | `platform/security-reviewer/m6` | `docs/platform/security/` | merged 7e266e0 | — |
 | M6 | Security fixes, starting with S6-H01 (live-mock keys before the event closes) | backend-api | `platform/backend-api/security-fixes-m6` | `platform/api/` | **in progress** | — |
 | M6 | Production readiness (keyless MI auth, email-only OTP via ACS, consent fail-safe, prod Bicep, runbook) | backend-api + infra-azure | `platform/backend-api/prod-auth` | api, db, worker, infra | merged b3379cc | — |
-| — | Marketing editorial redesign (owner request) | marketing-editorial | `marketing/editorial-restore` | marketing app | **live** on `main` a2c76a5 | marketing baseline needs re-capture on `platform/main` |
+| — | Marketing editorial redesign (owner request) | marketing-editorial | `marketing/editorial-restore` | marketing app | **live** on `main` a2c76a5, then Future Builders 9432809 | re-baseline on `platform/main` (owner-approved): first run lost 2 screenshots to an out-of-memory crash; re-running after merging 9432809 |
 | — | As-built documentation (handbook, API reference, data model, content, operations, M2–M4 reports) | technical writer | `platform/docs/as-built` | `docs/platform/**`, CLAUDE.md commands | **in review** | — |
 
 ## Backlog (found at integration)
@@ -88,12 +90,14 @@ M0–M4 are done or built on stand-ins. CBSE Class 10 core five subjects are com
 | 2026-10-28 | Rate-limit bucket `account.create.device` is declared but never enforced (no device cookie) | backend-api | open |
 | 2026-10-28 | ADR-011 (web) and ADR-012 (web) still say "Proposed" although merged; ADR numbers 011 and 012 are each used twice; ADR-008 not written | Lead | open ([adr/README.md](adr/README.md)) |
 | 2026-10-28 | SST ch04 and ch19–21 (`cbse-10-sst-e`) merged without a handoff file | Lead | open |
+| 2026-10-28 | This Windows machine has 8 GB RAM: `next build`, Playwright and embedded Postgres in parallel run out of memory (Turbopack allocation failures, 0xC0000409 worker crashes, Postgres 53200). Agents' web gates must run one heavy job at a time; reruns alone are green | Lead | process |
+| 2026-10-28 | Stray process on :3321 (PID 20824) from an agent e2e run; e2e now uses `PW_FLAG_OFF_PORT` to avoid it | owner | open |
 
 ### Catalog totals (platform/main, `npm run content -- catalog`)
 767 subjects (CBSE 444, CISCE 323) · **644 syllabus files** · 7,440 chapters · 26,454 topics · 359 blueprints (329 board + 30 class defaults; all CBSE) · 0 errors. ICSE Class 10 blueprints are on an unmerged branch.
 
 ### Active — 2026-10-28
-security fixes M6 (S6-H01 first) · curriculum: ICSE 10 blueprints, CBSE 10 English/Hindi A reader blueprints · SOYL Coins design (D-037) · as-built documentation
+integration of coins + consent + billing infra (gates on `platform/main`) · marketing re-baseline · next dark backend update (0011, 0012, consent builtin) · ICSE 10 content (needs operator AI access)
 
 ### CI evidence (GitHub Actions, real Postgres+pgvector / Redis)
 | Date | Commit | Run | Result |
