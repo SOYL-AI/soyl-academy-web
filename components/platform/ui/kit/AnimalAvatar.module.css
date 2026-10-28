@@ -1,0 +1,36 @@
+.avatar {
+  --av-bg: var(--p-surface-3);
+  --av-ring: transparent;
+  position: relative;
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--av-bg);
+  color: var(--p-avatar-ink);
+  user-select: none;
+  vertical-align: middle;
+}
+.img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.empty {
+  color: var(--p-ink-muted);
+}
+.avatar[data-ring] {
+  overflow: visible;
+  box-shadow: 0 0 0 2px var(--p-surface), 0 0 0 4px var(--av-ring);
+}
+.avatar[data-ring] .img {
+  border-radius: 50%;
+}
+.avatar[data-ring='bronze'] { --av-ring: var(--p-tier-bronze); }
+.avatar[data-ring='silver'] { --av-ring: var(--p-tier-silver); }
+.avatar[data-ring='gold'] { --av-ring: var(--p-tier-gold); }
+.avatar[data-ring='sapphire'] { --av-ring: var(--p-tier-sapphire); }
+.avatar[data-ring='diamond'] { --av-ring: var(--p-tier-diamond); }
+.avatar[data-ring='elite'] { --av-ring: var(--p-tier-elite); }
+.avatar[data-ring='accent'] { --av-ring: var(--p-accent); }
