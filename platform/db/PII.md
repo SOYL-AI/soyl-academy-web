@@ -12,7 +12,13 @@ What an account holds is kept to what the product needs:
 
 - **Sign-up needs an email address only.** No name is required (`users.name` is the placeholder
   "SOYL learner" for every sign-up method; Google's name and picture are not stored), no phone in
-  production (`AUTH_METHODS=email`), no school or city (`PATCH /v1/me` refuses them), no date of birth.
+  production (`AUTH_METHODS=email`), no school or city at sign-up, no date of birth.
+- **School (optional, 0013, D-014):** a student whose consent is `granted` may save a school
+  (`PATCH /v1/me` `school`); otherwise it is refused (403 `consent_required`) and never returned. A school
+  is PII-adjacent for a minor (with class and city it narrows a child down), so: only the school row id is
+  linked from the profile, `profiles.city` mirrors the school's city, both are cleared when consent leaves
+  `granted` and at account deletion, and school names typed by students are screened (no contact details,
+  links or blocked words) and shown to other students in search only once two accounts picked the school.
 - **Age:** a self-declared band only (`consent_records.age_band`: 18 or older / under 18).
 - **Parents:** the parent's email address is used once, to send the approval code, and never stored:
   only a keyed hash (rate limits, noticing a change of parent) and a masked hint ("p•••@gmail.com").
@@ -27,7 +33,9 @@ When consent leaves `granted` (the student withdraws, the parent's link withdraw
 re-declares as under 18), the API deletes the **AI data** at once: `ai_conversations` (cascades
 `ai_messages`) and the user's uploads with both blobs, by the same path as account deletion below
 (rows marked `deleted` in the transaction, then blobs and rows; the worker's `uploads.purge-deleted`
-retries failures). An `audit_log` row (action "consent.ai_data_deleted") records the counts only.
+retries failures). In the same transaction the profile's school and city are cleared (D-014: school/city
+are off without consent). An `audit_log` row (action "consent.ai_data_deleted") records the counts only
+(conversations, uploads, schoolCleared).
 Learning records (progress, practice, attempts, XP) are not AI data and stay.
 
 ## Account deletion (`DELETE /v1/me`)
@@ -43,7 +51,10 @@ Two steps, implemented by backend-api:
    counts only; whatever fails is retried by the worker's `uploads.purge-deleted` job every 5 minutes, and an
    upload still being processed is never resurrected). Overwrite the `users` row:
    `name = 'Deleted user'`, `email = 'deleted+<id>@deleted.soyl.invalid'`, `phone_number = NULL`,
-   `image = NULL`, `ban_reason = NULL`, `deleted_at = now()`; null the personal `profiles` fields.
+   `image = NULL`, `ban_reason = NULL`, `deleted_at = now()`; null the personal `profiles` fields
+   (school, city and weekly goal included). Schools the account added (0013): an unverified one no other
+   profile uses is deleted (a typed name could identify the child); the others stay as shared school
+   records with `created_by_user_id` set to NULL.
    The generated `email_normalized` / `phone_e164` become NULL automatically.
    SOYL Coins (ADR-021): erase every `coin_redemptions` shipping address and tracking reference, cancel
    open merch redemptions (coins refunded to the ledger) and unequip digital items.
@@ -88,8 +99,11 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `profiles.display_name` | Optional name shown on the student's own screens only (D-039: never to other students) | life of account | anonymise |
 | `profiles.public_name_seed` | Seed of the auto-generated public name ("Brave Otter 417", D-039); not personal | life of account | anonymise (reset to 0) |
 | `profiles.board`, `profiles.class_level` | Board and class | life of account | anonymise |
-| `profiles.school_id` | Not collected (D-039: `PATCH /v1/me` refuses it); column kept for opt-in leagues later | life of account | anonymise |
-| `profiles.city` | Not collected (D-039) | life of account | anonymise |
+| `profiles.school_id` | The student's school (PII-adjacent for a minor). Saved only with consent `granted` (D-014, `PATCH /v1/me` `school`), shown only while granted; for the dashboard now and a school leaderboard later | life of account; cleared when consent leaves `granted` | anonymise |
+| `profiles.city` | The chosen school's city (mirrored; never entered on its own) | as `school_id` | anonymise |
+| `profiles.weekly_goal` | Dashboard goal (questions per week); not personal | life of account | anonymise |
+| `schools.name_normalized`, `schools.city_normalized` | Dedupe/search keys of the school name and city (not personal; see `schools.name` below) | life of row | — |
+| `schools.created_by_user_id` | The account that added a student-sourced school (0013), for the per-day add limit and erasure | life of account | delete (unverified + unused by others: row deleted) or detach (set NULL) in step 1 |
 | `profiles.locale` | Language preference | life of account | cascade |
 | `guardian_links.parent_user_id`, `guardian_links.student_user_id` | Parent–child relationship | while linked | delete |
 | `consent_status.provider_ref` | Id in the owner's consent system | life of account | delete |
@@ -142,7 +156,9 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 
 Columns that match the name pattern but hold no personal data:
 `boards.name`, `classes.name`, `subjects.name`, `schools.name`, `badges.name`, `plans.name`
-(catalog/reference names), `analytics_events.name` (event name such as `lesson_completed`), `pipeline_items.input_tokens`, `pipeline_items.cached_input_tokens`,
+(catalog/reference names; a student-added school name is screened for contact details and kept off other
+students' search until two accounts picked it, and deleted with its creator's account while unverified
+and unused), `analytics_events.name` (event name such as `lesson_completed`), `pipeline_items.input_tokens`, `pipeline_items.cached_input_tokens`,
 `pipeline_items.output_tokens`, `content_budget_ledger.input_tokens`, `content_budget_ledger.cached_input_tokens`,
 `content_budget_ledger.output_tokens`, `ai_requests.input_tokens`, `ai_requests.cached_input_tokens`,
 `ai_requests.output_tokens`, `ai_requests.reasoning_tokens`, `content_chunks.tokens` (model token counts).
