@@ -6,8 +6,19 @@ DELETE /v1/me/sessions                        roles=student|parent|reviewer|admi
 DELETE /v1/me/sessions/:id                    roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /healthz                               roles=guest|student|parent|reviewer|admin csrf=true rl=none consent=no
 GET    /readyz                                roles=guest|student|parent|reviewer|admin csrf=true rl=none consent=no
+GET    /v1/admin/analytics/ai                 roles=admin csrf=true rl=default+admin.analytics.user consent=no mfa cap=superadmin
+GET    /v1/admin/analytics/content            roles=admin csrf=true rl=default+admin.analytics.user consent=no mfa cap=superadmin
+GET    /v1/admin/analytics/engagement         roles=admin csrf=true rl=default+admin.analytics.user consent=no mfa cap=superadmin
+GET    /v1/admin/analytics/growth             roles=admin csrf=true rl=default+admin.analytics.user consent=no mfa cap=superadmin
+GET    /v1/admin/analytics/interest           roles=admin csrf=true rl=default+admin.analytics.user consent=no mfa cap=superadmin
+GET    /v1/admin/analytics/overview           roles=admin csrf=true rl=default+admin.analytics.user consent=no mfa cap=superadmin
+GET    /v1/admin/analytics/retention          roles=admin csrf=true rl=default+admin.analytics.user consent=no mfa cap=superadmin
+GET    /v1/admin/analytics/revenue            roles=admin csrf=true rl=default+admin.analytics.user consent=no mfa cap=superadmin
 GET    /v1/admin/coins/redemptions            roles=reviewer|admin csrf=true rl=default consent=no mfa
+GET    /v1/admin/me                           roles=reviewer|admin csrf=true rl=default consent=no mfa
 GET    /v1/admin/reports                      roles=reviewer|admin csrf=true rl=default consent=no mfa
+GET    /v1/admin/users                        roles=admin csrf=true rl=default+admin.users.user consent=no mfa cap=superadmin
+GET    /v1/admin/users/:id/summary            roles=admin csrf=true rl=default+admin.users.user consent=no mfa cap=superadmin
 GET    /v1/ai/conversations                   roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/ai/conversations/:id               roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/ai/jobs/:id                        roles=student|parent|reviewer|admin csrf=true rl=default consent=no
@@ -62,6 +73,8 @@ PATCH  /v1/practice/answers/:id               roles=student|parent|reviewer|admi
 POST   /v1/admin/coins/redemptions/:id/approve roles=reviewer|admin csrf=true rl=default consent=no fresh mfa
 POST   /v1/admin/coins/redemptions/:id/fulfil roles=reviewer|admin csrf=true rl=default consent=no fresh mfa
 POST   /v1/admin/coins/redemptions/:id/reject roles=reviewer|admin csrf=true rl=default consent=no fresh mfa
+POST   /v1/admin/users/:id/reveal             roles=admin csrf=true rl=default+admin.users.user consent=no mfa cap=superadmin
+POST   /v1/admin/users/search                 roles=admin csrf=true rl=default+admin.users.user consent=no mfa cap=superadmin
 POST   /v1/ai/:action                         roles=student|parent|reviewer|admin csrf=true rl=default+ai.user (fail-closed) consent=ai
 POST   /v1/ai/conversations                   roles=student|parent|reviewer|admin csrf=true rl=default+ai.user (fail-closed) consent=ai
 POST   /v1/ai/uploads                         roles=student|parent|reviewer|admin csrf=true rl=default+uploads.user.hour+uploads.user.day (fail-closed) consent=uploads
@@ -88,6 +101,7 @@ POST   /v1/coins/redeem                       roles=student|parent|reviewer|admi
 POST   /v1/coins/redemptions/:id/cancel       roles=student|parent|reviewer|admin csrf=true rl=default+coins.write.user consent=no
 POST   /v1/consent/parent/withdraw            roles=guest|student|parent|reviewer|admin csrf=true rl=default+consent.parent.ip (fail-closed) consent=no
 POST   /v1/content-reports                    roles=guest|student|parent|reviewer|admin csrf=true rl=default+reports.ip+reports.user consent=no
+POST   /v1/events                             roles=guest|student|parent|reviewer|admin csrf=true rl=default+events.ip consent=no
 POST   /v1/live-events/:id/register           roles=student|parent|reviewer|admin csrf=true rl=default+live.register.user consent=no
 POST   /v1/me/consent/age-band                roles=student|parent|reviewer|admin csrf=true rl=default+consent.write.user (fail-closed) consent=no
 POST   /v1/me/consent/parent                  roles=student|parent|reviewer|admin csrf=true rl=default+consent.write.user (fail-closed) consent=no

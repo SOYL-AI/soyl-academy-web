@@ -65,7 +65,7 @@ npm run db -w @soyl/db -- migrate down [--to N]      roll back one (or until N r
 npm run db -w @soyl/db -- migrate status             applied / pending / changed-since-applied (exit 2 on drift)
 npm run db -w @soyl/db -- seed catalog [--dir PATH]  load platform/catalog (idempotent)
 npm run db -w @soyl/db -- seed test-users            fixture users; refuses in production (GEN-2)
-npm run db -w @soyl/db -- admin bootstrap --email E  create/promote the admin for E (DB-7)
+npm run db -w @soyl/db -- admin bootstrap --email E [--role admin|superadmin]  create/promote the admin (or superadmin, D-045) for E (DB-7)
 npm run generate -w @soyl/db -- --name <name>        drizzle-kit: next up migration from schema changes
 npm run typecheck -w @soyl/db
 npm test -w @soyl/db
@@ -235,5 +235,6 @@ session storage.
 - `seed test-users` creates six fixture users (`*@example.com`, phones `+91555000xxxx`, which cannot be
   Indian mobile subscribers), profiles, consent states and two guardian links (one verified). No admin,
   no password. Refuses when `NODE_ENV=production` or `APP_ENV=prod`.
-- `admin bootstrap --email E` promotes the user with that (normalised) email or creates one, and
-  writes an `audit_log` row. A fresh database has no admin until this runs (DB-7).
+- `admin bootstrap --email E [--role admin|superadmin]` promotes the user with that (normalised) email or creates one, and
+  writes an `audit_log` row. `superadmin` (D-045) = role `admin` + a `staff_capabilities` row (dashboard, audited user lookup);
+  `--role admin` removes the capability. Idempotent (no change, no audit row); a change revokes the account's sessions (API-10). A fresh database has no admin until this runs (DB-7).

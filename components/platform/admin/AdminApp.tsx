@@ -8,23 +8,32 @@
  * 2. MFA (AUTH-11): when a staff call returns `mfa_required`, read GET /v1/me/mfa and either enrol
  *    (QR of the otpauth URI + the secret, confirm with a code, show the 10 recovery codes once) or verify
  *    (a 6-digit code, or a recovery code). Enrolment needs a fresh sign-in (`fresh_session_required`).
- * 3. The content reports queue (GET /v1/admin/reports, newest first, cursor paging). Comments are shown as
+ * 3. GET /v1/admin/me decides the sections (D-045). Superadmins get the dashboard tabs (Overview, Growth,
+ *    Engagement, Retention, AI and credits, Revenue, Interest, Content, Users) plus Reports; other staff
+ *    see the reports queue only. Analytics and Users are lazy chunks.
+ * 4. The content reports queue (GET /v1/admin/reports, newest first, cursor paging). Comments are shown as
  *    plain text (React text nodes), never as Markdown or HTML.
  *
  * Nothing about MFA is stored in the browser (WEB-5).
  */
 import { lazy, Suspense, useCallback, useEffect, useState } from 'react';
-import { isApiError, type AdminContentReports, type MfaEnrollment, type MfaStatus } from '@/platform/shared/api-client';
+import { isApiError, type AdminContentReports, type AdminMe, type MfaEnrollment, type MfaStatus } from '@/platform/shared/api-client';
+import { cx } from '@/components/platform/ui/cx';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { Badge, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
 import { OTPInput, TextInput } from '@/components/platform/ui/kit/Field';
+import { Tabs } from '@/components/platform/ui/kit/Tabs';
 import { Icon } from '@/components/platform/ui/kit/Icon';
 import { useSession } from '../auth/SessionProvider';
 import { api } from '../lib/api-browser';
 import { problemMessage } from '../lib/problems';
+import { istToday, presetRange, tabsFor, type AdminTabId, type DateRange } from './analytics/model';
 import s from './admin.module.css';
 
 const QrCode = lazy(() => import('./QrCode').then((m) => ({ default: m.QrCode })));
+// D-045 super-admin sections: separate chunks, so reviewers (Reports only) never download them.
+const Analytics = lazy(() => import('./analytics/Analytics'));
+const UsersPanel = lazy(() => import('./analytics/UsersPanel'));
 
 type Report = AdminContentReports['reports'][number];
 const STATUSES = ['open', 'triaged', 'fixed', 'rejected', 'duplicate'] as const;
@@ -81,11 +90,10 @@ export function AdminApp() {
 
 function StaffArea({ onSignInAgain }: { onSignInAgain: () => void }) {
   const [gate, setGate] = useState<Gate>({ step: 'checking' });
-  const [status, setStatus] = useState<ReportStatus>('open');
-  const [reports, setReports] = useState<Report[] | null>(null);
-  const [cursor, setCursor] = useState<string | null>(null);
+  const [me, setMe] = useState<AdminMe | null>(null);
+  const [tab, setTab] = useState<AdminTabId | null>(null);
+  const [range, setRange] = useState<DateRange>(() => presetRange(30, istToday()));
   const [error, setError] = useState<string | null>(null);
-  const [busy, setBusy] = useState(false);
 
   const routeMfa = useCallback(async () => {
     try {
@@ -96,33 +104,56 @@ function StaffArea({ onSignInAgain }: { onSignInAgain: () => void }) {
     }
   }, []);
 
-  const loadReports = useCallback(
-    async (after: string | null, st: ReportStatus) => {
-      setBusy(true);
-      setError(null);
-      try {
-        const page = await api.get('/v1/admin/reports', { query: { status: st, limit: 25, ...(after ? { cursor: after } : {}) } });
-        setReports((prev) => (after && prev ? [...prev, ...page.reports] : page.reports));
-        setCursor(page.nextCursor);
-        setGate({ step: 'ready' });
-      } catch (err) {
-        if (isApiError(err, 'mfa_required')) await routeMfa();
-        else setError(problemMessage(err));
-      } finally {
-        setBusy(false);
-      }
+  /** Role, capabilities and sections (GET /v1/admin/me; staff + TOTP-verified session). */
+  const loadMe = useCallback(async () => {
+    setError(null);
+    try {
+      const m = await api.get('/v1/admin/me');
+      setMe(m);
+      setTab((t) => t ?? tabsFor(m)[0]?.id ?? 'reports');
+      setGate({ step: 'ready' });
+    } catch (err) {
+      if (isApiError(err, 'mfa_required')) await routeMfa();
+      else setError(problemMessage(err));
+    }
+  }, [routeMfa]);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- first load decides the MFA step
+    void loadMe();
+  }, [loadMe]);
+
+  /** A section hit `mfa_required` (the session lost its verification): ask for the code again. */
+  const onProblem = useCallback(
+    (err: unknown) => {
+      if (isApiError(err, 'mfa_required')) {
+        setGate({ step: 'checking' });
+        void routeMfa();
+      } else setError(problemMessage(err));
     },
     [routeMfa],
   );
 
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- first load decides the MFA step
-    void loadReports(null, status);
-  }, [loadReports, status]);
+  const tabs = tabsFor(me);
+  const superadmin = tabs.length > 1;
+  const panel = (id: AdminTabId) => {
+    if (id === 'reports') return <ReportsPanel onProblem={onProblem} />;
+    if (id === 'users')
+      return (
+        <Suspense fallback={<Skeleton lines={4} />}>
+          <UsersPanel onProblem={onProblem} />
+        </Suspense>
+      );
+    return (
+      <Suspense fallback={<Skeleton lines={6} />}>
+        <Analytics tab={id} range={range} onRangeChange={setRange} onProblem={onProblem} />
+      </Suspense>
+    );
+  };
 
   return (
-    <div className={s.admin}>
-      <h1 className={s.title}>Staff</h1>
+    <div className={cx(s.admin, superadmin && s.wide)}>
+      <h1 className={s.title}>{superadmin ? 'Admin dashboard' : 'Staff'}</h1>
       {error && (
         <p className={s.error} role="alert">
           <Icon name="alert" size={16} /> {error}
@@ -131,58 +162,97 @@ function StaffArea({ onSignInAgain }: { onSignInAgain: () => void }) {
       {gate.step === 'checking' && <Skeleton lines={3} />}
       {gate.step === 'enrol-start' && <EnrolStart onEnrolled={(enrollment) => setGate({ step: 'enrol-confirm', enrollment })} onSignInAgain={onSignInAgain} />}
       {gate.step === 'enrol-confirm' && <EnrolConfirm enrollment={gate.enrollment} onConfirmed={(codes) => setGate({ step: 'recovery-codes', codes })} onRestart={() => setGate({ step: 'enrol-start' })} />}
-      {gate.step === 'recovery-codes' && <RecoveryCodes codes={gate.codes} onDone={() => void loadReports(null, status)} />}
-      {gate.step === 'verify' && <Verify onVerified={() => void loadReports(null, status)} />}
-      {gate.step === 'ready' && (
-        <section aria-labelledby="reports-title" className={s.section}>
-          <div className={s.sectionHead}>
-            <h2 id="reports-title" className={s.subtitle}>
-              Content reports
-            </h2>
-            <label className={s.filter}>
-              Status{' '}
-              <select value={status} onChange={(e) => setStatus(e.target.value as ReportStatus)} className={s.select}>
-                {STATUSES.map((st) => (
-                  <option key={st} value={st}>
-                    {st}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
-          {reports && reports.length === 0 && <p className={s.muted}>No {status} reports.</p>}
-          {reports && reports.length > 0 && (
-            <ol className={s.reports} data-testid="reports">
-              {reports.map((r) => (
-                <li key={r.id} className={s.report}>
-                  <div className={s.reportHead}>
-                    <Badge tone={r.reason === 'wrong_answer' || r.reason === 'wrong_content' ? 'danger' : 'neutral'}>{r.reason.replace(/_/g, ' ')}</Badge>
-                    <span className={s.muted}>
-                      {new Date(r.createdAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' })} · {r.reporter}
-                    </span>
-                  </div>
-                  <p className={s.reportWhere}>
-                    <code>{r.unit}</code> · {r.contentType.replace('_', ' ')}
-                    {r.itemRef ? (
-                      <>
-                        {' '}
-                        · <code>{r.itemRef}</code>
-                      </>
-                    ) : null}
-                  </p>
-                  {r.comment && <p className={s.comment}>{r.comment}</p>}
-                </li>
-              ))}
-            </ol>
-          )}
-          {cursor && (
-            <Button variant="secondary" size="sm" loading={busy} onClick={() => void loadReports(cursor, status)}>
-              Load more
-            </Button>
-          )}
-        </section>
-      )}
+      {gate.step === 'recovery-codes' && <RecoveryCodes codes={gate.codes} onDone={() => void loadMe()} />}
+      {gate.step === 'verify' && <Verify onVerified={() => void loadMe()} />}
+      {gate.step === 'ready' &&
+        me &&
+        tab &&
+        (superadmin ? (
+          <Tabs label="Admin sections" value={tab} onChange={(id) => setTab(id as AdminTabId)} tabs={tabs.map((t) => ({ id: t.id, label: t.label, content: t.id === tab ? panel(t.id) : null }))} />
+        ) : (
+          panel('reports')
+        ))}
     </div>
+  );
+}
+
+/** The "Report a mistake" queue (every staff role). Comments are plain text (WEB-7). */
+function ReportsPanel({ onProblem }: { onProblem: (err: unknown) => void }) {
+  const [status, setStatus] = useState<ReportStatus>('open');
+  const [reports, setReports] = useState<Report[] | null>(null);
+  const [cursor, setCursor] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+
+  const loadReports = useCallback(
+    async (after: string | null, st: ReportStatus) => {
+      setBusy(true);
+      try {
+        const page = await api.get('/v1/admin/reports', { query: { status: st, limit: 25, ...(after ? { cursor: after } : {}) } });
+        setReports((prev) => (after && prev ? [...prev, ...page.reports] : page.reports));
+        setCursor(page.nextCursor);
+      } catch (err) {
+        onProblem(err);
+      } finally {
+        setBusy(false);
+      }
+    },
+    [onProblem],
+  );
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- reload when the status filter changes
+    void loadReports(null, status);
+  }, [loadReports, status]);
+
+  return (
+    <section aria-labelledby="reports-title" className={s.section}>
+      <div className={s.sectionHead}>
+        <h2 id="reports-title" className={s.subtitle}>
+          Content reports
+        </h2>
+        <label className={s.filter}>
+          Status{' '}
+          <select value={status} onChange={(e) => setStatus(e.target.value as ReportStatus)} className={s.select}>
+            {STATUSES.map((st) => (
+              <option key={st} value={st}>
+                {st}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+      {!reports && <Skeleton lines={3} />}
+      {reports && reports.length === 0 && <p className={s.muted}>No {status} reports.</p>}
+      {reports && reports.length > 0 && (
+        <ol className={s.reports} data-testid="reports">
+          {reports.map((r) => (
+            <li key={r.id} className={s.report}>
+              <div className={s.reportHead}>
+                <Badge tone={r.reason === 'wrong_answer' || r.reason === 'wrong_content' ? 'danger' : 'neutral'}>{r.reason.replace(/_/g, ' ')}</Badge>
+                <span className={s.muted}>
+                  {new Date(r.createdAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' })} · {r.reporter}
+                </span>
+              </div>
+              <p className={s.reportWhere}>
+                <code>{r.unit}</code> · {r.contentType.replace('_', ' ')}
+                {r.itemRef ? (
+                  <>
+                    {' '}
+                    · <code>{r.itemRef}</code>
+                  </>
+                ) : null}
+              </p>
+              {r.comment && <p className={s.comment}>{r.comment}</p>}
+            </li>
+          ))}
+        </ol>
+      )}
+      {cursor && (
+        <Button variant="secondary" size="sm" loading={busy} onClick={() => void loadReports(cursor, status)}>
+          Load more
+        </Button>
+      )}
+    </section>
   );
 }
 

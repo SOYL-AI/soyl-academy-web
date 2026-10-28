@@ -52,6 +52,10 @@ export const lessonProgress = pgTable(
   (t) => [
     uniqueIndex('lesson_progress_user_chapter_part_unique').on(t.userId, t.chapterId, t.part),
     index('lesson_progress_chapter_id_idx').on(t.chapterId),
+    // 0015 (D-045 admin analytics): platform-wide range reads by IST day (opened, completed, last active).
+    index('lesson_progress_created_at_idx').on(t.createdAt),
+    index('lesson_progress_completed_at_idx').on(t.completedAt),
+    index('lesson_progress_updated_at_idx').on(t.updatedAt),
     oneOf('lesson_progress_mode_check', t.mode, LESSON_MODES),
     oneOf('lesson_progress_source_check', t.source, PROGRESS_SOURCES),
     check('lesson_progress_part_check', sql`${t.part} BETWEEN 0 AND 20`),
@@ -90,6 +94,8 @@ export const practiceAnswers = pgTable(
     index('practice_answers_user_chapter_idx').on(t.userId, t.chapterId, t.answeredAt),
     index('practice_answers_question_id_idx').on(t.questionId),
     index('practice_answers_chapter_id_idx').on(t.chapterId),
+    // 0015 (D-045 admin analytics): platform-wide range reads by answer time.
+    index('practice_answers_answered_at_idx').on(t.answeredAt),
     // Guest merge is idempotent: at most one merged answer per user and question.
     uniqueIndex('practice_answers_guest_merge_unique').on(t.userId, t.questionKey).where(sql`${t.source} = 'guest_merge'`),
     oneOf('practice_answers_source_check', t.source, PROGRESS_SOURCES),

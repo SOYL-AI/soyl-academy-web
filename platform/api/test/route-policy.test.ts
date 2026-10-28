@@ -29,7 +29,7 @@ describe('route policy (API-6)', () => {
       .map((r) => {
         const p = r.policy;
         const rl = p.rateLimit === false ? 'none' : `${['default', ...(p.rateLimit.buckets ?? [])].join('+')}${p.rateLimit.failClosed ? ' (fail-closed)' : ''}`;
-        return `${r.method.padEnd(6)} ${r.url.padEnd(38)} roles=${p.roles.join('|')} csrf=${p.csrf} rl=${rl} consent=${p.consent || 'no'}${p.fresh ? ' fresh' : ''}${p.mfa ? ' mfa' : ''}${r.hidden ? ' (dev-only, hidden)' : ''}`;
+        return `${r.method.padEnd(6)} ${r.url.padEnd(38)} roles=${p.roles.join('|')} csrf=${p.csrf} rl=${rl} consent=${p.consent || 'no'}${p.fresh ? ' fresh' : ''}${p.mfa ? ' mfa' : ''}${p.capability ? ` cap=${p.capability}` : ''}${r.hidden ? ' (dev-only, hidden)' : ''}`;
       })
       .sort();
     expect(table.join('\n')).toMatchSnapshot();

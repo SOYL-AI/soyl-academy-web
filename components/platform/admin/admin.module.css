@@ -113,3 +113,7 @@
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
+/* D-045: superadmins get the full-width dashboard. */
+.wide {
+  max-width: 75rem;
+}

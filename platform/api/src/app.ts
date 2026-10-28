@@ -4,12 +4,14 @@
  *
  *   onRequest #1  flag (GEN-4) → edge auth for /v1/* (API-2) → trusted client IP (API-3)
  *   onRequest #2  route policy (API-6): CSRF Origin (AUTH-12) → IP limits → session → user limits
- *                 → roles → MFA → fresh session → consent (API-11)
+ *                 → roles → staff capability (D-045) → MFA → fresh session → consent (API-11)
  *   parsing       JSON only (415 otherwise), 64 KB default (API-5), depth/array checks
  *   validation    zod `.strict()` request schemas (API-8)
  *   serialisation zod response schemas strip unknown fields (API-9)
  *   onSend        security headers (API-4)
  *   errors        RFC 7807 problem+json with trace id (API-13)
+ *   counters      server-observed interest counters (D-045): paywall / AI paused (errors), checkout start
+ *                 (onResponse), sign-up (auth/identity.ts); aggregate only, no user link
  */
 import { randomUUID } from 'node:crypto';
 import Fastify, { type FastifyError, type FastifyInstance, type FastifyReply, type FastifyRequest } from 'fastify';
@@ -55,6 +57,8 @@ import { registerLeagueRoutes } from './modules/leagues';
 import { registerBillingRoutes } from './billing/routes';
 import { registerAiRoutes } from './ai/routes';
 import { registerCoinsRoutes } from './modules/coins';
+import { registerEventRoutes } from './modules/events';
+import { observeProblem, observeResponse } from './domain/admin/observe';
 
 export const HEALTH_PATHS = new Set(['/healthz', '/readyz']);
 const STATE_CHANGING = new Set(['POST', 'PUT', 'PATCH', 'DELETE']);
@@ -213,6 +217,11 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
       securityEvent(request.log, 'authz_denied', { userId: auth.user.id, role: auth.user.role, route: request.routeOptions.url });
       throw new ApiProblem('forbidden');
     }
+    // D-045: a staff capability on top of the role (superadmin = admin + capability), checked before MFA.
+    if (policy.capability && !(await services.staff.has(auth.user.id, policy.capability))) {
+      securityEvent(request.log, 'authz_denied', { userId: auth.user.id, reason: 'capability', capability: policy.capability, route: request.routeOptions.url });
+      throw new ApiProblem('forbidden');
+    }
     // AUTH-11 (ADR-011): staff routes need a confirmed TOTP enrolment and a session that passed it.
     if (policy.mfa && !(await services.mfa.sessionVerified(auth.user.id, auth.session.id))) {
       securityEvent(request.log, 'authz_denied', { userId: auth.user.id, reason: 'mfa_required', route: request.routeOptions.url });
@@ -247,10 +256,14 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
     return payload;
   });
 
+  // ---- D-045: server-observed interest counters (best effort, never blocks a response) -----------
+  app.addHook('onResponse', async (request, reply) => observeResponse(services.counters, request, reply.statusCode));
+
   // ---- errors: API-13 ------------------------------------------------------------------------------
   app.setErrorHandler((error: FastifyError | ApiProblem | Error, request, reply) => {
     if (error instanceof ApiProblem) {
       if (error.status >= 500) request.log.warn({ problem: error.code }, 'request refused');
+      void observeProblem(services.counters, request, error.code);
       return sendProblem(request, reply, error.code, error.extra);
     }
     if (hasZodFastifySchemaValidationErrors(error)) {
@@ -296,7 +309,8 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
   registerSchoolRoutes(app, deps);
   registerReportRoutes(app, deps);
   registerMfaRoutes(app, services);
-  registerAdminRoutes(app, deps);
+  registerAdminRoutes(app, deps, services);
+  registerEventRoutes(app, services);
   registerTestRoutes(app, deps, services);
   registerLeagueRoutes(app, deps);
   registerBillingRoutes(app, services.billing);
