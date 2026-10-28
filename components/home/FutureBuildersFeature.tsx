@@ -1,15 +1,18 @@
 import { futureBuilders } from '@/content/home';
 import { images } from '@/content/images';
-import { COHORT, formatCohortDate, type CohortState } from '@/content/future-builders';
+import { formatCohortDate, getOpenCohort, getUpcomingCohort, type CohortState } from '@/content/future-builders';
 import { ButtonLink } from '@/components/ui/Button';
 import { Label } from '@/components/ui/SectionHeader';
 import { Photo } from '@/components/media/Photo';
 
 /** Future Builders, introduced on the homepage. Status line follows the cohort state. */
 export function FutureBuildersFeature({ state }: { state: CohortState }) {
-  const status =
-    COHORT && state !== 'waitlist'
-      ? `${COHORT.name}: registration ${state === 'closing-soon' ? 'closes' : 'open until'} ${formatCohortDate(COHORT.registrationCloses)}.`
+  const open = getOpenCohort();
+  const upcoming = getUpcomingCohort();
+  const status = open
+    ? `${open.name}: registration ${state === 'closing-soon' ? 'closes' : 'open until'} ${formatCohortDate(open.registrationCloses)}.`
+    : upcoming
+      ? `${upcoming.name}, ${upcoming.window}. Registration opens ${upcoming.registrationOpensLabel}.`
       : 'Dates for the next cohort are being set. The waitlist is open.';
 
   return (

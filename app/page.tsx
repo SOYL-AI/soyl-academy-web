@@ -13,7 +13,7 @@ import { FutureBuildersBanner } from '@/components/marketing/FutureBuildersBanne
 import { Faq } from '@/components/seo/Faq';
 import { StructuredData } from '@/components/seo/StructuredData';
 import { homeFaqs } from '@/content/faqs';
-import { COHORT, formatCohortDate, getCohortState } from '@/content/future-builders';
+import { formatCohortDate, getCohortState, getOpenCohort } from '@/content/future-builders';
 import { createMetadata } from '@/lib/seo/metadata';
 import { breadcrumbNode, faqNode, graph, webPageNode } from '@/lib/seo/schema';
 
@@ -29,6 +29,7 @@ export const revalidate = 3600;
  */
 export default function HomePage() {
   const cohortState = getCohortState();
+  const openCohort = getOpenCohort();
 
   return (
     <>
@@ -40,10 +41,10 @@ export default function HomePage() {
         )}
       />
 
-      {COHORT && cohortState !== 'waitlist' && (
+      {openCohort && (
         <FutureBuildersBanner
-          cohortKey={COHORT.registrationCloses}
-          message={`Weekend cohort for Grades 7–12. Registration ${cohortState === 'closing-soon' ? 'closes' : 'open until'} ${formatCohortDate(COHORT.registrationCloses)}.`}
+          cohortKey={openCohort.registrationCloses}
+          message={`Live online cohort for Grades 7–12. Registration ${cohortState === 'closing-soon' ? 'closes' : 'open until'} ${formatCohortDate(openCohort.registrationCloses)}.`}
         />
       )}
 

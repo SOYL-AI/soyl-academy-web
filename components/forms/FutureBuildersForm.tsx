@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { findCoupon, priceFor } from '@/lib/future-builders/pricing';
 import {
@@ -13,6 +13,8 @@ import {
 } from '@/content/future-builders';
 import { Field, describedBy, inputClasses } from '@/components/ui/Field';
 import { buttonClasses } from '@/components/ui/Button';
+import { trackEvent } from '@/lib/analytics/track';
+import { useTalkMode } from './use-talk-mode';
 
 const WHATSAPP_URL = whatsappLink('Hi, I would like to enroll my child in Future Builders. Could you help me?');
 
@@ -46,6 +48,14 @@ export function FutureBuildersForm({ closesOn, orientationOn, cohortName }: Futu
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
+  const doneRef = useRef<HTMLDivElement>(null);
+
+  // "Talk to us" links (#talk) open the form in callback mode.
+  useTalkMode(useCallback(() => setMode('callback'), []));
+
+  useEffect(() => {
+    if (success) doneRef.current?.focus();
+  }, [success]);
 
   // Coupon state
   const [couponCode, setCouponCode] = useState('');
@@ -79,6 +89,7 @@ export function FutureBuildersForm({ closesOn, orientationOn, cohortName }: Futu
       setCouponCode(coupon.code);
       setAppliedCode(coupon.code);
       setCouponMessage(coupon.message);
+      trackEvent('fb_coupon_applied', { code: coupon.code });
     } else {
       setAppliedCode('');
       setCouponMessage('That code isn’t valid.');
@@ -146,6 +157,7 @@ export function FutureBuildersForm({ closesOn, orientationOn, cohortName }: Futu
         order_id: orderData.id,
         handler: async function (response: unknown) {
           await saveToSheet('pay', (response as { razorpay_payment_id: string }).razorpay_payment_id);
+          trackEvent('fb_payment_success', { amount: orderData.amount / 100, coupon: discount > 0 ? appliedCode : 'none' });
           setSuccess(true);
           setLoading(false);
         },
@@ -161,6 +173,7 @@ export function FutureBuildersForm({ closesOn, orientationOn, cohortName }: Futu
         setLoading(false);
       });
       rzp1.open();
+      trackEvent('fb_checkout_open', { amount: orderData.amount / 100 });
     } catch (err: unknown) {
       setError((err as Error).message || 'Payment couldn’t start. Please try again.');
       setLoading(false);
@@ -181,6 +194,7 @@ export function FutureBuildersForm({ closesOn, orientationOn, cohortName }: Futu
     if (mode === 'pay') await handlePayment();
     else {
       await saveToSheet('callback');
+      trackEvent('fb_callback_request', { state: 'open' });
       setSuccess(true);
       setLoading(false);
     }
@@ -188,7 +202,7 @@ export function FutureBuildersForm({ closesOn, orientationOn, cohortName }: Futu
 
   if (success) {
     return (
-      <div role="status" className="module border-success/40 p-6 md:p-8">
+      <div ref={doneRef} tabIndex={-1} role="status" className="module border-success/40 p-6 outline-none md:p-8">
         <p className="t-label mb-3 text-success">{mode === 'pay' ? 'Payment received' : 'Request received'}</p>
         {mode === 'pay' ? (
           <>
@@ -249,7 +263,7 @@ export function FutureBuildersForm({ closesOn, orientationOn, cohortName }: Futu
             onClick={() => setMode(m)}
             className={cn('press h-10 rounded-full text-[15px] font-semibold', mode === m ? 'bg-ink text-white' : 'text-ink hover:text-cobalt')}
           >
-            {m === 'pay' ? 'Pay and enrol' : 'Request a callback'}
+            {m === 'pay' ? 'Pay and enrol' : 'Request a call'}
           </button>
         ))}
       </div>
@@ -357,9 +371,9 @@ export function FutureBuildersForm({ closesOn, orientationOn, cohortName }: Futu
               : 'Sending…'
             : mode === 'pay'
               ? `Pay ₹${price.toLocaleString('en-IN')} and enrol`
-              : 'Request a callback'}
+              : 'Request a call'}
         </button>
-        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="arrow-link">
+        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="arrow-link" data-track="whatsapp" data-track-at="form">
           Questions? WhatsApp us
         </a>
       </div>

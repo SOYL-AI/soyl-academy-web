@@ -24,6 +24,9 @@ export async function POST(request: Request) {
           grade: body.grade || '',
           coupon: body.coupon || '',
           referredBy: body.referredBy || '',
+          // Which list a request belongs to, e.g. `fb_summer_2027` for "notify me" sign-ups.
+          // Same field the book-a-demo form sends. Only a short slug is accepted.
+          source: typeof body.source === 'string' && /^[a-z0-9_-]{1,40}$/.test(body.source) ? body.source : 'future_builders',
         }),
       });
 
