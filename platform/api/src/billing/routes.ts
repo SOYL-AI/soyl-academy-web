@@ -1,13 +1,14 @@
 /**
  * Billing routes (ARCHITECTURE §4.1 billing row, §11.2; ADR-016).
  *
- *   GET  /v1/plans                    public: plans, GST-inclusive INR labels, purchasable flags
+ *   GET  /v1/plans                    public: plans, INR labels (GST-inclusive only when GST-registered), purchasable flags
  *   POST /v1/billing/subscriptions    student: Plus/Pro monthly/yearly → Razorpay subscription + Checkout params
  *   POST /v1/billing/orders           student: Board Exam Pass → Razorpay order + Checkout params
  *   POST /v1/billing/cancel           student: cancel the subscription (paid period honoured)
  *   POST /v1/billing/refresh          student: server-side re-sync after Checkout (no payment data accepted)
  *   GET  /v1/me/subscription          member: plan in force, source, subscription status
  *   POST /v1/webhooks/razorpay        Razorpay only: raw body, HMAC verified (AUTH-12 exempt)
+ *   + the invoice routes (invoices/routes.ts, ADR-024)
  *
  * Purchases: 403 billing_disabled while BILLING_ENABLED=false; 403 consent_required until consent is
  * granted. Purchase responses never grant anything (no entitlement until Razorpay confirms payment).
@@ -16,6 +17,8 @@ import type { FastifyInstance } from 'fastify';
 import type { ZodTypeProvider } from 'fastify-type-provider-zod';
 import { z } from 'zod/v4';
 import { PlanId } from '@soyl/shared/config/plans';
+import { GST_STATE_CODES } from '@soyl/shared/billing/gst';
+import { registerInvoiceRoutes } from './invoices/routes';
 import { ApiProblem } from '../errors';
 import { EVERYONE, policies, type RoutePolicy } from '../policy';
 import { withProblems } from '../schemas';
@@ -31,7 +34,10 @@ const PlansResponse = z
   .object({
     billingEnabled: z.boolean(),
     currency: z.literal('INR'),
-    pricesIncludeGst: z.literal(true),
+    /** True only when the seller is GST-registered (platform/shared/config/invoicing.ts); then labels read "incl. GST". */
+    pricesIncludeGst: z.boolean(),
+    /** GST state code used when the buyer picks no state at checkout (the seller's state). */
+    defaultPlaceOfSupply: z.string(),
     plans: z.array(
       z.object({
         id: PlanId,
@@ -45,12 +51,23 @@ const PlansResponse = z
       }),
     ),
   })
-  .meta({ id: 'PlansResponse', description: 'Plans and GST-inclusive INR prices from platform/shared/config/plans.ts.' });
+  .meta({ id: 'PlansResponse', description: 'Plans and INR prices from platform/shared/config/plans.ts (GST-inclusive when pricesIncludeGst).' });
+
+/** Optional checkout details for the invoice (ADR-024): the buyer's state (GST place of supply) and a name. */
+const CheckoutBuyer = {
+  placeOfSupply: z.enum(GST_STATE_CODES).optional().meta({ description: 'GST state code of the buyer (place of supply). Default: the seller state.' }),
+  buyerName: z
+    .string()
+    .trim()
+    .regex(/^[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ .'’-]{0,79}$/, "English letters, spaces and . ' - only (as it should appear on the invoice)")
+    .optional()
+    .meta({ description: 'Name printed on the invoice (optional).' }),
+};
 
 const SubscriptionRequest = z
-  .strictObject({ plan: z.enum(['plus', 'pro']), interval: z.enum(['monthly', 'yearly']) })
+  .strictObject({ plan: z.enum(['plus', 'pro']), interval: z.enum(['monthly', 'yearly']), ...CheckoutBuyer })
   .meta({ id: 'BillingSubscriptionRequest' });
-const OrderRequest = z.strictObject({ plan: z.literal('board_exam_pass') }).meta({ id: 'BillingOrderRequest' });
+const OrderRequest = z.strictObject({ plan: z.literal('board_exam_pass'), ...CheckoutBuyer }).meta({ id: 'BillingOrderRequest' });
 /** No body, or `{}`. Anything else (e.g. Checkout's razorpay_payment_id/signature) is refused: 400 (API-8, F-020). */
 const EmptyRequest = z.strictObject({}).nullish().meta({ id: 'EmptyRequest' });
 
@@ -119,7 +136,7 @@ export function registerBillingRoutes(appIn: FastifyInstance, billing: BillingSe
 
   app.get('/v1/plans', {
     config: { policy: policies.publicRead() },
-    schema: { tags: ['billing'], summary: 'Plans and prices (GST-inclusive INR)', response: withProblems({ 200: PlansResponse }) },
+    schema: { tags: ['billing'], summary: 'Plans and prices (INR)', response: withProblems({ 200: PlansResponse }) },
     handler: async (_request, reply) => {
       reply.header('cache-control', 'public, max-age=60');
       return billing.publicPlans();
@@ -166,6 +183,10 @@ export function registerBillingRoutes(appIn: FastifyInstance, billing: BillingSe
     schema: { tags: ['billing'], summary: 'The plan in force and the subscription status', response: withProblems({ 200: SubscriptionView }) },
     handler: async (request) => billing.view(request.auth!.user.id),
   });
+
+  registerInvoiceRoutes(appIn, billing.invoices);
+  // Deliveries started after a webhook finish (or fail into the worker sweep) before the app closes.
+  appIn.addHook('onClose', async () => billing.invoices.drain());
 
   // Raw-body route in its own encapsulated context: the HMAC is computed over the exact bytes (AC-09),
   // so this context replaces the JSON parser with a Buffer one. Everything else keeps the JSON parser.

@@ -86,8 +86,11 @@ describe('0015 down and up on a seeded database', () => {
       { userId: u.id, kind: 'bonus_goal', amount: 10, action: 'daily_practice_goal', istDay: '2026-11-05' },
       { userId: u.id, kind: 'bonus_streak', amount: 5, action: 'streak_milestone', istDay: '2026-11-05' },
     ]);
-    const total = loadMigrations().length;
-    expect(loadMigrations().at(-1)!.name).toBe('0015_avatars_credit_bonus');
+    // Later migrations (0016_invoices, …) are rolled back first, then 0015 itself.
+    const all = loadMigrations();
+    const idx = all.findIndex((m) => m.name === '0015_avatars_credit_bonus');
+    expect(idx).toBeGreaterThan(-1);
+    const later = all.slice(idx + 1).map((m) => m.name).reverse();
     const c = new pg.Client({ connectionString: t.url });
     await c.connect();
     const defs = async () =>
@@ -95,7 +98,7 @@ describe('0015 down and up on a seeded database', () => {
     const indexes = async () => (await c.query(`SELECT indexname, indexdef FROM pg_indexes WHERE tablename IN ('credit_ledger', 'profiles') ORDER BY indexname`)).rows;
     try {
       const before = { defs: await defs(), indexes: await indexes() };
-      expect(await migrateDown(c, { to: total - 1, log })).toEqual(['0015_avatars_credit_bonus']);
+      expect(await migrateDown(c, { to: idx, log })).toEqual([...later, '0015_avatars_credit_bonus']);
       const rows = (await c.query(`SELECT kind, amount FROM credit_ledger WHERE user_id = $1 ORDER BY kind`, [u.id])).rows;
       expect(rows).toEqual([{ kind: 'grant', amount: 50 }]);
       const cols = (await c.query(`SELECT column_name FROM information_schema.columns WHERE table_name = 'profiles' AND column_name LIKE 'avatar%'`)).rows;

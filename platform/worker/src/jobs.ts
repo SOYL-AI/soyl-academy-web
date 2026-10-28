@@ -169,6 +169,7 @@ export const JOB_NAMES = {
   leaguesWeekly: 'leagues.weekly',
   billingReconcile: BILLING_JOB_NAMES.reconcile,
   billingExpire: BILLING_JOB_NAMES.expire,
+  billingInvoices: BILLING_JOB_NAMES.invoices,
   // AI gateway (ai-jobs.ts)
   aiJobs: AI_JOB_NAMES.jobs,
   creditsSweepReservations: AI_JOB_NAMES.sweepReservations,

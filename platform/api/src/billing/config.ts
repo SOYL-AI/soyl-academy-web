@@ -12,8 +12,13 @@
  *   RAZORPAY_WEBHOOK_SECRET      Key Vault `razorpay-webhook-secret`
  *   RAZORPAY_WEBHOOK_SECRET_PREVIOUS  optional, during rotation (two valid at a time, AC-22)
  *   RAZORPAY_API_BASE_URL        default https://api.razorpay.com/v1
+ *   INVOICING_ENABLED            issue invoices / credit notes for payments (ADR-024). Default: on in local/test,
+ *                                off elsewhere. With APP_ENV=prod it is refused (config problem) while
+ *                                platform/shared/config/invoicing.ts still has placeholders (OA-22).
  */
 import { readFlags } from '@soyl/shared/config/flags';
+import { INVOICING, invoicingProblems } from '@soyl/shared/config/invoicing';
+import type { InvoicingRuntime } from './invoices/issue';
 
 export const RAZORPAY_PROVIDERS = ['stub', 'razorpay', 'disabled'] as const;
 export type RazorpayProviderName = (typeof RAZORPAY_PROVIDERS)[number];
@@ -37,6 +42,8 @@ export interface BillingConfig {
   /** Current first, then the previous one during rotation. Empty when disabled. */
   webhookSecrets: string[];
   apiBaseUrl: string;
+  /** Invoices and credit notes (ADR-024). Absent: invoicing off. */
+  invoicing?: InvoicingRuntime;
 }
 
 export interface BillingEnvContext {
@@ -102,5 +109,14 @@ export function loadBillingConfig(env: Record<string, string | undefined>, ctx: 
 
   if (enabled && provider === 'disabled') problems.push('BILLING_ENABLED=true needs RAZORPAY_PROVIDER=razorpay (or stub outside prod)');
 
-  return { config: { enabled, provider, keyId, keySecret, webhookSecrets, apiBaseUrl }, problems };
+  const rawInvoicing = val('INVOICING_ENABLED');
+  if (rawInvoicing !== undefined && !['true', 'false'].includes(rawInvoicing)) problems.push('INVOICING_ENABLED must be true or false');
+  const invoicingEnabled = rawInvoicing === undefined ? ctx.isLocal : rawInvoicing === 'true';
+  if (invoicingEnabled && ctx.isProduction) {
+    const p = invoicingProblems(INVOICING);
+    if (p.length) problems.push(`INVOICING_ENABLED=true but platform/shared/config/invoicing.ts is not ready (OA-22): ${p.join('; ')}`);
+  }
+  const invoicing: InvoicingRuntime = { enabled: invoicingEnabled, production: ctx.isProduction, settings: INVOICING };
+
+  return { config: { enabled, provider, keyId, keySecret, webhookSecrets, apiBaseUrl, invoicing }, problems };
 }

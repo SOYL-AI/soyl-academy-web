@@ -3,7 +3,10 @@
 /**
  * /plans (billing-razorpay M4 handoff "What web needs for /plans"; CONTEXT §7; D-034):
  * - cards from GET /v1/plans: names, daily credits, features (from the API, not hard-coded per plan) and
- *   GST-inclusive price labels; buttons off when `purchasable` is false (billing off → "Coming soon");
+ *   price labels ("incl. GST" only when `pricesIncludeGst`: the seller is not GST-registered yet); buttons
+ *   off when `purchasable` is false (billing off → "Coming soon");
+ * - invoice details (ADR-024): the payer's state (GST place of supply; default the seller's state) and an
+ *   optional name for the invoice, sent with the purchase;
  * - Buy: POST /v1/billing/subscriptions | /orders → Razorpay Checkout (no prefill) → on success
  *   POST /v1/billing/refresh {} and poll GET /v1/me/subscription (every 2.5 s, up to 60 s) until the plan
  *   changes. The browser never decides the plan (AC-10);
@@ -20,10 +23,16 @@ import { Icon } from '@/components/platform/ui/kit/Icon';
 import { useSession } from '../auth/SessionProvider';
 import { useCredits } from '../ai/CreditsProvider';
 import { api } from '../lib/api-browser';
+import { GST_STATES } from '@/platform/shared/billing/gst';
+import { Field } from '@/components/platform/ui/kit/Field';
+import field from '@/components/platform/ui/kit/Interactive.module.css';
 import { trackInterest } from '../lib/interest';
 import { allowanceLine, bonusCopy, priceExamples } from './plans-copy';
 import { checkoutOptions, loadCheckout } from './razorpay';
 import s from './plans.module.css';
+
+/** The API's rule for the optional invoice name (platform/api/src/billing/routes.ts CheckoutBuyer). */
+export const INVOICE_NAME = /^[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ .'’-]{0,79}$/;
 
 export const ACTIVATION_POLL_MS = 2_500;
 export const ACTIVATION_TIMEOUT_MS = 60_000;
@@ -93,6 +102,8 @@ export function PlansClient() {
   const [mine, setMine] = useState<MySubscription | null>(null);
   const [interval, setInterval_] = useState<Interval>('monthly');
   const [buy, setBuy] = useState<BuyState>({ kind: 'idle' });
+  const [placeOfSupply, setPlaceOfSupply] = useState<string | null>(null);
+  const [buyerName, setBuyerName] = useState('');
   const member = state.status === 'member';
 
   const load = useCallback(async () => {
@@ -155,12 +166,20 @@ export function PlansClient() {
       openLogin({ returnTo: '/plans', reason: 'Log in to choose a plan. Lessons, practice and tests stay free.' });
       return;
     }
+    const name = buyerName.trim();
+    if (name && !INVOICE_NAME.test(name)) return; // the field shows the error
     setBuy({ kind: 'working', planId: plan.id });
+    // Invoice details (ADR-024): the state is always sent (default: the seller's); the name only when given.
+    const stateCode = placeOfSupply ?? plans?.defaultPlaceOfSupply;
+    const invoice = {
+      ...(stateCode && GST_STATES.some((st) => st.code === stateCode) ? { placeOfSupply: stateCode as (typeof GST_STATES)[number]['code'] } : {}),
+      ...(name ? { buyerName: name } : {}),
+    };
     try {
       const checkout =
         plan.id === 'board_exam_pass'
-          ? await api.post('/v1/billing/orders', { body: { plan: 'board_exam_pass' } })
-          : await api.post('/v1/billing/subscriptions', { body: { plan: plan.id as 'plus' | 'pro', interval } });
+          ? await api.post('/v1/billing/orders', { body: { plan: 'board_exam_pass', ...invoice } })
+          : await api.post('/v1/billing/subscriptions', { body: { plan: plan.id as 'plus' | 'pro', interval, ...invoice } });
       const Razorpay = await loadCheckout();
       const rzp = new Razorpay(
         checkoutOptions(checkout, {
@@ -203,6 +222,8 @@ export function PlansClient() {
   const ordered = [...plans.plans].sort((a, b) => a.order - b.order);
   const hasYearly = ordered.some((p) => p.prices.some((x) => x.interval === 'yearly'));
   const consentNeeded = member && state.consent !== 'granted';
+  const showInvoiceDetails = member && plans.billingEnabled && !consentNeeded && ordered.some((p) => p.purchasable);
+  const nameError = buyerName.trim() && !INVOICE_NAME.test(buyerName.trim()) ? "Use English letters, spaces and . ' - only." : undefined;
 
   return (
     <div className={s.page} data-testid="plans" data-billing={plans.billingEnabled ? 'on' : 'off'}>
@@ -268,6 +289,45 @@ export function PlansClient() {
         </div>
       )}
 
+      {showInvoiceDetails && (
+        <fieldset className={s.invoice} data-testid="invoice-details">
+          <legend className={s.invoiceLegend}>Invoice details</legend>
+          <Field label="State" hint="Where the person paying lives. It goes on the invoice; if you are not sure, keep the default.">
+            {(control) => (
+              <select
+                {...control}
+                className={field.input}
+                value={placeOfSupply ?? plans.defaultPlaceOfSupply}
+                onChange={(e) => setPlaceOfSupply(e.target.value)}
+                name="placeOfSupply"
+                autoComplete="address-level1"
+                data-testid="invoice-state"
+              >
+                {GST_STATES.map((st) => (
+                  <option key={st.code} value={st.code}>
+                    {st.name}
+                  </option>
+                ))}
+              </select>
+            )}
+          </Field>
+          <Field label="Name on the invoice (optional)" error={nameError}>
+            {(control) => (
+              <input
+                {...control}
+                className={field.input}
+                value={buyerName}
+                onChange={(e) => setBuyerName(e.target.value)}
+                maxLength={80}
+                autoComplete="name"
+                name="buyerName"
+                data-testid="invoice-name"
+              />
+            )}
+          </Field>
+        </fieldset>
+      )}
+
       <ul className={s.grid}>
         {ordered.map((p) => {
           const price = p.prices.find((x) => x.interval === (p.id === 'board_exam_pass' ? 'one_time' : interval)) ?? p.prices[0];
@@ -288,7 +348,7 @@ export function PlansClient() {
                     </>
                   );
                 })()}
-                {price && <span className={s.gst}> incl. GST</span>}
+                {price && plans.pricesIncludeGst && <span className={s.gst}> incl. GST</span>}
               </p>
               {p.validUntil && <p className={s.muted}>Valid until {new Date(p.validUntil).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' })}</p>}
               <ul className={s.features}>
@@ -329,7 +389,8 @@ export function PlansClient() {
         </ul>
         <p>{bonusCopy()}</p>
       </section>
-      <p className={s.muted}>Prices include GST. Payments are handled by Razorpay (UPI, cards). Monthly and yearly plans renew automatically until you cancel; you keep the plan until the end of the period you paid for.</p>
+      <p className={s.muted}>
+        {plans.pricesIncludeGst ? 'Prices include GST. ' : ''}Payments are handled by Razorpay (UPI, cards). An invoice is emailed for every payment and kept under <Link href="/me/invoices">Invoices</Link>. Monthly and yearly plans renew automatically until you cancel; you keep the plan until the end of the period you paid for.</p>
 
       {mine?.subscription && !mine.subscription.cancelAtPeriodEnd && (mine.subscription.status === 'active' || mine.subscription.status === 'authenticated') && (
         <p>

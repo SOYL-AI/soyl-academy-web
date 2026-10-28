@@ -2,8 +2,9 @@ import { acceptAllCookies, expect, test } from './fixtures';
 import { checkPage, ctl, grantConsent, shot, signUp } from './m34-helpers';
 
 /**
- * M4 /plans with the Razorpay stub (billing enabled in the e2e API): plans from the API with GST-inclusive
- * labels; CSP allows Razorpay only here; consent-needed state; buy Plus → Checkout (a stand-in for
+ * M4 /plans with the Razorpay stub (billing enabled in the e2e API): plans from the API, labelled "incl. GST"
+ * only when the API says prices include GST (platform/shared/config/invoicing.ts; not registered yet = plain
+ * prices); CSP allows Razorpay only here; consent-needed state; buy Plus → Checkout (a stand-in for
  * checkout.js, served by Playwright) → signed webhook through the web proxy (body bytes unchanged) →
  * the plan is active within 60 s, credits topped up; /me shows it and cancels at period end.
  */
@@ -22,7 +23,7 @@ test.beforeEach(async ({ page }) => {
   await acceptAllCookies(page);
 });
 
-test('/plans: public, GST-inclusive prices from the API; Razorpay CSP only here; no Checkout script until Buy', async ({ page }) => {
+test('/plans: public, prices from the API (GST label follows config); Razorpay CSP only here; no Checkout script until Buy', async ({ page }) => {
   const res = await page.goto('/plans', { waitUntil: 'networkidle' });
   expect(res?.status()).toBe(200);
   const csp = res!.headers()['content-security-policy']!;
@@ -35,7 +36,10 @@ test('/plans: public, GST-inclusive prices from the API; Razorpay CSP only here;
   await expect(page.getByTestId('plans')).toHaveAttribute('data-billing', 'on');
   const plus = page.locator('[data-plan="plus"]');
   await expect(plus).toContainText('₹199');
-  await expect(plus).toContainText('incl. GST');
+  // The GST label follows the API (owner, 2026-10-28: not GST-registered yet, so no "incl. GST").
+  const { pricesIncludeGst } = (await (await page.request.get('/api/platform/v1/plans')).json()) as { pricesIncludeGst: boolean };
+  if (pricesIncludeGst) await expect(plus).toContainText('incl. GST');
+  else await expect(plus).not.toContainText('GST');
   await expect(plus).toContainText('100 AI credits every day'); // D-044
   // D-034: "papers like my school's" is Pro and Board Exam Pass only, as the API says.
   await expect(plus).not.toContainText('Papers like my school');

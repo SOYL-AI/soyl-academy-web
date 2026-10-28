@@ -167,7 +167,14 @@ test('AI tutor: quote → stream → credits; hint → full; refund on failure; 
   await shot(page, 'paywall', false);
 
   // The API agrees (402 with the countdown and plans link), and non-AI features keep working.
-  const refused = await page.request.post('/api/platform/v1/ai/hard-doubt', { data: { message: 'x?' }, headers: { origin: new URL(page.url()).origin, 'idempotency-key': 'e2e-paywall-12345' } });
+  // D-044 (50 free credits) means more AI calls in this test than the ai.user limit (10 a minute) allows; a 429
+  // here is the rate limiter, not the paywall, so honour its retry-after once and ask again.
+  const askAgain = () => page.request.post('/api/platform/v1/ai/hard-doubt', { data: { message: 'x?' }, headers: { origin: new URL(page.url()).origin, 'idempotency-key': 'e2e-paywall-12345' } });
+  let refused = await askAgain();
+  if (refused.status() === 429) {
+    await page.waitForTimeout((Number(refused.headers()['retry-after'] ?? '60') + 1) * 1000);
+    refused = await askAgain();
+  }
   expect(refused.status()).toBe(402);
   expect(await refused.json()).toMatchObject({ code: 'credits_exhausted', plansUrl: expect.any(String), resetInSeconds: expect.any(Number) });
   expect((await page.request.get('/api/platform/v1/chapters/cbse-10-science-ch01/practice?limit=1')).status()).toBe(200);
