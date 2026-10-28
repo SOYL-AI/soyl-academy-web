@@ -26,12 +26,27 @@
     top: 76px;
     display: block;
     max-height: calc(100vh - 96px);
+    max-height: calc(100dvh - 96px);
     overflow-y: auto;
+    overscroll-behavior: contain;
     padding: var(--p-space-3);
     border: 1px solid var(--p-border);
     border-radius: var(--p-radius-xl);
     background: var(--p-surface);
+    /* A visible scrollbar and a fade at the bottom edge say "more chapters below" (Lead review 2026-10-28). */
     scrollbar-width: thin;
+    scrollbar-color: var(--p-border-strong) transparent;
+    scrollbar-gutter: stable;
+  }
+  .sidebar::after {
+    content: '';
+    position: sticky;
+    bottom: calc(-1 * var(--p-space-3));
+    display: block;
+    height: 36px;
+    margin: 0 calc(-1 * var(--p-space-3)) calc(-1 * var(--p-space-3));
+    background: linear-gradient(to bottom, transparent, var(--p-surface) 85%);
+    pointer-events: none;
   }
 }
 .sideTitle {

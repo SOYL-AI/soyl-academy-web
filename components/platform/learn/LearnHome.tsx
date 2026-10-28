@@ -2,49 +2,34 @@
 
 /**
  * /learn home islands (ADR-023). The page itself is static; these read the session in the browser.
- * - MemberDashboard (above the class picker): continue where you left off, streak + level, activity heatmap,
- *   your subjects with mastery rings, the private player card and the weekly league (consent-gated, D-014).
+ * - MemberDashboard (above the class picker): where to learn next. Continue where you left off, a link to the
+ *   progress dashboard (D-043: the metrics, heatmap, player card and league live there now, not here), your
+ *   subjects with mastery rings, and the daily challenge.
  * - GuestHome (below the hero): continue from this device, the subjects that have lessons, and a sign-in nudge
  *   (guest progress keeps working without an account).
  */
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import type { Schemas } from '@/platform/shared/api-client';
-
-type LeagueCurrent = Schemas['LeagueCurrent'];
 import { Button } from '@/components/platform/ui/kit/Button';
 import { Icon } from '@/components/platform/ui/kit/Icon';
 import { MasteryPip, ProgressRing } from '@/components/platform/ui/kit/Mastery';
 import { Skeleton } from '@/components/platform/ui/kit/Display';
 import { useSession } from '../auth/SessionProvider';
 import { DailyChallengeCard } from '../coins/DailyChallengeCard';
-import { api } from '../lib/api-browser';
+import { greeting } from '../dashboard/model';
 import { chapterSlug, examLabel, learnPath, type BoardSlug } from '../lib/catalog';
 import { readGuestProgress } from '../lib/guest-storage';
 import { continueChapter, subjectOfChapter } from '../lib/learner';
 import { MASTERY_HINT_TEXT } from '../lib/mastery';
-import { BlankPlayerCard, PlayerCard } from '../me/PlayerCard';
-import { Heatmap } from '../me/Heatmap';
+import { DASHBOARD_PATH } from '../lib/return-to';
 import { fetchContentSubjects, type ContentSubject } from './content-subjects';
+import { chapterHref } from './links';
 import { MasteryProvider, useCourseMastery } from './MasteryProvider';
 import { useLearnerProgress } from './ProgressProvider';
 import { subjectStyle } from './subject-style';
-import { useActivity, usePlayerCard } from './useInsights';
 import s from './home.module.css';
 
-/** "Good morning" by the hour in India (IST), never the device zone. */
-export function greeting(now: Date): string {
-  const h = (now.getUTCHours() + 5 + Math.floor((now.getUTCMinutes() + 30) / 60)) % 24;
-  return h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening';
-}
-
-/** /learn/cbse/10/science/ch01 from cbse-10-science-ch01 (CISCE ids start with icse/isc). */
-export function chapterHref(chapterId: string): string | null {
-  const m = /^(cbse|icse|isc)-(\d{1,2})-(.+)-(ch\d{2})$/.exec(chapterId);
-  if (!m) return null;
-  const board: BoardSlug = m[1] === 'cbse' ? 'cbse' : 'cisce';
-  return learnPath(board, Number(m[2]), `${m[1]}-${m[2]}-${m[3]}`, chapterId);
-}
+export { chapterHref, greeting };
 
 function useClassPick(): { board: BoardSlug; classLevel: number } | null {
   const { state } = useSession();
@@ -80,28 +65,25 @@ export function MemberDashboard() {
   if (state.status !== 'member') return null;
   return (
     <MasteryProvider>
-      <Dashboard name={state.user.displayName?.trim() || null} consent={state.consent === 'granted'} />
+      <Dashboard name={state.user.displayName?.trim() || null} />
     </MasteryProvider>
   );
 }
 
-function Dashboard({ name, consent }: { name: string | null; consent: boolean }) {
+function Dashboard({ name }: { name: string | null }) {
   const pick = useClassPick();
   const subjects = useContentSubjects(pick);
   const [now] = useState(() => new Date());
   return (
-    <section className={s.dash} aria-labelledby="dash-title" data-testid="dashboard">
+    <section className={s.dash} aria-labelledby="dash-title" data-testid="learn-home-member">
       <h2 id="dash-title" className={s.dashTitle}>
         {greeting(now)}
         {name ? `, ${name}` : ''}
       </h2>
       <div className={s.dashGrid}>
         <ContinueCard />
-        <StreakCard />
-        <ActivityCard />
-        <CardPreview />
+        <DashboardLinkCard />
         <SubjectsCard pick={pick} subjects={subjects} />
-        {consent ? <LeagueCard /> : <LeagueLocked />}
       </div>
       {pick && <DailyChallengeCard board={pick.board} classLevel={pick.classLevel} />}
     </section>
@@ -142,12 +124,13 @@ function ContinueCard() {
   );
 }
 
-function StreakCard() {
+/** The way to the progress dashboard (D-043), with the streak and level the shell already loaded. */
+function DashboardLinkCard() {
   const { progress } = useLearnerProgress();
   const streak = progress?.streak;
   const lp = progress?.levelProgress ?? 0;
   return (
-    <div className={s.tile} data-testid="streak-card">
+    <Link href={DASHBOARD_PATH} className={`${s.tile} ${s.tileLink}`} data-testid="dashboard-link">
       <div className={s.streakRow}>
         <span className={`${s.flameBig} ${!streak?.current || streak.atRisk ? s.flameCold : ''}`} aria-hidden="true">
           <Icon name="flame" size={30} />
@@ -157,9 +140,6 @@ function StreakCard() {
           <span className={s.muted}> day streak</span>
         </span>
       </div>
-      <p className={s.muted}>
-        {streak?.atRisk ? 'Learn something today to keep your streak.' : streak?.current ? `Longest: ${streak.longest} ${streak.longest === 1 ? 'day' : 'days'}.` : 'Answer a question or finish a lesson today to start one.'}
-      </p>
       {progress?.level != null && (
         <div className={s.levelRow}>
           <ProgressRing value={lp * 100} size={44} stroke={5} label={`Level ${progress.level}: ${Math.round(lp * 100)}% to the next level`}>
@@ -170,36 +150,9 @@ function StreakCard() {
           </span>
         </div>
       )}
-    </div>
-  );
-}
-
-function ActivityCard() {
-  const activity = useActivity(140);
-  return (
-    <div className={`${s.tile} ${s.tileWide}`} data-testid="activity-card">
-      <div className={s.tileHead}>
-        <h3 className={s.tileTitle}>Your activity</h3>
-        <Link href="/me#activity" className={s.tileMore}>
-          Profile
-        </Link>
-      </div>
-      {activity.status === 'ready' ? <Heatmap activity={activity.data} /> : activity.status === 'error' ? <p className={s.muted}>Your activity will show here.</p> : <Skeleton variant="block" height={110} />}
-    </div>
-  );
-}
-
-function CardPreview() {
-  const card = usePlayerCard();
-  return (
-    <Link href="/me" className={`${s.tile} ${s.tileLink} ${s.cardTile}`} data-testid="card-preview">
-      {card.status === 'ready' && card.data.attributes.length > 0 ? (
-        <PlayerCard card={card.data} compact />
-      ) : (
-        <BlankPlayerCard compact title={card.status === 'loading' ? 'Loading your card' : 'Solve 10 questions to get rated'} />
-      )}
+      <p className={s.muted}>Weekly goal, accuracy, mastery, test scores and focus areas.</p>
       <span className={s.cardCaption}>
-        Your player card <Icon name="chevronRight" size={16} />
+        Open your dashboard <Icon name="chevronRight" size={16} />
       </span>
     </Link>
   );
@@ -255,57 +208,6 @@ function SubjectsCard({ pick, subjects }: { pick: { board: BoardSlug; classLevel
           })}
         </ul>
       )}
-    </div>
-  );
-}
-
-const ZONE_TEXT = { promotion: 'Promotion zone', safe: 'Safe', relegation: 'Relegation zone' } as const;
-
-function LeagueCard() {
-  const [league, setLeague] = useState<LeagueCurrent | null | 'error'>(null);
-  useEffect(() => {
-    let alive = true;
-    api
-      .get('/v1/leagues/current')
-      .then((l) => alive && setLeague(l))
-      .catch(() => alive && setLeague('error'));
-    return () => {
-      alive = false;
-    };
-  }, []);
-  return (
-    <Link href="/leaderboard" className={`${s.tile} ${s.tileLink}`} data-testid="league-card">
-      <h3 className={s.tileTitle}>Weekly league</h3>
-      {league === null ? (
-        <Skeleton lines={2} />
-      ) : league === 'error' || league.status !== 'active' || !league.league ? (
-        <p className={s.muted}>{league !== 'error' && league.status === 'class_required' ? 'Set your class to join a league.' : 'Earn XP this week to climb your league.'}</p>
-      ) : (
-        <>
-          <p className={s.leagueTier} data-tier={league.league.tier.key}>
-            <Icon name="trophy" size={22} /> {league.league.tier.name}
-          </p>
-          {league.me ? (
-            <p className={s.muted}>
-              Rank <b className={s.ink}>#{league.me.rank}</b> · {league.me.xp} XP · {ZONE_TEXT[league.me.zone]}
-            </p>
-          ) : (
-            <p className={s.muted}>Earn XP to appear in the standings.</p>
-          )}
-        </>
-      )}
-    </Link>
-  );
-}
-
-function LeagueLocked() {
-  return (
-    <div className={s.tile} data-testid="league-locked">
-      <h3 className={s.tileTitle}>Weekly league</h3>
-      <p className={s.muted}>Leagues and leaderboards open after a parent approves (or you confirm you are 18+).</p>
-      <Link href="/me#consent" className={s.tileMore}>
-        How to unlock
-      </Link>
     </div>
   );
 }

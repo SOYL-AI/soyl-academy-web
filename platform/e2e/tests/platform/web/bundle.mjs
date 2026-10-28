@@ -45,6 +45,8 @@ export const PAGES = [
   ['class (challenge)', '/learn/cbse/10'],
   ['coins', '/coins'],
   ['store', '/store'],
+  // Student dashboard (D-043)
+  ['dashboard', '/me/dashboard'],
 ];
 
 const cache = new Map();

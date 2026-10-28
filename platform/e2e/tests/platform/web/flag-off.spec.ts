@@ -16,6 +16,11 @@ const ROUTES = [
   '/api/platform/v1/chapters/cbse-10-science-ch01',
   '/learn/sitemap.xml',
   '/me',
+  // Student dashboard (D-043) and its short link
+  '/me/dashboard',
+  '/dashboard',
+  '/api/platform/v1/me/dashboard',
+  '/api/platform/v1/schools?q=st',
   '/dev/ui',
   '/api/platform/v1/session',
   '/api/platform/v1/catalog/boards',
@@ -57,6 +62,16 @@ test('POSTs to the proxy and CSP endpoint → 404', async ({ request }) => {
   expect((await request.post('/api/platform/v1/ai/quick-doubt', { data: { message: 'x' } })).status()).toBe(404);
   expect((await request.post('/api/platform/v1/coins/check-in', { data: {} })).status()).toBe(404);
   expect((await request.post('/api/platform/v1/coins/redeem', { data: { itemKey: 'hoodie' } })).status()).toBe(404);
+});
+
+test('/dashboard and /me/dashboard are the marketing 404 with the marketing chrome (no platform shell)', async ({ page }) => {
+  for (const path of ['/dashboard', '/me/dashboard']) {
+    const res = await page.goto(path);
+    expect(res?.status(), path).toBe(404);
+    await expect(page.locator('#mobile-menu'), path).toHaveCount(1); // the marketing header's menu
+    await expect(page.locator('#soyl-platform-root'), path).toHaveCount(0);
+    await expect(page.getByRole('navigation', { name: 'Learning platform' }), path).toHaveCount(0);
+  }
 });
 
 test('the marketing header has no Learn link', async ({ page }) => {

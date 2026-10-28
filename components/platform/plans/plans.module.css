@@ -108,7 +108,15 @@
   margin: 0;
   font-size: var(--p-text-2xl);
   font-weight: 800;
+}
+.amount {
   font-variant-numeric: tabular-nums;
+}
+/* "/month", " one-time": proportional figures and hyphen. */
+.per {
+  font-size: var(--p-text-lg);
+  font-weight: 650;
+  white-space: nowrap;
 }
 .gst {
   font-size: var(--p-text-sm);

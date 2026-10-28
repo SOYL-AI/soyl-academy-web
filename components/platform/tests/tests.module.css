@@ -29,6 +29,7 @@
   gap: var(--p-space-2);
 }
 .sectionHeading {
+  text-wrap: balance;
   margin: 0 0 var(--p-space-2);
   font-size: var(--p-text-xl);
   line-height: var(--p-leading-tight);
@@ -638,4 +639,11 @@
   background: var(--p-highlight);
   color: var(--p-on-highlight);
   font-weight: 700;
+}
+
+/* /tests: counts next to group headings ("Ready to take 4"). */
+.countNote {
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-sm);
+  font-weight: 500;
 }

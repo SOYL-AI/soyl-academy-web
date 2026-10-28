@@ -5,7 +5,7 @@
  */
 import Link from 'next/link';
 import { cx } from '@/components/platform/ui/cx';
-import { ChapterMasteryPip, type CourseChapterLink } from './CourseIslands';
+import { ChapterMasteryPip, SidebarKeepCurrent, type CourseChapterLink } from './CourseIslands';
 import s from './course.module.css';
 
 export interface CourseUnit {
@@ -44,17 +44,29 @@ export function CourseSidebar({ title, href, units, currentId, lang }: { title: 
           </ol>
         </div>
       ))}
+      {currentId && <SidebarKeepCurrent />}
     </nav>
   );
 }
 
-/** Groups catalog chapters by unit, keeping board order. */
-export function unitsOf<T extends { unit: string | null }>(chapters: T[]): Array<{ unit: string | null; chapters: T[] }> {
+/** Heading of the chapters a school assesses but the board exam does not (formative-only, CBSE). */
+export const SCHOOL_ONLY_UNIT = 'School assessment only (not in board exam)';
+
+/**
+ * Groups catalog chapters by unit, keeping board order. Chapters that are not in the board exam
+ * (`boardAssessed: false`, listed by the board after the exam chapters) go into one final group
+ * "School assessment only (not in board exam)" instead of repeating their units' headings at the end
+ * (Lead review 2026-10-28). A subject whose chapters are all outside the board exam keeps its units.
+ */
+export function unitsOf<T extends { unit: string | null; boardAssessed?: boolean }>(chapters: T[]): Array<{ unit: string | null; chapters: T[] }> {
+  const schoolOnly = chapters.filter((ch) => ch.boardAssessed === false);
+  const split = schoolOnly.length > 0 && schoolOnly.length < chapters.length;
   const groups: Array<{ unit: string | null; chapters: T[] }> = [];
-  for (const ch of chapters) {
+  for (const ch of split ? chapters.filter((x) => x.boardAssessed !== false) : chapters) {
     const last = groups[groups.length - 1];
     if (last && last.unit === ch.unit) last.chapters.push(ch);
     else groups.push({ unit: ch.unit, chapters: [ch] });
   }
+  if (split) groups.push({ unit: SCHOOL_ONLY_UNIT, chapters: schoolOnly });
   return groups;
 }

@@ -290,7 +290,13 @@
   flex: 1;
   min-width: 0;
   font-weight: 650;
-  overflow-wrap: anywhere;
+  /* Long names ("Hindustani Music Melodic Instruments") wrap at words and stop at two lines. */
+  display: -webkit-box;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
 }
 .subjectState {
   color: var(--p-ink-subtle);

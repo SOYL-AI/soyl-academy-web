@@ -34,6 +34,17 @@ const FEATURE_TEXT: Record<string, string> = {
   parent_weekly_report: 'Weekly progress report for parents',
 };
 
+/**
+ * "₹1,499/year" → amount "₹1,499" (tabular figures) + suffix "/year" (proportional, so "one-time" keeps its
+ * normal hyphen: Inter's tabular hyphen rendered "one - time"). No price (the Free plan) → "₹0", so the card
+ * does not say "Free" twice (Lead review 2026-10-28).
+ */
+export function priceParts(label: string | null): { amount: string; suffix: string } {
+  if (!label) return { amount: '₹0', suffix: '' };
+  const m = /^(₹\s?[\d,]+(?:\.\d+)?)(.*)$/.exec(label);
+  return m ? { amount: m[1]!, suffix: m[2]! } : { amount: label, suffix: '' };
+}
+
 export function featureText(id: string, plan: Pick<PlanView, 'creditsPerDay'>): string {
   if (id === 'ai_credits') return `${plan.creditsPerDay} AI credits every day`;
   return FEATURE_TEXT[id] ?? id.replace(/_/g, ' ').replace(/^./, (c) => c.toUpperCase());
@@ -266,8 +277,16 @@ export function PlansClient() {
               <h2 className={s.planName}>
                 {p.name} {p.id === 'pro' && <Badge tone="accent">Most AI</Badge>}
               </h2>
-              <p className={s.price}>
-                {price ? price.label : 'Free'}
+              <p className={s.price} data-testid={`price-${p.id}`}>
+                {(() => {
+                  const parts = priceParts(price?.label ?? null);
+                  return (
+                    <>
+                      <span className={s.amount}>{parts.amount}</span>
+                      {parts.suffix && <span className={s.per}>{parts.suffix}</span>}
+                    </>
+                  );
+                })()}
                 {price && <span className={s.gst}> incl. GST</span>}
               </p>
               {p.validUntil && <p className={s.muted}>Valid until {new Date(p.validUntil).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' })}</p>}

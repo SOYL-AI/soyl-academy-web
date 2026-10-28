@@ -2,9 +2,11 @@
 
 /**
  * The learning platform's own app shell (ADR-023; replaces the marketing header/footer on platform pages):
- * - top bar: SOYL mark → /learn, primary nav (desktop), streak, SOYL Coins, today's AI credits (consented
- *   members, D-014), theme picker, profile / log in;
- * - mobile (< 768 px): a bottom tab bar, hidden on immersive pages (lesson, flashcards, test player);
+ * - the way back to the main site (owner, 2026-10-28): "‹ soylai.com" in the top bar from 768 px; below that a
+ *   slim row above the top bar (the phone top bar is full for members), never sticky, also for guests;
+ * - top bar: SOYL mark → /learn (the academy home), primary nav (≥ 1024 px; members: Home first), streak,
+ *   SOYL Coins, today's AI credits (consented members, D-014), theme picker, profile / log in;
+ * - phones and tablets (< 1024 px): a bottom tab bar, hidden on immersive pages (lesson, flashcards, test player);
  * - a quiet app footer (server-rendered, passed in) with the way back to the main site and the legal links.
  */
 import Image from 'next/image';
@@ -31,6 +33,8 @@ interface NavItem {
   icon: IconName;
   /** Other prefixes that count as this section. */
   also?: string[];
+  /** Prefixes under `href` that belong to another section. */
+  except?: string[];
 }
 
 export const PRIMARY_NAV: readonly NavItem[] = [
@@ -39,10 +43,25 @@ export const PRIMARY_NAV: readonly NavItem[] = [
   { href: '/ask', label: 'Ask AI', short: 'Ask AI', icon: 'chat' },
   { href: '/leaderboard', label: 'Leaderboard', short: 'Ranks', icon: 'trophy' },
 ];
-const ME_TAB: NavItem = { href: '/me', label: 'Profile', short: 'Me', icon: 'user', also: ['/coins', '/store', '/plans'] };
+/** The student dashboard (D-043): first for members. */
+export const HOME_NAV: NavItem = { href: '/me/dashboard', label: 'Home', short: 'Home', icon: 'home' };
+const ME_TAB: NavItem = { href: '/me', label: 'Profile', short: 'Me', icon: 'user', also: ['/coins', '/store'], except: [HOME_NAV.href] };
 
-export function isCurrentSection(pathname: string, item: Pick<NavItem, 'href' | 'also'>): boolean {
-  return [item.href, ...(item.also ?? [])].some((h) => pathname === h || pathname.startsWith(`${h}/`));
+const under = (pathname: string, h: string) => pathname === h || pathname.startsWith(`${h}/`);
+
+export function isCurrentSection(pathname: string, item: Pick<NavItem, 'href' | 'also' | 'except'>): boolean {
+  if (item.except?.some((h) => under(pathname, h))) return false;
+  return [item.href, ...(item.also ?? [])].some((h) => under(pathname, h));
+}
+
+/**
+ * Top bar: members get Home (the dashboard) first. Mobile tab bar: always five tabs; for members Home takes the
+ * place of Ranks (the dashboard carries the weekly-league teaser, so Home stays lit on /leaderboard).
+ */
+export function navFor(member: boolean, place: 'top' | 'tabs'): readonly NavItem[] {
+  if (place === 'top') return member ? [HOME_NAV, ...PRIMARY_NAV] : PRIMARY_NAV;
+  if (!member) return [...PRIMARY_NAV, ME_TAB];
+  return [{ ...HOME_NAV, also: ['/leaderboard'] }, ...PRIMARY_NAV.filter((n) => n.href !== '/leaderboard'), ME_TAB];
 }
 
 export function AppShell({ children, footer }: { children: ReactNode; footer?: ReactNode }) {
@@ -53,6 +72,7 @@ export function AppShell({ children, footer }: { children: ReactNode; footer?: R
       <a href="#platform-content" className={s.skip}>
         Skip to page content
       </a>
+      {!focus && <MainSiteLink variant="row" />}
       <TopBar pathname={pathname} />
       <div id="platform-content" className={s.content} tabIndex={-1}>
         {children}
@@ -61,6 +81,29 @@ export function AppShell({ children, footer }: { children: ReactNode; footer?: R
       {!focus && <TabBar pathname={pathname} />}
     </div>
   );
+}
+
+export const MAIN_SITE_LABEL = 'Back to soylai.com, the SOYL main website';
+
+/**
+ * Back to the marketing site (owner, 2026-10-28: "once I click on learn there should be an option to go back to the
+ * marketing website"). A normal navigation to `/`: the marketing header and footer come back and the platform theme
+ * leaves `<html>` (ThemeProvider).
+ */
+export function MainSiteLink({ variant }: { variant: 'bar' | 'row' }) {
+  const link = (
+    <Link
+      href="/"
+      className={variant === 'bar' ? s.siteLink : s.siteRowLink}
+      aria-label={MAIN_SITE_LABEL}
+      data-testid={variant === 'bar' ? 'main-site-link' : 'main-site-row-link'}
+    >
+      <Icon name="chevronLeft" size={16} />
+      {/* The label contains the visible text (WCAG 2.5.3): phones show "Back to soylai.com", the top bar "soylai.com". */}
+      <span>{variant === 'bar' ? 'soylai.com' : 'Back to soylai.com'}</span>
+    </Link>
+  );
+  return variant === 'bar' ? link : <div className={s.siteRow}>{link}</div>;
 }
 
 function TopBar({ pathname }: { pathname: string }) {
@@ -75,9 +118,10 @@ function TopBar({ pathname }: { pathname: string }) {
           <Image src="/brand/soyl-mark-128.png" alt="" width={30} height={30} className={s.mark} priority />
           <span className={s.brandName} aria-hidden="true">SOYL Academy</span>
         </Link>
+        <MainSiteLink variant="bar" />
         <nav aria-label="Learning platform" className={s.primary}>
           <ul>
-            {PRIMARY_NAV.map((n) => {
+            {navFor(state.status === 'member', 'top').map((n) => {
               const on = isCurrentSection(pathname, n);
               return (
                 <li key={n.href}>
@@ -136,7 +180,8 @@ export function StreakChip() {
 }
 
 function TabBar({ pathname }: { pathname: string }) {
-  const items = [...PRIMARY_NAV, ME_TAB];
+  const { state } = useSession();
+  const items = navFor(state.status === 'member', 'tabs');
   return (
     <nav aria-label="Learning platform" className={s.tabs}>
       <ul>

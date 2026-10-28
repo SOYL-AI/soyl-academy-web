@@ -37,7 +37,8 @@ test('email OTP: sign up → profile → logout → log in again', async ({ page
   expect(setCookie).toMatch(/soyl_session=/);
   expect(setCookie).toMatch(/HttpOnly/i);
   expect(setCookie).toMatch(/SameSite=Lax/i);
-  expect(page.url()).toMatch(/\/learn$/);
+  // D-043: a login opened on the platform home (no page to come back to) lands on the dashboard.
+  await expect(page).toHaveURL(/\/me\/dashboard$/);
 
   // WEB-5: no tokens in browser storage.
   for (const key of await storageKeys(page)) expect(ALLOWED_STORAGE_KEYS).toContain(key);
