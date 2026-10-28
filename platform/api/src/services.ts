@@ -63,7 +63,17 @@ export function createServices(deps: AppDeps) {
   const consent = new ConsentService(db, providers.consent, clock);
   const mfa = new MfaService(db, clock, limiter, { encryptionKey: config.mfaEncryptionKey, pepper: config.otpPepper, issuer: MFA.totp.issuer });
   const razorpay = deps.billing && 'razorpay' in deps.billing ? (deps.billing.razorpay ?? null) : createRazorpayClient(config.billing, () => clock.now());
-  const billing = new BillingService({ db, clock, kv, config: config.billing, razorpay, consent });
+  // Invoices (ADR-024): PDFs go to the same Blob account as AI uploads (private `invoices` container), emails
+  // through the sign-in email provider. `ai` is created below; the getter is only called after construction.
+  const billing = new BillingService({
+    db,
+    clock,
+    kv,
+    config: config.billing,
+    razorpay,
+    consent,
+    invoiceDelivery: { blob: () => ai.runtime.blob, email: providers.email, publicBaseUrl: config.publicBaseUrl },
+  });
   // AI gateway: plans come from billing's entitlements (AiServices defaults to BillingEntitlementService over the same
   // database; tests may inject a StaticEntitlementService); a newly granted plan tops today's credits up at once.
   const ai = new AiServices({ config, db, kv, clock, ai: deps.ai });

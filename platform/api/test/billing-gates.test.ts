@@ -1,5 +1,5 @@
 /**
- * Billing gates: GET /v1/plans (public, GST-inclusive labels), BILLING_ENABLED=false (403
+ * Billing gates: GET /v1/plans (public; GST-inclusive labels only when GST-registered, invoicing.ts), BILLING_ENABLED=false (403
  * billing_disabled, plans and webhooks still work), consent (D-014: purchases need `granted`; with the
  * production `unavailable` consent provider nobody can buy), roles, and no provider configured.
  */
@@ -15,6 +15,7 @@ import { BillingService } from '../src/billing/service';
 import { RazorpayStub } from '../src/billing/razorpay';
 import { requirePlanRows, syncPlans } from '../src/billing/plans';
 import { ApiProblem } from '../src/errors';
+import { INVOICING, pricesIncludeGst } from '@soyl/shared/config/invoicing';
 import { createHarness, securityEvents, type Harness } from './helpers';
 import { createBillingHarness, email, planFor, type BillingHarness } from './billing-fixture';
 
@@ -27,12 +28,14 @@ describe('GET /v1/plans', () => {
     await h?.close();
   });
 
-  it('is public and lists every plan with GST-inclusive INR labels from plans.ts', async () => {
+  it('is public and lists every plan with INR labels from plans.ts (GST flag from invoicing.ts)', async () => {
     const res = await h.client().get('/v1/plans');
     expect(res.statusCode).toBe(200);
     expect(res.headers['cache-control']).toBe('public, max-age=60');
     const body = res.json();
-    expect(body).toMatchObject({ billingEnabled: true, currency: 'INR', pricesIncludeGst: true });
+    // Owner, 2026-10-28: not GST-registered yet, so prices are not labelled GST-inclusive; the flag follows config.
+    expect(body).toMatchObject({ billingEnabled: true, currency: 'INR', pricesIncludeGst: pricesIncludeGst(), defaultPlaceOfSupply: INVOICING.seller.stateCode });
+    expect(body.pricesIncludeGst).toBe(INVOICING.gstRegistered);
     expect(body.plans.map((p: { id: string }) => p.id)).toEqual(['free', 'plus', 'pro', 'board_exam_pass']);
     const byId = Object.fromEntries(body.plans.map((p: { id: string }) => [p.id, p]));
     expect(byId.free).toMatchObject({ creditsPerDay: 25, prices: [], purchasable: false });

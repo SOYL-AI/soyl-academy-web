@@ -7,6 +7,8 @@ DELETE /v1/me/sessions/:id                    roles=student|parent|reviewer|admi
 GET    /healthz                               roles=guest|student|parent|reviewer|admin csrf=true rl=none consent=no
 GET    /readyz                                roles=guest|student|parent|reviewer|admin csrf=true rl=none consent=no
 GET    /v1/admin/coins/redemptions            roles=reviewer|admin csrf=true rl=default consent=no mfa
+GET    /v1/admin/invoices                     roles=admin csrf=true rl=default consent=no mfa
+GET    /v1/admin/invoices/export              roles=admin csrf=true rl=default consent=no mfa
 GET    /v1/admin/reports                      roles=reviewer|admin csrf=true rl=default consent=no mfa
 GET    /v1/ai/conversations                   roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/ai/conversations/:id               roles=student|parent|reviewer|admin csrf=true rl=default consent=no
@@ -46,6 +48,8 @@ GET    /v1/me/badges                          roles=student|parent|reviewer|admi
 GET    /v1/me/card                            roles=student|parent|reviewer|admin csrf=true rl=default+insights.read.user consent=no
 GET    /v1/me/consent                         roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/me/dashboard                       roles=student|parent|reviewer|admin csrf=true rl=default+dashboard.read.user consent=no
+GET    /v1/me/invoices                        roles=student|parent|reviewer|admin csrf=true rl=default consent=no
+GET    /v1/me/invoices/:id/pdf                roles=student|parent|reviewer|admin csrf=true rl=default consent=no
 GET    /v1/me/mastery                         roles=student|parent|reviewer|admin csrf=true rl=default+insights.read.user consent=no
 GET    /v1/me/mfa                             roles=reviewer|admin csrf=true rl=default consent=no
 GET    /v1/me/progress                        roles=student|parent|reviewer|admin csrf=true rl=default consent=no
@@ -62,6 +66,7 @@ PATCH  /v1/practice/answers/:id               roles=student|parent|reviewer|admi
 POST   /v1/admin/coins/redemptions/:id/approve roles=reviewer|admin csrf=true rl=default consent=no fresh mfa
 POST   /v1/admin/coins/redemptions/:id/fulfil roles=reviewer|admin csrf=true rl=default consent=no fresh mfa
 POST   /v1/admin/coins/redemptions/:id/reject roles=reviewer|admin csrf=true rl=default consent=no fresh mfa
+POST   /v1/admin/invoices/:id/resend          roles=admin csrf=true rl=default consent=no mfa
 POST   /v1/ai/:action                         roles=student|parent|reviewer|admin csrf=true rl=default+ai.user (fail-closed) consent=ai
 POST   /v1/ai/conversations                   roles=student|parent|reviewer|admin csrf=true rl=default+ai.user (fail-closed) consent=ai
 POST   /v1/ai/uploads                         roles=student|parent|reviewer|admin csrf=true rl=default+uploads.user.hour+uploads.user.day (fail-closed) consent=uploads

@@ -10969,6 +10969,271 @@
         ],
         "description": "Your weekly league (IST week). XP is what each student earned this week. Consent-gated (D-014)."
       },
+      "InvoiceInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "number": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "tax_invoice",
+              "credit_note"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "issueDate": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "totalPaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "totalLabel": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "planName": {
+            "type": "string"
+          },
+          "originalNumber": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "gstRegistered": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "number",
+          "type",
+          "title",
+          "issueDate",
+          "totalPaise",
+          "totalLabel",
+          "description",
+          "planName",
+          "originalNumber",
+          "gstRegistered"
+        ],
+        "description": "An invoice (type tax_invoice; titled \"Invoice\" while the seller is not GST-registered) or a credit note."
+      },
+      "MyInvoicesInput": {
+        "type": "object",
+        "properties": {
+          "invoices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InvoiceInput"
+            }
+          }
+        },
+        "required": [
+          "invoices"
+        ]
+      },
+      "AdminInvoiceInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "number": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "tax_invoice",
+              "credit_note"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "issueDate": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "totalPaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "totalLabel": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "planName": {
+            "type": "string"
+          },
+          "originalNumber": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "gstRegistered": {
+            "type": "boolean"
+          },
+          "placeOfSupply": {
+            "type": "string"
+          },
+          "placeOfSupplyName": {
+            "type": "string"
+          },
+          "taxablePaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "cgstPaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "sgstPaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "igstPaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "ratePercent": {
+            "type": "number"
+          },
+          "sac": {
+            "type": "string"
+          },
+          "razorpayPaymentId": {
+            "type": "string"
+          },
+          "sentAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "emailAttempts": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "buyerErased": {
+            "type": "boolean"
+          },
+          "originalIssueDate": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "number",
+          "type",
+          "title",
+          "issueDate",
+          "totalPaise",
+          "totalLabel",
+          "description",
+          "planName",
+          "originalNumber",
+          "gstRegistered",
+          "placeOfSupply",
+          "placeOfSupplyName",
+          "taxablePaise",
+          "cgstPaise",
+          "sgstPaise",
+          "igstPaise",
+          "ratePercent",
+          "sac",
+          "razorpayPaymentId",
+          "sentAt",
+          "emailAttempts",
+          "buyerErased",
+          "originalIssueDate"
+        ]
+      },
+      "AdminInvoicesInput": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "to": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "invoices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminInvoiceInput"
+            }
+          }
+        },
+        "required": [
+          "from",
+          "to",
+          "invoices"
+        ]
+      },
+      "InvoiceResendResultInput": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "sent",
+              "failed",
+              "no_email"
+            ]
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
       "PlansResponseInput": {
         "type": "object",
         "properties": {
@@ -10980,8 +11245,10 @@
             "const": "INR"
           },
           "pricesIncludeGst": {
-            "type": "boolean",
-            "const": true
+            "type": "boolean"
+          },
+          "defaultPlaceOfSupply": {
+            "type": "string"
           },
           "plans": {
             "type": "array",
@@ -11078,9 +11345,10 @@
           "billingEnabled",
           "currency",
           "pricesIncludeGst",
+          "defaultPlaceOfSupply",
           "plans"
         ],
-        "description": "Plans and GST-inclusive INR prices from platform/shared/config/plans.ts."
+        "description": "Plans and INR prices from platform/shared/config/plans.ts (GST-inclusive when pricesIncludeGst)."
       },
       "BillingSubscriptionRequestInput": {
         "type": "object",
@@ -11098,6 +11366,54 @@
               "monthly",
               "yearly"
             ]
+          },
+          "placeOfSupply": {
+            "description": "GST state code of the buyer (place of supply). Default: the seller state.",
+            "type": "string",
+            "enum": [
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "26",
+              "27",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "97",
+              "01",
+              "02",
+              "03",
+              "04",
+              "05",
+              "06",
+              "07",
+              "08",
+              "09"
+            ]
+          },
+          "buyerName": {
+            "description": "Name printed on the invoice (optional).",
+            "type": "string",
+            "pattern": "^[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ .'’-]{0,79}$"
           }
         },
         "required": [
@@ -11112,6 +11428,54 @@
           "plan": {
             "type": "string",
             "const": "board_exam_pass"
+          },
+          "placeOfSupply": {
+            "description": "GST state code of the buyer (place of supply). Default: the seller state.",
+            "type": "string",
+            "enum": [
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "26",
+              "27",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "97",
+              "01",
+              "02",
+              "03",
+              "04",
+              "05",
+              "06",
+              "07",
+              "08",
+              "09"
+            ]
+          },
+          "buyerName": {
+            "description": "Name printed on the invoice (optional).",
+            "type": "string",
+            "pattern": "^[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ .'’-]{0,79}$"
           }
         },
         "required": [
@@ -22930,6 +23294,276 @@
         "additionalProperties": false,
         "description": "Your weekly league (IST week). XP is what each student earned this week. Consent-gated (D-014)."
       },
+      "Invoice": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "number": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "tax_invoice",
+              "credit_note"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "issueDate": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "totalPaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "totalLabel": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "planName": {
+            "type": "string"
+          },
+          "originalNumber": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "gstRegistered": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "number",
+          "type",
+          "title",
+          "issueDate",
+          "totalPaise",
+          "totalLabel",
+          "description",
+          "planName",
+          "originalNumber",
+          "gstRegistered"
+        ],
+        "additionalProperties": false,
+        "description": "An invoice (type tax_invoice; titled \"Invoice\" while the seller is not GST-registered) or a credit note."
+      },
+      "MyInvoices": {
+        "type": "object",
+        "properties": {
+          "invoices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Invoice"
+            }
+          }
+        },
+        "required": [
+          "invoices"
+        ],
+        "additionalProperties": false
+      },
+      "AdminInvoice": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "number": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "tax_invoice",
+              "credit_note"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "issueDate": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "totalPaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "totalLabel": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "planName": {
+            "type": "string"
+          },
+          "originalNumber": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "gstRegistered": {
+            "type": "boolean"
+          },
+          "placeOfSupply": {
+            "type": "string"
+          },
+          "placeOfSupplyName": {
+            "type": "string"
+          },
+          "taxablePaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "cgstPaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "sgstPaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "igstPaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "ratePercent": {
+            "type": "number"
+          },
+          "sac": {
+            "type": "string"
+          },
+          "razorpayPaymentId": {
+            "type": "string"
+          },
+          "sentAt": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "emailAttempts": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "buyerErased": {
+            "type": "boolean"
+          },
+          "originalIssueDate": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "number",
+          "type",
+          "title",
+          "issueDate",
+          "totalPaise",
+          "totalLabel",
+          "description",
+          "planName",
+          "originalNumber",
+          "gstRegistered",
+          "placeOfSupply",
+          "placeOfSupplyName",
+          "taxablePaise",
+          "cgstPaise",
+          "sgstPaise",
+          "igstPaise",
+          "ratePercent",
+          "sac",
+          "razorpayPaymentId",
+          "sentAt",
+          "emailAttempts",
+          "buyerErased",
+          "originalIssueDate"
+        ],
+        "additionalProperties": false
+      },
+      "AdminInvoices": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "to": {
+            "type": "string",
+            "format": "date",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+          },
+          "invoices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminInvoice"
+            }
+          }
+        },
+        "required": [
+          "from",
+          "to",
+          "invoices"
+        ],
+        "additionalProperties": false
+      },
+      "InvoiceResendResult": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "sent",
+              "failed",
+              "no_email"
+            ]
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "additionalProperties": false
+      },
       "PlansResponse": {
         "type": "object",
         "properties": {
@@ -22941,8 +23575,10 @@
             "const": "INR"
           },
           "pricesIncludeGst": {
-            "type": "boolean",
-            "const": true
+            "type": "boolean"
+          },
+          "defaultPlaceOfSupply": {
+            "type": "string"
           },
           "plans": {
             "type": "array",
@@ -23041,10 +23677,11 @@
           "billingEnabled",
           "currency",
           "pricesIncludeGst",
+          "defaultPlaceOfSupply",
           "plans"
         ],
         "additionalProperties": false,
-        "description": "Plans and GST-inclusive INR prices from platform/shared/config/plans.ts."
+        "description": "Plans and INR prices from platform/shared/config/plans.ts (GST-inclusive when pricesIncludeGst)."
       },
       "BillingSubscriptionRequest": {
         "type": "object",
@@ -23062,6 +23699,54 @@
               "monthly",
               "yearly"
             ]
+          },
+          "placeOfSupply": {
+            "description": "GST state code of the buyer (place of supply). Default: the seller state.",
+            "type": "string",
+            "enum": [
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "26",
+              "27",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "97",
+              "01",
+              "02",
+              "03",
+              "04",
+              "05",
+              "06",
+              "07",
+              "08",
+              "09"
+            ]
+          },
+          "buyerName": {
+            "description": "Name printed on the invoice (optional).",
+            "type": "string",
+            "pattern": "^[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ .'’-]{0,79}$"
           }
         },
         "required": [
@@ -23076,6 +23761,54 @@
           "plan": {
             "type": "string",
             "const": "board_exam_pass"
+          },
+          "placeOfSupply": {
+            "description": "GST state code of the buyer (place of supply). Default: the seller state.",
+            "type": "string",
+            "enum": [
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "26",
+              "27",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "97",
+              "01",
+              "02",
+              "03",
+              "04",
+              "05",
+              "06",
+              "07",
+              "08",
+              "09"
+            ]
+          },
+          "buyerName": {
+            "description": "Name printed on the invoice (optional).",
+            "type": "string",
+            "pattern": "^[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ .'’-]{0,79}$"
           }
         },
         "required": [
@@ -27763,7 +28496,7 @@
     },
     "/v1/plans": {
       "get": {
-        "summary": "Plans and prices (GST-inclusive INR)",
+        "summary": "Plans and prices (INR)",
         "tags": [
           "billing"
         ],
@@ -28014,6 +28747,298 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/MySubscription"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/invoices": {
+      "get": {
+        "summary": "My invoices and credit notes (newest first)",
+        "tags": [
+          "billing"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MyInvoices"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/me/invoices/{id}/pdf": {
+      "get": {
+        "summary": "Download one of my invoices or credit notes (application/pdf)",
+        "tags": [
+          "billing"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The PDF bytes (Content-Type: application/pdf).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "description": "The PDF bytes (Content-Type: application/pdf)."
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/invoices": {
+      "get": {
+        "summary": "Invoices and credit notes issued between two IST dates (inclusive)",
+        "tags": [
+          "billing",
+          "admin"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+            },
+            "in": "query",
+            "name": "from",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+            },
+            "in": "query",
+            "name": "to",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminInvoices"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/invoices/export": {
+      "get": {
+        "summary": "The same documents as CSV for the accountant (GSTR-1 style columns)",
+        "tags": [
+          "billing",
+          "admin"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+            },
+            "in": "query",
+            "name": "from",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$"
+            },
+            "in": "query",
+            "name": "to",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "text/csv; charset=utf-8",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "description": "text/csv; charset=utf-8"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/invoices/{id}/resend": {
+      "post": {
+        "summary": "Email an invoice or credit note to the buyer again",
+        "tags": [
+          "billing",
+          "admin"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvoiceResendResult"
                 }
               }
             }

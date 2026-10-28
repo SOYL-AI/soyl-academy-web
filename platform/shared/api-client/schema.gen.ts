@@ -4245,7 +4245,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Plans and prices (GST-inclusive INR) */
+        /** Plans and prices (INR) */
         get: {
             parameters: {
                 query?: never;
@@ -4572,6 +4572,290 @@ export interface paths {
         };
         put?: never;
         post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/invoices": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** My invoices and credit notes (newest first) */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["MyInvoices"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/invoices/{id}/pdf": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Download one of my invoices or credit notes (application/pdf) */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description The PDF bytes (Content-Type: application/pdf). */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": string;
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/invoices": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Invoices and credit notes issued between two IST dates (inclusive) */
+        get: {
+            parameters: {
+                query: {
+                    from: string;
+                    to: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AdminInvoices"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/invoices/export": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** The same documents as CSV for the accountant (GSTR-1 style columns) */
+        get: {
+            parameters: {
+                query: {
+                    from: string;
+                    to: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description text/csv; charset=utf-8 */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": string;
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/admin/invoices/{id}/resend": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Email an invoice or credit note to the buyer again */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path: {
+                    id: string;
+                };
+                cookie?: never;
+            };
+            requestBody: {
+                content: {
+                    "application/json": Record<string, never> | null;
+                };
+            };
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["InvoiceResendResult"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
         delete?: never;
         options?: never;
         head?: never;
@@ -8283,13 +8567,73 @@ export interface components {
                 outcome: ("promoted" | "stayed" | "relegated") | null;
             } | null;
         };
-        /** @description Plans and GST-inclusive INR prices from platform/shared/config/plans.ts. */
+        /** @description An invoice (type tax_invoice; titled "Invoice" while the seller is not GST-registered) or a credit note. */
+        InvoiceInput: {
+            /** Format: uuid */
+            id: string;
+            number: string;
+            /** @enum {string} */
+            type: "tax_invoice" | "credit_note";
+            title: string;
+            /** Format: date */
+            issueDate: string;
+            totalPaise: number;
+            totalLabel: string;
+            description: string;
+            planName: string;
+            originalNumber: string | null;
+            gstRegistered: boolean;
+        };
+        MyInvoicesInput: {
+            invoices: components["schemas"]["InvoiceInput"][];
+        };
+        AdminInvoiceInput: {
+            /** Format: uuid */
+            id: string;
+            number: string;
+            /** @enum {string} */
+            type: "tax_invoice" | "credit_note";
+            title: string;
+            /** Format: date */
+            issueDate: string;
+            totalPaise: number;
+            totalLabel: string;
+            description: string;
+            planName: string;
+            originalNumber: string | null;
+            gstRegistered: boolean;
+            placeOfSupply: string;
+            placeOfSupplyName: string;
+            taxablePaise: number;
+            cgstPaise: number;
+            sgstPaise: number;
+            igstPaise: number;
+            ratePercent: number;
+            sac: string;
+            razorpayPaymentId: string;
+            sentAt: string | null;
+            emailAttempts: number;
+            buyerErased: boolean;
+            originalIssueDate: string | null;
+        };
+        AdminInvoicesInput: {
+            /** Format: date */
+            from: string;
+            /** Format: date */
+            to: string;
+            invoices: components["schemas"]["AdminInvoiceInput"][];
+        };
+        InvoiceResendResultInput: {
+            /** @enum {string} */
+            status: "sent" | "failed" | "no_email";
+        };
+        /** @description Plans and INR prices from platform/shared/config/plans.ts (GST-inclusive when pricesIncludeGst). */
         PlansResponseInput: {
             billingEnabled: boolean;
             /** @constant */
             currency: "INR";
-            /** @constant */
-            pricesIncludeGst: true;
+            pricesIncludeGst: boolean;
+            defaultPlaceOfSupply: string;
             plans: {
                 /** @enum {string} */
                 id: "free" | "plus" | "pro" | "board_exam_pass";
@@ -8312,10 +8656,24 @@ export interface components {
             plan: "plus" | "pro";
             /** @enum {string} */
             interval: "monthly" | "yearly";
+            /**
+             * @description GST state code of the buyer (place of supply). Default: the seller state.
+             * @enum {string}
+             */
+            placeOfSupply?: "10" | "11" | "12" | "13" | "14" | "15" | "16" | "17" | "18" | "19" | "20" | "21" | "22" | "23" | "24" | "26" | "27" | "29" | "30" | "31" | "32" | "33" | "34" | "35" | "36" | "37" | "38" | "97" | "01" | "02" | "03" | "04" | "05" | "06" | "07" | "08" | "09";
+            /** @description Name printed on the invoice (optional). */
+            buyerName?: string;
         };
         BillingOrderRequestInput: {
             /** @constant */
             plan: "board_exam_pass";
+            /**
+             * @description GST state code of the buyer (place of supply). Default: the seller state.
+             * @enum {string}
+             */
+            placeOfSupply?: "10" | "11" | "12" | "13" | "14" | "15" | "16" | "17" | "18" | "19" | "20" | "21" | "22" | "23" | "24" | "26" | "27" | "29" | "30" | "31" | "32" | "33" | "34" | "35" | "36" | "37" | "38" | "97" | "01" | "02" | "03" | "04" | "05" | "06" | "07" | "08" | "09";
+            /** @description Name printed on the invoice (optional). */
+            buyerName?: string;
         };
         EmptyRequestInput: Record<string, never> | null;
         /** @description Razorpay Checkout options: { key: keyId, subscription_id: subscriptionId, name, description }. Completing Checkout does not grant the plan; poll GET /v1/me/subscription (after POST /v1/billing/refresh). */
@@ -10650,13 +11008,73 @@ export interface components {
                 outcome: ("promoted" | "stayed" | "relegated") | null;
             } | null;
         };
-        /** @description Plans and GST-inclusive INR prices from platform/shared/config/plans.ts. */
+        /** @description An invoice (type tax_invoice; titled "Invoice" while the seller is not GST-registered) or a credit note. */
+        Invoice: {
+            /** Format: uuid */
+            id: string;
+            number: string;
+            /** @enum {string} */
+            type: "tax_invoice" | "credit_note";
+            title: string;
+            /** Format: date */
+            issueDate: string;
+            totalPaise: number;
+            totalLabel: string;
+            description: string;
+            planName: string;
+            originalNumber: string | null;
+            gstRegistered: boolean;
+        };
+        MyInvoices: {
+            invoices: components["schemas"]["Invoice"][];
+        };
+        AdminInvoice: {
+            /** Format: uuid */
+            id: string;
+            number: string;
+            /** @enum {string} */
+            type: "tax_invoice" | "credit_note";
+            title: string;
+            /** Format: date */
+            issueDate: string;
+            totalPaise: number;
+            totalLabel: string;
+            description: string;
+            planName: string;
+            originalNumber: string | null;
+            gstRegistered: boolean;
+            placeOfSupply: string;
+            placeOfSupplyName: string;
+            taxablePaise: number;
+            cgstPaise: number;
+            sgstPaise: number;
+            igstPaise: number;
+            ratePercent: number;
+            sac: string;
+            razorpayPaymentId: string;
+            sentAt: string | null;
+            emailAttempts: number;
+            buyerErased: boolean;
+            originalIssueDate: string | null;
+        };
+        AdminInvoices: {
+            /** Format: date */
+            from: string;
+            /** Format: date */
+            to: string;
+            invoices: components["schemas"]["AdminInvoice"][];
+        };
+        InvoiceResendResult: {
+            /** @enum {string} */
+            status: "sent" | "failed" | "no_email";
+        };
+        /** @description Plans and INR prices from platform/shared/config/plans.ts (GST-inclusive when pricesIncludeGst). */
         PlansResponse: {
             billingEnabled: boolean;
             /** @constant */
             currency: "INR";
-            /** @constant */
-            pricesIncludeGst: true;
+            pricesIncludeGst: boolean;
+            defaultPlaceOfSupply: string;
             plans: {
                 /** @enum {string} */
                 id: "free" | "plus" | "pro" | "board_exam_pass";
@@ -10679,10 +11097,24 @@ export interface components {
             plan: "plus" | "pro";
             /** @enum {string} */
             interval: "monthly" | "yearly";
+            /**
+             * @description GST state code of the buyer (place of supply). Default: the seller state.
+             * @enum {string}
+             */
+            placeOfSupply?: "10" | "11" | "12" | "13" | "14" | "15" | "16" | "17" | "18" | "19" | "20" | "21" | "22" | "23" | "24" | "26" | "27" | "29" | "30" | "31" | "32" | "33" | "34" | "35" | "36" | "37" | "38" | "97" | "01" | "02" | "03" | "04" | "05" | "06" | "07" | "08" | "09";
+            /** @description Name printed on the invoice (optional). */
+            buyerName?: string;
         };
         BillingOrderRequest: {
             /** @constant */
             plan: "board_exam_pass";
+            /**
+             * @description GST state code of the buyer (place of supply). Default: the seller state.
+             * @enum {string}
+             */
+            placeOfSupply?: "10" | "11" | "12" | "13" | "14" | "15" | "16" | "17" | "18" | "19" | "20" | "21" | "22" | "23" | "24" | "26" | "27" | "29" | "30" | "31" | "32" | "33" | "34" | "35" | "36" | "37" | "38" | "97" | "01" | "02" | "03" | "04" | "05" | "06" | "07" | "08" | "09";
+            /** @description Name printed on the invoice (optional). */
+            buyerName?: string;
         };
         EmptyRequest: Record<string, never> | null;
         /** @description Razorpay Checkout options: { key: keyId, subscription_id: subscriptionId, name, description }. Completing Checkout does not grant the plan; poll GET /v1/me/subscription (after POST /v1/billing/refresh). */

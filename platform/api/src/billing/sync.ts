@@ -14,10 +14,15 @@
  * arrive in any order (charged before activated, a stale halted after a recovery) and duplicates or
  * replays are harmless. Every function is idempotent and returns the field-level changes it made (or,
  * with `dryRun`, would make) — reconciliation reports those as drift.
+ *
+ * Invoices (ADR-024): whenever a payment of ours is recorded as captured, the same transaction issues its
+ * invoice, and credit notes for whatever has been refunded (invoices/issue.ts); the ids are returned in
+ * `invoices` so the caller can deliver them after commit.
  */
 import { and, desc, eq, inArray } from 'drizzle-orm';
 import { entitlements, orders, payments, subscriptions, type Database } from '@soyl/db';
 import { BILLING, getPlan, type PlanId } from '@soyl/shared/config/plans';
+import { ensureDocuments, type InvoicingLog, type InvoicingRuntime } from './invoices/issue';
 import type { PlanRow } from './plans';
 import { fromUnix, RazorpayNotFoundError, type RazorpayClient, type RzpOrder, type RzpPayment, type RzpSubscription } from './razorpay/types';
 
@@ -27,7 +32,7 @@ export type Exec = Database | Tx;
 export type SyncOutcome = 'applied' | 'ignored' | 'rejected';
 
 export interface Change {
-  entity: 'order' | 'subscription' | 'payment' | 'entitlement';
+  entity: 'order' | 'subscription' | 'payment' | 'entitlement' | 'invoice';
   id: string;
   field: string;
   from: unknown;
@@ -44,6 +49,8 @@ export interface SyncResult {
   changes: Change[];
   /** A plan that became in force for a user now (credit top-up hook). */
   granted: { userId: string; plan: PlanId } | null;
+  /** Invoices / credit notes issued by this sync (delivered after commit). Absent: none. */
+  invoices?: string[];
 }
 
 export interface SyncDeps {
@@ -52,12 +59,15 @@ export interface SyncDeps {
   now: Date;
   plans: Map<PlanId, PlanRow>;
   dryRun?: boolean;
+  /** Issue invoices for captured payments (ADR-024). Null/absent or disabled: none are issued. */
+  invoicing?: InvoicingRuntime | null;
+  log?: InvoicingLog;
 }
 
 const HOUR = 3_600_000;
 
 function result(entityId: string, outcome: SyncOutcome, reason: string | null, extra: Partial<SyncResult> = {}): SyncResult {
-  return { outcome, reason, entityId, userId: null, changes: [], granted: null, ...extra };
+  return { outcome, reason, entityId, userId: null, changes: [], granted: null, invoices: [], ...extra };
 }
 
 /** Combines the results of several syncs for one event: rejected > applied > ignored. */
@@ -73,6 +83,7 @@ export function mergeResults(primary: SyncResult, ...rest: SyncResult[]): SyncRe
     userId: all.find((r) => r.userId)?.userId ?? null,
     changes: all.flatMap((r) => r.changes),
     granted: rejected ? null : (all.find((r) => r.granted)?.granted ?? null),
+    invoices: rejected ? [] : [...new Set(all.flatMap((r) => r.invoices ?? []))],
   };
 }
 
@@ -122,7 +133,7 @@ export async function atomicSync(db: Exec, fn: (tx: Tx) => Promise<SyncResult>):
       return r;
     });
   } catch (err) {
-    if (err instanceof RejectedRollback) return { ...err.result, changes: [], granted: null };
+    if (err instanceof RejectedRollback) return { ...err.result, changes: [], granted: null, invoices: [] };
     throw err;
   }
 }
@@ -135,8 +146,32 @@ function paymentStatus(p: RzpPayment): string {
   return p.status;
 }
 
-/** Writes Razorpay's current view of a payment under its parent (order or subscription) of ours. */
-async function upsertPayment(d: SyncDeps, changes: Change[], parent: { userId: string | null; orderId: string | null; subscriptionId: string | null }, p: RzpPayment): Promise<string | null> {
+/** Writes Razorpay's current view of a payment under its parent (order or subscription) of ours, then its invoice documents. */
+async function upsertPayment(
+  d: SyncDeps,
+  changes: Change[],
+  parent: { userId: string | null; orderId: string | null; subscriptionId: string | null },
+  p: RzpPayment,
+  issued: string[],
+  opts: { insert?: boolean } = {},
+): Promise<string | null> {
+  const bad = await writePayment(d, changes, parent, p, opts);
+  if (bad) return bad;
+  const status = paymentStatus(p);
+  if (!d.invoicing?.enabled || !['captured', 'partially_refunded', 'refunded'].includes(status)) return null;
+  const [row] = await d.tx.select({ id: payments.id }).from(payments).where(eq(payments.razorpayPaymentId, p.id));
+  if (!row) {
+    // Dry run of a payment not recorded yet: its invoice (and credit note) would be issued too.
+    if (d.dryRun && opts.insert !== false) changes.push({ entity: 'invoice', id: p.id, field: 'tax_invoice', from: null, to: { totalPaise: p.amount } });
+    return null;
+  }
+  const r = await ensureDocuments(d.tx, d.invoicing, row.id, { now: d.now, payerEmail: p.email ?? null, dryRun: d.dryRun, log: d.log });
+  changes.push(...r.changes);
+  issued.push(...r.issued);
+  return null;
+}
+
+async function writePayment(d: SyncDeps, changes: Change[], parent: { userId: string | null; orderId: string | null; subscriptionId: string | null }, p: RzpPayment, opts: { insert?: boolean }): Promise<string | null> {
   const [row] = await d.tx.select().from(payments).where(eq(payments.razorpayPaymentId, p.id));
   if (row && ((row.orderId ?? null) !== parent.orderId || (row.subscriptionId ?? null) !== parent.subscriptionId)) return 'payment_parent_mismatch';
   const status = paymentStatus(p);
@@ -151,6 +186,7 @@ async function upsertPayment(d: SyncDeps, changes: Change[], parent: { userId: s
     capturedAt: captured ? (row?.capturedAt ?? d.now) : null,
   };
   if (!row) {
+    if (opts.insert === false) return null;
     changes.push({ entity: 'payment', id: p.id, field: 'created', from: null, to: status });
     if (!d.dryRun)
       await d.tx
@@ -178,7 +214,7 @@ export async function syncOrder(d: SyncDeps, razorpayOrderId: string): Promise<S
   if (!local) return result(razorpayOrderId, 'ignored', 'not_ours');
   const planKey = planKeyOf(d.plans, local.planId);
   const base = { userId: local.userId };
-  if (!local.userId) return result(razorpayOrderId, 'ignored', 'account_deleted');
+  if (!local.userId) return refundsOfDeletedAccount(d, razorpayOrderId, { orderId: local.id, subscriptionId: null }, () => d.razorpay.fetchOrderPayments(razorpayOrderId));
 
   let rz: RzpOrder;
   let pays: RzpPayment[];
@@ -198,8 +234,9 @@ export async function syncOrder(d: SyncDeps, razorpayOrderId: string): Promise<S
   }
 
   const changes: Change[] = [];
+  const issued: string[] = [];
   for (const p of pays) {
-    const bad = await upsertPayment(d, changes, { userId: local.userId, orderId: local.id, subscriptionId: null }, p);
+    const bad = await upsertPayment(d, changes, { userId: local.userId, orderId: local.id, subscriptionId: null }, p, issued);
     if (bad) return result(razorpayOrderId, 'rejected', bad, base);
   }
 
@@ -217,7 +254,7 @@ export async function syncOrder(d: SyncDeps, razorpayOrderId: string): Promise<S
     const validUntil = validUntilIso ? new Date(validUntilIso) : null;
     if (!validUntil || validUntil <= d.now) {
       // Paid after the pass ended (should be impossible: orders are refused then). Needs a refund.
-      return result(razorpayOrderId, 'applied', 'paid_after_plan_end', { ...base, changes });
+      return result(razorpayOrderId, 'applied', 'paid_after_plan_end', { ...base, changes, invoices: issued });
     }
     if (!ent) {
       changes.push({ entity: 'entitlement', id: `order:${razorpayOrderId}`, field: 'granted', from: null, to: { plan: planKey, validUntil: validUntil.toISOString() } });
@@ -234,7 +271,7 @@ export async function syncOrder(d: SyncDeps, razorpayOrderId: string): Promise<S
     changes.push({ entity: 'entitlement', id: `order:${razorpayOrderId}`, field: 'revokedAt', from: null, to: d.now.toISOString() });
     if (!d.dryRun) await d.tx.update(entitlements).set({ revokedAt: d.now, updatedAt: d.now }).where(eq(entitlements.id, ent.id));
   }
-  return result(razorpayOrderId, 'applied', null, { ...base, changes, granted });
+  return result(razorpayOrderId, 'applied', null, { ...base, changes, granted, invoices: issued });
 }
 
 /* ---- subscriptions (Plus / Pro monthly / yearly) ---------------------------------------------- */
@@ -349,18 +386,82 @@ export async function syncPayment(d: SyncDeps, paymentId: string): Promise<SyncR
     const [local] = await d.tx.select().from(subscriptions).where(eq(subscriptions.razorpaySubscriptionId, subId)).for('update');
     if (!local) return result(paymentId, 'ignored', 'not_ours');
     const base = { userId: local.userId };
-    if (!local.userId) return result(paymentId, 'ignored', 'account_deleted');
+    if (!local.userId) return refundsOfDeletedAccount(d, paymentId, { orderId: null, subscriptionId: local.id }, async () => [p]);
     if (p.currency !== BILLING.currency) return result(paymentId, 'rejected', 'payment_currency_mismatch', base);
     if (p.status !== 'failed' && p.status !== 'created' && p.amount !== local.amountPaise) return result(paymentId, 'rejected', 'payment_amount_mismatch', base);
     const changes: Change[] = [];
-    const bad = await upsertPayment(d, changes, { userId: local.userId, orderId: null, subscriptionId: local.id }, p);
+    const issued: string[] = [];
+    const bad = await upsertPayment(d, changes, { userId: local.userId, orderId: null, subscriptionId: local.id }, p, issued);
     if (bad) return result(paymentId, 'rejected', bad, base);
     const sub = await syncSubscription(d, subId);
-    return mergeResults(result(paymentId, 'applied', null, { ...base, changes }), sub);
+    return mergeResults(result(paymentId, 'applied', null, { ...base, changes, invoices: issued }), sub);
   }
   if (p.order_id) {
     const order = await syncOrder(d, p.order_id);
     return { ...order, entityId: paymentId };
   }
   return result(paymentId, 'ignored', 'not_ours');
+}
+
+/* ---- refunds after the account was purged ------------------------------------------------------ */
+
+/**
+ * The purchaser's account is gone (user_id NULL after the purge), but a refund must still be recorded
+ * and get its credit note (GST records outlive the account, PII.md). Only payments we already recorded
+ * are updated (refund amount and status); nothing is granted, revoked or newly inserted.
+ */
+async function refundsOfDeletedAccount(
+  d: SyncDeps,
+  entityId: string,
+  parent: { orderId: string | null; subscriptionId: string | null },
+  fetchPays: () => Promise<RzpPayment[]>,
+): Promise<SyncResult> {
+  let pays: RzpPayment[];
+  try {
+    pays = await fetchPays();
+  } catch (err) {
+    if (err instanceof RazorpayNotFoundError) return result(entityId, 'ignored', 'account_deleted');
+    throw err;
+  }
+  const changes: Change[] = [];
+  const issued: string[] = [];
+  for (const p of pays) {
+    if (p.currency !== BILLING.currency) continue;
+    const bad = await upsertPayment(d, changes, { userId: null, ...parent }, p, issued, { insert: false });
+    if (bad) return result(entityId, 'rejected', bad);
+  }
+  return result(entityId, changes.length ? 'applied' : 'ignored', 'account_deleted', { changes, invoices: issued });
+}
+
+/**
+ * Reconciliation for subscriptions: every paid Razorpay invoice of the subscription has its payment
+ * recorded (and so its own invoice). Covers a missed `subscription.charged` / `payment.captured`
+ * webhook, which would otherwise extend the plan (syncSubscription) without a payment row or invoice.
+ */
+export async function syncSubscriptionPayments(d: SyncDeps, razorpaySubscriptionId: string): Promise<SyncResult> {
+  const [local] = await d.tx.select().from(subscriptions).where(eq(subscriptions.razorpaySubscriptionId, razorpaySubscriptionId));
+  if (!local) return result(razorpaySubscriptionId, 'ignored', 'not_ours');
+  let invs;
+  try {
+    invs = await d.razorpay.fetchSubscriptionInvoices(razorpaySubscriptionId);
+  } catch (err) {
+    if (err instanceof RazorpayNotFoundError) return result(razorpaySubscriptionId, 'ignored', 'not_found_at_razorpay');
+    throw err;
+  }
+  const out: SyncResult[] = [];
+  for (const inv of invs) {
+    if (!inv.payment_id || inv.subscription_id !== razorpaySubscriptionId || inv.status !== 'paid') continue;
+    const [known] = await d.tx.select({ id: payments.id }).from(payments).where(eq(payments.razorpayPaymentId, inv.payment_id));
+    if (!known) {
+      // A charge no webhook recorded: record it (re-fetched and bound like a webhook would).
+      const r = await syncPayment(d, inv.payment_id);
+      // The subscription itself was synced just before; report only the payment and its documents.
+      out.push({ ...r, changes: r.changes.filter((c) => c.entity === 'payment' || c.entity === 'invoice') });
+    } else if (d.invoicing?.enabled) {
+      const r = await ensureDocuments(d.tx, d.invoicing, known.id, { now: d.now, dryRun: d.dryRun, log: d.log });
+      if (r.changes.length) out.push(result(inv.payment_id, 'applied', null, { userId: local.userId, changes: r.changes, invoices: r.issued }));
+    }
+  }
+  if (!out.length) return result(razorpaySubscriptionId, 'applied', null, { userId: local.userId });
+  return { ...mergeResults(out[0]!, ...out.slice(1)), entityId: razorpaySubscriptionId };
 }

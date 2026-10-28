@@ -90,6 +90,8 @@ export const RzpPayment = z.looseObject({
   captured: z.boolean().default(false),
   error_code: z.string().nullable().optional().transform((v) => v ?? null),
   error_reason: z.string().nullable().optional().transform((v) => v ?? null),
+  /** Payer's email as entered in Checkout (the invoice is emailed there, ADR-024). */
+  email: z.string().nullable().optional().transform((v) => v ?? null),
   notes: RzpNotes,
   created_at: z.number().int(),
 });
@@ -171,6 +173,8 @@ export interface RazorpayClient {
   fetchOrderPayments(id: string): Promise<RzpPayment[]>;
   fetchPayment(id: string): Promise<RzpPayment>;
   fetchInvoice(id: string): Promise<RzpInvoice>;
+  /** Razorpay invoices (one per charge) of a subscription: reconciliation finds payments a missed webhook never recorded. */
+  fetchSubscriptionInvoices(id: string): Promise<RzpInvoice[]>;
 }
 
 /** A Razorpay API failure. Never shown to clients (API-13): routes answer billing_unavailable. */

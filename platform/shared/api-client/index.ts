@@ -148,6 +148,10 @@ export type PlanView = PlansResponse['plans'][number];
 export type SubscriptionCheckout = Schemas['SubscriptionCheckout'];
 export type OrderCheckout = Schemas['OrderCheckout'];
 export type MySubscription = Schemas['MySubscription'];
+// Invoices (ADR-024)
+export type Invoice = Schemas['Invoice'];
+export type MyInvoices = Schemas['MyInvoices'];
+export type AdminInvoice = Schemas['AdminInvoice'];
 // SOYL Coins (ADR-021, D-037)
 export type CoinAward = Schemas['CoinAward'];
 export type CoinEarnSource = Schemas['CoinEarnSource'];

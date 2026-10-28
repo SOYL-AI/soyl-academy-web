@@ -124,4 +124,13 @@ export class RazorpayHttpClient implements RazorpayClient {
   async fetchInvoice(id: string) {
     return this.call('GET', `/invoices/${this.id(id)}`, RzpInvoice);
   }
+
+  async fetchSubscriptionInvoices(id: string) {
+    const out: RzpInvoice[] = [];
+    for (let skip = 0; ; skip += 100) {
+      const page = await this.call('GET', `/invoices?subscription_id=${this.id(id)}&count=100&skip=${skip}`, Collection(RzpInvoice));
+      out.push(...page.items);
+      if (page.items.length < 100) return out;
+    }
+  }
 }
