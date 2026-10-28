@@ -6,7 +6,7 @@
  * - guests: the result is kept on this device (soyl_guest_v1, CONTEXT §5) when it is auto-graded;
  * - members: written answers can be self-marked (PATCH /v1/practice/answers/:id);
  * - XP / badges / streak from the response are announced with a toast;
- * - SOYL Coins the answer paid (daily challenge, milestones, mastery; ADR-020) too, and the chip updates.
+ * - SOYL Coins the answer paid (daily challenge, milestones, mastery; ADR-021) too, and the chip updates.
  */
 import { useCallback, useMemo } from 'react';
 import { isApiError, type PracticeAnswerResult, type PracticeResponse, type StudentQuestion } from '@/platform/shared/api-client';

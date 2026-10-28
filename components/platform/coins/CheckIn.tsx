@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Daily check-in (ADR-020 §2): an explicit button, once per IST day (signing in alone earns nothing).
+ * Daily check-in (ADR-021 §2): an explicit button, once per IST day (signing in alone earns nothing).
  * Shows the streak, the next streak bonus and, after checking in, what it paid (announced politely).
  */
 import { useState } from 'react';

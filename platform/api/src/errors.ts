@@ -78,7 +78,7 @@ export const PROBLEMS = {
   duplicate_request: [409, 'This request was already received.'],
   upload_rejected: [422, 'This file cannot be used.'],
   upload_not_ready: [409, 'This file is not ready yet.'],
-  /** SOYL Coins (ADR-020): not enough coins for the item (extension fields balance, price). */
+  /** SOYL Coins (ADR-021): not enough coins for the item (extension fields balance, price). */
   coins_insufficient: [409, 'You do not have enough coins for this yet.'],
   /** The item is outside its limited-drop window. */
   item_unavailable: [409, 'This item cannot be redeemed right now.'],

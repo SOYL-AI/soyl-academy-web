@@ -1,4 +1,4 @@
-# ADR-020: SOYL Coins — earn-only ledger, daily check-in and challenge, store and merch redemption
+# ADR-021: SOYL Coins — earn-only ledger, daily check-in and challenge, store and merch redemption
 
 - Status: accepted (backend-api + web-platform, 2026-10-28)
 - Related: D-037 (owner decision), D-014 (consent gates), D-015 (farming controls), D-031 (production consent

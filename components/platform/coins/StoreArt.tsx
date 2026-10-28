@@ -1,5 +1,5 @@
 /**
- * Placeholder artwork for store items, keyed by `item.image` (ADR-020: artwork pending, OA-19).
+ * Placeholder artwork for store items, keyed by `item.image` (ADR-021: artwork pending, OA-19).
  * Plain inline SVG: no external images (WEB-1). Always decorative; the card names the item.
  */
 import type { ReactNode } from 'react';

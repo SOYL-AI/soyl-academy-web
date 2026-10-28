@@ -1,5 +1,5 @@
 /**
- * SOYL Coins (D-037, ADR-020). Earn-only; never bought, transferred or converted. Member routes are
+ * SOYL Coins (D-037, ADR-021). Earn-only; never bought, transferred or converted. Member routes are
  * scoped to the caller (API-7) and never cached.
  *
  *   GET   /v1/coins                                  balance, today vs the daily cap, check-in streak, milestones

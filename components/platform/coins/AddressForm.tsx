@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Shipping address for a merch redemption (ADR-020 §5–6). Shown only for a physical redemption the API
+ * Shipping address for a merch redemption (ADR-021 §5–6). Shown only for a physical redemption the API
  * created in `requested` (verified account, parent consent and redemption switched on). Validation
  * mirrors the API's ShippingAddressSchema; the API re-checks everything. The address is used only to send
  * this order and is erased after delivery (PII.md).

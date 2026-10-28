@@ -50,7 +50,7 @@ export interface FinalizeResult {
   xpAwarded: number;
   badgesAwarded: string[];
   streak: StreakView | null;
-  /** SOYL Coins (ADR-020): series test, perfect paper, live participation. */
+  /** SOYL Coins (ADR-021): series test, perfect paper, live participation. */
   coinsAwarded: number;
   coinAwards: CoinAwardDto[];
 }

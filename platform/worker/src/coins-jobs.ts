@@ -1,5 +1,5 @@
 /**
- * SOYL Coins jobs (D-037, ADR-020). The logic lives in @soyl/api (domain/coins) so the API and the
+ * SOYL Coins jobs (D-037, ADR-021). The logic lives in @soyl/api (domain/coins) so the API and the
  * worker share one implementation; both handlers are idempotent and safe to re-run.
  *
  * - coins.live-rank-awards  every 15 minutes: rank coins for live All-India mocks whose results were
@@ -34,14 +34,14 @@ export function coinsJobs(): JobDefinition[] {
   return [
     defineJob<unknown, LiveRankAwardResult>({
       name: COINS_JOB_NAMES.liveRankAwards,
-      description: 'Live-mock rank coins for consenting students after results are published (ADR-020)',
+      description: 'Live-mock rank coins for consenting students after results are published (ADR-021)',
       cron: '*/15 * * * *',
       options: COINS_QUEUE,
       handler: (ctx) => awardLiveRanks(ctx.db, ctx.now),
     }),
     defineJob<unknown, CoinsHousekeepingResult>({
       name: COINS_JOB_NAMES.housekeeping,
-      description: 'Erase shipped merch addresses after retention; cancel merch requests without an address (ADR-020, PII.md)',
+      description: 'Erase shipped merch addresses after retention; cancel merch requests without an address (ADR-021, PII.md)',
       cron: '15 21 * * *',
       options: COINS_QUEUE,
       handler: (ctx) => coinsHousekeeping(ctx.db, ctx.now),

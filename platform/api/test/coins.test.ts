@@ -1,5 +1,5 @@
 /**
- * SOYL Coins (D-037, ADR-020) on real content: check-in (idempotent, concurrent, IST day boundaries,
+ * SOYL Coins (D-037, ADR-021) on real content: check-in (idempotent, concurrent, IST day boundaries,
  * streak bonuses), daily challenge, solved milestones (guest-merged answers never count), chapter
  * mastery, test awards (series once, custom never), the daily cap, the store (digital redeem, limits,
  * equip), no double spend under concurrency (API and database guard), physical gating in the fixed order

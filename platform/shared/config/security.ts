@@ -190,7 +190,7 @@ export const RATE_LIMITS = {
   'progress.write.user': { key: 'user', limit: 120, windowSeconds: 60 },
   /** AUTH-11: TOTP enrol/confirm/verify/disable calls per user (wrong codes also lock, see MFA.failures). */
   'mfa.user': { key: 'user', limit: 20, windowSeconds: 15 * 60 },
-  /** SOYL Coins writes (check-in, equip, address, cancel) and redemptions per user (ADR-020). */
+  /** SOYL Coins writes (check-in, equip, address, cancel) and redemptions per user (ADR-021). */
   'coins.write.user': { key: 'user', limit: 30, windowSeconds: 3600 },
   'coins.redeem.user': { key: 'user', limit: 10, windowSeconds: 3600 },
 } as const satisfies Record<string, RateLimitBucket>;

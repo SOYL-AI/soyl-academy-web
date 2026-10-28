@@ -1,6 +1,6 @@
 /**
  * /coins — SOYL Coins: balance, today against the daily cap, check-in, how to earn, milestones and history
- * (D-037, ADR-020). Member data, so rendered per request with the nonce CSP (WEB-3).
+ * (D-037, ADR-021). Member data, so rendered per request with the nonce CSP (WEB-3).
  */
 import type { Metadata } from 'next';
 import { connection } from 'next/server';

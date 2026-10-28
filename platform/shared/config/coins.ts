@@ -1,5 +1,5 @@
 /**
- * SOYL Coins (D-037, ADR-020): an earn-only reward currency, redeemable for digital items and exclusive
+ * SOYL Coins (D-037, ADR-021): an earn-only reward currency, redeemable for digital items and exclusive
  * merch, LeetCode-style. Coins cannot be bought, transferred or converted to cash or AI credits, and
  * have no cash value. Every number here is owner-tunable; `coins.test.ts` checks the config is
  * internally consistent. No imports except gamification (pure numbers): the web shows the same values.

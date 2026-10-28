@@ -1,5 +1,5 @@
 /**
- * SOYL Coins (D-037, ADR-020): an earn-only reward currency. Numbers and the store live in
+ * SOYL Coins (D-037, ADR-021): an earn-only reward currency. Numbers and the store live in
  * platform/shared/config/coins.ts.
  *
  * `coin_ledger` is the source of truth and is append-only (soyl_app: SELECT, INSERT only; DB-1).

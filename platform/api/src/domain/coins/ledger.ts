@@ -1,5 +1,5 @@
 /**
- * SOYL Coins ledger (D-037, ADR-020). Every coin movement is one append-only `coin_ledger` row with a
+ * SOYL Coins ledger (D-037, ADR-021). Every coin movement is one append-only `coin_ledger` row with a
  * natural idempotency key; the database refuses duplicates and anything that would make a balance
  * negative (migration 0011, trigger `soyl_coin_ledger_guard`).
  *

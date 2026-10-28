@@ -41,7 +41,7 @@ export const PAGES = [
   ['plans', '/plans'],
   ['leaderboard', '/leaderboard'],
   ['me', '/me'],
-  // SOYL Coins (ADR-020); the class page carries the daily-challenge card
+  // SOYL Coins (ADR-021); the class page carries the daily-challenge card
   ['class (challenge)', '/learn/cbse/10'],
   ['coins', '/coins'],
   ['store', '/store'],

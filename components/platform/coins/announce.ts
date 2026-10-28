@@ -1,5 +1,5 @@
 /**
- * Coins an event paid (practice answer, test submit; ADR-020): one polite toast (the toast region is an
+ * Coins an event paid (practice answer, test submit; ADR-021): one polite toast (the toast region is an
  * aria-live status) and the header chip updated. Nothing for 0-coin events, except a one-line note when
  * an award was cut to 0 by today's limit.
  */

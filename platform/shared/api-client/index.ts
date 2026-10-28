@@ -111,7 +111,7 @@ export type PlanView = PlansResponse['plans'][number];
 export type SubscriptionCheckout = Schemas['SubscriptionCheckout'];
 export type OrderCheckout = Schemas['OrderCheckout'];
 export type MySubscription = Schemas['MySubscription'];
-// SOYL Coins (ADR-020, D-037)
+// SOYL Coins (ADR-021, D-037)
 export type CoinAward = Schemas['CoinAward'];
 export type CoinEarnSource = Schemas['CoinEarnSource'];
 export type CoinsSummary = Schemas['CoinsSummary'];

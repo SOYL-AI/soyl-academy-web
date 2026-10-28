@@ -4,7 +4,7 @@
  * The platform bar under the marketing header (ADR-001: platform pages render inside the marketing
  * header/footer): Learn, Tests and Ask links, today's AI credits (GET /v1/credits, ai-gateway M4; shown
  * only when a parent approved AI, D-014; links to the credits history on /me), SOYL Coins (members; links to
- * /coins, ADR-020), and log in / profile.
+ * /coins, ADR-021), and log in / profile.
  */
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';

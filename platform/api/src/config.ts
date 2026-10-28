@@ -124,7 +124,7 @@ const EnvSchema = z.object({
   ACADEMIC_YEAR: z.string().regex(/^\d{4}-\d{2}$/).default('2026-27'),
   /** Local/test only: expose the mock OTP outbox for allow-listed test identifiers (ADR-002). */
   DEV_OTP_OUTBOX: bool,
-  /** SOYL Coins (ADR-020): physical merch redemption. Default COIN_STORE.physicalRedemptionEnabled (off until OA-19). */
+  /** SOYL Coins (ADR-021): physical merch redemption. Default COIN_STORE.physicalRedemptionEnabled (off until OA-19). */
   COINS_PHYSICAL_REDEMPTION_ENABLED: z.enum(['true', 'false', '1', '0']).optional(),
 });
 
@@ -172,7 +172,7 @@ export interface Config {
   devOtpOutbox: boolean;
   /** Razorpay billing (billing/config.ts, ADR-016). */
   billing: BillingConfig;
-  /** SOYL Coins (ADR-020). */
+  /** SOYL Coins (ADR-021). */
   coins: { physicalRedemptionEnabled: boolean };
 }
 

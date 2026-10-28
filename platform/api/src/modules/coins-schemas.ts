@@ -1,4 +1,4 @@
-/** zod schemas for SOYL Coins (ADR-020), shared by the coins routes and the practice/test responses. */
+/** zod schemas for SOYL Coins (ADR-021), shared by the coins routes and the practice/test responses. */
 import { z } from 'zod/v4';
 import { COIN_EARN_SOURCES, COIN_LEDGER_SOURCES, INDIA_STATES, REDEMPTION_STATUSES } from '@soyl/shared/config/coins';
 import { INDIA_MOBILE_REGEX } from '@soyl/shared/config/security';

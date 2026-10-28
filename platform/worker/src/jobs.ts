@@ -170,7 +170,7 @@ export const JOB_NAMES = {
   aiIndexContent: AI_JOB_NAMES.indexContent,
   aiRetention: AI_JOB_NAMES.retention,
   aiCostGuardrail: AI_JOB_NAMES.costGuardrail,
-  // SOYL Coins (coins-jobs.ts, ADR-020)
+  // SOYL Coins (coins-jobs.ts, ADR-021)
   coinsLiveRankAwards: COINS_JOB_NAMES.liveRankAwards,
   coinsHousekeeping: COINS_JOB_NAMES.housekeeping,
 } as const;

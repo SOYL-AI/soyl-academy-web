@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * /store (ADR-020 §5): the SOYL Store. Earned, never sold. Items come from GET /v1/coins/store with the
+ * /store (ADR-021 §5): the SOYL Store. Earned, never sold. Items come from GET /v1/coins/store with the
  * viewer's state (guests may look). Digital items are granted at once and can be equipped; merch needs a
  * verified account, parent consent and redemption switched on (until then "Coming soon"), and only then
  * asks for a delivery address. Every refusal is explained in plain words.

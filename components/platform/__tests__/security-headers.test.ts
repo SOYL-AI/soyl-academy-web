@@ -41,7 +41,7 @@ describe('CSP (WEB-3)', () => {
     expect(usesNonce('/tests/attempt/1')).toBe(true);
     expect(usesNonce('/learn/cbse/10')).toBe(false);
     expect(usesNonce('/media')).toBe(false);
-    // SOYL Coins (ADR-020): balance, history, redemptions and the delivery address form.
+    // SOYL Coins (ADR-021): balance, history, redemptions and the delivery address form.
     expect(usesNonce('/coins')).toBe(true);
     expect(usesNonce('/store')).toBe(true);
     expect(usesNonce('/storefront')).toBe(false);
@@ -70,7 +70,7 @@ describe('proxy.ts matcher (ARCHITECTURE §17.5)', () => {
       expect(m.startsWith('/learn') || m.startsWith('/me') || m.startsWith('/tests') || m.startsWith('/ask') || m.startsWith('/plans') || m.startsWith('/leaderboard') || m.startsWith('/coins') || m.startsWith('/store') || m.startsWith('/admin')).toBe(true);
       for (const page of marketing) expect(m === page).toBe(false);
     }
-    // ADR-020 §8: the SOYL Coins pages get the platform headers too.
+    // ADR-021 §8: the SOYL Coins pages get the platform headers too.
     for (const p of ['/coins', '/coins/:path*', '/store', '/store/:path*']) expect(config.matcher, p).toContain(p);
   });
 });

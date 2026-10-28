@@ -1,5 +1,5 @@
 /**
- * SOYL Coins store and redemptions (D-037, ADR-020).
+ * SOYL Coins store and redemptions (D-037, ADR-021).
  *
  * Digital items (frames, themes) are granted at once: a `fulfilled` redemption plus its `redeem` row.
  * Physical merch needs, in this order (each refusal is a problem code):

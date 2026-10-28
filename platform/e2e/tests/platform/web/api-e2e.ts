@@ -152,7 +152,7 @@ const control = createServer(async (req, res) => {
       return send(res, 200, { ok: true });
     }
     if (url.pathname === '/ctl/coins/grant') {
-      // SOYL Coins e2e (ADR-020): a staff-style `adjust` row so a fresh student can afford a store item.
+      // SOYL Coins e2e (ADR-021): a staff-style `adjust` row so a fresh student can afford a store item.
       // The ledger guard trigger still checks the balance and writes balance_after.
       const amount = Math.trunc(Number(body.amount));
       if (!Number.isFinite(amount) || amount === 0) return send(res, 400, { error: 'amount' });

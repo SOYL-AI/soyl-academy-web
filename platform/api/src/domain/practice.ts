@@ -126,7 +126,7 @@ export interface SubmitAnswerResult extends QuestionGrade {
   xpAwarded: number;
   badgesAwarded: string[];
   streak: StreakView | null;
-  /** SOYL Coins this answer earned (ADR-020): daily challenge, solved milestones, chapter mastery. */
+  /** SOYL Coins this answer earned (ADR-021): daily challenge, solved milestones, chapter mastery. */
   coinsAwarded: number;
   coinAwards: CoinAwardDto[];
 }
@@ -191,7 +191,7 @@ export async function submitAnswer(db: Database, clock: Clock, year: string, use
   const now = new Date(clock.now());
   // Badge rows are synced before the transaction: a transaction must never wait for a second pooled connection.
   await ensureBadges(db);
-  // Today's challenge for this subject is read from the pool too (coins, ADR-020); only a correct answer can earn it.
+  // Today's challenge for this subject is read from the pool too (coins, ADR-021); only a correct answer can earn it.
   const challenge = grade.correct === true ? await challengeKeyForChapter(db, year, row.chapterId, istDay(now), now.getTime()) : null;
   return db.transaction(async (tx) => {
     const [saved] = await tx

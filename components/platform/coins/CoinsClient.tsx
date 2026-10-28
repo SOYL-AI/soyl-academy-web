@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * /coins (ADR-020): balance, today against the daily cap (resets at 00:00 IST), the daily check-in,
+ * /coins (ADR-021): balance, today against the daily cap (resets at 00:00 IST), the daily check-in,
  * how to earn (from `howToEarn()`, the config's single source of truth), practice milestones and the
  * paged coin history. Coins are earned by learning only: never bought, transferred or cashed.
  */

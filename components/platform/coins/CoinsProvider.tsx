@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * SOYL Coins for the header chip and every page that earns or spends (ADR-020): GET /v1/coins once per
+ * SOYL Coins for the header chip and every page that earns or spends (ADR-021): GET /v1/coins once per
  * page load for members (guests have no coins), then kept current from the responses that carry a balance
  * (check-in, redeem, cancel) or an award (practice answers, test submits: `addEarned`).
  */

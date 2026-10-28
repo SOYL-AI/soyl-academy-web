@@ -1,5 +1,5 @@
 /**
- * Daily challenge (D-037, ADR-020): one practice question per board × class × subject per IST day,
+ * Daily challenge (D-037, ADR-021): one practice question per board × class × subject per IST day,
  * chosen deterministically from the subject's published practice pool (never test or live-reserved
  * items, F-006), auto-gradable types only. Everyone in the subject gets the same question that day:
  *

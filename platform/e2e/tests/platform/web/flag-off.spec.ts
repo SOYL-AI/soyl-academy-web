@@ -33,7 +33,7 @@ const ROUTES = [
   '/api/platform/v1/plans',
   '/api/platform/v1/test-series?subject=cbse-10-science',
   '/api/platform/v1/credits',
-  // SOYL Coins (ADR-020 §8)
+  // SOYL Coins (ADR-021 §8)
   '/coins',
   '/store',
   '/api/platform/v1/coins',

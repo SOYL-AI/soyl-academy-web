@@ -53,7 +53,7 @@ export async function deleteAccount(
     await tx.delete(aiConversations).where(eq(aiConversations.userId, user.id));
     await tx.delete(uploads).where(eq(uploads.userId, user.id));
     await tx.delete(userMfa).where(eq(userMfa.userId, user.id));
-    // SOYL Coins (ADR-020): shipping addresses and tracking refs erased, open merch redemptions cancelled.
+    // SOYL Coins (ADR-021): shipping addresses and tracking refs erased, open merch redemptions cancelled.
     await eraseCoinPersonalData(tx, user.id, now);
     await tx
       .update(users)

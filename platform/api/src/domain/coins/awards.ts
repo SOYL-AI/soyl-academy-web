@@ -1,5 +1,5 @@
 /**
- * Where coins are earned (D-037, ADR-020). Hooks run inside the transaction of the learning event that
+ * Where coins are earned (D-037, ADR-021). Hooks run inside the transaction of the learning event that
  * earns them, next to the XP awards (ARCHITECTURE §12), so an award and its event commit together:
  *
  *   check-in             POST /v1/coins/check-in (explicit; once per IST day; streak bonuses)

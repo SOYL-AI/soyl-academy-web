@@ -16,7 +16,7 @@ Two steps, implemented by backend-api:
    `name = 'Deleted user'`, `email = 'deleted+<id>@deleted.soyl.invalid'`, `phone_number = NULL`,
    `image = NULL`, `ban_reason = NULL`, `deleted_at = now()`; null the personal `profiles` fields.
    The generated `email_normalized` / `phone_e164` become NULL automatically.
-   SOYL Coins (ADR-020): erase every `coin_redemptions` shipping address and tracking reference, cancel
+   SOYL Coins (ADR-021): erase every `coin_redemptions` shipping address and tracking reference, cancel
    open merch redemptions (coins refunded to the ledger) and unequip digital items.
 2. **Purge (≤ 30 days later, worker job):** `DELETE FROM users WHERE deleted_at < now() - interval '30 days'`.
    Foreign keys do the rest: `ON DELETE CASCADE` removes every per-user learning, AI, credit and

@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * The daily-challenge "Solve" dialog (ADR-020 §2). Loaded only when a student presses Solve, with the
+ * The daily-challenge "Solve" dialog (ADR-021 §2). Loaded only when a student presses Solve, with the
  * question renderer chunk (Markdown, KaTeX, visuals), so the hub's first-load JS stays small. Answers go
  * through the normal POST /v1/practice/answers (usePracticeAnswer), which pays the challenge coins.
  */

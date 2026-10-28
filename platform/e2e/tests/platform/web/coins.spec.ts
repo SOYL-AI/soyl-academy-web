@@ -3,7 +3,7 @@ import { expect, test } from './fixtures';
 import { checkPage, ctl, shot, signUp } from './m34-helpers';
 
 /**
- * SOYL Coins (D-037, ADR-020) against the real local API (embedded Postgres, published content) through
+ * SOYL Coins (D-037, ADR-021) against the real local API (embedded Postgres, published content) through
  * `next start` with the flag on. The e2e API runs with merch redemption switched off (the production
  * default, COINS_PHYSICAL_REDEMPTION_ENABLED unset), so merch is "Coming soon" from the real API; the
  * consent-needed state is shown by replaying the real store response with redemption switched on.

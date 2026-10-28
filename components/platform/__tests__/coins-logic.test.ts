@@ -20,7 +20,7 @@ import {
 
 const problem = (code: string, status = 409) => new ApiError(status, code, { type: 'x', title: 't', status, code, traceId: 'tr' });
 
-describe('award notes (ADR-020)', () => {
+describe('award notes (ADR-021)', () => {
   it('sums paid awards and names their sources', () => {
     const r = summariseAwards([
       { source: 'daily_challenge', amount: 5, cappedOut: false },

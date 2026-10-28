@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * Today's daily challenge on the learn hub (ADR-020 §2): one question per subject of a board and class,
+ * Today's daily challenge on the learn hub (ADR-021 §2): one question per subject of a board and class,
  * new every IST day (GET /v1/coins/daily-challenge; guests may look). The first right answer of the day
  * pays the challenge coins (at most `awardsPerDay` a day). Members also check in here.
  */

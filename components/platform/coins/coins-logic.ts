@@ -1,5 +1,5 @@
 /**
- * SOYL Coins (D-037, ADR-020): pure helpers for the coins chip, /coins, /store and award notes.
+ * SOYL Coins (D-037, ADR-021): pure helpers for the coins chip, /coins, /store and award notes.
  * Every number comes from the API or `platform/shared/config/coins.ts`; nothing is hardcoded here.
  */
 import { isApiError, type CoinAward, type CoinLedgerSource, type CoinRedemption, type CoinStoreItem, type ShippingAddress, type StoreItemState } from '@/platform/shared/api-client';
@@ -49,7 +49,7 @@ export function summariseAwards(awards: readonly CoinAward[] | null | undefined)
 
 export const CAP_NOTE = 'You reached today’s coin limit. Milestones still count; more coins tomorrow.';
 
-/** Friendly copy for coins problems (ADR-020); other codes fall back to the shared messages. */
+/** Friendly copy for coins problems (ADR-021); other codes fall back to the shared messages. */
 export function coinsProblemMessage(err: unknown): string {
   if (!isApiError(err)) return problemMessage(err);
   switch (err.code) {

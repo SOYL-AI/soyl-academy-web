@@ -1,6 +1,6 @@
 /**
  * /store — the SOYL Store: digital rewards and exclusive merch, redeemed with earned SOYL Coins (D-037,
- * ADR-020). Guests may look; members redeem and add a delivery address (personal data), so the page is
+ * ADR-021). Guests may look; members redeem and add a delivery address (personal data), so the page is
  * rendered per request with the nonce CSP (WEB-3). The page's h1 is in the store hero.
  */
 import { connection } from 'next/server';
