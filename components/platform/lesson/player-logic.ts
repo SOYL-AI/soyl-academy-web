@@ -7,7 +7,7 @@ import type { NarrationSentence } from '@/components/platform/ui/slides/segment'
 
 export type NavAction = 'next' | 'prev' | 'first' | 'last' | null;
 
-/** ← → Space (Shift+Space back) PageUp/PageDown Home End. */
+/** ← → Space (Shift+Space back) PageUp/PageDown Home End. (↑ ↓ scroll a tall slide; the player handles them.) */
 export function keyAction(key: string, shift = false): NavAction {
   switch (key) {
     case 'ArrowRight':
@@ -28,27 +28,125 @@ export function keyAction(key: string, shift = false): NavAction {
   }
 }
 
-/** Keys typed into a form control, or activating a button/link, are not slide navigation. */
-export function isInteractiveTarget(target: EventTarget | null): boolean {
+/**
+ * Keys typed into a form control or a widget with its own arrow keys (radio groups, sliders, tabs) are not slide
+ * navigation; nor are Space and Enter on a button, link or summary (they activate it). Arrows, Page keys, Home and
+ * End on a focused button or link still navigate (focus often rests on Next or a strip tool). Without `key`, any
+ * key on a button or link counts as the control's (the previous behaviour).
+ */
+export function isInteractiveTarget(target: EventTarget | null, key?: string): boolean {
   const el = target as (Element & { isContentEditable?: boolean }) | null;
   if (!el || typeof el.closest !== 'function') return false;
   if (el.isContentEditable) return true;
-  return !!el.closest('input, textarea, select, button, a[href], summary, [role="slider"], [role="radio"], [role="tab"], dialog, [contenteditable="true"]');
+  if (el.closest('input, textarea, select, [role="slider"], [role="radio"], [role="tab"], [role="listbox"], [role="menu"], dialog, [contenteditable="true"]')) return true;
+  const activates = key === undefined || key === ' ' || key === 'Spacebar' || key === 'Enter';
+  return activates && !!el.closest('button, a[href], summary');
 }
 
-/** Elements that scroll sideways (wide tables, maths, code): a horizontal swipe there scrolls, not navigates. */
-export function startsInHorizontalScroller(target: EventTarget | null): boolean {
+/**
+ * Elements that scroll sideways (wide tables, maths, code): a horizontal swipe there scrolls, not navigates.
+ * Besides the known scrollers, any ancestor (up to `stop`) that really overflows sideways counts, so a wide
+ * diagram or a future widget never fights the swipe.
+ */
+export function startsInHorizontalScroller(target: EventTarget | null, stop?: Element | null): boolean {
   const el = target as Element | null;
   if (!el || typeof el.closest !== 'function') return false;
-  return !!el.closest('[data-math], pre, table, [data-scroll-x], input, textarea, select');
+  if (el.closest('[data-math], pre, table, [data-scroll-x], input, textarea, select, .katex-display')) return true;
+  for (let n: Element | null = el; n && n !== stop; n = n.parentElement) {
+    if (n.scrollWidth > n.clientWidth + 1) {
+      const o = getComputedStyle(n).overflowX;
+      if (o === 'auto' || o === 'scroll') return true;
+    }
+  }
+  return false;
 }
 
+/** Minimum horizontal travel for a swipe; it must also be 1.5× the vertical travel (a scroll is not a swipe). */
 export const SWIPE_MIN_PX = 50;
+/** Touches that start this close to a screen edge are the OS back/forward gesture, not a slide swipe. */
+export const SWIPE_EDGE_PX = 16;
 
 /** A mostly horizontal swipe of at least 50 px: left → next, right → previous. */
 export function swipeAction(dx: number, dy: number): NavAction {
   if (Math.abs(dx) < SWIPE_MIN_PX || Math.abs(dx) < Math.abs(dy) * 1.5) return null;
   return dx < 0 ? 'next' : 'prev';
+}
+
+/** True when a touch starts in the OS edge-gesture zone of a `width`-px screen. */
+export function isEdgeStart(x: number, width: number): boolean {
+  return width > 0 && (x < SWIPE_EDGE_PX || x > width - SWIPE_EDGE_PX);
+}
+
+/* ── Deep links: ?part=N&slide=M (M is 1-based; the first slide has no parameter) ─────────────── */
+
+/** The 0-based slide a URL's query asks for, or null (absent, malformed or out of range). */
+export function slideFromSearch(search: string, total: number): number | null {
+  const all = new URLSearchParams(search).getAll('slide');
+  if (all.length !== 1 || !/^\d{1,3}$/.test(all[0]!)) return null;
+  const n = Number(all[0]);
+  return n >= 1 && n <= total ? n - 1 : null;
+}
+
+/** The same URL (path + query + hash) with `slide` set to a 0-based index (removed for the first slide). */
+export function withSlideParam(href: string, index: number): string {
+  const url = new URL(href, 'https://x.invalid');
+  if (index > 0) url.searchParams.set('slide', String(index + 1));
+  else url.searchParams.delete('slide');
+  const q = url.searchParams.toString();
+  return `${url.pathname}${q ? `?${q}` : ''}${url.hash}`;
+}
+
+export type OpeningNote = { kind: 'resume' | 'link'; index: number } | null;
+
+/**
+ * Where the player opens and what it says about it. A slide in the URL wins (a shared link, or a reload, whose
+ * URL the player keeps in step with the slide); a saved position comes next. A reload lands on the saved slide,
+ * so a URL slide equal to the saved one still says "Continuing from …". A finished part opens at the start.
+ */
+export function openingPosition(urlIndex: number | null, saved: number | null | undefined, savedDone: boolean, total: number): { index: number; note: OpeningNote } {
+  const last = total - 1;
+  const savedOk = saved !== null && saved !== undefined && saved > 0 && saved <= last && !savedDone ? saved : null;
+  if (urlIndex !== null && urlIndex > 0 && urlIndex <= last) return { index: urlIndex, note: { kind: urlIndex === savedOk ? 'resume' : 'link', index: urlIndex } };
+  if (urlIndex === 0) return { index: 0, note: null };
+  if (savedOk !== null) return { index: savedOk, note: { kind: 'resume', index: savedOk } };
+  return { index: 0, note: null };
+}
+
+/* ── Completion summary ──────────────────────────────────────────────────────────────────────── */
+
+export interface CheckOutcome {
+  correct: boolean | null;
+}
+
+export interface CompletionSummary {
+  slides: number;
+  checks: number;
+  answered: number;
+  right: number;
+  /** Written answers the student marks themselves (answered, not auto-marked). */
+  selfMarked: number;
+  headline: string;
+  detail: string;
+}
+
+/** The end-of-part summary: slides, and how the quick checks went (answers given during this visit). */
+export function completionSummary(slides: number, checkIds: readonly string[], results: Readonly<Record<string, CheckOutcome | undefined>>): CompletionSummary {
+  const ids = [...new Set(checkIds)];
+  const done = ids.map((id) => results[id]).filter((r): r is CheckOutcome => !!r);
+  const right = done.filter((r) => r.correct === true).length;
+  const selfMarked = done.filter((r) => r.correct === null).length;
+  const marked = done.length - selfMarked;
+  let headline = 'Nice work!';
+  if (marked > 0 && right === marked) headline = marked > 1 ? 'Brilliant, every check right!' : 'Brilliant, check right!';
+  else if (marked > 0 && right / marked >= 0.5) headline = 'Great effort!';
+  else if (marked > 0) headline = 'Good start, keep practising!';
+  let detail: string;
+  const checksText = (n: number) => (n === 1 ? 'quick check' : 'quick checks');
+  if (ids.length === 0) detail = `You went through all ${slides} slides.`;
+  else if (done.length === 0) detail = `You went through ${slides} slides. The ${ids.length === 1 ? 'quick check is' : `${ids.length} quick checks are`} waiting for you in practice.`;
+  else if (marked === 0) detail = `You went through ${slides} slides and answered ${done.length} of ${ids.length} ${checksText(ids.length)}.`;
+  else detail = `You went through ${slides} slides and got ${right} of ${marked} ${checksText(marked)} right${selfMarked ? ` (${selfMarked} to mark yourself)` : ''}.`;
+  return { slides, checks: ids.length, answered: done.length, right, selfMarked, headline, detail };
 }
 
 export function applyNav(action: NavAction, index: number, total: number): number {

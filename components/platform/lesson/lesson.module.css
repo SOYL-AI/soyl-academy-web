@@ -1,265 +1,533 @@
-/* Lesson page + slide player (360 px first). */
-.meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--p-space-2) var(--p-space-3);
-  margin: var(--p-space-2) 0 var(--p-space-3);
-  color: var(--p-ink-muted);
-  font-size: var(--p-text-sm);
-}
-.partNav ol {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--p-space-2);
-  margin: 0 0 var(--p-space-3);
-  padding: 0;
-  list-style: none;
-}
-.partLink,
-.partCurrent {
-  display: inline-flex;
-  align-items: center;
-  min-height: var(--p-touch);
-  padding: 0 var(--p-space-4);
-  border-radius: var(--p-radius-pill);
-  border: 1px solid var(--p-border-strong);
-  color: inherit;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: var(--p-text-sm);
-}
-.partCurrent {
-  background: var(--p-accent);
-  border-color: var(--p-accent);
-  color: var(--p-on-accent);
-}
-.partLink:hover {
-  background: var(--p-surface-2);
-}
-.partLink:focus-visible {
-  outline: 2px solid var(--p-focus);
-  outline-offset: 2px;
-}
+/*
+ * Lesson player (focus mode; the frame is focus.module.css). 360 px first.
+ * The slide card fills the stage; a long slide scrolls inside the card (the slot), never the page.
+ * Slide layouts come from the UI kit (components/platform/ui/slides): this file only fits them to the stage
+ * (no min-height, a readable measure, sizes for maths/diagrams, Devanagari line height).
+ */
 .player {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--p-space-3);
-  min-width: 0;
+  --slide-max: 960px;
 }
-.toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--p-space-2);
-}
-.toolbarNote {
-  color: var(--p-ink-muted);
-  font-size: var(--p-text-sm);
-}
-.modeSwitch {
-  display: inline-flex;
-  padding: 3px;
-  border-radius: var(--p-radius-pill);
-  background: var(--p-surface-2);
-  border: 1px solid var(--p-border);
-}
-.modeButton {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--p-space-1);
-  min-height: 40px;
-  padding: 0 var(--p-space-3);
-  border: 0;
-  border-radius: var(--p-radius-pill);
-  background: transparent;
-  color: var(--p-ink-muted);
-  font: inherit;
-  font-size: var(--p-text-sm);
-  font-weight: 600;
-  cursor: pointer;
-}
-.modeButton:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-.modeOn {
-  background: var(--p-surface);
-  color: var(--p-ink);
-  box-shadow: var(--p-shadow-1);
-}
-.modeButton:focus-visible {
-  outline: 2px solid var(--p-focus);
-  outline-offset: 1px;
-}
-.note {
-  display: flex;
-  gap: var(--p-space-1);
-  align-items: center;
-  margin: 0;
-  color: var(--p-ink-muted);
-  font-size: var(--p-text-sm);
-}
-.progress {
-  margin: 0;
-}
-.resume {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--p-space-2);
-  padding: var(--p-space-2) var(--p-space-3);
-  border-radius: var(--p-radius-md);
-  background: var(--p-info-soft);
-  font-size: var(--p-text-sm);
-}
-.linkButton {
-  min-height: var(--p-touch);
-  padding: 0 var(--p-space-2);
-  border: 0;
-  background: transparent;
-  color: var(--p-accent);
-  font: inherit;
-  font-weight: 650;
-  text-decoration: underline;
-  cursor: pointer;
-}
-.linkButton:focus-visible {
-  outline: 2px solid var(--p-focus);
-  outline-offset: 1px;
-}
+
+/* ── Stage: the card and its slides ────────────────────────────────────── */
 .viewport {
-  min-width: 0;
+  position: relative;
+  height: 100%;
+  max-width: var(--slide-max);
+  margin: 0 auto;
   touch-action: pan-y;
 }
+.viewport[hidden] {
+  display: none;
+}
 .slot {
-  min-width: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-xl);
+  background: var(--p-surface);
+  box-shadow: var(--p-shadow-1);
+  outline: none;
 }
 .slot[hidden] {
   display: none;
 }
-.listen {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--p-space-2);
-  padding: var(--p-space-3);
-  border-radius: var(--p-radius-lg);
-  background: var(--p-surface-2);
+.slot:focus-visible {
+  box-shadow: var(--p-focus-ring);
 }
-.audioBar {
+/* "More below": a fade over the bottom of the card while there is more to scroll to. */
+.viewport[data-more]::after {
+  content: '';
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  height: 56px;
+  border-radius: 0 0 var(--p-radius-xl) var(--p-radius-xl);
+  background: linear-gradient(to bottom, transparent, var(--p-surface) 85%);
+  pointer-events: none;
+}
+.more {
+  position: absolute;
+  z-index: 1;
+  bottom: 10px;
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-pill);
+  background: var(--p-surface);
+  color: var(--p-ink-muted);
+  box-shadow: var(--p-shadow-2);
+  font: inherit;
+  font-size: var(--p-text-xs);
+  font-weight: 650;
+  cursor: pointer;
+  transform: translateX(-50%);
+}
+.more:hover {
+  color: var(--p-ink);
+}
+
+/* The slide frame (ui/slides SlideFrame) inside the card: the card draws the frame, the slide fills it. */
+.slot > article {
+  max-width: none;
+  min-height: 100%;
+  margin: 0;
+  gap: var(--p-space-4);
+  padding: var(--p-space-5) var(--p-space-4) var(--p-space-8);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: var(--p-text-md);
+}
+@media (min-width: 768px) {
+  .slot > article {
+    gap: var(--p-space-5);
+    padding: var(--p-space-8) var(--p-space-10) var(--p-space-10);
+    font-size: var(--p-text-lg);
+  }
+}
+/* Title slides (and every slide on wide screens) centre their content, but never cut off its top when it is
+   taller than the card. */
+.slot > article[data-layout='title'] {
+  justify-content: flex-start;
+  justify-content: safe center;
+}
+@media (min-width: 768px) {
+  .slot > article {
+    justify-content: flex-start;
+    justify-content: safe center;
+  }
+}
+/* Heading scale (the title slide keeps its display serif). */
+.slot > article > header > :is(h1, h2, h3) {
+  font-size: clamp(1.375rem, 1.1rem + 1.2vw, 2rem);
+  line-height: 1.2;
+}
+/* A readable measure for running text (about 60–75 characters); visuals, tables and maths keep the width. */
+.slot > article :is(p, li, dd, blockquote) {
+  max-width: 68ch;
+}
+.slot > article[data-layout='title'] p {
+  margin-inline: auto;
+}
+.slot > article:lang(hi) {
+  line-height: var(--p-leading-devanagari);
+}
+/* Diagrams and plots fit the card height (they scale down; text stays readable). */
+.slot :is(figure svg, figure img) {
+  max-height: clamp(180px, calc(100dvh - 400px), 520px);
+}
+.slot figure img {
+  width: auto;
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+/* ── Opening note ("Continuing from slide 5. Start over") ──────────────── */
+.resume {
+  position: absolute;
+  z-index: 2;
+  top: var(--p-space-3);
+  left: 50%;
   display: flex;
   align-items: center;
-  gap: var(--p-space-3);
+  gap: 2px;
+  max-width: calc(100% - 24px);
+  padding: 2px 4px 2px var(--p-space-3);
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-pill);
+  background: var(--p-info-soft);
+  color: var(--p-ink);
+  box-shadow: var(--p-shadow-2);
+  font-size: var(--p-text-sm);
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+@media (min-width: 768px) {
+  .resume {
+    top: var(--p-space-5);
+  }
+}
+.linkButton {
+  min-height: 36px;
+  padding: 0 var(--p-space-2);
+  border: 0;
+  border-radius: var(--p-radius-pill);
+  background: transparent;
+  color: var(--p-info);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.noteClose {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--p-ink-muted);
+  cursor: pointer;
+}
+.noteClose:hover {
+  background: var(--p-surface);
+}
+.linkButton:focus-visible,
+.noteClose:focus-visible {
+  outline: none;
+  box-shadow: var(--p-focus-ring);
+}
+
+/* ── Strip pieces ──────────────────────────────────────────────────────── */
+/* "Explain" (components/platform/ai/ExplainSlide.tsx renders it with this class): a strip tool; icon only < 640 px. */
+.explainButton {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: var(--p-touch);
+  height: var(--p-touch);
+  padding: 0 10px;
+  border: 0;
+  border-radius: var(--p-radius-md);
+  background: transparent;
+  color: var(--p-ink-muted);
+  font: inherit;
+  font-size: var(--p-text-sm);
+  font-weight: 650;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.explainButton:hover {
+  background: var(--p-surface-2);
+  color: var(--p-ink);
+}
+.explainButton:focus-visible {
+  outline: none;
+  box-shadow: var(--p-focus-ring);
+}
+.explainButton svg {
+  width: 20px;
+  height: 20px;
+}
+@media (max-width: 639px) {
+  .explainButton > span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+/* Report a mistake as an options row: the compact (icon) button with its label written next to the icon. */
+.menuReport {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 6px var(--p-space-3);
+}
+.menuReport::after {
+  content: 'Report a mistake'; /* the button's name, "Report a mistake in slide 3", contains it (WCAG 2.5.3) */
+}
+.outlineNo {
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  min-width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--p-surface-2);
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-xs);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+[aria-current] > .outlineNo {
+  background: var(--p-accent);
+  color: var(--p-on-accent);
+}
+.outlineText {
+  display: -webkit-box;
+  min-width: 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* ── Dock (listen mode) ────────────────────────────────────────────────── */
+.dock {
+  min-width: 0;
+}
+.listen {
+  display: grid;
+  gap: var(--p-space-2);
+  max-width: var(--slide-max);
+  margin: 0 auto;
+  padding: var(--p-space-2) var(--p-space-3) var(--p-space-3);
+  border-top: 1px solid var(--p-border);
+  background: var(--p-surface);
+}
+@media (min-width: 768px) {
+  .listen {
+    margin-bottom: var(--p-space-3);
+    border: 1px solid var(--p-border);
+    border-radius: var(--p-radius-lg);
+  }
+}
+.listenLoading {
+  height: 56px;
+}
+.listenControls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-2) var(--p-space-3);
 }
 .audioTime {
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
   font-variant-numeric: tabular-nums;
+}
+.autoplay {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-2);
+  min-height: 36px;
+  margin-left: auto;
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+  cursor: pointer;
+}
+.autoplay input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--p-accent);
+}
+.listenNote {
+  margin: 0;
   color: var(--p-ink-muted);
   font-size: var(--p-text-sm);
 }
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--p-space-2);
-  position: sticky;
-  bottom: 0;
-  z-index: 1;
-  padding: var(--p-space-2) 0;
-  background: var(--p-bg);
-  border-top: 1px solid var(--p-border);
+.readAlong {
+  max-height: min(24dvh, 9rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: var(--p-space-1);
 }
-.counter {
-  font-variant-numeric: tabular-nums;
-  color: var(--p-ink-muted);
-  font-weight: 600;
+.readAlong:lang(hi) {
+  line-height: var(--p-leading-devanagari);
 }
-.keysHint {
-  margin: 0;
-  color: var(--p-ink-subtle);
-  font-size: var(--p-text-xs);
-  text-align: center;
-}
-@media (hover: none) {
-  .keysHint {
-    display: none;
-  }
+
+/* ── Completion screen ─────────────────────────────────────────────────── */
+.doneLoading {
+  height: 100%;
 }
 .done {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--p-space-2);
-  padding: var(--p-space-4);
-  border-radius: var(--p-radius-lg);
-  border: 1px solid var(--p-success);
-  background: var(--p-success-soft);
+  align-content: start;
+  justify-items: center;
+  gap: var(--p-space-3);
+  height: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: var(--p-space-6) var(--p-space-4);
+  overflow-y: auto;
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-xl);
+  background: var(--p-surface);
+  box-shadow: var(--p-shadow-1);
+  text-align: center;
+}
+@media (min-height: 700px) {
+  .done {
+    align-content: center;
+  }
 }
 .done p {
   margin: 0;
 }
+.celebrate {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+}
+.medal {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--p-success);
+  color: var(--p-surface);
+  box-shadow: 0 0 0 6px var(--p-success-soft), var(--p-shadow-2);
+}
+.confetti {
+  position: absolute;
+  inset: -40px;
+  overflow: visible;
+  pointer-events: none;
+}
+.confetti rect,
+.confetti circle {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .medal {
+    animation: pop 520ms var(--p-ease) both;
+  }
+  .confetti rect,
+  .confetti circle {
+    animation: burst 1100ms cubic-bezier(0.2, 0.7, 0.3, 1) 120ms both;
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes burst {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(0.6);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) rotate(var(--r)) scale(1);
+  }
+}
 .doneTitle {
+  margin: 0;
+  font-size: var(--p-text-2xl);
+  font-weight: 750;
+  line-height: var(--p-leading-tight);
+  letter-spacing: -0.01em;
+}
+@media (max-height: 700px) {
+  .celebrate {
+    width: 72px;
+    height: 72px;
+  }
+  .medal {
+    width: 56px;
+    height: 56px;
+  }
+  .medal svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+.doneHeadline {
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-lg);
+  font-weight: 600;
+}
+.stats {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  justify-content: center;
   gap: var(--p-space-2);
-  margin: 0;
-  font-size: var(--p-text-lg);
+  margin: var(--p-space-1) 0;
+  padding: 0;
+  list-style: none;
+}
+.stat {
+  display: grid;
+  min-width: 7.5rem;
+  padding: var(--p-space-2) var(--p-space-4);
+  border-radius: var(--p-radius-lg);
+  background: var(--p-surface-2);
+}
+.statValue {
+  font-size: var(--p-text-2xl);
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+}
+.statLabel {
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.doneDetail {
+  max-width: 34rem;
+}
+.saved {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--p-space-1);
+  color: var(--p-ink-muted);
+  font-size: var(--p-text-sm);
+}
+.savedOk {
+  color: var(--p-success);
 }
 .doneLinks {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--p-space-2);
+  margin-top: var(--p-space-2);
 }
 .primaryLink,
 .secondaryLink {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--p-space-1);
   min-height: var(--p-touch);
   padding: 0 var(--p-space-4);
-  border-radius: var(--p-radius-pill);
+  border-radius: var(--p-radius-md);
+  font: inherit;
   font-weight: 650;
   text-decoration: none;
+  white-space: nowrap;
 }
 .primaryLink {
+  border: 1px solid transparent;
   background: var(--p-accent);
   color: var(--p-on-accent);
+}
+.primaryLink:hover {
+  background: var(--p-accent-hover);
 }
 .secondaryLink {
   border: 1px solid var(--p-border-strong);
   background: var(--p-surface);
   color: var(--p-ink);
+  cursor: pointer;
+}
+.secondaryLink:hover {
+  background: var(--p-surface-2);
 }
 .primaryLink:focus-visible,
 .secondaryLink:focus-visible {
-  outline: 2px solid var(--p-focus);
-  outline-offset: 2px;
-}
-
-/* M4: "Explain this slide" (AI, 1 credit) next to Report a mistake. */
-.toolbarActions {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--p-space-1);
-}
-.explainButton {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--p-space-1);
-  min-height: var(--p-touch);
-  padding: 0 var(--p-space-3);
-  border: 1px solid var(--p-border-strong);
-  border-radius: var(--p-radius-pill);
-  background: var(--p-surface);
-  color: var(--p-ink);
-  font: inherit;
-  font-size: var(--p-text-sm);
-  font-weight: 600;
-  cursor: pointer;
-}
-.explainButton:hover {
-  background: var(--p-surface-2);
-}
-.explainButton:focus-visible {
-  outline: 2px solid var(--p-focus);
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: var(--p-focus-ring);
 }
