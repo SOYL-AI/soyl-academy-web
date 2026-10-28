@@ -20,6 +20,7 @@ import { Icon } from '@/components/platform/ui/kit/Icon';
 import { useSession } from '../auth/SessionProvider';
 import { useCredits } from '../ai/CreditsProvider';
 import { api } from '../lib/api-browser';
+import { trackInterest } from '../lib/interest';
 import { checkoutOptions, loadCheckout } from './razorpay';
 import s from './plans.module.css';
 
@@ -101,6 +102,9 @@ export function PlansClient() {
     }
   }, []);
 
+  // D-045 interest counter (aggregate; only after analytics consent).
+  useEffect(() => trackInterest('plans_view'), []);
+
   useEffect(() => {
     if (state.status === 'loading') return;
     // eslint-disable-next-line react-hooks/set-state-in-effect -- plans (members: no-store) and the current plan
@@ -133,7 +137,9 @@ export function PlansClient() {
   );
 
   const start = async (plan: PlanView) => {
+    trackInterest('plan_select', plan.id);
     if (!member) {
+      trackInterest('signup_prompt_click', 'plans');
       openLogin({ returnTo: '/plans', reason: 'Log in to choose a plan. Lessons, practice and tests stay free.' });
       return;
     }

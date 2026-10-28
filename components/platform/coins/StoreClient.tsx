@@ -20,6 +20,7 @@ import { useToast } from '@/components/platform/ui/kit/Toast';
 import { cx } from '@/components/platform/ui/cx';
 import { useSession } from '../auth/SessionProvider';
 import { api } from '../lib/api-browser';
+import { trackInterest } from '../lib/interest';
 import { AddressForm } from './AddressForm';
 import { canCancel, coinsProblemMessage, coinsText, dropLine, istDate, needsAddress, REDEMPTION_STATUS_LABELS, stateCopy } from './coins-logic';
 import { useCoins } from './CoinsProvider';
@@ -252,6 +253,9 @@ export function StoreClient() {
     }
   }, []);
 
+  // D-045 interest counter (aggregate; only after analytics consent).
+  useEffect(() => trackInterest('store_view'), []);
+
   useEffect(() => {
     if (state.status === 'loading') return;
     // eslint-disable-next-line react-hooks/set-state-in-effect -- refetch when the viewer changes
@@ -334,7 +338,10 @@ export function StoreClient() {
       now={now}
       equipped={item.slot ? equipped[item.slot] : null}
       busy={equipping === item.key}
-      onRedeem={() => setPending({ kind: 'redeem', item })}
+      onRedeem={() => {
+        trackInterest('store_item_view', item.key);
+        setPending({ kind: 'redeem', item });
+      }}
       onSignIn={signIn}
       onEquip={(on) => void equip(item, on)}
     />
