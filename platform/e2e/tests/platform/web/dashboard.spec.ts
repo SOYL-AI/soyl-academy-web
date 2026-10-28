@@ -2,7 +2,7 @@ import { mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import type { Page } from '@playwright/test';
 import { acceptAllCookies, expect, openLoginFromHeader, signInWithEmail, test, uniqueEmail } from './fixtures';
-import { checkPage, grantConsent, signUp, startCh02Short } from './m34-helpers';
+import { authoredQuestions, checkPage, grantConsent, signUp, startCh02Short } from './m34-helpers';
 
 /**
  * D-043: the student dashboard (/me/dashboard, short link /dashboard) and the school + weekly goal on /me.
@@ -48,12 +48,19 @@ async function solveOneMcq(page: Page, skip = 0) {
   expect(r.correct).toBe(true);
 }
 
-/** Starts the CBSE 10 Science ch02 short test, answers the first question and submits. */
+const CH02_KEYS = authoredQuestions('science', 'cbse-10-science-ch02');
+
+/** Starts the CBSE 10 Science ch02 short test, answers the first 4 questions (choice ones right) and submits. */
 async function takeShortTest(page: Page) {
   await startCh02Short(page);
-  const first = page.locator('article[data-question-id]').first();
-  const option = first.locator('[data-option-id] input').first();
-  if (await option.count()) await option.check();
+  for (let i = 0; i < 4; i++) {
+    const article = page.locator('article[data-question-id]').first();
+    const id = (await article.getAttribute('data-question-id'))!;
+    const key = CH02_KEYS.get(id)?.answer as { option_ids?: string[] } | undefined;
+    if (key?.option_ids?.[0]) await article.locator(`[data-option-id="${key.option_ids[0]}"] input`).check();
+    await page.getByTestId('next-question').click();
+    await expect(page.locator(`article[data-question-id="${id}"]`)).toHaveCount(0);
+  }
   await page.getByTestId('submit-open').click();
   await page.getByTestId('confirm-submit').click();
   await page.waitForURL(/\/tests\/result\/[0-9a-f-]{36}$/);
@@ -83,7 +90,7 @@ test.describe('D-043 dashboard', () => {
     const tabs = page.getByRole('navigation', { name: 'Learning platform' });
     await expect(tabs.getByRole('listitem')).toHaveCount(5);
     await expect(tabs.getByRole('link', { name: 'Home' })).toHaveAttribute('aria-current', 'page');
-    await expect(tabs.getByRole('link', { name: 'Me' })).not.toHaveAttribute('aria-current', /.*/);
+    await expect(tabs.getByRole('link', { name: 'Me', exact: true })).not.toHaveAttribute('aria-current', /.*/);
 
     const short = await page.request.get('/dashboard', { maxRedirects: 0 });
     expect(short.status()).toBe(307);
@@ -286,7 +293,15 @@ test.describe('D-043 screenshots', () => {
           if (shot === 'dashboard') await expect(page.getByTestId('score-trend')).toBeVisible();
           await page.evaluate(() => document.fonts.ready);
           await page.waitForTimeout(400);
-          if (v.name === 'mobile') expect(await page.evaluate(() => window.innerWidth)).toBe(360);
+          if (v.name === 'mobile') {
+            const wide = await page.evaluate(() =>
+              Array.from(document.body.querySelectorAll('*'))
+                .filter((el) => el.getBoundingClientRect().right > 361 && !(el.parentElement && el.parentElement.getBoundingClientRect().right > 361))
+                .slice(0, 8)
+                .map((el) => `${el.tagName.toLowerCase()}.${String((el as HTMLElement).className).slice(0, 50)} w=${Math.round(el.getBoundingClientRect().width)}`),
+            );
+            expect(await page.evaluate(() => window.innerWidth), `${path} layout viewport; wider than 360: ${wide.join(' | ')}`).toBe(360);
+          }
           await page.screenshot({ path: resolve(OUT, `${v.name}-${theme}-${shot}.png`), fullPage: v.name === 'desktop' });
         }
       }

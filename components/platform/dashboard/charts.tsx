@@ -139,27 +139,30 @@ export function ScoreTrendChart({ points }: { points: readonly TrendPoint[] }) {
           )}
         </span>
       </figcaption>
-      <table className="p-visually-hidden">
-        <caption>Your marked tests, oldest first</caption>
-        <thead>
-          <tr>
-            <th scope="col">Test</th>
-            <th scope="col">Day</th>
-            <th scope="col">Score</th>
-            <th scope="col">Marking</th>
-          </tr>
-        </thead>
-        <tbody>
-          {points.map((p) => (
-            <tr key={p.attemptId}>
-              <th scope="row">{p.title}</th>
-              <td>{dayLabel(p.day)}</td>
-              <td>{fmtPct(p.percentage)}</td>
-              <td>{p.marking === 'self' ? 'Includes self-marking' : 'Auto-marked'}</td>
+      {/* A table ignores width: 1px, so a wrapper is the visually hidden box that clips it (else it widens a phone layout viewport). */}
+      <div className="p-visually-hidden">
+        <table>
+          <caption>Your marked tests, oldest first</caption>
+          <thead>
+            <tr>
+              <th scope="col">Test</th>
+              <th scope="col">Day</th>
+              <th scope="col">Score</th>
+              <th scope="col">Marking</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {points.map((p) => (
+              <tr key={p.attemptId}>
+                <th scope="row">{p.title}</th>
+                <td>{dayLabel(p.day)}</td>
+                <td>{fmtPct(p.percentage)}</td>
+                <td>{p.marking === 'self' ? 'Includes self-marking' : 'Auto-marked'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </figure>
   );
 }

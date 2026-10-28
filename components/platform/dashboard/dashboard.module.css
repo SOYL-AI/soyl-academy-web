@@ -682,3 +682,11 @@
   font-size: var(--p-text-xl);
   font-variant-numeric: tabular-nums;
 }
+
+/* Grid and flex children may shrink below their content (long titles wrap; charts follow their box). */
+.tile > *,
+.focus > *,
+.trend > *,
+.focusItem > * {
+  min-width: 0;
+}
