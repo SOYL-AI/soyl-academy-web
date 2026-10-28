@@ -22,6 +22,8 @@ const CH = 'cbse-10-science-ch01';
 
 beforeEach(() => {
   window.localStorage.clear();
+  // The player keeps ?slide= in the URL (deep links): start every test from a clean URL.
+  window.history.replaceState(null, '', '/');
   h.session.state = { status: 'guest' };
   for (const fn of Object.values(h.api)) fn.mockReset();
 });
@@ -94,12 +96,15 @@ describe('SlidePlayer', () => {
     await waitFor(() => expect(current()).toBe('3'));
     expect(screen.getByTestId('resume-note').textContent).toContain('slide 4');
     fireEvent.keyDown(window, { key: 'End' });
+    // Next on the last slide finishes the part (the completion screen is a lazy chunk).
+    fireEvent.keyDown(window, { key: 'ArrowRight' });
     await act(async () => {
       vi.advanceTimersByTime(1500);
     });
     const saved = readGuestLessonPosition(readGuestProgress(), CH, 1)!;
     expect(saved).toMatchObject({ part: 1, slide: 4, completed: true, mode: 'read' });
-    expect(screen.getByTestId('lesson-complete').textContent).toContain('Lesson part complete');
+    expect((await screen.findByTestId('lesson-complete', {}, { timeout: 5000 })).textContent).toContain('Lesson complete');
+    expect(screen.getByTestId('lesson-saved').textContent).toContain('Saved on this device');
     expect(window.localStorage.getItem(GUEST_STORAGE_KEY)).not.toContain('Slide');
   });
 
@@ -148,7 +153,8 @@ describe('SlidePlayer', () => {
     fireEvent.click(listen);
     const audio = document.querySelector('audio')!;
     expect(audio.getAttribute('src')).toBe('https://cdn.soylai.com/audio/a/s1.ogg');
-    fireEvent.click(screen.getByRole('button', { name: 'Play narration' }));
+    // The narration controls are a lazy chunk.
+    fireEvent.click(await screen.findByRole('button', { name: 'Play narration' }, { timeout: 5000 }));
     expect(play).toHaveBeenCalled();
     Object.defineProperty(audio, 'currentTime', { value: 9.9, configurable: true });
     fireEvent.timeUpdate(audio);
