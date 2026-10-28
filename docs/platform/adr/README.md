@@ -29,9 +29,11 @@ Format and rules: AGENTS.md §4.4 (context, options, decision, consequences). An
 | [021](021-soyl-coins.md) | SOYL Coins: earn-only append-only ledger with a balance guard, check-in and daily challenge, store and merch redemption behind switches (off at launch, D-038) | Accepted | 2026-10-28 | gamification, data, privacy |
 | [022](022-interim-builtin-consent-provider.md) | Interim built-in consent provider: age band, parent approval code by email, withdraw link, AI data deletion (D-039) | Accepted | 2026-10-28 | Consent, privacy |
 | [023](023-platform-app-shell-and-theme.md) | Platform app shell (marketing header/footer step aside on platform paths) and the Light / Dark / System theme (cookie + hash-allowed boot script, no flash) | Accepted | 2026-10-28 | Web, design system, marketing protection |
+| 024 | Reserved for another branch | — | — | — |
+| [025](025-marketing-nav-and-footer.md) | Marketing header mega menus (disclosure pattern, one client island, flag-gated Learn group) and a light footer with a pre-footer CTA band; visual baseline awaits owner approval | Accepted by the Lead, pending owner sign-off of the new look | 2026-10-28 | Marketing, web, accessibility |
 
 ## Housekeeping notes
 
-- **Duplicate numbers.** 011 and 012 were each used twice because agents numbered in parallel branches. Both pairs are kept as they are, since other documents link to the file names. Cite them with their topic, for example "ADR-011 (staff TOTP)". The next free number is **024** (023: platform app shell and theme).
+- **Duplicate numbers.** 011 and 012 were each used twice because agents numbered in parallel branches. Both pairs are kept as they are, since other documents link to the file names. Cite them with their topic, for example "ADR-011 (staff TOTP)". The next free number is **026** (024 is reserved for another branch; 025: marketing nav and footer).
 - **Status lines not updated.** The two web ADRs from M1 (011 web, 012 web) still say "Proposed" although they were merged and are in force. The Lead should mark them Accepted.
 - **Other ADRs never written:** ACR placement, Redis tier and Front Door. These decisions are encoded in Bicep and described in the [infra-azure M1 handoff](../handoffs/2026-10-26-infra-azure-m1.md).
