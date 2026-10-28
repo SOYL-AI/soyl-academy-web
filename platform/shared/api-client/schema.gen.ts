@@ -2162,13 +2162,14 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Practice questions of a chapter (stems and options only), paged. Signed in: questions you have not answered come first. */
+        /** Practice questions of a chapter (stems and options only), paged, with difficulty bands, your status per question and whole-chapter counts. Signed in: questions you have not answered come first. */
         get: {
             parameters: {
                 query?: {
                     cursor?: string;
                     type?: string;
                     difficulty?: string;
+                    status?: string;
                     limit?: number;
                 };
                 header?: never;
@@ -2533,6 +2534,172 @@ export interface paths {
                     };
                     content: {
                         "application/json": components["schemas"]["MyBadges"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/activity": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Your daily learning activity (IST days) for a heatmap, with streaks and active days */
+        get: {
+            parameters: {
+                query?: {
+                    days?: number;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["MyActivity"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/mastery": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Your mastery level per chapter (not started → mastered) and per subject */
+        get: {
+            parameters: {
+                query?: {
+                    subjectId?: string;
+                };
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["MyMastery"];
+                    };
+                };
+                /** @description Default Response */
+                "4XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+                /** @description Default Response */
+                "5XX": {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["Problem"];
+                    };
+                };
+            };
+        };
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/v1/me/card": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Your private player card: overall rating, tier and attributes (deterministic, explained) */
+        get: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: never;
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Default Response */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["MyPlayerCard"];
                     };
                 };
                 /** @description Default Response */
@@ -6451,6 +6618,142 @@ export interface components {
             pincode: string;
             phone: string;
         };
+        ActivityDayInput: {
+            /** Format: date */
+            date: string;
+            answered: number;
+            solved: number;
+            lessonsCompleted: number;
+            testsSubmitted: number;
+            total: number;
+        };
+        /** @description Daily learning activity for a LeetCode-style heatmap. Days are IST calendar days. */
+        MyActivityInput: {
+            /** @constant */
+            timezone: "Asia/Kolkata";
+            /** Format: date */
+            from: string;
+            /** Format: date */
+            to: string;
+            days: number;
+            calendar: components["schemas"]["ActivityDayInput"][];
+            totals: {
+                answered: number;
+                solved: number;
+                lessonsCompleted: number;
+                testsSubmitted: number;
+                activeDays: number;
+            };
+            streak: components["schemas"]["StreakInput"];
+            activeDaysAllTime: number;
+        };
+        /** @enum {string} */
+        MasteryLevelInput: "not_started" | "attempted" | "familiar" | "proficient" | "mastered";
+        /** @description Inputs of the mastery formula (@soyl/shared/learning/mastery chapterMastery). */
+        ChapterEvidenceInput: {
+            lessonParts: number;
+            lessonPartsStarted: number;
+            lessonPartsCompleted: number;
+            practiceTotal: number;
+            practiceAttempted: number;
+            practiceSolved: number;
+            firstTryChecked: number;
+            firstTryCorrect: number;
+            chapterTestAvailable: boolean;
+            chapterTestPct: number | null;
+        };
+        ChapterMasteryInput: {
+            chapterId: string;
+            number: number;
+            title: string;
+            level: components["schemas"]["MasteryLevelInput"];
+            score: number;
+            components: {
+                lesson: number | null;
+                coverage: number | null;
+                accuracy: number | null;
+                test: number | null;
+            };
+            firstTryAccuracy: number | null;
+            nextLevel: components["schemas"]["MasteryLevelInput"] | null;
+            hints: ("finish_lesson" | "practice_more" | "improve_accuracy" | "take_chapter_test" | "improve_chapter_test")[];
+            evidence: components["schemas"]["ChapterEvidenceInput"];
+        };
+        SubjectMasteryInput: {
+            subjectId: string;
+            name: string;
+            classLevel: number;
+            score: number;
+            chapterCount: number;
+            levels: {
+                not_started: number;
+                attempted: number;
+                familiar: number;
+                proficient: number;
+                mastered: number;
+            };
+            chapters: components["schemas"]["ChapterMasteryInput"][];
+        };
+        MyMasteryInput: {
+            subjects: components["schemas"]["SubjectMasteryInput"][];
+        };
+        /**
+         * @description Content difficulty 1–2 easy, 3 medium, 4–5 hard (config DIFFICULTY_BAND_LEVELS).
+         * @enum {string}
+         */
+        DifficultyBandInput: "easy" | "medium" | "hard";
+        /**
+         * @description new: never answered; attempted: answered, never right; solved: auto-checked right or self-marked full marks at least once.
+         * @enum {string}
+         */
+        PracticeStatusInput: "new" | "attempted" | "solved";
+        /** @description Whole-chapter counts for a LeetCode-style header; `solved` and `byStatus` are null for guests. */
+        PracticeSummaryInput: {
+            total: number;
+            byDifficulty: {
+                easy: {
+                    total: number;
+                    solved: number | null;
+                };
+                medium: {
+                    total: number;
+                    solved: number | null;
+                };
+                hard: {
+                    total: number;
+                    solved: number | null;
+                };
+            };
+            byStatus: {
+                new: number;
+                attempted: number;
+                solved: number;
+            } | null;
+        };
+        CardAttributeInput: {
+            /** @enum {string} */
+            key: "ACC" | "CON" | "SPD" | "BRE" | "MAS" | "TST";
+            label: string;
+            value: number;
+            raw: number;
+            weight: number;
+            explain: string;
+        };
+        /** @description Your private player card. Deterministic from your own learning data; never shown to anyone else. */
+        MyPlayerCardInput: {
+            publicName: string;
+            level: number;
+            xp: number;
+            coins: number;
+            overall: number;
+            /** @enum {string} */
+            tier: "bronze" | "silver" | "gold" | "elite";
+            provisional: boolean;
+            formulaVersion: number;
+            attributes: components["schemas"]["CardAttributeInput"][];
+            /** Format: date */
+            asOfDay: string;
+        };
         /** @description mcq/assertion-reason/true-false/multi-select → option_ids; numerical → value; fill-blank → blanks (in stem order); match → pairs; ordering → order (all ids); code-output → output; short/long/writing/map → text. */
         PracticePartResponseInput: {
             option_ids: string[];
@@ -6547,8 +6850,11 @@ export interface components {
                 question: components["schemas"]["StudentQuestionInput"];
                 answered: boolean | null;
                 lastCorrect: boolean | null;
+                difficulty: components["schemas"]["DifficultyBandInput"];
+                status: components["schemas"]["PracticeStatusInput"] | null;
             }[];
             nextCursor: string | null;
+            summary: components["schemas"]["PracticeSummaryInput"];
         };
         PracticeSelfAssessmentInput: {
             /** Format: uuid */
@@ -8383,6 +8689,142 @@ export interface components {
             pincode: string;
             phone: string;
         };
+        ActivityDay: {
+            /** Format: date */
+            date: string;
+            answered: number;
+            solved: number;
+            lessonsCompleted: number;
+            testsSubmitted: number;
+            total: number;
+        };
+        /** @description Daily learning activity for a LeetCode-style heatmap. Days are IST calendar days. */
+        MyActivity: {
+            /** @constant */
+            timezone: "Asia/Kolkata";
+            /** Format: date */
+            from: string;
+            /** Format: date */
+            to: string;
+            days: number;
+            calendar: components["schemas"]["ActivityDay"][];
+            totals: {
+                answered: number;
+                solved: number;
+                lessonsCompleted: number;
+                testsSubmitted: number;
+                activeDays: number;
+            };
+            streak: components["schemas"]["Streak"];
+            activeDaysAllTime: number;
+        };
+        /** @enum {string} */
+        MasteryLevel: "not_started" | "attempted" | "familiar" | "proficient" | "mastered";
+        /** @description Inputs of the mastery formula (@soyl/shared/learning/mastery chapterMastery). */
+        ChapterEvidence: {
+            lessonParts: number;
+            lessonPartsStarted: number;
+            lessonPartsCompleted: number;
+            practiceTotal: number;
+            practiceAttempted: number;
+            practiceSolved: number;
+            firstTryChecked: number;
+            firstTryCorrect: number;
+            chapterTestAvailable: boolean;
+            chapterTestPct: number | null;
+        };
+        ChapterMastery: {
+            chapterId: string;
+            number: number;
+            title: string;
+            level: components["schemas"]["MasteryLevel"];
+            score: number;
+            components: {
+                lesson: number | null;
+                coverage: number | null;
+                accuracy: number | null;
+                test: number | null;
+            };
+            firstTryAccuracy: number | null;
+            nextLevel: components["schemas"]["MasteryLevel"] | null;
+            hints: ("finish_lesson" | "practice_more" | "improve_accuracy" | "take_chapter_test" | "improve_chapter_test")[];
+            evidence: components["schemas"]["ChapterEvidence"];
+        };
+        SubjectMastery: {
+            subjectId: string;
+            name: string;
+            classLevel: number;
+            score: number;
+            chapterCount: number;
+            levels: {
+                not_started: number;
+                attempted: number;
+                familiar: number;
+                proficient: number;
+                mastered: number;
+            };
+            chapters: components["schemas"]["ChapterMastery"][];
+        };
+        MyMastery: {
+            subjects: components["schemas"]["SubjectMastery"][];
+        };
+        /**
+         * @description Content difficulty 1–2 easy, 3 medium, 4–5 hard (config DIFFICULTY_BAND_LEVELS).
+         * @enum {string}
+         */
+        DifficultyBand: "easy" | "medium" | "hard";
+        /**
+         * @description new: never answered; attempted: answered, never right; solved: auto-checked right or self-marked full marks at least once.
+         * @enum {string}
+         */
+        PracticeStatus: "new" | "attempted" | "solved";
+        /** @description Whole-chapter counts for a LeetCode-style header; `solved` and `byStatus` are null for guests. */
+        PracticeSummary: {
+            total: number;
+            byDifficulty: {
+                easy: {
+                    total: number;
+                    solved: number | null;
+                };
+                medium: {
+                    total: number;
+                    solved: number | null;
+                };
+                hard: {
+                    total: number;
+                    solved: number | null;
+                };
+            };
+            byStatus: {
+                new: number;
+                attempted: number;
+                solved: number;
+            } | null;
+        };
+        CardAttribute: {
+            /** @enum {string} */
+            key: "ACC" | "CON" | "SPD" | "BRE" | "MAS" | "TST";
+            label: string;
+            value: number;
+            raw: number;
+            weight: number;
+            explain: string;
+        };
+        /** @description Your private player card. Deterministic from your own learning data; never shown to anyone else. */
+        MyPlayerCard: {
+            publicName: string;
+            level: number;
+            xp: number;
+            coins: number;
+            overall: number;
+            /** @enum {string} */
+            tier: "bronze" | "silver" | "gold" | "elite";
+            provisional: boolean;
+            formulaVersion: number;
+            attributes: components["schemas"]["CardAttribute"][];
+            /** Format: date */
+            asOfDay: string;
+        };
         /** @description mcq/assertion-reason/true-false/multi-select → option_ids; numerical → value; fill-blank → blanks (in stem order); match → pairs; ordering → order (all ids); code-output → output; short/long/writing/map → text. */
         PracticePartResponse: {
             option_ids: string[];
@@ -8479,8 +8921,11 @@ export interface components {
                 question: components["schemas"]["StudentQuestion"];
                 answered: boolean | null;
                 lastCorrect: boolean | null;
+                difficulty: components["schemas"]["DifficultyBand"];
+                status: components["schemas"]["PracticeStatus"] | null;
             }[];
             nextCursor: string | null;
+            summary: components["schemas"]["PracticeSummary"];
         };
         PracticeSelfAssessment: {
             /** Format: uuid */
