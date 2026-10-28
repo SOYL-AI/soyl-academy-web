@@ -387,7 +387,7 @@ function PublicName({ me, onChange }: { me: Me; onChange: (me: Me) => void }) {
   return (
     <Card as="section" aria-labelledby="public-name-title" data-testid="public-name">
       <CardTitle as="h2" id="public-name-title">
-        Your name on leaderboards
+        Your public name
       </CardTitle>
       <p className={s.muted}>
         Other students only ever see this made-up name, never your real name or email: <strong data-testid="public-name-value">{me.publicName}</strong>
