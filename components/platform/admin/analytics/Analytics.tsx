@@ -22,7 +22,7 @@ import { Button } from '@/components/platform/ui/kit/Button';
 import { Skeleton } from '@/components/platform/ui/kit/Display';
 import { api } from '../../lib/api-browser';
 import { problemMessage } from '../../lib/problems';
-import { BarList, DataTable, KpiTile, LineChart, Panel } from './Charts';
+import { BarList, CsvButton, DataTable, KpiTile, LineChart, Panel } from './Charts';
 import {
   csvFileName,
   daySpan,
@@ -334,11 +334,10 @@ function Retention({ d, name }: { d: AdminAnalyticsRetention } & Named) {
           </tbody>
         </table>
       </div>
-      <DataTable
-        caption="Retention (CSV)"
+      <CsvButton
+        name={name('retention')}
         header={['week', 'size', ...d.days.flatMap((n) => [`d${n}_rate`, `d${n}_retained`, `d${n}_eligible`])]}
         rows={d.cohorts.map((c) => [c.week, c.size, ...d.days.flatMap((_, i) => [c.rates[i] ?? '', c.retained[i], c.eligible[i]])])}
-        csvName={name('retention')}
       />
     </Panel>
   );
