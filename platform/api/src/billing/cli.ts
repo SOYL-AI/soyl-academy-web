@@ -15,6 +15,10 @@
  *                                                process an event body exported from the Razorpay dashboard
  *                                                (state is re-fetched, never taken from the file)
  *
+ * Invoices (ADR-024): with invoicing configured (INVOICING_ENABLED), every command that records a captured
+ * payment or a refund also issues its invoice / credit note; the worker's billing.invoices sweep renders
+ * and emails them.
+ *
  * Every non-dry-run replay/resync writes an audit_log row (action billing.*). Output: one JSON object
  * per line on stdout; exit 0 ok, 1 error, 2 usage, 3 drift found (reconcile) or rejected (replay/resync).
  */
@@ -27,6 +31,7 @@ import { expireBilling, reconcile, type ReconcileLog } from './reconcile';
 import { RzpWebhookEvent, type RazorpayClient } from './razorpay/types';
 import { atomicSync, syncOrder, syncPayment, syncSubscription, type SyncResult } from './sync';
 import { applyEvent, WebhookProcessor } from './webhooks';
+import type { InvoicingRuntime } from './invoices/issue';
 
 export interface CliIo {
   out(line: string): void;
@@ -38,6 +43,8 @@ export interface CliDeps {
   razorpay: RazorpayClient | null;
   clock: Clock;
   io: CliIo;
+  /** Invoicing of this environment (billing config); absent: no documents are issued. */
+  invoicing?: InvoicingRuntime;
   /** For `replay --file` (tests pass the file contents directly). */
   readFile?: (path: string) => string;
 }
@@ -120,13 +127,13 @@ export async function runBillingCli(argv: string[], d: CliDeps): Promise<number>
       }
       case 'reconcile': {
         const days = str(flags, 'days');
-        const r = await reconcile({ db: d.db, razorpay: needRazorpay(d), now, log: reconcileLog(io) }, { dryRun, lookbackDays: days ? Number(days) : undefined });
+        const r = await reconcile({ db: d.db, razorpay: needRazorpay(d), now, log: reconcileLog(io), invoicing: d.invoicing }, { dryRun, lookbackDays: days ? Number(days) : undefined });
         for (const item of r.drift) io.out(json(item));
         io.out(json({ summary: true, dryRun, checked: r.checked, drift: r.drift.length, alerts: r.alerts, repaired: r.repaired, errors: r.errors }));
         return r.alerts ? 3 : r.errors.length ? 1 : 0;
       }
       case 'expire': {
-        const r = await expireBilling({ db: d.db, razorpay: d.razorpay, now, log: reconcileLog(io) });
+        const r = await expireBilling({ db: d.db, razorpay: d.razorpay, now, log: reconcileLog(io), invoicing: d.invoicing });
         io.out(json({ summary: true, ...r }));
         return r.errors ? 1 : 0;
       }
@@ -137,7 +144,7 @@ export async function runBillingCli(argv: string[], d: CliDeps): Promise<number>
         if (!target || !id) throw new UsageError('resync needs --order, --subscription or --payment with an id');
         const plans = await requirePlanRows(d.db);
         const r = await atomicSync(d.db, (tx) => {
-          const sd = { tx, razorpay, now, plans, dryRun };
+          const sd = { tx, razorpay, now, plans, dryRun, invoicing: d.invoicing };
           return target === 'order' ? syncOrder(sd, id) : target === 'subscription' ? syncSubscription(sd, id) : syncPayment(sd, id);
         });
         if (!dryRun) await audit(d.db, now, 'billing.resync', target, id, { outcome: r.outcome, reason: r.reason, changes: r.changes.length });
@@ -183,11 +190,11 @@ export async function runBillingCli(argv: string[], d: CliDeps): Promise<number>
         if (!ev.success) throw new UsageError('the payload is not a Razorpay webhook event');
         if (dryRun) {
           const plans = await requirePlanRows(d.db);
-          const r = await atomicSync(d.db, (tx) => applyEvent({ tx, razorpay, now, plans, dryRun: true }, ev.data));
+          const r = await atomicSync(d.db, (tx) => applyEvent({ tx, razorpay, now, plans, dryRun: true, invoicing: d.invoicing }, ev.data));
           io.out(json({ ...summary(r), eventId, type: ev.data.event, dryRun, recorded }));
           return r.outcome === 'rejected' ? 3 : 0;
         }
-        const processor = new WebhookProcessor({ db: d.db, razorpay, secrets: [], clock: d.clock, plans: () => requirePlanRows(d.db) });
+        const processor = new WebhookProcessor({ db: d.db, razorpay, secrets: [], clock: d.clock, plans: () => requirePlanRows(d.db), invoicing: () => d.invoicing });
         // A recorded event is re-applied without a second row (UNIQUE event id); a new one is recorded.
         const out = await processor.process(eventId, ev.data, payload, { record: !recorded });
         await audit(d.db, now, recorded ? 'billing.webhook.replay' : 'billing.webhook.replay_import', 'webhook_event', eventId, { type: ev.data.event, outcome: out.outcome, reason: out.result?.reason ?? null, changes: out.result?.changes.length ?? 0 });

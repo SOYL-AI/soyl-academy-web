@@ -5,7 +5,7 @@
  * transaction that applies its effects, so a failed processing rolls back and Razorpay retries.
  */
 import { sql } from 'drizzle-orm';
-import { boolean, check, index, integer, jsonb, pgTable, text, uniqueIndex, uuid } from 'drizzle-orm/pg-core';
+import { boolean, check, date, index, integer, jsonb, pgTable, text, uniqueIndex, uuid, type AnyPgColumn } from 'drizzle-orm/pg-core';
 import { PlanId } from '@soyl/shared/config/plans';
 import { createdAt, id, oneOf, timestamps, tstz } from './_shared';
 import { users } from './identity';
@@ -59,6 +59,10 @@ export const subscriptions = pgTable(
     cancelAtPeriodEnd: boolean('cancel_at_period_end').notNull().default(false),
     /** Entity timestamp of the last applied event: state precedence, not arrival order (AC-09). */
     lastEventAt: tstz('last_event_at'),
+    /** GST place of supply chosen at checkout (state code; migration 0016_invoices). Null: the seller's state applies. */
+    placeOfSupply: text('place_of_supply'),
+    /** Optional name for the invoice, as entered at checkout (*_invoices; PII.md). */
+    buyerName: text('buyer_name'),
     ...timestamps(),
   },
   (t) => [
@@ -67,6 +71,7 @@ export const subscriptions = pgTable(
     oneOf('subscriptions_status_check', t.status, SUBSCRIPTION_STATUSES),
     oneOf('subscriptions_interval_check', t.interval, ['monthly', 'yearly']),
     check('subscriptions_amount_check', sql`${t.amountPaise} IS NULL OR ${t.amountPaise} > 0`),
+    check('subscriptions_place_of_supply_check', sql`${t.placeOfSupply} IS NULL OR ${t.placeOfSupply} ~ '^[0-9]{2}$'`),
   ],
 );
 
@@ -83,6 +88,10 @@ export const orders = pgTable(
     amountPaise: integer('amount_paise').notNull(),
     currency: text('currency').notNull().default('INR'),
     status: text('status').notNull().default('created'),
+    /** GST place of supply chosen at checkout (state code; migration 0016_invoices). Null: the seller's state applies. */
+    placeOfSupply: text('place_of_supply'),
+    /** Optional name for the invoice, as entered at checkout (*_invoices; PII.md). */
+    buyerName: text('buyer_name'),
     ...timestamps(),
   },
   (t) => [
@@ -90,6 +99,7 @@ export const orders = pgTable(
     index('orders_plan_id_idx').on(t.planId),
     oneOf('orders_status_check', t.status, ['created', 'attempted', 'paid', 'failed', 'expired']),
     check('orders_amount_check', sql`${t.amountPaise} > 0`),
+    check('orders_place_of_supply_check', sql`${t.placeOfSupply} IS NULL OR ${t.placeOfSupply} ~ '^[0-9]{2}$'`),
   ],
 );
 
@@ -189,3 +199,111 @@ export const webhookEvents = pgTable(
   ],
 );
 
+
+/* ---- invoices (migration 0016_invoices, ADR-024) ------------------------------------------------------- */
+
+export const INVOICE_TYPES = ['tax_invoice', 'credit_note'] as const;
+export type InvoiceType = (typeof INVOICE_TYPES)[number];
+
+/**
+ * Gap-free numbering per series and financial year (April–March, IST). The issuing transaction does
+ * `INSERT … ON CONFLICT DO UPDATE SET last_value = last_value + 1 RETURNING last_value`: the row lock
+ * serialises concurrent issuers, and a rolled-back transaction rolls its number back, so no gaps.
+ */
+export const invoiceSequences = pgTable(
+  'invoice_sequences',
+  {
+    id: id(),
+    series: text('series').notNull(),
+    /** e.g. 2026-27 */
+    financialYear: text('financial_year').notNull(),
+    lastValue: integer('last_value').notNull().default(0),
+    ...timestamps(),
+  },
+  (t) => [
+    uniqueIndex('invoice_sequences_series_year_unique').on(t.series, t.financialYear),
+    oneOf('invoice_sequences_series_check', t.series, INVOICE_TYPES),
+    check('invoice_sequences_last_value_check', sql`${t.lastValue} >= 0`),
+  ],
+);
+
+/**
+ * Invoices (one per captured payment; a tax invoice when GST-registered, otherwise without GST lines)
+ * and credit notes (one per refund step, linked to the invoice). Kept 8 years (PII.md): user_id is set
+ * null at purge and the row stays; the buyer's name and email are erased at account deletion (trigger
+ * soyl_invoices_anonymise). Tax-relevant columns are immutable and rows cannot be deleted (trigger
+ * soyl_invoices_guard).
+ */
+export const invoices = pgTable(
+  'invoices',
+  {
+    id: id(),
+    /** e.g. SOYL/2026-27/000001, SOYL/CN/2026-27/000001 */
+    number: text('number').notNull(),
+    type: text('type').notNull(),
+    financialYear: text('financial_year').notNull(),
+    sequence: integer('sequence').notNull(),
+    /** Snapshot of the GST mode: false = no GST lines ("bill of supply" mode). */
+    gstRegistered: boolean('gst_registered').notNull(),
+    userId: uuid('user_id').references(() => users.id, { onDelete: 'set null' }),
+    paymentId: uuid('payment_id')
+      .notNull()
+      .references(() => payments.id, { onDelete: 'restrict' }),
+    razorpayPaymentId: text('razorpay_payment_id').notNull(),
+    razorpayOrderId: text('razorpay_order_id'),
+    razorpaySubscriptionId: text('razorpay_subscription_id'),
+    /** Credit notes: the invoice they reduce. */
+    originalInvoiceId: uuid('original_invoice_id').references((): AnyPgColumn => invoices.id, { onDelete: 'restrict' }),
+    /** Credit notes: refunded paise of the payment covered up to and including this note (idempotency key). */
+    creditedThroughPaise: integer('credited_through_paise'),
+    planKey: text('plan_key').notNull(),
+    issuedAt: tstz('issued_at').notNull(),
+    /** IST calendar date of issue. */
+    issueDate: date('issue_date', { mode: 'string' }).notNull(),
+    /** GST state code of the place of supply. */
+    placeOfSupply: text('place_of_supply').notNull(),
+    /** Optional, as entered at checkout; erased at account deletion. */
+    buyerName: text('buyer_name'),
+    /** Payer email (re-fetched from Razorpay) or the account email; erased at account deletion. */
+    buyerEmail: text('buyer_email'),
+    buyerAnonymisedAt: tstz('buyer_anonymised_at'),
+    /** [{ description, sac, quantity, taxablePaise, ratePercent, cgstPaise, sgstPaise, igstPaise, totalPaise }] */
+    lineItems: jsonb('line_items').notNull(),
+    taxablePaise: integer('taxable_paise').notNull(),
+    cgstPaise: integer('cgst_paise').notNull().default(0),
+    sgstPaise: integer('sgst_paise').notNull().default(0),
+    igstPaise: integer('igst_paise').notNull().default(0),
+    totalPaise: integer('total_paise').notNull(),
+    currency: text('currency').notNull().default('INR'),
+    /** Seller details at issue (platform/shared/config/invoicing.ts). */
+    seller: jsonb('seller').notNull(),
+    /** Path in the private `invoices` container; null until rendered. */
+    pdfBlobPath: text('pdf_blob_path'),
+    pdfRenderedAt: tstz('pdf_rendered_at'),
+    sentAt: tstz('sent_at'),
+    emailAttempts: integer('email_attempts').notNull().default(0),
+    emailNextAt: tstz('email_next_at'),
+    emailClaimedUntil: tstz('email_claimed_until'),
+    /** Error class of the last failed attempt (never message text). */
+    emailLastError: text('email_last_error'),
+    ...timestamps(),
+  },
+  (t) => [
+    uniqueIndex('invoices_number_unique').on(t.number),
+    uniqueIndex('invoices_series_sequence_unique').on(t.type, t.financialYear, t.sequence),
+    // One tax invoice per payment: duplicate webhooks, reconciliation and the sweeper all converge here.
+    uniqueIndex('invoices_payment_tax_invoice_unique').on(t.paymentId).where(sql`${t.type} = 'tax_invoice'`),
+    uniqueIndex('invoices_credit_note_step_unique').on(t.originalInvoiceId, t.creditedThroughPaise),
+    index('invoices_user_issued_idx').on(t.userId, t.issuedAt),
+    index('invoices_issued_at_idx').on(t.issuedAt),
+    index('invoices_payment_id_idx').on(t.paymentId),
+    oneOf('invoices_type_check', t.type, INVOICE_TYPES),
+    check(
+      'invoices_amounts_check',
+      sql`${t.taxablePaise} >= 0 AND ${t.cgstPaise} >= 0 AND ${t.sgstPaise} >= 0 AND ${t.igstPaise} >= 0 AND ${t.totalPaise} > 0 AND ${t.totalPaise} = ${t.taxablePaise} + ${t.cgstPaise} + ${t.sgstPaise} + ${t.igstPaise}`,
+    ),
+    check('invoices_credit_note_check', sql`(${t.type} = 'credit_note') = (${t.originalInvoiceId} IS NOT NULL AND ${t.creditedThroughPaise} IS NOT NULL)`),
+    check('invoices_place_of_supply_check', sql`${t.placeOfSupply} ~ '^[0-9]{2}$'`),
+    check('invoices_sequence_check', sql`${t.sequence} > 0`),
+  ],
+);

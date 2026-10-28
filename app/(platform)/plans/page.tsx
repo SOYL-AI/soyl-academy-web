@@ -7,13 +7,15 @@ import type { Metadata } from 'next';
 import { connection } from 'next/server';
 import { requirePlatform } from '@/components/platform/server/gate';
 import { platformMetadata } from '@/components/platform/server/metadata';
+import { pricesIncludeGst } from '@/platform/shared/config/invoicing';
 import { PageHeader } from '@/components/platform/shell/PageHeader';
 import { PlansClient } from '@/components/platform/plans/PlansClient';
 import shell from '@/components/platform/shell/shell.module.css';
 
 export const metadata: Metadata = platformMetadata({
   title: 'AI plans: more AI credits every day',
-  description: 'Lessons, practice and tests are free. Plans add more AI tutor credits each day. Prices include GST.',
+  // "Prices include GST" only while the seller is GST-registered (platform/shared/config/invoicing.ts).
+  description: `Lessons, practice and tests are free. Plans add more AI tutor credits each day.${pricesIncludeGst() ? ' Prices include GST.' : ''}`,
   path: '/plans',
 });
 

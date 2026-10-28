@@ -11,12 +11,20 @@
  * purchases are refused (403 consent_required); with CONSENT_PROVIDER=unavailable (production today)
  * nobody can buy. Cancelling, the subscription view and webhooks never depend on consent or on
  * BILLING_ENABLED, so an existing subscription can always be managed and renewals keep applying.
+ *
+ * Invoices (ADR-024): every billing sync issues the documents for the payments it records; this service
+ * delivers them after commit (InvoiceService: PDF in Blob, email to the payer).
  */
 import { and, desc, eq, gt, inArray, sql } from 'drizzle-orm';
 import type { FastifyBaseLogger } from 'fastify';
 import { orders, subscriptions, type Database } from '@soyl/db';
 import { uuidv7 } from '@soyl/db/ids';
 import { BILLING, getPlan, PLANS, planPrice, priceLabel, type PlanId } from '@soyl/shared/config/plans';
+import { INVOICING, pricesIncludeGst } from '@soyl/shared/config/invoicing';
+import { MemoryBlobStore, type BlobStore } from '../ai/blob';
+import type { EmailSender } from '../auth/senders/email';
+import { InvoiceService } from './invoices/service';
+import type { InvoicingRuntime } from './invoices/issue';
 import type { Clock } from '../clock';
 import type { ConsentService } from '../consent/service';
 import { ApiProblem } from '../errors';
@@ -52,7 +60,19 @@ export interface BillingServiceDeps {
   razorpay: RazorpayClient | null;
   consent: ConsentService;
   log?: BillingLog;
+  /** Invoice delivery (ADR-024). Default: an in-memory blob store and no email (tests that do not look at invoices). */
+  invoiceDelivery?: { blob: () => BlobStore; email: EmailSender | null; publicBaseUrl: string };
+  /** D-045 interest counters (services.counters): `checkout_complete` when a checkout's payment is captured. */
+  counters?: { observe(name: 'checkout_complete', dimension: string, log?: Pick<BillingLog, 'warn'>): Promise<void> };
 }
+
+/** Checkout details for the invoice (optional; CONTEXT §7, ADR-024). */
+export interface CheckoutBuyer {
+  placeOfSupply?: string;
+  buyerName?: string;
+}
+
+const INVOICING_OFF: InvoicingRuntime = { enabled: false, production: false, settings: INVOICING };
 
 export interface PublicPlan {
   id: PlanId;
@@ -113,10 +133,21 @@ export interface SubscriptionView {
 export class BillingService {
   readonly entitlements: BillingEntitlementService;
   readonly webhooks: WebhookProcessor;
+  readonly invoices: InvoiceService;
   private creditHook: CreditTopUpHook | null = null;
 
   constructor(private readonly d: BillingServiceDeps) {
     this.entitlements = new BillingEntitlementService(d.db);
+    const memoryBlob = new MemoryBlobStore(() => d.clock.now());
+    this.invoices = new InvoiceService({
+      db: d.db,
+      clock: d.clock,
+      runtime: () => this.invoicing,
+      blob: d.invoiceDelivery?.blob ?? (() => memoryBlob),
+      email: d.invoiceDelivery?.email ?? null,
+      publicBaseUrl: d.invoiceDelivery?.publicBaseUrl ?? 'https://www.soylai.com',
+      log: d.log,
+    });
     this.webhooks = new WebhookProcessor({
       db: d.db,
       razorpay: d.razorpay,
@@ -124,7 +155,16 @@ export class BillingService {
       clock: d.clock,
       plans: () => requirePlanRows(d.db),
       onGranted: (g) => this.onGranted(g),
+      invoicing: () => this.invoicing,
+      onInvoices: (ids) => this.invoices.schedule(ids),
+      invoiceLog: () => this.d.log,
+      onCompleted: (plans) => this.onCompleted(plans),
     });
+  }
+
+  /** Invoicing as configured (config.billing.invoicing; off when absent). */
+  get invoicing(): InvoicingRuntime {
+    return this.d.config.invoicing ?? INVOICING_OFF;
   }
 
   get razorpay(): RazorpayClient | null {
@@ -138,6 +178,7 @@ export class BillingService {
   /** Logger for background billing events (plan granted, credit top-up failures). */
   useLog(log: BillingLog): void {
     this.d.log = log;
+    this.invoices.useLog(log);
   }
 
   /** AI gateway hook: CreditService.applyPlanChange (see entitlements.ts). */
@@ -147,6 +188,11 @@ export class BillingService {
 
   private now(): Date {
     return new Date(this.d.clock.now());
+  }
+
+  /** Best effort, after commit: never fails the payment path (the counter logs its own failures). */
+  private onCompleted(plans: readonly PlanId[]): void {
+    for (const plan of plans) void this.d.counters?.observe('checkout_complete', plan, this.d.log);
   }
 
   private async onGranted(g: { userId: string; plan: PlanId }): Promise<void> {
@@ -162,13 +208,15 @@ export class BillingService {
 
   /* ---- GET /v1/plans --------------------------------------------------------------------------- */
 
-  publicPlans(): { billingEnabled: boolean; currency: typeof BILLING.currency; pricesIncludeGst: true; plans: PublicPlan[] } {
+  publicPlans(): { billingEnabled: boolean; currency: typeof BILLING.currency; pricesIncludeGst: boolean; defaultPlaceOfSupply: string; plans: PublicPlan[] } {
     const now = this.now();
     const open = this.d.config.enabled && this.d.razorpay !== null;
     return {
       billingEnabled: this.d.config.enabled,
       currency: BILLING.currency,
-      pricesIncludeGst: true,
+      // Owner, 2026-10-28: not GST-registered yet, so prices are plain amounts (no "incl. GST").
+      pricesIncludeGst: pricesIncludeGst(this.invoicing.settings),
+      defaultPlaceOfSupply: this.invoicing.settings.seller.stateCode,
       plans: [...PLANS]
         .sort((a, b) => a.order - b.order)
         .map((p) => ({
@@ -210,7 +258,7 @@ export class BillingService {
     throw err;
   }
 
-  async createSubscription(userId: string, input: { plan: SubscriptionPlanId; interval: RecurringInterval }, log: FastifyBaseLogger): Promise<SubscriptionCheckout> {
+  async createSubscription(userId: string, input: { plan: SubscriptionPlanId; interval: RecurringInterval } & CheckoutBuyer, log: FastifyBaseLogger): Promise<SubscriptionCheckout> {
     const razorpay = await this.assertCanPurchase(userId, log);
     const now = this.now();
     const plan = getPlan(input.plan);
@@ -251,7 +299,10 @@ export class BillingService {
       const reuse = mine.find(
         (s) => s.status === 'created' && s.planId === row.id && s.interval === input.interval && s.razorpayPlanId === rzPlanId && now.getTime() - s.createdAt.getTime() < BILLING.reusePendingMinutes * MIN,
       );
-      if (reuse) return checkout(reuse.razorpaySubscriptionId, true);
+      if (reuse) {
+        await tx.update(subscriptions).set({ placeOfSupply: input.placeOfSupply ?? null, buyerName: input.buyerName ?? null, updatedAt: now }).where(eq(subscriptions.id, reuse.id));
+        return checkout(reuse.razorpaySubscriptionId, true);
+      }
       let rz;
       try {
         rz = await razorpay.createSubscription({
@@ -273,6 +324,8 @@ export class BillingService {
         razorpayPlanId: rzPlanId,
         amountPaise: price.amountPaise,
         status: 'created',
+        placeOfSupply: input.placeOfSupply ?? null,
+        buyerName: input.buyerName ?? null,
         createdAt: now,
         updatedAt: now,
       });
@@ -281,7 +334,7 @@ export class BillingService {
     });
   }
 
-  async createOrder(userId: string, input: { plan: 'board_exam_pass' }, log: FastifyBaseLogger): Promise<OrderCheckout> {
+  async createOrder(userId: string, input: { plan: 'board_exam_pass' } & CheckoutBuyer, log: FastifyBaseLogger): Promise<OrderCheckout> {
     const razorpay = await this.assertCanPurchase(userId, log);
     const now = this.now();
     const plan = getPlan(input.plan);
@@ -315,7 +368,10 @@ export class BillingService {
         .where(and(eq(orders.userId, userId), eq(orders.planId, row.id), eq(orders.status, 'created'), eq(orders.amountPaise, price.amountPaise), gt(orders.createdAt, new Date(now.getTime() - BILLING.reusePendingMinutes * MIN))))
         .orderBy(desc(orders.createdAt))
         .limit(1);
-      if (reuse) return checkout(reuse.razorpayOrderId, true);
+      if (reuse) {
+        await tx.update(orders).set({ placeOfSupply: input.placeOfSupply ?? null, buyerName: input.buyerName ?? null, updatedAt: now }).where(eq(orders.id, reuse.id));
+        return checkout(reuse.razorpayOrderId, true);
+      }
       const receipt = `bep_${uuidv7(now.getTime()).replace(/-/g, '')}`;
       let rz;
       try {
@@ -328,7 +384,7 @@ export class BillingService {
       } catch (err) {
         this.razorpayFailure(err, log, 'createOrder');
       }
-      await tx.insert(orders).values({ userId, planId: row.id, razorpayOrderId: rz.id, receipt, amountPaise: price.amountPaise, currency: BILLING.currency, status: 'created', createdAt: now, updatedAt: now });
+      await tx.insert(orders).values({ userId, planId: row.id, razorpayOrderId: rz.id, receipt, amountPaise: price.amountPaise, currency: BILLING.currency, status: 'created', placeOfSupply: input.placeOfSupply ?? null, buyerName: input.buyerName ?? null, createdAt: now, updatedAt: now });
       log.info({ billing: true, event: 'order_created', userId, plan: input.plan, orderId: rz.id }, 'order created');
       return checkout(rz.id, false);
     });
@@ -437,10 +493,12 @@ export class BillingService {
     const plans = await requirePlanRows(this.d.db);
     const now = this.now();
     const r = await atomicSync(this.d.db, (tx) => {
-      const d = { tx, razorpay, now, plans, dryRun: opts.dryRun };
+      const d = { tx, razorpay, now, plans, dryRun: opts.dryRun, invoicing: this.invoicing, log: this.d.log };
       return kind === 'order' ? syncOrder(d, id) : kind === 'subscription' ? syncSubscription(d, id) : syncPayment(d, id);
     });
     if (r.granted && !opts.dryRun) await this.onGranted(r.granted);
+    if (r.invoices?.length && !opts.dryRun) this.invoices.schedule(r.invoices);
+    if (r.completed?.length && !opts.dryRun) this.onCompleted(r.completed);
     return r;
   }
 }

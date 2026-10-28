@@ -74,6 +74,8 @@ export class RazorpayStub implements RazorpayClient {
   readonly calls: string[] = [];
   /** Outage: every API call fails with a retryable 503. */
   down = false;
+  /** Email the payer types into Checkout (Razorpay stores it on the payment). */
+  payerEmail: string | null = 'payer@example.com';
 
   constructor(
     readonly keyId: string,
@@ -205,6 +207,12 @@ export class RazorpayStub implements RazorpayClient {
     return clone(this.get(this.invoices, id, 'invoice'));
   }
 
+  async fetchSubscriptionInvoices(id: string) {
+    this.api(`fetchSubscriptionInvoices ${id}`);
+    this.get(this.subscriptions, id, 'subscription');
+    return [...this.invoices.values()].filter((i) => i.subscription_id === id).map(clone);
+  }
+
   /* ---- Razorpay's side (payer actions, scheduled charges) → webhook events ------------------- */
 
   event(name: string, entities: Record<string, Record<string, unknown>>): SimEvent {
@@ -236,6 +244,7 @@ export class RazorpayStub implements RazorpayClient {
       captured: opts.status === 'captured',
       error_code: opts.status === 'failed' ? 'BAD_REQUEST_ERROR' : null,
       error_reason: opts.status === 'failed' ? 'payment_failed' : null,
+      email: this.payerEmail,
       notes: { ...(opts.notes ?? {}) },
       created_at: this.seconds(),
     };

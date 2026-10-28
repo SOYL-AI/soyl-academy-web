@@ -224,10 +224,11 @@ describe('ResultView', () => {
 });
 
 describe('PlansClient', () => {
-  const plans = (billingEnabled: boolean) => ({
+  const plans = (billingEnabled: boolean, pricesIncludeGst = true) => ({
     billingEnabled,
     currency: 'INR',
-    pricesIncludeGst: true,
+    pricesIncludeGst,
+    defaultPlaceOfSupply: '29',
     plans: [
       { id: 'free', name: 'Free', creditsPerDay: 25, features: ['ai_credits'], validUntil: null, order: 0, prices: [], purchasable: false },
       { id: 'plus', name: 'Plus', creditsPerDay: 40, features: ['ai_credits'], validUntil: null, order: 1, prices: [{ interval: 'monthly', amountPaise: 19900, label: '₹199/month' }, { interval: 'yearly', amountPaise: 149900, label: '₹1,499/year' }], purchasable: billingEnabled },
@@ -242,11 +243,38 @@ describe('PlansClient', () => {
     await waitFor(() => expect(screen.getByTestId('billing-off')).toBeTruthy());
     // The amount and its period are separate spans (tabular figures for the amount only).
     expect(screen.getByTestId('price-plus').textContent).toBe('₹199/month incl. GST');
+    expect(screen.getByText(/Prices include GST./)).toBeTruthy();
     expect((screen.getByTestId('buy-plus') as HTMLButtonElement).disabled).toBe(true);
     expect(screen.getByTestId('buy-plus').textContent).toBe('Coming soon');
     fireEvent.click(screen.getByRole('radio', { name: 'Yearly' }));
     expect(screen.getByTestId('price-plus').textContent).toBe('₹1,499/year incl. GST');
     expect(document.querySelector('script[src*="razorpay"]')).toBeNull();
+  });
+
+  it('not GST-registered (owner, 2026-10-28): plain prices, no "incl. GST" anywhere', async () => {
+    h.session.state = { status: 'guest' };
+    h.api.get.mockResolvedValue(plans(false, false));
+    wrap(<PlansClient />);
+    // The amount and its period are separate spans; the price reads '₹199/month' with no GST label.
+    await waitFor(() => expect(screen.getByTestId('price-plus').textContent).toBe('₹199/month'));
+    expect(screen.getByTestId('plans').textContent).not.toMatch(/GST/);
+  });
+
+  it('sends the invoice state and optional name with the purchase; invalid names are not sent', async () => {
+    h.api.get.mockImplementation(async (p: string) => (p === '/v1/plans' ? plans(true, false) : { plan: 'free', planName: 'Free', creditsPerDay: 25, source: 'free', validUntil: null, subscription: null, billingEnabled: true }));
+    h.api.post.mockRejectedValue(new ApiError(403, 'billing_disabled', null));
+    wrap(<PlansClient />);
+    await waitFor(() => expect(screen.getByTestId('invoice-details')).toBeTruthy());
+    const state = screen.getByTestId('invoice-state') as HTMLSelectElement;
+    expect(state.value).toBe('29');
+    fireEvent.change(state, { target: { value: '27' } });
+    fireEvent.change(screen.getByTestId('invoice-name'), { target: { value: 'Asha 123' } });
+    fireEvent.click(screen.getByTestId('buy-plus'));
+    expect(h.api.post).not.toHaveBeenCalled();
+    expect(screen.getByText(/Use English letters/)).toBeTruthy();
+    fireEvent.change(screen.getByTestId('invoice-name'), { target: { value: ' Asha Rao ' } });
+    fireEvent.click(screen.getByTestId('buy-plus'));
+    await waitFor(() => expect(h.api.post).toHaveBeenCalledWith('/v1/billing/subscriptions', { body: { plan: 'plus', interval: 'monthly', placeOfSupply: '27', buyerName: 'Asha Rao' } }));
   });
 
   it('consent_required from the API shows the parent prompt', async () => {
