@@ -23,6 +23,8 @@ Decision record: [ADR-023](../adr/023-platform-app-shell-and-theme.md).
 | `/store` | Coming-soon teasers | Same content and switches (redemption off, D-038); items and teasers wear deterministic rarity frames (common / rare / epic / legendary from price, stock, limited window, eligibility). |
 | Lesson, notes, flashcards, tests, ask, plans, coins | — | Restyled by the new tokens and shell only (no logic change). |
 
+**Auth (small behaviour change).** After signing in on the same page, `SessionProvider` no longer calls `router.refresh()`: platform server components never read the session (private data is fetched in the browser, ADR-010), and the refresh only re-rendered the page while dropping the streamed `<title>` for up to ~250 ms (axe `document-title` failures right after sign-in). A different return target still navigates.
+
 **New code (main files)**
 - Shell/theme: `components/platform/shell/{AppShell,AppFooter,ThemeProvider,ThemeToggle,ThemeBootScript,MarketingOnly}.tsx`, `theme.ts`, `chrome.ts`, `appshell.module.css`, `platform-global.css`; `app/(platform)/layout.tsx`, `app/(platform)/not-found.tsx`; `components/platform/server/security-headers.ts` (hash).
 - Data: `learn/ProgressProvider.tsx` (GET /v1/me/progress or device), `learn/MasteryProvider.tsx` + `learn/useInsights.ts` (GET /v1/me/mastery, /activity, /card), `lib/learner.ts`, `lib/mastery.ts` (shared formula `platform/shared/learning/mastery.ts` for guests), `learn/content-subjects.ts` and `server/catalog.ts#getContentSubjectIds` (subjects with content = the public daily-challenge list).
@@ -33,6 +35,21 @@ From the repo root: `npm run lint`; `npm run test:platform-web -- --maxWorkers=2
 From `platform/`: `npm run typecheck`; `PW_WEB_PORT=3330 PW_FLAG_OFF_PORT=3331 npm run test:platform-web -w @soyl/e2e` (through `heavy.sh`); `npm run marketing:regression -w @soyl/e2e`; `npm run marketing:diff -w @soyl/e2e -- --base origin/platform/main`.
 Manual: open `/learn` → theme picker → Dark → reload (no flash) → `/about` (unchanged, light).
 
+## Gates (run in this worktree, 2026-10-28, Windows 11, 8 GB; heavy jobs through `heavy.sh`)
+| Gate | Result |
+|---|---|
+| `npm run lint` (root) | exit 0 |
+| `npm run build` (root) | exit 0 |
+| `npm run test:platform-web` | 16 files, 283 tests passed |
+| `npm run test:platform-ui` | 6 files, 606 tests passed (contrast pairs in both themes included) |
+| `npm run typecheck` (platform/) | exit 0 |
+| `npm run test:platform-web -w @soyl/e2e` (`PW_WEB_PORT=3330 PW_FLAG_OFF_PORT=3331`) | flag ON 75 passed, flag OFF 37 passed, `[platform-web] PASSED`; JS budget: every page ≤ 200 KB gz (highest: test result 198.6, test player 198.3, lesson 197.2, practice 194.1, me 191.6, learn 186.6) |
+| `npm run marketing:regression -w @soyl/e2e` | 48 passed, "no visual diffs, all routes as expected, Lighthouse within 5 points" (mobile perf 93–97, desktop 100) |
+| `npm run marketing:diff -w @soyl/e2e -- --base origin/platform/main` | "HEAD renders the marketing site identically to its merge-base"; the global marketing stylesheet is byte-identical to the base build (no Tailwind leak) |
+| gitleaks on `origin/platform/main..HEAD` | no leaks found |
+
+Note on the JS budget: the shell lives in the platform layout, so it adds to every platform page; the heaviest pages (test player/result) are within 2 KB of the 200 KB budget. Anything new on those pages should be lazy-loaded.
+
 ## Tests added / changed
 - Unit (web): `__tests__/revamp-shell.test.tsx` (theme parse/cookie/resolve, the boot script run against a DOM for every preference × OS, provider + toggle persistence and Escape, html attribute removed on unmount, chrome gating, focus routes, shell nav guest/member/consent), `revamp-insights.test.tsx` (practice-list model, mastery from browser data, learner model, heatmap model + component, player card, league zones, rarity, learning path, subject tiles, chapter links, IST greeting, kit displays), `revamp-practice.test.tsx` (PracticeApp: counts, status/difficulty filters, selection, list toggle, J/K, background paging), `security-headers.test.ts` (theme hash in the nonce policy).
 - Unit (UI kit): `kit.test.tsx` contrast pairs for difficulty text, accent on bg, info on its soft fill, mastery/flame/tier/heatmap graphics — both themes.
@@ -42,6 +59,7 @@ Manual: open `/learn` → theme picker → Dark → reload (no flash) → `/abou
 `docs/platform/design/ui-revamp/before/` (live site, 2026-10-28) and `docs/platform/design/ui-revamp/after/` (`{desktop,mobile}-{light,dark}-{page}.png`; desktop full page at 1280, mobile first screen at 360; member pages from a fresh account with consent and a little practice).
 
 ## Known gaps / follow-ups
+- D-043 (owner, decided while this work was in flight): a dedicated student dashboard on `GET /v1/me/dashboard` (accuracy trend, difficulty split, focus areas, test history, weekly goal). The /learn member dashboard here is the frame for it: add those tiles in `components/platform/learn/LearnHome.tsx` when the endpoint lands. School on the profile (consent-gated) is not in this branch.
 - Which subjects "have content" is read from the public daily-challenge list (one entry per subject with practice). A `hasContent` / chapter-count field on `CatalogSubject` would be cleaner (backend follow-up).
 - Notes and flashcards have no stored progress, so their learning-path steps show "Not started" until visited state exists (backend follow-up if wanted).
 - The dashboard subject list shows a mastery ring only for subjects the API has aggregated (subjects with activity); others say "Not started".
