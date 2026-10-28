@@ -88,7 +88,14 @@ export function registerCoinsRoutes(appIn: FastifyInstance, deps: AppDeps, servi
   const { db, config, clock } = deps;
   const year = config.academicYear;
   const now = () => new Date(clock.now());
-  const store: StoreDeps = { db, consent: services.consent, physicalEnabled: config.coins.physicalRedemptionEnabled, masterKey: config.mfaEncryptionKey };
+  const store: StoreDeps = {
+    db,
+    consent: services.consent,
+    redemptionEnabled: config.coins.redemptionEnabled,
+    physicalEnabled: config.coins.physicalRedemptionEnabled,
+    masterKey: config.mfaEncryptionKey,
+    items: deps.coins?.items,
+  };
 
   app.get('/v1/coins', {
     config: { policy: policies.member() },

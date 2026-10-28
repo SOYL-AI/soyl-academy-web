@@ -14,14 +14,16 @@ import { base32Decode, stepAt, totpAt } from '../src/auth/mfa';
 import { ConsentService } from '../src/consent/service';
 import { UnavailableConsentProvider } from '../src/consent/unavailable';
 import { awardCoins } from '../src/domain/coins/ledger';
-import { awardLiveRanks, onLeagueClosed } from '../src/domain/coins/awards';
-import { decryptAddress, addressKey, redeem as redeemDomain, coinsHousekeeping, type StoreDeps } from '../src/domain/coins/store';
+import { awardLiveRanks, eligibilityStats, onLeagueClosed } from '../src/domain/coins/awards';
+import { decryptAddress, addressKey, eligible, redeem as redeemDomain, coinsHousekeeping, type StoreDeps } from '../src/domain/coins/store';
 import { createHarness, type Client, type Harness } from './helpers';
 import { seedRealContent } from './content-fixture';
 import { itemKeys, responseFor } from './tests-fixture';
 
 let h: Harness;
-let hp: Harness; // physical redemption switched on
+let hr: Harness; // redemptions switched on (digital), items active
+let hp: Harness; // redemptions and physical merch switched on
+const ACTIVE_ITEMS = STORE_ITEMS.map((i) => ({ ...i, active: true }));
 const SCI = 'cbse-10-science-ch01';
 const MATH = 'cbse-10-mathematics-ch01';
 const SHORT = 't_cbse10math_ch01_short';
@@ -97,10 +99,12 @@ async function fakeAnswers(userId: string, chapterKey: string, count: number, so
 beforeAll(async () => {
   h = await createHarness({ consentDefault: 'required' });
   await seedRealContent(h.t, (u) => [SCI, MATH, 'cbse-10-science-ch02'].includes(u));
-  hp = await createHarness({ t: h.t, consentDefault: 'required', env: { COINS_PHYSICAL_REDEMPTION_ENABLED: 'true' } });
+  hr = await createHarness({ t: h.t, consentDefault: 'required', env: { COINS_REDEMPTION_ENABLED: 'true' }, coinItems: ACTIVE_ITEMS });
+  hp = await createHarness({ t: h.t, consentDefault: 'required', env: { COINS_REDEMPTION_ENABLED: 'true', COINS_PHYSICAL_REDEMPTION_ENABLED: 'true' }, coinItems: ACTIVE_ITEMS });
 });
 afterAll(async () => {
   await hp?.close();
+  await hr?.close();
   await h?.close();
 });
 
@@ -290,18 +294,36 @@ describe('daily cap', () => {
   });
 });
 
-describe('store: digital items', () => {
-  it('guests see the store; physical items show coming soon while redemption is off', async () => {
-    const res = (await h.client().get('/v1/coins/store')).json();
-    expect(res).toMatchObject({ balance: null, physicalRedemptionEnabled: false });
+describe('D-038: no redemptions at launch', () => {
+  it('the store lists nothing and every redemption path answers redemption_disabled, even with coins and consent', async () => {
+    expect((await h.client().get('/v1/coins/store')).json()).toEqual({ balance: null, redemptionEnabled: false, physicalRedemptionEnabled: false, consentStatus: null, verified: null, items: [] });
+    const { c, id } = await member();
+    await grant(h, id, 10_000);
+    h.consent.setStatus(id, 'granted');
+    await h.services.consent.refresh(id);
+    expect((await c.get('/v1/coins/store')).json()).toMatchObject({ balance: 10_000, redemptionEnabled: false, items: [] });
+    for (const itemKey of ['frame-saffron', 'theme-midnight', 'sticker-pack', 'hoodie'])
+      expect((await c.post('/v1/coins/redeem', { itemKey })).json()).toMatchObject({ status: 403, code: 'redemption_disabled' });
+    expect((await c.request('PUT', '/v1/coins/equipped', { body: { frame: 'frame-saffron' } })).json().code).toBe('redemption_disabled');
+    expect((await c.request('PUT', '/v1/coins/redemptions/0190a1b2-0000-7000-8000-000000000000/address', { body: ADDRESS })).json().code).toBe('redemption_disabled');
+    expect(await balance(h, id)).toBe(10_000);
+    expect(await h.t.db.select().from(coinRedemptions).where(eq(coinRedemptions.userId, id))).toEqual([]);
+  });
+});
+
+describe('store: digital items (redemption switched on)', () => {
+  it('guests see the store; physical items show coming soon while physical redemption is off', async () => {
+    const res = (await hr.client().get('/v1/coins/store')).json();
+    expect(res).toMatchObject({ balance: null, redemptionEnabled: true, physicalRedemptionEnabled: false });
+    expect(res.items.length).toBe(STORE_ITEMS.length);
     for (const i of res.items) expect(i.state).toBe(i.type === 'physical' ? 'coming_soon' : 'sign_in');
   });
 
   it('redeems a digital item at once, equips it, refuses a second one and unaffordable items', async () => {
-    const { c, id } = await member();
+    const { c, id } = await member(hr);
     const frame = STORE_ITEMS.find((i) => i.key === 'frame-saffron')!;
     expect((await c.post('/v1/coins/redeem', { itemKey: frame.key })).json()).toMatchObject({ code: 'coins_insufficient', balance: 0, price: frame.priceCoins });
-    await grant(h, id, frame.priceCoins + 10);
+    await grant(hr, id, frame.priceCoins + 10);
     const r = await c.post('/v1/coins/redeem', { itemKey: frame.key });
     expect(r.statusCode).toBe(200);
     expect(r.json()).toMatchObject({ balance: 10, redemption: { itemKey: frame.key, itemType: 'digital', status: 'fulfilled', priceCoins: frame.priceCoins } });
@@ -324,56 +346,56 @@ describe('store: digital items', () => {
   });
 
   it('no double spend: concurrent redemptions of two affordable-alone items succeed once', async () => {
-    const { id } = await member();
-    await grant(h, id, 100);
+    const { id } = await member(hr);
+    await grant(hr, id, 100);
     const items: StoreItem[] = [
       { ...STORE_ITEMS[0]!, key: 'race-a', priceCoins: 60 },
       { ...STORE_ITEMS[0]!, key: 'race-b', priceCoins: 60, slot: 'theme' },
     ];
-    const deps: StoreDeps = { db: h.t.db, consent: h.services.consent, physicalEnabled: false, masterKey: h.config.mfaEncryptionKey, items };
+    const deps: StoreDeps = { db: hr.t.db, consent: hr.services.consent, redemptionEnabled: true, physicalEnabled: false, masterKey: hr.config.mfaEncryptionKey, items };
     const viewer = { id, emailVerified: true, phoneNumberVerified: false };
     const results = await Promise.allSettled([redeemDomain(deps, new Date(), viewer, 'race-a'), redeemDomain(deps, new Date(), viewer, 'race-b')]);
     expect(results.filter((r) => r.status === 'fulfilled')).toHaveLength(1);
     expect((results.find((r) => r.status === 'rejected') as PromiseRejectedResult).reason).toMatchObject({ code: 'coins_insufficient' });
-    expect(await balance(h, id)).toBe(40);
+    expect(await balance(hr, id)).toBe(40);
   });
 
   it('no double spend: the same item redeemed from five tabs at once is granted once', async () => {
-    const { c, id } = await member();
-    await grant(h, id, 1000);
+    const { c, id } = await member(hr);
+    await grant(hr, id, 1000);
     const res = await Promise.all([0, 1, 2, 3, 4].map(() => c.post('/v1/coins/redeem', { itemKey: 'theme-midnight' })));
     expect(res.filter((r) => r.statusCode === 200)).toHaveLength(1);
     expect(res.filter((r) => r.statusCode === 409).every((r) => r.json().code === 'redemption_limit')).toBe(true);
-    expect(await balance(h, id)).toBe(900);
+    expect(await balance(hr, id)).toBe(900);
   });
 
   it('the database refuses a negative balance and duplicate keys whatever the app does', async () => {
-    const { id } = await member();
-    await grant(h, id, 5);
-    const [r] = await h.t.db.insert(coinRedemptions).values({ userId: id, itemKey: 'frame-saffron', itemType: 'digital', priceCoins: 60, status: 'fulfilled' }).returning();
+    const { id } = await member(hr);
+    await grant(hr, id, 5);
+    const [r] = await hr.t.db.insert(coinRedemptions).values({ userId: id, itemKey: 'frame-saffron', itemType: 'digital', priceCoins: 60, status: 'fulfilled' }).returning();
     await expect(
-      h.t.db.insert(coinLedger).values({ userId: id, kind: 'redeem', source: 'redemption', amount: -60, idempotencyKey: `redeem:${r!.id}`, istDay: '2026-10-28', redemptionId: r!.id }),
+      hr.t.db.insert(coinLedger).values({ userId: id, kind: 'redeem', source: 'redemption', amount: -60, idempotencyKey: `redeem:${r!.id}`, istDay: '2026-10-28', redemptionId: r!.id }),
     ).rejects.toMatchObject({ cause: { code: '23514' } });
-    await expect(h.t.db.insert(coinLedger).values({ userId: id, kind: 'earn', source: 'checkin', amount: 1, idempotencyKey: `dup:${id}`, istDay: '2026-10-28' })).resolves.toBeDefined();
-    await expect(h.t.db.insert(coinLedger).values({ userId: id, kind: 'earn', source: 'checkin', amount: 1, idempotencyKey: `dup:${id}`, istDay: '2026-10-28' })).rejects.toMatchObject({ cause: { code: '23505' } });
+    await expect(hr.t.db.insert(coinLedger).values({ userId: id, kind: 'earn', source: 'checkin', amount: 1, idempotencyKey: `dup:${id}`, istDay: '2026-10-28' })).resolves.toBeDefined();
+    await expect(hr.t.db.insert(coinLedger).values({ userId: id, kind: 'earn', source: 'checkin', amount: 1, idempotencyKey: `dup:${id}`, istDay: '2026-10-28' })).rejects.toMatchObject({ cause: { code: '23505' } });
     // A refund must match a redeem exactly.
-    await expect(h.t.db.insert(coinLedger).values({ userId: id, kind: 'refund', source: 'redemption', amount: 60, idempotencyKey: `refund:${r!.id}`, istDay: '2026-10-28', redemptionId: r!.id })).rejects.toMatchObject({ cause: { code: '23514' } });
-    expect(await balance(h, id)).toBe(6);
+    await expect(hr.t.db.insert(coinLedger).values({ userId: id, kind: 'refund', source: 'redemption', amount: 60, idempotencyKey: `refund:${r!.id}`, istDay: '2026-10-28', redemptionId: r!.id })).rejects.toMatchObject({ cause: { code: '23514' } });
+    expect(await balance(hr, id)).toBe(6);
   });
 });
 
 describe('store: physical merch', () => {
   it('gates in order: verification, then consent, then the redemption flag', async () => {
-    const { c, id } = await member();
-    await grant(h, id, 1000);
-    await h.t.db.update(users).set({ emailVerified: false }).where(eq(users.id, id));
+    const { c, id } = await member(hr);
+    await grant(hr, id, 1000);
+    await hr.t.db.update(users).set({ emailVerified: false }).where(eq(users.id, id));
     expect((await c.post('/v1/coins/redeem', { itemKey: 'sticker-pack' })).json().code).toBe('verification_required');
-    await h.t.db.update(users).set({ emailVerified: true }).where(eq(users.id, id));
+    await hr.t.db.update(users).set({ emailVerified: true }).where(eq(users.id, id));
     expect((await c.post('/v1/coins/redeem', { itemKey: 'sticker-pack' })).json().code).toBe('consent_required');
-    h.consent.setStatus(id, 'granted');
-    await h.services.consent.refresh(id);
+    hr.consent.setStatus(id, 'granted');
+    await hr.services.consent.refresh(id);
     expect((await c.post('/v1/coins/redeem', { itemKey: 'sticker-pack' })).json().code).toBe('redemption_disabled');
-    expect(await balance(h, id)).toBe(1000);
+    expect(await balance(hr, id)).toBe(1000);
     const store = (await c.get('/v1/coins/store')).json();
     expect(store.items.find((i: { key: string }) => i.key === 'sticker-pack').state).toBe('coming_soon');
   });
@@ -382,7 +404,7 @@ describe('store: physical merch', () => {
     const { id } = await member(hp);
     await grant(hp, id, 1000);
     const consent = new ConsentService(hp.t.db, new UnavailableConsentProvider(), hp.clock);
-    const deps: StoreDeps = { db: hp.t.db, consent, physicalEnabled: true, masterKey: hp.config.mfaEncryptionKey };
+    const deps: StoreDeps = { db: hp.t.db, consent, redemptionEnabled: true, physicalEnabled: true, masterKey: hp.config.mfaEncryptionKey, items: ACTIVE_ITEMS };
     await expect(redeemDomain(deps, new Date(), { id, emailVerified: true, phoneNumberVerified: false }, 'sticker-pack')).rejects.toMatchObject({ code: 'consent_required' });
   });
 
@@ -515,8 +537,8 @@ describe('live ranks and leagues (consent-gated)', () => {
     expect((await awardLiveRanks(h.t.db, new Date(now.getTime() + 86_400_000), { minParticipants: 3 })).awarded).toBe(1);
     expect((await a.c.get('/v1/coins/history')).json().entries[0]).toMatchObject({ source: 'live_rank', detail: { rank: 1 } });
     // The achievement-gated drop sees the rank.
-    const store = (await a.c.get('/v1/coins/store')).json();
-    expect(store.items.find((i: { key: string }) => i.key === 'topper-jacket-2027').eligible).toBe(true);
+    expect(eligible({ kind: 'live_rank', maxRank: 100 }, await eligibilityStats(h.t.db, a.id))).toBe(true);
+    expect(eligible({ kind: 'live_rank', maxRank: 100 }, await eligibilityStats(h.t.db, cc.id))).toBe(false);
   });
 
   it('league promotion and top finish pay consenting members with XP, once per league', async () => {

@@ -112,6 +112,11 @@ describe('coins config: store', () => {
     for (const i of STORE_ITEMS.filter((x) => x.type === 'digital')) expect(i.priceCoins).toBeLessThan(cheapestPhysical);
   });
 
+  it('D-038: no redemptions at launch — every item is a draft and the master switch is off', () => {
+    expect(COIN_STORE.redemptionEnabled).toBe(false);
+    expect(STORE_ITEMS.filter((i) => i.active)).toEqual([]);
+  });
+
   it('physical redemption is off by default (OA-19, OA-08)', () => {
     expect(COIN_STORE.physicalRedemptionEnabled).toBe(false);
     expect(positiveInt(COIN_STORE.addressRetentionDaysAfterFulfilment)).toBe(true);

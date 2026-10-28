@@ -81,6 +81,8 @@ export const ItemStateSchema = z
 export const StoreSchema = z
   .object({
     balance: z.number().int().nullable(),
+    /** D-038: false at launch — no items are listed; the page shows "Exclusive rewards — coming soon". */
+    redemptionEnabled: z.boolean(),
     physicalRedemptionEnabled: z.boolean(),
     consentStatus: z.enum(['required', 'pending', 'granted', 'revoked']).nullable(),
     verified: z.boolean().nullable(),

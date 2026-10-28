@@ -15,6 +15,7 @@ import type { ConsentProvider } from './consent/provider';
 import { ConsentService } from './consent/service';
 import { MfaService } from './auth/mfa';
 import { MFA } from '@soyl/shared/config/security';
+import type { StoreItem } from '@soyl/shared/config/coins';
 import { BillingService } from './billing/service';
 import { createRazorpayClient, type RazorpayClient } from './billing/razorpay';
 import { AiServices, type AiDeps } from './ai/services';
@@ -35,6 +36,8 @@ export interface AppDeps {
   google?: { allowInsecure?: boolean; fetch?: typeof fetch };
   /** Billing (ADR-016): inject a Razorpay client (scripts, tests). Default: from config.billing (stub/real/none). */
   billing?: { razorpay?: RazorpayClient | null };
+  /** SOYL Coins (ADR-021): store items override (tests); default STORE_ITEMS from config. */
+  coins?: { items?: readonly StoreItem[] };
   /** AI gateway runtime (ai/runtime.ts). Omitted: local stand-ins (refused in production). */
   ai?: AiDeps;
 }

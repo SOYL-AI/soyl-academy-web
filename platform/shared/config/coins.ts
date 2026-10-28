@@ -165,6 +165,10 @@ export interface StoreItem {
 }
 
 /**
+ * D-038: no redemptions at launch — the merch is not designed yet, so every item is a draft
+ * (`active: false`) and the store shows "Exclusive rewards — coming soon". To launch rewards, the owner
+ * sets the items (art, prices) and `active: true`, and switches COINS_REDEMPTION_ENABLED on.
+ *
  * Prices: a steady learner earns roughly 10–20 coins a day (check-in, the daily challenge, a test)
  * plus milestones, so stickers take ~1–2 months and the hoodie most of a school year. That is the point:
  * merch you cannot buy, only earn.
@@ -184,7 +188,7 @@ export const STORE_ITEMS: readonly StoreItem[] = [
     eligibility: null,
     eligibilityLabel: null,
     maxPerUser: 1,
-    active: true,
+    active: false,
   },
   {
     key: 'frame-constellation',
@@ -200,7 +204,7 @@ export const STORE_ITEMS: readonly StoreItem[] = [
     eligibility: { kind: 'solved', count: 200 },
     eligibilityLabel: 'Solve 200 practice questions',
     maxPerUser: 1,
-    active: true,
+    active: false,
   },
   {
     key: 'theme-midnight',
@@ -216,7 +220,7 @@ export const STORE_ITEMS: readonly StoreItem[] = [
     eligibility: null,
     eligibilityLabel: null,
     maxPerUser: 1,
-    active: true,
+    active: false,
   },
   {
     key: 'theme-streak-flame',
@@ -232,7 +236,7 @@ export const STORE_ITEMS: readonly StoreItem[] = [
     eligibility: { kind: 'checkin_streak', days: 30 },
     eligibilityLabel: 'Check in 30 days in a row',
     maxPerUser: 1,
-    active: true,
+    active: false,
   },
   {
     key: 'sticker-pack',
@@ -247,7 +251,7 @@ export const STORE_ITEMS: readonly StoreItem[] = [
     eligibility: null,
     eligibilityLabel: null,
     maxPerUser: 2,
-    active: true,
+    active: false,
   },
   {
     key: 'notebook',
@@ -262,7 +266,7 @@ export const STORE_ITEMS: readonly StoreItem[] = [
     eligibility: null,
     eligibilityLabel: null,
     maxPerUser: 2,
-    active: true,
+    active: false,
   },
   {
     key: 'bottle',
@@ -277,7 +281,7 @@ export const STORE_ITEMS: readonly StoreItem[] = [
     eligibility: null,
     eligibilityLabel: null,
     maxPerUser: 1,
-    active: true,
+    active: false,
   },
   {
     key: 'tee',
@@ -292,7 +296,7 @@ export const STORE_ITEMS: readonly StoreItem[] = [
     eligibility: null,
     eligibilityLabel: null,
     maxPerUser: 1,
-    active: true,
+    active: false,
   },
   {
     key: 'hoodie',
@@ -307,7 +311,7 @@ export const STORE_ITEMS: readonly StoreItem[] = [
     eligibility: null,
     eligibilityLabel: null,
     maxPerUser: 1,
-    active: true,
+    active: false,
   },
   {
     key: 'topper-jacket-2027',
@@ -322,11 +326,16 @@ export const STORE_ITEMS: readonly StoreItem[] = [
     eligibility: { kind: 'live_rank', maxRank: 100 },
     eligibilityLabel: 'Finish in the top 100 of a live All-India mock',
     maxPerUser: 1,
-    active: true,
+    active: false,
   },
 ];
 
 export const COIN_STORE = {
+  /**
+   * Default for COINS_REDEMPTION_ENABLED (env overrides): the master switch for every redemption,
+   * digital and physical. Off at launch (D-038): coins are earned, the store is a coming-soon page.
+   */
+  redemptionEnabled: false,
   /**
    * Default for COINS_PHYSICAL_REDEMPTION_ENABLED (env overrides). Off until OA-19 (vendor + budget)
    * and OA-08 (consent system) are done; physical items show "Coming soon".

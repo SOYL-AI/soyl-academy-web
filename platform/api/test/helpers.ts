@@ -3,6 +3,7 @@
  * (or Redis when REDIS_URL is set, as in CI), mock SMS/email/consent providers, a mock OIDC provider
  * standing in for Google, a fake clock and a log capture. Secrets are generated per run (GEN-1).
  */
+import type { StoreItem } from '@soyl/shared/config/coins';
 import { randomBytes } from 'node:crypto';
 import { Writable } from 'node:stream';
 import type { FastifyInstance, LightMyRequestResponse } from 'fastify';
@@ -48,6 +49,8 @@ export interface HarnessOptions {
   t?: TestDb;
   /** AI gateway runtime overrides (default: local stand-ins). */
   ai?: AiDeps;
+  /** SOYL Coins store items override (default: config STORE_ITEMS). */
+  coinItems?: readonly StoreItem[];
 }
 
 const secret = () => randomBytes(32).toString('base64url');
@@ -97,7 +100,7 @@ export async function createHarness(opts: HarnessOptions = {}): Promise<Harness>
   let app: App;
   try {
     app = await buildApp(
-      { config, db: t.db, kv, clock, providers: { sms, email, consent }, google: { allowInsecure: true }, ai: opts.ai },
+      { config, db: t.db, kv, clock, providers: { sms, email, consent }, google: { allowInsecure: true }, ai: opts.ai, coins: opts.coinItems ? { items: opts.coinItems } : undefined },
       { logStream, extraRoutes: opts.extraRoutes },
     );
   } catch (err) {

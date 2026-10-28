@@ -1,5 +1,10 @@
 /**
- * SOYL Coins store and redemptions (D-037, ADR-021).
+ * SOYL Coins store and redemptions (D-037, D-038, ADR-021).
+ *
+ * D-038: no redemptions at launch. COINS_REDEMPTION_ENABLED (default off) is the master switch: while
+ * it is off every redemption, address and equip call answers `redemption_disabled`, and the store lists
+ * no items (the web shows "Exclusive rewards — coming soon"). The paths below stay, tested, for when the
+ * owner launches rewards.
  *
  * Digital items (frames, themes) are granted at once: a `fulfilled` redemption plus its `redeem` row.
  * Physical merch needs, in this order (each refusal is a problem code):
@@ -52,6 +57,8 @@ export interface ShippingAddress {
 export interface StoreDeps {
   db: Database;
   consent: ConsentService;
+  /** COINS_REDEMPTION_ENABLED: master switch for all redemptions (D-038). */
+  redemptionEnabled: boolean;
   /** COINS_PHYSICAL_REDEMPTION_ENABLED. */
   physicalEnabled: boolean;
   /** 32-byte key from config (MFA_ENCRYPTION_KEY); the address key is derived from it. */
@@ -143,7 +150,7 @@ export interface StoreViewer {
 export const isVerified = (u: StoreViewer) => u.emailVerified || u.phoneNumberVerified;
 
 export async function storeView(deps: StoreDeps, now: Date, viewer: StoreViewer | null) {
-  const items = (deps.items ?? STORE_ITEMS).filter((i) => i.active);
+  const items = deps.redemptionEnabled ? (deps.items ?? STORE_ITEMS).filter((i) => i.active) : [];
   const taken = await unitsTaken(deps.db, items.filter((i) => i.stock !== null).map((i) => i.key));
   let balance: number | null = null;
   let stats: Stats | null = null;
@@ -156,7 +163,8 @@ export async function storeView(deps: StoreDeps, now: Date, viewer: StoreViewer 
   const ms = now.getTime();
   return {
     balance,
-    physicalRedemptionEnabled: deps.physicalEnabled,
+    redemptionEnabled: deps.redemptionEnabled,
+    physicalRedemptionEnabled: deps.redemptionEnabled && deps.physicalEnabled,
     consentStatus: consent,
     verified: viewer ? isVerified(viewer) : null,
     items: items.map((i) => {
@@ -198,10 +206,16 @@ export async function storeView(deps: StoreDeps, now: Date, viewer: StoreViewer 
   };
 }
 
+/** D-038 master switch: refused before anything else. */
+export function assertRedemptionOn(deps: Pick<StoreDeps, 'redemptionEnabled'>): void {
+  if (!deps.redemptionEnabled) throw new ApiProblem('redemption_disabled');
+}
+
 /* Redeem ----------------------------------------------------------------------------------------- */
 
 /** (a)–(c) for physical items, in the order the brief fixes. Throws the matching problem. */
 export async function assertPhysicalAllowed(deps: StoreDeps, user: StoreViewer): Promise<void> {
+  assertRedemptionOn(deps);
   if (!isVerified(user)) throw new ApiProblem('verification_required');
   await deps.consent.assertAllowed(user.id, 'physical_rewards');
   if (!deps.physicalEnabled) throw new ApiProblem('redemption_disabled');
@@ -238,6 +252,7 @@ export function redemptionDto(r: typeof coinRedemptions.$inferSelect, items: rea
 }
 
 export async function redeem(deps: StoreDeps, now: Date, user: StoreViewer, itemKey: string): Promise<{ redemption: RedemptionDto; balance: number }> {
+  assertRedemptionOn(deps);
   const items = deps.items ?? STORE_ITEMS;
   const item = storeItem(itemKey, items);
   if (!item || !item.active) throw new ApiProblem('not_found');
@@ -368,6 +383,7 @@ export async function myRedemptions(db: Database, userId: string, items: readonl
 /* Equip ------------------------------------------------------------------------------------------ */
 
 export async function equip(deps: StoreDeps, now: Date, userId: string, want: { frame?: string | null; theme?: string | null }) {
+  assertRedemptionOn(deps);
   const items = deps.items ?? STORE_ITEMS;
   return deps.db.transaction(async (tx) => {
     await lockWallet(tx, userId);

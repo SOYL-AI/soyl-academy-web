@@ -104,7 +104,7 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `coin_ledger.*` | SOYL Coins earned/redeemed/refunded (amounts, sources, ids such as test or chapter keys; no names) | life of account | cascade |
 | `coin_wallets.*` | Coins lock row: check-in streak, last check-in day, equipped frame/theme | life of account | cascade |
 | `coin_redemptions.user_id`, `coin_redemptions.item_key`, `coin_redemptions.status` | Store redemption and its state (kept detached for stock counts) | life of account, then detached | detach |
-| `coin_redemptions.address_enc` | Merch shipping address (recipient name, address, PIN, courier phone), AES-256-GCM encrypted (HKDF subkey of the Key Vault MFA key; never in the database) | until shipped + 30 days (`COIN_STORE.addressRetentionDaysAfterFulfilment`, worker `coins.housekeeping`); erased at once on cancel/reject | delete |
+| `coin_redemptions.address_enc` | Merch shipping address (recipient name, address, PIN, courier phone), AES-256-GCM encrypted (HKDF subkey of the Key Vault MFA key; never in the database) | until shipped + 30 days (`COIN_STORE.addressRetentionDaysAfterFulfilment`, the coins housekeeping worker job); erased at once on cancel/reject | delete |
 | `coin_redemptions.address_submitted_at`, `coin_redemptions.address_erased_at` | When the address was given / erased | life of row | detach |
 | `coin_redemptions.tracking_ref` | Courier tracking reference (links to the delivery address at the courier) | life of account | delete |
 | `coin_redemptions.reviewed_by` | Staff member who approved/shipped/rejected | life of row | detach |
