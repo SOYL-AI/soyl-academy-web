@@ -111,7 +111,7 @@ Credits are how students see AI usage. Internally, **1 credit = ₹0.10 of AI bu
 
 ## 7. Plans and pricing (AI only)
 
-All prices INR, GST-inclusive, stored in `platform/shared/config/plans.ts`. **Owner to confirm final prices** — change config only, never code.
+All prices INR, stored in `platform/shared/config/plans.ts`. SOYL is **not GST-registered yet** (D-046): prices carry no GST and receipts are a **Bill of Supply**; once registered, prices become GST-inclusive and receipts tax invoices (config switch, `platform/shared/config/invoicing.ts`). **Owner to confirm final prices** — change config only, never code.
 
 | Plan | Monthly | Yearly | Includes |
 |---|---|---|---|
