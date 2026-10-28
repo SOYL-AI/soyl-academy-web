@@ -27,7 +27,8 @@ export type AiActionId = (typeof AI_ACTION_IDS)[number];
 /** Prompt templates (platform/api/src/ai/prompts.ts). Each has a fixed system prefix (prompt-cache friendly). */
 export type AiTemplate = 'tutor' | 'tutor-steps' | 'explain-slide' | 'photo-doubt' | 'evaluate-answer' | 'paper-blueprint';
 
-export type AiReasoningEffort = 'minimal' | 'low' | 'medium' | 'high';
+/** GPT-6 Luna / Sol accept none | low | medium | high | xhigh | max; 'minimal' is rejected with HTTP 400. */
+export type AiReasoningEffort = 'none' | 'low' | 'medium' | 'high';
 
 /**
  * How the student's text and the model's output are checked (AC-13..AC-15, F-027).
@@ -118,7 +119,7 @@ export const AI_ACTIONS: Record<AiActionId, AiActionConfig> = {
     maxInputChars: 1_000,
     maxInputTokens: 2_500,
     maxOutputTokens: 600,
-    reasoningEffort: 'minimal',
+    reasoningEffort: 'none',
     plans: ALL_PLANS,
     moderation: CHAT_MODERATION,
     degradeTo: 'small',
@@ -139,7 +140,7 @@ export const AI_ACTIONS: Record<AiActionId, AiActionConfig> = {
     maxInputChars: 500,
     maxInputTokens: 2_500,
     maxOutputTokens: 600,
-    reasoningEffort: 'minimal',
+    reasoningEffort: 'none',
     plans: ALL_PLANS,
     moderation: CHAT_MODERATION,
     degradeTo: 'small',

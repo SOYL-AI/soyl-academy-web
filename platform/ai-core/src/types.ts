@@ -34,7 +34,8 @@ export interface CallMeta {
   purpose?: string;
 }
 
-export type ReasoningEffort = 'minimal' | 'low' | 'medium' | 'high';
+/** GPT-6 Luna / Sol reject 'minimal' (HTTP 400); 'none' is the lowest effort. */
+export type ReasoningEffort = 'none' | 'low' | 'medium' | 'high';
 
 export interface ChatRequest {
   tier: ModelTier;

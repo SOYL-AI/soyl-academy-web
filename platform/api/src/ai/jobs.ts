@@ -87,7 +87,7 @@ export class AiJobRunner {
   /** Starts a job in the background of this process (the worker sweep is the safety net). */
   kick(jobId: string): void {
     const p = this.runJob(jobId)
-      .catch((e: unknown) => this.d.log().error({ err: (e as Error).message, jobId }, 'ai job failed to run'))
+      .catch((e: unknown) => this.d.log().error({ err: e as Error, jobId }, 'ai job failed to run'))
       .finally(() => this.inflight.delete(p));
     this.inflight.add(p);
   }
@@ -189,7 +189,7 @@ export class AiJobRunner {
       if (job.kind === 'evaluation') return await this.runEvaluation(job);
       return await this.runPaper(job);
     } catch (e) {
-      this.d.log().error({ err: (e as Error).message, jobId: job.id, kind: job.kind }, 'ai job error');
+      this.d.log().error({ err: e as Error, jobId: job.id, kind: job.kind }, 'ai job error');
       // Leave it for a retry while attempts remain (the lock expires); refund on the last one.
       if (job.attempts >= JOB_MAX_ATTEMPTS) return this.fail(job, 'job_error', true);
       await this.d.db.update(aiJobs).set({ status: 'queued', lockedUntil: null, runAfter: new Date(this.d.clock.now() + 60_000), errorCode: 'retrying', updatedAt: this.now() }).where(eq(aiJobs.id, job.id));
@@ -287,7 +287,7 @@ export class AiJobRunner {
         evaluated.push(itemId);
       } catch (err) {
         notEvaluated.push({ itemId, reason: 'evaluation_failed' });
-        this.d.log().warn({ err: (err as Error).message, jobId: job.id }, 'AI evaluation of an answer failed');
+        this.d.log().warn({ err: err as Error, jobId: job.id }, 'AI evaluation of an answer failed');
       }
     }
     const perAnswer = action.pricing.kind === 'per_answer' ? action.pricing.creditsPerAnswer : p.credits;
@@ -343,7 +343,7 @@ export class AiJobRunner {
       bp = r.data;
     } catch (e) {
       await this.meter(job, usages, 'failed', 0, started, 'blueprint_failed');
-      this.d.log().warn({ err: (e as Error).message, jobId: job.id }, 'blueprint extraction failed');
+      this.d.log().warn({ err: e as Error, jobId: job.id }, 'blueprint extraction failed');
       return this.fail(job, 'blueprint_failed', true);
     }
     // Chapters must exist in our catalog for this subject (AC-13); unknown ids are dropped.
