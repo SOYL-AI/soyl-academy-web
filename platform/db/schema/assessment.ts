@@ -243,7 +243,7 @@ export const attempts = pgTable(
     index('attempts_deadline_active_idx').on(t.deadlineAt).where(sql`${t.status} = 'in_progress'`),
     // Test-series listing and "my attempts at this test".
     index('attempts_user_test_idx').on(t.userId, t.testId),
-    // 0015 (D-045 admin analytics): tests started/submitted per IST day.
+    // 0014 (D-045 admin analytics): tests started/submitted per IST day.
     index('attempts_started_at_idx').on(t.startedAt),
     index('attempts_submitted_at_idx').on(t.submittedAt),
     oneOf('attempts_status_check', t.status, ATTEMPT_STATUSES),

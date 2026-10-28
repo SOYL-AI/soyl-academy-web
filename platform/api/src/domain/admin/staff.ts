@@ -1,5 +1,5 @@
 /**
- * Staff capabilities (D-045, migration 0015). `superadmin` = role `admin` + a `staff_capabilities` row.
+ * Staff capabilities (D-045, migration 0014). `superadmin` = role `admin` + a `staff_capabilities` row.
  * Checked by the route policy (`policy.capability`) after the role and before MFA; read on every call
  * (one indexed lookup) so a revoked capability takes effect at once.
  */

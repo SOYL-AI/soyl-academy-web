@@ -55,9 +55,9 @@ export function AskClient() {
         title="Log in to ask the AI tutor"
         headingLevel="h2"
         icon="chat"
-        action={<Button onClick={() => openLogin({ reason: 'Log in to ask the AI tutor. You get 25 free AI credits every day.' })}>Log in</Button>}
+        action={<Button onClick={() => openLogin({ reason: 'Log in to ask the AI tutor. You get free AI credits every day.' })}>Log in</Button>}
       >
-        Ask any doubt from your syllabus and get a hint first, then the full solution. 25 free credits every day.
+        Ask any doubt from your syllabus and get a hint first, then the full solution. Free AI credits every day.
       </EmptyState>
     );
   }

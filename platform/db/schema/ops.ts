@@ -11,7 +11,7 @@ import { users } from './identity';
 import { CONTENT_TYPES } from './content';
 
 /**
- * Staff capabilities on top of `users.role` (migration 0015, D-045). `superadmin` is the role `admin`
+ * Staff capabilities on top of `users.role` (migration 0014, D-045). `superadmin` is the role `admin`
  * plus a row here: it unlocks the analytics dashboard and the audited user lookup. Keeping it out of
  * `users.role` means every existing staff rule (Google Workspace sign-in, TOTP, staff session lifetime,
  * no OTP-only login) applies unchanged. Granted only by `db admin bootstrap --role superadmin`
@@ -37,7 +37,7 @@ export const staffCapabilities = pgTable(
 );
 
 /**
- * Product-interest counters (migration 0015, D-045, D-014): one row per IST day, allowlisted event
+ * Product-interest counters (migration 0014, D-045, D-014): one row per IST day, allowlisted event
  * (platform/shared/config/analytics.ts) and dimension value ('' = none), incremented in place.
  * By design there is **no** user id, IP address, session id, device id or user agent column.
  */

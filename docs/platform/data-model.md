@@ -104,7 +104,7 @@ All are reversible (`NNNN_name.sql` + `NNNN_name.down.sql`, plus drizzle snapsho
 | 0014 | `0014_admin_analytics` | `analytics_counters`, `staff_capabilities` (super-admin dashboard, D-045) | backend-api (admin analytics) | **no** (pending) |
 | 0015 | `0015_avatars_credit_bonus` | `credit_ledger` kinds `bonus_goal` / `bonus_streak` (kind and amount checks widened) and `credit_ledger_one_bonus_per_day`; `profiles.avatar_id`, `avatar_bg` with config checks and the pair check. Down deletes bonus rows first (lossy for credit history) | ai-gateway (credits D-044, avatars) | **no** (pending) |
 
-Production (dark) was last migrated on 2026-10-28 from images built at `fe404f0`, so it has 0000 to 0010. 0011 to 0015 apply on the next backend update ([runbook](runbooks/update-dark-backend.md)).
+Production was last migrated on 2026-10-29 from images built at `da47d79`, so it has 0000 to 0014 (0014's SQL comments say "0015": they predate the renumbering and stay as applied, because the migrator hashes applied files). 0015 applies on the next backend update ([runbook](runbooks/update-dark-backend.md)).
 
 Commands (from `platform/`; without `DATABASE_URL` the CLI starts the persistent local embedded server at `platform/db/.data/dev`, port 54320):
 

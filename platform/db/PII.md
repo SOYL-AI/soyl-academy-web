@@ -27,7 +27,7 @@ What an account holds is kept to what the product needs:
 - **Avatars (0015):** `profiles.avatar_id` / `avatar_bg` are a choice from fixed config lists (an animal and a
   colour theme), not personal data; they are shown next to the public name on public boards (consented
   students only, as the name) and cleared at account deletion.
-- **Analytics:** `analytics_events` and `analytics_counters` (0015, D-045: counts per IST day, allowlisted event
+- **Analytics:** `analytics_events` and `analytics_counters` (0014, D-045: counts per IST day, allowlisted event
   and dimension) have no user, session, device, user-agent or IP column; client counters are sent only after
   the visitor accepted analytics in the cookie bar. No third-party analytics, pixels or Vercel Analytics on
   platform routes (D-014, WEB-1).
@@ -149,7 +149,7 @@ Legend for **On deletion**: *delete* = removed in step 1; *anonymise* = overwrit
 | `content_status_events.actor_user_id` | Reviewer who changed content status | life of content | detach |
 | `audit_log.actor_user_id`, `audit_log.target_id`, `audit_log.before`, `audit_log.after` | Admin actions (ids only, DB-8) | 2 years | detach |
 | `feature_flags.updated_by_user_id`, `config_values.updated_by_user_id` | Admin who changed a value | life of row | detach |
-| `staff_capabilities.user_id`, `staff_capabilities.granted_by_user_id` | Staff capability (`superadmin`, 0015) and who granted it (null = bootstrap CLI) | while staff | cascade / detach |
+| `staff_capabilities.user_id`, `staff_capabilities.granted_by_user_id` | Staff capability (`superadmin`, 0014) and who granted it (null = bootstrap CLI) | while staff | cascade / detach |
 | `analytics_counters.*` | Interest counters per IST day, event and dimension; no user link (D-045) | 2 years | retain (aggregate, not personal) |
 | `subscriptions.user_id`, `orders.user_id`, `payments.user_id` | Purchaser link | 8 years (tax records; pending OA-14) | detach |
 | `subscriptions.razorpay_subscription_id`, `orders.razorpay_order_id`, `orders.receipt`, `payments.razorpay_payment_id`, `payments.method` | Payment references | 8 years | retain |

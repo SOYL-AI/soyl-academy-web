@@ -21,7 +21,7 @@ export type PolicyRole = (typeof POLICY_ROLES)[number];
 export const MEMBER_ROLES = ['student', 'parent', 'reviewer', 'admin'] as const satisfies readonly PolicyRole[];
 export const EVERYONE = ['guest', ...MEMBER_ROLES] as const satisfies readonly PolicyRole[];
 export const STAFF_ROLES = ['reviewer', 'admin'] as const;
-/** D-045: superadmin = role `admin` + the `superadmin` staff capability (staff_capabilities, migration 0015). */
+/** D-045: superadmin = role `admin` + the `superadmin` staff capability (staff_capabilities, migration 0014). */
 export const SUPERADMIN_ROLES = ['admin'] as const;
 
 const bucketNames = Object.keys(RATE_LIMITS) as [RateLimitBucketName, ...RateLimitBucketName[]];

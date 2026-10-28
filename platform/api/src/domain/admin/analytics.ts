@@ -3,7 +3,7 @@
  * nothing here returns a per-user row.
  *
  * Cost model: every query is bounded to the requested IST range (at most ANALYTICS.maxRangeDays, plus 30
- * days for MAU and retention follow-up) and uses the range indexes added in migration 0015
+ * days for MAU and retention follow-up) and uses the range indexes added in migration 0014
  * (practice_answers.answered_at, lesson_progress.created_at/completed_at/updated_at, attempts.started_at/
  * submitted_at, credit_ledger/coin_ledger (ist_day, kind), users.created_at, ai_requests.created_at).
  * There is no read replica, so the dashboard reads the primary.

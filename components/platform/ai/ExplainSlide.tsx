@@ -24,7 +24,7 @@ export function ExplainSlideButton({ chapterId, part, slideId, slideNumber }: { 
         className={s.explainButton}
         onClick={() => {
           if (state.status !== 'member') {
-            openLogin({ reason: 'Log in to ask the AI to explain a slide. You get 25 free AI credits every day.' });
+            openLogin({ reason: 'Log in to ask the AI to explain a slide. You get free AI credits every day.' });
             return;
           }
           setLoaded(true);

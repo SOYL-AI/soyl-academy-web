@@ -27,7 +27,7 @@ afterAll(async () => {
 const drizzleTables: PgTable[] = (Object.values(schema) as unknown[]).filter((v): v is PgTable => is(v, PgTable));
 
 describe('schema conventions', () => {
-  it('defines the ARCHITECTURE §6 groups (60 tables) + learning progress (3, migration 0005) + release items (0006) + test score buckets (0007) + AI gateway (3, 0008) + leagues (0010) + SOYL Coins (3, 0011) + consent records (0012) + staff capabilities and interest counters (2, 0015)', () => {
+  it('defines the ARCHITECTURE §6 groups (60 tables) + learning progress (3, migration 0005) + release items (0006) + test score buckets (0007) + AI gateway (3, 0008) + leagues (0010) + SOYL Coins (3, 0011) + consent records (0012) + staff capabilities and interest counters (2, 0014)', () => {
     expect(drizzleTables.length).toBe(75);
   });
 

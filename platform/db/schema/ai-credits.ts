@@ -83,7 +83,7 @@ export const creditLedger = pgTable(
     // ARCHITECTURE §6 hot lookup
     index('credit_ledger_user_created_idx').on(t.userId, t.createdAt),
     index('credit_ledger_user_day_idx').on(t.userId, t.istDay),
-    // 0015 (D-045 admin analytics): credits granted/spent/refunded per IST day across users.
+    // 0014 (D-045 admin analytics): credits granted/spent/refunded per IST day across users.
     index('credit_ledger_day_kind_idx').on(t.istDay, t.kind),
     // Sweeper: open reservations by expiry
     index('credit_ledger_reservation_expiry_idx').on(t.reservationExpiresAt).where(sql`${t.kind} = 'reserve'`),

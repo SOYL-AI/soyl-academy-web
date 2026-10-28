@@ -1,5 +1,5 @@
 /**
- * Product-interest counters (D-045, D-014; migration 0015 `analytics_counters`).
+ * Product-interest counters (D-045, D-014; migration 0014 `analytics_counters`).
  *
  * One row per (IST day, event, dimension) with a count, incremented in place by an upsert. The row has
  * no user id, IP, session id, device id or user agent: it is impossible to tell who did what. Events

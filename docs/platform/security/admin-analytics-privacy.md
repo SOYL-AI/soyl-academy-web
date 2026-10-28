@@ -6,7 +6,7 @@ For security-reviewer. Branch `platform/backend-api/admin-analytics`, 2026-10-28
 
 | Who | Sees | Enforced by |
 |---|---|---|
-| Superadmin = role `admin` **and** a `staff_capabilities` row `superadmin` (migration 0015) | Analytics (aggregates), the user list (masked), search, reveal, summary, plus Reports | Route policy `roles: ['admin'], capability: 'superadmin', mfa: true` on every `/v1/admin/analytics/*` and `/v1/admin/users*` route; snapshot in `platform/api/test/__snapshots__/route-policy.test.ts.snap` |
+| Superadmin = role `admin` **and** a `staff_capabilities` row `superadmin` (migration 0014) | Analytics (aggregates), the user list (masked), search, reveal, summary, plus Reports | Route policy `roles: ['admin'], capability: 'superadmin', mfa: true` on every `/v1/admin/analytics/*` and `/v1/admin/users*` route; snapshot in `platform/api/test/__snapshots__/route-policy.test.ts.snap` |
 | Admin without the capability, reviewer | Reports queue only (`/v1/admin/me` says `sections: ['reports']`) | 403 `forbidden` (`authz_denied`, reason `capability`) |
 | Students, parents, guests | Nothing | 403 / 401 as before |
 

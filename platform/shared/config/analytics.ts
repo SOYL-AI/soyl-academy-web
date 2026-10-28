@@ -3,7 +3,7 @@
  *
  * D-014 / D-045 privacy design:
  * - Product interest is measured with **aggregate counters only**: one row per (IST day, event,
- *   dimension) holding a count (`analytics_counters`, migration 0015). No user id, IP address, session
+ *   dimension) holding a count (`analytics_counters`, migration 0014). No user id, IP address, session
  *   id, device id or user agent is ever stored with a counter, so no per-child behavioural profile can
  *   be built from them.
  * - Only the events and dimension values listed here are accepted; anything else is refused with 400.
@@ -106,7 +106,7 @@ export const ANALYTICS = {
   clientDebounceMs: 30 * 60 * 1000,
 } as const;
 
-/** Staff capabilities on top of a role (migration 0015). `superadmin` = analytics + user lookup. */
+/** Staff capabilities on top of a role (migration 0014). `superadmin` = analytics + user lookup. */
 export const STAFF_CAPABILITIES = ['superadmin'] as const;
 export type StaffCapability = (typeof STAFF_CAPABILITIES)[number];
 
