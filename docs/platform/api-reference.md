@@ -88,6 +88,8 @@ After the hooks, the request goes through:
 | `practice.answer.ip` | IP | 300 / 60 s | `POST /v1/practice/answers` |
 | `progress.write.user` | user | 120 / 60 s | `PUT /v1/me/lesson-progress` |
 | `insights.read.user` | user | 60 / 60 s | `GET /v1/me/activity`, `GET /v1/me/mastery`, `GET /v1/me/card` |
+| `dashboard.read.user` | user | 30 / 60 s | `GET /v1/me/dashboard` |
+| `schools.search.user` | user | 60 / 60 s | `GET /v1/schools` |
 | `mfa.user` | user | 20 / 900 s | Staff TOTP routes |
 
 The policy hook only knows IP keys and user keys. The attempt-keyed buckets are therefore enforced in the handlers (`modules/tests.ts`). Those handler-level checks fail open when the rate-limit store is down.
@@ -164,8 +166,9 @@ Outside `/v1`. No edge auth and no rate limits. They are served even when the pl
 | Method | Path | Roles | CSRF | Rate limit | Consent | Fresh/MFA | Purpose | Documented in |
 |---|---|---|---|---|---|---|---|---|
 | GET | `/v1/session` | All | true | default | — | — | Current session (guest when not signed in) | [backend-api M1](handoffs/2026-10-26-backend-api-m1.md) |
-| GET | `/v1/me` | Members | true | default | — | — | Your profile, consent state and sign-in methods | [backend-api M1](handoffs/2026-10-26-backend-api-m1.md) |
-| PATCH | `/v1/me` | Members | true | default + `me.write.user` | — | — | Update profile fields (allowlist; display-name moderation) | [backend-api M1](handoffs/2026-10-26-backend-api-m1.md) |
+| GET | `/v1/me` | Members | true | default | — | — | Your profile, consent state and sign-in methods; `school` (null unless consent is granted) and `weeklyGoal` | [backend-api M1](handoffs/2026-10-26-backend-api-m1.md), [dashboard + school](handoffs/2026-10-28-backend-api-dashboard-school.md) |
+| PATCH | `/v1/me` | Members | true | default + `me.write.user` | — | — | Update profile fields (allowlist; display-name moderation); `weeklyGoal` (5–300 or null); `school`: `{ schoolId }` or `{ name, city, state?, board? }` (find-or-create, unverified) needs consent `granted` (else 403 `consent_required`), `null` clears it (always allowed) | [backend-api M1](handoffs/2026-10-26-backend-api-m1.md), [dashboard + school](handoffs/2026-10-28-backend-api-dashboard-school.md) |
+| GET | `/v1/schools?q=&city=` | Members | true | default + `schools.search.user` | `profile_school_city` | — | School search for the profile picker: prefix of the name or of any word, optional city, at most 20; unverified student-added schools appear to others once two accounts picked them | [dashboard + school](handoffs/2026-10-28-backend-api-dashboard-school.md) |
 | DELETE | `/v1/me` | Members | true | default | — | fresh | Delete your account: personal data is removed now, the rest is purged within 30 days | [backend-api M1](handoffs/2026-10-26-backend-api-m1.md), [backend-api M3](handoffs/2026-10-27-backend-api-m3.md) (also clears live ranks); open finding S6-M02 (uploads left in Blob) in [security M6](handoffs/2026-10-27-security-reviewer-m6.md) |
 | POST | `/v1/me/merge-guest` | Members | true | default | `merge_guest` † | — | Merge guest progress (localStorage `soyl_guest_v1`) into the account. Once per account; replays return `alreadyMerged`. Body limit 256 KB | [backend-api M1](handoffs/2026-10-26-backend-api-m1.md) |
 | POST | `/v1/me/consent/start` | Members | true | default | — | — | Start (or resume) the parental-consent flow (external providers) | [backend-api M1](handoffs/2026-10-26-backend-api-m1.md) |
@@ -224,6 +227,7 @@ Outside `/v1`. No edge auth and no rate limits. They are served even when the pl
 | GET | `/v1/me/activity?days=N` | Members | true | default + `insights.read.user` | — | — | Your daily learning activity (IST days, N ≤ 371, default 365) for a heatmap: answered, first-solved, lesson parts finished, tests submitted; streak and active days | [learning insights](handoffs/2026-10-28-backend-api-learning-insights.md) |
 | GET | `/v1/me/mastery?subjectId=` | Members | true | default + `insights.read.user` | — | — | Your mastery level per chapter (not started → attempted → familiar → proficient → mastered, score 0–100, hints) and per subject; without `subjectId`, every subject you have activity in | [learning insights](handoffs/2026-10-28-backend-api-learning-insights.md) |
 | GET | `/v1/me/card` | Members | true | default + `insights.read.user` | — | — | Your private player card: overall 40–99, tier, attributes (ACC, CON, SPD, BRE, MAS, TST) with explanations, public name (D-039), level, XP, coins | [learning insights](handoffs/2026-10-28-backend-api-learning-insights.md) |
+| GET | `/v1/me/dashboard` | Members | true | default + `dashboard.read.user` | — | — | Your progress dashboard (IST days, Monday weeks): profile strip (board, class, consent-gated school, missing fields), totals this/last week and all time, 7-day accuracy vs the 7 before, solved by difficulty, mastery level counts, last 20 submitted tests, focus areas, recent activity, next badge, weekly goal | [dashboard + school](handoffs/2026-10-28-backend-api-dashboard-school.md) |
 | GET | `/v1/leagues/current?scope=class` | Members | true | default + `leagues.read.user` | `leaderboards` | — | Your weekly league (IST week, 5 tiers, divisions of 30). The first visit of a week places you (idempotent). `school`/`city` → 501 | [backend-api M5 follow-ups](handoffs/2026-10-27-backend-api-m5-followups.md) |
 
 ## 11. Content reports (1)
@@ -346,6 +350,8 @@ Registered only when `DEV_OTP_OUTBOX=true`. Config refuses that setting unless `
 | Billing | 7 |
 | Dev-only (hidden) | 1 |
 | **Total** | **81** (snapshot rows; 80 in `openapi.json`) |
+
+> 2026-10-28, dashboard + school capture: 2 member routes (`/v1/me/dashboard`, `/v1/schools`); `/v1/me` gained `school` and `weeklyGoal`.
 
 > 2026-10-28, learning insights: §10 gained 3 member routes (`/v1/me/activity`, `/v1/me/mastery`, `/v1/me/card`). The total above was not re-derived: the route-policy snapshot has 104 rows at that commit (routes from later merges, e.g. coins, are not all listed in this document yet).
 

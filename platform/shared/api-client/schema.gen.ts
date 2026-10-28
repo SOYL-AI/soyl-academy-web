@@ -7122,7 +7122,7 @@ export interface components {
             /** Format: date */
             to: string;
             checked: number;
-            correct: number;
+            right: number;
             accuracy: number | null;
         };
         DashboardTotalsInput: {
@@ -9489,7 +9489,7 @@ export interface components {
             /** Format: date */
             to: string;
             checked: number;
-            correct: number;
+            right: number;
             accuracy: number | null;
         };
         DashboardTotals: {

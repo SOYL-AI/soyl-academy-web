@@ -18,7 +18,7 @@
  *
  * Every transition rewrites the `consent_status` cache at once (no 15-minute wait) and writes an audit
  * row with ids and states only. Leaving `granted` deletes the AI data PII.md lists for deletion
- * (conversations + messages, uploads + their blobs).
+ * (conversations + messages, uploads + their blobs) and clears the profile's school and city (D-014).
  *
  * Why a code and not a click-to-approve link (ADR-022): approval happens inside the student's signed-in
  * session, so no unauthenticated endpoint can grant anything; email link scanners that open every link
@@ -40,6 +40,7 @@ import type { AuthUser } from '../types';
 import type { ConsentFlow, ConsentProvider, ConsentStatus } from './provider';
 import type { ConsentService } from './service';
 import { parentConsentEmail } from './email';
+import { clearSchool } from '../domain/schools';
 
 type ConsentRecord = typeof consentRecords.$inferSelect;
 
@@ -417,14 +418,16 @@ export class BuiltinConsentFlow {
    */
   async deleteAiData(userId: string, log: FastifyBaseLogger): Promise<{ conversations: number; uploads: number }> {
     const now = this.now();
-    const { conversations, marked } = await this.d.db.transaction(async (tx) => {
+    const { conversations, marked, schoolCleared } = await this.d.db.transaction(async (tx) => {
       const c = await tx.delete(aiConversations).where(eq(aiConversations.userId, userId)).returning({ id: aiConversations.id });
       const m = await tx
         .update(uploads)
         .set({ status: 'deleted', expiresAt: now, updatedAt: now })
         .where(and(eq(uploads.userId, userId), ne(uploads.status, 'deleted')))
         .returning({ id: uploads.id });
-      return { conversations: c.length, marked: m.length };
+      // D-014: school and city are off without consent; they are cleared, not just hidden.
+      const s = await clearSchool(tx, userId, now);
+      return { conversations: c.length, marked: m.length, schoolCleared: s };
     });
     await this.d.db.insert(auditLog).values({
       actorUserId: null,
@@ -432,7 +435,7 @@ export class BuiltinConsentFlow {
       action: 'consent.ai_data_deleted',
       targetType: 'user',
       targetId: userId,
-      after: { conversations, uploads: marked },
+      after: { conversations, uploads: marked, schoolCleared },
       createdAt: now,
     });
     if (marked) {

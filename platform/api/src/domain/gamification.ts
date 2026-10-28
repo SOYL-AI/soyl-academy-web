@@ -142,7 +142,7 @@ export function ensureBadges(db: Database): Promise<Map<string, string>> {
   return p;
 }
 
-async function learnerStats(tx: Db, userId: string) {
+export async function learnerStats(tx: Db, userId: string) {
   const [r] = await tx.select({
     lessons: sql<number>`(SELECT count(*)::int FROM ${lessonProgress} WHERE ${lessonProgress.userId} = ${userId} AND ${lessonProgress.completedAt} IS NOT NULL)`,
     correct: sql<number>`(SELECT count(DISTINCT ${practiceAnswers.questionKey})::int FROM ${practiceAnswers} WHERE ${practiceAnswers.userId} = ${userId} AND ${practiceAnswers.correct})`,
@@ -152,7 +152,7 @@ async function learnerStats(tx: Db, userId: string) {
 }
 
 /** Test badges (M3): different tests graded, perfect papers, longest run of IST days with a graded test. */
-async function testStats(tx: Db, userId: string) {
+export async function testStats(tx: Db, userId: string) {
   const [r] = await tx.select({
     tests: sql<number>`(SELECT count(DISTINCT ${attempts.testId})::int FROM ${attempts} WHERE ${attempts.userId} = ${userId} AND ${attempts.gradedAt} IS NOT NULL)`,
     perfect: sql<number>`(SELECT count(*)::int FROM ${xpEvents} WHERE ${xpEvents.userId} = ${userId} AND ${xpEvents.sourceType} = 'test_perfect')`,
@@ -166,7 +166,7 @@ async function testStats(tx: Db, userId: string) {
   return r!;
 }
 
-async function chaptersMastered(tx: Db, userId: string, c: Extract<BadgeDefinition['criteria'], { kind: 'chapters_mastered' }>): Promise<number> {
+export async function chaptersMastered(tx: Db, userId: string, c: Extract<BadgeDefinition['criteria'], { kind: 'chapters_mastered' }>): Promise<number> {
   const rows = await tx
     .select({ chapterId: practiceAnswers.chapterId })
     .from(practiceAnswers)

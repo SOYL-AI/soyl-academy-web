@@ -8,10 +8,10 @@ import type { ZodTypeProvider } from 'fastify-type-provider-zod';
 import { policies } from '../policy';
 import { withProblems } from '../schemas';
 import type { AppDeps } from '../services';
-import { ApiProblem } from '../errors';
+import { searchSchools } from '../domain/schools';
 import { SchoolSearchQuery, SchoolSearchResponse } from './schools-schemas';
 
-export function registerSchoolRoutes(appIn: FastifyInstance, _deps: AppDeps): void {
+export function registerSchoolRoutes(appIn: FastifyInstance, deps: AppDeps): void {
   const app = appIn.withTypeProvider<ZodTypeProvider>();
 
   app.get('/v1/schools', {
@@ -22,8 +22,6 @@ export function registerSchoolRoutes(appIn: FastifyInstance, _deps: AppDeps): vo
       querystring: SchoolSearchQuery,
       response: withProblems({ 200: SchoolSearchResponse }),
     },
-    handler: async () => {
-      throw new ApiProblem('not_implemented');
-    },
+    handler: async (request) => ({ schools: await searchSchools(deps.db, request.auth!.user.id, request.query.q, request.query.city) }),
   });
 }

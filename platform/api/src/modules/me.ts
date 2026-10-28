@@ -34,6 +34,7 @@ import { loadProfile } from '../domain/profile';
 import { mergeGuestProgress } from '../domain/guest-merge';
 import { deleteAccount } from '../domain/account-deletion';
 import { removeFromLiveBoards } from '../domain/tests/live';
+import { findOrCreateSchool, profileSchoolFields, schoolById, visibleSchool } from '../domain/schools';
 
 const MeResponse = z
   .object({
@@ -94,6 +95,8 @@ export function registerMeRoutes(appIn: FastifyInstance, services: Services, dep
     if (!user) throw new ApiProblem('not_found');
     const p = await loadProfile(db, userId);
     const consent: ConsentState = await services.consent.getStatus(userId);
+    // D-014: the school is shown only while consent is granted (it stays stored until cleared or withdrawn).
+    const school = await visibleSchool(db, p?.schoolId, consent === 'granted');
     return {
       id: user.id,
       role: user.role,
@@ -103,8 +106,8 @@ export function registerMeRoutes(appIn: FastifyInstance, services: Services, dep
       publicName: publicName(user.id, p?.publicNameSeed ?? 0),
       locale: p?.locale ?? 'en-IN',
       consent,
-      school: null,
-      weeklyGoal: effectiveWeeklyGoal(null),
+      school,
+      weeklyGoal: effectiveWeeklyGoal(p?.weeklyGoal),
       methods: await services.identity.methods(userId),
       guestMergedAt: p?.guestMergedAt?.toISOString() ?? null,
       createdAt: user.createdAt.toISOString(),
@@ -123,7 +126,6 @@ export function registerMeRoutes(appIn: FastifyInstance, services: Services, dep
     handler: async (request) => {
       const userId = request.auth!.user.id;
       const b = request.body;
-      if (b.school !== undefined || b.weeklyGoal !== undefined) throw new ApiProblem('not_implemented');
       const set: Partial<typeof profiles.$inferInsert> = {};
       if (b.displayName !== undefined) {
         if (b.displayName === null) set.displayName = null;
@@ -136,6 +138,15 @@ export function registerMeRoutes(appIn: FastifyInstance, services: Services, dep
       if (b.board !== undefined) set.board = b.board;
       if (b.classLevel !== undefined) set.classLevel = b.classLevel;
       if (b.locale !== undefined) set.locale = b.locale;
+      if (b.weeklyGoal !== undefined) set.weeklyGoal = b.weeklyGoal;
+      if (b.school === null) Object.assign(set, profileSchoolFields(null)); // clearing is always allowed
+      else if (b.school !== undefined) {
+        // D-014: 403 consent_required (503 consent_unavailable) before anything is validated or stored.
+        await services.consent.assertAllowed(userId, 'profile_school_city');
+        const s = 'schoolId' in b.school ? await schoolById(db, b.school.schoolId) : await findOrCreateSchool(db, clock, userId, b.school);
+        if (!s) throw new ApiProblem('validation_failed', { errors: [{ path: 'body.school.schoolId', message: 'Unknown school.' }] });
+        Object.assign(set, profileSchoolFields(s));
+      }
       await db
         .insert(profiles)
         .values({ userId, ...set })

@@ -47,8 +47,9 @@ const AccuracyWindow = z
     to: Day,
     /** Auto-checked practice answers in the window (every attempt, right or wrong). */
     checked: Count,
-    correct: Count,
-    /** correct ÷ checked, null when nothing was checked. */
+    /** Of those, answered right. (Not named `correct`: the DB-6 leak scan reserves that key for answer keys.) */
+    right: Count,
+    /** right ÷ checked, null when nothing was checked. */
     accuracy: Ratio.nullable(),
   })
   .meta({ id: 'AccuracyWindow' });
@@ -82,8 +83,10 @@ export const DashboardTotalsSchema = z
 export const DashboardScopeSchema = z
   .object({
     /**
-     * class: every subject of the student's board and class (untouched chapters count as not started);
-     * activity: board or class not set, so the subjects the student has activity in; none: neither.
+     * class: the subjects of the student's board and class that have published lessons or practice, plus
+     * any subject of that class the student has activity in (every chapter of them; untouched chapters
+     * count as not started); activity: board or class not set, so the subjects the student has activity
+     * in; none: neither.
      */
     kind: z.enum(['class', 'activity', 'none']),
     board: BoardSchema.nullable(),

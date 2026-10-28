@@ -5,7 +5,8 @@
  * uploads `deleted` (S6-M02: their blobs — the photo/paper in `uploads-quarantine` and its cleaned copy
  * in `uploads` — are deleted right after by UploadService.purgeDeleted, then the rows; the worker's
  * `uploads.purge-deleted` retries until done, with an audit row); anonymise `users` and the personal
- * `profiles` fields; write an audit row (ids only). Step 2 — the hard delete ≤ 30 days later — is the
+ * `profiles` fields (school, city and weekly goal included); delete the unverified schools only this
+ * account used and unlink the others it added (0013); write an audit row (ids only). Step 2 — the hard delete ≤ 30 days later — is the
  * worker's `account.purge` job (`users.deleted_at < now() - 30 days`). Provisional live ranks (KV) are
  * removed by the route (removeFromLiveBoards).
  */
@@ -28,6 +29,7 @@ import type { Clock } from '../clock';
 import type { OtpService } from '../auth/otp';
 import type { AuthUser } from '../types';
 import { eraseCoinPersonalData } from './coins/store';
+import { unlinkCreatedSchools } from './schools';
 
 export interface DeletionResult {
   deletedAt: Date;
@@ -75,8 +77,10 @@ export async function deleteAccount(
       .where(eq(users.id, user.id));
     await tx
       .update(profiles)
-      .set({ displayName: null, board: null, classLevel: null, schoolId: null, city: null, publicNameSeed: 0, updatedAt: now })
+      .set({ displayName: null, board: null, classLevel: null, schoolId: null, city: null, publicNameSeed: 0, weeklyGoal: null, updatedAt: now })
       .where(eq(profiles.userId, user.id));
+    // 0013: unverified schools only this account used are deleted; other schools it added are unlinked.
+    await unlinkCreatedSchools(tx, user.id);
     await tx.insert(auditLog).values({
       actorUserId: user.id,
       actorRole: user.role,
