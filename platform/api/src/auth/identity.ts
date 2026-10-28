@@ -65,6 +65,8 @@ export class IdentityService {
     private readonly clock: Clock,
     private readonly notify: { sms: SmsSender; email: EmailSender },
     private readonly staffDomains: readonly string[],
+    /** D-045: the server-observed `signup` interest counter (aggregate, by method; no user link). */
+    private readonly counters?: { observe(name: 'signup', dimension: string, log?: IdentityContext['log']): Promise<void> },
   ) {}
 
   private async findActiveUser(where: ReturnType<typeof eq>): Promise<AuthUser | null> {
@@ -88,6 +90,7 @@ export class IdentityService {
       /* soft limit: a store outage must not block sign-up after the OTP already passed */
     }
     authEvent(ctx.log, 'account_created', { outcome: 'success', userId: user.id, method, ip: ctx.ip, userAgent: ctx.userAgent });
+    await this.counters?.observe('signup', method, ctx.log);
   }
 
   private assertCanUseOtp(user: AuthUser) {

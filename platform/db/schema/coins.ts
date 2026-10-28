@@ -129,6 +129,8 @@ export const coinLedger = pgTable(
     index('coin_ledger_user_created_idx').on(t.userId, t.createdAt),
     index('coin_ledger_user_day_idx').on(t.userId, t.istDay),
     index('coin_ledger_user_source_idx').on(t.userId, t.source),
+    // 0015 (D-045 admin analytics): coins earned per IST day across users.
+    index('coin_ledger_day_kind_idx').on(t.istDay, t.kind),
     oneOf('coin_ledger_kind_check', t.kind, COIN_LEDGER_KINDS),
     oneOf('coin_ledger_source_check', t.source, COIN_LEDGER_SOURCES),
     check(

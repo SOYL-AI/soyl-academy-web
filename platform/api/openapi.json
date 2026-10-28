@@ -6757,6 +6757,1379 @@
           "recoveryCodesRemaining"
         ]
       },
+      "AdminRangeInput": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "to": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "days": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "previousFrom": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "previousTo": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "timezone": {
+            "type": "string",
+            "const": "Asia/Kolkata"
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          }
+        },
+        "required": [
+          "from",
+          "to",
+          "days",
+          "previousFrom",
+          "previousTo",
+          "timezone",
+          "generatedAt"
+        ]
+      },
+      "AdminDayCountInput": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "value": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "date",
+          "value"
+        ]
+      },
+      "AdminSeriesInput": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "points": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminDayCountInput"
+            }
+          }
+        },
+        "required": [
+          "key",
+          "label",
+          "points"
+        ],
+        "description": "A daily series over the range; every day is present (zeros included)."
+      },
+      "AdminLabelledCountInput": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "key",
+          "label",
+          "value"
+        ]
+      },
+      "AdminKpiInput": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          },
+          "previous": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "unit": {
+            "type": "string",
+            "enum": [
+              "count",
+              "paise",
+              "ratio"
+            ]
+          }
+        },
+        "required": [
+          "key",
+          "label",
+          "value",
+          "previous",
+          "unit"
+        ]
+      },
+      "AdminMeInput": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "reviewer",
+              "admin"
+            ]
+          },
+          "capabilities": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "superadmin"
+              ]
+            }
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "analytics",
+                "users",
+                "reports"
+              ]
+            }
+          }
+        },
+        "required": [
+          "userId",
+          "role",
+          "capabilities",
+          "sections"
+        ]
+      },
+      "AdminAnalyticsOverviewInput": {
+        "type": "object",
+        "properties": {
+          "range": {
+            "$ref": "#/components/schemas/AdminRangeInput"
+          },
+          "kpis": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminKpiInput"
+            }
+          },
+          "signups": {
+            "$ref": "#/components/schemas/AdminSeriesInput"
+          },
+          "dau": {
+            "$ref": "#/components/schemas/AdminSeriesInput"
+          }
+        },
+        "required": [
+          "range",
+          "kpis",
+          "signups",
+          "dau"
+        ]
+      },
+      "AdminAnalyticsGrowthInput": {
+        "type": "object",
+        "properties": {
+          "range": {
+            "$ref": "#/components/schemas/AdminRangeInput"
+          },
+          "totalUsers": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "signupsByMethod": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminSeriesInput"
+            },
+            "description": "Per day, one series per sign-in method (inferred from the account: Google identity created with it, phone-only placeholder email, else email)."
+          },
+          "signupsByWeek": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "week": {
+                  "type": "string",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                "email": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "phone": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "google": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "total": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                }
+              },
+              "required": [
+                "week",
+                "email",
+                "phone",
+                "google",
+                "total"
+              ]
+            }
+          },
+          "consentFunnel": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCountInput"
+            }
+          },
+          "boards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCountInput"
+            }
+          },
+          "classes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCountInput"
+            }
+          },
+          "schoolsAdded": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "guestMerges": {
+            "$ref": "#/components/schemas/AdminSeriesInput"
+          },
+          "signupCounter": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCountInput"
+            },
+            "description": "Server-observed sign-up counter by method (exact, from the day counters started)."
+          }
+        },
+        "required": [
+          "range",
+          "totalUsers",
+          "signupsByMethod",
+          "signupsByWeek",
+          "consentFunnel",
+          "boards",
+          "classes",
+          "schoolsAdded",
+          "guestMerges",
+          "signupCounter"
+        ]
+      },
+      "AdminTopItemInput": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "practiceAnswers": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "lessonsOpened": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "total": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "key",
+          "label",
+          "practiceAnswers",
+          "lessonsOpened",
+          "total"
+        ]
+      },
+      "AdminAnalyticsEngagementInput": {
+        "type": "object",
+        "properties": {
+          "range": {
+            "$ref": "#/components/schemas/AdminRangeInput"
+          },
+          "dau": {
+            "$ref": "#/components/schemas/AdminSeriesInput"
+          },
+          "activeUsers": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991,
+            "description": "Distinct students with any learning activity in the range."
+          },
+          "wau": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991,
+            "description": "Distinct active students in the 7 days ending `to`."
+          },
+          "mau": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991,
+            "description": "Distinct active students in the 30 days ending `to`."
+          },
+          "stickiness": {
+            "description": "Average DAU over the 30 days ending `to` divided by MAU.",
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "activity": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminSeriesInput"
+            },
+            "description": "lessons_opened, lessons_completed, practice_answers, practice_solved, tests_started, tests_submitted, live_joins"
+          },
+          "totals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCountInput"
+            }
+          },
+          "notesFlashcards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCountInput"
+            },
+            "description": "From the interest counters (notes_open, flashcards_open); 0 until the web sends them."
+          },
+          "topChapters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminTopItemInput"
+            }
+          },
+          "topSubjects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminTopItemInput"
+            }
+          },
+          "streaks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCountInput"
+            }
+          }
+        },
+        "required": [
+          "range",
+          "dau",
+          "activeUsers",
+          "wau",
+          "mau",
+          "stickiness",
+          "activity",
+          "totals",
+          "notesFlashcards",
+          "topChapters",
+          "topSubjects",
+          "streaks"
+        ]
+      },
+      "AdminAnalyticsRetentionInput": {
+        "type": "object",
+        "properties": {
+          "range": {
+            "$ref": "#/components/schemas/AdminRangeInput"
+          },
+          "days": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            }
+          },
+          "cohorts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "week": {
+                  "type": "string",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                "size": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "rates": {
+                  "type": "array",
+                  "items": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  }
+                },
+                "eligible": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  }
+                },
+                "retained": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  }
+                }
+              },
+              "required": [
+                "week",
+                "size",
+                "rates",
+                "eligible",
+                "retained"
+              ]
+            }
+          }
+        },
+        "required": [
+          "range",
+          "days",
+          "cohorts"
+        ]
+      },
+      "AdminAnalyticsAiInput": {
+        "type": "object",
+        "properties": {
+          "range": {
+            "$ref": "#/components/schemas/AdminRangeInput"
+          },
+          "actionsByType": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminSeriesInput"
+            }
+          },
+          "statusTotals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCountInput"
+            }
+          },
+          "credits": {
+            "type": "object",
+            "properties": {
+              "granted": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AdminSeriesInput"
+                },
+                "description": "One series per grant reason (daily_grant, plan_topup, admin_adjustment, learning bonuses)."
+              },
+              "spent": {
+                "$ref": "#/components/schemas/AdminSeriesInput"
+              },
+              "refunded": {
+                "$ref": "#/components/schemas/AdminSeriesInput"
+              },
+              "expired": {
+                "$ref": "#/components/schemas/AdminSeriesInput"
+              },
+              "totals": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AdminLabelledCountInput"
+                }
+              }
+            },
+            "required": [
+              "granted",
+              "spent",
+              "refunded",
+              "expired",
+              "totals"
+            ]
+          },
+          "spend": {
+            "type": "object",
+            "properties": {
+              "capPaise": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "degradeAtShare": {
+                "type": "number"
+              },
+              "days": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "string",
+                      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                    },
+                    "spentPaise": {
+                      "type": "number"
+                    },
+                    "freeSpentPaise": {
+                      "type": "number"
+                    },
+                    "share": {
+                      "type": "number"
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "normal",
+                        "degraded",
+                        "paused"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "spentPaise",
+                    "freeSpentPaise",
+                    "share",
+                    "status"
+                  ]
+                }
+              },
+              "breakerDays": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991,
+                "description": "Days the spend breaker degraded or paused AI."
+              },
+              "degradedRequests": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "pausedRefusals": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991,
+                "description": "Requests refused with ai_paused (server-observed counter)."
+              }
+            },
+            "required": [
+              "capPaise",
+              "degradeAtShare",
+              "days",
+              "breakerDays",
+              "degradedRequests",
+              "pausedRefusals"
+            ]
+          },
+          "paywallShown": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCountInput"
+            }
+          },
+          "paywallTotal": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "moderationBlocks": {
+            "$ref": "#/components/schemas/AdminSeriesInput"
+          }
+        },
+        "required": [
+          "range",
+          "actionsByType",
+          "statusTotals",
+          "credits",
+          "spend",
+          "paywallShown",
+          "paywallTotal",
+          "moderationBlocks"
+        ]
+      },
+      "AdminAnalyticsRevenueInput": {
+        "type": "object",
+        "properties": {
+          "range": {
+            "$ref": "#/components/schemas/AdminRangeInput"
+          },
+          "billingEnabled": {
+            "type": "boolean"
+          },
+          "plansViews": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "checkout": {
+            "type": "object",
+            "properties": {
+              "started": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "completed": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "failed": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "startedCounter": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "completedCounter": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "started",
+              "completed",
+              "failed",
+              "startedCounter",
+              "completedCounter"
+            ]
+          },
+          "activeSubscriptions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "plan": {
+                  "type": "string"
+                },
+                "interval": {
+                  "type": "string"
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "mrrPaise": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                }
+              },
+              "required": [
+                "plan",
+                "interval",
+                "count",
+                "mrrPaise"
+              ]
+            }
+          },
+          "mrrPaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "revenue": {
+            "$ref": "#/components/schemas/AdminSeriesInput"
+          },
+          "revenueTotalPaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "refundsPaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "boardExamPass": {
+            "type": "object",
+            "properties": {
+              "sales": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "revenuePaise": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "sales",
+              "revenuePaise"
+            ]
+          },
+          "coins": {
+            "type": "object",
+            "properties": {
+              "earned": {
+                "$ref": "#/components/schemas/AdminSeriesInput"
+              },
+              "earnedTotal": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "storeViews": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "itemViews": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AdminLabelledCountInput"
+                }
+              },
+              "redemptions": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AdminLabelledCountInput"
+                }
+              }
+            },
+            "required": [
+              "earned",
+              "earnedTotal",
+              "storeViews",
+              "itemViews",
+              "redemptions"
+            ]
+          }
+        },
+        "required": [
+          "range",
+          "billingEnabled",
+          "plansViews",
+          "checkout",
+          "activeSubscriptions",
+          "mrrPaise",
+          "revenue",
+          "revenueTotalPaise",
+          "refundsPaise",
+          "boardExamPass",
+          "coins"
+        ]
+      },
+      "AdminAnalyticsInterestInput": {
+        "type": "object",
+        "properties": {
+          "range": {
+            "$ref": "#/components/schemas/AdminRangeInput"
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "event": {
+                  "type": "string",
+                  "enum": [
+                    "signup",
+                    "paywall_shown",
+                    "ai_paused",
+                    "checkout_start",
+                    "checkout_complete",
+                    "plans_view",
+                    "plan_select",
+                    "store_view",
+                    "store_item_view",
+                    "ask_ai_open",
+                    "dashboard_view",
+                    "notes_open",
+                    "flashcards_open",
+                    "signup_prompt_click",
+                    "future_builders_click"
+                  ]
+                },
+                "label": {
+                  "type": "string"
+                },
+                "source": {
+                  "type": "string",
+                  "enum": [
+                    "server",
+                    "client"
+                  ]
+                },
+                "total": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "previousTotal": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "byDimension": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AdminLabelledCountInput"
+                  }
+                },
+                "series": {
+                  "$ref": "#/components/schemas/AdminSeriesInput"
+                }
+              },
+              "required": [
+                "event",
+                "label",
+                "source",
+                "total",
+                "previousTotal",
+                "byDimension",
+                "series"
+              ]
+            }
+          }
+        },
+        "required": [
+          "range",
+          "events"
+        ]
+      },
+      "AdminAnalyticsContentInput": {
+        "type": "object",
+        "properties": {
+          "range": {
+            "$ref": "#/components/schemas/AdminRangeInput"
+          },
+          "subjects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "subject": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "chapters": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "published": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                }
+              },
+              "required": [
+                "subject",
+                "label",
+                "chapters",
+                "published"
+              ]
+            }
+          },
+          "openReports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCountInput"
+            },
+            "description": "Open \"report a mistake\" items by age."
+          },
+          "openReportsByType": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCountInput"
+            }
+          },
+          "reportsInRange": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "fixedInRange": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "range",
+          "subjects",
+          "openReports",
+          "openReportsByType",
+          "reportsInRange",
+          "fixedInRange"
+        ]
+      },
+      "AdminUserRowInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "maskedEmail": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "maskedPhone": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "email",
+              "phone",
+              "google"
+            ]
+          },
+          "role": {
+            "type": "string"
+          },
+          "board": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "classLevel": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "consent": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          }
+        },
+        "required": [
+          "id",
+          "maskedEmail",
+          "maskedPhone",
+          "method",
+          "role",
+          "board",
+          "classLevel",
+          "consent",
+          "createdAt"
+        ]
+      },
+      "AdminUsersPageInput": {
+        "type": "object",
+        "properties": {
+          "users": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminUserRowInput"
+            }
+          },
+          "nextCursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "users",
+          "nextCursor"
+        ]
+      },
+      "AdminUserSearchRequestInput": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 254
+          }
+        },
+        "required": [
+          "email"
+        ],
+        "additionalProperties": false
+      },
+      "AdminUserSearchResultInput": {
+        "type": "object",
+        "properties": {
+          "users": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminUserRowInput"
+            }
+          }
+        },
+        "required": [
+          "users"
+        ]
+      },
+      "AdminUserRevealInput": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "email": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "audited": {
+            "type": "boolean",
+            "const": true
+          }
+        },
+        "required": [
+          "id",
+          "email",
+          "audited"
+        ]
+      },
+      "AdminUserSummaryInput": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "$ref": "#/components/schemas/AdminUserRowInput"
+          },
+          "signInMethods": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "email",
+                "phone",
+                "google"
+              ]
+            }
+          },
+          "consent": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ConsentStateInput"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "ageBand": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "adult",
+                  "minor"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "hasSchool": {
+            "type": "boolean"
+          },
+          "activity": {
+            "type": "object",
+            "properties": {
+              "lessonsOpened": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "lessonsCompleted": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "practiceAnswers": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "practiceSolved": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "testsStarted": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "testsSubmitted": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "activeDays30": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "lastActiveDay": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "currentStreak": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "totalXp": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "lessonsOpened",
+              "lessonsCompleted",
+              "practiceAnswers",
+              "practiceSolved",
+              "testsStarted",
+              "testsSubmitted",
+              "activeDays30",
+              "lastActiveDay",
+              "currentStreak",
+              "totalXp"
+            ]
+          },
+          "ai": {
+            "type": "object",
+            "properties": {
+              "requests30": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "creditsSpent30": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "creditsGranted30": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "requests30",
+              "creditsSpent30",
+              "creditsGranted30"
+            ]
+          },
+          "coins": {
+            "type": "object",
+            "properties": {
+              "balance": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "earned": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "balance",
+              "earned"
+            ]
+          },
+          "subscription": {
+            "type": "object",
+            "properties": {
+              "plan": {
+                "type": "string"
+              },
+              "status": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "validUntil": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "plan",
+              "status",
+              "validUntil"
+            ]
+          },
+          "audited": {
+            "type": "boolean",
+            "const": true
+          }
+        },
+        "required": [
+          "user",
+          "signInMethods",
+          "consent",
+          "ageBand",
+          "hasSchool",
+          "activity",
+          "ai",
+          "coins",
+          "subscription",
+          "audited"
+        ],
+        "description": "Counts only: never AI chats, uploads, answers or free text."
+      },
+      "InterestEventsRequestInput": {
+        "type": "object",
+        "properties": {
+          "events": {
+            "minItems": 1,
+            "maxItems": 10,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 2,
+                  "maxLength": 64,
+                  "pattern": "^[a-z][a-z0-9_]+$"
+                },
+                "dimension": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64,
+                  "pattern": "^[a-z0-9][a-z0-9_-]*$"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "events"
+        ],
+        "additionalProperties": false
+      },
+      "InterestEventsAcceptedInput": {
+        "type": "object",
+        "properties": {
+          "accepted": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "accepted"
+        ]
+      },
       "AdminContentReportsInput": {
         "type": "object",
         "properties": {
@@ -18624,6 +19997,1415 @@
         ],
         "additionalProperties": false
       },
+      "AdminRange": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "to": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "days": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "previousFrom": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "previousTo": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "timezone": {
+            "type": "string",
+            "const": "Asia/Kolkata"
+          },
+          "generatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          }
+        },
+        "required": [
+          "from",
+          "to",
+          "days",
+          "previousFrom",
+          "previousTo",
+          "timezone",
+          "generatedAt"
+        ],
+        "additionalProperties": false
+      },
+      "AdminDayCount": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "value": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "date",
+          "value"
+        ],
+        "additionalProperties": false
+      },
+      "AdminSeries": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "points": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminDayCount"
+            }
+          }
+        },
+        "required": [
+          "key",
+          "label",
+          "points"
+        ],
+        "additionalProperties": false,
+        "description": "A daily series over the range; every day is present (zeros included)."
+      },
+      "AdminLabelledCount": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "key",
+          "label",
+          "value"
+        ],
+        "additionalProperties": false
+      },
+      "AdminKpi": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "value": {
+            "type": "number"
+          },
+          "previous": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "unit": {
+            "type": "string",
+            "enum": [
+              "count",
+              "paise",
+              "ratio"
+            ]
+          }
+        },
+        "required": [
+          "key",
+          "label",
+          "value",
+          "previous",
+          "unit"
+        ],
+        "additionalProperties": false
+      },
+      "AdminMe": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "reviewer",
+              "admin"
+            ]
+          },
+          "capabilities": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "superadmin"
+              ]
+            }
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "analytics",
+                "users",
+                "reports"
+              ]
+            }
+          }
+        },
+        "required": [
+          "userId",
+          "role",
+          "capabilities",
+          "sections"
+        ],
+        "additionalProperties": false
+      },
+      "AdminAnalyticsOverview": {
+        "type": "object",
+        "properties": {
+          "range": {
+            "$ref": "#/components/schemas/AdminRange"
+          },
+          "kpis": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminKpi"
+            }
+          },
+          "signups": {
+            "$ref": "#/components/schemas/AdminSeries"
+          },
+          "dau": {
+            "$ref": "#/components/schemas/AdminSeries"
+          }
+        },
+        "required": [
+          "range",
+          "kpis",
+          "signups",
+          "dau"
+        ],
+        "additionalProperties": false
+      },
+      "AdminAnalyticsGrowth": {
+        "type": "object",
+        "properties": {
+          "range": {
+            "$ref": "#/components/schemas/AdminRange"
+          },
+          "totalUsers": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "signupsByMethod": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminSeries"
+            },
+            "description": "Per day, one series per sign-in method (inferred from the account: Google identity created with it, phone-only placeholder email, else email)."
+          },
+          "signupsByWeek": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "week": {
+                  "type": "string",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                "email": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "phone": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "google": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "total": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                }
+              },
+              "required": [
+                "week",
+                "email",
+                "phone",
+                "google",
+                "total"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "consentFunnel": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCount"
+            }
+          },
+          "boards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCount"
+            }
+          },
+          "classes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCount"
+            }
+          },
+          "schoolsAdded": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "guestMerges": {
+            "$ref": "#/components/schemas/AdminSeries"
+          },
+          "signupCounter": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCount"
+            },
+            "description": "Server-observed sign-up counter by method (exact, from the day counters started)."
+          }
+        },
+        "required": [
+          "range",
+          "totalUsers",
+          "signupsByMethod",
+          "signupsByWeek",
+          "consentFunnel",
+          "boards",
+          "classes",
+          "schoolsAdded",
+          "guestMerges",
+          "signupCounter"
+        ],
+        "additionalProperties": false
+      },
+      "AdminTopItem": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "practiceAnswers": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "lessonsOpened": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "total": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "key",
+          "label",
+          "practiceAnswers",
+          "lessonsOpened",
+          "total"
+        ],
+        "additionalProperties": false
+      },
+      "AdminAnalyticsEngagement": {
+        "type": "object",
+        "properties": {
+          "range": {
+            "$ref": "#/components/schemas/AdminRange"
+          },
+          "dau": {
+            "$ref": "#/components/schemas/AdminSeries"
+          },
+          "activeUsers": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991,
+            "description": "Distinct students with any learning activity in the range."
+          },
+          "wau": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991,
+            "description": "Distinct active students in the 7 days ending `to`."
+          },
+          "mau": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991,
+            "description": "Distinct active students in the 30 days ending `to`."
+          },
+          "stickiness": {
+            "description": "Average DAU over the 30 days ending `to` divided by MAU.",
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "activity": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminSeries"
+            },
+            "description": "lessons_opened, lessons_completed, practice_answers, practice_solved, tests_started, tests_submitted, live_joins"
+          },
+          "totals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCount"
+            }
+          },
+          "notesFlashcards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCount"
+            },
+            "description": "From the interest counters (notes_open, flashcards_open); 0 until the web sends them."
+          },
+          "topChapters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminTopItem"
+            }
+          },
+          "topSubjects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminTopItem"
+            }
+          },
+          "streaks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCount"
+            }
+          }
+        },
+        "required": [
+          "range",
+          "dau",
+          "activeUsers",
+          "wau",
+          "mau",
+          "stickiness",
+          "activity",
+          "totals",
+          "notesFlashcards",
+          "topChapters",
+          "topSubjects",
+          "streaks"
+        ],
+        "additionalProperties": false
+      },
+      "AdminAnalyticsRetention": {
+        "type": "object",
+        "properties": {
+          "range": {
+            "$ref": "#/components/schemas/AdminRange"
+          },
+          "days": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            }
+          },
+          "cohorts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "week": {
+                  "type": "string",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                "size": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "rates": {
+                  "type": "array",
+                  "items": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  }
+                },
+                "eligible": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  }
+                },
+                "retained": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": -9007199254740991,
+                    "maximum": 9007199254740991
+                  }
+                }
+              },
+              "required": [
+                "week",
+                "size",
+                "rates",
+                "eligible",
+                "retained"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "range",
+          "days",
+          "cohorts"
+        ],
+        "additionalProperties": false
+      },
+      "AdminAnalyticsAi": {
+        "type": "object",
+        "properties": {
+          "range": {
+            "$ref": "#/components/schemas/AdminRange"
+          },
+          "actionsByType": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminSeries"
+            }
+          },
+          "statusTotals": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCount"
+            }
+          },
+          "credits": {
+            "type": "object",
+            "properties": {
+              "granted": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AdminSeries"
+                },
+                "description": "One series per grant reason (daily_grant, plan_topup, admin_adjustment, learning bonuses)."
+              },
+              "spent": {
+                "$ref": "#/components/schemas/AdminSeries"
+              },
+              "refunded": {
+                "$ref": "#/components/schemas/AdminSeries"
+              },
+              "expired": {
+                "$ref": "#/components/schemas/AdminSeries"
+              },
+              "totals": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AdminLabelledCount"
+                }
+              }
+            },
+            "required": [
+              "granted",
+              "spent",
+              "refunded",
+              "expired",
+              "totals"
+            ],
+            "additionalProperties": false
+          },
+          "spend": {
+            "type": "object",
+            "properties": {
+              "capPaise": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "degradeAtShare": {
+                "type": "number"
+              },
+              "days": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "string",
+                      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                    },
+                    "spentPaise": {
+                      "type": "number"
+                    },
+                    "freeSpentPaise": {
+                      "type": "number"
+                    },
+                    "share": {
+                      "type": "number"
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "normal",
+                        "degraded",
+                        "paused"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "date",
+                    "spentPaise",
+                    "freeSpentPaise",
+                    "share",
+                    "status"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "breakerDays": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991,
+                "description": "Days the spend breaker degraded or paused AI."
+              },
+              "degradedRequests": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "pausedRefusals": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991,
+                "description": "Requests refused with ai_paused (server-observed counter)."
+              }
+            },
+            "required": [
+              "capPaise",
+              "degradeAtShare",
+              "days",
+              "breakerDays",
+              "degradedRequests",
+              "pausedRefusals"
+            ],
+            "additionalProperties": false
+          },
+          "paywallShown": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCount"
+            }
+          },
+          "paywallTotal": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "moderationBlocks": {
+            "$ref": "#/components/schemas/AdminSeries"
+          }
+        },
+        "required": [
+          "range",
+          "actionsByType",
+          "statusTotals",
+          "credits",
+          "spend",
+          "paywallShown",
+          "paywallTotal",
+          "moderationBlocks"
+        ],
+        "additionalProperties": false
+      },
+      "AdminAnalyticsRevenue": {
+        "type": "object",
+        "properties": {
+          "range": {
+            "$ref": "#/components/schemas/AdminRange"
+          },
+          "billingEnabled": {
+            "type": "boolean"
+          },
+          "plansViews": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "checkout": {
+            "type": "object",
+            "properties": {
+              "started": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "completed": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "failed": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "startedCounter": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "completedCounter": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "started",
+              "completed",
+              "failed",
+              "startedCounter",
+              "completedCounter"
+            ],
+            "additionalProperties": false
+          },
+          "activeSubscriptions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "plan": {
+                  "type": "string"
+                },
+                "interval": {
+                  "type": "string"
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "mrrPaise": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                }
+              },
+              "required": [
+                "plan",
+                "interval",
+                "count",
+                "mrrPaise"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "mrrPaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "revenue": {
+            "$ref": "#/components/schemas/AdminSeries"
+          },
+          "revenueTotalPaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "refundsPaise": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "boardExamPass": {
+            "type": "object",
+            "properties": {
+              "sales": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "revenuePaise": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "sales",
+              "revenuePaise"
+            ],
+            "additionalProperties": false
+          },
+          "coins": {
+            "type": "object",
+            "properties": {
+              "earned": {
+                "$ref": "#/components/schemas/AdminSeries"
+              },
+              "earnedTotal": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "storeViews": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "itemViews": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AdminLabelledCount"
+                }
+              },
+              "redemptions": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AdminLabelledCount"
+                }
+              }
+            },
+            "required": [
+              "earned",
+              "earnedTotal",
+              "storeViews",
+              "itemViews",
+              "redemptions"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "range",
+          "billingEnabled",
+          "plansViews",
+          "checkout",
+          "activeSubscriptions",
+          "mrrPaise",
+          "revenue",
+          "revenueTotalPaise",
+          "refundsPaise",
+          "boardExamPass",
+          "coins"
+        ],
+        "additionalProperties": false
+      },
+      "AdminAnalyticsInterest": {
+        "type": "object",
+        "properties": {
+          "range": {
+            "$ref": "#/components/schemas/AdminRange"
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "event": {
+                  "type": "string",
+                  "enum": [
+                    "signup",
+                    "paywall_shown",
+                    "ai_paused",
+                    "checkout_start",
+                    "checkout_complete",
+                    "plans_view",
+                    "plan_select",
+                    "store_view",
+                    "store_item_view",
+                    "ask_ai_open",
+                    "dashboard_view",
+                    "notes_open",
+                    "flashcards_open",
+                    "signup_prompt_click",
+                    "future_builders_click"
+                  ]
+                },
+                "label": {
+                  "type": "string"
+                },
+                "source": {
+                  "type": "string",
+                  "enum": [
+                    "server",
+                    "client"
+                  ]
+                },
+                "total": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "previousTotal": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "byDimension": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AdminLabelledCount"
+                  }
+                },
+                "series": {
+                  "$ref": "#/components/schemas/AdminSeries"
+                }
+              },
+              "required": [
+                "event",
+                "label",
+                "source",
+                "total",
+                "previousTotal",
+                "byDimension",
+                "series"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "range",
+          "events"
+        ],
+        "additionalProperties": false
+      },
+      "AdminAnalyticsContent": {
+        "type": "object",
+        "properties": {
+          "range": {
+            "$ref": "#/components/schemas/AdminRange"
+          },
+          "subjects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "subject": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                },
+                "chapters": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                },
+                "published": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                }
+              },
+              "required": [
+                "subject",
+                "label",
+                "chapters",
+                "published"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "openReports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCount"
+            },
+            "description": "Open \"report a mistake\" items by age."
+          },
+          "openReportsByType": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminLabelledCount"
+            }
+          },
+          "reportsInRange": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "fixedInRange": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "range",
+          "subjects",
+          "openReports",
+          "openReportsByType",
+          "reportsInRange",
+          "fixedInRange"
+        ],
+        "additionalProperties": false
+      },
+      "AdminUserRow": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "maskedEmail": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "maskedPhone": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "email",
+              "phone",
+              "google"
+            ]
+          },
+          "role": {
+            "type": "string"
+          },
+          "board": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "classLevel": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "consent": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+          }
+        },
+        "required": [
+          "id",
+          "maskedEmail",
+          "maskedPhone",
+          "method",
+          "role",
+          "board",
+          "classLevel",
+          "consent",
+          "createdAt"
+        ],
+        "additionalProperties": false
+      },
+      "AdminUsersPage": {
+        "type": "object",
+        "properties": {
+          "users": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminUserRow"
+            }
+          },
+          "nextCursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "users",
+          "nextCursor"
+        ],
+        "additionalProperties": false
+      },
+      "AdminUserSearchRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 254
+          }
+        },
+        "required": [
+          "email"
+        ],
+        "additionalProperties": false
+      },
+      "AdminUserSearchResult": {
+        "type": "object",
+        "properties": {
+          "users": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdminUserRow"
+            }
+          }
+        },
+        "required": [
+          "users"
+        ],
+        "additionalProperties": false
+      },
+      "AdminUserReveal": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+          },
+          "email": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "audited": {
+            "type": "boolean",
+            "const": true
+          }
+        },
+        "required": [
+          "id",
+          "email",
+          "audited"
+        ],
+        "additionalProperties": false
+      },
+      "AdminUserSummary": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "$ref": "#/components/schemas/AdminUserRow"
+          },
+          "signInMethods": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "email",
+                "phone",
+                "google"
+              ]
+            }
+          },
+          "consent": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ConsentState"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "ageBand": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "adult",
+                  "minor"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "hasSchool": {
+            "type": "boolean"
+          },
+          "activity": {
+            "type": "object",
+            "properties": {
+              "lessonsOpened": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "lessonsCompleted": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "practiceAnswers": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "practiceSolved": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "testsStarted": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "testsSubmitted": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "activeDays30": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "lastActiveDay": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "currentStreak": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "totalXp": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "lessonsOpened",
+              "lessonsCompleted",
+              "practiceAnswers",
+              "practiceSolved",
+              "testsStarted",
+              "testsSubmitted",
+              "activeDays30",
+              "lastActiveDay",
+              "currentStreak",
+              "totalXp"
+            ],
+            "additionalProperties": false
+          },
+          "ai": {
+            "type": "object",
+            "properties": {
+              "requests30": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "creditsSpent30": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "creditsGranted30": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "requests30",
+              "creditsSpent30",
+              "creditsGranted30"
+            ],
+            "additionalProperties": false
+          },
+          "coins": {
+            "type": "object",
+            "properties": {
+              "balance": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              },
+              "earned": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "balance",
+              "earned"
+            ],
+            "additionalProperties": false
+          },
+          "subscription": {
+            "type": "object",
+            "properties": {
+              "plan": {
+                "type": "string"
+              },
+              "status": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "validUntil": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "plan",
+              "status",
+              "validUntil"
+            ],
+            "additionalProperties": false
+          },
+          "audited": {
+            "type": "boolean",
+            "const": true
+          }
+        },
+        "required": [
+          "user",
+          "signInMethods",
+          "consent",
+          "ageBand",
+          "hasSchool",
+          "activity",
+          "ai",
+          "coins",
+          "subscription",
+          "audited"
+        ],
+        "additionalProperties": false,
+        "description": "Counts only: never AI chats, uploads, answers or free text."
+      },
+      "InterestEventsRequest": {
+        "type": "object",
+        "properties": {
+          "events": {
+            "minItems": 1,
+            "maxItems": 10,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 2,
+                  "maxLength": 64,
+                  "pattern": "^[a-z][a-z0-9_]+$"
+                },
+                "dimension": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 64,
+                  "pattern": "^[a-z0-9][a-z0-9_-]*$"
+                }
+              },
+              "required": [
+                "name"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "events"
+        ],
+        "additionalProperties": false
+      },
+      "InterestEventsAccepted": {
+        "type": "object",
+        "properties": {
+          "accepted": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": [
+          "accepted"
+        ],
+        "additionalProperties": false
+      },
       "AdminContentReports": {
         "type": "object",
         "properties": {
@@ -26657,6 +29439,46 @@
         }
       }
     },
+    "/v1/admin/me": {
+      "get": {
+        "summary": "Staff role, capabilities and the admin sections this account may open",
+        "tags": [
+          "admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminMe"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/admin/reports": {
       "get": {
         "summary": "Content reports queue (staff, two-step verified session)",
@@ -26708,6 +29530,771 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/AdminContentReports"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/analytics/overview": {
+      "get": {
+        "summary": "KPI tiles with the previous period, sign-ups and daily active students (superadmin, two-step verified session; IST days, at most 180)",
+        "tags": [
+          "admin"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "in": "query",
+            "name": "from",
+            "required": false
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "in": "query",
+            "name": "to",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminAnalyticsOverview"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/analytics/growth": {
+      "get": {
+        "summary": "Sign-ups by method and week, total students, consent funnel, boards/classes, schools, guest merges (superadmin, two-step verified session; IST days, at most 180)",
+        "tags": [
+          "admin"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "in": "query",
+            "name": "from",
+            "required": false
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "in": "query",
+            "name": "to",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminAnalyticsGrowth"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/analytics/engagement": {
+      "get": {
+        "summary": "DAU/WAU/MAU, stickiness, learning activity, top chapters and subjects, streaks (superadmin, two-step verified session; IST days, at most 180)",
+        "tags": [
+          "admin"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "in": "query",
+            "name": "from",
+            "required": false
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "in": "query",
+            "name": "to",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminAnalyticsEngagement"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/analytics/retention": {
+      "get": {
+        "summary": "D1/D7/D30 retention by sign-up week (superadmin, two-step verified session; IST days, at most 180)",
+        "tags": [
+          "admin"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "in": "query",
+            "name": "from",
+            "required": false
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "in": "query",
+            "name": "to",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminAnalyticsRetention"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/analytics/ai": {
+      "get": {
+        "summary": "AI actions, credits granted/spent/refunded, spend vs the daily cap, breaker, paywall, moderation (superadmin, two-step verified session; IST days, at most 180)",
+        "tags": [
+          "admin"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "in": "query",
+            "name": "from",
+            "required": false
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "in": "query",
+            "name": "to",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminAnalyticsAi"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/analytics/revenue": {
+      "get": {
+        "summary": "Plans views, checkout funnel, subscriptions, MRR, revenue, refunds, Board Exam Pass, coins (superadmin, two-step verified session; IST days, at most 180)",
+        "tags": [
+          "admin"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "in": "query",
+            "name": "from",
+            "required": false
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "in": "query",
+            "name": "to",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminAnalyticsRevenue"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/analytics/interest": {
+      "get": {
+        "summary": "Product-interest counters (aggregate, no user link) (superadmin, two-step verified session; IST days, at most 180)",
+        "tags": [
+          "admin"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "in": "query",
+            "name": "from",
+            "required": false
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "in": "query",
+            "name": "to",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminAnalyticsInterest"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/analytics/content": {
+      "get": {
+        "summary": "Published chapters per subject and open \"report a mistake\" items by age (superadmin, two-step verified session; IST days, at most 180)",
+        "tags": [
+          "admin"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "in": "query",
+            "name": "from",
+            "required": false
+          },
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "in": "query",
+            "name": "to",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminAnalyticsContent"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/users": {
+      "get": {
+        "summary": "Recent sign-ups, newest first: masked email/phone, method, board/class, consent (no names)",
+        "tags": [
+          "admin"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "default": 25,
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100
+            },
+            "in": "query",
+            "name": "limit",
+            "required": false
+          },
+          {
+            "schema": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "in": "query",
+            "name": "cursor",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminUsersPage"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/users/search": {
+      "post": {
+        "summary": "Find an account by its exact email (support). Audited; the result stays masked.",
+        "tags": [
+          "admin"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminUserSearchRequestInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminUserSearchResult"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/users/{id}/reveal": {
+      "post": {
+        "summary": "Reveal an account's full email (audited)",
+        "tags": [
+          "admin"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminUserReveal"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/admin/users/{id}/summary": {
+      "get": {
+        "summary": "An account's activity, AI, coins and plan as counts only (audited; never chats or uploads)",
+        "tags": [
+          "admin"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "pattern": "^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$"
+            },
+            "in": "path",
+            "name": "id",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdminUserSummary"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "5XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/events": {
+      "post": {
+        "summary": "Count allowlisted product-interest events (aggregate counters; no user, session or IP stored). Sent only after analytics consent.",
+        "tags": [
+          "analytics"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InterestEventsRequestInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InterestEventsAccepted"
                 }
               }
             }
