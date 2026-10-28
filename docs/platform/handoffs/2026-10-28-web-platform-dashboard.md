@@ -96,7 +96,7 @@ Manual check:
 | `PW_WEB_PORT=3340 PW_FLAG_OFF_PORT=3341 npm run test:platform-web -w @soyl/e2e` | flag ON **99 passed**, flag OFF **42 passed**, `[platform-web] PASSED`. JS budget: every page ≤ 200 KB gz. The heaviest are test result 199.1, test player 198.8, lesson 197.7, me 196.1, dashboard 191.8, learn 187.3 and tests 181.6. |
 | `npm run marketing:regression -w @soyl/e2e` | 48 passed: "no visual diffs, all routes as expected, Lighthouse within 5 points" (mobile performance 92–95, desktop 100) |
 | `npm run marketing:diff -w @soyl/e2e -- --base origin/platform/main` | 48 passed: "HEAD renders the marketing site identically to its merge-base" |
-| gitleaks on `origin/platform/main..HEAD` | GITLEAKS |
+| gitleaks on `origin/platform/main..HEAD` | "no leaks found" |
 
 Earlier runs, for the record:
 - The first full e2e run had 7 failures. Two were caused by this work: the new dashboard spec signed in twice on the default client IP and hit the 10-an-hour per-IP email OTP limit (AUTH-5) for later specs. Those sign-ins now use their own IPs. The other five were in `tests.spec`: the local API stopped answering ("could not reach the server") late in that 27-minute run on the loaded 8 GB machine. All five passed in the next two full runs.
