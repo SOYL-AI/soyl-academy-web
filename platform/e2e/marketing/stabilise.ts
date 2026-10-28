@@ -2,9 +2,12 @@ import type { Page } from '@playwright/test';
 
 /**
  * Everything that makes a marketing screenshot deterministic. The site uses no animation
- * library (no GSAP, Lenis or Framer Motion; checked in REPO_MAP section 2), only short CSS
- * transitions, one keyframe (`.sim-pop`), a client-side cookie bar, a dismissible banner,
- * lazy-loaded next/image images and (optionally) autoplaying <video> loops.
+ * library (no GSAP, Lenis or Framer Motion; checked in REPO_MAP section 2), only CSS
+ * transitions and keyframes, scroll reveals (RevealObserver, off under the reducedMotion
+ * the config sets), a client-side cookie bar, a dismissible banner, lazy-loaded next/image
+ * images, (optionally) autoplaying <video> loops, and `content-visibility: auto` on every
+ * section after the first (globals.css). Unrendered sections keep a 900px placeholder and
+ * paint blank in a full-page shot, depending on timing, so FREEZE_CSS renders them all.
  */
 
 /** Fixed client clock. Server-rendered dates come from the build (see REPO_MAP section 9.4). */
@@ -18,6 +21,7 @@ const FREEZE_CSS = `
   transition: none !important;
   caret-color: transparent !important;
   scroll-behavior: auto !important;
+  content-visibility: visible !important;
 }
 `;
 
