@@ -9,7 +9,7 @@ import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { Icon } from '@/components/platform/ui/kit/Icon';
 import type { LessonLinks } from './SlidePlayer';
-import type { CompletionSummary } from './player-logic';
+import { completionSummary, type CheckOutcome } from './player-logic';
 import s from './lesson.module.css';
 
 /** Confetti pieces: direction, spin and brand colour (decoration only). */
@@ -30,7 +30,12 @@ const PIECES: { dx: number; dy: number; r: number; c: string; round?: boolean }[
 
 export interface CompletionScreenProps {
   heading: string;
-  summary: CompletionSummary;
+  /** Slides in the part. */
+  slides: number;
+  /** Each slide's check question (null for other slides). */
+  checkIds: (string | null | undefined)[];
+  /** This visit's answers to the checks. */
+  checks: Readonly<Record<string, CheckOutcome | undefined>>;
   /** The completion is stored (account or this device). */
   saved: boolean;
   isMember: boolean;
@@ -40,7 +45,12 @@ export interface CompletionScreenProps {
   onRestart: () => void;
 }
 
-export function CompletionScreen({ heading, summary, saved, isMember, links, primaryHref, onRestart }: CompletionScreenProps) {
+export function CompletionScreen({ heading, slides, checkIds, checks, saved, isMember, links, primaryHref, onRestart }: CompletionScreenProps) {
+  const summary = completionSummary(
+    slides,
+    checkIds.filter((x): x is string => !!x),
+    checks,
+  );
   const others: { href: string; label: string }[] = [];
   if (links.practice && links.practice !== primaryHref) others.push({ href: links.practice, label: 'Practise questions' });
   if (links.flashcards) others.push({ href: links.flashcards, label: 'Flashcards' });

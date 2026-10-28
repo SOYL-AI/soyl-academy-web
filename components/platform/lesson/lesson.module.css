@@ -531,3 +531,15 @@
   outline: none;
   box-shadow: var(--p-focus-ring);
 }
+
+/* Space held for a check question while its chunk loads (normally already loaded two slides ahead). */
+.checkLoading {
+  min-height: 14rem;
+  border-radius: var(--p-radius-md);
+  background: var(--p-surface-2);
+}
+.readAlong:focus-visible {
+  outline: none;
+  box-shadow: var(--p-focus-ring);
+  border-radius: var(--p-radius-sm);
+}

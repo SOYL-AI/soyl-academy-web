@@ -2,21 +2,22 @@
 
 /**
  * The question on a lesson `check` slide, answered inline (POST /v1/practice/answers). Its content
- * (`slots`) was rendered on the server; only the interaction is client code. The result survives the
- * slide leaving the DOM (the player keeps only nearby slides mounted) through CheckResultsContext.
+ * (`slots`) was rendered on the server; the interactive card is a lazy chunk (CheckQuestionCard.tsx), so the
+ * lesson's first-load JS does not carry the question engine. The result survives the slide leaving the DOM (the
+ * player keeps only nearby slides mounted) through CheckResultsContext, which also tells the player.
  */
-import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { createContext, lazy, Suspense, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import type { PracticeAnswerResult, StudentQuestion } from '@/platform/shared/api-client';
-import { QuestionCard } from '@/components/platform/ui/question/QuestionCard';
 import type { QuestionSlots } from '@/components/platform/ui/question/slots';
-import { ReportMistake } from '../report/ReportMistake';
-import { usePracticeAnswer } from '../practice/usePracticeAnswer';
+import s from './lesson.module.css';
 
-interface Results {
+const CheckQuestionCard = lazy(() => import('./CheckQuestionCard').then((m) => ({ default: m.CheckQuestionCard })));
+
+export interface CheckResults {
   get: (questionId: string) => PracticeAnswerResult | undefined;
   set: (questionId: string, result: PracticeAnswerResult) => void;
 }
-const CheckResultsContext = createContext<Results | null>(null);
+export const CheckResultsContext = createContext<CheckResults | null>(null);
 
 /** Keeps check results for the player's lifetime; `onResult` tells the player (bottom-bar Check, end-of-part summary). */
 export function CheckResultsProvider({ children, onResult }: { children: ReactNode; onResult?: (questionId: string, result: PracticeAnswerResult) => void }) {
@@ -25,7 +26,7 @@ export function CheckResultsProvider({ children, onResult }: { children: ReactNo
   useEffect(() => {
     onResultRef.current = onResult;
   });
-  const value = useMemo<Results>(
+  const value = useMemo<CheckResults>(
     () => ({
       get: (id) => results.get(id),
       set: (id, r) => {
@@ -38,23 +39,10 @@ export function CheckResultsProvider({ children, onResult }: { children: ReactNo
   return <CheckResultsContext.Provider value={value}>{children}</CheckResultsContext.Provider>;
 }
 
-export function CheckQuestion({ chapterId, question, slots, lang }: { chapterId: string; question: StudentQuestion; slots: QuestionSlots; lang?: string }) {
-  const results = useContext(CheckResultsContext);
-  const practice = usePracticeAnswer(chapterId);
+export function CheckQuestion(props: { chapterId: string; question: StudentQuestion; slots: QuestionSlots; lang?: string }) {
   return (
-    <QuestionCard
-      question={question}
-      slots={slots}
-      lang={lang}
-      compact
-      headingLevel="h3"
-      initialResult={results?.get(question.id) ?? null}
-      submit={(response) => practice.submit(question, response)}
-      onAnswered={(r) => results?.set(question.id, r)}
-      selfAssess={practice.selfAssess}
-      onLogin={practice.onLogin}
-      describeError={practice.describeError}
-      actions={<ReportMistake target={{ chapterId, contentType: 'question', questionId: question.id }} what="this question" compact />}
-    />
+    <Suspense fallback={<div className={s.checkLoading} aria-hidden="true" />}>
+      <CheckQuestionCard {...props} />
+    </Suspense>
   );
 }

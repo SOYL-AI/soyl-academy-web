@@ -36,7 +36,6 @@ import { CheckResultsProvider } from './CheckQuestion';
 import { DotsIcon, useFocusTop, usePopover } from './focus';
 import {
   applyNav,
-  completionSummary,
   isEdgeStart,
   isInteractiveTarget,
   keyAction,
@@ -441,11 +440,6 @@ export function SlidePlayer({ chapterId, part, firstPart, slides, meta, lang, li
     setMode(m);
   };
 
-  const summary = completionSummary(
-    total,
-    meta.map((m) => m.checkQuestionId).filter((x): x is string => !!x),
-    checks,
-  );
   const primary = links.nextPart
     ? { href: links.nextPart.href, label: `Next: ${links.nextPart.title}` }
     : links.practice
@@ -568,7 +562,9 @@ export function SlidePlayer({ chapterId, part, firstPart, slides, meta, lang, li
               <Suspense fallback={<div className={s.doneLoading} aria-hidden="true" />}>
                 <CompletionScreen
                   heading={partLabel ? `Part ${partIndex + 1} complete` : 'Lesson complete'}
-                  summary={summary}
+                  slides={total}
+                  checkIds={meta.map((m) => m.checkQuestionId)}
+                  checks={checks}
                   saved={completed}
                   isMember={isMember}
                   links={links}

@@ -53,7 +53,8 @@ export function ListenPanel({ narration, lang, hasAudio, playing, time, duration
           Auto-play next slide
         </label>
       </div>
-      <div className={s.readAlong} lang={lang}>
+      {/* A short scroll area (long narration): focusable so keyboard users can scroll it (axe scrollable-region-focusable). */}
+      <div className={s.readAlong} lang={lang} tabIndex={0} role="group" aria-label="Narration text">
         <ReadAlong text={narration} highlight={word !== null ? { word } : null} lang={lang} />
       </div>
     </section>
