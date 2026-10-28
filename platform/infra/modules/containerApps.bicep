@@ -27,9 +27,15 @@ param migratorIdentity object
 @description('Plain (non-secret) environment variables shared by api and worker.')
 param commonEnv array
 
-@description('Key Vault secret references: [{ secretName, envName, apps: [api|worker] }]. Only listed when the secrets exist (SOYL_KV_SECRET_REFS).')
+@description('Key Vault secret references: [{ secretName, envName, apps: [api|worker|billing] }]. Only listed when the secrets exist (SOYL_KV_SECRET_REFS; the Razorpay ones only with deployBilling).')
 param secretRefs array
 param keyVaultUri string
+
+@description('Create the billing operator job caj-soyl-billing-<env> (Razorpay plan sync, reconcile, resync, replay; runbooks/billing-go-live.md). Only when billing is wired (main.bicep billingWired).')
+param deployBillingJob bool
+
+@description('Plain billing env vars (RAZORPAY_PROVIDER) for api, worker and the billing job; appended last so existing env entries keep their positions. Empty while billing is not wired.')
+param billingEnv array
 
 param apiCpu string
 param apiMemory string
@@ -63,6 +69,7 @@ var migratePlaceholder = empty(migrateImage)
 
 var apiSecretRefs = filter(secretRefs, s => contains(s.apps, 'api'))
 var workerSecretRefs = filter(secretRefs, s => contains(s.apps, 'worker'))
+var billingSecretRefs = filter(secretRefs, s => contains(s.apps, 'billing'))
 
 resource cae 'Microsoft.App/managedEnvironments@2025-01-01' = {
   name: 'cae-soyl-${env}'
@@ -148,7 +155,8 @@ var apiEnv = concat(
   map(apiSecretRefs, s => {
     name: s.envName
     secretRef: s.secretName
-  })
+  }),
+  billingEnv
 )
 
 var workerEnv = concat(
@@ -186,7 +194,8 @@ var workerEnv = concat(
   map(workerSecretRefs, s => {
     name: s.envName
     secretRef: s.secretName
-  })
+  }),
+  billingEnv
 )
 
 resource api 'Microsoft.App/containerApps@2025-01-01' = {
@@ -541,6 +550,126 @@ resource release 'Microsoft.App/jobs@2025-01-01' = {
   ]
 }
 
+// Billing operator job (ADR-016, runbooks/billing-go-live.md): the billing CLI from the migrations image
+// (`migrate-entrypoint.mjs billing <command>`; the entrypoint skips the migrator bootstrap in this mode).
+// It runs as the WORKER identity, which already reads the Razorpay secrets (reconciliation) and is
+// soyl_app in the database (plans, orders, subscriptions, audit_log), so no new role assignment.
+// Key Vault is private, so this is the only way to reach the live Razorpay account with the platform's
+// keys. Default arguments are the safe dry run; a real run overrides them per execution:
+//   az containerapp job start -g <rg> -n caj-soyl-billing-<env> --image <migrate image> --container-name billing \
+//     --args "/app/migrate-entrypoint.mjs" "billing" "sync-plans"
+var deployBillingJobNow = deployBillingJob && !migratePlaceholder
+var billingJobName = 'caj-soyl-billing-${env}'
+var billingJobEnv = concat(
+  [
+    {
+      name: 'APP_ENV'
+      value: env
+    }
+    {
+      name: 'NODE_ENV'
+      value: 'production'
+    }
+    {
+      name: 'AZURE_CLIENT_ID'
+      value: workerIdentity.clientId
+    }
+    {
+      name: 'DATABASE_AUTH'
+      value: 'entra'
+    }
+    {
+      name: 'PGHOST'
+      value: pgHost
+    }
+    {
+      name: 'PGPORT'
+      value: '5432'
+    }
+    {
+      name: 'PGDATABASE'
+      value: pgDatabase
+    }
+    {
+      name: 'PGUSER'
+      value: workerIdentity.name
+    }
+    {
+      name: 'PGSSLMODE'
+      value: 'verify-full'
+    }
+    {
+      name: 'DATABASE_URL'
+      value: 'postgresql://${workerIdentity.name}@${pgHost}:5432/${pgDatabase}?sslmode=verify-full'
+    }
+  ],
+  billingEnv,
+  map(billingSecretRefs, s => {
+    name: s.envName
+    secretRef: s.secretName
+  })
+)
+
+resource billingJob 'Microsoft.App/jobs@2025-01-01' = if (deployBillingJobNow) {
+  name: billingJobName
+  location: location
+  tags: tags
+  identity: {
+    type: 'UserAssigned'
+    userAssignedIdentities: {
+      '${workerIdentity.id}': {}
+    }
+  }
+  properties: {
+    environmentId: cae.id
+    workloadProfileName: 'Consumption'
+    configuration: {
+      triggerType: 'Manual'
+      replicaTimeout: 900
+      // Never retried automatically: an operator reads the output of every run.
+      replicaRetryLimit: 0
+      manualTriggerConfig: {
+        parallelism: 1
+        replicaCompletionCount: 1
+      }
+      registries: [
+        {
+          server: acrLoginServer
+          identity: workerIdentity.id
+        }
+      ]
+      secrets: map(billingSecretRefs, s => {
+        name: s.secretName
+        keyVaultUrl: '${keyVaultUri}secrets/${s.secretName}'
+        identity: workerIdentity.id
+      })
+    }
+    template: {
+      containers: [
+        {
+          name: 'billing'
+          image: migrateImage
+          // Safe default: report what sync-plans would change, write nothing (database or Razorpay).
+          args: [
+            '/app/migrate-entrypoint.mjs'
+            'billing'
+            'sync-plans'
+            '--dry-run'
+          ]
+          resources: {
+            cpu: json('0.25')
+            memory: '0.5Gi'
+          }
+          env: billingJobEnv
+        }
+      ]
+    }
+  }
+  dependsOn: [
+    caeDiag
+  ]
+}
+
 output environmentName string = cae.name
 output environmentId string = cae.id
 output apiName string = api.name
@@ -548,3 +677,4 @@ output apiFqdn string = api.properties.configuration.ingress.fqdn
 output workerName string = worker.name
 output migrateJobName string = migrate.name
 output releaseJobName string = release.name
+output billingJobName string = deployBillingJobNow ? billingJobName : ''

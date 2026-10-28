@@ -9,6 +9,9 @@
 //      (no args)  db migrate up  ->  pg-boss schema install + soyl_app grants (worker `migrate`, DB-1)
 //      release    db seed catalog  ->  content publish --authored (D-026: hand-authored chapters + exemplars,
 //                 then the frozen test series in content/authored/series, ADR-019)
+//      billing    the billing operator CLI, e.g. `billing sync-plans --dry-run` (ADR-016). Runs in the
+//                 job caj-soyl-billing-<env> as the WORKER identity, so steps 1-2 are SKIPPED (the worker
+//                 is not the server's Entra administrator; the CLI gets its own token, DATABASE_AUTH=entra).
 //      <args>     db <args>, e.g. `migrate status`, `seed catalog`, `admin bootstrap --email E`
 //    The @soyl/db CLI is $MIGRATE_CLI and the pg-boss/content CLI is $RELEASE_CLI (esbuild bundles in
 //    the image); from a checkout both run through tsx. Exit 2 from `migrate status` = a changed migration.
@@ -92,21 +95,25 @@ async function bootstrap() {
 }
 
 const args = process.argv.slice(2);
+const billingMode = args[0] === 'billing';
 const steps =
   args.length === 0
     ? [['db', 'migrate', 'up'], ['release', 'pgboss-migrate']]
     : args[0] === 'release'
       ? [['db', 'seed', 'catalog'], ['release', 'content', 'publish', '--authored', ...args.slice(1)]]
-      : [['db', ...args]];
+      : billingMode
+        ? [['release', ...args]]
+        : [['db', ...args]];
 
 try {
-  const token = await managedIdentityToken();
+  // Billing mode: no migrator token and no bootstrap (see the header).
+  const token = billingMode ? null : await managedIdentityToken();
   if (token) {
     process.env.PGPASSWORD = token;
     log('using managed identity token for PostgreSQL (Entra auth)');
     await bootstrap();
   } else {
-    log('no managed identity endpoint: skipping bootstrap, using DATABASE_URL as given');
+    log(billingMode ? 'billing mode: no bootstrap (the billing CLI authenticates itself)' : 'no managed identity endpoint: skipping bootstrap, using DATABASE_URL as given');
   }
 } catch (err) {
   console.error(`migrate-entrypoint: ${err instanceof Error ? err.message : String(err)}`);

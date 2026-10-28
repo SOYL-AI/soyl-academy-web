@@ -14,6 +14,11 @@
 //   - S6-L02 Blob write contract: the containers each identity can write (Blob Data Contributor/Owner)
 //     are exactly the ones its code writes (BLOB_WRITE_CONTRACT below), so a missing grant (403 at run
 //     time) or an extra one fails here.
+// and the billing contract (ADR-016, D-038, runbooks/billing-go-live.md):
+//   - main.bicep's razorpaySecrets names exactly the three Key Vault secrets, each for api, worker and
+//     the billing job; no Bicep source sets a Razorpay credential as a plain env value.
+//   - every params file: no RAZORPAY_* app setting (main.bicep wires them), no Razorpay secret in
+//     appSecrets, no Razorpay key id anywhere; deployBilling=true needs kvSecretRefs=true.
 // Bicep binary: $BICEP_BIN, else `bicep` on PATH (CI downloads a pinned, checksum-verified release).
 import { spawnSync } from 'node:child_process';
 import { readdirSync, readFileSync } from 'node:fs';
@@ -123,6 +128,72 @@ function blobWriteContract() {
   return bad;
 }
 
+/**
+ * Billing (ADR-016): the Razorpay settings reach the apps ONLY as Key Vault secret references, all three
+ * together, for api + worker + the billing job (billing/config.ts refuses RAZORPAY_PROVIDER=razorpay
+ * without any of them, so a partial set would stop the apps from starting).
+ */
+const RAZORPAY_SECRETS = {
+  'razorpay-key-id': 'RAZORPAY_KEY_ID',
+  'razorpay-key-secret': 'RAZORPAY_KEY_SECRET',
+  'razorpay-webhook-secret': 'RAZORPAY_WEBHOOK_SECRET',
+};
+const RAZORPAY_APPS = ['api', 'worker', 'billing'];
+const RAZORPAY_CREDENTIAL_ENVS = ['RAZORPAY_KEY_ID', 'RAZORPAY_KEY_SECRET', 'RAZORPAY_WEBHOOK_SECRET', 'RAZORPAY_WEBHOOK_SECRET_PREVIOUS'];
+const RAZORPAY_KEY_ID_RE = /rzp_(live|test)_[A-Za-z0-9]{6,}/;
+
+function billingSourceContract(mainJson) {
+  let bad = 0;
+  const fail = (msg) => {
+    bad++;
+    console.log(`  BILLING: ${msg}`);
+  };
+  const list = mainJson?.variables?.razorpaySecrets;
+  if (!Array.isArray(list)) fail('main.bicep has no razorpaySecrets variable');
+  else {
+    const names = list.map((s) => s.secretName).sort();
+    if (names.join(',') !== Object.keys(RAZORPAY_SECRETS).sort().join(',')) fail(`razorpaySecrets must name exactly ${Object.keys(RAZORPAY_SECRETS).join(', ')} (got ${names.join(', ')})`);
+    for (const s of list) {
+      if (RAZORPAY_SECRETS[s.secretName] && s.envName !== RAZORPAY_SECRETS[s.secretName]) fail(`${s.secretName} must map to ${RAZORPAY_SECRETS[s.secretName]} (got ${s.envName})`);
+      const missing = RAZORPAY_APPS.filter((a) => !(s.apps ?? []).includes(a));
+      if (missing.length) fail(`${s.secretName} is not referenced by ${missing.join(', ')}`);
+      if ('value' in s) fail(`${s.secretName} carries a value; only the secret NAME may be in Bicep`);
+    }
+  }
+  // Safe order: wiring billing must first prove the three secrets exist (keyvault.bicep existence gate).
+  const mainSrc = readFileSync(join(here, 'main.bicep'), 'utf8');
+  if (!/requiredSecretNames:\s*billingWired\s*\?\s*map\(razorpaySecrets,/.test(mainSrc)) fail('main.bicep must pass the Razorpay secret names to the Key Vault existence gate (requiredSecretNames) when billing is wired');
+  // A plain env entry `name: 'RAZORPAY_KEY_SECRET'` (etc.) anywhere in the Bicep sources would bypass Key Vault.
+  for (const f of ['main.bicep', ...readdirSync(join(here, 'modules')).map((m) => join('modules', m))]) {
+    if (!f.endsWith('.bicep')) continue;
+    const src = readFileSync(join(here, f), 'utf8');
+    for (const env of RAZORPAY_CREDENTIAL_ENVS) if (new RegExp(`name:\\s*'${env}'`).test(src)) fail(`${f} sets ${env} as a plain env entry; it must come from a Key Vault secret reference`);
+    if (RAZORPAY_KEY_ID_RE.test(src)) fail(`${f} contains a Razorpay key id`);
+    // `existing` references (the keyvault.bicep existence gate) are fine; a declared secret is not.
+    if (/^resource \w+ 'Microsoft\.KeyVault\/vaults\/secrets@[^']+' = /m.test(src)) fail(`${f} creates a Key Vault secret; secret values are set by the owner, never by Bicep`);
+  }
+  console.log(`  billing: razorpaySecrets ${Array.isArray(list) ? list.map((s) => `${s.secretName}->${s.envName} [${s.apps.join(',')}]`).join('; ') : '(missing)'}; ${bad} problem(s)`);
+  return bad;
+}
+
+function billingParamsContract(params) {
+  const problems = [];
+  const val = (k) => params[k]?.value;
+  for (const k of Object.keys(val('appSettings') ?? {})) if (/^RAZORPAY_/.test(k)) problems.push(`appSettings.${k}: Razorpay settings are wired by main.bicep (deployBilling), never as app settings`);
+  for (const s of val('appSecrets') ?? []) if (/^razorpay-/.test(s.secretName) || /^RAZORPAY_/.test(s.envName)) problems.push(`appSecrets ${s.secretName}: the Razorpay secrets come from main.bicep razorpaySecrets (all three together, deployBilling)`);
+  const ids = [];
+  (function scan(v, path) {
+    if (typeof v === 'string') {
+      if (RAZORPAY_KEY_ID_RE.test(v)) ids.push(path);
+    } else if (Array.isArray(v)) v.forEach((x, i) => scan(x, `${path}[${i}]`));
+    else if (v && typeof v === 'object') for (const [k, x] of Object.entries(v)) scan(x, `${path}.${k}`);
+  })(Object.fromEntries(Object.entries(params).map(([k, v]) => [k, v.value])), 'params');
+  for (const p of ids) problems.push(`${p} contains a Razorpay key id; keys live in Key Vault only`);
+  if (val('deployBilling') === true && val('kvSecretRefs') !== true) problems.push('deployBilling=true needs kvSecretRefs=true (the Razorpay settings are Key Vault references)');
+  for (const p of problems) console.log(`  BILLING: ${p}`);
+  return { problems: problems.length, on: val('deployBilling') === true };
+}
+
 console.log(`bicep: ${run(['--version']).stdout.trim()}`);
 console.log('\n# storage.bicep blob write contract (S6-L02)');
 errors += blobWriteContract();
@@ -138,6 +209,7 @@ for (const t of templates) {
     for (const f of bad) console.log(`  INFRA-9: ${f.type} has literal location "${f.location}" (${f.path})`);
     errors += bad.length;
     console.log(`  INFRA-9: ${found.length} literal locations checked (only centralindia/global allowed), ${bad.length} violations`);
+    if (t === 'main.bicep') errors += billingSourceContract(JSON.parse(b.stdout));
   }
   console.log(`# bicep lint ${t}`);
   record('lint', t, run(['lint', t]));
@@ -178,7 +250,9 @@ for (const p of paramFiles) {
   for (const [k, v] of Object.entries(params)) scanSecrets(v.value, k, leaks);
   for (const l of leaks) console.log(`  GEN-1: parameter value looks like a credential: ${l}`);
   errors += leaks.length;
-  console.log(`  ${Object.keys(params).length} parameters; location=${val('location')}${val('aiLocation') ? `, ai=${val('aiLocation')}/${val('speechLocation')}/${val('contentSafetyLocation')} (openai/speech/safety)` : ''}; credential-like values: ${leaks.length}`);
+  const billing = billingParamsContract(params);
+  errors += billing.problems;
+  console.log(`  ${Object.keys(params).length} parameters; location=${val('location')}${val('aiLocation') ? `, ai=${val('aiLocation')}/${val('speechLocation')}/${val('contentSafetyLocation')} (openai/speech/safety)` : ''}; credential-like values: ${leaks.length}; billing ${billing.on ? 'ON' : 'off'} (${billing.problems} problem(s))`);
 }
 
 console.log('\n| step | file | errors | warnings |\n|---|---|---|---|');

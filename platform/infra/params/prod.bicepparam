@@ -95,6 +95,18 @@ param appSecrets = [
   { secretName: 'mfa-encryption-key', envName: 'MFA_ENCRYPTION_KEY', apps: ['api'] }
 ]
 
+// Billing (D-038): the LIVE Razorpay account of the Future Builders payments. ONE switch, like aiOn:
+// RAZORPAY_PROVIDER=razorpay, the Key Vault references razorpay-key-id / razorpay-key-secret /
+// razorpay-webhook-secret on api + worker, and the billing job caj-soyl-billing-prod all follow it
+// (main.bicep razorpaySecrets; names only, the owner sets the values).
+//   false: none of it exists; the apps run RAZORPAY_PROVIDER=disabled (the default outside local/test).
+//   true:  ONLY after the owner has confirmed the three secrets exist in the vault
+//          (runbooks/billing-go-live.md steps 1-2). A Container App that references a missing Key Vault
+//          secret cannot start its new revision.
+// Purchases stay closed either way until BILLING_ENABLED (appSettings below) is flipped at launch.
+var billingOn = false
+param deployBilling = billingOn
+
 // AI on (D-038). One switch: the accounts, the model deployments and the app settings that select the
 // Azure providers (appSettings below) follow it, so the apps never point at a service that is not there.
 var aiOn = true
@@ -160,6 +172,7 @@ param budgetAmount = 25000 + aiMonthlyBudgetInr
 
 param appSettings = {
   PLATFORM_ENABLED: 'false'
+  // Purchases (D-003, D-038): false until launch, even with billingOn (runbooks/billing-go-live.md step 6).
   BILLING_ENABLED: 'false'
   PUBLIC_BASE_URL: 'https://www.soylai.com'
   WEB_ORIGIN: 'https://www.soylai.com'

@@ -4,7 +4,8 @@
 #   docker build -f platform/infra/docker/migrate.Dockerfile -t soyl-migrate platform/
 #   az acr build -r <acr> -t soyl-migrate:<tag> -f infra/docker/migrate.Dockerfile platform   (no local Docker; -f is relative to the context)
 #
-# No args: `db migrate up` + the pg-boss schema install. `release`: `db seed catalog` + `content publish
+# No args: `db migrate up` + the pg-boss schema install. `billing <cmd>`: the billing operator CLI (job
+# caj-soyl-billing-<env>, worker identity). `release`: `db seed catalog` + `content publish
 # --authored` (D-026). Other args: `db <args>`. All through infra/docker/migrate-entrypoint.mjs, which
 # first obtains an Entra token with the job's managed identity (INFRA-2) and bootstraps the
 # database roles (DB-1). INFRA-10: base images pinned by digest, non-root, no build tools or secrets

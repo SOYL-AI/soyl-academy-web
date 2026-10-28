@@ -19,6 +19,7 @@ Every handoff note in this folder, by area and date. Format of a handoff: AGENTS
 | 2026-10-25 | repo-cartographer | M0 | [Discovery, guardrails, marketing baseline](2026-10-25-repo-cartographer-m0.md) |
 | 2026-10-26 | infra-azure | M1 | [CI + deploy-ready IaC](2026-10-26-infra-azure-m1.md) |
 | 2026-10-27 | backend-api + infra-azure | M6 (prod) | [Production readiness for the first Azure deployment (D-031)](2026-10-27-prod-readiness.md) |
+| 2026-10-28 | infra-azure + billing-razorpay | M6 (prod) | [Billing go-live: Razorpay wiring behind `billingOn`, billing job, owner runbook (D-038)](2026-10-28-billing-golive.md) |
 
 ## Database and API
 

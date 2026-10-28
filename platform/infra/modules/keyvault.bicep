@@ -17,6 +17,9 @@ param allowedIps array
 @description('Principal ids that may READ secrets (Key Vault Secrets User).')
 param secretReaderPrincipalIds array
 
+@description('Secrets that must ALREADY exist (values set by the owner, never by Bicep), e.g. the Razorpay secrets when billing is wired. Their metadata is read through ARM (not the data plane, so the closed firewall does not matter); a missing one fails this module with ResourceNotFound, and the Container Apps, which depend on this module, are left unchanged.')
+param requiredSecretNames array = []
+
 var kvName = 'kv-soyl-${env}-${take(uniqueString(resourceGroup().id), 6)}'
 var secretsUserRoleId = subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '4633458b-17de-408a-b874-0445c86b69e6')
 
@@ -96,6 +99,16 @@ resource diag 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' = {
   }
 }
 
+// Existence gate (see requiredSecretNames): never created or changed here, only read.
+resource requiredSecrets 'Microsoft.KeyVault/vaults/secrets@2024-11-01' existing = [
+  for n in requiredSecretNames: {
+    parent: kv
+    name: n
+  }
+]
+
 output name string = kv.name
 output id string = kv.id
 output uri string = kv.properties.vaultUri
+@description('Versionless URIs of requiredSecretNames (names only, no values). Evaluating them is the existence gate.')
+output requiredSecretUris array = [for (n, i) in requiredSecretNames: requiredSecrets[i].properties.secretUri]
