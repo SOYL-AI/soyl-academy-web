@@ -18,15 +18,23 @@ It is the `db admin bootstrap` CLI (`platform/db/src/seed/admin.ts`): idempotent
 
 ```bash
 export RG=rg-soyl-platform-prod MIGRATE_JOB=caj-soyl-migrate-prod OWNER_EMAIL='<the owner email>'
-# SOYL_MIGRATE_IMAGE = the migrate image built from the integrated commit (as in update-dark-backend.md)
-EXEC=$(az containerapp job start -g $RG -n $MIGRATE_JOB --image $SOYL_MIGRATE_IMAGE --container-name migrate \
-  --args "/app/migrate-entrypoint.mjs" "admin" "bootstrap" "--email" "$OWNER_EMAIL" "--role" "superadmin" \
-  --query name -o tsv)
+# The job must already run the migrate image of the integrated commit (pass A of update-dark-backend.md sets it).
+# `az containerapp job start --args ... "--email" ...` does not work: the Azure CLI reads --email and --role as its
+# own options ("unrecognized arguments"). Start the execution through the REST API instead, with the job's own
+# container (image, env, identity, resources) and only the arguments replaced:
+az containerapp job show -g $RG -n $MIGRATE_JOB -o json > job.json
+node -e '
+const fs = require("fs"); const j = require("./job.json"); const c = { ...j.properties.template.containers[0] };
+c.args = ["/app/migrate-entrypoint.mjs", "admin", "bootstrap", "--email", process.env.OWNER_EMAIL, "--role", "superadmin"];
+fs.writeFileSync("start.json", JSON.stringify({ containers: [c] }));'
+EXEC=$(az rest --method post --url "https://management.azure.com$(node -p 'require("./job.json").id')/start?api-version=2024-03-01" \
+  --body @start.json --query name -o tsv)
 until s=$(az containerapp job execution show -g $RG -n $MIGRATE_JOB --job-execution-name $EXEC --query properties.status -o tsv); \
       [ "$s" = Succeeded ] || [ "$s" = Failed ]; do echo "$s"; sleep 10; done; echo "bootstrap: $s"
+rm job.json start.json
 ```
 
-Expected log line (Log Analytics `ContainerAppConsoleLogs`, job `caj-soyl-migrate-prod`): `updated superadmin <email> (<uuid>); 1 session(s) revoked`, or `created superadmin <email> (<uuid>)` when there was no account, or `unchanged (already) superadmin …` on a re-run.
+Done this way in production on 2026-10-29 (`created superadmin …`). Expected log line (Log Analytics `ContainerAppConsoleLogs`, job `caj-soyl-migrate-prod`): `updated superadmin <email> (<uuid>); 1 session(s) revoked`, or `created superadmin <email> (<uuid>)` when there was no account, or `unchanged (already) superadmin …` on a re-run.
 
 Locally: `cd platform && npm run db -w @soyl/db -- admin bootstrap --email you@example.com --role superadmin` against the dev database, then sign in at `/admin` with the email code (the local API keeps codes in its dev outbox).
 
