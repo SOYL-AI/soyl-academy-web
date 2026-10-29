@@ -42,9 +42,17 @@ export TAG=$(git rev-parse --short=12 HEAD) RG=rg-soyl-platform-prod
 az acr build -r $SOYL_ACR_NAME -t soyl-migrate:$TAG -f infra/docker/migrate.Dockerfile platform
 NEW=$SOYL_ACR_NAME.azurecr.io/soyl-migrate@$(az acr repository show -n $SOYL_ACR_NAME --image soyl-migrate:$TAG --query digest -o tsv)
 
-# one-off run with the new image (no Bicep change needed for a single release)
-EXEC=$(az containerapp job start -g $RG -n caj-soyl-release-prod --image $NEW --container-name release \
-         --args "/app/migrate-entrypoint.mjs" "release" --query name -o tsv)
+# one-off run with the new image (no Bicep change needed for a single release).
+# Start it through REST with the job's full container and only the image swapped:
+# `az containerapp job start --image ... --args ...` sends a container without the job's env and secrets,
+# and the execution fails within a minute with no logs (2026-10-29).
+az containerapp job show -g $RG -n caj-soyl-release-prod -o json > job.json
+NEW=$NEW node -e '
+const fs = require("fs"); const j = require("./job.json"); const c = { ...j.properties.template.containers[0] };
+c.image = process.env.NEW; c.args = ["/app/migrate-entrypoint.mjs", "release"];
+fs.writeFileSync("start.json", JSON.stringify({ containers: [c] }));'
+EXEC=$(az rest --method post --url "https://management.azure.com$(node -p 'require("./job.json").id')/start?api-version=2024-03-01" \
+         --body @start.json --query name -o tsv); rm job.json start.json
 until s=$(az containerapp job execution show -g $RG -n caj-soyl-release-prod --job-execution-name $EXEC --query properties.status -o tsv); \
       [ "$s" = Succeeded ] || [ "$s" = Failed ]; do echo "$s"; sleep 15; done; echo "release: $s"
 ```
@@ -57,6 +65,7 @@ Expected log lines: `db seed catalog` with `"errors": []`, then `publish: N publ
 
 - Record the commit, the migrate digest and the publish counts in [STATUS.md](../STATUS.md).
 - CDN purge is not wired (no Front Door yet); when it exists, edge copies of content responses age out within about 70 minutes (backend-api M2).
+- The web chapter pages are ISR with `revalidate = 600`: a page that was rendered as 404 before the publish stays 404 until the first request more than 10 minutes after its render (a query string does not bypass it). Check new chapters about 10 minutes after the release, requesting each page twice.
 
 ## Roll back
 
