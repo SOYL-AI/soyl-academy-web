@@ -2,7 +2,7 @@
  * Billing jobs (ADR-016): nightly reconciliation repairs and alerts on drift; hourly expiry; the worker
  * only ever uses the real Razorpay client (never the per-process stub).
  */
-import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 import { eq } from 'drizzle-orm';
 import { auditLog, creditLedger, invoices, orders, payments, plans } from '@soyl/db';
 import { FIXTURE_SELLER, INVOICING } from '@soyl/shared/config/invoicing';
@@ -20,6 +20,20 @@ import { loadConfig } from '../src/config';
 import { billingClient, invoiceSettings } from '../src/worker';
 import { makeUser, NOW } from './helpers';
 import type { JobContext } from '../src/registry';
+
+// The real INVOICING has no placeholder since the owner's 2026-10-29 decision (no street line). To keep proving the
+// worker's production refusal, one test swaps in a placeholder seller; every other test sees the real config.
+const invoicingOverride = vi.hoisted(() => ({ placeholder: false }));
+vi.mock('@soyl/shared/config/invoicing', async (importOriginal) => {
+  const m = await importOriginal<typeof import('@soyl/shared/config/invoicing')>();
+  const withPlaceholder = { ...m.INVOICING, seller: { ...m.INVOICING.seller, addressLine1: `${m.OWNER_TO_PROVIDE}: street line` } };
+  return {
+    ...m,
+    get INVOICING() {
+      return invoicingOverride.placeholder ? withPlaceholder : m.INVOICING;
+    },
+  };
+});
 
 let t: TestDb;
 const lines: { level: string; msg: string; fields?: Record<string, unknown> }[] = [];
@@ -112,7 +126,17 @@ describe('billing jobs', () => {
   it('invoice delivery settings come from the billing config (INVOICING_ENABLED)', () => {
     expect(invoiceSettings(loadConfig({ APP_ENV: 'test' }), {})!.runtime.enabled).toBe(true);
     expect(invoiceSettings(loadConfig({ APP_ENV: 'stg', DATABASE_URL: 'postgres://x', PGBOSS_MIGRATE: 'false' }), {})!.runtime.enabled).toBe(false);
-    expect(() => loadConfig({ APP_ENV: 'prod', DATABASE_URL: 'postgres://x', PGBOSS_MIGRATE: 'false', INVOICING_ENABLED: 'true' })).toThrow(/OA-22/);
+    // Owner, 2026-10-29: the real invoicing config has no placeholder any more (no street line), so production may enable it.
+    expect(invoiceSettings(loadConfig({ APP_ENV: 'prod', DATABASE_URL: 'postgres://x', PGBOSS_MIGRATE: 'false', INVOICING_ENABLED: 'true' }), {})!.runtime).toMatchObject({ enabled: true, production: true });
+  });
+
+  it('production refuses INVOICING_ENABLED=true while the invoicing config has a placeholder (OA-22)', () => {
+    invoicingOverride.placeholder = true;
+    try {
+      expect(() => loadConfig({ APP_ENV: 'prod', DATABASE_URL: 'postgres://x', PGBOSS_MIGRATE: 'false', INVOICING_ENABLED: 'true' })).toThrow(/OA-22/);
+    } finally {
+      invoicingOverride.placeholder = false;
+    }
   });
 
   it('the worker builds the real client only for RAZORPAY_PROVIDER=razorpay', () => {
