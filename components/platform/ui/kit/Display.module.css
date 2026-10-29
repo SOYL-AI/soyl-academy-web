@@ -162,6 +162,11 @@ button.chip:hover {
   background: var(--p-surface-2);
   color: var(--p-ink-muted);
 }
+.emptyArt {
+  display: grid;
+  justify-items: center;
+  margin-bottom: var(--p-space-1);
+}
 .emptyTitle {
   margin: 0;
   color: var(--p-ink);
@@ -202,6 +207,21 @@ button.chip:hover {
 .creditBalance {
   font-weight: 700;
   font-variant-numeric: tabular-nums;
+}
+.creditBonus {
+  display: none;
+  margin-left: 4px;
+  padding: 0 4px;
+  border-radius: var(--p-radius-sm);
+  background: var(--p-highlight);
+  color: var(--p-on-highlight);
+  font-size: var(--p-text-xs);
+  font-weight: 700;
+}
+@media (min-width: 600px) {
+  .creditBonus {
+    display: inline;
+  }
 }
 .creditIcon {
   color: var(--p-accent);

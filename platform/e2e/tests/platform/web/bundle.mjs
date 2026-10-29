@@ -5,7 +5,7 @@
  * running `next start`: for each page, the JS referenced by the HTML (first load) and the JS the page then
  * fetches by itself without interaction (lazy chunks), gzip level 9 from the files in .next/static.
  *
- *   node tests/platform/web/bundle.mjs [--base http://localhost:3000] [--json out.json]
+ *   node tests/platform/web/bundle.mjs [--base http://localhost:3000] [--json out.json] [--only "me,dashboard"]
  * Exit 1 when a page's first-load JS exceeds the budget.
  */
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
@@ -17,6 +17,8 @@ const args = process.argv.slice(2);
 const opt = (name, def) => (args.includes(name) ? args[args.indexOf(name) + 1] : def);
 const base = opt('--base', 'http://localhost:3000');
 const jsonOut = opt('--json', null);
+/** --only 'me,dashboard': measure just these pages (by name). */
+const only = opt('--only', null);
 const BUDGET_KB = 200;
 const repoRoot = resolve(import.meta.dirname, '../../../../..');
 
@@ -47,6 +49,8 @@ export const PAGES = [
   ['store', '/store'],
   // Student dashboard (D-043)
   ['dashboard', '/me/dashboard'],
+  // Avatars and credits UI (design-system, 2026-10-29): subject glyphs on the course page
+  ['subject', '/learn/cbse/10/science'],
 ];
 
 const cache = new Map();
@@ -61,7 +65,7 @@ function gz(urlPath) {
 const browser = await chromium.launch();
 const results = [];
 let failed = false;
-for (const [name, path] of PAGES) {
+for (const [name, path] of only ? PAGES.filter(([n]) => only.split(',').includes(n)) : PAGES) {
   const ctx = await browser.newContext({ viewport: { width: 360, height: 800 }, isMobile: true, hasTouch: true });
   const page = await ctx.newPage();
   const requested = new Set();

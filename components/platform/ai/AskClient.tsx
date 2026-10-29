@@ -17,6 +17,7 @@ import { isApiError, type AiActionId, type AiConversation, type AiQuote } from '
 import { cx } from '@/components/platform/ui/cx';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { Badge, EmptyState } from '@/components/platform/ui/kit/Display';
+import { EmptyIllustration } from '@/components/platform/ui/art/EmptyIllustration';
 import { Icon } from '@/components/platform/ui/kit/Icon';
 import { useSession } from '../auth/SessionProvider';
 import { api } from '../lib/api-browser';
@@ -55,6 +56,7 @@ export function AskClient() {
         title="Log in to ask the AI tutor"
         headingLevel="h2"
         icon="chat"
+        art={<EmptyIllustration kind="no-chats" />}
         action={<Button onClick={() => openLogin({ reason: 'Log in to ask the AI tutor. You get free AI credits every day.' })}>Log in</Button>}
       >
         Ask any doubt from your syllabus and get a hint first, then the full solution. Free AI credits every day.
@@ -206,6 +208,12 @@ function Tutor() {
 
   return (
     <div className={s.ask} data-testid="ask">
+      {chat.messages.length === 0 && (
+        <div className={s.askEmpty} data-testid="ask-empty">
+          <EmptyIllustration kind="no-chats" width={120} />
+          <p className={s.muted}>No chats yet. Ask a doubt from your syllabus: you get a hint first, then the full solution if you want it.</p>
+        </div>
+      )}
       {chat.messages.length > 0 && (
         <ol className={s.thread} aria-label="Conversation" aria-live="polite" data-testid="thread">
           {chat.messages.map((m) => (

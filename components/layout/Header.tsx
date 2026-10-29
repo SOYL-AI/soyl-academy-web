@@ -1,144 +1,87 @@
-'use client';
-
-import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
-import { APP_URL, MAIN_NAV, PRIMARY_CTA } from '@/lib/site';
+import { APP_URL, NAV_GROUPS, PLATFORM_ENABLED, PLATFORM_LOGIN_HREF, PRIMARY_CTA, type NavFeature } from '@/lib/site';
+import { formatArticleDate, journalArticles } from '@/content/journal';
 import { Logo } from '@/components/ui/Logo';
 import { buttonClasses } from '@/components/ui/Button';
-import { platformChromeActive } from '@/components/platform/shell/chrome';
+import { SiteHeader } from './SiteHeader';
+import { DesktopPanel, FeatureCard, SheetPanel, type ResolvedNavGroup } from './MenuParts';
+
+/**
+ * The marketing header (ADR-025). A server component: it renders the logo, every menu panel, the mobile
+ * sheet's contents and the action links here, and hands them to the client island `SiteHeader` as React
+ * nodes, so the menus add almost no client JavaScript (the island is loaded on every route). `SiteHeader`
+ * renders nothing on learning-platform pages (ADR-023, `platformChromeActive`).
+ */
+function latestJournalFeature(): NavFeature {
+  const latest = [...journalArticles].sort((a, b) => b.date.localeCompare(a.date))[0];
+  if (!latest) {
+    return {
+      eyebrow: 'The SOYL Journal',
+      title: 'Ideas about learning and AI',
+      description: 'Essays on learning, technology and the school that’s coming next.',
+      href: '/journal',
+      cta: 'Read the Journal',
+      tone: 'paper',
+    };
+  }
+  return {
+    eyebrow: `From the Journal · ${formatArticleDate(latest.date)}`,
+    title: latest.title,
+    description: latest.excerpt,
+    href: `/journal/${latest.slug}`,
+    cta: 'Read the essay',
+    tone: 'paper',
+  };
+}
+
+/** Flag on: "Log in" to the platform (the teacher app's sign-in moves into the Programs panel). Flag off: as before. */
+function SignIn({ className }: { className: string }) {
+  return PLATFORM_ENABLED ? (
+    <Link href={PLATFORM_LOGIN_HREF} className={className}>
+      Log in
+    </Link>
+  ) : (
+    <a href={APP_URL} className={className}>
+      Sign in
+    </a>
+  );
+}
 
 export function Header() {
-  const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-  const toggleRef = useRef<HTMLButtonElement>(null);
-
-  // Close the menu on navigation.
-  const [lastPath, setLastPath] = useState(pathname);
-  if (pathname !== lastPath) {
-    setLastPath(pathname);
-    setOpen(false);
-  }
-
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setOpen(false);
-        toggleRef.current?.focus();
-      }
-    };
-    const root = document.documentElement;
-    const previous = root.style.overflow;
-    root.style.overflow = 'hidden';
-    document.addEventListener('keydown', onKey);
-    return () => {
-      root.style.overflow = previous;
-      document.removeEventListener('keydown', onKey);
-    };
-  }, [open]);
-
-  const isCurrent = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
-
-  // Learning-platform pages have their own app shell (ADR-023).
-  if (platformChromeActive(pathname)) return null;
+  const latest = latestJournalFeature();
+  const groups: ResolvedNavGroup[] = NAV_GROUPS.map((group) => ({
+    ...group,
+    feature: group.feature === 'latest-journal' ? latest : group.feature,
+  }));
+  const teacherSignIn = (g: ResolvedNavGroup) => PLATFORM_ENABLED && g.id === 'programs';
+  const learn = groups.find((g) => g.id === 'learn');
 
   return (
-    <>
-    <header className="sticky top-0 z-40 border-b border-rule bg-white/90 backdrop-blur-md backdrop-saturate-150">
-      <div className="page flex h-16 items-center gap-3 md:h-[72px] md:gap-6">
-        <Logo size={30} className="shrink-0 whitespace-nowrap" />
-
-        <nav aria-label="Primary" className="ml-6 hidden lg:block">
-          <ul className="flex items-center gap-7">
-            {MAIN_NAV.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  aria-current={isCurrent(item.href) ? 'page' : undefined}
-                  className={cn(
-                    'hover-line py-1 text-[15px] font-medium',
-                    isCurrent(item.href) ? 'text-ink' : 'text-muted hover:text-ink'
-                  )}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <div className="ml-auto flex items-center gap-2 md:gap-5">
-          <a href={APP_URL} className="hover-line hidden py-1 text-[15px] font-medium text-ink sm:inline">
-            Sign in
-          </a>
+    <SiteHeader
+      groups={groups.map((g) => ({ id: g.id, label: g.label, hrefs: g.items.map((i) => i.href) }))}
+      logo={<Logo size={30} className="shrink-0 whitespace-nowrap" />}
+      actions={
+        <>
+          <SignIn className="hover-line hidden py-1 text-[15px] font-medium text-ink sm:inline" />
           <Link
             href={PRIMARY_CTA.href}
             className={buttonClasses('primary', 'md', 'hidden h-9 px-3.5 text-[14px] min-[375px]:inline-flex md:h-11 md:px-5 md:text-[15px]')}
           >
             {PRIMARY_CTA.label}
           </Link>
-          <button
-            ref={toggleRef}
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            className="press -mr-2 inline-flex h-11 w-11 items-center justify-center rounded-full hover:bg-paper lg:hidden"
-          >
-            <span className="sr-only">{open ? 'Close menu' : 'Open menu'}</span>
-            <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
-              <path
-                d={open ? 'M5 5l12 12' : 'M3 8h16'}
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                className="transition-[d] duration-300"
-              />
-              <path
-                d={open ? 'M17 5L5 17' : 'M3 14h16'}
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                className="transition-[d] duration-300"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </header>
-
-      <div
-        id="mobile-menu"
-        hidden={!open}
-        className="fixed inset-x-0 bottom-0 top-16 z-40 overflow-y-auto border-t border-rule bg-white md:top-[72px] lg:hidden"
-      >
-        <nav aria-label="Mobile" className="page flex min-h-full flex-col pb-10 pt-4">
-          <ul>
-            {MAIN_NAV.map((item, i) => (
-              <li key={item.href} className="rise border-b border-rule" style={{ '--d': `${i * 45}ms` } as React.CSSProperties}>
-                <Link
-                  href={item.href}
-                  aria-current={isCurrent(item.href) ? 'page' : undefined}
-                  className="flex min-h-14 items-center justify-between py-3 font-serif text-[1.75rem] leading-tight"
-                >
-                  {item.label}
-                  {isCurrent(item.href) && <span aria-hidden="true" className="h-2 w-2 rounded-full bg-red-pen" />}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="rise mt-8 flex flex-col gap-3" style={{ '--d': `${MAIN_NAV.length * 45}ms` } as React.CSSProperties}>
-            <Link href={PRIMARY_CTA.href} className={buttonClasses('primary', 'lg', 'w-full')}>
-              {PRIMARY_CTA.label}
-            </Link>
-            <a href={APP_URL} className={buttonClasses('secondary', 'lg', 'w-full')}>
-              Sign in
-            </a>
-          </div>
-        </nav>
-      </div>
-    </>
+        </>
+      }
+      panels={Object.fromEntries(groups.map((g) => [g.id, <DesktopPanel key={g.id} group={g} teacherSignIn={teacherSignIn(g)} />]))}
+      sheetPanels={Object.fromEntries(groups.map((g) => [g.id, <SheetPanel key={g.id} group={g} teacherSignIn={teacherSignIn(g)} />]))}
+      sheetTop={learn ? <FeatureCard feature={learn.feature} compact /> : undefined}
+      sheetFooter={
+        <>
+          <SignIn className={buttonClasses('secondary', 'lg', 'flex-1 px-4')} />
+          <Link href={PRIMARY_CTA.href} className={buttonClasses('primary', 'lg', 'flex-[1.4] px-4')}>
+            {PRIMARY_CTA.label}
+          </Link>
+        </>
+      }
+    />
   );
 }

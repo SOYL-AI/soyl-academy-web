@@ -2,10 +2,13 @@
  * The student's private player card (FIFA Ultimate Team inspired; GET /v1/me/card). Overall rating 40–99,
  * tier frame (bronze, silver, gold, elite), up to six attributes. Deterministic from the student's own
  * learning, earned only, never shown to anyone else (D-014, D-039): no packs, no randomness, no trading.
- * The name on the card is the auto-generated public name (D-039), never the real name.
+ * The name on the card is the auto-generated public name (D-039), never the real name, with the student's animal
+ * avatar and a tier crest (design-system, 2026-10-29).
  */
 import type { MyPlayerCard } from '@/platform/shared/api-client';
 import { cx } from '@/components/platform/ui/cx';
+import { LeagueCrest } from '@/components/platform/ui/art/LeagueCrest';
+import { AnimalAvatar } from '@/components/platform/ui/kit/AnimalAvatar';
 import s from './insights.module.css';
 
 export const TIER_LABELS = { bronze: 'Bronze', silver: 'Silver', gold: 'Gold', elite: 'Elite' } as const;
@@ -25,9 +28,16 @@ export function PlayerCard({ card, compact = false, className }: { card: MyPlaye
         <div className={s.cardTop}>
           <div className={s.cardRating}>
             <span className={s.cardOverall}>{card.overall}</span>
-            <span className={s.cardTier}>{TIER_LABELS[card.tier]}</span>
+            <span className={s.cardTier}>
+              <LeagueCrest tier={card.tier} size={compact ? 18 : 22} decorative className={s.cardTierCrest} />
+              {TIER_LABELS[card.tier]}
+            </span>
           </div>
-          <span className={s.cardCrest}>{crestInitials(card.publicName)}</span>
+          {card.avatar ? (
+            <AnimalAvatar avatar={card.avatar} size={compact ? 46 : 64} decorative className={s.cardAvatar} />
+          ) : (
+            <span className={s.cardCrest}>{crestInitials(card.publicName)}</span>
+          )}
         </div>
         <p className={s.cardName}>{card.publicName}</p>
         <p className={s.cardMeta}>

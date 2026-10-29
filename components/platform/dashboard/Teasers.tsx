@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import type { MyPlayerCard, Schemas } from '@/platform/shared/api-client';
 import { Skeleton } from '@/components/platform/ui/kit/Display';
 import { Icon } from '@/components/platform/ui/kit/Icon';
+import { LeagueCrest } from '@/components/platform/ui/art/LeagueCrest';
 import { api } from '../lib/api-browser';
 import type { Loadable } from '../learn/useInsights';
 import { BlankPlayerCard, PlayerCard } from '../me/PlayerCard';
@@ -56,7 +57,7 @@ export function LeagueTeaser() {
       ) : (
         <>
           <p className={s.leagueTier} data-tier={league.league.tier.key}>
-            <Icon name="trophy" size={22} /> {league.league.tier.name}
+            <LeagueCrest level={league.league.tier.level} size={28} decorative /> {league.league.tier.name}
           </p>
           {league.me ? (
             <p className={s.muted}>

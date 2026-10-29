@@ -44,6 +44,11 @@ const ROUTES = [
   '/api/platform/v1/coins',
   '/api/platform/v1/coins/store',
   '/api/platform/v1/coins/daily-challenge?board=cbse&class=10',
+  // Avatars and art (design-system, 2026-10-29)
+  '/me/avatars/otter.v1.svg',
+  '/dev/ui/art',
+  '/api/platform/v1/me/avatars',
+  '/api/platform/v1/me/credits/guide',
 ];
 
 for (const path of ROUTES) {

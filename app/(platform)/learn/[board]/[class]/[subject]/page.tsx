@@ -13,6 +13,8 @@ import { platformOn, requirePlatform } from '@/components/platform/server/gate';
 import { platformMetadata } from '@/components/platform/server/metadata';
 import { getChapters } from '@/components/platform/server/catalog';
 import { PageHeader } from '@/components/platform/shell/PageHeader';
+import { subjectStyle } from '@/components/platform/learn/subject-style';
+import { SubjectGlyph } from '@/components/platform/ui/art/SubjectGlyph';
 import { ChapterProgressNote } from '@/components/platform/learn/LearnClient';
 import { MasteryProvider } from '@/components/platform/learn/MasteryProvider';
 import { ChapterMasteryPip, SubjectMasteryHeader, type CourseChapterLink } from '@/components/platform/learn/CourseIslands';
@@ -80,15 +82,20 @@ export default async function SubjectPage({ params }: { params: Promise<Params> 
         <div className={c.layout}>
           <CourseSidebar title={subject.name} href={subjectHref} units={units.map((u) => ({ unit: u.unit, chapters: u.chapters.map(link) }))} lang={lang} />
           <div className={c.main}>
-            <PageHeader
-              crumbs={[
-                { name: 'Learn', path: '/learn' },
-                { name: `${BOARD_NAMES[board]} Class ${classLevel}`, path: learnPath(board, classLevel) },
-                { name: subject.name, path: subjectHref },
-              ]}
-              title={subject.name}
-              lead={`${examLabel(board, classLevel)} Class ${classLevel} · ${data.chapters.length} chapters · ${data.academicYear} syllabus`}
-            />
+            <div className={c.subjectHead}>
+              <span className={`${c.tile} ${c.tileLarge}`} data-hue={subjectStyle(subject.id, subject.name, subject.language).hue} aria-hidden="true" data-testid="subject-glyph">
+                <SubjectGlyph kind={subjectStyle(subject.id, subject.name, subject.language).art} size={40} />
+              </span>
+              <PageHeader
+                crumbs={[
+                  { name: 'Learn', path: '/learn' },
+                  { name: `${BOARD_NAMES[board]} Class ${classLevel}`, path: learnPath(board, classLevel) },
+                  { name: subject.name, path: subjectHref },
+                ]}
+                title={subject.name}
+                lead={`${examLabel(board, classLevel)} Class ${classLevel} · ${data.chapters.length} chapters · ${data.academicYear} syllabus`}
+              />
+            </div>
             {subject.theoryOnly && (
               <div className={s.notice}>
                 <Icon name="info" size={20} />

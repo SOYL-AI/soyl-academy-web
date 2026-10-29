@@ -30,9 +30,10 @@ Format and rules: AGENTS.md §4.4 (context, options, decision, consequences). An
 | [022](022-interim-builtin-consent-provider.md) | Interim built-in consent provider: age band, parent approval code by email, withdraw link, AI data deletion (D-039) | Accepted | 2026-10-28 | Consent, privacy |
 | [023](023-platform-app-shell-and-theme.md) | Platform app shell (marketing header/footer step aside on platform paths) and the Light / Dark / System theme (cookie + hash-allowed boot script, no flash) | Accepted | 2026-10-28 | Web, design system, marketing protection |
 | [024](024-invoice-pdf.md) | Invoices and credit notes: gap-free numbering per financial year, GST / not-registered modes, built-in PDF writer (no new dependency), private Blob storage, email with attachment, 8-year retention | Accepted | 2026-10-28 | Billing, compliance |
+| [025](025-marketing-nav-and-footer.md) | Marketing header mega menus (disclosure pattern, one client island, flag-gated Learn group) and a light footer with a pre-footer CTA band; new visual baseline accepted under D-047 (owner standing go-ahead) | Accepted | 2026-10-29 | Marketing, web, accessibility |
 
 ## Housekeeping notes
 
-- **Duplicate numbers.** 011 and 012 were each used twice because agents numbered in parallel branches. Both pairs are kept as they are, since other documents link to the file names. Cite them with their topic, for example "ADR-011 (staff TOTP)". The next free number is **025** (024: invoices and their PDFs).
+- **Duplicate numbers.** 011 and 012 were each used twice because agents numbered in parallel branches. Both pairs are kept as they are, since other documents link to the file names. Cite them with their topic, for example "ADR-011 (staff TOTP)". The next free number is **026** (024: invoices and their PDFs; 025: marketing nav and footer).
 - **Status lines not updated.** The two web ADRs from M1 (011 web, 012 web) still say "Proposed" although they were merged and are in force. The Lead should mark them Accepted.
 - **Other ADRs never written:** ACR placement, Redis tier and Front Door. These decisions are encoded in Bicep and described in the [infra-azure M1 handoff](../handoffs/2026-10-26-infra-azure-m1.md).

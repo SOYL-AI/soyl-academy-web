@@ -12,7 +12,8 @@ const origin = `http://localhost:${FLAG_OFF_PORT}`;
 
 export default defineConfig({
   testDir: '.',
-  testMatch: /flag-off\.spec\.ts$/,
+  // marketing-nav.spec.ts runs in both suites and adapts to the flag (ADR-025).
+  testMatch: /(flag-off|marketing-nav)\.spec\.ts$/,
   outputDir: resolve(import.meta.dirname, '../../../test-results/platform-web/playwright-flag-off'),
   workers: 1,
   forbidOnly: true,

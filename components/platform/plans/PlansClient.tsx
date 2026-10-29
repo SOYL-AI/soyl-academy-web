@@ -27,6 +27,7 @@ import { GST_STATES } from '@/platform/shared/billing/gst';
 import { Field } from '@/components/platform/ui/kit/Field';
 import field from '@/components/platform/ui/kit/Interactive.module.css';
 import { trackInterest } from '../lib/interest';
+import { allowanceLine, bonusCopy, priceExamples } from './plans-copy';
 import { checkoutOptions, loadCheckout } from './razorpay';
 import s from './plans.module.css';
 
@@ -376,6 +377,18 @@ export function PlansClient() {
           );
         })}
       </ul>
+      <section className={s.howCredits} aria-labelledby="how-credits" data-testid="how-credits">
+        <h2 id="how-credits" className={s.howTitle}>
+          How AI credits work
+        </h2>
+        <p>{allowanceLine(ordered)}</p>
+        <ul className={s.examples}>
+          {priceExamples().map((t) => (
+            <li key={t}>{t}</li>
+          ))}
+        </ul>
+        <p>{bonusCopy()}</p>
+      </section>
       <p className={s.muted}>
         {plans.pricesIncludeGst ? 'Prices include GST. ' : ''}Payments are handled by Razorpay (UPI, cards). An invoice is emailed for every payment and kept under <Link href="/me/invoices">Invoices</Link>. Monthly and yearly plans renew automatically until you cancel; you keep the plan until the end of the period you paid for.</p>
 

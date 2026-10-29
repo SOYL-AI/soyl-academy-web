@@ -80,6 +80,23 @@
   --p-tier-gold: #a87400;
   --p-tier-elite: #6d3fd6;
 
+  /* League tiers above gold (crests): graphics >= 3:1 on surface and bg. */
+  --p-tier-sapphire: #1f5fbf;
+  --p-tier-diamond: #0d7a8a;
+
+  /* Avatar background themes (platform/shared/config/avatars.ts AVATAR_BACKGROUNDS, token p-avatar-<id>).
+     Light pastels; dark mode uses calmer mid-tones (not glaring on the dark canvas). The animal art keeps fixed
+     colours, so every background stays light enough for its dark features; --p-avatar-ink is AA on all of them. */
+  --p-avatar-sky: #cfe2fb;
+  --p-avatar-mint: #c9efdc;
+  --p-avatar-sunflower: #fbe7a1;
+  --p-avatar-coral: #fdd2c8;
+  --p-avatar-lavender: #e0d6fa;
+  --p-avatar-meadow: #d6ebb3;
+  --p-avatar-peach: #fde0c2;
+  --p-avatar-ocean: #bfe4ec;
+  --p-avatar-ink: #15171c;
+
   /* Diagram tokens (svg-allowlist.ts DIAGRAM_PALETTE). */
   --diagram-accent: #2b4fe6;
   --diagram-muted: #5f6570;
@@ -201,6 +218,17 @@
     --p-tier-silver: #b4bcc8;
     --p-tier-gold: #e5b84b;
     --p-tier-elite: #b99cff;
+    --p-tier-sapphire: #7fa8ff;
+    --p-tier-diamond: #6fd6e0;
+    --p-avatar-sky: #9db8e0;
+    --p-avatar-mint: #93c9ae;
+    --p-avatar-sunflower: #d9c06a;
+    --p-avatar-coral: #e3a597;
+    --p-avatar-lavender: #b3a5e0;
+    --p-avatar-meadow: #a9c47e;
+    --p-avatar-peach: #e0b48a;
+    --p-avatar-ocean: #8ec4cf;
+    --p-avatar-ink: #15171c;
     --diagram-accent: #8ea2ff;
     --diagram-muted: #9ea3ae;
     --diagram-fill: rgba(142, 162, 255, 0.2);
@@ -267,6 +295,17 @@
   --p-tier-silver: #b4bcc8;
   --p-tier-gold: #e5b84b;
   --p-tier-elite: #b99cff;
+  --p-tier-sapphire: #7fa8ff;
+  --p-tier-diamond: #6fd6e0;
+  --p-avatar-sky: #9db8e0;
+  --p-avatar-mint: #93c9ae;
+  --p-avatar-sunflower: #d9c06a;
+  --p-avatar-coral: #e3a597;
+  --p-avatar-lavender: #b3a5e0;
+  --p-avatar-meadow: #a9c47e;
+  --p-avatar-peach: #e0b48a;
+  --p-avatar-ocean: #8ec4cf;
+  --p-avatar-ink: #15171c;
   --diagram-accent: #8ea2ff;
   --diagram-muted: #9ea3ae;
   --diagram-fill: rgba(142, 162, 255, 0.2);

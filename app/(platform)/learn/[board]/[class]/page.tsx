@@ -19,8 +19,9 @@ import { RememberClass } from '@/components/platform/learn/LearnClient';
 import { MasteryProvider } from '@/components/platform/learn/MasteryProvider';
 import { SubjectCardProgress } from '@/components/platform/learn/CourseIslands';
 import { subjectStyle } from '@/components/platform/learn/subject-style';
+import { SubjectGlyph } from '@/components/platform/ui/art/SubjectGlyph';
 import { DailyChallengeCard } from '@/components/platform/coins/DailyChallengeCard';
-import { BOARD_NAMES, examLabel, langAttr, learnPath, parseBoard, parseClass, type BoardSlug } from '@/components/platform/lib/catalog';
+import { BOARD_NAMES, examLabel, learnPath, parseBoard, parseClass, type BoardSlug } from '@/components/platform/lib/catalog';
 import shell from '@/components/platform/shell/shell.module.css';
 import s from '@/components/platform/learn/learn.module.css';
 import c from '@/components/platform/learn/course.module.css';
@@ -128,8 +129,8 @@ function SubjectCard({ subject, board, classLevel, chapters }: { subject: Subjec
   const st = subjectStyle(subject.id, subject.name, subject.language);
   return (
     <Link href={learnPath(board, classLevel, subject.id)} className={c.subjectCard} data-testid="subject-card">
-      <span className={c.tile} data-hue={st.hue} aria-hidden="true" lang={langAttr(subject.language)}>
-        {st.glyph}
+      <span className={c.tile} data-hue={st.hue} aria-hidden="true">
+        <SubjectGlyph kind={st.art} size={32} />
       </span>
       <span className={c.subjectBody}>
         <span className={c.subjectName}>{subject.name}</span>

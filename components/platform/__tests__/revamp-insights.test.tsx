@@ -277,8 +277,8 @@ describe('chapter learning path', () => {
 
 describe('course display helpers', () => {
   it('subject tiles are stable and recognisable', () => {
-    expect(subjectStyle('cbse-10-mathematics', 'Mathematics (Standard 041 / Basic 241)')).toEqual({ glyph: 'π', hue: 'blue' });
-    expect(subjectStyle('cbse-10-hindi-a', 'Hindi Course A', 'hi')).toEqual({ glyph: 'हि', hue: 'red' });
+    expect(subjectStyle('cbse-10-mathematics', 'Mathematics (Standard 041 / Basic 241)')).toEqual({ glyph: 'π', hue: 'blue', art: 'maths' });
+    expect(subjectStyle('cbse-10-hindi-a', 'Hindi Course A', 'hi')).toEqual({ glyph: 'हि', hue: 'red', art: 'hindi' });
     expect(subjectStyle('cbse-10-science', 'Science').glyph).toBe('Sc');
     expect(subjectStyle('cbse-12-painting', 'Painting')).toEqual(subjectStyle('cbse-12-painting', 'Painting'));
   });

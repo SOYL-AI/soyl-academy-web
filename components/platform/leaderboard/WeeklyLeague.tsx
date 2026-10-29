@@ -11,9 +11,10 @@ import { useEffect, useState } from 'react';
 import type { Schemas } from '@/platform/shared/api-client';
 import { cx } from '@/components/platform/ui/cx';
 import { Card, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
-import { Icon } from '@/components/platform/ui/kit/Icon';
+import { LeagueCrest } from '@/components/platform/ui/art/LeagueCrest';
+import { AnimalAvatar } from '@/components/platform/ui/kit/AnimalAvatar';
 import { api } from '../lib/api-browser';
-import { formatSpan } from '../coins/coins-logic';
+import { formatSpan } from '../coins/coins-format';
 import s from './league.module.css';
 
 type League = Schemas['LeagueCurrent'];
@@ -92,9 +93,8 @@ export function WeeklyLeague() {
   return (
     <section className={s.league} data-tier={L.tier.key} aria-labelledby="league-title" data-testid="weekly-league">
       <header className={s.head}>
-        <span className={s.crest} aria-hidden="true">
-          <Icon name="shield" size={34} />
-          <span className={s.crestLevel}>{L.tier.level}</span>
+        <span className={s.crest} aria-hidden="true" data-testid="league-crest">
+          <LeagueCrest level={L.tier.level} size={56} decorative />
         </span>
         <div className={s.headBody}>
           <h2 id="league-title" className={s.title}>
@@ -127,8 +127,11 @@ export function WeeklyLeague() {
         <ol className={s.podium} aria-label="Top three">
           {top.map((p) => (
             <li key={p.rank} className={cx(s.place, p.isMe && s.placeMe)} data-place={p.rank}>
-              <span className={s.medal} aria-hidden="true">
-                {p.rank}
+              <span className={s.podiumAvatar}>
+                <AnimalAvatar avatar={p.avatar} size={p.rank === 1 ? 56 : 44} ring={p.rank === 1 ? 'gold' : p.rank === 2 ? 'silver' : 'bronze'} decorative />
+                <span className={s.medal} aria-hidden="true">
+                  {p.rank}
+                </span>
               </span>
               <span className={s.placeName}>{p.isMe ? 'You' : (p.name ?? 'A student')}</span>
               <span className={s.placeXp}>{p.xp} XP</span>
@@ -162,8 +165,13 @@ export function WeeklyLeague() {
                 <tr key={r.s.rank} className={cx(s.row, r.s.isMe && s.rowMe)} data-zone={r.s.zone} aria-current={r.s.isMe ? 'true' : undefined}>
                   <td className={s.rank}>{r.s.rank}</td>
                   <td>
-                    {r.s.name ?? 'A student'}
-                    {r.s.isMe && <span className={s.you}> (you)</span>}
+                    <span className={s.student}>
+                      <AnimalAvatar avatar={r.s.avatar} size={28} decorative />
+                      <span>
+                        {r.s.name ?? 'A student'}
+                        {r.s.isMe && <span className={s.you}> (you)</span>}
+                      </span>
+                    </span>
                   </td>
                   <td className={s.xp}>{r.s.xp}</td>
                 </tr>
