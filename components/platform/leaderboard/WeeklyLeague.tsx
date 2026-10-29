@@ -14,7 +14,7 @@ import { Card, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display
 import { LeagueCrest } from '@/components/platform/ui/art/LeagueCrest';
 import { AnimalAvatar } from '@/components/platform/ui/kit/AnimalAvatar';
 import { api } from '../lib/api-browser';
-import { formatSpan } from '../coins/coins-logic';
+import { formatSpan } from '../coins/coins-format';
 import s from './league.module.css';
 
 type League = Schemas['LeagueCurrent'];

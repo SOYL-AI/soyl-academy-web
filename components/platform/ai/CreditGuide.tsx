@@ -34,7 +34,7 @@ export function useCreditGuide(enabled = true): Guide | null | 'error' {
   return guide;
 }
 
-export function CreditGuidePanel({ guide, headingLevel: H = 'h3' }: { guide: Guide; headingLevel?: 'h2' | 'h3' }) {
+export function CreditGuidePanel({ guide, headingLevel: H = 'h3', onLeave }: { guide: Guide; headingLevel?: 'h2' | 'h3'; /** Called before a link inside navigates away (closes the dialog). */ onLeave?: () => void }) {
   const rows = guideRows(guide);
   const bonuses = bonusLines(guide);
   return (
@@ -87,7 +87,12 @@ export function CreditGuidePanel({ guide, headingLevel: H = 'h3' }: { guide: Gui
             </li>
           ))}
         </ul>
-        <p className={s.muted}>Lessons, practice and tests are always free; credits are only for AI help.</p>
+        <p className={s.muted}>
+          Lessons, practice and tests are always free; credits are only for AI help.{' '}
+          <Link href="/plans" className={s.inlineLink} onClick={onLeave}>
+            Compare plans
+          </Link>
+        </p>
       </section>
     </div>
   );
@@ -105,9 +110,6 @@ export function CreditGuideDialog({ open, onClose }: { open: boolean; onClose: (
           <Link href="/me#credits" className={s.footerLink} onClick={onClose}>
             Your usage, day by day
           </Link>
-          <Link href="/plans" className={s.footerLink} onClick={onClose}>
-            See plans
-          </Link>
           <Button variant="secondary" onClick={onClose}>
             Close
           </Button>
@@ -121,7 +123,7 @@ export function CreditGuideDialog({ open, onClose }: { open: boolean; onClose: (
       ) : guide === 'error' ? (
         <p className={s.muted}>We could not load your credits. Check your connection and try again.</p>
       ) : (
-        <CreditGuidePanel guide={guide} />
+        <CreditGuidePanel guide={guide} onLeave={onClose} />
       )}
     </Dialog>
   );

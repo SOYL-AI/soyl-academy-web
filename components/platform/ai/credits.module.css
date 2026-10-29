@@ -214,3 +214,9 @@
   color: var(--p-ink-muted);
   font-weight: 600;
 }
+.inlineLink {
+  color: var(--p-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
