@@ -32,7 +32,7 @@ import {
   toCsv,
 } from '../admin/analytics/model';
 import { BarList, KpiTile, LineChart } from '../admin/analytics/Charts';
-import { AdminApp } from '../admin/AdminApp';
+import { AdminApp, staffSignInReason } from '../admin/AdminApp';
 import { resetInterestForTests, shouldSend, trackInterest, INTEREST_DEBOUNCE_MS } from '../lib/interest';
 
 afterEach(() => {
@@ -157,6 +157,9 @@ describe('tab gating by role', () => {
     expect(tile.textContent).toContain('12');
     expect(tile.textContent).toContain('+20%');
     expect(h.api.get).toHaveBeenCalledWith('/v1/admin/analytics/overview', { query: expect.objectContaining({ to: expect.stringMatching(/^\d{4}-\d{2}-\d{2}$/) }) });
+    // ADR-026: with no second factor the API answers directly and the UI never asks about TOTP.
+    expect(h.api.get.mock.calls.some(([p]) => p === '/v1/me/mfa')).toBe(false);
+    expect(screen.queryByTestId('mfa-verify')).toBeNull();
     unmount();
 
     h.api.get.mockReset();
@@ -170,6 +173,16 @@ describe('tab gating by role', () => {
     expect(await screen.findByText('No open reports.')).toBeTruthy();
     expect(screen.queryByRole('tablist', { name: 'Admin sections' })).toBeNull();
     expect(h.api.get.mock.calls.some(([p]) => String(p).startsWith('/v1/admin/analytics'))).toBe(false);
+  });
+
+  it('guests are asked to sign in the way STAFF_AUTH allows (owner default: the email code, ADR-026)', async () => {
+    h.session.state = { status: 'guest' };
+    h.session.openLogin.mockReset();
+    render(<AdminApp />);
+    fireEvent.click(screen.getByRole('button', { name: 'Log in' }));
+    expect(h.session.openLogin).toHaveBeenCalledWith({ reason: staffSignInReason() });
+    expect(staffSignInReason()).toMatch(/email code/);
+    expect(staffSignInReason(['google'])).toMatch(/Google/);
   });
 
   it('mfa_required from a section sends the superadmin back to the verify step', async () => {

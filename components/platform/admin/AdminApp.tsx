@@ -3,11 +3,13 @@
 /**
  * Staff area (M2 minimal shell; backend-api M2 point 8).
  *
- * 1. Role gate: guests are asked to sign in (staff sign in with Google); students and parents see
- *    "staff only". The API enforces roles anyway (policy.staff); this is only the UI.
- * 2. MFA (AUTH-11): when a staff call returns `mfa_required`, read GET /v1/me/mfa and either enrol
- *    (QR of the otpauth URI + the secret, confirm with a code, show the 10 recovery codes once) or verify
- *    (a 6-digit code, or a recovery code). Enrolment needs a fresh sign-in (`fresh_session_required`).
+ * 1. Role gate: guests are asked to sign in (staff use the methods in STAFF_AUTH; owner default: the email
+ *    one-time code, ADR-026); students and parents see "staff only". The API enforces roles anyway
+ *    (policy.staff); this is only the UI.
+ * 2. MFA (AUTH-11): the UI follows the API. Only when a staff call returns `mfa_required` (STAFF_AUTH
+ *    secondFactor 'totp') does it read GET /v1/me/mfa and either enrol (QR of the otpauth URI + the secret,
+ *    confirm with a code, show the 10 recovery codes once) or verify (a 6-digit code, or a recovery code).
+ *    Enrolment needs a fresh sign-in (`fresh_session_required`). With no second factor it goes straight in.
  * 3. GET /v1/admin/me decides the sections (D-045). Superadmins get the dashboard tabs (Overview, Growth,
  *    Engagement, Retention, AI and credits, Revenue, Interest, Content, Users) plus Reports; other staff
  *    see the reports queue only. Analytics and Users are lazy chunks.
@@ -18,6 +20,7 @@
  */
 import { lazy, Suspense, useCallback, useEffect, useState } from 'react';
 import { isApiError, type AdminContentReports, type AdminMe, type MfaEnrollment, type MfaStatus } from '@/platform/shared/api-client';
+import { STAFF_AUTH } from '@/platform/shared/config/security';
 import { cx } from '@/components/platform/ui/cx';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { Badge, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
@@ -47,6 +50,12 @@ type Gate =
   | { step: 'verify' }
   | { step: 'ready' };
 
+/** The login prompt's reason line, from the staff sign-in policy (config, ADR-026). */
+export function staffSignInReason(methods: readonly string[] = STAFF_AUTH.signInMethods): string {
+  if (methods.includes('email')) return 'Staff sign in with the email code sent to their SOYL email address.';
+  return 'Staff sign in with their SOYL Google account.';
+}
+
 export function mfaErrorMessage(err: unknown): string {
   if (isApiError(err, 'otp_invalid')) return 'That code is not right. Check the time on your phone and try the newest code.';
   if (isApiError(err, 'otp_expired')) return 'The set-up expired. Start again.';
@@ -68,7 +77,7 @@ export function AdminApp() {
         title="Staff sign-in"
         headingLevel="h2"
         icon="lock"
-        action={<Button onClick={() => openLogin({ reason: 'Staff sign in with their SOYL Google account.' })}>Log in</Button>}
+        action={<Button onClick={() => openLogin({ reason: staffSignInReason() })}>Log in</Button>}
       >
         This area is for SOYL Academy reviewers and admins.
       </EmptyState>
@@ -104,7 +113,7 @@ function StaffArea({ onSignInAgain }: { onSignInAgain: () => void }) {
     }
   }, []);
 
-  /** Role, capabilities and sections (GET /v1/admin/me; staff + TOTP-verified session). */
+  /** Role, capabilities and sections (GET /v1/admin/me; staff role, + a TOTP-verified session when configured). */
   const loadMe = useCallback(async () => {
     setError(null);
     try {

@@ -75,7 +75,10 @@ describe('problem messages', () => {
     expect(problemMessage(err('some_new_code'))).toBe('Something went wrong. Please try again.');
   });
   it('maps every Google authError code', () => {
-    for (const code of ['oauth_state', 'oauth_failed', 'email_unverified', 'account_exists_link_required', 'identifier_unavailable', 'staff_domain_not_allowed', 'account_disabled', 'link_requires_fresh_session']) {
+    // ADR-026: a staff account refused for its sign-in method gets its own text, not the generic fallback.
+    expect(googleErrorMessage('staff_sign_in_method_not_allowed')).not.toBe(googleErrorMessage('oauth_failed'));
+    expect(problemMessage(err('staff_sign_in_method_not_allowed'), 'phone')).toContain('email code');
+    for (const code of ['oauth_state', 'oauth_failed', 'email_unverified', 'account_exists_link_required', 'identifier_unavailable', 'staff_domain_not_allowed', 'staff_sign_in_method_not_allowed', 'account_disabled', 'link_requires_fresh_session']) {
       expect(googleErrorMessage(code)).not.toBe('');
     }
     expect(googleErrorMessage('unknown')).toBe(googleErrorMessage('oauth_failed'));
