@@ -208,7 +208,7 @@
 /* ── End of the deck ───────────────────────────────────────────────────── */
 .done {
   display: grid;
-  align-content: center;
+  align-content: safe center; /* never cut at the top when taller than the stage */
   justify-items: center;
   gap: var(--p-space-3);
   width: 100%;

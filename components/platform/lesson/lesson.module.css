@@ -351,9 +351,10 @@
   box-shadow: var(--p-shadow-1);
   text-align: center;
 }
+/* Centred when it fits; never cut at the top when it is taller than the card (it scrolls instead). */
 @media (min-height: 700px) {
   .done {
-    align-content: center;
+    align-content: safe center;
   }
 }
 .done p {
