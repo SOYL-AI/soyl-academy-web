@@ -1,46 +1,55 @@
-.meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--p-space-2);
-  margin: var(--p-space-1) 0 0;
-  color: var(--p-ink-muted);
-  font-size: var(--p-text-sm);
-}
+/* Flashcards in focus mode (frame: ../lesson/focus.module.css). 360 px first; the card fills the stage. */
 .deck {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: var(--p-space-3);
-  max-width: 40rem;
-  margin-top: var(--p-space-4);
+  --card-max: 40rem;
 }
-.toolbar {
+
+/* Sorting progress under the strip: known (green) then still learning (amber). */
+.sortBar {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  height: 4px;
+  background: var(--p-surface-3);
+}
+.sortKnown {
+  background: var(--p-success);
+  transition: width var(--p-duration-base) var(--p-ease);
+}
+.sortLearning {
+  background: var(--p-m-attempted);
+  transition: width var(--p-duration-base) var(--p-ease);
+}
+
+.stage {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
   gap: var(--p-space-2);
 }
-.count {
-  font-weight: 650;
-  font-variant-numeric: tabular-nums;
-}
+
+/* ── The card ──────────────────────────────────────────────────────────── */
 .card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-content: start;
+  grid-template-rows: auto minmax(0, 1fr) auto;
   gap: var(--p-space-3);
-  min-height: 14rem;
-  padding: var(--p-space-5) var(--p-space-4);
+  width: 100%;
+  max-width: var(--card-max);
+  min-height: 0;
+  margin: 0 auto;
+  padding: var(--p-space-4) var(--p-space-4) var(--p-space-3);
   border: 1px solid var(--p-border-strong);
-  border-radius: var(--p-radius-lg);
+  border-radius: var(--p-radius-xl);
   background: var(--p-surface);
   box-shadow: var(--p-shadow-2);
   cursor: pointer;
-  transition: background var(--p-duration-base) var(--p-ease), border-color var(--p-duration-base) var(--p-ease);
+  perspective: 1200px;
+  transition: background-color var(--p-duration-base) var(--p-ease), border-color var(--p-duration-base) var(--p-ease);
 }
-.cardFlipped {
-  background: var(--p-accent-soft);
+@media (min-width: 768px) {
+  .card {
+    padding: var(--p-space-6) var(--p-space-8) var(--p-space-4);
+  }
+}
+.cardBack {
   border-color: var(--p-accent);
+  background: var(--p-accent-soft);
 }
 .side {
   display: flex;
@@ -49,43 +58,236 @@
   gap: var(--p-space-2);
 }
 .sideLabel {
+  color: var(--p-ink-muted);
   font-size: var(--p-text-xs);
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--p-ink-muted);
+  text-transform: uppercase;
+}
+.cardBack .sideLabel {
+  color: var(--p-info);
 }
 .face {
-  font-size: var(--p-text-lg);
-  line-height: var(--p-leading-body);
+  display: grid;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-radius: var(--p-radius-md);
+  outline: none;
+}
+.face:focus-visible {
+  box-shadow: var(--p-focus-ring);
+}
+/* Centred while it fits; when it is taller it starts at the top and scrolls inside the card. */
+.faceInner {
+  align-self: center;
+  align-self: safe center;
   min-width: 0;
+  font-size: var(--p-text-xl);
+  line-height: 1.5;
+  text-align: center;
+  text-wrap: pretty;
 }
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--p-space-2);
+.faceBack .faceInner {
+  font-size: var(--p-text-lg);
+  text-align: left;
 }
-.nav {
+.faceInner:lang(hi) {
+  line-height: var(--p-leading-devanagari);
+}
+.faceInner > :first-child {
+  margin-top: 0;
+}
+.faceInner > :last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .faceInner {
+    font-size: var(--p-text-2xl);
+  }
+  .faceBack .faceInner {
+    font-size: var(--p-text-xl);
+  }
+}
+/* A quick turn when the face changes (the new face swings in); none under reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .faceFront,
+  .faceBack {
+    animation: turn 280ms var(--p-ease) both;
+    transform-origin: center;
+    backface-visibility: hidden;
+  }
+}
+@keyframes turn {
+  from {
+    opacity: 0.2;
+    transform: rotateY(-80deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0);
+  }
+}
+.tapHint {
+  margin: 0;
+  color: var(--p-ink-subtle);
+  font-size: var(--p-text-xs);
+  text-align: center;
+}
+.hintKeys {
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .hintTouch {
+    display: none;
+  }
+  .hintKeys {
+    display: inline;
+  }
+}
+/* The bottom bar is as wide as the card. */
+.deck .barNarrow {
+  max-width: var(--card-max);
+}
+
+.tally {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--p-space-2);
-}
-.tally {
+  justify-content: center;
+  gap: 6px;
   margin: 0;
   color: var(--p-ink-muted);
   font-size: var(--p-text-sm);
+  font-variant-numeric: tabular-nums;
 }
+.dotKnown,
+.dotLearning {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--p-success);
+}
+.dotLearning {
+  margin-left: 2px;
+  background: var(--p-m-attempted);
+}
+
+/* ── Bottom bar ────────────────────────────────────────────────────────── */
+.navButton {
+  flex: none;
+  width: 48px;
+  padding: 0;
+}
+.sortButton {
+  flex: 1 1 0;
+  padding: 0 var(--p-space-2);
+}
+.showButton {
+  flex: 1 1 auto;
+}
+.keyHint {
+  display: none;
+}
+@media (hover: hover) and (min-width: 640px) {
+  .keyHint {
+    display: inline-block;
+    border-color: currentColor;
+    opacity: 0.75;
+  }
+}
+.menuReport {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 6px var(--p-space-3);
+}
+.menuReport::after {
+  content: 'Report a mistake'; /* contained in the button's name (WCAG 2.5.3) */
+}
+
+/* ── End of the deck ───────────────────────────────────────────────────── */
 .done {
   display: grid;
-  gap: var(--p-space-2);
-  padding: var(--p-space-4);
-  border-radius: var(--p-radius-lg);
-  background: var(--p-success-soft);
+  align-content: safe center; /* never cut at the top when taller than the stage */
+  justify-items: center;
+  gap: var(--p-space-3);
+  width: 100%;
+  max-width: var(--card-max);
+  min-height: 0;
+  margin: 0 auto;
+  padding: var(--p-space-6) var(--p-space-4);
+  overflow-y: auto;
+  border: 1px solid var(--p-border);
+  border-radius: var(--p-radius-xl);
+  background: var(--p-surface);
+  box-shadow: var(--p-shadow-1);
+  text-align: center;
 }
-.done p {
-  display: flex;
-  gap: var(--p-space-2);
-  align-items: center;
+.ring {
+  display: grid;
+  place-items: center;
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  background: conic-gradient(var(--p-success) var(--pct), var(--p-surface-3) 0);
+}
+.ring > span {
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--p-surface);
+  font-size: var(--p-text-xl);
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+.doneTitle {
   margin: 0;
+  font-size: var(--p-text-2xl);
+  line-height: var(--p-leading-tight);
+}
+.doneText {
+  max-width: 30rem;
+  margin: 0;
+  color: var(--p-ink-muted);
+}
+.doneLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--p-space-2);
+}
+.primaryLink,
+.secondaryLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--p-space-1);
+  min-height: var(--p-touch);
+  padding: 0 var(--p-space-4);
+  border-radius: var(--p-radius-md);
+  font-weight: 650;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.primaryLink {
+  background: var(--p-accent);
+  color: var(--p-on-accent);
+}
+.primaryLink:hover {
+  background: var(--p-accent-hover);
+}
+.secondaryLink {
+  border: 1px solid var(--p-border-strong);
+  background: var(--p-surface);
+  color: var(--p-ink);
+}
+.secondaryLink:hover {
+  background: var(--p-surface-2);
+}
+.primaryLink:focus-visible,
+.secondaryLink:focus-visible {
+  outline: none;
+  box-shadow: var(--p-focus-ring);
 }

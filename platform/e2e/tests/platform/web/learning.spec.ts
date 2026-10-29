@@ -106,8 +106,10 @@ test('lesson (guest): keyboard + swipe, check slide answered inline, resume afte
   await expect.poll(() => playerIndex(page)).toBe('4');
   await expect(page.getByTestId('resume-note')).toContainText('Continuing from slide 5');
 
-  // End of the part: completion and the link to part 2 (?part=2 → prerendered part route).
+  // End of the part: completion and the link to part 2 (?part=2 → prerendered part route). Learn mode: End goes to
+  // the last slide, whose Next ("Finish") opens the completion screen.
   await page.keyboard.press('End');
+  await page.keyboard.press('ArrowRight');
   await expect(page.getByTestId('lesson-complete')).toBeVisible();
   await page.getByRole('link', { name: /Next: part 2/ }).click();
   await expect(page).toHaveURL(`${CH01}/lesson?part=2`);
@@ -347,6 +349,8 @@ test('guest practice is kept on the device, then merged into the account at logi
 test('report a mistake on a slide (guest): reason + comment → confirmation', async ({ page }) => {
   await page.goto(`${CH01}/lesson`, { waitUntil: 'networkidle' });
   await page.keyboard.press('ArrowRight');
+  // Learn mode: "Report a mistake" is in the player's options menu.
+  await page.getByRole('button', { name: 'Lesson options' }).click();
   await page.getByRole('button', { name: 'Report a mistake in slide 2' }).click();
   const dialog = page.getByRole('dialog', { name: 'Report a mistake' });
   await expect(dialog).toBeVisible();
