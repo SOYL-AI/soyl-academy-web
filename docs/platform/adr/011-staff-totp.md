@@ -1,6 +1,6 @@
 # ADR-011: Staff second factor — TOTP (AUTH-11)
 
-- Status: accepted (backend-api M2, 2026-10-27)
+- Status: accepted (backend-api M2, 2026-10-27); **amended by [ADR-026](026-staff-email-sign-in.md)** (owner, 2026-10-29): whether the gate applies is `STAFF_AUTH.secondFactor` in `platform/shared/config/security.ts`. The owner default is `'none'` (no second factor); `'totp'` restores everything below unchanged. The routes, storage and tests stay.
 - Related: ADR-002 (auth), security requirements AUTH-11, AUTH-9, API-6; migration 0005 (`user_mfa`, `sessions.mfa_verified_at`)
 
 ## Context

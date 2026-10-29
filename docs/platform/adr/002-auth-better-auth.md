@@ -131,6 +131,8 @@ Option 3.
 
 ### Staff (AUTH-11, API-10)
 
+> **Amended by [ADR-026](026-staff-email-sign-in.md)** (owner, 2026-10-29): staff sign in with the **email one-time code only, with no second factor**, controlled by `STAFF_AUTH` in `platform/shared/config/security.ts`. Phone OTP stays refused for staff (`403 staff_sign_in_method_not_allowed`). The Google-only rule below applies again only if `STAFF_AUTH.signInMethods` is set back to `['google']`. TOTP shipped later in ADR-011 and is enforced only when `STAFF_AUTH.secondFactor` is `'totp'`. The bullets below are the original M1 decision.
+
 - Reviewer and admin accounts sign in **only with Google** and only when the ID token's `hd` equals the email domain and is in `ADMIN_GOOGLE_DOMAINS`. OTP sign-in for staff → `403 staff_sign_in_requires_google`.
 - **TOTP is not feasible in M1 without a schema change.** The `twoFactor` plugin needs a `twoFactors` table and `users.twoFactorEnabled`, and a session needs an MFA-verified marker. The policy framework has `mfa: true`. Every such route returns `403 mfa_required` until the tables exist (fail closed). Schema request: `user_mfa` + `sessions.mfa_verified_at` (handoff). No `/v1/admin/*` routes exist in M1.
 

@@ -29,7 +29,7 @@ Sources, in order of authority: the route-policy snapshot (for roles, CSRF, rate
   - Members: 90 days absolute, 30 days of inactivity.
   - Staff: 12 h absolute, 60 min of inactivity.
   - "Fresh" means the session is at most `SESSION.freshSeconds` = 600 s old.
-- **Staff second factor (AUTH-11, [ADR-011 staff TOTP](adr/011-staff-totp.md)):** routes marked `mfa` need a confirmed TOTP enrolment and a session that has passed `POST /v1/me/mfa/verify`.
+- **Staff sign-in and second factor (AUTH-11 as amended by [ADR-026 staff email sign-in](adr/026-staff-email-sign-in.md)):** `STAFF_AUTH` in `platform/shared/config/security.ts` decides both. Owner default (2026-10-29): staff sign in with the **email one-time code** and there is **no second factor**, so routes marked `mfa` need only the staff role (and capability, where declared). With `secondFactor: 'totp'` ([ADR-011 staff TOTP](adr/011-staff-totp.md)) routes marked `mfa` need a confirmed TOTP enrolment and a session that has passed `POST /v1/me/mfa/verify`. Phone OTP is never a staff method.
 
 ## 3. The route policy model
 
@@ -42,7 +42,7 @@ Every route declares `config.policy = { roles, csrf, rateLimit, consent, fresh?,
 | `rateLimit` | `false` means no limits; only the health routes use it. Otherwise the API-RL-1 defaults `api.ip` and `api.user` apply, plus any extra `buckets`. `failClosed` (API-16): if the rate-limit store (Redis) is down, the route refuses with `503 service_unavailable` instead of letting the request through. Auth, OTP, MFA and AI routes set it. |
 | `consent` | API-11: a feature from `CONSENT_FEATURES`. It is enforced only for features in `CONSENT.gatedFeatures`: `ai`, `uploads`, `leaderboards`, `rank_cards`, `profile_school_city` and `notifications`. Those need consent state `granted`, otherwise `403 consent_required` (or `503 consent_unavailable` when consent cannot be checked). `test_attempts` and `merge_guest` are **declared but not gated** (D-014 in [DECISIONS.md](DECISIONS.md): learning and tests stay free). In the tables below they carry the mark †. |
 | `fresh` | AUTH-9: the session must be at most 600 s old, otherwise `403 fresh_session_required`. |
-| `mfa` | AUTH-11: the staff session must have passed TOTP, otherwise `403 mfa_required`. |
+| `mfa` | AUTH-11: when `STAFF_AUTH.secondFactor` is `'totp'`, the staff session must have passed TOTP, otherwise `403 mfa_required`. Not enforced with the owner default `'none'` (ADR-026). |
 
 **Enforcement order.** Everything below runs in `onRequest` hooks, before the body is parsed (`app.ts`, `policy.ts`):
 
@@ -52,7 +52,7 @@ Every route declares `config.policy = { roles, csrf, rateLimit, consent, fresh?,
 4. Session resolution.
 5. User rate limits: `api.user` plus the user-keyed buckets. These run only when the request has a session.
 6. Roles.
-7. MFA (AUTH-11).
+7. MFA (AUTH-11; only when `STAFF_AUTH.secondFactor` is `'totp'`, ADR-026).
 8. Fresh session (AUTH-9).
 9. Consent (API-11).
 
@@ -243,7 +243,7 @@ Outside `/v1`. No edge auth and no rate limits. They are served even when the pl
 
 ## 12. Staff: two-step verification and admin (6)
 
-`modules/mfa.ts`, `modules/admin.ts`. Staff sign in with Google only (`403 staff_sign_in_requires_google`).
+`modules/mfa.ts`, `modules/admin.ts`. Staff sign in only with the methods in `STAFF_AUTH.signInMethods` (owner default: email OTP; ADR-026). Any other method is `403 staff_sign_in_method_not_allowed` (Google: `?authError=staff_sign_in_method_not_allowed`); with the Google-only policy, OTP sign-in keeps the original `403 staff_sign_in_requires_google`. The TOTP routes below always exist; their gate applies only when `STAFF_AUTH.secondFactor` is `'totp'`.
 
 | Method | Path | Roles | CSRF | Rate limit | Consent | Fresh/MFA | Purpose | Documented in |
 |---|---|---|---|---|---|---|---|---|

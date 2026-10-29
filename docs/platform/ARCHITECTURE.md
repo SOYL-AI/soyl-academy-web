@@ -141,7 +141,7 @@ The marketing app stays exactly where it is. Platform code is added beside it. *
 > **As built (2026-10-28): routes.** Every route above exists in `app/(platform)/` except as noted:
 > - Lessons have a part route, `.../[chapter]/lesson/[part]`, so each deck part is prerendered; `?part=N` is rewritten to it by `proxy.ts` ([ADR-017](adr/017-platform-web-learning-core.md)).
 > - `/leaderboard` shows live-mock ranks (consent-gated); **weekly leagues still show "coming soon"** in the web app, although the API (`GET /v1/leagues/current`) was merged on 2026-10-28 and is waiting for a web task.
-> - `/admin` is a single page: TOTP enrolment/verification and the content-reports queue. The inline content editor, config and user lookup are **not built**.
+> - `/admin` is a single page: TOTP enrolment/verification (only when the API asks for it; off by default, ADR-026) and the content-reports queue. The inline content editor, config and user lookup are **not built**.
 > - Extra: `/learn/sitemap.xml` (platform sitemap), `/api/platform/csp-report`, and `/dev/ui` (design-system gallery).
 > - Every platform page returns 404 while the flag is off (the layout calls `notFound()`), and flag-off marketing HTML is byte-identical (ADR-001).
 
@@ -230,7 +230,7 @@ The marketing app stays exactly where it is. Platform code is added beside it. *
 > - Better Auth is the **identity core** (tables, sessions and the Drizzle adapter), not the HTTP surface ([ADR-002](adr/002-auth-better-auth.md)). OTPs are HMAC-peppered.
 > - **Account linking is explicit only** (AUTH-7): a Google sign-in whose email matches an existing account is refused with `account_exists_link_required`.
 > - `AUTH_METHODS` switches methods on and off. **Production: email OTP only** through Azure Communication Services from `noreply@soylai.com` (D-031, OA-17 done). Phone OTP is off (no DLT SMS provider) and Google is not configured (OA-05).
-> - Staff (reviewer/admin) need Google sign-in plus TOTP (AUTH-11, [ADR-011 staff TOTP](adr/011-staff-totp.md)), so staff cannot sign in to production until OA-05.
+> - Staff (reviewer/admin, incl. superadmin) sign in with the **email one-time code only, with no second factor** (owner decision 2026-10-29, [ADR-026 staff email sign-in](adr/026-staff-email-sign-in.md), amending AUTH-11 and [ADR-011 staff TOTP](adr/011-staff-totp.md)). `STAFF_AUTH` in `platform/shared/config/security.ts` controls it; Google (with `ADMIN_GOOGLE_DOMAINS`) and/or TOTP come back by a config change. Phone OTP is never a staff method.
 > - **Consent:** `ConsentProvider` has three implementations:
 >   - `mock`: local and test only, refused in production;
 >   - `unavailable`: production until OA-08; everyone is `pending`, so the D-014 gated features are off;

@@ -15,7 +15,7 @@ Format and rules: AGENTS.md §4.4 (context, options, decision, consequences). An
 | [009](009-platform-web-dependencies-and-test-tooling.md) | Platform web dependencies and test tooling | Accepted | 2026-10-26 | Web |
 | [010](010-content-api-caching-and-answer-separation.md) | Content and practice API: caching, active-release reads, answer separation | Accepted | 2026-10-27 | API |
 | [011 (web)](011-platform-web-security-headers-and-proxy.md) | Platform web security headers, CSP and the API proxy route | Proposed in the file; implemented and merged with web-platform M1 (d96acbc) | 2026-10-27 | Web, security |
-| [011 (staff TOTP)](011-staff-totp.md) | Staff second factor: TOTP (AUTH-11) | Accepted | 2026-10-27 | Auth |
+| [011 (staff TOTP)](011-staff-totp.md) | Staff second factor: TOTP (AUTH-11); amended by ADR-026 (enforced only with `STAFF_AUTH.secondFactor: 'totp'`) | Accepted | 2026-10-27 | Auth |
 | [012 (web)](012-platform-web-api-client-and-tests.md) | Typed API client generation and platform web test tooling | Proposed in the file; implemented and merged with web-platform M1 (d96acbc) | 2026-10-27 | Web |
 | [012 (test engine)](012-test-engine.md) | Test engine: attempts, autosave protocol, offline grace, grading, ranks | Accepted | 2026-10-27 | Tests |
 | [013](013-ai-gateway.md) | AI gateway: credits ledger, streaming, settlement, spend breaker, jobs, uploads | Accepted | 2026-10-27 | AI |
@@ -31,9 +31,10 @@ Format and rules: AGENTS.md §4.4 (context, options, decision, consequences). An
 | [023](023-platform-app-shell-and-theme.md) | Platform app shell (marketing header/footer step aside on platform paths) and the Light / Dark / System theme (cookie + hash-allowed boot script, no flash) | Accepted | 2026-10-28 | Web, design system, marketing protection |
 | [024](024-invoice-pdf.md) | Invoices and credit notes: gap-free numbering per financial year, GST / not-registered modes, built-in PDF writer (no new dependency), private Blob storage, email with attachment, 8-year retention | Accepted | 2026-10-28 | Billing, compliance |
 | [025](025-marketing-nav-and-footer.md) | Marketing header mega menus (disclosure pattern, one client island, flag-gated Learn group) and a light footer with a pre-footer CTA band; new visual baseline accepted under D-047 (owner standing go-ahead) | Accepted | 2026-10-29 | Marketing, web, accessibility |
+| [026](026-staff-email-sign-in.md) | Staff sign in with the email one-time code, no second factor (owner risk acceptance); `STAFF_AUTH` config, Google/TOTP back by a config change; amends AUTH-11, ADR-002 (staff), ADR-011 | Accepted | 2026-10-29 | Auth, security |
 
 ## Housekeeping notes
 
-- **Duplicate numbers.** 011 and 012 were each used twice because agents numbered in parallel branches. Both pairs are kept as they are, since other documents link to the file names. Cite them with their topic, for example "ADR-011 (staff TOTP)". The next free number is **026** (024: invoices and their PDFs; 025: marketing nav and footer).
+- **Duplicate numbers.** 011 and 012 were each used twice because agents numbered in parallel branches. Both pairs are kept as they are, since other documents link to the file names. Cite them with their topic, for example "ADR-011 (staff TOTP)". The next free number is **027** (024: invoices and their PDFs; 025: marketing nav and footer; 026: staff email sign-in).
 - **Status lines not updated.** The two web ADRs from M1 (011 web, 012 web) still say "Proposed" although they were merged and are in force. The Lead should mark them Accepted.
 - **Other ADRs never written:** ACR placement, Redis tier and Front Door. These decisions are encoded in Bicep and described in the [infra-azure M1 handoff](../handoffs/2026-10-26-infra-azure-m1.md).
