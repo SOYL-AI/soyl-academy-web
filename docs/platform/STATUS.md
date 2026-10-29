@@ -6,8 +6,8 @@ Single source of truth for progress (AGENTS.md §4.3). Updated by the Lead after
 - Integration branch: `platform/main` (merged into `main` only by the Lead under D-029, once CI, marketing regression and flag-off checks are green; not merged yet, OA-10)
 - Worktrees: `C:/Users/Prabhu/soyl-wt/<agent>-<task>` (D-009); at most 5 agents at a time (D-024)
 - Gate policy: owner credentials are still missing for most services → stand-in evidence, reported as **green (stand-in)** (D-010)
-- Owner blockers: [OWNER_ACTIONS.md](OWNER_ACTIONS.md). Most urgent now: **OA-08** (consent contract: without it nobody can use AI, leaderboards or buy), **OA-02/OA-03** (Azure OpenAI, Speech, Content Safety), **OA-04** (Razorpay test keys), **OA-05** (Google OAuth; also needed for staff sign-in), **OA-14** (counsel on children's data).
-- Last refreshed: 2026-10-28 at `platform/main` 49aa8a4 (technical writer, docs-only branch `platform/docs/as-built`).
+- Owner blockers: [OWNER_ACTIONS.md](OWNER_ACTIONS.md). Open now: **OA-21/OA-04** (Razorpay: owner needs more time), **OA-03** (Speech + Content Safety: narration audio, managed moderation), **OA-14** (counsel on children's data), **OA-16/OA-20** (syllabus and ICSE papers), **OA-12** (marketing-site security fixes).
+- Last refreshed: 2026-10-29 at `platform/main` 8ac9151; production = `f645d53` (backend + Vercel). The platform is **live** on www.soylai.com since 2026-10-28 (D-041).
 
 ## Current milestone: **M5 content waves + M6 hardening**
 
