@@ -7,15 +7,20 @@ import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { z } from 'zod/v4';
 import { BODY_LIMITS } from '@soyl/shared/config/security';
 import { MEMBER_ROLES, STAFF_ROLES } from '../src/policy';
-import { createHarness, PUBLIC_BASE, securityEvents, type Harness } from './helpers';
+import { createHarness, PUBLIC_BASE, securityEvents, STAFF_EMAIL_TOTP, type Harness, type HarnessOptions } from './helpers';
 
 let h: Harness;
 
+/** A staff route with `policy.mfa` (enforced only when STAFF_AUTH.secondFactor is 'totp'). */
+const adminOnlyProbe: NonNullable<HarnessOptions['extraRoutes']> = (app) => {
+  app.get('/v1/test/admin-only', { config: { policy: { roles: [...STAFF_ROLES], csrf: true, rateLimit: { buckets: [] }, consent: false, mfa: true } } }, async () => ({ ok: true }));
+};
+
 beforeAll(async () => {
   h = await createHarness({
-    extraRoutes: (app) => {
+    extraRoutes: (app, services) => {
       // Probes for policy behaviours that M1 product routes do not exercise.
-      app.get('/v1/test/admin-only', { config: { policy: { roles: [...STAFF_ROLES], csrf: true, rateLimit: { buckets: [] }, consent: false, mfa: true } } }, async () => ({ ok: true }));
+      adminOnlyProbe(app, services);
       app.get('/v1/test/parents', { config: { policy: { roles: ['parent'], csrf: true, rateLimit: { buckets: [] }, consent: false } } }, async () => ({ ok: true }));
       app.get('/v1/test/boom', { config: { policy: { roles: ['guest', ...MEMBER_ROLES], csrf: true, rateLimit: { buckets: [] }, consent: false } } }, async () => {
         const err = new Error('relation "secret_table" does not exist at character 15') as Error & { code: string };
@@ -134,13 +139,28 @@ describe('roles, MFA and fresh sessions', () => {
     expect(securityEvents(h.logs, 'authz_denied').length).toBeGreaterThan(0);
   });
 
-  it('staff routes need a second factor; M1 fails closed (AUTH-11)', async () => {
+  it('staff routes need a second factor when STAFF_AUTH says totp; fails closed (AUTH-11, ADR-011)', async () => {
+    const totp = await createHarness({ t: h.t, staffAuth: STAFF_EMAIL_TOTP, extraRoutes: adminOnlyProbe });
+    try {
+      const c = totp.client();
+      const { user } = await c.signInEmail('would-be-reviewer@example.com');
+      await totp.services.adapter().then((a) => a.updateUser(user.id, { role: 'reviewer' }));
+      const res = await c.get('/v1/test/admin-only');
+      expect(res.statusCode).toBe(403);
+      expect(res.json().code).toBe('mfa_required');
+    } finally {
+      await totp.close();
+    }
+  });
+
+  it('owner default (ADR-026, secondFactor none): the same staff route needs only the staff role', async () => {
     const c = h.client();
-    const { user } = await c.signInEmail('would-be-reviewer@example.com');
+    const { user } = await c.signInEmail('default-reviewer@example.com');
+    expect((await c.get('/v1/test/admin-only')).json().code).toBe('forbidden'); // still a student
     await h.services.adapter().then((a) => a.updateUser(user.id, { role: 'reviewer' }));
     const res = await c.get('/v1/test/admin-only');
-    expect(res.statusCode).toBe(403);
-    expect(res.json().code).toBe('mfa_required');
+    expect(res.statusCode).toBe(200);
+    expect(res.json()).toEqual({ ok: true });
   });
 
   it('fresh-session routes refuse a session older than 10 minutes (AUTH-9)', async () => {

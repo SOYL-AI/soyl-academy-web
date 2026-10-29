@@ -2,18 +2,20 @@
  * Google sign-in against the mock OIDC provider (AUTH-6, AUTH-7, AUTH-11, AC-03): PKCE + state +
  * nonce, ID-token validation, verified-email rule, identification by `sub`, no automatic linking,
  * explicit linking with a fresh session, staff domain rules.
+ * Runs with the Google staff policy (STAFF_GOOGLE_TOTP) so the Workspace-domain rules stay proven for when
+ * the owner switches back; the email-only default (ADR-026) is covered in staff-sign-in.test.ts.
  */
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { and, eq } from 'drizzle-orm';
 import { accounts, users } from '@soyl/db';
-import { createHarness, PUBLIC_BASE, securityEvents, STAFF_DOMAIN, type Harness } from './helpers';
+import { createHarness, PUBLIC_BASE, securityEvents, STAFF_DOMAIN, STAFF_GOOGLE_TOTP, type Harness } from './helpers';
 
 let h: Harness;
 let n = 0;
 const uniq = () => `${Date.now().toString(36)}${++n}`;
 
 beforeAll(async () => {
-  h = await createHarness();
+  h = await createHarness({ staffAuth: STAFF_GOOGLE_TOTP });
 });
 afterAll(async () => {
   await h?.close();

@@ -44,7 +44,7 @@ export const RoutePolicySchema = z.strictObject({
   consent: z.union([z.literal(false), z.enum(CONSENT_FEATURES)]),
   /** AUTH-9: the session must be at most SESSION.freshSeconds old. */
   fresh: z.boolean().optional(),
-  /** AUTH-11: staff second factor required (admin/reviewer routes). */
+  /** AUTH-11: staff second factor required (admin/reviewer routes). Enforced only when STAFF_AUTH.secondFactor is 'totp' (ADR-026). */
   mfa: z.boolean().optional(),
   /** D-045: a staff capability the caller must hold on top of the role (e.g. `superadmin`). */
   capability: z.enum(STAFF_CAPABILITIES).optional(),
@@ -83,8 +83,9 @@ export const policies = {
   auth: (): RoutePolicy => ({ roles: EVERYONE, csrf: true, rateLimit: { buckets: ['auth.ip'], failClosed: true }, consent: false }),
   /** Signed-in member routes. */
   /**
-   * D-045 super-admin routes (analytics, user lookup): role admin + `superadmin` capability + staff TOTP
-   * on the session (AUTH-11), with their own per-user bucket on top of the defaults.
+   * D-045 super-admin routes (analytics, user lookup): role admin + `superadmin` capability (checked on
+   * every request) + `mfa` (staff TOTP on the session when STAFF_AUTH.secondFactor is 'totp'; ADR-026),
+   * with their own per-user bucket on top of the defaults.
    */
   superadmin: (bucket: RateLimitBucketName): RoutePolicy => ({
     roles: SUPERADMIN_ROLES,

@@ -1,13 +1,14 @@
 /**
  * "Report a mistake" (guests and members, sanitised, rate-limited) and AUTH-11 staff TOTP (enrol,
  * confirm, verify with code or recovery code, replay, lockout, disable) gating the admin report queue.
+ * Runs with STAFF_AUTH.secondFactor 'totp' (ADR-011); the owner default 'none' is covered in staff-sign-in.test.ts.
  */
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { eq } from 'drizzle-orm';
 import { aiConversations, aiMessages, aiRequests, chapters, contentReports, decks, sessions, userMfa } from '@soyl/db';
 import { base32Decode, base32Encode, decryptSecret, encryptSecret, matchTotp, stepAt, totpAt } from '../src/auth/mfa';
 import { sanitiseComment } from '../src/domain/reports';
-import { createHarness, type Client, type Harness } from './helpers';
+import { createHarness, STAFF_EMAIL_TOTP, type Client, type Harness } from './helpers';
 import { seedRealContent } from './content-fixture';
 
 let h: Harness;
@@ -16,7 +17,7 @@ let n = 0;
 const email = () => `rm.${Date.now().toString(36)}${++n}@example.com`;
 
 beforeAll(async () => {
-  h = await createHarness();
+  h = await createHarness({ staffAuth: STAFF_EMAIL_TOTP });
   await seedRealContent(h.t, (u) => u === SCI);
 });
 afterAll(async () => {

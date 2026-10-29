@@ -19,6 +19,7 @@ const GOOGLE_ERRORS: Record<string, string> = {
   account_exists_link_required: 'An account already uses this email. Log in with an email code first, then connect Google from your profile.',
   identifier_unavailable: 'This Google account cannot be used here. Try your phone or email.',
   staff_domain_not_allowed: 'Staff accounts must use the approved work domain.',
+  staff_sign_in_method_not_allowed: 'Staff accounts cannot sign in with Google. Use the email code instead.',
   account_disabled: 'This account is disabled. Contact SOYL Academy support.',
   link_requires_fresh_session: 'For your safety, log in again and then connect Google.',
 };
@@ -51,6 +52,8 @@ export function problemMessage(err: unknown, channel: 'phone' | 'email' | 'gener
       return 'This account is disabled. Contact SOYL Academy support.';
     case 'staff_sign_in_requires_google':
       return 'Staff accounts sign in with Google.';
+    case 'staff_sign_in_method_not_allowed':
+      return channel === 'phone' ? 'Staff accounts cannot sign in with a phone code. Use the email code instead.' : 'Staff accounts cannot sign in this way.';
     case 'unauthenticated':
       return 'Please log in again.';
     case 'fresh_session_required':

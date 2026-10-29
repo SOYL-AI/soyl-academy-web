@@ -227,7 +227,53 @@ export type RateLimitBucketName = keyof typeof RATE_LIMITS;
 export const AI_MAX_CONCURRENT_STREAMS = 2;
 
 /* ------------------------------------------------------------------------------------------------
- * Staff second factor (AUTH-11)
+ * Staff sign-in policy (AUTH-11 as amended by ADR-026)
+ * ---------------------------------------------------------------------------------------------- */
+
+/** How staff (reviewer, admin; superadmin is admin + a capability) may sign in. Phone OTP is never one of them. */
+export const STAFF_SIGN_IN_METHODS = ['email', 'google'] as const;
+export type StaffSignInMethod = (typeof STAFF_SIGN_IN_METHODS)[number];
+
+/** `totp`: staff routes (`policy.mfa`) need a TOTP-verified session (ADR-011). `none`: no second factor. */
+export const STAFF_SECOND_FACTORS = ['none', 'totp'] as const;
+export type StaffSecondFactor = (typeof STAFF_SECOND_FACTORS)[number];
+
+export interface StaffAuthPolicy {
+  /** Sign-in methods a reviewer/admin account may use. Google always also needs ADMIN_GOOGLE_DOMAINS. */
+  signInMethods: readonly StaffSignInMethod[];
+  secondFactor: StaffSecondFactor;
+}
+
+/**
+ * Owner decision (2026-10-29, ADR-026): staff sign in with the email one-time code only, with no Google
+ * Workspace requirement and no TOTP second factor ("keep it simple"). The owner was told that anyone who
+ * can read a staff inbox can then open the admin dashboard (children's data) and accepted that risk.
+ *
+ * Switching back is a change here only (the TOTP routes, storage and tests stay in place):
+ *   - ADR-011 TOTP on top of email:  { signInMethods: ['email'], secondFactor: 'totp' }
+ *   - the original AUTH-11 policy:    { signInMethods: ['google'], secondFactor: 'totp' } (+ ADMIN_GOOGLE_DOMAINS)
+ * Everything else stays: role grants only via audited admin action / bootstrap CLI, per-request superadmin
+ * capability check, staff session lifetimes (SESSION.lifetimes.staff), fresh sessions for writes,
+ * audited PII reveal and the OTP rate limits.
+ */
+export const STAFF_AUTH: StaffAuthPolicy = {
+  signInMethods: ['email'],
+  secondFactor: 'none',
+};
+
+/** Problems with a staff policy (the API refuses to start on any). Empty = valid. */
+export function staffAuthProblems(p: StaffAuthPolicy): string[] {
+  const problems: string[] = [];
+  if (!p.signInMethods.length) problems.push('STAFF_AUTH.signInMethods must list at least one method');
+  for (const m of p.signInMethods)
+    if (!(STAFF_SIGN_IN_METHODS as readonly string[]).includes(m)) problems.push(`STAFF_AUTH.signInMethods: '${m}' is not a staff sign-in method (${STAFF_SIGN_IN_METHODS.join(', ')})`);
+  if (new Set(p.signInMethods).size !== p.signInMethods.length) problems.push('STAFF_AUTH.signInMethods lists a method twice');
+  if (!(STAFF_SECOND_FACTORS as readonly string[]).includes(p.secondFactor)) problems.push(`STAFF_AUTH.secondFactor must be one of ${STAFF_SECOND_FACTORS.join(', ')}`);
+  return problems;
+}
+
+/* ------------------------------------------------------------------------------------------------
+ * Staff second factor (AUTH-11, ADR-011; enforced only when STAFF_AUTH.secondFactor is 'totp')
  * ---------------------------------------------------------------------------------------------- */
 
 export const MFA = {

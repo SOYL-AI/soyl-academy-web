@@ -8,8 +8,9 @@
  * - Recovery codes (10, shown once at confirmation) are stored as HMAC-SHA256(OTP_PEPPER, code) and
  *   removed when used.
  * - Wrong codes are counted per user (MFA.failures); at the limit verification locks for the window.
- * - A session that passes the factor gets `sessions.mfa_verified_at`. Policy `mfa: true` routes need
- *   a confirmed enrolment and a verified session; anything else is 403 `mfa_required` (fail closed).
+ * - A session that passes the factor gets `sessions.mfa_verified_at`. With STAFF_AUTH.secondFactor 'totp',
+ *   policy `mfa: true` routes need a confirmed enrolment and a verified session; anything else is 403
+ *   `mfa_required` (fail closed). With 'none' (owner default, ADR-026) app.ts does not call the check.
  * - Disabling clears every session's mark, so other sessions must verify again.
  */
 import { createCipheriv, createDecipheriv, createHmac, randomBytes, randomInt, timingSafeEqual } from 'node:crypto';

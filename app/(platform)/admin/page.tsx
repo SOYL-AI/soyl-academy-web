@@ -1,6 +1,7 @@
 /**
- * /admin (ARCHITECTURE §3.1: role admin/reviewer, client). Minimal M2 shell: staff MFA (AUTH-11: enrol or
- * verify a TOTP code) and the "Report a mistake" queue. Rendered per request so the proxy's CSP nonce
+ * /admin (ARCHITECTURE §3.1: role admin/reviewer, client). Staff MFA when the API asks for it (AUTH-11:
+ * enrol or verify a TOTP code; off by default, ADR-026), the super-admin dashboard and the "Report a
+ * mistake" queue. Rendered per request so the proxy's CSP nonce
  * applies (WEB-3); never indexed.
  */
 import type { Metadata } from 'next';

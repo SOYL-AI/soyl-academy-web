@@ -8,7 +8,7 @@ import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import { and, asc, desc, eq } from 'drizzle-orm';
 import { analyticsCounters, invoices, payments, staffCapabilities, users } from '@soyl/db';
 import { base32Decode, stepAt, totpAt } from '../src/auth/mfa';
-import { FIXTURE_SELLER, INVOICING, type InvoicingConfig } from '@soyl/shared/config/invoicing';
+import { FIXTURE_SELLER, INVOICING, OWNER_TO_PROVIDE, type InvoicingConfig } from '@soyl/shared/config/invoicing';
 import { MemoryBlobStore } from '../src/ai/blob';
 import { extractPdfText } from '../src/billing/invoices/pdf';
 import { reconcile } from '../src/billing/reconcile';
@@ -321,15 +321,32 @@ describe('backfill and retries', () => {
     expect((await docs(userId))[0]!.sentAt).not.toBeNull();
   });
 
-  it('production refuses to issue while the seller street line is a placeholder (payment still applies)', async () => {
+  it('production refuses to issue while a seller field is a placeholder (payment still applies)', async () => {
     h.config.billing.invoicing!.production = true;
-    useSettings({ ...INVOICING });
+    // The real INVOICING has no placeholder since the owner's 2026-10-29 decision (no street line); inject one.
+    useSettings({ ...INVOICING, seller: { ...INVOICING.seller, addressLine1: `${OWNER_TO_PROVIDE}: street line` } });
     try {
       const { userId } = await payPass();
       expect(await docs(userId)).toHaveLength(0);
       expect(await h.services.billing.entitlements.planFor(userId, new Date(h.clock.now()))).toBe('board_exam_pass');
       expect(h.logs.some((l) => l.event === 'invoicing_refused' && l.alert === true)).toBe(true);
       expect((await h.services.billing.invoices.sweep()).refused).toBe(true);
+    } finally {
+      h.config.billing.invoicing!.production = false;
+    }
+  });
+
+  it('production issues with the real seller config (owner, 2026-10-29): no street line on the document', async () => {
+    h.config.billing.invoicing!.production = true;
+    useSettings(INVOICING);
+    h.stub.payerEmail = 'real.seller@example.com';
+    try {
+      const { userId } = await payPass();
+      const [inv] = await docs(userId);
+      expect(inv!.seller).toMatchObject({ legalName: 'SOYL AI Private Limited', addressLine1: null, city: 'Bengaluru', pincode: '560043', stateCode: '29' });
+      const lines = extractPdfText(h.email.last('real.seller@example.com')!.attachments![0]!.content);
+      const at = lines.indexOf('SOYL AI Private Limited');
+      expect(lines.slice(at, at + 4)).toEqual(['SOYL AI Private Limited', 'Trade name: SOYL', 'Bengaluru 560043', 'Karnataka (State code 29)']);
     } finally {
       h.config.billing.invoicing!.production = false;
     }

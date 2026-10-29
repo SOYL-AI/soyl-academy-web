@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { FIXTURE_SELLER, GST_MAX_NUMBER_LENGTH, INVOICING, invoicingProblems, OWNER_TO_PROVIDE, pricesIncludeGst, seriesNumberLength, type InvoicingConfig } from './invoicing';
+import { FIXTURE_SELLER, GST_MAX_NUMBER_LENGTH, INVOICING, invoicingProblems, OWNER_TO_PROVIDE, pricesIncludeGst, sellerAddressLines, seriesNumberLength, type InvoicingConfig } from './invoicing';
 
 const ready = (over: Partial<InvoicingConfig> = {}): InvoicingConfig => ({ ...INVOICING, seller: FIXTURE_SELLER, ...over });
 
@@ -12,13 +12,26 @@ describe('invoicing config', () => {
     expect(INVOICING.series.credit_note.prefix).toBe('SOYL/CN');
   });
 
-  it('production stays refused while the street line is a placeholder; PAN and CIN are optional', () => {
-    expect(INVOICING.seller.addressLine1).toContain(OWNER_TO_PROVIDE);
-    expect(invoicingProblems(INVOICING)).toEqual(['seller.addressLine1 is a placeholder (OA-22)']);
-    const filled = { ...INVOICING, seller: { ...INVOICING.seller, addressLine1: '12 Some Road' } };
-    expect(invoicingProblems(filled)).toEqual([]);
+  it('owner decision (2026-10-29): no street line, the real config is ready, and prints "Bengaluru 560043" + "Karnataka (State code 29)"', () => {
+    expect(INVOICING.seller.addressLine1).toBeNull();
+    expect(INVOICING.seller.addressLine2).toBeNull();
+    expect(invoicingProblems(INVOICING)).toEqual([]);
+    expect(sellerAddressLines(INVOICING.seller)).toEqual(['Bengaluru 560043', 'Karnataka (State code 29)']);
+    // PAN and CIN stay optional.
     expect(INVOICING.seller.pan).toBeNull();
     expect(INVOICING.seller.cin).toBeNull();
+  });
+
+  it('production stays refused while any seller field is a placeholder; a street line, when set, is printed', () => {
+    const placeholder = { ...INVOICING, seller: { ...INVOICING.seller, addressLine1: `${OWNER_TO_PROVIDE}: street line` } };
+    expect(invoicingProblems(placeholder)).toEqual(['seller.addressLine1 is a placeholder (OA-22)']);
+    const legal = { ...INVOICING, seller: { ...INVOICING.seller, legalName: OWNER_TO_PROVIDE } };
+    expect(invoicingProblems(legal)).toEqual(['seller.legalName is a placeholder (OA-22)']);
+    const filled = { ...INVOICING, seller: { ...INVOICING.seller, addressLine1: '12 Some Road' } };
+    expect(invoicingProblems(filled)).toEqual([]);
+    expect(sellerAddressLines(filled.seller)).toEqual(['12 Some Road', 'Bengaluru 560043', 'Karnataka (State code 29)']);
+    // Required fields stay required.
+    expect(invoicingProblems({ ...INVOICING, seller: { ...INVOICING.seller, city: ' ' } })).toContain('seller.city is required');
   });
 
   it('the fixture seller is ready in both modes (with a GST-compliant series when registered)', () => {

@@ -4,7 +4,7 @@
  * escaping, and the production refusal of the invoicing runtime.
  */
 import { describe, expect, it } from 'vitest';
-import { FIXTURE_SELLER, INVOICING } from '@soyl/shared/config/invoicing';
+import { FIXTURE_SELLER, INVOICING, OWNER_TO_PROVIDE } from '@soyl/shared/config/invoicing';
 import { buildPdf, extractPdfText, PdfPage, textWidth, toWinAnsi } from '../src/billing/invoices/pdf';
 import { pdfFileName, printDate, renderInvoicePdf, type InvoiceRow } from '../src/billing/invoices/document';
 import { issueRefusal, lineDescription } from '../src/billing/invoices/issue';
@@ -143,6 +143,15 @@ describe('invoice document', () => {
     expect(t).toContain('Issued to');
   });
 
+  it('the real seller (owner, 2026-10-29) prints "Bengaluru 560043" and "Karnataka (State code 29)" with no street line', () => {
+    const lines = extractPdfText(renderInvoicePdf({ row: row({ seller: INVOICING.seller }), cfg }));
+    const at = lines.indexOf(INVOICING.seller.legalName);
+    expect(at).toBeGreaterThanOrEqual(0);
+    // Seller block: legal name, trade name, then straight to the city line (no street line in between).
+    expect(lines.slice(at, at + 5)).toEqual(['SOYL AI Private Limited', 'Trade name: SOYL', 'Bengaluru 560043', 'Karnataka (State code 29)', 'Not registered under GST']);
+    expect(lines.join('\n')).not.toContain(OWNER_TO_PROVIDE);
+  });
+
   it('an erased buyer prints as "Customer" with no email', () => {
     const t = extractPdfText(renderInvoicePdf({ row: row({ buyerName: null, buyerEmail: null, buyerAnonymisedAt: new Date() }), cfg })).join('\n');
     expect(t).toContain('Customer');
@@ -168,11 +177,20 @@ describe('invoicing runtime (production refusal)', () => {
   });
 
   it('production refuses to start with INVOICING_ENABLED=true while a placeholder remains, and refuses to issue', () => {
-    const { config, problems } = loadBillingConfig({ INVOICING_ENABLED: 'true' }, ctx('prod'));
+    // Injected settings with a placeholder (the real config has none since the owner's 2026-10-29 decision).
+    const withPlaceholder = { ...INVOICING, seller: { ...INVOICING.seller, addressLine1: `${OWNER_TO_PROVIDE}: street line` } };
+    const { config, problems } = loadBillingConfig({ INVOICING_ENABLED: 'true' }, ctx('prod'), withPlaceholder);
     expect(problems.join('\n')).toMatch(/INVOICING_ENABLED=true but platform\/shared\/config\/invoicing\.ts is not ready \(OA-22\): seller\.addressLine1 is a placeholder/);
     expect(issueRefusal(config.invoicing)).toEqual({ refused: ['seller.addressLine1 is a placeholder (OA-22)'] });
-    expect(loadBillingConfig({}, ctx('prod')).problems).toEqual([]);
-    expect(issueRefusal(loadBillingConfig({}, ctx('prod')).config.invoicing)).toEqual({ off: true });
+    expect(loadBillingConfig({}, ctx('prod'), withPlaceholder).problems).toEqual([]);
+    expect(issueRefusal(loadBillingConfig({}, ctx('prod'), withPlaceholder).config.invoicing)).toEqual({ off: true });
     expect(issueRefusal({ enabled: true, production: true, settings: { ...INVOICING, seller: FIXTURE_SELLER } })).toBeNull();
+  });
+
+  it('the real INVOICING config (owner, 2026-10-29) is ready: production may enable invoicing and issue', () => {
+    const { config, problems } = loadBillingConfig({ INVOICING_ENABLED: 'true' }, ctx('prod'));
+    expect(problems).toEqual([]);
+    expect(config.invoicing).toMatchObject({ enabled: true, production: true, settings: INVOICING });
+    expect(issueRefusal(config.invoicing)).toBeNull();
   });
 });

@@ -5,7 +5,7 @@
  * `local`/`test`.
  */
 import { z } from 'zod/v4';
-import { CONSENT_PROVIDERS, OAUTH, OTP, type ConsentProviderName } from '@soyl/shared/config/security';
+import { CONSENT_PROVIDERS, OAUTH, OTP, STAFF_AUTH, staffAuthProblems, type ConsentProviderName, type StaffAuthPolicy } from '@soyl/shared/config/security';
 import { COIN_STORE } from '@soyl/shared/config/coins';
 import { loadBillingConfig, type BillingConfig } from './billing/config';
 
@@ -163,6 +163,8 @@ export interface Config {
   otpPepper: string;
   /** AUTH-11: AES-256-GCM key for user_mfa.totp_secret_enc. */
   mfaEncryptionKey: Buffer;
+  /** AUTH-11 as amended by ADR-026: staff sign-in methods and second factor (STAFF_AUTH; config, not env). */
+  staffAuth: StaffAuthPolicy;
   smsGlobalHourlyCap: number;
   google: {
     clientId: string;
@@ -189,7 +191,13 @@ export class ConfigError extends Error {
   }
 }
 
-export function loadConfig(env: Record<string, string | undefined> = process.env): Config {
+export interface LoadConfigOptions {
+  /** Staff sign-in policy. Default STAFF_AUTH (platform/shared/config/security.ts); tests inject the other modes. */
+  staffAuth?: StaffAuthPolicy;
+}
+
+export function loadConfig(env: Record<string, string | undefined> = process.env, opts: LoadConfigOptions = {}): Config {
+  const staffAuth = opts.staffAuth ?? STAFF_AUTH;
   const parsed = EnvSchema.safeParse(env);
   if (!parsed.success) {
     throw new ConfigError(parsed.error.issues.map((i) => `${i.path.join('.')}: ${i.message}`));
@@ -302,6 +310,7 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
 
   const billing = loadBillingConfig(env, { appEnv: e.APP_ENV, isLocal, isProduction });
   problems.push(...billing.problems);
+  problems.push(...staffAuthProblems(staffAuth));
 
   if (problems.length) throw new ConfigError(problems);
 
@@ -330,6 +339,7 @@ export function loadConfig(env: Record<string, string | undefined> = process.env
     authSecret,
     otpPepper,
     mfaEncryptionKey,
+    staffAuth: { signInMethods: [...staffAuth.signInMethods], secondFactor: staffAuth.secondFactor },
     smsGlobalHourlyCap: e.SMS_GLOBAL_HOURLY_CAP,
     google: {
       clientId: googleClientId,

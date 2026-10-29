@@ -1,6 +1,6 @@
 /**
- * Staff routes (ARCHITECTURE §4.1 admin). Every route: a staff role + TOTP-verified session (AUTH-11,
- * policy `mfa: true`).
+ * Staff routes (ARCHITECTURE §4.1 admin). Every route: a staff role + policy `mfa: true` (a TOTP-verified
+ * session when STAFF_AUTH.secondFactor is 'totp'; the owner default is 'none', ADR-026).
  *
  *   GET  /v1/admin/me                          staff role, capabilities and the sections it may open
  *   GET  /v1/admin/reports?status=&cursor=     "Report a mistake" queue, newest first (reviewer/admin)

@@ -4,6 +4,7 @@
  * standing in for Google, a fake clock and a log capture. Secrets are generated per run (GEN-1).
  */
 import type { StoreItem } from '@soyl/shared/config/coins';
+import type { StaffAuthPolicy } from '@soyl/shared/config/security';
 import { randomBytes } from 'node:crypto';
 import { Writable } from 'node:stream';
 import type { FastifyInstance, LightMyRequestResponse } from 'fastify';
@@ -54,7 +55,14 @@ export interface HarnessOptions {
   coinItems?: readonly StoreItem[];
   /** Another consent provider instead of the mock (e.g. the built-in one, D-039); `h.consent` is then unused. */
   consentProvider?: (t: TestDb) => ConsentProvider;
+  /** Staff sign-in policy (default STAFF_AUTH: email OTP, no second factor; ADR-026). */
+  staffAuth?: StaffAuthPolicy;
 }
+
+/** ADR-011 policy: staff routes need a TOTP-verified session (email sign-in). */
+export const STAFF_EMAIL_TOTP: StaffAuthPolicy = { signInMethods: ['email'], secondFactor: 'totp' };
+/** The original AUTH-11 policy: Google Workspace sign-in only, plus TOTP. */
+export const STAFF_GOOGLE_TOTP: StaffAuthPolicy = { signInMethods: ['google'], secondFactor: 'totp' };
 
 const secret = () => randomBytes(32).toString('base64url');
 
@@ -80,7 +88,7 @@ export async function createHarness(opts: HarnessOptions = {}): Promise<Harness>
     LOG_LEVEL: 'info',
     REDIS_URL: process.env.REDIS_URL,
     ...opts.env,
-  });
+  }, { staffAuth: opts.staffAuth });
   const clock = new FakeClock(Date.now());
   // Every harness gets its own key namespace, so per-IP/global limits never leak between test files or apps.
   // TEST_KV=redis-mock runs the Redis store (Lua scripts) on ioredis-mock locally, as CI runs it on redis:7.
