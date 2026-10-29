@@ -7,15 +7,17 @@
  * - `--role admin` (default): `users.role = 'admin'`; a `superadmin` capability the user had is removed.
  * - `--role superadmin` (D-045): `users.role = 'admin'` plus the `superadmin` row in
  *   `staff_capabilities` (analytics dashboard, audited user lookup). Superadmin is a capability on
- *   top of `admin`, so every staff rule (AUTH-11 Google Workspace sign-in + TOTP) applies unchanged.
+ *   top of `admin`, so every staff rule (STAFF_AUTH sign-in methods and second factor, AUTH-11 as
+ *   amended by ADR-026) applies unchanged.
  *
  * Idempotent: running it again with the same role changes nothing and writes no audit row. When the
  * role or capability changes, the user's sessions are revoked (API-10: a role change signs the account
  * out everywhere, so the next sign-in goes through the staff rules).
  *
- * A missing account is created (email only; DB-7). Note AUTH-7: a Google identity is never attached to
- * an existing account by email, so staff who will sign in with Google should sign up with Google (or
- * link Google to their account) before the bootstrap runs.
+ * A missing account is created (email only; DB-7); with the owner default (staff sign in with the email
+ * code) its first email sign-in lands as staff. Note AUTH-7: a Google identity is never attached to an
+ * existing account by email, so if Google is ever a staff method, staff who will sign in with Google
+ * should sign up with Google (or link Google to their account) before the bootstrap runs.
  */
 import { and, eq, or } from 'drizzle-orm';
 import type { Database } from '../client';

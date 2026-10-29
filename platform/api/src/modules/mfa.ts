@@ -1,5 +1,6 @@
 /**
- * AUTH-11 staff second factor (ADR-011). Reviewer/admin accounts only.
+ * AUTH-11 staff second factor (ADR-011). Reviewer/admin accounts only. The routes always exist; whether
+ * staff routes require a verified session is STAFF_AUTH.secondFactor (owner default 'none', ADR-026).
  *
  *   GET  /v1/me/mfa                    status: enrolled, confirmed, this session verified, recovery codes left
  *   POST /v1/me/mfa/totp/enroll        new secret + otpauth URI (fresh session; 409 when already set up)

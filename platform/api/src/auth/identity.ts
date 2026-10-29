@@ -15,12 +15,14 @@
  *   links Google from /me (signed in, fresh session).
  * - Linking (signed in + fresh session) refuses identifiers used by another account; unlinking the
  *   last method is refused; other verified channels are notified of link/unlink.
- * - Staff (reviewer/admin) sign in with Google only, from an allow-listed Workspace domain (AUTH-11).
+ * - Staff (reviewer/admin) sign in only with the methods in STAFF_AUTH.signInMethods (AUTH-11 as amended
+ *   by ADR-026; owner default: email OTP). Phone OTP is never a staff method. Google, when allowed, also
+ *   needs an allow-listed Workspace domain (ADMIN_GOOGLE_DOMAINS).
  */
 import { and, eq, isNull } from 'drizzle-orm';
 import type { FastifyBaseLogger } from 'fastify';
 import { accounts, consentStatus, normalizeEmail, normalizePhone, profiles, users, type Database } from '@soyl/db';
-import { ACCOUNT } from '@soyl/shared/config/security';
+import { ACCOUNT, type StaffSignInMethod } from '@soyl/shared/config/security';
 import type { Clock } from '../clock';
 import { ApiProblem } from '../errors';
 import { authEvent, securityEvent } from '../logging';
@@ -49,13 +51,24 @@ export interface GoogleProfile {
 }
 
 export class SignInRefused extends Error {
-  constructor(readonly reason: 'account_exists_link_required' | 'email_unverified' | 'staff_domain_not_allowed' | 'account_disabled' | 'identifier_unavailable') {
+  constructor(
+    readonly reason: 'account_exists_link_required' | 'email_unverified' | 'staff_domain_not_allowed' | 'staff_sign_in_method_not_allowed' | 'account_disabled' | 'identifier_unavailable',
+  ) {
     super(reason);
     this.name = 'SignInRefused';
   }
 }
 
 const isPlaceholderEmail = (email: string) => email.endsWith('.invalid');
+const isStaff = (user: AuthUser) => user.role === 'admin' || user.role === 'reviewer';
+
+/** Staff sign-in rules (config.staffAuth + ADMIN_GOOGLE_DOMAINS). */
+export interface StaffSignInRules {
+  /** Allow-listed Google Workspace domains (lower case). */
+  domains: readonly string[];
+  /** STAFF_AUTH.signInMethods. */
+  signInMethods: readonly StaffSignInMethod[];
+}
 
 export class IdentityService {
   constructor(
@@ -64,7 +77,7 @@ export class IdentityService {
     private readonly limiter: RateLimiter,
     private readonly clock: Clock,
     private readonly notify: { sms: SmsSender; email: EmailSender },
-    private readonly staffDomains: readonly string[],
+    private readonly staff: StaffSignInRules,
     /** D-045: the server-observed `signup` interest counter (aggregate, by method; no user link). */
     private readonly counters?: { observe(name: 'signup', dimension: string, log?: IdentityContext['log']): Promise<void> },
   ) {}
@@ -93,10 +106,15 @@ export class IdentityService {
     await this.counters?.observe('signup', method, ctx.log);
   }
 
-  private assertCanUseOtp(user: AuthUser) {
+  private assertCanUseOtp(user: AuthUser, method: 'phone' | 'email', ctx: IdentityContext) {
     if (user.banned) throw new ApiProblem('account_disabled');
-    // AUTH-11: no OTP-only staff login.
-    if (user.role === 'admin' || user.role === 'reviewer') throw new ApiProblem('staff_sign_in_requires_google');
+    // AUTH-11 / ADR-026: staff may use email OTP only when STAFF_AUTH allows it; phone OTP never.
+    if (isStaff(user) && !(method === 'email' && this.staff.signInMethods.includes('email'))) {
+      securityEvent(ctx.log, 'staff_sign_in_refused', { userId: user.id, reason: 'method', method });
+      // The original Google-only policy keeps its original code (the web shows "sign in with Google").
+      const googleOnly = this.staff.signInMethods.length === 1 && this.staff.signInMethods[0] === 'google';
+      throw new ApiProblem(googleOnly ? 'staff_sign_in_requires_google' : 'staff_sign_in_method_not_allowed');
+    }
   }
 
   /** Phone OTP passed: find by E.164 or create (placeholder `.invalid` email keeps email uniqueness clean). */
@@ -104,7 +122,7 @@ export class IdentityService {
     const e164 = normalizePhone(phone)!;
     const existing = await this.findActiveUser(eq(users.phoneE164, e164));
     if (existing) {
-      this.assertCanUseOtp(existing);
+      this.assertCanUseOtp(existing, 'phone', ctx);
       if (!existing.phoneNumberVerified) await this.db.update(users).set({ phoneNumberVerified: true }).where(eq(users.id, existing.id));
       return { user: { ...existing, phoneNumberVerified: true }, created: false };
     }
@@ -127,7 +145,7 @@ export class IdentityService {
     const norm = normalizeEmail(email);
     const existing = norm ? await this.findActiveUser(eq(users.emailNormalized, norm)) : null;
     if (existing) {
-      this.assertCanUseOtp(existing);
+      this.assertCanUseOtp(existing, 'email', ctx);
       if (!existing.emailVerified) await this.db.update(users).set({ emailVerified: true }).where(eq(users.id, existing.id));
       return { user: { ...existing, emailVerified: true }, created: false };
     }
@@ -141,7 +159,7 @@ export class IdentityService {
 
   private staffDomainAllowed(p: GoogleProfile): boolean {
     const domain = p.email.slice(p.email.lastIndexOf('@') + 1).toLowerCase();
-    return Boolean(p.hd) && p.hd!.toLowerCase() === domain && this.staffDomains.includes(domain);
+    return Boolean(p.hd) && p.hd!.toLowerCase() === domain && this.staff.domains.includes(domain);
   }
 
   /** Google ID token validated by openid-client; AUTH-6/7/11 decisions here. */
@@ -155,7 +173,11 @@ export class IdentityService {
       const user = await this.userById(acct.userId);
       if (!user) throw new SignInRefused('account_disabled');
       if (user.banned) throw new SignInRefused('account_disabled');
-      if ((user.role === 'admin' || user.role === 'reviewer') && !this.staffDomainAllowed(p)) {
+      if (isStaff(user) && !this.staff.signInMethods.includes('google')) {
+        securityEvent(ctx.log, 'staff_sign_in_refused', { userId: user.id, reason: 'method', method: 'google' });
+        throw new SignInRefused('staff_sign_in_method_not_allowed');
+      }
+      if (isStaff(user) && !this.staffDomainAllowed(p)) {
         securityEvent(ctx.log, 'staff_sign_in_refused', { userId: user.id, reason: 'domain' });
         throw new SignInRefused('staff_domain_not_allowed');
       }

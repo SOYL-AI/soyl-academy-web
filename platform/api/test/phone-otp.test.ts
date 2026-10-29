@@ -93,7 +93,7 @@ describe('phone OTP sign-up and login', () => {
     expect((await h.client().post('/v1/auth/phone/verify', { phoneNumber: p, code })).statusCode).toBe(400);
   });
 
-  it('refuses OTP sign-in for staff accounts (AUTH-11)', async () => {
+  it('refuses phone OTP sign-in for staff accounts (AUTH-11, ADR-026: never a staff method)', async () => {
     const p = phone();
     const { user } = await h.client().signInPhone(p);
     await h.t.db.update(users).set({ role: 'admin' }).where(eq(users.id, user.id));
@@ -102,7 +102,8 @@ describe('phone OTP sign-up and login', () => {
     await c.post('/v1/auth/phone/send-otp', { phoneNumber: p });
     const res = await c.post('/v1/auth/phone/verify', { phoneNumber: p, code: h.sms.lastCode(p)! });
     expect(res.statusCode).toBe(403);
-    expect(res.json().code).toBe('staff_sign_in_requires_google');
+    expect(res.json().code).toBe('staff_sign_in_method_not_allowed');
+    expect(c.jar.get('__Host-soyl_session')).toBeUndefined();
   });
 });
 

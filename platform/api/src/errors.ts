@@ -29,6 +29,8 @@ export const PROBLEMS = {
   fresh_session_required: [403, 'Please sign in again to confirm it is you.'],
   mfa_required: [403, 'Two-step verification is required.'],
   staff_sign_in_requires_google: [403, 'Staff accounts sign in with Google.'],
+  /** ADR-026: a staff account used a sign-in method that STAFF_AUTH does not allow (phone OTP always). */
+  staff_sign_in_method_not_allowed: [403, 'Staff accounts cannot sign in this way.'],
   account_disabled: [403, 'This account cannot sign in.'],
   not_found: [404, 'Not found.'],
   method_disabled: [404, 'This sign-in method is not available.'],

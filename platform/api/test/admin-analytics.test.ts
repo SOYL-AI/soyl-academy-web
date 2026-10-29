@@ -10,7 +10,7 @@ import { base32Decode, stepAt, totpAt } from '../src/auth/mfa';
 import { maskEmail, maskPhone } from '../src/domain/admin/users';
 import { resolveRange, series } from '../src/domain/admin/analytics';
 import { observeProblem, observeResponse } from '../src/domain/admin/observe';
-import { createHarness, type Client, type Harness } from './helpers';
+import { createHarness, STAFF_EMAIL_TOTP, type Client, type Harness } from './helpers';
 import { seedRealContent } from './content-fixture';
 
 let h: Harness;
@@ -24,9 +24,10 @@ const ids: Record<string, string> = {};
 let superadmin: Client;
 let superadminId: string;
 
-async function staff(role: 'reviewer' | 'admin', o: { superadmin?: boolean; mfa?: boolean } = {}): Promise<{ c: Client; id: string }> {
+async function staff(role: 'reviewer' | 'admin', o: { superadmin?: boolean; mfa?: boolean } = {}): Promise<{ c: Client; id: string; email: string }> {
   const c = h.client();
-  const { user } = await c.signInEmail(email());
+  const mail = email();
+  const { user } = await c.signInEmail(mail);
   await h.services.adapter().then((x) => x.updateUser(user.id, { role }));
   if (o.superadmin) await h.t.db.insert(staffCapabilities).values({ userId: user.id, capability: 'superadmin' });
   if (o.mfa ?? true) {
@@ -34,7 +35,7 @@ async function staff(role: 'reviewer' | 'admin', o: { superadmin?: boolean; mfa?
     const ok = await c.post('/v1/me/mfa/totp/confirm', { code: totpAt(base32Decode(secret), stepAt(h.clock.now())) });
     expect(ok.statusCode).toBe(200);
   }
-  return { c, id: user.id };
+  return { c, id: user.id, email: mail };
 }
 
 async function user(key: string, createdAtIst: string, mail: string, extra: { phone?: string; board?: string; classLevel?: number; consent?: string; ageBand?: string } = {}) {
@@ -137,7 +138,7 @@ afterAll(async () => {
 });
 
 describe('access: superadmin only, staff MFA, rate-limited, never cached', () => {
-  it('guests 401, students/parents 403, reviewers 403 (reports only), plain admins 403, superadmins need MFA', async () => {
+  it('guests 401, students/parents 403, reviewers 403 (reports only), plain admins 403, superadmins need MFA only when STAFF_AUTH says totp', async () => {
     expect((await h.client().get(`/v1/admin/analytics/overview${RANGE}`)).statusCode).toBe(401);
     const student = h.client();
     await student.signInEmail(email());
@@ -155,9 +156,20 @@ describe('access: superadmin only, staff MFA, rate-limited, never cached', () =>
     expect((await admin.c.post(`/v1/admin/users/${ids.u1}/reveal`)).json().code).toBe('forbidden');
     expect((await admin.c.get('/v1/admin/me')).json()).toMatchObject({ role: 'admin', capabilities: [], sections: ['reports'] });
 
+    // Owner default (ADR-026, secondFactor 'none'): a superadmin without TOTP reaches the dashboard.
     const noMfa = await staff('admin', { superadmin: true, mfa: false });
-    expect((await noMfa.c.get(`/v1/admin/analytics/overview${RANGE}`)).json().code).toBe('mfa_required');
-    expect((await noMfa.c.get('/v1/admin/me')).json().code).toBe('mfa_required');
+    expect((await noMfa.c.get(`/v1/admin/analytics/overview${RANGE}`)).statusCode).toBe(200);
+    expect((await noMfa.c.get('/v1/admin/me')).json()).toMatchObject({ userId: noMfa.id, capabilities: ['superadmin'] });
+    // With STAFF_AUTH.secondFactor 'totp' (ADR-011) the same superadmin, signed in by email, needs MFA.
+    const totp = await createHarness({ t: h.t, staffAuth: STAFF_EMAIL_TOTP });
+    try {
+      const c = totp.client();
+      await c.signInEmail(noMfa.email);
+      expect((await c.get(`/v1/admin/analytics/overview${RANGE}`)).json().code).toBe('mfa_required');
+      expect((await c.get('/v1/admin/me')).json().code).toBe('mfa_required');
+    } finally {
+      await totp.close();
+    }
 
     const ok = await superadmin.get(`/v1/admin/analytics/overview${RANGE}`);
     expect(ok.statusCode).toBe(200);

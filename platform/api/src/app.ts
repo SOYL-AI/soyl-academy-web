@@ -222,8 +222,9 @@ export async function buildApp(deps: AppDeps, opts: BuildAppOptions = {}): Promi
       securityEvent(request.log, 'authz_denied', { userId: auth.user.id, reason: 'capability', capability: policy.capability, route: request.routeOptions.url });
       throw new ApiProblem('forbidden');
     }
-    // AUTH-11 (ADR-011): staff routes need a confirmed TOTP enrolment and a session that passed it.
-    if (policy.mfa && !(await services.mfa.sessionVerified(auth.user.id, auth.session.id))) {
+    // AUTH-11 (ADR-011): with STAFF_AUTH.secondFactor 'totp', staff routes need a confirmed TOTP enrolment and a
+    // session that passed it. ADR-026 (owner, 2026-10-29): the default is 'none', so `policy.mfa` is not enforced.
+    if (policy.mfa && config.staffAuth.secondFactor === 'totp' && !(await services.mfa.sessionVerified(auth.user.id, auth.session.id))) {
       securityEvent(request.log, 'authz_denied', { userId: auth.user.id, reason: 'mfa_required', route: request.routeOptions.url });
       throw new ApiProblem('mfa_required');
     }

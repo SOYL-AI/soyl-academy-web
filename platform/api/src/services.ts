@@ -65,7 +65,7 @@ export function createServices(deps: AppDeps) {
   // D-045: staff capabilities (superadmin) and the aggregate interest counters.
   const staff = new StaffService(db);
   const counters = new InterestCounters(db, clock);
-  const identity = new IdentityService(db, adapter, limiter, clock, providers, config.google.adminDomains, counters);
+  const identity = new IdentityService(db, adapter, limiter, clock, providers, { domains: config.google.adminDomains, signInMethods: config.staffAuth.signInMethods }, counters);
   const mfa = new MfaService(db, clock, limiter, { encryptionKey: config.mfaEncryptionKey, pepper: config.otpPepper, issuer: MFA.totp.issuer });
   const razorpay = deps.billing && 'razorpay' in deps.billing ? (deps.billing.razorpay ?? null) : createRazorpayClient(config.billing, () => clock.now());
   // Invoices (ADR-024): PDFs go to the same Blob account as AI uploads (private `invoices` container), emails
