@@ -35,7 +35,16 @@ Every chapter: worked examples in both decks (3–8 each, recomputed by the buil
 
 From `platform/` in the worktree, wrapped in `_tools/heavy.sh` (log: `C:/Users/Prabhu/soyl-wt/cbse12-mathematics-gates.log`):
 
-GATE_RESULTS
+| Gate | Command | Result (2026-10-29 20:15–20:25 IST, all 13 chapters in the tree) |
+|---|---|---|
+| Content gate | `npm test -w @soyl/content-templates` | 785/785 passed |
+| Lint | `npm run content -- lint --exemplars` | 112 units, all `ok`, 0 errors; every `cbse-12-mathematics-ch01…13` 0 errors, 0 warnings (the `balance.competency` and literature warnings belong to existing CBSE 10 chapters) |
+| Verify | `npm run content -- verify --board cbse --class 12 --subject mathematics --authored` | 13 units, 903 questions, 903 pass, 0 blocking, 0 minor flags |
+| Originality | `npm run content -- originality --authored` | 112 units, 0 errors (all 13 chapters 0 errors, 0 warnings) |
+| Answer separation | `npx vitest run --root db test/db6-split.test.ts` | 8/8 passed |
+| API contract | `npx vitest run --root api test/content.test.ts` | 13/13 passed |
+
+Also: every chapter's `build.mjs` prints `NO ERRORS` (re-solve checks 118–154 per chapter, all pass; KaTeX strict parse; plot points on curves; narration; scheme sums; tests vs blueprints and disjoint), and a full rebuild of all 13 chapters changes no file. Commits: ch01 091d839, ch02 5f258f9, ch03 22b1d29, ch04 e3501f3, ch05 030180d, ch06 219a86d, ch07 b0a42e7, ch08 ccd87df, ch09 478c6a3, ch10 e87226a, ch11 a8316df, ch12 dfe03f5, ch13 ccd8414.
 
 ## Scope decisions
 
