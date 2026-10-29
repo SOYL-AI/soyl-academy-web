@@ -112,11 +112,11 @@ N/A in V4: 4.3.1–4.3.2 (no GraphQL).
 | 6.1.3 | All auth pathways documented with consistent strength | `auth-pathways.md` (AUTH-1) | R | api | open |
 | 6.3.1 | Credential-stuffing/brute-force controls | OTP limits (AUTH-3), no passwords | T | api | open |
 | 6.3.2 | No default accounts | Admin bootstrap CLI only (DB-7) | T | db | open |
-| 6.3.3 | **MFA or combination of factors** | **Deviation for students/parents:** single-factor OTP or Google (possession), chosen for children on shared low-end phones; mitigated by OTP limits, linking rules, session controls, optional second method. **Admins/reviewers: Google + TOTP** (AUTH-11). Rationale to be recorded in `auth-pathways.md` | R | api | open (deviation) |
+| 6.3.3 | **MFA or combination of factors** | **Deviation for students/parents:** single-factor OTP or Google (possession), chosen for children on shared low-end phones; mitigated by OTP limits, linking rules, session controls, optional second method. **Admins/reviewers: Google + TOTP** (AUTH-11). **Amended by ADR-026 (D-048): staff use the email code only, an owner-accepted deviation** (residual: allowlisted role grants via audited CLI, per-request superadmin check, 12 h / 60 min staff sessions, fresh session for writes, masked PII + audited reveal, OTP limits). Rationale to be recorded in `auth-pathways.md` | R | api | open (deviation) |
 | 6.3.4 | No undocumented pathways | Route-policy snapshot (API-6) | T | api | open |
 | 6.4.1 | System-generated codes random, expire, single use | AUTH-2 | T | api | open |
 | 6.4.2 | No secret questions | None | R | api | open |
-| 6.4.3 | Secure recovery not bypassing MFA | No passwords; admin MFA recovery via owner CLI (AUTH-11) | R | api | open |
+| 6.4.3 | Secure recovery not bypassing MFA | No passwords; admin MFA recovery via owner CLI (AUTH-11); moot while `STAFF_AUTH.secondFactor` is `none` (ADR-026) | R | api | open |
 | 6.4.4 | Lost MFA factor → identity proofing | Owner-run CLI with identity check for admins | R | api | open |
 | 6.5.1 | OTP usable once | AUTH-2 | T | api | open |
 | 6.5.2 | Low-entropy codes stored hashed with salt | Keyed HMAC with KV pepper + identifier/purpose binding (AUTH-4) — stronger than a public salt for a 10⁶ space; note as equivalent control | R | api | open |
@@ -128,7 +128,7 @@ N/A in V4: 4.3.1–4.3.2 (no GraphQL).
 | 6.6.3 | OOB brute-force rate limiting | AUTH-3 | T | api | open |
 | 6.8.1 | No identity spoofing across IdPs | Identify by provider `sub`; no auto-merge (AUTH-6/7) | T | api | open |
 | 6.8.2 | Validate assertion signatures | ID token verified by library (AUTH-6) | T | api | open |
-| 6.8.4 | Enforce required auth strength from IdP | Admin requires Workspace domain + TOTP on our side (AUTH-11) | T | api | open |
+| 6.8.4 | Enforce required auth strength from IdP | Admin requires Workspace domain + TOTP on our side (AUTH-11); **not enforced under ADR-026** (email code only, owner-accepted) | T | api | open |
 
 N/A in V6: 6.2.x (no user passwords), 6.1.2 (no passwords → no context word list), 6.8.3 (no SAML).
 

@@ -402,7 +402,7 @@ Logs accumulate phone numbers, emails, IPs, prompts; deletion requests don't rea
 
 ### AC-27 Admin/reviewer account compromise and insider misuse — High · backend-api
 Phished reviewer edits content shown to all children (defacement, malicious links) or browses children's data.
-- Mitigations: `AUTH-11` (Workspace Google + TOTP), short sessions (`AUTH-9`), fresh session for publish/config/role changes, least privilege (reviewers cannot see user PII; admins see masked PII by default with an audited "reveal"), every admin read of user data and every write in `audit_log`, two-person rule for config changes that affect money (prices/credits) *(process)*, content rollback.
+- Mitigations: `AUTH-11` (Workspace Google + TOTP; **relaxed by ADR-026 to the email code only, owner-accepted risk D-048**: an attacker with access to the staff inbox can open `/admin`), short sessions (`AUTH-9`), fresh session for publish/config/role changes, least privilege (reviewers cannot see user PII; admins see masked PII by default with an audited "reveal"), every admin read of user data and every write in `audit_log`, two-person rule for config changes that affect money (prices/credits) *(process)*, content rollback.
 - Verify: route-policy test covers admin routes; audit-log test for user lookup.
 
 ### AC-28 Marketing-site compromise pivoting to the platform (shared origin) — High · Lead, web-platform

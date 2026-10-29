@@ -10,6 +10,7 @@ For security-reviewer. Branch `platform/backend-api/admin-analytics`, 2026-10-28
 | Admin without the capability, reviewer | Reports queue only (`/v1/admin/me` says `sections: ['reports']`) | 403 `forbidden` (`authz_denied`, reason `capability`) |
 | Students, parents, guests | Nothing | 403 / 401 as before |
 
+- **Amended 2026-10-29 by [ADR-026](../adr/026-staff-email-sign-in.md) (owner-accepted risk, D-048):** staff (incl. superadmin) now sign in with the email code only, no Google, no TOTP; the rest of this bullet describes the original design.
 - Superadmin is a capability, not a new role, so every existing staff rule applies unchanged: Google Workspace sign-in only (no OTP-only staff login), TOTP on the session (AUTH-11), the 12 h / 60 min staff session lifetime. The capability is read on every request (one indexed lookup), so removing it takes effect at once.
 - Granted only by the owner-run CLI `db admin bootstrap --email E --role superadmin` (audit-logged, idempotent). A role or capability change deletes the account's sessions (API-10).
 - Order in the policy hook: roles → capability → MFA → … A non-superadmin learns nothing about MFA state of analytics routes.
@@ -40,5 +41,5 @@ For security-reviewer. Branch `platform/backend-api/admin-analytics`, 2026-10-28
 
 1. Superadmin sessions can read every student's masked row; the 60/15 min bucket and the audit log are the controls. A per-day reveal cap or an alert on bursts could follow.
 2. `bootstrap` creates a missing account as admin (existing DB-7 behaviour). With AUTH-7 (no Google attach by email), a staff member should sign up (or link Google) before the bootstrap.
-3. In production only email sign-in is enabled (`AUTH_METHODS=email`), so staff cannot sign in until Google is enabled with `ADMIN_GOOGLE_DOMAINS` (OA-05). This design does not relax AUTH-11.
+3. In production only email sign-in is enabled (`AUTH_METHODS=email`), so staff cannot sign in until Google is enabled with `ADMIN_GOOGLE_DOMAINS` (OA-05). This design does not relax AUTH-11. *(Superseded by ADR-026: staff sign in with the email code, so OA-05 is not needed for staff.)*
 4. Counters are best effort (a failed upsert is logged, never retried), so they can under-count slightly; they are product signals, not billing data.
