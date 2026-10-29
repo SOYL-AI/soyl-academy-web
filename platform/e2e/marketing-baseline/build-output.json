@@ -2,275 +2,299 @@
   "nextVersion": "16.4.3",
   "note": "Next.js 16 does not print sizes in the build route table; measured from .next: JS/CSS referenced by each prerendered page (first load), gzip level 9. Dynamic routes (ƒ) have no prerendered HTML and are not listed.",
   "totals": {
-    "staticBytes": 6867681,
-    "staticJsBytes": 2230366,
-    "staticCssBytes": 209231,
+    "staticBytes": 7202071,
+    "staticJsBytes": 2487337,
+    "staticCssBytes": 286650,
     "staticMediaBytes": 4428084
   },
   "routes": {
     "/": {
       "firstLoadJsFiles": 10,
-      "firstLoadJsBytes": 650186,
-      "firstLoadJsGzipBytes": 202089,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 212017
+      "firstLoadJsBytes": 653457,
+      "firstLoadJsGzipBytes": 203357,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 314713
     },
     "/_not-found": {
-      "firstLoadJsFiles": 9,
-      "firstLoadJsBytes": 637213,
-      "firstLoadJsGzipBytes": 197345,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 39872
+      "firstLoadJsFiles": 8,
+      "firstLoadJsBytes": 613094,
+      "firstLoadJsGzipBytes": 189994,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 142327
     },
     "/about": {
-      "firstLoadJsFiles": 9,
-      "firstLoadJsBytes": 637213,
-      "firstLoadJsGzipBytes": 197345,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 60342
+      "firstLoadJsFiles": 8,
+      "firstLoadJsBytes": 613094,
+      "firstLoadJsGzipBytes": 189994,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 162917
     },
     "/admin": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 694498,
-      "firstLoadJsGzipBytes": 218673,
-      "cssBytes": 173499,
-      "cssGzipBytes": 29922,
-      "htmlBytes": 25275
+      "firstLoadJsBytes": 694163,
+      "firstLoadJsGzipBytes": 219476,
+      "cssBytes": 218811,
+      "cssGzipBytes": 37748,
+      "htmlBytes": 84241
     },
     "/ask": {
       "firstLoadJsFiles": 13,
-      "firstLoadJsBytes": 715325,
-      "firstLoadJsGzipBytes": 225798,
-      "cssBytes": 173499,
-      "cssGzipBytes": 29922,
-      "htmlBytes": 25620
+      "firstLoadJsBytes": 708937,
+      "firstLoadJsGzipBytes": 224240,
+      "cssBytes": 218811,
+      "cssGzipBytes": 37748,
+      "htmlBytes": 84479
     },
     "/book-a-demo": {
       "firstLoadJsFiles": 10,
-      "firstLoadJsBytes": 645769,
-      "firstLoadJsGzipBytes": 200771,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 59302
+      "firstLoadJsBytes": 649741,
+      "firstLoadJsGzipBytes": 202293,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 162191
     },
     "/coins": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 691933,
-      "firstLoadJsGzipBytes": 217850,
-      "cssBytes": 173499,
-      "cssGzipBytes": 29922,
-      "htmlBytes": 25440
+      "firstLoadJsBytes": 685038,
+      "firstLoadJsGzipBytes": 216050,
+      "cssBytes": 218811,
+      "cssGzipBytes": 37748,
+      "htmlBytes": 84298
     },
     "/contact": {
       "firstLoadJsFiles": 11,
-      "firstLoadJsBytes": 730816,
-      "firstLoadJsGzipBytes": 224033,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 46628
+      "firstLoadJsBytes": 734788,
+      "firstLoadJsGzipBytes": 225586,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 149492
+    },
+    "/dashboard": {
+      "firstLoadJsFiles": 11,
+      "firstLoadJsBytes": 675715,
+      "firstLoadJsGzipBytes": 212703,
+      "cssBytes": 218811,
+      "cssGzipBytes": 37748,
+      "htmlBytes": 84223
     },
     "/future-builders": {
       "firstLoadJsFiles": 10,
-      "firstLoadJsBytes": 659074,
-      "firstLoadJsGzipBytes": 204807,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 206201
+      "firstLoadJsBytes": 663046,
+      "firstLoadJsGzipBytes": 206291,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 308989
     },
     "/journal": {
-      "firstLoadJsFiles": 9,
-      "firstLoadJsBytes": 637213,
-      "firstLoadJsGzipBytes": 197345,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 69975
+      "firstLoadJsFiles": 8,
+      "firstLoadJsBytes": 613094,
+      "firstLoadJsGzipBytes": 189994,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 172640
     },
     "/journal/homework-after-chatgpt": {
-      "firstLoadJsFiles": 9,
-      "firstLoadJsBytes": 637213,
-      "firstLoadJsGzipBytes": 197345,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 67962
+      "firstLoadJsFiles": 8,
+      "firstLoadJsBytes": 613094,
+      "firstLoadJsGzipBytes": 189994,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 170616
     },
     "/journal/learning-to-defend-an-idea": {
-      "firstLoadJsFiles": 9,
-      "firstLoadJsBytes": 637213,
-      "firstLoadJsGzipBytes": 197345,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 68200
+      "firstLoadJsFiles": 8,
+      "firstLoadJsBytes": 613094,
+      "firstLoadJsGzipBytes": 189994,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 170854
     },
     "/journal/should-schools-ban-ai": {
-      "firstLoadJsFiles": 9,
-      "firstLoadJsBytes": 637213,
-      "firstLoadJsGzipBytes": 197345,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 67899
+      "firstLoadJsFiles": 8,
+      "firstLoadJsBytes": 613094,
+      "firstLoadJsGzipBytes": 189994,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 170553
     },
     "/journal/why-outcomes-matter": {
-      "firstLoadJsFiles": 9,
-      "firstLoadJsBytes": 637213,
-      "firstLoadJsGzipBytes": 197345,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 68129
+      "firstLoadJsFiles": 8,
+      "firstLoadJsBytes": 613094,
+      "firstLoadJsGzipBytes": 189994,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 170783
     },
     "/leaderboard": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 712367,
-      "firstLoadJsGzipBytes": 224094,
-      "cssBytes": 173499,
-      "cssGzipBytes": 29922,
-      "htmlBytes": 25454
+      "firstLoadJsBytes": 710868,
+      "firstLoadJsGzipBytes": 223681,
+      "cssBytes": 223325,
+      "cssGzipBytes": 38990,
+      "htmlBytes": 84551
     },
     "/learn": {
-      "firstLoadJsFiles": 13,
-      "firstLoadJsBytes": 692898,
-      "firstLoadJsGzipBytes": 218622,
-      "cssBytes": 173499,
-      "cssGzipBytes": 29922,
-      "htmlBytes": 24729
+      "firstLoadJsFiles": 14,
+      "firstLoadJsBytes": 706322,
+      "firstLoadJsGzipBytes": 223533,
+      "cssBytes": 225897,
+      "cssGzipBytes": 39491,
+      "htmlBytes": 84003
     },
     "/me": {
-      "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 721752,
-      "firstLoadJsGzipBytes": 226460,
-      "cssBytes": 173499,
-      "cssGzipBytes": 29922,
-      "htmlBytes": 25276
+      "firstLoadJsFiles": 13,
+      "firstLoadJsBytes": 740081,
+      "firstLoadJsGzipBytes": 232522,
+      "cssBytes": 218811,
+      "cssGzipBytes": 37748,
+      "htmlBytes": 84366
     },
     "/me/consent": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 700802,
-      "firstLoadJsGzipBytes": 220436,
-      "cssBytes": 173499,
-      "cssGzipBytes": 29922,
-      "htmlBytes": 25963
+      "firstLoadJsBytes": 694730,
+      "firstLoadJsGzipBytes": 218870,
+      "cssBytes": 218811,
+      "cssGzipBytes": 37748,
+      "htmlBytes": 84823
     },
     "/me/consent/parent": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 702374,
-      "firstLoadJsGzipBytes": 220849,
-      "cssBytes": 173499,
-      "cssGzipBytes": 29922,
-      "htmlBytes": 26545
+      "firstLoadJsBytes": 696302,
+      "firstLoadJsGzipBytes": 219283,
+      "cssBytes": 218811,
+      "cssGzipBytes": 37748,
+      "htmlBytes": 85407
+    },
+    "/me/dashboard": {
+      "firstLoadJsFiles": 13,
+      "firstLoadJsBytes": 726050,
+      "firstLoadJsGzipBytes": 228114,
+      "cssBytes": 218811,
+      "cssGzipBytes": 37748,
+      "htmlBytes": 84889
+    },
+    "/me/invoices": {
+      "firstLoadJsFiles": 12,
+      "firstLoadJsBytes": 678921,
+      "firstLoadJsGzipBytes": 214150,
+      "cssBytes": 218811,
+      "cssGzipBytes": 37748,
+      "htmlBytes": 84816
     },
     "/method": {
-      "firstLoadJsFiles": 9,
-      "firstLoadJsBytes": 637213,
-      "firstLoadJsGzipBytes": 197345,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 109218
+      "firstLoadJsFiles": 8,
+      "firstLoadJsBytes": 613094,
+      "firstLoadJsGzipBytes": 189994,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 212015
     },
     "/parents": {
-      "firstLoadJsFiles": 9,
-      "firstLoadJsBytes": 637213,
-      "firstLoadJsGzipBytes": 197345,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 62506
+      "firstLoadJsFiles": 8,
+      "firstLoadJsBytes": 613094,
+      "firstLoadJsGzipBytes": 189994,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 165080
     },
     "/plans": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 692450,
-      "firstLoadJsGzipBytes": 218171,
-      "cssBytes": 173499,
-      "cssGzipBytes": 29922,
-      "htmlBytes": 24426
+      "firstLoadJsBytes": 691484,
+      "firstLoadJsGzipBytes": 218614,
+      "cssBytes": 221530,
+      "cssGzipBytes": 38506,
+      "htmlBytes": 83463
     },
     "/privacy": {
-      "firstLoadJsFiles": 9,
-      "firstLoadJsBytes": 637213,
-      "firstLoadJsGzipBytes": 197345,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 53364
+      "firstLoadJsFiles": 8,
+      "firstLoadJsBytes": 613094,
+      "firstLoadJsGzipBytes": 189994,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 155860
     },
     "/refund-policy": {
-      "firstLoadJsFiles": 9,
-      "firstLoadJsBytes": 637213,
-      "firstLoadJsGzipBytes": 197345,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 47969
+      "firstLoadJsFiles": 8,
+      "firstLoadJsBytes": 613094,
+      "firstLoadJsGzipBytes": 189994,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 150423
     },
     "/schools": {
-      "firstLoadJsFiles": 9,
-      "firstLoadJsBytes": 637213,
-      "firstLoadJsGzipBytes": 197345,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 90883
+      "firstLoadJsFiles": 8,
+      "firstLoadJsBytes": 613094,
+      "firstLoadJsGzipBytes": 189994,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 193370
     },
     "/shipping-policy": {
-      "firstLoadJsFiles": 9,
-      "firstLoadJsBytes": 637213,
-      "firstLoadJsGzipBytes": 197345,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 48474
+      "firstLoadJsFiles": 8,
+      "firstLoadJsBytes": 613094,
+      "firstLoadJsGzipBytes": 189994,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 150928
     },
     "/store": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 711447,
-      "firstLoadJsGzipBytes": 223631,
-      "cssBytes": 173499,
-      "cssGzipBytes": 29922,
-      "htmlBytes": 24227
+      "firstLoadJsBytes": 705637,
+      "firstLoadJsGzipBytes": 222249,
+      "cssBytes": 226871,
+      "cssGzipBytes": 39679,
+      "htmlBytes": 83432
     },
     "/students": {
       "firstLoadJsFiles": 10,
-      "firstLoadJsBytes": 644724,
-      "firstLoadJsGzipBytes": 200360,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 80394
+      "firstLoadJsBytes": 647939,
+      "firstLoadJsGzipBytes": 201608,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 183286
     },
     "/teachers": {
       "firstLoadJsFiles": 10,
-      "firstLoadJsBytes": 644724,
-      "firstLoadJsGzipBytes": 200360,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 90034
+      "firstLoadJsBytes": 647939,
+      "firstLoadJsGzipBytes": 201608,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 192786
     },
     "/terms": {
-      "firstLoadJsFiles": 9,
-      "firstLoadJsBytes": 637213,
-      "firstLoadJsGzipBytes": 197345,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 45678
+      "firstLoadJsFiles": 8,
+      "firstLoadJsBytes": 613094,
+      "firstLoadJsGzipBytes": 189994,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 148131
     },
     "/tests": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 692628,
-      "firstLoadJsGzipBytes": 218163,
-      "cssBytes": 173499,
-      "cssGzipBytes": 29922,
-      "htmlBytes": 24633
+      "firstLoadJsBytes": 690135,
+      "firstLoadJsGzipBytes": 217678,
+      "cssBytes": 218811,
+      "cssGzipBytes": 37748,
+      "htmlBytes": 83491
     },
     "/tests/builder": {
       "firstLoadJsFiles": 12,
-      "firstLoadJsBytes": 720720,
-      "firstLoadJsGzipBytes": 227279,
-      "cssBytes": 173499,
-      "cssGzipBytes": 29922,
-      "htmlBytes": 25964
+      "firstLoadJsBytes": 713890,
+      "firstLoadJsGzipBytes": 225492,
+      "cssBytes": 218811,
+      "cssGzipBytes": 37748,
+      "htmlBytes": 84824
     },
     "/what-we-teach": {
-      "firstLoadJsFiles": 9,
-      "firstLoadJsBytes": 637213,
-      "firstLoadJsGzipBytes": 197345,
-      "cssBytes": 81939,
-      "cssGzipBytes": 15224,
-      "htmlBytes": 81525
+      "firstLoadJsFiles": 8,
+      "firstLoadJsBytes": 613094,
+      "firstLoadJsGzipBytes": 189994,
+      "cssBytes": 88287,
+      "cssGzipBytes": 16173,
+      "htmlBytes": 184107
     }
   }
 }

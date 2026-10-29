@@ -9,28 +9,56 @@
   "results": {
     "mobile": {
       "/": {
-        "performance": 91,
+        "performance": 92,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100,
         "metrics": {
-          "fcpMs": 913,
-          "lcpMs": 3268,
-          "tbtMs": 157,
+          "fcpMs": 914,
+          "lcpMs": 3220,
+          "tbtMs": 171,
           "cls": 0
         },
         "runs": [
           {
             "scores": {
-              "performance": 89,
+              "performance": 88,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 915,
+              "lcpMs": 3562,
+              "tbtMs": 196,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 96,
               "accessibility": 100,
               "best-practices": 100,
               "seo": 100
             },
             "metrics": {
               "fcpMs": 914,
-              "lcpMs": 3491,
-              "tbtMs": 163,
+              "lcpMs": 2731,
+              "tbtMs": 68,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 90,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 913,
+              "lcpMs": 3295,
+              "tbtMs": 171,
               "cls": 0
             }
           },
@@ -42,9 +70,51 @@
               "seo": 100
             },
             "metrics": {
-              "fcpMs": 913,
-              "lcpMs": 3251,
-              "tbtMs": 117,
+              "fcpMs": 974,
+              "lcpMs": 2731,
+              "tbtMs": 231,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 92,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 912,
+              "lcpMs": 3220,
+              "tbtMs": 118,
+              "cls": 0
+            }
+          }
+        ]
+      },
+      "/schools": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "metrics": {
+          "fcpMs": 910,
+          "lcpMs": 2989,
+          "tbtMs": 51,
+          "cls": 0
+        },
+        "runs": [
+          {
+            "scores": {
+              "performance": 95,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 910,
+              "lcpMs": 2980,
+              "tbtMs": 51,
               "cls": 0
             }
           },
@@ -57,106 +127,8 @@
             },
             "metrics": {
               "fcpMs": 912,
-              "lcpMs": 3268,
-              "tbtMs": 157,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 95,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 911,
-              "lcpMs": 2870,
-              "tbtMs": 100,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 88,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 956,
-              "lcpMs": 3465,
-              "tbtMs": 182,
-              "cls": 0
-            }
-          }
-        ]
-      },
-      "/schools": {
-        "performance": 93,
-        "accessibility": 100,
-        "best-practices": 100,
-        "seo": 100,
-        "metrics": {
-          "fcpMs": 910,
-          "lcpMs": 3053,
-          "tbtMs": 45,
-          "cls": 0
-        },
-        "runs": [
-          {
-            "scores": {
-              "performance": 93,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 910,
-              "lcpMs": 3223,
-              "tbtMs": 39,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 93,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 910,
-              "lcpMs": 3053,
-              "tbtMs": 122,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 95,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 911,
-              "lcpMs": 3009,
-              "tbtMs": 45,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 93,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 912,
-              "lcpMs": 3100,
-              "tbtMs": 123,
+              "lcpMs": 3164,
+              "tbtMs": 176,
               "cls": 0
             }
           },
@@ -169,25 +141,165 @@
             },
             "metrics": {
               "fcpMs": 909,
-              "lcpMs": 2993,
-              "tbtMs": 39,
+              "lcpMs": 2979,
+              "tbtMs": 32,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 94,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 910,
+              "lcpMs": 2989,
+              "tbtMs": 68,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 95,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 910,
+              "lcpMs": 2989,
+              "tbtMs": 38,
               "cls": 0
             }
           }
         ]
       },
       "/students": {
+        "performance": 94,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "metrics": {
+          "fcpMs": 910,
+          "lcpMs": 3151,
+          "tbtMs": 64,
+          "cls": 0
+        },
+        "runs": [
+          {
+            "scores": {
+              "performance": 94,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 910,
+              "lcpMs": 3151,
+              "tbtMs": 42,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 97,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 914,
+              "lcpMs": 2575,
+              "tbtMs": 64,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 92,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 910,
+              "lcpMs": 3221,
+              "tbtMs": 104,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 93,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 910,
+              "lcpMs": 3165,
+              "tbtMs": 80,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 94,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 909,
+              "lcpMs": 3137,
+              "tbtMs": 57,
+              "cls": 0
+            }
+          }
+        ]
+      },
+      "/parents": {
         "performance": 93,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100,
         "metrics": {
-          "fcpMs": 911,
-          "lcpMs": 3230,
-          "tbtMs": 78,
+          "fcpMs": 910,
+          "lcpMs": 3215,
+          "tbtMs": 59,
           "cls": 0
         },
         "runs": [
+          {
+            "scores": {
+              "performance": 92,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 912,
+              "lcpMs": 3277,
+              "tbtMs": 108,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 93,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 910,
+              "lcpMs": 3212,
+              "tbtMs": 59,
+              "cls": 0
+            }
+          },
           {
             "scores": {
               "performance": 93,
@@ -197,7 +309,21 @@
             },
             "metrics": {
               "fcpMs": 911,
-              "lcpMs": 3230,
+              "lcpMs": 3215,
+              "tbtMs": 48,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 93,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 910,
+              "lcpMs": 3162,
               "tbtMs": 78,
               "cls": 0
             }
@@ -211,8 +337,36 @@
             },
             "metrics": {
               "fcpMs": 909,
-              "lcpMs": 3188,
-              "tbtMs": 61,
+              "lcpMs": 3216,
+              "tbtMs": 35,
+              "cls": 0
+            }
+          }
+        ]
+      },
+      "/future-builders": {
+        "performance": 92,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "metrics": {
+          "fcpMs": 1514,
+          "lcpMs": 3239,
+          "tbtMs": 38,
+          "cls": 0
+        },
+        "runs": [
+          {
+            "scores": {
+              "performance": 89,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 1514,
+              "lcpMs": 3676,
+              "tbtMs": 49,
               "cls": 0
             }
           },
@@ -224,148 +378,22 @@
               "seo": 100
             },
             "metrics": {
-              "fcpMs": 912,
-              "lcpMs": 3240,
-              "tbtMs": 128,
+              "fcpMs": 1523,
+              "lcpMs": 3323,
+              "tbtMs": 46,
               "cls": 0
             }
           },
           {
             "scores": {
-              "performance": 94,
+              "performance": 92,
               "accessibility": 100,
               "best-practices": 100,
               "seo": 100
             },
             "metrics": {
-              "fcpMs": 911,
-              "lcpMs": 3150,
-              "tbtMs": 41,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 90,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 914,
-              "lcpMs": 3236,
-              "tbtMs": 171,
-              "cls": 0
-            }
-          }
-        ]
-      },
-      "/parents": {
-        "performance": 94,
-        "accessibility": 100,
-        "best-practices": 100,
-        "seo": 100,
-        "metrics": {
-          "fcpMs": 910,
-          "lcpMs": 3085,
-          "tbtMs": 54,
-          "cls": 0
-        },
-        "runs": [
-          {
-            "scores": {
-              "performance": 93,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 911,
-              "lcpMs": 3148,
-              "tbtMs": 101,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 94,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 910,
-              "lcpMs": 3085,
-              "tbtMs": 47,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 93,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 911,
-              "lcpMs": 3100,
-              "tbtMs": 88,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 94,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 909,
-              "lcpMs": 3023,
-              "tbtMs": 54,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 94,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 909,
-              "lcpMs": 3062,
-              "tbtMs": 34,
-              "cls": 0
-            }
-          }
-        ]
-      },
-      "/future-builders": {
-        "performance": 93,
-        "accessibility": 100,
-        "best-practices": 100,
-        "seo": 100,
-        "metrics": {
-          "fcpMs": 1364,
-          "lcpMs": 3089,
-          "tbtMs": 36,
-          "cls": 0
-        },
-        "runs": [
-          {
-            "scores": {
-              "performance": 93,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 1364,
-              "lcpMs": 3089,
+              "fcpMs": 1514,
+              "lcpMs": 3239,
               "tbtMs": 33,
               "cls": 0
             }
@@ -378,303 +406,275 @@
               "seo": 100
             },
             "metrics": {
-              "fcpMs": 1363,
-              "lcpMs": 3088,
-              "tbtMs": 36,
+              "fcpMs": 1513,
+              "lcpMs": 3163,
+              "tbtMs": 35,
               "cls": 0
             }
           },
           {
             "scores": {
-              "performance": 93,
+              "performance": 92,
               "accessibility": 100,
               "best-practices": 100,
               "seo": 100
             },
             "metrics": {
-              "fcpMs": 1364,
-              "lcpMs": 3089,
-              "tbtMs": 36,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 93,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 1365,
-              "lcpMs": 3090,
+              "fcpMs": 1514,
+              "lcpMs": 3239,
               "tbtMs": 38,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 93,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 1364,
-              "lcpMs": 3089,
-              "tbtMs": 36,
               "cls": 0
             }
           }
         ]
       },
       "/journal": {
-        "performance": 94,
-        "accessibility": 100,
-        "best-practices": 100,
-        "seo": 100,
-        "metrics": {
-          "fcpMs": 911,
-          "lcpMs": 3157,
-          "tbtMs": 49,
-          "cls": 0
-        },
-        "runs": [
-          {
-            "scores": {
-              "performance": 93,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 912,
-              "lcpMs": 3166,
-              "tbtMs": 52,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 94,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 909,
-              "lcpMs": 3157,
-              "tbtMs": 48,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 97,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 911,
-              "lcpMs": 2569,
-              "tbtMs": 30,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 93,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 908,
-              "lcpMs": 3162,
-              "tbtMs": 49,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 97,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 911,
-              "lcpMs": 2570,
-              "tbtMs": 82,
-              "cls": 0
-            }
-          }
-        ]
-      },
-      "/about": {
-        "performance": 94,
-        "accessibility": 100,
-        "best-practices": 100,
-        "seo": 100,
-        "metrics": {
-          "fcpMs": 909,
-          "lcpMs": 3026,
-          "tbtMs": 47,
-          "cls": 0
-        },
-        "runs": [
-          {
-            "scores": {
-              "performance": 94,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 909,
-              "lcpMs": 3046,
-              "tbtMs": 66,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 94,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 911,
-              "lcpMs": 3026,
-              "tbtMs": 54,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 93,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 907,
-              "lcpMs": 3234,
-              "tbtMs": 47,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 95,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 908,
-              "lcpMs": 2992,
-              "tbtMs": 44,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 95,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 911,
-              "lcpMs": 2875,
-              "tbtMs": 29,
-              "cls": 0
-            }
-          }
-        ]
-      },
-      "/contact": {
-        "performance": 95,
+        "performance": 96,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100,
         "metrics": {
           "fcpMs": 910,
-          "lcpMs": 2905,
-          "tbtMs": 34,
+          "lcpMs": 2716,
+          "tbtMs": 55,
           "cls": 0
         },
         "runs": [
           {
             "scores": {
-              "performance": 95,
+              "performance": 93,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 913,
+              "lcpMs": 3293,
+              "tbtMs": 43,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 92,
               "accessibility": 100,
               "best-practices": 100,
               "seo": 100
             },
             "metrics": {
               "fcpMs": 910,
-              "lcpMs": 2905,
+              "lcpMs": 3305,
+              "tbtMs": 82,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 96,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 910,
+              "lcpMs": 2714,
+              "tbtMs": 107,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 96,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 911,
+              "lcpMs": 2716,
               "tbtMs": 33,
               "cls": 0
             }
           },
           {
             "scores": {
-              "performance": 95,
+              "performance": 96,
               "accessibility": 100,
               "best-practices": 100,
               "seo": 100
             },
             "metrics": {
               "fcpMs": 910,
-              "lcpMs": 2899,
-              "tbtMs": 29,
+              "lcpMs": 2715,
+              "tbtMs": 55,
+              "cls": 0
+            }
+          }
+        ]
+      },
+      "/about": {
+        "performance": 93,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "metrics": {
+          "fcpMs": 910,
+          "lcpMs": 3141,
+          "tbtMs": 84,
+          "cls": 0
+        },
+        "runs": [
+          {
+            "scores": {
+              "performance": 92,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 911,
+              "lcpMs": 3300,
+              "tbtMs": 105,
               "cls": 0
             }
           },
           {
             "scores": {
-              "performance": 98,
+              "performance": 93,
               "accessibility": 100,
               "best-practices": 100,
               "seo": 100
             },
             "metrics": {
               "fcpMs": 910,
-              "lcpMs": 2342,
-              "tbtMs": 34,
+              "lcpMs": 3136,
+              "tbtMs": 101,
               "cls": 0
             }
           },
           {
             "scores": {
-              "performance": 95,
+              "performance": 93,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 910,
+              "lcpMs": 3132,
+              "tbtMs": 84,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 94,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 908,
+              "lcpMs": 3141,
+              "tbtMs": 39,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 94,
               "accessibility": 100,
               "best-practices": 100,
               "seo": 100
             },
             "metrics": {
               "fcpMs": 909,
-              "lcpMs": 2989,
-              "tbtMs": 37,
+              "lcpMs": 3148,
+              "tbtMs": 43,
               "cls": 0
             }
-          },
+          }
+        ]
+      },
+      "/contact": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "metrics": {
+          "fcpMs": 909,
+          "lcpMs": 2517,
+          "tbtMs": 56,
+          "cls": 0
+        },
+        "runs": [
           {
             "scores": {
-              "performance": 95,
+              "performance": 96,
               "accessibility": 100,
               "best-practices": 100,
               "seo": 100
             },
             "metrics": {
               "fcpMs": 909,
-              "lcpMs": 2941,
-              "tbtMs": 44,
+              "lcpMs": 2735,
+              "tbtMs": 43,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 97,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 908,
+              "lcpMs": 2509,
+              "tbtMs": 36,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 97,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 909,
+              "lcpMs": 2515,
+              "tbtMs": 56,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 94,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 910,
+              "lcpMs": 2974,
+              "tbtMs": 112,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 97,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 910,
+              "lcpMs": 2517,
+              "tbtMs": 70,
               "cls": 0
             }
           }
@@ -688,176 +688,8 @@
         "best-practices": 100,
         "seo": 100,
         "metrics": {
-          "fcpMs": 254,
-          "lcpMs": 731,
-          "tbtMs": 9,
-          "cls": 0
-        },
-        "runs": [
-          {
-            "scores": {
-              "performance": 100,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 251,
-              "lcpMs": 731,
-              "tbtMs": 9,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 100,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 255,
-              "lcpMs": 740,
-              "tbtMs": 10,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 100,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 254,
-              "lcpMs": 723,
-              "tbtMs": 3,
-              "cls": 0
-            }
-          }
-        ]
-      },
-      "/schools": {
-        "performance": 100,
-        "accessibility": 100,
-        "best-practices": 100,
-        "seo": 100,
-        "metrics": {
-          "fcpMs": 264,
-          "lcpMs": 741,
-          "tbtMs": 2,
-          "cls": 0
-        },
-        "runs": [
-          {
-            "scores": {
-              "performance": 100,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 264,
-              "lcpMs": 769,
-              "tbtMs": 0,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 100,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 253,
-              "lcpMs": 721,
-              "tbtMs": 2,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 100,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 267,
-              "lcpMs": 741,
-              "tbtMs": 15,
-              "cls": 0
-            }
-          }
-        ]
-      },
-      "/students": {
-        "performance": 100,
-        "accessibility": 100,
-        "best-practices": 100,
-        "seo": 100,
-        "metrics": {
-          "fcpMs": 257,
-          "lcpMs": 696,
-          "tbtMs": 0,
-          "cls": 0
-        },
-        "runs": [
-          {
-            "scores": {
-              "performance": 100,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 264,
-              "lcpMs": 696,
-              "tbtMs": 0,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 100,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 251,
-              "lcpMs": 690,
-              "tbtMs": 0,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 100,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 257,
-              "lcpMs": 761,
-              "tbtMs": 40,
-              "cls": 0
-            }
-          }
-        ]
-      },
-      "/parents": {
-        "performance": 100,
-        "accessibility": 100,
-        "best-practices": 100,
-        "seo": 100,
-        "metrics": {
           "fcpMs": 252,
-          "lcpMs": 644,
+          "lcpMs": 732,
           "tbtMs": 0,
           "cls": 0
         },
@@ -870,22 +702,8 @@
               "seo": 100
             },
             "metrics": {
-              "fcpMs": 259,
-              "lcpMs": 644,
-              "tbtMs": 0,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 100,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 250,
-              "lcpMs": 640,
+              "fcpMs": 251,
+              "lcpMs": 732,
               "tbtMs": 0,
               "cls": 0
             }
@@ -899,77 +717,35 @@
             },
             "metrics": {
               "fcpMs": 252,
-              "lcpMs": 673,
+              "lcpMs": 752,
+              "tbtMs": 8,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 100,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 260,
+              "lcpMs": 683,
               "tbtMs": 0,
               "cls": 0
             }
           }
         ]
       },
-      "/future-builders": {
+      "/schools": {
         "performance": 100,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100,
         "metrics": {
-          "fcpMs": 378,
-          "lcpMs": 718,
-          "tbtMs": 5,
-          "cls": 0
-        },
-        "runs": [
-          {
-            "scores": {
-              "performance": 100,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 374,
-              "lcpMs": 714,
-              "tbtMs": 4,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 100,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 378,
-              "lcpMs": 718,
-              "tbtMs": 10,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 100,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 378,
-              "lcpMs": 817,
-              "tbtMs": 5,
-              "cls": 0
-            }
-          }
-        ]
-      },
-      "/journal": {
-        "performance": 100,
-        "accessibility": 100,
-        "best-practices": 100,
-        "seo": 100,
-        "metrics": {
-          "fcpMs": 253,
-          "lcpMs": 672,
+          "fcpMs": 261,
+          "lcpMs": 623,
           "tbtMs": 0,
           "cls": 0
         },
@@ -982,22 +758,8 @@
               "seo": 100
             },
             "metrics": {
-              "fcpMs": 256,
-              "lcpMs": 687,
-              "tbtMs": 5,
-              "cls": 0
-            }
-          },
-          {
-            "scores": {
-              "performance": 100,
-              "accessibility": 100,
-              "best-practices": 100,
-              "seo": 100
-            },
-            "metrics": {
-              "fcpMs": 253,
-              "lcpMs": 664,
+              "fcpMs": 250,
+              "lcpMs": 623,
               "tbtMs": 0,
               "cls": 0
             }
@@ -1010,23 +772,93 @@
               "seo": 100
             },
             "metrics": {
-              "fcpMs": 253,
-              "lcpMs": 672,
+              "fcpMs": 261,
+              "lcpMs": 611,
+              "tbtMs": 0,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 100,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 263,
+              "lcpMs": 736,
               "tbtMs": 0,
               "cls": 0
             }
           }
         ]
       },
-      "/about": {
+      "/students": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "metrics": {
+          "fcpMs": 259,
+          "lcpMs": 699,
+          "tbtMs": 0,
+          "cls": 0
+        },
+        "runs": [
+          {
+            "scores": {
+              "performance": 100,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 258,
+              "lcpMs": 699,
+              "tbtMs": 0,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 100,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 264,
+              "lcpMs": 697,
+              "tbtMs": 0,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 100,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 259,
+              "lcpMs": 705,
+              "tbtMs": 0,
+              "cls": 0
+            }
+          }
+        ]
+      },
+      "/parents": {
         "performance": 100,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100,
         "metrics": {
           "fcpMs": 251,
-          "lcpMs": 705,
-          "tbtMs": 6,
+          "lcpMs": 654,
+          "tbtMs": 0,
           "cls": 0
         },
         "runs": [
@@ -1039,8 +871,22 @@
             },
             "metrics": {
               "fcpMs": 253,
-              "lcpMs": 715,
-              "tbtMs": 6,
+              "lcpMs": 688,
+              "tbtMs": 0,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 100,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 250,
+              "lcpMs": 654,
+              "tbtMs": 0,
               "cls": 0
             }
           },
@@ -1053,8 +899,36 @@
             },
             "metrics": {
               "fcpMs": 251,
-              "lcpMs": 705,
-              "tbtMs": 7,
+              "lcpMs": 561,
+              "tbtMs": 4,
+              "cls": 0
+            }
+          }
+        ]
+      },
+      "/future-builders": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "metrics": {
+          "fcpMs": 376,
+          "lcpMs": 756,
+          "tbtMs": 0,
+          "cls": 0
+        },
+        "runs": [
+          {
+            "scores": {
+              "performance": 100,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 381,
+              "lcpMs": 761,
+              "tbtMs": 0,
               "cls": 0
             }
           },
@@ -1066,22 +940,36 @@
               "seo": 100
             },
             "metrics": {
-              "fcpMs": 249,
-              "lcpMs": 697,
-              "tbtMs": 5,
+              "fcpMs": 373,
+              "lcpMs": 753,
+              "tbtMs": 0,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 100,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 376,
+              "lcpMs": 756,
+              "tbtMs": 0,
               "cls": 0
             }
           }
         ]
       },
-      "/contact": {
+      "/journal": {
         "performance": 100,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100,
         "metrics": {
-          "fcpMs": 251,
-          "lcpMs": 629,
+          "fcpMs": 262,
+          "lcpMs": 708,
           "tbtMs": 0,
           "cls": 0
         },
@@ -1095,7 +983,7 @@
             },
             "metrics": {
               "fcpMs": 260,
-              "lcpMs": 513,
+              "lcpMs": 708,
               "tbtMs": 0,
               "cls": 0
             }
@@ -1108,8 +996,50 @@
               "seo": 100
             },
             "metrics": {
-              "fcpMs": 249,
-              "lcpMs": 629,
+              "fcpMs": 268,
+              "lcpMs": 583,
+              "tbtMs": 0,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 100,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 262,
+              "lcpMs": 735,
+              "tbtMs": 0,
+              "cls": 0
+            }
+          }
+        ]
+      },
+      "/about": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "metrics": {
+          "fcpMs": 253,
+          "lcpMs": 721,
+          "tbtMs": 0,
+          "cls": 0
+        },
+        "runs": [
+          {
+            "scores": {
+              "performance": 100,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 253,
+              "lcpMs": 721,
               "tbtMs": 0,
               "cls": 0
             }
@@ -1123,8 +1053,78 @@
             },
             "metrics": {
               "fcpMs": 251,
-              "lcpMs": 647,
-              "tbtMs": 1,
+              "lcpMs": 730,
+              "tbtMs": 7,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 100,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 260,
+              "lcpMs": 595,
+              "tbtMs": 0,
+              "cls": 0
+            }
+          }
+        ]
+      },
+      "/contact": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100,
+        "metrics": {
+          "fcpMs": 259,
+          "lcpMs": 667,
+          "tbtMs": 0,
+          "cls": 0
+        },
+        "runs": [
+          {
+            "scores": {
+              "performance": 100,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 250,
+              "lcpMs": 669,
+              "tbtMs": 0,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 100,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 259,
+              "lcpMs": 667,
+              "tbtMs": 0,
+              "cls": 0
+            }
+          },
+          {
+            "scores": {
+              "performance": 100,
+              "accessibility": 100,
+              "best-practices": 100,
+              "seo": 100
+            },
+            "metrics": {
+              "fcpMs": 260,
+              "lcpMs": 555,
+              "tbtMs": 0,
               "cls": 0
             }
           }
