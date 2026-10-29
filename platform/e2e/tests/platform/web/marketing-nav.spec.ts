@@ -269,21 +269,25 @@ test.describe('mobile sheet at 360 px', () => {
 });
 
 test.describe('footer', () => {
-  test('columns, brand block, and every internal link returns 200', async ({ page, request }) => {
+  test('columns, legal line, decorative wordmark, and every internal link returns 200', async ({ page, request }) => {
     await page.goto('/about', { waitUntil: 'networkidle' });
     const footer = page.getByRole('contentinfo');
     const nav = footer.getByRole('navigation', { name: 'Footer' });
     const headings = flagOff() ? ['Programs', 'Future Builders', 'Company', 'Legal'] : ['Programs', 'Future Builders', 'Learn', 'Company', 'Legal'];
     await expect(nav.getByRole('heading', { level: 2 })).toHaveText(headings);
     await expect(nav.getByRole('button', { name: 'Cookie preferences' })).toBeVisible();
-    await expect(footer.getByRole('link', { name: /SOYL Academy on Instagram/ })).toHaveAttribute('href', 'https://www.instagram.com/soylacademy/');
+    await expect(footer.getByRole('link', { name: 'Instagram', exact: true })).toHaveAttribute('href', 'https://www.instagram.com/soylacademy/');
     await expect(footer.getByRole('link', { name: 'outreach@soyl.cloud' })).toHaveAttribute('href', 'mailto:outreach@soyl.cloud');
-    await expect(footer).toContainText('SOYL AI Private Limited. Bengaluru, Karnataka 560043');
+    await expect(footer).toContainText('SOYL AI Private Limited · Bengaluru 560043');
     await expect(footer.getByRole('link', { name: 'Book a demo', exact: true }).first()).toBeVisible();
+    // The oversized wordmark (owner, 2026-10-29) is decorative: visible, but hidden from assistive technology.
+    const wordmark = footer.locator('[aria-hidden="true"]').filter({ hasText: /^SOYL$/ });
+    await expect(wordmark).toHaveCount(1);
+    await expect(wordmark).toBeVisible();
     if (flagOff()) {
-      await expect(footer.getByRole('link', { name: 'Start learning free' })).toHaveCount(0);
+      await expect(nav.getByRole('link', { name: 'Free lessons' })).toHaveCount(0);
     } else {
-      await expect(footer.getByRole('link', { name: 'Start learning free' })).toHaveAttribute('href', '/learn');
+      await expect(nav.getByRole('link', { name: 'Free lessons' })).toHaveAttribute('href', '/learn');
     }
     const hrefs = await footer.locator('a[href^="/"]').evaluateAll((as) => as.map((a) => a.getAttribute('href')!));
     expect(hrefs.length).toBeGreaterThan(10);
