@@ -368,3 +368,30 @@
   font-size: var(--p-text-md);
   font-weight: 700;
 }
+
+/* Your avatar (design-system, 2026-10-29) */
+.avatarRow {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-3);
+  margin: var(--p-space-2) 0 var(--p-space-3);
+}
+.avatarRow p {
+  margin: 0;
+}
+.badgeArt {
+  display: block;
+  width: 52px;
+  height: 52px;
+  margin-bottom: var(--p-space-1);
+}
+.badgeEmpty {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-3);
+  margin-top: var(--p-space-2);
+}
+.badgeEmpty p {
+  flex: 1 1 200px;
+}

@@ -143,6 +143,9 @@
   font-variant-numeric: tabular-nums;
 }
 .cardTier {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   margin-top: 2px;
   color: var(--card-sub);
   font-size: 0.7rem;
@@ -265,4 +268,13 @@
   display: block;
   color: var(--p-ink-subtle);
   font-size: var(--p-text-xs);
+}
+
+/* Avatar and tier crest on the card (design-system, 2026-10-29). */
+.cardAvatar {
+  border: 3px solid var(--card-trim);
+  box-sizing: content-box;
+}
+.cardTierCrest {
+  flex: none;
 }

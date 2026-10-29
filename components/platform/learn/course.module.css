@@ -564,3 +564,28 @@
 .stepLinkQuiet:hover {
   background: var(--p-surface-3);
 }
+
+/* Subject header with its glyph (design-system, 2026-10-29). */
+.subjectHead {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--p-space-3);
+  min-width: 0;
+}
+.subjectHead > :last-child {
+  flex: 1;
+  min-width: 0;
+}
+.tileLarge {
+  flex: none;
+  width: 64px;
+  height: 64px;
+  margin-top: var(--p-space-6);
+}
+@media (max-width: 599px) {
+  .tileLarge {
+    width: 48px;
+    height: 48px;
+    margin-top: var(--p-space-5);
+  }
+}

@@ -228,6 +228,11 @@
   flex: none;
 }
 .creditLink {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   min-height: var(--p-touch);

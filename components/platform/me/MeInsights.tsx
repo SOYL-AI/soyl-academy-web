@@ -6,6 +6,7 @@
  * (GET /v1/me/progress) and badges (GET /v1/me/badges). Plus the Appearance setting (Light / Dark / System).
  * Every block has its own empty and error state; nothing here is shown to anyone else.
  */
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import type { Schemas } from '@/platform/shared/api-client';
 
@@ -20,6 +21,9 @@ import { Heatmap } from './Heatmap';
 import { BlankPlayerCard, CardAttributes, PlayerCard } from './PlayerCard';
 import shellCss from '../shell/appshell.module.css';
 import s from './me.module.css';
+
+// Medal art for the 12 badges loads after the page (it is below the fold on phones).
+const BadgeGrid = dynamic(() => import('./BadgeGrid').then((m) => m.BadgeGrid), { ssr: false, loading: () => <Skeleton lines={2} /> });
 
 export function MeInsights() {
   return (
@@ -166,18 +170,7 @@ function BadgesSection() {
       ) : badges === 'error' || badges.length === 0 ? (
         <p className={s.muted}>Badges you earn by learning show here.</p>
       ) : (
-        <ul className={s.badgeGrid}>
-          {badges.map((b) => (
-            <li key={b.key} className={s.badge} data-awarded={b.awarded}>
-              <span className={s.badgeIcon} aria-hidden="true">
-                <Icon name={b.awarded ? 'trophy' : 'lock'} size={20} />
-              </span>
-              <span className={s.badgeName}>{b.name}</span>
-              <span className={s.badgeDesc}>{b.description}</span>
-              <span className="p-visually-hidden">{b.awarded ? 'Earned' : 'Not earned yet'}</span>
-            </li>
-          ))}
-        </ul>
+        <BadgeGrid badges={badges} />
       )}
     </Card>
   );

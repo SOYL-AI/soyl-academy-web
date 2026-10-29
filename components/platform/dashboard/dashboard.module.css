@@ -692,3 +692,56 @@
 .focusItem > * {
   min-width: 0;
 }
+
+/* Avatars, art and D-044 credits (design-system, 2026-10-29). */
+.headWho {
+  display: flex;
+  align-items: center;
+  gap: var(--p-space-3);
+  min-width: 0;
+}
+.headWho > div {
+  min-width: 0;
+}
+.avatarLink {
+  flex: none;
+  border-radius: 50%;
+}
+.avatarLink:focus-visible {
+  outline: 2px solid var(--p-focus);
+  outline-offset: 3px;
+}
+.creditsLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-1) var(--p-space-2);
+  margin: 0;
+}
+.creditsSpark {
+  color: var(--p-accent);
+}
+.bonusPill {
+  padding: 1px var(--p-space-2);
+  border-radius: var(--p-radius-pill);
+  background: var(--p-highlight);
+  color: var(--p-on-highlight);
+  font-size: var(--p-text-xs);
+  font-weight: 700;
+}
+.bonusRow {
+  display: grid;
+  gap: var(--p-space-1);
+}
+.badgeArt {
+  flex: none;
+}
+.emptyArtRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--p-space-3);
+}
+.emptyArtRow p {
+  flex: 1 1 180px;
+}

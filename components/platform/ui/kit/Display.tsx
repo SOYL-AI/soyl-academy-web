@@ -139,18 +139,26 @@ export interface EmptyStateProps {
   title: string;
   children?: ReactNode;
   icon?: IconName;
+  /** An illustration (components/platform/ui/art/EmptyIllustration) shown instead of the icon; decorative. */
+  art?: ReactNode;
   action?: ReactNode;
   /** h1 when the empty state is the whole page (e.g. a test that could not load). */
   headingLevel?: 'h1' | 'h2' | 'h3' | 'h4';
   className?: string;
 }
 
-export function EmptyState({ title, children, icon = 'book', action, headingLevel: H = 'h3', className }: EmptyStateProps) {
+export function EmptyState({ title, children, icon = 'book', art, action, headingLevel: H = 'h3', className }: EmptyStateProps) {
   return (
     <div className={cx(s.empty, className)}>
-      <span className={s.emptyIcon}>
-        <Icon name={icon} size={26} />
-      </span>
+      {art ? (
+        <span className={s.emptyArt} aria-hidden="true">
+          {art}
+        </span>
+      ) : (
+        <span className={s.emptyIcon}>
+          <Icon name={icon} size={26} />
+        </span>
+      )}
       <H className={s.emptyTitle}>{title}</H>
       {children && <p className={s.emptyBody}>{children}</p>}
       {action}

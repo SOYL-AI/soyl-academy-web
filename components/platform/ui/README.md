@@ -168,6 +168,20 @@ classes in camelCase (`fillGood`), and do not write a negated identifier directl
 modules that need them, so marketing routes never load them. The site's Tailwind preflight still applies
 inside platform pages (e.g. it removes list markers; content lists set them back).
 
+## Artwork (`art/`, design-system 2026-10-29)
+
+Original, hand-drawn flat SVG for the platform; no icon set, emoji, illustration or font was copied or traced, and nothing loads from a third party.
+
+| Piece | Data | React | Where it is used | Cost |
+|---|---|---|---|---|
+| 64 animal avatars (ids = `PUBLIC_NAME_ANIMALS`) | `avatar-art.ts` (shared primitives: body, eyes, ears, muzzles, beaks) | `AvatarArt`, `InlineAvatar` (inline); `kit/AnimalAvatar` (static image) | picker and art sheet inline; everywhere else `AnimalAvatar` → `/me/avatars/<id>.v1.svg` (prerendered route, immutable cache) | the full set only in the picker's lazy chunk |
+| Badge medals (12 + locked state) | `badge-art.ts` | `Art.tsx` `BadgeMedal` | /me badges (lazy grid), dashboard next badge, badge celebration | own module |
+| League crests (Bronze … Diamond, Elite) | `crest-art.ts` | `LeagueCrest` | weekly league, dashboard league tile, player card | small, own module |
+| Subject glyphs (15 kinds) | `subject-art.ts` (`currentColor`, follows the tile hue) | `SubjectGlyph` | /learn, class page, subject header | server-rendered on course pages |
+| Empty states (6) | `empty-art.ts` (theme tokens only) | `EmptyIllustration` → `EmptyState art={…}` | dashboard, /me badges, Ask AI, 404, error | own module |
+
+All drawings are `SvgNode` data (`svg-tree.ts`), rendered with `SvgTree` (no `dangerouslySetInnerHTML`) or as a string by the avatar route. Avatar backgrounds are the tokens `--p-avatar-<bg>` (8 themes, light and dark) with `--p-avatar-ink` (AA on all of them); the art's dark features are ≥ 3:1 on every background (kit test). Bump `AVATAR_IMAGE_VERSION` (`avatar-src.ts`) when a drawing changes. Dev review page: `/dev/ui/art`.
+
 ## Renderer security rules (WEB-6, WEB-7, AC-19, F-012)
 
 Only `render/MathBlock.tsx` and `render/SvgDiagram.tsx` use `dangerouslySetInnerHTML`, and only with the

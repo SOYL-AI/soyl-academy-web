@@ -13,6 +13,8 @@ import { normaliseOtp, OTPInput, TextInput } from '../kit/Field';
 import { Tabs } from '../kit/Tabs';
 import { ToastProvider, useToast } from '../kit/Toast';
 import { createSvgSanitizer } from '../render/sanitize-svg';
+import { INK as AVATAR_ART_INK } from '../art/avatar-art';
+import { AVATAR_BACKGROUND_IDS } from '@/platform/shared/config/avatars';
 
 describe('Button', () => {
   it('loading: aria-busy, cannot submit or fire', () => {
@@ -228,13 +230,15 @@ describe('design tokens', () => {
       [`--p-${d}`, '--p-surface'] as [string, string],
       [`--p-${d}`, `--p-${d}-soft`] as [string, string],
     ]),
+    // Avatar backgrounds (2026-10-29): the avatar ink (initials, icons on a swatch) is AA on every theme colour.
+    ...AVATAR_BACKGROUND_IDS.map((bg) => ['--p-avatar-ink', `--p-avatar-${bg}`] as [string, string]),
   ];
   const GRAPHIC_PAIRS: Array<[string, string]> = [
     ['--p-border-strong', '--p-surface'],
     ['--p-focus', '--p-surface'],
     ['--p-focus', '--p-bg'],
     // ADR-023: mastery levels, streak flame and tier colours carry meaning (always written as text too).
-    ...(['m-attempted', 'm-familiar', 'm-proficient', 'm-mastered', 'flame', 'tier-bronze', 'tier-silver', 'tier-gold', 'tier-elite', 'heat-4'] as const).flatMap((c) => [
+    ...(['m-attempted', 'm-familiar', 'm-proficient', 'm-mastered', 'flame', 'tier-bronze', 'tier-silver', 'tier-gold', 'tier-elite', 'tier-sapphire', 'tier-diamond', 'heat-4'] as const).flatMap((c) => [
       [`--p-${c}`, '--p-surface'] as [string, string],
       [`--p-${c}`, '--p-bg'] as [string, string],
     ]),
@@ -255,6 +259,12 @@ describe('design tokens', () => {
       expect(ratio(theme[fg], theme[bg])).toBeGreaterThanOrEqual(3);
     });
   }
+
+  it.each(AVATAR_BACKGROUND_IDS.flatMap((bg) => [['light', bg], ['dark', bg]] as const))('%s: avatar background %s is defined, and the dark parts of the art read on it (>= 3:1)', (themeName, bg) => {
+    const theme = themeName === 'light' ? light : dark;
+    expect(theme[`--p-avatar-${bg}`]).toMatch(/^#[0-9a-f]{6}$/i);
+    expect(ratio(AVATAR_ART_INK, theme[`--p-avatar-${bg}`])).toBeGreaterThanOrEqual(3);
+  });
 
   it('dark media-query block matches the forced dark block', () => {
     const media = block(/@media \(prefers-color-scheme: dark\) \{\s*\.soyl-platform:not\(\[data-theme="light"\]\) \{([\s\S]*?)\n  \}/m);

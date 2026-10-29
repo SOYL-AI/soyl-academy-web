@@ -4,7 +4,7 @@
  * an award was cut to 0 by today's limit.
  */
 import type { CoinAward } from '@/platform/shared/api-client';
-import { CAP_NOTE, summariseAwards } from './coins-logic';
+import { CAP_NOTE, summariseAwards } from './coins-format';
 
 interface ToastLike {
   show: (o: { title: string; description?: string; tone?: 'neutral' | 'success' | 'danger' }) => number;

@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { cx } from '@/components/platform/ui/cx';
 import { Icon } from '@/components/platform/ui/kit/Icon';
-import { coinsText } from './coins-logic';
+import { coinsText } from './coins-format';
 import { useCoins } from './CoinsProvider';
 import s from './coins.module.css';
 

@@ -13,13 +13,16 @@ import { isApiError, type Me } from '@/platform/shared/api-client';
 import { DISPLAY_NAME } from '@/platform/shared/config/security';
 import { Button } from '@/components/platform/ui/kit/Button';
 import { Dialog } from '@/components/platform/ui/kit/Dialog';
-import { Avatar, Badge, Card, CardTitle, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
+import { Badge, Card, CardTitle, EmptyState, Skeleton } from '@/components/platform/ui/kit/Display';
+import { AnimalAvatar } from '@/components/platform/ui/kit/AnimalAvatar';
 import { TextInput } from '@/components/platform/ui/kit/Field';
 import { useToast } from '@/components/platform/ui/kit/Toast';
 import { useSession } from '../auth/SessionProvider';
 import { ConsentFlow } from '../consent/ConsentFlow';
 import { CreditsCard, MyAttemptsCard, SubscriptionCard } from './MeExtras';
 import { AppearanceCard, MeInsights } from './MeInsights';
+import { AvatarCard } from './AvatarCard';
+import { useMyAvatar } from './MyAvatarProvider';
 import { WeeklyGoalEditor } from '../dashboard/WeeklyGoalEditor';
 
 // The school picker (and the shared school-name validator) loads with the profile, not in the page's first JS.
@@ -104,7 +107,7 @@ function Profile({ me, onChange }: { me: Me; onChange: (me: Me) => void }) {
   return (
     <>
       <div className={s.hero}>
-        <Avatar name={name} size={56} decorative />
+        <AnimalAvatar avatar={me.avatar} size={64} decorative />
         <div>
           <h1 className={shell.title}>{name}</h1>
           <p className={shell.lead}>
@@ -120,6 +123,7 @@ function Profile({ me, onChange }: { me: Me; onChange: (me: Me) => void }) {
           <ConsentFlow onChanged={(v) => onChange({ ...me, consent: v.status, school: v.status === 'granted' ? me.school : null })} />
         </div>
         <ProfileForm me={me} onSaved={onChange} />
+        <AvatarCard me={me} onChange={onChange} />
         <AppearanceCard />
         <PublicName me={me} onChange={onChange} />
         <MyAttemptsCard />
@@ -389,6 +393,7 @@ function DeleteAccount() {
 
 /** D-039: the only name other students see. Auto-generated; the student can roll a new one. */
 function PublicName({ me, onChange }: { me: Me; onChange: (me: Me) => void }) {
+  const mine = useMyAvatar();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   async function regenerate() {
@@ -396,7 +401,10 @@ function PublicName({ me, onChange }: { me: Me; onChange: (me: Me) => void }) {
     setError(null);
     try {
       const r = await api.post('/v1/me/public-name');
-      onChange({ ...me, publicName: r.publicName });
+      // A new name can move a default (or name-only) avatar to the new name's animal: read it back.
+      const next = await api.get('/v1/me').catch(() => ({ ...me, publicName: r.publicName }));
+      onChange(next);
+      mine?.setAvatar(next.avatar);
     } catch (err) {
       setError(problemMessage(err));
     } finally {

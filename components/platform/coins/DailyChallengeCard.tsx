@@ -15,7 +15,7 @@ import { useSession } from '../auth/SessionProvider';
 import { api } from '../lib/api-browser';
 import { learnPath, type BoardSlug } from '../lib/catalog';
 import { CheckIn } from './CheckIn';
-import { coinsText, formatSpan } from './coins-logic';
+import { coinsText, formatSpan } from './coins-format';
 import { useNow } from './useNow';
 import s from './coins.module.css';
 

@@ -25,7 +25,7 @@ import { fromResponse, initialDraft, toTestResponse, type Draft } from '@/compon
 import { QuestionCard } from '@/components/platform/ui/question/QuestionCard';
 import type { QuestionSlots } from '@/components/platform/ui/question/slots';
 import { useSession } from '../auth/SessionProvider';
-import { summariseAwards } from '../coins/coins-logic';
+import { summariseAwards } from '../coins/coins-format';
 import { useOptionalCoins } from '../coins/CoinsProvider';
 import { api } from '../lib/api-browser';
 import { AutosaveQueue, type QueueStatus } from './autosave';

@@ -8,12 +8,14 @@
  * - XP / badges / streak from the response are announced with a toast;
  * - SOYL Coins the answer paid (daily challenge, milestones, mastery; ADR-021) too, and the chip updates.
  */
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 import { isApiError, type PracticeAnswerResult, type PracticeResponse, type StudentQuestion } from '@/platform/shared/api-client';
 import { useToast } from '@/components/platform/ui/kit/Toast';
 import { useSession } from '../auth/SessionProvider';
 import { announceCoins } from '../coins/announce';
 import { useOptionalCoins } from '../coins/CoinsProvider';
+import { useOptionalCredits } from '../ai/CreditsProvider';
+import { useLearnerProgress } from '../learn/ProgressProvider';
 import { api } from '../lib/api-browser';
 import { recordGuestPracticeAnswer } from '../lib/guest-storage';
 
@@ -42,22 +44,44 @@ export function usePracticeAnswer(chapterId: string): PracticeAnswerApi {
   const { state, openLogin } = useSession();
   const toast = useToast();
   const coins = useOptionalCoins();
+  const credits = useOptionalCredits();
+  const { progress } = useLearnerProgress();
   const isMember = state.status === 'member';
+  // XP earned here since the progress snapshot was read (level-up detection without refetching progress).
+  const gained = useRef<{ base: number | null; xp: number }>({ base: null, xp: 0 });
+  const baseXp = progress?.source === 'member' ? progress.xp : null;
+
+  /** Badges, a new level and D-044 bonus credits: toasts and celebrations, loaded only when something was earned. */
+  const announce = useCallback(
+    (res: { xpAwarded: number; badgesAwarded: readonly string[]; creditBonuses?: PracticeAnswerResult['creditBonuses'] }) => {
+      if (gained.current.base !== baseXp) gained.current = { base: baseXp, xp: 0 };
+      const xpBefore = gained.current.base === null ? null : gained.current.base + gained.current.xp;
+      gained.current.xp += res.xpAwarded > 0 ? res.xpAwarded : 0;
+      if (!res.badgesAwarded.length && !res.creditBonuses?.length && !(res.xpAwarded > 0 && xpBefore !== null)) return;
+      void import('../celebrate/rewards').then((m) => m.announceRewards(res, { toast, xpBefore, refreshCredits: credits?.refresh }));
+    },
+    [toast, credits, baseXp],
+  );
 
   const submit = useCallback(
     async (question: StudentQuestion, response: PracticeResponse) => {
       const res = await api.post('/v1/practice/answers', { body: { questionId: question.id, version: question.version, response } });
       if (!res.stored && res.correct !== null) recordGuestPracticeAnswer(chapterId, question.id, res.correct);
-      if (res.badgesAwarded.length) toast.show({ title: 'New badge!', description: res.badgesAwarded.join(', '), tone: 'success' });
+      announce(res);
       announceCoins(res.coinsAwarded, res.coinAwards, toast, coins);
       return res;
     },
-    [chapterId, toast, coins],
+    [chapterId, toast, coins, announce],
   );
 
-  const selfAssess = useCallback(async (answerId: string, marks: number) => {
-    await api.patch('/v1/practice/answers/{id}', { params: { id: answerId }, body: { marks } });
-  }, []);
+  const selfAssess = useCallback(
+    async (answerId: string, marks: number) => {
+      const res = await api.patch('/v1/practice/answers/{id}', { params: { id: answerId }, body: { marks } });
+      const bonuses = (res as { creditBonuses?: PracticeAnswerResult['creditBonuses'] }).creditBonuses;
+      if (bonuses?.length) announce({ xpAwarded: 0, badgesAwarded: [], creditBonuses: bonuses });
+    },
+    [announce],
+  );
 
   const onLogin = useCallback(() => openLogin({ reason: 'Log in to save your self-marks and keep your practice in your account. It is free.' }), [openLogin]);
 
