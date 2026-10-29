@@ -59,15 +59,17 @@ test('avatar: pick an unlocked one → top bar and dashboard; a locked one canno
   await expect(page.getByTestId('dashboard-avatar').locator('[data-avatar]')).toHaveAttribute('data-avatar', pickId);
   await expect(page.getByTestId('profile-link').locator('[data-avatar]')).toHaveAttribute('data-avatar', pickId);
 
-  // Locked (level 8): the picker previews it but will not save; the API refuses it too.
+  // Locked (level 8): the picker previews it but will not save; the API refuses it too. The animal in the
+  // student's random public name is always unlocked, so use the other level-8 animal when the name has Moose.
   await openPicker(page);
-  await page.locator('[data-avatar-option="moose"]').click();
+  const locked = /Moose/.test((await page.getByTestId('avatar-preview-name').textContent()) ?? '') ? 'pelican' : 'moose';
+  await page.locator(`[data-avatar-option="${locked}"]`).click();
   await expect(page.getByTestId('avatar-save')).toBeDisabled();
   await expect(page.getByTestId('avatar-locked-note')).toContainText("Reach level 8 — you're level 1");
-  const refused = await page.evaluate(async () => {
-    const r = await fetch('/api/platform/v1/me', { method: 'PATCH', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ avatar: { id: 'moose', bg: 'sky' } }) });
+  const refused = await page.evaluate(async (id) => {
+    const r = await fetch('/api/platform/v1/me', { method: 'PATCH', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ avatar: { id, bg: 'sky' } }) });
     return { status: r.status, body: (await r.json()) as { code?: string } };
-  });
+  }, locked);
   expect(refused.status).toBe(403);
   expect(refused.body.code).toBe('avatar_locked');
 
@@ -75,7 +77,7 @@ test('avatar: pick an unlocked one → top bar and dashboard; a locked one canno
     await setTheme(page, baseURL, theme);
     await openPicker(page);
     await expect(root(page)).toHaveAttribute('data-theme', theme);
-    await page.locator('[data-avatar-option="moose"]').click();
+    await page.locator(`[data-avatar-option="${locked}"]`).click();
     await checkPage(page);
     expect(await page.evaluate(() => window.innerWidth)).toBe(360);
     await page.getByTestId('avatar-card').screenshot({ path: resolve(DOCS, `mobile-${theme}-picker.png`) });
