@@ -10,7 +10,7 @@
  * all of that before production generates a single tax invoice.
  *
  * Production refuses to generate anything (and the API refuses to start with INVOICING_ENABLED=true)
- * while `invoicingProblems(INVOICING, …)` is not empty: every field marked OWNER_TO_PROVIDE is required.
+ * while `invoicingProblems(INVOICING, …)` is not empty: no field may hold an OWNER_TO_PROVIDE placeholder.
  * Tests use a fixture seller (FIXTURE_SELLER), never these values.
  */
 import { GST_STATE_CODES, isGstStateCode, isValidGstin, PAN_SHAPE, stateName } from '../billing/gst';
@@ -21,8 +21,11 @@ export const OWNER_TO_PROVIDE = 'OWNER_TO_PROVIDE';
 export interface Seller {
   legalName: string;
   tradeName: string;
-  /** Street line of the registered office (as on the certificate of incorporation). */
-  addressLine1: string;
+  /**
+   * Street line of the registered office. Optional: null prints no street line (owner, 2026-10-29: the
+   * address on documents is "Bengaluru 560043, Karnataka" only). A placeholder is still refused.
+   */
+  addressLine1: string | null;
   addressLine2: string | null;
   city: string;
   pincode: string;
@@ -74,7 +77,8 @@ export const INVOICING: InvoicingConfig = {
   seller: {
     legalName: 'SOYL AI Private Limited',
     tradeName: 'SOYL',
-    addressLine1: `${OWNER_TO_PROVIDE}: street line of the registered office (as on the certificate of incorporation)`,
+    // Owner (2026-10-29, OA-22): no street line; documents print "Bengaluru 560043" and "Karnataka (State code 29)".
+    addressLine1: null,
     addressLine2: null,
     city: 'Bengaluru',
     pincode: '560043',
@@ -134,7 +138,7 @@ export function invoicingProblems(c: InvoicingConfig): string[] {
   const p: string[] = [];
   const s = c.seller;
   for (const [k, v] of Object.entries(s)) if (typeof v === 'string' && v.includes(OWNER_TO_PROVIDE)) p.push(`seller.${k} is a placeholder (OA-22)`);
-  for (const k of ['legalName', 'tradeName', 'addressLine1', 'city', 'pincode', 'email'] as const) if (!s[k]?.trim()) p.push(`seller.${k} is required`);
+  for (const k of ['legalName', 'tradeName', 'city', 'pincode', 'email'] as const) if (!s[k]?.trim()) p.push(`seller.${k} is required`);
   if (!isGstStateCode(s.stateCode)) p.push('seller.stateCode must be a GST state code');
   if (!/^\d{6}$/.test(s.pincode)) p.push('seller.pincode must be 6 digits');
   if (!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(s.email)) p.push('seller.email must be an email address');

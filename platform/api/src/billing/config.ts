@@ -17,7 +17,7 @@
  *                                platform/shared/config/invoicing.ts still has placeholders (OA-22).
  */
 import { readFlags } from '@soyl/shared/config/flags';
-import { INVOICING, invoicingProblems } from '@soyl/shared/config/invoicing';
+import { INVOICING, invoicingProblems, type InvoicingConfig } from '@soyl/shared/config/invoicing';
 import type { InvoicingRuntime } from './invoices/issue';
 
 export const RAZORPAY_PROVIDERS = ['stub', 'razorpay', 'disabled'] as const;
@@ -54,7 +54,15 @@ export interface BillingEnvContext {
 
 const KEY_ID = /^rzp_(test|live)_[A-Za-z0-9]{6,32}$/;
 
-export function loadBillingConfig(env: Record<string, string | undefined>, ctx: BillingEnvContext): { config: BillingConfig; problems: string[] } {
+/**
+ * `invoicingSettings` defaults to the real INVOICING config; tests inject a variant (e.g. one with an
+ * OWNER_TO_PROVIDE placeholder) to prove the production refusal without depending on the real values.
+ */
+export function loadBillingConfig(
+  env: Record<string, string | undefined>,
+  ctx: BillingEnvContext,
+  invoicingSettings: InvoicingConfig = INVOICING,
+): { config: BillingConfig; problems: string[] } {
   const problems: string[] = [];
   const val = (name: string) => {
     const v = env[name]?.trim();
@@ -113,10 +121,10 @@ export function loadBillingConfig(env: Record<string, string | undefined>, ctx: 
   if (rawInvoicing !== undefined && !['true', 'false'].includes(rawInvoicing)) problems.push('INVOICING_ENABLED must be true or false');
   const invoicingEnabled = rawInvoicing === undefined ? ctx.isLocal : rawInvoicing === 'true';
   if (invoicingEnabled && ctx.isProduction) {
-    const p = invoicingProblems(INVOICING);
+    const p = invoicingProblems(invoicingSettings);
     if (p.length) problems.push(`INVOICING_ENABLED=true but platform/shared/config/invoicing.ts is not ready (OA-22): ${p.join('; ')}`);
   }
-  const invoicing: InvoicingRuntime = { enabled: invoicingEnabled, production: ctx.isProduction, settings: INVOICING };
+  const invoicing: InvoicingRuntime = { enabled: invoicingEnabled, production: ctx.isProduction, settings: invoicingSettings };
 
   return { config: { enabled, provider, keyId, keySecret, webhookSecrets, apiBaseUrl, invoicing }, problems };
 }
