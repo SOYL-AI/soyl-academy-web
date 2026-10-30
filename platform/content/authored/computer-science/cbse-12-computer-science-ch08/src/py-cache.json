@@ -1,0 +1,490 @@
+{
+ "022a2e3e520f99b344c8": {
+  "out": "{\"cols\": [\"Name\", \"Revised\"], \"rows\": [[\"Diya\", 96], [\"Gaurav\", 100]]}",
+  "err": ""
+ },
+ "02de183bced410c8971c": {
+  "out": "{\"cols\": [\"Stream\", \"AVG(Marks)\"], \"rows\": [[\"Humanities\", 85.0], [\"Science\", 82.66666666666667]]}",
+  "err": ""
+ },
+ "03607ace73cdf6da0a47": {
+  "out": "{\"cols\": [\"Name\", \"Class\"], \"rows\": [[\"Chirag\", \"12A\"], [\"Farah\", \"12C\"]]}",
+  "err": ""
+ },
+ "07fb4df26027c1bc18af": {
+  "out": "",
+  "err": "sqlite3.OperationalError: misuse of aggregate: AVG()"
+ },
+ "0da99a0972d34bbdfcd7": {
+  "out": "{\"cols\": [\"PName\", \"NewPrice\"], \"rows\": [[\"Gel Pen\", 35], [\"Notebook\", 70]]}",
+  "err": ""
+ },
+ "1087a7bb22f27198ddea": {
+  "out": "{\"cols\": [\"COUNT(ClubID)\", \"COUNT(*)\"], \"rows\": [[6, 8]]}",
+  "err": ""
+ },
+ "11891e73275419b39c32": {
+  "out": "{\"cols\": [\"RollNo\", \"Name\", \"Class\", \"Stream\", \"Marks\", \"City\", \"ClubID\", \"ClubID\", \"ClubName\", \"Teacher\", \"Fee\"], \"rows\": [[1, \"Aarav\", \"12A\", \"Science\", 88, \"Pune\", 2, 1, \"Robotics\", \"Mr Rao\", 500], [1, \"Aarav\", \"12A\", \"Science\", 88, \"Pune\", 2, 2, \"Music\", \"Ms Iyer\", 300], [1, \"Aarav\", \"12A\", \"Science\", 88, \"Pune\", 2, 3, \"Debate\", \"Mr Khan\", 200], [1, \"Aarav\", \"12A\", \"Science\", 88, \"Pune\", 2, 4, \"Chess\", \"Ms Bose\", 150], [2, \"Bhavna\", \"12B\", \"Commerce\", 74, \"Nagpur\", 1, 1, \"Robotics\", \"Mr Rao\", 500], [2, \"Bhavna\", \"12B\", \"Commerce\", 74, \"Nagpur\", 1, 2, \"Music\", \"Ms Iyer\", 300], [2, \"Bhavna\", \"12B\", \"Commerce\", 74, \"Nagpur\", 1, 3, \"Debate\", \"Mr Khan\", 200], [2, \"Bhavna\", \"12B\", \"Commerce\", 74, \"Nagpur\", 1, 4, \"Chess\", \"Ms Bose\", 150], [3, \"Chirag\", \"12A\", \"Science\", 65, \"Pune\", null, 1, \"Robotics\", \"Mr Rao\", 500], [3, \"Chirag\", \"12A\", \"Science\", 65, \"Pune\", null, 2, \"Music\", \"Ms Iyer\", 300], [3, \"Chirag\", \"12A\", \"Science\", 65, \"Pune\", null, 3, \"Debate\", \"Mr Khan\", 200], [3, \"Chirag\", \"12A\", \"Science\", 65, \"Pune\", null, 4, \"Chess\", \"Ms Bose\", 150], [4, \"Diya\", \"12C\", \"Humanities\", 91, \"Nashik\", 3, 1, \"Robotics\", \"Mr Rao\", 500], [4, \"Diya\", \"12C\", \"Humanities\", 91, \"Nashik\", 3, 2, \"Music\", \"Ms Iyer\", 300], [4, \"Diya\", \"12C\", \"Humanities\", 91, \"Nashik\", 3, 3, \"Debate\", \"Mr Khan\", 200], [4, \"Diya\", \"12C\", \"Humanities\", 91, \"Nashik\", 3, 4, \"Chess\", \"Ms Bose\", 150], [5, \"Eshan\", \"12B\", \"Commerce\", 58, \"Pune\", 2, 1, \"Robotics\", \"Mr Rao\", 500], [5, \"Eshan\", \"12B\", \"Commerce\", 58, \"Pune\", 2, 2, \"Music\", \"Ms Iyer\", 300], [5, \"Eshan\", \"12B\", \"Commerce\", 58, \"Pune\", 2, 3, \"Debate\", \"Mr Khan\", 200], [5, \"Eshan\", \"12B\", \"Commerce\", 58, \"Pune\", 2, 4, \"Chess\", \"Ms Bose\", 150], [6, \"Farah\", \"12C\", \"Humanities\", 79, \"Nagpur\", null, 1, \"Robotics\", \"Mr Rao\", 500], [6, \"Farah\", \"12C\", \"Humanities\", 79, \"Nagpur\", null, 2, \"Music\", \"Ms Iyer\", 300], [6, \"Farah\", \"12C\", \"Humanities\", 79, \"Nagpur\", null, 3, \"Debate\", \"Mr Khan\", 200], [6, \"Farah\", \"12C\", \"Humanities\", 79, \"Nagpur\", null, 4, \"Chess\", \"Ms Bose\", 150], [7, \"Gaurav\", \"12A\", \"Science\", 95, \"Nashik\", 1, 1, \"Robotics\", \"Mr Rao\", 500], [7, \"Gaurav\", \"12A\", \"Science\", 95, \"Nashik\", 1, 2, \"Music\", \"Ms Iyer\", 300], [7, \"Gaurav\", \"12A\", \"Science\", 95, \"Nashik\", 1, 3, \"Debate\", \"Mr Khan\", 200], [7, \"Gaurav\", \"12A\", \"Science\", 95, \"Nashik\", 1, 4, \"Chess\", \"Ms Bose\", 150], [8, \"Hina\", \"12B\", \"Commerce\", 83, \"Pune\", 3, 1, \"Robotics\", \"Mr Rao\", 500], [8, \"Hina\", \"12B\", \"Commerce\", 83, \"Pune\", 3, 2, \"Music\", \"Ms Iyer\", 300], [8, \"Hina\", \"12B\", \"Commerce\", 83, \"Pune\", 3, 3, \"Debate\", \"Mr Khan\", 200], [8, \"Hina\", \"12B\", \"Commerce\", 83, \"Pune\", 3, 4, \"Chess\", \"Ms Bose\", 150]]}",
+  "err": ""
+ },
+ "154c7c9625b51bd5f282": {
+  "out": "{\"cols\": [\"Name\"], \"rows\": [[\"Aarav\"], [\"Chirag\"], [\"Farah\"], [\"Gaurav\"]]}",
+  "err": ""
+ },
+ "19603e90f35b4a09436e": {
+  "out": "{\"cols\": [\"PName\", \"SupName\", \"City\"], \"rows\": [[\"Desk Lamp\", \"Prakash Electricals\", \"Jaipur\"], [\"Extension Board\", \"Prakash Electricals\", \"Jaipur\"], [\"Lunch Box\", \"Neel Homeware\", \"Kochi\"], [\"Water Bottle\", \"Neel Homeware\", \"Kochi\"]]}",
+  "err": ""
+ },
+ "1c1d44b819e34ed4a281": {
+  "out": "{\"cols\": [\"Category\", \"MIN(Price)\"], \"rows\": [[\"Electrical\", 420], [\"Kitchen\", 180]]}",
+  "err": ""
+ },
+ "1cbafe258a4e6d48c3d6": {
+  "out": "{\"cols\": [\"COUNT(*)\"], \"rows\": [[4]]}",
+  "err": ""
+ },
+ "1d3083ae9d60ace20166": {
+  "out": "{\"cols\": [\"AVG(Price)\"], \"rows\": [[210.0]]}",
+  "err": ""
+ },
+ "1d96afb20f4e4175e306": {
+  "out": "{\"cols\": [\"Name\"], \"rows\": [[\"Gaurav\"], [\"Farah\"], [\"Diya\"], [\"Bhavna\"]]}",
+  "err": ""
+ },
+ "1dcc71df956673242a42": {
+  "out": "{\"cols\": [\"RollNo\", \"Name\", \"Class\", \"Stream\", \"Marks\", \"City\", \"ClubID\"], \"rows\": [[3, \"Chirag\", \"12A\", \"Science\", 65, \"Pune\", null], [1, \"Aarav\", \"12A\", \"Science\", 88, \"Pune\", 2], [7, \"Gaurav\", \"12A\", \"Science\", 95, \"Nashik\", 1]]}",
+  "err": ""
+ },
+ "21823078a8e8b11f0c45": {
+  "out": "{\"cols\": [\"Name\"], \"rows\": [[\"Bhavna\"], [\"Diya\"], [\"Hina\"]]}",
+  "err": ""
+ },
+ "237ff5b826f4b2296364": {
+  "out": "{\"cols\": [\"Name\"], \"rows\": []}",
+  "err": ""
+ },
+ "249324ddb410be31fc06": {
+  "out": "{\"cols\": [\"Name\", \"ClubID\"], \"rows\": [[\"Aarav\", 2], [\"Bhavna\", 1], [\"Chirag\", null], [\"Diya\", 3], [\"Eshan\", 2]]}",
+  "err": ""
+ },
+ "266aa7bbd54e262327a2": {
+  "out": "{\"cols\": [\"Name\"], \"rows\": [[\"Aarav\"], [\"Chirag\"], [\"Eshan\"], [\"Farah\"], [\"Gaurav\"]]}",
+  "err": ""
+ },
+ "28ec17d4f2ffc8348943": {
+  "out": "{\"cols\": [\"RollNo\"], \"rows\": [[1], [4], [5], [7]]}",
+  "err": ""
+ },
+ "2b2248e2ad3175d3b7f2": {
+  "out": "{\"cols\": [\"SupCode\", \"COUNT(*)\", \"SUM(Stock)\"], \"rows\": [[\"S1\", 2, 120], [\"S2\", 2, 380]]}",
+  "err": ""
+ },
+ "2b7b256ffdc97b62e38c": {
+  "out": "{\"cols\": [\"Name\", \"Marks\"], \"rows\": [[\"Aarav\", 88], [\"Bhavna\", 74], [\"Farah\", 79], [\"Hina\", 83]]}",
+  "err": ""
+ },
+ "2e1b74f9cd8803bc3457": {
+  "out": "{\"cols\": [\"RollNo\", \"Name\", \"Class\", \"Stream\", \"Marks\", \"City\", \"ClubID\"], \"rows\": [[1, \"Aarav\", \"12A\", \"Science\", 88, \"Pune\", 2], [2, \"Bhavna\", \"12B\", \"Commerce\", 74, \"Nagpur\", 1], [3, \"Chirag\", \"12A\", \"Science\", 65, \"Pune\", null], [4, \"Diya\", \"12C\", \"Humanities\", 91, \"Nashik\", 3], [5, \"Eshan\", \"12B\", \"Commerce\", 58, \"Pune\", 2], [6, \"Farah\", \"12C\", \"Humanities\", 79, \"Nagpur\", null], [7, \"Gaurav\", \"12A\", \"Science\", 95, \"Nashik\", 1], [8, \"Hina\", \"12B\", \"Commerce\", 83, \"Pune\", 3]]}",
+  "err": ""
+ },
+ "330c419000eaad525ad0": {
+  "out": "{\"cols\": [\"PName\", \"Price\"], \"rows\": [[\"Sketch Pens\", 110], [\"Notebook\", 60], [\"Gel Pen\", 25]]}",
+  "err": ""
+ },
+ "36aabe1ac61fa8eb7af4": {
+  "out": "{\"cols\": [\"Name\"], \"rows\": [[\"Aarav\"], [\"Chirag\"], [\"Eshan\"], [\"Hina\"]]}",
+  "err": ""
+ },
+ "410874af9b506054c7fc": {
+  "out": "{\"cols\": [\"PCode\", \"PName\", \"Category\", \"Price\", \"Stock\", \"SupCode\"], \"rows\": [[\"P01\", \"Notebook\", \"Stationery\", 60, 120, \"S1\"], [\"P02\", \"Gel Pen\", \"Stationery\", 25, 300, \"S2\"], [\"P03\", \"Water Bottle\", \"Kitchen\", 180, 45, \"S3\"], [\"P04\", \"Lunch Box\", \"Kitchen\", 240, 30, \"S3\"], [\"P05\", \"Geometry Box\", \"Stationery\", 95, null, \"S1\"], [\"P06\", \"Desk Lamp\", \"Electrical\", 650, 12, \"S4\"], [\"P07\", \"Extension Board\", \"Electrical\", 420, 20, \"S4\"], [\"P08\", \"Sketch Pens\", \"Stationery\", 110, 80, \"S2\"]]}",
+  "err": ""
+ },
+ "4292e392b497552d2a4d": {
+  "out": "{\"cols\": [\"ClubID\", \"ClubName\", \"Teacher\", \"Fee\"], \"rows\": [[1, \"Robotics\", \"Mr Rao\", 500], [2, \"Music\", \"Ms Iyer\", 300], [3, \"Debate\", \"Mr Khan\", 200], [4, \"Chess\", \"Ms Bose\", 150]]}",
+  "err": ""
+ },
+ "443c46f497a82bbcb220": {
+  "out": "{\"cols\": [\"PName\", \"Price\"], \"rows\": [[\"Sketch Pens\", 110], [\"Gel Pen\", 25]]}",
+  "err": ""
+ },
+ "4583f6726472832dd86b": {
+  "out": "{\"cols\": [\"Stream\"], \"rows\": [[\"Commerce\"], [\"Humanities\"], [\"Science\"]]}",
+  "err": ""
+ },
+ "462caee688d2853b0c9c": {
+  "out": "{\"cols\": [\"ClubID\", \"ClubName\"], \"rows\": [[1, \"Robotics\"], [2, \"Music\"], [3, \"Debate\"], [4, \"Chess\"]]}",
+  "err": ""
+ },
+ "486127a129fd54669be3": {
+  "out": "{\"cols\": [\"Name\", \"City\"], \"rows\": [[\"Diya\", \"Nashik\"], [\"Eshan\", \"Pune\"], [\"Gaurav\", \"Nashik\"]]}",
+  "err": ""
+ },
+ "487c38c2a683092f4d74": {
+  "out": "{\"cols\": [\"Name\"], \"rows\": [[\"Aarav\"]]}",
+  "err": ""
+ },
+ "49015239a0bac01944cf": {
+  "out": "{\"cols\": [\"ClubName\", \"Fee\"], \"rows\": [[\"Robotics\", 600], [\"Music\", 400], [\"Debate\", 200], [\"Chess\", 150]]}",
+  "err": ""
+ },
+ "4c123e461d0145d3bbb2": {
+  "out": "{\"cols\": [\"PName\", \"Price\"], \"rows\": [[\"Gel Pen\", 25], [\"Sketch Pens\", 110]]}",
+  "err": ""
+ },
+ "4c29c234ba70b7b304a1": {
+  "out": "{\"cols\": [\"Name\", \"Stream\", \"Marks\"], \"rows\": [[\"Diya\", \"Humanities\", 91], [\"Hina\", \"Commerce\", 83]]}",
+  "err": ""
+ },
+ "4fe83b0b053158e9f62f": {
+  "out": "{\"cols\": [\"SupCode\", \"SUM(Stock)\"], \"rows\": [[\"S1\", 120], [\"S2\", 380], [\"S3\", 75], [\"S4\", 32]]}",
+  "err": ""
+ },
+ "557125df4cbe965d4258": {
+  "out": "{\"cols\": [\"Name\"], \"rows\": [[\"Bhavna\"], [\"Diya\"], [\"Farah\"], [\"Gaurav\"]]}",
+  "err": ""
+ },
+ "557ab7508805e69fb0f8": {
+  "out": "{\"cols\": [\"RollNo\"], \"rows\": [[1], [2], [3], [4], [6], [7], [8]]}",
+  "err": ""
+ },
+ "559b4dd02a3f603e3553": {
+  "out": "{\"cols\": [\"Name\"], \"rows\": [[\"Aarav\"], [\"Farah\"]]}",
+  "err": ""
+ },
+ "598e288796a29040431f": {
+  "out": "{\"cols\": [\"RollNo\", \"Name\", \"Class\", \"Stream\", \"Marks\", \"City\", \"ClubID\", \"ClubID\", \"ClubName\", \"Teacher\", \"Fee\"], \"rows\": [[1, \"Aarav\", \"12A\", \"Science\", 88, \"Pune\", 2, 1, \"Robotics\", \"Mr Rao\", 500], [1, \"Aarav\", \"12A\", \"Science\", 88, \"Pune\", 2, 2, \"Music\", \"Ms Iyer\", 300], [1, \"Aarav\", \"12A\", \"Science\", 88, \"Pune\", 2, 3, \"Debate\", \"Mr Khan\", 200], [1, \"Aarav\", \"12A\", \"Science\", 88, \"Pune\", 2, 4, \"Chess\", \"Ms Bose\", 150], [2, \"Bhavna\", \"12B\", \"Commerce\", 74, \"Nagpur\", 1, 1, \"Robotics\", \"Mr Rao\", 500], [2, \"Bhavna\", \"12B\", \"Commerce\", 74, \"Nagpur\", 1, 2, \"Music\", \"Ms Iyer\", 300], [2, \"Bhavna\", \"12B\", \"Commerce\", 74, \"Nagpur\", 1, 3, \"Debate\", \"Mr Khan\", 200], [2, \"Bhavna\", \"12B\", \"Commerce\", 74, \"Nagpur\", 1, 4, \"Chess\", \"Ms Bose\", 150], [3, \"Chirag\", \"12A\", \"Science\", 65, \"Pune\", null, 1, \"Robotics\", \"Mr Rao\", 500], [3, \"Chirag\", \"12A\", \"Science\", 65, \"Pune\", null, 2, \"Music\", \"Ms Iyer\", 300], [3, \"Chirag\", \"12A\", \"Science\", 65, \"Pune\", null, 3, \"Debate\", \"Mr Khan\", 200], [3, \"Chirag\", \"12A\", \"Science\", 65, \"Pune\", null, 4, \"Chess\", \"Ms Bose\", 150], [4, \"Diya\", \"12C\", \"Humanities\", 91, \"Nashik\", 3, 1, \"Robotics\", \"Mr Rao\", 500], [4, \"Diya\", \"12C\", \"Humanities\", 91, \"Nashik\", 3, 2, \"Music\", \"Ms Iyer\", 300], [4, \"Diya\", \"12C\", \"Humanities\", 91, \"Nashik\", 3, 3, \"Debate\", \"Mr Khan\", 200], [4, \"Diya\", \"12C\", \"Humanities\", 91, \"Nashik\", 3, 4, \"Chess\", \"Ms Bose\", 150], [5, \"Eshan\", \"12B\", \"Commerce\", 58, \"Pune\", 2, 1, \"Robotics\", \"Mr Rao\", 500], [5, \"Eshan\", \"12B\", \"Commerce\", 58, \"Pune\", 2, 2, \"Music\", \"Ms Iyer\", 300], [5, \"Eshan\", \"12B\", \"Commerce\", 58, \"Pune\", 2, 3, \"Debate\", \"Mr Khan\", 200], [5, \"Eshan\", \"12B\", \"Commerce\", 58, \"Pune\", 2, 4, \"Chess\", \"Ms Bose\", 150], [6, \"Farah\", \"12C\", \"Humanities\", 79, \"Nagpur\", null, 1, \"Robotics\", \"Mr Rao\", 500], [6, \"Farah\", \"12C\", \"Humanities\", 79, \"Nagpur\", null, 2, \"Music\", \"Ms Iyer\", 300], [6, \"Farah\", \"12C\", \"Humanities\", 79, \"Nagpur\", null, 3, \"Debate\", \"Mr Khan\", 200], [6, \"Farah\", \"12C\", \"Humanities\", 79, \"Nagpur\", null, 4, \"Chess\", \"Ms Bose\", 150], [7, \"Gaurav\", \"12A\", \"Science\", 95, \"Nashik\", 1, 1, \"Robotics\", \"Mr Rao\", 500], [7, \"Gaurav\", \"12A\", \"Science\", 95, \"Nashik\", 1, 2, \"Music\", \"Ms Iyer\", 300], [7, \"Gaurav\", \"12A\", \"Science\", 95, \"Nashik\", 1, 3, \"Debate\", \"Mr Khan\", 200], [7, \"Gaurav\", \"12A\", \"Science\", 95, \"Nashik\", 1, 4, \"Chess\", \"Ms Bose\", 150], [8, \"Hina\", \"12B\", \"Commerce\", 83, \"Pune\", 3, 1, \"Robotics\", \"Mr Rao\", 500], [8, \"Hina\", \"12B\", \"Commerce\", 83, \"Pune\", 3, 2, \"Music\", \"Ms Iyer\", 300], [8, \"Hina\", \"12B\", \"Commerce\", 83, \"Pune\", 3, 3, \"Debate\", \"Mr Khan\", 200], [8, \"Hina\", \"12B\", \"Commerce\", 83, \"Pune\", 3, 4, \"Chess\", \"Ms Bose\", 150]]}",
+  "err": ""
+ },
+ "5b4747fac747c73a5fc6": {
+  "out": "{\"cols\": [\"RollNo\", \"Name\", \"Marks\", \"City\"], \"rows\": [[1, \"Aarav\", 88, \"Pune\"], [2, \"Bhavna\", 74, \"Nagpur\"], [3, \"Chirag\", 65, \"Pune\"], [4, \"Diya\", 91, \"Nashik\"], [5, \"Eshan\", 58, \"Pune\"], [6, \"Farah\", 79, \"Nagpur\"], [7, \"Gaurav\", 95, \"Nashik\"], [8, \"Hina\", 83, \"Pune\"]]}",
+  "err": ""
+ },
+ "5c117b0f94ab0347dc91": {
+  "out": "{\"cols\": [\"Stream\", \"COUNT(*)\", \"SUM(Marks)\"], \"rows\": [[\"Humanities\", 2, 170], [\"Science\", 3, 248]]}",
+  "err": ""
+ },
+ "5c87d910221d3930e14f": {
+  "out": "{\"cols\": [\"AVG(Marks)\"], \"rows\": [[85.0]]}",
+  "err": ""
+ },
+ "60450d59314b2b37b432": {
+  "out": "{\"cols\": [\"ClubID\", \"ClubName\", \"Teacher\", \"Fee\"], \"rows\": [[1, \"Robotics\", \"Mr Rao\", 500], [2, \"Music\", \"Ms Iyer\", 300], [3, \"Debate\", \"Mr Khan\", 250], [4, \"Chess\", \"Ms Bose\", 200]]}",
+  "err": ""
+ },
+ "60a4948b88b7afca1b1d": {
+  "out": "{\"cols\": [\"RollNo\"], \"rows\": [[2], [6]]}",
+  "err": ""
+ },
+ "649b05f2b45cf41a6df7": {
+  "out": "{\"cols\": [\"COUNT(*)\"], \"rows\": [[0]]}",
+  "err": ""
+ },
+ "680ca08e53a8ae53e85a": {
+  "out": "{\"cols\": [\"ClubName\", \"Fee\"], \"rows\": [[\"Robotics\", 500], [\"Music\", 300], [\"Debate\", 200], [\"Chess\", 150]]}",
+  "err": ""
+ },
+ "6a7805ddbaa744b0a5eb": {
+  "out": "{\"cols\": [\"MIN(Price)\", \"MAX(Price)\", \"SUM(Price)\"], \"rows\": [[25, 650, 1360]]}",
+  "err": ""
+ },
+ "6c247ec623ef366e78ed": {
+  "out": "{\"cols\": [\"Stream\", \"MAX(Marks)\"], \"rows\": [[\"Commerce\", 83], [\"Humanities\", 91], [\"Science\", 95]]}",
+  "err": ""
+ },
+ "6c8942c492940d24ec7b": {
+  "out": "{\"cols\": [\"City\"], \"rows\": [[\"Nagpur\"], [\"Nashik\"], [\"Pune\"]]}",
+  "err": ""
+ },
+ "6dfb90c0878ce6379e63": {
+  "out": "{\"cols\": [\"PName\", \"SupName\"], \"rows\": [[\"Lunch Box\", \"Neel Homeware\"], [\"Water Bottle\", \"Neel Homeware\"]]}",
+  "err": ""
+ },
+ "704ed381a8fa75e6dae8": {
+  "out": "{\"cols\": [\"ClubName\", \"COUNT(*)\"], \"rows\": [[\"Debate\", 2], [\"Music\", 2], [\"Robotics\", 2]]}",
+  "err": ""
+ },
+ "706b69d5c7c370954c8e": {
+  "out": "{\"cols\": [\"RollNo\", \"ClubID\"], \"rows\": [[1, 1], [1, 2], [1, 3], [1, 4], [2, 1], [2, 2], [2, 3], [2, 4], [3, 1], [3, 2], [3, 3], [3, 4], [4, 1], [4, 2], [4, 3], [4, 4], [5, 1], [5, 2], [5, 3], [5, 4], [6, 1], [6, 2], [6, 3], [6, 4], [7, 1], [7, 2], [7, 3], [7, 4], [8, 1], [8, 2], [8, 3], [8, 4]]}",
+  "err": ""
+ },
+ "70772d13ac1cf2f10ad6": {
+  "out": "{\"cols\": [\"Name\", \"ClubName\", \"Fee\"], \"rows\": [[\"Gaurav\", \"Robotics\", 500], [\"Aarav\", \"Music\", 300], [\"Diya\", \"Debate\", 200], [\"Hina\", \"Debate\", 200]]}",
+  "err": ""
+ },
+ "730eec0bd966f973269c": {
+  "out": "{\"cols\": [\"COUNT(*)\", \"MIN(Marks)\", \"MAX(Marks)\", \"SUM(Marks)\", \"AVG(Marks)\"], \"rows\": [[8, 58, 95, 633, 79.125]]}",
+  "err": ""
+ },
+ "75c5b58feb7e277c51f0": {
+  "out": "{\"cols\": [\"Name\", \"Marks\"], \"rows\": [[\"Hina\", 83], [\"Bhavna\", 74], [\"Eshan\", 58]]}",
+  "err": ""
+ },
+ "76438bef36a19c3cc14f": {
+  "out": "{\"cols\": [\"ClubID\", \"COUNT(*)\"], \"rows\": [[1, 2], [2, 2], [3, 2], [4, 2]]}",
+  "err": ""
+ },
+ "7a54b95237510cdd4bbb": {
+  "out": "{\"cols\": [\"COUNT(*)\"], \"rows\": [[1]]}",
+  "err": ""
+ },
+ "7ac8967f6de6dfd54b3d": {
+  "out": "{\"cols\": [\"Name\"], \"rows\": [[\"Diya\"], [\"Hina\"]]}",
+  "err": ""
+ },
+ "7af393b52405f4adabaf": {
+  "out": "{\"cols\": [\"EID\", \"EName\", \"Venue\", \"Participants\", \"EntryFee\"], \"rows\": [[\"E1\", \"Quiz\", \"Hall A\", 40, 50], [\"E2\", \"Rangoli\", \"Courtyard\", 25, null], [\"E3\", \"Coding Sprint\", \"Lab 2\", 30, 100], [\"E4\", \"Debate\", \"Hall A\", 18, 50], [\"E5\", \"Photography\", \"Courtyard\", 22, 80], [\"E6\", \"Treasure Hunt\", \"Ground\", 60, 30]]}",
+  "err": ""
+ },
+ "7c6b6160c0595e05b9c9": {
+  "out": "{\"cols\": [\"Name\"], \"rows\": []}",
+  "err": ""
+ },
+ "81dcce021afb46c2ddaf": {
+  "out": "{\"cols\": [\"SupCode\", \"SupName\", \"City\"], \"rows\": [[\"S1\", \"Kaveri Traders\", \"Chennai\"], [\"S2\", \"Swastik Supplies\", \"Indore\"], [\"S3\", \"Neel Homeware\", \"Kochi\"], [\"S4\", \"Prakash Electricals\", \"Jaipur\"], [\"S5\", \"Ganga Distributors\", \"Patna\"]]}",
+  "err": ""
+ },
+ "857c0406580bc39ea2b5": {
+  "out": "{\"cols\": [\"Name\", \"Teacher\"], \"rows\": [[\"Aarav\", \"Ms Iyer\"], [\"Bhavna\", \"Mr Rao\"], [\"Eshan\", \"Ms Iyer\"], [\"Gaurav\", \"Mr Rao\"]]}",
+  "err": ""
+ },
+ "8fc243eccf53bdf44df6": {
+  "out": "{\"cols\": [\"Name\", \"Stream\"], \"rows\": [[\"Chirag\", \"Science\"], [\"Farah\", \"Humanities\"]]}",
+  "err": ""
+ },
+ "8ff833c1eb46fca72163": {
+  "out": "{\"cols\": [\"Name\", \"Marks\"], \"rows\": [[\"Hina\", 83], [\"Bhavna\", 74], [\"Eshan\", 58]]}",
+  "err": ""
+ },
+ "937b8e7df5357db2eab2": {
+  "out": "{\"cols\": [\"Name\"], \"rows\": [[\"Chirag\"], [\"Farah\"]]}",
+  "err": ""
+ },
+ "94074335d2bed8767327": {
+  "out": "{\"cols\": [\"PName\"], \"rows\": [[\"Geometry Box\"], [\"Lunch Box\"]]}",
+  "err": ""
+ },
+ "947fb12378354a24b396": {
+  "out": "{\"cols\": [\"Class\", \"COUNT(*)\", \"MAX(Marks)\"], \"rows\": [[\"12A\", 3, 95], [\"12B\", 3, 83], [\"12C\", 2, 91]]}",
+  "err": ""
+ },
+ "955e868bb77c8537a4bf": {
+  "out": "{\"cols\": [\"ClubID\", \"ClubName\", \"Teacher\", \"Fee\"], \"rows\": [[1, \"Robotics\", \"Mr Rao\", 500], [2, \"Music\", \"Ms Iyer\", 300], [3, \"Debate\", \"Mr Khan\", 200], [4, \"Chess\", \"Ms Bose\", 150]]}",
+  "err": ""
+ },
+ "965e11e77d540590a427": {
+  "out": "{\"cols\": [\"Name\"], \"rows\": [[\"Diya\"], [\"Gaurav\"]]}",
+  "err": ""
+ },
+ "995e5522352fba1d927a": {
+  "out": "{\"cols\": [\"Name\", \"Class\", \"Marks\"], \"rows\": [[\"Gaurav\", \"12A\", 95], [\"Aarav\", \"12A\", 88], [\"Chirag\", \"12A\", 65], [\"Hina\", \"12B\", 83], [\"Bhavna\", \"12B\", 74], [\"Eshan\", \"12B\", 58], [\"Diya\", \"12C\", 91], [\"Farah\", \"12C\", 79]]}",
+  "err": ""
+ },
+ "9ea35c4b3095b9bc4bec": {
+  "out": "{\"cols\": [\"PName\"], \"rows\": [[\"Desk Lamp\"], [\"Extension Board\"], [\"Geometry Box\"]]}",
+  "err": ""
+ },
+ "9f269f0f8702be04f79c": {
+  "out": "{\"cols\": [\"PCode\", \"PName\"], \"rows\": [[\"P03\", \"Water Bottle\"], [\"P04\", \"Lunch Box\"], [\"P06\", \"Desk Lamp\"], [\"P07\", \"Extension Board\"]]}",
+  "err": ""
+ },
+ "a1a8fec230b38aab74c5": {
+  "out": "{\"cols\": [\"COUNT(*)\"], \"rows\": [[0]]}",
+  "err": ""
+ },
+ "a3376b83a0977ce58a2a": {
+  "out": "{\"cols\": [\"PName\", \"Price\"], \"rows\": [[\"Gel Pen\", 25], [\"Notebook\", 60], [\"Geometry Box\", 95]]}",
+  "err": ""
+ },
+ "a3a7bc74b6c509b18f9f": {
+  "out": "{\"cols\": [\"RollNo\", \"Name\", \"Class\", \"Stream\", \"Marks\", \"City\", \"ClubID\"], \"rows\": [[1, \"Aarav\", \"12A\", \"Science\", 88, \"Pune\", 2], [2, \"Bhavna\", \"12B\", \"Commerce\", 74, \"Nagpur\", 1], [3, \"Chirag\", \"12A\", \"Science\", 65, \"Pune\", null], [4, \"Diya\", \"12C\", \"Humanities\", 91, \"Nashik\", 3], [5, \"Eshan\", \"12B\", \"Commerce\", 58, \"Pune\", 2], [6, \"Farah\", \"12C\", \"Humanities\", 79, \"Nagpur\", null], [7, \"Gaurav\", \"12A\", \"Science\", 95, \"Nashik\", 1], [8, \"Hina\", \"12B\", \"Commerce\", 83, \"Pune\", 3]]}",
+  "err": ""
+ },
+ "a6caa1c89694dfcc1765": {
+  "out": "{\"cols\": [\"Name\", \"Class\"], \"rows\": []}",
+  "err": ""
+ },
+ "a87ce80dc8c52b0c607f": {
+  "out": "{\"cols\": [\"PName\", \"SupName\", \"City\"], \"rows\": [[\"Gel Pen\", \"Swastik Supplies\", \"Indore\"], [\"Geometry Box\", \"Kaveri Traders\", \"Chennai\"], [\"Notebook\", \"Kaveri Traders\", \"Chennai\"]]}",
+  "err": ""
+ },
+ "aa8bac4e70813e3430ef": {
+  "out": "{\"cols\": [\"Name\", \"ClubName\"], \"rows\": [[\"Aarav\", \"Music\"], [\"Gaurav\", \"Robotics\"]]}",
+  "err": ""
+ },
+ "ab56861aaf5842c59e06": {
+  "out": "{\"cols\": [\"Name\"], \"rows\": [[\"Aarav\"], [\"Hina\"]]}",
+  "err": ""
+ },
+ "ad77a9dee24c0b822571": {
+  "out": "{\"cols\": [\"PCode\", \"PName\"], \"rows\": [[\"P03\", \"Water Bottle\"], [\"P04\", \"Lunch Box\"], [\"P07\", \"Extension Board\"], [\"P08\", \"Sketch Pens\"]]}",
+  "err": ""
+ },
+ "ae90deb2dd2bcde771b4": {
+  "out": "{\"cols\": [\"RollNo\", \"Name\"], \"rows\": [[2, \"Bhavna\"], [3, \"Chirag\"], [6, \"Farah\"]]}",
+  "err": ""
+ },
+ "aeb117d71b9aae117819": {
+  "out": "{\"cols\": [\"COUNT(*)\"], \"rows\": [[6]]}",
+  "err": ""
+ },
+ "b0ea84225c9e47a8de2d": {
+  "out": "{\"cols\": [\"COUNT(DISTINCT City)\"], \"rows\": [[3]]}",
+  "err": ""
+ },
+ "b19c5d71365f4755a752": {
+  "out": "{\"cols\": [\"Name\", \"ClubName\"], \"rows\": [[\"Aarav\", \"Music\"], [\"Eshan\", \"Music\"], [\"Hina\", \"Debate\"]]}",
+  "err": ""
+ },
+ "b20164bba938ef9659c5": {
+  "out": "{\"cols\": [\"COUNT(*)\"], \"rows\": [[40]]}",
+  "err": ""
+ },
+ "b622721b7e76cd740308": {
+  "out": "{\"cols\": [\"PName\", \"SupName\"], \"rows\": [[\"Desk Lamp\", \"Prakash Electricals\"], [\"Extension Board\", \"Prakash Electricals\"], [\"Gel Pen\", \"Swastik Supplies\"], [\"Geometry Box\", \"Kaveri Traders\"], [\"Lunch Box\", \"Neel Homeware\"], [\"Notebook\", \"Kaveri Traders\"], [\"Sketch Pens\", \"Swastik Supplies\"], [\"Water Bottle\", \"Neel Homeware\"]]}",
+  "err": ""
+ },
+ "b67d2d4c3d00ed958f98": {
+  "out": "{\"cols\": [\"Venue\", \"SUM(Participants)\"], \"rows\": [[\"Courtyard\", 47], [\"Ground\", 60], [\"Hall A\", 58], [\"Lab 2\", 30]]}",
+  "err": ""
+ },
+ "b8a618892baffd377689": {
+  "out": "{\"cols\": [\"Stream\", \"COUNT(ClubID)\"], \"rows\": [[\"Commerce\", 3], [\"Humanities\", 1], [\"Science\", 2]]}",
+  "err": ""
+ },
+ "bb65e93f832472feac1a": {
+  "out": "{\"cols\": [\"COUNT(*)\"], \"rows\": [[5]]}",
+  "err": ""
+ },
+ "bc52ee5d4f76ad529e41": {
+  "out": "{\"cols\": [\"AVG(Marks)\"], \"rows\": [[79.125]]}",
+  "err": ""
+ },
+ "bc977ba72147420f1db7": {
+  "out": "{\"cols\": [\"Name\"], \"rows\": [[\"Diya\"], [\"Hina\"]]}",
+  "err": ""
+ },
+ "bd1dadeb422728548c1b": {
+  "out": "{\"cols\": [\"RoomNo\", \"Block\", \"Beds\", \"Floor\"], \"rows\": [[101, \"A\", 2, 1]]}",
+  "err": ""
+ },
+ "be10f63840341d80bd28": {
+  "out": "{\"cols\": [\"PName\", \"StockValue\"], \"rows\": [[\"Extension Board\", 8400], [\"Desk Lamp\", 7800]]}",
+  "err": ""
+ },
+ "be3f79e9176a15577f05": {
+  "out": "{\"cols\": [\"City\", \"COUNT(*)\"], \"rows\": [[\"Chennai\", 2], [\"Indore\", 2], [\"Jaipur\", 2], [\"Kochi\", 2]]}",
+  "err": ""
+ },
+ "c0d9faa9d516453362ad": {
+  "out": "{\"cols\": [\"SUM(Stock)\", \"COUNT(Stock)\"], \"rows\": [[500, 3]]}",
+  "err": ""
+ },
+ "cb9f378bb7b93646fe76": {
+  "out": "{\"cols\": [\"COUNT(*)\"], \"rows\": [[6]]}",
+  "err": ""
+ },
+ "cbbf70d3f4644db0a5ff": {
+  "out": "{\"cols\": [\"Name\"], \"rows\": [[\"Aarav\"], [\"Hina\"]]}",
+  "err": ""
+ },
+ "cbc2c6e03af3bb4bffb0": {
+  "out": "{\"cols\": [\"Name\", \"Revised\"], \"rows\": [[\"Diya\", 96], [\"Farah\", 84]]}",
+  "err": ""
+ },
+ "d06ed9725b59a1f73459": {
+  "out": "{\"cols\": [\"City\", \"COUNT(*)\"], \"rows\": [[\"Nagpur\", 2], [\"Nashik\", 2], [\"Pune\", 4]]}",
+  "err": ""
+ },
+ "db30fa1571a0e69a33e6": {
+  "out": "{\"cols\": [\"RollNo\", \"Name\", \"Stream\", \"Marks\", \"City\"], \"rows\": [[1, \"Aarav\", \"Science\", 88, \"Pune\"], [2, \"Bhavna\", \"Commerce\", 74, \"Nagpur\"], [3, \"Chirag\", \"Science\", 65, \"Pune\"], [4, \"Diya\", \"Humanities\", 91, \"Nashik\"], [5, \"Eshan\", \"Commerce\", 58, \"Pune\"], [6, \"Farah\", \"Humanities\", 79, \"Nagpur\"], [7, \"Gaurav\", \"Science\", 95, \"Nashik\"], [8, \"Hina\", \"Commerce\", 83, \"Pune\"]]}",
+  "err": ""
+ },
+ "db9fd1c41463b70b2c87": {
+  "out": "{\"cols\": [\"SUM(Price)\"], \"rows\": [[460]]}",
+  "err": ""
+ },
+ "df9d5f92e423b9831bbb": {
+  "out": "{\"cols\": [\"RollNo\"], \"rows\": [[2], [3], [6], [8]]}",
+  "err": ""
+ },
+ "e10ea6804e69121506ac": {
+  "out": "{\"cols\": [\"COUNT(*)\"], \"rows\": [[3]]}",
+  "err": ""
+ },
+ "e1c28e60a574519076ff": {
+  "out": "{\"cols\": [\"EName\", \"EntryFee\"], \"rows\": [[\"Photography\", 80], [\"Debate\", 50], [\"Quiz\", 50]]}",
+  "err": ""
+ },
+ "e2caa18b8c8ad3991ef1": {
+  "out": "{\"cols\": [\"Name\"], \"rows\": [[\"Chirag\"], [\"Diya\"], [\"Hina\"]]}",
+  "err": ""
+ },
+ "e3f574d911d001e1cbaa": {
+  "out": "{\"cols\": [\"COUNT(*)\", \"COUNT(ClubID)\", \"COUNT(DISTINCT ClubID)\"], \"rows\": [[8, 6, 3]]}",
+  "err": ""
+ },
+ "e448dadfb19fd371acdf": {
+  "out": "{\"cols\": [\"PName\", \"Stock\"], \"rows\": [[\"Gel Pen\", 300], [\"Notebook\", 120], [\"Sketch Pens\", 80], [\"Water Bottle\", 45], [\"Lunch Box\", 30], [\"Extension Board\", 20], [\"Desk Lamp\", 12], [\"Geometry Box\", null]]}",
+  "err": ""
+ },
+ "e4807fb381fbfc0a20e6": {
+  "out": "{\"cols\": [\"Name\", \"Marks\"], \"rows\": [[\"Aarav\", 88], [\"Chirag\", 65], [\"Diya\", 91], [\"Gaurav\", 95]]}",
+  "err": ""
+ },
+ "e5132cd990474938c526": {
+  "out": "{\"cols\": [\"City\", \"AVG(Marks)\"], \"rows\": [[\"Nagpur\", 76.5], [\"Nashik\", 93.0], [\"Pune\", 73.5]]}",
+  "err": ""
+ },
+ "e58cc0589710824b5586": {
+  "out": "{\"cols\": [\"PCode\", \"PName\", \"Category\", \"Price\", \"Stock\", \"SupCode\", \"SupCode\", \"SupName\", \"City\"], \"rows\": [[\"P06\", \"Desk Lamp\", \"Electrical\", 650, 12, \"S4\", \"S4\", \"Prakash Electricals\", \"Jaipur\"], [\"P07\", \"Extension Board\", \"Electrical\", 420, 20, \"S4\", \"S4\", \"Prakash Electricals\", \"Jaipur\"]]}",
+  "err": ""
+ },
+ "eab31ed5ec140a523cb1": {
+  "out": "{\"cols\": [\"PCode\", \"PName\", \"Category\", \"Price\", \"Stock\", \"SupCode\", \"SupName\", \"City\"], \"rows\": [[\"P06\", \"Desk Lamp\", \"Electrical\", 650, 12, \"S4\", \"Prakash Electricals\", \"Jaipur\"], [\"P07\", \"Extension Board\", \"Electrical\", 420, 20, \"S4\", \"Prakash Electricals\", \"Jaipur\"]]}",
+  "err": ""
+ },
+ "eacbce693f47e501c68d": {
+  "out": "{\"cols\": [\"ClubID\", \"COUNT(*)\"], \"rows\": [[1, 2], [2, 2], [3, 2]]}",
+  "err": ""
+ },
+ "eddd80e5c04dcdab04f4": {
+  "out": "",
+  "err": "sqlite3.OperationalError: misuse of aggregate: AVG()"
+ },
+ "ee156eace07db2c37fd6": {
+  "out": "{\"cols\": [\"COUNT(*)\"], \"rows\": [[7]]}",
+  "err": ""
+ },
+ "ef1b36ff48b70f2a440b": {
+  "out": "{\"cols\": [\"PCode\", \"Stock\"], \"rows\": [[\"P01\", 120], [\"P02\", 300], [\"P03\", 45], [\"P04\", 30], [\"P05\", 50], [\"P08\", 80]]}",
+  "err": ""
+ },
+ "f12fb8019c345239a2a8": {
+  "out": "{\"cols\": [\"Category\", \"COUNT(*)\", \"MAX(Price)\"], \"rows\": [[\"Electrical\", 2, 650], [\"Kitchen\", 2, 240], [\"Stationery\", 4, 110]]}",
+  "err": ""
+ },
+ "f1abc58242af97069d2e": {
+  "out": "{\"cols\": [\"City\", \"COUNT(*)\", \"MAX(Marks)\"], \"rows\": [[\"Nashik\", 2, 95], [\"Pune\", 2, 88]]}",
+  "err": ""
+ },
+ "f4a515d6f08a8b022eb7": {
+  "out": "{\"cols\": [\"Stream\", \"COUNT(*)\", \"AVG(Marks)\"], \"rows\": [[\"Commerce\", 3, 71.66666666666667], [\"Humanities\", 2, 85.0], [\"Science\", 3, 82.66666666666667]]}",
+  "err": ""
+ },
+ "f7b6b1f3a75e44a0025c": {
+  "out": "{\"cols\": [\"Venue\", \"Collection\"], \"rows\": [[\"Courtyard\", 1760], [\"Ground\", 1800], [\"Hall A\", 2900], [\"Lab 2\", 3000]]}",
+  "err": ""
+ },
+ "fae9d0c6444dbcc4ac04": {
+  "out": "{\"cols\": [\"PName\", \"Stock\"], \"rows\": [[\"Geometry Box\", null], [\"Desk Lamp\", 12], [\"Extension Board\", 20], [\"Lunch Box\", 30], [\"Water Bottle\", 45], [\"Sketch Pens\", 80], [\"Notebook\", 120], [\"Gel Pen\", 300]]}",
+  "err": ""
+ },
+ "fd31f80a49cc74a32344": {
+  "out": "{\"cols\": [\"EName\"], \"rows\": [[\"Rangoli\"]]}",
+  "err": ""
+ },
+ "fd682260cfe9a8944472": {
+  "out": "{\"cols\": [\"Name\", \"Marks\"], \"rows\": [[\"Gaurav\", 95], [\"Diya\", 91], [\"Aarav\", 88], [\"Hina\", 83], [\"Farah\", 79], [\"Bhavna\", 74], [\"Chirag\", 65], [\"Eshan\", 58]]}",
+  "err": ""
+ }
+}
