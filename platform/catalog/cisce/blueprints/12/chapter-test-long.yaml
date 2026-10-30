@@ -1,0 +1,43 @@
+id: isc-12-default-chapter-test-long
+board: cisce
+exam: isc
+class: 12
+subject_id: null
+paper_type: chapter-test-long
+academic_year: "2026-27"
+duration_min: 100
+total_marks: 40
+mark_shares: {}
+scope: chapter
+sections:
+  - id: A
+    title: Section A - Objective (12 marks)
+    instructions: Answer all questions. Multiple-choice and assertion-reason items carry 1 mark each.
+    items:
+      - {type: mcq, count: 10, marks_each: 1}
+      - {type: assertion-reason, count: 2, marks_each: 1}
+  - id: B
+    title: Section B - Short answer (6 marks)
+    instructions: Answer all three questions. Internal choice in the last question.
+    items:
+      - {type: short, count: 2, marks_each: 2}
+      - {type: short, count: 2, marks_each: 2, internal_choice: {attempt: 1, of: 2}}
+  - id: C
+    title: Section C - Short answer (12 marks)
+    instructions: Answer all four questions. Internal choice in the last question.
+    items:
+      - {type: short, count: 3, marks_each: 3}
+      - {type: short, count: 2, marks_each: 3, internal_choice: {attempt: 1, of: 2}}
+  - id: D
+    title: Section D - Long answer (10 marks)
+    instructions: Answer both questions. Internal choice in the second question. Each is set in parts and may include a stimulus, a diagram or a calculation.
+    items:
+      - {type: long, count: 1, marks_each: 5}
+      - {type: long, count: 2, marks_each: 5, internal_choice: {attempt: 1, of: 2}}
+source_status: unverified
+source: lead-default
+notes: >-
+  SOYL default for any ISC Class 12 subject without its own chapter-test blueprint (CONTEXT section 9); not an official CISCE paper.
+  Same four-section shape as the ISC 2027 specimen papers (sources/cisce.md isc-2027-specimen-860-mathematics, -861-physics,
+  -862-chemistry, -863-biology): 1-mark objective items including assertion-reason, then 2-, 3- and 5-mark questions with internal choice
+  in one question of each of Sections B, C and D. One chapter, 40 marks in 100 minutes (about the board pace of 70 marks in 3 hours).

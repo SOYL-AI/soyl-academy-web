@@ -38,17 +38,28 @@ export function realReleases(filter?: (unit: string) => boolean): ReleaseFile[] 
   return out.sort((a, b) => a.release.unit.localeCompare(b.release.unit));
 }
 
-/** A catalog directory with every CBSE subject but only the syllabi of `subjectDirs` (e.g. 10/science). */
+/**
+ * A catalog directory with every subject of each board that has content, but only the syllabi of `subjectDirs`
+ * (board-relative, e.g. cbse/10/science or cisce/isc-12/biology).
+ */
 function reducedCatalog(subjectDirs: string[]): string {
-  const src = path.join(PLATFORM, 'catalog', 'cbse');
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'soyl-catalog-'));
-  fs.mkdirSync(path.join(dir, 'cbse'), { recursive: true });
-  fs.copyFileSync(path.join(src, 'subjects.yaml'), path.join(dir, 'cbse', 'subjects.yaml'));
+  for (const board of new Set(['cbse', ...subjectDirs.map((s) => s.split('/')[0]!)])) {
+    fs.mkdirSync(path.join(dir, board), { recursive: true });
+    fs.copyFileSync(path.join(PLATFORM, 'catalog', board, 'subjects.yaml'), path.join(dir, board, 'subjects.yaml'));
+  }
   for (const s of subjectDirs) {
-    fs.mkdirSync(path.join(dir, 'cbse', s), { recursive: true });
-    fs.copyFileSync(path.join(src, s, 'syllabus.yaml'), path.join(dir, 'cbse', s, 'syllabus.yaml'));
+    fs.mkdirSync(path.join(dir, s), { recursive: true });
+    fs.copyFileSync(path.join(PLATFORM, 'catalog', s, 'syllabus.yaml'), path.join(dir, s, 'syllabus.yaml'));
   }
   return dir;
+}
+
+/** Catalog directory (board-relative) of a chapter unit: cbse-10-science-ch01 → cbse/10/science; isc-12-biology-ch01 → cisce/isc-12/biology. */
+function subjectDirOf(unit: string): string {
+  const m = /^(cbse|icse|isc)-(\d+)-(.+)-ch\d+$/.exec(unit);
+  if (!m) throw new Error(`unit ${unit}: unknown board prefix`);
+  return m[1] === 'cbse' ? `cbse/${m[2]}/${m[3]}` : `cisce/${m[1]}-${m[2]}/${m[3]}`;
 }
 
 const published = <T extends { status?: string }>(x: T): T => ({ ...x, status: 'published' });
@@ -56,7 +67,7 @@ const published = <T extends { status?: string }>(x: T): T => ({ ...x, status: '
 /** Seeds the reduced catalog and publishes the real releases (all of them unless filtered). */
 export async function seedRealContent(t: TestDb, filter?: (unit: string) => boolean) {
   const releases = realReleases(filter);
-  const subjectDirs = [...new Set(releases.map((r) => /^cbse-(\d+)-(.+)-ch\d+$/.exec(r.release.unit)!).map((m) => `${m[1]}/${m[2]}`))];
+  const subjectDirs = [...new Set(releases.map((r) => subjectDirOf(r.release.unit)))];
   const dir = reducedCatalog(subjectDirs);
   try {
     const report = await seedCatalog(t.db, { dir });

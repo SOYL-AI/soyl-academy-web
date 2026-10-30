@@ -1235,6 +1235,45 @@ Published under "Regulations and Syllabus ISC 2027".
 - **Fetched:** 2026-10-25
 - **Use:** Pattern and scope only (blueprints). Never copy questions.
 
+#### ISC 2027 specimen papers used for the Class 12 default blueprints
+
+The index page above loaded with a browser user agent on 2026-10-30 and links each PDF below. Each file is the specimen question paper
+followed by its answer key. Used for the paper pattern only (sections, choice, marks, item forms, competency tags); no question, passage
+or answer is reproduced in the catalog. All four share one shape (Sections A to D of 1-, 2-, 3- and 5-mark questions, internal choice in
+some questions of B, C and D), which `cisce/blueprints/12/*.yaml` scale down to chapter and unit tests.
+
+### `isc-2027-specimen-860-mathematics`
+- **Title:** ISC 2027 Specimen Question Paper and Answer Key - Mathematics (860)
+- **URL:** https://cisce.org/wp-content/uploads/2026/08/860-MATHEMATICS-SQP-AK-1.pdf
+- **Publisher:** CISCE
+- **Exam year:** ISC 2027
+- **Fetched:** 2026-10-30
+- **Use:** Class 12 default blueprints: 3 hours, 80 marks, 20 compulsory questions; Section A 20 (1-mark items including MCQs and assertion-reason), B 2-mark, C 3-mark, D 5-mark (25 marks); internal choice in three questions each of B, C and D.
+
+### `isc-2027-specimen-861-physics`
+- **Title:** ISC 2027 Specimen Question Paper and Answer Key - Physics, Paper 1 (861)
+- **URL:** https://cisce.org/wp-content/uploads/2026/08/861-PHYSICS-SQP-AK-1.pdf
+- **Publisher:** CISCE
+- **Exam year:** ISC 2027
+- **Fetched:** 2026-10-30
+- **Use:** Class 12 default blueprints: 3 hours, 70 marks, 20 questions; Section A 14 (one question of 14 one-mark subparts incl. MCQs and an assertion-reason item), B 7 x 2, C 9 x 3, D 3 x 5; internal choice in two questions each of B, C and D.
+
+### `isc-2027-specimen-862-chemistry`
+- **Title:** ISC 2027 Specimen Question Paper and Answer Key - Chemistry, Paper 1 Theory (862)
+- **URL:** https://cisce.org/wp-content/uploads/2026/07/862A-CHEMISTRY-PAPER-1-THEORY-SQP-AK.pdf
+- **Publisher:** CISCE
+- **Exam year:** ISC 2027
+- **Fetched:** 2026-10-30
+- **Use:** Class 12 default blueprints: 3 hours, 70 marks, 21 questions; Section A 14 one-mark subparts (incl. MCQs and assertion-reason), B 10 x 2, C 7 x 3, D 3 x 5; internal choice in two questions each of B, C and D.
+
+### `isc-2027-specimen-863-biology`
+- **Title:** ISC 2027 Specimen Question Paper and Answer Key - Biology, Paper 1 Theory (863)
+- **URL:** https://cisce.org/wp-content/uploads/2026/08/863A-BIOLOGY-PAPER-1-SQP-AK.pdf
+- **Publisher:** CISCE
+- **Exam year:** ISC 2027
+- **Fetched:** 2026-10-30
+- **Use:** Class 12 default blueprints and the ISC 12 Biology question style: 3 hours, 70 marks, 18 compulsory questions; Section A one question of 18 one-mark subparts (MCQs, two assertion-reason items whose option (d) reads "both false", analogies, give-a-reason, short calculations), B 7 x 2, C 7 x 3, D 3 x 5 set in parts (pedigree, diagram and data stimuli); internal choice in two questions each of B, C and D; every subpart tagged with a cognitive level (Recall to Create).
+
 ### `isc-2027-prescribed-books`
 - **Title:** ISC 2027 - Appendix I: List of Prescribed Textbooks (revised April 2026)
 - **URL:** https://cisce.org/wp-content/uploads/2026/04/40.-ISC-Appendix-I-List-of-Prescribed-Textbooks.pdf
