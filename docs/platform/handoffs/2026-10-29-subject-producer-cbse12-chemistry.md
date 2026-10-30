@@ -1,6 +1,6 @@
 # subject-producer — CBSE Class 12 Chemistry, hand-authored chapters — 2026-10-29
 
-Status: in progress — chapters 1–6 of the 10 board-assessed chapters done and committed (publish-ready drafts); ch07 onward in progress. Resumed 2026-10-30 01:00 IST after a session limit; the Lead lifted the evening deadline.
+Status: in progress — all 10 board-assessed chapters (ch01–ch10) done and committed (publish-ready drafts); the four formative-only chapters (ch11–ch14, `board_assessed: false`) are in progress. Resumed 2026-10-30 01:00 IST and again 09:20 IST after session limits.
 
 Branch: `platform/subject-producer/cbse-12-chemistry` (worktree `C:/Users/Prabhu/soyl-wt/content-cbse12-chemistry`, based on `platform/main` 9f3ea8f). Not pushed, not merged.
 
@@ -15,6 +15,10 @@ New chapters under `platform/content/authored/chemistry/` (new family folder `ch
 | ch04 The d- and f-Block Elements | 5862249 | 2 (19 + 19) | 5 | 31 | 64 | short + long | 47% |
 | ch05 Coordination Compounds | e6583dd | 2 (21 + 19) | 5 | 31 | 66 | short + long | 50% |
 | ch06 Haloalkanes and Haloarenes | eff9642 | 2 (18 + 20) | 6 | 32 | 62 | short + long | 48% |
+| ch07 Alcohols, Phenols and Ethers | d5a3d53 | 2 (18 + 18) | 5 | 31 | 63 | short + long | 48% |
+| ch08 Aldehydes, Ketones and Carboxylic Acids | 147aef7 | 2 (19 + 16) | 5 | 31 | 65 | short + long | 46% |
+| ch09 Amines | a54b2f0 | 2 (18 + 16) | 5 | 30 | 65 | short + long | 48% |
+| ch10 Biomolecules | fdcd2ad | 2 (19 + 18) | 5 | 32 | 80 | short + long | 50% |
 
 - Every chapter covers all its syllabus topics (`catalog/cbse/12/chemistry/syllabus.yaml`; none has removed topics). Items are `status: "draft"`, provenance `human` (`claude-opus-5-5 (subject-producer)`), D-025/D-026.
 - Tests: `t_cbse12chem_chNN_short` (20 marks, 40 min, `cbse-12-default-chapter-test-short`) and `t_cbse12chem_chNN_long` (40 marks, 90 min, `cbse-12-default-chapter-test-long`), laid out exactly per the blueprints (the builder throws if a section does not match), short and long disjoint, choice groups B1/B2/C1 as in the CBSE 10 chapters.
@@ -32,6 +36,12 @@ npx vitest run --root db test/db6-split.test.ts
 npx vitest run --root api test/content.test.ts
 ```
 Results of the last full run (with all committed chapters in the tree), under the shared `heavy.sh` lock:
+- Run of 2026-10-30 09:25–09:27 IST (ch01–ch10 in the tree):
+  - content-templates: Test Files 1 passed, **Tests 764 passed (764)**
+  - lint --exemplars: exit 0; every cbse-12-chemistry chapter 0 errors, 0 warnings
+  - verify --board cbse --class 12 --subject chemistry --authored: 10 units, 667 questions, **0 blocking + 0 minor flags**
+  - originality --authored: 109 units, **0 errors**
+  - db6-split: **8 passed (8)**; api content.test: **13 passed (13)**
 - Run of 2026-10-30 01:35–01:37 IST (ch01–ch06 in the tree):
   - content-templates: Test Files 1 passed, **Tests 736 passed (736)**
   - lint --exemplars: exit 0; every cbse-12-chemistry chapter 0 errors, 0 warnings
@@ -53,7 +63,8 @@ None (content only). The existing content gates now cover the new chapters autom
 - **Competency (D-035).** Every chapter is inside the 45–65% band for application-or-higher items. Where a first draft was below the band, items were rewritten into new situations rather than relabelled (details in each README).
 
 ## Known gaps / follow-ups
-- Chapters 7–10 (board-assessed) in progress; chapters 11–14 (formative only, board_assessed: false) to follow if time allows.
+- Chapters 11–14 (formative only, `board_assessed: false`: Surface Chemistry, Isolation of Elements, Polymers, Chemistry in Everyday Life) in progress.
+- Originality gate finding (fixed): ch08’s naming match first reused ch06’s stem ("Match each structure with its IUPAC name."), flagged as a bank duplicate; every chapter now uses its own stem.
 - Narration audio not generated (TTS stage).
 - SVGs checked by coordinate review only; no rasteriser is installed in the worktree, so a visual check in the staging UI is advised (especially the chemistry structure diagrams).
 - Case-study data are realistic illustrative values (labelled where they are).
