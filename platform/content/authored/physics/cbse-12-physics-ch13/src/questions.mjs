@@ -16,7 +16,7 @@ add('range-mcq', mcq({
   d: 1, c: 'recall', t: [1],
 }));
 add('terms-match', match({
-  stem: 'Match each term in Column A with its meaning in Column B.',
+  stem: 'Match each nuclear term in Column A with the description of the nuclides or particles it names in Column B.',
   pairs: [['Isotopes', 'Same atomic number, different mass numbers'], ['Isobars', 'Same mass number, different atomic numbers'], ['Isotones', 'Same number of neutrons'], ['Nucleons', 'Protons and neutrons together']],
   order: [2, 0, 3, 1],
   sol: 'Isotopes → same Z (1 → r); isobars → same A (2 → p); isotones → same N (3 → s); nucleons → protons and neutrons (4 → q).',

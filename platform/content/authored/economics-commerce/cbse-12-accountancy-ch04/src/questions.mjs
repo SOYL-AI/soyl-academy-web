@@ -83,7 +83,7 @@ Q('fb_gain', fb({
 
 Q('mt_terms', match({
   t: [1, 2, 4], d: 2, c: 'understanding', marks: 2,
-  stem: 'Match each term in column A with its meaning in column B.',
+  stem: 'Match each reconstitution term in column A (retirement or death of a partner) with what it means or records in column B.',
   pairs: [
     ['Gaining ratio', 'Ratio of the increases in the shares of the continuing partners'],
     ['Sacrificing ratio', 'Ratio in which old partners give up their shares, used mainly on admission'],
