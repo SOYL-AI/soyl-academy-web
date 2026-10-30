@@ -1,3 +1,5 @@
+| ch12 Atoms | 2 (16 + 16) | 4 | 30 | 61 | short / long | 4 SVG + 2 plots | 46% |
+| `platform/content/authored/physics/cbse-12-physics-ch12/` | Atoms | f7c53e4 |
 | ch11 Dual Nature of Radiation and Matter | 2 (16 + 15) | 4 | 30 | 64 | short / long | 3 SVG + 5 plots | 47% |
 | `platform/content/authored/physics/cbse-12-physics-ch11/` | Dual Nature of Radiation and Matter | 71f4033 |
 | ch10 Wave Optics | 2 (16 + 15) | 5 | 30 | 64 | short / long | 5 SVG + 3 plots | 55% |
@@ -10,9 +12,9 @@
 | `platform/content/authored/physics/cbse-12-physics-ch07/` | Alternating Current | 6fe17a4 |
 | ch06 Electromagnetic Induction | 2 (15 + 16) | 5 | 30 | 68 | short / long | 5 SVG + 1 plot | 51% |
 | `platform/content/authored/physics/cbse-12-physics-ch06/` | Electromagnetic Induction | a6e2e0b |
-# subject-producer — CBSE 12 Physics ch01–ch11 (in progress), hand-authored (D-025, D-026) — 2026-10-29
+# subject-producer — CBSE 12 Physics ch01–ch12 (in progress), hand-authored (D-025, D-026) — 2026-10-29
 
-Status: **partial — in progress**: ch01–ch11 done and committed (all items `status: "draft"` pending review); work continues in board order (ch12 next). ch01–ch08 were merged by the Lead and are live in production (2026-10-30).
+Status: **partial — in progress**: ch01–ch12 done and committed (all items `status: "draft"` pending review); work continues in board order (ch13 next). ch01–ch08 were merged by the Lead and are live in production (2026-10-30).
 
 Branch: `platform/subject-producer/cbse-12-physics` (worktree `C:/Users/Prabhu/soyl-wt/content-cbse12-physics`), based on `platform/main` 9f3ea8f. Not pushed, not merged; one commit per chapter so the Lead can pick chapters up individually.
 
@@ -51,11 +53,11 @@ Every chapter: 6 worked examples, 6 objective check slides, summary and exam-tip
 
 ## How to verify (from `platform/`)
 ```
-npm test -w @soyl/content-templates                                   # Tests 771 passed (771) after ch11
-npm run content -- lint --exemplars                                   # exit 0; cbse-12-physics-ch01..11: 0 error(s), 0 warning(s)
+npm test -w @soyl/content-templates                                   # Tests 778 passed (778) after ch12
+npm run content -- lint --exemplars                                   # exit 0; cbse-12-physics-ch01..12: 0 error(s), 0 warning(s)
 npm run content -- verify --board cbse --class 12 --subject physics --authored
-                                                                       # 11 unit(s), 771 questions, 0 blocking flag(s); every chapter n/n pass, 0 minor flags
-npm run content -- originality --authored                             # 110 unit(s), 0 error(s); ch01..11 0 error(s), 0 warning(s)
+                                                                       # 12 unit(s), 832 questions, 0 blocking flag(s); every chapter n/n pass, 0 minor flags
+npm run content -- originality --authored                             # 111 unit(s), 0 error(s); ch01..12 0 error(s), 0 warning(s)
 npx vitest run --root db test/db6-split.test.ts                       # Test Files 1 passed, Tests 8 passed (8)
 npx vitest run --root api test/content.test.ts                        # Test Files 1 passed, Tests 13 passed (13)
 npx tsx content/authored/physics/cbse-12-physics-ch0N/src/build.mjs   # rebuild: 0 errors, 0 warnings; git status clean afterwards
