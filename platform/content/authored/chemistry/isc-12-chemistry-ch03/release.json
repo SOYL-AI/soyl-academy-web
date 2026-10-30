@@ -1,0 +1,4776 @@
+{
+  "unit": "isc-12-chemistry-ch03",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-10-30T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "isc-12-chemistry-ch03",
+      "part": 1,
+      "version": 1,
+      "title": "Electrochemical Cells and Electrode Potential — Part 1: Cells and the standard hydrogen electrode",
+      "language": "en",
+      "goals": [
+        "Compare electrolytic and electrochemical (galvanic) cells",
+        "Explain how a Daniell cell produces a current and write its half-reactions and cell notation",
+        "Describe the standard hydrogen electrode, its preparation, use and limitations",
+        "Explain how the standard electrode potentials of Zn²⁺/Zn and Cu²⁺/Cu are measured against the SHE"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Electrochemical cells",
+          "body_md": "Part 1 — turning a redox reaction into an electric current, and measuring electrode potentials.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Spontaneous redox reaction"
+                },
+                {
+                  "id": "b",
+                  "label": "Oxidation and reduction in separate half-cells"
+                },
+                {
+                  "id": "c",
+                  "label": "Electrons through the wire"
+                },
+                {
+                  "id": "d",
+                  "label": "Electrical work"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow: a spontaneous redox reaction split into two half-cells drives electrons through a wire to do work"
+          },
+          "math": [],
+          "narration": "Namaste! A torch cell, a mobile phone battery and the pacemaker in a patient’s chest all turn chemical energy into electrical energy. In this chapter we see how a redox reaction can be split into two halves so that electrons are forced to travel through a wire, how such a cell is written in shorthand, and how the tendency of each electrode to gain or lose electrons is measured.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Electrolytic and electrochemical cells",
+          "body_md": "In an **electrochemical (galvanic or voltaic) cell**, a spontaneous redox reaction produces electrical energy. In an **electrolytic cell**, electrical energy from an outside source drives a non-spontaneous reaction. In both, **oxidation occurs at the anode and reduction at the cathode**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Feature",
+                "Electrochemical (galvanic) cell",
+                "Electrolytic cell"
+              ],
+              "rows": [
+                [
+                  "Energy change",
+                  "Chemical → electrical",
+                  "Electrical → chemical"
+                ],
+                [
+                  "Reaction",
+                  "Spontaneous (ΔG < 0)",
+                  "Non-spontaneous, driven by a battery"
+                ],
+                [
+                  "Anode sign",
+                  "Negative",
+                  "Positive"
+                ],
+                [
+                  "Cathode sign",
+                  "Positive",
+                  "Negative"
+                ],
+                [
+                  "Salt bridge",
+                  "Usually needed",
+                  "Not needed (one vessel)"
+                ],
+                [
+                  "Example",
+                  "Daniell cell, dry cell",
+                  "Electroplating, electrolysis of brine"
+                ]
+              ]
+            },
+            "alt": "Table comparing electrochemical and electrolytic cells"
+          },
+          "math": [],
+          "narration": "There are two kinds of cell. In an electrochemical, or galvanic, cell a spontaneous reaction pushes electrons through a wire, so chemical energy becomes electrical energy. In an electrolytic cell a battery forces a reaction that would not happen on its own. One rule holds in both: oxidation at the anode, reduction at the cathode. Only the signs of the electrodes swap.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "diagram",
+          "heading": "The Daniell cell",
+          "body_md": "A zinc rod in ZnSO₄ solution and a copper rod in CuSO₄ solution, joined by a wire and a **salt bridge**. With 1 M solutions at 298 K the voltmeter reads about 1.10 V.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 246\" role=\"img\" aria-label=\"Daniell cell: a zinc rod dips into zinc sulfate solution in the left beaker and a copper rod into blue copper sulfate solution in the right beaker. A salt bridge joins the two solutions. Wires from the rods meet at a voltmeter; electrons flow through the wire from zinc to copper. Zinc is the anode (negative) and copper is the cathode (positive).\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Daniell cell: a zinc rod dips into zinc sulfate solution in the left beaker and a copper rod into blue copper sulfate solution in the right beaker. A salt bridge joins the two solutions. Wires from the rods meet at a voltmeter; electrons flow through the wire from zinc to copper. Zinc is the anode (negative) and copper is the cathode (positive).</title><rect x=\"31\" y=\"120\" width=\"108\" height=\"69\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"0\"/><rect x=\"221\" y=\"120\" width=\"108\" height=\"69\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"0\" fill-opacity=\"0.3\"/><path d=\"M30 90 V190 H140 V90\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M220 90 V190 H330 V90\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"74\" y=\"64\" width=\"14\" height=\"112\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1\"/><rect x=\"272\" y=\"64\" width=\"14\" height=\"112\" fill=\"var(--diagram-brown)\" stroke=\"currentColor\" stroke-width=\"1\"/><path d=\"M118 150 V74 H242 V150\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"10\" stroke-linecap=\"butt\"/><path d=\"M81 64 V30 H164\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M196 30 H279 V64\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"180\" cy=\"30\" r=\"16\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"180\" y=\"35\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">V</text><line x1=\"100\" y1=\"16\" x2=\"145.2\" y2=\"16\" stroke=\"var(--diagram-accent)\" stroke-width=\"2\"/><polygon points=\"150,16 144.5,18.4 144.5,13.6\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><line x1=\"210\" y1=\"16\" x2=\"255.2\" y2=\"16\" stroke=\"var(--diagram-accent)\" stroke-width=\"2\"/><polygon points=\"260,16 254.5,18.4 254.5,13.6\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"180\" y=\"12\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">electrons</text><text x=\"180\" y=\"66\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">Salt bridge</text><text x=\"85\" y=\"208\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Zinc anode (−)</text><text x=\"85\" y=\"222\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">zinc sulfate solution</text><text x=\"275\" y=\"208\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Copper cathode (+)</text><text x=\"275\" y=\"222\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">copper sulfate solution</text><text x=\"85\" y=\"236\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">oxidation</text><text x=\"275\" y=\"236\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">reduction</text></svg>",
+            "alt": "Daniell cell with a zinc rod in zinc sulfate solution, a copper rod in copper sulfate solution, a salt bridge and a voltmeter; electrons flow through the wire from zinc to copper",
+            "caption": "Zinc is the anode (oxidation, negative); copper is the cathode (reduction, positive)."
+          },
+          "math": [],
+          "narration": "Here is the Daniell cell. A zinc rod stands in zinc sulfate solution and a copper rod in copper sulfate solution. A wire joins the rods through a voltmeter, and a salt bridge joins the two solutions. With both solutions at one molar the voltmeter reads about one point one volts, and electrons flow through the wire from the zinc to the copper.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "How the cell produces a current",
+          "body_md": "Zinc has a greater tendency to lose electrons than copper. Zinc atoms are **oxidised** at the anode; the electrons flow through the external wire to the copper, where Cu²⁺ ions are **reduced**. The **salt bridge** (KCl, KNO₃ or NH₄NO₃ in agar) lets ions migrate so that both solutions stay neutral, completing the circuit.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Function of the salt bridge",
+                "Result"
+              ],
+              "rows": [
+                [
+                  "Completes the internal circuit",
+                  "Current can flow"
+                ],
+                [
+                  "Supplies ions to neutralise charge build-up",
+                  "Reaction continues"
+                ],
+                [
+                  "Prevents direct mixing of solutions",
+                  "Cu²⁺ does not react directly with zinc"
+                ],
+                [
+                  "Reduces the liquid junction potential",
+                  "Steadier voltage"
+                ]
+              ]
+            },
+            "alt": "Table of the functions of a salt bridge"
+          },
+          "math": [
+            "\\text{Anode: } \\ce{Zn(s) -> Zn^2+(aq) + 2e-}",
+            "\\text{Cathode: } \\ce{Cu^2+(aq) + 2e- -> Cu(s)}",
+            "\\text{Cell: } \\ce{Zn(s) + Cu^2+(aq) -> Zn^2+(aq) + Cu(s)}"
+          ],
+          "narration": "Why does current flow? Zinc gives up electrons more readily than copper. Zinc atoms lose two electrons each and enter the solution as zinc ions; the electrons travel through the wire to the copper rod, where copper ions pick them up and deposit as copper metal. Without the salt bridge, positive charge would pile up around the zinc and negative charge around the copper, and the current would stop almost at once.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "concept",
+          "heading": "Cell notation",
+          "body_md": "**Anode on the left, cathode on the right.** A single vertical line marks a phase boundary; a double line is the salt bridge. Concentrations (or pressures) are given in brackets. An inert electrode (Pt) is written at the end when the half-cell has no metal of its own.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Symbol",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "Left half-cell",
+                  "Anode (oxidation)"
+                ],
+                [
+                  "Right half-cell",
+                  "Cathode (reduction)"
+                ],
+                [
+                  "|",
+                  "Phase boundary"
+                ],
+                [
+                  "||",
+                  "Salt bridge"
+                ],
+                [
+                  "Pt",
+                  "Inert electrode for gas or ion–ion half-cells"
+                ]
+              ]
+            },
+            "alt": "Table of conventions in cell notation"
+          },
+          "math": [
+            "\\ce{Zn(s) | Zn^2+(aq, 1 M) || Cu^2+(aq, 1 M) | Cu(s)}",
+            "\\ce{Pt | H2(g, 1 bar) | H+(aq, 1 M) || Ag+(aq, 1 M) | Ag(s)}",
+            "E_\\text{cell} = E_\\text{right} - E_\\text{left} = E_\\text{cathode} - E_\\text{anode}"
+          ],
+          "narration": "Cells are written in a shorthand. The anode goes on the left and the cathode on the right. A single line marks the boundary between a solid and a solution, and a double line stands for the salt bridge. When a half-cell involves a gas or two ions, an inert platinum electrode is written at the end. The cell voltage is the right-hand potential minus the left-hand one.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "example",
+          "heading": "Worked example: from a reaction to cell notation",
+          "body_md": "**Problem.** Write the half-reactions and the cell notation for a cell based on $\\ce{Fe(s) + 2Ag+(aq) -> Fe^2+(aq) + 2Ag(s)}$, with 0.1 M Fe²⁺ and 0.5 M Ag⁺.\n\n**Step 1.** Oxidation (anode): $\\ce{Fe -> Fe^2+ + 2e-}$; reduction (cathode): $\\ce{Ag+ + e- -> Ag}$ (twice).\n\n**Step 2.** $\\ce{Fe(s) | Fe^2+(aq, 0.1 M) || Ag+(aq, 0.5 M) | Ag(s)}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Half-cell",
+                "Process",
+                "Position in notation"
+              ],
+              "rows": [
+                [
+                  "Fe | Fe²⁺",
+                  "Oxidation (anode)",
+                  "Left"
+                ],
+                [
+                  "Ag⁺ | Ag",
+                  "Reduction (cathode)",
+                  "Right"
+                ]
+              ]
+            },
+            "alt": "Table of the iron and silver half-cells, their processes and positions"
+          },
+          "math": [],
+          "narration": "Start with the overall reaction and find which species loses electrons. Iron goes from zero to plus two, so it is oxidised: that half-cell is the anode and goes on the left. Silver ions gain electrons and are reduced at the cathode, written on the right. Put the concentrations in brackets and join the two halves with a double line for the salt bridge.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "check",
+          "heading": "Quick check: anode or cathode?",
+          "body_md": "Identify the anode, or the direction of electron flow, from a cell notation.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. The left-hand electrode in cell notation is the anode, where oxidation takes place, and electrons leave it through the wire.",
+          "check_question_id": "q_isc12chem_ch03_001",
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "concept",
+          "heading": "Single electrode potential",
+          "body_md": "When a metal dips into a solution of its ions, an equilibrium $\\ce{M^{n+} + ne- <=> M}$ sets up and a potential difference develops between metal and solution: the **electrode potential**. Its absolute value **cannot be measured**; only differences between two electrodes can. So all potentials are measured against a reference, the **standard hydrogen electrode (SHE)**, assigned $E^\\circ = 0.00\\ \\text{V}$ at all temperatures. By IUPAC convention potentials are quoted as **reduction potentials**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Term",
+                "Meaning"
+              ],
+              "rows": [
+                [
+                  "Electrode potential",
+                  "Potential difference between an electrode and its solution"
+                ],
+                [
+                  "Standard electrode potential E°",
+                  "Measured at 1 M ions, 1 bar gas, 298 K"
+                ],
+                [
+                  "Reduction potential",
+                  "Tendency to gain electrons (IUPAC convention)"
+                ],
+                [
+                  "Oxidation potential",
+                  "Same value, opposite sign"
+                ]
+              ]
+            },
+            "alt": "Table of terms about electrode potential"
+          },
+          "math": [],
+          "narration": "When a metal is dipped into a solution of its own ions, some atoms may lose electrons and enter the solution, or some ions may gain electrons and deposit, until an equilibrium is reached. A potential difference builds up between the metal and the solution. We cannot measure this on its own, because any measuring wire forms a second electrode. So we measure every electrode against one agreed reference, the standard hydrogen electrode.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "diagram",
+          "heading": "The standard hydrogen electrode",
+          "body_md": "**Preparation:** a platinum foil coated with **platinum black** (finely divided Pt, large surface; adsorbs H₂) dips into 1 M H⁺ (e.g. HCl) at 298 K; pure hydrogen gas at **1 bar** is bubbled over it. Half-reaction: $\\ce{2H+(aq) + 2e- <=> H2(g)}$, $E^\\circ = 0$. **Limitations:** hard to keep H⁺ exactly 1 M and H₂ exactly 1 bar; platinum is easily poisoned by impurities (e.g. arsenic, sulfur compounds); cannot be used in solutions of oxidising agents; inconvenient to set up, so secondary reference electrodes are used in practice.",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 230\" role=\"img\" aria-label=\"Standard hydrogen electrode: a platinum foil coated with platinum black hangs inside a glass tube dipping into an acid solution with hydrogen ion concentration 1 mol per litre. Hydrogen gas at 1 bar is bubbled in at the top and escapes as bubbles around the foil. A wire from the foil leads out.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Standard hydrogen electrode: a platinum foil coated with platinum black hangs inside a glass tube dipping into an acid solution with hydrogen ion concentration 1 mol per litre. Hydrogen gas at 1 bar is bubbled in at the top and escapes as bubbles around the foil. A wire from the foil leads out.</title><rect x=\"61\" y=\"110\" width=\"158\" height=\"79\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"0\"/><path d=\"M60 70 V190 H220 V70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M118 30 V150 M162 30 V150\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M118 30 H162\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"130\" y=\"120\" width=\"20\" height=\"34\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"0\"/><line x1=\"140\" y1=\"20\" x2=\"140\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M162 50 H200\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"240\" y1=\"50\" x2=\"170.8\" y2=\"50\" stroke=\"var(--diagram-accent)\" stroke-width=\"2\"/><polygon points=\"166,50 171.5,47.6 171.5,52.4\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><circle cx=\"124\" cy=\"162\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"156\" cy=\"166\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"114\" cy=\"172\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"166\" cy=\"176\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"128\" cy=\"178\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"244\" y=\"46\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"11\">H₂ gas</text><text x=\"244\" y=\"60\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"11\">at 1 bar</text><text x=\"146\" y=\"14\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">to the circuit</text><text x=\"226\" y=\"128\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">Pt foil with</text><text x=\"226\" y=\"140\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">Pt black</text><line x1=\"224\" y1=\"134\" x2=\"150\" y2=\"137\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"140\" y=\"210\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">Acid solution, [H⁺] = 1 mol per litre, 298 K</text><text x=\"64\" y=\"184\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">H₂ bubbles</text></svg>",
+            "alt": "Standard hydrogen electrode: platinum foil coated with platinum black in acid of hydrogen ion concentration 1 mol per litre, with hydrogen gas at 1 bar bubbled over it",
+            "caption": "Its electrode potential is taken as zero at all temperatures."
+          },
+          "math": [],
+          "narration": "This is the standard hydrogen electrode. A platinum foil coated with finely divided platinum black, which gives a large surface and adsorbs hydrogen, dips into acid with hydrogen ions at one mole per litre. Pure hydrogen at one bar bubbles over it. Its potential is defined as zero. But it is awkward: the acid concentration and gas pressure must be exact, platinum is easily poisoned, and it cannot be used with oxidising agents.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Measuring E° of Zn²⁺/Zn and Cu²⁺/Cu",
+          "body_md": "The half-cell is connected to the SHE through a salt bridge and a voltmeter. The **direction of electron flow** decides the sign.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Half-cell vs SHE",
+                "Electrons flow",
+                "Half-cell acts as",
+                "E°"
+              ],
+              "rows": [
+                [
+                  "Zn²⁺/Zn",
+                  "From zinc to SHE",
+                  "Anode (zinc oxidised)",
+                  "−0.76 V"
+                ],
+                [
+                  "Cu²⁺/Cu",
+                  "From SHE to copper",
+                  "Cathode (Cu²⁺ reduced)",
+                  "+0.34 V"
+                ]
+              ]
+            },
+            "alt": "Table showing how the signs of the zinc and copper standard potentials follow from electron flow"
+          },
+          "math": [
+            "\\ce{Zn | Zn^2+(1 M) || H+(1 M) | H2(1 bar) | Pt}: \\ E^\\circ_\\text{cell} = 0.76\\ \\text{V} = 0 - E^\\circ_{\\ce{Zn^2+/Zn}}",
+            "\\ce{Pt | H2(1 bar) | H+(1 M) || Cu^2+(1 M) | Cu}: \\ E^\\circ_\\text{cell} = 0.34\\ \\text{V} = E^\\circ_{\\ce{Cu^2+/Cu}} - 0"
+          ],
+          "narration": "To measure the standard potential of zinc, join a zinc half-cell with one molar zinc ions to the standard hydrogen electrode. Electrons flow from the zinc to the hydrogen electrode, so zinc is the anode, and the voltmeter reads nought point seven six volts; the reduction potential of zinc is therefore minus nought point seven six. With copper, electrons flow the other way, copper is the cathode, and its potential is plus nought point three four volts.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "example",
+          "heading": "Worked example: finding an unknown standard potential",
+          "body_md": "**Problem.** A nickel half-cell (1 M Ni²⁺) is connected to the SHE. The voltmeter reads $0.25\\ \\text{V}$ and electrons flow from the nickel to the SHE. Find $E^\\circ_{\\ce{Ni^2+/Ni}}$ and write the cell.\n\n**Step 1.** Electrons leave nickel, so nickel is the anode (left).\n\n**Step 2.** $\\ce{Ni | Ni^2+(1 M) || H+(1 M) | H2(1 bar) | Pt}$.\n\n**Step 3.** $E^\\circ_\\text{cell} = 0 - E^\\circ_{\\ce{Ni^2+/Ni}} = 0.25$, so $E^\\circ_{\\ce{Ni^2+/Ni}} = -0.25\\ \\text{V}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Connect half-cell to SHE"
+                },
+                {
+                  "id": "b",
+                  "label": "Find direction of electron flow"
+                },
+                {
+                  "id": "c",
+                  "label": "Decide anode and cathode"
+                },
+                {
+                  "id": "d",
+                  "label": "E°cell = E°cathode − E°anode"
+                },
+                {
+                  "id": "e",
+                  "label": "Solve for unknown E°"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                },
+                {
+                  "from": "d",
+                  "to": "e"
+                }
+              ]
+            },
+            "alt": "Flow for finding an unknown standard electrode potential against the SHE"
+          },
+          "math": [],
+          "narration": "The direction of electron flow tells us which electrode is the anode. Electrons leave the nickel, so nickel is oxidised and is the anode. The cell voltage, nought point two five, equals the cathode potential, zero for hydrogen, minus the nickel potential. So the standard reduction potential of nickel is minus nought point two five volts.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "check",
+          "heading": "Quick check: the SHE",
+          "body_md": "Recall a feature or a limitation of the standard hydrogen electrode.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think about what makes the hydrogen electrode standard, and why chemists avoid it in everyday measurements.",
+          "check_question_id": "q_isc12chem_ch03_010",
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: sign of E°",
+          "body_md": "Deduce the sign of a standard electrode potential from the direction of electron flow.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. If the half-cell is the anode when joined to the SHE, its reduction potential is negative.",
+          "check_question_id": "q_isc12chem_ch03_011",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Galvanic cell: spontaneous reaction → electricity; electrolytic cell: electricity drives reaction.",
+            "Oxidation at anode, reduction at cathode; salt bridge completes the circuit.",
+            "Cell notation: anode | anode solution || cathode solution | cathode.",
+            "Electrode potentials are measured against the SHE (E° = 0); quoted as reduction potentials.",
+            "SHE: Pt black, 1 M H⁺, H₂ at 1 bar; limitations: hard to maintain, poisoned, not with oxidants."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Electrode",
+                "E° / V"
+              ],
+              "rows": [
+                [
+                  "Cu²⁺/Cu",
+                  "+0.34"
+                ],
+                [
+                  "H⁺/H₂ (SHE)",
+                  "0.00"
+                ],
+                [
+                  "Ni²⁺/Ni",
+                  "−0.25"
+                ],
+                [
+                  "Zn²⁺/Zn",
+                  "−0.76"
+                ]
+              ]
+            },
+            "alt": "Summary table of four standard electrode potentials"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. A galvanic cell separates oxidation and reduction so that electrons flow through a wire; the salt bridge completes the circuit. Cells are written with the anode on the left. Electrode potentials are measured against the standard hydrogen electrode, which has zero potential but is awkward to use. The direction of electron flow gives the sign of each potential.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Give at least two functions of the salt bridge.",
+            "For the SHE, describe preparation (Pt black, 1 M H⁺, 1 bar H₂) and two limitations.",
+            "Decide the sign of E° from the direction of electron flow relative to the SHE.",
+            "Write both half-reactions and the overall reaction with states."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Anode is always positive",
+                  "Anode is negative in a galvanic cell"
+                ],
+                [
+                  "Writing the cathode on the left",
+                  "Anode left, cathode right"
+                ],
+                [
+                  "SHE potential depends on temperature",
+                  "Taken as zero at all temperatures"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and fixes"
+          },
+          "math": [],
+          "narration": "A few tips. When asked about the salt bridge, give at least two functions. For the hydrogen electrode, describe how it is set up and give two limitations. Decide the sign of a standard potential from the direction of electron flow. And always write the half-reactions with state symbols.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "isc-12-chemistry-ch03",
+      "part": 2,
+      "version": 1,
+      "title": "Electrochemical Cells and Electrode Potential — Part 2: Electrochemical series and the Nernst equation",
+      "language": "en",
+      "goals": [
+        "Predict how electrode potential changes with concentration, temperature and the nature of the electrode",
+        "Use the electrochemical series to predict displacement reactions and calculate standard cell emf",
+        "Calculate the emf of a cell at non-standard concentrations using the Nernst equation",
+        "Calculate ΔG° and the equilibrium constant from the standard cell emf"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Electrode potentials at work",
+          "body_md": "Part 2 — ranking electrodes, predicting reactions and correcting for concentration.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Factors affecting E"
+                },
+                {
+                  "id": "b",
+                  "label": "Electrochemical series"
+                },
+                {
+                  "id": "c",
+                  "label": "Nernst equation"
+                },
+                {
+                  "id": "d",
+                  "label": "ΔG° and K"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow of topics in Part 2"
+          },
+          "math": [],
+          "narration": "Once we can measure electrode potentials, we can rank them in a series and use it to predict which metal will displace another, whether a metal will liberate hydrogen from an acid, and how large a cell’s voltage will be. The Nernst equation then tells us how the voltage changes when the solutions are not one molar, and links voltage to Gibbs energy and equilibrium.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Factors affecting electrode potential",
+          "body_md": "For $\\ce{M^{n+} + ne- <=> M}$: **(1) Concentration of ions:** increasing [Mⁿ⁺] shifts the equilibrium right and makes the reduction potential **more positive** (Le Chatelier; Nernst). **(2) Temperature:** E changes with T (the Nernst factor 2.303RT/nF grows with T). **(3) Nature of the electrode:** metals that lose electrons easily (low ionisation enthalpy, high hydration enthalpy of the ion) have **more negative** reduction potentials.",
+          "bullets": [],
+          "visual": {
+            "kind": "plot",
+            "spec": {
+              "grid": true,
+              "functions": [],
+              "points": [
+                {
+                  "at": [
+                    0,
+                    0.34
+                  ],
+                  "label": "E° = +0.34 V at 1 M",
+                  "on_curve": true
+                }
+              ],
+              "series": [
+                {
+                  "label": "Cu²⁺/Cu at 298 K",
+                  "kind": "line",
+                  "points": [
+                    [
+                      -4,
+                      0.222
+                    ],
+                    [
+                      -3,
+                      0.2515
+                    ],
+                    [
+                      -2,
+                      0.281
+                    ],
+                    [
+                      -1,
+                      0.3105
+                    ],
+                    [
+                      0,
+                      0.34
+                    ]
+                  ]
+                }
+              ],
+              "x": {
+                "min": -4,
+                "max": 0,
+                "label": "log [Cu²⁺]"
+              },
+              "y": {
+                "min": 0.2,
+                "max": 0.36,
+                "label": "Electrode potential E (V)"
+              }
+            },
+            "alt": "Electrode potential of a copper electrode against the logarithm of copper ion concentration: a straight line rising with slope about 0.03 volt per tenfold increase, reaching 0.34 volt at 1 mol per litre",
+            "caption": "Slope = 0.059/n = 0.0295 V per tenfold change in concentration (n = 2)."
+          },
+          "math": [],
+          "narration": "Three things affect an electrode potential. First, concentration: adding more metal ions pushes the reduction equilibrium forward, so the potential becomes more positive; for copper it rises by about three hundredths of a volt for each tenfold increase. Second, temperature, because the Nernst factor contains temperature. Third, the nature of the metal itself: metals that give up electrons easily have very negative reduction potentials.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "check",
+          "heading": "Quick check: factors affecting E",
+          "body_md": "Predict how an electrode potential changes when the ion concentration changes.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. More metal ions push the reduction equilibrium forward, making the potential more positive.",
+          "check_question_id": "q_isc12chem_ch03_020",
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "The electrochemical series",
+          "body_md": "Standard **reduction** potentials arranged in order. **More positive** $E^\\circ$: stronger **oxidising agent**. **More negative** $E^\\circ$: stronger **reducing agent**, more reactive metal.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Half-reaction (reduction)",
+                "$E^\\circ$ / V"
+              ],
+              "rows": [
+                [
+                  "$\\ce{F2 + 2e- -> 2F-}$",
+                  "+2.87"
+                ],
+                [
+                  "$\\ce{Cl2 + 2e- -> 2Cl-}$",
+                  "+1.36"
+                ],
+                [
+                  "$\\ce{Br2 + 2e- -> 2Br-}$",
+                  "+1.09"
+                ],
+                [
+                  "$\\ce{Ag+ + e- -> Ag}$",
+                  "+0.80"
+                ],
+                [
+                  "$\\ce{Fe^3+ + e- -> Fe^2+}$",
+                  "+0.77"
+                ],
+                [
+                  "$\\ce{Cu^2+ + 2e- -> Cu}$",
+                  "+0.34"
+                ],
+                [
+                  "$\\ce{2H+ + 2e- -> H2}$",
+                  "0.00"
+                ],
+                [
+                  "$\\ce{Pb^2+ + 2e- -> Pb}$",
+                  "−0.13"
+                ],
+                [
+                  "$\\ce{Ni^2+ + 2e- -> Ni}$",
+                  "−0.25"
+                ],
+                [
+                  "$\\ce{Fe^2+ + 2e- -> Fe}$",
+                  "−0.44"
+                ],
+                [
+                  "$\\ce{Zn^2+ + 2e- -> Zn}$",
+                  "−0.76"
+                ],
+                [
+                  "$\\ce{Al^3+ + 3e- -> Al}$",
+                  "−1.66"
+                ],
+                [
+                  "$\\ce{Mg^2+ + 2e- -> Mg}$",
+                  "−2.37"
+                ],
+                [
+                  "$\\ce{K+ + e- -> K}$",
+                  "−2.93"
+                ]
+              ]
+            },
+            "alt": "Table of standard reduction potentials at 298 K from fluorine to potassium"
+          },
+          "math": [],
+          "narration": "Here is an electrochemical series written as reductions. Fluorine at the top, with the most positive value, grabs electrons most strongly: it is the strongest oxidising agent. Potassium near the bottom gives electrons away most readily: it is the strongest reducing agent and a very reactive metal. Notice that the iron three to iron two couple sits just below silver.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example: standard emf and the cell reaction",
+          "body_md": "**Problem.** For $\\ce{Al | Al^3+ (1 M) || Ni^2+ (1 M) | Ni}$, find $E^\\circ_\\text{cell}$ and write the balanced cell reaction. ($E^\\circ$: Al³⁺/Al $-1.66$ V, Ni²⁺/Ni $-0.25$ V)\n\n**Step 1.** $E^\\circ_\\text{cell} = E^\\circ_\\text{cathode} - E^\\circ_\\text{anode} = -0.25 - (-1.66) = 1.41\\ \\text{V}$.\n\n**Step 2.** Electrons: Al gives 3, Ni²⁺ takes 2; LCM 6.\n\n**Step 3.** $\\ce{2Al(s) + 3Ni^2+(aq) -> 2Al^3+(aq) + 3Ni(s)}$; $n = 6$. $E^\\circ$ is **not** multiplied by the coefficients.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Electrode",
+                "E° / V",
+                "Role"
+              ],
+              "rows": [
+                [
+                  "Ni²⁺/Ni",
+                  "−0.25",
+                  "Cathode"
+                ],
+                [
+                  "Al³⁺/Al",
+                  "−1.66",
+                  "Anode"
+                ],
+                [
+                  "E°cell",
+                  "+1.41",
+                  "Spontaneous"
+                ]
+              ]
+            },
+            "alt": "Table of the aluminium–nickel cell with standard potentials and emf"
+          },
+          "math": [],
+          "narration": "Subtract the anode potential from the cathode potential: minus nought point two five minus minus one point six six gives one point four one volts. To balance the reaction, each aluminium atom gives three electrons and each nickel ion takes two, so we need two aluminium and three nickel, with six electrons in all. The potentials are not multiplied by these numbers, because electrode potential does not depend on the amount of substance.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "concept",
+          "heading": "Using the series to predict reactions",
+          "body_md": "(1) A metal with a **lower** (more negative) E° displaces a metal with a higher E° from a solution of its salt. (2) Metals with **negative** E° liberate H₂ from dilute acids; those with positive E° do not. (3) A reaction is feasible if the calculated $E^\\circ_\\text{cell}$ is **positive**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Question",
+                "Answer"
+              ],
+              "rows": [
+                [
+                  "Does iron displace copper from CuSO₄?",
+                  "Yes: E° of Fe (−0.44) is lower than Cu (+0.34)"
+                ],
+                [
+                  "Does silver liberate H₂ from dilute HCl?",
+                  "No: E° of Ag is positive"
+                ],
+                [
+                  "Can Br₂ oxidise Fe²⁺ to Fe³⁺?",
+                  "Yes: 1.09 − 0.77 = +0.32 V"
+                ],
+                [
+                  "Can I₂ (E° +0.54) oxidise Fe²⁺?",
+                  "No: 0.54 − 0.77 is negative"
+                ]
+              ]
+            },
+            "alt": "Table of predictions from the electrochemical series"
+          },
+          "math": [],
+          "narration": "The series becomes a prediction tool. A metal lower in the list displaces one higher up, so iron displaces copper. Metals with negative potentials release hydrogen from dilute acids; copper and silver do not. For any redox reaction, imagine it happens, calculate the cell voltage, and if the answer is positive the reaction is feasible: bromine can oxidise iron two ions, but iodine cannot.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "example",
+          "heading": "Worked example: storing a solution",
+          "body_md": "**Problem.** Can a copper(II) sulfate solution be stored in an iron tank? Can it be stored in a silver vessel? ($E^\\circ$: Cu²⁺/Cu $+0.34$, Fe²⁺/Fe $-0.44$, Ag⁺/Ag $+0.80$ V)\n\n**Iron tank:** $\\ce{Fe + Cu^2+ -> Fe^2+ + Cu}$: $E^\\circ = 0.34 - (-0.44) = 0.78\\ \\text{V}$, positive — the tank would dissolve. **No.**\n\n**Silver vessel:** $\\ce{2Ag + Cu^2+ -> 2Ag+ + Cu}$: $E^\\circ = 0.34 - 0.80 = -0.46\\ \\text{V}$, negative — no reaction. **Yes.**",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Vessel",
+                "E°cell / V",
+                "Verdict"
+              ],
+              "rows": [
+                [
+                  "Iron",
+                  "+0.78",
+                  "Reacts: unsuitable"
+                ],
+                [
+                  "Silver",
+                  "−0.46",
+                  "No reaction: suitable"
+                ]
+              ]
+            },
+            "alt": "Table of the two storage tests with cell emf and verdict"
+          },
+          "math": [],
+          "narration": "For each vessel, imagine the metal reacting with copper ions. With iron, the cell voltage is nought point three four minus minus nought point four four, a positive nought point seven eight volts, so iron would dissolve and copper would deposit. With silver, the voltage is nought point three four minus nought point eight, which is negative, so nothing happens and the silver vessel is safe.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "check",
+          "heading": "Quick check: electrochemical series",
+          "body_md": "Use standard reduction potentials to choose the strongest oxidising or reducing agent, or to predict a displacement.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. More positive potential, stronger oxidising agent; more negative, stronger reducing agent.",
+          "check_question_id": "q_isc12chem_ch03_028",
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "concept",
+          "heading": "The Nernst equation",
+          "body_md": "For an electrode $\\ce{M^{n+} + ne- -> M}$ and for a cell reaction with reaction quotient $Q$ (pure solids omitted), at temperature $T$ and, numerically, at $298\\ \\text{K}$:",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Symbol",
+                "Value or meaning"
+              ],
+              "rows": [
+                [
+                  "R",
+                  "8.314 J K⁻¹ mol⁻¹"
+                ],
+                [
+                  "F",
+                  "96500 C mol⁻¹"
+                ],
+                [
+                  "n",
+                  "Electrons transferred"
+                ],
+                [
+                  "2.303RT/F at 298 K",
+                  "0.059 V"
+                ],
+                [
+                  "Q",
+                  "Products ÷ reactants (ions only)"
+                ]
+              ]
+            },
+            "alt": "Table of the symbols in the Nernst equation"
+          },
+          "math": [
+            "E = E^\\circ - \\frac{2.303RT}{nF}\\log\\frac{1}{[\\ce{M^{n+}}]} = E^\\circ + \\frac{0.059}{n}\\log[\\ce{M^{n+}}]",
+            "E_\\text{cell} = E^\\circ_\\text{cell} - \\frac{0.059}{n}\\log Q \\quad (298\\ \\text{K})"
+          ],
+          "narration": "Real solutions are rarely exactly one molar, so Nernst gave an equation to correct the standard potential. For a whole cell, the voltage equals the standard voltage minus nought point nought five nine over n, times the logarithm of the reaction quotient, at twenty five degrees Celsius. The quotient is products over reactants, using concentrations of ions and leaving out pure solids.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "example",
+          "heading": "Worked example: emf at non-standard concentrations",
+          "body_md": "**Problem.** Calculate the emf at $298\\ \\text{K}$ of $\\ce{Ni | Ni^2+ (0.01 M) || Cu^2+ (0.1 M) | Cu}$. ($E^\\circ$: Cu²⁺/Cu $+0.34$, Ni²⁺/Ni $-0.25$ V)\n\n**Step 1.** $E^\\circ_\\text{cell} = 0.34 - (-0.25) = 0.59\\ \\text{V}$; $n = 2$.\n\n**Step 2.** $Q = [\\ce{Ni^2+}] \\div [\\ce{Cu^2+}] = 0.01 \\div 0.1 = 0.1$; $\\log Q = -1$.\n\n**Step 3.** $E_\\text{cell} = 0.59 - \\dfrac{0.059}{2} \\times (-1) = 0.59 + 0.0295 = 0.6195\\ \\text{V}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "E°cell",
+                  "0.59 V"
+                ],
+                [
+                  "n",
+                  "2"
+                ],
+                [
+                  "log Q",
+                  "−1"
+                ],
+                [
+                  "Ecell",
+                  "0.62 V"
+                ]
+              ]
+            },
+            "alt": "Table of values in the nickel–copper Nernst example"
+          },
+          "math": [],
+          "narration": "First find the standard voltage, nought point five nine volts, with two electrons transferred. The reaction quotient is the product ion, nickel, over the reactant ion, copper: nought point nought one over nought point one, which is a tenth, with a logarithm of minus one. Subtracting a negative term raises the voltage slightly, to about nought point six two volts.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Emf, Gibbs energy and the equilibrium constant",
+          "body_md": "The maximum electrical work a cell can do equals the decrease in Gibbs energy. A **positive** $E_\\text{cell}$ means **negative** $\\Delta G$: spontaneous. At equilibrium $E_\\text{cell} = 0$ and $Q = K$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "E°cell",
+                "ΔG°",
+                "K",
+                "Spontaneity"
+              ],
+              "rows": [
+                [
+                  "Positive",
+                  "Negative",
+                  "> 1",
+                  "Spontaneous"
+                ],
+                [
+                  "Zero",
+                  "Zero",
+                  "1",
+                  "Equilibrium"
+                ],
+                [
+                  "Negative",
+                  "Positive",
+                  "< 1",
+                  "Non-spontaneous"
+                ]
+              ]
+            },
+            "alt": "Table linking E°cell, ΔG° and K"
+          },
+          "math": [
+            "\\Delta G = -nFE_\\text{cell}, \\qquad \\Delta G^\\circ = -nFE^\\circ_\\text{cell}",
+            "\\Delta G^\\circ = -2.303RT\\log K \\ \\Rightarrow\\ E^\\circ_\\text{cell} = \\frac{0.059}{n}\\log K\\ (298\\ \\text{K})"
+          ],
+          "narration": "A cell can do electrical work equal to the fall in its Gibbs energy, so the Gibbs energy change equals minus n F times the voltage. A positive voltage means a negative Gibbs energy change and a spontaneous reaction. When the cell is flat it is at equilibrium: the voltage is zero and the quotient equals the equilibrium constant, which gives a direct link between the standard voltage and K.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "example",
+          "heading": "Worked example: ΔG° and K from E°",
+          "body_md": "**Problem.** For $\\ce{Cu(s) + 2Ag+(aq) -> Cu^2+(aq) + 2Ag(s)}$, $E^\\circ_\\text{cell} = 0.46\\ \\text{V}$. Calculate $\\Delta G^\\circ$ and $K$ at $298\\ \\text{K}$ ($F = 96500\\ \\text{C mol}^{-1}$).\n\n**Step 1.** $n = 2$; $\\Delta G^\\circ = -2 \\times 96500 \\times 0.46 = -88780\\ \\text{J} = -88.78\\ \\text{kJ mol}^{-1}$.\n\n**Step 2.** $\\log K = \\dfrac{2 \\times 0.46}{0.059} = 15.59$.\n\n**Step 3.** $K = 10^{15.59} \\approx 3.9 \\times 10^{15}$.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "ΔG°",
+                  "−88.78 kJ/mol"
+                ],
+                [
+                  "log K",
+                  "15.59"
+                ],
+                [
+                  "K",
+                  "about 3.9 × 10¹⁵"
+                ]
+              ]
+            },
+            "alt": "Table of the Gibbs energy change and equilibrium constant for the copper–silver cell"
+          },
+          "math": [],
+          "narration": "Two electrons are transferred. Minus two times ninety six thousand five hundred times nought point four six gives about minus eighty nine kilojoules per mole, a clearly spontaneous reaction. For the equilibrium constant, two times nought point four six over nought point nought five nine is about fifteen point six, so K is about four times ten to the fifteen: copper reduces silver ions almost completely.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: Nernst and ΔG",
+          "body_md": "Predict how the emf changes with concentration, or link the sign of E° to ΔG° and K.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Increasing the reactant ion concentration lowers Q and raises the emf. A positive standard emf means a negative standard Gibbs energy change and an equilibrium constant greater than one.",
+          "check_question_id": "q_isc12chem_ch03_041",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "E depends on ion concentration, temperature and the nature of the electrode.",
+            "Electrochemical series: more positive E°, stronger oxidant; more negative, stronger reductant.",
+            "$E^\\circ_\\text{cell} = E^\\circ_\\text{cathode} - E^\\circ_\\text{anode}$; positive → feasible.",
+            "Nernst: $E_\\text{cell} = E^\\circ_\\text{cell} - \\dfrac{0.059}{n}\\log Q$ at 298 K.",
+            "$\\Delta G^\\circ = -nFE^\\circ_\\text{cell}$; $\\log K = \\dfrac{nE^\\circ_\\text{cell}}{0.059}$."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Relation",
+                "Equation"
+              ],
+              "rows": [
+                [
+                  "Nernst (cell)",
+                  "$E = E^\\circ - \\dfrac{0.059}{n}\\log Q$"
+                ],
+                [
+                  "Gibbs energy",
+                  "$\\Delta G^\\circ = -nFE^\\circ$"
+                ],
+                [
+                  "Equilibrium",
+                  "$\\log K = \\dfrac{nE^\\circ}{0.059}$"
+                ]
+              ]
+            },
+            "alt": "Summary table of Part 2 relations"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Electrode potentials depend on concentration, temperature and the metal. Arranged as a series, they tell us which substances are strong oxidising or reducing agents and whether a reaction is feasible. The Nernst equation corrects the voltage for concentration, and the standard voltage gives both the standard Gibbs energy change and the equilibrium constant.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Never multiply E° by stoichiometric coefficients.",
+            "Use the same n in the Nernst equation and in ΔG° = −nFE°.",
+            "Q contains ions (and gas pressures) only; omit pure solids.",
+            "Report ΔG° in kJ mol⁻¹ with its sign."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Doubling E° for 2Ag⁺",
+                  "E° is intensive"
+                ],
+                [
+                  "Q = reactants ÷ products",
+                  "Products ÷ reactants"
+                ],
+                [
+                  "Positive E° → positive ΔG°",
+                  "Positive E° → negative ΔG°"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Never multiply a standard potential by the coefficients in the equation. Keep n the same everywhere in a problem. In the reaction quotient, put products over reactants and leave out pure solids. And always report the Gibbs energy change in kilojoules with its sign.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "isc-12-chemistry-ch03",
+    "version": 1,
+    "title": "Electrochemical Cells and Electrode Potential — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Electrolytic and electrochemical cells; the Daniell cell",
+        "body_md": "**Electrochemical (galvanic/voltaic) cell:** spontaneous redox reaction → electrical energy; anode negative, cathode positive. **Electrolytic cell:** electrical energy drives a non-spontaneous reaction; anode positive, cathode negative. In both, oxidation at the anode, reduction at the cathode.\n\n**Daniell cell:** $\\ce{Zn(s) + Cu^2+(aq) -> Zn^2+(aq) + Cu(s)}$; anode $\\ce{Zn -> Zn^2+ + 2e-}$, cathode $\\ce{Cu^2+ + 2e- -> Cu}$; $E^\\circ_\\text{cell} = 1.10\\ \\text{V}$. Electrons flow in the external circuit from Zn to Cu; current flows from Cu to Zn.\n\n**Salt bridge** (KCl, KNO₃ or NH₄NO₃ in agar): completes the circuit, maintains electrical neutrality, prevents mixing of solutions, minimises liquid junction potential.\n\n**Cell notation:** anode | anode electrolyte || cathode electrolyte | cathode; $E_\\text{cell} = E_\\text{right} - E_\\text{left}$.",
+        "key_terms": [
+          {
+            "term": "Galvanic cell",
+            "definition_md": "A cell in which a spontaneous redox reaction produces electrical energy."
+          },
+          {
+            "term": "Salt bridge",
+            "definition_md": "A tube of an inert electrolyte in agar that connects the two half-cells and keeps them electrically neutral."
+          },
+          {
+            "term": "Anode",
+            "definition_md": "The electrode at which oxidation occurs."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 246\" role=\"img\" aria-label=\"Daniell cell: a zinc rod dips into zinc sulfate solution in the left beaker and a copper rod into blue copper sulfate solution in the right beaker. A salt bridge joins the two solutions. Wires from the rods meet at a voltmeter; electrons flow through the wire from zinc to copper. Zinc is the anode (negative) and copper is the cathode (positive).\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Daniell cell: a zinc rod dips into zinc sulfate solution in the left beaker and a copper rod into blue copper sulfate solution in the right beaker. A salt bridge joins the two solutions. Wires from the rods meet at a voltmeter; electrons flow through the wire from zinc to copper. Zinc is the anode (negative) and copper is the cathode (positive).</title><rect x=\"31\" y=\"120\" width=\"108\" height=\"69\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"0\"/><rect x=\"221\" y=\"120\" width=\"108\" height=\"69\" fill=\"var(--diagram-blue)\" stroke=\"currentColor\" stroke-width=\"0\" fill-opacity=\"0.3\"/><path d=\"M30 90 V190 H140 V90\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M220 90 V190 H330 V90\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"74\" y=\"64\" width=\"14\" height=\"112\" fill=\"var(--diagram-muted)\" stroke=\"currentColor\" stroke-width=\"1\"/><rect x=\"272\" y=\"64\" width=\"14\" height=\"112\" fill=\"var(--diagram-brown)\" stroke=\"currentColor\" stroke-width=\"1\"/><path d=\"M118 150 V74 H242 V150\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"10\" stroke-linecap=\"butt\"/><path d=\"M81 64 V30 H164\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M196 30 H279 V64\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><circle cx=\"180\" cy=\"30\" r=\"16\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"180\" y=\"35\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"bold\">V</text><line x1=\"100\" y1=\"16\" x2=\"145.2\" y2=\"16\" stroke=\"var(--diagram-accent)\" stroke-width=\"2\"/><polygon points=\"150,16 144.5,18.4 144.5,13.6\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><line x1=\"210\" y1=\"16\" x2=\"255.2\" y2=\"16\" stroke=\"var(--diagram-accent)\" stroke-width=\"2\"/><polygon points=\"260,16 254.5,18.4 254.5,13.6\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"180\" y=\"12\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">electrons</text><text x=\"180\" y=\"66\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">Salt bridge</text><text x=\"85\" y=\"208\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Zinc anode (−)</text><text x=\"85\" y=\"222\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">zinc sulfate solution</text><text x=\"275\" y=\"208\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"bold\">Copper cathode (+)</text><text x=\"275\" y=\"222\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">copper sulfate solution</text><text x=\"85\" y=\"236\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">oxidation</text><text x=\"275\" y=\"236\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">reduction</text></svg>",
+          "alt": "Daniell cell with a zinc rod in zinc sulfate solution, a copper rod in copper sulfate solution, a salt bridge and a voltmeter; electrons flow through the wire from zinc to copper",
+          "caption": "Zinc is the anode (oxidation, negative); copper is the cathode (reduction, positive)."
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch03-t01"
+        ]
+      },
+      {
+        "heading": "2. Single electrode potential and the SHE",
+        "body_md": "An electrode in contact with its ions sets up $\\ce{M^{n+} + ne- <=> M}$; the resulting potential difference is the **electrode potential**. Absolute values cannot be measured, so potentials are measured against the **standard hydrogen electrode** (E° = 0 V at all temperatures) and quoted as **reduction potentials** (IUPAC). Standard conditions: 1 M ions, 1 bar gases, 298 K.\n\n**SHE:** Pt foil coated with platinum black in 1 M H⁺, pure H₂ at 1 bar bubbled over it; $\\ce{2H+(aq) + 2e- <=> H2(g)}$. **Limitations:** difficult to maintain exactly 1 M H⁺ and 1 bar H₂; Pt easily poisoned; cannot be used in the presence of oxidising agents; cumbersome.\n\n**Measuring E°:** Zn | Zn²⁺(1 M) || SHE gives 0.76 V with Zn as anode, so $E^\\circ_{\\ce{Zn^2+/Zn}} = -0.76\\ \\text{V}$; SHE || Cu²⁺(1 M) | Cu gives 0.34 V with Cu as cathode, so $E^\\circ_{\\ce{Cu^2+/Cu}} = +0.34\\ \\text{V}$.",
+        "key_terms": [
+          {
+            "term": "Standard electrode potential",
+            "definition_md": "The reduction potential of an electrode measured against the SHE with 1 M ions, 1 bar gases at 298 K."
+          },
+          {
+            "term": "Standard hydrogen electrode",
+            "definition_md": "A reference electrode of platinised platinum in 1 M H⁺ with H₂ at 1 bar, assigned zero potential."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "svg",
+          "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 230\" role=\"img\" aria-label=\"Standard hydrogen electrode: a platinum foil coated with platinum black hangs inside a glass tube dipping into an acid solution with hydrogen ion concentration 1 mol per litre. Hydrogen gas at 1 bar is bubbled in at the top and escapes as bubbles around the foil. A wire from the foil leads out.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Standard hydrogen electrode: a platinum foil coated with platinum black hangs inside a glass tube dipping into an acid solution with hydrogen ion concentration 1 mol per litre. Hydrogen gas at 1 bar is bubbled in at the top and escapes as bubbles around the foil. A wire from the foil leads out.</title><rect x=\"61\" y=\"110\" width=\"158\" height=\"79\" fill=\"var(--diagram-fill)\" stroke=\"currentColor\" stroke-width=\"0\"/><path d=\"M60 70 V190 H220 V70\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><path d=\"M118 30 V150 M162 30 V150\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M118 30 H162\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><rect x=\"130\" y=\"120\" width=\"20\" height=\"34\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"0\"/><line x1=\"140\" y1=\"20\" x2=\"140\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M162 50 H200\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><line x1=\"240\" y1=\"50\" x2=\"170.8\" y2=\"50\" stroke=\"var(--diagram-accent)\" stroke-width=\"2\"/><polygon points=\"166,50 171.5,47.6 171.5,52.4\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><circle cx=\"124\" cy=\"162\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"156\" cy=\"166\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"114\" cy=\"172\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"166\" cy=\"176\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><circle cx=\"128\" cy=\"178\" r=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1\"/><text x=\"244\" y=\"46\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"11\">H₂ gas</text><text x=\"244\" y=\"60\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"11\">at 1 bar</text><text x=\"146\" y=\"14\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">to the circuit</text><text x=\"226\" y=\"128\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">Pt foil with</text><text x=\"226\" y=\"140\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">Pt black</text><line x1=\"224\" y1=\"134\" x2=\"150\" y2=\"137\" stroke=\"var(--diagram-muted)\" stroke-width=\"1\"/><text x=\"140\" y=\"210\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"11\">Acid solution, [H⁺] = 1 mol per litre, 298 K</text><text x=\"64\" y=\"184\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">H₂ bubbles</text></svg>",
+          "alt": "Standard hydrogen electrode: platinum foil coated with platinum black in acid of hydrogen ion concentration 1 mol per litre, with hydrogen gas at 1 bar bubbled over it",
+          "caption": "Its electrode potential is taken as zero at all temperatures."
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch03-t02"
+        ]
+      },
+      {
+        "heading": "3. Factors affecting electrode potential",
+        "body_md": "- **Concentration of ions:** for $\\ce{M^{n+} + ne- -> M}$, $E = E^\\circ + \\dfrac{0.059}{n}\\log[\\ce{M^{n+}}]$ at 298 K; higher [Mⁿ⁺] gives a more positive E.\n- **Temperature:** the Nernst factor $2.303RT/nF$ increases with $T$.\n- **Nature of the electrode:** metals with low sublimation and ionisation enthalpies and high hydration enthalpy of their ions lose electrons easily and have more negative E°.",
+        "key_terms": [
+          {
+            "term": "Electrode potential",
+            "definition_md": "The potential difference between an electrode and the solution of its ions."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "E = E^\\circ + \\frac{0.059}{n}\\log[\\ce{M^{n+}}]",
+            "label": "Metal–ion electrode at 298 K"
+          }
+        ],
+        "visual": {
+          "kind": "plot",
+          "spec": {
+            "grid": true,
+            "functions": [],
+            "points": [
+              {
+                "at": [
+                  0,
+                  0.34
+                ],
+                "label": "E° = +0.34 V at 1 M",
+                "on_curve": true
+              }
+            ],
+            "series": [
+              {
+                "label": "Cu²⁺/Cu at 298 K",
+                "kind": "line",
+                "points": [
+                  [
+                    -4,
+                    0.222
+                  ],
+                  [
+                    -3,
+                    0.2515
+                  ],
+                  [
+                    -2,
+                    0.281
+                  ],
+                  [
+                    -1,
+                    0.3105
+                  ],
+                  [
+                    0,
+                    0.34
+                  ]
+                ]
+              }
+            ],
+            "x": {
+              "min": -4,
+              "max": 0,
+              "label": "log [Cu²⁺]"
+            },
+            "y": {
+              "min": 0.2,
+              "max": 0.36,
+              "label": "Electrode potential E (V)"
+            }
+          },
+          "alt": "Electrode potential of a copper electrode against the logarithm of copper ion concentration: a straight line rising with slope about 0.03 volt per tenfold increase, reaching 0.34 volt at 1 mol per litre",
+          "caption": "Slope = 0.059/n = 0.0295 V per tenfold change in concentration (n = 2)."
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch03-t03"
+        ]
+      },
+      {
+        "heading": "4. Electrochemical series",
+        "body_md": "Electrodes arranged in order of standard reduction potential (F₂/F⁻ +2.87 … Li⁺/Li −3.05 V).\n\n**Applications:** (1) relative strengths of oxidising and reducing agents (more positive E° → stronger oxidant); (2) a metal with lower E° displaces one with higher E° from its salt solution; (3) metals with negative E° liberate H₂ from dilute acids; (4) $E^\\circ_\\text{cell} = E^\\circ_\\text{cathode} - E^\\circ_\\text{anode}$; (5) feasibility: a redox reaction is spontaneous if $E^\\circ_\\text{cell} > 0$.\n\nE° is an **intensive** property: it is not multiplied by stoichiometric coefficients.",
+        "key_terms": [
+          {
+            "term": "Electrochemical series",
+            "definition_md": "The arrangement of electrodes in order of their standard reduction potentials."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "E^\\circ_\\text{cell} = E^\\circ_\\text{cathode} - E^\\circ_\\text{anode}",
+            "label": "Standard cell emf"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Couple",
+              "E° / V"
+            ],
+            "rows": [
+              [
+                "Cl₂/Cl⁻",
+                "+1.36"
+              ],
+              [
+                "Ag⁺/Ag",
+                "+0.80"
+              ],
+              [
+                "Cu²⁺/Cu",
+                "+0.34"
+              ],
+              [
+                "H⁺/H₂",
+                "0.00"
+              ],
+              [
+                "Fe²⁺/Fe",
+                "−0.44"
+              ],
+              [
+                "Zn²⁺/Zn",
+                "−0.76"
+              ],
+              [
+                "Al³⁺/Al",
+                "−1.66"
+              ]
+            ]
+          },
+          "alt": "Table of selected standard reduction potentials"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch03-t04"
+        ]
+      },
+      {
+        "heading": "5. Nernst equation, Gibbs energy and equilibrium constant",
+        "body_md": "**Nernst equation:** $E_\\text{cell} = E^\\circ_\\text{cell} - \\dfrac{2.303RT}{nF}\\log Q = E^\\circ_\\text{cell} - \\dfrac{0.059}{n}\\log Q$ (298 K); $Q$ = products ÷ reactants, pure solids omitted. For the hydrogen electrode, $E = -0.059\\,\\text{pH}$ (1 bar H₂).\n\n**Gibbs energy:** $\\Delta G = -nFE_\\text{cell}$, $\\Delta G^\\circ = -nFE^\\circ_\\text{cell}$; spontaneous if $E > 0$ ($\\Delta G < 0$).\n\n**Equilibrium constant:** at equilibrium $E_\\text{cell} = 0$, so $E^\\circ_\\text{cell} = \\dfrac{2.303RT}{nF}\\log K = \\dfrac{0.059}{n}\\log K$ (298 K); also $\\Delta G^\\circ = -2.303RT\\log K$.",
+        "key_terms": [
+          {
+            "term": "Nernst equation",
+            "definition_md": "Relates the emf of a cell to its standard emf and the reaction quotient."
+          },
+          {
+            "term": "Faraday constant",
+            "definition_md": "The charge on one mole of electrons, about 96500 C mol⁻¹."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "E_\\text{cell} = E^\\circ_\\text{cell} - \\frac{0.059}{n}\\log Q",
+            "label": "Nernst equation at 298 K"
+          },
+          {
+            "latex": "\\Delta G^\\circ = -nFE^\\circ_\\text{cell}",
+            "label": "Gibbs energy and emf"
+          },
+          {
+            "latex": "\\log K = \\frac{nE^\\circ_\\text{cell}}{0.059}",
+            "label": "Equilibrium constant at 298 K"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "E°cell",
+              "ΔG°",
+              "K"
+            ],
+            "rows": [
+              [
+                "> 0",
+                "< 0",
+                "> 1"
+              ],
+              [
+                "0",
+                "0",
+                "1"
+              ],
+              [
+                "< 0",
+                "> 0",
+                "< 1"
+              ]
+            ]
+          },
+          "alt": "Table linking the signs of E°cell, ΔG° and the size of K"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch03-t05"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Calling the anode positive in a galvanic cell.\n- Multiplying E° by stoichiometric coefficients.\n- Writing Q as reactants over products, or including pure solids.\n- Forgetting the minus sign in ΔG° = −nFE°, or leaving ΔG° in joules when kJ is asked.\n- Getting the sign of E° wrong when a half-cell is measured against the SHE.\n\n**How marks are usually awarded**\n- Cell questions: half-reactions with states, cell notation, emf with sign.\n- Nernst numericals: correct Q, n and log value, substitution, answer with units.\n- SHE: diagram or description (Pt black, 1 M H⁺, 1 bar H₂) and limitations.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "isc-12-chemistry-ch03",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "Galvanic vs electrolytic cell?",
+        "back_md": "Galvanic: chemical → electrical, spontaneous. Electrolytic: electrical → chemical, non-spontaneous.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch03-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Sign of the anode in a galvanic cell?",
+        "back_md": "Negative (oxidation occurs there).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch03-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Daniell cell reaction?",
+        "back_md": "Zn + Cu²⁺ → Zn²⁺ + Cu; E° = 1.10 V.",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch03-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Functions of a salt bridge?",
+        "back_md": "Completes the circuit, keeps solutions neutral, prevents mixing, reduces junction potential.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch03-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Cell notation convention?",
+        "back_md": "Anode on the left, cathode on the right; || = salt bridge.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch03-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Direction of electron flow in the external circuit?",
+        "back_md": "From anode to cathode.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch03-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Why can’t a single electrode potential be measured?",
+        "back_md": "Any measurement needs a second electrode; only differences can be measured.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch03-t02"
+      },
+      {
+        "id": "f08",
+        "front_md": "E° of the SHE?",
+        "back_md": "0.00 V at all temperatures (by convention).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch03-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "Why platinum black in the SHE?",
+        "back_md": "Large surface area; adsorbs H₂ and speeds the electrode reaction.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch03-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Two limitations of the SHE?",
+        "back_md": "Hard to keep 1 M H⁺ and 1 bar H₂; Pt poisoned; unusable with oxidising agents.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch03-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "E° of Zn²⁺/Zn and how its sign is decided?",
+        "back_md": "−0.76 V; zinc is the anode when joined to the SHE.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch03-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "E° of Cu²⁺/Cu?",
+        "back_md": "+0.34 V (copper is the cathode against the SHE).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch03-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Effect of increasing [Mⁿ⁺] on E of Mⁿ⁺/M?",
+        "back_md": "E becomes more positive.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch03-t03"
+      },
+      {
+        "id": "f14",
+        "front_md": "Three factors affecting electrode potential?",
+        "back_md": "Ion concentration, temperature, nature of the electrode.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch03-t03"
+      },
+      {
+        "id": "f15",
+        "front_md": "Slope of E vs log[Cu²⁺] at 298 K?",
+        "back_md": "0.059/2 = 0.0295 V per decade.",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch03-t03"
+      },
+      {
+        "id": "f16",
+        "front_md": "Strongest oxidising agent in the series?",
+        "back_md": "F₂ (E° = +2.87 V).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch03-t04"
+      },
+      {
+        "id": "f17",
+        "front_md": "Strong reducing agents lie…?",
+        "back_md": "At the bottom (most negative E°), e.g. Li, K.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch03-t04"
+      },
+      {
+        "id": "f18",
+        "front_md": "Condition for a metal to liberate H₂ from dilute acid?",
+        "back_md": "Its E° must be negative.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch03-t04"
+      },
+      {
+        "id": "f19",
+        "front_md": "Feasibility test for a redox reaction?",
+        "back_md": "E°cell = E°cathode − E°anode must be positive.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch03-t04"
+      },
+      {
+        "id": "f20",
+        "front_md": "Is E° multiplied by stoichiometric coefficients?",
+        "back_md": "No — it is an intensive property.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch03-t04"
+      },
+      {
+        "id": "f21",
+        "front_md": "Nernst equation for a cell at 298 K?",
+        "back_md": "E = E° − (0.059/n) log Q.",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch03-t05"
+      },
+      {
+        "id": "f22",
+        "front_md": "Value of 2.303RT/F at 298 K?",
+        "back_md": "0.059 V.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch03-t05"
+      },
+      {
+        "id": "f23",
+        "front_md": "Potential of a hydrogen electrode at pH x?",
+        "back_md": "E = −0.059x V (H₂ at 1 bar).",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch03-t05"
+      },
+      {
+        "id": "f24",
+        "front_md": "ΔG° from E°?",
+        "back_md": "ΔG° = −nFE°.",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch03-t05"
+      },
+      {
+        "id": "f25",
+        "front_md": "K from E° at 298 K?",
+        "back_md": "log K = nE°/0.059.",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch03-t05"
+      },
+      {
+        "id": "f26",
+        "front_md": "Emf of a cell at equilibrium?",
+        "back_md": "Zero.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch03-t05"
+      },
+      {
+        "id": "f27",
+        "front_md": "Positive E°cell means…?",
+        "back_md": "ΔG° negative, K > 1, spontaneous.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch03-t05"
+      },
+      {
+        "id": "f28",
+        "front_md": "Which is omitted from Q?",
+        "back_md": "Pure solids and liquids.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch03-t05"
+      },
+      {
+        "id": "f29",
+        "front_md": "Can CuSO₄ be stored in an iron vessel?",
+        "back_md": "No: Fe (−0.44 V) displaces Cu (+0.34 V).",
+        "tag": "example",
+        "topic_id": "isc-12-chemistry-ch03-t04"
+      },
+      {
+        "id": "f30",
+        "front_md": "Value of F?",
+        "back_md": "96500 C mol⁻¹ (charge on 1 mol of electrons).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch03-t05"
+      },
+      {
+        "id": "f31",
+        "front_md": "Exam tip: sign of E°",
+        "back_md": "Anode vs SHE → negative E°; cathode vs SHE → positive E°.",
+        "tag": "exam-tip",
+        "topic_id": "isc-12-chemistry-ch03-t02"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_isc12chem_ch03_001",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the cell $\\ce{Pb(s) | Pb^2+(aq) || Ag+(aq) | Ag(s)}$, electrons in the external wire flow:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "from the lead electrode to the silver electrode"
+        },
+        {
+          "id": "b",
+          "text_md": "from the silver electrode to the lead electrode"
+        },
+        {
+          "id": "c",
+          "text_md": "through the salt bridge from lead to silver"
+        },
+        {
+          "id": "d",
+          "text_md": "in both directions alternately"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "The left electrode (Pb) is the anode; electrons leave the anode through the wire to the cathode (Ag) — option (a). Ions, not electrons, move in the salt bridge (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_002",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which statement is true of an electrolytic cell but not of a galvanic cell?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "The anode is the positive electrode"
+        },
+        {
+          "id": "b",
+          "text_md": "Oxidation occurs at the anode"
+        },
+        {
+          "id": "c",
+          "text_md": "The reaction is spontaneous"
+        },
+        {
+          "id": "d",
+          "text_md": "Chemical energy is converted into electrical energy"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "In an electrolytic cell the anode is joined to the positive terminal of the supply — option (a). Oxidation at the anode is true of both (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_003",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Potassium nitrate in agar is often preferred to potassium chloride in the salt bridge of a cell containing silver nitrate solution because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "nitrate ions conduct electricity faster than any other ion"
+        },
+        {
+          "id": "b",
+          "text_md": "chloride ions would precipitate silver chloride"
+        },
+        {
+          "id": "c",
+          "text_md": "potassium chloride is insoluble in agar"
+        },
+        {
+          "id": "d",
+          "text_md": "nitrate ions take part in the cell reaction"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Ag⁺ + Cl⁻ → AgCl(s) would block the junction and remove Ag⁺ — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_004",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "For the cell $\\ce{Mg(s) | Mg^2+(aq) || Cu^2+(aq) | Cu(s)}$, the reaction at the cathode is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "$\\ce{Mg(s) -> Mg^2+(aq) + 2e-}$"
+        },
+        {
+          "id": "b",
+          "text_md": "$\\ce{Cu^2+(aq) + 2e- -> Cu(s)}$"
+        },
+        {
+          "id": "c",
+          "text_md": "$\\ce{Cu(s) -> Cu^2+(aq) + 2e-}$"
+        },
+        {
+          "id": "d",
+          "text_md": "$\\ce{Mg^2+(aq) + 2e- -> Mg(s)}$"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "The right-hand electrode is the cathode, where reduction of Cu²⁺ occurs — option (b). Oxidation of Mg (a) happens at the anode.",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_005",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? In a galvanic cell, the electrode at which oxidation takes place is the positive electrode.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. In a galvanic cell, oxidation occurs at the anode, which is the negative electrode.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_006",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** A galvanic cell stops producing current almost at once if its salt bridge is removed.\n\n**Reason (R):** The salt bridge allows ions to migrate so that both half-cells remain electrically neutral.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true and R explains A: without it, charge builds up and the circuit is broken — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_007",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Give two differences between an electrochemical (galvanic) cell and an electrolytic cell.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "A galvanic cell converts chemical energy into electrical energy using a spontaneous reaction, while an electrolytic cell uses electrical energy to drive a non-spontaneous reaction. In a galvanic cell the anode is negative and the cathode positive; in an electrolytic cell the anode is positive and the cathode negative."
+      },
+      "solution_md": "Energy conversion; polarity.",
+      "marking_scheme": [
+        {
+          "step": "Energy conversion/spontaneity",
+          "marks": 1
+        },
+        {
+          "step": "Polarity of electrodes",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_008",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "For the reaction $\\ce{Zn(s) + 2Fe^3+(aq) -> Zn^2+(aq) + 2Fe^2+(aq)}$, write the anode and cathode half-reactions and the cell notation (use platinum for the iron half-cell).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Anode: $\\ce{Zn -> Zn^2+ + 2e-}$. Cathode: $\\ce{Fe^3+ + e- -> Fe^2+}$ (twice).\n\nCell: $\\ce{Zn(s) | Zn^2+(aq) || Fe^3+(aq), Fe^2+(aq) | Pt(s)}$."
+      },
+      "solution_md": "Half-reactions; notation with Pt.",
+      "marking_scheme": [
+        {
+          "step": "Both half-reactions",
+          "marks": 1
+        },
+        {
+          "step": "Cell notation with Pt",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_009",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Describe how a Daniell cell produces an electric current. Write the half-reactions and state two functions of the salt bridge.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "A zinc rod in zinc sulfate solution is joined by a wire and a salt bridge to a copper rod in copper sulfate solution. Zinc loses electrons more readily than copper: Zn → Zn²⁺ + 2e⁻ at the anode. The electrons travel through the wire to the copper, where Cu²⁺ + 2e⁻ → Cu at the cathode, so a current flows. The salt bridge completes the circuit and keeps both solutions electrically neutral (it also prevents the solutions from mixing)."
+      },
+      "solution_md": "Electron flow; half-reactions; salt bridge.",
+      "marking_scheme": [
+        {
+          "step": "Description and direction of electron flow",
+          "marks": 1
+        },
+        {
+          "step": "Two half-reactions",
+          "marks": 1
+        },
+        {
+          "step": "Two functions of salt bridge",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_010",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A student plans to use a standard hydrogen electrode in a solution containing traces of arsenic compounds. Which limitation of the SHE is most relevant?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Its potential changes with temperature"
+        },
+        {
+          "id": "b",
+          "text_md": "It contains no gas phase"
+        },
+        {
+          "id": "c",
+          "text_md": "Its potential is +1.00 V"
+        },
+        {
+          "id": "d",
+          "text_md": "Its platinum surface is easily poisoned by impurities"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Platinum black is poisoned by traces of impurities such as arsenic compounds — option (d). The SHE is assigned 0 V at all temperatures (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_011",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A metal M in 1 M M²⁺ is connected to the SHE. The voltmeter reads 0.44 V and the metal electrode is found to be the anode. The standard reduction potential of M²⁺/M is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "+0.44 V"
+        },
+        {
+          "id": "b",
+          "text_md": "0.00 V"
+        },
+        {
+          "id": "c",
+          "text_md": "−0.88 V"
+        },
+        {
+          "id": "d",
+          "text_md": "−0.44 V"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "E°cell = E°(SHE) − E°(M) = 0 − E° = 0.44, so E° = −0.44 V — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_012",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The platinum foil of a standard hydrogen electrode is coated with platinum black in order to:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "make the electrode potential positive"
+        },
+        {
+          "id": "b",
+          "text_md": "prevent hydrogen from reaching the solution"
+        },
+        {
+          "id": "c",
+          "text_md": "react with H⁺ ions to form a platinum salt"
+        },
+        {
+          "id": "d",
+          "text_md": "provide a large surface that adsorbs hydrogen and speeds up the electrode reaction"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Finely divided Pt has a large surface and catalyses 2H⁺ + 2e⁻ ⇌ H₂ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_013",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Why can the absolute potential of a single electrode not be measured?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Any measuring circuit introduces a second electrode, so only a difference of potentials can be measured"
+        },
+        {
+          "id": "b",
+          "text_md": "Single electrodes have no potential"
+        },
+        {
+          "id": "c",
+          "text_md": "The potential changes too quickly"
+        },
+        {
+          "id": "d",
+          "text_md": "Voltmeters cannot measure potentials below 1 V"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "A voltmeter measures a potential difference between two electrodes — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_014",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "In the standard hydrogen electrode, hydrogen gas is bubbled at a pressure of ___ bar over platinum in a solution of hydrogen ion concentration 1 M.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "1",
+              "one"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**1 bar**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"1\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_015",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The standard hydrogen electrode is rarely used for routine measurements in industry.\n\n**Reason (R):** The potential of the standard hydrogen electrode is taken as zero at all temperatures.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both are true, but R does not explain A; the SHE is avoided because it is difficult to set up and maintain and is easily poisoned — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_016",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Describe how a standard hydrogen electrode is set up and write its electrode reaction.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "A platinum foil coated with platinum black is dipped into an acid solution in which [H⁺] = 1 M at 298 K, and pure hydrogen gas at 1 bar is bubbled over it. Electrode reaction: 2H⁺(aq) + 2e⁻ ⇌ H₂(g); E° = 0.00 V."
+      },
+      "solution_md": "Pt black, 1 M H⁺, 1 bar H₂; reaction.",
+      "marking_scheme": [
+        {
+          "step": "Set-up (Pt black, 1 M H⁺, 1 bar H₂)",
+          "marks": 1
+        },
+        {
+          "step": "Electrode reaction and E° = 0",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_017",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A school laboratory decides not to use the standard hydrogen electrode as its everyday reference electrode. State two limitations of the SHE that justify this decision.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "It is difficult to maintain the hydrogen ion concentration at exactly 1 M and the gas pressure at exactly 1 bar. The platinum is easily poisoned by impurities, and the electrode cannot be used in solutions containing oxidising agents."
+      },
+      "solution_md": "Any two limitations.",
+      "marking_scheme": [
+        {
+          "step": "First limitation",
+          "marks": 1
+        },
+        {
+          "step": "Second limitation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_018",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Explain, with cell notations, how the standard electrode potentials of Zn²⁺/Zn and Cu²⁺/Cu are measured using the standard hydrogen electrode, and how their signs are decided.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Each half-cell (1 M ions, 298 K) is joined to the SHE through a salt bridge and a voltmeter. For zinc, electrons flow from Zn to the SHE, so zinc is the anode: $\\ce{Zn | Zn^2+(1 M) || H+(1 M) | H2(1 bar) | Pt}$; $E^\\circ_\\text{cell} = 0.76 = 0 - E^\\circ_{\\ce{Zn^2+/Zn}}$, so $E^\\circ = -0.76\\ \\text{V}$. For copper, electrons flow from the SHE to Cu, so copper is the cathode: $\\ce{Pt | H2(1 bar) | H+(1 M) || Cu^2+(1 M) | Cu}$; $E^\\circ_\\text{cell} = 0.34 = E^\\circ_{\\ce{Cu^2+/Cu}} - 0$, so $E^\\circ = +0.34\\ \\text{V}$."
+      },
+      "solution_md": "Zn anode, −0.76; Cu cathode, +0.34.",
+      "marking_scheme": [
+        {
+          "step": "Set-up against SHE",
+          "marks": 1
+        },
+        {
+          "step": "Zinc: notation and −0.76 V",
+          "marks": 1
+        },
+        {
+          "step": "Copper: notation and +0.34 V",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_019",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Draw a labelled diagram of the standard hydrogen electrode and state two of its limitations. [2]\n\n(b) An unknown metal X in 1 M X²⁺ is connected to the SHE. The voltmeter reads 0.13 V, and X is found to be the anode. A second cell is made from X | X²⁺(1 M) and Ag⁺(1 M) | Ag (E° = +0.80 V). Find E° of X²⁺/X, write the notation of the second cell and calculate its standard emf. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Diagram: platinum foil coated with platinum black in a glass jacket, dipping into 1 M H⁺; pure H₂ at 1 bar entering at the top and bubbling over the foil; a wire from the Pt. Limitations: difficult to maintain 1 M H⁺ and 1 bar H₂; Pt easily poisoned; not usable with oxidising agents.\n\n(b) X is the anode against the SHE, so $0.13 = 0 - E^\\circ_{\\ce{X^2+/X}}$ and $E^\\circ = -0.13\\ \\text{V}$. Second cell: $\\ce{X(s) | X^2+(1 M) || Ag+(1 M) | Ag(s)}$; $E^\\circ_\\text{cell} = 0.80 - (-0.13) = 0.93\\ \\text{V}$."
+      },
+      "solution_md": "Diagram and limitations; −0.13 V; 0.93 V.",
+      "marking_scheme": [
+        {
+          "step": "(a) Labelled diagram",
+          "marks": 1
+        },
+        {
+          "step": "(a) Two limitations",
+          "marks": 1
+        },
+        {
+          "step": "(b) E° = −0.13 V",
+          "marks": 1
+        },
+        {
+          "step": "(b) Cell notation",
+          "marks": 1
+        },
+        {
+          "step": "(b) E°cell = 0.93 V",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t02",
+        "isc-12-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_020",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The concentration of Cu²⁺ in a copper half-cell is increased from 0.01 M to 0.1 M at 298 K. The reduction potential of the electrode:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "decreases by about 0.03 V"
+        },
+        {
+          "id": "b",
+          "text_md": "increases by about 0.03 V"
+        },
+        {
+          "id": "c",
+          "text_md": "increases by about 0.06 V"
+        },
+        {
+          "id": "d",
+          "text_md": "does not change"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "E = E° + (0.059/2) log [Cu²⁺], so a tenfold increase raises E by 0.0295 V — option (b). 0.06 V would apply for n = 1 (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_021",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which property of a metal tends to make its standard reduction potential more negative?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "A high ionisation enthalpy"
+        },
+        {
+          "id": "b",
+          "text_md": "A very high enthalpy of sublimation"
+        },
+        {
+          "id": "c",
+          "text_md": "A high hydration enthalpy of its ion together with a low ionisation enthalpy"
+        },
+        {
+          "id": "d",
+          "text_md": "A low hydration enthalpy of its ion"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Easy loss of electrons and strong hydration of the ion favour M → Mⁿ⁺(aq), giving a negative E° (as for Li) — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_022",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the Nernst equation, the factor 2.303RT/nF equals 0.059/n V at 298 K. At a higher temperature this factor:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "becomes smaller"
+        },
+        {
+          "id": "b",
+          "text_md": "stays exactly the same"
+        },
+        {
+          "id": "c",
+          "text_md": "becomes zero"
+        },
+        {
+          "id": "d",
+          "text_md": "becomes larger"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "The factor is proportional to T — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_023",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Diluting the solution in a zinc half-cell makes its reduction potential more negative.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. E = E° + (0.059/2) log[Zn²⁺]; a smaller [Zn²⁺] makes the log term more negative.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_024",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The electrode potential of a metal–ion electrode depends on the concentration of the metal ions.\n\n**Reason (R):** The standard electrode potential E° changes with the concentration of the metal ions.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true; R is false — E° is defined at 1 M and is a constant; it is E that changes with concentration — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_025",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Calculate the electrode potential, in V, of a silver electrode dipped in $0.010\\ \\text{M}$ silver nitrate at $298\\ \\text{K}$. ($E^\\circ_{\\ce{Ag+/Ag}} = +0.80\\ \\text{V}$)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 0.682,
+        "tolerance": 0.002,
+        "unit": "V"
+      },
+      "solution_md": "$E = E^\\circ + 0.059\\log[\\ce{Ag+}] = 0.80 + 0.059 \\times (-2) = 0.682$, so $0.682\\ \\text{V}$.",
+      "marking_scheme": [
+        {
+          "step": "0.682 V",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_026",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State three factors on which the electrode potential of a metal dipped in a solution of its ions depends.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "The concentration of the metal ions in solution (higher concentration, more positive reduction potential), the temperature, and the nature of the metal (its ionisation enthalpy, sublimation enthalpy and the hydration enthalpy of its ion)."
+      },
+      "solution_md": "Concentration, temperature, nature.",
+      "marking_scheme": [
+        {
+          "step": "Two factors",
+          "marks": 1
+        },
+        {
+          "step": "Third factor",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_027",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Calculate the reduction potential at 298 K of (a) a zinc electrode in 0.001 M Zn²⁺ and (b) a copper electrode in 0.1 M Cu²⁺. (E°: Zn²⁺/Zn −0.76 V, Cu²⁺/Cu +0.34 V) (c) Hence find the emf of the cell made from these two electrodes.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $E = -0.76 + \\dfrac{0.059}{2}\\log(0.001) = -0.76 - 0.0885 = -0.8485\\ \\text{V}$.\n\n(b) $E = 0.34 + \\dfrac{0.059}{2}\\log(0.1) = 0.34 - 0.0295 = 0.3105\\ \\text{V}$.\n\n(c) $E_\\text{cell} = 0.3105 - (-0.8485) = 1.159\\ \\text{V}$."
+      },
+      "solution_md": "−0.849 V; +0.311 V; 1.159 V.",
+      "marking_scheme": [
+        {
+          "step": "(a) −0.849 V",
+          "marks": 1
+        },
+        {
+          "step": "(b) +0.311 V",
+          "marks": 1
+        },
+        {
+          "step": "(c) 1.159 V",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t03",
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_028",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Standard reduction potentials (V): Br₂/Br⁻ +1.09, I₂/I⁻ +0.54, Fe³⁺/Fe²⁺ +0.77, Sn⁴⁺/Sn²⁺ +0.15. Which is the strongest reducing agent?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Br⁻"
+        },
+        {
+          "id": "b",
+          "text_md": "I⁻"
+        },
+        {
+          "id": "c",
+          "text_md": "Sn²⁺"
+        },
+        {
+          "id": "d",
+          "text_md": "Fe²⁺"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "The reduced form of the couple with the lowest E° is the strongest reducing agent — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_029",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Given E° (V): Al³⁺/Al −1.66, Zn²⁺/Zn −0.76, Fe²⁺/Fe −0.44, Pb²⁺/Pb −0.13, Cu²⁺/Cu +0.34. Which metal can displace lead from lead nitrate solution but cannot displace zinc from zinc sulfate?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Copper"
+        },
+        {
+          "id": "b",
+          "text_md": "Iron"
+        },
+        {
+          "id": "c",
+          "text_md": "Aluminium"
+        },
+        {
+          "id": "d",
+          "text_md": "Lead"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Iron (−0.44) lies below lead (−0.13) but above zinc (−0.76) — option (b). Aluminium displaces both (c); copper displaces neither (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_030",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which metal will NOT liberate hydrogen from dilute hydrochloric acid?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Silver (E° = +0.80 V)"
+        },
+        {
+          "id": "b",
+          "text_md": "Magnesium (E° = −2.37 V)"
+        },
+        {
+          "id": "c",
+          "text_md": "Iron (E° = −0.44 V)"
+        },
+        {
+          "id": "d",
+          "text_md": "Zinc (E° = −0.76 V)"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Only metals with negative E° reduce H⁺ to H₂ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_031",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "E°(Cr³⁺/Cr) = −0.74 V and E°(Ag⁺/Ag) = +0.80 V. The standard emf of the cell Cr | Cr³⁺ || Ag⁺ | Ag is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "0.06 V"
+        },
+        {
+          "id": "b",
+          "text_md": "1.54 V"
+        },
+        {
+          "id": "c",
+          "text_md": "3.14 V"
+        },
+        {
+          "id": "d",
+          "text_md": "−1.54 V"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "E° = 0.80 − (−0.74) = 1.54 V; E° is not multiplied by 3 (c) — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_032",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which halogen can oxidise both Br⁻ and I⁻ ions but not F⁻? (E°/V: F₂ 2.87, Cl₂ 1.36, Br₂ 1.09, I₂ 0.54)",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Chlorine"
+        },
+        {
+          "id": "b",
+          "text_md": "Fluorine"
+        },
+        {
+          "id": "c",
+          "text_md": "Bromine"
+        },
+        {
+          "id": "d",
+          "text_md": "Iodine"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Cl₂ has a higher E° than Br₂ and I₂ but lower than F₂ — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_033",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Using the electrochemical series, match each observation with its explanation.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Zinc dissolves in dilute HCl, releasing H₂"
+        },
+        {
+          "id": "2",
+          "text_md": "Copper does not react with dilute HCl"
+        },
+        {
+          "id": "3",
+          "text_md": "Iron displaces copper from CuSO₄ solution"
+        },
+        {
+          "id": "4",
+          "text_md": "Fluorine is the strongest oxidising agent"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "E° of Fe is lower than that of Cu"
+        },
+        {
+          "id": "q",
+          "text_md": "E° of Cu²⁺/Cu is positive"
+        },
+        {
+          "id": "r",
+          "text_md": "F₂/F⁻ has the highest E°"
+        },
+        {
+          "id": "s",
+          "text_md": "E° of Zn²⁺/Zn is negative"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "s"
+          },
+          {
+            "left_id": "2",
+            "right_id": "q"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Each observation follows from the position of the couple in the series.",
+      "marking_scheme": [
+        {
+          "step": "1 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → q",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → r",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_034",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** The standard potential of 2Cu²⁺ + 4e⁻ → 2Cu is twice that of Cu²⁺ + 2e⁻ → Cu.\n\n**Reason (R):** Electrode potential is an intensive property.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false — both have E° = +0.34 V; R is true and is the reason the value is unchanged — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_035",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? A metal higher in the electrochemical series (more positive E°) displaces a metal lower in the series from its salt solution.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False. The metal with the lower (more negative) E° displaces the one with the higher E°.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_036",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Calculate the standard emf, in V, of the cell $\\ce{Al(s) | Al^3+(1 M) || Cu^2+(1 M) | Cu(s)}$. ($E^\\circ$: Al³⁺/Al $-1.66$ V, Cu²⁺/Cu $+0.34$ V)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 2,
+        "tolerance": 0.005,
+        "unit": "V"
+      },
+      "solution_md": "$E^\\circ_\\text{cell} = E^\\circ_\\text{cathode} - E^\\circ_\\text{anode} = 0.34 - (-1.66) = 2.00$, so $2.00\\ \\text{V}$.",
+      "marking_scheme": [
+        {
+          "step": "2.00 V",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_037",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Predict, with calculation, whether iodine can oxidise Fe²⁺ to Fe³⁺ under standard conditions. (E°: I₂/I⁻ +0.54 V; Fe³⁺/Fe²⁺ +0.77 V)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Assume $\\ce{2Fe^2+ + I2 -> 2Fe^3+ + 2I-}$: cathode I₂/I⁻, anode Fe³⁺/Fe²⁺. $E^\\circ_\\text{cell} = 0.54 - 0.77 = -0.23\\ \\text{V}$. Negative, so the reaction is not feasible: iodine cannot oxidise Fe²⁺ (instead Fe³⁺ oxidises I⁻)."
+      },
+      "solution_md": "−0.23 V, not feasible.",
+      "marking_scheme": [
+        {
+          "step": "Calculation −0.23 V",
+          "marks": 1
+        },
+        {
+          "step": "Conclusion",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_038",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Can a solution of nickel(II) sulfate be stirred with a copper rod, and can it be stored in a zinc container? Justify each answer. (E°: Ni²⁺/Ni −0.25 V, Cu²⁺/Cu +0.34 V, Zn²⁺/Zn −0.76 V)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Copper rod: Cu + Ni²⁺ → Cu²⁺ + Ni would have E° = −0.25 − 0.34 = −0.59 V, negative, so there is no reaction and the copper rod can be used. Zinc container: Zn + Ni²⁺ → Zn²⁺ + Ni has E° = −0.25 − (−0.76) = +0.51 V, positive, so zinc would dissolve; it cannot be used."
+      },
+      "solution_md": "Copper yes; zinc no.",
+      "marking_scheme": [
+        {
+          "step": "Copper: E° negative, safe",
+          "marks": 1
+        },
+        {
+          "step": "Zinc: E° positive, unsafe",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_039",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "State three applications of the electrochemical series, illustrating each with an example.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(1) Comparing oxidising and reducing strength: F₂, with the highest E°, is the strongest oxidising agent; Li, with the lowest, is the strongest reducing agent. (2) Predicting displacement: zinc (E° −0.76 V) displaces copper (+0.34 V) from copper sulfate solution. (3) Predicting reaction with acids: metals with negative E°, such as magnesium, liberate H₂ from dilute acids, while copper does not. (Also: calculating E°cell and predicting feasibility.)"
+      },
+      "solution_md": "Three applications with examples.",
+      "marking_scheme": [
+        {
+          "step": "First application with example",
+          "marks": 1
+        },
+        {
+          "step": "Second application with example",
+          "marks": 1
+        },
+        {
+          "step": "Third application with example",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_040",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A cell is made from a magnesium electrode in 1 M Mg²⁺ and a lead electrode in 1 M Pb²⁺. (E°: Mg²⁺/Mg −2.37 V, Pb²⁺/Pb −0.13 V) (a) Which electrode is the anode? (b) Write the cell notation and the cell reaction. (c) Calculate E°cell.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Magnesium (lower E°) is the anode.\n\n(b) $\\ce{Mg(s) | Mg^2+(1 M) || Pb^2+(1 M) | Pb(s)}$; $\\ce{Mg(s) + Pb^2+(aq) -> Mg^2+(aq) + Pb(s)}$.\n\n(c) $E^\\circ_\\text{cell} = -0.13 - (-2.37) = 2.24\\ \\text{V}$."
+      },
+      "solution_md": "Mg anode; 2.24 V.",
+      "marking_scheme": [
+        {
+          "step": "(a) Mg anode",
+          "marks": 1
+        },
+        {
+          "step": "(b) Notation and reaction",
+          "marks": 1
+        },
+        {
+          "step": "(c) 2.24 V",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_041",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "For the cell $\\ce{Zn | Zn^2+(c_1) || Cu^2+(c_2) | Cu}$, which change increases the emf at 298 K?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Increasing the concentration of Zn²⁺"
+        },
+        {
+          "id": "b",
+          "text_md": "Making the zinc rod larger"
+        },
+        {
+          "id": "c",
+          "text_md": "Increasing the concentration of Cu²⁺"
+        },
+        {
+          "id": "d",
+          "text_md": "Diluting the copper sulfate solution"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "E = E° − (0.059/2) log([Zn²⁺]/[Cu²⁺]); raising [Cu²⁺] lowers Q and raises E — option (c). The size of the electrode has no effect (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_042",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A concentration cell Cu | Cu²⁺(0.01 M) || Cu²⁺(1.0 M) | Cu is set up at 298 K. Its emf is about:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "0.00 V"
+        },
+        {
+          "id": "b",
+          "text_md": "0.118 V"
+        },
+        {
+          "id": "c",
+          "text_md": "0.059 V"
+        },
+        {
+          "id": "d",
+          "text_md": "0.0295 V"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "E° = 0 and n = 2: E = −(0.059/2) log(0.01 ÷ 1.0) = −0.0295 × (−2) = 0.059 V — option (c). Using n = 1 gives (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_043",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "For a cell reaction with n = 1 and E°cell = 0.40 V at 298 K, ΔG° is about (F = 96500 C mol⁻¹):",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "+38.6 kJ mol⁻¹"
+        },
+        {
+          "id": "b",
+          "text_md": "−77.2 kJ mol⁻¹"
+        },
+        {
+          "id": "c",
+          "text_md": "−0.386 kJ mol⁻¹"
+        },
+        {
+          "id": "d",
+          "text_md": "−38.6 kJ mol⁻¹"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "ΔG° = −1 × 96500 × 0.40 = −38600 J = −38.6 kJ mol⁻¹ — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_044",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A two-electron cell reaction has E°cell = 0.059 V at 298 K. Its equilibrium constant is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "100"
+        },
+        {
+          "id": "b",
+          "text_md": "10"
+        },
+        {
+          "id": "c",
+          "text_md": "1"
+        },
+        {
+          "id": "d",
+          "text_md": "0.01"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "log K = nE°/0.059 = 2 × 0.059/0.059 = 2; K = 100 — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_045",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A torch cell has run until it no longer gives any current. At this stage:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "E°cell = 0"
+        },
+        {
+          "id": "b",
+          "text_md": "ΔG° = 0"
+        },
+        {
+          "id": "c",
+          "text_md": "Ecell = 0 and the reaction quotient equals the equilibrium constant"
+        },
+        {
+          "id": "d",
+          "text_md": "The reaction quotient is zero"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A flat cell is at equilibrium: E = 0 and Q = K; E° and ΔG° are fixed constants — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_046",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A hydrogen electrode (H₂ at 1 bar) dips into a solution and shows a potential of −0.236 V at 298 K. The pH of the solution is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "2"
+        },
+        {
+          "id": "b",
+          "text_md": "4"
+        },
+        {
+          "id": "c",
+          "text_md": "0.236"
+        },
+        {
+          "id": "d",
+          "text_md": "10"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "E = −0.059 pH; pH = 0.236 ÷ 0.059 = 4 — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_047",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "At 298 K, the value of 2.303RT/F in the Nernst equation is ___ V.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "0.059",
+              "0.0591"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**0.059 V**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"0.059\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_048",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? A cell reaction with a positive standard emf has an equilibrium constant greater than 1.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True. log K = nE°/0.059 is positive, so K > 1.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_049",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** A cell reaction with a negative standard emf has a positive standard Gibbs energy change.\n\n**Reason (R):** ΔG° = −nFE°cell.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true; the minus sign in R makes ΔG° positive when E° is negative — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_050",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A magnesium–copper cell is set up with 0.001 M Mg²⁺ and 0.0001 M Cu²⁺ at 298 K. Its standard emf is 2.71 V. What is the emf of the cell, in volts, under these conditions?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 2.68,
+        "tolerance": 0.003,
+        "unit": "V"
+      },
+      "solution_md": "$n = 2$; $Q = 0.001 \\div 0.0001 = 10$; $\\log Q = 1$. $E = 2.71 - \\dfrac{0.059}{2} \\times 1 = 2.6805$, so $2.68\\ \\text{V}$.",
+      "marking_scheme": [
+        {
+          "step": "Q = 10 and n = 2",
+          "marks": 1
+        },
+        {
+          "step": "E = 2.68 V",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_051",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "For the cell reaction $\\ce{2Al(s) + 3Ni^2+(aq) -> 2Al^3+(aq) + 3Ni(s)}$, $E^\\circ_\\text{cell} = 1.41\\ \\text{V}$. Calculate $\\Delta G^\\circ$ in kJ mol⁻¹ ($F = 96500\\ \\text{C mol}^{-1}$).",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": -816.4,
+        "tolerance": 0.5,
+        "unit": "kJ/mol"
+      },
+      "solution_md": "$n = 6$; $\\Delta G^\\circ = -6 \\times 96500 \\times 1.41 = -816390\\ \\text{J}$; in kJ $-816390 \\div 1000 = -816.4$, so $-816.4\\ \\text{kJ mol}^{-1}$.",
+      "marking_scheme": [
+        {
+          "step": "n = 6",
+          "marks": 1
+        },
+        {
+          "step": "−816.4 kJ/mol",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_052",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Calculate $\\log K$ at $298\\ \\text{K}$ for $\\ce{Fe(s) + Cu^2+(aq) -> Fe^2+(aq) + Cu(s)}$, given $E^\\circ_\\text{cell} = 0.78\\ \\text{V}$.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 26.44,
+        "tolerance": 0.03,
+        "unit": null
+      },
+      "solution_md": "$\\log K = \\dfrac{nE^\\circ}{0.059} = \\dfrac{2 \\times 0.78}{0.059} = 26.44$.",
+      "marking_scheme": [
+        {
+          "step": "26.44",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_053",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the Nernst equation for the cell Fe | Fe²⁺(aq) || Ag⁺(aq) | Ag at 298 K, and state how its emf changes if [Ag⁺] is increased.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Cell reaction $\\ce{Fe + 2Ag+ -> Fe^2+ + 2Ag}$, $n = 2$: $E_\\text{cell} = E^\\circ_\\text{cell} - \\dfrac{0.059}{2}\\log\\dfrac{[\\ce{Fe^2+}]}{[\\ce{Ag+}]^2}$. Increasing [Ag⁺] decreases Q, so the emf increases."
+      },
+      "solution_md": "Equation with [Ag⁺]²; emf rises.",
+      "marking_scheme": [
+        {
+          "step": "Correct Nernst equation with squared term",
+          "marks": 1
+        },
+        {
+          "step": "Emf increases",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_054",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Show how the standard emf of a cell is related to its equilibrium constant at 298 K, starting from the Nernst equation.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$E_\\text{cell} = E^\\circ_\\text{cell} - \\dfrac{0.059}{n}\\log Q$. At equilibrium $E_\\text{cell} = 0$ and $Q = K$, so $0 = E^\\circ_\\text{cell} - \\dfrac{0.059}{n}\\log K$, giving $E^\\circ_\\text{cell} = \\dfrac{0.059}{n}\\log K$."
+      },
+      "solution_md": "E = 0, Q = K at equilibrium.",
+      "marking_scheme": [
+        {
+          "step": "E = 0 and Q = K at equilibrium",
+          "marks": 1
+        },
+        {
+          "step": "Final relation",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_055",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "For the cell Cu(s) | Cu²⁺(0.02 M) || Ag⁺(0.2 M) | Ag(s) at 298 K (E°: Cu²⁺/Cu +0.34 V, Ag⁺/Ag +0.80 V): (a) write the cell reaction, (b) calculate E°cell and (c) calculate Ecell.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{Cu(s) + 2Ag+(aq) -> Cu^2+(aq) + 2Ag(s)}$; $n = 2$.\n\n(b) $E^\\circ_\\text{cell} = 0.80 - 0.34 = 0.46\\ \\text{V}$.\n\n(c) $Q = \\dfrac{0.02}{(0.2)^2} = 0.5$; $\\log Q = -0.301$; $E = 0.46 - \\dfrac{0.059}{2} \\times (-0.301) = 0.46 + 0.0089 = 0.469\\ \\text{V}$."
+      },
+      "solution_md": "0.46 V; 0.469 V.",
+      "marking_scheme": [
+        {
+          "step": "(a) Cell reaction",
+          "marks": 1
+        },
+        {
+          "step": "(b) 0.46 V",
+          "marks": 1
+        },
+        {
+          "step": "(c) 0.469 V",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_056",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "For the cell Zn(s) | Zn²⁺(1 M) || Ag⁺(1 M) | Ag(s) at 298 K (E°: Zn²⁺/Zn −0.76 V, Ag⁺/Ag +0.80 V), calculate (a) E°cell, (b) ΔG° and (c) log K. (F = 96500 C mol⁻¹)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $E^\\circ_\\text{cell} = 0.80 - (-0.76) = 1.56\\ \\text{V}$.\n\n(b) $\\ce{Zn + 2Ag+ -> Zn^2+ + 2Ag}$, $n = 2$: $\\Delta G^\\circ = -2 \\times 96500 \\times 1.56 = -301080\\ \\text{J}$, i.e. $-301.1\\ \\text{kJ mol}^{-1}$.\n\n(c) $\\log K = \\dfrac{2 \\times 1.56}{0.059} \\approx 52.9$."
+      },
+      "solution_md": "1.56 V; −301.1 kJ/mol; log K = 52.9.",
+      "marking_scheme": [
+        {
+          "step": "(a) 1.56 V",
+          "marks": 1
+        },
+        {
+          "step": "(b) −301.1 kJ/mol",
+          "marks": 1
+        },
+        {
+          "step": "(c) 52.9",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_057",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A cell is made of a hydrogen electrode (H₂ at 1 bar) dipping into a solution of unknown pH, connected to the SHE. The emf at 298 K is 0.354 V. (a) Which electrode is the anode? (b) Calculate the pH of the solution. (c) Would the emf rise or fall if the solution were made more acidic?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) The electrode in the unknown solution has the lower [H⁺], so its potential is negative ($E = -0.059\\,\\text{pH}$); it is the anode.\n\n(b) $E_\\text{cell} = 0 - (-0.059\\,\\text{pH}) = 0.059\\,\\text{pH} = 0.354$, so $\\text{pH} = 6.0$.\n\n(c) A more acidic solution has a lower pH, so the emf would fall (towards zero at pH 0)."
+      },
+      "solution_md": "Unknown electrode anode; pH 6.0; emf falls.",
+      "marking_scheme": [
+        {
+          "step": "(a) Anode identified",
+          "marks": 1
+        },
+        {
+          "step": "(b) pH = 6.0",
+          "marks": 1
+        },
+        {
+          "step": "(c) Emf falls",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_058",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Derive the relation between the standard emf of a cell and the equilibrium constant of its reaction, starting from ΔG° = −nFE° and ΔG° = −2.303RT log K. [2]\n\n(b) For the cell Zn(s) | Zn²⁺(0.04 M) || Ni²⁺(0.4 M) | Ni(s) at 298 K (E°: Zn²⁺/Zn −0.76 V, Ni²⁺/Ni −0.25 V), calculate (i) E°cell, (ii) Ecell and (iii) ΔG° (F = 96500 C mol⁻¹). [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $-nFE^\\circ = -2.303RT\\log K$, so $E^\\circ = \\dfrac{2.303RT}{nF}\\log K$; at 298 K, $E^\\circ = \\dfrac{0.059}{n}\\log K$.\n\n(b) (i) $E^\\circ_\\text{cell} = -0.25 - (-0.76) = 0.51\\ \\text{V}$. (ii) $n = 2$; $Q = 0.04 \\div 0.4 = 0.1$; $E = 0.51 - \\dfrac{0.059}{2}\\log 0.1 = 0.51 + 0.0295 = 0.5395\\ \\text{V}$. (iii) $\\Delta G^\\circ = -2 \\times 96500 \\times 0.51 = -98430\\ \\text{J} = -98.43\\ \\text{kJ mol}^{-1}$."
+      },
+      "solution_md": "Derivation; 0.51 V; 0.540 V; −98.43 kJ/mol.",
+      "marking_scheme": [
+        {
+          "step": "(a) Derivation",
+          "marks": 2
+        },
+        {
+          "step": "(b)(i) 0.51 V",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii) 0.540 V",
+          "marks": 1
+        },
+        {
+          "step": "(b)(iii) −98.43 kJ/mol",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_059",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What is the electrochemical series? How does it help to predict whether a metal will liberate hydrogen from a dilute acid? [2]\n\n(b) Given E° (V): Ag⁺/Ag +0.80, Cu²⁺/Cu +0.34, Fe²⁺/Fe −0.44, Mg²⁺/Mg −2.37: (i) which metal is the strongest reducing agent? (ii) Which pair of electrodes gives a cell of the highest standard emf, and what is its value? (iii) Will copper displace silver from silver nitrate solution? Justify. [3]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) The arrangement of electrodes (half-cells) in order of their standard reduction potentials. A metal with a negative E° is a stronger reducing agent than hydrogen and reduces H⁺ to H₂, so it liberates hydrogen from dilute acids; a metal with a positive E° does not. (b) (i) Magnesium (lowest E°). (ii) Mg and Ag: E°cell = 0.80 − (−2.37) = 3.17 V. (iii) Yes: Cu + 2Ag⁺ → Cu²⁺ + 2Ag has E°cell = 0.80 − 0.34 = +0.46 V, which is positive, so copper displaces silver."
+      },
+      "solution_md": "Series; Mg; 3.17 V; yes (+0.46 V).",
+      "marking_scheme": [
+        {
+          "step": "(a) Definition",
+          "marks": 1
+        },
+        {
+          "step": "(a) Use for H₂ liberation",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i) Mg",
+          "marks": 1
+        },
+        {
+          "step": "(b)(ii) Mg–Ag, 3.17 V",
+          "marks": 1
+        },
+        {
+          "step": "(b)(iii) Yes with +0.46 V",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t04"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch03_060",
+      "unit": "isc-12-chemistry-ch03",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) With the help of a labelled diagram, describe the construction and working of a Daniell cell. Write the reactions at each electrode and the cell notation. [3]\n\n(b) Explain what happens to the emf of a Daniell cell as it is used, with reference to the Nernst equation. [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) A zinc rod dips into ZnSO₄ solution and a copper rod into CuSO₄ solution in separate beakers; the solutions are joined by a salt bridge and the rods by a wire through a voltmeter. Anode: $\\ce{Zn -> Zn^2+ + 2e-}$; cathode: $\\ce{Cu^2+ + 2e- -> Cu}$; electrons flow from Zn to Cu through the wire. Notation: $\\ce{Zn(s) | Zn^2+(aq) || Cu^2+(aq) | Cu(s)}$; $E^\\circ = 1.10\\ \\text{V}$.\n\n(b) $E = 1.10 - \\dfrac{0.059}{2}\\log\\dfrac{[\\ce{Zn^2+}]}{[\\ce{Cu^2+}]}$. As the cell works, [Zn²⁺] rises and [Cu²⁺] falls, so Q increases and the emf falls, reaching zero when the reaction reaches equilibrium."
+      },
+      "solution_md": "Construction and reactions; emf falls as Q rises.",
+      "marking_scheme": [
+        {
+          "step": "(a) Diagram/construction",
+          "marks": 1
+        },
+        {
+          "step": "(a) Electrode reactions",
+          "marks": 1
+        },
+        {
+          "step": "(a) Notation",
+          "marks": 1
+        },
+        {
+          "step": "(b) Nernst equation and Q",
+          "marks": 1
+        },
+        {
+          "step": "(b) Emf falls to zero",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch03-t01",
+        "isc-12-chemistry-ch03-t05"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "220 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "4 SVG visuals (2 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "30 slides, 13–77 words (mean 55), no symbols, formulae or unit abbreviations",
+      "resolve": "5/5 scripted re-solve checks pass",
+      "chemistry_facts": "Standard reduction potentials, SHE construction and limitations, cell notation, Nernst, ΔG° and K relations and every numerical checked against the ISC 2027 syllabus (Unit 2) — see README \"Verifier pass\"",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-10-30: every question and every internal-choice alternative re-solved from its stem by the author; every numerical re-computed by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
