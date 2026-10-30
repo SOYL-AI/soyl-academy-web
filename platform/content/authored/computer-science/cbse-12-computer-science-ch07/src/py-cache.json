@@ -1,0 +1,78 @@
+{
+ "00d501399fc8d0907b66": {
+  "out": "{\"cols\": [\"AdmNo\", \"Name\", \"Class\", \"LibCard\"], \"rows\": [[2202, \"Kabir Das\", \"12A\", \"LC-131\"], [2204, \"Kabir Das\", \"12B\", \"LC-142\"]]}",
+  "err": ""
+ },
+ "04b3cf941765eaa7db85": {
+  "out": "{\"cols\": [\"ItemCode\", \"IName\", \"Price\", \"Qty\", \"SupCode\", \"SupCode\", \"SName\", \"City\", \"LicenceNo\"], \"rows\": [[\"I01\", \"Rice 5 kg\", 320, 40, \"S1\", \"S1\", \"Kaveri Foods\", \"Mysuru\", \"FL-2207\"], [\"I02\", \"Tea 250 g\", 145, 25, \"S2\", \"S2\", \"Tapti Traders\", \"Surat\", \"FL-3118\"], [\"I03\", \"Jaggery 1 kg\", 90, 60, \"S1\", \"S1\", \"Kaveri Foods\", \"Mysuru\", \"FL-2207\"], [\"I04\", \"Lentils 1 kg\", 135, 35, \"S3\", \"S3\", \"Ganga Agro\", \"Patna\", \"FL-1442\"], [\"I05\", \"Salt 1 kg\", 28, 80, \"S2\", \"S2\", \"Tapti Traders\", \"Surat\", \"FL-3118\"], [\"I06\", \"Ragi flour 1 kg\", 75, 30, \"S1\", \"S1\", \"Kaveri Foods\", \"Mysuru\", \"FL-2207\"]]}",
+  "err": ""
+ },
+ "0ef01d8b0c29933f81bf": {
+  "out": "",
+  "err": "sqlite3.IntegrityError: FOREIGN KEY constraint failed"
+ },
+ "2694504c2c4d37264a1f": {
+  "out": "{\"cols\": [\"PID\", \"PName\", \"Age\", \"DocID\"], \"rows\": [[\"P101\", \"Ramesh Gowda\", 58, \"D1\"], [\"P102\", \"Sana Mirza\", 9, \"D3\"], [\"P103\", \"Joseph Kurian\", 41, \"D2\"], [\"P104\", \"Pooja Nair\", 7, \"D3\"], [\"P105\", \"Harjit Singh\", 63, \"D1\"]]}",
+  "err": ""
+ },
+ "2b4d56635d089c3b6ab5": {
+  "out": "{\"cols\": [\"ItemCode\", \"IName\", \"Price\", \"Qty\", \"SupCode\", \"SupCode\", \"SName\", \"City\", \"LicenceNo\"], \"rows\": [[\"I01\", \"Rice 5 kg\", 320, 40, \"S1\", \"S1\", \"Kaveri Foods\", \"Mysuru\", \"FL-2207\"], [\"I01\", \"Rice 5 kg\", 320, 40, \"S1\", \"S2\", \"Tapti Traders\", \"Surat\", \"FL-3118\"], [\"I01\", \"Rice 5 kg\", 320, 40, \"S1\", \"S3\", \"Ganga Agro\", \"Patna\", \"FL-1442\"], [\"I02\", \"Tea 250 g\", 145, 25, \"S2\", \"S1\", \"Kaveri Foods\", \"Mysuru\", \"FL-2207\"], [\"I02\", \"Tea 250 g\", 145, 25, \"S2\", \"S2\", \"Tapti Traders\", \"Surat\", \"FL-3118\"], [\"I02\", \"Tea 250 g\", 145, 25, \"S2\", \"S3\", \"Ganga Agro\", \"Patna\", \"FL-1442\"], [\"I03\", \"Jaggery 1 kg\", 90, 60, \"S1\", \"S1\", \"Kaveri Foods\", \"Mysuru\", \"FL-2207\"], [\"I03\", \"Jaggery 1 kg\", 90, 60, \"S1\", \"S2\", \"Tapti Traders\", \"Surat\", \"FL-3118\"], [\"I03\", \"Jaggery 1 kg\", 90, 60, \"S1\", \"S3\", \"Ganga Agro\", \"Patna\", \"FL-1442\"], [\"I04\", \"Lentils 1 kg\", 135, 35, \"S3\", \"S1\", \"Kaveri Foods\", \"Mysuru\", \"FL-2207\"], [\"I04\", \"Lentils 1 kg\", 135, 35, \"S3\", \"S2\", \"Tapti Traders\", \"Surat\", \"FL-3118\"], [\"I04\", \"Lentils 1 kg\", 135, 35, \"S3\", \"S3\", \"Ganga Agro\", \"Patna\", \"FL-1442\"], [\"I05\", \"Salt 1 kg\", 28, 80, \"S2\", \"S1\", \"Kaveri Foods\", \"Mysuru\", \"FL-2207\"], [\"I05\", \"Salt 1 kg\", 28, 80, \"S2\", \"S2\", \"Tapti Traders\", \"Surat\", \"FL-3118\"], [\"I05\", \"Salt 1 kg\", 28, 80, \"S2\", \"S3\", \"Ganga Agro\", \"Patna\", \"FL-1442\"], [\"I06\", \"Ragi flour 1 kg\", 75, 30, \"S1\", \"S1\", \"Kaveri Foods\", \"Mysuru\", \"FL-2207\"], [\"I06\", \"Ragi flour 1 kg\", 75, 30, \"S1\", \"S2\", \"Tapti Traders\", \"Surat\", \"FL-3118\"], [\"I06\", \"Ragi flour 1 kg\", 75, 30, \"S1\", \"S3\", \"Ganga Agro\", \"Patna\", \"FL-1442\"]]}",
+  "err": ""
+ },
+ "3eb75da5a2524208dddb": {
+  "out": "",
+  "err": "sqlite3.IntegrityError: FOREIGN KEY constraint failed"
+ },
+ "4a94f7ee1a4de381ae97": {
+  "out": "{\"cols\": [\"AdmNo\", \"Name\", \"Class\", \"LibCard\"], \"rows\": [[2201, \"Ishita Rao\", \"12A\", \"LC-118\"], [2202, \"Kabir Das\", \"12A\", \"LC-131\"]]}",
+  "err": ""
+ },
+ "4b9e5c4bc0b63c7d7c7f": {
+  "out": "{\"cols\": [\"AdmNo\", \"Name\", \"Class\", \"LibCard\", \"ReceiptNo\", \"AdmNo\", \"Month\", \"Amount\"], \"rows\": [[2201, \"Ishita Rao\", \"12A\", \"LC-118\", \"R501\", 2201, \"April\", 4500], [2201, \"Ishita Rao\", \"12A\", \"LC-118\", \"R502\", 2203, \"April\", 4500], [2201, \"Ishita Rao\", \"12A\", \"LC-118\", \"R503\", 2201, \"May\", 4500], [2201, \"Ishita Rao\", \"12A\", \"LC-118\", \"R504\", 2204, \"April\", 4200], [2202, \"Kabir Das\", \"12A\", \"LC-131\", \"R501\", 2201, \"April\", 4500], [2202, \"Kabir Das\", \"12A\", \"LC-131\", \"R502\", 2203, \"April\", 4500], [2202, \"Kabir Das\", \"12A\", \"LC-131\", \"R503\", 2201, \"May\", 4500], [2202, \"Kabir Das\", \"12A\", \"LC-131\", \"R504\", 2204, \"April\", 4200], [2203, \"Meera Iyer\", \"12B\", \"LC-107\", \"R501\", 2201, \"April\", 4500], [2203, \"Meera Iyer\", \"12B\", \"LC-107\", \"R502\", 2203, \"April\", 4500], [2203, \"Meera Iyer\", \"12B\", \"LC-107\", \"R503\", 2201, \"May\", 4500], [2203, \"Meera Iyer\", \"12B\", \"LC-107\", \"R504\", 2204, \"April\", 4200], [2204, \"Kabir Das\", \"12B\", \"LC-142\", \"R501\", 2201, \"April\", 4500], [2204, \"Kabir Das\", \"12B\", \"LC-142\", \"R502\", 2203, \"April\", 4500], [2204, \"Kabir Das\", \"12B\", \"LC-142\", \"R503\", 2201, \"May\", 4500], [2204, \"Kabir Das\", \"12B\", \"LC-142\", \"R504\", 2204, \"April\", 4200], [2205, \"Tanvi Shah\", \"12C\", \"LC-125\", \"R501\", 2201, \"April\", 4500], [2205, \"Tanvi Shah\", \"12C\", \"LC-125\", \"R502\", 2203, \"April\", 4500], [2205, \"Tanvi Shah\", \"12C\", \"LC-125\", \"R503\", 2201, \"May\", 4500], [2205, \"Tanvi Shah\", \"12C\", \"LC-125\", \"R504\", 2204, \"April\", 4200]]}",
+  "err": ""
+ },
+ "612d3c1e0d432198904e": {
+  "out": "",
+  "err": "sqlite3.IntegrityError: UNIQUE constraint failed: STUDENT.LibCard"
+ },
+ "62f259d6804ee6b60859": {
+  "out": "",
+  "err": "sqlite3.IntegrityError: UNIQUE constraint failed: STUDENT.AdmNo"
+ },
+ "65ed780bafef8536ce2e": {
+  "out": "{\"cols\": [\"SupCode\", \"SName\", \"City\", \"LicenceNo\"], \"rows\": [[\"S1\", \"Kaveri Foods\", \"Mysuru\", \"FL-2207\"], [\"S2\", \"Tapti Traders\", \"Surat\", \"FL-3118\"], [\"S3\", \"Ganga Agro\", \"Patna\", \"FL-1442\"]]}",
+  "err": ""
+ },
+ "72e252f0e6de45f98043": {
+  "out": "{\"cols\": [\"BookID\", \"Title\", \"AccNo\", \"Copies\"], \"rows\": [[\"B11\", \"Monsoon Diaries\", 7041, 3], [\"B12\", \"The Clockmaker\", 7042, 1], [\"B13\", \"Stars over Leh\", 7043, 2]]}",
+  "err": ""
+ },
+ "790c92f8b64834efa6f9": {
+  "out": "{\"cols\": [\"ReceiptNo\", \"AdmNo\", \"Month\", \"Amount\"], \"rows\": [[\"R501\", 2201, \"April\", 4500], [\"R502\", 2203, \"April\", 4500], [\"R503\", 2201, \"May\", 4500], [\"R504\", 2204, \"April\", 4200]]}",
+  "err": ""
+ },
+ "c6d8839bd169ec4ad621": {
+  "out": "{\"cols\": [\"ItemCode\", \"IName\", \"Price\", \"Qty\", \"SupCode\", \"Shelf\"], \"rows\": [[\"I01\", \"Rice 5 kg\", 320, 40, \"S1\", null], [\"I02\", \"Tea 250 g\", 145, 25, \"S2\", null], [\"I03\", \"Jaggery 1 kg\", 90, 60, \"S1\", null], [\"I04\", \"Lentils 1 kg\", 135, 35, \"S3\", null], [\"I05\", \"Salt 1 kg\", 28, 80, \"S2\", null], [\"I06\", \"Ragi flour 1 kg\", 75, 30, \"S1\", null], [\"I07\", \"Poha 500 g\", 48, 50, \"S3\", null], [\"I08\", \"Honey 250 g\", 160, 12, \"S2\", null]]}",
+  "err": ""
+ },
+ "d155e84e43db9f6fe061": {
+  "out": "",
+  "err": "sqlite3.IntegrityError: NOT NULL constraint failed: SUPPLIER.LicenceNo"
+ },
+ "d7c5bddc53c9181c539b": {
+  "out": "{\"cols\": [\"DocID\", \"DName\", \"Dept\", \"RegNo\", \"PID\", \"PName\", \"Age\", \"DocID\"], \"rows\": [[\"D1\", \"Dr Anjali Menon\", \"Cardiology\", \"REG-4471\", \"P101\", \"Ramesh Gowda\", 58, \"D1\"], [\"D1\", \"Dr Anjali Menon\", \"Cardiology\", \"REG-4471\", \"P102\", \"Sana Mirza\", 9, \"D3\"], [\"D1\", \"Dr Anjali Menon\", \"Cardiology\", \"REG-4471\", \"P103\", \"Joseph Kurian\", 41, \"D2\"], [\"D1\", \"Dr Anjali Menon\", \"Cardiology\", \"REG-4471\", \"P104\", \"Pooja Nair\", 7, \"D3\"], [\"D1\", \"Dr Anjali Menon\", \"Cardiology\", \"REG-4471\", \"P105\", \"Harjit Singh\", 63, \"D1\"], [\"D2\", \"Dr Farhan Qureshi\", \"Orthopaedics\", \"REG-3902\", \"P101\", \"Ramesh Gowda\", 58, \"D1\"], [\"D2\", \"Dr Farhan Qureshi\", \"Orthopaedics\", \"REG-3902\", \"P102\", \"Sana Mirza\", 9, \"D3\"], [\"D2\", \"Dr Farhan Qureshi\", \"Orthopaedics\", \"REG-3902\", \"P103\", \"Joseph Kurian\", 41, \"D2\"], [\"D2\", \"Dr Farhan Qureshi\", \"Orthopaedics\", \"REG-3902\", \"P104\", \"Pooja Nair\", 7, \"D3\"], [\"D2\", \"Dr Farhan Qureshi\", \"Orthopaedics\", \"REG-3902\", \"P105\", \"Harjit Singh\", 63, \"D1\"], [\"D3\", \"Dr Lata Joshi\", \"Paediatrics\", \"REG-5136\", \"P101\", \"Ramesh Gowda\", 58, \"D1\"], [\"D3\", \"Dr Lata Joshi\", \"Paediatrics\", \"REG-5136\", \"P102\", \"Sana Mirza\", 9, \"D3\"], [\"D3\", \"Dr Lata Joshi\", \"Paediatrics\", \"REG-5136\", \"P103\", \"Joseph Kurian\", 41, \"D2\"], [\"D3\", \"Dr Lata Joshi\", \"Paediatrics\", \"REG-5136\", \"P104\", \"Pooja Nair\", 7, \"D3\"], [\"D3\", \"Dr Lata Joshi\", \"Paediatrics\", \"REG-5136\", \"P105\", \"Harjit Singh\", 63, \"D1\"]]}",
+  "err": ""
+ },
+ "db37b803113d3dee6736": {
+  "out": "{\"cols\": [\"DocID\", \"DName\", \"Dept\", \"RegNo\"], \"rows\": [[\"D1\", \"Dr Anjali Menon\", \"Cardiology\", \"REG-4471\"], [\"D2\", \"Dr Farhan Qureshi\", \"Orthopaedics\", \"REG-3902\"], [\"D3\", \"Dr Lata Joshi\", \"Paediatrics\", \"REG-5136\"]]}",
+  "err": ""
+ },
+ "dd7c6a8f7a5ac718284a": {
+  "out": "{\"cols\": [\"ItemCode\", \"IName\", \"Price\", \"Qty\", \"SupCode\"], \"rows\": [[\"I01\", \"Rice 5 kg\", 320, 40, \"S1\"], [\"I02\", \"Tea 250 g\", 145, 25, \"S2\"], [\"I03\", \"Jaggery 1 kg\", 90, 60, \"S1\"], [\"I04\", \"Lentils 1 kg\", 135, 35, \"S3\"], [\"I05\", \"Salt 1 kg\", 28, 80, \"S2\"], [\"I06\", \"Ragi flour 1 kg\", 75, 30, \"S1\"]]}",
+  "err": ""
+ },
+ "e58ea00cd9b84bf695a1": {
+  "out": "{\"cols\": [\"AdmNo\", \"Name\", \"Class\", \"LibCard\"], \"rows\": [[2201, \"Ishita Rao\", \"12A\", \"LC-118\"], [2202, \"Kabir Das\", \"12A\", \"LC-131\"], [2203, \"Meera Iyer\", \"12B\", \"LC-107\"], [2204, \"Kabir Das\", \"12B\", \"LC-142\"], [2205, \"Tanvi Shah\", \"12C\", \"LC-125\"]]}",
+  "err": ""
+ }
+}
