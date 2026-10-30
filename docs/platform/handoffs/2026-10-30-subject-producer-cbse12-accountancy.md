@@ -27,7 +27,7 @@ Tests use the accountancy blueprint override `cbse-12-accountancy-chapter-test-s
 | 10 | Accounting Ratios | 19 + 17 | 26 | 7 | 30 | 69 (149) | 57% | 19db578 |
 | 11 | Cash Flow Statement | 19 + 21 | 30 | 7 | 30 | 65 (143) | 57% | d145497 |
 | 12 | Computerised Accounting (alternative to Part B) | 23 + 19 | 32 | 7 | 30 | 67 (145) | 58% | 76d405d |
-| | **Total** | **24 decks, 482 slides** | | | **363** | **838 (1,805)** | | |
+| | **Total** | **24 decks, 477 slides** | | | **363** | **838 (1,805)** | | |
 
 Each chapter: 2 decks with 3–7 worked examples each, 4 objective check slides per deck, summary and exam-tips slides, a visual at least every 3 slides (journal/ledger/statement tables, flows, SVG charts drawn from the figures); narration ≤ 83 words, amounts spoken in words, no digits, symbols or abbreviations; notes with key terms, formats and visuals plus exam tips (mark split, common mistakes); questions across mcq, assertion-reason, true-false, fill-blank, match, numerical, short (3), long (4 and 6), difficulty 1–5.
 
