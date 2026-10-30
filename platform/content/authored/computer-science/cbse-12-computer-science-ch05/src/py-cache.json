@@ -1,0 +1,310 @@
+{
+ "021b29794279d22b23d2": {
+  "out": "Loaded: ['P102', 'P103', 'P104']\nUnload first: P104",
+  "err": ""
+ },
+ "02d1965a2b36f7d0d122": {
+  "out": "Overflow: T5 not added\nT4 T3\n['T1', 'T2']\n2",
+  "err": ""
+ },
+ "08330eede0b195660ed2": {
+  "out": "IHCOK",
+  "err": ""
+ },
+ "0b6accea604bc0be7e8f": {
+  "out": "True\nFalse\nFalse\nFalse",
+  "err": ""
+ },
+ "0caee09394daf2e956ce": {
+  "out": "18 7 0",
+  "err": ""
+ },
+ "0e578d710dee1e89d7f7": {
+  "out": "results ['home', 'timetable']\nNo history",
+  "err": ""
+ },
+ "1561bc3b9ed917a7aa9c": {
+  "out": "['Shimla', 'Madurai']\nMadurai Shimla | None left",
+  "err": ""
+ },
+ "1d8571b5a63111e0c5bb": {
+  "out": "25 <- top\n40\n15\nStack empty",
+  "err": ""
+ },
+ "20c46c05aaecaeb75116": {
+  "out": "[{\"label\": \"push home\", \"stack\": [\"home\"], \"got\": null}, {\"label\": \"push maths\", \"stack\": [\"home\", \"maths\"], \"got\": null}, {\"label\": \"push videos\", \"stack\": [\"home\", \"maths\", \"videos\"], \"got\": null}, {\"label\": \"push quiz\", \"stack\": [\"home\", \"maths\", \"videos\", \"quiz\"], \"got\": null}, {\"label\": \"pop\", \"stack\": [\"home\", \"maths\", \"videos\"], \"got\": \"quiz\"}, {\"label\": \"peek\", \"stack\": [\"home\", \"maths\", \"videos\"], \"got\": \"videos\"}]",
+  "err": ""
+ },
+ "278d9ddb4090ad66a51e": {
+  "out": "40 30 20 10 ",
+  "err": ""
+ },
+ "2f93693f4f425cc6455b": {
+  "out": "10011 101000",
+  "err": ""
+ },
+ "2ff7271b904d2c1a6fc9": {
+  "out": "[{\"label\": \"push A\", \"stack\": [\"A\"], \"got\": null}, {\"label\": \"push B\", \"stack\": [\"A\", \"B\"], \"got\": null}, {\"label\": \"pop\", \"stack\": [\"A\"], \"got\": \"B\"}, {\"label\": \"push C\", \"stack\": [\"A\", \"C\"], \"got\": null}, {\"label\": \"push D\", \"stack\": [\"A\", \"C\", \"D\"], \"got\": null}, {\"label\": \"pop\", \"stack\": [\"A\", \"C\"], \"got\": \"D\"}, {\"label\": \"pop\", \"stack\": [\"A\"], \"got\": \"C\"}]",
+  "err": ""
+ },
+ "3091841419d8a7a5a2a3": {
+  "out": "None Underflow\n11 11 8",
+  "err": ""
+ },
+ "30b376fd2ce9ce3729d4": {
+  "out": "30",
+  "err": ""
+ },
+ "34a477a0fe6a43abedad": {
+  "out": "2 2\n2 1\nFalse True",
+  "err": ""
+ },
+ "3779af83a9974a4b3a7f": {
+  "out": "10110",
+  "err": ""
+ },
+ "3a93ed858932cf7922c5": {
+  "out": "14",
+  "err": ""
+ },
+ "3e11cc285877a831591a": {
+  "out": "('clips', 3)\n2 clips [('files', 8)]",
+  "err": ""
+ },
+ "3f2e2551efba3db43c94": {
+  "out": "['S', 'T', 'A', 'C'] K 4",
+  "err": ""
+ },
+ "4090e9f18e7a539109f7": {
+  "out": "2",
+  "err": ""
+ },
+ "4334843eeec1ef1012a7": {
+  "out": "SCHOOL RAIN KITE \nUnderflow",
+  "err": ""
+ },
+ "481aafc3ebdb36a7ed69": {
+  "out": "[(a + b) * {c - d}] is balanced\n{x + (y * [z - 1)]} is not balanced",
+  "err": ""
+ },
+ "496f5871569443a644f9": {
+  "out": "Overflow: T5 not added\nT4 T3\n['T1', 'T2']",
+  "err": ""
+ },
+ "4c70fd5a8d2f078f4af2": {
+  "out": "",
+  "err": "SyntaxError: expected ':'"
+ },
+ "51bf30f3c91433fbeba4": {
+  "out": "'Good' 1",
+  "err": ""
+ },
+ "580d913cacb4fc54aa5a": {
+  "out": "",
+  "err": "IndexError: pop from empty list"
+ },
+ "5dc1ad6f854426031a60": {
+  "out": "[{\"label\": \"push 10\", \"stack\": [10], \"got\": null}, {\"label\": \"push 20\", \"stack\": [10, 20], \"got\": null}, {\"label\": \"push 30\", \"stack\": [10, 20, 30], \"got\": null}, {\"label\": \"pop\", \"stack\": [10, 20], \"got\": 30}, {\"label\": \"push 40\", \"stack\": [10, 20, 40], \"got\": null}, {\"label\": \"peek\", \"stack\": [10, 20, 40], \"got\": 40}]",
+  "err": ""
+ },
+ "6004b60fe1a3c0df0f8c": {
+  "out": "Dev ['Anu', 'Chitra']",
+  "err": ""
+ },
+ "60e115464a74d79a493b": {
+  "out": "[[\"4\", \"push\", \"[4]\"], [\"5\", \"push\", \"[4, 5]\"], [\"+\", \"pop 5 and 4, push 9\", \"[9]\"], [\"2\", \"push\", \"[9, 2]\"], [\"*\", \"pop 2 and 9, push 18\", \"[18]\"]]",
+  "err": ""
+ },
+ "643a6332a6ff94410adb": {
+  "out": "[[\"{\", \"push\", \"{\"], [\"[\", \"push\", \"{[\"], [\"(\", \"push\", \"{[(\"], [\")\", \"pop ( matches\", \"{[\"], [\"]\", \"pop [ matches\", \"{\"], [\"}\", \"pop { matches\", \"empty\"], [\"end\", \"stack empty\", \"-\"]]",
+  "err": ""
+ },
+ "64487aeddfaf20f64488": {
+  "out": "True\nFalse\nFalse",
+  "err": ""
+ },
+ "69218cfa22d17e656868": {
+  "out": "1 Push 2 Pop 3 Peek 4 Show 5 Exit: Value: 1 Push 2 Pop 3 Peek 4 Show 5 Exit: Value: 1 Push 2 Pop 3 Peek 4 Show 5 Exit: [27, 14]\n1 Push 2 Pop 3 Peek 4 Show 5 Exit: Popped 27\n1 Push 2 Pop 3 Peek 4 Show 5 Exit: Top 14\n1 Push 2 Pop 3 Peek 4 Show 5 Exit: Popped 14\n1 Push 2 Pop 3 Peek 4 Show 5 Exit: Underflow\n1 Push 2 Pop 3 Peek 4 Show 5 Exit: ",
+  "err": ""
+ },
+ "6b6e5d3e0b90b4781aef": {
+  "out": "1 [8, 5]",
+  "err": ""
+ },
+ "6e535c0dc1b0b23f5d2e": {
+  "out": "True False",
+  "err": ""
+ },
+ "6f250d4ca3919a34173f": {
+  "out": "6\n4\n2",
+  "err": ""
+ },
+ "6f5df9548c8433abe4a7": {
+  "out": "[5, 12]",
+  "err": ""
+ },
+ "764a7063eda6e3204be2": {
+  "out": "results ['home', 'timetable']",
+  "err": ""
+ },
+ "772119ea9ca2732c64ab": {
+  "out": "Loaded: ['P102', 'P103', 'P104']\nUnload first: P104\nP104\nP103\nP102\nVan empty",
+  "err": ""
+ },
+ "7d4b4d25c923fc7b2601": {
+  "out": "['A', 'B', 'D']",
+  "err": ""
+ },
+ "7e1ac187c7d909509732": {
+  "out": "['circle', 'square', 'arrow']\narrow 3",
+  "err": ""
+ },
+ "818f37aed9469680bc8e": {
+  "out": "Night Market\nPaper Boats\nCloud Atlas of Goa\nBooks displayed: 3",
+  "err": ""
+ },
+ "8425a92533675a570ccb": {
+  "out": "ENUP 0",
+  "err": ""
+ },
+ "88dbcb87cd7ffa6d6cdd": {
+  "out": "Omar\nIshita\nTanvi\nStack Empty",
+  "err": ""
+ },
+ "8919d0d42154294a3d68": {
+  "out": "",
+  "err": "IndexError: pop from empty list"
+ },
+ "8f1d38159f1700eea083": {
+  "out": "[] [4, 3, 2, 1]\n1 2",
+  "err": ""
+ },
+ "9015998f8061415839f7": {
+  "out": "",
+  "err": "AttributeError: 'list' object has no attribute 'push'"
+ },
+ "93fddd07659ede2242e4": {
+  "out": "Underflow",
+  "err": ""
+ },
+ "a1f600de09d316730246": {
+  "out": "5\n8\n3\nStack is empty",
+  "err": ""
+ },
+ "a396bd5ac6c825ccb124": {
+  "out": "[1, 1, 0, 1]\n1011",
+  "err": ""
+ },
+ "a43036064d2d19fae86a": {
+  "out": "main starts\n plot_cost starts\n  area starts\n plot_cost ends\ncost 16200",
+  "err": ""
+ },
+ "a90fa5166e8e1ff8fe3a": {
+  "out": "[[\"2\", \"5\"], [\"1\", \"8\"], [\"0\", \"3\"]]",
+  "err": ""
+ },
+ "a976e628436a913f2849": {
+  "out": "[25]",
+  "err": ""
+ },
+ "ad79a2282158c8ff007f": {
+  "out": "30 31 7 [12]",
+  "err": ""
+ },
+ "af05b2c2d44c9420970f": {
+  "out": "[14]",
+  "err": ""
+ },
+ "b051e4fb75c47a7002d4": {
+  "out": "False",
+  "err": ""
+ },
+ "b18473013120cb89f48a": {
+  "out": "[17]",
+  "err": ""
+ },
+ "b502d2c6fb7c5252af47": {
+  "out": "[5, 3]",
+  "err": ""
+ },
+ "b8aab9b1a1f1e7268c2f": {
+  "out": "Underflow",
+  "err": ""
+ },
+ "c17a9c6bec623f412818": {
+  "out": "2 2",
+  "err": ""
+ },
+ "c33d9a481cfa72d1fa72": {
+  "out": "[{\"label\": \"push G\", \"stack\": [\"G\"], \"got\": null}, {\"label\": \"push O\", \"stack\": [\"G\", \"O\"], \"got\": null}, {\"label\": \"push A\", \"stack\": [\"G\", \"O\", \"A\"], \"got\": null}, {\"label\": \"pop\", \"stack\": [\"G\", \"O\"], \"got\": \"A\"}, {\"label\": \"pop\", \"stack\": [\"G\"], \"got\": \"O\"}, {\"label\": \"pop\", \"stack\": [], \"got\": \"G\"}]",
+  "err": ""
+ },
+ "c36c82ba47134549c392": {
+  "out": "[1, 0, 1, 1]\n1101",
+  "err": ""
+ },
+ "c751f08b570c38d30341": {
+  "out": "[[\"22\", \"0\", \"[0]\"], [\"11\", \"1\", \"[0, 1]\"], [\"5\", \"1\", \"[0, 1, 1]\"], [\"2\", \"0\", \"[0, 1, 1, 0]\"], [\"1\", \"1\", \"[0, 1, 1, 0, 1]\"]]",
+  "err": ""
+ },
+ "c819a26ff32ae792baba": {
+  "out": "18",
+  "err": ""
+ },
+ "cee8a85f06d01c855dd3": {
+  "out": "enter report\nenter total\nenter tax\nleave tax\nleave total\nleave report",
+  "err": ""
+ },
+ "d1c1db7288eeca3b62fb": {
+  "out": "[[\"Shimla\", \"yes\", \"yes\", \"yes\"], [\"Ooty\", \"yes\", \"no\", \"no\"], [\"Kohima\", \"no\", \"yes\", \"no\"], [\"Madurai\", \"yes\", \"yes\", \"yes\"], [\"Bhuj\", \"yes\", \"no\", \"no\"]]",
+  "err": ""
+ },
+ "da1714bb38101e01e97b": {
+  "out": "16 None",
+  "err": ""
+ },
+ "da6c6708fd5e487dacdd": {
+  "out": "",
+  "err": "AttributeError: 'list' object has no attribute 'push'"
+ },
+ "dcfe8b2c9a84027428ec": {
+  "out": "6202 urusyM",
+  "err": ""
+ },
+ "e4bad12d7fc1fdd2bd29": {
+  "out": "[[\"(\", \"push\", \"(\"], [\"[\", \"push\", \"([\"], [\")\", \"pop [: mismatch, stop\", \"(\"]]",
+  "err": ""
+ },
+ "e50fd0df5e84800327e0": {
+  "out": "6 # 22 # 14 # \nEmpty: True",
+  "err": ""
+ },
+ "e8a0c39417b4b69aafcc": {
+  "out": "3 1 2\n1 2 3|1 3 2|2 1 3|2 3 1|3 2 1",
+  "err": ""
+ },
+ "eaf2a6741b7de11184fd": {
+  "out": "[3, 6, 9, 3]",
+  "err": ""
+ },
+ "eb23cc80e89527dfd5b1": {
+  "out": "[[\"push 5\", \"[5]\", \"-\"], [\"push 12\", \"[5, 12]\", \"-\"], [\"pop\", \"[5]\", \"12\"], [\"push 7\", \"[5, 7]\", \"-\"], [\"push 3\", \"[5, 7, 3]\", \"-\"], [\"pop\", \"[5, 7]\", \"3\"]]",
+  "err": ""
+ },
+ "f04b8d85e964a08af7e3": {
+  "out": "news",
+  "err": ""
+ },
+ "f0c9e58cdba7f2ee31b5": {
+  "out": "Diary Diary Atlas Underflow\nTrue",
+  "err": ""
+ },
+ "fe65b9bbc4b24f48fc5e": {
+  "out": "",
+  "err": "IndexError: pop from empty list"
+ },
+ "ff7ab02bdc95a78522d8": {
+  "out": "",
+  "err": "AttributeError: 'list' object has no attribute 'push'"
+ }
+}
