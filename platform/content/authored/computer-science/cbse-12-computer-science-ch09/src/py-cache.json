@@ -1,0 +1,246 @@
+{
+ "01532c740d0b285d03e0": {
+  "out": "Item code: Item name: Price: Quantity: \nSaved: (106, 'Eraser', 10, 50)",
+  "err": ""
+ },
+ "02870121241cb48f8579": {
+  "out": "SELECT iname FROM item WHERE price < 50 ORDER BY price\n[('Gel pen',), ('Highlighter',)]",
+  "err": ""
+ },
+ "0386078b93748bd8330e": {
+  "out": "(2,)",
+  "err": ""
+ },
+ "06966fa04b623ada1e3f": {
+  "out": "",
+  "err": "sqlite3.OperationalError: no such column: Tagore"
+ },
+ "0ae3c117a8eff1798ce9": {
+  "out": "Roll number: Name: Chetan\nSection: 12A Fee: 4800",
+  "err": ""
+ },
+ "0f1d94882c944a762f76": {
+  "out": "('Eraser',)",
+  "err": ""
+ },
+ "143cb21326fd91c6a7a8": {
+  "out": "[('Notebook',), ('Gel pen',)]",
+  "err": ""
+ },
+ "16d2675242071e74d2f9": {
+  "out": "[(12,), (15,), (11,)]\n[(14,), (13,)]",
+  "err": ""
+ },
+ "1dc98c86a08a0634750e": {
+  "out": "2 ['Farah', 'Meera', 'Rohan']",
+  "err": ""
+ },
+ "219c78a9bc9f7b5366cb": {
+  "out": "",
+  "err": ""
+ },
+ "228890f7dee3c68e6354": {
+  "out": "2",
+  "err": ""
+ },
+ "23d91d429d7909a37e48": {
+  "out": "",
+  "err": "AttributeError: 'builtin_function_or_method' object has no attribute 'execute'"
+ },
+ "24f11054f915c3660cc8": {
+  "out": "('Bhavna',)\n('Eshan',)\nNone",
+  "err": ""
+ },
+ "2a3952b14ba44795fe96": {
+  "out": "SELECT iname, price FROM item WHERE price <= 60 ORDER BY price\n3 items",
+  "err": ""
+ },
+ "2d4d82de0f720d88c9cc": {
+  "out": "[(1,), (2,)]\n(3,)\n[(4,), (5,)]",
+  "err": ""
+ },
+ "3127b0679b5d4d8a8978": {
+  "out": "Meera 34\nFarah 61\nTotal: 2",
+  "err": ""
+ },
+ "3944b6be76130f162cd6": {
+  "out": "Could not save: roll 2 already exists",
+  "err": ""
+ },
+ "3bfad627b1005bf9539f": {
+  "out": "Stock value: 6720",
+  "err": ""
+ },
+ "3c175776bee29efe8e18": {
+  "out": "Rows now: 5",
+  "err": ""
+ },
+ "3cbb72845f92fca57ceb": {
+  "out": "('Gel pen', 15)\n('Highlighter', 35)\n('Notebook', 60)",
+  "err": ""
+ },
+ "41d0c024d7f7cb42a138": {
+  "out": "Deleted: 1\nItems: 5",
+  "err": ""
+ },
+ "458c375210c13a2f53fc": {
+  "out": "Patient ID: Name: Department: Age: Saved 1 record\n(12, 'Kabir', 'ENT', 8)\n(15, 'Sana', 'ENT', 27)\n(17, 'Ishaan', 'ENT', 19)",
+  "err": ""
+ },
+ "4689a8c36a34ca7f4a76": {
+  "out": "Meera\nFarah\nRohan",
+  "err": ""
+ },
+ "527e9a9ba3782ba4bb02": {
+  "out": "Aarav 100\nBhavna 400\nDia 400",
+  "err": ""
+ },
+ "53ec09111aa8e496fc63": {
+  "out": "3 Chetan\n6 Gauri",
+  "err": ""
+ },
+ "5514b11deab23051c654": {
+  "out": "104 Highlighter 0\n105 Stapler 8\n103 Geometry box 12\nItems: 3",
+  "err": ""
+ },
+ "6027bbf45cc313c939f5": {
+  "out": "Connected to clinic",
+  "err": ""
+ },
+ "67fd66dfa226146707c3": {
+  "out": "1",
+  "err": ""
+ },
+ "6fb7fa07615eebf7747d": {
+  "out": "Range: 135",
+  "err": ""
+ },
+ "7090c76e25bc1e24c39e": {
+  "out": "Geometry box : reorder\nHighlighter : out of stock\nStapler : reorder",
+  "err": ""
+ },
+ "731abf6160bb889fd419": {
+  "out": "Rows updated: 2\nAarav 4750\nChetan 5050",
+  "err": ""
+ },
+ "790d854817b2267b1d61": {
+  "out": "[('Aarav',), ('Dia',)]",
+  "err": ""
+ },
+ "839ba1bbbb58b2e36d1c": {
+  "out": "3",
+  "err": ""
+ },
+ "8694e2358fb5f89ca971": {
+  "out": "Prices changed: 3\nGeometry box   160\nStapler        100\nNotebook       70\nHighlighter    35\nGel pen        15",
+  "err": ""
+ },
+ "8b143a916c0b7b78cc07": {
+  "out": "2",
+  "err": ""
+ },
+ "8dc7d53d199bcce01941": {
+  "out": "",
+  "err": "sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 1, and there are 6 supplied."
+ },
+ "915bb29f371385681a56": {
+  "out": "[(1,), (2,)]\n(3,)",
+  "err": ""
+ },
+ "96136e7776a604aa8c7e": {
+  "out": "('Chetan',)\nNone",
+  "err": ""
+ },
+ "9fdf2ede7c0e7f9f2552": {
+  "out": "('Notebook', 2400)",
+  "err": ""
+ },
+ "a1983be32825f5d594db": {
+  "out": "Section 12A has 2 student(s)\nSection 12B has 2 student(s)\nSection 12C has 1 student(s)",
+  "err": ""
+ },
+ "a5960152cd6260c581d3": {
+  "out": "Notebook 120",
+  "err": ""
+ },
+ "a63aadbbcaff097f69aa": {
+  "out": "5 Eshan R\n2 Bhavna R\n4 Dia T",
+  "err": ""
+ },
+ "ab28be4cd3c1582230ea": {
+  "out": "{\"cols\": [\"roll\", \"name\", \"sec\", \"fee\", \"house\"], \"rows\": [[1, \"Aarav\", \"12A\", 4500, \"Tagore\"], [2, \"Bhavna\", \"12B\", 4200, \"Raman\"], [3, \"Chetan\", \"12A\", 4800, \"Bose\"], [4, \"Dia\", \"12C\", 4200, \"Tagore\"], [5, \"Eshan\", \"12B\", 5000, \"Raman\"]]}",
+  "err": ""
+ },
+ "ac37f0421cc2abf72378": {
+  "out": "1",
+  "err": ""
+ },
+ "ae2055c7dd8d7a142612": {
+  "out": "Before: 5\nInserted: 1\nAfter: 6",
+  "err": ""
+ },
+ "afb950cbeb2c3101f8f6": {
+  "out": "{\"cols\": [\"icode\", \"iname\", \"price\", \"qty\"], \"rows\": [[101, \"Notebook\", 60, 40], [102, \"Gel pen\", 15, 120], [103, \"Geometry box\", 150, 12], [104, \"Highlighter\", 35, 0], [105, \"Stapler\", 90, 8]]}",
+  "err": ""
+ },
+ "b3d474d764b4d8d66d11": {
+  "out": "('Highlighter', 0)\nStapler needs 12 more",
+  "err": ""
+ },
+ "b602a7f31884d5fbc340": {
+  "out": "Roll number: No student with roll 9",
+  "err": ""
+ },
+ "b79542d4c3712ff1a918": {
+  "out": "[('Aarav', 4500), ('Chetan', 4800)]",
+  "err": ""
+ },
+ "baf6861389ac5a2c97d0": {
+  "out": "5 []",
+  "err": ""
+ },
+ "bda6df447b6bfd64f70d": {
+  "out": "[('Aarav', 4500), ('Dia', 4200)]\nAarav pays 4500\nDia pays 4200",
+  "err": ""
+ },
+ "c35e7c67692492595e70": {
+  "out": "ESHAN\nBHAVNA",
+  "err": ""
+ },
+ "cff228e9479aeda968e1": {
+  "out": "3 Eshan 4500",
+  "err": ""
+ },
+ "d918a4f33e379c30e549": {
+  "out": "2",
+  "err": ""
+ },
+ "dbb4e2d7e17c947d564d": {
+  "out": "Removed: ['Highlighter']\nItems left: 4",
+  "err": ""
+ },
+ "de32a94fd45943e978fa": {
+  "out": "{\"cols\": [\"pid\", \"pname\", \"dept\", \"age\"], \"rows\": [[11, \"Meera\", \"Dental\", 34], [12, \"Kabir\", \"ENT\", 8], [13, \"Farah\", \"Dental\", 61], [14, \"Rohan\", \"Ortho\", 45], [15, \"Sana\", \"ENT\", 27]]}",
+  "err": ""
+ },
+ "dffe285da14dcbb7187a": {
+  "out": "5",
+  "err": ""
+ },
+ "e3f439dde3bc25293d9d": {
+  "out": "Bose 1\nRaman 2\nTagore 2",
+  "err": ""
+ },
+ "e9328b3b032910aa9d51": {
+  "out": "SELECT name FROM student WHERE fee > 4400",
+  "err": ""
+ },
+ "ee777687b8686a8ce806": {
+  "out": "Restocked: 3\nRemoved: 1",
+  "err": ""
+ },
+ "f386d69ee0c143236792": {
+  "out": "2 record(s) updated",
+  "err": ""
+ }
+}
