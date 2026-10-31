@@ -1,0 +1,5152 @@
+{
+ "unit": "isc-12-commerce-ch04",
+ "version": 1,
+ "academic_year": "2026-27",
+ "created_at": "2026-10-31",
+ "decks": [
+  {
+   "unit": "isc-12-commerce-ch04",
+   "part": 1,
+   "version": 1,
+   "title": "Short-term Sources — Part 1: Commercial Banks and Public Deposits",
+   "language": "en",
+   "goals": [
+    "Explain overdraft, cash credit, short-term loans and discounting of bills",
+    "Compare the cost of a cash credit with a lump-sum loan",
+    "State the meaning, advantages and disadvantages of public deposits"
+   ],
+   "slides": [
+    {
+     "id": "s01",
+     "layout": "title",
+     "heading": "Short-term Sources of Funds",
+     "body_md": "Part 1: how **commercial banks** meet short-term needs, and what **public deposits** offer.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Overdraft"
+        },
+        {
+         "id": "n2",
+         "label": "Cash credit"
+        },
+        {
+         "id": "n3",
+         "label": "Short-term loan"
+        },
+        {
+         "id": "n4",
+         "label": "Bill discounting"
+        },
+        {
+         "id": "n5",
+         "label": "Public deposits"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        },
+        {
+         "from": "n4",
+         "to": "n5"
+        }
+       ]
+      },
+      "alt": "Route map of Part 1: overdraft, cash credit, short-term loans, discounting of bills, and public deposits",
+      "caption": "Part 1 at a glance"
+     },
+     "math": [],
+     "narration": "Long term funds build factories. Short term funds keep them running: buying materials, paying wages and carrying stock until customers pay. In this part we meet the four ways a bank helps, and the deposits a company can take directly from the public.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s02",
+     "layout": "concept",
+     "heading": "Why short-term funds?",
+     "body_md": "Short-term funds finance needs that last **less than a year**: mostly **working capital**.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Short-term need (under a year)",
+        "Imagined example"
+       ],
+       "rows": [
+        [
+         "Buying raw material for a season",
+         "A knitwear exporter buys yarn before shipments"
+        ],
+        [
+         "Paying wages and bills before customers pay",
+         "A cable maker waits 60 days for dealers"
+        ],
+        [
+         "Carrying stock and debtors",
+         "A wholesaler stocks rice and pulses for 300 shops"
+        ]
+       ]
+      },
+      "alt": "Table of three short-term needs for funds with imagined examples"
+     },
+     "math": [],
+     "narration": "Short term needs come and go within a year. A knitwear exporter buys yarn before each shipment. A cable maker pays wages while dealers take sixty days to pay. A wholesaler carries stock for hundreds of shops. These needs are best met from short term sources.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s03",
+     "layout": "concept",
+     "heading": "Four forms of bank assistance",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Facility",
+        "How it works",
+        "Interest on"
+       ],
+       "rows": [
+        [
+         "Overdraft",
+         "Current-account holder draws beyond balance up to a limit",
+         "Amount overdrawn, for the days used"
+        ],
+        [
+         "Cash credit",
+         "Borrowing limit against stock or receivables; draw as needed",
+         "Amount actually drawn"
+        ],
+        [
+         "Short-term loan",
+         "Lump sum credited to the account at once",
+         "Whole amount from the start"
+        ],
+        [
+         "Discounting of bills",
+         "Bank pays bill value before maturity, less a discount",
+         "Discount deducted in advance"
+        ]
+       ]
+      },
+      "alt": "Table of four forms of short-term bank assistance: overdraft, cash credit, short-term loan and discounting of bills, how each works and on what interest is charged"
+     },
+     "math": [],
+     "narration": "Banks help in four main ways. An overdraft lets a current account holder draw beyond the balance. Cash credit is a limit secured on stock. A short term loan is a lump sum credited at once. And discounting turns a customer's bill into cash before it is due.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s04",
+     "layout": "check",
+     "heading": "Quick check: drawing beyond the balance",
+     "body_md": "A trader with ₹40,000 in a current account is allowed to pay a ₹1,50,000 cheque. This is…",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Which facility lets a current account go below zero?",
+     "check_question_id": "q_isc12commerce_ch04_001",
+     "audio": null
+    },
+    {
+     "id": "s05",
+     "layout": "example",
+     "heading": "Worked example 1: cash credit or loan?",
+     "body_md": "An imagined paper company needs up to ₹10,00,000 for a month but uses ₹6,00,000 on average.",
+     "bullets": [
+      "Step 1: under a **loan**, interest runs on the **whole amount**.",
+      "Step 2: under **cash credit**, interest runs on the **amount used**.",
+      "Step 3: compare."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "For one month (imagined: Kolar Kraft Papers Ltd)",
+        "Short-term loan",
+        "Cash credit"
+       ],
+       "rows": [
+        [
+         "Amount on which interest runs",
+         "₹10,00,000",
+         "₹6,00,000 (average used)"
+        ],
+        [
+         "Working at 12 per cent a year",
+         "10,00,000 × 0.12 ÷ 12",
+         "6,00,000 × 0.12 ÷ 12"
+        ],
+        [
+         "Interest for the month",
+         "₹10,000",
+         "₹6,000"
+        ]
+       ]
+      },
+      "alt": "Worked table comparing one month's interest: a ten lakh rupee short-term loan costs ten thousand rupees, while a cash credit with six lakh rupees used on average costs six thousand rupees",
+      "caption": "Saving with cash credit: ₹4,000 for the month."
+     },
+     "math": [],
+     "narration": "With a lump sum loan the company pays interest on all ten lakh rupees, ten thousand rupees for the month. With cash credit it pays only on the six lakh it actually uses, six thousand rupees. Cash credit saves four thousand rupees when needs go up and down.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s06",
+     "layout": "check",
+     "heading": "Quick check: security for cash credit",
+     "body_md": "True or false: cash credit is usually secured on stock or receivables.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "What does the bank hold as cover for the limit?",
+     "check_question_id": "q_isc12commerce_ch04_007",
+     "audio": null
+    },
+    {
+     "id": "s07",
+     "layout": "diagram",
+     "heading": "Discounting a bill",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 220\" role=\"img\" aria-label=\"Timeline: on day 0 the customer accepts a bill; on day 10 the firm discounts it and the bank pays the face value less a discount; on day 90 the bill matures and the bank collects the face value from the customer\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Timeline: on day 0 the customer accepts a bill; on day 10 the firm discounts it and the bank pays the face value less a discount; on day 90 the bill matures and the bank collects the face value from the customer</title><line x1=\"40\" y1=\"110\" x2=\"520\" y2=\"110\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"60\" cy=\"110\" r=\"6\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"60\" y=\"62\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Day 0</text><text x=\"60\" y=\"86\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Bill accepted</text><circle cx=\"200\" cy=\"110\" r=\"6\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"200\" y=\"62\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Day 10</text><text x=\"200\" y=\"86\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Bill discounted</text><circle cx=\"500\" cy=\"110\" r=\"6\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"500\" y=\"62\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Day 90</text><text x=\"500\" y=\"86\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Bill matures</text><line x1=\"200\" y1=\"160\" x2=\"200\" y2=\"122\" fill=\"none\" stroke=\"var(--diagram-green)\" stroke-width=\"1.8\"/><polygon points=\"200,122 204.5,131 195.5,131\" fill=\"var(--diagram-green)\" stroke=\"none\"/><text x=\"200\" y=\"178\" fill=\"var(--diagram-green)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Bank pays face value − discount</text><line x1=\"500\" y1=\"160\" x2=\"500\" y2=\"122\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.8\"/><polygon points=\"500,122 504.5,131 495.5,131\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><text x=\"420\" y=\"200\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Bank collects face value from the customer</text><text x=\"280\" y=\"24\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Discounting turns a future payment into cash now</text></svg>",
+      "alt": "Timeline: on day 0 the customer accepts a bill; on day 10 the firm discounts it and the bank pays the face value less a discount; on day 90 the bill matures and the bank collects the face value from the customer",
+      "caption": "The discount is the bank's interest for waiting until maturity."
+     },
+     "math": [],
+     "narration": "A customer accepts a bill promising to pay in ninety days. The firm needs cash sooner, so it discounts the bill with its bank, which pays the face value less a discount. On the due date the bank collects the full amount from the customer. The discount is the bank's reward for waiting.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s08",
+     "layout": "example",
+     "heading": "Worked example 2: how much cash now?",
+     "body_md": "An imagined auto-parts firm discounts a ₹2,00,000 bill due in 3 months at 12 per cent a year.",
+     "bullets": [
+      "Step 1: discount = face value × rate × months ÷ 12.",
+      "Step 2: cash = face value − discount."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Step (imagined: Amravati Auto Parts Ltd)",
+        "Working",
+        "Result"
+       ],
+       "rows": [
+        [
+         "Discount for 3 months at 12 per cent",
+         "2,00,000 × 0.12 × 3 ÷ 12",
+         "₹6,000"
+        ],
+        [
+         "Cash received now",
+         "2,00,000 − 6,000",
+         "₹1,94,000"
+        ]
+       ]
+      },
+      "alt": "Worked table: discounting a two lakh rupee bill due in three months at twelve per cent a year costs six thousand rupees, so the firm receives one lakh ninety-four thousand rupees now"
+     },
+     "math": [],
+     "narration": "Twelve per cent a year for three months is three per cent of two lakh rupees, or six thousand rupees. The firm receives one lakh ninety four thousand rupees today, and the bank collects two lakh rupees from the customer at maturity.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s09",
+     "layout": "two-column",
+     "heading": "Bank finance: for and against",
+     "body_md": "",
+     "bullets": [],
+     "columns": [
+      "**For**\n\nFlexible drawing and repaying; timely; confidential; simple renewal.",
+      "**Against**\n\nSecurity and stock statements; yearly renewal may be refused; interest cost."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "For",
+        "Against"
+       ],
+       "rows": [
+        [
+         "Draw and repay as needs change",
+         "Security and monitoring"
+        ],
+        [
+         "Funds quickly once a limit is set",
+         "Limit may not be renewed"
+        ],
+        [
+         "Plans stay private",
+         "Interest and charges"
+        ]
+       ]
+      },
+      "alt": "Table of three advantages and three disadvantages of short-term bank finance"
+     },
+     "math": [],
+     "narration": "Bank finance is flexible: firms draw and repay as their needs change, and dealings stay private. But banks want security and regular stock statements, limits must be renewed each year, and interest must be paid.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s10",
+     "layout": "concept",
+     "heading": "Public deposits",
+     "body_md": "A company may invite **deposits directly from the public** for short periods, usually paying more than banks do.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Public deposits",
+        "Points"
+       ],
+       "rows": [
+        [
+         "Meaning",
+         "Deposits invited directly from the public, usually at a rate above bank deposits"
+        ],
+        [
+         "For the company",
+         "Simple; often cheaper than bank borrowing; no charge on assets; no dilution"
+        ],
+        [
+         "Against",
+         "Short period; only well-known companies can raise them; unreliable in bad times; unsecured for depositors"
+        ]
+       ]
+      },
+      "alt": "Table summarising public deposits: meaning, advantages to the company and disadvantages"
+     },
+     "math": [],
+     "narration": "Well known companies can borrow directly from the public through deposits. The procedure is simple, the cost is often below bank rates, and depositors get no vote and no charge on assets. But deposits are short, unsecured for depositors, and only trusted companies can raise them.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s11",
+     "layout": "check",
+     "heading": "Quick check: public deposits",
+     "body_md": "Public deposits as a source of finance are…",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Who places the money, and with whom?",
+     "check_question_id": "q_isc12commerce_ch04_016",
+     "audio": null
+    },
+    {
+     "id": "s12",
+     "layout": "summary",
+     "heading": "Summary of Part 1",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Source",
+        "Key point"
+       ],
+       "rows": [
+        [
+         "Overdraft",
+         "Draw beyond balance; interest on amount overdrawn"
+        ],
+        [
+         "Cash credit",
+         "Secured limit; interest on amount drawn"
+        ],
+        [
+         "Short-term loan",
+         "Lump sum; interest on whole amount"
+        ],
+        [
+         "Bill discounting",
+         "Cash now for a bill, less discount"
+        ],
+        [
+         "Public deposits",
+         "From the public; simple but short and unsecured"
+        ]
+       ]
+      },
+      "alt": "Summary table of Part 1: bank facilities and public deposits"
+     },
+     "math": [],
+     "narration": "To sum up. Overdraft and cash credit charge interest only on what is used; a short term loan charges on the whole amount. Discounting turns bills into cash now. Public deposits are simple and cheap for trusted companies, but short and unsecured.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s13",
+     "layout": "exam-tips",
+     "heading": "Exam tips",
+     "body_md": "",
+     "bullets": [
+      "Say **what interest is charged on** when comparing overdraft, cash credit and loan.",
+      "In discounting sums, convert the yearly rate for the **months** involved.",
+      "Public deposits are **unsecured** and **short**: never recommend them for a long project."
+     ],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Spot who gives the money"
+        },
+        {
+         "id": "n2",
+         "label": "Name the source"
+        },
+        {
+         "id": "n3",
+         "label": "Give a merit or risk"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Three steps for case questions: spot who gives the money, name the source, and give a merit or risk"
+     },
+     "math": [],
+     "narration": "Some tips. When comparing bank facilities, always say what interest is charged on. In discounting sums, scale the yearly rate to the months. And never recommend public deposits for a long project, because they are short and may be withdrawn.",
+     "check_question_id": null,
+     "audio": null
+    }
+   ],
+   "status": "draft",
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "unit": "isc-12-commerce-ch04",
+   "part": 2,
+   "version": 1,
+   "title": "Short-term Sources — Part 2: Trade Credit, Advances, Factoring, ICDs and Instalment Credit",
+   "language": "en",
+   "goals": [
+    "State the merits and demerits of trade credit and customer advances",
+    "Explain how factoring converts receivables into cash and evaluate it",
+    "Describe inter-corporate deposits and instalment credit"
+   ],
+   "slides": [
+    {
+     "id": "s01",
+     "layout": "title",
+     "heading": "More Short-term Sources",
+     "body_md": "Part 2: credit from **suppliers**, money from **buyers**, **factoring**, **inter-corporate deposits** and **instalment credit**.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Trade credit"
+        },
+        {
+         "id": "n2",
+         "label": "Customer advances"
+        },
+        {
+         "id": "n3",
+         "label": "Factoring"
+        },
+        {
+         "id": "n4",
+         "label": "Inter-corporate deposits"
+        },
+        {
+         "id": "n5",
+         "label": "Instalment credit"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        },
+        {
+         "from": "n4",
+         "to": "n5"
+        }
+       ]
+      },
+      "alt": "Route map of Part 2: trade credit, customer advances, factoring, inter-corporate deposits and instalment credit",
+      "caption": "Part 2 at a glance"
+     },
+     "math": [],
+     "narration": "In this part we look beyond banks. Suppliers and customers can finance a firm. A factor can turn its debtors into cash. Another company can lend its spare money. And a seller can let the firm pay for an asset in instalments.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s02",
+     "layout": "two-column",
+     "heading": "Trade credit and customer advances",
+     "body_md": "",
+     "bullets": [],
+     "columns": [
+      "**Trade credit**\n\nSuppliers let the firm pay later for goods received.",
+      "**Customer advances**\n\nBuyers pay part of the price before delivery."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Trade credit",
+        "Customer advances"
+       ],
+       "rows": [
+        [
+         "Given by suppliers",
+         "Given by buyers"
+        ],
+        [
+         "Firm pays after receiving goods",
+         "Firm is paid before delivering"
+        ],
+        [
+         "Open to almost every business",
+         "Mainly for made-to-order or scarce goods"
+        ],
+        [
+         "Risk: overtrading; lost cash discounts",
+         "Risk: penalties for late delivery"
+        ]
+       ]
+      },
+      "alt": "Table comparing trade credit and customer advances on who gives them, timing, which firms use them, and their main risk"
+     },
+     "math": [],
+     "narration": "Trade credit comes from suppliers: the firm takes goods now and pays later. It is convenient and needs no security, but easy credit can tempt a firm to overtrade. Customer advances come from buyers, mostly for goods made to order. They cost no interest and confirm the sale, but late delivery may bring penalties.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s03",
+     "layout": "check",
+     "heading": "Quick check: paying the supplier later",
+     "body_md": "A bangle workshop gets beads now and pays 45 days later. This source is…",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Who is giving the credit here?",
+     "check_question_id": "q_isc12commerce_ch04_018",
+     "audio": null
+    },
+    {
+     "id": "s04",
+     "layout": "example",
+     "heading": "Worked example 1: who finances whom?",
+     "body_md": "Three imagined firms and their short-term sources.",
+     "bullets": [
+      "Step 1: ask **who gives the money**: supplier or buyer?",
+      "Step 2: name the source.",
+      "Step 3: note why it fits, or how it was misused."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined firm",
+        "Source",
+        "Why it fits"
+       ],
+       "rows": [
+        [
+         "Bundi Bangles (beads on 45 days' credit)",
+         "Trade credit",
+         "Sells bangles before paying for beads"
+        ],
+        [
+         "Bharuch Boilers Ltd (30 per cent with order)",
+         "Customer advance",
+         "Each boiler is made to order"
+        ],
+        [
+         "Pindari Provisions (ordered too much on credit)",
+         "Trade credit misused",
+         "Overtrading"
+        ]
+       ]
+      },
+      "alt": "Worked table of three imagined firms, the short-term source each uses and why it fits, including one case of overtrading"
+     },
+     "math": [],
+     "narration": "The bangle workshop is financed by its bead supplier through trade credit, and sells its bangles before paying. The boiler maker is financed by its buyers through advances, because each boiler is made to order. The wholesaler misused trade credit and overtraded.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s05",
+     "layout": "diagram",
+     "heading": "How factoring works",
+     "body_md": "**Factoring:** the firm assigns its **receivables** to a factor, which pays most of their value **at once** and collects from customers for a **fee**.",
+     "bullets": [],
+     "visual": {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 300\" role=\"img\" aria-label=\"Factoring triangle: (1) the firm sells goods on credit to customers; (2) it assigns the invoices to a factor; (3) the factor advances cash to the firm at once; (4) customers later pay the factor, which keeps its commission and pays the firm the balance\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Factoring triangle: (1) the firm sells goods on credit to customers; (2) it assigns the invoices to a factor; (3) the factor advances cash to the firm at once; (4) customers later pay the factor, which keeps its commission and pays the firm the balance</title><rect x=\"15\" y=\"32\" width=\"170\" height=\"56\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><text x=\"100\" y=\"52\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Firm (client)</text><text x=\"100\" y=\"73\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">sells on credit</text><rect x=\"375\" y=\"32\" width=\"170\" height=\"56\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><text x=\"460\" y=\"52\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Customers</text><text x=\"460\" y=\"73\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">owe money</text><rect x=\"195\" y=\"212\" width=\"170\" height=\"56\" rx=\"8\" fill=\"var(--diagram-accent)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"232\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Factor</text><text x=\"280\" y=\"253\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">buys receivables</text><line x1=\"188\" y1=\"52\" x2=\"372\" y2=\"52\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><polygon points=\"372,52 363,56.5 363,47.5\" fill=\"currentColor\" stroke=\"none\"/><text x=\"280\" y=\"38\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">1. Goods sold on credit</text><line x1=\"170\" y1=\"90\" x2=\"270\" y2=\"210\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><polygon points=\"270,210 260.78,205.97 267.7,200.21\" fill=\"currentColor\" stroke=\"none\"/><text x=\"232\" y=\"140\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">2. Invoices assigned</text><line x1=\"200\" y1=\"214\" x2=\"90\" y2=\"92\" fill=\"none\" stroke=\"var(--diagram-green)\" stroke-width=\"1.6\"/><polygon points=\"90,92 99.37,95.67 92.68,101.7\" fill=\"var(--diagram-green)\" stroke=\"none\"/><text x=\"20\" y=\"180\" fill=\"var(--diagram-green)\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">3. Cash advanced</text><line x1=\"440\" y1=\"90\" x2=\"340\" y2=\"208\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.6\"/><polygon points=\"340,208 342.39,198.22 349.25,204.04\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><text x=\"400\" y=\"175\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">4. Customers pay factor</text></svg>",
+      "alt": "Factoring triangle: (1) the firm sells goods on credit to customers; (2) it assigns the invoices to a factor; (3) the factor advances cash to the firm at once; (4) customers later pay the factor, which keeps its commission and pays the firm the balance",
+      "caption": "The factor stands between the firm and its customers."
+     },
+     "math": [],
+     "narration": "The firm sells on credit, then assigns its invoices to a factor. The factor advances most of their value at once. Later, customers pay the factor, which keeps its commission and interest and pays the firm the balance. Under non recourse factoring, the factor also bears bad debts.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s06",
+     "layout": "example",
+     "heading": "Worked example 2: cash from factoring",
+     "body_md": "An imagined silk house factors ₹10,00,000 of receivables: 80 per cent advance, 2 per cent commission.",
+     "bullets": [
+      "Step 1: advance = receivables × 80 per cent.",
+      "Step 2: commission = receivables × 2 per cent.",
+      "Step 3: cash now = advance − commission."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Step (imagined: Mysuru Silk House)",
+        "Working",
+        "Result"
+       ],
+       "rows": [
+        [
+         "Advance at 80 per cent",
+         "10,00,000 × 0.8",
+         "₹8,00,000"
+        ],
+        [
+         "Commission at 2 per cent",
+         "10,00,000 × 0.02",
+         "₹20,000"
+        ],
+        [
+         "Cash received now",
+         "8,00,000 − 20,000",
+         "₹7,80,000"
+        ]
+       ]
+      },
+      "alt": "Worked table: on ten lakh rupees of receivables a factor advances eighty per cent, eight lakh rupees, and deducts a two per cent commission of twenty thousand rupees, so the firm receives seven lakh eighty thousand rupees now",
+      "caption": "The balance (less any interest) is paid when customers settle."
+     },
+     "math": [],
+     "narration": "The factor advances eight lakh rupees and deducts its two per cent commission of twenty thousand rupees, so the firm receives seven lakh eighty thousand rupees at once. It gets the remaining value, less any interest, when the boutiques pay.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s07",
+     "layout": "check",
+     "heading": "Quick check: factoring",
+     "body_md": "Under factoring, a business…",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "What does the business hand over, and what does it get back?",
+     "check_question_id": "q_isc12commerce_ch04_029",
+     "audio": null
+    },
+    {
+     "id": "s08",
+     "layout": "concept",
+     "heading": "Inter-corporate deposits",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Inter-corporate deposits",
+        "Points"
+       ],
+       "rows": [
+        [
+         "Meaning",
+         "Unsecured short-term deposits by a company with surplus cash in another company"
+        ],
+        [
+         "Kinds",
+         "Call deposits (short notice), three-month and six-month deposits"
+        ],
+        [
+         "For the borrower",
+         "Quick, few formalities, no security"
+        ],
+        [
+         "Against",
+         "Often costly; uncertain availability; risky for the lender as unsecured"
+        ]
+       ]
+      },
+      "alt": "Table summarising inter-corporate deposits: meaning, kinds, advantages and drawbacks"
+     },
+     "math": [],
+     "narration": "Companies with spare cash often lend it, unsecured, to other companies for short periods. These inter corporate deposits may be call deposits, recallable at very short notice, or deposits for three or six months. They are quick and simple for the borrower, but often costly and uncertain, and risky for the lender.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s09",
+     "layout": "concept",
+     "heading": "Instalment credit",
+     "body_md": "**Instalment credit:** pay a **down payment**, use the asset at once, and pay the **balance with interest** in instalments.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Point",
+        "Instalment credit"
+       ],
+       "rows": [
+        [
+         "Use",
+         "Asset used from day one"
+        ],
+        [
+         "Cost",
+         "Interest makes it dearer than cash"
+        ],
+        [
+         "Risk",
+         "Under hire purchase, missed instalments may lead to repossession"
+        ],
+        [
+         "Ownership",
+         "Hire purchase: on the last instalment; instalment sale: at once"
+        ]
+       ]
+      },
+      "alt": "Table of the use, cost, risk and ownership features of instalment credit"
+     },
+     "math": [],
+     "narration": "Instalment credit lets a small firm use a machine before it has paid for it. It pays a down payment and then fixed instalments that include interest. It is convenient, but costlier than paying cash. Under hire purchase the seller remains owner until the last instalment and may take the asset back if payments stop.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s10",
+     "layout": "example",
+     "heading": "Worked example 3: the monthly instalment",
+     "body_md": "An imagined metal-craft unit buys a ₹9,00,000 furnace: 20 per cent down, flat interest 10 per cent a year, 24 instalments.",
+     "bullets": [
+      "Step 1: balance = price − down payment.",
+      "Step 2: flat interest = balance × rate × years.",
+      "Step 3: instalment = (balance + interest) ÷ number of instalments."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Step (imagined: Bastar Bell Metal Crafts)",
+        "Working",
+        "Result"
+       ],
+       "rows": [
+        [
+         "Down payment at 20 per cent",
+         "9,00,000 × 0.2",
+         "₹1,80,000"
+        ],
+        [
+         "Balance",
+         "9,00,000 − 1,80,000",
+         "₹7,20,000"
+        ],
+        [
+         "Flat interest, 10 per cent for 2 years",
+         "7,20,000 × 0.1 × 2",
+         "₹1,44,000"
+        ],
+        [
+         "Monthly instalment",
+         "(7,20,000 + 1,44,000) ÷ 24",
+         "₹36,000"
+        ]
+       ]
+      },
+      "alt": "Worked table: a nine lakh rupee furnace with twenty per cent down leaves seven lakh twenty thousand; flat interest at ten per cent for two years adds one lakh forty-four thousand; twenty-four equal instalments are thirty-six thousand rupees each",
+      "caption": "Flat interest is charged on the original balance for the whole period."
+     },
+     "math": [],
+     "narration": "The unit pays one lakh eighty thousand rupees down, leaving seven lakh twenty thousand. Flat interest at ten per cent for two years adds one lakh forty four thousand. Dividing the total by twenty four gives thirty six thousand rupees a month.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s11",
+     "layout": "check",
+     "heading": "Quick check: paying over time",
+     "body_md": "A craft unit pays ₹1.8 lakh now and the rest of a furnace's price, with interest, over 24 months. This is…",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "The asset is used now and paid for in parts.",
+     "check_question_id": "q_isc12commerce_ch04_033",
+     "audio": null
+    },
+    {
+     "id": "s12",
+     "layout": "concept",
+     "heading": "Choosing a short-term source",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "If the firm…",
+        "A suitable short-term source"
+       ],
+       "rows": [
+        [
+         "has a current account and a few days' gap",
+         "Overdraft"
+        ],
+        [
+         "carries seasonal stock",
+         "Cash credit against stock"
+        ],
+        [
+         "holds customers' accepted bills",
+         "Discounting of bills"
+        ],
+        [
+         "sells on open credit to many buyers",
+         "Factoring"
+        ],
+        [
+         "makes goods to order",
+         "Customer advances"
+        ],
+        [
+         "belongs to a group with spare cash",
+         "Inter-corporate deposit"
+        ],
+        [
+         "needs an asset it cannot pay for at once",
+         "Instalment credit"
+        ]
+       ]
+      },
+      "alt": "Decision table matching seven situations to a suitable short-term source"
+     },
+     "math": [],
+     "narration": "Here is a quick guide. A few days' gap suits an overdraft. Seasonal stock suits cash credit. Accepted bills can be discounted. Open credit sales to many buyers suit factoring. Made to order goods attract advances. Group companies with spare cash can place deposits. And an asset can be bought on instalments.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s13",
+     "layout": "summary",
+     "heading": "Summary of Part 2",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Source",
+        "Key point"
+       ],
+       "rows": [
+        [
+         "Trade credit",
+         "From suppliers; convenient; risk of overtrading"
+        ],
+        [
+         "Customer advances",
+         "From buyers; interest-free; made-to-order goods"
+        ],
+        [
+         "Factoring",
+         "Receivables sold for cash; fee charged"
+        ],
+        [
+         "ICDs",
+         "Company-to-company, unsecured, short"
+        ],
+        [
+         "Instalment credit",
+         "Down payment plus instalments with interest"
+        ]
+       ]
+      },
+      "alt": "Summary table of Part 2: trade credit, customer advances, factoring, inter-corporate deposits and instalment credit"
+     },
+     "math": [],
+     "narration": "To sum up. Suppliers give trade credit and buyers give advances. Factoring turns receivables into cash for a fee. Inter corporate deposits are short, unsecured loans between companies. Instalment credit lets a firm use an asset while paying for it, at an interest cost.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s14",
+     "layout": "exam-tips",
+     "heading": "Exam tips",
+     "body_md": "",
+     "bullets": [
+      "Ask **who gives the money**: bank, public, supplier, buyer, factor, another company or seller.",
+      "For factoring, mention **recourse or non-recourse** when bad debts are mentioned.",
+      "For ICDs, stress **unsecured** and **short**.",
+      "Lay out instalment sums **step by step**."
+     ],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Spot who gives the money"
+        },
+        {
+         "id": "n2",
+         "label": "Name the source"
+        },
+        {
+         "id": "n3",
+         "label": "Give a merit or risk"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Three steps for case questions: spot who gives the money, name the source, and give a merit or risk"
+     },
+     "math": [],
+     "narration": "Final tips. In every case, ask who is providing the money; that usually names the source. Mention recourse when a case talks about bad debts. Remember that inter corporate deposits are unsecured and short. And set out every calculation step by step.",
+     "check_question_id": null,
+     "audio": null
+    }
+   ],
+   "status": "draft",
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  }
+ ],
+ "notes": {
+  "unit": "isc-12-commerce-ch04",
+  "version": 1,
+  "title": "Short-term Sources of Funds — notes",
+  "language": "en",
+  "sections": [
+   {
+    "heading": "1. Short-term assistance from commercial banks",
+    "body_md": "Short-term funds (for less than a year) mainly finance **working capital**.\n\n- **Overdraft:** a current-account holder may draw more than the balance, up to an agreed limit; interest is charged on the amount overdrawn for the period used.\n- **Cash credit:** a borrowing limit against security (hypothecation or pledge of stock, or receivables); the borrower draws and repays within the limit; interest on the amount drawn.\n- **Short-term loan:** a lump sum credited to the borrower's account; interest on the whole amount from the start; repaid in one sum or instalments.\n- **Discounting of bills:** the bank pays the value of an accepted bill before maturity, less a discount, and collects it on the due date.\n\n**Merits:** flexible; timely; confidential; easy renewal; no dilution of control.\n**Demerits:** security and monitoring; uncertain renewal; interest and charges; limits based on the bank's judgement.",
+    "key_terms": [
+     {
+      "term": "Overdraft",
+      "definition_md": "Drawing beyond the balance in a current account up to a limit."
+     },
+     {
+      "term": "Cash credit",
+      "definition_md": "A secured borrowing limit; interest on the amount drawn."
+     },
+     {
+      "term": "Discounting of bills",
+      "definition_md": "Getting a bill's value before maturity, less a discount."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Facility",
+       "How it works",
+       "Interest on"
+      ],
+      "rows": [
+       [
+        "Overdraft",
+        "Current-account holder draws beyond balance up to a limit",
+        "Amount overdrawn, for the days used"
+       ],
+       [
+        "Cash credit",
+        "Borrowing limit against stock or receivables; draw as needed",
+        "Amount actually drawn"
+       ],
+       [
+        "Short-term loan",
+        "Lump sum credited to the account at once",
+        "Whole amount from the start"
+       ],
+       [
+        "Discounting of bills",
+        "Bank pays bill value before maturity, less a discount",
+        "Discount deducted in advance"
+       ]
+      ]
+     },
+     "alt": "Table of four forms of short-term bank assistance: overdraft, cash credit, short-term loan and discounting of bills, how each works and on what interest is charged"
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Short-term need (under a year)",
+        "Imagined example"
+       ],
+       "rows": [
+        [
+         "Buying raw material for a season",
+         "A knitwear exporter buys yarn before shipments"
+        ],
+        [
+         "Paying wages and bills before customers pay",
+         "A cable maker waits 60 days for dealers"
+        ],
+        [
+         "Carrying stock and debtors",
+         "A wholesaler stocks rice and pulses for 300 shops"
+        ]
+       ]
+      },
+      "alt": "Table of three short-term needs for funds with imagined examples"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "For one month (imagined: Kolar Kraft Papers Ltd)",
+        "Short-term loan",
+        "Cash credit"
+       ],
+       "rows": [
+        [
+         "Amount on which interest runs",
+         "₹10,00,000",
+         "₹6,00,000 (average used)"
+        ],
+        [
+         "Working at 12 per cent a year",
+         "10,00,000 × 0.12 ÷ 12",
+         "6,00,000 × 0.12 ÷ 12"
+        ],
+        [
+         "Interest for the month",
+         "₹10,000",
+         "₹6,000"
+        ]
+       ]
+      },
+      "alt": "Worked table comparing one month's interest: a ten lakh rupee short-term loan costs ten thousand rupees, while a cash credit with six lakh rupees used on average costs six thousand rupees",
+      "caption": "Saving with cash credit: ₹4,000 for the month."
+     },
+     {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 220\" role=\"img\" aria-label=\"Timeline: on day 0 the customer accepts a bill; on day 10 the firm discounts it and the bank pays the face value less a discount; on day 90 the bill matures and the bank collects the face value from the customer\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Timeline: on day 0 the customer accepts a bill; on day 10 the firm discounts it and the bank pays the face value less a discount; on day 90 the bill matures and the bank collects the face value from the customer</title><line x1=\"40\" y1=\"110\" x2=\"520\" y2=\"110\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"60\" cy=\"110\" r=\"6\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"60\" y=\"62\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Day 0</text><text x=\"60\" y=\"86\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Bill accepted</text><circle cx=\"200\" cy=\"110\" r=\"6\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"200\" y=\"62\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Day 10</text><text x=\"200\" y=\"86\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Bill discounted</text><circle cx=\"500\" cy=\"110\" r=\"6\" fill=\"var(--diagram-accent)\" stroke=\"none\"/><text x=\"500\" y=\"62\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"13\" font-weight=\"bold\">Day 90</text><text x=\"500\" y=\"86\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Bill matures</text><line x1=\"200\" y1=\"160\" x2=\"200\" y2=\"122\" fill=\"none\" stroke=\"var(--diagram-green)\" stroke-width=\"1.8\"/><polygon points=\"200,122 204.5,131 195.5,131\" fill=\"var(--diagram-green)\" stroke=\"none\"/><text x=\"200\" y=\"178\" fill=\"var(--diagram-green)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Bank pays face value − discount</text><line x1=\"500\" y1=\"160\" x2=\"500\" y2=\"122\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.8\"/><polygon points=\"500,122 504.5,131 495.5,131\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><text x=\"420\" y=\"200\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Bank collects face value from the customer</text><text x=\"280\" y=\"24\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Discounting turns a future payment into cash now</text></svg>",
+      "alt": "Timeline: on day 0 the customer accepts a bill; on day 10 the firm discounts it and the bank pays the face value less a discount; on day 90 the bill matures and the bank collects the face value from the customer",
+      "caption": "The discount is the bank's interest for waiting until maturity."
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Step (imagined: Amravati Auto Parts Ltd)",
+        "Working",
+        "Result"
+       ],
+       "rows": [
+        [
+         "Discount for 3 months at 12 per cent",
+         "2,00,000 × 0.12 × 3 ÷ 12",
+         "₹6,000"
+        ],
+        [
+         "Cash received now",
+         "2,00,000 − 6,000",
+         "₹1,94,000"
+        ]
+       ]
+      },
+      "alt": "Worked table: discounting a two lakh rupee bill due in three months at twelve per cent a year costs six thousand rupees, so the firm receives one lakh ninety-four thousand rupees now"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch04-t01"
+    ]
+   },
+   {
+    "heading": "2. Public deposits, trade credit and customer advances",
+    "body_md": "**Public deposits:** deposits a company invites directly from the public for short periods, usually at rates above bank deposits. *Advantages:* simple procedure; often cheaper than bank borrowing; no charge on assets; no dilution of control; interest is tax-deductible. *Disadvantages:* short period; only well-known companies can raise them; may be withdrawn in bad times; unsecured for depositors; subject to legal limits and rules.\n\n**Trade credit:** credit allowed by suppliers on the purchase of goods. *Advantages:* convenient and continuous; no security; links finance to sales. *Disadvantages:* may lead to overtrading; limited amount; may cost cash discounts or higher prices.\n\n**Customer advances:** part of the price paid by buyers before delivery, mainly for made-to-order or scarce goods. *Advantages:* interest-free; sure sale. *Disadvantages:* possible only in some businesses; penalties for late delivery; price fixed in advance.",
+    "key_terms": [
+     {
+      "term": "Public deposits",
+      "definition_md": "Short-term deposits raised by a company directly from the public."
+     },
+     {
+      "term": "Trade credit",
+      "definition_md": "Credit allowed by suppliers on purchases."
+     },
+     {
+      "term": "Overtrading",
+      "definition_md": "Doing more business than the firm's funds can support."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Public deposits",
+       "Points"
+      ],
+      "rows": [
+       [
+        "Meaning",
+        "Deposits invited directly from the public, usually at a rate above bank deposits"
+       ],
+       [
+        "For the company",
+        "Simple; often cheaper than bank borrowing; no charge on assets; no dilution"
+       ],
+       [
+        "Against",
+        "Short period; only well-known companies can raise them; unreliable in bad times; unsecured for depositors"
+       ]
+      ]
+     },
+     "alt": "Table summarising public deposits: meaning, advantages to the company and disadvantages"
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Trade credit",
+        "Customer advances"
+       ],
+       "rows": [
+        [
+         "Given by suppliers",
+         "Given by buyers"
+        ],
+        [
+         "Firm pays after receiving goods",
+         "Firm is paid before delivering"
+        ],
+        [
+         "Open to almost every business",
+         "Mainly for made-to-order or scarce goods"
+        ],
+        [
+         "Risk: overtrading; lost cash discounts",
+         "Risk: penalties for late delivery"
+        ]
+       ]
+      },
+      "alt": "Table comparing trade credit and customer advances on who gives them, timing, which firms use them, and their main risk"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined firm",
+        "Source",
+        "Why it fits"
+       ],
+       "rows": [
+        [
+         "Bundi Bangles (beads on 45 days' credit)",
+         "Trade credit",
+         "Sells bangles before paying for beads"
+        ],
+        [
+         "Bharuch Boilers Ltd (30 per cent with order)",
+         "Customer advance",
+         "Each boiler is made to order"
+        ],
+        [
+         "Pindari Provisions (ordered too much on credit)",
+         "Trade credit misused",
+         "Overtrading"
+        ]
+       ]
+      },
+      "alt": "Worked table of three imagined firms, the short-term source each uses and why it fits, including one case of overtrading"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch04-t02"
+    ]
+   },
+   {
+    "heading": "3. Factoring, inter-corporate deposits and instalment credit",
+    "body_md": "**Factoring:** a financial service in which a **factor** buys or finances a firm's **receivables**, advances most of their value at once, collects from debtors and charges a commission. *With recourse:* the client bears bad debts. *Without recourse (non-recourse):* the factor bears them. *Services:* finance against receivables, collection, credit information, sales-ledger maintenance, protection against bad debts. *Merits:* immediate cash; saves collection effort; credit protection. *Demerits:* cost; customers may dislike an outside agency; sensitive information shared.\n\n**Inter-corporate deposits (ICDs):** unsecured short-term deposits placed by a company with surplus funds in another company. *Kinds:* call deposits (withdrawable at short notice), three-month and six-month deposits. *Merits:* quick, few formalities. *Demerits:* often costly; uncertain; risky for the lender.\n\n**Instalment credit:** the buyer pays a down payment and the balance with interest in instalments, using the asset meanwhile. Under hire purchase, ownership passes on the last instalment. *Merits:* use without full payment. *Demerits:* interest cost; risk of repossession.",
+    "key_terms": [
+     {
+      "term": "Factoring",
+      "definition_md": "Selling or financing receivables through a factor for a fee."
+     },
+     {
+      "term": "Non-recourse factoring",
+      "definition_md": "The factor bears bad debts."
+     },
+     {
+      "term": "Inter-corporate deposit",
+      "definition_md": "Unsecured short-term deposit by one company with another."
+     },
+     {
+      "term": "Down payment",
+      "definition_md": "The part of the price paid at purchase under instalment credit."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "svg",
+     "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 300\" role=\"img\" aria-label=\"Factoring triangle: (1) the firm sells goods on credit to customers; (2) it assigns the invoices to a factor; (3) the factor advances cash to the firm at once; (4) customers later pay the factor, which keeps its commission and pays the firm the balance\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Factoring triangle: (1) the firm sells goods on credit to customers; (2) it assigns the invoices to a factor; (3) the factor advances cash to the firm at once; (4) customers later pay the factor, which keeps its commission and pays the firm the balance</title><rect x=\"15\" y=\"32\" width=\"170\" height=\"56\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><text x=\"100\" y=\"52\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Firm (client)</text><text x=\"100\" y=\"73\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">sells on credit</text><rect x=\"375\" y=\"32\" width=\"170\" height=\"56\" rx=\"8\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.5\"/><text x=\"460\" y=\"52\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Customers</text><text x=\"460\" y=\"73\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">owe money</text><rect x=\"195\" y=\"212\" width=\"170\" height=\"56\" rx=\"8\" fill=\"var(--diagram-accent)\" fill-opacity=\"0.14\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"232\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Factor</text><text x=\"280\" y=\"253\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">buys receivables</text><line x1=\"188\" y1=\"52\" x2=\"372\" y2=\"52\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><polygon points=\"372,52 363,56.5 363,47.5\" fill=\"currentColor\" stroke=\"none\"/><text x=\"280\" y=\"38\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">1. Goods sold on credit</text><line x1=\"170\" y1=\"90\" x2=\"270\" y2=\"210\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><polygon points=\"270,210 260.78,205.97 267.7,200.21\" fill=\"currentColor\" stroke=\"none\"/><text x=\"232\" y=\"140\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">2. Invoices assigned</text><line x1=\"200\" y1=\"214\" x2=\"90\" y2=\"92\" fill=\"none\" stroke=\"var(--diagram-green)\" stroke-width=\"1.6\"/><polygon points=\"90,92 99.37,95.67 92.68,101.7\" fill=\"var(--diagram-green)\" stroke=\"none\"/><text x=\"20\" y=\"180\" fill=\"var(--diagram-green)\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">3. Cash advanced</text><line x1=\"440\" y1=\"90\" x2=\"340\" y2=\"208\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.6\"/><polygon points=\"340,208 342.39,198.22 349.25,204.04\" fill=\"var(--diagram-blue)\" stroke=\"none\"/><text x=\"400\" y=\"175\" fill=\"var(--diagram-blue)\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">4. Customers pay factor</text></svg>",
+     "alt": "Factoring triangle: (1) the firm sells goods on credit to customers; (2) it assigns the invoices to a factor; (3) the factor advances cash to the firm at once; (4) customers later pay the factor, which keeps its commission and pays the firm the balance",
+     "caption": "The factor stands between the firm and its customers."
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Step (imagined: Mysuru Silk House)",
+        "Working",
+        "Result"
+       ],
+       "rows": [
+        [
+         "Advance at 80 per cent",
+         "10,00,000 × 0.8",
+         "₹8,00,000"
+        ],
+        [
+         "Commission at 2 per cent",
+         "10,00,000 × 0.02",
+         "₹20,000"
+        ],
+        [
+         "Cash received now",
+         "8,00,000 − 20,000",
+         "₹7,80,000"
+        ]
+       ]
+      },
+      "alt": "Worked table: on ten lakh rupees of receivables a factor advances eighty per cent, eight lakh rupees, and deducts a two per cent commission of twenty thousand rupees, so the firm receives seven lakh eighty thousand rupees now",
+      "caption": "The balance (less any interest) is paid when customers settle."
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Inter-corporate deposits",
+        "Points"
+       ],
+       "rows": [
+        [
+         "Meaning",
+         "Unsecured short-term deposits by a company with surplus cash in another company"
+        ],
+        [
+         "Kinds",
+         "Call deposits (short notice), three-month and six-month deposits"
+        ],
+        [
+         "For the borrower",
+         "Quick, few formalities, no security"
+        ],
+        [
+         "Against",
+         "Often costly; uncertain availability; risky for the lender as unsecured"
+        ]
+       ]
+      },
+      "alt": "Table summarising inter-corporate deposits: meaning, kinds, advantages and drawbacks"
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Step (imagined: Bastar Bell Metal Crafts)",
+        "Working",
+        "Result"
+       ],
+       "rows": [
+        [
+         "Down payment at 20 per cent",
+         "9,00,000 × 0.2",
+         "₹1,80,000"
+        ],
+        [
+         "Balance",
+         "9,00,000 − 1,80,000",
+         "₹7,20,000"
+        ],
+        [
+         "Flat interest, 10 per cent for 2 years",
+         "7,20,000 × 0.1 × 2",
+         "₹1,44,000"
+        ],
+        [
+         "Monthly instalment",
+         "(7,20,000 + 1,44,000) ÷ 24",
+         "₹36,000"
+        ]
+       ]
+      },
+      "alt": "Worked table: a nine lakh rupee furnace with twenty per cent down leaves seven lakh twenty thousand; flat interest at ten per cent for two years adds one lakh forty-four thousand; twenty-four equal instalments are thirty-six thousand rupees each",
+      "caption": "Flat interest is charged on the original balance for the whole period."
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "If the firm…",
+        "A suitable short-term source"
+       ],
+       "rows": [
+        [
+         "has a current account and a few days' gap",
+         "Overdraft"
+        ],
+        [
+         "carries seasonal stock",
+         "Cash credit against stock"
+        ],
+        [
+         "holds customers' accepted bills",
+         "Discounting of bills"
+        ],
+        [
+         "sells on open credit to many buyers",
+         "Factoring"
+        ],
+        [
+         "makes goods to order",
+         "Customer advances"
+        ],
+        [
+         "belongs to a group with spare cash",
+         "Inter-corporate deposit"
+        ],
+        [
+         "needs an asset it cannot pay for at once",
+         "Instalment credit"
+        ]
+       ]
+      },
+      "alt": "Decision table matching seven situations to a suitable short-term source"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch04-t03"
+    ]
+   }
+  ],
+  "exam_tips_md": "**Common mistakes**\n- Saying interest on cash credit is charged on the full limit.\n- Recommending public deposits or ICDs for long-term projects.\n- Mixing up trade credit (from suppliers) and customer advances (from buyers).\n- Saying factoring is free, or forgetting recourse when bad debts are mentioned.\n\n**How marks are usually awarded**\n- 1 mark: correct option, term or figure.\n- 2–3 marks: source named, explained and linked to the firm; or bases of distinction for both sides.\n- 5 marks: parts answered separately; merits and demerits balanced; calculations step by step.",
+  "status": "draft",
+  "provenance": {
+   "origin": "human",
+   "template_version": null,
+   "model": null,
+   "generated_at": "2026-10-31",
+   "author": "claude-opus-5-5 (subject-producer)"
+  }
+ },
+ "flashcards": {
+  "unit": "isc-12-commerce-ch04",
+  "version": 1,
+  "language": "en",
+  "cards": [
+   {
+    "id": "f01",
+    "front_md": "Short-term funds mainly finance…",
+    "back_md": "Working capital (needs of under a year).",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch04-t01"
+   },
+   {
+    "id": "f02",
+    "front_md": "**Overdraft**",
+    "back_md": "Draw beyond the current-account balance up to a limit; interest on the amount overdrawn.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch04-t01"
+   },
+   {
+    "id": "f03",
+    "front_md": "**Cash credit**",
+    "back_md": "Borrowing limit secured on stock or receivables; interest on the amount drawn.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch04-t01"
+   },
+   {
+    "id": "f04",
+    "front_md": "**Short-term loan** vs cash credit",
+    "back_md": "Loan: interest on the whole sum. Cash credit: on the amount used.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch04-t01"
+   },
+   {
+    "id": "f05",
+    "front_md": "**Discounting of bills**",
+    "back_md": "Bank pays a bill's value before maturity, less a discount.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch04-t01"
+   },
+   {
+    "id": "f06",
+    "front_md": "Discount formula",
+    "back_md": "Face value × yearly rate × months ÷ 12.",
+    "tag": "formula",
+    "topic_id": "isc-12-commerce-ch04-t01"
+   },
+   {
+    "id": "f07",
+    "front_md": "Who collects a discounted bill at maturity?",
+    "back_md": "The bank.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch04-t01"
+   },
+   {
+    "id": "f08",
+    "front_md": "Two drawbacks of bank finance",
+    "back_md": "Security and monitoring; uncertain renewal.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch04-t01"
+   },
+   {
+    "id": "f09",
+    "front_md": "**Public deposits**",
+    "back_md": "Deposits raised by a company directly from the public, short period.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch04-t02"
+   },
+   {
+    "id": "f10",
+    "front_md": "Who can raise public deposits easily?",
+    "back_md": "Well-known companies with a sound record.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch04-t02"
+   },
+   {
+    "id": "f11",
+    "front_md": "Risk to a public depositor",
+    "back_md": "Deposits are usually unsecured.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch04-t02"
+   },
+   {
+    "id": "f12",
+    "front_md": "**Trade credit**",
+    "back_md": "Credit allowed by suppliers on purchases.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch04-t02"
+   },
+   {
+    "id": "f13",
+    "front_md": "Main danger of easy trade credit",
+    "back_md": "Overtrading.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch04-t02"
+   },
+   {
+    "id": "f14",
+    "front_md": "Hidden cost of trade credit",
+    "back_md": "Lost cash discounts.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch04-t02"
+   },
+   {
+    "id": "f15",
+    "front_md": "**Customer advances**",
+    "back_md": "Part of the price paid by buyers before delivery.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch04-t02"
+   },
+   {
+    "id": "f16",
+    "front_md": "Where are customer advances common?",
+    "back_md": "Made-to-order or scarce goods.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch04-t02"
+   },
+   {
+    "id": "f17",
+    "front_md": "Trade credit vs customer advances",
+    "back_md": "From suppliers vs from buyers.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch04-t02"
+   },
+   {
+    "id": "f18",
+    "front_md": "**Factoring**",
+    "back_md": "A factor buys or finances receivables, pays at once and collects for a fee.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch04-t03"
+   },
+   {
+    "id": "f19",
+    "front_md": "Recourse vs non-recourse factoring",
+    "back_md": "Client bears bad debts vs factor bears them.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch04-t03"
+   },
+   {
+    "id": "f20",
+    "front_md": "Services of a factor",
+    "back_md": "Finance, collection, credit information, ledger keeping, bad-debt cover.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch04-t03"
+   },
+   {
+    "id": "f21",
+    "front_md": "Factoring suits…",
+    "back_md": "Firms with large credit sales to many buyers.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch04-t03"
+   },
+   {
+    "id": "f22",
+    "front_md": "Drawbacks of factoring",
+    "back_md": "Cost; customers may dislike an outside agency.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch04-t03"
+   },
+   {
+    "id": "f23",
+    "front_md": "**Inter-corporate deposit**",
+    "back_md": "Unsecured short-term deposit by one company with another.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch04-t03"
+   },
+   {
+    "id": "f24",
+    "front_md": "Three kinds of ICDs",
+    "back_md": "Call, three-month, six-month.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch04-t03"
+   },
+   {
+    "id": "f25",
+    "front_md": "Risk of ICDs for the lender",
+    "back_md": "They are unsecured.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch04-t03"
+   },
+   {
+    "id": "f26",
+    "front_md": "**Instalment credit**",
+    "back_md": "Down payment, then balance plus interest in instalments.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch04-t03"
+   },
+   {
+    "id": "f27",
+    "front_md": "Hire purchase: when does ownership pass?",
+    "back_md": "On payment of the last instalment.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch04-t03"
+   },
+   {
+    "id": "f28",
+    "front_md": "Flat-interest instalment",
+    "back_md": "(Balance + balance × rate × years) ÷ number of instalments.",
+    "tag": "formula",
+    "topic_id": "isc-12-commerce-ch04-t03"
+   },
+   {
+    "id": "f29",
+    "front_md": "Choose: accepted bills, need cash now",
+    "back_md": "Discounting of bills.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch04-t01"
+   },
+   {
+    "id": "f30",
+    "front_md": "Choose: made-to-order goods",
+    "back_md": "Customer advances.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch04-t02"
+   }
+  ],
+  "status": "draft",
+  "provenance": {
+   "origin": "human",
+   "template_version": null,
+   "model": null,
+   "generated_at": "2026-10-31",
+   "author": "claude-opus-5-5 (subject-producer)"
+  }
+ },
+ "questions": [
+  {
+   "id": "q_isc12commerce_ch04_001",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Malabar Spice Traders, an imagined firm in Kozhikode, has ₹40,000 in its current account. With the bank's permission it issues a cheque for ₹1,50,000 to a pepper grower. The bank allows this under",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "a fixed deposit"
+    },
+    {
+     "id": "b",
+     "text_md": "an overdraft facility"
+    },
+    {
+     "id": "c",
+     "text_md": "a term loan for ten years"
+    },
+    {
+     "id": "d",
+     "text_md": "factoring of receivables"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** an overdraft facility. An overdraft lets a current-account holder draw more than the balance, up to an agreed limit; interest is charged only on the amount overdrawn.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_002",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Kolar Kraft Papers Ltd (imagined) may borrow up to ₹50 lakh from its bank against its stock of paper rolls, drawing and repaying as needed during the year. This arrangement is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "a public deposit"
+    },
+    {
+     "id": "b",
+     "text_md": "trade credit"
+    },
+    {
+     "id": "c",
+     "text_md": "an inter-corporate deposit"
+    },
+    {
+     "id": "d",
+     "text_md": "cash credit"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** cash credit. Cash credit is a borrowing limit against security such as stock (by hypothecation or pledge); the firm draws within the limit as needed.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_003",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Under a short-term loan, Ganjam Garments Ltd (imagined) receives ₹10 lakh in one lump sum credited to its account. How does the interest differ from a cash credit of the same limit?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Interest is charged on the whole ₹10 lakh from the start, even if part lies unused"
+    },
+    {
+     "id": "b",
+     "text_md": "No interest is charged on a loan"
+    },
+    {
+     "id": "c",
+     "text_md": "Interest is charged only on the amount actually drawn"
+    },
+    {
+     "id": "d",
+     "text_md": "Interest is paid by the bank to the firm"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Interest is charged on the whole ₹10 lakh from the start, even if part lies unused. A loan is disbursed in full, so interest runs on the entire amount; under cash credit interest is charged only on the amount used.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_004",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Amravati Auto Parts Ltd (imagined) holds a customer's accepted bill for ₹2 lakh due in three months. It needs cash today, so its bank pays it the amount less a charge and collects from the customer later. This is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "an overdraft"
+    },
+    {
+     "id": "b",
+     "text_md": "a customer advance"
+    },
+    {
+     "id": "c",
+     "text_md": "discounting of a bill of exchange"
+    },
+    {
+     "id": "d",
+     "text_md": "instalment credit"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** discounting of a bill of exchange. The bank buys the bill before maturity, paying its value less a discount: discounting of bills.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_005",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Which of these are forms of **short-term** financial assistance from commercial banks?\nP. Overdraft\nQ. Cash credit\nR. Issue of debentures\nS. Discounting of bills",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "P, Q and R"
+    },
+    {
+     "id": "b",
+     "text_md": "Q, R and S"
+    },
+    {
+     "id": "c",
+     "text_md": "P, Q and S"
+    },
+    {
+     "id": "d",
+     "text_md": "R and S only"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** P, Q and S. Overdraft, cash credit and bill discounting are short-term bank facilities; debentures are a long-term instrument issued by the company itself.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_006",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** An overdraft is a cheap way to meet a short, uneven need for cash.\n\n**Reason (R):** Interest on an overdraft is charged only on the amount actually overdrawn and for the period it is used.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true. Because interest runs only on the overdrawn balance for the days it is used, an overdraft suits short, uneven needs.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_007",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "A cash credit limit is usually given against security such as the borrower's stock or receivables.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. Cash credit is normally secured by hypothecation or pledge of stock, or by receivables.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_008",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Complete the analogy. Current account holder drawing beyond balance : Overdraft :: Bank paying a bill's value before it is due : ___",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Drawing beyond one's balance is an overdraft; paying a bill's value before maturity, less a charge, is discounting of bills.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "Discounting of bills",
+       "bill discounting",
+       "discounting",
+       "Discounting of bill"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: Discounting of bills",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_009",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "numerical",
+   "stem_md": "Amravati Auto Parts Ltd (imagined) discounts a bill of ₹2,00,000 due in 3 months with its bank at 12 per cent a year. How much cash does it receive today (in ₹)?",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Step 1: Discount = 2,00,000 × 0.12 × 3 ÷ 12 = ₹6,000.\nStep 2: Cash received = 2,00,000 − 6,000 = ₹1,94,000.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01"
+   ],
+   "expected_time_sec": 90,
+   "assets": [],
+   "answer": {
+    "value": 194000,
+    "tolerance": 0,
+    "unit": "₹"
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct answer: 194000 ₹",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_010",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "numerical",
+   "stem_md": "Kolar Kraft Papers Ltd (imagined) needs at most ₹10,00,000 for one month but expects to use only ₹6,00,000 on average. Interest is 12 per cent a year either way. How much interest does it save in that month by taking a cash credit instead of a short-term loan of ₹10,00,000 (in ₹)?",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Step 1: Loan interest (on the whole amount) = 10,00,000 × 0.12 ÷ 12 = ₹10,000.\nStep 2: Cash credit interest (on the amount used) = 6,00,000 × 0.12 ÷ 12 = ₹6,000.\nStep 3: Saving = 10,000 − 6,000 = ₹4,000.",
+   "marks": 2,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01"
+   ],
+   "expected_time_sec": 90,
+   "assets": [],
+   "answer": {
+    "value": 4000,
+    "tolerance": 0,
+    "unit": "₹"
+   },
+   "marking_scheme": [
+    {
+     "step": "Both interest amounts",
+     "marks": 1
+    },
+    {
+     "step": "Saving = ₹4,000",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_011",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Malabar Spice Traders (imagined) uses an overdraft, while Kolar Kraft Papers Ltd (imagined) uses cash credit. Distinguish the two facilities on account and security.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Account and security distinguished.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Account:** an overdraft is allowed on a **current account** the firm already runs; cash credit is a **separate borrowing account** with a limit.\n2. **Security:** a small overdraft may rest on the **customer's standing**; cash credit is usually secured on **stock or receivables**."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Account",
+     "marks": 1
+    },
+    {
+     "step": "Security",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_012",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Champaran Chemicals Ltd (imagined) relies on its bank for short-term funds every year. State two advantages of bank finance for such a company.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two advantages (flexibility, timely funds, confidentiality, simple renewal, no dilution) applied.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Flexible:** it can draw and repay **as needs change** through the year, paying interest only on what it uses under cash credit or overdraft.\n2. **Confidential and quick:** dealings stay **private** between the bank and the company, and renewals take little time."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First advantage",
+     "marks": 1
+    },
+    {
+     "step": "Second advantage",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_013",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Ganjam Garments Ltd (imagined) has three needs: paying suppliers a week before a bank balance arrives, financing a large stock of cloth all season, and turning a buyer's accepted three-month bill into cash now. Suggest the bank facility for each need, with a reason.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each need matched to a facility, with a reason.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Overdraft:** for the **week-long gap**, it can draw beyond its balance and pay interest only for those days.\n2. **Cash credit:** for the **season's cloth stock**, a limit secured on stock lets it draw as needed.\n3. **Discounting of bills:** the bank pays the **bill's value less a discount** now and collects on maturity."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Overdraft",
+     "marks": 1
+    },
+    {
+     "step": "Cash credit",
+     "marks": 1
+    },
+    {
+     "step": "Discounting",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_014",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Kalinga Cables Ltd (imagined) found that its bank wanted stock statements every month, a charge on its inventory, and renewal of the limit each year. Explain three disadvantages of bank finance shown here.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three disadvantages (security, paperwork, renewal risk, cost) linked to the case.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Security required:** the bank takes a **charge on inventory**, so that stock cannot back other borrowing.\n2. **Monitoring and paperwork:** **monthly stock statements** add work and cost for the finance staff.\n3. **Uncertain renewal:** the limit must be **renewed every year**, so funds could be cut when the firm needs them most."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First disadvantage",
+     "marks": 1
+    },
+    {
+     "step": "Second disadvantage",
+     "marks": 1
+    },
+    {
+     "step": "Third disadvantage",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_015",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "long",
+   "stem_md": "Tirupur Tees Ltd (imagined) exports knitwear. Its cash needs rise sharply before each shipment, and its foreign buyers accept bills payable in 90 days.\n(a) Explain three forms of short-term assistance a commercial bank can give it. [3]\n(b) Explain two advantages of bank finance for this company. [2]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three forms explained and linked to the exporter; two advantages.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) **Cash credit:** the bank sets a **limit** against the company's stock of yarn and garments, and it draws only what it needs before each shipment, paying interest on the amount used.\n**Overdraft:** it may draw **beyond its current-account balance** up to an agreed limit to cover a few days' gap in payments.\n**Discounting of bills:** the bank pays the value of the **buyers' 90-day bills less a discount** at once, and collects from the buyers when the bills mature.\n\n(b) **Flexibility:** the company can **draw and repay** around its shipments, so it does not pay interest on idle money. **Timely and confidential:** funds are available **quickly** once the limit is fixed, and its plans are not disclosed to the public."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Three forms",
+     "marks": 3
+    },
+    {
+     "step": "(b) Two advantages",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_016",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Public deposits as a source of finance are",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "deposits invited by a company directly from the public, usually at a rate higher than bank deposits"
+    },
+    {
+     "id": "b",
+     "text_md": "deposits a company keeps with its bank"
+    },
+    {
+     "id": "c",
+     "text_md": "advances paid by customers with their orders"
+    },
+    {
+     "id": "d",
+     "text_md": "funds lent by one company to another"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** deposits invited by a company directly from the public, usually at a rate higher than bank deposits. A company raises public deposits by inviting the public to deposit money with it for a fixed period at an attractive rate.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_017",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Sushila deposits ₹1 lakh with Sundergarh Steel Ltd (imagined) because it offers a higher rate than her bank. What is the main risk she takes?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "She will become an owner and share its losses"
+    },
+    {
+     "id": "b",
+     "text_md": "She must pay the company's debts"
+    },
+    {
+     "id": "c",
+     "text_md": "Her deposit will be turned into equity shares"
+    },
+    {
+     "id": "d",
+     "text_md": "Public deposits are usually unsecured, so she may lose money if the company fails"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Public deposits are usually unsecured, so she may lose money if the company fails. Public deposits are generally unsecured loans to the company; a depositor ranks as an unsecured creditor if the company fails.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_018",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Bundi Bangles, an imagined workshop in Rajasthan, receives lac and glass beads from its supplier and pays 45 days later, after selling the bangles. This source of finance is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "a public deposit"
+    },
+    {
+     "id": "b",
+     "text_md": "trade credit"
+    },
+    {
+     "id": "c",
+     "text_md": "a cash credit"
+    },
+    {
+     "id": "d",
+     "text_md": "a customer advance"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** trade credit. Credit given by one trader to another on the purchase of goods is trade credit.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_019",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Because its suppliers give easy credit, Pindari Provisions (imagined), a small wholesaler, keeps ordering far more stock than it can sell or pay for. This shows which drawback of trade credit?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "It may tempt a firm into overtrading"
+    },
+    {
+     "id": "b",
+     "text_md": "It always carries a high rate of interest"
+    },
+    {
+     "id": "c",
+     "text_md": "It requires a charge on fixed assets"
+    },
+    {
+     "id": "d",
+     "text_md": "It dilutes ownership"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** It may tempt a firm into overtrading. Easy credit can lead a firm to buy beyond its capacity to sell and pay: overtrading.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_020",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Bharuch Boilers Ltd (imagined) makes boilers to order and asks each buyer to pay 30 per cent of the price with the order. This money is a source of",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "trade credit from suppliers"
+    },
+    {
+     "id": "b",
+     "text_md": "customer advances"
+    },
+    {
+     "id": "c",
+     "text_md": "factoring"
+    },
+    {
+     "id": "d",
+     "text_md": "retained earnings"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** customer advances. Money paid by customers before delivery, especially for made-to-order goods, is a customer advance.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_021",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Trade credit, though it carries no stated interest, can have a hidden cost.\n\n**Reason (R):** A firm that takes the full credit period may lose the cash discount it could have earned by paying at once.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true. The discount given up for paying later is the hidden cost of trade credit, so the reason explains the assertion.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_022",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Customer advances are an interest-free source of finance and also make the sale more certain.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. No interest is paid on advances, and a buyer who has paid part of the price is less likely to cancel.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_023",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Credit that one business allows another on the purchase of goods, without any formal loan, is called ___ credit.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "It is trade credit, the most common short-term source for traders.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "trade",
+       "Trade credit",
+       "supplier",
+       "supplier's"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: trade",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_024",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "match",
+   "stem_md": "Match each short-term source with its typical feature.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Trade credit"
+    },
+    {
+     "id": "b",
+     "text_md": "Customer advance"
+    },
+    {
+     "id": "c",
+     "text_md": "Public deposit"
+    },
+    {
+     "id": "d",
+     "text_md": "Cash credit"
+    }
+   ],
+   "match_right": [
+    {
+     "id": "p",
+     "text_md": "Paid by buyers before delivery"
+    },
+    {
+     "id": "q",
+     "text_md": "A bank limit secured on stock"
+    },
+    {
+     "id": "r",
+     "text_md": "Given by suppliers on purchase of goods"
+    },
+    {
+     "id": "s",
+     "text_md": "Raised directly from the public, usually unsecured"
+    }
+   ],
+   "solution_md": "**Key:** (a)–(r), (b)–(p), (c)–(s), (d)–(q). Suppliers give trade credit, buyers give advances, the public gives deposits, and banks give cash credit limits.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01",
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 120,
+   "assets": [],
+   "answer": {
+    "pairs": [
+     {
+      "left_id": "a",
+      "right_id": "r"
+     },
+     {
+      "left_id": "b",
+      "right_id": "p"
+     },
+     {
+      "left_id": "c",
+      "right_id": "s"
+     },
+     {
+      "left_id": "d",
+      "right_id": "q"
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Each correct pair 0.5 mark (4 pairs)",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_025",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Sundergarh Steel Ltd (imagined) raises funds through public deposits. State two advantages of this source to the company.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two advantages (simple procedure, lower cost, no charge on assets, no dilution, tax-deductible interest) explained.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Simple and cheap:** there are few formalities and the rate paid is usually **lower than bank borrowing** costs.\n2. **No charge or dilution:** deposits are **unsecured** and carry **no voting rights**, so assets stay free and control is unchanged."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First advantage",
+     "marks": 1
+    },
+    {
+     "step": "Second advantage",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_026",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Bundi Bangles (imagined) buys beads on 45 days' credit every month. Explain two merits of trade credit for this small workshop.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two merits (convenience, no security, continuous, links to sales, little cost) linked to the case.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Convenient and continuous:** credit comes **with each purchase**, with no paperwork or security.\n2. **Self-financing stock:** the workshop can **sell the bangles before paying** for the beads, so it needs little cash of its own."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First merit",
+     "marks": 1
+    },
+    {
+     "step": "Second merit",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_027",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Bharuch Boilers Ltd (imagined) takes 30 per cent advances on custom boilers. Explain two merits and one limitation of customer advances for it.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two merits and one limitation linked to the boiler maker.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Interest-free:** the 30 per cent advance pays for **steel and parts** without any interest cost.\n2. **Assured sale:** a buyer who has **paid in advance** is unlikely to cancel the order.\n3. **Limitation:** advances are possible only for **made-to-order** or scarce goods, and a **delay in delivery** may bring penalties."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First merit",
+     "marks": 1
+    },
+    {
+     "step": "Second merit",
+     "marks": 1
+    },
+    {
+     "step": "Limitation",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_028",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "short",
+   "stem_md": "A new, little-known company plans to fund a six-year expansion of its plant through public deposits. Explain three limitations of public deposits that make this plan unwise.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three limitations (short period, depends on reputation, uncertain renewal, regulatory limits) linked to the plan.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Short period:** deposits are taken for **short periods**, so they cannot safely fund a **six-year** expansion.\n2. **Hard for new firms:** the public deposits money only with **well-known, trusted** companies, so a new firm may raise little.\n3. **Unreliable:** depositors may **withdraw at maturity**, especially in a downturn, leaving the plant half-funded."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First limitation",
+     "marks": 1
+    },
+    {
+     "step": "Second limitation",
+     "marks": 1
+    },
+    {
+     "step": "Third limitation",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_029",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Under factoring, a business",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "borrows from the public for a fixed period"
+    },
+    {
+     "id": "b",
+     "text_md": "buys a machine and pays for it in instalments"
+    },
+    {
+     "id": "c",
+     "text_md": "sells its receivables to a factor, which gives it cash at once and collects from the debtors for a fee"
+    },
+    {
+     "id": "d",
+     "text_md": "issues free shares to its customers"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** sells its receivables to a factor, which gives it cash at once and collects from the debtors for a fee. A factor buys or finances the firm's receivables, pays most of their value at once and handles collection, charging a commission.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_030",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Mysuru Silk House (imagined) factors its receivables on terms that if a customer fails to pay, the factor bears the loss. This is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "recourse factoring"
+    },
+    {
+     "id": "b",
+     "text_md": "bill discounting with recourse"
+    },
+    {
+     "id": "c",
+     "text_md": "an inter-corporate deposit"
+    },
+    {
+     "id": "d",
+     "text_md": "non-recourse factoring"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** non-recourse factoring. When the factor cannot recover a bad debt from the client, the factoring is without recourse (non-recourse).",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_031",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Champaran Chemicals Ltd (imagined) has ₹5 crore of surplus cash for three months and lends it, unsecured, to Kalinga Cables Ltd (imagined) at an agreed rate. This is an example of",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "a public deposit"
+    },
+    {
+     "id": "b",
+     "text_md": "factoring"
+    },
+    {
+     "id": "c",
+     "text_md": "trade credit"
+    },
+    {
+     "id": "d",
+     "text_md": "an inter-corporate deposit"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** an inter-corporate deposit. Unsecured short-term deposits placed by one company with another are inter-corporate deposits.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_032",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "An inter-corporate deposit that the lending company can withdraw at very short notice (usually one day) is called a",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "three-month deposit"
+    },
+    {
+     "id": "b",
+     "text_md": "six-month deposit"
+    },
+    {
+     "id": "c",
+     "text_md": "call deposit"
+    },
+    {
+     "id": "d",
+     "text_md": "recurring deposit"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** call deposit. ICDs are classed as call deposits (withdrawable at short notice), three-month deposits and six-month deposits.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_033",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Bastar Bell Metal Crafts (imagined) buys a ₹9 lakh furnace by paying ₹1.8 lakh now and the rest, with interest, in 24 monthly payments. This source of finance is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "cash credit"
+    },
+    {
+     "id": "b",
+     "text_md": "instalment credit"
+    },
+    {
+     "id": "c",
+     "text_md": "a customer advance"
+    },
+    {
+     "id": "d",
+     "text_md": "factoring"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** instalment credit. Paying a down payment and the balance with interest in instalments while using the asset is instalment credit.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_034",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Factoring helps a firm that sells mainly on credit to improve its liquidity.\n\n**Reason (R):** A factor pays the firm a large part of the value of its receivables at once.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the immediate payment by the factor is exactly what turns receivables into cash and improves liquidity.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_035",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Inter-corporate deposits are a highly secure source of funds for the lending company.\n\n**Reason (R):** Inter-corporate deposits are usually backed by a mortgage on the borrower's fixed assets.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Both are false. ICDs are usually unsecured, which makes them risky for the lender.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_036",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Factoring is free: the factor charges nothing for advancing cash and collecting debts.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. The factor charges a commission or fee, and interest on the money advanced.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_037",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Under instalment credit, the first amount paid at the time of purchase is called the ___ payment.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "It is the down payment; the balance is paid in instalments with interest.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "down",
+       "down payment",
+       "initial",
+       "initial payment"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: down",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_038",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "numerical",
+   "stem_md": "Mysuru Silk House (imagined) factors receivables of ₹10,00,000. The factor advances 80 per cent at once and deducts a commission of 2 per cent of the receivables from the advance. How much cash does the firm receive now (in ₹)?",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Step 1: Advance = 10,00,000 × 0.8 = ₹8,00,000.\nStep 2: Commission = 10,00,000 × 0.02 = ₹20,000.\nStep 3: Cash now = 8,00,000 − 20,000 = ₹7,80,000.",
+   "marks": 2,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 90,
+   "assets": [],
+   "answer": {
+    "value": 780000,
+    "tolerance": 0,
+    "unit": "₹"
+   },
+   "marking_scheme": [
+    {
+     "step": "Advance and commission",
+     "marks": 1
+    },
+    {
+     "step": "Cash = ₹7,80,000",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_039",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "numerical",
+   "stem_md": "Bastar Bell Metal Crafts (imagined) buys a furnace for ₹9,00,000, paying 20 per cent down. The balance carries flat interest of 10 per cent a year for 2 years and is paid in 24 equal monthly instalments. Calculate each instalment (in ₹).",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Step 1: Down payment = 9,00,000 × 0.2 = ₹1,80,000; balance = ₹7,20,000.\nStep 2: Flat interest = 7,20,000 × 0.1 × 2 = ₹1,44,000.\nStep 3: Instalment = (7,20,000 + 1,44,000) ÷ 24 = ₹36,000.",
+   "marks": 2,
+   "difficulty": 4,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 90,
+   "assets": [],
+   "answer": {
+    "value": 36000,
+    "tolerance": 0,
+    "unit": "₹"
+   },
+   "marking_scheme": [
+    {
+     "step": "Balance and interest",
+     "marks": 1
+    },
+    {
+     "step": "Instalment = ₹36,000",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_040",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Besides advancing cash, a factor handles the credit sales of Mysuru Silk House (imagined). Explain two other services a factor provides to such a client.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two services (collection, credit information, sales-ledger maintenance, protection against bad debts) explained.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Collection of debts:** the factor **collects payments** from the shop's customers, saving its staff time.\n2. **Credit information:** it checks the **creditworthiness** of buyers, so the shop can avoid risky customers."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First service",
+     "marks": 1
+    },
+    {
+     "step": "Second service",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_041",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Kalinga Cables Ltd (imagined) borrowed ₹5 crore for three months from another company through an inter-corporate deposit. State one advantage and one disadvantage of this source for Kalinga Cables.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "One advantage (speed, few formalities, no security) and one disadvantage (cost, uncertain availability, risk) of ICDs.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**Advantage:** it is **quick**, with **few formalities** and no security, so money arrives within days.\n**Disadvantage:** the **interest rate is often high**, and the lender may **withdraw** or refuse renewal if its own surplus disappears."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Advantage",
+     "marks": 1
+    },
+    {
+     "step": "Disadvantage",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_042",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Ganjam Garments Ltd (imagined) sells to many small boutiques on 90 days' credit, and its staff spend hours chasing payments. Evaluate factoring for it: two merits and one demerit.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two merits and one demerit linked to the case.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Immediate cash:** the factor pays most of the **90-day receivables** at once, easing working capital.\n2. **Saves effort:** the factor **collects from the boutiques**, freeing staff who now chase payments.\n3. **Demerit:** the **commission and interest** reduce profit, and boutiques may dislike dealing with an outsider."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First merit",
+     "marks": 1
+    },
+    {
+     "step": "Second merit",
+     "marks": 1
+    },
+    {
+     "step": "Demerit",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_043",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Bastar Bell Metal Crafts (imagined) is buying a furnace on instalment credit. Explain instalment credit and give one advantage and one disadvantage of it for this small unit.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Meaning, one advantage and one disadvantage linked to the case.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Meaning:** the buyer pays a **down payment** and the **balance with interest** in instalments, using the asset meanwhile.\n2. **Advantage:** the unit can **start using the furnace now**, paying from the extra output it produces.\n3. **Disadvantage:** **interest makes it costlier** than a cash purchase, and missed instalments may lead to **repossession**."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Meaning",
+     "marks": 1
+    },
+    {
+     "step": "Advantage",
+     "marks": 1
+    },
+    {
+     "step": "Disadvantage",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_044",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "long",
+   "stem_md": "Pindari Provisions (imagined), a grocery wholesaler, gets 30 days' credit from its suppliers. Bharuch Boilers Ltd (imagined) takes advances from its buyers.\n(a) Explain two merits and one demerit of trade credit for Pindari Provisions. [3]\n(b) Why can Bharuch Boilers take customer advances while Pindari Provisions usually cannot? Explain. [2]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two merits and one demerit of trade credit; reason based on made-to-order versus standard goods.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) **Merits:** trade credit is **convenient and continuous**, arriving with each purchase without loan papers or security. It also lets the wholesaler **sell the groceries before paying** for them, so its own cash needs are small.\n**Demerit:** easy credit may tempt it into **overtrading**, buying far more stock than it can sell, and it may **lose cash discounts** that suppliers give for prompt payment.\n\n(b) Customer advances are usual where goods are **made to order** or in **short supply**, so buyers are willing to pay part of the price early. Bharuch Boilers builds each boiler to a buyer's design. A grocery wholesaler sells **standard goods** that shopkeepers can buy elsewhere, so it cannot insist on advance payment."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Two merits and one demerit",
+     "marks": 3
+    },
+    {
+     "step": "(b) Reason explained",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_045",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "long",
+   "stem_md": "Kolar Kraft Papers Ltd (imagined) has ₹3 crore owed by customers and needs cash quickly for three months.\n(a) Explain how factoring would work for it, and one merit and one demerit. [3]\n(b) Explain the meaning of an inter-corporate deposit and one risk for the company that lends it. [2]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Factoring explained with merit and demerit; ICD meaning and lender's risk.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) Kolar Kraft would **sell or assign its ₹3 crore of receivables** to a factor. The factor pays a large part, such as **80 per cent, at once**, collects from the customers when bills fall due, and pays the balance less its **commission and interest**.\n**Merit:** it gets **cash immediately** without waiting for customers. **Demerit:** the **fees reduce profit**, and customers may dislike dealing with an outsider.\n\n(b) An **inter-corporate deposit** is an **unsecured short-term deposit** placed by one company that has surplus funds with another company that needs them. **Risk for the lender:** being **unsecured**, the deposit may be lost if the borrowing company runs into trouble."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Working of factoring",
+     "marks": 1
+    },
+    {
+     "step": "(a) Merit and demerit",
+     "marks": 2
+    },
+    {
+     "step": "(b) Meaning and risk",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_046",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "case-based",
+   "stem_md": "Read the passage and answer the questions that follow. *(Imagined firm and people, written by SOYL for practice.)*",
+   "options": [],
+   "match_right": [],
+   "solution_md": "**(a)** **Correct option: (a)** cash credit. A drawing limit secured on stock is cash credit.\n\n**(b)** Payment before delivery is a customer advance.\n\n**(c) (i)** Overtrading identified; a sensible remedy.\n\n**OR (c) (ii)** Interest on the amount used versus the whole loan.",
+   "marks": 4,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01",
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 420,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**(a)** (a) cash credit\n\n**(b)** **Customer advances.**\n\n**(c) (i)** **Overtrading:** easy credit led Mr Joshi to **buy more than he could sell or pay for**. He should **plan purchases from expected sales** and keep within a credit budget.\n\n**OR (c) (ii)** Under cash credit Pindari **draws only what it needs** and pays **interest only on the amount used**; a lump-sum loan charges interest on the **whole amount** from day one."
+   },
+   "marking_scheme": [
+    {
+     "step": "Part (a)",
+     "marks": 1
+    },
+    {
+     "step": "Part (b)",
+     "marks": 1
+    },
+    {
+     "step": "Part (c): either (i) or (ii)",
+     "marks": 2
+    }
+   ],
+   "passage_md": "**Pindari Provisions (imagined), Almora**\n\nPindari Provisions supplies rice, pulses and oil to 300 hill-town shops. Its suppliers in the plains allow 30 days' credit. Before the tourist season it borrows from its bank against its stock, drawing only what it needs. One large hotel chain pays a month in advance for bulk orders. Last year the owner, Mr Joshi, ordered far more stock than he could sell on the strength of his suppliers' credit and struggled to pay them on time.",
+   "passage_origin": "soyl-original",
+   "children": [
+    {
+     "id": "a",
+     "type": "mcq",
+     "stem_md": "Borrowing from the bank against stock, drawing only what is needed, is",
+     "options": [
+      {
+       "id": "a",
+       "text_md": "cash credit"
+      },
+      {
+       "id": "b",
+       "text_md": "a public deposit"
+      },
+      {
+       "id": "c",
+       "text_md": "trade credit"
+      },
+      {
+       "id": "d",
+       "text_md": "factoring"
+      }
+     ],
+     "match_right": [],
+     "solution_md": "**Correct option: (a)** cash credit. A drawing limit secured on stock is cash credit.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch04-t01"
+     ],
+     "expected_time_sec": 60,
+     "assets": [],
+     "answer": {
+      "option_ids": [
+       "a"
+      ]
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct option (a)",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "b",
+     "type": "short",
+     "stem_md": "Name the source of finance provided by the hotel chain.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Payment before delivery is a customer advance.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch04-t02"
+     ],
+     "expected_time_sec": 90,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Customer advances.**"
+     },
+     "marking_scheme": [
+      {
+       "step": "Customer advances",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "c",
+     "type": "short",
+     "stem_md": "**Either** (i): Identify the drawback of trade credit seen last year, and suggest one way to avoid it.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Overtrading identified; a sensible remedy.",
+     "marks": 2,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch04-t02"
+     ],
+     "expected_time_sec": 150,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Overtrading:** easy credit led Mr Joshi to **buy more than he could sell or pay for**. He should **plan purchases from expected sales** and keep within a credit budget."
+     },
+     "marking_scheme": [
+      {
+       "step": "Overtrading",
+       "marks": 1
+      },
+      {
+       "step": "Remedy",
+       "marks": 1
+      }
+     ],
+     "alternatives": [
+      {
+       "id": "c-ii",
+       "type": "short",
+       "stem_md": "**Or** (ii): Why is cash credit better than a lump-sum short-term loan for the tourist-season stock?",
+       "options": [],
+       "match_right": [],
+       "solution_md": "Interest on the amount used versus the whole loan.",
+       "marks": 2,
+       "difficulty": 3,
+       "competency": "analysis",
+       "bloom": "analyze",
+       "topic_ids": [
+        "isc-12-commerce-ch04-t01"
+       ],
+       "expected_time_sec": 150,
+       "assets": [],
+       "answer": {
+        "model_answer_md": "Under cash credit Pindari **draws only what it needs** and pays **interest only on the amount used**; a lump-sum loan charges interest on the **whole amount** from day one."
+       },
+       "marking_scheme": [
+        {
+         "step": "Cash credit point",
+         "marks": 1
+        },
+        {
+         "step": "Contrast with loan",
+         "marks": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_047",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "case-based",
+   "stem_md": "Read the passage and answer the questions that follow. *(Imagined company and figures, written by SOYL for practice.)*",
+   "options": [],
+   "match_right": [],
+   "solution_md": "**(a)** **Correct option: (b)** discounting of bills. The bank pays the bill value less a discount before maturity.\n\n**(b)** The factor bears bad debts: non-recourse.\n\n**(c) (i)** Open-account debts and the extra services of a factor.\n\n**OR (c) (ii)** Cost and customer-relations risk.",
+   "marks": 4,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01",
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 420,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**(a)** (b) discounting of bills\n\n**(b)** **Non-recourse factoring**: the firm \"will **bear any bad debts**\".\n\n**(c) (i)** Many boutiques owe on **open account, not bills**, so they cannot be discounted; a factor takes **all receivables**, collects them and **bears bad debts**.\n\n**OR (c) (ii)** 1. The **commission and interest** reduce profit on each saree.\n2. Boutiques may **dislike an outside agency** chasing them, harming relationships."
+   },
+   "marking_scheme": [
+    {
+     "step": "Part (a)",
+     "marks": 1
+    },
+    {
+     "step": "Part (b)",
+     "marks": 1
+    },
+    {
+     "step": "Part (c): either (i) or (ii)",
+     "marks": 2
+    }
+   ],
+   "passage_md": "**Mysuru Silk House (imagined)**\n\nMysuru Silk House sells silk sarees to boutiques across South India on 60 days' credit. Some boutiques accept bills of exchange; others simply owe money on open account. In the wedding season it needs cash to buy raw silk. Its manager, Ms Lakshmi, is comparing two options: taking the accepted bills to the bank before they are due, or handing all its receivables to a firm that will pay 80 per cent at once, collect from the boutiques and bear any bad debts.",
+   "passage_origin": "soyl-original",
+   "children": [
+    {
+     "id": "a",
+     "type": "mcq",
+     "stem_md": "Taking accepted bills to the bank before they are due is",
+     "options": [
+      {
+       "id": "a",
+       "text_md": "an overdraft"
+      },
+      {
+       "id": "b",
+       "text_md": "discounting of bills"
+      },
+      {
+       "id": "c",
+       "text_md": "an inter-corporate deposit"
+      },
+      {
+       "id": "d",
+       "text_md": "instalment credit"
+      }
+     ],
+     "match_right": [],
+     "solution_md": "**Correct option: (b)** discounting of bills. The bank pays the bill value less a discount before maturity.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch04-t01"
+     ],
+     "expected_time_sec": 60,
+     "assets": [],
+     "answer": {
+      "option_ids": [
+       "b"
+      ]
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct option (b)",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "b",
+     "type": "short",
+     "stem_md": "What type of factoring is described in the passage? Give the clue.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "The factor bears bad debts: non-recourse.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch04-t03"
+     ],
+     "expected_time_sec": 90,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Non-recourse factoring**: the firm \"will **bear any bad debts**\"."
+     },
+     "marking_scheme": [
+      {
+       "step": "Non-recourse with clue",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "c",
+     "type": "short",
+     "stem_md": "**Either** (i): Why might factoring suit Mysuru Silk House better than bill discounting?",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Open-account debts and the extra services of a factor.",
+     "marks": 2,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch04-t01",
+      "isc-12-commerce-ch04-t03"
+     ],
+     "expected_time_sec": 150,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "Many boutiques owe on **open account, not bills**, so they cannot be discounted; a factor takes **all receivables**, collects them and **bears bad debts**."
+     },
+     "marking_scheme": [
+      {
+       "step": "Open account point",
+       "marks": 1
+      },
+      {
+       "step": "Extra services",
+       "marks": 1
+      }
+     ],
+     "alternatives": [
+      {
+       "id": "c-ii",
+       "type": "short",
+       "stem_md": "**Or** (ii): State two costs or risks of factoring for the firm.",
+       "options": [],
+       "match_right": [],
+       "solution_md": "Cost and customer-relations risk.",
+       "marks": 2,
+       "difficulty": 3,
+       "competency": "analysis",
+       "bloom": "analyze",
+       "topic_ids": [
+        "isc-12-commerce-ch04-t03"
+       ],
+       "expected_time_sec": 150,
+       "assets": [],
+       "answer": {
+        "model_answer_md": "1. The **commission and interest** reduce profit on each saree.\n2. Boutiques may **dislike an outside agency** chasing them, harming relationships."
+       },
+       "marking_scheme": [
+        {
+         "step": "Cost",
+         "marks": 1
+        },
+        {
+         "step": "Relations risk",
+         "marks": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_048",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "After Amravati Auto Parts Ltd (imagined) discounts a customer's bill with its bank, who normally presents the bill to the customer for payment on the due date?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Amravati Auto Parts, which no longer holds it"
+    },
+    {
+     "id": "b",
+     "text_md": "The Reserve Bank of India"
+    },
+    {
+     "id": "c",
+     "text_md": "A factor appointed by the customer"
+    },
+    {
+     "id": "d",
+     "text_md": "The bank, which now holds the bill"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** The bank, which now holds the bill. The discounting bank holds the bill and collects it at maturity; if it is dishonoured, the bank recovers from the firm that discounted it.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_049",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Which of these imagined companies is most likely to raise public deposits easily?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "A forty-year-old consumer-goods maker with a steady record of profit and dividends"
+    },
+    {
+     "id": "b",
+     "text_md": "A start-up that began trading last month"
+    },
+    {
+     "id": "c",
+     "text_md": "A company that has defaulted on its loans"
+    },
+    {
+     "id": "d",
+     "text_md": "A partnership firm of two brothers"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** A forty-year-old consumer-goods maker with a steady record of profit and dividends. The public deposits money only with companies it trusts; a long, sound record matters most. A partnership is not a company.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_050",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The amount and period of trade credit a supplier gives a buyer depend mainly on",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "the buyer's share capital only"
+    },
+    {
+     "id": "b",
+     "text_md": "the rate of income tax"
+    },
+    {
+     "id": "c",
+     "text_md": "the buyer's creditworthiness and the volume of its purchases"
+    },
+    {
+     "id": "d",
+     "text_md": "the number of the buyer's employees"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** the buyer's creditworthiness and the volume of its purchases. Suppliers give more and longer credit to buyers who pay reliably and buy in large volumes; competition among suppliers also matters.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_051",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "In which imagined business are customer advances most likely?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "A roadside tea stall"
+    },
+    {
+     "id": "b",
+     "text_md": "A grocery shop selling packaged goods"
+    },
+    {
+     "id": "c",
+     "text_md": "A builder of custom fishing trawlers made to each buyer's design"
+    },
+    {
+     "id": "d",
+     "text_md": "A newspaper vendor"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** A builder of custom fishing trawlers made to each buyer's design. Advances are common for goods made to order, where the maker needs funds to build and wants a firm commitment.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_052",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Factoring is most useful for a firm that",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "sells mostly on credit to many customers and needs cash before they pay"
+    },
+    {
+     "id": "b",
+     "text_md": "sells only for cash at the counter"
+    },
+    {
+     "id": "c",
+     "text_md": "has no customers yet"
+    },
+    {
+     "id": "d",
+     "text_md": "wants to raise permanent capital for a new factory"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** sells mostly on credit to many customers and needs cash before they pay. Factoring turns receivables into cash and handles collection, so it suits firms with large credit sales to many buyers.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_053",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Under a **hire-purchase** form of instalment credit, ownership of the asset passes to the buyer",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "when the down payment is made"
+    },
+    {
+     "id": "b",
+     "text_md": "never; the asset always stays with the seller"
+    },
+    {
+     "id": "c",
+     "text_md": "when the first instalment is missed"
+    },
+    {
+     "id": "d",
+     "text_md": "when the last instalment is paid"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** when the last instalment is paid. Under hire purchase the seller remains the owner until the final instalment; under an instalment sale, ownership passes at once.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_054",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Sundergarh Steel Ltd (imagined) plans to finance a new blast furnace, which will take ten years to pay for itself, entirely through public deposits. True or false: this is a sound use of public deposits.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. Public deposits are taken for short periods and may be withdrawn at maturity, so they suit working capital, not a ten-year project.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_055",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Trade credit is available only to joint stock companies.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. Sole traders, partnerships and companies all receive trade credit from their suppliers.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_056",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "The specialised agency that buys or finances a firm's receivables and collects them is called a ___.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "It is a factor; the arrangement is called factoring.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "factor",
+       "factoring company",
+       "factoring agency"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: factor",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_057",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "match",
+   "stem_md": "Match each term on short-term finance with its meaning.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Call deposit (ICD)"
+    },
+    {
+     "id": "b",
+     "text_md": "Recourse factoring"
+    },
+    {
+     "id": "c",
+     "text_md": "Down payment"
+    },
+    {
+     "id": "d",
+     "text_md": "Overtrading"
+    }
+   ],
+   "match_right": [
+    {
+     "id": "p",
+     "text_md": "Buying or selling beyond what the firm's funds can support"
+    },
+    {
+     "id": "q",
+     "text_md": "Withdrawable by the lender at very short notice"
+    },
+    {
+     "id": "r",
+     "text_md": "Part of the price paid at the time of purchase"
+    },
+    {
+     "id": "s",
+     "text_md": "Client bears the loss if a debtor fails to pay"
+    }
+   ],
+   "solution_md": "**Key:** (a)–(q), (b)–(s), (c)–(r), (d)–(p). A call deposit can be recalled at short notice; with recourse, bad debts fall back on the client; a down payment is paid upfront; overtrading outruns the firm's resources.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 120,
+   "assets": [],
+   "answer": {
+    "pairs": [
+     {
+      "left_id": "a",
+      "right_id": "q"
+     },
+     {
+      "left_id": "b",
+      "right_id": "s"
+     },
+     {
+      "left_id": "c",
+      "right_id": "r"
+     },
+     {
+      "left_id": "d",
+      "right_id": "p"
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Each correct pair 0.5 mark (4 pairs)",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_058",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Kalinga Cables Ltd (imagined) holds accepted bills worth ₹6 lakh from dealers, due in two months. Explain what discounting them means and one benefit to the company.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Meaning of discounting and one benefit.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t01"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**Meaning:** the bank **pays the value of the bills now, less a discount** (interest for the two months), and collects from the dealers on maturity.\n**Benefit:** Kalinga gets **cash immediately** without waiting two months, easing its working capital."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Meaning",
+     "marks": 1
+    },
+    {
+     "step": "Benefit",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_059",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Bundi Bangles (imagined) gets credit from its bead supplier, while Bharuch Boilers Ltd (imagined) gets advances from its buyers. Distinguish trade credit from customer advances on three bases.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three bases (source, timing, suitability, effect on sales risk) for both sources.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Who provides it:** trade credit comes from **suppliers**; customer advances come from **buyers**.\n2. **Timing:** with trade credit the firm **pays later** for goods received; with advances it is **paid before** it delivers.\n3. **Suitable firms:** trade credit suits **almost every business**; advances suit **made-to-order** or scarce goods."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Source",
+     "marks": 1
+    },
+    {
+     "step": "Timing",
+     "marks": 1
+    },
+    {
+     "step": "Suitability",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_060",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Tirupur Tees Ltd (imagined) has three needs: cash against ₹2 crore owed by overseas buyers on open account, ₹1 crore for six weeks from a group company with spare cash, and a new knitting machine it cannot pay for at once. Suggest a source for each, with a reason.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Factoring, ICD and instalment credit matched and justified.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t03"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Factoring:** a factor pays most of the **₹2 crore of receivables** at once and collects from the buyers.\n2. **Inter-corporate deposit:** the **group company's spare cash** can be placed with it quickly, with few formalities.\n3. **Instalment credit:** a **down payment** and monthly instalments let it use the machine at once."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Factoring",
+     "marks": 1
+    },
+    {
+     "step": "ICD",
+     "marks": 1
+    },
+    {
+     "step": "Instalment credit",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch04_061",
+   "unit": "isc-12-commerce-ch04",
+   "language": "en",
+   "type": "long",
+   "stem_md": "Sundergarh Steel Ltd (imagined), a well-known company, invites public deposits to finance its stock of iron ore and coal.\n(a) What are public deposits? [1]\n(b) Explain two advantages and two disadvantages of public deposits for the company. [4]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Meaning; two advantages and two disadvantages.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch04-t02"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) **Public deposits** are amounts the company accepts **directly from the public** for a fixed short period, usually at a rate **higher than bank deposits**.\n\n(b) **Advantages:** the procedure is **simple**, with no security or long negotiation, and the cost is often **lower than bank borrowing**; and since depositors have **no voting rights** and no charge on assets, **control** and assets remain free.\n**Disadvantages:** deposits are taken for **short periods** and may be withdrawn at maturity, so they are unreliable for long projects; and only **well-known, sound companies** can attract them, so the source is closed to new firms and dries up quickly if the company's name suffers."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Meaning",
+     "marks": 1
+    },
+    {
+     "step": "(b) Two advantages",
+     "marks": 2
+    },
+    {
+     "step": "(b) Two disadvantages",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  }
+ ],
+ "build": {
+  "run_id": null,
+  "checks": {
+   "syllabus": "topics t01–t03 of isc-12-commerce-ch04 (overdraft, cash credit, short-term loans and discounting of bills; public deposits, trade credit and customer advances; factoring, inter-corporate deposits and instalment credit)",
+   "originality": "every firm, person, figure and case is imagined and written by SOYL and labelled; no ISC or CBSE textbook text, illustration or exercise and no CISCE specimen or board item reused (D-036)",
+   "data": "figures computed in the build and asserted: bill discount ₹6,000 (cash ₹1,94,000), cash-credit saving ₹4,000, factoring cash ₹7,80,000, instalment ₹36,000; all rates are imagined round numbers",
+   "facts": "no current interest rates, deposit ceilings or regulatory limits are stated; public deposits are described as subject to legal limits without figures",
+   "gate": "schema, pipeline lint, deterministic verify, word limits, narration and answer-leak checks run clean in this build"
+  }
+ }
+}
