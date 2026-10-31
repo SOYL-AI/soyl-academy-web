@@ -1,0 +1,5570 @@
+{
+ "unit": "isc-12-commerce-ch16",
+ "version": 1,
+ "academic_year": "2026-27",
+ "created_at": "2026-10-31",
+ "decks": [
+  {
+   "unit": "isc-12-commerce-ch16",
+   "part": 1,
+   "version": 1,
+   "title": "Consumer Protection — Part 1: Need, Methods, Rights and Responsibilities",
+   "language": "en",
+   "goals": [
+    "Explain why consumers need protection and compare the methods of consumer protection",
+    "Decide whether a person is a consumer under the 2019 Act in a given case",
+    "Identify the consumer right violated in a situation and state related responsibilities"
+   ],
+   "slides": [
+    {
+     "id": "s01",
+     "layout": "title",
+     "heading": "Consumer Protection",
+     "body_md": "Part 1: why consumers need **protection**, the **methods** of protection, **who is a consumer**, and consumer **rights and responsibilities**.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Why protect consumers"
+        },
+        {
+         "id": "n2",
+         "label": "Methods of protection"
+        },
+        {
+         "id": "n3",
+         "label": "Who is a consumer"
+        },
+        {
+         "id": "n4",
+         "label": "Rights and responsibilities"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        }
+       ]
+      },
+      "alt": "Route map of Part 1: why consumers need protection, the methods of protection, who is a consumer under the 2019 Act, and consumer rights and responsibilities",
+      "caption": "Part 1 at a glance"
+     },
+     "math": [],
+     "narration": "Every one of us is a consumer, from buying a pencil to booking a train ticket. When something goes wrong, a single buyer is often helpless against a large seller. In this part we see why consumers need protection, how they are protected, who counts as a consumer in law, and what their rights and duties are.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s02",
+     "layout": "concept",
+     "heading": "Why consumers need protection",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Why consumers need protection",
+        "In short"
+       ],
+       "rows": [
+        [
+         "Unorganised and weak",
+         "One buyer against a large, organised seller"
+        ],
+        [
+         "Lack of information",
+         "Hard to judge quality, safety and true price"
+        ],
+        [
+         "Unfair trade practices",
+         "Adulteration, short weights, false claims"
+        ],
+        [
+         "Unsafe goods",
+         "Defective products can harm life and property"
+        ]
+       ]
+      },
+      "alt": "Table of four reasons why consumers need protection"
+     },
+     "math": [],
+     "narration": "Consumers need protection for four reasons. They are unorganised, each facing a large, organised seller alone. They often lack information about quality, safety and fair price. Some sellers use unfair practices such as adulteration and false claims. And defective goods can harm life and property.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s03",
+     "layout": "concept",
+     "heading": "Methods of consumer protection",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Method",
+        "Who acts",
+        "Example"
+       ],
+       "rows": [
+        [
+         "Self-help",
+         "The consumer",
+         "Checking marks, keeping bills, complaining"
+        ],
+        [
+         "Legislation",
+         "Government, through laws",
+         "Consumer Protection Act, 2019"
+        ],
+        [
+         "Consumer associations and NGOs",
+         "Voluntary groups",
+         "Helpdesks, product tests, help with complaints"
+        ]
+       ]
+      },
+      "alt": "Table of three methods of consumer protection, who acts in each and an example"
+     },
+     "math": [],
+     "narration": "There are three methods. Self-help, where alert consumers check marks, keep bills and complain. Legislation, where the government passes laws such as the Consumer Protection Act of twenty nineteen. And consumer associations and non-government organisations, which educate consumers, test products and help them complain.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s04",
+     "layout": "check",
+     "heading": "Quick check: whose job?",
+     "body_md": "True or false: consumer protection is the job of the government alone.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Think of all three methods.",
+     "check_question_id": "q_isc12commerce_ch16_006",
+     "audio": null
+    },
+    {
+     "id": "s05",
+     "layout": "concept",
+     "heading": "Who is a consumer?",
+     "body_md": "Under the **Consumer Protection Act, 2019**, a consumer **buys goods or hires services for a consideration**, offline or online, including a **user with the buyer's approval**, but not one who buys **for resale or a commercial purpose**.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Covered",
+        "Not covered"
+       ],
+       "rows": [
+        [
+         "Purchases for personal use",
+         "Goods bought for resale"
+        ],
+        [
+         "Online, teleshopping, direct selling",
+         "Goods bought for a commercial purpose"
+        ],
+        [
+         "Use to earn a living by self-employment",
+         "Goods received wholly free"
+        ]
+       ]
+      },
+      "alt": "Table of who is covered as a consumer under the 2019 Act and who is not"
+     },
+     "math": [],
+     "narration": "A consumer is someone who buys goods or hires services and pays, or promises to pay, for them. Users with the buyer's approval count too, and so do online, teleshopping and direct-selling buyers. People who buy to resell or for a commercial purpose do not, but using goods to earn one's own living by self-employment is allowed.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s06",
+     "layout": "example",
+     "heading": "Worked example 1: consumer or not?",
+     "body_md": "Five imagined buyers.",
+     "bullets": [
+      "Step 1: was a **consideration** paid or promised?",
+      "Step 2: was it for **resale or commercial** use?",
+      "Step 3: is the user acting **with the buyer's approval**?"
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined buyer",
+        "Consumer under the 2019 Act?",
+        "Why"
+       ],
+       "rows": [
+        [
+         "Anita buys a sewing machine to earn her living by stitching",
+         "Yes",
+         "Livelihood by self-employment is not commercial"
+        ],
+        [
+         "A trader buys fifty fans to resell",
+         "No",
+         "Bought for resale"
+        ],
+        [
+         "A person gets a free sample, paying nothing",
+         "No",
+         "No consideration"
+        ],
+        [
+         "Lalit uses a fridge his mother bought, with her approval",
+         "Yes",
+         "User with the buyer's approval"
+        ],
+        [
+         "A shopper buys a phone online",
+         "Yes",
+         "Online purchases are covered"
+        ]
+       ]
+      },
+      "alt": "Worked table: five imagined buyers, whether each is a consumer under the 2019 Act, and why",
+      "caption": "Check three things: consideration paid, purpose of purchase, and whether the user had approval."
+     },
+     "math": [],
+     "narration": "Anita, who stitches clothes to earn her living, is a consumer. A trader buying fans to resell is not. Someone receiving a free sample has paid nothing, so is not. Lalit using his mother's fridge with her approval is a consumer. And an online shopper is covered by the twenty nineteen Act.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s07",
+     "layout": "concept",
+     "heading": "Rights of consumers",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Right",
+        "Meaning"
+       ],
+       "rows": [
+        [
+         "Safety",
+         "Protection from goods and services hazardous to life and property"
+        ],
+        [
+         "To be informed",
+         "Facts on quality, quantity, purity, standard and price"
+        ],
+        [
+         "To choose",
+         "Access to a variety of goods at competitive prices"
+        ],
+        [
+         "To be heard",
+         "Consumers' interests considered at appropriate forums"
+        ],
+        [
+         "To seek redressal",
+         "Fair settlement against unfair practices and exploitation"
+        ],
+        [
+         "Consumer awareness",
+         "Knowledge and skills to be an informed consumer"
+        ]
+       ]
+      },
+      "alt": "Table of six consumer rights with the meaning of each"
+     },
+     "math": [],
+     "narration": "Consumers have six rights. The right to safety from hazardous goods. The right to be informed about quality and price. The right to choose from a variety at fair prices. The right to be heard at proper forums. The right to seek redressal. And the right to consumer awareness.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s08",
+     "layout": "example",
+     "heading": "Worked example 2: which right?",
+     "body_md": "Four imagined situations.",
+     "bullets": [
+      "Step 1: ask what the consumer **lost** or **gained**.",
+      "Step 2: match it to a **right**.",
+      "Step 3: explain in one line."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined situation",
+        "Right involved"
+       ],
+       "rows": [
+        [
+         "An e-bike battery catches fire while charging",
+         "Safety"
+        ],
+        [
+         "A loan app hides its fees until after the loan",
+         "To be informed"
+        ],
+        [
+         "A town's only cable operator scraps all cheap packs",
+         "To choose"
+        ],
+        [
+         "Consumer groups sit on a bus-safety committee",
+         "To be heard"
+        ]
+       ]
+      },
+      "alt": "Worked table matching four imagined situations with the consumer right each involves",
+      "caption": "Ask what the consumer lost: safety, facts, options or a voice."
+     },
+     "math": [],
+     "narration": "An e-bike battery catching fire threatens safety. A loan app hiding its fees denies the right to be informed. A cable operator scrapping cheap packs takes away choice. And consumer groups sitting on a bus-safety committee shows the right to be heard in action.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s09",
+     "layout": "check",
+     "heading": "Quick check: a right to learn",
+     "body_md": "Fill in the blank: the right to gain the knowledge and skills to be an informed consumer is the right to consumer ___.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "One word, the sixth right.",
+     "check_question_id": "q_isc12commerce_ch16_022",
+     "audio": null
+    },
+    {
+     "id": "s10",
+     "layout": "concept",
+     "heading": "Responsibilities of consumers",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Responsibility",
+        "What it means"
+       ],
+       "rows": [
+        [
+         "Be aware",
+         "Know your rights and read labels and terms"
+        ],
+        [
+         "Insist on a bill",
+         "Keep the bill and warranty as proof"
+        ],
+        [
+         "Look for quality marks",
+         "Prefer certified goods"
+        ],
+        [
+         "Use as instructed",
+         "Follow the maker's instructions and warnings"
+        ],
+        [
+         "Complain genuinely",
+         "Raise only real defects, with facts"
+        ]
+       ]
+      },
+      "alt": "Table of five responsibilities of consumers with what each means"
+     },
+     "math": [],
+     "narration": "Rights come with responsibilities. Consumers should be aware of their rights and read labels and terms. They should insist on a bill and keep it. They should prefer goods with quality marks, use products as instructed, and complain only about genuine defects, with facts.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s11",
+     "layout": "check",
+     "heading": "Quick check: a voice on committees",
+     "body_md": "Consumer groups are invited onto the committee that sets school-bus safety standards. Which right does this support?",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Whose views are being considered?",
+     "check_question_id": "q_isc12commerce_ch16_017",
+     "audio": null
+    },
+    {
+     "id": "s12",
+     "layout": "summary",
+     "heading": "Summary of Part 1",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Idea",
+        "Key point"
+       ],
+       "rows": [
+        [
+         "Need",
+         "Consumers are unorganised, ill-informed and face unfair practices"
+        ],
+        [
+         "Methods",
+         "Self-help, legislation, consumer associations and NGOs"
+        ],
+        [
+         "Consumer",
+         "Buys or hires for consideration, online or offline; not for resale or commercial use"
+        ],
+        [
+         "Rights and duties",
+         "Six rights; matching responsibilities"
+        ]
+       ]
+      },
+      "alt": "Summary table of Part 1: need, methods, who is a consumer, and rights and responsibilities"
+     },
+     "math": [],
+     "narration": "To sum up Part 1. Consumers need protection because they are unorganised, ill-informed and face unfair practices. Self-help, legislation and consumer associations protect them. Under the twenty nineteen Act, a consumer pays for goods or services, online or offline, but not for resale or commercial use. Six rights come with matching responsibilities.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s13",
+     "layout": "exam-tips",
+     "heading": "Exam tips",
+     "body_md": "",
+     "bullets": [
+      "To decide **who is a consumer**, check consideration, purpose and approval.",
+      "Name the **exact right** in a case and quote the clue.",
+      "Pair each right with a **responsibility** where asked.",
+      "Use **imagined examples**, not brand names."
+     ],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Quote the clue"
+        },
+        {
+         "id": "n2",
+         "label": "Name the right, body or rule"
+        },
+        {
+         "id": "n3",
+         "label": "Apply the limit or remedy"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        }
+       ]
+      },
+      "alt": "Three steps for case questions: quote the clue, name the right, body or rule, and apply the limit or remedy"
+     },
+     "math": [],
+     "narration": "Some tips. To decide whether someone is a consumer, check whether they paid, why they bought, and whether a user had approval. In case questions, name the exact right and quote the clue. Where asked, pair rights with responsibilities.",
+     "check_question_id": null,
+     "audio": null
+    }
+   ],
+   "status": "draft",
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "unit": "isc-12-commerce-ch16",
+   "part": 2,
+   "version": 1,
+   "title": "Consumer Protection — Part 2: Commissions, Misleading Advertisements and the Two Acts",
+   "language": "en",
+   "goals": [
+    "Choose the correct commission for a complaint based on the value of goods or services paid for",
+    "Explain what makes an advertisement misleading and the action a consumer can take",
+    "List the key differences between the 1986 and 2019 Acts"
+   ],
+   "slides": [
+    {
+     "id": "s01",
+     "layout": "title",
+     "heading": "Commissions, Advertisements and the Two Acts",
+     "body_md": "Part 2: the **three commissions** and their **limits**, **misleading advertisements** and the **CCPA**, and the **1986 and 2019 Acts** compared.",
+     "bullets": [],
+     "visual": {
+      "kind": "flow",
+      "spec": {
+       "direction": "LR",
+       "nodes": [
+        {
+         "id": "n1",
+         "label": "Three commissions"
+        },
+        {
+         "id": "n2",
+         "label": "Limits notified in 2021"
+        },
+        {
+         "id": "n3",
+         "label": "Misleading advertisements"
+        },
+        {
+         "id": "n4",
+         "label": "1986 versus 2019"
+        }
+       ],
+       "edges": [
+        {
+         "from": "n1",
+         "to": "n2"
+        },
+        {
+         "from": "n2",
+         "to": "n3"
+        },
+        {
+         "from": "n3",
+         "to": "n4"
+        }
+       ]
+      },
+      "alt": "Route map of Part 2: the three consumer commissions, their pecuniary limits as notified in 2021, misleading advertisements and the CCPA, and the 1986 and 2019 Acts compared",
+      "caption": "Part 2 at a glance"
+     },
+     "math": [],
+     "narration": "In Part 2 we see where a consumer goes for justice. We meet the three consumer commissions and their money limits, then look at misleading advertisements and the central authority that acts against them, and finally compare the old and new consumer laws.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s02",
+     "layout": "diagram",
+     "heading": "Three-tier redressal machinery",
+     "body_md": "Consumer Disputes Redressal **Commissions** at district, state and national level, with limits **as notified in December 2021**.",
+     "bullets": [],
+     "visual": {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 360\" role=\"img\" aria-label=\"Four stacked boxes. Bottom: District Commission, value paid up to 50 lakh rupees. Above it: State Commission, above 50 lakh and up to 2 crore rupees. Above that: National Commission, value paid above 2 crore rupees. Top: Supreme Court, for appeals from the National Commission's original orders. Arrows on the right show appeals moving up one level. Limits as notified in December 2021\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Four stacked boxes. Bottom: District Commission, value paid up to 50 lakh rupees. Above it: State Commission, above 50 lakh and up to 2 crore rupees. Above that: National Commission, value paid above 2 crore rupees. Top: Supreme Court, for appeals from the National Commission's original orders. Arrows on the right show appeals moving up one level. Limits as notified in December 2021</title><rect x=\"90\" y=\"18\" width=\"380\" height=\"56\" rx=\"8\" fill=\"var(--diagram-fill)\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"38\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Supreme Court</text><text x=\"280\" y=\"58\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">appeals from the National Commission's original orders</text><rect x=\"90\" y=\"98\" width=\"380\" height=\"56\" rx=\"8\" fill=\"var(--diagram-red)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"118\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">National Commission</text><text x=\"280\" y=\"138\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">value paid above ₹2 crore</text><rect x=\"90\" y=\"178\" width=\"380\" height=\"56\" rx=\"8\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"198\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">State Commission</text><text x=\"280\" y=\"218\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">above ₹50 lakh, up to ₹2 crore</text><rect x=\"90\" y=\"258\" width=\"380\" height=\"56\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"278\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">District Commission</text><text x=\"280\" y=\"298\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">value paid up to ₹50 lakh</text><line x1=\"500\" y1=\"286\" x2=\"500\" y2=\"206\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"500,206 504.5,215 495.5,215\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><line x1=\"500\" y1=\"206\" x2=\"500\" y2=\"126\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"500,126 504.5,135 495.5,135\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><line x1=\"500\" y1=\"126\" x2=\"500\" y2=\"46\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"500,46 504.5,55 495.5,55\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><text x=\"512\" y=\"190\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">appeal</text><text x=\"280\" y=\"342\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Limits as notified in December 2021</text></svg>",
+      "alt": "Four stacked boxes. Bottom: District Commission, value paid up to 50 lakh rupees. Above it: State Commission, above 50 lakh and up to 2 crore rupees. Above that: National Commission, value paid above 2 crore rupees. Top: Supreme Court, for appeals from the National Commission's original orders. Arrows on the right show appeals moving up one level. Limits as notified in December 2021",
+      "caption": "Three-tier consumer redressal under the 2019 Act, with appeals moving up."
+     },
+     "math": [],
+     "narration": "There are three tiers. The District Commission hears complaints where the value paid is up to fifty lakh rupees. The State Commission hears those above fifty lakh and up to two crore. The National Commission hears those above two crore. Appeals move up one level, and from the National Commission to the Supreme Court. These limits were notified in December twenty twenty one.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s03",
+     "layout": "example",
+     "heading": "Worked example 1: which commission?",
+     "body_md": "Four imagined complaints.",
+     "bullets": [
+      "Step 1: find the **value paid**.",
+      "Step 2: ignore the **compensation claimed**.",
+      "Step 3: compare with the limits."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined complaint",
+        "Value paid",
+        "Commission"
+       ],
+       "rows": [
+        [
+         "Leaky flat bought for a family",
+         "₹42 lakh",
+         "District"
+        ],
+        [
+         "House with cracks; ₹1.5 crore claimed",
+         "₹60 lakh",
+         "State (value paid decides)"
+        ],
+        [
+         "Family house with cracks",
+         "₹1.4 crore",
+         "State"
+        ],
+        [
+         "Apartment never delivered",
+         "₹2.4 crore",
+         "National"
+        ]
+       ]
+      },
+      "alt": "Worked table: four imagined complaints with the value paid and the commission that hears each, using the limits notified in 2021",
+      "caption": "Use the value paid, never the compensation claimed."
+     },
+     "math": [],
+     "narration": "A flat bought for forty two lakh goes to the District Commission. A house bought for sixty lakh goes to the State Commission, even if the owner claims one and a half crore, because the value paid decides. A house costing one point four crore also goes to the State. An apartment costing two point four crore goes to the National Commission.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s04",
+     "layout": "check",
+     "heading": "Quick check: a leaky flat",
+     "body_md": "Rekha paid ₹42 lakh for a flat that leaks. Where should she file her complaint?",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "Compare the amount with the lowest limit.",
+     "check_question_id": "q_isc12commerce_ch16_030",
+     "audio": null
+    },
+    {
+     "id": "s05",
+     "layout": "concept",
+     "heading": "Easier redress under the 2019 Act",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Provision of the 2019 Act",
+        "How it helps the consumer"
+       ],
+       "rows": [
+        [
+         "File where you live or work",
+         "No need to travel to the seller's city"
+        ],
+        [
+         "E-filing",
+         "Complaint and fees can be submitted online"
+        ],
+        [
+         "Mediation",
+         "A quicker, friendly settlement if both agree"
+        ],
+        [
+         "Product liability",
+         "Compensation for harm from defective products"
+        ]
+       ]
+      },
+      "alt": "Table of four provisions of the 2019 Act and how each helps the consumer"
+     },
+     "math": [],
+     "narration": "The twenty nineteen Act makes complaining easier. A consumer can file where she lives or works. Complaints can be filed online. If both sides agree, the dispute can go to mediation. And product liability lets consumers claim compensation for harm caused by defective products.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s06",
+     "layout": "concept",
+     "heading": "Misleading advertisements",
+     "body_md": "A **misleading advertisement** falsely describes a product, gives a **false guarantee**, or **hides important information**.",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "An advertisement is misleading if it…",
+        "Imagined example"
+       ],
+       "rows": [
+        [
+         "Falsely describes the product",
+         "A cream said to remove all scars"
+        ],
+        [
+         "Gives a false guarantee",
+         "A drink guaranteeing two inches of height"
+        ],
+        [
+         "Deliberately hides important information",
+         "Zero interest in large print; fees in tiny print"
+        ],
+        [
+         "Amounts to an unfair trade practice",
+         "A false claim of a government award"
+        ]
+       ]
+      },
+      "alt": "Table of four ways an advertisement can be misleading under the 2019 Act, with an imagined example of each"
+     },
+     "math": [],
+     "narration": "An advertisement is misleading if it falsely describes a product, gives a false guarantee, deliberately hides important information, or amounts to an unfair trade practice. A cream said to remove all scars, or a drink that guarantees extra height, are imagined examples.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s07",
+     "layout": "concept",
+     "heading": "The Central Consumer Protection Authority",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Power of the CCPA",
+        "Detail"
+       ],
+       "rows": [
+        [
+         "Investigate",
+         "On a complaint or on its own"
+        ],
+        [
+         "Stop or modify the advertisement",
+         "Directions to maker, trader, endorser or publisher"
+        ],
+        [
+         "Penalty on maker or endorser",
+         "Up to ₹10 lakh; up to ₹50 lakh for a repeat"
+        ],
+        [
+         "Bar an endorser",
+         "From endorsing for a period"
+        ],
+        [
+         "Recall and refund",
+         "Order unsafe goods recalled and money refunded"
+        ]
+       ]
+      },
+      "alt": "Table of the powers of the Central Consumer Protection Authority, including penalties of up to 10 lakh rupees, and up to 50 lakh rupees for a repeat contravention",
+      "caption": "Penalty figures as in the 2019 Act; an endorser who exercised due diligence is not penalised."
+     },
+     "math": [],
+     "narration": "The twenty nineteen Act set up the Central Consumer Protection Authority, which protects consumers as a class. It can investigate, order a misleading advertisement to be stopped or changed, and penalise the maker or endorser up to ten lakh rupees, or up to fifty lakh for a repeat. It can also bar an endorser for a period, unless the endorser had checked the claims with due care.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s08",
+     "layout": "check",
+     "heading": "Quick check: who acts?",
+     "body_md": "Which body under the 2019 Act can direct a maker to withdraw a misleading advertisement and impose a penalty?",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "It acts for consumers as a class.",
+     "check_question_id": "q_isc12commerce_ch16_047",
+     "audio": null
+    },
+    {
+     "id": "s09",
+     "layout": "example",
+     "heading": "Worked example 2: a misleading advertisement",
+     "body_md": "An imagined health drink guarantees two inches of extra height in three months.",
+     "bullets": [
+      "Step 1: name the **defect** in the advertisement.",
+      "Step 2: name the **body** that can act for all buyers.",
+      "Step 3: state the **remedies**."
+     ],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Question about an imagined height drink advertisement",
+        "Answer"
+       ],
+       "rows": [
+        [
+         "Is it misleading?",
+         "Yes: a false guarantee with no proof"
+        ],
+        [
+         "Who can act for all buyers?",
+         "The CCPA"
+        ],
+        [
+         "What can the CCPA order?",
+         "Stop or modify the advertisement; a penalty"
+        ],
+        [
+         "What can a misled buyer do?",
+         "Complain to the CCPA or a commission for refund or compensation"
+        ]
+       ]
+      },
+      "alt": "Worked table answering four questions about an imagined misleading advertisement for a height drink",
+      "caption": "Name the defect, then the body, then the remedy."
+     },
+     "math": [],
+     "narration": "The advertisement gives a false guarantee, so it is misleading. The Central Consumer Protection Authority can act for all buyers, ordering it to stop or change and imposing a penalty. A misled buyer can complain to the authority or to a commission for a refund or compensation.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s10",
+     "layout": "concept",
+     "heading": "The 1986 and 2019 Acts compared",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Basis",
+        "1986 Act",
+        "2019 Act"
+       ],
+       "rows": [
+        [
+         "Lowest tier",
+         "District Forum",
+         "District Commission"
+        ],
+        [
+         "Limits",
+         "₹20 lakh; ₹1 crore",
+         "₹50 lakh; ₹2 crore (notified 2021)"
+        ],
+        [
+         "Basis of limits",
+         "Value plus compensation claimed",
+         "Value paid as consideration"
+        ],
+        [
+         "Regulator",
+         "None",
+         "Central Consumer Protection Authority"
+        ],
+        [
+         "Online buying",
+         "Not expressly covered",
+         "Covered, with teleshopping and direct selling"
+        ],
+        [
+         "New remedies",
+         "None of these",
+         "Product liability, mediation, e-filing, penalties on misleading advertisements"
+        ]
+       ]
+      },
+      "alt": "Table comparing the 1986 and 2019 Consumer Protection Acts on lowest tier, limits, basis of limits, regulator, online buying and new remedies",
+      "caption": "Limits shown as District ceiling; State ceiling."
+     },
+     "math": [],
+     "narration": "The twenty nineteen Act replaced the Act of nineteen eighty six. Forums became commissions. Limits rose and are now based on the value paid. A central authority was created. Online buying was covered. And new remedies were added: product liability, mediation, e-filing and penalties for misleading advertisements.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s11",
+     "layout": "diagram",
+     "heading": "Limits then and now",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 300\" role=\"img\" aria-label=\"Bar chart of upper pecuniary limits in lakh rupees. District tier: 20 under the 1986 Act, 50 under the 2019 Act as notified in 2021. State tier: 100 under the 1986 Act, 200 under the 2019 Act as notified in 2021. Anything above the State ceiling goes to the National Commission\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Bar chart of upper pecuniary limits in lakh rupees. District tier: 20 under the 1986 Act, 50 under the 2019 Act as notified in 2021. State tier: 100 under the 1986 Act, 200 under the 2019 Act as notified in 2021. Anything above the State ceiling goes to the National Commission</title><line x1=\"80\" y1=\"230\" x2=\"514\" y2=\"230\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><polygon points=\"514,230 505,234.5 505,225.5\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"80\" y1=\"230\" x2=\"80\" y2=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><polygon points=\"80,20 84.5,29 75.5,29\" fill=\"currentColor\" stroke=\"none\"/><text x=\"88\" y=\"18\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"13\">Upper limit (₹ lakh)</text><rect x=\"161.9\" y=\"211.82\" width=\"46.2\" height=\"18.18\" rx=\"2\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.3\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.2\"/><text x=\"185\" y=\"201.82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\" font-weight=\"bold\">20</text><rect x=\"224.9\" y=\"184.55\" width=\"46.2\" height=\"45.45\" rx=\"2\" fill=\"var(--diagram-green)\" fill-opacity=\"0.3\" stroke=\"var(--diagram-green)\" stroke-width=\"1.2\"/><text x=\"248\" y=\"174.55\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\" font-weight=\"bold\">50</text><rect x=\"329.9\" y=\"139.09\" width=\"46.2\" height=\"90.91\" rx=\"2\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.3\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.2\"/><text x=\"353\" y=\"129.09\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\" font-weight=\"bold\">100</text><rect x=\"392.9\" y=\"48.18\" width=\"46.2\" height=\"181.82\" rx=\"2\" fill=\"var(--diagram-green)\" fill-opacity=\"0.3\" stroke=\"var(--diagram-green)\" stroke-width=\"1.2\"/><text x=\"416\" y=\"38.18\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\" font-weight=\"bold\">200</text><line x1=\"75\" y1=\"230\" x2=\"80\" y2=\"230\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"72\" y=\"230\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">0</text><line x1=\"75\" y1=\"184.55\" x2=\"80\" y2=\"184.55\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"72\" y=\"184.55\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">50</text><line x1=\"75\" y1=\"139.09\" x2=\"80\" y2=\"139.09\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"72\" y=\"139.09\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">100</text><line x1=\"75\" y1=\"93.64\" x2=\"80\" y2=\"93.64\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"72\" y=\"93.64\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">150</text><line x1=\"75\" y1=\"48.18\" x2=\"80\" y2=\"48.18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"72\" y=\"48.18\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">200</text><line x1=\"80\" y1=\"230\" x2=\"80\" y2=\"235\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"80\" y=\"246\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\"></text><text x=\"216.5\" y=\"250\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">District</text><text x=\"384.5\" y=\"250\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">State</text><rect x=\"150\" y=\"36\" width=\"14\" height=\"14\" rx=\"2\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.3\" stroke=\"var(--diagram-blue)\" stroke-width=\"1\"/><text x=\"170\" y=\"43\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">1986 Act</text><rect x=\"150\" y=\"58\" width=\"14\" height=\"14\" rx=\"2\" fill=\"var(--diagram-green)\" fill-opacity=\"0.3\" stroke=\"var(--diagram-green)\" stroke-width=\"1\"/><text x=\"170\" y=\"65\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">2019 Act, notified 2021</text></svg>",
+      "alt": "Bar chart of upper pecuniary limits in lakh rupees. District tier: 20 under the 1986 Act, 50 under the 2019 Act as notified in 2021. State tier: 100 under the 1986 Act, 200 under the 2019 Act as notified in 2021. Anything above the State ceiling goes to the National Commission",
+      "caption": "Upper limits of the District and State tiers, 1986 and 2019 (as notified in 2021); 100 lakh is 1 crore."
+     },
+     "math": [],
+     "narration": "Here are the money limits side by side, in lakh rupees. Under the nineteen eighty six Act, the District Forum went up to twenty lakh and the State Commission up to one crore. Under the twenty nineteen Act, as notified in twenty twenty one, the District Commission goes up to fifty lakh and the State Commission up to two crore.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s12",
+     "layout": "check",
+     "heading": "Quick check: a new name",
+     "body_md": "True or false: the 2019 Act renamed the District Forum as the District Commission.",
+     "bullets": [],
+     "visual": null,
+     "math": [],
+     "narration": "What are all three tiers called under the new Act?",
+     "check_question_id": "q_isc12commerce_ch16_062",
+     "audio": null
+    },
+    {
+     "id": "s13",
+     "layout": "summary",
+     "heading": "Summary of Part 2",
+     "body_md": "",
+     "bullets": [],
+     "visual": {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Idea",
+        "Key point"
+       ],
+       "rows": [
+        [
+         "Commissions",
+         "District up to ₹50 lakh; State to ₹2 crore; National above (2021)"
+        ],
+        [
+         "Basis",
+         "Value paid as consideration"
+        ],
+        [
+         "Misleading advertisements",
+         "CCPA can stop them; penalty up to ₹10 lakh, ₹50 lakh for a repeat"
+        ],
+        [
+         "1986 vs 2019",
+         "CCPA, e-commerce, product liability, mediation, e-filing, higher limits"
+        ]
+       ]
+      },
+      "alt": "Summary table of Part 2: commissions and limits, basis of jurisdiction, misleading advertisements and the two Acts compared"
+     },
+     "math": [],
+     "narration": "To sum up Part 2. As notified in twenty twenty one, District Commissions hear complaints up to fifty lakh, State Commissions up to two crore, and the National Commission above that, based on the value paid. The central authority acts against misleading advertisements with penalties. The twenty nineteen Act added the authority, e-commerce coverage, product liability, mediation and e-filing.",
+     "check_question_id": null,
+     "audio": null
+    },
+    {
+     "id": "s14",
+     "layout": "exam-tips",
+     "heading": "Exam tips",
+     "body_md": "",
+     "bullets": [
+      "Always use the **value paid**, not the compensation claimed.",
+      "Write limits **as notified in 2021**: ₹50 lakh, ₹2 crore.",
+      "Know the **1986** limits for comparison: ₹20 lakh, ₹1 crore.",
+      "For misleading advertisements, name the **defect**, the **CCPA** and the **penalty**."
+     ],
+     "visual": {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 360\" role=\"img\" aria-label=\"Four stacked boxes. Bottom: District Commission, value paid up to 50 lakh rupees. Above it: State Commission, above 50 lakh and up to 2 crore rupees. Above that: National Commission, value paid above 2 crore rupees. Top: Supreme Court, for appeals from the National Commission's original orders. Arrows on the right show appeals moving up one level. Limits as notified in December 2021\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Four stacked boxes. Bottom: District Commission, value paid up to 50 lakh rupees. Above it: State Commission, above 50 lakh and up to 2 crore rupees. Above that: National Commission, value paid above 2 crore rupees. Top: Supreme Court, for appeals from the National Commission's original orders. Arrows on the right show appeals moving up one level. Limits as notified in December 2021</title><rect x=\"90\" y=\"18\" width=\"380\" height=\"56\" rx=\"8\" fill=\"var(--diagram-fill)\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"38\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Supreme Court</text><text x=\"280\" y=\"58\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">appeals from the National Commission's original orders</text><rect x=\"90\" y=\"98\" width=\"380\" height=\"56\" rx=\"8\" fill=\"var(--diagram-red)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"118\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">National Commission</text><text x=\"280\" y=\"138\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">value paid above ₹2 crore</text><rect x=\"90\" y=\"178\" width=\"380\" height=\"56\" rx=\"8\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"198\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">State Commission</text><text x=\"280\" y=\"218\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">above ₹50 lakh, up to ₹2 crore</text><rect x=\"90\" y=\"258\" width=\"380\" height=\"56\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"278\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">District Commission</text><text x=\"280\" y=\"298\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">value paid up to ₹50 lakh</text><line x1=\"500\" y1=\"286\" x2=\"500\" y2=\"206\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"500,206 504.5,215 495.5,215\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><line x1=\"500\" y1=\"206\" x2=\"500\" y2=\"126\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"500,126 504.5,135 495.5,135\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><line x1=\"500\" y1=\"126\" x2=\"500\" y2=\"46\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"500,46 504.5,55 495.5,55\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><text x=\"512\" y=\"190\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">appeal</text><text x=\"280\" y=\"342\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Limits as notified in December 2021</text></svg>",
+      "alt": "Four stacked boxes. Bottom: District Commission, value paid up to 50 lakh rupees. Above it: State Commission, above 50 lakh and up to 2 crore rupees. Above that: National Commission, value paid above 2 crore rupees. Top: Supreme Court, for appeals from the National Commission's original orders. Arrows on the right show appeals moving up one level. Limits as notified in December 2021",
+      "caption": "Three-tier consumer redressal under the 2019 Act, with appeals moving up."
+     },
+     "math": [],
+     "narration": "Final tips. In jurisdiction questions, use the value paid and ignore the compensation claimed. Quote the limits as notified in twenty twenty one, and know the older limits for comparison. For misleading advertisements, name the defect, the authority and the penalty. Check the latest notifications, as limits can be revised.",
+     "check_question_id": null,
+     "audio": null
+    }
+   ],
+   "status": "draft",
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  }
+ ],
+ "notes": {
+  "unit": "isc-12-commerce-ch16",
+  "version": 1,
+  "title": "Consumer Protection — notes",
+  "language": "en",
+  "sections": [
+   {
+    "heading": "1. Need for consumer protection and its methods",
+    "body_md": "**Consumer protection** means safeguarding consumers against unfair trade practices, defective goods and deficient services, and helping them get redress.\n\n**Need:** consumers are unorganised and weak against large sellers; they lack information on quality, safety and price; they face unfair practices such as adulteration, short weighing and false claims; and defective goods can endanger life and property.\n\n**Methods:**\n- **Self-help** — consumers protect themselves through awareness: checking quality marks, reading labels, keeping bills and complaining.\n- **Legislation** — laws such as the Consumer Protection Act, 2019, and laws on weights and measures and food safety.\n- **Consumer associations and NGOs** — voluntary bodies that educate consumers, test products, publish findings and help or represent consumers in complaints.",
+    "key_terms": [
+     {
+      "term": "Consumer protection",
+      "definition_md": "Safeguarding consumers against unfair practices and helping them get redress."
+     },
+     {
+      "term": "Self-help",
+      "definition_md": "Consumers protecting themselves through their own awareness and care."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Why consumers need protection",
+       "In short"
+      ],
+      "rows": [
+       [
+        "Unorganised and weak",
+        "One buyer against a large, organised seller"
+       ],
+       [
+        "Lack of information",
+        "Hard to judge quality, safety and true price"
+       ],
+       [
+        "Unfair trade practices",
+        "Adulteration, short weights, false claims"
+       ],
+       [
+        "Unsafe goods",
+        "Defective products can harm life and property"
+       ]
+      ]
+     },
+     "alt": "Table of four reasons why consumers need protection"
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Method",
+        "Who acts",
+        "Example"
+       ],
+       "rows": [
+        [
+         "Self-help",
+         "The consumer",
+         "Checking marks, keeping bills, complaining"
+        ],
+        [
+         "Legislation",
+         "Government, through laws",
+         "Consumer Protection Act, 2019"
+        ],
+        [
+         "Consumer associations and NGOs",
+         "Voluntary groups",
+         "Helpdesks, product tests, help with complaints"
+        ]
+       ]
+      },
+      "alt": "Table of three methods of consumer protection, who acts in each and an example"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch16-t01"
+    ]
+   },
+   {
+    "heading": "2. Consumer under the 2019 Act; rights and responsibilities",
+    "body_md": "**Consumer (Consumer Protection Act, 2019):** a person who buys goods or hires or avails services for a **consideration** (paid, promised, partly paid or deferred), including a **user with the buyer's approval**. Transactions **offline or online**, through **teleshopping, direct selling or multi-level marketing**, are covered. A person who obtains goods **for resale or for a commercial purpose** is not a consumer, but use of goods bought **exclusively to earn one's livelihood by self-employment** is not a commercial purpose.\n\n**Rights:** safety; to be informed; to choose; to be heard; to seek redressal; to consumer awareness.\n\n**Responsibilities:** be aware of rights; read labels and terms; insist on a bill and warranty card; prefer goods with standard quality marks; use goods as instructed; file only genuine complaints; be honest in dealings.",
+    "key_terms": [
+     {
+      "term": "Consideration",
+      "definition_md": "The price paid or promised for goods or services."
+     },
+     {
+      "term": "Right to be heard",
+      "definition_md": "Consumers' interests receive due consideration at appropriate forums."
+     },
+     {
+      "term": "Right to seek redressal",
+      "definition_md": "The right to a fair settlement of genuine grievances."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Right",
+       "Meaning"
+      ],
+      "rows": [
+       [
+        "Safety",
+        "Protection from goods and services hazardous to life and property"
+       ],
+       [
+        "To be informed",
+        "Facts on quality, quantity, purity, standard and price"
+       ],
+       [
+        "To choose",
+        "Access to a variety of goods at competitive prices"
+       ],
+       [
+        "To be heard",
+        "Consumers' interests considered at appropriate forums"
+       ],
+       [
+        "To seek redressal",
+        "Fair settlement against unfair practices and exploitation"
+       ],
+       [
+        "Consumer awareness",
+        "Knowledge and skills to be an informed consumer"
+       ]
+      ]
+     },
+     "alt": "Table of six consumer rights with the meaning of each"
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined buyer",
+        "Consumer under the 2019 Act?",
+        "Why"
+       ],
+       "rows": [
+        [
+         "Anita buys a sewing machine to earn her living by stitching",
+         "Yes",
+         "Livelihood by self-employment is not commercial"
+        ],
+        [
+         "A trader buys fifty fans to resell",
+         "No",
+         "Bought for resale"
+        ],
+        [
+         "A person gets a free sample, paying nothing",
+         "No",
+         "No consideration"
+        ],
+        [
+         "Lalit uses a fridge his mother bought, with her approval",
+         "Yes",
+         "User with the buyer's approval"
+        ],
+        [
+         "A shopper buys a phone online",
+         "Yes",
+         "Online purchases are covered"
+        ]
+       ]
+      },
+      "alt": "Worked table: five imagined buyers, whether each is a consumer under the 2019 Act, and why",
+      "caption": "Check three things: consideration paid, purpose of purchase, and whether the user had approval."
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Responsibility",
+        "What it means"
+       ],
+       "rows": [
+        [
+         "Be aware",
+         "Know your rights and read labels and terms"
+        ],
+        [
+         "Insist on a bill",
+         "Keep the bill and warranty as proof"
+        ],
+        [
+         "Look for quality marks",
+         "Prefer certified goods"
+        ],
+        [
+         "Use as instructed",
+         "Follow the maker's instructions and warnings"
+        ],
+        [
+         "Complain genuinely",
+         "Raise only real defects, with facts"
+        ]
+       ]
+      },
+      "alt": "Table of five responsibilities of consumers with what each means"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch16-t02"
+    ]
+   },
+   {
+    "heading": "3. Consumer Disputes Redressal Commissions",
+    "body_md": "The 2019 Act sets up a **three-tier** machinery of Consumer Disputes Redressal Commissions. Their **pecuniary limits** were revised by rules **notified in December 2021** and depend on the **value of goods or services paid as consideration**:\n- **District Commission** — up to **₹50 lakh**.\n- **State Commission** — above **₹50 lakh** and up to **₹2 crore**; also hears appeals from District Commissions.\n- **National Commission** — above **₹2 crore**; also hears appeals from State Commissions.\n\nAppeals against the National Commission's orders on complaints filed before it lie to the **Supreme Court**.\n\n**Easier redress:** a complaint can be filed where the consumer **lives or works**; complaints can be **filed electronically**; disputes can be referred to **mediation** if both parties agree.\n\n*Dated note: limits are as notified in December 2021; check for later revisions.*",
+    "key_terms": [
+     {
+      "term": "Pecuniary jurisdiction",
+      "definition_md": "The money limit of cases a commission can hear."
+     },
+     {
+      "term": "Mediation",
+      "definition_md": "Settlement of a dispute with the help of a neutral mediator, if both parties agree."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "svg",
+     "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 360\" role=\"img\" aria-label=\"Four stacked boxes. Bottom: District Commission, value paid up to 50 lakh rupees. Above it: State Commission, above 50 lakh and up to 2 crore rupees. Above that: National Commission, value paid above 2 crore rupees. Top: Supreme Court, for appeals from the National Commission's original orders. Arrows on the right show appeals moving up one level. Limits as notified in December 2021\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Four stacked boxes. Bottom: District Commission, value paid up to 50 lakh rupees. Above it: State Commission, above 50 lakh and up to 2 crore rupees. Above that: National Commission, value paid above 2 crore rupees. Top: Supreme Court, for appeals from the National Commission's original orders. Arrows on the right show appeals moving up one level. Limits as notified in December 2021</title><rect x=\"90\" y=\"18\" width=\"380\" height=\"56\" rx=\"8\" fill=\"var(--diagram-fill)\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"38\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">Supreme Court</text><text x=\"280\" y=\"58\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">appeals from the National Commission's original orders</text><rect x=\"90\" y=\"98\" width=\"380\" height=\"56\" rx=\"8\" fill=\"var(--diagram-red)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"118\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">National Commission</text><text x=\"280\" y=\"138\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">value paid above ₹2 crore</text><rect x=\"90\" y=\"178\" width=\"380\" height=\"56\" rx=\"8\" fill=\"var(--diagram-yellow)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-yellow)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"198\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">State Commission</text><text x=\"280\" y=\"218\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">above ₹50 lakh, up to ₹2 crore</text><rect x=\"90\" y=\"258\" width=\"380\" height=\"56\" rx=\"8\" fill=\"var(--diagram-green)\" fill-opacity=\"0.16\" stroke=\"var(--diagram-green)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"278\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"14\" font-weight=\"bold\">District Commission</text><text x=\"280\" y=\"298\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">value paid up to ₹50 lakh</text><line x1=\"500\" y1=\"286\" x2=\"500\" y2=\"206\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"500,206 504.5,215 495.5,215\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><line x1=\"500\" y1=\"206\" x2=\"500\" y2=\"126\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"500,126 504.5,135 495.5,135\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><line x1=\"500\" y1=\"126\" x2=\"500\" y2=\"46\" fill=\"none\" stroke=\"var(--diagram-muted)\" stroke-width=\"1.4\"/><polygon points=\"500,46 504.5,55 495.5,55\" fill=\"var(--diagram-muted)\" stroke=\"none\"/><text x=\"512\" y=\"190\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">appeal</text><text x=\"280\" y=\"342\" fill=\"var(--diagram-muted)\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">Limits as notified in December 2021</text></svg>",
+     "alt": "Four stacked boxes. Bottom: District Commission, value paid up to 50 lakh rupees. Above it: State Commission, above 50 lakh and up to 2 crore rupees. Above that: National Commission, value paid above 2 crore rupees. Top: Supreme Court, for appeals from the National Commission's original orders. Arrows on the right show appeals moving up one level. Limits as notified in December 2021",
+     "caption": "Three-tier consumer redressal under the 2019 Act, with appeals moving up."
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Imagined complaint",
+        "Value paid",
+        "Commission"
+       ],
+       "rows": [
+        [
+         "Leaky flat bought for a family",
+         "₹42 lakh",
+         "District"
+        ],
+        [
+         "House with cracks; ₹1.5 crore claimed",
+         "₹60 lakh",
+         "State (value paid decides)"
+        ],
+        [
+         "Family house with cracks",
+         "₹1.4 crore",
+         "State"
+        ],
+        [
+         "Apartment never delivered",
+         "₹2.4 crore",
+         "National"
+        ]
+       ]
+      },
+      "alt": "Worked table: four imagined complaints with the value paid and the commission that hears each, using the limits notified in 2021",
+      "caption": "Use the value paid, never the compensation claimed."
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Provision of the 2019 Act",
+        "How it helps the consumer"
+       ],
+       "rows": [
+        [
+         "File where you live or work",
+         "No need to travel to the seller's city"
+        ],
+        [
+         "E-filing",
+         "Complaint and fees can be submitted online"
+        ],
+        [
+         "Mediation",
+         "A quicker, friendly settlement if both agree"
+        ],
+        [
+         "Product liability",
+         "Compensation for harm from defective products"
+        ]
+       ]
+      },
+      "alt": "Table of four provisions of the 2019 Act and how each helps the consumer"
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch16-t03"
+    ]
+   },
+   {
+    "heading": "4. Misleading advertisements and the CCPA",
+    "body_md": "A **misleading advertisement** is one that falsely describes a product or service, gives a false guarantee or is likely to mislead about its nature, quantity or quality, amounts to an unfair trade practice, or deliberately conceals important information.\n\n**Central Consumer Protection Authority (CCPA):** set up under the 2019 Act to protect, promote and enforce the rights of consumers **as a class**. It can investigate, order recall of unsafe goods and refunds, and direct a trader, manufacturer, endorser or publisher to **discontinue or modify** a false or misleading advertisement.\n\n**Penalties:** on a manufacturer or endorser, up to **₹10 lakh**, and up to **₹50 lakh** for every subsequent contravention. The CCPA may also bar an endorser from endorsing for a period. An endorser who exercised **due diligence** to verify the claims is not penalised.\n\n**What a misled consumer can do:** complain to the CCPA, or file a complaint before a commission for refund, compensation or a corrective advertisement.\n\n**Product liability:** a manufacturer, service provider or seller can be held liable to compensate for harm caused by a defective product or deficient service.",
+    "key_terms": [
+     {
+      "term": "Misleading advertisement",
+      "definition_md": "An advertisement that deceives by false claims, false guarantees or hidden facts."
+     },
+     {
+      "term": "CCPA",
+      "definition_md": "Central Consumer Protection Authority: protects consumers as a class."
+     },
+     {
+      "term": "Product liability",
+      "definition_md": "Responsibility to compensate for harm caused by a defective product."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "An advertisement is misleading if it…",
+       "Imagined example"
+      ],
+      "rows": [
+       [
+        "Falsely describes the product",
+        "A cream said to remove all scars"
+       ],
+       [
+        "Gives a false guarantee",
+        "A drink guaranteeing two inches of height"
+       ],
+       [
+        "Deliberately hides important information",
+        "Zero interest in large print; fees in tiny print"
+       ],
+       [
+        "Amounts to an unfair trade practice",
+        "A false claim of a government award"
+       ]
+      ]
+     },
+     "alt": "Table of four ways an advertisement can be misleading under the 2019 Act, with an imagined example of each"
+    },
+    "visuals": [
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Power of the CCPA",
+        "Detail"
+       ],
+       "rows": [
+        [
+         "Investigate",
+         "On a complaint or on its own"
+        ],
+        [
+         "Stop or modify the advertisement",
+         "Directions to maker, trader, endorser or publisher"
+        ],
+        [
+         "Penalty on maker or endorser",
+         "Up to ₹10 lakh; up to ₹50 lakh for a repeat"
+        ],
+        [
+         "Bar an endorser",
+         "From endorsing for a period"
+        ],
+        [
+         "Recall and refund",
+         "Order unsafe goods recalled and money refunded"
+        ]
+       ]
+      },
+      "alt": "Table of the powers of the Central Consumer Protection Authority, including penalties of up to 10 lakh rupees, and up to 50 lakh rupees for a repeat contravention",
+      "caption": "Penalty figures as in the 2019 Act; an endorser who exercised due diligence is not penalised."
+     },
+     {
+      "kind": "table",
+      "spec": {
+       "headers": [
+        "Question about an imagined height drink advertisement",
+        "Answer"
+       ],
+       "rows": [
+        [
+         "Is it misleading?",
+         "Yes: a false guarantee with no proof"
+        ],
+        [
+         "Who can act for all buyers?",
+         "The CCPA"
+        ],
+        [
+         "What can the CCPA order?",
+         "Stop or modify the advertisement; a penalty"
+        ],
+        [
+         "What can a misled buyer do?",
+         "Complain to the CCPA or a commission for refund or compensation"
+        ]
+       ]
+      },
+      "alt": "Worked table answering four questions about an imagined misleading advertisement for a height drink",
+      "caption": "Name the defect, then the body, then the remedy."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch16-t04"
+    ]
+   },
+   {
+    "heading": "5. Consumer Protection Act, 1986 versus 2019",
+    "body_md": "- **Redressal bodies:** District Forum, State Commission and National Commission (1986); all three called **Commissions** (2019).\n- **Pecuniary limits:** 1986 — District up to **₹20 lakh**, State above ₹20 lakh and up to **₹1 crore**, National above ₹1 crore; 2019, as notified in 2021 — **₹50 lakh**, **₹2 crore**.\n- **Basis of limits:** value of goods or services **and compensation claimed** (1986); **value paid as consideration** (2019).\n- **Regulator:** none (1986); **CCPA** (2019).\n- **E-commerce:** not expressly covered (1986); online, teleshopping, direct selling and multi-level marketing covered (2019).\n- **Place of filing:** where the opposite party is or the cause arose (1986); also where the **consumer lives or works** (2019).\n- **New in 2019:** product liability, mediation, e-filing, penalties for misleading advertisements including on endorsers.",
+    "key_terms": [
+     {
+      "term": "District Forum",
+      "definition_md": "The lowest tier under the 1986 Act, now the District Commission."
+     }
+    ],
+    "formulas": [],
+    "visual": {
+     "kind": "table",
+     "spec": {
+      "headers": [
+       "Basis",
+       "1986 Act",
+       "2019 Act"
+      ],
+      "rows": [
+       [
+        "Lowest tier",
+        "District Forum",
+        "District Commission"
+       ],
+       [
+        "Limits",
+        "₹20 lakh; ₹1 crore",
+        "₹50 lakh; ₹2 crore (notified 2021)"
+       ],
+       [
+        "Basis of limits",
+        "Value plus compensation claimed",
+        "Value paid as consideration"
+       ],
+       [
+        "Regulator",
+        "None",
+        "Central Consumer Protection Authority"
+       ],
+       [
+        "Online buying",
+        "Not expressly covered",
+        "Covered, with teleshopping and direct selling"
+       ],
+       [
+        "New remedies",
+        "None of these",
+        "Product liability, mediation, e-filing, penalties on misleading advertisements"
+       ]
+      ]
+     },
+     "alt": "Table comparing the 1986 and 2019 Consumer Protection Acts on lowest tier, limits, basis of limits, regulator, online buying and new remedies",
+     "caption": "Limits shown as District ceiling; State ceiling."
+    },
+    "visuals": [
+     {
+      "kind": "svg",
+      "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 560 300\" role=\"img\" aria-label=\"Bar chart of upper pecuniary limits in lakh rupees. District tier: 20 under the 1986 Act, 50 under the 2019 Act as notified in 2021. State tier: 100 under the 1986 Act, 200 under the 2019 Act as notified in 2021. Anything above the State ceiling goes to the National Commission\" font-family=\"sans-serif\" font-size=\"14\" fill=\"none\"><title>Bar chart of upper pecuniary limits in lakh rupees. District tier: 20 under the 1986 Act, 50 under the 2019 Act as notified in 2021. State tier: 100 under the 1986 Act, 200 under the 2019 Act as notified in 2021. Anything above the State ceiling goes to the National Commission</title><line x1=\"80\" y1=\"230\" x2=\"514\" y2=\"230\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><polygon points=\"514,230 505,234.5 505,225.5\" fill=\"currentColor\" stroke=\"none\"/><line x1=\"80\" y1=\"230\" x2=\"80\" y2=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><polygon points=\"80,20 84.5,29 75.5,29\" fill=\"currentColor\" stroke=\"none\"/><text x=\"88\" y=\"18\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"13\">Upper limit (₹ lakh)</text><rect x=\"161.9\" y=\"211.82\" width=\"46.2\" height=\"18.18\" rx=\"2\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.3\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.2\"/><text x=\"185\" y=\"201.82\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\" font-weight=\"bold\">20</text><rect x=\"224.9\" y=\"184.55\" width=\"46.2\" height=\"45.45\" rx=\"2\" fill=\"var(--diagram-green)\" fill-opacity=\"0.3\" stroke=\"var(--diagram-green)\" stroke-width=\"1.2\"/><text x=\"248\" y=\"174.55\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\" font-weight=\"bold\">50</text><rect x=\"329.9\" y=\"139.09\" width=\"46.2\" height=\"90.91\" rx=\"2\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.3\" stroke=\"var(--diagram-blue)\" stroke-width=\"1.2\"/><text x=\"353\" y=\"129.09\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\" font-weight=\"bold\">100</text><rect x=\"392.9\" y=\"48.18\" width=\"46.2\" height=\"181.82\" rx=\"2\" fill=\"var(--diagram-green)\" fill-opacity=\"0.3\" stroke=\"var(--diagram-green)\" stroke-width=\"1.2\"/><text x=\"416\" y=\"38.18\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\" font-weight=\"bold\">200</text><line x1=\"75\" y1=\"230\" x2=\"80\" y2=\"230\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"72\" y=\"230\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">0</text><line x1=\"75\" y1=\"184.55\" x2=\"80\" y2=\"184.55\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"72\" y=\"184.55\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">50</text><line x1=\"75\" y1=\"139.09\" x2=\"80\" y2=\"139.09\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"72\" y=\"139.09\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">100</text><line x1=\"75\" y1=\"93.64\" x2=\"80\" y2=\"93.64\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"72\" y=\"93.64\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">150</text><line x1=\"75\" y1=\"48.18\" x2=\"80\" y2=\"48.18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"72\" y=\"48.18\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"end\" dominant-baseline=\"middle\" font-size=\"12\">200</text><line x1=\"80\" y1=\"230\" x2=\"80\" y2=\"235\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"80\" y=\"246\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\"></text><text x=\"216.5\" y=\"250\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">District</text><text x=\"384.5\" y=\"250\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" dominant-baseline=\"middle\" font-size=\"12\">State</text><rect x=\"150\" y=\"36\" width=\"14\" height=\"14\" rx=\"2\" fill=\"var(--diagram-blue)\" fill-opacity=\"0.3\" stroke=\"var(--diagram-blue)\" stroke-width=\"1\"/><text x=\"170\" y=\"43\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">1986 Act</text><rect x=\"150\" y=\"58\" width=\"14\" height=\"14\" rx=\"2\" fill=\"var(--diagram-green)\" fill-opacity=\"0.3\" stroke=\"var(--diagram-green)\" stroke-width=\"1\"/><text x=\"170\" y=\"65\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"start\" dominant-baseline=\"middle\" font-size=\"12\">2019 Act, notified 2021</text></svg>",
+      "alt": "Bar chart of upper pecuniary limits in lakh rupees. District tier: 20 under the 1986 Act, 50 under the 2019 Act as notified in 2021. State tier: 100 under the 1986 Act, 200 under the 2019 Act as notified in 2021. Anything above the State ceiling goes to the National Commission",
+      "caption": "Upper limits of the District and State tiers, 1986 and 2019 (as notified in 2021); 100 lakh is 1 crore."
+     }
+    ],
+    "topic_ids": [
+     "isc-12-commerce-ch16-t05"
+    ]
+   }
+  ],
+  "exam_tips_md": "**Common mistakes**\n- Using the compensation claimed, rather than the value paid, to choose the commission.\n- Quoting the 1986 limits for a 2019 question, or forgetting that limits were revised in 2021.\n- Calling a buyer for resale a consumer, or forgetting the self-employment exception.\n- Saying that endorsers can never be penalised.\n\n**How marks are usually awarded**\n- 1 mark: correct right, commission, body or figure.\n- 2–3 marks: each point named and explained, tied to the case; limits stated with the year of notification.\n- 5 marks: parts answered separately; comparisons on clear bases; misleading-advertisement answers give the defect, the CCPA's powers and the penalty.\n- Case questions: quote the clue, name the right or rule, apply the limit or remedy.",
+  "status": "draft",
+  "provenance": {
+   "origin": "human",
+   "template_version": null,
+   "model": null,
+   "generated_at": "2026-10-31",
+   "author": "claude-opus-5-5 (subject-producer)"
+  }
+ },
+ "flashcards": {
+  "unit": "isc-12-commerce-ch16",
+  "version": 1,
+  "language": "en",
+  "cards": [
+   {
+    "id": "f01",
+    "front_md": "Why do consumers need protection?",
+    "back_md": "Unorganised, ill-informed, unfair practices, unsafe goods.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch16-t01"
+   },
+   {
+    "id": "f02",
+    "front_md": "Three methods of consumer protection",
+    "back_md": "Self-help, legislation, consumer associations and NGOs.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch16-t01"
+   },
+   {
+    "id": "f03",
+    "front_md": "**Self-help**",
+    "back_md": "Consumers protecting themselves through awareness.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch16-t01"
+   },
+   {
+    "id": "f04",
+    "front_md": "**Consumer** (2019 Act)",
+    "back_md": "Buys goods or services for a consideration, offline or online; not for resale or commercial use.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch16-t02"
+   },
+   {
+    "id": "f05",
+    "front_md": "Self-employment exception",
+    "back_md": "Goods bought only to earn one's living by self-employment are not commercial use.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch16-t02"
+   },
+   {
+    "id": "f06",
+    "front_md": "Is a user with the buyer's approval a consumer?",
+    "back_md": "Yes.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch16-t02"
+   },
+   {
+    "id": "f07",
+    "front_md": "Six consumer rights",
+    "back_md": "Safety, information, choice, be heard, redressal, consumer awareness.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch16-t02"
+   },
+   {
+    "id": "f08",
+    "front_md": "**Right to choose**",
+    "back_md": "Access to a variety of goods at competitive prices.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch16-t02"
+   },
+   {
+    "id": "f09",
+    "front_md": "**Right to be heard**",
+    "back_md": "Consumers' interests considered at appropriate forums.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch16-t02"
+   },
+   {
+    "id": "f10",
+    "front_md": "Responsibilities of consumers",
+    "back_md": "Be aware, insist on a bill, look for marks, use as instructed, complain genuinely.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch16-t02"
+   },
+   {
+    "id": "f11",
+    "front_md": "District Commission limit (notified 2021)",
+    "back_md": "Value paid up to ₹50 lakh.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch16-t03"
+   },
+   {
+    "id": "f12",
+    "front_md": "State Commission limit (notified 2021)",
+    "back_md": "Above ₹50 lakh and up to ₹2 crore.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch16-t03"
+   },
+   {
+    "id": "f13",
+    "front_md": "National Commission limit (notified 2021)",
+    "back_md": "Above ₹2 crore.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch16-t03"
+   },
+   {
+    "id": "f14",
+    "front_md": "What decides the commission?",
+    "back_md": "The value of goods or services paid as consideration.",
+    "tag": "concept",
+    "topic_id": "isc-12-commerce-ch16-t03"
+   },
+   {
+    "id": "f15",
+    "front_md": "Appeal from a State Commission goes to…",
+    "back_md": "The National Commission.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch16-t03"
+   },
+   {
+    "id": "f16",
+    "front_md": "Appeal from the National Commission's original order goes to…",
+    "back_md": "The Supreme Court.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch16-t03"
+   },
+   {
+    "id": "f17",
+    "front_md": "Where can a 2019 complaint be filed?",
+    "back_md": "Also where the consumer lives or works; online e-filing allowed.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch16-t03"
+   },
+   {
+    "id": "f18",
+    "front_md": "**Mediation**",
+    "back_md": "A friendly settlement through a mediation cell, if both agree.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch16-t03"
+   },
+   {
+    "id": "f19",
+    "front_md": "**Misleading advertisement**",
+    "back_md": "False description, false guarantee, or hidden important information.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch16-t04"
+   },
+   {
+    "id": "f20",
+    "front_md": "**CCPA**",
+    "back_md": "Central Consumer Protection Authority; protects consumers as a class.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch16-t04"
+   },
+   {
+    "id": "f21",
+    "front_md": "CCPA penalty for a misleading advertisement",
+    "back_md": "Up to ₹10 lakh; up to ₹50 lakh for a repeat.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch16-t04"
+   },
+   {
+    "id": "f22",
+    "front_md": "Can an endorser be penalised?",
+    "back_md": "Yes, unless due diligence was exercised.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch16-t04"
+   },
+   {
+    "id": "f23",
+    "front_md": "**Product liability**",
+    "back_md": "Liability to compensate for harm from a defective product.",
+    "tag": "definition",
+    "topic_id": "isc-12-commerce-ch16-t04"
+   },
+   {
+    "id": "f24",
+    "front_md": "1986 Act limits",
+    "back_md": "District Forum up to ₹20 lakh; State up to ₹1 crore; National above.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch16-t05"
+   },
+   {
+    "id": "f25",
+    "front_md": "1986 basis of limits",
+    "back_md": "Value of goods or services plus compensation claimed.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch16-t05"
+   },
+   {
+    "id": "f26",
+    "front_md": "New in the 2019 Act",
+    "back_md": "CCPA, e-commerce coverage, product liability, mediation, e-filing.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch16-t05"
+   },
+   {
+    "id": "f27",
+    "front_md": "District Forum is now called…",
+    "back_md": "District Commission.",
+    "tag": "fact",
+    "topic_id": "isc-12-commerce-ch16-t05"
+   },
+   {
+    "id": "f28",
+    "front_md": "Case routine",
+    "back_md": "Quote the clue, name the right, body or rule, apply the limit or remedy.",
+    "tag": "exam-tip",
+    "topic_id": "isc-12-commerce-ch16-t03"
+   }
+  ],
+  "status": "draft",
+  "provenance": {
+   "origin": "human",
+   "template_version": null,
+   "model": null,
+   "generated_at": "2026-10-31",
+   "author": "claude-opus-5-5 (subject-producer)"
+  }
+ },
+ "questions": [
+  {
+   "id": "q_isc12commerce_ch16_001",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Raghav, a farmer in an imagined village near Mandsaur, bought a sprayer from a large company that broke within a week. The dealer ignored him, and Raghav could not afford to fight the company alone. This shows that consumers need protection mainly because",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "sellers always cheat consumers"
+    },
+    {
+     "id": "b",
+     "text_md": "individual consumers are unorganised and weaker than large sellers"
+    },
+    {
+     "id": "c",
+     "text_md": "consumers never read labels"
+    },
+    {
+     "id": "d",
+     "text_md": "the law forbids buying farm equipment"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** individual consumers are unorganised and weaker than large sellers. A lone consumer has little information, money or bargaining power compared with a big seller; protection corrects this imbalance.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_002",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Before buying an air purifier, Ms Tirkey of Bokaro compares models, checks the certification mark, reads the warranty terms and insists on a proper bill. Which method of consumer protection is she using?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Legislation"
+    },
+    {
+     "id": "b",
+     "text_md": "A consumer association"
+    },
+    {
+     "id": "c",
+     "text_md": "Government price control"
+    },
+    {
+     "id": "d",
+     "text_md": "Self-help"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Self-help. A consumer protecting herself through her own awareness and care is self-help.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_003",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The Consumer Protection Act, 2019, together with the laws on weights and measures and on food safety, is an example of which method of consumer protection?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Legislation"
+    },
+    {
+     "id": "b",
+     "text_md": "Self-help"
+    },
+    {
+     "id": "c",
+     "text_md": "Consumer associations"
+    },
+    {
+     "id": "d",
+     "text_md": "Advertising"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Legislation. Protecting consumers through laws passed by the government is legislation.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_004",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "An imagined consumer association in Purulia runs a free helpdesk at the weekly market, where buyers learn how to check expiry dates and how to file a complaint online. Which method of consumer protection is this?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Legislation"
+    },
+    {
+     "id": "b",
+     "text_md": "Self-help alone"
+    },
+    {
+     "id": "c",
+     "text_md": "Consumer associations and NGOs"
+    },
+    {
+     "id": "d",
+     "text_md": "Sales promotion"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Consumer associations and NGOs. Voluntary bodies that educate and help consumers are consumer associations and NGOs.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t01"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_005",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Competition among sellers alone does not fully protect consumers.\n\n**Reason (R):** Individual consumers are usually unorganised and have far less information than large sellers.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the reason explains the assertion: without organisation and information, consumers cannot rely on competition alone.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t01"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_006",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Consumer protection is the job of the government alone.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. Consumers themselves (self-help), consumer associations and NGOs also protect consumers, alongside laws.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t01"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_007",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Protection that a consumer gives herself by staying alert, checking quality marks and keeping bills is called ___.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "This is self-help.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t01"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "self-help",
+       "self help"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: self-help",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_008",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "short",
+   "stem_md": "With reference to Raghav (imagined), whose new sprayer broke within a week, give two reasons why consumers need protection.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two reasons (unorganised, ill-informed, unequal power, unfair practices, unsafe goods) linked to the case.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t01"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Unequal strength:** a single farmer has **little money or bargaining power** against a large company and its dealer.\n2. **Lack of information:** Raghav could not judge the **quality** of the sprayer before buying, and may not know his **rights or where to complain**."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First reason",
+     "marks": 1
+    },
+    {
+     "step": "Second reason",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_009",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Distinguish between self-help and legislation as methods of consumer protection.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each method explained to show the difference.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t01"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**Self-help** means consumers **protect themselves** through awareness: checking quality marks, reading labels and keeping bills. **Legislation** means the government **passes laws**, such as the Consumer Protection Act, 2019, that give consumers rights and **remedies** enforced by commissions."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Self-help",
+     "marks": 1
+    },
+    {
+     "step": "Legislation",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_010",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain the three methods of consumer protection: self-help, legislation, and consumer associations and NGOs.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each method explained.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t01"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Self-help:** an **alert consumer** checks marks and labels, insists on a bill and complains when cheated.\n2. **Legislation:** **laws** such as the Consumer Protection Act, 2019, give consumers rights and set up commissions and an authority to enforce them.\n3. **Consumer associations and NGOs:** **voluntary bodies** educate consumers, test products, publish findings and help or represent consumers in filing complaints."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "Self-help",
+     "marks": 1
+    },
+    {
+     "step": "Legislation",
+     "marks": 1
+    },
+    {
+     "step": "Associations and NGOs",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_011",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "long",
+   "stem_md": "(a) Explain three reasons why consumers need protection. [3]\n(b) Compare self-help with consumer associations as methods of consumer protection. [2]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three reasons; comparison of the two methods.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t01"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) 1. **Unorganised and weak:** individual consumers are **scattered**, while sellers are large and organised, so consumers have little bargaining power.\n2. **Lack of information:** consumers often cannot judge **quality, safety or true price** and may not know their rights.\n3. **Unfair practices:** some sellers use **adulteration, short weights, false claims** or unsafe goods, which consumers cannot fight alone.\n\n(b) **Self-help** depends on the **individual consumer's own alertness**, such as checking marks and keeping bills; it costs nothing but helps only that consumer. **Consumer associations** are **organised groups** that educate many consumers, test products and file complaints on their behalf, giving them **collective strength**."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Three reasons",
+     "marks": 3
+    },
+    {
+     "step": "(b) Comparison",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_012",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Which of these imagined buyers is a **consumer** under the Consumer Protection Act, 2019?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "A trader who buys fifty ceiling fans to resell in his shop"
+    },
+    {
+     "id": "b",
+     "text_md": "A person who receives a free sample with no payment at all"
+    },
+    {
+     "id": "c",
+     "text_md": "Anita, who buys a sewing machine to stitch clothes herself and earn her living"
+    },
+    {
+     "id": "d",
+     "text_md": "A large factory that buys a machine for mass commercial production"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Anita, who buys a sewing machine to stitch clothes herself and earn her living. Goods bought for resale or for a commercial purpose are excluded, and a consumer must pay or promise consideration. Use of goods bought only to earn one's livelihood by self-employment is not a commercial purpose, so Anita is a consumer.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_013",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Under the Consumer Protection Act, 2019, the definition of a consumer covers purchases made",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "both offline and online, including teleshopping, direct selling and multi-level marketing"
+    },
+    {
+     "id": "b",
+     "text_md": "only in shops with a physical address"
+    },
+    {
+     "id": "c",
+     "text_md": "only through government outlets"
+    },
+    {
+     "id": "d",
+     "text_md": "only for goods, never for services"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** both offline and online, including teleshopping, direct selling and multi-level marketing. The 2019 Act expressly covers offline and online transactions, teleshopping, direct selling and multi-level marketing, for goods and services.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_014",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The battery of an imagined e-bike brand, \"Zoomvolt\", catches fire while charging because it lacks a protection circuit. Which consumer right has been violated?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Right to choose"
+    },
+    {
+     "id": "b",
+     "text_md": "Right to be heard"
+    },
+    {
+     "id": "c",
+     "text_md": "Right to consumer awareness"
+    },
+    {
+     "id": "d",
+     "text_md": "Right to safety"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Right to safety. A product that can catch fire endangers life and property, so the buyer's right to safety is violated.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_015",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "An imagined loan app shows only the monthly instalment and reveals the processing fee and the total interest payable only after the loan is taken. Which consumer right is violated?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Right to safety"
+    },
+    {
+     "id": "b",
+     "text_md": "Right to be informed"
+    },
+    {
+     "id": "c",
+     "text_md": "Right to seek redressal"
+    },
+    {
+     "id": "d",
+     "text_md": "Right to consumer awareness"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Right to be informed. Consumers have the right to be told about the quality, quantity, price and terms of goods and services before they buy.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_016",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "In an imagined hill town, the only cable operator withdraws all cheaper channel packs, so viewers must take its costliest bundle or nothing. Which consumer right is affected?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Right to choose"
+    },
+    {
+     "id": "b",
+     "text_md": "Right to safety"
+    },
+    {
+     "id": "c",
+     "text_md": "Right to be heard"
+    },
+    {
+     "id": "d",
+     "text_md": "Right to seek redressal"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Right to choose. The right to choose means access to a variety of goods and services at competitive prices; forcing one costly option denies it.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_017",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "An imagined state government invites consumer associations to sit on the committee that sets safety standards for school buses, so that parents' concerns are considered. Which consumer right does this support?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Right to safety only"
+    },
+    {
+     "id": "b",
+     "text_md": "Right to be heard"
+    },
+    {
+     "id": "c",
+     "text_md": "Right to choose"
+    },
+    {
+     "id": "d",
+     "text_md": "Right to seek redressal"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Right to be heard. The right to be heard means consumers' interests receive due consideration at appropriate forums, such as committees that set standards.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_018",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Mehul (imagined) drops his new phone into a bucket of water and then files a complaint claiming it was defective, hoping for a free replacement. Which consumer responsibility does he ignore?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "To insist on a bill"
+    },
+    {
+     "id": "b",
+     "text_md": "To look for standard quality marks"
+    },
+    {
+     "id": "c",
+     "text_md": "To file only genuine complaints"
+    },
+    {
+     "id": "d",
+     "text_md": "To compare prices before buying"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** To file only genuine complaints. Consumers must complain only about genuine defects or deficiencies; false complaints waste the commission's time and are unfair to sellers.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_019",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** A person who buys a sewing machine to earn her own living by stitching at home is a consumer under the 2019 Act.\n\n**Reason (R):** Anyone who buys goods for any commercial purpose is a consumer under the Act.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** The assertion is true: use for earning a livelihood by self-employment is not a commercial purpose. The reason is false: buyers for resale or commercial purposes are excluded.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_020",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** Consumers have the right to be protected against goods that are hazardous to life and property.\n\n**Reason (R):** Consumers have a responsibility to insist on a bill for every purchase.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Both statements are true, but the duty to take a bill does not explain the right to safety; they are separate parts of consumer protection.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_021",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "A person who gets goods entirely free of cost is a consumer under the Consumer Protection Act, 2019.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. A consumer must pay, or promise to pay, a consideration; goods obtained wholly free are not covered.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_022",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "The right to acquire the knowledge and skills needed to be an informed consumer throughout life is the right to consumer ___.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "This is the right to consumer awareness (consumer education).",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "awareness",
+       "education"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: awareness",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_023",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "match",
+   "stem_md": "Match each imagined complaint with the consumer right it mainly involves.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "An e-bike battery catches fire while charging"
+    },
+    {
+     "id": "b",
+     "text_md": "A loan app hides its fees until after the loan"
+    },
+    {
+     "id": "c",
+     "text_md": "The only cable operator scraps all cheap packs"
+    },
+    {
+     "id": "d",
+     "text_md": "A commission orders a sagging mattress replaced"
+    }
+   ],
+   "match_right": [
+    {
+     "id": "p",
+     "text_md": "Right to be informed"
+    },
+    {
+     "id": "q",
+     "text_md": "Right to seek redressal"
+    },
+    {
+     "id": "r",
+     "text_md": "Right to safety"
+    },
+    {
+     "id": "s",
+     "text_md": "Right to choose"
+    }
+   ],
+   "solution_md": "**Key:** (a)–(r), (b)–(p), (c)–(s), (d)–(q). Hazard is safety; hidden fees are information; one forced option is choice; a remedy from a commission is redressal.",
+   "marks": 2,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02"
+   ],
+   "expected_time_sec": 120,
+   "assets": [],
+   "answer": {
+    "pairs": [
+     {
+      "left_id": "a",
+      "right_id": "r"
+     },
+     {
+      "left_id": "b",
+      "right_id": "p"
+     },
+     {
+      "left_id": "c",
+      "right_id": "s"
+     },
+     {
+      "left_id": "d",
+      "right_id": "q"
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Each correct pair 0.5 mark (4 pairs)",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_024",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Who is a consumer under the Consumer Protection Act, 2019? Name one kind of buyer who is not a consumer.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Meaning with consideration and users; one excluded buyer.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "A **consumer** is a person who **buys goods or hires services for a consideration** (paid, promised or partly paid), offline or online, including a **user with the buyer's approval**. A person who buys goods **for resale or a commercial purpose** is **not** a consumer."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Meaning",
+     "marks": 1
+    },
+    {
+     "step": "Excluded buyer",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_025",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Identify the consumer right violated in each imagined case, with a reason: (i) a loan app hides its fees until after the loan; (ii) an e-bike battery catches fire while charging.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each right named with a reason.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(i) **Right to be informed:** buyers must know the **full price and terms** before they decide.\n(ii) **Right to safety:** consumers must be protected from goods **hazardous to life and property**."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "(i) Right to be informed",
+     "marks": 1
+    },
+    {
+     "step": "(ii) Right to safety",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_026",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "short",
+   "stem_md": "State two responsibilities that Yamini (imagined), a first-time earner in Durg, should keep in mind while buying a television online.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Any two responsibilities (awareness, bill, marks, reading labels and terms, genuine complaints, use as instructed) applied.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Get a proper invoice and warranty card**, and keep them safely, as proof if she needs to complain.\n2. **Read the product details, return policy and seller information** before paying, and check for a **standard quality mark**."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First responsibility",
+     "marks": 1
+    },
+    {
+     "step": "Second responsibility",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_027",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain three rights of consumers, with an imagined example of a violation of each.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three rights, each with a violation example.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Right to safety:** protection from **hazardous goods**; violated when an **e-bike battery** catches fire for want of a safety circuit.\n2. **Right to be informed:** knowing **price, quality and terms** before buying; violated when a **loan app hides fees**.\n3. **Right to choose:** access to **variety at competitive prices**; violated when a town's only **cable operator** scraps all cheaper packs."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First right",
+     "marks": 1
+    },
+    {
+     "step": "Second right",
+     "marks": 1
+    },
+    {
+     "step": "Third right",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_028",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Yamini (imagined), Durg, is buying a second-hand scooter and a motor insurance policy online. Explain three responsibilities she should follow as a consumer.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three responsibilities applied to the purchases.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Be aware and careful:** check the scooter's **papers and condition**, and read the **policy terms** on cover and exclusions.\n2. **Insist on documents:** get a **written sale agreement, receipt and policy document**, and keep them safely.\n3. **Act fairly and file genuine complaints:** use the scooter as advised, give **true facts** when buying insurance, and complain only about **real deficiencies**."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First responsibility",
+     "marks": 1
+    },
+    {
+     "step": "Second responsibility",
+     "marks": 1
+    },
+    {
+     "step": "Third responsibility",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_029",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "long",
+   "stem_md": "(a) Who is a consumer under the Consumer Protection Act, 2019? [1]\n(b) Explain four rights of consumers, giving an imagined example of a violation of each. [4]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Meaning of consumer; four rights with violations.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) A **consumer** is a person who **buys goods or avails services for a consideration**, offline or online, including a user with the buyer's approval, but **not** one who buys for **resale or a commercial purpose**.\n\n(b) 1. **Right to safety:** protection from **hazardous goods**; violated by an e-bike battery that catches fire for lack of a safety circuit.\n2. **Right to be informed:** facts on **price, quality and terms**; violated by a loan app that hides its fees.\n3. **Right to choose:** **variety at competitive prices**; violated when a town's only cable operator scraps all cheaper packs.\n4. **Right to seek redressal:** a **fair remedy** for loss; denied when a seller refuses to replace a mattress that sagged within a month."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Meaning of consumer",
+     "marks": 1
+    },
+    {
+     "step": "(b) Four rights with examples",
+     "marks": 4
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_030",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Rekha (imagined) paid ₹42 lakh for a flat to live in, and the builder has not fixed serious leaks for a year. Under the limits notified in 2021, where should she file her complaint?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "State Commission"
+    },
+    {
+     "id": "b",
+     "text_md": "National Commission"
+    },
+    {
+     "id": "c",
+     "text_md": "Supreme Court directly"
+    },
+    {
+     "id": "d",
+     "text_md": "District Commission"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** District Commission. A value paid of up to ₹50 lakh falls within the District Commission's limit.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_031",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "The Bhattacharya family (imagined) paid ₹1.4 crore for a house to live in, which developed cracks within months. Under the limits notified in 2021, which body hears their complaint?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "District Commission"
+    },
+    {
+     "id": "b",
+     "text_md": "National Commission"
+    },
+    {
+     "id": "c",
+     "text_md": "Central Consumer Protection Authority"
+    },
+    {
+     "id": "d",
+     "text_md": "State Commission"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** State Commission. A value paid above ₹50 lakh and up to ₹2 crore falls within the State Commission's limit.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_032",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Mr Kohli (imagined) paid ₹2.4 crore for an apartment for his own family, and the builder failed to deliver it. Under the limits notified in 2021, where should he file his complaint?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "State Commission"
+    },
+    {
+     "id": "b",
+     "text_md": "District Commission"
+    },
+    {
+     "id": "c",
+     "text_md": "National Commission"
+    },
+    {
+     "id": "d",
+     "text_md": "Any civil court only"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** National Commission. A value paid above ₹2 crore falls within the National Commission's limit.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_033",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Ishita (imagined) paid ₹30 lakh for interior work on her home, which was badly done. She claims ₹80 lakh as compensation. Under the 2019 Act and the limits notified in 2021, which commission hears her complaint?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "State Commission, because the compensation claimed exceeds ₹50 lakh"
+    },
+    {
+     "id": "b",
+     "text_md": "District Commission, because the value paid decides the limit"
+    },
+    {
+     "id": "c",
+     "text_md": "National Commission, because the claim is large"
+    },
+    {
+     "id": "d",
+     "text_md": "None, because services are not covered"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** District Commission, because the value paid decides the limit. Under the 2019 Act the limit depends on the value of goods or services paid as consideration (₹30 lakh here), not on the compensation claimed.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_034",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A complaint filed before a State Commission has been decided, and the consumer is not satisfied. Where can she appeal?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "National Commission"
+    },
+    {
+     "id": "b",
+     "text_md": "District Commission"
+    },
+    {
+     "id": "c",
+     "text_md": "Central Consumer Protection Authority"
+    },
+    {
+     "id": "d",
+     "text_md": "The seller's grievance cell"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** National Commission. Appeals lie from a District Commission to the State Commission, from a State Commission to the National Commission, and from the National Commission to the Supreme Court.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_035",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Under the Consumer Protection Act, 2019, a consumer who bought a phone online from a seller based in another state may file her complaint in the commission where",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "the seller's head office is, and nowhere else"
+    },
+    {
+     "id": "b",
+     "text_md": "she lives or works, among other places"
+    },
+    {
+     "id": "c",
+     "text_md": "the phone was manufactured, and nowhere else"
+    },
+    {
+     "id": "d",
+     "text_md": "the Supreme Court sits"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** she lives or works, among other places. The 2019 Act lets a complainant file where she resides or personally works for gain, besides where the opposite party is or where the cause of action arose.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_036",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "At the first hearing, Ms Lyngdoh (imagined) and the furniture shop she complained against both agree to try to settle their dispute through the consumer mediation cell attached to the commission. This option was introduced by the",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Consumer Protection Act, 1986"
+    },
+    {
+     "id": "b",
+     "text_md": "Companies Act"
+    },
+    {
+     "id": "c",
+     "text_md": "Sale of Goods Act only"
+    },
+    {
+     "id": "d",
+     "text_md": "Consumer Protection Act, 2019"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Consumer Protection Act, 2019. The 2019 Act provides for mediation, through mediation cells attached to the commissions, when both parties agree.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t03"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_037",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** A complaint about goods for which ₹75 lakh was paid is filed before the State Commission.\n\n**Reason (R):** As notified in 2021, the State Commission hears complaints where the value paid is above ₹50 lakh and up to ₹2 crore.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the reason explains the assertion: ₹75 lakh lies within the State Commission's range.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t03"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_038",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** The National Commission hears every complaint where the value paid exceeds ₹50 lakh.\n\n**Reason (R):** Under the 2019 Act, the amount of compensation claimed decides which commission hears a complaint.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** Both statements are false. Above ₹50 lakh and up to ₹2 crore is the State Commission's range, and the value paid as consideration, not the compensation claimed, decides the forum.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t03"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_039",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Under the limits notified in 2021, a District Commission can hear a complaint about goods for which ₹45 lakh was paid.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. The District Commission hears complaints where the value paid does not exceed ₹50 lakh.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t03"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_040",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "fill-blank",
+   "stem_md": "Under the limits notified in 2021, complaints where the value of goods or services paid exceeds ₹2 crore are filed before the ___ Commission.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "They go to the National Commission.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t03"
+   ],
+   "expected_time_sec": 45,
+   "assets": [],
+   "answer": {
+    "blanks": [
+     {
+      "accepted": [
+       "National",
+       "National Consumer Disputes Redressal"
+      ]
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Blank 1: National",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_041",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "match",
+   "stem_md": "Match each imagined complaint or appeal with the body that hears it, using the limits notified in 2021.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "A ₹18 lakh home-interiors contract badly done"
+    },
+    {
+     "id": "b",
+     "text_md": "A ₹95 lakh house with major defects"
+    },
+    {
+     "id": "c",
+     "text_md": "A ₹3 crore apartment never delivered"
+    },
+    {
+     "id": "d",
+     "text_md": "An appeal against the National Commission's order on a complaint filed before it"
+    }
+   ],
+   "match_right": [
+    {
+     "id": "p",
+     "text_md": "Supreme Court"
+    },
+    {
+     "id": "q",
+     "text_md": "District Commission"
+    },
+    {
+     "id": "r",
+     "text_md": "National Commission"
+    },
+    {
+     "id": "s",
+     "text_md": "State Commission"
+    }
+   ],
+   "solution_md": "**Key:** (a)–(q), (b)–(s), (c)–(r), (d)–(p). Up to ₹50 lakh: District; above ₹50 lakh to ₹2 crore: State; above ₹2 crore: National; an appeal from the National Commission's original order goes to the Supreme Court.",
+   "marks": 2,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t03"
+   ],
+   "expected_time_sec": 120,
+   "assets": [],
+   "answer": {
+    "pairs": [
+     {
+      "left_id": "a",
+      "right_id": "q"
+     },
+     {
+      "left_id": "b",
+      "right_id": "s"
+     },
+     {
+      "left_id": "c",
+      "right_id": "r"
+     },
+     {
+      "left_id": "d",
+      "right_id": "p"
+     }
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Each correct pair 0.5 mark (4 pairs)",
+     "marks": 2
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_042",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Using the limits notified in 2021, name the commission that will hear each imagined complaint, with a reason: (i) a ₹48 lakh solar-roof contract for a home; (ii) a ₹2.3 crore flat never delivered.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Correct commission with the limit for each case.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t03"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(i) **District Commission:** the value paid, **₹48 lakh**, does **not exceed ₹50 lakh**.\n(ii) **National Commission:** the value paid, **₹2.3 crore**, is **above ₹2 crore**."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "(i) District with reason",
+     "marks": 1
+    },
+    {
+     "step": "(ii) National with reason",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_043",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain the three-tier machinery for redressal of consumer disputes under the 2019 Act, stating the pecuniary limit of each tier as notified in 2021 and the route of appeal.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each tier with its limit, and the appeal route.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t03"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **District Commission:** in each district; hears complaints where the value paid is **up to ₹50 lakh**.\n2. **State Commission:** in each state; hears complaints **above ₹50 lakh and up to ₹2 crore**, and appeals from District Commissions.\n3. **National Commission:** at New Delhi; hears complaints **above ₹2 crore** and appeals from State Commissions; appeals from its original orders go to the **Supreme Court**."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "District",
+     "marks": 1
+    },
+    {
+     "step": "State",
+     "marks": 1
+    },
+    {
+     "step": "National and appeal route",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_044",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Priyanka (imagined) lives in Bilaspur and bought a faulty laptop online from a seller in Bengaluru. Explain three provisions of the 2019 Act that make it easier for her to seek redressal.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three provisions (residence-based filing, e-filing, mediation, online purchases covered) applied.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t03"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Filing where she lives:** she can complain to the **commission in Bilaspur**, where she resides, instead of travelling to Bengaluru.\n2. **E-filing:** she can **file her complaint online** and pay fees electronically, without visiting an office.\n3. **Mediation:** if both sides agree, the dispute can go to the **mediation cell** for a quicker, friendly settlement."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "First provision",
+     "marks": 1
+    },
+    {
+     "step": "Second provision",
+     "marks": 1
+    },
+    {
+     "step": "Third provision",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_045",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "long",
+   "stem_md": "(a) Describe the three-tier machinery for consumer redressal under the Consumer Protection Act, 2019, with the pecuniary limit of each tier as notified in 2021. [3]\n(b) Ms Lalnunmawii (imagined) paid ₹60 lakh for a home that leaks, and claims ₹1.5 crore as compensation. Name the commission that will hear her complaint, and say where she can appeal if she is not satisfied. [2]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Three tiers with limits; the correct forum by value paid; the appeal route.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t03"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) 1. **District Commission:** set up in each district; hears complaints where the **value of goods or services paid does not exceed ₹50 lakh**.\n2. **State Commission:** in each state; hears complaints where the value paid is **above ₹50 lakh and up to ₹2 crore**, and **appeals** against District Commission orders.\n3. **National Commission:** hears complaints where the value paid is **above ₹2 crore**, and appeals against State Commission orders; appeals against its own original orders go to the **Supreme Court**.\n\n(b) The **State Commission**, because the **value paid (₹60 lakh)** decides the limit, not the ₹1.5 crore claimed. If not satisfied, she can **appeal to the National Commission**."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Three tiers with limits",
+     "marks": 3
+    },
+    {
+     "step": "(b) Correct commission with reason",
+     "marks": 1
+    },
+    {
+     "step": "(b) Appeal route",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_046",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A television advertisement for an imagined health drink, \"TallMax\", says it guarantees two inches of extra height in three months, though no study supports the claim. Under the 2019 Act, this is",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "a misleading advertisement, because it gives a false guarantee"
+    },
+    {
+     "id": "b",
+     "text_md": "a lawful advertisement, since all advertisements exaggerate"
+    },
+    {
+     "id": "c",
+     "text_md": "publicity, because it is on television"
+    },
+    {
+     "id": "d",
+     "text_md": "a sales promotion offer"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** a misleading advertisement, because it gives a false guarantee. An advertisement that falsely describes a product or gives a false guarantee likely to mislead buyers is misleading.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_047",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Under the Consumer Protection Act, 2019, which body can direct a manufacturer to withdraw or modify a false or misleading advertisement and impose a penalty?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "District Commission only"
+    },
+    {
+     "id": "b",
+     "text_md": "Advertising agency of the firm"
+    },
+    {
+     "id": "c",
+     "text_md": "Central Consumer Protection Authority"
+    },
+    {
+     "id": "d",
+     "text_md": "The consumer's bank"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** Central Consumer Protection Authority. The Central Consumer Protection Authority (CCPA) can order discontinuation or modification of misleading advertisements and impose penalties.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_048",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "For a first false or misleading advertisement, the Central Consumer Protection Authority may impose on a manufacturer or endorser a penalty of up to",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "₹50 lakh"
+    },
+    {
+     "id": "b",
+     "text_md": "₹1 lakh"
+    },
+    {
+     "id": "c",
+     "text_md": "₹10 lakh"
+    },
+    {
+     "id": "d",
+     "text_md": "₹1 crore"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** ₹10 lakh. The penalty may extend to ₹10 lakh, and up to ₹50 lakh for every subsequent contravention.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_049",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A film actor endorses an imagined \"fat-burning tea\" on social media without checking whether its claims are true. The claims turn out to be false. Under the 2019 Act,",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "the actor may be penalised, unless he had exercised due diligence to verify the claims"
+    },
+    {
+     "id": "b",
+     "text_md": "only the tea maker can be penalised"
+    },
+    {
+     "id": "c",
+     "text_md": "endorsers are never responsible for advertisements"
+    },
+    {
+     "id": "d",
+     "text_md": "the buyers are responsible for believing the advertisement"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** the actor may be penalised, unless he had exercised due diligence to verify the claims. The Act holds endorsers liable for false or misleading advertisements, but an endorser who has done due diligence to verify the claims is not penalised.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_050",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "A child is hurt when the front wheel of an imagined toy cycle, \"Pedalo\", comes off because of a manufacturing defect. Under the product liability provisions of the 2019 Act, the family can claim compensation from",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "nobody, as toys are not covered"
+    },
+    {
+     "id": "b",
+     "text_md": "only the child's school"
+    },
+    {
+     "id": "c",
+     "text_md": "the advertising agency alone"
+    },
+    {
+     "id": "d",
+     "text_md": "the manufacturer, for harm caused by the defective product"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (d)** the manufacturer, for harm caused by the defective product. Product liability makes the manufacturer (and, in some cases, the service provider or seller) liable to compensate for harm caused by a defective product.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "d"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (d)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_051",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "An advertisement for an imagined home-loan scheme shows \"zero interest\" in large print, and mentions only in tiny letters that heavy processing fees apply. Why is it misleading?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "It uses large print"
+    },
+    {
+     "id": "b",
+     "text_md": "It deliberately conceals important information"
+    },
+    {
+     "id": "c",
+     "text_md": "It advertises a financial service"
+    },
+    {
+     "id": "d",
+     "text_md": "It names the bank"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** It deliberately conceals important information. An advertisement that deliberately hides important information, giving a false overall impression, is misleading.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t04"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_052",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** The CCPA can act against a misleading advertisement even if no consumer has filed a case before a commission.\n\n**Reason (R):** The CCPA protects and enforces the rights of consumers as a class.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** Both are true, and the reason explains the assertion: because it protects consumers as a class, the CCPA can act on its own or on information received.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t04"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_053",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "Under the Consumer Protection Act, 2019, a celebrity who endorses a product can never be penalised for a misleading advertisement.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**False.** False. The CCPA may penalise an endorser of a false or misleading advertisement, unless the endorser had exercised due diligence.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t04"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (False)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_054",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "short",
+   "stem_md": "What is a misleading advertisement? State one action a consumer can take against it.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Meaning plus one action.",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t04"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "A **misleading advertisement** **falsely describes** a product or service, gives a **false guarantee**, or **hides important information**, so that buyers are deceived. A consumer can **report it to the CCPA**, or seek relief, such as a **corrective advertisement**, from a consumer commission."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "Meaning",
+     "marks": 1
+    },
+    {
+     "step": "Action",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_055",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "short",
+   "stem_md": "The imagined health drink \"TallMax\" advertises a guaranteed two-inch gain in height in three months, with no proof. Explain (i) why the advertisement is misleading, (ii) what the CCPA can do, and (iii) what a buyer who was misled can do.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "All three parts answered.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "application",
+   "bloom": "apply",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t04"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(i) It gives a **false guarantee** about the drink's effect, which is likely to **deceive** buyers.\n(ii) The **CCPA** can order the maker to **stop or modify** the advertisement and impose a **penalty up to ₹10 lakh** (up to ₹50 lakh for a repeat).\n(iii) The buyer can **complain to the CCPA** or file a complaint before a **consumer commission** for a refund, compensation or a corrective advertisement."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "(i) Why misleading",
+     "marks": 1
+    },
+    {
+     "step": "(ii) CCPA action",
+     "marks": 1
+    },
+    {
+     "step": "(iii) Buyer's remedy",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_056",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Explain three important provisions introduced by the Consumer Protection Act, 2019: the Central Consumer Protection Authority, product liability, and coverage of e-commerce.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Each provision explained.",
+   "marks": 3,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t04"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Central Consumer Protection Authority:** a regulator that **protects consumers as a class**; it can investigate, **order recalls and refunds**, and act against **misleading advertisements**.\n2. **Product liability:** manufacturers, service providers and sellers can be made to **compensate for harm** caused by defective products or deficient services.\n3. **E-commerce:** buyers **online, by teleshopping, direct selling** or multi-level marketing are covered as consumers."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "CCPA",
+     "marks": 1
+    },
+    {
+     "step": "Product liability",
+     "marks": 1
+    },
+    {
+     "step": "E-commerce",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_057",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "long",
+   "stem_md": "(a) State two ways in which an advertisement can be misleading under the Consumer Protection Act, 2019. [2]\n(b) Explain the powers of the Central Consumer Protection Authority to act against misleading advertisements, including the penalties it may impose. [3]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Two ways an advertisement misleads; CCPA powers with penalties.",
+   "marks": 5,
+   "difficulty": 3,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t04"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) 1. It **falsely describes** a product or service, or gives a **false guarantee** about its quality, quantity or effect.\n2. It **deliberately hides important information**, such as charges or risks, so that buyers form a false impression.\n\n(b) The **CCPA** can **investigate** a complaint or act on its own. It can **direct the trader, manufacturer, endorser or publisher** to **discontinue or modify** the advertisement. It may impose a **penalty of up to ₹10 lakh** on a manufacturer or endorser, and **up to ₹50 lakh** for every subsequent contravention. It can also **bar an endorser** from endorsing products for a period, unless the endorser exercised **due diligence** in checking the claims."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Two ways",
+     "marks": 2
+    },
+    {
+     "step": "(b) Directions to stop or modify",
+     "marks": 1
+    },
+    {
+     "step": "(b) Penalties stated correctly",
+     "marks": 1
+    },
+    {
+     "step": "(b) Endorser liability",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_058",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Under the Consumer Protection Act, 1986, the District Forum could hear complaints where the value of goods or services and compensation claimed did not exceed",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "₹20 lakh"
+    },
+    {
+     "id": "b",
+     "text_md": "₹50 lakh"
+    },
+    {
+     "id": "c",
+     "text_md": "₹1 crore"
+    },
+    {
+     "id": "d",
+     "text_md": "₹2 crore"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (a)** ₹20 lakh. Under the 1986 Act the District Forum's limit was ₹20 lakh; the State Commission heard cases above ₹20 lakh and up to ₹1 crore; the National Commission, above ₹1 crore.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t05"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (a)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_059",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Which of the following was introduced by the Consumer Protection Act, 2019 and did **not** exist under the 1986 Act?",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "A three-tier redressal machinery"
+    },
+    {
+     "id": "b",
+     "text_md": "A Central Consumer Protection Authority"
+    },
+    {
+     "id": "c",
+     "text_md": "The right to safety"
+    },
+    {
+     "id": "d",
+     "text_md": "Consumer protection councils"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** A Central Consumer Protection Authority. The three tiers, consumer rights and protection councils existed under the 1986 Act; the CCPA is new in the 2019 Act.",
+   "marks": 1,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t05"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_060",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "mcq",
+   "stem_md": "Under the 1986 Act, the forum for a complaint depended on the value of goods or services and the compensation claimed. Under the 2019 Act, it depends on",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "the compensation claimed alone"
+    },
+    {
+     "id": "b",
+     "text_md": "the seller's annual turnover"
+    },
+    {
+     "id": "c",
+     "text_md": "the value of goods or services paid as consideration"
+    },
+    {
+     "id": "d",
+     "text_md": "the consumer's income"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (c)** the value of goods or services paid as consideration. The 2019 Act uses the value paid as consideration, so a large compensation claim cannot by itself move a case to a higher commission.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t05"
+   ],
+   "expected_time_sec": 60,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "c"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (c)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_061",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "assertion-reason",
+   "stem_md": "**Assertion (A):** The 2019 Act expressly covers goods and services bought online.\n\n**Reason (R):** The 1986 Act set up District Forums, State Commissions and a National Commission.\n\nChoose the correct option.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "Both Assertion and Reason are true and Reason is the correct explanation for Assertion."
+    },
+    {
+     "id": "b",
+     "text_md": "Both Assertion and Reason are true but Reason is not the correct explanation for Assertion."
+    },
+    {
+     "id": "c",
+     "text_md": "Assertion is true and Reason is false."
+    },
+    {
+     "id": "d",
+     "text_md": "Both Assertion and Reason are false."
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**Correct option: (b)** Both are true, but the structure set up by the 1986 Act does not explain why the 2019 Act covers online buying; that reflects the growth of e-commerce.",
+   "marks": 1,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t05"
+   ],
+   "expected_time_sec": 75,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "b"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct option (b)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_062",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "true-false",
+   "stem_md": "The 2019 Act renamed the District Forum of the 1986 Act as the District Commission.",
+   "options": [
+    {
+     "id": "a",
+     "text_md": "True"
+    },
+    {
+     "id": "b",
+     "text_md": "False"
+    }
+   ],
+   "match_right": [],
+   "solution_md": "**True.** True. Under the 2019 Act, all three tiers are called Consumer Disputes Redressal Commissions.",
+   "marks": 1,
+   "difficulty": 1,
+   "competency": "recall",
+   "bloom": "remember",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t05"
+   ],
+   "expected_time_sec": 40,
+   "assets": [],
+   "answer": {
+    "option_ids": [
+     "a"
+    ]
+   },
+   "marking_scheme": [
+    {
+     "step": "Correct choice (True)",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_063",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "short",
+   "stem_md": "State two differences between the Consumer Protection Act, 1986 and the Consumer Protection Act, 2019.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Any two valid differences (CCPA, e-commerce, product liability, limits, basis of limits, filing where consumer lives, e-filing, mediation, misleading ads).",
+   "marks": 2,
+   "difficulty": 2,
+   "competency": "understanding",
+   "bloom": "understand",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t05"
+   ],
+   "expected_time_sec": 150,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "1. **Regulator:** the 1986 Act had **no central authority**; the 2019 Act set up the **Central Consumer Protection Authority**.\n2. **Coverage:** the 1986 Act did not expressly mention **online buying**; the 2019 Act covers **e-commerce, teleshopping, direct selling** and multi-level marketing."
+   },
+   "word_limit": {
+    "min": 30,
+    "max": 50
+   },
+   "marking_scheme": [
+    {
+     "step": "First difference",
+     "marks": 1
+    },
+    {
+     "step": "Second difference",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_064",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "short",
+   "stem_md": "Compare the Consumer Protection Act, 1986 with the Consumer Protection Act, 2019 on these bases: (i) pecuniary limits of the lowest tier, (ii) basis for deciding jurisdiction, and (iii) where a complaint can be filed.",
+   "options": [],
+   "match_right": [],
+   "solution_md": "All three bases correctly compared.",
+   "marks": 3,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t05"
+   ],
+   "expected_time_sec": 210,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(i) **Limits:** the District Forum could hear cases up to **₹20 lakh** (1986); the District Commission hears cases up to **₹50 lakh**, as notified in 2021.\n(ii) **Basis:** 1986 used the **value of goods and compensation claimed**; 2019 uses the **value paid as consideration**.\n(iii) **Place:** under 1986, generally where the **opposite party** was or the cause arose; 2019 also allows filing **where the consumer lives or works**."
+   },
+   "word_limit": {
+    "min": 50,
+    "max": 75
+   },
+   "marking_scheme": [
+    {
+     "step": "(i) Limits",
+     "marks": 1
+    },
+    {
+     "step": "(ii) Basis",
+     "marks": 1
+    },
+    {
+     "step": "(iii) Place of filing",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_065",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "long",
+   "stem_md": "(a) Compare the Consumer Protection Act, 1986 with the Consumer Protection Act, 2019 on any four bases. [4]\n(b) In your view, which change in the 2019 Act helps an online shopper most? Give a reason. [1]",
+   "options": [],
+   "match_right": [],
+   "solution_md": "Four bases correctly compared; a reasoned judgement.",
+   "marks": 5,
+   "difficulty": 4,
+   "competency": "evaluation",
+   "bloom": "evaluate",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t05",
+    "isc-12-commerce-ch16-t04"
+   ],
+   "expected_time_sec": 600,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "(a) 1. **Regulator:** no central authority in 1986; the 2019 Act set up the **CCPA** to protect consumers as a class.\n2. **E-commerce:** online buying was not expressly covered in 1986; the 2019 Act covers **online, teleshopping, direct selling** and multi-level marketing.\n3. **Pecuniary limits and basis:** 1986 limits were **₹20 lakh and ₹1 crore**, based on value plus compensation claimed; as notified in 2021, the limits are **₹50 lakh and ₹2 crore**, based on **value paid**.\n4. **New remedies:** the 2019 Act added **product liability**, **mediation**, **e-filing** and **penalties on misleading advertisements**, including on endorsers.\n\n(b) **Filing where the consumer lives, along with e-filing**, helps most: an online shopper can complain **from home** even when the seller is in another state."
+   },
+   "word_limit": {
+    "min": 100,
+    "max": 150
+   },
+   "marking_scheme": [
+    {
+     "step": "(a) Four bases",
+     "marks": 4
+    },
+    {
+     "step": "(b) Judgement with reason",
+     "marks": 1
+    }
+   ],
+   "children": [],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_066",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "case-based",
+   "stem_md": "Read the passage and answer the questions that follow. *(Imagined people, brand and figures, written by SOYL for practice.)*",
+   "options": [],
+   "match_right": [],
+   "solution_md": "**(a)** **Correct option: (d)** right to safety. A product that can cause fire or burns endangers life and property: the right to safety.\n\n**(b)** Value paid is far below ₹50 lakh: District Commission.\n\n**(c) (i)** Right to information; keeping the bill.\n\n**OR (c) (ii)** E-filing and residence-based filing.",
+   "marks": 4,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t02",
+    "isc-12-commerce-ch16-t03"
+   ],
+   "expected_time_sec": 420,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**(a)** (d) right to safety\n\n**(b)** The **District Commission** (value paid ₹38,000, within ₹50 lakh).\n\n**(c) (i)** **Right to be informed:** the manual gave **no ventilation warning**. **Responsibility:** he **kept the bill and warranty card** as proof.\n\n**OR (c) (ii)** **E-filing** of complaints online, and filing in the commission **where he lives**."
+   },
+   "marking_scheme": [
+    {
+     "step": "Part (a)",
+     "marks": 1
+    },
+    {
+     "step": "Part (b)",
+     "marks": 1
+    },
+    {
+     "step": "Part (c): either (i) or (ii)",
+     "marks": 2
+    }
+   ],
+   "passage_md": "**The Barua family, Nagaon (imagined)**\n\nMr Barua bought an imagined brand of inverter, \"Powerjyoti\", for ₹38,000 and kept the bill and warranty card. Within a month the inverter overheated and melted its plastic casing. The manual had given no warning about ventilation. The dealer refused to replace it and stopped taking his calls. Mr Barua then filed a complaint online.",
+   "passage_origin": "soyl-original",
+   "children": [
+    {
+     "id": "a",
+     "type": "mcq",
+     "stem_md": "The overheating inverter that melted its casing mainly violates the",
+     "options": [
+      {
+       "id": "a",
+       "text_md": "right to choose"
+      },
+      {
+       "id": "b",
+       "text_md": "right to consumer awareness"
+      },
+      {
+       "id": "c",
+       "text_md": "right to be heard"
+      },
+      {
+       "id": "d",
+       "text_md": "right to safety"
+      }
+     ],
+     "match_right": [],
+     "solution_md": "**Correct option: (d)** right to safety. A product that can cause fire or burns endangers life and property: the right to safety.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch16-t02"
+     ],
+     "expected_time_sec": 60,
+     "assets": [],
+     "answer": {
+      "option_ids": [
+       "d"
+      ]
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct option (d)",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "b",
+     "type": "short",
+     "stem_md": "Before which commission should Mr Barua's complaint be filed, using the limits notified in 2021?",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Value paid is far below ₹50 lakh: District Commission.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch16-t03"
+     ],
+     "expected_time_sec": 90,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "The **District Commission** (value paid ₹38,000, within ₹50 lakh)."
+     },
+     "marking_scheme": [
+      {
+       "step": "District Commission",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "c",
+     "type": "short",
+     "stem_md": "**Either** (i): Identify one more right violated, and one consumer responsibility Mr Barua fulfilled.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Right to information; keeping the bill.",
+     "marks": 2,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch16-t02"
+     ],
+     "expected_time_sec": 150,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Right to be informed:** the manual gave **no ventilation warning**. **Responsibility:** he **kept the bill and warranty card** as proof."
+     },
+     "marking_scheme": [
+      {
+       "step": "Right",
+       "marks": 1
+      },
+      {
+       "step": "Responsibility",
+       "marks": 1
+      }
+     ],
+     "alternatives": [
+      {
+       "id": "c-ii",
+       "type": "short",
+       "stem_md": "**Or** (ii): Name two provisions of the 2019 Act that helped Mr Barua file his complaint easily.",
+       "options": [],
+       "match_right": [],
+       "solution_md": "E-filing and residence-based filing.",
+       "marks": 2,
+       "difficulty": 3,
+       "competency": "analysis",
+       "bloom": "analyze",
+       "topic_ids": [
+        "isc-12-commerce-ch16-t03"
+       ],
+       "expected_time_sec": 150,
+       "assets": [],
+       "answer": {
+        "model_answer_md": "**E-filing** of complaints online, and filing in the commission **where he lives**."
+       },
+       "marking_scheme": [
+        {
+         "step": "First provision",
+         "marks": 1
+        },
+        {
+         "step": "Second provision",
+         "marks": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  },
+  {
+   "id": "q_isc12commerce_ch16_067",
+   "unit": "isc-12-commerce-ch16",
+   "language": "en",
+   "type": "case-based",
+   "stem_md": "Read the passage and answer the questions that follow. *(Imagined firm, people and figures, written by SOYL for practice.)*",
+   "options": [],
+   "match_right": [],
+   "solution_md": "**(a)** **Correct option: (d)** gives a false guarantee about the cream's effect. A false guarantee about results is a misleading claim.\n\n**(b)** Up to ₹10 lakh for a first contravention.\n\n**(c) (i)** Endorser liability; no due diligence.\n\n**OR (c) (ii)** No CCPA; no endorser penalties.",
+   "marks": 4,
+   "difficulty": 3,
+   "competency": "analysis",
+   "bloom": "analyze",
+   "topic_ids": [
+    "isc-12-commerce-ch16-t04",
+    "isc-12-commerce-ch16-t05"
+   ],
+   "expected_time_sec": 420,
+   "assets": [],
+   "answer": {
+    "model_answer_md": "**(a)** (d) gives a false guarantee about the cream's effect\n\n**(b)** Up to **₹10 lakh**.\n\n**(c) (i)** **Yes.** An **endorser** of a misleading advertisement may be penalised; the singer did **no due diligence**, as she never checked any proof.\n\n**OR (c) (ii)** The 1986 Act had **no CCPA** to act for consumers as a class, and it had **no penalty on endorsers** of misleading advertisements."
+   },
+   "marking_scheme": [
+    {
+     "step": "Part (a)",
+     "marks": 1
+    },
+    {
+     "step": "Part (b)",
+     "marks": 1
+    },
+    {
+     "step": "Part (c): either (i) or (ii)",
+     "marks": 2
+    }
+   ],
+   "passage_md": "**\"GlowPure\" cream (imagined), Katni**\n\nThe makers of GlowPure, a skin cream, ran advertisements in which a well-known singer said the cream \"removes all scars in seven days, guaranteed\". The singer had never used the cream or asked for any proof. Many buyers saw no change. A consumer group sent the advertisement to the Central Consumer Protection Authority.",
+   "passage_origin": "soyl-original",
+   "children": [
+    {
+     "id": "a",
+     "type": "mcq",
+     "stem_md": "The advertisement is misleading mainly because it",
+     "options": [
+      {
+       "id": "a",
+       "text_md": "features a singer"
+      },
+      {
+       "id": "b",
+       "text_md": "is shown on television"
+      },
+      {
+       "id": "c",
+       "text_md": "mentions the price"
+      },
+      {
+       "id": "d",
+       "text_md": "gives a false guarantee about the cream's effect"
+      }
+     ],
+     "match_right": [],
+     "solution_md": "**Correct option: (d)** gives a false guarantee about the cream's effect. A false guarantee about results is a misleading claim.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch16-t04"
+     ],
+     "expected_time_sec": 60,
+     "assets": [],
+     "answer": {
+      "option_ids": [
+       "d"
+      ]
+     },
+     "marking_scheme": [
+      {
+       "step": "Correct option (d)",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "b",
+     "type": "short",
+     "stem_md": "What is the highest penalty the CCPA may impose on the maker for this first contravention?",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Up to ₹10 lakh for a first contravention.",
+     "marks": 1,
+     "difficulty": 2,
+     "competency": "application",
+     "bloom": "apply",
+     "topic_ids": [
+      "isc-12-commerce-ch16-t04"
+     ],
+     "expected_time_sec": 90,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "Up to **₹10 lakh**."
+     },
+     "marking_scheme": [
+      {
+       "step": "₹10 lakh",
+       "marks": 1
+      }
+     ],
+     "alternatives": []
+    },
+    {
+     "id": "c",
+     "type": "short",
+     "stem_md": "**Either** (i): Can the singer be penalised? Give a reason.",
+     "options": [],
+     "match_right": [],
+     "solution_md": "Endorser liability; no due diligence.",
+     "marks": 2,
+     "difficulty": 3,
+     "competency": "analysis",
+     "bloom": "analyze",
+     "topic_ids": [
+      "isc-12-commerce-ch16-t04"
+     ],
+     "expected_time_sec": 150,
+     "assets": [],
+     "answer": {
+      "model_answer_md": "**Yes.** An **endorser** of a misleading advertisement may be penalised; the singer did **no due diligence**, as she never checked any proof."
+     },
+     "marking_scheme": [
+      {
+       "step": "Yes, as endorser",
+       "marks": 1
+      },
+      {
+       "step": "No due diligence",
+       "marks": 1
+      }
+     ],
+     "alternatives": [
+      {
+       "id": "c-ii",
+       "type": "short",
+       "stem_md": "**Or** (ii): State two ways in which the 1986 Act would have given buyers weaker protection against this advertisement.",
+       "options": [],
+       "match_right": [],
+       "solution_md": "No CCPA; no endorser penalties.",
+       "marks": 2,
+       "difficulty": 3,
+       "competency": "analysis",
+       "bloom": "analyze",
+       "topic_ids": [
+        "isc-12-commerce-ch16-t05"
+       ],
+       "expected_time_sec": 150,
+       "assets": [],
+       "answer": {
+        "model_answer_md": "The 1986 Act had **no CCPA** to act for consumers as a class, and it had **no penalty on endorsers** of misleading advertisements."
+       },
+       "marking_scheme": [
+        {
+         "step": "No CCPA",
+         "marks": 1
+        },
+        {
+         "step": "No endorser penalty",
+         "marks": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "status": "draft",
+   "version": 1,
+   "provenance": {
+    "origin": "human",
+    "template_version": null,
+    "model": null,
+    "generated_at": "2026-10-31",
+    "author": "claude-opus-5-5 (subject-producer)"
+   }
+  }
+ ],
+ "build": {
+  "run_id": null,
+  "checks": {
+   "syllabus": "topics t01–t05 of isc-12-commerce-ch16 (need for consumer protection and its methods; consumer under the 2019 Act, rights and responsibilities; Consumer Disputes Redressal Commissions and their revised pecuniary jurisdiction; misleading advertisements, the CCPA and the latest provisions; the 1986 and 2019 Acts compared)",
+   "originality": "every firm, brand, person and case is imagined and written by SOYL and labelled; no ISC or CBSE textbook text, illustration or exercise and no CISCE specimen or board item reused (D-036); firms, people and set-ups differ from the CBSE 12 Business Studies chapter on consumer protection",
+   "data": "all purchase values are imagined; each is checked against the pecuniary limits notified in December 2021",
+   "facts": "time-sensitive: pecuniary limits as notified in December 2021 (District up to ₹50 lakh; State above ₹50 lakh to ₹2 crore; National above ₹2 crore); 1986 limits ₹20 lakh and ₹1 crore; CCPA penalty up to ₹10 lakh, ₹50 lakh for a subsequent contravention",
+   "gate": "schema, pipeline lint, deterministic verify, word limits, narration and answer-leak checks run clean in this build"
+  }
+ }
+}
