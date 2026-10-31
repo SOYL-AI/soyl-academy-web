@@ -1,0 +1,5190 @@
+{
+  "unit": "isc-12-chemistry-ch22",
+  "version": 1,
+  "academic_year": "2026-27",
+  "created_at": "2026-10-30T00:00:00+05:30",
+  "decks": [
+    {
+      "unit": "isc-12-chemistry-ch22",
+      "part": 1,
+      "version": 1,
+      "title": "Proteins, Vitamins and Nucleic Acids — Part 1: Amino acids and proteins",
+      "language": "en",
+      "goals": [
+        "Classify amino acids and draw the zwitter ion of an amino acid",
+        "Explain the isoelectric point and predict the charge of an amino acid at a given pH",
+        "Show the formation of a peptide bond and define the four levels of protein structure",
+        "Explain denaturation and state the roles of enzymes and hormones"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Molecules of life",
+          "body_md": "Part 1 — from the twenty amino acids to the proteins they build: hair, muscle, enzymes and hormones.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Protein",
+                "Where it works",
+                "Job"
+              ],
+              "rows": [
+                [
+                  "Keratin",
+                  "Hair, nails",
+                  "Structure"
+                ],
+                [
+                  "Haemoglobin",
+                  "Red blood cells",
+                  "Carries oxygen"
+                ],
+                [
+                  "Pepsin",
+                  "Stomach",
+                  "Digests proteins"
+                ],
+                [
+                  "Insulin",
+                  "Blood",
+                  "Hormone: lowers blood glucose"
+                ],
+                [
+                  "Antibodies",
+                  "Blood",
+                  "Defence"
+                ]
+              ]
+            },
+            "alt": "Table of five proteins, where each works and its job"
+          },
+          "math": [],
+          "narration": "Namaste! Your hair, your muscles, the enzymes that digest your food and the insulin that controls your blood sugar are all proteins. Every one of them is a chain built from just twenty kinds of amino acid. In this part we meet the amino acids, link them into proteins, and see what happens when a protein loses its shape.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Amino acids and their classification",
+          "body_md": "Proteins are built from **α-amino acids**, H₂N–CH(R)–COOH: the –NH₂ and –COOH groups are on the same carbon. Except **glycine** (R = H), all are chiral and occur as the **L**-form. **By diet:** **essential** amino acids cannot be made in the body and must come from food (e.g. valine, leucine, lysine, phenylalanine, tryptophan); **non-essential** ones can be made (glycine, alanine, glutamic acid). **By groups:** **neutral** (one –NH₂, one –COOH), **acidic** (extra –COOH), **basic** (extra –NH₂).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Class",
+                "Example",
+                "Side chain R"
+              ],
+              "rows": [
+                [
+                  "Neutral",
+                  "Glycine",
+                  "–H"
+                ],
+                [
+                  "Neutral",
+                  "Alanine",
+                  "–CH₃"
+                ],
+                [
+                  "Acidic",
+                  "Aspartic acid",
+                  "–CH₂COOH"
+                ],
+                [
+                  "Acidic",
+                  "Glutamic acid",
+                  "–CH₂CH₂COOH"
+                ],
+                [
+                  "Basic",
+                  "Lysine",
+                  "–(CH₂)₄NH₂"
+                ]
+              ]
+            },
+            "alt": "Table of neutral, acidic and basic amino acids with examples and side chains"
+          },
+          "math": [],
+          "narration": "An alpha amino acid has an amino group and a carboxyl group on the same carbon atom, together with a side chain that differs from one amino acid to the next. All except glycine are chiral. Essential amino acids must come from our food because the body cannot make them; non-essential ones can be made in the body. Amino acids are also neutral, acidic or basic, depending on whether they have an extra acid or amino group.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "The zwitter ion",
+          "body_md": "In the solid and in water, the acidic –COOH gives H⁺ to the basic –NH₂ of the same molecule, forming a **dipolar ion (zwitter ion)**, H₃N⁺–CH(R)–COO⁻. This explains the salt-like properties: **high melting points** (with decomposition), **solubility in water** but not in non-polar solvents, and **amphoteric** behaviour — –COO⁻ accepts H⁺ from acids, –NH₃⁺ gives H⁺ to bases.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "H₃N⁺CH₂COOH (acid: cation)"
+                },
+                {
+                  "id": "b",
+                  "label": "H₃N⁺CH₂COO⁻ (zwitter ion)"
+                },
+                {
+                  "id": "c",
+                  "label": "H₂NCH₂COO⁻ (alkali: anion)"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "b",
+                  "to": "a",
+                  "label": "+ H⁺"
+                },
+                {
+                  "from": "b",
+                  "to": "c",
+                  "label": "+ OH⁻"
+                }
+              ]
+            },
+            "alt": "Flow showing the glycine zwitter ion gaining a proton in acid to form a cation and losing a proton in alkali to form an anion"
+          },
+          "math": [
+            "\\ce{H3N+CH2COO- + H+ -> H3N+CH2COOH}",
+            "\\ce{H3N+CH2COO- + OH- -> H2NCH2COO- + H2O}"
+          ],
+          "narration": "Inside a single amino acid molecule, the acid group hands a proton to the amino group. The result is a zwitter ion, which carries both a positive and a negative charge but is neutral overall. Because it is really a salt, an amino acid has a high melting point and dissolves in water rather than in benzene. It also reacts with both acids and bases, so it is amphoteric.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "concept",
+          "heading": "Isoelectric point",
+          "body_md": "The **isoelectric point (pI)** is the pH at which an amino acid exists mainly as the zwitter ion, has **no net charge** and does **not move** in an electric field. Below its pI an amino acid is mainly a **cation** (moves to the cathode); above its pI it is mainly an **anion** (moves to the anode). For a neutral amino acid, pI is the average of the two pKa values.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Amino acid",
+                "Type",
+                "Approximate pI"
+              ],
+              "rows": [
+                [
+                  "Glutamic acid",
+                  "Acidic",
+                  "3.2"
+                ],
+                [
+                  "Glycine",
+                  "Neutral",
+                  "6.0"
+                ],
+                [
+                  "Alanine",
+                  "Neutral",
+                  "6.0"
+                ],
+                [
+                  "Lysine",
+                  "Basic",
+                  "9.7"
+                ]
+              ]
+            },
+            "alt": "Table of four amino acids with their type and approximate isoelectric point"
+          },
+          "math": [],
+          "narration": "Every amino acid has a particular pH, its isoelectric point, at which it is almost entirely the zwitter ion and does not move when a voltage is applied. In more acidic solutions it picks up a proton and becomes positive, so it moves towards the cathode. In more alkaline solutions it loses a proton and becomes negative. Acidic amino acids have low isoelectric points and basic ones high.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example: which way does it move?",
+          "body_md": "**Problem.** A mixture of glutamic acid (pI 3.2), glycine (pI 6.0) and lysine (pI 9.7) is placed in a buffer of pH 6.0 between two electrodes. Predict the movement of each.\n\n**Glutamic acid:** pH 6.0 > pI → net negative → moves to the **anode**.\n\n**Glycine:** pH = pI → no net charge → **stays** in place.\n\n**Lysine:** pH 6.0 < pI → net positive → moves to the **cathode**.\n\nThis is the basis of **electrophoresis**, used to separate amino acids and proteins.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Amino acid",
+                "pI",
+                "Charge at pH 6.0",
+                "Moves to"
+              ],
+              "rows": [
+                [
+                  "Glutamic acid",
+                  "3.2",
+                  "Negative",
+                  "Anode"
+                ],
+                [
+                  "Glycine",
+                  "6.0",
+                  "Zero",
+                  "Stays"
+                ],
+                [
+                  "Lysine",
+                  "9.7",
+                  "Positive",
+                  "Cathode"
+                ]
+              ]
+            },
+            "alt": "Table predicting the charge and direction of movement of three amino acids at pH 6"
+          },
+          "math": [],
+          "narration": "Compare the pH of the buffer with each isoelectric point. Glutamic acid sits in a solution more alkaline than its isoelectric point, so it is negative and moves to the anode. Glycine is at its isoelectric point and stays put. Lysine is in a solution more acidic than its isoelectric point, so it is positive and moves to the cathode. This separation is called electrophoresis.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: amino acids",
+          "body_md": "Identify the form of an amino acid at a given pH.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. At the isoelectric point both groups are ionised and the net charge is zero.",
+          "check_question_id": "q_isc12chem_ch22_001",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "diagram",
+          "heading": "The peptide bond",
+          "body_md": "The –COOH of one amino acid condenses with the –NH₂ of the next, losing H₂O, to form an amide link, **–CO–NH–**, called a **peptide bond**. Two amino acids give a **dipeptide**, three a tripeptide; many give a **polypeptide**. A chain of n amino acids has **n − 1** peptide bonds. The chain has a free –NH₂ (**N-terminal**, written on the left) and a free –COOH (**C-terminal**, on the right).",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 150\" role=\"img\" aria-label=\"Two amino acids joining to form a dipeptide. The carboxyl group of the first amino acid and the amino group of the second lose a molecule of water, and a peptide (amide) bond, –CO–NH–, links them.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>Two amino acids joining to form a dipeptide. The carboxyl group of the first amino acid and the amino group of the second lose a molecule of water, and a peptide (amide) bond, –CO–NH–, links them.</title><text x=\"10\" y=\"50\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">H₂N–CH(R)–CO</text><rect x=\"108\" y=\"36\" width=\"24\" height=\"20\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\" stroke-dasharray=\"3 2\"/><text x=\"112\" y=\"50\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"12\">OH</text><text x=\"140\" y=\"50\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\">+</text><rect x=\"152\" y=\"36\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"var(--diagram-red)\" stroke-width=\"1.5\" stroke-dasharray=\"3 2\"/><text x=\"156\" y=\"50\" fill=\"var(--diagram-red)\" stroke=\"none\" font-size=\"12\">H</text><text x=\"172\" y=\"50\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">NH–CH(R′)–COOH</text><line x1=\"160\" y1=\"66\" x2=\"160\" y2=\"87.2\" stroke=\"currentColor\" stroke-width=\"1.5\"/><polygon points=\"160,92 157.6,86.5 162.4,86.5\" fill=\"currentColor\" stroke=\"none\"/><text x=\"170\" y=\"84\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">− H₂O</text><text x=\"30\" y=\"118\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">H₂N–CH(R)–</text><rect x=\"118\" y=\"102\" width=\"70\" height=\"22\" fill=\"var(--diagram-accent)\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.5\" fill-opacity=\"0.2\"/><text x=\"124\" y=\"118\" fill=\"var(--diagram-accent)\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">CO–NH</text><text x=\"190\" y=\"118\" fill=\"currentColor\" stroke=\"none\" font-size=\"12\" font-weight=\"bold\">–CH(R′)–COOH</text><text x=\"153\" y=\"142\" fill=\"var(--diagram-accent)\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\">peptide bond</text></svg>",
+            "alt": "Two amino acids joining: the carboxyl group of the first and the amino group of the second lose a water molecule, leaving a peptide bond CO–NH between them"
+          },
+          "math": [
+            "\\ce{H2NCH2COOH + H2NCH(CH3)COOH -> H2NCH2CONHCH(CH3)COOH + H2O}"
+          ],
+          "narration": "When the acid group of one amino acid reacts with the amino group of another, a molecule of water is lost and an amide link forms between them. In proteins this link is called a peptide bond. Two amino acids make a dipeptide, and many make a polypeptide. A chain of n amino acids has one fewer peptide bond than it has amino acids. By convention the end with the free amino group is written on the left.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "example",
+          "heading": "Worked example: a tripeptide",
+          "body_md": "**Problem.** Glycine ($M = 75$), alanine ($M = 89$) and valine ($M = 117$) join to form the tripeptide Gly–Ala–Val. (a) How many peptide bonds and water molecules are involved? (b) What is the molar mass of the tripeptide? (c) How many different tripeptides can be made using each of the three amino acids once?\n\n**(a)** 3 − 1 = **2** peptide bonds and **2** molecules of $\\ce{H2O}$ released.\n\n**(b)** $M = 75 + 89 + 117 - 2 \\times 18 = 245\\ \\text{g mol}^{-1}$.\n\n**(c)** $3 \\times 2 \\times 1 = 6$ sequences (Gly–Ala–Val, Gly–Val–Ala, Ala–Gly–Val, …).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Quantity",
+                "Value"
+              ],
+              "rows": [
+                [
+                  "Peptide bonds",
+                  "2"
+                ],
+                [
+                  "Water lost",
+                  "2 × 18 g mol⁻¹"
+                ],
+                [
+                  "Molar mass",
+                  "245 g mol⁻¹"
+                ],
+                [
+                  "Possible sequences",
+                  "6"
+                ]
+              ]
+            },
+            "alt": "Table of answers for the tripeptide example"
+          },
+          "math": [],
+          "narration": "Three amino acids are joined by two peptide bonds, and each bond releases one water molecule. So the molar mass of the tripeptide is the sum of the three amino acids minus two waters, which gives two hundred and forty five. Since the order matters, three different amino acids can be arranged in six different sequences, each a different tripeptide.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "check",
+          "heading": "Quick check: peptide bonds",
+          "body_md": "Locate the peptide bond in a dipeptide.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. The peptide bond joins the acid group of one unit to the amino group of the next.",
+          "check_question_id": "q_isc12chem_ch22_013",
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "concept",
+          "heading": "Proteins: classes and levels of structure",
+          "body_md": "**Fibrous** proteins: long parallel chains held by hydrogen and disulfide bonds; insoluble; structural (keratin, collagen, myosin). **Globular** proteins: chains folded into compact, roughly spherical shapes; water-soluble; functional (insulin, albumin, enzymes). **Levels of structure (definitions):** **primary** — the sequence of amino acids; **secondary** — regular folding of the chain into an α-helix or β-pleated sheet, held by hydrogen bonds; **tertiary** — the overall three-dimensional folding of one chain; **quaternary** — the arrangement of two or more polypeptide subunits (haemoglobin has four).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Level",
+                "Defined as",
+                "Example"
+              ],
+              "rows": [
+                [
+                  "Primary",
+                  "Sequence of amino acids",
+                  "The 51 residues of insulin in order"
+                ],
+                [
+                  "Secondary",
+                  "α-Helix or β-pleated sheet (H-bonds)",
+                  "α-Helix in keratin of hair"
+                ],
+                [
+                  "Tertiary",
+                  "Overall 3D folding of a chain",
+                  "Compact shape of myoglobin"
+                ],
+                [
+                  "Quaternary",
+                  "Arrangement of subunits",
+                  "Four subunits of haemoglobin"
+                ]
+              ]
+            },
+            "alt": "Table defining the four levels of protein structure with an example of each"
+          },
+          "math": [],
+          "narration": "Fibrous proteins such as keratin have long chains lying side by side and are insoluble, so they build structures. Globular proteins such as insulin are folded into compact shapes and dissolve in water, so they can work in body fluids. Protein structure is described at four levels: the sequence of amino acids, the regular helix or sheet, the overall folding of each chain, and the arrangement of several chains together.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "Denaturation",
+          "body_md": "When a globular protein is exposed to **heat**, a **change of pH**, **alcohol** or **heavy-metal ions**, its hydrogen bonds and other interactions break, so the **secondary and tertiary** (and quaternary) structure is lost. The **primary structure (peptide bonds) remains**. The protein becomes insoluble and **loses its biological activity**. Examples: coagulation of egg white on boiling; curdling of milk as lactic acid forms; 70% alcohol killing bacteria.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "Native protein (folded, active)"
+                },
+                {
+                  "id": "b",
+                  "label": "Heat, acid or alkali, alcohol, Hg²⁺/Pb²⁺"
+                },
+                {
+                  "id": "c",
+                  "label": "Denatured protein (unfolded, inactive)"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c",
+                  "label": "H-bonds broken; peptide bonds intact"
+                }
+              ]
+            },
+            "alt": "Flow of denaturation from a folded active protein to an unfolded inactive one"
+          },
+          "math": [],
+          "narration": "A protein works only when it is folded into the right shape. Heat, strong acids or alkalis, alcohol and heavy metal ions break the hydrogen bonds and other forces that hold this shape. The chain unfolds and the protein loses its activity, although the sequence of amino acids is not changed. Boiled egg white, sour milk and alcohol disinfectants are all examples of denaturation.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "concept",
+          "heading": "Enzymes and hormones",
+          "body_md": "**Enzymes** are biological catalysts, almost all **globular proteins**. They are **highly specific**, very efficient, and work best at about body temperature and an **optimum pH**; they lower the activation energy. Examples: invertase (sucrose → glucose + fructose), maltase, pepsin (proteins → peptides), urease (urea → NH₃ + CO₂). **Hormones** are chemical messengers made by endocrine glands and carried in the blood: **insulin** (lowers blood glucose), **glucagon** (raises it), **thyroxine** (controls metabolic rate; contains iodine), **adrenaline** (emergency response), and steroid sex hormones.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Substance",
+                "Type",
+                "Role"
+              ],
+              "rows": [
+                [
+                  "Urease",
+                  "Enzyme",
+                  "Hydrolyses urea"
+                ],
+                [
+                  "Pepsin",
+                  "Enzyme",
+                  "Hydrolyses proteins (stomach)"
+                ],
+                [
+                  "Insulin",
+                  "Hormone (pancreas)",
+                  "Lowers blood glucose"
+                ],
+                [
+                  "Glucagon",
+                  "Hormone (pancreas)",
+                  "Raises blood glucose"
+                ],
+                [
+                  "Thyroxine",
+                  "Hormone (thyroid)",
+                  "Controls metabolic rate"
+                ]
+              ]
+            },
+            "alt": "Table of two enzymes and three hormones with their roles"
+          },
+          "math": [
+            "\\ce{NH2CONH2 + H2O ->[urease] 2NH3 + CO2}"
+          ],
+          "narration": "Enzymes are the catalysts of living cells, and nearly all are globular proteins. Each acts on one particular substance or reaction, and each works best at a certain temperature and pH. Urease, for example, breaks down urea into ammonia and carbon dioxide. Hormones are chemical messengers released by glands into the blood. Insulin lowers blood sugar, glucagon raises it, and thyroxine controls the rate of metabolism.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "check",
+          "heading": "Quick check: denaturation and enzymes",
+          "body_md": "Decide what denaturation changes and what it leaves intact.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Denaturation unfolds the chain but does not break peptide bonds.",
+          "check_question_id": "q_isc12chem_ch22_028",
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "summary",
+          "heading": "Summary: Part 1",
+          "body_md": "",
+          "bullets": [
+            "α-Amino acids H₂N–CH(R)–COOH: essential or non-essential; neutral, acidic or basic; all chiral except glycine.",
+            "Zwitter ion H₃N⁺–CH(R)–COO⁻: high m.p., water-soluble, amphoteric; no net charge at the isoelectric point.",
+            "Peptide bond –CO–NH–; n amino acids → n − 1 bonds; fibrous vs globular proteins.",
+            "Primary (sequence), secondary (helix, sheet), tertiary (folding), quaternary (subunits).",
+            "Denaturation destroys 2°/3° structure, not 1°; enzymes are specific protein catalysts; hormones are chemical messengers."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Idea",
+                "Key point"
+              ],
+              "rows": [
+                [
+                  "Zwitter ion",
+                  "Both groups ionised"
+                ],
+                [
+                  "pI",
+                  "No net charge"
+                ],
+                [
+                  "Peptide bond",
+                  "–CO–NH–"
+                ],
+                [
+                  "Denaturation",
+                  "Loss of shape and activity"
+                ]
+              ]
+            },
+            "alt": "Summary table of four key ideas from Part 1"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 1. Amino acids exist as zwitter ions, which explains their salt-like and amphoteric properties, and each has an isoelectric point. Peptide bonds join them into polypeptides and proteins, whose structure is described at four levels. Denaturation unfolds a protein without breaking its peptide bonds. Enzymes are protein catalysts, and hormones are chemical messengers.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s15",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 1",
+          "body_md": "",
+          "bullets": [
+            "Draw the zwitter ion with both charges shown: H₃N⁺ and COO⁻.",
+            "Below pI → cation → cathode; above pI → anion → anode.",
+            "For a peptide, mark the –CO–NH– bond and write the N-terminal residue first.",
+            "Denaturation never changes the amino acid sequence."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Zwitter ion has net charge",
+                  "Net charge is zero"
+                ],
+                [
+                  "n amino acids, n peptide bonds",
+                  "n − 1 bonds"
+                ],
+                [
+                  "Denaturation breaks peptide bonds",
+                  "Only H-bonds and other interactions"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 1 and fixes"
+          },
+          "math": [],
+          "narration": "Some tips. When you draw a zwitter ion, show both charges. Link pH to charge carefully: below the isoelectric point the amino acid is positive. A chain of n amino acids has one fewer peptide bond than amino acids. And remember that denaturation changes the shape of a protein, never its sequence.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "unit": "isc-12-chemistry-ch22",
+      "part": 2,
+      "version": 1,
+      "title": "Proteins, Vitamins and Nucleic Acids — Part 2: Vitamins and nucleic acids",
+      "language": "en",
+      "goals": [
+        "Classify vitamins A, B, C, D, E and K as fat-soluble or water-soluble",
+        "Match each vitamin with its main function and deficiency disease",
+        "Name the purine and pyrimidine bases and describe the DNA double helix",
+        "Compare DNA and RNA in sugar, bases, structure and function"
+      ],
+      "slides": [
+        {
+          "id": "s01",
+          "layout": "title",
+          "heading": "Small needs, big effects",
+          "body_md": "Part 2 — vitamins, needed in tiny amounts, and the nucleic acids that carry the instructions for every protein.",
+          "bullets": [],
+          "visual": {
+            "kind": "flow",
+            "spec": {
+              "direction": "LR",
+              "nodes": [
+                {
+                  "id": "a",
+                  "label": "DNA (genes)"
+                },
+                {
+                  "id": "b",
+                  "label": "RNA (messages)"
+                },
+                {
+                  "id": "c",
+                  "label": "Proteins (enzymes)"
+                },
+                {
+                  "id": "d",
+                  "label": "Need vitamins to work"
+                }
+              ],
+              "edges": [
+                {
+                  "from": "a",
+                  "to": "b"
+                },
+                {
+                  "from": "b",
+                  "to": "c"
+                },
+                {
+                  "from": "c",
+                  "to": "d"
+                }
+              ]
+            },
+            "alt": "Flow from DNA to RNA to proteins, many of which need vitamins to function"
+          },
+          "math": [],
+          "narration": "In Part 2 we look at vitamins, which the body needs only in small amounts but cannot do without, and at the nucleic acids. DNA stores the instructions for making every protein, and RNA carries those instructions out. Many of the enzymes made this way need vitamins to work.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s02",
+          "layout": "concept",
+          "heading": "Vitamins: fat-soluble and water-soluble",
+          "body_md": "**Vitamins** are organic compounds needed in **small amounts** in the diet for normal growth and health; most cannot be made in the body. **Fat-soluble: A, D, E, K** — stored in the liver and fatty tissue, so large excesses can be harmful. **Water-soluble: B group and C** — not stored (excess is excreted in urine), so they must be supplied **regularly**; they are also easily lost when vegetables are boiled and the water discarded. (Vitamin B₁₂ is an exception: it is stored in the liver.)",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Group",
+                "Vitamins",
+                "Storage",
+                "Supply"
+              ],
+              "rows": [
+                [
+                  "Fat-soluble",
+                  "A, D, E, K",
+                  "Liver and fatty tissue",
+                  "Excess can accumulate"
+                ],
+                [
+                  "Water-soluble",
+                  "B group, C",
+                  "Not stored (except B₁₂)",
+                  "Needed regularly"
+                ]
+              ]
+            },
+            "alt": "Table comparing fat-soluble and water-soluble vitamins by members, storage and supply"
+          },
+          "math": [],
+          "narration": "Vitamins are organic substances we need in tiny amounts. They fall into two groups. Vitamins A, D, E and K dissolve in fat and are stored in the liver and fatty tissue, so we do not need them every day, and too much can build up and cause harm. The B vitamins and vitamin C dissolve in water and are passed out in urine, so they must be eaten regularly.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s03",
+          "layout": "concept",
+          "heading": "Functions and deficiency diseases",
+          "body_md": "Each vitamin has characteristic sources and a characteristic deficiency disease.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Vitamin",
+                "Good sources",
+                "Deficiency disease or symptom"
+              ],
+              "rows": [
+                [
+                  "A",
+                  "Carrots, fish-liver oil, milk",
+                  "Night blindness, xerophthalmia (hardening of cornea)"
+                ],
+                [
+                  "B₁",
+                  "Whole cereals, yeast, milk",
+                  "Beriberi (loss of appetite, retarded growth)"
+                ],
+                [
+                  "B₂",
+                  "Milk, egg white, liver",
+                  "Cheilosis (cracked lips), digestive disorders"
+                ],
+                [
+                  "B₆",
+                  "Yeast, cereals, egg yolk",
+                  "Convulsions"
+                ],
+                [
+                  "B₁₂",
+                  "Meat, fish, eggs, curd",
+                  "Pernicious anaemia"
+                ],
+                [
+                  "C",
+                  "Citrus fruits, amla, green leafy vegetables",
+                  "Scurvy (bleeding gums)"
+                ],
+                [
+                  "D",
+                  "Sunlight on skin, fish, egg yolk",
+                  "Rickets in children, osteomalacia in adults"
+                ],
+                [
+                  "E",
+                  "Vegetable oils, sunflower seeds",
+                  "Fragile red blood cells, muscular weakness"
+                ],
+                [
+                  "K",
+                  "Green leafy vegetables",
+                  "Increased blood-clotting time"
+                ]
+              ]
+            },
+            "alt": "Table of vitamins A, B1, B2, B6, B12, C, D, E and K with sources and deficiency diseases"
+          },
+          "math": [],
+          "narration": "This table links each vitamin to its sources and to the disease caused when it is missing. Lack of vitamin A causes night blindness. Shortage of the B vitamins causes beriberi, cracked lips, convulsions or pernicious anaemia. Lack of vitamin C causes scurvy, of vitamin D rickets, of vitamin E fragile red blood cells, and of vitamin K slow clotting of blood.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s04",
+          "layout": "check",
+          "heading": "Quick check: deficiency diseases",
+          "body_md": "Link a deficiency symptom with the vitamin.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Think about which vitamin is needed for blood to clot.",
+          "check_question_id": "q_isc12chem_ch22_044",
+          "audio": null
+        },
+        {
+          "id": "s05",
+          "layout": "example",
+          "heading": "Worked example: diagnosing a deficiency",
+          "body_md": "**Problem.** Name the vitamin most likely to be lacking: (a) a sailor on a long voyage with only dried food develops swollen, bleeding gums; (b) a child kept indoors in a smoggy city has soft, bowed leg bones; (c) a patient whose wound keeps bleeding for a long time; (d) a strict vegan for many years becomes anaemic.\n\n**(a)** Vitamin C — scurvy. **(b)** Vitamin D — rickets. **(c)** Vitamin K — slow clotting. **(d)** Vitamin B₁₂ — pernicious anaemia (found mainly in animal foods).",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Case",
+                "Vitamin",
+                "Condition"
+              ],
+              "rows": [
+                [
+                  "Sailor",
+                  "C",
+                  "Scurvy"
+                ],
+                [
+                  "Indoor child",
+                  "D",
+                  "Rickets"
+                ],
+                [
+                  "Slow-clotting wound",
+                  "K",
+                  "Clotting delay"
+                ],
+                [
+                  "Long-term vegan",
+                  "B₁₂",
+                  "Pernicious anaemia"
+                ]
+              ]
+            },
+            "alt": "Table matching four cases to the vitamin lacking and the condition"
+          },
+          "math": [],
+          "narration": "Work from the symptom to the vitamin. Bleeding gums on a long voyage without fresh food point to scurvy and a lack of vitamin C. Soft, bent bones in a child who gets little sunlight point to rickets and vitamin D. Slow clotting points to vitamin K. And because vitamin B twelve comes mainly from animal foods, a strict vegan diet can lead to pernicious anaemia.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s06",
+          "layout": "check",
+          "heading": "Quick check: vitamin groups",
+          "body_md": "Sort vitamins into fat-soluble and water-soluble groups.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. Remember the four fat-soluble vitamins: A, D, E and K.",
+          "check_question_id": "q_isc12chem_ch22_042",
+          "audio": null
+        },
+        {
+          "id": "s07",
+          "layout": "concept",
+          "heading": "Nucleic acids: nucleotides and bases",
+          "body_md": "**Nucleic acids** (DNA and RNA) are polymers of **nucleotides**. Each nucleotide = **nitrogenous base + pentose sugar + phosphate**; base + sugar alone is a **nucleoside**. Nucleotides are joined through phosphate groups (phosphodiester links) into a sugar–phosphate backbone. **Sugar:** 2-deoxyribose in DNA, ribose in RNA. **Bases:** **purines** (two rings) — **adenine (A)** and **guanine (G)**, in both; **pyrimidines** (one ring) — **cytosine (C)** in both, **thymine (T)** in DNA only, **uracil (U)** in RNA only.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Base",
+                "Type",
+                "In DNA?",
+                "In RNA?"
+              ],
+              "rows": [
+                [
+                  "Adenine (A)",
+                  "Purine",
+                  "Yes",
+                  "Yes"
+                ],
+                [
+                  "Guanine (G)",
+                  "Purine",
+                  "Yes",
+                  "Yes"
+                ],
+                [
+                  "Cytosine (C)",
+                  "Pyrimidine",
+                  "Yes",
+                  "Yes"
+                ],
+                [
+                  "Thymine (T)",
+                  "Pyrimidine",
+                  "Yes",
+                  "No"
+                ],
+                [
+                  "Uracil (U)",
+                  "Pyrimidine",
+                  "No",
+                  "Yes"
+                ]
+              ]
+            },
+            "alt": "Table of the five nucleic-acid bases, purine or pyrimidine, and whether each occurs in DNA and RNA"
+          },
+          "math": [],
+          "narration": "Nucleic acids are long chains of nucleotides. Each nucleotide has three parts: a nitrogen-containing base, a five-carbon sugar and a phosphate group. The sugar is deoxyribose in DNA and ribose in RNA. Adenine and guanine are the larger purine bases, found in both. Cytosine is a pyrimidine found in both, but thymine occurs only in DNA, and uracil takes its place in RNA.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s08",
+          "layout": "diagram",
+          "heading": "The DNA double helix",
+          "body_md": "Watson and Crick (1953): DNA is a **double helix** of two polynucleotide strands wound round a common axis, with the sugar–phosphate backbones outside and the bases inside. The strands are **antiparallel** and **complementary**: **A pairs with T** (two hydrogen bonds) and **G pairs with C** (three hydrogen bonds), always a purine with a pyrimidine. Hence in any double-stranded DNA, A = T and G = C (**Chargaff’s rule**).",
+          "bullets": [],
+          "visual": {
+            "kind": "svg",
+            "spec": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 230\" role=\"img\" aria-label=\"A short section of DNA drawn as a twisted ladder. Two sugar–phosphate backbones run in opposite directions. The rungs are base pairs held by hydrogen bonds: adenine pairs with thymine by two hydrogen bonds, and guanine pairs with cytosine by three hydrogen bonds.\" font-family=\"sans-serif\" font-size=\"12\" fill=\"none\"><title>A short section of DNA drawn as a twisted ladder. Two sugar–phosphate backbones run in opposite directions. The rungs are base pairs held by hydrogen bonds: adenine pairs with thymine by two hydrogen bonds, and guanine pairs with cytosine by three hydrogen bonds.</title><path d=\"M60 20 C70 70 50 120 60 170 C66 200 60 215 60 222\" fill=\"none\" stroke=\"var(--diagram-blue)\" stroke-width=\"3\"/><path d=\"M200 20 C190 70 210 120 200 170 C194 200 200 215 200 222\" fill=\"none\" stroke=\"var(--diagram-green)\" stroke-width=\"3\"/><line x1=\"64\" y1=\"40\" x2=\"120\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"140\" y1=\"40\" x2=\"196\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"108\" y=\"35\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\">A</text><text x=\"152\" y=\"35\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\">T</text><line x1=\"124\" y1=\"36\" x2=\"124\" y2=\"44\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.2\"/><line x1=\"129\" y1=\"36\" x2=\"129\" y2=\"44\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.2\"/><line x1=\"64\" y1=\"80\" x2=\"120\" y2=\"80\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"140\" y1=\"80\" x2=\"196\" y2=\"80\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"108\" y=\"75\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\">G</text><text x=\"152\" y=\"75\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\">C</text><line x1=\"124\" y1=\"76\" x2=\"124\" y2=\"84\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.2\"/><line x1=\"129\" y1=\"76\" x2=\"129\" y2=\"84\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.2\"/><line x1=\"134\" y1=\"76\" x2=\"134\" y2=\"84\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.2\"/><line x1=\"64\" y1=\"120\" x2=\"120\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"140\" y1=\"120\" x2=\"196\" y2=\"120\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"108\" y=\"115\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\">T</text><text x=\"152\" y=\"115\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\">A</text><line x1=\"124\" y1=\"116\" x2=\"124\" y2=\"124\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.2\"/><line x1=\"129\" y1=\"116\" x2=\"129\" y2=\"124\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.2\"/><line x1=\"64\" y1=\"160\" x2=\"120\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"140\" y1=\"160\" x2=\"196\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"108\" y=\"155\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\">C</text><text x=\"152\" y=\"155\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\">G</text><line x1=\"124\" y1=\"156\" x2=\"124\" y2=\"164\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.2\"/><line x1=\"129\" y1=\"156\" x2=\"129\" y2=\"164\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.2\"/><line x1=\"134\" y1=\"156\" x2=\"134\" y2=\"164\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.2\"/><line x1=\"64\" y1=\"200\" x2=\"120\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"140\" y1=\"200\" x2=\"196\" y2=\"200\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"108\" y=\"195\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\">A</text><text x=\"152\" y=\"195\" fill=\"currentColor\" stroke=\"none\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"bold\">T</text><line x1=\"124\" y1=\"196\" x2=\"124\" y2=\"204\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.2\"/><line x1=\"129\" y1=\"196\" x2=\"129\" y2=\"204\" stroke=\"var(--diagram-accent)\" stroke-width=\"1.2\"/><text x=\"250\" y=\"40\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">A=T: 2 H-bonds</text><text x=\"250\" y=\"56\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">G≡C: 3 H-bonds</text><text x=\"250\" y=\"90\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">sugar–phosphate</text><text x=\"250\" y=\"104\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">backbones run</text><text x=\"250\" y=\"118\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">in opposite</text><text x=\"250\" y=\"132\" fill=\"currentColor\" stroke=\"none\" font-size=\"10\">directions</text></svg>",
+            "alt": "DNA as a twisted ladder: two sugar–phosphate backbones running in opposite directions, with base-pair rungs A–T held by two hydrogen bonds and G–C by three"
+          },
+          "math": [],
+          "narration": "In nineteen fifty three Watson and Crick showed that DNA is a double helix, like a twisted ladder. The two sugar phosphate backbones form the sides and run in opposite directions. The rungs are pairs of bases held by hydrogen bonds: adenine always pairs with thymine through two hydrogen bonds, and guanine with cytosine through three. So the two strands are complementary, and the amounts of adenine and thymine are always equal.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s09",
+          "layout": "example",
+          "heading": "Worked example: base counting",
+          "body_md": "**Problem.** A double-stranded DNA molecule has 2000 base pairs and contains 560 adenine bases. How many (a) thymine, (b) cytosine and (c) guanine bases does it contain?\n\n**(a)** T = A = **560**.\n\n**(b)** Total bases $= 2 \\times 2000 = 4000$; G + C $= 4000 - 2 \\times 560 = 2880$; C $= 2880 \\div 2 = 1440$.\n\n**(c)** G = C = **1440**.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Base",
+                "Number"
+              ],
+              "rows": [
+                [
+                  "Adenine",
+                  "560"
+                ],
+                [
+                  "Thymine",
+                  "560"
+                ],
+                [
+                  "Guanine",
+                  "1440"
+                ],
+                [
+                  "Cytosine",
+                  "1440"
+                ],
+                [
+                  "Total",
+                  "4000"
+                ]
+              ]
+            },
+            "alt": "Table of the numbers of each base in a DNA molecule of 2000 base pairs"
+          },
+          "math": [],
+          "narration": "Each base pair contains two bases, so two thousand pairs means four thousand bases. Thymine equals adenine, five hundred and sixty. Taking adenine and thymine away leaves two thousand eight hundred and eighty bases shared equally between guanine and cytosine, so each is one thousand four hundred and forty.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s10",
+          "layout": "check",
+          "heading": "Quick check: bases",
+          "body_md": "Classify bases as purines or pyrimidines.",
+          "bullets": [],
+          "visual": null,
+          "math": [],
+          "narration": "Quick check. The purines are adenine and guanine.",
+          "check_question_id": "q_isc12chem_ch22_055",
+          "audio": null
+        },
+        {
+          "id": "s11",
+          "layout": "concept",
+          "heading": "RNA, and DNA compared with RNA",
+          "body_md": "**RNA** is usually a **single strand**. Three main types work in protein synthesis: **messenger RNA (mRNA)** carries the coded message from DNA; **transfer RNA (tRNA)** brings amino acids to the ribosome; **ribosomal RNA (rRNA)** forms part of the ribosome. **DNA** stores hereditary information and **replicates** itself, so the information passes to daughter cells.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Feature",
+                "DNA",
+                "RNA"
+              ],
+              "rows": [
+                [
+                  "Sugar",
+                  "2-Deoxyribose",
+                  "Ribose"
+                ],
+                [
+                  "Bases",
+                  "A, G, C, T",
+                  "A, G, C, U"
+                ],
+                [
+                  "Strands",
+                  "Two (double helix)",
+                  "Usually one"
+                ],
+                [
+                  "Function",
+                  "Stores genetic information; replication",
+                  "Protein synthesis"
+                ],
+                [
+                  "Location",
+                  "Mainly in the nucleus",
+                  "Nucleus and cytoplasm"
+                ]
+              ]
+            },
+            "alt": "Table comparing DNA and RNA by sugar, bases, strands, function and location"
+          },
+          "math": [],
+          "narration": "RNA is usually a single strand. Messenger RNA carries the coded instructions from DNA, transfer RNA brings the matching amino acids, and ribosomal RNA forms part of the ribosome where proteins are assembled. DNA is the long-term store of genetic information and can copy itself, so that each new cell receives the same instructions.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s12",
+          "layout": "example",
+          "heading": "Worked example: an RNA copy",
+          "body_md": "**Problem.** An RNA strand is copied from a DNA strand whose base sequence is T–A–C–C–G–A. (a) Write the RNA sequence. (b) Which base of the RNA has no partner base of the same name in DNA?\n\n**(a)** Pair each DNA base: T → A, A → **U**, C → G, G → C. RNA: **A–U–G–G–C–U**.\n\n**(b)** **Uracil**: RNA uses U where DNA uses T.",
+          "bullets": [],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "DNA base",
+                "RNA base"
+              ],
+              "rows": [
+                [
+                  "T",
+                  "A"
+                ],
+                [
+                  "A",
+                  "U"
+                ],
+                [
+                  "C",
+                  "G"
+                ],
+                [
+                  "G",
+                  "C"
+                ]
+              ]
+            },
+            "alt": "Table of DNA bases and the RNA bases that pair with them"
+          },
+          "math": [],
+          "narration": "RNA is built using the DNA strand as a template, following the pairing rules, except that RNA uses uracil wherever thymine would appear. So each adenine in DNA is matched by uracil in RNA, each thymine by adenine, each cytosine by guanine and each guanine by cytosine. The sequence T A C C G A gives the RNA A U G G C U.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s13",
+          "layout": "summary",
+          "heading": "Summary: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Fat-soluble vitamins A, D, E, K are stored; water-soluble B and C must be supplied regularly.",
+            "A: night blindness; B₁: beriberi; B₁₂: pernicious anaemia; C: scurvy; D: rickets; K: slow clotting.",
+            "Nucleotide = base + sugar + phosphate; purines A, G; pyrimidines C, T (DNA), U (RNA).",
+            "DNA: double helix, antiparallel complementary strands; A–T (2 H-bonds), G–C (3).",
+            "RNA: single strand, ribose, uracil; mRNA, tRNA, rRNA in protein synthesis."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Pair",
+                "H-bonds"
+              ],
+              "rows": [
+                [
+                  "A–T",
+                  "2"
+                ],
+                [
+                  "G–C",
+                  "3"
+                ],
+                [
+                  "A–U (RNA)",
+                  "2"
+                ]
+              ]
+            },
+            "alt": "Summary table of base pairs and hydrogen bonds"
+          },
+          "math": [],
+          "narration": "Let us sum up Part 2. Vitamins A, D, E and K are fat-soluble and stored; the B vitamins and vitamin C are water-soluble and needed regularly. Each vitamin has its own deficiency disease. Nucleic acids are chains of nucleotides; DNA is a double helix held by base pairing, and RNA, with ribose and uracil, carries out protein synthesis.",
+          "check_question_id": null,
+          "audio": null
+        },
+        {
+          "id": "s14",
+          "layout": "exam-tips",
+          "heading": "Exam tips: Part 2",
+          "body_md": "",
+          "bullets": [
+            "Learn the vitamin–disease pairs as a table; most objective questions test them.",
+            "Explain storage differences using solubility in fat or water.",
+            "In base calculations, double the base-pair count to get total bases.",
+            "Compare DNA and RNA on sugar, bases, strands and function — one mark each."
+          ],
+          "visual": {
+            "kind": "table",
+            "spec": {
+              "headers": [
+                "Slip",
+                "Fix"
+              ],
+              "rows": [
+                [
+                  "Vitamin C is fat-soluble",
+                  "Water-soluble"
+                ],
+                [
+                  "RNA contains thymine",
+                  "Uracil"
+                ],
+                [
+                  "A pairs with G",
+                  "A–T, G–C"
+                ]
+              ]
+            },
+            "alt": "Table of three common slips in Part 2 and fixes"
+          },
+          "math": [],
+          "narration": "Final tips. Learn the vitamins and their deficiency diseases as a table. Explain storage in terms of whether the vitamin dissolves in fat or water. In base-counting problems, remember that each base pair contains two bases. And when comparing DNA with RNA, give the sugar, the bases, the number of strands and the function.",
+          "check_question_id": null,
+          "audio": null
+        }
+      ],
+      "status": "draft",
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "notes": {
+    "unit": "isc-12-chemistry-ch22",
+    "version": 1,
+    "title": "Proteins, Vitamins and Nucleic Acids — Notes",
+    "language": "en",
+    "sections": [
+      {
+        "heading": "1. Amino acids",
+        "body_md": "**α-Amino acids** H₂N–CH(R)–COOH; all chiral (L) except glycine. **Essential** (from diet: valine, leucine, isoleucine, lysine, threonine, methionine, phenylalanine, tryptophan, arginine, histidine) vs **non-essential** (made in the body: glycine, alanine, glutamic acid). **Neutral** (one –NH₂, one –COOH), **acidic** (extra –COOH: aspartic, glutamic acid), **basic** (extra –NH₂: lysine, arginine).\n\n**Zwitter ion** H₃N⁺–CH(R)–COO⁻: salt-like — high m.p., soluble in water not benzene, **amphoteric**. **Isoelectric point (pI):** pH of zero net charge, no migration in an electric field; below pI → cation (to cathode), above pI → anion (to anode). For neutral amino acids pI ≈ (pKa₁ + pKa₂)/2.",
+        "key_terms": [
+          {
+            "term": "Zwitter ion",
+            "definition_md": "A dipolar ion carrying both a positive (–NH₃⁺) and a negative (–COO⁻) charge, neutral overall."
+          },
+          {
+            "term": "Isoelectric point",
+            "definition_md": "The pH at which an amino acid has no net charge and does not move in an electric field."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{H3N+CH2COO- + H+ -> H3N+CH2COOH}",
+            "label": "Zwitter ion as a base"
+          },
+          {
+            "latex": "\\ce{H3N+CH2COO- + OH- -> H2NCH2COO- + H2O}",
+            "label": "Zwitter ion as an acid"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "pH vs pI",
+              "Form",
+              "Moves to"
+            ],
+            "rows": [
+              [
+                "pH < pI",
+                "Cation",
+                "Cathode"
+              ],
+              [
+                "pH = pI",
+                "Zwitter ion",
+                "No movement"
+              ],
+              [
+                "pH > pI",
+                "Anion",
+                "Anode"
+              ]
+            ]
+          },
+          "alt": "Table of amino-acid form and migration at pH below, at and above the isoelectric point"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch22-t01"
+        ]
+      },
+      {
+        "heading": "2. Peptides and proteins",
+        "body_md": "**Peptide bond** –CO–NH– from –COOH of one amino acid + –NH₂ of the next, losing H₂O. n amino acids → **n − 1** peptide bonds and n − 1 H₂O; M(peptide) = ΣM(amino acids) − 18(n − 1). N-terminal (free –NH₂) written on the left.\n\n**Fibrous** (keratin, collagen, myosin): parallel chains, H- and disulfide bonds, insoluble, structural. **Globular** (insulin, albumin, enzymes): compact folded chains, soluble, functional.\n\n**Levels (definitions only):** primary — amino-acid sequence; secondary — α-helix or β-pleated sheet (H-bonds); tertiary — overall 3D folding of a chain; quaternary — arrangement of subunits (haemoglobin: four).",
+        "key_terms": [
+          {
+            "term": "Peptide bond",
+            "definition_md": "The amide link –CO–NH– joining two amino-acid residues."
+          },
+          {
+            "term": "Primary structure",
+            "definition_md": "The sequence of amino acids in a polypeptide chain."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{H2NCH2COOH + H2NCH(CH3)COOH -> H2NCH2CONHCH(CH3)COOH + H2O}",
+            "label": "Glycylalanine"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Type",
+              "Shape",
+              "Example"
+            ],
+            "rows": [
+              [
+                "Fibrous",
+                "Long, parallel chains",
+                "Keratin"
+              ],
+              [
+                "Globular",
+                "Compact, folded",
+                "Insulin"
+              ]
+            ]
+          },
+          "alt": "Table comparing fibrous and globular proteins"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch22-t02"
+        ]
+      },
+      {
+        "heading": "3. Denaturation, enzymes and hormones",
+        "body_md": "**Denaturation:** heat, pH change, alcohol or heavy-metal ions break H-bonds and other interactions; 2°, 3° (and 4°) structure lost, **1° intact**; protein coagulates and loses activity (boiled egg, curdled milk, 70% alcohol on bacteria).\n\n**Enzymes:** biological catalysts, mostly globular proteins; highly specific, efficient, work best near body temperature and an optimum pH; lower activation energy. Invertase (sucrose), maltase (maltose), pepsin (proteins → peptides), urease: $\\ce{NH2CONH2 + H2O -> 2NH3 + CO2}$.\n\n**Hormones:** chemical messengers from endocrine glands carried in blood — insulin (lowers blood glucose), glucagon (raises it), thyroxine (metabolic rate; contains iodine), adrenaline (emergency), steroid sex hormones.",
+        "key_terms": [
+          {
+            "term": "Denaturation",
+            "definition_md": "Loss of the secondary and tertiary structure, and of biological activity, of a protein without breaking peptide bonds."
+          },
+          {
+            "term": "Enzyme",
+            "definition_md": "A biological catalyst, usually a globular protein, specific for its substrate."
+          }
+        ],
+        "formulas": [
+          {
+            "latex": "\\ce{NH2CONH2 + H2O ->[urease] 2NH3 + CO2}",
+            "label": "Urease"
+          }
+        ],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Hormone",
+              "Role"
+            ],
+            "rows": [
+              [
+                "Insulin",
+                "Lowers blood glucose"
+              ],
+              [
+                "Glucagon",
+                "Raises blood glucose"
+              ],
+              [
+                "Thyroxine",
+                "Metabolic rate"
+              ]
+            ]
+          },
+          "alt": "Table of three hormones and their roles"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch22-t03"
+        ]
+      },
+      {
+        "heading": "4. Vitamins",
+        "body_md": "**Fat-soluble:** A, D, E, K (stored in liver and fat; excess can be harmful). **Water-soluble:** B group, C (excreted; must be supplied regularly; lost in cooking water). B₁₂ is stored in the liver.\n\n| Vitamin | Deficiency |\n|---|---|\n| A | Night blindness, xerophthalmia |\n| B₁ | Beriberi |\n| B₂ | Cheilosis, digestive disorders |\n| B₆ | Convulsions |\n| B₁₂ | Pernicious anaemia |\n| C | Scurvy (bleeding gums) |\n| D | Rickets (children), osteomalacia (adults) |\n| E | Fragile red blood cells, muscular weakness |\n| K | Increased blood-clotting time |",
+        "key_terms": [
+          {
+            "term": "Vitamin",
+            "definition_md": "An organic compound needed in small amounts in the diet for normal growth and health."
+          },
+          {
+            "term": "Fat-soluble vitamin",
+            "definition_md": "One of vitamins A, D, E and K, which dissolve in fat and are stored in the body."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Group",
+              "Members"
+            ],
+            "rows": [
+              [
+                "Fat-soluble",
+                "A, D, E, K"
+              ],
+              [
+                "Water-soluble",
+                "B group, C"
+              ]
+            ]
+          },
+          "alt": "Table of vitamin groups"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch22-t04"
+        ]
+      },
+      {
+        "heading": "5. Nucleic acids",
+        "body_md": "**Nucleotide** = base + pentose + phosphate (nucleoside = base + sugar); joined by phosphodiester links. **Purines:** adenine, guanine. **Pyrimidines:** cytosine, thymine (DNA), uracil (RNA).\n\n**DNA:** 2-deoxyribose; double helix (Watson and Crick, 1953); antiparallel, complementary strands; A–T (2 H-bonds), G–C (3 H-bonds); A = T, G = C. Stores hereditary information; replicates.\n\n**RNA:** ribose; A, G, C, U; usually single-stranded; mRNA (message), tRNA (carries amino acids), rRNA (ribosome); protein synthesis.\n\nBase counting: total bases = 2 × base pairs.",
+        "key_terms": [
+          {
+            "term": "Nucleotide",
+            "definition_md": "The monomer of nucleic acids: a nitrogenous base, a pentose sugar and a phosphate group."
+          },
+          {
+            "term": "Complementary strands",
+            "definition_md": "Two DNA strands whose bases pair A with T and G with C."
+          }
+        ],
+        "formulas": [],
+        "visual": {
+          "kind": "table",
+          "spec": {
+            "headers": [
+              "Feature",
+              "DNA",
+              "RNA"
+            ],
+            "rows": [
+              [
+                "Sugar",
+                "Deoxyribose",
+                "Ribose"
+              ],
+              [
+                "Pyrimidines",
+                "C, T",
+                "C, U"
+              ],
+              [
+                "Strands",
+                "Two",
+                "One"
+              ]
+            ]
+          },
+          "alt": "Table comparing DNA and RNA"
+        },
+        "visuals": [],
+        "topic_ids": [
+          "isc-12-chemistry-ch22-t05"
+        ]
+      }
+    ],
+    "exam_tips_md": "**Common mistakes**\n- Giving the zwitter ion a net charge, or confusing which way an amino acid moves below its pI.\n- Counting n peptide bonds for n amino acids (it is n − 1).\n- Saying denaturation breaks peptide bonds.\n- Listing vitamin C as fat-soluble, or putting thymine in RNA.\n\n**How marks are usually awarded**\n- Zwitter ion (1 mark): correct charges; amphoteric equations (1 mark each).\n- Vitamins (½–1 mark each): vitamin, group and deficiency disease.\n- DNA vs RNA (1 mark per feature): sugar, bases, strands, function.",
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "flashcards": {
+    "unit": "isc-12-chemistry-ch22",
+    "version": 1,
+    "language": "en",
+    "cards": [
+      {
+        "id": "f01",
+        "front_md": "General formula of an α-amino acid?",
+        "back_md": "H₂N–CH(R)–COOH.",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch22-t01"
+      },
+      {
+        "id": "f02",
+        "front_md": "Essential amino acid?",
+        "back_md": "One the body cannot make; must come from food.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch22-t01"
+      },
+      {
+        "id": "f03",
+        "front_md": "Which common amino acid is not chiral?",
+        "back_md": "Glycine (R = H).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch22-t01"
+      },
+      {
+        "id": "f04",
+        "front_md": "Zwitter ion of glycine?",
+        "back_md": "H₃N⁺CH₂COO⁻.",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch22-t01"
+      },
+      {
+        "id": "f05",
+        "front_md": "Why are amino acids amphoteric?",
+        "back_md": "–COO⁻ accepts H⁺; –NH₃⁺ donates H⁺.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch22-t01"
+      },
+      {
+        "id": "f06",
+        "front_md": "Isoelectric point?",
+        "back_md": "pH of zero net charge; no migration in an electric field.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch22-t01"
+      },
+      {
+        "id": "f07",
+        "front_md": "Amino acid at pH below its pI?",
+        "back_md": "Cation; moves to the cathode.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch22-t01"
+      },
+      {
+        "id": "f08",
+        "front_md": "Peptide bond?",
+        "back_md": "–CO–NH– formed with loss of water.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch22-t02"
+      },
+      {
+        "id": "f09",
+        "front_md": "Peptide bonds in a chain of n amino acids?",
+        "back_md": "n − 1.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch22-t02"
+      },
+      {
+        "id": "f10",
+        "front_md": "Fibrous protein example?",
+        "back_md": "Keratin (also collagen, myosin).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch22-t02"
+      },
+      {
+        "id": "f11",
+        "front_md": "Globular protein example?",
+        "back_md": "Insulin (also albumin).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch22-t02"
+      },
+      {
+        "id": "f12",
+        "front_md": "Primary structure?",
+        "back_md": "Sequence of amino acids.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch22-t02"
+      },
+      {
+        "id": "f13",
+        "front_md": "Secondary structure?",
+        "back_md": "α-Helix or β-pleated sheet held by H-bonds.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch22-t02"
+      },
+      {
+        "id": "f14",
+        "front_md": "Quaternary structure?",
+        "back_md": "Arrangement of polypeptide subunits (haemoglobin: 4).",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch22-t02"
+      },
+      {
+        "id": "f15",
+        "front_md": "What does denaturation leave intact?",
+        "back_md": "Primary structure (peptide bonds).",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch22-t03"
+      },
+      {
+        "id": "f16",
+        "front_md": "Name three denaturing agents.",
+        "back_md": "Heat, pH change, alcohol (also heavy-metal ions).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch22-t03"
+      },
+      {
+        "id": "f17",
+        "front_md": "Urease reaction?",
+        "back_md": "Urea + H₂O → 2NH₃ + CO₂.",
+        "tag": "formula",
+        "topic_id": "isc-12-chemistry-ch22-t03"
+      },
+      {
+        "id": "f18",
+        "front_md": "Two features of enzymes?",
+        "back_md": "Highly specific; work best at optimum temperature and pH.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch22-t03"
+      },
+      {
+        "id": "f19",
+        "front_md": "Insulin vs glucagon?",
+        "back_md": "Insulin lowers blood glucose; glucagon raises it.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch22-t03"
+      },
+      {
+        "id": "f20",
+        "front_md": "Fat-soluble vitamins?",
+        "back_md": "A, D, E, K.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch22-t04"
+      },
+      {
+        "id": "f21",
+        "front_md": "Why must vitamin C be eaten regularly?",
+        "back_md": "Water-soluble; not stored; excreted.",
+        "tag": "concept",
+        "topic_id": "isc-12-chemistry-ch22-t04"
+      },
+      {
+        "id": "f22",
+        "front_md": "Vitamin A deficiency?",
+        "back_md": "Night blindness, xerophthalmia.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch22-t04"
+      },
+      {
+        "id": "f23",
+        "front_md": "Vitamin B₁₂ deficiency?",
+        "back_md": "Pernicious anaemia.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch22-t04"
+      },
+      {
+        "id": "f24",
+        "front_md": "Vitamin D deficiency?",
+        "back_md": "Rickets (children), osteomalacia (adults).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch22-t04"
+      },
+      {
+        "id": "f25",
+        "front_md": "Vitamin K deficiency?",
+        "back_md": "Increased blood-clotting time.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch22-t04"
+      },
+      {
+        "id": "f26",
+        "front_md": "Parts of a nucleotide?",
+        "back_md": "Base, pentose sugar, phosphate.",
+        "tag": "definition",
+        "topic_id": "isc-12-chemistry-ch22-t05"
+      },
+      {
+        "id": "f27",
+        "front_md": "Purine bases?",
+        "back_md": "Adenine and guanine.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch22-t05"
+      },
+      {
+        "id": "f28",
+        "front_md": "Base in RNA but not DNA?",
+        "back_md": "Uracil.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch22-t05"
+      },
+      {
+        "id": "f29",
+        "front_md": "Base pairs in DNA?",
+        "back_md": "A–T (2 H-bonds), G–C (3 H-bonds).",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch22-t05"
+      },
+      {
+        "id": "f30",
+        "front_md": "Role of tRNA?",
+        "back_md": "Carries amino acids to the ribosome.",
+        "tag": "fact",
+        "topic_id": "isc-12-chemistry-ch22-t05"
+      },
+      {
+        "id": "f31",
+        "front_md": "Exam tip: base counting",
+        "back_md": "Total bases = 2 × base pairs; A = T, G = C.",
+        "tag": "exam-tip",
+        "topic_id": "isc-12-chemistry-ch22-t05"
+      }
+    ],
+    "status": "draft",
+    "provenance": {
+      "origin": "human",
+      "template_version": null,
+      "model": null,
+      "generated_at": "2026-10-30",
+      "author": "claude-opus-5-5 (subject-producer)"
+    }
+  },
+  "questions": [
+    {
+      "id": "q_isc12chem_ch22_001",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In an aqueous solution kept at its isoelectric point, glycine exists mainly as:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "H₂NCH₂COOH"
+        },
+        {
+          "id": "b",
+          "text_md": "H₃N⁺CH₂COOH"
+        },
+        {
+          "id": "c",
+          "text_md": "H₃N⁺CH₂COO⁻"
+        },
+        {
+          "id": "d",
+          "text_md": "H₂NCH₂COO⁻"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "At the pI both groups are ionised and the net charge is zero — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_002",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which of these amino acids is essential, so that it must be obtained from food such as pulses, milk or eggs?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Lysine"
+        },
+        {
+          "id": "b",
+          "text_md": "Glycine"
+        },
+        {
+          "id": "c",
+          "text_md": "Alanine"
+        },
+        {
+          "id": "d",
+          "text_md": "Glutamic acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Lysine cannot be made in the human body — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_003",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Aspartic acid, HOOC–CH₂–CH(NH₂)–COOH, is classified as:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "a basic amino acid"
+        },
+        {
+          "id": "b",
+          "text_md": "a neutral amino acid"
+        },
+        {
+          "id": "c",
+          "text_md": "a β-amino acid"
+        },
+        {
+          "id": "d",
+          "text_md": "an acidic amino acid"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Two –COOH groups and one –NH₂ group — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_004",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Lysine has an isoelectric point of 9.7. In a buffer of pH 6.0 placed between two electrodes, lysine:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "carries a net positive charge and moves towards the cathode"
+        },
+        {
+          "id": "b",
+          "text_md": "carries a net negative charge and moves towards the anode"
+        },
+        {
+          "id": "c",
+          "text_md": "has no net charge and does not move"
+        },
+        {
+          "id": "d",
+          "text_md": "carries a net positive charge and moves towards the anode"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "pH below pI → cation → cathode — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_005",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which α-amino acid found in proteins is optically inactive?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Alanine, CH₃CH(NH₂)COOH"
+        },
+        {
+          "id": "b",
+          "text_md": "Serine, HOCH₂CH(NH₂)COOH"
+        },
+        {
+          "id": "c",
+          "text_md": "Glycine, H₂NCH₂COOH"
+        },
+        {
+          "id": "d",
+          "text_md": "Valine, (CH₃)₂CHCH(NH₂)COOH"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "The α-carbon of glycine carries two H atoms, so it is not chiral — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t01"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_006",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Alanine reacts both with dilute hydrochloric acid and with dilute sodium hydroxide solution.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: the zwitter ion is amphoteric.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_007",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The pH at which an amino acid such as alanine carries no net charge and does not move in an electric field is called its ___ point.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "isoelectric"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Isoelectric** point.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"isoelectric\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t01"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_008",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Glycine dissolves in water but is almost insoluble in benzene.\n\n**Reason (R):** In the solid state and in water, glycine exists as a dipolar ion.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and the ionic (salt-like) nature explains the solubility — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t01"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_009",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "For alanine, $\\text{p}K_{a1} = 2.34$ (–COOH) and $\\text{p}K_{a2} = 9.69$ (–NH₃⁺). Taking the isoelectric point of a neutral amino acid as the mean of these two values, calculate the pI of alanine.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 6.015,
+        "tolerance": 0.01,
+        "unit": null
+      },
+      "solution_md": "$\\text{pI} = \\dfrac{2.34 + 9.69}{2} = 6.015$ (about 6.0).",
+      "marking_scheme": [
+        {
+          "step": "Mean of the two pKa values",
+          "marks": 1
+        },
+        {
+          "step": "6.02",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_010",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the zwitter ion of alanine, and give equations to show how it reacts with (a) H⁺ ions and (b) OH⁻ ions.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Zwitter ion: $\\ce{CH3CH(NH3+)COO-}$. (a) $\\ce{CH3CH(NH3+)COO- + H+ -> CH3CH(NH3+)COOH}$ (–COO⁻ acts as a base). (b) $\\ce{CH3CH(NH3+)COO- + OH- -> CH3CH(NH2)COO- + H2O}$ (–NH₃⁺ acts as an acid)."
+      },
+      "solution_md": "Zwitter ion; two equations.",
+      "marking_scheme": [
+        {
+          "step": "Zwitter ion + (a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t01"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_011",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Classify amino acids (a) on the basis of whether the body can make them and (b) on the basis of the numbers of –NH₂ and –COOH groups, giving one example of each class. (c) Why is glycine the only common amino acid that is not optically active?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Essential (must be in the diet), e.g. valine or lysine; non-essential (made in the body), e.g. glycine or alanine. (b) Neutral (equal numbers), e.g. alanine; acidic (more –COOH), e.g. glutamic acid; basic (more –NH₂), e.g. lysine. (c) In glycine R = H, so the α-carbon carries two identical H atoms and is not chiral."
+      },
+      "solution_md": "Two classifications with examples; glycine not chiral.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_012",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "short",
+      "stem_md": "(a) Explain why amino acids are amphoteric. (b) What is meant by the isoelectric point? (c) Glutamic acid has a pI of 3.2. Towards which electrode will it move at pH 7, and why?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) They exist as zwitter ions H₃N⁺–CH(R)–COO⁻: the –COO⁻ group accepts a proton from acids and the –NH₃⁺ group donates a proton to bases. (b) The pH at which the amino acid exists mainly as the zwitter ion with no net charge, so it does not migrate in an electric field. (c) pH 7 is above its pI, so it loses a proton and carries a net negative charge: it moves to the anode."
+      },
+      "solution_md": "Zwitter ion; definition; anode.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t01"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_013",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the dipeptide glycylalanine, H₂NCH₂CO–NHCH(CH₃)COOH, the peptide bond is formed between:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "the –NH₂ group of glycine and the –COOH group of alanine"
+        },
+        {
+          "id": "b",
+          "text_md": "the –COOH groups of both amino acids"
+        },
+        {
+          "id": "c",
+          "text_md": "the α-carbon atoms of the two amino acids"
+        },
+        {
+          "id": "d",
+          "text_md": "the –COOH group of glycine and the –NH₂ group of alanine"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Glycine is written first (N-terminal), so its carboxyl group forms the amide link — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_014",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "The exact order in which the 51 amino-acid residues are joined in the two chains of insulin is called the protein’s:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "secondary structure"
+        },
+        {
+          "id": "b",
+          "text_md": "primary structure"
+        },
+        {
+          "id": "c",
+          "text_md": "tertiary structure"
+        },
+        {
+          "id": "d",
+          "text_md": "quaternary structure"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Sequence = primary structure — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_015",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Haemoglobin is made of four polypeptide subunits held together in a definite spatial arrangement. This arrangement is its:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "quaternary structure"
+        },
+        {
+          "id": "b",
+          "text_md": "primary structure"
+        },
+        {
+          "id": "c",
+          "text_md": "secondary structure"
+        },
+        {
+          "id": "d",
+          "text_md": "tertiary structure"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Arrangement of subunits — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_016",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Serum albumin dissolves in water, whereas the keratin of wool does not. The best explanation is that:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "albumin contains no peptide bonds"
+        },
+        {
+          "id": "b",
+          "text_md": "keratin is a carbohydrate, not a protein"
+        },
+        {
+          "id": "c",
+          "text_md": "albumin has a quaternary structure and keratin has none"
+        },
+        {
+          "id": "d",
+          "text_md": "albumin is globular, its chains folded into a compact shape, while keratin is fibrous, with long parallel chains held together by hydrogen and disulfide bonds"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Shape and inter-chain bonding decide solubility — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_017",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? The α-helix and the β-pleated sheet are forms of the tertiary structure of proteins.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: they are forms of the secondary structure.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_018",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "When a tripeptide is written as Gly–Ala–Val, glycine carries the free –NH₂ group and is called the ___-terminal residue.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "N",
+              "amino"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**N**-terminal.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"N\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t02"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_019",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** A tetrapeptide contains three peptide bonds.\n\n**Reason (R):** Each peptide bond is formed with the loss of one molecule of water.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Both are true, but A follows from four units being joined by three links, not from the loss of water — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t02"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_020",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each level of protein structure with its description.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Primary"
+        },
+        {
+          "id": "2",
+          "text_md": "Secondary"
+        },
+        {
+          "id": "3",
+          "text_md": "Tertiary"
+        },
+        {
+          "id": "4",
+          "text_md": "Quaternary"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "α-Helix or β-pleated sheet held by hydrogen bonds"
+        },
+        {
+          "id": "q",
+          "text_md": "Arrangement of several polypeptide subunits"
+        },
+        {
+          "id": "r",
+          "text_md": "Sequence of amino acids"
+        },
+        {
+          "id": "s",
+          "text_md": "Overall three-dimensional folding of one chain"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "r"
+          },
+          {
+            "left_id": "2",
+            "right_id": "p"
+          },
+          {
+            "left_id": "3",
+            "right_id": "s"
+          },
+          {
+            "left_id": "4",
+            "right_id": "q"
+          }
+        ]
+      },
+      "solution_md": "Primary → sequence; secondary → helix or sheet; tertiary → overall folding; quaternary → subunits.",
+      "marking_scheme": [
+        {
+          "step": "1 → r",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → q",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_021",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Glycine ($M = 75$), alanine ($M = 89$) and serine ($M = 105$) join to form the tripeptide Gly–Ala–Ser. Calculate its molar mass in $\\text{g mol}^{-1}$. ($\\ce{H2O}$: $M = 18$)",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 233,
+        "tolerance": 0,
+        "unit": "g mol⁻¹"
+      },
+      "solution_md": "Two peptide bonds release two $\\ce{H2O}$: $M = 75 + 89 + 105 - 2 \\times 18 = 233$.",
+      "marking_scheme": [
+        {
+          "step": "Two water molecules lost",
+          "marks": 1
+        },
+        {
+          "step": "233",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_022",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "How many different tripeptides can be formed from valine, leucine and serine if each amino acid is used exactly once in every tripeptide?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 6,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "Number of sequences $= 3 \\times 2 \\times 1 = 6$.",
+      "marking_scheme": [
+        {
+          "step": "6",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_023",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "Human insulin has two polypeptide chains, one of 21 and one of 30 amino-acid residues. How many peptide bonds does it contain in total?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 49,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "$(21 - 1) + (30 - 1) = 20 + 29 = 49$.",
+      "marking_scheme": [
+        {
+          "step": "49",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t02"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_024",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write an equation for the formation of the dipeptide alanylglycine from alanine and glycine, and identify the peptide bond.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{CH3CH(NH2)COOH + H2NCH2COOH -> CH3CH(NH2)CONHCH2COOH + H2O}$. The –CO–NH– group joining the alanine carbonyl to the glycine nitrogen is the peptide bond."
+      },
+      "solution_md": "Equation with water; –CO–NH–.",
+      "marking_scheme": [
+        {
+          "step": "Equation",
+          "marks": 1
+        },
+        {
+          "step": "Peptide bond identified",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_025",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Define (a) the secondary structure and (b) the quaternary structure of a protein, naming one protein or feature as an example of each.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Secondary: regular folding of the polypeptide chain into an α-helix or β-pleated sheet, held by hydrogen bonds between –CO– and –NH– groups — e.g. the α-helix in keratin. (b) Quaternary: the spatial arrangement of two or more polypeptide subunits — e.g. the four subunits of haemoglobin."
+      },
+      "solution_md": "Two definitions with examples.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t02"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_026",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "short",
+      "stem_md": "For the tripeptide Gly–Ala–Val (glycine $M = 75$, alanine $M = 89$, valine $M = 117$): (a) state the number of peptide bonds, (b) calculate its molar mass and (c) name the N-terminal and C-terminal residues.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Two. (b) $M = 75 + 89 + 117 - 2 \\times 18 = 245\\ \\text{g mol}^{-1}$. (c) N-terminal: glycine; C-terminal: valine."
+      },
+      "solution_md": "2; 245; Gly and Val.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t02"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_027",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Show, with an equation, the formation of the dipeptide glycylalanine, and name the bond formed. [2]\n\n(b) Define the primary, secondary, tertiary and quaternary structures of proteins. [2]\n\n(c) Classify keratin and insulin as fibrous or globular proteins. [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) $\\ce{H2NCH2COOH + H2NCH(CH3)COOH -> H2NCH2CONHCH(CH3)COOH + H2O}$; the –CO–NH– link is a peptide (amide) bond.\n\n(b) Primary: sequence of amino acids. Secondary: α-helix or β-pleated sheet held by hydrogen bonds. Tertiary: overall three-dimensional folding of one chain. Quaternary: arrangement of two or more subunits.\n\n(c) Keratin: fibrous. Insulin: globular."
+      },
+      "solution_md": "Equation; four definitions; classification.",
+      "marking_scheme": [
+        {
+          "step": "(a) equation",
+          "marks": 1
+        },
+        {
+          "step": "(a) bond named",
+          "marks": 1
+        },
+        {
+          "step": "(b) primary and secondary",
+          "marks": 1
+        },
+        {
+          "step": "(b) tertiary and quaternary",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t02"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_028",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A 70% ethanol hand rub kills bacteria by denaturing their proteins. During this denaturation, which bonds remain intact?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "The hydrogen bonds holding the α-helices"
+        },
+        {
+          "id": "b",
+          "text_md": "The peptide bonds of the polypeptide chains"
+        },
+        {
+          "id": "c",
+          "text_md": "The interactions that maintain the tertiary folding"
+        },
+        {
+          "id": "d",
+          "text_md": "The attractions between protein subunits"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Denaturation leaves the primary structure intact — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_029",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A person who has swallowed a solution of a mercury(II) salt is quickly given milk or raw egg white to drink. This first-aid measure works because:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "milk proteins reduce Hg²⁺ ions to harmless mercury vapour"
+        },
+        {
+          "id": "b",
+          "text_md": "egg white contains enzymes that hydrolyse mercury salts"
+        },
+        {
+          "id": "c",
+          "text_md": "the proteins neutralise the acid formed by mercury salts"
+        },
+        {
+          "id": "d",
+          "text_md": "the Hg²⁺ ions denature and precipitate the milk or egg proteins instead of the body’s own proteins"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Heavy-metal ions bind to and precipitate proteins — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_030",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Urease catalyses the hydrolysis of urea to ammonia and carbon dioxide but has no effect on its close relative methylurea. This shows that enzymes are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "used up in the reactions they catalyse"
+        },
+        {
+          "id": "b",
+          "text_md": "highly specific in their action"
+        },
+        {
+          "id": "c",
+          "text_md": "active only at high temperatures"
+        },
+        {
+          "id": "d",
+          "text_md": "non-protein catalysts"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Each enzyme acts on a particular substrate — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_031",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Pepsin, which works in the acidic conditions of the stomach, catalyses the:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "hydrolysis of starch into maltose"
+        },
+        {
+          "id": "b",
+          "text_md": "hydrolysis of sucrose into glucose and fructose"
+        },
+        {
+          "id": "c",
+          "text_md": "hydrolysis of proteins into smaller peptides"
+        },
+        {
+          "id": "d",
+          "text_md": "oxidation of glucose to carbon dioxide"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Pepsin is a protease — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_032",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Several hours after a meal, blood glucose begins to fall and the pancreas releases glucagon. Glucagon acts by:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "converting blood glucose into glycogen, lowering blood glucose"
+        },
+        {
+          "id": "b",
+          "text_md": "promoting the breakdown of liver glycogen, raising blood glucose"
+        },
+        {
+          "id": "c",
+          "text_md": "increasing the absorption of iodine by the thyroid"
+        },
+        {
+          "id": "d",
+          "text_md": "catalysing the hydrolysis of sucrose in the gut"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Glucagon opposes insulin — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_033",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A student suddenly sees a snake on the path; her heart races and her blood glucose rises within seconds. The hormone mainly responsible is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "adrenaline"
+        },
+        {
+          "id": "b",
+          "text_md": "insulin"
+        },
+        {
+          "id": "c",
+          "text_md": "thyroxine"
+        },
+        {
+          "id": "d",
+          "text_md": "testosterone"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Adrenaline prepares the body for emergency — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t03"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_034",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? An enzyme molecule is used up in the reaction it catalyses and must be replaced after each reaction.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "f"
+        ]
+      },
+      "solution_md": "False: like any catalyst, the enzyme is regenerated and used again.",
+      "marking_scheme": [
+        {
+          "step": "False, with the correction",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_035",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The enzyme ___ converts urea into ammonia and carbon dioxide.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "urease"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Urease**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"urease\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t03"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_036",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** A denatured enzyme loses its catalytic activity.\n\n**Reason (R):** Denaturation destroys the secondary and tertiary structure on which the shape of the active site depends.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t03"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_037",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Using the idea of denaturation, explain why (a) 70% alcohol is used to disinfect skin before an injection and (b) an enzyme from the human body stops working when heated above about 60 °C.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Alcohol breaks hydrogen bonds and other interactions in bacterial proteins, unfolding them so the bacteria die. (b) Heat denatures the enzyme: its secondary and tertiary structure (and so the active site) is lost, although the peptide bonds remain."
+      },
+      "solution_md": "Alcohol and heat both unfold proteins.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_038",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Write the equation for the hydrolysis of urea catalysed by urease, and state two ways in which enzymes differ from inorganic catalysts such as finely divided nickel.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "$\\ce{NH2CONH2 + H2O ->[urease] 2NH3 + CO2}$. Enzymes are highly specific (one substrate or reaction); they work under mild conditions (body temperature, near-neutral or optimum pH) and are destroyed by heat; they are far more efficient. (Any two.)"
+      },
+      "solution_md": "Equation; two differences.",
+      "marking_scheme": [
+        {
+          "step": "Equation",
+          "marks": 1
+        },
+        {
+          "step": "Two differences",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_039",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "short",
+      "stem_md": "What are hormones? Name the two pancreatic hormones that control blood glucose, and state the effect of each.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Hormones are chemical messengers produced by endocrine glands and carried in the blood to act on target organs. Insulin lowers blood glucose (promotes uptake and storage as glycogen); glucagon raises it (promotes glycogen breakdown in the liver)."
+      },
+      "solution_md": "Definition; insulin and glucagon.",
+      "marking_scheme": [
+        {
+          "step": "Definition",
+          "marks": 1
+        },
+        {
+          "step": "Insulin and glucagon with effects",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t03"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_040",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A biology class tests the enzyme amylase from saliva on starch at 37 °C, at 80 °C, and at 37 °C in strongly acidic solution. (a) In which experiment is starch digested fastest? (b) Explain the result at 80 °C. (c) Explain the result in strongly acidic solution.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) At 37 °C (near body temperature and the optimum pH of saliva). (b) At 80 °C the amylase is denatured: hydrogen bonds break, the folded shape and active site are lost, so it no longer catalyses the hydrolysis. (c) The strongly acidic pH is far from the optimum; it changes the charges on the protein and denatures or inactivates it, so little starch is digested."
+      },
+      "solution_md": "37 °C fastest; heat and acid denature the enzyme.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 4,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t03"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_041",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What is meant by denaturation of a protein? Name two agents that cause it. [2]\n\n(b) Which level of protein structure is unaffected by denaturation, and why? [1]\n\n(c) What are enzymes? State two characteristics and name one enzyme with its reaction. [2]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Loss of the secondary and tertiary (and quaternary) structure of a protein, with loss of biological activity, when hydrogen bonds and other interactions are broken. Agents: heat, change of pH (acid or alkali), alcohol, heavy-metal ions (any two).\n\n(b) The primary structure: denaturation does not break the covalent peptide bonds, so the amino-acid sequence is unchanged.\n\n(c) Enzymes are biological catalysts, mostly globular proteins. They are highly specific and work best at an optimum temperature and pH. Urease: $\\ce{NH2CONH2 + H2O -> 2NH3 + CO2}$."
+      },
+      "solution_md": "Definition and agents; primary structure; enzymes.",
+      "marking_scheme": [
+        {
+          "step": "(a) definition",
+          "marks": 1
+        },
+        {
+          "step": "(a) two agents",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c) definition and characteristics",
+          "marks": 1
+        },
+        {
+          "step": "(c) example",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t03"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_042",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which set consists only of fat-soluble vitamins?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "B₁, C, D and K"
+        },
+        {
+          "id": "b",
+          "text_md": "A, B₂, C and E"
+        },
+        {
+          "id": "c",
+          "text_md": "C, D, E and K"
+        },
+        {
+          "id": "d",
+          "text_md": "A, D, E and K"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A, D, E, K are fat-soluble; B group and C are water-soluble — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_043",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "A child whose diet lacks milk, carrots and green vegetables finds it hard to see in dim light, and her eyes become dry. The vitamin most likely lacking is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "vitamin B₁"
+        },
+        {
+          "id": "b",
+          "text_md": "vitamin D"
+        },
+        {
+          "id": "c",
+          "text_md": "vitamin A"
+        },
+        {
+          "id": "d",
+          "text_md": "vitamin K"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "Night blindness and xerophthalmia — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_044",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Before an operation, a patient whose cuts take unusually long to stop bleeding is given a vitamin injection. The vitamin is most likely:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "vitamin C"
+        },
+        {
+          "id": "b",
+          "text_md": "vitamin K"
+        },
+        {
+          "id": "c",
+          "text_md": "vitamin E"
+        },
+        {
+          "id": "d",
+          "text_md": "vitamin B₆"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Vitamin K is needed for blood clotting — option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_045",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Several children in a town with heavy winter smog, who rarely play outdoors, develop soft, bow-shaped leg bones. The deficiency is most likely of:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "vitamin D, causing rickets"
+        },
+        {
+          "id": "b",
+          "text_md": "vitamin C, causing scurvy"
+        },
+        {
+          "id": "c",
+          "text_md": "vitamin B₁, causing beriberi"
+        },
+        {
+          "id": "d",
+          "text_md": "vitamin A, causing xerophthalmia"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Vitamin D is made in skin exposed to sunlight; lack causes rickets — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_046",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Pernicious anaemia, in which red blood cells are deficient in haemoglobin, results from a lack of:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "vitamin B₁₂"
+        },
+        {
+          "id": "b",
+          "text_md": "vitamin B₁"
+        },
+        {
+          "id": "c",
+          "text_md": "vitamin B₂"
+        },
+        {
+          "id": "d",
+          "text_md": "vitamin E"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t04"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_047",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? Deficiency of vitamin E increases the fragility of red blood cells and can cause muscular weakness.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_048",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "Sailors on long voyages without fresh fruit once suffered from ___, marked by swollen, bleeding gums, caused by lack of vitamin C.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "scurvy"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Scurvy**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"scurvy\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t04"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_049",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "match",
+      "stem_md": "Match each deficiency symptom with the vitamin whose lack causes it.",
+      "options": [
+        {
+          "id": "1",
+          "text_md": "Cracked lips and digestive disorders (cheilosis)"
+        },
+        {
+          "id": "2",
+          "text_md": "Convulsions"
+        },
+        {
+          "id": "3",
+          "text_md": "Fragile red blood cells"
+        },
+        {
+          "id": "4",
+          "text_md": "Increased blood-clotting time"
+        }
+      ],
+      "match_right": [
+        {
+          "id": "p",
+          "text_md": "Vitamin E"
+        },
+        {
+          "id": "q",
+          "text_md": "Vitamin B₂"
+        },
+        {
+          "id": "r",
+          "text_md": "Vitamin K"
+        },
+        {
+          "id": "s",
+          "text_md": "Vitamin B₆"
+        }
+      ],
+      "answer": {
+        "pairs": [
+          {
+            "left_id": "1",
+            "right_id": "q"
+          },
+          {
+            "left_id": "2",
+            "right_id": "s"
+          },
+          {
+            "left_id": "3",
+            "right_id": "p"
+          },
+          {
+            "left_id": "4",
+            "right_id": "r"
+          }
+        ]
+      },
+      "solution_md": "Cheilosis → B₂; convulsions → B₆; fragile RBCs → E; slow clotting → K.",
+      "marking_scheme": [
+        {
+          "step": "1 → q",
+          "marks": 0.5
+        },
+        {
+          "step": "2 → s",
+          "marks": 0.5
+        },
+        {
+          "step": "3 → p",
+          "marks": 0.5
+        },
+        {
+          "step": "4 → r",
+          "marks": 0.5
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_050",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** Vitamin D need not be eaten every day in a normal diet.\n\n**Reason (R):** Vitamin D is water-soluble.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A is true (it is stored, and made in skin in sunlight); R is false: vitamin D is fat-soluble — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t04"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_051",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A multivitamin label warns against taking more than the recommended dose of vitamins A and D, but gives no such warning for vitamin C. Explain this in terms of solubility and storage in the body.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Vitamins A and D are fat-soluble: excess is stored in the liver and fatty tissue and can build up to harmful levels (hypervitaminosis). Vitamin C is water-soluble: excess is not stored but is excreted in urine, so overdose is far less likely."
+      },
+      "solution_md": "Fat-soluble stored; water-soluble excreted.",
+      "marking_scheme": [
+        {
+          "step": "A and D stored (fat-soluble)",
+          "marks": 1
+        },
+        {
+          "step": "C excreted (water-soluble)",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t04"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_052",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the vitamin most likely to be deficient in each case, with the name of the condition where there is one: (a) a fisherman away at sea for months with only rice and dried fish develops bleeding gums; (b) a student with sore, cracked corners of the mouth who avoids milk and eggs; (c) a woman who has eaten a strict vegan diet for many years becomes anaemic.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Vitamin C — scurvy. (b) Vitamin B₂ — cheilosis. (c) Vitamin B₁₂ — pernicious anaemia (B₁₂ comes mainly from animal foods)."
+      },
+      "solution_md": "C; B₂; B₁₂.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_053",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "short",
+      "stem_md": "A nutritionist plans meals for a hostel where most students are vegetarian and study indoors all day. Explain why the plan must (a) combine cereals with pulses to supply essential amino acids, (b) include fresh citrus fruit or amla every day, and (c) encourage some time outdoors in sunlight.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Essential amino acids cannot be made in the body; cereals are low in lysine and pulses supply it, so together they provide all essential amino acids. (b) Vitamin C is water-soluble and not stored, so it is needed daily; citrus and amla are rich sources (prevents scurvy). (c) Vitamin D is made in the skin in sunlight; indoor living risks deficiency (rickets, osteomalacia)."
+      },
+      "solution_md": "Essential amino acids; daily vitamin C; sunlight for vitamin D.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 4,
+      "competency": "evaluation",
+      "bloom": "evaluate",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t01",
+        "isc-12-chemistry-ch22-t04"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_054",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) What are vitamins? Classify vitamins A, B₁, C, D, E and K as fat-soluble or water-soluble. [2]\n\n(b) Name the disease or symptom caused by deficiency of (i) vitamin A, (ii) vitamin B₁, (iii) vitamin D and (iv) vitamin K. [2]\n\n(c) Why are water-soluble vitamins needed in the diet regularly? [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Organic compounds required in small amounts in the diet for normal growth and health. Fat-soluble: A, D, E, K. Water-soluble: B₁, C.\n\n(b) (i) Night blindness / xerophthalmia. (ii) Beriberi. (iii) Rickets (children) / osteomalacia (adults). (iv) Increased blood-clotting time.\n\n(c) They are not stored in the body; excess is excreted in urine."
+      },
+      "solution_md": "Definition and classification; four deficiencies; not stored.",
+      "marking_scheme": [
+        {
+          "step": "(a) definition",
+          "marks": 1
+        },
+        {
+          "step": "(a) classification",
+          "marks": 1
+        },
+        {
+          "step": "(b)(i)–(ii)",
+          "marks": 1
+        },
+        {
+          "step": "(b)(iii)–(iv)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t04"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_055",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which pair of bases found in DNA are both purines?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Cytosine and thymine"
+        },
+        {
+          "id": "b",
+          "text_md": "Adenine and thymine"
+        },
+        {
+          "id": "c",
+          "text_md": "Adenine and guanine"
+        },
+        {
+          "id": "d",
+          "text_md": "Guanine and cytosine"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "A and G are purines; C and T are pyrimidines — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_056",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "Which combination of sugar and base occurs in RNA but not in DNA?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Ribose and uracil"
+        },
+        {
+          "id": "b",
+          "text_md": "Deoxyribose and thymine"
+        },
+        {
+          "id": "c",
+          "text_md": "Ribose and thymine"
+        },
+        {
+          "id": "d",
+          "text_md": "Deoxyribose and uracil"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "RNA: ribose with A, G, C, U — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_057",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "In the Watson–Crick double helix, the two strands of a DNA molecule are:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "parallel and identical in base sequence"
+        },
+        {
+          "id": "b",
+          "text_md": "antiparallel and complementary, held together by hydrogen bonds between bases"
+        },
+        {
+          "id": "c",
+          "text_md": "joined by peptide bonds between bases"
+        },
+        {
+          "id": "d",
+          "text_md": "held together by phosphate groups shared between strands"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "b"
+        ]
+      },
+      "solution_md": "Option (b).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (b)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_058",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "During protein synthesis, which nucleic acid brings each amino acid to the ribosome?",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Messenger RNA (mRNA)"
+        },
+        {
+          "id": "b",
+          "text_md": "Ribosomal RNA (rRNA)"
+        },
+        {
+          "id": "c",
+          "text_md": "DNA"
+        },
+        {
+          "id": "d",
+          "text_md": "Transfer RNA (tRNA)"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "Option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_059",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "mcq",
+      "stem_md": "An RNA strand is built using a DNA strand with the base sequence G–C–A–T–T–A as a template. The base sequence of the RNA, read in the same direction, is:",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "C–G–T–A–A–T"
+        },
+        {
+          "id": "b",
+          "text_md": "G–C–A–U–U–A"
+        },
+        {
+          "id": "c",
+          "text_md": "C–G–U–A–A–U"
+        },
+        {
+          "id": "d",
+          "text_md": "G–C–U–A–A–U"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "c"
+        ]
+      },
+      "solution_md": "G → C, C → G, A → U, T → A — option (c).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (c)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t05"
+      ],
+      "expected_time_sec": 60,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_060",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** In any double-stranded DNA, the number of purine bases equals the number of pyrimidine bases.\n\n**Reason (R):** Every base pair in DNA consists of one purine and one pyrimidine.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "a"
+        ]
+      },
+      "solution_md": "Both are true, and R explains A — option (a).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (a)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_061",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "assertion-reason",
+      "stem_md": "**Assertion (A):** RNA contains thymine as one of its bases.\n\n**Reason (R):** The sugar in RNA is ribose.\n\nChoose the correct option.",
+      "options": [
+        {
+          "id": "a",
+          "text_md": "Both A and R are true, and R is the correct explanation of A."
+        },
+        {
+          "id": "b",
+          "text_md": "Both A and R are true, but R is not the correct explanation of A."
+        },
+        {
+          "id": "c",
+          "text_md": "A is true, but R is false."
+        },
+        {
+          "id": "d",
+          "text_md": "A is false, but R is true."
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "d"
+        ]
+      },
+      "solution_md": "A is false (RNA has uracil instead); R is true — option (d).",
+      "marking_scheme": [
+        {
+          "step": "Correct option (d)",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t05"
+      ],
+      "expected_time_sec": 75,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_062",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "true-false",
+      "stem_md": "True or false? For a double-stranded DNA sample, the ratio of (adenine + guanine) to (cytosine + thymine) is equal to 1.",
+      "options": [
+        {
+          "id": "t",
+          "text_md": "True"
+        },
+        {
+          "id": "f",
+          "text_md": "False"
+        }
+      ],
+      "match_right": [],
+      "answer": {
+        "option_ids": [
+          "t"
+        ]
+      },
+      "solution_md": "True: A = T and G = C, so A + G = T + C.",
+      "marking_scheme": [
+        {
+          "step": "True",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_063",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "fill-blank",
+      "stem_md": "The double-helix model of DNA was proposed in 1953 by James Watson and Francis ___.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "blanks": [
+          {
+            "accepted": [
+              "Crick"
+            ]
+          }
+        ]
+      },
+      "solution_md": "**Crick**.",
+      "marking_scheme": [
+        {
+          "step": "Writes \"Crick\"",
+          "marks": 1
+        }
+      ],
+      "marks": 1,
+      "difficulty": 1,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t05"
+      ],
+      "expected_time_sec": 45,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_064",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "numerical",
+      "stem_md": "A double-stranded DNA molecule of 2500 base pairs contains 700 adenine bases. How many cytosine bases does it contain?",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "value": 1800,
+        "tolerance": 0,
+        "unit": null
+      },
+      "solution_md": "Total bases $= 2 \\times 2500 = 5000$; A + T $= 2 \\times 700 = 1400$; G + C $= 5000 - 1400 = 3600$; cytosine $= 3600 \\div 2 = 1800$.",
+      "marking_scheme": [
+        {
+          "step": "Total bases and A + T",
+          "marks": 1
+        },
+        {
+          "step": "1800",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_065",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the purine and pyrimidine bases present in DNA, and state the base-pairing rules, including the number of hydrogen bonds in each pair.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Purines: adenine, guanine. Pyrimidines: cytosine, thymine. Adenine pairs with thymine through two hydrogen bonds; guanine pairs with cytosine through three hydrogen bonds."
+      },
+      "solution_md": "Four bases classified; A–T (2), G–C (3).",
+      "marking_scheme": [
+        {
+          "step": "Bases classified",
+          "marks": 1
+        },
+        {
+          "step": "Pairing with H-bonds",
+          "marks": 1
+        }
+      ],
+      "marks": 2,
+      "difficulty": 2,
+      "competency": "recall",
+      "bloom": "remember",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t05"
+      ],
+      "expected_time_sec": 150,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_066",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Compare DNA and RNA with respect to (a) the pentose sugar and the pyrimidine bases, (b) the number of strands and overall structure and (c) their main biological roles.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) DNA: 2-deoxyribose; cytosine and thymine. RNA: ribose; cytosine and uracil. (b) DNA: two antiparallel strands in a double helix; RNA: usually a single strand. (c) DNA stores hereditary information and replicates; RNA (mRNA, tRNA, rRNA) carries out protein synthesis."
+      },
+      "solution_md": "Sugar and bases; strands; roles.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b)",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "analysis",
+      "bloom": "analyze",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_067",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "short",
+      "stem_md": "Name the three main types of RNA in a cell and state the role of each in making a protein such as haemoglobin.",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "Messenger RNA (mRNA) carries the coded sequence copied from the haemoglobin gene in DNA to the ribosome. Transfer RNA (tRNA) brings the correct amino acids to the ribosome, each matched to the code. Ribosomal RNA (rRNA) forms part of the ribosome, where the amino acids are joined by peptide bonds."
+      },
+      "solution_md": "mRNA, tRNA, rRNA with roles.",
+      "marking_scheme": [
+        {
+          "step": "mRNA",
+          "marks": 1
+        },
+        {
+          "step": "tRNA",
+          "marks": 1
+        },
+        {
+          "step": "rRNA",
+          "marks": 1
+        }
+      ],
+      "marks": 3,
+      "difficulty": 2,
+      "competency": "understanding",
+      "bloom": "understand",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t05"
+      ],
+      "expected_time_sec": 270,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    },
+    {
+      "id": "q_isc12chem_ch22_068",
+      "unit": "isc-12-chemistry-ch22",
+      "language": "en",
+      "type": "long",
+      "stem_md": "(a) Distinguish between a nucleoside and a nucleotide. [1]\n\n(b) Classify the bases adenine, guanine, cytosine, thymine and uracil as purines or pyrimidines, and state which occur in RNA. [2]\n\n(c) Describe the double-helix structure of DNA. [1]\n\n(d) A DNA molecule of 1200 base pairs contains 30% adenine. How many guanine bases does it contain? [1]",
+      "options": [],
+      "match_right": [],
+      "answer": {
+        "model_answer_md": "(a) Nucleoside = base + pentose sugar; nucleotide = base + sugar + phosphate.\n\n(b) Purines: adenine, guanine. Pyrimidines: cytosine, thymine, uracil. RNA contains A, G, C and U.\n\n(c) Two antiparallel polynucleotide strands wound round a common axis; sugar–phosphate backbones outside; bases inside, paired A–T (2 H-bonds) and G–C (3 H-bonds).\n\n(d) Total bases $= 2 \\times 1200 = 2400$; A = T = 30% each, so G = C = 20% each; G $= 0.20 \\times 2400 = 480$."
+      },
+      "solution_md": "Definitions; bases; helix; 480.",
+      "marking_scheme": [
+        {
+          "step": "(a)",
+          "marks": 1
+        },
+        {
+          "step": "(b) classification",
+          "marks": 1
+        },
+        {
+          "step": "(b) RNA bases",
+          "marks": 1
+        },
+        {
+          "step": "(c)",
+          "marks": 1
+        },
+        {
+          "step": "(d)",
+          "marks": 1
+        }
+      ],
+      "marks": 5,
+      "difficulty": 3,
+      "competency": "application",
+      "bloom": "apply",
+      "topic_ids": [
+        "isc-12-chemistry-ch22-t05"
+      ],
+      "expected_time_sec": 570,
+      "assets": [],
+      "children": [],
+      "status": "draft",
+      "version": 1,
+      "provenance": {
+        "origin": "human",
+        "template_version": null,
+        "model": null,
+        "generated_at": "2026-10-30",
+        "author": "claude-opus-5-5 (subject-producer)"
+      }
+    }
+  ],
+  "build": {
+    "run_id": null,
+    "checks": {
+      "katex_mhchem": "48 math strings parsed with KaTeX 0.19.0 + mhchem (throwOnError, strict \"error\"), 0 failures",
+      "svg_allowlist": "2 SVG visuals (2 distinct diagrams) checked with saxes against svg-allowlist.ts: elements, attributes, class pattern, fragment-only refs, no style, palette incl. named hues, viewBox, title, per-page unique ids — 0 failures",
+      "narration": "29 slides, 8–78 words (mean 53), no symbols, formulae or unit abbreviations",
+      "resolve": "5/5 scripted re-solve checks pass",
+      "chemistry_facts": "Amino-acid classification, zwitter ions and isoelectric points, peptide bonds and the four levels of protein structure (definitions only), denaturation, enzymes and hormones, vitamin groups and deficiency diseases, nucleic-acid bases, the DNA double helix and DNA–RNA comparison, and every numerical checked against the ISC 2027 syllabus (Unit 10)",
+      "content_gate": "npm test -w @soyl/content-templates: all checks pass for this chapter",
+      "verifier_pass": "2026-10-30: every question and every internal-choice alternative re-solved from its stem by the author; every numerical re-computed by the build script — see README \"Verifier pass\"",
+      "pipeline_lint": "npm run content -- lint --exemplars: 0 errors, 0 warnings"
+    }
+  }
+}
